@@ -171,7 +171,7 @@ else
         while( !ether && napSpec.cRefF() == 1 ) { ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ; }
         sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_CLOUD") , ((tinNormalS&)tinBaseP).pag1->idAdam , tHey+T(" ")+tNapSpecName ) ;
+        etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_CLOUD") , ((tinFullS&)tinBaseP).pag1->idAdam , tHey+T(" ")+tNapSpecName ) ;
         cClouds ++ ;
     
         pSpec->sayF( tinBaseP , etThread ) ;
@@ -207,7 +207,7 @@ else
         while( !ether && napSpec.cRefF() == 1 ) { ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ; }
         sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_CLOUD") , ((tinNormalS&)tinBaseP).pag1->idAdam , tHey+T(" ")+tNapSpecName /*, flHIRE_DEBUG*/ ) ;
+        etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_CLOUD") , ((tinFullS&)tinBaseP).pag1->idAdam , tHey+T(" ")+tNapSpecName /*, flHIRE_DEBUG*/ ) ;
         cClouds ++ ;
 
         pSpec->sayF( tinBaseP , etThread ) ;
@@ -377,7 +377,7 @@ voidT secretF( tinBaseS& tinBaseP , etherC& etherP , textC& tUserP , textC& tPas
         ZE( countT , ids ) ;
         psttzLeverCloudP = tCloud ;
     
-        ((tinNormalS&)tinBaseP).pEther->strMakeFromOsTextF( tinBaseP , psttKey , poste ) ; ___( psttKey ) ;
+        ((tinFullS&)tinBaseP).pEther->strMakeFromOsTextF( tinBaseP , psttKey , poste ) ; ___( psttKey ) ;
         ZE( strokeS* , psttKey ) ;
         TN( tCloud , postc ) ;
     

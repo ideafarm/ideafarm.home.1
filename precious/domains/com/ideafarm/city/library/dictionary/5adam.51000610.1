@@ -27,36 +27,36 @@ DONE( tmGorillaWriteF )
     CONoUTrAW3( "gorilla " , idGorillaWrite , " gasp!\r\n" ) ;
 
     }
-        CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | 0\r\n" ) ; //U::
+        CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | 0\r\n" ) ; //U::
         THREADmODE3rESTORE
-        CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | 1\r\n" ) ; //U::
+        CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | 1\r\n" ) ; //U::
         }
-            CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | 2\r\n" ) ; //U::
+            CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | 2\r\n" ) ; //U::
             etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
 
-            CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | 3\r\n" ) ; //U::
+            CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | 3\r\n" ) ; //U::
             }
-                CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | 4\r\n" ) ; //U::
+                CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | 4\r\n" ) ; //U::
                 }
                     CONoUTrAW3( "gorilla " , idGorillaWrite , " logged in\r\n" ) ;
     
                     entry << _fe_pushC( idGorillaWrite ) ;
-                    CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | 5 *******\r\n" ) ; //U::
+                    CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | 5 *******\r\n" ) ; //U::
                     entry << *pczfIdGorillaWrite ;
                 
-                    CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | 6\r\n" ) ; //U::
+                    CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | 6\r\n" ) ; //U::
                     entry << _fe_pushC( timeN2 ) ;
-                    CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | 7 *****\r\n" ) ; //U::
+                    CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | 7 *****\r\n" ) ; //U::
                     entry << *pczfDate ;
                 
-                    CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | 8\r\n" ) ; //U::
+                    CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | 8\r\n" ) ; //U::
                     entry << _fe_pushC( timeN1 ) ;
-                    CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | 9 *\r\n" ) ; //U::
+                    CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | 9 *\r\n" ) ; //U::
                     entry << *pczfTime ;
 
-                    CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | a\r\n" ) ; //U::
+                    CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | a\r\n" ) ; //U::
                     recordC entry( tinBaseP , count5S( LISTnAMEsYS_ROOTaPPLICATION , *pczrLogin , PUSE.dispenseUniqueListNameF() ) ) ;
-                    CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | b *************\r\n" ) ; //U::
+                    CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | b *************\r\n" ) ; //U::
                 {
 
                 listC::dictionaryReplaceOsTextIF( tinBaseP , pczfIdGorillaWrite ) ;
@@ -68,21 +68,21 @@ DONE( tmGorillaWriteF )
                 countT pczfTime[] = { (countT)"time" , 0 } ;
                 countT pczrLogin[] = { (countT)"login" , 0 } ;
                 
-                CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | c\r\n" ) ; //U::
+                CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | c\r\n" ) ; //U::
                 puseC puseLog( tinBaseP , "gorilla.selectC" /*, flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS*/ ) ;
-                CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | d\r\n" ) ; //U::
+                CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | d\r\n" ) ; //U::
             {
 
             etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
-            CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | e\r\n" ) ; //U::
+            CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | e\r\n" ) ; //U::
         {
         THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
-        CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | f\r\n" ) ; //U::
+        CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | f\r\n" ) ; //U::
 
         etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
-        CONoUTrAW3( "" , ((tinNormalS&)tinBaseP).monitor.idThread , " | g\r\n" ) ; //U::
+        CONoUTrAW3( "" , ((tinFullS&)tinBaseP).monitor.idThread , " | g\r\n" ) ; //U::
     {
     while( !ether && !etThread )
 

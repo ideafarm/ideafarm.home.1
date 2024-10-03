@@ -54,11 +54,11 @@
         //
         //    _IO_
         //{
-        //if( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
+        //if( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
 
         idLathNewDel = ifcIDsEXclATHnEWdEL_DEL ; // INTENTIONAL RACE
 
-        ((tinNormalS&)tinBaseP).cPoolDropDt ++ ;
+        ((tinFullS&)tinBaseP).cPoolDropDt ++ ;
 
         if( !btrAM( pbzMetaBitsOwned , offSlot ) ) { BLAMMO ; } //BLAMMO IS USED RATHER THAN __() TO AVOID NEEDING TO CALL TINSL, FOR MAX SPEED ; 20210111@2031: THIS COMMENT IS OBSOLETE SINCE I NOW HAVE tinBasePPPPPPPPPPPPPPPPPPPPPPPPP
 
@@ -71,7 +71,7 @@
 
             //thirdC::c_memsetIF( (byteT*)pDoomed , sizeof( dropNoteS ) , 0xdd ) ; //U:: TO FIND A BUG
 
-            pDoomed->idThreadDel = ((tinNormalS&)tinBaseP).monitor.idThread ;
+            pDoomed->idThreadDel = ((tinFullS&)tinBaseP).monitor.idThread ;
             //thirdC::c_memsetIF( (byteT*)pDoomed , sizeof( dropNoteS ) , 0 ) ; //SANS tinBaseP USED FOR MAX SPEED; INTENTIONALLY COMMENTED OUT SO THAT SLOTS WHICH ARE NOT CONTINUALLY REUSED CAN BE VISIBLE (SUCH CODE IS CANDIDATE FOR MIGRATION FROM poolC TO jotC)
 
             inc02AM( pDoomed->idDelLath ) ;
@@ -142,12 +142,12 @@
         //    if( pEtRock )
         //    etherC* pEtRock = &etherC::etRockIF( tinBaseP ) ;
         //{
-        //if( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
+        //if( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
 
         }
             }
                 BLAMMOiD( 0xaabbccdd ) ;
-                //((tinNormalS&)tinBaseP).pc Utility[ 0xf ] = pbSlot - pbv ;
+                //((tinFullS&)tinBaseP).pc Utility[ 0xf ] = pbSlot - pbv ;
             {
             if( pbSlot != pbv )
             byteT* pbv = pbData + offSlot * cbGross ;

@@ -23,8 +23,8 @@ etThread.osThreadF( TaRG1( tmExHandlerF ) ) ;
     {
     else
     if( POOP ) POOPR
-    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbc , cbc , T("///d/tmp/cinfo") , 1 ) ; ___( pbc ) ;
-    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbe , cbe , T("///d/tmp/einfo") , 1 ) ; ___( pbe ) ;
+    ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbc , cbc , T("///d/tmp/cinfo") , 1 ) ; ___( pbc ) ;
+    ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbe , cbe , T("///d/tmp/einfo") , 1 ) ; ___( pbe ) ;
     ZE( countT , cbc ) ;
     ZE( countT , cbe ) ;
     ZE( byteT* , pbc ) ;
@@ -34,14 +34,14 @@ etThread.osThreadF( TaRG1( tmExHandlerF ) ) ;
 {
 IFsCRATCH
 
-CONoUTrAW3( "TODO [osTid]: " , ((tinNormalS&)tinBaseP).osTid , "\r\n" ) ;
+CONoUTrAW3( "TODO [osTid]: " , ((tinFullS&)tinBaseP).osTid , "\r\n" ) ;
 
 TODO
 
 DONE( tmExHandlerF )
 thirdC::dosExitProcessIF( 0 ) ; //THIS IS NEEDED BECAUSE THE HANDLER SIMULATION HAS PARTIALLY CLEANED UP THE MAIN THREAD, AND "DONE" WILL FAIL
 doF( tinBaseP ) ;
-CONoUTrAW3( "tmExHandlerF [osTid]: " , ((tinNormalS&)tinBaseP).osTid , "\r\n" ) ;
+CONoUTrAW3( "tmExHandlerF [osTid]: " , ((tinFullS&)tinBaseP).osTid , "\r\n" ) ;
 TASK( tmExHandlerF )
 
 }
@@ -51,8 +51,8 @@ TASK( tmExHandlerF )
     count8S c8p( (countT)&processGlobal2S::_processGlobal2I_IF().ecInfo , (countT)&idMile , ebpAM() , (countT)&prFloat ) ;
     ZE( countT , idMile ) ;
     
-    thirdC::c_memcpyIF( poopC() , ((tinNormalS&)tinBaseP).pTieLath->pbTin , (byteT*)&tinBaseP , sizeof ((tinNormalS&)tinBaseP).pTieLath->pbTin ) ;
-    thirdC::c_memsetIF( (byteT*)((tinNormalS&)tinBaseP).pTieLath , sizeof *((tinNormalS&)tinBaseP).pTieLath ) ;
+    thirdC::c_memcpyIF( poopC() , ((tinFullS&)tinBaseP).pTieLath->pbTin , (byteT*)&tinBaseP , sizeof ((tinFullS&)tinBaseP).pTieLath->pbTin ) ;
+    thirdC::c_memsetIF( (byteT*)((tinFullS&)tinBaseP).pTieLath , sizeof *((tinFullS&)tinBaseP).pTieLath ) ;
 {
 voidT doF( tinBaseS& tinBaseP )
 

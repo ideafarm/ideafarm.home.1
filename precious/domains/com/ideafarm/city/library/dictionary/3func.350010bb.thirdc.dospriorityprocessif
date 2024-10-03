@@ -10,7 +10,7 @@
 }
     return idDesireProcess ;
 
-    __( ((tinNormalS&)tinBaseP).idDesireSetBySelfProcess && idDesireProcess - ((tinNormalS&)tinBaseP).idDesireSetBySelfProcess ) ;
+    __( ((tinFullS&)tinBaseP).idDesireSetBySelfProcess && idDesireProcess - ((tinFullS&)tinBaseP).idDesireSetBySelfProcess ) ;
 
     #endif
     
@@ -21,10 +21,10 @@
             case NORMAL_PRIORITY_CLASS   : { idDesireProcess = ifcTHREADpRIORITY_NORMAL   ; break ; }
             case IDLE_PRIORITY_CLASS     : { idDesireProcess = ifcTHREADpRIORITY_LAZIEST  ; break ; }
         {
-        switch( ((tinNormalS&)tinBaseP).brcRaw )
+        switch( ((tinFullS&)tinBaseP).brcRaw )
         BOS( WHATgbo , BOSoK , GetPriorityClass( oshMe ) )
 
-        HANDLE oshMe = (HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
+        HANDLE oshMe = (HANDLE)((tinFullS&)tinBaseP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
     
     #elif defined( __NT__ )

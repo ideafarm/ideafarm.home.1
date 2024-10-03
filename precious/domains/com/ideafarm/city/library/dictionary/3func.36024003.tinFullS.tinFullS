@@ -11,7 +11,7 @@
     if( this == &tinBaseSelfOrElderP && monitor.idThread > 3 ) flagsThreadMode5 &= ~( F(flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY) ) ;
 
     }
-        //SAYnAME( " tinNormalS/-\r\n" )
+        //SAYnAME( " tinFullS/-\r\n" )
     
         }
             }
@@ -33,7 +33,7 @@
             if( monitor.idThread > 3 && !( F(flags) & flTINs_NOiNoUTfRAMEsUPPORT ) ) // FOR THREAD 1, SEE do3; THREAD 2 3 ARE tinHeart AND tinBreak
 
             if( idTinNamed == ifcIDtINnAMED_tinBreakI ) thirdC::c_strncpyIF( tinBaseP , postTell , "refusalsToClose:0    logoffsSeen:0" , sizeof postTell ) ; //CODEsYNC: 12f0006 10200cc
-            thirdC::c_strncpyIF( tinBaseP , postTell , "tinNormalS::tinNormalS: i am now registered" , sizeof postTell ) ;
+            thirdC::c_strncpyIF( tinBaseP , postTell , "tinFullS::tinFullS: i am now registered" , sizeof postTell ) ;
             }
                 TELLsYSc3LIFI( idTypeSay , (byteT*)&info , sizeof info , idLineCt , idiFileCt )
                 info.idiFileCt  = idiFileCt ;
@@ -48,7 +48,7 @@
                 //countT idTypeSay = aptMe ? ifcIDtYPEtELLsYS_TINcTI : ifcIDtYPEtELLsYS_TINcTP ;
                 countT idTypeSay = ifcIDtYPEtELLsYS_TINcTP ;
                 //ap_artmentOldC aptMe( tinBaseP , (byteT*)this ) ;
-                thirdC::c_strncpyIF( tinBaseP , postTell , "tinNormalS::tinNormalS: registering myself" , sizeof postTell ) ;
+                thirdC::c_strncpyIF( tinBaseP , postTell , "tinFullS::tinFullS: registering myself" , sizeof postTell ) ;
             {
             if( !( F(flags) & flTINs_CONSTRUCTqUIETLY ) )
     
@@ -85,7 +85,7 @@
         
             if( idTinNamed == ifcIDtINnAMED_tinNormalVeryVeryEarlyLateMainI && monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2I.pcPhaseLow[ monitor.idThread ] ) ) { BLAMMO ; }
 
-            TELL( "tinNormalS: after setting processGlobal2I.flCt flag" )
+            TELL( "tinFullS: after setting processGlobal2I.flCt flag" )
             }
                 }
                     }
@@ -103,12 +103,12 @@
                         OStEXTC9( ostoSay , osTid ) ;
                         OStEXTAK( ostoSay , "_9    " ) ;
                         OStEXTC9( ostoSay , osPid ) ;
-                        OStEXTAK( ostoSay , "tinNormalS [osPid,osTid,idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    " ) ;
+                        OStEXTAK( ostoSay , "tinFullS [osPid,osTid,idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    " ) ;
                         OStEXT(   ostoSay , TUCK << 1 ) ;
 
                         countT cbStack = pbThreadStackEnd - pbThreadStackStart ;
 
-                        // EXAMPLE: tinNormalS [osPid,osTid,idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    12308_9    8168_9    00000000    00004000    000a0000_    000e0000_
+                        // EXAMPLE: tinFullS [osPid,osTid,idThread,cbStack,pbThreadStackStart,pbThreadStackEnd]:    12308_9    8168_9    00000000    00004000    000a0000_    000e0000_
                         //          123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0
                         //          0              1               2               3               4               5               6               7               8               9               a               b               c               d               e               f               0
                     {
@@ -123,7 +123,7 @@
                         OStEXTC9( ostoSay , osTid ) ;
                         OStEXTAK( ostoSay , "_9    " ) ;
                         OStEXTC9( ostoSay , osPid ) ;
-                        OStEXTAK( ostoSay , "tinNormalS [osPid,osTid]:    " ) ;
+                        OStEXTAK( ostoSay , "tinFullS [osPid,osTid]:    " ) ;
                         OStEXT(   ostoSay , TUCK >> 0 ) ;
 
                         tinBaseS& tinBaseP = *this ;
@@ -145,7 +145,7 @@
                 if( pTinF() != this ) { BLAMMO } ;
             {
             if( idTinNamed != ifcIDtINnAMED_tinHeartI && idTinNamed != ifcIDtINnAMED_tinBreakI )
-            TELL( "tinNormalS: setting processGlobal2I.flCt flag and testing pTinF()" )
+            TELL( "tinFullS: setting processGlobal2I.flCt flag and testing pTinF()" )
         
             TINSL
     
@@ -154,12 +154,12 @@
                 *(countT*)&pbThreadStackStart = (countT)info.AllocationBase ;
                 VirtualQuery( (byteT*)ebpP , &info , sizeof info ) ;
                 MEMORY_BASIC_INFORMATION info ;
-                //CONoUTrAW3( "\r\ntinNormalS / setting [pbThreadStackStart,pbThreadStackEnd] / [idTinNamed]:    " , idTinNamed , "\r\n" ) ;
+                //CONoUTrAW3( "\r\ntinFullS / setting [pbThreadStackStart,pbThreadStackEnd] / [idTinNamed]:    " , idTinNamed , "\r\n" ) ;
             {
             if( !pbThreadStackStart )
 
             }
-                thirdC::c_strncpyIF( tinBaseP , postTell , "tinNormalS::tinNormalS: my image is now valid by raw construction" , sizeof postTell ) ;
+                thirdC::c_strncpyIF( tinBaseP , postTell , "tinFullS::tinFullS: my image is now valid by raw construction" , sizeof postTell ) ;
                 putNegAM( fingerprint , FINGERnEG_TINs ) ; //MY IMAGE IS NOW COMPLETELY VALID
                 monitor.idDirty ++ ;
         
@@ -170,7 +170,7 @@
                 {
                 if( monitor.idThread <= ClOWtHREADS )
                 
-                //U::WILL pPoop WORK?: declareVmUsageTypeGF( tinBaseP , (byteT*)((tinNormalS&)tinBaseP).pPoop , flVMuSAGEtYPE_CPUsTACK , monitor.idThread , postThreadName ) ;
+                //U::WILL pPoop WORK?: declareVmUsageTypeGF( tinBaseP , (byteT*)((tinFullS&)tinBaseP).pPoop , flVMuSAGEtYPE_CPUsTACK , monitor.idThread , postThreadName ) ;
                 thirdC::c_strncpyIF( tinBaseP , postThreadName , postThreadNameP , sizeof postThreadName ) ;
         
                 //monitor.pLFnest[ 3 ] = idiFileCt ;
@@ -180,7 +180,7 @@
                 }
                     thirdC::c_memsetIF( tinBaseP , postTellIf          , sizeof postTellIf ) ;
                     thirdC::c_memsetIF( tinBaseP , postTellWait        , sizeof postTellWait ) ;
-                    thirdC::c_strncpyIF( tinBaseP , postTell , "constructing this tinNormalS, object" , sizeof postTell ) ;
+                    thirdC::c_strncpyIF( tinBaseP , postTell , "constructing this tinFullS, object" , sizeof postTell ) ;
                 {
                 //thirdC::c_memsetIF( tinBaseP , (byteT*)ppTinKid   , sizeof ppTinKid    ) ;
                 thirdC::c_memsetIF( tinBaseP , (byteT*)pcUtility04  , sizeof pcUtility04 ) ;
@@ -230,15 +230,15 @@
             }
                 if( pTinNormalPrior->pPoop != &pTinNormalPrior->poop ) { BLAMMO ; }
         
-                thirdC::c_strncpyIF( postTell , "tinNormalS::tinNormalS: my image is now valid by copying my elder" , sizeof postTell ) ;
+                thirdC::c_strncpyIF( postTell , "tinFullS::tinFullS: my image is now valid by copying my elder" , sizeof postTell ) ;
 
-                if( thirdC::c_memcpyWithCallBackIF( (byteT*)this + sizeof( tinBaseS ) , (byteT*)pTinNormalPrior + sizeof( tinBaseS ) , sizeof( tinNormalS ) - sizeof( tinBaseS ) , ctTellCopyDoneF , (countT)this ) ) { BLAMMO ; } //CODE SYNC: 003002a 12f0002 12f0003
+                if( thirdC::c_memcpyWithCallBackIF( (byteT*)this + sizeof( tinBaseS ) , (byteT*)pTinNormalPrior + sizeof( tinBaseS ) , sizeof( tinFullS ) - sizeof( tinBaseS ) , ctTellCopyDoneF , (countT)this ) ) { BLAMMO ; } //CODE SYNC: 003002a 12f0002 12f0003
 
-                putNegAM(     pTinBasePrior->fingerprint   ,  FINGERnEG_TINszOMBIE ) ; //FROM NOW UNTIL I REGISTER MYSELF, MONITOR WILL NOT BE ABLE TO SEE A tinNormalS FOR THIS THREAD
+                putNegAM(     pTinBasePrior->fingerprint   ,  FINGERnEG_TINszOMBIE ) ; //FROM NOW UNTIL I REGISTER MYSELF, MONITOR WILL NOT BE ABLE TO SEE A tinFullS FOR THIS THREAD
                 if( getNegAM( pTinBasePrior->fingerprint ) != FINGERnEG_TINs       ) BLAMMO ;
 
-                //SAYnAME( " tinNormalS/ " ) CONoUTrAW( " copying from " ) ; CONoUTrAW( NAME( pTinBasePrior->idTinNamed ) ) ; CONoUTrAW( "\r\n" ) ;
-                tinNormalS*   pTinNormalPrior = (tinNormalS*)&tinBaseSelfOrElderP ;
+                //SAYnAME( " tinFullS/ " ) CONoUTrAW( " copying from " ) ; CONoUTrAW( NAME( pTinBasePrior->idTinNamed ) ) ; CONoUTrAW( "\r\n" ) ;
+                tinFullS*   pTinNormalPrior = (tinFullS*)&tinBaseSelfOrElderP ;
                 *(tinBaseS**)&pTinBasePrior   =              &tinBaseSelfOrElderP ;
             {
             if( !( F(flags) & flTINs_NOeLDER ) )
@@ -253,7 +253,7 @@
             idDesireSetBySelf = thirdC::dosPriorityIF( tinBaseSelfOrElderP ) ;
         {
 
-        else                                                 thirdC::c_memcpyIF( tinBaseSelfOrElderP , (byteT*)ppJot                       , (byteT*)((tinNormalS*)pTinBaseDadP)->ppJot , sizeof ppJot                       ) ;
+        else                                                 thirdC::c_memcpyIF( tinBaseSelfOrElderP , (byteT*)ppJot                       , (byteT*)((tinFullS*)pTinBaseDadP)->ppJot , sizeof ppJot                       ) ;
         if( !( F(flags) & flTINs_INHERITjOTrEGISTRATIONS ) ) thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)ppJot                                                                    , sizeof ppJot                       ) ;
                                                              thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)postThreadName                                                           , sizeof postThreadName              ) ;
                                                              thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pPanLifiRecurseGrabbedLevel                                              , sizeof pPanLifiRecurseGrabbedLevel ) ;
@@ -262,7 +262,7 @@
                                                              thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)pcGrabitOsTid                                                            , sizeof pcGrabitOsTid               ) ;
                                                              thirdC::c_memsetIF( tinBaseSelfOrElderP , (byteT*)ppbGrabitRecurse                                                         , sizeof ppbGrabitRecurse            ) ;
     
-        //SAYnAME( " tinNormalS/+\r\n" )
+        //SAYnAME( " tinFullS/+\r\n" )
 
         if( !idTinNamedP ) { BLAMMO ; }
     {
@@ -290,13 +290,13 @@ pBk0TraceScratch( 0 ) ,
 pBk0TelemetryAppScratch( 0 ) ,
 pBk0TelemetrySysScratch( 0 ) ,
 pAdam( 0 ) ,
-pPoolUse( ((tinNormalS&)tinBaseSelfOrElderP).pag1->pPoolAdamTemp ) ,
+pPoolUse( ((tinFullS&)tinBaseSelfOrElderP).pag1->pPoolAdamTemp ) ,
 odoSockCbWrite( 0 ) ,
 odoSockCbRead( 0 ) ,
 pSwsRecycle( 0 ) ,
 pczl_pSwsRecycle( 0 ) ,
-ccExitsWhere( sizeof ((tinNormalS&)tinBaseSelfOrElderP).pag1->pcExitsWhere / sizeof ((tinNormalS&)tinBaseSelfOrElderP).pag1->pcExitsWhere[ 0 ] ) ,
-pcExitsWhere( ((tinNormalS&)tinBaseSelfOrElderP).pag1->pcExitsWhere ) ,
+ccExitsWhere( sizeof ((tinFullS&)tinBaseSelfOrElderP).pag1->pcExitsWhere / sizeof ((tinFullS&)tinBaseSelfOrElderP).pag1->pcExitsWhere[ 0 ] ) ,
+pcExitsWhere( ((tinFullS&)tinBaseSelfOrElderP).pag1->pcExitsWhere ) ,
 pzTieLath( 0 ) ,
 //idiFileMileDad( 0 ) ,
 //idLineMileDad( 0 ) ,
@@ -354,22 +354,22 @@ osPid( osPidIF( tinBaseSelfOrElderP ) ) ,
 osTid( ( this == &processGlobal6I.tinBreak || this == &processGlobal5I.tinHeart ) ? 0 : osTidIF() ) ,
 idDesireSetBySelfProcess( 0 ) ,
 idDesireSetBySelf( 0 ) ,
-pag6( pTinBaseDadP ? ((tinNormalS*)pTinBaseDadP)->pag6 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag6 : &rootAdamGlobal6I ) ) ,
-pag5( pTinBaseDadP ? ((tinNormalS*)pTinBaseDadP)->pag5 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag5 : &rootAdamGlobal5I ) ) ,
-pag4( pTinBaseDadP ? ((tinNormalS*)pTinBaseDadP)->pag4 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag4 : &rootAdamGlobal4I ) ) ,
-pag3( pTinBaseDadP ? ((tinNormalS*)pTinBaseDadP)->pag3 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag3 : &rootAdamGlobal3I ) ) ,
-pag2( pTinBaseDadP ? ((tinNormalS*)pTinBaseDadP)->pag2 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag2 : &rootAdamGlobal2I ) ) ,
-pag1( pTinBaseDadP ? ((tinNormalS*)pTinBaseDadP)->pag1 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinNormalS&)tinBaseSelfOrElderP).pag1 : &rootAdamGlobal1I ) ) ,
+pag6( pTinBaseDadP ? ((tinFullS*)pTinBaseDadP)->pag6 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinFullS&)tinBaseSelfOrElderP).pag6 : &rootAdamGlobal6I ) ) ,
+pag5( pTinBaseDadP ? ((tinFullS*)pTinBaseDadP)->pag5 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinFullS&)tinBaseSelfOrElderP).pag5 : &rootAdamGlobal5I ) ) ,
+pag4( pTinBaseDadP ? ((tinFullS*)pTinBaseDadP)->pag4 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinFullS&)tinBaseSelfOrElderP).pag4 : &rootAdamGlobal4I ) ) ,
+pag3( pTinBaseDadP ? ((tinFullS*)pTinBaseDadP)->pag3 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinFullS&)tinBaseSelfOrElderP).pag3 : &rootAdamGlobal3I ) ) ,
+pag2( pTinBaseDadP ? ((tinFullS*)pTinBaseDadP)->pag2 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinFullS&)tinBaseSelfOrElderP).pag2 : &rootAdamGlobal2I ) ) ,
+pag1( pTinBaseDadP ? ((tinFullS*)pTinBaseDadP)->pag1 : ( idTinNamedP == ifcIDtINnAMED_tinInPool ? ((tinFullS&)tinBaseSelfOrElderP).pag1 : &rootAdamGlobal1I ) ) ,
 tally( tinBaseSelfOrElderP ) ,
 pScoops( 0 ) ,
 pScoopEtThread( 0 ) ,
 tinBaseS( tinBaseSelfOrElderP , idLineCtP , idiFileCtP , pbBitsCtP , ifcIDtYPEtIN_FULL , pTinBaseDadP , flagsP , idTinNamedP ) ,
-/*1*/tinNormalS::tinNormalS( tinBaseS& tinBaseSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tinBaseS* const pTinBaseDadP , const osTextT* const postThreadNameP , const flagsT flagsP , const countT idTinNamedP , byteT* const pbTlsP , const countT cbTlsP )/*1*/ :
+/*1*/tinFullS::tinFullS( tinBaseS& tinBaseSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tinBaseS* const pTinBaseDadP , const osTextT* const postThreadNameP , const flagsT flagsP , const countT idTinNamedP , byteT* const pbTlsP , const countT cbTlsP )/*1*/ :
 
 // "tinBaseSelfOrElderP": USUALLY SO, BUT NOT ALWAYS (AN EXCEPTION TIN WILL BE, YOU GUESSED IT, AN EXCEPTION (S))
 
 //CONJ: THE PRECEDING COMMENT IS OBSOLETE AND NO LONGER TRUE
-// THIS DEFINITION MUST WORK WHEN tinBaseP REFERENCES BYTES THAT ARE ALL SET TO 0 ("tinNormalS. processGlobal4I.tinNormalVeryVeryEarlyLateMain( processGlobal4I.tinNormalVeryVeryEarlyLateMain , TAG( TAGiDnULL ) , flTINs_CONSTRUCTqUIETLY ) ;")
+// THIS DEFINITION MUST WORK WHEN tinBaseP REFERENCES BYTES THAT ARE ALL SET TO 0 ("tinFullS. processGlobal4I.tinNormalVeryVeryEarlyLateMain( processGlobal4I.tinNormalVeryVeryEarlyLateMain , TAG( TAGiDnULL ) , flTINs_CONSTRUCTqUIETLY ) ;")
 
 /**/
 */

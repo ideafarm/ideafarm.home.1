@@ -14,7 +14,7 @@
         *pcb = 0xbad32000 ; // "bad32000": "bad" <DDNUMB group bigits>
         ZE( countT* , pcb ) ; //CANNOT USE BLAMMO MACRO HERE BECAUSE THAT INVOKES TINSL WHICH INVOKES ME
     {
-    if( pTin && getNegAM( ((tinNormalS*)pTin)->fingerprint ) != FINGERnEG_TINs && getNegAM( ((tinNormalS*)pTin)->fingerprint ) != FINGERnEG_TINszOMBIE )
+    if( pTin && getNegAM( ((tinFullS*)pTin)->fingerprint ) != FINGERnEG_TINs && getNegAM( ((tinFullS*)pTin)->fingerprint ) != FINGERnEG_TINszOMBIE )
 
     tinBaseS*& pTin = pTinAM() ; //IF THIS LINE A.V.'S IN DEBUGGER, CLIMB THE CALL STACK INTO TH CALLER AND READ COMMENTS THERE
     

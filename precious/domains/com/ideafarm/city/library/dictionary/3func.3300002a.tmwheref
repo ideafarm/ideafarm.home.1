@@ -44,13 +44,13 @@ DONE( tmWhereF )
     }
         }
             stSorter04.sinkF( tinBaseP , countTC() , (byteT*)&c4s , flSTACKsINK_null , subtractTally04F ) ;
-            cExits           +=   ((tinNormalS&)tinBaseP).pag1->pcExitsWhere[ off ] ;
-            *(count04T*)&c4s  = - ((tinNormalS&)tinBaseP).pag1->pcExitsWhere[ off ] ;
+            cExits           +=   ((tinFullS&)tinBaseP).pag1->pcExitsWhere[ off ] ;
+            *(count04T*)&c4s  = - ((tinFullS&)tinBaseP).pag1->pcExitsWhere[ off ] ;
             count4S c4s( 0 , 0 , 0 , off ) ;
         {
-        if( ((tinNormalS&)tinBaseP).pag1->pcExitsWhere[ off ] )
+        if( ((tinFullS&)tinBaseP).pag1->pcExitsWhere[ off ] )
     {
-    for( countT off = 1 ; off < sizeof ((tinNormalS&)tinBaseP).pag1->pcExitsWhere / sizeof ((tinNormalS&)tinBaseP).pag1->pcExitsWhere[ 0 ] ; off ++ )
+    for( countT off = 1 ; off < sizeof ((tinFullS&)tinBaseP).pag1->pcExitsWhere / sizeof ((tinFullS&)tinBaseP).pag1->pcExitsWhere[ 0 ] ; off ++ )
     ZE( count04T , cExits ) ;
 
     stackC stSorter04( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count4S ) ) ;
@@ -220,8 +220,8 @@ DONE( tmWhereF )
                     }
                         while( where.idDirty % 2 || where.idDirty != idDirtyVerify ) ;
                         }
-                            idDirtyVerify = ((tinNormalS*)ppTinBaseWhereI[ off ])->monitor.idDirty ;
-                            thirdC::c_memcpyIF( tinBaseP , pbWhere , (byteT*)&((tinNormalS*)ppTinBaseWhereI[ off ])->monitor , sizeof pbWhere ) ;
+                            idDirtyVerify = ((tinFullS*)ppTinBaseWhereI[ off ])->monitor.idDirty ;
+                            thirdC::c_memcpyIF( tinBaseP , pbWhere , (byteT*)&((tinFullS*)ppTinBaseWhereI[ off ])->monitor , sizeof pbWhere ) ;
                         {
                         do
                         countT idDirtyVerify ; //INTENTIONALLY NOT INITIALIZED, FOR SPEED
@@ -229,7 +229,7 @@ DONE( tmWhereF )
                     whereS& where = *(whereS*)pbWhere ;
                     byteT pbWhere[ sizeof( whereS ) ] ;                    
                 {
-                if( ppTinBaseWhereI[ off ] ) //U:: USE A grabC TO SERIALIZE SO DON'T GET BIT BY A DANGLING POINTER TO A DOOMED tinNormalS, OBJECT
+                if( ppTinBaseWhereI[ off ] ) //U:: USE A grabC TO SERIALIZE SO DON'T GET BIT BY A DANGLING POINTER TO A DOOMED tinFullS, OBJECT
             {
             for( countT off = 0 ; off < cThreadsMaxWhereI ; off ++ )
             //etThread.traceF( tinBaseP , tSay1 ) ; //U:: COMMENT OUT IN PRODUCTION

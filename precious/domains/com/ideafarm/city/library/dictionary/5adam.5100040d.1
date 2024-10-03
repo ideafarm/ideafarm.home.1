@@ -79,8 +79,8 @@ REST
                 
                 }
                     if( bEnableLaunch && !bSockOk ) bEnableLaunch = 0 ; //THIS IS NEEDED SO THAT I REMAIN DISABLED BETWEEN THE TIME THAT NETWORKING IS INSTALLED AND THE SUBSEQUENT REBOOT (WINDOWS NT 4.0)
-                    bSockOk = !*((tinNormalS&)tinBaseP).zEtScratch ;
-                    socketC sTest( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
+                    bSockOk = !*((tinFullS&)tinBaseP).zEtScratch ;
+                    socketC sTest( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
                 {
                 ZE( boolT , bSockOk ) ;
                 

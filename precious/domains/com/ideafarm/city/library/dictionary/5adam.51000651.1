@@ -76,14 +76,14 @@ bSandbox = 0 ;
                             {
                             if( POOP )                                                                                  // IF COULD NOT GET THE FILE
 
-                            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , tFileBeingEaten , 1 ) ; ___( posti ) ;        // GET THE FILE
+                            ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , tFileBeingEaten , 1 ) ; ___( posti ) ;        // GET THE FILE
                             ZE( countT   , costi ) ;
                             ZE( osTextT* , posti ) ;
                             SCOOPS
 
                             }
                                 if( POOP ) POOPR
-                                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tFileBeingEaten , psttc1 , 1 ) ;
+                                ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tFileBeingEaten , psttc1 , 1 ) ;
 
                                 etThread.delF( tinBaseP , psttShort ) ;
                                 etThread.delF( tinBaseP , psttPath ) ;
@@ -396,7 +396,7 @@ DONE( tmObeySoilF )
             POOPR
         {
         if( POOP )
-        ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttTmpKtCodeSoiiP , 1 ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttTmpKtCodeSoiiP , 1 ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -417,7 +417,7 @@ DONE( tmObeySoilF )
                 {
                 if( POOP )                                                                                  // IF COULD NOT MOVE UNIQUE
                 etThread.delF( tinBaseP , psttn ) ;
-                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirUniqueF( tinBaseP , psttn , psttFileNameP , 0 , 1 ) ;                    // MOVE UNIQUE TO ANUS
+                ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirUniqueF( tinBaseP , psttn , psttFileNameP , 0 , 1 ) ;                    // MOVE UNIQUE TO ANUS
             
                 etThread.strMakeF( tinBaseP , LF , psttn , tTo , TUCK+tShort.csF( tinBaseP ) ) ; ___( psttn ) ;
                 ZE( strokeS* , psttn ) ;
@@ -426,7 +426,7 @@ DONE( tmObeySoilF )
                 _IO_
             {
             if( POOP )                                                                                  // IF COULD NOT MOVE TO ANUS
-            ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tTo+tShort , psttFileNameP , 1 ) ;                     // MOVE TO ANUS
+            ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tTo+tShort , psttFileNameP , 1 ) ;                     // MOVE TO ANUS
             //etThread.traceF( tinBaseP , T("cleaning up") ) ;
 
             }
@@ -494,7 +494,7 @@ DONE( tmObeySoilF )
                     TN( tPrefix , "report." ) ;
                     TN( tn , "" ) ;
 
-                    DEL( ((tinNormalS&)tinBaseP).pBarryUtility ) ;
+                    DEL( ((tinFullS&)tinBaseP).pBarryUtility ) ;
                     while( !ether && !POOP && etThread.etherSoilF( tinBaseP , ether , soulReports , soulNativeLint , ifcIDmODEeTHERsOIL_REPORT , 0 , flETHERsOILf_null/*flETHERsOILf_CONSUMEiNPUT*/ , psttTmpKtCodeSoiiP , postiP , costiP ) ) ; // WHILE IS TO OBEY bRepeat ; WILL REPEAT FOREVER UNTIL I AM FIRED
                     do     soulReports.removeAllF( tinBaseP ) ;
 
@@ -539,7 +539,7 @@ DONE( tmObeySoilF )
                     etThread.etherSoilF( tinBaseP , ether , soulAsciiLint , soulNativeLint , ifcIDmODEeTHERsOIL_ASCIIfROMnATIVE , 0 , flETHERsOILf_CONSUMEiNPUT , psttTmpKtCodeSoiiP , postiP , costiP ) ;
                     soulC soulAsciiLint( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.lint" ) ;
                     //etThread.traceF( tinBaseP , T("abort: loading soulAsciiLint") ) ;
-                    DEL( ((tinNormalS&)tinBaseP).pBarryUtility ) ;
+                    DEL( ((tinFullS&)tinBaseP).pBarryUtility ) ;
                     _IO_
                 {
                 if( bAbort )
@@ -687,7 +687,7 @@ DONE( tmObeySoilF )
         ZE( strokeS* , psttPath ) ;
 
         //etThread.traceF( tinBaseP , T("setting up / ct'ed barryC") ) ;
-        //((tinNormalS&)tinBaseP).pBarryUtility = new( 0 , tinBaseP , LF ) barryC( tinBaseP ) ; ___( ((tinNormalS&)tinBaseP).pBarryUtility ) ;
+        //((tinFullS&)tinBaseP).pBarryUtility = new( 0 , tinBaseP , LF ) barryC( tinBaseP ) ; ___( ((tinFullS&)tinBaseP).pBarryUtility ) ;
         //etThread.traceF( tinBaseP , T("setting up / ct'ing barryC") ) ;
 
         //20171229@1256: COMMENTED barryC PREALLOCATION OUT BECAUSE IT CONSUMES 1/4 OF THE ADDRESS SPACE
@@ -760,7 +760,7 @@ DONE( tmCleanF )
                                     {
                                     if( POOP )                                                                                  // IF COULD NOT MOVE UNIQUE
                                     etThread.delF( tinBaseP , psttn ) ;
-                                    ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirUniqueF( tinBaseP , psttn , psttc1 , 0 , 1 ) ;                    // MOVE UNIQUE TO ANUS
+                                    ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirUniqueF( tinBaseP , psttn , psttc1 , 0 , 1 ) ;                    // MOVE UNIQUE TO ANUS
         
                                     etThread.strMakeF( tinBaseP , LF , psttn , tBounce , TUCK+tShort.csF( tinBaseP ) ) ; ___( psttn ) ;
                                     ZE( strokeS* , psttn ) ;
@@ -768,7 +768,7 @@ DONE( tmCleanF )
                                     POOPR
                                 {
                                 if( POOP )                                                                                  // IF COULD NOT MOVE TO ANUS
-                                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tBounce+tShort , psttc1 , 1 ) ;                   // MOVE TO ANUS
+                                ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tBounce+tShort , psttc1 , 1 ) ;                   // MOVE TO ANUS
                                 SCOOPS
 
                                 TN( tShort , psttShort ) ;

@@ -10,7 +10,7 @@
 }
     DEL( psFeaturesP ) ;
 
-    (*((tinNormalS&)tinBaseP).pEther)( tinBaseP , psFeature ) ;
+    (*((tinFullS&)tinBaseP).pEther)( tinBaseP , psFeature ) ;
     }
         }
             psFeature->removeAllF( tinBaseP ) ;
@@ -42,7 +42,7 @@
                         }
                             }
                                 *psFeature >> psttFlyover ;
-                                ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttFlyover ) ;
+                                ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttFlyover ) ;
                             {
                             if( idTypeItem == ifcIDtYPEsOULiTEM_strokeSptr )
                             psFeature->pbFieldF( tinBaseP , idTypeItem , countTC() , countTC() , 1 ) ;
@@ -191,10 +191,10 @@
                         }
                             }
                                 *ppczChannel = pczChannel ;
-                                if( *ppczChannel ) ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , *ppczChannel ) ;
+                                if( *ppczChannel ) ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , *ppczChannel ) ;
                             {
                             else
-                            if( !ppczChannel ) ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , pczChannel ) ;
+                            if( !ppczChannel ) ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , pczChannel ) ;
 
                             }
                                 case ifcIDtYPEsADAMcHANNEL_IN  : { ppczChannel = &pczChannelIn  ; break ; }
@@ -236,19 +236,19 @@
                         if( (countT)*psFeature )
 
                         }
-                            ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttOldCB ) ;
+                            ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttOldCB ) ;
                             }
                                 }
                                     hBase.resetF() ;
-                                    ((tinNormalS&)tinBaseP).pEther->dllEntryF( tinBaseP , *ppSadamCBF , hBase , psttOldCB ) ;
-                                    ((thirdC&)(*((tinNormalS&)tinBaseP).pEther)).dosQueryModuleHandleF( tinBaseP , hBase , thirdC::postBaseNameIF( tinBaseP ) ) ;
+                                    ((tinFullS&)tinBaseP).pEther->dllEntryF( tinBaseP , *ppSadamCBF , hBase , psttOldCB ) ;
+                                    ((thirdC&)(*((tinFullS&)tinBaseP).pEther)).dosQueryModuleHandleF( tinBaseP , hBase , thirdC::postBaseNameIF( tinBaseP ) ) ;
                                     handleC hBase( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ;
                                 {
                                 if( !*ppSadamCBF )
 
                                 }
                                     if( POOP ) POOPR ;
-                                    ((tinNormalS&)tinBaseP).pEtScratch->dllEntryF( tinBaseP , *ppSadamCBF , *((tinNormalS&)tinBaseP).pag1->_etherC_.pHdll , psttOldCB ) ;
+                                    ((tinFullS&)tinBaseP).pEtScratch->dllEntryF( tinBaseP , *ppSadamCBF , *((tinFullS&)tinBaseP).pag1->_etherC_.pHdll , psttOldCB ) ;
                                     SCOOPS
                                 {
                                 IFsCRATCH
@@ -409,15 +409,15 @@
                     }
                         break ;
 
-                        ((tinNormalS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttDefaultHighlightTabOwnerOff , T("") ) ; ___( psttDefaultHighlightTabOwnerOff ) ;
-                        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttDefaultHighlightTabOwnerOff ) ;
+                        ((tinFullS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttDefaultHighlightTabOwnerOff , T("") ) ; ___( psttDefaultHighlightTabOwnerOff ) ;
+                        ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttDefaultHighlightTabOwnerOff ) ;
 
-                        //U::((tinNormalS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttDefaultHighlightTabOwnerOn , T("X") ) ; ___( psttDefaultHighlightTabOwnerOn ) ;
-                        ((tinNormalS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttDefaultHighlightTabOwnerOn , T("") ) ; ___( psttDefaultHighlightTabOwnerOn ) ; //U::
+                        //U::((tinFullS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttDefaultHighlightTabOwnerOn , T("X") ) ; ___( psttDefaultHighlightTabOwnerOn ) ;
+                        ((tinFullS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttDefaultHighlightTabOwnerOn , T("") ) ; ___( psttDefaultHighlightTabOwnerOn ) ; //U::
                         //U:: WHEN eyeOldC GOES INTO PRODUCTION, EITHER 'X' HIGHLIGHTING WILL BE NEEDED FOR TAB HIGHLIGHTING, OR SOMETHING BETTER THAN 'X' THAT CAN BE SUPPORTED WITHOUT USING FLOODFILL (UNTIL eycC SUPPORTS FLOODFILL, IF IT EVER DOES)
                         //U:: 'X' IS USED PROVISIONALLY WHEN eyeOldC IS SUPPORTED.  UNTIL THEN, 'X' IS NOT USED (COLOR HIGHLIGHTING IS USED INSTEAD, BECAUSE IT LOOKS BETTER THAN THE X HIGHLIGHTING)
 
-                        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttDefaultHighlightTabOwnerOn ) ;
+                        ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttDefaultHighlightTabOwnerOn ) ;
 
                         else fc.idTab = - 1 ;
                         }
@@ -507,7 +507,7 @@
                             //{
                             //if( fc.idAdam == 0x5 || fc.idAdam == 0xb )
 
-                            ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , posti ) ;
+                            ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , posti ) ;
                             if( posti && *posti ) thirdC::c_strncpyIF( tinBaseP , fc.postOldComment , posti , sizeof fc.postOldComment ) ;
                             *psFeature >> posti ; ___( posti ) ;
                             ZE( osTextT* , posti ) ;
@@ -537,7 +537,7 @@
         while( (countT)*psFeaturesP )
     {
     if( psFeature )
-    (*((tinNormalS&)tinBaseP).pEther)( tinBaseP , psFeature , TAG( TAGiDnULL ) ) ;
+    (*((tinFullS&)tinBaseP).pEther)( tinBaseP , psFeature , TAG( TAGiDnULL ) ) ;
     ZE( soulC* , psFeature ) ;
 
     }
@@ -548,7 +548,7 @@
     fc.idIntercom = 0 ;
     fc.cyclesPerDragRedraw = 4 ;
 
-    (*((tinNormalS&)tinBaseP).pEther)( tinBaseP , pswVolBody , TAG( TAGiDnULL ) , flSTACKc_PATCHnEWfLAVOR | flSTACKc_BLOB | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , cLeverVolBody , 0 , sizeof( vBodyS ) ) ; ___( pswVolBody ) ;
+    (*((tinFullS&)tinBaseP).pEther)( tinBaseP , pswVolBody , TAG( TAGiDnULL ) , flSTACKc_PATCHnEWfLAVOR | flSTACKc_BLOB | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED , cLeverVolBody , 0 , sizeof( vBodyS ) ) ; ___( pswVolBody ) ;
 
     }
         if( POOP ) return ;

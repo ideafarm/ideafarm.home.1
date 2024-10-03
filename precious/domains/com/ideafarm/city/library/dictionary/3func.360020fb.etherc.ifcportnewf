@@ -17,8 +17,8 @@
 
         sock.writeF( tinBaseP , (byteT*)&c4o , sizeof c4o ) ;
 
-        { ZE( countT , idp ) ; sock.myNameF( tinBaseP , idp , ((tinNormalS&)tinBaseP).pag1->_etherC_.nicNamePaper ) ; }
-        ((tinNormalS&)tinBaseP).pag1->_etherC_.idPortFace = idPortP ;
+        { ZE( countT , idp ) ; sock.myNameF( tinBaseP , idp , ((tinFullS&)tinBaseP).pag1->_etherC_.nicNamePaper ) ; }
+        ((tinFullS&)tinBaseP).pag1->_etherC_.idPortFace = idPortP ;
 
         sock.connectF( tinBaseP , ifcPORToLD1pORTaUTHORITY ) ;
         socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
@@ -26,7 +26,7 @@
 
     c4o.c4 = idPortP ;
     c4o.c3 = idiClassP ? idiClassP : processGlobal1I.idAdamRoot ;
-    c4o.c2 = ((tinNormalS&)tinBaseP).pag1->_etherC_.idProcessOld ;
+    c4o.c2 = ((tinFullS&)tinBaseP).pag1->_etherC_.idProcessOld ;
     c4o.c1 = ifcCMDpORTaUTHORITY_NEW ;
     count4S c4o ;
 
@@ -34,10 +34,10 @@
 
     }
         if( POOP ) return 0 ;
-        __( !((tinNormalS&)tinBaseP).pag1->_etherC_.pEtPrime ) ;
-        __( !((tinNormalS&)tinBaseP).pag1->_etherC_.idProcessOld ) ;
+        __( !((tinFullS&)tinBaseP).pag1->_etherC_.pEtPrime ) ;
+        __( !((tinFullS&)tinBaseP).pag1->_etherC_.idProcessOld ) ;
         __Z( idPortP ) ;
-        __( ((tinNormalS&)tinBaseP).pag1->_etherC_.idPortFace ) ;
+        __( ((tinFullS&)tinBaseP).pag1->_etherC_.idPortFace ) ;
         if( POOP ) return 0 ;
     {
     IFbEcAREFUL

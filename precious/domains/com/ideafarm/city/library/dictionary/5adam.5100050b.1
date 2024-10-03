@@ -29,11 +29,11 @@ REST
             }
                 }
                     idDup ++ ;
-                    *((tinNormalS&)tinBaseP).pEtScratch = 0 ;
+                    *((tinFullS&)tinBaseP).pEtScratch = 0 ;
                 {
                 else
-                if( !*((tinNormalS&)tinBaseP).pEtScratch ) break ;
-                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tSoixlOld+tReject , psttc1 ) ;
+                if( !*((tinFullS&)tinBaseP).pEtScratch ) break ;
+                ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tSoixlOld+tReject , psttc1 ) ;
                 POPUP( T("I am barfing an unsavory object named \"")+tReject+T("\".") ) ;
                 TN( tReject , "" ) ; tReject = T("soixlOld.reject.")+(idDup?TF1(idDup)+T("."):T(""))+T(psttNameShort) ;
             {
@@ -44,8 +44,8 @@ REST
         }
             }
                 else            break ;
-                if( *((tinNormalS&)tinBaseP).pEtScratch ) { *((tinNormalS&)tinBaseP).pEtScratch = 0 ; ether.osSleepF( tinBaseP , TUCK * 0x40 ) ; }
-                ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttc1 ) ;
+                if( *((tinFullS&)tinBaseP).pEtScratch ) { *((tinFullS&)tinBaseP).pEtScratch = 0 ; ether.osSleepF( tinBaseP , TUCK * 0x40 ) ; }
+                ((tinFullS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttc1 ) ;
             {
             while( !ether )
             etThread.osThreadF( tinBaseP , countTC() , tmWorkF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)psttSoixlOld ) ;
@@ -99,10 +99,10 @@ REST
             else
             }
                 POPUPsOIXLoLD( "I was not able to read a file object that was just dropped into the depository.  I will move it to the desktop when I can." ) ;
-                *((tinNormalS&)tinBaseP).pEtScratch = 0 ;
+                *((tinFullS&)tinBaseP).pEtScratch = 0 ;
             {
-            if( *((tinNormalS&)tinBaseP).pEtScratch )
-            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postSoixlOld , costSoixlOld , psttc1 ) ; ___( postSoixlOld ) ;
+            if( *((tinFullS&)tinBaseP).pEtScratch )
+            ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postSoixlOld , costSoixlOld , psttc1 ) ; ___( postSoixlOld ) ;
             ZE( countT   , costSoixlOld ) ;
             ZE( osTextT* , postSoixlOld ) ;
         {
@@ -123,7 +123,7 @@ REST
         strokeS sttq ;
         ZE( strokeS* , psttNameShort ) ;
 
-        *((tinNormalS&)tinBaseP).pEtScratch = 0 ;
+        *((tinFullS&)tinBaseP).pEtScratch = 0 ;
     {
     FORsTRINGSiN1( pstt1m )
     etThread.boxMenuF( tinBaseP , soul , tMouth+T("*") ) ; ___( pstt1m ) ;
@@ -166,7 +166,7 @@ DONE( tmWelcomeF )
         TN( tReadMe , POSTfILErEADmE ) ;
     {
     else
-    if( *((tinNormalS&)tinBaseP).pEtScratch ) { *((tinNormalS&)tinBaseP).pEtScratch = 0 ; POPUPsOIXLoLD( T("The tutorial cannot be displayed.") ) ; }
+    if( *((tinFullS&)tinBaseP).pEtScratch ) { *((tinFullS&)tinBaseP).pEtScratch = 0 ; POPUPsOIXLoLD( T("The tutorial cannot be displayed.") ) ; }
     
     etThread.delF( tinBaseP , pstt1m ) ;
     }
@@ -174,18 +174,18 @@ DONE( tmWelcomeF )
         }
             }
                 etThread.delF( tinBaseP , psttw ) ;
-                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tMouth+tOutOfWay+T("/")+T(psttw) , psttc1 ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tMouth+tOutOfWay+T("/")+T(psttw) , psttc1 ) ;
                 cMoved ++ ;
                 tPop += T(psttw)+tcr ;
-                ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw , psttc1 , sttq , stts , - 1 ) ; ___( psttw ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw , psttc1 , sttq , stts , - 1 ) ; ___( psttw ) ;
                 strokeS sttq ;
                 ZE( strokeS* , psttw ) ;
             {
-            if( !((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , tTM , tBody ) )
+            if( !((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , tTM , tBody ) )
             etThread.delF( tinBaseP , pbi ) ;
             TN( tBody , "" ) ; tBody = T(pbi) ;
-            if( *((tinNormalS&)tinBaseP).pEtScratch ) break ;
-            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbi , cbi , psttc1 ) ; ___( pbi ) ;
+            if( *((tinFullS&)tinBaseP).pEtScratch ) break ;
+            ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbi , cbi , psttc1 ) ; ___( pbi ) ;
             ZE( countT , cbi ) ;
             ZE( byteT* , pbi ) ;
         {

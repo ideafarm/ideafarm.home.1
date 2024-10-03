@@ -13,10 +13,10 @@
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     }
         POPtINaRGS
-        pDatumP = *(datumS**)&((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+        pDatumP = *(datumS**)&((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
         flagsRC = listC::walkIF( tinBaseP , pczPrefix , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_FILTEReNDoFsTRETCHEDvALUE ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkEnumerateCBF ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_FILTEReNDoFsTRETCHEDvALUE ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkEnumerateCBF ;
         PUSHtINaRGS
 
         LNV( pczPrefix )
@@ -35,6 +35,8 @@
         if( POOP ) return flagsRC ;
         __Z( cNameP ) ;
         __NZ( pDatumP ) ;
+        if( POOP ) return flagsRC ;
+        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return flagsRC ;
     {
     IFbEcAREFUL

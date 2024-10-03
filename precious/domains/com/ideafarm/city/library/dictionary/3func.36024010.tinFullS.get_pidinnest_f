@@ -12,9 +12,7 @@
 
     pcP[ offo ] = 0 ;
     }
-        pcP[ offo ++ ] = monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
-        pcP[ offo ++ ] = monitor.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] ;
-
+        pcP[ offo ++ ] = pIdInNest[ idn & OFFsLOTtINnESTmAX ] ;
         if( offo >= ccP - 1 ) break ;
     {
     for( countT idn = monitor.cInNest ; idn >= idnf ; idn -- )
@@ -27,18 +25,16 @@
 
     }
         if( POOP ) return ;
-        __( !( ccP % 2 ) ) ;
         __Z( pcP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
 {
-/*1*/voidT tinNormalS::get_pLFnest_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP )/*1*/
+/*1*/voidT tinFullS::get_pIdInNest_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP )/*1*/
+
 /**/
 */
-  set it to sizeof ((tinNormalS&)tinBaseP).monitor.pLFnest + 1 unless you are only interested in looking up a few levels
-  1 will work, but the caller will only get the null terminator
-  must be an odd value
+  set it to sizeof ((tinFullS&)tinBaseP).pIdInNest + 1 unless you are only interested in looking up a few levels
  ccP
   i will terminate the values that i write with a ze value
   i will write the call nest TAG( TAGiDnULL ) values into pcP until at most ccP-1 values have been written

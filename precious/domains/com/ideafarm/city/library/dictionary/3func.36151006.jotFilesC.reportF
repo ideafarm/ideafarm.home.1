@@ -252,10 +252,10 @@
                 }
                     }
                         }
-                            ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("jotFilesC::writeF / new mod puddle [time?Modified]:    ")+TT(soilPatch.time1Modified,soilPatch.time2Modified) ) ;
-                            ((tinNormalS&)tinBaseP).pEther->osTimeNowF( tinBaseP , soilPatch.time1Modified , soilPatch.time2Modified ) ;
+                            ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("jotFilesC::writeF / new mod puddle [time?Modified]:    ")+TT(soilPatch.time1Modified,soilPatch.time2Modified) ) ;
+                            ((tinFullS&)tinBaseP).pEther->osTimeNowF( tinBaseP , soilPatch.time1Modified , soilPatch.time2Modified ) ;
                         {
-                        if( ((tinNormalS&)tinBaseP).pEther )
+                        if( ((tinFullS&)tinBaseP).pEther )
                         soilPatch.time2Modified = soilPatch.time1Modified = 0 ;
                     {
                     if( getNegAM( soilPatch.finger ) == FINGERnEG_jotFileSoilC )
@@ -297,10 +297,10 @@
                     break ;
 
                     }
-                        ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("jotFilesC::writeF / new mod [time?Modified]:    ")+TT(soilMaybe.time1Modified,soilMaybe.time2Modified) ) ;
-                        ((tinNormalS&)tinBaseP).pEther->osTimeNowF( tinBaseP , soilMaybe.time1Modified , soilMaybe.time2Modified ) ;
+                        ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("jotFilesC::writeF / new mod [time?Modified]:    ")+TT(soilMaybe.time1Modified,soilMaybe.time2Modified) ) ;
+                        ((tinFullS&)tinBaseP).pEther->osTimeNowF( tinBaseP , soilMaybe.time1Modified , soilMaybe.time2Modified ) ;
                     {
-                    if( ((tinNormalS&)tinBaseP).pEther )
+                    if( ((tinFullS&)tinBaseP).pEther )
                     soilMaybe.time2Modified = soilMaybe.time1Modified = 0 ;
 
                     idjBranchCursor = soilMaybe.idjBranch ;
@@ -406,9 +406,9 @@
         countT cEltsNeverChanges = jotNeverChanges.cElementsF() ;
         countT cEltsCanChange    =    jotCanChange.cElementsF() ;
 
-        etherC& ether = *((tinNormalS&)tinBaseP).pEther ;
+        etherC& ether = *((tinFullS&)tinBaseP).pEther ;
     {
-    if( ((tinNormalS&)tinBaseP).pEther )
+    if( ((tinFullS&)tinBaseP).pEther )
 
     }
         if( POOP ) return ;

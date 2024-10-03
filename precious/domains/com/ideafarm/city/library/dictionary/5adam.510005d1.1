@@ -31,7 +31,7 @@ THREADmODE3rESTORE
     
             socket.listenF( tinBaseP ) ;
             homeS::homeIF().idPortListServerEmailIdAccount = socket.bindF( tinBaseP ) ;
-            socketC socket( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+            socketC socket( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
     
             ++ idCycle ;
         {
@@ -81,7 +81,7 @@ DONE( tmLoadHelperF )
         soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
     
         TN( tEmail , "9bn.3vho@gmail.com" ) ;
     {
@@ -96,9 +96,9 @@ DONE( tmLoadHelperF )
     }
         POPtINaRGS
         listC::walkIF( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ; //U::FUNCTION CHANGED: THE OLD CODE WALKED FIFO
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = (countT)&puseHelperP  ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listingInspect_ad5_chatterMaster_CBF  ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = (countT)&puseHelperP  ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_null ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listingInspect_ad5_chatterMaster_CBF  ;
         PUSHtINaRGS
 
         puseC pusem( puseMasterP ) ;
@@ -110,6 +110,8 @@ DONE( tmLoadHelperF )
         sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     while( !homeS::homeIF().idPortListServerEmailIdAccount )
+
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
 
     puseC& puseHelperP =  *(puseC*)pTaskP->c2 ;
     puseC& puseMasterP =  *(puseC*)pTaskP->c1 ;
@@ -146,7 +148,7 @@ DONE( tmTestQueryF )
         soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
     {
     for( countT idAccount = 1 ; idAccount <= 1 ; idAccount ++ )
 {
@@ -182,7 +184,7 @@ DONE( tmTestQueryF )
         soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         TN( tEmail , "123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0" ) ;
     {
@@ -392,7 +394,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinBaseS& tinBaseP , aptC& aptP , 
             }
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */
                 if( !bFake ) { DEL( pTaskP ) ; } /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.  THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */
-                if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] = - 1 ;
+                if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] = - 1 ;
                 TELL( "DONE0: i am outa here" )
                 ;
                     : thirdC::os_cAllKidThreadsI_IF( tinBaseP )
@@ -418,15 +420,15 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinBaseS& tinBaseP , aptC& aptP , 
                             DELzOMBIE( pDoomed ) ; /* tinBaseP IS DESTROYED HERE */
                             etherC* pDoomed = pEtThread ;
                         {
-                        DEL( ((tinNormalS&)tinBaseP).pEtScratch ) ;
-                        DEL( ((tinNormalS&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
+                        DEL( ((tinFullS&)tinBaseP).pEtScratch ) ;
+                        DEL( ((tinFullS&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
                         TELL( "DONE0: deleting etThread (and tinBaseP)" ) ;
-                        ((tinNormalS&)tinBaseP).pEther = 0 ;
+                        ((tinFullS&)tinBaseP).pEther = 0 ;
                         TELL( "DONE0: testing poolOld" ) ;
 
                         }
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttThreadFile ) ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttThreadFile ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttThreadFile ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttThreadFile ) ;
                             TELL( "DONE0: deleting thread file" ) ;
                         {
                         if( psttThreadFile )
@@ -437,26 +439,26 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinBaseS& tinBaseP , aptC& aptP , 
 
                 }
                     }
-                        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
-                        if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;
+                        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                        if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;
                         }
                             TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;
                             }
-                                while( ((tinNormalS&)tinBaseP).cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; }
+                                while( ((tinFullS&)tinBaseP).cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; }
                                 sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                             {
                             TELL( "DONE0: waiting for my kid threads to end" ) ;
 
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinNormalS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
+                            if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinFullS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
                             TELL( "DONE0: conditionally calling etherWhereF" ) ;
                         {
                         else
                         if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */
 
                         TELL( "DONE0: after returning from application code" ) ;
-                        ((tinNormalS&)tinBaseP).idPhase2 = 0 ;
-                        if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;
-                        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                        ((tinFullS&)tinBaseP).idPhase2 = 0 ;
+                        if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;
+                        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
                         TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */
                     {
                     /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/
@@ -680,7 +682,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tinBaseS& tinBaseP , aptC& aptP , 
         {
         while( !ether && !POOP )
 
-        psoP->etherF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch ) ;
+        psoP->etherF( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch ) ;
         SCOOPS
     {
     IFsCRATCH

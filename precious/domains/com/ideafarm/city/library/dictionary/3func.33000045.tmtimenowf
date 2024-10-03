@@ -8,7 +8,7 @@
 
 
 DONE( tmTimeNowF )
-//((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
+//((tinFullS&)tinBaseP).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
 
 }
     TELL( "tmTimeNowF: cleaning up" )
@@ -26,18 +26,18 @@ DONE( tmTimeNowF )
             sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         {
         TELL( "sleeping for a tock" )
-        etThread.osTimeNowF( tinBaseP , ((tinNormalS&)tinBaseP).pag1->_thirdC_.timeNow.time1 , ((tinNormalS&)tinBaseP).pag1->_thirdC_.timeNow.time2 ) ;
-        ((tinNormalS&)tinBaseP).pag1->_thirdC_.timeNow.time2 = ((tinNormalS&)tinBaseP).pag1->_thirdC_.timeNow.time1 = 0 ;
+        etThread.osTimeNowF( tinBaseP , ((tinFullS&)tinBaseP).pag1->_thirdC_.timeNow.time1 , ((tinFullS&)tinBaseP).pag1->_thirdC_.timeNow.time2 ) ;
+        ((tinFullS&)tinBaseP).pag1->_thirdC_.timeNow.time2 = ((tinFullS&)tinBaseP).pag1->_thirdC_.timeNow.time1 = 0 ;
         TELL( "working" )
     {
     while( !ether && !etThread )
     //CONJ: idThread MUST BE ENFORCED BECAUSE THE LOW THREADS ARE MONITORED AND THE idThread VALUES ARE USED TO INDEX INTO AN ARRAY
-    __( ((tinNormalS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmTimeNowF ) ; //COMMENT THIS OUT WHEN USING etherWhereF EARLY IN adamMainF
+    __( ((tinFullS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmTimeNowF ) ; //COMMENT THIS OUT WHEN USING etherWhereF EARLY IN adamMainF
 {
 if( !( cInstancesI ++ ) )
 static countT cInstancesI ;
 TELL( "setting up" )
-//((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
+//((tinFullS&)tinBaseP).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
 
 /*1*/TASK( tmTimeNowF )/*1*/
 /**/

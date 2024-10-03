@@ -106,16 +106,16 @@ TODO
     //{
     //etThread.diskMoveFileOrDirF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/files/readme.html") , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/files/1.1.0.html") ) ;
 
-    ((tinNormalS&)tinBaseP).flagsThreadMode2 = flagsThreadMode2Save ;
+    ((tinFullS&)tinBaseP).flagsThreadMode2 = flagsThreadMode2Save ;
 
     }
-        //((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , psttf ) ;
-        //STEP( ((tinNormalS&)tinBaseP).zEtScratch->boxPutHtmlFromKnowledgeTreeBaseF( tinBaseP , 0 , psttf , (strokeS*)st2P[ idt ] , (strokeS*)st3P[ idt ] , tCopy , (strokeS*)st4P[ idt ] , 0x100000 , 1 ) ) ;
+        //((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttf ) ;
+        //STEP( ((tinFullS&)tinBaseP).zEtScratch->boxPutHtmlFromKnowledgeTreeBaseF( tinBaseP , 0 , psttf , (strokeS*)st2P[ idt ] , (strokeS*)st3P[ idt ] , tCopy , (strokeS*)st4P[ idt ] , 0x100000 , 1 ) ) ;
         //etThread.strReplaceF( tinBaseP , psttf , (strokeS*)st1P[ idt ] , T("/packs/") , T("/files/") ) ; ___( psttf ) ;
         //ZE( strokeS* , psttf ) ;
         //THIS IS NORMALLY COMMENTED OUT
 
-        STEP( ((tinNormalS&)tinBaseP).zEtScratch->boxPutHtmlFromKnowledgeTreeBaseF( tinBaseP , 1 , (strokeS*)st1P[ idt ] , (strokeS*)st2P[ idt ] , (strokeS*)st3P[ idt ] , tCopy , (strokeS*)st4P[ idt ] , 0x100000 , 1 ) ) ;
+        STEP( ((tinFullS&)tinBaseP).zEtScratch->boxPutHtmlFromKnowledgeTreeBaseF( tinBaseP , 1 , (strokeS*)st1P[ idt ] , (strokeS*)st2P[ idt ] , (strokeS*)st3P[ idt ] , tCopy , (strokeS*)st4P[ idt ] , 0x100000 , 1 ) ) ;
         //THIS IS NORMALLY ENABLED
     {
     for( idt = 1 ; idt <= cTrees ; idt ++ )
@@ -126,14 +126,14 @@ TODO
     bLogKt = 1 ;
     bLogExp = 0 ;
 
-    //COMMENTED OUT TO KEEP IT QUIET IN THE LOG: STEP( verifyExampleSimplestExistsF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , bTestP                          ) ) ;
-    //STEP( insertInstanceSectionF(       tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , bTestP                          ) ) ;
-    //STEP( findFunctionCallInstancesF(   tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , bTestP , S1C('(') , T(TbLACK) ) ) ;
-    //STEP( writeSymbolBaseF(             tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , bTestP                          ) ) ;
-    //STEP( writeVisiblesHtmlF(           tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , bTestP                          ) ) ;
-    //STEP( listVisibleDefinitionsF(      tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , bTestP                          ) ) ;
-    //U: //STEP( testAutoF(                    tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , bTestP                     ) ) ;
-    //U: STEP( ((tinNormalS&)tinBaseP).zEtScratch->ifcHireF( tinBaseP , T("city.publisher.make") , ifcIDaDAMoLD_MAKEaLLaDAMS , T(bTestP?"!test":"") , flHIRE_WAIT ) ) ;
+    //COMMENTED OUT TO KEEP IT QUIET IN THE LOG: STEP( verifyExampleSimplestExistsF( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , bTestP                          ) ) ;
+    //STEP( insertInstanceSectionF(       tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , bTestP                          ) ) ;
+    //STEP( findFunctionCallInstancesF(   tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , bTestP , S1C('(') , T(TbLACK) ) ) ;
+    //STEP( writeSymbolBaseF(             tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , bTestP                          ) ) ;
+    //STEP( writeVisiblesHtmlF(           tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , bTestP                          ) ) ;
+    //STEP( listVisibleDefinitionsF(      tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , bTestP                          ) ) ;
+    //U: //STEP( testAutoF(                    tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , bTestP                     ) ) ;
+    //U: STEP( ((tinFullS&)tinBaseP).zEtScratch->ifcHireF( tinBaseP , T("city.publisher.make") , ifcIDaDAMoLD_MAKEaLLaDAMS , T(bTestP?"!test":"") , flHIRE_WAIT ) ) ;
 
     //}
     //    ether.delF( tinBaseP , pbFile ) ;
@@ -160,8 +160,8 @@ TODO
     ZE( boolT , bLogKt ) ;
     boolT bLogExp = 1 ;
 
-    ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;
-    flagsT flagsThreadMode2Save = ((tinNormalS&)tinBaseP).flagsThreadMode2 ;
+    ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;
+    flagsT flagsThreadMode2Save = ((tinFullS&)tinBaseP).flagsThreadMode2 ;
 
     ZE( countT , idStep ) ;
     etherC::ifcSayIF( T("pass ")+TF1(++stateP.idPass)+T(" begun")+tc , flSAY_APPEND | flSAY_LOG ) ;
@@ -180,10 +180,10 @@ voidT makePackF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , stackC&
             TN( tLogPool , "///d/ideafarm.log.thirdC" ) ;                                                                       \
             ZE( countT , info ) ;                                                                                             \
             }                                                                                                                   \
-                *((tinNormalS&)tinBaseP).zEtScratch = 0 ;                                                                                                 \
+                *((tinFullS&)tinBaseP).zEtScratch = 0 ;                                                                                                 \
                 etherC::ifcSayIF( T("FAILED\r\n") , flSAY_APPEND | flSAY_LOG ) ;                                                                    \
             {                                                                                                                   \
-            if( *((tinNormalS&)tinBaseP).zEtScratch )                                                                                                     \
+            if( *((tinFullS&)tinBaseP).zEtScratch )                                                                                                     \
             expP ;                                                                                                              \
             if( bLogKt ) etherC::ifcSayIF( T((strokeS*)st3P[idt])+tc , flSAY_APPEND | flSAY_LOG ) ;                                                 \
             etherC::ifcSayIF( T("pass ")+TF1(stateP.idPass)+T(" step ")+TF1(stateP.idStep)+T(bLogExp?": "#expP:"") , flSAY_APPEND | flSAY_LOG ) ;   \
@@ -196,7 +196,7 @@ voidT makePackF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , stackC&
             ZE( sCountT , timeN2 ) ;                                                                                          \
             ZE( countT , timeN1 ) ;                                                                                           \
         {                                                                                                                       \
-        if( ++ idStep > stateP.idStep && !ether && !etThread && !*((tinNormalS&)tinBaseP).zEtScratch )                                                    \
+        if( ++ idStep > stateP.idStep && !ether && !etThread && !*((tinFullS&)tinBaseP).zEtScratch )                                                    \
     {                                                                                                                           \
                                                                                                                                 \
 #define STEP(expP)                                                                                                              \
@@ -212,7 +212,7 @@ voidT makePackF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , stackC&
 
         // ALPHABETICAL END
         ///* 24 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("e2") , T("vectorOldC") ) ;
-        ///* 14 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("d2") , T("tinNormalS") ) ;
+        ///* 14 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("d2") , T("tinFullS") ) ;
         ///* 04 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("c2") , T("timeS") ) ;
         ///* f3 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("b2") , T("thirdParties") ) ;
         ///* e3 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("92") , T("textIdFileC") ) ;

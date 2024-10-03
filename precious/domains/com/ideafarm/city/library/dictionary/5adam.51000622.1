@@ -30,7 +30,7 @@ DONE( tmWorkF )
                     etThread.diskZipOldF( tinBaseP , tZip , tTo , flZIP_DELETE ) ;
 
                     if( POOP ) POOPR ;
-                    ((tinNormalS&)tinBaseP).pEtScratch->diskFileOrDirDeleteF( tinBaseP , tZip , flFILEoRdIRdELETE_null , 1 ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->diskFileOrDirDeleteF( tinBaseP , tZip , flFILEoRdIRdELETE_null , 1 ) ;
 
                     TN( tZip , "" ) ; tZip = T("20990009@0001.")+tTime+T(".ideafarm.!confidential.")+T(bPrecious?"precious":"elves")+T(".zip") ;
 
@@ -48,9 +48,9 @@ DONE( tmWorkF )
                 {
 
                 if( POOP ) POOPR ;
-                ((tinNormalS&)tinBaseP).pEtScratch->traceF( tinBaseP , T("zapped  ")+tBigTo ) ;
-                ((tinNormalS&)tinBaseP).pEtScratch->diskFileOrDirDeleteF( tinBaseP , tBigTo  , flFILEoRdIRdELETE_RECURSE , 1 ) ;
-                ((tinNormalS&)tinBaseP).pEtScratch->traceF( tinBaseP , T("zapping ")+tBigTo ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->traceF( tinBaseP , T("zapped  ")+tBigTo ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->diskFileOrDirDeleteF( tinBaseP , tBigTo  , flFILEoRdIRdELETE_RECURSE , 1 ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->traceF( tinBaseP , T("zapping ")+tBigTo ) ;
                 SCOOPS
             {
             IFbEcAREFUL

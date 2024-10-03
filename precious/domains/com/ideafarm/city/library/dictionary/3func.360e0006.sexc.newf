@@ -21,14 +21,14 @@
 
                 pMyNote->flagsMonitor = flOLDlEAKmONITOR_null ;
                 pMyNote->idThreadDel = 0 ;
-                pMyNote->idThreadNew = ((tinNormalS&)tinBaseP).monitor.idThread ;
-                thirdC::c_memcpyIF( tinBaseP , (byteT*)&pMyNote->cNest , (byteT*)&((tinNormalS&)tinBaseP).monitor.cInNest , sizeof pMyNote->cNest + sizeof pMyNote->pLFnest + sizeof pMyNote->pFlagsThreadLevelMode ) ;
-                pMyNote->idAdam    = ((tinNormalS&)tinBaseP).pag1->idAdam ;
+                pMyNote->idThreadNew = ((tinFullS&)tinBaseP).monitor.idThread ;
+                thirdC::c_memcpyIF( tinBaseP , (byteT*)&pMyNote->cNest , (byteT*)&((tinFullS&)tinBaseP).monitor.cInNest , sizeof pMyNote->cNest + sizeof pMyNote->pLFnest + sizeof pMyNote->pFlagsThreadLevelMode ) ;
+                pMyNote->idAdam    = ((tinFullS&)tinBaseP).pag1->idAdam ;
 
                 }
                     BLAMMO ;
-                    //((tinNormalS&)tinBaseP).pc Utility[ 1 ] = pMyNote->idDelLath ;
-                    //((tinNormalS&)tinBaseP).pc Utility[ 0 ] = idNewLathWas       ;
+                    //((tinFullS&)tinBaseP).pc Utility[ 1 ] = pMyNote->idDelLath ;
+                    //((tinFullS&)tinBaseP).pc Utility[ 0 ] = idNewLathWas       ;
                 {
                 if( pMyNote->idDelLath != idNewLathWas )
                 countT idNewLathWas = incv02AM( pMyNote->idNewLath ) ;
@@ -40,8 +40,8 @@
                 {
                 if( !pMyNote->idLineTagged || !pMyNote->idiFileTagged )
 
-                pMyNote->idiFileTagged = ((tinNormalS&)tinBaseP).monitor.pLFnest[ ( ( ((tinNormalS&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
-                pMyNote->idLineTagged  = ((tinNormalS&)tinBaseP).monitor.pLFnest[ ( ( ((tinNormalS&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 )     ] ;
+                pMyNote->idiFileTagged = ((tinFullS&)tinBaseP).monitor.pLFnest[ ( ( ((tinFullS&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
+                pMyNote->idLineTagged  = ((tinFullS&)tinBaseP).monitor.pLFnest[ ( ( ((tinFullS&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 )     ] ;
                 //USE THIS TO INVESTIGATE LEAKS THAT REPORT AS aaaaaaaa(aaaaaaaa) I.E. WERE NEVER TAGGED
 
                 pMyNote->dropHeaderCopy = ((countT*)pbDrop)[ - 1 ] ;
@@ -55,7 +55,7 @@
 
             if( F(pzMetaHead->flagsCt) & fliSEXc_MAPPEDtOdISK ) thirdC::c_memsetIF( pbDrop , cbGross - ( pzMetaHead->cbDropSeparator + pzMetaHead->cbDropHeader ) , 0 ) ; //TO SHRINK SIZE OF COMPRESSED DISK IMAGE; SANS tinBaseP USED FOR MAX SPEED     20180611@1452: EDITED TO AVOID WIPING THE DROP HEADER (WITHOUT ANALYSIS)
 
-            ((tinNormalS&)tinBaseP).cPoolDropCt ++ ;
+            ((tinFullS&)tinBaseP).cPoolDropCt ++ ;
 
             pbDrop = setSlotFingersAndDropHeaderF( tinBaseP , pbSlot , offSlot , cbGross , 1 ) ;
             byteT* pbSlot = pbData + cbGross * offSlot ;
@@ -63,7 +63,7 @@
     
             if( offSlot < pzMetaHead->cSlotsAvoidLo ) { BLAMMO ; } //U:: IN ALL 3*.sexC.*, REMOVE ALL OF THESE TESTS ONCE HAVE CONFIDENCE THAT CODE IS CORRECT
 
-            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW3( "\r\n[offSlot]: " , offSlot , "" ) ;
+            //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] ) CONoUTrAW3( "\r\n[offSlot]: " , offSlot , "" ) ;
 
             offSlotLath = offSlot ;
         {
@@ -144,7 +144,7 @@
     //}
     //    BLAMMO ;
     //{
-    //if( ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ROOTlEAKlOGGER && pPoolContainsMe == ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp )
+    //if( ((tinFullS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ROOTlEAKlOGGER && pPoolContainsMe == ((tinFullS&)tinBaseP).pag1->pPoolHomeTemp )
 
     //}
     //    }
@@ -155,7 +155,7 @@
     //    countT idIn = 1 + incv02AM( idInLath ) ;
     //    static countT idInLath ;
     //{
-    //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
+    //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
 
     DROPnOTEdOESnOTwANTmE
     _IO_

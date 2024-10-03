@@ -17,9 +17,9 @@
             if( POOP ) POOPR
             }
                 if( psOut ) psOut->connectF( tinBaseP , idPort , nicName ) ;
-                psOut = new( 0 , tinBaseP , LF ) socketC( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
+                psOut = new( 0 , tinBaseP , LF ) socketC( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
                 }
-                    ++ s ; ((tinNormalS&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TOCK ) ;
+                    ++ s ; ((tinFullS&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TOCK ) ;
                     sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 DEL( psOut ) ;
@@ -45,7 +45,7 @@
 {
 sgnDone_tmRiverAccept( tinBaseP , TAG( TAGiDnULL ) )
 bDestroy( 0 ) ,
-psOut( new( 0 , tinBaseP , LF ) socketC( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ) ,
+psOut( new( 0 , tinBaseP , LF ) socketC( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ) ,
 idPort( idPortP ? idPortP : ifcPORToLD1rIVERdEFAULT ) ,
 nicName( nicNameP ) ,
 baton( tinBaseP , TAG( TAGiDnULL ) ) ,

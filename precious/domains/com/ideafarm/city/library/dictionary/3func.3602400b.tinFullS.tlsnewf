@@ -14,7 +14,7 @@
     tlsCheckF() ;
 
     //}
-    //    LOGrAWtID2( "tinNormalS::newF [pb]: " , pbData ) //U:: TO FIND A BUG: REMOVE IN PRODUCTION FOR SPEED
+    //    LOGrAWtID2( "tinFullS::newF [pb]: " , pbData ) //U:: TO FIND A BUG: REMOVE IN PRODUCTION FOR SPEED
     //    tinBaseS& tinBaseP = *this ;
     //{
 
@@ -66,10 +66,10 @@
             *(countT*)pbc = idiFileP                                                                             ; pbc += sizeof( countT ) ; // idiFile
             *(countT*)pbc = idLineP                                                                              ; pbc += sizeof( countT ) ; // idLine
             *(countT*)pbc = ( TLSeNTRYoFF_endNotUsed - 1 ) * sizeof( countT ) + costaNameP + costaInGroupP + cbP ; pbc += sizeof( countT ) ; // cbEntry
-            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && costaInGroupP ) { CONoUTrAW( postInGroupP ) ; CONoUTrAW( "\r\n" ) ; }
-            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] && costaNameP    ) { CONoUTrAW( postNameP    ) ; CONoUTrAW( "\r\n" ) ; }
-            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ]                  ) { CONoUTrAW3( "tinNormalS::newF/entry formatted at " , (countT)pbc , "\r\n" ) ; }
-            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) ((tinNormalS&)tinBaseP).pc Utility[ 1 ] ++ ;
+            //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] && costaInGroupP ) { CONoUTrAW( postInGroupP ) ; CONoUTrAW( "\r\n" ) ; }
+            //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] && costaNameP    ) { CONoUTrAW( postNameP    ) ; CONoUTrAW( "\r\n" ) ; }
+            //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ]                  ) { CONoUTrAW3( "tinFullS::newF/entry formatted at " , (countT)pbc , "\r\n" ) ; }
+            //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] ) ((tinFullS&)tinBaseP).pc Utility[ 1 ] ++ ;
             const byteT* const pbe = pbTls + cbTls ;
             byteT*             pbc = pbTls + th.offTopEntry ;
         
@@ -204,9 +204,9 @@
         ;
             : "\r\nerror:  tlsNewF called on raw thread (tmBreakF)\r\n"
             ? "\r\nerror:  tlsNewF called on raw thread (tmHeartF)\r\n"
-        osTextT* postSay = ((tinNormalS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinHeartI
+        osTextT* postSay = ((tinFullS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinHeartI
     {
-    if( ((tinNormalS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinHeartI || ((tinNormalS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinBreakI  ) // RAW THREAD, SO CANNOT CALL TINSL
+    if( ((tinFullS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinHeartI || ((tinFullS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinBreakI  ) // RAW THREAD, SO CANNOT CALL TINSL
 
     //_IO_
     //SPEED OPTIMIZATION: THIS _IO_ WOULD HAVE THE #1 HIGHEST FREQUENCY OF CALLS
@@ -229,7 +229,7 @@
 
     tinBaseS& tinBaseP = *this ;
 {
-/*1*/byteT* tinNormalS::tlsNewF( const countT idLineP , const countT idiFileP , const countT cbP , const osTextT* const postNameP , const osTextT* const postInGroupP )/*1*/
+/*1*/byteT* tinFullS::tlsNewF( const countT idLineP , const countT idiFileP , const countT cbP , const osTextT* const postNameP , const osTextT* const postInGroupP )/*1*/
 
 //
 //    postInGroup

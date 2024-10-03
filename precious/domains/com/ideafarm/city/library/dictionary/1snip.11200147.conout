@@ -12,9 +12,9 @@
         OStEXTAK( ostoBuf , "\r\n" ) ;                                                                                      \
         OStEXTA( ostoBuf , postP ) ;                                                                                        \
         OStEXTAK( ostoBuf , ": " ) ;                                                                                        \
-        OStEXTA( ostoBuf , ((tinNormalS&)tinBaseP).postThreadName ) ;                                                                          \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                                          \
         OStEXTAK( ostoBuf , "." ) ;                                                                                         \
-        OStEXTC( ostoBuf , ((tinNormalS&)tinBaseP).monitor.idThread , ' ' ) ;                                                                          \
+        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , ' ' ) ;                                                                          \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
         TINSL                                                                                                               \
     {                                                                                                                       \
@@ -23,7 +23,7 @@
 
 
 //#define CONoUT(postP) thirdC::dosWriteStdOutIF( (postP) ) ;
-//#define CONoUT(postP) { ZE( DWORD , cba ) ; WriteFile( (HANDLE)GetStdHandle( STD_OUTPUT_HANDLE ) , postP , ((tinNormalS&)tinBaseP).brcRaw , &cba , 0 ) ; }//INTENTIONALLY NOT CLOSED, PER MSDN DOC COMMENT
+//#define CONoUT(postP) { ZE( DWORD , cba ) ; WriteFile( (HANDLE)GetStdHandle( STD_OUTPUT_HANDLE ) , postP , ((tinFullS&)tinBaseP).brcRaw , &cba , 0 ) ; }//INTENTIONALLY NOT CLOSED, PER MSDN DOC COMMENT
 //BOSdOnOTtEST( WHATgbo , strlen( postP ) )
 
 /**/

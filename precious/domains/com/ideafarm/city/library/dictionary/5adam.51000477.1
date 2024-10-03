@@ -17,7 +17,7 @@ BOSpOOP
 BOS( WHATgbo , BOSoK , ReleaseDC( (HWND)(countT)window , hdc ) )
 BOSdOnOTtEST( WHATgbo , EnumFontFamilies( hdc , "Terminal" , (FARPROC)myFuncF , (countT)&c6b ) )
 count6S c6b( (countT)&tinBaseP , (countT)&etThread , (countT)&info , (countT)&hdc , (countT)&window ) ;
-HDC hdc = (HDC)((tinNormalS&)tinBaseP).brcRaw ;
+HDC hdc = (HDC)((tinFullS&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , GetDC( (HWND)(countT)window ) )
 LOGFONT info ;
@@ -36,11 +36,11 @@ TODO
     BOSpOOP
     BOS( WHATgbo , BOSoK , TextOut( hdc , osColF( 100 )  , osRowF( 20 * idCall , window ) , "hello, Jesus!" , 0xd ) )
     
-    HGDIOBJ hObj = (HGDIOBJ)((tinNormalS&)tinBaseP).brcRaw ;
+    HGDIOBJ hObj = (HGDIOBJ)((tinFullS&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , SelectObject( hdc , hFont ) )
     // WINDOWrEFERENCEbEGIN( tinBaseP , &window ) ;
 
-    HFONT hFont = (HFONT)((tinNormalS&)tinBaseP).brcRaw ;
+    HFONT hFont = (HFONT)((tinFullS&)tinBaseP).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , CreateFontIndirect( &info ) )
     etThread.memCopyF( tinBaseP , (byteT*)&info , (byteT*)&pInfoP->elfLogFont , sizeof info ) ;

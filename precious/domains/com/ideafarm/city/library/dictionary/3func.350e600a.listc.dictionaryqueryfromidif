@@ -13,18 +13,18 @@
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     POPtINaRGS
     DELzOMBIE( pvsp ) ;
-    blobVSP* pvsp = (blobVSP*)&((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] ;
-    blobVSP   vsp( *(blobVSP*)&((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] ) ;
+    blobVSP* pvsp = (blobVSP*)&((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] ;
+    blobVSP   vsp( *(blobVSP*)&((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] ) ;
 
     walkIF( tinBaseP , pczName , flLISToPEN_null , idGrabLayerP ) ;
     countT pczName[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM2 , LISTnAMEsYS_DICTIONARY , 0 } ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = cbNeeded ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = idP ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkQueryFromIdCBF ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = cbNeeded ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = idP ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkQueryFromIdCBF ;
     PUSHtINaRGS
 
-    __( cbNeeded > sizeof ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP - 2 * sizeof( countT ) ) ;
+    __( cbNeeded > sizeof ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP - 2 * sizeof( countT ) ) ;
     countT cbNeeded = sizeof( blobVSP ) ;
 
     grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
@@ -34,8 +34,10 @@
 
     }
         if( POOP ) return 0 ;
-        __( ((tinNormalS&)tinBaseP).monitor.cGrabbed && !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING ) ) ; // TO PREVENT DEADLOCKING, A THREAD MAY NOT BEGIN A WALK IN THE LIST TREE WHILE IT POSESSES A listingC ; THIS PROHIBITION IS MORE THAN NECESSARY BUT IS SIMPLE TO ENFORCE ; THE NECESSARY CONDITION IS TO PREVENT "BACKWARD" WALKING ; cGrabbed COUNTS ANY grabitC GRAB, NOT JUST GRABS OF listingC INSTANCES
+        __( ((tinFullS&)tinBaseP).monitor.cGrabbed && !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING ) ) ; // TO PREVENT DEADLOCKING, A THREAD MAY NOT BEGIN A WALK IN THE LIST TREE WHILE IT POSESSES A listingC ; THIS PROHIBITION IS MORE THAN NECESSARY BUT IS SIMPLE TO ENFORCE ; THE NECESSARY CONDITION IS TO PREVENT "BACKWARD" WALKING ; cGrabbed COUNTS ANY grabitC GRAB, NOT JUST GRABS OF listingC INSTANCES
         __Z( idP ) ;
+        if( POOP ) return 0 ;
+        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return 0 ;
     {
     IFbEcAREFUL

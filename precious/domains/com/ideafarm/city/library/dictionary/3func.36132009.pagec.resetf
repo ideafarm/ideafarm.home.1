@@ -15,11 +15,11 @@
         }
             }
                 }
-                    ((tinNormalS&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 0 ] = 0 ;
-                    ((tinNormalS&)tinBaseP).pBookMark[ offbm ].pbz            = 0 ;
-                    ((tinNormalS&)tinBaseP).pBookMark[ offbm ].pBooks         = 0 ;
+                    ((tinFullS&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 0 ] = 0 ;
+                    ((tinFullS&)tinBaseP).pBookMark[ offbm ].pbz            = 0 ;
+                    ((tinFullS&)tinBaseP).pBookMark[ offbm ].pBooks         = 0 ;
                 {
-                if( !( -- ((tinNormalS&)tinBaseP).pBookMark[ offbm ].cRef ) )
+                if( !( -- ((tinFullS&)tinBaseP).pBookMark[ offbm ].cRef ) )
             {
             else
             if( offbm == -1 ) { BLAMMO ; }
@@ -29,12 +29,12 @@
                     break ;
                     offbm = offr ;
                 {
-                if( ((tinNormalS&)tinBaseP).pBookMark[ offr ].pBooks == &books )
+                if( ((tinFullS&)tinBaseP).pBookMark[ offr ].pBooks == &books )
             {
-            for( countT offr = 0 ; offr < sizeof ((tinNormalS&)tinBaseP).pBookMark / sizeof ((tinNormalS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
+            for( countT offr = 0 ; offr < sizeof ((tinFullS&)tinBaseP).pBookMark / sizeof ((tinFullS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
             countT offbm = -1 ;
         {
-        if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_DOnOTrEGISTERpAGEc ) )
+        if( !( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_DOnOTrEGISTERpAGEc ) )
 
         flags = 0 ;
 
@@ -45,7 +45,7 @@
             //U:: BLAMMO SHOULD BE HERE, BUT WHEN IT IS HERE I GET CNR
 
             //}
-            //    ((tinNormalS&)tinBaseP).pEther->trace F( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
+            //    ((tinFullS&)tinBaseP).pEther->trace F( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
             //
             //    OStEXTAK( ostoSay , " -" ) ;
             //    OStEXTC(  ostoSay , cRefWas , 0 ) ;
@@ -56,21 +56,21 @@
             //    OStEXTAK( ostoSay , "pageC  [this,pcRef,cRefWas]:    " ) ;
             //    OStEXT(   ostoSay , TUCK << 2 ) ;
             //{
-            //if( ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
+            //if( ((tinFullS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
 
             books.unlockF( tinBaseP ) ;
 
             }
                 BLAMMO ;
                 //}
-                //    ((tinNormalS&)tinBaseP).pEther->trace F( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
+                //    ((tinFullS&)tinBaseP).pEther->trace F( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_LOOP | flTRACE_PARAMETERiSoStEXT ) ;
                 //
                 //    OStEXTAK( ostoSay , "    BLAMMO!  (!cRefWas)" ) ;
                 //    OStEXTCmIN( ostoSay , this , 8 ) ;
                 //    OStEXTAK( ostoSay , "pageC  [this]:    " ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
-                //if( ((tinNormalS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
+                //if( ((tinFullS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
             {
             if( !cRefWas )
 
@@ -78,6 +78,8 @@
             books.lockF( tinBaseP , TAG( TAGiDnULL ) ) ; //U:: CONJ: DON'T NEED TO LOCK THE CURRENT BOOK (THIS COMMENT APPLIES EVERYWHERE THAT i HAVE pcRef, WHICH SHOULD POINT INTO A bookC INSTANCE THAT WILL NEVER BE DELETED WHILE *pcRef IS NOT 0
         {
         if( pcRef )
+
+        if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
     {
     if( pbz )
     SCOOP

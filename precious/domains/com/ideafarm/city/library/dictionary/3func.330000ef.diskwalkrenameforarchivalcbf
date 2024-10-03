@@ -491,7 +491,7 @@
             TN( tOld , ifFileNameC( tinBaseP , etThread , postNameP ) ) ;                                       // OLD IFC FILE NAME
             TN( tIdeaFarmDotADot , "!ideafarm.a.2.00000000.00000001." ) ;                                   //20231122@1235: STORE THE FILESET AS A SINGLE ZIP FILE
             TN( tIdeaFarmDot9Dot , "!ideafarm.9.2.00000000.00000001." ) ;                                   //U:: idOwner IS HARDCODED HERE TO ".2.00000000.00000001." (FOREIGN ORDERING)
-            etherC& etThread = *((tinNormalS&)tinBaseP).pEther ;
+            etherC& etThread = *((tinFullS&)tinBaseP).pEther ;
         {
         if( bDoIt )
 
@@ -504,9 +504,9 @@
 
         diskWalkCopyInfoS& infoP = *(diskWalkCopyInfoS*)pcArgP ;
 
-        //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("diskWalkRenameForArchivalCBF [postNameP]:    ")+T(postNameP) ) ;
+        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("diskWalkRenameForArchivalCBF [postNameP]:    ")+T(postNameP) ) ;
     {
-    else if( ((tinNormalS&)tinBaseP).pEther )
+    else if( ((tinFullS&)tinBaseP).pEther )
     else if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] == '\\' ) bDoIt = 1 ; // IF A DIRECTORY
     if( !postNameP ) ;
     ZE( boolT , bDoIt ) ;

@@ -11,15 +11,15 @@
     }
         if( pTask ) { ZE( countT , tnu ) ; c_beginthreadIF( tinBaseP , tnu , pTask->tmF , (voidT*)pTask /*U:NO LONGER SUPPORTED: , !!( F(pTask->flags) & flTHREADlAUNCH_ORPHAN )*/ ) ; }    //U:: , const countT cbStackP
         taskS* pTask = (taskS*)cTask ;
-        *((tinNormalS&)tinBaseP).pag1->_thirdC_.pStkTasksWhenQuitting >> cTask ;
+        *((tinFullS&)tinBaseP).pag1->_thirdC_.pStkTasksWhenQuitting >> cTask ;
         ZE( countT , cTask ) ;
     {
-    while( !*((tinNormalS&)tinBaseP).pag1->_thirdC_.pThLongLasting && *((tinNormalS&)tinBaseP).pag1->_thirdC_.pStkTasksWhenQuitting )
+    while( !*((tinFullS&)tinBaseP).pag1->_thirdC_.pThLongLasting && *((tinFullS&)tinBaseP).pag1->_thirdC_.pStkTasksWhenQuitting )
     _IO_
 
     }
         if( POOP ) return ;
-        __( !((tinNormalS&)tinBaseP).pag1->_thirdC_.pStkTasksWhenQuitting ) ;
+        __( !((tinFullS&)tinBaseP).pag1->_thirdC_.pStkTasksWhenQuitting ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL

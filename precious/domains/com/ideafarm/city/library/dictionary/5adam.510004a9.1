@@ -90,7 +90,7 @@ TODO
 DONE( tmTimeRemainingF )
 
 }
-    *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
+    *((tinFullS&)tinBaseP).zEtScratch = 0 ;
     }
         ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x10 ) ;
         sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
@@ -99,13 +99,13 @@ DONE( tmTimeRemainingF )
     
     }
         while( cTries -- ) sockd.writeF( tinBaseP , idType == 1 ? ifcPORToLD2_ENABLEpRIVATEhTTP1 : ifcPORToLD2_ENABLEpRIVATEhTTP2 , nnIfc , (byteT*)pnn , cnnOut * sizeof( nicNameC ) ) ;
-        ((tinNormalS&)tinBaseP).zEtScratch->strokeF( tinBaseP , T("throwing ")+TF1(cTries)+T(" datagrams requesting access to private http\r\n") ) ; //U::
+        ((tinFullS&)tinBaseP).zEtScratch->strokeF( tinBaseP , T("throwing ")+TF1(cTries)+T(" datagrams requesting access to private http\r\n") ) ; //U::
         countT cTries = 0x8 ;
     
         countT cnnOut = cnn <= cnnMax ? cnn : cnnMax ;
         const countT cnnMax = ifcCBdATAGRAMmAX / sizeof( nicNameC ) ;
     
-        socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , pnn , cnn ) ;
+        socketC::nicNameIF( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , pnn , cnn ) ;
         ZE( countT , cnn ) ;
         ZE( nicNameC* , pnn ) ;
         //CODE SYNC: ea40104 a210104
@@ -129,11 +129,11 @@ DONE( tmTimeRemainingF )
         //U::__( stCourses - 1 ) ;
 
         else            { CONoUTrAW( "!queryTimeRemaining job aok\r\n" ) ; }    
-        if( *((tinNormalS&)tinBaseP).zEtScratch ) { CONoUTrAW( "!queryTimeRemaining job FAILED\r\n" ) ; }    
-        ((tinNormalS&)tinBaseP).zEtScratch->ifcJobF( tinBaseP , stCourses , 0x4010120 , sOrder , stOrders , T("!queryTimeRemaining") , 1 , nnIfc ) ;
+        if( *((tinFullS&)tinBaseP).zEtScratch ) { CONoUTrAW( "!queryTimeRemaining job FAILED\r\n" ) ; }    
+        ((tinFullS&)tinBaseP).zEtScratch->ifcJobF( tinBaseP , stCourses , 0x4010120 , sOrder , stOrders , T("!queryTimeRemaining") , 1 , nnIfc ) ;
         stOrders << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
-        stackC stOrders(  tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-        stackC stCourses( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+        stackC stOrders(  tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+        stackC stCourses( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
     
         sOrder << qq.idType ;
         sOrder << qq.idComputer ;
@@ -144,16 +144,16 @@ DONE( tmTimeRemainingF )
             
     ZE( sCountT , timeR2 ) ;
     ZE( countT , timeR1 ) ;
-    ((tinNormalS&)tinBaseP).zEtScratch->memCopyF( tinBaseP , pbq + sizeof( countT ) , (byteT*)&qq , sizeof qq ) ;
+    ((tinFullS&)tinBaseP).zEtScratch->memCopyF( tinBaseP , pbq + sizeof( countT ) , (byteT*)&qq , sizeof qq ) ;
     *(countT*)pbq = 1 ;
     byteT pbq[ sizeof( countT ) + sizeof qq ] ;
     qq.idType = idType ;
-    qq.idComputer = ((tinNormalS&)tinBaseP).zEtScratch->diskIdF( tinBaseP , T("///d/") ) ;
+    qq.idComputer = ((tinFullS&)tinBaseP).zEtScratch->diskIdF( tinBaseP , T("///d/") ) ;
     queryTimeRemainingS qq ;
                 
     countT idPortMe = sockd.bindF( tinBaseP ) ;
-    socketC sockd( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
-    nicNameC nnIfc = socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , T("www.ideafarm.com") ) ;
+    socketC sockd( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    nicNameC nnIfc = socketC::nicNameIF( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , T("www.ideafarm.com") ) ;
 {
 while( !ether && !etThread )
 countT idType = 1 ; //CYCLE 1,2,1,2,...

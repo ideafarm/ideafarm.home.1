@@ -19,8 +19,8 @@
             {
             if( POOP )
 
-            (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , psBagOk ) ;
-            (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , psBag ) ;
+            (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , psBagOk ) ;
+            (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , psBag ) ;
             }
                 TELL( "reading ok-" )
                 VERIFYrELAY2( sock , *psBagOk ) ;
@@ -30,20 +30,20 @@
                 hdrBagIF( tinBaseP , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTnULL ) ;
             {
             if( psBag && psBagOk )
-            (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , psBagOk , TAG( TAGiDnULL ) ) ;
+            (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , psBagOk , TAG( TAGiDnULL ) ) ;
             ZE( soulC* , psBagOk ) ;
-            (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , psBag , TAG( TAGiDnULL ) ) ;
+            (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , psBag , TAG( TAGiDnULL ) ) ;
             ZE( soulC* , psBag ) ;
         {
         else
         }
-            ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("testIF: could not connect [idptTestP:nn,idPort]:    ")+T((nicNameC&)idptTestP)+T("    ")+TF2((countT&)idptTestP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("testIF: could not connect [idptTestP:nn,idPort]:    ")+T((nicNameC&)idptTestP)+T("    ")+TF2((countT&)idptTestP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             bOk = 0 ;
             POOPRqUIET
         {
         if( POOP )
         sock.connectF( tinBaseP , idptTestP , (nicNameC&)idptTestP ) ;
-        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
         SCOOPS
     {
     IFsCRATCH

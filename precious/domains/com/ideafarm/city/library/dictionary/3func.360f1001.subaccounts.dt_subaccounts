@@ -11,20 +11,20 @@
     }
         if( POOP ) POOPR
 
-        { _IO_ if( pStkEmailPenpalContainsAnd ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsAnd ) ; }
-        { _IO_ if( pStkEmailPenpalContainsOr  ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsOr  ) ; }
-        { _IO_ if( pStkEmailPenpalExactOr     ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalExactOr     ) ; }
-        { _IO_ if( pStkRecipe                 ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkRecipe                 ) ; }
-        { _IO_ if( pStkAutoresponse           ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkAutoresponse           ) ; }
-        { _IO_ if( pStkEmailRelay             ) (*((tinNormalS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailRelay             ) ; }
+        { _IO_ if( pStkEmailPenpalContainsAnd ) (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsAnd ) ; }
+        { _IO_ if( pStkEmailPenpalContainsOr  ) (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsOr  ) ; }
+        { _IO_ if( pStkEmailPenpalExactOr     ) (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalExactOr     ) ; }
+        { _IO_ if( pStkRecipe                 ) (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkRecipe                 ) ; }
+        { _IO_ if( pStkAutoresponse           ) (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkAutoresponse           ) ; }
+        { _IO_ if( pStkEmailRelay             ) (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailRelay             ) ; }
     
         PUSE( tinBaseP , *(byteT**)&psttNameOut ) ;
         PUSE( tinBaseP , *(byteT**)&psttNameIn  ) ;
         PUSE( tinBaseP , *(byteT**)&psttTitle   ) ;
 
         }
-            //CONoUTrAWb( "\r\nsubaccountS/dt [idAdam,idThread,idAcc,idSub,bDone]: " , ((tinNormalS&)tinBaseP).pag1->idAdam , "(" , ((tinNormalS&)tinBaseP).monitor.idThread , ") " , idAcc , ":" , idSub , " bDone:" , bDone , "\r\n" ) ; //U::
-            //CONoUTrAW( ((tinNormalS&)tinBaseP).postThreadName ) ;
+            //CONoUTrAWb( "\r\nsubaccountS/dt [idAdam,idThread,idAcc,idSub,bDone]: " , ((tinFullS&)tinBaseP).pag1->idAdam , "(" , ((tinFullS&)tinBaseP).monitor.idThread , ") " , idAcc , ":" , idSub , " bDone:" , bDone , "\r\n" ) ; //U::
+            //CONoUTrAW( ((tinFullS&)tinBaseP).postThreadName ) ;
 
             if( POOP ) { POOPR ; }
 
@@ -68,7 +68,7 @@
             soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
             sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-            socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+            socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
         {
         if( F(flagsThis) & flSUBACCOUNT_SET )
 

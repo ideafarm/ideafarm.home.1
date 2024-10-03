@@ -30,7 +30,7 @@
         {
         if( psttAdamHireAfterP && psttAdamHireAfterP->idAdam )
 
-        etherC& etScratch = *((tinNormalS&)tinBaseP).pEtScratch ;
+        etherC& etScratch = *((tinFullS&)tinBaseP).pEtScratch ;
 
         SCOOPS
     {
@@ -603,7 +603,7 @@
     if( psttLocalContainerP ) { ether.diskMapFileNameF( tinBaseP , psttLocalContainerMapped , psttLocalContainerP ) ; ___( psttLocalContainerMapped ) ; }
     ZE( strokeS* , psttLocalContainerMapped ) ;
 
-    const boolT  bRetry = &ether == ((tinNormalS&)tinBaseP).pEtScratch ;
+    const boolT  bRetry = &ether == ((tinFullS&)tinBaseP).pEtScratch ;
     const boolT& bQuit = etPrime ;
     etherC& etPrime = etherC::etPrimeIF() ;
     etherC& etRock = etherC::etRockIF( tinBaseP ) ;
@@ -1012,7 +1012,7 @@ TASK( tmFreshenFileF )
         //const poopC& poopScratch = etScratch ;
 
         etherC& etPrime   = etherC::etPrimeIF( tinBaseP ) ;
-        etherC& etScratch = *((tinNormalS&)tinBaseP).pEtScratch ;
+        etherC& etScratch = *((tinFullS&)tinBaseP).pEtScratch ;
 
         SCOOPS
     {
@@ -1031,7 +1031,7 @@ voidT walkLocalToLoadKvF( tinBaseS& tinBaseP , etherC& etherP , const boolT& bQu
         }
             sDoomedFileNamesP << (strokeS*)T(postBufferCP) ;
         {
-        if( !pCloudNixCBFP || (*pCloudNixCBFP)( tinBaseP , *((tinNormalS&)tinBaseP).pEther , cloudP , T(postBufferCP) , pcArgNixP ) )
+        if( !pCloudNixCBFP || (*pCloudNixCBFP)( tinBaseP , *((tinFullS&)tinBaseP).pEther , cloudP , T(postBufferCP) , pcArgNixP ) )
     {
     if( !POOP && bNix )
 
@@ -1113,7 +1113,7 @@ countT walkRemoteToNixCBF( tinBaseS& tinBaseP , countT& cArg1P , countT& cArg2P 
         }
             sDoomedFileNamesP << (strokeS*)T(postBufferCP) ;
         {
-        if( !pCloudNixCBFP || (*pCloudNixCBFP)( tinBaseP , *((tinNormalS&)tinBaseP).pEther , cloudP , T(postBufferCP) , pcArgNixP ) )
+        if( !pCloudNixCBFP || (*pCloudNixCBFP)( tinBaseP , *((tinFullS&)tinBaseP).pEther , cloudP , T(postBufferCP) , pcArgNixP ) )
     {
     if( !POOP && bNix )
 
@@ -1198,7 +1198,7 @@ countT walkLocalToNixCBF( tinBaseS& tinBaseP , countT& cArg1P , countT& cArg2P )
 
             //etCloud.traceF( tinBaseP , T("stale:  ")+tShort ) ;
         {
-        if( !pCloudUpdateCBFP || (*pCloudUpdateCBFP)( tinBaseP , *((tinNormalS&)tinBaseP).pEther , cloudP , tShort , pcArgUpdateP ) )
+        if( !pCloudUpdateCBFP || (*pCloudUpdateCBFP)( tinBaseP , *((tinFullS&)tinBaseP).pEther , cloudP , tShort , pcArgUpdateP ) )
     {
     if( !POOP && bDo )
     
@@ -1406,7 +1406,7 @@ TASK( tmHasherF )
         //etRock.traceF( tinBaseP , T("hasherF [idIn]: ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         etherC& etPrime   = etherC::etPrimeIF( tinBaseP ) ;
         etherC& etRock    = etherC::etRockIF( tinBaseP ) ;
-        etherC& etScratch = *((tinNormalS&)tinBaseP).pEtScratch ;
+        etherC& etScratch = *((tinFullS&)tinBaseP).pEtScratch ;
 
         SCOOPS
     {

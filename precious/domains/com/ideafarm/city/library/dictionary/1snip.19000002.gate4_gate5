@@ -151,9 +151,9 @@ extern "C" void** _export __syscall OPENSSL_Applink( void )
 
 /**/
 */
- functions that do not, such as operators, call pTinF() to obtain the address (by walking up the stack) of the thread's tinNormalS, object
+ functions that do not, such as operators, call pTinF() to obtain the address (by walking up the stack) of the thread's tinFullS, object
  most functions receive a reference to tinBaseP as a parameter
- each thread's local storage consists of its tinNormalS, object and a countT object on the thread stack that contains the address of that object
+ each thread's local storage consists of its tinFullS, object and a countT object on the thread stack that contains the address of that object
 thread local storage is supported by storing a fingerprint value and a tinBaseS* value (initially 0) on each thread's stack
 i look complicated because base operating systems vary slightly in how they pass me command line info, and whether they expect me to return a value
 the only thing that i do is call threadLocalStorageNoTlsF

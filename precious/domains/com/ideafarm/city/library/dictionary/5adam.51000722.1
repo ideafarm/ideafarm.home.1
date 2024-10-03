@@ -24,43 +24,43 @@ TODO
     return bDoIt ;
 
     }
-        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttShort ) ;
-        ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
+        ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttShort ) ;
+        ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
 
         }
             DEL( pInfoShrunk ) ;
             DEL( pInfoUnshrunk ) ;
 
             }
-                ((tinNormalS&)tinBaseP).pEther->diskFileOrDirDeleteF( tinBaseP , tShrunk , flFILEoRdIRdELETE_null , 0 ) ;
+                ((tinFullS&)tinBaseP).pEther->diskFileOrDirDeleteF( tinBaseP , tShrunk , flFILEoRdIRdELETE_null , 0 ) ;
                 etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("deleting: ")+tShrunk ) ;
             {
             if( pInfoShrunk->cbUsedHigh > pInfoUnshrunk->cbUsedHigh || pInfoShrunk->cbUsed > pInfoUnshrunk->cbUsed )
 
             }
-                ((tinNormalS&)tinBaseP).pEther->diskFileQueryF( tinBaseP , pInfoUnshrunk , fi ) ;
+                ((tinFullS&)tinBaseP).pEther->diskFileQueryF( tinBaseP , pInfoUnshrunk , fi ) ;
                 fileC fi( tinBaseP , (strokeS*)tUnshrunk , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
             {
             ZE( infoFileS* , pInfoUnshrunk ) ;
 
             }
-                ((tinNormalS&)tinBaseP).pEther->diskFileQueryF( tinBaseP , pInfoShrunk , fi ) ;
+                ((tinFullS&)tinBaseP).pEther->diskFileQueryF( tinBaseP , pInfoShrunk , fi ) ;
                 fileC fi( tinBaseP , (strokeS*)tShrunk , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
             {
             ZE( infoFileS* , pInfoShrunk ) ;
         {
-        if( ((tinNormalS&)tinBaseP).pEther->diskFileExistsF( tinBaseP , tUnshrunk ) )
+        if( ((tinFullS&)tinBaseP).pEther->diskFileExistsF( tinBaseP , tUnshrunk ) )
 
         TN( tUnshrunk , "" ) ; tUnshrunk = T("///d/tmp/archive.unshrunk/")+T(psttShort) ;
 
-        ((tinNormalS&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShort , tShrunk , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShort ) ;
+        ((tinFullS&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShort , tShrunk , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShort ) ;
         ZE( strokeS* , psttShort ) ;
         ZE( strokeS* , psttPath ) ;
 
         TN( tShrunk , ifName ) ;
-        ifFileNameC ifName( tinBaseP , *((tinNormalS&)tinBaseP).pEther , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , *((tinFullS&)tinBaseP).pEther , postNameP ) ;
     {
-    if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] != '\\' && ((tinNormalS&)tinBaseP).pEther ) // IF NOT A DIRECTORY
+    if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] != '\\' && ((tinFullS&)tinBaseP).pEther ) // IF NOT A DIRECTORY
     ZE( boolT , bDoIt ) ;
     _IO_
 {

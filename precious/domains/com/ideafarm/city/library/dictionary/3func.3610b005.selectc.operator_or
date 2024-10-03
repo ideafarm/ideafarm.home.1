@@ -11,29 +11,29 @@
     return selRC ;
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
-    ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                            \
+    ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                            \
     }
         }
             POPtINaRGS
             listC::walkIF( tinBaseP , pczHe ) ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = selRC.idName ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectCBF ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = selRC.idName ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectCBF ;
             PUSHtINaRGS
         {
     
         }
             POPtINaRGS
             listC::walkIF( tinBaseP , pczMe ) ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = selRC.idName ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectCBF ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = selRC.idName ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectCBF ;
             PUSHtINaRGS
         {
 
         puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
     {
-    ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;
+    ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;
 
     countT pczHe[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , selectP.idName , LISTnAMEsYS_RECORD , 0 } ;
     countT pczMe[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED ,         idName , LISTnAMEsYS_RECORD , 0 } ;
@@ -41,7 +41,9 @@
 
     }
         if( POOP ) return selRC ;
-        __( ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
+        __( ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
+        if( POOP ) return selRC ;
+        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return selRC ;
     {
     IFbEcAREFUL

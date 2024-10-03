@@ -29,12 +29,14 @@ DONE( tmGorillaF )
     }
         OSsLEEPf( 0 ) ;
         g1.ungrabF( tinBaseP ) ;
-        //OSsLEEPf( ((tinNormalS&)tinBaseP).ranUni % TUCK ) ;
+        //OSsLEEPf( ((tinFullS&)tinBaseP).ranUni % TUCK ) ;
         CONoUTrAW( post2 ) ;
         g1.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     while( !ether )
-    const osTextT post2[] = { ((tinNormalS&)tinBaseP).monitor.idThread % 26 + 'a' , 0 } ;
+    const osTextT post2[] = { ((tinFullS&)tinBaseP).monitor.idThread % 26 + 'a' , 0 } ;
+
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 
     countT& cDone = *(countT*)pTaskP->c2 ;
     grabS&  g1    =  *(grabS*)pTaskP->c1 ;

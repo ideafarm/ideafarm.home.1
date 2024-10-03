@@ -24,19 +24,19 @@
         {
 
         }
-            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsPid.ungrabF( tinBaseP ) ;
-            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle->freeF( tinBaseP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
-            hProcess.osF( ifcIDtYPEhANDLE_PROCESS , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle ) ;
-            ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsPid = osPidP ;
-            if( !((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinBaseP , osPidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
-            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsPid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsPid.ungrabF( tinBaseP ) ;
+            ((tinFullS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle->freeF( tinBaseP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
+            hProcess.osF( ifcIDtYPEhANDLE_PROCESS , *((tinFullS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle ) ;
+            ((tinFullS&)tinBaseP).pag1->_thirdC_.lOsPid = osPidP ;
+            if( !((tinFullS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinBaseP , osPidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
+            ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsPid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
-            ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle->freeF( tinBaseP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
-            hThread.osF( ifcIDtYPEhANDLE_THREAD , *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
-            ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsTid = osTidP ;
-            if( !((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle->idSlotOfLeverF( tinBaseP , osTidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
-            ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
+            ((tinFullS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle->freeF( tinBaseP ) ;                                       //A:ASSUME: ONLY I AM WAITING FOR THIS PROCESS.  IT IS ILLEGAL FOR MULTIPLE THREADS TO WAIT FOR A SINGLE PROCESS TO END.
+            hThread.osF( ifcIDtYPEhANDLE_THREAD , *((tinFullS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
+            ((tinFullS&)tinBaseP).pag1->_thirdC_.lOsTid = osTidP ;
+            if( !((tinFullS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle->idSlotOfLeverF( tinBaseP , osTidP ) ) { BLAMMO ; }     //THIS LINE WILL DETECT MULTIPLE THREADS WAITING FOR A SINGLE PROCESS TO END
+            ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             handleC hThread(  tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD  ) ;
         {
@@ -66,8 +66,8 @@
 
     }
         if( POOP ) return ;
-        __Z( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinBaseP , osPidP ) ) ;
-        __Z( ((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle->idSlotOfLeverF( tinBaseP , osTidP ) ) ;
+        __Z( ((tinFullS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle->idSlotOfLeverF( tinBaseP , osPidP ) ) ;
+        __Z( ((tinFullS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle->idSlotOfLeverF( tinBaseP , osTidP ) ) ;
         __( valueP ) ;
         __( idDeathTypeP ) ;
         if( POOP ) return ;

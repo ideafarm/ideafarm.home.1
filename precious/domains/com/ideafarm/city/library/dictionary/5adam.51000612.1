@@ -62,8 +62,8 @@ DONE( tmGorillaReadF )
         }
             //CONoUTrAW5( "[idCycle,cSteps]: " , idCycle , "    " , cSteps , "1\r\n" ) ;
             countT cSteps = idStepEnd - idStepBegin ;
-            countT idStepEnd = ((tinNormalS&)tinBaseP).monitor.idStep ;
-            ((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ;
+            countT idStepEnd = ((tinFullS&)tinBaseP).monitor.idStep ;
+            ((tinFullS&)tinBaseP).pc Utility[ 0 ] -- ;
             // /*if( idGorillaReadP == 1 ) */{ CONoUTrAW( "2\r\n" ) ; }
 
             }
@@ -84,8 +84,8 @@ DONE( tmGorillaReadF )
                 // /*if( idGorillaReadP == 1 ) */{ CONoUTrAW( "9\r\n" ) ; }
             {
 
-            ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ;
-            countT idStepBegin = ((tinNormalS&)tinBaseP).monitor.idStep ;
+            ((tinFullS&)tinBaseP).pc Utility[ 0 ] ++ ;
+            countT idStepBegin = ((tinFullS&)tinBaseP).monitor.idStep ;
             // /*if( idGorillaReadP == 1 ) */{ CONoUTrAW( "a\r\n" ) ; }
             
             //DELlIST( datumS , pDatum ) ;
@@ -165,12 +165,14 @@ TASK( tmGorillaReadF )
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
     POPtINaRGS
     flagsT flagsRC = listC::walkIF( tinBaseP , hRecordP ) ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = ( (listC*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) )->idNameF() ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = ( (listC*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) )->idNameF() ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
     PUSHtINaRGS
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
+
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
 {
 flagsT selectWalkCBF( tinBaseS& tinBaseP , etherC& etThread , handleC& hRecordP )
 

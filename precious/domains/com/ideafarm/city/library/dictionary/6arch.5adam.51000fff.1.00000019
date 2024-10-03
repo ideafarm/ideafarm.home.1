@@ -175,10 +175,12 @@ TODO
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
     POPtINaRGS
     flagsT flagsRC = listC::walkIF( tinBaseP , hRecordP ) ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
     PUSHtINaRGS
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
+
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
 {
 flagsT selectWalkCBF( tinBaseS& tinBaseP , etherC& etThread , handleC& hRecordP )
 

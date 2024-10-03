@@ -9,9 +9,9 @@
 
 }
     cioSetupF( tinBaseP ) ;
-    ((tinNormalS&)tinBaseP).pag1->_etherC_.cio_pcQuit = &bQuitP ;
-    if( ((tinNormalS&)tinBaseP).pag1->_etherC_.cio_pStkOut ) { BLAMMO ; } //CAN ONLY BE DECLARED BEFORE CHANNEL I/O IS SET UP (I MUST BE THE WO'TH SETUP CALL)
-    if( ((tinNormalS&)tinBaseP).pag1->_etherC_.cio_pcQuit  ) { BLAMMO ; } //CAN ONLY BE DECLARED WO TIME
+    ((tinFullS&)tinBaseP).pag1->_etherC_.cio_pcQuit = &bQuitP ;
+    if( ((tinFullS&)tinBaseP).pag1->_etherC_.cio_pStkOut ) { BLAMMO ; } //CAN ONLY BE DECLARED BEFORE CHANNEL I/O IS SET UP (I MUST BE THE WO'TH SETUP CALL)
+    if( ((tinFullS&)tinBaseP).pag1->_etherC_.cio_pcQuit  ) { BLAMMO ; } //CAN ONLY BE DECLARED WO TIME
     _IO_
 
     }

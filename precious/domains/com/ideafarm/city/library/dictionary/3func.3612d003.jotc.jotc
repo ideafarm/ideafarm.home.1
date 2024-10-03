@@ -10,7 +10,7 @@
 }
     //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("jotC + [this,tag,name]: ")+TF2((countT)this,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(tagHighNibble,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+T(postNameP) ) ;
 
-    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , pcpIdBookSizePairs ) ;
+    ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , pcpIdBookSizePairs ) ;
     }
         idMaxWritten += cJots ;
         }
@@ -47,26 +47,26 @@
             }
                 break ;
                 idSlotJot = 1 + offr ;
-                ((tinNormalS&)tinBaseP).ppJot[ offr ] = this ;
+                ((tinFullS&)tinBaseP).ppJot[ offr ] = this ;
             {
-            if( !((tinNormalS&)tinBaseP).ppJot[ offr ] )
+            if( !((tinFullS&)tinBaseP).ppJot[ offr ] )
         {
         for( ; offr < CsLOTSjOTrEGISTRY ; offr ++ )
         ZE( countT , offr ) ;
     {
     if( !( F(flagsP) & flJOTc_DOnOTrEGISTER ) )
 
-    //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("jotC [postNameP]:    ")+T(postNameP) ) ;
+    //if( ((tinFullS&)tinBaseP).pEther ) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("jotC [postNameP]:    ")+T(postNameP) ) ;
 
     }
         }
             }
-                //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("jotC / existed       [postNameP]:    ")+T(postNameP) ) ;
+                //if( ((tinFullS&)tinBaseP).pEther ) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("jotC / existed       [postNameP]:    ")+T(postNameP) ) ;
                 *(flagsT*)&flagsCt |= flJOTc_FILEeXISTED ;
             {
             else
             }
-                //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("jotC / newly created [postNameP]:    ")+T(postNameP) ) ;
+                //if( ((tinFullS&)tinBaseP).pEther ) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("jotC / newly created [postNameP]:    ")+T(postNameP) ) ;
             {
             if( !bDataExisted )
 
@@ -134,7 +134,7 @@ cIndexEntriesPerIndexBook( bksIndex.cbBodyBookF() / sizeof( handle0111C ) ) ,
     F(flagsP) & flJOTc_PRIVATE
     ,
             : T("") )+T(postNameP)+T(".jotC.index")
-            ? TF2(((tinNormalS&)tinBaseP).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tinNormalS&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")
+            ? TF2(((tinFullS&)tinBaseP).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tinFullS&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")
         F(flagsP) & flJOTc_PRIVATE
     (
     ,
@@ -180,14 +180,14 @@ bksIndex
     ,
     )
             : T("") )+T(postNameP)+T(".jotC.data"
-            ? TF2(((tinNormalS&)tinBaseP).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tinNormalS&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")
+            ? TF2(((tinFullS&)tinBaseP).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tinFullS&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")
         F(flagsP) & flJOTc_PRIVATE
     (
     ,
     tinBaseP , TAG( TAGiDnULL )
 (
 bksData
-_idThreadCt( ((tinNormalS&)tinBaseP).monitor.idThread ) ,
+_idThreadCt( ((tinFullS&)tinBaseP).monitor.idThread ) ,
 tagHighNibble( 0 ) ,
 idSlotJot( 0 ) ,
 grabC( tinBaseP , TAG( TAGiDnULL ) , flagsGrabP | flGRABc_NOTjEALOUS , idGrabLayerP ) ,     // flGRABc_NOTjEALOUS IS ADDED BECAUSE USING ME WILL USUALLY OR ALWAYS RESULT IN booksC BEING GRABBED

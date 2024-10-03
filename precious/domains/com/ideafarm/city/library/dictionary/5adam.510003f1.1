@@ -38,7 +38,7 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         }
             etThread.delF( tinBaseP , pbDatum ) ;
             }
-                eatDatumF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , pbDatum , swCar , idcHirer , b_idcHirer , sw_pcRace , pcRaceId , b_pcRaceId ) ;
+                eatDatumF( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , pbDatum , swCar , idcHirer , b_idcHirer , sw_pcRace , pcRaceId , b_pcRaceId ) ;
             {
             byteT* pbDatum = (byteT*)cDatum ;
             stDatum >> cDatum ;
@@ -114,7 +114,7 @@ DONE( tmPeerF )
         }
             pso->etherF( tinBaseP , etThread ) ;
             pso->readMsgNokF( tinBaseP ) ;
-            pso->etherF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch ) ;
+            pso->etherF( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch ) ;
         {
         else
         if( !etThread ) pso->readMsgOkF( tinBaseP ) ;

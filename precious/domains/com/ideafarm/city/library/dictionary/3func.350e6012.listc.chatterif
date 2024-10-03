@@ -18,11 +18,11 @@
     ;
         : 0
         ? cArgP
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] = F(flagsP) & flLISTwALKcHATTER_MAPiDjOTvALUES
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flagsP ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = pczName[ 1 ] ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_IGNOREdELETErEQUESTEDbIT ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] = F(flagsP) & flLISTwALKcHATTER_MAPiDjOTvALUES
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flagsP ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = pczName[ 1 ] ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_IGNOREdELETErEQUESTEDbIT ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
     PUSHtINaRGS
 
     grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
@@ -40,6 +40,8 @@
         FV( flLISTwALKcHATTER , flagsP ) ;
         if( POOP ) return flagsRC ;
         __Z( pczName ) ;
+        if( POOP ) return flagsRC ;
+        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return flagsRC ;
     {
     IFbEcAREFUL

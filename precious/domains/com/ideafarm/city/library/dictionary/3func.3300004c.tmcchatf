@@ -17,9 +17,9 @@ DONEdRIVENsERVER( tmcChatF )
         ZE( countT , cFoo ) ;
         TELL( "reading a countT that will never arrive, so that client can disconnect" )
 
-        //etherC::ifcSayIF( TF1(idAdamHandling)+T(" ")+TF1(((tinNormalS&)tinBaseP).osPid)+T(" --cSessions:")+TF1(--cSessions) , flSAY_APPEND | flSAY_LOG ) ;
+        //etherC::ifcSayIF( TF1(idAdamHandling)+T(" ")+TF1(((tinFullS&)tinBaseP).osPid)+T(" --cSessions:")+TF1(--cSessions) , flSAY_APPEND | flSAY_LOG ) ;
         (*chatHandlerF)( tinBaseP , ether , etThread , psoP , idChatSession , cArg , idAdamHandling ) ;
-        //etherC::ifcSayIF( TF1(idAdamHandling)+T(" ")+TF1(((tinNormalS&)tinBaseP).osPid)+T(" ++cSessions:")+TF1(++cSessions) , flSAY_APPEND | flSAY_LOG ) ;
+        //etherC::ifcSayIF( TF1(idAdamHandling)+T(" ")+TF1(((tinFullS&)tinBaseP).osPid)+T(" ++cSessions:")+TF1(++cSessions) , flSAY_APPEND | flSAY_LOG ) ;
         TELL( "calling chat handler" )
 
         grab_idChatSessionLast.ungrabF( tinBaseP ) ;

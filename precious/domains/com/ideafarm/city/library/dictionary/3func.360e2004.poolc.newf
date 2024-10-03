@@ -28,7 +28,7 @@
         //    if( cbP == 0x241b0 )
         //    CONoUTrAW3( "\r\npoolC::newF - [cbP]: " , cbP , "" ) ;
         //{
-        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) //TO FIND A BUG
+        //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] ) //TO FIND A BUG
 
         }
             }
@@ -43,7 +43,7 @@
             //    for( countT offs = 0 ; offs < sizeof guts.ppSlots / sizeof guts.ppSlots[ 0 ] ; offs ++ )
             //    CONoUTrAW( "\r\nslotsC instances:\r\n" ) ;
             //{
-            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
+            //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
             //U::DISABLE THIS IN PRODUCTION ; TO FIND A BUG
 
             }
@@ -127,27 +127,27 @@
             //    for( countT offs = 0 ; offs < sizeof guts.ppSlots / sizeof guts.ppSlots[ 0 ] ; offs ++ )
             //    CONoUTrAW( "\r\nslotsC instances:\r\n" ) ;
             //{
-            //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
+            //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
             //DISABLE THIS IN PRODUCTION ; TO FIND A BUG
 
-            if( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
-            if( this != ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp && !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ) { BLAMMO ; }
+            if( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
+            if( this != ((tinFullS&)tinBaseP).pag1->pPoolAdamTemp && !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ) { BLAMMO ; }
 
             if( F(guts.flagsCt) & flPOOLc_READoNLY ) { BLAMMO ; }
         {
         else
-        else if( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLaLLOCATEfROMhEAP ) pbP = processGlobal4I.heap.newF( tinBaseP , idLineP , idiFileP , cbP ) ;
+        else if( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLaLLOCATEfROMhEAP ) pbP = processGlobal4I.heap.newF( tinBaseP , idLineP , idiFileP , cbP ) ;
         }
             pbP          = (byteT*)idJot ;
             countT idJot = juse.writeF( tinBaseP , 0 , cbP ) ;
-            jotC&  juse  = *((tinNormalS&)tinBaseP).ppJot[ (countT)pbP - JrEQUEST_min ] ;
+            jotC&  juse  = *((tinFullS&)tinBaseP).ppJot[ (countT)pbP - JrEQUEST_min ] ;
         {
         if( pbP ) // IF I AM TO DIVERT THIS REQUEST TO A SPECIFIED jotC INSTANCE RATHER THAN ALLOCATE FROM MY sexC INSTANCES
 
         //}
         //    CONoUTrAW3( "\r\npoolC::newF + [cbP]: " , cbP , "" ) ;
         //{
-        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) //TO FIND A BUG
+        //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] ) //TO FIND A BUG
 
         //    }
         //        BLAMMOiFcALLEDbY( "bookC" )
@@ -160,10 +160,10 @@
     {
 
     //}
-    //    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("poolC::newF called for wo of these suckas") ) ;
+    //    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("poolC::newF called for wo of these suckas") ) ;
     //    BLAMMO ;
     //{
-    //if( /*((tinNormalS&)tinBaseP).pEther &&*/ idLineP == 0x120 && idiFileP == 0x36008003 )
+    //if( /*((tinFullS&)tinBaseP).pEther &&*/ idLineP == 0x120 && idiFileP == 0x36008003 )
 
     }
         if( POOP ) return ;

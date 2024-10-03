@@ -11,7 +11,7 @@
     //U::return idKeysFound ;
     return -1 ; //TO DISABLE ENFORCEMENT
 
-    //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("[idKeysFound]:    ")+TF3(((countT*)&idKeysFound)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3(((countT*)&idKeysFound)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+    //if( ((tinFullS&)tinBaseP).pEther ) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("[idKeysFound]:    ")+TF3(((countT*)&idKeysFound)[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3(((countT*)&idKeysFound)[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
 
     }
         }
@@ -38,7 +38,7 @@
                                 (
                                 if
 
-                                //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("found:    ")+T(pInfo->postOsName) ) ;
+                                //if( ((tinFullS&)tinBaseP).pEther ) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("found:    ")+T(pInfo->postOsName) ) ;
                             {
                             if( pInfo )
                             dosFindFileOrDirF( tinBaseP , pInfo , hFind , postLike ) ;
@@ -71,7 +71,7 @@
                 }
                     if( POOP ) POOPR ;
 
-                    ((thirdC&)*((tinNormalS&)tinBaseP).pEtScratch).dosQueryFSInfoF( tinBaseP , pInfoDisk1 , postDrive2 , !bThumb ? 0 : ( TUCK >> 4 ) ) ;
+                    ((thirdC&)*((tinFullS&)tinBaseP).pEtScratch).dosQueryFSInfoF( tinBaseP , pInfoDisk1 , postDrive2 , !bThumb ? 0 : ( TUCK >> 4 ) ) ;
 
                     SCOOPS
                 {
@@ -82,11 +82,11 @@
                 ZE( infoDisk1S* , pInfoDisk1 ) ;
             {
             if( info.TrimEnabled || bThumb )
-            //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("[TrimEnabled]:    ")+T(postDrive)+tb4+TF2(info.TrimEnabled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //if( ((tinFullS&)tinBaseP).pEther ) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("[TrimEnabled]:    ")+T(postDrive)+tb4+TF2(info.TrimEnabled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 bThumb = 1 ;
-                //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("query failed [rc]:    ")+T(postDrive)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //if( ((tinFullS&)tinBaseP).pEther ) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("query failed [rc]:    ")+T(postDrive)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 countT rc = GetLastError() ;
             {
             if( !bOk ) //THIS WILL HAPPEN FOR USB THUMB DRIVES
@@ -97,7 +97,7 @@
         {
         else
         }
-            //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("open failed [rc]:    ")+T(postDrive)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //if( ((tinFullS&)tinBaseP).pEther ) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("open failed [rc]:    ")+T(postDrive)+tb4+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             countT rc = GetLastError() ;
         {
         if( osh == INVALID_HANDLE_VALUE )

@@ -12,33 +12,28 @@
 
     pcP[ offo ] = 0 ;
     }
-        pcP[ offo ++ ] = pLFstep[ ( ( ids & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ;
-        pcP[ offo ++ ] = pLFstep[   ( ids & OFFsLOTtINsTEPmAX ) << 1       ] ;
-
+        pcP[ offo ++ ] = pFlagsThreadLevelMode[ idn & OFFsLOTtINnESTmAX ] ;
         if( offo >= ccP - 1 ) break ;
     {
-    for( countT ids = monitor.idStep ; ids >= idsf ; ids -- )
+    for( countT idn = monitor.cInNest ; idn >= idnf ; idn -- )
     ZE( countT , offo ) ;
 
-    if( (sCountT)idsf < 1 ) idsf = 1 ;
-    countT idsf = monitor.idStep - OFFsLOTtINsTEPmAX ;
+    if( (sCountT)idnf < 1 ) idnf = 1 ;
+    countT idnf = monitor.cInNest - OFFsLOTtINnESTmAX ;
 
     //IN
 
     }
         if( POOP ) return ;
-        __( !( ccP % 2 ) ) ;
         __Z( pcP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
 {
-/*1*/voidT tinNormalS::get_pLFstep_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP )/*1*/
+/*1*/voidT tinFullS::get_pFlagsThreadLevelMode_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP )/*1*/
 /**/
 */
-  set it to sizeof ((tinNormalS&)tinBaseP).monitor.pLFnest + 1 unless you are only interested in looking up a few levels
-  1 will work, but the caller will only get the null terminator
-  must be an odd value
+  set it to sizeof ((tinFullS&)tinBaseP).pFlagsThreadLevelMode + 1 unless you are only interested in looking up a few levels
  ccP
   i will terminate the values that i write with a ze value
   i will write the call nest TAG( TAGiDnULL ) values into pcP until at most ccP-1 values have been written

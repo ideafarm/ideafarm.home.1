@@ -90,24 +90,24 @@ TODO
                 }
                     }
                         }
-                            else if( offi == 1 + ( ((tinNormalS*)pTin)->idStep & OFFsLOTtINsTEPmAX ) ) break ;
+                            else if( offi == 1 + ( ((tinFullS*)pTin)->idStep & OFFsLOTtINsTEPmAX ) ) break ;
                             if( !offi ) offi = 1 + OFFsLOTtINsTEPmAX ;
-                            info.pIdLineStep[ info.cFound * ( 1 + CfOUNDmAX ) + idso ] = ((tinNormalS*)pTin)->pIdLineStep[ offi ] ;
-                            info.pIdFileStep[ info.cFound * ( 1 + CfOUNDmAX ) + idso ] = ((tinNormalS*)pTin)->pIdFileStep[ offi ] ;
+                            info.pIdLineStep[ info.cFound * ( 1 + CfOUNDmAX ) + idso ] = ((tinFullS*)pTin)->pIdLineStep[ offi ] ;
+                            info.pIdFileStep[ info.cFound * ( 1 + CfOUNDmAX ) + idso ] = ((tinFullS*)pTin)->pIdFileStep[ offi ] ;
                             offi -- ;
                             idso ++ ;
                         {
                         while( !etThread )
-                        countT offi = 1 + ( ((tinNormalS*)pTin)->idStep & OFFsLOTtINsTEPmAX ) ;
+                        countT offi = 1 + ( ((tinFullS*)pTin)->idStep & OFFsLOTtINsTEPmAX ) ;
                         ZE( countT , idso ) ;
 
-                        info.pCForAdamToUse[ info.cFound ] = ((tinNormalS*)pTin)->pc Utility[ 0 ] ;
-                        info.pIdStep   [ info.cFound ] = ((tinNormalS*)pTin)->idStep ;
-                        info.pIdlTask  [ info.cFound ] = ((tinNormalS*)pTin)->idlTask ;
-                        info.pIdiTask  [ info.cFound ] = ((tinNormalS*)pTin)->idiTask ;
-                        info.pIdiOwner [ info.cFound ] = ((tinNormalS*)pTin)->idiOwner ;
-                        info.pTime2    [ info.cFound ] = ((tinNormalS*)pTin)->time2 ;
-                        info.pTime1    [ info.cFound ] = ((tinNormalS*)pTin)->time1 ;
+                        info.pCForAdamToUse[ info.cFound ] = ((tinFullS*)pTin)->pc Utility[ 0 ] ;
+                        info.pIdStep   [ info.cFound ] = ((tinFullS*)pTin)->idStep ;
+                        info.pIdlTask  [ info.cFound ] = ((tinFullS*)pTin)->idlTask ;
+                        info.pIdiTask  [ info.cFound ] = ((tinFullS*)pTin)->idiTask ;
+                        info.pIdiOwner [ info.cFound ] = ((tinFullS*)pTin)->idiOwner ;
+                        info.pTime2    [ info.cFound ] = ((tinFullS*)pTin)->time2 ;
+                        info.pTime1    [ info.cFound ] = ((tinFullS*)pTin)->time1 ;
                         info.pTin      [ info.cFound ] = pTin ;
 
                         tinBaseS* pTin = (tinBaseS*)pvP ;
@@ -116,7 +116,7 @@ TODO
 
                     info.cFound ++ ;
                 {
-                if( !fDeleted && idc != idClientP && cbd == sizeof( countT ) + sizeof( tinNormalS ) && pvP && getNegAM( *(countT*)pvP ) == FINGERnEG_TINs )
+                if( !fDeleted && idc != idClientP && cbd == sizeof( countT ) + sizeof( tinFullS ) && pvP && getNegAM( *(countT*)pvP ) == FINGERnEG_TINs )
 
                 countT idFile   = db.idFile ;
                 countT idLine   = db.idLine ;
@@ -190,9 +190,9 @@ struct infoS
 /*1*/WAKEhIDE( "scanPool" )/*1*/
 /**/
 */
-to avoid detection, a thread must update its tinNormalS object within each TICK period
+to avoid detection, a thread must update its tinFullS object within each TICK period
 notifies city center when a speed 0 thread is detected
-monitors the tinNormalS items in the poolOld
+monitors the tinFullS items in the poolOld
 /*
 
 //

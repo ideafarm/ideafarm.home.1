@@ -8,9 +8,10 @@
 
 
     }
-        *((tinNormalS&)tinBaseP).postTellIf = 0 ;                                                                  \
-        thirdC::c_strncpyIF( tinBaseP , ((tinNormalS&)tinBaseP).postTell , postFromP , sizeof ((tinNormalS&)tinBaseP).postTell ) ;        \
+        *((tinFullS&)tinBaseP).postTellIf = 0 ;                                                                  \
+        thirdC::c_strncpyIF( tinBaseP , ((tinFullS&)tinBaseP).postTell , postFromP , sizeof ((tinFullS&)tinBaseP).postTell ) ;        \
     {                                                                                           \
+    if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL )                                               \
                                                                                                 \
 #define TELL(postFromP)                                                                         \
 

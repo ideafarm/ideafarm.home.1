@@ -6,15 +6,15 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
-
     }
-        thirdC::c_strncpyIF( tinBaseP , ((tinNormalS&)tinBaseP).postTell , ostot , sizeof ((tinNormalS&)tinBaseP).postTell ) ;            \
-        OStEXTA( ostot , postFromP )                                                            \
-        OStEXTA( ostot , ((tinNormalS&)tinBaseP).postTell )                                                        \
-        OStEXT( ostot , sizeof ((tinNormalS&)tinBaseP).postTell )                                                  \
-    {                                                                                           \
-                                                                                                \
-#define TELLcONCAT(postFromP)                                                                   \
+        thirdC::c_strncpyIF( tinBaseP , ((tinFullS&)tinBaseP).postTell , ostot , sizeof ((tinFullS&)tinBaseP).postTell ) ;          \
+        OStEXTA( ostot , postFromP )                                                                                                    \
+        OStEXTA( ostot , ((tinFullS&)tinBaseP).postTell )                                                                             \
+        OStEXT(  ostot , sizeof ((tinFullS&)tinBaseP).postTell )                                                                      \
+    {                                                                                                                                   \
+    if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL )                                                                                       \
+                                                                                                                                        \
+#define TELLcONCAT(postFromP)                                                                                                           \
 /**/
 /*1*//*TELLcONCAT(postFromP)*//*1*/
 */

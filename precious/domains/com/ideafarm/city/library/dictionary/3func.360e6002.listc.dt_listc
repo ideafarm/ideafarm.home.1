@@ -9,31 +9,33 @@
 
 }
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
-    //((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ;
-    //CONoUTrAW7( "~listC [@,idName,idLevel]: " , this , " " , idName , " " , ((tinNormalS&)tinBaseP).pc Utility[ 0 ] , " / -\r\n" ) ;
+    //((tinFullS&)tinBaseP).pc Utility[ 0 ] -- ;
+    //CONoUTrAW7( "~listC [@,idName,idLevel]: " , this , " " , idName , " " , ((tinFullS&)tinBaseP).pc Utility[ 0 ] , " / -\r\n" ) ;
 
     else flagsi |= fliLISTINGc_DESTRUCTING ;
     }
         POPtINaRGS
-        walkF( tinBaseP , ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ; //U::CODE TO ENFORCE THAT THIS IS SET BY CALLER
+        walkF( tinBaseP , ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ; //U::CODE TO ENFORCE THAT THIS IS SET BY CALLER
 
-        //((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_IGNOREcREFdATUM | flLISTwALK_IGNOREcREF ; //U::WHY DO I NEED TO IGNORE CREF ; CAN'T I BLOCK PENDING CLIENT REFERENCES?
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteAllCBF ;
+        //((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_IGNOREcREFdATUM | flLISTwALK_IGNOREcREF ; //U::WHY DO I NEED TO IGNORE CREF ; CAN'T I BLOCK PENDING CLIENT REFERENCES?
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteAllCBF ;
         PUSHtINaRGS
 
         }
             POPtINaRGS
-            walkF( tinBaseP , ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ;
-            //if( flagsi & fliLISTINGc_GRABBED ) ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_CALLERgRABBEDrOOT ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkUnIndexCBF ;
+            walkF( tinBaseP , ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ;
+            //if( flagsi & fliLISTINGc_GRABBED ) ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_CALLERgRABBEDrOOT ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkUnIndexCBF ;
             PUSHtINaRGS
         {
     {
     if( flagsi & fliLISTINGc_DESTRUCTING )
-    if( !( flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMO ; }
+    if( !( flagsi & fliLISTINGc_MIXINlIST ) ) { BLAMMOiD( 0x13131313 ) ; }
 
-    //CONoUTrAW7( "~listC [@,idName,idLevel]: " , this , " " , idName , " " , ((tinNormalS&)tinBaseP).pc Utility[ 0 ] , " / +\r\n" ) ;
-    //((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ;
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
+
+    //CONoUTrAW7( "~listC [@,idName,idLevel]: " , this , " " , idName , " " , ((tinFullS&)tinBaseP).pc Utility[ 0 ] , " / +\r\n" ) ;
+    //((tinFullS&)tinBaseP).pc Utility[ 0 ] ++ ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     _IO_

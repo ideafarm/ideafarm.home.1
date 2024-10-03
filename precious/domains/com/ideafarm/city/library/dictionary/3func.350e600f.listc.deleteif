@@ -16,11 +16,11 @@
 
         POPtINaRGS
         flagsRC |= walkIF( tinBaseP , pczWalk , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] = (countT)&flagsRC ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flagsP ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = cDoomed ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteListCBF ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] = (countT)&flagsRC ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flagsP ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = cDoomed ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteListCBF ;
         PUSHtINaRGS
 
         }
@@ -102,6 +102,8 @@
         __( *pczNameP - LISTnAMEsYS_ROOT ) ;
         if( POOP ) return flagsRC ;
         __Z( pczNameP ) ;
+        if( POOP ) return flagsRC ;
+        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return flagsRC ;
     {
     IFbEcAREFUL

@@ -52,7 +52,7 @@
         BOSpOOP
         BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
         INCoShANDLES
-        hsv = (SC_HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
+        hsv = (SC_HANDLE)((tinFullS&)tinBaseP).brcRaw ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , CreateService( hsm , postNameP , postDisplayNameP , SERVICE_ALL_ACCESS , SERVICE_WIN32_OWN_PROCESS | SERVICE_INTERACTIVE_PROCESS , bManualStart ? SERVICE_DEMAND_START : SERVICE_AUTO_START , SERVICE_ERROR_NORMAL , postFileP , 0 , 0 , 0 , "LocalSystem" , 0 ) )
         //U::DOES NOT WORK: hsv = CreateService( hsm , postNameP , postNameP , SERVICE_ALL_ACCESS , SERVICE_WIN32_OWN_PROCESS | SERVICE_INTERACTIVE_PROCESS , SERVICE_AUTO_START , SERVICE_ERROR_NORMAL , postFileP , 0 , 0 , 0 , "administrator" , "m9oqbV3s" ) ;
@@ -82,13 +82,13 @@
             INCoShANDLES
         {
         if( hsv )
-        SC_HANDLE hsv = (SC_HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
+        SC_HANDLE hsv = (SC_HANDLE)((tinFullS&)tinBaseP).brcRaw ;
         BOS( WHATgbo , BOSoK , OpenService( hsm , postNameP , SERVICE_ALL_ACCESS ) )
         INCoShANDLES
     {
     if( !POOP )
     BOSpOOP
-    SC_HANDLE hsm = (SC_HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
+    SC_HANDLE hsm = (SC_HANDLE)((tinFullS&)tinBaseP).brcRaw ;
     BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
 
     }

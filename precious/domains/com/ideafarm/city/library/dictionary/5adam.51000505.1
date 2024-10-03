@@ -29,11 +29,11 @@ REST
             }
                 }
                     idDup ++ ;
-                    *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
+                    *((tinFullS&)tinBaseP).zEtScratch = 0 ;
                 {
                 else
-                if( !*((tinNormalS&)tinBaseP).zEtScratch ) break ;
-                ((tinNormalS&)tinBaseP).zEtScratch->diskMoveFileOrDirF( tinBaseP , tDesk+T("soixlOld.reject.")+(idDup?TF1(idDup)+T("."):T(""))+T(psttNameShort) , psttc1 ) ;
+                if( !*((tinFullS&)tinBaseP).zEtScratch ) break ;
+                ((tinFullS&)tinBaseP).zEtScratch->diskMoveFileOrDirF( tinBaseP , tDesk+T("soixlOld.reject.")+(idDup?TF1(idDup)+T("."):T(""))+T(psttNameShort) , psttc1 ) ;
             {
             while( !ether && idDup < 0x10000 )
             ZE( countT , idDup ) ;
@@ -44,8 +44,8 @@ REST
         }
             }
                 else            break ;
-                if( *((tinNormalS&)tinBaseP).zEtScratch ) { *((tinNormalS&)tinBaseP).zEtScratch = 0 ; ether.osSleepF( tinBaseP , TUCK * 0x40 ) ; }
-                ((tinNormalS&)tinBaseP).zEtScratch->boxZapF( tinBaseP , psttc1 ) ;
+                if( *((tinFullS&)tinBaseP).zEtScratch ) { *((tinFullS&)tinBaseP).zEtScratch = 0 ; ether.osSleepF( tinBaseP , TUCK * 0x40 ) ; }
+                ((tinFullS&)tinBaseP).zEtScratch->boxZapF( tinBaseP , psttc1 ) ;
             {
             while( !ether )
             etThread.osThreadF( tinBaseP , countTC() , tmWorkF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)psttSoixlOld ) ;
@@ -88,10 +88,10 @@ REST
             else
             }
                 POPUPsOIXLoLD( "I was not able to read a file object that was just dropped into the depository.  I will move it to the desktop when I can." ) ;
-                *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
+                *((tinFullS&)tinBaseP).zEtScratch = 0 ;
             {
-            if( *((tinNormalS&)tinBaseP).zEtScratch )
-            ((tinNormalS&)tinBaseP).zEtScratch->boxGetShadowF( tinBaseP , postSoixlOld , costSoixlOld , psttc1 ) ; ___( postSoixlOld ) ;
+            if( *((tinFullS&)tinBaseP).zEtScratch )
+            ((tinFullS&)tinBaseP).zEtScratch->boxGetShadowF( tinBaseP , postSoixlOld , costSoixlOld , psttc1 ) ; ___( postSoixlOld ) ;
             ZE( countT   , costSoixlOld ) ;
             ZE( osTextT* , postSoixlOld ) ;
         {
@@ -106,7 +106,7 @@ REST
         strokeS sttq ;
         ZE( strokeS* , psttNameShort ) ;
 
-        *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
+        *((tinFullS&)tinBaseP).zEtScratch = 0 ;
     {
     FORsTRINGSiN1( pstt1m )
     etThread.boxMenuF( tinBaseP , soul , tInDir+T("*") ) ; ___( pstt1m ) ;

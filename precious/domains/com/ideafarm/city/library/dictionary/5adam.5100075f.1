@@ -172,7 +172,7 @@ TASK( tmWorkerF )
                         //{
                         //else
                         //if( !POOP ) etherP.traceF( tinBaseP , T("renamed aok") ) ;
-                        //((tinNormalS&)tinBaseP).pEtScratch->disk Move File Or Dir F( tinBaseP , tNameNew , tNameOld , 1 ) ;
+                        //((tinFullS&)tinBaseP).pEtScratch->disk Move File Or Dir F( tinBaseP , tNameNew , tNameOld , 1 ) ;
 
                         etherP.traceF( tinBaseP , T("content is the same ; attempting to delete old (not really)") ) ;
 
@@ -219,7 +219,7 @@ TASK( tmWorkerF )
                     {
                     else
                     if( !POOP ) etherP.traceF( tinBaseP , T("renamed aok") ) ;
-                    ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNameNew , tNameOld , 1 ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNameNew , tNameOld , 1 ) ;
 
                     etherP.traceF( tinBaseP , T("could not ct both file windows ; attempting to rename") ) ;
 
@@ -229,8 +229,8 @@ TASK( tmWorkerF )
                 {
                 if( POOP )
 
-                fileWindowsC* pFwsNew = new( 0 , tinBaseP , pb_fwsNew , sizeof pb_fwsNew ) fileWindowsC( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , tNameNew , flFILEwINDOW_null , 1 ) ;
-                fileWindowsC* pFwsOld = new( 0 , tinBaseP , pb_fwsOld , sizeof pb_fwsOld ) fileWindowsC( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , tNameOld , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsNew = new( 0 , tinBaseP , pb_fwsNew , sizeof pb_fwsNew ) fileWindowsC( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , tNameNew , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsOld = new( 0 , tinBaseP , pb_fwsOld , sizeof pb_fwsOld ) fileWindowsC( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , tNameOld , flFILEwINDOW_null , 1 ) ;
 
                 byteT pb_fwsNew[ sizeof( fileWindowsC ) ] ;
                 byteT pb_fwsOld[ sizeof( fileWindowsC ) ] ;
@@ -284,7 +284,7 @@ TASK( tmWorkerF )
                             {
                             else
                             if( !POOP ) etherP.traceF( tinBaseP , T("renamed aok") ) ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNew , psttc1 , 1 ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNew , psttc1 , 1 ) ;
 
                             SCOOPS
                         {

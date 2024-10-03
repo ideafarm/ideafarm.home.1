@@ -13,8 +13,8 @@
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     POPtINaRGS
     flagsRC |= list.walkF( tinBaseP , idGrabLayerP ) ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_CALLERgRABBEDrOOT | flagsP ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkResetIndexBitsCBF ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_CALLERgRABBEDrOOT | flagsP ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkResetIndexBitsCBF ;
     PUSHtINaRGS
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
@@ -29,6 +29,8 @@
         if( POOP ) return flagsRC ;
         FV( flLISTwALK , flagsP ) ;
         __Z( hListP ) ;
+        if( POOP ) return flagsRC ;
+        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return flagsRC ;
     {
     IFbEcAREFUL

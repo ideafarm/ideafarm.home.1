@@ -12,12 +12,12 @@
         OStEXTAK( ostoBuf , "\r\n" ) ;                                                                  \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                                 \
         OStEXTAK( ostoBuf , " | " ) ;                                                                   \
-        OStEXTA( ostoBuf , ((tinNormalS&)tinBaseP).postThreadName ) ;                                                      \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                      \
         OStEXTAK( ostoBuf , " " ) ;                                                                     \
-        OStEXTC( ostoBuf , ((tinNormalS&)tinBaseP).monitor.idThread , 0 ) ;                                                \
+        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                                \
         OStEXT( ostoBuf , 0x2000 )                                                                      \
     {                                                                                                   \
-    /*if( !thirdC::c_strcmpIF( tinBaseP , ((tinNormalS&)tinBaseP).postThreadName , "tmAnimateSadamsOnPaperF" ) )*/             \
+    /*if( !thirdC::c_strcmpIF( tinBaseP , ((tinFullS&)tinBaseP).postThreadName , "tmAnimateSadamsOnPaperF" ) )*/             \
                                                                                                         \
 #define LOGrAWtID(post1P)                                                                               \
 

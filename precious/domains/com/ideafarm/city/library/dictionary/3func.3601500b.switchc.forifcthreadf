@@ -34,19 +34,19 @@
 
     ZE( byteT* , pbLB ) ;
     const countT cPlates = stackk ;
-    const countT query = ((tinNormalS&)tinBaseP).monitor.idThread ;
-    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    const countT query = ((tinFullS&)tinBaseP).monitor.idThread ;
+    else if( osTidOwner != ((tinFullS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinFullS&)tinBaseP).osTid ;
     if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     //IN
-    //THESE LINES HERE CAN BE ENABLED IF NEEDED.  THEY ARE COMMENTED OUT ONLY FOR COSMETIC REASONS (TO IMPROVE THE READABILITY OF THE TRACE INFORMATION IN tinNormalS)
+    //THESE LINES HERE CAN BE ENABLED IF NEEDED.  THEY ARE COMMENTED OUT ONLY FOR COSMETIC REASONS (TO IMPROVE THE READABILITY OF THE TRACE INFORMATION IN tinFullS)
     //OTHERWISE, I WOULD APPEAR ALL OVER THE PLACE BECAUSE IN, OUT CALL ME FOR EVERY FUNCTION
     //IN, OUT ARE SUPPRESSED SO THAT THIS FUNCTION DOES NOT APPEAR IN tinBaseP'S TRACE FOR THIS THREAD
 
     }
         if( third ) return *(countT*)pbnu ;
-        __( !((tinNormalS&)tinBaseP).monitor.idThread ) ;
+        __( !((tinFullS&)tinBaseP).monitor.idThread ) ;
         if( third ) return *(countT*)pbnu ;
         __( idLeverType - ifcIDtYPElEVER_countT ) ;
         if( third ) return *(countT*)pbnu ;
@@ -59,7 +59,7 @@
 /**/
 */
 the switchC object must have been constructed with a lever of type countT& specified
-like operator countT& except uses ((tinNormalS&)tinBaseP).monitor.idThread as the lever value
+like operator countT& except uses ((tinFullS&)tinBaseP).monitor.idThread as the lever value
   \<A HREF=\"5.e230104.1.1.0.html\"\>e230104:  WAKEsHOW( "example.simplest.func.120000d.switchC.forIfcThreadF" )\</A\>
  simplest
 examples

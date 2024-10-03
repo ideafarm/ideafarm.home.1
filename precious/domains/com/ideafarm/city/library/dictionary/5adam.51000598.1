@@ -89,7 +89,7 @@ ether.loafIF( tinBaseP ) ;
         
                             tinBaseS& tinBasec = *(tinBaseS*)pbTin ;
                         {
-                        if( pbTin && cbTin == sizeof( tinNormalS ) )
+                        if( pbTin && cbTin == sizeof( tinFullS ) )
                         sIn2.shiftRightF( tinBaseP , pbTin , cbTin , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbTin ) ;
                         ZE( countT , cbTin ) ;
                         ZE( byteT* , pbTin ) ;
@@ -107,7 +107,7 @@ ether.loafIF( tinBaseP ) ;
                     soulC sIn2( tinBaseP , TAG( TAGiDnULL ) ) ;
                     
                     sockm.writeF( tinBaseP , sOut2 ) ;
-                    sOut2 << sizeof( tinNormalS ) ;
+                    sOut2 << sizeof( tinFullS ) ;
                     sOut2 << ip ;
                     sOut2 << osPid ;
                     sOut2 << (countT)ifcIDcMDmONITOR_IMAGE ;
@@ -139,7 +139,7 @@ ether.loafIF( tinBaseP ) ;
     {
     while( sIn )
     
-    __( idReply - ifcIDrEPLYmONITOR_tinNormalS ) ;
+    __( idReply - ifcIDrEPLYmONITOR_tinFullS ) ;
     sIn >> idReply ;
     ZE( countT , idReply ) ;
     
@@ -147,7 +147,7 @@ ether.loafIF( tinBaseP ) ;
     soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
     
     sockm.writeF( tinBaseP , sOut ) ;
-    sOut << (countT)ifcIDcMDmONITOR_tinNormalS ;
+    sOut << (countT)ifcIDcMDmONITOR_tinFullS ;
     soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     etThread.strMakeF( tinBaseP , LF , psttr , T("\fIPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System\r\nPerformance Monitor\r\ncycle: ")+TF2(++idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr , TOCK ) ; ___( psttr ) ;

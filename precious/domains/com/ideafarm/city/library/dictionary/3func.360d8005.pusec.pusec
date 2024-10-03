@@ -8,11 +8,11 @@
 
 
 }
-    //if( ((tinNormalS&)tinBaseP).pPoolUse != ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp ) ((tinNormalS&)tinBaseP).pc Utility[ 0 ] = (countT)((tinNormalS&)tinBaseP).pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
+    //if( ((tinFullS&)tinBaseP).pPoolUse != ((tinFullS&)tinBaseP).pag1->pPoolAdamTemp ) ((tinFullS&)tinBaseP).pc Utility[ 0 ] = (countT)((tinFullS&)tinBaseP).pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
 
-    ((tinNormalS&)tinBaseP).pPoolUse = pPoolUse = puseP.pPoolUse ;
-    pPoolUseLag = ((tinNormalS&)tinBaseP).pPoolUse ;
-    if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; }
+    ((tinFullS&)tinBaseP).pPoolUse = pPoolUse = puseP.pPoolUse ;
+    pPoolUseLag = ((tinFullS&)tinBaseP).pPoolUse ;
+    if( !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_UNLOCKpOOLiDENTITY ) ) { BLAMMO ; }
     TINSL
 {
 flagsMode( flPUSEcmODE_null )

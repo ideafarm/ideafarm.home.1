@@ -26,8 +26,8 @@ DONE( tmWorkF )
 
             //LOGrAW3( "ifcIDaDAM_HOMEfLAGS [home.flags]: " , home.flags , "\r\n" ) ;
 
-            //((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , psttRoster ) ;
-            //rosterF( tinBaseP , *((tinNormalS&)tinBaseP).zEtScratch , psttRoster ) ; ___( psttRoster ) ;
+            //((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttRoster ) ;
+            //rosterF( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , psttRoster ) ; ___( psttRoster ) ;
             //ZE( strokeS* , psttRoster ) ;
 
             }
@@ -641,17 +641,17 @@ voidT secretF( tinBaseS& tinBaseP , etherC& etherP , textC& tUserP , textC& tPas
 }
     }
         }
-            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttP ) ;
+            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttP ) ;
             POOPR
         {
         if( POOP )
     
-        ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttAll ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttAll ) ;
         }
-            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttSection ) ;
-            else                    ((tinNormalS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T("<<<<")+T(psttSection)+T(">>>>") ) ;
+            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttSection ) ;
+            else                    ((tinFullS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T("<<<<")+T(psttSection)+T(">>>>") ) ;
             if( cSkip && cSkip -- ) ;
-            ((tinNormalS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttSection , idf , sttq , T("<hr>") , psttAll ) ; ___( psttSection ) ;
+            ((tinFullS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttSection , idf , sttq , T("<hr>") , psttAll ) ; ___( psttSection ) ;
             ZE( strokeS* , psttSection ) ;
         {
         while( idf && !POOP )
@@ -660,13 +660,13 @@ voidT secretF( tinBaseS& tinBaseP , etherC& etherP , textC& tUserP , textC& tPas
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
     
-        ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , pbAll  ) ;
-        ((tinNormalS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttAll , T(pbAll) ) ; ___( psttAll ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , pbAll  ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttAll , T(pbAll) ) ; ___( psttAll ) ;
         ZE( strokeS* , psttAll ) ;
     
-        ((tinNormalS&)tinBaseP).pEtScratch->boxPutF( tinBaseP , T("///d/tmp.ideafarm.txt") , pbAll , cbAll ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->boxPutF( tinBaseP , T("///d/tmp.ideafarm.txt") , pbAll , cbAll ) ;
     
-        ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbAll , cbAll , tRosterHttp ) ; ___( pbAll  ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbAll , cbAll , tRosterHttp ) ; ___( pbAll  ) ;
         ZE( countT , cbAll ) ;
         ZE( byteT* , pbAll  ) ;
         //TN( tRosterHttp  , "www.fuckyourbrain.com//http//index.htm" ) ;
@@ -688,8 +688,8 @@ voidT rosterF( tinBaseS& tinBaseP , strokeS*& psttP )
             POOPR
         {
         if( POOP )
-        ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , pbHome  ) ;
-        ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbHome  , cbHome  , psttP  ) ; ___( pbHome  ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , pbHome  ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbHome  , cbHome  , psttP  ) ; ___( pbHome  ) ;
         ZE( countT , cbHome ) ;
         ZE( byteT* , pbHome  ) ;
         SCOOPS
@@ -706,7 +706,7 @@ boolT bOkHttpPageF( tinBaseS& tinBaseP , const strokeS* const psttP )
     }
         else if( nn.pcId[ 0 ] == 0xff00ff00 ) bRefused = 1 ;
         if( POOP ) POOPR
-        nicNameC nn = ((tinNormalS&)tinBaseP).pEtScratch->sockNicNameF( tinBaseP , psttP ) ;
+        nicNameC nn = ((tinFullS&)tinBaseP).pEtScratch->sockNicNameF( tinBaseP , psttP ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -726,7 +726,7 @@ boolT bDnsRefusedVersionF( tinBaseS& tinBaseP , const strokeS* const psttP )
             POOPR
         {
         if( POOP )
-        nicNameC nn = ((tinNormalS&)tinBaseP).pEtScratch->sockNicNameF( tinBaseP , psttP ) ;
+        nicNameC nn = ((tinFullS&)tinBaseP).pEtScratch->sockNicNameF( tinBaseP , psttP ) ;
         SCOOPS
     {
     IFsCRATCH

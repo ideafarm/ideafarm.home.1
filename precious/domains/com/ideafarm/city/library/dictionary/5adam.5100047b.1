@@ -22,9 +22,9 @@ BOS( WHATgbo , BOSoK , TextOut( hdc , osColF( 9 )  , osRowF( 16 , window ) , "M|
 //BOSpOOP
 //BOS( WHATgbo , BOSoK , TextOut( hdc , osColF( 9 )  , osRowF( 16 , window ) , "123456789abcdef.123456789abcdef.123456789abcdef.123456789abcdef.123456789abcdef.123456789abcdef.123456789abcdef.123456789abcdef." , 0x80 ) )
 }
-    hObjFont    = (HGDIOBJ)((tinNormalS&)tinBaseP).brcRaw ;
+    hObjFont    = (HGDIOBJ)((tinFullS&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , SelectObject( hdc , hFont ) )
-    HFONT hFont = (HFONT)((tinNormalS&)tinBaseP).brcRaw ;
+    HFONT hFont = (HFONT)((tinFullS&)tinBaseP).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , CreateFontIndirect( &info ) )
 
@@ -46,7 +46,7 @@ BOS( WHATgbo , BOSoK , TextOut( hdc , osColF( 9 )  , osRowF( 16 , window ) , "M|
     LOGFONT info ;
 {
 ZE( HGDIOBJ , hObjFont ) ;
-HDC hdc = (HDC)((tinNormalS&)tinBaseP).brcRaw ;
+HDC hdc = (HDC)((tinFullS&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , GetDC( (HWND)(countT)window ) )
 windowOldC& window = thirdC::winRootIF() ;

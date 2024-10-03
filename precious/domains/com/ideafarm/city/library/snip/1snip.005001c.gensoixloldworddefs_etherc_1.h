@@ -41,7 +41,7 @@ voidT etherBlammoF_o_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , cons
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.etherBlammoF( tinBaseP ) ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT etherParameterF_o4P_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -72,7 +72,7 @@ voidT etherScanProcessParametersF_o_GF( tinBaseS& tinBaseP , etherC& etherP , so
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.etherScanProcessParametersF( tinBaseP ) ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT etherTestF_o_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -83,7 +83,7 @@ voidT etherTestF_o_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const 
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.etherTestF( tinBaseP ) ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT etherUidF_o4P_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -110,7 +110,7 @@ voidT ether_pstt1_processParametersI_F_o_GF( tinBaseS& tinBaseP , etherC& etherP
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.ether_pstt1_processParametersI_F( tinBaseP ) ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT ether_psttEarlyFolder_F_o_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -121,7 +121,7 @@ voidT ether_psttEarlyFolder_F_o_GF( tinBaseS& tinBaseP , etherC& etherP , soulC&
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.ether_psttEarlyFolder_F( tinBaseP ) ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT ether_idCitizenHirerI_F_o_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -132,7 +132,7 @@ voidT ether_idCitizenHirerI_F_o_GF( tinBaseS& tinBaseP , etherC& etherP , soulC&
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.ether_idCitizenHirerI_F( tinBaseP ) ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT etherWhereF_o373_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )

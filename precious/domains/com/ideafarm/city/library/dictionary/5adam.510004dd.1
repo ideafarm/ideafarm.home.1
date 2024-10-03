@@ -9,13 +9,13 @@
 
 REST
 CONoUTrAW( "shutdown/0\r\n" ) ; //U::
-((tinNormalS&)tinBaseP).idPhase2 = 0 ;
+((tinFullS&)tinBaseP).idPhase2 = 0 ;
 TELL( "entering REST" )
 }
     CONoUTrAW( "shutdown/1\r\n" ) ; //U::
     }
         }
-            *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
+            *((tinFullS&)tinBaseP).zEtScratch = 0 ;
             etThread.delF( tinBaseP , psttDriverName ) ;
             ((thirdC&)etScratch).osDriverUnregisterF( tinBaseP , T(psttDriverName) ) ;
             etThread.osDriverNameFromMasterF( tinBaseP , psttDriverName , DDNUMB ) ; ___( psttDriverName ) ;
@@ -88,7 +88,7 @@ TELL( "entering REST" )
         etThread.etherReadFromCyrcleOldF( tinBaseP , pNapMonitor , cirMonitorF , c2mpr , bDestroyCircleMonitor , T("napMonitor") , CBmONITORbUFFER ) ;
 U::NEED TO PASS IN A bitsC REFERENCE
         etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
-        //((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR ; //U::FIGURE OUT A WAY TO AVOID SUPPRESSING TELLS; CONJ: SET A CALLBACK FUNCTION THAT CAN UNGRAB THE NAPKIN SO THAT THE EXCEPTION HANDLER CAN EMIT A NOTE
+        //((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR ; //U::FIGURE OUT A WAY TO AVOID SUPPRESSING TELLS; CONJ: SET A CALLBACK FUNCTION THAT CAN UNGRAB THE NAPKIN SO THAT THE EXCEPTION HANDLER CAN EMIT A NOTE
         //U::CONJ: THE GRABBING OF THE CIRCLE NAPKIN IS NOT NECESSARY
     
         etThread.boxPutF( tinBaseP , tActive , "" , 1 ) ; //U::KLUGE NEEDED CAUSE PACKAGE IS DENIED ACCESS TO napHomeJot
@@ -206,7 +206,7 @@ U::NEED TO PASS IN A bitsC REFERENCE
         stackC  stGrab(                     tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB                /*flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | */ , sizeof( grabEntryS       ) ) ;
 
         //thirdC  thUnserializedPool(         tinBaseP , TAG( TAGiDnULL ) , poolOldSetOldUnserialized ) ;
-        //p oolC   poolOldSetOldUnserialized(     tinBaseP , TAG( TAGiDnULL ) , T("monitor.unserialized.main.")+TF1(((tinNormalS&)tinBaseP).osPid)+T(".")+TF1(((tinNormalS&)tinBaseP).monitor.idThread) , flPOOLoLDc_UNSERIALIZED | flPOOLoLDc_UNSERIALIZEDmULTItHREAD ) ; U:: FLAG "UNSERIALIZED"
+        //p oolC   poolOldSetOldUnserialized(     tinBaseP , TAG( TAGiDnULL ) , T("monitor.unserialized.main.")+TF1(((tinFullS&)tinBaseP).osPid)+T(".")+TF1(((tinFullS&)tinBaseP).monitor.idThread) , flPOOLoLDc_UNSERIALIZED | flPOOLoLDc_UNSERIALIZEDmULTItHREAD ) ; U:: FLAG "UNSERIALIZED"
         //U::CONJ: OBSOLETE: 
 
         ZE( countT , conditionalGrab ) ;
@@ -245,7 +245,7 @@ U::NEED TO PASS IN A bitsC REFERENCE
     PC
     threadCheckC tc( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-((tinNormalS&)tinBaseP).idPhase2 = 1 ;
+((tinFullS&)tinBaseP).idPhase2 = 1 ;
 thirdC::third_flagsModeAdam1I_IF( tinBaseP ) |= flADAMmODE1_DEBUG1 ; //U::CAUSES THE DFLT EXCEPTION HANDLER TO SLEEP FOREVER
 TODO
 
@@ -283,7 +283,7 @@ DONE( tmLockupF )
     ( idMe == 1 ? g1 : g2 ).grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     TELL( "about to grab woth" )
 
-    etThread.strokeF( tinBaseP , T("tmLockupF ")+TF1(idMe)+T("; osTid: ")+TF1(((tinNormalS&)tinBaseP).osTid)+T("; serial numbers: ")+TF1(g1.idMe)+ T(" ")+TF1(g2.idMe)+T("\r\n") ) ;
+    etThread.strokeF( tinBaseP , T("tmLockupF ")+TF1(idMe)+T("; osTid: ")+TF1(((tinFullS&)tinBaseP).osTid)+T("; serial numbers: ")+TF1(g1.idMe)+ T(" ")+TF1(g2.idMe)+T("\r\n") ) ;
 
     countT idMe =          pTaskP->c3 ;
     grabS& g2   = *(grabS*)pTaskP->c2 ;
@@ -371,7 +371,7 @@ TASK( tmFireAllF )
 #define ClOOKsLOTS 0x10
 
 DONE( tmWhereRptF )
-((tinNormalS&)tinBaseP).idPhase2 = 0 ;
+((tinFullS&)tinBaseP).idPhase2 = 0 ;
 TELL( "i'm outa here" )
 }
     bDestroyCircleMonitor = 1 ;
@@ -390,7 +390,7 @@ TELL( "i'm outa here" )
         countT cToDo = TUCK * 0x10 ;
         //etThread.strokeF( tinBaseP , T("\r\nwrote where report ")+TF1(idReport)+T("\r\n") ) ;
 
-        //((tinNormalS&)tinBaseP).flagsThreadMode2 &= ~( F(flTHREADmODE2_DISALLOWtELLmONITOR) ) ;
+        //((tinFullS&)tinBaseP).flagsThreadMode2 &= ~( F(flTHREADmODE2_DISALLOWtELLmONITOR) ) ;
             
         }
             etThread.delF( tinBaseP , psttFileName ) ;
@@ -536,7 +536,7 @@ TELL( "i'm outa here" )
                     {
                     TN( tLifiName , "unknown" ) ;
             
-                    //((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_DISALLOWtELLmONITOR ;
+                    //((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_DISALLOWtELLmONITOR ;
                     pwtg->bNewWhereRpt = 0 ;
                 {
                 if( pwtg->bNewWhereRpt /*U:: && ( !stTinWhereP || idCycle % 0x10 == 1 ) */ ) //ONLY EVERY TICK IF AM WATCHING WHERE WO OR MORE THREADS ARE
@@ -590,24 +590,24 @@ TELL( "i'm outa here" )
         tb+T("adam definitions can define in/out snippets.  entry into and exit from such a")+tc+
         tb+T("visible.  entry into almost all system functions is visible in this way.  code in")+tc+
         tb+T("for example, when execution enters the definition of a system function, this is")+tc+
-        tb+T("the tinNormalS for each thread makes the current call nest for that thread visible.")+tc+
+        tb+T("the tinFullS for each thread makes the current call nest for that thread visible.")+tc+
         T("general note: in/out source code snippets")+tc+
         tb+T("any executable source code line can be named.")+tc2+
-        tb+T("given the name of the thread, i.e. it is given the name ((tinNormalS&)tinBaseP).postThreadName.")+tc+
-        tb+T("the constructor for the tinNormalS of each thread, the \"tin line for the thread\", is")+tc+
+        tb+T("given the name of the thread, i.e. it is given the name ((tinFullS&)tinBaseP).postThreadName.")+tc+
+        tb+T("the constructor for the tinFullS of each thread, the \"tin line for the thread\", is")+tc+
         tb+T("the woth time that the line is executed.  the system source code line that calls")+tc+
         tb+T("any source code line can be named.  such names are calculated at early run time,")+tc+
         T("general note: named source code lines")+tc+
         tb+T("is to set idPhase2 to 1 if no particular value is preferred.")+tc2+
         tb+T("however, if idPhase3 is used, idPhase2 must be set to a nonze""ro value.  good style")+tc+
         tb+T("idPhase2, idPhase3 can represent any meaning; it is only used as a sort value.")+tc+
-        tb+T("tinNormalS::idPhase3 is provided so the another level of subdivision is possible.  like")+tc+
+        tb+T("tinFullS::idPhase3 is provided so the another level of subdivision is possible.  like")+tc+
         tb+T("identify a particular data structure or socket client that is being serviced by the thread.")+tc+
         tb+T("setup, thread working, and thread cleanup, respectively.  or idPhase2 could be set to")+tc+
         tb+T("each instance of a thread class.  or idPhase2 can be set to 1,2,3 to indicate thread")+tc+
         tb+T("could be used, which would cause the monitor to write a separate where report for")+tc+
-        tb+T("value can be used; this value is used only as a sort value. for example, tinNormalS::idThread")+tc+
-        tb+T("code can easily subdivide these subjects at run time by setting tinNormalS::idPhase2. any")+tc+
+        tb+T("value can be used; this value is used only as a sort value. for example, tinFullS::idThread")+tc+
+        tb+T("code can easily subdivide these subjects at run time by setting tinFullS::idPhase2. any")+tc+
         tb+T("each of these reports focuses on a single \"subject\".  unless subdivided by application")+tc+
         T("general note: the scope of this report (its \"subject\") (part 2 of 2)")+tc+
         tb+T("its subject is the code snippet \"tmFooF\".")+tc2+
@@ -697,7 +697,7 @@ TELL( "i'm outa here" )
     TELL( "setting up" )
 {
 if( pTaskP && pTaskP->c1 )
-((tinNormalS&)tinBaseP).idPhase2 = 1 ;
+((tinFullS&)tinBaseP).idPhase2 = 1 ;
 TASK( tmWhereRptF )
 
 }
@@ -938,7 +938,7 @@ TASK( tmWhereRptF )
                 if( !bAdam && !bClass )
                 TN( tLifiName , "unknown" ) ;
         
-                //((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_DISALLOWtELLmONITOR ;
+                //((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_DISALLOWtELLmONITOR ;
                 pwtf->bNewWhereRpt = 0 ;
             {
             if( pwtf->bNewWhereRpt /*U:: && ( !stTinWhereP || idCycle % 0x10 == 1 ) */ ) //ONLY EVERY TICK IF AM WATCHING WHERE WO OR MORE THREADS ARE
@@ -985,24 +985,24 @@ TASK( tmWhereRptF )
         tb+T("adam definitions can define in/out snippets.  entry into and exit from such a")+tc+
         tb+T("visible.  entry into almost all system functions is visible in this way.  code in")+tc+
         tb+T("for example, when execution enters the definition of a system function, this is")+tc+
-        tb+T("the tinNormalS for each thread makes the current call nest for that thread visible.")+tc+
+        tb+T("the tinFullS for each thread makes the current call nest for that thread visible.")+tc+
         T("general note: in/out source code snippets")+tc+
         tb+T("any executable source code line can be named.")+tc2+
-        tb+T("given the name of the thread, i.e. it is given the name ((tinNormalS&)tinBaseP).postThreadName.")+tc+
-        tb+T("the constructor for the tinNormalS of each thread, the \"tin line for the thread\", is")+tc+
+        tb+T("given the name of the thread, i.e. it is given the name ((tinFullS&)tinBaseP).postThreadName.")+tc+
+        tb+T("the constructor for the tinFullS of each thread, the \"tin line for the thread\", is")+tc+
         tb+T("the woth time that the line is executed.  the system source code line that calls")+tc+
         tb+T("any source code line can be named.  such names are calculated at early run time,")+tc+
         T("general note: named source code lines")+tc+
         tb+T("is to set idPhase2 to 1 if no particular value is preferred.")+tc2+
         tb+T("however, if idPhase3 is used, idPhase2 must be set to a nonze""ro value.  good style")+tc+
         tb+T("idPhase2, idPhase3 can represent any meaning; it is only used as a sort value.")+tc+
-        tb+T("tinNormalS::idPhase3 is provided so the another level of subdivision is possible.  like")+tc+
+        tb+T("tinFullS::idPhase3 is provided so the another level of subdivision is possible.  like")+tc+
         tb+T("identify a particular data structure or socket client that is being serviced by the thread.")+tc+
         tb+T("setup, thread working, and thread cleanup, respectively.  or idPhase2 could be set to")+tc+
         tb+T("each instance of a thread class.  or idPhase2 can be set to 1,2,3 to indicate thread")+tc+
         tb+T("could be used, which would cause the monitor to write a separate where report for")+tc+
-        tb+T("value can be used; this value is used only as a sort value. for example, tinNormalS::idThread")+tc+
-        tb+T("code can easily subdivide these subjects at run time by setting tinNormalS::idPhase2. any")+tc+
+        tb+T("value can be used; this value is used only as a sort value. for example, tinFullS::idThread")+tc+
+        tb+T("code can easily subdivide these subjects at run time by setting tinFullS::idPhase2. any")+tc+
         tb+T("each of these reports focuses on a single \"subject\".  unless subdivided by application")+tc+
         T("general note: the scope of this report (its \"subject\") (part 2 of 2)")+tc+
         tb+T("its subject is the code snippet \"tmFooF\".")+tc2+
@@ -1056,7 +1056,7 @@ voidT writeFineReportF( tinBaseS& tinBaseP , etherC& etThread , stackC& st_psttr
 #define IDtYPErPT_THREAD         0x1
 
 DONE( tmWhereF )
-((tinNormalS&)tinBaseP).idPhase2 = 0 ;
+((tinFullS&)tinBaseP).idPhase2 = 0 ;
 }
     }
         TELL( "awakening" )
@@ -1158,11 +1158,11 @@ DONE( tmWhereF )
                                     bOk = 0 ;
                                 {
                                 if( bOk )
-                                thirdC::dosReadProcessMemoryIF( tinBaseP , (byteT*)&copy2 , sizeof copy2 - CBwHEREsUFFIX , bOk , (voidT*)( entry.ip + ( (byteT*)&((tinNormalS&)tinBaseP).idWhat - (byteT*)&tinBaseP ) ) , entry.osPid ) ;
+                                thirdC::dosReadProcessMemoryIF( tinBaseP , (byteT*)&copy2 , sizeof copy2 - CBwHEREsUFFIX , bOk , (voidT*)( entry.ip + ( (byteT*)&((tinFullS&)tinBaseP).idWhat - (byteT*)&tinBaseP ) ) , entry.osPid ) ;
                                 bOk = 0 ;
                             {
                             if( bOk )
-                            thirdC::dosReadProcessMemoryIF( tinBaseP , (byteT*)&copy1 , sizeof copy1 - CBwHEREsUFFIX , bOk , (voidT*)( entry.ip + ( (byteT*)&((tinNormalS&)tinBaseP).idWhat - (byteT*)&tinBaseP ) ) , entry.osPid ) ;
+                            thirdC::dosReadProcessMemoryIF( tinBaseP , (byteT*)&copy1 , sizeof copy1 - CBwHEREsUFFIX , bOk , (voidT*)( entry.ip + ( (byteT*)&((tinFullS&)tinBaseP).idWhat - (byteT*)&tinBaseP ) ) , entry.osPid ) ;
                             bOk = 0 ;
                         {
                         if( bOk )
@@ -1174,11 +1174,11 @@ DONE( tmWhereF )
                         thirdC::c_memcpyIF( tinBaseP , (byteT*)&fingerprint2 , (byteT*)ap_artmentOldC( tinBaseP , entry.ip ) , sizeof fingerprint2 ) ;
                         thirdC::c_memcpyIF( tinBaseP , (byteT*)&copy2 , (byteT*)pWhere , sizeof copy2 - CBwHEREsUFFIX ) ; //A COPY IS MADE EVEN IF IDA TO INCREASE THE PROBABILITY THAT THE DATA ARE CONSISTENT
                         thirdC::c_memcpyIF( tinBaseP , (byteT*)&copy1 , (byteT*)pWhere , sizeof copy1 - CBwHEREsUFFIX ) ; //A COPY IS MADE EVEN IF IDA TO INCREASE THE PROBABILITY THAT THE DATA ARE CONSISTENT
-                        whereOldS* pWhere   = (whereOldS*)( (byteT*)ap_artmentOldC( tinBaseP , entry.ip ) + ( (byteT*)&((tinNormalS&)tinBaseP).idWhat - (byteT*)&tinBaseP ) ) ;
+                        whereOldS* pWhere   = (whereOldS*)( (byteT*)ap_artmentOldC( tinBaseP , entry.ip ) + ( (byteT*)&((tinFullS&)tinBaseP).idWhat - (byteT*)&tinBaseP ) ) ;
                         thirdC::c_memcpyIF( tinBaseP , (byteT*)&fingerprint1 , (byteT*)ap_artmentOldC( tinBaseP , entry.ip ) , sizeof fingerprint1 ) ;
                     {
                     if( entry.bIda )
-                    TELL( "making a copy of whereOldS from the entry's tinNormalS" )
+                    TELL( "making a copy of whereOldS from the entry's tinFullS" )
                     ZE( boolT , bOk ) ;
                     ZE( countT , fingerprint2 ) ;
                     ZE( countT , fingerprint1 ) ;
@@ -1248,7 +1248,7 @@ DONE( tmWhereF )
     TELL( "setting up" )
 {
 if( pTaskP && pTaskP->c1 )
-((tinNormalS&)tinBaseP).idPhase2 = 1 ;
+((tinFullS&)tinBaseP).idPhase2 = 1 ;
 TASK( tmWhereF )
 
 }
@@ -1371,7 +1371,7 @@ whereTalliesGrossS* pwtGrossF( tinBaseS& tinBaseP , thirdC& thirdP , stackC& stR
 voidT tallyF( tinBaseS& tinBaseP , etherC& etThread , whereTalliesFineS& wtfP , whereOldS& copy1P , stackC& stLifiP )
 
 }
-    if( ((tinNormalS&)tinBaseP).fingerprint && etThread && stLifiP ) ; //SO MACRO CAN BE USED
+    if( ((tinFullS&)tinBaseP).fingerprint && etThread && stLifiP ) ; //SO MACRO CAN BE USED
     if( !wtgP.bNewWhereRpt ) wtgP.bNewWhereRpt = 1 ;
 
     wtgP.swTally.ungrabF( tinBaseP ) ;
@@ -1397,7 +1397,7 @@ voidT tallyF( tinBaseS& tinBaseP , etherC& etThread , whereTalliesGrossS& wtgP ,
 //        pc = pc->pTinKid ;                                                                  \
 //    {                                                                                       \
 //    if( pc->pTinKid )                                                                       \
-//    tinBaseS* pc = ((tinNormalS&)tinBaseP).pTinBaseDad ;                                                               \
+//    tinBaseS* pc = ((tinFullS&)tinBaseP).pTinBaseDad ;                                                               \
 //    etThread.strMakeF( tinBaseP , LF , psttl , TF1(idP)+T(": ") , 0x1000 ) ; ___( psttl ) ;          \
 //    ZE( strokeS* , psttl ) ;                                                              \
 //    TN( tb , " " ) ;                                                                        \
@@ -1406,7 +1406,7 @@ voidT tallyF( tinBaseS& tinBaseP , etherC& etThread , whereTalliesGrossS& wtgP ,
 //U::
 
 DONE( tmRptPoolF )
-((tinNormalS&)tinBaseP).idPhase2 = 0 ;
+((tinFullS&)tinBaseP).idPhase2 = 0 ;
 }
     }
         }
@@ -1557,15 +1557,15 @@ DONE( tmRptPoolF )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
-((tinNormalS&)tinBaseP).idPhase2 = 1 ;
+((tinFullS&)tinBaseP).idPhase2 = 1 ;
 TASK( tmRptPoolF )
 
 DONE( tmRptMainF )
-((tinNormalS&)tinBaseP).idPhase2 = 0 ;
+((tinFullS&)tinBaseP).idPhase2 = 0 ;
 TELL( "i am outa here" )
 }
-    ((tinNormalS&)tinBaseP).pEtText = 0 ;
-    ((tinNormalS&)tinBaseP).flagsThreadMode2 &= ~( F(flTHREADmODE2_DISALLOWgRAB) ) ;
+    ((tinFullS&)tinBaseP).pEtText = 0 ;
+    ((tinFullS&)tinBaseP).flagsThreadMode2 &= ~( F(flTHREADmODE2_DISALLOWgRAB) ) ;
     TELL( "cleaning up" )
     //POPUP( "tmRptMainF/about to set my done flag" ) ; //U::
     }
@@ -1696,7 +1696,7 @@ TELL( "i am outa here" )
                     handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( stTin )
-                TELL( "deleting the tinNormalS copies" )
+                TELL( "deleting the tinFullS copies" )
 
                 }
                     }
@@ -1788,7 +1788,7 @@ TELL( "i am outa here" )
                                     etThread.memCopyF( tinBaseP , entry.pbCopy , pbCopy , sizeof pbCopy ) ;
                                     etThread.newF( tinBaseP , LF , entry.pbCopy , sizeof pbCopy ) ; ___( entry.pbCopy ) ;
                                 {
-                                if( pCopy ) // pCopy IS EITHER 0 OR A VALID IMAGE OF A tinNormalS
+                                if( pCopy ) // pCopy IS EITHER 0 OR A VALID IMAGE OF A tinFullS
                     
                                 }
                                     }
@@ -1799,18 +1799,18 @@ TELL( "i am outa here" )
                                     {
                                     else
                                     if( !bOk || getNegAM( pCopy->fingerprint ) != FINGERnEG_TINs || entry.idSerial != pCopy->idSerial ) pCopy = 0 ;
-                                    thirdC::dosReadProcessMemoryIF( tinBaseP , pbCopy , sizeof( tinNormalS ) , bOk , (voidT*)entry.ip , entry.osPid ) ;
+                                    thirdC::dosReadProcessMemoryIF( tinBaseP , pbCopy , sizeof( tinFullS ) , bOk , (voidT*)entry.ip , entry.osPid ) ;
                                     ZE( boolT , bOk ) ;
                                 {
                                 else
                                 }
                                     if( getNegAM( pCopy->fingerprint ) != FINGERnEG_TINs || entry.idSerial != pCopy->idSerial ) pCopy = 0 ;
-                                    etThread.memCopyF( tinBaseP , pbCopy , (byteT*)pCopyI , sizeof( tinNormalS ) ) ;
+                                    etThread.memCopyF( tinBaseP , pbCopy , (byteT*)pCopyI , sizeof( tinFullS ) ) ;
                                     tinBaseS* pCopyI = (tinBaseS*)(byteT*)ap_artmentOldC( tinBaseP , entry.ip ) ;
                                 {
                                 if( entry.bIda )
                                 tinBaseS* pCopy = (tinBaseS*)pbCopy ;
-                                byteT pbCopy[ sizeof( tinNormalS ) ] ;
+                                byteT pbCopy[ sizeof( tinFullS ) ] ;
 
                                 if( entry.pbCopy ) { BLAMMO ; }
                             {
@@ -1837,7 +1837,7 @@ TELL( "i am outa here" )
                     for( countT idPass = 1 ; idPass <= 2 && !bMonitorEnded ; idPass ++ )
                 {
                 if( !bMonitorEnded && stTin )
-                TELL( "report TS: getting copies of the tinNormalS objects" )
+                TELL( "report TS: getting copies of the tinFullS objects" )
             
                 //etThread.strokeF( tinBaseP , T("\r\n")+TF1(cNewSteps)+T("    ")+TF1((countT)thirdC::mathLog2IF( tinBaseP ,(measureT)(cNewSteps?cNewSteps:1)))+T("\r\n") ) ;
 
@@ -1847,13 +1847,13 @@ TELL( "i am outa here" )
                         }
                             }
                                 cNewSteps += monitor.cNewSteps ;
-                                thirdC::dosWriteProcessMemoryIF( tinBaseP , countTC() , (voidT*)( entry.ip + ( (byteT*)&((tinNormalS&)tinBaseP).monitor - (byteT*)&tinBaseP ) ) , entry.osPid , (byteT*)&monitor , sizeof monitor ) ;
+                                thirdC::dosWriteProcessMemoryIF( tinBaseP , countTC() , (voidT*)( entry.ip + ( (byteT*)&((tinFullS&)tinBaseP).monitor - (byteT*)&tinBaseP ) ) , entry.osPid , (byteT*)&monitor , sizeof monitor ) ;
                                 stampF( tinBaseP , etThread , monitor , idStep ) ;
                                 monitorOldS& monitor = *(monitorOldS*)( &idStep + 1 ) ;
                                 countT&   idStep  = *(countT*)pbCopy ;
                             {
                             if( bOk )
-                            thirdC::dosReadProcessMemoryIF( tinBaseP , pbCopy , sizeof pbCopy , bOk , (voidT*)( entry.ip + ( (byteT*)&((tinNormalS&)tinBaseP).monitor.idStep - (byteT*)&tinBaseP ) ) , entry.osPid ) ;
+                            thirdC::dosReadProcessMemoryIF( tinBaseP , pbCopy , sizeof pbCopy , bOk , (voidT*)( entry.ip + ( (byteT*)&((tinFullS&)tinBaseP).monitor.idStep - (byteT*)&tinBaseP ) ) , entry.osPid ) ;
                             ZE( boolT , bOk ) ;
                             byteT pbCopy[ sizeof( countT ) + sizeof( monitorOldS ) ] ;
                         {
@@ -1862,7 +1862,7 @@ TELL( "i am outa here" )
                             cNewSteps += monitor.cNewSteps ;
                             stampF( tinBaseP , etThread , monitor , idStep ) ;
                             monitorOldS& monitor = *(monitorOldS*)( &idStep + 1 ) ;
-                            countT&   idStep  = *(countT*)( (byteT*)ap_artmentOldC( tinBaseP , entry.ip ) + ( (byteT*)&((tinNormalS&)tinBaseP).monitor.idStep - (byteT*)&tinBaseP ) ) ;
+                            countT&   idStep  = *(countT*)( (byteT*)ap_artmentOldC( tinBaseP , entry.ip ) + ( (byteT*)&((tinFullS&)tinBaseP).monitor.idStep - (byteT*)&tinBaseP ) ) ;
                         {
                         if( entry.bIda )
             
@@ -1877,7 +1877,7 @@ TELL( "i am outa here" )
             
                 if( !bMonitorEnded ) { stRpt << psttr4 ; psttr4 = 0 ; }
                 etThread.strFuseF( tinBaseP , psttr4 , t8+tNewSteps+tb+tType+tb+tIdName+tb+tOsTid+tb+tPid+tb+tIdThread+tb+tThread+tb+tNest+tb+tIn+tWhat+tMarked+tTell+tc ) ;
-                TELL( "report TS: stamping the original tinNormalS objects" )
+                TELL( "report TS: stamping the original tinFullS objects" )
             
                 if( !bMonitorEnded ) { stRpt << psttr4 ; psttr4 = 0 ; }
                 stBadGrabs.ungrabF( tinBaseP ) ;
@@ -2263,7 +2263,7 @@ TELL( "i am outa here" )
             tb+T("tally of what all ifc threads are doing on the local host within each adam class")+tc+
             T("[CW]")+tc+
             tb+T("for example, it might indicate that the thread is in a blocking base os call")+tc2+
-            tb+T("tinNormalS::idWhat is maintained by the system to indicate what the thread is doing")+tc+
+            tb+T("tinFullS::idWhat is maintained by the system to indicate what the thread is doing")+tc+
             tb+T("tally of what all ifc threads are doing on the local host")+tc+
             T("[HW]")+tc+
             tb+T("considered")+tc2+
@@ -2309,8 +2309,8 @@ TELL( "i am outa here" )
             T("[GS]")+tc+
             tb+T("interesting thread: each thread that is involved in a grab loop")+tc2+
             tb+T("interesting thread: each thread that is directly or indirectly waiting for a sign")+tc+
-            tb+T("4 (OS CALL): the thread that \"has\" this object (tinNormalS::pseudoGrab) is in a base os call")+tc+
-            tb+T("3 (SLEEP): the thread that \"has\" this object (tinNormalS::pseudoGrab) is asleep")+tc+
+            tb+T("4 (OS CALL): the thread that \"has\" this object (tinFullS::pseudoGrab) is in a base os call")+tc+
+            tb+T("3 (SLEEP): the thread that \"has\" this object (tinFullS::pseudoGrab) is asleep")+tc+
             tb+T("2 (WANTED SIGN): this object is being used as a signC and is wanted by wo or more threads")+tc+
             tb+T("1 (GRAB LOOP): the thread that has grabbed this object directly or indirectly also wants it")+tc+
             tb+T("a [GW] report is written for each grabbed grabS object that is \"interesting\", i.e. wo or more of the following applies:")+tc+
@@ -2319,7 +2319,7 @@ TELL( "i am outa here" )
             tb+T("lists the grabS object views that are grabbed")+tc2+
             T("[GG]")+tc+
             tb+T("interesting thread: each thread that is directly or indirectly sleeping")+tc2+
-            tb+T("each line of this report corresponds to wo tinNormalS::grabPseudo that indicates sleeping")+tc+
+            tb+T("each line of this report corresponds to wo tinFullS::grabPseudo that indicates sleeping")+tc+
             tb+T("indirectly want those objects are \"indirectly sleeping\"")+tc+
             tb+T("if a sleeping thread has grabbed some grabS objects, all threads that directly or")+tc+
             tb+T("sleep trees: all threads that are indirectly blocked because a thread is sleeping")+tc+
@@ -2407,8 +2407,8 @@ TELL( "i am outa here" )
         TN( tBar , " | " ) ;
         TELL( "setting up: 2: stroke strings" )
     
-        ((tinNormalS&)tinBaseP).pEtText = &etThread ;
-        ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_DISALLOWgRAB ;
+        ((tinFullS&)tinBaseP).pEtText = &etThread ;
+        ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_DISALLOWgRAB ;
         ZE( countT , idStepReporterLath ) ;
         boolT bWoth = 1 ;
         ZE( countT , idReport ) ;
@@ -2474,7 +2474,7 @@ TELL( "i am outa here" )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 )
 etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
-((tinNormalS&)tinBaseP).idPhase2 = 1 ;
+((tinFullS&)tinBaseP).idPhase2 = 1 ;
 TASK( tmRptMainF )
 
 }
@@ -2680,7 +2680,7 @@ voidT psttOldCallNestF( tinBaseS& tinBaseP , etherC& etThread , strokeS*& psttP 
 voidT monitorLookF( tinBaseS& tinBaseP , grabWantS*& pGrabWantP , countT& cGrabWantP , grabHaveS*& pGrabHaveP , countT& cGrabHaveP )
 
 DONE( tmLogSnapF )
-((tinNormalS&)tinBaseP).idPhase2 = 0 ;
+((tinFullS&)tinBaseP).idPhase2 = 0 ;
 }
     bDestroyCircleLog = 1 ;
     }
@@ -2718,11 +2718,11 @@ DONE( tmLogSnapF )
     signC&    sgnDone_tmRptMainF =    *(signC*)pTaskP->c1 ;
 {                     
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
-((tinNormalS&)tinBaseP).idPhase2 = 1 ;
+((tinFullS&)tinBaseP).idPhase2 = 1 ;
 TASK( tmLogSnapF )
 
 DONE( tmCircleLogF )
-((tinNormalS&)tinBaseP).idPhase2 = 0 ;
+((tinFullS&)tinBaseP).idPhase2 = 0 ;
 FIREmYSELF ; // REDUNDANT EXCEPT WHEN GET HERE DUE TO AN EXCEPTION IN 2e40104
 }
     DEL( pNapLog ) ;
@@ -2735,7 +2735,7 @@ U::NEED TO PASS IN A bitsC REFERENCE
     napkinC*& pNapLog           = *(napkinC**)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
-((tinNormalS&)tinBaseP).idPhase2 = 1 ;
+((tinFullS&)tinBaseP).idPhase2 = 1 ;
 TASK( tmCircleLogF )
 
 }
@@ -2756,7 +2756,7 @@ voidT unregisterInactiveDriversF( tinBaseS& tinBaseP , etherC& etThread )
 }
     return - sgn ; // HIGHEST TALLY IS "LIGHTEST"
     }
-        if( ((tinNormalS&)tinBaseP).fingerprint && c3P ) ;
+        if( ((tinFullS&)tinBaseP).fingerprint && c3P ) ;
     
         }                       
             else if( pc1->c2 > pc2->c2 ) sgn = - 1 ;
@@ -2787,7 +2787,7 @@ countT subtractTallyF( tinBaseS& tinBaseP , countT& pEther , countT& c1P , count
     return 0 ;
     }
         TELL( "cirLogF/-" )
-        if( ((tinNormalS&)tinBaseP).fingerprint && etherP && cParmP && pbP && cbP ) ;
+        if( ((tinFullS&)tinBaseP).fingerprint && etherP && cParmP && pbP && cbP ) ;
         TELL( "cirLogF/+" )
     {
     _IO_    TLNA( "cirLogF" )
@@ -3239,7 +3239,7 @@ voidT writeLogF( tinBaseS& tinBaseP , etherC& etThread , const byteT* const pbCi
                                 stTinWhereP.ungrabF( tinBaseP ) ;
                                 }
                                     thirdC::thirdWriteToCyrcleOldIF( tinBaseP , napLogP , tEntry , tEntry.csF( tinBaseP ) + 1 ) ;
-                                    tEntry = TF3(etherC::ifc_idAdamG_IF( tinBaseP ),flFORMAT_UNSIGNED,9)+T("| the monitor could not find a tinNormalS entry in stTinWhereP: idSerial: ")+TF1(entry.idSerial)+T(" ; ip: ")+TF1(entry.ip)+T(" ; osPid: ")+TF1(entry.osPid)+T(" ; idTin: ")+TF1(entry.idTin)+T(" ; idThread: ")+TF1(entry.idThread)+T(" ; postThreadName: \"")+TF1(entry.postThreadName)+T("\"\r\n") ;
+                                    tEntry = TF3(etherC::ifc_idAdamG_IF( tinBaseP ),flFORMAT_UNSIGNED,9)+T("| the monitor could not find a tinFullS entry in stTinWhereP: idSerial: ")+TF1(entry.idSerial)+T(" ; ip: ")+TF1(entry.ip)+T(" ; osPid: ")+TF1(entry.osPid)+T(" ; idTin: ")+TF1(entry.idTin)+T(" ; idThread: ")+TF1(entry.idThread)+T(" ; postThreadName: \"")+TF1(entry.postThreadName)+T("\"\r\n") ;
                                     TN( tEntry , "" ) ;
                                 {
                                 else
@@ -3251,7 +3251,7 @@ voidT writeLogF( tinBaseS& tinBaseP , etherC& etThread , const byteT* const pbCi
                                 stTinP.ungrabF( tinBaseP ) ;
                                 }
                                     thirdC::thirdWriteToCyrcleOldIF( tinBaseP , napLogP , tEntry , tEntry.csF( tinBaseP ) + 1 ) ;
-                                    tEntry = TF3(etherC::ifc_idAdamG_IF( tinBaseP ),flFORMAT_UNSIGNED,9)+T("| the monitor could not find a tinNormalS entry in stTinP: idSerial: ")+TF1(entry.idSerial)+T(" ; ip: ")+TF1(entry.ip)+T(" ; osPid: ")+TF1(entry.osPid)+T(" ; idTin: ")+TF1(entry.idTin)+T(" ; idThread: ")+TF1(entry.idThread)+T(" ; postThreadName: \"")+TF1(entry.postThreadName)+T("\"")+T("\r\n") ;
+                                    tEntry = TF3(etherC::ifc_idAdamG_IF( tinBaseP ),flFORMAT_UNSIGNED,9)+T("| the monitor could not find a tinFullS entry in stTinP: idSerial: ")+TF1(entry.idSerial)+T(" ; ip: ")+TF1(entry.ip)+T(" ; osPid: ")+TF1(entry.osPid)+T(" ; idTin: ")+TF1(entry.idTin)+T(" ; idThread: ")+TF1(entry.idThread)+T(" ; postThreadName: \"")+TF1(entry.postThreadName)+T("\"")+T("\r\n") ;
                                     TN( tEntry , "" ) ;
                                 {
                                 else
@@ -3260,7 +3260,7 @@ voidT writeLogF( tinBaseS& tinBaseP , etherC& etThread , const byteT* const pbCi
                                 stTinP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                                 ZE( countT , ids ) ;
     
-                                //etherP.ifcSayF( tinBaseP , T("tinNormalS/")+TF1(info.idSerial)+T("/-") , flSAY_APPEND | flSAY_LOG ) ; //U::
+                                //etherP.ifcSayF( tinBaseP , T("tinFullS/")+TF1(info.idSerial)+T("/-") , flSAY_APPEND | flSAY_LOG ) ; //U::
                 
                                 tinEntryS entry( tinBaseP , info.idSerial , head.osTid , head.osPid , head.idType == ifcIDtYPEtELLsYS_TINdTI , info.ip , info.idTin , head.idThread , info.postThreadName , info.idTinNamed , info.idLineCt , info.idiFileCt ) ;
                                 tellInfoSysTinS& info = *(tellInfoSysTinS*)pbData ;
@@ -3286,7 +3286,7 @@ voidT writeLogF( tinBaseS& tinBaseP , etherC& etThread , const byteT* const pbCi
                             }    
                                 }
                                     thirdC::thirdWriteToCyrcleOldIF( tinBaseP , napLogP , tEntry , tEntry.csF( tinBaseP ) + 1 ) ;
-                                    tEntry = TF3(etherC::ifc_idAdamG_IF( tinBaseP ),flFORMAT_UNSIGNED,9)+T("| the monitor could not sink unique a tinNormalS entry into stTinWhereP: idSerial: ")+TF1(entry.idSerial)+T(" ; ip: ")+TF1(entry.ip)+T(" ; osPid: ")+TF1(entry.osPid)+T(" ; idTin: ")+TF1(entry.idTin)+T(" ; idThread: ")+TF1(entry.idThread)+T(" ; postThreadName: \"")+TF1(entry.postThreadName)+T("\"")+T("\r\n") ;
+                                    tEntry = TF3(etherC::ifc_idAdamG_IF( tinBaseP ),flFORMAT_UNSIGNED,9)+T("| the monitor could not sink unique a tinFullS entry into stTinWhereP: idSerial: ")+TF1(entry.idSerial)+T(" ; ip: ")+TF1(entry.ip)+T(" ; osPid: ")+TF1(entry.osPid)+T(" ; idTin: ")+TF1(entry.idTin)+T(" ; idThread: ")+TF1(entry.idThread)+T(" ; postThreadName: \"")+TF1(entry.postThreadName)+T("\"")+T("\r\n") ;
                                     TN( tEntry , "" ) ;
                                 {
                                 if( !ids )
@@ -3295,14 +3295,14 @@ voidT writeLogF( tinBaseS& tinBaseP , etherC& etThread , const byteT* const pbCi
                 
                                 }
                                     thirdC::thirdWriteToCyrcleOldIF( tinBaseP , napLogP , tEntry , tEntry.csF( tinBaseP ) + 1 ) ;
-                                    tEntry = TF3(etherC::ifc_idAdamG_IF( tinBaseP ),flFORMAT_UNSIGNED,9)+T("| the monitor could not sink unique a tinNormalS entry into stTinP: idSerial: ")+TF1(entry.idSerial)+T(" ; ip: ")+TF1(entry.ip)+T(" ; osPid: ")+TF1(entry.osPid)+T(" ; idTin: ")+TF1(entry.idTin)+T(" ; idThread: ")+TF1(entry.idThread)+T(" ; postThreadName: \"")+TF1(entry.postThreadName)+T("\"")+T("\r\n") ;
+                                    tEntry = TF3(etherC::ifc_idAdamG_IF( tinBaseP ),flFORMAT_UNSIGNED,9)+T("| the monitor could not sink unique a tinFullS entry into stTinP: idSerial: ")+TF1(entry.idSerial)+T(" ; ip: ")+TF1(entry.ip)+T(" ; osPid: ")+TF1(entry.osPid)+T(" ; idTin: ")+TF1(entry.idTin)+T(" ; idThread: ")+TF1(entry.idThread)+T(" ; postThreadName: \"")+TF1(entry.postThreadName)+T("\"")+T("\r\n") ;
                                     TN( tEntry , "" ) ;
                                 {
                                 if( !ids )
                                 stTinP.sinkF( tinBaseP , ids , (byteT*)&entry , flSTACKsINK_UNIQUE , subtract_tinEntryS_F ) ;
                                 ZE( countT , ids ) ;
                 
-                                //etherP.ifcSayF( tinBaseP , T("tinNormalS/")+TF1(info.idSerial)+T("/+") , flSAY_APPEND | flSAY_LOG ) ; //U::
+                                //etherP.ifcSayF( tinBaseP , T("tinFullS/")+TF1(info.idSerial)+T("/+") , flSAY_APPEND | flSAY_LOG ) ; //U::
 
                                 //CONoUTrAW( "\r\n" ) ;
                                 //CONoUTrAW( info.postThreadName ) ;
@@ -3405,7 +3405,7 @@ voidT writeLogF( tinBaseS& tinBaseP , etherC& etThread , const byteT* const pbCi
                                 etherP.delF( tinBaseP , psttl ) ;
                                 if( psttl ) thirdC::thirdWriteToCyrcleOldIF( tinBaseP , napLogP , T(psttl) , psttl->idAdam + 1 ) ;
                                 tin.strFuseF( tinBaseP , etherP , psttl , 0 , flTINrPT1_null , flTINrPT2_null , flTINrPT1_pLFstepAll , flTINrPT2_null , 0 , 2 ) ; ; ___( psttl ) ;
-                                etherP.strFuseF( tinBaseP , psttl , T(" (advice) please always report to www.ideafarm.com that this information appeared, so that the quality of this software can be improved for you and also for others.\r\n tinNormalS\r\n") ) ; ___( psttl ) ;
+                                etherP.strFuseF( tinBaseP , psttl , T(" (advice) please always report to www.ideafarm.com that this information appeared, so that the quality of this software can be improved for you and also for others.\r\n tinFullS\r\n") ) ; ___( psttl ) ;
                                 }
                                     etherP.delF( tinBaseP , psttLine ) ;
                                     etherP.strFuseF( tinBaseP , psttl , T(" (advice) try this ooth: ")+T(psttLine)+T("\r\n") ) ; ___( psttl ) ;
@@ -3558,7 +3558,7 @@ boolT bAcceptEventF( tinBaseS* pTinP , tellInfoSysExceptionS& infoP , countT* pc
 
 }
     return sgn ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && c3P ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && c3P ) ;
     }                       
         else if( pe1->ip       < pe2->ip       ) sgn = - 1 ;
         else if( pe1->ip       > pe2->ip       ) sgn =   1 ;
@@ -3593,7 +3593,7 @@ countT subtract_tinEntryS_F( tinBaseS& tinBaseP , countT& pEther , countT& c1P ,
 
 }
     return sgn ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && c3P ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && c3P ) ;
     }                       
         else if( pe1->cbd       < pe2->cbd       ) sgn = - 1 ;
         else if( pe1->cbd       > pe2->cbd       ) sgn =   1 ;
@@ -3628,7 +3628,7 @@ countT subtract_napkinEntryS_F( tinBaseS& tinBaseP , countT& pEther , countT& c1
 
 }
     return sgn ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && c3P ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && c3P ) ;
     }                       
         }                       
             else if( pe1->pvMe     < pe2->pvMe     ) sgn = - 1 ;
@@ -3661,7 +3661,7 @@ countT subtract_poolOldEntryS_F( tinBaseS& tinBaseP , countT& pEther , countT& c
 
 }
     return sgn ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && c3P ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && c3P ) ;
 
     }                       
         else if( pe1->idLine  < pe2->idLine  ) sgn = - 1 ;
@@ -3689,7 +3689,7 @@ countT subtract_lifiEntryS_F( tinBaseS& tinBaseP , countT& pEther , countT& c1P 
 
 }
     return sgn ;
-    if( ((tinNormalS&)tinBaseP).fingerprint && c3P ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && c3P ) ;
 
     }                       
         else if( pe1->ip       < pe2->ip       ) sgn = - 1 ;

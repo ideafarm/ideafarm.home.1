@@ -62,7 +62,7 @@ DONE( tmRegisterPortF )
     
                         sChat2.connectF( tinBaseP , idPort2 ) ;
                         TELL( "connecting to the port that the local IdeaFarm " "(tm) chat server referred me to" )
-                        socketC sChat2( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                        socketC sChat2( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
         
                         }
                             souli >> idPort2 ;
@@ -79,7 +79,7 @@ DONE( tmRegisterPortF )
         
                             sChat.connectF( tinBaseP , ifcPORToLD2_CHAT ) ;
                             TELL( "connecting to the local IdeaFarm " "(tm) chat server to get a port referral" )
-                            socketC sChat( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                            socketC sChat( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                         {
                         ZE( countT , idPort2 ) ;
                     {
@@ -87,7 +87,7 @@ DONE( tmRegisterPortF )
                 while( !ether && !etThread && bFail )
                 ranUniC ru( tinBaseP , TOCK * 8 ) ;
                 boolT bFail = 1 ;
-                TELL( "in outer loop, setting up *((tinNormalS&)tinBaseP).pEtScratch ru" )
+                TELL( "in outer loop, setting up *((tinFullS&)tinBaseP).pEtScratch ru" )
             {
             if( idPort )
     

@@ -57,8 +57,8 @@
     {
     if( stackk )
 
-    else if( osTidOwner != ((tinNormalS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = ((tinNormalS&)tinBaseP).osTid ;
+    else if( osTidOwner != ((tinFullS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tinFullS&)tinBaseP).osTid ;
     if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     _IO_

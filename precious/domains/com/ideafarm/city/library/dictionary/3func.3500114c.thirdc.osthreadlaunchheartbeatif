@@ -13,7 +13,7 @@
     BOS( WHATgbo , BOSoK , CloseHandle( osh ) )
     BOSpOOP
     BOS( WHATgbo , BOSoK , SetThreadPriority( osh , THREAD_PRIORITY_TIME_CRITICAL ) )
-    HANDLE osh = (HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
+    HANDLE osh = (HANDLE)((tinFullS&)tinBaseP).brcRaw ;
 
     BOSpOOP
     BOS( WHATgbo , BOSoK , CreateThread( &sa , 1 * 1024 , (tmfosFT)tmHeartF , 0 , 0 , (ULONG*)&tidP ) )
@@ -71,15 +71,15 @@
         sleepC s( tinBaseP , LF , (byteT*)0 ) ; //MUST NOT EVER BE DESTROYED, SINCE THAT WOULD INVOKE TINSL
 
         homeS& home = homeS::homeIF() ;
-        if( !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+        if( !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
 
         POOPIES
     {
 
     _IO_
     //TELL( "setting up" )
-    if( ((tinNormalS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmHeartF ) { BLAMMO ; }
-    if( !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+    if( ((tinFullS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmHeartF ) { BLAMMO ; }
+    if( !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
     processGlobal5I.tinHeart.osPid = _brcRaw ;
     BOSnOtIN( GetCurrentProcessId() )
     processGlobal5I.tinHeart.osTid = _brcRaw ;
@@ -88,7 +88,7 @@
     ZE( countT , _brcRaw ) ;
     tinBaseS& tinBaseP = processGlobal5I.tinHeart ;
 
-    //TINSL MUST NOT BE USED ANYWHERE ON THIS THREAD; THAT WOULD REFERENCE THE tinNormalS FOR THREAD main (SINCE I EXIST EARLY AND LATE) ; 20221029@0804: THIS COMMENT CONFLICTS WITH PRECEDING COMMENT AND IS PROBABLY WRONG
+    //TINSL MUST NOT BE USED ANYWHERE ON THIS THREAD; THAT WOULD REFERENCE THE tinFullS FOR THREAD main (SINCE I EXIST EARLY AND LATE) ; 20221029@0804: THIS COMMENT CONFLICTS WITH PRECEDING COMMENT AND IS PROBABLY WRONG
 {
 /*1*/TASK0PROTO( tmHeartF ) // NOTE THAT THIS S A RAW THREAD; IT HAS NO THREAD LOCAL STORAGE SO CANNOT CALL pTinF/*1*/
 /**/

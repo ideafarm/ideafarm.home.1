@@ -67,7 +67,7 @@
                                 countT idJotOut = jotOut.writeF( tinBaseP , pbi , cbi ) ;
 
                                 //}
-                                //    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("out:    ")+TT(pcCbUsed[0],pcCbUsed[1])+T("    ")+T(psttShort) ) ;
+                                //    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("out:    ")+TT(pcCbUsed[0],pcCbUsed[1])+T("    ")+T(psttShort) ) ;
                                 //    strokeS* psttShort = (strokeS*)( pbi + sizeof( count04T ) ) ;
                                 //    countT* pcCbUsed = (countT*)pbi ;
                                 //{
@@ -104,9 +104,9 @@
                     ether.traceF( tinBaseP , T("exception: sink failed [idJot]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 if( bFailed )
-                //((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ;
+                //((tinFullS&)tinBaseP).pc Utility[ 0 ] -- ;
                 stIdJot.sinkF( tinBaseP , ids , idJotIn , bSuppressDuplicates ? flSTACKsINK_UNIQUE : flSTACKsINK_null , subtractJotsF , param ) ;
-                //((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ;
+                //((tinFullS&)tinBaseP).pc Utility[ 0 ] ++ ;
                 countT param = (countT)pc3p ;
                 ZE( countT , ids ) ;
 

@@ -20,7 +20,7 @@
 //tlsBlobStackTop( thirdC::third_tinBaseS_ref_IF() , "sysStackTop" , "tin" )
 //tlsBlobTellInfoSysExceptionLath( thirdC::third_tinBaseS_ref_IF() , "tlsBlobTellInfoSysExceptionLath" , "tin" , !cArgP || ((taskS*)cArgP)->cbTlsInPool >= CB tLSmAIN ? sizeof( tellInfoSysExceptionS ) : - 1 ) ,
 //tlsForMe( thirdC::third_tinBaseS_ref_IF() ) ,
-rc( ( ((tinNormalS*)pTin)->flagsThreadMode5 &= ~F(flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY) , 0 ) )
+rc( ( ((tinFullS*)pTin)->flagsThreadMode5 &= ~F(flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY) , 0 ) )
 ) ,
     ((taskS*)cArgP)->cbTlsInPool
     ((taskS*)cArgP)->pbTlsInPool ,
@@ -70,7 +70,7 @@ zap_fingerVerify( (byteT*)&fingerVerify , sizeof fingerVerify , flZAP_DT ) ,
     1
     ) , 
             : 0
-            ? &((tinNormalS*)((taskS*)cArgP)->pTinBaseDad)->cKidThreads 
+            ? &((tinFullS*)((taskS*)cArgP)->pTinBaseDad)->cKidThreads 
         idTypeP == ifcIDtYPEtLS_KID && !( F(((taskS*)cArgP)->flags) & flTHREADlAUNCH_ORPHAN )
     (
 ( 

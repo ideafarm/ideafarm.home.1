@@ -12,9 +12,9 @@
         UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
         POPtINaRGS
         listC::walkIndexIF( tinBaseP , cFieldNameP , valueP , cNet ) ; // 20120926: cNetP -> cNet WITHOUT ANALYSIS BECAUSE APPEARED TO BE A BUG
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = idName ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectCBF ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = idName ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectCBF ;
         PUSHtINaRGS
         GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
@@ -22,6 +22,8 @@
         countT cNet = cNetP ? cNetP : 1 + thirdC::c_strlenIF( tinBaseP , valueP ) ;
     {
     if( cFieldNameP )
+
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
 {
 grabitx( tinBaseP , TAG( TAGiDnULL ) )
 idName( PUSE.dispenseUniqueListNameF() ) ,

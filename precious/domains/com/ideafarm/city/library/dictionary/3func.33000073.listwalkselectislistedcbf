@@ -28,9 +28,9 @@
         if( pListingP && !( pListingP->flagsF() & fliLISTINGc_MIXINlIST ) && pListingP->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
         flagsT flagsRC = flLISTwALKcALLbACKrETURNcODE_null ;
 
-        listingC& listingTestP = *(listingC*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-        boolT&    bListedP     =    *(boolT*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-        listingC* pListingP    =             ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
+        listingC& listingTestP = *(listingC*)((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+        boolT&    bListedP     =    *(boolT*)((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+        listingC* pListingP    =             ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     {
     else
     }
@@ -50,15 +50,17 @@
         if( pListingP && !( pListingP->flagsF() & fliLISTINGc_MIXINlIST ) && pListingP->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
         flagsT flagsRC = flLISTwALKcALLbACKrETURNcODE_null ;
 
-        listingOfSetC& listingTestP = *(listingOfSetC*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-        boolT&         bListedP     =         *(boolT*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-        listingOfSetC* pListingP    = (listingOfSetC*)((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
+        listingOfSetC& listingTestP = *(listingOfSetC*)((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+        boolT&         bListedP     =         *(boolT*)((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+        listingOfSetC* pListingP    = (listingOfSetC*)((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     {
     if( bOfSet )
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !((tinNormalS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinFullS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 {
 /*1*/flagsT _export listWalkSelectIsListedCBF( tinBaseS& tinBaseP )/*1*/
 

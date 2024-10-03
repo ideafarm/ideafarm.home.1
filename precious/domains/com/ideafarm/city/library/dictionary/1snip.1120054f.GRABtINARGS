@@ -8,12 +8,12 @@
 
 
     else                                                            { BLAMMOiD( 0x33333333 ) ; }
-    else if( ((tinNormalS&)tinBaseP).ta.grab_inUseType == idTypeP ) ((tinNormalS&)tinBaseP).ta.grab_cRecurse ++ ;   \
+    else if( ((tinFullS&)tinBaseP).ta.grab_inUseType == idTypeP ) ((tinFullS&)tinBaseP).ta.grab_cRecurse ++ ;   \
     }                                                                                                               \
-        ((tinNormalS&)tinBaseP).ta.grab_inUseType = idTypeP ;                                                       \
-        if( ((tinNormalS&)tinBaseP).ta.grab_cRecurse              ) { BLAMMOiD( 0x22222222 ) ; }                    \
+        ((tinFullS&)tinBaseP).ta.grab_inUseType = idTypeP ;                                                       \
+        if( ((tinFullS&)tinBaseP).ta.grab_cRecurse              ) { BLAMMOiD( 0x22222222 ) ; }                    \
     {                                                                                                               \
-    else if( !((tinNormalS&)tinBaseP).ta.grab_inUseType           )                                                 \
+    else if( !((tinFullS&)tinBaseP).ta.grab_inUseType           )                                                 \
          if( tinBaseP.idTypeTin != ifcIDtYPEtIN_FULL              ) { BLAMMOiD( 0x11111111 ) ; }                    \
                                                                                                                     \
 #define GRABtINaRGS(idTypeP)                                                                                        \

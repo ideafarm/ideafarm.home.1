@@ -10,29 +10,31 @@
 }
     pBooksSave->unlockF( tinBaseP ) ;
     if( !( 1 + incv02AM( pBooksSave->cRefBookF() ) ) ) { BLAMMO ; } ; //U::O: CONJ: cRef CAN BE MAINTAINED USING ++ -- SINCE MUST ALWAYS BE SERIALIZED SINCE pBook IS VOLATILE
-    pBooksSave->selectBookF( tinBaseP , flBOOKScsELECT_null , ((tinNormalS&)tinBaseP).pBookMark[ offr ].pcpIdBook ) ;
+    pBooksSave->selectBookF( tinBaseP , flBOOKScsELECT_null , ((tinFullS&)tinBaseP).pBookMark[ offr ].pcpIdBook ) ;
     pBooksSave->lockF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-    if( offr == sizeof ((tinNormalS&)tinBaseP).pBookMark / sizeof ((tinNormalS&)tinBaseP).pBookMark[ 0 ] ) { BLAMMO ; }
+    if( offr == sizeof ((tinFullS&)tinBaseP).pBookMark / sizeof ((tinFullS&)tinBaseP).pBookMark[ 0 ] ) { BLAMMO ; }
 
     }
         }
             break ;
-            ((tinNormalS&)tinBaseP).pBookMark[ offr ] = bmNewSave ;
+            ((tinFullS&)tinBaseP).pBookMark[ offr ] = bmNewSave ;
         {
-        if( !((tinNormalS&)tinBaseP).pBookMark[ offr ].pBooks )
+        if( !((tinFullS&)tinBaseP).pBookMark[ offr ].pBooks )
     {
-    for( offr = 0 ; offr < sizeof ((tinNormalS&)tinBaseP).pBookMark / sizeof ((tinNormalS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
+    for( offr = 0 ; offr < sizeof ((tinFullS&)tinBaseP).pBookMark / sizeof ((tinFullS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
 
     }
         }
             break ;
             BLAMMO ;
         {
-        if( ((tinNormalS&)tinBaseP).pBookMark[ offr ].pBooks == bmNewSave.pBooks )
+        if( ((tinFullS&)tinBaseP).pBookMark[ offr ].pBooks == bmNewSave.pBooks )
     {
-    for( ; offr < sizeof ((tinNormalS&)tinBaseP).pBookMark / sizeof ((tinNormalS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
+    for( ; offr < sizeof ((tinFullS&)tinBaseP).pBookMark / sizeof ((tinFullS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
     ZE( countT , offr ) ;
+
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 
     TINSL
 {

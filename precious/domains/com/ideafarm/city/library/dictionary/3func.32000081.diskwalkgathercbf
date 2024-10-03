@@ -13,7 +13,7 @@
     }
         }
             }
-                if( ((tinNormalS&)tinBaseP).bosFail ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("diskWalkGatherCBF / error: could not move [postNameP,postNameClean]:    ")+T(postNameP)+T("    ")+T(postNameClean) ) ;
+                if( ((tinFullS&)tinBaseP).bosFail ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("diskWalkGatherCBF / error: could not move [postNameP,postNameClean]:    ")+T(postNameP)+T("    ")+T(postNameClean) ) ;
                 BOS( WHATsfr , BOSoK , MoveFile( postNameP , T(info.postTo)+T(postNameClean) ) ) ;
 
                 //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("diskWalkGatherCBF [postNameP,to]:  ")+T(postNameP)+T("                ")+T(postNameClean) ) ;
@@ -43,16 +43,16 @@
             {
             else
             }
-                //if( ((tinNormalS&)tinBaseP).bosFail && ((tinNormalS&)tinBaseP).brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
+                //if( ((tinFullS&)tinBaseP).bosFail && ((tinFullS&)tinBaseP).brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
                 //BOS( WHATsfr , BOSoK , CreateDirectory( info.postTo , 0 ) ) ;
                 //info.postTo[ costTo - 1 ] = 0 ;
-                //countT costTo = ((tinNormalS&)tinBaseP).brcRaw ;
+                //countT costTo = ((tinFullS&)tinBaseP).brcRaw ;
                 //BOSdOnOTtEST( WHATgbo , strlen( info.postTo ) )
             {
             if( bDir )
 
             boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-            countT costLike = ((tinNormalS&)tinBaseP).brcRaw ;
+            countT costLike = ((tinFullS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
         {
         if( bDoIt )

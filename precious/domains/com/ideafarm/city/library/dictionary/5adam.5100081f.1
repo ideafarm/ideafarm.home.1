@@ -20,7 +20,7 @@ etThread.delF( tinBaseP , psttDeviceP ) ;
         if( POOP )
 
         }
-            ((tinNormalS&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , psttDeviceP , bFired , flDISKwALK_null , workCBF , pcArg , 0 , 0 ) ;
+            ((tinFullS&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , psttDeviceP , bFired , flDISKwALK_null , workCBF , pcArg , 0 , 0 ) ;
 
             //}
             //    ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
@@ -162,7 +162,7 @@ TODO
                                     else
                                     if( !POOP ) etherP.traceF( tinBaseP , T("moved aok [tShortOld]:    ")+tShort ) ;
                                     //etherP.traceF( tinBaseP , T("workCBF / 1") ) ; //U::
-                                    ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tLongTo , tLongFrom , 1 , flFILEoRdIRmOVE_DOnOTmAKEdIRiFnEEDED ) ;
+                                    ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tLongTo , tLongFrom , 1 , flFILEoRdIRmOVE_DOnOTmAKEdIRiFnEEDED ) ;
                                     //etherP.traceF( tinBaseP , T("workCBF / 2") ) ; //U::
                                     _IO_
                                     SCOOPS
@@ -244,7 +244,7 @@ TODO
                                                 POOPR
                                             {
                                             if( POOP )
-                                            ((thirdC&)*((tinNormalS&)tinBaseP).pEtScratch).diskUnzipOldF( tinBaseP , 0 , tRelFrom ) ;
+                                            ((thirdC&)*((tinFullS&)tinBaseP).pEtScratch).diskUnzipOldF( tinBaseP , 0 , tRelFrom ) ;
                                             etherP.traceF( tinBaseP , T("workCBF / 4") ) ; //U::
 
                                             SCOOPS
@@ -317,7 +317,7 @@ TODO
                                     else
                                     if( !POOP ) etherP.traceF( tinBaseP , T("moved aok [tShortOld]:    ")+tShort ) ;
                                     //etherP.traceF( tinBaseP , T("workCBF / 1") ) ; //U::
-                                    ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tLongTo , tLongFrom , 1 , flFILEoRdIRmOVE_DOnOTmAKEdIRiFnEEDED ) ;
+                                    ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tLongTo , tLongFrom , 1 , flFILEoRdIRmOVE_DOnOTmAKEdIRiFnEEDED ) ;
                                     //etherP.traceF( tinBaseP , T("workCBF / 2") ) ; //U::
                                     _IO_
                                     SCOOPS
@@ -466,7 +466,7 @@ TODO
     etherC& etPrime = etherC::etPrimeIF() ;
 
     //etherP.traceF( tinBaseP , T("workCBF / 8") ) ; //U::
-    etherC& etherP = *((tinNormalS&)tinBaseP).pEther ;
+    etherC& etherP = *((tinFullS&)tinBaseP).pEther ;
     _IO_
 {
 boolT workCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )

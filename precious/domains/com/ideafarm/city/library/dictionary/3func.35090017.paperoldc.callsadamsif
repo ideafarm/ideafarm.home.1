@@ -10,7 +10,7 @@
 }
     return cCalled ;
 
-    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
+    ((tinFullS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
 
     etherP( tinBaseP , pstk_pSadam ) ;
     }
@@ -53,13 +53,13 @@
         {
         while( *pstk_pSadam )
         ZE( boolT , bQuit ) ;
-        const countT idEvent = 1 + incv02AM( ((tinNormalS&)tinBaseP).pag1->idEventSadamsLath ) ;
+        const countT idEvent = 1 + incv02AM( ((tinFullS&)tinBaseP).pag1->idEventSadamsLath ) ;
     {
     if( pstk_pSadam )
     sadamsC::pSadamsIF( tinBaseP )->getF( tinBaseP , pstk_pSadam , F(flagsP) & flCALLsADAMS_FIFO ? flGETsADAMsTATES_FIFO : flGETsADAMsTATES_null ) ;
     ZE( stackC* , pstk_pSadam ) ;
 
-    ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ((tinFullS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     ZE( boolT , cCalled ) ;
 
     _IO_

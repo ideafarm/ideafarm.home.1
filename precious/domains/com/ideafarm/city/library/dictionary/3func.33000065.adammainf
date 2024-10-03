@@ -49,9 +49,9 @@
 
     ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAINb1 ) ;
     }
-        //((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
+        //((tinFullS&)tinBaseP).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
         ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
-        if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+        if( ((tinFullS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
         ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN91 ) ;
         }
             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN81 ) ;
@@ -59,21 +59,21 @@
             etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
             OStEXTC(  ostoSay , processGlobal1S::_processGlobal1I_IF().cOsHandles , '0' ) ;
             OStEXTAK( ostoSay , "." ) ;
-            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->cSpins4 , '0' ) ;
+            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->cSpins4 , '0' ) ;
             OStEXTAK( ostoSay , "." ) ;
-            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->cSpins3 , '0' ) ;
+            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->cSpins3 , '0' ) ;
             OStEXTAK( ostoSay , "." ) ;
-            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->cSpins2 , '0' ) ;
+            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->cSpins2 , '0' ) ;
             OStEXTAK( ostoSay , "." ) ;
-            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->cSpins1 , '0' ) ;
+            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->cSpins1 , '0' ) ;
             OStEXTAK( ostoSay , "    " ) ;
-            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->cYieldHighWater , 0 ) ;
+            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->cYieldHighWater , 0 ) ;
             OStEXTAK( ostoSay , "    " ) ;
-            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->idAdam , 0 ) ;
+            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->idAdam , 0 ) ;
             OStEXTAK( ostoSay , "adamMainF [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;
             OStEXT(   ostoSay , TUCK << 2 ) ;
 
-            ((tinNormalS&)tinBaseP).pag1->_etherC_.pHdll = 0 ;
+            ((tinFullS&)tinBaseP).pag1->_etherC_.pHdll = 0 ;
             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN71 ) ;
             }
                 ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN61 ) ;
@@ -90,7 +90,7 @@
                     if( idTypeP == ifcIDtYPEtLS_WINDOW )
                     ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN41 ) ;
 
-                    if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                    if( ((tinFullS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
                     ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN31 ) ;
         
                     if( thirdC::third_cThirdObjectsI_IF( tinBaseP ) ) ;//TELLsYSc1( ifcIDtYPEtELLsYS_ERRORsOMEtHIRDoBJECTSeXIST )
@@ -109,7 +109,7 @@
 
                                     }
                                         thirdC::dosTellMonitorIF( tinBaseP , tell , ifcIDbOOKStELL_APP ) ;
-                                        tellC tell( tinBaseP , LF , 0 , ifcIDtYPEtELLaPP_INoUTaRRAY , ((tinNormalS&)tinBaseP).pbPendingInOutFramePackets , sizeof( countT ) + cPending * sizeof( tellInfoAppInOutFrameS ) ) ;
+                                        tellC tell( tinBaseP , LF , 0 , ifcIDtYPEtELLaPP_INoUTaRRAY , ((tinFullS&)tinBaseP).pbPendingInOutFramePackets , sizeof( countT ) + cPending * sizeof( tellInfoAppInOutFrameS ) ) ;
                                     {
 
                                     }
@@ -119,40 +119,40 @@
                                     {
                                     if( cPending > CmAXpENDINGiNoUTfRAMEpACKETS )
 
-                                    tellInfoAppInOutFrameS* pPending = (tellInfoAppInOutFrameS*)( ((tinNormalS&)tinBaseP).pbPendingInOutFramePackets + sizeof( countT ) ) ;
+                                    tellInfoAppInOutFrameS* pPending = (tellInfoAppInOutFrameS*)( ((tinFullS&)tinBaseP).pbPendingInOutFramePackets + sizeof( countT ) ) ;
                                 {
                                 if( cPending )
 
-                                countT& cPending = *(countT*)((tinNormalS&)tinBaseP).pbPendingInOutFramePackets ;
+                                countT& cPending = *(countT*)((tinFullS&)tinBaseP).pbPendingInOutFramePackets ;
 
                                 THREADmODE5oN( flTHREADmODE5_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY | flTHREADmODE5_DOnOTfLUSHpENDINGaPPtELEMETRY ) ;
                             {
-                            if( ((tinNormalS&)tinBaseP).pbPendingInOutFramePackets )
+                            if( ((tinFullS&)tinBaseP).pbPendingInOutFramePackets )
                             //PSEUDOdUPLICATEcODE 360fc002 33000065
-                            //THE CODE IS RETAINED BECAUSE tellC MIGHT USE *((tinNormalS&)tinBaseP).pPoolUse IN THE FUTURE, AND ALSO FLUSHING ESTABLISHES A KNOWN STATE (AN EMPTY BUFFER) FOR PROCESS TERMINATION
-                            //THIS IS DONE HERE TO FLUSH PENDING inOutFrameC APP TELEMETRY WHILE poolC IS STILL AVAILABLE (AS OF THIS WRITING, tellC ALWAYS USES heap, SO WHETHER ((tinNormalS&)tinBaseP).pPoolUse IS NONZE HAS NO EFFECT
+                            //THE CODE IS RETAINED BECAUSE tellC MIGHT USE *((tinFullS&)tinBaseP).pPoolUse IN THE FUTURE, AND ALSO FLUSHING ESTABLISHES A KNOWN STATE (AN EMPTY BUFFER) FOR PROCESS TERMINATION
+                            //THIS IS DONE HERE TO FLUSH PENDING inOutFrameC APP TELEMETRY WHILE poolC IS STILL AVAILABLE (AS OF THIS WRITING, tellC ALWAYS USES heap, SO WHETHER ((tinFullS&)tinBaseP).pPoolUse IS NONZE HAS NO EFFECT
 
                             }
                                 ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAINf ) ;
-                                if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                                if( ((tinFullS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
                                 ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAINe ) ;
                                 }
                                     // tinBaseP IS DESTROYED HERE (BY etherC DT'OR)
                                     ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAINd ) ;
                                     }
                                         TELL( "main: destroying ether" ) ;
-                                        if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                                        if( ((tinFullS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
                                         TINSL
                                     {
                                     ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAINc ) ;
                                     }
-                                        ((tinNormalS&)tinBaseP).pEther = 0 ;
+                                        ((tinFullS&)tinBaseP).pEther = 0 ;
                                         }
                                             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAINb ) ;
 
                                             TELL( "main: destroying etThread and tinBaseP reference" ) ;
 
-                                            //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0 ;
+                                            //((tinFullS&)tinBaseP).monitor.idWhat2 = 0 ;
                                             //ether.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
                                             //ether.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
                                             //ether.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
@@ -161,38 +161,38 @@
                                             //U::POOLS 2 3 4 WERE DESTROYED HERE
 
                                             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAINa ) ;
-                                            DEL( ((tinNormalS&)tinBaseP).pag1->pBksLog ) ;
+                                            DEL( ((tinFullS&)tinBaseP).pag1->pBksLog ) ;
                                             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN9 ) ;
                                             TELL( "main: destroying log" ) ;
 
                                             }
-                                                if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                                                if( ((tinFullS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
                                                 TINSL
                                             {
                                             TELL( "main: inspecting phase 2" ) ;
             
                                             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN8 ) ;
-                                            DEL( ((tinNormalS&)tinBaseP).pEtScratch ) ;
+                                            DEL( ((tinFullS&)tinBaseP).pEtScratch ) ;
                                             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN7 ) ;
                                             TELL( "main: destroying pEtScratch" ) ;
-                                            if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                                            if( ((tinFullS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
                                             TELL( "main: inspecting phase" ) ;
                                             //if( etThread ) thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_etThreadONmainISiMPOTENT ;
                         
-                                            ((tinNormalS&)tinBaseP).tally.flushF( tinBaseP , etThread ) ;
-                                            ((tinNormalS&)tinBaseP).tally.nowF( tinBaseP , etThread ) ;
-                                            ((tinNormalS&)tinBaseP).tally.bTally = 0 ;
+                                            ((tinFullS&)tinBaseP).tally.flushF( tinBaseP , etThread ) ;
+                                            ((tinFullS&)tinBaseP).tally.nowF( tinBaseP , etThread ) ;
+                                            ((tinFullS&)tinBaseP).tally.bTally = 0 ;
                                             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN6 ) ;
                         
                                             }
-                                                if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                                                if( ((tinFullS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
                                                 ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN5 ) ;
                                                 thirdC::s_shutdown1IF( tinBaseP ) ;
                                                 ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN4 ) ;
                                                 }
                                                     ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN3 ) ;
                                                     }
-                                                        DEL( ((tinNormalS&)tinBaseP).pag1->_deviceC_pStkJob ) ;
+                                                        DEL( ((tinFullS&)tinBaseP).pag1->_deviceC_pStkJob ) ;
                                                         DELzOMBIE( pDisplay ) ;
                                                     {
                                                     if( idTypeP == ifcIDtYPEtLS_WINDOW )
@@ -203,9 +203,9 @@
                                                         TELL( "main: returned from pMainF" ) ;
                                                         }
                                                             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN2 ) ;
-                                                            ((tinNormalS&)tinBaseP).tell_tmWatchF_toIgnoreMeF() ;
+                                                            ((tinFullS&)tinBaseP).tell_tmWatchF_toIgnoreMeF() ;
                                                             //etherC::ifcSayIF( T("called pMainF") , flSAY_APPEND | flSAY_LOG ) ;
-                                                            if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                                                            if( ((tinFullS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
                                                             cryC cry0d( TOCK + 0x0d ) ;
                                                             ADAMpHASE( ifcIDpHASEaDAM_EXEePILOGaDAMmAIN1 ) ;
                                                             }
@@ -232,16 +232,16 @@
                                                             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN23 ) ;
                                                             cryC cry0c( TOCK + 0x0c ) ;
 
-                                                            __( ((tinNormalS&)tinBaseP).pag1->idMemorySpace - rootAdamGlobal1I.idMemorySpace ) ; // THIS ENSURES THAT ALL ADAMS WITHIN A PROCESS ARE USING THE SAME MEMORY SPACE (THEY HAVE ACCESS TO PROCESS GLOBALS THAT USE A MEMORY SPACE)
+                                                            __( ((tinFullS&)tinBaseP).pag1->idMemorySpace - rootAdamGlobal1I.idMemorySpace ) ; // THIS ENSURES THAT ALL ADAMS WITHIN A PROCESS ARE USING THE SAME MEMORY SPACE (THEY HAVE ACCESS TO PROCESS GLOBALS THAT USE A MEMORY SPACE)
                                                             cryC cry201( ( TOCK << 1 ) + 0x01 ) ;
 
                                                             }
                                                                 countT foo = 2 ;
                                                             {
-                                                            if( idAdamWant == ((tinNormalS&)tinBaseP).pag1->idAdam )
+                                                            if( idAdamWant == ((tinFullS&)tinBaseP).pag1->idAdam )
                                                             static countT idAdamWant = 0x401057b ; //TO FACILITATE WDW DEBUGGING
 
-                                                            if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                                                            if( ((tinFullS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
                                                             //etherC::ifcSayIF( T("calling pMainF") , flSAY_APPEND | flSAY_LOG ) ;
                                                             _IO_
                                                             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN13 ) ;
@@ -261,7 +261,7 @@
                                                     {
                                                     else
                                                     }
-                                                        ((tinNormalS&)tinBaseP).tell_tmWatchF_toIgnoreMeF() ;
+                                                        ((tinFullS&)tinBaseP).tell_tmWatchF_toIgnoreMeF() ;
                                                         ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf2 ) ;
                                                         _IO_
                                                     {
@@ -386,7 +386,7 @@
 
                                                     }
                                                         pDisplay = new( 0 , tinBaseP , pbDisplay , sizeof pbDisplay ) displayC( tinBaseP , etThread , ((measureT)1e1) , 0 , 0 , flDEVICEc_NOsMOOTHIES ) ; //USE SMOOTHIES IN PRODUCTION BUT NOT FOR SOME TESTING
-                                                        ((tinNormalS&)tinBaseP).pag1->_deviceC_pStkJob = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB | flSTACKc_GIVEsIGNnEWpLATE , sizeof( drawJobS ) ) ; ___( ((tinNormalS&)tinBaseP).pag1->_deviceC_pStkJob ) ;
+                                                        ((tinFullS&)tinBaseP).pag1->_deviceC_pStkJob = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB | flSTACKc_GIVEsIGNnEWpLATE , sizeof( drawJobS ) ) ; ___( ((tinFullS&)tinBaseP).pag1->_deviceC_pStkJob ) ;
                                                         _IO_
                                                     {
                                                     if( idTypeP == ifcIDtYPEtLS_WINDOW )        //U:: 20200314@1545: CT THIS STACK FAILS ON NONMONOTONIC GRAB.  TESTING OF NONMONOTONIC GRAB ENFORCEMENT DID NOT INCLUDE TESTS FOR GUI PROCESSES
@@ -418,7 +418,7 @@
                                                                 etThread.delF( tinBaseP , psttTitle ) ;
                                                                 etThread.winSetTitleF( tinBaseP , psttTitle ) ;
                                                             {
-                                                            if( ((tinNormalS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinInPoolMain )
+                                                            if( ((tinFullS&)tinBaseP).idTinNamed == ifcIDtINnAMED_tinInPoolMain )
                                                             sgnWindowsReady.giveF( tinBaseP ) ;
                                                         {
                                                         if( idTypeP != ifcIDtYPEtLS_WINDOW )
@@ -466,7 +466,7 @@
                                                                 {
                                                                 if( POOP )
 
-                                                                count04T idKeys = ((tinNormalS&)tinBaseP).pEtScratch->idIdeaFarmKeysF( tinBaseP ) ;
+                                                                count04T idKeys = ((tinFullS&)tinBaseP).pEtScratch->idIdeaFarmKeysF( tinBaseP ) ;
                                                             {
                                                             while( !ether && !home.idIdeaFarmKeys )
 
@@ -493,16 +493,16 @@
                                                     if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL )
                                                     cryC cry20c( ( TOCK << 1 ) + 0x0c ) ;
 
-                                                    //etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1I.idAdamRoot)+T(" ")+TF1(((tinNormalS&)tinBaseP).osPid)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                                                    //etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1I.idAdamRoot)+T(" ")+TF1(((tinFullS&)tinBaseP).osPid)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
                                                     }
                                                         etThread.traceF( tinBaseP , tTitle ) ; //RETAIN THIS; IT IS USEFUL TO DEFEND AGAINST ATTACK
                                                     
                                                         ;
-                                                            +t8+T("P_")+TF2(((tinNormalS&)tinBaseP).osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("(")+TF4(((tinNormalS&)tinBaseP).osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(")")
-                                                            +t8+T("F_")+TF2(((tinNormalS&)tinBaseP).pag1->idGroupFireAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)
-                                                            +t8+T("A+")+TF2(((tinNormalS&)tinBaseP).pag1->idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("(")+TF2(((tinNormalS&)tinBaseP).pag1->idAdam&0xfff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(")")
+                                                            +t8+T("P_")+TF2(((tinFullS&)tinBaseP).osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("(")+TF4(((tinFullS&)tinBaseP).osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(")")
+                                                            +t8+T("F_")+TF2(((tinFullS&)tinBaseP).pag1->idGroupFireAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)
+                                                            +t8+T("A+")+TF2(((tinFullS&)tinBaseP).pag1->idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("(")+TF2(((tinFullS&)tinBaseP).pag1->idAdam&0xfff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(")")
                                                             +t8+T("A_")+TF2(rootAdamGlobal1I.idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("(")+TF2(processGlobal1I.idAdamRoot&0xfff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(")")
-                                                            +t8+T("M_")+TF2(((tinNormalS&)tinBaseP).pag1->idMemorySpace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)
+                                                            +t8+T("M_")+TF2(((tinFullS&)tinBaseP).pag1->idMemorySpace,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)
                                                             +t8+T("H_")+TF2(processGlobal2I.idHome,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)
                                                             T(postIPDOSsHORT)
                                                         TN( tTitle , "" ) ; tTitle =
@@ -516,7 +516,7 @@
                                                     }
                                                         #endif
 
-                                                            etThread.strMakeF( tinBaseP , LF , psttDll , TF3(((tinNormalS&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( psttDll ) ;
+                                                            etThread.strMakeF( tinBaseP , LF , psttDll , TF3(((tinFullS&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( psttDll ) ;
 
                                                         #else
 
@@ -572,7 +572,7 @@
 
                                                 TELL( "main: parameters scanned" ) ;
                                                 }
-                                                    //etThread.traceF( tinBaseP , T("adam parameters (command line arguments) END [idAdam]:    ")+TF2(((tinNormalS&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    //etThread.traceF( tinBaseP , T("adam parameters (command line arguments) END [idAdam]:    ")+TF2(((tinFullS&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     }
                                                         //U::if( bOk ) etThread.strokeF( tinBaseP , T("process parameter \"")+T(psttc1)+T("\" recognized\r\n") ) ;
 
@@ -626,7 +626,7 @@
                                                     FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinBaseP ) )
                                                     ZE( countT , idArg ) ;
                                                     ZE( countT , off ) ;
-                                                    //etThread.traceF( tinBaseP , T("adam parameters (command line arguments) BEGIN [idAdam]:    ")+TF2(((tinNormalS&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    //etThread.traceF( tinBaseP , T("adam parameters (command line arguments) BEGIN [idAdam]:    ")+TF2(((tinFullS&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
                                                 TELL( "main: inspecting process parameters" ) ;
                                                 cryC cry211( ( TOCK << 1 ) + 0x11 ) ;
@@ -696,20 +696,20 @@
                                                 cryC cry212( ( TOCK << 1 ) + 0x12 ) ;
 
                                                 }
-                                                    etThread.strMakeF( tinBaseP , LF , psttTitle , TF4(((tinNormalS&)tinBaseP).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+tb4+tAdam+tb8+T(postIPDOSsHORTlONG)+( processGlobal2I.idHome==1 ? T("") : T(" (home ")+TF2(processGlobal2I.idHome,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(")") ) ) ; ___( psttTitle ) ;
+                                                    etThread.strMakeF( tinBaseP , LF , psttTitle , TF4(((tinFullS&)tinBaseP).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+tb4+tAdam+tb8+T(postIPDOSsHORTlONG)+( processGlobal2I.idHome==1 ? T("") : T(" (home ")+TF2(processGlobal2I.idHome,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(")") ) ) ; ___( psttTitle ) ;
 
                                                     TN( tb8 , "        " ) ;
                                                     TN( tb4 , "    " ) ;
-                                                    if( !tAdam.csF( tinBaseP ) ) tAdam = TF2(((tinNormalS&)tinBaseP).pag1->idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ;
-                                                    TN( tAdam , "" )       ; tAdam = T(mapAdam(((tinNormalS&)tinBaseP).pag1->idAdam)) ;
+                                                    if( !tAdam.csF( tinBaseP ) ) tAdam = TF2(((tinFullS&)tinBaseP).pag1->idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ;
+                                                    TN( tAdam , "" )       ; tAdam = T(mapAdam(((tinFullS&)tinBaseP).pag1->idAdam)) ;
 
                                                     mapCTC& mapAdam = processGlobal4S::_processGlobal4I_IF().mapAdam ;
                                                 {
                                                 ZE( strokeS* , psttTitle ) ;
                                                 ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN61 ) ;
 
-                                                ((tinNormalS&)tinBaseP).time2    = timeBorn.time2 ;
-                                                ((tinNormalS&)tinBaseP).time1    = timeBorn.time1 ;
+                                                ((tinFullS&)tinBaseP).time2    = timeBorn.time2 ;
+                                                ((tinFullS&)tinBaseP).time1    = timeBorn.time1 ;
                                                 etThread.osTimeNowF( tinBaseP , timeBorn.time1 , timeBorn.time2 ) ;
                                                 timeS timeBorn ;
                                                 TELL( "main: informing ether of time and of process parameters" ) ;
@@ -734,27 +734,27 @@
                                             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN31 ) ;
 
                                             cryC cry0b( TOCK + 0x0b ) ;
-                                            ((tinNormalS&)tinBaseP).pag1->pBksLog = new( 0 , tinBaseP , LF ) booksC( tinBaseP , TAG( TAGiDnULL ) , "log" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER , TOCK ) ; ___( ((tinNormalS&)tinBaseP).pag1->pBksLog ) ;
+                                            ((tinFullS&)tinBaseP).pag1->pBksLog = new( 0 , tinBaseP , LF ) booksC( tinBaseP , TAG( TAGiDnULL ) , "log" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER , TOCK ) ; ___( ((tinFullS&)tinBaseP).pag1->pBksLog ) ;
                                             cryC cry0a( TOCK + 0x0a ) ;
                                             TELL( "main: constructing log" ) ;
                                             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN21 ) ;
 
-                                            ((tinNormalS&)tinBaseP).tally.bTally = 1 ;
-                                            ((tinNormalS&)tinBaseP).tally.nowF( tinBaseP , etThread ) ;
-                                            ((tinNormalS&)tinBaseP).tally.resetF( tinBaseP ) ;
+                                            ((tinFullS&)tinBaseP).tally.bTally = 1 ;
+                                            ((tinFullS&)tinBaseP).tally.nowF( tinBaseP , etThread ) ;
+                                            ((tinFullS&)tinBaseP).tally.resetF( tinBaseP ) ;
                         
                                             TELL( "main: " ) ;
                                             TELL( "main: ether and etThread constructed" ) ;
                                             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN11 ) ;
 
-                                            //etThread.traceF( tinBaseP , T("adamMainF / [idGroupFireAll]:    ")+TF2(((tinNormalS&)tinBaseP).pag1->idGroupFireAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tinBaseP , T("adamMainF / [idGroupFireAll]:    ")+TF2(((tinFullS&)tinBaseP).pag1->idGroupFireAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             
-                                            //__( ((tinNormalS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_main ) ;
+                                            //__( ((tinFullS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_main ) ;
                                             scoopC scoop( tinBaseP , LF , etThread ) ;
                                         {
-                                        TELL( "constructed ((tinNormalS&)tinBaseP).pEtScratch" ) ;
-                                        ((tinNormalS&)tinBaseP).pEtScratch = new( 0 , tinBaseP , LF ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ; ___( ((tinNormalS&)tinBaseP).pEtScratch ) ;
-                                        TELL( "constructing ((tinNormalS&)tinBaseP).pEtScratch" ) ;
+                                        TELL( "constructed ((tinFullS&)tinBaseP).pEtScratch" ) ;
+                                        ((tinFullS&)tinBaseP).pEtScratch = new( 0 , tinBaseP , LF ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ; ___( ((tinFullS&)tinBaseP).pEtScratch ) ;
+                                        TELL( "constructing ((tinFullS&)tinBaseP).pEtScratch" ) ;
                                         TELL( "constructed etThread" ) ;
                                         ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN01 ) ;
 
@@ -763,7 +763,7 @@
                                         //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;
                                         //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
                                         //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , 1 ) ;
-                                        //((tinNormalS&)tinBaseP).monitor.idWhat2 = - 1 ;
+                                        //((tinFullS&)tinBaseP).monitor.idWhat2 = - 1 ;
                                         //etThread.traceF( tinBaseP , T("enabling where") ) ;
 
                                         }
@@ -773,7 +773,7 @@
 
                                         cryC cry09( TOCK + 0x09 ) ;
                                         ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAINf ) ;
-                                        ((tinNormalS&)tinBaseP).pag1->pEtThreadMain = ((tinNormalS&)tinBaseP).pEther = &etThread ;
+                                        ((tinFullS&)tinBaseP).pag1->pEtThreadMain = ((tinFullS&)tinBaseP).pEther = &etThread ;
                                         etherC etThread( tinBaseP , TAG( TAGiDnULL ) ) ;
                                         cryC cry08( TOCK + 0x08 ) ;
                                         TELL( "constructing etThread" ) ;
@@ -782,7 +782,7 @@
                                     {
                                     if( !ether )
 
-                                    ((tinNormalS&)tinBaseP).pEther = &ether ;
+                                    ((tinFullS&)tinBaseP).pEther = &ether ;
         
                                     ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAINd ) ;
                                     cryC cry07( TOCK + 0x07 ) ;
@@ -804,9 +804,9 @@
                                     {
                                     declareVmUsageTypeGF( tinBaseP , (byteT*)declareVmUsageTypeGF , flVMuSAGEtYPE_CODEbASE ) ;
             
-                                    ((tinNormalS&)tinBaseP).idlTask  = ifcLINE ;
-                                    ((tinNormalS&)tinBaseP).idiTask  = DDNUMB ;
-                                    putNegAM( ((tinNormalS&)tinBaseP).fingerprint , FINGERnEG_TINs ) ;
+                                    ((tinFullS&)tinBaseP).idlTask  = ifcLINE ;
+                                    ((tinFullS&)tinBaseP).idiTask  = DDNUMB ;
+                                    putNegAM( ((tinFullS&)tinBaseP).fingerprint , FINGERnEG_TINs ) ;
                                     ___( &tinBaseP ) ;                                          /*HERE*/
                                     TELL( "main: setting up" ) ;
                                     ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAINb ) ;
@@ -814,20 +814,20 @@
                                     TINSL
                                 {
                                 if( bTinOk )
-                                //_IO_    CANNOT CT HERE, BECAUSE tinBaseP CURRENTLY REFERENCES THE PRIOR tinNormalS
+                                //_IO_    CANNOT CT HERE, BECAUSE tinBaseP CURRENTLY REFERENCES THE PRIOR tinFullS
 
                                 ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAINa ) ;
                                 cryC cry05( TOCK + 0x05 ) ;
                                 }
                                     _MOLE
-                                    TELL( "main: tinNormalS, in poolOld is constructed" ) ;_
+                                    TELL( "main: tinFullS, in poolOld is constructed" ) ;_
                                     }
                                         TELLsYSlIFInAME( postName ) ; //THE TELLsYSlIFInAME MUST BE ON THE SAME LINE AS THE CONSTRUCTOR CALL
                                         bTinOk = 1 ;_
                                     {
                                     if( pTin ) // pTin WILL BE TAGGED AT /*HERE*/
                                     TINSL
-                                    tinBaseS* pTin = new( 0 , tinBaseP , LF ) tinNormalS( tinBaseP , TAG( TAGiDnULL ) , ebpAM() , 0 , 0 , postName , flTINs_null , ((tinNormalS&)tinBaseP).monitor.idThread == 1 ? ifcIDtINnAMED_tinInPoolMain : ifcIDtINnAMED_tinInPool ) ;_
+                                    tinBaseS* pTin = new( 0 , tinBaseP , LF ) tinFullS( tinBaseP , TAG( TAGiDnULL ) , ebpAM() , 0 , 0 , postName , flTINs_null , ((tinFullS&)tinBaseP).monitor.idThread == 1 ? ifcIDtINnAMED_tinInPoolMain : ifcIDtINnAMED_tinInPool ) ;_
                                     osTextT* postName = POSTtHREADnAMEmAIN ;_
                                     _MILE
                                 {
@@ -896,9 +896,9 @@
                             
                             //U:: ifcIDsTATEsPACE_MULTIPLEaDAMS: REMOVE IN PRODUCTION AND WHEN NOT INVESTIGATING LEAKAGE
                             
-                            OStEXTC(  ostoPoolAdamTemp , ((tinNormalS&)tinBaseP).osPid , 0 )                   //20141129@1426: ADDED TO UNIQUIFY SO THAT MULTIPLE INSTANCES OF SAME idAdam CAN COEXIST
+                            OStEXTC(  ostoPoolAdamTemp , ((tinFullS&)tinBaseP).osPid , 0 )                   //20141129@1426: ADDED TO UNIQUIFY SO THAT MULTIPLE INSTANCES OF SAME idAdam CAN COEXIST
                             OStEXTAK( ostoPoolAdamTemp , "." )
-                            OStEXTC(  ostoPoolAdamTemp , ((tinNormalS&)tinBaseP).pag1->idAdam , 0 )
+                            OStEXTC(  ostoPoolAdamTemp , ((tinFullS&)tinBaseP).pag1->idAdam , 0 )
                             OStEXTAK( ostoPoolAdamTemp , "adam.temp." )
                             OStEXT(   ostoPoolAdamTemp , TUCK << 2 )
                             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN5 ) ;
@@ -909,7 +909,7 @@
                 {
                 cryC cry01( TOCK + 0x01 ) ;
                 _IO_
-                //QueryThreadCycleTime( (HANDLE)(-2) , (ULONG64*)&((tinNormalS&)tinBaseP).pc Utility04[ 0 ] ) ; //U:: TO FIND A BUG
+                //QueryThreadCycleTime( (HANDLE)(-2) , (ULONG64*)&((tinFullS&)tinBaseP).pc Utility04[ 0 ] ) ; //U:: TO FIND A BUG
 
                 }
                     processGlobal1S::_processGlobal1I_IF().phExceptionHandler = 0         ;
@@ -923,7 +923,7 @@
                         else if( !thirdC::c_strcmpIF( tinBaseP , ppostHowP[ idp - 1 ] , "!threadChatterAdam"        ) ) { thirdC::third_flagsModeAdam2I_IF( tinBaseP ) |= flADAMmODE2_THREADcHATTER                   ; }
                         else if( !thirdC::c_strcmpIF( tinBaseP , ppostHowP[ idp - 1 ] , "!noSystemThreads"          ) ) { thirdC::third_flagsModeProcess1I_IF(   ) |= flMODEpROCESS1_NOsYSTEMtHREADS              ; }
                         else if( !thirdC::c_strcmpIF( tinBaseP , ppostHowP[ idp - 1 ] , "!noInterprocessGrabs"      ) ) { thirdC::third_flagsModeAdam1I_IF( tinBaseP ) |= flADAMmODE1_DISALLOWgRABoFiNTERPROCESSgRABs ; }
-                        //else if( !thirdC::c_strcmpIF( tinBaseP , ppostHowP[ idp - 1 ] , "!utility0"               ) ) { ((tinNormalS&)tinBaseP).pc Utility[ 0 ] = 1 ; }
+                        //else if( !thirdC::c_strcmpIF( tinBaseP , ppostHowP[ idp - 1 ] , "!utility0"               ) ) { ((tinFullS&)tinBaseP).pc Utility[ 0 ] = 1 ; }
                         else if( !thirdC::c_strcmpIF( tinBaseP , ppostHowP[ idp - 1 ] , "!utility"                  ) ) { thirdC::third_flagsModeProcess2I_IF(   ) |= flMODEpROCESS2_CHECKtINuTILITYeLEMENTS      ; }
                         else if( !thirdC::c_strcmpIF( tinBaseP , ppostHowP[ idp - 1 ] , "!debug1"                   ) ) { thirdC::third_flagsModeAdam1I_IF( tinBaseP ) |= flADAMmODE1_DEBUG1                          ; }
                         else if( !thirdC::c_strcmpIF( tinBaseP , ppostHowP[ idp - 1 ] , "!debug"                    ) ) { thirdC::third_flagsModeProcess1I_IF(   ) |= flMODEpROCESS1_DEBUG                        ; }
@@ -1002,7 +1002,7 @@
                 ZE( boolT , bTestAuto ) ;
                 ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN3 ) ;
             {
-            ((tinNormalS&)tinBaseP).pag1->_etherC_.pHdll = &hDll ;
+            ((tinFullS&)tinBaseP).pag1->_etherC_.pHdll = &hDll ;
             handleC hDll( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ; //MUST NOT BE CLOSED UNTIL tmWindowsF HAS ENDED, BECAUSE LATTER CAN CALL CALLBACK FUNCTIONS DEFINED IN THE ADAM
         
             }
@@ -1024,8 +1024,8 @@
 
             etherC::paperZitsOffF( tinBaseP ) ;
 
-            if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
-            ((tinNormalS&)tinBaseP).flagsThreadMode3 |= flTHREADmODE3_ADAMmAINtHREAD ;
+            if( ((tinFullS&)tinBaseP).monitor.idThread == 1 && !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+            ((tinFullS&)tinBaseP).flagsThreadMode3 |= flTHREADmODE3_ADAMmAINtHREAD ;
             const osTextT* ppostHow[ 0x10 ] ; //WILL BE FILLED WITH REFERENCES TO SNIPS IN postOldCopy; ppostHowP WILL BE SET TO ME, SO I MUST EXIST WHILE ppostHowP IS VISIBLE
             ADAMpHASE( ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN2 ) ;
         {
@@ -1038,7 +1038,7 @@
             homeS& home = homeS::homeIF() ;
         {
 
-        //((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
+        //((tinFullS&)tinBaseP).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
         _IO_
 
         //}
@@ -1078,7 +1078,7 @@
     //{
     //COMMENT OUT IN PROD
 
-    //if( ((tinNormalS&)tinBaseP).monitor.idThread == 1 ) etherC::os_cAllKidThreadsI_IF( tinBaseP ) = BM_HIGH ; //U:: TO FIND A BUG
+    //if( ((tinFullS&)tinBaseP).monitor.idThread == 1 ) etherC::os_cAllKidThreadsI_IF( tinBaseP ) = BM_HIGH ; //U:: TO FIND A BUG
     ((etherC*)0)->traceF( tinBaseP , (strokeS*)"------------------------------------------------------------------------------------------------------------------------ adamMainF ++++" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
 {
 /*1*/countT adamMainF( tinBaseS& tinBaseP , const countT idTypeP , countT cHowP , const osTextT** ppostHowP , countT hWindowingClientIP , countT hPreviousWindowingClientP , const osTextT* postP , countT idCmdShowP )/*1*/

@@ -100,7 +100,7 @@
     ((countT)0x36021) , "infodisk1s" ,
     ((countT)0x36022) , "infodisk1as" ,
     ((countT)0x36023) , "infoboxgetputs" ,
-    ((countT)0x36024) , "tinNormalS" ,
+    ((countT)0x36024) , "tinFullS" ,
     ((countT)0x36025) , "sqmatrixoldc" ,
     ((countT)0x36026) , "vectoroldc" ,
     ((countT)0x36027) , "tablec" ,

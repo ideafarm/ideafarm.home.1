@@ -22,19 +22,19 @@
         }
             ++ s ; ether.osSleepF( tinBaseP , TOCK >> 3 ) ;
         {
-        while( ((tinNormalS&)tinBaseP).pag1->_deviceC_cHelper )
+        while( ((tinFullS&)tinBaseP).pag1->_deviceC_cHelper )
         sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         }
             stJob << (byteT*)&job ;
             inc02AM( drawJobS::cInstancesIF() ) ;
             drawJobS job ;
-            stackC& stJob = *((tinNormalS&)tinBaseP).pag1->_deviceC_pStkJob ;
+            stackC& stJob = *((tinFullS&)tinBaseP).pag1->_deviceC_pStkJob ;
         {
 
-        ((tinNormalS&)tinBaseP).pag1->_deviceC_flagsHelper |= flDEVICEchELPER_QUIT ;
+        ((tinFullS&)tinBaseP).pag1->_deviceC_flagsHelper |= flDEVICEchELPER_QUIT ;
     {
-    if( 1 == decv02AM( ((tinNormalS&)tinBaseP).pag1->_deviceC_cMe ) )
+    if( 1 == decv02AM( ((tinFullS&)tinBaseP).pag1->_deviceC_cMe ) )
 
     quitDrawingF( tinBaseP ) ;
 

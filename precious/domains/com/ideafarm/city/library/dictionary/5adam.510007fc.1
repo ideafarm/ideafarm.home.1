@@ -87,7 +87,7 @@ voidT sortaC::doBitF( tinBaseS& tinBaseP , byteT* pbP , countT cbP , countT shif
     {
     if( offeh == 3 )
 
-    //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("swapF returning [offEltHighs]:    ")+TF3(offeh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("swapF returning [offEltHighs]:    ")+TF3(offeh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
     ;
         : ( pbHighs - pbArray ) / cbElt ;
         ? - 1
@@ -254,11 +254,11 @@ voidT sortaC::verifySortF( tinBaseS& tinBaseP , byteT* pbP , countT cbP , const 
     {
     if( ( pbP - pbArray ) / cbElt == 0xa && bit == 0x10000000 )
 
-    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("range is sorted by bit ")+TF3(bit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tIndent+T(psttd) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("33333333") , T(" <<<<<<<") ) ;   ___( psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("11111111") , T(">>>>>>> ") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("range is sorted by bit ")+TF3(bit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tIndent+T(psttd) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("33333333") , T(" <<<<<<<") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("11111111") , T(">>>>>>> ") ) ;   ___( psttd ) ;
     etherC::strDumpIF( tinBaseP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * 0x10 , cbElt , 0 , 0 ) ;  ___( psttd ) ;
     ZE( strokeS* , psttd ) ;
 
@@ -271,7 +271,7 @@ voidT sortaC::traceRangeIsSortedF( tinBaseS& tinBaseP , byteT* pbP , countT cbP 
 
 }
     }
-        ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("        ")+tIndent2+tMark+tIndent3+tMark , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("        ")+tIndent2+tMark+tIndent3+tMark , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
         textC tIndent3( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , csttIndentDelta ) ;
         textC tIndent2( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , csttIndent2 ) ;
         countT csttIndentDelta = csttIndent3 - csttIndent2 - ( cbElt << 1 ) ;
@@ -289,11 +289,11 @@ voidT sortaC::traceRangeIsSortedF( tinBaseS& tinBaseP , byteT* pbP , countT cbP 
 voidT sortaC::traceMarkSelectedElementsF(  tinBaseS& tinBaseP , byteT** ppbP , countT cpbP )
 
 }
-    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , TP(psttSayP,0xb)+T(" [off,cbP]:    ")+TF3(myOff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+T("    ")+TF3(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tIndent+T(psttd) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("33333333") , T(" <------") ) ;   ___( psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("11111111") , T("------> ") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , TP(psttSayP,0xb)+T(" [off,cbP]:    ")+TF3(myOff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+T("    ")+TF3(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tIndent+T(psttd) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("33333333") , T(" <------") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("11111111") , T("------> ") ) ;   ___( psttd ) ;
     etherC::strDumpIF( tinBaseP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * 0x10 , cbElt , 0 , 0 ) ;  ___( psttd ) ;
     ZE( strokeS* , psttd ) ;
     textC tIndent( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , myOff * 2 + myOff / cbElt ) ;

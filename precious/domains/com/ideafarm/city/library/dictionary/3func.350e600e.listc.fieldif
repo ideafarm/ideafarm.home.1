@@ -15,39 +15,39 @@
 
     }
         }
-            ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP = saveRetained  ;
+            ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP = saveRetained  ;
 
             POPtINaRGS
     
             flagsRC |= field.walkF( tinBaseP , idGrabLayerP ) ;
 
 
-                                                          ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 7 ]      = idiFileNewP ;
-                                                          ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 6 ]      = idLineNewP ;
-          //                                              ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 5 ]                                          WILL CONTAIN THE NUMBER OF LISTINGS DELETED
-          //                                              ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 4 ]                                          WILL CONTAIN THE NUMBER OF LISTINGS NOT DELETED
-                                                          ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 3 ]      = inP.cKeep ;
-          //                                              ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ]                                          IS USED AS A CURSOR
-                                                          ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ]      = (countT)&inP ;
-                                                          ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = (countT)&pOutP ;
-                                                          ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_CALLERgRABBEDrOOT ;
-                                                          ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkFieldEditCBF ;
+                                                          ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 7 ]      = idiFileNewP ;
+                                                          ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 6 ]      = idLineNewP ;
+          //                                              ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 5 ]                                          WILL CONTAIN THE NUMBER OF LISTINGS DELETED
+          //                                              ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 4 ]                                          WILL CONTAIN THE NUMBER OF LISTINGS NOT DELETED
+                                                          ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 3 ]      = inP.cKeep ;
+          //                                              ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ]                                          IS USED AS A CURSOR
+                                                          ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ]      = (countT)&inP ;
+                                                          ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = (countT)&pOutP ;
+                                                          ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_CALLERgRABBEDrOOT ;
+                                                          ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkFieldEditCBF ;
 
             //}
             //    __Z( aptTest ) ;
             //    aptTest = pbTest ;
             //    aptC aptTest ;
             //    //CONoUTrAW( "\r\n" ) ;
-            //    //CONoUTrAW( ((tinNormalS&)tinBaseP).pPoolUse->postNameF( tinBaseP ) ) ;
-            //    //CONoUTrAW5( "testing list [pPoolUse,pTest]: " , ((tinNormalS&)tinBaseP).pPoolUse , " " , pbTest , " " ) ; //U::
+            //    //CONoUTrAW( ((tinFullS&)tinBaseP).pPoolUse->postNameF( tinBaseP ) ) ;
+            //    //CONoUTrAW5( "testing list [pPoolUse,pTest]: " , ((tinFullS&)tinBaseP).pPoolUse , " " , pbTest , " " ) ; //U::
             //    byteT* pbTest = (byteT*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) ;
             //{
             //U::
         
             PUSHtINaRGS
 
-                                  ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP  = F(inP.flags) & flFIELDeDIT_DOnOTiNDEXdATA ? flLISTwALK_DOnOTiNDEXdATA : flLISTwALK_null ;
-            flagsT saveRetained = ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP ;
+                                  ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP  = F(inP.flags) & flFIELDeDIT_DOnOTiNDEXdATA ? flLISTwALK_DOnOTiNDEXdATA : flLISTwALK_null ;
+            flagsT saveRetained = ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP ;
 
             if( !( field.flagsi & fliLISTINGc_FIELD ) ) field.flagsi |= fliLISTINGc_FIELD ; 
 
@@ -94,6 +94,8 @@
         FV(flFIELDeDIT,inP.flags)
         __NZ( pOutP ) ;
         __Z( hRecordP ) ;
+        if( POOP ) return flagsRC ;
+        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return flagsRC ;
     {
     IFbEcAREFUL

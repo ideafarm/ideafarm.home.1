@@ -61,7 +61,7 @@
         }
             while( !stIdptOpenP.third && ~hDown ) ;
             }
-                ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: open [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
+                ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: open [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
                 portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tinBaseP , hDown ) ;
             {
             do
@@ -70,7 +70,7 @@
         {
         if( stIdptOpenP )
 
-        ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: open list [cRelays,ideMe]:    ")+TF2(cRelays,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(ideMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
+        ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: open list [cRelays,ideMe]:    ")+TF2(cRelays,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(ideMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
     {
     if( F(flagsP) & flSELECTpEER_TRACE )
 
@@ -78,7 +78,7 @@
         }
             while( !stIdptGossipP.third && ~hDown ) ;
             }
-                ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: gossip [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
+                ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: gossip [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
                 portTimeC& idpt = *(portTimeC*)&stIdptGossipP.downF( tinBaseP , hDown ) ;
             {
             do
@@ -87,7 +87,7 @@
         {
         if( stIdptGossipP )
 
-        ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: gossip list") ) ; //U:: TO FIND A BUG
+        ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: gossip list") ) ; //U:: TO FIND A BUG
     {
     if( F(flagsP) & flSELECTpEER_TRACE )
 

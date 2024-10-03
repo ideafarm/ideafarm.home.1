@@ -26,9 +26,9 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     {
     case 1 :
 {
-switch( ((tinNormalS&)tinBaseP).pag1->idCell )
+switch( ((tinFullS&)tinBaseP).pag1->idCell )
 
-signC sgnFoo( tinBaseP , TAG( TAGiDnULL ) , "foo" , ((tinNormalS&)tinBaseP).pag1->idCell == 1 ? flSIGNc_GIVER : flSIGNc_null ) ;
+signC sgnFoo( tinBaseP , TAG( TAGiDnULL ) , "foo" , ((tinFullS&)tinBaseP).pag1->idCell == 1 ? flSIGNc_GIVER : flSIGNc_null ) ;
 
 // USE WDW TO STEP INTO AN OO'TH INSTANCE OF ME TO VERIFY THAT THE FLAG BLOCKS THE CT'OR UNTIL THE WO'TH INSTANCE RESETS IT
 // I CAN BE USED TO TEST THIS CODE BY STEPPING INTO THE NEXT LINE AND STEPPING THROUGH batonC::batonC TO AFTER formattingIsDoneF() IS CALLED BUT BEFORE THE FLAG IS RESET

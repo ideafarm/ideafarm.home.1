@@ -11,12 +11,12 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
-        pOdometer->cbWrite += ((tinNormalS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tinNormalS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
-        ((tinNormalS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer = nicNameP ;
-        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ((tinFullS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
+        pOdometer->cbWrite += ((tinFullS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tinFullS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tinFullS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
+        ((tinFullS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer = nicNameP ;
+        ((tinFullS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         bRead.ungrabF( tinBaseP ) ;
     
@@ -43,7 +43,7 @@
                 __Z( idSlot ) ;
                 etherC::sockStkCatchersF( tinBaseP ).sinkF( tinBaseP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
                 ZE( countT , idSlot ) ;
-                //__( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
+                //__( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
             {
             if( !( F(flags) & flSOCKETc_DOnOTrEGISTERcATCHER ) )
             bCatcher = 1 ;
@@ -51,8 +51,8 @@
         if( !bCatcher )
         bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = ((tinNormalS&)tinBaseP).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tinNormalS&)tinBaseP).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tinFullS&)tinBaseP).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tinFullS&)tinBaseP).odoSockCbRead  ;
     
         _IO_
     

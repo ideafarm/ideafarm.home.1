@@ -9,7 +9,7 @@
 
 REST
 
-bFail = ((tinNormalS&)tinBaseP).brcRaw ;
+bFail = ((tinFullS&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSfAIL , mciSendCommand( wDeviceID , MCI_SAVE , MCI_SAVE_FILE | MCI_WAIT , (DWORD)(LPVOID)&mciSaveParms ) )
 etThread.strokeF( tinBaseP , T("saving the recording to disk\r\n") ) ;
@@ -18,7 +18,7 @@ MCI_SAVE_PARMS mciSaveParms ;
 // the operation to complete before continuing.
 // Save the recording to a file named TEMPFILE.WAV. Wait for
 
-bFail = ((tinNormalS&)tinBaseP).brcRaw ;
+bFail = ((tinFullS&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSfAIL , mciSendCommand( wDeviceID , MCI_PLAY , MCI_FROM | MCI_WAIT , (DWORD)(LPVOID)&mciPlayParms ) )
 etThread.strokeF( tinBaseP , T("playing\r\n") ) ;
@@ -26,7 +26,7 @@ mciPlayParms.dwFrom = 0L ;
 MCI_PLAY_PARMS mciPlayParms ;
 // Play the recording and query user to save the file.
 
-bFail = ((tinNormalS&)tinBaseP).brcRaw ;
+bFail = ((tinFullS&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSfAIL , mciSendCommand( wDeviceID , MCI_RECORD , MCI_TO | MCI_WAIT , (DWORD)(LPVOID)&mciRecordParms ) )
 etThread.strokeF( tinBaseP , T("recording for about 6 tocks\r\n") ) ;
@@ -39,7 +39,7 @@ MCI_RECORD_PARMS mciRecordParms ;
 
 UINT wDeviceID = mciOpenParms.wDeviceID ;
 // The device opened successfully; get the device ID.
-boolT bFail = ((tinNormalS&)tinBaseP).brcRaw ;
+boolT bFail = ((tinFullS&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSfAIL , mciSendCommand( 0 , MCI_OPEN , MCI_OPEN_ELEMENT | MCI_OPEN_TYPE , (DWORD)(LPVOID)&mciOpenParms ) )
 mciOpenParms.lpstrElementName = "";

@@ -38,15 +38,15 @@ etherC::loafIF( tinBaseP ) ;
 // 
 // #if defined( NEVERdEFINED )
 // 
-// ((tinNormalS&)tinBaseP).pEther->osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeS1 , timeS2 ) ;
-// ((tinNormalS&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+// ((tinFullS&)tinBaseP).pEther->osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeS1 , timeS2 ) ;
+// ((tinFullS&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
 // ZE( sCountT , timeE2 ) ;
 // ZE( countT , timeE1 ) ;
 // 
-// //bOk = ((tinNormalS&)tinBaseP).brcRaw ;
+// //bOk = ((tinFullS&)tinBaseP).brcRaw ;
 // //BOSpOOP
 // //BOS( WHATgbo , BOSoK , PolyPolyline( oshdc , ppt , (DWORD*)pcSize , 1 ) )
-// bOk = ((tinNormalS&)tinBaseP).brcRaw ;
+// bOk = ((tinFullS&)tinBaseP).brcRaw ;
 //BOSpOOP
 //BOS( WHATgbo , BOSoK , Polyline( oshdc , ppt , 5 ) )
 
@@ -68,10 +68,10 @@ BOSdOnOTtEST( WHATgbo , SelectObject( oshdc , oshb ) )
 
 ZE( boolT , bOk ) ;
 
-HPEN   oshp = (HPEN)((tinNormalS&)tinBaseP).brcRaw ;
+HPEN   oshp = (HPEN)((tinFullS&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , CreatePen( PS_SOLID , 1 , 0xffffff ) )
-HBRUSH oshb = (HBRUSH)((tinNormalS&)tinBaseP).brcRaw ;
+HBRUSH oshb = (HBRUSH)((tinFullS&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , CreateSolidBrush( 0 ) )
 
@@ -102,7 +102,7 @@ POINT p01 = p00 ;
 POINT p10 = p00 ;
 POINT p00 = { rectClient.right - rectClient.left , rectClient.bottom - rectClient.top } ;
 
-((tinNormalS&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeS1 , timeS2 ) ;
+((tinFullS&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeS1 , timeS2 ) ;
 ZE( sCountT , timeS2 ) ;
 ZE( countT , timeS1 ) ;
 

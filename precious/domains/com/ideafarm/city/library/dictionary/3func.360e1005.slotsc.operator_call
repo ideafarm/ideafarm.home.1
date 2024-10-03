@@ -66,13 +66,13 @@
                 THREADmODE4rESTORE
 
                 }
-                    //((tinNormalS&)tinBaseP).pc Utility[ 7 ] = bDeleted ? BM_HIGH | offsTry              : 0 ;
-                    //((tinNormalS&)tinBaseP).pc Utility[ 6 ] =            BM_HIGH | bDeleted                 ;
-                    //((tinNormalS&)tinBaseP).pc Utility[ 5 ] =            BM_HIGH | offs                     ;
-                    //((tinNormalS&)tinBaseP).pc Utility[ 4 ] =            BM_HIGH | poolC_cBitsExpCbDrop     ;
-                    //((tinNormalS&)tinBaseP).pc Utility[ 3 ] =            BM_HIGH | expSlotsMin              ;
-                    //((tinNormalS&)tinBaseP).pc Utility[ 2 ] = mask ;
-                    //((tinNormalS&)tinBaseP).pc Utility[ 1 ] = dropHeader ;
+                    //((tinFullS&)tinBaseP).pc Utility[ 7 ] = bDeleted ? BM_HIGH | offsTry              : 0 ;
+                    //((tinFullS&)tinBaseP).pc Utility[ 6 ] =            BM_HIGH | bDeleted                 ;
+                    //((tinFullS&)tinBaseP).pc Utility[ 5 ] =            BM_HIGH | offs                     ;
+                    //((tinFullS&)tinBaseP).pc Utility[ 4 ] =            BM_HIGH | poolC_cBitsExpCbDrop     ;
+                    //((tinFullS&)tinBaseP).pc Utility[ 3 ] =            BM_HIGH | expSlotsMin              ;
+                    //((tinFullS&)tinBaseP).pc Utility[ 2 ] = mask ;
+                    //((tinFullS&)tinBaseP).pc Utility[ 1 ] = dropHeader ;
 
                     }
                         }
@@ -93,7 +93,7 @@
                 else
                 if( pPoolContainsMe ) (*pPoolContainsMe)( tinBaseP , pbP ) ;
 
-                //((tinNormalS&)tinBaseP).pc Utility[ 0 ] = (countT)pbP ;
+                //((tinFullS&)tinBaseP).pc Utility[ 0 ] = (countT)pbP ;
 
                 THREADmODE4oN( flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
             {
@@ -127,7 +127,7 @@
             countT mask = ( 1 << CbITSeXPsLOTS ) - 1 ;
             countT& dropHeader = ((countT*)pbP)[ - 1 ] ;
         {
-        if( cbDropHeader && !( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
+        if( cbDropHeader && !( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE ) )
     {
     if( pbP )
 

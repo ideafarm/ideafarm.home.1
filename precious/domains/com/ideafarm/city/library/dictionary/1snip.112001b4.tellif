@@ -7,10 +7,11 @@
 //
 
 
-    else                                                          ((tinNormalS&)tinBaseP).postTellIf[ 0 ] = 0 ;
-    if( !thirdC::c_strcmpIF( tinBaseP , postTestP , ((tinNormalS&)tinBaseP).postTell ) ) thirdC::c_strncpyIF( tinBaseP , ((tinNormalS&)tinBaseP).postTellIf , postFromP , sizeof ((tinNormalS&)tinBaseP).postTellIf ) ; \
-                                                                                                                                \
-#define TELLiF(postTestP,postFromP)                                                                                             \
+    else                                                                                      ((tinFullS&)tinBaseP).postTellIf[ 0 ] = 0 ;
+    else if( !thirdC::c_strcmpIF( tinBaseP , postTestP , ((tinFullS&)tinBaseP).postTell ) ) thirdC::c_strncpyIF( tinBaseP , ((tinFullS&)tinBaseP).postTellIf , postFromP , sizeof ((tinFullS&)tinBaseP).postTellIf ) ;    \
+         if( tinBaseP.idTypeTin != ifcIDtYPEtIN_FULL                                        ) ;                                                                                                                                 \
+                                                                                                                                                                                                                                \
+#define TELLiF(postTestP,postFromP)                                                                                                                                                                                             \
 
 /**/
 /*1*//*TELLiF(postTestP,postFromP)*//*1*/

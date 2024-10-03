@@ -10,11 +10,11 @@
 }
     }
         }
-            dec02AM( ((tinNormalS&)tinBaseP).cKidThreads ) ; //ADDED RECENTLY CAUSE ABSENCE SEEMED TO BE A BUG
-            dec02AM( ((tinNormalS&)tinBaseP).pag1->_thirdC_.cAllKidThreads ) ;
+            dec02AM( ((tinFullS&)tinBaseP).cKidThreads ) ; //ADDED RECENTLY CAUSE ABSENCE SEEMED TO BE A BUG
+            dec02AM( ((tinFullS&)tinBaseP).pag1->_thirdC_.cAllKidThreads ) ;
         {
         else
-        if( F(flagsP) & flTHREADlAUNCH_ORPHAN ) dec02AM( ((tinNormalS&)tinBaseP).pag1->_thirdC_.cAllOrphanThreads ) ;
+        if( F(flagsP) & flTHREADlAUNCH_ORPHAN ) dec02AM( ((tinFullS&)tinBaseP).pag1->_thirdC_.cAllOrphanThreads ) ;
     {
     if( POOP )
 
@@ -28,14 +28,14 @@
                 }
                     }
                         hThreadKid.resetF() ;
-                        ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
-                        *((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle = hThreadKid.osF( ifcIDtYPEhANDLE_THREAD ) ;
-                        ((tinNormalS&)tinBaseP).pag1->_thirdC_.lOsTid = tidP ;
-                        ((tinNormalS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
+                        *((tinFullS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle = hThreadKid.osF( ifcIDtYPEhANDLE_THREAD ) ;
+                        ((tinFullS&)tinBaseP).pag1->_thirdC_.lOsTid = tidP ;
+                        ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                     {
                     if( tidP && tidP != - 1 )
         
-                    __( ((tinNormalS&)tinBaseP).brcRaw != 1 ) ;
+                    __( ((tinFullS&)tinBaseP).brcRaw != 1 ) ;
                     BOSpOOP
                     BOS( WHATgbo , BOSmAXcOUNTT , ResumeThread( (HANDLE)hThreadKid.osF( ifcIDtYPEhANDLE_THREAD ) ) )
                     BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
@@ -52,14 +52,14 @@
                     //                ? ifcIDtYPEtHREAD_SHOWpONY
                     //            : F(flagsP) & flTHREADlAUNCH_SHOWpONY
                     //            ? ifcIDtYPEtHREAD_GLASS2
-                    //        : ((tinNormalS&)tinBaseP).pag1->idCell < 3
+                    //        : ((tinFullS&)tinBaseP).pag1->idCell < 3
                     //        ? ifcIDtYPEtHREAD_WORKhORSE
                     //    countT idType = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS || etherC::ifc_idHomeIdisk_IF() < 0x100
                     //{
                     //20170213@1456: COMMENTED OUT WITHOUT ANALYSIS TO PERHAPS FIX UNEXPECTED PROCESSOR AFFINITY FOR GLASS2 ADAM
         
                     __Z( hThreadKid ) ;
-                    hThreadKid.osF( ifcIDtYPEhANDLE_THREAD , (countT)((tinNormalS&)tinBaseP).brcRaw ) ;
+                    hThreadKid.osF( ifcIDtYPEhANDLE_THREAD , (countT)((tinFullS&)tinBaseP).brcRaw ) ;
                 {
                 if( !POOP )
 
@@ -68,11 +68,11 @@
 
                 BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
                 SECURITYaTTRIBUTE_saUNRESTRICTED( 0 ) ;
-                int idpDad = ((tinNormalS&)tinBaseP).brcRaw ;
+                int idpDad = ((tinFullS&)tinBaseP).brcRaw ;
             {
             if( !POOP )
             BOSpOOP
-            BOS( WHATgbo , BOStHREADERcODE , GetThreadPriority( (HANDLE)((tinNormalS&)tinBaseP).brcRaw ) )
+            BOS( WHATgbo , BOStHREADERcODE , GetThreadPriority( (HANDLE)((tinFullS&)tinBaseP).brcRaw ) )
             BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
             BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
             handleC hThreadKid( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
@@ -88,24 +88,24 @@
 
     //PSEUDODUPLICATED CODE: 1020057 1610003
 
-    inc02AM( ((tinNormalS&)tinBaseP).pag1->ctWatch ) ;
-    //CONoUTrAW3( "c_beginThreadIF [cThreadsFor _tmWatchF_toWatch] <-- " , 1 + incv02AM( ((tinNormalS&)tinBaseP).pag1->cThreadsFor _tmWatchF_toWatch ) , "\r\n" ) ;
+    inc02AM( ((tinFullS&)tinBaseP).pag1->ctWatch ) ;
+    //CONoUTrAW3( "c_beginThreadIF [cThreadsFor _tmWatchF_toWatch] <-- " , 1 + incv02AM( ((tinFullS&)tinBaseP).pag1->cThreadsFor _tmWatchF_toWatch ) , "\r\n" ) ;
 
     }
-        inc02AM( ((tinNormalS&)tinBaseP).cKidThreads ) ;
-        inc02AM( ((tinNormalS&)tinBaseP).pag1->_thirdC_.cAllKidThreads ) ;
+        inc02AM( ((tinFullS&)tinBaseP).cKidThreads ) ;
+        inc02AM( ((tinFullS&)tinBaseP).pag1->_thirdC_.cAllKidThreads ) ;
     {
     else
-    if( F(flagsP) & flTHREADlAUNCH_ORPHAN ) inc02AM( ((tinNormalS&)tinBaseP).pag1->_thirdC_.cAllOrphanThreads ) ;
+    if( F(flagsP) & flTHREADlAUNCH_ORPHAN ) inc02AM( ((tinFullS&)tinBaseP).pag1->_thirdC_.cAllOrphanThreads ) ;
     third_flagsProcessStateI_IF( tinBaseP , flPROCESSsTATE_MAINtHREADiSaLONE , 0 ) ;
 
     }
-        //while( !POOP && ((tinNormalS&)tinBaseP).pag1->_thirdC_.cAllKidThreads > 0x100 ) { ++ s ; dosSleepWinkIF( tinBaseP ) ; }
+        //while( !POOP && ((tinFullS&)tinBaseP).pag1->_thirdC_.cAllKidThreads > 0x100 ) { ++ s ; dosSleepWinkIF( tinBaseP ) ; }
         //sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     //U::PROVIDE A PARAMETER OR PERHAPS A PROCESS MODE TO ENABLE THIS OVERRUN PROTECTION
 
-    //if( ((tinNormalS&)tinBaseP).pEther ) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("c_beginthreadIF / ++") ) ; //U:: TO FIND A BUG
+    //if( ((tinFullS&)tinBaseP).pEther ) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("c_beginthreadIF / ++") ) ; //U:: TO FIND A BUG
 
     _IO_
 
@@ -120,7 +120,7 @@
         #ifdef __OS2__
         ZE( boolT , fnu ) ;
         if( POOP ) return ;
-        __( !((tinNormalS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
+        __( !((tinFullS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
         __Z( tmFP ) ;
         __( tidP ) ;
         FV( flTHREADlAUNCH , flagsP )
@@ -150,7 +150,7 @@ arguments
  example
  to do this, pass a reference to the thread so it can decrement
 the thread must decrement this counter just before ending
-cAllKidThreadsI or ((tinNormalS&)tinBaseP).pag1->_thirdC_.cAllOrphanThreads is incremented
+cAllKidThreadsI or ((tinFullS&)tinBaseP).pag1->_thirdC_.cAllOrphanThreads is incremented
 the new thread inherits the priority of the calling thread
 creates a new thread of execution
 it is illegal to refer to this symbol in the definition of an adam

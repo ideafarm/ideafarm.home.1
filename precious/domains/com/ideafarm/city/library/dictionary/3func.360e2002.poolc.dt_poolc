@@ -85,21 +85,21 @@
     {
     if( F(flagsInstance) & flPOOLiNSTANCE_FACEcONSTRUCTED )
 
-    if( ((tinNormalS&)tinBaseP).pPoolUse == this ) ((tinNormalS&)tinBaseP).pPoolUse = 0 ;
+    if( ((tinFullS&)tinBaseP).pPoolUse == this ) ((tinFullS&)tinBaseP).pPoolUse = 0 ;
 
-    else if( ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp == this ) ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp = 0 ;
-    else if( ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp == this ) ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp = 0 ;
-    else if( ((tinNormalS&)tinBaseP).pag1->pPoolScratch  == this ) ((tinNormalS&)tinBaseP).pag1->pPoolScratch  = 0 ;
-    else if( ((tinNormalS&)tinBaseP).pag1->pPoolAdamPerm == this ) ((tinNormalS&)tinBaseP).pag1->pPoolAdamPerm = 0 ;
-         if( ((tinNormalS&)tinBaseP).pag1->pPoolHomePerm == this ) ((tinNormalS&)tinBaseP).pag1->pPoolHomePerm = 0 ;
+    else if( ((tinFullS&)tinBaseP).pag1->pPoolAdamTemp == this ) ((tinFullS&)tinBaseP).pag1->pPoolAdamTemp = 0 ;
+    else if( ((tinFullS&)tinBaseP).pag1->pPoolHomeTemp == this ) ((tinFullS&)tinBaseP).pag1->pPoolHomeTemp = 0 ;
+    else if( ((tinFullS&)tinBaseP).pag1->pPoolScratch  == this ) ((tinFullS&)tinBaseP).pag1->pPoolScratch  = 0 ;
+    else if( ((tinFullS&)tinBaseP).pag1->pPoolAdamPerm == this ) ((tinFullS&)tinBaseP).pag1->pPoolAdamPerm = 0 ;
+         if( ((tinFullS&)tinBaseP).pag1->pPoolHomePerm == this ) ((tinFullS&)tinBaseP).pag1->pPoolHomePerm = 0 ;
 
     }
-        DELzOMBIE( ((tinNormalS&)tinBaseP).pag1->pPoolHomePerm ) ;
-        DELzOMBIE( ((tinNormalS&)tinBaseP).pag1->pPoolAdamPerm ) ;
-        DELzOMBIE( ((tinNormalS&)tinBaseP).pag1->pPoolScratch  ) ;
-        DELzOMBIE( ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp ) ;
+        DELzOMBIE( ((tinFullS&)tinBaseP).pag1->pPoolHomePerm ) ;
+        DELzOMBIE( ((tinFullS&)tinBaseP).pag1->pPoolAdamPerm ) ;
+        DELzOMBIE( ((tinFullS&)tinBaseP).pag1->pPoolScratch  ) ;
+        DELzOMBIE( ((tinFullS&)tinBaseP).pag1->pPoolHomeTemp ) ;
     {
-    if( ((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp == this ) // THIS IS OK BECAUSE ADAMteMP CONTAINS ITS OWN INDEX
+    if( ((tinFullS&)tinBaseP).pag1->pPoolAdamTemp == this ) // THIS IS OK BECAUSE ADAMteMP CONTAINS ITS OWN INDEX
 
     }
         }
@@ -144,9 +144,9 @@
         stPoolNames.sinkF( tinBaseP , ids , (countT)guts.postName , flSTACKsINK_QUERY ) ;
         stPoolNames.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
         ZE( countT , ids ) ;
-        stackC& stPoolNames = ((tinNormalS&)tinBaseP).pEther->ifcStkPoolNamesF( tinBaseP ) ;
+        stackC& stPoolNames = ((tinFullS&)tinBaseP).pEther->ifcStkPoolNamesF( tinBaseP ) ;
     {
-    if( ((tinNormalS&)tinBaseP).pEther )               // IF !((tinNormalS&)tinBaseP).pEther THEN I WILL NOT BE DEREGISTERED, BUT THAT DOES NOT MATTER BECAUSE tmWatchF IS GONE
+    if( ((tinFullS&)tinBaseP).pEther )               // IF !((tinFullS&)tinBaseP).pEther THEN I WILL NOT BE DEREGISTERED, BUT THAT DOES NOT MATTER BECAUSE tmWatchF IS GONE
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // UNREGISTER MY NAME SO THAT tmWatchF CAN SEE WHICH poolC NAMES THIS PROCESSES IS USING

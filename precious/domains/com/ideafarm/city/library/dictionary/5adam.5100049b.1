@@ -32,11 +32,11 @@ DONE( tmGorillaF )
 
     }
         cBad ++ ;
-        *((tinNormalS&)tinBaseP).zEtScratch = 0 ;
+        *((tinFullS&)tinBaseP).zEtScratch = 0 ;
     {
-    if( *((tinNormalS&)tinBaseP).zEtScratch || cbHome != cbHomeWoth )
+    if( *((tinFullS&)tinBaseP).zEtScratch || cbHome != cbHomeWoth )
     if( !cbHomeWoth  ) cbHomeWoth  = cbHome ;   
-    { ZE( byteT* , pbHome  ) ; ((tinNormalS&)tinBaseP).zEtScratch->boxGetShadowF( tinBaseP , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; ((tinNormalS&)tinBaseP).zEtScratch->delF( tinBaseP , pbHome  ) ; }
+    { ZE( byteT* , pbHome  ) ; ((tinFullS&)tinBaseP).zEtScratch->boxGetShadowF( tinBaseP , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , pbHome  ) ; }
     ZE( countT , cbHome ) ;
 {
 while( !etThread && !ether )

@@ -28,7 +28,7 @@ etherC::loafIF( tinBaseP ) ;
         {
         else
         if( POOP ) { POOPR ; }
-        ((tinNormalS&)tinBaseP).pEtScratch->diskInfoF( tinBaseP , pInfo , T(postDisk) , 1 ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->diskInfoF( tinBaseP , pInfo , T(postDisk) , 1 ) ;
         ZE( infoDiskS* , pInfo ) ;
     {    
     for( postDisk[ 3 ] = 'a' ; postDisk[ 3 ] <= 'z' ; postDisk[ 3 ] ++ )
@@ -58,7 +58,7 @@ TODO
                 if( pcArgP[ 0 ] == 0x19 )
 
                 etherC::etRockIF( tinBaseP ).traceF( tinBaseP , TF2(pcArgP[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    read:       ")+tName ) ;
-                ((tinNormalS&)tinBaseP).pEther->fileReadF( tinBaseP , pbBuffer , cbEat , file ) ;
+                ((tinFullS&)tinBaseP).pEther->fileReadF( tinBaseP , pbBuffer , cbEat , file ) ;
                 etherC::etRockIF( tinBaseP ).traceF( tinBaseP , TF2(pcArgP[0],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    reading:    ")+tName ) ;
 
                 countT cbEat = pInfo->cbUsed < sizeof pbBuffer - 1 ? pInfo->cbUsed : sizeof pbBuffer - 1 ;
@@ -66,7 +66,7 @@ TODO
                 pcArgP[ 1 ] ++ ;
             {
             if( pInfo && pInfo->cbUsed )
-            ((tinNormalS&)tinBaseP).pEther->diskFileQueryF( tinBaseP , pInfo , file ) ; ___( pInfo ) ;
+            ((tinFullS&)tinBaseP).pEther->diskFileQueryF( tinBaseP , pInfo , file ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         else
@@ -83,16 +83,16 @@ TODO
         pcArgP[ 0 ] ++ ;
 
         TN( tName , ifName ) ;
-        ifFileNameC ifName( tinBaseP , *((tinNormalS&)tinBaseP).pEther , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , *((tinFullS&)tinBaseP).pEther , postNameP ) ;
     {
     else
     }
         etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("directory::    ")+tName ) ;
 
         TN( tName , ifName ) ;
-        ifFileNameC ifName( tinBaseP , *((tinNormalS&)tinBaseP).pEther , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , *((tinFullS&)tinBaseP).pEther , postNameP ) ;
     {
-    else if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] == '\\' && ((tinNormalS&)tinBaseP).pEther ) // IF DIRECTORY
+    else if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] == '\\' && ((tinFullS&)tinBaseP).pEther ) // IF DIRECTORY
     }
         etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("scan completed for a directory") ) ;
     {

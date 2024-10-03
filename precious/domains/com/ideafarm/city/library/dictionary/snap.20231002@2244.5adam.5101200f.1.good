@@ -156,11 +156,11 @@ voidT sortaC::doBitF( byteT* pbP , countT cbP , countT shiftP )
 voidT sortaC::verifySortF( byteT* pbP , countT cbP , const countT shiftP )
 
 }
-    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("range is sorted by bit ")+TF3(bit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tIndent+T(psttd) , flTRACE_NOpREFIX ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("33333333") , T("<<<<<<<<") ) ;   ___( psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("11111111") , T(">>>>>>>>") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("range is sorted by bit ")+TF3(bit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tIndent+T(psttd) , flTRACE_NOpREFIX ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("33333333") , T("<<<<<<<<") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("11111111") , T(">>>>>>>>") ) ;   ___( psttd ) ;
     etherC::strDumpIF( tinBaseP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * cEltRange , cbElt / 3 , 0 , 0 ) ;  ___( psttd ) ;
     ZE( strokeS* , psttd ) ;
 
@@ -175,7 +175,7 @@ voidT sortaC::traceRangeIsSortedF( byteT* pbP , countT cbP , const countT shiftP
 
 }
     }
-        ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("        ")+tIndent2+tMark+tIndent3+tMark , flTRACE_NOpREFIX ) ;
+        ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("        ")+tIndent2+tMark+tIndent3+tMark , flTRACE_NOpREFIX ) ;
         textC tIndent3( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , csttIndentDelta ) ;
         textC tIndent2( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , csttIndent2 ) ;
         countT csttIndentDelta = csttIndent3 - csttIndent2 - ( cbElt << 1 ) - 2 ;
@@ -194,11 +194,11 @@ voidT sortaC::traceRangeIsSortedF( byteT* pbP , countT cbP , const countT shiftP
 voidT sortaC::traceMarkSelectedElementsF( byteT** ppbP , countT cpbP )
 
 }
-    ((tinNormalS&)tinBaseP).pEther->delF( tinBaseP , psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , TP(psttSayP,0xb)+T(" [off,cbP]:    ")+TF3(myOff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+T("    ")+TF3(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tIndent+T(psttd) , flTRACE_NOpREFIX ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("33333333") , T("<-------") ) ;   ___( psttd ) ;
-    ((tinNormalS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("11111111") , T("------->") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , TP(psttSayP,0xb)+T(" [off,cbP]:    ")+TF3(myOff,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+T("    ")+TF3(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4)+tIndent+T(psttd) , flTRACE_NOpREFIX ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("\r\n") , T("") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("33333333") , T("<-------") ) ;   ___( psttd ) ;
+    ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttd , 0 , T("11111111") , T("------->") ) ;   ___( psttd ) ;
     etherC::strDumpIF( tinBaseP , psttd , pbP , cbP , flSTRdUMP_null , cbElt * cEltRange , cbElt / 3 , 0 , 0 ) ;  ___( psttd ) ;
     ZE( strokeS* , psttd ) ;
     textC tIndent( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "" , myOff * 2 + ( myOff / cbElt ) * 3 ) ;
@@ -245,7 +245,7 @@ sortaC* sortaC::pMe ;
 
     //countT offe = ( pbP - pMe->pbArray ) / pMe->cbElt ;
 
-    //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("swapIF returning [idIn,offEltHighs]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF3(offeh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4) , flTRACE_NOpREFIX ) ;
+    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("swapIF returning [idIn,offEltHighs]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF3(offeh,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,4) , flTRACE_NOpREFIX ) ;
     //TINSL
     //countT idIn = 1 + incv02AM( idInLath ) ;
     //static countT idInLath ;
@@ -405,28 +405,28 @@ voidT sortaC::swapIF( byteT* const pbP , const countT cbP )             // THIS 
 
 }
     return ifcIDtYPEsTEPrECURSION_DONE ;
-    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("swapRsEpilogF") ) ;
+    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("swapRsEpilogF") ) ;
     TINSL
 {
 countT sortaC::swapRsEpilogF( recursionSimulatorC& rsP )
 
 }
     return ifcIDtYPEsTEPrECURSION_EPILOG ;
-    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("swapRsCallEpilogF") ) ;
+    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("swapRsCallEpilogF") ) ;
     TINSL
 {
 countT sortaC::swapRsCallEpilogF( recursionSimulatorC& rsP )
 
 }
     return ifcIDtYPEsTEPrECURSION_CALLePILOG ;
-    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("swapRsCallF") ) ;
+    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("swapRsCallF") ) ;
     TINSL
 {
 countT sortaC::swapRsCallF( recursionSimulatorC& rsP )
 
 }
     return ifcIDtYPEsTEPrECURSION_CALL ;
-    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("swapRsCallPrologF") ) ;
+    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("swapRsCallPrologF") ) ;
     TINSL
 {
 countT sortaC::swapRsCallPrologF( recursionSimulatorC& rsP )
@@ -434,7 +434,7 @@ countT sortaC::swapRsCallPrologF( recursionSimulatorC& rsP )
 }
     return ifcIDtYPEsTEPrECURSION_CALLpROLOG ;
 
-    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , psttSay ) ;
+    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , psttSay ) ;
     strokeS* psttSay = tSay ;
     tSay = tSay1 + tSay2 + tb4 + tSay3 ;
     TN( tSay , "" ) ;

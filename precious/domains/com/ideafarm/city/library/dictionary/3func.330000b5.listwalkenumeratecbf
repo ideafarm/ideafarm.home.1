@@ -12,7 +12,7 @@
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     }
-        ((tinNormalS&)tinBaseP).tlsDelF( LF , *(byteT**)&pczName ) ;
+        ((tinFullS&)tinBaseP).tlsDelF( LF , *(byteT**)&pczName ) ;
         //{ puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinBaseP , *(byteT**)&pczName ) ; }
         }
             }
@@ -25,7 +25,7 @@
                                      pDatumP = new( 0 , tinBaseP , LF ) datumS( tinBaseP , pczv ) ; ___( pDatumP ) ;
                 datumS* pDatumSave = pDatumP ;
 
-                etherC::strSquishOldIF( tinBaseP , pczv , pczName + ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin , ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchEnd - ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin - 1 ) ;
+                etherC::strSquishOldIF( tinBaseP , pczv , pczName + ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin , ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchEnd - ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin - 1 ) ;
                 ZE( countT* , pczv ) ;
 
                 puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
@@ -41,7 +41,7 @@
                                      pDatumP = new( 0 , tinBaseP , LF ) datumS( tinBaseP , postv ) ; ___( pDatumP ) ;
                 datumS* pDatumSave = pDatumP ;
 
-                etherC::strSquishIF( tinBaseP , postv , pczName + ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin , ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchEnd - ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin - 1 ) ;
+                etherC::strSquishIF( tinBaseP , postv , pczName + ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin , ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchEnd - ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin - 1 ) ;
                 ZE( osTextT* , postv ) ;
 
                 puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
@@ -55,24 +55,26 @@
                                      pDatumP = new( 0 , tinBaseP , LF ) datumS( tinBaseP , vv ) ; ___( pDatumP ) ;
                 datumS* pDatumSave = pDatumP ;
 
-                etherC::strSquishIF( tinBaseP , vv , pczName + ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin ) ;
+                etherC::strSquishIF( tinBaseP , vv , pczName + ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin ) ;
                 ZE( countT , vv ) ;
             {
             case LISTnAMEsYS_STRETCHbEGINcOUNT :
         {
-        switch( pczName[ ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin ] )
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP->nameF( tinBaseP , pczName ) ; // ___( pczName ) ;
+        switch( pczName[ ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.offStretchBegin ] )
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP->nameF( tinBaseP , pczName ) ; // ___( pczName ) ;
         ZE( countT* , pczName ) ;
     {
     if( pListingP )
     flagsT flrc = flLISTwALKcALLbACKrETURNcODE_null ;
 
-    datumS*&  pDatumP    =   *(datumS**)&((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-    listingC* pListingP  =               ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
+    datumS*&  pDatumP    =   *(datumS**)&((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+    listingC* pListingP  =               ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !((tinNormalS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tinFullS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 {
 /*1*/flagsT listWalkEnumerateCBF( tinBaseS& tinBaseP )/*1*/
 

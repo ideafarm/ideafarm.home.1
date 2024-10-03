@@ -12,27 +12,27 @@
 
     }
         //conGF( "\r\n" ) ;
-        //conGF( NAME( ((tinNormalS*)pTinF())->idTinNamed ) ) ;
+        //conGF( NAME( ((tinFullS*)pTinF())->idTinNamed ) ) ;
         //conGF( " " ) ;
     
         pTinF() = &tinBaseP ;                                                                   // I BECOME ACTIVE HERE
     
-        //conGF( NAME( ((tinNormalS*)pTinF())->idTinNamed ) ) ;
+        //conGF( NAME( ((tinFullS*)pTinF())->idTinNamed ) ) ;
         //conGF( "ctCopy pTinF() [before,after]: " ) ;
     {
-    if( ((tinNormalS&)tinBaseP).pTinBasePrior )
+    if( ((tinFullS&)tinBaseP).pTinBasePrior )
 
-    putNegAM( ((tinNormalS&)tinBaseP).fingerprint , FINGERnEG_TINs ) ;                                         //I AM ABOUT TO BECOME ACTIVE
-    if( ((tinNormalS&)tinBaseP).pTinBasePrior ) putNegAM( ((tinNormalS&)tinBaseP).pTinBasePrior->fingerprint , FINGERnEG_TINszOMBIE ) ;       //MY ELDER IS NOW RETIRED
+    putNegAM( ((tinFullS&)tinBaseP).fingerprint , FINGERnEG_TINs ) ;                                         //I AM ABOUT TO BECOME ACTIVE
+    if( ((tinFullS&)tinBaseP).pTinBasePrior ) putNegAM( ((tinFullS&)tinBaseP).pTinBasePrior->fingerprint , FINGERnEG_TINszOMBIE ) ;       //MY ELDER IS NOW RETIRED
 
     //}
     //    conGF( "\r\n" ) ;
-    //    conGF( NAME( ((tinNormalS&)tinBaseP).idTinNamed ) ) ;
+    //    conGF( NAME( ((tinFullS&)tinBaseP).idTinNamed ) ) ;
     //    conGF( " " ) ;
-    //    conGF( NAME( ((tinNormalS&)tinBaseP).pTinBasePrior->idTinNamed ) ) ;
+    //    conGF( NAME( ((tinFullS&)tinBaseP).pTinBasePrior->idTinNamed ) ) ;
     //    conGF( "ctCopy              [old,new]: " ) ;
     //{
-    //if( ((tinNormalS&)tinBaseP).pTinBasePrior )
+    //if( ((tinFullS&)tinBaseP).pTinBasePrior )
 
     tinBaseS& tinBaseP = *(tinBaseS*)c_thisP ;
 {

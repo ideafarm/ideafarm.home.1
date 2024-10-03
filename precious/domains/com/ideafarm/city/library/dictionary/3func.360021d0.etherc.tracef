@@ -187,11 +187,11 @@
                 }
                     OStEXTAK( ostoSay , " | " ) ;
                     while( costPad -- ) { OStEXTAK( ostoSay , " " ) ; }
-                    OStEXTA(  ostoSay , ((tinNormalS&)tinBaseP).postThreadName ) ;
+                    if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA(  ostoSay , ((tinFullS&)tinBaseP).postThreadName ) ;
                     OStEXTAK( ostoSay , " % " ) ;
-                    OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).monitor.idThread , ' ' ) ;
+                    OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).monitor.idThread , ' ' ) ;
                     OStEXTAK( ostoSay , " $ " ) ;
-                    OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->idCell , ' ' ) ;
+                    OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->idCell , ' ' ) ;
                     OStEXTAK( ostoSay , " # " ) ;
                     OStEXTA(  ostoSay , ostoTimeDelta ) ;
                     OStEXTAK( ostoSay , " @ " ) ;
@@ -200,34 +200,34 @@
                     OStEXTA(  ostoSay , ostoTime ) ;
 
                     if( costPad < 0 ) costPad = 0 ;
-                    sCountT costPad = ( TUCK >> 3 ) - thirdC::c_strlenIF( ((tinNormalS&)tinBaseP).postThreadName ) ;       //20221204@092: DOUBLED FIELD WIDTH TO ( TUCK >> 3 ) TO IMPROVE TRACE READABILITY
+                    sCountT costPad = tinBaseP.idTypeTin != ifcIDtYPEtIN_FULL ? 0 : ( TUCK >> 3 ) - thirdC::c_strlenIF( ((tinFullS&)tinBaseP).postThreadName ) ;       //20221204@092: DOUBLED FIELD WIDTH TO ( TUCK >> 3 ) TO IMPROVE TRACE READABILITY
 
                     }
                         OStEXTCF(  ostoTimeElapsed , timeE1 , '0' ) ;
                         OStEXTAK( ostoTimeElapsed , "." ) ;
                         OStEXTCF(  ostoTimeElapsed , timeE2 , '0' ) ;
 
-                        osTimeSubtractF( tinBaseP , timeE1 , timeE2 , ((tinNormalS&)tinBaseP).timeTraceWoth.time1 , ((tinNormalS&)tinBaseP).timeTraceWoth.time2 ) ;
-                        sCountT timeE2 = ((tinNormalS&)tinBaseP).timeTraceLath.time2 ;
-                        countT  timeE1 = ((tinNormalS&)tinBaseP).timeTraceLath.time1 ;
+                        osTimeSubtractF( tinBaseP , timeE1 , timeE2 , ((tinFullS&)tinBaseP).timeTraceWoth.time1 , ((tinFullS&)tinBaseP).timeTraceWoth.time2 ) ;
+                        sCountT timeE2 = ((tinFullS&)tinBaseP).timeTraceLath.time2 ;
+                        countT  timeE1 = ((tinFullS&)tinBaseP).timeTraceLath.time1 ;
 
-                        OStEXTCF(  ostoTime , ((tinNormalS&)tinBaseP).timeTraceLath.time1 , '0' ) ;
+                        OStEXTCF(  ostoTime , ((tinFullS&)tinBaseP).timeTraceLath.time1 , '0' ) ;
                         OStEXTAK( ostoTime , "." ) ;
-                        OStEXTCF(  ostoTime , ((tinNormalS&)tinBaseP).timeTraceLath.time2 , '0' ) ;
+                        OStEXTCF(  ostoTime , ((tinFullS&)tinBaseP).timeTraceLath.time2 , '0' ) ;
 
                         OStEXTCF(  ostoTimeDelta , timeDelta1 , '0' ) ;
                         OStEXTAK( ostoTimeDelta , "." ) ;
                         OStEXTCF(  ostoTimeDelta , timeDelta2 , '0' ) ;
 
-                        ((tinNormalS&)tinBaseP).timeTraceLath = now ;
-                        osTimeSubtractF( tinBaseP , timeDelta1 , timeDelta2 , ((tinNormalS&)tinBaseP).timeTraceLath.time1 , ((tinNormalS&)tinBaseP).timeTraceLath.time2 ) ;
-                        if( bReset ) ((tinNormalS&)tinBaseP).timeTraceWoth = ((tinNormalS&)tinBaseP).timeTraceLath = now ;
+                        ((tinFullS&)tinBaseP).timeTraceLath = now ;
+                        osTimeSubtractF( tinBaseP , timeDelta1 , timeDelta2 , ((tinFullS&)tinBaseP).timeTraceLath.time1 , ((tinFullS&)tinBaseP).timeTraceLath.time2 ) ;
+                        if( bReset ) ((tinFullS&)tinBaseP).timeTraceWoth = ((tinFullS&)tinBaseP).timeTraceLath = now ;
                         timeS now( timeDelta1 , timeDelta2 ) ;
                         osTimeNowF( tinBaseP , timeDelta1 , timeDelta2 ) ;
                         ZE( sCountT , timeDelta2 ) ;
                         ZE( countT  , timeDelta1 ) ;
 
-                        boolT bReset = ( !((tinNormalS&)tinBaseP).timeTraceWoth.time2 && !((tinNormalS&)tinBaseP).timeTraceWoth.time1 ) || F(flagsP) & flTRACE_RESET ;
+                        boolT bReset = ( !((tinFullS&)tinBaseP).timeTraceWoth.time2 && !((tinFullS&)tinBaseP).timeTraceWoth.time1 ) || F(flagsP) & flTRACE_RESET ;
                     {
                     else
                     }
@@ -279,21 +279,21 @@
             //LOGrAW( "\r\ntraceF: suppressing trace:  " ) ;
             //U:: ENHANCE TO POSTPONE BY WRITING TO A TEMPORARY BUFFER THAT IS FLUSHED BY booksC WHEN IT CAN DO SO
 
-            //CONoUTrAW3( "[F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_SUPPRESStRACING         ]:    " , F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_SUPPRESStRACING , "\r\n" ) ; //U:: TO FIND A BUG
+            //CONoUTrAW3( "[F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_SUPPRESStRACING         ]:    " , F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_SUPPRESStRACING , "\r\n" ) ; //U:: TO FIND A BUG
             //CONoUTrAW3( "[F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_NOtRACING]:    " , F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_NOtRACING , "\r\n" ) ; //U:: TO FIND A BUG
             //CONoUTrAW3( "[!bTraceOk                                                        ]:    " , !bTraceOk , "\r\n" ) ; //U:: TO FIND A BUG
 
-            //CONoUTrAW3( "[((tinNormalS&)tinBaseP).flagsThreadMode4                                            ]:    " , ((tinNormalS&)tinBaseP).flagsThreadMode4 , "\r\n" ) ; //U:: TO FIND A BUG
+            //CONoUTrAW3( "[((tinFullS&)tinBaseP).flagsThreadMode4                                            ]:    " , ((tinFullS&)tinBaseP).flagsThreadMode4 , "\r\n" ) ; //U:: TO FIND A BUG
             //CONoUTrAW3( "[thirdC::third_flagsModeAdam1I_IF(tinBaseP)                           ]:    " , thirdC::third_flagsModeAdam1I_IF(tinBaseP) , "\r\n" ) ; //U:: TO FIND A BUG
             //CONoUTrAW3( "[bTraceOk                                                         ]:    " , bTraceOk , "\r\n" ) ; //U:: TO FIND A BUG
             _IO_
         {
-        if( !bForceTrace && ( !bTraceOk || F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_NOtRACING || F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_SUPPRESStRACING ) )
-        //if( !thirdC::c_strcmpIF( tinBaseP , ((tinNormalS&)tinBaseP).postThreadName , "tmGetIdHomeF" ) )
+        if( !bForceTrace && ( !bTraceOk || F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_NOtRACING || F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_SUPPRESStRACING ) )
+        //if( !thirdC::c_strcmpIF( tinBaseP , ((tinFullS&)tinBaseP).postThreadName , "tmGetIdHomeF" ) )
 
-        //if( ((tinNormalS&)tinBaseP).pc Utility[ 0 ] ) { CONoUTrAWb( "\r\ntraceF [idAdam,flagsP,home.flags,bTraceOk,bDivertOk]:    " , ((tinNormalS&)tinBaseP).pag1->idAdam , "    " , flagsP , "    " , home.flags , "    " , bTraceOk , "    " , bDivertOk , "\r\n" ) ; } //U:: TO FIND A BUG
+        //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] ) { CONoUTrAWb( "\r\ntraceF [idAdam,flagsP,home.flags,bTraceOk,bDivertOk]:    " , ((tinFullS&)tinBaseP).pag1->idAdam , "    " , flagsP , "    " , home.flags , "    " , bTraceOk , "    " , bDivertOk , "\r\n" ) ; } //U:: TO FIND A BUG
 
-        //LOGrAWb( "\r\ntraceF [idAdam,flagsP,home.flags,bTraceOk,bDivertOk]:    " , ((tinNormalS&)tinBaseP).pag1->idAdam , "    " , flagsP , "    " , home.flags , "    " , bTraceOk , "    " , bDivertOk , "\r\n" ) ; //U:: TO FIND A BUG
+        //LOGrAWb( "\r\ntraceF [idAdam,flagsP,home.flags,bTraceOk,bDivertOk]:    " , ((tinFullS&)tinBaseP).pag1->idAdam , "    " , flagsP , "    " , home.flags , "    " , bTraceOk , "    " , bDivertOk , "\r\n" ) ; //U:: TO FIND A BUG
 
         ;
             : 1
@@ -322,10 +322,10 @@
                     break ;
                     bTrace ++ ;
                 {
-                if( ((tinNormalS&)tinBaseP).pag1->pcIdThreadTrace[ offi ] == ((tinNormalS&)tinBaseP).monitor.idThread )
+                if( ((tinFullS&)tinBaseP).pag1->pcIdThreadTrace[ offi ] == ((tinFullS&)tinBaseP).monitor.idThread )
                 if( bAll ) bAll -- ;
             {
-            if( ((tinNormalS&)tinBaseP).pag1->pcIdThreadTrace[ offi ] )
+            if( ((tinFullS&)tinBaseP).pag1->pcIdThreadTrace[ offi ] )
             _IO_
         {
         for( countT offi = 0 ; offi < CiDtHREADtRACE ; offi ++ )

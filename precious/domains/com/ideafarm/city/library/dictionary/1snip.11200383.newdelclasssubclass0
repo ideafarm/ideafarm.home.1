@@ -77,7 +77,7 @@
             if( cbaFoot )                                                                                                                       \
             __Z( pvn ) ;                                                                                                                        \
             PUSE.newF( tinBaseP , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ; ___( pvn ) ;                                                          \
-            if( !((tinNormalS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                                   \
+            if( !((tinFullS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                                   \
             ZE( voidT* , pvn ) ;                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             _IO_                                                                                                                                \
@@ -94,9 +94,9 @@
         }                                                                                                                                       \
             }                                                                                                                                   \
                 PUSE( tinBaseP , *(byteT**)&pvP ) ;                                                                                                 \
-                if( !((tinNormalS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                               \
+                if( !((tinFullS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                               \
             {                                                                                                                                   \
-            if( pvP && !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             _IO_                                                                                                                                \
@@ -185,7 +185,7 @@
             {                                                                                                                                   \
             if( pvn )                                                                                                                           \
             PUSE.newF( tinBaseP , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ; ___( pvn ) ;                                                          \
-            if( !((tinNormalS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                                   \
+            if( !((tinFullS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                                   \
             ZE( voidT* , pvn ) ;                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             _IO_                                                                                                                                \
@@ -202,9 +202,9 @@
         }                                                                                                                                       \
             }                                                                                                                                   \
                 PUSE( tinBaseP , *(byteT**)&pvP ) ;                                                                                                 \
-                if( !((tinNormalS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                               \
+                if( !((tinFullS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                               \
             {                                                                                                                                   \
-            if( pvP && !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             _IO_                                                                                                                                \

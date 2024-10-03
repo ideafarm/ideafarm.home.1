@@ -14,7 +14,7 @@
         }
             break ;
             }
-                (*((tinNormalS&)tinBaseP).pEther)( tinBaseP , psBagPop ) ;
+                (*((tinFullS&)tinBaseP).pEther)( tinBaseP , psBagPop ) ;
                 popIF( tinBaseP , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBagPop , stIdptOpenP , stIdptGossipP , idptP ) ;
                 idptGossipP >> *psBagPop ;
                 hdrBagIF( tinBaseP , *psBagPop , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPgOSSIP ) ;
@@ -23,7 +23,7 @@
         
             UNGRABrELAYlISTS
             }
-                else (*((tinNormalS&)tinBaseP).pEther)( tinBaseP , psBagPop , TAG( TAGiDnULL ) ) ;
+                else (*((tinFullS&)tinBaseP).pEther)( tinBaseP , psBagPop , TAG( TAGiDnULL ) ) ;
                 }
                     sortOpenIF( tinBaseP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
                     stIdptGossipP.sinkF( tinBaseP , countTC() , (byteT*)&idptGossipP , flSTACKsINK_UNIQUE , subtractIdPortsF , - 1 ) ;

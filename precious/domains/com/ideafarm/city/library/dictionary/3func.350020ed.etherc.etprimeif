@@ -8,7 +8,7 @@
 
 
 }
-    return *((tinNormalS&)tinBaseP).pag1->_etherC_.pEtPrime ;
+    return *((tinFullS&)tinBaseP).pag1->_etherC_.pEtPrime ;
 {
 /*1*/etherC& etherC::etPrimeIF( tinBaseS& tinBaseP )/*1*/
 
@@ -16,8 +16,8 @@
 */
 for maximum speed, this function contains no overhead code
 this function will cause an access violation if called before the primary etherC object is constructed, or while or after it is destroyed
-it is illegal to refer to ((tinNormalS&)tinBaseP).pag1->_etherC_.pEtPrime directly in the definition of an adam
-this function must be used to refer to the ((tinNormalS&)tinBaseP).pag1->_etherC_.pEtPrime static member of etherC
+it is illegal to refer to ((tinFullS&)tinBaseP).pag1->_etherC_.pEtPrime directly in the definition of an adam
+this function must be used to refer to the ((tinFullS&)tinBaseP).pag1->_etherC_.pEtPrime static member of etherC
 do not store my value unless you can ensure that the stored reference will never be used after thPrime destruction has begun
   \<A HREF=\"5.b830104.1.1.0.html\"\>b830104:  WAKEsHOW( "example.simplest.func.1030112.etherC.etPrimeIF" )\</A\>
  simplest

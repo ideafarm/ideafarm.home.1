@@ -8,14 +8,14 @@
 
 
 }
-    ((tinNormalS&)tinBaseP).pbRecursiveParameters = pbSave ;
+    ((tinFullS&)tinBaseP).pbRecursiveParameters = pbSave ;
 
-    ((tinNormalS&)tinBaseP).pbRecursiveParameters = 0 ;
+    ((tinFullS&)tinBaseP).pbRecursiveParameters = 0 ;
 
     else          while( !*pQuitP && PtHIS && !walkStepF( tinBaseP ) ) ;
     if( !pQuitP ) while(             PtHIS && !walkStepF( tinBaseP ) ) ;
 
-    ((tinNormalS&)tinBaseP).pbRecursiveParameters = (byteT*)&pp ;
+    ((tinFullS&)tinBaseP).pbRecursiveParameters = (byteT*)&pp ;
 
     rParam_walk_S pp( pbRawBegin ? 0 : 1 , pbRawBegin ? pRoot : 0 , stThisP , stKidsDoneP , pbBufferP , cbBufferP , countTC() , pCBFP , pcArgP , F(flagsCt) & flBITtREEc_SHOWdATAdURINGwALK ? &cDatum : 0 ) ;
     ZE( countT , cDatum ) ;
@@ -29,8 +29,8 @@
         ? pRootP
     bitNodeS* pRoot = pRootP
 
-                    ((tinNormalS&)tinBaseP).pbRecursiveParameters = 0 ;
-    byteT* pbSave = ((tinNormalS&)tinBaseP).pbRecursiveParameters     ;
+                    ((tinFullS&)tinBaseP).pbRecursiveParameters = 0 ;
+    byteT* pbSave = ((tinFullS&)tinBaseP).pbRecursiveParameters     ;
     _IO_
 {
 /*1*/voidT bitTreeC::walkF( tinBaseS& tinBaseP , stackC& stThisP , stackC& stKidsDoneP , byteT* pbBufferP , countT cbBufferP , countT& cNestP , ifc2FT pCBFP , countT* pcArgP , const boolT* const pQuitP , bitNodeS* pRootP )/*1*/

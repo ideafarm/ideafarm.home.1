@@ -26,11 +26,11 @@
                         //    OStEXTC(  ostoSay , save , '0' ) ;
                         //    OStEXT(   ostoSay , TUCK >> 2 ) ;
                         //{
-                        //if( !POOP && ((tinNormalS&)tinBaseP).pc Utility[ 0 ] )
+                        //if( !POOP && ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
 
                         __Z( noteP ) ;
-                        countT save = ((tinNormalS&)tinBaseP).brcRaw ;
-                        noteP = ((tinNormalS&)tinBaseP).brcRaw ;
+                        countT save = ((tinFullS&)tinBaseP).brcRaw ;
+                        noteP = ((tinFullS&)tinBaseP).brcRaw ;
                         BOS( WHATgbo , BOSoK , MapViewOfFileExNuma( (HANDLE)oshClone , FILE_MAP_WRITE , 0 , 0 , 0 , 0 , thirdC::osOffNumaNodeValidChosenIF( processGlobal2I.idNumaNode ) ) )
                     {
                     if( !POOP && idTypeP == ifcIDtYPEhANDLE_SHAREDmEMORY )
@@ -39,10 +39,10 @@
 
                 }
                     BLAMMO ; //2008.10.07 OBSERVED rc : aa5 1450_9 ERROR_NO_SYSTEM_RESOURCES (ON VIRTUAL DEDICATED SERVER GODADDY)
-                    LOGrAWtID2( "DuplicateHandle error code:" , ((tinNormalS&)tinBaseP).brcRaw ) ;
+                    LOGrAWtID2( "DuplicateHandle error code:" , ((tinFullS&)tinBaseP).brcRaw ) ;
                     BOSdOnOTtEST( WHATgbo , GetLastError() )
                 {
-                if( ((tinNormalS&)tinBaseP).bosFail )
+                if( ((tinFullS&)tinBaseP).bosFail )
                 BOS( WHATgbo , BOSoK , DuplicateHandle( oshFrom , (HANDLE)oshP , oshTo , (HANDLE*)&oshClone , 0 , 1 , DUPLICATE_SAME_ACCESS ) )
                 POOPIES
 

@@ -13,17 +13,17 @@
         }
             POPtINaRGS
 
-            __NZ( ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 1 ] ) ; // ALL NONZE VALUES SHOULD BE DETECTED, PROCESSED, AND RESET BEFORE walkF RETURNS
-            __NZ( ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 0 ] ) ; // ALL NONZE VALUES SHOULD BE DETECTED, PROCESSED, AND RESET BEFORE walkF RETURNS
+            __NZ( ((tinFullS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 1 ] ) ; // ALL NONZE VALUES SHOULD BE DETECTED, PROCESSED, AND RESET BEFORE walkF RETURNS
+            __NZ( ((tinFullS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 0 ] ) ; // ALL NONZE VALUES SHOULD BE DETECTED, PROCESSED, AND RESET BEFORE walkF RETURNS
 
             pList->walkF( tinBaseP , idGrabLayerP ) ;
 
-            // ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 1 ]:  LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESScOMPLETED
-            // ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 0 ]:  LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESSbEGUN
+            // ((tinFullS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 1 ]:  LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESScOMPLETED
+            // ((tinFullS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 0 ]:  LATH ENCOUNTERED VALUE OF A FIELD NAMED LISTnAMEsYS_IDGaCCESSbEGUN
             //CS:CODEsYNC: 330e6010 320000b4
 
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_IGNOREgRABITbIT | flLISTwALK_RESETgRABITbIT | flLISTwALK_WALKkIDbEFOREcALLINGkID | flLISTwALK_DOnOTwALKkIDaFTERcALLINGkID ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkLintCBF ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_IGNOREgRABITbIT | flLISTwALK_RESETgRABITbIT | flLISTwALK_WALKkIDbEFOREcALLINGkID | flLISTwALK_DOnOTwALKkIDaFTERcALLINGkID ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkLintCBF ;
             PUSHtINaRGS
         {
         if( pList )
@@ -38,6 +38,8 @@
     _IO_
 
     }
+        if( POOP ) return ;
+        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL

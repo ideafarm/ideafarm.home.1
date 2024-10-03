@@ -50,8 +50,10 @@
 
         byteT* pbData = aptData ;
     {
-    if( !( F(((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP) & flLISTwALK_DOnOTiNDEXdATA ) )
+    if( !( F(((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP) & flLISTwALK_DOnOTiNDEXdATA ) )
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
+
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 
     __( aptData.getBitsF() & fliDATUMc_INDEXED ) ;
 {

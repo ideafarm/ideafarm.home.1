@@ -644,7 +644,7 @@ TODO
                             break ;
                             stArgs << (byteT*)&c4p ;
                             //etThread.strokeF( tinBaseP , T("after appending for \"")+T((strokeS*)c4p.c1)+T("\", mangle is \"")+tMangle+T("\"\r\n") ) ; //U::
-                            if( idArg > 1 || etThread.strCompareF( tinBaseP , (strokeS*)c4p.c1 , T("tinNormalS") ) ) tMangle += tMangleNew ;
+                            if( idArg > 1 || etThread.strCompareF( tinBaseP , (strokeS*)c4p.c1 , T("tinFullS") ) ) tMangle += tMangleNew ;
 
                             }
                                 else tMangleNew = T(postMangleF(tinBaseP,T((strokeS*)c4p.c1))) ;
@@ -998,7 +998,7 @@ const osTextT postIndent[] = "    " ;
 
 const osTextT postFooter[] = "}\r\n" ;
 
-const osTextT postFooter2[] = "    if( ((tinNormalS&)tinBaseP).fingerprint && _psttNameP && slP ) ;\r\n" ;
+const osTextT postFooter2[] = "    if( ((tinFullS&)tinBaseP).fingerprint && _psttNameP && slP ) ;\r\n" ;
 
 ;
     "    ZE( countT , cbFieldNext ) ;\r\n"

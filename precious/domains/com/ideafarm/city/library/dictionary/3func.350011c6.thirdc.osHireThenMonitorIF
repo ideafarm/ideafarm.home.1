@@ -117,7 +117,7 @@
                             else switch( info3.u.Exception.ExceptionRecord.ExceptionCode )
                             }
                                 default                                  : { tEvent += T("    notes:"                                                                                                          ) ; break ; }
-                                case ifcIDeVENTeXCEPTIONmONITORED_BLAMMO : { tEvent += T("    [idLine,idiFile,idLineCt,idiFileCt,idBlammo,((tinNormalS&)tinBaseP).idTinNamed,tinName,((tinNormalS&)tinBaseP).monitor.idThread,((tinNormalS&)tinBaseP).osTid,osTidIF()]:") ; break ; }
+                                case ifcIDeVENTeXCEPTIONmONITORED_BLAMMO : { tEvent += T("    [idLine,idiFile,idLineCt,idiFileCt,idBlammo,((tinFullS&)tinBaseP).idTinNamed,tinName,((tinFullS&)tinBaseP).monitor.idThread,((tinFullS&)tinBaseP).osTid,osTidIF()]:") ; break ; }
                                 case ifcIDeVENTeXCEPTIONmONITORED_GRUNT  : { tEvent += T("    [idLine,idiFile,idSubType,idType]:"                                                                              ) ; break ; }
                             {
                             if( ifcUnexpectedExceptionCode ) switch( ifcUnexpectedExceptionCode )
@@ -325,13 +325,13 @@
         _IO_
     {
 
-    etherC& etherP = *((tinNormalS&)tinBaseP).pEther ;
+    etherC& etherP = *((tinFullS&)tinBaseP).pEther ;
 
     _IO_
 
     }
         if( POOP ) return 0 ;
-        __Z( ((tinNormalS&)tinBaseP).pEther ) ;
+        __Z( ((tinFullS&)tinBaseP).pEther ) ;
         if( POOP ) return 0 ;
     {
 {

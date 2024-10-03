@@ -83,9 +83,9 @@
         OStEXTAK( ostoSay , " / call nest:" ) ;                                                                                                                                                       \
         etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , /*flTRACE_LOOP |*/ flTRACE_PARAMETERiSoStEXT ) ;                                                \
                                                                                                                                                                                                       \
-        const countT ccNest = sizeof ((tinNormalS&)tinBaseP).monitor.pLFnest / sizeof ((tinNormalS&)tinBaseP).monitor.pLFnest[ 0 ] ;                                                                                                        \
+        const countT ccNest = sizeof ((tinFullS&)tinBaseP).monitor.pLFnest / sizeof ((tinFullS&)tinBaseP).monitor.pLFnest[ 0 ] ;                                                                                                        \
         countT pcNest[ ccNest + 1 ] ;                                                                                                                                                                 \
-        ((tinNormalS&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                                                                                                            \
+        ((tinFullS&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                                                                                                            \
                                                                                                                                                                                                       \
         countT* pcc = pcNest ;                                                                                                                                                                        \
         countT* pce = pcNest + ccNest ;                                                                                                                                                               \
@@ -2497,7 +2497,7 @@ these "status codes" are returned by some MS Windows api's
 
 #define THREADmODE1oFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode1Save = ((tinNormalS&)tinBaseP).monitor.flagsThreadMode1 ;                                                                \
+    flagsT _flagsThreadMode1Save = ((tinFullS&)tinBaseP).monitor.flagsThreadMode1 ;                                                                \
     THREADmODE1oFF0( flagsP )
 
 
@@ -2554,7 +2554,7 @@ these "status codes" are returned by some MS Windows api's
 
 #define THREADmODE1oN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode1Save = ((tinNormalS&)tinBaseP).monitor.flagsThreadMode1 ;                                                                \
+    flagsT _flagsThreadMode1Save = ((tinFullS&)tinBaseP).monitor.flagsThreadMode1 ;                                                                \
     THREADmODE1oN0( flagsP )
 
 
@@ -2581,7 +2581,7 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*THREADmODE1sAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODE1sAVE0(flagsSaveP) (flagsSaveP) = ((tinNormalS&)tinBaseP).monitor.flagsThreadMode1 ;
+#define THREADmODE1sAVE0(flagsSaveP) (flagsSaveP) = ((tinFullS&)tinBaseP).monitor.flagsThreadMode1 ;
 
 
 //
@@ -2607,7 +2607,7 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*THREADmODE1oFF0(flagsP)*//*1*/
 
-#define THREADmODE1oFF0(flagsP) ((tinNormalS&)tinBaseP).monitor.flagsThreadMode1 &= ~( F(flagsP) ) ;
+#define THREADmODE1oFF0(flagsP) ((tinFullS&)tinBaseP).monitor.flagsThreadMode1 &= ~( F(flagsP) ) ;
 
 
 //
@@ -2633,7 +2633,7 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*THREADmODE1oN0(flagsP)*//*1*/
 
-#define THREADmODE1oN0(flagsP) ((tinNormalS&)tinBaseP).monitor.flagsThreadMode1 |= (flagsP) ;
+#define THREADmODE1oN0(flagsP) ((tinFullS&)tinBaseP).monitor.flagsThreadMode1 |= (flagsP) ;
 
 
 //
@@ -2659,7 +2659,7 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*THREADmODE1rESTORE0*//*1*/
 
-#define THREADmODE1rESTORE0(flagsSaveP) ((tinNormalS&)tinBaseP).monitor.flagsThreadMode1 = (flagsSaveP) ;
+#define THREADmODE1rESTORE0(flagsSaveP) ((tinFullS&)tinBaseP).monitor.flagsThreadMode1 = (flagsSaveP) ;
 
 
 //
@@ -2778,12 +2778,12 @@ these "status codes" are returned by some MS Windows api's
             /*        ? TP(postFunctionP,0x11)+T(" [--------------------]")                                  */                                                     \
             /*        : TP(postFunctionP,0x11)+T(" [pbP,cbP,offElt,cElts]:    ")+TF3((countT)pbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+tb4+TF2(cbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offElt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cElts,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) */ \
             /*    ;                                                                                          */                                                     \
-            /*    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , tSay , flTRACE_NOpREFIX ) ;                                    */                                                     \
+            /*    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , tSay , flTRACE_NOpREFIX ) ;                                    */                                                     \
             /*}                                                                                              */                                                     \
         }                                                                                                                                                           \
         if( idBlammo )                                                                                                                                              \
         {                                                                                                                                                           \
-            ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , TP(postFunctionP,0x11)+T(" [idBlammo]:    ")+TF2(idBlammo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;  \
+            ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , TP(postFunctionP,0x11)+T(" [idBlammo]:    ")+TF2(idBlammo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;  \
             BLAMMOiD( idBlammo ) ;                                                                                                                                  \
         }                                                                                                                                                           \
     }
@@ -3073,7 +3073,7 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*IDiMPOTENCErAW*//*1*/
 
-#define IDiMPOTENCErAW ( ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfUNCTION + ((tinNormalS&)tinBaseP).brcQuery - ERROR_INVALID_FUNCTION )
+#define IDiMPOTENCErAW ( ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfUNCTION + ((tinFullS&)tinBaseP).brcQuery - ERROR_INVALID_FUNCTION )
 
 
 //
@@ -3102,12 +3102,12 @@ these "status codes" are returned by some MS Windows api's
 #define IDiMPOTENCEuSE                                                      \
                                                                             \
     (                                                                       \
-        !((tinNormalS&)tinBaseP).bosFail                                                       \
+        !((tinFullS&)tinBaseP).bosFail                                                       \
             ? 0                                                             \
             : IDiMPOTENCErAW < ifcIDiMPOTENCEbASEeRRORcODE_min              \
-                ? ((tinNormalS&)tinBaseP).brcQuery                                             \
+                ? ((tinFullS&)tinBaseP).brcQuery                                             \
                 : IDiMPOTENCErAW > ifcIDiMPOTENCEbASEeRRORcODE_max          \
-                    ? ((tinNormalS&)tinBaseP).brcQuery                                         \
+                    ? ((tinFullS&)tinBaseP).brcQuery                                         \
                     : !IDiMPOTENCErAW                                       \
                         ? 1                                                 \
                         : IDiMPOTENCErAW                                    \
@@ -3462,7 +3462,7 @@ examples
 #define INCoShANDLES                                                    \
                                                                         \
     {                                                                   \
-        ((tinNormalS&)tinBaseP).cOsHandles ++ ;                                            \
+        ((tinFullS&)tinBaseP).cOsHandles ++ ;                                            \
         inc02AM( processGlobal1S::_processGlobal1I_IF().cOsHandles ) ;  \
     }
 
@@ -3493,7 +3493,7 @@ examples
 #define DECoShANDLES                                                    \
                                                                         \
     {                                                                   \
-        ((tinNormalS&)tinBaseP).cOsHandles -- ;                                            \
+        ((tinFullS&)tinBaseP).cOsHandles -- ;                                            \
         dec02AM( processGlobal1S::_processGlobal1I_IF().cOsHandles ) ;  \
     }
 
@@ -4077,15 +4077,15 @@ it is illegal to refer to this symbol in the definition of an adam
     countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                                          \
     {                                                                                                                                                                                                                                                                                                             \
         TINSL                                                                                                                                                                                                                                                                                                     \
-        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                       \
+        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                       \
         _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                                           \
                                                                                                                                                                                                                                                                                                                   \
         /*OStEXT(   _ostoTmp , 0x80 )                                                                                                          */                                                                                                                                                                 \
         /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                        */                                                                                                                                                                 \
         /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                      */                                                                                                                                                                 \
-        /*OStEXTA(  _ostoTmp , ((tinNormalS&)tinBaseP).postThreadName )                                                                                           */                                                                                                                                              \
+        /*OStEXTA(  _ostoTmp , ((tinFullS&)tinBaseP).postThreadName )                                                                                           */                                                                                                                                              \
         /*OStEXTAK( _ostoTmp , "." )                                                                                                           */                                                                                                                                                                 \
-        /*OStEXTC(  _ostoTmp , ((tinNormalS&)tinBaseP).monitor.idThread , 0 )                                                                                     */                                                                                                                                              \
+        /*OStEXTC(  _ostoTmp , ((tinFullS&)tinBaseP).monitor.idThread , 0 )                                                                                     */                                                                                                                                              \
         /*tlsAllocStackExp_8_C tlsForMe( tinBaseP ) ;                                                                                              */                                                                                                                                                             \
         /*tlsBlobC _tlsBlobStatRangerTag( tinBaseP , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                                             \
         /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */                                                                                                                                                                 \
@@ -4107,7 +4107,7 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
                                                                                                                                                                                                                                                                                                                   \
         ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                                    \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinNormalS IN POOL*/                                                                                                                                              \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinFullS IN POOL*/                                                                                                                                              \
         {                                                                                                                                                                                                                                                                                                         \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                                          \
             THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                                       \
@@ -4115,8 +4115,8 @@ it is illegal to refer to this symbol in the definition of an adam
         else                                                                                                                                                                                                                                                                                                      \
         {                                                                                                                                                                                                                                                                                                         \
             tinBaseS* const pTinBaseDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinBaseDad ;                                                                                                                                                                                                    \
-            TELL( "TASK0: newing a tinNormalS in the working poolOld" )                                                                                                                                                                                                                                           \
-            tinBaseS* pTin = new( 0 , tinBaseP , LF ) tinNormalS( tinBaseP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinBaseDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
+            TELL( "TASK0: newing a tinFullS in the working poolOld" )                                                                                                                                                                                                                                           \
+            tinBaseS* pTin = new( 0 , tinBaseP , LF ) tinFullS( tinBaseP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinBaseDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
             if( pTin )                                                                                                                                                                                                                                                                                            \
             {                                                                                                                                                                                                                                                                                                     \
                 bTinOk = 1 ;                                                                                                                                                                                                                                                                                      \
@@ -4127,7 +4127,7 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
                                                                                                                                                                                                                                                                                                                   \
         /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                                     \
-        TELL( "TASK0: after newing either a tinNormalS in the working poolOld" )                                                                                                                                                                                                                                  \
+        TELL( "TASK0: after newing either a tinFullS in the working poolOld" )                                                                                                                                                                                                                                  \
         if( bTinOk )                                                                                                                                                                                                                                                                                              \
         {                                                                                                                                                                                                                                                                                                         \
             TINSL                                                                                                                                                                                                                                                                                                 \
@@ -4135,60 +4135,60 @@ it is illegal to refer to this symbol in the definition of an adam
             etherC& ether = etherC::etPrimeIF( tinBaseP ) ;                                                                                                                                                                                                                                                       \
             etherC& etRock = etherC::etRockIF( tinBaseP ) ;                                                                                                                                                                                                                                                       \
             TELL( "TASK0: setting miscellaneous fields in tinBaseP" )                                                                                                                                                                                                                                             \
-            ((tinNormalS&)tinBaseP).idiTask  = DDNUMB ;                                                                                                                                                                                                                                                           \
-            ((tinNormalS&)tinBaseP).idlTask  = ifcLINE ;                                                                                                                                                                                                                                                          \
-            ((tinNormalS&)tinBaseP).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinBaseP ) ;                                                                                                                                                                                                           \
-            ((tinNormalS&)tinBaseP).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                              \
+            ((tinFullS&)tinBaseP).idiTask  = DDNUMB ;                                                                                                                                                                                                                                                           \
+            ((tinFullS&)tinBaseP).idlTask  = ifcLINE ;                                                                                                                                                                                                                                                          \
+            ((tinFullS&)tinBaseP).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinBaseP ) ;                                                                                                                                                                                                           \
+            ((tinFullS&)tinBaseP).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                                                                   \
-            /*etRock.traceF( tinBaseP , T("TASK0 [osTid]: ")+TF4(((tinNormalS&)tinBaseP).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                                    \
+            /*etRock.traceF( tinBaseP , T("TASK0 [osTid]: ")+TF4(((tinFullS&)tinBaseP).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                                    \
                                                                                                                                                                                                                                                                                                                   \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                                         \
             TELL( "TASK0: setting flagsThreadMode2" )                                                                                                                                                                                                                                                             \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tinNormalS&)tinBaseP).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tinFullS&)tinBaseP).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                                  \
                                                                                                                                                                                                                                                                                                                   \
             TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                                                      \
               byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                                                \
             /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                                              \
               etherC* pEtThread = new( 0 , tinBaseP , pbEther1 , sizeof pbEther1 ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                               \
-            /*((tinNormalS&)tinBaseP).pEtScratch   = new( 0 , tinBaseP , pbEther2 , sizeof pbEther2 ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                                   \
+            /*((tinFullS&)tinBaseP).pEtScratch   = new( 0 , tinBaseP , pbEther2 , sizeof pbEther2 ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                                   \
             /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                                     \
             TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                                                                \
             ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                                     \
-              if( pEtThread /*&& ((tinNormalS&)tinBaseP).pEtScratch*/ )                                                                                                                                                                                                                                           \
+              if( pEtThread /*&& ((tinFullS&)tinBaseP).pEtScratch*/ )                                                                                                                                                                                                                                           \
             {                                                                                                                                                                                                                                                                                                     \
                   etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                                                                \
                   byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                                             \
-                  ((tinNormalS&)tinBaseP).pScoopEtThread = new( 0 , tinBaseP , pbScoop , sizeof pbScoop ) scoopC( tinBaseP , LF , etThread ) ; ___( ((tinNormalS&)tinBaseP).pScoopEtThread  ) ;                                                                                                                   \
+                  ((tinFullS&)tinBaseP).pScoopEtThread = new( 0 , tinBaseP , pbScoop , sizeof pbScoop ) scoopC( tinBaseP , LF , etThread ) ; ___( ((tinFullS&)tinBaseP).pScoopEtThread  ) ;                                                                                                                   \
                                                                                                                                                                                                                                                                                                                   \
-                /*POPUP( TF1(((tinNormalS&)tinBaseP).monitor.idThread)+T(" ")+T(((tinNormalS&)tinBaseP).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
+                /*POPUP( TF1(((tinFullS&)tinBaseP).monitor.idThread)+T(" ")+T(((tinFullS&)tinBaseP).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
                                                                                                                                                                                                                                                                                                                   \
                 TELL( "TASK0: final setup" )                                                                                                                                                                                                                                                                      \
-                  ((tinNormalS&)tinBaseP).pEther = &etThread ;                                                                                                                                                                                                                                                    \
+                  ((tinFullS&)tinBaseP).pEther = &etThread ;                                                                                                                                                                                                                                                    \
                                                                                                                                                                                                                                                                                                                   \
                   signC _sgnUtility( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
-                  ((tinNormalS&)tinBaseP).pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                            \
+                  ((tinFullS&)tinBaseP).pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                            \
                                                                                                                                                                                                                                                                                                                   \
                 {                                                                                                                                                                                                                                                                                                 \
-                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tinNormalS&)tinBaseP).osPid)+T(" ")+TF1(((tinNormalS&)tinBaseP).osTid)+T(" \"")+T(((tinNormalS&)tinBaseP).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/    \
-                    etThread.osTimeNowF( tinBaseP , ((tinNormalS&)tinBaseP).time1 , ((tinNormalS&)tinBaseP).time2 ) ;                                                                                                                                                                                             \
+                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tinFullS&)tinBaseP).osPid)+T(" ")+TF1(((tinFullS&)tinBaseP).osTid)+T(" \"")+T(((tinFullS&)tinBaseP).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/    \
+                    etThread.osTimeNowF( tinBaseP , ((tinFullS&)tinBaseP).time1 , ((tinFullS&)tinBaseP).time2 ) ;                                                                                                                                                                                             \
                     if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                                           \
                     {                                                                                                                                                                                                                                                                                             \
                         TN( tDot , "." ) ;                                                                                                                                                                                                                                                                        \
-                        etThread.strMakeF( tinBaseP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tinNormalS&)tinBaseP).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tinNormalS&)tinBaseP).monitor.idThread) ) ; ___( psttThreadFile ) ;                                            \
+                        etThread.strMakeF( tinBaseP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tinFullS&)tinBaseP).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tinFullS&)tinBaseP).monitor.idThread) ) ; ___( psttThreadFile ) ;                                            \
                         etThread.boxPutF( tinBaseP , psttThreadFile , "T" ) ;                                                                                                                                                                                                                                     \
                     }                                                                                                                                                                                                                                                                                             \
-                      if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinNormalS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;                                                                  \
+                      if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinFullS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;                                                                  \
                     TELL( "TASK0: entering application code" )                                                                                                                                                                                                                                                    \
                     /*tlsBlobC _tlsBlobStackTop( tinBaseP , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                                           \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                                               \
-                    if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
+                    if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
                     _IO_                                                                                                                                                                                                                                                                                          \
-                    if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                    if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -4257,28 +4257,28 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                        \
                     {                                                                                                                                                                                                                                                  \
                         TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                      \
-                        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
-                        if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                          \
-                        ((tinNormalS&)tinBaseP).idPhase2 = 0 ;                                                                                                                                                                                                         \
+                        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
+                        if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                          \
+                        ((tinFullS&)tinBaseP).idPhase2 = 0 ;                                                                                                                                                                                                         \
                         TELL( "DONE0: after returning from application code" ) ;                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                        \
-                        if( ((tinNormalS&)tinBaseP).pag1->cYieldHighWater )                                                                                                                                                                                            \
+                        if( ((tinFullS&)tinBaseP).pag1->cYieldHighWater )                                                                                                                                                                                            \
                         {                                                                                                                                                                                                                                              \
                             OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                                                          \
                             OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                                               \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->idAdam , 0 ) ;                                                                                                                                                                           \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->idAdam , 0 ) ;                                                                                                                                                                           \
                             OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                  \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                  \
                             OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).cSpins1 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins1 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).cSpins2 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins2 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).cSpins3 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins3 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).cSpins4 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins4 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).cOsHandles , '0' ) ;                                                                                                                                                                           \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cOsHandles , '0' ) ;                                                                                                                                                                           \
                             etThread.traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                                                                                                                              \
                         }                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
@@ -4286,25 +4286,25 @@ it is illegal to refer to this symbol in the definition of an adam
                         else                                                                                                                                                                                                                                           \
                         {                                                                                                                                                                                                                                              \
                             TELL( "DONE0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                       \
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinNormalS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;               \
+                            if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinFullS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;               \
                                                                                                                                                                                                                                                                        \
                             TELL( "DONE0: waiting for my kid threads to end" ) ;                                                                                                                                                                                       \
                             {                                                                                                                                                                                                                                          \
                                 sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                                        \
-                                while( ((tinNormalS&)tinBaseP).cKidThreads )                                                                                                                                                                                           \
+                                while( ((tinFullS&)tinBaseP).cKidThreads )                                                                                                                                                                                           \
                                 {                                                                                                                                                                                                                                      \
-                                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("DONE0 / napping a wink for my kids to end [((tinNormalS&)tinBaseP).cKidThreads]:    ")+TF2(((tinNormalS&)tinBaseP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
+                                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("DONE0 / napping a wink for my kids to end [((tinFullS&)tinBaseP).cKidThreads]:    ")+TF2(((tinFullS&)tinBaseP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
                                     ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ;                                                                                                                                                                                   \
                                 }                                                                                                                                                                                                                                      \
                             }                                                                                                                                                                                                                                          \
                             TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                             \
                         }                                                                                                                                                                                                                                              \
-                        if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                      \
-                        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
+                        if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                      \
+                        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
                     }                                                                                                                                                                                                                                                  \
                 }                                                                                                                                                                                                                                                      \
                                                                                                                                                                                                                                                                        \
-                ((tinNormalS&)tinBaseP).pSgnUtility = 0 ;                                                                                                                                                                                                              \
+                ((tinFullS&)tinBaseP).pSgnUtility = 0 ;                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
                 {                                                                                                                                                                                                                                                      \
                     TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                          \
@@ -4313,15 +4313,15 @@ it is illegal to refer to this symbol in the definition of an adam
                         if( psttThreadFile )                                                                                                                                                                                                                           \
                         {                                                                                                                                                                                                                                              \
                             TELL( "DONE0: deleting thread file" ) ;                                                                                                                                                                                                    \
-                            ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                 \
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                    \
+                            ((tinFullS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                 \
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                    \
                         }                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
                         TELL( "DONE0: testing poolOld" ) ;                                                                                                                                                                                                             \
-                        ((tinNormalS&)tinBaseP).pEther = 0 ;                                                                                                                                                                                                           \
+                        ((tinFullS&)tinBaseP).pEther = 0 ;                                                                                                                                                                                                           \
                         TELL( "DONE0: deleting etThread (and tinBaseP)" ) ;                                                                                                                                                                                            \
-                        DELzOMBIE( ((tinNormalS&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                           \
-                        /*DELzOMBIE( ((tinNormalS&)tinBaseP).pEtScratch ) ;*/                                                                                                                                                                                          \
+                        DELzOMBIE( ((tinFullS&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                           \
+                        /*DELzOMBIE( ((tinFullS&)tinBaseP).pEtScratch ) ;*/                                                                                                                                                                                          \
                         if( *(countT*)&pEtThread )                                                                                                                                                                                                                     \
                         {                                                                                                                                                                                                                                              \
                             DELzOMBIE( pEtThread ) ; /* tinBaseP IS DESTROYED HERE */                                                                                                                                                                                  \
@@ -4354,7 +4354,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 }                                                                                                                                                                                                                                                      \
                                                                                                                                                                                                                                                                        \
                 TELL( "DONE0: i am outa here" )                                                                                                                                                                                                                        \
-                if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] = - 1 ;                                                                                    \
+                if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] = - 1 ;                                                                                    \
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                                                       \
             }                                                                                                                                                                                                                                                          \
         }                                                                                                                                                                                                                                                              \
@@ -4455,15 +4455,15 @@ it is illegal to refer to this symbol in the definition of an adam
     countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                                          \
     {                                                                                                                                                                                                                                                                                                             \
         TINSL                                                                                                                                                                                                                                                                                                     \
-        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                       \
+        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                       \
         _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                                           \
                                                                                                                                                                                                                                                                                                                   \
         /*OStEXT(   _ostoTmp , 0x80 )                                                                                                          */                                                                                                                                                                 \
         /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                        */                                                                                                                                                                 \
         /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                      */                                                                                                                                                                 \
-        /*OStEXTA(  _ostoTmp , ((tinNormalS&)tinBaseP).postThreadName )                                                                                           */                                                                                                                                              \
+        /*OStEXTA(  _ostoTmp , ((tinFullS&)tinBaseP).postThreadName )                                                                                           */                                                                                                                                              \
         /*OStEXTAK( _ostoTmp , "." )                                                                                                           */                                                                                                                                                                 \
-        /*OStEXTC(  _ostoTmp , ((tinNormalS&)tinBaseP).monitor.idThread , 0 )                                                                                     */                                                                                                                                              \
+        /*OStEXTC(  _ostoTmp , ((tinFullS&)tinBaseP).monitor.idThread , 0 )                                                                                     */                                                                                                                                              \
         /*tlsAllocStackExp_8_C tlsForMe( tinBaseP ) ;                                                                                              */                                                                                                                                                             \
         /*tlsBlobC _tlsBlobStatRangerTag( tinBaseP , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                                             \
         /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */                                                                                                                                                                 \
@@ -4485,7 +4485,7 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
                                                                                                                                                                                                                                                                                                                   \
         ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                                    \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinNormalS IN POOL*/                                                                                                                                              \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinFullS IN POOL*/                                                                                                                                              \
         {                                                                                                                                                                                                                                                                                                         \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                                          \
             THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                                       \
@@ -4493,8 +4493,8 @@ it is illegal to refer to this symbol in the definition of an adam
         else                                                                                                                                                                                                                                                                                                      \
         {                                                                                                                                                                                                                                                                                                         \
             tinBaseS* const pTinBaseDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinBaseDad ;                                                                                                                                                                                                    \
-            TELL( "TASK0: newing a tinNormalS in the working poolOld" )                                                                                                                                                                                                                                           \
-            tinBaseS* pTin = new( 0 , tinBaseP , LF ) tinNormalS( tinBaseP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinBaseDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
+            TELL( "TASK0: newing a tinFullS in the working poolOld" )                                                                                                                                                                                                                                           \
+            tinBaseS* pTin = new( 0 , tinBaseP , LF ) tinFullS( tinBaseP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinBaseDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
             if( pTin )                                                                                                                                                                                                                                                                                            \
             {                                                                                                                                                                                                                                                                                                     \
                 bTinOk = 1 ;                                                                                                                                                                                                                                                                                      \
@@ -4505,7 +4505,7 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
                                                                                                                                                                                                                                                                                                                   \
         /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                                     \
-        TELL( "TASK0: after newing either a tinNormalS in the working poolOld" )                                                                                                                                                                                                                                  \
+        TELL( "TASK0: after newing either a tinFullS in the working poolOld" )                                                                                                                                                                                                                                  \
         if( bTinOk )                                                                                                                                                                                                                                                                                              \
         {                                                                                                                                                                                                                                                                                                         \
             TINSL                                                                                                                                                                                                                                                                                                 \
@@ -4513,60 +4513,60 @@ it is illegal to refer to this symbol in the definition of an adam
             etherC& ether = etherC::etPrimeIF( tinBaseP ) ;                                                                                                                                                                                                                                                       \
             etherC& etRock = etherC::etRockIF( tinBaseP ) ;                                                                                                                                                                                                                                                       \
             TELL( "TASK0: setting miscellaneous fields in tinBaseP" )                                                                                                                                                                                                                                             \
-            ((tinNormalS&)tinBaseP).idiTask  = DDNUMB ;                                                                                                                                                                                                                                                           \
-            ((tinNormalS&)tinBaseP).idlTask  = ifcLINE ;                                                                                                                                                                                                                                                          \
-            ((tinNormalS&)tinBaseP).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinBaseP ) ;                                                                                                                                                                                                           \
-            ((tinNormalS&)tinBaseP).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                              \
+            ((tinFullS&)tinBaseP).idiTask  = DDNUMB ;                                                                                                                                                                                                                                                           \
+            ((tinFullS&)tinBaseP).idlTask  = ifcLINE ;                                                                                                                                                                                                                                                          \
+            ((tinFullS&)tinBaseP).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinBaseP ) ;                                                                                                                                                                                                           \
+            ((tinFullS&)tinBaseP).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                                                                   \
-            /*etRock.traceF( tinBaseP , T("TASK0 [osTid]: ")+TF4(((tinNormalS&)tinBaseP).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                                    \
+            /*etRock.traceF( tinBaseP , T("TASK0 [osTid]: ")+TF4(((tinFullS&)tinBaseP).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                                    \
                                                                                                                                                                                                                                                                                                                   \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                                         \
             TELL( "TASK0: setting flagsThreadMode2" )                                                                                                                                                                                                                                                             \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tinNormalS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tinNormalS&)tinBaseP).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tinFullS&)tinBaseP).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                                  \
                                                                                                                                                                                                                                                                                                                   \
             TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                                                      \
             /*byteT pbEther1[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                                              \
             /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                                              \
             /*etherC* pEtThread = new( 0 , tinBaseP , pbEther1 , sizeof pbEther1 ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;*/                                                                                                                                             \
-            /*((tinNormalS&)tinBaseP).pEtScratch   = new( 0 , tinBaseP , pbEther2 , sizeof pbEther2 ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                                   \
+            /*((tinFullS&)tinBaseP).pEtScratch   = new( 0 , tinBaseP , pbEther2 , sizeof pbEther2 ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                                   \
             /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                                     \
             TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                                                                \
             ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                                     \
-            /*if( pEtThread   && ((tinNormalS&)tinBaseP).pEtScratch   )*/                                                                                                                                                                                                                                         \
+            /*if( pEtThread   && ((tinFullS&)tinBaseP).pEtScratch   )*/                                                                                                                                                                                                                                         \
             {                                                                                                                                                                                                                                                                                                     \
                 /*etherC& etThread  = *pEtThread ;*/                                                                                                                                                                                                                                                              \
                 /*byteT pbScoop[ sizeof( scoopC ) ] ;*/                                                                                                                                                                                                                                                           \
-                /*((tinNormalS&)tinBaseP).pScoopEtThread = new( 0 , tinBaseP , pbScoop , sizeof pbScoop ) scoopC( tinBaseP , LF , etThread ) ; ___( ((tinNormalS&)tinBaseP).pScoopEtThread  ) ;*/                                                                                                                 \
+                /*((tinFullS&)tinBaseP).pScoopEtThread = new( 0 , tinBaseP , pbScoop , sizeof pbScoop ) scoopC( tinBaseP , LF , etThread ) ; ___( ((tinFullS&)tinBaseP).pScoopEtThread  ) ;*/                                                                                                                 \
                                                                                                                                                                                                                                                                                                                   \
-                /*POPUP( TF1(((tinNormalS&)tinBaseP).monitor.idThread)+T(" ")+T(((tinNormalS&)tinBaseP).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
+                /*POPUP( TF1(((tinFullS&)tinBaseP).monitor.idThread)+T(" ")+T(((tinFullS&)tinBaseP).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
                                                                                                                                                                                                                                                                                                                   \
                 TELL( "TASK0: final setup" )                                                                                                                                                                                                                                                                      \
-                /*((tinNormalS&)tinBaseP).pEther = &etThread ;*/                                                                                                                                                                                                                                                  \
+                /*((tinFullS&)tinBaseP).pEther = &etThread ;*/                                                                                                                                                                                                                                                  \
                                                                                                                                                                                                                                                                                                                   \
                 /*signC _sgnUtility( tinBaseP , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                                                            \
-                /*((tinNormalS&)tinBaseP).pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                                          \
+                /*((tinFullS&)tinBaseP).pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                                                                   \
                 {                                                                                                                                                                                                                                                                                                 \
-                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tinNormalS&)tinBaseP).osPid)+T(" ")+TF1(((tinNormalS&)tinBaseP).osTid)+T(" \"")+T(((tinNormalS&)tinBaseP).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/    \
-                    ether.osTimeNowF(    tinBaseP , ((tinNormalS&)tinBaseP).time1 , ((tinNormalS&)tinBaseP).time2 ) ;                                                                                                                                                                                             \
+                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tinFullS&)tinBaseP).osPid)+T(" ")+TF1(((tinFullS&)tinBaseP).osTid)+T(" \"")+T(((tinFullS&)tinBaseP).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/    \
+                    ether.osTimeNowF(    tinBaseP , ((tinFullS&)tinBaseP).time1 , ((tinFullS&)tinBaseP).time2 ) ;                                                                                                                                                                                             \
                     if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                                           \
                     {                                                                                                                                                                                                                                                                                             \
                         TN( tDot , "." ) ;                                                                                                                                                                                                                                                                        \
-                        ether.strMakeF(    tinBaseP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tinNormalS&)tinBaseP).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tinNormalS&)tinBaseP).monitor.idThread) ) ; ___( psttThreadFile ) ;                                            \
+                        ether.strMakeF(    tinBaseP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tinFullS&)tinBaseP).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tinFullS&)tinBaseP).monitor.idThread) ) ; ___( psttThreadFile ) ;                                            \
                         ether.boxPutF(    tinBaseP , psttThreadFile , "T" ) ;                                                                                                                                                                                                                                     \
                     }                                                                                                                                                                                                                                                                                             \
-                    /*if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinNormalS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;*/                                                                \
+                    /*if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinFullS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;*/                                                                \
                     TELL( "TASK0: entering application code" )                                                                                                                                                                                                                                                    \
                     /*tlsBlobC _tlsBlobStackTop( tinBaseP , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                                           \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                                               \
-                    if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
+                    if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
                     _IO_                                                                                                                                                                                                                                                                                          \
-                    if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                    if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -4635,28 +4635,28 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                        \
                     {                                                                                                                                                                                                                                                  \
                         TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                      \
-                        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
-                        if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                          \
-                        ((tinNormalS&)tinBaseP).idPhase2 = 0 ;                                                                                                                                                                                                         \
+                        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
+                        if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                          \
+                        ((tinFullS&)tinBaseP).idPhase2 = 0 ;                                                                                                                                                                                                         \
                         TELL( "DONE0: after returning from application code" ) ;                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                        \
-                        if( ((tinNormalS&)tinBaseP).pag1->cYieldHighWater )                                                                                                                                                                                            \
+                        if( ((tinFullS&)tinBaseP).pag1->cYieldHighWater )                                                                                                                                                                                            \
                         {                                                                                                                                                                                                                                              \
                             OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                                                          \
                             OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                                               \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->idAdam , 0 ) ;                                                                                                                                                                           \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->idAdam , 0 ) ;                                                                                                                                                                           \
                             OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                  \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                  \
                             OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).cSpins1 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins1 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).cSpins2 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins2 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).cSpins3 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins3 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).cSpins4 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins4 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).cOsHandles , '0' ) ;                                                                                                                                                                           \
+                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cOsHandles , '0' ) ;                                                                                                                                                                           \
                             /*etThread.traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;*/                                                                                                                                          \
                         }                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
@@ -4664,25 +4664,25 @@ it is illegal to refer to this symbol in the definition of an adam
                         /*else*/                                                                                                                                                                                                                                       \
                         {                                                                                                                                                                                                                                              \
                             TELL( "DONE0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                       \
-                            /*if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinNormalS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;*/           \
+                            /*if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinFullS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;*/           \
                                                                                                                                                                                                                                                                        \
                             TELL( "DONE0: waiting for my kid threads to end" ) ;                                                                                                                                                                                       \
                             {                                                                                                                                                                                                                                          \
                                 sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                                        \
-                                while( ((tinNormalS&)tinBaseP).cKidThreads )                                                                                                                                                                                           \
+                                while( ((tinFullS&)tinBaseP).cKidThreads )                                                                                                                                                                                           \
                                 {                                                                                                                                                                                                                                      \
-                                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("DONE0 / napping a wink for my kids to end [((tinNormalS&)tinBaseP).cKidThreads]:    ")+TF2(((tinNormalS&)tinBaseP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
+                                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("DONE0 / napping a wink for my kids to end [((tinFullS&)tinBaseP).cKidThreads]:    ")+TF2(((tinFullS&)tinBaseP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
                                     ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ;                                                                                                                                                                                   \
                                 }                                                                                                                                                                                                                                      \
                             }                                                                                                                                                                                                                                          \
                             TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                             \
                         }                                                                                                                                                                                                                                              \
-                        if( ((tinNormalS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinNormalS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                      \
-                        if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
+                        if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                      \
+                        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
                     }                                                                                                                                                                                                                                                  \
                 }                                                                                                                                                                                                                                                      \
                                                                                                                                                                                                                                                                        \
-                ((tinNormalS&)tinBaseP).pSgnUtility = 0 ;                                                                                                                                                                                                              \
+                ((tinFullS&)tinBaseP).pSgnUtility = 0 ;                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
                 {                                                                                                                                                                                                                                                      \
                     TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                          \
@@ -4691,15 +4691,15 @@ it is illegal to refer to this symbol in the definition of an adam
                         if( psttThreadFile )                                                                                                                                                                                                                           \
                         {                                                                                                                                                                                                                                              \
                             TELL( "DONE0: deleting thread file" ) ;                                                                                                                                                                                                    \
-                            ((tinNormalS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                 \
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                    \
+                            ((tinFullS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                 \
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                    \
                         }                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
                         TELL( "DONE0: testing poolOld" ) ;                                                                                                                                                                                                             \
-                        ((tinNormalS&)tinBaseP).pEther = 0 ;                                                                                                                                                                                                           \
+                        ((tinFullS&)tinBaseP).pEther = 0 ;                                                                                                                                                                                                           \
                         TELL( "DONE0: deleting etThread (and tinBaseP)" ) ;                                                                                                                                                                                            \
-                        /*DELzOMBIE( ((tinNormalS&)tinBaseP).pScoopEtThread ) ;*/ /*CODEsYNC: 0010056 1020171 */                                                                                                                                                       \
-                        /*DELzOMBIE( ((tinNormalS&)tinBaseP).pEtScratch ) ;*/                                                                                                                                                                                          \
+                        /*DELzOMBIE( ((tinFullS&)tinBaseP).pScoopEtThread ) ;*/ /*CODEsYNC: 0010056 1020171 */                                                                                                                                                       \
+                        /*DELzOMBIE( ((tinFullS&)tinBaseP).pEtScratch ) ;*/                                                                                                                                                                                          \
                         /*if( *(countT*)&pEtThread )*/                                                                                                                                                                                                                 \
                         {                                                                                                                                                                                                                                              \
                             /*DELzOMBIE( pEtThread ) ;*/ /* tinBaseP IS DESTROYED HERE */                                                                                                                                                                              \
@@ -4732,7 +4732,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 }                                                                                                                                                                                                                                                      \
                                                                                                                                                                                                                                                                        \
                 TELL( "DONE0: i am outa here" )                                                                                                                                                                                                                        \
-                if( ((tinNormalS&)tinBaseP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinNormalS&)tinBaseP).monitor.idThread ] = - 1 ;                                                                                    \
+                if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] = - 1 ;                                                                                    \
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                                                       \
             }                                                                                                                                                                                                                                                          \
         }                                                                                                                                                                                                                                                              \
@@ -16243,7 +16243,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
  //U::
  friend voidT setViewF( tinBaseS& tinBaseP , etherC& etherP , countT cArgP , const sCountT scDeltaDownP , const sCountT scDeltaUpP , const sCountT scDeltaLeftP , const sCountT scDeltaRightP ) ;
 
- friend class tinNormalS ; //U::TO FIND A BUG
+ friend class tinFullS ; //U::TO FIND A BUG
 }
 ;
 
@@ -16277,7 +16277,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
  const countT idiFileCt        ;
  const flagsT flagsCt          ;
  const poopC* const pPoopSave  ;
- etherC*      const pEtherSave ;           //U::20200907@1044: THIS IS A WORKAROUND TO A DESIGN ERROR.  tinNormalS::pEther SHOULD BE ELIMINATED BECAUSE IT BREAKS THE IMPOTENCE/BACKOFF MODEL (IT CAN RESULT IN etThread BEING USED WHEN *((tinNormalS&)tinBaseP).pEtScratch SHOULD BE USED, I.E. WHERE THE MACRO SCOOPS IS USED)
+ etherC*      const pEtherSave ;           //U::20200907@1044: THIS IS A WORKAROUND TO A DESIGN ERROR.  tinFullS::pEther SHOULD BE ELIMINATED BECAUSE IT BREAKS THE IMPOTENCE/BACKOFF MODEL (IT CAN RESULT IN etThread BEING USED WHEN *((tinFullS&)tinBaseP).pEtScratch SHOULD BE USED, I.E. WHERE THE MACRO SCOOPS IS USED)
 
  public :
 
@@ -16716,7 +16716,7 @@ instructions for editing a class aC to use upDnC
 */
 /**/
 
-// 20200425@1156:  THIS MUST PREDATE poopC AND THE USE OF ((tinNormalS&)tinBaseP).pPoop TO ACCOMPLISH THE SAME GOAL, WHICH IS TO MAKE IMPOTENCE WITHIN A STATIC GLOBAL FUNCTION OR STATIC MEMBER FUNCTION CAUSE IMPOTENCE FOR THE CLASS INSTANCE
+// 20200425@1156:  THIS MUST PREDATE poopC AND THE USE OF ((tinFullS&)tinBaseP).pPoop TO ACCOMPLISH THE SAME GOAL, WHICH IS TO MAKE IMPOTENCE WITHIN A STATIC GLOBAL FUNCTION OR STATIC MEMBER FUNCTION CAUSE IMPOTENCE FOR THE CLASS INSTANCE
 // CONJ: A SURVEY OF THE CLASSES THAT ACTUALLY USE THIS CLASS WILL SHOW THAT IT IS USED ONLY FOR A FEW CLASSES, AND THOSE WILL BE CLASSES THAT WERE DEFINED VERY EARLY IN DEVELOPMENT
 
 /*1*/class _export upDnC /*1*/
@@ -19086,7 +19086,7 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 /*
 */
 /**/
-/*1*/extern tinNormalS tinExceptionHandlerDfltG ;/*1*/
+/*1*/extern tinFullS tinExceptionHandlerDfltG ;/*1*/
 
 
 //
@@ -19724,7 +19724,7 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 
 /*
 \<A HREF=\"5.0090009.1.0.html\"\>definition\</A\>
-i obtain the current thread's tinNormalS, by walking up the thread stack until i find my ifc thread local storage
+i obtain the current thread's tinFullS, by walking up the thread stack until i find my ifc thread local storage
 as i climb the stack, i look for either a tls or a frame that contains a new ebp value to use
 if the new ebp value is 0 then i assume that my caller is an exception handler, and i return &tinExceptionHanderDfltG
 */
@@ -19925,7 +19925,7 @@ it is used to mark code so that i can see where i am when wdw tracing into code 
 
 /*
 \<A HREF=\"5.009000e.1.0.html\"\>definition\</A\>
-i obtain the current thread's tinNormalS, by walking up the thread stack from a specified address until i find my ifc thread local storage
+i obtain the current thread's tinFullS, by walking up the thread stack from a specified address until i find my ifc thread local storage
 */
 /**/
 
@@ -27574,7 +27574,7 @@ struct bookMarkOldS
 
         const poopC*             pPoop ;                             //INITIALIZED TO &poop BEFORE poop IS CONSTRUCTED (THIS IS OK) ; 20240927@1511: RETAINING THIS ALTHOUGH DON'T REMEMBER WHY I DO THIS ; PRESUMABLY SO THAT pPoop IS VALID DURING CT OF poop
     protected :
-        poopC                    poop ;                              //MUST BE CT EARLY, BEFORE POOP MACRO IS INVOKED DURING tinNormalS CONSTRUCTION
+        poopC                    poop ;                              //MUST BE CT EARLY, BEFORE POOP MACRO IS INVOKED DURING tinFullS CONSTRUCTION
     public :
 
         topC                     top_pTinMainI_ ;
@@ -27607,7 +27607,7 @@ struct bookMarkOldS
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tinBaseS : 1snip.150001c4.tinBaseS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tinNormalS : 1snip.15000026.tinNormalS BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tinFullS : 1snip.15000026.tinFullS BEGIN
 
 
 //
@@ -27621,22 +27621,22 @@ struct bookMarkOldS
 \<A HREF=\"5.15000026.1.0.html\"\>definition\</A\>
 examples
  simplest
-  \<A HREF=\"5.0600104.1.1.0.html\"\>0600104:  WAKEsHOW( "example.simplest.snip.15000026.tinNormalS" )\</A\>
+  \<A HREF=\"5.0600104.1.1.0.html\"\>0600104:  WAKEsHOW( "example.simplest.snip.15000026.tinFullS" )\</A\>
 it is illegal to modify any member other than pc Utility in the definition of an adam
 */
 /**/
 
-//ASSUME: 0d00002 and 003*.tinNormalS, ARE KEPT IN SYNC
+//ASSUME: 0d00002 and 003*.tinFullS, ARE KEPT IN SYNC
 
-//WHEN ADDING FIELDS: ADD CODE TO tinNormalS::ctF TO CORRECTLY DIGEST POINTER VALUES
+//WHEN ADDING FIELDS: ADD CODE TO tinFullS::ctF TO CORRECTLY DIGEST POINTER VALUES
 //THE DEF OF voidT zePointerFieldsF( tinBaseS& tinBaseP ) MUST ALSO BE UPDATED
-//TRY TO AVOID POINTER FIELDS, BECAUSE THIS IS A PITA TO SUPPORT IN ctF SINCE tinNormalS, OBJECTS ARE ACCESSED BY MULTIPLE PROCESSES
+//TRY TO AVOID POINTER FIELDS, BECAUSE THIS IS A PITA TO SUPPORT IN ctF SINCE tinFullS, OBJECTS ARE ACCESSED BY MULTIPLE PROCESSES
 
-/*1*/struct _export tinNormalS : public tinBaseS/*1*/
+/*1*/struct _export tinFullS : public tinBaseS/*1*/
 {
     //CODEsYNCHeND: DO NOT CHANGE THIS CODE WITHOUT ALSO CHANGING THE SYNC CODE ; 20240925@1736: HUH?
 
-    //ASSUME: FIELDS AFTER HERE CAN BE COPIED AND RESET (SEE THE CT/DT OF processGlobal5I.tinNormalVeryEarlyLateMain AND THE MAIN THREAD'S tinNormalS, IN POOLoLD)
+    //ASSUME: FIELDS AFTER HERE CAN BE COPIED AND RESET (SEE THE CT/DT OF processGlobal5I.tinNormalVeryEarlyLateMain AND THE MAIN THREAD'S tinFullS, IN POOLoLD)
 
         scoopC*                 pScoopEtThread ;
         scoopC*                 pScoops ;
@@ -27653,7 +27653,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
         countT                  idDesireSetBySelfProcess ;
     public :
         countT                  cTellsWriteInOutTelemetry ;
-        inOutFrameC*            pInOutFrame ;                       //THIS AND POSSIBLY ITS ACCOMPANYING MEMBERS MUST BE EARLY SINCE _IO_ IS USED DURING CT OF tinNormalS
+        inOutFrameC*            pInOutFrame ;                       //THIS AND POSSIBLY ITS ACCOMPANYING MEMBERS MUST BE EARLY SINCE _IO_ IS USED DURING CT OF tinFullS
         byteT*                  pbPendingInOutFramePackets ;
         etherC*       /*o  8*/  pEther ;                            // USED IF !0.              FOR USE BY STATIC thirdC FUNCTIONS, GLOBAL FUNCTIONS, AND OBJECTS SUCH AS strokeS THAT DO NOT CARRY THEIR OWN REFERENCES.  ADDED LATE.
         countT        /*o 01*/  osTid ;                             // MUST BE AFTER pEther.  
@@ -27725,7 +27725,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
         countT                  valueExpectedByInOut ;
         countT                  cPoolDropCt ;
         countT                  cPoolDropDt ;
-        barryC*                 pBarryUtility ;                         // NOT REFERENCED BY tinNormalS OR BY IPDOS SYSTEM CODE ; AVAILABLE FOR USE BY APPLICATION CODE
+        barryC*                 pBarryUtility ;                         // NOT REFERENCED BY tinFullS OR BY IPDOS SYSTEM CODE ; AVAILABLE FOR USE BY APPLICATION CODE
         sexC*                   pSexLifoConstructing ;                  // USED BY sexC TO DETECT RECURSIVE CYCLING DURING CT
         byteT*                  pbRecursiveParameters ;                 // PROTOCOL: (1) CODE MUST VERIFY THAT THIS IS NULL BEFORE SETTING IT.  (2) THE CODE THAT SETS THIS MUST ALSO RESET IT SO THAT OTHER CODE CAN USE IT.  USE THIS TO PASS PARAMETERS RECURSIVELY TO AVOID USING THE THREAD STACK
         boolT                   bSuppressInOutTrace ;                   // INCREMENTED WHEN CALL trace WITHIN inOutFrameC::*inOutFrameC
@@ -27767,56 +27767,56 @@ it is illegal to modify any member other than pc Utility in the definition of an
 
         /* birth , death */
         NEWdELcLASSpROTOS
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tinNormalS.NEWdELcLASSppOOLoLD!||
-        ~tinNormalS( voidT ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tinNormalS.dt_tinNormalS!||
-        tinNormalS( tinBaseS& tinBaseNormalSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tinBaseS* const pTinBaseDadP = 0 , const osTextT* const postThreadNameP = 0 , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.tinNormalS.tinNormalS!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tinFullS.NEWdELcLASSppOOLoLD!||
+        ~tinFullS( voidT ) ;
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tinFullS.dt_tinFullS!||
+        tinFullS( tinBaseS& tinBaseNormalSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tinBaseS* const pTinBaseDadP = 0 , const osTextT* const postThreadNameP = 0 , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.tinFullS.tinFullS!||
 
         /* commands */
         voidT strFuseF( tinBaseS& tinBaseP , etherC& etherP , strokeS*& psttP , const countT csttExtraP = 0 , const flagsT flagsInclude1P = flTINrPT1_null , const flagsT flagsInclude2P = flTINrPT2_null , const flagsT flagsExclude1P = flTINrPT1_null , const flagsT flagsExclude2P = flTINrPT2_null , countT idFormatP = 0 , const countT cIndentP = 0 ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.tinNormalS.strFuseF!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.tinFullS.strFuseF!||
         voidT zePointerFieldsF( tinBaseS& tinBaseP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.tinNormalS.zePointerFieldsF!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.tinFullS.zePointerFieldsF!||
         voidT levelModeF( const flagsT flagsModeP = flTHREADlEVELmODE_null , sCountT cLevelsP = 0 , const sCountT offRelLevelP = 0 ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.tinNormalS.levelModeF!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.tinFullS.levelModeF!||
         inline flagsT flagsF( voidT ) { return flags ; }
         voidT get_pLFnest_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.tinNormalS.get_pLFnest_F!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.tinFullS.get_pLFnest_F!||
         voidT get_pLFstep_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.tinNormalS.get_pLFstep_F!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.tinFullS.get_pLFstep_F!||
         voidT get_pFlagsThreadLevelMode_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.tinNormalS.get_pFlagsThreadLevelMode_F!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.tinFullS.get_pFlagsThreadLevelMode_F!||
         voidT get_pIdInNest_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.tinNormalS.get_pIdInNest_F!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.tinFullS.get_pIdInNest_F!||
         voidT get_pEIPInNest_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34011.tinNormalS.get_pEIPInNest_F!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34011.tinFullS.get_pEIPInNest_F!||
         voidT get_pIdProgressNest_F( tinBaseS& tinBaseP , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34012.tinNormalS.get_pIdProgressNest_F!||
-        tinNormalS& rootF( voidT ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.tinNormalS.rootF!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34012.tinFullS.get_pIdProgressNest_F!||
+        tinFullS& rootF( voidT ) ;
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.tinFullS.rootF!||
         voidT walkF( tinBaseS& tinBaseRootP , tinWalkerFT tinWalkerFP , countT& cArgP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.tinNormalS.walkF!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.tinFullS.walkF!||
         voidT deregisterIfF( tinBaseS& tinBaseP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.tinNormalS.deregisterIfF!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.tinFullS.deregisterIfF!||
         voidT tell_tmWatchF_toIgnoreMeF( voidT ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.tinNormalS.tell_tmWatchF_toIgnoreMeF!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.tinFullS.tell_tmWatchF_toIgnoreMeF!||
         voidT flushPendingInOutFrameTelemetryIfF( voidT ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024014.tins.flushPendingInOutFrameTelemetryIfF!||
 
         /*tls*/
         byteT* tlsNewF( const countT idLineP , const countT idiFileP , const countT cbP , const osTextT* const postNameP = 0 , const osTextT* const postGroupP = 0 ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.tinNormalS.tlsNewF!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.tinFullS.tlsNewF!||
         voidT tlsDelF( const countT idLineP , const countT idiFileP , byteT*& pbMeP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.tinNormalS.tlsDelF!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.tinFullS.tlsDelF!||
         voidT tlsCheckF( voidT ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024015.tins.tlsCheckF!||
         voidT tlsTraceF( voidT ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024016.tins.tlsTraceF!||
         byteT* pbF( countT idP = 1 ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.tinNormalS.pbF!||
+        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.tinFullS.pbF!||
     private :
-        FRIENDS_tinNormalS
+        FRIENDS_tinFullS
 }
 ;
 
@@ -27828,7 +27828,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tinNormalS : 1snip.15000026.tinNormalS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tinFullS : 1snip.15000026.tinFullS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsBlobC : 1snip.15000088.tlsBlobC BEGIN
 
 
@@ -28671,7 +28671,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
       const countT            fingerVerify ;
       const countT            finger ;
       tinBaseS*                   pTin ;
-      tinNormalS                    tinEarlyLate ;
+      tinFullS                    tinEarlyLate ;
       countT                  rc ;
     //tlsAllocStackExp_01_C   tlsForMe ;
     //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
@@ -28725,7 +28725,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
       const countT            fingerVerify ;
       const countT            finger ;
       tinBaseS*                   pTin ;
-      tinNormalS                    tinEarlyLate ;
+      tinFullS                    tinEarlyLate ;
       countT                  rc ;
       //tlsAllocStackExp_01_C tlsForMe ;
       //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
@@ -29000,7 +29000,7 @@ features
     flagsT                      flagsModeAdam2 ;          // IT IS ILLEGAL TO REFER TO THIS SYMBOL, OR TO ANY PUBLIC STATIC MEMBERS, IN THE DEF OF AN ADAM.   PUBLIC SO CAN EASILY INSPECT FOR DEBUGGING CODE IN BASE
     measureT                    mColsAdjForWinFrame ;
     measureT                    mRowsAdjForWinFrame ;
-    boolT                       bFired01 ; // MONITOR IS TOLD MY ADDRESS; MONITOR SETS ((tinNormalS&)tinBaseP).pag1->_thirdC_.bFired01 ; (20221028@1336: PRECEDING COMMENT IS OBSOLETE ; GLASS2 NOW SETS FLAGS IN homeS) ; 20221031@1520: PUBLIC SO CONSOLE HANDLER CAN SET IT
+    boolT                       bFired01 ; // MONITOR IS TOLD MY ADDRESS; MONITOR SETS ((tinFullS&)tinBaseP).pag1->_thirdC_.bFired01 ; (20221028@1336: PRECEDING COMMENT IS OBSOLETE ; GLASS2 NOW SETS FLAGS IN homeS) ; 20221031@1520: PUBLIC SO CONSOLE HANDLER CAN SET IT
     private :
 
     boolT                       bQuitKillSocket ;
@@ -30131,7 +30131,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340cf.thirdC.thirdWaitTillQuittingF!||
  voidT thirdLaunchLateThreadsF( tinBaseS& tinBaseP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340d0.thirdC.thirdLaunchLateThreadsF!||
- static tinNormalS& tinNormalVeryEarlyLateMain_IF( voidT ) ;
+ static tinFullS& tinNormalVeryEarlyLateMain_IF( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3411d.thirdC.tinNormalVeryEarlyLateMain_IF!||
  static countT* third_pcDebugI_IF( tinBaseS& tinBaseP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34121.thirdC.third_pcDebugI_IF!||
@@ -30237,7 +30237,7 @@ private :
 {
 /**/
 
- restartC**             pprTop ; //tmWindowsF CHANGES THIS CAUSE IT DELETES ITS tinNormalS EARLY
+ restartC**             pprTop ; //tmWindowsF CHANGES THIS CAUSE IT DELETES ITS tinFullS EARLY
  restartC*              prD ;
  restartC*              prU ;
  const countT           idTypeEventAccept ;
@@ -32360,9 +32360,9 @@ examples
  /*.*/    {
  /*.*/        TINSL
  /*.*/        cNote   = 0 ;
- /*.*/        idAdam = ((tinNormalS&)tinBaseP).strokeMode.highForIncomingUnText ? cP | ((tinNormalS&)tinBaseP).strokeMode.highForIncomingUnText << 0x10 : cP ;
+ /*.*/        idAdam = ((tinFullS&)tinBaseP).strokeMode.highForIncomingUnText ? cP | ((tinFullS&)tinBaseP).strokeMode.highForIncomingUnText << 0x10 : cP ;
  /*.*/             if( idAdam < 0x20                  ) idCaste = sc_cFROMcONTROL  ;
- /*.*/        else if( ((tinNormalS&)tinBaseP).strokeMode.idCasteDefault ) idCaste = ((tinNormalS&)tinBaseP).strokeMode.idCasteDefault ;
+ /*.*/        else if( ((tinFullS&)tinBaseP).strokeMode.idCasteDefault ) idCaste = ((tinFullS&)tinBaseP).strokeMode.idCasteDefault ;
  /*.*/        else if( idAdam < 0x80                  ) idCaste = sc_cFROMaSCII    ;
  /*.*/        else if( idAdam < 0x100                 ) idCaste = sc_cFROMgRAPHICS ;
  /*.*/        else                                      idCaste = sc_cFROMuNICODE  ;
@@ -34658,7 +34658,7 @@ each communication between hosts is speedy, unreliable, and limited in size to i
 
 /*1*/struct _export tellInfoSysExceptionS/*1*/
 {
-    byteT   pbTin[ sizeof( tinNormalS ) + CBtOaLIGN02( sizeof( tinNormalS ) ) ] ;
+    byteT   pbTin[ sizeof( tinFullS ) + CBtOaLIGN02( sizeof( tinFullS ) ) ] ;
     countT  idException ;
     voidT*  pvOffendingCode ;
     countT  ccInfo ;
@@ -38072,7 +38072,7 @@ conforms to rfc 1035
 /*
 \<A HREF=\"5.15000055.1.0.html\"\>definition\</A\>
 an object of my class must be constructed on any thread that calls a thirdC::DosSleep*F member
-the only function of this object is to edit tinNormalS::grabPseudo so that the monitor knows that the thread is locked in sleep
+the only function of this object is to edit tinFullS::grabPseudo so that the monitor knows that the thread is locked in sleep
 */
 /**/
 
@@ -41086,7 +41086,7 @@ base class to make a derived class of objects easily contained by a stackC objec
 
     const countT                idMemorySpace ;
     booksC*                     pBksLog ;
-    byteT*                      pbDebug ; //AVAILABLE FOR DEBUGGING; EXAMPLE: if( ((tinNormalS&)tinBaseP).pag1->pbDebug == (byteT*)this ) { CONoUTrAW( "fooey\r\n" ) ; }
+    byteT*                      pbDebug ; //AVAILABLE FOR DEBUGGING; EXAMPLE: if( ((tinFullS&)tinBaseP).pag1->pbDebug == (byteT*)this ) { CONoUTrAW( "fooey\r\n" ) ; }
     countT                      ctWatch ;
     sadamsC*                    pSadams ;
     measureT                    m01DrawSmooth ;
@@ -41371,7 +41371,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     cryC                                     cry308 ;
     gloSecurityGC           /*P3*/ /*CT:70*/ gloSecurity ;
     cryC                                     cry309 ;
-    tinNormalS                    /*P3*/ /*CT:80*/ tinNormalVeryVeryEarlyLateMain ; // MUST BE CT AFTER ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp AND BEFORE ANY GLOBALS THAT USE IT SUCH AS A grabC OBJECT
+    tinFullS                    /*P3*/ /*CT:80*/ tinNormalVeryVeryEarlyLateMain ; // MUST BE CT AFTER ((tinFullS&)tinBaseP).pag1->pPoolHomeTemp AND BEFORE ANY GLOBALS THAT USE IT SUCH AS A grabC OBJECT
     heapC                                    heap ;                     // SIMPLE HEAP USED WHEN poolC CANNOT BE USED (E.G. TO AVOID NONMONOTONIC GRABBING)
     bookC                                    bkTelemetrySysEarlyLate ;
     bookC                                    bkTelemetryAppEarlyLate ;
@@ -41508,9 +41508,9 @@ base class to make a derived class of objects easily contained by a stackC objec
 
 /*1*/struct _export processGlobal5S/*1*/
 {
-    tinNormalS              /*P4*/ /*CT:12*/ tinHeart ; // USED BY tmHeartF, A RAW THREAD
+    tinFullS              /*P4*/ /*CT:12*/ tinHeart ; // USED BY tmHeartF, A RAW THREAD
     processGlobalBeginC     /*P4*/ /*CT:22*/ processGloBegin ;
-    tinNormalS              /*P4*/ /*CT:32*/ tinNormalVeryEarlyLateMain ;  // MUST BE CT AFTER ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp AND BEFORE ANY GLOBALS THAT USE IT SUCH AS A grabC OBJECT
+    tinFullS              /*P4*/ /*CT:32*/ tinNormalVeryEarlyLateMain ;  // MUST BE CT AFTER ((tinFullS&)tinBaseP).pag1->pPoolHomeTemp AND BEFORE ANY GLOBALS THAT USE IT SUCH AS A grabC OBJECT
     ranUniC                 /*P4*/ /*CT:42*/ _thugC_ru ;
     batonC                                   bMemorySpace ;
     napkinC                                  _marketC_napGoodRegistry ;
@@ -41550,7 +41550,7 @@ base class to make a derived class of objects easily contained by a stackC objec
 
 /*1*/struct _export processGlobal6S/*1*/
 {
-    tinNormalS                    /*P5*/ /*CT:03*/ tinBreak ; // USED BY exceptionHandlerDefaultF
+    tinFullS                    /*P5*/ /*CT:03*/ tinBreak ; // USED BY exceptionHandlerDefaultF
 
     processGlobal6S( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.processGlobal6S.processGlobal6S!||
@@ -42014,9 +42014,9 @@ base class to make a derived class of objects easily contained by a stackC objec
     inline countT idSlotJotF( tinBaseS& tinBaseP ) const // IT IS ILLEGAL FOR ANY CODE OTHER THAN ZEJ() TO CALL ME
     {
         ZE( countT , ids ) ;
-        for( countT offs = 0 ; offs < sizeof ((tinNormalS&)tinBaseP).ppJot / sizeof ((tinNormalS&)tinBaseP).ppJot[ 0 ] ; offs ++ )
+        for( countT offs = 0 ; offs < sizeof ((tinFullS&)tinBaseP).ppJot / sizeof ((tinFullS&)tinBaseP).ppJot[ 0 ] ; offs ++ )
         {
-            if( ((tinNormalS&)tinBaseP).ppJot[ offs ] == this )
+            if( ((tinFullS&)tinBaseP).ppJot[ offs ] == this )
             {
                 ids = offs + 1 ;
                 break ;
@@ -42030,7 +42030,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     {
         if( !ISvALIDjpOINTER( idJotP ) ) { BLAMMO ; }
 
-        jotC& jot = *((tinNormalS&)tinBaseP).ppJot[ ( idJotP & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] ;
+        jotC& jot = *((tinFullS&)tinBaseP).ppJot[ ( idJotP & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] ;
         return jot.readF( tinBaseP , idJotP ) ;
     }
 }
@@ -43565,7 +43565,7 @@ parameters
 
 /*
 application code that uses an instance of me must ensure that the pool that contains the referenced data is declared whenever any of my member functions are called
- set ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord
+ set ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord
 */
 /**/
 
@@ -45094,7 +45094,7 @@ class name is intended to be both humorous and semantically indicative
         //    countT was = decv02AM( *pcPending ) ;
         //    TINSL
         //    TN( tb4 , "    " ) ;
-        //    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("~drawJobS dt'or / *pcPending before being \\\\\\\\ [rgb,this,pcPending,was]:    ")+TF2(rgb,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)pcPending,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(was,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("~drawJobS dt'or / *pcPending before being \\\\\\\\ [rgb,this,pcPending,was]:    ")+TF2(rgb,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)pcPending,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(was,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         //}
     }
 
@@ -45122,7 +45122,7 @@ class name is intended to be both humorous and semantically indicative
         //
         //TINSL
         //TN( tb4 , "    " ) ;
-        //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T(" drawJobS ct'or / *pcPending before being //// [rgb,this,pcPending,was]:    ")+TF2(rgb,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)pcPending,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(was,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T(" drawJobS ct'or / *pcPending before being //// [rgb,this,pcPending,was]:    ")+TF2(rgb,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)pcPending,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(was,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     }
 
     inline static countT& cInstancesIF( voidT ) { return cInstances ; }
@@ -46515,7 +46515,7 @@ i am nonconformant in that all of my member function definitions are in a single
     }
     inline armSslC( tinBaseS& tinBaseP , flagsT& flagsOpenSslFailsP ) :
     flagsOpenSslFails( flagsOpenSslFailsP ) ,
-    _flagsThreadMode5Save( ((tinNormalS&)tinBaseP).flagsThreadMode5 )
+    _flagsThreadMode5Save( ((tinFullS&)tinBaseP).flagsThreadMode5 )
     {
         THREADmODE5oN0( flTHREADmODE5_ARMoPENsSL )
     }
@@ -46846,7 +46846,7 @@ i am nonconformant in that all of my member function definitions are in a single
 
     jotFileBaseC( voidT ) ;
 
-    inline voidT reportF( tinBaseS& tinBaseP ) const { if( ((tinNormalS&)tinBaseP).pEther) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("base [this,finger,idFormat,idjNext,idjBack]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjNext,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjBack,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_NOpREFIX ) ; }
+    inline voidT reportF( tinBaseS& tinBaseP ) const { if( ((tinFullS&)tinBaseP).pEther) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("base [this,finger,idFormat,idjNext,idjBack]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjNext,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjBack,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_NOpREFIX ) ; }
 
     friend class jotFilesC ;
 }
@@ -46886,7 +46886,7 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
     jotFilePartC( countT idjDataP = 0 ) ;
 
-    inline voidT reportF( tinBaseS& tinBaseP ) const { if( ((tinNormalS&)tinBaseP).pEther) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("part                         [this,idjData]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_NOpREFIX ) ; }
+    inline voidT reportF( tinBaseS& tinBaseP ) const { if( ((tinFullS&)tinBaseP).pEther) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("part                         [this,idjData]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_NOpREFIX ) ; }
 
     friend class jotFilesC ;
 }
@@ -46926,7 +46926,7 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
     jotFileSoilC( tinBaseS& tinBaseP , countT idjBranchP , countT time1P = 0 , sCountT time2P = 0 ) ;
 
-    inline voidT reportF( tinBaseS& tinBaseP ) const { if( ((tinNormalS&)tinBaseP).pEther) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("soil          [this,idjBranch,timeModified]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TT(time1Modified,time2Modified) , flTRACE_NOpREFIX ) ; }
+    inline voidT reportF( tinBaseS& tinBaseP ) const { if( ((tinFullS&)tinBaseP).pEther) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("soil          [this,idjBranch,timeModified]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TT(time1Modified,time2Modified) , flTRACE_NOpREFIX ) ; }
 
     friend class jotFilesC ;
 }
@@ -47005,7 +47005,7 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
     jotFileNameC( countT idjNameValueP , countT idjSoilP ) ;
 
-    inline voidT reportF( tinBaseS& tinBaseP ) const { if( ((tinNormalS&)tinBaseP).pEther) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("name            [this,idjNameValue,idjSoil]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjNameValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_NOpREFIX ) ; }
+    inline voidT reportF( tinBaseS& tinBaseP ) const { if( ((tinFullS&)tinBaseP).pEther) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("name            [this,idjNameValue,idjSoil]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjNameValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) , flTRACE_NOpREFIX ) ; }
 
     friend class jotFilesNamedC ;
 }
@@ -47084,7 +47084,7 @@ i am nonconformant in that all of my member function definitions are in a single
     NEWdELcLASSpROTOS
     jotFileBranchC( tinBaseS& tinBaseP , countT idjPartP , countT time1P = 0 , sCountT time2P = 0 ) ;
 
-    inline voidT reportF( tinBaseS& tinBaseP ) const { if( ((tinNormalS&)tinBaseP).pEther) ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("branch         [this,idjUp,idjDown,idjPart,timeModified]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjUp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjDown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TT(time1Modified,time2Modified) , flTRACE_NOpREFIX ) ; }
+    inline voidT reportF( tinBaseS& tinBaseP ) const { if( ((tinFullS&)tinBaseP).pEther) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("branch         [this,idjUp,idjDown,idjPart,timeModified]:    ")+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjUp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjDown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF3(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TT(time1Modified,time2Modified) , flTRACE_NOpREFIX ) ; }
 
     friend class jotFilesC ;
 }
@@ -47140,7 +47140,7 @@ i am nonconformant in that all of my member function definitions are in a single
         if( pbBuffer <= pbP + sizeof( countT ) && pbP <= pbBuffer + cbBuffer - cbItemNet )
         {
             countT& flags = ((countT*)pbP)[ - 1 ] ;
-            //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("readDoneF / resetting \"not yet read\" flag") ) ;
+            //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("readDoneF / resetting \"not yet read\" flag") ) ;
             if( flags == 1 ) flags -- ;                     // RESET THE "NOT YET READ" FLAG
         }
     }

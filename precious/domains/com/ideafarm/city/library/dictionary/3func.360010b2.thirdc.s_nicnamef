@@ -40,10 +40,10 @@
             newF( tinBaseP , LF , pNicNameP ) ; ___( pNicNameP ) ;
         {
         else
-        if( !nicNameV4 || nicNameV4 == ((tinNormalS&)tinBaseP).brcRaw ) s_getHostByNameF( tinBaseP , stYou , (osTextT*)postP ) ;
+        if( !nicNameV4 || nicNameV4 == ((tinFullS&)tinBaseP).brcRaw ) s_getHostByNameF( tinBaseP , stYou , (osTextT*)postP ) ;
         BOSdOnOTtEST( WHATgbo , ntohl( INADDR_NONE ) )
-        countT nicNameV4 = !postP ? 0 : ((tinNormalS&)tinBaseP).brcRaw ;
-        BOSdOnOTtEST( WHATgbo , ntohl( ((tinNormalS&)tinBaseP).brcRaw ) )
+        countT nicNameV4 = !postP ? 0 : ((tinFullS&)tinBaseP).brcRaw ;
+        BOSdOnOTtEST( WHATgbo , ntohl( ((tinFullS&)tinBaseP).brcRaw ) )
         BOSdOnOTtEST( WHATgbo , inet_addr( postP ) )
     {
     else
@@ -51,7 +51,7 @@
     }
         }
             cNicNameP = 1 ;
-            *pNicNameP = ((tinNormalS&)tinBaseP).brcRaw ;
+            *pNicNameP = ((tinFullS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , ntohl( INADDR_BROADCAST ) )
         {
         if( pNicNameP )

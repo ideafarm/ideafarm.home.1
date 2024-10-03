@@ -35,8 +35,8 @@
                         }
                             if( bLocal ) pInfoDisk1P->flags |= flINFOdISK1s_LOCAL ;
 
-                            else       bLocal = ((tinNormalS&)tinBaseP).brcRaw == DRIVE_FIXED || ((tinNormalS&)tinBaseP).brcRaw == DRIVE_RAMDISK /*|| ((tinNormalS&)tinBaseP).brcRaw == DRIVE_REMOVABLE || ((tinNormalS&)tinBaseP).brcRaw == DRIVE_CDROM*/ ;
-                            if( POOP ) { if( !bQuiet ) { LOGrAW3( "dosQueryFSInfoF / GetDriveType [brcQuery]: " , ((tinNormalS&)tinBaseP).brcQuery , "\r\n" ) ; } }
+                            else       bLocal = ((tinFullS&)tinBaseP).brcRaw == DRIVE_FIXED || ((tinFullS&)tinBaseP).brcRaw == DRIVE_RAMDISK /*|| ((tinFullS&)tinBaseP).brcRaw == DRIVE_REMOVABLE || ((tinFullS&)tinBaseP).brcRaw == DRIVE_CDROM*/ ;
+                            if( POOP ) { if( !bQuiet ) { LOGrAW3( "dosQueryFSInfoF / GetDriveType [brcQuery]: " , ((tinFullS&)tinBaseP).brcQuery , "\r\n" ) ; } }
                             ZE( boolT , bLocal ) ;
 
                             BOSpOOP
@@ -58,7 +58,7 @@
                         pInfoDisk1P = new( 0 , tinBaseP , LF ) infoDisk1S( tinBaseP , *this ) ; ___( pInfoDisk1P ) ;
                     {
                     else
-                    if( POOP ) { if( !bQuiet ) { LOGrAW3( "dosQueryFSInfoF / GetVolumeInformation [brcQuery]: " , ((tinNormalS&)tinBaseP).brcQuery , "\r\n" ) ; } }
+                    if( POOP ) { if( !bQuiet ) { LOGrAW3( "dosQueryFSInfoF / GetVolumeInformation [brcQuery]: " , ((tinFullS&)tinBaseP).brcQuery , "\r\n" ) ; } }
 
                     BOSpOOP
                     BOS( WHATsfr , BOSoK , GetVolumeInformation( postDriveNameUse , postVolumeName , sizeof postVolumeName , &cSerial , &cnu1 , &osFlags , 0 , 0 ) )
@@ -73,7 +73,7 @@
                     }
                         //LOGrAW( "\r\n" ) ;
                         //LOGrAW( postDriveNameUse ) ;
-                        //LOGrAW3( "dosQueryFSInfoF / GetDiskFreeSpace [brcQuery]: " , ((tinNormalS&)tinBaseP).brcQuery , "\r\n" ) ;
+                        //LOGrAW3( "dosQueryFSInfoF / GetDiskFreeSpace [brcQuery]: " , ((tinFullS&)tinBaseP).brcQuery , "\r\n" ) ;
                     {
                     if( !bQuiet )
                 {
@@ -132,9 +132,9 @@
             BOSpOOP
             }
                 pInfoDisk1P->b Local = 0 ;
-                ((tinNormalS&)tinBaseP).bosFail = 0 ;
+                ((tinFullS&)tinBaseP).bosFail = 0 ;
             {
-            if( ((tinNormalS&)tinBaseP).brcRaw == ERROR_ACCESS_DENIED )
+            if( ((tinFullS&)tinBaseP).brcRaw == ERROR_ACCESS_DENIED )
             BOSI( WHATsfr , BOSfAIL , DosOpen( postRoot , &hfi , &action , 0 , 0 , OPEN_ACTION_OPEN_IF_EXISTS , OPEN_FLAGS_DASD|OPEN_SHARE_DENYNONE , 0 ) )
             const osTextT postRoot[] = { postDriveNameP[ 3 ] , ':' , 0 } ;
             ZE( ULONG , action ) ;
@@ -150,13 +150,13 @@
         if( !*this && cFound == 2 )
         }
             BOSpOOP
-            if( ((tinNormalS&)tinBaseP).bosFail && ( ((tinNormalS&)tinBaseP).brcRaw == ERROR_INVALID_DRIVE /*|| ((tinNormalS&)tinBaseP).brcRaw == ERROR_ NOT_READY*/ ) ) ((tinNormalS&)tinBaseP).bosFail = 0 ;
-            cFound += !((tinNormalS&)tinBaseP).bosFail ;
+            if( ((tinFullS&)tinBaseP).bosFail && ( ((tinFullS&)tinBaseP).brcRaw == ERROR_INVALID_DRIVE /*|| ((tinFullS&)tinBaseP).brcRaw == ERROR_ NOT_READY*/ ) ) ((tinFullS&)tinBaseP).bosFail = 0 ;
+            cFound += !((tinFullS&)tinBaseP).bosFail ;
             BOSI( WHATsfr , BOSfAIL , DosQueryFSInfo( idDrive , FSIL_VOLSER , &infoDisk1b , sizeof infoDisk1b ) )
 
             BOSpOOP
-            if( ((tinNormalS&)tinBaseP).bosFail && ( ((tinNormalS&)tinBaseP).brcRaw == ERROR_INVALID_DRIVE /*|| ((tinNormalS&)tinBaseP).brcRaw == ERROR_ NOT_READY*/ ) ) ((tinNormalS&)tinBaseP).bosFail = 0 ;
-            cFound += !((tinNormalS&)tinBaseP).bosFail ;
+            if( ((tinFullS&)tinBaseP).bosFail && ( ((tinFullS&)tinBaseP).brcRaw == ERROR_INVALID_DRIVE /*|| ((tinFullS&)tinBaseP).brcRaw == ERROR_ NOT_READY*/ ) ) ((tinFullS&)tinBaseP).bosFail = 0 ;
+            cFound += !((tinFullS&)tinBaseP).bosFail ;
             BOSI( WHATsfr , BOSfAIL , DosQueryFSInfo( idDrive , FSIL_ALLOC , &infoDisk1a , sizeof infoDisk1a ) )
         {
         if( !POOP )

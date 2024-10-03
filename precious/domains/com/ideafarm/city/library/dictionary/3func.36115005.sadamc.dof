@@ -10,7 +10,7 @@
 }
     return bHandled ;
     paperOldC::ungrabIF( tinBaseP ) ; //U::TO FIND A BUG
-    //((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
+    //((tinFullS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
     //}
     //    LOGrAW( ostoSay ) ;
     //    OStEXTAK( ostoSay , " -----------------------------------------------------------------------------------------------------------------------\r\n" ) ;
@@ -18,12 +18,12 @@
     //    OStEXTAK( ostoSay , "/- [idIn]: " ) ;
     //    OStEXTA(  ostoSay , postIdType ) ;
     //    OStEXTAK( ostoSay , " | doF/" ) ;
-    //    OStEXTA(  ostoSay , ((tinNormalS&)tinBaseP).postThreadName ) ;
+    //    OStEXTA(  ostoSay , ((tinFullS&)tinBaseP).postThreadName ) ;
     //    OStEXT(   ostoSay , TUCK << 2 ) ;
     //{
     //if( idTypeCallP != ifcIDtYPEsTROKEcALLbACK_ANIMATE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_MOUSE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGED && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABaRRIVING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABlEAVING )
 
-    //if( bGoItRender ) ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
+    //if( bGoItRender ) ((tinFullS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
 
     }
         DELzOMBIE( pStrike ) ;
@@ -110,7 +110,7 @@
 
             //}
             //    LOGrAW( tSay ) ;
-            //    TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(((tinNormalS&)tinBaseP).postThreadName)+T(" TABaRRIVING (already owned so doing nada/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
+            //    TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(((tinFullS&)tinBaseP).postThreadName)+T(" TABaRRIVING (already owned so doing nada/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
             //    etherP.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             //    ZE( sCountT , timeN2 ) ;
             //    ZE( countT , timeN1 ) ;
@@ -198,7 +198,7 @@
                                     if( F(features.fc.flagsMouse) & flFEATUREsADAMmOUSE_ACTIONmOVE )
     
                                     //LOGrAW( tSay ) ;
-                                    //TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(((tinNormalS&)tinBaseP).postThreadName)+T(" MOUSEmOVE/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
+                                    //TN( tSay , "" ) ; tSay = T("\r\n")+TTtOCK(timeN1,timeN2)+T(" ")+T(((tinFullS&)tinBaseP).postThreadName)+T(" MOUSEmOVE/idAdam: ")+TF1(features.fc.idAdam)+T("\r\n") ;
                                     //etherP.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
                                     //ZE( sCountT , timeN2 ) ;
                                     //ZE( countT , timeN1 ) ;
@@ -388,7 +388,7 @@
                         (
                         features.fc.pSadamHotKeyCBF &&
                         idAction == ifcIDtYPEaCTION_DOWN &&
-                        !( F(((tinNormalS&)tinBaseP).pag1->_backOldC_.rowBack.ro.flagsPaperBackMode) & flPAPERbACKmODE_SUPPRESShOTkEYS ) &&
+                        !( F(((tinFullS&)tinBaseP).pag1->_backOldC_.rowBack.ro.flagsPaperBackMode) & flPAPERbACKmODE_SUPPRESShOTkEYS ) &&
                     (
                     if
                     //EXAMPLE: A HOTKEY THAT JUMPS THE TAB TO A PROMPT WILL NOT ALSO BE APPENDED TO THE PROMPT'S VALUE
@@ -701,9 +701,9 @@
     //{
     //if( !thirdC::c_strcmpIF( tinBaseP , features.fc.postOldComment , "vtTest" ) && !etherC::ether_cUtility_IF( tinBaseP ) )
 
-    //if( bGoItStrike ) ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    //if( bGoItStrike ) ((tinFullS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     //const boolT bGoItStrike = idTypeCallP == ifcIDtYPEsTROKEcALLbACK_STRIKE || idTypeCallP == ifcIDtYPEsTROKEcALLbACK_DESTROY ;
-    //((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    //((tinFullS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     paperOldC::grabIF( tinBaseP , TAG( TAGiDnULL ) ) ; //U::TO FIND A BUG
 
@@ -714,7 +714,7 @@
     //    OStEXTAK( ostoSay , "/+ [idIn]: " ) ;
     //    OStEXTA(  ostoSay , postIdType ) ;
     //    OStEXTAK( ostoSay , " | doF/" ) ;
-    //    OStEXTA(  ostoSay , ((tinNormalS&)tinBaseP).postThreadName ) ;
+    //    OStEXTA(  ostoSay , ((tinFullS&)tinBaseP).postThreadName ) ;
     //    OStEXT(   ostoSay , TUCK << 2 ) ;
     //{
     //if( idTypeCallP != ifcIDtYPEsTROKEcALLbACK_ANIMATE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_MOUSE && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_VOLATILEtEXTcHANGED && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABaRRIVING && idTypeCallP != ifcIDtYPEsTROKEcALLbACK_TABlEAVING )

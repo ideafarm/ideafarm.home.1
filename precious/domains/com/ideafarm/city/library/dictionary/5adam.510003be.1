@@ -116,7 +116,7 @@ etThread.delF( tinBaseP , postOldCode ) ;
                 if( !( cToDo % 0x10 ) ) { CONoUTrAW3( "\r               \rcToDo: " , cToDo , "\r" ) ; }
             {
             if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) )
-            ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
+            ((tinFullS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
             cToDo -- ;
         {
@@ -147,7 +147,7 @@ CONoUTrAW3( "\rcToDo: " , cToDo , "\r\n" ) ;
             cToDo ++ ;
         {
         if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) )
-        ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do

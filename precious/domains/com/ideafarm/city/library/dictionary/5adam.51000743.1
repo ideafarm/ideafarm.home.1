@@ -138,7 +138,7 @@ TODO
 
 DONE( tmWorkerF )
 }
-    //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0 ;
+    //((tinFullS&)tinBaseP).monitor.idWhat2 = 0 ;
     //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SHUTDOWN ) ;
     //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
     //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
@@ -157,7 +157,7 @@ DONE( tmWorkerF )
                         THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
 
                         }
-                            //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x01000000 ;           //WHERE INTERVAL
+                            //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x01000000 ;           //WHERE INTERVAL
                             etThread.delF( tinBaseP , psttBrowser ) ;
                             etThread.delF( tinBaseP , psttProtocol ) ;
                             etThread.delF( tinBaseP , psttQuery ) ;
@@ -167,7 +167,7 @@ DONE( tmWorkerF )
                             etThread.delF( tinBaseP , psttMethod ) ;
 
                             }
-                                //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x02000000 ;           //WHERE INTERVAL
+                                //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x02000000 ;           //WHERE INTERVAL
                                 wsP.swBooksByByte.ungrabF( tinBaseP ) ;
 
                                 inc02AM( cOut ) ;
@@ -178,7 +178,7 @@ DONE( tmWorkerF )
                                 //etThread.traceF( tinBaseP , T("ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1: writing an event") ) ;
 
                                 booksC& booksOut = *(booksC*)&(countT&)wsP.swBooksByByte ;
-                                //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x03000000 ;           //WHERE INTERVAL
+                                //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x03000000 ;           //WHERE INTERVAL
 
                                 }
                                     //etThread.traceF( tinBaseP , T("swBooks [cFlavors]:    ")+TF2(wsP.swBooksByByte.cFlavorsF(tinBaseP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -195,7 +195,7 @@ DONE( tmWorkerF )
                                 if( !wsP.swBooksByByte.idSlotOfLeverF( tinBaseP , wsP.lever_cByte ) )
                                 wsP.lever_cByte = ph[ 3 ] & 0xff ;
                                 wsP.swBooksByByte.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-                                //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x04000000 ;           //WHERE INTERVAL
+                                //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x04000000 ;           //WHERE INTERVAL
 
                                 // *****************************************************************************************************************************************************************************************************************************************************
                                 // *****************************************************************************************************************************************************************************************************************************************************
@@ -226,7 +226,7 @@ DONE( tmWorkerF )
 
                                 putNegAM( finger, FINGERnEG_ACCESSeVENTiDjOTfORmOstsTRINGS ) ;
                                 ZE( countT , finger ) ;
-                                //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x05000000 ;           //WHERE INTERVAL
+                                //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x05000000 ;           //WHERE INTERVAL
 
                                 // *****************************************************************************************************************************************************************************************************************************************************
                                 // *****************************************************************************************************************************************************************************************************************************************************
@@ -241,7 +241,7 @@ DONE( tmWorkerF )
 
                                     ppjhs[ offi ]->ungrabF( tinBaseP ) ;
                                     }
-                                        //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x06000000 + offi ;           //WHERE INTERVAL
+                                        //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x06000000 + offi ;           //WHERE INTERVAL
                                         }
                                             }
                                                 etThread.traceF( tinBaseP , T("could not register string for fast retrieval [offi,hash,idj]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(ph[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -281,14 +281,14 @@ DONE( tmWorkerF )
                                         ZEJ( byteT* , pbEncoded , *ppjhs[ offi ] ) ;
                                         //etThread.traceF( tinBaseP , T("storing [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[ offi ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
 
-                                        //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x07000000 + offi ;           //WHERE INTERVAL
+                                        //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x07000000 + offi ;           //WHERE INTERVAL
 
                                         _IO_
                                     {
                                     if( !pidj[ offi ] )
 
                                     //}
-                                    //    //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x08000000 + offi ;           //WHERE INTERVAL
+                                    //    //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x08000000 + offi ;           //WHERE INTERVAL
                                     //    if( offi == 3 ) etThread.traceF( tinBaseP , T("sequential search ended") ) ;
                                     //    }
                                     //        }
@@ -314,14 +314,14 @@ DONE( tmWorkerF )
                                     //    while( !pidj[ offi ] )
                                     //    ppjhs[ offi ]->resetLathReadF() ;
                                     //    if( offi == 3 ) etThread.traceF( tinBaseP , T("sequential search begun") ) ;
-                                    //    //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x09000000 + offi ;           //WHERE INTERVAL
+                                    //    //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x09000000 + offi ;           //WHERE INTERVAL
                                     //    _IO_
                                     //{                                                   // SEARCH SEQUENTIALLY
                                     //if( !pidj[ offi ] )
                                     // FOR SPEED, I DO NOT DO A SEQUENTIAL SEARCH.  IF I DO NOT FIND A HIT IN THE HASH LOOKUP, I ASSUME THAT THERE IS NO HIT.  THIS IS REASONABLE SINCE I MAINTAIN THE HASH LOOKUP TABLE IN REAL TIME
 
                                     }
-                                        //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x0a000000 + offi ;           //WHERE INTERVAL
+                                        //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x0a000000 + offi ;           //WHERE INTERVAL
                                         }
                                             }
                                                 }
@@ -353,7 +353,7 @@ DONE( tmWorkerF )
                                         {
                                         if( !pidj[ offi ] )
 
-                                        //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x0b000000 + offi ;           //WHERE INTERVAL
+                                        //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x0b000000 + offi ;           //WHERE INTERVAL
                                         }
                                             }
                                                 }
@@ -381,7 +381,7 @@ DONE( tmWorkerF )
                                         {
                                         for( countT offs = 0 ; offs < CsLOTSpERhASH01 ; offs ++ )
                                         hash01BucketS& bucket = ( ppBucket[ offi ] )[ ph[ offi ] & 0xffff ] ;
-                                        //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x0c000000 + offi ;           //WHERE INTERVAL
+                                        //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x0c000000 + offi ;           //WHERE INTERVAL
 
                                         _IO_
                                     {                                                   // USE HASH TO LOOK UP CANDIDATE idJot VALUES
@@ -395,7 +395,7 @@ DONE( tmWorkerF )
                                     _IO_
                                 {
                                 for( countT offi = 0 ; offi < sizeof ppsttzValue / sizeof ppsttzValue[ 0 ] ; offi ++ )
-                                //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x0d000000 ;           //WHERE INTERVAL
+                                //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x0d000000 ;           //WHERE INTERVAL
 
                                 countT           ph[]          = { 0                  , 0                  , 0                  , 0                , 0                  , 0                  , 0                    } ; // "ph":"pHash"                                    CS:CODEsYNC: this this this this
                                 countT           pidj[]        = { 0                  , 0                  , 0                  , 0                , 0                  , 0                  , 0                    } ; // "pidj":"pIdJot"                                 CS:CODEsYNC: this this this this
@@ -459,7 +459,7 @@ DONE( tmWorkerF )
                             {
                             else
                             if( getNegAM( finger ) != FINGERnEG_ACCESSeVENTrAW || idFormat != 1 ) etThread.traceF( tinBaseP , T("unexpected format [finger,idFormat]:    ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x0e000000 ;           //WHERE INTERVAL
+                            //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x0e000000 ;           //WHERE INTERVAL
 
                             inc02AM( wsP.pczTallyByDuck[ timeW2 >> 8 & 0xff ] ) ;
 
@@ -492,7 +492,7 @@ DONE( tmWorkerF )
                             ZE( countT   , timeW1        ) ;
                             ZE( countT   , idFormat      ) ;
                             ZE( countT   , finger        ) ;
-                            //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x0f000000 ;           //WHERE INTERVAL
+                            //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x0f000000 ;           //WHERE INTERVAL
 
                             }
                                 etThread.delF( tinBaseP , pbPageCopy ) ;
@@ -513,7 +513,7 @@ DONE( tmWorkerF )
                                 countT cbzPage = *pPageEvent ;
                             {
                             soulC sBookEntryIn( tinBaseP , TAG( TAGiDnULL ) ) ;
-                            //((tinNormalS&)tinBaseP).monitor.idWhat2 = 0x10000000 ;           //WHERE INTERVAL
+                            //((tinFullS&)tinBaseP).monitor.idWhat2 = 0x10000000 ;           //WHERE INTERVAL
                         {
 
                         _IO_
@@ -550,7 +550,7 @@ DONE( tmWorkerF )
     //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;
     //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;
     //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , 1 ) ;
-    //((tinNormalS&)tinBaseP).monitor.idWhat2 = - 1 ;
+    //((tinFullS&)tinBaseP).monitor.idWhat2 = - 1 ;
 
     TN( tDot , "." ) ;
     TN( tb4 , "    " ) ;

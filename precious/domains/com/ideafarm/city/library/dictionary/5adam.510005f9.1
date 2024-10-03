@@ -45,7 +45,7 @@ etThread.strokeF( tinBaseP , T("aok\r\n") ) ;
     socka.listenF( tinBaseP ) ;
     countT idPort = socka.bindF( tinBaseP ) ;
     
-    socketC socka( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+    socketC socka( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
     SCOOPS
 {
 IFsCRATCH
@@ -73,7 +73,7 @@ DONE( tmWorkF )
             sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             
             socko.connectF( tinBaseP , idPort ) ;
-            socketC socko( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_null , 0 , 0 , &timeAllowedConnected ) ;
+            socketC socko( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_null , 0 , 0 , &timeAllowedConnected ) ;
             countT timeAllowedConnected = TOCK << 3 ;
 
             }

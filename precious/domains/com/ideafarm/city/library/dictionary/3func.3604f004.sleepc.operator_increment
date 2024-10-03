@@ -15,8 +15,8 @@
  voidT sleepC::operator ++( sCountT scP )
 
 }
-    if( ((tinNormalS*)pTin)->grabPseudo.stat.cCollisionsNew != - 1 ) ((tinNormalS*)pTin)->grabPseudo.stat.cCollisionsNew ++ ;
-    if( ((tinNormalS*)pTin)->grabPseudo.stat.cCollisions    != - 1 ) ((tinNormalS*)pTin)->grabPseudo.stat.cCollisions    ++ ;
+    if( ((tinFullS*)pTin)->grabPseudo.stat.cCollisionsNew != - 1 ) ((tinFullS*)pTin)->grabPseudo.stat.cCollisionsNew ++ ;
+    if( ((tinFullS*)pTin)->grabPseudo.stat.cCollisions    != - 1 ) ((tinFullS*)pTin)->grabPseudo.stat.cCollisions    ++ ;
 
     }
         }
@@ -28,20 +28,20 @@
             //OStEXTC( ostoBuf , bTlsEarlyLateI , 0 ) ;
             OStEXTC( ostoBuf , bTlsEarlyLateIF() , 0 ) ;
             OStEXTAK( ostoBuf , " bTlsEarlyLateI: " ) ;
-            OStEXTC( ostoBuf , ((tinNormalS&)tinBaseP).idTin , 0 ) ;
+            OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
-            OStEXTA( ostoBuf , ((tinNormalS&)tinBaseP).postThreadName ) ;
+            if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\nTINSL: \"" ) ;
-            OStEXTC( ostoBuf , ((tinNormalS*)pTin)->idTin , 0 ) ;
+            OStEXTC( ostoBuf , ((tinFullS*)pTin)->idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
-            OStEXTA( ostoBuf , ((tinNormalS*)pTin)->postThreadName ) ;
+            OStEXTA( ostoBuf , ((tinFullS*)pTin)->postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\npTin : \"" ) ;
             OStEXT( ostoBuf , 0x80 )
         {
         if( pTin != &tinBaseP )
         TINSL
     {
-    if( ((tinNormalS*)pTin)->idTinNamed != ifcIDtINnAMED_tinHeartI )
+    if( ((tinFullS*)pTin)->idTinNamed != ifcIDtINnAMED_tinHeartI )
 {
 /*1*/voidT sleepC::operator ++( voidT )/*1*/
 

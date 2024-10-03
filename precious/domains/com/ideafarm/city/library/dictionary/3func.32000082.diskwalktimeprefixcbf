@@ -19,7 +19,7 @@
                         CONoUTrAW( info.postTo ) ;
                         CONoUTrAW( "Could not move: " ) ;
                     {
-                    if( ((tinNormalS&)tinBaseP).bosFail )
+                    if( ((tinFullS&)tinBaseP).bosFail )
                     BOS( WHATsfr , BOSoK , MoveFile( postNameP , postTo ) ) ;
 
                     //LOGrAW( "\r\n" ) ;
@@ -65,7 +65,7 @@
                         {
                         if( ~hFile )
         
-                        thirdC::dosOpenIF( tinBaseP , ((tinNormalS&)tinBaseP).pEther , hFile , countTC() , postNameP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_NOcACHE | flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTrEGISTER , ifcOPENhOW_nFeO ) ;
+                        thirdC::dosOpenIF( tinBaseP , ((tinFullS&)tinBaseP).pEther , hFile , countTC() , postNameP , ifcOPENaCCESS_R , 0 , flOPENdETAILS_NOcACHE | flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTrEGISTER , ifcOPENhOW_nFeO ) ;
                         handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
                     {
 
@@ -78,21 +78,21 @@
                     postShort ++ ;
                 {
                 if( postShort )
-                osTextT* postShort = (osTextT*)((tinNormalS&)tinBaseP).brcRaw ;
+                osTextT* postShort = (osTextT*)((tinFullS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , strrchr( postNameP , '\\' ) )
             {
             else
             }
-                //if( ((tinNormalS&)tinBaseP).bosFail && ((tinNormalS&)tinBaseP).brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
+                //if( ((tinFullS&)tinBaseP).bosFail && ((tinFullS&)tinBaseP).brcQuery != ERROR_ALREADY_EXISTS ) BOSpOOP ;
                 //BOS( WHATsfr , BOSoK , CreateDirectory( info.postTo , 0 ) ) ;
                 //info.postTo[ costTo - 1 ] = 0 ;
-                //countT costTo = ((tinNormalS&)tinBaseP).brcRaw ;
+                //countT costTo = ((tinFullS&)tinBaseP).brcRaw ;
                 //BOSdOnOTtEST( WHATgbo , strlen( info.postTo ) )
             {
             if( bDir )
 
             boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-            countT costLike = ((tinNormalS&)tinBaseP).brcRaw ;
+            countT costLike = ((tinFullS&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
         {
         if( bDoIt )

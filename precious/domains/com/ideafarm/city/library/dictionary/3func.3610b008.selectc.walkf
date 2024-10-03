@@ -9,14 +9,14 @@
 
 }
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
-    ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                            \
+    ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                            \
     }
         }
             POPtINaRGS
             listC::walkIF( tinBaseP , pczMe ) ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = (countT)pSelectWalkCBFP ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
-            ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectWalkCBF ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = (countT)pSelectWalkCBFP ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
+            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectWalkCBF ;
             PUSHtINaRGS
         {
     
@@ -24,13 +24,15 @@
     
         puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
     {
-    ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                    \
+    ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                    \
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     }
         if( POOP ) return ;
-        __( ((tinNormalS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                                 \
+        __( ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                                 \
         __Z( pSelectWalkCBFP ) ;
+        if( POOP ) return ;
+        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL

@@ -18,16 +18,16 @@
     BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
     BOSpOOP
 
-    if( ((tinNormalS&)tinBaseP).bosFail ) { LOGrAW3( "StartService returned " , ((tinNormalS&)tinBaseP).brcLath , "\r\n" ) ; }
+    if( ((tinFullS&)tinBaseP).bosFail ) { LOGrAW3( "StartService returned " , ((tinFullS&)tinBaseP).brcLath , "\r\n" ) ; }
 
     BOS( WHATgbo , BOSoK , StartService( hsv , 0 , 0 ) ) //U: DEBUG: __( !StartService( hsv , 1 + cHowP , (const osTextT**)pc_ppostHow ) ) ;
     INCoShANDLES
     __Z( hsv ) ;
-    SC_HANDLE hsv = (SC_HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
+    SC_HANDLE hsv = (SC_HANDLE)((tinFullS&)tinBaseP).brcRaw ;
     BOS( WHATgbo , BOSoK , OpenService( hsm , postNameP , SERVICE_ALL_ACCESS ) )
     __Z( hsm ) ;
     INCoShANDLES
-    SC_HANDLE hsm = (SC_HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
+    SC_HANDLE hsm = (SC_HANDLE)((tinFullS&)tinBaseP).brcRaw ;
     BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
 
     if( cHowP ) c_memcpyIF( tinBaseP , (byteT*)&pc_ppostHow[ 1 ] , (byteT*)&ppostHowP[ 0 ] , sizeof( countT ) * cHowP ) ;

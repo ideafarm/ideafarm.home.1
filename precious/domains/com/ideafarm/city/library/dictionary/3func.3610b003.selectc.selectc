@@ -12,13 +12,15 @@
         UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
         POPtINaRGS
         listC::walkIndexIF( tinBaseP , cFieldNameP , valueP , cNetP ) ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = idName ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectCBF ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = idName ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_null ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkSelectCBF ;
         PUSHtINaRGS
         GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
     {
     if( cFieldNameP )
+
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 {
 grabitx( tinBaseP , TAG( TAGiDnULL ) )
 idName( PUSE.dispenseUniqueListNameF() ) ,

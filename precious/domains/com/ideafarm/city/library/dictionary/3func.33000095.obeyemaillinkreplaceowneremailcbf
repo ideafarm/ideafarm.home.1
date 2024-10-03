@@ -78,7 +78,7 @@
                                                         }
                                                             etThread.delF( tinBaseP , posti ) ;
                                                             }
-                                                                ((tinNormalS&)tinBaseP).pEtScratch->boxPutF( tinBaseP , pInfo2->psttIfoName , tNew , tNew.csF( tinBaseP ) ) ;
+                                                                ((tinFullS&)tinBaseP).pEtScratch->boxPutF( tinBaseP , pInfo2->psttIfoName , tNew , tNew.csF( tinBaseP ) ) ;
                                                                 etThread.delF( tinBaseP , psttw ) ;
                                                                 TN( tNew , "" ) ; tNew = T(psttw) ;
                                                                 etThread.strReplaceF( tinBaseP , psttw , T(posti) , tEmailLoggedIn , tEmailTicket , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttw ) ;
@@ -86,12 +86,12 @@
                                                             {
                                                             else if( posti && *posti )
                                                             if( POOP ) { POOPR ; }
-                                                            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , pInfo2->psttIfoName , 1 ) ; ___( posti ) ;
+                                                            ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , pInfo2->psttIfoName , 1 ) ; ___( posti ) ;
                                                             ZE( countT , costi ) ;
                                                             ZE( osTextT* , posti ) ;
                                                         {
                                                         if( pInfo2 && !( F(pInfo2->flags) & flFILEaTTR1_DIRECTORY ) )
-                                                        ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo2 , hFind2 , tDirSubaccount , &pat ) ; ___( pInfo2 ) ;
+                                                        ((tinFullS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo2 , hFind2 , tDirSubaccount , &pat ) ; ___( pInfo2 ) ;
                                                         ZE( infoFileS* , pInfo2 ) ;
                                                     {
                                                     do
@@ -100,7 +100,7 @@
                                                     TN( tDirSubaccount , "" ) ; tDirSubaccount = T(pInfo1->psttIfoName) ;
                                                 {
                                                 if( pInfo1 && F(pInfo1->flags) & flFILEaTTR1_DIRECTORY && !( F(pInfo1->flags) & flFILEaTTR1_DOTdIRECTORY ) )
-                                                ((tinNormalS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo1 , hFind1 , tDirSubaccounts ) ; ___( pInfo1 ) ;
+                                                ((tinFullS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo1 , hFind1 , tDirSubaccounts ) ; ___( pInfo1 ) ;
                                                 ZE( infoFileS* , pInfo1 ) ;
                                             {
                                             do
@@ -111,7 +111,7 @@
                                     {
                                     else if( posti && !etThread.strCompareF( tinBaseP , T(posti) , tEmailLoggedIn ) )
                                     if( POOP ) { POOPR ; }
-                                    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , tFile , 1 ) ; ___( posti ) ;
+                                    ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , tFile , 1 ) ; ___( posti ) ;
                                     ZE( countT , costi ) ;
                                     ZE( osTextT* , posti ) ;
                                     TN( tFile , "" ) ; tFile = tDirAccount+tShortFileOwner ;
@@ -129,7 +129,7 @@
                                             etThread.delF( tinBaseP , posti ) ;
                                             else if( posti && costi && !etThread.strCompareF( tinBaseP , tEmailTicket , T(posti) ) ) bAlreadyExists = 1 ;
                                             if( POOP ) { POOPR ; }
-                                            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , T(psttDirAccount)+tShortFileOwner ) ; ___( posti ) ;
+                                            ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , T(psttDirAccount)+tShortFileOwner ) ; ___( posti ) ;
                                             ZE( countT , costi ) ;
                                             ZE( osTextT* , posti ) ;
                                         {
@@ -185,17 +185,17 @@
                 sIn >> finger ;
                 ZE( countT , finger ) ;
 
-                ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , sIn , tFileNew ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , sIn , tFileNew ) ;
                 soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
             {
             else
             if( POOP ) { POOPR ; }
-            ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tFileNew , tDirOld+tShort ) ;
+            ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tFileNew , tDirOld+tShort ) ;
             TN( tFileNew , "" ) ; tFileNew = tDirNew+tShort ;
             TN( tShort  , "soul.ticket." ) ; tShort += T(zsttIdTicket)+T(".soul") ;
 
             if( POOP ) { POOPR ; }
-            ((tinNormalS&)tinBaseP).pEtScratch->diskMakeDirIfNeededF( tinBaseP , tDirNew ) ;
+            ((tinFullS&)tinBaseP).pEtScratch->diskMakeDirIfNeededF( tinBaseP , tDirNew ) ;
             TN( tDirNew , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/tickets.used/" ) ;
             TN( tDirOld , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/tickets/" ) ;
 

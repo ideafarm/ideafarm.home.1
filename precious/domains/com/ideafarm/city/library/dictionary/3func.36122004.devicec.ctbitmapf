@@ -16,16 +16,16 @@
         BOSpOOP
         BOS( WHATgbo , BOSoK , SetROP2(   oshDeviceMemory , R2_COPYPEN ) )
 
-        oshPenWas       =    (HPEN)((tinNormalS&)tinBaseP).brcRaw ;
+        oshPenWas       =    (HPEN)((tinFullS&)tinBaseP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , SelectObject( oshDeviceMemory , oshPen    ) )
-        oshBrushWas     =  (HBRUSH)((tinNormalS&)tinBaseP).brcRaw ;
+        oshBrushWas     =  (HBRUSH)((tinFullS&)tinBaseP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , SelectObject( oshDeviceMemory , oshBrush  ) )
-        oshBitmapWas    = (HBITMAP)((tinNormalS&)tinBaseP).brcRaw ;
+        oshBitmapWas    = (HBITMAP)((tinFullS&)tinBaseP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , SelectObject( oshDeviceMemory , oshBitmap ) )
-        oshBitmap       = (HBITMAP)((tinNormalS&)tinBaseP).brcRaw ;
+        oshBitmap       = (HBITMAP)((tinFullS&)tinBaseP).brcRaw ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , CreateCompatibleBitmap( oshDevice , cCol , cRow ) )
-        oshDeviceMemory = (HDC)((tinNormalS&)tinBaseP).brcRaw ;
+        oshDeviceMemory = (HDC)((tinFullS&)tinBaseP).brcRaw ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , CreateCompatibleDC( oshDevice ) )
     {

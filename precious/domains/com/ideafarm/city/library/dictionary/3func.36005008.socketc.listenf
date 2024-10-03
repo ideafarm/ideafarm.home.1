@@ -18,7 +18,7 @@
                 etherC::sockStkAcceptorsF( tinBaseP ).sinkF( tinBaseP , idSlot , (countT)this , flSTACKsINK_UNIQUE ) ;
                 ZE( countT , idSlot ) ;
     
-                //__( F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
+                //__( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_IGNOREmE_tmWatchF_ ) ;
     
                 etherC::sockStkQuittersF( tinBaseP ).ungrabF( tinBaseP ) ;
                 if( etherC::sockStkQuittersF( tinBaseP )( (countT)this ) ) etherC::sockStkQuittersF( tinBaseP ).extractF( tinBaseP ) ;
@@ -58,7 +58,7 @@
 
 /**/
 */
-after calling listenF, be sure to verify !ether, to ensure that ((tinNormalS&)tinBaseP).pag1->_thirdC_.flQuitting was not just set, before calling acceptF
+after calling listenF, be sure to verify !ether, to ensure that ((tinFullS&)tinBaseP).pag1->_thirdC_.flQuitting was not just set, before calling acceptF
 if i am to accept connections, listenF must be called once before the first call to acceptF
 \<A HREF=\"5.1070009.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$listenF.0.html\"\>instances\</A\>

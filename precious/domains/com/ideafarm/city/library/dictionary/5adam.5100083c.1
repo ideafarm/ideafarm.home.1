@@ -59,7 +59,7 @@ DONE( tmWorkerF )
             POOPRqUIET
         {
         if( POOP )
-        ((tinNormalS&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , tRootFolder , ether , flDISKwALK_null , workCBF , 0 , 0 , 0 ) ;
+        ((tinFullS&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , tRootFolder , ether , flDISKwALK_null , workCBF , 0 , 0 , 0 ) ;
         SCOOPS
     {
     IFsCRATCH    
@@ -271,7 +271,7 @@ countT cRejectsWas = incv02AM( cRejects ) ;
         if( !bQuitP )
 
         etherC& ether    = etherC::etPrimeIF() ;
-        etherC& etThread = *((tinNormalS&)tinBaseP).pEther ;
+        etherC& etThread = *((tinFullS&)tinBaseP).pEther ;
 
         _IO_
     {

@@ -8,7 +8,7 @@
 
 
 }
-    if( ((tinNormalS&)tinBaseP).fingerprint && etherP ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && etherP ) ;
 
     }
         //}
@@ -132,7 +132,7 @@ boolT vtEyeCBF( tinBaseS& tinBaseP , etherC& etherP , const countT idTypeCallP ,
                 }
                     paramP.pptcView[ off ] = new( 0 , tinBaseP , pbn , sizeof( tcButtonC ) ) tcButtonC( tinBaseP , T("pptcView.")+TF1(1+off) , buViewCBF , (countT)pcArg , flTCfEATURE_FRAME , 0 , 0 , 1 , rgbFrame ) ;
                     //flagsT flFeatureTab = !scRelCol && scRelRow == 1 ? flTCfEATURE_TABpARTICIPANT : flTCfEATURE_null ;
-                    byteT* pbn = (byteT*)((tinNormalS&)tinBaseP).pag1->pPoolAdamTemp->newF( tinBaseP , LF , sizeof( vTextC ) ) ; ___( pbn ) ;
+                    byteT* pbn = (byteT*)((tinFullS&)tinBaseP).pag1->pPoolAdamTemp->newF( tinBaseP , LF , sizeof( vTextC ) ) ; ___( pbn ) ;
                     countT rgbFrame = !scRelCol && ( !scRelRow || scRelRow == 1 ) ? ifcRGB_R4|ifcRGB_G4 : ifcRGB_BROWN ;
         
                     pcArg[ 2 ] = scRelCol ;
@@ -173,7 +173,7 @@ boolT vtEyeCBF( tinBaseS& tinBaseP , etherC& etherP , const countT idTypeCallP ,
 boolT vtViewCBF( tinBaseS& tinBaseP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamStateOldS& sadamStateP )
 
 }
-    if( ((tinNormalS&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP && sadamStateP.ssc.idAdam ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP && sadamStateP.ssc.idAdam ) ;
 
     }
         }
@@ -205,7 +205,7 @@ boolT vtViewCBF( tinBaseS& tinBaseP , etherC& etherP , const countT idTypeCallP 
 voidT buViewCBF( tinBaseS& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP , const sadamStateOldS& sadamStateP )
 
 }
-    if( ((tinNormalS&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP && sadamStateP.ssc.idAdam ) ;
+    if( ((tinFullS&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP && sadamStateP.ssc.idAdam ) ;
 
     }
         }

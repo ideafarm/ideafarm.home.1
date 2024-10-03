@@ -8,30 +8,30 @@
 
 
 }
-    return ((tinNormalS&)tinBaseP).idDesireSetBySelf ;
+    return ((tinFullS&)tinBaseP).idDesireSetBySelf ;
 
     }
-        ((tinNormalS&)tinBaseP).idDesireSetBySelf = idDesire ;
+        ((tinFullS&)tinBaseP).idDesireSetBySelf = idDesire ;
 
         }
             }
                 BLAMMOiD( 0x1f1f1f1f ) ;                                                                                                                                                            //20240621@1455: OBSERVED THIS WHILE HEAL WAS ZIPPING A DAY CHUNK FILE ON AN EXTERNAL SSD ; IF SAMEO THEN INSPECT THE EXCEPTION RPT OR THE TRACE PRODUCED BY GLASS1
-                LOGcALLnEST( "!exception: ((tinNormalS&)tinBaseP).idDesireSetBySelf is inaccurate" )
-                LOGrAWb(    "\r\ndosPriorityIF: BLAMMO BECAUSE: [idExceptionEvent,osTidIF(),((tinNormalS&)tinBaseP).osTid,tinDesire,actualDesire]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , ((tinNormalS&)tinBaseP).osTid , "    " , ((tinNormalS&)tinBaseP).idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
-                CONoUTrAWb( "\r\ndosPriorityIF: BLAMMO BECAUSE: [idExceptionEvent,osTidIF(),((tinNormalS&)tinBaseP).osTid,tinDesire,actualDesire]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , ((tinNormalS&)tinBaseP).osTid , "    " , ((tinNormalS&)tinBaseP).idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
+                LOGcALLnEST( "!exception: ((tinFullS&)tinBaseP).idDesireSetBySelf is inaccurate" )
+                LOGrAWb(    "\r\ndosPriorityIF: BLAMMO BECAUSE: [idExceptionEvent,osTidIF(),((tinFullS&)tinBaseP).osTid,tinDesire,actualDesire]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , ((tinFullS&)tinBaseP).osTid , "    " , ((tinFullS&)tinBaseP).idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
+                CONoUTrAWb( "\r\ndosPriorityIF: BLAMMO BECAUSE: [idExceptionEvent,osTidIF(),((tinFullS&)tinBaseP).osTid,tinDesire,actualDesire]:    " , idExceptionEventMe , "    " , osTidIF() , "    " , ((tinFullS&)tinBaseP).osTid , "    " , ((tinFullS&)tinBaseP).idDesireSetBySelf , "    " , idDesire , "\r\n" ) ;
 
                 if( &tinBaseP == &processGlobal6I.tinBreak ) ((etherC*)0)->traceF( tinBaseP , (strokeS*)"dosPriorityIF (get) IS USING tinBreak" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
 
                 countT idExceptionEventMe = 1 + incv02AM( processGlobal2S::_processGlobal2I_IF().idExceptionEvent ) ;
             {
-            if( ((tinNormalS&)tinBaseP).idDesireSetBySelf && idDesire != ((tinNormalS&)tinBaseP).idDesireSetBySelf && !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_ALLOWvOLATILEdESIRE ) )         // I ENFORCE THE CODING CONVENTION THAT A THREAD'S PRIORITY MAY ONLY BE CHANGED BY ITSELF ; NO OTHER THREAD OR PROCESS IS ALLOWED TO CHANGE IT
+            if( ((tinFullS&)tinBaseP).idDesireSetBySelf && idDesire != ((tinFullS&)tinBaseP).idDesireSetBySelf && !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_ALLOWvOLATILEdESIRE ) )         // I ENFORCE THE CODING CONVENTION THAT A THREAD'S PRIORITY MAY ONLY BE CHANGED BY ITSELF ; NO OTHER THREAD OR PROCESS IS ALLOWED TO CHANGE IT
         {
-        if( osTidIF() == ((tinNormalS&)tinBaseP).osTid )   // tinBaseP WILL BE A tinNormalS INSTANCE FOR THREAM tm1F IF ANOTHER THREAD CALLS ExitProcess() ; SEE E.G. rootExceptionFilterF() ; CALLING ExitProcess() WILL CAUSE THE EXCEPTING THREAD TO EXECUTE THE DESTRUCTORS FOR THE GLOBAL OBJECTS, WHICH ALL USE WO OF THE GLOBAL tinNormalS INSTANCES INTENDED FOR THE MAIN THREAD
+        if( osTidIF() == ((tinFullS&)tinBaseP).osTid )   // tinBaseP WILL BE A tinFullS INSTANCE FOR THREAM tm1F IF ANOTHER THREAD CALLS ExitProcess() ; SEE E.G. rootExceptionFilterF() ; CALLING ExitProcess() WILL CAUSE THE EXCEPTING THREAD TO EXECUTE THE DESTRUCTORS FOR THE GLOBAL OBJECTS, WHICH ALL USE WO OF THE GLOBAL tinFullS INSTANCES INTENDED FOR THE MAIN THREAD
 
         #endif
 
             }
-                default                                            : { BLAMMOiD( ((tinNormalS&)tinBaseP).brcRaw ) ;                 ; break ; }
+                default                                            : { BLAMMOiD( ((tinFullS&)tinBaseP).brcRaw ) ;                 ; break ; }
                 case ifcIDtHREADpRIORITYbASEoSwINDOWS_TIMEcRITICAL : { idDesire = ifcTHREADpRIORITY_RUDE         ; break ; }
                 case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS6        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS6   ; break ; }
                 case ifcIDtHREADpRIORITYbASEoSwINDOWS_PLUS5        : { idDesire = ifcTHREADpRIORITY_PUSHYpLUS5   ; break ; }
@@ -49,8 +49,8 @@
                 case ifcIDtHREADpRIORITYbASEoSwINDOWS_MINUS7       : { idDesire = ifcTHREADpRIORITY_LAZIERmINUS7 ; break ; }
                 case ifcIDtHREADpRIORITYbASEoSwINDOWS_IDLE         : { idDesire = ifcTHREADpRIORITY_LAZIEST      ; break ; }
             {
-            switch( ((tinNormalS&)tinBaseP).brcRaw )
-            BOS( WHATgbo , BOStHREADERcODE , GetThreadPriority( (HANDLE)((tinNormalS&)tinBaseP).brcRaw ) )
+            switch( ((tinFullS&)tinBaseP).brcRaw )
+            BOS( WHATgbo , BOStHREADERcODE , GetThreadPriority( (HANDLE)((tinFullS&)tinBaseP).brcRaw ) )
             BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
 
         #elif defined( __NT__ )

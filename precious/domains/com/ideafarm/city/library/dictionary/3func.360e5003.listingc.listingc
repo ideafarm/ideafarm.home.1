@@ -12,14 +12,15 @@
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     }
-        /*if( !((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP )*/ ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP = this ;
-        //20240901@1730: THIS CAN BE SET BY sexC USE OF listC, SO I WILL JUST OVERWRITE ANY VALUE THAT IS THERE: __( ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP ) ;
-        __( !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc ) ) ;
+        /*if( !((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP )*/ ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP = this ;
+        //20240901@1730: THIS CAN BE SET BY sexC USE OF listC, SO I WILL JUST OVERWRITE ANY VALUE THAT IS THERE: __( ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP ) ;
+        __( !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc ) ) ;
     {
     if( !( F(flagsP) & flLISTINGc_DOnOTrEGISTERiNtIN ) )
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     //putNegAM( finger , FINGERnEG_listingC ) ;
+    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 {
 aptDad( tinBaseP , (byteT*)&listDadP )
 idTypeDatum( 0 ) ,

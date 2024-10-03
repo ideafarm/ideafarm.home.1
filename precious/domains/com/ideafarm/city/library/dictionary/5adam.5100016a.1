@@ -27,7 +27,7 @@ hoodC hood( tinBaseP , T("hoodC.")+TF1(DDNUMB) , sizeof( countT ) , 0x10000 ) ;
 
     thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
     thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
-    const countT idDesireSave = ((tinNormalS&)tinBaseP).idDesireSetBySelf ;
+    const countT idDesireSave = ((tinFullS&)tinBaseP).idDesireSetBySelf ;
     U::ALL CODE THAT CALLS thugC::grabF MUST BE RUSH
 
 ZE( countT , cGorillas ) ;
@@ -48,9 +48,9 @@ DONE( tmGorillaF )
     {
     while( !etThread && !ether )
 
-    const postt[] = { 'a' + ( ((tinNormalS&)tinBaseP).monitor.idThread - idThreadWoth ) % 26 , 0 } ;
-    if( ((tinNormalS&)tinBaseP).monitor.idThread < idThreadWoth ) idThreadWoth = ((tinNormalS&)tinBaseP).monitor.idThread ;
-    setIfZeAM( idThreadWoth , ((tinNormalS&)tinBaseP).monitor.idThread ) ;
+    const postt[] = { 'a' + ( ((tinFullS&)tinBaseP).monitor.idThread - idThreadWoth ) % 26 , 0 } ;
+    if( ((tinFullS&)tinBaseP).monitor.idThread < idThreadWoth ) idThreadWoth = ((tinFullS&)tinBaseP).monitor.idThread ;
+    setIfZeAM( idThreadWoth , ((tinFullS&)tinBaseP).monitor.idThread ) ;
     static countT idThreadWoth ;
 
     }

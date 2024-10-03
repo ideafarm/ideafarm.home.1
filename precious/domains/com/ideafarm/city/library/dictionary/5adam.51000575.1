@@ -93,14 +93,14 @@ DONEdRIVENsERVER( tmcSmtpF )
                 if( POOP )
     
                 }
-                    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttPeer ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttPeer ) ;
                     TELL( "cleaning up this session" ) ;
                     }
                         TELL( "end of handler loop" ) ;
-                        *((tinNormalS&)tinBaseP).pEtScratch = etScratchSave ;
-                        //((tinNormalS&)tinBaseP).pEtScratch->ifcSayIF( stPhrases , flSAY_APPEND | flSAY_LOG ) ;
-                        *((tinNormalS&)tinBaseP).pEtScratch = 0 ;
-                        countT etScratchSave = *((tinNormalS&)tinBaseP).pEtScratch ;
+                        *((tinFullS&)tinBaseP).pEtScratch = etScratchSave ;
+                        //((tinFullS&)tinBaseP).pEtScratch->ifcSayIF( stPhrases , flSAY_APPEND | flSAY_LOG ) ;
+                        *((tinFullS&)tinBaseP).pEtScratch = 0 ;
+                        countT etScratchSave = *((tinFullS&)tinBaseP).pEtScratch ;
                         etThread.delF( tinBaseP , psttSource ) ;
                         }
                             pso->writeF( tinBaseP , (osTextT*)tErrWrite , tErrWrite.csF( tinBaseP ) ) ;
@@ -113,9 +113,9 @@ DONEdRIVENsERVER( tmcSmtpF )
                         TELL( "writing aok or error say" ) ;
     
                         etThread.delF( tinBaseP , psttOutToPenpal ) ;
-                        ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttBodyWothTock ) ;
-                        ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttSoixlOld ) ;
-                        ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttHeader ) ;
+                        ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttBodyWothTock ) ;
+                        ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttSoixlOld ) ;
+                        ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttHeader ) ;
                         }
                             }
                                 }
@@ -156,32 +156,32 @@ DONEdRIVENsERVER( tmcSmtpF )
                                             etThread.delF( tinBaseP , psttFrom ) ;
                                             }
                                                 }
-                                                    if( bEditArchive ) ((tinNormalS&)tinBaseP).pEtScratch->osEditF( tinBaseP , tFileArchive , 1 ) ;
+                                                    if( bEditArchive ) ((tinFullS&)tinBaseP).pEtScratch->osEditF( tinBaseP , tFileArchive , 1 ) ;
 
                                                     }
                                                         }
                                                             DEL( pInfo ) ;
                                                             }
                                                                 }
-                                                                    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , posti ) ;
+                                                                    ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , posti ) ;
                                                                     }
                                                                         }
                                                                             cToDo -= cNibble ;
-                                                                            ((tinNormalS&)tinBaseP).pEtScratch->fileWriteF( tinBaseP , hFileArchive , posti , cNibble ) ;
-                                                                            ((tinNormalS&)tinBaseP).pEtScratch->fileReadF( tinBaseP , posti , cNibble , hFileBody ) ;
+                                                                            ((tinFullS&)tinBaseP).pEtScratch->fileWriteF( tinBaseP , hFileArchive , posti , cNibble ) ;
+                                                                            ((tinFullS&)tinBaseP).pEtScratch->fileReadF( tinBaseP , posti , cNibble , hFileBody ) ;
                                                                             countT cNibble = costa < cToDo ? costa : cToDo ;
                                                                         {
                                                                         while( cToDo )
                                                                     {
                                                                     if( posti )
-                                                                    ((tinNormalS&)tinBaseP).pEtScratch->newF( tinBaseP , LF , posti , costa ) ; ___( posti ) ;
+                                                                    ((tinFullS&)tinBaseP).pEtScratch->newF( tinBaseP , LF , posti , costa ) ; ___( posti ) ;
                                                                     ZE( osTextT* , posti ) ;
                                                         
                                                                     const countT costa = TOCK < cToDo ? TOCK : cToDo ;
                                                                     countT cToDo = pInfo->cbUsed ;
             
                                                                     }
-                                                                        ((tinNormalS&)tinBaseP).pEtScratch->fileWriteF( tinBaseP , hFileArchive , (osTextT*)tAll , tAll.csF( tinBaseP ) ) ;
+                                                                        ((tinFullS&)tinBaseP).pEtScratch->fileWriteF( tinBaseP , hFileArchive , (osTextT*)tAll , tAll.csF( tinBaseP ) ) ;
                                                                         if( psttSoixlOld && psttSoixlOld->idAdam ) tAll += T(psttSoixlOld)+T("\r\n") ;
                                                                         TN( tAll , "" ) ; tAll = T(psttHeader) ;
                                                                     {
@@ -196,17 +196,17 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                             {
                                                             else
                                                             if( POOP ) flError |= flERROR_COULDnOTgETfILEiNFO ;
-                                                            ((tinNormalS&)tinBaseP).pEtScratch->diskFileQueryF( tinBaseP , pInfo , hFileBody ) ; ___( pInfo ) ;
+                                                            ((tinFullS&)tinBaseP).pEtScratch->diskFileQueryF( tinBaseP , pInfo , hFileBody ) ; ___( pInfo ) ;
                                                             ZE( infoFileS* , pInfo ) ;
                                                         {
                                                         else
                                                         if( POOP ) flError |= flERROR_COULDnOToPENfILES ;
             
-                                                        { _IO_ ((tinNormalS&)tinBaseP).pEtScratch->fileOpenF( tinBaseP , hFileArchive , countTC() , tFileArchive , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nCeF ) ; }
+                                                        { _IO_ ((tinFullS&)tinBaseP).pEtScratch->fileOpenF( tinBaseP , hFileArchive , countTC() , tFileArchive , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nCeF ) ; }
                                                         handleC hFileArchive( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
                                                     {
         
-                                                    { _IO_ ((tinNormalS&)tinBaseP).pEtScratch->fileOpenF( tinBaseP , hFileBody , countTC() , tFileBody , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO ) ; }
+                                                    { _IO_ ((tinFullS&)tinBaseP).pEtScratch->fileOpenF( tinBaseP , hFileBody , countTC() , tFileBody , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_DOnOTvALIDATE , ifcOPENhOW_nFeO ) ; }
                                                     handleC hFileBody( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
         
                                                     }
@@ -325,14 +325,14 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                     //                    }
                                                     //                        break ;
                                                     //
-                                                    //                        else if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T("bcc") ) ) idArm = 3 ;
-                                                    //                        else if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T("cc" ) ) ) idArm = 2 ;
-                                                    //                             if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T("to" ) ) ) idArm = 1 ;
+                                                    //                        else if( !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T("bcc") ) ) idArm = 3 ;
+                                                    //                        else if( !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T("cc" ) ) ) idArm = 2 ;
+                                                    //                             if( !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T("to" ) ) ) idArm = 1 ;
                                                     //                    {
                                                     //                    case 0 :
                                                     //                    }
                                                     //                        break ;
-                                                    //                        if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T(";") ) ) idArm = 0 ;
+                                                    //                        if( !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T(";") ) ) idArm = 0 ;
                                                     //                    {
                                                     //                    case - 1 :
                                                     //                {
@@ -344,13 +344,13 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                     //                        flError |= flERROR_SOIXLoLDbADbEGINNING ;
                                                     //                    {
                                                     //                    else
-                                                    //                    if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T("!SOIXLoLD") ) ) continue ;
+                                                    //                    if( !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T("!SOIXLoLD") ) ) continue ;
                                                     //                {
                                                     //                if( BwOTHsTRING1 )
                                                     //            {
                                                     //            FORsTRINGSiN1( pstt1w )
                                                     //            ZE( countT , idArm ) ;
-                                                    //            ((tinNormalS&)tinBaseP).pEtScratch->strWordsOldF( tinBaseP , pstt1w , psttSoixlOld , sttq ) ; ___( pstt1w ) ;
+                                                    //            ((tinFullS&)tinBaseP).pEtScratch->strWordsOldF( tinBaseP , pstt1w , psttSoixlOld , sttq ) ; ___( pstt1w ) ;
                                                     //            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                                     //            ZE( strokeS* , pstt1w ) ;
                                                     //        {
@@ -361,7 +361,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                     //        LOGrAW( "INCOMING RECEIVED FROM OWNER INTO HIS RELAY ACCOUNT\r\n" ) ;
                                                     //        bNewConversation = 1 ;
                                                     //    {
-                                                    //    if( tEmailOwner.csF( tinBaseP ) && !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , tEmailOwner , psttFrom ) )
+                                                    //    if( tEmailOwner.csF( tinBaseP ) && !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , tEmailOwner , psttFrom ) )
                                                     //
                                                     //    }
                                                     //        etThread.delF( tinBaseP , psttw ) ;
@@ -422,7 +422,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                 else if( !etThread.strCompareF( tinBaseP , psttFrom , T(ifcEMAIL_MAILoUT) ) )
     // ERROR NOTIFICATION OUT TO OWNER ********************************************************************************************************************************************
                                                 }
-                                                    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttOrigin ) ;
+                                                    ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttOrigin ) ;
                                                     }
                                                         //LOGrAW( tName+tcr ) ;
                                                         etThread.delF( tinBaseP , pstt1f ) ;
@@ -479,9 +479,9 @@ DONEdRIVENsERVER( tmcSmtpF )
         
                                                         continue ;
                                                         )
-                                                            ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzKey , t3 )
-                                                            ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzKey , t2 ) &&
-                                                            ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzKey , t1 ) &&
+                                                            ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzKey , t3 )
+                                                            ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzKey , t2 ) &&
+                                                            ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzKey , t1 ) &&
                                                         (
                                                         if
                                                         psttzKey = (strokeS*)swsKeyValues.leverF( tinBaseP , idf ) ;
@@ -623,7 +623,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                                 soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                                                                     
                                                                 sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-                                                                socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                                                                socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                                                             {
                                                             //FLAG ALL SUBACCOUNTS AS OWNER CONFIRMED
         
@@ -671,7 +671,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                                     soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                                                                     
                                                                     sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-                                                                    socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                                                                    socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                                                                 {
                                                                 if( !( flagsMode & fliACCOUNTmODE_OWNERcONFIRMED ) )
         
@@ -701,7 +701,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                                     soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                                                                     
                                                                     sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-                                                                    socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                                                                    socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                                                                 {
                                                                 ZE( flagsT , flagsMode ) ;
                                                             {
@@ -874,7 +874,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                         //                                                                soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                                                         //                                                            
                                                         //                                                                sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-                                                        //                                                                socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                                                        //                                                                socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                                                         //                                                            {
                                                         //                                                            ZE( strokeS* , psttEmailClickee ) ;
                                                         //                                                        {
@@ -1112,7 +1112,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                         //                                soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                                                         //                            
                                                         //                                sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-                                                        //                                socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                                                        //                                socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                                                         //                            {
                                                         //                        {
                                                         //                        if( pStkIdAcc )
@@ -1242,7 +1242,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                 _IO_
                                                 TELL( "false sender" ) ;
                                             {
-                                            else if( bCheckFromInBody && ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttFrom , psttSource ) )
+                                            else if( bCheckFromInBody && ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttFrom , psttSource ) )
                                             }
                                                 break ;
                                                 if( POOP ) { POOPR } ;
@@ -1289,15 +1289,15 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                     }
                                                         while( !bContentIsPlain && ~hWalk ) ;
                                                         }
-                                                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                                                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
                                                             bContentIsPlain = 1 ;
                                                             )
-                                                                ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("charset=us-ascii") , psttw )
-                                                                ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("text/plain"      ) , psttw ) &&
+                                                                ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("charset=us-ascii") , psttw )
+                                                                ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("text/plain"      ) , psttw ) &&
                                                             (
                                                             if
     
-                                                            ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw , psttzv ) ; ___( psttw ) ;
+                                                            ((tinFullS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw , psttzv ) ; ___( psttw ) ;
                                                             ZE( strokeS* , psttw ) ;
                                                             strokeS* psttzv = (strokeS*)swsKeyValues.downF( tinBaseP , hWalk ) ;
                                                         {
@@ -1306,7 +1306,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                     {
                                                     if( swsKeyValues )
                                                 {
-                                                if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzKey , T("content-type") ) )
+                                                if( !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzKey , T("content-type") ) )
     
                                                 psttzKey = (strokeS*)swsKeyValues.leverF( tinBaseP , idf ) ;
                                             {
@@ -1319,10 +1319,10 @@ DONEdRIVENsERVER( tmcSmtpF )
                                         ZE( boolT , bContentIsPlain ) ;
     
                                         //LOGrAW3( "parseHeaderF returned and now poop is " , POOP , "\r\n" ) ;
-                                        parseHeaderF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , flError , swsKeyValues , psttzKey , psttFrom , psttSubject , psttHeader ) ; ___( psttFrom ) ; ___( psttSubject ) ;
+                                        parseHeaderF( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , flError , swsKeyValues , psttzKey , psttFrom , psttSubject , psttHeader ) ; ___( psttFrom ) ; ___( psttSubject ) ;
 
                                         //LOGrAW3( "calling parseHeaderF; poop is " , POOP , "\r\n" ) ;
-                                        switchStackC swsKeyValues( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_null , psttzKey , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+                                        switchStackC swsKeyValues( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_null , psttzKey , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
                                         ZE( strokeS* , psttzKey ) ;
                                         
                                         ZE( strokeS* , psttSubject ) ; //U::OBSOLETED BY swsKeyValues
@@ -1366,7 +1366,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                         TELL( "after reading data" ) ;
     
                         }
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , posti ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , posti ) ;
     
                             }
                                 if( !bData ) flError |= flERROR_NOdATA ;
@@ -1384,7 +1384,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                 etThread.fileWriteF( tinBaseP , hFileBody , posti , offi ) ;
 
                                                 }
-                                                    ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttBodyWothTock , T(posti) ) ;
+                                                    ((tinFullS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttBodyWothTock , T(posti) ) ;
                                                     posti[ offi ] = 0 ;
                                                 {
                                                 if( offi <= psttBodyWothTock[ 2 ].idAdam )
@@ -1393,14 +1393,14 @@ DONEdRIVENsERVER( tmcSmtpF )
                                             }
                                                 break ;
                                                 if( POOP ) flError |= flERROR_SOIXLoLDtOOlARGE ;
-                                                ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttSoixlOld , T(posti) ) ;
+                                                ((tinFullS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttSoixlOld , T(posti) ) ;
                                                 posti[ offi ] = 0 ;
                                             {
                                             case 2 :
                                             }
                                                 break ;
                                                 if( POOP ) flError |= flERROR_HEADERtOOlARGE ;
-                                                ((tinNormalS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttHeader , T(posti) ) ;
+                                                ((tinFullS&)tinBaseP).pEtScratch->strFuseF( tinBaseP , psttHeader , T(posti) ) ;
                                                 posti[ offi ] = 0 ;
                                             {
                                             case 1 :
@@ -1441,7 +1441,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                     //    }
                                     //        etThread.delF( tinBaseP , psttTrunc ) ;
                                     //        tLog = T(psttTrunc) ;
-                                    //        ((tinNormalS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttTrunc , idf , idl , T(posti) ) ; ___( psttTrunc ) ;
+                                    //        ((tinFullS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttTrunc , idf , idl , T(posti) ) ; ___( psttTrunc ) ;
                                     //        countT idl = TUCK ;
                                     //        countT idf = 1 ;
                                     //        ZE( strokeS* , psttTrunc ) ;
@@ -1473,13 +1473,13 @@ DONEdRIVENsERVER( tmcSmtpF )
                                 //A:ASSUME: INCOMING DATA BEGINS WITH A HEADER LINE
                             {
                             if( posti )
-                            ((tinNormalS&)tinBaseP).pEtScratch->newF( tinBaseP , LF , posti , costa ) ; ___( posti ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->newF( tinBaseP , LF , posti , costa ) ; ___( posti ) ;
                             const countT costa = TOCK * 0x10 ;
                             ZE( osTextT* , posti ) ;
     
-                            ((tinNormalS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttBodyWothTock , 0 , TOCK ) ; ___( psttBodyWothTock ) ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttSoixlOld , 0 , TOCK ) ; ___( psttSoixlOld ) ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttHeader , 0 , TOCK ) ; ___( psttHeader ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttBodyWothTock , 0 , TOCK ) ; ___( psttBodyWothTock ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttSoixlOld , 0 , TOCK ) ; ___( psttSoixlOld ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttHeader , 0 , TOCK ) ; ___( psttHeader ) ;
     
                             // CAPACITY CONSTRAINT: LINE MUST BE LESS THAN 01 TOCK; NO LIMIT ON NUMBER OF LINES
                             // APPROACH
@@ -1519,7 +1519,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                         if( bQuit )
 
                         }
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttTo ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttTo ) ;
                             }
                                 pso->writeF( tinBaseP , (osTextT*)tErr , tErr.csF( tinBaseP ) ) ;
                                 //TN( tErr , bBadFormat?"553 [bad format: \"":"553 [address does not exist: \"" ) ; tErr += T(psttTo)+T("\"; future connections from you will be denied; contact ideafarm.com to restore your access.]\r\n") ;
@@ -1567,18 +1567,18 @@ DONEdRIVENsERVER( tmcSmtpF )
 
                                 if( cPassAccount == 0xc24f6da9 ) cPassAccount = 1 ; //LEGACY iDaCCOUNT FOR WO IDEAFARM; THIS IS DONE TO AVOID CHANGING PUBLISHED EMAIL SUBACCOUNTS WHERE IT IS DIFFICULT TO CHANGE (I.E. IANA PORT REGISTRY)
         
-                                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
+                                ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
         
                                 }
                                     __Z( cPassSubAccount ) ;
                                     __Z( cPassAccount ) ;
-                                    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , pstt1w ) ;
+                                    ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , pstt1w ) ;
                                     }
                                         }
                                             break ;
                                             }
                                                 }
-                                                    *pco = ((tinNormalS&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttc2 ) ;
+                                                    *pco = ((tinFullS&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttc2 ) ;
     
                                                     }
                                                         case 3 : { pco = &cPassAccount    ; break ; }
@@ -1588,7 +1588,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                     switch( idWord ++ )
                                                     ZE( countT* , pco ) ;
                 
-                                                    __( !((tinNormalS&)tinBaseP).pEtScratch->strIsDigitsF( tinBaseP , psttc2 ) ) ;                           // REJECT IF NOT ALL DIGITS
+                                                    __( !((tinFullS&)tinBaseP).pEtScratch->strIsDigitsF( tinBaseP , psttc2 ) ) ;                           // REJECT IF NOT ALL DIGITS
                                                 {
                                                 FORsTRINGSiN2( pstt1w )
     
@@ -1607,9 +1607,9 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                 }
                                                     if( idWord ++ == 4 ) break ;
     
-                                                    else { __( ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc2 , T("double" "blind") ) ) ; }
+                                                    else { __( ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc2 , T("double" "blind") ) ) ; }
                                                     }
-                                                        *pco = ((tinNormalS&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttc2 , 36 ) ;
+                                                        *pco = ((tinFullS&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttc2 , 36 ) ;
         
                                                         }
                                                             case 3 : { pco = &cPassAccount    ; break ; }
@@ -1619,7 +1619,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                         switch( idWord )
                                                         ZE( countT* , pco ) ;
                     
-                                                        __( !((tinNormalS&)tinBaseP).pEtScratch->strIsDigitsF( tinBaseP , psttc2 , 36 ) ) ;                           // REJECT IF NOT ALL DIGITS
+                                                        __( !((tinFullS&)tinBaseP).pEtScratch->strIsDigitsF( tinBaseP , psttc2 , 36 ) ) ;                           // REJECT IF NOT ALL DIGITS
                                                     {
                                                     if( idWord <= 3 )
                                                 {
@@ -1637,13 +1637,13 @@ DONEdRIVENsERVER( tmcSmtpF )
                                     switch( idFormat )
     
                                     }
-                                        if( BlATHsTRING1 ) idFormat =  ((tinNormalS&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttc1 , 36 ) ; // RADIX 36 IS USED BECAUSE EMAIL ADDRESSES ARE CASE INSENSITIVE
+                                        if( BlATHsTRING1 ) idFormat =  ((tinFullS&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttc1 , 36 ) ; // RADIX 36 IS USED BECAUSE EMAIL ADDRESSES ARE CASE INSENSITIVE
                                     {
                                     FORsTRINGSiN1( pstt1w )
     
                                     // " ifcEMAIL_OLDfROM "
     
-                                    const countT cWords = ((tinNormalS&)tinBaseP).pEtScratch->strWordsOldF( tinBaseP , pstt1w , psttw1 , sttq , T(".") ) ; ___( pstt1w ) ;
+                                    const countT cWords = ((tinFullS&)tinBaseP).pEtScratch->strWordsOldF( tinBaseP , pstt1w , psttw1 , sttq , T(".") ) ; ___( pstt1w ) ;
                                     ZE( strokeS* , pstt1w ) ;
                                     count3S c3email ;
                                     //LOGrAW( T("parsing \"")+T(psttw1)+T("\"\r\n") ) ;
@@ -1653,27 +1653,27 @@ DONEdRIVENsERVER( tmcSmtpF )
                                 ZE( countT , cPassSubAccount ) ; // 2
                                 ZE( countT , cPassIdPenpal   ) ; // 1
         
-                                ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw1 , psttTo , sttq , sttAt , 1 ) ; ___( psttw1 ) ;                       // "123.456" or "123.456.789" (PLUS OPTIONAL double blind.[idFormat])
+                                ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw1 , psttTo , sttq , sttAt , 1 ) ; ___( psttw1 ) ;                       // "123.456" or "123.456.789" (PLUS OPTIONAL double blind.[idFormat])
                                                                                                       
                                 //sttq = ze ;
-                                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
-                                __( ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw1 , tIfc ) ) ;                                           // "ideafarm.com" == ?
-                                ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw1 , psttTo , sttq , sttAt , 2 ) ; ___( psttw1 ) ;                       // "ideafarm.com"
+                                ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
+                                __( ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw1 , tIfc ) ) ;                                           // "ideafarm.com" == ?
+                                ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw1 , psttTo , sttq , sttAt , 2 ) ; ___( psttw1 ) ;                       // "ideafarm.com"
                                 //sttq = ze ;
                             {
                             TELL( "parsing an ideafarm.com mail box" ) ;
 
                             //}
-                            //    ((tinNormalS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttTo , T(ifcEMAIL_HELLO) ) ; ___( psttTo ) ;
-                            //    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttTo ) ;
+                            //    ((tinFullS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttTo , T(ifcEMAIL_HELLO) ) ; ___( psttTo ) ;
+                            //    ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttTo ) ;
                             //{
-                            //if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttTo , T("hello@ideafarm.com") ) )
+                            //if( !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttTo , T("hello@ideafarm.com") ) )
                             //SUPPORT FOR hello@ideafarm.com COMMENTED OUT DUE TO DECISION TO NOT PROVIDE ANY FUNCTIONALITY TO ANONYMOUS INTERNET USERS
                             //CS:CODEsYNC: b750104 3a50104
                             //MAPPING GLOBAL ALIASES
                 
-                            ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttTo ) ; ___( psttTo ) ;                                     // "123@ideafarm.com"
-                            ((tinNormalS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttTo , 0 , T(TbLACKnEWlINE) , T("<>") ) ; ___( psttTo ) ;                                 // "123@IDEAFARM.COM"
+                            ((tinFullS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttTo ) ; ___( psttTo ) ;                                     // "123@ideafarm.com"
+                            ((tinFullS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttTo , 0 , T(TbLACKnEWlINE) , T("<>") ) ; ___( psttTo ) ;                                 // "123@IDEAFARM.COM"
                             }
                                 __( psttTo[ CSpREFIX - 1 + psttTo->idAdam ].idAdam - '>' ) ;                          // REJECT <@WINNIE:123@IDEAFARM.COM>
                                 __( psttTo[ CSpREFIX                        ].idAdam - '<' ) ;
@@ -1681,45 +1681,45 @@ DONEdRIVENsERVER( tmcSmtpF )
                             if( !POOP )
                             __( psttTo && psttTo->idAdam < 2 ) ;
                             __Z( psttTo ) ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttTo , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttTo ) ;                                  // "<123@IDEAFARM.COM>"
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttl ) ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttTo , psttl , sttq , sttColon , 2 ) ; ___( psttTo ) ;                     // " <123@IDEAFARM.COM> "
+                            ((tinFullS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttTo , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttTo ) ;                                  // "<123@IDEAFARM.COM>"
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttl ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttTo , psttl , sttq , sttColon , 2 ) ; ___( psttTo ) ;                     // " <123@IDEAFARM.COM> "
                             //sttq = ze ;
                             ZE( strokeS* , psttTo ) ;
                             ZE( boolT , bBadFormat ) ;
                 
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw2 ) ;
-                            __( ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw2 , tTo ) ) ;                                            // "to" == ?
-                            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw2 , psttw1 , sttq , sttSpace , 2 ) ; ___( psttw2 ) ;                    // "to"
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw2 ) ;
-                            __( ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw2 , tRcpt ) ) ;                                          // "rcpt" == ?
-                            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw2 , psttw1 , sttq , sttSpace , 1 ) ; ___( psttw2 ) ;                    // "rcpt"
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw2 ) ;
+                            __( ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw2 , tTo ) ) ;                                            // "to" == ?
+                            ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw2 , psttw1 , sttq , sttSpace , 2 ) ; ___( psttw2 ) ;                    // "to"
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw2 ) ;
+                            __( ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw2 , tRcpt ) ) ;                                          // "rcpt" == ?
+                            ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw2 , psttw1 , sttq , sttSpace , 1 ) ; ___( psttw2 ) ;                    // "rcpt"
                             //sttq = ze ;
                 
                             }
                                 break ;
                                 bQuit = 1 ;
-                                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttl ) ;
-                                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
+                                ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttl ) ;
+                                ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
                             {
-                            if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw1 , tQuit ) )
+                            if( !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw1 , tQuit ) )
                 
                             }
                                 break ;
-                                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttl ) ;
-                                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
+                                ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttl ) ;
+                                ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
                             {
-                            if( !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw1 , tData ) )
-                            ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw1 ) ; ___( psttw1 ) ;                                     // "rcpt to"
-                            ((tinNormalS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttw1 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw1 ) ;                                  // "RCPT TO"
-                            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw1 , psttl , sttq , sttColon , 1 ) ; ___( psttw1 ) ;                     // " RCPT TO "
+                            if( !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw1 , tData ) )
+                            ((tinFullS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw1 ) ; ___( psttw1 ) ;                                     // "rcpt to"
+                            ((tinFullS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttw1 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw1 ) ;                                  // "RCPT TO"
+                            ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw1 , psttl , sttq , sttColon , 1 ) ; ___( psttw1 ) ;                     // " RCPT TO "
                             //sttq = ze ;
                             TELL( "parsing a rcpt to line" ) ;
                 
                             }
                                 break ;
-                                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttl ) ;
+                                ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttl ) ;
                             {
                             if( POOP )
                             //etThread.ifcSayIF( T(nicNamePeer)+T(" ")+T(psttPeer)+T(": |")+T(psttl)+tcr , flSAY_APPEND | flSAY_LOG ) ;
@@ -1751,33 +1751,33 @@ DONEdRIVENsERVER( tmcSmtpF )
             
                             }
                                 }
-                                    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                                    ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
                                     }
                                         //LOGrAW( T("From value in body will not be checked because MAIL FROM command specified \"")+T(psttSource)+T("\"\r\n") ) ;
                                         bCheckFromInBody = 0 ;
                                     {
-                                    if( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("@paypal.com") , psttw ) )
-                                    ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw , psttSource ) ; ___( psttw ) ;
+                                    if( ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("@paypal.com") , psttw ) )
+                                    ((tinFullS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw , psttSource ) ; ___( psttw ) ;
                                     ZE( strokeS* , psttw ) ;
                                 {
                                 if( !POOP )
                 
                                 }
                                     if( POOP ) bNoSpammerSink = 1 ;
-                                    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
-                                    //__( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("chibyusa") , psttw ) ) ; //THERESA
-                                    //__( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("divachild") , psttw ) ) ; //THERESA
-                                    //__( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("thetinydot") , psttw ) ) ; //JULIA
-                                    //__( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("mail@tranxact.com") , psttw ) ) ; //DAVID
-                                    //__( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("ranchlife@js-net.com") , psttw ) ) ; //STEVE
-                                    //__( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("dduringer@juno.com") , psttw ) ) ; //DAN
-                                    //__( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("tduringer@juno.com") , psttw ) ) ; //MOM
-                                    ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw , psttSource ) ; ___( psttw ) ;
+                                    ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                                    //__( ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("chibyusa") , psttw ) ) ; //THERESA
+                                    //__( ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("divachild") , psttw ) ) ; //THERESA
+                                    //__( ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("thetinydot") , psttw ) ) ; //JULIA
+                                    //__( ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("mail@tranxact.com") , psttw ) ) ; //DAVID
+                                    //__( ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("ranchlife@js-net.com") , psttw ) ) ; //STEVE
+                                    //__( ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("dduringer@juno.com") , psttw ) ) ; //DAN
+                                    //__( ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("tduringer@juno.com") , psttw ) ) ; //MOM
+                                    ((tinFullS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw , psttSource ) ; ___( psttw ) ;
                                     ZE( strokeS* , psttw ) ;
                                 {
                                 if( !POOP )
                 
-                                ((tinNormalS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttSource , 0 , T(TbLACKnEWlINE) , T("<>") ) ; ___( psttSource ) ;                             // "FOO@bar.com"
+                                ((tinFullS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttSource , 0 , T(TbLACKnEWlINE) , T("<>") ) ; ___( psttSource ) ;                             // "FOO@bar.com"
                                 }
                                     __( psttSource[ CSpREFIX - 1 + psttSource->idAdam ].idAdam - '>' ) ;
                                     __( psttSource[ CSpREFIX                        ].idAdam - '<' ) ;
@@ -1792,7 +1792,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                         TN( tError , "relay: " ) ; tError += T(nicNamePeer) ;
                                         flError |= flERROR_RELAY ;
                                     {
-                                    if( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T(":") , psttSource ) )                                                             // REJECT <@WINNIE:FOO@bar.com>
+                                    if( ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T(":") , psttSource ) )                                                             // REJECT <@WINNIE:FOO@bar.com>
                                 {
                                 if( !POOP )
                             {
@@ -1800,27 +1800,27 @@ DONEdRIVENsERVER( tmcSmtpF )
                             ZE( boolT , bNoSpammerSink ) ;
                 
                             __Z( psttSource ) ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttSource , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttSource ) ;                              // "<FOO@bar.com>"
+                            ((tinFullS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttSource , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttSource ) ;                              // "<FOO@bar.com>"
                             etThread.delF( tinBaseP , psttl ) ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttSource , psttl , sttq , sttColon , 2 ) ; ___( psttSource ) ;                 // " <FOO@bar.com> "
+                            ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttSource , psttl , sttq , sttColon , 2 ) ; ___( psttSource ) ;                 // " <FOO@bar.com> "
                             //sttq = ze ;
                 
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw2 ) ;
-                            __( ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw2 , tFrom ) ) ;                                          // "from" == ?
-                            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw2 , psttw1 , sttq , sttSpace , 2 ) ; ___( psttw2 ) ;                    // "from"
-                            ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw2 ) ;
-                            __( ((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw2 , tMail ) ) ;                                          // "mail" == ?
-                            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw2 , psttw1 , sttq , sttSpace , 1 ) ; ___( psttw2 ) ;                    // "mail"
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw1 ) ;
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw2 ) ;
+                            __( ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw2 , tFrom ) ) ;                                          // "from" == ?
+                            ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw2 , psttw1 , sttq , sttSpace , 2 ) ; ___( psttw2 ) ;                    // "from"
+                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw2 ) ;
+                            __( ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw2 , tMail ) ) ;                                          // "mail" == ?
+                            ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw2 , psttw1 , sttq , sttSpace , 1 ) ; ___( psttw2 ) ;                    // "mail"
                             //sttq = ze ;
-                            ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw1 ) ; ___( psttw1 ) ;                                     // "mail from"
-                            ((tinNormalS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttw1 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw1 ) ;                                  // "MAIL FROM"
-                            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw1 , psttl , sttq , sttColon , 1 ) ; ___( psttw1 ) ;                     // " MAIL FROM "
+                            ((tinFullS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttw1 ) ; ___( psttw1 ) ;                                     // "mail from"
+                            ((tinFullS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttw1 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw1 ) ;                                  // "MAIL FROM"
+                            ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw1 , psttl , sttq , sttColon , 1 ) ; ___( psttw1 ) ;                     // " MAIL FROM "
                             TELL( "parsing the mail from line" ) ;
                             //sttq = ze ;
                 
                             }
-                                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttlLower ) ;
+                                ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttlLower ) ;
                                 }
                                     break ;
                                     pso->writeF( tinBaseP , "221 ok\r\n" ) ;
@@ -1828,7 +1828,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                     etThread.delF( tinBaseP , psttl ) ;
                                 {
                                 if( POOP || !etThread.strCompareF( tinBaseP , psttlLower , tQuit ) )
-                                ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttlLower , psttl ) ; ___( psttlLower ) ;        // " mail from : <foo@bar.com> "
+                                ((tinFullS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttlLower , psttl ) ; ___( psttlLower ) ;        // " mail from : <foo@bar.com> "
                                 ZE( strokeS* , psttlLower ) ;
                 
                                 //etThread.ifcSayIF( T(nicNamePeer)+T(" ")+T(psttPeer)+T(": |")+T(psttl)+tcr , flSAY_APPEND | flSAY_LOG ) ;
@@ -1920,7 +1920,7 @@ DONEdRIVENsERVER( tmcSmtpF )
             //etThread.ifcSayIF( T(nicNamePeer)+T(" ")+T(psttPeer)+tcr , flSAY_APPEND | flSAY_LOG ) ;
             TN( tLogClients , "///d/ideafarm.log.smtpClients" ) ;
             if( POOP ) { POOPR ; }
-            ((tinNormalS&)tinBaseP).pEtScratch->sockPsttHostF( tinBaseP , psttPeer , nicNamePeer ) ; ___( psttPeer ) ;
+            ((tinFullS&)tinBaseP).pEtScratch->sockPsttHostF( tinBaseP , psttPeer , nicNamePeer ) ; ___( psttPeer ) ;
             ZE( strokeS* , psttPeer ) ;
             { ZE( countT , idp ) ; pso->peerNameF( tinBaseP , idp , nicNamePeer ) ; }
             nicNameC nicNamePeer ;
@@ -2120,7 +2120,7 @@ voidT parseHeaderF( tinBaseS& tinBaseP , etherC& etherP , flagsT& flErrorP , swi
     }
         }
             etThread.delF( tinBaseP , psttEmailPenpalContainsAnd ) ;
-            bOkPenpalContainsAnd = !!((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , idf , sttq , psttEmailPenpalContainsAnd , psttSourceP ) ;
+            bOkPenpalContainsAnd = !!((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , idf , sttq , psttEmailPenpalContainsAnd , psttSourceP ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
 
@@ -2144,7 +2144,7 @@ voidT parseHeaderF( tinBaseS& tinBaseP , etherC& etherP , flagsT& flErrorP , swi
                 etThread.delF( tinBaseP , psttEmailPenpalContainsOr ) ;
                 bOkPenpalContainsOr = 1 ;
             {
-            if( ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , idf , sttq , psttEmailPenpalContainsOr , psttSourceP ) )
+            if( ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , idf , sttq , psttEmailPenpalContainsOr , psttSourceP ) )
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
 
@@ -2161,7 +2161,7 @@ voidT parseHeaderF( tinBaseS& tinBaseP , etherC& etherP , flagsT& flErrorP , swi
     }
         }
             etThread.delF( tinBaseP , psttEmailPenpalExactOr ) ;
-            if( !bOkPenpalExactOr && psttEmailPenpalExactOr ) bOkPenpalExactOr = !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttEmailPenpalExactOr , psttSourceP ) ;
+            if( !bOkPenpalExactOr && psttEmailPenpalExactOr ) bOkPenpalExactOr = !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttEmailPenpalExactOr , psttSourceP ) ;
             tPenpalToList += T(psttEmailPenpalExactOr)+T(*info.pStkEmailPenpalExactOr?"/":"") ;
             etThread.strConvertToLowerCaseF( tinBaseP , psttEmailPenpalExactOr ) ;
             *info.pStkEmailPenpalExactOr >> psttEmailPenpalExactOr ; ___( psttEmailPenpalExactOr ) ;
@@ -2182,7 +2182,7 @@ voidT parseHeaderF( tinBaseS& tinBaseP , etherC& etherP , flagsT& flErrorP , swi
 
     }
         etThread.delF( tinBaseP , psttEmailRelay ) ;
-        if( !bOkRelay && psttEmailRelay ) bOkRelay = !((tinNormalS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttEmailRelay , psttSourceP ) ;
+        if( !bOkRelay && psttEmailRelay ) bOkRelay = !((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttEmailRelay , psttSourceP ) ;
         *info.pStkEmailRelay >> psttEmailRelay ; ___( psttEmailRelay ) ;
         ZE( strokeS* , psttEmailRelay ) ;
     {
@@ -2236,7 +2236,7 @@ boolT bValidPenpalEmailF( tinBaseS& tinBaseP , etherC& etThread , strokeS*& pstt
         soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
@@ -2365,7 +2365,7 @@ boolT bValidIdPenpalF( tinBaseS& tinBaseP , etherC& etThread , const countT idAc
         soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
@@ -2408,7 +2408,7 @@ voidT queryEmailFromIdAccountF( tinBaseS& tinBaseP , strokeS*& psttP , const cou
         soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
@@ -2449,7 +2449,7 @@ boolT bValidSubaccountF( tinBaseS& tinBaseP , const countT cPassAccountSP , cons
         soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
         
         sock.connectF( tinBaseP , homeS::homeIF().idPortListServerEmailIdAccount ) ;
-        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
@@ -2486,7 +2486,7 @@ boolT bValidAccountF( tinBaseS& tinBaseP , const countT cPassAccountSP )
         soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
                                                             
         sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-        socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
     {
     ZE( flagsT , flagsMode ) ;
 {

@@ -32,12 +32,12 @@
 
             __( rc && rc != ERROR_MORE_DATA ) ;
             }
-                rc = ((tinNormalS&)tinBaseP).brcRaw ;
+                rc = ((tinFullS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , GetLastError() )
             {
             if( !bOk )
             ZE( countT , rc ) ;
-            bOk = ((tinNormalS&)tinBaseP).brcRaw ;
+            bOk = ((tinFullS&)tinBaseP).brcRaw ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , EnumServicesStatus( hsm , SERVICE_WIN32 , SERVICE_INACTIVE | SERVICE_ACTIVE , pInfo , sizeof pInfo , &cbMore , &cGot , &oshMore ) )
             ZE( DWORD , cGot ) ;
@@ -50,7 +50,7 @@
 
         __Z( hsm ) ;
         INCoShANDLES
-        SC_HANDLE hsm = (SC_HANDLE)((tinNormalS&)tinBaseP).brcRaw ;
+        SC_HANDLE hsm = (SC_HANDLE)((tinFullS&)tinBaseP).brcRaw ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
     {

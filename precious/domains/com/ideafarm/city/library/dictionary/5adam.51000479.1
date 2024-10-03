@@ -35,12 +35,12 @@ REST
                 ZE( strokeS* , psttr ) ;
         
                 }
-                    pbc += sizeof( tinNormalS ) ;
+                    pbc += sizeof( tinFullS ) ;
         
-                    etThread.strFuseF( tinBaseP , psttd , TF3(etherC::ifc_idAdamG_IF(tinBaseP),flFORMAT_null,9)+TP(((tinNormalS*)pTin)->postThreadName,0x10)+TP(ppostWhere[idWhere2],0x18)+T(((tinNormalS*)pTin)->postTell)+tc ) ;
+                    etThread.strFuseF( tinBaseP , psttd , TF3(etherC::ifc_idAdamG_IF(tinBaseP),flFORMAT_null,9)+TP(((tinFullS*)pTin)->postThreadName,0x10)+TP(ppostWhere[idWhere2],0x18)+T(((tinFullS*)pTin)->postTell)+tc ) ;
                     cThreads ++ ;
         
-                    countT idWhere2 = ((tinNormalS*)pTin)->idWhere - ifcIDwHERE_IFC + 1 < sizeof ppostWhere / sizeof ppostWhere[ 0 ] ? ((tinNormalS*)pTin)->idWhere - ifcIDwHERE_IFC + 1 : 0 ;
+                    countT idWhere2 = ((tinFullS*)pTin)->idWhere - ifcIDwHERE_IFC + 1 < sizeof ppostWhere / sizeof ppostWhere[ 0 ] ? ((tinFullS*)pTin)->idWhere - ifcIDwHERE_IFC + 1 : 0 ;
             
                     tinBaseS* pTin = (tinBaseS*)pbc ;
                 {
@@ -75,13 +75,13 @@ REST
                 "IFC" ,
                 "<invalid value>" ,
             {
-            static osTextT* ppostWhere[] = // 0010*.ifcIDwHERE AND func.12f0007.tinNormalS.strFuseF AND adam.c740104 MUST BE KEPT IN SYNC
+            static osTextT* ppostWhere[] = // 0010*.ifcIDwHERE AND func.12f0007.tinFullS.strFuseF AND adam.c740104 MUST BE KEPT IN SYNC
         
             etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT , timeN1 ) ;
         
-            __( cbts % sizeof( tinNormalS ) ) ;
+            __( cbts % sizeof( tinFullS ) ) ;
     
             ether.boxGetF( tinBaseP , pbts , cbts , tFile ) ;
             ZE( countT , cbts ) ;
@@ -90,7 +90,7 @@ REST
         //else                                           
         //if( !etThread.diskFileExistsF( tinBaseP , tFile ) ) etThread.osMessageBoxF( tinBaseP , tFile+T(" does not exist") ) ;
     
-        TN( tFile   , "" ) ; tFile   = T("///ideafarm/ephemeral/domains/com/ideafarm/6a40104/")+TF1(etThread.diskIdF(tinBaseP,T("///c")))+T("/tinNormalSet.")+TF1(idFile) ;
+        TN( tFile   , "" ) ; tFile   = T("///ideafarm/ephemeral/domains/com/ideafarm/6a40104/")+TF1(etThread.diskIdF(tinBaseP,T("///c")))+T("/tinFullSet.")+TF1(idFile) ;
         TN( tIdFile , "" ) ; tIdFile = TF1(idFile) ;
     {
     //U: for( countT idFile = 1 ; idFile <= 2 ; idFile ++ )

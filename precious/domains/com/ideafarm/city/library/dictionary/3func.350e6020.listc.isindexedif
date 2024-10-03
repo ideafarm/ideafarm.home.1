@@ -52,7 +52,7 @@
 
             puseC puseIndex( tinBaseP , idPoolUse ) ;
         {
-        if( idPoolUse == ifcIDpOOL_ADAMtEMP || ((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp )       // IF ifcIDpOOL_HOMEtEMP && !((tinNormalS&)tinBaseP).pag1->pPoolHomeTemp THEN CLEARLY IS NOT INDEXED
+        if( idPoolUse == ifcIDpOOL_ADAMtEMP || ((tinFullS&)tinBaseP).pag1->pPoolHomeTemp )       // IF ifcIDpOOL_HOMEtEMP && !((tinFullS&)tinBaseP).pag1->pPoolHomeTemp THEN CLEARLY IS NOT INDEXED
 
         const countT idPoolUse = !idStateSpace || idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ; // "!idStateSpace" ADDED WITHOUT ANALYSIS
 
@@ -60,7 +60,7 @@
  
         const osTextT* postMasterPool = PUSE.postNameF( tinBaseP ) ;
     {
-    if( ((tinNormalS&)tinBaseP).pPoolUse ) //I MIGHT BE CALLED LATE, WHEN !((tinNormalS&)tinBaseP).pPoolUse
+    if( ((tinFullS&)tinBaseP).pPoolUse ) //I MIGHT BE CALLED LATE, WHEN !((tinFullS&)tinBaseP).pPoolUse
     ZE( boolT , bYes ) ;
 
     _IO_

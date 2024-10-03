@@ -30,9 +30,9 @@
                     else                    { OStEXTC(  ostoSay , idGrabLayerHe , 0 ) ; }
                     if( postIdGrabLayerHe ) { OStEXTA(  ostoSay , postIdGrabLayerHe ) ; }
                                               OStEXTAK( ostoSay , ") " ) ;
-                                              OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi + 1 ] , 0 ) ;
+                                              OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi + 1 ] , 0 ) ;
                                               OStEXTAK( ostoSay , "(" ) ;
-                                              OStEXTC(  ostoSay , ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi + 2 ] , 0 ) ;
+                                              OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi + 2 ] , 0 ) ;
                                               OStEXTAK( ostoSay , " ;\r\n HE: " ) ;
                     else                    { OStEXTC(  ostoSay , idGrabLayer , 0   ) ; }
                     if( postIdGrabLayerMe ) { OStEXTA(  ostoSay , postIdGrabLayerMe ) ; }
@@ -56,7 +56,7 @@
                     : F(flagsCt) & flBASEgRABc_SHARElAYER
                     ? 1
                 boolT bComplainIf = bOnlyWo
-                countT idGrabLayerHe = ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi + 4 ] ;
+                countT idGrabLayerHe = ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi + 4 ] ;
 
                 }
                     }
@@ -87,17 +87,17 @@
                         OStEXTAK( ostoJealous , "(" ) ;
                         OStEXTC(  ostoJealous , pbgHe->idiFileCt , 0 ) ;
                         OStEXTAK( ostoJealous , "_9) ct at " ) ;
-                        OStEXTC9( ostoJealous , ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[offi+1] ) ;
+                        OStEXTC9( ostoJealous , ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[offi+1] ) ;
                         OStEXTAK( ostoJealous , "(" ) ;
-                        OStEXTC(  ostoJealous , ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[offi+2] , 0 ) ;
+                        OStEXTC(  ostoJealous , ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[offi+2] , 0 ) ;
                         OStEXTAK( ostoJealous , "\r\nHE is jealous of ME because this thread, while holding HIM, is now trying to grab ME.  HE: " ) ;
                         OStEXT(   ostoJealous , TUCK << 2 ) ;
                     {
-                    if( !( F(pbgHe->flagsCt) & flBASEgRABc_NOTjEALOUS ) && ((tinNormalS&)tinBaseP).pEther )
-                    baseGrabC* pbgHe = (baseGrabC*)((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi ] ;        //U:: THIS IS A BUG: pandle WILL NOT POINT TO A baseGrabC INSTANCE FOR TYPES (grabitC grabotC) OTHER THAN grabC
+                    if( !( F(pbgHe->flagsCt) & flBASEgRABc_NOTjEALOUS ) && ((tinFullS&)tinBaseP).pEther )
+                    baseGrabC* pbgHe = (baseGrabC*)((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi ] ;        //U:: THIS IS A BUG: pandle WILL NOT POINT TO A baseGrabC INSTANCE FOR TYPES (grabitC grabotC) OTHER THAN grabC
                 {
                 )
-                    && !( ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi ] & BM_HIGH )
+                    && !( ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi ] & BM_HIGH )
                     !( F(flagsCt) & flBASEgRABc_SNEAKYlOVER )
                 (
                 if
@@ -107,18 +107,18 @@
                 // THE CONCEPT OF JEALOUSY ALLOWS APPLICATION CODE TO AVOID DEADLOCKS BY FORCING APP CODE TO EXPLICITLY CONSTRUCT grabC INSTANCES AS NONjEALOUS
                 //20151117@1242: ADDED TO BLAMMO IF I AM BEGIN GRABBED BY A THREAD THAT ALREADY HOLDS A JEALOUS OTHER
             {
-            if( ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi ] && ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi ] != pandle )
+            if( ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi ] && ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ offi ] != pandle )
         {
-        for( countT offi = 0 ; offi < sizeof ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel / sizeof ((tinNormalS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ 0 ] ; offi += 5 )
-        boolT bOnlyWo = F(processGlobal2I._thirdC_flagsModeProcess2) & flMODEpROCESS2_GRABoNLYwO || F(((tinNormalS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_GRABoNLYwO ;
+        for( countT offi = 0 ; offi < sizeof ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel / sizeof ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ 0 ] ; offi += 5 )
+        boolT bOnlyWo = F(processGlobal2I._thirdC_flagsModeProcess2) & flMODEpROCESS2_GRABoNLYwO || F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_GRABoNLYwO ;
         //BLAMMO IF CALLING THREAD IS GRABBING BACKWARDS IN THE GRAB OBJECT SEQUENCE ; THE SET OF ALL GRAB OBJECTS IS WEAKLY ORDERED, AS CAN BE SEEN BY INSPECTING THIS CODE
     {
     if( !( F(flagsP) & flBASEgRABcrEGISTERbEGUN_RECURSING ) )
 
     }
-        ((tinNormalS&)tinBaseP).monitor.pPanLifiGrabbing[ 0 ] = pandle ;
-        ((tinNormalS&)tinBaseP).monitor.pPanLifiGrabbing[ 1 ] = idLineP  ;
-        ((tinNormalS&)tinBaseP).monitor.pPanLifiGrabbing[ 2 ] = idiFileP ;
+        ((tinFullS&)tinBaseP).monitor.pPanLifiGrabbing[ 0 ] = pandle ;
+        ((tinFullS&)tinBaseP).monitor.pPanLifiGrabbing[ 1 ] = idLineP  ;
+        ((tinFullS&)tinBaseP).monitor.pPanLifiGrabbing[ 2 ] = idiFileP ;
     {
     if( !( F(flagsCt) & flBASEgRABc_DOnOTrEGISTER ) )
 

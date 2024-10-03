@@ -13,11 +13,11 @@
         }
             thirdC::c_strncpyIF( tinBaseP , postP , pInfo->h_name , costax ) ;
             newF( tinBaseP , LF , postP , costax ) ; ___( postP ) ;
-            const countT costax = ((tinNormalS&)tinBaseP).brcRaw + 1 ;
+            const countT costax = ((tinFullS&)tinBaseP).brcRaw + 1 ;
             BOSdOnOTtEST( WHATgbo , strlen( pInfo->h_name ) )
         {
-        if( !((tinNormalS&)tinBaseP).bosFail && pInfo && pInfo->h_name && pInfo->h_name[ 0 ] )
-        hostent* pInfo = (hostent*)((tinNormalS&)tinBaseP).brcRaw ;
+        if( !((tinFullS&)tinBaseP).bosFail && pInfo && pInfo->h_name && pInfo->h_name[ 0 ] )
+        hostent* pInfo = (hostent*)((tinFullS&)tinBaseP).brcRaw ;
         //BOSpOOP
         BOSS( WHATsir , BOSoK , gethostbyaddr( (char*)&nicNameV4 , sizeof nicNameV4 , PF_INET ) ) //ON WINDOWS, THIS WILL HANG IF NICnAMElOCAL
         c_zReverseByteOrderF( tinBaseP , (byteT*)&nicNameV4 , sizeof nicNameV4 ) ;

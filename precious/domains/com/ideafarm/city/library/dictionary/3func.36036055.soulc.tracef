@@ -8,11 +8,11 @@
 
 
 }
-    ((tinNormalS&)tinBaseP).pag5->_soulC_grabTrace.ungrabF( tinBaseP ) ;
+    ((tinFullS&)tinBaseP).pag5->_soulC_grabTrace.ungrabF( tinBaseP ) ;
 
     }
         }
-            if( (*((tinNormalS&)tinBaseP).pag1->_soulC_.pStkTrace)( (countT)this ) ) ((tinNormalS&)tinBaseP).pag1->_soulC_.pStkTrace->extractF( 0 , tinBaseP ) ;
+            if( (*((tinFullS&)tinBaseP).pag1->_soulC_.pStkTrace)( (countT)this ) ) ((tinFullS&)tinBaseP).pag1->_soulC_.pStkTrace->extractF( 0 , tinBaseP ) ;
             flTrace = flTRACEsOULc_null ;
             LOGrAW( tSay ) ;
             TN( tSay , "" ) ; tSay = TP("soulC trace OFF: ",0x20)+TF1((countT)this)+(psttP?T(" ")+T(psttP):T(""))+T("\r\n") ;
@@ -23,7 +23,7 @@
     }
         flTrace |= flagsP ;
         }
-            ((tinNormalS&)tinBaseP).pag1->_soulC_.pStkTrace->sinkF( tinBaseP , countTC() , (countT)this ) ;
+            ((tinFullS&)tinBaseP).pag1->_soulC_.pStkTrace->sinkF( tinBaseP , countTC() , (countT)this ) ;
             LOGrAW( tSay ) ;
             TN( tSay , "" ) ; tSay = TP("soulC trace ON : ",0x20)+TF1((countT)this)+(psttP?T(" ")+T(psttP):T(""))+T("\r\n") ;
         {
@@ -31,8 +31,8 @@
     {
     if( F(flagsP) & flTRACEsOULc_ON )
 
-    if( !((tinNormalS&)tinBaseP).pag1->_soulC_.pStkTrace ) { BLAMMO ; }
-    ((tinNormalS&)tinBaseP).pag5->_soulC_grabTrace.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    if( !((tinFullS&)tinBaseP).pag1->_soulC_.pStkTrace ) { BLAMMO ; }
+    ((tinFullS&)tinBaseP).pag5->_soulC_grabTrace.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     _IO_
 

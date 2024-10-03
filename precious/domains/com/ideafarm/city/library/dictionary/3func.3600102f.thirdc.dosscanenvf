@@ -19,7 +19,7 @@
                 if( postValueP ) postValueP[ costv ] = 0 ;
                 c_memcpyIF( tinBaseP , postValueP , postv , costv ) ; // THIS COSTS CPU CYCLES BUT AVOIDS WASTING POOLoLD BYTES
                 newF( tinBaseP , LF , postValueP , costv + 1 ) ; ___( postValueP ) ;
-                countT costv = ((tinNormalS&)tinBaseP).brcRaw ;
+                countT costv = ((tinFullS&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , strlen( postv ) )
             {
             if( postv )
@@ -34,7 +34,7 @@
                     break ;
                     delF( tinBaseP , postv ) ;
                 {
-                if( ((tinNormalS&)tinBaseP).brcRaw <= cbTry || *postv != '%' )
+                if( ((tinFullS&)tinBaseP).brcRaw <= cbTry || *postv != '%' )
 
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , ExpandEnvironmentStrings( postKey , postv , cbTry ) )
@@ -75,14 +75,14 @@
             delF( tinBaseP , postValue ) ;
             }
                 OStEXTA( postValueP  , postValue ) ;
-                newF( tinBaseP , LF , postValueP , ((tinNormalS&)tinBaseP).brcRaw + 1 ) ; ___( postValueP ) ;
+                newF( tinBaseP , LF , postValueP , ((tinFullS&)tinBaseP).brcRaw + 1 ) ; ___( postValueP ) ;
                 BOSdOnOTtEST( WHATgbo , strlen( postValue ) )
             {
             if( !*this && postValue )
             }
                 if( POOP || *postValue == '%' ) delF( tinBaseP , postValue ) ; //U::THIS CHECK TO SEE WHETHER THE BUFFER IS MODIFIED MIGHT NOT BE NEEDED NOW THAT THE CODE HAS BEEN CORRECTED TO COMPARE THE RETURN VALUE WITH THE BUFFER SIZE
 
-                __( ((tinNormalS&)tinBaseP).brcRaw > CBbATCH ) ;
+                __( ((tinFullS&)tinBaseP).brcRaw > CBbATCH ) ;
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , ExpandEnvironmentStrings( postKey , postValue , CBcATCH ) )
 
@@ -102,13 +102,13 @@
 
         }
             OStEXTA( postValueP  , postValue ) ;
-            newF( tinBaseP , LF , postValueP , ((tinNormalS&)tinBaseP).brcRaw + 1 ) ; ___( postValueP ) ;
+            newF( tinBaseP , LF , postValueP , ((tinFullS&)tinBaseP).brcRaw + 1 ) ; ___( postValueP ) ;
             BOSdOnOTtEST( WHATgbo , strlen( postValue ) )
         {
         if( !*this && postValue )
         }
-            if( ((tinNormalS&)tinBaseP).brcRaw ) __NZ( postValue ) ;
-            __( ((tinNormalS&)tinBaseP).brcRaw && ((tinNormalS&)tinBaseP).brcRaw != ERROR_ENVVAR_NOT_FOUND ) ; 
+            if( ((tinFullS&)tinBaseP).brcRaw ) __NZ( postValue ) ;
+            __( ((tinFullS&)tinBaseP).brcRaw && ((tinFullS&)tinBaseP).brcRaw != ERROR_ENVVAR_NOT_FOUND ) ; 
             BOSdOnOTtEST( WHATgbo , DosScanEnv( postKey , (const osTextT**)&postValue ) ) //U: VERIFY THAT THIS SETS postValue TO A VALUE THAT WE SHOULD -NOT- DELETE                
         {
         if( !POOP )
@@ -119,7 +119,7 @@
     #ifdef __OS2__
 
     newF( tinBaseP , LF , postKey , costaKey ) ; ___( postKey ) ; // +1 NEEDED FOR OS/2; +3 NEEDED FOR NT
-    const countT costaKey = ((tinNormalS&)tinBaseP).brcRaw + 3 ;
+    const countT costaKey = ((tinFullS&)tinBaseP).brcRaw + 3 ;
     BOSdOnOTtEST( WHATgbo , strlen( postKeyP ) )
     ZE( osTextT* , postKey ) ;
     _IO_

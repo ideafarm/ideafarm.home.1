@@ -11,12 +11,12 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
-        pOdometer->cbWrite += ((tinNormalS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tinNormalS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
-        ((tinNormalS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
-        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ((tinFullS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
+        pOdometer->cbWrite += ((tinFullS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tinFullS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tinFullS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
+        ((tinFullS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
+        ((tinFullS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         bRead.ungrabF( tinBaseP ) ;
     
@@ -187,7 +187,7 @@
                         }
                             }
                                 }
-                                    //CONoUTrAW( TF1(((tinNormalS&)tinBaseP).monitor.idThread)+T(".- ")+T(((tinNormalS&)tinBaseP).postThreadName)+T("\r\n") ) ;
+                                    //CONoUTrAW( TF1(((tinFullS&)tinBaseP).monitor.idThread)+T(".- ")+T(((tinFullS&)tinBaseP).postThreadName)+T("\r\n") ) ;
                                     pEther->delF( tinBaseP , pbKey ) ;
                             
                                     }
@@ -201,7 +201,7 @@
                                             //if( !incv02AM( cIn ) && idHomeDisk == 2 ) //U::TO FIND A BUG
                                             //static countT cIn ;
         
-                                            //CONoUTrAW( TF1(((tinNormalS&)tinBaseP).monitor.idThread)+T(".")+T(((tinNormalS&)tinBaseP).postThreadName)+T(": whispering\r\n")+T(pczKeyTopSecret)+T("\r\n") ) ; //U::
+                                            //CONoUTrAW( TF1(((tinFullS&)tinBaseP).monitor.idThread)+T(".")+T(((tinFullS&)tinBaseP).postThreadName)+T(": whispering\r\n")+T(pczKeyTopSecret)+T("\r\n") ) ; //U::
                                             psSecret->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbKey , cbKey ) ;
                                             *psSecret << pczKeyTopSecret ;
                                             idptRelayTopSecretPeer >> *psTo ;
@@ -227,7 +227,7 @@
                 
                                     timeLathTopSecretPinSend.time2 = timeN2 ;
                                     timeLathTopSecretPinSend.time1 = timeN1 ;
-                                    //CONoUTrAW( TT(timeD1,timeD2)+T("\r\n")+TF1(((tinNormalS&)tinBaseP).monitor.idThread)+T(".+ ")+T(((tinNormalS&)tinBaseP).postThreadName)+T("\r\n") ) ;
+                                    //CONoUTrAW( TT(timeD1,timeD2)+T("\r\n")+TF1(((tinFullS&)tinBaseP).monitor.idThread)+T(".+ ")+T(((tinFullS&)tinBaseP).postThreadName)+T("\r\n") ) ;
                                     //CONoUTrAW( "request not ignored 2\r\n" ) ;
                                 {
                                 if( timeD2 || timeD1 > TOCK * 0x40 ) //THIS TEST ELIMINATES REDUNDANT JOB ORDERS TO SECRET SERVICE
@@ -289,10 +289,10 @@
     
         bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = ((tinNormalS&)tinBaseP).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tinNormalS&)tinBaseP).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tinFullS&)tinBaseP).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tinFullS&)tinBaseP).odoSockCbRead  ;
 
-//((tinNormalS&)tinBaseP).pc Utility[ 2 ] = idIn ;
+//((tinFullS&)tinBaseP).pc Utility[ 2 ] = idIn ;
 countT idIn = 1 + incv02AM( idInLath ) ;
 static countT idInLath ;
 //U:: TO FIND A BUG

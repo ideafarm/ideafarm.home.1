@@ -11,11 +11,11 @@ REST
 
 }
     etThread.diskWaitDirF( tinBaseP , hDirChange , ether , tDepository , flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) ;
-    ((tinNormalS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T("waiting for a deposit\r\n") ) ;
+    ((tinFullS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T("waiting for a deposit\r\n") ) ;
 
     }
         BOSdOnOTtEST( WHATgbo , getche() )
-        if( !((tinNormalS&)tinBaseP).brcRaw ) break ;
+        if( !((tinFullS&)tinBaseP).brcRaw ) break ;
         BOSdOnOTtEST( WHATgbo , kbhit() )
     {
     for(;;)
@@ -26,7 +26,7 @@ REST
             etThread.delF( tinBaseP , psttNameShort ) ;
 
             }
-                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , pstt1e ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , pstt1e ) ;
                 }
                     if( POOP ) { POOPR }
 
@@ -48,46 +48,46 @@ REST
                     etThread.osClipboardGrabF( tinBaseP ) ;
                     BOSdOnOTtEST( WHATgbo , getch() )
     
-                    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
                     tUrl = T(psttw) ;
-                    ((tinNormalS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T(" url: \"")+T(psttw)+T("\"\r\n") ) ;
-                    ((tinNormalS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttw , 0 , T(TbLACKnEWlINE) ) ;
-                    ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw , psttc2 , sttq , S1C(',') , 2 ) ; ___( psttw ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T(" url: \"")+T(psttw)+T("\"\r\n") ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttw , 0 , T(TbLACKnEWlINE) ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw , psttc2 , sttq , S1C(',') , 2 ) ; ___( psttw ) ;
 
-                    ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
                     tTo = T(psttw) ;
-                    ((tinNormalS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T(" to: \"")+T(psttw)+T("\"\r\n") ) ;
-                    ((tinNormalS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttw , 0 , T(TbLACKnEWlINE) ) ;
-                    ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw , psttc2 , sttq , S1C(',') , 1 ) ; ___( psttw ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T(" to: \"")+T(psttw)+T("\"\r\n") ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->strTrimF( tinBaseP , psttw , 0 , T(TbLACKnEWlINE) ) ;
+                    ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttw , psttc2 , sttq , S1C(',') , 1 ) ; ___( psttw ) ;
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                     ZE( strokeS* , psttw ) ;
 
-                    //((tinNormalS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T("entry: \"")+T(psttc2)+T("\"\r\n") ) ;
+                    //((tinFullS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T("entry: \"")+T(psttc2)+T("\"\r\n") ) ;
                 {
                 FORsTRINGSiN2( pstt1e )
-                ((tinNormalS&)tinBaseP).pEtScratch->delF( tinBaseP , posti ) ;
-                countT cLines = ((tinNormalS&)tinBaseP).pEtScratch->strWordsOldF( tinBaseP , pstt1e , T(posti) , sttq , T("\r\n") ) ; ___( pstt1e ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , posti ) ;
+                countT cLines = ((tinFullS&)tinBaseP).pEtScratch->strWordsOldF( tinBaseP , pstt1e , T(posti) , sttq , T("\r\n") ) ; ___( pstt1e ) ;
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , pstt1e ) ;
 
-                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tDoneAok+T(psttNameShort) , psttc1 ) ;
-                ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , psttc1 ) ; ___( posti ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tDoneAok+T(psttNameShort) , psttc1 ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , psttc1 ) ; ___( posti ) ;
                 ZE( countT   , costi ) ;
                 ZE( osTextT* , posti ) ;
             {
             else
             }
-                ((tinNormalS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tDoneFail+T(psttNameShort) , psttc1 ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tDoneFail+T(psttNameShort) , psttc1 ) ;
                 POOPR
             {
             if( POOP )
 
-            __( 1 != ((tinNormalS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("ideafarm.email.") , psttNameShort ) ) ;
+            __( 1 != ((tinFullS&)tinBaseP).pEtScratch->strIdF( tinBaseP , T("ideafarm.email.") , psttNameShort ) ) ;
             __( psttNameShort && !psttNameShort->idAdam ) ;
             __Z( psttNameShort ) ;
             __( bDir ) ;
     
-            ((tinNormalS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttNameShort ) ;
+            ((tinFullS&)tinBaseP).pEtScratch->strConvertToLowerCaseF( tinBaseP , psttNameShort ) ;
             }
                 }
                     etThread.strMakeF( tinBaseP , LF , psttNameShort , T("rejected") ) ; ___( psttNameShort ) ;
@@ -95,12 +95,12 @@ REST
                 {
                 if( !psttNameShort || !psttNameShort->idAdam )
 
-                ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttNameShort , psttc1 , sttq , S1C('/') , - 2 ) ; ___( psttNameShort ) ;
+                ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttNameShort , psttc1 , sttq , S1C('/') , - 2 ) ; ___( psttNameShort ) ;
                 etThread.delF( tinBaseP , psttNameShort ) ;
             {
             if( bDir )
             boolT bDir = psttNameShort && !psttNameShort->idAdam ;
-            ((tinNormalS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttNameShort , psttc1 , sttq , S1C('/') , - 1 ) ; ___( psttNameShort ) ;
+            ((tinFullS&)tinBaseP).pEtScratch->strWordF( tinBaseP , psttNameShort , psttc1 , sttq , S1C('/') , - 1 ) ; ___( psttNameShort ) ;
             strokeS sttq ;
             ZE( strokeS* , psttNameShort ) ;
     

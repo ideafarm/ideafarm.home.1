@@ -9,14 +9,14 @@
 
 }
     }
-        DEL( ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pSgnDone_tmAnimateSadamsOnPaperF ) ;
-        while( -- cGrabs ) ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-        ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pSgnDone_tmAnimateSadamsOnPaperF->waitF( tinBaseP ) ;
-        countT cGrabs = ((tinNormalS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP , flGRABcUNGRABf_ALLrECURSIONS ) ;
-        ((tinNormalS&)tinBaseP).pag1->_pulpOldC_.flagsMode |= flPAPERmODEi_ANIMATIONtHREADfIRED ;
-        ((tinNormalS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        DEL( ((tinFullS&)tinBaseP).pag1->_paperOldC_.pSgnDone_tmAnimateSadamsOnPaperF ) ;
+        while( -- cGrabs ) ((tinFullS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ((tinFullS&)tinBaseP).pag1->_paperOldC_.pSgnDone_tmAnimateSadamsOnPaperF->waitF( tinBaseP ) ;
+        countT cGrabs = ((tinFullS&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP , flGRABcUNGRABf_ALLrECURSIONS ) ;
+        ((tinFullS&)tinBaseP).pag1->_pulpOldC_.flagsMode |= flPAPERmODEi_ANIMATIONtHREADfIRED ;
+        ((tinFullS&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    if( ((tinNormalS&)tinBaseP).pag1->_paperOldC_.pSgnDone_tmAnimateSadamsOnPaperF )
+    if( ((tinFullS&)tinBaseP).pag1->_paperOldC_.pSgnDone_tmAnimateSadamsOnPaperF )
 {
 /*1*/voidT paperOldC::fireAnimatorIfIF( tinBaseS& tinBaseP )/*1*/
 

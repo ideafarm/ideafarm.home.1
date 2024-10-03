@@ -665,13 +665,13 @@
 
                 sock.writeF( tinBaseP , (osTextT*)tValidationRequest , tValidationRequest.csF( tinBaseP ) ) ;
                 sock.connectF( tinBaseP , 443 , nnPayPal ) ;
-                socketC sock( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+                socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
             {
             if( nnPayPal ) while( !bGot && cTries -- )
             sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             countT cTries = TUCK >> 4 ;
 
-            nicNameC nnPayPal = socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , T(bSandbox?"www.sandbox.paypal.com":"www.paypal.com") ) ;
+            nicNameC nnPayPal = socketC::nicNameIF( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , T(bSandbox?"www.sandbox.paypal.com":"www.paypal.com") ) ;
         
             SCOOPS
         {

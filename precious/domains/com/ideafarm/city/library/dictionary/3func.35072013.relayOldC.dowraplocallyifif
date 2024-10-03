@@ -304,7 +304,7 @@
 
                                 }
                                     LOGrAW7( bAlt ? "could not assign a mediator because -->" : "could not assign a mediator because <--" , swsIdptMediatorP , " " , swsIdptMediatorAltP , " cells of " , idAdamMediator , " are registered\r\n" ) ;
-                                    ((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T(bAlt?"could not assign a mediator because --> ":"could not assign a mediator because <-- ")+TF2(swsIdptMediatorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(swsIdptMediatorAltP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" cells of ")+TF2(idAdamMediator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" are registered") ) ;
+                                    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T(bAlt?"could not assign a mediator because --> ":"could not assign a mediator because <-- ")+TF2(swsIdptMediatorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(swsIdptMediatorAltP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" cells of ")+TF2(idAdamMediator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" are registered") ) ;
                                 {
                                 if( !idptm )
                                 swsm.randomF( tinBaseP , pb_idptm ) ;
@@ -316,12 +316,14 @@
                                         : 1
                                         ? 0
                                     : swsIdptMediatorP
-                                    ? ( ((tinNormalS&)tinBaseP).ranUni % TUCK ) / TUCK * 2
+                                    ? ( ((tinFullS&)tinBaseP).ranUni % TUCK ) / TUCK * 2
                                 const boolT bAlt = swsIdptMediatorP && swsIdptMediatorAltP
                                 idAdamMediatorP = idAdamMediator ;
     
                                 swsIdptMediatorAltP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                                 swsIdptMediatorP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+
+                                if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
                             {
                             else if( !*(countT*)pb_idPort )
                             if( !pb_time2 ) break ;

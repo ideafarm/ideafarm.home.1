@@ -436,9 +436,9 @@ workS::workS( tinBaseS& tinBaseP , etherC& etherP ) :
 
     }
         //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("destroying a book [idf,cFlavors]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        //((tinNormalS&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+        //((tinFullS&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
         DELzOMBIE( pBooks ) ;
-        //((tinNormalS&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+        //((tinFullS&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
         booksC* pBooks = (booksC*)&(countT&)swBooksByIdjContainerIdjUri ;
         lever_pbIdjContainerIdjUri = (const byteT*)swBooksByIdjContainerIdjUri.leverF( tinBaseP , idf ) ;
         //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("destroying a book [idf,cFlavors]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;

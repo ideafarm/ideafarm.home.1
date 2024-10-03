@@ -11,12 +11,12 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
-        pOdometer->cbWrite += ((tinNormalS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tinNormalS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*((tinNormalS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
-        ((tinNormalS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
-        ((tinNormalS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ((tinFullS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
+        pOdometer->cbWrite += ((tinFullS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tinFullS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tinFullS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
+        ((tinFullS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
+        ((tinFullS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         bWrite.ungrabF( tinBaseP ) ;
     
@@ -181,8 +181,8 @@
     
         bWrite.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = ((tinNormalS&)tinBaseP).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tinNormalS&)tinBaseP).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tinFullS&)tinBaseP).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tinFullS&)tinBaseP).odoSockCbRead  ;
     
         _IO_
     

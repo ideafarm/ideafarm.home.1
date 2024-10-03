@@ -18,19 +18,19 @@
     }
         listDad.walkF( tinBaseP , idGrabLayerP ) ;
         listC& listDad = *(listC*)hListDadP.osF( ifcIDtYPEhANDLE_LISTING ) ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_CALLERgRABBEDrOOT ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_CALLERgRABBEDrOOT ;
     {
     else
     }
         flagsRC |= walkIF( tinBaseP , hListDadP , pczWalk , flLISToPEN_IFeXISTS , idGrabLayerP ) ;
-        ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+        ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
     {
     if( *pczWalk )
 
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] = (countT)&flagsRC ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flagsP ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = cDoomed ;
-    ((tinNormalS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteListCBF ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] = (countT)&flagsRC ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flagsP ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = cDoomed ;
+    ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkDeleteListCBF ;
     PUSHtINaRGS
 
     grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
@@ -57,6 +57,8 @@
         __( !*pczKidP ) ;
         if( POOP ) return flagsRC ;
         __Z( pczKidP ) ;
+        if( POOP ) return flagsRC ;
+        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return flagsRC ;
     {
     IFbEcAREFUL

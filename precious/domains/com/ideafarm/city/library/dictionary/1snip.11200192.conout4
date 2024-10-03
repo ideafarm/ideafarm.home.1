@@ -16,7 +16,7 @@
         OStEXTC( ostoBuf , c1P , 0 ) ;                                                                                    \
         OStEXTA( ostoBuf , postBeforeP ) ;                                                                                \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
-        OStEXTA( ostoBuf , ((tinNormalS&)tinBaseP).postThreadName ) ;                                                                        \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
         OStEXTC( ostoBuf , osPidIF( tinBaseP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \

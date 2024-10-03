@@ -78,7 +78,7 @@
 
                 }
                     //etherP.traceF( tinBaseP , T("deleted pBarryUtility") ) ;
-                    DELzOMBIE( ((tinNormalS&)tinBaseP).pBarryUtility ) // USED TO DELETE HERE BUT REMOVED TO SUPPORT bRepeat
+                    DELzOMBIE( ((tinFullS&)tinBaseP).pBarryUtility ) // USED TO DELETE HERE BUT REMOVED TO SUPPORT bRepeat
                     //etherP.traceF( tinBaseP , T("deleting pBarryUtility") ) ;
                 {
                 if( bDeleteBarryAsZombie )
@@ -346,7 +346,7 @@
                                                         POOPR ;
                                                     {
                                                     if( POOP )
-                                                    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbLink , cbLink , tBox ) ; ___( pbLink ) ;
+                                                    ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbLink , cbLink , tBox ) ; ___( pbLink ) ;
                                                     SCOOPS
                                                 {
                                                 IFsCRATCH
@@ -392,7 +392,7 @@
                                                         POOPR
                                                     {
                                                     if( POOP )
-                                                    ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postNote , costNote , psttp ) ; ___( postNote ) ;
+                                                    ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postNote , costNote , psttp ) ; ___( postNote ) ;
                                                     SCOOPS
                                                 {
                                                 IFsCRATCH
@@ -427,7 +427,7 @@
                                             {
                                             if( POOP )
 
-                                            ((tinNormalS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbLink , cbLink , tBox ) ; ___( pbLink ) ;
+                                            ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbLink , cbLink , tBox ) ; ___( pbLink ) ;
                                             ZE( countT , cbLink ) ;
                                             ZE( byteT* , pbLink ) ;
 
@@ -543,7 +543,7 @@
                         {
                         else
                         }
-                            else                                               B(brc).hashF( tinBaseP , jbrc , *((tinNormalS&)tinBaseP).pBarryUtility , stHashCollisions ) ;
+                            else                                               B(brc).hashF( tinBaseP , jbrc , *((tinFullS&)tinBaseP).pBarryUtility , stHashCollisions ) ;
                             if( B(brc).idType != ifcIDtYPEbRANCHs_strokeSstr ) B(brc).hashv = 0xeeeeeeee ; //U::TO FIND A BUG
 
                             BSP( brc , jbrc ) ;
@@ -570,11 +570,11 @@
                         {
 
                         //}
-                        //    //LOGrAW5( "loadIF [idThread,idBranch]:    " , ((tinNormalS&)tinBaseP).monitor.idThread , "    " , idBranch , "\r\n" ) ;
+                        //    //LOGrAW5( "loadIF [idThread,idBranch]:    " , ((tinFullS&)tinBaseP).monitor.idThread , "    " , idBranch , "\r\n" ) ;
                         //
                         //    //etherP.traceF( tinBaseP , T("loadIF [idBranch]: ")+TF2(idBranch,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , flTRACE_null , ifcIDtRACEdIVERT_8 ) ;
                         //
-                        //    //if( !( F(((tinNormalS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_INoUTcHATTER ) ) { THREADmODE3oN( flTHREADmODE3_INoUTcHATTER ); }
+                        //    //if( !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_INoUTcHATTER ) ) { THREADmODE3oN( flTHREADmODE3_INoUTcHATTER ); }
                         //{
                         //if( !offPass && idBranch >= 0x13aa0 ) //U:: TO FIND A BUG, WE TRACE: loadIF / setting hashv / [idBranch]: aaa31
             
@@ -637,11 +637,11 @@
                     }
                         bDeleteBarryAsZombie = 1 ;
                         //etherP.traceF( tinBaseP , T("constructed  barryC instance") ) ;
-                        ((tinNormalS&)tinBaseP).pBarryUtility = new( 0 , tinBaseP , pb_barryHash , sizeof pb_barryHash ) barryC( tinBaseP ) ; //TO ALLOW APP TO PRECONSTRUCT barryC
+                        ((tinFullS&)tinBaseP).pBarryUtility = new( 0 , tinBaseP , pb_barryHash , sizeof pb_barryHash ) barryC( tinBaseP ) ; //TO ALLOW APP TO PRECONSTRUCT barryC
                         //etherP.traceF( tinBaseP , T("constructing barryC instance") ) ;
                     {
                     else
-                    if( ((tinNormalS&)tinBaseP).pBarryUtility ) ((tinNormalS&)tinBaseP).pBarryUtility->setF( tinBaseP ) ; // ALLOW CALLER TO PRECONSTRUCT barryC INSTANCE SO THAT INABILITY TO CT CAN BE DETECTED EARLIER (barryC HAS A HUGE MEMORY FOOTPRINT)
+                    if( ((tinFullS&)tinBaseP).pBarryUtility ) ((tinFullS&)tinBaseP).pBarryUtility->setF( tinBaseP ) ; // ALLOW CALLER TO PRECONSTRUCT barryC INSTANCE SO THAT INABILITY TO CT CAN BE DETECTED EARLIER (barryC HAS A HUGE MEMORY FOOTPRINT)
                 {
                 if( !offPass )
                 ZE( boolT , bDeleteBarryAsZombie ) ;

@@ -11,7 +11,7 @@
     }
         }
             delF( tinBaseP , pbOut ) ;
-            if( !bSent ) boxPutF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/out/dat.")+TF3(flags1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idCitizenHirerI,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time2,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idComputer,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(((tinNormalS&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) , pbOut , cbOut ) ;
+            if( !bSent ) boxPutF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/out/dat.")+TF3(flags1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idCitizenHirerI,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time2,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idComputer,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(((tinFullS&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) , pbOut , cbOut ) ;
     
             }
                 }
@@ -25,7 +25,7 @@
                     sOut.writeMsgF( tinBaseP , pbOut , cbOut ) ;
     
                     sOut.connectF( tinBaseP , ifcPORToLD1rIVERrESERVED ) ;
-                    socketC sOut( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                    socketC sOut( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                 {
                 SCOOPS
             {
@@ -70,7 +70,7 @@
             ZE( countT , time1 ) ;
             }
                 if( POOP ) POOPR
-                nicName = socketC::nicNameIF( tinBaseP , *((tinNormalS&)tinBaseP).pEtScratch ) ;
+                nicName = socketC::nicNameIF( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch ) ;
                 SCOOPS
             {
             IFsCRATCH
@@ -139,7 +139,7 @@
         ZE( const countT* , pcResourceId ) ;
         ZE( countT , ze ) ;
     {
-    if( ((tinNormalS&)tinBaseP).pEtScratch )
+    if( ((tinFullS&)tinBaseP).pEtScratch )
 
     _IO_
 

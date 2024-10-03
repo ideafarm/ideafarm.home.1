@@ -11,7 +11,7 @@
     return sgn ;
 
     }
-        if( !((tinNormalS&)tinBaseP).pPoolUse ) pcpP = 0 ;
+        if( !((tinFullS&)tinBaseP).pPoolUse ) pcpP = 0 ;
 
         ;
                 : 0
@@ -67,7 +67,7 @@
             PUSE.newF( tinBaseP , LF , *(byteT**)&pcpP , sizeof( countT ) * ( ( 1 + !bSignedP ) + ccMax ) ) ; ___( pcpP ) ;
         {
         else
-        if( !((tinNormalS&)tinBaseP).pPoolUse ) pcpP = pcpi ;
+        if( !((tinFullS&)tinBaseP).pPoolUse ) pcpP = pcpi ;
     {
     if( !POOP )
     ZE( sCountT , sgn ) ;
@@ -83,7 +83,7 @@
 
     }
         if( POOP ) return 0 ;
-        __( !((tinNormalS&)tinBaseP).pPoolUse && ((tinNormalS&)tinBaseP).monitor.idThread != 1 ) ;
+        __( !((tinFullS&)tinBaseP).pPoolUse && ((tinFullS&)tinBaseP).monitor.idThread != 1 ) ;
         __Z( pcp2P ) ;
         __Z( pcp1P ) ;
         __NZ( pcpP ) ;

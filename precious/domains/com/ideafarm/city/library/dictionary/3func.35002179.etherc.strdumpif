@@ -8,7 +8,7 @@
 
 
 }
-    //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("$$$$")+T(psttP)+T("$$$$") ) ; //U:: TO FIND A BUG
+    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("$$$$")+T(psttP)+T("$$$$") ) ; //U:: TO FIND A BUG
     ether.delF( tinBaseP , psttRead ) ;
     }
         ether.strFuseF( tinBaseP , psttP , tle ) ;
@@ -19,7 +19,7 @@
         if( psttRead )
     {
     if( bPerLineP && ( cbP + cPadSave ) % bPerLineP )
-    //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("@@@@")+T(psttP)+T("@@@@") ) ; //U:: TO FIND A BUG
+    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("@@@@")+T(psttP)+T("@@@@") ) ; //U:: TO FIND A BUG
 
     }
         }
@@ -81,7 +81,7 @@
         if( pbP < pbe )
         ++ idb ;
 
-        //((tinNormalS&)tinBaseP).pEther->traceF( tinBaseP , T("!!!!")+T(psttP)+T("!!!!") ) ; //U:: TO FIND A BUG
+        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("!!!!")+T(psttP)+T("!!!!") ) ; //U:: TO FIND A BUG
     {
     while( pbP < pbe || cPad )
     ZE( countT , idb ) ;
@@ -106,14 +106,14 @@
     countT cLineEnds   = bPerLineP   ? ( cbP + cPad ) / bPerLineP   + ( cbP + cPad ) % bPerLineP   : 0 ;
     countT cPadSave    = cPad ;
     countT cPad        = bPerLineP   ? ( bPerLineP - cbP % bPerLineP ) % bPerLineP : 0 ;
-    etherC& ether = *((tinNormalS&)tinBaseP).pEther ;
+    etherC& ether = *((tinFullS&)tinBaseP).pEther ;
 
     _IO_
     
     }
         if( POOP ) return ;
         FV(flSTRdUMP,flagsP) ;
-        __( !((tinNormalS&)tinBaseP).pEther ) ;
+        __( !((tinFullS&)tinBaseP).pEther ) ;
         __( bReadableP && ( bReadableP < 0x20 || bReadableP > 0x7f ) ) ;
         __( bPerGrouprP && bPerLineP % bPerGrouprP ) ;
         __( bPerGrouprP && !bReadableP ) ;
