@@ -490,13 +490,13 @@
 
 
                     if( thirdC::third_idPhaseProcess_IF() < ifcIDpHASEpROCESS_WORKINGwINDOWtINgONE ) thirdC::third_idPhaseProcess_IF() = ifcIDpHASEpROCESS_WORKINGwINDOWtINgONE ;
-                    DEL( ((tinFullS&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
-                    DEL( ((tinFullS&)tinBaseP).pEtScratch ) ;
+                    DEL( ((tin9S&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
+                    DEL( ((tin9S&)tinBaseP).pEtScratch ) ;
 
                     bOkToUseIfcObjects = 0 ; hWindow.closeIfF() ;
                     FIREmYSELF ;
 
-                    DEL( ((tinFullS&)tinBaseP).pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
+                    DEL( ((tin9S&)tinBaseP).pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
                     }
                         THREADmODE2rESTORE
                         }
@@ -509,24 +509,24 @@
                                         case ifcIDtYPErECYCLE_stackC       : { DEL(       *(stackC**)&pObject ) ; break ; }
                                         case ifcIDtYPErECYCLE_soulC        : { DEL(        *(soulC**)&pObject ) ; break ; }
                                     {
-                                    switch( *((tinFullS&)tinBaseP).pczl_pSwsRecycle )
+                                    switch( *((tin9S&)tinBaseP).pczl_pSwsRecycle )
                                 {
-                                if( ((tinFullS&)tinBaseP).pczl_pSwsRecycle && pObject )
+                                if( ((tin9S&)tinBaseP).pczl_pSwsRecycle && pObject )
 
-                                //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , ((tinFullS&)tinBaseP).pczl_pSwsRecycle ) ; //U::
+                                //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , ((tin9S&)tinBaseP).pczl_pSwsRecycle ) ; //U::
             
-                                *((tinFullS&)tinBaseP).pSwsRecycle >> *(countT*)&pObject ;
+                                *((tin9S&)tinBaseP).pSwsRecycle >> *(countT*)&pObject ;
                                 ZE( voidT* , pObject ) ;
                             {
-                            while( *((tinFullS&)tinBaseP).pSwsRecycle )
+                            while( *((tin9S&)tinBaseP).pSwsRecycle )
             
-                            ((tinFullS&)tinBaseP).pczl_pSwsRecycle = (countT*)((tinFullS&)tinBaseP).pSwsRecycle->leverF( tinBaseP , idf ) ;
+                            ((tin9S&)tinBaseP).pczl_pSwsRecycle = (countT*)((tin9S&)tinBaseP).pSwsRecycle->leverF( tinBaseP , idf ) ;
                         {
                         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                        countT cFlavors = ((tinFullS&)tinBaseP).pSwsRecycle->cFlavorsF( tinBaseP ) ;
+                        countT cFlavors = ((tin9S&)tinBaseP).pSwsRecycle->cFlavorsF( tinBaseP ) ;
                         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                     {
-                    if( ((tinFullS&)tinBaseP).pSwsRecycle )
+                    if( ((tin9S&)tinBaseP).pSwsRecycle )
                     //PSEUDODUPLICATE CODE: 1450002 12f0002 1030003 1020171
 
                     }
@@ -594,7 +594,7 @@
                              static boolT bDone ;
 
                             ((backOldC*)pRootI)->freshToolsMousePositionF( tinBaseP ) ;
-                            //SetCursorPos( winOsColIF( ((tinFullS&)tinBaseP).brcRaw / 2 ) , winOsRowIF( 1 ) ) ;
+                            //SetCursorPos( winOsColIF( ((tin9S&)tinBaseP).brcRaw / 2 ) , winOsRowIF( 1 ) ) ;
                             //BOSpOOP
                             //BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CXSCREEN ) )
     
@@ -635,9 +635,9 @@
                     if( idMyNewState == WA_INACTIVE )
 
                     countT hWindowOther = p2P ;
-                    boolT bWasMinimized = ((tinFullS&)tinBaseP).brcRaw ;
+                    boolT bWasMinimized = ((tin9S&)tinBaseP).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , HIWORD( p1P ) )
-                    countT idMyNewState = ((tinFullS&)tinBaseP).brcRaw ;
+                    countT idMyNewState = ((tin9S&)tinBaseP).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , LOWORD( p1P ) )
                     TELL( "winMessageHandlerWorkF: WM_ACTIVATE" )
                 {
@@ -716,10 +716,10 @@
                                         
                             BOSpOOP
                             BOS( WHATgbo , BOSoK , AdjustWindowRect( &info , WS_OVERLAPPEDWINDOW , 0 ) )
-                            info.bottom = ((tinFullS&)tinBaseP).brcRaw - 1 ;
+                            info.bottom = ((tin9S&)tinBaseP).brcRaw - 1 ;
                             BOSpOOP
                             BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CYSCREEN ) )
-                            info.right  = ((tinFullS&)tinBaseP).brcRaw - 1 ;
+                            info.right  = ((tin9S&)tinBaseP).brcRaw - 1 ;
                             BOSpOOP
                             BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CXSCREEN ) )
                             info.top    = 0 ;
@@ -764,12 +764,12 @@
                 case WM_QUERYENDSESSION :
             {
             switch( idCmdP )
-            tinBaseS* pTinDebug3 = &tinBaseP ; //U::
+            tin0S* pTinDebug3 = &tinBaseP ; //U::
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
 
             //WWiNIT
 
-            tinBaseS* pTinDebug2 = &tinBaseP ; //U::
+            tin0S* pTinDebug2 = &tinBaseP ; //U::
 
             //}
             //    LOGrAW( tn ) ;
@@ -866,7 +866,7 @@
             etherC&  etThread   = *pEtThread ;
             etherC*& pEtThread  = etherC::ether_pMainRefsIF( tinBaseP )->pEtThread ;
             etherC&  ether      = etherC::ether_pMainRefsIF( tinBaseP )->ether ;
-            //tinBaseS&    tinBaseP      = etherC::ether_pMainRefsIF( tinBaseP )->tin ; //THIS IS OBSOLETE; REMOVE IT
+            //tin0S&    tinBaseP      = etherC::ether_pMainRefsIF( tinBaseP )->tin ; //THIS IS OBSOLETE; REMOVE IT
             if( &tinBaseP != &etherC::ether_pMainRefsIF( tinBaseP )->tinBase ) BLAMMO ;
             TELL( "winMessageHandlerWorkF: setting up" )
         {
@@ -902,7 +902,7 @@
             {
             switch( idCmdP )
     
-            TELL( "winMessageHandlerWorkF: defaulting because ((tinFullS&)tinBaseP).pag1->_etherC_.pMainRefs is 0" )
+            TELL( "winMessageHandlerWorkF: defaulting because ((tin9S&)tinBaseP).pag1->_etherC_.pMainRefs is 0" )
             thirdC& thThread = etherC::etThreadIF( tinBaseP ) ;
         {
         if( !etherC::ether_pMainRefsIF( tinBaseP ) ) //U::
@@ -930,7 +930,7 @@
     //
     //    OStEXTAK( ostoBuf , "\r\n" ) ;
     //    OStEXTC( ostoBuf , (countT)&tinBaseP , 0 ) ;
-    //    OStEXTAK( ostoBuf , "win handler ref tinFullS at " ) ;
+    //    OStEXTAK( ostoBuf , "win handler ref tin9S at " ) ;
     //    OStEXT( ostoBuf , 0x100 )
     //{
     //U::

@@ -31,14 +31,14 @@ TODO
                     etPrime.osSleepF( tinBaseP , TUCK * 0x40 ) ;
                     DEL( psosc ) ;
                     ether.strokeF( tinBaseP , T(".") ) ;
-                    *((tinFullS&)tinBaseP).zEtScratch = 0 ;
+                    *((tin9S&)tinBaseP).zEtScratch = 0 ;
                 {
-                if( *((tinFullS&)tinBaseP).zEtScratch )
+                if( *((tin9S&)tinBaseP).zEtScratch )
                 psosc->connectF( tinBaseP , ifcPORToLD2_NEWS , nnDns ) ;
             {
             else
             if( !psosc ) break ;
-            psosc = new( 0 , tinBaseP , LF ) socketC( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
+            psosc = new( 0 , tinBaseP , LF ) socketC( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
         {
         while( !psosc && !ether && !etPrime )
         etherC& etPrime = etherC::etPrimeIF( tinBaseP ) ;
@@ -72,7 +72,7 @@ sgnDone_tm_NewsC_chatF( tinBaseP , TAG( TAGiDnULL ) ) ,
 bChatEnding( 0 ) ,
 bFired( 0 ) ,
 ether( etherP ) ,
-/*1*/newsC::newsC( tinBaseS& tinBaseP , etherC& etherP ) :/*1*/
+/*1*/newsC::newsC( tin0S& tinBaseP , etherC& etherP ) :/*1*/
 /**/
 */
 /*
@@ -80,13 +80,13 @@ ether( etherP ) ,
 }
     sgnDone_tm_NewsC_chatF.waitF( tinBaseP ) ;
     }
-        ((tinFullS&)tinBaseP).zEtScratch->osSleepF( tinBaseP , TUCK * 0x40 ) ;
-        *((tinFullS&)tinBaseP).zEtScratch = 0 ;
+        ((tin9S&)tinBaseP).zEtScratch->osSleepF( tinBaseP , TUCK * 0x40 ) ;
+        *((tin9S&)tinBaseP).zEtScratch = 0 ;
         socksk.connectF( tinBaseP , ifcPORToLD2_NEWS ) ;
-        socketC socksk( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC socksk( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
     {
     while( !bChatEnding )
-    *((tinFullS&)tinBaseP).zEtScratch = 0 ;
+    *((tin9S&)tinBaseP).zEtScratch = 0 ;
 
     DEL( psoss ) ;
     if( psoss ) psoss->stopWaitingF( tinBaseP ) ;
@@ -146,7 +146,7 @@ DONE( tm_newsC_sessionF )
 }
     cSessions -- ;
     DEL( pso ) ;
-    *((tinFullS&)tinBaseP).zEtScratch = 0 ;
+    *((tin9S&)tinBaseP).zEtScratch = 0 ;
     }
         }
             }
@@ -176,11 +176,11 @@ DONE( tm_newsC_sessionF )
             souq >> idCmd ;
             ZE( countT , idCmd ) ;
         {
-        if( !*((tinFullS&)tinBaseP).zEtScratch && !bFired )    
+        if( !*((tin9S&)tinBaseP).zEtScratch && !bFired )    
         pso->readF( tinBaseP , souq ) ;
         soulC souq( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
-    while( !etThread && !*((tinFullS&)tinBaseP).zEtScratch && !bBye && !bFired )
+    while( !etThread && !*((tin9S&)tinBaseP).zEtScratch && !bBye && !bFired )
     ZE( boolT , bBye ) ;
 
     pso->myNameF(   tinBaseP , countTC() , nicNameMe   ) ;
@@ -188,7 +188,7 @@ DONE( tm_newsC_sessionF )
     nicNameC nicNameMe ;
     nicNameC nicNamePeer ;
 
-    pso->etherF( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch ) ;
+    pso->etherF( tinBaseP , *((tin9S&)tinBaseP).zEtScratch ) ;
 
     boolT&    bFired    =    *(boolT*)pTaskP->c4 ;
     newsC&    news      =    *(newsC*)pTaskP->c3 ;
@@ -200,7 +200,7 @@ TASK( tm_newsC_sessionF )
 
 ;
 }
-    newsC( tinBaseS& tinBaseP , etherC& etherP ) ;
+    newsC( tin0S& tinBaseP , etherC& etherP ) ;
     ~newsC( voidT ) ;
 
     public :

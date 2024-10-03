@@ -34,16 +34,16 @@ BOS( WHATgbo , BOSoK , TextOut( oshdc , 0x100 , 0x100 , bOk ? "done" : "fail" , 
 
 const countT cLines = ( cSize - 1 ) * cGlyph ;
 
-((tinFullS&)tinBaseP).pEther->osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeS1 , timeS2 ) ;
-((tinFullS&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+((tin9S&)tinBaseP).pEther->osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeS1 , timeS2 ) ;
+((tin9S&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
 ZE( sCountT , timeE2 ) ;
 ZE( countT , timeE1 ) ;
 
-boolT bOk = ((tinFullS&)tinBaseP).brcRaw ;
+boolT bOk = ((tin9S&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , PolyPolyline( oshdc , ppt , (DWORD*)pcSize , cGlyph ) )
 
-((tinFullS&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeS1 , timeS2 ) ;
+((tin9S&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeS1 , timeS2 ) ;
 ZE( sCountT , timeS2 ) ;
 ZE( countT , timeS1 ) ;
 
@@ -56,10 +56,10 @@ BOS( WHATgbo , BOSoK , Rectangle( oshdc , rectClient.left , rectClient.top , rec
 BOSdOnOTtEST( WHATgbo , SelectObject( oshdc , oshp ) )
 BOSdOnOTtEST( WHATgbo , SelectObject( oshdc , oshb ) )
 
-HPEN   oshp = (HPEN)((tinFullS&)tinBaseP).brcRaw ;
+HPEN   oshp = (HPEN)((tin9S&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , CreatePen( PS_SOLID , 1 , 0xffffff ) )
-HBRUSH oshb = (HBRUSH)((tinFullS&)tinBaseP).brcRaw ;
+HBRUSH oshb = (HBRUSH)((tin9S&)tinBaseP).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , CreateSolidBrush( 0 ) )
 

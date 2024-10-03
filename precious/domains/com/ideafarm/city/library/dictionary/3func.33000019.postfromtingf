@@ -13,18 +13,18 @@
     //U::     OStEXTA( *postP , postPenanceP )
     //U::     OStEXTA( *postP , pposta[ 7 ] )
     //U::     OStEXTC( *postP , idFileP , 0 )
-    //U::     OStEXTC( *postP , ((tinFullS&)tinBaseP).pLFstep[ ( ( ((tinFullS&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] , 0 )
+    //U::     OStEXTC( *postP , ((tin9S&)tinBaseP).pLFstep[ ( ( ((tin9S&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] , 0 )
     //U::     OStEXTA( *postP , pposta[ 6 ] )
     //U::     OStEXTC( *postP , idLineP , 0 )
-    //U::     OStEXTC( *postP , ((tinFullS&)tinBaseP).pLFstep[ ( ((tinFullS&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] & 0xfffffff , 0 )
+    //U::     OStEXTC( *postP , ((tin9S&)tinBaseP).pLFstep[ ( ((tin9S&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] & 0xfffffff , 0 )
     //U::     OStEXTA( *postP , pposta[ 5 ] )
     //U::     OStEXTA( *postP , postSinP )
     //U::     OStEXTA( *postP , pposta[ 4 ] )
     //U::     OStEXTC( *postP , processGlobal1I.idAdamRoot , 0 )
     //U::     OStEXTA( *postP , pposta[ 3 ] )
-    //U::     OStEXTA( *postP , ((tinFullS&)tinBaseP).postThreadName )
+    //U::     OStEXTA( *postP , ((tin9S&)tinBaseP).postThreadName )
     //U::     OStEXTA( *postP , pposta[ 2 ] )
-    //U::     OStEXTC( *postP , ((tinFullS&)tinBaseP).monitor.idThread , 0 )
+    //U::     OStEXTC( *postP , ((tin9S&)tinBaseP).monitor.idThread , 0 )
     //U::     OStEXTA( *postP , pposta[ 1 ] )
     //U::     OStEXTcLEAR( *postP )
     //U::     ZE( countT , ecnu ) ;
@@ -34,27 +34,27 @@
 
     }
         thirdC::c_strncpyIF( tinBaseP , postP , ostot , ostot.costF() + 1 ) ;
-        ((tinFullS&)tinBaseP).pEther->newF( tinBaseP , LF , postP , ostot.costF() + 1 ) ; ___( postP ) ;
+        ((tin9S&)tinBaseP).pEther->newF( tinBaseP , LF , postP , ostot.costF() + 1 ) ; ___( postP ) ;
 
         OStEXTA( ostot , postPenanceP )
         OStEXTA( ostot , pposta[ 7 ] )
         OStEXTC( ostot , idFileP , 0 )
-        OStEXTC( ostot , ((tinFullS&)tinBaseP).pLFstep[ ( ( ((tinFullS&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] , 0 )
+        OStEXTC( ostot , ((tin9S&)tinBaseP).pLFstep[ ( ( ((tin9S&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] , 0 )
         OStEXTA( ostot , pposta[ 6 ] )
         OStEXTC( ostot , idLineP , 0 )
-        OStEXTC( ostot , ((tinFullS&)tinBaseP).pLFstep[ ( ((tinFullS&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] & 0xfffffff , 0 )
+        OStEXTC( ostot , ((tin9S&)tinBaseP).pLFstep[ ( ((tin9S&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] & 0xfffffff , 0 )
         OStEXTA( ostot , pposta[ 5 ] )
         OStEXTA( ostot , postSinP )
         OStEXTA( ostot , pposta[ 4 ] )
         OStEXTC( ostot , processGlobal1I.idAdamRoot , 0 )
         OStEXTA( ostot , pposta[ 3 ] )
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostot , ((tinFullS&)tinBaseP).postThreadName )
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostot , ((tin9S&)tinBaseP).postThreadName )
         OStEXTA( ostot , pposta[ 2 ] )
-        OStEXTC( ostot , ((tinFullS&)tinBaseP).monitor.idThread , 0 )
+        OStEXTC( ostot , ((tin9S&)tinBaseP).monitor.idThread , 0 )
         OStEXTA( ostot , pposta[ 1 ] )
         OStEXT( ostot , 0x400 )
     {
-    if( ((tinFullS&)tinBaseP).pEther )
+    if( ((tin9S&)tinBaseP).pEther )
 
     //U::postoP = new( costx + 1 , tinBaseP ) osTextC( costx + 1 ) ;
 
@@ -88,11 +88,11 @@
     {
     IFbEcAREFUL        
 {
-/*1*/voidT __export postFromTinGF( tinBaseS& tinBaseP , const countT idLineP , const countT idFileP , osTextT*& postP , const osTextT* postSinP , const osTextT* postPenanceP )/*1*/
+/*1*/voidT __export postFromTinGF( tin0S& tinBaseP , const countT idLineP , const countT idFileP , osTextT*& postP , const osTextT* postSinP , const osTextT* postPenanceP )/*1*/
 /**/
 */
   else it will be allocated from the default poolOld
-  if ((tinFullS&)tinBaseP).pEther is not 0 then postP will be allocated from *((tinFullS&)tinBaseP).pEther's poolOld
+  if ((tin9S&)tinBaseP).pEther is not 0 then postP will be allocated from *((tin9S&)tinBaseP).pEther's poolOld
   must be 0
  postP
   can be 0

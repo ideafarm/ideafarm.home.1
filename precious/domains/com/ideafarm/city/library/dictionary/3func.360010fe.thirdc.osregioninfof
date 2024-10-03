@@ -308,13 +308,13 @@
                         else c_pbq += 0x1000 ; //ASSUME: REGIONS ARE ALIGNED ON NT PAGE BOUNDARIES (0x1000 IS THE SIZE OF AN NT PAGE)
                         }
                             __1
-                            __( ((tinFullS&)tinBaseP).brcLath ) ;
+                            __( ((tin9S&)tinBaseP).brcLath ) ;
                         {
-                        else if( ((tinFullS&)tinBaseP).brcLath != ERROR_NOACCESS          )
-                             if( ((tinFullS&)tinBaseP).brcLath == ERROR_INVALID_PARAMETER ) c_pbq = c_pbqEnd ;
+                        else if( ((tin9S&)tinBaseP).brcLath != ERROR_NOACCESS          )
+                             if( ((tin9S&)tinBaseP).brcLath == ERROR_INVALID_PARAMETER ) c_pbq = c_pbqEnd ;
                     {
-                    if( ((tinFullS&)tinBaseP).bosFail )
-                    countT cbw = ((tinFullS&)tinBaseP).brcRaw ;
+                    if( ((tin9S&)tinBaseP).bosFail )
+                    countT cbw = ((tin9S&)tinBaseP).brcRaw ;
                     BOS( WHATgbo , BOSoK , VirtualQueryEx( (HANDLE)hProcessP , (voidT*)c_pbq , &osInfo , sizeof osInfo ) )
                     BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
                 {
@@ -351,7 +351,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::osRegionInfoF( tinBaseS& tinBaseP , countT& cBitsGrainP , byteT*& pbIdRegionP , byteT*& pbIdAllocP , vmRegionS*& pVmRegionP , vmRegionS*& pVmRegionAllocP , countT hProcessP )/*1*/
+/*1*/voidT thirdC::osRegionInfoF( tin0S& tinBaseP , countT& cBitsGrainP , byteT*& pbIdRegionP , byteT*& pbIdAllocP , vmRegionS*& pVmRegionP , vmRegionS*& pVmRegionAllocP , countT hProcessP )/*1*/
 
 ;
 }

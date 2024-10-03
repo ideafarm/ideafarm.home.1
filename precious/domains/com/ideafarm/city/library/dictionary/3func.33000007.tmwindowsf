@@ -30,7 +30,7 @@ THREADmODE2rESTORE
 
         }
             thirdC::winDestroyWindowClassIF( tinBaseP , MAINwINDOWcLASSnAME ) ;
-            ((tinFullS&)tinBaseP).idPhase2 = 3 ;
+            ((tin9S&)tinBaseP).idPhase2 = 3 ;
             //LOGrAW( "tmWindowsF/dispatchola/-\r\n" ) ;
             TINSL
         {
@@ -49,7 +49,7 @@ THREADmODE2rESTORE
             thirdC::winDispatchMessagesIF( tinBaseP ) ; // WM_CLOSE WILL DELETE pEtThread (WHICH DELETES tinBaseP) BEFORE THIS RETURNS
             //LOGrAW( "tmWindowsF/dispatchola/+\r\n" ) ;
             //FROM HERE ON DO NOT REFER TO ANY IFC OBJECTS (EG etThread)
-            ((tinFullS&)tinBaseP).idPhase2 = 2 ;
+            ((tin9S&)tinBaseP).idPhase2 = 2 ;
             DEL( pTaskP ) ;
             TELL( "pumping window messages" )
         {
@@ -133,7 +133,7 @@ THREADmODE2rESTORE
 //20230403@1109: defined -> !defined IN ORDER TO SEE WHETHER OLD GRAPHICS CODE WORKS (WHEN THIS THREAD IS SUPPRESSED, THE NEW GRAPHICS CODE WORKS)
 
         thirdC& thThread = etThread ;
-        thirdC::third_idThreadWindowsIF( tinBaseP ) = ((tinFullS&)tinBaseP).monitor.idThread ;
+        thirdC::third_idThreadWindowsIF( tinBaseP ) = ((tin9S&)tinBaseP).monitor.idThread ;
         strokeS*& psttTitle = *(strokeS**)pTaskP->c2 ;
         signC&    sgnReady  =    *(signC*)pTaskP->c1 ;
         //THIS IS A NO NO.  A FAILURE ON THIS THREAD CAN CAUSE RUSH SPIN OF THE CPU: etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
@@ -143,9 +143,9 @@ THREADmODE2rESTORE
             countT osMin = thirdC::winIdMsgUserIF( tinBaseP ) ;
         {
     
-        ((tinFullS&)tinBaseP).idPhase2 = 1 ;
+        ((tin9S&)tinBaseP).idPhase2 = 1 ;
         processGlobal2I.ebp_tmWindowsF_ = ebpAM() ; //winMessageHandlerWorkF WILL USE THIS VALUE TO FIND tinBaseP
-        if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tinFullS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmWindowsOrServiceMainF ) ; }
+        if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin9S&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmWindowsOrServiceMainF ) ; }
         TELL( "setting up" )
     {
     if( pTaskP && pTaskP->c1 && pTaskP->c2 )
@@ -153,7 +153,7 @@ THREADmODE2rESTORE
 {
 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //OBSERVED SLEEP BLAMMO FOR CONSOLE a45 OCCASIONALLY July 31,2005 DURING INSTALL; DID NOT ANALYZE
 
-((tinFullS&)tinBaseP).tell_tmWatchF_toIgnoreMeF() ;
+((tin9S&)tinBaseP).tell_tmWatchF_toIgnoreMeF() ;
 
 
 /*1*/TASK( tmWindowsF )/*1*/
@@ -200,7 +200,7 @@ i create windows, handle their messages, and destroy them
     }
         }
             break ;
-            rc = ((tinFullS&)tinBaseP).brcRaw ;
+            rc = ((tin9S&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , DefWindowProc( (HWND)hWindowP , idCmdP , p1P , p2P ) )
         {
         default:
@@ -215,7 +215,7 @@ i create windows, handle their messages, and destroy them
             break ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , PostMessage( (HANDLE)hWindowP , WM_QUIT , 0 , 0 ) )
-            rc = ((tinFullS&)tinBaseP).brcRaw ;
+            rc = ((tin9S&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , DefWindowProc( (HWND)hWindowP , idCmdP , p1P , p2P ) )
             }
                 while( !( F(thirdC::third_flagsProcessStateI_IF(tinBaseP)) & flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE ) ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; }
@@ -226,7 +226,7 @@ i create windows, handle their messages, and destroy them
             DEL( etherC::ether_pMainRefsIF( tinBaseP ) ) ; // NO FURTHER USE FOR THIS
             TINSL
             DEL( pEtThread ) ; //THIS ALSO CAUSES tinBaseP TO BE DESTROYED
-            DEL( ((tinFullS&)tinBaseP).pEtScratch ) ;
+            DEL( ((tin9S&)tinBaseP).pEtScratch ) ;
             etherC*& pEtThread  = etherC::ether_pMainRefsIF( tinBaseP )->pEtThread ;
         {
         case idwm_CLOSE :

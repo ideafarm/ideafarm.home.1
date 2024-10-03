@@ -19,7 +19,7 @@
                 }
                     pListFoundP = pNew ;
                     }
-                        pNew->openF( tinBaseP , *ppHand[ !offWoth ] , 0 , ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ;
+                        pNew->openF( tinBaseP , *ppHand[ !offWoth ] , 0 , ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ;
                         _IO_
                     {
                     ppHand[ !offWoth ] = new( 0 , tinBaseP , pbh , SIZEOF_handleC ) handleC( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
@@ -32,13 +32,13 @@
                     _IO_
                 {
                 else
-                if( F(flagsP) & flLISToPEN_IFeXISTS ) ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP &= ~( F(flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK) ) ;
+                if( F(flagsP) & flLISToPEN_IFeXISTS ) ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP &= ~( F(flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK) ) ;
             {
             else if( idNameWantP < idNameAt )
             }
                 flagsListWalkRetCode |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
 
-                else                                          ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP &= ~( F(flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK) ) ;
+                else                                          ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP &= ~( F(flLISTwALK_DOnOTuNGRABoOTHaTeNDoFwALK) ) ;
                 if( !( F(flagsP) & flLISToPEN_IFnOTeXISTS ) ) pListFoundP = (listC*)pListing ;
             {
             if( idNameWantP == idNameAt )
@@ -57,7 +57,7 @@
     }
         }
             pListFoundP = pNew ;
-            pNew->openF( tinBaseP , *ppHand[ !offWoth ] , 0 , ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ;
+            pNew->openF( tinBaseP , *ppHand[ !offWoth ] , 0 , ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.idGrabLayer ) ;
             listC* pNew = pNewF( tinBaseP , ppPreP , idNameWantP , bOfSetP ) ;
             _IO_
         {
@@ -66,40 +66,40 @@
     if( !pListing )
     flagsT flagsListWalkRetCode = flLISTwALKcALLbACKrETURNcODE_DOnOTwALKmE ;
 
-    listC*&   pListFoundP       = *(listC**)&((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] ;
-    flagsT    flagsP            =            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-    countT    idNameWantP       =            ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+    listC*&   pListFoundP       = *(listC**)&((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ] ;
+    flagsT    flagsP            =            ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+    countT    idNameWantP       =            ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
 
-    boolT     bOfSetP           =            ((tinFullS&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 4 ] ;
+    boolT     bOfSetP           =            ((tin9S&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 4 ] ;
 
-    listC**   ppPreP            = ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.ppPreallocatedListsP ;
+    listC**   ppPreP            = ((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.ppPreallocatedListsP ;
 
-    countT&   offWoth           = *((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pOffWothP ;
-    handleC*  ppHand[ 2 ]       = { ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleLoP , ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleHiP } ;
-    listingC* pListing          = ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
+    countT&   offWoth           = *((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.pOffWothP ;
+    handleC*  ppHand[ 2 ]       = { ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleLoP , ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleHiP } ;
+    listingC* pListing          = ((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !((tinFullS&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    const flagsT flagsPoolFormat = !((tin9S&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
 
     if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 
     _IO_
 {
-/*1*/flagsT listWalkAttachListIfCBF( tinBaseS& tinBaseP )/*1*/
+/*1*/flagsT listWalkAttachListIfCBF( tin0S& tinBaseP )/*1*/
 
 }
     return pNew ;
 
     }
         }
-            if( !((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP ) ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP = pNew ;
-            __( ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP ) ;
+            if( !((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP ) ((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP = pNew ;
+            __( ((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pNewP ) ;
 
             //CONoUTrAW3( "\r\n[pNew]:    " , pNew , "    dispensed" ) ;
 
             *pNew = idNameWantP ;
-            *pNew = *((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP ;
+            *pNew = *((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP ;
         {
         if( pNew )
 
@@ -117,8 +117,8 @@
     }
         ___( pNew ) ;
         ;
-            : new( 0 , tinBaseP , LF ) listC(      tinBaseP ,              *((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP , idNameWantP )
-            ? new( 0 , tinBaseP , LF ) listOfSetC( tinBaseP , *(listOfSetC*)((tinFullS&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP , idNameWantP )
+            : new( 0 , tinBaseP , LF ) listC(      tinBaseP ,              *((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP , idNameWantP )
+            ? new( 0 , tinBaseP , LF ) listOfSetC( tinBaseP , *(listOfSetC*)((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP , idNameWantP )
         pNew = bOfSetP
     {
     if( !ppPreP )
@@ -126,7 +126,7 @@
 
     if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 {
-listC* pNewF( tinBaseS& tinBaseP , listC** ppPreP , const countT idNameWantP , const boolT bOfSetP )
+listC* pNewF( tin0S& tinBaseP , listC** ppPreP , const countT idNameWantP , const boolT bOfSetP )
 
 /**/
 */

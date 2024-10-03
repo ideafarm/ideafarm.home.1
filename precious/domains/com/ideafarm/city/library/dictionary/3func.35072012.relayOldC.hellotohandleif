@@ -19,7 +19,7 @@
 
             }
                 }
-                    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("helloToHandleIF / could not say hello to handle [idpthc:nn,idPort]:    ")+T((nicNameC&)idpthc)+T("    ")+TF2((countT&)idpthc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("helloToHandleIF / could not say hello to handle [idpthc:nn,idPort]:    ")+T((nicNameC&)idpthc)+T("    ")+TF2((countT&)idpthc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
                 {
                 if( POOP )
@@ -29,7 +29,7 @@
                     DEL( psBag ) ;
                     }
                         }
-                            ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("could not verify that my hello was received") ) ;
+                            ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("could not verify that my hello was received") ) ;
                             POOPRqUIET
                         {
                         else
@@ -37,7 +37,7 @@
                         VERIFYrELAY2( sock , *psBagOk ) ;
 
                         sock.writeF( tinBaseP , *psBag ) ; //ASSUME: SERVER WILL, IF ROOT, ADD ME TO ITS LIST
-                        ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("writing hello bag") ) ;
+                        ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("writing hello bag") ) ;
             
                         idptP >> *psBag ;
                         idptP >> *psBag ;
@@ -50,7 +50,7 @@
                 if( !POOP )
                 sock.connectF( tinBaseP , idpthc , (nicNameC&)idpthc ) ;
 
-                socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
+                socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
                 SCOOPS
             {
             ZE( boolT , bOk ) ;
@@ -63,7 +63,7 @@
     {
     IFsCRATCH
 {
-/*1*/voidT relayOldC::helloToHandleIF( tinBaseS& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP )/*1*/
+/*1*/voidT relayOldC::helloToHandleIF( tin0S& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP )/*1*/
 /**/
 */
 /*

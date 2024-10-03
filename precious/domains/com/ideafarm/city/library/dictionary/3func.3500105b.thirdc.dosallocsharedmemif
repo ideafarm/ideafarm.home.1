@@ -68,7 +68,7 @@
                         //if( thirdC::c_strstrIF( tinBaseP , ostoOsName , "napSlab" ) )
                         //CAN WRITE TO LOG SINCE NO EXCEPTION HANDLER WILL BE REGISTERED
 
-                        //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
+                        //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] )
                     {
                     else
                     }
@@ -88,15 +88,15 @@
                     //    OStEXTC(  ostoSay , save , '0' ) ;
                     //    OStEXT(   ostoSay , TUCK >> 2 ) ;
                     //{
-                    //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
+                    //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] )
 
-                    voidT* pv = (voidT*)((tinFullS&)tinBaseP).brcRaw ;
-                    countT save = ((tinFullS&)tinBaseP).brcRaw ;
+                    voidT* pv = (voidT*)((tin9S&)tinBaseP).brcRaw ;
+                    countT save = ((tin9S&)tinBaseP).brcRaw ;
                 {
                 else
                 }
-                    //LOGrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , ((tinFullS&)tinBaseP).brcRaw , "\r\n" ) ;
-                    //CONoUTrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , ((tinFullS&)tinBaseP).brcRaw , "\r\n" ) ;
+                    //LOGrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , ((tin9S&)tinBaseP).brcRaw , "\r\n" ) ;
+                    //CONoUTrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , ((tin9S&)tinBaseP).brcRaw , "\r\n" ) ;
                     BOSdOnOTtEST( WHATgbo , GetLastError() )
 
                     osh = 0 ;
@@ -114,17 +114,17 @@
                 //    OStEXTAK( ostoSay , "\"\r\n" ) ;
                 //    OStEXTA(  ostoSay , postP ) ;
                 //    OStEXTAK( ostoSay , " \"" ) ;
-                //    OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).brcRaw , 0 ) ;
+                //    OStEXTC(  ostoSay , ((tin9S&)tinBaseP).brcRaw , 0 ) ;
                 //    OStEXTAK( ostoSay , " " ) ;
                 //    OStEXTC(  ostoSay , cbw , 0 ) ;
                 //    OStEXTAK( ostoSay , " " ) ;
                 //    OStEXTC(  ostoSay , cbP , 0 ) ;
                 //    OStEXTAK( ostoSay , " " ) ;
-                //    OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->idAdam , 0 ) ;
+                //    OStEXTC(  ostoSay , ((tin9S&)tinBaseP).pag1->idAdam , 0 ) ;
                 //    OStEXTAK( ostoSay , "dosAllocSharedMemIF [idAdam,cbP,cbw,osh,postP]: " ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
-                //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
+                //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] )
 
                 ;
                     : FILE_MAP_ALL_ACCESS
@@ -151,10 +151,10 @@
             {
             if( bExisted )
 
-            HANDLE osh = (HANDLE)((tinFullS&)tinBaseP).brcRaw ;
+            HANDLE osh = (HANDLE)((tin9S&)tinBaseP).brcRaw ;
 
             BOSpOOP
-            boolT bExisted = ((tinFullS&)tinBaseP).brcQuery == ERROR_ALREADY_EXISTS ;
+            boolT bExisted = ((tin9S&)tinBaseP).brcQuery == ERROR_ALREADY_EXISTS ;
             BOS( WHATgbo , BOSoK , CreateFileMappingNuma( (voidT*)( phFileP ? phFileP->osF( ifcIDtYPEhANDLE_FILE ) : -1 ) , &sa , osFlagsOpen , 0 , cbw , ostoOsName , thirdC::osOffNumaNodeValidChosenIF( processGlobal2I.idNumaNode ) ) )
 
             if( F(flagsP) & flOPENsHAREDmEMORY_DOnOTcOMMIT ) osFlagsOpen |= SEC_RESERVE ;
@@ -197,10 +197,10 @@
         c_zReplaceIF( tinBaseP , (osTextT*)(const osTextT*)ostoOsName , '/' , '.' ) ;
         OStEXTA(  ostoOsName  , postP ) ;
         OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : ((tinFullS&)tinBaseP).pag1->idMemorySpace , '0' ) ; }
+        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : ((tin9S&)tinBaseP).pag1->idMemorySpace , '0' ) ; }
         if( F(flagsP) & flOPENsHAREDmEMORY_ALLmEMORYsPACES )  { OStEXTAK( ostoOsName  , "_" ) ; }
         OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && ((tinFullS&)tinBaseP).pag1->_thirdC_.idHomeOverride ? ((tinFullS&)tinBaseP).pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
+        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && ((tin9S&)tinBaseP).pag1->_thirdC_.idHomeOverride ? ((tin9S&)tinBaseP).pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
         if( F(flagsP) & flOPENsHAREDmEMORY_ALLhOMES         ) { OStEXTAK( ostoOsName  , "_" ) ; }
         OStEXTAK( ostoOsName  , "." ) ;
         else                                                  { OStEXTA(  ostoOsName , thirdC::postUserNameIF() ) ; }
@@ -235,7 +235,7 @@
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinBaseP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(((tin9S&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinBaseP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         FV(flOPENsHAREDmEMORY,flagsP) ;
         __( phFileP && F(flagsP) & flOPENsHAREDmEMORY_DOnOTcOMMIT ) ;
         __( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 && processGlobal1I.idAdamRoot != ifcIDaDAM_2GLASS2 && processGlobal1I.idAdamRoot != ifcIDaDAM_1DRIVER ) ;
@@ -253,7 +253,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/voidT thirdC::dosAllocSharedMemIF( tinBaseS& tinBaseP , handleC& handleP , const osTextT* const postP , const handleC* phFileP , const countT cbP , const countT idMemorySpaceP , const flagsT flagsP )/*1*/
+/*1*/voidT thirdC::dosAllocSharedMemIF( tin0S& tinBaseP , handleC& handleP , const osTextT* const postP , const handleC* phFileP , const countT cbP , const countT idMemorySpaceP , const flagsT flagsP )/*1*/
 
 /**/
 */

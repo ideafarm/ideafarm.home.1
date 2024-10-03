@@ -37,8 +37,8 @@
                     }
                         }
                             BOSpOOP ;
-                            ((tinFullS&)tinBaseP).brcLath = brcLathSave ;
-                            ((tinFullS&)tinBaseP).bosFail = bosFailSave ;
+                            ((tin9S&)tinBaseP).brcLath = brcLathSave ;
+                            ((tin9S&)tinBaseP).bosFail = bosFailSave ;
                         {
                         else
                         if( brcLathSave == ERROR_FILE_NOT_FOUND || brcLathSave == ERROR_PATH_NOT_FOUND || brcLathSave == ERROR_NO_MORE_FILES ) bosFailSave = 0 ;
@@ -49,36 +49,36 @@
                     if( bosFailSave )
 
                     }
-                        fFound = !((tinFullS&)tinBaseP).bosFail ;
-                        brcLathSave = ((tinFullS&)tinBaseP).brcLath ;
-                        bosFailSave = ((tinFullS&)tinBaseP).bosFail ;
+                        fFound = !((tin9S&)tinBaseP).bosFail ;
+                        brcLathSave = ((tin9S&)tinBaseP).brcLath ;
+                        bosFailSave = ((tin9S&)tinBaseP).bosFail ;
                         else if( cFail ) cFail = 0 ;
                         }
                             continue ;
                             //Sleep( 8000 ) ;
-                            if( ((tinFullS&)tinBaseP).pEther ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("!exception: dosFindFileOrDirSimpleIF / FindNextFile returned ERROR_NOT_READY.  will retry [cFail,postLikeP]:    ")+TF2(cFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postLikeP) ) ;
+                            if( ((tin9S&)tinBaseP).pEther ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("!exception: dosFindFileOrDirSimpleIF / FindNextFile returned ERROR_NOT_READY.  will retry [cFail,postLikeP]:    ")+TF2(cFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postLikeP) ) ;
                         {
-                        if( ((tinFullS&)tinBaseP).brcLath == ERROR_NOT_READY )
+                        if( ((tin9S&)tinBaseP).brcLath == ERROR_NOT_READY )
 
-                        //if( processGlobal1I.idAdamRoot == ifcIDaDAM_SCRATCH06 && !strcmp( postLikeP , "g:\\ipdos.archives\\*" ) /*((tinFullS&)tinBaseP).pc Utility[ 0 ]*/ ) ((tinFullS&)tinBaseP).brcLath = ERROR_NOT_READY ; //U:: TO FIND A BUG
+                        //if( processGlobal1I.idAdamRoot == ifcIDaDAM_SCRATCH06 && !strcmp( postLikeP , "g:\\ipdos.archives\\*" ) /*((tin9S&)tinBaseP).pc Utility[ 0 ]*/ ) ((tin9S&)tinBaseP).brcLath = ERROR_NOT_READY ; //U:: TO FIND A BUG
                         BOS( WHATsfr , BOSoK , FindNextFile( (HANDLE)pOsh->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE ) , &info ) )
                     {
                     else
                     }
                         if( ~pOsh->hFind ) fFound = 1 ;
-                        pOsh->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE , (countT)((tinFullS&)tinBaseP).brcRaw ) ;
-                        brcLathSave = ((tinFullS&)tinBaseP).brcLath ;
-                        bosFailSave = ((tinFullS&)tinBaseP).bosFail ;
+                        pOsh->hFind.osF( ifcIDtYPEhANDLE_FILEfINDbASE , (countT)((tin9S&)tinBaseP).brcRaw ) ;
+                        brcLathSave = ((tin9S&)tinBaseP).brcLath ;
+                        bosFailSave = ((tin9S&)tinBaseP).bosFail ;
                         else if( cFail ) cFail = 0 ;
                         }
                             continue ;
                             //Sleep( 8000 ) ;
-                            if( ((tinFullS&)tinBaseP).pEther ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("!exception: dosFindFileOrDirSimpleIF / FindFirstFile returned ERROR_NOT_READY.  will retry [cFail,postLikeP]:    ")+TF2(cFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postLikeP) ) ;
+                            if( ((tin9S&)tinBaseP).pEther ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("!exception: dosFindFileOrDirSimpleIF / FindFirstFile returned ERROR_NOT_READY.  will retry [cFail,postLikeP]:    ")+TF2(cFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postLikeP) ) ;
                             cFail ++ ;
                         {
-                        if( ((tinFullS&)tinBaseP).brcLath == ERROR_NOT_READY )
+                        if( ((tin9S&)tinBaseP).brcLath == ERROR_NOT_READY )
 
-                        //if( processGlobal1I.idAdamRoot == ifcIDaDAM_SCRATCH06 && !strcmp( postLikeP , "g:\\ipdos.archives\\*" ) /*((tinFullS&)tinBaseP).pc Utility[ 0 ]*/ ) ((tinFullS&)tinBaseP).brcLath = ERROR_NOT_READY ; //U:: TO FIND A BUG
+                        //if( processGlobal1I.idAdamRoot == ifcIDaDAM_SCRATCH06 && !strcmp( postLikeP , "g:\\ipdos.archives\\*" ) /*((tin9S&)tinBaseP).pc Utility[ 0 ]*/ ) ((tin9S&)tinBaseP).brcLath = ERROR_NOT_READY ; //U:: TO FIND A BUG
                         BOS( WHATsfr , BOShANDLE , FindFirstFile( postLikeP , &info ) )
                     {
                     if( bWoth )
@@ -163,7 +163,7 @@
 
     }
         //}
-        //    if( ((tinFullS&)tinBaseP).pEther ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("dosFindFileOrDirSimpleIF / setting bCloaked [postf]:    ")+T(postf) ) ;
+        //    if( ((tin9S&)tinBaseP).pEther ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("dosFindFileOrDirSimpleIF / setting bCloaked [postf]:    ")+T(postf) ) ;
         //    bCloaked = 1 ;
         //    POOPRqUIET
         //{
@@ -227,7 +227,7 @@
 
     const countT costMax = dosQuerySysInfoMaxPathLengthIF( tinBaseP ) ;
 {
-/*1*/voidT thirdC::dosFindFileOrDirSimpleIF( tinBaseS& tinBaseP , osTextT* const postP , const countT costaP , handleC& handleP , const osTextT* const postLikeP , const flagsT flagsP )/*1*/
+/*1*/voidT thirdC::dosFindFileOrDirSimpleIF( tin0S& tinBaseP , osTextT* const postP , const countT costaP , handleC& handleP , const osTextT* const postLikeP , const flagsT flagsP )/*1*/
 
 #endif
     #define symACHnAME         cFileName

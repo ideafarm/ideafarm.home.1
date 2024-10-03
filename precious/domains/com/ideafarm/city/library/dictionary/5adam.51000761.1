@@ -192,7 +192,7 @@ TASK( tmWorkerF )
                         {
                         else
                         if( !POOP ) ; //etherP.traceF( tinBaseP , T("renamed to discardss aok") ) ;
-                        ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNewPathRoot+tDiscardsSlashP+tNewLeafShort , tNameOld , 1 ) ;
+                        ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNewPathRoot+tDiscardsSlashP+tNewLeafShort , tNameOld , 1 ) ;
 
                         etherP.traceF( tinBaseP , T("content is different ; attempting to rename to discards") ) ;
 
@@ -207,7 +207,7 @@ TASK( tmWorkerF )
                         {
                         else
                         if( !POOP ) ; //etherP.traceF( tinBaseP , T("renamed to duplicates aok") ) ;
-                        ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNewPathRoot+tDuplicatesSlashP+tNewLeafShort , tNameOld , 1 ) ;
+                        ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNewPathRoot+tDuplicatesSlashP+tNewLeafShort , tNameOld , 1 ) ;
 
                         //etherP.traceF( tinBaseP , T("content is the same ; attempting to rename to duplicates") ) ;
 
@@ -260,7 +260,7 @@ TASK( tmWorkerF )
                     {
                     else
                     if( !POOP ) ; //etherP.traceF( tinBaseP , T("renamed aok") ) ;
-                    ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNameNew , tNameOld , 1 ) ;
+                    ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNameNew , tNameOld , 1 ) ;
 
                     //etherP.traceF( tinBaseP , T("could not ct both file windows ; attempting to rename") ) ;
 
@@ -270,8 +270,8 @@ TASK( tmWorkerF )
                 {
                 if( POOP )
 
-                fileWindowsC* pFwsNew = new( 0 , tinBaseP , pb_fwsNew , sizeof pb_fwsNew ) fileWindowsC( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , tNameNew , flFILEwINDOW_null , 1 ) ;
-                fileWindowsC* pFwsOld = new( 0 , tinBaseP , pb_fwsOld , sizeof pb_fwsOld ) fileWindowsC( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , tNameOld , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsNew = new( 0 , tinBaseP , pb_fwsNew , sizeof pb_fwsNew ) fileWindowsC( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , tNameNew , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsOld = new( 0 , tinBaseP , pb_fwsOld , sizeof pb_fwsOld ) fileWindowsC( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , tNameOld , flFILEwINDOW_null , 1 ) ;
 
                 byteT pb_fwsNew[ sizeof( fileWindowsC ) ] ;
                 byteT pb_fwsOld[ sizeof( fileWindowsC ) ] ;
@@ -363,7 +363,7 @@ TASK( tmWorkerF )
     if( postNameP )
     _IO_
 {
-boolT workCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT workCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 // NEW: ////factory9/z/archive/1999/!ideafarm.9.2.00000000.00000001.19990903@1308.20150910@0202.7d84358e991c2d16afaa9d1acb468f55.001.meta.currentname
 //                                  123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0

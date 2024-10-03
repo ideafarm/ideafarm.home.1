@@ -71,9 +71,9 @@
                     }
 
                         //}
-                        //    ((tinFullS&)tinBaseP).pc Utility[ 1 ] = (countT)postl ; //U:: TO FIND A BUG
+                        //    ((tin9S&)tinBaseP).pc Utility[ 1 ] = (countT)postl ; //U:: TO FIND A BUG
                         //{
-                        //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
+                        //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] )
 
                         *(countT*)pbLB = (countT)postl ;
                         thirdC::c_memcpyIF( tinBaseP , postl , (osTextT*)query , costa ) ;
@@ -192,8 +192,8 @@
     ZE( countT , query ) ;
 
     _IO_
-    else if( osTidOwner != ((tinFullS&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = ((tinFullS&)tinBaseP).osTid ;
+    else if( osTidOwner != ((tin9S&)tinBaseP).osTid && !bDying && !( F(stackk.flagsF(tinBaseP)) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tin9S&)tinBaseP).osTid ;
     if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
     }
@@ -212,7 +212,7 @@
     }
         countT foo = 2 ;
     {
-    if( ((tinFullS&)tinBaseP).monitor.idThread == 1 ) //U::TO FIND A BUG: 20141109@2241
+    if( ((tin9S&)tinBaseP).monitor.idThread == 1 ) //U::TO FIND A BUG: 20141109@2241
 
     SCOOP
     TINSL
@@ -233,7 +233,7 @@ this cast returns a reference to that allocation
 each switchC object maintains a single storage allocation of sizeof( countT ) bytes for each thread
 if we are switching on an explicit lever, this evaluates to a countT& value that is distinct for each distinct value of the lever
  this slight extra coding effort also gives you more speed, since an operating system call is avoided
- an alternative to implicit thread switching is to use an explicit lever, and set the lever value using ((tinFullS&)tinBaseP).monitor.idThread
+ an alternative to implicit thread switching is to use an explicit lever, and set the lever value using ((tin9S&)tinBaseP).monitor.idThread
  failure to do this is not an error, but results in the same countT object being reused, and hence not initialized to ze for the reusing thread
  if this switchC object is implicitly thread switched, you -must- clear the switch for a thread before each thread that refers to this object ends
  on some operating systems, the thread id values are reused

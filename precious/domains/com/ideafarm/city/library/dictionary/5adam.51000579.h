@@ -15,8 +15,8 @@
     inline const strokeS* psttUrlF(     voidT ) const { return psttUrl ; }
     plateC& operator +=( plateC& plateP ) ;
     operator const strokeS*( voidT ) ;
-    datumPeanutC( tinBaseS& tinBaseP , etherC& etherP , soulC& soulP ) ;
-    datumPeanutC( tinBaseS& tinBaseP ) ;
+    datumPeanutC( tin0S& tinBaseP , etherC& etherP , soulC& soulP ) ;
+    datumPeanutC( tin0S& tinBaseP ) ;
     PLATEcsTANDARDdECLARATIONS( datumPeanutC )
     static voidT setModeF( const boolT bUrlOnlyP = 0 ) ;
 

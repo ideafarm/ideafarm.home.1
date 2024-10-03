@@ -20,14 +20,14 @@
             if( !nicNameP ) nicNameP = NICnAMElOCAL ;
 
             }
-                pcTo[ 3 - offi ] = ((tinFullS&)tinBaseP).brcRaw ;
+                pcTo[ 3 - offi ] = ((tin9S&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , ntohl( pcFrom[ offi ] ) )
             {
             for( countT offi = 0 ; offi < 4 ; offi ++ )
             countT* pcTo   = (countT*)(const countT*)nicNameP ;
             countT* pcFrom = (countT*)info.sin6_addr.u.Byte ;
 
-            idPortP = ((tinFullS&)tinBaseP).brcRaw ;
+            idPortP = ((tin9S&)tinBaseP).brcRaw ;
             BOSdOnOTtEST( WHATgbo , ntohs( info.sin6_port ) )
             __( cbInfo - sizeof info ) ;
             __( info.sin6_family - AF_INET6 ) ;
@@ -60,11 +60,11 @@
     etRock.traceF( tinBaseP , T("s_acceptF / called  accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
     INCoShANDLES
-    countT brcRawSave = ((tinFullS&)tinBaseP).brcRaw ;
+    countT brcRawSave = ((tin9S&)tinBaseP).brcRaw ;
 
     }
-        //LOGrAW5( "" , oshSocket , "    " , ((tinFullS&)tinBaseP).pag1->idAdam , " ++++ accept\r\n" ) ;
-        countT oshSocket = ((tinFullS&)tinBaseP).brcRaw ;
+        //LOGrAW5( "" , oshSocket , "    " , ((tin9S&)tinBaseP).pag1->idAdam , " ++++ accept\r\n" ) ;
+        countT oshSocket = ((tin9S&)tinBaseP).brcRaw ;
     {
     BOSpOOP
     BOSS( WHATsia , BOSsOCKETcODE , accept( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , &cbInfo ) )
@@ -75,7 +75,7 @@
     etRock.traceF( tinBaseP , T("s_acceptF / calling accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
     etherC& etRock = etherC::etRockIF( tinBaseP ) ;
 
-    countT idAccept = ((tinFullS&)tinBaseP).monitor.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
+    countT idAccept = ((tin9S&)tinBaseP).monitor.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
     static countT idAcceptLath ;
 
     _IO_
@@ -91,7 +91,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::s_acceptF( tinBaseS& tinBaseP , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP )/*1*/
+/*1*/voidT thirdC::s_acceptF( tin0S& tinBaseP , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP )/*1*/
 
 /**/
 */

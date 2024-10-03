@@ -13,7 +13,7 @@
     BOS( WHATgbo , BOSoK , CloseHandle( osh ) )
     BOSpOOP
     BOS( WHATgbo , BOSoK , SetThreadPriority( osh , THREAD_PRIORITY_TIME_CRITICAL ) )
-    HANDLE osh = (HANDLE)((tinFullS&)tinBaseP).brcRaw ;
+    HANDLE osh = (HANDLE)((tin9S&)tinBaseP).brcRaw ;
 
     BOSpOOP
     BOS( WHATgbo , BOSoK , CreateThread( &sa , 1 * 1024 , (tmfosFT)tmHeartF , 0 , 0 , (ULONG*)&tidP ) )
@@ -41,7 +41,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::osThreadLaunchHeartbeatIF( tinBaseS& tinBaseP )/*1*/
+/*1*/voidT thirdC::osThreadLaunchHeartbeatIF( tin0S& tinBaseP )/*1*/
 
 }
     #endif
@@ -71,24 +71,24 @@
         sleepC s( tinBaseP , LF , (byteT*)0 ) ; //MUST NOT EVER BE DESTROYED, SINCE THAT WOULD INVOKE TINSL
 
         homeS& home = homeS::homeIF() ;
-        if( !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+        if( !( ++ processGlobal2I.pcPhaseLow[ ((tin9S&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
 
         POOPIES
     {
 
     _IO_
     //TELL( "setting up" )
-    if( ((tinFullS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmHeartF ) { BLAMMO ; }
-    if( !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+    if( ((tin9S&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmHeartF ) { BLAMMO ; }
+    if( !( ++ processGlobal2I.pcPhaseLow[ ((tin9S&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
     processGlobal5I.tinHeart.osPid = _brcRaw ;
     BOSnOtIN( GetCurrentProcessId() )
     processGlobal5I.tinHeart.osTid = _brcRaw ;
     BOSnOtIN( GetCurrentThreadId() )
     thirdC::osTraceWrongNodeIF( tinBaseP , (byteT*)&_brcRaw , "tmHeartF: _brcRaw" ) ;
     ZE( countT , _brcRaw ) ;
-    tinBaseS& tinBaseP = processGlobal5I.tinHeart ;
+    tin0S& tinBaseP = processGlobal5I.tinHeart ;
 
-    //TINSL MUST NOT BE USED ANYWHERE ON THIS THREAD; THAT WOULD REFERENCE THE tinFullS FOR THREAD main (SINCE I EXIST EARLY AND LATE) ; 20221029@0804: THIS COMMENT CONFLICTS WITH PRECEDING COMMENT AND IS PROBABLY WRONG
+    //TINSL MUST NOT BE USED ANYWHERE ON THIS THREAD; THAT WOULD REFERENCE THE tin9S FOR THREAD main (SINCE I EXIST EARLY AND LATE) ; 20221029@0804: THIS COMMENT CONFLICTS WITH PRECEDING COMMENT AND IS PROBABLY WRONG
 {
 /*1*/TASK0PROTO( tmHeartF ) // NOTE THAT THIS S A RAW THREAD; IT HAS NO THREAD LOCAL STORAGE SO CANNOT CALL pTinF/*1*/
 /**/

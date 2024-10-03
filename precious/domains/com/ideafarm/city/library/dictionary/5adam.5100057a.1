@@ -172,7 +172,7 @@ TODO
 
     time1idleTimeoutWriteP = time1idleTimeoutReadP = TICK * 0x8 ; //CS:CODEsYNC: 0850104 0850104
 {
-voidT httpRawCommandServerCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , countT& cArgP , socketC& sockP , countT& time1idleTimeoutReadP , countT& time1idleTimeoutWriteP , sessionsC& sessionsP , nicNameC& nnPeerP , const countT idEscapedP )
+voidT httpRawCommandServerCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , countT& cArgP , socketC& sockP , countT& time1idleTimeoutReadP , countT& time1idleTimeoutWriteP , sessionsC& sessionsP , nicNameC& nnPeerP , const countT idEscapedP )
 
 }
     }
@@ -253,7 +253,7 @@ voidT httpRawCommandServerCBF( tinBaseS& tinBaseP , etherC& etThread , const boo
         TN( t1 ,
     {
 {
-voidT httpLoadContentStaticCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
+voidT httpLoadContentStaticCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
 
 }
     meP.storeReplyF( tinBaseP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/menuofreports.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T("Menu of Reports") , T("The following server reports are available") , T("The following server reports are available") , T("Check it out!...") , T("") , menuOfReportsCBF ) ;
@@ -261,11 +261,11 @@ voidT httpLoadContentStaticCBF( tinBaseS& tinBaseP , etherC& etThread , const bo
     meP.storeReplyF( tinBaseP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/nobot/report2.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(POSTtITLErEPORT2) , T("All emailzip forms on file") , T("All emailzip forms on file") , T("Welcome to the village fire...") , T("") , report2CBF ) ;
     meP.storeReplyF( tinBaseP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/nobot/report1.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(POSTtITLErEPORT1) , T("These sessions closed in the current strong") , T("These sessions closed in the current strong") , T("Visitors this strong...") , T("") , report1CBF ) ;
 {
-voidT httpLoadContentDynamicCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
+voidT httpLoadContentDynamicCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
 
 }
 {
-voidT httpFreshenCacheCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , countT& cArgP , const boolT bCleanupP )
+voidT httpFreshenCacheCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , countT& cArgP , const boolT bCleanupP )
 
 }
     stBodyP << (countT)posts ;
@@ -305,7 +305,7 @@ voidT httpFreshenCacheCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& 
     TN( tContent , "" ) ;
     sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
 {
-voidT menuOfReportsCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
+voidT menuOfReportsCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
 
 }
     stBodyP << (countT)posts ;
@@ -365,7 +365,7 @@ voidT menuOfReportsCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQu
                         {
                         else
                         if( POOP ) { POOPR ; }
-                        ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tAllNew , T(psttDirOld)+tShort ) ;
+                        ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tAllNew , T(psttDirOld)+tShort ) ;
                         TN( tAllNew , "" ) ; tAllNew = T(psttDirNew)+tShort ;
                         TN( tShort , "" ) ; tShort = T(psttShort) ;
                     {
@@ -405,7 +405,7 @@ voidT menuOfReportsCBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQu
     TN( tContent , "" ) ;
     sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
 {
-voidT report3CBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
+voidT report3CBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
 
 }
     stBodyP << (countT)posts ;
@@ -488,7 +488,7 @@ voidT report3CBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , 
     TN( tContent , "" ) ;
     sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
 {
-voidT report2CBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
+voidT report2CBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
 
 }
     stBodyP << (countT)posts ;
@@ -566,7 +566,7 @@ voidT report2CBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , 
     TN( tContent , "" ) ;
     sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
 {
-voidT report1CBF( tinBaseS& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
+voidT report1CBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
 
 #define POSTtITLErEPORT3 "Peanut Gallery"
 #define POSTtITLErEPORT2 "Emailzip Forms On File"

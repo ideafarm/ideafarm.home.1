@@ -77,7 +77,7 @@ voidT queryS::swabF( voidT )
     byteT* pbc = (byteT*)&header + sizeof( headerS ) ;
     header.logF( tinBaseP ) ;
 {
-voidT queryS::logF( tinBaseS& tinBaseP )
+voidT queryS::logF( tin0S& tinBaseP )
 
 }
     cbData        = SWAB2( cbData        ) ;
@@ -90,7 +90,7 @@ voidT rHeaderS::swabF( voidT )
 }
     thirdC::logIF( tinBaseP , T("question: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass) ) ;
 {
-voidT questionS::logF( tinBaseS& tinBaseP )
+voidT questionS::logF( tin0S& tinBaseP )
 
 }
     idClass = SWAB2( idClass ) ;
@@ -116,7 +116,7 @@ questionS::questionS( voidT ) :
 }
     thirdC::logIF( tinBaseP , T("header: cQuestions: ")+TF1(cQuestions)+T(" cAnswers: ")+TF1(cAnswers)+T(" cAuthorities: ")+TF1(cAuthorities)+T(" cNotes: ")+TF1(cNotes) ) ;
 {
-voidT headerS::logF( tinBaseS& tinBaseP )
+voidT headerS::logF( tin0S& tinBaseP )
 
 }
 {
@@ -140,7 +140,7 @@ count01T headerS::idQueryLast ;
 }
     thirdC::logIF( tinBaseP , T("rHeader: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass)+T(" secondsToLive: ")+TF1(secondsToLive)+T(" cbData: ")+TF1(cbData) ) ;
 {
-voidT rHeaderS::logF( tinBaseS& tinBaseP )
+voidT rHeaderS::logF( tin0S& tinBaseP )
 
 }
 {
@@ -174,7 +174,7 @@ rHeaderS::rHeaderS( voidT ) :
     while( *pbP )
     OStEXT( osto001 , 0x100 )
 {
-voidT logLabelsF( tinBaseS& tinBaseP , byteT*& pbP , byteT* const pbOriginP )
+voidT logLabelsF( tin0S& tinBaseP , byteT*& pbP , byteT* const pbOriginP )
 */
   must point to the beginning of the header record for the message being parsed
  pbOriginP
@@ -187,7 +187,7 @@ arguments
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinBaseS& tinBaseP ) ;
+    voidT logF( tin0S& tinBaseP ) ;
     questionS question ;
     headerS   header ;
 {
@@ -196,7 +196,7 @@ struct queryS
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinBaseS& tinBaseP ) ;
+    voidT logF( tin0S& tinBaseP ) ;
     rHeaderS( voidT ) ;
 
     count01T cbData ;
@@ -209,7 +209,7 @@ struct rHeaderS //THIS IS THE PART OF THE "RESOURCE RECORD" THAT FOLLOWS THE LAB
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinBaseS& tinBaseP ) ;
+    voidT logF( tin0S& tinBaseP ) ;
     questionS( voidT ) ;
 
     count01T           idClass             ;
@@ -221,7 +221,7 @@ struct questionS
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tinBaseS& tinBaseP ) ;
+    voidT logF( tin0S& tinBaseP ) ;
     headerS( voidT ) ;
 
     count01T           cNotes              ;

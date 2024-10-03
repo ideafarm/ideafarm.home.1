@@ -16,19 +16,19 @@
             }
                 }
                     hThread.resetF() ;
-                    ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
-                    *((tinFullS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
-                    ((tinFullS&)tinBaseP).pag1->_thirdC_.lOsTid = tidP ;
-                    ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
+                    *((tin9S&)tinBaseP).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
+                    ((tin9S&)tinBaseP).pag1->_thirdC_.lOsTid = tidP ;
+                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 if( tidP && tidP != - 1 && F(flagsP) & flPROCESShIRE_REGISTERtHREADhANDLE )
     
                 }
                     hProcess.resetF() ;
-                    ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsPid.ungrabF( tinBaseP ) ;
-                    *((tinFullS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
-                    ((tinFullS&)tinBaseP).pag1->_thirdC_.lOsPid = pidP ;
-                    ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsPid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsPid.ungrabF( tinBaseP ) ;
+                    *((tin9S&)tinBaseP).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
+                    ((tin9S&)tinBaseP).pag1->_thirdC_.lOsPid = pidP ;
+                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsPid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 if( pidP && pidP != - 1 && F(flagsP) & flPROCESShIRE_REGISTERpROCESShANDLE )
 
@@ -54,8 +54,8 @@
 
             delF( tinBaseP , postAll ) ;
             }
-                ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("dosExecPgmF / could not launch process [postAll]:    \"")+T(postAll)+T("\"") ) ;
-                //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("dosExecPgmF / could not launch process:\r\n\"")+T(postAll)+T("\"") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("dosExecPgmF / could not launch process [postAll]:    \"")+T(postAll)+T("\"") ) ;
+                //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("dosExecPgmF / could not launch process:\r\n\"")+T(postAll)+T("\"") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
                 //LOGrAW( "\"\r\n" ) ;
                 //LOGrAW( postAll ) ;
@@ -73,7 +73,7 @@
                 ZE( osTextT* , postp ) ;
                 //THIS CODE IS DUPLICATED IN 102006a AND 102005d
 
-                ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("dosExecPgmF / CreateProcess / failed [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
+                ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("dosExecPgmF / CreateProcess / failed [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                 countT rc = POOP ;
             {
@@ -139,14 +139,14 @@
                         costae += TUCK ; // FOR !idNumaNode 12345678
 
                         }
-                            costae = ((tinFullS&)tinBaseP).brcRaw + 1 ;
+                            costae = ((tin9S&)tinBaseP).brcRaw + 1 ;
                             BOSdOnOTtEST( WHATgbo , strlen( postExeP ) )
                         {
                         else
                         }
-                            costae = c1 + 1 + ((tinFullS&)tinBaseP).brcRaw + 1 ;
+                            costae = c1 + 1 + ((tin9S&)tinBaseP).brcRaw + 1 ;
                             BOSdOnOTtEST( WHATgbo , strlen( postArgsP ) )
-                            countT c1 = ((tinFullS&)tinBaseP).brcRaw ;
+                            countT c1 = ((tin9S&)tinBaseP).brcRaw ;
                             BOSdOnOTtEST( WHATgbo , strlen( postExeP ) )
                         {
                         if( postArgsP )
@@ -249,8 +249,8 @@
     }
         if( POOP ) return ;
         FV( flPROCESShIRE , flagsP )
-        __( !((tinFullS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
-        __( !((tinFullS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle ) ;
+        __( !((tin9S&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
+        __( !((tin9S&)tinBaseP).pag1->_thirdC_.pSwProcessHandle ) ;
         __Z( postExeP ) ;
         __( pidP ) ;
         if( POOP ) return ;
@@ -258,7 +258,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::dosExecPgmF( tinBaseS& tinBaseP , countT& tidP , countT& pidP , const osTextT* const postExeP , const osTextT* const postArgsP , const flagsT flagsP , const handleC* phOutP , const handleC* phErrorP , const handleC* phInP , const osTextT* const postUserP , const osTextT* const postPasswordP , const flagsT flagsLogonP , const osTextT* const postDomainP )/*1*/
+/*1*/voidT thirdC::dosExecPgmF( tin0S& tinBaseP , countT& tidP , countT& pidP , const osTextT* const postExeP , const osTextT* const postArgsP , const flagsT flagsP , const handleC* phOutP , const handleC* phErrorP , const handleC* phInP , const osTextT* const postUserP , const osTextT* const postPasswordP , const flagsT flagsLogonP , const osTextT* const postDomainP )/*1*/
 
 //U:COMBINE INTO A SINGLE API: 102006a AND 102005d
 

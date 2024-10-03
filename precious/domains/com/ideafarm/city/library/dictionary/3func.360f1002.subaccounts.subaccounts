@@ -79,14 +79,14 @@
         soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tinBaseP , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
 
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALcONTAINSaND ) { (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsAnd , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsAnd ) ; }
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALcONTAINSoR  ) { (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsOr  , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsOr  ) ; }
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALeXACToR     ) { (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalExactOr     , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalExactOr     ) ; }
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYrECIPE                 ) { (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkRecipe                 , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkRecipe                 ) ; }
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYaUTORESPONSE           ) { (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkAutoresponse           , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkAutoresponse           ) ; }
-        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILrELAY             ) { (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailRelay             , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay             ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALcONTAINSaND ) { (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsAnd , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsAnd ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALcONTAINSoR  ) { (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalContainsOr  , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalContainsOr  ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILpENPALeXACToR     ) { (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailPenpalExactOr     , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailPenpalExactOr     ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYrECIPE                 ) { (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , pStkRecipe                 , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkRecipe                 ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYaUTORESPONSE           ) { (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , pStkAutoresponse           , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkAutoresponse           ) ; }
+        if( bAll || F(flagsThis) & flSUBACCOUNT_QUERYeMAILrELAY             ) { (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , pStkEmailRelay             , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ; ___( pStkEmailRelay             ) ; }
 
         const boolT bAll = ( flagsThis & ~( F(flSUBACCOUNT_SET) ) ) == flSUBACCOUNT_null ;
 
@@ -108,8 +108,8 @@
     {
     IFbEcAREFUL
 
-    //CONoUTrAWb( "\r\nsubaccountS/ct [idAdam,idThread,idAcc,idSub,flags]: " , ((tinFullS&)tinBaseP).pag1->idAdam , "(" , ((tinFullS&)tinBaseP).monitor.idThread , ") " , idAccP , ":" , idSubP , " " , flagsP , "\r\n" ) ; //U::
-    //CONoUTrAW( ((tinFullS&)tinBaseP).postThreadName ) ;
+    //CONoUTrAWb( "\r\nsubaccountS/ct [idAdam,idThread,idAcc,idSub,flags]: " , ((tin9S&)tinBaseP).pag1->idAdam , "(" , ((tin9S&)tinBaseP).monitor.idThread , ") " , idAccP , ":" , idSubP , " " , flagsP , "\r\n" ) ; //U::
+    //CONoUTrAW( ((tin9S&)tinBaseP).postThreadName ) ;
 {
 pStkEmailPenpalContainsAnd( 0 )
 pStkEmailPenpalContainsOr( 0 ) ,
@@ -127,7 +127,7 @@ flagsMode( 0 ) ,
 flagsThis( flagsP ) ,
 idSub( idSubP ) ,
 idAcc( idAccP ) ,
-/*1*/subaccountS::subaccountS( tinBaseS& tinBaseP , etherC& etherP , const countT idAccP , countT& idSubP , flagsT flagsP ) :/*1*/
+/*1*/subaccountS::subaccountS( tin0S& tinBaseP , etherC& etherP , const countT idAccP , countT& idSubP , flagsT flagsP ) :/*1*/
 
 /**/
 */

@@ -86,16 +86,16 @@ ZE( strokeS* , psttr ) ;
 //THIS CODE SETS A CURSOR TO THE WO'TH COUNTER VALUE
 
 bFail = rc != ERROR_SUCCESS ;
-rc = ((tinFullS&)tinBaseP).brcRaw ;
+rc = ((tin9S&)tinBaseP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , RegCloseKey( HKEY_PERFORMANCE_DATA ) )
 boolT bFail = rc != ERROR_SUCCESS ;
-//countT rc = ((tinFullS&)tinBaseP).brcRaw ;
+//countT rc = ((tin9S&)tinBaseP).brcRaw ;
 //BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "260" , 0 , (ULONG*)&idType , (UCHAR*)pbBuffer , (ULONG*)&cbBuffer ) )
-//B:countT rc = ((tinFullS&)tinBaseP).brcRaw ;
+//B:countT rc = ((tin9S&)tinBaseP).brcRaw ;
 //B:BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "952" , 0 , (ULONG*)&idType , (UCHAR*)pbBuffer , (ULONG*)&cbBuffer ) )
-//countT rc = ((tinFullS&)tinBaseP).brcRaw ;
+//countT rc = ((tin9S&)tinBaseP).brcRaw ;
 //BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Costly" , 0 , (ULONG*)&idType , (UCHAR*)pbBuffer , (ULONG*)&cbBuffer ) )
-countT rc = ((tinFullS&)tinBaseP).brcRaw ;
+countT rc = ((tin9S&)tinBaseP).brcRaw ;
 BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Global" , 0 , (ULONG*)&idType , (UCHAR*)pbBuffer , (ULONG*)&cbBuffer ) )
 ZE( countT , idType ) ;
 
@@ -157,25 +157,25 @@ ZE( countT , idType ) ;
     {
     
     bFail |= rc != ERROR_SUCCESS ;
-    rc = ((tinFullS&)tinBaseP).brcRaw ;
+    rc = ((tin9S&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Explain 009" , 0 , (ULONG*)&idType , (UCHAR*)pbNotes , (ULONG*)&cbNotes ) )
     etThread.newF( tinBaseP , LF , pbNotes , cbNotes ) ; ___( pbNotes ) ;
     ZE( byteT* , pbNotes ) ;
     
     bFail = rc != ERROR_SUCCESS ;
-    rc = ((tinFullS&)tinBaseP).brcRaw ;
+    rc = ((tin9S&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Explain 009" , 0 , (ULONG*)&idType , 0 , (ULONG*)&cbNotes ) )
     ZE( countT , cbNotes ) ;
     idType = 0 ;
     
     bFail |= rc != ERROR_SUCCESS ;
-    rc = ((tinFullS&)tinBaseP).brcRaw ;
+    rc = ((tin9S&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Counter 009" , 0 , (ULONG*)&idType , (UCHAR*)pbNames , (ULONG*)&cbNames ) )
     etThread.newF( tinBaseP , LF , pbNames , cbNames ) ; ___( pbNames ) ;
     ZE( byteT* , pbNames ) ;
     
     boolT bFail = rc != ERROR_SUCCESS ;
-    LONG rc = ((tinFullS&)tinBaseP).brcRaw ;
+    LONG rc = ((tin9S&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Counter 009" , 0 , (ULONG*)&idType , 0 , (ULONG*)&cbNames ) )
     ZE( countT , cbNames ) ;
     ZE( countT , idType ) ;

@@ -21,12 +21,12 @@
         __1
         #endif
 
-            __( ((tinFullS&)tinBaseP).brcRaw - WSABASEERR ) ;
+            __( ((tin9S&)tinBaseP).brcRaw - WSABASEERR ) ;
             BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
 
         #elif defined( __NT__ )
 
-            __( ((tinFullS&)tinBaseP).brcRaw - SOCBASEERR ) ;
+            __( ((tin9S&)tinBaseP).brcRaw - SOCBASEERR ) ;
             BOSdOnOTtEST( WHATgbo , sock_errno() )
 
         #if defined( __OS2__ )
@@ -42,7 +42,7 @@
                 bFail = 0 ;
 
                 //}
-                //    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("s_connectF / connect aok") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
+                //    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("s_connectF / connect aok") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
                 //{
                 //if( idPortP == 0x50 )   //U:: TO FIND A BUG
             {
@@ -52,32 +52,32 @@
                 ++ s ;
 
                 #endif
-                    if( ((tinFullS&)tinBaseP).brcLath == WSAENOTSOCK ) break ; //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP
+                    if( ((tin9S&)tinBaseP).brcLath == WSAENOTSOCK ) break ; //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP
                 #elif defined( __NT__ )
                     //U:
                 #if defined( __OS2__ )
 
                 //}
-                //    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("s_connectF / connect failed") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
+                //    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("s_connectF / connect failed") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
                 //{
                 //if( idPortP == 0x50 )   //U:: TO FIND A BUG
             {
-            if( ((tinFullS&)tinBaseP).bosFail )
+            if( ((tin9S&)tinBaseP).bosFail )
 
-            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("s_connect [bFail,bKilled]:    ")+TF3(((tinFullS&)tinBaseP).bosFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)+T("    ")+TF2(pks->bKilled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
+            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("s_connect [bFail,bKilled]:    ")+TF3(((tin9S&)tinBaseP).bosFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)+T("    ")+TF2(pks->bKilled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
 
             //}
-            //    ((tinFullS&)tinBaseP).brcRaw = _brcRawExp ;
-            //    ((tinFullS&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;
+            //    ((tin9S&)tinBaseP).brcRaw = _brcRawExp ;
+            //    ((tin9S&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;
             //    }
             //        }
-            //            /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tinFullS&)tinBaseP).brcLath , " " , ((tinFullS&)tinBaseP).idLine_brcLath , " " , ((tinFullS&)tinBaseP).idiFile_brcLath , "\r\n" ) ; }*/
-            //            ((tinFullS&)tinBaseP).idiFile_brcLath = DDNUMB ;
-            //            ((tinFullS&)tinBaseP).idLine_brcLath = ifcLINE ;
-            //            ((tinFullS&)tinBaseP).brcLath = ((tinFullS&)tinBaseP).brcQuery ;
+            //            /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin9S&)tinBaseP).brcLath , " " , ((tin9S&)tinBaseP).idLine_brcLath , " " , ((tin9S&)tinBaseP).idiFile_brcLath , "\r\n" ) ; }*/
+            //            ((tin9S&)tinBaseP).idiFile_brcLath = DDNUMB ;
+            //            ((tin9S&)tinBaseP).idLine_brcLath = ifcLINE ;
+            //            ((tin9S&)tinBaseP).brcLath = ((tin9S&)tinBaseP).brcQuery ;
             //        {
-            //        if( ((tinFullS&)tinBaseP).brcQuery )
-            //        ((tinFullS&)tinBaseP).brcQuery = _brcRaw ;
+            //        if( ((tin9S&)tinBaseP).brcQuery )
+            //        ((tin9S&)tinBaseP).brcQuery = _brcRaw ;
             //        _brcRaw -= WSABASEERR ;
             //        }
             //            }
@@ -91,10 +91,10 @@
             //        {
             //        ZE( countT , _brcRaw ) ;
             //    {
-            //    if( ((tinFullS&)tinBaseP).bosFail )
+            //    if( ((tin9S&)tinBaseP).bosFail )
             //    }
-            //        if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tinFullS&)tinBaseP).bosFail , ((tinFullS&)tinBaseP).bosFail ? idMeFail : idMeOk , "connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info )" ) ;
-            //        countT tally = processGlobal1I.pHome->tallyHo.tallyF( ((tinFullS&)tinBaseP).bosFail ? idMeFail : idMeOk ) ;
+            //        if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin9S&)tinBaseP).bosFail , ((tin9S&)tinBaseP).bosFail ? idMeFail : idMeOk , "connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info )" ) ;
+            //        countT tally = processGlobal1I.pHome->tallyHo.tallyF( ((tin9S&)tinBaseP).bosFail ? idMeFail : idMeOk ) ;
             //        static countT idMeFail ;
             //        static countT idMeOk ;
             //    {
@@ -110,21 +110,21 @@
             //            s_shutdown2IF( tinBaseP ) ;
             //        {
             //        if( rc == WSAECONNREFUSED )
-            //        ((tinFullS&)tinBaseP).bosFail = 1 ;
+            //        ((tin9S&)tinBaseP).bosFail = 1 ;
             //        countT rc = WSAGetLastError() ;
             //    {
             //    if( _brcRawExp )
             //
-            //    //((tinFullS&)tinBaseP).bosFail = !!_brcRawExp ;
+            //    //((tin9S&)tinBaseP).bosFail = !!_brcRawExp ;
             //
             //
             //
             //
             //    countT _brcRawExp = (countT)( connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info ) ) ;
             //    WHATsir
-            //    countT _idWhatSaveBos = ((tinFullS&)tinBaseP).monitor.idWhat1 ;
+            //    countT _idWhatSaveBos = ((tin9S&)tinBaseP).monitor.idWhat1 ;
             //{
-            //20141124@1644: WEIRD BEHAVIOR: THE ((tinFullS&)tinBaseP).bosFail = !!_brcRawExp ; LINE WAS OBSERVED IN WDW TO SET handleP.osh TO -1 (THE VALUE OF _brcRawExp)
+            //20141124@1644: WEIRD BEHAVIOR: THE ((tin9S&)tinBaseP).bosFail = !!_brcRawExp ; LINE WAS OBSERVED IN WDW TO SET handleP.osh TO -1 (THE VALUE OF _brcRawExp)
 
             BOSS( WHATsir , BOSfAIL , connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info ) )
 
@@ -132,12 +132,12 @@
 
 
             //}
-            //    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("s_connectF / connecting to port 05") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
+            //    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("s_connectF / connecting to port 05") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
             //{
             //if( idPortP == 0x50 )   //U:: TO FIND A BUG
 
 
-            //CONoUTrAW5( "" , ((tinFullS&)tinBaseP).pag1->idAdam , ": connecting to port " , idPortP , "\r\n" ) ;
+            //CONoUTrAW5( "" , ((tin9S&)tinBaseP).pag1->idAdam , ": connecting to port " , idPortP , "\r\n" ) ;
     
             if( !handleP ) break ;
         {
@@ -153,7 +153,7 @@
     //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("s_connect [sin_addr.s_addr,sin_port]: ")+TF3((countT)info.sin6_addr.s_addr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)+T("    ")+TF2((countT)info.sin6_port,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     }
-        pcTo[ 3 - offi ] = ((tinFullS&)tinBaseP).brcRaw ;
+        pcTo[ 3 - offi ] = ((tin9S&)tinBaseP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , htonl( pcFrom[ offi ] ) )
     {
     for( countT offi = 0 ; offi < 4 ; offi ++ )
@@ -161,7 +161,7 @@
     countT* pcTo   = (countT*)info.sin6_addr.u.Byte ;
     //CS:CODEsYNC: 350011ab 36001036
 
-    info.sin6_port = (count01T)((tinFullS&)tinBaseP).brcRaw ;
+    info.sin6_port = (count01T)((tin9S&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , htons( (count01T)idPortP ) )
     info.sin6_family = AF_INET6 ;
     c_memsetIF( tinBaseP , (byteT* const)&info , sizeof info ) ;
@@ -182,7 +182,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::s_connectF( tinBaseS& tinBaseP , handleC& handleP , const countT idPortP , const nicNameC nicNameP , countT cTriesP , countT time1P , const sCountT time2P )/*1*/
+/*1*/voidT thirdC::s_connectF( tin0S& tinBaseP , handleC& handleP , const countT idPortP , const nicNameC nicNameP , countT cTriesP , countT time1P , const sCountT time2P )/*1*/
 
 /**/
 */

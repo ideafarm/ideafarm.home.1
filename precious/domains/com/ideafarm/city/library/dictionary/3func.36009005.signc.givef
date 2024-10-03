@@ -33,7 +33,7 @@
             grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
             }
-                ((tinFullS&)tinBaseP).pEther->osSleepF( tinBaseP , time1P , time2P ) ;
+                ((tin9S&)tinBaseP).pEther->osSleepF( tinBaseP , time1P , time2P ) ;
                 sleepC s( tinBaseP, TAG( TAGiDnULL ) ) ;
             {
             if( time1P || time2P )
@@ -44,7 +44,7 @@
                 //IF NO OTHER THREADS HAVE DONE THIS THEN I WILL NOT RELEASE ANYWO (THIS SIMPLIFIES RACE ANALYSIS)
                 //MY TIDLOCK MEANS THAT MY FLASH CAN ONLY RELEASE OTHER THREADS THAT GOT INTO THE QUEUE BEFORE I LOCKED THE TID
                 //LATER NOTE: TIDLOCK BLOCKS OTHER THREADS FROM BEGINNING THE GRAB RECIPE
-                pGrabA->osTidLockF() = ((tinFullS&)tinBaseP).osTid ; //CONJ: THIS HAS NO BEHAVIORAL EFFECT SO IS NOT NEEDED
+                pGrabA->osTidLockF() = ((tin9S&)tinBaseP).osTid ; //CONJ: THIS HAS NO BEHAVIORAL EFFECT SO IS NOT NEEDED
                 thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
                 idDesireSave = thirdC::dosPriorityIF( tinBaseP ) ;
             {
@@ -59,7 +59,7 @@
                 idIn = 1 + incv02AM( idInLath ) ;
                 static countT idInLath ;
             {
-            if( ((tinFullS&)tinBaseP).monitor.idThread == 7 )
+            if( ((tin9S&)tinBaseP).monitor.idThread == 7 )
             ZE( countT , idIn ) ;
         {
         case ifcIDmODEsIGNgIVE_FLASH :
@@ -78,7 +78,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT signC::giveF( tinBaseS& tinBaseP , const countT idModeP , const countT time1P , const sCountT time2P )/*1*/
+/*1*/voidT signC::giveF( tin0S& tinBaseP , const countT idModeP , const countT time1P , const sCountT time2P )/*1*/
 
 /**/
 */

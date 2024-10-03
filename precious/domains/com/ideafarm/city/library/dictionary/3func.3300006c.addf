@@ -48,7 +48,7 @@
 
         }
             thirdC::c_memcpyIF( tinBaseP , (byteT*)pcpP , (byteT*)pcp1P , sizeof( countT ) * ( 1 + *pcp1P ) ) ;
-            thirdC::c_memsetIF( tinBaseP , (byteT*)pcpP                 , sizeof( countT ) * ( 1 + ccMax  ) ) ;                          //20190114@0826: "2 + ccMax" -> "1 + ccMax" WITHOUT ANALYSIS TO FIX OBSERVED HEAP TRASHING BY RESETTING TOO MANY BYTES AT HEAP ITEM CREATED BY PUSE.newF( tinBaseP , LF , *(byteT**)&PCPiDbOOKnOW , sizeof( countT ) * *pcpOffIdBookWant ) ; ___( PCPiDbOOKnOW ) ; IN booksC::readF( tinBaseS& tinBaseP , const byteT*& pbP , countT& cbP , handleC& handleP , const flagsT flagsP , const boolT* pbQuitP , handleC* const phCursorP , const countT idCursorP )
+            thirdC::c_memsetIF( tinBaseP , (byteT*)pcpP                 , sizeof( countT ) * ( 1 + ccMax  ) ) ;                          //20190114@0826: "2 + ccMax" -> "1 + ccMax" WITHOUT ANALYSIS TO FIX OBSERVED HEAP TRASHING BY RESETTING TOO MANY BYTES AT HEAP ITEM CREATED BY PUSE.newF( tinBaseP , LF , *(byteT**)&PCPiDbOOKnOW , sizeof( countT ) * *pcpOffIdBookWant ) ; ___( PCPiDbOOKnOW ) ; IN booksC::readF( tin0S& tinBaseP , const byteT*& pbP , countT& cbP , handleC& handleP , const flagsT flagsP , const boolT* pbQuitP , handleC* const phCursorP , const countT idCursorP )
         {
         if( pcpP != pcp1P )
     {
@@ -84,7 +84,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT addF( tinBaseS& tinBaseP , countT*& pcpP , countT* const pcp1P , const countT* const pcp2P , const boolT bSignedP )/*1*/
+/*1*/voidT addF( tin0S& tinBaseP , countT*& pcpP , countT* const pcp1P , const countT* const pcp2P , const boolT bSignedP )/*1*/
 
 /**/
 */

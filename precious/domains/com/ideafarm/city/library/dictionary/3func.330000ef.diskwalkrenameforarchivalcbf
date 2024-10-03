@@ -491,7 +491,7 @@
             TN( tOld , ifFileNameC( tinBaseP , etThread , postNameP ) ) ;                                       // OLD IFC FILE NAME
             TN( tIdeaFarmDotADot , "!ideafarm.a.2.00000000.00000001." ) ;                                   //20231122@1235: STORE THE FILESET AS A SINGLE ZIP FILE
             TN( tIdeaFarmDot9Dot , "!ideafarm.9.2.00000000.00000001." ) ;                                   //U:: idOwner IS HARDCODED HERE TO ".2.00000000.00000001." (FOREIGN ORDERING)
-            etherC& etThread = *((tinFullS&)tinBaseP).pEther ;
+            etherC& etThread = *((tin9S&)tinBaseP).pEther ;
         {
         if( bDoIt )
 
@@ -504,15 +504,15 @@
 
         diskWalkCopyInfoS& infoP = *(diskWalkCopyInfoS*)pcArgP ;
 
-        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("diskWalkRenameForArchivalCBF [postNameP]:    ")+T(postNameP) ) ;
+        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("diskWalkRenameForArchivalCBF [postNameP]:    ")+T(postNameP) ) ;
     {
-    else if( ((tinFullS&)tinBaseP).pEther )
+    else if( ((tin9S&)tinBaseP).pEther )
     else if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] == '\\' ) bDoIt = 1 ; // IF A DIRECTORY
     if( !postNameP ) ;
     ZE( boolT , bDoIt ) ;
     _IO_
 {
-/*1*/boolT diskWalkRenameForArchivalCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkRenameForArchivalCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 /**/
 */

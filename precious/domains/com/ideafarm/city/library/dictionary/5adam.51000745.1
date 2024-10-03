@@ -390,7 +390,7 @@ jhsOther(      tinBaseP , "jotAccessEvents.hash.string.other"   , flJOTc_WRITE ,
 jhsBrowser(    tinBaseP , "jotAccessEvents.hash.string.browser" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
 jhsQuery(      tinBaseP , "jotAccessEvents.hash.string.query"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
 jhsUri(        tinBaseP , "jotAccessEvents.hash.string.uri"     , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
-workS::workS( tinBaseS& tinBaseP , etherC& etherP ) :
+workS::workS( tin0S& tinBaseP , etherC& etherP ) :
 
 }
     swBooksByByte.ungrabF( tinBaseP ) ;
@@ -401,9 +401,9 @@ workS::workS( tinBaseS& tinBaseP , etherC& etherP ) :
 
     }
         //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("destroying a book [idf,cFlavors]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        //((tinFullS&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+        //((tin9S&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
         DELzOMBIE( pBooks ) ;
-        //((tinFullS&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+        //((tin9S&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
         booksC* pBooks = (booksC*)&(countT&)swBooksByByte ;
         lever_cByte = swBooksByByte.leverF( tinBaseP , idf ) ;
         //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("destroying a book [idf,cFlavors]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -416,7 +416,7 @@ workS::workS( tinBaseS& tinBaseP , etherC& etherP ) :
 
     swBooksByByte.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-voidT workS::destroyBooksF( tinBaseS& tinBaseP )
+voidT workS::destroyBooksF( tin0S& tinBaseP )
 
 }
     destroyBooksF( tinBaseP ) ;
@@ -429,8 +429,8 @@ countT cIn ;
 
 ;
 }
-    voidT destroyBooksF( tinBaseS& tinBaseP ) ;
-    workS( tinBaseS& tinBaseP , etherC& etherP ) ;
+    voidT destroyBooksF( tin0S& tinBaseP ) ;
+    workS( tin0S& tinBaseP , etherC& etherP ) ;
     ~workS( voidT ) ;
 
     switchC       swBooksByByte ;

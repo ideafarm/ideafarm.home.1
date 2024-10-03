@@ -15,27 +15,27 @@ DONE( tmServiceMainF )
         }
             }
                 TELL( "the driver has been fired" )
-                ((thirdC&)etThread).osDriverFireF( tinBaseP , ((tinFullS&)tinBaseP).pag1->postServiceName ) ;
+                ((thirdC&)etThread).osDriverFireF( tinBaseP , ((tin9S&)tinBaseP).pag1->postServiceName ) ;
                 bServiceAdamReturnedG = 1 ;
                 TELL( "firing the driver" )
             {
             if( /*ether &&*/ !bServiceFired )
             //THIS IS ILLEGAL; win32 SILENTLY CRAPS WHEN A SERVICE CALLS HIRE AND/OR FIRE FOR A SERVICE
     
-            ((tinFullS&)tinBaseP).flagsThreadMode2 &= ~( F(flTHREADmODE2_DRIVERaDAM) ) ;
-            if( !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+            ((tin9S&)tinBaseP).flagsThreadMode2 &= ~( F(flTHREADmODE2_DRIVERaDAM) ) ;
+            if( !( ++ processGlobal2I.pcPhaseLow[ ((tin9S&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
             TELL( "pMainF has returned" )
             (*pMainF)( &main ) ; //ASSUME: DEFINITION BLOCKS UNTIL QUITTING
-            if( !( ++ processGlobal2I.pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
-            ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_DRIVERaDAM ;
+            if( !( ++ processGlobal2I.pcPhaseLow[ ((tin9S&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+            ((tin9S&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_DRIVERaDAM ;
             TELL( "calling the adam" )
         {
         if( pMainF )
         BOSpOOP
-        BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tinFullS&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus ) )
-        ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwWaitHint = 0 ;
-        ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwCheckPoint = 0 ;
-        ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwCurrentState = SERVICE_RUNNING ;
+        BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tin9S&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus ) )
+        ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwWaitHint = 0 ;
+        ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwCheckPoint = 0 ;
+        ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwCurrentState = SERVICE_RUNNING ;
     
         mainS main( tinBaseP , ether , etThread , hDll , T("cid ")+tCid+T(" level 1") ) ;
         TNCID ;
@@ -59,17 +59,17 @@ DONE( tmServiceMainF )
     ZE( strokeS* , psttDll ) ;
 
     BOSpOOP
-    BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tinFullS&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus ) )
-    ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwWaitHint = 0x4000 ;
-    ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwCheckPoint ++ ;
-    ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwWin32ExitCode = NO_ERROR ;
-    ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SHUTDOWN ;
-    ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwCurrentState = SERVICE_START_PENDING ;
+    BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tin9S&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus ) )
+    ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwWaitHint = 0x4000 ;
+    ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwCheckPoint ++ ;
+    ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwWin32ExitCode = NO_ERROR ;
+    ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SHUTDOWN ;
+    ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwCurrentState = SERVICE_START_PENDING ;
 
-    ((tinFullS&)tinBaseP).pag1->oshServiceStatus = ((tinFullS&)tinBaseP).brcRaw ;
+    ((tin9S&)tinBaseP).pag1->oshServiceStatus = ((tin9S&)tinBaseP).brcRaw ;
     BOSpOOP
-    BOS( WHATgbo , BOSoK , RegisterServiceCtrlHandler( ((tinFullS&)tinBaseP).pag1->postServiceName , serviceHandlerF ) )
-    if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tinFullS&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmWindowsOrServiceMainF ) ; }
+    BOS( WHATgbo , BOSoK , RegisterServiceCtrlHandler( ((tin9S&)tinBaseP).pag1->postServiceName , serviceHandlerF ) )
+    if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin9S&)tinBaseP).monitor.idThread - ifcIDtHREADlOW_tmWindowsOrServiceMainF ) ; }
 
     thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_SERVICE ;
 
@@ -89,18 +89,18 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 )
             break ;
 
             BOSpOOP
-            BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tinFullS&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus ) )
-            ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwWaitHint = 0 ;
-            ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwCheckPoint = 0 ;
-            ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwCurrentState = SERVICE_STOPPED ;
+            BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tin9S&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus ) )
+            ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwWaitHint = 0 ;
+            ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwCheckPoint = 0 ;
+            ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwCurrentState = SERVICE_STOPPED ;
 
             }
                 }
                     ++ s; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; //MUST BE MUCH LOWER THAN THE dwWaitHint VALUE
                     BOSpOOP
-                    BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tinFullS&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus ) )
-                    ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwWaitHint = 8000 ;
-                    ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwCheckPoint ++ ;
+                    BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tin9S&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus ) )
+                    ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwWaitHint = 8000 ;
+                    ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwCheckPoint ++ ;
                 {
                 while( !bServiceAdamReturnedG && !etThread )
                 sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
@@ -110,10 +110,10 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 
             //POPUP( "SERVICE_STOP_PENDING" ) ;
             BOSpOOP
-            BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tinFullS&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus ) )
-            ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwWaitHint = 8000 ;
-            ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwCheckPoint ++ ;
-            ((SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus)->dwCurrentState = SERVICE_STOP_PENDING ;
+            BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tin9S&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus ) )
+            ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwWaitHint = 8000 ;
+            ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwCheckPoint ++ ;
+            ((SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus)->dwCurrentState = SERVICE_STOP_PENDING ;
             etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
         {
         case SERVICE_CONTROL_SHUTDOWN :
@@ -121,14 +121,14 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 )
         }
             break ;
             BOSpOOP
-            BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tinFullS&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tinFullS&)tinBaseP).pag1->pcServiceStatus ) )
+            BOS( WHATgbo , BOSoK , SetServiceStatus( (SERVICE_STATUS_HANDLE)((tin9S&)tinBaseP).pag1->oshServiceStatus , (SERVICE_STATUS*)((tin9S&)tinBaseP).pag1->pcServiceStatus ) )
         {
         case SERVICE_CONTROL_INTERROGATE :
     {
     switch( fdwControl )
     ZE( boolT , bRemoveMyself ) ;
 
-    tinBaseS& tinBaseP = *processGlobal2I.pTinBaseDadService ; //THIS HAS BEEN VERIFIED FOR WINDOWS: I EXECUTE ON THE SAME THREAD THAT CALLED THE DISPATCHER
+    tin0S& tinBaseP = *processGlobal2I.pTinBaseDadService ; //THIS HAS BEEN VERIFIED FOR WINDOWS: I EXECUTE ON THE SAME THREAD THAT CALLED THE DISPATCHER
     etherC& etThread = *processGlobal2I.pEtThreadServiceEventHandler ;
     if( !processGlobal2I.pEtThreadServiceEventHandler ) return ;
 {

@@ -11,20 +11,20 @@
     return ecMerged ;
     }
         }
-            ((tinFullS&)tinBaseP).pag1->_thirdC_.ecMergedHighWater |= flagHigh ;
-            ((tinFullS&)tinBaseP).pag1->_thirdC_.ecMergedHighWater  = codeHigh ;
+            ((tin9S&)tinBaseP).pag1->_thirdC_.ecMergedHighWater |= flagHigh ;
+            ((tin9S&)tinBaseP).pag1->_thirdC_.ecMergedHighWater  = codeHigh ;
 
             flagHigh |= flagAcc ;
             if( codeHigh < codeMax ) codeHigh = codeMax ;
 
-            countT codeHigh = ((tinFullS&)tinBaseP).pag1->_thirdC_.ecMergedHighWater & ~fliEC_FLAGmASK ;
-            countT flagHigh = ((tinFullS&)tinBaseP).pag1->_thirdC_.ecMergedHighWater &  fliEC_FLAGmASK ;
+            countT codeHigh = ((tin9S&)tinBaseP).pag1->_thirdC_.ecMergedHighWater & ~fliEC_FLAGmASK ;
+            countT flagHigh = ((tin9S&)tinBaseP).pag1->_thirdC_.ecMergedHighWater &  fliEC_FLAGmASK ;
         {
 
         ecMerged |= flagAcc ;
         ecMerged  = codeMax ;
 
-        ((tinFullS&)tinBaseP).pag1->_thirdC_.pStk_pThird->ungrabF( tinBaseP ) ;
+        ((tin9S&)tinBaseP).pag1->_thirdC_.pStk_pThird->ungrabF( tinBaseP ) ;
         while( ~hDown ) ;
         }
             flagAcc |= ecFlag ;
@@ -35,17 +35,17 @@
             countT ecFlag = ecOne &  fliEC_FLAGmASK ;
             countT ecOne = 0 ; //WAS POINTING TO third.ec
 
-            if( !pThird ) break ; // WILL HAPPEN IF *((tinFullS&)tinBaseP).pag1->_thirdC_.pStk_pThird IS IMPOTENT
-            thirdC* pThird = (thirdC*)((tinFullS&)tinBaseP).pag1->_thirdC_.pStk_pThird->downF( tinBaseP , hDown ) ;
+            if( !pThird ) break ; // WILL HAPPEN IF *((tin9S&)tinBaseP).pag1->_thirdC_.pStk_pThird IS IMPOTENT
+            thirdC* pThird = (thirdC*)((tin9S&)tinBaseP).pag1->_thirdC_.pStk_pThird->downF( tinBaseP , hDown ) ;
         {
         do
         handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-        ((tinFullS&)tinBaseP).pag1->_thirdC_.pStk_pThird->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ((tin9S&)tinBaseP).pag1->_thirdC_.pStk_pThird->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
         ZE( flagsT , flagAcc ) ;
         ZE( countT , codeMax ) ;
     {
-    if( ((tinFullS&)tinBaseP).pag1->_thirdC_.pStk_pThird )
+    if( ((tin9S&)tinBaseP).pag1->_thirdC_.pStk_pThird )
     ZE( countT , ecMerged ) ;
 
     _IO_
@@ -56,7 +56,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT thirdC::thirdInspectEcValuesF( tinBaseS& tinBaseP )/*1*/
+/*1*/countT thirdC::thirdInspectEcValuesF( tin0S& tinBaseP )/*1*/
 /**/
 */
 \<A HREF=\"5.10200fb.1.0.html\"\>definition\</A\>

@@ -24,7 +24,7 @@
     IFbEcAREFUL
     const countT costP = postP ? thirdC::c_strlenIF( tinBaseP , postP ) : 0 ;
 {
-/*1*/voidT cdF( tinBaseS& tinBaseP , thirdC& third , const osTextT* const postP )/*1*/
+/*1*/voidT cdF( tin0S& tinBaseP , thirdC& third , const osTextT* const postP )/*1*/
 /**/
 */
 \<A HREF=\"5.0c00008.1.0.html\"\>definition\</A\>

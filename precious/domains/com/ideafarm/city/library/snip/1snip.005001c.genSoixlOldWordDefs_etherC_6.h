@@ -1,5 +1,5 @@
 
-voidT hushDecryptF_1P31P31P31P3b_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushDecryptF_1P31P31P31P3b_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -60,7 +60,7 @@ voidT hushDecryptF_1P31P31P31P3b_GF( tinBaseS& tinBaseP , etherC& etherP , soulC
     etherP.delF( tinBaseP , pbPlainTextP ) ;
 }
 
-voidT hushMakeKeyPairF_b3_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushMakeKeyPairF_b3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -99,7 +99,7 @@ voidT hushMakeKeyPairF_b3_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP ,
     if( !POOP ) etherP.hushMakeKeyPairF( tinBaseP , hKeyPairP , cBitsP ) ;
 }
 
-voidT hushWothNonceF_6333b_GF( tinBaseS& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT hushWothNonceF_6333b_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;

@@ -173,8 +173,8 @@ class  /*ff*/threadCheckC/*ff*/                                         ; /*ff*/
 class  /*ff*/thugC/*ff*/                                                ; /*ff*//**//*ff*/
 struct /*ff*/timeS/*ff*/                                                ; /*ff*//**//*ff*/
 struct /*ff*/timeZoneSpecS/*ff*/                                        ; /*ff*//**//*ff*/
-struct /*ff*/tinBaseS/*ff*/                                             ; /*ff*//*o*//*ff*/
-struct /*ff*/tinFullS/*ff*/                                           ; /*ff*//*o*//*ff*/
+struct /*ff*/tin0S/*ff*/                                             ; /*ff*//*o*//*ff*/
+struct /*ff*/tin9S/*ff*/                                           ; /*ff*//*o*//*ff*/
 struct /*ff*/tinTallyS/*ff*/                                            ; /*ff*//**//*ff*/
 struct /*ff*/tlsStackFrameLocationS/*ff*/                               ; /*ff*//**//*ff*/
 struct /*ff*/tlsStackFrameS/*ff*/                                       ; /*ff*//**//*ff*/
@@ -531,7 +531,7 @@ it is illegal to refer to this symbol in the definition of an adam
         mainS* const& pmp = pMainParametersP ;                                                                                                                                      \
         if( pmp )                                                                                                                                                                   \
         {                                                                                                                                                                           \
-            tinBaseS& tinBaseP = pmp->tinBase ;                                                                                                                                     \
+            tin0S& tinBaseP = pmp->tinBase ;                                                                                                                                     \
             _IO_                                                                                                                                                                    \
             TELL( "MAINF/+" ) ;                                                                                                                                                     \
             thirdC::osTraceWrongNodeIF( tinBaseP , (byteT*)mainF , "mainF" ) ;                                                                                                      \
@@ -540,7 +540,7 @@ it is illegal to refer to this symbol in the definition of an adam
             timeS timeBorn ;                                                                                                                                                        \
             etherC& etThread = pmp->etThread ;                                                                                                                                      \
             handleC& hDll = pmp->hDll ;                                                                                                                                             \
-            /*etRock.traceF( tinBaseP , T("osTid: ")+TF4(((tinFullS&)tinBaseP).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;*/                       \
+            /*etRock.traceF( tinBaseP , T("osTid: ")+TF4(((tin9S&)tinBaseP).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;*/                       \
             etThread.osTimeNowF( tinBaseP , timeBorn.time1 , timeBorn.time2 ) ;                                                                                                     \
             etThread.ifcDatumF( tinBaseP , flDATUM1_CLASStRACEaLWAYShIREdLL , flDATUM2_null , 0 , 0 , 0 , (voidT*)DDNAME ) ;                                                        \
             /*U:REPLACE THESE HARDCODED idAdam VALUES WITH ifcIDaDAM SYMBOLS*/                                                                                                      \
@@ -549,14 +549,14 @@ it is illegal to refer to this symbol in the definition of an adam
             /*tlsAllocStackExp_7_C tlsForMe( tinBaseP ) ;                    */                                                                                                     \
             /*tlsBlobC _tlsBlobStackTop( tinBaseP , "appStackTop" , "tin" ) ;*/                                                                                                     \
             /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                         \
-            if( !( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                                                       \
+            if( !( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                                                       \
             {                                                                                                                                                                       \
                 if( thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_DLLwORKING1 )                                                                                         \
                     thirdC::third_idPhaseAdam_IF( tinBaseP ) = ifcIDpHASEaDAM_DLLwORKING1 ;                                                                                         \
-                if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                     \
+                if( ((tin9S&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin9S&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                     \
             }                                                                                                                                                                       \
             signC _sgnUtility( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                      \
-            ((tinFullS&)tinBaseP).pSgnUtility = &_sgnUtility ;                                                                                                                    \
+            ((tin9S&)tinBaseP).pSgnUtility = &_sgnUtility ;                                                                                                                    \
                                                                                                                                                                                     \
             {                                                                                                                                                                       \
                 _IO_
@@ -595,7 +595,7 @@ it is illegal to refer to this symbol in the definition of an adam
         ppp = pPeekParametersP ;                                                                                    \
         if( ppp )                                                                                                   \
         {                                                                                                           \
-            tinBaseS& tinBaseP  = ppp->tinBase ;                                                                    \
+            tin0S& tinBaseP  = ppp->tinBase ;                                                                    \
             etherC& ether = ppp->ether ;                                                                            \
             boolT save = bTlsEarlyLateIF() ;                                                                        \
             bTlsEarlyLateIF() = 0 ;                                                                                 \
@@ -664,12 +664,12 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                     \
                 /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                  \
                 TELL( "REST: ++" ) ;                                                                                                \
-                if( !( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
+                if( !( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
                 {                                                                                                                   \
                     if( thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE )            \
                         thirdC::third_idPhaseAdam_IF( tinBaseP ) = ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE ;            \
-                    if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                 \
-                    ((tinFullS&)tinBaseP).idPhase2 = 0 ;                                                                                             \
+                    if( ((tin9S&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin9S&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                 \
+                    ((tin9S&)tinBaseP).idPhase2 = 0 ;                                                                                             \
                 }                                                                                                                   \
                 if( thirdC::osProcessIdPhaseAdamIF( tinBaseP ) < ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) thirdC::osProcessIdPhaseAdamIF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ; \
                 /*LOGrAW( "REST0: calling FIREmYSELF\r\n" ) ;*/                                                                     \
@@ -678,11 +678,11 @@ it is illegal to refer to this symbol in the definition of an adam
                 TELL( "REST: calling WAITuNTILaLMOSTaLONE" ) ;                                                                      \
                 WAITuNTILaLMOSTaLONE( 0 )                                                                                           \
                 TELL( "REST: called WAITuNTILaLMOSTaLONE" ) ;                                                                       \
-                if( !( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
+                if( !( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
                 {                                                                                                                   \
                     if( thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE )                      \
                         thirdC::third_idPhaseAdam_IF( tinBaseP ) = ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE ;                      \
-                    if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;             \
+                    if( ((tin9S&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin9S&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;             \
                 }                                                                                                                   \
                 TELL( "REST: destroying all adam objects that remain on the thread stack" ) ;                                       \
                                                                                                                                     \
@@ -693,7 +693,7 @@ it is illegal to refer to this symbol in the definition of an adam
                     pRootI->letRefF() ;                                                                                             \
                 }                                                                                                                   \
             }                                                                                                                       \
-            ((tinFullS&)tinBaseP).pSgnUtility = 0 ;                                                                                                  \
+            ((tin9S&)tinBaseP).pSgnUtility = 0 ;                                                                                                  \
             etThread = 0 ;                                                                                                          \
             TELL( "REST: cleaning up" ) ;                                                                                           \
             thirdC::thirdImpotenceHandlerIF( tinBaseP ) ;                                                                               \
@@ -1256,13 +1256,13 @@ using the "new" "d elete" operators results in calling constructors and destruct
 /*1*//*NEWdELtYPEeTHER(typeP)*//*1*/
 #define NEWdELtYPEeTHER(typeP)                                          \
                                                                         \
-    voidT etherC::delF( tinBaseS& tinBaseP , typeP*& pP )                       \
+    voidT etherC::delF( tin0S& tinBaseP , typeP*& pP )                       \
     {                                                                   \
         _IO_                                                            \
         third.delF( tinBaseP , pP ) ;                                       \
     }                                                                   \
                                                                         \
-    voidT etherC::newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )     \
+    voidT etherC::newF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )     \
     {                                                                   \
         _IO_                                                            \
         DROPnOTEdOESnOTwANTmE                                           \
@@ -1306,7 +1306,7 @@ see the documentation for NEWdELtYPEeTHER
 
     #define NEWdELtYPEtHIRD(typeP,idTypeP)                                              \
                                                                                         \
-        voidT thirdC::delF( tinBaseS& tinBaseP , typeP*& pP )                                   \
+        voidT thirdC::delF( tin0S& tinBaseP , typeP*& pP )                                   \
         {                                                                               \
             _IO_                                                                        \
             countT idType = idTypeP ;                                                   \
@@ -1331,10 +1331,10 @@ see the documentation for NEWdELtYPEeTHER
             if( pP ) pP = 0 ;                                                           \
         }                                                                               \
                                                                                         \
-        voidT thirdC::newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
+        voidT thirdC::newF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
         {                                                                               \
             _IO_                                                                        \
-            if( !((tinFullS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                           \
+            if( !((tin9S&)tinBaseP).pPoolUse ) { BLAMMO ; }                                           \
             DROPnOTEdOESnOTwANTmE                                                       \
                                                                                         \
             if( ( (countT)(-1) >> 1 ) / NDsIZEoF( typeP ) <= cP ) /*NOT ADDRESSABLE*/   \
@@ -1371,7 +1371,7 @@ see the documentation for NEWdELtYPEeTHER
 
     #define NEWdELtYPEtHIRD(typeP,idTypeP)                                              \
                                                                                         \
-        voidT thirdC::delF( tinBaseS& tinBaseP , typeP*& pP )                                   \
+        voidT thirdC::delF( tin0S& tinBaseP , typeP*& pP )                                   \
         {                                                                               \
             _IO_                                                                        \
             countT idType = idTypeP ;                                                   \
@@ -1394,7 +1394,7 @@ see the documentation for NEWdELtYPEeTHER
             if( pP ) pP = 0 ;                                                           \
         }                                                                               \
                                                                                         \
-        voidT thirdC::newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
+        voidT thirdC::newF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP , typeP*& pP , const countT cP )                 \
         {                                                                               \
             _IO_                                                                        \
             DROPnOTEdOESnOTwANTmE                                                       \
@@ -1918,14 +1918,14 @@ use me iff pvP was obtained from operator new
 #define NEWdELcLASSpROTOS                                                                                                       \
                                                                                                                                 \
     voidT  operator delete(   voidT* pvP ) ;                                                                                    \
-    voidT* operator new(      countT cbP , const countT cbFootP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP ) ; \
-    voidT* operator new(      countT cbP , const countT cbFootP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP ) ;    \
-    voidT* operator new(      countT cbP , const countT cbFootP , tinBaseS& tinBaseP , napkinC* const pNapkinP             ) ;          \
+    voidT* operator new(      countT cbP , const countT cbFootP , tin0S& tinBaseP , const countT idLineP , const countT idiFileP ) ; \
+    voidT* operator new(      countT cbP , const countT cbFootP , tin0S& tinBaseP , byteT* pbZombieP , const countT cbZombieP ) ;    \
+    voidT* operator new(      countT cbP , const countT cbFootP , tin0S& tinBaseP , napkinC* const pNapkinP             ) ;          \
                                                                                                                                 \
     voidT  operator delete[]( voidT* pvP ) ;                                                                                    \
-    voidT* operator new[](    countT cbP                        , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP ) ; \
-    voidT* operator new[](    countT cbP                        , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP ) ;    \
-    voidT* operator new[](    countT cbP                        , tinBaseS& tinBaseP , napkinC* const pNapkinP                   ) ;
+    voidT* operator new[](    countT cbP                        , tin0S& tinBaseP , const countT idLineP , const countT idiFileP ) ; \
+    voidT* operator new[](    countT cbP                        , tin0S& tinBaseP , byteT* pbZombieP , const countT cbZombieP ) ;    \
+    voidT* operator new[](    countT cbP                        , tin0S& tinBaseP , napkinC* const pNapkinP                   ) ;
 
 
 //
@@ -1959,15 +1959,15 @@ it is illegal to refer to this symbol in the definition of an adam
     countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                                          \
     {                                                                                                                                                                                                                                                                                                             \
         TINSL                                                                                                                                                                                                                                                                                                     \
-        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                       \
+        if( ((tin9S&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin9S&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                       \
         _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                                           \
                                                                                                                                                                                                                                                                                                                   \
         /*OStEXT(   _ostoTmp , 0x80 )                                                                                                          */                                                                                                                                                                 \
         /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                        */                                                                                                                                                                 \
         /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                      */                                                                                                                                                                 \
-        /*OStEXTA(  _ostoTmp , ((tinFullS&)tinBaseP).postThreadName )                                                                                           */                                                                                                                                              \
+        /*OStEXTA(  _ostoTmp , ((tin9S&)tinBaseP).postThreadName )                                                                                           */                                                                                                                                              \
         /*OStEXTAK( _ostoTmp , "." )                                                                                                           */                                                                                                                                                                 \
-        /*OStEXTC(  _ostoTmp , ((tinFullS&)tinBaseP).monitor.idThread , 0 )                                                                                     */                                                                                                                                              \
+        /*OStEXTC(  _ostoTmp , ((tin9S&)tinBaseP).monitor.idThread , 0 )                                                                                     */                                                                                                                                              \
         /*tlsAllocStackExp_8_C tlsForMe( tinBaseP ) ;                                                                                              */                                                                                                                                                             \
         /*tlsBlobC _tlsBlobStatRangerTag( tinBaseP , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                                             \
         /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */                                                                                                                                                                 \
@@ -1989,16 +1989,16 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
                                                                                                                                                                                                                                                                                                                   \
         ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                                    \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tinFullS IN POOL*/                                                                                                                                              \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin9S IN POOL*/                                                                                                                                              \
         {                                                                                                                                                                                                                                                                                                         \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                                          \
             THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                                       \
         }                                                                                                                                                                                                                                                                                                         \
         else                                                                                                                                                                                                                                                                                                      \
         {                                                                                                                                                                                                                                                                                                         \
-            tinBaseS* const pTinBaseDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinBaseDad ;                                                                                                                                                                                                    \
-            TELL( "TASK0: newing a tinFullS in the working poolOld" )                                                                                                                                                                                                                                           \
-            tinBaseS* pTin = new( 0 , tinBaseP , LF ) tinFullS( tinBaseP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinBaseDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
+            tin0S* const pTinBaseDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinBaseDad ;                                                                                                                                                                                                    \
+            TELL( "TASK0: newing a tin9S in the working poolOld" )                                                                                                                                                                                                                                           \
+            tin0S* pTin = new( 0 , tinBaseP , LF ) tin9S( tinBaseP , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinBaseDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
             if( pTin )                                                                                                                                                                                                                                                                                            \
             {                                                                                                                                                                                                                                                                                                     \
                 bTinOk = 1 ;                                                                                                                                                                                                                                                                                      \
@@ -2009,7 +2009,7 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
                                                                                                                                                                                                                                                                                                                   \
         /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                                     \
-        TELL( "TASK0: after newing either a tinFullS in the working poolOld" )                                                                                                                                                                                                                                  \
+        TELL( "TASK0: after newing either a tin9S in the working poolOld" )                                                                                                                                                                                                                                  \
         if( bTinOk )                                                                                                                                                                                                                                                                                              \
         {                                                                                                                                                                                                                                                                                                         \
             TINSL                                                                                                                                                                                                                                                                                                 \
@@ -2017,60 +2017,60 @@ it is illegal to refer to this symbol in the definition of an adam
             etherC& ether = etherC::etPrimeIF( tinBaseP ) ;                                                                                                                                                                                                                                                       \
             etherC& etRock = etherC::etRockIF( tinBaseP ) ;                                                                                                                                                                                                                                                       \
             TELL( "TASK0: setting miscellaneous fields in tinBaseP" )                                                                                                                                                                                                                                             \
-            ((tinFullS&)tinBaseP).idiTask  = DDNUMB ;                                                                                                                                                                                                                                                           \
-            ((tinFullS&)tinBaseP).idlTask  = ifcLINE ;                                                                                                                                                                                                                                                          \
-            ((tinFullS&)tinBaseP).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinBaseP ) ;                                                                                                                                                                                                           \
-            ((tinFullS&)tinBaseP).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                              \
+            ((tin9S&)tinBaseP).idiTask  = DDNUMB ;                                                                                                                                                                                                                                                           \
+            ((tin9S&)tinBaseP).idlTask  = ifcLINE ;                                                                                                                                                                                                                                                          \
+            ((tin9S&)tinBaseP).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tinBaseP ) ;                                                                                                                                                                                                           \
+            ((tin9S&)tinBaseP).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                                                                   \
-            /*etRock.traceF( tinBaseP , T("TASK0 [osTid]: ")+TF4(((tinFullS&)tinBaseP).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                                    \
+            /*etRock.traceF( tinBaseP , T("TASK0 [osTid]: ")+TF4(((tin9S&)tinBaseP).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                                    \
                                                                                                                                                                                                                                                                                                                   \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                                         \
             TELL( "TASK0: setting flagsThreadMode2" )                                                                                                                                                                                                                                                             \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tinFullS&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                                  \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tinFullS&)tinBaseP).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin9S&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin9S&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin9S&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin9S&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin9S&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                                  \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tin9S&)tinBaseP).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                                  \
                                                                                                                                                                                                                                                                                                                   \
             TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                                                      \
               byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                                                \
               byteT pbEther2[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                                                \
               etherC* pEtThread = new( 0 , tinBaseP , pbEther1 , sizeof pbEther1 ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                               \
-              ((tinFullS&)tinBaseP).pEtScratch   = new( 0 , tinBaseP , pbEther2 , sizeof pbEther2 ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;                                                                                                                                     \
+              ((tin9S&)tinBaseP).pEtScratch   = new( 0 , tinBaseP , pbEther2 , sizeof pbEther2 ) etherC( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;                                                                                                                                     \
               TESTsCRATCH ;                                                                                                                                                                                                                                                                                       \
             TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                                                                \
             ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                                     \
-              if( pEtThread   && ((tinFullS&)tinBaseP).pEtScratch   )                                                                                                                                                                                                                                           \
+              if( pEtThread   && ((tin9S&)tinBaseP).pEtScratch   )                                                                                                                                                                                                                                           \
             {                                                                                                                                                                                                                                                                                                     \
                   etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                                                                \
                   byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                                             \
-                  ((tinFullS&)tinBaseP).pScoopEtThread = new( 0 , tinBaseP , pbScoop , sizeof pbScoop ) scoopC( tinBaseP , LF , etThread ) ; ___( ((tinFullS&)tinBaseP).pScoopEtThread  ) ;                                                                                                                   \
+                  ((tin9S&)tinBaseP).pScoopEtThread = new( 0 , tinBaseP , pbScoop , sizeof pbScoop ) scoopC( tinBaseP , LF , etThread ) ; ___( ((tin9S&)tinBaseP).pScoopEtThread  ) ;                                                                                                                   \
                                                                                                                                                                                                                                                                                                                   \
-                /*POPUP( TF1(((tinFullS&)tinBaseP).monitor.idThread)+T(" ")+T(((tinFullS&)tinBaseP).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
+                /*POPUP( TF1(((tin9S&)tinBaseP).monitor.idThread)+T(" ")+T(((tin9S&)tinBaseP).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
                                                                                                                                                                                                                                                                                                                   \
                 TELL( "TASK0: final setup" )                                                                                                                                                                                                                                                                      \
-                  ((tinFullS&)tinBaseP).pEther = &etThread ;                                                                                                                                                                                                                                                    \
+                  ((tin9S&)tinBaseP).pEther = &etThread ;                                                                                                                                                                                                                                                    \
                                                                                                                                                                                                                                                                                                                   \
                   signC _sgnUtility( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
-                  ((tinFullS&)tinBaseP).pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                            \
+                  ((tin9S&)tinBaseP).pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                            \
                                                                                                                                                                                                                                                                                                                   \
                 {                                                                                                                                                                                                                                                                                                 \
-                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tinFullS&)tinBaseP).osPid)+T(" ")+TF1(((tinFullS&)tinBaseP).osTid)+T(" \"")+T(((tinFullS&)tinBaseP).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/    \
-                    etThread.osTimeNowF( tinBaseP , ((tinFullS&)tinBaseP).time1 , ((tinFullS&)tinBaseP).time2 ) ;                                                                                                                                                                                             \
+                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tin9S&)tinBaseP).osPid)+T(" ")+TF1(((tin9S&)tinBaseP).osTid)+T(" \"")+T(((tin9S&)tinBaseP).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/    \
+                    etThread.osTimeNowF( tinBaseP , ((tin9S&)tinBaseP).time1 , ((tin9S&)tinBaseP).time2 ) ;                                                                                                                                                                                             \
                     if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                                           \
                     {                                                                                                                                                                                                                                                                                             \
                         TN( tDot , "." ) ;                                                                                                                                                                                                                                                                        \
-                        etThread.strMakeF( tinBaseP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tinFullS&)tinBaseP).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tinFullS&)tinBaseP).monitor.idThread) ) ; ___( psttThreadFile ) ;                                            \
+                        etThread.strMakeF( tinBaseP , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin9S&)tinBaseP).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin9S&)tinBaseP).monitor.idThread) ) ; ___( psttThreadFile ) ;                                            \
                         etThread.boxPutF( tinBaseP , psttThreadFile , "T" ) ;                                                                                                                                                                                                                                     \
                     }                                                                                                                                                                                                                                                                                             \
-                      if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinFullS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;                                                                  \
+                      if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tin9S&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;                                                                  \
                     TELL( "TASK0: entering application code" )                                                                                                                                                                                                                                                    \
                     /*tlsBlobC _tlsBlobStackTop( tinBaseP , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                                           \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                                               \
-                    if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
+                    if( ((tin9S&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin9S&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
                     _IO_                                                                                                                                                                                                                                                                                          \
-                    if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
+                    if( ((tin9S&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin9S&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -2109,28 +2109,28 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                        \
                     {                                                                                                                                                                                                                                                  \
                         TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                      \
-                        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
-                        if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                          \
-                        ((tinFullS&)tinBaseP).idPhase2 = 0 ;                                                                                                                                                                                                         \
+                        if( ((tin9S&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin9S&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
+                        if( ((tin9S&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin9S&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                          \
+                        ((tin9S&)tinBaseP).idPhase2 = 0 ;                                                                                                                                                                                                         \
                         TELL( "DONE0: after returning from application code" ) ;                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                        \
-                        if( ((tinFullS&)tinBaseP).pag1->cYieldHighWater )                                                                                                                                                                                            \
+                        if( ((tin9S&)tinBaseP).pag1->cYieldHighWater )                                                                                                                                                                                            \
                         {                                                                                                                                                                                                                                              \
                             OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                                                          \
                             OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                                               \
-                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->idAdam , 0 ) ;                                                                                                                                                                           \
+                            OStEXTC(  ostoSay , ((tin9S&)tinBaseP).pag1->idAdam , 0 ) ;                                                                                                                                                                           \
                             OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
-                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                  \
+                            OStEXTC(  ostoSay , ((tin9S&)tinBaseP).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                  \
                             OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
-                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins1 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tin9S&)tinBaseP).cSpins1 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins2 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tin9S&)tinBaseP).cSpins2 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins3 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tin9S&)tinBaseP).cSpins3 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cSpins4 , '0' ) ;                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tin9S&)tinBaseP).cSpins4 , '0' ) ;                                                                                                                                                                              \
                             OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).cOsHandles , '0' ) ;                                                                                                                                                                           \
+                            OStEXTC(  ostoSay , ((tin9S&)tinBaseP).cOsHandles , '0' ) ;                                                                                                                                                                           \
                             etThread.traceF( tinBaseP , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                                                                                                                              \
                         }                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
@@ -2138,25 +2138,25 @@ it is illegal to refer to this symbol in the definition of an adam
                         else                                                                                                                                                                                                                                           \
                         {                                                                                                                                                                                                                                              \
                             TELL( "DONE0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                       \
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tinFullS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;               \
+                            if( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP)) & flADAMmODE1_WHEREaLL && !( F(((tin9S&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;               \
                                                                                                                                                                                                                                                                        \
                             TELL( "DONE0: waiting for my kid threads to end" ) ;                                                                                                                                                                                       \
                             {                                                                                                                                                                                                                                          \
                                 sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                                        \
-                                while( ((tinFullS&)tinBaseP).cKidThreads )                                                                                                                                                                                           \
+                                while( ((tin9S&)tinBaseP).cKidThreads )                                                                                                                                                                                           \
                                 {                                                                                                                                                                                                                                      \
-                                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("DONE0 / napping a wink for my kids to end [((tinFullS&)tinBaseP).cKidThreads]:    ")+TF2(((tinFullS&)tinBaseP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
+                                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("DONE0 / napping a wink for my kids to end [((tin9S&)tinBaseP).cKidThreads]:    ")+TF2(((tin9S&)tinBaseP).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
                                     ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ;                                                                                                                                                                                   \
                                 }                                                                                                                                                                                                                                      \
                             }                                                                                                                                                                                                                                          \
                             TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                             \
                         }                                                                                                                                                                                                                                              \
-                        if( ((tinFullS&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tinFullS&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                      \
-                        if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
+                        if( ((tin9S&)tinBaseP).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin9S&)tinBaseP).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                      \
+                        if( ((tin9S&)tinBaseP).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin9S&)tinBaseP).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
                     }                                                                                                                                                                                                                                                  \
                 }                                                                                                                                                                                                                                                      \
                                                                                                                                                                                                                                                                        \
-                ((tinFullS&)tinBaseP).pSgnUtility = 0 ;                                                                                                                                                                                                              \
+                ((tin9S&)tinBaseP).pSgnUtility = 0 ;                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
                 {                                                                                                                                                                                                                                                      \
                     TINSL /*THIS IS NEEDED BECAUSE tinBaseP WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                          \
@@ -2165,15 +2165,15 @@ it is illegal to refer to this symbol in the definition of an adam
                         if( psttThreadFile )                                                                                                                                                                                                                           \
                         {                                                                                                                                                                                                                                              \
                             TELL( "DONE0: deleting thread file" ) ;                                                                                                                                                                                                    \
-                            ((tinFullS&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                 \
-                            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                    \
+                            ((tin9S&)tinBaseP).pEtScratch->boxZapF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                 \
+                            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttThreadFile ) ;                                                                                                                                                                    \
                         }                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
                         TELL( "DONE0: testing poolOld" ) ;                                                                                                                                                                                                             \
-                        ((tinFullS&)tinBaseP).pEther = 0 ;                                                                                                                                                                                                           \
+                        ((tin9S&)tinBaseP).pEther = 0 ;                                                                                                                                                                                                           \
                         TELL( "DONE0: deleting etThread (and tinBaseP)" ) ;                                                                                                                                                                                            \
-                        DELzOMBIE( ((tinFullS&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                           \
-                          DELzOMBIE( ((tinFullS&)tinBaseP).pEtScratch ) ;                                                                                                                                                                                            \
+                        DELzOMBIE( ((tin9S&)tinBaseP).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                           \
+                          DELzOMBIE( ((tin9S&)tinBaseP).pEtScratch ) ;                                                                                                                                                                                            \
                         if( *(countT*)&pEtThread )                                                                                                                                                                                                                     \
                         {                                                                                                                                                                                                                                              \
                             DELzOMBIE( pEtThread ) ; /* tinBaseP IS DESTROYED HERE */                                                                                                                                                                                  \
@@ -2206,7 +2206,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 }                                                                                                                                                                                                                                                      \
                                                                                                                                                                                                                                                                        \
                 TELL( "DONE0: i am outa here" )                                                                                                                                                                                                                        \
-                if( ((tinFullS&)tinBaseP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tinFullS&)tinBaseP).monitor.idThread ] = - 1 ;                                                                                    \
+                if( ((tin9S&)tinBaseP).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin9S&)tinBaseP).monitor.idThread ] = - 1 ;                                                                                    \
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                                                       \
             }                                                                                                                                                                                                                                                          \
         }                                                                                                                                                                                                                                                              \
@@ -2434,7 +2434,7 @@ any code that refers to the _ symbol must use _MILE _MOLE to bracket the code th
 //NORMALLY KEEP THIS DEFINITION COMMENTED OUT
 //USE IT ONLY WHEN FISHING FOR A RARE EXCEPTION
 
-#define _ /*if( _idiFileMileDadSave ) ;*/ ((tinFullS&)tinBaseP).idLineMile = ifcLINE ;
+#define _ /*if( _idiFileMileDadSave ) ;*/ ((tin9S&)tinBaseP).idLineMile = ifcLINE ;
 
 //PRODUCTION: COMMENT OUT "if( _idiFileMileDadSave ) ;" EXCEPT WHEN WANT TO VERIFY THAT _ IS ONLY USED WITHIN A _MILE _MOLE BLOCK
 
@@ -4237,7 +4237,7 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*TINSL*//*1*/
 
-#define TINSL tinBaseS& tinBaseP = thirdC::third_tinBaseS_ref_IF() ;
+#define TINSL tin0S& tinBaseP = thirdC::third_tin0S_ref_IF() ;
 
 
 //
@@ -5228,7 +5228,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                             \
             inOutFrameC _inOutFrame( tinBaseP , LF , IDFILE , BiFCcLASS ) ;                                                                                     \
                                                                                                                                                             \
-            if( processGlobal1S::_processGlobal1I_IF().idAdamRoot == ifcIDaDAM_SCRATCH0d && !( F(((tinFullS&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_STFU1iOmACRO ) )    \
+            if( processGlobal1S::_processGlobal1I_IF().idAdamRoot == ifcIDaDAM_SCRATCH0d && !( F(((tin9S&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_STFU1iOmACRO ) )    \
             {                                                                                                                                               \
                 THREADmODE5oN( flTHREADmODE5_STFU1iOmACRO )                                                                                                 \
                 {                                                                                                                                           \
@@ -5564,7 +5564,7 @@ U: redesign this to work well with all types of process face
 //U:
 #if defined( NEVERdEFINED )
 
-#define PRO ((tinFullS&)tinBaseP).pIdProgressNest[ ((tinFullS&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ]
+#define PRO ((tin9S&)tinBaseP).pIdProgressNest[ ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ]
 
 #else
 
@@ -5723,17 +5723,17 @@ U: redesign this to work well with all types of process face
 
 #define PROSHO                                                                                                  \
                                                                                                                 \
-if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_SHOWpROGRESS )                                                     \
+if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_SHOWpROGRESS )                                                     \
 {                                                                                                               \
     ZE( countT , ecnu ) ;                                                                                     \
-    countT cNest = ((tinFullS&)tinBaseP).monitor.cInNest ;                                                                                 \
+    countT cNest = ((tin9S&)tinBaseP).monitor.cInNest ;                                                                                 \
     countT cToDo = 1 + ( cNest <= 7 ? cNest : 7 ) ;                                                             \
                                                                                                                 \
     thirdC::dosWriteStdOutIF( tinBaseP , "\r" BLANK79 "\r" ) ;                                                      \
     while( cToDo -- )                                                                                           \
     {                                                                                                           \
         OStEXT( ostod , 0x9 )                                                                                   \
-        OStEXTC( ostod , ((tinFullS&)tinBaseP).pIdProgressNest[ ( cNest -- ) & OFFsLOTtINnESTmAX ] , 0 )                         \
+        OStEXTC( ostod , ((tin9S&)tinBaseP).pIdProgressNest[ ( cNest -- ) & OFFsLOTtINnESTmAX ] , 0 )                         \
         thirdC::dosWriteStdOutIF( tinBaseP , ostod ) ;                                                              \
         if( cToDo ) thirdC::dosWriteStdOutIF( tinBaseP , '.' ) ;                                                    \
     }                                                                                                           \
@@ -6845,13 +6845,13 @@ flTHREADlAUNCH_ORPHAN
 /*
 \<A HREF=\"5.00100f8.1.0.html\"\>definition\</A\>
 it is illegal to refer to this symbol in the definition of an adam
-be sure to set all ((tinFullS&)tinBaseP).pag1->_thirdC_.break_idThread and ((tinFullS&)tinBaseP).pag1->_thirdC_.break_idStep allocations used in the executable
+be sure to set all ((tin9S&)tinBaseP).pag1->_thirdC_.break_idThread and ((tin9S&)tinBaseP).pag1->_thirdC_.break_idStep allocations used in the executable
  each executable image will have a set of static variable allocations
 */
 /**/
 
 /*1*//*BREAKiF*//*1*/
-#define BREAKiF if( ((tinFullS&)tinBaseP).pag1->_thirdC_.break_idStep && ((tinFullS&)tinBaseP).pag1->_thirdC_.break_idStep <= ((tinFullS&)tinBaseP).monitor.idStep && ( !((tinFullS&)tinBaseP).pag1->_thirdC_.break_idThread || ((tinFullS&)tinBaseP).pag1->_thirdC_.break_idThread == ((tinFullS&)tinBaseP).monitor.idThread ) ) thirdC::thirdBreakIF( tinBaseP )
+#define BREAKiF if( ((tin9S&)tinBaseP).pag1->_thirdC_.break_idStep && ((tin9S&)tinBaseP).pag1->_thirdC_.break_idStep <= ((tin9S&)tinBaseP).monitor.idStep && ( !((tin9S&)tinBaseP).pag1->_thirdC_.break_idThread || ((tin9S&)tinBaseP).pag1->_thirdC_.break_idThread == ((tin9S&)tinBaseP).monitor.idThread ) ) thirdC::thirdBreakIF( tinBaseP )
 
 
 //
@@ -7103,10 +7103,10 @@ to use this, the object must be of a class that provides operator byteT* which r
 
 /*1*//*IFbEcAREFUL*//*1*/
 
-#define IFbEcAREFUL if( !((tinFullS&)tinBaseP).pag1 || ((tinFullS&)tinBaseP).pag1->_thirdC_.bCareful )
+#define IFbEcAREFUL if( !((tin9S&)tinBaseP).pag1 || ((tin9S&)tinBaseP).pag1->_thirdC_.bCareful )
 
 //U:: THIS FAILS BECAUSE SOME FUNCTIONS MUST NOT CT _IO_
-//U:: #define IFbEcAREFUL _IO1_(1) if( ((tinFullS&)tinBaseP).pag1->_thirdC_.bCareful )
+//U:: #define IFbEcAREFUL _IO1_(1) if( ((tin9S&)tinBaseP).pag1->_thirdC_.bCareful )
 
 
 //
@@ -8169,7 +8169,7 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifcIDtYPEdROPnOTE_thirdCpoolNewF                                0xdddd043b
 #define ifcIDtYPEdROPnOTE_threadC                                       0xdddd043c
 #define ifcIDtYPEdROPnOTE_thugC                                         0xdddd043d
-#define ifcIDtYPEdROPnOTE_tinFullS                                          0xdddd043e
+#define ifcIDtYPEdROPnOTE_tin9S                                          0xdddd043e
 #define ifcIDtYPEdROPnOTE_tlsAllocPoolC                                 0xdddd043f
 #define ifcIDtYPEdROPnOTE_tlsAllocStackExp_01_C                         0xdddd0440
 #define ifcIDtYPEdROPnOTE_tlsAllocStackExp_8_C                          0xdddd0441
@@ -8301,9 +8301,9 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*COSTmAXtHREADnAME*//*1*/
 /**/
 
-// (COSTmAXtHREADnAME + 1) MUST BE A MULTIPLE OF sizeof( countT ) SO THAT tinFullS, MEMBERS ARE ALIGNED
+// (COSTmAXtHREADnAME + 1) MUST BE A MULTIPLE OF sizeof( countT ) SO THAT tin9S, MEMBERS ARE ALIGNED
 
-//20240929@2030: 0x1f <- 0xff TO SHRINK SIZE OF tinFullS
+//20240929@2030: 0x1f <- 0xff TO SHRINK SIZE OF tin9S
 
 #define COSTmAXtHREADnAME 0x1f
 
@@ -8490,92 +8490,92 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifcIDwHAT_max     0xdddd046f
 
 // whatP VALUES
-#define WHATga   { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GOaDAM             ; }
-#define WHATgape { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GOpROLOGePILOG     ; }
-#define WHATgbl  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GObOSclIB          ; }
-#define WHATgbm  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GObOSmONITOR       ; }
-#define WHATgbd  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GObOSdRAW          ; }
-#define WHATgbo  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GObOSoTHER         ; }
-#define WHATgbt  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GObOStHIRD         ; }
-#define WHATsb   { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPbATON          ; }
-#define WHATsbl  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPbOSclIB        ; }
-#define WHATsbt  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPbOStHIRD       ; }
-#define WHATsfr  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPfILErEAD       ; }
-#define WHATsfw  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPfILEwRITE      ; }
-#define WHATsg   { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPgRAB           ; }
-#define WHATsia  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPiNTaCCEPT      ; }
-#define WHATsir  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPiNTrEAD        ; }
-#define WHATsiw  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPiNTwRITE       ; }
-#define WHATsm   { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPmONITORING     ; }
-#define WHATsy   { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPyIELD          ; }
-#define WHATsn   { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPnAP            ; }
-#define WHATso   { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPoTHER          ; }
-#define WHATss   { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPsIGN           ; }
-#define WHATssu  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPsUSPENDED      ; }
-#define WHATsw   { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPwIN            ; }
-#define WHATswr  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPwINrEAD        ; }
-#define WHATsww  { if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tinFullS&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPwINwRITE       ; }
+#define WHATga   { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GOaDAM             ; }
+#define WHATgape { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GOpROLOGePILOG     ; }
+#define WHATgbl  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GObOSclIB          ; }
+#define WHATgbm  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GObOSmONITOR       ; }
+#define WHATgbd  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GObOSdRAW          ; }
+#define WHATgbo  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GObOSoTHER         ; }
+#define WHATgbt  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_GObOStHIRD         ; }
+#define WHATsb   { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPbATON          ; }
+#define WHATsbl  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPbOSclIB        ; }
+#define WHATsbt  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPbOStHIRD       ; }
+#define WHATsfr  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPfILErEAD       ; }
+#define WHATsfw  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPfILEwRITE      ; }
+#define WHATsg   { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPgRAB           ; }
+#define WHATsia  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPiNTaCCEPT      ; }
+#define WHATsir  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPiNTrEAD        ; }
+#define WHATsiw  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPiNTwRITE       ; }
+#define WHATsm   { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPmONITORING     ; }
+#define WHATsy   { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPyIELD          ; }
+#define WHATsn   { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPnAP            ; }
+#define WHATso   { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPoTHER          ; }
+#define WHATss   { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPsIGN           ; }
+#define WHATssu  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPsUSPENDED      ; }
+#define WHATsw   { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPwIN            ; }
+#define WHATswr  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPwINrEAD        ; }
+#define WHATsww  { if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin9S&)tinBaseP).monitor.idWhat1 = ifcIDwHAT_STOPwINwRITE       ; }
 
 // typeP VALUES
-#define BOSwAITcODE     ((tinFullS&)tinBaseP).bosFail = _brcRawExp == WAIT_FAILED
-#define BOSsOCKETcODE2  ((tinFullS&)tinBaseP).bosFail = _brcRawExp == SOCKET_ERROR
-#define BOSsOCKETcODE   ((tinFullS&)tinBaseP).bosFail = _brcRawExp == INVALID_SOCKET
-#define BOStHREADERcODE ((tinFullS&)tinBaseP).bosFail = _brcRawExp == THREAD_PRIORITY_ERROR_RETURN
-#define BOSgDIcODE      ((tinFullS&)tinBaseP).bosFail = _brcRawExp == GDI_ERROR
-#define BOScOMoK        ((tinFullS&)tinBaseP).bosFail = _brcRawExp != S_OK
-#define BOSsUCCESScODE  ((tinFullS&)tinBaseP).bosFail = _brcRawExp != ERROR_SUCCESS
-#define BOSmAXcOUNTT    ((tinFullS&)tinBaseP).bosFail = _brcRawExp == MAXcOUNTT
-#define BOShANDLE       ((tinFullS&)tinBaseP).bosFail = (HANDLE)_brcRawExp == INVALID_HANDLE_VALUE
-#define BOSfAIL         ((tinFullS&)tinBaseP).bosFail = !!_brcRawExp
-#define BOSoK           ((tinFullS&)tinBaseP).bosFail = !_brcRawExp
-#define BOSfAILiFmINUS1 ((tinFullS&)tinBaseP).bosFail = _brcRawExp == - 1
+#define BOSwAITcODE     ((tin9S&)tinBaseP).bosFail = _brcRawExp == WAIT_FAILED
+#define BOSsOCKETcODE2  ((tin9S&)tinBaseP).bosFail = _brcRawExp == SOCKET_ERROR
+#define BOSsOCKETcODE   ((tin9S&)tinBaseP).bosFail = _brcRawExp == INVALID_SOCKET
+#define BOStHREADERcODE ((tin9S&)tinBaseP).bosFail = _brcRawExp == THREAD_PRIORITY_ERROR_RETURN
+#define BOSgDIcODE      ((tin9S&)tinBaseP).bosFail = _brcRawExp == GDI_ERROR
+#define BOScOMoK        ((tin9S&)tinBaseP).bosFail = _brcRawExp != S_OK
+#define BOSsUCCESScODE  ((tin9S&)tinBaseP).bosFail = _brcRawExp != ERROR_SUCCESS
+#define BOSmAXcOUNTT    ((tin9S&)tinBaseP).bosFail = _brcRawExp == MAXcOUNTT
+#define BOShANDLE       ((tin9S&)tinBaseP).bosFail = (HANDLE)_brcRawExp == INVALID_HANDLE_VALUE
+#define BOSfAIL         ((tin9S&)tinBaseP).bosFail = !!_brcRawExp
+#define BOSoK           ((tin9S&)tinBaseP).bosFail = !_brcRawExp
+#define BOSfAILiFmINUS1 ((tin9S&)tinBaseP).bosFail = _brcRawExp == - 1
 
 #define BOSlASTeRROR GetLastError()
 
 #define BOS(whatP,typeP,expP)   BOS0( whatP , typeP , expP , BOSnOtIN( GetLastError()                          ) , BOSnOvALUEnOtIN( SetLastError( 0    ) ) )
-#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( ((tinFullS&)tinBaseP).brcRaw                             ) , ((tinFullS&)tinBaseP).brcRaw = 0                         )
+#define BOSI(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( ((tin9S&)tinBaseP).brcRaw                             ) , ((tin9S&)tinBaseP).brcRaw = 0                         )
 #define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR , BOSnOvALUEnOtIN( WSASetLastError( 0 ) ) )
-#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , ((tinFullS&)tinBaseP).brcRaw = 0                         )
+#define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , ((tin9S&)tinBaseP).brcRaw = 0                         )
 
 #define BOS0(whatP,typeP,expP,expGetErrorP,expResetErrorP)                                                                                              \
                                                                                                                                                         \
     {                                                                                                                                                   \
-        ((tinFullS&)tinBaseP).brcLath = ((tinFullS&)tinBaseP).brcQuery = 0 ;                                                                                                              \
-        countT _idWhatSaveBos = ((tinFullS&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
+        ((tin9S&)tinBaseP).brcLath = ((tin9S&)tinBaseP).brcQuery = 0 ;                                                                                                              \
+        countT _idWhatSaveBos = ((tin9S&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         expResetErrorP ;                                                                                                                                \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         typeP ;                                                                                                                                         \
         ZE( countT , _brcRaw ) ;                                                                                                                        \
         expGetErrorP ;                                                                                                                                  \
-        ((tinFullS&)tinBaseP).brcQuery = _brcRaw ;                                                                                                                       \
+        ((tin9S&)tinBaseP).brcQuery = _brcRaw ;                                                                                                                       \
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
         if( pg1.pHome )                                                                                                                                 \
         {                                                                                                                                               \
             static countT idMeOk ;                                                                                                                      \
             static countT idMeFail ;                                                                                                                    \
-            countT tally = pg1.pHome->tallyHo.tallyF( ((tinFullS&)tinBaseP).bosFail ? idMeFail : idMeOk ) ;                                                              \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tinFullS&)tinBaseP).bosFail , ((tinFullS&)tinBaseP).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tin9S&)tinBaseP).bosFail ? idMeFail : idMeOk ) ;                                                              \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin9S&)tinBaseP).bosFail , ((tin9S&)tinBaseP).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
         }                                                                                                                                               \
-        if( ((tinFullS&)tinBaseP).bosFail )                                                                                                                              \
+        if( ((tin9S&)tinBaseP).bosFail )                                                                                                                              \
         {                                                                                                                                               \
-            if( ((tinFullS&)tinBaseP).brcQuery )                                                                                                                         \
+            if( ((tin9S&)tinBaseP).brcQuery )                                                                                                                         \
             {                                                                                                                                           \
-                ((tinFullS&)tinBaseP).brcLath = ((tinFullS&)tinBaseP).brcQuery ;                                                                                                          \
-                ((tinFullS&)tinBaseP).idLine_brcLath = ifcLINE ;                                                                                                         \
-                ((tinFullS&)tinBaseP).idiFile_brcLath = DDNUMB ;                                                                                                         \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tinFullS&)tinBaseP).brcLath , " " , ((tinFullS&)tinBaseP).idLine_brcLath , " " , ((tinFullS&)tinBaseP).idiFile_brcLath , "\r\n" ) ; }*/ \
+                ((tin9S&)tinBaseP).brcLath = ((tin9S&)tinBaseP).brcQuery ;                                                                                                          \
+                ((tin9S&)tinBaseP).idLine_brcLath = ifcLINE ;                                                                                                         \
+                ((tin9S&)tinBaseP).idiFile_brcLath = DDNUMB ;                                                                                                         \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin9S&)tinBaseP).brcLath , " " , ((tin9S&)tinBaseP).idLine_brcLath , " " , ((tin9S&)tinBaseP).idiFile_brcLath , "\r\n" ) ; }*/ \
             }                                                                                                                                           \
         }                                                                                                                                               \
-        ((tinFullS&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tinFullS&)tinBaseP).brcRaw = _brcRawExp ;                                                                                                                      \
+        ((tin9S&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin9S&)tinBaseP).brcRaw = _brcRawExp ;                                                                                                                      \
     }
 
 #define BOSL(whatP,typeP,expP)                                                                                                                          \
                                                                                                                                                         \
     {                                                                                                                                                   \
-        ((tinFullS&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tinFullS&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
+        ((tin9S&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tin9S&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         errno = 0 ;                                                                                                                                     \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
@@ -8585,30 +8585,30 @@ it is illegal to refer to this symbol in the definition of an adam
         {                                                                                                                                               \
             static countT idMeOk ;                                                                                                                      \
             static countT idMeFail ;                                                                                                                    \
-            countT tally = pg1.pHome->tallyHo.tallyF( ((tinFullS&)tinBaseP).bosFail || errno ? idMeFail : idMeOk ) ;                                                     \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tinFullS&)tinBaseP).bosFail , ((tinFullS&)tinBaseP).bosFail || errno ? idMeFail : idMeOk , #expP ) ;            \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tin9S&)tinBaseP).bosFail || errno ? idMeFail : idMeOk ) ;                                                     \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin9S&)tinBaseP).bosFail , ((tin9S&)tinBaseP).bosFail || errno ? idMeFail : idMeOk , #expP ) ;            \
         }                                                                                                                                               \
-        if( ((tinFullS&)tinBaseP).bosFail || errno )                                                                                                                     \
+        if( ((tin9S&)tinBaseP).bosFail || errno )                                                                                                                     \
         {                                                                                                                                               \
-            ((tinFullS&)tinBaseP).brcQuery = errno ;                                                                                                                     \
+            ((tin9S&)tinBaseP).brcQuery = errno ;                                                                                                                     \
             errno = 0 ;                                                                                                                                 \
-            if( ((tinFullS&)tinBaseP).brcQuery )                                                                                                                         \
+            if( ((tin9S&)tinBaseP).brcQuery )                                                                                                                         \
             {                                                                                                                                           \
-                ((tinFullS&)tinBaseP).brcLath = ((tinFullS&)tinBaseP).brcQuery ;                                                                                                          \
-                ((tinFullS&)tinBaseP).idLine_brcLath = ifcLINE ;                                                                                                         \
-                ((tinFullS&)tinBaseP).idiFile_brcLath = DDNUMB ;                                                                                                         \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSL   [brcLath,idLine,idiFile]: " , ((tinFullS&)tinBaseP).brcLath , " " , ((tinFullS&)tinBaseP).idLine_brcLath , " " , ((tinFullS&)tinBaseP).idiFile_brcLath , "\r\n" ) ; }*/ \
+                ((tin9S&)tinBaseP).brcLath = ((tin9S&)tinBaseP).brcQuery ;                                                                                                          \
+                ((tin9S&)tinBaseP).idLine_brcLath = ifcLINE ;                                                                                                         \
+                ((tin9S&)tinBaseP).idiFile_brcLath = DDNUMB ;                                                                                                         \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSL   [brcLath,idLine,idiFile]: " , ((tin9S&)tinBaseP).brcLath , " " , ((tin9S&)tinBaseP).idLine_brcLath , " " , ((tin9S&)tinBaseP).idiFile_brcLath , "\r\n" ) ; }*/ \
             }                                                                                                                                           \
         }                                                                                                                                               \
-        ((tinFullS&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tinFullS&)tinBaseP).brcRaw = _brcRawExp ;                                                                                                                      \
+        ((tin9S&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin9S&)tinBaseP).brcRaw = _brcRawExp ;                                                                                                                      \
     }
 
 #define BOSfICKLE(whatP,typeP,expP,expGetErrorP)                                                                                                        \
                                                                                                                                                         \
     {                                                                                                                                                   \
-        ((tinFullS&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tinFullS&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
+        ((tin9S&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tin9S&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         typeP ;                                                                                                                                         \
@@ -8617,30 +8617,30 @@ it is illegal to refer to this symbol in the definition of an adam
         {                                                                                                                                               \
             static countT idMeOk ;                                                                                                                      \
             static countT idMeFail ;                                                                                                                    \
-            countT tally = pg1.pHome->tallyHo.tallyF( ((tinFullS&)tinBaseP).bosFail ? idMeFail : idMeOk ) ;                                                              \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tinFullS&)tinBaseP).bosFail , ((tinFullS&)tinBaseP).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tin9S&)tinBaseP).bosFail ? idMeFail : idMeOk ) ;                                                              \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin9S&)tinBaseP).bosFail , ((tin9S&)tinBaseP).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
         }                                                                                                                                               \
-        if( ((tinFullS&)tinBaseP).bosFail )                                                                                                                              \
+        if( ((tin9S&)tinBaseP).bosFail )                                                                                                                              \
         {                                                                                                                                               \
-            ((tinFullS&)tinBaseP).brcQuery = (expGetErrorP) ;                                                                                                            \
-            if( ((tinFullS&)tinBaseP).brcQuery == NO_ERROR ) ((tinFullS&)tinBaseP).bosFail = ((tinFullS&)tinBaseP).brcQuery = 0 ;                                                                          \
-            else if( ((tinFullS&)tinBaseP).brcQuery )                                                                                                                    \
+            ((tin9S&)tinBaseP).brcQuery = (expGetErrorP) ;                                                                                                            \
+            if( ((tin9S&)tinBaseP).brcQuery == NO_ERROR ) ((tin9S&)tinBaseP).bosFail = ((tin9S&)tinBaseP).brcQuery = 0 ;                                                                          \
+            else if( ((tin9S&)tinBaseP).brcQuery )                                                                                                                    \
             {                                                                                                                                           \
-                ((tinFullS&)tinBaseP).brcLath = ((tinFullS&)tinBaseP).brcQuery ;                                                                                                          \
-                ((tinFullS&)tinBaseP).idLine_brcLath = ifcLINE ;                                                                                                         \
-                ((tinFullS&)tinBaseP).idiFile_brcLath = DDNUMB ;                                                                                                         \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tinFullS&)tinBaseP).brcLath , " " , ((tinFullS&)tinBaseP).idLine_brcLath , " " , ((tinFullS&)tinBaseP).idiFile_brcLath , "\r\n" ) ; }*/ \
+                ((tin9S&)tinBaseP).brcLath = ((tin9S&)tinBaseP).brcQuery ;                                                                                                          \
+                ((tin9S&)tinBaseP).idLine_brcLath = ifcLINE ;                                                                                                         \
+                ((tin9S&)tinBaseP).idiFile_brcLath = DDNUMB ;                                                                                                         \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin9S&)tinBaseP).brcLath , " " , ((tin9S&)tinBaseP).idLine_brcLath , " " , ((tin9S&)tinBaseP).idiFile_brcLath , "\r\n" ) ; }*/ \
             }                                                                                                                                           \
         }                                                                                                                                               \
-        ((tinFullS&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tinFullS&)tinBaseP).brcRaw = _brcRawExp ;                                                                                                                      \
+        ((tin9S&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin9S&)tinBaseP).brcRaw = _brcRawExp ;                                                                                                                      \
     }
 
 #define BOSrAW(whatP,typeP,expP)                                                                                                                        \
                                                                                                                                                         \
     {                                                                                                                                                   \
-        ((tinFullS&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tinFullS&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
+        ((tin9S&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tin9S&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         typeP ;                                                                                                                                         \
@@ -8649,22 +8649,22 @@ it is illegal to refer to this symbol in the definition of an adam
         {                                                                                                                                               \
             static countT idMeOk ;                                                                                                                      \
             static countT idMeFail ;                                                                                                                    \
-            countT tally = pg1.pHome->tallyHo.tallyF( ((tinFullS&)tinBaseP).bosFail ? idMeFail : idMeOk ) ;                                                              \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tinFullS&)tinBaseP).bosFail , ((tinFullS&)tinBaseP).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tin9S&)tinBaseP).bosFail ? idMeFail : idMeOk ) ;                                                              \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin9S&)tinBaseP).bosFail , ((tin9S&)tinBaseP).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
         }                                                                                                                                               \
-        if( ((tinFullS&)tinBaseP).bosFail )                                                                                                                              \
+        if( ((tin9S&)tinBaseP).bosFail )                                                                                                                              \
         {                                                                                                                                               \
-            ((tinFullS&)tinBaseP).brcQuery = ((tinFullS&)tinBaseP).brcRaw ;                                                                                                               \
-            if( ((tinFullS&)tinBaseP).brcQuery )                                                                                                                         \
+            ((tin9S&)tinBaseP).brcQuery = ((tin9S&)tinBaseP).brcRaw ;                                                                                                               \
+            if( ((tin9S&)tinBaseP).brcQuery )                                                                                                                         \
             {                                                                                                                                           \
-                ((tinFullS&)tinBaseP).brcLath = ((tinFullS&)tinBaseP).brcQuery ;                                                                                                          \
-                ((tinFullS&)tinBaseP).idLine_brcLath = ifcLINE ;                                                                                                         \
-                ((tinFullS&)tinBaseP).idiFile_brcLath = DDNUMB ;                                                                                                         \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSrAW [brcLath,idLine,idiFile]: " , ((tinFullS&)tinBaseP).brcLath , " " , ((tinFullS&)tinBaseP).idLine_brcLath , " " , ((tinFullS&)tinBaseP).idiFile_brcLath , "\r\n" ) ; }*/ \
+                ((tin9S&)tinBaseP).brcLath = ((tin9S&)tinBaseP).brcQuery ;                                                                                                          \
+                ((tin9S&)tinBaseP).idLine_brcLath = ifcLINE ;                                                                                                         \
+                ((tin9S&)tinBaseP).idiFile_brcLath = DDNUMB ;                                                                                                         \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSrAW [brcLath,idLine,idiFile]: " , ((tin9S&)tinBaseP).brcLath , " " , ((tin9S&)tinBaseP).idLine_brcLath , " " , ((tin9S&)tinBaseP).idiFile_brcLath , "\r\n" ) ; }*/ \
             }                                                                                                                                           \
         }                                                                                                                                               \
-        ((tinFullS&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tinFullS&)tinBaseP).brcRaw = _brcRawExp ;                                                                                                                      \
+        ((tin9S&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin9S&)tinBaseP).brcRaw = _brcRawExp ;                                                                                                                      \
     }
 
 //A:ASSUME: THE CALLER HAS CONSTRUCTED countT _brcRaw ON THE THREAD'S STACK AS A LOCAL VARIABLE
@@ -8700,8 +8700,8 @@ it is illegal to refer to this symbol in the definition of an adam
 #define BOSdOnOTtEST(whatP,expP)                                                                                                                        \
                                                                                                                                                         \
     {                                                                                                                                                   \
-        ((tinFullS&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tinFullS&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
+        ((tin9S&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tin9S&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
@@ -8711,15 +8711,15 @@ it is illegal to refer to this symbol in the definition of an adam
             countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
             if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
         }                                                                                                                                               \
-        ((tinFullS&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tinFullS&)tinBaseP).brcRaw = _brcRawExp ;                                                                                                                      \
+        ((tin9S&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin9S&)tinBaseP).brcRaw = _brcRawExp ;                                                                                                                      \
     }
 
 #define BOSmEASURE04(whatP,expP)                                                                                                                        \
                                                                                                                                                         \
     {                                                                                                                                                   \
-        ((tinFullS&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tinFullS&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
+        ((tin9S&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tin9S&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         measure04T _brcm04RawExp = (measure04T)(expP) ;                                                                                                 \
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
@@ -8729,15 +8729,15 @@ it is illegal to refer to this symbol in the definition of an adam
             countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
             if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
         }                                                                                                                                               \
-        ((tinFullS&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tinFullS&)tinBaseP).brcm04Raw = _brcm04RawExp ;                                                                                                                \
+        ((tin9S&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin9S&)tinBaseP).brcm04Raw = _brcm04RawExp ;                                                                                                                \
     }
 
 #define BOSnOvALUE(whatP,expP)                                                                                                                          \
                                                                                                                                                         \
     {                                                                                                                                                   \
-        ((tinFullS&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tinFullS&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
+        ((tin9S&)tinBaseP).brcQuery = 0 ;                                                                                                                             \
+        countT _idWhatSaveBos = ((tin9S&)tinBaseP).monitor.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         { expP ; }                                                                                                                                      \
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
@@ -8747,7 +8747,7 @@ it is illegal to refer to this symbol in the definition of an adam
             countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
             if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
         }                                                                                                                                               \
-        ((tinFullS&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin9S&)tinBaseP).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
     }
 
 #define BOSnOvALUEnOtIN(expP)                                                                                                                           \
@@ -8975,8 +8975,8 @@ it is illegal to refer to this symbol in the definition of an adam
 /*
 \<A HREF=\"5.0010141.1.0.html\"\>definition\</A\>
 see adam.0140104 for an example
-communication downward to client uses *((tinFullS&)tinBaseP).pEtScratch, which becomes impotent quietly
-most applications will want to check *((tinFullS&)tinBaseP).pEtScratch for impotence after every access to pso
+communication downward to client uses *((tin9S&)tinBaseP).pEtScratch, which becomes impotent quietly
+most applications will want to check *((tin9S&)tinBaseP).pEtScratch for impotence after every access to pso
 pso not 0 is guaranteed for code between me and DONEdRIVENsERVER
  if pso is 0 then that code will not be executed
  this behavior is similar to that of TASKdRIVENsERVERnEWsOCKET
@@ -9008,7 +9008,7 @@ pso not 0 is guaranteed for code between me and DONEdRIVENsERVER
         if( !etThread )                                                                                                                                     \
         {                                                                                                                                                   \
             etThread.traceF( tinBaseP , T("TASKdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;                   \
-            psoP->etherF( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch ) ;                                                                                                       \
+            psoP->etherF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch ) ;                                                                                                       \
                                                                                                                                                             \
             ZE( countT , idPortMeP ) ;                                                                                                                      \
             nicNameC nnMeP ;                                                                                                                                \
@@ -9024,7 +9024,7 @@ pso not 0 is guaranteed for code between me and DONEdRIVENsERVER
                 /*     if( nnPeerP.pcId[ 0 ] )                                            */                                                                \
                 /*     {                                                                  */                                                                \
                 /*         TELL( "querying dns for peer name string" ) ;                  */                                                                \
-                /*         ((tinFullS&)tinBaseP).pEtScratch->sockPsttHostF( tinBaseP , psttPeerP , nnPeerP ) ; */                                                                \
+                /*         ((tin9S&)tinBaseP).pEtScratch->sockPsttHostF( tinBaseP , psttPeerP , nnPeerP ) ; */                                                                \
                 /*         TELL( "returned from querying dns for peer name string" ) ;    */                                                                \
                 /*     }                                                                  */                                                                \
                 /*     if( POOP ) { POOPR }                                               */                                                                \
@@ -9067,7 +9067,7 @@ see adam.0140104 for an example
                                                                                                                                                         \
             {                                                                                                                                           \
                 sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                   \
-                while( ((tinFullS&)tinBaseP).cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; }                                                              \
+                while( ((tin9S&)tinBaseP).cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; }                                                              \
             }                                                                                                                                           \
                                                                                                                                                         \
             jobP.sw_pso.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                              \
@@ -9117,7 +9117,7 @@ see adam.0140104 for an example
 \<A HREF=\"5.0010143.1.0.html\"\>definition\</A\>
 note that pso can be 0 after i have executed
  this will occur if the write of the private idPort value to the client fails
-  in this case, the accept will fail and return immediately, *((tinFullS&)tinBaseP).pEtScratch will be impotent, and pso will be 0
+  in this case, the accept will fail and return immediately, *((tin9S&)tinBaseP).pEtScratch will be impotent, and pso will be 0
  this will also occur if i write the private idPort value aok but the client never connects to it
   in this case, i will block until my process has been fired, and pso will be 0 when i deblock
 if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will not be executed
@@ -9135,21 +9135,21 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
         ZE( boolT , bFail ) ;                                                                                               \
         {                                                                                                                   \
             SCOOPS                                                                                                          \
-            soulC _sIn( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;                                                      \
+            soulC _sIn( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;                                                      \
             TELL( "TASKdRIVENsERVER: reading a soulC" )                                                                     \
             psoP->readF( tinBaseP , _sIn ) ;                                                                                    \
             bFail = POOP || _sIn.cFieldF( tinBaseP ) != ifcIDcMDsESSION_NEWsOCKET ;                                             \
             if( bFail )                                                                                                     \
             {                                                                                                               \
                 POOPR                                                                                                       \
-                soulC _sErr( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;           \
+                soulC _sErr( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;           \
                 TELL( "TASKdRIVENsERVER: writing a ifcIDcMDsESSION_ERROR soulC" )                                           \
                 psoP->writeF( tinBaseP , _sErr ) ;                                                                              \
             }                                                                                                               \
             else                                                                                                            \
             {                                                                                                               \
-                soulC _sOut( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKETrEPLY ) ;  \
-                socketC sol2( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;                                                \
+                soulC _sOut( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKETrEPLY ) ;  \
+                socketC sol2( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;                                                \
                 _sOut << sol2.bindF( tinBaseP ) ;                                                                               \
                 sol2.listenF( tinBaseP ) ;                                                                                      \
                 socketC* psoDoomed = pso ;                                                                                  \
@@ -10402,7 +10402,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 #define THREADmODE2oFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode2Save = ((tinFullS&)tinBaseP).flagsThreadMode2 ;                                                                \
+    flagsT _flagsThreadMode2Save = ((tin9S&)tinBaseP).flagsThreadMode2 ;                                                                \
     THREADmODE2oFF0( flagsP )
 
 
@@ -10459,7 +10459,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 #define THREADmODE2oN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode2Save = ((tinFullS&)tinBaseP).flagsThreadMode2 ;                                                                \
+    flagsT _flagsThreadMode2Save = ((tin9S&)tinBaseP).flagsThreadMode2 ;                                                                \
     THREADmODE2oN0( flagsP )
 
 
@@ -10664,7 +10664,7 @@ in the ifc base code, it is illegal to abort normal functioning due to STOP with
 //THIS WILL BLOCK FOREVER (REALLY STOP!) IF USED VERY EARLY OR VERY LATE
 //IF THAT EVER BECOMES A PROBLEM, JUST PUT IN THE TEST FOR EXISTENCE AND ENSURE THAT thPrime CANNOT BE DESTRUCTED AFTER THE TEST AND BEFORE THE QUERY
 
-#define STOP ( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE && thirdC::thPrimeIF( tinBaseP ) )
+#define STOP ( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE && thirdC::thPrimeIF( tinBaseP ) )
 
 
 //
@@ -11363,7 +11363,7 @@ this limit can easily be increased to accomodate application requirements
 /**/
 
 // MUST BE MULTIPLE OF sizeof( countT ) SO THAT CAN BE EASILY INCLUDED AS PART OF A HASHED BLOB
-// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tinFullS, ARE ALIGNED
+// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tin9S, ARE ALIGNED
 
 #define COSTnARRATIVE_PREFIX 0x10
 
@@ -11393,7 +11393,7 @@ this limit can easily be increased to accomodate application requirements
 /**/
 
 // MUST BE MULTIPLE OF sizeof( countT ) SO THAT CAN BE EASILY INCLUDED AS PART OF A HASHED BLOB
-// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tinFullS, ARE ALIGNED
+// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tin9S, ARE ALIGNED
 
 #define COSTnARRATIVE_TITLE 0x10
 
@@ -11423,7 +11423,7 @@ this limit can easily be increased to accomodate application requirements
 /**/
 
 // MUST BE MULTIPLE OF sizeof( countT ) SO THAT CAN BE EASILY INCLUDED AS PART OF A HASHED BLOB
-// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tinFullS, ARE ALIGNED
+// MUST BE MULTIPLE OF sizeof( countT ) SO THAT MEMBERS OF tin9S, ARE ALIGNED
 
 #define COSTnARRATIVE_NOTE 0x20
 
@@ -12518,8 +12518,8 @@ these values are used in the foreign domain name system
                                                                                                 \
     if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL )                                               \
     {                                                                                           \
-        thirdC::c_strncpyIF( tinBaseP , ((tinFullS&)tinBaseP).postTell , postFromP , sizeof ((tinFullS&)tinBaseP).postTell ) ;        \
-        *((tinFullS&)tinBaseP).postTellIf = 0 ;                                                                  \
+        thirdC::c_strncpyIF( tinBaseP , ((tin9S&)tinBaseP).postTell , postFromP , sizeof ((tin9S&)tinBaseP).postTell ) ;        \
+        *((tin9S&)tinBaseP).postTellIf = 0 ;                                                                  \
     }
 
 
@@ -12549,10 +12549,10 @@ these values are used in the foreign domain name system
                                                                                                                                         \
     if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL )                                                                                       \
     {                                                                                                                                   \
-        OStEXT(  ostot , sizeof ((tinFullS&)tinBaseP).postTell )                                                                      \
-        OStEXTA( ostot , ((tinFullS&)tinBaseP).postTell )                                                                             \
+        OStEXT(  ostot , sizeof ((tin9S&)tinBaseP).postTell )                                                                      \
+        OStEXTA( ostot , ((tin9S&)tinBaseP).postTell )                                                                             \
         OStEXTA( ostot , postFromP )                                                                                                    \
-        thirdC::c_strncpyIF( tinBaseP , ((tinFullS&)tinBaseP).postTell , ostot , sizeof ((tinFullS&)tinBaseP).postTell ) ;          \
+        thirdC::c_strncpyIF( tinBaseP , ((tin9S&)tinBaseP).postTell , ostot , sizeof ((tin9S&)tinBaseP).postTell ) ;          \
     }
 
 //
@@ -12578,7 +12578,7 @@ these values are used in the foreign domain name system
 */
 /*1*//*TELLcOUNTT(cP)*//*1*/
 /**/
-#define TELLcOUNTT(cP) if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) thirdC::c_itoaIF( tinBaseP , ((tinFullS&)tinBaseP).postTell , sizeof ((tinFullS&)tinBaseP).postTell , cP ) ;
+#define TELLcOUNTT(cP) if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) thirdC::c_itoaIF( tinBaseP , ((tin9S&)tinBaseP).postTell , sizeof ((tin9S&)tinBaseP).postTell , cP ) ;
 
 
 //
@@ -12604,9 +12604,9 @@ these values are used in the foreign domain name system
 */
 /*1*//*COSTmAXtELL*//*1*/
 /**/
-// ( COSTmAXtELL + 1 ) MUST BE MULTIPLE OF sizeof( countT ) SO THAT tinFullS, MEMBERS ARE ALIGNED
+// ( COSTmAXtELL + 1 ) MUST BE MULTIPLE OF sizeof( countT ) SO THAT tin9S, MEMBERS ARE ALIGNED
 
-//20240929@2029: 0x3f <- 0x7f TO SHRINK SIZE OF tinFullS
+//20240929@2029: 0x3f <- 0x7f TO SHRINK SIZE OF tin9S
 
 #define COSTmAXtELL 0x3f
 
@@ -13223,7 +13223,7 @@ saOLD_KTaTTACH*
 /**/
 
 //BOSdOnOTtEST( WHATgbo , strlen( postP ) )
-//#define CONoUT(postP) { ZE( DWORD , cba ) ; WriteFile( (HANDLE)GetStdHandle( STD_OUTPUT_HANDLE ) , postP , ((tinFullS&)tinBaseP).brcRaw , &cba , 0 ) ; }//INTENTIONALLY NOT CLOSED, PER MSDN DOC COMMENT
+//#define CONoUT(postP) { ZE( DWORD , cba ) ; WriteFile( (HANDLE)GetStdHandle( STD_OUTPUT_HANDLE ) , postP , ((tin9S&)tinBaseP).brcRaw , &cba , 0 ) ; }//INTENTIONALLY NOT CLOSED, PER MSDN DOC COMMENT
 //#define CONoUT(postP) thirdC::dosWriteStdOutIF( (postP) ) ;
 
 
@@ -13232,9 +13232,9 @@ saOLD_KTaTTACH*
     {                                                                                                                       \
         TINSL                                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , ' ' ) ;                                                                          \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , ' ' ) ;                                                                          \
         OStEXTAK( ostoBuf , "." ) ;                                                                                         \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                                          \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                                          \
         OStEXTAK( ostoBuf , ": " ) ;                                                                                        \
         OStEXTA( ostoBuf , postP ) ;                                                                                        \
         OStEXTAK( ostoBuf , "\r\n" ) ;                                                                                      \
@@ -13298,7 +13298,7 @@ TELL4INIT must be called before me
 /*1*//*TELL4(post4P)*//*1*/
 /**/
 
-#define TELL4(post4P) if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) *(countT*)((tinFullS&)tinBaseP).postTell = *(countT*)post4P ;
+#define TELL4(post4P) if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) *(countT*)((tin9S&)tinBaseP).postTell = *(countT*)post4P ;
 
 
 //
@@ -13551,7 +13551,7 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 */
 /*1*//*TELLwAIT(postFromP)*//*1*/
 /**/
-#define TELLwAIT(postFromP) if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) { OStEXTA( ((tinFullS&)tinBaseP).postTellWait , postFromP ) ; }
+#define TELLwAIT(postFromP) if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) { OStEXTA( ((tin9S&)tinBaseP).postTellWait , postFromP ) ; }
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -14697,7 +14697,7 @@ arguments
 
     #define YELL(postFromP)                                                                                             \
                                                                                                                         \
-        if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_YELL )                                                             \
+        if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_YELL )                                                             \
         {                                                                                                               \
             OStEXTV( posty , postFromP )                                                                                \
             byteT pbZombie[ sizeof posty + sizeof( tellS ) ] ;                                                    \
@@ -14710,7 +14710,7 @@ arguments
 
     #define YELL(postFromP)                                                                                                     \
                                                                                                                                 \
-        if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_YELL )                                                                     \
+        if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_YELL )                                                                     \
         {                                                                                                                       \
             osTextT posta[ sizeof postFromP + CBtOaLIGN02( sizeof postFromP ) ] = postFromP ;                                     \
             byteT pbZombie[ sizeof( tellS ) + sizeof posta ] ;                                                            \
@@ -15026,8 +15026,8 @@ arguments
 /*
 \<A HREF=\"5.0010216.1.0.html\"\>definition\</A\>
 use me to modify the default early quit behavior for system functions
-some system functions inspect ((tinFullS&)tinBaseP).pcQuit and silently quit early (no impotence) if *((tinFullS&)tinBaseP).pcQuit
-on each thread, ((tinFullS&)tinBaseP).pcQuit is initially set to &(const countT&)etPrime
+some system functions inspect ((tin9S&)tinBaseP).pcQuit and silently quit early (no impotence) if *((tin9S&)tinBaseP).pcQuit
+on each thread, ((tin9S&)tinBaseP).pcQuit is initially set to &(const countT&)etPrime
 for example, etherC::boxMenuF will return a useable but incomplete list if asynch impotence occurs while it is working
 to suppress quitting, either specify QUITOZ or QUITO( )
  to cause quitting to be controled by some other countT value, specify QUITO( &someCount )
@@ -15036,7 +15036,7 @@ code that refers to me -must- use QUITR to undo my effects
 /*1*//*QUITO(pcQuitP)*//*1*/
 /**/
 
-#define QUITO(pcQuitP) const countT* _pcQuitSave = ((tinFullS&)tinBaseP).pcQuit ; ((tinFullS&)tinBaseP).pcQuit = (pcQuitP) ;
+#define QUITO(pcQuitP) const countT* _pcQuitSave = ((tin9S&)tinBaseP).pcQuit ; ((tin9S&)tinBaseP).pcQuit = (pcQuitP) ;
 
 
 //
@@ -15064,7 +15064,7 @@ see QUITO
 /*1*//*QUITR*//*1*/
 /**/
 
-#define QUITR ((tinFullS&)tinBaseP).pcQuit = _pcQuitSave ;
+#define QUITR ((tin9S&)tinBaseP).pcQuit = _pcQuitSave ;
 
 
 //
@@ -15188,8 +15188,8 @@ see QUITO
 
 #define LIFEpROTO                                       \  
                                                         \
-    _liveF( tinBaseS& tinBaseP , etherC& etThreadP ) ;          \
-    _deleteMyselfF( tinBaseS& tinBaseP ) ;
+    _liveF( tin0S& tinBaseP , etherC& etThreadP ) ;          \
+    _deleteMyselfF( tin0S& tinBaseP ) ;
 
 
 //
@@ -15222,7 +15222,7 @@ see QUITO
     if( pTaskP && pTaskP->c1 ) ((classP*)pTaskP->c1)->_liveF( tinBaseP , etThread ) ;   \
     DONE( tm_##classP##_F )                                                         \
                                                                                     \
-    classP::_deleteMyselfF( tinBaseS& tinBaseP )                                            \
+    classP::_deleteMyselfF( tin0S& tinBaseP )                                            \
     {                                                                               \
         classP* pMeI = this ;                                                       \
         DEL( pMeI ) ;                                                               \
@@ -15302,13 +15302,13 @@ see QUITO
         OStEXTAK( ostoTitle , "idAdam:" ) ;                                                                              \
         OStEXTC( ostoTitle , processGlobal1S::_processGlobal1I_IF().idAdamRoot , 0 ) ;                                                   \
         OStEXTAK( ostoTitle , " ; idThread:" )  ;                                                                      \
-        OStEXTC( ostoTitle , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                                                    \
+        OStEXTC( ostoTitle , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                                                    \
         OStEXTAK( ostoTitle , " ; thread:\"" ) ;                                                                       \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoTitle , ((tinFullS&)tinBaseP).postThreadName ) ;                                                                  \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoTitle , ((tin9S&)tinBaseP).postThreadName ) ;                                                                  \
         OStEXTAK( ostoTitle , "\"" ) ;                                                                                 \
                                                                                                                         \
         OStEXT( postBody , 0x100 )                                                                                      \
-        countT cNest = 1 + ((tinFullS&)tinBaseP).monitor.cInNest ;                                                                                 \
+        countT cNest = 1 + ((tin9S&)tinBaseP).monitor.cInNest ;                                                                                 \
         const countT cNestStop = cNest > 0x10 ? cNest - 0x10 : 0 ;                                                      \
         if( cNest == 1 )                                                                                                \
         {                                                                                                               \
@@ -15323,7 +15323,7 @@ see QUITO
         {                                                                                                               \
             OStEXTC( postBody , cNest , 0 ) ;                                                                         \
             OStEXTAK( postBody , " " ) ;                                                                               \
-            OStEXTC( postBody , ((tinFullS&)tinBaseP).monitor.pLFnest[ ( ( cNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] , 0 ) ;                                 \
+            OStEXTC( postBody , ((tin9S&)tinBaseP).monitor.pLFnest[ ( ( cNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] , 0 ) ;                                 \
         }                                                                                                               \
                                                                                                                         \
         OStEXTAK( postBody , "\r\nargs:\r\n" ) ;                                                                       \
@@ -15462,7 +15462,7 @@ see QUITO
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
         OStEXTC( ostoBuf , osPidIF( tinBaseP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                                        \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
         OStEXTA( ostoBuf , postP ) ;                                                                                      \
         OStEXTC( ostoBuf , cP , 0 ) ;                                                                                     \
@@ -15531,7 +15531,7 @@ see QUITO
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
         OStEXTC( ostoBuf , osPidIF( tinBaseP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                                        \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
         OStEXTA( ostoBuf , postP ) ;                                                                                      \
         OStEXTC( ostoBuf , c1P , 0 ) ;                                                                                    \
@@ -15575,7 +15575,7 @@ see QUITO
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
         OStEXTC( ostoBuf , osPidIF( tinBaseP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                                        \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
         OStEXTA( ostoBuf , postBeforeP ) ;                                                                                \
         OStEXTC( ostoBuf , c1P , 0 ) ;                                                                                    \
@@ -16059,7 +16059,7 @@ these flag values are used by oo flagsT objects
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
         OStEXTC( ostoBuf , osPidIF( tinBaseP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                                        \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
         OStEXTA( ostoBuf , postBeforeP ) ;                                                                                \
         OStEXTC( ostoBuf , c1P , 0 ) ;                                                                                    \
@@ -16106,7 +16106,7 @@ these flag values are used by oo flagsT objects
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
         OStEXTC( ostoBuf , osPidIF( tinBaseP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                                        \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
         OStEXTA( ostoBuf , postBeforeP ) ;                                                                                \
         OStEXTC( ostoBuf , c1P , 0 ) ;                                                                                    \
@@ -16155,7 +16155,7 @@ these flag values are used by oo flagsT objects
         OStEXTAK( ostoBuf , "." ) ;                                                                                        \
         OStEXTC( ostoBuf , osPidIF( tinBaseP ) , ' ' ) ;                                          \
         OStEXTAK( ostoBuf , " \"" ) ;                                                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                                        \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                                        \
         OStEXTAK( ostoBuf , "\" |  " ) ;                                                                                   \
         OStEXTA( ostoBuf , postBeforeP ) ;                                                                                \
         OStEXTC( ostoBuf , c1P , 0 ) ;                                                                                    \
@@ -16684,15 +16684,15 @@ after i return, that countT object will contain 1
                                                                                                                                 \
         OStEXTAK( ostoBuf , "Call Nest:\r\n \r\n" ) ;                                                                          \
                                                                                                                                 \
-        countT idnf = ((tinFullS&)tinBaseP).monitor.cInNest - OFFsLOTtINnESTmAX ;                                                                          \
+        countT idnf = ((tin9S&)tinBaseP).monitor.cInNest - OFFsLOTtINnESTmAX ;                                                                          \
         if( (sCountT)idnf < 1 ) idnf = 1 ;                                                                                      \
                                                                                                                                 \
         /*PSEUDODUPLICATE CODE: 2e40104 0010266*/                                                                               \
         countT offo = 2 ;                                                                                                       \
-        for( countT idn = ((tinFullS&)tinBaseP).monitor.cInNest ; idn >= idnf ; idn -- )                                                                   \
+        for( countT idn = ((tin9S&)tinBaseP).monitor.cInNest ; idn >= idnf ; idn -- )                                                                   \
         {                                                                                                                       \
-            countT idiFile =     ((tinFullS&)tinBaseP).monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;                                     \
-            OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] , 0 ) ;                               \
+            countT idiFile =     ((tin9S&)tinBaseP).monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;                                     \
+            OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] , 0 ) ;                               \
             OStEXTAK( ostoBuf , "." ) ;                                                                                        \
             OStEXTC( ostoBuf , idiFile , 0 ) ;                                                                                \
             OStEXTAK( ostoBuf , "    " ) ;                                                                                     \
@@ -16800,8 +16800,8 @@ after i return, that countT object will contain 1
 #define TELLiF(postTestP,postFromP)                                                                                                                                                                                             \
                                                                                                                                                                                                                                 \
          if( tinBaseP.idTypeTin != ifcIDtYPEtIN_FULL                                        ) ;                                                                                                                                 \
-    else if( !thirdC::c_strcmpIF( tinBaseP , postTestP , ((tinFullS&)tinBaseP).postTell ) ) thirdC::c_strncpyIF( tinBaseP , ((tinFullS&)tinBaseP).postTellIf , postFromP , sizeof ((tinFullS&)tinBaseP).postTellIf ) ;    \
-    else                                                                                      ((tinFullS&)tinBaseP).postTellIf[ 0 ] = 0 ;
+    else if( !thirdC::c_strcmpIF( tinBaseP , postTestP , ((tin9S&)tinBaseP).postTell ) ) thirdC::c_strncpyIF( tinBaseP , ((tin9S&)tinBaseP).postTellIf , postFromP , sizeof ((tin9S&)tinBaseP).postTellIf ) ;    \
+    else                                                                                      ((tin9S&)tinBaseP).postTellIf[ 0 ] = 0 ;
 
 
 //
@@ -18291,7 +18291,7 @@ if cBitsP is f then 01 bits is indicated
 
 /*1*//*KIDS*//*1*/
 
-#define KIDS const countT _cKids = ((tinFullS&)tinBaseP).cKidThreads ;
+#define KIDS const countT _cKids = ((tin9S&)tinBaseP).cKidThreads ;
 
 
 //
@@ -18322,7 +18322,7 @@ if cBitsP is f then 01 bits is indicated
                                                                                                  \
     {                                                                                            \
         sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                \
-        while( ((tinFullS&)tinBaseP).cKidThreads - _cKids ) { ++ s ; thirdC::dosSleepIF( tinBaseP , TUCK * 0x40 ) ; } \
+        while( ((tin9S&)tinBaseP).cKidThreads - _cKids ) { ++ s ; thirdC::dosSleepIF( tinBaseP , TUCK * 0x40 ) ; } \
     }
 
 
@@ -18350,7 +18350,7 @@ if cBitsP is f then 01 bits is indicated
 
 /*1*//*KIDS1(nameP)*//*1*/
 
-#define KIDS1(nameP) const countT _cKids_##nameP = ((tinFullS&)tinBaseP).cKidThreads ;
+#define KIDS1(nameP) const countT _cKids_##nameP = ((tin9S&)tinBaseP).cKidThreads ;
 
 
 //
@@ -18381,7 +18381,7 @@ if cBitsP is f then 01 bits is indicated
                                                                                                          \
     {                                                                                                    \
         sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                        \
-        while( ((tinFullS&)tinBaseP).cKidThreads - _cKids_##nameP ) { ++ s ; thirdC::dosSleepIF( tinBaseP , TUCK * 0x40 ) ; } \
+        while( ((tin9S&)tinBaseP).cKidThreads - _cKids_##nameP ) { ++ s ; thirdC::dosSleepIF( tinBaseP , TUCK * 0x40 ) ; } \
     }
 
 
@@ -18413,7 +18413,7 @@ if cBitsP is f then 01 bits is indicated
                                                                                                    \
     {                                                                                              \
         sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                  \
-        while( ((tinFullS&)tinBaseP).cKidThreads - (cKidsP) ) { ++ s ; thirdC::dosSleepIF( tinBaseP , TUCK * 0x40 ) ; } \
+        while( ((tin9S&)tinBaseP).cKidThreads - (cKidsP) ) { ++ s ; thirdC::dosSleepIF( tinBaseP , TUCK * 0x40 ) ; } \
     }
 
 
@@ -18551,12 +18551,12 @@ if cBitsP is f then 01 bits is indicated
 #define SET_bStopOk                                                                                     \
                                                                                                         \
     boolT _bStopOk = 1 ;                                                                                \
-    if( ((tinFullS&)tinBaseP).monitor.cGrabbed && !( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ) \
+    if( ((tin9S&)tinBaseP).monitor.cGrabbed && !( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ) \
     {                                                                                                   \
         const countT offEnd = OFFgRABBEDmAX * 5 ;                                                       \
         for( countT off = 0 ; off < offEnd ; off += 5 )                                                 \
         {                                                                                               \
-            if( ((tinFullS&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off ] )                                               \
+            if( ((tin9S&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off ] )                                               \
             {                                                                                           \
                 _bStopOk = 0 ;                                                                          \
                 break ;                                                                                 \
@@ -18755,7 +18755,7 @@ if cBitsP is f then 01 bits is indicated
 //
 
 /*
-like TELLsYSlIFInAME but appends postP to ((tinFullS&)tinBaseP).postThreadName
+like TELLsYSlIFInAME but appends postP to ((tin9S&)tinBaseP).postThreadName
 this causes this line to be supressed in the TG report
 most application code should use TLNA rather than TELLsYSlIFInAME
 */
@@ -18773,7 +18773,7 @@ most application code should use TLNA rather than TELLsYSlIFInAME
                                                                                                 \
             tellInfoSysLifiS info ;                                                                \
             OStEXT( ostoName , sizeof info.postName )                                           \
-            if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoName , ((tinFullS&)tinBaseP).postThreadName )                                           \
+            if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoName , ((tin9S&)tinBaseP).postThreadName )                                           \
             OStEXTAK( ostoName , "." )                                                          \
             OStEXTAK( ostoName , postP )                                                        \
             thirdC::c_strncpyIF( tinBaseP , info.postName , ostoName , sizeof info.postName ) ;     \
@@ -18809,8 +18809,8 @@ most application code should use TLNA rather than TELLsYSlIFInAME
 /*1*//*IDpHASE(idP)*//*1*/
 #define IDpHASE(idP)                        \
                                             \
-    countT _idPhaseSave = ((tinFullS&)tinBaseP).idPhase2 ;    \
-    ((tinFullS&)tinBaseP).idPhase2 = (idP) ;
+    countT _idPhaseSave = ((tin9S&)tinBaseP).idPhase2 ;    \
+    ((tin9S&)tinBaseP).idPhase2 = (idP) ;
 
 
 //
@@ -18836,7 +18836,7 @@ most application code should use TLNA rather than TELLsYSlIFInAME
 /**/
 /*1*//*IDpHASErESTORE*//*1*/
 
-#define IDpHASErESTORE ((tinFullS&)tinBaseP).idPhase2 = _idPhaseSave ;
+#define IDpHASErESTORE ((tin9S&)tinBaseP).idPhase2 = _idPhaseSave ;
 
 
 //
@@ -19201,7 +19201,7 @@ after i return, that countT object will contain 1
 #define ifcIDcMDmONITOR_POOLoLDwALK1               0xdddd06b7
 #define ifcIDcMDmONITOR_SAYtALLIES              0xdddd06b8
 #define ifcIDcMDmONITOR_IMAGE                   0xdddd06b9
-#define ifcIDcMDmONITOR_tinFullS                    0xdddd06ba
+#define ifcIDcMDmONITOR_tin9S                    0xdddd06ba
 /*3*/
 #define ifcIDcMDmONITOR_min     0xdddd06b5
 #define ifcIDcMDmONITOR_max     0xdddd06ba
@@ -19236,7 +19236,7 @@ after i return, that countT object will contain 1
 #define ifcIDrEPLYmONITOR_POOLoLDwALK1             0xdddd06bd
 #define ifcIDrEPLYmONITOR_SAYtALLIES            0xdddd06be
 #define ifcIDrEPLYmONITOR_IMAGE                 0xdddd06bf
-#define ifcIDrEPLYmONITOR_tinFullS                  0xdddd06c0
+#define ifcIDrEPLYmONITOR_tin9S                  0xdddd06c0
 /*3*/
 #define ifcIDrEPLYmONITOR_min     0xdddd06bb
 #define ifcIDrEPLYmONITOR_max     0xdddd06c0
@@ -19461,7 +19461,7 @@ after i return, that countT object will contain 1
 /*1*//*CALLpROTO*//*1*/
 /**/
 
-#define CALLpROTO(classP) voidT classP::operator ()( tinBaseS& tinBaseP , soulC& slP )
+#define CALLpROTO(classP) voidT classP::operator ()( tin0S& tinBaseP , soulC& slP )
 
 
 //
@@ -19494,11 +19494,11 @@ i am used with a soulC object to use that object as a forth-like program executo
     {                                                                                       \
         public :                                                                            \
                                                                                             \
-        voidT operator ()( tinBaseS& tinBaseP , soulC& slP ) ;                                      \
+        voidT operator ()( tin0S& tinBaseP , soulC& slP ) ;                                      \
     }                                                                                       \
     ;                                                                                       \
                                                                                             \
-    voidT classP::operator ()( tinBaseS& tinBaseP , soulC& slP )                                    \
+    voidT classP::operator ()( tin0S& tinBaseP , soulC& slP )                                    \
     {                                                                                       \
         {                                                                                   \
             ZE( baseSoilXxxxC* , pMeI ) ;                                                         \
@@ -19620,11 +19620,11 @@ i am used with a soulC object to use that object as a forth-like program executo
         if( postNameP )                                                                 \
         {                                                                               \
             TINSL                                                                       \
-            if( ((tinFullS&)tinBaseP).pEther )                                                           \
+            if( ((tin9S&)tinBaseP).pEther )                                                           \
             {                                                                           \
                 countT costName = thirdC::c_strlenIF( tinBaseP , postNameP ) ;              \
-                ((tinFullS&)tinBaseP).pEther->newF( tinBaseP , LF , *(osTextT**)&postName , 1 + costName ) ; ___( postName ) ; \
-                ((tinFullS&)tinBaseP).pEther->memCopyF( tinBaseP , *(osTextT**)&postName , postNameP , 1 + costName ) ;   \
+                ((tin9S&)tinBaseP).pEther->newF( tinBaseP , LF , *(osTextT**)&postName , 1 + costName ) ; ___( postName ) ; \
+                ((tin9S&)tinBaseP).pEther->memCopyF( tinBaseP , *(osTextT**)&postName , postNameP , 1 + costName ) ;   \
             }                                                                           \
         }                                                                               \
     }                                                                                   \
@@ -19658,7 +19658,7 @@ i am used with a soulC object to use that object as a forth-like program executo
         return *this ;                                                                  \
     }                                                                                   \
                                                                                         \
-    voidT classP::operator ()( tinBaseS& tinBaseP , soulC& slP )                                \
+    voidT classP::operator ()( tin0S& tinBaseP , soulC& slP )                                \
     {                                                                                   \
         {                                                                               \
             ZE( baseSoilXxxxC* , pMeI ) ;                                             \
@@ -19967,8 +19967,8 @@ i am used with a soulC object to use that object as a forth-like program executo
 #define IFbADpEEK(slP,psttP,idTypeP)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \
     SOIXLoLDpEEK                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \
-    if( !slP )                       { __1 ; if( !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_SOIXLoLDnOpOPUPoNeRROR ) ) { POPUP( T("Stack object \"")+T(slP.postNameF(tinBaseP))+T("\" is empty, so root word \"")+T(psttP)+T("\" cannot pop the \"")+T(processGlobal4I.mapSoulItem(idTypeP))+T("\" object that it expects. ")+T("(argument pop ")+TF1(idArgNext)+T(")") ) ; } }                                                                   \
-    else if( idTypeNext != idTypeP ) { __1 ; if( !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_SOIXLoLDnOpOPUPoNeRROR ) ) { POPUP( T("The poppable item on stack object \"")+T(slP.postNameF(tinBaseP))+T("\" is of type \"")+T(processGlobal4I.mapSoulItem(idTypeNext))+T("\", but root word \"")+T(psttP)+T("\" wants to pop a \"")+T(processGlobal4I.mapSoulItem(idTypeP))+T("\" object. ")+T("(argument pop ")+TF1(idArgNext)+T(")") ) ; } }
+    if( !slP )                       { __1 ; if( !( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_SOIXLoLDnOpOPUPoNeRROR ) ) { POPUP( T("Stack object \"")+T(slP.postNameF(tinBaseP))+T("\" is empty, so root word \"")+T(psttP)+T("\" cannot pop the \"")+T(processGlobal4I.mapSoulItem(idTypeP))+T("\" object that it expects. ")+T("(argument pop ")+TF1(idArgNext)+T(")") ) ; } }                                                                   \
+    else if( idTypeNext != idTypeP ) { __1 ; if( !( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_SOIXLoLDnOpOPUPoNeRROR ) ) { POPUP( T("The poppable item on stack object \"")+T(slP.postNameF(tinBaseP))+T("\" is of type \"")+T(processGlobal4I.mapSoulItem(idTypeNext))+T("\", but root word \"")+T(psttP)+T("\" wants to pop a \"")+T(processGlobal4I.mapSoulItem(idTypeP))+T("\" object. ")+T("(argument pop ")+TF1(idArgNext)+T(")") ) ; } }
 
 
 //
@@ -20864,7 +20864,7 @@ for each previous absentee
 
 /*1*//*C*//*1*/
 
-#define C(postP) if( *((tinFullS&)tinBaseP).pc Utility ) { CONoUTrAW( postP ) ; }
+#define C(postP) if( *((tin9S&)tinBaseP).pc Utility ) { CONoUTrAW( postP ) ; }
 
 
 //
@@ -21238,13 +21238,13 @@ U::idea: define TAGiDnADA as an empty symbol and use it to mark all tag id value
 
 #define _MILE                                                       \
                                                                     \
-    const countT _idLineMileDadSave  = ((tinFullS&)tinBaseP).idLineMileDad ;         \
-    ((tinFullS&)tinBaseP).idLineMileDad               = ((tinFullS&)tinBaseP).idLineMile    ;         \
-    ((tinFullS&)tinBaseP).idLineMile                  = ifcLINE ;                    \
+    const countT _idLineMileDadSave  = ((tin9S&)tinBaseP).idLineMileDad ;         \
+    ((tin9S&)tinBaseP).idLineMileDad               = ((tin9S&)tinBaseP).idLineMile    ;         \
+    ((tin9S&)tinBaseP).idLineMile                  = ifcLINE ;                    \
                                                                     \
-    const countT _idiFileMileDadSave = ((tinFullS&)tinBaseP).idiFileMileDad ;        \
-    ((tinFullS&)tinBaseP).idiFileMileDad              = ((tinFullS&)tinBaseP).idiFileMile ;           \
-    ((tinFullS&)tinBaseP).idiFileMile                 = DDNUMB ;
+    const countT _idiFileMileDadSave = ((tin9S&)tinBaseP).idiFileMileDad ;        \
+    ((tin9S&)tinBaseP).idiFileMileDad              = ((tin9S&)tinBaseP).idiFileMile ;           \
+    ((tin9S&)tinBaseP).idiFileMile                 = DDNUMB ;
 
 
 //
@@ -21272,11 +21272,11 @@ U::idea: define TAGiDnADA as an empty symbol and use it to mark all tag id value
 
 #define _MOLE                                       \
                                                     \
-    ((tinFullS&)tinBaseP).idLineMile     = ((tinFullS&)tinBaseP).idLineMileDad ;      \
-    ((tinFullS&)tinBaseP).idLineMileDad  = _idLineMileDadSave ;      \
+    ((tin9S&)tinBaseP).idLineMile     = ((tin9S&)tinBaseP).idLineMileDad ;      \
+    ((tin9S&)tinBaseP).idLineMileDad  = _idLineMileDadSave ;      \
                                                     \
-    ((tinFullS&)tinBaseP).idiFileMile    = ((tinFullS&)tinBaseP).idiFileMileDad ;     \
-    ((tinFullS&)tinBaseP).idiFileMileDad = _idiFileMileDadSave ;     \
+    ((tin9S&)tinBaseP).idiFileMile    = ((tin9S&)tinBaseP).idiFileMileDad ;     \
+    ((tin9S&)tinBaseP).idiFileMileDad = _idiFileMileDadSave ;     \
 
 
 //
@@ -22271,7 +22271,7 @@ it is illegal to refer to this symbol anywhere but in the exception handler code
 
 //20120404: DOUBLED CHARS PER LINE FROM TUCK TO ( TUCK << 1 ) BECAUSE SPACE WAS EXHAUSTED
 //20160525@1635: DOUBLED LINES ALL OTHER TO TUCK << 1 BECAUSE ADDED 4 LINES
-//20170101@1057: ADDED "1 +" AS NEEDED PER MEMBERS IN tinFullS; REMOVED "* 4" FOR THE GRAB LIST
+//20170101@1057: ADDED "1 +" AS NEEDED PER MEMBERS IN tin9S; REMOVED "* 4" FOR THE GRAB LIST
 //20170101@2015: "TUCK << 2" <- "TUCK << 1" JUST TO GET EXCEPTION REPORTING TO WORK.  SOMETHING IS WRONG WITH THIS ALLOCATION FORMULA BECAUSE THE STEP LINES ARE TUCK OR LESS IN LENGTH
 //20170831@1425: DOUBLED TO "TUCK << 2" FOR "LINES: ALL OTHER" JUST TO BE CAUTIOUS WHEN ADDING A LINE TO THE REPORT
 //20170831@1501: REVERTED TO "TUCK << 1" SINCE EXHAUSTED TLS FOR THREAD 1 (WITHOUT ANALYSIS)
@@ -23336,7 +23336,7 @@ examples
 
 /*1*//*POOP*//*1*/
 
-#define POOP (*((tinFullS&)tinBaseP).pPoop)
+#define POOP (*((tin9S&)tinBaseP).pPoop)
 
 
 //
@@ -23545,7 +23545,7 @@ examples
                                                                                                                                                         \
     {                                                                                                                                                   \
         thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ;                                                                   \
-        ((tinFullS&)tinBaseP).pag1->flagsAdamState |= flADAMsTATE_FIRED ;                                                                                                \
+        ((tin9S&)tinBaseP).pag1->flagsAdamState |= flADAMsTATE_FIRED ;                                                                                                \
         etherC* pEtPrime = &etherC::etPrimeIF() ;                                                                                                       \
         if( !pEtPrime ) { BLAMMO ; }                                                                                                                    \
         else            ((poopC&)(const poopC&)*pEtPrime).gruntF( tinBaseP , TAG( TAGiDnULL ) , ifcIDsUBtYPEpOOP_FIREDbYsELF , ifcIDtYPEpOOP_FIRED ) ;      \
@@ -23627,11 +23627,11 @@ examples
 /*1*//*IFsCRATCH*//*1*/
 
 //20201012@1237: POOPRqUIET -> BLAMMO, BECAUSE THIS IS AWLAYS A CODING ERROR (NONCONFORMANT CODE)
-//CODE THAT USES *((tinFullS&)tinBaseP).pEtScratch IS REQUIRED TO ALWAYS CHECK FOR IMPOTENCE AND CALL POOPR OR POOPRqUIET
+//CODE THAT USES *((tin9S&)tinBaseP).pEtScratch IS REQUIRED TO ALWAYS CHECK FOR IMPOTENCE AND CALL POOPR OR POOPRqUIET
 
 #define IFsCRATCH                                                                                       \
                                                                                                         \
-        if( ((tinFullS&)tinBaseP).pEtScratch )                                                                           \
+        if( ((tin9S&)tinBaseP).pEtScratch )                                                                           \
         {                                                                                               \
             SCOOPS                                                                                      \
             if( POOP )                                                                                  \
@@ -23644,7 +23644,7 @@ examples
             }                                                                                           \
         }                                                                                               \
                                                                                                         \
-        if( !((tinFullS&)tinBaseP).pEtScratch ) __1                                                                      \
+        if( !((tin9S&)tinBaseP).pEtScratch ) __1                                                                      \
         else
 
 
@@ -23703,11 +23703,11 @@ examples
 /*1*//*SCOOPSnEW*//*1*/
 #define SCOOPSnEW                                                                                                                                               \
                                                                                                                                                                 \
-    scoopC* _pScoopsSave = ((tinFullS&)tinBaseP).pScoops ;                                                                                                                       \
-                           ((tinFullS&)tinBaseP).pScoops = 0 ;                                                                                                                   \
+    scoopC* _pScoopsSave = ((tin9S&)tinBaseP).pScoops ;                                                                                                                       \
+                           ((tin9S&)tinBaseP).pScoops = 0 ;                                                                                                                   \
     {                                                                                                                                                           \
-        if( ((tinFullS&)tinBaseP).pScoops ) { BLAMMO ; }                                                                                                                         \
-        else               { ((tinFullS&)tinBaseP).pScoops = new( 0 , tinBaseP , LF ) scoopC( tinBaseP , LF ) ; ___( ((tinFullS&)tinBaseP).pScoops ) ; }                                                  \
+        if( ((tin9S&)tinBaseP).pScoops ) { BLAMMO ; }                                                                                                                         \
+        else               { ((tin9S&)tinBaseP).pScoops = new( 0 , tinBaseP , LF ) scoopC( tinBaseP , LF ) ; ___( ((tin9S&)tinBaseP).pScoops ) ; }                                                  \
     }
 
 
@@ -23734,7 +23734,7 @@ examples
 /**/
 
 /*1*//*SCOOPSdEL*//*1*/
-#define SCOOPSdEL { DEL( ((tinFullS&)tinBaseP).pScoops ) ; ((tinFullS&)tinBaseP).pScoops = _pScoopsSave ; _pScoopsSave = 0 ; }
+#define SCOOPSdEL { DEL( ((tin9S&)tinBaseP).pScoops ) ; ((tin9S&)tinBaseP).pScoops = _pScoopsSave ; _pScoopsSave = 0 ; }
 
 
 //
@@ -24591,12 +24591,12 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define LOGrAWtID(post1P)                                                                               \
                                                                                                         \
-    /*if( !thirdC::c_strcmpIF( tinBaseP , ((tinFullS&)tinBaseP).postThreadName , "tmAnimateSadamsOnPaperF" ) )*/             \
+    /*if( !thirdC::c_strcmpIF( tinBaseP , ((tin9S&)tinBaseP).postThreadName , "tmAnimateSadamsOnPaperF" ) )*/             \
     {                                                                                                   \
         OStEXT( ostoBuf , 0x2000 )                                                                      \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                                \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                                \
         OStEXTAK( ostoBuf , " " ) ;                                                                     \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                      \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                      \
         OStEXTAK( ostoBuf , " | " ) ;                                                                   \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                                 \
         OStEXTAK( ostoBuf , "\r\n" ) ;                                                                  \
@@ -25311,9 +25311,9 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -25349,9 +25349,9 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -25389,9 +25389,9 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -25467,8 +25467,8 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 #define _INbATON_                                                                                        \
                                                                                                          \
     if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                              \
-    else if( !osTidOwner ) osTidOwner = ((tinFullS&)tinBaseP).osTid ;                                                     \
-    else if( osTidOwner != ((tinFullS&)tinBaseP).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) \
+    else if( !osTidOwner ) osTidOwner = ((tin9S&)tinBaseP).osTid ;                                                     \
+    else if( osTidOwner != ((tin9S&)tinBaseP).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) \
         BLAMMO ;                                                                                         \
                                                                                                          \
     _IO_
@@ -25722,7 +25722,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 /*1*//*IDIfILEcALLER(offP)*//*1*/
 
-#define IDIfILEcALLER(offP) ( ((tinFullS&)tinBaseP).monitor.pLFnest[ ( ( ( ((tinFullS&)tinBaseP).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] )
+#define IDIfILEcALLER(offP) ( ((tin9S&)tinBaseP).monitor.pLFnest[ ( ( ( ((tin9S&)tinBaseP).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] )
 
 
 //
@@ -25749,7 +25749,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 /*1*//*IFwHEREiSwATCHING*//*1*/
 
-#define IFwHEREiSwATCHING if( F(((tinFullS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_WHEREiSwATCHING )
+#define IFwHEREiSwATCHING if( F(((tin9S&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_WHEREiSwATCHING )
 
 
 //
@@ -25891,7 +25891,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define GETfROMrECYCLER0(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP )                                                                                                                        \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP )                                                                                                                        \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -25905,24 +25905,24 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                                                                                                                                                                                                    \
         count2S c2Lever( ifcIDtYPErECYCLE_##classP ) ;                                                                                                                                                                                                             \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tinFullS&)tinBaseP).pSwsRecycle ) { ((tinFullS&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tinFullS&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tinFullS&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tinFullS&)tinBaseP).pSwsRecycle ) ; }  \
+        boolT bOwn = F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        if( bOwn && !((tin9S&)tinBaseP).pSwsRecycle ) { ((tin9S&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tin9S&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin9S&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin9S&)tinBaseP).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
-        if( bOwn && ((tinFullS&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
+        if( bOwn && ((tin9S&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
-            ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c2Lever ;                                                                                                                                                                                                                      \
-            if( *((tinFullS&)tinBaseP).pSwsRecycle ) *((tinFullS&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
+            ((tin9S&)tinBaseP).pczl_pSwsRecycle = c2Lever ;                                                                                                                                                                                                                      \
+            if( *((tin9S&)tinBaseP).pSwsRecycle ) *((tin9S&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                          \
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c2Lever ;                                                                                                                                                                                                                           \
-            if( *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c2Lever ;                                                                                                                                                                                                                           \
+            if( *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP ) pObjectP = classP::newRecyclableIF( tinBaseP ) ;                                                                                                                                                                                               \
-        else if( c2Lever.c1 == ifcIDtYPErECYCLE_soulC && ((tinFullS&)tinBaseP).pag1->_soulC_.pStkTrace && ((tinFullS&)tinBaseP).cArmTrace_soulC && ( ((tinFullS&)tinBaseP).cArmTrace_soulC == - 1 || !( -- ((tinFullS&)tinBaseP).cArmTrace_soulC ) ) ) ((soulC*)pObjectP)->traceF( tinBaseP , ((tinFullS&)tinBaseP).flagsTrace_soulC , T("RgET") ) ;                                        \
+        else if( c2Lever.c1 == ifcIDtYPErECYCLE_soulC && ((tin9S&)tinBaseP).pag1->_soulC_.pStkTrace && ((tin9S&)tinBaseP).cArmTrace_soulC && ( ((tin9S&)tinBaseP).cArmTrace_soulC == - 1 || !( -- ((tin9S&)tinBaseP).cArmTrace_soulC ) ) ) ((soulC*)pObjectP)->traceF( tinBaseP , ((tin9S&)tinBaseP).flagsTrace_soulC , T("RgET") ) ;                                        \
                                                                                                                                                                                                                                                                    \
         ___BITS( pObjectP , 0x1235 , idLineP , idiFileP , pbBitsP ) ;                                                                                                                                                                                              \
     }
@@ -25954,7 +25954,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define GETfROMrECYCLER2(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P )                                                            \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P )                                                            \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -25969,20 +25969,20 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         count4S c4Lever( ifcIDtYPErECYCLE_##classP , recycleLever1P , recycleLever2P ) ;                                                                                                                                                                           \
         if( !c4Lever.c2 ) c4Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tinFullS&)tinBaseP).pSwsRecycle ) { ((tinFullS&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tinFullS&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tinFullS&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tinFullS&)tinBaseP).pSwsRecycle ) ; }  \
+        boolT bOwn = F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        if( bOwn && !((tin9S&)tinBaseP).pSwsRecycle ) { ((tin9S&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tin9S&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin9S&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin9S&)tinBaseP).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
-        if( bOwn && ((tinFullS&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
+        if( bOwn && ((tin9S&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
-            ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c4Lever ;                                                                                                                                                                                                                      \
-            if( *((tinFullS&)tinBaseP).pSwsRecycle ) *((tinFullS&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
+            ((tin9S&)tinBaseP).pczl_pSwsRecycle = c4Lever ;                                                                                                                                                                                                                      \
+            if( *((tin9S&)tinBaseP).pSwsRecycle ) *((tin9S&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                          \
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c4Lever ;                                                                                                                                                                                                                           \
-            if( *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c4Lever ;                                                                                                                                                                                                                           \
+            if( *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP )                                                                                                                                                                                                                                            \
@@ -26020,7 +26020,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define RETURNtOrECYCLER0(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -26028,22 +26028,22 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         {                                                                                                                           \
             count2S c2Lever( ifcIDtYPErECYCLE_##classP ) ;                                                                          \
                                                                                                                                     \
-            if( ((tinFullS&)tinBaseP).pag1->_soulC_.pStkTrace && c2Lever.c1 == ifcIDtYPErECYCLE_soulC ) ((soulC*)pObjectP)->traceF( tinBaseP , flTRACEsOULc_PURGE , T("RpUT") ) ; \
+            if( ((tin9S&)tinBaseP).pag1->_soulC_.pStkTrace && c2Lever.c1 == ifcIDtYPErECYCLE_soulC ) ((soulC*)pObjectP)->traceF( tinBaseP , flTRACEsOULc_PURGE , T("RpUT") ) ; \
                                                                                                                                     \
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tinBaseP ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tinFullS&)tinBaseP).pSwsRecycle )                                        \
+            if( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin9S&)tinBaseP).pSwsRecycle )                                        \
             {                                                                                                                       \
-                ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c2Lever ;                                                                                   \
-                *((tinFullS&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
+                ((tin9S&)tinBaseP).pczl_pSwsRecycle = c2Lever ;                                                                                   \
+                *((tin9S&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
             }                                                                                                                       \
             else                                                                                                                    \
             {                                                                                                                       \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c2Lever ;                                                                                        \
-                *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c2Lever ;                                                                                        \
+                *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -26075,7 +26075,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define RETURNtOrECYCLER2(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -26087,17 +26087,17 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tinBaseP ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tinFullS&)tinBaseP).pSwsRecycle )                                        \
+            if( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin9S&)tinBaseP).pSwsRecycle )                                        \
             {                                                                                                                       \
-                ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c4Lever ;                                                                                   \
-                *((tinFullS&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
+                ((tin9S&)tinBaseP).pczl_pSwsRecycle = c4Lever ;                                                                                   \
+                *((tin9S&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
             }                                                                                                                       \
             else                                                                                                                    \
             {                                                                                                                       \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c4Lever ;                                                                                        \
-                *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c4Lever ;                                                                                        \
+                *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -26131,8 +26131,8 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 #define _INbATONnOtAG_                                                                                   \
                                                                                                          \
     if( pBaton ) pBaton->grabF( tinBaseP , idLineP , idiFileP , pbBitsP ) ;                                  \
-    else if( !osTidOwner ) osTidOwner = ((tinFullS&)tinBaseP).osTid ;                                                     \
-    else if( osTidOwner != ((tinFullS&)tinBaseP).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) \
+    else if( !osTidOwner ) osTidOwner = ((tin9S&)tinBaseP).osTid ;                                                     \
+    else if( osTidOwner != ((tin9S&)tinBaseP).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) \
         BLAMMO ;                                                                                         \
                                                                                                          \
     _IO_
@@ -26164,7 +26164,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define GETfROMrECYCLER4(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P ) \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P ) \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -26181,22 +26181,22 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         if( !c6Lever.c3 ) c6Lever.c3 = - 1 ;                                                                                                                                                                                                                       \
         if( !c6Lever.c2 ) c6Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tinFullS&)tinBaseP).pSwsRecycle ) { ((tinFullS&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tinFullS&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tinFullS&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tinFullS&)tinBaseP).pSwsRecycle ) ; }  \
+        boolT bOwn = F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        if( bOwn && !((tin9S&)tinBaseP).pSwsRecycle ) { ((tin9S&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tin9S&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin9S&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin9S&)tinBaseP).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
-        if( bOwn && ((tinFullS&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
+        if( bOwn && ((tin9S&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
             /*LOGrAWtID( "GETfROMrECYCLER4: using thread recycler" ) ;                                                                                                                                                                                              */ \
-            ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c6Lever ;                                                                                                                                                                                                                      \
-            if( *((tinFullS&)tinBaseP).pSwsRecycle ) *((tinFullS&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
+            ((tin9S&)tinBaseP).pczl_pSwsRecycle = c6Lever ;                                                                                                                                                                                                                      \
+            if( *((tin9S&)tinBaseP).pSwsRecycle ) *((tin9S&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                          \
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
             /*LOGrAWtID( "GETfROMrECYCLER4: using process recycler" ) ;                                                                                                                                                                                             */ \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c6Lever ;                                                                                                                                                                                                                           \
-            if( *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c6Lever ;                                                                                                                                                                                                                           \
+            if( *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP )                                                                                                                                                                                                                                            \
@@ -26235,7 +26235,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define RETURNtOrECYCLER4(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -26249,17 +26249,17 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tinBaseP ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tinFullS&)tinBaseP).pSwsRecycle )                                        \
+            if( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin9S&)tinBaseP).pSwsRecycle )                                        \
             {                                                                                                                       \
-                ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c6Lever ;                                                                                   \
-                *((tinFullS&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
+                ((tin9S&)tinBaseP).pczl_pSwsRecycle = c6Lever ;                                                                                   \
+                *((tin9S&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
             }                                                                                                                       \
             else                                                                                                                    \
             {                                                                                                                       \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c6Lever ;                                                                                        \
-                *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c6Lever ;                                                                                        \
+                *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -26291,7 +26291,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define GETfROMrECYCLER5(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P , const countT recycleLever5P ) \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P , const countT recycleLever5P ) \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -26309,22 +26309,22 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         if( !c7Lever.c3 ) c7Lever.c3 = - 1 ;                                                                                                                                                                                                                       \
         if( !c7Lever.c2 ) c7Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tinFullS&)tinBaseP).pSwsRecycle ) { ((tinFullS&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tinFullS&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tinFullS&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tinFullS&)tinBaseP).pSwsRecycle ) ; }  \
+        boolT bOwn = F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        if( bOwn && !((tin9S&)tinBaseP).pSwsRecycle ) { ((tin9S&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tin9S&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin9S&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin9S&)tinBaseP).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
-        if( bOwn && ((tinFullS&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
+        if( bOwn && ((tin9S&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
             /*LOGrAWtID8( "GETfROMrECYCLER5: using thread recycler               " , c7Lever.c2 , " " , c7Lever.c3 , " " , c7Lever.c4 , " " , c7Lever.c5 ) ;                                                                                                  */   \
-            ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c7Lever ;                                                                                                                                                                                                                      \
-            if( *((tinFullS&)tinBaseP).pSwsRecycle ) *((tinFullS&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
+            ((tin9S&)tinBaseP).pczl_pSwsRecycle = c7Lever ;                                                                                                                                                                                                                      \
+            if( *((tin9S&)tinBaseP).pSwsRecycle ) *((tin9S&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                          \
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
             /*LOGrAWtID8( "GETfROMrECYCLER5: using process recycler              " , c7Lever.c2 , " " , c7Lever.c3 , " " , c7Lever.c4 , " " , c7Lever.c5 ) ;                                                                                                  */   \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c7Lever ;                                                                                                                                                                                                                           \
-            if( *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c7Lever ;                                                                                                                                                                                                                           \
+            if( *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP )                                                                                                                                                                                                                                            \
@@ -26363,7 +26363,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define RETURNtOrECYCLER5(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -26378,19 +26378,19 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tinBaseP ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tinFullS&)tinBaseP).pSwsRecycle )                                        \
+            if( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin9S&)tinBaseP).pSwsRecycle )                                        \
             {                                                                                                                       \
                 /*LOGrAWtID8( "GETfROMrECYCLER5: RETURN thread                       " , c7Lever.c2 , " " , c7Lever.c3 , " " , c7Lever.c4 , " " , c7Lever.c5 ) ;                                                                                                             */   \
-                ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c7Lever ;                                                                                   \
-                *((tinFullS&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
+                ((tin9S&)tinBaseP).pczl_pSwsRecycle = c7Lever ;                                                                                   \
+                *((tin9S&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
             }                                                                                                                       \
             else                                                                                                                    \
             {                                                                                                                       \
                 /*LOGrAWtID8( "GETfROMrECYCLER5: RETURN process                      " , c7Lever.c2 , " " , c7Lever.c3 , " " , c7Lever.c4 , " " , c7Lever.c5 ) ;                                                                                                             */   \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c7Lever ;                                                                                        \
-                *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c7Lever ;                                                                                        \
+                *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -26423,9 +26423,9 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -26466,7 +26466,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define GETfROMrECYCLER6(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P , const countT recycleLever5P , const countT recycleLever6P ) \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P , const countT recycleLever2P , const countT recycleLever3P , const countT recycleLever4P , const countT recycleLever5P , const countT recycleLever6P ) \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -26485,22 +26485,22 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         if( !c8Lever.c3 ) c8Lever.c3 = - 1 ;                                                                                                                                                                                                                       \
         if( !c8Lever.c2 ) c8Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tinFullS&)tinBaseP).pSwsRecycle ) { ((tinFullS&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tinFullS&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tinFullS&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tinFullS&)tinBaseP).pSwsRecycle ) ; }  \
+        boolT bOwn = F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        if( bOwn && !((tin9S&)tinBaseP).pSwsRecycle ) { ((tin9S&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tin9S&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin9S&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin9S&)tinBaseP).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
-        if( bOwn && ((tinFullS&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
+        if( bOwn && ((tin9S&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
             /*LOGrAWtIDc( "GETfROMrECYCLER6: using thread recycler               " , c8Lever.c2 , " " , c8Lever.c3 , " " , c8Lever.c4 , " " , c8Lever.c5 , " " , c8Lever.c6 , " " , c8Lever.c7 ) ;                                                             */  \
-            ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c8Lever ;                                                                                                                                                                                                                      \
-            if( *((tinFullS&)tinBaseP).pSwsRecycle ) *((tinFullS&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
+            ((tin9S&)tinBaseP).pczl_pSwsRecycle = c8Lever ;                                                                                                                                                                                                                      \
+            if( *((tin9S&)tinBaseP).pSwsRecycle ) *((tin9S&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                          \
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
             /*LOGrAWtIDc( "GETfROMrECYCLER6: using process recycler              " , c8Lever.c2 , " " , c8Lever.c3 , " " , c8Lever.c4 , " " , c8Lever.c5 , " " , c8Lever.c6 , " " , c8Lever.c7 ) ;                                                             */  \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c8Lever ;                                                                                                                                                                                                                           \
-            if( *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c8Lever ;                                                                                                                                                                                                                           \
+            if( *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP )                                                                                                                                                                                                                                            \
@@ -26539,7 +26539,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 #define RETURNtOrECYCLER6(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -26555,19 +26555,19 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tinBaseP ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tinFullS&)tinBaseP).pSwsRecycle )                                        \
+            if( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin9S&)tinBaseP).pSwsRecycle )                                        \
             {                                                                                                                       \
                 /*LOGrAWtIDc( "RETURNtOrECYCLER6: RETURN thread                      " , c8Lever.c2 , " " , c8Lever.c3 , " " , c8Lever.c4 , " " , c8Lever.c5 , " " , c8Lever.c6 , " " , c8Lever.c7 ) */; \
-                ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c8Lever ;                                                                                   \
-                *((tinFullS&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
+                ((tin9S&)tinBaseP).pczl_pSwsRecycle = c8Lever ;                                                                                   \
+                *((tin9S&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
             }                                                                                                                       \
             else                                                                                                                    \
             {                                                                                                                       \
                 /*LOGrAWtIDc( "RETURNtOrECYCLER6: RETURN process                     " , c8Lever.c2 , " " , c8Lever.c3 , " " , c8Lever.c4 , " " , c8Lever.c5 , " " , c8Lever.c6 , " " , c8Lever.c7 ) */; \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c8Lever ;                                                                                        \
-                *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c8Lever ;                                                                                        \
+                *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -26600,9 +26600,9 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -26646,9 +26646,9 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -27466,9 +27466,9 @@ add constants here as needed to avoid this
                                                                                                                 \
     {                                                                                                           \
         LOGrAW( postP ": call nest:" ) ;                                                                        \
-        const countT ccNest = sizeof ((tinFullS&)tinBaseP).monitor.pLFnest / sizeof ((tinFullS&)tinBaseP).monitor.pLFnest[ 0 ] ;                                  \
+        const countT ccNest = sizeof ((tin9S&)tinBaseP).monitor.pLFnest / sizeof ((tin9S&)tinBaseP).monitor.pLFnest[ 0 ] ;                                  \
         countT pcNest[ ccNest + 1 ] ;                                                                           \
-        ((tinFullS&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                      \
+        ((tin9S&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                      \
                                                                                                                 \
         countT* pcc = pcNest ;                                                                                  \
         countT* pce = pcNest + ccNest ;                                                                         \
@@ -27602,7 +27602,7 @@ flBRANCHs_SHADOW is reserved for future enhancement
 
 #define GETfROMrECYCLER1(classP)                                                                                                                                                                                                                                   \
                                                                                                                                                                                                                                                                    \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P )                                                                                          \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT recycleLever1P )                                                                                          \
     {                                                                                                                                                                                                                                                              \
         SCOOP                                                                                                                                                                                                                                                      \
         IFbEcAREFUL                                                                                                                                                                                                                                                \
@@ -27616,20 +27616,20 @@ flBRANCHs_SHADOW is reserved for future enhancement
                                                                                                                                                                                                                                                                    \
         count3S c3Lever( ifcIDtYPErECYCLE_##classP , recycleLever1P ) ;                                                                                                                                                                                            \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tinFullS&)tinBaseP).pSwsRecycle ) { ((tinFullS&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tinFullS&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tinFullS&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tinFullS&)tinBaseP).pSwsRecycle ) ; }  \
+        boolT bOwn = F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        if( bOwn && !((tin9S&)tinBaseP).pSwsRecycle ) { ((tin9S&)tinBaseP).pSwsRecycle = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *((tin9S&)tinBaseP).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin9S&)tinBaseP).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin9S&)tinBaseP).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
-        if( bOwn && ((tinFullS&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
+        if( bOwn && ((tin9S&)tinBaseP).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
-            ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c3Lever ;                                                                                                                                                                                                                      \
-            if( *((tinFullS&)tinBaseP).pSwsRecycle ) *((tinFullS&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
+            ((tin9S&)tinBaseP).pczl_pSwsRecycle = c3Lever ;                                                                                                                                                                                                                      \
+            if( *((tin9S&)tinBaseP).pSwsRecycle ) *((tin9S&)tinBaseP).pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                          \
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c3Lever ;                                                                                                                                                                                                                           \
-            if( *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c3Lever ;                                                                                                                                                                                                                           \
+            if( *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle ) *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP )                                                                                                                                                                                                                                            \
@@ -27667,7 +27667,7 @@ flBRANCHs_SHADOW is reserved for future enhancement
 
 #define RETURNtOrECYCLER1(classP)                                                                                                   \
                                                                                                                                     \
-    voidT etherC::operator ()( tinBaseS& tinBaseP , classP*& pObjectP )                                                                     \
+    voidT etherC::operator ()( tin0S& tinBaseP , classP*& pObjectP )                                                                     \
     {                                                                                                                               \
         SCOOP                                                                                                                       \
         _IO_                                                                                                                        \
@@ -27678,17 +27678,17 @@ flBRANCHs_SHADOW is reserved for future enhancement
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tinBaseP ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tinFullS&)tinBaseP).pSwsRecycle )                                        \
+            if( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin9S&)tinBaseP).pSwsRecycle )                                        \
             {                                                                                                                       \
-                ((tinFullS&)tinBaseP).pczl_pSwsRecycle = c3Lever ;                                                                                   \
-                *((tinFullS&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
+                ((tin9S&)tinBaseP).pczl_pSwsRecycle = c3Lever ;                                                                                   \
+                *((tin9S&)tinBaseP).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
             }                                                                                                                       \
             else                                                                                                                    \
             {                                                                                                                       \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c3Lever ;                                                                                        \
-                *((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tinFullS&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pczl_pSwsRecycle = c3Lever ;                                                                                        \
+                *((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin9S&)tinBaseP).pag1->_etherC_.pSwsRecycle->ungrabF( tinBaseP ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -28524,7 +28524,7 @@ can be used for sCountC as well as measureT and sCountT and countT
     static countT  _wwSlots ;                                                                               \
     static countT* _wwPcTally ;                                                                             \
     static countT  _wwOff ;                                                                                 \
-    if( !_wwIdMine && ( !idAdamP || idAdamP == ((tinFullS&)tinBaseP).pag1->idAdam ) )                                \
+    if( !_wwIdMine && ( !idAdamP || idAdamP == ((tin9S&)tinBaseP).pag1->idAdam ) )                                \
     {                                                                                                       \
         /*CS:CODEsYNC: 0010409 0030100 0030100 1dd0003*/                                                    \
         for( _wwIdMine = 1 ; _wwIdMine <= 2 ; _wwIdMine ++ )                                                \
@@ -28532,7 +28532,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             napkinC& napWord = *etherC::ifc_ppNapWordI_IF()[ _wwIdMine ] ;                                  \
             _wwPcSlots = (countT*)(byteT*)napWord + 4 ;                                                     \
             if( getNegAM( _wwPcSlots[ - 4 ] ) != FINGERnEG_NAPwORD ) { BLAMMO ; }                           \
-            if( !setIfZeAM( _wwPcSlots[ - 3 ] , ((tinFullS&)tinBaseP).monitor.idThread ) )                                   \
+            if( !setIfZeAM( _wwPcSlots[ - 3 ] , ((tin9S&)tinBaseP).monitor.idThread ) )                                   \
             {                                                                                               \
                 _wwPcTally = _wwPcSlots - 2 ;                                                               \
                 _wwSlots = _wwPcSlots[ - 1 ] ;                                                              \
@@ -28817,9 +28817,9 @@ can be used for sCountC as well as measureT and sCountT and countT
                                                                                                     \
     {                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                   \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                            \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                            \
         OStEXTAK( ostoBuf , " " ) ;                                                                 \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                  \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                  \
         OStEXTAK( ostoBuf , " | " ) ;                                                               \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                             \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                                    \
@@ -29678,7 +29678,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMOiD( 0x1 ) ; }                             \
                                                                                                                                                 \
-            if( pvP && !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
                 PUSE( tinBaseP , *(byteT**)&pvP ) ;                                                                                                 \
             }                                                                                                                                   \
@@ -29691,19 +29691,19 @@ can be used for sCountC as well as measureT and sCountT and countT
             operator delete( pvP ) ;                                                                                                            \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )            \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , const countT idLineP , const countT idiFileP )            \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             ZE( voidT* , pvn ) ;                                                                                                                \
-            if( !((tinFullS&)tinBaseP).pPoolUse ) *(byteT**)&pvn = (processGlobal4IP).heap.newF( tinBaseP , LF , ( cbaFoot + cbP ) ) ;                               \
+            if( !((tin9S&)tinBaseP).pPoolUse ) *(byteT**)&pvn = (processGlobal4IP).heap.newF( tinBaseP , LF , ( cbaFoot + cbP ) ) ;                               \
             else                                                                                                                                \
             {                                                                                                                                   \
                 PUSE.newF( tinBaseP , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ;                                                                   \
                 ___LF( pvn , idLineP , idiFileP ) ;                                                                                             \
             }                                                                                                                                   \
                                                                                                                                                 \
-            dropNoteS* pNote = !((tinFullS&)tinBaseP).pPoolUse ? 0 : PUSE.pDropNoteF( tinBaseP , (byteT*)pvn ) ;                                                     \
+            dropNoteS* pNote = !((tin9S&)tinBaseP).pPoolUse ? 0 : PUSE.pDropNoteF( tinBaseP , (byteT*)pvn ) ;                                                     \
             if( pNote )                                                                                                                         \
             {                                                                                                                                   \
                 pNote->idType       = ifcIDtYPEdROPnOTE_##typeP ;                                                                               \
@@ -29720,7 +29720,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )               \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , byteT* pbZombieP , const countT cbZombieP )               \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pbZombieP ) BLAMMOiD( 0x4 ) ;                                                                                                  \
@@ -29736,7 +29736,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                                 \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , napkinC* const pNapkinP )                                 \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pNapkinP ) BLAMMOiD( 0x7 ) ;                                                                                                   \
@@ -29757,14 +29757,14 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )                                 \
+        voidT* classP::operator new[]( countT cbP , tin0S& tinBaseP , const countT idLineP , const countT idiFileP )                                 \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinBaseP , idLineP , idiFileP ) ;                                                                  \
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )                                    \
+        voidT* classP::operator new[]( countT cbP , tin0S& tinBaseP , byteT* pbZombieP , const countT cbZombieP )                                    \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pbZombieP ) BLAMMOiD( 0x9 ) ;                                                                                                  \
@@ -29773,7 +29773,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                                                      \
+        voidT* classP::operator new[]( countT cbP , tin0S& tinBaseP , napkinC* const pNapkinP )                                                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pNapkinP ) BLAMMOiD( 0xb ) ;                                                                                                   \
@@ -29792,7 +29792,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMOiD( 0xc ) ; }                             \
                                                                                                                                                 \
-            if( pvP && !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
                 PUSE( tinBaseP , *(byteT**)&pvP ) ;                                                                                                 \
             }                                                                                                                                   \
@@ -29805,12 +29805,12 @@ can be used for sCountC as well as measureT and sCountT and countT
             operator delete( pvP ) ;                                                                                                            \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )            \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , const countT idLineP , const countT idiFileP )            \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             ZE( voidT* , pvn ) ;                                                                                                                \
-            if( !((tinFullS&)tinBaseP).pPoolUse ) *(byteT**)&pvn = (processGlobal4IP).heap.newF( tinBaseP , LF , ( cbaFoot + cbP ) ) ;                               \
+            if( !((tin9S&)tinBaseP).pPoolUse ) *(byteT**)&pvn = (processGlobal4IP).heap.newF( tinBaseP , LF , ( cbaFoot + cbP ) ) ;                               \
             else                                                                                                                                \
             {                                                                                                                                   \
                 PUSE.newF( tinBaseP , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ;                                                                   \
@@ -29828,18 +29828,18 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )               \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , byteT* pbZombieP , const countT cbZombieP )               \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pbZombieP ) BLAMMOiD( 0x10 ) ;                                                                                                 \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             if( cbZombieP - ( cbaFoot + cbP ) )   /* DO A FULL BUILD (REFRESH HEADERS) IF THIS HAPPENS */                                       \
             {                                                                                                                                   \
-                /*((tinFullS&)tinBaseP).pc Utility[ 0 ] = cbZombieP ;        */                                                                                  \
-                /*((tinFullS&)tinBaseP).pc Utility[ 1 ] = cbaFoot + cbP ;    */                                                                                  \
-                /*((tinFullS&)tinBaseP).pc Utility[ 2 ] = cbaFoot ;          */                                                                                  \
-                /*((tinFullS&)tinBaseP).pc Utility[ 3 ] = cbP ;              */                                                                                  \
-                /*((tinFullS&)tinBaseP).pc Utility[ 4 ] = sizeof( batonC ) ; */                                                                                  \
+                /*((tin9S&)tinBaseP).pc Utility[ 0 ] = cbZombieP ;        */                                                                                  \
+                /*((tin9S&)tinBaseP).pc Utility[ 1 ] = cbaFoot + cbP ;    */                                                                                  \
+                /*((tin9S&)tinBaseP).pc Utility[ 2 ] = cbaFoot ;          */                                                                                  \
+                /*((tin9S&)tinBaseP).pc Utility[ 3 ] = cbP ;              */                                                                                  \
+                /*((tin9S&)tinBaseP).pc Utility[ 4 ] = sizeof( batonC ) ; */                                                                                  \
                 BLAMMOiD( 0x11 ) ;                                                                                                              \
             }                                                                                                                                   \
             if( cbaFoot )                                                                                                                       \
@@ -29852,7 +29852,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                                 \
+        voidT* classP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , napkinC* const pNapkinP )                                 \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pNapkinP ) BLAMMOiD( 0x13 ) ;                                                                                                  \
@@ -29873,14 +29873,14 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )                                 \
+        voidT* classP::operator new[]( countT cbP , tin0S& tinBaseP , const countT idLineP , const countT idiFileP )                                 \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinBaseP , idLineP , idiFileP ) ;                                                                  \
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )                                    \
+        voidT* classP::operator new[]( countT cbP , tin0S& tinBaseP , byteT* pbZombieP , const countT cbZombieP )                                    \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pbZombieP ) BLAMMOiD( 0x15 ) ;                                                                                                 \
@@ -29889,7 +29889,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::operator new[]( countT cbP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                                                      \
+        voidT* classP::operator new[]( countT cbP , tin0S& tinBaseP , napkinC* const pNapkinP )                                                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( !pNapkinP ) BLAMMOiD( 0x17 ) ;                                                                                                  \
@@ -30360,7 +30360,7 @@ can be used for sCountC as well as measureT and sCountT and countT
 #define PLATEcsTANDARDdECLARATIONS(classP)                                                                                                                      \
                                                                                                                                                                 \
     NEWdELcLASSpROTOS                                                                                                                                           \
-    virtual classP* newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP ) ;                                                                                                                        \
+    virtual classP* newF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP ) ;                                                                                                                        \
     virtual ~classP( voidT ) ;                                                                                                                                  \
     virtual plateC& operator =( plateC& plateP ) ;                                                                                                              \
     inline plateC& operator +=( stackC& stP ) { return plateC::operator +=( stP ) ; } /*THE NEED FOR THIS IS A COMPILER BUG IN WATCOM*/                         \
@@ -30410,7 +30410,7 @@ class fooC : public plateC                                                      
                                                                                                                                     \
 NEWdELcLASS( 1 , fooC )                                                                                                             \
                                                                                                                                     \
-fooC* fooC::newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )                                                                                                      \
+fooC* fooC::newF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP )                                                                                                      \
 {                                                                                                                                   \
     return new( 0 , tinBaseP , LF ) fooC ;                                                                                                   \
 }                                                                                                                                   \
@@ -30498,7 +30498,7 @@ voidT fooC::setModeF( const boolT bReverseP )                                   
                                                                                                                         \
 NEWdELcLASS( 1 , fooC )                                                                                                 \
                                                                                                                         \
-fooC* fooC::newF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )                                                                                          \
+fooC* fooC::newF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP )                                                                                          \
 {                                                                                                                       \
     return new( 0 , tinBaseP , LF ) fooC ;                                                                                       \
 }                                                                                                                       \
@@ -31615,8 +31615,8 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 
 #define FRIENDS_backOldC                                                                                   \
                                                                                                         \
-    friend voidT joyPosF( tinBaseS& tinBaseP , measureT* pmxP , const countT cmxP , const countT idJoyP ) ;     \
-    friend boolT sadamC::doF( tinBaseS& tinBaseP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const handleC* const phCloneP ) ;
+    friend voidT joyPosF( tin0S& tinBaseP , measureT* pmxP , const countT cmxP , const countT idJoyP ) ;     \
+    friend boolT sadamC::doF( tin0S& tinBaseP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const handleC* const phCloneP ) ;
 
 
 //
@@ -32200,7 +32200,7 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend TASKpROTO( tmTimeNowF ) ;                                                                                                                                                                                                                                                    \
  friend TASKpROTO( tmKillSocketF ) ;                                                                                                                                                                                                                                                 \
  friend batonC::~batonC( voidT ) ;                                                                                                                                                                                                                                                   \
- friend batonC::batonC( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , const countT idGroupP , const flagsT flagsP , byteT* const pbZombieP , const countT cbZombieP , const countT idMemorySpaceP ) ;  \
+ friend batonC::batonC( tin0S& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const osTextT* const postP , const countT idGroupP , const flagsT flagsP , byteT* const pbZombieP , const countT cbZombieP , const countT idMemorySpaceP ) ;  \
  friend voidT handleC::closeIfF( voidT ) ;                                                                                                                                                                                                                                           \
  friend voidT handleC::cloneF( const handleC& handleP , const countT osPidOwnerToP , const handleC& hProcessToP , const handleC& hProcessFromP ) ;                                                                                                                                   \
  friend countT rootExceptionFilterWorker1F( voidT* pvOsInfoP , countT ecP ) ;                                                                                                                                                                                                        \
@@ -32258,9 +32258,9 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 /*
 */
 /**/
-/*1*//*FRIENDS_tinBaseS*//*1*/
+/*1*//*FRIENDS_tin0S*//*1*/
 
-#define FRIENDS_tinFullS                                                                                                                                                                    \
+#define FRIENDS_tin9S                                                                                                                                                                    \
                                                                                                                                                                                         \
  friend class  cC ;                                                                                                                                                                     \
  friend class  grabC ;                                                                                                                                                                  \
@@ -32293,9 +32293,9 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend countT dtTellCopyDoneF( countT c_thisP ) ;                                                                                                                                      \
  friend countT tmRptMainF_workF( countT argP ) ;                                                                                                                                        \
  friend countT workInnerF( countT argP ) ;                                                                                                                                              \
- friend voidT  grabF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesireSetBySelf*/    \
- friend voidT  grabitC::grabF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;                                                               \
- friend voidT  pTinCopyF( tinBaseS& tinBaseP , etherC& etThreadP , tinBaseS*& pTinCopyP , const voidT* const pvFromP , const countT osPidP , const boolT bAcceptIfDirtyP ) ;
+ friend voidT  grabF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , boolT& bGrabbedP , countT& idDesireGrabberP ) ; /*idDesireSetBySelf*/    \
+ friend voidT  grabitC::grabF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) ;                                                               \
+ friend voidT  pTinCopyF( tin0S& tinBaseP , etherC& etThreadP , tin0S*& pTinCopyP , const voidT* const pvFromP , const countT osPidP , const boolT bAcceptIfDirtyP ) ;
 
 
 //
@@ -32484,11 +32484,11 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 /*1*//*SCOOPSnEWsPECIFIED(poopP)*//*1*/
 #define SCOOPSnEWsPECIFIED(poopP)                                                                                                                               \
                                                                                                                                                                 \
-    scoopC* _pScoopsSave = ((tinFullS&)tinBaseP).pScoops ;                                                                                                                       \
-                           ((tinFullS&)tinBaseP).pScoops = 0 ;                                                                                                                   \
+    scoopC* _pScoopsSave = ((tin9S&)tinBaseP).pScoops ;                                                                                                                       \
+                           ((tin9S&)tinBaseP).pScoops = 0 ;                                                                                                                   \
     {                                                                                                                                                           \
-        if( ((tinFullS&)tinBaseP).pScoops ) { BLAMMO ; }                                                                                                                         \
-        else               { ((tinFullS&)tinBaseP).pScoops = new( 0 , tinBaseP , LF ) scoopC( tinBaseP , LF , (poopP) ) ; ___( ((tinFullS&)tinBaseP).pScoops ) ; }                                        \
+        if( ((tin9S&)tinBaseP).pScoops ) { BLAMMO ; }                                                                                                                         \
+        else               { ((tin9S&)tinBaseP).pScoops = new( 0 , tinBaseP , LF ) scoopC( tinBaseP , LF , (poopP) ) ; ___( ((tin9S&)tinBaseP).pScoops ) ; }                                        \
     }
 
 
@@ -32617,22 +32617,22 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
         const boolT b_tmWindows    = !!( F(thirdC::third_flagsModeAdam1I_IF(tinBaseP))    & flADAMmODE1_tmWindows          ) ;                                  \
         const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                  \
         const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ;                                  \
-        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tinFullS&)tinBaseP).pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */             \
+        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin9S&)tinBaseP).pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */             \
         countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tinBaseP ) ;                                                                                \
         countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tinBaseP ) ;                                                                             \
         IFsCRATCH                                                                                                                                           \
         {                                                                                                                                                   \
             SCOOPS                                                                                                                                          \
             sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                           \
-            while( cAllKidThreadsI + cAllOrphanThreadsI > bService + b_tmWindows * 2 + ((tinFullS&)tinBaseP).pag1->_deviceC_cHelper + bSysThreads * 2 /*tmWatchF,tmKillSocketF*/ + (cKidsOrphansAllowP) )  \
+            while( cAllKidThreadsI + cAllOrphanThreadsI > bService + b_tmWindows * 2 + ((tin9S&)tinBaseP).pag1->_deviceC_cHelper + bSysThreads * 2 /*tmWatchF,tmKillSocketF*/ + (cKidsOrphansAllowP) )  \
             {                                                                                                                                               \
-                /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tinFullS&)tinBaseP).pag1->idAdam , "/waiting for " , ( cAllKidThreadsI + cAllOrphanThreadsI - bService - b_tmWindows * 2 - 2 - (cKidsOrphansAllowP) ) , " kid threads to end\r\n" ) ;*/ \
+                /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin9S&)tinBaseP).pag1->idAdam , "/waiting for " , ( cAllKidThreadsI + cAllOrphanThreadsI - bService - b_tmWindows * 2 - 2 - (cKidsOrphansAllowP) ) , " kid threads to end\r\n" ) ;*/ \
                 ++ s ; thirdC::dosSleepWinkIF( tinBaseP , 1 ) ;                                                                                                 \
             }                                                                                                                                               \
                                                                                                                                                             \
             if( POOP ) POOPR                                                                                                                                \
         }                                                                                                                                                   \
-        /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tinFullS&)tinBaseP).pag1->idAdam , "/ending wait\r\n" ) ;*/                            \
+        /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin9S&)tinBaseP).pag1->idAdam , "/ending wait\r\n" ) ;*/                            \
         /* ONLY main,tmWindowsF,tmWatchF,tmKillSocketF REMAIN */                                                                                            \
     }                                                                                                                                                       \
 
@@ -33585,7 +33585,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*1*//*CHATTERiF*//*1*/
 
-#define CHATTERiF if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
+#define CHATTERiF if( ((tin9S&)tinBaseP).pc Utility[ 0 ] )
 //#define CHATTERiF if( !( F(flags) & flRANGEc_CONSUMER ) )
 
 
@@ -33706,9 +33706,9 @@ it is illegal to refer to this symbol in the definition of an adam
             _IO_                                                                                                                                \
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
-            if( pvP && !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
-                if( !((tinFullS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                               \
+                if( !((tin9S&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                               \
                 PUSE( tinBaseP , *(byteT**)&pvP ) ;                                                                                                 \
             }                                                                                                                                   \
         }                                                                                                                                       \
@@ -33720,12 +33720,12 @@ it is illegal to refer to this symbol in the definition of an adam
             operator delete( pvP ) ;                                                                                                            \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP ) \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , const countT idLineP , const countT idiFileP ) \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             ZE( voidT* , pvn ) ;                                                                                                                \
-            if( !((tinFullS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                                   \
+            if( !((tin9S&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                                   \
             PUSE.newF( tinBaseP , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ; ___( pvn ) ;                                                          \
             if( pvn )                                                                                                                           \
             {                                                                                                                                   \
@@ -33747,7 +33747,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )    \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , byteT* pbZombieP , const countT cbZombieP )    \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -33762,7 +33762,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                      \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , napkinC* const pNapkinP )                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -33782,14 +33782,14 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )                      \
+        voidT* classP::subclassP::operator new[]( countT cbP , tin0S& tinBaseP , const countT idLineP , const countT idiFileP )                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinBaseP , idLineP , idiFileP ) ;                                                                  \
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )                         \
+        voidT* classP::subclassP::operator new[]( countT cbP , tin0S& tinBaseP , byteT* pbZombieP , const countT cbZombieP )                         \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( cbZombieP - cbP ) BLAMMO ;                                                                                                      \
@@ -33797,7 +33797,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                                           \
+        voidT* classP::subclassP::operator new[]( countT cbP , tin0S& tinBaseP , napkinC* const pNapkinP )                                           \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinBaseP , pNapkinP ) ;                                                                            \
@@ -33814,9 +33814,9 @@ it is illegal to refer to this symbol in the definition of an adam
             _IO_                                                                                                                                \
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
-            if( pvP && !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
-                if( !((tinFullS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                               \
+                if( !((tin9S&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                               \
                 PUSE( tinBaseP , *(byteT**)&pvP ) ;                                                                                                 \
             }                                                                                                                                   \
         }                                                                                                                                       \
@@ -33828,12 +33828,12 @@ it is illegal to refer to this symbol in the definition of an adam
             operator delete( pvP ) ;                                                                                                            \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP ) \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , const countT idLineP , const countT idiFileP ) \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             ZE( voidT* , pvn ) ;                                                                                                                \
-            if( !((tinFullS&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                                   \
+            if( !((tin9S&)tinBaseP).pPoolUse ) { BLAMMO ; }                                                                                                   \
             PUSE.newF( tinBaseP , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ; ___( pvn ) ;                                                          \
             __Z( pvn ) ;                                                                                                                        \
             if( cbaFoot )                                                                                                                       \
@@ -33846,7 +33846,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )    \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , byteT* pbZombieP , const countT cbZombieP )    \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -33861,7 +33861,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                      \
+        voidT* classP::subclassP::operator new( countT cbP , const countT cbFootP , tin0S& tinBaseP , napkinC* const pNapkinP )                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -33881,14 +33881,14 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP )                      \
+        voidT* classP::subclassP::operator new[]( countT cbP , tin0S& tinBaseP , const countT idLineP , const countT idiFileP )                      \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinBaseP , idLineP , idiFileP ) ;                                                                  \
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , byteT* pbZombieP , const countT cbZombieP )                         \
+        voidT* classP::subclassP::operator new[]( countT cbP , tin0S& tinBaseP , byteT* pbZombieP , const countT cbZombieP )                         \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             if( cbZombieP - cbP ) BLAMMO ;                                                                                                      \
@@ -33896,7 +33896,7 @@ it is illegal to refer to this symbol in the definition of an adam
             return pvr ;                                                                                                                        \
         }                                                                                                                                       \
                                                                                                                                                 \
-        voidT* classP::subclassP::operator new[]( countT cbP , tinBaseS& tinBaseP , napkinC* const pNapkinP )                                           \
+        voidT* classP::subclassP::operator new[]( countT cbP , tin0S& tinBaseP , napkinC* const pNapkinP )                                           \
         {                                                                                                                                       \
             _IO_                                                                                                                                \
             voidT* pvr = operator new( cbP , 0 , tinBaseP , pNapkinP ) ;                                                                            \
@@ -33930,7 +33930,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*1*//*IDlINEcALLER(offP)*//*1*/
 
-#define IDlINEcALLER(offP) ( ((tinFullS&)tinBaseP).monitor.pLFnest[ ( ( ( ((tinFullS&)tinBaseP).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ) << 1 ) ] )
+#define IDlINEcALLER(offP) ( ((tin9S&)tinBaseP).monitor.pLFnest[ ( ( ( ((tin9S&)tinBaseP).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ) << 1 ) ] )
 
 
 //
@@ -34062,7 +34062,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*1*//*FLAGScALLER(offP)*//*1*/
 
-#define FLAGScALLER(offP) ( ((tinFullS&)tinBaseP).pFlagsThreadLevelMode[ ( ((tinFullS&)tinBaseP).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ] )
+#define FLAGScALLER(offP) ( ((tin9S&)tinBaseP).pFlagsThreadLevelMode[ ( ((tin9S&)tinBaseP).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ] )
 
 
 //
@@ -34089,7 +34089,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*1*//*FLAGScALLER(offP)*//*1*/
 
-#define FLAGScALLER(offP) ( ((tinFullS&)tinBaseP).pFlagsThreadLevelMode[ ( ((tinFullS&)tinBaseP).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ] )
+#define FLAGScALLER(offP) ( ((tin9S&)tinBaseP).pFlagsThreadLevelMode[ ( ((tin9S&)tinBaseP).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ] )
 
 
 //
@@ -34118,7 +34118,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 #define DROPnOTEdOESnOTwANTmE                                                                           \
                                                                                                         \
-    if( F(((tinFullS&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tinFullS&)tinBaseP).monitor.idDirty % 2 ) )                   \
+    if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tin9S&)tinBaseP).monitor.idDirty % 2 ) )                   \
     {                                                                                                   \
         FLAGScALLER( 0 ) |= flTHREADlEVELmODE_DROPnOTEdOESnOTwANTmE ;                                   \
     }
@@ -34384,7 +34384,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*1*//*PUSE*//*1*/
 
-#define PUSE (*((tinFullS&)tinBaseP).pPoolUse)
+#define PUSE (*((tin9S&)tinBaseP).pPoolUse)
 
 
 //
@@ -34596,8 +34596,8 @@ coding standard
 #define ifcIDsTATEsPACE_IFC                     ( - 3 )
 #define ifcIDsTATEsPACE_SCRATCH                 ( - 0x10000 )
 #define ifcIDsTATEsPACE_MULTIPLEaDAMS           ( - 0x10001 )
-#define ifcIDsTATEsPACE_SINGLEaDAMnOtIN         ( ((tinFullS*)pTinAM())->pag1->idAdam )
-#define ifcIDsTATEsPACE_SINGLEaDAM(tinBaseP)        ( ((tinFullS&)tinBaseP).pag1->idAdam )
+#define ifcIDsTATEsPACE_SINGLEaDAMnOtIN         ( ((tin9S*)pTinAM())->pag1->idAdam )
+#define ifcIDsTATEsPACE_SINGLEaDAM(tinBaseP)        ( ((tin9S&)tinBaseP).pag1->idAdam )
 /*3*/
 
 
@@ -34658,7 +34658,7 @@ coding standard
 //2010.11.18@0932: INSERTED LISTnAMEsYS_UNKNOWN AND LISTnAMEsYS_TEMPORARY FOR AESTHETIC REASONS, SINCE HAVE ALREADY BROKEN EXTANT FILES 
 
 // RECURSIVE GRABBING USING grabitC IS USED FOR listC INSTANCES NAMED LISTnAMEsYS_ROOT*
-// IF MORE SUCH NAMES ARE DEFINED, THE ARRAY IN tinFullS THAT IS USED TO PROVIDE RECURSIVE GRABBING FOR grabitC OBJECTS MIGHT NEED TO BE MADE LARGER
+// IF MORE SUCH NAMES ARE DEFINED, THE ARRAY IN tin9S THAT IS USED TO PROVIDE RECURSIVE GRABBING FOR grabitC OBJECTS MIGHT NEED TO BE MADE LARGER
 
 //CS:CODEsYNC: 330e5007 33001126 3300039b (LISTnAMEsYS_ROOTsYSTEM*)
 
@@ -35226,10 +35226,10 @@ bit masks
                                                                                                                                                                                                                                                            \
     friend TASKpROTO( tmConsoleF ) ;                                                                                                                                                                                                                       \
     friend TASKpROTO( tmReportF ) ;                                                                                                                                                                                                                        \
-    friend boolT reportGrabF( tinBaseS& tinBaseP , textC& tReportP , const strokeS* const psttPrefixP , voidT* const pvGrabP , const countT osPidP ) ;                                                                                                             \
-    friend voidT reportF( tinBaseS& tinBaseP , etherC& etherP , strokeS*& psttP , const flagsT flagsP ) ;                                                                                                                                                          \
-    friend voidT monitorLookF( tinBaseS& tinBaseP , grabWantS*& pgwIP , countT& cgwIP ) ;                                                                                                                                       \
-    friend voidT image_grabC_F( tinBaseS& tinBaseP , etherC& etherP , byteT*& pbGrabP , socketC& sockP , baseGrabC* pForeignGrabP , countT osPidP ) ;                                                                                                              \
+    friend boolT reportGrabF( tin0S& tinBaseP , textC& tReportP , const strokeS* const psttPrefixP , voidT* const pvGrabP , const countT osPidP ) ;                                                                                                             \
+    friend voidT reportF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP , const flagsT flagsP ) ;                                                                                                                                                          \
+    friend voidT monitorLookF( tin0S& tinBaseP , grabWantS*& pgwIP , countT& cgwIP ) ;                                                                                                                                       \
+    friend voidT image_grabC_F( tin0S& tinBaseP , etherC& etherP , byteT*& pbGrabP , socketC& sockP , baseGrabC* pForeignGrabP , countT osPidP ) ;                                                                                                              \
     friend class sleepC ;
 
 
@@ -35895,7 +35895,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /**/
 /*1*//*THREADmODE2sAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODE2sAVE0(flagsSaveP) (flagsSaveP) = ((tinFullS&)tinBaseP).flagsThreadMode2 ;
+#define THREADmODE2sAVE0(flagsSaveP) (flagsSaveP) = ((tin9S&)tinBaseP).flagsThreadMode2 ;
 
 
 //
@@ -35921,7 +35921,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /**/
 /*1*//*THREADmODE2oFF0(flagsP)*//*1*/
 
-#define THREADmODE2oFF0(flagsP) ((tinFullS&)tinBaseP).flagsThreadMode2 &= ~( F(flagsP) ) ;
+#define THREADmODE2oFF0(flagsP) ((tin9S&)tinBaseP).flagsThreadMode2 &= ~( F(flagsP) ) ;
 
 
 //
@@ -35947,7 +35947,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /**/
 /*1*//*THREADmODE2oN0(flagsP)*//*1*/
 
-#define THREADmODE2oN0(flagsP) ((tinFullS&)tinBaseP).flagsThreadMode2 |= (flagsP) ;
+#define THREADmODE2oN0(flagsP) ((tin9S&)tinBaseP).flagsThreadMode2 |= (flagsP) ;
 
 
 //
@@ -35973,7 +35973,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /**/
 /*1*//*THREADmODE2rESTORE0*//*1*/
 
-#define THREADmODE2rESTORE0(flagsSaveP) ((tinFullS&)tinBaseP).flagsThreadMode2 = (flagsSaveP) ;
+#define THREADmODE2rESTORE0(flagsSaveP) ((tin9S&)tinBaseP).flagsThreadMode2 = (flagsSaveP) ;
 
 
 //
@@ -36002,7 +36002,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 
 #define THREADmODE3oFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode3Save = ((tinFullS&)tinBaseP).flagsThreadMode3 ;                                                                \
+    flagsT _flagsThreadMode3Save = ((tin9S&)tinBaseP).flagsThreadMode3 ;                                                                \
     THREADmODE3oFF0( flagsP )
 
 
@@ -36059,7 +36059,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 
 #define THREADmODE3oN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode3Save = ((tinFullS&)tinBaseP).flagsThreadMode3 ;                                                                \
+    flagsT _flagsThreadMode3Save = ((tin9S&)tinBaseP).flagsThreadMode3 ;                                                                \
     THREADmODE3oN0( flagsP )
 
 
@@ -36086,7 +36086,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /**/
 /*1*//*THREADmODE3sAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODE3sAVE0(flagsSaveP) (flagsSaveP) = ((tinFullS&)tinBaseP).flagsThreadMode3 ;
+#define THREADmODE3sAVE0(flagsSaveP) (flagsSaveP) = ((tin9S&)tinBaseP).flagsThreadMode3 ;
 
 
 //
@@ -36112,7 +36112,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /**/
 /*1*//*THREADmODE3oFF0(flagsP)*//*1*/
 
-#define THREADmODE3oFF0(flagsP) ((tinFullS&)tinBaseP).flagsThreadMode3 &= ~( F(flagsP) ) ;
+#define THREADmODE3oFF0(flagsP) ((tin9S&)tinBaseP).flagsThreadMode3 &= ~( F(flagsP) ) ;
 
 
 //
@@ -36138,7 +36138,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /**/
 /*1*//*THREADmODE3oN0(flagsP)*//*1*/
 
-#define THREADmODE3oN0(flagsP) ((tinFullS&)tinBaseP).flagsThreadMode3 |= (flagsP) ;
+#define THREADmODE3oN0(flagsP) ((tin9S&)tinBaseP).flagsThreadMode3 |= (flagsP) ;
 
 
 //
@@ -36164,7 +36164,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /**/
 /*1*//*THREADmODE3rESTORE0*//*1*/
 
-#define THREADmODE3rESTORE0(flagsSaveP) ((tinFullS&)tinBaseP).flagsThreadMode3 = (flagsSaveP) ;
+#define THREADmODE3rESTORE0(flagsSaveP) ((tin9S&)tinBaseP).flagsThreadMode3 = (flagsSaveP) ;
 
 
 //
@@ -37235,9 +37235,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
                                                                                                                 \
     {                                                                                                           \
         CONoUTrAW( postP ": call nest:" ) ;                                                                     \
-        const countT ccNest = sizeof ((tinFullS&)tinBaseP).monitor.pLFnest / sizeof ((tinFullS&)tinBaseP).monitor.pLFnest[ 0 ] ;                                  \
+        const countT ccNest = sizeof ((tin9S&)tinBaseP).monitor.pLFnest / sizeof ((tin9S&)tinBaseP).monitor.pLFnest[ 0 ] ;                                  \
         countT pcNest[ ccNest + 1 ] ;                                                                           \
-        ((tinFullS&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                      \
+        ((tin9S&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                      \
                                                                                                                 \
         countT* pcc = pcNest ;                                                                                  \
         countT* pce = pcNest + ccNest ;                                                                         \
@@ -37630,7 +37630,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 */
 /*1*//*DcON(postP)*//*1*/
 
-#define DcON(postP) { if( (byteT*)this == ((tinFullS&)tinBaseP).pag1->pbDebug ) { CONoUTrAW( postP ) ; } }
+#define DcON(postP) { if( (byteT*)this == ((tin9S&)tinBaseP).pag1->pbDebug ) { CONoUTrAW( postP ) ; } }
 
 
 //
@@ -37659,7 +37659,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 
 #define DcON3(post1P,cP,post2P)                                                                                        \
                                                                                                                        \
-    if( (byteT*)this == ((tinFullS&)tinBaseP).pag1->pbDebug )                                                                   \
+    if( (byteT*)this == ((tin9S&)tinBaseP).pag1->pbDebug )                                                                   \
     {                                                                                                                  \
         OStEXT( ostoBuf , 0x140 )                                                                                      \
         OStEXTA( ostoBuf , post1P ) ;                                                                                  \
@@ -37691,7 +37691,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 */
 /*1*//*DlOG(postP)*//*1*/
 
-#define DlOG(postP) { if( (byteT*)this == ((tinFullS&)tinBaseP).pag1->pbDebug ) { LOGrAW( postP ) ; } }
+#define DlOG(postP) { if( (byteT*)this == ((tin9S&)tinBaseP).pag1->pbDebug ) { LOGrAW( postP ) ; } }
 
 
 //
@@ -37720,7 +37720,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 
 #define DlOG3(post1P,cP,post2P)                                                                                        \
                                                                                                                        \
-    if( (byteT*)this == ((tinFullS&)tinBaseP).pag1->pbDebug )                                                                   \
+    if( (byteT*)this == ((tin9S&)tinBaseP).pag1->pbDebug )                                                                   \
     {                                                                                                                  \
         LOGrAW3( post1P , cP , post2P ) ;                                                                              \
     }
@@ -37781,7 +37781,7 @@ it is illegal to refer to this symbol except in the definition of PUSHtINaRGS PU
 #define CLEARtINaRGS                                                                                                \
                                                                                                                     \
     if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ; }           \
-    ((tinFullS&)tinBaseP).ta.clearF( tinBaseP , 0 ) ;
+    ((tin9S&)tinBaseP).ta.clearF( tinBaseP , 0 ) ;
 
 
 //
@@ -37884,8 +37884,8 @@ it is illegal to refer to this symbol except in the definition of PUSHtINaRGS PU
 #define SAVEtINaRGS                                                                                                 \
                                                                                                                     \
     if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ; }           \
-    byteT _pbSaveTinArg[ sizeof ((tinFullS&)tinBaseP).ta.pushed ] ;                                               \
-    ((tinFullS&)tinBaseP).ta.saveF( tinBaseP , _pbSaveTinArg , sizeof _pbSaveTinArg ) ;
+    byteT _pbSaveTinArg[ sizeof ((tin9S&)tinBaseP).ta.pushed ] ;                                               \
+    ((tin9S&)tinBaseP).ta.saveF( tinBaseP , _pbSaveTinArg , sizeof _pbSaveTinArg ) ;
 
 
 //
@@ -37915,7 +37915,7 @@ it is illegal to refer to this symbol except in the definition of PUSHtINaRGS PU
 #define RESTOREtINaRGS                                                                                              \
                                                                                                                     \
     if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ; }           \
-    ((tinFullS&)tinBaseP).ta.restoreF( tinBaseP , _pbSaveTinArg , sizeof _pbSaveTinArg ) ;
+    ((tin9S&)tinBaseP).ta.restoreF( tinBaseP , _pbSaveTinArg , sizeof _pbSaveTinArg ) ;
 
 
 //
@@ -38389,7 +38389,7 @@ args
 
 #define FD_INDEXif(typeP,expCarefulP)                                                                                                                                                                             \
                                                                                                                                                                                                                   \
-    voidT listC::indexIF( tinBaseS& tinBaseP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP )          \
+    voidT listC::indexIF( tin0S& tinBaseP , puseC& puseIndexP , handleC& hIndexP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP )          \
     {                                                                                                                                                                                                             \
         /*CONoUTrAW7( "                                                     \r\nindexIF [idKeyP,valueP,cNetP]:    " , idKeyP , "    " , *(countT*)&valueP , "    " , cNetP , "\r\n" ) ;*/                         \
                                                                                                                                                                                                                   \
@@ -38399,14 +38399,14 @@ args
             __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;                                                                                                                                                        \
             if( POOP ) return ;                                                                                                                                                                                   \
             __Z( idKeyP ) ;                                                                                                                                                                                       \
-            __( !!((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                                             \
+            __( !!((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                                             \
             if( POOP ) return ;                                                                                                                                                                                   \
             countT bCareful = (expCarefulP) ;                                                                                                                                                                     \
             if( bCareful != - 1 ) { __( bCareful ) ; }                                                                                                                                                            \
             if( POOP ) return ;                                                                                                                                                                                   \
         }                                                                                                                                                                                                         \
                                                                                                                                                                                                                   \
-        ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                                 \
+        ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                                 \
                                                                                                                                                                                                                   \
         ZE(  countT* , pczV ) ;                                                                                                                                                                                   \
         {                                                                                                                                                                                                         \
@@ -38420,7 +38420,7 @@ args
         ;                                                                                                                                                                                                         \
         const countT idStateSpace = PUSE.idStateSpaceF() ;                                                                                                                                                        \
                                                                                                                                                                                                                   \
-        puseC puseMaster( tinBaseP , *((tinFullS&)tinBaseP).pPoolUse ) ;                                                                                                                                        \
+        puseC puseMaster( tinBaseP , *((tin9S&)tinBaseP).pPoolUse ) ;                                                                                                                                        \
         ZE( puseC* , pPuseIndex ) ;                                                                                                                                                                               \
         countT idKeyInIndex = idKeyP ;                                                                                                                                                                            \
         if( ~hIndexP || thirdC::c_strcmpIF( tinBaseP , postMasterPool , "adam.temp" ) )                                                                                                                           \
@@ -38495,7 +38495,7 @@ args
             DEL( pPuseIndex ) ;                                                                                                                                                                                   \
         }                                                                                                                                                                                                         \
                                                                                                                                                                                                                   \
-        ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                                                     \
+        ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                                                     \
     }
 
 
@@ -38558,7 +38558,7 @@ args
 
 #define FD_UNiNDEXif(typeP,expCarefulP)                                                                                                                                                                                          \
                                                                                                                                                                                                                                  \
-    voidT listC::unIndexIF( tinBaseS& tinBaseP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP )    \
+    voidT listC::unIndexIF( tin0S& tinBaseP , puseC& puseIndexP , handleC& hIKP , const countT idKeyP , const typeP valueP , const countT cNetP , const listingC& recordP , const listingC& datumP , const flagsT flagsP )    \
     {                                                                                                                                                                                                                            \
         IFbEcAREFUL                                                                                                                                                                                                              \
         {                                                                                                                                                                                                                        \
@@ -38566,7 +38566,7 @@ args
             __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;                                                                                                                                                                       \
             if( POOP ) return ;                                                                                                                                                                                                  \
             __Z( idKeyP ) ;                                                                                                                                                                                                      \
-            __( !!((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                                                            \
+            __( !!((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                                                            \
             if( POOP ) return ;                                                                                                                                                                                                  \
             countT bCareful = (expCarefulP) ;                                                                                                                                                                                    \
             if( bCareful != - 1 ) { __( bCareful ) ; }                                                                                                                                                                           \
@@ -38574,7 +38574,7 @@ args
             if( POOP ) return ;                                                                                                                                                                                                  \
         }                                                                                                                                                                                                                        \
                                                                                                                                                                                                                                  \
-        ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                                                \
+        ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                                                \
                                                                                                                                                                                                                                  \
         ZE(  countT* , pczV ) ;                                                                                                                                                                                                  \
         {                                                                                                                                                                                                                        \
@@ -38591,7 +38591,7 @@ args
         ;                                                                                                                                                                                                                        \
         const countT idStateSpace = PUSE.idStateSpaceF() ;                                                                                                                                                                       \
                                                                                                                                                                                                                                  \
-        puseC puseMaster( tinBaseP , *((tinFullS&)tinBaseP).pPoolUse ) ;                                                                                                                                                       \
+        puseC puseMaster( tinBaseP , *((tin9S&)tinBaseP).pPoolUse ) ;                                                                                                                                                       \
         ZE( puseC* , pPuseIndex ) ;                                                                                                                                                                                              \
         countT idKeyInIndex = idKeyP ;                                                                                                                                                                                           \
         if( !bOpenIK || thirdC::c_strcmpIF( tinBaseP , postMasterPool , "adam.temp" ) )                                                                                                                                          \
@@ -38702,7 +38702,7 @@ args
             DEL( pPuseIndex ) ;                                                                                                                                                                                                  \
         }                                                                                                                                                                                                                        \
                                                                                                                                                                                                                                  \
-        ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                                                                    \
+        ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                                                                    \
     }
 
 
@@ -38770,7 +38770,7 @@ args
 
 #define FD_WALKiNDEXif(typeP)                                                                                                                                                                         \
                                                                                                                                                                                                       \
-    flagsT listC::walkIndexIF( tinBaseS& tinBaseP , const countT idKeyP , const typeP valueP , const countT cNetP )                                                                                   \
+    flagsT listC::walkIndexIF( tin0S& tinBaseP , const countT idKeyP , const typeP valueP , const countT cNetP )                                                                                   \
     {                                                                                                                                                                                                 \
         flagsT flagsRC = flLISTwALKrETURNcODE_null ;                                                                                                                                                  \
                                                                                                                                                                                                       \
@@ -38781,16 +38781,16 @@ args
             if( POOP ) return flagsRC ;                                                                                                                                                               \
             __Z( idKeyP ) ;                                                                                                                                                                           \
             { countT pczName[] = { idKeyP , 0 } ; LNV( pczName ) ; }                                                                                                                                  \
-            __( !( F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_TINaRGSpUSHED ) ) ; /*INTENDED TO FORCE APPLICATION CODE TO PUSH THE TIN ARGS AND SET THEM BEFORE EACH CALL TO ME*/    \
-            __( !((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP ) ;                                                                                                                  \
-            __(  ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.cRecurseP ) ;                                                                                                                      \
-            FV( flLISTwALK , ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP ) ;                                                                                                         \
-            __(  ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pOffWothP ) ;                                                                                                                      \
-            __(  ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleLoP ) ;                                                                                                                     \
-            __(  ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleHiP ) ;                                                                                                                     \
-            __(  ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.ppHandleRootP ) ;                                                                                                                  \
-            __(  ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.pbHandleRootP ) ;                                                                                                                  \
-            __(  ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                                  \
+            __( !( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_TINaRGSpUSHED ) ) ; /*INTENDED TO FORCE APPLICATION CODE TO PUSH THE TIN ARGS AND SET THEM BEFORE EACH CALL TO ME*/    \
+            __( !((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP ) ;                                                                                                                  \
+            __(  ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.cRecurseP ) ;                                                                                                                      \
+            FV( flLISTwALK , ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP ) ;                                                                                                         \
+            __(  ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.pOffWothP ) ;                                                                                                                      \
+            __(  ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleLoP ) ;                                                                                                                     \
+            __(  ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.pHandleHiP ) ;                                                                                                                     \
+            __(  ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.ppHandleRootP ) ;                                                                                                                  \
+            __(  ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.pbHandleRootP ) ;                                                                                                                  \
+            __(  ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;                                                                                                                  \
             if( POOP ) return flagsRC ;                                                                                                                                                               \
         }                                                                                                                                                                                             \
                                                                                                                                                                                                       \
@@ -38814,7 +38814,7 @@ args
             *pvspPostKey = dictionaryQueryFromIdIF( tinBaseP , idKeyP ) ;                                                                                                                             \
         }                                                                                                                                                                                             \
                                                                                                                                                                                                       \
-        ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                     \
+        ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;                                                                                                                     \
         puseC puseIndex( tinBaseP , idStateSpace == ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) || idStateSpace == ifcIDsTATEsPACE_SCRATCH ? ifcIDpOOL_ADAMtEMP : ifcIDpOOL_HOMEtEMP ) ;                   \
                                                                                                                                                                                                       \
         if( !bLiteralKey )                                                                                                                                                                            \
@@ -38856,10 +38856,10 @@ args
         if( ~hIKVR )                                                                                                                                                                                  \
         {                                                                                                                                                                                             \
             listC& references = *(listC*)hIKVR.osF( ifcIDtYPEhANDLE_LISTING ) ;                                                                                                                       \
-            flagsT flagsSave  = ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP ;                                                                                                        \
-                                ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_CALLERgRABBEDrOOT ;                                                                        \
+            flagsT flagsSave  = ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP ;                                                                                                        \
+                                ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP |= flLISTwALK_CALLERgRABBEDrOOT ;                                                                        \
             flagsRC          |= references.walkF( tinBaseP ) ;                                                                                                                                        \
-                                ((tinFullS&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flagsSave ;                                                                                            \
+                                ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flagsSave ;                                                                                            \
         }                                                                                                                                                                                             \
                                                                                                                                                                                                       \
         {                                                                                                                                                                                             \
@@ -38868,7 +38868,7 @@ args
             __NZ( pczIKVR ) ;                                                                                                                                                                         \
         }                                                                                                                                                                                             \
                                                                                                                                                                                                       \
-        ((tinFullS&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                                         \
+        ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;                                                                                                                         \
                                                                                                                                                                                                       \
         return flagsRC ;                                                                                                                                                                              \
     }
@@ -38902,7 +38902,7 @@ args
                                                                                                                 \
     SAVEtINaRGS                                                                                                 \
     CLEARtINaRGS                                                                                                \
-    flagsT _fWasPushed = F(((tinFullS&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_TINaRGSpUSHED ;                               \
+    flagsT _fWasPushed = F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_TINaRGSpUSHED ;                               \
     THREADmODE3oN( flTHREADmODE3_TINaRGSpUSHED )
 
 
@@ -38933,8 +38933,8 @@ args
 #define POPtINaRGS                                                                                                                     \
                                                                                                                                        \
     RESTOREtINaRGS                                                                                                                     \
-    if( _fWasPushed ) ((tinFullS&)tinBaseP).flagsThreadMode3 |=      flTHREADmODE3_TINaRGSpUSHED    ;                                                   \
-    else              ((tinFullS&)tinBaseP).flagsThreadMode3 &= ~( F(flTHREADmODE3_TINaRGSpUSHED) ) ;
+    if( _fWasPushed ) ((tin9S&)tinBaseP).flagsThreadMode3 |=      flTHREADmODE3_TINaRGSpUSHED    ;                                                   \
+    else              ((tin9S&)tinBaseP).flagsThreadMode3 &= ~( F(flTHREADmODE3_TINaRGSpUSHED) ) ;
 
 
 //
@@ -39111,8 +39111,8 @@ args
 #define _INbATONsTACKc_                                                                                  \
                                                                                                          \
     if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                              \
-    else if( !osTidOwner ) osTidOwner = ((tinFullS&)tinBaseP).osTid ;                                                     \
-    else if( osTidOwner != ((tinFullS&)tinBaseP).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) \
+    else if( !osTidOwner ) osTidOwner = ((tin9S&)tinBaseP).osTid ;                                                     \
+    else if( osTidOwner != ((tin9S&)tinBaseP).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) \
         BLAMMO ;                                                                                         \
                                                                                                          \
     _IO_                                                                                                 \
@@ -39287,7 +39287,7 @@ args
 
 #define THREADmODE4oFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode4Save = ((tinFullS&)tinBaseP).flagsThreadMode4 ;                                                                \
+    flagsT _flagsThreadMode4Save = ((tin9S&)tinBaseP).flagsThreadMode4 ;                                                                \
     THREADmODE4oFF0( flagsP )
 
 
@@ -39344,7 +39344,7 @@ args
 
 #define THREADmODE4oN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode4Save = ((tinFullS&)tinBaseP).flagsThreadMode4 ;                                                                \
+    flagsT _flagsThreadMode4Save = ((tin9S&)tinBaseP).flagsThreadMode4 ;                                                                \
     THREADmODE4oN0( flagsP )
 
 
@@ -39371,7 +39371,7 @@ args
 /**/
 /*1*//*THREADmODE4sAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODE4sAVE0(flagsSaveP) (flagsSaveP) = ((tinFullS&)tinBaseP).flagsThreadMode4 ;
+#define THREADmODE4sAVE0(flagsSaveP) (flagsSaveP) = ((tin9S&)tinBaseP).flagsThreadMode4 ;
 
 
 //
@@ -39397,7 +39397,7 @@ args
 /**/
 /*1*//*THREADmODE4oFF0(flagsP)*//*1*/
 
-#define THREADmODE4oFF0(flagsP) ((tinFullS&)tinBaseP).flagsThreadMode4 &= ~( F(flagsP) ) ;
+#define THREADmODE4oFF0(flagsP) ((tin9S&)tinBaseP).flagsThreadMode4 &= ~( F(flagsP) ) ;
 
 
 //
@@ -39423,7 +39423,7 @@ args
 /**/
 /*1*//*THREADmODE4oN0(flagsP)*//*1*/
 
-#define THREADmODE4oN0(flagsP) ((tinFullS&)tinBaseP).flagsThreadMode4 |= (flagsP) ;
+#define THREADmODE4oN0(flagsP) ((tin9S&)tinBaseP).flagsThreadMode4 |= (flagsP) ;
 
 
 //
@@ -39449,7 +39449,7 @@ args
 /**/
 /*1*//*THREADmODE4rESTORE0*//*1*/
 
-#define THREADmODE4rESTORE0(flagsSaveP) ((tinFullS&)tinBaseP).flagsThreadMode4 = (flagsSaveP) ;
+#define THREADmODE4rESTORE0(flagsSaveP) ((tin9S&)tinBaseP).flagsThreadMode4 = (flagsSaveP) ;
 
 
 //
@@ -41709,7 +41709,7 @@ code that uses me is probably using the high bit for some application purpose
             if( H(pv) )                                                                                                                             \
             {                                                                                                                                       \
                 classSPP##VSP& vsp = *(classSPP##VSP*)this ;                                                                                        \
-                if( vsp.pCBF ) (*vsp.pCBF)( thirdC::third_tinBaseS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_CT , cRefOld , cRefF() , vsp.cArg ) ;        \
+                if( vsp.pCBF ) (*vsp.pCBF)( thirdC::third_tin0S_ref_IF() , (byteT*)this , ifcIDeVENTvsp_CT , cRefOld , cRefF() , vsp.cArg ) ;        \
             }                                                                                                                                       \
         }                                                                                                                                           \
     }                                                                                                                                               \
@@ -41724,7 +41724,7 @@ code that uses me is probably using the high bit for some application purpose
             if( H(pv) )                                                                                                                             \
             {                                                                                                                                       \
                 classSPP##VSP& vsp = *(classSPP##VSP*)this ;                                                                                        \
-                if( vsp.pCBF ) (*vsp.pCBF)( thirdC::third_tinBaseS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_DT , cRefOld , cRefF() , vsp.cArg ) ;        \
+                if( vsp.pCBF ) (*vsp.pCBF)( thirdC::third_tin0S_ref_IF() , (byteT*)this , ifcIDeVENTvsp_DT , cRefOld , cRefF() , vsp.cArg ) ;        \
             }                                                                                                                                       \
         }                                                                                                                                           \
     }                                                                                                                                               \
@@ -41820,7 +41820,7 @@ code that uses me is probably using the high bit for some application purpose
                 flags &= ~F(flVSP_NONCONSTANTrEFdISPENSED) ;                                                                                                        \
                 count##bitsCRefWriteP##T& cRefWrite = *(count##bitsCRefWriteP##T*)&( (byteT*)&((count##bitsCRefP##T*)P(pv))[ offCRefP ] )[ offCRefWriteP ] ;        \
                 count##bitsCRefWriteP##T  cRefWriteOld = decv##bitsCRefWriteP##AM( cRefWrite ) ;                                                                    \
-                if( pCBF ) (*pCBF)( thirdC::third_tinBaseS_ref_IF() , (byteT*)this , ifcIDeVENTvsp_WrEFdT , cRefWriteOld , cRefF() , cArg ) ;                           \
+                if( pCBF ) (*pCBF)( thirdC::third_tin0S_ref_IF() , (byteT*)this , ifcIDeVENTvsp_WrEFdT , cRefWriteOld , cRefF() , cArg ) ;                           \
             }                                                                                                                                                       \
         }                                                                                                                                                           \
     }                                                                                                                                                               \
@@ -41840,7 +41840,7 @@ code that uses me is probably using the high bit for some application purpose
         if( P(pv) )                                                                                                                                                 \
         {                                                                                                                                                           \
             TINSL                                                                                                                                                   \
-            if( !( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_ALLOWwRITEABLEpOINTERgET ) ) { BLAMMO ; }                                                               \
+            if( !( F(((tin9S&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_ALLOWwRITEABLEpOINTERgET ) ) { BLAMMO ; }                                                               \
             /*if( !thirdC::bCanAccessMemoryIF( (byteT*)P(pv) , cbTestP ) ) { BLAMMO ; }*/                                                                           \
             if( !( F(flags) & flVSP_NONCONSTANTrEFdISPENSED ) )                                                                                                     \
             {                                                                                                                                                       \
@@ -42481,7 +42481,7 @@ see FORsTRINGSiN
                     {                                                                                                                                               \
                         _psttSingle[ CSpREFIX ] = _psttp[ CSpREFIX + offi ] ;                                                                                       \
                                                                                                                                                                     \
-                        ((tinFullS&)tinBaseP).pEther->strFuseF( tinBaseP , _soul##idP , _psttSingle ) ;                                                                                  \
+                        ((tin9S&)tinBaseP).pEther->strFuseF( tinBaseP , _soul##idP , _psttSingle ) ;                                                                                  \
                         if( !( -- _csttPending ) )
 
 
@@ -42516,7 +42516,7 @@ see FORsTRINGSiNsPANNEDhEAD
                 }                                                                                                                                                   \
             }                                                                                                                                                       \
                                                                                                                                                                     \
-            ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , _psttp ) ;                                                                                                                    \
+            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , _psttp ) ;                                                                                                                    \
         }                                                                                                                                                           \
     }
 
@@ -42762,14 +42762,14 @@ app code MUST delete psttc#idP before using the "continue" or the "break" statem
     FORsTRINGSiNsPANNEDhEAD( soulP , idP )                                                                                                                      \
     {                                                                                                                                                           \
         ZE( strokeS* , psttc##idP ) ;                                                                                                                         \
-        ((tinFullS&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttc##idP , 0 , _soul##idP * CSTTsOULfUSEdEFAULT ) ; ___( psttc##idP ) ;                                                 \
+        ((tin9S&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttc##idP , 0 , _soul##idP * CSTTsOULfUSEdEFAULT ) ; ___( psttc##idP ) ;                                                 \
                                                                                                                                                                 \
         while( _soul##idP )                                                                                                                                     \
         {                                                                                                                                                       \
             ZE( strokeS* , _psttp ) ;          /*"p":"PIECE" OR "PARTIAL"*/                                                                                   \
             _soul##idP >> _psttp ; ___( _psttp ) ;                                                                                                              \
-            ((tinFullS&)tinBaseP).pEther->strFuseF( tinBaseP , psttc##idP , _psttp ) ;                                                                                               \
-            ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , _psttp ) ;                                                                                                                \
+            ((tin9S&)tinBaseP).pEther->strFuseF( tinBaseP , psttc##idP , _psttp ) ;                                                                                               \
+            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , _psttp ) ;                                                                                                                \
         }
 
 
@@ -42799,7 +42799,7 @@ see FORsTRINGSiNsPANNEDhEAD
 
 #define FORsTRINGSiNsPANNEDcOMBINEDtAIL(idP)                                                                                                                    \
                                                                                                                                                                 \
-        ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttc##idP ) ;                                                                                                                \
+        ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttc##idP ) ;                                                                                                                \
     }                                                                                                                                                           \
     FORsTRINGSiNsPANNEDtAIL                                                                                                                                     \
 
@@ -44318,7 +44318,7 @@ arguments
                                                                                         \
         NEWdELcLASSpROTOS                                                               \
         classP( const osTextT* const postNameP ) ;                                      \
-        voidT operator ()( tinBaseS& tinBaseP , soulC& slP ) ;                                  \
+        voidT operator ()( tin0S& tinBaseP , soulC& slP ) ;                                  \
         baseSoilXxxxC& operator <<( soulC& slP ) ;                                      \
         baseSoilXxxxC& operator >>( soulC& slP ) ;                                      \
         const baseSoilXxxxC& operator >>( soulC& slP ) const ;                          \
@@ -45262,7 +45262,7 @@ this macro detects an invalid jPointer value and, if valid, evaluates to the (co
 
 /*1*//*J(idJotP)*//*1*/
 
-#define J(idJotP) ( !( (countT)(idJotP) & BM_HIGH ) ? (byteT*)(idJotP) : (byteT*)( *((tinFullS&)tinBaseP).ppJot[ ( (countT)(idJotP) & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] )[ (countT)(idJotP) ] )
+#define J(idJotP) ( !( (countT)(idJotP) & BM_HIGH ) ? (byteT*)(idJotP) : (byteT*)( *((tin9S&)tinBaseP).ppJot[ ( (countT)(idJotP) & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] )[ (countT)(idJotP) ] )
 
 
 //
@@ -45605,7 +45605,7 @@ else the reference to it that is kept within the jotC instance will become a zom
 //CS:CODEsYNC: 110004ea 110004eb 110004ec 110004ed 110004ee
 //SYNC ERRORS CAN CAUSE ARRAY INDEX OUT OF BOUNDS
 
-#define JrEF(_idSlotJotRegistryP) ( *( !(_idSlotJotRegistryP) ? (jotC*)0 : (_idSlotJotRegistryP) > sizeof ((tinFullS&)tinBaseP).ppJot / sizeof ((tinFullS&)tinBaseP).ppJot[ 0 ] ? (jotC*)0 : ((tinFullS&)tinBaseP).ppJot[ (_idSlotJotRegistryP) - 1 ] ) )
+#define JrEF(_idSlotJotRegistryP) ( *( !(_idSlotJotRegistryP) ? (jotC*)0 : (_idSlotJotRegistryP) > sizeof ((tin9S&)tinBaseP).ppJot / sizeof ((tin9S&)tinBaseP).ppJot[ 0 ] ? (jotC*)0 : ((tin9S&)tinBaseP).ppJot[ (_idSlotJotRegistryP) - 1 ] ) )
 
 #define JrEF1  JrEF( _idSlotJotRegistry1  )
 #define JrEF2  JrEF( _idSlotJotRegistry2  )
@@ -46438,7 +46438,7 @@ it is illegal for ipdos code to impose a file name limit
 
 /*
 if BM_HIGH is not set then the value is assumed to be a raw pointer and all such values return true
-if BM_HIGH is set then i return true iff pbP contains a JrEQUEST constant or the jotC instance offset will not overflow the jot registry (((tinFullS&)tinBaseP).ppJot)
+if BM_HIGH is set then i return true iff pbP contains a JrEQUEST constant or the jotC instance offset will not overflow the jot registry (((tin9S&)tinBaseP).ppJot)
 i do not verify that the naked idJot value is valid
 */
 /**/
@@ -47627,7 +47627,7 @@ use this rather than _ to avoid the overhead of _
 
 #define IFsIMULATEoFFLINEpOOP                                                                                           \
                                                                                                                         \
-    __NZ( F(((tinFullS&)tinBaseP).flagsThreadMode4)                     & flTHREADmODE4_SIMULATEoFFLINE  ) ;                             \
+    __NZ( F(((tin9S&)tinBaseP).flagsThreadMode4)                     & flTHREADmODE4_SIMULATEoFFLINE  ) ;                             \
     __NZ( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_SIMULATEoFFLINE ) ;
 
 //
@@ -47713,7 +47713,7 @@ use this rather than _ to avoid the overhead of _
 
 // THE REQUIRED BUFFER SIZE VARIES BECAUSE postName CAN BE OF VARYING LENGTH.  SEE booksC::booksC
 
-#define INtALLY ( ((tinFullS&)tinBaseP).pIdInNest[ ((tinFullS&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ] )
+#define INtALLY ( ((tin9S&)tinBaseP).pIdInNest[ ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ] )
 
 
 //
@@ -48014,9 +48014,9 @@ use this rather than _ to avoid the overhead of _
 #define BLAMMOiFcALLEDbY(postP)                                                                                                                                                                     \
                                                                                                                                                                                                     \
     {                                                                                                                                                                                               \
-        const countT ccNest = sizeof ((tinFullS&)tinBaseP).monitor.pLFnest / sizeof ((tinFullS&)tinBaseP).monitor.pLFnest[ 0 ] ;                                                                                                      \
+        const countT ccNest = sizeof ((tin9S&)tinBaseP).monitor.pLFnest / sizeof ((tin9S&)tinBaseP).monitor.pLFnest[ 0 ] ;                                                                                                      \
         countT pcNest[ ccNest + 1 ] ;                                                                                                                                                               \
-        ((tinFullS&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                                                                                                          \
+        ((tin9S&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                                                                                                          \
                                                                                                                                                                                                     \
         countT* pcc = pcNest ;                                                                                                                                                                      \
         countT* pce = pcNest + ccNest ;                                                                                                                                                             \
@@ -48872,12 +48872,12 @@ use this rather than _ to avoid the overhead of _
 #define GRABtINaRGS(idTypeP)                                                                                        \
                                                                                                                     \
          if( tinBaseP.idTypeTin != ifcIDtYPEtIN_FULL              ) { BLAMMOiD( 0x11111111 ) ; }                    \
-    else if( !((tinFullS&)tinBaseP).ta.grab_inUseType           )                                                 \
+    else if( !((tin9S&)tinBaseP).ta.grab_inUseType           )                                                 \
     {                                                                                                               \
-        if( ((tinFullS&)tinBaseP).ta.grab_cRecurse              ) { BLAMMOiD( 0x22222222 ) ; }                    \
-        ((tinFullS&)tinBaseP).ta.grab_inUseType = idTypeP ;                                                       \
+        if( ((tin9S&)tinBaseP).ta.grab_cRecurse              ) { BLAMMOiD( 0x22222222 ) ; }                    \
+        ((tin9S&)tinBaseP).ta.grab_inUseType = idTypeP ;                                                       \
     }                                                                                                               \
-    else if( ((tinFullS&)tinBaseP).ta.grab_inUseType == idTypeP ) ((tinFullS&)tinBaseP).ta.grab_cRecurse ++ ;   \
+    else if( ((tin9S&)tinBaseP).ta.grab_inUseType == idTypeP ) ((tin9S&)tinBaseP).ta.grab_cRecurse ++ ;   \
     else                                                            { BLAMMOiD( 0x33333333 ) ; }
 
 
@@ -48907,9 +48907,9 @@ use this rather than _ to avoid the overhead of _
 #define UNGRABtINaRGS(idTypeP)                                                                                                                                      \
                                                                                                                                                                     \
          if( tinBaseP.idTypeTin != ifcIDtYPEtIN_FULL                                                            ) { BLAMMOiD( 0x10101010 ) ; }                      \
-    else if( !((tinFullS&)tinBaseP).ta.grab_inUseType || ((tinFullS&)tinBaseP).ta.grab_inUseType != idTypeP ) { BLAMMOiD( 0x20202020 ) ; }                      \
-    else if( ((tinFullS&)tinBaseP).ta.grab_cRecurse                                                           ) ((tinFullS&)tinBaseP).ta.grab_cRecurse --   ;   \
-    else                                                                                                          ((tinFullS&)tinBaseP).ta.grab_inUseType = 0 ;
+    else if( !((tin9S&)tinBaseP).ta.grab_inUseType || ((tin9S&)tinBaseP).ta.grab_inUseType != idTypeP ) { BLAMMOiD( 0x20202020 ) ; }                      \
+    else if( ((tin9S&)tinBaseP).ta.grab_cRecurse                                                           ) ((tin9S&)tinBaseP).ta.grab_cRecurse --   ;   \
+    else                                                                                                          ((tin9S&)tinBaseP).ta.grab_inUseType = 0 ;
 
 
 //
@@ -49119,12 +49119,12 @@ use this rather than _ to avoid the overhead of _
 
 #define LOGrAWaDAMtID(post1P)                                                                               \
                                                                                                         \
-    /*if( !thirdC::c_strcmpIF( tinBaseP , ((tinFullS&)tinBaseP).postThreadName , "tmAnimateSadamsOnPaperF" ) )*/             \
+    /*if( !thirdC::c_strcmpIF( tinBaseP , ((tin9S&)tinBaseP).postThreadName , "tmAnimateSadamsOnPaperF" ) )*/             \
     {                                                                                                   \
         OStEXT( ostoBuf , 0x2000 )                                                                      \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                                \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                                \
         OStEXTAK( ostoBuf , " " ) ;                                                                     \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                      \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                      \
         OStEXTAK( ostoBuf , " | " ) ;                                                                   \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                                 \
         OStEXTAK( ostoBuf , "\r\n" ) ;                                                                  \
@@ -49159,9 +49159,9 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -49197,9 +49197,9 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -49237,9 +49237,9 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -49279,9 +49279,9 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -49323,9 +49323,9 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -49369,9 +49369,9 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                       \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                  \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                         \
@@ -49503,9 +49503,9 @@ use this rather than _ to avoid the overhead of _
                                                                                                     \
     {                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                   \
-        OStEXTC( ostoBuf , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;                                            \
+        OStEXTC( ostoBuf , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;                                            \
         OStEXTAK( ostoBuf , " " ) ;                                                                 \
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tinFullS&)tinBaseP).postThreadName ) ;                                                  \
+        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;                                                  \
         OStEXTAK( ostoBuf , " | " ) ;                                                               \
         OStEXTA( ostoBuf , (const osTextT*)(post1P) ) ;                                             \
         OStEXTC( ostoBuf , (countT)(c1P) , 0 ) ;                                                    \
@@ -49782,7 +49782,7 @@ use this rather than _ to avoid the overhead of _
 
 /*1*//*IFwHEREkNOWStHREAD*//*1*/
 
-#define IFwHEREkNOWStHREAD if( F(((tinFullS&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_REGISTEREDwITHwHERE )
+#define IFwHEREkNOWStHREAD if( F(((tin9S&)tinBaseP).monitor.flagsThreadMode1) & flTHREADmODE1_REGISTEREDwITHwHERE )
 
 
 //
@@ -49926,7 +49926,7 @@ use this rather than _ to avoid the overhead of _
         {                                                                                                                           \
             IFsCRATCH                                                                                                               \
             {                                                                                                                       \
-                scoopC* _pScoop = this != ((tinFullS&)tinBaseP).pEtScratch ? 0 : new( 0 , tinBaseP , LF ) scoopC( tinBaseP , LF ) ; ___( _pScoop ) ;         \
+                scoopC* _pScoop = this != ((tin9S&)tinBaseP).pEtScratch ? 0 : new( 0 , tinBaseP , LF ) scoopC( tinBaseP , LF ) ; ___( _pScoop ) ;         \
                                                                                                                                     \
                 /* CALLER'S WORK CODE */
 
@@ -50151,7 +50151,7 @@ use this rather than _ to avoid the overhead of _
 
 #define GARBAGEcOLLECTORdEF(idP,classP)                                                                                                                 \
                                                                                                                                                         \
-    voidT _garbageCollector##idP##CBF( tinBaseS& tinBaseP , byteT* pbvspP , countT idEventP , countT cRefOldP , countT cRefNewLaterP , countT cArgP )           \
+    voidT _garbageCollector##idP##CBF( tin0S& tinBaseP , byteT* pbvspP , countT idEventP , countT cRefOldP , countT cRefNewLaterP , countT cArgP )           \
     {                                                                                                                                                   \
         switch( idEventP )                                                                                                                              \
         {                                                                                                                                               \
@@ -50225,7 +50225,7 @@ use this rather than _ to avoid the overhead of _
 
 #define TESTsCRATCH                                                                                     \
                                                                                                         \
-        if( ((tinFullS&)tinBaseP).pEtScratch )                                                                           \
+        if( ((tin9S&)tinBaseP).pEtScratch )                                                                           \
         {                                                                                               \
             SCOOPS                                                                                      \
             if( POOP )                                                                                  \
@@ -50674,7 +50674,7 @@ after i return, that countT object will contain 1
 
 #define THREADmODE5oFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode5Save = ((tinFullS&)tinBaseP).flagsThreadMode5 ;                                                                \
+    flagsT _flagsThreadMode5Save = ((tin9S&)tinBaseP).flagsThreadMode5 ;                                                                \
     THREADmODE5oFF0( flagsP )
 
 
@@ -50731,7 +50731,7 @@ after i return, that countT object will contain 1
 
 #define THREADmODE5oN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode5Save = ((tinFullS&)tinBaseP).flagsThreadMode5 ;                                                                \
+    flagsT _flagsThreadMode5Save = ((tin9S&)tinBaseP).flagsThreadMode5 ;                                                                \
     THREADmODE5oN0( flagsP )
 
 
@@ -50758,7 +50758,7 @@ after i return, that countT object will contain 1
 /**/
 /*1*//*THREADmODE5sAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODE5sAVE0(flagsSaveP) (flagsSaveP) = ((tinFullS&)tinBaseP).flagsThreadMode5 ;
+#define THREADmODE5sAVE0(flagsSaveP) (flagsSaveP) = ((tin9S&)tinBaseP).flagsThreadMode5 ;
 
 
 //
@@ -50784,7 +50784,7 @@ after i return, that countT object will contain 1
 /**/
 /*1*//*THREADmODE5oFF0(flagsP)*//*1*/
 
-#define THREADmODE5oFF0(flagsP) ((tinFullS&)tinBaseP).flagsThreadMode5 &= ~( F(flagsP) ) ;
+#define THREADmODE5oFF0(flagsP) ((tin9S&)tinBaseP).flagsThreadMode5 &= ~( F(flagsP) ) ;
 
 
 //
@@ -50810,7 +50810,7 @@ after i return, that countT object will contain 1
 /**/
 /*1*//*THREADmODE5oN0(flagsP)*//*1*/
 
-#define THREADmODE5oN0(flagsP) ((tinFullS&)tinBaseP).flagsThreadMode5 |= (flagsP) ;
+#define THREADmODE5oN0(flagsP) ((tin9S&)tinBaseP).flagsThreadMode5 |= (flagsP) ;
 
 
 //
@@ -50836,7 +50836,7 @@ after i return, that countT object will contain 1
 /**/
 /*1*//*THREADmODE5rESTORE0*//*1*/
 
-#define THREADmODE5rESTORE0(flagsSaveP) ((tinFullS&)tinBaseP).flagsThreadMode5 = (flagsSaveP) ;
+#define THREADmODE5rESTORE0(flagsSaveP) ((tin9S&)tinBaseP).flagsThreadMode5 = (flagsSaveP) ;
 
 
 //
@@ -50866,9 +50866,9 @@ after i return, that countT object will contain 1
                                                                                                                 \
     {                                                                                                           \
         CONoUTrAW( postP ": call nest:" ) ;                                                                     \
-        const countT ccNest = sizeof ((tinFullS&)tinBaseP).monitor.pLFnest / sizeof ((tinFullS&)tinBaseP).monitor.pLFnest[ 0 ] ;                  \
+        const countT ccNest = sizeof ((tin9S&)tinBaseP).monitor.pLFnest / sizeof ((tin9S&)tinBaseP).monitor.pLFnest[ 0 ] ;                  \
         countT pcNest[ ccNest + 1 ] ;                                                                           \
-        ((tinFullS&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                      \
+        ((tin9S&)tinBaseP).get_pLFnest_F( tinBaseP , pcNest , ccNest + 1 ) ;                                                      \
                                                                                                                 \
         countT* pcc = pcNest ;                                                                                  \
         countT* pce = pcNest + ccNest ;                                                                         \
@@ -51321,7 +51321,7 @@ examples
 /**/
 /*1*//*CbOOKmARK*//*1*/
 
-// 20240929@2034: ( TUCK >> 5 ) <- ( TUCK << 0 ) TO SHRINK THE SIZE OF tinFullS
+// 20240929@2034: ( TUCK >> 5 ) <- ( TUCK << 0 ) TO SHRINK THE SIZE OF tin9S
 
 #define CbOOKmARK ( TUCK >> 5 )
 
@@ -51968,9 +51968,9 @@ values at and above 00ff are used by spouseC to encode literal byte values
         ZE( boolT , bSet ) ;                                                                                \
         for( countT offo = 0 ; offo < CiDtHREADtRACE ; offo ++ )                                            \
         {                                                                                                   \
-            if( !((tinFullS&)tinBaseP).pag1->pcIdThreadTrace[ offo ] )                                               \
+            if( !((tin9S&)tinBaseP).pag1->pcIdThreadTrace[ offo ] )                                               \
             {                                                                                               \
-                ((tinFullS&)tinBaseP).pag1->pcIdThreadTrace[ offo ] = ((tinFullS&)tinBaseP).monitor.idThread ;                        \
+                ((tin9S&)tinBaseP).pag1->pcIdThreadTrace[ offo ] = ((tin9S&)tinBaseP).monitor.idThread ;                        \
                 bSet ++ ;                                                                                   \
                 break ;                                                                                     \
             }                                                                                               \
@@ -52129,7 +52129,7 @@ values at and above 00ff are used by spouseC to encode literal byte values
             SCOOPS                                                                                          \
             while( !ether && !POOP && ( bNeverQuit || cTimes -- ) )                                         \
             {                                                                                               \
-                ((tinFullS&)tinBaseP).pEtScratch->##codeP ;                                                                  \
+                ((tin9S&)tinBaseP).pEtScratch->##codeP ;                                                                  \
                 if( POOP )                                                                                  \
                 {                                                                                           \
                     POOPR                                                                                   \
@@ -52229,10 +52229,10 @@ values at and above 00ff are used by spouseC to encode literal byte values
 
 #define BOSpOOPsET(idImpotenceP)                                                                                                                \
                                                                                                                                                 \
-    if( ((tinFullS&)tinBaseP).bosFail )                                                                                                                          \
+    if( ((tin9S&)tinBaseP).bosFail )                                                                                                                          \
     {                                                                                                                                           \
-        idImpotenceP = ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfUNCTION + ((tinFullS&)tinBaseP).brcQuery - ERROR_INVALID_FUNCTION ;                                   \
-        if( idImpotenceP < ifcIDiMPOTENCEbASEeRRORcODE_min || idImpotenceP > ifcIDiMPOTENCEbASEeRRORcODE_max ) idImpotenceP = ((tinFullS&)tinBaseP).brcQuery ;   \
+        idImpotenceP = ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfUNCTION + ((tin9S&)tinBaseP).brcQuery - ERROR_INVALID_FUNCTION ;                                   \
+        if( idImpotenceP < ifcIDiMPOTENCEbASEeRRORcODE_min || idImpotenceP > ifcIDiMPOTENCEbASEeRRORcODE_max ) idImpotenceP = ((tin9S&)tinBaseP).brcQuery ;   \
         if( !idImpotenceP ) idImpotenceP = DDNUMB ;                                                                                             \
     }
 

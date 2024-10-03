@@ -10,7 +10,7 @@
 }
     return idPort ;
     }
-        if( !POOP ) idPort = ((tinFullS&)tinBaseP).brcRaw ;
+        if( !POOP ) idPort = ((tin9S&)tinBaseP).brcRaw ;
         BOSdOnOTtEST( WHATgbo , ntohs( info.sin6_port ) )
         BOSpOOP
         BOSS( WHATsir , BOSfAIL , getsockname( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , &cbInfo ) )
@@ -38,11 +38,11 @@
             }
                 if( bAgain ) { ++ s ; dosSleepIF( tinBaseP , TUCK * 0x40 ) ; }
 
-                //if( ((tinFullS&)tinBaseP).pEther ) ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("bindF failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                countT rc = ((tinFullS&)tinBaseP).brcRaw ;
+                //if( ((tin9S&)tinBaseP).pEther ) ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("bindF failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                countT rc = ((tin9S&)tinBaseP).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
             {
-            if( ((tinFullS&)tinBaseP).bosFail )
+            if( ((tin9S&)tinBaseP).bosFail )
             BOSS( WHATgbo , BOSfAIL , bind( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info ) )
 
             bAgain = !*this && ( bNoQuit || ( bNoQuitEarly && !thPrimeIF( tinBaseP ) ) || ( cTriesP && -- cTriesP ) ) ;
@@ -67,9 +67,9 @@
     ZE( countT , cDebug2 ) ;
     ZE( countT , cDebug1 ) ;
 
-    *(countT*)info.sin6_addr.u.Byte = ((tinFullS&)tinBaseP).brcRaw ; //U: SUPPORTS ONLY IPV4 (NOT IPV6)
+    *(countT*)info.sin6_addr.u.Byte = ((tin9S&)tinBaseP).brcRaw ; //U: SUPPORTS ONLY IPV4 (NOT IPV6)
     BOSdOnOTtEST( WHATgbo , htonl( *(const countT*)nicNameP ) )
-    info.sin6_port = (count01T)((tinFullS&)tinBaseP).brcRaw ;
+    info.sin6_port = (count01T)((tin9S&)tinBaseP).brcRaw ;
     BOSdOnOTtEST( WHATgbo , htons( (count01T)( idPortP ? idPortP : INADDR_ANY ) ) )
     info.sin6_family = AF_INET6 ;
     c_memsetIF( tinBaseP , (byteT* const)&info , sizeof info ) ;
@@ -84,7 +84,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/countT thirdC::s_bindF( tinBaseS& tinBaseP , const handleC& handleP , const countT idPortP , const nicNameC nicNameP , countT cTriesP )/*1*/
+/*1*/countT thirdC::s_bindF( tin0S& tinBaseP , const handleC& handleP , const countT idPortP , const nicNameC nicNameP , countT cTriesP )/*1*/
 
 /**/
 */

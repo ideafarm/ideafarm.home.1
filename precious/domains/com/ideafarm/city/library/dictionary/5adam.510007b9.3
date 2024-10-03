@@ -23,7 +23,7 @@
     if( !pczChannelP )
     ZE( boolT , bOk ) ;
 {
-/*1*/boolT nodeOldC::handleUnregisterIF( tinBaseS& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
+/*1*/boolT nodeOldC::handleUnregisterIF( tin0S& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -50,7 +50,7 @@
     }
         pGrabHandleAll->ungrabF( tinBaseP ) ;
         }
-            ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("i am now the handle port for this adam [idAdam,idptHandleAll]:    ")+TF2(((tinFullS&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T((nicNameC&)*pIdptHandleAll)+T(" ( ")+TF2((countT)*pIdptHandleAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
+            ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("i am now the handle port for this adam [idAdam,idptHandleAll]:    ")+TF2(((tin9S&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T((nicNameC&)*pIdptHandleAll)+T(" ( ")+TF2((countT)*pIdptHandleAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
             bOk = 1 ;
             *pIdptHandleAll = idptMeP ;
         {
@@ -60,7 +60,7 @@
     if( !pczChannelP )
     ZE( boolT , bOk ) ;
 {
-/*1*/boolT nodeOldC::handleRegisterMeIfIF( tinBaseS& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
+/*1*/boolT nodeOldC::handleRegisterMeIfIF( tin0S& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -96,7 +96,7 @@
     if( !pczChannelP )
     ZE( boolT , bOk ) ;
 {
-/*1*/boolT nodeOldC::handleRefreshTimeStampIF( tinBaseS& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
+/*1*/boolT nodeOldC::handleRefreshTimeStampIF( tin0S& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -122,7 +122,7 @@
 
     }
         }
-            ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , pnn ) ;
+            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , pnn ) ;
             }
                 else            (countT&)idpth = pnn->pcId[ 0 ] & 0xffff ; // THE HIGH ORDER 01 BITS OF spaceport.ideafarm.com ARE NOW SET TO MAKE THE IPv4 ADDRESS ROUTABLE, BECAUSE getaddrinfo RETURNS WSANO_DATA WHEN THE HIGH WORD IS NULL
                 //else            (countT&)idpth = ( pnn->pcId[ 0 ] & 0xffff ) + 0x4 ; //U:: TO FIND A BUG: THIS IS AN INTENTIONAL SMUDGE SO THAT I WILL NEVER BE ABLE TO CONNECT WITH HANDLE
@@ -130,8 +130,8 @@
             {
             if( cnn == 1 ) //U::IPV6
             THREADmODE2rESTORE
-            socketC::nicNameIF( tinBaseP , *((tinFullS&)tinBaseP).pEther , pnn , cnn , T(idDo==1?"spacenn.ideafarm.com":"spaceport.ideafarm.com") ) ;
-            //OLD:socketC::nicNameIF( tinBaseP , *((tinFullS&)tinBaseP).pEther , pnn , cnn , T(idDo==1?"nicname.":"port.")+TF1(idSpace)+T(".space.ideafarm.com") ) ;
+            socketC::nicNameIF( tinBaseP , *((tin9S&)tinBaseP).pEther , pnn , cnn , T(idDo==1?"spacenn.ideafarm.com":"spaceport.ideafarm.com") ) ;
+            //OLD:socketC::nicNameIF( tinBaseP , *((tin9S&)tinBaseP).pEther , pnn , cnn , T(idDo==1?"nicname.":"port.")+TF1(idSpace)+T(".space.ideafarm.com") ) ;
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
             ZE( countT    , cnn ) ;
             ZE( nicNameC* , pnn ) ;
@@ -148,11 +148,11 @@
         //    {
         //    else switch( idHomeDisk )
         //    if( idSpacew && idSpacew <= 3 ) idSpace = idSpacew ;
-        //    ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttw ) ;
-        //    if( psttw ) idSpacew = ((tinFullS&)tinBaseP).pEther->strDigitsToSCountF( tinBaseP , psttw ) ;
+        //    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttw ) ;
+        //    if( psttw ) idSpacew = ((tin9S&)tinBaseP).pEther->strDigitsToSCountF( tinBaseP , psttw ) ;
         //    ZE( countT , idSpacew ) ;
         //    THREADmODE2rESTORE
-        //    ((tinFullS&)tinBaseP).pEther->boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tinBaseP , psttw , T("///d/ideafarm.home.")+TF1(idHomeDisk)+T(".setting.keyValue.idSpace") ) ; ___( psttw ) ;
+        //    ((tin9S&)tinBaseP).pEther->boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tinBaseP , psttw , T("///d/ideafarm.home.")+TF1(idHomeDisk)+T(".setting.keyValue.idSpace") ) ; ___( psttw ) ;
         //    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
         //    countT idHomeDisk = etherC::ifc_idHomeIdisk_IF() ;
         //    ZE( strokeS* , psttw ) ;
@@ -160,7 +160,7 @@
         //ENABLE WHEN A PRODUCTION RELAY SYSTEM EXISTS AND NEED TO DO DEVELOPMENT IN A SANDBOX
         countT idSpace = 1 ;
     {
-    if( !*((tinFullS&)tinBaseP).pEther )
+    if( !*((tin9S&)tinBaseP).pEther )
 
     //}
     //    pGrabHandleAll->ungrabF( tinBaseP ) ;
@@ -170,7 +170,7 @@
     //if( !pczChannelP )
     portTimeC idpth ;
 {
-/*1*/portTimeC nodeOldC::handleQueryIF( tinBaseS& tinBaseP , const countT* const pczChannelP )/*1*/
+/*1*/portTimeC nodeOldC::handleQueryIF( tin0S& tinBaseP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -198,7 +198,7 @@
     /* 5   */ sBagP << (countT)( 1 + incv02AM( idSerialLathHeaderP ) ) ;
     /* 1-4 */ idptP >> sBagP ;
 {
-/*1*/voidT nodeOldC::hdrBagIF( tinBaseS& tinBaseP , soulC& sBagP , portTimeC& idptP , countT& idSerialLathHeaderP , const flagsT flagsP , const countT idTypeP )/*1*/
+/*1*/voidT nodeOldC::hdrBagIF( tin0S& tinBaseP , soulC& sBagP , portTimeC& idptP , countT& idSerialLathHeaderP , const flagsT flagsP , const countT idTypeP )/*1*/
 /**/
 */
 /*
@@ -244,7 +244,7 @@
     if( stIdptOpenP )
     stIdptTempP.purgeF( tinBaseP ) ;
 {
-/*1*/voidT nodeOldC::sortOpenIF( tinBaseS& tinBaseP , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP )/*1*/
+/*1*/voidT nodeOldC::sortOpenIF( tin0S& tinBaseP , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP )/*1*/
 /**/
 */
 /*
@@ -277,7 +277,7 @@
     stRelayP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     _IO_
 {
-/*1*/voidT nodeOldC::myListIF( tinBaseS& tinBaseP , soulC& soulP , stackC& stRelayP )/*1*/
+/*1*/voidT nodeOldC::myListIF( tin0S& tinBaseP , soulC& soulP , stackC& stRelayP )/*1*/
 /**/
 */
 /*
@@ -312,7 +312,7 @@
     const countT cRelays = soulP.cFieldF( tinBaseP , idFieldP ++ ) ;
     _IO_
 {
-/*1*/countT nodeOldC::hisListIF( tinBaseS& tinBaseP , stackC& stP , soulC& soulP , stackC& stIdptGossipP , countT& idFieldP )/*1*/
+/*1*/countT nodeOldC::hisListIF( tin0S& tinBaseP , stackC& stP , soulC& soulP , stackC& stIdptGossipP , countT& idFieldP )/*1*/
 /**/
 */
 /*
@@ -335,7 +335,7 @@
 
 }
     }
-        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / ----") ) ;
+        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / ----") ) ;
 
         }
             }
@@ -343,19 +343,19 @@
                     }
                         //if( bDebug ) { CONoUTrAW3( "popping secret packet " , idSerialBag , " RIGHT\r\n" ) ; }
                         *pStPop4P << psBagCopy ; psBagCopy = 0 ;
-                        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4 / doing") ) ;
+                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4 / doing") ) ;
 
                         }
                             flags &= ~( F(flOLDrELAYpOP_DOWN) | F(flOLDrELAYpOP_UP) ) ;
                             flagsT& flags = psBagCopy->cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
-                            //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4 / dud") ) ;
+                            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4 / dud") ) ;
                         {
                         if( bDudP )
                         *psBagCopy = sBagP ;
                     {
                     if( psBagCopy )
                     soulC* psBagCopy = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
-                    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4") ) ;
+                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4") ) ;
                 {
                 if( pStPop4P )
                 
@@ -363,19 +363,19 @@
                     }
                         //if( bDebug ) { CONoUTrAW3( "popping secret packet " , idSerialBag , " LEFT\r\n" ) ; }
                         *pStPop3P << psBagCopy ; psBagCopy = 0 ;
-                        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3 / doing") ) ;
+                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3 / doing") ) ;
 
                         }
                             flags &= ~( F(flOLDrELAYpOP_DOWN) | F(flOLDrELAYpOP_UP) ) ;
                             flagsT& flags = psBagCopy->cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
-                            //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3 / dud") ) ;
+                            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3 / dud") ) ;
                         {
                         if( bDudP )
                         *psBagCopy = sBagP ;
                     {
                     if( psBagCopy )
                     soulC* psBagCopy = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
-                    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3") ) ;
+                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3") ) ;
                 {
                 if( pStPop3P )
             {
@@ -385,19 +385,19 @@
                 }
                     //if( bDebug ) { CONoUTrAW3( "popping secret packet " , idSerialBag , " UP2\r\n" ) ; }
                     *pStPop2P << psBagCopy ; psBagCopy = 0 ;
-                    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 2 / doing") ) ;
+                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 2 / doing") ) ;
 
                     }
                         flags &= ~( F(flOLDrELAYpOP_DOWN) | F(flOLDrELAYpOP_UP) ) ;
                         flagsT& flags = psBagCopy->cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
-                        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 2 / dud") ) ;
+                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 2 / dud") ) ;
                     {
                     if( bDudP )
                     *psBagCopy = sBagP ;
                 {
                 if( psBagCopy )
                 soulC* psBagCopy = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
-                //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 2") ) ;
+                //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 2") ) ;
             {
             if( flagsUp & 2 && pStPop2P )
         
@@ -405,19 +405,19 @@
                 }
                     //if( bDebug ) { CONoUTrAW3( "popping secret packet " , idSerialBag , " UP1\r\n" ) ; }
                     *pStPop1P << psBagCopy ; psBagCopy = 0 ;
-                    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 1 / doing") ) ;
+                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 1 / doing") ) ;
 
                     }
                         flags &= ~( F(flOLDrELAYpOP_DOWN) | F(flOLDrELAYpOP_UP) ) ;
                         flagsT& flags = psBagCopy->cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
-                        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 1 / dud") ) ;
+                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 1 / dud") ) ;
                     {
                     if( bDudP )
                     *psBagCopy = sBagP ;
                 {
                 if( psBagCopy )
                 soulC* psBagCopy = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
-                //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 1") ) ;
+                //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 1") ) ;
             {
             if( flagsUp & 1 && pStPop1P )
     
@@ -431,7 +431,7 @@
                             UNGRABrELAYlISTS
                             }
                                 }
-                                    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("[idRankTo,flagsUp]:    ")+TF2(idRankTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(flagsUp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("[idRankTo,flagsUp]:    ")+TF2(idRankTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(flagsUp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     flagsUp |= flagsUpF( idRankMe , idRankTo , idRankMax ) ;
                                 {
                                 if( idRankTo )
@@ -448,14 +448,14 @@
                                 ZE( countT , idRankTo ) ;
                             {
                             if( idRankMe ) while( (countT)*psTo && flagsUp != 3 ) //U:: EDIT soulC TO ELIMINATE THE NEED TO CAST TO countT TO GET THE NUBMER OF ITEMS
-                            //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("[idRankMax,idRankMe]:    ")+TF2(idRankMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idRankMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("[idRankMax,idRankMe]:    ")+TF2(idRankMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idRankMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             const countT idRankMax = stIdptOpenP ;
                             //CONoUTrAW3( "popIF: idRankMe: " , idRankMe , "\r\n" ) ;
                             countT idRankMe = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                             GRABrELAYlISTS
     
                             psTo->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbs , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
-                            //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting / sTo is not empty / inspecting psTo") ) ;
+                            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting / sTo is not empty / inspecting psTo") ) ;
                         {
                         if( psTo )
                         soulC* psTo = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psTo ) ; // WILL CONTAIN EITHER sTo OR sToMediator
@@ -477,13 +477,13 @@
     
                         flagsUp = bLateral = 0 ; //THIS IS A POINT TO POINT PACKET SO DON'T POP SIDE TO SIDE (REDUNDANT, TO MAKE BROADCAST MORE ROBOST)
                         //if( !psWrap->bKidEmptyF( tinBaseP , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ) { CONoUTrAW( "sToMediator is not empty\r\n" ) ; }
-                        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting / sTo is not empty") ) ;
+                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting / sTo is not empty") ) ;
                     {
                     if( !psWrap->bKidEmptyF( tinBaseP , ifcOLDiDfIELDwRAP_TO ) )
     
                     psWrap->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbsWrap , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                     //O: THIS IS EXPENSIVE; CAN ELIMINATE BY COPYING sTo TO THE OUTER ENVELOPE
-                    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting") ) ;
+                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting") ) ;
                 {
                 if( psWrap )
                 soulC* psWrap = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
@@ -492,12 +492,12 @@
                 ZE( countT , cbfsWrap ) ;
                 ZE( flagsT , flagssWrap ) ;
                 ZE( countT , idTypesWrap ) ;
-                //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap") ) ;
+                //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap") ) ;
             {
             if( sBagP.cFieldF( tinBaseP , ifcIDfIELDbAG_IDtYPE ) == ifcOLDiDtYPEbAG_WRAP )
             flagsT flagsUp = 3 ; //BOTH UP LEFT AND UP RIGHT
             boolT bLateral = 1 ;
-            //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP") ) ;
+            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP") ) ;
         {
         if( F(flags) & flOLDrELAYpOP_UP )
     
@@ -506,12 +506,12 @@
                 }
                     //if( bDebug ) { CONoUTrAW3( "popping secret packet " , idSerialBag , " DOWN\r\n" ) ; }
                     *pStPop0P << psBagCopy ; psBagCopy = 0 ;
-                    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_DOWN / pushing to *pStPop0P") ) ;
+                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_DOWN / pushing to *pStPop0P") ) ;
 
                     }
                         flags &= ~( F(flOLDrELAYpOP_DOWN) | F(flOLDrELAYpOP_UP) ) ;
                         flagsT& flags = psBagCopy->cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
-                        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_DOWN / dud") ) ;
+                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_DOWN / dud") ) ;
                     {
                     if( bDudP )
                     *psBagCopy = sBagP ;
@@ -520,7 +520,7 @@
                 soulC* psBagCopy = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
             {
             if( pStPop0P )
-            //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_DOWN") ) ;
+            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_DOWN") ) ;
         {
         if( F(flags) & flOLDrELAYpOP_DOWN )
         flagsT flags = sBagP.cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
@@ -557,7 +557,7 @@
         ZE( boolT , bDebug ) ;
         //U::
 
-        //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / ++++") ) ;
+        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / ++++") ) ;
     
         _IO_
     
@@ -580,7 +580,7 @@
     {
     IFsCRATCH
 {
-/*1*/voidT nodeOldC::popIF( tinBaseS& tinBaseP , stackC* pStPop0P , stackC* pStPop1P , stackC* pStPop2P , stackC* pStPop3P , stackC* pStPop4P , soulC& sBagP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const boolT bDudP )/*1*/
+/*1*/voidT nodeOldC::popIF( tin0S& tinBaseP , stackC* pStPop0P , stackC* pStPop1P , stackC* pStPop2P , stackC* pStPop3P , stackC* pStPop4P , soulC& sBagP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const boolT bDudP )/*1*/
 
 //
 //  n: (2**n)*x ................ (2**n)*x+(2**(n-1))-1 | (2**n)*x+(2**(n-1)) ............ (2**n)*(x+1)-1
@@ -629,7 +629,7 @@
     idWorkInvert1P =
     _IO_     TLNA( "idWorkInvertIF" )
 {
-/*1*/voidT nodeOldC::idWorkInvertIF( tinBaseS& tinBaseP , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP )/*1*/
+/*1*/voidT nodeOldC::idWorkInvertIF( tin0S& tinBaseP , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP )/*1*/
 /**/
 */
 /*
@@ -670,7 +670,7 @@
     ZE( boolT , bListed ) ;
     GRABrELAYlISTS
 {
-/*1*/boolT nodeOldC::bListedIF( tinBaseS& tinBaseP , stackC& stIdptOpenP , stackC& stIdptGossipP , const portTimeC& idptP )/*1*/
+/*1*/boolT nodeOldC::bListedIF( tin0S& tinBaseP , stackC& stIdptOpenP , stackC& stIdptGossipP , const portTimeC& idptP )/*1*/
 /**/
 */
 /*
@@ -745,7 +745,7 @@
         }
             while( !stIdptOpenP.third && ~hDown ) ;
             }
-                ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: open [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
+                ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: open [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
                 portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tinBaseP , hDown ) ;
             {
             do
@@ -754,7 +754,7 @@
         {
         if( stIdptOpenP )
 
-        ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: open list [cRelays,ideMe]:    ")+TF2(cRelays,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(ideMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
+        ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: open list [cRelays,ideMe]:    ")+TF2(cRelays,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(ideMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
     {
     if( F(flagsP) & flSELECTpEER_TRACE )
 
@@ -762,7 +762,7 @@
         }
             while( !stIdptGossipP.third && ~hDown ) ;
             }
-                ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: gossip [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
+                ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: gossip [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
                 portTimeC& idpt = *(portTimeC*)&stIdptGossipP.downF( tinBaseP , hDown ) ;
             {
             do
@@ -771,7 +771,7 @@
         {
         if( stIdptGossipP )
 
-        ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: gossip list") ) ; //U:: TO FIND A BUG
+        ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: gossip list") ) ; //U:: TO FIND A BUG
     {
     if( F(flagsP) & flSELECTpEER_TRACE )
 
@@ -791,7 +791,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT nodeOldC::idptSelectPeerIF( tinBaseS& tinBaseP , portTimeC& idptPeerP , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idMyWorkP , const flagsT flagsP )/*1*/
+/*1*/voidT nodeOldC::idptSelectPeerIF( tin0S& tinBaseP , portTimeC& idptPeerP , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idMyWorkP , const flagsT flagsP )/*1*/
 /**/
 */
 /*
@@ -836,7 +836,7 @@
     if( idptPeer1P ) { BLAMMO ; }
     _IO_     TLNA( "portTimeClientIF" )
 {
-/*1*/voidT nodeOldC::portTimeClientIF( tinBaseS& tinBaseP , portTimeC& idptPeer1P , portTimeC& idptPeer2P , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idHisWorkP )/*1*/
+/*1*/voidT nodeOldC::portTimeClientIF( tin0S& tinBaseP , portTimeC& idptPeer1P , portTimeC& idptPeer2P , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idHisWorkP )/*1*/
 /**/
 */
 /*
@@ -880,7 +880,7 @@
     {
     if( idWorkP )
 {
-/*1*/voidT nodeOldC::portTimeClientsExpectedIF( tinBaseS& tinBaseP , stackC& stRelayExpectedP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
+/*1*/voidT nodeOldC::portTimeClientsExpectedIF( tin0S& tinBaseP , stackC& stRelayExpectedP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
 /**/
 */
 /*
@@ -908,7 +908,7 @@
         }
             break ;
             }
-                (*((tinFullS&)tinBaseP).pEther)( tinBaseP , psBagPop ) ;
+                (*((tin9S&)tinBaseP).pEther)( tinBaseP , psBagPop ) ;
                 popIF( tinBaseP , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBagPop , stIdptOpenP , stIdptGossipP , idptP ) ;
                 idptGossipP >> *psBagPop ;
                 hdrBagIF( tinBaseP , *psBagPop , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPgOSSIP ) ;
@@ -917,7 +917,7 @@
         
             UNGRABrELAYlISTS
             }
-                else (*((tinFullS&)tinBaseP).pEther)( tinBaseP , psBagPop , TAG( TAGiDnULL ) ) ;
+                else (*((tin9S&)tinBaseP).pEther)( tinBaseP , psBagPop , TAG( TAGiDnULL ) ) ;
                 }
                     sortOpenIF( tinBaseP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
                     stIdptGossipP.sinkF( tinBaseP , countTC() , (byteT*)&idptGossipP , flSTACKsINK_UNIQUE , subtractIdPortsF , - 1 ) ;
@@ -939,7 +939,7 @@
     switch( idWorkP )
     portTimeC idptGossipped ;
 {
-/*1*/portTimeC nodeOldC::gossipIfIF( tinBaseS& tinBaseP , countT& idSerialLathHeaderP , stackC* const pStPop0P , stackC* const pStPop1P , stackC* const pStPop2P , stackC* const pStPop3P , stackC* const pStPop4P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP , stackC& stRelayAbsentP , portTimeC& idptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
+/*1*/portTimeC nodeOldC::gossipIfIF( tin0S& tinBaseP , countT& idSerialLathHeaderP , stackC* const pStPop0P , stackC* const pStPop1P , stackC* const pStPop2P , stackC* const pStPop3P , stackC* const pStPop4P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP , stackC& stRelayAbsentP , portTimeC& idptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
 /**/
 */
 if idptGossipP is absent and is not already gossipped, then gossip about it
@@ -971,8 +971,8 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
             {
             if( POOP )
 
-            (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , psBagOk ) ;
-            (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , psBag ) ;
+            (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , psBagOk ) ;
+            (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , psBag ) ;
             }
                 TELL( "reading ok-" )
                 VERIFYrELAY2( sock , *psBagOk ) ;
@@ -982,26 +982,26 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                 hdrBagIF( tinBaseP , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTnULL ) ;
             {
             if( psBag && psBagOk )
-            (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , psBagOk , TAG( TAGiDnULL ) ) ;
+            (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , psBagOk , TAG( TAGiDnULL ) ) ;
             ZE( soulC* , psBagOk ) ;
-            (*((tinFullS&)tinBaseP).pEtScratch)( tinBaseP , psBag , TAG( TAGiDnULL ) ) ;
+            (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , psBag , TAG( TAGiDnULL ) ) ;
             ZE( soulC* , psBag ) ;
         {
         else
         }
-            ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("testIF: could not connect [idptTestP:nn,idPort]:    ")+T((nicNameC&)idptTestP)+T("    ")+TF2((countT&)idptTestP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("testIF: could not connect [idptTestP:nn,idPort]:    ")+T((nicNameC&)idptTestP)+T("    ")+TF2((countT&)idptTestP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             bOk = 0 ;
             POOPRqUIET
         {
         if( POOP )
         sock.connectF( tinBaseP , idptTestP , (nicNameC&)idptTestP ) ;
-        socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
         SCOOPS
     {
     IFsCRATCH
     boolT bOk = 1 ;
 {
-/*1*/boolT nodeOldC::testIF( tinBaseS& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP , portTimeC& idptTestP )/*1*/
+/*1*/boolT nodeOldC::testIF( tin0S& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP , portTimeC& idptTestP )/*1*/
 /**/
 */
 /*
@@ -1034,7 +1034,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
 
             }
                 }
-                    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("helloToHandleIF / could not say hello to handle [idpthc:nn,idPort]:    ")+T((nicNameC&)idpthc)+T("    ")+TF2((countT&)idpthc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("helloToHandleIF / could not say hello to handle [idpthc:nn,idPort]:    ")+T((nicNameC&)idpthc)+T("    ")+TF2((countT&)idpthc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
                 {
                 if( POOP )
@@ -1044,7 +1044,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                     DEL( psBag ) ;
                     }
                         }
-                            ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("could not verify that my hello was received") ) ;
+                            ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("could not verify that my hello was received") ) ;
                             POOPRqUIET
                         {
                         else
@@ -1052,7 +1052,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         VERIFYrELAY2( sock , *psBagOk ) ;
 
                         sock.writeF( tinBaseP , *psBag ) ; //ASSUME: SERVER WILL, IF ROOT, ADD ME TO ITS LIST
-                        ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("writing hello bag") ) ;
+                        ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("writing hello bag") ) ;
             
                         idptP >> *psBag ;
                         idptP >> *psBag ;
@@ -1065,7 +1065,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                 if( !POOP )
                 sock.connectF( tinBaseP , idpthc , (nicNameC&)idpthc ) ;
 
-                socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
+                socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
                 SCOOPS
             {
             ZE( boolT , bOk ) ;
@@ -1078,7 +1078,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
     {
     IFsCRATCH
 {
-/*1*/voidT nodeOldC::helloToHandleIF( tinBaseS& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP )/*1*/
+/*1*/voidT nodeOldC::helloToHandleIF( tin0S& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP )/*1*/
 /**/
 */
 /*
@@ -1396,7 +1396,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
 
                                 }
                                     LOGrAW7( bAlt ? "could not assign a mediator because -->" : "could not assign a mediator because <--" , swsIdptMediatorP , " " , swsIdptMediatorAltP , " cells of " , idAdamMediator , " are registered\r\n" ) ;
-                                    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T(bAlt?"could not assign a mediator because --> ":"could not assign a mediator because <-- ")+TF2(swsIdptMediatorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(swsIdptMediatorAltP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" cells of ")+TF2(idAdamMediator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" are registered") ) ;
+                                    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T(bAlt?"could not assign a mediator because --> ":"could not assign a mediator because <-- ")+TF2(swsIdptMediatorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(swsIdptMediatorAltP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" cells of ")+TF2(idAdamMediator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" are registered") ) ;
                                 {
                                 if( !idptm )
                                 swsm.randomF( tinBaseP , pb_idptm ) ;
@@ -1408,7 +1408,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                                         : 1
                                         ? 0
                                     : swsIdptMediatorP
-                                    ? ( ((tinFullS&)tinBaseP).ranUni % TUCK ) / TUCK * 2
+                                    ? ( ((tin9S&)tinBaseP).ranUni % TUCK ) / TUCK * 2
                                 const boolT bAlt = swsIdptMediatorP && swsIdptMediatorAltP
                                 idAdamMediatorP = idAdamMediator ;
     
@@ -1476,7 +1476,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
 
     RELAYiNFOf
 {
-/*1*/voidT nodeOldC::doWrapLocallyIfIF( tinBaseS& tinBaseP , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP )/*1*/
+/*1*/voidT nodeOldC::doWrapLocallyIfIF( tin0S& tinBaseP , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP )/*1*/
 
 /**/
 */
@@ -1532,7 +1532,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
     
         }
             }
-                ++ s ; ((tinFullS&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TUCK * 0x40 ) ;
+                ++ s ; ((tin9S&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TUCK * 0x40 ) ;
     
                 if( sgnDone_tmNodeTeatAcceptorF ) break ;
 
@@ -1547,14 +1547,14 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                 {
                 if( !POOP )
                 sock.connectF( tinBaseP , home.idpTeat , (nicNameC&)home.idpTeat , 1 ) ;
-                socketC sock( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
                 SCOOPSnEW
             {
             while( !sgnDone_tmNodeTeatAcceptorF )
             sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
         
             //}
-            //    while( !POOP && !home.idpTeat ) { ++ s ; ((tinFullS&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TUCK * 0x40 ) ; }
+            //    while( !POOP && !home.idpTeat ) { ++ s ; ((tin9S&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TUCK * 0x40 ) ; }
             //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
             //    SCOOPS
             //{
@@ -1568,7 +1568,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                     }
                         DEL( pso ) ;
                         SCOOPS
-                        pso->etherF( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch ) ;
+                        pso->etherF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch ) ;
                     {
                     else 
                     if( !ether && pso ) etThread.osThreadF( tinBaseP , countTC() , tmNodeServerCatchBagF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso , (countT)&sListen , (countT)&stIdptPopClient , (countT)&cLooksForNewPing ) ;
@@ -1579,7 +1579,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         break ;
                         DEL( pso ) ;
                         SCOOPS
-                        pso->etherF( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch ) ;
+                        pso->etherF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch ) ;
                         //etherC::ifcSayIF( T("gasp!") , flSAY_APPEND | flSAY_LOG ) ;
                         TELL( "quitting" )
                     {
@@ -1631,7 +1631,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         {
                         IFsCRATCH
                         bWoth = 0 ;
-                        pso->etherF( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch ) ;
+                        pso->etherF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch ) ;
                         etThread.traceF( tinBaseP , T("writing woth bag ifcOLDiDtYPEbAG_SERVERoK") ) ;
                     {
                     if( bWoth ) //WOTH CLIENT MUST NOT BE REFUSED
@@ -1642,7 +1642,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         sListen.acceptF( tinBaseP , pso , idPortPeer , nnPeer , bRefuse ) ;
                         ZE( countT , idPortPeer ) ;
                         nicNameC nnPeer ;
-                        boolT bRefuse = /*++ idClient == ((tinFullS&)tinBaseP).monitor.idThread && !( bRefused ++ ) ? 1 :*/ 0 ;
+                        boolT bRefuse = /*++ idClient == ((tin9S&)tinBaseP).monitor.idThread && !( bRefused ++ ) ? 1 :*/ 0 ;
                         //static boolT bRefused ;
                     {
                     TELL( "waiting for a client to connect" )
@@ -1735,7 +1735,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
             SCOOPS
         {
         portC idPort ;
-        socketC sListen( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
+        socketC sListen( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
     {
     IFsCRATCH
 
@@ -1746,7 +1746,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
     homeS& home = homeS::homeIF() ;
     ZE( boolT , bQuit ) ;
     ranUniC ruZeWo( tinBaseP , 1 , 1 ) ;
-    const countT cKidThreadsSave = ((tinFullS&)tinBaseP).cKidThreads ;
+    const countT cKidThreadsSave = ((tin9S&)tinBaseP).cKidThreads ;
 
     switchStackC swsIdptMediatorAlt(    tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idAdamMediator , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
     switchStackC swsIdptMediator(       tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idAdamMediator , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
@@ -1763,7 +1763,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
     etherC& ether = etherC::etPrimeIF() ;
     _IO_
 {
-/*1*/nodeOldC::nodeOldC( tinBaseS& tinBaseP , etherC& etThread , boolT& bReadyP )/*1*/
+/*1*/nodeOldC::nodeOldC( tin0S& tinBaseP , etherC& etThread , boolT& bReadyP )/*1*/
 
 
 

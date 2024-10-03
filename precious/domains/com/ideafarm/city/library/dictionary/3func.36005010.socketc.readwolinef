@@ -13,12 +13,12 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        ((tinFullS&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
-        pOdometer->cbWrite += ((tinFullS&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tinFullS&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*((tinFullS&)tinBaseP).pag3->_socketC_.pSwOdometer ;
-        ((tinFullS&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
-        ((tinFullS&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ((tin9S&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
+        pOdometer->cbWrite += ((tin9S&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tin9S&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tin9S&)tinBaseP).pag3->_socketC_.pSwOdometer ;
+        ((tin9S&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
+        ((tin9S&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
         bRead.ungrabF( tinBaseP ) ;
     
@@ -78,8 +78,8 @@
         _IO_
         bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = ((tinFullS&)tinBaseP).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tinFullS&)tinBaseP).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tin9S&)tinBaseP).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tin9S&)tinBaseP).odoSockCbRead  ;
     
         }
             }
@@ -101,7 +101,7 @@
     ZE( osTextT , ostEscaped ) ;
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/osTextT socketC::readWoLineF( tinBaseS& tinBaseP , strokeS*& psttP , const countT csttEstimateP , const osTextT* const postEscapeP )/*1*/
+/*1*/osTextT socketC::readWoLineF( tin0S& tinBaseP , strokeS*& psttP , const countT csttEstimateP , const osTextT* const postEscapeP )/*1*/
 
 //U::NOTE I ALLREADY HAVE THE OTHER OVERLOAD
 //U::REWRITE TO ELIMINATE csttEstimateP

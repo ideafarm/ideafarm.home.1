@@ -9,7 +9,7 @@
 }
     return pageData ;
     pageC pageData = jotFilesC::readF( tinBaseP , idjPartP , idjBranchP , idjPartP ? 0 : idjSoil , flagsP ) ;
-    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("readFromNameF [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("readFromNameF [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     }
         }
@@ -29,7 +29,7 @@
                     if( pagec != sizeof( jotFileNameC ) ) { BLAMMO ; }
                     const jotFileNameC& jfnr = *(jotFileNameC*)(const byteT*)pagec ;
                     pageC pagec = readF( tinBaseP , countTC() , countTC() , idjnToWalk , flJOTfILEScrEAD_FROMcANcHANGE ) ;
-                    //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("readFromNameF [idjnToWalk]:    ")+TF2(idjnToWalk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("readFromNameF [idjnToWalk]:    ")+TF2(idjnToWalk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 ZE( countT , idjNameValue ) ;
             {
@@ -53,7 +53,7 @@
     idjBranchP &= ~NM_HIGH ;
     idjPartP   &= ~NM_HIGH ;
 {
-/*1*/pageC jotFilesNamedC::readFromNameF( tinBaseS& tinBaseP , countT& idjPartP , countT& idjBranchP , byteT* pbNameP , countT cbNameP , const flagsT flagsP )/*1*/
+/*1*/pageC jotFilesNamedC::readFromNameF( tin0S& tinBaseP , countT& idjPartP , countT& idjBranchP , byteT* pbNameP , countT cbNameP , const flagsT flagsP )/*1*/
 
 /**/
 

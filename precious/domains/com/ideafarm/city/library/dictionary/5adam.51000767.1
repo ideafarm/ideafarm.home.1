@@ -156,7 +156,7 @@ ZE( strokeS* , psttzLeverFolder ) ;
                 {
                 if( POOP )
 
-                ((tinFullS&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , psttf , ether , flDISKwALK_DIRECTORIESoNLY , sinkFolderToCloakCBF , pcArg , 0 , 0 ) ;
+                ((tin9S&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , psttf , ether , flDISKwALK_DIRECTORIESoNLY , sinkFolderToCloakCBF , pcArg , 0 , 0 ) ;
                 ZE( countT , cFiles ) ;
                 ZE( countT , cDirs ) ;
 
@@ -175,7 +175,7 @@ ZE( strokeS* , psttzLeverFolder ) ;
     {
     while( stFoldersToWalk )
 
-    countT pcArg[] = { (countT)((tinFullS&)tinBaseP).pEtScratch , (countT)&stFolderToCloak , (countT)&stFolderExclude , (countT)&stFoldersExclude } ;
+    countT pcArg[] = { (countT)((tin9S&)tinBaseP).pEtScratch , (countT)&stFolderToCloak , (countT)&stFolderExclude , (countT)&stFoldersExclude } ;
 
     }
         //else       psttf = 0 ;
@@ -301,7 +301,7 @@ DONE( tmServerF )
             //etRock.traceF( tinBaseP , T("cloak: sListen bound to port ")+TF2(home.portCloak,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
             home.portCloak = sListen.bindF( tinBaseP ) ;
             homeS& home = homeS::homeIF() ;
-            socketC sListen( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
+            socketC sListen( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
             SCOOPSnEW
         {
         IFsCRATCH
@@ -500,7 +500,7 @@ DONE( tmcCloakServerF )
         psoP->readF( tinBaseP , (byteT*)&idTypeConnection , sizeof idTypeConnection ) ;
         ZE( countT , idTypeConnection ) ;
     
-        psoP->etherF( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch ) ;
+        psoP->etherF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -613,7 +613,7 @@ TASK( tmcCloakServerF )
     {
     IFbEcAREFUL
 {
-voidT reportFilesF( tinBaseS& tinBaseP , etherC& etherP , soulC*& psOutP , socketC*& psoP , fileC*& pFlockP , const strokeS* const psttFolderP , const flagsT flagsP )
+voidT reportFilesF( tin0S& tinBaseP , etherC& etherP , soulC*& psOutP , socketC*& psoP , fileC*& pFlockP , const strokeS* const psttFolderP , const flagsT flagsP )
 
 }
     psoP->writeF( tinBaseP , (byteT*)&costo , sizeof costo ) ;
@@ -747,7 +747,7 @@ voidT reportFilesF( tinBaseS& tinBaseP , etherC& etherP , soulC*& psOutP , socke
     {
     IFbEcAREFUL
 {
-voidT reportFilesSimpleF( tinBaseS& tinBaseP , etherC& etherP , socketC*& psoP , fileC*& pFlockP , const strokeS* const psttFolderP , const strokeS* const psttPatternP )
+voidT reportFilesSimpleF( tin0S& tinBaseP , etherC& etherP , socketC*& psoP , fileC*& pFlockP , const strokeS* const psttFolderP , const strokeS* const psttPatternP )
 
 }
     THREADmODE2rESTORE
@@ -780,7 +780,7 @@ voidT reportFilesSimpleF( tinBaseS& tinBaseP , etherC& etherP , socketC*& psoP ,
     //U:: ALT: SUPPORT THIS COMMAND ONLY ONCE PER PERIOD AND LAUNCH A THREAD TO WAIT A RANDOM AMOUNT OF TIME BEFORE CLOSING AND IMMEDIATELY REOPENING THIS FILE
     //U:: SECURITY HOLE: A MALICIOUS CLIENT CAN EXPLOIT THIS BY EMITTING THIS COMMAND AND THEN STARTING A CYCLING RACE TO TRY TO OPEN THE HANDLE ITSELF, PREVENTING ME FROM OPENING IT
 {
-voidT replaceCloakF( tinBaseS& tinBaseP , etherC& etherP , fileC*& pFlockP , const strokeS* const psttFolderP )
+voidT replaceCloakF( tin0S& tinBaseP , etherC& etherP , fileC*& pFlockP , const strokeS* const psttFolderP )
 
 }
     return 0 ;
@@ -841,7 +841,7 @@ voidT replaceCloakF( tinBaseS& tinBaseP , etherC& etherP , fileC*& pFlockP , con
     if( postNameP )
     _IO_
 {
-boolT sinkFolderToCloakCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT sinkFolderToCloakCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 }
     return 0 ;

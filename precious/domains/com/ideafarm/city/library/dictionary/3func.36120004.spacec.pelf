@@ -11,7 +11,7 @@
     THREADmODE2rESTORE
     }
         //while( cUngrabsDone -- ) deviceP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                 //20151023@0943: ADDED TO AVOID A DEADLOCK OBSERVED AT WILL BY WAITING SEVERAL TICKS USING ADAM 6ae
-        //((tinFullS&)tinBaseP).pSgnUtility->waitF( tinBaseP ) ;
+        //((tin9S&)tinBaseP).pSgnUtility->waitF( tinBaseP ) ;
         //countT cUngrabsDone = deviceP.ungrabF( tinBaseP , flGRABcUNGRABf_IF | flGRABcUNGRABf_ALLrECURSIONS ) ;  //20151023@0943: ADDED TO AVOID A DEADLOCK OBSERVED AT WILL BY WAITING SEVERAL TICKS USING ADAM 6ae
 
         //ANOTHER WAY TO AVOID THAT IS SIMPLY TO NAP OR YIELD HERE UNTIL THE STACK IS EMPTY
@@ -30,9 +30,9 @@
         etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("pelF/pushJob/ spinning") ) ;
 
         /*O*/   }
-        /*O*/       *((tinFullS&)tinBaseP).pag1->_deviceC_pStkJob << (byteT*)&job ;
+        /*O*/       *((tin9S&)tinBaseP).pag1->_deviceC_pStkJob << (byteT*)&job ;
         /*O*/       inc02AM( drawJobS::cInstancesIF() ) ;
-        /*O*/       drawJobS job( cLever_rgb , ((tinFullS&)tinBaseP).pSgnUtility , cPending , *this , *pSpace , *pPel ) ;
+        /*O*/       drawJobS job( cLever_rgb , ((tin9S&)tinBaseP).pSgnUtility , cPending , *this , *pSpace , *pPel ) ;
         /*O*/       inc02AM( cPending ) ;
         /*O*/   
         /*O*/       pelS*         pPel      = (pelS*)&(*pPelP)[ cLever_rgb ] ; // *pPel IS NOT YET CONSTRUCTED ; IT WILL BE CONSTRUCTED IN PASS 2
@@ -61,7 +61,7 @@
 
     _IO_
 {
-/*1*/voidT spaceC::pelF( tinBaseS& tinBaseP , pelC*& pPelP , deviceC& deviceP )/*1*/
+/*1*/voidT spaceC::pelF( tin0S& tinBaseP , pelC*& pPelP , deviceC& deviceP )/*1*/
 
 /**/
 */

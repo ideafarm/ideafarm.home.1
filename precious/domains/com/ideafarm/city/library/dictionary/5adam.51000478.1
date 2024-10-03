@@ -17,16 +17,16 @@ REST
         etThread.delF( tinBaseP , pbts ) ;
         }
             }
-                pbc += sizeof( tinFullS ) ;
+                pbc += sizeof( tin9S ) ;
                 etThread.delF( tinBaseP , postr ) ;
-                etThread.boxPutF( tinBaseP , tPrefix+T(".")+TF1(((tinFullS*)pTin)->idProcessOld)+T(".")+TF1(((tinFullS*)pTin)->postThreadName)+T(".")+TF1(((tinFullS*)pTin)->idThread) , postr , costr ) ;
+                etThread.boxPutF( tinBaseP , tPrefix+T(".")+TF1(((tin9S*)pTin)->idProcessOld)+T(".")+TF1(((tin9S*)pTin)->postThreadName)+T(".")+TF1(((tin9S*)pTin)->idThread) , postr , costr ) ;
                 etThread.delF( tinBaseP , psttr ) ;
                 countT costr = etThread.strMakeF( tinBaseP , LF , postr , psttr ) ; ___( postr ) ;
                 ZE( osTextT* , postr ) ;
-                ((tinFullS*)pTin)->strFuseF( tinBaseP , etThread , psttr ) ; ___( psttr ) ;
+                ((tin9S*)pTin)->strFuseF( tinBaseP , etThread , psttr ) ; ___( psttr ) ;
                 ZE( strokeS* , psttr ) ;
         
-                tinBaseS* pTin = (tinBaseS*)pbc ;
+                tin0S* pTin = (tin0S*)pbc ;
             {
             while( pbc < pbe )
             byteT* const pbe = pbts + cbts ;
@@ -39,7 +39,7 @@ REST
         ZE( sCountT , timeN2 ) ;
         ZE( countT , timeN1 ) ;
     
-        __( cbts % sizeof( tinFullS ) ) ;
+        __( cbts % sizeof( tin9S ) ) ;
         etThread.boxGetShadowF( tinBaseP , pbts , cbts , tFile ) ;
         ZE( countT , cbts ) ;
         ZE( byteT* , pbts ) ; // "tin set"
@@ -47,7 +47,7 @@ REST
     else                                           
     if( !etThread.diskFileExistsF( tinBaseP , tFile ) ) etThread.osMessageBoxF( tinBaseP , tFile+T(" does not exist") ) ;
 
-    TN( tFile   , "" ) ; tFile   = T("///ideafarm/ephemeral/domains/com/ideafarm/6a40104/")+TF1(etThread.diskIdF(tinBaseP,T("///c")))+T("/tinFullSet.")+TF1(idFile) ;
+    TN( tFile   , "" ) ; tFile   = T("///ideafarm/ephemeral/domains/com/ideafarm/6a40104/")+TF1(etThread.diskIdF(tinBaseP,T("///c")))+T("/tin9Set.")+TF1(idFile) ;
     TN( tIdFile , "" ) ; tIdFile = TF1(idFile) ;
 {
 for( countT idFile = 1 ; idFile <= 1 ; idFile ++ )

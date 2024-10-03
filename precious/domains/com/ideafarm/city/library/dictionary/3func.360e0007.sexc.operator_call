@@ -54,11 +54,11 @@
         //
         //    _IO_
         //{
-        //if( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
+        //if( F(((tin9S&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
 
         idLathNewDel = ifcIDsEXclATHnEWdEL_DEL ; // INTENTIONAL RACE
 
-        ((tinFullS&)tinBaseP).cPoolDropDt ++ ;
+        ((tin9S&)tinBaseP).cPoolDropDt ++ ;
 
         if( !btrAM( pbzMetaBitsOwned , offSlot ) ) { BLAMMO ; } //BLAMMO IS USED RATHER THAN __() TO AVOID NEEDING TO CALL TINSL, FOR MAX SPEED ; 20210111@2031: THIS COMMENT IS OBSOLETE SINCE I NOW HAVE tinBasePPPPPPPPPPPPPPPPPPPPPPPPP
 
@@ -71,7 +71,7 @@
 
             //thirdC::c_memsetIF( (byteT*)pDoomed , sizeof( dropNoteS ) , 0xdd ) ; //U:: TO FIND A BUG
 
-            pDoomed->idThreadDel = ((tinFullS&)tinBaseP).monitor.idThread ;
+            pDoomed->idThreadDel = ((tin9S&)tinBaseP).monitor.idThread ;
             //thirdC::c_memsetIF( (byteT*)pDoomed , sizeof( dropNoteS ) , 0 ) ; //SANS tinBaseP USED FOR MAX SPEED; INTENTIONALLY COMMENTED OUT SO THAT SLOTS WHICH ARE NOT CONTINUALLY REUSED CAN BE VISIBLE (SUCH CODE IS CANDIDATE FOR MIGRATION FROM poolC TO jotC)
 
             inc02AM( pDoomed->idDelLath ) ;
@@ -142,12 +142,12 @@
         //    if( pEtRock )
         //    etherC* pEtRock = &etherC::etRockIF( tinBaseP ) ;
         //{
-        //if( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
+        //if( F(((tin9S&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_POOLdELtRYhARDERaNDtRACE )
 
         }
             }
                 BLAMMOiD( 0xaabbccdd ) ;
-                //((tinFullS&)tinBaseP).pc Utility[ 0xf ] = pbSlot - pbv ;
+                //((tin9S&)tinBaseP).pc Utility[ 0xf ] = pbSlot - pbv ;
             {
             if( pbSlot != pbv )
             byteT* pbv = pbData + offSlot * cbGross ;
@@ -169,7 +169,7 @@
     _IO_
     SCOOP
 {
-/*1*/voidT sexC::operator ()( tinBaseS& tinBaseP , byteT*& pbDropP )/*1*/
+/*1*/voidT sexC::operator ()( tin0S& tinBaseP , byteT*& pbDropP )/*1*/
 
 /**/
 */

@@ -42,27 +42,27 @@ TODO
     return bDoIt ;
 
     }
-        ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttShortNew ) ;
-        ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttShortOld ) ;
-        ((tinFullS&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
+        ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShortNew ) ;
+        ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShortOld ) ;
+        ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
 
         etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("new: ")+T(psttShortNew) ) ;
-        ((tinFullS&)tinBaseP).pEther->diskMoveFileOrDirF( tinBaseP , T(psttPath)+T(psttShortNew) , tOld , 0 ) ;
-        ((tinFullS&)tinBaseP).pEther->strReplaceF( tinBaseP , psttShortNew , psttShortOld , T("!ideafarm.7.") , T("!ideafarm.8.2.00000000.00000001.") , 0 , flSTRrEPLACE_null ) ;
+        ((tin9S&)tinBaseP).pEther->diskMoveFileOrDirF( tinBaseP , T(psttPath)+T(psttShortNew) , tOld , 0 ) ;
+        ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttShortNew , psttShortOld , T("!ideafarm.7.") , T("!ideafarm.8.2.00000000.00000001.") , 0 , flSTRrEPLACE_null ) ;
         ZE( strokeS* , psttShortNew ) ;
 
-        ((tinFullS&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShortOld , tOld , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShortOld ) ;
+        ((tin9S&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShortOld , tOld , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShortOld ) ;
         ZE( strokeS* , psttShortOld ) ;
         ZE( strokeS* , psttPath ) ;
 
         TN( tOld , ifName ) ;
-        ifFileNameC ifName( tinBaseP , *((tinFullS&)tinBaseP).pEther , postNameP ) ;
+        ifFileNameC ifName( tinBaseP , *((tin9S&)tinBaseP).pEther , postNameP ) ;
     {
-    if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] != '\\' && ((tinFullS&)tinBaseP).pEther ) // IF NOT A DIRECTORY
+    if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] != '\\' && ((tin9S&)tinBaseP).pEther ) // IF NOT A DIRECTORY
     ZE( boolT , bDoIt ) ;
     _IO_
 {
-/*1*/boolT diskWalkRename7to8CBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkRename7to8CBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 /*1*/WAKEsHOWtEXT( "tool.archive.rename.format.7.to.format.8.hardcoded.userid" )/*1*/
 /**/

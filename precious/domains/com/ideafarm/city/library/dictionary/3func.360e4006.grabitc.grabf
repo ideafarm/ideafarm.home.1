@@ -10,17 +10,17 @@
 }
     //ctCheckF() ;
 
-    //((tinFullS&)tinBaseP).cGrabitC_registered ++ ; //TO FIND A BUG
+    //((tin9S&)tinBaseP).cGrabitC_registered ++ ; //TO FIND A BUG
     registerDoneF( tinBaseP , idLineP , idiFileP ) ;
 
     }
-        if( pcGOT ) *pcGOT = ((tinFullS&)tinBaseP).osTid ;
+        if( pcGOT ) *pcGOT = ((tin9S&)tinBaseP).osTid ;
 
         //}
         //    emitWordsIF( tinBaseP , ifcLINE , IDFILE , pcSuffix , 4 ) ;
         //    countT pcSuffix[] = { 3 , (countT)pbo , offo , 0x1111 } ; //0x1111: "just set bit to 1"  ;  "3" IS LENGTH PREFIX
         //{                                                                                           //U::TO FIND A BUG
-        //if( ((tinFullS&)tinBaseP).pag1->idAdam == ifcIDaDAM_PISS )
+        //if( ((tin9S&)tinBaseP).pag1->idAdam == ifcIDaDAM_PISS )
 
         //}
         //    }
@@ -32,7 +32,7 @@
         //    //processGlobal2I.pcTrace6[ offTraceMe ] = idLineP ;
         //    processGlobal2I.pcTrace7[ offTraceMe ] = savebyte2 ;
         //    processGlobal2I.pcTrace6[ offTraceMe ] = savebyte1 ;
-        //    processGlobal2I.pcTrace5[ offTraceMe ] = ((tinFullS&)tinBaseP).monitor.idThread ;
+        //    processGlobal2I.pcTrace5[ offTraceMe ] = ((tin9S&)tinBaseP).monitor.idThread ;
         //    processGlobal2I.pcTrace4[ offTraceMe ] = offo ;
         //    processGlobal2I.pcTrace3[ offTraceMe ] = (countT)pbo ;
         //    processGlobal2I.pcTrace2[ offTraceMe ] = *pbo ;
@@ -42,9 +42,9 @@
         //countT offTraceMe = incv02AM( processGlobal2I.cTrace ) ;
         //TO FIND A BUG
 
-        ((tinFullS&)tinBaseP).cGrabitC_set ++ ; //U:: TO FIND A BUG
-        ((tinFullS&)tinBaseP).cYield = 0 ;
-        countT cYield = ((tinFullS&)tinBaseP).cYield ;
+        ((tin9S&)tinBaseP).cGrabitC_set ++ ; //U:: TO FIND A BUG
+        ((tin9S&)tinBaseP).cYield = 0 ;
+        countT cYield = ((tin9S&)tinBaseP).cYield ;
         //savebyte2 = *pbo ;
 
         //}
@@ -68,13 +68,13 @@
                 }
                     thirdC::osThreadYieldIF( tinBaseP , idLineP , idiFileP , pbBitsP , msNap ) ;
                 {
-                while( btsKeyedAM( pbo , *pcKey , offo , ((tinFullS&)tinBaseP).monitor.idThread ) )
+                while( btsKeyedAM( pbo , *pcKey , offo , ((tin9S&)tinBaseP).monitor.idThread ) )
             {
             if( pcKey )
         {
 
         // savebyte1 = *pbo ;
-        ((tinFullS&)tinBaseP).cYield = 0 ;
+        ((tin9S&)tinBaseP).cYield = 0 ;
         idiFileGrabber = idiFileP ; //SINCE THESE VALUES ARE RETAINED WHEN NOT GRABBED, THE MONITOR CAN SEE WHICH GRAB LINES ARE CURRENTLY ACTIVE
         idLineGrabber  = idLineP ; //THESE ARE INFORMATORY ONLY; THEY ARE NOT RESET; THEY ARE OVERWRITTEN HERE
     
@@ -101,7 +101,7 @@
 
         if( !pcGR ) { BLAMMO ; }                    // THEN I SHOULD HAVE SET pcGR TO HOLD A RECURSION COUNT
     {
-    if( pcGOT && *pcGOT == ((tinFullS&)tinBaseP).osTid )             // IF I HAVE ALREADY GRABBED AND AM RECURSING
+    if( pcGOT && *pcGOT == ((tin9S&)tinBaseP).osTid )             // IF I HAVE ALREADY GRABBED AND AM RECURSING
 
     ;
         : poff_cGrabberRecurse                                    
@@ -125,8 +125,8 @@
 
     }
         }
-            poff_cGrabberRecurse          = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&((tinFullS&)tinBaseP).pcGrabitRecurse[ offr ]   - (byteT*)this ) : &((tinFullS&)tinBaseP).pcGrabitRecurse[ offr ] ) ;
-            poff_cGrabberOsTid            = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&((tinFullS&)tinBaseP).pcGrabitOsTid[   offr ]   - (byteT*)this ) : &((tinFullS&)tinBaseP).pcGrabitOsTid[   offr ] ) ;
+            poff_cGrabberRecurse          = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&((tin9S&)tinBaseP).pcGrabitRecurse[ offr ]   - (byteT*)this ) : &((tin9S&)tinBaseP).pcGrabitRecurse[ offr ] ) ;
+            poff_cGrabberOsTid            = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&((tin9S&)tinBaseP).pcGrabitOsTid[   offr ]   - (byteT*)this ) : &((tin9S&)tinBaseP).pcGrabitOsTid[   offr ] ) ;
         {
         else
         if( offr == CmAXgRABITrECURSEiNtINs ) { BLAMMO ; }
@@ -134,14 +134,14 @@
         }
             }
                 break ;
-                ((tinFullS&)tinBaseP).ppbGrabitRecurse[ offr ] = pbo ;
+                ((tin9S&)tinBaseP).ppbGrabitRecurse[ offr ] = pbo ;
             {
-            if( !((tinFullS&)tinBaseP).ppbGrabitRecurse[ offr ] )
+            if( !((tin9S&)tinBaseP).ppbGrabitRecurse[ offr ] )
         {
         if( offr == CmAXgRABITrECURSEiNtINs ) for( offr = 0 ; offr < CmAXgRABITrECURSEiNtINs ; offr ++ )
 
         }
-            if( ((tinFullS&)tinBaseP).ppbGrabitRecurse[ offr ] == pbo ) break ;
+            if( ((tin9S&)tinBaseP).ppbGrabitRecurse[ offr ] == pbo ) break ;
         {
         for( offr = 0 ; offr < CmAXgRABITrECURSEiNtINs ; offr ++ )
         ZE( countT , offr ) ;
@@ -153,14 +153,14 @@
     {
     if( F(flagsCt2) & flGRABITc_RECURSEuSINGtINs )
 
-    if( ((tinFullS&)tinBaseP).idDesireSetBySelf != ifcTHREADpRIORITY_SPINLOCK ) { BLAMMOiD( 0x34343434 ) ; }
+    if( ((tin9S&)tinBaseP).idDesireSetBySelf != ifcTHREADpRIORITY_SPINLOCK ) { BLAMMOiD( 0x34343434 ) ; }
     if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL                                  ) { BLAMMOiD( 0x12121212 ) ; }
 
     _IO_
 
     SCOOP
 {
-/*1*/voidT grabitC::grabF( tinBaseS& tinBaseP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP )/*1*/
+/*1*/voidT grabitC::grabF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP )/*1*/
 
 /**/
 

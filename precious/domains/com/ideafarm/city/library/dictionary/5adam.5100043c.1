@@ -48,9 +48,9 @@ STATE0
                     }
                         }
                             __1
-                            *((tinFullS&)tinBaseP).zEtScratch = 0 ;
+                            *((tin9S&)tinBaseP).zEtScratch = 0 ;
                         {
-                        if( *((tinFullS&)tinBaseP).zEtScratch )
+                        if( *((tin9S&)tinBaseP).zEtScratch )
 
                         //etherC::ifcSayIF( T("-") , flSAY_APPEND | flSAY_LOG ) ;
                         etThread.delF( tinBaseP , psttBody ) ;
@@ -65,69 +65,69 @@ STATE0
                                         }
                                             }
                                                 }
-                                                    if( *((tinFullS&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"quit\": ")+TF1(etScratch+221)+T("    \"")+T(psttr)+T("\"") ) ;
+                                                    if( *((tin9S&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"quit\": ")+TF1(etScratch+221)+T("    \"")+T(psttr)+T("\"") ) ;
                                                     __( sockc.readWoReplyF( tinBaseP , psttr ) - 221 ) ;
                                                     etThread.delF( tinBaseP , psttr ) ;
                                                     sockc.writeF( tinBaseP , (osTextT*)tQuit ) ;
-                                                    //((tinFullS&)tinBaseP).zEtScratch->ifcSayIF( T("writing quit: ")+tQuit , flSAY_APPEND | flSAY_LOG ) ;
+                                                    //((tin9S&)tinBaseP).zEtScratch->ifcSayIF( T("writing quit: ")+tQuit , flSAY_APPEND | flSAY_LOG ) ;
                                                 {
                                                 else
-                                                if( *((tinFullS&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"body\": ")+TF1(etScratch+250)+T("    \"")+T(psttr)+T("\"") ) ;
+                                                if( *((tin9S&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"body\": ")+TF1(etScratch+250)+T("    \"")+T(psttr)+T("\"") ) ;
                     
                                                 __( sockc.readWoReplyF( tinBaseP , psttr ) - 250 ) ;
                                                 etThread.delF( tinBaseP , psttr ) ;
                                                 sockc.writeF( tinBaseP , (osTextT*)tBody , tBody.csF( tinBaseP ) ) ;
-                                                //((tinFullS&)tinBaseP).zEtScratch->ifcSayIF( T("writing body: ")+tBody , flSAY_APPEND | flSAY_LOG ) ;
+                                                //((tin9S&)tinBaseP).zEtScratch->ifcSayIF( T("writing body: ")+tBody , flSAY_APPEND | flSAY_LOG ) ;
                                             {
                                             else
-                                            if( *((tinFullS&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"data\": ")+TF1(etScratch+354)+T("    \"")+T(psttr)+T("\"") ) ;
+                                            if( *((tin9S&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"data\": ")+TF1(etScratch+354)+T("    \"")+T(psttr)+T("\"") ) ;
                 
                                             __( sockc.readWoReplyF( tinBaseP , psttr ) - 354 ) ;
                                             etThread.delF( tinBaseP , psttr ) ;
                                             sockc.writeF( tinBaseP , (osTextT*)tData ) ;
-                                            //((tinFullS&)tinBaseP).zEtScratch->ifcSayIF( T("writing data: ")+tData , flSAY_APPEND | flSAY_LOG ) ;
+                                            //((tin9S&)tinBaseP).zEtScratch->ifcSayIF( T("writing data: ")+tData , flSAY_APPEND | flSAY_LOG ) ;
                                         {
                                         else
-                                        if( *((tinFullS&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("some recipients were rejected") ) ;
+                                        if( *((tin9S&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("some recipients were rejected") ) ;
             
                                         }
-                                            if( *((tinFullS&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"")+tTo+T("\": ")+TF1(etScratch+250)+T("    \"")+T(psttr)+T("\"") ) ;
+                                            if( *((tin9S&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"")+tTo+T("\": ")+TF1(etScratch+250)+T("    \"")+T(psttr)+T("\"") ) ;
                                             __( sockc.readWoReplyF( tinBaseP , psttr ) - 250 ) ;
                                             etThread.delF( tinBaseP , psttr ) ;
                                             sockc.writeF( tinBaseP , (osTextT*)tTo ) ;
-                                            //((tinFullS&)tinBaseP).zEtScratch->ifcSayIF( T("writing to: ")+tTo , flSAY_APPEND | flSAY_LOG ) ;
+                                            //((tin9S&)tinBaseP).zEtScratch->ifcSayIF( T("writing to: ")+tTo , flSAY_APPEND | flSAY_LOG ) ;
             
                                             etThread.delF( tinBaseP , psttTo ) ;
                                             TN( tTo , "" ) ; tTo = T("rcpt to:<")+T(psttTo)+T(">\r\n") ;
                                             st_psttTo >> psttTo ; ___( psttTo ) ;
                                             ZE( strokeS* , psttTo ) ;
                                         {
-                                        while( !*((tinFullS&)tinBaseP).zEtScratch && st_psttTo )
+                                        while( !*((tin9S&)tinBaseP).zEtScratch && st_psttTo )
             
-                                        if( *((tinFullS&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"from\": ")+TF1(etScratch+250)+T("    \"")+T(psttr)+T("\"") ) ;
+                                        if( *((tin9S&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"from\": ")+TF1(etScratch+250)+T("    \"")+T(psttr)+T("\"") ) ;
                                         __( sockc.readWoReplyF( tinBaseP , psttr ) - 250 ) ;
                                         etThread.delF( tinBaseP , psttr ) ;
                                         sockc.writeF( tinBaseP , (osTextT*)tFrom ) ;
-                                        //((tinFullS&)tinBaseP).zEtScratch->ifcSayIF( T("writing from: ")+tFrom , flSAY_APPEND | flSAY_LOG ) ;
+                                        //((tin9S&)tinBaseP).zEtScratch->ifcSayIF( T("writing from: ")+tFrom , flSAY_APPEND | flSAY_LOG ) ;
                                     {
                                     else
-                                    if( *((tinFullS&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"hello\": ")+TF1(etScratch+250)+T("    \"")+T(psttr)+T("\"") ) ;
+                                    if( *((tin9S&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"hello\": ")+TF1(etScratch+250)+T("    \"")+T(psttr)+T("\"") ) ;
         
                                     __( sockc.readWoReplyF( tinBaseP , psttr ) - 250 ) ;
                                     etThread.delF( tinBaseP , psttr ) ;
                                     sockc.writeF( tinBaseP , (osTextT*)tHelo ) ;
-                                    //((tinFullS&)tinBaseP).zEtScratch->ifcSayIF( T("writing hello") , flSAY_APPEND | flSAY_LOG ) ;
+                                    //((tin9S&)tinBaseP).zEtScratch->ifcSayIF( T("writing hello") , flSAY_APPEND | flSAY_LOG ) ;
                                 {
                                 else
-                                if( *((tinFullS&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"connect\": ")+TF1(etScratch+220)+T("    \"")+T(psttr)+T("\"") ) ;
-                                //((tinFullS&)tinBaseP).zEtScratch->ifcSayIF( T("connected to ")+T(psttServer) , flSAY_APPEND | flSAY_LOG ) ;
+                                if( *((tin9S&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("\"connect\": ")+TF1(etScratch+220)+T("    \"")+T(psttr)+T("\"") ) ;
+                                //((tin9S&)tinBaseP).zEtScratch->ifcSayIF( T("connected to ")+T(psttServer) , flSAY_APPEND | flSAY_LOG ) ;
                                 __( sockc.readWoReplyF( tinBaseP , psttr ) - 220 ) ;
-                                sockc.connectF( tinBaseP , 0x19 , socketC::nicNameIF( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , psttServer ) , 1 ) ;
-                                //((tinFullS&)tinBaseP).zEtScratch->ifcSayIF( T("connecting to ")+T(psttServer) , flSAY_APPEND | flSAY_LOG ) ;
+                                sockc.connectF( tinBaseP , 0x19 , socketC::nicNameIF( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , psttServer ) , 1 ) ;
+                                //((tin9S&)tinBaseP).zEtScratch->ifcSayIF( T("connecting to ")+T(psttServer) , flSAY_APPEND | flSAY_LOG ) ;
                             {
                             else
-                            if( *((tinFullS&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("could not construct socket") ) ;
-                            socketC sockc( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
+                            if( *((tin9S&)tinBaseP).zEtScratch ) logErrorF( tinBaseP , etThread , psttServer , psttFrom , st_psttTo , psttBody , T("could not construct socket") ) ;
+                            socketC sockc( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
                             ZE( strokeS* , psttr ) ;
 
                             TN( tQuit , "quit\r\n" ) ;
@@ -393,38 +393,38 @@ STATE0
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobFillCourseF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tin0S& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
     if( cArgP && c8argP.c1 && sOrderP && ether && idChatSessionP ) ;
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobHearOrderF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobHearOrderF( tin0S& tinBaseP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
-    if( ((tinFullS&)tinBaseP).fingerprint && etThread && psttServerP && psttFromP && st_psttToP && psttBodyP && psttNoteP ) ;
+    if( ((tin9S&)tinBaseP).fingerprint && etThread && psttServerP && psttFromP && st_psttToP && psttBodyP && psttNoteP ) ;
 
     //etherC::ifcSayIF( T("s=\"")+T(psttServerP)+T("\" f=\"")+T(psttFromP)+T("\" n=\"")+T(psttNoteP)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
 {
-voidT logErrorF( tinBaseS& tinBaseP , etherC& etThread , const strokeS* const psttServerP , const strokeS* const psttFromP , stackC& st_psttToP , const strokeS* const psttBodyP , const strokeS* const psttNoteP )
+voidT logErrorF( tin0S& tinBaseP , etherC& etThread , const strokeS* const psttServerP , const strokeS* const psttFromP , stackC& st_psttToP , const strokeS* const psttBodyP , const strokeS* const psttNoteP )
 
 DONE( tmSubJobF )
 }
     cPending -- ;
     }
         cFail ++ ;
-        *((tinFullS&)tinBaseP).zEtScratch = 0 ;
+        *((tin9S&)tinBaseP).zEtScratch = 0 ;
     {
-    if( *((tinFullS&)tinBaseP).zEtScratch )
+    if( *((tin9S&)tinBaseP).zEtScratch )
     }
         DEL( psOrder ) ;
         //etherC::ifcSayIF( T("ifcIDcMDjOBoRDER_NAMED/!mailOut/tmSubJobF/ifcJobF/-") , flSAY_APPEND | flSAY_LOG ) ;
-        ((tinFullS&)tinBaseP).zEtScratch->ifcJobF( tinBaseP , stCourses , DDNUMB , *psOrder , stOrders , T("ifcIDcMDjOBoRDER_NAMED/!mailOut/tmSubJobF") , 1 ) ;
+        ((tin9S&)tinBaseP).zEtScratch->ifcJobF( tinBaseP , stCourses , DDNUMB , *psOrder , stOrders , T("ifcIDcMDjOBoRDER_NAMED/!mailOut/tmSubJobF") , 1 ) ;
         //etherC::ifcSayIF( T("ifcIDcMDjOBoRDER_NAMED/!mailOut/tmSubJobF/ifcJobF/+") , flSAY_APPEND | flSAY_LOG ) ;
         stOrders << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
-        stackC stOrders(  tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-        stackC stCourses( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+        stackC stOrders(  tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+        stackC stCourses( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
     {
 
     countT& cFail    = *(countT*)pTaskP->c3 ;

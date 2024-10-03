@@ -51,9 +51,9 @@
 pTin( &tinBaseP ) //FOR MY DESTRUCTOR
 pbData( 0 ) ,
 ebp( ebpP ) ,
-bUsePool(    !pbZombieP && ((tinFullS&)tinBaseP).pPoolUse ) ,
+bUsePool(    !pbZombieP && ((tin9S&)tinBaseP).pPoolUse ) ,
 bUseZombie( !!pbZombieP ) ,
-/*1*/tellC::tellC( tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP , const byteT* const pbP , const countT cbP , byteT* const pbZombieP , const countT cbZombieP , const boolT bSynchP , const countT ebpP ) :/*1*/
+/*1*/tellC::tellC( tin0S& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP , const byteT* const pbP , const countT cbP , byteT* const pbZombieP , const countT cbZombieP , const boolT bSynchP , const countT ebpP ) :/*1*/
 
 //ASSUME: poolOldWork IS GUARANTEED TO EXIST BEFORE ANY CHILD THREADS ARE LAUNCHED AND TO CONTINUE TO EXIST UNTIL AFTER ALL CHILD THREADS END
 
@@ -63,7 +63,7 @@ bUseZombie( !!pbZombieP ) ,
   if pbZombieP then must be >= sizeof( tellS ) + cbP
   if !pbZombieP then can be 0
  cbZombieP
-  if 0 then *((tinFullS&)tinBaseP).pPoolUse or processGlobal4I.heap will be used
+  if 0 then *((tin9S&)tinBaseP).pPoolUse or processGlobal4I.heap will be used
   for speed, specify bytes on the thread stack if cbP is known at compile time
   can be 0
  pbZombieP

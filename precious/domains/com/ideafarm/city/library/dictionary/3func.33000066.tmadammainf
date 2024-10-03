@@ -21,12 +21,12 @@
     
             dec02AM( thirdC::os_cAllKidThreadsI_IF( tinBaseP ) ) ;
     
-            ((tinFullS&)tinBaseP).pag6 = pag6save ;
-            ((tinFullS&)tinBaseP).pag5 = pag5save ;
-            ((tinFullS&)tinBaseP).pag4 = pag4save ;
-            ((tinFullS&)tinBaseP).pag3 = pag3save ;
-            ((tinFullS&)tinBaseP).pag2 = pag2save ;
-            ((tinFullS&)tinBaseP).pag1 = pag1save ;
+            ((tin9S&)tinBaseP).pag6 = pag6save ;
+            ((tin9S&)tinBaseP).pag5 = pag5save ;
+            ((tin9S&)tinBaseP).pag4 = pag4save ;
+            ((tin9S&)tinBaseP).pag3 = pag3save ;
+            ((tin9S&)tinBaseP).pag2 = pag2save ;
+            ((tin9S&)tinBaseP).pag1 = pag1save ;
 
             THREADmODE3rESTORE
             }
@@ -40,9 +40,9 @@
             __( rc - ifcEXITcODE_EXITpROCESSaOK ) ;
             }
                 }
-                    ((tinFullS&)tinBaseP).pPoolUse = pSave ;
+                    ((tin9S&)tinBaseP).pPoolUse = pSave ;
                     rc = adamMainF( tinBaseP , ifcIDtYPEtLS_WITHINpROCESS , 0 , 0 , 0 , 0 , ostoCmdLine , 0 ) ;
-                    poolC* pSave = ((tinFullS&)tinBaseP).pPoolUse ; ((tinFullS&)tinBaseP).pPoolUse = 0 ; //U::BUG: I SHOULD NOT BE PASSING MY OWN tinBaseP INTO adamMainF ; I SHOULD CT A VIRGIN tinFullS
+                    poolC* pSave = ((tin9S&)tinBaseP).pPoolUse ; ((tin9S&)tinBaseP).pPoolUse = 0 ; //U::BUG: I SHOULD NOT BE PASSING MY OWN tinBaseP INTO adamMainF ; I SHOULD CT A VIRGIN tin9S
                 {                                                      //20181112@2041: CONJ: THE NEXT LINE'S COMMENT IS WRONG.  THERE IS NOTHING WRONG WITH USING tinBaseP, WHICH I THINK WAS CT BY A CALLER
                 _IO_
             {
@@ -57,12 +57,12 @@
             OStEXTCF(  ostoCmdLine , idAdamP , 0 )
             OStEXT(   ostoCmdLine , 0x80 )
     
-            adamGlobal6S* const pag6save = ((tinFullS&)tinBaseP).pag6 ; ((tinFullS&)tinBaseP).pag6 = pamP->pag6 ;
-            adamGlobal5S* const pag5save = ((tinFullS&)tinBaseP).pag5 ; ((tinFullS&)tinBaseP).pag5 = pamP->pag5 ;
-            adamGlobal4S* const pag4save = ((tinFullS&)tinBaseP).pag4 ; ((tinFullS&)tinBaseP).pag4 = pamP->pag4 ;
-            adamGlobal3S* const pag3save = ((tinFullS&)tinBaseP).pag3 ; ((tinFullS&)tinBaseP).pag3 = pamP->pag3 ;
-            adamGlobal2S* const pag2save = ((tinFullS&)tinBaseP).pag2 ; ((tinFullS&)tinBaseP).pag2 = pamP->pag2 ;
-            adamGlobal1S* const pag1save = ((tinFullS&)tinBaseP).pag1 ; ((tinFullS&)tinBaseP).pag1 = pamP->pag1 ;
+            adamGlobal6S* const pag6save = ((tin9S&)tinBaseP).pag6 ; ((tin9S&)tinBaseP).pag6 = pamP->pag6 ;
+            adamGlobal5S* const pag5save = ((tin9S&)tinBaseP).pag5 ; ((tin9S&)tinBaseP).pag5 = pamP->pag5 ;
+            adamGlobal4S* const pag4save = ((tin9S&)tinBaseP).pag4 ; ((tin9S&)tinBaseP).pag4 = pamP->pag4 ;
+            adamGlobal3S* const pag3save = ((tin9S&)tinBaseP).pag3 ; ((tin9S&)tinBaseP).pag3 = pamP->pag3 ;
+            adamGlobal2S* const pag2save = ((tin9S&)tinBaseP).pag2 ; ((tin9S&)tinBaseP).pag2 = pamP->pag2 ;
+            adamGlobal1S* const pag1save = ((tin9S&)tinBaseP).pag1 ; ((tin9S&)tinBaseP).pag1 = pamP->pag1 ;
 
             parm_tmAdamMainF_S* pamP      = (parm_tmAdamMainF_S*)pTaskP->c3 ;
             osTextT*            postArgsP =            (osTextT*)pTaskP->c2 ;

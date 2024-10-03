@@ -14,10 +14,10 @@
             break ;
             ether.strFromTimeF( tinBaseP , psttMe , timeD1 , timeD2 ) ; ___( psttMe ) ;
 
-            ((tinFullS&)tinBaseP).timeTraceLath = now ;
-            ether.osTimeSubtractF( tinBaseP , timeD1 , timeD2 , ((tinFullS&)tinBaseP).timeTraceLath.time1 , ((tinFullS&)tinBaseP).timeTraceLath.time2 ) ;
+            ((tin9S&)tinBaseP).timeTraceLath = now ;
+            ether.osTimeSubtractF( tinBaseP , timeD1 , timeD2 , ((tin9S&)tinBaseP).timeTraceLath.time1 , ((tin9S&)tinBaseP).timeTraceLath.time2 ) ;
 
-            if( idP == ifcIDtEXTgEN_TIMEnOWdELTArESET ) ((tinFullS&)tinBaseP).timeTraceWoth = ((tinFullS&)tinBaseP).timeTraceLath = now ;
+            if( idP == ifcIDtEXTgEN_TIMEnOWdELTArESET ) ((tin9S&)tinBaseP).timeTraceWoth = ((tin9S&)tinBaseP).timeTraceLath = now ;
 
             timeS now( timeD1 , timeD2 ) ;
             ether.osTimeNowF( tinBaseP , timeD1 , timeD2 ) ;
@@ -90,7 +90,7 @@ ether( etherC::etTextIF( tinBaseP ) ) ,
 flags( flagsP ) ,
 idiFileCt( idiFileCtP ) ,
 idLineCt( idLineCtP ) ,
-/*1*/textC::textC( const countT idP , tinBaseS& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP )/*1*/ :
+/*1*/textC::textC( const countT idP , tin0S& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP )/*1*/ :
 
 /**/
 */

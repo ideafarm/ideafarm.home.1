@@ -21,7 +21,7 @@ serverInfo1S i1( &pbdVarying , b_pbdVarying , bHandedOff , sgnIdPortReplaced , t
 etThread.ifcChatF( tinBaseP , (countT)&c8p , DDNUMB , jobFillCourseF ) ;
 //U:etThread.osThreadF(  tinBaseP , countTC() , tmLogF  , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&c8p ) ;
 
-c8p.c5 = (countT)&((tinFullS&)tinBaseP).cKidThreads ;
+c8p.c5 = (countT)&((tin9S&)tinBaseP).cKidThreads ;
 c8p.c4 = (countT)&stPhrasesLog ;
 c8p.c3 = (countT)&stPhrases ;
 c8p.c2 = (countT)&b_pbdVarying ;
@@ -64,7 +64,7 @@ TASK( tmLogF )
 
 DONEdRIVENsERVER( tmcF )
 }
-    while( !bQuit ) bQuit = woRequestF( tinBaseP , etThread , *((tinFullS&)tinBaseP).zEtScratch , *pso , stPhrases , stPhrasesLog ) ;
+    while( !bQuit ) bQuit = woRequestF( tinBaseP , etThread , *((tin9S&)tinBaseP).zEtScratch , *pso , stPhrases , stPhrasesLog ) ;
     ZE( boolT , bQuit ) ;
 
     b_pbdVarying.ungrabF( tinBaseP ) ;
@@ -93,7 +93,7 @@ TASKdRIVENsERVER( tmcF )
     }
         sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_9) ) ;
         }
-            ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , postBody ) ;
+            ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , postBody ) ;
             }
                 sClientP.writeF( tinBaseP , postBody , costBody ) ;
                 sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_4C) ) ;
@@ -103,15 +103,15 @@ TASKdRIVENsERVER( tmcF )
             {
             if( postBody && costBody )
         {
-        if( !*((tinFullS&)tinBaseP).zEtScratch )
+        if( !*((tin9S&)tinBaseP).zEtScratch )
         sClientP.writeF( tinBaseP , "\r\n" , 2 ) ;
         }
-            ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , postl ) ;
+            ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , postl ) ;
             sClientP.writeF( tinBaseP , "\r\n" , 2 ) ;
             sClientP.writeF( tinBaseP , postl , costl ) ;
             sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postl)+tCRLF ) ;
-            ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
-            countT costl = ((tinFullS&)tinBaseP).zEtScratch->strMakeF( tinBaseP , LF , postl , psttl ) ; ___( postl ) ;
+            ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
+            countT costl = ((tin9S&)tinBaseP).zEtScratch->strMakeF( tinBaseP , LF , postl , psttl ) ; ___( postl ) ;
             ZE( osTextT* , postl ) ;
             stHeaderLines >> psttl ;
             ZE( strokeS* , psttl ) ;
@@ -126,48 +126,48 @@ TASKdRIVENsERVER( tmcF )
             if( bEncodedBody ) sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , tEncoded    ) ;
             if( postBody ) postBody[ costBody ] = 0 ;
             sServer.readF( tinBaseP , postBody , costBody ) ;
-            ((tinFullS&)tinBaseP).zEtScratch->newF( tinBaseP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
+            ((tin9S&)tinBaseP).zEtScratch->newF( tinBaseP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
             sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_3B) ) ;
         {
         if( costBody )
-        { ZE( strokeS* , psttHost ) ; bEncodedBody = 0 ; readHeaderLinesF( tinBaseP , etThread , *((tinFullS&)tinBaseP).zEtScratch , sServer , stPhrasesP , stPhrasesLogP , stHeaderLines , costBody , bEncodedBody , countTC() , psttHost , 1 ) ; ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttHost ) ; }
+        { ZE( strokeS* , psttHost ) ; bEncodedBody = 0 ; readHeaderLinesF( tinBaseP , etThread , *((tin9S&)tinBaseP).zEtScratch , sServer , stPhrasesP , stPhrasesLogP , stHeaderLines , costBody , bEncodedBody , countTC() , psttHost , 1 ) ; ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttHost ) ; }
         sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_3A) ) ;
         ZE( countT , costBody ) ;
         ZE( osTextT* , postBody ) ;
         // READ REPLY FROM SERVER
 
-        ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttBody ) ;
+        ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttBody ) ;
         sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_2C) ) ;
         }
-            ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , postBody ) ;
+            ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , postBody ) ;
             sServer.writeF( tinBaseP , postBody , costBody ) ;
             else               sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , psttBody ) ;
             if( bEncodedBody ) sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , tEncoded    ) ;
-            countT costBody = ((tinFullS&)tinBaseP).zEtScratch->strMakeF( tinBaseP , LF , postBody , psttBody ) ; ___( postBody ) ;
+            countT costBody = ((tin9S&)tinBaseP).zEtScratch->strMakeF( tinBaseP , LF , postBody , psttBody ) ; ___( postBody ) ;
             ZE( osTextT* , postBody ) ;
             sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_2B) ) ;
         {
         if( psttBody && psttBody->idAdam )
         sServer.writeF( tinBaseP , "\r\n" , 2 ) ;
         }
-            ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , postl ) ;
+            ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , postl ) ;
             sServer.writeF( tinBaseP , "\r\n" , 2 ) ;
             sServer.writeF( tinBaseP , postl , costl ) ;
             sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postl)+tCRLF ) ;
-            ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
-            countT costl = ((tinFullS&)tinBaseP).zEtScratch->strMakeF( tinBaseP , LF , postl , psttl ) ; ___( postl ) ;
+            ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
+            countT costl = ((tin9S&)tinBaseP).zEtScratch->strMakeF( tinBaseP , LF , postl , psttl ) ; ___( postl ) ;
             ZE( osTextT* , postl ) ;
             stHeaderLines >> psttl ;
             ZE( strokeS* , psttl ) ;
         {
         while( stHeaderLines )
         sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_2A) ) ;
-        ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttHost ) ;
-        sServer.connectF( tinBaseP , idPort ? idPort : 0x50 , socketC::nicNameIF( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , psttHost ) ) ;
-        socketC sServer( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
+        ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttHost ) ;
+        sServer.connectF( tinBaseP , idPort ? idPort : 0x50 , socketC::nicNameIF( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , psttHost ) ) ;
+        socketC sServer( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) ) ;
         // WRITE REQUEST TO SERVER
     {
-    if( !*((tinFullS&)tinBaseP).zEtScratch && stHeaderLines ) // DO NOT KNOW WHY THIS HAPPENS WITH IE5.5: CONJ: WHEN I AM RUN ON IFC21, I AM SO SLOW THAT IE5.5 ABANDONS THE REQUEST
+    if( !*((tin9S&)tinBaseP).zEtScratch && stHeaderLines ) // DO NOT KNOW WHY THIS HAPPENS WITH IE5.5: CONJ: WHEN I AM RUN ON IFC21, I AM SO SLOW THAT IE5.5 ABANDONS THE REQUEST
 
     sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T("psttHost: \"")+T(psttHost)+T("\"\r\n") ) ;
 
@@ -177,25 +177,25 @@ TASKdRIVENsERVER( tmcF )
             }
                 else               sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , psttBody ) ;
                 if( bEncodedBody ) sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , tEncoded ) ;
-                ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , postBody ) ;
-                ((tinFullS&)tinBaseP).zEtScratch->strMakeF( tinBaseP , LF , psttBody , T(postBody) ) ; ___( psttBody ) ;
+                ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , postBody ) ;
+                ((tin9S&)tinBaseP).zEtScratch->strMakeF( tinBaseP , LF , psttBody , T(postBody) ) ; ___( psttBody ) ;
                 if( postBody ) postBody[ costBody ] = 0 ;
             {
-            if( !*((tinFullS&)tinBaseP).zEtScratch )
+            if( !*((tin9S&)tinBaseP).zEtScratch )
             sClientP.readF( tinBaseP , postBody , costBody ) ;
-            ((tinFullS&)tinBaseP).zEtScratch->newF( tinBaseP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
+            ((tin9S&)tinBaseP).zEtScratch->newF( tinBaseP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
             ZE( osTextT* , postBody ) ;
             sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_1B) ) ;
         {
-        if( !*((tinFullS&)tinBaseP).zEtScratch && costBody )
+        if( !*((tin9S&)tinBaseP).zEtScratch && costBody )
 
-        readHeaderLinesF( tinBaseP , etThread , *((tinFullS&)tinBaseP).zEtScratch , sClientP , stPhrasesP , stPhrasesLogP , stHeaderLines , costBody , bEncodedBody , idPort , psttHost ) ;
+        readHeaderLinesF( tinBaseP , etThread , *((tin9S&)tinBaseP).zEtScratch , sClientP , stPhrasesP , stPhrasesLogP , stHeaderLines , costBody , bEncodedBody , idPort , psttHost ) ;
         bEncodedBody = 0 ;
         sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_1A) ) ;
         ZE( countT , costBody ) ;
     {
     ZE( countT , idPort ) ;
-    stackC stHeaderLines( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stHeaderLines( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
     ZE( boolT , bEncodedBody ) ;
     ZE( strokeS* , psttBody ) ;
     ZE( strokeS* , psttHost ) ;
@@ -206,40 +206,40 @@ TASKdRIVENsERVER( tmcF )
 
     stPhrasesP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
 {
-boolT woRequestF( tinBaseS& tinBaseP , etherC& etThread , socketC& sClientP , stackC& stPhrasesP , stackC& stPhrasesLogP )
+boolT woRequestF( tin0S& tinBaseP , etherC& etThread , socketC& sClientP , stackC& stPhrasesP , stackC& stPhrasesLogP )
 */
 /*
 
 }
-    ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttPVersion ) ;
-    ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttProtocol ) ;
-    ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttPort ) ;
-    ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttUrl ) ;
-    ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttAction ) ;
+    ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttPVersion ) ;
+    ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttProtocol ) ;
+    ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttPort ) ;
+    ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttUrl ) ;
+    ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttAction ) ;
 
     }
-        ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
+        ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
         }
             break ;
-            ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
+            ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
         {
         else
         }
             }
-                ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttValue ) ;
-                ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttKey ) ;
+                ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttValue ) ;
+                ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttKey ) ;
                 }
-                    bEncodedBodyP = 1 == ((tinFullS&)tinBaseP).zEtScratch->strIdF( tinBaseP , idf , sttq , tImage , psttValue ) ;
+                    bEncodedBodyP = 1 == ((tin9S&)tinBaseP).zEtScratch->strIdF( tinBaseP , idf , sttq , tImage , psttValue ) ;
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idf = 1 ;
-                    ((tinFullS&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttValue ) ; ___( psttValue ) ;
+                    ((tin9S&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttValue ) ; ___( psttValue ) ;
                 {
-                else if( !((tinFullS&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttKey , tContentType   ) )
-                     if( !((tinFullS&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttKey , tContentLength ) ) costBodyP = ((tinFullS&)tinBaseP).zEtScratch->strDigitsToSCountF( tinBaseP , psttValue , 0xa , 1 ) ;
-                ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
+                else if( !((tin9S&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttKey , tContentType   ) )
+                     if( !((tin9S&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttKey , tContentLength ) ) costBodyP = ((tin9S&)tinBaseP).zEtScratch->strDigitsToSCountF( tinBaseP , psttValue , 0xa , 1 ) ;
+                ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
                 ZE( countT , idl ) ;
-                ((tinFullS&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttKey ) ; ___( psttKey ) ;
-                ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
+                ((tin9S&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttKey ) ; ___( psttKey ) ;
+                ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttValue ) ;
                 ZE( strokeS* , psttKey ) ;
@@ -254,41 +254,41 @@ boolT woRequestF( tinBaseS& tinBaseP , etherC& etThread , socketC& sClientP , st
                 sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T("psttAction:   \"")+T(psttAction)+tEQCRLF ) ;
 
 
-                ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttw ) ;
-                ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttPVersion , idf , sttq , tSlash , psttw ) ; ___( psttPVersion ) ;
-                ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttProtocol , idf , sttq , tSlash , psttw ) ; ___( psttProtocol ) ;
+                ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttw ) ;
+                ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttPVersion , idf , sttq , tSlash , psttw ) ; ___( psttPVersion ) ;
+                ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttProtocol , idf , sttq , tSlash , psttw ) ; ___( psttProtocol ) ;
                 idf = 1 ; //sttq = ze ;
-                ((tinFullS&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttw ) ; ___( psttw ) ;
-                ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttw , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw ) ;
+                ((tin9S&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttw ) ; ___( psttw ) ;
+                ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttw , idf , sttq , tBlank , psttl , 1 ) ; ___( psttw ) ;
                 ZE( strokeS* , psttw ) ;
 
                 }
                     }
-                        ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttHostP , idf2 , sttq2 , tSlash , psttUrl ) ; ___( psttHostP ) ;
+                        ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttHostP , idf2 , sttq2 , tSlash , psttUrl ) ; ___( psttHostP ) ;
                         //sttq2 = ze ;
                         idf2 = 1 ;
                     {
                     else
-                    if( 1 == ((tinFullS&)tinBaseP).zEtScratch->strIdF( tinBaseP , idf2 , sttq2 , tHttpColonSS , psttUrl ) ) { ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttHostP , idf2 , sttq2 , tSlash , psttUrl ) ; ___( psttHostP ) ; }
+                    if( 1 == ((tin9S&)tinBaseP).zEtScratch->strIdF( tinBaseP , idf2 , sttq2 , tHttpColonSS , psttUrl ) ) { ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttHostP , idf2 , sttq2 , tSlash , psttUrl ) ; ___( psttHostP ) ; }
                     strokeS sttq2( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idf2 = 1 ;
                 {
                 else
                 }
-                    ((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttd ) ;
-                    idPortP = ((tinFullS&)tinBaseP).zEtScratch->strDigitsToSCountF( tinBaseP , psttPort , 0xa , 1 ) ;
-                    ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttPort  , idf2 , sttq2 , tColon , psttd ) ; ___( psttPort ) ;
-                    ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttHostP , idf2 , sttq2 , tColon , psttd ) ; ___( psttHostP ) ;
+                    ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttd ) ;
+                    idPortP = ((tin9S&)tinBaseP).zEtScratch->strDigitsToSCountF( tinBaseP , psttPort , 0xa , 1 ) ;
+                    ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttPort  , idf2 , sttq2 , tColon , psttd ) ; ___( psttPort ) ;
+                    ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttHostP , idf2 , sttq2 , tColon , psttd ) ; ___( psttHostP ) ;
                     strokeS sttq2( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idf2 = 1 ;
                     psttUrl = 0 ;
                     strokeS* psttd = psttUrl ;
                 {
-                if( !((tinFullS&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttAction , tConnect ) && ((tinFullS&)tinBaseP).zEtScratch->strIdF( tinBaseP , tColon , psttUrl ) ) //U: DOES NOT CORRECTLY HANDLE CASE WHERE URL CONTAINS A COLON (E.G. "http://foo.com:123")
-                ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttUrl , idf , sttq , tBlank , psttl , 1 ) ; ___( psttUrl ) ;
+                if( !((tin9S&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttAction , tConnect ) && ((tin9S&)tinBaseP).zEtScratch->strIdF( tinBaseP , tColon , psttUrl ) ) //U: DOES NOT CORRECTLY HANDLE CASE WHERE URL CONTAINS A COLON (E.G. "http://foo.com:123")
+                ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttUrl , idf , sttq , tBlank , psttl , 1 ) ; ___( psttUrl ) ;
 
-                ((tinFullS&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttAction ) ; ___( psttAction ) ;
-                ((tinFullS&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttAction , idf , sttq , tBlank , psttl , 1 ) ; ___( psttAction ) ;
+                ((tin9S&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttAction ) ; ___( psttAction ) ;
+                ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttAction , idf , sttq , tBlank , psttl , 1 ) ; ___( psttAction ) ;
 
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 countT idf = 1 ;
@@ -303,14 +303,14 @@ boolT woRequestF( tinBaseS& tinBaseP , etherC& etThread , socketC& sClientP , st
             if( !bReplyP && !psttAction )
             sayF( tinBaseP , etThread , stPhrasesP , stPhrasesLogP , T(psttl)+tCRLF ) ;
 
-            stP << psttOldC( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , psttl ) ;
+            stP << psttOldC( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , psttl ) ;
         {
-        if( !*((tinFullS&)tinBaseP).zEtScratch && psttl && psttl->idAdam )
+        if( !*((tin9S&)tinBaseP).zEtScratch && psttl && psttl->idAdam )
         sInP.readWoLineF( tinBaseP , psttl , 0x200 ) ; ___( psttl ) ;
         ZE( strokeS* , psttl ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     {
-    while( !*((tinFullS&)tinBaseP).zEtScratch )
+    while( !*((tin9S&)tinBaseP).zEtScratch )
 
     ZE( strokeS* , psttPVersion ) ;
     ZE( strokeS* , psttProtocol ) ;
@@ -324,14 +324,14 @@ boolT woRequestF( tinBaseS& tinBaseP , etherC& etThread , socketC& sClientP , st
     TN( tColonWhite , ": " ) ;
     TN( tCRLF , "\r\n" ) ;
 {
-voidT readHeaderLinesF( tinBaseS& tinBaseP , etherC& etThread , socketC& sInP , stackC& stPhrasesP , stackC& stPhrasesLogP , stackC& stP , countT& costBodyP , boolT& bEncodedBodyP , countT& idPortP , strokeS*& psttHostP , const boolT bReplyP = 0 )
+voidT readHeaderLinesF( tin0S& tinBaseP , etherC& etThread , socketC& sInP , stackC& stPhrasesP , stackC& stPhrasesLogP , stackC& stP , countT& costBodyP , boolT& bEncodedBodyP , countT& idPortP , strokeS*& psttHostP , const boolT bReplyP = 0 )
 
 }
     stPhrasesLogP << psttOldC( tinBaseP , etThread , tPhrase ) ;
     stPhrasesP    << psttOldC( tinBaseP , etThread , tPhrase ) ;
     TN( tPhrase , psttP ) ;
 {
-voidT sayF( tinBaseS& tinBaseP , etherC& etThread , stackC& stPhrasesP , stackC& stPhrasesLogP , const strokeS* const psttP )
+voidT sayF( tin0S& tinBaseP , etherC& etThread , stackC& stPhrasesP , stackC& stPhrasesLogP , const strokeS* const psttP )
 
 #define postSEPARATOR_9  "\r\n---< E N D >----< E N D >----< E N D >----< E N D >----< E N D >----< E N D >----< E N D >----< E N D >----< E N D >----< E N D >---\r\n\r\n"
 #define postSEPARATOR_4C     "---- 4 4 4 4 :   END ---------------------------------------------------------------------------------------------------------------\r\n\r\n"
@@ -359,7 +359,7 @@ voidT sayF( tinBaseS& tinBaseP , etherC& etThread , stackC& stPhrasesP , stackC&
 //==============================================================================================================================================================
 
 }
-    if( ether && *((tinFullS&)tinBaseP).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *((tin9S&)tinBaseP).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }
@@ -400,7 +400,7 @@ voidT sayF( tinBaseS& tinBaseP , etherC& etThread , stackC& stPhrasesP , stackC&
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobFillCourseF( tinBaseS& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tin0S& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 //==============================================================================================================================================================
 //==== ABOVE THIS LINE: MOONLIGHT WORK =========================================================================================================================

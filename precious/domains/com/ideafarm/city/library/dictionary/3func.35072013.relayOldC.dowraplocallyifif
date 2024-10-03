@@ -304,7 +304,7 @@
 
                                 }
                                     LOGrAW7( bAlt ? "could not assign a mediator because -->" : "could not assign a mediator because <--" , swsIdptMediatorP , " " , swsIdptMediatorAltP , " cells of " , idAdamMediator , " are registered\r\n" ) ;
-                                    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T(bAlt?"could not assign a mediator because --> ":"could not assign a mediator because <-- ")+TF2(swsIdptMediatorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(swsIdptMediatorAltP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" cells of ")+TF2(idAdamMediator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" are registered") ) ;
+                                    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T(bAlt?"could not assign a mediator because --> ":"could not assign a mediator because <-- ")+TF2(swsIdptMediatorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(swsIdptMediatorAltP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" cells of ")+TF2(idAdamMediator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" are registered") ) ;
                                 {
                                 if( !idptm )
                                 swsm.randomF( tinBaseP , pb_idptm ) ;
@@ -316,7 +316,7 @@
                                         : 1
                                         ? 0
                                     : swsIdptMediatorP
-                                    ? ( ((tinFullS&)tinBaseP).ranUni % TUCK ) / TUCK * 2
+                                    ? ( ((tin9S&)tinBaseP).ranUni % TUCK ) / TUCK * 2
                                 const boolT bAlt = swsIdptMediatorP && swsIdptMediatorAltP
                                 idAdamMediatorP = idAdamMediator ;
     
@@ -384,7 +384,7 @@
 
     RELAYiNFOf
 {
-/*1*/voidT relayOldC::doWrapLocallyIfIF( tinBaseS& tinBaseP , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP )/*1*/
+/*1*/voidT relayOldC::doWrapLocallyIfIF( tin0S& tinBaseP , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP )/*1*/
 
 /**/
 */

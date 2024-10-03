@@ -21,7 +21,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         {
         if( POOP )
 
-        ((tinFullS&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , tPathToWalk  , bQuit , flDISKwALK_null , walkCBF , pcArg , 0 , 0 ) ;
+        ((tin9S&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , tPathToWalk  , bQuit , flDISKwALK_null , walkCBF , pcArg , 0 , 0 ) ;
         SCOOPS
         _IO_
     {
@@ -129,7 +129,7 @@ else
                                 POOPRqUIET
                             {
                             if( POOP )
-                            cFound = ((tinFullS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pstt1f , tArchiveTry , 0 , flDISKfIND_null , 0 , 0 , 0 , 1 , 0 ) ;
+                            cFound = ((tin9S&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pstt1f , tArchiveTry , 0 , flDISKfIND_null , 0 , 0 , 0 , 1 , 0 ) ;
                             SCOOPS
                         {
                         ZE( countT , cFound ) ;
@@ -157,7 +157,7 @@ else
                     POOPRqUIET
                 {
                 if( POOP )
-                ((tinFullS&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pstt1d , tLongDevices , 0 , flDISKfIND_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1d ) ;
+                ((tin9S&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pstt1d , tLongDevices , 0 , flDISKfIND_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1d ) ;
                 SCOOPS
             {
             ZE( boolT , bFail ) ;
@@ -327,7 +327,7 @@ TODO
                             if( POOP )
 
                             THREADmODE2rESTORE
-                            ((tinFullS&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tLongNew , tPathP+tShort , 1 ) ;
+                            ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tLongNew , tPathP+tShort , 1 ) ;
                             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
                             SCOOPS
@@ -401,7 +401,7 @@ TODO
 
             //etherP.traceF( tinBaseP , T("walkCBF [tFile]:    ")+tName ) ;
             TN( tName , ifName ) ;
-            ifFileNameC ifName( tinBaseP , *((tinFullS&)tinBaseP).pEther , postNameP ) ;
+            ifFileNameC ifName( tinBaseP , *((tin9S&)tinBaseP).pEther , postNameP ) ;
             _IO_
         {
         else if( bYearP && bYearDoP /*&& !cSetsDoneP*/ )
@@ -567,10 +567,10 @@ TODO
     countT&        cSetsDoneP                =       *(countT*)pcArgP[ 0x00 ] ;
 
     etherC& etPrime = etherC::etPrimeIF() ;
-    etherC& etherP = *((tinFullS&)tinBaseP).pEther ;
+    etherC& etherP = *((tin9S&)tinBaseP).pEther ;
     _IO_
 {
-boolT walkCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT walkCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 }
     if( stShort && !bQuitP && !etPrimeP ) bQuitP = flushFileSetF( tinBaseP , etherP , etPrimeP , cSetsDoneP , tShortPrefixLag , stShort , tPathP , tn , tb , tb4 , timeDataWritten ) ;
@@ -714,7 +714,7 @@ boolT walkCBF( tinBaseS& tinBaseP , countT& cDirsP , countT& cFilesP , const boo
     countT cShortNames = jotSortedShortP.cElementsF() ;
     _IO_
 {
-voidT consumeSortedShortF( tinBaseS& tinBaseP , etherC& etherP , etherC& etPrimeP , boolT& bQuitP , jotC& jotSortedShortP , textC& tPathP , countT& cSetsDoneP )
+voidT consumeSortedShortF( tin0S& tinBaseP , etherC& etherP , etherC& etPrimeP , boolT& bQuitP , jotC& jotSortedShortP , textC& tPathP , countT& cSetsDoneP )
 
 }
     return bFail ;
@@ -801,7 +801,7 @@ voidT consumeSortedShortF( tinBaseS& tinBaseP , etherC& etherP , etherC& etPrime
                             if( POOP )
 
                             //etherP.traceF( tinBaseP , T("setted  file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
-                            ((thirdC&)*((tinFullS&)tinBaseP).pEtScratch).setFileTimeF( tinBaseP , fiWo , &timeDataWrittenP , &timeDataWrittenP , &timeDataWrittenP ) ;
+                            ((thirdC&)*((tin9S&)tinBaseP).pEtScratch).setFileTimeF( tinBaseP , fiWo , &timeDataWrittenP , &timeDataWrittenP , &timeDataWrittenP ) ;
                             //etherP.traceF( tinBaseP , T("setting file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
                         {
                         else
@@ -862,7 +862,7 @@ voidT consumeSortedShortF( tinBaseS& tinBaseP , etherC& etherP , etherC& etPrime
                         POOPRqUIET
                     {
                     if( POOP )
-                    ((tinFullS&)tinBaseP).pEtScratch->fileWriteF( tinBaseP , fiTimes , (byteT*)&timeDataWrittenP  , sizeof( timeS ) ) ;
+                    ((tin9S&)tinBaseP).pEtScratch->fileWriteF( tinBaseP , fiTimes , (byteT*)&timeDataWrittenP  , sizeof( timeS ) ) ;
                 {
                 else
                 }
@@ -910,7 +910,7 @@ voidT consumeSortedShortF( tinBaseS& tinBaseP , etherC& etherP , etherC& etPrime
 
     _IO_
 {
-boolT flushFileSetF( tinBaseS& tinBaseP , etherC& etherP , etherC& etPrimeP , countT& cSetsDoneP , textC& tShortPrefixP , stackC& stShortP , textC& tPathP , textC& tnP , textC& tbP , textC& tb4P , timeS& timeDataWrittenP )
+boolT flushFileSetF( tin0S& tinBaseP , etherC& etherP , etherC& etPrimeP , countT& cSetsDoneP , textC& tShortPrefixP , stackC& stShortP , textC& tPathP , textC& tnP , textC& tbP , textC& tb4P , timeS& timeDataWrittenP )
 
 #define CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ( TOCK << 2 )
 #define CBdATAbOOKsHORTfILEnAMES           ( TICK << 1 )

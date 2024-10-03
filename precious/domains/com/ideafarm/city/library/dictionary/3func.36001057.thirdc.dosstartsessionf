@@ -14,19 +14,19 @@
             }
                 }
                     hThread.resetF() ;
-                    ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
-                    *((tinFullS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
-                    ((tinFullS&)tinBaseP).pag1->_thirdC_.lOsTid = tidP ;
-                    ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
+                    *((tin9S&)tinBaseP).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
+                    ((tin9S&)tinBaseP).pag1->_thirdC_.lOsTid = tidP ;
+                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 if( tidP && tidP != - 1 && F(flagsP) & flSESSION_REGISTERtHREADhANDLE )
     
                 }
                     hProcess.resetF() ;
-                    ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsPid.ungrabF( tinBaseP ) ;
-                    *((tinFullS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
-                    ((tinFullS&)tinBaseP).pag1->_thirdC_.lOsPid = pidP ;
-                    ((tinFullS&)tinBaseP).pag4->_thirdC_grab_lOsPid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsPid.ungrabF( tinBaseP ) ;
+                    *((tin9S&)tinBaseP).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
+                    ((tin9S&)tinBaseP).pag1->_thirdC_.lOsPid = pidP ;
+                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsPid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
                 {
                 if( pidP && pidP != - 1 && F(flagsP) & flSESSION_REGISTERpROCESShANDLE )
 
@@ -64,7 +64,7 @@
                 ZE( osTextT* , postp ) ;
                 //THIS CODE IS DUPLICATED IN 102006a AND 102005d
             {
-            if( ((tinFullS&)tinBaseP).bosFail )
+            if( ((tin9S&)tinBaseP).bosFail )
 
             }
                 }
@@ -98,14 +98,14 @@
                         costa += TUCK ; // FOR !idNumaNode 12345678
 
                         }
-                            costa = 2 * ((tinFullS&)tinBaseP).brcRaw + 2 ;
+                            costa = 2 * ((tin9S&)tinBaseP).brcRaw + 2 ;
                             BOSdOnOTtEST( WHATgbo , strlen( postExeP ) )
                         {
                         else
                         }
-                            costa = 2 * c1 + 2 + ((tinFullS&)tinBaseP).brcRaw + 1 ;
+                            costa = 2 * c1 + 2 + ((tin9S&)tinBaseP).brcRaw + 1 ;
                             BOSdOnOTtEST( WHATgbo , strlen( postArgsP ) )
-                            countT c1 = ((tinFullS&)tinBaseP).brcRaw ;
+                            countT c1 = ((tin9S&)tinBaseP).brcRaw ;
                             BOSdOnOTtEST( WHATgbo , strlen( postExeP ) )
                         {
                         if( postArgsP )
@@ -173,7 +173,7 @@
 
             if( !POOP ) pidP = processId ;
             BOSpOOP
-            if( ((tinFullS&)tinBaseP).bosFail && ((tinFullS&)tinBaseP).brcLath == ERROR_SMG_START_IO_BACKGROUND ) ((tinFullS&)tinBaseP).bosFail = 0 ;
+            if( ((tin9S&)tinBaseP).bosFail && ((tin9S&)tinBaseP).brcLath == ERROR_SMG_START_IO_BACKGROUND ) ((tin9S&)tinBaseP).bosFail = 0 ;
             BOSI( WHATsfr , BOSfAIL , DosStartSession( &info , &sessionId , &processId ) )
 
             PID   processId = 0 ;
@@ -217,8 +217,8 @@
     }
         if( POOP ) return ;
         FV( flSESSION , flagsP ) ;
-        __( !((tinFullS&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
-        __( !((tinFullS&)tinBaseP).pag1->_thirdC_.pSwProcessHandle ) ;
+        __( !((tin9S&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
+        __( !((tin9S&)tinBaseP).pag1->_thirdC_.pSwProcessHandle ) ;
         __Z( postExeP ) ;
         __NZ( pidP ) ;
         __NZ( tidP ) ;
@@ -227,7 +227,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT thirdC::dosStartSessionF( tinBaseS& tinBaseP , countT& tidP , countT& pidP , const osTextT* const postExeP , const osTextT* const postArgsP , const sCountT idColP , const sCountT idRowP , const countT cColP , const countT cRowP , const flagsT flagsP )/*1*/
+/**//*1*/voidT thirdC::dosStartSessionF( tin0S& tinBaseP , countT& tidP , countT& pidP , const osTextT* const postExeP , const osTextT* const postArgsP , const sCountT idColP , const sCountT idRowP , const countT cColP , const countT cRowP , const flagsT flagsP )/*1*/
 
 //U:COMBINE INTO A SINGLE API: 102006a AND 102005d
 

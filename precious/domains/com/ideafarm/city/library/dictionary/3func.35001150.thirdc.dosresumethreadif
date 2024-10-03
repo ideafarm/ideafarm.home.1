@@ -12,7 +12,7 @@
     if( idFail == 3 ) idFail = 0 ; //SO UTILITY APIS CAN SUSPEND/RESUME ARBITRARY THREADS IN THE PROCESS
 
     thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
-    ((tinFullS&)tinBaseP).cYield = 0 ;
+    ((tin9S&)tinBaseP).cYield = 0 ;
 
     #endif
 
@@ -29,7 +29,7 @@
 
             //if( !cSuspendPrior ) { CONoUTrAW( "NOT FROZEN\r\n" ) ; }
 
-            countT cSuspendPrior = ((tinFullS&)tinBaseP).brcRaw ;
+            countT cSuspendPrior = ((tin9S&)tinBaseP).brcRaw ;
             BOS( WHATgbo , BOSmAXcOUNTT , ResumeThread( (HANDLE)osh ) )
             countT osh = hP.osF( ifcIDtYPEhANDLE_THREAD ) ;
         {
@@ -39,7 +39,7 @@
 
     ZE( countT , idFail ) ;
 
-    ((tinFullS&)tinBaseP).cYield = 0 ;
+    ((tin9S&)tinBaseP).cYield = 0 ;
     thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
     const countT idDesireSave = thirdC::dosPriorityIF( tinBaseP ) ;
 
@@ -53,7 +53,7 @@
     //IFbEcAREFUL
     //WORKS UNCONDITIONALLY SO THAT GRABBING/UNGRABBING WILL WORK
 {
-/*1*/voidT thirdC::dosResumeThreadIF( tinBaseS& tinBaseP , handleC& hP , const boolT bRetryP )/*1*/
+/*1*/voidT thirdC::dosResumeThreadIF( tin0S& tinBaseP , handleC& hP , const boolT bRetryP )/*1*/
 
 /**/
 */

@@ -69,9 +69,9 @@ THREADmODE3rESTORE
                     if( !(const byteT*)*pPageEvent )
 
                     THREADmODE4rESTORE
-                    //((tinFullS&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+                    //((tin9S&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
                     bksAccessEvents.readF( tinBaseP , *pPageEvent , hRead , flBOOKScrEAD_null ) ;
-                    //((tinFullS&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+                    //((tin9S&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
                     pPageEvent = new( 0 , tinBaseP , LF ) pageC( tinBaseP , bksAccessEvents , cbi ) ; ___( pPageEvent ) ;
                     THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
                     ZE( pageC* , pPageEvent ) ;
@@ -86,9 +86,9 @@ THREADmODE3rESTORE
                         cbi = cbiSave ;
                     {
                     if( !pbi )
-                    //((tinFullS&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+                    //((tin9S&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
                     bDelete = bksAccessEvents.readF( tinBaseP , pbi , cbi , hRead ) ;
-                    //((tinFullS&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+                    //((tin9S&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
                 {
                 if( bPrefix )
                 ZE( boolT , bDelete ) ;
@@ -725,7 +725,7 @@ DONE( tmWorkerF )
     workS&  wsP              =  *(workS*)pTaskP->c1 ;
     _IO_
 
-    thirdC::c_memcpyIF( tinBaseP , (byteT*)((tinFullS&)tinBaseP).ppJot , (byteT*)((tinFullS*)pTaskP->pTinBaseDad)->ppJot , sizeof ((tinFullS&)tinBaseP).ppJot ) ;    //U:: MOVE TO BASE (flTHREADlAUNCH)
+    thirdC::c_memcpyIF( tinBaseP , (byteT*)((tin9S&)tinBaseP).ppJot , (byteT*)((tin9S*)pTaskP->pTinBaseDad)->ppJot , sizeof ((tin9S&)tinBaseP).ppJot ) ;    //U:: MOVE TO BASE (flTHREADlAUNCH)
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmWorkerF )
@@ -766,11 +766,11 @@ jhsOther(      tinBaseP , "jotAccessEvents.hash.string.other"   , flJOTc_WRITE ,
 jhsBrowser(    tinBaseP , "jotAccessEvents.hash.string.browser" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
 jhsQuery(      tinBaseP , "jotAccessEvents.hash.string.query"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
 jhsUri(        tinBaseP , "jotAccessEvents.hash.string.uri"     , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
-workS::workS( tinBaseS& tinBaseP , etherC& etherP ) :
+workS::workS( tin0S& tinBaseP , etherC& etherP ) :
 
 ;
 }
-    workS( tinBaseS& tinBaseP , etherC& etherP ) ;
+    workS( tin0S& tinBaseP , etherC& etherP ) ;
 
     puseC   puseAT ;
     puseC   puseEvents ;

@@ -13,10 +13,10 @@
         if( !decv02AM( pBooksSave->cRefBookF() ) ) { BLAMMO ; } ; //U::O: CONJ: cRef CAN BE MAINTAINED USING ++ -- SINCE MUST ALWAYS BE SERIALIZED SINCE pBook IS VOLATILE
         pBooksSave->lockF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-        thirdC::c_memsetIF( tinBaseP , (byteT*)&((tinFullS&)tinBaseP).pBookMark[ offbm ] , sizeof ((tinFullS&)tinBaseP).pBookMark[ offbm ] ) ;
+        thirdC::c_memsetIF( tinBaseP , (byteT*)&((tin9S&)tinBaseP).pBookMark[ offbm ] , sizeof ((tin9S&)tinBaseP).pBookMark[ offbm ] ) ;
 
-        bmNewSave  = ((tinFullS&)tinBaseP).pBookMark[ offbm ] ;
-        pBooksSave = ((tinFullS&)tinBaseP).pBookMark[ offbm ].pBooks ;
+        bmNewSave  = ((tin9S&)tinBaseP).pBookMark[ offbm ] ;
+        pBooksSave = ((tin9S&)tinBaseP).pBookMark[ offbm ].pBooks ;
     {
     else
     if( offbm == -1 ) { BLAMMO ; }
@@ -26,15 +26,15 @@
             break ;
             offbm = offr ;
         {
-        if( ((tinFullS&)tinBaseP).pBookMark[ offr ].pbz == pbP )
+        if( ((tin9S&)tinBaseP).pBookMark[ offr ].pbz == pbP )
     {
-    for( countT offr = 0 ; offr < sizeof ((tinFullS&)tinBaseP).pBookMark / sizeof ((tinFullS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
+    for( countT offr = 0 ; offr < sizeof ((tin9S&)tinBaseP).pBookMark / sizeof ((tin9S&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
     countT offbm = -1 ;
 
     if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 {
 pBooksSave( 0 )
-/*1*/pageReleaseC::pageReleaseC( tinBaseS& tinBaseP , const byteT* const pbP ) :/*1*/
+/*1*/pageReleaseC::pageReleaseC( tin0S& tinBaseP , const byteT* const pbP ) :/*1*/
 
 /**/
 */

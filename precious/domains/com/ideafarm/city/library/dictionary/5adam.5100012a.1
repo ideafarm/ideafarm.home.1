@@ -171,7 +171,7 @@ TASK( tmLaunchDialogF )
 
     TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/payer.email" ) ;
 {
-voidT getEmailF( tinBaseS& tinBaseP , etherC& ether , strokeS*& psttEmailP )
+voidT getEmailF( tin0S& tinBaseP , etherC& ether , strokeS*& psttEmailP )
 
 }
     }
@@ -210,11 +210,11 @@ voidT getEmailF( tinBaseS& tinBaseP , etherC& ether , strokeS*& psttEmailP )
         {
         if( bJobFailed )
 
-        *((tinFullS&)tinBaseP).zEtScratch = 0 ;
+        *((tin9S&)tinBaseP).zEtScratch = 0 ;
         }
             CONoUTrAW( T("cBound: ")+TF1(cBound)+T("\r\n") ) ;
             else            { CONoUTrAW( "!bindPaymentsToMe job aok\r\n" ) ; }    
-            if( *((tinFullS&)tinBaseP).zEtScratch ) { CONoUTrAW( "!bindPaymentsToMe job FAILED\r\n" ) ; bJobFailed = 1 ; }    
+            if( *((tin9S&)tinBaseP).zEtScratch ) { CONoUTrAW( "!bindPaymentsToMe job FAILED\r\n" ) ; bJobFailed = 1 ; }    
             }
                 sData >> cBound ;
     
@@ -228,11 +228,11 @@ voidT getEmailF( tinBaseS& tinBaseP , etherC& ether , strokeS*& psttEmailP )
             ZE( soulC* , psCourse ) ;
             //U::__( stCourses - 2 ) ;
     
-            ((tinFullS&)tinBaseP).zEtScratch->ifcJobF( tinBaseP , stCourses , 0x4010120 , sOrder , stOrders , T("!bindPaymentsToMe") , 1 , nnIfc ) ;
+            ((tin9S&)tinBaseP).zEtScratch->ifcJobF( tinBaseP , stCourses , 0x4010120 , sOrder , stOrders , T("!bindPaymentsToMe") , 1 , nnIfc ) ;
             nicNameC nnIfc = socketC::nicNameIF( tinBaseP , etThread , T("www.ideafarm.com") ) ;
             stOrders << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
-            stackC stOrders(  tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-            stackC stCourses( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+            stackC stOrders(  tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+            stackC stCourses( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
         
             sOrder << psttEmailP ;
             sOrder << etThread.diskIdF( tinBaseP , T("///c" "/") ) ;
@@ -250,7 +250,7 @@ voidT getEmailF( tinBaseS& tinBaseP , etherC& ether , strokeS*& psttEmailP )
     TN( tTitle1 , "[" ) ;
     //CODE SYNCH: THIS THIS
 {
-voidT bindF( tinBaseS& tinBaseP , etherC& etThread , countT& rc , const strokeS* const psttEmailP )
+voidT bindF( tin0S& tinBaseP , etherC& etThread , countT& rc , const strokeS* const psttEmailP )
 
 #define TITLE (cStepsRemaining?T("[")+TF4(--cStepsRemaining,flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FOREIGN,0,0xa)+T("] "):T(""))+tTitle2
 

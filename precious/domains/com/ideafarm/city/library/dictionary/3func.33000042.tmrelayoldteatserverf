@@ -35,7 +35,7 @@ DONE( tmRelayOldTeatServerF )
             THREADmODE2rESTORE
             swsWrapRefP.freeF( tinBaseP ) ;
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-            cLeverPayloadP = ((tinFullS&)tinBaseP).monitor.idThread ;
+            cLeverPayloadP = ((tin9S&)tinBaseP).monitor.idThread ;
         {
     
         }
@@ -194,7 +194,7 @@ DONE( tmRelayOldTeatServerF )
                                 if( bDontHoldBreath ) relayOldC::doWrapLocallyIfIF( tinBaseP , etThread , RELAYiNFOaRGS , *psWrap , idptP ) ;
             
                                 relayOldC::popIF( tinBaseP , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBag , stIdptOpenP , stIdptGossipP , idptP ) ;
-                                //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("tmRelayOldTeatServerF: calling popIF [bRoot,bDontHoldBreath]:    ")+TF2(bRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bDontHoldBreath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("tmRelayOldTeatServerF: calling popIF [bRoot,bDontHoldBreath]:    ")+TF2(bRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bDontHoldBreath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                 *psBag << *psWrap ;
                                 relayOldC::hdrBagIF( tinBaseP , *psBag , idptP , idSerialLathHeaderP , bRoot ? flOLDrELAYpOP_UP : flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_WRAP ) ;
@@ -208,11 +208,11 @@ DONE( tmRelayOldTeatServerF )
                             if( psBag )
                             soulC* psBag = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
         
-                            if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION ) { static countT idIn ; ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , TF2(++idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tmRelayOldTeatServerF: ifcOLDiDtYPEwRAP_GIFT (mediator registration channel)") ) ; }
+                            if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION ) { static countT idIn ; ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , TF2(++idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tmRelayOldTeatServerF: ifcOLDiDtYPEwRAP_GIFT (mediator registration channel)") ) ; }
         
                             }
                                 THREADmODE2rESTORE
-                                //((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("wrap from app for channel ")+T(pczChannel) ) ;
+                                //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("wrap from app for channel ")+T(pczChannel) ) ;
                                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                             {
                             else
@@ -280,12 +280,12 @@ DONE( tmRelayOldTeatServerF )
                         }
                             bQuit = 1 ;
                             POOPRqUIET
-                            ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("tmRelayOldTeatServerF / wrapper contains garbage") ) ;
+                            ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("tmRelayOldTeatServerF / wrapper contains garbage") ) ;
                         {
                         if( POOP )
                         __( psWrap->cFieldF( tinBaseP , ifcOLDiDfIELDwRAP_IDvERSION ) - 1 ) ; //idVersion
                         __( psWrap->cFieldF( tinBaseP , ifcOLDiDfIELDwRAP_IDpROTOCOL ) - ifcIDpROTOCOL_RELAYwRAP ) ;
-                        __( ((tinFullS&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttTM , T("IdeaFarm " "(tm)") ) ) ;
+                        __( ((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttTM , T("IdeaFarm " "(tm)") ) ) ;
                         __( idTypeTM - ifcIDtYPEsOULiTEM_strokeSptr ) ;
                         __Z( psttTM ) ;
                         SCOOPS
@@ -352,7 +352,7 @@ DONE( tmRelayOldTeatServerF )
         ZE( countT , idAdamClient ) ;
         ZE( boolT , bQuit ) ;
     
-        psoP->etherF( tinBaseP , *((tinFullS&)tinBaseP).pEtScratch ) ;
+        psoP->etherF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch ) ;
     
         stackC stChannelExclude( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count4S ) ;
         stackC stChannelInclude( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count4S ) ;
@@ -361,7 +361,7 @@ DONE( tmRelayOldTeatServerF )
         THREADmODE2rESTORE
         stackC& stWrapRef = (stackC&)swsWrapRefP ;
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-        cLeverPayloadP = ((tinFullS&)tinBaseP).monitor.idThread ;
+        cLeverPayloadP = ((tin9S&)tinBaseP).monitor.idThread ;
         swsWrapRefP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
     {
     IFsCRATCH

@@ -31,7 +31,7 @@
                 //    OStEXTAK( ostoSay , "booksC [this,pcRef,cRefWas]:    " ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
-                //if( ((tinFullS&)tinBaseP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
+                //if( ((tin9S&)tinBaseP).pag1->idAdam == ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 )
         
                 countT cRefWas = incv02AM( *pcRef ) ;
                 countT* pcRef = &head.cRef ;
@@ -41,14 +41,14 @@
                 if( cRefWas == -1 ) { BLAMMO ; }
                 countT cRefWas = incv02AM( head.cRef ) ;
             {
-            if( !((tinFullS&)tinBaseP).pEther )
+            if( !((tin9S&)tinBaseP).pEther )
         
             bookHeadS& head = BOOKnOW ;
         {
         if( pbP && F(flagsP) & flBOOKScrEAD_INCREMENTrEFERENCEcOUNTiF && !bCallerMustDelete )    //20181210@1318: ADDED "&& !bCallerMustDelete" BECAUSE I AM RETURNING A pbP THAT POINTS TO A poolC DROP RATHER THAN INTO A bookC INSTANCE
 
         }
-            (*((tinFullS&)tinBaseP).pEther)( tinBaseP , pStkSnip ) ;  //20181210@1316: ADDED WITHOUT ANALYSIS
+            (*((tin9S&)tinBaseP).pEther)( tinBaseP , pStkSnip ) ;  //20181210@1316: ADDED WITHOUT ANALYSIS
 
             }
                 PUSE( tinBaseP , pbw ) ;
@@ -59,7 +59,7 @@
         {
         else
         }
-            (*((tinFullS&)tinBaseP).pEther)( tinBaseP , pStkSnip ) ;
+            (*((tin9S&)tinBaseP).pEther)( tinBaseP , pStkSnip ) ;
 
             }
                 *pbo = 0 ;
@@ -143,7 +143,7 @@
                         if( !POOP )
 
                         __Z( pStkSnip ) ;
-                        if( !pStkSnip ) (*((tinFullS&)tinBaseP).pEther)( tinBaseP , pStkSnip , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_byteT ) ; ___( pStkSnip ) ;
+                        if( !pStkSnip ) (*((tin9S&)tinBaseP).pEther)( tinBaseP , pStkSnip , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_byteT ) ; ___( pStkSnip ) ;
                         __Z( cbzSnip ) ;
                     {
                     if( pbzSnip )
@@ -234,7 +234,7 @@
                         PUSE( tinBaseP , *(byteT**)&PCPiDbOOKnOW ) ; //AT THE BEGINNING OF THIS BLOCK, I DELETED THIS BOOK.  CODE THAT LOOKS AT THE BOOK INSTANCES MUST CHECK FOR !PCPiDbOOKnOW TO AVOID ACCESSING A DELETED INSTANCE.  RACE CONDITION EXIST IF MULTIPLE THREADS ARE READING, BUT MULTITHREADED READING PROBABLY IS UNSUPPORTABLE ANYWAY
                         cbToDo = 0 ;
                     {
-                    if( F(flagsP) & flBOOKScrEAD_STILLhUNGRYiSoK && !bookC::bFileExistsIF( tinBaseP , *((tinFullS&)tinBaseP).pEther , tName , 0 , idStateSpace , idMemorySpace , flagsCtBook ) )
+                    if( F(flagsP) & flBOOKScrEAD_STILLhUNGRYiSoK && !bookC::bFileExistsIF( tinBaseP , *((tin9S&)tinBaseP).pEther , tName , 0 , idStateSpace , idMemorySpace , flagsCtBook ) )
                     THREADmODE4oN( flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
 
                     //20181107@1116: THIS BUG WAS WORKED AROUND BY EDITING OTHER CODE SO THAT THIS CODE ISN'T EXERCIZED.  THIS CODE IS INCORRECT.  CORRECT CODE WILL AVOID DELETING A bookC AND THEN ATTEMPTING TO UNDO THAT DELETION
@@ -263,9 +263,9 @@
                     offBookBackNow ++ ;
 
                     //}
-                    //    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("booksC::readF / ct'ing a book") ) ;
+                    //    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("booksC::readF / ct'ing a book") ) ;
                     //{
-                    //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
+                    //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] )
                 {
                 if( !bFound )
 
@@ -318,9 +318,9 @@
             //    OStEXTAK( ostoSay , "    " ) ;
             //    OStEXTC(  ostoSay , this , 0 ) ;
             //    OStEXTAK( ostoSay , "    " ) ;
-            //    OStEXTA(  ostoSay , ((tinFullS&)tinBaseP).postThreadName ) ;
+            //    OStEXTA(  ostoSay , ((tin9S&)tinBaseP).postThreadName ) ;
             //    OStEXTAK( ostoSay , "    " ) ;
-            //    OStEXTC(  ostoSay , ((tinFullS&)tinBaseP).monitor.idThread , 0 ) ;
+            //    OStEXTC(  ostoSay , ((tin9S&)tinBaseP).monitor.idThread , 0 ) ;
             //    OStEXTAK( ostoSay , "\r\nbooksC::readF/ wants book [idThread,postThreadName,this,idBookWant,idBookHave]:    " ) ;
             //    OStEXT(   ostoSay , TUCK << 2 ) ;
             //{
@@ -336,9 +336,9 @@
                 bWrongBook =
 
                 //}
-                //    ((tinFullS&)tinBaseP).pEther->traceF( tinBaseP , T("booksC::readF / book [have,want]:")+T("    ")+TF2(*pcNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(*pcWant,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("booksC::readF / book [have,want]:")+T("    ")+TF2(*pcNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(*pcWant,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 //{
-                //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] )
+                //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] )
 
                 countT* pcWant =  pcpOffIdBookWant + 2 ;
                 countT* pcNow  =  PCPiDbOOKnOW     + 1 ;
@@ -347,10 +347,10 @@
             ZE( boolT , bWrongBook ) ;
 
             //}
-            //    ((tinFullS&)tinBaseP).pEther->trace F( tinBaseP , T("booksC::readF / wanted [offInBook,idBook]:")+T("    ")+TF2(pcpOffIdBookWant[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(pcpOffIdBookWant[2],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
+            //    ((tin9S&)tinBaseP).pEther->trace F( tinBaseP , T("booksC::readF / wanted [offInBook,idBook]:")+T("    ")+TF2(pcpOffIdBookWant[1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(pcpOffIdBookWant[2],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
             //    offWantedLath = offWanted ;
             //{
-            //if( ((tinFullS&)tinBaseP).pc Utility[ 0 ] /*&& offWanted >> 0x10 != offWantedLath >> 0x10*/ )
+            //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] /*&& offWanted >> 0x10 != offWantedLath >> 0x10*/ )
             countT offWanted = pcpOffIdBookWant[ 1 ] ;
             //static countT offWantedLath ; //U:: TO FIND A BUG
 
@@ -416,7 +416,7 @@
             if( !POOP )
             __Z( pBook ) ;
             bookC* pBook = new( 0 , tinBaseP , LF ) bookC( tinBaseP , TAG( TAGiDnULL ) , tName , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flBOOKc_WRITER | flBOOKc_PRIORbOOKnOTcONTINUEDhERE , sizeof HANDLEaPPnOTEScOUNTcLASS ) ;
-            TN( tName , "" ) ; tName = T("bkCursor.")+TF3(((tinFullS&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idCursorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) ;
+            TN( tName , "" ) ; tName = T("bkCursor.")+TF3(((tin9S&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(idCursorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) ;
         {
         if( !*phCursorP )
     {
@@ -445,7 +445,7 @@
         if( !phCursorP )
         FV( flBOOKScrEAD , flagsP ) ;
         __( *PCPiDbOOKnOW != 1 ) ; // IDbOOK VALUES ARE UNLIMITED.  BUT ONLY LENGTH 1 IDbOOK VALUES CAN BE STORED WITHIN A handleC.  FOR MORE CAPACITY, INCREASE THE SIZE OF handleC::c2AppNote
-        __( !((tinFullS&)tinBaseP).pPoolUse ) ; // booksC INSTANCES CAN BE CT/DT AND WRITTEN TO EARLY AND LATE, BUT readF CAN ONLY BE CALLED WHEN PUSE EXISTS
+        __( !((tin9S&)tinBaseP).pPoolUse ) ; // booksC INSTANCES CAN BE CT/DT AND WRITTEN TO EARLY AND LATE, BUT readF CAN ONLY BE CALLED WHEN PUSE EXISTS
         //__Z( cbP ) ;
         __NZ( pbP ) ;
         if( POOP ) return 0 ;
@@ -453,7 +453,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT booksC::readF( tinBaseS& tinBaseP , const byteT*& pbP , countT& cbP , handleC& handleP , const flagsT flagsP , const boolT* pbQuitP , handleC* const phCursorP , const countT idCursorP )/*1*/
+/*1*/boolT booksC::readF( tin0S& tinBaseP , const byteT*& pbP , countT& cbP , handleC& handleP , const flagsT flagsP , const boolT* pbQuitP , handleC* const phCursorP , const countT idCursorP )/*1*/
 
 //20231114@1238: UNDO THAT ; NOW !cbP MEANS EXACTLY THAT: DO A READ AT THE CURRENT OFFSET BUT DO NOT ADVANCE THE OFFSET (TO READ REMAINDER, SET cb1P TO - 1 AND SPECIFY flBOOKScrEAD_STILLhUNGRYiSoK ; (CODE WAS CHANGED IN WO PLACE THAT USED 0)
 //20180816@1429: ENHANCE TO READ REMAINDER OF CURRENT BOOK IF !cbP

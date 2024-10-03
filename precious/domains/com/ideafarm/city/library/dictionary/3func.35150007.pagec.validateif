@@ -15,14 +15,14 @@
             { BLAMMO ; }
             )
                 )
-                    ( !booksP.cKeepInactiveF() && ((tinFullS&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 1 ] != pcpIdBookNow[ 1 ] )        // IF !cKeepInactive THEN SHOULD BE IMPOSSIBLE SINCE pbzP MUST ALREADY BE RESIDENT IN MEMORY
+                    ( !booksP.cKeepInactiveF() && ((tin9S&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 1 ] != pcpIdBookNow[ 1 ] )        // IF !cKeepInactive THEN SHOULD BE IMPOSSIBLE SINCE pbzP MUST ALREADY BE RESIDENT IN MEMORY
                     ||
-                    ( ((tinFullS&)tinBaseP).pBookMark[ offbm ].pbz && ((tinFullS&)tinBaseP).pBookMark[ offbm ].pbz != pbzP )
+                    ( ((tin9S&)tinBaseP).pBookMark[ offbm ].pbz && ((tin9S&)tinBaseP).pBookMark[ offbm ].pbz != pbzP )
                     ||
-                    ((tinFullS&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 0 ] != 1
+                    ((tin9S&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 0 ] != 1
                 (
                 &&
-                ((tinFullS&)tinBaseP).pBookMark[ offbm ].pcpIdBook
+                ((tin9S&)tinBaseP).pBookMark[ offbm ].pcpIdBook
             (                                                       // THIS ENFORCES THE RULE THAT A THREAD CAN CONSTRUCT ONLY WO SMART POINTER AT A TIME, EXCEPT FOR DUPLICATES
             if                                                      // OLD BOOK IS SAME AS NEW BOOK AND OLD pbz IS SAME AS NEW pbz
         
@@ -37,8 +37,8 @@
             if                                                      // NEW BOOK HAS GOOD ID
 
             }
-                ((tinFullS&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 1 ] = pcpIdBookNow[ 1 ] ;
-                ((tinFullS&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 0 ] = pcpIdBookNow[ 0 ] ;
+                ((tin9S&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 1 ] = pcpIdBookNow[ 1 ] ;
+                ((tin9S&)tinBaseP).pBookMark[ offbm ].pcpIdBook[ 0 ] = pcpIdBookNow[ 0 ] ;
                 if( pcpIdBookNow[ 0 ] != 1 ) { BLAMMO ; }
             {
             if( bFormat )
@@ -47,21 +47,21 @@
 
             booksP.lockF( tinBaseP , TAG( TAGiDnULL ) ) ;
 
-            if( offbm == -1 ) { BLAMMO ; }              // COULD NOT REGISTER booksP BECAUSE ((tinFullS&)tinBaseP).pBookMark IS FULL
+            if( offbm == -1 ) { BLAMMO ; }              // COULD NOT REGISTER booksP BECAUSE ((tin9S&)tinBaseP).pBookMark IS FULL
 
             }
                 }
                     break ;
                     offbm = offr ;
                     bFormat = 1;
-                    ((tinFullS&)tinBaseP).pBookMark[ offr ].pcpIdBook[ 0 ] = 0       ;
-                    ((tinFullS&)tinBaseP).pBookMark[ offr ].pbz            = 0       ;
-                    ((tinFullS&)tinBaseP).pBookMark[ offr ].cRef           = 0       ;
-                    ((tinFullS&)tinBaseP).pBookMark[ offr ].pBooks         = &booksP ;
+                    ((tin9S&)tinBaseP).pBookMark[ offr ].pcpIdBook[ 0 ] = 0       ;
+                    ((tin9S&)tinBaseP).pBookMark[ offr ].pbz            = 0       ;
+                    ((tin9S&)tinBaseP).pBookMark[ offr ].cRef           = 0       ;
+                    ((tin9S&)tinBaseP).pBookMark[ offr ].pBooks         = &booksP ;
                 {
-                if( !((tinFullS&)tinBaseP).pBookMark[ offr ].pBooks )
+                if( !((tin9S&)tinBaseP).pBookMark[ offr ].pBooks )
             {
-            if( offbm == -1 ) for( countT offr = 0 ; offr < sizeof ((tinFullS&)tinBaseP).pBookMark / sizeof ((tinFullS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
+            if( offbm == -1 ) for( countT offr = 0 ; offr < sizeof ((tin9S&)tinBaseP).pBookMark / sizeof ((tin9S&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
             ZE( boolT , bFormat ) ;
 
             }
@@ -69,19 +69,19 @@
                     break ;
                     offbm = offr ;
                 {
-                if( ((tinFullS&)tinBaseP).pBookMark[ offr ].pBooks == &booksP )
+                if( ((tin9S&)tinBaseP).pBookMark[ offr ].pBooks == &booksP )
             {
-            for( countT offr = 0 ; offr < sizeof ((tinFullS&)tinBaseP).pBookMark / sizeof ((tinFullS&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
+            for( countT offr = 0 ; offr < sizeof ((tin9S&)tinBaseP).pBookMark / sizeof ((tin9S&)tinBaseP).pBookMark[ 0 ] ; offr ++ )
             countT offbm = -1 ;
         {
         if( !POOP )
     {
-    if( pbzP && !( F(((tinFullS&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_DOnOTrEGISTERpAGEc ) )
+    if( pbzP && !( F(((tin9S&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_DOnOTrEGISTERpAGEc ) )
 
     if( &booksValidP != &booksP                ) { BLAMMOiD( 0x34343434 ) ; }                        // SAME BOOKS AS MINE
     if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 {
-/*1*/voidT pageC::validateIF( tinBaseS& tinBaseP , booksC& booksValidP , booksC& booksP , const byteT* const pbzP )/*1*/
+/*1*/voidT pageC::validateIF( tin0S& tinBaseP , booksC& booksValidP , booksC& booksP , const byteT* const pbzP )/*1*/
 
 /**/
 

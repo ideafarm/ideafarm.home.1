@@ -26,8 +26,8 @@ DONE( tmWorkF )
 
             //LOGrAW3( "ifcIDaDAM_HOMEfLAGS [home.flags]: " , home.flags , "\r\n" ) ;
 
-            //((tinFullS&)tinBaseP).zEtScratch->delF( tinBaseP , psttRoster ) ;
-            //rosterF( tinBaseP , *((tinFullS&)tinBaseP).zEtScratch , psttRoster ) ; ___( psttRoster ) ;
+            //((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttRoster ) ;
+            //rosterF( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , psttRoster ) ; ___( psttRoster ) ;
             //ZE( strokeS* , psttRoster ) ;
 
             }
@@ -630,7 +630,7 @@ TASK( tmWatchIdeafarmF )
     countT pcPassword[] = { '8' ADDfLAK , 'd' ADDfLAK , 'b' ADDfLAK , 'b' ADDfLAK , '3' ADDfLAK , '6' ADDfLAK , 'b' ADDfLAK , 'a' ADDfLAK , '0' ADDfLAK , '3' ADDfLAK , 'd' ADDfLAK , 'a' ADDfLAK , '4' ADDfLAK , '0' ADDfLAK , '0' ADDfLAK , 'c' ADDfLAK , '8' ADDfLAK , 'f' ADDfLAK , 'c' ADDfLAK , 'f' ADDfLAK , '3' ADDfLAK , '6' ADDfLAK , '4' ADDfLAK , 'a' ADDfLAK , 'b' ADDfLAK , '9' ADDfLAK , 'c' ADDfLAK , 'e' ADDfLAK , 'e' ADDfLAK , 'f' ADDfLAK , 'b' ADDfLAK , '5' ADDfLAK } ;
     countT pcUser[]     = { 'i' ADDfLAK , 'p' ADDfLAK , 'd' ADDfLAK , 'o' ADDfLAK , 's' ADDfLAK , '.' ADDfLAK , '0' ADDfLAK , '1' ADDfLAK } ;
 {
-voidT secretF( tinBaseS& tinBaseP , etherC& etherP , textC& tUserP , textC& tPasswordP )
+voidT secretF( tin0S& tinBaseP , etherC& etherP , textC& tUserP , textC& tPasswordP )
 
 #if defined( NEVERdEFINED )
 //20210224@1610: THIS IS OBSOLETE NOW THAT CODE IS OPEN SOURCE
@@ -641,17 +641,17 @@ voidT secretF( tinBaseS& tinBaseP , etherC& etherP , textC& tUserP , textC& tPas
 }
     }
         }
-            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttP ) ;
+            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttP ) ;
             POOPR
         {
         if( POOP )
     
-        ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttAll ) ;
+        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttAll ) ;
         }
-            ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , psttSection ) ;
-            else                    ((tinFullS&)tinBaseP).pEtScratch->strokeF( tinBaseP , T("<<<<")+T(psttSection)+T(">>>>") ) ;
+            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttSection ) ;
+            else                    ((tin9S&)tinBaseP).pEtScratch->strokeF( tinBaseP , T("<<<<")+T(psttSection)+T(">>>>") ) ;
             if( cSkip && cSkip -- ) ;
-            ((tinFullS&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttSection , idf , sttq , T("<hr>") , psttAll ) ; ___( psttSection ) ;
+            ((tin9S&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttSection , idf , sttq , T("<hr>") , psttAll ) ; ___( psttSection ) ;
             ZE( strokeS* , psttSection ) ;
         {
         while( idf && !POOP )
@@ -660,13 +660,13 @@ voidT secretF( tinBaseS& tinBaseP , etherC& etherP , textC& tUserP , textC& tPas
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
     
-        ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , pbAll  ) ;
-        ((tinFullS&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttAll , T(pbAll) ) ; ___( psttAll ) ;
+        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pbAll  ) ;
+        ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttAll , T(pbAll) ) ; ___( psttAll ) ;
         ZE( strokeS* , psttAll ) ;
     
-        ((tinFullS&)tinBaseP).pEtScratch->boxPutF( tinBaseP , T("///d/tmp.ideafarm.txt") , pbAll , cbAll ) ;
+        ((tin9S&)tinBaseP).pEtScratch->boxPutF( tinBaseP , T("///d/tmp.ideafarm.txt") , pbAll , cbAll ) ;
     
-        ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbAll , cbAll , tRosterHttp ) ; ___( pbAll  ) ;
+        ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbAll , cbAll , tRosterHttp ) ; ___( pbAll  ) ;
         ZE( countT , cbAll ) ;
         ZE( byteT* , pbAll  ) ;
         //TN( tRosterHttp  , "www.fuckyourbrain.com//http//index.htm" ) ;
@@ -675,7 +675,7 @@ voidT secretF( tinBaseS& tinBaseP , etherC& etherP , textC& tUserP , textC& tPas
     {
     IFsCRATCH
 {
-voidT rosterF( tinBaseS& tinBaseP , strokeS*& psttP )
+voidT rosterF( tin0S& tinBaseP , strokeS*& psttP )
 
 }
     return bOk ;
@@ -688,8 +688,8 @@ voidT rosterF( tinBaseS& tinBaseP , strokeS*& psttP )
             POOPR
         {
         if( POOP )
-        ((tinFullS&)tinBaseP).pEtScratch->delF( tinBaseP , pbHome  ) ;
-        ((tinFullS&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbHome  , cbHome  , psttP  ) ; ___( pbHome  ) ;
+        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pbHome  ) ;
+        ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbHome  , cbHome  , psttP  ) ; ___( pbHome  ) ;
         ZE( countT , cbHome ) ;
         ZE( byteT* , pbHome  ) ;
         SCOOPS
@@ -697,7 +697,7 @@ voidT rosterF( tinBaseS& tinBaseP , strokeS*& psttP )
     IFsCRATCH
     ZE( boolT , bOk ) ;
 {
-boolT bOkHttpPageF( tinBaseS& tinBaseP , const strokeS* const psttP )
+boolT bOkHttpPageF( tin0S& tinBaseP , const strokeS* const psttP )
 
 }
     return bRefused ;
@@ -706,13 +706,13 @@ boolT bOkHttpPageF( tinBaseS& tinBaseP , const strokeS* const psttP )
     }
         else if( nn.pcId[ 0 ] == 0xff00ff00 ) bRefused = 1 ;
         if( POOP ) POOPR
-        nicNameC nn = ((tinFullS&)tinBaseP).pEtScratch->sockNicNameF( tinBaseP , psttP ) ;
+        nicNameC nn = ((tin9S&)tinBaseP).pEtScratch->sockNicNameF( tinBaseP , psttP ) ;
         SCOOPS
     {
     IFsCRATCH
     ZE( boolT , bRefused ) ; //VERSION REFUSED FLAG WILL BE SET ONLY IF I GET A POSITIVE DENIAL FROM THE DNS
 {
-boolT bDnsRefusedVersionF( tinBaseS& tinBaseP , const strokeS* const psttP )
+boolT bDnsRefusedVersionF( tin0S& tinBaseP , const strokeS* const psttP )
 
 }
     return bOk ;
@@ -726,13 +726,13 @@ boolT bDnsRefusedVersionF( tinBaseS& tinBaseP , const strokeS* const psttP )
             POOPR
         {
         if( POOP )
-        nicNameC nn = ((tinFullS&)tinBaseP).pEtScratch->sockNicNameF( tinBaseP , psttP ) ;
+        nicNameC nn = ((tin9S&)tinBaseP).pEtScratch->sockNicNameF( tinBaseP , psttP ) ;
         SCOOPS
     {
     IFsCRATCH
     ZE( boolT , bOk ) ;
 {
-boolT bOkDnsValueF( tinBaseS& tinBaseP , const strokeS* const psttP )
+boolT bOkDnsValueF( tin0S& tinBaseP , const strokeS* const psttP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_HOMEfLAGS" )/*1*/
 /**/
