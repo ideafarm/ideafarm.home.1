@@ -9,7 +9,7 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
 }
     CONoUTrAW( "\r\nDESTROYING af2 THEN af1\r\n" ) ;
@@ -17,17 +17,17 @@ etherC::loafIF( tinBaseP ) ;
     af1 -= af2 ;
     CONoUTrAW( "\r\naf1 UNBEFRIENDS af2\r\n" ) ;
     
-    af2.walkF( tinBaseP , associateCBF ) ;
+    af2.walkF( tin0P , associateCBF ) ;
     CONoUTrAW( "\r\nWALKING af2's FRIENDS\r\n" ) ;
     
-    af1.walkF( tinBaseP , associateCBF ) ;
+    af1.walkF( tin0P , associateCBF ) ;
     CONoUTrAW( "\r\nWALKING af1's FRIENDS\r\n" ) ;
     
     af1 += af2 ;
     CONoUTrAW( "\r\naf1 BEFRIENDS af2\r\n" ) ;
     
-    aFooS af2( tinBaseP , etThread ) ;
-    aFooS af1( tinBaseP , etThread ) ;
+    aFooS af2( tin0P , etThread ) ;
+    aFooS af1( tin0P , etThread ) ;
 {
 
 TODO
@@ -36,7 +36,7 @@ TODO
     return 0 ;
     CONoUTrAW3( "associateCBF [idMeViewed]: " , (*(const vFooS*)&assViewP).idMeViewed , "\r\n" ) ;
 {
-boolT associateCBF( tin0S& tinBaseP , const assViewC& assViewP , const associateC& viewerP , const countT cArgP )
+boolT associateCBF( tin0S& tin0P , const assViewC& assViewP , const associateC& viewerP , const countT cArgP )
 
 }
     CONoUTrAW3( " vFooS [idMeViewed]: " , idMeViewed , "\r\n" ) ;
@@ -54,18 +54,18 @@ NEWdELcLASS( 1 , vFooS )
 
 }
     }
-        new( 0 , tinBaseP , pbaViewP , sizeof( vFooS ) ) vFooS( idGroup , sizeof( vFooS ) , idMe ) ;
+        new( 0 , tin0P , pbaViewP , sizeof( vFooS ) ) vFooS( idGroup , sizeof( vFooS ) , idMe ) ;
         CONoUTrAW5( "viewF [this,pbaViewP]: " , this , " " , pbaViewP , "\r\n" ) ;
     {
     if( cbaViewP >= sizeof( vFooS ) )
 {
-voidT aFooS::viewF( tin0S& tinBaseP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP )
+voidT aFooS::viewF( tin0S& tin0P , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP )
 
 }
 {
 idMe( 1 + incv02AM( idMeLath ) )
-associateC( tinBaseP , etherP , IDG_aFooS , sizeof( vFooS ) ) ,
-aFooS::aFooS( tin0S& tinBaseP , etherC& etherP ) :
+associateC( tin0P , etherP , IDG_aFooS , sizeof( vFooS ) ) ,
+aFooS::aFooS( tin0S& tin0P , etherC& etherP ) :
 
 ;
 }
@@ -79,8 +79,8 @@ struct vFooS : public assViewC
 
 ;
 }
-    virtual voidT viewF( tin0S& tinBaseP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP ) ;
-    aFooS( tin0S& tinBaseP , etherC& etherP ) ;
+    virtual voidT viewF( tin0S& tin0P , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP ) ;
+    aFooS( tin0S& tin0P , etherC& etherP ) ;
 
     const countT idMe ;
 {

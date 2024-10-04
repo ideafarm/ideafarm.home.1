@@ -10,8 +10,8 @@
 }
     return pageData ;
 
-    if( !POOP ) bksData.readF( tinBaseP , pageData , hJotData ) ;
-    pageC pageData( tinBaseP , bksData ) ;
+    if( !POOP ) bksData.readF( tin0P , pageData , hJotData ) ;
+    pageC pageData( tin0P , bksData ) ;
     ZE( const byteT* , pbzData ) ;
 
     }
@@ -20,8 +20,8 @@
         if(          !(const byteT*)page_hJotData ) __( 0x40000005 ) ;
         if( sizeof( handle0111C ) - page_hJotData ) __( 0x40000004 ) ;
 
-        bksIndex.readF( tinBaseP , page_hJotData , hJotIndex ) ;
-        pageC page_hJotData( tinBaseP , bksIndex , sizeof( handle0111C ) ) ;
+        bksIndex.readF( tin0P , page_hJotData , hJotIndex ) ;
+        pageC page_hJotData( tin0P , bksIndex , sizeof( handle0111C ) ) ;
 
         handle0011C hJotIndex( ( offWant % cIndexEntriesPerIndexBook ) * sizeof( handle0111C ) , 1 + offWant / cIndexEntriesPerIndexBook ) ;
         countT offWant = ( idP - 1 ) & ~NM_HIGH ;
@@ -31,15 +31,15 @@
     _IO_
 
     }
-        if( POOP ) return pageC( tinBaseP , bksData ) ;
+        if( POOP ) return pageC( tin0P , bksData ) ;
         if( ( idMaxWritten & ~NM_HIGH ) < ( idP & ~NM_HIGH )    ) __( 0x40000003 ) ;
         if(  idP & NM_HIGH && ( idP & NM_HIGH ) - tagHighNibble ) __( 0x40000002 ) ; // idP NEED NOT BE TAGGED, BUT IF TAGGED, THE TAG MUST MATCH MY TAG
         if( !idP                                                ) __( 0x40000001 ) ;
-        if( POOP ) return pageC( tinBaseP , bksData ) ;
+        if( POOP ) return pageC( tin0P , bksData ) ;
     {
     IFbEcAREFUL
 {
-/*1*/pageC jotC::readF( tin0S& tinBaseP , countT idP )/*1*/
+/*1*/pageC jotC::readF( tin0S& tin0P , countT idP )/*1*/
 
 /**/
 */

@@ -11,7 +11,7 @@ DONE( tmTimeoutF )
 }
     TELL( "tmTimeoutF: cleaning up" )
     }
-        sockd.writeF( tinBaseP , idPortMe , nicNameC() , ifcIDtYPEdATAGRAM_LETSaLLqUIT ) ;
+        sockd.writeF( tin0P , idPortMe , nicNameC() , ifcIDtYPEdATAGRAM_LETSaLLqUIT ) ;
         bTimeout = 1 ;
         TELL( "bGoItIt is 0 so writing \"let's all quit\" datagram" )
     {
@@ -19,22 +19,22 @@ DONE( tmTimeoutF )
 
     }
         }
-            ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x40 ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tin0P , TUCK * 0x40 ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
         TELL( "sleeping for 04 tock" )
 
         if( bGoItIt || timeN2 >= 0 ) break ;
-        etThread.osTimeSubtractF( tinBaseP , timeN1 , timeN2 , timeE1 , timeE2 ) ;
-        etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+        etThread.osTimeSubtractF( tin0P , timeN1 , timeN2 , timeE1 , timeE2 ) ;
+        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT , timeN1 ) ;
         TELL( "setting up in loop" )
     {
     while( !ether && !etThread )
 
-    etThread.osTimeAddF( tinBaseP , timeE1 , timeE2 , timeO1 , timeO2 ) ;
-    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+    etThread.osTimeAddF( tin0P , timeE1 , timeE2 , timeO1 , timeO2 ) ;
+    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
     ZE( sCountT , timeE2 ) ;
     ZE( countT , timeE1 ) ;
 

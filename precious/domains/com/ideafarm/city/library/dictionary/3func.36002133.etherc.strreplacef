@@ -10,57 +10,57 @@
 }
     return cReplacements ;
 
-    if( bDeleteOldBig ) delF( tinBaseP , *(strokeS**)&psttOldBig ) ;
+    if( bDeleteOldBig ) delF( tin0P , *(strokeS**)&psttOldBig ) ;
 
     }
         }
             break ;
 
-            strReverseF( tinBaseP , psttNewBigP , 0 , tLF       , 0 , 0 , 0 ) ; ___( psttNewBigP ) ;
-            strReplaceF( tinBaseP , psttNewBigP , 0 , T(" ")    , T("&nbsp;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ;
+            strReverseF( tin0P , psttNewBigP , 0 , tLF       , 0 , 0 , 0 ) ; ___( psttNewBigP ) ;
+            strReplaceF( tin0P , psttNewBigP , 0 , T(" ")    , T("&nbsp;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ;
 
-            delF( tinBaseP , pstt1w ) ;
+            delF( tin0P , pstt1w ) ;
             }
                 }
-                    strFuseF( tinBaseP , psttNewBigP , tEscRawCrLf ) ;
-                    strFuseF( tinBaseP , psttNewBigP , psttc2 ) ;
-                    strFuseF( tinBaseP , psttNewBigP , tBarb4 ) ;
+                    strFuseF( tin0P , psttNewBigP , tEscRawCrLf ) ;
+                    strFuseF( tin0P , psttNewBigP , psttc2 ) ;
+                    strFuseF( tin0P , psttNewBigP , tBarb4 ) ;
                     idLF = 0 ;
                 {
                 else
                 }
                     }
-                        strFuseF( tinBaseP , psttNewBigP , tEscNullCrLf ) ;
-                        strFuseF( tinBaseP , psttNewBigP , tBarb0 ) ;
-                        //traceF( tinBaseP , T("insert blank line now") ) ;
+                        strFuseF( tin0P , psttNewBigP , tEscNullCrLf ) ;
+                        strFuseF( tin0P , psttNewBigP , tBarb0 ) ;
+                        //traceF( tin0P , T("insert blank line now") ) ;
                     {
                     if( 1 < ++ idLF )
                 {
-                if( !strCompareF( tinBaseP , psttc2 , tLF ) )
+                if( !strCompareF( tin0P , psttc2 , tLF ) )
             {
             FORsTRINGSiN2( pstt1w )
             idLF = 0 ;
 
-            strMakeF( tinBaseP , LF , psttNewBigP , 0 , /*U::*/TOCK + csttOld + ( cLines + cBlankLines ) * ( tBarb4.csF( tinBaseP ) + tEscRawCrLf.csF( tinBaseP ) ) ) ; ___( psttNewBigP ) ;
+            strMakeF( tin0P , LF , psttNewBigP , 0 , /*U::*/TOCK + csttOld + ( cLines + cBlankLines ) * ( tBarb4.csF( tin0P ) + tEscRawCrLf.csF( tin0P ) ) ) ; ___( psttNewBigP ) ;
 
             }
                 }
                     csttOld += psttc1->idAdam ;
                     cLines ++ ;
-                    //traceF( tinBaseP , T("my line [cstt,value]:    ")+TF2(psttc1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttc1)+T("\"") , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
+                    //traceF( tin0P , T("my line [cstt,value]:    ")+TF2(psttc1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttc1)+T("\"") , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
 
                     if( idLF ) idLF = 0 ;
                 {
                 else
                 }
                     }
-                        //traceF( tinBaseP , T("blank line [cBlankLines]:    ")+TF2(cBlankLines,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //traceF( tin0P , T("blank line [cBlankLines]:    ")+TF2(cBlankLines,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         cBlankLines ++ ;
                     {
                     if( 1 < ++ idLF )
-                    //traceF( tinBaseP , T("my LF") ) ;
+                    //traceF( tin0P , T("my LF") ) ;
                 {
-                if( !strCompareF( tinBaseP , psttc1 , tLF ) )
+                if( !strCompareF( tin0P , psttc1 , tLF ) )
             {
             FORsTRINGSiN1( pstt1w )
             ZE( countT , csttOld ) ;
@@ -72,16 +72,16 @@
             TN( tBarb0 , "<br>\\m&#124;" ) ;
             TN( tBarb4 , "<br>\\m&#124;&nbsp;&nbsp;&nbsp;&nbsp;" ) ;
             
-            delF( tinBaseP , psttNewBigP ) ;
-            strWordsF( tinBaseP , pstt1w , psttNewBigP , sttq , T("\r\n") , flSTRwORDS_DELIMITERsTRING | flSTRwORDS_DELIMITERS , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
+            delF( tin0P , psttNewBigP ) ;
+            strWordsF( tin0P , pstt1w , psttNewBigP , sttq , T("\r\n") , flSTRwORDS_DELIMITERsTRING | flSTRwORDS_DELIMITERS , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , pstt1w ) ;
 
-            strReplaceF( tinBaseP , psttNewBigP , 0          , T("\\")   , T("&#92;")  , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttNewBigP ) ;
-            strReplaceF( tinBaseP , psttNewBigP , 0          , T("}")    , T("&#125;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttNewBigP ) ;
-            strReplaceF( tinBaseP , psttNewBigP , 0          , T("{")    , T("&#123;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttNewBigP ) ;
-            strReplaceF( tinBaseP , psttNewBigP , 0          , T(">")    , T("&#62;")  , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttNewBigP ) ;
-            strReplaceF( tinBaseP , psttNewBigP , psttOldBig , T("<")    , T("&#60;")  , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttNewBigP ) ;
+            strReplaceF( tin0P , psttNewBigP , 0          , T("\\")   , T("&#92;")  , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttNewBigP ) ;
+            strReplaceF( tin0P , psttNewBigP , 0          , T("}")    , T("&#125;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttNewBigP ) ;
+            strReplaceF( tin0P , psttNewBigP , 0          , T("{")    , T("&#123;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttNewBigP ) ;
+            strReplaceF( tin0P , psttNewBigP , 0          , T(">")    , T("&#62;")  , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttNewBigP ) ;
+            strReplaceF( tin0P , psttNewBigP , psttOldBig , T("<")    , T("&#60;")  , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttNewBigP ) ;
 
             TN( tLFLFLFLF , "\r\n\r\n\r\n\r\n" ) ;
             TN( tLFLFLF   , "\r\n\r\n\r\n" ) ;
@@ -94,32 +94,32 @@
 
             }
                 }
-                    else strFuseF( tinBaseP , psttNewBigP , psttOldBig[ CSpREFIX - 1 + ids ] ) ;
+                    else strFuseF( tin0P , psttNewBigP , psttOldBig[ CSpREFIX - 1 + ids ] ) ;
                     else if( psttOldBig[ CSpREFIX - 1 + ids ].idCaste == sc_cADAMeXPORT ) csDeltaThis = psttOldBig[ CSpREFIX - 1 + ids ].idAdam ;
                     }
                         cReplacements ++ ;
                         csDeltaThis = 0 ;
                         ids += csDeltaThis - 1 ;
 
-                        strFuseF( tinBaseP , psttNewBigP , stta ) ;
+                        strFuseF( tin0P , psttNewBigP , stta ) ;
                         strokeS stta( FINGERnEG_SADAMsTROKEcT , psf ) ;
 
                         //}
-                        //    delF( tinBaseP , psttd ) ;
+                        //    delF( tin0P , psttd ) ;
                         //    thirdC::dosExitProcessIF( 1 ) ;
                         //    LOGrAW( T("import: \"")+T(psttd)+T("\"\r\n") ) ;
-                        //    soulC::dumpIF( tinBaseP , psttd , *psf ) ; ___( psttd ) ;
+                        //    soulC::dumpIF( tin0P , psttd , *psf ) ; ___( psttd ) ;
                         //    ZE( strokeS* , psttd ) ;
                         //{
                         // FOR DEBUGGING ONLY
 
-                        psf->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbi , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                        psf->shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbi , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                         
                         if( POOP ) break ;
                         __( ((const countT*)pbi)[ 1 ] - 1                             ) ;
                         __( getNegAM( ((const countT*)pbi)[ 0 ] ) - FINGERnEG_SOULc ) ;
                         const byteT* pbi = (const byteT*)( psttOldBig + CSpREFIX - 1 + ids ) ;
-                        (*this)( tinBaseP , psf , TAG( TAGiDnULL ) ) ;
+                        (*this)( tin0P , psf , TAG( TAGiDnULL ) ) ;
                         ZE( soulC* , psf ) ;
                     {
                     if( csDeltaThis )
@@ -127,11 +127,11 @@
                 for( countT ids = 1 ; ids <= psttOldBig->idAdam ; ids ++ )
                 ZE( countT , csDeltaThis ) ; //SEMANTICS: "bArmed": IF NOT ZE THEN I AM AT THE BEGINNING OF A soulC IMAGE
 
-                strMakeF( tinBaseP , LF , psttNewBigP , T("") , psttOldBig->idAdam - csDelta + csttExtraP ) ;
+                strMakeF( tin0P , LF , psttNewBigP , T("") , psttOldBig->idAdam - csDelta + csttExtraP ) ;
             {
             else
             }
-                strMakeF( tinBaseP , LF , psttNewBigP , psttOldBig , csttExtraP ) ; //CALLER MUST TAG
+                strMakeF( tin0P , LF , psttNewBigP , psttOldBig , csttExtraP ) ; //CALLER MUST TAG
             {
             if( !csDelta )
     
@@ -152,21 +152,21 @@
 
             }
                 }
-                    else strFuseF( tinBaseP , psttNewBigP , psttOldBig[ CSpREFIX - 1 + ids ] ) ;
+                    else strFuseF( tin0P , psttNewBigP , psttOldBig[ CSpREFIX - 1 + ids ] ) ;
                     }
-                        (*this)( tinBaseP , psf ) ;
+                        (*this)( tin0P , psf ) ;
 
                         }
                             }
                                 cReplacements ++ ;
-                                thirdC::c_memcpyIF( tinBaseP , pbTo , *psf , cbImage ) ;
+                                thirdC::c_memcpyIF( tin0P , pbTo , *psf , cbImage ) ;
                                     
-                                while( csDeltaThis -- ) strFuseF( tinBaseP , psttNewBigP , stt0 ) ; //DONE THIS WAY CAUSE SAFER; IF WANT SPEED THEN DEFINE A NEW OVERLOAD OF strFuseF TO DO THIS JOB FASTER; DON'T KLUDGE IT WITH A MEMCPY
+                                while( csDeltaThis -- ) strFuseF( tin0P , psttNewBigP , stt0 ) ; //DONE THIS WAY CAUSE SAFER; IF WANT SPEED THEN DEFINE A NEW OVERLOAD OF strFuseF TO DO THIS JOB FASTER; DON'T KLUDGE IT WITH A MEMCPY
                                 byteT* pbTo = (byteT*)( psttNewBigP + CSpREFIX + psttNewBigP->idAdam ) ;
     
                                 psttNewBigP[ CSpREFIX - 1 + psttNewBigP->idAdam ].idAdam  = csDeltaThis ;
                                 psttNewBigP[ CSpREFIX - 1 + psttNewBigP->idAdam ].idCaste = sc_cADAMeXPORT ;
-                                strFuseF( tinBaseP , psttNewBigP , stt0 ) ;
+                                strFuseF( tin0P , psttNewBigP , stt0 ) ;
                                 strokeS stt0 ;
         
                                 countT csDeltaThis = ( cbImage + cbPad ) / sizeof( strokeS ) ;
@@ -180,9 +180,9 @@
                             const byteT* pbi = *psf ;
 
                             //}
-                            //    delF( tinBaseP , psttd ) ;
+                            //    delF( tin0P , psttd ) ;
                             //    LOGrAW( T("export: \"")+T(psttd)+T("\"\r\n") ) ;
-                            //    soulC::dumpIF( tinBaseP , psttd , *psf ) ; ___( psttd ) ;
+                            //    soulC::dumpIF( tin0P , psttd , *psf ) ; ___( psttd ) ;
                             //    ZE( strokeS* , psttd ) ;
                             //{
                             // FOR DEBUGGING ONLY
@@ -190,25 +190,25 @@
                         if( !POOP )
                         __Z( psf ) ;
 
-                        psttOldBig[ CSpREFIX - 1 + ids ].featuresF( tinBaseP , psf ) ; ___( psf ) ;
+                        psttOldBig[ CSpREFIX - 1 + ids ].featuresF( tin0P , psf ) ; ___( psf ) ;
                         ZE( soulC* , psf ) ;
                     {
                     if( psttOldBig[ CSpREFIX - 1 + ids ].idCaste == sc_cADAM )
                 {
                 for( countT ids = 1 ; ids <= psttOldBig->idAdam ; ids ++ )
 
-                strMakeF( tinBaseP , LF , psttNewBigP , T("") , psttOldBig->idAdam + csDelta + csttExtraP ) ; // CALLER MUST TAG
+                strMakeF( tin0P , LF , psttNewBigP , T("") , psttOldBig->idAdam + csDelta + csttExtraP ) ; // CALLER MUST TAG
             {
             else
             }
-                strMakeF( tinBaseP , LF , psttNewBigP , psttOldBig , csttExtraP ) ; //CALLER MUST TAG
+                strMakeF( tin0P , LF , psttNewBigP , psttOldBig , csttExtraP ) ; //CALLER MUST TAG
             {
             else if( !csDelta )
             if( POOP ) ;
     
             }
                 }
-                    (*this)( tinBaseP , psf ) ;
+                    (*this)( tin0P , psf ) ;
                     }
                         csDelta += csDeltaThis ;
                         countT csDeltaThis = ( cbImage + cbPad ) / sizeof( strokeS ) ;
@@ -222,7 +222,7 @@
                     if( !POOP )
                     __Z( psf ) ;
 
-                    psttOldBig[ CSpREFIX - 1 + ids ].featuresF( tinBaseP , psf ) ; ___( psf ) ;
+                    psttOldBig[ CSpREFIX - 1 + ids ].featuresF( tin0P , psf ) ; ___( psf ) ;
                     ZE( soulC* , psf ) ;
                 {
                 if( psttOldBig[ CSpREFIX - 1 + ids ].idCaste == sc_cADAM )
@@ -272,7 +272,7 @@
                 ZE( boolT , bInQuote ) ;
             {
             if( psttNewBigP )
-            strMakeF( tinBaseP , LF , psttNewBigP , T("") , psttOldBig->idAdam + csttExtraP ) ; //CALLER MUST TAG
+            strMakeF( tin0P , LF , psttNewBigP , T("") , psttOldBig->idAdam + csttExtraP ) ; //CALLER MUST TAG
         {
         case ifcIDtYPEsTRrEPLACE_DIGITnAMEStOdIGITS :
         }
@@ -311,7 +311,7 @@
                 ZE( boolT , bInQuote ) ;
             {
             if( psttNewBigP )
-            strMakeF( tinBaseP , LF , psttNewBigP , T("") , psttOldBig->idAdam * 2 + csttExtraP ) ; //CALLER MUST TAG
+            strMakeF( tin0P , LF , psttNewBigP , T("") , psttOldBig->idAdam * 2 + csttExtraP ) ; //CALLER MUST TAG
         {
         case ifcIDtYPEsTRrEPLACE_DIGITStOdIGITnAMES :
         }
@@ -324,7 +324,7 @@
                 for( countT idr = 1 ; idr <= psttNewBigP->idAdam ; idr ++ )
             {
             if( psttNewBigP )
-            strMakeF( tinBaseP , LF , psttNewBigP , psttOldBigP ) ; //CALLER MUST TAG;   U::BUG? CONJ: SHOULD BE psttOldBig NOT psttOldBigP
+            strMakeF( tin0P , LF , psttNewBigP , psttOldBigP ) ; //CALLER MUST TAG;   U::BUG? CONJ: SHOULD BE psttOldBig NOT psttOldBigP
         {
         case ifcIDtYPEsTRrEPLACE_REMOVEaSCIIlOWhIGH :
     {
@@ -351,7 +351,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT etherC::strReplaceF( tin0S& tinBaseP , strokeS*& psttNewBigP , const strokeS* const psttOldBigP , const countT idTypeP , const countT csttExtraP , const flagsT flagsP )/*1*/
+/*1*/countT etherC::strReplaceF( tin0S& tin0P , strokeS*& psttNewBigP , const strokeS* const psttOldBigP , const countT idTypeP , const countT csttExtraP , const flagsT flagsP )/*1*/
 
 /**/
 */
@@ -368,7 +368,7 @@
   can be 0
  psttOldBigP
  psttNewBigP
- tinBaseP
+ tin0P
 arguments
 i do a set of replacements that are specified by setting flag bits
 \<A HREF=\"5.1030174.1.0.html\"\>definition\</A\>

@@ -16,26 +16,26 @@
                 }
                     }
                         }
-                            sgnDone_tmMakeTrays.waitF( tinBaseP ) ;
+                            sgnDone_tmMakeTrays.waitF( tin0P ) ;
                             }
                                 if( !sUse ) break ;
-                                (*jobHearOrderF)( tinBaseP , ether , etThread , idAdam , idChatSessionP , sUse , cAppArg , c8arg ) ;
+                                (*jobHearOrderF)( tin0P , ether , etThread , idAdam , idChatSessionP , sUse , cAppArg , c8arg ) ;
                                 soulC& sUse = POOP ? sNull : sOrder ;
-                                soulC sNull( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                soulC sNull( tin0P , TAG( TAGiDnULL ) ) ;
     
-                                pso->readF( tinBaseP , sOrder ) ;
-                                soulC sOrder( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                pso->readF( tin0P , sOrder ) ;
+                                soulC sOrder( tin0P , TAG( TAGiDnULL ) ) ;
                             {
                             while( !POOP && !etThread )
     
-                            etThread.osThreadF( tinBaseP , countTC() , tmMakeTraysF , &sgnDone_tmMakeTrays , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&sOrder , idAdam , (countT)&cAppArg , (countT)&c8arg , (countT)jobFillCourseF , idChatSessionP ) ;
-                            signC sgnDone_tmMakeTrays( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            etThread.osThreadF( tin0P , countTC() , tmMakeTraysF , &sgnDone_tmMakeTrays , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&sOrder , idAdam , (countT)&cAppArg , (countT)&c8arg , (countT)jobFillCourseF , idChatSessionP ) ;
+                            signC sgnDone_tmMakeTrays( tin0P , TAG( TAGiDnULL ) ) ;
                             count8S c8arg ;
                         {
                         if( !POOP )
     
                         sJob >> sOrder ;
-                        soulC sOrder( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        soulC sOrder( tin0P , TAG( TAGiDnULL ) ) ;
     
                         __Z( bAccepted ) ;
                         sJob >> bAccepted ;
@@ -56,39 +56,39 @@
                     else // JOB DOER
                     }
                         }
-                            sgnDone_tmRelayOldChatReplies.waitF( tinBaseP ) ;
-                            if( POOP ) soUp.stopWaitingF( tinBaseP ) ; // WAD WAC: SERVER (UPWARD) IS NEVER RUDE; CLIENT (DOWNWARD) IS ALWAYS RUDE; SO THIS SOCKET CANCEL IS NOT LOGGED
+                            sgnDone_tmRelayOldChatReplies.waitF( tin0P ) ;
+                            if( POOP ) soUp.stopWaitingF( tin0P ) ; // WAD WAC: SERVER (UPWARD) IS NEVER RUDE; CLIENT (DOWNWARD) IS ALWAYS RUDE; SO THIS SOCKET CANCEL IS NOT LOGGED
                             }
                                 else                  break ;
-                                if( !POOP && sOrder ) soUp.writeF( tinBaseP , sOrder ) ;
+                                if( !POOP && sOrder ) soUp.writeF( tin0P , sOrder ) ;
     
-                                pso->readF( tinBaseP , sOrder ) ;
-                                soulC sOrder( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                pso->readF( tin0P , sOrder ) ;
+                                soulC sOrder( tin0P , TAG( TAGiDnULL ) ) ;
                             {
                             while( !POOP && !etThread )
     
-                            if( !etThread ) sgnReadTested.waitF( tinBaseP ) ;
-                            etThread.osThreadF( tinBaseP , countTC() , tmRelayOldChatRepliesF , &sgnDone_tmRelayOldChatReplies , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&soUp , (countT)&sgnReadTested , 0 ) ;
-                            signC sgnDone_tmRelayOldChatReplies( tinBaseP , TAG( TAGiDnULL ) ) ;
-                            signC sgnReadTested( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            if( !etThread ) sgnReadTested.waitF( tin0P ) ;
+                            etThread.osThreadF( tin0P , countTC() , tmRelayOldChatRepliesF , &sgnDone_tmRelayOldChatReplies , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&soUp , (countT)&sgnReadTested , 0 ) ;
+                            signC sgnDone_tmRelayOldChatReplies( tin0P , TAG( TAGiDnULL ) ) ;
+                            signC sgnReadTested( tin0P , TAG( TAGiDnULL ) ) ;
     
-                            soUp.writeF( tinBaseP , sRelay ) ;
-                            soUp.connectF( tinBaseP ) ;
-                            socketC soUp( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                            soUp.writeF( tin0P , sRelay ) ;
+                            soUp.connectF( tin0P ) ;
+                            socketC soUp( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
     
-                            etThread.ifcChatRelayPackageF( tinBaseP , sRelay , sJob , idAdamHandlingP , TF1(idAdamHandlingP)+T("/ifcChatF/jobHandlerF/acceptor") , 1 , 0 , nicNameHint ) ;
-                            soulC sRelay( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            etThread.ifcChatRelayPackageF( tin0P , sRelay , sJob , idAdamHandlingP , TF1(idAdamHandlingP)+T("/ifcChatF/jobHandlerF/acceptor") , 1 , 0 , nicNameHint ) ;
+                            soulC sRelay( tin0P , TAG( TAGiDnULL ) ) ;
                         {
                         if( !POOP )
     
                         }
-                            ((tin9S&)tinBaseP).pEtScratch->memCopyF( tinBaseP , (byteT*)&nicNameHint , pbNicName + 1 , processGlobal2I.cb_nicNameC_ ) ;
+                            ((tin9S&)tin0P).pEtScratch->memCopyF( tin0P , (byteT*)&nicNameHint , pbNicName + 1 , processGlobal2I.cb_nicNameC_ ) ;
     
                             __Z( pbNicName ) ;
                             __( cbNicName - 1 - processGlobal2I.cb_nicNameC_ ) ; // THE "1" CORRESPONDS TO THE flags2 BYTE
                             __( flags - ( flSOULiTEM_MADEoFcOUNToBJECTS | flSOULiTEM_INCREASINGiNsIGNIFICANCE ) ) ;
                             __( idType - ifcIDtYPEsOULiTEM_nicNameC ) ;
-                            const byteT* const pbNicName = sJob.pbFieldF( tinBaseP , idType , flags , cbNicName , 3 ) ;
+                            const byteT* const pbNicName = sJob.pbFieldF( tin0P , idType , flags , cbNicName , 3 ) ;
                             ZE( countT , cbNicName ) ;
                             ZE( flagsT , flags ) ;
                             ZE( countT , idType ) ;
@@ -101,16 +101,16 @@
                     {
                     if( !bAccepted ) // JOB ACCEPTOR
     
-                    boolT& bAccepted = sJob.cFieldF( tinBaseP , 4 ) ;
-                    countT idAdam    = sJob.cFieldF( tinBaseP , 2 ) ;
+                    boolT& bAccepted = sJob.cFieldF( tin0P , 4 ) ;
+                    countT idAdam    = sJob.cFieldF( tin0P , 2 ) ;
                 {
-                if( !etThread && sJob.cFieldF( tinBaseP ) == ifcIDcMDsESSION_JOB )
+                if( !etThread && sJob.cFieldF( tin0P ) == ifcIDcMDsESSION_JOB )
     
-                //etThread.strokeF( tinBaseP , T("jobHandlerF/")+T(*((tin9S&)tinBaseP).pEtScratch?"impotent":"aok")+T("/tested number of items in sJob\r\n") ) ; //U:
+                //etThread.strokeF( tin0P , T("jobHandlerF/")+T(*((tin9S&)tin0P).pEtScratch?"impotent":"aok")+T("/tested number of items in sJob\r\n") ) ; //U:
                 //__( (countT)sJob - 5 ) ;
     
-                pso->readF( tinBaseP , sJob ) ;
-                soulC sJob( tinBaseP , TAG( TAGiDnULL ) ) ;
+                pso->readF( tin0P , sJob ) ;
+                soulC sJob( tin0P , TAG( TAGiDnULL ) ) ;
     
                 jobHearOrderFT  jobHearOrderF  =  (jobHearOrderFT)c3p_jobHandler.c3 ;
                 jobFillCourseFT jobFillCourseF = (jobFillCourseFT)c3p_jobHandler.c2 ;
@@ -132,7 +132,7 @@
     __Z( idAdamHandlingP ) ;
     __Z( pso ) ; //IN THIS DEFINITION, AS IN ALL CHAT HANDLERS, TESTS RELATED TO DOWNWARD CHAT USE etScratch; TESTS RELATED TO UPWARD CHAT USE etThread
 {
-/*1*/voidT jobHandlerF( tin0S& tinBaseP , etherC& ether , etherC& etThread , socketC*& pso , const countT idChatSessionP , countT cArgP , const countT idAdamHandlingP )/*1*/
+/*1*/voidT jobHandlerF( tin0S& tin0P , etherC& ether , etherC& etThread , socketC*& pso , const countT idChatSessionP , countT cArgP , const countT idAdamHandlingP )/*1*/
 /**/
 */
 /*

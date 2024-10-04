@@ -15,8 +15,8 @@
 
     }
         __Z( pInfoFileP ) ;
-        else              c_memsetIF( tinBaseP , (byteT*)pInfoFileP , sizeof( infoFileS ) ) ;
-        if( !pInfoFileP ) { pInfoFileP = new( 0 , tinBaseP , LF ) infoFileS( tinBaseP ) ; ___( pInfoFileP ) ; }
+        else              c_memsetIF( tin0P , (byteT*)pInfoFileP , sizeof( infoFileS ) ) ;
+        if( !pInfoFileP ) { pInfoFileP = new( 0 , tin0P , LF ) infoFileS( tin0P ) ; ___( pInfoFileP ) ; }
     {
     if( !POOP )
 
@@ -28,7 +28,7 @@
         BOSI( WHATsfr , BOSfAIL , DosQueryFileInfo( (HFILE)handleP.osF( ifcIDtYPEhANDLE_FILE ) , FIL_STANDARD , &info , sizeof info ) )
     #ifdef __OS2__
 
-    c_memsetIF( tinBaseP , (byteT*)&info , sizeof info ) ;
+    c_memsetIF( tin0P , (byteT*)&info , sizeof info ) ;
     #endif
         BY_HANDLE_FILE_INFORMATION info ;
     #elif defined( __NT__ )
@@ -49,7 +49,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/voidT thirdC::dosQueryFileInfoIF( tin0S& tinBaseP , infoFileS*& pInfoFileP , const handleC& handleP )/*1*/
+/*1*/voidT thirdC::dosQueryFileInfoIF( tin0S& tin0P , infoFileS*& pInfoFileP , const handleC& handleP )/*1*/
 
 #endif
     #define symACHnAME         cFileName

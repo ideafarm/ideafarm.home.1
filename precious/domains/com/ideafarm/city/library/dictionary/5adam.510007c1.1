@@ -9,26 +9,26 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
-etThread.traceF( tinBaseP , T("ok") ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.delF( tinBaseP , pbBuffer ) ;
+etThread.delF( tin0P , pbBuffer ) ;
 
 }
     //break ; //U:: TO FIND A BUG
 
     cReceived = 0 ;
-    etThread.traceF( tinBaseP , T("received [cReceived]:    ")+TF2(cReceived,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("received [cReceived]:    ")+TF2(cReceived,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-    ++ s ; ether.osSleepF( tinBaseP , TOCK << 2 ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
 
-    etThread.traceF( tinBaseP , T("sent [cGram,time,timePerPacket]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TT(timeE1,timeE2)+tb4+TF2(timePerPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+    etThread.traceF( tin0P , T("sent [cGram,time,timePerPacket]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TT(timeE1,timeE2)+tb4+TF2(timePerPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
 
     countT timePerPacket = timeE1 / idGram ;
 
-    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
-    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;
+    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
     ZE( sCountT , timeE2 ) ;
     ZE( countT  , timeE1 ) ;
 
@@ -43,9 +43,9 @@ etThread.delF( tinBaseP , pbBuffer ) ;
 
                     cThrown ++ ;
 
-                    sThrow.writeF( tinBaseP , idPortCatch , nicNameC() , pbGram , sizeof( gramHeadS ) + cbNow ) ;
+                    sThrow.writeF( tin0P , idPortCatch , nicNameC() , pbGram , sizeof( gramHeadS ) + cbNow ) ;
                     //CONoUTrAW( "!" ) ;
-                    etThread.memCopyF( tinBaseP , pbPayload , pbc , cbNow ) ;
+                    etThread.memCopyF( tin0P , pbPayload , pbc , cbNow ) ;
                     head.len = cbNow  ;
                     head.off = cbDone ;
                     idGram ++ ;
@@ -61,33 +61,33 @@ etThread.delF( tinBaseP , pbBuffer ) ;
                 countT cbDo = cbw ;
                 byteT* pbc = pbw ;
 
-                //etThread.boxPutF( tinBaseP , tFileIn+T(".window.")+tIdWindow , pbw , cbw ) ;
-                //etThread.traceF( tinBaseP , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //etThread.boxPutF( tin0P , tFileIn+T(".window.")+tIdWindow , pbw , cbw ) ;
+                //etThread.traceF( tin0P , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 TN( tIdWindow , "" ) ; tIdWindow = TF3(++idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
             {
             else
             if( !pbw || !cbw ) break ;
 
-            fwsIn.getF( tinBaseP , pbw , cbw ) ;
+            fwsIn.getF( tin0P , pbw , cbw ) ;
             ZE( countT , cbw ) ;
             ZE( byteT* , pbw ) ;
         {
         while( !ether )
-        etThread.traceF( tinBaseP , T("sending begun") ) ;
+        etThread.traceF( tin0P , T("sending begun") ) ;
         ZE( count04T , cbDone ) ;
         byteT*     pbPayload = pbGram + sizeof( gramHeadS ) ;
         gramHeadS& head      = *(gramHeadS*)pbGram ;
         byteT      pbGram[ sizeof( gramHeadS ) + CBpAYLOAD ] ;
         ZE( countT , idWindow ) ;
 
-        fileWindowsC fwsIn( tinBaseP , etThread , tFileIn ) ;
+        fileWindowsC fwsIn( tin0P , etThread , tFileIn ) ;
 
-        sThrow.bindF( tinBaseP ) ;
-        socketC sThrow( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+        sThrow.bindF( tin0P ) ;
+        socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
     {
     ZE( countT , idGram ) ;
 
-    etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
+    etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
     ZE( sCountT , timeA2 ) ;
     ZE( countT  , timeA1 ) ;
 {
@@ -95,10 +95,10 @@ while( !ether )
 TN( tFileIn     , "///d/tmp/foo.ttt" ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 {
 while( !idPortCatch )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 TN( tb4 , "    " ) ;
 
 etThread.osThreadF( TaRG1( tmCatchF ) ) ;
@@ -107,10 +107,10 @@ TODO
 
 DONE( tmCatchF )
 }
-    sCatch.readF( tinBaseP , (const countT&)ether , pbFastBuffer , sizeof pbFastBuffer ) ;
+    sCatch.readF( tin0P , (const countT&)ether , pbFastBuffer , sizeof pbFastBuffer ) ;
 
-    idPortCatch = sCatch.bindF( tinBaseP ) ;
-    socketC sCatch( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    idPortCatch = sCatch.bindF( tin0P ) ;
+    socketC sCatch( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
     etThread.osThreadF( TaRG1( tmObeyF ) ) ;
 {
@@ -123,19 +123,19 @@ DONE( tmObeyF )
         Sleep( 0 ) ;
 
         }
-            //etThread.traceF( tinBaseP , T("backlog [thrown,processed,backlog]:    ")+TF2(cThrown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBacklog,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etThread.traceF( tin0P , T("backlog [thrown,processed,backlog]:    ")+TF2(cThrown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBacklog,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             //countT cBacklog = cThrown - cProcessed ;
             //cProcessed ++ ;
 
             }
-                if( pbw && cbw == head.len ) etThread.memCopyF( tinBaseP , pbw , pbPayload , head.len ) ;
+                if( pbw && cbw == head.len ) etThread.memCopyF( tin0P , pbw , pbPayload , head.len ) ;
 
-                fwsOut.getF( tinBaseP , pbw , cbw , head.len , head.off ) ;
+                fwsOut.getF( tin0P , pbw , cbw , head.len , head.off ) ;
                 ZE( countT , cbw ) ;
                 ZE( byteT* , pbw ) ;
             {
 
-            // etThread.traceF( tinBaseP , T("received [off,len]:    ")+TF2((countT)head.off,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(head.len,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            // etThread.traceF( tin0P , T("received [off,len]:    ")+TF2((countT)head.off,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(head.len,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             byteT* pbPayload = pbData + sizeof( gramHeadS ) ;
             gramHeadS& head = *(gramHeadS*)pbData ;
@@ -181,8 +181,8 @@ DONE( tmObeyF )
     countT& idGramLath = *(countT*)pbFastBuffer ;
     const countT cbMin = 0xc + ifcCBdATAGRAMmAX + sizeof( sockaddr_in6 ) ;
 
-    fileWindowsC fwsOut( tinBaseP , etThread , tFileOut , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
-    etThread.boxPutF( tinBaseP , tFileOut , "X" , 1 ) ;
+    fileWindowsC fwsOut( tin0P , etThread , tFileOut , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
+    etThread.boxPutF( tin0P , tFileOut , "X" , 1 ) ;
     TN( tFileOut     , "///d/tmp/foo.received.fws.ttt" ) ;
 
     etThread.osThreadF( TaRG1( tmComplainF ) ) ;
@@ -197,7 +197,7 @@ DONE( tmComplainF )
 
         }
             dec02AM( cComplaintPending ) ;
-            etThread.traceF( tinBaseP , t1+TF2(cComplaintPending,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , t1+TF2(cComplaintPending,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         while( cComplaintPending )
     {

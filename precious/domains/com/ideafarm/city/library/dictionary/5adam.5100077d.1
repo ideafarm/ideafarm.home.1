@@ -9,46 +9,46 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;                            
+etherC::loafIF( tin0P ) ;                            
 
-etThread.traceF( tinBaseP , T(USCORE127 " all filtered (end)") ) ;
-etThread.delF( tinBaseP , pcMaxOverride ) ;
-etThread.delF( tinBaseP , pcMinOverride ) ;
-etThread.delF( tinBaseP , pFlagsOverride ) ;
-etThread.delF( tinBaseP , pstt1m ) ;
+etThread.traceF( tin0P , T(USCORE127 " all filtered (end)") ) ;
+etThread.delF( tin0P , pcMaxOverride ) ;
+etThread.delF( tin0P , pcMinOverride ) ;
+etThread.delF( tin0P , pFlagsOverride ) ;
+etThread.delF( tin0P , pstt1m ) ;
 
 }
     }
-        etThread.delF( tinBaseP , psttm ) ;
-        etThread.traceF( tinBaseP , T("match: ")+T(psttm) ) ;
+        etThread.delF( tin0P , psttm ) ;
+        etThread.traceF( tin0P , T("match: ")+T(psttm) ) ;
         stMatch >> psttm ;
         ZE( strokeS* , psttm ) ;
     {
     while( stMatch )
 
     }
-        //etThread.traceF( tinBaseP , T("                ")+T("0              1               2               3") ) ;
-        //etThread.traceF( tinBaseP , T("                ")+T("123456789abcdef0123456789abcdef0123456789abcdef0") ) ;
-        //etThread.traceF( tinBaseP , T("                ")+tShortInspect ) ;
-        //etThread.traceF( tinBaseP , T("[idHit,idf]:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tin0P , T("                ")+T("0              1               2               3") ) ;
+        //etThread.traceF( tin0P , T("                ")+T("123456789abcdef0123456789abcdef0123456789abcdef0") ) ;
+        //etThread.traceF( tin0P , T("                ")+tShortInspect ) ;
+        //etThread.traceF( tin0P , T("[idHit,idf]:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        etThread.traceF( tinBaseP , tShortInspect ) ;
+        etThread.traceF( tin0P , tShortInspect ) ;
     {
     if( idHit )
 
-    countT idHit = etThread.strIdOptimizedClosureF( tinBaseP , &stMatch , flSTRmATCH_null , idf , sttq , psttRegExp , tShortInspect , flagsOptimize , pFlagsOverride , pcMinOverride , pcMaxOverride ) ;
+    countT idHit = etThread.strIdOptimizedClosureF( tin0P , &stMatch , flSTRmATCH_null , idf , sttq , psttRegExp , tShortInspect , flagsOptimize , pFlagsOverride , pcMinOverride , pcMaxOverride ) ;
     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
-    stackC stMatch( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stMatch( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
 
-    //etThread.traceF( tinBaseP , T("?               ")+tShortInspect ) ;
+    //etThread.traceF( tin0P , T("?               ")+tShortInspect ) ;
 
     }
-        etThread.delF( tinBaseP , psttShortInspect ) ;
-        etThread.delF( tinBaseP , psttPathInspect ) ;
+        etThread.delF( tin0P , psttShortInspect ) ;
+        etThread.delF( tin0P , psttPathInspect ) ;
         tShortInspect = T(psttShortInspect) ;
         tPathInspect  = T(psttPathInspect) ;
-        etThread.strBisectF( tinBaseP , psttPathInspect , psttShortInspect , psttc2 , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPathInspect ) ; ___( psttShortInspect ) ;
+        etThread.strBisectF( tin0P , psttPathInspect , psttShortInspect , psttc2 , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPathInspect ) ; ___( psttShortInspect ) ;
         ZE( strokeS* , psttShortInspect ) ;
         ZE( strokeS* , psttPathInspect ) ;
         TN( tSlash , "/" ) ;
@@ -57,21 +57,21 @@ etThread.delF( tinBaseP , pstt1m ) ;
     TN( tPathInspect , "" ) ;
 {
 FORsTRINGSiN2( pstt1m )
-etThread.diskFindFileOrDirOldF( tinBaseP , pstt1m , tPathLike+tStar , 0 , 0 , 0 , 0 ) ; ___( pstt1m ) ;
+etThread.diskFindFileOrDirOldF( tin0P , pstt1m , tPathLike+tStar , 0 , 0 , 0 , 0 ) ; ___( pstt1m ) ;
 TN( tb4 , "    " ) ;
 TN( tStar , "*" ) ;
-etThread.traceF( tinBaseP , T(USCORE127 " all filtered (begin)") ) ;
+etThread.traceF( tin0P , T(USCORE127 " all filtered (begin)") ) ;
 
 ZE( strokeS* , pstt1m ) ;
 
 }
-    etThread.delF( tinBaseP , psttd ) ;
-    etThread.traceF( tinBaseP , T("IPDOS (tm) regular expression:    ")+T(psttd) ) ;
-    etThread.strDumpStrokesIF( tinBaseP , psttd , psttRegExp ) ; ___( psttd ) ;
+    etThread.delF( tin0P , psttd ) ;
+    etThread.traceF( tin0P , T("IPDOS (tm) regular expression:    ")+T(psttd) ) ;
+    etThread.strDumpStrokesIF( tin0P , psttd , psttRegExp ) ; ___( psttd ) ;
     ZE( strokeS* , psttd ) ;
 {
 
-etThread.strPatternFromWildcardsMicrosoftF( tinBaseP , psttRegExp , flagsOptimize , pFlagsOverride , pcMinOverride , pcMaxOverride , tShortLike ) ; ___( psttRegExp ) ; ___( pFlagsOverride ) ; ___( pcMinOverride ) ; ___( pcMaxOverride ) ;
+etThread.strPatternFromWildcardsMicrosoftF( tin0P , psttRegExp , flagsOptimize , pFlagsOverride , pcMinOverride , pcMaxOverride , tShortLike ) ; ___( psttRegExp ) ; ___( pFlagsOverride ) ; ___( pcMinOverride ) ; ___( pcMaxOverride ) ;
 ZE( countT* , pcMaxOverride  ) ;
 ZE( countT* , pcMinOverride  ) ;
 ZE( flagsT* , pFlagsOverride ) ;
@@ -79,18 +79,18 @@ ZE( flagsT  , flagsOptimize  ) ;
 ZE( strokeS* , psttRegExp ) ;
 
 }
-    etThread.delF( tinBaseP , psttd ) ;
-    etThread.traceF( tinBaseP , T("wildcard expression:    \"")+tShortLike+T("\"    ")+T(psttd) ) ;
-    etThread.strDumpStrokesIF( tinBaseP , psttd , tShortLike ) ; ___( psttd ) ;
+    etThread.delF( tin0P , psttd ) ;
+    etThread.traceF( tin0P , T("wildcard expression:    \"")+tShortLike+T("\"    ")+T(psttd) ) ;
+    etThread.strDumpStrokesIF( tin0P , psttd , tShortLike ) ; ___( psttd ) ;
     ZE( strokeS* , psttd ) ;
 {
 
 }
-    etThread.delF( tinBaseP , psttShortLike ) ;
-    etThread.delF( tinBaseP , psttPathLike ) ;
+    etThread.delF( tin0P , psttShortLike ) ;
+    etThread.delF( tin0P , psttPathLike ) ;
     tShortLike = T(psttShortLike) ;
     tPathLike  = T(psttPathLike) ;
-    etThread.strBisectF( tinBaseP , psttPathLike , psttShortLike , tLike , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPathLike ) ; ___( psttShortLike ) ;
+    etThread.strBisectF( tin0P , psttPathLike , psttShortLike , tLike , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPathLike ) ; ___( psttShortLike ) ;
     ZE( strokeS* , psttShortLike ) ;
     ZE( strokeS* , psttPathLike ) ;
     TN( tSlash , "/" ) ;
@@ -99,15 +99,15 @@ TN( tShortLike , "" ) ;
 TN( tPathLike , "" ) ;
 
 }
-    etThread.traceF( tinBaseP , T(USCORE127 " like (end)") ) ;
-    etThread.delF( tinBaseP , pstt1m ) ;
+    etThread.traceF( tin0P , T(USCORE127 " like (end)") ) ;
+    etThread.delF( tin0P , pstt1m ) ;
     }
-        etThread.traceF( tinBaseP , psttc1 ) ;
+        etThread.traceF( tin0P , psttc1 ) ;
     {
     FORsTRINGSiN1( pstt1m )
-    etThread.diskFindFileOrDirOldF( tinBaseP , pstt1m , tLike , 0 , 0 , 0 , 0 ) ; ___( pstt1m ) ;
+    etThread.diskFindFileOrDirOldF( tin0P , pstt1m , tLike , 0 , 0 , 0 , 0 ) ; ___( pstt1m ) ;
     ZE( strokeS* , pstt1m ) ;
-    etThread.traceF( tinBaseP , T(USCORE127 " like (begin)") ) ;
+    etThread.traceF( tin0P , T(USCORE127 " like (begin)") ) ;
 {
 
 //TN( tLike , "///d/tmp/wildcard.test/*.batonc.*" ) ;

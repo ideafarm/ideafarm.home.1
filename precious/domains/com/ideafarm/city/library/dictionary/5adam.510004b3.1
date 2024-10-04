@@ -10,15 +10,15 @@
 REST
 
 }
-    etThread.loafIF( tinBaseP ) ;
-    while( cTries -- ) etThread.osThreadF( tinBaseP , countTC() , tmGorillaF ) ;
+    etThread.loafIF( tin0P ) ;
+    while( cTries -- ) etThread.osThreadF( tin0P , countTC() , tmGorillaF ) ;
     countT cTries = 0x1 ;
-    etThread.osSleepF( tinBaseP , TOCK * 8 ) ;
+    etThread.osSleepF( tin0P , TOCK * 8 ) ;
 
-    //{ countT idAdam = 0x4010418 ; etThread.ifcHireF( tinBaseP , T("gorilla http") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }//U::
+    //{ countT idAdam = 0x4010418 ; etThread.ifcHireF( tin0P , T("gorilla http") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }//U::
     TELL( "hiring 814" )
 
-    stateS state( tinBaseP , etThread ) ;
+    stateS state( tin0P , etThread ) ;
 {
 
 TODO
@@ -26,20 +26,20 @@ TODO
 DONE( tmGorillaF )
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK * 4 ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK * 4 ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
-    else etThread.ifcSayF( tinBaseP , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBad)+T("; requst for ")+tFile+T(" fulfilled aok\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+    else etThread.ifcSayF( tin0P , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBad)+T("; requst for ")+tFile+T(" fulfilled aok\r\n") , flSAY_APPEND | flSAY_LOG ) ;
     }
-        etThread.ifcSayF( tinBaseP , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBad)+T("; requst for ")+tFile+T(" FAILED ********\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+        etThread.ifcSayF( tin0P , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBad)+T("; requst for ")+tFile+T(" FAILED ********\r\n") , flSAY_APPEND | flSAY_LOG ) ;
         cbFileWoth = cbFile ;
         inc02AM( cBad ) ;
-        *((tin9S&)tinBaseP).zEtScratch = 0 ;
+        *((tin9S&)tin0P).zEtScratch = 0 ;
     {
-    if( *((tin9S&)tinBaseP).zEtScratch || cbFile != cbFileWoth )
+    if( *((tin9S&)tin0P).zEtScratch || cbFile != cbFileWoth )
     if( !cbFileWoth  ) cbFileWoth  = cbFile ;   
-    { ZE( byteT* , pbFile  ) ; ((tin9S&)tinBaseP).zEtScratch->boxGetShadowF( tinBaseP , pbFile  , cbFile  , tFile  ) ; ___( pbFile  ) ; ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , pbFile  ) ; }
+    { ZE( byteT* , pbFile  ) ; ((tin9S&)tin0P).zEtScratch->boxGetShadowF( tin0P , pbFile  , cbFile  , tFile  ) ; ___( pbFile  ) ; ((tin9S&)tin0P).zEtScratch->delF( tin0P , pbFile  ) ; }
     ZE( countT , cbFile ) ;
     countT idMe = 1 + incv02AM( idTrial ) ;
 {

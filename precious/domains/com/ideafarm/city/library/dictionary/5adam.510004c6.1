@@ -9,25 +9,25 @@
 
 REST
 
-ether.osSleepF( tinBaseP , TOCK * 4 ) ;
+ether.osSleepF( tin0P , TOCK * 4 ) ;
 
-while( cTries -- ) sockd.writeF( tinBaseP , ifcPORToLD2_TIMErEMAINING , nicNameC() , pbq , sizeof pbq ) ;
+while( cTries -- ) sockd.writeF( tin0P , ifcPORToLD2_TIMErEMAINING , nicNameC() , pbq , sizeof pbq ) ;
 countT cTries = 8 ;
 
-etThread.osThreadF( tinBaseP , countTC() , tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd ) ;
+etThread.osThreadF( tin0P , countTC() , tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd ) ;
 
-sockd.bindF( tinBaseP ) ;
-socketC sockd( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+sockd.bindF( tin0P ) ;
+socketC sockd( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
-etThread.memCopyF( tinBaseP , pbq + sizeof( countT ) , (byteT*)&qq , sizeof qq ) ;
+etThread.memCopyF( tin0P , pbq + sizeof( countT ) , (byteT*)&qq , sizeof qq ) ;
 *(countT*)pbq = 1 ;
 byteT pbq[ sizeof( countT ) + sizeof qq ] ;
 
 }
-        etThread.ifcJobF( tinBaseP , stCourses , 0x4010120 , sOrder , stOrders , T("!addTime") ) ;
-        stOrders << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
-        stackC stOrders(  tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-        stackC stCourses( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+        etThread.ifcJobF( tin0P , stCourses , 0x4010120 , sOrder , stOrders , T("!addTime") ) ;
+        stOrders << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+        stackC stOrders(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+        stackC stCourses( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
 
         sOrder << (countT)0 ;
         sOrder << (countT)( TICK * 0x80 ) ;
@@ -35,11 +35,11 @@ byteT pbq[ sizeof( countT ) + sizeof qq ] ;
         sOrder << qq.idComputer ;
         sOrder << (strokeS*)T("!addTime") ;
         sOrder << ifcIDcMDjOBoRDER_NAMED ;
-        soulC sOrder( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC sOrder( tin0P , TAG( TAGiDnULL ) ) ;
 {
 
 qq.idType = 1 ;
-qq.idComputer = etThread.diskIdF( tinBaseP , T("///d/") ) ;
+qq.idComputer = etThread.diskIdF( tin0P , T("///d/") ) ;
 queryTimeRemainingS qq ;
 
 TODO
@@ -47,14 +47,14 @@ TODO
 DONE( tmCatchF )
 }
     }
-        etThread.delF( tinBaseP , pbr ) ;
+        etThread.delF( tin0P , pbr ) ;
 
         }
             }
                 }
                     break ;
                     }
-                        etThread.strokeF( tinBaseP , TF3(idType,flFORMAT_UNSIGNED,9)+TT(timeRemaining.time1,timeRemaining.time2)+T("\r\n") ) ;
+                        etThread.strokeF( tin0P , TF3(idType,flFORMAT_UNSIGNED,9)+TT(timeRemaining.time1,timeRemaining.time2)+T("\r\n") ) ;
                         timeS timeRemaining = *(timeS*)( pbr + sizeof( countT ) ) ;
                     {
                     if( cbr == sizeof( countT ) + sizeof( timeS ) )
@@ -66,13 +66,13 @@ DONE( tmCatchF )
         {
         if( pbr && cbr >= sizeof( countT ) )
     
-        sockd.readF( tinBaseP , pbr , cbr , idp , nnPeer ) ; ___( pbr ) ;
+        sockd.readF( tin0P , pbr , cbr , idp , nnPeer ) ; ___( pbr ) ;
         nicNameC nnPeer ;
         ZE( countT , idp ) ;
         ZE( countT , cbr ) ;
         ZE( byteT* , pbr ) ;
     {
-    while( !ether && !sockd.etherF( tinBaseP ) )
+    while( !ether && !sockd.etherF( tin0P ) )
 
     socketC& sockd = *(socketC*)pTaskP->c1 ;
 {

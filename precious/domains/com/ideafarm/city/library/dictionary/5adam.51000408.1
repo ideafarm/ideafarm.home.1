@@ -11,16 +11,16 @@
 //DISCARDABLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
-    ether.osSleepF( tinBaseP , TUCK * 0x20 ) ;
+    ether.osSleepF( tin0P , TUCK * 0x20 ) ;
 
     }
-        etThread.delF( tinBaseP , pc8i ) ;
+        etThread.delF( tin0P , pc8i ) ;
         }
-            etThread.delF( tinBaseP , psttThreadName ) ;
-            etThread.strokeF( tinBaseP , TF3(pc8i->c1,0,9)+TF3(pc8i->c2,0,9)+TF3(pc8i->c3,0,9)+TF3(pc8i->c4,0,9)+T(psttThreadName)+T("\r\n") ) ;
+            etThread.delF( tin0P , psttThreadName ) ;
+            etThread.strokeF( tin0P , TF3(pc8i->c1,0,9)+TF3(pc8i->c2,0,9)+TF3(pc8i->c3,0,9)+TF3(pc8i->c4,0,9)+T(psttThreadName)+T("\r\n") ) ;
             strokeS* psttThreadName = (strokeS*)pc8i->c5 ;
         {
         if( pc8i )
@@ -28,28 +28,28 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         ZE( count8S* , pc8i ) ;
     {
     while( stLines )
-    etThread.strokeF( tinBaseP , T("\f") ) ;
+    etThread.strokeF( tin0P , T("\f") ) ;
 
-    etThread.osThreadSwitchingOnF( tinBaseP ) ;
-    ungrabF( tinBaseP , ps.grab_off_aIdaTin ) ;
+    etThread.osThreadSwitchingOnF( tin0P ) ;
+    ungrabF( tin0P , ps.grab_off_aIdaTin ) ;
     }
         }
             }
-                stLines.sinkF( tinBaseP , countTC() , pc8i , 0 , subtract_a040104_F ) ;
+                stLines.sinkF( tin0P , countTC() , pc8i , 0 , subtract_a040104_F ) ;
                 pc8i->c5 = (countT)psttThreadName ;
                 pc8i->c4 = tin.idStep   ;
                 pc8i->c3 = tin.idiOwner ;
                 pc8i->c2 = tin.idThread ;
                 pc8i->c1 = tin.idClient ;
 
-                etThread.strMakeF( tinBaseP , LF , psttThreadName , T(tin.postThreadName) ) ; ___( psttThreadName ) ;
+                etThread.strMakeF( tin0P , LF , psttThreadName , T(tin.postThreadName) ) ; ___( psttThreadName ) ;
                 ZE( strokeS* , psttThreadName ) ;
             {
             if( pc8i )
-            etThread.newF( tinBaseP , LF , pc8i ) ; ___( pc8i ) ;
+            etThread.newF( tin0P , LF , pc8i ) ; ___( pc8i ) ;
             ZE( count8S* , pc8i ) ;
 
-            tin0S& tinBase = *(tin0S*)(byteT*)ap_artmentOldC( tinBaseP , pcIdaTin[ idIda ] ) ;
+            tin0S& tinBase = *(tin0S*)(byteT*)ap_artmentOldC( tin0P , pcIdaTin[ idIda ] ) ;
 
             if( !pcIdaTin[ idIda ] ) break ;
         {
@@ -57,13 +57,13 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         countT  ccIdaTin = *pcIdaTin ;
     {
     if( pcIdaTin )
-    countT* pcIdaTin = (countT*)(byteT*)ap_artmentOldC( tinBaseP , ps.off_aIdaTin ) ;
-    grabF( tinBaseP , ps.grab_off_aIdaTin ) ;
-    etThread.osThreadSwitchingOffF( tinBaseP ) ; // PREVENTS ANOTHER THREAD FROM CREATING A DEBUG EVENT THAT DEADLOCKS ON ps.grab_off_aIdaTin
+    countT* pcIdaTin = (countT*)(byteT*)ap_artmentOldC( tin0P , ps.off_aIdaTin ) ;
+    grabF( tin0P , ps.grab_off_aIdaTin ) ;
+    etThread.osThreadSwitchingOffF( tin0P ) ; // PREVENTS ANOTHER THREAD FROM CREATING A DEBUG EVENT THAT DEADLOCKS ON ps.grab_off_aIdaTin
 {
 while( !ether && !etThread )
-stackC stLines( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count8S ) ;
-poolOld SideS& ps = poolC::poolOldRootIF( tinBaseP ) ;
+stackC stLines( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count8S ) ;
+poolOld SideS& ps = poolC::poolOldRootIF( tin0P ) ;
 ZE( countT , idTry ) ;
 
 TODO
@@ -71,11 +71,11 @@ TODO
 }
     return scSgn ;
     #endif
-        if( ((tin9S&)tinBaseP).fingerprint && c1P && c2P && pEtherP && c3P ) ;
+        if( ((tin9S&)tin0P).fingerprint && c1P && c2P && pEtherP && c3P ) ;
     #else
         if( c3P ) ;
         }
-            scSgn = ether.strCompareF( tinBaseP , (countT*)c1P , (countT*)c2P , 2 ) ;
+            scSgn = ether.strCompareF( tin0P , (countT*)c1P , (countT*)c2P , 2 ) ;
             etherC& ether = *(etherC*)pEtherP ;
         {
         if( pEtherP )
@@ -87,7 +87,7 @@ TODO
     {
     IFbEcAREFUL
 {
-countT subtract_a040104_F( tin0S& tinBaseP , countT& pEtherP , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_a040104_F( tin0S& tin0P , countT& pEtherP , countT& c1P , countT& c2P , countT& c3P )
 
 /*1*/WAKEhIDE( "utility.monitor.threads" )/*1*/
 /**/

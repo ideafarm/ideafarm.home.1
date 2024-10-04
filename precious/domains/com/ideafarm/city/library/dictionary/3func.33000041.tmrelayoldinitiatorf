@@ -8,83 +8,83 @@
 
 
 DONE( tmRelayOldInitiatorF )
-((tin9S&)tinBaseP).idPhase2 = 0 ;
+((tin9S&)tin0P).idPhase2 = 0 ;
 }
     }
-        while( cTries -- && ( !bRoot || ( cGossipPopped == cGossipInP ) ) ) { ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x80 ) ; }
+        while( cTries -- && ( !bRoot || ( cGossipPopped == cGossipInP ) ) ) { ++ s ; ether.osSleepF( tin0P , TUCK * 0x80 ) ; }
         //P: A ROOT RELAY WILL CONTINUE IMMEDIATELY TO NEXT CYCLE IF IT HAS RECEIVED NEW GOSSIP
         countT cTries = /*U:: TUCK / 0x10 */ 1 ; //U::TO FIND A BUG
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         TELL( "napping" )
         //CONoUTrAW( "tmRelayOldInitiatorF: 0 napping\r\n" ) ;
 
         }
             }
                 DEL( psBag ) ;
-                relayOldC::popIF( tinBaseP , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBag , stIdptOpenP , stIdptGossipP , idptP ) ;
-                relayOldC::hdrBagIF( tinBaseP , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_UP|flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTnULL ) ;
+                relayOldC::popIF( tin0P , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBag , stIdptOpenP , stIdptGossipP , idptP ) ;
+                relayOldC::hdrBagIF( tin0P , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_UP|flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTnULL ) ;
             {
             if( psBag )
-            soulC* psBag = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
+            soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
 
         { //THIS IS TO STIMULATE THE POP STACKS SO THAT THE POP CLIENTS WILL KEEP THEIR CONNECTIONS CURRENT
         //CONoUTrAW( "tmRelayOldInitiatorF: 1 pop a null bag\r\n" ) ;
 
         }
-            soul.removeAllF( tinBaseP ) ;
-            relayOldC::popIF( tinBaseP , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , soul , stIdptOpenP , stIdptGossipP , idptP ) ;
+            soul.removeAllF( tin0P ) ;
+            relayOldC::popIF( tin0P , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , soul , stIdptOpenP , stIdptGossipP , idptP ) ;
             cPops ++ ;
             static countT cPops ; //U::CONJ: NEEDS TO BE VISIBLE TO SOME OTHER SNIPPET
         {
         if( soul ) //U::CONJ: BUG: IS USING operator byteT*
         //CONoUTrAW( "tmRelayOldInitiatorF: 2 pop the soul\r\n" ) ;
 
-        if( bHelloHandle ) relayOldC::helloToHandleIF( tinBaseP , idptP , idSerialLathHeaderP ) ;
+        if( bHelloHandle ) relayOldC::helloToHandleIF( tin0P , idptP , idSerialLathHeaderP ) ;
 
         //CONoUTrAW( "tmRelayOldInitiatorF: 3 say hello to handle\r\n" ) ;
 
         }
             idptHandleLag = idptHandleCopy ;
             if( idptHandleCopy && idptHandleCopy != idptHandleLag && idptHandleCopy != idptP ) bHelloHandle = 1 ; //P: ALL RELAYS SAY HELLO TO A NEW HANDLE RELAY
-            portTimeC idptHandleCopy = relayOldC::handleQueryIF( tinBaseP ) ;
+            portTimeC idptHandleCopy = relayOldC::handleQueryIF( tin0P ) ;
         {
         //CONoUTrAW( "tmRelayOldInitiatorF: 4 set bHelloHandle\r\n" ) ;
 
         }
-            swsIdptMediatorP.ungrabF( tinBaseP ) ;
-            swsIdptMediatorAltP.ungrabF( tinBaseP ) ;
+            swsIdptMediatorP.ungrabF( tin0P ) ;
+            swsIdptMediatorAltP.ungrabF( tin0P ) ;
 
             THREADmODE2rESTORE
-            swsIdptMediatorP.freeAllF( tinBaseP ) ;
+            swsIdptMediatorP.freeAllF( tin0P ) ;
 
             }
                 }
                     while( !stIdptOpenP.third && ~hDown ) ;
                     }
-                        swsIdptMediatorP.extractF( 0 , tinBaseP ) ;
-                        swsIdptMediatorAltP.sinkF( tinBaseP , countTC() , (byteT*)&idptm , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
-                        portTimeC& idptm = *(portTimeC*)&swsIdptMediatorP.downF( tinBaseP , hDown ) ;
+                        swsIdptMediatorP.extractF( 0 , tin0P ) ;
+                        swsIdptMediatorAltP.sinkF( tin0P , countTC() , (byteT*)&idptm , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
+                        portTimeC& idptm = *(portTimeC*)&swsIdptMediatorP.downF( tin0P , hDown ) ;
                     {
                     do
-                    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                    //etThread.strokeF( tinBaseP , T("pouring ")+TF1(swsIdptMediatorP)+T(" registered mediator cells of adam ")+TF1(idAdamMediatorP)+T("\r\n") ) ;
+                    handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    //etThread.strokeF( tin0P , T("pouring ")+TF1(swsIdptMediatorP)+T(" registered mediator cells of adam ")+TF1(idAdamMediatorP)+T("\r\n") ) ;
                 {
                 if( swsIdptMediatorP )
-                idAdamMediatorP = swsIdptMediatorP.leverF( tinBaseP , idf ) ;
+                idAdamMediatorP = swsIdptMediatorP.leverF( tin0P , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swsIdptMediatorP.cFlavorsF( tinBaseP ) ;
+            countT cFlavors = swsIdptMediatorP.cFlavorsF( tin0P ) ;
 
-            swsIdptMediatorAltP.freeAllF( tinBaseP ) ;
+            swsIdptMediatorAltP.freeAllF( tin0P ) ;
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
-            swsIdptMediatorAltP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-            swsIdptMediatorP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            swsIdptMediatorAltP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+            swsIdptMediatorP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
         if( !( idCycle % 0x8 ) ) //02->001
         //CONoUTrAW( "tmRelayOldInitiatorF: 5 pour mediator list\r\n" ) ;
 
-        relayOldC::handleRegisterMeIfIF( tinBaseP , idptP ) ; //P: A RELAY WILL GRAB A HANDLE VACANCY
+        relayOldC::handleRegisterMeIfIF( tin0P , idptP ) ; //P: A RELAY WILL GRAB A HANDLE VACANCY
         UNGRABrELAYlISTS
         //CONoUTrAW( "tmRelayOldInitiatorF: 6 register myself as handle\r\n" ) ;
 
@@ -92,14 +92,14 @@ DONE( tmRelayOldInitiatorF )
         //}
         //    while( !stIdptPopClientP.third && ~hDown ) ;
         //    }
-        //        //etThread.strokeF( tinBaseP , T(nn)+tcol+T(idPort)+tcol+TT(tt.time1,tt.time2)+T(!hDown?"\r\n":" , ") ) ;
+        //        //etThread.strokeF( tin0P , T(nn)+tcol+T(idPort)+tcol+TT(tt.time1,tt.time2)+T(!hDown?"\r\n":" , ") ) ;
         //        const timeS&    tt     = idpt ;
         //        const nicNameC& nn     = (const nicNameC&)(const portC&)idpt ;
         //        countT          idPort = idpt ;
-        //        portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tinBaseP , hDown ) ;
+        //        portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tin0P , hDown ) ;
         //    {
         //    do
-        //    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        //    handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         //    TN( tcol , ":" ) ;
         //{
         //if( stIdptOpenP )
@@ -110,30 +110,30 @@ DONE( tmRelayOldInitiatorF )
             }
                 bHelloHandle = 1 ; //P: A NONROOT RELAY THAT HAS NOT RECEIVED A PING LATELY WILL SAY HELLO TO HANDLE
 
-                stIdptOpenP.extractF( 0 , tinBaseP ) ;
+                stIdptOpenP.extractF( 0 , tin0P ) ;
                 cLooksForNewPingP = 0 ;
             {
             else if( incv02AM( cLooksForNewPingP ) > 4 )
             }
-                relayOldC::myListIF( tinBaseP , soul , stIdptOpenP ) ;
-                relayOldC::myListIF( tinBaseP , soul , stIdptGossipP ) ;
-                relayOldC::hdrBagIF( tinBaseP , soul , idptP , idSerialLathHeaderP , flOLDrELAYpOP_UP , ifcOLDiDtYPEbAG_CLIENTpOPpING ) ;
-                //etThread.traceF( tinBaseP , T("loading ifcOLDiDtYPEbAG_CLIENTpOPpING bag [cNodesOpen,cNodesGossip]:    ")+TF2(stIdptOpenP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(stIdptGossipP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                relayOldC::myListIF( tin0P , soul , stIdptOpenP ) ;
+                relayOldC::myListIF( tin0P , soul , stIdptGossipP ) ;
+                relayOldC::hdrBagIF( tin0P , soul , idptP , idSerialLathHeaderP , flOLDrELAYpOP_UP , ifcOLDiDtYPEbAG_CLIENTpOPpING ) ;
+                //etThread.traceF( tin0P , T("loading ifcOLDiDtYPEbAG_CLIENTpOPpING bag [cNodesOpen,cNodesGossip]:    ")+TF2(stIdptOpenP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(stIdptGossipP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                 }
                     THREADmODE2rESTORE
                     while( !stIdptGossipP.third && ~hDown ) ;
                     }
                         }
-                            relayOldC::sortOpenIF( tinBaseP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
-                            if( stIdptGossipP( (byteT*)&idptTest , subtractIdPortsF  , - 1                    ) ) stIdptGossipP.extractF( 0 , tinBaseP ) ;
-                            if( stIdptOpenP(   (byteT*)&idptTest , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tinBaseP ) ;
+                            relayOldC::sortOpenIF( tin0P , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
+                            if( stIdptGossipP( (byteT*)&idptTest , subtractIdPortsF  , - 1                    ) ) stIdptGossipP.extractF( 0 , tin0P ) ;
+                            if( stIdptOpenP(   (byteT*)&idptTest , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tin0P ) ;
                         {
-                        if( !relayOldC::testIF( tinBaseP , idptP , idSerialLathHeaderP , idptTest ) )
-                        portTimeC& idptTest = *(portTimeC*)&stIdptGossipP.downF( tinBaseP , hDown ) ;
+                        if( !relayOldC::testIF( tin0P , idptP , idSerialLathHeaderP , idptTest ) )
+                        portTimeC& idptTest = *(portTimeC*)&stIdptGossipP.downF( tin0P , hDown ) ;
                     {
                     do
-                    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                 {
                 if( stIdptGossipP )
@@ -141,9 +141,9 @@ DONE( tmRelayOldInitiatorF )
                 //TEST ALL GOSSIPPED RELAYS
 
                 }
-                    relayOldC::sortOpenIF( tinBaseP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
-                    if( stIdptGossipP( (byteT*)&idptAbsent5 , subtractIdPortsF  , - 1                    ) ) stIdptGossipP.extractF( 0 , tinBaseP ) ;
-                    if( stIdptOpenP(   (byteT*)&idptAbsent5 , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tinBaseP ) ;
+                    relayOldC::sortOpenIF( tin0P , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
+                    if( stIdptGossipP( (byteT*)&idptAbsent5 , subtractIdPortsF  , - 1                    ) ) stIdptGossipP.extractF( 0 , tin0P ) ;
+                    if( stIdptOpenP(   (byteT*)&idptAbsent5 , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ) stIdptOpenP.extractF(   0 , tin0P ) ;
                     //P: A RELAY THAT THINKS IT IS ROOT WILL DELIST AN ABSENT RELAY THAT IT EXPECTS TO BE AT ITS LEFT
                 {
                 if( idptAbsent5 )
@@ -153,8 +153,8 @@ DONE( tmRelayOldInitiatorF )
                 //U: I DO NOT KNOW WHY THIS CAUSES CYCLING IF DONE EVERY CYCLE
 
                 }
-                    if( idpth && !relayOldC::bListedIF( tinBaseP , stIdptOpenP , stIdptGossipP , idpth ) ) stIdptOpenP.sinkF( tinBaseP , countTC() , (byteT*)&idpth , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ; //P: A ROOT RELAY ALWAYS KNOWS ABOUT A HANDLE RELAY
-                    portTimeC idpth = relayOldC::handleQueryIF( tinBaseP ) ;
+                    if( idpth && !relayOldC::bListedIF( tin0P , stIdptOpenP , stIdptGossipP , idpth ) ) stIdptOpenP.sinkF( tin0P , countTC() , (byteT*)&idpth , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ; //P: A ROOT RELAY ALWAYS KNOWS ABOUT A HANDLE RELAY
+                    portTimeC idpth = relayOldC::handleQueryIF( tin0P ) ;
                 {
             {
             if( *pnRoot == idptP )
@@ -196,41 +196,41 @@ DONE( tmRelayOldInitiatorF )
             GOSSIPaBSENTrELAY( 2 )
             GOSSIPaBSENTrELAY( 1 )
 
-            if( idptAbsent5 ) etThread.traceF( tinBaseP , T("absent [idptAbsent5]:    ")+T((nicNameC&)idptAbsent5)+T(" ( ")+TF2((countT)idptAbsent5,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
-            if( idptAbsent4 ) etThread.traceF( tinBaseP , T("absent [idptAbsent4]:    ")+T((nicNameC&)idptAbsent4)+T(" ( ")+TF2((countT)idptAbsent4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
-            if( idptAbsent3 ) etThread.traceF( tinBaseP , T("absent [idptAbsent3]:    ")+T((nicNameC&)idptAbsent3)+T(" ( ")+TF2((countT)idptAbsent3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
-            if( idptAbsent2 ) etThread.traceF( tinBaseP , T("absent [idptAbsent2]:    ")+T((nicNameC&)idptAbsent2)+T(" ( ")+TF2((countT)idptAbsent2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
-            if( idptAbsent1 ) etThread.traceF( tinBaseP , T("absent [idptAbsent1]:    ")+T((nicNameC&)idptAbsent1)+T(" ( ")+TF2((countT)idptAbsent1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
+            if( idptAbsent5 ) etThread.traceF( tin0P , T("absent [idptAbsent5]:    ")+T((nicNameC&)idptAbsent5)+T(" ( ")+TF2((countT)idptAbsent5,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
+            if( idptAbsent4 ) etThread.traceF( tin0P , T("absent [idptAbsent4]:    ")+T((nicNameC&)idptAbsent4)+T(" ( ")+TF2((countT)idptAbsent4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
+            if( idptAbsent3 ) etThread.traceF( tin0P , T("absent [idptAbsent3]:    ")+T((nicNameC&)idptAbsent3)+T(" ( ")+TF2((countT)idptAbsent3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
+            if( idptAbsent2 ) etThread.traceF( tin0P , T("absent [idptAbsent2]:    ")+T((nicNameC&)idptAbsent2)+T(" ( ")+TF2((countT)idptAbsent2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
+            if( idptAbsent1 ) etThread.traceF( tin0P , T("absent [idptAbsent1]:    ")+T((nicNameC&)idptAbsent1)+T(" ( ")+TF2((countT)idptAbsent1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
     
             }
                 }
                     while( !stIdptPopClientP.third && ~hDown ) ;
                     }
-                        if( stRelayAbsent5( (byteT*)&idpt , subtractIdPortsF , - 1 ) ) stRelayAbsent5.extractF( 0 , tinBaseP ) ;
-                        if( stRelayAbsent4( (byteT*)&idpt , subtractIdPortsF , - 1 ) ) stRelayAbsent4.extractF( 0 , tinBaseP ) ;
-                        if( stRelayAbsent3( (byteT*)&idpt , subtractIdPortsF , - 1 ) ) stRelayAbsent3.extractF( 0 , tinBaseP ) ;
-                        if( stRelayAbsent2( (byteT*)&idpt , subtractIdPortsF , - 1 ) ) stRelayAbsent2.extractF( 0 , tinBaseP ) ;
-                        if( stRelayAbsent1( (byteT*)&idpt , subtractIdPortsF , - 1 ) ) stRelayAbsent1.extractF( 0 , tinBaseP ) ;
-                        portTimeC& idpt = *(portTimeC*)&stIdptPopClientP.downF( tinBaseP , hDown ) ;
+                        if( stRelayAbsent5( (byteT*)&idpt , subtractIdPortsF , - 1 ) ) stRelayAbsent5.extractF( 0 , tin0P ) ;
+                        if( stRelayAbsent4( (byteT*)&idpt , subtractIdPortsF , - 1 ) ) stRelayAbsent4.extractF( 0 , tin0P ) ;
+                        if( stRelayAbsent3( (byteT*)&idpt , subtractIdPortsF , - 1 ) ) stRelayAbsent3.extractF( 0 , tin0P ) ;
+                        if( stRelayAbsent2( (byteT*)&idpt , subtractIdPortsF , - 1 ) ) stRelayAbsent2.extractF( 0 , tin0P ) ;
+                        if( stRelayAbsent1( (byteT*)&idpt , subtractIdPortsF , - 1 ) ) stRelayAbsent1.extractF( 0 , tin0P ) ;
+                        portTimeC& idpt = *(portTimeC*)&stIdptPopClientP.downF( tin0P , hDown ) ;
                         //U: ISSUE: A CLIENT IS NOT REALLY ABSENT AS RIGHT IF IT IS PRESENT AS DOWN
                         //U: COUNT THE CLIENT AS PRESENT HERE ONLY IF THE CLIENT AGREES ABOUT THE TYPE OF WORK IT IS DOING
                         //P: RELAY WILL COUNT A CLIENT AS "PRESENT" EVEN IF THE CLIENT DISAGREES ABOUT THE TYPE OF WORK IT IS CONNECTED TO DO
                     {
                     do
-                    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( stIdptPopClientP )
             {
-            relayOldC::portTimeClientsExpectedIF( tinBaseP , stRelayAbsent5 , stIdptOpenP , stIdptGossipP , idptP , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ;
-            relayOldC::portTimeClientsExpectedIF( tinBaseP , stRelayAbsent4 , stIdptOpenP , stIdptGossipP , idptP , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ;
-            relayOldC::portTimeClientsExpectedIF( tinBaseP , stRelayAbsent3 , stIdptOpenP , stIdptGossipP , idptP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ;
-            relayOldC::portTimeClientsExpectedIF( tinBaseP , stRelayAbsent2 , stIdptOpenP , stIdptGossipP , idptP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ;
-            relayOldC::portTimeClientsExpectedIF( tinBaseP , stRelayAbsent1 , stIdptOpenP , stIdptGossipP , idptP , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ;
-            stRelayAbsent5.purgeF( tinBaseP ) ;
-            stRelayAbsent4.purgeF( tinBaseP ) ;
-            stRelayAbsent3.purgeF( tinBaseP ) ;
-            stRelayAbsent2.purgeF( tinBaseP ) ;
-            stRelayAbsent1.purgeF( tinBaseP ) ;
+            relayOldC::portTimeClientsExpectedIF( tin0P , stRelayAbsent5 , stIdptOpenP , stIdptGossipP , idptP , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ;
+            relayOldC::portTimeClientsExpectedIF( tin0P , stRelayAbsent4 , stIdptOpenP , stIdptGossipP , idptP , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ;
+            relayOldC::portTimeClientsExpectedIF( tin0P , stRelayAbsent3 , stIdptOpenP , stIdptGossipP , idptP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ;
+            relayOldC::portTimeClientsExpectedIF( tin0P , stRelayAbsent2 , stIdptOpenP , stIdptGossipP , idptP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ;
+            relayOldC::portTimeClientsExpectedIF( tin0P , stRelayAbsent1 , stIdptOpenP , stIdptGossipP , idptP , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ;
+            stRelayAbsent5.purgeF( tin0P ) ;
+            stRelayAbsent4.purgeF( tin0P ) ;
+            stRelayAbsent3.purgeF( tin0P ) ;
+            stRelayAbsent2.purgeF( tin0P ) ;
+            stRelayAbsent1.purgeF( tin0P ) ;
             bRollTaken = 1 ;
         {
         if( !( ++ idCycle % 0x2 ) )
@@ -241,23 +241,23 @@ DONE( tmRelayOldInitiatorF )
         portTimeC idptAbsent2 ;
         portTimeC idptAbsent1 ;
         ZE( boolT , bRollTaken ) ;
-        //etThread.traceF( tinBaseP , T("8 look for absentees") ) ;
+        //etThread.traceF( tin0P , T("8 look for absentees") ) ;
     {
     while( !etThread && !stIdptOpenP.third && !ether && !bQuitP )
     portTimeC idptHandleLag ;
     ZE( countT , idCycle ) ;
-    stackC stIdMe( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
-    stackC stRelayAbsent5Lag( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    stackC stRelayAbsent4Lag( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    stackC stRelayAbsent3Lag( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    stackC stRelayAbsent2Lag( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    stackC stRelayAbsent1Lag( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    stackC stRelayAbsent5( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    stackC stRelayAbsent4( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    stackC stRelayAbsent3( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    stackC stRelayAbsent2( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    stackC stRelayAbsent1( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    soulC soul( tinBaseP , TAG( TAGiDnULL ) ) ;
+    stackC stIdMe( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stRelayAbsent5Lag( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stRelayAbsent4Lag( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stRelayAbsent3Lag( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stRelayAbsent2Lag( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stRelayAbsent1Lag( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stRelayAbsent5( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stRelayAbsent4( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stRelayAbsent3( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stRelayAbsent2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stRelayAbsent1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    soulC soul( tin0P , TAG( TAGiDnULL ) ) ;
 
     boolT&    bReadyP           =     *(boolT*)pTaskP->c6 ;
     countT&   cLooksForNewPingP =    *(countT*)pTaskP->c5 ;
@@ -265,7 +265,7 @@ DONE( tmRelayOldInitiatorF )
     RELAYiNFOtm
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 )
-((tin9S&)tinBaseP).idPhase2 = 1 ;
+((tin9S&)tin0P).idPhase2 = 1 ;
 /*1*/TASK( tmRelayOldInitiatorF )/*1*/
 /**/
 */

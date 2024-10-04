@@ -11,43 +11,43 @@
     return flagsRC ;
 
     UNGRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
-    listC::deleteIF( tinBaseP , hRecordP , pczFieldP , flLISTdELETE_IFeMPTY , idGrabLayerP ) ;
+    listC::deleteIF( tin0P , hRecordP , pczFieldP , flLISTdELETE_IFeMPTY , idGrabLayerP ) ;
 
     }
         }
-            ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP = saveRetained  ;
+            ((tin9S&)tin0P).ta.retained.u.listWalk.walk.flagsWalkP = saveRetained  ;
 
             POPtINaRGS
     
-            flagsRC |= field.walkF( tinBaseP , idGrabLayerP ) ;
+            flagsRC |= field.walkF( tin0P , idGrabLayerP ) ;
 
 
-                                                          ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 7 ]      = idiFileNewP ;
-                                                          ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 6 ]      = idLineNewP ;
-          //                                              ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 5 ]                                          WILL CONTAIN THE NUMBER OF LISTINGS DELETED
-          //                                              ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 4 ]                                          WILL CONTAIN THE NUMBER OF LISTINGS NOT DELETED
-                                                          ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 3 ]      = inP.cKeep ;
-          //                                              ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 2 ]                                          IS USED AS A CURSOR
-                                                          ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ]      = (countT)&inP ;
-                                                          ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ]      = (countT)&pOutP ;
-                                                          ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_CALLERgRABBEDrOOT ;
-                                                          ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkFieldEditCBF ;
+                                                          ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 7 ]      = idiFileNewP ;
+                                                          ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 6 ]      = idLineNewP ;
+          //                                              ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 5 ]                                          WILL CONTAIN THE NUMBER OF LISTINGS DELETED
+          //                                              ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 4 ]                                          WILL CONTAIN THE NUMBER OF LISTINGS NOT DELETED
+                                                          ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 3 ]      = inP.cKeep ;
+          //                                              ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 2 ]                                          IS USED AS A CURSOR
+                                                          ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 1 ]      = (countT)&inP ;
+                                                          ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 0 ]      = (countT)&pOutP ;
+                                                          ((tin9S&)tin0P).ta.pushed.u.listWalk.walk.flagsWalkP    = flLISTwALK_CALLERgRABBEDrOOT ;
+                                                          ((tin9S&)tin0P).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkFieldEditCBF ;
 
             //}
             //    __Z( aptTest ) ;
             //    aptTest = pbTest ;
             //    aptC aptTest ;
             //    //CONoUTrAW( "\r\n" ) ;
-            //    //CONoUTrAW( ((tin9S&)tinBaseP).pPoolUse->postNameF( tinBaseP ) ) ;
-            //    //CONoUTrAW5( "testing list [pPoolUse,pTest]: " , ((tin9S&)tinBaseP).pPoolUse , " " , pbTest , " " ) ; //U::
+            //    //CONoUTrAW( ((tin9S&)tin0P).pPoolUse->postNameF( tin0P ) ) ;
+            //    //CONoUTrAW5( "testing list [pPoolUse,pTest]: " , ((tin9S&)tin0P).pPoolUse , " " , pbTest , " " ) ; //U::
             //    byteT* pbTest = (byteT*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) ;
             //{
             //U::
         
             PUSHtINaRGS
 
-                                  ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP  = F(inP.flags) & flFIELDeDIT_DOnOTiNDEXdATA ? flLISTwALK_DOnOTiNDEXdATA : flLISTwALK_null ;
-            flagsT saveRetained = ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.flagsWalkP ;
+                                  ((tin9S&)tin0P).ta.retained.u.listWalk.walk.flagsWalkP  = F(inP.flags) & flFIELDeDIT_DOnOTiNDEXdATA ? flLISTwALK_DOnOTiNDEXdATA : flLISTwALK_null ;
+            flagsT saveRetained = ((tin9S&)tin0P).ta.retained.u.listWalk.walk.flagsWalkP ;
 
             if( !( field.flagsi & fliLISTINGc_FIELD ) ) field.flagsi |= fliLISTINGc_FIELD ; 
 
@@ -60,10 +60,10 @@
         }
             if( !hKid ) { __( !( F(flagsP) & flLISToPEN_IFeXISTS ) ) ; }
     
-            if( F( openIF( tinBaseP , hKid , hRecordP , pczFieldP , flagsP | flLISToPEN_RETAINrOOT , idGrabLayerP ) ) & flLISToPENrETURNcODE_LISTeXISTED ) flagsRC |= flLISTwALKrETURNcODE_LISTeXISTED ;
+            if( F( openIF( tin0P , hKid , hRecordP , pczFieldP , flagsP | flLISToPEN_RETAINrOOT , idGrabLayerP ) ) & flLISToPENrETURNcODE_LISTeXISTED ) flagsRC |= flLISTwALKrETURNcODE_LISTeXISTED ;
         {
         if( pczFieldP )
-        handleC hKid( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+        handleC hKid( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
     {
 
     }
@@ -95,14 +95,14 @@
         __NZ( pOutP ) ;
         __Z( hRecordP ) ;
         if( POOP ) return flagsRC ;
-        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
+        __( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return flagsRC ;
     {
     IFbEcAREFUL
 
     flagsT flagsRC = flLISTwALKrETURNcODE_null ;
 {
-/*1*/flagsT listC::fieldIF( tin0S& tinBaseP , fieldEditParamOutC*& pOutP , handleC& hRecordP , const countT* pczFieldP , const fieldEditParamInC& inP , const countT idLineNewP , const countT idiFileNewP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
+/*1*/flagsT listC::fieldIF( tin0S& tin0P , fieldEditParamOutC*& pOutP , handleC& hRecordP , const countT* pczFieldP , const fieldEditParamInC& inP , const countT idLineNewP , const countT idiFileNewP , const flagsT flagsP , const countT idGrabLayerP )/*1*/
 
 /**/
 */
@@ -136,7 +136,7 @@
   caller must delete by invoking "DELlIST( fieldEditParamOutC , pOut ) ;"
   must be 0
  pOutP
- tinBaseP
+ tin0P
 parameters
    for example, within a record, the "name" field can have several text string values intermixed with several countT values
   these values can be of heterogeneous type

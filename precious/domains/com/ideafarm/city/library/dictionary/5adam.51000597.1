@@ -10,8 +10,8 @@
 REST
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK * 4 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK * 4 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     }
         }
@@ -48,17 +48,17 @@ REST
     sIn >> idReply ;
     ZE( countT , idReply ) ;
     
-    sockm.readF( tinBaseP , sIn ) ;
-    soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sockm.readF( tin0P , sIn ) ;
+    soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
     
-    sockm.writeF( tinBaseP , sOut ) ;
+    sockm.writeF( tin0P , sOut ) ;
     sOut << (countT)ifcIDcMDmONITOR_tin9S ;
-    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 {
 while( !ether && !etThread )
 
-sockm.connectF( tinBaseP , homeS::homeIF().idPortGlass2 , socketC::nicNameIF( tinBaseP , etThread , T("10.1.1.1") ) ) ;
-socketC sockm( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+sockm.connectF( tin0P , homeS::homeIF().idPortGlass2 , socketC::nicNameIF( tin0P , etThread , T("10.1.1.1") ) ) ;
+socketC sockm( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 

@@ -10,36 +10,36 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinBaseP , T("press the enter key now\r\n") ) ;
+etThread.strokeF( tin0P , T("press the enter key now\r\n") ) ;
 
-sDone.waitF( tinBaseP ) ;
+sDone.waitF( tin0P ) ;
 }
-    sock.writeF( tinBaseP , &bCmd , 1 ) ;
-    sock.connectF( tinBaseP , idPort , etThread.sockNicNameF( tinBaseP ) ) ;
-    socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
+    sock.writeF( tin0P , &bCmd , 1 ) ;
+    sock.connectF( tin0P , idPort , etThread.sockNicNameF( tin0P ) ) ;
+    socketC sock( tin0P , ether , TAG( TAGiDnULL ) ) ;
 {
 bCmd = 'q' ;
 }
-    etThread.strokeF( tinBaseP , TF1(cValue)+T("\r\n") ) ;
+    etThread.strokeF( tin0P , TF1(cValue)+T("\r\n") ) ;
 
-    sock.readF( tinBaseP , (byteT*)&cValue , sizeof cValue ) ;
-    sock.writeF( tinBaseP , &bCmd , 1 ) ;
-    sock.connectF( tinBaseP , idPort , socketC::nicNameIF( tinBaseP , ether ) ) ;
-    socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
+    sock.readF( tin0P , (byteT*)&cValue , sizeof cValue ) ;
+    sock.writeF( tin0P , &bCmd , 1 ) ;
+    sock.connectF( tin0P , idPort , socketC::nicNameIF( tin0P , ether ) ) ;
+    socketC sock( tin0P , ether , TAG( TAGiDnULL ) ) ;
 {
 while( cTries -- )
 countT cTries = 0x8 ;
 ZE( countT , cValue ) ;
 byteT bCmd = 'n' ;
 
-sReady.waitF( tinBaseP ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmPushNumbersF , &sDone , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sReady ) ; }
+sReady.waitF( tin0P ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmPushNumbersF , &sDone , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sReady ) ; }
 ZE( countT , idPort ) ;
-signC sDone(  tinBaseP , TAG( TAGiDnULL ) ) ;
-signC sReady(  tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sDone(  tin0P , TAG( TAGiDnULL ) ) ;
+signC sReady(  tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -50,13 +50,13 @@ DONE( tmPushNumbersF )
         }
             if( bCmd == 'q' ) break ;
             DEL( pso ) ;
-            if( bCmd == 'n' ) pso->writeF( tinBaseP , (byteT*)&cPrevious , sizeof cPrevious ) ;
-            pso->readF( tinBaseP , &bCmd , 1 ) ;
+            if( bCmd == 'n' ) pso->writeF( tin0P , (byteT*)&cPrevious , sizeof cPrevious ) ;
+            pso->readF( tin0P , &bCmd , 1 ) ;
             ZE( byteT , bCmd ) ;
             cPrevious ++ ;
         {
         if( pso )
-        sock.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+        sock.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
@@ -65,9 +65,9 @@ DONE( tmPushNumbersF )
     ZE( countT , cPrevious ) ;
 
     ++ sReady ;
-    sock.listenF( tinBaseP ) ;
-    idPort = sock.bindF( tinBaseP ) ;
-    socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
+    sock.listenF( tin0P ) ;
+    idPort = sock.bindF( tin0P ) ;
+    socketC sock( tin0P , ether , TAG( TAGiDnULL ) ) ;
 
     signC&  sReady = *psReady ;
     countT& idPort = *pcIdPort ;

@@ -9,12 +9,12 @@
                             
 REST
 
-listC::deleteIF( tinBaseP , count2S( LISTnAMEsYS_ROOTsYSTEM2 ) ) ;
-listC::deleteIF( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
+listC::deleteIF( tin0P , count2S( LISTnAMEsYS_ROOTsYSTEM2 ) ) ;
+listC::deleteIF( tin0P , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
 
 }
-    listC::chatterIF( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
-    listC::chatterIF( tinBaseP , count2S( LISTnAMEsYS_ROOTsYSTEM2 ) ) ;
+    listC::chatterIF( tin0P , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
+    listC::chatterIF( tin0P , count2S( LISTnAMEsYS_ROOTsYSTEM2 ) ) ;
     CONoUTrAW( "after obtaining vspIdSerial and incrementing it in a loop:\r\n" ) ;
 
     }
@@ -33,13 +33,13 @@ listC::deleteIF( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
         if( !vspIdSerial ) { CONoUTrAW( "field \"idSerial\" does not exist and was not created\r\n" ) ; }
     
         }    
-            vspIdSerial = listC::countIF( tinBaseP , hRec , "idSerial" , flLISToPEN_IFeXISTS ) ;
-            listC::openIF( tinBaseP , hRec , pczList ) ;
-            handleC hRec( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+            vspIdSerial = listC::countIF( tin0P , hRec , "idSerial" , flLISToPEN_IFeXISTS ) ;
+            listC::openIF( tin0P , hRec , pczList ) ;
+            handleC hRec( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
     
-            grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
+            grabitC grabitx( tin0P , TAG( TAGiDnULL ) ) ;
     
-            listC::dictionaryReplaceOsTextIF( tinBaseP , pczList ) ;
+            listC::dictionaryReplaceOsTextIF( tin0P , pczList ) ;
             countT pczList[] = { LISTnAMEsYS_ROOTaPPLICATION , (countT)"serialnumbers" , (countT)"idAccount" , 0 } ;
         {
         countVSP vspIdSerial ;

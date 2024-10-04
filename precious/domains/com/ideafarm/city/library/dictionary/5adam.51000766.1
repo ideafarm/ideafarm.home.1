@@ -9,14 +9,14 @@
                             
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.diskWalkF( tinBaseP , cDirs , cFiles , T("///d/tmp/locker/") , ether , flDISKwALK_null , workCBF , 0 , 0 , 0 ) ;
+etThread.diskWalkF( tin0P , cDirs , cFiles , T("///d/tmp/locker/") , ether , flDISKwALK_null , workCBF , 0 , 0 , 0 ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
 
-etThread.traceF( tinBaseP , T("walking the directory tree") ) ;
+etThread.traceF( tin0P , T("walking the directory tree") ) ;
 
 FindClose( oshs ) ;
 static countT rc = GetLastError() ;
@@ -29,17 +29,17 @@ TODO
     return 0 ;
 
     }
-        etherP.traceF( tinBaseP , tName ) ;
+        etherP.traceF( tin0P , tName ) ;
         TN( tName , ifName ) ;
-        ifFileNameC ifName( tinBaseP , etherP , postNameP ) ;
+        ifFileNameC ifName( tin0P , etherP , postNameP ) ;
 
-        etherC& etherP            =  *((tin9S&)tinBaseP).pEther ;
+        etherC& etherP            =  *((tin9S&)tin0P).pEther ;
         _IO_
     {
     if( postNameP )
     _IO_
 {
-boolT workCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT workCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 /*1*/WAKEsHOWtEXT( "doodle.walk.locked.directory" )/*1*/
 /**/

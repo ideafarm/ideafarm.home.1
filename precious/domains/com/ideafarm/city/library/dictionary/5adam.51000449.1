@@ -12,7 +12,7 @@
 CELL( jobFillCourseF , jobHearOrderF , 0 )
 
 }
-    if( ether && *((tin9S&)tinBaseP).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *((tin9S&)tin0P).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }
@@ -21,15 +21,15 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
             }
                 }
                     break ;
-                    etThread.delF( tinBaseP , psttJobType ) ;
+                    etThread.delF( tin0P , psttJobType ) ;
 
                     else __1
                     }
-                        etThread.delF( tinBaseP , psttTitle ) ;
-                        etThread.delF( tinBaseP , psttFrom ) ;
+                        etThread.delF( tin0P , psttTitle ) ;
+                        etThread.delF( tin0P , psttFrom ) ;
 
                         }
-                            etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tinBaseP ) ) ;
+                            etThread.boxPutF( tin0P ,  T("ideafarm.com//smtp/")+T(DDNUMB)+T("/")+T(psttFrom) , tm , tm.csF( tin0P ) ) ;
 
                             tm += T("sd:   ")+TF2(sd,flFORMAT_EXPONENT)+T("\r\n\r\n") ;
                             tm += T("mean: ")+TF2(mean,flFORMAT_EXPONENT)+T("\r\n\r\n") ;
@@ -61,7 +61,7 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
 
                         const boolT bMail = !stJobTo ;
 
-                        measureT sd   = ((thirdC&)etThread).c_sqrtF( tinBaseP , bmSumSq / cObs ) ;
+                        measureT sd   = ((thirdC&)etThread).c_sqrtF( tin0P , bmSumSq / cObs ) ;
                         measureT mean = bmSum / cObs ;
 
                         measureT oc8  = cObs >= 1 ? stObs[ 8 * cObs / 8 ] : 0 ;
@@ -81,7 +81,7 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
                             }
                                 bmSumSq += bmi * bmi ;
                                 bmSum   += bmi ;
-                                stObs.sinkF( tinBaseP , countTC() , (countT)bmi ) ; //U: SINK THE MEASURE VALUE (WHEN stackC SUPPORTS THIS)
+                                stObs.sinkF( tin0P , countTC() , (countT)bmi ) ; //U: SINK THE MEASURE VALUE (WHEN stackC SUPPORTS THIS)
                                 sOrderP >> bmi ;
                                 ZE( measure04T , bmi ) ;
                             {
@@ -89,11 +89,11 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
                             sOrderP >> cObs ;
                             ZE( countT , cObs ) ;
                         {
-                        stackC stObs( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null /*U:: , ifcSTACKtYPE_measureT */ ) ;
+                        stackC stObs( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null /*U:: , ifcSTACKtYPE_measureT */ ) ;
                         ZE( measure04T , bmSumSq ) ;
                         ZE( measure04T , bmSum   ) ;
 
-                        while( etThread.strConcatenateF( tinBaseP , psttTitle , 0 , tBlank ) ) ;
+                        while( etThread.strConcatenateF( tin0P , psttTitle , 0 , tBlank ) ) ;
                         TN( tBlank , " " ) ;
                         sOrderP >> psttTitle ; ___( psttTitle ) ;
                         ZE( strokeS* , psttTitle ) ;
@@ -112,13 +112,13 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
                             sOrderP >> cJobTo ;
                             ZE( countT , cJobTo ) ;
                         {
-                        stackC stJobTo( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+                        stackC stJobTo( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
 
                         __( idVersion - 1 ) ;
                         sOrderP >> idVersion ;
                         ZE( countT , idVersion ) ;
                     {
-                    if( !etThread.strCompareF( tinBaseP , psttJobType , T("!batchOfUnivariate") ) )
+                    if( !etThread.strCompareF( tin0P , psttJobType , T("!batchOfUnivariate") ) )
 
                     sOrderP >> psttJobType ; ___( psttJobType ) ;
                     ZE( strokeS* , psttJobType )
@@ -127,16 +127,16 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
                 }
                     break ;
 
-                    etThread.delF( tinBaseP , psttBody ) ;
-                    etThread.delF( tinBaseP , psttFrom ) ;
+                    etThread.delF( tin0P , psttBody ) ;
+                    etThread.delF( tin0P , psttFrom ) ;
 
                     }
-                        etThread.delF( tinBaseP , postBody ) ;
-                        etThread.delF( tinBaseP , psttu ) ;
-                        etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/ignored/in") , postBody , costBody ) ;
+                        etThread.delF( tin0P , postBody ) ;
+                        etThread.delF( tin0P , psttu ) ;
+                        etThread.boxPutUniqueF( tin0P , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/ignored/in") , postBody , costBody ) ;
                         ZE( strokeS* , psttu ) ;
 
-                        countT costBody = etThread.strMakeF( tinBaseP , LF , postBody , psttBody ) ; ___( postBody ) ;
+                        countT costBody = etThread.strMakeF( tin0P , LF , postBody , psttBody ) ; ___( postBody ) ;
                         ZE( osTextT* , postBody ) ;
                     {
 
@@ -166,14 +166,14 @@ CELL( jobFillCourseF , jobHearOrderF , 0 )
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobFillCourseF( tin0S& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tin0S& tin0P , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
-    if( cArgP && c8argP.c1 && sOrderP && ether && *((tin9S&)tinBaseP).zEtScratch && idChatSessionP ) ;
+    if( cArgP && c8argP.c1 && sOrderP && ether && *((tin9S&)tin0P).zEtScratch && idChatSessionP ) ;
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobHearOrderF( tin0S& tinBaseP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobHearOrderF( tin0S& tin0P , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 /*1*/WAKEhIDE( "sentient.statistician.univariate" )/*1*/
 /**/

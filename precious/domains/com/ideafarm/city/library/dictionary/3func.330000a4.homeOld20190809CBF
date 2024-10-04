@@ -16,7 +16,7 @@
             DEL( prZipList ) ;
             }
                 }
-                    FORsTRINGSiN1( pstt1Zips ) meP.pushSnipNamedF( tinBaseP , stBodyP , T(idAccount?"zip.click.":"zip.show.")+T(psttc1) ) ;
+                    FORsTRINGSiN1( pstt1Zips ) meP.pushSnipNamedF( tin0P , stBodyP , T(idAccount?"zip.click.":"zip.show.")+T(psttc1) ) ;
                 {
                 if( cbImage == sizeof( strokeS ) * ( CSpREFIX + pstt1Zips->idAdam ) )
                 strokeS* const pstt1Zips = (strokeS*)( postsZips + sizeof( countT ) ) ;
@@ -24,21 +24,21 @@
                 const osTextT* postsZips = *prZipList ;
             {
             if( prZipList )
-            meP.getSnipF( tinBaseP , prZipList , T("zip.list") ) ; ___( prZipList ) ;
+            meP.getSnipF( tin0P , prZipList , T("zip.list") ) ; ___( prZipList ) ;
             ZE( pbRefC* , prZipList ) ;
 
             }
-                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HOME7 ) ;
-                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HOME6 ) ;
-                meP.pushSnipF( tinBaseP , stBodyP , TF4(idAccCommission,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36) ) ;
-                meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HOME5 ) ;
+                meP.pushSnipF( tin0P , stBodyP , ifcIDsNIPpREDEFINED_HOME7 ) ;
+                meP.pushSnipF( tin0P , stBodyP , ifcIDsNIPpREDEFINED_HOME6 ) ;
+                meP.pushSnipF( tin0P , stBodyP , TF4(idAccCommission,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36) ) ;
+                meP.pushSnipF( tin0P , stBodyP , ifcIDsNIPpREDEFINED_HOME5 ) ;
             {
             else    
-            if( idAccount ) meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HOME8 ) ;
+            if( idAccount ) meP.pushSnipF( tin0P , stBodyP , ifcIDsNIPpREDEFINED_HOME8 ) ;
         {
         else
         }
-            meP.pushSnipF( tinBaseP , stBodyP , tSay ) ;
+            meP.pushSnipF( tin0P , stBodyP , tSay ) ;
 
             ) ;
 
@@ -91,11 +91,11 @@
 
             TN( tSay , "" ) ; tSay = T(
 
-            session.setFlagsUtilityF( tinBaseP , flagsUtility | flSESSIONuTILITY_SURVEY1qUESTION2dONE ) ;
+            session.setFlagsUtilityF( tin0P , flagsUtility | flSESSIONuTILITY_SURVEY1qUESTION2dONE ) ;
         {
         else if( !idAccount && !( F(flagsUtility) & flSESSIONuTILITY_SURVEY1qUESTION2dONE ) )
         }
-            meP.pushSnipF( tinBaseP , stBodyP , tSay ) ;
+            meP.pushSnipF( tin0P , stBodyP , tSay ) ;
 
             ) ;
 
@@ -156,37 +156,37 @@
 
             TN( tSay , "" ) ; tSay = T(
 
-            session.setFlagsUtilityF( tinBaseP , flagsUtility | flSESSIONuTILITY_SURVEY1qUESTION1dONE ) ;
+            session.setFlagsUtilityF( tin0P , flagsUtility | flSESSIONuTILITY_SURVEY1qUESTION1dONE ) ;
         {
         if( !idAccount && !( F(flagsUtility) & flSESSIONuTILITY_SURVEY1qUESTION1dONE ) )
-        flagsT flagsUtility = session.getFlagsUtilityF( tinBaseP ) ;
+        flagsT flagsUtility = session.getFlagsUtilityF( tin0P ) ;
     {
     else
-    if( !idAccCommission ) meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HOME4 ) ;
+    if( !idAccCommission ) meP.pushSnipF( tin0P , stBodyP , ifcIDsNIPpREDEFINED_HOME4 ) ;
 
-    meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_HOME3 ) ;
+    meP.pushSnipF( tin0P , stBodyP , ifcIDsNIPpREDEFINED_HOME3 ) ;
 
-    const countT idAccCommission = session.getIdAccountCommissionF( tinBaseP ) ;
-    const countT idAccount       = session.getIdAccountF( tinBaseP ) ;
+    const countT idAccCommission = session.getIdAccountCommissionF( tin0P ) ;
+    const countT idAccount       = session.getIdAccountF( tin0P ) ;
 
     }
-        //if( tPopup.csF( tinBaseP ) ) POPUP( tPopup ) ;
+        //if( tPopup.csF( tin0P ) ) POPUP( tPopup ) ;
         }
             }
-                session.setIdAccountCommissionF( tinBaseP , idAccComm ) ;
-                countT idAccComm = etThread.strDigitsToSCountF( tinBaseP , psttv , 36 ) ;
+                session.setIdAccountCommissionF( tin0P , idAccComm ) ;
+                countT idAccComm = etThread.strDigitsToSCountF( tin0P , psttv , 36 ) ;
                 //POPUP( T("value: \"")+T(psttv)+T("\"") ) ;
             {
-            if( !etThread.strCompareF( tinBaseP , psttLeverKVP , tKeyIdAccCommission ) )
+            if( !etThread.strCompareF( tin0P , psttLeverKVP , tKeyIdAccCommission ) )
 
             tPopup += tb+T(psttLeverKVP)+tcq+T(psttv)+tq ;
-            writeBookSurveyF( tinBaseP , etThread , booksSurveyP , psttLeverKVP , psttv , pptSurveyQ1Key , sizeof pptSurveyQ1Key / sizeof pptSurveyQ1Key[ 0 ] , pptSurveyQ1Value , sizeof pptSurveyQ1Value / sizeof pptSurveyQ1Value[ 0 ] , pptSurveyQ2Key , sizeof pptSurveyQ2Key / sizeof pptSurveyQ2Key[ 0 ] , pptSurveyQ2Value , sizeof  pptSurveyQ2Value / sizeof pptSurveyQ2Value[ 0 ] ) ;
+            writeBookSurveyF( tin0P , etThread , booksSurveyP , psttLeverKVP , psttv , pptSurveyQ1Key , sizeof pptSurveyQ1Key / sizeof pptSurveyQ1Key[ 0 ] , pptSurveyQ1Value , sizeof pptSurveyQ1Value / sizeof pptSurveyQ1Value[ 0 ] , pptSurveyQ2Key , sizeof pptSurveyQ2Key / sizeof pptSurveyQ2Key[ 0 ] , pptSurveyQ2Value , sizeof  pptSurveyQ2Value / sizeof pptSurveyQ2Value[ 0 ] ) ;
 
             strokeS* psttv = (strokeS*)(countT)swKVP ;
-            psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
+            psttLeverKVP = (strokeS*)swKVP.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
+        countT cFlavors = swKVP.cFlavorsF( tin0P ) ;
 
         } ;
             &tsq2ve
@@ -272,12 +272,12 @@
 
         TN( tPopup , "" ) ;
     {
-    sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
+    sessionC& session = sessionsP( tin0P , nnPeerP ) ;
 
     booksC&  booksSurveyP = *(booksC*)c8P.c2 ;
     count8S& c8P = *(count8S*)cArgP ;
 {
-/*1*/voidT homeOld20190809CBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT homeOld20190809CBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
                                         "</TR>\r\n"
                                             "</TD>\r\n"                                                                                                                                         \

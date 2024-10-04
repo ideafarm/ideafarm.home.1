@@ -8,14 +8,14 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     }
         if( !pbIn && !cbIn ) break ;
 
-        etThread.traceF( tinBaseP , T("[cbIn,pbIn]:    ")+TF2(cbIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pbIn) ) ;
+        etThread.traceF( tin0P , T("[cbIn,pbIn]:    ")+TF2(cbIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(pbIn) ) ;
 
         countT       cbIn = pageIn ;
         const byteT* pbIn = pageIn ;
@@ -23,17 +23,17 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     {
     for(;;)
 
-    jotC myJot( tinBaseP , T(postJot) , flJOTc_DELETE                   , 0 , 8 ) ;
+    jotC myJot( tin0P , T(postJot) , flJOTc_DELETE                   , 0 , 8 ) ;
 {
 
 }
-    etThread.traceF( tinBaseP , T("[idjBig,cbWrote]:    ")+TF2(idjBig,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbWrote,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    idjBig = myJot.writeF( tinBaseP , posto , sizeof posto , 0 , 0 , flJOTcwRITE_null , &cbWrote ) ;
+    etThread.traceF( tin0P , T("[idjBig,cbWrote]:    ")+TF2(idjBig,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbWrote,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    idjBig = myJot.writeF( tin0P , posto , sizeof posto , 0 , 0 , flJOTcwRITE_null , &cbWrote ) ;
 
-    etThread.traceF( tinBaseP , T("[idjBig,cbWrote]:    ")+TF2(idjBig,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbWrote,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    countT idjBig = myJot.writeF( tinBaseP , 0 , 0 , 0 , 0 , flJOTcwRITE_null , &cbWrote ) ;
+    etThread.traceF( tin0P , T("[idjBig,cbWrote]:    ")+TF2(idjBig,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbWrote,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    countT idjBig = myJot.writeF( tin0P , 0 , 0 , 0 , 0 , flJOTcwRITE_null , &cbWrote ) ;
     ZE( countT , cbWrote ) ;
-    jotC myJot( tinBaseP , T(postJot) , flJOTc_WRITE | flJOTc_PURGEoNcT , 0 , 8 ) ;
+    jotC myJot( tin0P , T(postJot) , flJOTc_WRITE | flJOTc_PURGEoNcT , 0 , 8 ) ;
 
     osTextT posto[] = "abcd" ;
 {

@@ -9,16 +9,16 @@
 
 REST                                  
 
-sgnGo.giveF( tinBaseP ) ;
+sgnGo.giveF( tin0P ) ;
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     while( !ether && cDone < cWorkers )
 
-    sgnGo.giveF( tinBaseP ) ;
-    etThread.traceF( tinBaseP , T("master:  go!") , flTRACE_HOMEeCHOgORILLAhOME | flTRACE_ECHOoNLY | flTRACE_FORCEnOsILENCE ) ;
+    sgnGo.giveF( tin0P ) ;
+    etThread.traceF( tin0P , T("master:  go!") , flTRACE_HOMEeCHOgORILLAhOME | flTRACE_ECHOoNLY | flTRACE_FORCEnOsILENCE ) ;
 
     cDone = 0 ;
     idCycle ++ ;
@@ -27,8 +27,8 @@ while( !ether /*&& cDo2 --*/ )
 //countT cDo2 = 0x1 ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK << 0 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK << 0 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
 
 while( cDo -- ) etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)&sgnGo , (countT)&tName , (countT)&idCycle , (countT)&cDone ) ;
@@ -39,24 +39,24 @@ ZE( countT , cDone ) ;
 ZE( countT , idCycle ) ;
 TN( tName , "38.111.147.101//http/talk.body?cache=no" ) ;
 
-signC sgnGo( tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgnGo( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO                                  
 
 DONE( tmWorkerF )
-etThread.traceF( tinBaseP , T("tmWorkerF ending") ) ;
+etThread.traceF( tin0P , T("tmWorkerF ending") ) ;
 }
     }
         inc02AM( cDoneP ) ;
 
-        etThread.traceF( tinBaseP , T(bFail?"worker:  FAIL     [idCycle,timeE]:    ":"worker:  received [idCycle,timeE]:    ")+TF2(idCycleP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TT(timeE1,timeE2) , flTRACE_HOMEeCHOgORILLAhOME | flTRACE_ECHOoNLY | flTRACE_FORCEnOsILENCE ) ;
-        etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
+        etThread.traceF( tin0P , T(bFail?"worker:  FAIL     [idCycle,timeE]:    ":"worker:  received [idCycle,timeE]:    ")+TF2(idCycleP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TT(timeE1,timeE2) , flTRACE_HOMEeCHOgORILLAhOME | flTRACE_ECHOoNLY | flTRACE_FORCEnOsILENCE ) ;
+        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;
 
-        etThread.delF( tinBaseP , pbIn ) ;
+        etThread.delF( tin0P , pbIn ) ;
         //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
         //CONoUTrAW( pbIn ) ;
         //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
-        etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+        etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
 
         }
             }
@@ -64,7 +64,7 @@ etThread.traceF( tinBaseP , T("tmWorkerF ending") ) ;
                 POOPRqUIET
             {
             if( POOP )
-            ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbIn , cbIn , tNameP , 1 ) ; ___( pbIn ) ;
+            ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbIn , cbIn , tNameP , 1 ) ; ___( pbIn ) ;
             SCOOPS
         {
         IFsCRATCH
@@ -72,8 +72,8 @@ etThread.traceF( tinBaseP , T("tmWorkerF ending") ) ;
         ZE( countT , cbIn ) ;
         ZE( byteT* , pbIn ) ;
 
-        etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
-        sgnGoP.waitF( tinBaseP ) ;
+        etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
+        sgnGoP.waitF( tin0P ) ;
 
         ZE( sCountT , timeE2 ) ;
         ZE( countT  , timeE1 ) ;

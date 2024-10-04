@@ -11,14 +11,14 @@
     return *this ;
 
     }
-        else { ether.strMakeF( tinBaseP , LF , psttOldComment , datum.psttOldComment ) ; ___( psttOldComment ) ; }
+        else { ether.strMakeF( tin0P , LF , psttOldComment , datum.psttOldComment ) ; ___( psttOldComment ) ; }
         }
             }
-                ether.delF( tinBaseP , psttd ) ;
-                ether.strMakeF( tinBaseP , LF , psttOldComment , T(psttd)+T("\r\n")+T(datum.psttOldComment) ) ; ___( psttOldComment ) ;
+                ether.delF( tin0P , psttd ) ;
+                ether.strMakeF( tin0P , LF , psttOldComment , T(psttd)+T("\r\n")+T(datum.psttOldComment) ) ; ___( psttOldComment ) ;
                 strokeS* psttd = psttOldComment ; psttOldComment = 0 ;
             {
-            if( ether.strCompareF( tinBaseP , psttOldComment , datum.psttOldComment ) )
+            if( ether.strCompareF( tin0P , psttOldComment , datum.psttOldComment ) )
         {
         if( psttOldComment )
     {
@@ -26,7 +26,7 @@
 
     if( !idAdam ) idAdam = datum.idAdam ;
     if( !idHome ) idHome = datum.idHome ;
-    if( !psttUrl ) { ether.strMakeF( tinBaseP , LF , psttUrl , datum.psttUrl ) ; ___( psttUrl ) ; }
+    if( !psttUrl ) { ether.strMakeF( tin0P , LF , psttUrl , datum.psttUrl ) ; ___( psttUrl ) ; }
     const datumPeanutC& datum = *(datumPeanutC*)&plateP ;
     TINSL
 {
@@ -35,33 +35,33 @@ plateC& datumPeanutC::operator +=( plateC& plateP )
 }
     return psttRpt ;
 
-    ether.strMakeF( tinBaseP , LF , psttRpt , TF2(idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": ")+T(psttOldComment) ) ; ___( psttRpt ) ;
+    ether.strMakeF( tin0P , LF , psttRpt , TF2(idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": ")+T(psttOldComment) ) ; ___( psttRpt ) ;
 
-    ether.delF( tinBaseP , psttRpt ) ; //U::RECALC ONLY IF STALE
+    ether.delF( tin0P , psttRpt ) ; //U::RECALC ONLY IF STALE
     TINSL
 {
 datumPeanutC::operator const strokeS*( voidT )
 
 }
-    ether.delF( tinBaseP , psttIdAdam ) ;
-    ether.delF( tinBaseP , psttIdHome ) ;
-    if( psttIdAdam ) idAdam = ether.strDigitsToSCountF( tinBaseP , psttIdAdam ) ;
-    if( psttIdHome ) idHome = ether.strDigitsToSCountF( tinBaseP , psttIdHome ) ;
+    ether.delF( tin0P , psttIdAdam ) ;
+    ether.delF( tin0P , psttIdHome ) ;
+    if( psttIdAdam ) idAdam = ether.strDigitsToSCountF( tin0P , psttIdAdam ) ;
+    if( psttIdHome ) idHome = ether.strDigitsToSCountF( tin0P , psttIdHome ) ;
 
     }
         }
-            ether.delF( tinBaseP , psttk ) ;
+            ether.delF( tin0P , psttk ) ;
 
             }
                 soulP >> *ppsttv ; ___( *ppsttv ) ;
-                ether.delF( tinBaseP , *ppsttv ) ;
+                ether.delF( tin0P , *ppsttv ) ;
             {
             if( ppsttv )
 
-            else if( !ether.strCompareF( tinBaseP , psttk , T("_idAdam") ) ) { ppsttv = &psttIdAdam ; }
-            else if( !ether.strCompareF( tinBaseP , psttk , T("_idHome") ) ) { ppsttv = &psttIdHome ; }
-            else if( !ether.strCompareF( tinBaseP , psttk , T("comment") ) ) { ppsttv = &psttOldComment ; }
-                 if( !ether.strCompareF( tinBaseP , psttk , T("url"    ) ) ) { ppsttv = &psttUrl     ; }
+            else if( !ether.strCompareF( tin0P , psttk , T("_idAdam") ) ) { ppsttv = &psttIdAdam ; }
+            else if( !ether.strCompareF( tin0P , psttk , T("_idHome") ) ) { ppsttv = &psttIdHome ; }
+            else if( !ether.strCompareF( tin0P , psttk , T("comment") ) ) { ppsttv = &psttOldComment ; }
+                 if( !ether.strCompareF( tin0P , psttk , T("url"    ) ) ) { ppsttv = &psttUrl     ; }
             ZE( strokeS** , ppsttv ) ;
         {
         else
@@ -78,7 +78,7 @@ psttOldComment( 0 ) ,
 psttUrl( 0 ) ,
 psttRpt( 0 ) ,
 ether( etherP ) ,
-datumPeanutC::datumPeanutC( tin0S& tinBaseP , etherC& etherP , soulC& soulP ) :
+datumPeanutC::datumPeanutC( tin0S& tin0P , etherC& etherP , soulC& soulP ) :
 
 }
 {
@@ -87,8 +87,8 @@ idHome( 0 ) ,
 psttOldComment( 0 ) ,
 psttUrl( 0 ) ,
 psttRpt( 0 ) ,
-ether( *((tin9S&)tinBaseP).pEther ) ,
-datumPeanutC::datumPeanutC( tin0S& tinBaseP ) :
+ether( *((tin9S&)tin0P).pEther ) ,
+datumPeanutC::datumPeanutC( tin0S& tin0P ) :
 
 }
     return scSgn ;
@@ -99,7 +99,7 @@ datumPeanutC::datumPeanutC( tin0S& tinBaseP ) :
                 ? - 1
             : datum.psttOldComment
                 : 1
-                ? ether.strCompareF( tinBaseP , psttOldComment , datum.psttOldComment )
+                ? ether.strCompareF( tin0P , psttOldComment , datum.psttOldComment )
             ? datum.psttOldComment
         scSgn = psttOldComment
     {
@@ -111,7 +111,7 @@ datumPeanutC::datumPeanutC( tin0S& tinBaseP ) :
                 ? - 1
             : datum.psttUrl
                 : 1
-                ? ether.strCompareF( tinBaseP , psttUrl , datum.psttUrl )
+                ? ether.strCompareF( tin0P , psttUrl , datum.psttUrl )
             ? datum.psttUrl
         scSgn = psttUrl
     {
@@ -137,14 +137,14 @@ sCountT datumPeanutC::operator -( const plateC& plateP ) const
     idAdam = datum.idAdam ;
     idHome = datum.idHome ;
 
-    if( datum.psttOldComment ) { ether.strMakeF( tinBaseP , LF , psttOldComment , datum.psttOldComment ) ; ___( psttOldComment ) ; }
-    ether.delF( tinBaseP , psttOldComment ) ;
+    if( datum.psttOldComment ) { ether.strMakeF( tin0P , LF , psttOldComment , datum.psttOldComment ) ; ___( psttOldComment ) ; }
+    ether.delF( tin0P , psttOldComment ) ;
 
-    if( datum.psttUrl ) { ether.strMakeF( tinBaseP , LF , psttUrl , datum.psttUrl ) ; ___( psttUrl ) ; }
-    ether.delF( tinBaseP , psttUrl ) ;
+    if( datum.psttUrl ) { ether.strMakeF( tin0P , LF , psttUrl , datum.psttUrl ) ; ___( psttUrl ) ; }
+    ether.delF( tin0P , psttUrl ) ;
 
-    if( datum.psttRpt ) { ether.strMakeF( tinBaseP , LF , psttRpt , datum.psttRpt ) ; ___( psttRpt ) ; }
-    ether.delF( tinBaseP , psttRpt ) ;
+    if( datum.psttRpt ) { ether.strMakeF( tin0P , LF , psttRpt , datum.psttRpt ) ; ___( psttRpt ) ; }
+    ether.delF( tin0P , psttRpt ) ;
 
     datumPeanutC& datum = *(datumPeanutC*)&plateP ;
     TINSL
@@ -152,9 +152,9 @@ sCountT datumPeanutC::operator -( const plateC& plateP ) const
 plateC& datumPeanutC::operator =( plateC& plateP )
 
 }
-    ether.delF( tinBaseP , psttOldComment ) ;
-    ether.delF( tinBaseP , psttUrl ) ;
-    ether.delF( tinBaseP , psttRpt ) ;
+    ether.delF( tin0P , psttOldComment ) ;
+    ether.delF( tin0P , psttUrl ) ;
+    ether.delF( tin0P , psttRpt ) ;
     TINSL
 {
 datumPeanutC::~datumPeanutC( voidT )
@@ -165,9 +165,9 @@ datumPeanutC::~datumPeanutC( voidT )
 plateC& datumPeanutC::operator >>( soulC& sP )
 
 }
-    return new( 0 , tinBaseP , idLineP , idiFileP ) datumPeanutC( tinBaseP ) ;
+    return new( 0 , tin0P , idLineP , idiFileP ) datumPeanutC( tin0P ) ;
 {
-datumPeanutC* datumPeanutC::newF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP )
+datumPeanutC* datumPeanutC::newF( tin0S& tin0P , const countT idLineP , const countT idiFileP )
 
 NEWdELcLASS( 1 , datumPeanutC )
 

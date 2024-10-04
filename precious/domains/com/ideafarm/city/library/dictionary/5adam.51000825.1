@@ -9,11 +9,11 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK << 0 ) ;
-    etThread.traceF( tinBaseP , T("[speedPull,speedPush,deltaTime,deltaPush,deltaPull,diff]:    ")+TF2(speedPull,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(speedPush,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TT(timeE1,timeE2)+tb4+TF2(deltaPush,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(deltaPull,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(deltaPush-deltaPull,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK << 0 ) ;
+    etThread.traceF( tin0P , T("[speedPull,speedPush,deltaTime,deltaPush,deltaPull,diff]:    ")+TF2(speedPull,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(speedPush,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TT(timeE1,timeE2)+tb4+TF2(deltaPush,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(deltaPull,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(deltaPush-deltaPull,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     countT speedPush = (countT)deltaPush / ( timeE1 >> 2 ) ;
     countT speedPull = (countT)deltaPull / ( timeE1 >> 2 ) ;
@@ -21,11 +21,11 @@ etherC::loafIF( tinBaseP ) ;
     timeLag2 = timeN2 ;
     timeLag1 = timeN1 ;
 
-    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeLag1 , timeLag2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeLag1 , timeLag2 ) ;
     sCountT timeE2 = timeN2 ;
     countT  timeE1 = timeN1 ;
 
-    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+    etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT  , timeN2 ) ;
     ZE( countT   , timeN1 ) ;
 
@@ -39,7 +39,7 @@ etherC::loafIF( tinBaseP ) ;
     count04T nowPull = tallyPull ;
 {
 while( !ether )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 TN( tb4 , "    " ) ;
 ZE( count04T , snapPush ) ;
 ZE( count04T , snapPull ) ;
@@ -54,7 +54,7 @@ countT cDo = CwORKERS ;
 
 ZE( count04T , tallyPull ) ;
 ZE( count04T , tallyPush ) ;
-funnelHornC fun( tinBaseP , etThread , ether , 1 , TOCK >> 0 ) ;
+funnelHornC fun( tin0P , etThread , ether , 1 , TOCK >> 0 ) ;
 
 TODO
 
@@ -63,11 +63,11 @@ DONE( tmPullF )
     }
         }
             if( -1 == incv02AM( tally1 ) ) inc02AM( tally2 ) ;
-            //etThread.traceF( tinBaseP , T("read [pb2]:    ")+T(pb2) ) ;
+            //etThread.traceF( tin0P , T("read [pb2]:    ")+T(pb2) ) ;
         {
         if( pbi )
         byteT pb2[] = { (byteT)( !pbi ? 0 : *pbi ) , 0 } ;
-        const byteT* pbi = funP.readF( tinBaseP ) ;
+        const byteT* pbi = funP.readF( tin0P ) ;
     {
     while( !ether )
 
@@ -85,12 +85,12 @@ DONE( tmPushF )
     }
         }
             if( -1 == incv02AM( tally1 ) ) inc02AM( tally2 ) ;
-            funP.writeF( tinBaseP , pb2 ) ;
+            funP.writeF( tin0P , pb2 ) ;
         {
         for( pb2[ 0 ] = 'a' ; pb2[ 0 ] <= 'z' && !ether ; pb2[ 0 ] ++ )
     {
     while( !ether )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     byteT pb2[] = { 0 , 0 } ;
 
     countT&      tally2  = ((countT*)&tallyP)[ 1 ] ;

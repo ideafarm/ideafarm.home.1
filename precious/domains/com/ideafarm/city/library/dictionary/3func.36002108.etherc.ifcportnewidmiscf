@@ -11,15 +11,15 @@
     return idMisc ;
     }
         __( idAck - ifcREPLY_ACK ) ;
-        sock.readF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ;
+        sock.readF( tin0P , (byteT*)&idAck , sizeof idAck ) ;
         ZE( countT , idAck ) ;
 
         __Z( idMisc ) ;
-        sock.readF( tinBaseP , (byteT*)&idMisc , sizeof idMisc ) ;
+        sock.readF( tin0P , (byteT*)&idMisc , sizeof idMisc ) ;
 
-        sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
-        sock.connectF( tinBaseP , ifcPORToLD1pORTaUTHORITY ) ;
-        socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
+        sock.writeF( tin0P , (byteT*)&idCmd , sizeof idCmd ) ;
+        sock.connectF( tin0P , ifcPORToLD1pORTaUTHORITY ) ;
+        socketC sock( tin0P , *this , TAG( TAGiDnULL ) ) ;
     {
     ZE( countT , idMisc ) ;
 
@@ -33,10 +33,10 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT etherC::ifcPortNewIdMiscF( tin0S& tinBaseP )/*1*/
+/*1*/countT etherC::ifcPortNewIdMiscF( tin0S& tin0P )/*1*/
 /**/
 */
- tinBaseP
+ tin0P
 arguments
 it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.103013e.1.0.html\"\>definition\</A\>

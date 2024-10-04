@@ -10,15 +10,15 @@
 REST
 
 }
-    while( cDone < cGorillas ) etThread.osSleepF( tinBaseP , TOCK ) ;
+    while( cDone < cGorillas ) etThread.osSleepF( tin0P , TOCK ) ;
     
-    ether.loafIF( tinBaseP ) ;
-    while( cTries -- ) ether.osThreadF( tinBaseP , countTC() , tmGorillaF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&g1 , (countT)&cDone ) ;
+    ether.loafIF( tin0P ) ;
+    while( cTries -- ) ether.osThreadF( tin0P , countTC() , tmGorillaF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&g1 , (countT)&cDone ) ;
     countT cTries = cGorillas ;
     const countT cGorillas = 0x10 ;
     ZE( countT , cDone ) ;
     
-    grabS g1( tinBaseP , TAG( TAGiDnULL ) ) ;
+    grabS g1( tin0P , TAG( TAGiDnULL ) ) ;
 {
 
 TODO
@@ -28,15 +28,15 @@ DONE( tmGorillaF )
     inc02AM( cDone ) ;
     }
         OSsLEEPf( 0 ) ;
-        g1.ungrabF( tinBaseP ) ;
-        //OSsLEEPf( ((tin9S&)tinBaseP).ranUni % TUCK ) ;
+        g1.ungrabF( tin0P ) ;
+        //OSsLEEPf( ((tin9S&)tin0P).ranUni % TUCK ) ;
         CONoUTrAW( post2 ) ;
-        g1.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        g1.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
     while( !ether )
-    const osTextT post2[] = { ((tin9S&)tinBaseP).monitor.idThread % 26 + 'a' , 0 } ;
+    const osTextT post2[] = { ((tin9S&)tin0P).monitor.idThread % 26 + 'a' , 0 } ;
 
-    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
+    if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 
     countT& cDone = *(countT*)pTaskP->c2 ;
     grabS&  g1    =  *(grabS*)pTaskP->c1 ;

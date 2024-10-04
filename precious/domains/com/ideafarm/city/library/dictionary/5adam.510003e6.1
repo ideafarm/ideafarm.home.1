@@ -8,34 +8,34 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     }
-        etThread.osSleepF( tinBaseP , TOCK , TOCK / 4 ) ;
-        etThread.delF( tinBaseP , psttTime ) ;
-        etThread.delF( tinBaseP , psttTotal ) ;
-        etThread.delF( tinBaseP , psttFree ) ;
-        etThread.delF( tinBaseP , psttUsed ) ;
-        etThread.delF( tinBaseP , psttPerTuckFree ) ;
-        etThread.strokeF( tinBaseP , T("\r")+T(psttTime)+T(" ")+T(psttTotal)+T(" ")+T(psttUsed)+T(" ")+T(psttFree)+T(" ")+T(psttPerTuckFree)+T("%") ) ;
-        etThread.strFromF( tinBaseP , psttTotal , cTotal , flFORMAT_UNSIGNED , 8 ) ;
-        etThread.strFromF( tinBaseP , psttFree , info.cbFree , flFORMAT_UNSIGNED , 8 ) ;
-        etThread.strFromF( tinBaseP , psttPerTuckFree , info.cbFree / ( cTotal >> 8 ) , flFORMAT_UNSIGNED , 2 ) ;
-        etThread.strFromF( tinBaseP , psttUsed , info.cbUsed , flFORMAT_UNSIGNED , 8 ) ;
+        etThread.osSleepF( tin0P , TOCK , TOCK / 4 ) ;
+        etThread.delF( tin0P , psttTime ) ;
+        etThread.delF( tin0P , psttTotal ) ;
+        etThread.delF( tin0P , psttFree ) ;
+        etThread.delF( tin0P , psttUsed ) ;
+        etThread.delF( tin0P , psttPerTuckFree ) ;
+        etThread.strokeF( tin0P , T("\r")+T(psttTime)+T(" ")+T(psttTotal)+T(" ")+T(psttUsed)+T(" ")+T(psttFree)+T(" ")+T(psttPerTuckFree)+T("%") ) ;
+        etThread.strFromF( tin0P , psttTotal , cTotal , flFORMAT_UNSIGNED , 8 ) ;
+        etThread.strFromF( tin0P , psttFree , info.cbFree , flFORMAT_UNSIGNED , 8 ) ;
+        etThread.strFromF( tin0P , psttPerTuckFree , info.cbFree / ( cTotal >> 8 ) , flFORMAT_UNSIGNED , 2 ) ;
+        etThread.strFromF( tin0P , psttUsed , info.cbUsed , flFORMAT_UNSIGNED , 8 ) ;
         __Z( cTotal ) ;
         countT cTotal = info.cbUsed + info.cbFree ;
         ZE( strokeS* , psttTotal ) ;
         ZE( strokeS* , psttFree ) ;
         ZE( strokeS* , psttPerTuckFree ) ;
         ZE( strokeS* , psttUsed ) ;
-        poolOld.walkF( tinBaseP , poolOldWalkerF , pInfo ) ;
+        poolOld.walkF( tin0P , poolOldWalkerF , pInfo ) ;
         countT pInfo = (countT)&info ;
         infoS info ;
 
         }
-            etThread.strFromTimeF( tinBaseP , psttTime , time1 , time2 ) ; ___( psttTime ) ;
-            etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
+            etThread.strFromTimeF( tin0P , psttTime , time1 , time2 ) ; ___( psttTime ) ;
+            etThread.osTimeNowF( tin0P , time1 , time2 ) ;
             ZE( sCountT , time2 ) ;
             ZE( countT , time1 ) ;
         {
@@ -45,12 +45,12 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 {
 else
 }
-    etThread.strokeF( tinBaseP , T("Another ")+textIdFileC( tinBaseP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tin0P , T("Another ")+textIdFileC( tin0P , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("8e30104") ) ;
+batonC baton( tin0P , TAG( TAGiDnULL ) , T("8e30104") ) ;
 
 TODO
 
@@ -71,7 +71,7 @@ TODO
     infoS* pInfo = (infoS*)pInfoP ;
     idClientP = idClientP ;
 {
-boolT poolOldWalkerF( tin0S& tinBaseP , voidT* const pvP , countT& idClientP , countT& pInfoP )
+boolT poolOldWalkerF( tin0S& tin0P , voidT* const pvP , countT& idClientP , countT& pInfoP )
 
 }
 {

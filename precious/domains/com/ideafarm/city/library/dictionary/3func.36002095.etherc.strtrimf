@@ -10,21 +10,21 @@
 }
     return csttFromBeginning ;
 
-    delF( tinBaseP , psttDoomedList ) ;
-    delF( tinBaseP , psttOld ) ;
+    delF( tin0P , psttDoomedList ) ;
+    delF( tin0P , psttOld ) ;
 
     }
-        delF( tinBaseP , psttTrimmed ) ;
+        delF( tin0P , psttTrimmed ) ;
         }
-            if( idd ) { strFuseF( tinBaseP , psttP , psttItemDelimiterP ) ; ___( psttP ) ; }
-            strFuseF( tinBaseP , psttP , psttTrimmed ) ; ___( psttP ) ;
+            if( idd ) { strFuseF( tin0P , psttP , psttItemDelimiterP ) ; ___( psttP ) ; }
+            strFuseF( tin0P , psttP , psttTrimmed ) ; ___( psttP ) ;
         {
         if( psttTrimmed && psttTrimmed->idAdam )
 
         }
-            delF( tinBaseP , psttw2 ) ;
+            delF( tin0P , psttw2 ) ;
 
-            else           { strSubstringF( tinBaseP , psttTrimmed , countTC( 1 ) , cWanted , psttw2 ) ; ___( psttTrimmed ) ; }
+            else           { strSubstringF( tin0P , psttTrimmed , countTC( 1 ) , cWanted , psttw2 ) ; ___( psttTrimmed ) ; }
             if( !cWanted ) { psttTrimmed = psttw2 ; psttw2 = 0 ; }
 
             }
@@ -32,7 +32,7 @@
                 cWanted = idd - 1 ;
                 if( idf1 ) continue ;
                 if( !idd ) break ;
-                countT idd = strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idf1 , sttq1 , psttDoomedList , psttw2 ) ;
+                countT idd = strIdAnyF( tin0P , 0 , flSTRmATCH_null , idf1 , sttq1 , psttDoomedList , psttw2 ) ;
             {
             while( !POOP )
             ZE( countT , cWanted ) ;
@@ -43,10 +43,10 @@
         ZE( strokeS* , psttTrimmed ) ;
 
         // psttw2: LEADING DOOMED HAVE BEEN REMOVED
-        delF( tinBaseP , psttw ) ;
+        delF( tin0P , psttw ) ;
         }
             }
-                strSubstringF( tinBaseP , psttw2 , idf1 , countTC() , psttw ) ; ___( psttw2 ) ;
+                strSubstringF( tin0P , psttw2 , idf1 , countTC() , psttw ) ; ___( psttw2 ) ;
 
                 }
                     csttFromBeginning = idf1 - 1 ;
@@ -56,7 +56,7 @@
             {
             else
             }
-                strMakeF( tinBaseP , LF , psttw2 , T("") ) ; ___( psttw2 ) ;
+                strMakeF( tin0P , LF , psttw2 , T("") ) ; ___( psttw2 ) ;
 
                 }
                     csttFromBeginning = psttw->idAdam ;
@@ -66,7 +66,7 @@
             {
             if( !idf1 )
 
-            countT idf1 = strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , countTC( 1 ) , sttq1 , psttDoomedList , psttw , 0 , 1 , flSTRiDaNY_NOT ) ;
+            countT idf1 = strIdAnyF( tin0P , 0 , flSTRmATCH_null , countTC( 1 ) , sttq1 , psttDoomedList , psttw , 0 , 1 , flSTRiDaNY_NOT ) ;
             strokeS sttq1 = sttq ;
         {
         if( psttw )
@@ -78,11 +78,11 @@
             idf = 0 ;
         {
         else
-        if( psttItemDelimiterP ) { strSubstringF( tinBaseP , psttw , idf , sttq , psttItemDelimiterP , psttOld , 0 ) ; ___( psttw ) ; }
+        if( psttItemDelimiterP ) { strSubstringF( tin0P , psttw , idf , sttq , psttItemDelimiterP , psttOld , 0 ) ; ___( psttw ) ; }
         ZE( strokeS* , psttw ) ;
 
         // idd: ID OF NEXT DELIMITER
-        if( psttItemDelimiterP ) { countT idf1 = idf ; strokeS sttq1 = sttq ; idd = strIdF( tinBaseP , 0 , flSTRmATCH_null , idf1 , sttq1 , psttItemDelimiterP , psttOld ) ; }
+        if( psttItemDelimiterP ) { countT idf1 = idf ; strokeS sttq1 = sttq ; idd = strIdF( tin0P , 0 , flSTRmATCH_null , idf1 , sttq1 , psttItemDelimiterP , psttOld ) ; }
         ZE( countT , idd ) ;
     {
     while( !POOP && idf ) 
@@ -90,19 +90,19 @@
     ZE( countT , csttFromBeginning ) ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
-    strMakeF( tinBaseP , LF , psttP , T("") , psttOld ? psttOld->idAdam : 0 ) ; // CALLER MUST TAG ___( psttP ) ;
+    strMakeF( tin0P , LF , psttP , T("") , psttOld ? psttOld->idAdam : 0 ) ; // CALLER MUST TAG ___( psttP ) ;
 
     }
-        delF( tinBaseP , psttd ) ;
-        else       { strMakeF( tinBaseP , LF , psttOld , T("") ) ; ___( psttOld ) ; }
-        if( iddl ) { strSubstringF( tinBaseP , psttOld , idf , iddl , psttd ) ; ___( psttOld ) ; }
+        delF( tin0P , psttd ) ;
+        else       { strMakeF( tin0P , LF , psttOld , T("") ) ; ___( psttOld ) ; }
+        if( iddl ) { strSubstringF( tin0P , psttOld , idf , iddl , psttd ) ; ___( psttOld ) ; }
         iddl -- ;
         countT idf = 1 ;
         psttOld = 0 ;
         psttd = psttOld ;
         ZE( strokeS* , psttd ) ;
         if( iddl != cs - cd + 1 ) break ;
-        countT iddl = strIdF( tinBaseP , 0 , flSTRmATCH_null , countTC( 1 ) , sttq , psttItemDelimiterP ,  psttOld , 0 , - 1 ) ;
+        countT iddl = strIdF( tin0P , 0 , flSTRmATCH_null , countTC( 1 ) , sttq , psttItemDelimiterP ,  psttOld , 0 , - 1 ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         if( cs < cd ) break ;
         countT cd = psttItemDelimiterP ? psttItemDelimiterP->idAdam : 0 ;
@@ -117,11 +117,11 @@
         psttOld = psttP ;
     {
     else
-    if( psttOldP ) { strMakeF( tinBaseP , LF , psttOld , psttOldP ) ; ___( psttOld ) ; }
+    if( psttOldP ) { strMakeF( tin0P , LF , psttOld , psttOldP ) ; ___( psttOld ) ; }
     ZE( strokeS* , psttOld ) ;
 
-    else                  { strMakeF( tinBaseP , LF , psttDoomedList , T(psttItemDelimiterP?TbLACKeXCLUDINGnEWlINE:TbLACK) ) ; ___( psttDoomedList ) ; }
-    if( psttDoomedListP ) { strFuseF( tinBaseP , psttDoomedList , psttDoomedListP                                     ) ; ___( psttDoomedList ) ; }
+    else                  { strMakeF( tin0P , LF , psttDoomedList , T(psttItemDelimiterP?TbLACKeXCLUDINGnEWlINE:TbLACK) ) ; ___( psttDoomedList ) ; }
+    if( psttDoomedListP ) { strFuseF( tin0P , psttDoomedList , psttDoomedListP                                     ) ; ___( psttDoomedList ) ; }
     ZE( strokeS* , psttDoomedList ) ;
 
     _IO_
@@ -134,7 +134,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT etherC::strTrimF( tin0S& tinBaseP , strokeS*& psttP , const strokeS* const psttOldP , const strokeS* const psttItemDelimiterP , const strokeS* const psttDoomedListP , const strokeS sttNewP )/*1*/
+/*1*/countT etherC::strTrimF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttOldP , const strokeS* const psttItemDelimiterP , const strokeS* const psttDoomedListP , const strokeS sttNewP )/*1*/
 
 //U:: 20130108@2102: THIS DOES NOT WORK.  SEE ADAM 51000675
 

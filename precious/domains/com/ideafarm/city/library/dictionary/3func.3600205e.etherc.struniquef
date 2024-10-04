@@ -8,8 +8,8 @@
 
 
 }
-    strMakeF( tinBaseP , LF , psttP , tAll ) ; // CALLER MUST TAG ___( psttP ) ;
-    delF( tinBaseP , psttTime ) ;
+    strMakeF( tin0P , LF , psttP , tAll ) ; // CALLER MUST TAG ___( psttP ) ;
+    delF( tin0P , psttTime ) ;
     ;
 
         +tDot+TF3(tid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)
@@ -20,16 +20,16 @@
     TN( tAll , "" ) ; tAll =
     TN( tDot , "." ) ;
 
-    countT tid = osThreadIdF( tinBaseP ) ;
-    countT pid = osProcessIdF( tinBaseP ) ;
-    countT cid = diskIdF( tinBaseP , T("///c") ) ;
+    countT tid = osThreadIdF( tin0P ) ;
+    countT pid = osProcessIdF( tin0P ) ;
+    countT cid = diskIdF( tin0P , T("///c") ) ;
 
     }
-        strMakeF( tinBaseP , LF , psttTime , TF3((countT)time2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( psttTime ) ;
+        strMakeF( tin0P , LF , psttTime , TF3((countT)time2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( psttTime ) ;
 
-        //strFromTimeF( tinBaseP , psttTime , time1 , time2 , 1 , 8 , S1C('.') , 0 , ifcIDfORMATtIME_NUMERIC , flFORMAT_FOREIGN ) ; //U::BUG: 20150913@1627: OBSERVED TO BE NONMONOTONIC
+        //strFromTimeF( tin0P , psttTime , time1 , time2 , 1 , 8 , S1C('.') , 0 , ifcIDfORMATtIME_NUMERIC , flFORMAT_FOREIGN ) ; //U::BUG: 20150913@1627: OBSERVED TO BE NONMONOTONIC
 
-        osTimeNowF( tinBaseP , time1 , time2 ) ;
+        osTimeNowF( tin0P , time1 , time2 ) ;
         ZE( sCountT , time2 ) ;
         ZE( countT , time1 ) ;
     {
@@ -45,7 +45,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strUniqueF( tin0S& tinBaseP , strokeS*& psttP )/*1*/
+/*1*/voidT etherC::strUniqueF( tin0S& tin0P , strokeS*& psttP )/*1*/
 
 //U: REWRITE THIS TO USE FOREIGN DIGIT ORDERING AND TO EXPLOIT ALL APPLICABLE flFORMAT FLAGS (E.G. FILLzE)
 

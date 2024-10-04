@@ -8,7 +8,7 @@
 
 }
     //}
-    //    ether.traceF( tinBaseP , T("literal:    \"")+T(ppostLiteral[offLit])+T("\"") ) ;
+    //    ether.traceF( tin0P , T("literal:    \"")+T(ppostLiteral[offLit])+T("\"") ) ;
     //{
     //for( offLit = 0 ; offLit < sizeof ppostLiteral / sizeof ppostLiteral[ 0 ] && ppostLiteral[ offLit ] ; offLit ++ )
 
@@ -60,8 +60,8 @@
 
                         }
                             offo = 0 ;
-                            thirdC::c_memsetIF( tinBaseP      , ppostLiteral[ offLit ] , psttPattern->idAdam + 1 ) ;
-                            etherP.newF(        tinBaseP , LF , ppostLiteral[ offLit ] , psttPattern->idAdam + 1 ) ; ___( ppostLiteral[ offLit ] ) ;
+                            thirdC::c_memsetIF( tin0P      , ppostLiteral[ offLit ] , psttPattern->idAdam + 1 ) ;
+                            etherP.newF(        tin0P , LF , ppostLiteral[ offLit ] , psttPattern->idAdam + 1 ) ; ___( ppostLiteral[ offLit ] ) ;
                         {
                         if( !ppostLiteral[ offLit ] )
                         bFlush = 0 ;
@@ -88,20 +88,20 @@
     __NZ( psttPattern[ CSpREFIX ].idAdam  - sa_SSSaND ) ;   // (LITERAL STROKES ARE ACCUMULATED ONLY WHEN idLevel == 1)
     __NZ( psttPattern[ CSpREFIX ].idCaste - sc_ccSSS  ) ;   // THE FOLLOWING CODE ASSUMES THAT psttPattern IS A CONFORMANT IPDOS (TM) PATTERN, WHICH MUST BEGIN WITH sa_SSSaND
 
-    thirdC::c_memsetIF( tinBaseP , (byteT*)ppostLiteral , sizeof ppostLiteral ) ;
+    thirdC::c_memsetIF( tin0P , (byteT*)ppostLiteral , sizeof ppostLiteral ) ;
 
-    //ether.delF( tinBaseP , psttd ) ;
-    //ether.traceF( tinBaseP , T("[pattern]:    ")+T(psttd) ) ;
-    //ether.strDumpStrokesIF( tinBaseP , psttd , psttPattern , 0 ) ; ___( psttd ) ;
+    //ether.delF( tin0P , psttd ) ;
+    //ether.traceF( tin0P , T("[pattern]:    ")+T(psttd) ) ;
+    //ether.strDumpStrokesIF( tin0P , psttd , psttPattern , 0 ) ; ___( psttd ) ;
     //ZE( strokeS* , psttd ) ;
 
     }
         default                                               : { BLAMMO ; break ; }
         case ifcIDtYPEpATTERN_FOREIGNuNIXrEGULAReXPRESSION    : { BLAMMO ; break ; }  //U:: MARKUP THAT EXACTLY SIMULATES UNIX REGULAR EXPRESSION SEMANTICS AND SYNTAX
-        case ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT           : { ether.strPatternFromWildcardsStrictF(    tinBaseP , psttPattern , flagsOptimize , pFlagsOverride , pcMinOverride , pcMaxOverride , psttP ) ; ___( psttPattern ) ; ___( pFlagsOverride ) ; ___( pcMinOverride ) ; ___( pcMaxOverride ) ; ; break ; }
-        case ifcIDtYPEpATTERN_FOREIGNwILDCARDmICROSOFT        : { ether.strPatternFromWildcardsMicrosoftF( tinBaseP , psttPattern , flagsOptimize , pFlagsOverride , pcMinOverride , pcMaxOverride , psttP ) ; ___( psttPattern ) ; ___( pFlagsOverride ) ; ___( pcMinOverride ) ; ___( pcMaxOverride ) ; ; break ; }
+        case ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT           : { ether.strPatternFromWildcardsStrictF(    tin0P , psttPattern , flagsOptimize , pFlagsOverride , pcMinOverride , pcMaxOverride , psttP ) ; ___( psttPattern ) ; ___( pFlagsOverride ) ; ___( pcMinOverride ) ; ___( pcMaxOverride ) ; ; break ; }
+        case ifcIDtYPEpATTERN_FOREIGNwILDCARDmICROSOFT        : { ether.strPatternFromWildcardsMicrosoftF( tin0P , psttPattern , flagsOptimize , pFlagsOverride , pcMinOverride , pcMaxOverride , psttP ) ; ___( psttPattern ) ; ___( pFlagsOverride ) ; ___( pcMinOverride ) ; ___( pcMaxOverride ) ; ; break ; }
         case ifcIDtYPEpATTERN_NATIVE                          : { BLAMMO ; break ; }  //U:: MARKUP FOR PLAIN TEXT STRING THAT IS A THIN WRAP OF THE UNDERLYING sa_SSS CONSTANTS: sp_SSSfLAG sa_SSS
-        case ifcIDtYPEpATTERN_LITERAL                         : { ether.strMakeF( tinBaseP , LF , psttPattern , psttP ) ; ___( psttPattern ) ; break ; }    //20230207@1254: ADDED W/O ANALYSIS
+        case ifcIDtYPEpATTERN_LITERAL                         : { ether.strMakeF( tin0P , LF , psttPattern , psttP ) ; ___( psttPattern ) ; break ; }    //20230207@1254: ADDED W/O ANALYSIS
     {
     switch( idTypeP )
 
@@ -124,7 +124,7 @@ pFlagsOverride( 0 ) ,
 flagsOptimize( 0 ) ,
 psttPattern( 0 ) ,
 ether( etherP ) ,
-/*1*/patternC::patternC( tin0S& tinBaseP , etherC& etherP , const strokeS* const psttP , const countT idTypeP ) :/*1*/
+/*1*/patternC::patternC( tin0S& tin0P , etherC& etherP , const strokeS* const psttP , const countT idTypeP ) :/*1*/
 
 /**/
 */

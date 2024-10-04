@@ -9,21 +9,21 @@
 
 REST
 
-etThread.delF( tinBaseP , pbr ) ;
+etThread.delF( tin0P , pbr ) ;
 
-etThread.osEditF( tinBaseP , tFile ) ; // THIS WILL ONLY BE USEFUL IF IFC HAS BEEN CONFIGURED TO USE AN EDITOR THAT CAN DISPLAY HEX
+etThread.osEditF( tin0P , tFile ) ; // THIS WILL ONLY BE USEFUL IF IFC HAS BEEN CONFIGURED TO USE AN EDITOR THAT CAN DISPLAY HEX
 
-etThread.boxPutF( tinBaseP , tFile , pbr , cbr ) ;
+etThread.boxPutF( tin0P , tFile , pbr , cbr ) ;
 TN( tFile , "///d/tmp/" ) ; tFile += TF1(DDNAME) ;
 
-etThread.delF( tinBaseP , pbq ) ;
-etThread.dnsReplyF( tinBaseP , pbr , cbr , pbq , stack ) ;
+etThread.delF( tin0P , pbq ) ;
+etThread.dnsReplyF( tin0P , pbr , cbr , pbq , stack ) ;
 ZE( countT , cbr ) ;
 ZE( byteT* , pbr ) ;
 
-stackC stack( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
+stackC stack( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
 
-etThread.dnsFormatQueryF( tinBaseP , pbq , cbq , T("www.ideafarm.com") , ifcIDtYPEdNSqUERY_A ) ; ___( pbq ) ;
+etThread.dnsFormatQueryF( tin0P , pbq , cbq , T("www.ideafarm.com") , ifcIDtYPEdNSqUERY_A ) ; ___( pbq ) ;
 ZE( countT , cbq ) ;
 ZE( byteT* , pbq ) ;
 

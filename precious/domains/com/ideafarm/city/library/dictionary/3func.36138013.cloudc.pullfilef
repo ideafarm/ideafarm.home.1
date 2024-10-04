@@ -14,20 +14,20 @@
         }
             }
                 }
-                    etPrime.osSleepF( tinBaseP , TOCK ) ;
-                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-                    etRock.traceF( tinBaseP , T("will retry after napping for a tock") ) ;
-                    ether.diskFileOrDirDeleteF( tinBaseP , tFileTmp ) ;
+                    etPrime.osSleepF( tin0P , TOCK ) ;
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+                    etRock.traceF( tin0P , T("will retry after napping for a tock") ) ;
+                    ether.diskFileOrDirDeleteF( tin0P , tFileTmp ) ;
                 {
                 else
                 }
                     break ;
                     bOk = 1 ;
-                    etRock.traceF( tinBaseP , T("skipping this file") ) ;
+                    etRock.traceF( tin0P , T("skipping this file") ) ;
                 {
                 if( bNotFound )
 
-                etRock.traceF( tinBaseP , T("pullFileF / unknown error") ) ;
+                etRock.traceF( tin0P , T("pullFileF / unknown error") ) ;
                 POOPRqUIET ;
             {
             else
@@ -35,8 +35,8 @@
                 break ;
 
                 }
-                    ether.diskMoveFileOrDirF(   tinBaseP , psttFileP , tFileTmp ) ; //IT WOULD BE NICE TO BE ABLE TO DO THIS ATOMICALLY
-                    ether.diskFileOrDirDeleteF( tinBaseP , psttFileP ) ;            //IT WOULD BE NICE TO BE ABLE TO DO THIS ATOMICALLY
+                    ether.diskMoveFileOrDirF(   tin0P , psttFileP , tFileTmp ) ; //IT WOULD BE NICE TO BE ABLE TO DO THIS ATOMICALLY
+                    ether.diskFileOrDirDeleteF( tin0P , psttFileP ) ;            //IT WOULD BE NICE TO BE ABLE TO DO THIS ATOMICALLY
                 {
                 else
                 }
@@ -53,46 +53,46 @@
                 }
                     }
                         }
-                            ether.delF( tinBaseP , pbBuffer ) ;
+                            ether.delF( tin0P , pbBuffer ) ;
                             }
                                 }
                                     }
                                         cDo -= cbGot ;
-                                        ether.fileWriteF( tinBaseP , fOut , pbBuffer , cbGot ) ;
-                                        //etRock.traceF( tinBaseP , T("pullFileF / U:: TO FIND A BUG: 20161201@1132: aok read bite [cDo,cbBite,cbGot]: ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbBite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        ether.fileWriteF( tin0P , fOut , pbBuffer , cbGot ) ;
+                                        //etRock.traceF( tin0P , T("pullFileF / U:: TO FIND A BUG: 20161201@1132: aok read bite [cDo,cbBite,cbGot]: ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbBite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     {
                                     else
-                                    if( POOP ) etRock.traceF( tinBaseP , T("pullFileF / could not read bite [cDo,cbBite,cbGot]: ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbBite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    if( POOP ) etRock.traceF( tin0P , T("pullFileF / could not read bite [cDo,cbBite,cbGot]: ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbBite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                     __Z( cbGot ) ;
-                                    countT cbGot = ss.readF( tinBaseP , pbBuffer , cbBite ) ;
+                                    countT cbGot = ss.readF( tin0P , pbBuffer , cbBite ) ;
 
                                     countT cbBite = cDo < cbBuffer ? cDo : cbBuffer ;
                                 {
                                 while( cDo && !POOP )
                                 countT cDo = cbFile ;
 
-                                //((tin9S&)tinBaseP).pc Utility[ 0 ] = 1 ; //U::TO FIND A BUG
+                                //((tin9S&)tin0P).pc Utility[ 0 ] = 1 ; //U::TO FIND A BUG
 
-                                fileC fOut( tinBaseP , (strokeS*)tFileTmp , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+                                fileC fOut( tin0P , (strokeS*)tFileTmp , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
                             {
                             if( !POOP )
 
                             }
-                                ether.delF( tinBaseP , psttu ) ;
-                                ether.delF( tinBaseP , psttPath ) ;
+                                ether.delF( tin0P , psttu ) ;
+                                ether.delF( tin0P , psttPath ) ;
                                 tFileTmp = T(psttPath)+T("/pullFileF.")+T(psttu) ;
-                                ether.strUniqueF( tinBaseP , psttu ) ; ___( psttu ) ;
+                                ether.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
                                 ZE( strokeS* , psttu ) ;
 
-                                ether.delF( tinBaseP , psttnu ) ;
-                                ether.strBisectF( tinBaseP , psttPath , psttnu , psttFileP , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttnu ) ;
+                                ether.delF( tin0P , psttnu ) ;
+                                ether.strBisectF( tin0P , psttPath , psttnu , psttFileP , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttnu ) ;
                                 ZE( strokeS* , psttnu ) ;
                                 ZE( strokeS* , psttPath ) ; // OBTAINED SO TMP FILE WILL BE ON THE SAME VOLUME AS THE FILE TO BE REPLACED ; ANY FAILURE WILL ALSO BE VISIBLE SINCE TMP FILE IS IN THE SAME FOLDER
                             {
 
                             __Z( pbBuffer ) ;
-                            ether.newF( tinBaseP , LF , pbBuffer , cbBuffer ) ; ___( pbBuffer ) ;
+                            ether.newF( tin0P , LF , pbBuffer , cbBuffer ) ; ___( pbBuffer ) ;
                             countT cbBuffer = cbFile < TOCK ? cbFile : TOCK ;
                             ZE( byteT* , pbBuffer ) ;
                         {
@@ -105,9 +105,9 @@
                             //LOGrAW( tSay ) ;
                             //LOGrAW( "\r\n---- REQUEST ----------------------------\r\n" ) ;
 
-                            etRock.traceF( tinBaseP , T("pullFileF / [tSay]: >>>>")+tSay+T("<<<<") ) ;
-                            etRock.traceF( tinBaseP , T("pullFileF / [offoDebug,responseFragment]: ")+TF2(offoDebug,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" >>>>")+T(postDebug)+T("<<<<") ) ;
-                            etRock.traceF( tinBaseP , T("pullFileF / error detected while inspecting reply header") ) ;
+                            etRock.traceF( tin0P , T("pullFileF / [tSay]: >>>>")+tSay+T("<<<<") ) ;
+                            etRock.traceF( tin0P , T("pullFileF / [offoDebug,responseFragment]: ")+TF2(offoDebug,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" >>>>")+T(postDebug)+T("<<<<") ) ;
+                            etRock.traceF( tin0P , T("pullFileF / error detected while inspecting reply header") ) ;
                         {
                         if( POOP )
 
@@ -120,31 +120,31 @@
                                     }
                                         }
                                             }
-                                                ether.delF( tinBaseP , psttw ) ;
-                                                cbFile = ether.strDigitsToSCountF( tinBaseP , psttw , 0xa , 1 ) ;
-                                                ether.strSubstringF( tinBaseP , psttw , idf , idl , psttLine ) ; ___( psttw ) ;
+                                                ether.delF( tin0P , psttw ) ;
+                                                cbFile = ether.strDigitsToSCountF( tin0P , psttw , 0xa , 1 ) ;
+                                                ether.strSubstringF( tin0P , psttw , idf , idl , psttLine ) ; ___( psttw ) ;
                                                 ZE( strokeS* , psttw ) ;
 
                                                 ZE( countT , idl ) ;
                                                 while( psttLine[ CSpREFIX - 1 + idf ] == sttBlank ) idf ++ ;
-                                                countT idf = tContentLength.csF( tinBaseP ) + 1 ;
+                                                countT idf = tContentLength.csF( tin0P ) + 1 ;
                                                 strokeS* psttLine = tLine ;
                                             {
-                                            if( 1 == ether.strIdF( tinBaseP , tContentLength , tLine ) )
+                                            if( 1 == ether.strIdF( tin0P , tContentLength , tLine ) )
                                             strokeS sttBlank( ' ' ) ;
                                         {
                                         else
-                                        if( POOP ) etRock.traceF( tinBaseP , T("pullFileF / expected LF byte but received ")+TF2(ostLF,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        if( POOP ) etRock.traceF( tin0P , T("pullFileF / expected LF byte but received ")+TF2(ostLF,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         __NZ( ostLF != '\n' ) ;
                                     {
                                     else
-                                    if( POOP ) etRock.traceF( tinBaseP , T("pullFileF / could not read expected LF byte") ) ;
+                                    if( POOP ) etRock.traceF( tin0P , T("pullFileF / could not read expected LF byte") ) ;
 
-                                    __Z( ss.readF( tinBaseP , &ostLF , 1 ) ) ;
+                                    __Z( ss.readF( tin0P , &ostLF , 1 ) ) ;
                                     osTextT ostLF ;
 
                                     }
-                                        //etRock.traceF( tinBaseP , T("pullFileF / header line: ")+T(postBuffer) ) ;
+                                        //etRock.traceF( tin0P , T("pullFileF / header line: ")+T(postBuffer) ) ;
                                         postBuffer[ offb ] = 0 ;
                                     {
                                     if( offb )
@@ -153,21 +153,21 @@
 
                                 }
                                     }
-                                        __( !ether.strIdF( tinBaseP , tReplyCode200_OK , tLine ) ) ;
+                                        __( !ether.strIdF( tin0P , tReplyCode200_OK , tLine ) ) ;
 
                                         }
-                                            etRock.traceF( tinBaseP , T("not found in remote: \"")+T(psttShortP)+T("\"") ) ;
+                                            etRock.traceF( tin0P , T("not found in remote: \"")+T(psttShortP)+T("\"") ) ;
                                             bNotFound = 1 ;
                                         {
-                                        if( ether.strIdF( tinBaseP , tReplyCode404_NotFound , tLine ) )
+                                        if( ether.strIdF( tin0P , tReplyCode404_NotFound , tLine ) )
 
                                         }
                                             break ;
                                             tSay = tn ;
-                                            etRock.traceF( tinBaseP , T("authorization refused") ) ;
+                                            etRock.traceF( tin0P , T("authorization refused") ) ;
                                         {
                                         if( POOP )
-                                        __NZ( 1 == ether.strIdF( tinBaseP , tReplyCode401_Unauthorized , tLine ) ) ;
+                                        __NZ( 1 == ether.strIdF( tin0P , tReplyCode401_Unauthorized , tLine ) ) ;
                                     {
                                     if( !POOP )
 
@@ -181,7 +181,7 @@
                             {
                             else if( postBuffer[ offb ] == '\r' )         // IF I HAVE A LINE OF HEADER
                             }
-                                etRock.traceF( tinBaseP , T("pullFileF / could not read a byte of a reply header line [offb,fragment]: ")+TF2(offb,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" >>>>")+T(postBuffer)+T("<<<<") ) ;
+                                etRock.traceF( tin0P , T("pullFileF / could not read a byte of a reply header line [offb,fragment]: ")+TF2(offb,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" >>>>")+T(postBuffer)+T("<<<<") ) ;
 
                                 postBuffer[ offb ] = 0 ;
                             {
@@ -189,7 +189,7 @@
 
                             if( !POOP ) postDebug[ offoDebug ++ ] = postBuffer[ offb ] ;
 
-                            __Z( ss.readF( tinBaseP , postBuffer + offb , 1 ) ) ;
+                            __Z( ss.readF( tin0P , postBuffer + offb , 1 ) ) ;
                         {
                         for( offb = 0 ; !POOP && offb < sizeof postBuffer ; offb ++ )
                         ZE( countT , cbFile ) ;
@@ -199,7 +199,7 @@
                         osTextT postBuffer[ TOCK ] ;
 
                         ZE( countT , offoDebug ) ;                                  //U::TO FIND A BUG
-                        thirdC::c_memsetIF( tinBaseP , postDebug , sizeof postDebug ) ; //U::TO FIND A BUG
+                        thirdC::c_memsetIF( tin0P , postDebug , sizeof postDebug ) ; //U::TO FIND A BUG
                         osTextT postDebug[ TOCK ] ;                                 //U::TO FIND A BUG
 
                         // 
@@ -219,16 +219,16 @@
                         // SAMPLE REPLY
                     {
                     else
-                    if( POOP ) ether.traceF( tinBaseP , T("pullFileF / could not write") ) ;
-                    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+                    if( POOP ) ether.traceF( tin0P , T("pullFileF / could not write") ) ;
+                    ss.writeF( tin0P , (osTextT*)tSay , (countT)tSay.csF( tin0P ) ) ;
                 {
                 else
-                if( POOP ) ether.traceF( tinBaseP , T("pullFileF / could not connect") ) ;
-                ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , ether , tHost ) ) ;
+                if( POOP ) ether.traceF( tin0P , T("pullFileF / could not connect") ) ;
+                ss.connectF( tin0P , 443 , socketC::nicNameIF( tin0P , ether , tHost ) ) ;
             {
             else
-            if( POOP ) ether.traceF( tinBaseP , T("pullFileF / could not ct socket") ) ;
-            socketC ss( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL /*, &idleTimeAllowedRead , &idleTimeAllowedWrite*/ ) ;
+            if( POOP ) ether.traceF( tin0P , T("pullFileF / could not ct socket") ) ;
+            socketC ss( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL /*, &idleTimeAllowedRead , &idleTimeAllowedWrite*/ ) ;
             ZE( boolT , bNotFound ) ;
             TN( tFileTmp , "" ) ;
 
@@ -239,12 +239,12 @@
         //countT idleTimeAllowedRead  = TICK >> 1 ;
 
         }
-            ether.delF( tinBaseP , psttShortUrlEncoded ) ;
+            ether.delF( tin0P , psttShortUrlEncoded ) ;
             }
-                bHandle.ungrabF( tinBaseP ) ;
+                bHandle.ungrabF( tin0P ) ;
                 tSay = T("GET ")+tUrlCloudAgent+T("/")+T(psttCloudContainerP)+T("/")+T(psttShortUrlEncoded)+T(" HTTP/1.1\r\nHost: ")+tHost+T("\r\nX-Auth-Token: ")+cloudInfo.tRackspaceAccessToken+T("\r\n\r\n") ;
                 cloudInfoS& cloudInfo = *(cloudInfoS*)hCloud.osF( ifcIDtYPEhANDLE_CLOUD ) ;
-                bHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                bHandle.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
 
             //  
@@ -254,21 +254,21 @@
             // 
             // EXAMPLE
 
-            ether.strToUrlF( tinBaseP , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
+            ether.strToUrlF( tin0P , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
             ZE( strokeS* , psttShortUrlEncoded ) ;                                                                                                  
         {
-        if( !tSay.csF( tinBaseP ) )
+        if( !tSay.csF( tin0P ) )
     {
     while( !POOP && !etPrime )
     TN( tSay , "" ) ;
     TN( tn , "" ) ;
 
-    etherC& etPrime   = etherC::etPrimeIF( tinBaseP ) ;
+    etherC& etPrime   = etherC::etPrimeIF( tin0P ) ;
     ZE( boolT , bOk ) ;
 
-    //etRock.traceF( tinBaseP , T("the GET utterance has been appended to the log") ) ;
+    //etRock.traceF( tin0P , T("the GET utterance has been appended to the log") ) ;
     //LOGrAW( tSay ) ;
-    etherC& etRock = etherC::etRockIF( tinBaseP ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     _IO_
 
@@ -283,7 +283,7 @@
 
     SCOOP
 {
-/*1*/voidT cloudC::pullFileF( tin0S& tinBaseP , soulC& sRenameP , const strokeS* const psttFileP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP )/*1*/
+/*1*/voidT cloudC::pullFileF( tin0S& tin0P , soulC& sRenameP , const strokeS* const psttFileP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP )/*1*/
 
 /**/
 */

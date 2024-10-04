@@ -1,25 +1,25 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     }
-        etThread.delF( tinBaseP , pbi ) ;
+        etThread.delF( tin0P , pbi ) ;
 
         }
-            etThread.traceF( tinBaseP , T("caught ")+TF2(idSay,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idpi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(idhi) ) ;
+            etThread.traceF( tin0P , T("caught ")+TF2(idSay,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idpi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(idhi) ) ;
             countT& idSay = *(countT*)pbi ;
         {
         if( !ether && cbi >= sizeof( countT ) )
 
         }
-            etThread.traceF( tinBaseP , T("oops!") ) ;
+            etThread.traceF( tin0P , T("oops!") ) ;
             POOPR
         {
         if( POOP )
-        sock.readF( tinBaseP , pbi , cbi , idpi , idhi ) ;
+        sock.readF( tin0P , pbi , cbi , idpi , idhi ) ;
         nicNameC idhi ;
         ZE( countT , idpi ) ;
         ZE( countT , cbi ) ;
@@ -29,21 +29,21 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
     etThread.osThreadF( TaRG1( tmOpenDoor ) , (countT)&sock ) ;
 
-    idPortBind = sock.bindF( tinBaseP , idPortBind ) ;
+    idPortBind = sock.bindF( tin0P , idPortBind ) ;
 
-    socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    socketC sock( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
     SCOOPS
 {
 IFsCRATCH
 
-for( countT offn = 0 ; offn < cnnToServer ; offn ++ ) etThread.traceF( tinBaseP , T("server :    ")+T(pnnToServer[offn]) ) ;
-//for( countT offn = 0 ; offn < cnnToGray   ; offn ++ ) etThread.traceF( tinBaseP , T("gray   :    ")+T(pnnToGray[offn]) ) ;
-for( countT offn = 0 ; offn < cnnToBlack  ; offn ++ ) etThread.traceF( tinBaseP , T("black  :    ")+T(pnnToBlack[offn]) ) ;
+for( countT offn = 0 ; offn < cnnToServer ; offn ++ ) etThread.traceF( tin0P , T("server :    ")+T(pnnToServer[offn]) ) ;
+//for( countT offn = 0 ; offn < cnnToGray   ; offn ++ ) etThread.traceF( tin0P , T("gray   :    ")+T(pnnToGray[offn]) ) ;
+for( countT offn = 0 ; offn < cnnToBlack  ; offn ++ ) etThread.traceF( tin0P , T("black  :    ")+T(pnnToBlack[offn]) ) ;
 
-socketC::nicNameIF( tinBaseP , etThread , pnnToServer , cnnToServer , psttServer ) ;
-//socketC::nicNameIF( tinBaseP , etThread , pnnToGray   , cnnToGray   , psttGray   ) ;
-socketC::nicNameIF( tinBaseP , etThread , pnnToBlack  , cnnToBlack  , psttBlack  ) ;
+socketC::nicNameIF( tin0P , etThread , pnnToServer , cnnToServer , psttServer ) ;
+//socketC::nicNameIF( tin0P , etThread , pnnToGray   , cnnToGray   , psttGray   ) ;
+socketC::nicNameIF( tin0P , etThread , pnnToBlack  , cnnToBlack  , psttBlack  ) ;
 
 strokeS* psttServer = tServer ;
 //strokeS* psttGray   = tGray   ;
@@ -64,17 +64,17 @@ TODO
 DONE( tmOpenDoor )
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
 
         }
-            pSock->writeF( tinBaseP , idPortTo , pnnToServer[ offn ] /*nicNameC()*/ , (byteT*)&idSayLath , sizeof idSayLath ) ;               // 64222_9
-            etThread.traceF( tinBaseP , T("throwing ")+TF2(idSayLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idPortBind,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idPortTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(pnnToServer[offn]) ) ;
+            pSock->writeF( tin0P , idPortTo , pnnToServer[ offn ] /*nicNameC()*/ , (byteT*)&idSayLath , sizeof idSayLath ) ;               // 64222_9
+            etThread.traceF( tin0P , T("throwing ")+TF2(idSayLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idPortBind,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idPortTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(pnnToServer[offn]) ) ;
 
-            //pSock->writeF( tinBaseP , idPortTo , pnnToGray[ offn ] /*nicNameC()*/ , (byteT*)&idSayLath , sizeof idSayLath ) ;               // 64222_9
-            //etThread.traceF( tinBaseP , T("throwing ")+TF2(idSayLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idPortBind,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idPortTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(pnnToGray[offn]) ) ;
+            //pSock->writeF( tin0P , idPortTo , pnnToGray[ offn ] /*nicNameC()*/ , (byteT*)&idSayLath , sizeof idSayLath ) ;               // 64222_9
+            //etThread.traceF( tin0P , T("throwing ")+TF2(idSayLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idPortBind,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idPortTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(pnnToGray[offn]) ) ;
 
-            //pSock->writeF( tinBaseP , idPortTo , pnnToBlack[ offn ] /*nicNameC()*/ , (byteT*)&idSayLath , sizeof idSayLath ) ;               // 64222_9
-            //etThread.traceF( tinBaseP , T("throwing ")+TF2(++idSayLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idPortBind,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idPortTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(pnnToBlack[offn]) ) ;
+            //pSock->writeF( tin0P , idPortTo , pnnToBlack[ offn ] /*nicNameC()*/ , (byteT*)&idSayLath , sizeof idSayLath ) ;               // 64222_9
+            //etThread.traceF( tin0P , T("throwing ")+TF2(++idSayLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" from port ")+TF2(idPortBind,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to port ")+TF2(idPortTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" of ")+T(pnnToBlack[offn]) ) ;
         {
         for( countT offn = 0 ; offn < cnnToBlack ; offn ++ )
 
@@ -82,7 +82,7 @@ DONE( tmOpenDoor )
     {
     while( !ether )
     ZE( countT , idPass ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     countT idSayLath  = 0x10000000 ;
 
     socketC* pSock = (socketC*)pTaskP->c1 ;

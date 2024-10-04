@@ -9,31 +9,31 @@
                             
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 #endif
 
-else sayErrorF( tinBaseP , "could not open service manager" ) ;
+else sayErrorF( tin0P , "could not open service manager" ) ;
 }
     BOSpOOP
     BOS( WHATgbo , BOSoK , CloseServiceHandle( hsm ) )
     CONoUTrAW( "service manager opened aok\r\n" ) ;
 {
 if( hsm )
-SC_HANDLE hsm = (SC_HANDLE)((tin9S&)tinBaseP).brcRaw ;
+SC_HANDLE hsm = (SC_HANDLE)((tin9S&)tin0P).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_CREATE_SERVICE ) )
 
 #if defined( NEVERdEFINED )
 
 }
-    etThread.traceF( tinBaseP , tSay ) ;
+    etThread.traceF( tin0P , tSay ) ;
 
     tSay += tb4+T(postTUCK2) ;
 
-    if( !bOk ) sayErrorF( tinBaseP , "could not look up displayable privilege name" ) ;
-    bOk = ((tin9S&)tinBaseP).brcRaw ;
+    if( !bOk ) sayErrorF( tin0P , "could not look up displayable privilege name" ) ;
+    bOk = ((tin9S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , LookupPrivilegeDisplayName( "" , postTUCK , postTUCK2 , &cbr , &idLanguage ) )
     cbr = sizeof postTUCK2 ;
@@ -42,11 +42,11 @@ BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_CREATE_SERVICE ) )
 
     tSay += tb4+T(postTUCK) ;
 
-    if( !bOk ) sayErrorF( tinBaseP , "could not look up privilege name" ) ;
-    bOk = ((tin9S&)tinBaseP).brcRaw ;
+    if( !bOk ) sayErrorF( tin0P , "could not look up privilege name" ) ;
+    bOk = ((tin9S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , LookupPrivilegeName( "" , &pin.Privileges[ offi ].Luid , postTUCK , &cbr ) )
-    thirdC::c_memsetIF( tinBaseP , postTUCK , sizeof postTUCK ) ;
+    thirdC::c_memsetIF( tin0P , postTUCK , sizeof postTUCK ) ;
     DWORD cbr = sizeof postTUCK ;
     osTextT postTUCK[ TUCK ] ;
 
@@ -74,37 +74,37 @@ TN( tb02 , "                                " ) ;
 TN( tb4 , "    " ) ;
 TN( tDot , "." ) ;
 
-if( !bOk ) sayErrorF( tinBaseP , "could not get token privileges" ) ;
-bOk = ((tin9S&)tinBaseP).brcRaw ;
+if( !bOk ) sayErrorF( tin0P , "could not get token privileges" ) ;
+bOk = ((tin9S&)tin0P).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , GetTokenInformation( hToken , TokenPrivileges , (TOKEN_PRIVILEGES*)&pin , sizeof pin , &cbr ) )
-thirdC::c_memsetIF( tinBaseP , (byteT*)&pin , sizeof pin ) ;
+thirdC::c_memsetIF( tin0P , (byteT*)&pin , sizeof pin ) ;
 pinS pin ;
 ZE( DWORD , cbr ) ;
 
 }
     }
-        etThread.traceF( tinBaseP , T("attempted  to restart factory9") ) ;
+        etThread.traceF( tin0P , T("attempted  to restart factory9") ) ;
         }
-            etThread.traceF( tinBaseP , T("could not initiate system shutdown on factory9 [rc]: ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , T("could not initiate system shutdown on factory9 [rc]: ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             countT rc = GetLastError() ;
         {
         if( !bOk )
         boolT bOk = InitiateSystemShutdown( "factory9" , 0 , 0 , 1 , 1 ) ;
-        etThread.traceF( tinBaseP , T("attempting to restart factory9") ) ;
+        etThread.traceF( tin0P , T("attempting to restart factory9") ) ;
     {
     else
-    if( !((tin9S&)tinBaseP).brcRaw ) sayErrorF( tinBaseP , "could not adjust token privileges" ) ;
+    if( !((tin9S&)tin0P).brcRaw ) sayErrorF( tin0P , "could not adjust token privileges" ) ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , AdjustTokenPrivileges( hToken , 0 , (TOKEN_PRIVILEGES*)&pin1 , 0 , 0 , 0 ) )
 
-    pin1S pin1( tinBaseP ) ;
+    pin1S pin1( tin0P ) ;
 {
 
-if( !bOk ) sayErrorF( tinBaseP , "could not open process token" ) ;
-boolT bOk = ((tin9S&)tinBaseP).brcRaw ;
+if( !bOk ) sayErrorF( tin0P , "could not open process token" ) ;
+boolT bOk = ((tin9S&)tin0P).brcRaw ;
 BOSpOOP
-BOS( WHATgbo , BOSoK , OpenProcessToken( (HANDLE)((tin9S&)tinBaseP).brcRaw , TOKEN_ALL_ACCESS , &hToken ) )
+BOS( WHATgbo , BOSoK , OpenProcessToken( (HANDLE)((tin9S&)tin0P).brcRaw , TOKEN_ALL_ACCESS , &hToken ) )
 ZE( HANDLE , hToken ) ;
 
 BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
@@ -118,12 +118,12 @@ TODO
         case ERROR_ACCESS_DENIED       : { CONoUTrAW(  "ERROR_ACCESS_DENIED\r\n" ) ; break ; }
     {
     switch( rc )
-    countT rc = ((tin9S&)tinBaseP).brcRaw ;
+    countT rc = ((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , GetLastError() )
     CONoUTrAW( ": " ) ;
     CONoUTrAW( postP ) ;
 {
-voidT sayErrorF( tin0S& tinBaseP , osTextT* postP )
+voidT sayErrorF( tin0S& tin0P , osTextT* postP )
 
 }
     Privileges[ 0 ].Attributes    = SE_PRIVILEGE_ENABLED ;
@@ -134,11 +134,11 @@ voidT sayErrorF( tin0S& tinBaseP , osTextT* postP )
     BOS( WHATgbo , BOSoK , LookupPrivilegeValue( 0 , "SeRemoteShutdownPrivilege" , &Privileges[ 0 ].Luid ) )
 {
 PrivilegeCount( 1 )
-pin1S::pin1S( tin0S& tinBaseP ) :
+pin1S::pin1S( tin0S& tin0P ) :
 
 ;
 }
-    pin1S( tin0S& tinBaseP ) ;
+    pin1S( tin0S& tin0P ) ;
 
     LUID_AND_ATTRIBUTES Privileges[ 1 ] ;
     DWORD               PrivilegeCount ;

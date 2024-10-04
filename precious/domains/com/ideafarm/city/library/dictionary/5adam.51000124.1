@@ -10,23 +10,23 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
-etThread.strokeF( tinBaseP , T("the file contained: \"")+T(posti100)+T("\"\r\nok\r\n") ) ;
+etThread.osSleepF( tin0P , TOCK * 4 ) ;
+etThread.strokeF( tin0P , T("the file contained: \"")+T(posti100)+T("\"\r\nok\r\n") ) ;
 
-etThread.diskFileOrDirDeleteF( tinBaseP , T(FILEnAME) ) ;
+etThread.diskFileOrDirDeleteF( tin0P , T(FILEnAME) ) ;
 
-etThread.fileReadF( tinBaseP , posti100 , sizeof posti100 , handle , 1 ) ;
-etThread.memSetF( tinBaseP , posti100 , sizeof posti100 ) ;
+etThread.fileReadF( tin0P , posti100 , sizeof posti100 , handle , 1 ) ;
+etThread.memSetF( tin0P , posti100 , sizeof posti100 ) ;
 osTextT posti100[ 0x100 ] ;
-etThread.fileOpenF( tinBaseP , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , 0 , 0 , 0 , 1 ) ;
+etThread.fileOpenF( tin0P , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , 0 , 0 , 0 , 1 ) ;
 idResult = 0 ;
 
-etThread.fileWriteF( tinBaseP , handle , "this text will go into the file" ) ;
-etThread.fileOpenF( tinBaseP , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR , 0 , 0 , 0 , 1 ) ;
+etThread.fileWriteF( tin0P , handle , "this text will go into the file" ) ;
+etThread.fileOpenF( tin0P , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR , 0 , 0 , 0 , 1 ) ;
 ZE( countT , idResult ) ;
-handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
 TODO
 

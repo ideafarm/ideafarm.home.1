@@ -9,19 +9,19 @@
                             
 REST
 
-if( !listC::chatterIF( tinBaseP , count2S( LISTnAMEsYS_ROOTsYSTEM2      , 0 ) ) ) { CONoUTrAW( "the system list was not chattered because it does not exist\r\n" ) ; }
-if( !listC::chatterIF( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION , 0 ) ) ) { CONoUTrAW( "the application list was not chattered because it does not exist\r\n" ) ; }
+if( !listC::chatterIF( tin0P , count2S( LISTnAMEsYS_ROOTsYSTEM2      , 0 ) ) ) { CONoUTrAW( "the system list was not chattered because it does not exist\r\n" ) ; }
+if( !listC::chatterIF( tin0P , count2S( LISTnAMEsYS_ROOTaPPLICATION , 0 ) ) ) { CONoUTrAW( "the application list was not chattered because it does not exist\r\n" ) ; }
 
-if( !listC::deleteIF( tinBaseP , count2S( LISTnAMEsYS_ROOTsYSTEM2      , 0 ) ) ) { CONoUTrAW( "the system list was not deleted because it does not exist\r\n" ) ; }
-if( !listC::deleteIF( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION , 0 ) ) ) { CONoUTrAW( "the application list was not deleted because it does not exist\r\n" ) ; }
+if( !listC::deleteIF( tin0P , count2S( LISTnAMEsYS_ROOTsYSTEM2      , 0 ) ) ) { CONoUTrAW( "the system list was not deleted because it does not exist\r\n" ) ; }
+if( !listC::deleteIF( tin0P , count2S( LISTnAMEsYS_ROOTaPPLICATION , 0 ) ) ) { CONoUTrAW( "the application list was not deleted because it does not exist\r\n" ) ; }
 
 }
-    listC::openIF( tinBaseP , hRec , pczName , flLISToPEN_IFeXISTS ) ;
-    handleC hRec( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+    listC::openIF( tin0P , hRec , pczName , flLISToPEN_IFeXISTS ) ;
+    handleC hRec( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
     
-    grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
+    grabitC grabitx( tin0P , TAG( TAGiDnULL ) ) ;
 
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczName ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczName ) ;
     countT pczName[] = { LISTnAMEsYS_ROOTaPPLICATION , (countT)"neverExists" , 0 } ;
 {
 

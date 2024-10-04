@@ -9,33 +9,33 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 THREADmODE5rESTORE
 }
-    etThread.traceF( tinBaseP , T("[pbOut2]:    ")+T(pbOut2) ) ;
+    etThread.traceF( tin0P , T("[pbOut2]:    ")+T(pbOut2) ) ;
 
-    etThread.hushDecryptF( tinBaseP , pbOut2 , cbOut2 , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed                      , hKeyPrivate ) ;
-    etThread.hushEncryptF( tinBaseP                   , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed , pbIn , sizeof pbIn , hKeyPublic  ) ;
+    etThread.hushDecryptF( tin0P , pbOut2 , cbOut2 , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed                      , hKeyPrivate ) ;
+    etThread.hushEncryptF( tin0P                   , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed , pbIn , sizeof pbIn , hKeyPublic  ) ;
 
-    etThread.hushWritePublicKeyToFileF(  tinBaseP , T("///d/tmp/scratch.adam.ether.key.public.verify.pem")  , hKeyPublic  ) ;
-    etThread.hushWritePrivateKeyToFileF( tinBaseP , T("///d/tmp/scratch.adam.ether.key.private.verify.pem") , hKeyPrivate ) ;
+    etThread.hushWritePublicKeyToFileF(  tin0P , T("///d/tmp/scratch.adam.ether.key.public.verify.pem")  , hKeyPublic  ) ;
+    etThread.hushWritePrivateKeyToFileF( tin0P , T("///d/tmp/scratch.adam.ether.key.private.verify.pem") , hKeyPrivate ) ;
 
-    etThread.hushReadPublicKeyFromFileF(  tinBaseP , hKeyPublic  , T("///d/tmp/scratch.adam.ether.key.public.pem")  ) ;
-    etThread.hushReadPrivateKeyFromFileF( tinBaseP , hKeyPrivate , T("///d/tmp/scratch.adam.ether.key.private.pem") ) ;
+    etThread.hushReadPublicKeyFromFileF(  tin0P , hKeyPublic  , T("///d/tmp/scratch.adam.ether.key.public.pem")  ) ;
+    etThread.hushReadPrivateKeyFromFileF( tin0P , hKeyPrivate , T("///d/tmp/scratch.adam.ether.key.private.pem") ) ;
 
-    etThread.hushWritePublicKeyToFileF(  tinBaseP , T("///d/tmp/scratch.adam.ether.key.public.pem")  , hKeyPair ) ;
-    etThread.hushWritePrivateKeyToFileF( tinBaseP , T("///d/tmp/scratch.adam.ether.key.private.pem") , hKeyPair ) ;
+    etThread.hushWritePublicKeyToFileF(  tin0P , T("///d/tmp/scratch.adam.ether.key.public.pem")  , hKeyPair ) ;
+    etThread.hushWritePrivateKeyToFileF( tin0P , T("///d/tmp/scratch.adam.ether.key.private.pem") , hKeyPair ) ;
 
-    etThread.traceF( tinBaseP , T("generated") ) ;
-    etThread.hushMakeKeyPairF( tinBaseP , hKeyPair , 0x400 ) ;
-    thirdC::openSslCrypto_keyPairIF( tinBaseP , hKeyPair , 0x400 ) ;
-    etThread.traceF( tinBaseP , T("generating...") ) ;
+    etThread.traceF( tin0P , T("generated") ) ;
+    etThread.hushMakeKeyPairF( tin0P , hKeyPair , 0x400 ) ;
+    thirdC::openSslCrypto_keyPairIF( tin0P , hKeyPair , 0x400 ) ;
+    etThread.traceF( tin0P , T("generating...") ) ;
 
-    handleC hKeyPublic(  tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC  ) ;
-    handleC hKeyPrivate( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
-    handleC hKeyPair(    tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR    ) ;
+    handleC hKeyPublic(  tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC  ) ;
+    handleC hKeyPrivate( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
+    handleC hKeyPair(    tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR    ) ;
 {
 THREADmODE5oN( flTHREADmODE5_ARMoPENsSL )
 

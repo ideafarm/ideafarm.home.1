@@ -9,30 +9,30 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 DEL( pSwPathValue ) ;
 
 
 }
     }
-        etThread.delF( tinBaseP , psttValue ) ;
-        etThread.traceF( tinBaseP , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        etThread.traceF( tinBaseP , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        etThread.delF( tin0P , psttValue ) ;
+        etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
         strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-        psttPath = (strokeS*)pSwPathValue->leverF( tinBaseP , idf ) ;
+        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
 
         _IO_
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = pSwPathValue->cFlavorsF( tinBaseP ) ;
+    countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
 {
 if( !POOP )
 
 __Z( pSwPathValue ) ;
-etThread.strParseJsonF( tinBaseP , pSwPathValue , psttPath , postIn , flSTACKc_null ) ;
+etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , postIn , flSTACKc_null ) ;
 ZE( switchC* , pSwPathValue ) ;
 ZE( strokeS* , psttPath     ) ;
 

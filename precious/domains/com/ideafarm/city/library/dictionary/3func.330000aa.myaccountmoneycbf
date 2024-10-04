@@ -8,35 +8,35 @@
 
 
 }
-    etThread.delF( tinBaseP , psttEmail ) ;
+    etThread.delF( tin0P , psttEmail ) ;
     }
-        meP.pushSnipF( tinBaseP , stBodyP , tSay ) ;
+        meP.pushSnipF( tin0P , stBodyP , tSay ) ;
         tSay = T("</PRE>\r\n") ;
 
         }
-            meP.pushSnipF( tinBaseP , stBodyP , tSay ) ;
-            etThread.delF( tinBaseP , psttw ) ;
+            meP.pushSnipF( tin0P , stBodyP , tSay ) ;
+            etThread.delF( tin0P , psttw ) ;
             TN( tSay , "" ) ; tSay = T(psttw)+tcr ;
-            infoDetail.ppDetail[ offd ]->psttF( tinBaseP , etThread , psttw ) ;
+            infoDetail.ppDetail[ offd ]->psttF( tin0P , etThread , psttw ) ;
             ZE( strokeS* , psttw ) ;
         {
         for( countT offd = 0 ; offd < infoDetail.cDeposits ; offd ++ )
         TN( tcr , "\r\n" ) ;
 
-        meP.pushSnipF( tinBaseP , stBodyP , tSay ) ;
+        meP.pushSnipF( tin0P , stBodyP , tSay ) ;
         TN( tSay , "" ) ; tSay = T("<PRE>total: ")+TF2(infoTotal.moneyT1,flFORMAT_NObIGITvALUES)+T(",")+TF2((sCountT)infoTotal.moneyT2,flFORMAT_NObIGITvALUES)+T("\r\n\r\n") ;
 
-        bucketDetailC infoDetail( tinBaseP , ifcIDaCCbUCKEToWNER_IFO  , ifcIDbUCKET_CENTRALbANK , ifcIDpRODUCTcENTRALbANK_EXCHANGEmEDIA , idAccount ) ;
-        bucketTotalC  infoTotal(  tinBaseP , ifcIDaCCbUCKEToWNER_IFO  , ifcIDbUCKET_CENTRALbANK , ifcIDpRODUCTcENTRALbANK_EXCHANGEmEDIA , idAccount ) ;
+        bucketDetailC infoDetail( tin0P , ifcIDaCCbUCKEToWNER_IFO  , ifcIDbUCKET_CENTRALbANK , ifcIDpRODUCTcENTRALbANK_EXCHANGEmEDIA , idAccount ) ;
+        bucketTotalC  infoTotal(  tin0P , ifcIDaCCbUCKEToWNER_IFO  , ifcIDbUCKET_CENTRALbANK , ifcIDpRODUCTcENTRALbANK_EXCHANGEmEDIA , idAccount ) ;
 
         //}
         //    }
-        //        depositS info( tinBaseP , ifcIDaCCbUCKEToWNER_IFO  , ifcIDbUCKET_CENTRALbANK , ifcIDpRODUCTcENTRALbANK_EXCHANGEmEDIA , idAccount , c8n/*pczNote*/ , timeN1 , timeN2 , 1/*idDeposit*/ , idAccCommission , moneyT1 , moneyT2 ) ;
+        //        depositS info( tin0P , ifcIDaCCbUCKEToWNER_IFO  , ifcIDbUCKET_CENTRALbANK , ifcIDpRODUCTcENTRALbANK_EXCHANGEmEDIA , idAccount , c8n/*pczNote*/ , timeN1 , timeN2 , 1/*idDeposit*/ , idAccCommission , moneyT1 , moneyT2 ) ;
         //
-        //        countT idAccCommission = session.getIdAccountCommissionF( tinBaseP ) ;
-        //        sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
+        //        countT idAccCommission = session.getIdAccountCommissionF( tin0P ) ;
+        //        sessionC& session = sessionsP( tin0P , nnPeerP ) ;
         //
-        //        etThread.osTimeSubtractF( tinBaseP , moneyT1 , moneyT2 , ( TUCK >> 1 ) * TICK , 0 ) ;
+        //        etThread.osTimeSubtractF( tin0P , moneyT1 , moneyT2 , ( TUCK >> 1 ) * TICK , 0 ) ;
         //        ZE( sCountT , moneyT2 ) ;
         //        ZE( countT  , moneyT1 ) ;
         //
@@ -46,7 +46,7 @@
         //            CONoUTrAW( T("time: ")+T(pczTime)+T("\r\n") ) ;
         //            countT pczTime[] = { timeN1 , timeN2 , 0 } ;
         //        {
-        //        etThread.osTimeNowUniqueF( tinBaseP , timeN1 , timeN2 ) ;
+        //        etThread.osTimeNowUniqueF( tin0P , timeN1 , timeN2 ) ;
         //        ZE( sCountT , timeN2 ) ;
         //        ZE( countT  , timeN1 ) ;
         //    {
@@ -57,17 +57,17 @@
         //OBSOLETED BY TOOL TO IMPERSONATE PAYPAL NOTIFIER
     {
     else
-    if( !psttEmail ){ meP.pushSnipF( tinBaseP , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT1 ) ; }
+    if( !psttEmail ){ meP.pushSnipF( tin0P , stBodyP , ifcIDsNIPpREDEFINED_MYaCCOUNT1 ) ; }
 
     }
-        idAccount = session.getIdAccountF( tinBaseP ) ;
-        session.getEmailF( tinBaseP , psttEmail ) ; ___( psttEmail ) ;
-        sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
+        idAccount = session.getIdAccountF( tin0P ) ;
+        session.getEmailF( tin0P , psttEmail ) ; ___( psttEmail ) ;
+        sessionC& session = sessionsP( tin0P , nnPeerP ) ;
     {
     ZE( countT   , idAccount ) ;
     ZE( strokeS* , psttEmail ) ;
 {
-/*1*/voidT myAccountMoneyCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT myAccountMoneyCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 /**/
 */

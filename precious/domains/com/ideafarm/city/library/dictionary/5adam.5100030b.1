@@ -10,50 +10,50 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tin0P , T("\r\n\r\npress the enter key") ) ;
 
 }
-    etThread.strokeF( tinBaseP , T("for lever value ")+TF1(lever)+T(", sw contains"": ")+TF1(sw)+T("\r\n") ) ;
-    lever = sw.leverF( tinBaseP , idf ) ;
+    etThread.strokeF( tin0P , T("for lever value ")+TF1(lever)+T(", sw contains"": ")+TF1(sw)+T("\r\n") ) ;
+    lever = sw.leverF( tin0P , idf ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-countT cFlavors = sw.cFlavorsF( tinBaseP ) ;
-sw.replaceLeverF( tinBaseP , lever ) ;
+countT cFlavors = sw.cFlavorsF( tin0P ) ;
+sw.replaceLeverF( tin0P , lever ) ;
 ZE( countT , lever ) ;
-etThread.strokeF( tinBaseP , T(USCORE79 "\r\n\r\n") ) ;
+etThread.strokeF( tin0P , T(USCORE79 "\r\n\r\n") ) ;
 
-while( etThread.os_cAllKidThreadsI_IF( tinBaseP ) > cKidsBefore ) etThread.osSleepF( tinBaseP , TUCK * 32 ) ;
+while( etThread.os_cAllKidThreadsI_IF( tin0P ) > cKidsBefore ) etThread.osSleepF( tin0P , TUCK * 32 ) ;
 
-while( cTries -- ) { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sw ) ; }
+while( cTries -- ) { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sw ) ; }
 countT cTries = 0x4 ;
-const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tinBaseP ) ;
+const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tin0P ) ;
 
-switchC sw( ether , tinBaseP , TAG( TAGiDnULL ) ) ;
+switchC sw( ether , tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmF )
 }
-    etThread.osThreadSwitchingOnF( tinBaseP ) ;
+    etThread.osThreadSwitchingOnF( tin0P ) ;
 
-    sw.replaceLeverF( tinBaseP ) ;
+    sw.replaceLeverF( tin0P ) ;
     }
-        etThread.strokeF( tinBaseP , T("for lever value ")+TF1(lever)+T(", sw contains"": ")+TF1(sw)+T("\r\n") ) ;
-        lever = sw.leverF( tinBaseP , idf ) ;
+        etThread.strokeF( tin0P , T("for lever value ")+TF1(lever)+T(", sw contains"": ")+TF1(sw)+T("\r\n") ) ;
+        lever = sw.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = sw.cFlavorsF( tinBaseP ) ;
-    sw.replaceLeverF( tinBaseP , lever ) ;
+    countT cFlavors = sw.cFlavorsF( tin0P ) ;
+    sw.replaceLeverF( tin0P , lever ) ;
     ZE( countT , lever ) ;
 
-    etThread.osThreadSwitchingOffF( tinBaseP ) ;
+    etThread.osThreadSwitchingOffF( tin0P ) ;
 
     sw = time1 ;
 
-    etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
+    etThread.osTimeNowF( tin0P , time1 , time2 ) ;
     ZE( sCountT , time2 ) ;
     ZE( countT , time1 ) ;
 

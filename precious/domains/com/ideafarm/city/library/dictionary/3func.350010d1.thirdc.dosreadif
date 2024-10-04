@@ -15,9 +15,9 @@
     }
         if( !cbToDo || !cbNew || ( fStillHungryIsOkP && pbEnd ) ) break ; // TESTING cbNew IS JUST TO MAKE SURE THAT WE DON'T PEG CPU IN HERE
         }
-            if( pbEnd && cbTrail ) thirdC::c_memsetIF( tinBaseP , pbEnd , cbTrail ) ;
+            if( pbEnd && cbTrail ) thirdC::c_memsetIF( tin0P , pbEnd , cbTrail ) ;
             const countT cbTrail = pbP + off - pbEnd ;
-            pbEnd = thirdC::c_strchrIF( tinBaseP , pbP + off - cbNew , bEnd ) ;
+            pbEnd = thirdC::c_strchrIF( tin0P , pbP + off - cbNew , bEnd ) ;
             pbP[ off ] = 0 ;
         {
         if( fStillHungryIsOkP && cbToDo )
@@ -70,7 +70,7 @@ static countT idInLath ;
     {
     IFbEcAREFUL    
 {
-/*1*/voidT thirdC::dosReadIF( tin0S& tinBaseP , byteT* const pbP , countT& cbP , const handleC& handleP , boolT fStillHungryIsOkP )/*1*/
+/*1*/voidT thirdC::dosReadIF( tin0S& tin0P , byteT* const pbP , countT& cbP , const handleC& handleP , boolT fStillHungryIsOkP )/*1*/
 
 /**/
 */

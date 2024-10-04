@@ -10,18 +10,18 @@
 }
 
     }
-        while( psttP->idAdam < csP ) strFuseF( tinBaseP , psttP , tb ) ;_WQ
+        while( psttP->idAdam < csP ) strFuseF( tin0P , psttP , tb ) ;_WQ
         TN( tb , " " ) ;_WQ
     {
     if( csP && psttP )
 
-    if(    F(flagsFormatP) & flFORMAT_DIGITnAMES   ) { ___( psttP ) ; strReplaceF( tinBaseP , psttP , 0 , ifcIDtYPEsTRrEPLACE_DIGITStOdIGITnAMES ) ; }
-    if( !( F(flagsFormatP) & flFORMAT_FOREIGN    ) ) { ___( psttP ) ; strReverseF( tinBaseP , psttP                                              ) ; }
+    if(    F(flagsFormatP) & flFORMAT_DIGITnAMES   ) { ___( psttP ) ; strReplaceF( tin0P , psttP , 0 , ifcIDtYPEsTRrEPLACE_DIGITStOdIGITnAMES ) ; }
+    if( !( F(flagsFormatP) & flFORMAT_FOREIGN    ) ) { ___( psttP ) ; strReverseF( tin0P , psttP                                              ) ; }
 
-    if( F(flagsFormatP) & flFORMAT_SIGNcOLrIGHT ) strFuseF( tinBaseP , psttP , sttSign ) ;_WQ
+    if( F(flagsFormatP) & flFORMAT_SIGNcOLrIGHT ) strFuseF( tin0P , psttP , sttSign ) ;_WQ
 
     }
-        strFuseF( tinBaseP , psttP , psttBuf ) ; ___( psttP ) ;_WQ
+        strFuseF( tin0P , psttP , psttBuf ) ; ___( psttP ) ;_WQ
         else                   psttBuf[ CSpREFIX + 1 ] = S1C( '?' -  1 + radix - 62 ) ;
         else if( radix <= 62 ) psttBuf[ CSpREFIX + 1 ] = S1C( 'A' -  1 + radix - 36 ) ;
         else if( radix <= 36 ) psttBuf[ CSpREFIX + 1 ] = S1C( 'a' -  1 + radix - 10 ) ;
@@ -33,13 +33,13 @@
     {
     if( bRadixIndicator )
 
-    delF( tinBaseP , psttDigits ) ;_WQ
-    strFuseF( tinBaseP , psttP , psttDigits , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ 4 + csP + csttExtraP ) ; //CALLER MUST TAG ___( psttP ) ;_WQ
+    delF( tin0P , psttDigits ) ;_WQ
+    strFuseF( tin0P , psttP , psttDigits , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ 4 + csP + csttExtraP ) ; //CALLER MUST TAG ___( psttP ) ;_WQ
 
-    if( F(flagsFormatP) & flFORMAT_SIGNcOLlEFT ) strFuseF( tinBaseP , psttP , sttSign , 4 + csP + csttExtraP ) ;_WQ
+    if( F(flagsFormatP) & flFORMAT_SIGNcOLlEFT ) strFuseF( tin0P , psttP , sttSign , 4 + csP + csttExtraP ) ;_WQ
 
     }
-        strMakeF( tinBaseP , LF , psttP , T("") , cstta + csttExtraP ) ; //CALLER MUST TAG ___( psttP ) ;_WQ
+        strMakeF( tin0P , LF , psttP , T("") , cstta + csttExtraP ) ; //CALLER MUST TAG ___( psttP ) ;_WQ
         if( cstta < csP ) cstta = csP ;_WQ
         countT cstta = psttDigits->idAdam + 4 ;_WQ
     {
@@ -48,22 +48,22 @@
     }
         __Z( psttDigits ) ;_WQ
 
-        if( bPrependedSign && sttFill == S1C('0') ) strFuseF( tinBaseP , psttDigits , sttSign , 0 , 1 ) ;_WQ
+        if( bPrependedSign && sttFill == S1C('0') ) strFuseF( tin0P , psttDigits , sttSign , 0 , 1 ) ;_WQ
 
         }
-            if( scPad > 0 ) { strResizeF( tinBaseP , psttDigits , scPad + psttDigits->idAdam , sttFill ) ; ___( psttDigits ) ; }
+            if( scPad > 0 ) { strResizeF( tin0P , psttDigits , scPad + psttDigits->idAdam , sttFill ) ; ___( psttDigits ) ; }
             sCountT scPad = cPrecisionP - cPrecisionOld ;_WQ
             countT cPrecisionOld = psttDigits->idAdam - idcPoint ;_WQ
-            countT idcPoint = strIdF( tinBaseP , S1C('.') , psttDigits ) ;_WQ
+            countT idcPoint = strIdF( tin0P , S1C('.') , psttDigits ) ;_WQ
         {
         else if( psttDigits )
         }
-            //U::if( psttDigits && idcDotZe == psttDigits->idAdam - 1 ) { strReplaceF( tinBaseP , psttDigits , 0 , tz , T("") ) ; ___( psttDigits ) ; }
+            //U::if( psttDigits && idcDotZe == psttDigits->idAdam - 1 ) { strReplaceF( tin0P , psttDigits , 0 , tz , T("") ) ; ___( psttDigits ) ; }
             }
-                strReplaceF( tinBaseP , psttDigits , 0 , tz , T("") ) ; ___( psttDigits ) ;_WQ
+                strReplaceF( tin0P , psttDigits , 0 , tz , T("") ) ; ___( psttDigits ) ;_WQ
             {
             if( psttDigits && idcDotZe == psttDigits->idAdam - 1 )
-            countT idcDotZe = strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tz , psttDigits ) ;_WQ
+            countT idcDotZe = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tz , psttDigits ) ;_WQ
             TN( tz , "." ) ; tz += TF2(0,flFormatDigit) ; //U: DO THIS KIND OF THING WHEREVER NEEDED; (SEE THE WAY THAT ALPHABET1 ENCODES T('0') VS TF1(0))
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;_WQ
             countT idf = 1 ;_WQ
@@ -71,14 +71,14 @@
         if( !cPrecisionP )
 
         }
-            if( scPad > 0 ) { strResizeF( tinBaseP , psttDigits , scPad + psttDigits->idAdam , sttFill , 1 ) ; ___( psttDigits ) ; }
+            if( scPad > 0 ) { strResizeF( tin0P , psttDigits , scPad + psttDigits->idAdam , sttFill , 1 ) ; ___( psttDigits ) ; }
             sCountT scPad = idcPointP - idcPointOld ;_WQ
             if( bPrependedSign && sttFill == S1C('0') ) idcPointOld ++ ;_WQ
-            countT idcPointOld = strIdF( tinBaseP , S1C('.') , psttDigits ) ;_WQ
+            countT idcPointOld = strIdF( tin0P , S1C('.') , psttDigits ) ;_WQ
         {
         if( idcPointP && psttDigits )
 
-        if( bPrependedSign && sttFill != S1C('0') ) strFuseF( tinBaseP , psttDigits , sttSign , 0 , 1 ) ;_WQ
+        if( bPrependedSign && sttFill != S1C('0') ) strFuseF( tin0P , psttDigits , sttSign , 0 , 1 ) ;_WQ
 
         else if( F(flagsFormatP) & flFORMAT_FILLsIGN ) sttFill = sttSign ;
              if( F(flagsFormatP) & flFORMAT_FILLzE ) sttFill = S1C('0') ;
@@ -87,11 +87,11 @@
         }
             }
                 }
-                    else if( !bFirstFractionalDigitDone ) { strFuseF( tinBaseP , psttDigits , T("0") ) ; ___( psttDigits ) ; }
+                    else if( !bFirstFractionalDigitDone ) { strFuseF( tin0P , psttDigits , T("0") ) ; ___( psttDigits ) ; }
                     }
-                        strFuseF( tinBaseP , psttDigits , T(".0") ) ; ___( psttDigits ) ;_WQ
+                        strFuseF( tin0P , psttDigits , T(".0") ) ; ___( psttDigits ) ;_WQ
                         }
-                            strFuseF( tinBaseP , psttDigits , T("0") ) ; ___( psttDigits ) ;_WQ
+                            strFuseF( tin0P , psttDigits , T("0") ) ; ___( psttDigits ) ;_WQ
                             shiftLeft -= cbpd ;_WQ
                         {
                         while( shiftLeft > 0 )
@@ -99,12 +99,12 @@
                     if( shiftLeft > 0 )
 
                     }
-                        if( !shiftLeft ) { strFuseF( tinBaseP , psttDigits , T(".") ) ; ___( psttDigits ) ; }
+                        if( !shiftLeft ) { strFuseF( tin0P , psttDigits , T(".") ) ; ___( psttDigits ) ; }
                         shiftLeft -= cbpd ;_WQ
 
                         if( !shiftLeft && !bFirstFractionalDigitDone ) bFirstFractionalDigitDone = 1 ;_WQ
-                        strFuseF( tinBaseP , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
-                        highDigitF( tinBaseP , *this , digit , fraction , radix , cbfRemaining , 1 ) ;_WQ
+                        strFuseF( tin0P , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
+                        highDigitF( tin0P , *this , digit , fraction , radix , cbfRemaining , 1 ) ;_WQ
                         ZE( countT , digit ) ;_WQ
                     {
                     if( cbfRemaining && ( !bFirstFractionalDigitDone || fraction ) )
@@ -112,24 +112,24 @@
                     }
                         if( bFirstFractionalDigitDone && !fraction ) break ;
 
-                        if( !shiftLeft ) { strFuseF( tinBaseP , psttDigits , T(".") ) ; ___( psttDigits ) ; }
+                        if( !shiftLeft ) { strFuseF( tin0P , psttDigits , T(".") ) ; ___( psttDigits ) ; }
                         shiftLeft -= cbpd ;_WQ
 
                         if( !shiftLeft && !bFirstFractionalDigitDone ) bFirstFractionalDigitDone = 1 ;_WQ
                         cbfRemaining -= cbpd ;_WQ
-                        strFuseF( tinBaseP , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
-                        highDigitF( tinBaseP , *this , digit , fraction , radix , cbpd ) ;_WQ
+                        strFuseF( tin0P , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
+                        highDigitF( tin0P , *this , digit , fraction , radix , cbpd ) ;_WQ
                         ZE( countT , digit ) ;_WQ
                     {
                     while( cbfRemaining >= cbpd )
                     countT cbfRemaining = 0x18 - cbHighestDigit ;_WQ
 
                     }
-                        if( !shiftLeft ) { strFuseF( tinBaseP , psttDigits , T(".") ) ; ___( psttDigits ) ; }
+                        if( !shiftLeft ) { strFuseF( tin0P , psttDigits , T(".") ) ; ___( psttDigits ) ; }
                         shiftLeft -= cbHighestDigit ;_WQ
 
-                        strFuseF( tinBaseP , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
-                        highDigitF( tinBaseP , *this , digit , fraction , radix , cbHighestDigit ) ;_WQ
+                        strFuseF( tin0P , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
+                        highDigitF( tin0P , *this , digit , fraction , radix , cbHighestDigit ) ;_WQ
                         ZE( countT , digit ) ;_WQ
                     {
                     if( cbHighestDigit )
@@ -139,16 +139,16 @@
                 }
                     }
                         if( !bFirstFractionalDigitDone ) bFirstFractionalDigitDone = 1 ;_WQ
-                        strFuseF( tinBaseP , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
-                        highDigitF( tinBaseP , *this , digit , fraction , radix , cbpd ) ;_WQ
+                        strFuseF( tin0P , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
+                        highDigitF( tin0P , *this , digit , fraction , radix , cbpd ) ;_WQ
                         ZE( countT , digit ) ;_WQ
                     {
                     while( !bFirstFractionalDigitDone || fraction )
 
                     }
                         if( !bFirstFractionalDigitDone ) bFirstFractionalDigitDone = 1 ;_WQ
-                        strFuseF( tinBaseP , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
-                        highDigitF( tinBaseP , *this , digit , fraction , radix , cbpd - shiftRight ) ;_WQ
+                        strFuseF( tin0P , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
+                        highDigitF( tin0P , *this , digit , fraction , radix , cbpd - shiftRight ) ;_WQ
                         ZE( countT , digit ) ;_WQ
                     {
                     if( shiftRight && ( !bFirstFractionalDigitDone || fraction ) )
@@ -156,12 +156,12 @@
                     }
                         if( bFirstFractionalDigitDone && !fraction ) break ;
                         if( !bFirstFractionalDigitDone ) bFirstFractionalDigitDone = 1 ;_WQ
-                        strFuseF( tinBaseP , psttDigits , T("0") ) ; ___( psttDigits ) ;_WQ
+                        strFuseF( tin0P , psttDigits , T("0") ) ; ___( psttDigits ) ;_WQ
                         shiftRight -= cbpd ;_WQ
                     {
                     while( shiftRight >= cbpd )
 
-                    strFuseF( tinBaseP , psttDigits , T("0.") ) ; ___( psttDigits ) ;_WQ
+                    strFuseF( tin0P , psttDigits , T("0.") ) ; ___( psttDigits ) ;_WQ
                 {
                 if( shiftRight >= 0 ) // THERE IS NO INTEGER PART
                 ZE( boolT , bFirstFractionalDigitDone ) ;_WQ
@@ -171,20 +171,20 @@
             {
             else
             }
-                strFuseF( tinBaseP , psttDigits , T("^")+TF4(shiftLeft/(sCountT)cbpd,flFormatDigit|flFORMAT_FILLzE|flFORMAT_FOREIGN|flFORMAT_SHOWpLUS,4,radix) ) ; ___( psttDigits ) ;_WQ
+                strFuseF( tin0P , psttDigits , T("^")+TF4(shiftLeft/(sCountT)cbpd,flFormatDigit|flFORMAT_FILLzE|flFORMAT_FOREIGN|flFORMAT_SHOWpLUS,4,radix) ) ; ___( psttDigits ) ;_WQ
 
                 }
-                    if( scPad > 0 ) { strResizeF( tinBaseP , psttDigits , scPad + psttDigits->idAdam , S1C('0') , 0 , 6 ) ; ___( psttDigits ) ; }
+                    if( scPad > 0 ) { strResizeF( tin0P , psttDigits , scPad + psttDigits->idAdam , S1C('0') , 0 , 6 ) ; ___( psttDigits ) ; }
                     sCountT scPad = cPrecisionP - cPrecisionOld ;_WQ
                     countT cPrecisionOld = psttDigits->idAdam - idcPoint ;_WQ
-                    countT idcPoint = strIdF( tinBaseP , S1C('.') , psttDigits ) ;_WQ
+                    countT idcPoint = strIdF( tin0P , S1C('.') , psttDigits ) ;_WQ
                 {
                 if( cPrecisionP && psttDigits )
 
                 }
                     if( !bFirstFractionalDigitDone ) bFirstFractionalDigitDone = 1 ;_WQ
-                    strFuseF( tinBaseP , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
-                    highDigitF( tinBaseP , *this , digit , fraction , radix , cbfRemaining , 1 ) ;_WQ
+                    strFuseF( tin0P , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
+                    highDigitF( tin0P , *this , digit , fraction , radix , cbfRemaining , 1 ) ;_WQ
                     ZE( countT , digit ) ;_WQ
                 {
                 if( cbfRemaining && ( !bFirstFractionalDigitDone || fraction ) )
@@ -193,14 +193,14 @@
                     if( bFirstFractionalDigitDone && !fraction ) break ;
                     if( !bFirstFractionalDigitDone ) bFirstFractionalDigitDone = 1 ;_WQ
                     cbfRemaining -= cbpd ;_WQ
-                    strFuseF( tinBaseP , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
-                    highDigitF( tinBaseP , *this , digit , fraction , radix , cbpd ) ;_WQ
+                    strFuseF( tin0P , psttDigits , TF4(digit,flFormatDigit,0,radix) ) ; ___( psttDigits ) ;_WQ
+                    highDigitF( tin0P , *this , digit , fraction , radix , cbpd ) ;_WQ
                     ZE( countT , digit ) ;_WQ
                 {
                 while( cbfRemaining >= cbpd )
                 countT cbfRemaining = 0x18 ;_WQ
 
-                strFuseF( tinBaseP , psttDigits , T(".") ) ; ___( psttDigits ) ;_WQ
+                strFuseF( tin0P , psttDigits , T(".") ) ; ___( psttDigits ) ;_WQ
                 ZE( boolT , bFirstFractionalDigitDone ) ;_WQ
 
                 sCountT shiftLeft  = - shiftRight ;_WQ
@@ -230,7 +230,7 @@
             countT image = *(countT*)&valueP ;_WQ
         {
 
-        strMakeF( tinBaseP , LF , psttDigits , T("") , 0x100 ) ; ___( psttDigits ) ; // MUST ACCOUNT FOR, IN BINARY, MAXIMUM IMPLICIT DIGITS PLUS ALL STORED DIGITS PLUS FORMATTING STROKES
+        strMakeF( tin0P , LF , psttDigits , T("") , 0x100 ) ; ___( psttDigits ) ; // MUST ACCOUNT FOR, IN BINARY, MAXIMUM IMPLICIT DIGITS PLUS ALL STORED DIGITS PLUS FORMATTING STROKES
     {
     ZE( strokeS* , psttDigits ) ; // PREPENDED SIGN, DIGITS.  WILL -NOT- CONTAIN: SIGN COLUMNS, RADIX INDICATOR
 
@@ -262,8 +262,8 @@
         if( POOP ) return ;
         { countT cb = 4 ; __( sizeof valueP - cb ) ; }
         __( radixP && !cbpdF( radixP ) ) ;_WQ
-        __(  ((tin9S&)tinBaseP).strokeMode.idCasteDefault && radixP > 0x10000 ) ;_WQ
-        __( !((tin9S&)tinBaseP).strokeMode.idCasteDefault && radixP > 64 ) ;_WQ
+        __(  ((tin9S&)tin0P).strokeMode.idCasteDefault && radixP > 0x10000 ) ;_WQ
+        __( !((tin9S&)tin0P).strokeMode.idCasteDefault && radixP > 64 ) ;_WQ
         __( radixP && radixP < 2 ) ;_WQ
         __NZ( psttP ) ;_WQ
         if( POOP ) return ;
@@ -271,7 +271,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strFromF( tin0S& tinBaseP , strokeS*& psttP , const measureT valueP , const flagsT flagsFormatP , const countT csP , const countT idcPointP , const countT cPrecisionP , const countT radixP , const countT csttExtraP )/*1*/
+/*1*/voidT etherC::strFromF( tin0S& tin0P , strokeS*& psttP , const measureT valueP , const flagsT flagsFormatP , const countT csP , const countT idcPointP , const countT cPrecisionP , const countT radixP , const countT csttExtraP )/*1*/
 
 /**/
 */
@@ -302,7 +302,7 @@
  valueP
   will be set to contain the string
  psttP
- tinBaseP
+ tin0P
 arguments
 if you want rounding, you must do it explicitly, in code, to valueP, before calling me
 it always renders the exact value stored in the measureT object valueP

@@ -9,21 +9,21 @@
 
 REST
 
-etThread.loafIF( tinBaseP ) ;
-etThread.osThreadF( tinBaseP , countTC() , tmStopped2F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&batonx ) ;
-etThread.osThreadF( tinBaseP , countTC() , tmStopped1F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&batonx ) ;
-batonC batonx( tinBaseP , TAG( TAGiDnULL ) ) ;
+etThread.loafIF( tin0P ) ;
+etThread.osThreadF( tin0P , countTC() , tmStopped2F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&batonx ) ;
+etThread.osThreadF( tin0P , countTC() , tmStopped1F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&batonx ) ;
+batonC batonx( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmStopped2F )
 }
-    batonx.ungrabF( tinBaseP ) ;
-    batonx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    batonx.ungrabF( tin0P ) ;
+    batonx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     batonC& batonx = *(batonC*)pTaskP->c1 ;
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 {
 if( pTaskP && pTaskP->c1 )
@@ -31,13 +31,13 @@ TASK( tmStopped2F )
 
 DONE( tmStopped1F )
 }
-    batonx.ungrabF( tinBaseP ) ;
+    batonx.ungrabF( tin0P ) ;
     }
-        ++ s ; ether.osSleepF( tinBaseP , TICK * 0xff ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TICK * 0xff ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
-    batonx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    batonx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     batonC& batonx = *(batonC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )

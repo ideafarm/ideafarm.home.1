@@ -8,9 +8,9 @@
 
 
 }
-    delF( tinBaseP , pstta ) ;
-    strByCasteF( tinBaseP , pstt1P , pstta , pczIdCasteIncludeP , pczIdCasteExcludeP , csttExtraP ) ; ___( pstt1P ) ;
-    strConcatenateF( tinBaseP , pstta , st_psttP , 0 , flConcatenateP , pczIdCasteIncludeP , pczIdCasteExcludeP , csttExtraP ) ; ___( pstta ) ;
+    delF( tin0P , pstta ) ;
+    strByCasteF( tin0P , pstt1P , pstta , pczIdCasteIncludeP , pczIdCasteExcludeP , csttExtraP ) ; ___( pstt1P ) ;
+    strConcatenateF( tin0P , pstta , st_psttP , 0 , flConcatenateP , pczIdCasteIncludeP , pczIdCasteExcludeP , csttExtraP ) ; ___( pstta ) ;
     ZE( strokeS* , pstta ) ;
 
     _IO_
@@ -18,14 +18,14 @@
     }
         if( POOP ) return ;
         FV( flSTRcONCATENATE , flConcatenateP ) ;
-        __( st_psttP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_strokeS ) ;
+        __( st_psttP.idTypeF( tin0P ) - ifcSTACKtYPE_PTR_strokeS ) ;
         __NZ( pstt1P ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strByCasteF( tin0S& tinBaseP , strokeS*& pstt1P , stackC& st_psttP , const flagsT flConcatenateP , const countT* const pczIdCasteIncludeP , const countT* const pczIdCasteExcludeP , const countT csttExtraP )/*1*/
+/*1*/voidT etherC::strByCasteF( tin0S& tin0P , strokeS*& pstt1P , stackC& st_psttP , const flagsT flConcatenateP , const countT* const pczIdCasteIncludeP , const countT* const pczIdCasteExcludeP , const countT csttExtraP )/*1*/
 
 /**/
 */
@@ -35,7 +35,7 @@
  st_psttP
   must be 0
  pstt1P
- tinBaseP
+ tin0P
 arguments
 st_psttP is not emptied
 this function concatenates all strings in st_psttP and then passes the resulting string to its overload

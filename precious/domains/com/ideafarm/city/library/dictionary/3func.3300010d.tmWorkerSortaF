@@ -12,10 +12,10 @@ DONE( tmWorkerSortaF )
 }
     dec02AM( cPendingP ) ;
 
-    if( F(flagsP) & flSORTAc_CHATTER ) etThread.traceF( tinBaseP , T("sorted  [remainderP]:    ")+TF2(remainderP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    sorta.sortF( tinBaseP ) ;
-    if( F(flagsP) & flSORTAc_CHATTER ) etThread.traceF( tinBaseP , T("sorting [remainderP]:    ")+TF2(remainderP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    sortaC sorta( tinBaseP , etThread , bQuitP , pbArrayP , cbArrayP , cbSuffixP , cbPrefixP , cbKeyP , moduloP , remainderP , flagsP , idWorkerP ) ;
+    if( F(flagsP) & flSORTAc_CHATTER ) etThread.traceF( tin0P , T("sorted  [remainderP]:    ")+TF2(remainderP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    sorta.sortF( tin0P ) ;
+    if( F(flagsP) & flSORTAc_CHATTER ) etThread.traceF( tin0P , T("sorting [remainderP]:    ")+TF2(remainderP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    sortaC sorta( tin0P , etThread , bQuitP , pbArrayP , cbArrayP , cbSuffixP , cbPrefixP , cbKeyP , moduloP , remainderP , flagsP , idWorkerP ) ;
 
     countT  idWorkerP  =           pTaskP->cb ;
     flagsT  flagsP     =   (flagsT)pTaskP->ca ;

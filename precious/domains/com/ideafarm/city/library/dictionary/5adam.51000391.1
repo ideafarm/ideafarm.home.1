@@ -10,21 +10,21 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tin0P , T("\r\n\r\npress the enter key") ) ;
 
 }
-    sOut.writeMsgF( tinBaseP , (byteT*)&cValue , sizeof cValue ) ;
+    sOut.writeMsgF( tin0P , (byteT*)&cValue , sizeof cValue ) ;
     countT cValue = 0x86427531 ;
-    sOut.connectF( tinBaseP , idPort ) ;
-    socketC sOut( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
+    sOut.connectF( tin0P , idPort ) ;
+    socketC sOut( tin0P , ether , TAG( TAGiDnULL ) ) ;
 {
 
-sReady.waitF( tinBaseP ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sReady ) ; }
-signC sReady( tinBaseP , TAG( TAGiDnULL ) ) ;
+sReady.waitF( tin0P ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sReady ) ; }
+signC sReady( tin0P , TAG( TAGiDnULL ) ) ;
 ZE( countT , idPort ) ;
 
 TODO
@@ -34,27 +34,27 @@ DONE( tmCatchF )
     DEL( pso ) ;
 
     }
-        etThread.delF( tinBaseP , pbi ) ;
-        else pso->readMsgNokF( tinBaseP ) ;
+        etThread.delF( tin0P , pbi ) ;
+        else pso->readMsgNokF( tin0P ) ;
         }
-            pso->readMsgOkF( tinBaseP ) ;
-            etThread.strokeF( tinBaseP , T("cValue = ")+TF1(cValue)+T("\r\n") ) ;
+            pso->readMsgOkF( tin0P ) ;
+            etThread.strokeF( tin0P , T("cValue = ")+TF1(cValue)+T("\r\n") ) ;
             countT cValue = *(countT*)pbi ;
         {
         if( pbi && cbi == sizeof( countT ) )
-        countT cbi = pso->readMsgF( tinBaseP , pbi ) ; ___( pbi ) ;
+        countT cbi = pso->readMsgF( tin0P , pbi ) ; ___( pbi ) ;
         ZE( byteT* , pbi ) ;
     {
     if( pso )
 
     }
-        sIn.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ;
+        sIn.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ++ sReady ;
-        sIn.listenF( tinBaseP ) ;
-        idPort = sIn.bindF( tinBaseP ) ;
-        socketC sIn( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
+        sIn.listenF( tin0P ) ;
+        idPort = sIn.bindF( tin0P ) ;
+        socketC sIn( tin0P , ether , TAG( TAGiDnULL ) ) ;
     {
     ZE( socketC* , pso ) ;
 

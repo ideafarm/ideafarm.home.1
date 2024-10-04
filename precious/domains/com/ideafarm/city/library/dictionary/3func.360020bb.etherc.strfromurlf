@@ -11,12 +11,12 @@
     #endif
 
         }
-            delF( tinBaseP , psttOld2 ) ;
-            strReplaceF( tinBaseP , psttP , 0 , psttOld2 , tNew ) ;
-            strReplaceF( tinBaseP , psttP , 0 , tOld     , tNew ) ;
+            delF( tin0P , psttOld2 ) ;
+            strReplaceF( tin0P , psttP , 0 , psttOld2 , tNew ) ;
+            strReplaceF( tin0P , psttP , 0 , tOld     , tNew ) ;
     
-            strConvertToUpperCaseF( tinBaseP , psttOld2 ) ; ___( psttOld2 ) ;
-            strMakeF( tinBaseP , LF , psttOld2 , tOld ) ; ___( psttOld2 ) ;
+            strConvertToUpperCaseF( tin0P , psttOld2 ) ; ___( psttOld2 ) ;
+            strMakeF( tin0P , LF , psttOld2 , tOld ) ; ___( psttOld2 ) ;
             ZE( strokeS* , psttOld2 ) ;
             textC tOld = T("%")+TF3(vv,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,2) ;
     
@@ -35,19 +35,19 @@
         for( countT vv = 1 ; vv <= 0x7f ; vv ++ ) // FOR EACH ASCII VALUE (7 BITS)
         // REPLACE %HH SYMBOLS WITH NON-ALPHANUMERICS
     
-        strReplaceF( tinBaseP , psttP , 0 , T("+") , T(" ") ) ;
+        strReplaceF( tin0P , psttP , 0 , T("+") , T(" ") ) ;
     
-        if( psttOld ) { strFuseF( tinBaseP , psttP , psttOld ) ; ___( psttP ) ; }
+        if( psttOld ) { strFuseF( tin0P , psttP , psttOld ) ; ___( psttP ) ; }
 
     #else
     //OLD CODE
 
-        if( !psttOldP ) delF( tinBaseP , *(strokeS**)&psttOld ) ;
-        delF( tinBaseP , postOld ) ;
-        delF( tinBaseP , postNew ) ;
+        if( !psttOldP ) delF( tin0P , *(strokeS**)&psttOld ) ;
+        delF( tin0P , postOld ) ;
+        delF( tin0P , postNew ) ;
 
         }
-            strMakeF( tinBaseP , LF , psttP , T(postNew) ) ; //CALLER MUST TAG ___( psttP ) ;
+            strMakeF( tin0P , LF , psttP , T(postNew) ) ; //CALLER MUST TAG ___( psttP ) ;
 
             postNew[ offo ++ ] = 0 ;
             }
@@ -81,10 +81,10 @@
         {
         if( postOld && postNew )
 
-        newF( tinBaseP , LF , postNew , costOld + 1 ) ; ___( postNew ) ;
+        newF( tin0P , LF , postNew , costOld + 1 ) ; ___( postNew ) ;
         ZE( osTextT* , postNew ) ;
 
-        countT costOld = strMakeF( tinBaseP , LF , postOld , psttOld ) ; ___( postOld ) ;
+        countT costOld = strMakeF( tin0P , LF , postOld , psttOld ) ; ___( postOld ) ;
         ZE( osTextT* , postOld ) ;
 
         __NZ( psttP ) ;
@@ -111,7 +111,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strFromUrlF( tin0S& tinBaseP , strokeS*& psttP , const strokeS* const psttOldP )/*1*/
+/*1*/voidT etherC::strFromUrlF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttOldP )/*1*/
 
 /**/
 */

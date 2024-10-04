@@ -8,37 +8,37 @@
 
 REST
 
-sgnDone_tmWorkF.waitF( tinBaseP ) ;
+sgnDone_tmWorkF.waitF( tin0P ) ;
 etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
-signC sgnDone_tmWorkF( tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmWorkF )
 }
-    etherC::loafIF( tinBaseP ) ;
-    etThread.traceF( tinBaseP , T("ok") ) ;
+    etherC::loafIF( tin0P ) ;
+    etThread.traceF( tin0P , T("ok") ) ;
 
     }
-        ++ s ; ether.osSleepF( tinBaseP , TICK ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TICK ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-        //etThread.traceF( tinBaseP , T("snapWords trace ended [cWords]:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        etThread.delF( tinBaseP , pcWords ) ;
+        //etThread.traceF( tin0P , T("snapWords trace ended [cWords]:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.delF( tin0P , pcWords ) ;
 
         }
             }
-                etThread.delF( tinBaseP , psttSuffix ) ;
-                //etThread.traceF( tinBaseP , T("[suffix,offw,idCell,idThread,idFile,idLine]:    ")+TF2(pcWords[offw+1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(offw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF4(idLine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T("    ")+T(psttSuffix) ) ;
+                etThread.delF( tin0P , psttSuffix ) ;
+                //etThread.traceF( tin0P , T("[suffix,offw,idCell,idThread,idFile,idLine]:    ")+TF2(pcWords[offw+1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(offw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF4(idLine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T("    ")+T(psttSuffix) ) ;
 
                 }
-                    etThread.strFuseF( tinBaseP , psttSuffix , TF2(pcWords[++offw],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    if( ids != 1 ) etThread.strFuseF( tinBaseP , psttSuffix , tb ) ;
+                    etThread.strFuseF( tin0P , psttSuffix , TF2(pcWords[++offw],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    if( ids != 1 ) etThread.strFuseF( tin0P , psttSuffix , tb ) ;
                 {
                 for( countT ids = 1 ; ids <= ccSuffix ; ids ++ )
                 TN( tb , " " ) ;
 
-                etThread.strMakeF( tinBaseP , LF , psttSuffix , 0 , ccSuffix * 9 ) ; ___( psttSuffix ) ;
+                etThread.strMakeF( tin0P , LF , psttSuffix , 0 , ccSuffix * 9 ) ; ___( psttSuffix ) ;
                 ZE( strokeS* , psttSuffix ) ;
 
                 const osTextT* const postTitle = !idFile ? 0 : mapFileTitle( idFile ) + sizeof( countT ) ;
@@ -55,14 +55,14 @@ DONE( tmWorkF )
 
         mapCTC& mapFileTitle = processGlobal4S::_processGlobal4I_IF().mapFileTitle ;
 
-        //etThread.traceF( tinBaseP , T("snapWords trace begun [cWords]:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tin0P , T("snapWords trace begun [cWords]:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        countT cWords = etThread.snapWordsF( tinBaseP , pcWords ) ; ___( pcWords ) ;
+        countT cWords = etThread.snapWordsF( tin0P , pcWords ) ; ___( pcWords ) ;
         ZE( countT* , pcWords ) ;
     {
     while( !ether && !POOP )
 
-    ether.ifcHireF( tinBaseP , T("SNAPwORDS") , ifcIDaDAM_TIME , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
+    ether.ifcHireF( tin0P , T("SNAPwORDS") , ifcIDaDAM_TIME , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
 {
 if( pTaskP )
 TASK( tmWorkF )

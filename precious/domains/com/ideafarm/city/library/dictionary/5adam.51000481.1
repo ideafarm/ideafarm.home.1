@@ -12,14 +12,14 @@
 REST
 
 }
-    etThread.osSleepF( tinBaseP , TUCK * 0x80 ) ; //U: SLEEP FOR A TOCK IF WINDOW IS NOT VISIBLE
+    etThread.osSleepF( tin0P , TUCK * 0x80 ) ; //U: SLEEP FOR A TOCK IF WINDOW IS NOT VISIBLE
 
     }
-        etThread.delF( tinBaseP , psttOldClock ) ;
-        etThread.paperTitleF( tinBaseP , TT4(timeN1,timeN2,3,6) ) ;
-        etThread.strokeF( tinBaseP , tClr+T(psttOldClock) ) ;
+        etThread.delF( tin0P , psttOldClock ) ;
+        etThread.paperTitleF( tin0P , TT4(timeN1,timeN2,3,6) ) ;
+        etThread.strokeF( tin0P , tClr+T(psttOldClock) ) ;
     
-        etThread.strClockF( tinBaseP , psttOldClock , time , idc , idr , cc , cr , 1 , 1 , 8 , T("time now in IdeaFarm " "(tm) City: ")+TT4(timeN1,timeN2,3,6) ) ; ___( psttOldClock ) ;
+        etThread.strClockF( tin0P , psttOldClock , time , idc , idr , cc , cr , 1 , 1 , 8 , T("time now in IdeaFarm " "(tm) City: ")+TT4(timeN1,timeN2,3,6) ) ; ___( psttOldClock ) ;
         ZE( strokeS* , psttOldClock ) ;
 
         countT time = timeN1 >> 0x10 | ( timeN2 << 0x10 ) ;
@@ -29,7 +29,7 @@ REST
     if( offTockLast != offTock )
     countT offTock = offTOCK( timeN1 ) ;
 
-    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+    etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT , timeN1 ) ;
 {
@@ -45,7 +45,7 @@ countT idc  = win.mIdCol ;
     
 windowOldC& win = *thirdC::pWinRootIF() ;
 
-//U: IFF WINDOW IS VISIBLE: //etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
+//U: IFF WINDOW IS VISIBLE: //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
 
 TODO
 

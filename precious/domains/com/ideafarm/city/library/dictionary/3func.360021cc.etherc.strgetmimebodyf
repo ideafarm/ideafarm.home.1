@@ -11,35 +11,35 @@
     }
         }
             }
-                strSubstringF( tinBaseP , psttToP , idBegin , idEnd , psttFromP ) ; ___( psttToP ) ;
+                strSubstringF( tin0P , psttToP , idBegin , idEnd , psttFromP ) ; ___( psttToP ) ;
                 idEnd -- ;
             {
             if( idBegin < idEnd )
 
-            countT idEnd   = strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tBoundary , psttFromP ) ;
+            countT idEnd   = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tBoundary , psttFromP ) ;
             countT idBegin = idf ;
         {
         )
             idf
             &&
-            strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tcrcr , psttFromP )
+            strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tcrcr , psttFromP )
             &&
             idf
             &&
-            strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tBoundary , psttFromP )
+            strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tBoundary , psttFromP )
         (
         if
         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
 
-        delF( tinBaseP , psttBoundary ) ;
+        delF( tin0P , psttBoundary ) ;
         TN( tBoundary , "--" ) ; tBoundary += T(psttBoundary) ;
     {
     else
     }
-        if( idf ) { strSubstringF( tinBaseP , psttToP , idf , countTC() , psttFromP ) ; ___( psttToP ) ; }
+        if( idf ) { strSubstringF( tin0P , psttToP , idf , countTC() , psttFromP ) ; ___( psttToP ) ; }
 
-        strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tcrcr , psttFromP ) ;
+        strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tcrcr , psttFromP ) ;
         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
     {
@@ -48,11 +48,11 @@
     TN( tcrcr , "\r\n\r\n" ) ;
 
     }
-        delF( tinBaseP , psttv ) ;
+        delF( tin0P , psttv ) ;
         }
-            if( idf ) { strSubstringF( tinBaseP , psttBoundary , idf , countTC() , psttv ) ; ___( psttBoundary ) ; }
+            if( idf ) { strSubstringF( tin0P , psttBoundary , idf , countTC() , psttv ) ; ___( psttBoundary ) ; }
 
-            strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , T("boundary=") , psttv ) ;
+            strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , T("boundary=") , psttv ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
 
@@ -60,11 +60,11 @@
         {
         if( psttv && psttv->idAdam )
 
-        delF( tinBaseP , psttHead ) ;
-        strSubstringMimeHeaderF( tinBaseP , psttv , psttHead , T("content-type") ) ; ___( psttv ) ;
+        delF( tin0P , psttHead ) ;
+        strSubstringMimeHeaderF( tin0P , psttv , psttHead , T("content-type") ) ; ___( psttv ) ;
         ZE( strokeS* , psttv ) ;
 
-        strGetMimeHeaderF( tinBaseP , psttHead , psttFromP ) ; ___( psttHead ) ;
+        strGetMimeHeaderF( tin0P , psttHead , psttFromP ) ; ___( psttHead ) ;
         ZE( strokeS* , psttHead ) ;
     {
     ZE( strokeS* , psttBoundary ) ;
@@ -77,7 +77,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT etherC::strGetMimeBodyF( tin0S& tinBaseP , strokeS*& psttToP , const strokeS* const psttFromP )/*1*/
+/*1*/voidT etherC::strGetMimeBodyF( tin0S& tin0P , strokeS*& psttToP , const strokeS* const psttFromP )/*1*/
 
 /**/
 
@@ -86,7 +86,7 @@
  psttFromP
   must be 0
  psttToP
- tinBaseP
+ tin0P
 parameters
 /*
 

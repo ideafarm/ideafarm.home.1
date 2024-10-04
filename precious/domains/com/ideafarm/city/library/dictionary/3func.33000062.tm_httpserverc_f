@@ -12,44 +12,44 @@ TELL( "cleaned up" ) ;
 }
     TELL( "cleaning up" ) ;
     }
-        etThread.osThreadSwitchingDesireF( tinBaseP , idDesireOld ) ;
+        etThread.osThreadSwitchingDesireF( tin0P , idDesireOld ) ;
 
         TELL( "returned from ifcDrivenServerF" ) ;
-        etThread.ifcDrivenServerF( tinBaseP , i1 , i2 ) ;
+        etThread.ifcDrivenServerF( tin0P , i1 , i2 ) ;
         TELL( "calling ifcDrivenServerF" ) ;
 
-        countT idDesireOld = etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
+        countT idDesireOld = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
 
         i1.time1idleTimeoutWrite = i1.time1idleTimeoutRead = SOCKETtIMEOUTdEFAULTwANiMPATIENT ; //RAW COMMAND SERVERS MUST REPLACE THIS WITH A LARGER VALUE; THIS VALUE ASSUMES WEB BROWSER ONLY NEEDS TO BURST ALL IMAGES FOR A PAGE AND WILL DO SO IMMEDIATELY
         //20210719@1109: USE "IMPATIENT" TO REDUCE ATTACK SURFACE (CLIENT INTENTIONALLY SENDING INCOMPLETE REQUEST TO TIE UP SERVER'S WORKER THREAD)
 
         //20190904@1529: RETIRED i1.time1idleTimeoutWrite = i1.time1idleTimeoutRead = TOCK * 0x40 ; //RAW COMMAND SERVERS MUST REPLACE THIS WITH A LARGER VALUE; THIS VALUE ASSUMES WEB BROWSER ONLY NEEDS TO BURST ALL IMAGES FOR A PAGE AND WILL DO SO IMMEDIATELY
-        etThread.delF( tinBaseP , psttName ) ;
+        etThread.delF( tin0P , psttName ) ;
 
         serverInfo2S i2( idPortP , flagsSocketP , psttName , 0 , cArgSys , 0 , - 1 , /*1U::bState SET TO ZE PROVISIONALLY SO DOOR AND PANIC DOOR CAN BE SERVED BY SAME PROCESS TO MAKE DEVELOPMENT OF THE INTERFACES EASIER; SET TO 1 WHEN THESE DOORS ARE SERVED BY SEPARATE PROCESSES, AS CALLED FOR IN THE DESIGN*/0 , 0 , 0 , 0 , 0 , 0 , &meP.sessions , pnnAllowedStripeP ) ;
 
         serverInfo1S i1( 0 , 0 , bHandedOff , sgnIdPortReplaced , /*tmcHttpServerWoJobF*/ tmcHttpServerWorkerF , countTC() , bQuitP , time1idleTimeoutRead , time1idleTimeoutWrite ) ;
-        signC sgnIdPortReplaced( tinBaseP , TAG( TAGiDnULL ) ) ;
+        signC sgnIdPortReplaced( tin0P , TAG( TAGiDnULL ) ) ;
         ZE( boolT , bHandedOff ) ;
         TELL( "constructing serverInfoS parameters" ) ;
     
-        threadC thrCache( tinBaseP , etThread , TAG( TAGiDnULL ) , tmHttpCacheF , cArgSys , flTHREADlAUNCH_SHOWpONY ) ;
+        threadC thrCache( tin0P , etThread , TAG( TAGiDnULL ) , tmHttpCacheF , cArgSys , flTHREADlAUNCH_SHOWpONY ) ;
         HTTPsYSpARAMSsET( cArgSys )
         ZE( countT , time1idleTimeoutWrite ) ;
         ZE( countT , time1idleTimeoutRead ) ;
         TELL( "launching tmHttpCacheF" ) ;
     {
 
-    if( pHttpFreshenCacheCBFP ) (*pHttpFreshenCacheCBFP)( tinBaseP , etThread , bQuitP , meP , meP.sessions , cArgAppP , 0 ) ; //ENSURE THAT APP CODE HAS OPPORTUNITY TO INITIALIZE ITS CACHE BEFORE ANY CLIENT CONNECTIONS ARE ACCEPTED
+    if( pHttpFreshenCacheCBFP ) (*pHttpFreshenCacheCBFP)( tin0P , etThread , bQuitP , meP , meP.sessions , cArgAppP , 0 ) ; //ENSURE THAT APP CODE HAS OPPORTUNITY TO INITIALIZE ITS CACHE BEFORE ANY CLIENT CONNECTIONS ARE ACCEPTED
     TELL( "freshening cache if" ) ;
 
-    if( pHttpLoadContentDynamicFP ) (*pHttpLoadContentDynamicFP)( tinBaseP , etThread , bQuitP , meP , cArgAppP ) ;
+    if( pHttpLoadContentDynamicFP ) (*pHttpLoadContentDynamicFP)( tin0P , etThread , bQuitP , meP , cArgAppP ) ;
     TELL( "loading dynamic content if" ) ;
 
-    if( pHttpLoadContentStaticFP ) (*pHttpLoadContentStaticFP)( tinBaseP , etThread , bQuitP , meP , cArgAppP ) ;
+    if( pHttpLoadContentStaticFP ) (*pHttpLoadContentStaticFP)( tin0P , etThread , bQuitP , meP , cArgAppP ) ;
 
     TELL( "saw meP.sgnCtDone; loading static content if" ) ;
-    meP.sgnCtDone.waitF( tinBaseP ) ;
+    meP.sgnCtDone.waitF( tin0P ) ;
     TELL( "waiting for meP.sgnCtDone" ) ;
 
     nicNamesAllowedStripeWebHookNotificationsC* pnnAllowedStripeP                          = (nicNamesAllowedStripeWebHookNotificationsC*)_c8tp2.c3 ;

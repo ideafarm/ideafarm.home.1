@@ -9,7 +9,7 @@
 
 REST
 
-bOk = ((tin9S&)tinBaseP).brcRaw ;
+bOk = ((tin9S&)tin0P).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , UnregisterClass( postClass , oshInstance ) )
 
@@ -19,7 +19,7 @@ BOS( WHATgbo , BOSoK , DestroyWindow( oshw ) )
 }
     BOSdOnOTtEST( WHATgbo , DispatchMessage( &info ) )
 
-    if( POOP || !((tin9S&)tinBaseP).brcRaw ) break ;
+    if( POOP || !((tin9S&)tin0P).brcRaw ) break ;
     BOSpOOP
     BOS( WHATgbo , BOSfAILiFmINUS1 , GetMessage( &info , oshw , 0 , 0 ) )
     MSG info ;
@@ -28,23 +28,23 @@ for(;;)
 
 etThread.osThreadF( TaRG1( tmDrawF ) ) ;
 
-boolT bOk = ((tin9S&)tinBaseP).brcRaw ;
+boolT bOk = ((tin9S&)tin0P).brcRaw ;
 BOSdOnOTtEST( WHATgbo , ShowWindow( oshw , SW_SHOW ) )
 
-oshw = (HWND)((tin9S&)tinBaseP).brcRaw ;
+oshw = (HWND)((tin9S&)tin0P).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , CreateWindowEx( 0 , postClass , "ifcDoodle" , 0x06cf0000 , 0x0 , 0x20 , 0x400 , 0x200 , 0 , 0 , oshInstance , 0 ) )
 
 }
     if( atomClass ) ;
-    ATOM atomClass = (ATOM)((tin9S&)tinBaseP).brcRaw ;
+    ATOM atomClass = (ATOM)((tin9S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , RegisterClass( &info ) )
 
     info.lpszClassName = postClass ;
     info.lpszMenuName  = 0 ;
     info.hbrBackground = 0 ;
-    info.hCursor       = (HCURSOR)((tin9S&)tinBaseP).brcRaw ;
+    info.hCursor       = (HCURSOR)((tin9S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , LoadCursor( 0 , IDC_CROSS ) )
     info.hIcon         = 0 ;
@@ -58,7 +58,7 @@ BOS( WHATgbo , BOSoK , CreateWindowEx( 0 , postClass , "ifcDoodle" , 0x06cf0000 
 osTextT* postClass = "doodleClass" ;
 HINSTANCE oshInstance = (HINSTANCE)processGlobal4S::_processGlobal4I_IF()._thirdC_hWindowingClient.osF( ifcIDtYPEhANDLE_WINDOWINGcLIENT ) ;
 
-pTin = &tinBaseP ;
+pTin = &tin0P ;
 
 TODO
 
@@ -87,16 +87,16 @@ DONE( tmDrawF )
 
     const countT cLines = ( cSize - 1 ) * cGlyph ;
     
-    ((tin9S&)tinBaseP).pEther->osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeS1 , timeS2 ) ;
-    ((tin9S&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+    ((tin9S&)tin0P).pEther->osTimeSubtractF( tin0P , timeE1 , timeE2 , timeS1 , timeS2 ) ;
+    ((tin9S&)tin0P).pEther->osTimeNowF( tin0P , timeE1 , timeE2 ) ;
     ZE( sCountT , timeE2 ) ;
     ZE( countT , timeE1 ) ;
 
-    boolT bOk = ((tin9S&)tinBaseP).brcRaw ;
+    boolT bOk = ((tin9S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , PolyPolyline( oshdc , ppt , (DWORD*)pcSize , cGlyph ) )
     
-    ((tin9S&)tinBaseP).pEther->osTimeNowF( tinBaseP , timeS1 , timeS2 ) ;
+    ((tin9S&)tin0P).pEther->osTimeNowF( tin0P , timeS1 , timeS2 ) ;
     ZE( sCountT , timeS2 ) ;
     ZE( countT , timeS1 ) ;
 
@@ -109,10 +109,10 @@ DONE( tmDrawF )
     BOSdOnOTtEST( WHATgbo , SelectObject( oshdc , oshp ) )
     BOSdOnOTtEST( WHATgbo , SelectObject( oshdc , oshb ) )
 
-    oshp = (HPEN)((tin9S&)tinBaseP).brcRaw ;
+    oshp = (HPEN)((tin9S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , CreatePen( PS_SOLID , 1 , 0xffffff ) )
-    oshb = (HBRUSH)((tin9S&)tinBaseP).brcRaw ;
+    oshb = (HBRUSH)((tin9S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , CreateSolidBrush( 0 ) )
 
@@ -183,7 +183,7 @@ HBRUSH oshb ;
     }
         }
             break ;
-            rc = ((tin9S&)tinBaseP).brcRaw ;
+            rc = ((tin9S&)tin0P).brcRaw ;
             BOSdOnOTtEST( WHATgbo , DefWindowProc( oshWindowP , idCmdP , p1P , p2P ) )
         {
         default :
@@ -197,7 +197,7 @@ HBRUSH oshb ;
             break ;
             oshdc = oshdcTmp ;
             BOSdOnOTtEST( WHATgbo , EndPaint( oshWindowP , &info ) )
-            HDC oshdcTmp = (HDC)((tin9S&)tinBaseP).brcRaw ;
+            HDC oshdcTmp = (HDC)((tin9S&)tin0P).brcRaw ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , BeginPaint( oshWindowP , &info ) )
             PAINTSTRUCT info ;
@@ -207,7 +207,7 @@ HBRUSH oshb ;
     switch( idCmdP )
     ZE( LRESULT , rc ) ;
 
-    tin0S& tinBaseP = *pTin ;
+    tin0S& tin0P = *pTin ;
 {
 extern "C" LRESULT OSF winMessageHandlerFooF( HWND oshWindowP , UINT idCmdP , WPARAM p1P , LPARAM p2P )
 

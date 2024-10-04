@@ -10,7 +10,7 @@
 }
     }
         cbP = 0 ;
-        delF( tinBaseP , pbP ) ;
+        delF( tin0P , pbP ) ;
     {
     if( !cbP || ( cbP == sizeof( countT ) && *(countT*)pbP == ifcIDtYPEdATAGRAM_LETSaLLqUIT ) )
 
@@ -18,14 +18,14 @@
         if( !nicNameP ) nicNameP = NICnAMElOCAL ;
 
         }
-            pcTo[ 3 - offi ] = ((tin9S&)tinBaseP).brcRaw ;
+            pcTo[ 3 - offi ] = ((tin9S&)tin0P).brcRaw ;
             BOSdOnOTtEST( WHATgbo , ntohl( pcFrom[ offi ] ) )
         {
         for( countT offi = 0 ; offi < 4 ; offi ++ )
         countT* pcTo   = (countT*)(const countT*)nicNameP ;
         countT* pcFrom = (countT*)info.sin6_addr.u.Byte ;
 
-        idPortP = ((tin9S&)tinBaseP).brcRaw ;
+        idPortP = ((tin9S&)tin0P).brcRaw ;
         BOSdOnOTtEST( WHATgbo , ntohs( info.sin6_port ) )
         __( cbInfo - sizeof info ) ;
         __( info.sin6_family - AF_INET6 ) ;
@@ -33,20 +33,20 @@
         pbP[ cbP ] = 0 ;
         cbP = cba ;
 
-        ((tin9S&)tinBaseP).odoSockCbRead += cba ;
+        ((tin9S&)tin0P).odoSockCbRead += cba ;
     {
     if( !POOP )
 
-    if( pbP ) { cba = ((tin9S&)tinBaseP).brcRaw ; }
+    if( pbP ) { cba = ((tin9S&)tin0P).brcRaw ; }
     __Z( cba ) ;
 
     BOSpOOP
     BOSS( WHATsir , BOSsOCKETcODE2 , recvfrom( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (byteT*)pbP , cba , 0 , (sockaddr*)&info , &cbInfo ) )
-    if( pEtherContainsMe ) pEtherContainsMe->chokeAttackerF( tinBaseP , handleP , cba ) ;
+    if( pEtherContainsMe ) pEtherContainsMe->chokeAttackerF( tin0P , handleP , cba ) ;
     sCountT cbInfo = sizeof info ;
-    c_memsetIF( tinBaseP , (byteT* const)&info , sizeof info ) ;
+    c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;
     sockaddr_in6 info ;
-    newF( tinBaseP , LF , pbP , cba ) ; ___( pbP ) ;
+    newF( tin0P , LF , pbP , cba ) ; ___( pbP ) ;
 
     }
         cba = cbMax + 1 ;
@@ -74,7 +74,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::s_readF( tin0S& tinBaseP , byteT*& pbP , countT& cbP , countT& idPortP , nicNameC& nicNameP , handleC& handleP , const flagsT flagsP , const countT time1P , const sCountT time2P )/*1*/
+/*1*/voidT thirdC::s_readF( tin0S& tin0P , byteT*& pbP , countT& cbP , countT& idPortP , nicNameC& nicNameP , handleC& handleP , const flagsT flagsP , const countT time1P , const sCountT time2P )/*1*/
 
 //U::ENHANCE TO ALLOW CALLER TO PREALLOCATE pbP (SETTING cbP TO THE LENGTH OF THE PREALLOCATED MEMORY
 

@@ -8,23 +8,23 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 #endif
 
-etThread.delF( tinBaseP , pbImage ) ;
+etThread.delF( tin0P , pbImage ) ;
 
 }
     }
         //U: CONJ: LEAK pso
         }
-            { ZE( countT , tid ) ; etThread.osThreadF( tinBaseP , tid , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)pbImage , cbImage ) ; }
+            { ZE( countT , tid ) ; etThread.osThreadF( tin0P , tid , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)pbImage , cbImage ) ; }
         {
         if( pso && !ether )
-        //etThread.strokeF( tinBaseP , tX ) ;
-        etThread.strokeF( tinBaseP , T("\r")+TF1(++idClient) ) ;
+        //etThread.strokeF( tin0P , tX ) ;
+        etThread.strokeF( tin0P , T("\r")+TF1(++idClient) ) ;
 
-        sock.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ;
+        sock.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
@@ -32,19 +32,19 @@ etThread.delF( tinBaseP , pbImage ) ;
     while( !ether && !etThread )
     //TN( tX , "X" ) ;
     ZE( countT , idClient ) ;
-    sock.listenF( tinBaseP ) ;
-    sock.bindF( tinBaseP , 8004 ) ;
-    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    sock.listenF( tin0P ) ;
+    sock.bindF( tin0P , 8004 ) ;
+    socketC sock( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 {
 if( !ether )
 
-etThread.boxGetShadowF( tinBaseP , pbImage , cbImage , T("///d/tmp/globe.gif") ) ; ___( pbImage ) ;
+etThread.boxGetShadowF( tin0P , pbImage , cbImage , T("///d/tmp/globe.gif") ) ; ___( pbImage ) ;
 ZE( countT , cbImage ) ;
 ZE( byteT* , pbImage ) ;
 
 LAUNCHhEAReNTER( tmHearEnterF , 8004 ) ;
 
-etThread.strokeF( tinBaseP , T("MediaPlex Http Server\r\n\r\npress the Enter key to fire me\r\n\r\n") ) ;
+etThread.strokeF( tin0P , T("MediaPlex Http Server\r\n\r\npress the Enter key to fire me\r\n\r\n") ) ;
 
 #if defined( NEVERdEFINED )
 
@@ -55,45 +55,45 @@ DONE( tmServeF )
     DEL( pso ) ;
 
     etThread = 0 ;
-    etThread.delF( tinBaseP , posti ) ;
-    pso->readF( tinBaseP , posti , CBpOSTI ) ;
-    etThread.newF( tinBaseP , LF , posti , CBpOSTI ) ; ___( posti ) ;
+    etThread.delF( tin0P , posti ) ;
+    pso->readF( tin0P , posti , CBpOSTI ) ;
+    etThread.newF( tin0P , LF , posti , CBpOSTI ) ; ___( posti ) ;
     ZE( osTextT* , posti ) ;
 
-    etThread.delF( tinBaseP , psttOldCmd ) ;
+    etThread.delF( tin0P , psttOldCmd ) ;
 
-    else if( !etThread.strCompareF( tinBaseP , psttOldCmd , T("click") ) ) pso->writeF( tinBaseP , (osTextT*)tClickReply ) ;
+    else if( !etThread.strCompareF( tin0P , psttOldCmd , T("click") ) ) pso->writeF( tin0P , (osTextT*)tClickReply ) ;
     }
-        pso->writeF( tinBaseP , pbImage , cbImage ) ;
-        pso->writeF( tinBaseP , (osTextT*)txt ) ;
+        pso->writeF( tin0P , pbImage , cbImage ) ;
+        pso->writeF( tin0P , (osTextT*)txt ) ;
         textC txt = T("HTTP/1.0 200\r\nContent-Type: image/gif\r\nContent-Length: ")+TF4(cbImage,0,0,0xa)+T("\r\n\r\n") ;
     {
-    else if( !etThread.strCompareF( tinBaseP , psttOldCmd , T("image") ) )
+    else if( !etThread.strCompareF( tin0P , psttOldCmd , T("image") ) )
     }
-        pso->writeF( tinBaseP , (osTextT*)txt ) ;
-        textC txt = T("HTTP/1.0 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tFace.csF(tinBaseP),0,0,0xa)+T("\r\n\r\n")+tFace ;
+        pso->writeF( tin0P , (osTextT*)txt ) ;
+        textC txt = T("HTTP/1.0 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tFace.csF(tin0P),0,0,0xa)+T("\r\n\r\n")+tFace ;
     {
-    if( !etThread.strCompareF( tinBaseP , psttOldCmd , T("face") ) )
+    if( !etThread.strCompareF( tin0P , psttOldCmd , T("face") ) )
 
     static TN( tClickReply , "HTTP/1.0 302\r\nLocation: http://www.ideafarm.com/\r\n\r\n" ) ;
     static TN( tFace       , "<A HREF=\"http://city.center.ideafarm.com:8004/click\"><IMG HEIGHT=\"60\" WIDTH=\"60\" SRC=\"http://city.center.ideafarm.com:8004/image\"></A>" ) ;
 
     }
-        //etThread.strokeF( tinBaseP , T("\"")+T(psttOldCmd)+T("\"\r\n") ) ;
-        etThread.delF( tinBaseP , psttw ) ;
-        etThread.strSubstringF( tinBaseP , psttOldCmd , idf , idl , psttw ) ;
+        //etThread.strokeF( tin0P , T("\"")+T(psttOldCmd)+T("\"\r\n") ) ;
+        etThread.delF( tin0P , psttw ) ;
+        etThread.strSubstringF( tin0P , psttOldCmd , idf , idl , psttw ) ;
         ZE( countT , idl ) ;
         countT idf = 2 ;
-        etThread.delF( tinBaseP , psttl ) ;
-        etThread.strWordF( tinBaseP , psttw , psttl , sttq , S1C(' ') , 2 ) ;
+        etThread.delF( tin0P , psttl ) ;
+        etThread.strWordF( tin0P , psttw , psttl , sttq , S1C(' ') , 2 ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , psttw ) ;
-        pso->readWoLineF( tinBaseP , psttl , 0x1000 ) ;
+        pso->readWoLineF( tin0P , psttl , 0x1000 ) ;
         ZE( strokeS* , psttl ) ;
     {
     ZE( strokeS* , psttOldCmd ) ;
 
-    pso->etherF( tinBaseP , etThread ) ;
+    pso->etherF( tin0P , etThread ) ;
     countT   cbImage =           pTaskP->c3 ;
     byteT*   pbImage = (byteT*)  pTaskP->c2 ;
     socketC* pso     = (socketC*)pTaskP->c1 ;

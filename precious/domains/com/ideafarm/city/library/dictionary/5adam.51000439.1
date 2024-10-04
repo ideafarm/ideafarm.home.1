@@ -13,12 +13,12 @@ REST
                                                                                                                                                             \
 }                                                                                                                                                       \
     TELL( "cleaning up" ) ;                                                                                                                             \
-    etThread.loafIF( tinBaseP ) ;                                                                                                         \
+    etThread.loafIF( tin0P ) ;                                                                                                         \
     TELL( "waiting to be fired" ) ;                                                                                                                     \
-    etThread.ifcChatF( tinBaseP , 0 , DDNUMB , jobFillCourseF , jobHearOrderF ) ;                                                                    \
+    etThread.ifcChatF( tin0P , 0 , DDNUMB , jobFillCourseF , jobHearOrderF ) ;                                                                    \
 
     TELL( "preparing to accept chat clients" ) ;                                                                                                        \
-    stateS state( tinBaseP , etThread ) ;                                                                                                                   \
+    stateS state( tin0P , etThread ) ;                                                                                                                   \
     TELL( "setting up" )
 {                                                                                                                                                       \
                                                                                                                                                             \
@@ -27,20 +27,20 @@ TODO                                                                            
 STATE0                                                                                                                                                  \
 
 }
-    if( ether && *((tin9S&)tinBaseP).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *((tin9S&)tin0P).zEtScratch && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }
             break ;
 
-            etThread.delF( tinBaseP , psttBody ) ;
-            etThread.delF( tinBaseP , psttFrom ) ;
+            etThread.delF( tin0P , psttBody ) ;
+            etThread.delF( tin0P , psttFrom ) ;
 
             #endif
             //U::
 
             }
-                etThread.boxPutF( tinBaseP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM)+T("/")+T(psttFrom)+T("//" ifcEMAIL_OLDfROM "") , tReply , tReply.csF( tinBaseP ) ) ;
+                etThread.boxPutF( tin0P , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM)+T("/")+T(psttFrom)+T("//" ifcEMAIL_OLDfROM "") , tReply , tReply.csF( tin0P ) ) ;
 
                 ) ;
 
@@ -108,9 +108,9 @@ STATE0                                                                          
                 TN( tReply ,
             {
             )
-                etThread.strCompareF( tinBaseP , psttFrom , T("support@amazingmail.com") )
-                etThread.strCompareF( tinBaseP , psttFrom , T("owner-ppi@list.bls.gov" ) )                      &&
-                !etThread.strIdF( tinBaseP , T("!noInfo") , psttBody )                                          &&
+                etThread.strCompareF( tin0P , psttFrom , T("support@amazingmail.com") )
+                etThread.strCompareF( tin0P , psttFrom , T("owner-ppi@list.bls.gov" ) )                      &&
+                !etThread.strIdF( tin0P , T("!noInfo") , psttBody )                                          &&
             (
             if
 
@@ -118,12 +118,12 @@ STATE0                                                                          
             //U::
 
             }
-                etThread.delF( tinBaseP , postBody ) ;
-                etThread.delF( tinBaseP , psttu ) ;
-                etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/1/in") , postBody , costBody ) ;
+                etThread.delF( tin0P , postBody ) ;
+                etThread.delF( tin0P , psttu ) ;
+                etThread.boxPutUniqueF( tin0P , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/1/in") , postBody , costBody ) ;
                 ZE( strokeS* , psttu ) ;
 
-                countT costBody = etThread.strMakeF( tinBaseP , LF , postBody , psttBody ) ; ___( postBody ) ;
+                countT costBody = etThread.strMakeF( tin0P , LF , postBody , psttBody ) ; ___( postBody ) ;
                 ZE( osTextT* , postBody ) ;
             {
 
@@ -150,14 +150,14 @@ STATE0                                                                          
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobFillCourseF( tin0S& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tin0S& tin0P , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
-    if( cArgP && c8argP.c1 && sOrderP && ether && *((tin9S&)tinBaseP).zEtScratch && idChatSessionP ) ;
+    if( cArgP && c8argP.c1 && sOrderP && ether && *((tin9S&)tin0P).zEtScratch && idChatSessionP ) ;
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobHearOrderF( tin0S& tinBaseP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobHearOrderF( tin0S& tin0P , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 /*1*/WAKEhIDE( "cyborg.1" )/*1*/
 /**/

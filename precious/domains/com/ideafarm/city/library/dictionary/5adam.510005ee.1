@@ -9,11 +9,11 @@
                             
 REST
 
-PUSE( tinBaseP , *(byteT**)&pcpTotal ) ;
+PUSE( tin0P , *(byteT**)&pcpTotal ) ;
 
 CONoUTrAW( T("[sgn,pcpTotal]: ")+TF2(sgn,flFORMAT_NObIGITvALUES)+T(" ")+TF2(pcpTotal,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_PREFIXED)+T("\r\n") ) ;
 
-sCountT sgn = subtractF( tinBaseP , pcpTotal , pcp1 , pcp2 , 1 ) ; ___( pcpTotal ) ;
+sCountT sgn = subtractF( tin0P , pcpTotal , pcp1 , pcp2 , 1 ) ; ___( pcpTotal ) ;
 ZE( countT* , pcpTotal ) ;
 
 CONoUTrAW( T("[pcp2]:     ")+TF2(pcp2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_PREFIXED)+T("\r\n") ) ;

@@ -18,7 +18,9 @@
 
     }
         idSlotJot = 0 ;
-        ((tin9S&)tinBaseP).ppJot[ idSlotJot - 1 ] = 0 ;
+        ((tin9S&)tin0P).ppJot[ idSlotJot - 1 ] = 0 ;
+
+        if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
     {
     if( !( F(flagsCt) & flJOTc_DOnOTrEGISTER ) )
 
@@ -32,10 +34,12 @@
         if( POOP )
 
         }
-            __NZ( ((tin9S&)tinBaseP).ppJot[ idSlotJot - 1 ] != this ) ;
+            __NZ( ((tin9S&)tin0P).ppJot[ idSlotJot - 1 ] != this ) ;
             if( POOP ) return ;
-            __NZ( idSlotJot > sizeof ((tin9S&)tinBaseP).ppJot / sizeof ((tin9S&)tinBaseP).ppJot[ 0 ] ) ;
+            __NZ( idSlotJot > sizeof ((tin9S&)tin0P).ppJot / sizeof ((tin9S&)tin0P).ppJot[ 0 ] ) ;
             __Z(  idSlotJot ) ;
+
+            if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
         {
         if( !( F(flagsCt) & flJOTc_DOnOTrEGISTER ) )
 
@@ -47,7 +51,7 @@
     {
     IFbEcAREFUL
     SCOOPS
-    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("jotC - [this,tag]: ")+TF2((countT)this,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(tagHighNibble,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    //etherC::etRockIF( tin0P ).traceF( tin0P , T("jotC - [this,tag]: ")+TF2((countT)this,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(tagHighNibble,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     TINSL
 {
 /*1*/jotC::~jotC( voidT )/*1*/

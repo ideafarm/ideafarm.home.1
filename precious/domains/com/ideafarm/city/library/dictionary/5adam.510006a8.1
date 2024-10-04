@@ -9,38 +9,38 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("loafing") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("loafing") ) ;
 
-etThread.delF( tinBaseP , pstti ) ;
+etThread.delF( tin0P , pstti ) ;
 
 }
-    etThread.delF( tinBaseP , psttWant ) ;
-    etThread.diskMoveFileOrDirF( tinBaseP , tPath+T(psttWant) , tPath+T(psttc1) ) ;    
+    etThread.delF( tin0P , psttWant ) ;
+    etThread.diskMoveFileOrDirF( tin0P , tPath+T(psttWant) , tPath+T(psttc1) ) ;    
 
-    etThread.traceF( tinBaseP , psttWant ) ;
+    etThread.traceF( tin0P , psttWant ) ;
 
-    etThread.strSubstringF( tinBaseP , psttWant , idf , idl , psttc1 ) ; ___( psttWant ) ;
+    etThread.strSubstringF( tin0P , psttWant , idf , idl , psttc1 ) ; ___( psttWant ) ;
     countT idl = idEnd ? idEnd - 1 : 0 ;
     countT idf = 1 ;
     ZE( strokeS* , psttWant ) ;
 
-    countT idEnd = etThread.strIdF( tinBaseP , sttDash , psttc1 , 3 ) ;
+    countT idEnd = etThread.strIdF( tin0P , sttDash , psttc1 , 3 ) ;
 
     // !ideafarm.6.20080618@1808.001.000b358b.1f363bec.ab10f1c3.gmail.!.2008_06_20080618-180839-ideafarmcity@gmail_com-my_plan_for_you-1.eml
 {
 FORsTRINGSiN1( pstt1l )
 TN( tPath , "///d/ideafarm.home.101/IdeaFarm (tm)/SYSTEM/arc.eml/" ) ;
-etThread.strWordsF( tinBaseP , pstt1l , pstti , sttq , T("\r\n") ) ; ___( pstt1l ) ;
+etThread.strWordsF( tin0P , pstt1l , pstti , sttq , T("\r\n") ) ; ___( pstt1l ) ;
 strokeS sttDash( '-' ) ;
 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 ZE( strokeS* , pstt1l ) ;
 
-etThread.delF( tinBaseP , posti ) ;
-etThread.strMakeFromOsTextF( tinBaseP , pstti , posti ) ; ___( pstti ) ;
+etThread.delF( tin0P , posti ) ;
+etThread.strMakeFromOsTextF( tin0P , pstti , posti ) ; ___( pstti ) ;
 ZE( strokeS* , pstti ) ;
 
-etThread.boxGetShadowF( tinBaseP , posti , costi , T("///d/tmp/arc.eml.ttt") ) ; ___( posti ) ;
+etThread.boxGetShadowF( tin0P , posti , costi , T("///d/tmp/arc.eml.ttt") ) ; ___( posti ) ;
 ZE( countT   , costi ) ;
 ZE( osTextT* , posti ) ;
 

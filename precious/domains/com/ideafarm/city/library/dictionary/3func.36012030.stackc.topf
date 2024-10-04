@@ -13,7 +13,7 @@
     _OUTbATONsTACKc_
     }
         prc = &PLATE_countT_REF( ppTop ) ;
-        adjustRefsF( tinBaseP , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppTop ) ;
+        adjustRefsF( tin0P , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppTop ) ;
     {
     if( ppTop )
     countT* prc = (countT*)pbnu ;
@@ -23,11 +23,11 @@
 
     SCOOP
 {
-/*1*/countT& stackC::topF( tin0S& tinBaseP )/*1*/
+/*1*/countT& stackC::topF( tin0S& tin0P )/*1*/
 
 /**/
 */
-after calling this function, stackC::extractF( tinBaseP ) can be used to remove the item that it references
+after calling this function, stackC::extractF( tin0P ) can be used to remove the item that it references
  in a multithreaded app, it is possible to cause an access violation by calling this function on one thread while removing the last item on the stack on another thread
 it is also not serialized
 it is optimized for speed, does not check for errors, and does not perform the standard overhead functionality

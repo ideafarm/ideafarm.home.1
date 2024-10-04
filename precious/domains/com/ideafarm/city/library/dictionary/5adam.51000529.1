@@ -13,33 +13,33 @@ BOSpOOP
 BOS( WHATgbo , BOSoK , CloseHandle( realHandle ) )
 
 if( bOk ) ;
-bOk = ((tin9S&)tinBaseP).brcRaw ;
+bOk = ((tin9S&)tin0P).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , GetThreadContext( realHandle , &info2 ) )
 info2.ContextFlags = CONTEXT_INTEGER ;
-etThread.memSetF( tinBaseP , (byteT*)&info2 , sizeof info2 ) ;
+etThread.memSetF( tin0P , (byteT*)&info2 , sizeof info2 ) ;
 CONTEXT info2 ;
 
 }
-    bOk = ((tin9S&)tinBaseP).brcRaw ;
+    bOk = ((tin9S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , SetThreadContext( realHandle , &info ) )
     info.Edi = 0x12345678 ;
 {
 if( bOk )
-boolT bOk = ((tin9S&)tinBaseP).brcRaw ;
+boolT bOk = ((tin9S&)tin0P).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , GetThreadContext( realHandle , &info ) )
 info.ContextFlags = CONTEXT_INTEGER ;
-etThread.memSetF( tinBaseP , (byteT*)&info , sizeof info ) ;
+etThread.memSetF( tin0P , (byteT*)&info , sizeof info ) ;
 CONTEXT info ;
 
 BOSpOOP
-BOS( WHATgbo , BOSoK , DuplicateHandle( oshcp , (HANDLE)((tin9S&)tinBaseP).brcRaw , oshcp , &realHandle , THREAD_GET_CONTEXT|THREAD_SET_CONTEXT , 0 , 0 ) )
+BOS( WHATgbo , BOSoK , DuplicateHandle( oshcp , (HANDLE)((tin9S&)tin0P).brcRaw , oshcp , &realHandle , THREAD_GET_CONTEXT|THREAD_SET_CONTEXT , 0 , 0 ) )
 
 BOSdOnOTtEST( WHATgbo , GetCurrentThread() )
 
-HANDLE oshcp = (HANDLE)((tin9S&)tinBaseP).brcRaw ;
+HANDLE oshcp = (HANDLE)((tin9S&)tin0P).brcRaw ;
 BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
 
 POOPIES

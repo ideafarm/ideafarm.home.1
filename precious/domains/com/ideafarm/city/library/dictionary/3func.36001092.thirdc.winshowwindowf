@@ -10,15 +10,15 @@
 }
     return bWasVisible ;
 
-    else bWasVisible = winSendMessageF( tinBaseP , handleP , idwm_SHOW , idCmdP ) ;
+    else bWasVisible = winSendMessageF( tin0P , handleP , idwm_SHOW , idCmdP ) ;
     }
         #endif
 
             }
                 }
                     }
-                        default                        : { thirdC::third_flagsProcessStateI_IF( tinBaseP , flPROCESSsTATE_OUTPUTwINDOWiSvISIBLE , 0 ) ; break ; }
-                        case idcWINsHOW_SHOWnOaCTIVATE : { thirdC::third_flagsProcessStateI_IF( tinBaseP , flPROCESSsTATE_OUTPUTwINDOWiSvISIBLE , 1 ) ; break ; }
+                        default                        : { thirdC::third_flagsProcessStateI_IF( tin0P , flPROCESSsTATE_OUTPUTwINDOWiSvISIBLE , 0 ) ; break ; }
+                        case idcWINsHOW_SHOWnOaCTIVATE : { thirdC::third_flagsProcessStateI_IF( tin0P , flPROCESSsTATE_OUTPUTwINDOWiSvISIBLE , 1 ) ; break ; }
                         case idcWINsHOW_MAXIMIZE       :
                         case idcWINsHOW_SHOW           :
                     {
@@ -30,10 +30,10 @@
                     bOutput = handleP == *pRootI ;
                 {
                 if( pRootI )
-                windowOldC* pRootI = windowOldC::getRefIF( tinBaseP ) ;
+                windowOldC* pRootI = windowOldC::getRefIF( tin0P ) ;
                 ZE( boolT , bOutput ) ;
 
-                bWasVisible = ((tin9S&)tinBaseP).brcRaw ;
+                bWasVisible = ((tin9S&)tin0P).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , ShowWindow( (HWND)handleP.osF( ifcIDtYPEhANDLE_WINDOW ) , idCmd ) )
 
                 //}
@@ -54,13 +54,13 @@
                 //
                 //            pw->mIdRow = idRowLow ;
                 //            pw->papers.p PaperShow->mIdCol = idColLow ;
-                //            pw->mColsRowsF( tinBaseP , idColHigh - idColLow + 1 , idRowHigh - idRowLow + 1 ) ;
+                //            pw->mColsRowsF( tin0P , idColHigh - idColLow + 1 , idRowHigh - idRowLow + 1 ) ;
                 //        {
                 //        if( pw )
-                //        windowOldC* pw = windowOldC::pWindowIF( tinBaseP , handleP ) ;
+                //        windowOldC* pw = windowOldC::pWindowIF( tin0P , handleP ) ;
                 //    {
                 //
-                //    winRectangleDeskClientF( tinBaseP , idColLow , idRowLow , idColHigh , idRowHigh ) ;
+                //    winRectangleDeskClientF( tin0P , idColLow , idRowLow , idColHigh , idRowHigh ) ;
                 //    ZE( countT , idRowHigh ) ;
                 //    ZE( countT , idColHigh ) ;
                 //    ZE( countT , idRowLow ) ;
@@ -84,7 +84,7 @@
 
         #if defined( __OS2__ )
     {
-    if( ((tin9S&)tinBaseP).monitor.idThread == ((tin9S&)tinBaseP).pag1->_thirdC_.idThreadWindows )
+    if( ((tin9S&)tin0P).monitor.idThread == ((tin9S&)tin0P).pag1->_thirdC_.idThreadWindows )
 
     ZE( boolT , bWasVisible ) ;
     ZE( countT , idCmd ) ;
@@ -100,7 +100,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT thirdC::winShowWindowF( tin0S& tinBaseP , const handleC& handleP , const countT idCmdP )/*1*/
+/*1*/boolT thirdC::winShowWindowF( tin0S& tin0P , const handleC& handleP , const countT idCmdP )/*1*/
 
 /**/
 */
@@ -109,7 +109,7 @@
   this must be the handle of a window
   must not be 0
  handleP
- tinBaseP
+ tin0P
 arguments
 whenever a window is shown, it is repositioned so that its client area exactly covers the entire desktop
 evaluates to 1 if the window was previously visible, else to 0

@@ -26,17 +26,17 @@
             *pswWinFromDrawDuringPaint = hWindowP.osF( ifcIDtYPEhANDLE_WINDOW ) ;
             lever_swPaintInfoFromDrawingHandle = lever_swWinFromDrawDuringPaint = hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) ;
     
-            if( pInfo ) hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE , ((tin9S&)tinBaseP).brcRaw ) ;
+            if( pInfo ) hDrawP.osF( ifcIDtYPEhANDLE_DRAWpRIVATE , ((tin9S&)tin0P).brcRaw ) ;
             INCoShANDLES
         {
         else
-        if( ((tin9S&)tinBaseP).bosFail ) delF( tinBaseP , pbInfo ) ;
+        if( ((tin9S&)tin0P).bosFail ) delF( tin0P , pbInfo ) ;
 
         BOS( WHATgbd , BOSoK , BeginPaint( (HWND)hWindowP.osF( ifcIDtYPEhANDLE_WINDOW ) , pInfo ) )
 
         PAINTSTRUCT* pInfo = (PAINTSTRUCT*)pbInfo ;
-        c_memsetIF( tinBaseP , pbInfo , sizeof( PAINTSTRUCT ) ) ;
-        newF( tinBaseP , LF , pbInfo , sizeof( PAINTSTRUCT ) ) ; ___CT( pbInfo ) ;
+        c_memsetIF( tin0P , pbInfo , sizeof( PAINTSTRUCT ) ) ;
+        newF( tin0P , LF , pbInfo , sizeof( PAINTSTRUCT ) ) ; ___CT( pbInfo ) ;
         ZE( byteT* , pbInfo ) ;
 
     #elif defined( __NT__ )
@@ -45,7 +45,7 @@
 
     #if defined( __OS2__ )
 
-    windowOldC* pw = windowOldC::pWindowIF( tinBaseP , hWindowP ) ;
+    windowOldC* pw = windowOldC::pWindowIF( tin0P , hWindowP ) ;
 
     _IO_
 
@@ -64,7 +64,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::winBeginPaintF( tin0S& tinBaseP , handleC& hDrawP , const handleC& hWindowP , sCountT& idColMinP , sCountT& idRowMinP , sCountT& idColMaxP , sCountT& idRowMaxP )/*1*/
+/*1*/voidT thirdC::winBeginPaintF( tin0S& tin0P , handleC& hDrawP , const handleC& hWindowP , sCountT& idColMinP , sCountT& idRowMinP , sCountT& idColMaxP , sCountT& idRowMaxP )/*1*/
 
 /**/
 */
@@ -82,7 +82,7 @@
   normally, will be set
   must be 0
  hDrawP
- tinBaseP
+ tin0P
 arguments
  for example, do not call me against a thirdC object that is explicitly constructed in the definition of an adam
 my thirdC object must be contained within an etherC object that is fully constructed

@@ -10,15 +10,15 @@
 REST
 
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("done ; loafing") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("done ; loafing") ) ;
 
 }
     if( ++ exp > 0x1c ) break ;
-    etThread.newF( tinBaseP , LF , pba , cba ) ; ___( pba ) ;
+    etThread.newF( tin0P , LF , pba , cba ) ; ___( pba ) ;
     ZE( byteT* , pba ) ;
     countT cba = 1 << exp ;
-    etThread.traceF( tinBaseP , T("[exp]: ")+TF2(exp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[exp]: ")+TF2(exp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 {
 for(;;)
 ZE( countT , exp ) ;
@@ -27,9 +27,9 @@ TODO
 
 }
     return (countT)pvP / cbGrain ;
-    static countT cbGrain = 1 << thirdC::os_expCbAllocationGrain_IF( tinBaseP ) ;
+    static countT cbGrain = 1 << thirdC::os_expCbAllocationGrain_IF( tin0P ) ;
 {
-countT offGrainF( tin0S& tinBaseP , voidT* pvP )
+countT offGrainF( tin0S& tin0P , voidT* pvP )
 
 /*1*/WAKEsHOWtEXT( "dut.leak.all.sizes" )/*1*/
 /**/

@@ -19,12 +19,12 @@
                 }
                     }
                         stDriverP << postn ;
-                        c_memcpyIF( tinBaseP , postn , pInfo[ off ].lpServiceName , costn + 1 ) ;
-                        newF( tinBaseP , LF , postn , costn + 1 ) ; ___( postn ) ;
+                        c_memcpyIF( tin0P , postn , pInfo[ off ].lpServiceName , costn + 1 ) ;
+                        newF( tin0P , LF , postn , costn + 1 ) ; ___( postn ) ;
                         ZE( osTextT* , postn ) ;
-                        countT costn = c_strlenIF( tinBaseP , pInfo[ off ].lpServiceName ) ;
+                        countT costn = c_strlenIF( tin0P , pInfo[ off ].lpServiceName ) ;
                     {
-                    if( !postPrefixP || pInfo[ off ].lpServiceName == c_strstrIF( tinBaseP , pInfo[ off ].lpServiceName , postPrefixP ) )
+                    if( !postPrefixP || pInfo[ off ].lpServiceName == c_strstrIF( tin0P , pInfo[ off ].lpServiceName , postPrefixP ) )
                 {
                 for( countT off = 0 ; off < cGot ; off ++ )
             {
@@ -32,12 +32,12 @@
 
             __( rc && rc != ERROR_MORE_DATA ) ;
             }
-                rc = ((tin9S&)tinBaseP).brcRaw ;
+                rc = ((tin9S&)tin0P).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , GetLastError() )
             {
             if( !bOk )
             ZE( countT , rc ) ;
-            bOk = ((tin9S&)tinBaseP).brcRaw ;
+            bOk = ((tin9S&)tin0P).brcRaw ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , EnumServicesStatus( hsm , SERVICE_WIN32 , SERVICE_INACTIVE | SERVICE_ACTIVE , pInfo , sizeof pInfo , &cbMore , &cGot , &oshMore ) )
             ZE( DWORD , cGot ) ;
@@ -50,7 +50,7 @@
 
         __Z( hsm ) ;
         INCoShANDLES
-        SC_HANDLE hsm = (SC_HANDLE)((tin9S&)tinBaseP).brcRaw ;
+        SC_HANDLE hsm = (SC_HANDLE)((tin9S&)tin0P).brcRaw ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
     {
@@ -59,17 +59,17 @@
 
     }
         if( POOP ) return ;
-        __( stDriverP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_byteT ) ;
+        __( stDriverP.idTypeF( tin0P ) - ifcSTACKtYPE_PTR_byteT ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::osDriversF( tin0S& tinBaseP , stackC& stDriverP , const osTextT* const postPrefixP )/*1*/
+/*1*/voidT thirdC::osDriversF( tin0S& tin0P , stackC& stDriverP , const osTextT* const postPrefixP )/*1*/
 
 /**/
 */
- tinBaseP
+ tin0P
 arguments
 \<A HREF=\"5.1020167.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$osDriversF.0.html\"\>instances\</A\>

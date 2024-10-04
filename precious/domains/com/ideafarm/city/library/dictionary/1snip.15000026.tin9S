@@ -28,30 +28,30 @@
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.tin9S.tell_tmWatchF_toIgnoreMeF!||
         voidT tell_tmWatchF_toIgnoreMeF( voidT ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.tin9S.deregisterIfF!||
-        voidT deregisterIfF( tin0S& tinBaseP ) ;
+        voidT deregisterIfF( tin0S& tin0P ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.tin9S.walkF!||
         voidT walkF( tin0S& tinBaseRootP , tinWalkerFT tinWalkerFP , countT& cArgP ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.tin9S.rootF!||
         tin9S& rootF( voidT ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34012.tin9S.get_pIdProgressNest_F!||
-        voidT get_pIdProgressNest_F( tin0S& tinBaseP , countT* const pcP , const countT ccP ) ;
+        voidT get_pIdProgressNest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34011.tin9S.get_pEIPInNest_F!||
-        voidT get_pEIPInNest_F( tin0S& tinBaseP , countT* const pcP , const countT ccP ) ;
+        voidT get_pEIPInNest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.tin9S.get_pIdInNest_F!||
-        voidT get_pIdInNest_F( tin0S& tinBaseP , countT* const pcP , const countT ccP ) ;
+        voidT get_pIdInNest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.tin9S.get_pFlagsThreadLevelMode_F!||
-        voidT get_pFlagsThreadLevelMode_F( tin0S& tinBaseP , countT* const pcP , const countT ccP ) ;
+        voidT get_pFlagsThreadLevelMode_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.tin9S.get_pLFstep_F!||
-        voidT get_pLFstep_F( tin0S& tinBaseP , countT* const pcP , const countT ccP ) ;
+        voidT get_pLFstep_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.tin9S.get_pLFnest_F!||
-        voidT get_pLFnest_F( tin0S& tinBaseP , countT* const pcP , const countT ccP ) ;
+        voidT get_pLFnest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
         inline flagsT flagsF( voidT ) { return flags ; }
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.tin9S.levelModeF!||
         voidT levelModeF( const flagsT flagsModeP = flTHREADlEVELmODE_null , sCountT cLevelsP = 0 , const sCountT offRelLevelP = 0 ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.tin9S.zePointerFieldsF!||
-        voidT zePointerFieldsF( tin0S& tinBaseP ) ;
+        voidT zePointerFieldsF( tin0S& tin0P ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.tin9S.strFuseF!||
-        voidT strFuseF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP , const countT csttExtraP = 0 , const flagsT flagsInclude1P = flTINrPT1_null , const flagsT flagsInclude2P = flTINrPT2_null , const flagsT flagsExclude1P = flTINrPT1_null , const flagsT flagsExclude2P = flTINrPT2_null , countT idFormatP = 0 , const countT cIndentP = 0 ) ;
+        voidT strFuseF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , const countT csttExtraP = 0 , const flagsT flagsInclude1P = flTINrPT1_null , const flagsT flagsInclude2P = flTINrPT2_null , const flagsT flagsExclude1P = flTINrPT1_null , const flagsT flagsExclude2P = flTINrPT2_null , countT idFormatP = 0 , const countT cIndentP = 0 ) ;
         /* commands */
 
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.tin9S.tin9S!||
@@ -74,6 +74,15 @@
 /*@@@*/ osTextT                 postTellWait[     COSTmAXtELL         + 1 ] ;
 /*@@@*/ osTextT                 postTell[         COSTmAXtELL         + 1 ] ;
 
+        countT                  pPanLifiRecurseGrabbedLevel[ ( 1 + OFFgRABBEDmAX     ) * 5  ] ; // [pandle,idLineGrab,idiFileGrab,cRecurse,idGrabLevel]  (A PANDLE IS A POINTER THAT IS BEING USED AS A HANDLE)
+        countT                  pIdProgressNest[               1 + OFFsLOTtINnESTmAX        ] ;
+        countT                  pEIPInNest[                    1 + OFFsLOTtINnESTmAX        ] ;
+        countT                  pIdInNest[                     1 + OFFsLOTtINnESTmAX        ] ;
+        countT                  pLFstep[                     ( 1 + OFFsLOTtINsTEPmAX ) << 1 ] ;
+        flagsT                  pFlagsThreadLevelMode[         1 + OFFsLOTtINnESTmAX        ] ;                                 //CS:CODEsYNC: 003004f 003002a
+/*@  */ count04T                pcUtility04[ 4 ] ;
+        countT                  pcUtility[ CCuTILITY ] ;
+        jotC*                   ppJot[ CsLOTSjOTrEGISTRY ] ;        /*J*/      // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
 
 /*@@ */ zapC                    zap_pPanLifiRecurseGrabbedLevel_ ;
 /*@@ */ strokeModeS             strokeMode ;
@@ -81,10 +90,8 @@
 /*@@ */ count4S                 c4Tell ;
 /*@@ */ monitorS                monitor ;          // flagsThreadMode1 IS IN HERE
 
-
 /*@  */ timeS                   timeTraceLath ;
 /*@  */ timeS                   timeTraceWoth ;
-/*@  */ count04T                pcUtility04[ 4 ] ;
 /*@  */ measure04T              brcm04Raw ;
 /*@  */ count04T                cTime2Or5Lath ;
 /*@  */ count04T                cCpuCycles2Or5Lath ;
@@ -132,7 +139,6 @@
         countT                  cGrabitC_registered ;
         countT                  cGrabitC_reset ;
         countT                  cGrabitC_set ;
-        countT                  pPanLifiRecurseGrabbedLevel[ ( 1 + OFFgRABBEDmAX ) * 5 ] ; // [pandle,idLineGrab,idiFileGrab,cRecurse,idGrabLevel]  (A PANDLE IS A POINTER THAT IS BEING USED AS A HANDLE)
         countT                  msSleepWhenGrabbing ;
         const countT*           pcQuit ;
         countT                  idPhase3 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
@@ -140,17 +146,11 @@
         countT                  idPhase1 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
         countT                  cManna ;
         countT                  cRain ;                                                                                 //CODEsYNC: 2e40104 003002a
-        countT                  pIdProgressNest[       1 + OFFsLOTtINnESTmAX        ] ;
-        countT                  pEIPInNest[            1 + OFFsLOTtINnESTmAX        ] ;
-        countT                  pIdInNest[             1 + OFFsLOTtINnESTmAX        ] ;
-        countT                  pLFstep[             ( 1 + OFFsLOTtINsTEPmAX ) << 1 ] ;
-        flagsT                  pFlagsThreadLevelMode[ 1 + OFFsLOTtINnESTmAX        ] ;                                 //CS:CODEsYNC: 003004f 003002a
         countT                  cKidThreads ;
         flagsT                  flagsThreadMode5 ;
         flagsT                  flagsThreadMode4 ;
         flagsT                  flagsThreadMode3 ;
         flagsT                  flagsThreadMode2 ;
-        countT                  pcUtility[ CCuTILITY ] ;
         countT                  idBlammo ;
         countT                  idiFile_brcLath ;
         countT                  idLine_brcLath ;
@@ -185,7 +185,6 @@
         const byteT* const      pbThreadStackEnd    ;
         const byteT* const      pbThreadStackStart  ;
 
-        jotC*                   ppJot[ CsLOTSjOTrEGISTRY ] ;        /*J*/      // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
         scoopC*                 pScoops ;
         scoopC*                 pScoopEtThread ;
 
@@ -196,7 +195,7 @@
 /*1*/struct _export tin9S : public tin0S/*1*/
 
 //TRY TO AVOID POINTER FIELDS, BECAUSE THIS IS A PITA TO SUPPORT IN ctF SINCE tin9S, OBJECTS ARE ACCESSED BY MULTIPLE PROCESSES
-//THE DEF OF voidT zePointerFieldsF( tin0S& tinBaseP ) MUST ALSO BE UPDATED
+//THE DEF OF voidT zePointerFieldsF( tin0S& tin0P ) MUST ALSO BE UPDATED
 //WHEN ADDING FIELDS: ADD CODE TO tin9S::ctF TO CORRECTLY DIGEST POINTER VALUES
 
 //ASSUME: 0d00002 and 003*.tin9S, ARE KEPT IN SYNC

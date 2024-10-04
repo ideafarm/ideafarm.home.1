@@ -8,7 +8,7 @@
 
 
 }
-    delF( tinBaseP , psttExe ) ;
+    delF( tin0P , psttExe ) ;
     }
         }
             }
@@ -19,7 +19,7 @@
             default :
             }
                 break ;
-                third.osDriverF( tinBaseP , tDriverName ) ;
+                third.osDriverF( tin0P , tDriverName ) ;
             {
             case ifcDRIVERsTATUS_STARTING :
             }
@@ -28,11 +28,11 @@
                     //__1
                     POPUP( T("Service ")+tDriverName+T(" could not be hired.  It has been removed.  Please see http://www.ideafarm.com .") ) ;
                     thp = 0 ;
-                    thp.osDriverUnregisterF( tinBaseP , tDriverName ) ;
+                    thp.osDriverUnregisterF( tin0P , tDriverName ) ;
                     thp = 0 ;
                 {
                 if( thp )
-                thp.osDriverHireF( tinBaseP , tDriverName ) ;
+                thp.osDriverHireF( tin0P , tDriverName ) ;
             {
             case ifcDRIVERsTATUS_STOPPED :
             }
@@ -43,11 +43,11 @@
                     }
                         while( !POOP && !third && idState == ifcDRIVERsTATUS_STOPPING ) ;
                         }
-                            idState = third.osDriverStatusF( tinBaseP , tDriverName ) ;
-                            ++ s ; third.dosSleepIF( tinBaseP , TUCK * 0x80 ) ;
+                            idState = third.osDriverStatusF( tin0P , tDriverName ) ;
+                            ++ s ; third.dosSleepIF( tin0P , TUCK * 0x80 ) ;
                         {
                         do
-                        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                     {
                 {
                 if( idState == ifcDRIVERsTATUS_STOPPING )
@@ -61,11 +61,11 @@
                     __1
                     thp = 0 ;
                     POPUP( T("Service ")+tDriverName+T(" could not be installed.  Please see http://www.ideafarm.com .") ) ;
-                    thp.osDriverUnregisterF( tinBaseP , tDriverName ) ;
+                    thp.osDriverUnregisterF( tin0P , tDriverName ) ;
                     thp = 0 ;
                 {
                 if( thp )
-                thp.osDriverRegisterF( tinBaseP , tDriverName , tDriverName , tDescription , T(psttExe) ) ;
+                thp.osDriverRegisterF( tin0P , tDriverName , tDriverName , tDescription , T(psttExe) ) ;
                 //DUPLICATE CODE: 1030164 1030164
             {
             case ifcDRIVERsTATUS_UNKNOWN :
@@ -79,50 +79,50 @@
                     thp = 0 ;
                 {
                 if( thp )
-                thp.osDriverFireF( tinBaseP , tDriverName ) ;
+                thp.osDriverFireF( tin0P , tDriverName ) ;
                 thp = 0 ;
-                thp.osDriverUnregisterF( tinBaseP , tDriverName ) ; //DONE WOTH BECAUSE FIRING MIGHT TIME OUT
+                thp.osDriverUnregisterF( tin0P , tDriverName ) ; //DONE WOTH BECAUSE FIRING MIGHT TIME OUT
             {
             case ifcDRIVERsTATUS_STARTED :
         {
         switch( idState )
         ZE( boolT , bDispatch ) ;
 
-        countT idState = third.osDriverStatusF( tinBaseP , tDriverName ) ;
+        countT idState = third.osDriverStatusF( tin0P , tDriverName ) ;
     {
     else
     }
         }
             thp = 0 ;
-            thp.osDriverUnregisterF( tinBaseP , tDriverName ) ;
+            thp.osDriverUnregisterF( tin0P , tDriverName ) ;
         {
         if( bRemove )
         thp = 0 ;
-        thp.osDriverFireF( tinBaseP , tDriverName ) ;
+        thp.osDriverFireF( tin0P , tDriverName ) ;
     {
     if( bFire )
     thirdC& thp = etp ;
-    etherC etp( tinBaseP , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ; //U::MIGRATE THIS TO USING ((tin9S&)tinBaseP).pEtScratch
+    etherC etp( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ; //U::MIGRATE THIS TO USING ((tin9S&)tin0P).pEtScratch
 
     }
-        delF( tinBaseP , psttDriverName ) ;
+        delF( tin0P , psttDriverName ) ;
         tDriverName = T(psttDriverName) ;
-        if( !psttDriverName ) { osDriverNameFromMasterF( tinBaseP , psttDriverName , idAdamP ) ; ___( psttDriverName ) ; }
+        if( !psttDriverName ) { osDriverNameFromMasterF( tin0P , psttDriverName , idAdamP ) ; ___( psttDriverName ) ; }
 
         }
-            else if( !strCompareF( tinBaseP , psttc1 , tName   ) )           idArg = 1 ;
-            else if( !strCompareF( tinBaseP , psttc1 , tFire   ) )           bFire = 1 ;
-            else if( !strCompareF( tinBaseP , psttc1 , tRemove ) ) bRemove = bFire = 1 ;
-            else if( !psttExe )                                { strConvertToLowerCaseF( tinBaseP , psttExe , psttc1 ) ; ___( psttExe ) ; }
+            else if( !strCompareF( tin0P , psttc1 , tName   ) )           idArg = 1 ;
+            else if( !strCompareF( tin0P , psttc1 , tFire   ) )           bFire = 1 ;
+            else if( !strCompareF( tin0P , psttc1 , tRemove ) ) bRemove = bFire = 1 ;
+            else if( !psttExe )                                { strConvertToLowerCaseF( tin0P , psttExe , psttc1 ) ; ___( psttExe ) ; }
             }
                 }
-                    case 1 : { idArg = 0 ; strMakeF( tinBaseP , LF , psttDriverName , psttc1 ) ; ___( psttc1 ) ; break ; }
+                    case 1 : { idArg = 0 ; strMakeF( tin0P , LF , psttDriverName , psttc1 ) ; ___( psttc1 ) ; break ; }
                 {
                 switch( idArg )
             {
             if( idArg )
         {
-        FORsTRINGSiN1( ether_pstt1_processParametersI_F( tinBaseP ) )
+        FORsTRINGSiN1( ether_pstt1_processParametersI_F( tin0P ) )
         ZE( countT , idArg ) ;
         
         TN( tName , "!name" ) ;
@@ -147,13 +147,13 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::osDriverF( tin0S& tinBaseP , const countT idAdamP )/*1*/
+/*1*/voidT etherC::osDriverF( tin0S& tin0P , const countT idAdamP )/*1*/
 /**/
 
 */
   must not be 0
  idAdamP
- tinBaseP
+ tin0P
 arguments
   if started: return
   if starting: attach to service control manager; return

@@ -10,7 +10,7 @@
 }
     return cRenamed ;
 
-    delF( tinBaseP , psttFolderMapped ) ;
+    delF( tin0P , psttFolderMapped ) ;
     while( ~hFind && ( !etPrime || bIgnoreEtPrime ) ) ;
     }
         DEL( pInfo ) ;
@@ -18,17 +18,17 @@
             }
                 }
                     }
-                        boxPutF(            tinBaseP , tNewFileMetaCurrentName , tShort , tShort.csF( tinBaseP ) ) ;
-                        boxPutF(            tinBaseP , tNewFileMetaHashedName  , tShort , tShort.csF( tinBaseP ) ) ;
-                        diskMoveFileOrDirF( tinBaseP , tNewFileData            , pInfo->psttIfoName ) ;
+                        boxPutF(            tin0P , tNewFileMetaCurrentName , tShort , tShort.csF( tin0P ) ) ;
+                        boxPutF(            tin0P , tNewFileMetaHashedName  , tShort , tShort.csF( tin0P ) ) ;
+                        diskMoveFileOrDirF( tin0P , tNewFileData            , pInfo->psttIfoName ) ;
 
-                        traceF( tinBaseP , tNewFileData+T("    ")+T(pInfo->psttIfoName) , flTRACE_null , ifcIDtRACEdIVERT_8 ) ;
+                        traceF( tin0P , tNewFileData+T("    ")+T(pInfo->psttIfoName) , flTRACE_null , ifcIDtRACEdIVERT_8 ) ;
 
                         }
                             ) ;
-                                || diskFileExistsF( tinBaseP , tNewFileMetaCurrentName )
-                                || diskFileExistsF( tinBaseP , tNewFileMetaHashedName  )
-                                   diskFileExistsF( tinBaseP , tNewFileData            )
+                                || diskFileExistsF( tin0P , tNewFileMetaCurrentName )
+                                || diskFileExistsF( tin0P , tNewFileMetaHashedName  )
+                                   diskFileExistsF( tin0P , tNewFileData            )
                             (
                             while
                             }
@@ -44,13 +44,13 @@
                             ZE( countT , idSeq ) ;
 
                             }
-                                delF( tinBaseP , psttHash ) ;
+                                delF( tin0P , psttHash ) ;
                                 tHash = T(psttHash) ;
-                                hasher.queryStringF( tinBaseP , psttHash ) ; ___( psttHash ) ;
+                                hasher.queryStringF( tin0P , psttHash ) ; ___( psttHash ) ;
                                 ZE( strokeS* , psttHash ) ;
 
-                                hasher.eatF( tinBaseP , tShort , tShort.csF( tinBaseP ) ) ;
-                                hasherC hasher( tinBaseP , *this ) ;
+                                hasher.eatF( tin0P , tShort , tShort.csF( tin0P ) ) ;
+                                hasherC hasher( tin0P , *this ) ;
                             {
                             TN( tHash , "" ) ;
                         {
@@ -60,14 +60,14 @@
 
                         }
                             }
-                                delF( tinBaseP , psttSansDots ) ;
+                                delF( tin0P , psttSansDots ) ;
                                 tTimePair = T(psttSansDots) ;
-                                strSubstringF( tinBaseP , psttSansDots , idf , idl , tTimePair ) ; ___( psttSansDots ) ;
-                                countT idl = tTimePair.csF( tinBaseP) - 1 ;
+                                strSubstringF( tin0P , psttSansDots , idf , idl , tTimePair ) ; ___( psttSansDots ) ;
+                                countT idl = tTimePair.csF( tin0P) - 1 ;
                                 countT idf = 2 ;
                                 ZE( strokeS* , psttSansDots ) ;
                             {
-                            if( tTimePair.csF( tinBaseP ) > 2 )
+                            if( tTimePair.csF( tin0P ) > 2 )
 
                             }
                                 }
@@ -77,28 +77,28 @@
                                         {
                                         else                    // THERE IS NO TIME AFTER HEY
                                         }
-                                            delF( tinBaseP , psttSingleTime ) ;
+                                            delF( tin0P , psttSingleTime ) ;
                                             tTimePair = T(psttSingleTime)+tDateAtTimeFromFileMeta+tDot ;
-                                            strSubstringF( tinBaseP , psttSingleTime , idf , idl , tShort ) ; ___( psttSingleTime ) ;
+                                            strSubstringF( tin0P , psttSingleTime , idf , idl , tShort ) ; ___( psttSingleTime ) ;
                                             countT idf = idHit2 ;
                                             countT idl = idf - 1 ;
                                             ZE( strokeS* , psttSingleTime ) ;
                                         {
                                         if( idHit2 )            // I HAVE A SINGLE TIME AFTER HEY                                                  
-                                        idHit2 = strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDot , tShort ) ;
+                                        idHit2 = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDot , tShort ) ;
                                         idf = idfSave ;
                                     {
                                     else
                                     }
-                                        delF( tinBaseP , psttDoubleTime ) ;
+                                        delF( tin0P , psttDoubleTime ) ;
                                         tTimePair = T(psttDoubleTime) ;
-                                        strSubstringF( tinBaseP , psttDoubleTime , idf , idl , tShort ) ; ___( psttDoubleTime ) ;
+                                        strSubstringF( tin0P , psttDoubleTime , idf , idl , tShort ) ; ___( psttDoubleTime ) ;
                                         countT idf = idHit2 ;
                                         countT idl = idf - 1 ;
                                         ZE( strokeS* , psttDoubleTime ) ;
                                     {
                                     if( idHit2 )            // I HAVE A DOUBLE TIME AFTER HEY                                                  
-                                    countT idHit2 = strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDotDateAtTimeDot , tShort ) ;
+                                    countT idHit2 = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDotDateAtTimeDot , tShort ) ;
                                     countT idfSave = -- idf ;                             
                                 {
                                 else                        // I HAVE A DOT HEY DOT
@@ -106,22 +106,22 @@
                                     tTimePair = tDot+tTimeFromPrefix+tDot+tDateAtTimeFromFileMeta+tDot ;
                                 {
                                 if( !idHit )
-                                idHit = strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tDotHeyDot , tShort ) ;
+                                idHit = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tDotHeyDot , tShort ) ;
 
                                 tSequenceNumber = tSequenceNumberFromPrefix ;
                                 }
-                                    delF( tinBaseP , psttSequenceNumberFromPrefix ) ;
+                                    delF( tin0P , psttSequenceNumberFromPrefix ) ;
                                     tSequenceNumberFromPrefix = T(psttSequenceNumberFromPrefix) ;
-                                    strSubstringF( tinBaseP , psttSequenceNumberFromPrefix , idf , idl , tShort ) ; ___( psttSequenceNumberFromPrefix ) ;
+                                    strSubstringF( tin0P , psttSequenceNumberFromPrefix , idf , idl , tShort ) ; ___( psttSequenceNumberFromPrefix ) ;
                                     countT idl = ++ idf + 2 ;
                                     ZE( strokeS* , psttSequenceNumberFromPrefix ) ;
                                 {
                                 TN( tSequenceNumberFromPrefix , "" ) ;
 
                                 }
-                                    delF( tinBaseP , psttTimeFromPrefix ) ;
+                                    delF( tin0P , psttTimeFromPrefix ) ;
                                     tTimeFromPrefix = T(psttTimeFromPrefix) ;
-                                    strSubstringF( tinBaseP , psttTimeFromPrefix , idf , idl , tShort ) ; ___( psttTimeFromPrefix ) ;
+                                    strSubstringF( tin0P , psttTimeFromPrefix , idf , idl , tShort ) ; ___( psttTimeFromPrefix ) ;
                                     countT idl = idf + 0xc ;
                                     ZE( strokeS* , psttTimeFromPrefix ) ;
                                 {
@@ -133,7 +133,7 @@
                             {
                             if( !idHit )                    // NOT A VALID PREFIX
 
-                            countT idHit = strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tPrefix6 , tShort ) ;
+                            countT idHit = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tPrefix6 , tShort ) ;
 
                             TN( tPrefix6   , "!ideafarm.6." ) ;
                             TN( tDotHeyDot , ".!." ) ;
@@ -146,26 +146,26 @@
 
                         cRenamed ++ ;
                     {
-                    if( 1 != strIdF( tinBaseP , tNewPrefix , tShort ) )
+                    if( 1 != strIdF( tin0P , tNewPrefix , tShort ) )
                 {
-                if( tShort.csF( tinBaseP ) )
+                if( tShort.csF( tin0P ) )
 
                 }
-                    delF( tinBaseP , psttDotExt ) ;
-                    delF( tinBaseP , psttnu ) ;
+                    delF( tin0P , psttDotExt ) ;
+                    delF( tin0P , psttnu ) ;
                     tDotExt = T(psttDotExt) ;
-                    strBisectF( tinBaseP , psttnu , psttDotExt , tShort , tDot , - 1 , flSTRbISECT_PREPENDdELIMITER ) ; ___( psttnu ) ; ___( psttDotExt ) ;
+                    strBisectF( tin0P , psttnu , psttDotExt , tShort , tDot , - 1 , flSTRbISECT_PREPENDdELIMITER ) ; ___( psttnu ) ; ___( psttDotExt ) ;
                     ZE( strokeS* , psttDotExt ) ;
                     ZE( strokeS* , psttnu ) ;
                 {
                 TN( tDotExt , "" ) ;
 
                 }
-                    delF( tinBaseP , psttShort ) ;
-                    delF( tinBaseP , psttPath ) ;
+                    delF( tin0P , psttShort ) ;
+                    delF( tin0P , psttPath ) ;
                     tShort = T(psttShort) ;
                     tPath  = T(psttPath) ;
-                    strBisectF( tinBaseP , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+                    strBisectF( tin0P , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
                     ZE( strokeS* , psttShort ) ;
                     ZE( strokeS* , psttPath ) ;
                 {
@@ -184,7 +184,7 @@
     
                     tDateAtTimeFromFileMeta =
     
-                    osTimeToOldTimeF( tinBaseP , ms , ss , mm , hh , da , mo , ye , dow , pInfo->timeWritten1 , pInfo->timeWritten2 ) ;
+                    osTimeToOldTimeF( tin0P , ms , ss , mm , hh , da , mo , ye , dow , pInfo->timeWritten1 , pInfo->timeWritten2 ) ;
                     ZE( countT , dow ) ;
                     ZE( sCountT , ye ) ;
                     ZE( countT , mo ) ;
@@ -198,21 +198,21 @@
             {
             else
             }
-                if( F(flagsP) & flETHERrENAMEtOhASH_RECURSE && !strIdF( tinBaseP , tSDS , pInfo->psttIfoName ) && !strIdF( tinBaseP , tSDDS , pInfo->psttIfoName ) ) cRenamed += diskRenameToHashF( tinBaseP , pInfo->psttIfoName , flagsP ) ;
+                if( F(flagsP) & flETHERrENAMEtOhASH_RECURSE && !strIdF( tin0P , tSDS , pInfo->psttIfoName ) && !strIdF( tin0P , tSDDS , pInfo->psttIfoName ) ) cRenamed += diskRenameToHashF( tin0P , pInfo->psttIfoName , flagsP ) ;
             {
             if( pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' )
         {
         if( pInfo && pInfo->psttIfoName )
-        diskFindFileOrDirF( tinBaseP , pInfo , hFind , T(psttFolderMapped) ) ;
+        diskFindFileOrDirF( tin0P , pInfo , hFind , T(psttFolderMapped) ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
     TN( tDotTypeMetaDotCurrentName , ".meta.currentname" ) ;
     TN( tDotTypeMetaDotHashedName , ".meta.hashedname" ) ;
     TN( tDotTypeData , ".data" ) ;
     TN( tNewPrefix , "!ideafarm.9.2.00000000.00000001." ) ;
-    TN( tOsLikePath , osFileNameC( tinBaseP , third , T(psttFolderMapped) ) ) ;
+    TN( tOsLikePath , osFileNameC( tin0P , third , T(psttFolderMapped) ) ) ;
     TN( tSDDS , "/../" ) ;
     TN( tSDS , "/./" ) ;
     TN( tSlash , "/" ) ;
@@ -280,10 +280,10 @@
 
     //FILE NAME FORMAT: !ideafarm.9.2.00000000.00000001.
 
-    diskMapFileNameF( tinBaseP , psttFolderMapped , psttFolderP ) ; ___( psttFolderMapped ) ;
+    diskMapFileNameF( tin0P , psttFolderMapped , psttFolderP ) ; ___( psttFolderMapped ) ;
     ZE( strokeS* , psttFolderMapped ) ;
 
-    etherC& etPrime = etPrimeIF( tinBaseP ) ;
+    etherC& etPrime = etPrimeIF( tin0P ) ;
     const boolT bIgnoreEtPrime = F(flagsP) & flETHERrENAMEtOhASH_KEEPwORKINGiFfIRED ;
 
     _IO_
@@ -299,7 +299,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT etherC::diskRenameToHashF( tin0S& tinBaseP , const strokeS* const psttFolderP , const flagsT flagsP )/*1*/
+/*1*/countT etherC::diskRenameToHashF( tin0S& tin0P , const strokeS* const psttFolderP , const flagsT flagsP )/*1*/
 
 /**/
 

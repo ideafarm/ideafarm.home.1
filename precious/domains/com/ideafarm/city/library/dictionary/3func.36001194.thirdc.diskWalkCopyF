@@ -8,19 +8,19 @@
 
 
 }
-    thirdC::diskWalkIF( tinBaseP , cDirsP , cFilesP , postFromP , bQuitP , flDISKwALK_null , diskWalkCopyCBF , (countT*)&info ) ;
-    dosCreateDirF( tinBaseP , info.postTo ) ;
+    thirdC::diskWalkIF( tin0P , cDirsP , cFilesP , postFromP , bQuitP , flDISKwALK_null , diskWalkCopyCBF , (countT*)&info ) ;
+    dosCreateDirF( tin0P , info.postTo ) ;
 
     info.pcArgApp     = pcArgP ;
     info.pCbf         = pCbfP ;
-    info.costFromRoot = ((tin9S&)tinBaseP).brcRaw ;
+    info.costFromRoot = ((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , strlen( postFromP ) )
-    info.costToRoot   = ((tin9S&)tinBaseP).brcRaw ;
+    info.costToRoot   = ((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , strlen( info.postTo ) )
     BOSdOnOTtEST( WHATgbo , strcpy( info.postTo , postToP ) )
     diskWalkCopyInfoS info ;
 {
-/*1*/voidT thirdC::diskWalkCopyF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postToP , const osTextT* const postFromP , diskWalkCopyCBFT pCbfP , countT* pcArgP )/*1*/
+/*1*/voidT thirdC::diskWalkCopyF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postToP , const osTextT* const postFromP , diskWalkCopyCBFT pCbfP , countT* pcArgP )/*1*/
 
 /**/
 */

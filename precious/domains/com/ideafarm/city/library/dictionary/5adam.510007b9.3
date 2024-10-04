@@ -11,19 +11,19 @@
     return bOk ;
 
     }
-        pGrabHandleAll->ungrabF( tinBaseP ) ;
+        pGrabHandleAll->ungrabF( tin0P ) ;
         }
             bOk = 1 ;
             (nicNameC&)*pIdptHandleAll = (countT)0 ;
                        *pIdptHandleAll = (countT)0 ;
         {
         if( *pIdptHandleAll == idptMeP )
-        pGrabHandleAll->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        pGrabHandleAll->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
     if( !pczChannelP )
     ZE( boolT , bOk ) ;
 {
-/*1*/boolT nodeOldC::handleUnregisterIF( tin0S& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
+/*1*/boolT nodeOldC::handleUnregisterIF( tin0S& tin0P , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -48,19 +48,19 @@
     return bOk ;
 
     }
-        pGrabHandleAll->ungrabF( tinBaseP ) ;
+        pGrabHandleAll->ungrabF( tin0P ) ;
         }
-            ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("i am now the handle port for this adam [idAdam,idptHandleAll]:    ")+TF2(((tin9S&)tinBaseP).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T((nicNameC&)*pIdptHandleAll)+T(" ( ")+TF2((countT)*pIdptHandleAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
+            ((tin9S&)tin0P).pEther->traceF( tin0P , T("i am now the handle port for this adam [idAdam,idptHandleAll]:    ")+TF2(((tin9S&)tin0P).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T((nicNameC&)*pIdptHandleAll)+T(" ( ")+TF2((countT)*pIdptHandleAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ;
             bOk = 1 ;
             *pIdptHandleAll = idptMeP ;
         {
         if( !*pIdptHandleAll || idptMeP - *pIdptHandleAll < 0 )
-        pGrabHandleAll->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        pGrabHandleAll->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
     if( !pczChannelP )
     ZE( boolT , bOk ) ;
 {
-/*1*/boolT nodeOldC::handleRegisterMeIfIF( tin0S& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
+/*1*/boolT nodeOldC::handleRegisterMeIfIF( tin0S& tin0P , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -85,18 +85,18 @@
     return bOk ;
 
     }
-        pGrabHandleAll->ungrabF( tinBaseP ) ;
+        pGrabHandleAll->ungrabF( tin0P ) ;
         }
             bOk = 1 ;
             *pIdptHandleAll = idptMeP ;
         {
         if( *pIdptHandleAll == idptMeP )
-        pGrabHandleAll->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        pGrabHandleAll->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
     if( !pczChannelP )
     ZE( boolT , bOk ) ;
 {
-/*1*/boolT nodeOldC::handleRefreshTimeStampIF( tin0S& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
+/*1*/boolT nodeOldC::handleRefreshTimeStampIF( tin0S& tin0P , portTimeC idptMeP , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -122,7 +122,7 @@
 
     }
         }
-            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , pnn ) ;
+            ((tin9S&)tin0P).pEther->delF( tin0P , pnn ) ;
             }
                 else            (countT&)idpth = pnn->pcId[ 0 ] & 0xffff ; // THE HIGH ORDER 01 BITS OF spaceport.ideafarm.com ARE NOW SET TO MAKE THE IPv4 ADDRESS ROUTABLE, BECAUSE getaddrinfo RETURNS WSANO_DATA WHEN THE HIGH WORD IS NULL
                 //else            (countT&)idpth = ( pnn->pcId[ 0 ] & 0xffff ) + 0x4 ; //U:: TO FIND A BUG: THIS IS AN INTENTIONAL SMUDGE SO THAT I WILL NEVER BE ABLE TO CONNECT WITH HANDLE
@@ -130,8 +130,8 @@
             {
             if( cnn == 1 ) //U::IPV6
             THREADmODE2rESTORE
-            socketC::nicNameIF( tinBaseP , *((tin9S&)tinBaseP).pEther , pnn , cnn , T(idDo==1?"spacenn.ideafarm.com":"spaceport.ideafarm.com") ) ;
-            //OLD:socketC::nicNameIF( tinBaseP , *((tin9S&)tinBaseP).pEther , pnn , cnn , T(idDo==1?"nicname.":"port.")+TF1(idSpace)+T(".space.ideafarm.com") ) ;
+            socketC::nicNameIF( tin0P , *((tin9S&)tin0P).pEther , pnn , cnn , T(idDo==1?"spacenn.ideafarm.com":"spaceport.ideafarm.com") ) ;
+            //OLD:socketC::nicNameIF( tin0P , *((tin9S&)tin0P).pEther , pnn , cnn , T(idDo==1?"nicname.":"port.")+TF1(idSpace)+T(".space.ideafarm.com") ) ;
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
             ZE( countT    , cnn ) ;
             ZE( nicNameC* , pnn ) ;
@@ -148,11 +148,11 @@
         //    {
         //    else switch( idHomeDisk )
         //    if( idSpacew && idSpacew <= 3 ) idSpace = idSpacew ;
-        //    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttw ) ;
-        //    if( psttw ) idSpacew = ((tin9S&)tinBaseP).pEther->strDigitsToSCountF( tinBaseP , psttw ) ;
+        //    ((tin9S&)tin0P).pEther->delF( tin0P , psttw ) ;
+        //    if( psttw ) idSpacew = ((tin9S&)tin0P).pEther->strDigitsToSCountF( tin0P , psttw ) ;
         //    ZE( countT , idSpacew ) ;
         //    THREADmODE2rESTORE
-        //    ((tin9S&)tinBaseP).pEther->boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tinBaseP , psttw , T("///d/ideafarm.home.")+TF1(idHomeDisk)+T(".setting.keyValue.idSpace") ) ; ___( psttw ) ;
+        //    ((tin9S&)tin0P).pEther->boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tin0P , psttw , T("///d/ideafarm.home.")+TF1(idHomeDisk)+T(".setting.keyValue.idSpace") ) ; ___( psttw ) ;
         //    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
         //    countT idHomeDisk = etherC::ifc_idHomeIdisk_IF() ;
         //    ZE( strokeS* , psttw ) ;
@@ -160,17 +160,17 @@
         //ENABLE WHEN A PRODUCTION RELAY SYSTEM EXISTS AND NEED TO DO DEVELOPMENT IN A SANDBOX
         countT idSpace = 1 ;
     {
-    if( !*((tin9S&)tinBaseP).pEther )
+    if( !*((tin9S&)tin0P).pEther )
 
     //}
-    //    pGrabHandleAll->ungrabF( tinBaseP ) ;
+    //    pGrabHandleAll->ungrabF( tin0P ) ;
     //    idpth = *pIdptHandleAll ;
-    //    pGrabHandleAll->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    //    pGrabHandleAll->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     //{
     //if( !pczChannelP )
     portTimeC idpth ;
 {
-/*1*/portTimeC nodeOldC::handleQueryIF( tin0S& tinBaseP , const countT* const pczChannelP )/*1*/
+/*1*/portTimeC nodeOldC::handleQueryIF( tin0S& tin0P , const countT* const pczChannelP )/*1*/
 /**/
 */
 /*
@@ -198,7 +198,7 @@
     /* 5   */ sBagP << (countT)( 1 + incv02AM( idSerialLathHeaderP ) ) ;
     /* 1-4 */ idptP >> sBagP ;
 {
-/*1*/voidT nodeOldC::hdrBagIF( tin0S& tinBaseP , soulC& sBagP , portTimeC& idptP , countT& idSerialLathHeaderP , const flagsT flagsP , const countT idTypeP )/*1*/
+/*1*/voidT nodeOldC::hdrBagIF( tin0S& tin0P , soulC& sBagP , portTimeC& idptP , countT& idSerialLathHeaderP , const flagsT flagsP , const countT idTypeP )/*1*/
 /**/
 */
 /*
@@ -220,31 +220,31 @@
 
 
 }
-    stIdptTempP.purgeF( tinBaseP ) ;
+    stIdptTempP.purgeF( tin0P ) ;
     }
         while( !stIdptOpenP.third && ~hDown ) ;
         }
-            stIdptOpenP.sinkF( tinBaseP , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
-            portTimeC& idpt = *(portTimeC*)&stIdptTempP.downF( tinBaseP , hDown ) ;
+            stIdptOpenP.sinkF( tin0P , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
+            portTimeC& idpt = *(portTimeC*)&stIdptTempP.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stIdptTempP )
-    stIdptOpenP.purgeF( tinBaseP ) ;
+    stIdptOpenP.purgeF( tin0P ) ;
     }
         while( !stIdptOpenP.third && ~hDown ) ;
         }
-            stIdptTempP.sinkF( tinBaseP , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
-            portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tinBaseP , hDown ) ;
+            stIdptTempP.sinkF( tin0P , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
+            portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stIdptOpenP )
-    stIdptTempP.purgeF( tinBaseP ) ;
+    stIdptTempP.purgeF( tin0P ) ;
 {
-/*1*/voidT nodeOldC::sortOpenIF( tin0S& tinBaseP , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP )/*1*/
+/*1*/voidT nodeOldC::sortOpenIF( tin0S& tin0P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP )/*1*/
 /**/
 */
 /*
@@ -266,18 +266,18 @@
 
 
 }
-    stRelayP.ungrabF( tinBaseP ) ;
+    stRelayP.ungrabF( tin0P ) ;
     }
         while( !stRelayP.third && ~hDown ) ;
-        do *(portTimeC*)&stRelayP.downF( tinBaseP , hDown ) >> soulP ;
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        do *(portTimeC*)&stRelayP.downF( tin0P , hDown ) >> soulP ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stRelayP )
     soulP << (countT)stRelayP ;
-    stRelayP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    stRelayP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _IO_
 {
-/*1*/voidT nodeOldC::myListIF( tin0S& tinBaseP , soulC& soulP , stackC& stRelayP )/*1*/
+/*1*/voidT nodeOldC::myListIF( tin0S& tin0P , soulC& soulP , stackC& stRelayP )/*1*/
 /**/
 */
 /*
@@ -301,18 +301,18 @@
 }
     return cRelays ;
     }
-        if( idpt ) stP.sinkF( tinBaseP , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , &stP == &stIdptGossipP ? - 1 : (countT)&stIdptGossipP ) ;
-        portTimeC idpt = portTimeC::fieldF( tinBaseP , soulP , idFieldP ) ; idFieldP += portTimeC::cFieldsF( tinBaseP ) ;
+        if( idpt ) stP.sinkF( tin0P , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , &stP == &stIdptGossipP ? - 1 : (countT)&stIdptGossipP ) ;
+        portTimeC idpt = portTimeC::fieldF( tin0P , soulP , idFieldP ) ; idFieldP += portTimeC::cFieldsF( tin0P ) ;
     {
     while( cToDo -- )
     }
     {
     if( &stP == &stIdptGossipP )
     countT cToDo = cRelays ;
-    const countT cRelays = soulP.cFieldF( tinBaseP , idFieldP ++ ) ;
+    const countT cRelays = soulP.cFieldF( tin0P , idFieldP ++ ) ;
     _IO_
 {
-/*1*/countT nodeOldC::hisListIF( tin0S& tinBaseP , stackC& stP , soulC& soulP , stackC& stIdptGossipP , countT& idFieldP )/*1*/
+/*1*/countT nodeOldC::hisListIF( tin0S& tin0P , stackC& stP , soulC& soulP , stackC& stIdptGossipP , countT& idFieldP )/*1*/
 /**/
 */
 /*
@@ -335,7 +335,7 @@
 
 }
     }
-        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / ----") ) ;
+        //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / ----") ) ;
 
         }
             }
@@ -343,19 +343,19 @@
                     }
                         //if( bDebug ) { CONoUTrAW3( "popping secret packet " , idSerialBag , " RIGHT\r\n" ) ; }
                         *pStPop4P << psBagCopy ; psBagCopy = 0 ;
-                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4 / doing") ) ;
+                        //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4 / doing") ) ;
 
                         }
                             flags &= ~( F(flOLDrELAYpOP_DOWN) | F(flOLDrELAYpOP_UP) ) ;
-                            flagsT& flags = psBagCopy->cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
-                            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4 / dud") ) ;
+                            flagsT& flags = psBagCopy->cFieldF( tin0P , ifcIDfIELDbAG_FLAGS ) ;
+                            //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4 / dud") ) ;
                         {
                         if( bDudP )
                         *psBagCopy = sBagP ;
                     {
                     if( psBagCopy )
-                    soulC* psBagCopy = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4") ) ;
+                    soulC* psBagCopy = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 4") ) ;
                 {
                 if( pStPop4P )
                 
@@ -363,19 +363,19 @@
                     }
                         //if( bDebug ) { CONoUTrAW3( "popping secret packet " , idSerialBag , " LEFT\r\n" ) ; }
                         *pStPop3P << psBagCopy ; psBagCopy = 0 ;
-                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3 / doing") ) ;
+                        //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3 / doing") ) ;
 
                         }
                             flags &= ~( F(flOLDrELAYpOP_DOWN) | F(flOLDrELAYpOP_UP) ) ;
-                            flagsT& flags = psBagCopy->cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
-                            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3 / dud") ) ;
+                            flagsT& flags = psBagCopy->cFieldF( tin0P , ifcIDfIELDbAG_FLAGS ) ;
+                            //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3 / dud") ) ;
                         {
                         if( bDudP )
                         *psBagCopy = sBagP ;
                     {
                     if( psBagCopy )
-                    soulC* psBagCopy = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3") ) ;
+                    soulC* psBagCopy = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up lateral to 3") ) ;
                 {
                 if( pStPop3P )
             {
@@ -385,19 +385,19 @@
                 }
                     //if( bDebug ) { CONoUTrAW3( "popping secret packet " , idSerialBag , " UP2\r\n" ) ; }
                     *pStPop2P << psBagCopy ; psBagCopy = 0 ;
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 2 / doing") ) ;
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up to 2 / doing") ) ;
 
                     }
                         flags &= ~( F(flOLDrELAYpOP_DOWN) | F(flOLDrELAYpOP_UP) ) ;
-                        flagsT& flags = psBagCopy->cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
-                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 2 / dud") ) ;
+                        flagsT& flags = psBagCopy->cFieldF( tin0P , ifcIDfIELDbAG_FLAGS ) ;
+                        //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up to 2 / dud") ) ;
                     {
                     if( bDudP )
                     *psBagCopy = sBagP ;
                 {
                 if( psBagCopy )
-                soulC* psBagCopy = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
-                //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 2") ) ;
+                soulC* psBagCopy = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
+                //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up to 2") ) ;
             {
             if( flagsUp & 2 && pStPop2P )
         
@@ -405,19 +405,19 @@
                 }
                     //if( bDebug ) { CONoUTrAW3( "popping secret packet " , idSerialBag , " UP1\r\n" ) ; }
                     *pStPop1P << psBagCopy ; psBagCopy = 0 ;
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 1 / doing") ) ;
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up to 1 / doing") ) ;
 
                     }
                         flags &= ~( F(flOLDrELAYpOP_DOWN) | F(flOLDrELAYpOP_UP) ) ;
-                        flagsT& flags = psBagCopy->cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
-                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 1 / dud") ) ;
+                        flagsT& flags = psBagCopy->cFieldF( tin0P , ifcIDfIELDbAG_FLAGS ) ;
+                        //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up to 1 / dud") ) ;
                     {
                     if( bDudP )
                     *psBagCopy = sBagP ;
                 {
                 if( psBagCopy )
-                soulC* psBagCopy = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
-                //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / popping up to 1") ) ;
+                soulC* psBagCopy = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
+                //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / popping up to 1") ) ;
             {
             if( flagsUp & 1 && pStPop1P )
     
@@ -431,7 +431,7 @@
                             UNGRABrELAYlISTS
                             }
                                 }
-                                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("[idRankTo,flagsUp]:    ")+TF2(idRankTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(flagsUp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("[idRankTo,flagsUp]:    ")+TF2(idRankTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(flagsUp,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     flagsUp |= flagsUpF( idRankMe , idRankTo , idRankMax ) ;
                                 {
                                 if( idRankTo )
@@ -448,56 +448,56 @@
                                 ZE( countT , idRankTo ) ;
                             {
                             if( idRankMe ) while( (countT)*psTo && flagsUp != 3 ) //U:: EDIT soulC TO ELIMINATE THE NEED TO CAST TO countT TO GET THE NUBMER OF ITEMS
-                            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("[idRankMax,idRankMe]:    ")+TF2(idRankMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idRankMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            //((tin9S&)tin0P).pEther->traceF( tin0P , T("[idRankMax,idRankMe]:    ")+TF2(idRankMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idRankMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             const countT idRankMax = stIdptOpenP ;
                             //CONoUTrAW3( "popIF: idRankMe: " , idRankMe , "\r\n" ) ;
                             countT idRankMe = stIdptOpenP( (byteT*)&idptP , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                             GRABrELAYlISTS
     
-                            psTo->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbs , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
-                            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting / sTo is not empty / inspecting psTo") ) ;
+                            psTo->shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbs , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                            //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting / sTo is not empty / inspecting psTo") ) ;
                         {
                         if( psTo )
-                        soulC* psTo = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psTo ) ; // WILL CONTAIN EITHER sTo OR sToMediator
+                        soulC* psTo = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psTo ) ; // WILL CONTAIN EITHER sTo OR sToMediator
     
                         }
                             //CONoUTrAW3( "popIF: bDebugUsingMediator: " , bDebugUsingMediator , "\r\n" ) ;
                             ;
-                                : ( bDebugUsingMediator = 0 , psWrap->pbFieldF( tinBaseP , idType , flags , cbf , ifcOLDiDfIELDwRAP_TO         ) )
-                                ? ( bDebugUsingMediator = 1 , psWrap->pbFieldF( tinBaseP , idType , flags , cbf , ifcOLDiDfIELDwRAP_TOmEDIATOR ) )
-                            pbs = !( F(flagsPut) & flCIOpUT_IGNOREmEDIATORlIST ) && !psWrap->bKidEmptyF( tinBaseP , ifcOLDiDfIELDwRAP_TOmEDIATOR )
+                                : ( bDebugUsingMediator = 0 , psWrap->pbFieldF( tin0P , idType , flags , cbf , ifcOLDiDfIELDwRAP_TO         ) )
+                                ? ( bDebugUsingMediator = 1 , psWrap->pbFieldF( tin0P , idType , flags , cbf , ifcOLDiDfIELDwRAP_TOmEDIATOR ) )
+                            pbs = !( F(flagsPut) & flCIOpUT_IGNOREmEDIATORlIST ) && !psWrap->bKidEmptyF( tin0P , ifcOLDiDfIELDwRAP_TOmEDIATOR )
                             ZE( countT , cbf ) ;
                             ZE( flagsT , flags ) ;
                             ZE( countT , idType ) ;
     
-                            flagsT flagsPut = psWrap->cFieldF( tinBaseP , ifcOLDiDfIELDwRAP_FLAGS ) ;
+                            flagsT flagsPut = psWrap->cFieldF( tin0P , ifcOLDiDfIELDwRAP_FLAGS ) ;
                         {
                         ZE( byteT* , pbs ) ;
                         ZE( boolT , bDebugUsingMediator ) ;
     
                         flagsUp = bLateral = 0 ; //THIS IS A POINT TO POINT PACKET SO DON'T POP SIDE TO SIDE (REDUNDANT, TO MAKE BROADCAST MORE ROBOST)
-                        //if( !psWrap->bKidEmptyF( tinBaseP , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ) { CONoUTrAW( "sToMediator is not empty\r\n" ) ; }
-                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting / sTo is not empty") ) ;
+                        //if( !psWrap->bKidEmptyF( tin0P , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ) { CONoUTrAW( "sToMediator is not empty\r\n" ) ; }
+                        //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting / sTo is not empty") ) ;
                     {
-                    if( !psWrap->bKidEmptyF( tinBaseP , ifcOLDiDfIELDwRAP_TO ) )
+                    if( !psWrap->bKidEmptyF( tin0P , ifcOLDiDfIELDwRAP_TO ) )
     
-                    psWrap->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbsWrap , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                    psWrap->shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbsWrap , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                     //O: THIS IS EXPENSIVE; CAN ELIMINATE BY COPYING sTo TO THE OUTER ENVELOPE
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting") ) ;
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / is a wrap / inspecting") ) ;
                 {
                 if( psWrap )
-                soulC* psWrap = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
+                soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
     
-                byteT* pbsWrap = sBagP.pbFieldF( tinBaseP , idTypesWrap , flagssWrap , cbfsWrap , ifcIDfIELDbAG_WRAP ) ;
+                byteT* pbsWrap = sBagP.pbFieldF( tin0P , idTypesWrap , flagssWrap , cbfsWrap , ifcIDfIELDbAG_WRAP ) ;
                 ZE( countT , cbfsWrap ) ;
                 ZE( flagsT , flagssWrap ) ;
                 ZE( countT , idTypesWrap ) ;
-                //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP / is a wrap") ) ;
+                //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP / is a wrap") ) ;
             {
-            if( sBagP.cFieldF( tinBaseP , ifcIDfIELDbAG_IDtYPE ) == ifcOLDiDtYPEbAG_WRAP )
+            if( sBagP.cFieldF( tin0P , ifcIDfIELDbAG_IDtYPE ) == ifcOLDiDtYPEbAG_WRAP )
             flagsT flagsUp = 3 ; //BOTH UP LEFT AND UP RIGHT
             boolT bLateral = 1 ;
-            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_UP") ) ;
+            //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_UP") ) ;
         {
         if( F(flags) & flOLDrELAYpOP_UP )
     
@@ -506,24 +506,24 @@
                 }
                     //if( bDebug ) { CONoUTrAW3( "popping secret packet " , idSerialBag , " DOWN\r\n" ) ; }
                     *pStPop0P << psBagCopy ; psBagCopy = 0 ;
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_DOWN / pushing to *pStPop0P") ) ;
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_DOWN / pushing to *pStPop0P") ) ;
 
                     }
                         flags &= ~( F(flOLDrELAYpOP_DOWN) | F(flOLDrELAYpOP_UP) ) ;
-                        flagsT& flags = psBagCopy->cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
-                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_DOWN / dud") ) ;
+                        flagsT& flags = psBagCopy->cFieldF( tin0P , ifcIDfIELDbAG_FLAGS ) ;
+                        //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_DOWN / dud") ) ;
                     {
                     if( bDudP )
                     *psBagCopy = sBagP ;
                 {
                 if( psBagCopy )
-                soulC* psBagCopy = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
+                soulC* psBagCopy = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBagCopy ) ;
             {
             if( pStPop0P )
-            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / flOLDrELAYpOP_DOWN") ) ;
+            //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / flOLDrELAYpOP_DOWN") ) ;
         {
         if( F(flags) & flOLDrELAYpOP_DOWN )
-        flagsT flags = sBagP.cFieldF( tinBaseP , ifcIDfIELDbAG_FLAGS ) ;
+        flagsT flags = sBagP.cFieldF( tin0P , ifcIDfIELDbAG_FLAGS ) ;
     
         }
             //if( bDebug ) { CONoUTrAW3( "popIF got a secret STROKEStOcONSOLE " , idSerialBag , "\r\n" ) ; }
@@ -533,31 +533,31 @@
             }
                 }
                     }
-                        idSerialBag = sBagP.cFieldF( tinBaseP , ifcIDfIELDbAG_IDsERIAL ) ;
+                        idSerialBag = sBagP.cFieldF( tin0P , ifcIDfIELDbAG_IDsERIAL ) ;
                         bDebug = 1 ;
                     {
                     if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATED && pczChannel[ 2 ] == ifcIDaDAM_SECRETsERVICE && pczChannel[ 3 ] == ifcIDaDAM_CONSOLE && pczChannel[ 4 ] == ifcOLDiDcHANNELfUNCTION_STROKEcONSOLE )
-                    countT* pczChannel = (countT*)soulC::pbFieldIF( tinBaseP , idTypeChannel , flagsChannel , cbfChannel , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrap ) ;
+                    countT* pczChannel = (countT*)soulC::pbFieldIF( tin0P , idTypeChannel , flagsChannel , cbfChannel , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrap ) ;
                     ZE( countT , cbfChannel ) ;
                     ZE( flagsT , flagsChannel ) ;
                     ZE( countT , idTypeChannel ) ;
                 {
                 if( idType == ifcOLDiDtYPEwRAP_GIFT )
-                countT idType = soulC::cFieldIF( tinBaseP , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrap ) ;
+                countT idType = soulC::cFieldIF( tin0P , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrap ) ;
             {
-            if( soulC::cFieldsIF( tinBaseP , pbsWrap ) >= ifcOLDiDfIELDwRAP_IDtYPE )
+            if( soulC::cFieldsIF( tin0P , pbsWrap ) >= ifcOLDiDfIELDwRAP_IDtYPE )
             
-            byteT* pbsWrap = sBagP.pbFieldF( tinBaseP , idTypesWrap , flagssWrap , cbfsWrap , ifcIDfIELDbAG_WRAP ) ;
+            byteT* pbsWrap = sBagP.pbFieldF( tin0P , idTypesWrap , flagssWrap , cbfsWrap , ifcIDfIELDbAG_WRAP ) ;
             ZE( countT , cbfsWrap ) ;
             ZE( flagsT , flagssWrap ) ;
             ZE( countT , idTypesWrap ) ;
         {
-        if( sBagP.cFieldF( tinBaseP , ifcIDfIELDbAG_IDtYPE ) == ifcOLDiDtYPEbAG_WRAP )
+        if( sBagP.cFieldF( tin0P , ifcIDfIELDbAG_IDtYPE ) == ifcOLDiDtYPEbAG_WRAP )
         ZE( countT , idSerialBag ) ;
         ZE( boolT , bDebug ) ;
         //U::
 
-        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("popIF / ++++") ) ;
+        //((tin9S&)tin0P).pEther->traceF( tin0P , T("popIF / ++++") ) ;
     
         _IO_
     
@@ -580,7 +580,7 @@
     {
     IFsCRATCH
 {
-/*1*/voidT nodeOldC::popIF( tin0S& tinBaseP , stackC* pStPop0P , stackC* pStPop1P , stackC* pStPop2P , stackC* pStPop3P , stackC* pStPop4P , soulC& sBagP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const boolT bDudP )/*1*/
+/*1*/voidT nodeOldC::popIF( tin0S& tin0P , stackC* pStPop0P , stackC* pStPop1P , stackC* pStPop2P , stackC* pStPop3P , stackC* pStPop4P , soulC& sBagP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const boolT bDudP )/*1*/
 
 //
 //  n: (2**n)*x ................ (2**n)*x+(2**(n-1))-1 | (2**n)*x+(2**(n-1)) ............ (2**n)*(x+1)-1
@@ -629,7 +629,7 @@
     idWorkInvert1P =
     _IO_     TLNA( "idWorkInvertIF" )
 {
-/*1*/voidT nodeOldC::idWorkInvertIF( tin0S& tinBaseP , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP )/*1*/
+/*1*/voidT nodeOldC::idWorkInvertIF( tin0S& tin0P , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP )/*1*/
 /**/
 */
 /*
@@ -661,16 +661,16 @@
                 bListed = 1 ;
             {
             if( idpt == idptP ) //THIS LOOKS AT idPort; SINK LOOKS AT TIME
-            portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tinBaseP , hDown ) ;
+            portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stIdptOpenP )
     ZE( boolT , bListed ) ;
     GRABrELAYlISTS
 {
-/*1*/boolT nodeOldC::bListedIF( tin0S& tinBaseP , stackC& stIdptOpenP , stackC& stIdptGossipP , const portTimeC& idptP )/*1*/
+/*1*/boolT nodeOldC::bListedIF( tin0S& tin0P , stackC& stIdptOpenP , stackC& stIdptGossipP , const portTimeC& idptP )/*1*/
 /**/
 */
 /*
@@ -696,10 +696,10 @@
 
     }
         }
-            case OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 : { portTimeC nt ; idptSelectPeerIF( tinBaseP , nt , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  , flSELECTpEER_DUPLICATEiSoK ) ; if( idptPeerP == nt ) idptPeerP = 0 ; }
-            case OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 : { portTimeC nt ; idptSelectPeerIF( tinBaseP , nt , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 , flSELECTpEER_DUPLICATEiSoK ) ; if( idptPeerP == nt ) idptPeerP = 0 ; }
-            case OLDiDtYPErELAYpOPcLIENTwORK_LEFT     : { portTimeC nt ; idptSelectPeerIF( tinBaseP , nt , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 , flSELECTpEER_DUPLICATEiSoK ) ; if( idptPeerP == nt ) idptPeerP = 0 ; }
-            case OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    : { portTimeC nt ; idptSelectPeerIF( tinBaseP , nt , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     , flSELECTpEER_DUPLICATEiSoK ) ; if( idptPeerP == nt ) idptPeerP = 0 ; }
+            case OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 : { portTimeC nt ; idptSelectPeerIF( tin0P , nt , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  , flSELECTpEER_DUPLICATEiSoK ) ; if( idptPeerP == nt ) idptPeerP = 0 ; }
+            case OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 : { portTimeC nt ; idptSelectPeerIF( tin0P , nt , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 , flSELECTpEER_DUPLICATEiSoK ) ; if( idptPeerP == nt ) idptPeerP = 0 ; }
+            case OLDiDtYPErELAYpOPcLIENTwORK_LEFT     : { portTimeC nt ; idptSelectPeerIF( tin0P , nt , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 , flSELECTpEER_DUPLICATEiSoK ) ; if( idptPeerP == nt ) idptPeerP = 0 ; }
+            case OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    : { portTimeC nt ; idptSelectPeerIF( tin0P , nt , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     , flSELECTpEER_DUPLICATEiSoK ) ; if( idptPeerP == nt ) idptPeerP = 0 ; }
         {
         switch( idMyWorkP ) // idptP IS SET IFF A DISTINCT RELAY EXISTS
     {
@@ -729,11 +729,11 @@
                     bFound = 1 ;
                 {
                 if( idpt == idptP ) //THIS LOOKS AT idPort; SINK LOOKS AT TIME
-                portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tinBaseP , hDown ) ;
+                portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tin0P , hDown ) ;
                 ideMe ++ ;
             {
             do
-            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         {
         if( stIdptOpenP )
         GRABrELAYlISTS
@@ -745,16 +745,16 @@
         }
             while( !stIdptOpenP.third && ~hDown ) ;
             }
-                ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: open [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
-                portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tinBaseP , hDown ) ;
+                ((tin9S&)tin0P).pEther->traceF( tin0P , T("idptSelectPeerIF: open [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
+                portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tin0P , hDown ) ;
             {
             do
-            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             ZE( countT , idPlate ) ;
         {
         if( stIdptOpenP )
 
-        ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: open list [cRelays,ideMe]:    ")+TF2(cRelays,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(ideMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
+        ((tin9S&)tin0P).pEther->traceF( tin0P , T("idptSelectPeerIF: open list [cRelays,ideMe]:    ")+TF2(cRelays,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(ideMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
     {
     if( F(flagsP) & flSELECTpEER_TRACE )
 
@@ -762,16 +762,16 @@
         }
             while( !stIdptGossipP.third && ~hDown ) ;
             }
-                ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: gossip [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
-                portTimeC& idpt = *(portTimeC*)&stIdptGossipP.downF( tinBaseP , hDown ) ;
+                ((tin9S&)tin0P).pEther->traceF( tin0P , T("idptSelectPeerIF: gossip [idPlate,idpt]:    ")+TF2(++idPlate,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idpt)+T(" ( ")+TF2((countT)idpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" )") ) ; //U:: TO FIND A BUG
+                portTimeC& idpt = *(portTimeC*)&stIdptGossipP.downF( tin0P , hDown ) ;
             {
             do
-            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             ZE( countT , idPlate ) ;
         {
         if( stIdptGossipP )
 
-        ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("idptSelectPeerIF: gossip list") ) ; //U:: TO FIND A BUG
+        ((tin9S&)tin0P).pEther->traceF( tin0P , T("idptSelectPeerIF: gossip list") ) ; //U:: TO FIND A BUG
     {
     if( F(flagsP) & flSELECTpEER_TRACE )
 
@@ -791,7 +791,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT nodeOldC::idptSelectPeerIF( tin0S& tinBaseP , portTimeC& idptPeerP , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idMyWorkP , const flagsT flagsP )/*1*/
+/*1*/voidT nodeOldC::idptSelectPeerIF( tin0S& tin0P , portTimeC& idptPeerP , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idMyWorkP , const flagsT flagsP )/*1*/
 /**/
 */
 /*
@@ -836,7 +836,7 @@
     if( idptPeer1P ) { BLAMMO ; }
     _IO_     TLNA( "portTimeClientIF" )
 {
-/*1*/voidT nodeOldC::portTimeClientIF( tin0S& tinBaseP , portTimeC& idptPeer1P , portTimeC& idptPeer2P , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idHisWorkP )/*1*/
+/*1*/voidT nodeOldC::portTimeClientIF( tin0S& tin0P , portTimeC& idptPeer1P , portTimeC& idptPeer2P , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idHisWorkP )/*1*/
 /**/
 */
 /*
@@ -859,28 +859,28 @@
 
 }
     }
-        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinBaseP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ; if( n1 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
-        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinBaseP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ; if( n1 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
-        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinBaseP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ; if( n1 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
-        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinBaseP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ; if( n1 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
-        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinBaseP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ; if( n1 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
+        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tin0P , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ; if( n1 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
+        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tin0P , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ; if( n1 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
+        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tin0P , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ; if( n1 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
+        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tin0P , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ; if( n1 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
+        { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tin0P , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ; if( n1 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
     {
     else
     }
         }
             }
-                stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ;
+                stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ;
             {
             if( n1 )
-            portTimeClientIF( tinBaseP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , idWorkP  ) ;
+            portTimeClientIF( tin0P , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , idWorkP  ) ;
             portTimeC n2 ;
             portTimeC n1 ;
         {
-        // { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tinBaseP , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , idWorkP  ) ; if( n1 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tinBaseP , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
+        // { portTimeC n1 ; portTimeC n2 ; portTimeClientIF( tin0P , n1 , n2 , stIdptOpenP , idptP , stIdptGossipP , idWorkP  ) ; if( n1 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n1 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; if( n2 ) stRelayExpectedP.sinkF( tin0P , countTC() , (byteT*)&n2 , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , - 1 ) ; }
     {
     if( idWorkP )
 {
-/*1*/voidT nodeOldC::portTimeClientsExpectedIF( tin0S& tinBaseP , stackC& stRelayExpectedP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
+/*1*/voidT nodeOldC::portTimeClientsExpectedIF( tin0S& tin0P , stackC& stRelayExpectedP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
 /**/
 */
 /*
@@ -908,19 +908,19 @@
         }
             break ;
             }
-                (*((tin9S&)tinBaseP).pEther)( tinBaseP , psBagPop ) ;
-                popIF( tinBaseP , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBagPop , stIdptOpenP , stIdptGossipP , idptP ) ;
+                (*((tin9S&)tin0P).pEther)( tin0P , psBagPop ) ;
+                popIF( tin0P , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBagPop , stIdptOpenP , stIdptGossipP , idptP ) ;
                 idptGossipP >> *psBagPop ;
-                hdrBagIF( tinBaseP , *psBagPop , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPgOSSIP ) ;
+                hdrBagIF( tin0P , *psBagPop , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPgOSSIP ) ;
             {
             if( psBagPop )
         
             UNGRABrELAYlISTS
             }
-                else (*((tin9S&)tinBaseP).pEther)( tinBaseP , psBagPop , TAG( TAGiDnULL ) ) ;
+                else (*((tin9S&)tin0P).pEther)( tin0P , psBagPop , TAG( TAGiDnULL ) ) ;
                 }
-                    sortOpenIF( tinBaseP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
-                    stIdptGossipP.sinkF( tinBaseP , countTC() , (byteT*)&idptGossipP , flSTACKsINK_UNIQUE , subtractIdPortsF , - 1 ) ;
+                    sortOpenIF( tin0P , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
+                    stIdptGossipP.sinkF( tin0P , countTC() , (byteT*)&idptGossipP , flSTACKsINK_UNIQUE , subtractIdPortsF , - 1 ) ;
                 {
                 if( pnRoot && *pnRoot == idptP )
                 portTimeC* pnRoot = stIdptOpenP ? (portTimeC*)&stIdptOpenP[ 1 ] : 0 ;
@@ -939,7 +939,7 @@
     switch( idWorkP )
     portTimeC idptGossipped ;
 {
-/*1*/portTimeC nodeOldC::gossipIfIF( tin0S& tinBaseP , countT& idSerialLathHeaderP , stackC* const pStPop0P , stackC* const pStPop1P , stackC* const pStPop2P , stackC* const pStPop3P , stackC* const pStPop4P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP , stackC& stRelayAbsentP , portTimeC& idptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
+/*1*/portTimeC nodeOldC::gossipIfIF( tin0S& tin0P , countT& idSerialLathHeaderP , stackC* const pStPop0P , stackC* const pStPop1P , stackC* const pStPop2P , stackC* const pStPop3P , stackC* const pStPop4P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP , stackC& stRelayAbsentP , portTimeC& idptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
 /**/
 */
 if idptGossipP is absent and is not already gossipped, then gossip about it
@@ -971,37 +971,37 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
             {
             if( POOP )
 
-            (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , psBagOk ) ;
-            (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , psBag ) ;
+            (*((tin9S&)tin0P).pEtScratch)( tin0P , psBagOk ) ;
+            (*((tin9S&)tin0P).pEtScratch)( tin0P , psBag ) ;
             }
                 TELL( "reading ok-" )
                 VERIFYrELAY2( sock , *psBagOk ) ;
                 TELL( "reading ok+ 15" )
-                sock.writeF( tinBaseP , *psBag ) ;
+                sock.writeF( tin0P , *psBag ) ;
     
-                hdrBagIF( tinBaseP , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTnULL ) ;
+                hdrBagIF( tin0P , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTnULL ) ;
             {
             if( psBag && psBagOk )
-            (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , psBagOk , TAG( TAGiDnULL ) ) ;
+            (*((tin9S&)tin0P).pEtScratch)( tin0P , psBagOk , TAG( TAGiDnULL ) ) ;
             ZE( soulC* , psBagOk ) ;
-            (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , psBag , TAG( TAGiDnULL ) ) ;
+            (*((tin9S&)tin0P).pEtScratch)( tin0P , psBag , TAG( TAGiDnULL ) ) ;
             ZE( soulC* , psBag ) ;
         {
         else
         }
-            ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("testIF: could not connect [idptTestP:nn,idPort]:    ")+T((nicNameC&)idptTestP)+T("    ")+TF2((countT&)idptTestP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            ((tin9S&)tin0P).pEther->traceF( tin0P , T("testIF: could not connect [idptTestP:nn,idPort]:    ")+T((nicNameC&)idptTestP)+T("    ")+TF2((countT&)idptTestP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             bOk = 0 ;
             POOPRqUIET
         {
         if( POOP )
-        sock.connectF( tinBaseP , idptTestP , (nicNameC&)idptTestP ) ;
-        socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tin0P , idptTestP , (nicNameC&)idptTestP ) ;
+        socketC sock( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
         SCOOPS
     {
     IFsCRATCH
     boolT bOk = 1 ;
 {
-/*1*/boolT nodeOldC::testIF( tin0S& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP , portTimeC& idptTestP )/*1*/
+/*1*/boolT nodeOldC::testIF( tin0S& tin0P , portTimeC& idptP , countT& idSerialLathHeaderP , portTimeC& idptTestP )/*1*/
 /**/
 */
 /*
@@ -1026,7 +1026,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
     }
         }
             //CONoUTrAW( "helloToHandleIF: 0 end of loop snippet\r\n" ) ;
-            handleUnregisterIF( tinBaseP , idpthc ) ;
+            handleUnregisterIF( tin0P , idpthc ) ;
             //CONoUTrAW( "helloToHandleIF: 1 unregistering handle\r\n" ) ;
     
             if( bOk ) break ;
@@ -1034,7 +1034,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
 
             }
                 }
-                    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("helloToHandleIF / could not say hello to handle [idpthc:nn,idPort]:    ")+T((nicNameC&)idpthc)+T("    ")+TF2((countT&)idpthc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tin9S&)tin0P).pEther->traceF( tin0P , T("helloToHandleIF / could not say hello to handle [idpthc:nn,idPort]:    ")+T((nicNameC&)idpthc)+T("    ")+TF2((countT&)idpthc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     POOPRqUIET
                 {
                 if( POOP )
@@ -1044,41 +1044,41 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                     DEL( psBag ) ;
                     }
                         }
-                            ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("could not verify that my hello was received") ) ;
+                            ((tin9S&)tin0P).pEther->traceF( tin0P , T("could not verify that my hello was received") ) ;
                             POOPRqUIET
                         {
                         else
                         if( !POOP ) bOk = 1 ;
                         VERIFYrELAY2( sock , *psBagOk ) ;
 
-                        sock.writeF( tinBaseP , *psBag ) ; //ASSUME: SERVER WILL, IF ROOT, ADD ME TO ITS LIST
-                        ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("writing hello bag") ) ;
+                        sock.writeF( tin0P , *psBag ) ; //ASSUME: SERVER WILL, IF ROOT, ADD ME TO ITS LIST
+                        ((tin9S&)tin0P).pEther->traceF( tin0P , T("writing hello bag") ) ;
             
                         idptP >> *psBag ;
                         idptP >> *psBag ;
-                        hdrBagIF( tinBaseP , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPuNgOSSIP ) ;
+                        hdrBagIF( tin0P , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPuNgOSSIP ) ;
                     {
                     if( psBag && psBagOk )
-                    soulC* psBagOk = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBagOk ) ;
-                    soulC* psBag = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
+                    soulC* psBagOk = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBagOk ) ;
+                    soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
                 {
                 if( !POOP )
-                sock.connectF( tinBaseP , idpthc , (nicNameC&)idpthc ) ;
+                sock.connectF( tin0P , idpthc , (nicNameC&)idpthc ) ;
 
-                socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
+                socketC sock( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
                 SCOOPS
             {
             ZE( boolT , bOk ) ;
     
             if( !idpthc ) break ;
     
-            portTimeC idpthc = handleQueryIF( tinBaseP ) ;
+            portTimeC idpthc = handleQueryIF( tin0P ) ;
         {
         for(;;)
     {
     IFsCRATCH
 {
-/*1*/voidT nodeOldC::helloToHandleIF( tin0S& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP )/*1*/
+/*1*/voidT nodeOldC::helloToHandleIF( tin0S& tin0P , portTimeC& idptP , countT& idSerialLathHeaderP )/*1*/
 /**/
 */
 /*
@@ -1104,12 +1104,12 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
         DEL( psWrap ) ;
         }
             }
-                swsWrapRefP.ungrabF( tinBaseP ) ;
+                swsWrapRefP.ungrabF( tin0P ) ;
                 }
                     }
                         }
                             swsWrapRefP << (countT)pc2WrapRef ; //W: WARNING: THESE DUPLICATE POINTERS MUST ONLY BE DELETED WHEN !cRef, I.E. ONLY WO TIME
-                            cLeverPayloadP = swsWrapRefP.leverF( tinBaseP , idf ) ;
+                            cLeverPayloadP = swsWrapRefP.leverF( tin0P , idf ) ;
                             //CONoUTrAW( "doWrapLocallyIfIF: pushed a wrap ref\r\n" ) ; //U::
                         {
                         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
@@ -1117,86 +1117,86 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         pc2WrapRef->c1 = (countT)psWrap ; psWrap = 0 ;
                     {
                     if( pc2WrapRef )
-                    etThread.newF( tinBaseP , LF , pc2WrapRef ) ; ___( pc2WrapRef ) ;
+                    etThread.newF( tin0P , LF , pc2WrapRef ) ; ___( pc2WrapRef ) ;
                     ZE( count2S* , pc2WrapRef ) ;
                 {
                 else
-                if( !cFlavors ) etThread( tinBaseP , psWrap ) ;
-                countT cFlavors = swsWrapRefP.cFlavorsF( tinBaseP ) ;
-                swsWrapRefP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                if( !cFlavors ) etThread( tin0P , psWrap ) ;
+                countT cFlavors = swsWrapRefP.cFlavorsF( tin0P ) ;
+                swsWrapRefP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                 //}
                 //    }
                 //        }
                 //            }
-                //                etThread( tinBaseP , psGift ) ;
+                //                etThread( tin0P , psGift ) ;
                 //                }
-                //                    etThread( tinBaseP , psSecret ) ;
+                //                    etThread( tin0P , psSecret ) ;
                 //                    }
-                //                        etThread.delF( tinBaseP , psttw ) ;
+                //                        etThread.delF( tin0P , psttw ) ;
                 //                        }
-                //                            etThread.delF( tinBaseP , psttw2 ) ;
+                //                            etThread.delF( tin0P , psttw2 ) ;
                 //                            }
-                //                                etThread.delF( tinBaseP , psttw3 ) ;
+                //                                etThread.delF( tin0P , psttw3 ) ;
                 //                                }
-                //                                    etThread.strokeF( tinBaseP , T("\f")+TF1(idMsg1Lath)+T(" ")+TF1(idMsg2Lath)+T(bM?" MEDIATED":" FINAL") ) ;
+                //                                    etThread.strokeF( tin0P , T("\f")+TF1(idMsg1Lath)+T(" ")+TF1(idMsg2Lath)+T(bM?" MEDIATED":" FINAL") ) ;
                 //
                 //                                    ( bM ? idMsg1Lath : idMsg2Lath ) = idMessage ;
                 //                                    static countT idMsg2Lath ;
                 //                                    static countT idMsg1Lath ;
                 //
-                //                                    countT bM = soulC::cFieldsIF( tinBaseP , pbsToM ) ;
-                //                                    byteT* pbsToM = psWrap->pbFieldF( tinBaseP , idTypesToM , flagssToM , cbfsToM , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ;
+                //                                    countT bM = soulC::cFieldsIF( tin0P , pbsToM ) ;
+                //                                    byteT* pbsToM = psWrap->pbFieldF( tin0P , idTypesToM , flagssToM , cbfsToM , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ;
                 //                                    ZE( countT , cbfsToM ) ;
                 //                                    ZE( flagsT , flagssToM ) ;
                 //                                    ZE( countT , idTypesToM ) ;
                 //                                {
-                //                                countT idMessage = etThread.strDigitsToSCountF( tinBaseP , psttw3 ) ;
-                //                                etThread.strSubstringF( tinBaseP , psttw3 , idf , idl , psttw2 ) ; ___( psttw3 ) ;
+                //                                countT idMessage = etThread.strDigitsToSCountF( tin0P , psttw3 ) ;
+                //                                etThread.strSubstringF( tin0P , psttw3 , idf , idl , psttw2 ) ; ___( psttw3 ) ;
                 //                                countT idl = idBlank - 1 ;
                 //                                countT idf = 1 ;
                 //                                ZE( strokeS* , psttw3 ) ;
                 //                            {
                 //                            if( idBlank )
-                //                            countT idBlank = etThread.strIdF( tinBaseP , T(" ") , psttw2 ) ;
-                //                            etThread.strSubstringF( tinBaseP , psttw2 , idf , idl , psttw ) ; ___( psttw2 ) ;
+                //                            countT idBlank = etThread.strIdF( tin0P , T(" ") , psttw2 ) ;
+                //                            etThread.strSubstringF( tin0P , psttw2 , idf , idl , psttw ) ; ___( psttw2 ) ;
                 //                            ZE( countT , idl ) ;
                 //                            countT idf = idColon + 1 ;
                 //                            ZE( strokeS* , psttw2 ) ;
                 //                        {
                 //                        if( idColon )
-                //                        countT idColon = etThread.strIdF( tinBaseP , T(":") , psttw ) ;
+                //                        countT idColon = etThread.strIdF( tin0P , T(":") , psttw ) ;
                 //    
                 //                        *psSecret >> psttw ; ___( psttw ) ;
                 //                        ZE( strokeS* , psttw ) ;
                 //                    {
                 //                    if( psSecret )
-                //                    etThread.cioGetSecretF( tinBaseP , psSecret , *psGift ) ; ___( psSecret ) ;
+                //                    etThread.cioGetSecretF( tin0P , psSecret , *psGift ) ; ___( psSecret ) ;
                 //                    ZE( soulC* , psSecret ) ;
                 //
-                //                    psGift->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbsGift , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                //                    psGift->shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbsGift , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                 //                {
                 //                if( psGift )
-                //                etThread( tinBaseP , psGift , TAG( TAGiDnULL ) ) ;
+                //                etThread( tin0P , psGift , TAG( TAGiDnULL ) ) ;
                 //                ZE( soulC* , psGift ) ;
                 //            {
                 //            if( pbsGift )
                 //
-                //            byteT* pbsGift = soulC::pbFieldIF( tinBaseP , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
+                //            byteT* pbsGift = soulC::pbFieldIF( tin0P , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
                 //            ZE( countT , cbGift ) ;
                 //            ZE( flagsT , flagsGift ) ;
                 //            ZE( countT , idTypeGift ) ;
                 //        {
                 //        if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATED && pczChannel[ 2 ] == ifcIDaDAM_SECRETsERVICE && pczChannel[ 3 ] == ifcIDaDAM_CONSOLE && pczChannel[ 4 ] == ifcOLDiDcHANNELfUNCTION_STROKEcONSOLE )
                 //
-                //        countT* pczChannel = (countT*)soulC::pbFieldIF( tinBaseP , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
+                //        countT* pczChannel = (countT*)soulC::pbFieldIF( tin0P , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
                 //        ZE( countT , cbC ) ;
                 //        ZE( flagsT , flagsC ) ;
                 //        ZE( countT , idTypeC ) ;
                 //    {
                 //    if( pbidType && *(countT*)pbidType == ifcOLDiDtYPEwRAP_GIFT )
                 //
-                //    byteT* pbidType = soulC::pbFieldIF( tinBaseP , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
+                //    byteT* pbidType = soulC::pbFieldIF( tin0P , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
                 //    ZE( countT , cbidType ) ;
                 //    ZE( flagsT , flagsidType ) ;
                 //    ZE( countT , idTypeidType ) ;
@@ -1220,28 +1220,28 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                                     {
                                     if( *psGift == 2 )
                             
-                                    psGift->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbsGift , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                                    psGift->shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbsGift , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                                 {
                                 if( psGift )
-                                soulC* psGift = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psGift ) ;
+                                soulC* psGift = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psGift ) ;
                             {
                             if( pbsGift )
 
-                            byteT* pbsGift = soulC::pbFieldIF( tinBaseP , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
+                            byteT* pbsGift = soulC::pbFieldIF( tin0P , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
                             ZE( countT , cbGift ) ;
                             ZE( flagsT , flagsGift ) ;
                             ZE( countT , idTypeGift ) ;
                         {
                         if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION )
                 
-                        countT* pczChannel = (countT*)soulC::pbFieldIF( tinBaseP , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
+                        countT* pczChannel = (countT*)soulC::pbFieldIF( tin0P , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
                         ZE( countT , cbC ) ;
                         ZE( flagsT , flagsC ) ;
                         ZE( countT , idTypeC ) ;
                     {
                     if( pbidType && *(countT*)pbidType == ifcOLDiDtYPEwRAP_GIFT )
                 
-                    byteT* pbidType = soulC::pbFieldIF( tinBaseP , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
+                    byteT* pbidType = soulC::pbFieldIF( tin0P , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
                     ZE( countT , cbidType ) ;
                     ZE( flagsT , flagsidType ) ;
                     ZE( countT , idTypeidType ) ;
@@ -1269,31 +1269,31 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         {
                         if( *psTo )
             
-                        psTo->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbsToOrToM , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                        psTo->shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbsToOrToM , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                     {
                     if( psTo )
-                    soulC* psTo = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psTo ) ;
+                    soulC* psTo = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psTo ) ;
                 {
                 if( pbsToOrToM )
         
-                byteT* pbsToOrToM = psWrap->pbFieldF( tinBaseP , idTypesToOrToM , flagssToOrToM , cbfsToOrToM , bToMediators ? ifcOLDiDfIELDwRAP_TOmEDIATOR : ifcOLDiDfIELDwRAP_TO ) ;
+                byteT* pbsToOrToM = psWrap->pbFieldF( tin0P , idTypesToOrToM , flagssToOrToM , cbfsToOrToM , bToMediators ? ifcOLDiDfIELDwRAP_TOmEDIATOR : ifcOLDiDfIELDwRAP_TO ) ;
                 ZE( countT , cbfsToOrToM ) ;
                 ZE( flagsT , flagssToOrToM ) ;
                 ZE( countT , idTypesToOrToM ) ;
 
                 //bDo WAS RESET HERE ; ON 2011.01.13 THE RESET LINE WAS MOVED SO THAT RESET ONLY OCCURS IF *psTo ; WAS NOT GETTING OWN WRAP ON A DUT WITH RELAY IN LONE HOME
         
-                boolT bToMediators = !( F(flagsPut) & flCIOpUT_IGNOREmEDIATORlIST ) && !psWrap->bKidEmptyF( tinBaseP , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ;
-                flagsT flagsPut = psWrap->cFieldF( tinBaseP , ifcOLDiDfIELDwRAP_FLAGS ) ;
+                boolT bToMediators = !( F(flagsPut) & flCIOpUT_IGNOREmEDIATORlIST ) && !psWrap->bKidEmptyF( tin0P , ifcOLDiDfIELDwRAP_TOmEDIATOR ) ;
+                flagsT flagsPut = psWrap->cFieldF( tin0P , ifcOLDiDfIELDwRAP_FLAGS ) ;
             {
-            if( !psWrap->bKidEmptyF( tinBaseP , ifcOLDiDfIELDwRAP_TO ) )
+            if( !psWrap->bKidEmptyF( tin0P , ifcOLDiDfIELDwRAP_TO ) )
             boolT bDo = 1 ;
             ZE( boolT , bTargeted ) ; //U::
 
-            psWrap->shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbsWrapP , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+            psWrap->shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbsWrapP , 0 , flSOULiTEM_null , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
         {
         if( psWrap )
-        soulC* psWrap = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
+        soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
     {
     if( !idPhaseP || idPhaseP == 2 )
 
@@ -1302,14 +1302,14 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
             }
                 }
                     }
-                        swsIdptMediatorP.ungrabF( tinBaseP ) ;
+                        swsIdptMediatorP.ungrabF( tin0P ) ;
 
                         }
                             }
                                 break ;
                                 }
-                                    if( ids ) ppSws[ off ]->extractF( 0 , tinBaseP ) ;
-                                    ppSws[ off ]->sinkF( tinBaseP , ids , (byteT*)&idptOriginP , flSTACKsINK_QUERY , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
+                                    if( ids ) ppSws[ off ]->extractF( 0 , tin0P ) ;
+                                    ppSws[ off ]->sinkF( tin0P , ids , (byteT*)&idptOriginP , flSTACKsINK_QUERY , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
                                     ZE( countT , ids ) ;
                                 {
                                 for( countT off = 0 ; off < 2 ; off ++ )
@@ -1317,16 +1317,16 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                                 switchStackC* ppSws[] = { &swsIdptMediatorP , &swsIdptMediatorAltP } ;
 
                                 THREADmODE2rESTORE
-                                etThread.strokeF( tinBaseP , T("m-: ")+TF1(idAdam)+T(" ")+T(idptOriginP)+T("\r\n") ) ;
+                                etThread.strokeF( tin0P , T("m-: ")+TF1(idAdam)+T(" ")+T(idptOriginP)+T("\r\n") ) ;
                                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                             {
                             case ifcOLDiDcMDrEGISTERmEDIATOR_AMdEAD  :
                             }
                                 break ;
-                                swsIdptMediatorP.sinkF( tinBaseP , countTC() , (byteT*)&idptOriginP , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
+                                swsIdptMediatorP.sinkF( tin0P , countTC() , (byteT*)&idptOriginP , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossipP ) ;
 
                                 //THREADmODE2rESTORE
-                                //etThread.strokeF( tinBaseP , T("m+: ")+TF1(idAdam)+T(" ")+T(idptOriginP)+T("\r\n") ) ;
+                                //etThread.strokeF( tin0P , T("m+: ")+TF1(idAdam)+T(" ")+T(idptOriginP)+T("\r\n") ) ;
                                 //THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                             {
                             case ifcOLDiDcMDrEGISTERmEDIATOR_AMaLIVE :
@@ -1334,36 +1334,36 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         switch( idCmd )
 
                         idAdamMediatorP = idAdam ;
-                        swsIdptMediatorP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        swsIdptMediatorP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                                                 
                         countT idAdam = *(countT*)pb_idAdam ;
                         countT idCmd  = *(countT*)pb_idCmd ;
                     {
                     if( idptOriginP && pb_idCmd && pb_idAdam )
     
-                    byteT* pb_idAdam = soulC::pbFieldIF( tinBaseP , idType2 , flags2 , cb2 , 2 , pbsGift ) ;
+                    byteT* pb_idAdam = soulC::pbFieldIF( tin0P , idType2 , flags2 , cb2 , 2 , pbsGift ) ;
                     ZE( countT , cb2 ) ;
                     ZE( flagsT , flags2 ) ;
                     ZE( countT , idType2 ) ;
     
-                    byteT* pb_idCmd = soulC::pbFieldIF( tinBaseP , idType1 , flags1 , cb1 , 1 , pbsGift ) ;
+                    byteT* pb_idCmd = soulC::pbFieldIF( tin0P , idType1 , flags1 , cb1 , 1 , pbsGift ) ;
                     ZE( countT , cb1 ) ;
                     ZE( flagsT , flags1 ) ;
                     ZE( countT , idType1 ) ;
     
-                    byteT* pbsGift = soulC::pbFieldIF( tinBaseP , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
+                    byteT* pbsGift = soulC::pbFieldIF( tin0P , idTypeGift , flagsGift , cbGift , ifcOLDiDfIELDwRAP_GIFT , pbsWrapP ) ;
                     ZE( countT , cbGift ) ;
                     ZE( flagsT , flagsGift ) ;
                     ZE( countT , idTypeGift ) ;
                 {
                 if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION )
                                 
-                countT* pczChannel = (countT*)soulC::pbFieldIF( tinBaseP , idTypec , flagsc , cbc , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
+                countT* pczChannel = (countT*)soulC::pbFieldIF( tin0P , idTypec , flagsc , cbc , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
                 ZE( countT , cbc ) ;
                 ZE( flagsT , flagsc ) ;
                 ZE( countT , idTypec ) ;
             {
-            if( soulC::cFieldsIF( tinBaseP , pbsWrapP ) >= ifcOLDiDfIELDwRAP_GIFT && soulC::cFieldIF( tinBaseP , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) == ifcOLDiDtYPEwRAP_GIFT )
+            if( soulC::cFieldsIF( tin0P , pbsWrapP ) >= ifcOLDiDfIELDwRAP_GIFT && soulC::cFieldIF( tin0P , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) == ifcOLDiDtYPEwRAP_GIFT )
     
             }
                 }
@@ -1374,9 +1374,9 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                             }
                                 //}
                                 //    THREADmODE2rESTORE
-                                //    etThread.strokeF( tinBaseP , T("patched to ")+TF1(*(countT*)pb_idPort)+T(*(nicNameC*)pb_nn)+T("\r\n") ) ; //U::
-                                //    etThread.strokeF( tinBaseP , T("patched from ")+T(idptm)+T("\r\n") ) ; //U::
-                                //    etThread.strokeF( tinBaseP , T("top plate is ")+T(idptms)+T("\r\n") ) ; //U::
+                                //    etThread.strokeF( tin0P , T("patched to ")+TF1(*(countT*)pb_idPort)+T(*(nicNameC*)pb_nn)+T("\r\n") ) ; //U::
+                                //    etThread.strokeF( tin0P , T("patched from ")+T(idptm)+T("\r\n") ) ; //U::
+                                //    etThread.strokeF( tin0P , T("top plate is ")+T(idptms)+T("\r\n") ) ; //U::
                                 //    portTimeC& idptms = *(portTimeC*)&swsIdptMediatorP[ 1 ] ;
                                 //    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                                 //{
@@ -1387,19 +1387,19 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                                 *(nicNameC*)pb_nn   = (nicNameC&)idptm ;
                                 *(countT*)pb_idPort = idptm ;
         
-                                swsIdptMediatorP.ungrabF( tinBaseP ) ;
-                                swsIdptMediatorAltP.ungrabF( tinBaseP ) ;
+                                swsIdptMediatorP.ungrabF( tin0P ) ;
+                                swsIdptMediatorAltP.ungrabF( tin0P ) ;
     
                                 //THREADmODE2rESTORE
-                                //etThread.strokeF( tinBaseP , T("patched null mediator to ")+TF1(idAdamMediatorP)+T(" mediator\r\n")+T(idptm)+T("\r\n") ) ; //U::
+                                //etThread.strokeF( tin0P , T("patched null mediator to ")+TF1(idAdamMediatorP)+T(" mediator\r\n")+T(idptm)+T("\r\n") ) ; //U::
                                 //THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
                                 }
                                     LOGrAW7( bAlt ? "could not assign a mediator because -->" : "could not assign a mediator because <--" , swsIdptMediatorP , " " , swsIdptMediatorAltP , " cells of " , idAdamMediator , " are registered\r\n" ) ;
-                                    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T(bAlt?"could not assign a mediator because --> ":"could not assign a mediator because <-- ")+TF2(swsIdptMediatorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(swsIdptMediatorAltP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" cells of ")+TF2(idAdamMediator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" are registered") ) ;
+                                    ((tin9S&)tin0P).pEther->traceF( tin0P , T(bAlt?"could not assign a mediator because --> ":"could not assign a mediator because <-- ")+TF2(swsIdptMediatorP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(swsIdptMediatorAltP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" cells of ")+TF2(idAdamMediator,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" are registered") ) ;
                                 {
                                 if( !idptm )
-                                swsm.randomF( tinBaseP , pb_idptm ) ;
+                                swsm.randomF( tin0P , pb_idptm ) ;
                                 byteT* pb_idptm = (byteT*)&idptm ;
                                 portTimeC idptm ;
                                 switchStackC& swsm = bAlt ? swsIdptMediatorAltP : swsIdptMediatorP ;
@@ -1408,41 +1408,41 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                                         : 1
                                         ? 0
                                     : swsIdptMediatorP
-                                    ? ( ((tin9S&)tinBaseP).ranUni % TUCK ) / TUCK * 2
+                                    ? ( ((tin9S&)tin0P).ranUni % TUCK ) / TUCK * 2
                                 const boolT bAlt = swsIdptMediatorP && swsIdptMediatorAltP
                                 idAdamMediatorP = idAdamMediator ;
     
-                                if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
+                                if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 
-                                swsIdptMediatorAltP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-                                swsIdptMediatorP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                swsIdptMediatorAltP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                                swsIdptMediatorP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                             {
                             else if( !*(countT*)pb_idPort )
                             if( !pb_time2 ) break ;
         
-                            byteT* pb_time2 = soulC::pbFieldIF( tinBaseP , idType_time2 , flags_time2 , cb_time2 , off + 4 , pbsToM ) ;
+                            byteT* pb_time2 = soulC::pbFieldIF( tin0P , idType_time2 , flags_time2 , cb_time2 , off + 4 , pbsToM ) ;
                             ZE( countT , cb_time2 ) ;
                             ZE( flagsT , flags_time2 ) ;
                             ZE( countT , idType_time2 ) ;
         
-                            byteT* pb_time1 = soulC::pbFieldIF( tinBaseP , idType_time1 , flags_time1 , cb_time1 , off + 3 , pbsToM ) ;
+                            byteT* pb_time1 = soulC::pbFieldIF( tin0P , idType_time1 , flags_time1 , cb_time1 , off + 3 , pbsToM ) ;
                             ZE( countT , cb_time1 ) ;
                             ZE( flagsT , flags_time1 ) ;
                             ZE( countT , idType_time1 ) ;
         
-                            byteT* pb_nn = soulC::pbFieldIF( tinBaseP , idType_nn , flags_nn , cb_nn , off + 2 , pbsToM ) ;
+                            byteT* pb_nn = soulC::pbFieldIF( tin0P , idType_nn , flags_nn , cb_nn , off + 2 , pbsToM ) ;
                             ZE( countT , cb_nn ) ;
                             ZE( flagsT , flags_nn ) ;
                             ZE( countT , idType_nn ) ;
         
-                            byteT* pb_idPort = soulC::pbFieldIF( tinBaseP , idType_idPort , flags_idPort , cb_idPort , off + 1 , pbsToM ) ;
+                            byteT* pb_idPort = soulC::pbFieldIF( tin0P , idType_idPort , flags_idPort , cb_idPort , off + 1 , pbsToM ) ;
                             ZE( countT , cb_idPort ) ;
                             ZE( flagsT , flags_idPort ) ;
                             ZE( countT , idType_idPort ) ;
                         {
                         for(;;)
                         ZE( countT , off ) ;
-                        if( portTimeC::cFieldsF( tinBaseP ) - 4 ) { BLAMMO ; }
+                        if( portTimeC::cFieldsF( tin0P ) - 4 ) { BLAMMO ; }
     
                         countT idAdamMediator = pczChannel[ 2 ] ;
                     {
@@ -1450,19 +1450,19 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                 {
                 if( pczChannel && pbsToM )
         
-                byteT* pbsToM = soulC::pbFieldIF( tinBaseP , idTypesToM , flagssToM , cbsToM , ifcOLDiDfIELDwRAP_TOmEDIATOR , pbsWrapP ) ;
+                byteT* pbsToM = soulC::pbFieldIF( tin0P , idTypesToM , flagssToM , cbsToM , ifcOLDiDfIELDwRAP_TOmEDIATOR , pbsWrapP ) ;
                 ZE( countT , cbsToM ) ;
                 ZE( flagsT , flagssToM ) ;
                 ZE( countT , idTypesToM ) ;
 
-                countT* pczChannel = (countT*)soulC::pbFieldIF( tinBaseP , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
+                countT* pczChannel = (countT*)soulC::pbFieldIF( tin0P , idTypeC , flagsC , cbC , ifcOLDiDfIELDwRAP_CHANNEL , pbsWrapP ) ;
                 ZE( countT , cbC ) ;
                 ZE( flagsT , flagsC ) ;
                 ZE( countT , idTypeC ) ;
             {
             if( pbidType && *(countT*)pbidType == ifcOLDiDtYPEwRAP_GIFT )
         
-            byteT* pbidType = soulC::pbFieldIF( tinBaseP , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
+            byteT* pbidType = soulC::pbFieldIF( tin0P , idTypeidType , flagsidType , cbidType , ifcOLDiDfIELDwRAP_IDtYPE , pbsWrapP ) ;
             ZE( countT , cbidType ) ;
             ZE( flagsT , flagsidType ) ;
             ZE( countT , idTypeidType ) ;
@@ -1476,7 +1476,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
 
     RELAYiNFOf
 {
-/*1*/voidT nodeOldC::doWrapLocallyIfIF( tin0S& tinBaseP , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP )/*1*/
+/*1*/voidT nodeOldC::doWrapLocallyIfIF( tin0S& tin0P , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP )/*1*/
 
 /**/
 */
@@ -1519,20 +1519,20 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
         TELL( "unregistering my bang stacks and calc poof" )
         ZE( countT , cPoof ) ;
     
-        handleUnregisterIF( tinBaseP , idpt ) ; //P: ENDING NODE DEREGISTERS ITSELF AS HANDLE
+        handleUnregisterIF( tin0P , idpt ) ; //P: ENDING NODE DEREGISTERS ITSELF AS HANDLE
     
-        sgnDone_tmNodeInitiatorF.waitF( tinBaseP ) ;
-        sgnDone_tmNodeKillF.waitF( tinBaseP ) ;
-        sgnDone_tmNodePopClientF4.waitF( tinBaseP ) ;
-        sgnDone_tmNodePopClientF3.waitF( tinBaseP ) ;
-        sgnDone_tmNodePopClientF2.waitF( tinBaseP ) ;
-        sgnDone_tmNodePopClientF1.waitF( tinBaseP ) ;
-        sgnDone_tmNodePopClientF0.waitF( tinBaseP ) ;
-        sgnDone_tmNodeTeatAcceptorF.waitF( tinBaseP ) ;
+        sgnDone_tmNodeInitiatorF.waitF( tin0P ) ;
+        sgnDone_tmNodeKillF.waitF( tin0P ) ;
+        sgnDone_tmNodePopClientF4.waitF( tin0P ) ;
+        sgnDone_tmNodePopClientF3.waitF( tin0P ) ;
+        sgnDone_tmNodePopClientF2.waitF( tin0P ) ;
+        sgnDone_tmNodePopClientF1.waitF( tin0P ) ;
+        sgnDone_tmNodePopClientF0.waitF( tin0P ) ;
+        sgnDone_tmNodeTeatAcceptorF.waitF( tin0P ) ;
     
         }
             }
-                ++ s ; ((tin9S&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TUCK * 0x40 ) ;
+                ++ s ; ((tin9S&)tin0P).pEtScratch->osSleepF( tin0P , TUCK * 0x40 ) ;
     
                 if( sgnDone_tmNodeTeatAcceptorF ) break ;
 
@@ -1546,16 +1546,16 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                     SCOOPSdEL
                 {
                 if( !POOP )
-                sock.connectF( tinBaseP , home.idpTeat , (nicNameC&)home.idpTeat , 1 ) ;
-                socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                sock.connectF( tin0P , home.idpTeat , (nicNameC&)home.idpTeat , 1 ) ;
+                socketC sock( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                 SCOOPSnEW
             {
             while( !sgnDone_tmNodeTeatAcceptorF )
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         
             //}
-            //    while( !POOP && !home.idpTeat ) { ++ s ; ((tin9S&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TUCK * 0x40 ) ; }
-            //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            //    while( !POOP && !home.idpTeat ) { ++ s ; ((tin9S&)tin0P).pEtScratch->osSleepF( tin0P , TUCK * 0x40 ) ; }
+            //    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             //    SCOOPS
             //{
         {
@@ -1568,10 +1568,10 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                     }
                         DEL( pso ) ;
                         SCOOPS
-                        pso->etherF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch ) ;
+                        pso->etherF( tin0P , *((tin9S&)tin0P).pEtScratch ) ;
                     {
                     else 
-                    if( !ether && pso ) etThread.osThreadF( tinBaseP , countTC() , tmNodeServerCatchBagF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso , (countT)&sListen , (countT)&stIdptPopClient , (countT)&cLooksForNewPing ) ;
+                    if( !ether && pso ) etThread.osThreadF( tin0P , countTC() , tmNodeServerCatchBagF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso , (countT)&sListen , (countT)&stIdptPopClient , (countT)&cLooksForNewPing ) ;
                     TELL( "launching tmNodeServerCatchBagF" )
     
                     //else { CONoUTrAW( "z" ) ; } //U::
@@ -1579,7 +1579,7 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         break ;
                         DEL( pso ) ;
                         SCOOPS
-                        pso->etherF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch ) ;
+                        pso->etherF( tin0P , *((tin9S&)tin0P).pEtScratch ) ;
                         //etherC::ifcSayIF( T("gasp!") , flSAY_APPEND | flSAY_LOG ) ;
                         TELL( "quitting" )
                     {
@@ -1588,91 +1588,91 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
                         continue ;
     
                         if( !etThread ) bLaunchedAcceptor = 1 ;
-                        etThread.osThreadF( tinBaseP , countTC() , tmNodeTeatAcceptorF , &sgnDone_tmNodeTeatAcceptorF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
-                        etThread.osThreadF( tinBaseP , countTC() , tmNodeInitiatorF    , &sgnDone_tmNodeInitiatorF    , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)&stIdptPopClient , (countT)&cLooksForNewPing , (countT)&bReadyP ) ;
-                        etThread.osThreadF( tinBaseP , countTC() , tmNodeKillF         , &sgnDone_tmNodeKillF         , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
+                        etThread.osThreadF( tin0P , countTC() , tmNodeTeatAcceptorF , &sgnDone_tmNodeTeatAcceptorF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
+                        etThread.osThreadF( tin0P , countTC() , tmNodeInitiatorF    , &sgnDone_tmNodeInitiatorF    , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)&stIdptPopClient , (countT)&cLooksForNewPing , (countT)&bReadyP ) ;
+                        etThread.osThreadF( tin0P , countTC() , tmNodeKillF         , &sgnDone_tmNodeKillF         , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS ) ;
     
                         }
-                            etThread.osThreadF( tinBaseP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF4 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ;
-                            etThread.osThreadF( tinBaseP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF3 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ;
-                            etThread.osThreadF( tinBaseP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF2 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ;
-                            etThread.osThreadF( tinBaseP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF1 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ;
-                            etThread.osThreadF( tinBaseP , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ;
+                            etThread.osThreadF( tin0P , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF4 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_RIGHT    ) ;
+                            etThread.osThreadF( tin0P , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF3 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_LEFT     ) ;
+                            etThread.osThreadF( tin0P , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF2 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE2 ) ;
+                            etThread.osThreadF( tin0P , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF1 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_EXPLODE1 ) ;
+                            etThread.osThreadF( tin0P , countTC() , tmNodePopClientF , &sgnDone_tmNodePopClientF0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , OLDiDtYPErELAYpOPcLIENTwORK_IMPLODE  ) ;
     
                         {
                         if( pStPop0 && pStPop1 && pStPop2 && pStPop3 && pStPop4 )
         
                         TELL( "setting up 2.3" )
                     
-                        pStPop4 = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-                        pStPop3 = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-                        pStPop2 = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-                        pStPop1 = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-                        pStPop0 = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+                        pStPop4 = new( 0 , tin0P , LF ) stackC( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+                        pStPop3 = new( 0 , tin0P , LF ) stackC( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+                        pStPop2 = new( 0 , tin0P , LF ) stackC( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+                        pStPop1 = new( 0 , tin0P , LF ) stackC( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+                        pStPop0 = new( 0 , tin0P , LF ) stackC( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
                         TELL( "setting up 2.4" )
                     
                         }
-                            if( idpthc && NICnAMElOCAL != ((nicNameC&)(portC&)idpthc).pcId[ 0 ] ) stIdptOpen.sinkF( tinBaseP , countTC() , (byteT*)&idpthc , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossip ) ;
-                            portTimeC idpthc = handleQueryIF( tinBaseP ) ;
+                            if( idpthc && NICnAMElOCAL != ((nicNameC&)(portC&)idpthc).pcId[ 0 ] ) stIdptOpen.sinkF( tin0P , countTC() , (byteT*)&idpthc , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossip ) ;
+                            portTimeC idpthc = handleQueryIF( tin0P ) ;
                         {
-                        stIdptOpen.sinkF( tinBaseP , countTC() , (byteT*)&idpt   , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossip ) ;
+                        stIdptOpen.sinkF( tin0P , countTC() , (byteT*)&idpt   , flSTACKsINK_UNIQUE , subtractIdPortTimesOldF , (countT)&stIdptGossip ) ;
                         //P: A NEWBIE CLIENT KNOWS ABOUT ITSELF AND THE HANDLE
             
                         DEL( pso ) ;
                         }
                             }
-                                etThread.traceF( tinBaseP , T("could not write sBagOk for woth client") ) ;
+                                etThread.traceF( tin0P , T("could not write sBagOk for woth client") ) ;
                                 POOPRqUIET
                             {
                             if( POOP )
-                            pso->writeF( tinBaseP , sBagOk ) ;
-                            soulC sBagOk( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcOLDiDtYPEbAG_SERVERoK ) ;
+                            pso->writeF( tin0P , sBagOk ) ;
+                            soulC sBagOk( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcOLDiDtYPEbAG_SERVERoK ) ;
                             SCOOPS
                         {
                         IFsCRATCH
                         bWoth = 0 ;
-                        pso->etherF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch ) ;
-                        etThread.traceF( tinBaseP , T("writing woth bag ifcOLDiDtYPEbAG_SERVERoK") ) ;
+                        pso->etherF( tin0P , *((tin9S&)tin0P).pEtScratch ) ;
+                        etThread.traceF( tin0P , T("writing woth bag ifcOLDiDtYPEbAG_SERVERoK") ) ;
                     {
                     if( bWoth ) //WOTH CLIENT MUST NOT BE REFUSED
             
                     }
                         //CONoUT( "client accepted" ) ;
-                        //etThread.traceF( tinBaseP , T("accepted [nnPeer,idPortPeer]:    ")+T(nnPeer)+T("    ")+TF2(idPortPeer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        sListen.acceptF( tinBaseP , pso , idPortPeer , nnPeer , bRefuse ) ;
+                        //etThread.traceF( tin0P , T("accepted [nnPeer,idPortPeer]:    ")+T(nnPeer)+T("    ")+TF2(idPortPeer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        sListen.acceptF( tin0P , pso , idPortPeer , nnPeer , bRefuse ) ;
                         ZE( countT , idPortPeer ) ;
                         nicNameC nnPeer ;
-                        boolT bRefuse = /*++ idClient == ((tin9S&)tinBaseP).monitor.idThread && !( bRefused ++ ) ? 1 :*/ 0 ;
+                        boolT bRefuse = /*++ idClient == ((tin9S&)tin0P).monitor.idThread && !( bRefused ++ ) ? 1 :*/ 0 ;
                         //static boolT bRefused ;
                     {
                     TELL( "waiting for a client to connect" )
                     ZE( socketC* , pso ) ;
         
-                    if( bWoth ) etThread.osThreadF( tinBaseP , countTC() , tmNodeTickleF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)(portC*)&idpt , (countT)&bWoth ) ;
+                    if( bWoth ) etThread.osThreadF( tin0P , countTC() , tmNodeTickleF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)(portC*)&idpt , (countT)&bWoth ) ;
                 {
                 while( !POOP && !ether && !bQuit )
                 ZE( countT , idClient ) ;
                 boolT bWoth = 1 ;
             
-                etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
+                etThread.osTimeNowF( tin0P , timeB1 , timeB2 ) ;
                 ZE( sCountT , timeB2 ) ;
                 ZE( countT  , timeB1 ) ;
             
                 TELL( "setting up 2.b" )
-                if( !ether ) sListen.listenF( tinBaseP ) ;
+                if( !ether ) sListen.listenF( tin0P ) ;
                 TELL( "setting up 2.c" )
             {
             if( idpt )
             TELL( "setting up 2" )
         {
-        signC sgnDone_tmNodeInitiatorF( tinBaseP , TAG( TAGiDnULL ) ) ;
-        signC sgnDone_tmNodeKillF( tinBaseP , TAG( TAGiDnULL ) ) ;
-        signC sgnDone_tmNodePopClientF4( tinBaseP , TAG( TAGiDnULL ) ) ;
-        signC sgnDone_tmNodePopClientF3( tinBaseP , TAG( TAGiDnULL ) ) ;
-        signC sgnDone_tmNodePopClientF2( tinBaseP , TAG( TAGiDnULL ) ) ;
-        signC sgnDone_tmNodePopClientF1( tinBaseP , TAG( TAGiDnULL ) ) ;
-        signC sgnDone_tmNodePopClientF0( tinBaseP , TAG( TAGiDnULL ) ) ;
-        signC sgnDone_tmNodeTeatAcceptorF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        signC sgnDone_tmNodeInitiatorF( tin0P , TAG( TAGiDnULL ) ) ;
+        signC sgnDone_tmNodeKillF( tin0P , TAG( TAGiDnULL ) ) ;
+        signC sgnDone_tmNodePopClientF4( tin0P , TAG( TAGiDnULL ) ) ;
+        signC sgnDone_tmNodePopClientF3( tin0P , TAG( TAGiDnULL ) ) ;
+        signC sgnDone_tmNodePopClientF2( tin0P , TAG( TAGiDnULL ) ) ;
+        signC sgnDone_tmNodePopClientF1( tin0P , TAG( TAGiDnULL ) ) ;
+        signC sgnDone_tmNodePopClientF0( tin0P , TAG( TAGiDnULL ) ) ;
+        signC sgnDone_tmNodeTeatAcceptorF( tin0P , TAG( TAGiDnULL ) ) ;
         ZE( boolT , bLaunchedAcceptor ) ;
         ZE( countT , cLooksForNewPing ) ;
         stackC*& pStPop4 = *(stackC**)&_c8ni2P.c1 ;
@@ -1692,42 +1692,42 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
     
         //}
         //    }
-        //        if( !cTries && !handleQueryIF( tinBaseP ) ) handleRegisterMeIfIF( tinBaseP , idpt ) ; //P: A NEWBIE NODE WILL POLL FOR 4 TOCKS BEFORE REGISTERING ITSELF AS HANDLE
+        //        if( !cTries && !handleQueryIF( tin0P ) ) handleRegisterMeIfIF( tin0P , idpt ) ; //P: A NEWBIE NODE WILL POLL FOR 4 TOCKS BEFORE REGISTERING ITSELF AS HANDLE
         //
         //        }
-        //            if( handleQueryIF( tinBaseP ) ) break ;
-        //            ether.osSleepF( tinBaseP , TOCK ) ;
+        //            if( handleQueryIF( tin0P ) ) break ;
+        //            ether.osSleepF( tin0P , TOCK ) ;
         //        {
         //        while( !ether && cTries && cTries -- )
         //        countT cTries = TUCK / /* 8 */0x40 ;
-        //        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ; //GIVE EXISTING NODES TIME TO ASSUME THE HANDLE ROLE
+        //        sleepC s( tin0P , TAG( TAGiDnULL ) ) ; //GIVE EXISTING NODES TIME TO ASSUME THE HANDLE ROLE
         //    {
         //{
-        //if( !handleQueryIF( tinBaseP ) )
+        //if( !handleQueryIF( tin0P ) )
     
-        idpt.timeStampIfF( tinBaseP , etThread ) ;
+        idpt.timeStampIfF( tin0P , etThread ) ;
         idpt = idPort ;
         portTimeC idpt ;
     
-        idPort = socketC::nicNameIF( tinBaseP , etThread ) ;
+        idPort = socketC::nicNameIF( tin0P , etThread ) ;
 
-        sListen.etherF( tinBaseP , etThread ) ;
+        sListen.etherF( tin0P , etThread ) ;
 
         }
             }
                 }
                     idpTry ++ ;
-                    etThread.traceF( tinBaseP , T("could not bind to requested port [idPort]:    ")+TF2(idpTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tin0P , T("could not bind to requested port [idPort]:    ")+TF2(idpTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     idPort = portC() ;
                     POOPRqUIET
                 {
                 else
                 }
                     break ;
-                    etThread.traceF( tinBaseP , T("bind aok to requested port [idPort]:    ")+TF2(idpTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tin0P , T("bind aok to requested port [idPort]:    ")+TF2(idpTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 if( !POOP )
-                idPort = sListen.bindF( tinBaseP , idpTry , nicNameC() , 1 ) ;
+                idPort = sListen.bindF( tin0P , idpTry , nicNameC() , 1 ) ;
             {
             for(;;)
             countT idpTry = ifcIDpORT_RELAY ;
@@ -1735,35 +1735,35 @@ if idptGossipP is absent and is not already gossipped, then gossip about it
             SCOOPS
         {
         portC idPort ;
-        socketC sListen( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
+        socketC sListen( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL )/*U:: , 0 , flSOCKETc_TOPsECRET*/ ) ;
     {
     IFsCRATCH
 
-    portTimeC idptHandle = handleQueryIF( tinBaseP ) ;
+    portTimeC idptHandle = handleQueryIF( tin0P ) ;
 
-    switchStackC swsWrapRef( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLeverPayload , flSTACKc_FIFO|flSTACKc_GIVEsIGNnEWpLATE ) ;
+    switchStackC swsWrapRef( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLeverPayload , flSTACKc_FIFO|flSTACKc_GIVEsIGNnEWpLATE ) ;
     ZE( countT , cLeverPayload ) ;
     homeS& home = homeS::homeIF() ;
     ZE( boolT , bQuit ) ;
-    ranUniC ruZeWo( tinBaseP , 1 , 1 ) ;
-    const countT cKidThreadsSave = ((tin9S&)tinBaseP).cKidThreads ;
+    ranUniC ruZeWo( tin0P , 1 , 1 ) ;
+    const countT cKidThreadsSave = ((tin9S&)tin0P).cKidThreads ;
 
-    switchStackC swsIdptMediatorAlt(    tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idAdamMediator , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    switchStackC swsIdptMediator(       tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idAdamMediator , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    switchStackC swsIdptMediatorAlt(    tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idAdamMediator , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    switchStackC swsIdptMediator(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idAdamMediator , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
     ZE( countT , idAdamMediator ) ;
-    stackC stIdptPopClient(             tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    stackC stIdptGossip(                tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ; // { idpt , timeBorn1 , timeBorn2 }, SORTED BY TIME BORN
-    stackC stIdptOpen(                  tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ; // { idpt , timeBorn1 , timeBorn2 }, SORTED BY TIME BORN
-    stackC stIdptTemp(                  tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ; // { idpt , timeBorn1 , timeBorn2 }, SORTED BY TIME BORN
-    switchStackC swsIdSerialReceivedAlt( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pbLever , sizeof idPortOrigin ) ;
-    switchStackC swsIdSerialReceived(    tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pbLever , sizeof idPortOrigin ) ;
+    stackC stIdptPopClient(             tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
+    stackC stIdptGossip(                tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ; // { idpt , timeBorn1 , timeBorn2 }, SORTED BY TIME BORN
+    stackC stIdptOpen(                  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ; // { idpt , timeBorn1 , timeBorn2 }, SORTED BY TIME BORN
+    stackC stIdptTemp(                  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ; // { idpt , timeBorn1 , timeBorn2 }, SORTED BY TIME BORN
+    switchStackC swsIdSerialReceivedAlt( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pbLever , sizeof idPortOrigin ) ;
+    switchStackC swsIdSerialReceived(    tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pbLever , sizeof idPortOrigin ) ;
     const byteT* pbLever = (const byteT*)&idPortOrigin ;
     portC idPortOrigin ;
-    stackC stPsoServer(                  tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stPsoServer(                  tin0P , etThread , TAG( TAGiDnULL ) ) ;
     etherC& ether = etherC::etPrimeIF() ;
     _IO_
 {
-/*1*/nodeOldC::nodeOldC( tin0S& tinBaseP , etherC& etThread , boolT& bReadyP )/*1*/
+/*1*/nodeOldC::nodeOldC( tin0S& tin0P , etherC& etThread , boolT& bReadyP )/*1*/
 
 
 

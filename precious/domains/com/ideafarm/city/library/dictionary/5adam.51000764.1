@@ -9,9 +9,9 @@
                             
 REST
 
-etThread.traceF( tinBaseP , T("ok") ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 WAITuNTILaLMOSTaLONE( 1 )
-etThread.traceF( tinBaseP , T("waiting for all threads to finish") ) ;
+etThread.traceF( tin0P , T("waiting for all threads to finish") ) ;
 
 }
     etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)pptRoot[ offt ] , (countT)pcArgInner ) ;
@@ -28,8 +28,8 @@ switch( idComputer )
 textC*  pptRoot[ 0x10 ] ; //CS:CODEsYNC 51000760 51000760
 ZE( countT , cRoot ) ;
 
-etThread.traceF( tinBaseP , T("idComputer: ")+TF2(idComputer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-countT idComputer = etThread.diskIdF( tinBaseP , T("///c") ) ;
+etThread.traceF( tin0P , T("idComputer: ")+TF2(idComputer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+countT idComputer = etThread.diskIdF( tin0P , T("///c") ) ;
 
 TN( tRootTest , "///d/archive.test/1999/" ) ;
 
@@ -77,9 +77,9 @@ TODO
 
 DONE( tmWorkerF )
 }
-    etThread.traceF( tinBaseP , T("root ---- [cFiles,cDirs]:    ")+*ptRootP+tb4+TF2(cFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TF2(cDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-    etThread.diskWalkF( tinBaseP , cDirs , cFiles , *ptRootP , ether , flDISKwALK_null , inspectCBF , pcArgInnerP , 0 , 0 ) ;
-    etThread.traceF( tinBaseP , T("root ++++               :    ")+*ptRootP ) ;
+    etThread.traceF( tin0P , T("root ---- [cFiles,cDirs]:    ")+*ptRootP+tb4+TF2(cFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TF2(cDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    etThread.diskWalkF( tin0P , cDirs , cFiles , *ptRootP , ether , flDISKwALK_null , inspectCBF , pcArgInnerP , 0 , 0 ) ;
+    etThread.traceF( tin0P , T("root ++++               :    ")+*ptRootP ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
 
@@ -97,34 +97,34 @@ TASK( tmWorkerF )
     }
         }
             }
-                etherP.traceF( tinBaseP , T("hash error:    ")+tName ) ;
+                etherP.traceF( tin0P , T("hash error:    ")+tName ) ;
             {
-            if( etherP.strCompareF( tinBaseP , tHashFromFileName , tHashCalculated ) )
+            if( etherP.strCompareF( tin0P , tHashFromFileName , tHashCalculated ) )
 
-            //etherP.traceF( tinBaseP , T("[tHashCalculated]: ")+tHashCalculated ) ;
+            //etherP.traceF( tin0P , T("[tHashCalculated]: ")+tHashCalculated ) ;
             }
-                etherP.delF( tinBaseP , posti ) ;
+                etherP.delF( tin0P , posti ) ;
                 }
-                    etherP.delF( tinBaseP , psttHashCalculated ) ;
+                    etherP.delF( tin0P , psttHashCalculated ) ;
                     tHashCalculated = T(psttHashCalculated) ;
-                    hasher.queryStringF( tinBaseP , psttHashCalculated ) ; ___( psttHashCalculated ) ;
+                    hasher.queryStringF( tin0P , psttHashCalculated ) ; ___( psttHashCalculated ) ;
                     ZE( strokeS* , psttHashCalculated ) ;
 
-                    hasher.eatF( tinBaseP , posti , costi ) ;
-                    hasherC hasher( tinBaseP , etherP ) ;
+                    hasher.eatF( tin0P , posti , costi ) ;
+                    hasherC hasher( tin0P , etherP ) ;
                 {
 
-                etherP.boxGetShadowF( tinBaseP , posti , costi , tName ) ; ___( posti ) ;
+                etherP.boxGetShadowF( tin0P , posti , costi , tName ) ; ___( posti ) ;
                 ZE( countT   , costi ) ;
                 ZE( osTextT* , posti ) ;
             {
             TN( tHashCalculated , "" ) ;
 
-            //etherP.traceF( tinBaseP , T("[tHashFromFileName]: ")+tHashFromFileName ) ;
+            //etherP.traceF( tin0P , T("[tHashFromFileName]: ")+tHashFromFileName ) ;
             }
-                etherP.delF( tinBaseP , psttHashFromFileName ) ;
+                etherP.delF( tin0P , psttHashFromFileName ) ;
                 tHashFromFileName = T(psttHashFromFileName) ;
-                etherP.strSubstringF( tinBaseP , psttHashFromFileName , idf , idl , tName ) ; ___( psttHashFromFileName ) ;
+                etherP.strSubstringF( tin0P , psttHashFromFileName , idf , idl , tName ) ; ___( psttHashFromFileName ) ;
                 countT idl = idHit + 0x20 ;
                 countT idf = idHit + 1 ;
                 ZE( strokeS* , psttHashFromFileName ) ;
@@ -132,30 +132,30 @@ TASK( tmWorkerF )
             TN( tHashFromFileName , "" ) ;
         {
         if( idHit )
-        //etherP.traceF( tinBaseP , T("[idHit,name:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tName ) ;
+        //etherP.traceF( tin0P , T("[idHit,name:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tName ) ;
 
-        etherP.traceF( tinBaseP , tName ) ;
-        etherP.traceF( tinBaseP , T("------------------------------------------------------------------") ) ;
+        etherP.traceF( tin0P , tName ) ;
+        etherP.traceF( tin0P , T("------------------------------------------------------------------") ) ;
 
-        if( !( cFilesP % ( TOCK >> 4 ) ) ) etherP.traceF( tinBaseP , T("[cFiles]:    ")+TF2(cFilesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        if( !( cFilesP % ( TOCK >> 4 ) ) ) etherP.traceF( tin0P , T("[cFiles]:    ")+TF2(cFilesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        countT idHit = etherP.strIdF( tinBaseP, idf , sttqP , tPatternHashP , tName ) ;
+        countT idHit = etherP.strIdF( tin0P, idf , sttqP , tPatternHashP , tName ) ;
         countT idf = 1 ;
 
         TN( tDot , "." ) ;
         TN( tStar , "*" ) ;
         TN( tName , ifName ) ;
-        ifFileNameC ifName( tinBaseP , etherP , postNameP ) ;
+        ifFileNameC ifName( tin0P , etherP , postNameP ) ;
 
         textC&  tPatternHashP =   *(textC*)pcArgP[ 2 ] ;
         strokeS sttqP         = *(strokeS*)pcArgP[ 1 ] ;
         etherC& etherP        =  *(etherC*)pcArgP[ 0 ] ;
         _IO_
     {
-    if( postNameP && thirdC::c_strstrIF( tinBaseP , postNameP , ".hashedname" ) )
+    if( postNameP && thirdC::c_strstrIF( tin0P , postNameP , ".hashedname" ) )
     _IO_
 {
-boolT inspectCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT inspectCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 
 

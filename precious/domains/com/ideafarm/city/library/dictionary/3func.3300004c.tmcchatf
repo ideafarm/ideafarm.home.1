@@ -12,21 +12,21 @@ DONEdRIVENsERVER( tmcChatF )
     TELL( "tmcChatF: cleaning up" )
     }
         POOPR
-        psoP->readF( tinBaseP , (byteT*)&cFoo , sizeof cFoo , flSOCKETcrEAD_STILLhUNGRYiSoK ) ; // psoP WILL BE NULL IF, FOR EXAMPLE, THE CLIENT DID NOT START THE SESSION BY CORRECTLY SWITCHING PORTS; THAT WOULD CAUSE AN EARLY IMPOTENCE, WHICH WOULD PREVENT THE acceptF FROM RETURNING A NONZE psoP
+        psoP->readF( tin0P , (byteT*)&cFoo , sizeof cFoo , flSOCKETcrEAD_STILLhUNGRYiSoK ) ; // psoP WILL BE NULL IF, FOR EXAMPLE, THE CLIENT DID NOT START THE SESSION BY CORRECTLY SWITCHING PORTS; THAT WOULD CAUSE AN EARLY IMPOTENCE, WHICH WOULD PREVENT THE acceptF FROM RETURNING A NONZE psoP
         SCOOPS
         ZE( countT , cFoo ) ;
         TELL( "reading a countT that will never arrive, so that client can disconnect" )
 
-        //etherC::ifcSayIF( TF1(idAdamHandling)+T(" ")+TF1(((tin9S&)tinBaseP).osPid)+T(" --cSessions:")+TF1(--cSessions) , flSAY_APPEND | flSAY_LOG ) ;
-        (*chatHandlerF)( tinBaseP , ether , etThread , psoP , idChatSession , cArg , idAdamHandling ) ;
-        //etherC::ifcSayIF( TF1(idAdamHandling)+T(" ")+TF1(((tin9S&)tinBaseP).osPid)+T(" ++cSessions:")+TF1(++cSessions) , flSAY_APPEND | flSAY_LOG ) ;
+        //etherC::ifcSayIF( TF1(idAdamHandling)+T(" ")+TF1(((tin9S&)tin0P).osPid)+T(" --cSessions:")+TF1(--cSessions) , flSAY_APPEND | flSAY_LOG ) ;
+        (*chatHandlerF)( tin0P , ether , etThread , psoP , idChatSession , cArg , idAdamHandling ) ;
+        //etherC::ifcSayIF( TF1(idAdamHandling)+T(" ")+TF1(((tin9S&)tin0P).osPid)+T(" ++cSessions:")+TF1(++cSessions) , flSAY_APPEND | flSAY_LOG ) ;
         TELL( "calling chat handler" )
 
-        grab_idChatSessionLast.ungrabF( tinBaseP ) ;
+        grab_idChatSessionLast.ungrabF( tin0P ) ;
         countT idChatSession = ++ idChatSessionLast ;
-        grab_idChatSessionLast.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        grab_idChatSessionLast.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         TELL( "grabbing grab_idChatSessionLast" )
-        static grabC grab_idChatSessionLast( tinBaseP , TAG( TAGiDnULL ) ) ;
+        static grabC grab_idChatSessionLast( tin0P , TAG( TAGiDnULL ) ) ;
         static countT idChatSessionLast ;
 
         countT&       cSessions      =      *(countT*)c4p_tmcChat.c4 ;

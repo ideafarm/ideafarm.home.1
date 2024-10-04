@@ -11,10 +11,10 @@ REST
 
 LOGrAW( "main: thread destroyed\r\n" ) ;
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK * 8 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK * 8 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    threadC thread( tinBaseP , etThread , TAG( TAGiDnULL ) , tmFooF , cArg ) ;
+    threadC thread( tin0P , etThread , TAG( TAGiDnULL ) , tmFooF , cArg ) ;
     ZE( countT , cArg ) ;
 {
 
@@ -31,8 +31,8 @@ DONE( tmFooF )
     countT cDilly = TUCK >> 2 ;
 
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
         LOGrAW( "tmFooF working\r\n" ) ;
     {

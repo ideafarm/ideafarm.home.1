@@ -13,7 +13,7 @@ REST
     }
         CONoUTrAW( T("received byte triplet: ")+TF2(pb3[0],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" ")+TF2(pb3[1],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" ")+TF2(pb3[2],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
 
-        qh.readF( tinBaseP , pb3 , sizeof pb3 ) ;
+        qh.readF( tin0P , pb3 , sizeof pb3 ) ;
         byteT pb3[ 3 ] ;
 
         BOSdOnOTtEST( WHATgbo , getch() )
@@ -29,14 +29,14 @@ REST
         {
         if( pbNapkin && cbNapkin > sizeof( queueHeaderOldC ) )
         }
-            napQueue.formattingIsDoneF( tinBaseP ) ;
-            new( 0 , tinBaseP , pbNapkin , sizeof( queueHeaderOldC ) ) queueHeaderOldC( tinBaseP , CBqUEUE ) ;
+            napQueue.formattingIsDoneF( tin0P ) ;
+            new( 0 , tin0P , pbNapkin , sizeof( queueHeaderOldC ) ) queueHeaderOldC( tin0P , CBqUEUE ) ;
         {
         if( pbNapkin && !napQueue.bFormattedF() )
         countT cbNapkin = napQueue ;
         byteT* pbNapkin = napQueue ;
     {
-    napkinC napQueue( tinBaseP , TAG( TAGiDnULL ) , "napQueuePlaycraft" , 0 , sizeof( queueHeaderOldC ) + CBqUEUE ) ;
+    napkinC napQueue( tin0P , TAG( TAGiDnULL ) , "napQueuePlaycraft" , 0 , sizeof( queueHeaderOldC ) + CBqUEUE ) ;
 {
 
 TODO
@@ -48,7 +48,7 @@ DONE( tmWriteF )
 }
     }
         CONoUTrAW( "." ) ;
-        qhP.writeF( tinBaseP , pb3 , sizeof pb3 ) ;
+        qhP.writeF( tin0P , pb3 , sizeof pb3 ) ;
 
         byteT pb3[] = { (byteT)( ++ vvLath ) , (byteT)( ++ vvLath ) , (byteT)( ++ vvLath ) } ;
     {

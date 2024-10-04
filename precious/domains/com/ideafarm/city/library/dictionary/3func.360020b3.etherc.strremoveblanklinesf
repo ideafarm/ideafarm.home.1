@@ -8,41 +8,41 @@
 
 
 }
-    delF( tinBaseP , psttBlankList ) ;
-    delF( tinBaseP , psttEnd ) ;
-    delF( tinBaseP , psttOld ) ;
+    delF( tin0P , psttBlankList ) ;
+    delF( tin0P , psttEnd ) ;
+    delF( tin0P , psttOld ) ;
 
     }
         }
-            delF( tinBaseP , psttl ) ;
+            delF( tin0P , psttl ) ;
 
             }
-                if( ide && idf ) strFuseF( tinBaseP , psttP , psttEnd ) ;
-                strFuseF( tinBaseP , psttP , psttl ) ;
+                if( ide && idf ) strFuseF( tin0P , psttP , psttEnd ) ;
+                strFuseF( tin0P , psttP , psttl ) ;
             {
             if( !idb || idb > 1 || idfb ) // IF THERE ARE EITHER LEADING OR TRAILING NONBLANKS
 
-            countT idb = strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idfb , sttqb , psttBlankList , psttl ) ; // FIND FIRST STRING OF BLANKS IN THIS LINE
+            countT idb = strIdAnyF( tin0P , 0 , flSTRmATCH_null , idfb , sttqb , psttBlankList , psttl ) ; // FIND FIRST STRING OF BLANKS IN THIS LINE
             ZE( strokeS* , psttw ) ;
             strokeS sttqb( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idfb = 1 ;
 
-            strSubstringF( tinBaseP , psttl , idfSave , idl , psttOld ) ; ___( psttl ) ; // GET THIS LINE
+            strSubstringF( tin0P , psttl , idfSave , idl , psttOld ) ; ___( psttl ) ; // GET THIS LINE
             ZE( strokeS* , psttl ) ;
             countT idl = ide ? ide - 1 : 0 ;
         {
         if( !ide || ide > idfSave ) // IF THIS LINE IS NOT NULL
 
-        countT ide = strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , psttEnd , psttOld ) ; // FIND EOL.  NOW idf IS AT BEGINNING OF NEXT LINE
+        countT ide = strIdAnyF( tin0P , 0 , flSTRmATCH_null , idf , sttq , psttEnd , psttOld ) ; // FIND EOL.  NOW idf IS AT BEGINNING OF NEXT LINE
         strokeS sttqSave = sttq ;
         countT idfSave = idf ;
     {
     while( !POOP && idf ) 
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
-    strMakeF( tinBaseP , LF , psttP , T("") , ( psttOld ? psttOld->idAdam : 0 ) + cEOL * ( psttEnd->idAdam - 1 ) ) ; // CALLER MUST TAG ___( psttP ) ;
+    strMakeF( tin0P , LF , psttP , T("") , ( psttOld ? psttOld->idAdam : 0 ) + cEOL * ( psttEnd->idAdam - 1 ) ) ; // CALLER MUST TAG ___( psttP ) ;
 
-    countT cEOL = strCLinesF( tinBaseP , psttOld , psttEnd , 1 ) ;
+    countT cEOL = strCLinesF( tin0P , psttOld , psttEnd , 1 ) ;
 
     __NZ( psttP ) ;
     }
@@ -50,15 +50,15 @@
         psttOld = psttP ;
     {
     else
-    if( psttOldP ) { strMakeF( tinBaseP , LF , psttOld , psttOldP ) ; ___( psttOld ) ; }
+    if( psttOldP ) { strMakeF( tin0P , LF , psttOld , psttOldP ) ; ___( psttOld ) ; }
     ZE( strokeS* , psttOld ) ;
 
-    else           { strMakeF( tinBaseP , LF , psttEnd , T("\r\n") ) ; ___( psttEnd ) ; }
-    if( psttEndP ) { strFuseF( tinBaseP , psttEnd , psttEndP  ) ; ___( psttEnd ) ; }
+    else           { strMakeF( tin0P , LF , psttEnd , T("\r\n") ) ; ___( psttEnd ) ; }
+    if( psttEndP ) { strFuseF( tin0P , psttEnd , psttEndP  ) ; ___( psttEnd ) ; }
     ZE( strokeS* , psttEnd ) ;
 
-    else                 { strMakeF( tinBaseP , LF , psttBlankList , T(" \t\x1a")   ) ; ___( psttBlankList ) ; }
-    if( psttBlankListP ) { strFuseF( tinBaseP , psttBlankList , psttBlankListP ) ; ___( psttBlankList ) ; }
+    else                 { strMakeF( tin0P , LF , psttBlankList , T(" \t\x1a")   ) ; ___( psttBlankList ) ; }
+    if( psttBlankListP ) { strFuseF( tin0P , psttBlankList , psttBlankListP ) ; ___( psttBlankList ) ; }
     ZE( strokeS* , psttBlankList ) ;
 
     _IO_
@@ -71,7 +71,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::strRemoveBlankLinesF( tin0S& tinBaseP , strokeS*& psttP , const strokeS* const psttOldP , const strokeS* const psttEndP , const strokeS* const psttBlankListP )/*1*/
+/**//*1*/voidT etherC::strRemoveBlankLinesF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttOldP , const strokeS* const psttEndP , const strokeS* const psttBlankListP )/*1*/
 */
     spaces (' '), tabs ('\t'), and end of file marks ('\x1a') are removed
    if 0 then T(" \t\x1a") is used

@@ -10,11 +10,11 @@
 REST
 
 }
-    etThread.delF( tinBaseP , postBuffer ) ;
+    etThread.delF( tin0P , postBuffer ) ;
 
-    etThread.boxPutF( tinBaseP , T("///d/tmp/desk/alphabet.stream.")+tId+T(".inflated.ttt") , postBuffer , info1.total_out ) ;
+    etThread.boxPutF( tin0P , T("///d/tmp/desk/alphabet.stream.")+tId+T(".inflated.ttt") , postBuffer , info1.total_out ) ;
 
-    etThread.delF( tinBaseP , posti ) ;
+    etThread.delF( tin0P , posti ) ;
 
     rc = (*pg1.zlib_pInflateEndF)(   &info1 ) ;
     rc = (*pg1.zlib_pInflateF)(      &info1 ,  Z_FINISH ) ;
@@ -31,11 +31,11 @@ REST
 
     processGlobal2S& pg1 = processGlobal2S::_processGlobal2I_IF() ;
 
-    etThread.boxGetShadowF( tinBaseP , posti , costi , T("///d/tmp/desk/alphabet.stream.")+tId+T(".ttt") ) ; ___( posti ) ;
+    etThread.boxGetShadowF( tin0P , posti , costi , T("///d/tmp/desk/alphabet.stream.")+tId+T(".ttt") ) ; ___( posti ) ;
     ZE( countT   , costi ) ;
     ZE( osTextT* , posti ) ;
 
-    etThread.newF( tinBaseP , LF , postBuffer , costBuffer ) ; ___( postBuffer ) ;
+    etThread.newF( tin0P , LF , postBuffer , costBuffer ) ; ___( postBuffer ) ;
     const countT   costBuffer = TOCK ;
     ZE( osTextT* , postBuffer ) ;
 

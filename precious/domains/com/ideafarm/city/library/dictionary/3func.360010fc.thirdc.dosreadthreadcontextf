@@ -30,7 +30,7 @@
         BOSpOOP
         BOS( WHATgbo , BOSoK , GetThreadContext( (voidT*)osHandleP , &info ) )
         info.ContextFlags = CONTEXT_CONTROL /* | CONTEXT_INTEGER | CONTEXT_SEGMENTS | CONTEXT_FLOATING_POINT | CONTEXT_DEBUG_REGISTERS */ ;
-        //c_memsetIF( tinBaseP , (byteT*)&info , sizeof info ) ;
+        //c_memsetIF( tin0P , (byteT*)&info , sizeof info ) ;
         CONTEXT info ;
 
     #elif defined( __NT__ )
@@ -49,7 +49,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::dosReadThreadContextF( tin0S& tinBaseP , countT*& pcLathP , countT*& pcWothP , const countT osHandleP )/*1*/
+/*1*/voidT thirdC::dosReadThreadContextF( tin0S& tin0P , countT*& pcLathP , countT*& pcWothP , const countT osHandleP )/*1*/
 
 /**/
 */
@@ -63,7 +63,7 @@
  pcWothP
   contains the address of the most recently pushed countT object on the cpu's stack
  pcLathP
- tinBaseP
+ tin0P
 arguments
  for windows nt running on Intel x86, pcLathP <= pcWothP
 the relative magnitude depends upon the cpu and on whether the operating system uses the stack frame layout that is "natural" for that cpu

@@ -9,32 +9,32 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
-etThread.strokeF( tinBaseP , T("[cFound,cGood,cBad]: ")+TF4(cFound,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+T(" ")+TF4(cGood,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+T(" ")+TF4(cBad,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+tcr ) ;
+etThread.strokeF( tin0P , T("[cFound,cGood,cBad]: ")+TF4(cFound,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+T(" ")+TF4(cGood,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+T(" ")+TF4(cBad,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+tcr ) ;
 LOGrAW( T("[cFound,cGood,cBad]: ")+TF4(cFound,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+T(" ")+TF4(cGood,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+T(" ")+TF4(cBad,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+tcr ) ;
 
-etThread.delF( tinBaseP , pstt1l ) ;
+etThread.delF( tin0P , pstt1l ) ;
 }
     psttLag = psttc1 ;
 
     }
-        etThread.delF( tinBaseP , psttTimec ) ;
-        etThread.delF( tinBaseP , psttSizec ) ;
-        etThread.delF( tinBaseP , psttNamec ) ;
+        etThread.delF( tin0P , psttTimec ) ;
+        etThread.delF( tin0P , psttSizec ) ;
+        etThread.delF( tin0P , psttNamec ) ;
 
-        etThread.delF( tinBaseP , psttTimem ) ;
-        etThread.delF( tinBaseP , psttSizem ) ;
-        etThread.delF( tinBaseP , psttNamem ) ;
+        etThread.delF( tin0P , psttTimem ) ;
+        etThread.delF( tin0P , psttSizem ) ;
+        etThread.delF( tin0P , psttNamem ) ;
 
         }
             LOGrAW( T(psttTimem)+tb+T(psttNamem)+td+T(psttTimec)+tb+T(psttNamec)+tcr ) ;
 
-            etThread.strSubstringF( tinBaseP , psttNamem , idf , idl , psttLag ) ; ___( psttNamem ) ;
+            etThread.strSubstringF( tin0P , psttNamem , idf , idl , psttLag ) ; ___( psttNamem ) ;
             idl = 0 ;
             idf = 36 ;
 
-            etThread.strSubstringF( tinBaseP , psttTimem , idf , idl , psttLag ) ; ___( psttTimem ) ;
+            etThread.strSubstringF( tin0P , psttTimem , idf , idl , psttLag ) ; ___( psttTimem ) ;
             idl = 17 ;
             idf = 1 ;
 
@@ -45,17 +45,17 @@ etThread.delF( tinBaseP , pstt1l ) ;
             cBad ++ ;
             LOGrAW( T("********************* NOT FOUND *************: ")+T(psttTimec)+tb+T(psttNamec)+tcr ) ;
         {
-        if( etThread.strCompareF( tinBaseP , psttSizec , psttSizem ) )
+        if( etThread.strCompareF( tin0P , psttSizec , psttSizem ) )
 
-        etThread.strSubstringF( tinBaseP , psttSizem , idf , idl , psttLag ) ; ___( psttSizem ) ;
+        etThread.strSubstringF( tin0P , psttSizem , idf , idl , psttLag ) ; ___( psttSizem ) ;
         idl = 35 ;
         idf = 18 ;
 
-        etThread.strSubstringF( tinBaseP , psttNamec , idf , idl , psttc1 ) ; ___( psttNamec ) ;
+        etThread.strSubstringF( tin0P , psttNamec , idf , idl , psttc1 ) ; ___( psttNamec ) ;
         idl = 0 ;
-        etThread.strSubstringF( tinBaseP , psttSizec , idf , idl , psttc1 ) ; ___( psttSizec ) ;
+        etThread.strSubstringF( tin0P , psttSizec , idf , idl , psttc1 ) ; ___( psttSizec ) ;
         idl = 35 ;
-        etThread.strSubstringF( tinBaseP , psttTimec , idf , idl , psttc1 ) ; ___( psttTimec ) ;
+        etThread.strSubstringF( tin0P , psttTimec , idf , idl , psttc1 ) ; ___( psttTimec ) ;
         countT idl = 17 ;
         countT idf = 1 ;
 
@@ -69,7 +69,7 @@ etThread.delF( tinBaseP , pstt1l ) ;
 
         cFound ++ ;
     {
-    if( etThread.strIdF( tinBaseP , tTest , psttc1 ) )
+    if( etThread.strIdF( tin0P , tTest , psttc1 ) )
 {
 FORsTRINGSiN1( pstt1l )
 ZE( strokeS* , psttLag ) ;
@@ -80,17 +80,17 @@ ZE( countT , cGood ) ;
 ZE( countT , cBad ) ;
 ZE( countT , cFound ) ;
 
-etThread.delF( tinBaseP , pstti ) ;
-etThread.strWordsF( tinBaseP , pstt1l , pstti , sttq , tcr ) ; ___( pstt1l ) ;
+etThread.delF( tin0P , pstti ) ;
+etThread.strWordsF( tin0P , pstt1l , pstti , sttq , tcr ) ; ___( pstt1l ) ;
 TN( tcr , "\r\n" ) ;
 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 ZE( strokeS* , pstt1l ) ;
 
-etThread.delF( tinBaseP , posti ) ;
-etThread.strMakeFromOsTextF( tinBaseP , pstti , posti ) ; ___( pstti ) ;
+etThread.delF( tin0P , posti ) ;
+etThread.strMakeFromOsTextF( tin0P , pstti , posti ) ; ___( pstti ) ;
 ZE( strokeS* , pstti ) ;
 
-etThread.boxGetShadowF( tinBaseP , posti , costi , T("///d/tmp/2011.10.04/list.size.all.ttt") ) ; ___( posti ) ;
+etThread.boxGetShadowF( tin0P , posti , costi , T("///d/tmp/2011.10.04/list.size.all.ttt") ) ; ___( posti ) ;
 
 ZE( countT   , costi ) ;
 ZE( osTextT* , posti ) ;

@@ -8,26 +8,26 @@
 
 
 }
-    ((tin9S&)tinBaseP).pEther = pEtherSave ; //FOR SPEED, *Save ARE NOT ZEED
+    ((tin9S&)tin0P).pEther = pEtherSave ; //FOR SPEED, *Save ARE NOT ZEED
 
     }
-        ((tin9S&)tinBaseP).monitor.idDirty ++ ;
-        ((tin9S&)tinBaseP).pLFstep[ ( ( ((tin9S&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] = idiFileUse ;
-        ((tin9S&)tinBaseP).pLFstep[ ( ((tin9S&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] = idLineUse & ~fliSTEP_FLAGmASK | fliSTEP_NESTcHANGE | fliSTEP_NESToUT ;
-        ((tin9S&)tinBaseP).monitor.cInNest -- ;
-        ((tin9S&)tinBaseP).monitor.idStep ++ ;
-        ((tin9S&)tinBaseP).pIdProgressNest[ ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ] = _idProgressNestSave ;
-        ((tin9S&)tinBaseP).pIdInNest[       ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ] = _idInNestSave ;
-        ((tin9S&)tinBaseP).monitor.pLFnest[    ( ( ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] = _idFileNestSave ;
-        ((tin9S&)tinBaseP).monitor.pLFnest[     ( ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ] = _idLineNestSave ;
+        ((tin9S&)tin0P).monitor.idDirty ++ ;
+        ((tin9S&)tin0P).pLFstep[ ( ( ((tin9S&)tin0P).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] = idiFileUse ;
+        ((tin9S&)tin0P).pLFstep[ ( ((tin9S&)tin0P).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] = idLineUse & ~fliSTEP_FLAGmASK | fliSTEP_NESTcHANGE | fliSTEP_NESToUT ;
+        ((tin9S&)tin0P).monitor.cInNest -- ;
+        ((tin9S&)tin0P).monitor.idStep ++ ;
+        ((tin9S&)tin0P).pIdProgressNest[ ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ] = _idProgressNestSave ;
+        ((tin9S&)tin0P).pIdInNest[       ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ] = _idInNestSave ;
+        ((tin9S&)tin0P).monitor.pLFnest[    ( ( ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] = _idFileNestSave ;
+        ((tin9S&)tin0P).monitor.pLFnest[     ( ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ] = _idLineNestSave ;
 
-        if( ((tin9S&)tinBaseP).tally.bTally ) ((tin9S&)tinBaseP).tally.pcExits[ idFileUse ] ++ ;
+        if( ((tin9S&)tin0P).tally.bTally ) ((tin9S&)tin0P).tally.pcExits[ idFileUse ] ++ ;
 
-        ((tin9S&)tinBaseP).monitor.idDirty ++ ;
+        ((tin9S&)tin0P).monitor.idDirty ++ ;
     {
-    if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tin9S&)tinBaseP).monitor.idDirty % 2 ) )
+    if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL && F(((tin9S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tin9S&)tin0P).monitor.idDirty % 2 ) )
 {
-/*1*/voidT upDnC::dnF( tin0S& tinBaseP )/*1*/
+/*1*/voidT upDnC::dnF( tin0S& tin0P )/*1*/
 
 /**/
 */

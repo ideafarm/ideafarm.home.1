@@ -10,48 +10,48 @@
 REST
 
 }
-    etThread.delF( tinBaseP , pbi ) ;
+    etThread.delF( tin0P , pbi ) ;
 
     }
         pbc += sizeof( rHeaderS ) + rHeader.cbData ;
 
-        rHeader.logF( tinBaseP ) ;
+        rHeader.logF( tin0P ) ;
         rHeader.swabF() ;
         rHeaderS& rHeader = *(rHeaderS*)pbc ;
-        logLabelsF( tinBaseP , pbc , (byteT*)&header ) ;
+        logLabelsF( tin0P , pbc , (byteT*)&header ) ;
     {
     while( cResources -- )
     countT cResources = header.cAnswers + header.cAuthorities + header.cNotes ;
     pbc = pbi + sizeof( headerS ) + sizeof( questionS ) ;
 
-    question.logF( tinBaseP ) ;
-    logLabelsF( tinBaseP , pbc , (byteT*)&header ) ;
+    question.logF( tin0P ) ;
+    logLabelsF( tin0P , pbc , (byteT*)&header ) ;
     question.swabF() ;
     questionS& question = *(questionS*)pbc ;
     pbc = pbi + sizeof( headerS ) ;
 
-    header.logF( tinBaseP ) ;
+    header.logF( tin0P ) ;
     header.swabF() ;
 
     headerS& header = *(headerS*)pbi ;
 
     }
-        so.readF( tinBaseP , pbi , cbi , idPort , nicName ) ; ___( pbi ) ;
+        so.readF( tin0P , pbi , cbi , idPort , nicName ) ; ___( pbi ) ;
         nicNameC nicName ;
         ZE( countT , idPort ) ;
 
         query.swabF() ;
-        so.writeF( tinBaseP , 0x35 , so.nicNameF( tinBaseP , etThread , T("NS4.BAYAREA.NET") ) , (byteT*)&query , sizeof query ) ;
+        so.writeF( tin0P , 0x35 , so.nicNameF( tin0P , etThread , T("NS4.BAYAREA.NET") ) , (byteT*)&query , sizeof query ) ;
         query.swabF() ;
-        so.bindF( tinBaseP ) ;
-        socketC so( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+        so.bindF( tin0P ) ;
+        socketC so( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
-        query.logF( tinBaseP ) ;
+        query.logF( tin0P ) ;
 
         }
             query.question.pbLabels[ off ] = 0 ;                                                                                                                off += 1 ;
-            query.question.pbLabels[ off ] = 3 ; thirdC::c_memcpyIF( tinBaseP , query.question.pbLabels + off + 1 , "com"      , query.question.pbLabels[ off ] ) ; off += 4 ;
-            query.question.pbLabels[ off ] = 8 ; thirdC::c_memcpyIF( tinBaseP , query.question.pbLabels + off + 1 , "ideafarm" , query.question.pbLabels[ off ] ) ; off += 9 ;
+            query.question.pbLabels[ off ] = 3 ; thirdC::c_memcpyIF( tin0P , query.question.pbLabels + off + 1 , "com"      , query.question.pbLabels[ off ] ) ; off += 4 ;
+            query.question.pbLabels[ off ] = 8 ; thirdC::c_memcpyIF( tin0P , query.question.pbLabels + off + 1 , "ideafarm" , query.question.pbLabels[ off ] ) ; off += 9 ;
 
             ZE( countT , off ) ;
         {
@@ -72,12 +72,12 @@ TODO
 voidT queryS::swabF( voidT )
 
 }
-    question.logF( tinBaseP ) ;
-    logLabelsF( tinBaseP , pbc , (byteT*)&header ) ;
+    question.logF( tin0P ) ;
+    logLabelsF( tin0P , pbc , (byteT*)&header ) ;
     byteT* pbc = (byteT*)&header + sizeof( headerS ) ;
-    header.logF( tinBaseP ) ;
+    header.logF( tin0P ) ;
 {
-voidT queryS::logF( tin0S& tinBaseP )
+voidT queryS::logF( tin0S& tin0P )
 
 }
     cbData        = SWAB2( cbData        ) ;
@@ -88,9 +88,9 @@ voidT queryS::logF( tin0S& tinBaseP )
 voidT rHeaderS::swabF( voidT )
 
 }
-    thirdC::logIF( tinBaseP , T("question: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass) ) ;
+    thirdC::logIF( tin0P , T("question: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass) ) ;
 {
-voidT questionS::logF( tin0S& tinBaseP )
+voidT questionS::logF( tin0S& tin0P )
 
 }
     idClass = SWAB2( idClass ) ;
@@ -114,9 +114,9 @@ idType( 1 ) ,
 questionS::questionS( voidT ) :
 
 }
-    thirdC::logIF( tinBaseP , T("header: cQuestions: ")+TF1(cQuestions)+T(" cAnswers: ")+TF1(cAnswers)+T(" cAuthorities: ")+TF1(cAuthorities)+T(" cNotes: ")+TF1(cNotes) ) ;
+    thirdC::logIF( tin0P , T("header: cQuestions: ")+TF1(cQuestions)+T(" cAnswers: ")+TF1(cAnswers)+T(" cAuthorities: ")+TF1(cAuthorities)+T(" cNotes: ")+TF1(cNotes) ) ;
 {
-voidT headerS::logF( tin0S& tinBaseP )
+voidT headerS::logF( tin0S& tin0P )
 
 }
 {
@@ -138,9 +138,9 @@ headerS::headerS( voidT ) :
 count01T headerS::idQueryLast ;
 
 }
-    thirdC::logIF( tinBaseP , T("rHeader: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass)+T(" secondsToLive: ")+TF1(secondsToLive)+T(" cbData: ")+TF1(cbData) ) ;
+    thirdC::logIF( tin0P , T("rHeader: idType: ")+TF1(idType)+T(" idClass: ")+TF1(idClass)+T(" secondsToLive: ")+TF1(secondsToLive)+T(" cbData: ")+TF1(cbData) ) ;
 {
-voidT rHeaderS::logF( tin0S& tinBaseP )
+voidT rHeaderS::logF( tin0S& tin0P )
 
 }
 {
@@ -151,7 +151,7 @@ idType( 0 ) ,
 rHeaderS::rHeaderS( voidT ) :
 
 }
-    thirdC::logIF( tinBaseP , T("label: \"")+T(osto001)+T("\"") ) ;
+    thirdC::logIF( tin0P , T("label: \"")+T(osto001)+T("\"") ) ;
 
     }
         }
@@ -165,7 +165,7 @@ rHeaderS::rHeaderS( voidT ) :
         else if( *pbP & 0xc0 ) ;
         }
             pbP += 2 ;
-            logLabelsF( tinBaseP , pbr , pbOriginP ) ;
+            logLabelsF( tin0P , pbr , pbOriginP ) ;
             byteT* pbr = pbOriginP + off ;
             countT off = SWAB2( *(count01T*)pbP ) & ~0xc000 ;
         {
@@ -174,7 +174,7 @@ rHeaderS::rHeaderS( voidT ) :
     while( *pbP )
     OStEXT( osto001 , 0x100 )
 {
-voidT logLabelsF( tin0S& tinBaseP , byteT*& pbP , byteT* const pbOriginP )
+voidT logLabelsF( tin0S& tin0P , byteT*& pbP , byteT* const pbOriginP )
 */
   must point to the beginning of the header record for the message being parsed
  pbOriginP
@@ -187,7 +187,7 @@ arguments
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tin0S& tinBaseP ) ;
+    voidT logF( tin0S& tin0P ) ;
     questionS question ;
     headerS   header ;
 {
@@ -196,7 +196,7 @@ struct queryS
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tin0S& tinBaseP ) ;
+    voidT logF( tin0S& tin0P ) ;
     rHeaderS( voidT ) ;
 
     count01T cbData ;
@@ -209,7 +209,7 @@ struct rHeaderS //THIS IS THE PART OF THE "RESOURCE RECORD" THAT FOLLOWS THE LAB
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tin0S& tinBaseP ) ;
+    voidT logF( tin0S& tin0P ) ;
     questionS( voidT ) ;
 
     count01T           idClass             ;
@@ -221,7 +221,7 @@ struct questionS
 ;
 }
     voidT swabF( voidT ) ;
-    voidT logF( tin0S& tinBaseP ) ;
+    voidT logF( tin0S& tin0P ) ;
     headerS( voidT ) ;
 
     count01T           cNotes              ;

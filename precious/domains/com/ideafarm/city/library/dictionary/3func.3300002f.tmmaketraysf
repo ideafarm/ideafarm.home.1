@@ -10,23 +10,23 @@
 DONE( tmMakeTraysF )
 }
     TELL( "tmMakeTraysF: cleaning up" )
-    soDn.writeF( tinBaseP , sNull ) ;
-    soulC sNull( tinBaseP , TAG( TAGiDnULL ) ) ;
+    soDn.writeF( tin0P , sNull ) ;
+    soulC sNull( tin0P , TAG( TAGiDnULL ) ) ;
     TELL( "writing downward a null tray" )
 
     }
         if( bFail || !sData ) break ;
 
-        soDn.writeF( tinBaseP , sTray ) ; // CAN SET IMPOTENCE IF CLIENT IS GONE
+        soDn.writeF( tin0P , sTray ) ; // CAN SET IMPOTENCE IF CLIENT IS GONE
         TELL( "writing downward a tray containing a course containing data notes codes" )
         sTray << sCourse ;
-        soulC sTray( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_JOBrEPLY ) ;
+        soulC sTray( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_JOBrEPLY ) ;
 
         sCourse << sNotesData ;
         sCourse << sNotesText ;
         sCourse << sData ;
         sCourse << sCodes ;
-        soulC sCourse( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC sCourse( tin0P , TAG( TAGiDnULL ) ) ;
 
         sCodes << (countT)( bFail           ? ifcIDeRRORjOBcOURSE_JOBdONEwITHeRRORSsTATEaOK : ifcIDeRRORjOBcOURSE_JOBdONEaOK     ) ; /*U: AM LYING HERE SINCE STATE MIGHT HAVE BEEN CORRUPTED*/
         sCodes << (countT)( bFail || !sData ? ifcIDrEPLYjOBcOURSE_FINALcOURSE               : ifcIDrEPLYjOBcOURSE_NONfINALcOURSE ) ;
@@ -35,11 +35,11 @@ DONE( tmMakeTraysF )
 
         etThread = 0 ;
         boolT bFail = etThread ;
-        (*jobFillCourseF)( tinBaseP , ether , etThread , sData , sNotesText , sNotesData , ++ idCourse , idAdam , idChatSession , sOrder , cArg , c8arg ) ;
-        soulC sNotesData( tinBaseP , TAG( TAGiDnULL ) ) ;
-        soulC sNotesText( tinBaseP , TAG( TAGiDnULL ) ) ;
-        soulC sData( tinBaseP , TAG( TAGiDnULL ) ) ;
-        soulC sCodes( tinBaseP , TAG( TAGiDnULL ) ) ;
+        (*jobFillCourseF)( tin0P , ether , etThread , sData , sNotesText , sNotesData , ++ idCourse , idAdam , idChatSession , sOrder , cArg , c8arg ) ;
+        soulC sNotesData( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sNotesText( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sData( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sCodes( tin0P , TAG( TAGiDnULL ) ) ;
         TELL( "calling handler so that it can inspect the order and fill data and notes soulC objects" )
     {
     while( !etThread )

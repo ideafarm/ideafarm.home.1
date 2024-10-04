@@ -9,17 +9,17 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 
-etThread.traceF( tinBaseP , T("sorted") ) ;
-sorta.sortF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("sorting") ) ;
-sortaC sorta( tinBaseP , etThread , bQuit , pbArray , cbArray , sizeof( countT ) , 0 , sizeof( countT ) , 1 , 0 , flSORTAc_null ) ;
+etThread.traceF( tin0P , T("sorted") ) ;
+sorta.sortF( tin0P ) ;
+etThread.traceF( tin0P , T("sorting") ) ;
+sortaC sorta( tin0P , etThread , bQuit , pbArray , cbArray , sizeof( countT ) , 0 , sizeof( countT ) , 1 , 0 , flSORTAc_null ) ;
 ZE( boolT , bQuit ) ;
 
-etThread.traceF( tinBaseP , T("wrote   a tick of elements, each with wo ranUniC value") ) ;
+etThread.traceF( tin0P , T("wrote   a tick of elements, each with wo ranUniC value") ) ;
 }
     }
         case 1 : { pcArray[ offca ] = 0x11111111  ; break ; }
@@ -28,11 +28,11 @@ etThread.traceF( tinBaseP , T("wrote   a tick of elements, each with wo ranUniC 
     switch( offca % 2 )
 {
 for( countT offca = 0 ; offca < ccArray ; offca ++ )
-etThread.traceF( tinBaseP , T("writing a tick of elements, each with wo ranUniC value") ) ;
+etThread.traceF( tin0P , T("writing a tick of elements, each with wo ranUniC value") ) ;
 
 
-ranUniC ruChallenge( tinBaseP , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
-//etThread.traceF( tinBaseP , T("[cSeed]:    ")+TF2(cSeed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
+ranUniC ruChallenge( tin0P , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
+//etThread.traceF( tin0P , T("[cSeed]:    ")+TF2(cSeed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
 cSeedLath = cSeed ;
 countT cSeed = 0x78E86FC1 /*slab.trueRandom*/ ;
 

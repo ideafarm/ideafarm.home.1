@@ -9,19 +9,19 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    etThread.delF( tinBaseP , postiShortAll ) ;
+    etThread.delF( tin0P , postiShortAll ) ;
 
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
 
-        //if( cWorkers < cWorkersSpec ) etThread.traceF( tinBaseP , T("[cWorkers]:    ")+TF2(cWorkers,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //if( cWorkers < cWorkersSpec ) etThread.traceF( tin0P , T("[cWorkers]:    ")+TF2(cWorkers,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     while( cWorkers )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
 #endif
 
@@ -66,7 +66,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
     postizWindow[ costizWindow ] = 0 ;
 
-    etThread.traceF( tinBaseP , T("input window [offiWindow,offieWindow]:    0x")+TF3(postizWindow-postiShortAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tb4+T("0x")+TF3(offieWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
+    etThread.traceF( tin0P , T("input window [offiWindow,offieWindow]:    0x")+TF3(postizWindow-postiShortAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tb4+T("0x")+TF3(offieWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
     countT offieWindow = postizWindow + costizWindow - postiShortAll ;
     while( postizWindow[ costizWindow ] && postizWindow[ costizWindow ] != '!' ) costizWindow ++ ;
 
@@ -83,13 +83,13 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     // input window [offiWindow,offieWindow]:    0x0783e692    0x0f07cd84
     // input window [offiWindow,offieWindow]:    0x00000000    0x0783e692
 
-    etThread.traceF( tinBaseP , T("[costiShortAll]:    ")+TF4(costiShortAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+    etThread.traceF( tin0P , T("[costiShortAll]:    ")+TF4(costiShortAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
 
-      etThread.boxGetShadowF( tinBaseP , postiShortAll , costiShortAll , T("///d/tmp/pattern.w.dup.ttt") ) ; ___( postiShortAll ) ;
-    //etThread.boxGetShadowF( tinBaseP , postiShortAll , costiShortAll , T("///d/tmp/lost8.before.all.w.dup.ttt") ) ; ___( postiShortAll ) ;
-    //etThread.boxGetShadowF( tinBaseP , postiShortAll , costiShortAll , T("///d/tmp/lost.after.ttt") ) ; ___( postiShortAll ) ;
-    //etThread.boxGetShadowF( tinBaseP , postiShortAll , costiShortAll , T("///d/tmp/lost.before.uscore.to.dot.reformat.uniquifier.seq.ttt") ) ; ___( postiShortAll ) ;
-    //etThread.boxGetShadowF( tinBaseP , postiShortAll , costiShortAll , T("///d/tmp/lost.dut2.ttt") ) ; ___( postiShortAll ) ;
+      etThread.boxGetShadowF( tin0P , postiShortAll , costiShortAll , T("///d/tmp/pattern.w.dup.ttt") ) ; ___( postiShortAll ) ;
+    //etThread.boxGetShadowF( tin0P , postiShortAll , costiShortAll , T("///d/tmp/lost8.before.all.w.dup.ttt") ) ; ___( postiShortAll ) ;
+    //etThread.boxGetShadowF( tin0P , postiShortAll , costiShortAll , T("///d/tmp/lost.after.ttt") ) ; ___( postiShortAll ) ;
+    //etThread.boxGetShadowF( tin0P , postiShortAll , costiShortAll , T("///d/tmp/lost.before.uscore.to.dot.reformat.uniquifier.seq.ttt") ) ; ___( postiShortAll ) ;
+    //etThread.boxGetShadowF( tin0P , postiShortAll , costiShortAll , T("///d/tmp/lost.dut2.ttt") ) ; ___( postiShortAll ) ;
     ZE( countT   , costiShortAll ) ;
     ZE( osTextT* , postiShortAll ) ;
     TN( tb4 , "    " ) ;
@@ -99,18 +99,18 @@ TODO
 
 DONE( tmWorkerF )
 }
-    etThread.traceF( tinBaseP , T("worker finished [cWorkersBefore,idWorkerP]:    ")+TF2(cWorkersBefore,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE)+tb4+TF2(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE) ) ;
+    etThread.traceF( tin0P , T("worker finished [cWorkersBefore,idWorkerP]:    ")+TF2(cWorkersBefore,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE)+tb4+TF2(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE) ) ;
     countT cWorkersBefore = decv02AM( cWorkersP ) ;
                                                                     // CS:CODEsYNC: THIS BIGIT MUST BE INCREMENTED MANUALLY FOR EACH PART
     }                                                               // |
-        etThread.delF( tinBaseP , posto ) ;                             // ^
-          etThread.boxPutF( tinBaseP , T("///d/tmp/pattern.uniquified.ttt.1." )+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
-        //etThread.boxPutF( tinBaseP , T("///d/tmp/lost8.before.uniquified.1." )+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
-        //etThread.boxPutF( tinBaseP , T("///d/tmp/lost6.after." )+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
-        //etThread.boxPutF( tinBaseP , T("///d/tmp/lost6.before.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
-        //etThread.boxPutF( tinBaseP , T("///d/tmp/lost6.dut2.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+        etThread.delF( tin0P , posto ) ;                             // ^
+          etThread.boxPutF( tin0P , T("///d/tmp/pattern.uniquified.ttt.1." )+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+        //etThread.boxPutF( tin0P , T("///d/tmp/lost8.before.uniquified.1." )+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+        //etThread.boxPutF( tin0P , T("///d/tmp/lost6.after." )+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+        //etThread.boxPutF( tin0P , T("///d/tmp/lost6.before.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
+        //etThread.boxPutF( tin0P , T("///d/tmp/lost6.dut2.")+TF3(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".ttt") , posto , postoc - posto ) ;
 
-        etThread.traceF( tinBaseP , T("writing output file") ) ;
+        etThread.traceF( tin0P , T("writing output file") ) ;
 
         memcpy( postoc , postSeparator , costSeparator ) ; postoc += costSeparator ;
         _IO_
@@ -122,7 +122,7 @@ DONE( tmWorkerF )
         postic = postieWoGross + 2 ;
 
         }
-            if( !( cWritten % TUCK ) ) etThread.traceF( tinBaseP , TF2(cWritten,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            if( !( cWritten % TUCK ) ) etThread.traceF( tin0P , TF2(cWritten,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             cWritten ++ ;
             postiLathWritten = postic ;
 
@@ -132,9 +132,9 @@ DONE( tmWorkerF )
         {
         if( !bSkip )
 
-        //etThread.traceF( tinBaseP , T("      [postiLathWritten]:    ")+T(postiLathWritten) ) ;
-        //etThread.traceF( tinBaseP , T("                [postic]:    ")+T(postic) ) ;
-        //etThread.traceF( tinBaseP , T("debug  [bSkip,costicNet]:    ")+TF2(bSkip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(costicNet,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+        //etThread.traceF( tin0P , T("      [postiLathWritten]:    ")+T(postiLathWritten) ) ;
+        //etThread.traceF( tin0P , T("                [postic]:    ")+T(postic) ) ;
+        //etThread.traceF( tin0P , T("debug  [bSkip,costicNet]:    ")+TF2(bSkip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(costicNet,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
 
         boolT bSkip = postiLathWritten && !memcmp( postic , postiLathWritten , costicNet ) ;
 
@@ -154,7 +154,7 @@ DONE( tmWorkerF )
     ZE( osTextT* , postiLathWritten ) ;
 
     osTextT* postoc = posto ;
-    etThread.newF( tinBaseP , LF , posto , costiMe + costSeparator ) ; ___( posto ) ;
+    etThread.newF( tin0P , LF , posto , costiMe + costSeparator ) ; ___( posto ) ;
     ZE( osTextT* , posto ) ;
 
     osTextT* postic   = postiMe ;
@@ -165,7 +165,7 @@ DONE( tmWorkerF )
         ? postizWindowP
     osTextT* postiMe = idWorkerP == 1
 
-    etThread.traceF( tinBaseP , T("worker started [cWorkersP,idWorkerP]:    ")+TF2(cWorkersP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE)+tb4+TF2(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE) ) ;
+    etThread.traceF( tin0P , T("worker started [cWorkersP,idWorkerP]:    ")+TF2(cWorkersP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE)+tb4+TF2(idWorkerP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE) ) ;
 
     TN( tb4 , "    " ) ;
 

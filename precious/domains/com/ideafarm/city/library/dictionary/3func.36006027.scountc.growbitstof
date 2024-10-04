@@ -11,15 +11,15 @@
     }
         cbit = cbitNewP ;
         pc = pcn ;
-        ether.delF( tinBaseP , pc ) ;
+        ether.delF( tin0P , pc ) ;
         }
-            setBitF( tinBaseP , pcn , boff , fNeg ) ;
+            setBitF( tin0P , pcn , boff , fNeg ) ;
         {
         for( countT boff = cbit ; boff < cbitNewP ; boff ++ )
-        boolT fNeg = bitF( tinBaseP , pcn , cbit - 1 ) ;
-        ether.memCopyF( tinBaseP , (byteT*)pcn , (byteT*)pc , cBytesOld ) ;
-        ether.memSetF( tinBaseP , (byteT*)pcn , cWords * (SC/SB) ) ;
-        ether.newF( tinBaseP , LF , pcn , cWords ) ; ___( pcn ) ;
+        boolT fNeg = bitF( tin0P , pcn , cbit - 1 ) ;
+        ether.memCopyF( tin0P , (byteT*)pcn , (byteT*)pc , cBytesOld ) ;
+        ether.memSetF( tin0P , (byteT*)pcn , cWords * (SC/SB) ) ;
+        ether.newF( tin0P , LF , pcn , cWords ) ; ___( pcn ) ;
         countT cWords = 1 + cbitNewP / SC ; // A "word" HERE IS THE SIZE OF countT
         countT cBytes = 1 + cbitNewP / SB ;
         countT cBytesOld = 1 + cbit / SB ;
@@ -33,7 +33,7 @@
     {
     IFbEcAREFUL
 {
-/**//*1*/voidT sCountC::growBitsToF( tin0S& tinBaseP , const countT cbitNewP )/*1*/
+/**//*1*/voidT sCountC::growBitsToF( tin0S& tin0P , const countT cbitNewP )/*1*/
 */
  cbitNewP
 arguments

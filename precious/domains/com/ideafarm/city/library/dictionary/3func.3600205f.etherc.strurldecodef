@@ -14,8 +14,8 @@
             else                                                        psttOutP[ CSpREFIX + offo ++ ] = psttInP[ CSpREFIX + off ] ;
             }
                 off += 2 ;
-                psttOutP[ CSpREFIX + offo ++ ] = strDigitsToSCountF( tinBaseP , psttHex , 0x10 , 1 ) ;
-                strConvertToLowerCaseF( tinBaseP , psttHex ) ;
+                psttOutP[ CSpREFIX + offo ++ ] = strDigitsToSCountF( tin0P , psttHex , 0x10 , 1 ) ;
+                strConvertToLowerCaseF( tin0P , psttHex ) ;
                 psttHex[ CSpREFIX + 1 ] = psttInP[ CSpREFIX + 2 + off ] ;
                 psttHex[ CSpREFIX     ] = psttInP[ CSpREFIX + 1 + off ] ;
                 SETpREFIX( psttHex , 2 , 0 ) ;
@@ -28,7 +28,7 @@
         for( countT off = 0 ; off < csIn ; off ++ )
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         ZE( countT , offo ) ;
-        third.newF( tinBaseP , LF , psttOutP , CSpREFIX + csIn ) ; // CALLER MUST TAG ___( psttOutP ) ;
+        third.newF( tin0P , LF , psttOutP , CSpREFIX + csIn ) ; // CALLER MUST TAG ___( psttOutP ) ;
         countT csIn = psttInP->idAdam ;
     {
     if( !POOP )
@@ -37,7 +37,7 @@
 
     }
         if( POOP ) return ;
-        __( !!strFEndF( tinBaseP , psttInP ) ) ;
+        __( !!strFEndF( tin0P , psttInP ) ) ;
         __NZ(  psttOutP ) ;
         __Z(  psttInP ) ;
         if( POOP ) return ;
@@ -45,7 +45,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::strUrlDecodeF( tin0S& tinBaseP , strokeS*& psttOutP , strokeS* psttInP )/*1*/
+/**//*1*/voidT etherC::strUrlDecodeF( tin0S& tin0P , strokeS*& psttOutP , strokeS* psttInP )/*1*/
 */
  psttInP
  psttOutP

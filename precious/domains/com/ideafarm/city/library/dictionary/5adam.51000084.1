@@ -10,27 +10,27 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
+etThread.osSleepF( tin0P , TOCK * 4 ) ;
 
-etThread.delF( tinBaseP , psttv2 ) ;
-etThread.delF( tinBaseP , psttv1 ) ;
-etThread.strokeF( tinBaseP , T(psttv1)+T(" ticks, ")+T(psttv2)+T(" tocks have elapsed today\r\n") ) ;
-etThread.strFromF( tinBaseP , psttv2 , offTock ) ; ___( psttv1 ) ;
-etThread.strFromF( tinBaseP , psttv1 , offTick ) ; ___( psttv1 ) ;
+etThread.delF( tin0P , psttv2 ) ;
+etThread.delF( tin0P , psttv1 ) ;
+etThread.strokeF( tin0P , T(psttv1)+T(" ticks, ")+T(psttv2)+T(" tocks have elapsed today\r\n") ) ;
+etThread.strFromF( tin0P , psttv2 , offTock ) ; ___( psttv1 ) ;
+etThread.strFromF( tin0P , psttv1 , offTick ) ; ___( psttv1 ) ;
 ZE( strokeS* , psttv2 ) ;
 ZE( strokeS* , psttv1 ) ;
 
 countT offTock = offTOCK( time1 ) ;
 countT offTick = offTICK( time1 ) ;
 
-etThread.delF( tinBaseP , psttNow ) ;
-etThread.strokeF( tinBaseP , T("the time is now ")+T(psttNow)+T("\r\n") ) ;
-etThread.strFromTimeF( tinBaseP , psttNow , time1 , time2 ) ;
+etThread.delF( tin0P , psttNow ) ;
+etThread.strokeF( tin0P , T("the time is now ")+T(psttNow)+T("\r\n") ) ;
+etThread.strFromTimeF( tin0P , psttNow , time1 , time2 ) ;
 ZE( strokeS* , psttNow ) ;
 
-etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
+etThread.osTimeNowF( tin0P , time1 , time2 ) ;
 ZE( sCountT , time2 ) ;
 ZE( countT , time1 ) ;
 

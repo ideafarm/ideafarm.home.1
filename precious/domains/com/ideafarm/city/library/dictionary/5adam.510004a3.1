@@ -14,31 +14,31 @@ REST
         }
             }
                 }
-                    etThread.winSetTitleF( tinBaseP , TF1(cAll)+tb+TF1(cAlive) ) ;
+                    etThread.winSetTitleF( tin0P , TF1(cAll)+tb+TF1(cAlive) ) ;
                     cAll ++ ;
                 {
                 if( !etThread )
-                etThread.osThreadF( tinBaseP , countTC() , tmNullF ) ;
+                etThread.osThreadF( tin0P , countTC() , tmNullF ) ;
             {
             if( !ether )
-            ether.osSleepF( tinBaseP , TUCK * 0x10 ) ;
+            ether.osSleepF( tin0P , TUCK * 0x10 ) ;
         {
         else
-        if( cAlive > 0x10 ) ether.osSleepF( tinBaseP , TOCK ) ;
+        if( cAlive > 0x10 ) ether.osSleepF( tin0P , TOCK ) ;
     {
     while( !ether && !etThread )
-    countT& cAlive = thirdC::os_cAllKidThreadsI_IF( tinBaseP ) ;
+    countT& cAlive = thirdC::os_cAllKidThreadsI_IF( tin0P ) ;
     ZE( countT , cAll ) ;
     TN( tb , " " ) ;
 
-    //etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
+    //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 {
 
 TODO
 
 DONE( tmNullF )
 CONoUT( "-" ) ; //U::
-ether.osSleepF( tinBaseP , TOCK * 0xc ) ;
+ether.osSleepF( tin0P , TOCK * 0xc ) ;
 CONoUT( "+" ) ; //U::
 TASK( tmNullF )
 

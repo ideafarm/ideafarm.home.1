@@ -14,19 +14,19 @@
         }
             break ;
             }
-                (*((tin9S&)tinBaseP).pEther)( tinBaseP , psBagPop ) ;
-                popIF( tinBaseP , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBagPop , stIdptOpenP , stIdptGossipP , idptP ) ;
+                (*((tin9S&)tin0P).pEther)( tin0P , psBagPop ) ;
+                popIF( tin0P , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBagPop , stIdptOpenP , stIdptGossipP , idptP ) ;
                 idptGossipP >> *psBagPop ;
-                hdrBagIF( tinBaseP , *psBagPop , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPgOSSIP ) ;
+                hdrBagIF( tin0P , *psBagPop , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPgOSSIP ) ;
             {
             if( psBagPop )
         
             UNGRABrELAYlISTS
             }
-                else (*((tin9S&)tinBaseP).pEther)( tinBaseP , psBagPop , TAG( TAGiDnULL ) ) ;
+                else (*((tin9S&)tin0P).pEther)( tin0P , psBagPop , TAG( TAGiDnULL ) ) ;
                 }
-                    sortOpenIF( tinBaseP , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
-                    stIdptGossipP.sinkF( tinBaseP , countTC() , (byteT*)&idptGossipP , flSTACKsINK_UNIQUE , subtractIdPortsF , - 1 ) ;
+                    sortOpenIF( tin0P , stIdptOpenP , stIdptGossipP , stIdptTempP ) ;
+                    stIdptGossipP.sinkF( tin0P , countTC() , (byteT*)&idptGossipP , flSTACKsINK_UNIQUE , subtractIdPortsF , - 1 ) ;
                 {
                 if( pnRoot && *pnRoot == idptP )
                 portTimeC* pnRoot = stIdptOpenP ? (portTimeC*)&stIdptOpenP[ 1 ] : 0 ;
@@ -45,7 +45,7 @@
     switch( idWorkP )
     portTimeC idptGossipped ;
 {
-/*1*/portTimeC relayOldC::gossipIfIF( tin0S& tinBaseP , countT& idSerialLathHeaderP , stackC* const pStPop0P , stackC* const pStPop1P , stackC* const pStPop2P , stackC* const pStPop3P , stackC* const pStPop4P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP , stackC& stRelayAbsentP , portTimeC& idptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
+/*1*/portTimeC relayOldC::gossipIfIF( tin0S& tin0P , countT& idSerialLathHeaderP , stackC* const pStPop0P , stackC* const pStPop1P , stackC* const pStPop2P , stackC* const pStPop3P , stackC* const pStPop4P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP , stackC& stRelayAbsentP , portTimeC& idptGossipP , portTimeC& idptP , const countT idWorkP )/*1*/
 /**/
 */
 if idptGossipP is absent and is not already gossipped, then gossip about it

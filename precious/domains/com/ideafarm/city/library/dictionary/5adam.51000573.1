@@ -14,9 +14,9 @@ REST
     spk >> cFoo ;
     cFoo = 0 ;
 
-    etThread.delF( tinBaseP , postFoo ) ;
-    etThread.delF( tinBaseP , psttFoo ) ;
-    etThread.strMakeF( tinBaseP , LF , postFoo , psttFoo ) ; ___( postFoo ) ;
+    etThread.delF( tin0P , postFoo ) ;
+    etThread.delF( tin0P , psttFoo ) ;
+    etThread.strMakeF( tin0P , LF , postFoo , psttFoo ) ; ___( postFoo ) ;
     ZE( osTextT* , postFoo ) ;
 
     spk >> psttFoo ;
@@ -31,17 +31,17 @@ REST
     spk >> cFoo ;
     ZE( countT , cFoo ) ;
 
-    etThread.boxGetShadowF( tinBaseP , spkv , tDirName+T("ideafarm.key.")+T(NAME) ) ;
-    soulC spkv( tinBaseP , TAG( TAGiDnULL ) ) ;
+    etThread.boxGetShadowF( tin0P , spkv , tDirName+T("ideafarm.key.")+T(NAME) ) ;
+    soulC spkv( tin0P , TAG( TAGiDnULL ) ) ;
 {
 //TEST THE KEY FILE
 
-etThread.boxPutF( tinBaseP , tDirName+T("ideafarm.key.")+T(NAME) , spk ) ;
+etThread.boxPutF( tin0P , tDirName+T("ideafarm.key.")+T(NAME) , spk ) ;
 
 }
-    etThread.delF( tinBaseP , pbRandom ) ;
+    etThread.delF( tin0P , pbRandom ) ;
 
-    spk.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbRandom , TOCK ) ;
+    spk.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_byteTptr , pbRandom , TOCK ) ;
 
     }
         }
@@ -56,13 +56,13 @@ etThread.boxPutF( tinBaseP , tDirName+T("ideafarm.key.")+T(NAME) , spk ) ;
         ranUniC ru( TUCK ) ;
     {
 
-    etThread.newF( tinBaseP , LF , pbRandom , TOCK ) ; ___( pbRandom ) ;
+    etThread.newF( tin0P , LF , pbRandom , TOCK ) ; ___( pbRandom ) ;
     ZE( byteT* , pbRandom ) ;
 {
 
-etThread.delF( tinBaseP , psttName ) ;
+etThread.delF( tin0P , psttName ) ;
 spk << psttName ;
-etThread.strMakeF( tinBaseP , LF , psttName , T(NAME) ) ; ___( psttName ) ;
+etThread.strMakeF( tin0P , LF , psttName , T(NAME) ) ; ___( psttName ) ;
 ZE( strokeS* , psttName ) ;
 
 //spk << idDisk ; //format 1 only
@@ -70,13 +70,13 @@ spk << (countT)FINGERnEG_PERSONALkEY ; //format > 1
 //spk << (countT)0x83c95e47 ; // format 1 only
 spk << (countT)2 ; // idFormat
 spk << (countT)DDNUMB ;
-soulC spk( tinBaseP , TAG( TAGiDnULL ) ) ; // "PHYSICAL KEY"
+soulC spk( tin0P , TAG( TAGiDnULL ) ) ; // "PHYSICAL KEY"
 
-//etThread.strokeF( tinBaseP , T("serial number: ")+TF2(idDisk,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
-//countT idDisk = etThread.diskIdF( tinBaseP , T("///d/") ) ;
+//etThread.strokeF( tin0P , T("serial number: ")+TF2(idDisk,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+//countT idDisk = etThread.diskIdF( tin0P , T("///d/") ) ;
 
 }
-    etThread.boxPutF( tinBaseP , tDirName+T("ideafarm.readme.key.")+T(NAME) , tReadme , tReadme.csF( tinBaseP ) ) ;
+    etThread.boxPutF( tin0P , tDirName+T("ideafarm.readme.key.")+T(NAME) , tReadme , tReadme.csF( tin0P ) ) ;
     
     ;
         )

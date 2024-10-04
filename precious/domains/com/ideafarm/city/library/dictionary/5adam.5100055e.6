@@ -56,14 +56,14 @@
     BR( null , T("") ) ; //IMPLICIT "UP" TO FEMALE LEVEL
     BR( MALE , T("knowledge tree root") ) ;
 
-    etherP.newF( tinBaseP , LF , pbContentP , CBcONTENTaLLOC ) ; ___( pbContentP ) ;
+    etherP.newF( tin0P , LF , pbContentP , CBcONTENTaLLOC ) ; ___( pbContentP ) ;
 
-    TN( tNameShort , "" ) ; setTmShortF( tinBaseP , tNameShort ) ;
+    TN( tNameShort , "" ) ; setTmShortF( tin0P , tNameShort ) ;
     TN( tCity  , "" ) ; tCity  = T("IdeaFarm")+S3(2.0,scOld_mmFRAMEtO,0.25)+S2(saA1_TRADEmARK,sc_cALPHABET1)+S2(0,scOld_POPfRAME)+T("   City") ;
 
     ARGgET( cArgP )
 {
-voidT loadContentF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , byteT*& pbContentP , countT& cbContentP )
+voidT loadContentF( tin0S& tin0P , etherC& etherP , const countT cArgP , byteT*& pbContentP , countT& cbContentP )
 
 
 }
@@ -107,9 +107,9 @@ voidT loadContentF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , byte
         UPuP                
         
         }
-            etherP.delF( tinBaseP , psttOldClock ) ;
+            etherP.delF( tin0P , psttOldClock ) ;
             BR( MALE , T("")+S2(1,scOld_cPUSHoFFfRAME)+S3(1.0,scOld_mmFRAMEtO,1.0)+S2(0,scOld_POPoFFfRAME)+S3(1.0,scOld_mmFRAMEtO,1.0)+paramP.buClockLaunch+S2(0,scOld_POPfRAME)+T(psttOldClock)+S2((countT)animateClockBannerCBF,scOld_cANIMATEcBF)+S2(0,scOld_POPfRAME) ) ;
-            clockPhraseF( tinBaseP , etherP , psttOldClock , paramP.ppvtClockBanner , paramP.cpvtClockBanner , 1.0 / 16.0 ) ;
+            clockPhraseF( tin0P , etherP , psttOldClock , paramP.ppvtClockBanner , paramP.cpvtClockBanner , 1.0 / 16.0 ) ;
             ZE( strokeS* , psttOldClock ) ;
         {
 
@@ -125,9 +125,9 @@ voidT loadContentF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , byte
         UPuP                
         
         }
-            etherP.delF( tinBaseP , psttOldClock ) ;
+            etherP.delF( tin0P , psttOldClock ) ;
             BR( MALE , T("")+S2(1,scOld_cPUSHoFFfRAME)+S3(1.0,scOld_mmFRAMEtO,1.0)+S2(0,scOld_POPoFFfRAME)+S3(1.0,scOld_mmFRAMEtO,1.0)+paramP.buClock+S2(0,scOld_POPfRAME)+T(psttOldClock)+S2((countT)animateClockCBF,scOld_cANIMATEcBF)+S2(0,scOld_POPfRAME) ) ;
-            clockPhraseF( tinBaseP , etherP , psttOldClock , paramP.ppvtClock , paramP.cpvtClock , 1.0 / 16.0 ) ;
+            clockPhraseF( tin0P , etherP , psttOldClock , paramP.ppvtClock , paramP.cpvtClock , 1.0 / 16.0 ) ;
             ZE( strokeS* , psttOldClock ) ;
         {
     
@@ -476,7 +476,7 @@ voidT loadContentF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , byte
         //BR( MALE , paramP.buTest ) ;
             
         BR( MALE , T("")+S2(1,scOld_cPUSHoFFfRAME)+S3(1.0,scOld_mmFRAMEtO,1.0)+S2(0,scOld_POPoFFfRAME)+S2(0,scOld_FRAMEdETACH)+S2(ifcRGB_R2,scOld_cPUSHcOLOR)+S3(0.25,scOld_mmMOVEtO,0.0)+S3(0.25,scOld_mmLINEeNDtO,1.0)+S3(0.75,scOld_mmMOVEtO,0.0)+S3(0.75,scOld_mmLINEeNDtO,1.0)+S3(0.375,scOld_mmMOVEtO,0.25)+S3(0.625,scOld_mmLINEtO,0.25)+S3(0.625,scOld_mmLINEtO,0.75)+S3(0.375,scOld_mmLINEtO,0.75)+S3(0.375,scOld_mmLINEtO,0.25)+S3(0.0,scOld_mmMOVEtO,0.25)+S3(0.125,scOld_mmLINEtO,0.25)+S3(0.125,scOld_mmLINEtO,0.75)+S3(0.0,scOld_mmLINEtO,0.75)+S3(1.0,scOld_mmMOVEtO,0.25)+S3(0.875,scOld_mmLINEtO,0.25)+S3(0.875,scOld_mmLINEtO,0.75)+S3(1.0,scOld_mmLINEtO,0.75)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAMEdETACH)+paramP.vtEye+S2((countT)animateEyeCBF,scOld_cANIMATEcBF)+S2(0,scOld_POPfRAME) ) ;
-        loadContentTestButtonF( tinBaseP , cArgP ) ;
+        loadContentTestButtonF( tin0P , cArgP ) ;
         
         DOWNdOWN
     
@@ -490,7 +490,7 @@ voidT loadContentF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , byte
             }
                 BR( MALE , T("to secure this computer for demonstrating IPDOS (tm) to the general public, e.g. in a library, click this button: ")+paramP.buSecure ) ;
             {
-            if( !etherP.diskFileExistsF( tinBaseP , T("///d/ideafarm.home.")+TF1(etherC::ifc_idHomeIdisk_IF())+T(".setting.flag.secure") ) )
+            if( !etherP.diskFileExistsF( tin0P , T("///d/ideafarm.home.")+TF1(etherC::ifc_idHomeIdisk_IF())+T(".setting.flag.secure") ) )
 
         UPuP                
             
@@ -500,14 +500,14 @@ voidT loadContentF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , byte
     BR( null , T("") ) ; //IMPLICIT "UP" TO FEMALE LEVEL
     BR( MALE , T("knowledge tree root") ) ;
 
-    etherP.newF( tinBaseP , LF , pbContentP , CBcONTENTaLLOC ) ; ___( pbContentP ) ;
+    etherP.newF( tin0P , LF , pbContentP , CBcONTENTaLLOC ) ; ___( pbContentP ) ;
 
-    TN( tNameShort , "" ) ; setTmShortF( tinBaseP , tNameShort ) ;
+    TN( tNameShort , "" ) ; setTmShortF( tin0P , tNameShort ) ;
     TN( tCity  , "" ) ; tCity  = T("IdeaFarm")+S3(2.0,scOld_mmFRAMEtO,0.25)+S2(saA1_TRADEmARK,sc_cALPHABET1)+S2(0,scOld_POPfRAME)+T("   City") ;
 
     ARGgET( cArgP )
 {
-voidT loadContentHideF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , byteT*& pbContentP , countT& cbContentP )
+voidT loadContentHideF( tin0S& tin0P , etherC& etherP , const countT cArgP , byteT*& pbContentP , countT& cbContentP )
 
     paramP.treeKt.downF() ;
                                     \
@@ -524,88 +524,88 @@ voidT loadContentHideF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , 
 #define UPuP                        \
 
 }
-    if( bStrokeVtTest ) paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+paramP.vtTest+S2((countT)animateTestCBF,scOld_cANIMATEcBF)+S2(0,scOld_POPiDoBJECT) ) ;
+    if( bStrokeVtTest ) paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+paramP.vtTest+S2((countT)animateTestCBF,scOld_cANIMATEcBF)+S2(0,scOld_POPiDoBJECT) ) ;
 
     }
         }
             break ;
-            paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(16.0,scOld_mmMOVEpELtO,16.0)+S3(17.0,scOld_mmLINEpELtO,16.0)+S3(17.0,scOld_mmLINEpELtO,17.0)+S3(16.0,scOld_mmLINEpELtO,17.0)+S3(16.0,scOld_mmLINEpELtO,16.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(16.0,scOld_mmMOVEpELtO,16.0)+S3(17.0,scOld_mmLINEpELtO,16.0)+S3(17.0,scOld_mmLINEpELtO,17.0)+S3(16.0,scOld_mmLINEpELtO,17.0)+S3(16.0,scOld_mmLINEpELtO,16.0)+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 0xd : //SMALL RECTANGLE AHEAD OF ME TO MY UPPER RIGHT
         }
             break ;
 
-            paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-16.0,scOld_mmMOVEpELtO,0.0)+S3(-8.0,scOld_mmLINEeNDpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-16.0,scOld_mmMOVEpELtO,0.0)+S3(-8.0,scOld_mmLINEeNDpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
 
-            //AOK: paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-1.0,scOld_mmMOVEpELtO,0.0)+S3(0.0,scOld_mmLINEeNDpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
-            //AOK: paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(1.0,scOld_mmMOVEpELtO,0.0)+S3(0.0,scOld_mmLINEeNDpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
-            //AOK: paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEpELtO,0.0)+S3(1.0,scOld_mmLINEeNDpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
-            //AOK: paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEpELtO,0.0)+S3(-1.0,scOld_mmLINEeNDpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            //AOK: paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-1.0,scOld_mmMOVEpELtO,0.0)+S3(0.0,scOld_mmLINEeNDpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            //AOK: paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(1.0,scOld_mmMOVEpELtO,0.0)+S3(0.0,scOld_mmLINEeNDpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            //AOK: paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEpELtO,0.0)+S3(1.0,scOld_mmLINEeNDpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            //AOK: paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEpELtO,0.0)+S3(-1.0,scOld_mmLINEeNDpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
 
-            //paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-1.0,scOld_mmMOVEpELtO,1.0)+S3(1.0,scOld_mmLINEeNDpELtO,1.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            //paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-1.0,scOld_mmMOVEpELtO,1.0)+S3(1.0,scOld_mmLINEeNDpELtO,1.0)+S2(0,scOld_POPiDoBJECT) ) ;
 
-            //paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-16.0,scOld_mmMOVEpELtO,0.0)+S2(ifcRGB_G4,scOld_cPUSHcOLOR)+S3(16.0,scOld_mmLINEpELtO,0.0)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPiDoBJECT) ) ;
-            //paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-16.0,scOld_mmMOVEpELtO,0.0)+S3(0.0,scOld_mmLINEpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
-            //paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEpELtO,-16.0)+S3(0.0,scOld_mmLINEpELtO,16.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            //paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-16.0,scOld_mmMOVEpELtO,0.0)+S2(ifcRGB_G4,scOld_cPUSHcOLOR)+S3(16.0,scOld_mmLINEpELtO,0.0)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPiDoBJECT) ) ;
+            //paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-16.0,scOld_mmMOVEpELtO,0.0)+S3(0.0,scOld_mmLINEpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            //paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEpELtO,-16.0)+S3(0.0,scOld_mmLINEpELtO,16.0)+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 0xc : //HORIZONTAL LINE
         }
             break ;
-            paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEpELtO,0.0)+S3(0.0,scOld_mmLINEpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEpELtO,0.0)+S3(0.0,scOld_mmLINEpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 0xb : //NULL LENGTH HORIZONTAL LINE COINCIDENT WITH THE EYE
         }
             break ;
-            paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-16.0,scOld_mmMOVEpELtO,0.0)+S2(ifcRGB_R4,scOld_cPUSHcOLOR)+S3(0.0,scOld_mmLINEpELtO,0.0)+S2(0,scOld_POPcOLOR)/*+S2(ifcRGB_G4,scOld_cPUSHcOLOR)+S3(16.0,scOld_mmLINEpELtO,1.0)+S2(0,scOld_POPcOLOR)*/+S2(0,scOld_POPiDoBJECT) ) ;
+            paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-16.0,scOld_mmMOVEpELtO,0.0)+S2(ifcRGB_R4,scOld_cPUSHcOLOR)+S3(0.0,scOld_mmLINEpELtO,0.0)+S2(0,scOld_POPcOLOR)/*+S2(ifcRGB_G4,scOld_cPUSHcOLOR)+S3(16.0,scOld_mmLINEpELtO,1.0)+S2(0,scOld_POPcOLOR)*/+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 0xa : //OO HORIZONTAL LINES THAT SPLINE DIRECTLY BEHIND ME (TO TEST CORRECT MAINTAINANCE OF offSplit)
         }
             break ;
-            paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-1.0,scOld_mmMOVEpELtO,0.0)+S3(1.0,scOld_mmLINEpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(-1.0,scOld_mmMOVEpELtO,0.0)+S3(1.0,scOld_mmLINEpELtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 9 : //HORIZONTAL LINE DIRECTLY AHEAD OF ME
         }
             break ;
-            paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEpELtO,0.0)+S3(0.0,scOld_mmLINEpELtO,1.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEpELtO,0.0)+S3(0.0,scOld_mmLINEpELtO,1.0)+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 8 : //VERTICAL LINE
         }
             break ;
-            paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEtO,0.0)+S3(0.0,scOld_mmLINEtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
+            paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(0.0,scOld_mmMOVEtO,0.0)+S3(0.0,scOld_mmLINEtO,0.0)+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 7 : //U::NOTHING VISIBLE
         }
             break ;
             bStrokeVtTest = 1 ;
-            //paramP.vtTest.setF( tinBaseP , T("")/*+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)*/+S3(4.0,scOld_mmFRAMEcELLS,1.0)+S2(2,scOld_cPUSHiDoBJECT)+paramP.buTest+S2(0,scOld_POPiDoBJECT)+S2(0,scOld_POPfRAME)/*+S2(0,scOld_POPfRAME)*/ ) ;
-            paramP.vtTest.setF( tinBaseP , T("")+S2(2,scOld_cPUSHiDoBJECT)+paramP.buTest+S2(0,scOld_POPiDoBJECT) ) ;
+            //paramP.vtTest.setF( tin0P , T("")/*+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)*/+S3(4.0,scOld_mmFRAMEcELLS,1.0)+S2(2,scOld_cPUSHiDoBJECT)+paramP.buTest+S2(0,scOld_POPiDoBJECT)+S2(0,scOld_POPfRAME)/*+S2(0,scOld_POPfRAME)*/ ) ;
+            paramP.vtTest.setF( tin0P , T("")+S2(2,scOld_cPUSHiDoBJECT)+paramP.buTest+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 6 : //BUTTON
         }
             break ;
             bStrokeVtTest = 1 ;
-            paramP.vtTest.setF( tinBaseP , T("")+S2(2,scOld_cPUSHiDoBJECT)+T("X")+S2(0,scOld_POPiDoBJECT) ) ;
+            paramP.vtTest.setF( tin0P , T("")+S2(2,scOld_cPUSHiDoBJECT)+T("X")+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 5 : // 'X' SET INTO vtTest; vtTest STROKED ONTO PAPER
         }
             break ;
             bStrokeVtTest = 1 ;
-            paramP.vtTest.setF( tinBaseP , T("")+S2(2,scOld_cPUSHiDoBJECT)+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3((measureT)5.0,scOld_mmFRAMEcELLS,(measureT)1.0)+T("hello")+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPiDoBJECT) ) ;
+            paramP.vtTest.setF( tin0P , T("")+S2(2,scOld_cPUSHiDoBJECT)+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3((measureT)5.0,scOld_mmFRAMEcELLS,(measureT)1.0)+T("hello")+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 4 : // "hello" SQUISHED INTO A SINGLE STROKING FRAME ON PAPER
         }
             break ;
-            paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(16.0,scOld_mmFRAMEcELLS,2.0)+S2(0,scOld_WRAPoN)+S2(ifcRGB_G4,scOld_cPUSHcOLOR)+T("this is the day that the Lord has made.")+S2(0,scOld_POPcOLOR)+S2(ifcRGB_R4,scOld_cPUSHcOLOR)+T("  let us rejoice and be glad")+S2(0,scOld_POPcOLOR)+S2(0,scOld_WRAPoFF)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPiDoBJECT) ) ;
+            paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+S3(16.0,scOld_mmFRAMEcELLS,2.0)+S2(0,scOld_WRAPoN)+S2(ifcRGB_G4,scOld_cPUSHcOLOR)+T("this is the day that the Lord has made.")+S2(0,scOld_POPcOLOR)+S2(ifcRGB_R4,scOld_cPUSHcOLOR)+T("  let us rejoice and be glad")+S2(0,scOld_POPcOLOR)+S2(0,scOld_WRAPoFF)+S2(0,scOld_POPfRAME)+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 3 : // WRAPPED TEXT STROKED ONTO PAPER
         }
             break ;
-            paper.strokeF( tinBaseP , T("")+S2(32,scOld_cPUSHsIDES)+S2(1,scOld_cPUSHiDoBJECT)+S3(0.5,scOld_mmRECTANGLEtO,0.5)+S2(0,scOld_POPiDoBJECT)+S2(0,scOld_POPsIDES) ) ;
+            paper.strokeF( tin0P , T("")+S2(32,scOld_cPUSHsIDES)+S2(1,scOld_cPUSHiDoBJECT)+S3(0.5,scOld_mmRECTANGLEtO,0.5)+S2(0,scOld_POPiDoBJECT)+S2(0,scOld_POPsIDES) ) ;
         {
         case 2 : // RECTANGLE STROKED ONTO PAPER
         }
             break ;
-            paper.strokeF( tinBaseP , T("")+S2(1,scOld_cPUSHiDoBJECT)+T("E")/*+S2(0,scOld_POPiDoBJECT)*/+S2(0,scOld_POPiDoBJECT) ) ;
+            paper.strokeF( tin0P , T("")+S2(1,scOld_cPUSHiDoBJECT)+T("E")/*+S2(0,scOld_POPiDoBJECT)*/+S2(0,scOld_POPiDoBJECT) ) ;
         {
         case 1 : // 'E' STROKED ONTO PAPER
     {
@@ -614,18 +614,18 @@ voidT loadContentHideF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , 
     ZE( boolT , bStrokeVtTest ) ;
 
     paperOldC& paper = (paperOldC&)paper0 ;
-    const paperOldC& paper0 = paramP.eye.selectPaperF( tinBaseP , ifcIDcMDpAPERsELECT_QUERYrENDER ) ;
+    const paperOldC& paper0 = paramP.eye.selectPaperF( tin0P , ifcIDcMDpAPERsELECT_QUERYrENDER ) ;
     
     ARGgET( cArgP )
 {
-voidT loadContentTestButtonF( tin0S& tinBaseP , const countT cArgP )
+voidT loadContentTestButtonF( tin0S& tin0P , const countT cArgP )
 
 }
     }
-        if( bList.psttHint ) hintF( tinBaseP , etherP , cArgP , bList.psttHint , bList.time1Hint , bList.flagsHint ) ;
+        if( bList.psttHint ) hintF( tin0P , etherP , cArgP , bList.psttHint , bList.time1Hint , bList.flagsHint ) ;
         buttonListS& bList = *(buttonListS*)&paramP.stButtonList[ 0 ] ;
 
-        vtButtonsF( tinBaseP , etherP , cArgP ) ;
+        vtButtonsF( tin0P , etherP , cArgP ) ;
         }
             paramP.stButtonList >> pb_bList ;
             byteT* pb_bList = (byteT*)&bDoomed ;
@@ -636,37 +636,37 @@ voidT loadContentTestButtonF( tin0S& tinBaseP , const countT cArgP )
     
     ARGgET( cArgP )
 {
-voidT popButtonsF( tin0S& tinBaseP , etherC& etherP , const countT cArgP )
+voidT popButtonsF( tin0S& tin0P , etherC& etherP , const countT cArgP )
 
 }
-    if( psttHintP ) hintF( tinBaseP , etherP , cArgP , psttHintP , time1HintP , flagsHintP ) ;
+    if( psttHintP ) hintF( tin0P , etherP , cArgP , psttHintP , time1HintP , flagsHintP ) ;
 
-    vtButtonsF( tinBaseP , etherP , cArgP ) ;
+    vtButtonsF( tin0P , etherP , cArgP ) ;
     }
         paramP.stButtonList << (byteT*)&buttonList ; buttonList.psttButtons = buttonList.psttHint = 0 ;
-        buttonListS buttonList( tinBaseP , etherP , psttButtonsP , csttButtonsMinP , psttHintP , time1HintP , flagsHintP ) ;
+        buttonListS buttonList( tin0P , etherP , psttButtonsP , csttButtonsMinP , psttHintP , time1HintP , flagsHintP ) ;
     {
     
     ARGgET( cArgP )
 {
-voidT pushButtonsF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const strokeS* const psttButtonsP , const countT csttButtonsMinP , const strokeS* const psttHintP , const countT time1HintP , const flagsT flagsHintP )
+voidT pushButtonsF( tin0S& tin0P , etherC& etherP , const countT cArgP , const strokeS* const psttButtonsP , const countT csttButtonsMinP , const strokeS* const psttHintP , const countT time1HintP , const flagsT flagsHintP )
 
 }
-    if( psttHintP ) hintF( tinBaseP , etherP , cArgP , psttHintP , time1HintP , flagsHintP ) ;
+    if( psttHintP ) hintF( tin0P , etherP , cArgP , psttHintP , time1HintP , flagsHintP ) ;
 
-    vtButtonsF( tinBaseP , etherP , cArgP ) ;
+    vtButtonsF( tin0P , etherP , cArgP ) ;
     bList.flagsHint = flagsHintP ;
     bList.time1Hint = time1HintP ;
     bList.csttMin = csttButtonsMinP ;
-    etherP.strMakeF( tinBaseP , LF , bList.psttHint    , psttHintP    ) ; ___( bList.psttHint ) ;
-    etherP.strMakeF( tinBaseP , LF , bList.psttButtons , psttButtonsP ) ; ___( bList.psttButtons ) ;
-    etherP.delF( tinBaseP , bList.psttHint ) ;
-    etherP.delF( tinBaseP , bList.psttButtons ) ;
+    etherP.strMakeF( tin0P , LF , bList.psttHint    , psttHintP    ) ; ___( bList.psttHint ) ;
+    etherP.strMakeF( tin0P , LF , bList.psttButtons , psttButtonsP ) ; ___( bList.psttButtons ) ;
+    etherP.delF( tin0P , bList.psttHint ) ;
+    etherP.delF( tin0P , bList.psttButtons ) ;
     buttonListS& bList = *(buttonListS*)&paramP.stButtonList[ 0 ] ;
 
     ARGgET( cArgP )
 {
-voidT replaceButtonsF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const strokeS* const psttButtonsP , const countT csttButtonsMinP , const strokeS* const psttHintP , const countT time1HintP , const flagsT flagsHintP )
+voidT replaceButtonsF( tin0S& tin0P , etherC& etherP , const countT cArgP , const strokeS* const psttButtonsP , const countT csttButtonsMinP , const strokeS* const psttHintP , const countT time1HintP , const flagsT flagsHintP )
 
 #include postADAMhEADER
 

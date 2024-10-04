@@ -9,7 +9,7 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 CONoUTrAW( "ok\r\n" ) ;
 
 //while( pbImage ) ;
@@ -25,7 +25,7 @@ while( !ether && ~hBooks ) ;
         CONoUTrAW( "no more data\r\n" ) ;
     {
     if( !pbImage )
-    outer.pbSoulF( tinBaseP , pbImage , cbImage , &hBooks ) ;
+    outer.pbSoulF( tin0P , pbImage , cbImage , &hBooks ) ;
     cbImage = 0 ;
     pbImage = 0 ;
 {
@@ -33,7 +33,7 @@ do
 ZE( countT       , cbImage ) ;
 ZE( const byteT* , pbImage ) ;
 
-handleC hBooks( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+handleC hBooks( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
 
 etThread.osThreadF( TaRG1( tmWorkF ) , (countT)&outer ) ;
 
@@ -41,7 +41,7 @@ outer << postSay4 ;
 outer << postSay3 ;
 outer << postSay2 ;
 outer << postSay1 ;
-soulC outer( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , "outer" ) ;
+soulC outer( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "outer" ) ;
 
 osTextT* postSay4 = tSay4 ;
 osTextT* postSay3 = tSay3 ;
@@ -57,12 +57,12 @@ TODO
 DONE( tmWorkF )
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
 
         outerP << postSay ;
     {
     while( !ether )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     soulC& outerP = *(soulC*)pTaskP->c1 ;
 
     osTextT postSay[] = "howdy!" ;
@@ -76,11 +76,11 @@ TASK( tmWorkF )
 // IT IS THIS SPANNING THAT THE INSTANT ADAM IS DESIGNED TO TEST / EXERCIZE
 // THE TINY BOOK SIZE CAUSES THE SOUL IMAGE TO BE STORED IN MULTIPLE BOOKS WITHIN *soulC::pJot
 //
-//     if( postNameJot && !pJot ) { pJot = new( 0 , tinBaseP , LF ) jotC( tinBaseP , postNameJot , flJOTc_WRITE | flJOTc_DELETE | flJOTc_PRIVATE ) ; ___( pJot ) ; }
+//     if( postNameJot && !pJot ) { pJot = new( 0 , tin0P , LF ) jotC( tin0P , postNameJot , flJOTc_WRITE | flJOTc_DELETE | flJOTc_PRIVATE ) ; ___( pJot ) ; }
 //
 // FOR PRODUCTION:
 //
-//     if( postNameJot && !pJot ) { pJot = new( 0 , tinBaseP , LF ) jotC( tinBaseP , postNameJot , flJOTc_WRITE | flJOTc_DELETE | flJOTc_PRIVATE , 0x18/*U::TO FIND A BUG; REMOVE ", 0x18" FOR PRODUCTION*/ ) ; ___( pJot ) ; }
+//     if( postNameJot && !pJot ) { pJot = new( 0 , tin0P , LF ) jotC( tin0P , postNameJot , flJOTc_WRITE | flJOTc_DELETE | flJOTc_PRIVATE , 0x18/*U::TO FIND A BUG; REMOVE ", 0x18" FOR PRODUCTION*/ ) ; ___( pJot ) ; }
 //
 // FOR THIS ADAM:
 //

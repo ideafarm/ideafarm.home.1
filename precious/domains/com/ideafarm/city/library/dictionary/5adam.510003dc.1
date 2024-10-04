@@ -9,25 +9,25 @@
 
 REST
 
-etThread.strokeF( tinBaseP , T("ok\r\n") ) ;
+etThread.strokeF( tin0P , T("ok\r\n") ) ;
 
-etThread.delF( tinBaseP , postOldClock ) ;
-etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/ed30104/clock.ttt") , postOldClock , costClock ) ;
-etThread.delF( tinBaseP , psttOldClock ) ;
-countT costClock = etThread.strMakeF( tinBaseP , LF , postOldClock , psttOldClock ) ; ___( postOldClock ) ;
+etThread.delF( tin0P , postOldClock ) ;
+etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/ed30104/clock.ttt") , postOldClock , costClock ) ;
+etThread.delF( tin0P , psttOldClock ) ;
+countT costClock = etThread.strMakeF( tin0P , LF , postOldClock , psttOldClock ) ; ___( postOldClock ) ;
 ZE( osTextT* , postOldClock ) ;
-etThread.strClockOldF( tinBaseP , psttOldClock , time1 ) ; ___( psttOldClock ) ;
+etThread.strClockOldF( tin0P , psttOldClock , time1 ) ; ___( psttOldClock ) ;
 ZE( strokeS* , psttOldClock ) ;
 
-etThread.delF( tinBaseP , postOldCalendar ) ;
-etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/ed30104/calendar.ttt") , postOldCalendar , costCalendar ) ;
-etThread.delF( tinBaseP , psttOldCalendar ) ;
-countT costCalendar = etThread.strMakeF( tinBaseP , LF , postOldCalendar , psttOldCalendar ) ; ___( postOldCalendar ) ;
+etThread.delF( tin0P , postOldCalendar ) ;
+etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/ed30104/calendar.ttt") , postOldCalendar , costCalendar ) ;
+etThread.delF( tin0P , psttOldCalendar ) ;
+countT costCalendar = etThread.strMakeF( tin0P , LF , postOldCalendar , psttOldCalendar ) ; ___( postOldCalendar ) ;
 ZE( osTextT* , postOldCalendar ) ;
-etThread.strCalendarF( tinBaseP , psttOldCalendar , time2 + scDaysOff ) ; ___( psttOldCalendar ) ;
+etThread.strCalendarF( tin0P , psttOldCalendar , time2 + scDaysOff ) ; ___( psttOldCalendar ) ;
 ZE( strokeS* , psttOldCalendar ) ;
 
-etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
+etThread.osTimeNowF( tin0P , time1 , time2 ) ;
 ZE( sCountT , time2 ) ;
 ZE( countT , time1 ) ;
 
@@ -35,14 +35,14 @@ ZE( countT , time1 ) ;
     }
         }
             break ;
-            etThread.strokeF( tinBaseP , T("parm: \"")+T(psttc1)+T("\" value: ")+T(scDaysOff)+T("\r\n") ) ; //U::
-            scDaysOff = etThread.strDigitsToSCountF( tinBaseP , psttc1 ) ;
+            etThread.strokeF( tin0P , T("parm: \"")+T(psttc1)+T("\" value: ")+T(scDaysOff)+T("\r\n") ) ; //U::
+            scDaysOff = etThread.strDigitsToSCountF( tin0P , psttc1 ) ;
         {
         if( ++ idp == 3 )
     {
     FORsTRINGSiN1( pstt1p )
     ZE( countT , idp )
-    strokeS*& pstt1p = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
+    strokeS*& pstt1p = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
 {
 ZE( countT , scDaysOff ) ;
 

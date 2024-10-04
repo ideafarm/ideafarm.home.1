@@ -9,15 +9,15 @@
 
 }
     }
-        strFuseF( tinBaseP , psttP , T("hour    ")+TF3(offHour,0,2)+T("  ")+TPS("",offHour,S1C('-'))+T("*")+TPS("",0xf-(offHour),S1C('-'))+T("\r\n") ) ;
+        strFuseF( tin0P , psttP , T("hour    ")+TF3(offHour,0,2)+T("  ")+TPS("",offHour,S1C('-'))+T("*")+TPS("",0xf-(offHour),S1C('-'))+T("\r\n") ) ;
 
-        strFuseF( tinBaseP , psttP , T("**")+TPS("",0xe-(offStrong*0x02),S1C('-'))+T("\r\n") ) ;
-        cTries = offStrong ; while( cTries -- ) { strFuseF( tinBaseP , psttP , T("--") ) ; ___( psttP ) ; }
-        strFuseF( tinBaseP , psttP , T("strong  ")+TF3(offStrong,0,2)+T("  ") ) ;
+        strFuseF( tin0P , psttP , T("**")+TPS("",0xe-(offStrong*0x02),S1C('-'))+T("\r\n") ) ;
+        cTries = offStrong ; while( cTries -- ) { strFuseF( tin0P , psttP , T("--") ) ; ___( psttP ) ; }
+        strFuseF( tin0P , psttP , T("strong  ")+TF3(offStrong,0,2)+T("  ") ) ;
 
-        strFuseF( tinBaseP , psttP , T("****")+TPS("",0xc-(offQtr*0x04),S1C('-'))+T("\r\n") ) ;
-        cTries = offQtr ; while( cTries -- ) { strFuseF( tinBaseP , psttP , T("----") ) ; ___( psttP ) ; }
-        strFuseF( tinBaseP , psttP , T("qtr     ")+TF3(offQtr   ,0,2)+T("  ") ) ;
+        strFuseF( tin0P , psttP , T("****")+TPS("",0xc-(offQtr*0x04),S1C('-'))+T("\r\n") ) ;
+        cTries = offQtr ; while( cTries -- ) { strFuseF( tin0P , psttP , T("----") ) ; ___( psttP ) ; }
+        strFuseF( tin0P , psttP , T("qtr     ")+TF3(offQtr   ,0,2)+T("  ") ) ;
 
         ZE( countT , cTries ) ;
     {
@@ -34,7 +34,7 @@
         T("dock    ")+TF3(offDock  ,0,2)+T("  ")+TPS("",offDock  /0x10,S1C('-'))+T("*")+TPS("",0xf-(offDock/0x10),S1C('-'))+T("\r\n")+
         T("dick    ")+TF3(offDick  ,0,2)+T("  ")+TPS("",offDick  /0x10,S1C('-'))+T("*")+TPS("",0xf-(offDick/0x10),S1C('-'))+T("\r\n")+
 
-    strFuseF( tinBaseP , psttP ,
+    strFuseF( tin0P , psttP ,
 
     countT offHour   = offHOUR(   time1 ) ;
     countT offStrong = offSTRONG( time2 ) ;
@@ -48,12 +48,12 @@
     countT offDock   = offDOCK(   time2 ) ;
     countT offDick   = offDICK(   time2 ) ;
 
-    osTimeNowF( tinBaseP , time1 , time2 ) ;
+    osTimeNowF( tin0P , time1 , time2 ) ;
     ZE( sCountT , time2 ) ;
     ZE( countT , time1 ) ;
 
     }
-        strMakeF( tinBaseP , LF , psttP , T("") , 0x56f ) ; //CALLER MUST TAG ___( psttP ) ; } //U: 0x56f --> CORRECT VALUE
+        strMakeF( tin0P , LF , psttP , T("") , 0x56f ) ; //CALLER MUST TAG ___( psttP ) ; } //U: 0x56f --> CORRECT VALUE
     {
     if( !psttP )
 
@@ -65,14 +65,14 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strClockOldF( tin0S& tinBaseP , strokeS*& psttP )/*1*/
+/*1*/voidT etherC::strClockOldF( tin0S& tin0P , strokeS*& psttP )/*1*/
 
 /**/
 */
   if not 0, must have enough extra strokes to hold the entire table
   can be 0
  psttP
- tinBaseP
+ tin0P
 arguments
 appends a nicely formatted clock face, modeling the current time, to psttP
   \<A HREF=\"5.d130104.1.1.0.html\"\>d130104:  WAKEsHOW( "example.simplest.func.10300fb.etherC.strClockOldF" )\</A\>

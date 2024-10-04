@@ -9,18 +9,18 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.delF( tinBaseP , pNicNameWhite ) ;
-sgnDone_tmUdpFilesEndpointThrowerF.waitF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("waiting for endpoints to end") ) ;
+etThread.delF( tin0P , pNicNameWhite ) ;
+sgnDone_tmUdpFilesEndpointThrowerF.waitF( tin0P ) ;
+etThread.traceF( tin0P , T("waiting for endpoints to end") ) ;
 bQuit = 1 ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TICK ) ;
+    ++ s ; ether.osSleepF( tin0P , TICK ) ;
 
-    etThread.diskWalkF( tinBaseP , cDirs , cFiles , tFilesOut , ether , flDISKwALK_null , workCBF , pcArg , 0 , 0 ) ;
+    etThread.diskWalkF( tin0P , cDirs , cFiles , tFilesOut , ether , flDISKwALK_null , workCBF , pcArg , 0 , 0 ) ;
     countT pcArg[] = { (countT)&secretToUse } ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs  ) ;
@@ -29,22 +29,22 @@ while( !ether )
 TN( tFilesOut , "///ideafarm/files.out/" ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 {
 while( !secretToUse && !ether )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
 etThread.osThreadF( TaRG2sGNdONE( tmUdpFilesEndpointThrowerF , sgnDone_tmUdpFilesEndpointThrowerF ) , (countT)&bQuit , (countT)&psoEndpointThrower , (countT)&grab_psoEndpointThrower , (countT)&pNicNameWhite , (countT)&cNicNameWhite , (countT)&grab_pNicNameWhite , (countT)&nicNameToUse , (countT)&secretToUse ) ;
-signC sgnDone_tmUdpFilesEndpointThrowerF(   tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmUdpFilesEndpointThrowerF(   tin0P , TAG( TAGiDnULL ) ) ;
 ZE( boolT , bQuit ) ;
-grabC grab_psoEndpointThrower(   tinBaseP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
+grabC grab_psoEndpointThrower(   tin0P , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
 ZE( socketC* , psoEndpointThrower ) ;
 ZE( countT , secretToUse ) ;
 nicNameC nicNameToUse ;
 TN( tb4 , "    " ) ;
 ZE( countT    , cNicNameWhite ) ;
 ZE( nicNameC* , pNicNameWhite ) ;
-grabC grab_pNicNameWhite( tinBaseP , TAG( TAGiDnULL ) ) ;
+grabC grab_pNicNameWhite( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -54,26 +54,26 @@ TODO
     }
         }
             }
-                etThread.ifcUdpFileThrowFileF( tinBaseP , ether , idGram , secretToUseP , cThrown , cb04Thrown , psttzLongOut ) ;
+                etThread.ifcUdpFileThrowFileF( tin0P , ether , idGram , secretToUseP , cThrown , cb04Thrown , psttzLongOut ) ;
                 ZE( count04T , cb04Thrown ) ;
                 ZE( countT   , cThrown    ) ;
                 ZE( countT   , idGram     ) ;
             {
             if( !bDir )
-            etThread.traceF( tinBaseP , T("=========================================================== ")+tLongOut ) ;
+            etThread.traceF( tin0P , T("=========================================================== ")+tLongOut ) ;
             boolT bDir = psttzLongOut[ CSpREFIX - 1 + psttzLongOut->idAdam ].idAdam == '/' ;
 
             strokeS* psttzLongOut = tLongOut ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             TN( tLongOut , iffn ) ;
-            ifFileNameC iffn( tinBaseP , etThread , postNameP ) ;
+            ifFileNameC iffn( tin0P , etThread , postNameP ) ;
         {
         if( !bQuitP )
 
         countT& secretToUseP = *(countT*)pcArgP[ 0 ] ;
 
         etherC& ether    = etherC::etPrimeIF() ;
-        etherC& etThread = *((tin9S&)tinBaseP).pEther ;
+        etherC& etThread = *((tin9S&)tin0P).pEther ;
 
         _IO_
     {
@@ -81,11 +81,11 @@ TODO
 
     _IO_
 {
-boolT workCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT workCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 DONE( tmUdpFilesEndpointThrowerF )
 }
-    etThread.ifcUdpFilesEndpointF( tinBaseP , bQuitP , idPortEndpointThrowerNU , TICK >> 0 , psoEndpointP , grab_psoEndpointP , pNicNameWhiteP , cNicNameWhiteP , grab_pNicNameWhiteP , pNicNameToUseP , pSecretToUseP ) ;
+    etThread.ifcUdpFilesEndpointF( tin0P , bQuitP , idPortEndpointThrowerNU , TICK >> 0 , psoEndpointP , grab_psoEndpointP , pNicNameWhiteP , cNicNameWhiteP , grab_pNicNameWhiteP , pNicNameToUseP , pSecretToUseP ) ;
     ZE( countT , idPortEndpointThrowerNU ) ;
 
     countT*          pSecretToUseP         =           (countT*)pTaskP->c8 ;

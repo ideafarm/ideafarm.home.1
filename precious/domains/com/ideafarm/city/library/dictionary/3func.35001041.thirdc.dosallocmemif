@@ -19,9 +19,9 @@
     #if defined( SHOWmEMgRAINS )
     //CS:PSEUDOdUPLICATE: 35001041 3500105b 3300000d 3300002d
 
-    osTraceWrongNodeIF( tinBaseP , (byteT*)pvP , "dosAllocMemIF: pvP" ) ;
+    osTraceWrongNodeIF( tin0P , (byteT*)pvP , "dosAllocMemIF: pvP" ) ;
     #endif
-        pvP = (voidT*)((tin9S&)tinBaseP).brcRaw ;
+        pvP = (voidT*)((tin9S&)tin0P).brcRaw ;
         BOSpOOP
         BOS( WHATgbo , BOSoK , GlobalAlloc( 0 , cbP ) )
     #elif defined( __NT__ )
@@ -39,7 +39,7 @@
     {
     IFbEcAREFUL
 {
-/**//*1*/voidT thirdC::dosAllocMemIF( tin0S& tinBaseP , voidT*& pvP , const countT cbP )/*1*/
+/**//*1*/voidT thirdC::dosAllocMemIF( tin0S& tin0P , voidT*& pvP , const countT cbP )/*1*/
 */
     this example specifies that the memory must be exactly large enough to hold 0x1000 countT objects
    example: 0x1000 * sizeof( countT )

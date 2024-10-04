@@ -10,7 +10,7 @@
 }
     return bDone ;
 
-    ((tin9S&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
+    ((tin9S&)tin0P).pag5->frPaper.grab.ungrabF( tin0P ) ;
     }
         }
             break ;
@@ -21,7 +21,7 @@
                         }
                             }
                                 bDone = 1 ;
-                                freshHullF( tinBaseP ) ;
+                                freshHullF( tin0P ) ;
         
                                 (*(eyeStateOldS*)&state).vaHull_z = sqmr * state.vaHull_z ;
                                 (*(eyeStateOldS*)&state).vaHull_y = sqmr * state.vaHull_y ;
@@ -39,13 +39,13 @@
                                     sqmr2( 1 , 3 ) = 0.0 ;
                                     sqmr2( 1 , 2 ) = 0.0 ;
                                     sqmr2( 1 , 1 ) = 1.0 ;
-                                    sqMatrixOldC sqmr2( tinBaseP , etherP ) ;
+                                    sqMatrixOldC sqmr2( tin0P , etherP ) ;
             
-                                    measureT cospAimv = ((tin9S&)tinBaseP).brcm04Raw ;
+                                    measureT cospAimv = ((tin9S&)tin0P).brcm04Raw ;
                                     BOSmEASURE04( WHATgbo , cos( PI / 2 + raAimv ) )
-                                    measureT cosmAimv = ((tin9S&)tinBaseP).brcm04Raw ;
+                                    measureT cosmAimv = ((tin9S&)tin0P).brcm04Raw ;
                                     BOSmEASURE04( WHATgbo , cos( PI / 2 - raAimv ) )
-                                    measureT cosAimv  = ((tin9S&)tinBaseP).brcm04Raw ;
+                                    measureT cosAimv  = ((tin9S&)tin0P).brcm04Raw ;
                                     BOSmEASURE04( WHATgbo , cos( raAimv ) )
             
                                     */
@@ -78,11 +78,11 @@
                                     sqmr( 1 , 2 ) = 0.0 ;
                                     sqmr( 1 , 1 ) = cosAimh ;
             
-                                    measureT cospAimh = ((tin9S&)tinBaseP).brcm04Raw ;
+                                    measureT cospAimh = ((tin9S&)tin0P).brcm04Raw ;
                                     BOSmEASURE04( WHATgbo , cos( PI / 2 + raAimh ) )
-                                    measureT cosmAimh = ((tin9S&)tinBaseP).brcm04Raw ;
+                                    measureT cosmAimh = ((tin9S&)tin0P).brcm04Raw ;
                                     BOSmEASURE04( WHATgbo , cos( PI / 2 - raAimh ) )
-                                    measureT cosAimh = ((tin9S&)tinBaseP).brcm04Raw ;
+                                    measureT cosAimh = ((tin9S&)tin0P).brcm04Raw ;
                                     BOSmEASURE04( WHATgbo , cos( raAimh ) )
             
                                     */
@@ -105,7 +105,7 @@
             
                                     /*
             
-                                    //hintF( tinBaseP , etherP , pcNotesP[ 2 ] , T("raAimh,raAimv: ")+TF1(raAimh)+T(" ")+TF1(raAimv) ) ;
+                                    //hintF( tin0P , etherP , pcNotesP[ 2 ] , T("raAimh,raAimv: ")+TF1(raAimh)+T(" ")+TF1(raAimv) ) ;
                                     const measureT raAimv = - ( mRatioRow - 0.5 ) * 1.0 * PI ;
                                     const measureT raAimh = - ( mRatioCol - 0.5 ) * 2.0 * PI ;
                                 {
@@ -121,11 +121,11 @@
                                     sqmr( 1 , 2 ) = cospTilt ;
                                     sqmr( 1 , 1 ) = cosTilt ;
             
-                                    measureT cospTilt = ((tin9S&)tinBaseP).brcm04Raw ;
+                                    measureT cospTilt = ((tin9S&)tin0P).brcm04Raw ;
                                     BOSmEASURE04( WHATgbo , cos( PI / 2 + raTilt ) )
-                                    measureT cosmTilt = ((tin9S&)tinBaseP).brcm04Raw ;
+                                    measureT cosmTilt = ((tin9S&)tin0P).brcm04Raw ;
                                     BOSmEASURE04( WHATgbo , cos( PI / 2 - raTilt ) )
-                                    measureT cosTilt = ((tin9S&)tinBaseP).brcm04Raw ;
+                                    measureT cosTilt = ((tin9S&)tin0P).brcm04Raw ;
                                     BOSmEASURE04( WHATgbo , cos( raTilt ) )
             
                                     */
@@ -148,12 +148,12 @@
             
                                     /*
             
-                                    //hintF( tinBaseP , etherP , pcNotesP[ 2 ] , T("raTilt: ")+TF1(raTilt) ) ;
-                                    const measureT raTilt = - ((tin9S&)tinBaseP).brcm04Raw ;
+                                    //hintF( tin0P , etherP , pcNotesP[ 2 ] , T("raTilt: ")+TF1(raTilt) ) ;
+                                    const measureT raTilt = - ((tin9S&)tin0P).brcm04Raw ;
                                     BOSmEASURE04( WHATgbo , atan2( mRatioCol - 0.5 , mRatioRow - 0.5 ) )
                                 {
                                 if( idTool == ifcIDtYPEtOOL_MOUSEbUTTONrIGHT )
-                                sqMatrixOldC sqmr( tinBaseP , etherP ) ;
+                                sqMatrixOldC sqmr( tin0P , etherP ) ;
             
                                 const measureT mRatioRow = ( idRow - mIdRowMin ) / ( mRows - 1.0 ) ; // [0.0,1.0]
                                 const measureT mRatioCol = ( idCol - mIdColMin ) / ( mCols - 1.0 ) ; // [0.0,1.0]
@@ -186,9 +186,9 @@
 
     ZE( boolT , bDone ) ;
 
-    ((tin9S&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ((tin9S&)tin0P).pag5->frPaper.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 {
-/*1*/boolT eyeOldC::obeyToolActionF( tin0S& tinBaseP , etherC& etherP , const countT idTypeCallP , const countT* const pcNotesP , sadamC& sadamP )/*1*/
+/*1*/boolT eyeOldC::obeyToolActionF( tin0S& tin0P , etherC& etherP , const countT idTypeCallP , const countT* const pcNotesP , sadamC& sadamP )/*1*/
 
 /**/
 

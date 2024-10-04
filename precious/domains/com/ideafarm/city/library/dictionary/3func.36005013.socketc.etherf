@@ -10,14 +10,14 @@
 }
     dec02AM( cFunctionsPending ) ;
     }
-        bWrite.ungrabF( tinBaseP ) ;
-        bRead.ungrabF( tinBaseP ) ;
+        bWrite.ungrabF( tin0P ) ;
+        bRead.ungrabF( tin0P ) ;
 
-        //dad.etherF( tinBaseP , etherP ) ;
-        //mom.etherF( tinBaseP , etherP ) ;
+        //dad.etherF( tin0P , etherP ) ;
+        //mom.etherF( tin0P , etherP ) ;
 
         //BUT FAILURES IN mom AND dad SHOULD NEVER OCCUR AND SHOULD CAUSE VISIBLE REPORTING AND/OR CATASTROPHIC FAILURE
-        //TYPICALLY, A socketC INSTANCE USES *((tin9S&)tinBaseP).pEtScratch BECAUSE IT EXPECTS NETWORK FAILURES
+        //TYPICALLY, A socketC INSTANCE USES *((tin9S&)tin0P).pEtScratch BECAUSE IT EXPECTS NETWORK FAILURES
         //IT IS DESIRABLE TO HAVE FAILURES IN mom AND dad CAUSE SMELLY POOP OR EVEN BLAMMO
         //CONJ: IT IS NOT DESIRABLE FOR mom AND dad TO USE THE ETHER THAT socketC INSTANCE USES
         //NOTE THAT mom AND dad WILL CONTINUE TO USE THE SAME etherC.  spouseC CAN BE ENHANCED TO SUPPORT etherF IF THAT BECOMES DESIRABLE
@@ -26,14 +26,14 @@
         pPoop = &(const poopC&)etherP ;
         pEther = &etherP ; // ASSUME: THIS IS COMPILED TO A SINGLE ASSEMBLY INSTRUCTION, SO OTHER THREADS WILL NEVER GET AN INVALID POINTER VALUE
         countT const ecOld = *pEther ;
-        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-        bWrite.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        bWrite.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         _IO_
         SCOOPP
     {
     inc02AM( cFunctionsPending ) ;
 {
-/**//*1*/voidT socketC::etherF( tin0S& tinBaseP , etherC& etherP )/*1*/
+/**//*1*/voidT socketC::etherF( tin0S& tin0P , etherC& etherP )/*1*/
 */
  etherP
 arguments

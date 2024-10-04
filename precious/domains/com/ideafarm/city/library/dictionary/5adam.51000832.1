@@ -9,23 +9,23 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-            etThread.delF( tinBaseP , pstto ) ;
-            etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/")+tValueEmail+T("///bcc@ideafarm.com") , T(pstto) ) ;
+            etThread.delF( tin0P , pstto ) ;
+            etThread.boxPutF( tin0P , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/")+tValueEmail+T("///bcc@ideafarm.com") , T(pstto) ) ;
 
-            etThread.delF( tinBaseP , psttKey2 ) ;
-            etThread.delF( tinBaseP , psttKey1 ) ;
+            etThread.delF( tin0P , psttKey2 ) ;
+            etThread.delF( tin0P , psttKey1 ) ;
 
-            etThread.strFuseF( tinBaseP , pstto , T(posto4) ) ;
-            etThread.strFuseF( tinBaseP , pstto , psttKey2 ) ;
-            etThread.strFuseF( tinBaseP , pstto , T(posto3) ) ;
-            etThread.strFuseF( tinBaseP , pstto , psttKey1 ) ;
-            etThread.strFuseF( tinBaseP , pstto , T(posto2) ) ;
-            etThread.strFuseF( tinBaseP , pstto , TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            etThread.strFuseF( tinBaseP , pstto , T(posto1) ) ;
-            etThread.strMakeF( tinBaseP , LF , pstto , 0 , TUCK << 4 ) ; ___( pstto ) ;
+            etThread.strFuseF( tin0P , pstto , T(posto4) ) ;
+            etThread.strFuseF( tin0P , pstto , psttKey2 ) ;
+            etThread.strFuseF( tin0P , pstto , T(posto3) ) ;
+            etThread.strFuseF( tin0P , pstto , psttKey1 ) ;
+            etThread.strFuseF( tin0P , pstto , T(posto2) ) ;
+            etThread.strFuseF( tin0P , pstto , TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.strFuseF( tin0P , pstto , T(posto1) ) ;
+            etThread.strMakeF( tin0P , LF , pstto , 0 , TUCK << 4 ) ; ___( pstto ) ;
             ZE( strokeS* , pstto ) ;
 
             ;
@@ -88,24 +88,24 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
             //U: NOTIFY THE PURCHASER OF THESE PUBLIC KEYS HERE ; ONCE I DELETE THESE BLOBS, THERE IS NO WAY TO RECOVER THEM (THEY ARE NOT STORED ANYWHERE)
 
-            etThread.traceF( tinBaseP , T("[idjHomeIdg]:    ")+TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , T("[idjHomeIdg]:    ")+TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-            etThread.delF( tinBaseP , pbPublicKey2 ) ;
-            etThread.strEncodeBlobToRFC4648F( tinBaseP , psttKey2 , pbPublicKey2 , cbPublicKey2 ) ; ___( psttKey2 ) ;
+            etThread.delF( tin0P , pbPublicKey2 ) ;
+            etThread.strEncodeBlobToRFC4648F( tin0P , psttKey2 , pbPublicKey2 , cbPublicKey2 ) ; ___( psttKey2 ) ;
             ZE( strokeS* , psttKey2 ) ;
 
-            etThread.delF( tinBaseP , pbPublicKey1 ) ;
-            etThread.strEncodeBlobToRFC4648F( tinBaseP , psttKey1 , pbPublicKey1 , cbPublicKey1 ) ; ___( psttKey1 ) ;
+            etThread.delF( tin0P , pbPublicKey1 ) ;
+            etThread.strEncodeBlobToRFC4648F( tin0P , psttKey1 , pbPublicKey1 , cbPublicKey1 ) ; ___( psttKey1 ) ;
             ZE( strokeS* , psttKey1 ) ;
 
-            etThread.ifcCreateNewHomeF( tinBaseP , idgHome , pbPublicKey1 , cbPublicKey1 , pbPublicKey2 , cbPublicKey2 ) ;
+            etThread.ifcCreateNewHomeF( tin0P , idgHome , pbPublicKey1 , cbPublicKey1 , pbPublicKey2 , cbPublicKey2 ) ;
             ZE( countT , cbPublicKey2  ) ;
             ZE( byteT* , pbPublicKey2  ) ;
             ZE( countT , cbPublicKey1  ) ;
             ZE( byteT* , pbPublicKey1  ) ;
             ZE( countT , idgHome ) ;
 
-            etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nPayment received from [email]:    ")+tValueEmail+T("\r\n") ) ;
+            etThread.boxPutF( tin0P , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nPayment received from [email]:    ")+tValueEmail+T("\r\n") ) ;
 TN( tValueEmail , "joe@ideafarm.com" ) ;
 
 

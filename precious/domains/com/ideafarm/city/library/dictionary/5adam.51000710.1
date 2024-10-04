@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.diskWalkF( tinBaseP , cDirs , cFiles , T("///d/poured.from.cloud.merged/") , /*(countT&)(thirdC&)ether*/bQuit , accumulateCBF , pcArg ) ;
+etThread.diskWalkF( tin0P , cDirs , cFiles , T("///d/poured.from.cloud.merged/") , /*(countT&)(thirdC&)ether*/bQuit , accumulateCBF , pcArg ) ;
 countT pcArg[] = { (countT)&etThread , (countT)&foList } ;
 cDirs = cFiles = bQuit = 0 ;
-fileC foList( tinBaseP , (strokeS*)T("///d/tmp/desk/traffic.ttt") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+fileC foList( tin0P , (strokeS*)T("///d/tmp/desk/traffic.ttt") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
 
-etThread.diskWalkF( tinBaseP , cDirs , cFiles , T("///d/poured.from.cloud.merged/") , /*(countT&)(thirdC&)ether*/bQuit , decompressCBF ) ;
+etThread.diskWalkF( tin0P , cDirs , cFiles , T("///d/poured.from.cloud.merged/") , /*(countT&)(thirdC&)ether*/bQuit , decompressCBF ) ;
 ZE( boolT  , bQuit ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
@@ -28,21 +28,21 @@ TODO
     return 0 ;
 
     }
-        etThread.delF( tinBaseP , posti ) ;
-        etThread.delF( tinBaseP , psttPath ) ;
+        etThread.delF( tin0P , posti ) ;
+        etThread.delF( tin0P , psttPath ) ;
         }
-            etThread.delF( tinBaseP , psttShort ) ;
+            etThread.delF( tin0P , psttShort ) ;
 
-            etThread.fileWriteF( tinBaseP , foListP , tSay , tSay.csF( tinBaseP ) ) ;
+            etThread.fileWriteF( tin0P , foListP , tSay , tSay.csF( tin0P ) ) ;
 
             TN( tSay , psttPath ) ; tSay += T(posti)+T("\r\n") ;
 
-            etThread.boxGetShadowF( tinBaseP , posti , costi , tFileName ) ; ___( posti ) ;
+            etThread.boxGetShadowF( tin0P , posti , costi , tFileName ) ; ___( posti ) ;
             ZE( countT   , costi ) ;
 
             ___( psttShort ) ;
             ___( psttPath ) ;
-            etThread.strBisectF( tinBaseP , psttPath , psttShort , tFileName , T("/") , -1 , flSTRbISECT_APPENDdELIMITER ) ;
+            etThread.strBisectF( tin0P , psttPath , psttShort , tFileName , T("/") , -1 , flSTRbISECT_APPENDdELIMITER ) ;
 
 
             ZE( strokeS* , psttShort ) ;
@@ -51,7 +51,7 @@ TODO
         ZE( strokeS* , psttPath ) ;
 
         TN( tFileName , ifName ) ;
-        ifFileNameC ifName( tinBaseP , etThread , postNameP ) ;
+        ifFileNameC ifName( tin0P , etThread , postNameP ) ;
 
         fileC&  foListP  =  *(fileC*)pcArgP[ 1 ] ;
         etherC& etThread = *(etherC*)pcArgP[ 0 ] ;
@@ -62,10 +62,10 @@ TODO
     {
     if( postLog && postLog - postNameP == costName - 4 && costName < ( TUCK << 1 ) && pcArgP )
 
-    osTextT* postLog = thirdC::c_strstrIF( tinBaseP , postNameP , ".log" ) ;
-    countT costName = thirdC::c_strlenIF( tinBaseP , postNameP ) ;
+    osTextT* postLog = thirdC::c_strstrIF( tin0P , postNameP , ".log" ) ;
+    countT costName = thirdC::c_strlenIF( tin0P , postNameP ) ;
 {
-boolT accumulateCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT accumulateCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 }
     return 0 ;
@@ -73,8 +73,8 @@ boolT accumulateCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT&
     }
         system( postCmd ) ;
 
-        thirdC::c_strcatIF( tinBaseP , postCmd , postNameP ) ;
-        thirdC::c_strcpyIF( tinBaseP , postCmd , "gzip -d -q -f " ) ;
+        thirdC::c_strcatIF( tin0P , postCmd , postNameP ) ;
+        thirdC::c_strcpyIF( tin0P , postCmd , "gzip -d -q -f " ) ;
         osTextT postCmd[ TUCK << 2 ] ;
 
         CONoUTrAW( "\r\n" ) ;
@@ -83,10 +83,10 @@ boolT accumulateCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT&
     {
     if( postGz && postGz - postNameP == costName - 3 && costName < ( TUCK << 1 ) )
 
-    osTextT* postGz = thirdC::c_strstrIF( tinBaseP , postNameP , ".gz" ) ;
-    countT costName = thirdC::c_strlenIF( tinBaseP , postNameP ) ;
+    osTextT* postGz = thirdC::c_strstrIF( tin0P , postNameP , ".gz" ) ;
+    countT costName = thirdC::c_strlenIF( tin0P , postNameP ) ;
 {
-boolT decompressCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT decompressCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 /*1*/WAKEsHOWtEXT( "tool.traffic.decompress.accumulate" )/*1*/
 /**/

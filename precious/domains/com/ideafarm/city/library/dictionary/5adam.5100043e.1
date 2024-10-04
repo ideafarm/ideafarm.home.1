@@ -14,41 +14,41 @@ REST
 }
     }
         }
-            ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
         if( !cIn )
         TELL( "taking my cycle nap" ) ;
 
         }
-            etThread.delF( tinBaseP , pstt1m ) ;
+            etThread.delF( tin0P , pstt1m ) ;
             }
-                etThread.osThreadF( tinBaseP , countTC() , tmSuperF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)psttFile , ++ idFile , (countT)&bFace ) ;
-                etThread.diskMoveFileOrDirF( tinBaseP , psttFile , psttc1 ) ;
-                etThread.strMakeF( tinBaseP , LF , psttFile , tStage2+TI(ifcIDtEXTgEN_UNIQUE) ) ; ___( psttFile ) ;
+                etThread.osThreadF( tin0P , countTC() , tmSuperF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)psttFile , ++ idFile , (countT)&bFace ) ;
+                etThread.diskMoveFileOrDirF( tin0P , psttFile , psttc1 ) ;
+                etThread.strMakeF( tin0P , LF , psttFile , tStage2+TI(ifcIDtEXTgEN_UNIQUE) ) ; ___( psttFile ) ;
                 ZE( strokeS* , psttFile ) ;
             {
             FORsTRINGSiN1( pstt1m )
-            etThread.boxMenuF( tinBaseP , soul1m , tStage1+tStar ) ; ___( pstt1m ) ;
+            etThread.boxMenuF( tin0P , soul1m , tStage1+tStar ) ; ___( pstt1m ) ;
             ZE( strokeS* , pstt1m ) ;
         {
         TELL( "promoting each stage 1 file to stage 2 and launching a supervisor thread for it" ) ;
 
         }
-            etThread.delF( tinBaseP , pstt1m ) ;
-            FORsTRINGSiN1( pstt1m ) etThread.diskMoveFileOrDirF( tinBaseP , tStage1+TI(ifcIDtEXTgEN_UNIQUE) , psttc1 ) ;
-            cIn = etThread.boxMenuF( tinBaseP , soul1m , tIn+tStar ) ; ___( pstt1m ) ;
+            etThread.delF( tin0P , pstt1m ) ;
+            FORsTRINGSiN1( pstt1m ) etThread.diskMoveFileOrDirF( tin0P , tStage1+TI(ifcIDtEXTgEN_UNIQUE) , psttc1 ) ;
+            cIn = etThread.boxMenuF( tin0P , soul1m , tIn+tStar ) ; ___( pstt1m ) ;
             ZE( strokeS* , pstt1m ) ;
         {
         ZE( countT , cIn ) ;
         TELL( "moving new job files into the stage 1 directory" ) ;
 
-        bFace.ungrabF( tinBaseP ) ;
-        etThread.strokeF( tinBaseP , T("\r")+TT(timeN1,timeN2) ) ;
-        bFace.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bFace.ungrabF( tin0P ) ;
+        etThread.strokeF( tin0P , T("\r")+TT(timeN1,timeN2) ) ;
+        bFace.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         TN( tStage2  , "" ) ; tStage2 = T("///ideafarm/ephemeral/domains/com/ideafarm/")+T(DDNUMB)+T("/2/") ;
         TN( tStage1  , "" ) ; tStage1 = T("///ideafarm/ephemeral/domains/com/ideafarm/")+T(DDNUMB)+T("/1/") ;
-        etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT , timeN1 ) ;
     {
@@ -58,28 +58,28 @@ REST
     TN( tStar    , "*" ) ;
     ZE( countT , idFile ) ;
 
-    boxC boxDebug( tinBaseP , etThread , T("///ideafarm/ephemeral/domains/com/ideafarm/debug/")+TF1(DDNUMB) ) ; //U::WORKAROUND TO PREVENT LOCKUP
-    stateS state( tinBaseP , etThread ) ;
+    boxC boxDebug( tin0P , etThread , T("///ideafarm/ephemeral/domains/com/ideafarm/debug/")+TF1(DDNUMB) ) ; //U::WORKAROUND TO PREVENT LOCKUP
+    stateS state( tin0P , etThread ) ;
     TELL( "setting up" )
 {
-batonC bFace( tinBaseP , TAG( TAGiDnULL ) ) ;
+batonC bFace( tin0P , TAG( TAGiDnULL ) ) ;
 
 //U::HIRE( T("mail.out") , 0 , 0x1000000 , 0 , 0x1000000 )
-//{ countT idAdam = 0x40104c5 ; etThread.ifcHireF( tinBaseP , T("port..expireTime") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
-//{ countT idAdam = 0x40104b8 ; etThread.ifcHireF( tinBaseP , T("port..expireTime") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
+//{ countT idAdam = 0x40104c5 ; etThread.ifcHireF( tin0P , T("port..expireTime") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
+//{ countT idAdam = 0x40104b8 ; etThread.ifcHireF( tin0P , T("port..expireTime") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
 HIRE( T("mail.out") , 0x4010418 , 0x1000000 , 0 , 0x1000000 )
 //ENABLE WHEN WANT GORILLA TESTERS TO BE ACTIVE
 
-//{ countT idAdam = 0x401048c ; etThread.ifcHireF( tinBaseP , T("port..expireTime") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
+//{ countT idAdam = 0x401048c ; etThread.ifcHireF( tin0P , T("port..expireTime") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
 //ENABLE WHEN AM EDITING THE SITE OR THE DICTIONARY
 
 TELL( "preparing for work" ) ;
-etThread.winSetTitleF( tinBaseP , TF1(DDNUMB) ) ; //U::
+etThread.winSetTitleF( tin0P , TF1(DDNUMB) ) ; //U::
 TODO
 
 DONE( tmSuperF )
 }
-    doWoF( tinBaseP , etThread , psttFile , idFile , bFace ) ;
+    doWoF( tin0P , etThread , psttFile , idFile , bFace ) ;
 
     batonC&  bFace    = *(batonC*)pTaskP->c3 ;
     countT   idFile   =           pTaskP->c2 ;
@@ -89,47 +89,47 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmSuperF )
 
 }
-    etThread.delF( tinBaseP , psttFileP ) ;
+    etThread.delF( tin0P , psttFileP ) ;
     etThread = 0 ;
-    etThread.boxZapF( tinBaseP , psttFileP ) ;
+    etThread.boxZapF( tin0P , psttFileP ) ;
     TELL( "deleting a new job file" ) ;
 
-    etThread.delF( tinBaseP , posti ) ;
-    etThread.delF( tinBaseP , psttu ) ;
-    etThread.boxPutUniqueF( tinBaseP , psttu , T("///ideafarm/ephemeral/domains/com/ideafarm/")+T(DDNUMB)+T(bFail?"/tryLater":"/aok")+T("/item") , posti , costi ) ;
+    etThread.delF( tin0P , posti ) ;
+    etThread.delF( tin0P , psttu ) ;
+    etThread.boxPutUniqueF( tin0P , psttu , T("///ideafarm/ephemeral/domains/com/ideafarm/")+T(DDNUMB)+T(bFail?"/tryLater":"/aok")+T("/item") , posti , costi ) ;
     ZE( strokeS* , psttu ) ;
     TELL( "archiving a new job file to aok" )
 
-    etThread.strokeF( tinBaseP , T("\r\n")+TF1(idFileP)+T("| ")+T(psttFileP)+T(bFail?": TRYlATER\r\n":": AOK\r\n") ) ;
-    boolT bFail = mailItemF( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , T(posti) ) ;
+    etThread.strokeF( tin0P , T("\r\n")+TF1(idFileP)+T("| ")+T(psttFileP)+T(bFail?": TRYlATER\r\n":": AOK\r\n") ) ;
+    boolT bFail = mailItemF( tin0P , *((tin9S&)tin0P).zEtScratch , T(posti) ) ;
     TELL( "handling a new job file" )
 
-    etThread.boxGetShadowF( tinBaseP , posti , costi , psttFileP ) ; ___( posti ) ;
+    etThread.boxGetShadowF( tin0P , posti , costi , psttFileP ) ; ___( posti ) ;
     ZE( countT   , costi ) ;
     ZE( osTextT* , posti ) ;
-    bFaceP.ungrabF( tinBaseP ) ;
-    etThread.strokeF( tinBaseP , T("\r\n")+TF1(idFileP)+T("| ")+T(psttFileP)+T(": BEGUN\r\n") ) ;
-    bFaceP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    bFaceP.ungrabF( tin0P ) ;
+    etThread.strokeF( tin0P , T("\r\n")+TF1(idFileP)+T("| ")+T(psttFileP)+T(": BEGUN\r\n") ) ;
+    bFaceP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     TELL( "reading a new job file" ) ;
 {
-voidT doWoF( tin0S& tinBaseP , etherC& etThread , strokeS* psttFileP , const countT idFileP , batonC& bFaceP )
+voidT doWoF( tin0S& tin0P , etherC& etThread , strokeS* psttFileP , const countT idFileP , batonC& bFaceP )
 
 }
     return bFail ;
-    if( bFail ) *((tin9S&)tinBaseP).zEtScratch = 0 ;
-    boolT bFail = !!*((tin9S&)tinBaseP).zEtScratch ;
-    //((tin9S&)tinBaseP).zEtScratch->ifcSayF( tinBaseP , TF1(DDNUMB)+T("/hired ")+TF1(ifcIDaDAMoLD_MAILcLERK)+T(" to do a !mailOut job") , flSAY_APPEND | flSAY_LOG ) ;
-    ((tin9S&)tinBaseP).zEtScratch->ifcJobF( tinBaseP , stCourses , ifcIDaDAMoLD_MAILcLERK , sOrder , stOrders , TF1(DDNUMB)+T("mail.out/!mailOut/")+TF1((countT)st_psttTo) , 1 ) ;
-    //((tin9S&)tinBaseP).zEtScratch->ifcSayF( tinBaseP , TF1(DDNUMB)+T("/hiring ")+TF1(ifcIDaDAMoLD_MAILcLERK)+T(" to do a !mailOut job") , flSAY_APPEND | flSAY_LOG ) ;
-    stOrders << new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
-    stackC stOrders(  tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
-    stackC stCourses( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+    if( bFail ) *((tin9S&)tin0P).zEtScratch = 0 ;
+    boolT bFail = !!*((tin9S&)tin0P).zEtScratch ;
+    //((tin9S&)tin0P).zEtScratch->ifcSayF( tin0P , TF1(DDNUMB)+T("/hired ")+TF1(ifcIDaDAMoLD_MAILcLERK)+T(" to do a !mailOut job") , flSAY_APPEND | flSAY_LOG ) ;
+    ((tin9S&)tin0P).zEtScratch->ifcJobF( tin0P , stCourses , ifcIDaDAMoLD_MAILcLERK , sOrder , stOrders , TF1(DDNUMB)+T("mail.out/!mailOut/")+TF1((countT)st_psttTo) , 1 ) ;
+    //((tin9S&)tin0P).zEtScratch->ifcSayF( tin0P , TF1(DDNUMB)+T("/hiring ")+TF1(ifcIDaDAMoLD_MAILcLERK)+T(" to do a !mailOut job") , flSAY_APPEND | flSAY_LOG ) ;
+    stOrders << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+    stackC stOrders(  tin0P , *((tin9S&)tin0P).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stCourses( tin0P , *((tin9S&)tin0P).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
 
-    ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttBody ) ;
+    ((tin9S&)tin0P).zEtScratch->delF( tin0P , psttBody ) ;
     sOrder << psttBody ;
 
     }
-        ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttTo ) ;
+        ((tin9S&)tin0P).zEtScratch->delF( tin0P , psttTo ) ;
         sOrder << psttTo ;
         st_psttTo >> psttTo ;
         ZE( strokeS* , psttTo ) ;
@@ -139,54 +139,54 @@ voidT doWoF( tin0S& tinBaseP , etherC& etThread , strokeS* psttFileP , const cou
 
     sOrder << (countT)1 ;
     sOrder << (strokeS*)tJob ;
-    soulC sOrder( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_NAMED ) ;
+    soulC sOrder( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_NAMED ) ;
 
     TN( tJob , "!mailOut" ) ;
 
-    ((tin9S&)tinBaseP).zEtScratch->strConcatenateF( tinBaseP , psttBody , st_psttLines , T("\r\n") ) ; ___( psttBody ) ;
+    ((tin9S&)tin0P).zEtScratch->strConcatenateF( tin0P , psttBody , st_psttLines , T("\r\n") ) ; ___( psttBody ) ;
     ZE( strokeS* , psttBody ) ;
 
     }
         }
-            ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttw1 ) ;
-            else                                                ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
-            if( ((tin9S&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttw1 , tBcc ) ) st_psttLines << psttl ;
+            ((tin9S&)tin0P).zEtScratch->delF( tin0P , psttw1 ) ;
+            else                                                ((tin9S&)tin0P).zEtScratch->delF( tin0P , psttl ) ;
+            if( ((tin9S&)tin0P).zEtScratch->strCompareF( tin0P , psttw1 , tBcc ) ) st_psttLines << psttl ;
 
             }
-                else                                                                       ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttw2 ) ;
-                if( psttw2 && psttw2->idAdam && ((tin9S&)tinBaseP).zEtScratch->strIdF( tinBaseP , sttAt , psttw2 ) ) st_psttTo << psttw2 ;
-                ((tin9S&)tinBaseP).zEtScratch->strTrimF( tinBaseP , psttw2 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw2 ) ;                                  // "abc@foobar.com"
+                else                                                                       ((tin9S&)tin0P).zEtScratch->delF( tin0P , psttw2 ) ;
+                if( psttw2 && psttw2->idAdam && ((tin9S&)tin0P).zEtScratch->strIdF( tin0P , sttAt , psttw2 ) ) st_psttTo << psttw2 ;
+                ((tin9S&)tin0P).zEtScratch->strTrimF( tin0P , psttw2 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw2 ) ;                                  // "abc@foobar.com"
 
                 }
                     psttw2 = psttw3 ;
-                    ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttw2 ) ;
-                    ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttw3 , idf3 , sttq3 , sttGT , psttw2 ) ; ___( psttw3 ) ;         // " abc@foobar.com "
-                    ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttw3 ) ;
-                    ((tin9S&)tinBaseP).zEtScratch->strSubstringF( tinBaseP , psttw3 , idf3 , sttq3 , sttLT , psttw2 ) ; ___( psttw3 ) ;         // " \"Anthony B. Cullen\" "
+                    ((tin9S&)tin0P).zEtScratch->delF( tin0P , psttw2 ) ;
+                    ((tin9S&)tin0P).zEtScratch->strSubstringF( tin0P , psttw3 , idf3 , sttq3 , sttGT , psttw2 ) ; ___( psttw3 ) ;         // " abc@foobar.com "
+                    ((tin9S&)tin0P).zEtScratch->delF( tin0P , psttw3 ) ;
+                    ((tin9S&)tin0P).zEtScratch->strSubstringF( tin0P , psttw3 , idf3 , sttq3 , sttLT , psttw2 ) ; ___( psttw3 ) ;         // " \"Anthony B. Cullen\" "
                     ZE( strokeS* , psttw3 ) ;
                     strokeS sttq3( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idf3 = 1 ;
                 {
                 if( idLT && idLT < idGT )
-                countT idGT = ((tin9S&)tinBaseP).zEtScratch->strIdF( tinBaseP , sttGT , psttw2 ) ;
-                countT idLT = ((tin9S&)tinBaseP).zEtScratch->strIdF( tinBaseP , sttLT , psttw2 ) ;
-                ((tin9S&)tinBaseP).zEtScratch->strWordF( tinBaseP , psttw2 , psttl , sttq , sttColon , 2 ) ; ___( psttw2 ) ;                    // " \"Anthony B. Cullen\" < abc@foobar.com > "
+                countT idGT = ((tin9S&)tin0P).zEtScratch->strIdF( tin0P , sttGT , psttw2 ) ;
+                countT idLT = ((tin9S&)tin0P).zEtScratch->strIdF( tin0P , sttLT , psttw2 ) ;
+                ((tin9S&)tin0P).zEtScratch->strWordF( tin0P , psttw2 , psttl , sttq , sttColon , 2 ) ; ___( psttw2 ) ;                    // " \"Anthony B. Cullen\" < abc@foobar.com > "
                 ZE( strokeS* , psttw2 ) ;
                 //sttq = ze ;
             {
-            if( !((tin9S&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttw1 , tTo ) || !((tin9S&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttw1 , tBcc ) || !((tin9S&)tinBaseP).zEtScratch->strCompareF( tinBaseP , psttw1 , tCc ) )
+            if( !((tin9S&)tin0P).zEtScratch->strCompareF( tin0P , psttw1 , tTo ) || !((tin9S&)tin0P).zEtScratch->strCompareF( tin0P , psttw1 , tBcc ) || !((tin9S&)tin0P).zEtScratch->strCompareF( tin0P , psttw1 , tCc ) )
 
-            ((tin9S&)tinBaseP).zEtScratch->strConvertToLowerCaseF( tinBaseP , psttw1 ) ; ___( psttw1 ) ;                                     // "to"
-            ((tin9S&)tinBaseP).zEtScratch->strTrimF( tinBaseP , psttw1 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw1 ) ;                                  // "TO"
-            ((tin9S&)tinBaseP).zEtScratch->strWordF( tinBaseP , psttw1 , psttl , sttq , sttColon , 1 ) ; ___( psttw1 ) ;                    // " TO "
+            ((tin9S&)tin0P).zEtScratch->strConvertToLowerCaseF( tin0P , psttw1 ) ; ___( psttw1 ) ;                                     // "to"
+            ((tin9S&)tin0P).zEtScratch->strTrimF( tin0P , psttw1 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw1 ) ;                                  // "TO"
+            ((tin9S&)tin0P).zEtScratch->strWordF( tin0P , psttw1 , psttl , sttq , sttColon , 1 ) ; ___( psttw1 ) ;                    // " TO "
             ZE( strokeS* , psttw1 ) ;
             //sttq = ze ;
 
             if( !psttl ) break ;
-            ((tin9S&)tinBaseP).zEtScratch->strSubstringLineF( tinBaseP , psttl , idf , sttq , psttP ) ; ___( psttl ) ;
+            ((tin9S&)tin0P).zEtScratch->strSubstringLineF( tin0P , psttl , idf , sttq , psttP ) ; ___( psttl ) ;
             ZE( strokeS* , psttl ) ;
         {
-        while( !*((tin9S&)tinBaseP).zEtScratch && idf )
+        while( !*((tin9S&)tin0P).zEtScratch && idf )
         countT idf = 1 ;
         TN( tBcc , "bcc" ) ;
         TN( tCc  , "cc" ) ;
@@ -201,23 +201,23 @@ voidT doWoF( tin0S& tinBaseP , etherC& etThread , strokeS* psttFileP , const cou
             st_psttLines << psttl ;
 
             }
-                psttl = psttOldC( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , T("from: \"Oo'o Ideafarm\" <" ifcEMAIL_OLDfROM ">") ) ; ___( psttl ) ;
-                ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttl ) ;
+                psttl = psttOldC( tin0P , *((tin9S&)tin0P).zEtScratch , T("from: \"Oo'o Ideafarm\" <" ifcEMAIL_OLDfROM ">") ) ; ___( psttl ) ;
+                ((tin9S&)tin0P).zEtScratch->delF( tin0P , psttl ) ;
             {
-            if( ((tin9S&)tinBaseP).zEtScratch->diskIdF( tinBaseP , T("///c") ) == 0x2c1f032d )
+            if( ((tin9S&)tin0P).zEtScratch->diskIdF( tin0P , T("///c") ) == 0x2c1f032d )
 
-            strokeS* psttl = psttOldC( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , T("from: \"Wo'O Ideafarm\" <" ifcEMAIL_OLDfROM ">") ) ; ___( psttl ) ;
+            strokeS* psttl = psttOldC( tin0P , *((tin9S&)tin0P).zEtScratch , T("from: \"Wo'O Ideafarm\" <" ifcEMAIL_OLDfROM ">") ) ; ___( psttl ) ;
         {
     {
-    stackC st_psttLines( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
-    stackC st_psttTo(    tinBaseP , *((tin9S&)tinBaseP).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC st_psttLines( tin0P , *((tin9S&)tin0P).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC st_psttTo(    tin0P , *((tin9S&)tin0P).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
 {
-boolT mailItemF( tin0S& tinBaseP , const strokeS* const psttP )
+boolT mailItemF( tin0S& tin0P , const strokeS* const psttP )
 
 }
 {
-stateC( tinBaseP , etherP , sizeof *this , 0 , translateStateF )
-stateS::stateS( tin0S& tinBaseP , etherC& etherP ) :
+stateC( tin0P , etherP , sizeof *this , 0 , translateStateF )
+stateS::stateS( tin0S& tin0P , etherC& etherP ) :
 
 TRANSLATEsTATE_END
     state.idMe ++ ;
@@ -228,7 +228,7 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
 
 ;
 }
-    stateS( tin0S& tinBaseP , etherC& etherP ) ;
+    stateS( tin0S& tin0P , etherC& etherP ) ;
 
     countT idTransLast ;
     countT idMe ;

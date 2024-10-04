@@ -9,18 +9,18 @@
 
 REST
 
-etThread.loafIF( tinBaseP ) ;
-etThread.osThreadF( tinBaseP , countTC() , tmStopped2F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&batonx ) ;
-etThread.osThreadF( tinBaseP , countTC() , tmStopped1F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&batonx , (countT)&signx ) ;
-signC signx( tinBaseP , TAG( TAGiDnULL ) ) ;
-batonC batonx( tinBaseP , TAG( TAGiDnULL ) ) ;
+etThread.loafIF( tin0P ) ;
+etThread.osThreadF( tin0P , countTC() , tmStopped2F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&batonx ) ;
+etThread.osThreadF( tin0P , countTC() , tmStopped1F , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&batonx , (countT)&signx ) ;
+signC signx( tin0P , TAG( TAGiDnULL ) ) ;
+batonC batonx( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmStopped2F )
 }
-    batonx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-    etThread.osSleepF( tinBaseP , TOCK ) ;
+    batonx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    etThread.osSleepF( tin0P , TOCK ) ;
     batonC& batonx = *(batonC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
@@ -28,8 +28,8 @@ TASK( tmStopped2F )
 
 DONE( tmStopped1F )
 }
-    signx.waitF( tinBaseP ) ;
-    batonx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    signx.waitF( tin0P ) ;
+    batonx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     signC&  signx  =  *(signC*)pTaskP->c2 ;
     batonC& batonx = *(batonC*)pTaskP->c1 ;
 {

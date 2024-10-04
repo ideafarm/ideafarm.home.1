@@ -16,19 +16,19 @@
             }
                 }
                     hThread.resetF() ;
-                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsTid.ungrabF( tinBaseP ) ;
-                    *((tin9S&)tinBaseP).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
-                    ((tin9S&)tinBaseP).pag1->_thirdC_.lOsTid = tidP ;
-                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsTid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    ((tin9S&)tin0P).pag4->_thirdC_grab_lOsTid.ungrabF( tin0P ) ;
+                    *((tin9S&)tin0P).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
+                    ((tin9S&)tin0P).pag1->_thirdC_.lOsTid = tidP ;
+                    ((tin9S&)tin0P).pag4->_thirdC_grab_lOsTid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( tidP && tidP != - 1 && F(flagsP) & flPROCESShIRE_REGISTERtHREADhANDLE )
     
                 }
                     hProcess.resetF() ;
-                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsPid.ungrabF( tinBaseP ) ;
-                    *((tin9S&)tinBaseP).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
-                    ((tin9S&)tinBaseP).pag1->_thirdC_.lOsPid = pidP ;
-                    ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsPid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    ((tin9S&)tin0P).pag4->_thirdC_grab_lOsPid.ungrabF( tin0P ) ;
+                    *((tin9S&)tin0P).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
+                    ((tin9S&)tin0P).pag1->_thirdC_.lOsPid = pidP ;
+                    ((tin9S&)tin0P).pag4->_thirdC_grab_lOsPid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( pidP && pidP != - 1 && F(flagsP) & flPROCESShIRE_REGISTERpROCESShANDLE )
 
@@ -46,34 +46,34 @@
 
             if( !hProcess ) __1
             hProcess.osF( ifcIDtYPEhANDLE_PROCESS , (countT)pinfo.hProcess ) ;
-            handleC hProcess( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
+            handleC hProcess( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
 
             if( !hThread ) __1
             hThread.osF( ifcIDtYPEhANDLE_THREAD , (countT)pinfo.hThread ) ;
-            handleC hThread( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
+            handleC hThread( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_THREAD ) ;
 
-            delF( tinBaseP , postAll ) ;
+            delF( tin0P , postAll ) ;
             }
-                ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("dosExecPgmF / could not launch process [postAll]:    \"")+T(postAll)+T("\"") ) ;
-                //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("dosExecPgmF / could not launch process:\r\n\"")+T(postAll)+T("\"") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                ((tin9S&)tin0P).pEther->traceF( tin0P , T("dosExecPgmF / could not launch process [postAll]:    \"")+T(postAll)+T("\"") ) ;
+                //((tin9S&)tin0P).pEther->traceF( tin0P , T("dosExecPgmF / could not launch process:\r\n\"")+T(postAll)+T("\"") , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
                 //LOGrAW( "\"\r\n" ) ;
                 //LOGrAW( postAll ) ;
                 //LOGrAW( "could not launch process: \"" ) ;
 
-                delF( tinBaseP , postp ) ;
+                delF( tin0P , postp ) ;
                 }
-                    thirdC::c_strncpyIF( tinBaseP , postp , postm , costap ) ;
-                    newF( tinBaseP , LF , postp , costap ) ; ___( postp ) ;
-                    const countT costap = 1 + c_strlenIF( tinBaseP , postm ) ;
+                    thirdC::c_strncpyIF( tin0P , postp , postm , costap ) ;
+                    newF( tin0P , LF , postp , costap ) ; ___( postp ) ;
+                    const countT costap = 1 + c_strlenIF( tin0P , postm ) ;
                     osTextT* postm = "there is no \"path\" environment variable for this process" ;
                 {
                 if( !postp )
-                dosScanEnvF( tinBaseP , postp , "path" ) ; ___( postp ) ;
+                dosScanEnvF( tin0P , postp , "path" ) ; ___( postp ) ;
                 ZE( osTextT* , postp ) ;
                 //THIS CODE IS DUPLICATED IN 102006a AND 102005d
 
-                ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("dosExecPgmF / CreateProcess / failed [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
+                ((tin9S&)tin0P).pEther->traceF( tin0P , T("dosExecPgmF / CreateProcess / failed [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postRc) ) ;
                 const osTextT* postRc = (const osTextT*)processGlobal4S::_processGlobal4I_IF().mapIfcCode( rc ) ;
                 countT rc = POOP ;
             {
@@ -125,28 +125,28 @@
                         SECURITYaTTRIBUTE_saUNRESTRICTED( 0 ) ;
 
                         }
-                            c_strcatIF( tinBaseP , postAll , ostoSay ) ;
+                            c_strcatIF( tin0P , postAll , ostoSay ) ;
                             OStEXTC(  ostoSay , processGlobal2I.idNumaNode , 0 ) ;
                             OStEXTAK( ostoSay , " !idNumaNode " ) ;
                             OStEXT(   ostoSay , TUCK << 2 ) ;
                         {
-                        if( processGlobal2I.idNumaNode && c_strstrIF( tinBaseP , postExeP , "\\ideafarm." ) && ( c_strstrIF( tinBaseP , postExeP , ".ipdos-we" ) || c_strstrIF( tinBaseP , postExeP , ".ipdos-we" ) ) )
-                        c_strcatIF( tinBaseP , postAll , postArgsP ) ;
-                        c_strcatIF( tinBaseP , postAll , " " ) ;            //U::postExeP SHOULD BE PASSED AS WOTH PARAM TO CreateProcess TO AVOID SECURITY VULNERABILITY; SEE DOC FOR CreateProcess; THE ISSUE ARISES WHEN postExe CONTAINS A PATH THAT CONTAINS A SPACE, WHICH WILL CAUSE INCORRECTD PARSING
-                        c_strcpyIF( tinBaseP , postAll , postExeP ) ;
-                        newF( tinBaseP , LF , postAll , costae ) ; ___( postAll ) ;
+                        if( processGlobal2I.idNumaNode && c_strstrIF( tin0P , postExeP , "\\ideafarm." ) && ( c_strstrIF( tin0P , postExeP , ".ipdos-we" ) || c_strstrIF( tin0P , postExeP , ".ipdos-we" ) ) )
+                        c_strcatIF( tin0P , postAll , postArgsP ) ;
+                        c_strcatIF( tin0P , postAll , " " ) ;            //U::postExeP SHOULD BE PASSED AS WOTH PARAM TO CreateProcess TO AVOID SECURITY VULNERABILITY; SEE DOC FOR CreateProcess; THE ISSUE ARISES WHEN postExe CONTAINS A PATH THAT CONTAINS A SPACE, WHICH WILL CAUSE INCORRECTD PARSING
+                        c_strcpyIF( tin0P , postAll , postExeP ) ;
+                        newF( tin0P , LF , postAll , costae ) ; ___( postAll ) ;
 
                         costae += TUCK ; // FOR !idNumaNode 12345678
 
                         }
-                            costae = ((tin9S&)tinBaseP).brcRaw + 1 ;
+                            costae = ((tin9S&)tin0P).brcRaw + 1 ;
                             BOSdOnOTtEST( WHATgbo , strlen( postExeP ) )
                         {
                         else
                         }
-                            costae = c1 + 1 + ((tin9S&)tinBaseP).brcRaw + 1 ;
+                            costae = c1 + 1 + ((tin9S&)tin0P).brcRaw + 1 ;
                             BOSdOnOTtEST( WHATgbo , strlen( postArgsP ) )
-                            countT c1 = ((tin9S&)tinBaseP).brcRaw ;
+                            countT c1 = ((tin9S&)tin0P).brcRaw ;
                             BOSdOnOTtEST( WHATgbo , strlen( postExeP ) )
                         {
                         if( postArgsP )
@@ -180,7 +180,7 @@
                         sinfo.StartupInfo.wShowWindow = /*SW_SHOWMAXIMIZED*/ SW_SHOWMINNOACTIVE ;
                         sinfo.StartupInfo.dwFlags = STARTF_USESHOWWINDOW | STARTF_USEPOSITION | STARTF_USECOUNTCHARS | STARTF_USEFILLATTRIBUTE ;
                         sinfo.StartupInfo.cb = sizeof sinfo ;
-                        c_memsetIF( tinBaseP , (byteT*)&sinfo , sizeof sinfo ) ;
+                        c_memsetIF( tin0P , (byteT*)&sinfo , sizeof sinfo ) ;
                         STARTUPINFOEX sinfo ;
                     {
                     if( bOk )
@@ -203,7 +203,7 @@
                 unsigned pcInfo2[ 0x100 / sizeof( unsigned ) ] ;
             {
             if( cba < 0x100 )
-            c_memsetIF( tinBaseP , (byteT*)&pinfo , sizeof pinfo ) ;
+            c_memsetIF( tin0P , (byteT*)&pinfo , sizeof pinfo ) ;
             PROCESS_INFORMATION pinfo ;
             ZE( osTextT* , postAll ) ;
 
@@ -249,8 +249,8 @@
     }
         if( POOP ) return ;
         FV( flPROCESShIRE , flagsP )
-        __( !((tin9S&)tinBaseP).pag1->_thirdC_.pSwThreadHandle ) ;
-        __( !((tin9S&)tinBaseP).pag1->_thirdC_.pSwProcessHandle ) ;
+        __( !((tin9S&)tin0P).pag1->_thirdC_.pSwThreadHandle ) ;
+        __( !((tin9S&)tin0P).pag1->_thirdC_.pSwProcessHandle ) ;
         __Z( postExeP ) ;
         __( pidP ) ;
         if( POOP ) return ;
@@ -258,7 +258,7 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::dosExecPgmF( tin0S& tinBaseP , countT& tidP , countT& pidP , const osTextT* const postExeP , const osTextT* const postArgsP , const flagsT flagsP , const handleC* phOutP , const handleC* phErrorP , const handleC* phInP , const osTextT* const postUserP , const osTextT* const postPasswordP , const flagsT flagsLogonP , const osTextT* const postDomainP )/*1*/
+/*1*/voidT thirdC::dosExecPgmF( tin0S& tin0P , countT& tidP , countT& pidP , const osTextT* const postExeP , const osTextT* const postArgsP , const flagsT flagsP , const handleC* phOutP , const handleC* phErrorP , const handleC* phInP , const osTextT* const postUserP , const osTextT* const postPasswordP , const flagsT flagsLogonP , const osTextT* const postDomainP )/*1*/
 
 //U:COMBINE INTO A SINGLE API: 102006a AND 102005d
 

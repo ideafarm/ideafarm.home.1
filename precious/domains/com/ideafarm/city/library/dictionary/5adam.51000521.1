@@ -8,52 +8,52 @@
 
 
 REST
-etThread.strokeF( tinBaseP , T("aok\r\n") ) ;
-etThread.delF( tinBaseP , pstt1m ) ;
+etThread.strokeF( tin0P , T("aok\r\n") ) ;
+etThread.delF( tin0P , pstt1m ) ;
 }
-    etThread.delF( tinBaseP , psttw2c ) ;
-    etThread.delF( tinBaseP , psttw2b ) ;
-    etThread.delF( tinBaseP , psttw2a ) ;
+    etThread.delF( tin0P , psttw2c ) ;
+    etThread.delF( tin0P , psttw2b ) ;
+    etThread.delF( tin0P , psttw2a ) ;
 
     }
         }
-            etThread.strokeF( tinBaseP , tNew+T(" (COULD NOT RENAME)\r\n") ) ;
-            *((tin9S&)tinBaseP).zEtScratch = 0 ;
+            etThread.strokeF( tin0P , tNew+T(" (COULD NOT RENAME)\r\n") ) ;
+            *((tin9S&)tin0P).zEtScratch = 0 ;
         {
-        if( *((tin9S&)tinBaseP).zEtScratch )
-        ((tin9S&)tinBaseP).zEtScratch->diskMoveFileOrDirF( tinBaseP , tNew , psttc1 ) ;
+        if( *((tin9S&)tin0P).zEtScratch )
+        ((tin9S&)tin0P).zEtScratch->diskMoveFileOrDirF( tin0P , tNew , psttc1 ) ;
 
-        //etThread.strokeF( tinBaseP , tNew+T(ids?"":" @@@@@@@@ DUPLICATE @@@@@@@@")+T("\r\n") ) ;
+        //etThread.strokeF( tin0P , tNew+T(ids?"":" @@@@@@@@ DUPLICATE @@@@@@@@")+T("\r\n") ) ;
         TN( tNew , "" ) ; tNew = tFolder + T(psttw2a)+tDot+TF2(idAdamNew,flFORMAT_FOREIGN|flFORMAT_UNSIGNED)+tDot+T(psttw2c) ;
     {
     if( idAdamNew != 0x8ffffff ) 
 
-    stNew.sinkF( tinBaseP , ids , idAdamNew , flSTACKsINK_UNIQUE ) ;
+    stNew.sinkF( tin0P , ids , idAdamNew , flSTACKsINK_UNIQUE ) ;
     ZE( countT , ids ) ;
 
     if( idAdamNew > 0x4010f00 ) idAdamNew += 0x0fff000 ;
     countT idAdamNew = idAdamOld - 0x4010001 + 0x4010001 ;
-    countT idAdamOld = etThread.strDigitsToSCountF( tinBaseP , psttw2b , 0 ) ;
+    countT idAdamOld = etThread.strDigitsToSCountF( tin0P , psttw2b , 0 ) ;
 
-    etThread.delF( tinBaseP , psttw1 ) ;
-    etThread.strWordF( tinBaseP , psttw2c , psttw1 , sttq , sDot , 3 ) ; ___( psttw2c ) ;
-    etThread.strWordF( tinBaseP , psttw2b , psttw1 , sttq , sDot , 2 ) ; ___( psttw2b ) ;
-    etThread.strWordF( tinBaseP , psttw2a , psttw1 , sttq , sDot , 1 ) ; ___( psttw2a ) ;
+    etThread.delF( tin0P , psttw1 ) ;
+    etThread.strWordF( tin0P , psttw2c , psttw1 , sttq , sDot , 3 ) ; ___( psttw2c ) ;
+    etThread.strWordF( tin0P , psttw2b , psttw1 , sttq , sDot , 2 ) ; ___( psttw2b ) ;
+    etThread.strWordF( tin0P , psttw2a , psttw1 , sttq , sDot , 1 ) ; ___( psttw2a ) ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     ZE( strokeS* , psttw2c ) ;
     ZE( strokeS* , psttw2b ) ;
     ZE( strokeS* , psttw2a ) ;
 
-    etThread.strSubstringF( tinBaseP , psttw1 , idf , idl , psttc1 ) ; ___( psttw1 ) ;
+    etThread.strSubstringF( tin0P , psttw1 , idf , idl , psttc1 ) ; ___( psttw1 ) ;
     ZE( strokeS* , psttw1 ) ;
     ZE( countT , idl ) ;
-    countT idf = tFolder.csF( tinBaseP ) + 1 ;
+    countT idf = tFolder.csF( tin0P ) + 1 ;
 {
 FORsTRINGSiN1( pstt1m )
-stackC stNew( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+stackC stNew( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 TN( tDot , "." ) ;
 strokeS sDot( '.' ) ;
-etThread.boxMenuF( tinBaseP , soul , tFolder+T("adam.*") ) ; ___( pstt1m ) ;
+etThread.boxMenuF( tin0P , soul , tFolder+T("adam.*") ) ; ___( pstt1m ) ;
 ZE( strokeS* , pstt1m ) ;
 
 TN( tFolder , "///d/ideafarm.home.1/precious/domains/com/ideafarm/city/library/dictionary/" ) ;

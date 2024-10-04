@@ -8,39 +8,39 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     }
-        etThread.osSleepF( tinBaseP , TOCK * 0x20 , TOCK , flSLEEP_TALK ) ;
-        etThread.strokeF( tinBaseP , T("\r" BLANK79 "\r") ) ;
+        etThread.osSleepF( tin0P , TOCK * 0x20 , TOCK , flSLEEP_TALK ) ;
+        etThread.strokeF( tin0P , T("\r" BLANK79 "\r") ) ;
 
         }
             }
                 DEL( pCar ) ;
                 }
-                    etThread.delF( tinBaseP , psttEmail ) ;
+                    etThread.delF( tin0P , psttEmail ) ;
                     }
-                        etThread.strokeF( tinBaseP , T("activity report mailed to \"")+T(psttEmail)+T("\"\r\n") ) ;
-                        etThread.delF( tinBaseP , postr ) ;
+                        etThread.strokeF( tin0P , T("activity report mailed to \"")+T(psttEmail)+T("\"\r\n") ) ;
+                        etThread.delF( tin0P , postr ) ;
 
                         }
-                            sOut.writeMsgF( tinBaseP , T(postr) ) ;
-                            sOut.writeMsgF( tinBaseP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+tTo ) ;
-                            etThread.strokeF( tinBaseP , T("\"")+tTo+T("\"\r\n") ) ;
+                            sOut.writeMsgF( tin0P , T(postr) ) ;
+                            sOut.writeMsgF( tin0P , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+tTo ) ;
+                            etThread.strokeF( tin0P , T("\"")+tTo+T("\"\r\n") ) ;
                             textC tTo = T(psttEmail)+T("/" ifcEMAIL_OLDfROM "") ;
-                            sOut.connectF( tinBaseP , ifcPORToLD1oUTGOINGmAILBOX , 0x01010102 ) ;
-                            socketC sOut( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
+                            sOut.connectF( tin0P , ifcPORToLD1oUTGOINGmAILBOX , 0x01010102 ) ;
+                            socketC sOut( tin0P , ether , TAG( TAGiDnULL ) ) ;
                         {
 
-                        { ZE( strokeS* , psttnu ) ; etThread.boxPutUniqueF( tinBaseP , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/4f30104/email") , postr , costr ) ; etThread.delF( tinBaseP , psttnu ) ; }
+                        { ZE( strokeS* , psttnu ) ; etThread.boxPutUniqueF( tin0P , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/4f30104/email") , postr , costr ) ; etThread.delF( tin0P , psttnu ) ; }
 
-                        etThread.delF( tinBaseP , psttr2 ) ;
-                        etThread.delF( tinBaseP , psttr1 ) ;
-                        countT costr = etThread.strMakeF( tinBaseP , LF , postr , T(psttr1)+T(psttr2) ) ; ___( postr ) ;
+                        etThread.delF( tin0P , psttr2 ) ;
+                        etThread.delF( tin0P , psttr1 ) ;
+                        countT costr = etThread.strMakeF( tin0P , LF , postr , T(psttr1)+T(psttr2) ) ; ___( postr ) ;
                         ZE( osTextT* , postr ) ;
 
-                        pCar->strF( tinBaseP , psttr2 ) ; ___( psttr2 ) ;
+                        pCar->strF( tin0P , psttr2 ) ; ___( psttr2 ) ;
                         ZE( strokeS* , psttr2 ) ;
 
                         }
@@ -54,56 +54,56 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
                                 "You are receiving this report because you, or an impostxr who claimed to be you,\r\n"
                                 T("Subject: Your Citizen Activity Report\r\n\r\n"
 
-                            etThread.strMakeF( tinBaseP , LF , psttr1 ,
+                            etThread.strMakeF( tin0P , LF , psttr1 ,
                         {
                         ZE( strokeS* , psttr1 ) ;
                     {
                     if( psttEmail )
 
                     }
-                        if( !psttEmail ) etThread.ifcExternalEmailFromIdCitizenF( tinBaseP , psttEmail , 1 ) ;
-                        if( pCar->idcHirer ) etThread.ifcExternalEmailFromIdCitizenF( tinBaseP , psttEmail , pCar->idcHirer ) ;
+                        if( !psttEmail ) etThread.ifcExternalEmailFromIdCitizenF( tin0P , psttEmail , 1 ) ;
+                        if( pCar->idcHirer ) etThread.ifcExternalEmailFromIdCitizenF( tin0P , psttEmail , pCar->idcHirer ) ;
                     {
                     ZE( strokeS* , psttEmail ) ;
                 {
                 if( pCar )
                 swCar = 0 ;
                 carC* pCar = (carC*)(countT)swCar ;
-                idcHirer = swCar.leverF( tinBaseP , idf ) ;
+                idcHirer = swCar.leverF( tin0P , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swCar.cFlavorsF( tinBaseP ) ;
+            countT cFlavors = swCar.cFlavorsF( tin0P ) ;
 
-            etThread.delF( tinBaseP , pstt1m ) ;
+            etThread.delF( tin0P , pstt1m ) ;
             }
-                etThread.delF( tinBaseP , pbSoul ) ;
+                etThread.delF( tin0P , pbSoul ) ;
                 }
                     if( pCar ) *pCar += car ;
 
                     }
                         if( pCar ) swCar = (countT)pCar ;
-                        pCar = new( 0 , tinBaseP , LF ) carC( tinBaseP , ether , idcHirer ) ; ___( pCar ) ;
+                        pCar = new( 0 , tin0P , LF ) carC( tin0P , ether , idcHirer ) ; ___( pCar ) ;
                     {
                     if( !pCar )
                     carC* pCar = (carC*)(countT)swCar ;
                     idcHirer = car.idcHirer ;                
 
-                    carC car( tinBaseP , ether , pbSoul ) ;
+                    carC car( tin0P , ether , pbSoul ) ;
                 {
-                etThread.boxGetShadowF( tinBaseP , pbSoul , cbSoul , psttc1 ) ; ___( pbSoul ) ;
+                etThread.boxGetShadowF( tin0P , pbSoul , cbSoul , psttc1 ) ; ___( pbSoul ) ;
                 ZE( countT , cbSoul ) ;
                 ZE( byteT* , pbSoul ) ;
             {
             FORsTRINGSiN1( pstt1m )
-            switchC swCar( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , idcHirer ) ;
+            switchC swCar( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , idcHirer ) ;
             ZE( countT , idcHirer ) ;
 
-            etThread.boxMenuF( tinBaseP , soul1m , tArcTo+T("*") ) ; ___( pstt1m ) ;
+            etThread.boxMenuF( tin0P , soul1m , tArcTo+T("*") ) ; ___( pstt1m ) ;
             ZE( strokeS* , pstt1m ) ;
 
-            etThread.boxPourF( tinBaseP , tArcTo , tArcFrom , 0x10000 ) ;
+            etThread.boxPourF( tin0P , tArcTo , tArcFrom , 0x10000 ) ;
             textC tArcTo = T("///ideafarm/ephemeral/domains/com/ideafarm/4f30104/")+TF3(now.time2,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(".")+TF3(now.time1,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/") ;
-            etThread.osTimeNowF( tinBaseP , now.time1 , now.time2 ) ;
+            etThread.osTimeNowF( tin0P , now.time1 , now.time2 ) ;
             timeS now ;
         {
         if( idCycle == 1 || bNewHour )
@@ -121,7 +121,7 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         const boolT bNewQtr       = bNewDuck   || offQTR(    time2 ) != offQTR(    time2last ) ;
         const boolT bNewDuck      =               offDUCK(   time2 ) != offDUCK(   time2last ) ;
 
-        etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
+        etThread.osTimeNowF( tin0P , time1 , time2 ) ;
         ZE( sCountT , time2 ) ;
         ZE( countT , time1 ) ;
         idCycle ++ ;
@@ -131,21 +131,21 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
     TN( tArcFrom , "///ideafarm/ephemeral/domains/com/ideafarm/3f30104/carC/" ) ;
 
-    etThread.osTimeNowF( tinBaseP , time1last , time2last ) ;
+    etThread.osTimeNowF( tin0P , time1last , time2last ) ;
     ZE( sCountT , time2last ) ;
     ZE( countT , time1last ) ;
     ZE( strokeS* , psttw ) ;
 
-    etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City Activity Reporter\r\ni report activity, and generate one billing line item per hirer, for each strong\r\n") ) ;
+    etThread.strokeF( tin0P , T("IdeaFarm " "(tm) City Activity Reporter\r\ni report activity, and generate one billing line item per hirer, for each strong\r\n") ) ;
 {
 else
 }
-    etThread.strokeF( tinBaseP , T("Another ")+textIdFileC( tinBaseP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tin0P , T("Another ")+textIdFileC( tin0P , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("4f30104") ) ;
+batonC baton( tin0P , TAG( TAGiDnULL ) , T("4f30104") ) ;
 
 TODO
 

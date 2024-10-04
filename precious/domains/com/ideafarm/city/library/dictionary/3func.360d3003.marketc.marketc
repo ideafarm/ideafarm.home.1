@@ -10,7 +10,7 @@
 }
     else inc02AM( cRef ) ;
     }
-        napBackP.formattingIsDoneF( tinBaseP ) ;
+        napBackP.formattingIsDoneF( tin0P ) ;
 
         }
             }
@@ -21,24 +21,24 @@
             countT* pcIdGood = (countT*)(byteT*)processGlobal5I._marketC_napGoodRegistry ;
         {
 
-        thirdC::c_memsetIF( tinBaseP , (byteT*)pmDemand , sizeof pmDemand ) ;
-        thirdC::c_memsetIF( tinBaseP , (byteT*)pmSupply , sizeof pmSupply ) ;
+        thirdC::c_memsetIF( tin0P , (byteT*)pmDemand , sizeof pmDemand ) ;
+        thirdC::c_memsetIF( tin0P , (byteT*)pmSupply , sizeof pmSupply ) ;
         pmPrice[ 1 ] = 2.0 ;
         pmPrice[ 0 ] = 1.0 ; //A:ASSUME: DEMAND AND SUPPLY ARE STATIONARY; SUPPLY IS PERFECTLY INELASTIC; DEMAND IS UNIT ELASTIC
-        thirdC::c_memsetIF( tinBaseP , (byteT*)pOffTockBucket , sizeof pOffTockBucket ) ;
+        thirdC::c_memsetIF( tin0P , (byteT*)pOffTockBucket , sizeof pOffTockBucket ) ;
         offBucket = 0 ;
 
         idPeriod = 0 ;
         mStock = 0.0 ;
         mMoney = TOCK ; //U::INITIALIZE TO 0 AND GET REAL MONEY
         idGood = idGoodP ;
-        grab.formatF( tinBaseP , flGRABc_null , TAG( TAGiDnULL ) ) ;
+        grab.formatF( tin0P , flGRABc_null , TAG( TAGiDnULL ) ) ;
         cRef = 1 ;
     {
     if( !napBackP.bFormattedF() )
 {
-grab( tinBaseP , TAG( TAGiDnULL ) , flGRABc_DISABLED | flGRABc_EXPLICITfORMATTING )
-/*1*/marketC::marketC( tin0S& tinBaseP , napkinC& napBackP , const countT idGoodP ) :/*1*/
+grab( tin0P , TAG( TAGiDnULL ) , flGRABc_DISABLED | flGRABc_EXPLICITfORMATTING )
+/*1*/marketC::marketC( tin0S& tin0P , napkinC& napBackP , const countT idGoodP ) :/*1*/
 
 /**/
 */

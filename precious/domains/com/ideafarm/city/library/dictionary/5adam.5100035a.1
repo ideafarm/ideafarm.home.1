@@ -10,58 +10,58 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.loafIF( tinBaseP ) ;
+etThread.loafIF( tin0P ) ;
 
 }
     __( idAck - ifcREPLY_ACK ) ;
-    __( sizeof idAck - sock.readF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ) ;
-    sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
+    __( sizeof idAck - sock.readF( tin0P , (byteT*)&idAck , sizeof idAck ) ) ;
+    sock.writeF( tin0P , (byteT*)&idCmd , sizeof idCmd ) ;
     idCmd = ifcCMDdIR_QUIT ; //------------------------------------------------------------------------------------------------
 
     __( idAck - ifcREPLY_ACK ) ;
-    __( sizeof idAck - sock.readF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ) ;
+    __( sizeof idAck - sock.readF( tin0P , (byteT*)&idAck , sizeof idAck ) ) ;
 
-    sock.writeF( tinBaseP , WS( rdo ) ) ;
-    sock.writeF( tinBaseP , (byteT*)pczLever , sizeof( countT ) * cLever ) ;
-    sock.writeF( tinBaseP , (byteT*)&cLever , sizeof cLever ) ;
-    sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
+    sock.writeF( tin0P , WS( rdo ) ) ;
+    sock.writeF( tin0P , (byteT*)pczLever , sizeof( countT ) * cLever ) ;
+    sock.writeF( tin0P , (byteT*)&cLever , sizeof cLever ) ;
+    sock.writeF( tin0P , (byteT*)&idCmd , sizeof idCmd ) ;
     idCmd = ifcCMDdIR_DEL ; //------------------------------------------------------------------------------------------
 
     __( idAck - ifcREPLY_ACK ) ;
-    __( sizeof idAck - sock.readF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ) ;
+    __( sizeof idAck - sock.readF( tin0P , (byteT*)&idAck , sizeof idAck ) ) ;
 
     }
-        etThread.strokeF( tinBaseP , T("\r\n") ) ;
-        rd.strokeF( tinBaseP ) ;
-        recDirC rd( tinBaseP , etThread , sock ) ;
+        etThread.strokeF( tin0P , T("\r\n") ) ;
+        rd.strokeF( tin0P ) ;
+        recDirC rd( tin0P , etThread , sock ) ;
     {
     for( countT idp = 1 ; idp <= cPlates ; idp ++ )
-    __( sizeof cPlates - sock.readF( tinBaseP , (byteT*)&cPlates , sizeof cPlates ) ) ;
+    __( sizeof cPlates - sock.readF( tin0P , (byteT*)&cPlates , sizeof cPlates ) ) ;
     ZE( countT , cPlates ) ;
-    sock.writeF( tinBaseP , (byteT*)pczLever , sizeof( countT ) * cLever ) ;
-    sock.writeF( tinBaseP , (byteT*)&cLever , sizeof cLever ) ;
-    sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
+    sock.writeF( tin0P , (byteT*)pczLever , sizeof( countT ) * cLever ) ;
+    sock.writeF( tin0P , (byteT*)&cLever , sizeof cLever ) ;
+    sock.writeF( tin0P , (byteT*)&idCmd , sizeof idCmd ) ;
     idCmd = ifcCMDdIR_QUERYgROUP ; //------------------------------------------------------------------------------------------
 
     __( idAck - ifcREPLY_ACK ) ;
-    __( sizeof idAck - sock.readF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ) ;
+    __( sizeof idAck - sock.readF( tin0P , (byteT*)&idAck , sizeof idAck ) ) ;
     ZE( countT , idAck ) ;
 
-    sock.writeF( tinBaseP , WS( rdo ) ) ;
-    sock.writeF( tinBaseP , (byteT*)pczLever , sizeof( countT ) * cLever ) ;
-    sock.writeF( tinBaseP , (byteT*)&cLever , sizeof cLever ) ;
-    countT cLever = etThread.strBodyLengthF( tinBaseP , pczLever ) ;
+    sock.writeF( tin0P , WS( rdo ) ) ;
+    sock.writeF( tin0P , (byteT*)pczLever , sizeof( countT ) * cLever ) ;
+    sock.writeF( tin0P , (byteT*)&cLever , sizeof cLever ) ;
+    countT cLever = etThread.strBodyLengthF( tin0P , pczLever ) ;
     countT pczLever[] = { 1 , 2 , 3 , 0 } ;
 
-    sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
+    sock.writeF( tin0P , (byteT*)&idCmd , sizeof idCmd ) ;
     countT idCmd = ifcCMDdIR_NEW ; //------------------------------------------------------------------------------------------
 
-    sock.connectF( tinBaseP , ifcPORToLD1_DIRECTORY ) ;
-    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    sock.connectF( tin0P , ifcPORToLD1_DIRECTORY ) ;
+    socketC sock( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
-    recDirC rdo( tinBaseP , etThread , 0x111 , nicNameC( 0x222 , 0x333 , 0x444 , 0x555 ) , 0 , T("myName") , pbBlob , sizeof pbBlob ) ;
+    recDirC rdo( tin0P , etThread , 0x111 , nicNameC( 0x222 , 0x333 , 0x444 , 0x555 ) , 0 , T("myName") , pbBlob , sizeof pbBlob ) ;
     byteT pbBlob[] = { 'a' , 'b' , 'c' , 'd' , 'e' , 'f' , 'g' , 0 } ;
 {
 

@@ -8,24 +8,24 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok.  loafing") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok.  loafing") ) ;
 
 }
     DEL( pJotOut ) ;
 
-    if( !POOP ) etThread.traceF( tinBaseP , T("final jotC file: ")+T(psttName) ) ;
+    if( !POOP ) etThread.traceF( tin0P , T("final jotC file: ")+T(psttName) ) ;
 
     }
         }
             }
                 }
-                    etThread.traceF( tinBaseP , T("TODO final [idJotIn,vv]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(vv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tin0P , T("TODO final [idJotIn,vv]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(vv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT vv = *(countT*)pbIn ;
                     countT idJotIn = pJotOut->idLathReadF() ;
                 {
                 else if( cbIn == sizeof( countT ) )
-                if( !pbIn ) ether.traceF( tinBaseP , T("TODO / exception: could not obtain blob so ignoring this page") ) ;
+                if( !pbIn ) ether.traceF( tin0P , T("TODO / exception: could not obtain blob so ignoring this page") ) ;
 
                 countT       cbIn = pageIn ;
                 const byteT* pbIn = pageIn ;
@@ -38,18 +38,18 @@ etThread.traceF( tinBaseP , T("ok.  loafing") ) ;
     {
     if( !POOP )
 
-    sortF( tinBaseP , etThread , pJotOut , jotIn , psttName , T("count.values") , sizeof( countT ) , 4 , flSORTERc_REQUIREuNIQUE , flJOTc_PRIVATE | flJOTc_DELETE ) ;
+    sortF( tin0P , etThread , pJotOut , jotIn , psttName , T("count.values") , sizeof( countT ) , 4 , flSORTERc_REQUIREuNIQUE , flJOTc_PRIVATE | flJOTc_DELETE ) ;
     ZE( strokeS* , psttName ) ;
     ZE( jotC* , pJotOut ) ;
 
     }
-        //etThread.traceF( tinBaseP , T("wrote [value,idJot]:    ")+TF2(pcIn[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        countT idJot = jotIn.writeF( tinBaseP , (byteT*)&pcIn[ offi ] , sizeof( countT ) ) ;
+        //etThread.traceF( tin0P , T("wrote [value,idJot]:    ")+TF2(pcIn[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        countT idJot = jotIn.writeF( tin0P , (byteT*)&pcIn[ offi ] , sizeof( countT ) ) ;
     {
     for( countT offi = 0 ; offi < cIn ; offi ++ )
     countT cIn = sizeof pcIn / sizeof pcIn[ 0 ] ;
 
-    jotC jotIn( tinBaseP , T("count.values") , flJOTc_WRITE | flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_PURGEoNcT , 0 , sizeof( countT ) ) ;
+    jotC jotIn( tin0P , T("count.values") , flJOTc_WRITE | flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_PURGEoNcT , 0 , sizeof( countT ) ) ;
     TN( tb4 , "    " ) ;
 
     _IO_

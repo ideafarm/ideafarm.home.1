@@ -8,20 +8,20 @@
 
 
 }
-    ((tin9S&)tinBaseP).pag5->frPaper.grab.ungrabF( tinBaseP ) ;
+    ((tin9S&)tin0P).pag5->frPaper.grab.ungrabF( tin0P ) ;
     hBrushDup.resetF() ;
     hPenDup.resetF() ;
     hBrushSave.resetF() ;
     hPenSave.resetF() ;
 
-    ((thirdC&)ether).winSelectDrawingToolF( tinBaseP , *pulp.pHndDrawBitmap , hBrushSave , hBrushDup ) ;
-    ((thirdC&)ether).winSelectDrawingToolF( tinBaseP , *pulp.pHndDrawBitmap , hPenSave   , hPenDup   ) ;
-    handleC hBrushDup( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
-    handleC hPenDup(   tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
+    ((thirdC&)ether).winSelectDrawingToolF( tin0P , *pulp.pHndDrawBitmap , hBrushSave , hBrushDup ) ;
+    ((thirdC&)ether).winSelectDrawingToolF( tin0P , *pulp.pHndDrawBitmap , hPenSave   , hPenDup   ) ;
+    handleC hBrushDup( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
+    handleC hPenDup(   tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
 
     RestoreDC( (HDC)oshDraw , - 1 ) ; //INTENDED TO RESTORE WHATEVER CLIPPING REGION WAS IN EFFECT
 
-    ((thirdC&)ether).winRectangleF( tinBaseP , *pulp.pHndDrawBitmap , mColFromP , mRowFromP , mColToP , mRowToP ) ;
+    ((thirdC&)ether).winRectangleF( tin0P , *pulp.pHndDrawBitmap , mColFromP , mRowFromP , mColToP , mRowToP ) ;
 
     //LOGrAW( tSay ) ;
     //TN( tSay , "" ) ; tSay = T("backSadamHighlightF: (mColFromP,mColToP): ")+TF1(mColFromP)+T(" ")+TF1(mColToP)+T("\r\n") ;
@@ -31,25 +31,25 @@
     BOS( WHATgbo , BOSoK , SaveDC( (HDC)oshDraw ) )
     const countT oshDraw = pulp.pHndDrawBitmap->osF( ifcIDtYPEhANDLE_DRAWpRIVATE ) ;
 
-    ((thirdC&)ether).winSelectDrawingToolF( tinBaseP , *pulp.pHndDrawBitmap , hBrush , hBrushSave ) ;
-    ((thirdC&)ether).winSelectDrawingToolF( tinBaseP , *pulp.pHndDrawBitmap , hPen   , hPenSave   ) ;
-    handleC hBrushSave( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
-    handleC hPenSave(   tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
+    ((thirdC&)ether).winSelectDrawingToolF( tin0P , *pulp.pHndDrawBitmap , hBrush , hBrushSave ) ;
+    ((thirdC&)ether).winSelectDrawingToolF( tin0P , *pulp.pHndDrawBitmap , hPen   , hPenSave   ) ;
+    handleC hBrushSave( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
+    handleC hPenSave(   tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
 
-    ((thirdC&)ether).winOpenDrawingToolF( tinBaseP , hBrush , ifcIDtYPEdRAWINGtOOL_BRUSH , hDrawWindow , &(countT&)countTC( rgbP ) ) ;
-    ((thirdC&)ether).winOpenDrawingToolF( tinBaseP , hPen   , ifcIDtYPEdRAWINGtOOL_PEN   , hDrawWindow , &(countT&)countTC( rgbP ) ) ;
-    handleC hBrush( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
-    handleC hPen(   tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
+    ((thirdC&)ether).winOpenDrawingToolF( tin0P , hBrush , ifcIDtYPEdRAWINGtOOL_BRUSH , hDrawWindow , &(countT&)countTC( rgbP ) ) ;
+    ((thirdC&)ether).winOpenDrawingToolF( tin0P , hPen   , ifcIDtYPEdRAWINGtOOL_PEN   , hDrawWindow , &(countT&)countTC( rgbP ) ) ;
+    handleC hBrush( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
+    handleC hPen(   tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DRAWINGtOOL ) ;
 
     winPulpOldC& pulp = *(winPulpOldC*)&pulpP ;
-    ((tin9S&)tinBaseP).pag5->frPaper.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ((tin9S&)tin0P).pag5->frPaper.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     mRowToP   -= mShrinkP ;
     mColToP   -= mShrinkP ;
     mRowFromP += mShrinkP ;
     mColFromP += mShrinkP ;
 {
-/*1*/voidT windowOldC::backSadamHighlightF( tin0S& tinBaseP , pulpOldC& pulpP , paperOldC& paperP , const countT rgbP , measureT mColFromP , measureT mRowFromP , measureT mColToP , measureT mRowToP , const measureT mShrinkP , const countT cSidesP )/*1*/
+/*1*/voidT windowOldC::backSadamHighlightF( tin0S& tin0P , pulpOldC& pulpP , paperOldC& paperP , const countT rgbP , measureT mColFromP , measureT mRowFromP , measureT mColToP , measureT mRowToP , const measureT mShrinkP , const countT cSidesP )/*1*/
 
 /**/
 */

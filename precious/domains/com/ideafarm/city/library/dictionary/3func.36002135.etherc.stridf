@@ -14,7 +14,7 @@
         sttQuoteP = sttqMin ;_WQ
         idFirstP = idfMin ;_WQ
 
-        st_psttSmallP.ungrabF( tinBaseP ) ;_WQ
+        st_psttSmallP.ungrabF( tin0P ) ;_WQ
         while( !POOP && !st_psttSmallP.third && ~hDown ) ;_WQ
         }
             }
@@ -33,23 +33,23 @@
             if( !( idSlot ++ ) )
 
             ;_WQ
-                : strIdF(    tinBaseP , 0 , flSTRmATCH_null , idf , sttq , pstts , psttBigP , idHit )
-                ? strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , pstts , psttBigP , idHit )
+                : strIdF(    tin0P , 0 , flSTRmATCH_null , idf , sttq , pstts , psttBigP , idHit )
+                ? strIdAnyF( tin0P , 0 , flSTRmATCH_null , idf , sttq , pstts , psttBigP , idHit )
             countT idt = F(flagsP) & flSTRiD_ANY
             strokeS sttq = sttQuoteP ;_WQ
             countT idf = idFirstP ;_WQ
-            strokeS* pstts = (strokeS*)st_psttSmallP.downF( tinBaseP , hDown ) ;_WQ
+            strokeS* pstts = (strokeS*)st_psttSmallP.downF( tin0P , hDown ) ;_WQ
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;_WQ
-        st_psttSmallP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;_WQ
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;_WQ
+        st_psttSmallP.grabF( tin0P , TAG( TAGiDnULL ) ) ;_WQ
         ZE( countT , idSlot ) ;_WQ
 
         ZE( countT , idSlotMin ) ;_WQ
         strokeS sttqMin( (countT)0 , sc_IGNOREqUOTES ) ;_WQ
         ZE( countT , idfMin ) ;_WQ
     {
-    STRiDrECURSE( strIdF( tinBaseP , idf , sttQuoteP , st_psttSmallP , idSlotP , psttBigP , F(flagsP) & flSTRiD_ANY , 1 ) )
+    STRiDrECURSE( strIdF( tin0P , idf , sttQuoteP , st_psttSmallP , idSlotP , psttBigP , F(flagsP) & flSTRiD_ANY , 1 ) )
 
     _IO_
 
@@ -61,7 +61,7 @@
         FV( flSTRiD , flagsP ) ;_WQ
         __( idSlotP ) ;_WQ
         __Z( st_psttSmallP ) ;_WQ
-        __( st_psttSmallP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_strokeS ) ;_WQ
+        __( st_psttSmallP.idTypeF( tin0P ) - ifcSTACKtYPE_PTR_strokeS ) ;_WQ
         __( idFirstP == 1 && (countT)sttQuoteP && bUseQuotes ) ;_WQ
         __Z( idFirstP ) ;_WQ
         __Z( psttBigP ) ;_WQ
@@ -72,7 +72,7 @@
     const boolT bUseQuotes = sttQuoteP.idCaste != sc_IGNOREqUOTES ;_WQ
     SCOOP
 {
-/*1*/countT etherC::strIdF( tin0S& tinBaseP , countT& idFirstP , strokeS& sttQuoteP , stackC& st_psttSmallP , countT& idSlotP , const strokeS* psttBigP , const flagsT flagsP , sCountT idP )/*1*/
+/*1*/countT etherC::strIdF( tin0S& tin0P , countT& idFirstP , strokeS& sttQuoteP , stackC& st_psttSmallP , countT& idSlotP , const strokeS* psttBigP , const flagsT flagsP , sCountT idP )/*1*/
 /**/
 
 */
@@ -93,7 +93,7 @@
  st_psttSmallP
  sttQuoteP
  idFirstP
- tinBaseP
+ tin0P
 arguments
 i evaluate to the id of the stroke at which the first match is found
 \<A HREF=\"5.1030176.1.0.html\"\>definition\</A\>

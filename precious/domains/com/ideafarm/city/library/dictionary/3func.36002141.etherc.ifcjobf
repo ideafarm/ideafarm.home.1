@@ -16,34 +16,34 @@
             }
                 else bFail = 0 ;
                 }
-                    stCoursesP.purgeF( tinBaseP ) ;
+                    stCoursesP.purgeF( tin0P ) ;
     
                     //CONoUT( "etherC::ifcJobF/outer/finished logging the failure of my overload" )
-                    ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+T("adam ")+TF1(idAdamP)+T(" failed to do a job for thread \"")+T(((tin9S&)tinBaseP).postThreadName)+T("\" of the local cell of adam ")+TF1(processGlobal1I.idAdamRoot) , flSAY_APPEND | flSAY_LOG ) ;
+                    ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+T("adam ")+TF1(idAdamP)+T(" failed to do a job for thread \"")+T(((tin9S&)tin0P).postThreadName)+T("\" of the local cell of adam ")+TF1(processGlobal1I.idAdamRoot) , flSAY_APPEND | flSAY_LOG ) ;
                     POOPR
                     //CONoUT( "etherC::ifcJobF/outer/logging the failure of my overload" )
                 {
                 if( POOP )
     
                 }
-                    ((tin9S&)tinBaseP).pEtScratch->ifcJobF( stCoursesP , tinBaseP , idAdamP , sOrderPrimaryP , stOrdersCopy , T(psttOldCommentP)+T(" (try ")+TF1(++idTry)+T(")") , nicNameP ) ;
+                    ((tin9S&)tin0P).pEtScratch->ifcJobF( stCoursesP , tin0P , idAdamP , sOrderPrimaryP , stOrdersCopy , T(psttOldCommentP)+T(" (try ")+TF1(++idTry)+T(")") , nicNameP ) ;
                     }
                         while( !POOP && ~hDown ) ;
                         }
                             }
                                 stOrdersCopy << psCopy ;
                                 __Z( psCopy ) ;
-                                soulC* psCopy = new( 0 , tinBaseP , LF ) soulC( *psMaster ) ;
+                                soulC* psCopy = new( 0 , tin0P , LF ) soulC( *psMaster ) ;
                             {
                             if( psMaster )
                             __Z( psMaster ) ;
-                            soulC* psMaster = (soulC*)stOrdersP.downF( tinBaseP , hDown ) ;
+                            soulC* psMaster = (soulC*)stOrdersP.downF( tin0P , hDown ) ;
                         {
                         do
-                        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     {
                     if( stOrdersP )
-                    stackC stOrdersCopy( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , stOrdersP.flagsF( tinBaseP ) , stOrdersP.idTypeF( tinBaseP ) ) ;
+                    stackC stOrdersCopy( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , stOrdersP.flagsF( tin0P ) , stOrdersP.idTypeF( tin0P ) ) ;
                 {
                 SCOOPS
             {
@@ -55,8 +55,8 @@
 
         }
             }
-                ++ s ; ( bNoQuit ? *this : etPrime ).osSleepF( tinBaseP , TOCK * 8 ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                ++ s ; ( bNoQuit ? *this : etPrime ).osSleepF( tin0P , TOCK * 8 ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
             
             //CONoUT( "etherC::ifcJobF/outer/napping 8 tocks before trying again" )
@@ -70,7 +70,7 @@
     boolT bFail = 1 ;
     boolT bNoQuitEarly = !cTriesP ;
     boolT bNoQuit = cTriesP == - 1 ;
-    etherC& etPrime = etPrimeIF( tinBaseP ) ;
+    etherC& etPrime = etPrimeIF( tin0P ) ;
     TN( tBar , "| " ) ;
 
     _IO_
@@ -81,17 +81,17 @@
         __( !psttOldCommentP->idAdam ) ;
         if( POOP ) return ;
         __Z( psttOldCommentP ) ;
-        __(  stOrdersP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_soulC ) ;
-        __(  !( F(stOrdersP.flagsF(tinBaseP)) & flSTACKc_FIFO ) ) ;
-        __(  stCoursesP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_soulC ) ;
-        __(  !( F(stCoursesP.flagsF(tinBaseP)) & flSTACKc_FIFO ) ) ;
+        __(  stOrdersP.idTypeF( tin0P ) - ifcSTACKtYPE_PTR_soulC ) ;
+        __(  !( F(stOrdersP.flagsF(tin0P)) & flSTACKc_FIFO ) ) ;
+        __(  stCoursesP.idTypeF( tin0P ) - ifcSTACKtYPE_PTR_soulC ) ;
+        __(  !( F(stCoursesP.flagsF(tin0P)) & flSTACKc_FIFO ) ) ;
         __(  stCoursesP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcJobF( tin0S& tinBaseP , stackC& stCoursesP , const countT idAdamP , soulC& sOrderPrimaryP , stackC& stOrdersP , const strokeS* const psttOldCommentP , countT cTriesP , const nicNameC nicNameP )/*1*/
+/*1*/voidT etherC::ifcJobF( tin0S& tin0P , stackC& stCoursesP , const countT idAdamP , soulC& sOrderPrimaryP , stackC& stOrdersP , const strokeS* const psttOldCommentP , countT cTriesP , const nicNameC nicNameP )/*1*/
 
 /**/
 */
@@ -120,7 +120,7 @@
  idAdamP
   must be empty
  stCoursesP
- tinBaseP
+ tin0P
 arguments
  wait for the course receiving thread to end
  until an empty order has been sent

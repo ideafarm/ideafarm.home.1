@@ -13,12 +13,12 @@
     }
         }
             }
-                etPrime.osSleepF( tinBaseP , TOCK ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                etPrime.osSleepF( tin0P , TOCK ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                ether.traceF( tinBaseP , T("will retry after napping for a tock") ) ;
+                ether.traceF( tin0P , T("will retry after napping for a tock") ) ;
 
-                ether.delF( tinBaseP , pbP ) ;
+                ether.delF( tin0P , pbP ) ;
 
                 POOPRqUIET ;
             {
@@ -45,7 +45,7 @@
                                         if( POOP ) break ;
 
                                         __Z( cbGot ) ;
-                                        countT cbGot = ss.readF( tinBaseP , pbc , cDo ) ;
+                                        countT cbGot = ss.readF( tin0P , pbc , cDo ) ;
                                     {
                                     while( cDo )
                                     countT cDo = cbP ;
@@ -54,7 +54,7 @@
                                 if( !POOP )
 
                                 __Z( pbP ) ;
-                                ether.newF( tinBaseP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
+                                ether.newF( tin0P , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
                             {
                             if( cbP )
                         {
@@ -67,28 +67,28 @@
 
                                 }
                                     }
-                                        ether.delF( tinBaseP , psttw ) ;
-                                        cbP = ether.strDigitsToSCountF( tinBaseP , psttw , 0xa , 1 ) ;
-                                        ether.strSubstringF( tinBaseP , psttw , idf , idl , psttLine ) ; ___( psttw ) ;
+                                        ether.delF( tin0P , psttw ) ;
+                                        cbP = ether.strDigitsToSCountF( tin0P , psttw , 0xa , 1 ) ;
+                                        ether.strSubstringF( tin0P , psttw , idf , idl , psttLine ) ; ___( psttw ) ;
                                         ZE( strokeS* , psttw ) ;
 
                                         ZE( countT , idl ) ;
                                         while( psttLine[ CSpREFIX - 1 + idf ] == sttBlank ) idf ++ ;
-                                        countT idf = tContentLength.csF( tinBaseP ) + 1 ;
+                                        countT idf = tContentLength.csF( tin0P ) + 1 ;
                                         strokeS* psttLine = tLine ;
                                     {
-                                    if( 1 == ether.strIdF( tinBaseP , tContentLength , tLine ) )
+                                    if( 1 == ether.strIdF( tin0P , tContentLength , tLine ) )
                                     strokeS sttBlank( ' ' ) ;
                                 {
                                 if( !POOP )
 
                                 }
                                     __NZ( ostLF != '\n' ) ;
-                                    __Z( ss.readF( tinBaseP , &ostLF , 1 ) ) ;
+                                    __Z( ss.readF( tin0P , &ostLF , 1 ) ) ;
                                     osTextT ostLF ;
 
                                     }
-                                        //ether.traceF( tinBaseP , T("header line: ")+T(postBuffer) ) ;
+                                        //ether.traceF( tin0P , T("header line: ")+T(postBuffer) ) ;
                                         postBuffer[ offb ] = 0 ;
                                     {
                                     if( offb )
@@ -99,17 +99,17 @@
                                     }
                                         }
                                             __1
-                                            etRock.traceF( tinBaseP , T("[tSay]: ")+tSay ) ;
-                                            etRock.traceF( tinBaseP , T("pullFileF / exception: did not expect [tLine]: ")+tLine ) ;
+                                            etRock.traceF( tin0P , T("[tSay]: ")+tSay ) ;
+                                            etRock.traceF( tin0P , T("pullFileF / exception: did not expect [tLine]: ")+tLine ) ;
                                         {
-                                        if( !ether.strIdF( tinBaseP , tReplyCode200_OK , tLine ) )
+                                        if( !ether.strIdF( tin0P , tReplyCode200_OK , tLine ) )
 
                                         }
                                             break ;
-                                            etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("authorization refused") ) ;
+                                            etherC::etRockIF( tin0P ).traceF( tin0P , T("authorization refused") ) ;
                                         {
                                         if( POOP )
-                                        __NZ( 1 == ether.strIdF( tinBaseP , tReplyCode401_Unauthorized , tLine ) ) ;
+                                        __NZ( 1 == ether.strIdF( tin0P , tReplyCode401_Unauthorized , tLine ) ) ;
                                     {
                                     if( !POOP )
 
@@ -124,7 +124,7 @@
                             if( postBuffer[ offb ] == '\r' )         // IF I HAVE A LINE OF HEADER
 
                             if( POOP ) break ;
-                            __Z( ss.readF( tinBaseP , postBuffer + offb , 1 ) ) ;
+                            __Z( ss.readF( tin0P , postBuffer + offb , 1 ) ) ;
                         {
                         for( offb = 0 ; !POOP && offb < sizeof postBuffer ; offb ++ )
                         TN( tContentLength , "Content-Length:" ) ;
@@ -149,28 +149,28 @@
                         // SAMPLE REPLY
                     {
                     else
-                    if( POOP ) ether.traceF( tinBaseP , T("pullFileF / could not write") ) ;
-                    ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+                    if( POOP ) ether.traceF( tin0P , T("pullFileF / could not write") ) ;
+                    ss.writeF( tin0P , (osTextT*)tSay , (countT)tSay.csF( tin0P ) ) ;
                 {
                 else
-                if( POOP ) ether.traceF( tinBaseP , T("pullFileF / could not connect") ) ;
-                ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , ether , tHost ) ) ;
+                if( POOP ) ether.traceF( tin0P , T("pullFileF / could not connect") ) ;
+                ss.connectF( tin0P , 443 , socketC::nicNameIF( tin0P , ether , tHost ) ) ;
             {
             else
-            if( POOP ) ether.traceF( tinBaseP , T("pullFileF / could not ct socket") ) ;
-            socketC ss( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+            if( POOP ) ether.traceF( tin0P , T("pullFileF / could not ct socket") ) ;
+            socketC ss( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
 
             SCOOPS
         {
         IFsCRATCH
 
         }
-            ether.delF( tinBaseP , psttShortUrlEncoded ) ;
+            ether.delF( tin0P , psttShortUrlEncoded ) ;
             }
-                bHandle.ungrabF( tinBaseP ) ;
+                bHandle.ungrabF( tin0P ) ;
                 tSay = T("GET ")+tUrlCloudAgent+T("/")+T(psttCloudContainerP)+T("/")+T(psttShortUrlEncoded)+T(" HTTP/1.1\r\nHost: ")+tHost+T("\r\nX-Auth-Token: ")+cloudInfo.tRackspaceAccessToken+T("\r\n\r\n") ;
                 cloudInfoS& cloudInfo = *(cloudInfoS*)hCloud.osF( ifcIDtYPEhANDLE_CLOUD ) ;
-                bHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                bHandle.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
 
             //  
@@ -180,10 +180,10 @@
             // 
             // EXAMPLE
 
-            ether.strToUrlF( tinBaseP , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
+            ether.strToUrlF( tin0P , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
             ZE( strokeS* , psttShortUrlEncoded ) ;
         {
-        if( !tSay.csF( tinBaseP ) )
+        if( !tSay.csF( tin0P ) )
 
         //}
         //    __1 ;
@@ -212,10 +212,10 @@
     boolT bNoQuit          = cTriesP == - 1 ;
 
     //boolT bWoth = 1 ; //U::TO FIND A BUG
-    etherC& etPrime   = etherC::etPrimeIF( tinBaseP ) ;
+    etherC& etPrime   = etherC::etPrimeIF( tin0P ) ;
     ZE( boolT , bOk ) ;
 
-    //etRock.traceF( tinBaseP , T("the GET utterance has been appended to the log") ) ;
+    //etRock.traceF( tin0P , T("the GET utterance has been appended to the log") ) ;
     //LOGrAW( tSay ) ;
 
     _IO_
@@ -229,11 +229,11 @@
         if( POOP ) return ;
     {
     IFbEcAREFUL
-    etherC& etRock = etherC::etRockIF( tinBaseP ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     SCOOP
 {
-/*1*/voidT cloudC::pullFileF( tin0S& tinBaseP , byteT*& pbP , countT& cbP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP , const countT cTriesP )/*1*/
+/*1*/voidT cloudC::pullFileF( tin0S& tin0P , byteT*& pbP , countT& cbP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP , const countT cTriesP )/*1*/
 
 /**/
 */

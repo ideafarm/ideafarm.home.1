@@ -12,9 +12,9 @@
 REST
 
 }
-    if( nicName == nicNameDoomed && pbIn && cbIn ) etThread.strokeF( tinBaseP , T(pbIn) ) ;
+    if( nicName == nicNameDoomed && pbIn && cbIn ) etThread.strokeF( tin0P , T(pbIn) ) ;
 
-    sockd.readF( tinBaseP , pbIn , cbIn , idPort , nicName ) ;
+    sockd.readF( tin0P , pbIn , cbIn , idPort , nicName ) ;
     nicNameC nicName ;
     ZE( countT , idPort ) ;
     ZE( countT , cbIn ) ;
@@ -22,13 +22,13 @@ REST
 {
 while( !ether && !etThread )
 
-etThread.osThreadF( tinBaseP , countTC() , tmFireF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&nicNameDoomed , (countT)&sockd , (countT)&bQuit ) ;
+etThread.osThreadF( tin0P , countTC() , tmFireF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&nicNameDoomed , (countT)&sockd , (countT)&bQuit ) ;
 ZE( boolT , bQuit ) ;
 
-sockd.bindF( tinBaseP ) ;
-socketC sockd( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+sockd.bindF( tin0P ) ;
+socketC sockd( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
-nicNameC nicNameDoomed = etThread.sockNicNameF( tinBaseP , tIP ) ;
+nicNameC nicNameDoomed = etThread.sockNicNameF( tin0P , tIP ) ;
 TN( tIP , "64.239.5.37" ) ;
 //TN( tIP , "216.162.169.49" ) ;
 
@@ -38,8 +38,8 @@ DONE( tmFireF )
 
 }
     }
-        etThread.osSleepF( tinBaseP , TUCK * 0x80 ) ;
-        sockd.writeF( tinBaseP , ifcPORToLD2_CONTROL , nicNameDoomed , (byteT*)&c2o , sizeof c2o ) ;
+        etThread.osSleepF( tin0P , TUCK * 0x80 ) ;
+        sockd.writeF( tin0P , ifcPORToLD2_CONTROL , nicNameDoomed , (byteT*)&c2o , sizeof c2o ) ;
     {
     while( !ether && !etThread && !bQuit )
     

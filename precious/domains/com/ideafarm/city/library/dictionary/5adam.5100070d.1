@@ -10,25 +10,25 @@
 REST
 
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("done ; loafing") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("done ; loafing") ) ;
 
-etThread.traceF( tinBaseP , T("[cGot]: ")+TF2(*(countT*)pbGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tin0P , T("[cGot]: ")+TF2(*(countT*)pbGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-boolT bDelete = bksFoo.readF( tinBaseP , pbGot , cbGot , h1 , flBOOKScrEAD_null ) ;
+boolT bDelete = bksFoo.readF( tin0P , pbGot , cbGot , h1 , flBOOKScrEAD_null ) ;
 ZE( countT , cbGot ) ;
 ZE( const byteT* , pbGot ) ;
 
-bksFoo.writeF( tinBaseP , h7 , (byteT*)&c7 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
+bksFoo.writeF( tin0P , h7 , (byteT*)&c7 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
 
-bksFoo.writeF( tinBaseP , h6 , (byteT*)&c6 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
-bksFoo.writeF( tinBaseP , h5 , (byteT*)&c5 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
+bksFoo.writeF( tin0P , h6 , (byteT*)&c6 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
+bksFoo.writeF( tin0P , h5 , (byteT*)&c5 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
 
-bksFoo.writeF( tinBaseP , h4 , (byteT*)&c4 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
-bksFoo.writeF( tinBaseP , h3 , (byteT*)&c3 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
+bksFoo.writeF( tin0P , h4 , (byteT*)&c4 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
+bksFoo.writeF( tin0P , h3 , (byteT*)&c3 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
 
-bksFoo.writeF( tinBaseP , h2 , (byteT*)&c2 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
-bksFoo.writeF( tinBaseP , h1 , (byteT*)&c1 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
+bksFoo.writeF( tin0P , h2 , (byteT*)&c2 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
+bksFoo.writeF( tin0P , h1 , (byteT*)&c1 , sizeof( countT ) , 0 , 0 , flBOOKScwRITE_null ) ;
 
 countT c7 = 7 ;
 countT c6 = 6 ;
@@ -46,7 +46,7 @@ handle0111C h3 ;
 handle0111C h2 ;
 handle0111C h1 ;
 
-booksC bksFoo( tinBaseP , TAG( TAGiDnULL ) , "foo" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , 2 * sizeof( countT ) , 2 , 0 , 0 , 0 , 0 , 0 ) ;
+booksC bksFoo( tin0P , TAG( TAGiDnULL ) , "foo" , ifcIDsTATEsPACE_SINGLEaDAM( tin0P ) , flBOOKSc_WRITER | flBOOKSc_PURGEoNcT , 2 * sizeof( countT ) , 2 , 0 , 0 , 0 , 0 , 0 ) ;
 
 TODO
 

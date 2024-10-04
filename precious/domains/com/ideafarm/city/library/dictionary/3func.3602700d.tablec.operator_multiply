@@ -12,22 +12,22 @@
 
     }
         }
-            for( countT idc = 1 ; idc <= cColsRight ; idc ++ ) rslt.newObjectF( tinBaseP ,     tableP( idrr , idc ) , _CT1_03 ) ;
-            {for( countT idc = 1 ; idc <= cCols      ; idc ++ ) rslt.newObjectF( tinBaseP , operator()(  idr , idc ) , _CT1_03 ) ;}
-            rslt.newEventF( tinBaseP ) ;
+            for( countT idc = 1 ; idc <= cColsRight ; idc ++ ) rslt.newObjectF( tin0P ,     tableP( idrr , idc ) , _CT1_03 ) ;
+            {for( countT idc = 1 ; idc <= cCols      ; idc ++ ) rslt.newObjectF( tin0P , operator()(  idr , idc ) , _CT1_03 ) ;}
+            rslt.newEventF( tin0P ) ;
         {
         for( countT idrr = 1 ; idrr <= cRowsRight ; idrr ++ )
     {
     for( countT idr = 1 ; idr <= cRows ; idr ++ )
-    const countT cRowsRight = tableP.cRowsF( tinBaseP ) ;
+    const countT cRowsRight = tableP.cRowsF( tin0P ) ;
     const countT cRows = stEvents ;
 
-    for( countT idc = 1 ; idc <= cColsRight ; idc ++ ) rslt.newColF( tinBaseP , T(tableP.nameF(tinBaseP))+T(".")+T(tableP.nameF(tinBaseP,idc)) ) ;
-    const countT cColsRight = tableP.cColsF( tinBaseP ) ;
-    {for( countT idc = 1 ; idc <= cCols ; idc ++ ) rslt.newColF( tinBaseP , T(psttName)+T(".")+T(nameF(tinBaseP,idc)) ) ;}
+    for( countT idc = 1 ; idc <= cColsRight ; idc ++ ) rslt.newColF( tin0P , T(tableP.nameF(tin0P))+T(".")+T(tableP.nameF(tin0P,idc)) ) ;
+    const countT cColsRight = tableP.cColsF( tin0P ) ;
+    {for( countT idc = 1 ; idc <= cCols ; idc ++ ) rslt.newColF( tin0P , T(psttName)+T(".")+T(nameF(tin0P,idc)) ) ;}
     const countT cCols = stNames ;
 
-    tableC rslt( tinBaseP , ether ) ;
+    tableC rslt( tin0P , ether ) ;
     _IO_
 
     }
@@ -44,8 +44,8 @@
 
 /**/
 */
- cCols will be cColsF( tinBaseP ) + tableP.cColsF( tinBaseP )
- cRows will be cRowsF( tinBaseP ) * tableP.cRowsF( tinBaseP )
+ cCols will be cColsF( tin0P ) + tableP.cColsF( tin0P )
+ cRows will be cRowsF( tin0P ) * tableP.cRowsF( tin0P )
 combines two tables, matching each row in *this with every row in tableP
   \<A HREF=\"5.1820104.1.1.0.html\"\>1820104:  WAKEsHOW( "example.simplest.func.132000d.tableC.operator_multiply" )\</A\>
  simplest

@@ -11,13 +11,13 @@
     }
         //CONoUTrAW( "cioPutF: done\r\n" ) ;
         }
-            ((tin9S&)tinBaseP).pag1->_etherC_.cio_pStkOut->ungrabF( tinBaseP ) ;
-            //{ CONoUTrAW3( "queue: " , *((tin9S&)tinBaseP).pag1->_etherC_.cio_pStkOut , "\r\n" ) ; }
-            *((tin9S&)tinBaseP).pag1->_etherC_.cio_pStkOut << (countT)psWrap ; psWrap = 0 ;
+            ((tin9S&)tin0P).pag1->_etherC_.cio_pStkOut->ungrabF( tin0P ) ;
+            //{ CONoUTrAW3( "queue: " , *((tin9S&)tin0P).pag1->_etherC_.cio_pStkOut , "\r\n" ) ; }
+            *((tin9S&)tin0P).pag1->_etherC_.cio_pStkOut << (countT)psWrap ; psWrap = 0 ;
             //CONoUTrAW( "cioPutF: pushing wrap onto stack\r\n" ) ;
         {
-        //U::if( ((tin9S&)tinBaseP).pag1->_etherC_.cio_pStkOut->waitGrabF( tinBaseP , 0x10 , bQuitP ) )
-        if( ((tin9S&)tinBaseP).pag1->_etherC_.cio_pStkOut->waitGrabF( tinBaseP , 0x100 , bQuitP ) ) //U::
+        //U::if( ((tin9S&)tin0P).pag1->_etherC_.cio_pStkOut->waitGrabF( tin0P , 0x10 , bQuitP ) )
+        if( ((tin9S&)tin0P).pag1->_etherC_.cio_pStkOut->waitGrabF( tin0P , 0x100 , bQuitP ) ) //U::
         //CONoUTrAW( "cioPutF: waitGrabF\r\n" ) ;
         //CONoUTrAW( "cioPutF: pushing to *cio_pStkOutI\r\n" ) ;
 
@@ -34,16 +34,16 @@
                 /* 4 */ *psWrap << (countT)ifcOLDiDtYPEwRAP_GIFT ;
                 /* 3 */ *psWrap << (countT)1 ; // idVersion
                 /* 2 */ *psWrap << (countT)ifcIDpROTOCOL_RELAYwRAP ;
-                /* 1 */ *psWrap << (strokeS*)textC( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , "IdeaFarm " "(tm)" ) ;
+                /* 1 */ *psWrap << (strokeS*)textC( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "IdeaFarm " "(tm)" ) ;
             {
             if( psTo && psToMediator )
 
             __Z( psToMediator ) ;
-            if( !psToMediator ) { psToMediator = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psToMediator ) ; }
+            if( !psToMediator ) { psToMediator = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psToMediator ) ; }
             soulC* psToMediator = psToMediatorP ;
 
             __Z( psTo ) ;
-            if( !psTo ) { psTo = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psTo ) ; }
+            if( !psTo ) { psTo = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psTo ) ; }
             soulC* psTo = psToP ;
         {
         else
@@ -51,10 +51,10 @@
     {
     if( psWrap )
     __Z( psWrap ) ;
-    soulC* psWrap = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
+    soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
 
     //CONoUTrAW( "cioPutF: after cioSetupF\r\n" ) ;
-    if( !((tin9S&)tinBaseP).pag1->_etherC_.cio_pStkOut ) cioSetupF( tinBaseP ) ;
+    if( !((tin9S&)tin0P).pag1->_etherC_.cio_pStkOut ) cioSetupF( tin0P ) ;
     //CONoUTrAW( "cioPutF: cioSetupF\r\n" ) ;
     _IO_
 
@@ -64,7 +64,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::cioPutF( tin0S& tinBaseP , const boolT& bQuitP , const countT* const pczChannelP , soulC& sGiftP , soulC* const psToP , soulC* const psToMediatorP , const flagsT flagsP )/*1*/
+/*1*/voidT etherC::cioPutF( tin0S& tin0P , const boolT& bQuitP , const countT* const pczChannelP , soulC& sGiftP , soulC* const psToP , soulC* const psToMediatorP , const flagsT flagsP )/*1*/
 
 /**/
 */

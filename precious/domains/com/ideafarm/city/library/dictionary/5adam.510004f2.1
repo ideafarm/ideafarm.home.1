@@ -9,18 +9,18 @@
 
 REST
 
-etThread.loafIF( tinBaseP ) ;
+etThread.loafIF( tin0P ) ;
 
-stx.ungrabF( tinBaseP ) ;
+stx.ungrabF( tin0P ) ;
 
 }
-    for( countT idu = 0 ; idu <= cUp   ; idu ++ ) etThread.strokeF( tinBaseP , T("up:   ")+TF1(*ppcUp[idu])+T("\r\n") ) ;
-    for( countT idd = 0 ; idd <= cDown ; idd ++ ) etThread.strokeF( tinBaseP , T("down: ")+TF1(*ppcDown[idd])+T("\r\n") ) ;
+    for( countT idu = 0 ; idu <= cUp   ; idu ++ ) etThread.strokeF( tin0P , T("up:   ")+TF1(*ppcUp[idu])+T("\r\n") ) ;
+    for( countT idd = 0 ; idd <= cDown ; idd ++ ) etThread.strokeF( tin0P , T("down: ")+TF1(*ppcDown[idd])+T("\r\n") ) ;
 {
 if( ppcDown && ppcUp )
-etThread.strokeF( tinBaseP , T(".\r\n") ) ;
+etThread.strokeF( tin0P , T(".\r\n") ) ;
 
-stx.grabListF( tinBaseP , ppcDown , ppcUp , cDown , cUp ) ;
+stx.grabListF( tin0P , ppcDown , ppcUp , cDown , cUp ) ;
 countT cUp = - 1 ;
 countT cDown = - 1 ;
 ZE( countT** , ppcUp ) ;
@@ -29,7 +29,7 @@ ZE( countT** , ppcDown ) ;
 stx[ 3 ] ;
 
 for( countT vv = 1 ; vv <= 5 ; vv ++ ) stx << vv ;
-stackC stx( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+stackC stx( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 

@@ -9,18 +9,18 @@
 
 ;
 }
-    friend boolT gossipCBF( tin0S& tinBaseP , assViewC& assViewP , associateC& vieweeP , associateC& viewerP , const countT cArgP , staqC* const pStqWalkerP ) ;
+    friend boolT gossipCBF( tin0S& tin0P , assViewC& assViewP , associateC& vieweeP , associateC& viewerP , const countT cArgP , staqC* const pStqWalkerP ) ;
 
-    inline countT ungrabF( tin0S& tinBaseP , const flagsT flagsP = flGRABcUNGRABf_null ) { return stAss.ungrabF( tinBaseP , flagsP ) ; }
-    inline voidT grabF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) { stAss.grabF( tinBaseP , idLineP , idiFileP , pbBitsP ) ; }
+    inline countT ungrabF( tin0S& tin0P , const flagsT flagsP = flGRABcUNGRABf_null ) { return stAss.ungrabF( tin0P , flagsP ) ; }
+    inline voidT grabF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP ) { stAss.grabF( tin0P , idLineP , idiFileP , pbBitsP ) ; }
     inline countT idGroupF( voidT ) const { return idGroup ; }
 
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.associateC.gossipF!||
-    boolT gossipF( tin0S& tinBaseP , const countT idMsgP , const countT cArgP = 0 , const countT idTypeP = ifcIDtYPEgOSSIP_APPLICATION , const countT* const pczIncludeP = 0 , const countT* const pczExcludeP = 0 ) ;
+    boolT gossipF( tin0S& tin0P , const countT idMsgP , const countT cArgP = 0 , const countT idTypeP = ifcIDtYPEgOSSIP_APPLICATION , const countT* const pczIncludeP = 0 , const countT* const pczExcludeP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.associateC.moonThePhotographersF!||
-    voidT moonThePhotographersF( tin0S& tinBaseP ) ;
+    voidT moonThePhotographersF( tin0S& tin0P ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.associateC.walkF!||
-    boolT walkF( tin0S& tinBaseP , associateCBFT pAssociateCBFP , countT cArgP = 0 , const flagsT flagsP = flASSOCIATEcwALK_null , const countT* const pczIncludeP = 0 , const countT* const pczExcludeP = 0 , staqC* const pStqWalkerP = 0 ) ;
+    boolT walkF( tin0S& tin0P , associateCBFT pAssociateCBFP , countT cArgP = 0 , const flagsT flagsP = flASSOCIATEcwALK_null , const countT* const pczIncludeP = 0 , const countT* const pczExcludeP = 0 , staqC* const pStqWalkerP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.associateC.operator_element!||
     associateC& operator []( countT idP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.associateC.operator_countT!||
@@ -33,7 +33,7 @@
     public :
 
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.associateC.associateC!||
-    associateC( tin0S& tinBaseP , etherC& etherP , const countT idGroupP , const countT cbViewP = 0 ) ;
+    associateC( tin0S& tin0P , etherC& etherP , const countT idGroupP , const countT cbViewP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.associateC.dt_associateC!||
     virtual ~associateC( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.associateC.NEWdELcLASSb!||
@@ -42,11 +42,11 @@
     protected :
 
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.associateC.takeMyPictureF!||
-    voidT takeMyPictureF( tin0S& tinBaseP , associateC& vieweeP ) ;
+    voidT takeMyPictureF( tin0S& tin0P , associateC& vieweeP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.associateC.sayCheeseF!||
-    virtual voidT sayCheeseF( tin0S& tinBaseP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP ) ;
+    virtual voidT sayCheeseF( tin0S& tin0P , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.associateC.hearGossipF!||
-    virtual boolT hearGossipF( tin0S& tinBaseP , associateC& originP , const countT idTypeP , const countT idMsgP , const countT cArgP ) ;
+    virtual boolT hearGossipF( tin0S& tin0P , associateC& originP , const countT idTypeP , const countT idMsgP , const countT cArgP ) ;
 
     private :
 
@@ -78,9 +78,9 @@
    the woman changes her pose
   the photo shoot consists of repeated cycles of the following actions
  narrative for hypothetical beautiful woman on a beach at night, surrounded by photographers
-  sayCheeseF( tin0S& tinBaseP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP ) :  constructs an assViewC instance at pbaViewP
-  takeMyPictureF( tin0S& tinBaseP , associateC& vieweeP )                                       :  if vieweeP is known to me, call vieweeP.sayCheeseF( tin0S& tinBaseP , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP )
-  moonThePhotographersF( tin0S& tinBaseP )                                                      :  for each associate       , call takeMyPictureF( tinBaseP , *this )
+  sayCheeseF( tin0S& tin0P , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP ) :  constructs an assViewC instance at pbaViewP
+  takeMyPictureF( tin0S& tin0P , associateC& vieweeP )                                       :  if vieweeP is known to me, call vieweeP.sayCheeseF( tin0S& tin0P , byteT* const pbaViewP , countT cbaViewP , associateC& viewerP )
+  moonThePhotographersF( tin0S& tin0P )                                                      :  for each associate       , call takeMyPictureF( tin0P , *this )
  calls
 photography analog
 associates can be heterogeneous (not all of the same derived class)

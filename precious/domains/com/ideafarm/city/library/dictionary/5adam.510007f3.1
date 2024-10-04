@@ -9,23 +9,23 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 
 }
-    etThread.delF( tinBaseP , psttd ) ;
-    etThread.traceF( tinBaseP , T("line or delimiter [cstt,dump]:    ")+TF2(psttc1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttd) , /*flTRACE_KEEPcRlF |*/ flTRACE_NOpREFIX ) ;
-    //etThread.traceF( tinBaseP , T("line or delimiter [cstt,value]:    ")+TF2(psttc1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttc1)+T("\"") , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
+    etThread.delF( tin0P , psttd ) ;
+    etThread.traceF( tin0P , T("line or delimiter [cstt,dump]:    ")+TF2(psttc1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttd) , /*flTRACE_KEEPcRlF |*/ flTRACE_NOpREFIX ) ;
+    //etThread.traceF( tin0P , T("line or delimiter [cstt,value]:    ")+TF2(psttc1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttc1)+T("\"") , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
 
-    etThread.strDumpStrokesIF( tinBaseP , psttd , psttc1 , 0 ) ; ___( psttd ) ;
+    etThread.strDumpStrokesIF( tin0P , psttd , psttc1 , 0 ) ; ___( psttd ) ;
     ZE( strokeS* , psttd ) ;
 {
 FORsTRINGSiN1( pstt1w )
 
-//((tin9S&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
-etThread.strWordsF( tinBaseP , pstt1w , psttzIn , sttq , psttvDelim , flSTRwORDS_DELIMITERsTRING | flSTRwORDS_DELIMITERS , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
-//((tin9S&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+//((tin9S&)tin0P).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+etThread.strWordsF( tin0P , pstt1w , psttzIn , sttq , psttvDelim , flSTRwORDS_DELIMITERsTRING | flSTRwORDS_DELIMITERS , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
+//((tin9S&)tin0P).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 ZE( strokeS* , pstt1w ) ;
 
@@ -34,7 +34,7 @@ TN( tDelim , "ab" ) ;
 //TN( tDelim , "\r\n" ) ;
 
 
-etThread.traceF( tinBaseP , T("dut input: [cstt,value]:    ")+TF2(psttzIn->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttzIn)+T("\"") , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
+etThread.traceF( tin0P , T("dut input: [cstt,value]:    ")+TF2(psttzIn->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttzIn)+T("\"") , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
 static strokeS* psttzIn = tIn ;
 //TN( tIn , "a\r\nbb\r\n\r\nccc\r\n\r\n\r\ndddd\r\n\r\n\r\n\r\n" ) ;
 

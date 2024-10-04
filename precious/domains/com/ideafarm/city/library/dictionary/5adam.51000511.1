@@ -10,17 +10,17 @@
 REST
 
 }
-    while( cRelays ) { ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ; }
+    while( cRelays ) { ++ s ; etThread.osSleepF( tin0P , TUCK * 0x40 ) ; }
 
     /*if( etherC::ifc_idHomeIdisk_IF() == 1 )*/ etThread.osThreadF( TaRG1( tmTestF ) ) ;
 
     }
-        ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
+        ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
         cRelays ++ ; etThread.osThreadF( TaRG1( tmRelayOldF ) , (countT)&cRelays ) ;
     {
     while( cDo -- )
     countT cDo = 1 ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
 ZE( countT , cRelays ) ;
     
@@ -34,7 +34,7 @@ TODO
 DONE( tmRelayOldF )
 }
     cRelaysP -- ;
-    relayOldC relay( tinBaseP , etThread , bReady ) ;
+    relayOldC relay( tin0P , etThread , bReady ) ;
     ZE( boolT , bReady ) ;
     countT& cRelaysP = *(countT*)pTaskP->c1 ;
 {
@@ -45,56 +45,56 @@ TASK( tmRelayOldF )
 DONE( tmTestF )
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 
-    etThread.cioPutF( tinBaseP , bQuit , c8c , sGift , &sTo , &sToMediator ) ;
-    etThread.traceF( tinBaseP , T("test [msg]:    ")+tMsg ) ;
+    etThread.cioPutF( tin0P , bQuit , c8c , sGift , &sTo , &sToMediator ) ;
+    etThread.traceF( tin0P , T("test [msg]:    ")+tMsg ) ;
 
     sGift << (strokeS*)tMsg ;
     TN( tMsg , "" ) ; tMsg = T("115 tmTestF bang [nnMe,idHome,idMsg]:    ")+T(nnMe)+T("    ")+TF2(processGlobal2S::_processGlobal2I_IF().idHome,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tIdMsg ;
-    soulC sGift( tinBaseP , TAG( TAGiDnULL ) ) ;
+    soulC sGift( tin0P , TAG( TAGiDnULL ) ) ;
 
     TN( tIdMsg , "" ) ; tIdMsg = TF2(++idMsg,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 {
 while( !ether )
 ZE( countT , idMsg ) ;
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
 count8S c8c( 1 , 2 , 3 , 4 ) ;
 ZE( boolT , bQuit ) ;
 
-soulC sToMediator( tinBaseP , TAG( TAGiDnULL ) ) ;
-soulC sTo( tinBaseP , TAG( TAGiDnULL ) ) ;
+soulC sToMediator( tin0P , TAG( TAGiDnULL ) ) ;
+soulC sTo( tin0P , TAG( TAGiDnULL ) ) ;
 
-nicNameC nnMe = socketC::nicNameIF( tinBaseP , etThread , 0 ) ;
+nicNameC nnMe = socketC::nicNameIF( tin0P , etThread , 0 ) ;
 
-etThread.cioSetGetF( tinBaseP , cioGetF ) ;
+etThread.cioSetGetF( tin0P , cioGetF ) ;
 
-etThread.traceF( tinBaseP , T("napped") ) ;
+etThread.traceF( tin0P , T("napped") ) ;
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK << 2 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
-etThread.traceF( tinBaseP , T("napping") ) ;
+etThread.traceF( tin0P , T("napping") ) ;
 
 TASK( tmTestF )
 
 }
     }
         DEL( psPayloadP ) ; //OPTIONAL
-        etherP.delF( tinBaseP , pczChannelP ) ; //OPTIONAL
-        etherP.delF( tinBaseP , psttMsg ) ;
+        etherP.delF( tin0P , pczChannelP ) ; //OPTIONAL
+        etherP.delF( tin0P , psttMsg ) ;
 
-        etherP.traceF( tinBaseP , T("115 cioGetF [channel,message]: ")+TF2(pczChannelP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" \"")+T(psttMsg)+T("\"") , flTRACE_null , ifcIDtRACEdIVERT_f ) ;
+        etherP.traceF( tin0P , T("115 cioGetF [channel,message]: ")+TF2(pczChannelP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" \"")+T(psttMsg)+T("\"") , flTRACE_null , ifcIDtRACEdIVERT_f ) ;
 
         *psPayloadP >> psttMsg ; ___( psttMsg ) ;
         ZE( strokeS* , psttMsg ) ;
     {
     if( idPayloadTypeP == ifcOLDiDtYPEgIFT_APPLICATION )
 
-    //etherP.traceF( tinBaseP , T("cioGetF [idPayloadTypeP]: ")+TF2(idPayloadTypeP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etherP.traceF( tin0P , T("cioGetF [idPayloadTypeP]: ")+TF2(idPayloadTypeP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 {
-voidT cioGetF( tin0S& tinBaseP , etherC& etherP , const boolT& bQuitP , const countT idPayloadTypeP , soulC*& psPayloadP , countT*& pczChannelP , countT& cArgP , const portTimeC& idptOriginP )
+voidT cioGetF( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , const countT idPayloadTypeP , soulC*& psPayloadP , countT*& pczChannelP , countT& cArgP , const portTimeC& idptOriginP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_3BANG" )/*1*/
 /**/

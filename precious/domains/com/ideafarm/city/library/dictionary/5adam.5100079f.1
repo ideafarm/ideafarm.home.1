@@ -13,8 +13,8 @@ DEL( pInfo ) ;
 
 }
     }
-        etThread.fileWriteF( tinBaseP , fiOut , pbTock , cbNow ) ;
-        etThread.fileReadF( tinBaseP , pbTock , cbNow , fiIn , 0 ) ;
+        etThread.fileWriteF( tin0P , fiOut , pbTock , cbNow ) ;
+        etThread.fileReadF( tin0P , pbTock , cbNow , fiIn , 0 ) ;
 
         cbToDo -= cbNow ;
         countT cbNow = cbToDo < TOCK ? cbToDo : TOCK ;
@@ -25,13 +25,13 @@ DEL( pInfo ) ;
     countT cbToDo = pInfo->cbUsed ;
     static byteT pbTock[ TOCK ] ;
 
-    fileC fiOut( tinBaseP , "g:\\sources\\install.wim" , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ;
+    fileC fiOut( tin0P , "g:\\sources\\install.wim" , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ;
 {
 if( pInfo )
-((tin9S&)tinBaseP).pEther->diskFileQueryF( tinBaseP , pInfo , fiIn ) ; ___( pInfo ) ;
+((tin9S&)tin0P).pEther->diskFileQueryF( tin0P , pInfo , fiIn ) ; ___( pInfo ) ;
 static ZE( infoFileS* , pInfo ) ;
 
-fileC fiIn( tinBaseP , "h:\\sources\\install.wim" , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ;
+fileC fiIn( tin0P , "h:\\sources\\install.wim" , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 ) ;
 
 TODO                                  
 

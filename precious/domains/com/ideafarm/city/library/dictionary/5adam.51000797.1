@@ -9,44 +9,44 @@
                             
 REST
 
-ether.loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+ether.loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 //#endif
 
 }
-    etThread.traceF( tinBaseP , T("destroyed cache") ) ;
+    etThread.traceF( tin0P , T("destroyed cache") ) ;
     DEL( pCache ) ;
-    etThread.traceF( tinBaseP , T("destroying cache") ) ;
+    etThread.traceF( tin0P , T("destroying cache") ) ;
 
-    pCache->reportF( tinBaseP , T("cache report after query") ) ;
+    pCache->reportF( tin0P , T("cache report after query") ) ;
     }
-        etThread.traceF( tinBaseP , T("found: ")+T(pFound->psttName) ) ;
+        etThread.traceF( tin0P , T("found: ")+T(pFound->psttName) ) ;
     {
     if( pFound )
     cachedS* pFound = (*pCache)( T("name 6") , maxAgeMs ) ;
-    etThread.traceF( tinBaseP , T("querying cache") ) ;
+    etThread.traceF( tin0P , T("querying cache") ) ;
 
-    pCache->reportF( tinBaseP , T("cache report after purge") ) ;
+    pCache->reportF( tin0P , T("cache report after purge") ) ;
 
-    pCache->purgeF( tinBaseP , 5 ) ;
+    pCache->purgeF( tin0P , 5 ) ;
 
-    pCache->reportF( tinBaseP , T("cache report after ct") ) ;
+    pCache->reportF( tin0P , T("cache report after ct") ) ;
 
     }
-        ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-        pCache->pushF( tinBaseP , psttName , pbBlob , cbBlob ) ;
+        pCache->pushF( tin0P , psttName , pbBlob , cbBlob ) ;
 
-        ether.memCopyF( tinBaseP , pbBlob , "abcd" , cbBlob ) ;
+        ether.memCopyF( tin0P , pbBlob , "abcd" , cbBlob ) ;
         countT cbBlob = 4 ;
 
-        ether.newF( tinBaseP , LF , pbBlob , 4 ) ; ___( pbBlob ) ;
+        ether.newF( tin0P , LF , pbBlob , 4 ) ; ___( pbBlob ) ;
         ZE( byteT* , pbBlob ) ;
 
-        ether.traceF( tinBaseP , psttName ) ;
-        ether.strMakeF( tinBaseP , LF , psttName , T("name ")+TF2(8-cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; ___( psttName ) ;
+        ether.traceF( tin0P , psttName ) ;
+        ether.strMakeF( tin0P , LF , psttName , T("name ")+TF2(8-cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; ___( psttName ) ;
         ZE( strokeS* , psttName ) ;
     {
     while( cDo -- )
@@ -54,10 +54,10 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
     TN( tb4 , "    " ) ;
 
-    cacheC* pCache = new( 0 , tinBaseP , LF ) cacheC( tinBaseP , etThread ) ; ___( pCache ) ;
+    cacheC* pCache = new( 0 , tin0P , LF ) cacheC( tin0P , etThread ) ; ___( pCache ) ;
 {
 
-static countT maxAgeMs = etThread.osTimeToOldTimeMsF( tinBaseP , TICK ) ;
+static countT maxAgeMs = etThread.osTimeToOldTimeMsF( tin0P , TICK ) ;
 
 //#if defined( NEVERdEFINED )
 

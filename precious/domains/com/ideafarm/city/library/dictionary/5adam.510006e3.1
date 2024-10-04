@@ -9,13 +9,13 @@
 
 REST
 
-while( !ether && cKidsGone < cKids ) { ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ; }
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+while( !ether && cKidsGone < cKids ) { ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ; }
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
 { countT cLaunch = cKids ; while( cLaunch -- ) ether.osThreadF( TaRG1( tmWorkF ) , (countT)&cKidsGone ) ; }
 
 ZE( countT , cKidsGone ) ;
-const countT cKids = thirdC::osProcessorsIF( tinBaseP ) << 1 ;
+const countT cKids = thirdC::osProcessorsIF( tin0P ) << 1 ;
 
 TODO
 
@@ -25,13 +25,13 @@ DONE( tmWorkF )
 
     }
         }
-            ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+            ++ s ; ether.osSleepF( tin0P , TOCK ) ;
     
-            ether.strokeF( tinBaseP , TF2(idKid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+t1+TF2(cToDo,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+t2 ) ;
+            ether.strokeF( tin0P , TF2(idKid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+t1+TF2(cToDo,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+t2 ) ;
         {
         while( !ether && cToDo -- )
         countT cToDo = idKid << 2 ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     
         TN( t2 , " remain.\r\n" ) ;
         TN( t1 , ":  " ) ;

@@ -11,9 +11,9 @@ REST
 
 }
     }
-        etThread.strokeF( tinBaseP , tvv+T(psttd)+tc ) ;
+        etThread.strokeF( tin0P , tvv+T(psttd)+tc ) ;
 
-        etThread.strDumpIF( tinBaseP , psttd , pbv , CBdATA ) ; ___( psttd ) ;
+        etThread.strDumpIF( tin0P , psttd , pbv , CBdATA ) ; ___( psttd ) ;
         ZE( strokeS* , psttd ) ;
     {
     if( pbv )
@@ -26,21 +26,21 @@ TN( tc , "\r\n" ) ;
 TN( tvv , "value: " ) ;
 
 stx << sSnap ;
-stx.purgeF( tinBaseP ) ; //THESE OO LINES RESTORE stx TO ITS STATE AT CHECKPOINT
+stx.purgeF( tin0P ) ; //THESE OO LINES RESTORE stx TO ITS STATE AT CHECKPOINT
 
 }
     if( ii == 8 ) stx >> sSnap ; //CHECKPOINT
 
-    etThread.delF( tinBaseP , pbb ) ;
+    etThread.delF( tin0P , pbb ) ;
     stx << pbb ;
     for( countT off = 0 ; off < CBdATA ; off ++ ) pbb[ off ] = (byteT)ii ;
-    etThread.newF( tinBaseP , LF , pbb , CBdATA ) ; ___( pbb ) ;
+    etThread.newF( tin0P , LF , pbb , CBdATA ) ; ___( pbb ) ;
     ZE( byteT* , pbb ) ;
 {
 for( countT ii = 1 ; ii <= 0x10 ; ii ++ )
 
-stackC stx( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB|flSTACKc_FIFO , CBdATA ) ;
-soulC sSnap( tinBaseP , TAG( TAGiDnULL ) ) ;
+stackC stx( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB|flSTACKc_FIFO , CBdATA ) ;
+soulC sSnap( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 

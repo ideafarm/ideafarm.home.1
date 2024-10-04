@@ -13,31 +13,31 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        ((tin9S&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
-        pOdometer->cbWrite += ((tin9S&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tin9S&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*((tin9S&)tinBaseP).pag3->_socketC_.pSwOdometer ;
-        ((tin9S&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
-        ((tin9S&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ((tin9S&)tin0P).pag3->_socketC_.grab.ungrabF( tin0P ) ;
+        pOdometer->cbWrite += ((tin9S&)tin0P).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tin9S&)tin0P).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tin9S&)tin0P).pag3->_socketC_.pSwOdometer ;
+        ((tin9S&)tin0P).pag3->_socketC_.nnLever = nnPeer ;
+        ((tin9S&)tin0P).pag3->_socketC_.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
-        bRead.ungrabF( tinBaseP ) ;
+        bRead.ungrabF( tin0P ) ;
     
         if( idleTimeAllowedRead ) FRESHtIMEaTOMIC( *pEther , timeLathRead.time1 , timeLathRead.time2 )
 
         }
-            pEther->delF( tinBaseP , postLine ) ;
+            pEther->delF( tin0P , postLine ) ;
 
             }
                 }
                     }
                         break ;
-                        replyCode = pEther->strDigitsToSCountF( tinBaseP , T(postLine) , 0xa , 1 ) ;
+                        replyCode = pEther->strDigitsToSCountF( tin0P , T(postLine) , 0xa , 1 ) ;
                         postLine[ 3 ] = 0 ;
                     {
                     if( postLine[ 3 ] == ' ' )
 
                     offo = 0 ;
-                    pEther->strFuseF( tinBaseP , psttP , T(postLine) ) ;
+                    pEther->strFuseF( tin0P , psttP , T(postLine) ) ;
                     postLine[ offo ] = 0 ;
                 {
                 if( postLine[ offo - 1 ] == '\n' )
@@ -48,26 +48,26 @@
                 //CONoUTrAW( pbIn ) ; //U::
                 //CONoUTrAW3( "" , *pbIn , "    " ) ; //U::
                 //CONoUTrAW( "[char]:    " ) ;
-                readF( tinBaseP , pbIn , 1 ) ;
+                readF( tin0P , pbIn , 1 ) ;
                 byteT pbIn[] = { 0 , 0 } ;
             {
             while( !POOP )
             ZE( countT , offo ) ;
 
-            pEther->newF( tinBaseP , LF , postLine , csttEstimateP ) ; ___( postLine ) ;
+            pEther->newF( tin0P , LF , postLine , csttEstimateP ) ; ___( postLine ) ;
             ZE( osTextT* , postLine ) ;
         {
 
-        pEther->strMakeF( tinBaseP , LF , psttP , 0 , csttEstimateP ) ; ___( psttP ) ;
+        pEther->strMakeF( tin0P , LF , psttP , 0 , csttEstimateP ) ; ___( psttP ) ;
 
         if( !csttEstimateP ) csttEstimateP = 0x100 ;
 
         _IO_
 
-        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = ((tin9S&)tinBaseP).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tin9S&)tinBaseP).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tin9S&)tin0P).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tin9S&)tin0P).odoSockCbRead  ;
     
         }
             }
@@ -88,7 +88,7 @@
     ZE( countT , replyCode ) ;
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/countT socketC::readWoReplyF( tin0S& tinBaseP , strokeS*& psttP , countT csttEstimateP )/*1*/
+/*1*/countT socketC::readWoReplyF( tin0S& tin0P , strokeS*& psttP , countT csttEstimateP )/*1*/
 
 
 #else
@@ -98,14 +98,14 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        ((tin9S&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
-        pOdometer->cbWrite += ((tin9S&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tin9S&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*((tin9S&)tinBaseP).pag3->_socketC_.pSwOdometer ;
-        ((tin9S&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
-        ((tin9S&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ((tin9S&)tin0P).pag3->_socketC_.grab.ungrabF( tin0P ) ;
+        pOdometer->cbWrite += ((tin9S&)tin0P).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tin9S&)tin0P).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tin9S&)tin0P).pag3->_socketC_.pSwOdometer ;
+        ((tin9S&)tin0P).pag3->_socketC_.nnLever = nnPeer ;
+        ((tin9S&)tin0P).pag3->_socketC_.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
-        bRead.ungrabF( tinBaseP ) ;
+        bRead.ungrabF( tin0P ) ;
     
         if( idleTimeAllowedRead ) FRESHtIMEaTOMIC( *pEther , timeLathRead.time1 , timeLathRead.time2 )
 
@@ -116,24 +116,24 @@
                 }
                     if( fBegin && !psttDash[ CSpREFIX ] ) break ;
                     fBegin = *pbIn == '\n' ;
-                    pEther->strFuseF( tinBaseP , psttP , T(pbIn) , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ csttEstimateP ) ; ___( psttP ) ;
+                    pEther->strFuseF( tin0P , psttP , T(pbIn) , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ csttEstimateP ) ; ___( psttP ) ;
                 {
                 if( !*pEther )
                 CONoUTrAW( pbIn ) ; //U::
-                readF( tinBaseP , pbIn , 1 ) ;
+                readF( tin0P , pbIn , 1 ) ;
                 byteT pbIn[] = { 0 , 0 } ;
                 CONoUTrAW( "$" ) ;
             {
             else
             }
                 }
-                    pEther->delF( tinBaseP , psttFirst ) ;
+                    pEther->delF( tin0P , psttFirst ) ;
     
                     }
                         }
                             if( !*pEther ) off ++ ;
                             CONoUTrAW( pbToss ) ; //U::
-                            readF( tinBaseP , pbToss , 1 ) ;
+                            readF( tin0P , pbToss , 1 ) ;
                             CONoUTrAW( "#" ) ;
                         {
                         while( !*pEther && off < 4 )
@@ -141,24 +141,24 @@
                         byteT pbToss[] = { 0 , 0 } ;
                         psttDash[ CSpREFIX + 3 ] = psttDash[ CSpREFIX + 2 ] = psttDash[ CSpREFIX + 1 ] = psttDash[ CSpREFIX ] = 0 ;
                     {
-                    else if( !pEther->strCompareF( tinBaseP , psttDash , psttFirst , 3 ) && (countT)psttFirst[ CSpREFIX + 3 ] == ' ' ) // TERMINATION CODE
+                    else if( !pEther->strCompareF( tin0P , psttDash , psttFirst , 3 ) && (countT)psttFirst[ CSpREFIX + 3 ] == ' ' ) // TERMINATION CODE
                     }
                         }
                             if( !*pEther ) off ++ ;
                             CONoUTrAW( pbToss ) ; //U::
-                            readF( tinBaseP , pbToss , 1 ) ;
+                            readF( tin0P , pbToss , 1 ) ;
                             CONoUTrAW( "@" ) ;
                         {
                         while( !*pEther && off < 4 )
                         off = 0 ;
                         byteT pbToss[] = { 0 , 0 } ;
                     {
-                    if( !pEther->strCompareF( tinBaseP , psttDash , psttFirst , 4 ) )
+                    if( !pEther->strCompareF( tin0P , psttDash , psttFirst , 4 ) )
     
-                    pEther->strMakeF( tinBaseP , LF , psttFirst , T(pbFirst) ) ; ___( psttFirst ) ;
+                    pEther->strMakeF( tin0P , LF , psttFirst , T(pbFirst) ) ; ___( psttFirst ) ;
                     ZE( strokeS* , psttFirst ) ;
                     off = 4 ;
-                    peekF( tinBaseP , pbFirst , 4 ) ;
+                    peekF( tin0P , pbFirst , 4 ) ;
                     ZE( countT , off ) ;
                     byteT pbFirst[] = { 0 , 0 , 0 , 0 , 0 } ;
                 {
@@ -170,14 +170,14 @@
                     }
                         if( !*pEther ) psttDash[ CSpREFIX + off ++ ] = pbIn[ 0 ] ;
                         CONoUTrAW( pbIn ) ; //U::
-                        readF( tinBaseP , pbIn , 1 ) ;
+                        readF( tin0P , pbIn , 1 ) ;
                     {
                     if( !*pEther )
-                    if( !*pEther ) replyCode = pEther->strDigitsToSCountF( tinBaseP , psttDash , 0xa , 1 ) ;
+                    if( !*pEther ) replyCode = pEther->strDigitsToSCountF( tin0P , psttDash , 0xa , 1 ) ;
                     }
                         if( !*pEther ) psttDash[ CSpREFIX + off ++ ] = pbIn[ 0 ] ;
                         CONoUTrAW( pbIn ) ; //U::
-                        readF( tinBaseP , pbIn , 1 ) ;
+                        readF( tin0P , pbIn , 1 ) ;
                         CONoUTrAW( "!" ) ;
                     {
                     while( !*pEther && off < 3 )
@@ -208,10 +208,10 @@
         byteT pbIn[] = { 0 , 0 } ;
         if( !csttEstimateP ) csttEstimateP = 0x100 ;
         _IO_
-        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = ((tin9S&)tinBaseP).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tin9S&)tinBaseP).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tin9S&)tin0P).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tin9S&)tin0P).odoSockCbRead  ;
     
         }
             }
@@ -226,7 +226,7 @@
     ZE( countT , replyCode ) ;
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/countT socketC::readWoReplyF( tin0S& tinBaseP , strokeS*& psttP , countT csttEstimateP )/*1*/
+/*1*/countT socketC::readWoReplyF( tin0S& tin0P , strokeS*& psttP , countT csttEstimateP )/*1*/
 
 // BEFORE REWRITE (THIS CODE DOES NOT WORK; IT HANGS WHILE PROCESSING MULTILINE RESPONSE DURING SMTP INITIALIZATION)
 

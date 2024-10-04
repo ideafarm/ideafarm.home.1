@@ -8,11 +8,11 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
-    sDone_tmJobDoerMake.waitF( tinBaseP ) ;
-    sDone_tmJobDoerQuick.waitF( tinBaseP ) ;
+    sDone_tmJobDoerMake.waitF( tin0P ) ;
+    sDone_tmJobDoerQuick.waitF( tin0P ) ;
 
     }
         etThread = 0 ;
@@ -28,16 +28,16 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
                     pc8Job->c1 = cmd.c1 ;
                 {
                 if( pc8Job )
-                etThread.newF( tinBaseP , LF , pc8Job ) ; ___( pc8Job ) ;
+                etThread.newF( tin0P , LF , pc8Job ) ; ___( pc8Job ) ;
                 ZE( count8S* , pc8Job ) ;
             {
             if( !ether )
 
             }
                 DEL( pso ) ;
-                __( sizeof cmd - pso->readF( tinBaseP , (byteT*)&cmd , sizeof cmd ) ) ;
+                __( sizeof cmd - pso->readF( tin0P , (byteT*)&cmd , sizeof cmd ) ) ;
 
-                { ZE( countT , idpPeer ) ; pso->peerNameF( tinBaseP , idpPeer , idhPeer ) ; }
+                { ZE( countT , idpPeer ) ; pso->peerNameF( tin0P , idpPeer , idhPeer ) ; }
             {
             else
             }
@@ -47,37 +47,37 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
             if( ether || etThread )
             nicNameC idhPeer ;
             count3S cmd ;
-            socket.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+            socket.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
             ZE( countT , idPortPeer ) ;
             nicNameC nnPeer ;
             ZE( socketC* , pso ) ;
         {
         while( !ether && !etThread )
-        socket.listenF( tinBaseP ) ;
-        countT idPort = socket.bindF( tinBaseP , ifcPORToLD1cOMMAND ) ;
-        socketC socket( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+        socket.listenF( tin0P ) ;
+        countT idPort = socket.bindF( tin0P , ifcPORToLD1cOMMAND ) ;
+        socketC socket( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
     while( !ether && !etThread )
     ZE( countT , idJobLast ) ;
-    etThread.etherCryF( tinBaseP ) ;
+    etThread.etherCryF( tin0P ) ;
 
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmJobDoerF , &sDone_tmJobDoerQuick , flTHREADlAUNCH_null , 0 , 0 , (countT)&sJobsQuick ) ; }
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmJobDoerF , &sDone_tmJobDoerMake  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sJobsMake  ) ; }
-    signC  sDone_tmJobDoerQuick( tinBaseP , TAG( TAGiDnULL ) ) ;
-    signC  sDone_tmJobDoerMake( tinBaseP , TAG( TAGiDnULL ) ) ;
-    stackC sJobsQuick( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count8S ) ;
-    stackC sJobsMake( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count8S ) ;
+    { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmJobDoerF , &sDone_tmJobDoerQuick , flTHREADlAUNCH_null , 0 , 0 , (countT)&sJobsQuick ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmJobDoerF , &sDone_tmJobDoerMake  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sJobsMake  ) ; }
+    signC  sDone_tmJobDoerQuick( tin0P , TAG( TAGiDnULL ) ) ;
+    signC  sDone_tmJobDoerMake( tin0P , TAG( TAGiDnULL ) ) ;
+    stackC sJobsQuick( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count8S ) ;
+    stackC sJobsMake( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count8S ) ;
 
-    etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City Servant\r\ni obey commands\r\n") ) ;
+    etThread.strokeF( tin0P , T("IdeaFarm " "(tm) City Servant\r\ni obey commands\r\n") ) ;
 {
 else
 }
-    etThread.strokeF( tinBaseP , T("Another ")+textIdFileC(tinBaseP,DDNAME)+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tin0P , T("Another ")+textIdFileC(tin0P,DDNAME)+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("4e30104") ) ;
+batonC baton( tin0P , TAG( TAGiDnULL ) , T("4e30104") ) ;
 
 TODO
 
@@ -87,9 +87,9 @@ DONE( tmJobDoerF )
         }
             }
                 etThread = 0 ;
-                etThread.delF( tinBaseP , pc8Job ) ;
-                etThread.delF( tinBaseP , psttPrefix ) ;
-                etThread.delF( tinBaseP , psttParameter ) ;
+                etThread.delF( tin0P , pc8Job ) ;
+                etThread.delF( tin0P , psttPrefix ) ;
+                etThread.delF( tin0P , psttParameter ) ;
 
                 }
                     }
@@ -103,18 +103,18 @@ DONE( tmJobDoerF )
                     }
                         break ;
 
-                        //etThread.osSessionF( tinBaseP , countTC() , pid , T("///d/ideafarm.work/backed.up.never/gen/exe/01000020.ipdos-we") , T("6c30104") , 100 , 100 , 600 , 300 ) ;
+                        //etThread.osSessionF( tin0P , countTC() , pid , T("///d/ideafarm.work/backed.up.never/gen/exe/01000020.ipdos-we") , T("6c30104") , 100 , 100 , 600 , 300 ) ;
                         ZE( countT , pid ) ;
 
                         }
-                            etThread.delF( tinBaseP , psttp ) ;
+                            etThread.delF( tin0P , psttp ) ;
                             etThread = 0 ;
-                            etThread.diskMoveFileOrDirF( tinBaseP , t7use , T("///d/ideafarm.work/backed.up.never/gen/exe/")+T(psttp)+T(".ipdos-wd") ) ;
+                            etThread.diskMoveFileOrDirF( tin0P , t7use , T("///d/ideafarm.work/backed.up.never/gen/exe/")+T(psttp)+T(".ipdos-wd") ) ;
                             etThread = 0 ;
-                            etThread.diskFileOrDirDeleteF( tinBaseP , t7use , flFILEoRdIRdELETE_null , 1 ) ;
+                            etThread.diskFileOrDirDeleteF( tin0P , t7use , flFILEoRdIRdELETE_null , 1 ) ;
                             textC t7use = T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/7use/")+T(psttp)+T(".ipdos-wd") ;
-                            makeF( tinBaseP , etThread , sReply , psttp , T(psttPrefix)+T(psttp)+T(" ") ) ;
-                            etThread.strFromF( tinBaseP , psttp , idAdam ) ;
+                            makeF( tin0P , etThread , sReply , psttp , T(psttPrefix)+T(psttp)+T(" ") ) ;
+                            etThread.strFromF( tin0P , psttp , idAdam ) ;
                             ZE( strokeS* , psttp ) ;
                         {
                         for( countT idAdam = idMin ; !ether && idAdam <= idMax ; idAdam ++ )
@@ -122,7 +122,7 @@ DONE( tmJobDoerF )
                         if( idMin == 0x4010000 ) idMin ++ ;
                         //idMax = 0x401000f ;
                         //idMin = 0x4010001 ;
-                        etThread.boxMenuIdRangeF( tinBaseP , idMin , idMax , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.????104") , 0x100000 , S1C('/') ) ;
+                        etThread.boxMenuIdRangeF( tin0P , idMin , idMax , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.????104") , 0x100000 , S1C('/') ) ;
                         ZE( countT , idMax ) ;
                         ZE( countT , idMin ) ;
                     {
@@ -133,7 +133,7 @@ DONE( tmJobDoerF )
                     case ifcCMDsERVICEwINDOW_qmake :
                     }
                         break ;
-                        makeF( tinBaseP , etThread , sReply , psttParameter , psttPrefix ) ;
+                        makeF( tin0P , etThread , sReply , psttParameter , psttPrefix ) ;
                     {
                     case ifcCMDsERVICEwINDOW_make  :
                     }
@@ -167,21 +167,21 @@ DONE( tmJobDoerF )
                     }
                         break ;
 
-                        if( bReply ) { textC txt = T(psttPrefix)+T("(done)\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
+                        if( bReply ) { textC txt = T(psttPrefix)+T("(done)\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
 
-                        etThread.osProcessF( value , idDeathType , tinBaseP , T("01000020.ipdos-we") , T("1c30104 !faceHear ///ideafarm/ephemeral/domains/com/ideafarm/city/park/7use/")+tIdi+T(".ipdos-wd") ) ;
+                        etThread.osProcessF( value , idDeathType , tin0P , T("01000020.ipdos-we") , T("1c30104 !faceHear ///ideafarm/ephemeral/domains/com/ideafarm/city/park/7use/")+tIdi+T(".ipdos-wd") ) ;
                         ZE( countT , idDeathType ) ;
                         ZE( countT , value ) ;
-                        hoverC hoverExe( tinBaseP , etThread , T("///d/ideafarm.work/backed.up.never/gen/exe/") ) ;
-                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 3 of 3)\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
-                        etThread.delF( tinBaseP , post ) ;
-                        etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/7use/")+tIdi+T(".ipdos-wd") , post , cost ) ;
-                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 2 of 3)\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
-                        etThread.boxGetShadowF( tinBaseP , post , cost , T("///d/ideafarm.work/backed.up.never/gen/exe/")+tIdi+T(".ipdos-wd") , 1 ) ; ___( post ) ;
+                        hoverC hoverExe( tin0P , etThread , T("///d/ideafarm.work/backed.up.never/gen/exe/") ) ;
+                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 3 of 3)\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
+                        etThread.delF( tin0P , post ) ;
+                        etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/7use/")+tIdi+T(".ipdos-wd") , post , cost ) ;
+                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 2 of 3)\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
+                        etThread.boxGetShadowF( tin0P , post , cost , T("///d/ideafarm.work/backed.up.never/gen/exe/")+tIdi+T(".ipdos-wd") , 1 ) ; ___( post ) ;
                         ZE( countT , cost ) ;
                         ZE( osTextT* , post ) ;
 
-                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 1 of 3)\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
+                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 1 of 3)\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
 
                         TN( tIdi , psttParameter ) ;
                     {
@@ -217,56 +217,56 @@ DONE( tmJobDoerF )
                     }
                         break ;
 
-                        if( bReply ) { textC txt = T(psttPrefix)+T("(done) ")+tIdi+T("\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
+                        if( bReply ) { textC txt = T(psttPrefix)+T("(done) ")+tIdi+T("\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
 
-                        etThread.delF( tinBaseP , psttNew ) ;
+                        etThread.delF( tin0P , psttNew ) ;
                         }
-                            etThread.boxPutF( tinBaseP , psttNew , (byteT*)&parameter , sizeof parameter ) ;
-                            etThread.strReplaceF( tinBaseP , psttNew , 0 , T("/dictionary.okr/") , T("/dictionary.okw/") ) ;
-                            etThread.boxPutF( tinBaseP , psttNew , (byteT*)&parameter , sizeof parameter ) ;
-                            etThread.strReplaceF( tinBaseP , psttNew , 0 , T("/dictionary/") , T("/dictionary.okr/") ) ;
+                            etThread.boxPutF( tin0P , psttNew , (byteT*)&parameter , sizeof parameter ) ;
+                            etThread.strReplaceF( tin0P , psttNew , 0 , T("/dictionary.okr/") , T("/dictionary.okw/") ) ;
+                            etThread.boxPutF( tin0P , psttNew , (byteT*)&parameter , sizeof parameter ) ;
+                            etThread.strReplaceF( tin0P , psttNew , 0 , T("/dictionary/") , T("/dictionary.okr/") ) ;
                         {
-                        etThread.delF( tinBaseP , post ) ;
-                        etThread.boxPutF( tinBaseP , psttNew , post , cost ) ;
-                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 4 of 4) ")+tIdi+T("\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
-                        etThread.boxGetShadowF( tinBaseP , post , cost , tDict+T("adam.0000104") , 1 ) ; ___( post ) ;
+                        etThread.delF( tin0P , post ) ;
+                        etThread.boxPutF( tin0P , psttNew , post , cost ) ;
+                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 4 of 4) ")+tIdi+T("\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
+                        etThread.boxGetShadowF( tin0P , post , cost , tDict+T("adam.0000104") , 1 ) ; ___( post ) ;
                         ZE( countT , cost ) ;
                         ZE( osTextT* , post ) ;
-                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 3 of 4) ")+tIdi+T("\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
+                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 3 of 4) ")+tIdi+T("\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
 
-                        etThread.delF( tinBaseP , psttIdi ) ;
+                        etThread.delF( tin0P , psttIdi ) ;
                         TN( tIdi , psttIdi ) ;
                         }
-                            etThread.boxPutF( tinBaseP , tFileLast , (byteT*)&idNew , sizeof idNew ) ;
+                            etThread.boxPutF( tin0P , tFileLast , (byteT*)&idNew , sizeof idNew ) ;
                             }
-                                etThread.strMakeF( tinBaseP , LF , psttNew , tDict + T("adam.") + T(psttIdi ) ) ; ___( psttNew ) ;
-                                etThread.strFromF( tinBaseP , psttIdi , idNew , flFORMAT_UNSIGNED | flFORMAT_FILLzE , 7 ) ; ___( psttIdi ) ;
-                                if( bReply ) { textC txt = T(psttPrefix)+T("(redoing step 2 of 4)\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
-                                idNew = idNewF( tinBaseP , etThread , tFileLast , 1 ) ;
-                                etThread.delF( tinBaseP , psttIdi ) ;
-                                etThread.delF( tinBaseP , psttNew ) ;
+                                etThread.strMakeF( tin0P , LF , psttNew , tDict + T("adam.") + T(psttIdi ) ) ; ___( psttNew ) ;
+                                etThread.strFromF( tin0P , psttIdi , idNew , flFORMAT_UNSIGNED | flFORMAT_FILLzE , 7 ) ; ___( psttIdi ) ;
+                                if( bReply ) { textC txt = T(psttPrefix)+T("(redoing step 2 of 4)\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
+                                idNew = idNewF( tin0P , etThread , tFileLast , 1 ) ;
+                                etThread.delF( tin0P , psttIdi ) ;
+                                etThread.delF( tin0P , psttNew ) ;
                             {
-                            if( etThread.diskFileExistsF( tinBaseP , psttNew ) ) // ASSUME: THIS IS THE ONLY INSTANCE OF 4e30104 THAT CAN SEE THE tDict DIRECTORY
-                            etThread.strMakeF( tinBaseP , LF , psttNew , tDict + T("adam.") + T(psttIdi) ) ; ___( psttNew ) ;
-                            etThread.strFromF( tinBaseP , psttIdi , idNew , flFORMAT_UNSIGNED | flFORMAT_FILLzE , 7 ) ; ___( psttIdi ) ;
-                            if( bReply ) { textC txt = T(psttPrefix)+T("(step 2 of 4)\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
-                            countT idNew = idNewF( tinBaseP , etThread , tFileLast ) ;
+                            if( etThread.diskFileExistsF( tin0P , psttNew ) ) // ASSUME: THIS IS THE ONLY INSTANCE OF 4e30104 THAT CAN SEE THE tDict DIRECTORY
+                            etThread.strMakeF( tin0P , LF , psttNew , tDict + T("adam.") + T(psttIdi) ) ; ___( psttNew ) ;
+                            etThread.strFromF( tin0P , psttIdi , idNew , flFORMAT_UNSIGNED | flFORMAT_FILLzE , 7 ) ; ___( psttIdi ) ;
+                            if( bReply ) { textC txt = T(psttPrefix)+T("(step 2 of 4)\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
+                            countT idNew = idNewF( tin0P , etThread , tFileLast ) ;
                             TN( tFileLast , "///ideafarm/ephemeral/domains/com/ideafarm/city/settings/4e30104.idLast" ) ;
                         {
                         ZE( strokeS* , psttNew ) ;
                         ZE( strokeS* , psttIdi ) ;
-                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 1 of 4)\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
+                        if( bReply ) { textC txt = T(psttPrefix)+T("(step 1 of 4)\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
                     {
                     case ifcCMDsERVICEwINDOW_new   :
                 {
                 switch( idCmd )
 
                 else                             bReply = 0 ;
-                if( nicNameReply && idPortReply ) sReply.connectF( tinBaseP , idPortReply , nicNameReply ) ;
+                if( nicNameReply && idPortReply ) sReply.connectF( tin0P , idPortReply , nicNameReply ) ;
                 boolT bReply = 1 ;
-                socketC sReply( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+                socketC sReply( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
-                stringsFromJobF( tinBaseP , etThread , psttPrefix , psttParameter , pc8Job ) ;
+                stringsFromJobF( tin0P , etThread , psttPrefix , psttParameter , pc8Job ) ;
                 ZE( strokeS* , psttParameter ) ;
                 ZE( strokeS* , psttPrefix ) ;
 
@@ -279,7 +279,7 @@ DONE( tmJobDoerF )
             if( pc8Job )
 
             }
-                sJobs.ungrabF( tinBaseP ) ;
+                sJobs.ungrabF( tin0P ) ;
 
                 while( handle && !ether && !etThread ) ;
                 }
@@ -287,14 +287,14 @@ DONE( tmJobDoerF )
                         while( handle2 && !etThread ) ;
                         }
                             if( pc8JobQueued && *(nicNameC*)&pc8JobQueued->c4 == *pIdhDead ) pc8JobQueued->c2 = 0 ;
-                            pc8JobQueued = (count8S*)sJobs.downF( tinBaseP , handle2 ) ;
+                            pc8JobQueued = (count8S*)sJobs.downF( tin0P , handle2 ) ;
                             ZE( count8S* , pc8JobQueued ) ;
                         {
                         do
                         ZE( countT , handle2 ) ;
                     {
                     if( pIdhDead )
-                    nicNameC* pIdhDead = sDeadHosts.downF( tinBaseP , handle ) ;
+                    nicNameC* pIdhDead = sDeadHosts.downF( tin0P , handle ) ;
                 {
                 if( !etThread && sDeadHosts ) do
                 // ZE OUT idCmd FOR JOBS BELONGING TO DEAD HOSTS
@@ -302,38 +302,38 @@ DONE( tmJobDoerF )
                 while( handle && !ether && !etThread ) ;
                 }
                     }
-                        etThread.delF( tinBaseP , psttParameter ) ;
-                        etThread.delF( tinBaseP , psttPrefix ) ;
-                        etThread.delF( tinBaseP , psttIdSlot ) ;
+                        etThread.delF( tin0P , psttParameter ) ;
+                        etThread.delF( tin0P , psttPrefix ) ;
+                        etThread.delF( tin0P , psttIdSlot ) ;
                         }
-                            sDeadHosts << new( 0 , tinBaseP , LF ) nicNameC( *(nicNameC*)&pc8JobQueued->c4 ) ;
+                            sDeadHosts << new( 0 , tin0P , LF ) nicNameC( *(nicNameC*)&pc8JobQueued->c4 ) ;
                             etThread = 0 ;
                         {
                         if( etThread )
-                        { textC txt = T(psttPrefix )+T("queued at position ")+T(psttIdSlot )+T("\r\n") ; sReply.writeF( tinBaseP , (osTextT*)txt ) ; }
-                        sReply.connectF( tinBaseP , pc8JobQueued->c1 , *(nicNameC*)&pc8JobQueued->c4 ) ;
-                        socketC sReply( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+                        { textC txt = T(psttPrefix )+T("queued at position ")+T(psttIdSlot )+T("\r\n") ; sReply.writeF( tin0P , (osTextT*)txt ) ; }
+                        sReply.connectF( tin0P , pc8JobQueued->c1 , *(nicNameC*)&pc8JobQueued->c4 ) ;
+                        socketC sReply( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
-                        stringsFromJobF( tinBaseP , etThread , psttPrefix , psttParameter , pc8JobQueued ) ; ___( psttPrefix ) ; ___( psttParameter ) ;
+                        stringsFromJobF( tin0P , etThread , psttPrefix , psttParameter , pc8JobQueued ) ; ___( psttPrefix ) ; ___( psttParameter ) ;
                         ZE( strokeS* , psttParameter ) ;
                         ZE( strokeS* , psttPrefix ) ;
 
-                        etThread.strFromF( tinBaseP , psttIdSlot , idSlot ) ; ___( psttIdSlot ) ;
+                        etThread.strFromF( tin0P , psttIdSlot , idSlot ) ; ___( psttIdSlot ) ;
                         ZE( strokeS* , psttIdSlot ) ;
                     {
                     if( pc8JobQueued && pc8JobQueued->c1 && *(nicNameC*)&pc8JobQueued->c4 )
-                    pc8JobQueued = (count8S*)sJobs.downF( tinBaseP , handle ) ;
+                    pc8JobQueued = (count8S*)sJobs.downF( tin0P , handle ) ;
                     ZE( count8S* , pc8JobQueued ) ;
                     ++ idSlot ;
                 {
                 do
                 ZE( countT , idSlot ) ;
-                stackC sDeadHosts( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_nicNameC ) ;
+                stackC sDeadHosts( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_nicNameC ) ;
                 // SEND QUEUE POSITION NOTICES
 
-                handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
-                sJobs.grabF( tinBaseP , TAG( TAGiDnULL ) ) ; ;
+                sJobs.grabF( tin0P , TAG( TAGiDnULL ) ) ; ;
             {
             if( sJobs )
 
@@ -341,7 +341,7 @@ DONE( tmJobDoerF )
             ZE( count8S* , pc8Job ) ;
         {
         else
-        if( !sJobs ) etThread.osSleepF( tinBaseP , TOCK ) ;
+        if( !sJobs ) etThread.osSleepF( tin0P , TOCK ) ;
     {
     while( !ether && !etThread )
 
@@ -358,20 +358,20 @@ TASK( tmJobDoerF )
     }
         idNew ++ ;
         __( idMin - 0x4010000 ) ;
-        etThread.boxMenuIdRangeF( tinBaseP , idMin , idNew , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.????104") , 0x100000 , S1C('/') ) ;
+        etThread.boxMenuIdRangeF( tin0P , idMin , idNew , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.????104") , 0x100000 , S1C('/') ) ;
         ZE( countT , idMin ) ;
     {
     if( !idNew )
 
     }
-        etThread.delF( tinBaseP , pbi ) ;
+        etThread.delF( tin0P , pbi ) ;
         }
             idNew ++ ;
-            etThread.memCopyF( tinBaseP , (byteT*)&idNew , pbi , cbi ) ;
+            etThread.memCopyF( tin0P , (byteT*)&idNew , pbi , cbi ) ;
         {
         else if( cbi == sizeof idNew )
              if( etThread              ) etThread = 0 ;
-        etThread.boxGetF( tinBaseP , pbi , cbi , psttFileLastP , 1 ) ; ___( pbi ) ;
+        etThread.boxGetF( tin0P , pbi , cbi , psttFileLastP , 1 ) ; ___( pbi ) ;
         ZE( countT , cbi ) ;
         ZE( byteT* , pbi ) ;
     {
@@ -381,40 +381,40 @@ TASK( tmJobDoerF )
 
     if( etThread ) return 0 ;
 {
-countT idNewF( tin0S& tinBaseP , etherC& etThread , const strokeS* const psttFileLastP , const boolT bScanP = 0 )
+countT idNewF( tin0S& tin0P , etherC& etThread , const strokeS* const psttFileLastP , const boolT bScanP = 0 )
 
 }
-    etThread.delF( tinBaseP , psttOldCmd ) ;
+    etThread.delF( tin0P , psttOldCmd ) ;
 
-    etThread.strFuseF( tinBaseP , psttPrefixP , T("job ")+TF1(idJob)+T(" \"")+T(psttOldCmd)+( parameter ? T(" ")+T(psttParameterP) : T("") )+T("\" ") ) ; ___( psttPrefixP ) ;
+    etThread.strFuseF( tin0P , psttPrefixP , T("job ")+TF1(idJob)+T(" \"")+T(psttOldCmd)+( parameter ? T(" ")+T(psttParameterP) : T("") )+T("\" ") ) ; ___( psttPrefixP ) ;
 
-    etThread.strFromF( tinBaseP , psttParameterP , parameter ) ;
+    etThread.strFromF( tin0P , psttParameterP , parameter ) ;
 
     }
-        default                       : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T(""     ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_qmall : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?mall") ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_mall  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("mall" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_qhire : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?hire") ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_hire  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("hire" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_qsub  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?sub" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_sub   : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("sub"  ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_qwho  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?who" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_who   : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("who"  ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_q7use : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?7use") ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_7use  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("7use" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_qtest : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?test") ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_test  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("test" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_qgett : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?gett") ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_gett  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("gett" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_qmake : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?make") ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_make  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("make" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_qput  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?put" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_put   : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("put"  ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_qget  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?get" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_get   : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("get"  ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_qnew  : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?new" ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_new   : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("new"  ) ) ; ___( psttOldCmd ) ; break ; }
-        case ifcCMDsERVICEwINDOW_q     : { etThread.strMakeF( tinBaseP , LF , psttOldCmd , T("?"    ) ) ; ___( psttOldCmd ) ; break ; }
+        default                       : { etThread.strMakeF( tin0P , LF , psttOldCmd , T(""     ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_qmall : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?mall") ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_mall  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("mall" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_qhire : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?hire") ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_hire  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("hire" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_qsub  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?sub" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_sub   : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("sub"  ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_qwho  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?who" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_who   : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("who"  ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_q7use : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?7use") ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_7use  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("7use" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_qtest : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?test") ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_test  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("test" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_qgett : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?gett") ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_gett  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("gett" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_qmake : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?make") ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_make  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("make" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_qput  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?put" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_put   : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("put"  ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_qget  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?get" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_get   : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("get"  ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_qnew  : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?new" ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_new   : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("new"  ) ) ; ___( psttOldCmd ) ; break ; }
+        case ifcCMDsERVICEwINDOW_q     : { etThread.strMakeF( tin0P , LF , psttOldCmd , T("?"    ) ) ; ___( psttOldCmd ) ; break ; }
     {
     switch( idCmd )
     ZE( strokeS* , psttOldCmd ) ;
@@ -425,52 +425,52 @@ countT idNewF( tin0S& tinBaseP , etherC& etThread , const strokeS* const psttFil
     const countT  idCmd       = pc8JobP->c2 ;
     const countT  idPortReply = pc8JobP->c1 ;
 {
-voidT stringsFromJobF( tin0S& tinBaseP , etherC& etThread , strokeS*& psttPrefixP , strokeS*& psttParameterP , const count8S* const pc8JobP )
+voidT stringsFromJobF( tin0S& tin0P , etherC& etThread , strokeS*& psttPrefixP , strokeS*& psttParameterP , const count8S* const pc8JobP )
 
 }
-    //etThread.osProcessF( value , idDeathType , tinBaseP , T("wlib.exe") , tLibArg ) ;
+    //etThread.osProcessF( value , idDeathType , tin0P , T("wlib.exe") , tLibArg ) ;
     //textC tLibArg = T("-q -n -b ")+tIdi+T("w.lib +")+tIdi+T(".ipdos-wd") ;
     //NOT NEEDED.  DOES NOT WORK
 
     #endif
 
     }
-        { textC txt = T(psttPrefixP)+T("(done)\r\n") ; sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
-        etThread.osProcessF( value , idDeathType , tinBaseP , T("wlink.exe") , tLinkArg ) ;
+        { textC txt = T(psttPrefixP)+T("(done)\r\n") ; sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
+        etThread.osProcessF( value , idDeathType , tin0P , T("wlink.exe") , tLinkArg ) ;
         textC tLinkArg = T("system nt_dll op q name \\ideafarm.work\\backed.up.never\\gen\\exe\\")+tIdi+T(".ipdos-wd file ")+tIdi+T(".obj library \\ideafarm.work\\backed.up.never\\gen\\exe\\ifcbasew.lib") ;
         ZE( countT , idDeathType ) ;
         ZE( countT , value ) ;
-        hoverC hover2( tinBaseP , etThread , tDirw+T("/") ) ;
-        { textC txt = T(psttPrefixP)+T("(step a of a)\r\n") ; sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
+        hoverC hover2( tin0P , etThread , tDirw+T("/") ) ;
+        { textC txt = T(psttPrefixP)+T("(step a of a)\r\n") ; sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
     {
     else
     }
-        { textC txt = T(psttPrefixP)+T("(aborted)\r\n") ; sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
+        { textC txt = T(psttPrefixP)+T("(aborted)\r\n") ; sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
         }
-            ((thirdC&)etThread).logF( tinBaseP , T("strBadCodeLineF could not process ")+tIdi) ;
-            sReplyP.writeF( tinBaseP , (osTextT*)T("||||\r\nno more information is available\r\n||||") ) ;
+            ((thirdC&)etThread).logF( tin0P , T("strBadCodeLineF could not process ")+tIdi) ;
+            sReplyP.writeF( tin0P , (osTextT*)T("||||\r\nno more information is available\r\n||||") ) ;
         {
         else
         }
-            etThread.delF( tinBaseP , psttbcl ) ;
-            sReplyP.writeF( tinBaseP , (osTextT*)T(psttbcl) ) ;
+            etThread.delF( tin0P , psttbcl ) ;
+            sReplyP.writeF( tin0P , (osTextT*)T(psttbcl) ) ;
         {
         if( psttbcl )
-        etThread.strBadCodeLineF( tinBaseP , psttbcl , tIdi ) ;
+        etThread.strBadCodeLineF( tin0P , psttbcl , tIdi ) ;
         ZE( strokeS* , psttbcl ) ;
 
-        ((thirdC&)etThread).logF( tinBaseP , T("4e30104: MAKE FAILED: ")+T(psttPrefixP)) ;
+        ((thirdC&)etThread).logF( tin0P , T("4e30104: MAKE FAILED: ")+T(psttPrefixP)) ;
 
         etThread = 0 ;
     {
     if( etThread )
 
-    etThread.delF( tinBaseP , post ) ;
-    ((thirdC&)etThread).osCompileF( tinBaseP , post ) ;
-    etThread.strMakeF( tinBaseP , LF , post , tIdi ) ;
-    hoverC hover1( tinBaseP , etThread , tDir+T("/") ) ;
-    etThread.diskMakeDirIfNeededF( tinBaseP , tDirw+T("/") ) ;
-    { textC txt = T(psttPrefixP)+T("(step 9 of a)\r\n") ; sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
+    etThread.delF( tin0P , post ) ;
+    ((thirdC&)etThread).osCompileF( tin0P , post ) ;
+    etThread.strMakeF( tin0P , LF , post , tIdi ) ;
+    hoverC hover1( tin0P , etThread , tDir+T("/") ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tDirw+T("/") ) ;
+    { textC txt = T(psttPrefixP)+T("(step 9 of a)\r\n") ; sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
 
     #if defined( NEVERdEFINED )
     // THE COMPILE AND LINK CODE HERE IS OBSOLETE AND WOULD NEED TO BE REWRITTEN TO USE THE CURRENT API'S FOR COMPILE AND LINK
@@ -478,36 +478,36 @@ voidT stringsFromJobF( tin0S& tinBaseP , etherC& etThread , strokeS*& psttPrefix
     }
         __( idDeathType ) ;
         __( value ) ;
-        etThread.osProcessF( value , idDeathType , tinBaseP , T("///d/ideafarm.work/backed.up.never/gen/exe/released.i00005/01000030.ipdos-we") , T("5c30104 !faceHear ")+tIdi ) ;
+        etThread.osProcessF( value , idDeathType , tin0P , T("///d/ideafarm.work/backed.up.never/gen/exe/released.i00005/01000030.ipdos-we") , T("5c30104 !faceHear ")+tIdi ) ;
         ZE( countT , idDeathType ) ;
         ZE( countT , value ) ;
-        { textC txt = T(psttPrefixP)+T("(step 8 of a)\r\n") ; sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
+        { textC txt = T(psttPrefixP)+T("(step 8 of a)\r\n") ; sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
     {
 
     cost = 0 ;
-    etThread.delF( tinBaseP , post ) ;
-    etThread.boxPutF( tinBaseP , tCpp , post , cost ) ;
-    { textC txt = T(psttPrefixP)+T("(step 7 of a)\r\n") ; sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
-    etThread.delF( tinBaseP , psttAll ) ;
-    cost = etThread.strMakeF( tinBaseP , LF , post , psttAll ) ; ___( post ) ;
-    { textC txt = T(psttPrefixP)+T("(step 6 of a)\r\n") ; sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
+    etThread.delF( tin0P , post ) ;
+    etThread.boxPutF( tin0P , tCpp , post , cost ) ;
+    { textC txt = T(psttPrefixP)+T("(step 7 of a)\r\n") ; sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
+    etThread.delF( tin0P , psttAll ) ;
+    cost = etThread.strMakeF( tin0P , LF , post , psttAll ) ; ___( post ) ;
+    { textC txt = T(psttPrefixP)+T("(step 6 of a)\r\n") ; sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
 
-    etThread.delF( tinBaseP , psttBody ) ;
-    etThread.strMakeF( tinBaseP , LF , psttAll , T("#include \"\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\ipdos.h\"\r\n#include \"\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\snip\\1snip.005000a.lines.adam.")+tIdi+T( "\"\r\n//SOURCE: adam.")+tIdi+T(" BEGIN\r\n#define DDNAME \"adam.")+tIdi+T("\"\r\n#define DDNUMB 0x")+tIdiR+T("\r\n")+T(psttBody)+T("\r\n#undef DDNUMB\r\n#undef DDNAME\r\n//SOURCE: adam.")+tIdi+T(" END\r\n") ) ; ___( psttAll ) ;
+    etThread.delF( tin0P , psttBody ) ;
+    etThread.strMakeF( tin0P , LF , psttAll , T("#include \"\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\ipdos.h\"\r\n#include \"\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\snip\\1snip.005000a.lines.adam.")+tIdi+T( "\"\r\n//SOURCE: adam.")+tIdi+T(" BEGIN\r\n#define DDNAME \"adam.")+tIdi+T("\"\r\n#define DDNUMB 0x")+tIdiR+T("\r\n")+T(psttBody)+T("\r\n#undef DDNUMB\r\n#undef DDNAME\r\n//SOURCE: adam.")+tIdi+T(" END\r\n") ) ; ___( psttAll ) ;
     ZE( strokeS* , psttAll ) ;
-    { textC txt = T(psttPrefixP)+T("(step 5 of a)\r\n") ; sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
+    { textC txt = T(psttPrefixP)+T("(step 5 of a)\r\n") ; sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
 
-    etThread.strReverseF( tinBaseP , psttBody , 0 , T("\r\n") ) ; ___( psttBody ) ;
-    { textC txt = T(psttPrefixP)+T("(step 4 of a)\r\n") ;sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
+    etThread.strReverseF( tin0P , psttBody , 0 , T("\r\n") ) ; ___( psttBody ) ;
+    { textC txt = T(psttPrefixP)+T("(step 4 of a)\r\n") ;sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
     cost = 0 ;
-    etThread.delF( tinBaseP , post ) ;
-    etThread.strMakeF( tinBaseP , LF , psttBody , T(post) ) ; ___( psttBody ) ;
+    etThread.delF( tin0P , post ) ;
+    etThread.strMakeF( tin0P , LF , psttBody , T(post) ) ; ___( psttBody ) ;
     ZE( strokeS* , psttBody ) ;
-    { textC txt = T(psttPrefixP)+T("(step 3 of a)\r\n") ; sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
-    etThread.boxGetShadowF( tinBaseP , post , cost , tRaw , 1 ) ; ___( post ) ;
+    { textC txt = T(psttPrefixP)+T("(step 3 of a)\r\n") ; sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
+    etThread.boxGetShadowF( tin0P , post , cost , tRaw , 1 ) ; ___( post ) ;
     ZE( countT , cost ) ;
     ZE( osTextT* , post ) ;
-    { textC txt = T(psttPrefixP)+T("(step 2 of a)\r\n") ; sReplyP.writeF( tinBaseP , (osTextT*)txt ) ; }
+    { textC txt = T(psttPrefixP)+T("(step 2 of a)\r\n") ; sReplyP.writeF( tin0P , (osTextT*)txt ) ; }
 
     textC tDirw = tDir+T("/windows") ;
     textC tDir = tGen+tIdi ;
@@ -517,16 +517,16 @@ voidT stringsFromJobF( tin0S& tinBaseP , etherC& etThread , strokeS*& psttPrefix
     TN( tGen  , "///d/ideafarm.work/backed.up.never/gen/" ) ;    
 
     }
-        etThread.delF( tinBaseP , psttw ) ;
+        etThread.delF( tin0P , psttw ) ;
         tIdiR = T(psttw) ;
-        etThread.strReverseF( tinBaseP , psttw ) ; ___( psttw ) ;
-        etThread.strMakeF( tinBaseP , LF , psttw , psttParameterP ) ; ___( psttw ) ;
+        etThread.strReverseF( tin0P , psttw ) ; ___( psttw ) ;
+        etThread.strMakeF( tin0P , LF , psttw , psttParameterP ) ; ___( psttw ) ;
         ZE( strokeS* , psttw ) ;
     {
     TN( tIdiR , "" ) ;
     TN( tIdi  , psttParameterP ) ;
 {
-voidT makeF( tin0S& tinBaseP , etherC& etThread , socketC& sReplyP , const strokeS* const psttParameterP , const strokeS* const psttPrefixP )
+voidT makeF( tin0S& tin0P , etherC& etThread , socketC& sReplyP , const strokeS* const psttParameterP , const strokeS* const psttPrefixP )
 //U: DUPLICATE CODE: 4e30104 AND 007001f
 
 /*1*/WAKEhIDE( "" )/*1*/

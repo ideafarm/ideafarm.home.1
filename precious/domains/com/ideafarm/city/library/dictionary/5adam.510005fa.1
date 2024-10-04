@@ -9,10 +9,10 @@
                     
 REST
 
-etThread.strokeF( tinBaseP , T("deleted foo (aok)\r\n") ) ;
+etThread.strokeF( tin0P , T("deleted foo (aok)\r\n") ) ;
 }
-    etThread.strokeF( tinBaseP , T("deleting foo\r\n") ) ;
-    etThread.osThreadF( TaRG1( tmRefF ) , (countT)new( 0 , tinBaseP , LF ) refC( foo ) ) ;
+    etThread.strokeF( tin0P , T("deleting foo\r\n") ) ;
+    etThread.osThreadF( TaRG1( tmRefF ) , (countT)new( 0 , tin0P , LF ) refC( foo ) ) ;
     
     fooC foo( 0x11111111 ) ;
 {
@@ -24,7 +24,7 @@ DONE( tmRefF )
     DEL( pRefP ) ;
     CONoUTrAW( "tmRefF: deleting the reference object\r\n" ) ;
 
-    etherC::loafIF( tinBaseP ) ;
+    etherC::loafIF( tin0P ) ;
     CONoUTrAW( "tmRefF: sleeping until i am fired\r\n" ) ;
 
     REFfOO.sayF() ;
@@ -47,7 +47,7 @@ fooC::fooC( countT valueP ) :
 
 }
     value = 0 ;
-    cRef.waitF( tinBaseP ) ;
+    cRef.waitF( tin0P ) ;
     TINSL
 {
 fooC::~fooC( voidT )

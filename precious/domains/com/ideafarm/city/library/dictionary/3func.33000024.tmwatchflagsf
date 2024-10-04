@@ -14,13 +14,13 @@ TELL( "tmWatchFlagsF: cleaning up" ) ;
     TELL( "saw flSTATE_FIRED so am firing myself" ) ;
     }
         }
-            ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x40 ) ;
+            ++ s ; ether.osSleepF( tin0P , TUCK * 0x40 ) ;
         {
         while( !ether && !( F(flags) & flSTATE_FIRED ) )
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     TELL( "watching for flSTATE_FIRED" ) ;
-    sgnReady.giveF( tinBaseP ) ;
+    sgnReady.giveF( tin0P ) ;
 
     signC&  sgnReady =  *(signC*)pTaskP->c2 ;
     flagsT& flags    = *(flagsT*)pTaskP->c1 ;

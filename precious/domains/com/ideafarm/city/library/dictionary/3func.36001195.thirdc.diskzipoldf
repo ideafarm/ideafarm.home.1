@@ -8,21 +8,21 @@
 
 
 }
-    delF( tinBaseP , postArgs ) ;
+    delF( tin0P , postArgs ) ;
 
     __( idDeathType ) ;
     __( value ) ;
-    dosExecPgmF( tinBaseP , countTC() , countTC() , value , idDeathType , "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip\\zip.exe\\zip.exe" , postArgs ) ;
+    dosExecPgmF( tin0P , countTC() , countTC() , value , idDeathType , "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip\\zip.exe\\zip.exe" , postArgs ) ;
     ZE( countT , idDeathType ) ;
     ZE( countT , value ) ;
 
 #endif
 
-    c_strcatIF( tinBaseP , postArgs , postFromP ) ;
-    c_strcatIF( tinBaseP , postArgs , " " ) ;
-    c_strcatIF( tinBaseP , postArgs , postToP ) ;
-    c_strcpyIF( tinBaseP , postArgs , F(flagsP) & flZIP_DELETE ? "-9rm " : "-9r " ) ;
-    newF( tinBaseP , LF , postArgs , costTo + costFrom + 2 + 5 ) ; ___( postArgs ) ;
+    c_strcatIF( tin0P , postArgs , postFromP ) ;
+    c_strcatIF( tin0P , postArgs , " " ) ;
+    c_strcatIF( tin0P , postArgs , postToP ) ;
+    c_strcpyIF( tin0P , postArgs , F(flagsP) & flZIP_DELETE ? "-9rm " : "-9r " ) ;
+    newF( tin0P , LF , postArgs , costTo + costFrom + 2 + 5 ) ; ___( postArgs ) ;
     ZE( osTextT* , postArgs ) ;
 
 #else
@@ -35,15 +35,15 @@
 
     if( postFrom[ costFrom - 1 ] == '\\' ) postFrom[ costFrom - 1 ] = 0 ;
     if( postTo[   costTo   - 1 ] == '\\' ) postTo[   costTo   - 1 ] = 0 ;
-    c_strcpyIF( tinBaseP , postFrom , postFromP ) ;
-    c_strcpyIF( tinBaseP , postTo   , postToP   ) ;
+    c_strcpyIF( tin0P , postFrom , postFromP ) ;
+    c_strcpyIF( tin0P , postTo   , postToP   ) ;
     osTextT postFrom[ TUCK << 1 ] ;
     osTextT postTo[   TUCK << 1 ] ;
 
 #if defined( NEVERdEFINED )
 
-    countT costFrom = c_strlenIF( tinBaseP , postFromP ) ;
-    countT costTo   = c_strlenIF( tinBaseP , postToP ) ;
+    countT costFrom = c_strlenIF( tin0P , postFromP ) ;
+    countT costTo   = c_strlenIF( tin0P , postToP ) ;
 
     }
         if( POOP ) return ;
@@ -54,7 +54,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::diskZipOldF( tin0S& tinBaseP , const osTextT* const postToP , const osTextT* const postFromP , const flagsT flagsP )/*1*/
+/*1*/voidT thirdC::diskZipOldF( tin0S& tin0P , const osTextT* const postToP , const osTextT* const postFromP , const flagsT flagsP )/*1*/
 
 /**/
 */

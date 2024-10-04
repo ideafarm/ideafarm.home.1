@@ -11,15 +11,15 @@ REST
 
 }
     }
-        else etThread.traceF( tinBaseP , T("ok") ) ;
+        else etThread.traceF( tin0P , T("ok") ) ;
         }
             CONoUTrAW( "Error: search failed.  Check the format of the parameters; they should look like this:\r\n  !root ///d/foo.bar/ !find \"goo hoo\"\r\n" ) ;
             POOPR
         {
         if( POOP )
 
-        else              ((tin9S&)tinBaseP).pEtScratch->diskWalkSearchF(           tinBaseP , cDirs , cFiles , ether , tRoot , tFind ) ;
-        if( bIgnoreCase ) ((tin9S&)tinBaseP).pEtScratch->diskWalkSearchIgnoreCaseF( tinBaseP , cDirs , cFiles , ether , tRoot , tFind ) ;
+        else              ((tin9S&)tin0P).pEtScratch->diskWalkSearchF(           tin0P , cDirs , cFiles , ether , tRoot , tFind ) ;
+        if( bIgnoreCase ) ((tin9S&)tin0P).pEtScratch->diskWalkSearchIgnoreCaseF( tin0P , cDirs , cFiles , ether , tRoot , tFind ) ;
         ZE( countT , cFiles ) ;
         ZE( countT , cDirs ) ;
         CONoUTrAW( "\r\nSearching...\r\n" ) ;
@@ -29,9 +29,9 @@ REST
     IFsCRATCH
 {
 else
-if( !tRoot.csF( tinBaseP ) || !tFind.csF( tinBaseP ) ) { CONoUTrAW( "doing nothing since !root and/or !find parameter values not specified" ) ; }
+if( !tRoot.csF( tin0P ) || !tFind.csF( tin0P ) ) { CONoUTrAW( "doing nothing since !root and/or !find parameter values not specified" ) ; }
 
-etThread.traceF( tinBaseP , T("ifcIDaDAM_TOOLwALKsEARCH will search folder [psttzEarlyFolder]:    ")+T(psttzEarlyFolder) ) ;
+etThread.traceF( tin0P , T("ifcIDaDAM_TOOLwALKsEARCH will search folder [psttzEarlyFolder]:    ")+T(psttzEarlyFolder) ) ;
 
 }
     }
@@ -45,16 +45,16 @@ etThread.traceF( tinBaseP , T("ifcIDaDAM_TOOLwALKsEARCH will search folder [pstt
             bArmedRoot = 0 ;
         {
         else if( bArmedRoot )
-        else if( !etThread.strCompareF( tinBaseP , psttc1 , tIgnoreCaseCmd ) ) { bIgnoreCase = 1 ;                  }
-        else if( !etThread.strCompareF( tinBaseP , psttc1 , tFindCmd       ) ) { bArmedFind  = 1 ; bArmedRoot = 0 ; }
-             if( !etThread.strCompareF( tinBaseP , psttc1 , tRootCmd       ) ) { bArmedRoot  = 1 ; bArmedFind = 0 ; }
+        else if( !etThread.strCompareF( tin0P , psttc1 , tIgnoreCaseCmd ) ) { bIgnoreCase = 1 ;                  }
+        else if( !etThread.strCompareF( tin0P , psttc1 , tFindCmd       ) ) { bArmedFind  = 1 ; bArmedRoot = 0 ; }
+             if( !etThread.strCompareF( tin0P , psttc1 , tRootCmd       ) ) { bArmedRoot  = 1 ; bArmedFind = 0 ; }
         CONoUTrAW( "\r\n" ) ;
         CONoUTrAW( T(psttc1) ) ;
     {
     FORsTRINGSiN1( pstt1Params )
     ZE( boolT , bArmedFind ) ;
     ZE( boolT , bArmedRoot ) ;
-    strokeS*& pstt1Params = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
+    strokeS*& pstt1Params = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
 {
 ZE( boolT , bIgnoreCase ) ;
 TN( tIgnoreCaseCmd , "!ignoreCase" ) ;
@@ -63,7 +63,7 @@ TN( tFindCmd , "!find" ) ;
 TN( tRoot , psttzEarlyFolder ) ; // WILL BE OVERRIDDEN IF !find PARAMETER IS FOUND
 TN( tRootCmd , "!root" ) ;
 
-strokeS* psttzEarlyFolder = etThread.ether_psttEarlyFolder_F( tinBaseP ) ;
+strokeS* psttzEarlyFolder = etThread.ether_psttEarlyFolder_F( tin0P ) ;
 
 
 // EXAMPLE COMMAND LINE INVOCATION:  D:\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\hover>ideafarm.00000442.ipdos-we 5100074e !idHome 10000008 !root ///ideafarm.home.1/ !find "save space"

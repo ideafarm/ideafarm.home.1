@@ -10,15 +10,15 @@
 }
     //ctCheckF() ;
 
-    if( !( F(flagsCt2) & flGRABITc_SUPPRESScTdT                                              ) ) grabF( tinBaseP , idLineCtP , idiFileCtP , pbBitsCtP ) ;
+    if( !( F(flagsCt2) & flGRABITc_SUPPRESScTdT                                              ) ) grabF( tin0P , idLineCtP , idiFileCtP , pbBitsCtP ) ;
 
     putNegAM( finger , FINGERnEG_GRABITc ) ;
 
     __HIGHbIT( ifcIdBitP - ifcIDgRABITbIT_min ) ;
 
     }
-        thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
-        idDesire = thirdC::dosPriorityIF( tinBaseP ) ;
+        thirdC::dosPriorityIF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
+        idDesire = thirdC::dosPriorityIF( tin0P ) ;
     {
     if( !( F(flagsCt2) & ( flGRABITc_IMAGEiSvISIBLEtOoTHERtHREADS | flGRABITc_DESIREcHANGEoNdEMAND ) ) )
 
@@ -26,13 +26,13 @@
 
     }
         }
-            poff_cGrabberRecurse          = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&((tin9S&)tinBaseP).pcGrabitRecurse[ offr ]   - (byteT*)this ) : &((tin9S&)tinBaseP).pcGrabitRecurse[ offr ] ) ;
-            poff_cGrabberOsTid            = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&((tin9S&)tinBaseP).pcGrabitOsTid[   offr ]   - (byteT*)this ) : &((tin9S&)tinBaseP).pcGrabitOsTid[   offr ] ) ;
+            poff_cGrabberRecurse          = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&((tin9S&)tin0P).pcGrabitRecurse[ offr ]   - (byteT*)this ) : &((tin9S&)tin0P).pcGrabitRecurse[ offr ] ) ;
+            poff_cGrabberOsTid            = ( F(flagsCt2) & flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES ? (countT*)( (byteT*)&((tin9S&)tin0P).pcGrabitOsTid[   offr ]   - (byteT*)this ) : &((tin9S&)tin0P).pcGrabitOsTid[   offr ] ) ;
         {
         if( offr != CmAXgRABITrECURSEiNtINs )                                                                       // IF ANOTHER INSTANCE OF ME HAS REGISTERED THE SAME GRAB BIT
 
         }
-            if( ((tin9S&)tinBaseP).ppbGrabitRecurse[ offr ] == pbo ) break ;
+            if( ((tin9S&)tin0P).ppbGrabitRecurse[ offr ] == pbo ) break ;
         {
         for( offr = 0 ; offr < CmAXgRABITrECURSEiNtINs ; offr ++ )
         ZE( countT , offr ) ;
@@ -52,7 +52,7 @@
         __( ifcIdBitP < ifcIDgRABITbIT_min ) ;
         __( !pcGrabberOsTidP != !pcGrabberRecurseP ) ;
         if( POOP ) return ;
-        __( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ;
+        __( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
@@ -89,8 +89,8 @@ keyDefault( 0 ) ,
 bitsDefault( GRABITbYTEiNITIALvALUE ) ,
 offo(        ifcIdBitP >= ifcIDgRABITbIT_min && ifcIdBitP <= ifcIDgRABITbIT_max ? ifcIdBitP - ifcIDgRABITbIT_min : 0 ) ,
 flagsCt2( flagsP                                                     ) ,
-baseGrabC( tinBaseP , idLineCtP , idiFileCtP , ifcIDtYPEdERIVEDbASEgRABc_grabitC ,   F(flagsP) & flGRABITc_SHARElAYER ? flBASEgRABc_SHARElAYER : flBASEgRABc_null                                                                                        , idGrabLayerP ) ,
-/*1*/grabitC::grabitC( tin0S& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , byteT&    bP              , const countT  ifcIdBitP , grabitC& grabitNUP , countT* const pcKeyP , countT* const pcGrabberOsTidP , countT* const pcGrabberRecurseP , const flagsT flagsP , const countT msNapP , const countT idGrabLayerP ) :/*1*/
+baseGrabC( tin0P , idLineCtP , idiFileCtP , ifcIDtYPEdERIVEDbASEgRABc_grabitC ,   F(flagsP) & flGRABITc_SHARElAYER ? flBASEgRABc_SHARElAYER : flBASEgRABc_null                                                                                        , idGrabLayerP ) ,
+/*1*/grabitC::grabitC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , byteT&    bP              , const countT  ifcIdBitP , grabitC& grabitNUP , countT* const pcKeyP , countT* const pcGrabberOsTidP , countT* const pcGrabberRecurseP , const flagsT flagsP , const countT msNapP , const countT idGrabLayerP ) :/*1*/
 
 /**/
 

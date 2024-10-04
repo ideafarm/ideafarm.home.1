@@ -9,35 +9,35 @@
     
 REST
 
-etThread.delF( tinBaseP , psttLabel ) ;
+etThread.delF( tin0P , psttLabel ) ;
 
-sDone_tmWatchSliderF.waitF( tinBaseP ) ;
-sSlider.giveF( tinBaseP ) ;
+sDone_tmWatchSliderF.waitF( tin0P ) ;
+sSlider.giveF( tin0P ) ;
 
-etThread.loafIF( tinBaseP ) ;
+etThread.loafIF( tin0P ) ;
 
-etThread.osThreadF( tinBaseP , countTC() , tmWatchSliderF , &sDone_tmWatchSliderF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&c8p ) ;
+etThread.osThreadF( tin0P , countTC() , tmWatchSliderF , &sDone_tmWatchSliderF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&c8p ) ;
 count8S c8p( (countT)&c8p1 ) ;
 count8S c8p1( (countT)&tcSlider ) ;
-signC sDone_tmWatchSliderF( tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sDone_tmWatchSliderF( tin0P , TAG( TAGiDnULL ) ) ;
 
-etThread.strokeF( tinBaseP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(0.0,scOld_mmPADfORsADAMfRAMES,1.0)+S3((measureT)(mFrames*2.0),scOld_mmFRAMEcELLS,(measureT)2.0)+tSay+T("\r\nHHHHHHHHHHHHHHHH HHHH")+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
+etThread.strokeF( tin0P , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(0.0,scOld_mmPADfORsADAMfRAMES,1.0)+S3((measureT)(mFrames*2.0),scOld_mmFRAMEcELLS,(measureT)2.0)+tSay+T("\r\nHHHHHHHHHHHHHHHH HHHH")+S2(0,scOld_POPfRAME)+S2(0,scOld_POPfRAME) ) ;
 
-strokeS::renderSizeIF( tinBaseP , etThread , tSay , mCols , mPads , mFrames ) ;
+strokeS::renderSizeIF( tin0P , etThread , tSay , mCols , mPads , mFrames ) ;
 ZE( measureT , mFrames ) ;
 ZE( measureT , mPads ) ;
 ZE( measureT , mCols ) ;
 
 TN( tSay , "" ) ; tSay = tcSlider+T(" ")+tcbQuit ;
 
-tcButtonQuitC tcbQuit( tinBaseP ) ;
+tcButtonQuitC tcbQuit( tin0P ) ;
 
-tcSliderC tcSlider( tinBaseP , etThread , mValue , bSlider , sSlider , 0x10 , 0xf , (const strokeS**)&psttLabel ) ;
-signC  sSlider( tinBaseP , TAG( TAGiDnULL ) ) ;
-batonC bSlider( tinBaseP , TAG( TAGiDnULL ) ) ;
+tcSliderC tcSlider( tin0P , etThread , mValue , bSlider , sSlider , 0x10 , 0xf , (const strokeS**)&psttLabel ) ;
+signC  sSlider( tin0P , TAG( TAGiDnULL ) ) ;
+batonC bSlider( tin0P , TAG( TAGiDnULL ) ) ;
 ZE( measureT , mValue ) ;
 
-etThread.strMakeF( tinBaseP , LF , psttLabel , T("")+S3(40.0,scOld_mmFRAMEcELLS,3.0)+T("value will appear here")+S2(0,scOld_POPfRAME) ) ; ___( psttLabel ) ;
+etThread.strMakeF( tin0P , LF , psttLabel , T("")+S3(40.0,scOld_mmFRAMEcELLS,3.0)+T("value will appear here")+S2(0,scOld_POPfRAME) ) ; ___( psttLabel ) ;
 ZE( strokeS* , psttLabel ) ;
 
 TODO
@@ -45,13 +45,13 @@ TODO
 DONE( tmWatchSliderF )
 }
     }
-        //napF( tinBaseP , ether , TOCK ) ;
-        bSlider.ungrabF( tinBaseP ) ;
-        tcSliderP.freshF( tinBaseP ) ;
-        etThread.strMakeF( tinBaseP , LF , psttLabel , T("")+S3(10.0,scOld_mmFRAMEcELLS,3.0)+TF1(mValue)+S2(0,scOld_POPfRAME) ) ; ___( psttLabel ) ;
-        etThread.delF( tinBaseP , psttLabel ) ;
-        bSlider.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-        sSlider.waitF( tinBaseP ) ;
+        //napF( tin0P , ether , TOCK ) ;
+        bSlider.ungrabF( tin0P ) ;
+        tcSliderP.freshF( tin0P ) ;
+        etThread.strMakeF( tin0P , LF , psttLabel , T("")+S3(10.0,scOld_mmFRAMEcELLS,3.0)+TF1(mValue)+S2(0,scOld_POPfRAME) ) ; ___( psttLabel ) ;
+        etThread.delF( tin0P , psttLabel ) ;
+        bSlider.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        sSlider.waitF( tin0P ) ;
     {
     while( !ether )
 
@@ -68,10 +68,10 @@ if( pTaskP && pTaskP->c1 )
 TASK( tmWatchSliderF )
 
 }
-    ++ s ; etherP.osSleepF( tinBaseP , time1P ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; etherP.osSleepF( tin0P , time1P ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
-voidT napF( tin0S& tinBaseP , etherC& etherP , const countT time1P )
+voidT napF( tin0S& tin0P , etherC& etherP , const countT time1P )
 
 /*1*/WAKEsHOW( "example.other.snip.00300d6.tcSliderC.label.volatile" )/*1*/
 /**/

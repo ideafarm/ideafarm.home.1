@@ -9,15 +9,15 @@
 
 }
     }
-        delF( tinBaseP , psttw ) ;
-        strFuseF( tinBaseP , psttP , psttw ) ; ___( psttP ) ;
-        strFromF( tinBaseP , psttw , idPort , flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_NObASE | flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttw ) ;
-        strFuseF( tinBaseP , psttP , T(",") ) ; ___( psttP ) ;
+        delF( tin0P , psttw ) ;
+        strFuseF( tin0P , psttP , psttw ) ; ___( psttP ) ;
+        strFromF( tin0P , psttw , idPort , flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_NObASE | flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttw ) ;
+        strFuseF( tin0P , psttP , T(",") ) ; ___( psttP ) ;
 
-        delF( tinBaseP , psttw ) ;
-        strFuseF( tinBaseP , psttP , psttw ) ; ___( psttP ) ;
-        strFromF( tinBaseP , psttw , idPort2 , flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_NObASE | flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttw ) ;
-        strFuseF( tinBaseP , psttP , T(",") ) ; ___( psttP ) ;
+        delF( tin0P , psttw ) ;
+        strFuseF( tin0P , psttP , psttw ) ; ___( psttP ) ;
+        strFromF( tin0P , psttw , idPort2 , flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_NObASE | flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttw ) ;
+        strFuseF( tin0P , psttP , T(",") ) ; ___( psttP ) ;
     {
     if( idPort2 || idPort )
 
@@ -32,10 +32,10 @@
 
     }
         }
-            if( off ) { strFuseF( tinBaseP , psttP , T(",") ) ; ___( psttP ) ; }
-            delF( tinBaseP , psttw ) ;
-            strFuseF( tinBaseP , psttP , psttw ) ; ___( psttP ) ;
-            strFromF( tinBaseP , psttw , pbi[ off ] , flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_NObASE | flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttw ) ;
+            if( off ) { strFuseF( tin0P , psttP , T(",") ) ; ___( psttP ) ; }
+            delF( tin0P , psttw ) ;
+            strFuseF( tin0P , psttP , psttw ) ; ___( psttP ) ;
+            strFromF( tin0P , psttw , pbi[ off ] , flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_NObASE | flFORMAT_FOREIGN , 0 , 10 ) ; ___( psttw ) ;
         {
         for( sCountT off = offMax ; off >= 0 ; off -- )
         const countT offMax = 3 + !bOld * 8 ;
@@ -46,9 +46,9 @@
     {
 
     ZE( strokeS* , psttw ) ;
-    strMakeF( tinBaseP , LF , psttP , T("") , 0x37 ) ; // CALLER MUST TAG
+    strMakeF( tin0P , LF , psttP , T("") , 0x37 ) ; // CALLER MUST TAG
 
-    if( !nicName ) nicName = sockNicNameF( tinBaseP ) ;
+    if( !nicName ) nicName = sockNicNameF( tin0P ) ;
 
     nicNameC nicName = nicNameP ;
     countT  idPort = idPortP ;
@@ -63,7 +63,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strFromIdPortNicNameF( tin0S& tinBaseP , strokeS*& psttP , const countT idPortP , const nicNameC nicNameP )/*1*/
+/*1*/voidT etherC::strFromIdPortNicNameF( tin0S& tin0P , strokeS*& psttP , const countT idPortP , const nicNameC nicNameP )/*1*/
 
 /**/
 */

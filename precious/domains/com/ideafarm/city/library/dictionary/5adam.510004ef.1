@@ -9,9 +9,9 @@
 
 REST
 
-etThread.strokeF( tinBaseP , T("")+S2('\f',sc_cFROMcONTROL) ) ;
-ether.loafIF( tinBaseP ) ;
-etThread.strokeF( tinBaseP , T("")+S2('\f',sc_cFROMcONTROL)+//SCBA(scbF) ) ;
+etThread.strokeF( tin0P , T("")+S2('\f',sc_cFROMcONTROL) ) ;
+ether.loafIF( tin0P ) ;
+etThread.strokeF( tin0P , T("")+S2('\f',sc_cFROMcONTROL)+//SCBA(scbF) ) ;
 
 { sadamCBFT pf = scbF ; } //VERIFY TYPE
 
@@ -19,7 +19,7 @@ TODO
 
 }
     return 1 ;
-    //wP.baton.ungrabF( tinBaseP ) ; //U::
+    //wP.baton.ungrabF( tin0P ) ; //U::
     if( idSnipP && psttSnipP && idsP && c8scratchEventP.c1 && bNoDrawP && flagsP && wP.bDoomed ) ;
 
     }
@@ -68,22 +68,22 @@ TODO
                                             pc4->c1 = R( mIdColFrom ) ;
                                         {
                                         if( pc4 )
-                                        etherP.newF( tinBaseP , LF , pc4 ) ; ___( pc4 ) ;
+                                        etherP.newF( tin0P , LF , pc4 ) ; ___( pc4 ) ;
                                         ZE( count4S* , pc4 ) ;
                                     {
                     
                                     mRowLathDraw = mIdRowTo ;
                                     mColLathDraw = mIdColTo ;
-                                    wP.baton.ungrabF( tinBaseP ) ;
-                                    third.winLineF( tinBaseP , wP , mIdColTo , mIdRowTo ) ;
+                                    wP.baton.ungrabF( tin0P ) ;
+                                    third.winLineF( tin0P , wP , mIdColTo , mIdRowTo ) ;
                                     measureT mIdRowTo = idRow ;
                                     measureT mIdColTo = idCol ;
                                     measureT mIdRowFrom = wP.mIdRow ;
                                     measureT mIdColFrom = wP.mIdCol ;
-                                    third.winMoveF( tinBaseP , wP ) ;
+                                    third.winMoveF( tin0P , wP ) ;
                                     wP.mIdRow = mRowLathDraw ;
                                     wP.mIdCol = mColLathDraw ;
-                                    wP.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                    wP.baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                                 {
                                 else
                                 }
@@ -119,7 +119,7 @@ TODO
                         }
                             break ;
                             else                                                                                 FIREmYSELF ;
-                            if( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_IGNOREfIREbYoPERATOR ) etherP.traceF( tinBaseP , T("ignored firing by operator") ) ;
+                            if( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_IGNOREfIREbYoPERATOR ) etherP.traceF( tin0P , T("ignored firing by operator") ) ;
                         {
                         case ifcIDtYPEtOOL_ESCAPE :
                     {
@@ -136,12 +136,12 @@ TODO
         case ifcIDtYPEsTROKEcALLbACK_KEY :
         }
             break ;
-            wP.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            wP.baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             }
-                while( bQuit ) { ++ s ; etherP.osSleepF( tinBaseP , TUCK * 0x10 ) ; }
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                while( bQuit ) { ++ s ; etherP.osSleepF( tin0P , TUCK * 0x10 ) ; }
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
-            wP.baton.ungrabF( tinBaseP ) ;
+            wP.baton.ungrabF( tin0P ) ;
             bRender = 0 ;
             bQuit = 1 ;
         {
@@ -158,7 +158,7 @@ TODO
         case ifcIDtYPEsTROKEcALLbACK_RENDERoN :
         }
             break ;
-            etherP.osThreadF( tinBaseP , countTC() , tmRenderF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&c8scratchSnippetP , (countT)&wP ) ;
+            etherP.osThreadF( tin0P , countTC() , tmRenderF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&c8scratchSnippetP , (countT)&wP ) ;
             bRender = 1 ;
         {
         case ifcIDtYPEsTROKEcALLbACK_RENDER :
@@ -173,9 +173,9 @@ TODO
     measureT& mColMin      = *(measureT*)&c8scratchSnippetP.c3 ;
     boolT&    bRender      = c8scratchSnippetP.c2 ;
     boolT&    bQuit        = c8scratchSnippetP.c1 ;
-    //wP.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ; //U::
+    //wP.baton.grabF( tin0P , TAG( TAGiDnULL ) ) ; //U::
 {
-boolT scbF( tin0S& tinBaseP , etherC& etherP , windowOldC& wP , stackC& stInvalidP , const countT idSnipP , const strokeS* const psttSnipP , const countT idsP , const flagsT flagsP , const boolT bNoDrawP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , count8S& c8scratchEventP , count8S& c8scratchAdamP , count8S& c8scratchSnipP , count8S& c8scratchSnipAdamP , count8S& c8scratchStrokeP )
+boolT scbF( tin0S& tin0P , etherC& etherP , windowOldC& wP , stackC& stInvalidP , const countT idSnipP , const strokeS* const psttSnipP , const countT idsP , const flagsT flagsP , const boolT bNoDrawP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , count8S& c8scratchEventP , count8S& c8scratchAdamP , count8S& c8scratchSnipP , count8S& c8scratchSnipAdamP , count8S& c8scratchStrokeP )
 
 DONE( tmRenderF )
 }
@@ -183,25 +183,25 @@ DONE( tmRenderF )
     }
         }
             }
-                ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x10 ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                ++ s ; etThread.osSleepF( tin0P , TUCK * 0x10 ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
             else
             }
-                win.baton.ungrabF( tinBaseP ) ;
-                third.winLineF( tinBaseP , win , mIdColTo , mIdRowTo ) ;
+                win.baton.ungrabF( tin0P ) ;
+                third.winLineF( tin0P , win , mIdColTo , mIdRowTo ) ;
                 measureT mIdRowTo = mIdRowDraw ;
                 measureT mIdColTo = win.mCols ;
                 measureT mIdRowFrom = win.mIdRow ;
                 measureT mIdColFrom = win.mIdCol ;
-                third.winMoveF( tinBaseP , win ) ;
+                third.winMoveF( tin0P , win ) ;
                 win.mIdRow = mIdRowDraw ;
                 win.mIdCol = 1 ;
                 measureT mIdRowDraw = 1 + idRender % (countT)win.mRows ;
-                win.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                win.baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 thirdC& third = etThread ;
                 
-                stackC stInvalid( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count4S ) ;
+                stackC stInvalid( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count4S ) ;
             {
             if( bRender && !bLame )
 

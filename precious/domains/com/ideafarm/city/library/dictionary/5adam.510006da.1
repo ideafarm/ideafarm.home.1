@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.delF( tinBaseP , psttv ) ;
+etThread.delF( tin0P , psttv ) ;
 
-else        etThread.traceF( tinBaseP , T("setting queried [key,value]:    \"")+tKey+T("\"    not found") ) ;
-if( psttv ) etThread.traceF( tinBaseP , T("setting queried [key,value]:    \"")+tKey+T("\"    \"")+T(psttv)+T("\"") ) ;
+else        etThread.traceF( tin0P , T("setting queried [key,value]:    \"")+tKey+T("\"    not found") ) ;
+if( psttv ) etThread.traceF( tin0P , T("setting queried [key,value]:    \"")+tKey+T("\"    \"")+T(psttv)+T("\"") ) ;
 
-etThread.querySettingF( tinBaseP , psttv , tKey ) ; ___( psttv ) ;
+etThread.querySettingF( tin0P , psttv , tKey ) ; ___( psttv ) ;
 ZE( strokeS* , psttv ) ;
 
 TN( tKey , "3" ) ;

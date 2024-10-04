@@ -10,11 +10,11 @@
 }
     }
         }
-            strSubstringF( tinBaseP , psttP , idf , idl , psttBigP , csttExtraP ) ; // CALLER MUST TAG
+            strSubstringF( tin0P , psttP , idf , idl , psttBigP , csttExtraP ) ; // CALLER MUST TAG
         {
         else if( psttBigP->idAdam >= idl )
         }
-            strMakeF( tinBaseP , LF , psttP , T("") , csttExtraP ) ; // CALLER MUST TAG. TRAILING BLANKS WERE SEEN AS THE LEFT DELIMITER OF THE WORD
+            strMakeF( tin0P , LF , psttP , T("") , csttExtraP ) ; // CALLER MUST TAG. TRAILING BLANKS WERE SEEN AS THE LEFT DELIMITER OF THE WORD
         {
         else if( psttBigP->idAdam == idf - 1 )
         if( !idf ) ;
@@ -38,7 +38,7 @@
                     cFound ++ ;
                 {
                 if( idd )
-                countT idd = strIdAnyF( tinBaseP , idf2 , sttQuoteP , sttDelimiter , psttBigP ) ;
+                countT idd = strIdAnyF( tin0P , idf2 , sttQuoteP , sttDelimiter , psttBigP ) ;
             {
             while( idf2 && cFound < idP )
             countT idf2 = 1 ;
@@ -53,10 +53,10 @@
     else
     }
         }
-            strWordF( tinBaseP , psttP , psttBigP , sttQuoteP , sttDelimiterP , cWords + idP + 1 , csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;
+            strWordF( tin0P , psttP , psttBigP , sttQuoteP , sttDelimiterP , cWords + idP + 1 , csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;
         {
         if( cWords + idP >= 0 )
-        sCountT cWords = strCLinesF( tinBaseP , psttBigP , tDelim , 1 ) ;
+        sCountT cWords = strCLinesF( tin0P , psttBigP , tDelim , 1 ) ;
         TN( tDelim , "" ) ; tDelim = T("")+sttDelimiter ;
     {
     if( idP < 0 )
@@ -75,7 +75,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::strWordF( tin0S& tinBaseP , strokeS*& psttP , const strokeS* const psttBigP , strokeS& sttQuoteP , const strokeS sttDelimiterP , const sCountT idP , const countT csttExtraP )/*1*/
+/**//*1*/voidT etherC::strWordF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttBigP , strokeS& sttQuoteP , const strokeS sttDelimiterP , const sCountT idP , const countT csttExtraP )/*1*/
 */
  csttExtraP
   if negative then indexes from the end of psttBigP

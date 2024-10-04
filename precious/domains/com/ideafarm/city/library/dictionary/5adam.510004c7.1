@@ -9,18 +9,18 @@
 
 REST
 
-ether.osSleepF( tinBaseP , TOCK * 4 ) ;
+ether.osSleepF( tin0P , TOCK * 4 ) ;
 
-while( cTries -- ) sockd.writeF( tinBaseP , ifcPORToLD2_TIMErEMAINING , nicNameC() , pbo , sizeof pbo ) ;
+while( cTries -- ) sockd.writeF( tin0P , ifcPORToLD2_TIMErEMAINING , nicNameC() , pbo , sizeof pbo ) ;
 countT cTries = 8 ;
 
-etThread.osThreadF( tinBaseP , countTC() , tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd ) ;
+etThread.osThreadF( tin0P , countTC() , tmCatchF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sockd ) ;
 
-sockd.bindF( tinBaseP ) ;
-socketC sockd( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+sockd.bindF( tin0P ) ;
+socketC sockd( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
-etThread.memCopyF( tinBaseP , (byteT*)&pco[ 2 ] , poste , sizeof poste ) ;
-pco[ 1 ] = etThread.diskIdF( tinBaseP , T("///d/") ) ;
+etThread.memCopyF( tin0P , (byteT*)&pco[ 2 ] , poste , sizeof poste ) ;
+pco[ 1 ] = etThread.diskIdF( tin0P , T("///d/") ) ;
 pco[ 0 ] = 2 ;
 countT* pco = (countT*)pbo ;
 byteT pbo[ 2 * sizeof( countT ) + sizeof poste ] ;
@@ -31,14 +31,14 @@ TODO
 DONE( tmCatchF )
 }
     }
-        etThread.delF( tinBaseP , pbr ) ;
+        etThread.delF( tin0P , pbr ) ;
 
         }
             }
                 }
                     break ;
                     }
-                        etThread.strokeF( tinBaseP , TF1(c2r.c2)+T(" payment bound\r\n") ) ;
+                        etThread.strokeF( tin0P , TF1(c2r.c2)+T(" payment bound\r\n") ) ;
                         count2S& c2r = *(count2S*)pbr ;
                     {
                     if( cbr == 2 * sizeof( countT ) )
@@ -50,13 +50,13 @@ DONE( tmCatchF )
         {
         if( pbr && cbr >= sizeof( countT ) )
     
-        sockd.readF( tinBaseP , pbr , cbr , idp , nnPeer ) ; ___( pbr ) ;
+        sockd.readF( tin0P , pbr , cbr , idp , nnPeer ) ; ___( pbr ) ;
         nicNameC nnPeer ;
         ZE( countT , idp ) ;
         ZE( countT , cbr ) ;
         ZE( byteT* , pbr ) ;
     {
-    while( !ether && !sockd.etherF( tinBaseP ) )
+    while( !ether && !sockd.etherF( tin0P ) )
 
     socketC& sockd = *(socketC*)pTaskP->c1 ;
 {

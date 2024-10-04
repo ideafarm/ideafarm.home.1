@@ -20,7 +20,7 @@
 
     countT cWildRemain = psttP->idAdam - cOk ;
 
-    delF( tinBaseP , pstt1w ) ;
+    delF( tin0P , pstt1w ) ;
     }
         }
             cArmedQuestion = bArmedStar = 0 ;
@@ -45,7 +45,7 @@
                     ?             idHit -  cOk - 1
                 countT cWildEat = idHit >= cOk + 1
 
-                countT idHit = strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , psttc1 , psttP ) ;            
+                countT idHit = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , psttc1 , psttP ) ;            
                 countT idf = cOk + 1 ;
             {
             else
@@ -58,21 +58,21 @@
         if( !cWild )
 
         }
-            while( idfq && strIdF( tinBaseP , 0 , flSTRmATCH_null , idfq , sttq , tQuestion , psttc1 ) ) { cArmedQuestion ++ ; cWild ++ ; }
+            while( idfq && strIdF( tin0P , 0 , flSTRmATCH_null , idfq , sttq , tQuestion , psttc1 ) ) { cArmedQuestion ++ ; cWild ++ ; }
             countT idfq = 1 ;
         {
 
-        if( strIdF( tinBaseP , tStar , psttc1 ) ) cWild = bArmedStar = 1 ;              // MULTIPLE ASTERISKS ARE REDUNDANT AND ONLY WO WILL BE COUNTED
+        if( strIdF( tin0P , tStar , psttc1 ) ) cWild = bArmedStar = 1 ;              // MULTIPLE ASTERISKS ARE REDUNDANT AND ONLY WO WILL BE COUNTED
         ZE( countT , cWild ) ;                                                      // THIS IS ONLY USED AS A BOOLEAN
 
-        //traceF( tinBaseP , T("like: ")+T(psttc1) ) ;
+        //traceF( tin0P , T("like: ")+T(psttc1) ) ;
     {
     FORsTRINGSiN1( pstt1w )
     ZE( countT , cArmedQuestion ) ;
     ZE( boolT , bArmedStar ) ;
     TN( tQuestion , "?" ) ;
     TN( tStar , "*" ) ;
-    strWordsF( tinBaseP , pstt1w , psttLikeP , sttq , T("*?") , flSTRwORDS_DELIMITERS ) ; ___( pstt1w ) ;
+    strWordsF( tin0P , pstt1w , psttLikeP , sttq , T("*?") , flSTRwORDS_DELIMITERS ) ; ___( pstt1w ) ;
     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
     ZE( strokeS* , pstt1w ) ;
 
@@ -80,8 +80,8 @@
 
     boolT bMatch = 1;
 
-    //traceF( tinBaseP , T("[psttP]    : ")+T(psttP    ) ) ;
-    //traceF( tinBaseP , T("[psttLikeP]: ")+T(psttLikeP) ) ;
+    //traceF( tin0P , T("[psttP]    : ")+T(psttP    ) ) ;
+    //traceF( tin0P , T("[psttLikeP]: ")+T(psttLikeP) ) ;
 
     }
         if( POOP ) return 0 ;
@@ -93,7 +93,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/boolT etherC::strFileMatchF( tin0S& tinBaseP , const strokeS* const psttLikeP , const strokeS* const psttP )/*1*/
+/*1*/boolT etherC::strFileMatchF( tin0S& tin0P , const strokeS* const psttLikeP , const strokeS* const psttP )/*1*/
 
 /**/
 

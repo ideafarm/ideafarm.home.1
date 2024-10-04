@@ -8,31 +8,31 @@
 
 
 }
-    sw_pMarketX.ungrabF( tinBaseP ) ;
+    sw_pMarketX.ungrabF( tin0P ) ;
     }
         DELzOMBIE( pNapkin ) ;
         DELzOMBIE( pMarketX ) ; //A:ASSUME: adamC DEFINITION CODE MAY ASSUME THAT A FLAVOR, ONCE ALLOCATED, IS NEVER DELETED EXCEPT HERE
         marketC* pMarketX = (marketC*)(byteT*)*pNapkin ;
         napkinC* pNapkin = (napkinC*)( &(countT&)sw_pMarketX + 1 ) ;
-        idGoodLever = sw_pMarketX.leverF( tinBaseP , idf ) ;
+        idGoodLever = sw_pMarketX.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = sw_pMarketX.cFlavorsF( tinBaseP ) ;
-    sw_pMarketX.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    countT cFlavors = sw_pMarketX.cFlavorsF( tin0P ) ;
+    sw_pMarketX.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-    ((tin9S&)tinBaseP).pag4->_adamC_grab.ungrabF( tinBaseP ) ;
+    ((tin9S&)tin0P).pag4->_adamC_grab.ungrabF( tin0P ) ;
 
     }
         pac->pAdam = pAdam ;
         while( pac->pAdam != this ) pac = pac->pAdam ; //WILL BLAMMO READING 0 (OFFSET OF pAdam IN ME) IF I AM NOT LISTED
-        adamC* pac = ((tin9S&)tinBaseP).pag1->_adamC_pAdam ;
+        adamC* pac = ((tin9S&)tin0P).pag1->_adamC_pAdam ;
     {
     else
-    if( ((tin9S&)tinBaseP).pag1->_adamC_pAdam == this ) ((tin9S&)tinBaseP).pag1->_adamC_pAdam = pAdam ;
+    if( ((tin9S&)tin0P).pag1->_adamC_pAdam == this ) ((tin9S&)tin0P).pag1->_adamC_pAdam = pAdam ;
 
-    if( !((tin9S&)tinBaseP).pag1->_adamC_pAdam ) { BLAMMO ; }
+    if( !((tin9S&)tin0P).pag1->_adamC_pAdam ) { BLAMMO ; }
 
-    ((tin9S&)tinBaseP).pag4->_adamC_grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ((tin9S&)tin0P).pag4->_adamC_grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     TINSL
 {

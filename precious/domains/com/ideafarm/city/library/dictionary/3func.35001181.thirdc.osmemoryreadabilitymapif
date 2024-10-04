@@ -24,7 +24,7 @@
         else      pbBitsP[ offo ] &= ~ mask ;
         if( bOk ) pbBitsP[ offo ] |=   mask ;
     
-        thirdC::dosReadProcessMemoryIF( tinBaseP , &bIn , 1 , bOk , (voidT*)offi , ((tin9S&)tinBaseP).osPid ) ;
+        thirdC::dosReadProcessMemoryIF( tin0P , &bIn , 1 , bOk , (voidT*)offi , ((tin9S&)tin0P).osPid ) ;
         byteT bIn ;
         ZE( boolT , bOk ) ;
     {
@@ -37,7 +37,7 @@
     countT cbGrain = ( ( MAXcOUNTT >> 1 ) + 1 ) / cBits ; // ">> 1" IS BECAUSE UPPER HALF OF ADDRESS SPACE IS NOT AVAILABLE ON WINDOWS
     countT cBits = cbBitsP * SB ;
 {
-/*1*/countT thirdC::osMemoryReadabilityMapIF( tin0S& tinBaseP , byteT* const pbBitsP , const countT cbBitsP )/*1*/
+/*1*/countT thirdC::osMemoryReadabilityMapIF( tin0S& tin0P , byteT* const pbBitsP , const countT cbBitsP )/*1*/
 
 /**/
 */
@@ -47,7 +47,7 @@
   must point to cbBitsP bytes of readable memory
   must be nonze
  pbBitsP
- tinBaseP
+ tin0P
 parameters
 i evaluate to the "grainsize", the number of bytes represented by each bit of the bitstring that i set
 /*

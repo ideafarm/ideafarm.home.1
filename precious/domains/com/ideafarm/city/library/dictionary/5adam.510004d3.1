@@ -21,9 +21,9 @@ REST
 
                 if( pbWrite == pbEnd ) pbWrite = pbBegin ;
                 pbWrite += cbThis ;
-                etThread.strokeF( tinBaseP , T("out: ")+TF1(c2o.c2)+T(" (part)\r\n") ) ;
+                etThread.strokeF( tin0P , T("out: ")+TF1(c2o.c2)+T(" (part)\r\n") ) ;
                 ph->cbWritten = cbwNew ;
-                etThread.memCopyF( tinBaseP , pbWrite , pbc , cbThis ) ;
+                etThread.memCopyF( tin0P , pbWrite , pbc , cbThis ) ;
             {
             if( !ether )
             while( cbwNew - ph->cbRead > CBmONITORbUFFER && !ether ) OSsLEEPf( 0x0 ) ;
@@ -35,10 +35,10 @@ REST
         else
         }
             }
-                etThread.strokeF( tinBaseP , T("out: ")+TF1(c2o.c2)+T("\r\n") ) ;
+                etThread.strokeF( tin0P , T("out: ")+TF1(c2o.c2)+T("\r\n") ) ;
                 cbc = 0 ;
                 ph->cbWritten = cbwNew ;
-                etThread.memCopyF( tinBaseP , pbWrite , pbc , cbc ) ;
+                etThread.memCopyF( tin0P , pbWrite , pbc , cbc ) ;
             {
             if( !ether )
             while( cbwNew - ph->cbRead > CBmONITORbUFFER && !ether ) OSsLEEPf( 0x0 ) ;
@@ -76,14 +76,14 @@ byteT* pbEnd   = pbBegin + CBmONITORbUFFER ;
 byteT* pbBegin = (byteT*)ph + sizeof( napMonitorHeaderS ) ;
 else if( napMonitor != cbMonitor ) { BLAMMO ; }
 }
-    napMonitor.formattingIsDoneF( tinBaseP ) ;
-    etThread.memSetF( tinBaseP , (byteT*)ph , sizeof( napMonitorHeaderS ) ) ;
+    napMonitor.formattingIsDoneF( tin0P ) ;
+    etThread.memSetF( tin0P , (byteT*)ph , sizeof( napMonitorHeaderS ) ) ;
 {
 else if( !( F(napMonitor.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
 if( !ph ) { BLAMMO ; }
 napMonitorHeaderS* ph = (napMonitorHeaderS*)(byteT*)napMonitor ;
-napkinC napMonitor( tinBaseP , LF , (byteT*)bits , "napMonitor" , 0 , cbMonitor ) ;
-bitsC bits( tinBaseP , CbITSlIFI , 0 , 1 ) ;
+napkinC napMonitor( tin0P , LF , (byteT*)bits , "napMonitor" , 0 , cbMonitor ) ;
+bitsC bits( tin0P , CbITSlIFI , 0 , 1 ) ;
 const countT cbMonitor = sizeof( napMonitorHeaderS ) + CBmONITORbUFFER ;
 BLAMMO ; //U:: FOR DEBUGGING, TO VERIFY THAT NO WO ACCESSES napMonitorG
 

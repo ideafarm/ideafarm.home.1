@@ -12,7 +12,7 @@ DONE( tmRelayOldServerWrapToAppF )
     }
         }
             }
-                etThread.delF( tinBaseP , pc2WrapRef ) ;
+                etThread.delF( tin0P , pc2WrapRef ) ;
                 DEL( *(soulC**)&pc2WrapRef->c1 ) ;
             {
             if( 1 == decv02AM( pc2WrapRef->c2 ) )
@@ -21,20 +21,20 @@ DONE( tmRelayOldServerWrapToAppF )
                 }
                     }
                         bQuitP = 1 ;
-                        etThread.traceF( tinBaseP , T("could not write soul") ) ;
+                        etThread.traceF( tin0P , T("could not write soul") ) ;
                         POOPRqUIET
                     {
                     if( POOP )
-                    psoP->writeF( tinBaseP , *(soulC*)pc2WrapRef->c1 ) ;
-                    scoopC scoop( tinBaseP , LF , psoP->etherF( tinBaseP ) ) ;
-                    //etThread.traceF( tinBaseP , T("writing soul") ) ;
+                    psoP->writeF( tin0P , *(soulC*)pc2WrapRef->c1 ) ;
+                    scoopC scoop( tin0P , LF , psoP->etherF( tin0P ) ) ;
+                    //etThread.traceF( tin0P , T("writing soul") ) ;
 
                     }
                         }
-                            portTimeC idptOrigin = portTimeC::fieldF( tinBaseP , sWrap , ifcOLDiDfIELDwRAP_IDPToRIGIN ) ;
+                            portTimeC idptOrigin = portTimeC::fieldF( tin0P , sWrap , ifcOLDiDfIELDwRAP_IDPToRIGIN ) ;
                         {
                         if( idType == ifcOLDiDtYPEwRAP_GIFT )
-                        countT idType = sWrap.cFieldF( tinBaseP , ifcOLDiDfIELDwRAP_IDtYPE ) ;
+                        countT idType = sWrap.cFieldF( tin0P , ifcOLDiDfIELDwRAP_IDtYPE ) ;
                         soulC& sWrap = *(soulC*)pc2WrapRef->c1 ;
                     {
                     //CONoUTrAW( "tmRelayOldServerWrapToAppF: trapping a bug\r\n" ) ;
@@ -45,7 +45,7 @@ DONE( tmRelayOldServerWrapToAppF )
                 if( bWrite )
     
                 }
-                    stChannelExcludeP.ungrabF( tinBaseP ) ;
+                    stChannelExcludeP.ungrabF( tin0P ) ;
                     }
                         while( !stChannelExcludeP.third && ~hDown ) ;
                         }
@@ -53,23 +53,23 @@ DONE( tmRelayOldServerWrapToAppF )
                                 break ;
                                 bWrite = 0 ;
                             {
-                            if( !etThread.strCompareF( tinBaseP , pczChannel , pczTest , 0 , ccTestMax , pcFilter , ccFilter ) )
+                            if( !etThread.strCompareF( tin0P , pczChannel , pczTest , 0 , ccTestMax , pcFilter , ccFilter ) )
         
                             countT   ccFilter  =             pc4c->c4 ;
                             countT*& pcFilter  = *(countT**)&pc4c->c3 ;
                             countT   ccTestMax =             pc4c->c2 ;
                             countT*& pczTest   = *(countT**)&pc4c->c1 ;
-                            count4S*& pc4c = *(count4S**)&stChannelExcludeP.downF( tinBaseP , hDown ) ;
+                            count4S*& pc4c = *(count4S**)&stChannelExcludeP.downF( tin0P , hDown ) ;
                         {
                         do
-                        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     {
                     if( stChannelExcludeP )
-                    stChannelExcludeP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    stChannelExcludeP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( bWrite )
     
-                stChannelIncludeP.ungrabF( tinBaseP ) ;
+                stChannelIncludeP.ungrabF( tin0P ) ;
                 }
                     while( !stChannelIncludeP.third && ~hDown ) ;
                     }
@@ -77,25 +77,25 @@ DONE( tmRelayOldServerWrapToAppF )
                             break ;
                             bWrite = 1 ;
                         {
-                        if( !etThread.strCompareF( tinBaseP , pczChannel , pczTest , 0 , ccTestMax , pcFilter , ccFilter ) )
+                        if( !etThread.strCompareF( tin0P , pczChannel , pczTest , 0 , ccTestMax , pcFilter , ccFilter ) )
     
                         countT   ccFilter  =             pc4c->c4 ;
                         countT*& pcFilter  = *(countT**)&pc4c->c3 ;
                         countT   ccTestMax =             pc4c->c2 ;
                         countT*& pczTest   = *(countT**)&pc4c->c1 ;
-                        count4S*& pc4c = *(count4S**)&stChannelIncludeP.downF( tinBaseP , hDown ) ;
+                        count4S*& pc4c = *(count4S**)&stChannelIncludeP.downF( tin0P , hDown ) ;
                     {
                     do
-                    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     bWrite = 0 ;
                 {
                 if( stChannelIncludeP )
-                stChannelIncludeP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                stChannelIncludeP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 boolT bWrite = 1 ;
 
                 //if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION ) { CONoUTrAW( "tmRelayOldServerWrapToAppF: this push is on the mediator reg channel\r\n" ) ; } //U::
     
-                countT* pczChannel = (countT*)((soulC*)pc2WrapRef->c1)->pbFieldF( tinBaseP , countTC() , countTC() , countTC() , ifcOLDiDfIELDwRAP_CHANNEL ) ;
+                countT* pczChannel = (countT*)((soulC*)pc2WrapRef->c1)->pbFieldF( tin0P , countTC() , countTC() , countTC() , ifcOLDiDfIELDwRAP_CHANNEL ) ;
             {
             if( !bQuitP )
 
@@ -105,9 +105,9 @@ DONE( tmRelayOldServerWrapToAppF )
         while( stWrapRefP )
 
         if( bQuitP ) break ;
-            { ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("tmRelayOldServerWrapToAppF: see a push for ifcIDaDAM_CONSOLE") ) ; }
+            { ((tin9S&)tin0P).pEther->traceF( tin0P , T("tmRelayOldServerWrapToAppF: see a push for ifcIDaDAM_CONSOLE") ) ; }
         if( idAdamClient == ifcIDaDAM_CONSOLE )
-        stWrapRefP.waitF( tinBaseP ) ;
+        stWrapRefP.waitF( tin0P ) ;
     {
     while( !ether && !bQuitP && !etThread && !stWrapRefP.third )
 

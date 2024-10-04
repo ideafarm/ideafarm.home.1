@@ -13,9 +13,9 @@ REST
 
 }
     }
-        ether.osSleepF( tinBaseP , TOCK * 0x40 ) ;
-        etThread.strokeF( tinBaseP , TF1(idStomp)+T(" ") ) ;
-        etThread.boxPutF( tinBaseP ,  T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+TF2(DDNUMB,flFORMAT_CITIZENeMAIL) , tNote ) ;
+        ether.osSleepF( tin0P , TOCK * 0x40 ) ;
+        etThread.strokeF( tin0P , TF1(idStomp)+T(" ") ) ;
+        etThread.boxPutF( tin0P ,  T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+TF2(DDNUMB,flFORMAT_CITIZENeMAIL) , tNote ) ;
 
         tNote = T("Subject: !IFC gorilla (stomp ")+TF1(++idStomp)+T(")\r\n\r\nif idStomp % 01 then i connected to www.ideafarm.com\r\nelse i connected to mail4.bayarea.net\r\n") ;
     {
@@ -23,15 +23,15 @@ REST
     ZE( countT , idStomp ) ;
     TN( tNote , "" ) ;
 
-    stateS state( tinBaseP , etThread ) ;
+    stateS state( tin0P , etThread ) ;
 {
 
 TODO
 
 }
 {
-stateC( tinBaseP , etherP , sizeof *this , 0 , translateStateF )
-stateS::stateS( tin0S& tinBaseP , etherC& etherP ) :
+stateC( tin0P , etherP , sizeof *this , 0 , translateStateF )
+stateS::stateS( tin0S& tin0P , etherC& etherP ) :
 
 TRANSLATEsTATE_END
     state.idMe ++ ;
@@ -42,7 +42,7 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
 
 ;
 }
-    stateS( tin0S& tinBaseP , etherC& etherP ) ;
+    stateS( tin0S& tin0P , etherC& etherP ) ;
 
     countT idTransLast ;
     countT idMe ;

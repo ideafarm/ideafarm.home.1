@@ -16,8 +16,8 @@
             }
                 }
                     }
-                        if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNnEWpLATE ) pSgnEvent->giveF( tinBaseP ) ;
-                        newTabsIfF( tinBaseP , ppNew , 0 ) ;
+                        if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNnEWpLATE ) pSgnEvent->giveF( tin0P ) ;
+                        newTabsIfF( tin0P , ppNew , 0 ) ;
                     {
                     if( idSlotP )
     
@@ -38,7 +38,7 @@
                                 ppTop->ppU = ppNew ;
                             {
                             if( ppc == ppTop )
-                            adjustRefsF( tinBaseP , idSlotP , ifcIDaCTIONsTACKaDJUSTrEFS_NEWaBOVE , ppNew ) ;
+                            adjustRefsF( tin0P , idSlotP , ifcIDaCTIONsTACKaDJUSTrEFS_NEWaBOVE , ppNew ) ;
                         {
                         if( ppNew )
 
@@ -47,12 +47,12 @@
                             ppNew = ppValueP ; ppValueP = 0 ;
                         {
                         else
-                        if( !ppValueP ) newPlateF( tinBaseP , ppNew , valueP ) ;
+                        if( !ppValueP ) newPlateF( tin0P , ppNew , valueP ) ;
                     {
                     else if( heavy < 0 || !( F(flagsP) & flSTACKsINK_UNIQUE ) ) //INSERT ME JUST ABOVE ppc (idSlotP)
                     }
                         }
-                            adjustRefsF( tinBaseP , ++ idSlotP , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppNew ) ;
+                            adjustRefsF( tin0P , ++ idSlotP , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppNew ) ;
                             cPlates ++ ; //U::
                             ppNew->ppU = ppc ;
                             ppBottom = ppc->ppD = ppNew ;
@@ -64,14 +64,14 @@
                             ppNew = ppValueP ; ppValueP = 0 ;
                         {
                         else
-                        if( !ppValueP ) newPlateF( tinBaseP , ppNew , valueP ) ;
+                        if( !ppValueP ) newPlateF( tin0P , ppNew , valueP ) ;
                     {
                     if( heavy > 0 ) //I AM HEAVIER THAN THE PLATE AT THE BOTTOM OF THE STACK, SO INSERT ME BELOW ppc (idSlotP)
                 {
                 else
                 }
                     }
-                        adjustRefsF( tinBaseP , idSlotP , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppc ) ;
+                        adjustRefsF( tin0P , idSlotP , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppc ) ;
                     {
                     else
                     if( heavy ) idSlotP = 0 ;
@@ -117,30 +117,30 @@
                                 if( !ppc->ppD ) break ; //I AM HEAVIER THAN THE PLATE AT THE BOTTOM OF THE STACK
                             {
                             if( !bJump )
-                            //if( pEther && ((tin9S&)tinBaseP).pc Utility[ 0 ] ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("sinks here") ) ;
+                            //if( pEther && ((tin9S&)tin0P).pc Utility[ 0 ] ) etherC::etRockIF( tin0P ).traceF( tin0P , T("sinks here") ) ;
                         {
                         else                            // I AM DENSER THAN ppc (idSlotP) SO WILL CONTINUE TO SINK DOWN THE STACK
                         }
                             else         oTabFloor = oTab ;
                             if( !bJump ) break ;
-                            //if( pEther && ((tin9S&)tinBaseP).pc Utility[ 0 ] ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("floats here") ) ;
+                            //if( pEther && ((tin9S&)tin0P).pc Utility[ 0 ] ) etherC::etRockIF( tin0P ).traceF( tin0P , T("floats here") ) ;
                         {
                         else if( heavy < 0 )            // I AM LESS DENSE THAN ppc (idSlotP) SO WILL FLOAT ABOVE IT
                         }
                             else         oTabFloor = oTab ;
                             if( !bJump ) break ;
-                            //if( pEther && ((tin9S&)tinBaseP).pc Utility[ 0 ] ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("neutral boyancy") ) ;
+                            //if( pEther && ((tin9S&)tin0P).pc Utility[ 0 ] ) etherC::etRockIF( tin0P ).traceF( tin0P , T("neutral boyancy") ) ;
                         {
                         if( !heavy )                    // MY DENSITY EQUALS ppc (idSlotP)
     
                         }
                             if( F(flags) & flSTACKc_SINKrEVERSE ) heavy = - heavy ;
-                            //if( pEther ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("sinking: calculated heavy [heavy]:    ")+TF2(heavy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO TEST
-                            heavy = (*pSubtractF)( tinBaseP , pEther , valuen , valuec , cArg ) ;
+                            //if( pEther ) etherC::etRockIF( tin0P ).traceF( tin0P , T("sinking: calculated heavy [heavy]:    ")+TF2(heavy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO TEST
+                            heavy = (*pSubtractF)( tin0P , pEther , valuen , valuec , cArg ) ;
                             countT cArg = subtractionParmP ? subtractionParmP : cbd ;
                         {
 
-                        //if( pEther && ((tin9S&)tinBaseP).pc Utility[ 0 ] ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("calculating heavy:    ")/*+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3(valuec,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")*/+T(*(strokeS**)valuec) ) ;
+                        //if( pEther && ((tin9S&)tin0P).pc Utility[ 0 ] ) etherC::etRockIF( tin0P ).traceF( tin0P , T("calculating heavy:    ")/*+TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TF3(valuec,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")*/+T(*(strokeS**)valuec) ) ;
 
                         }
                             default                    : { valuen = valueP ; valuec =         PLATE_countT_REF( ppc ) ; break ; } //U: CONJ: "valuen =" WOULD NOT BE NEEDED IF WE PREVENTED pSubtractF FROM MODIFYING valuen
@@ -153,7 +153,7 @@
                         //TEST A PLATE (CALCULATE heavy)
                     {
                     while( !third )
-                    //if( pEther && ((tin9S&)tinBaseP).pc Utility[ 0 ] ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("sink begun") ) ;
+                    //if( pEther && ((tin9S&)tin0P).pc Utility[ 0 ] ) etherC::etRockIF( tin0P ).traceF( tin0P , T("sink begun") ) ;
     
                     countT cbd = idType == ifcSTACKtYPE_BLOB ? cbData : 0 ; //U::CONJ: BUG: EDIT THIS TO HANDLE VARIABLE LENGTH BLOBS
                     ZE( countT , valuec ) ;
@@ -197,23 +197,23 @@
                 ZE( sCountT , heavy ) ;
 
                 }
-                    newTabsIfF( tinBaseP , 0 , 0 ) ;
+                    newTabsIfF( tin0P , 0 , 0 ) ;
                     cTabAge = - 1 ;
                     flagsState |= flSTACKsTATE_MAINTAINtABS ;
                 {
                 if( !( F(flagsState) & flSTACKsTATE_MAINTAINtABS ) )
-                //if( pEther && ((tin9S&)tinBaseP).pc Utility[ 0 ] ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("ppTop so sinking [cPlates]:    ")+TF2(cPlates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //if( pEther && ((tin9S&)tin0P).pc Utility[ 0 ] ) etherC::etRockIF( tin0P ).traceF( tin0P , T("ppTop so sinking [cPlates]:    ")+TF2(cPlates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 countT pEther = (countT)third.third_pEtherContainsMe_F() ;
             {
             else
             }
 
-                newTabsIfF( tinBaseP , ppNew , 0 ) ;
+                newTabsIfF( tin0P , ppNew , 0 ) ;
 
-                adjustRefsF( tinBaseP , idSlotP , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppTop ) ;
+                adjustRefsF( tin0P , idSlotP , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppTop ) ;
 
                 idSlotP = 1 ;
-                if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNnEWpLATE ) pSgnEvent->giveF( tinBaseP ) ;
+                if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNnEWpLATE ) pSgnEvent->giveF( tin0P ) ;
                 cPlates ++ ; //U::
                 ppBottom = ppTop = ppNew ;
                 }
@@ -221,8 +221,8 @@
                     ppNew = ppValueP ; ppValueP = 0 ;
                 {
                 else
-                if( !ppValueP ) newPlateF( tinBaseP , ppNew , valueP ) ;
-                //if( ((tin9S&)tinBaseP).pEther && ((tin9S&)tinBaseP).pc Utility[ 0 ] ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("!ppTop [cPlates]:    ")+TF2(cPlates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                if( !ppValueP ) newPlateF( tin0P , ppNew , valueP ) ;
+                //if( ((tin9S&)tin0P).pEther && ((tin9S&)tin0P).pc Utility[ 0 ] ) etherC::etRockIF( tin0P ).traceF( tin0P , T("!ppTop [cPlates]:    ")+TF2(cPlates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
             if( !ppTop )
             ZE( plateS* , ppNew ) ;
@@ -256,7 +256,7 @@
     IFbEcAREFUL
     SCOOP   
 {
-/*1*/voidT stackC::sinkPrivateF( tin0S& tinBaseP , countT& idSlotP , const countT valueP , plateS*& ppValueP , const flagsT flagsP , ifc4FT pSubtractFP , const countT subtractionParmP )/*1*/
+/*1*/voidT stackC::sinkPrivateF( tin0S& tin0P , countT& idSlotP , const countT valueP , plateS*& ppValueP , const flagsT flagsP , ifc4FT pSubtractFP , const countT subtractionParmP )/*1*/
 
 /**/
 */

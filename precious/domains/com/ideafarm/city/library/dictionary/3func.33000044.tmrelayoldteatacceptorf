@@ -16,11 +16,11 @@ DONE( tmRelayOldTeatAcceptorF )
 
         }
             else                 { DEL( pso ) ; }
-            if( !bQuitP && pso ) etThread.osThreadF( tinBaseP , countTC() , tmRelayOldTeatServerF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso ) ;
+            if( !bQuitP && pso ) etThread.osThreadF( tin0P , countTC() , tmRelayOldTeatServerF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , RELAYiNFOaRGcOUNTS , (countT)pso ) ;
             TELL( "launching tmRelayOldTeatServerF" )
     
             __( bRefuse ) ;
-            sListen.acceptF( tinBaseP , pso , idPortPeer , nnPeer , bRefuse ) ;
+            sListen.acceptF( tin0P , pso , idPortPeer , nnPeer , bRefuse ) ;
             ZE( boolT , bRefuse ) ;
             ZE( countT , idPortPeer ) ;
             nicNameC nnPeer ;
@@ -31,11 +31,11 @@ DONE( tmRelayOldTeatAcceptorF )
     {
     if( home.idpTeat )
 
-    sListen.listenF( tinBaseP ) ;
-    (countT&)home.idpTeat = sListen.bindF( tinBaseP ) ;
-    home.idpTeat = socketC::nicNameIF( tinBaseP , etThread ) ;
+    sListen.listenF( tin0P ) ;
+    (countT&)home.idpTeat = sListen.bindF( tin0P ) ;
+    home.idpTeat = socketC::nicNameIF( tin0P , etThread ) ;
 
-    socketC sListen( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    socketC sListen( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
     homeS& home = homeS::homeIF() ;
 

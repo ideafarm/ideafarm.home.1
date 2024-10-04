@@ -9,45 +9,45 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 THREADmODE5rESTORE
 }
     }
-        etThread.delF( tinBaseP , pbSymPlainText ) ;
-        etThread.traceF( tinBaseP , T("[pbSymPlainText]:    ")+T(pbSymPlainText) ) ;
+        etThread.delF( tin0P , pbSymPlainText ) ;
+        etThread.traceF( tin0P , T("[pbSymPlainText]:    ")+T(pbSymPlainText) ) ;
 
-        etThread.hushDecryptF( tinBaseP , pbSymPlainText , cbSymPlainText , soulHush , hKeyPrivate ) ; ___( pbSymPlainText  ) ;
+        etThread.hushDecryptF( tin0P , pbSymPlainText , cbSymPlainText , soulHush , hKeyPrivate ) ; ___( pbSymPlainText  ) ;
         ZE( countT , cbSymPlainText ) ;
         ZE( byteT* , pbSymPlainText ) ;
 
-        etThread.traceF( tinBaseP , T("[cbaPlainText,cbImage]:    ")+TF2(1+offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbSoul,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        soulHush.pbSoulF( tinBaseP , pbSoul , cbSoul ) ;
+        etThread.traceF( tin0P , T("[cbaPlainText,cbImage]:    ")+TF2(1+offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbSoul,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        soulHush.pbSoulF( tin0P , pbSoul , cbSoul ) ;
         ZE( countT , cbSoul ) ;
         ZE( const byteT* , pbSoul ) ;
 
-        etThread.hushEncryptF( tinBaseP , soulHush , ppbIn[ offi ] , offi + 1 , hKeyPublic ) ;
-        soulC soulHush( tinBaseP , TAG( TAGiDnULL ) ) ;
+        etThread.hushEncryptF( tin0P , soulHush , ppbIn[ offi ] , offi + 1 , hKeyPublic ) ;
+        soulC soulHush( tin0P , TAG( TAGiDnULL ) ) ;
     {
     for( countT offi = 0 ; offi < sizeof ppbIn / sizeof ppbIn[ 0 ] ; offi ++ )
 
-    etThread.hushWritePublicKeyToFileF(  tinBaseP , T("///d/tmp/scratch.adam.ether.key.public.verify.pem")  , hKeyPublic  ) ;
-    etThread.hushWritePrivateKeyToFileF( tinBaseP , T("///d/tmp/scratch.adam.ether.key.private.verify.pem") , hKeyPrivate ) ;
+    etThread.hushWritePublicKeyToFileF(  tin0P , T("///d/tmp/scratch.adam.ether.key.public.verify.pem")  , hKeyPublic  ) ;
+    etThread.hushWritePrivateKeyToFileF( tin0P , T("///d/tmp/scratch.adam.ether.key.private.verify.pem") , hKeyPrivate ) ;
 
-    etThread.hushReadPublicKeyFromFileF(  tinBaseP , hKeyPublic  , T("///d/tmp/scratch.adam.ether.key.public.pem")  ) ;
-    etThread.hushReadPrivateKeyFromFileF( tinBaseP , hKeyPrivate , T("///d/tmp/scratch.adam.ether.key.private.pem") ) ;
+    etThread.hushReadPublicKeyFromFileF(  tin0P , hKeyPublic  , T("///d/tmp/scratch.adam.ether.key.public.pem")  ) ;
+    etThread.hushReadPrivateKeyFromFileF( tin0P , hKeyPrivate , T("///d/tmp/scratch.adam.ether.key.private.pem") ) ;
 
-    etThread.hushWritePublicKeyToFileF(  tinBaseP , T("///d/tmp/scratch.adam.ether.key.public.pem")  , hKeyPair ) ;
-    etThread.hushWritePrivateKeyToFileF( tinBaseP , T("///d/tmp/scratch.adam.ether.key.private.pem") , hKeyPair ) ;
+    etThread.hushWritePublicKeyToFileF(  tin0P , T("///d/tmp/scratch.adam.ether.key.public.pem")  , hKeyPair ) ;
+    etThread.hushWritePrivateKeyToFileF( tin0P , T("///d/tmp/scratch.adam.ether.key.private.pem") , hKeyPair ) ;
 
-    etThread.traceF( tinBaseP , T("generated") ) ;
-    etThread.hushMakeKeyPairF( tinBaseP , hKeyPair , 0x400 ) ;
-    etThread.traceF( tinBaseP , T("generating...") ) ;
+    etThread.traceF( tin0P , T("generated") ) ;
+    etThread.hushMakeKeyPairF( tin0P , hKeyPair , 0x400 ) ;
+    etThread.traceF( tin0P , T("generating...") ) ;
 
-    handleC hKeyPublic(  tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC  ) ;
-    handleC hKeyPrivate( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
-    handleC hKeyPair(    tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR    ) ;
+    handleC hKeyPublic(  tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC  ) ;
+    handleC hKeyPrivate( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
+    handleC hKeyPair(    tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR    ) ;
 {
 THREADmODE5oN( flTHREADmODE5_ARMoPENsSL )
 

@@ -9,15 +9,15 @@
                             
 REST
 
-etherC::loafIF( tinBaseP ) ;
-//etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+//etThread.traceF( tin0P , T("ok") ) ;
 
 
 }
 
-    etThread.boxPutF( tinBaseP , T("///d/tmp/verify.log") , pbOut , info1.total_out ) ;
+    etThread.boxPutF( tin0P , T("///d/tmp/verify.log") , pbOut , info1.total_out ) ;
 
-    etThread.delF( tinBaseP , posti ) ;
+    etThread.delF( tin0P , posti ) ;
 
     rc = (*pg1.zlib_pInflateEndF)(   &info1 ) ;
     rc = (*pg1.zlib_pInflateF)(      &info1 ,  Z_FINISH ) ;
@@ -44,9 +44,9 @@ etherC::loafIF( tinBaseP ) ;
 
     processGlobal2S& pg1 = processGlobal2S::_processGlobal2I_IF() ;
 
-    etThread.boxGetShadowF( tinBaseP , posti , costi , T("///d/tmp/dut.gz.files/cloud.access.log.entries.incoming..CDN_ACCESS_LOGS.!.00b0e314.f32743d3.3d791883.08210000.48210000.web.archiveview.2018.05.20.00.5bc62369050ccc406780c4ca32d6443c.log.gz") ) ; ___( posti ) ;
+    etThread.boxGetShadowF( tin0P , posti , costi , T("///d/tmp/dut.gz.files/cloud.access.log.entries.incoming..CDN_ACCESS_LOGS.!.00b0e314.f32743d3.3d791883.08210000.48210000.web.archiveview.2018.05.20.00.5bc62369050ccc406780c4ca32d6443c.log.gz") ) ; ___( posti ) ;
 
-    //G: etThread.boxGetShadowF( tinBaseP , posti , costi , T("///d/tmp/dut.gz") ) ; ___( posti ) ;
+    //G: etThread.boxGetShadowF( tin0P , posti , costi , T("///d/tmp/dut.gz") ) ; ___( posti ) ;
     ZE( countT   , costi ) ;
     ZE( osTextT* , posti ) ;
 {

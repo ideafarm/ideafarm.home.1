@@ -10,11 +10,11 @@
 }
     }
         __( idAck - ifcREPLY_ACK ) ;
-        sock.readF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ;
+        sock.readF( tin0P , (byteT*)&idAck , sizeof idAck ) ;
         ZE( countT , idAck ) ;
 
         }
-            delF( tinBaseP , pc2cp ) ;
+            delF( tin0P , pc2cp ) ;
             }
                 }
                     }
@@ -27,20 +27,20 @@
                 {
                 for( countT off = 0 ; off < cPorts ; off ++ )
 
-                sock.readF( tinBaseP , (byteT*)pc2cp , sizeof( count2S ) * cPorts ) ;
+                sock.readF( tin0P , (byteT*)pc2cp , sizeof( count2S ) * cPorts ) ;
             {
             if( pc2cp )
-            newF( tinBaseP , LF , pc2cp , cPorts ) ; ___( pc2cp ) ;
+            newF( tin0P , LF , pc2cp , cPorts ) ; ___( pc2cp ) ;
             ZE( count2S* , pc2cp ) ;
         {
         if( cPorts )
 
-        sock.readF( tinBaseP , (byteT*)&cPorts , sizeof cPorts ) ;
+        sock.readF( tin0P , (byteT*)&cPorts , sizeof cPorts ) ;
         ZE( countT , cPorts ) ;
 
-        sock.writeF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ;
-        sock.connectF( tinBaseP , ifcPORToLD1pORTaUTHORITY , nicNameP ) ;
-        socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
+        sock.writeF( tin0P , (byteT*)&idCmd , sizeof idCmd ) ;
+        sock.connectF( tin0P , ifcPORToLD1pORTaUTHORITY , nicNameP ) ;
+        socketC sock( tin0P , *this , TAG( TAGiDnULL ) ) ;
     {
 
     countT idCmd = ifcCMDpORTaUTHORITY_QUERYaLL ;
@@ -56,7 +56,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcPortQueryF( tin0S& tinBaseP , switchStackC& swsIdPortP , countT& leverP , const nicNameC nicNameP )/*1*/
+/*1*/voidT etherC::ifcPortQueryF( tin0S& tin0P , switchStackC& swsIdPortP , countT& leverP , const nicNameC nicNameP )/*1*/
 /**/
 */
   if 0 then the local host is queried
@@ -67,7 +67,7 @@
   must be able to accept countT values
   must be empty
  swsIdPortP
- tinBaseP
+ tin0P
 arguments
 \<A HREF=\"5.1030125.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$ifcPortQueryF.0.html\"\>instances\</A\>

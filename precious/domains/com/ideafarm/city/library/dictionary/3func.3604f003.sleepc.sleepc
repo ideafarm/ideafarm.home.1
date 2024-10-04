@@ -16,7 +16,7 @@
     }
         ((tin9S*)pTin)->grabPseudo.cGrabbed ++ ;
         if( ((tin9S*)pTin)->grabPseudo.stat.cAcquisitions != - 1 ) inc02AM( ((tin9S*)pTin)->grabPseudo.stat.cAcquisitions ) ;
-        else                         ((tin9S*)pTin)->grabPseudo.osTid = ((tin9S&)tinBaseP).osTid ;
+        else                         ((tin9S*)pTin)->grabPseudo.osTid = ((tin9S&)tin0P).osTid ;
         }
             { BLAMMO ; }
         {
@@ -46,9 +46,9 @@
             //OStEXTC( ostoBuf , bTlsEarlyLateI , 0 ) ;
             OStEXTC( ostoBuf , bTlsEarlyLateIF() , 0 ) ;
             OStEXTAK( ostoBuf , " bTlsEarlyLateI: " ) ;
-            OStEXTC( ostoBuf , ((tin9S&)tinBaseP).idTin , 0 ) ;
+            OStEXTC( ostoBuf , ((tin9S&)tin0P).idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
-            if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tinBaseP).postThreadName ) ;
+            if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tin0P).postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\nTINSL: \"" ) ;
             OStEXTC( ostoBuf , ((tin9S*)pTin)->idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
@@ -56,7 +56,7 @@
             OStEXTAK( ostoBuf , "\r\npTin : \"" ) ;
             OStEXT( ostoBuf , 0x80 )
         {
-        if( pTin != &tinBaseP )
+        if( pTin != &tin0P )
         TINSL
     {
     if( ((tin9S*)pTin)->idTinNamed != ifcIDtINnAMED_tinHeartI )
@@ -68,11 +68,11 @@
             etherC::ifcSayIF( ostor , flSAY_LOG | flSAY_APPEND ) ;
 
             OStEXTAK( ostor , "\r\n" ) ;
-            OStEXTC( ostor , ((tin9S&)tinBaseP).idLineMile , 0 ) ;
+            OStEXTC( ostor , ((tin9S&)tin0P).idLineMile , 0 ) ;
             OStEXTAK( ostor , "; idLineMile is " ) ;
-            //OStEXTC( ostor , ((tin9S&)tinBaseP).pc Utility[ 1 ] , 0 ) ;
+            //OStEXTC( ostor , ((tin9S&)tin0P).pc Utility[ 1 ] , 0 ) ;
             OStEXTAK( ostor , "\"; pcUtilityI[1] is " ) ;
-            if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostor , ((tin9S&)tinBaseP).postThreadName )
+            if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostor , ((tin9S&)tin0P).postThreadName )
             OStEXTAK( ostor , "sleep blammo 1 (sleepC constructor) on thread \"" )
             OStEXT( ostor , 0x100 ) ;
             LOGcALLnEST( "sleep blammo 1" )
@@ -82,10 +82,10 @@
 
         SET_bStopOk
     {
-    if( !( F(((tin9S&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS ) )
+    if( !( F(((tin9S&)tin0P).flagsThreadMode4) & flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS ) )
     //CODEsYNC DUPLICATE CODE: 1700005 1700003
 
-    blammoIfIF( tinBaseP ) ;
+    blammoIfIF( tin0P ) ;
 
     }
         BLAMMO ;
@@ -94,12 +94,12 @@
 
     _IO_
 {
-bOuter( !((tin9S&)tinBaseP).grabPseudo.cGrabbed )
+bOuter( !((tin9S&)tin0P).grabPseudo.cGrabbed )
 bOsCall( bOsCallP ) ,
-pTin( &tinBaseP ) ,
-idiFileCtSave( ((tin9S&)tinBaseP).grabPseudo.idiFileCt ) ,
-idLineCtSave( ((tin9S&)tinBaseP).grabPseudo.idLineCt ) ,
-/*1*/sleepC::sleepC( tin0S& tinBaseP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const boolT bOsCallP ) :/*1*/
+pTin( &tin0P ) ,
+idiFileCtSave( ((tin9S&)tin0P).grabPseudo.idiFileCt ) ,
+idLineCtSave( ((tin9S&)tin0P).grabPseudo.idLineCt ) ,
+/*1*/sleepC::sleepC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const boolT bOsCallP ) :/*1*/
 
 /**/
 */

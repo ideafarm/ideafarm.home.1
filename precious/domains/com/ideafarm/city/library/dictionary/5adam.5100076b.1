@@ -9,10 +9,10 @@
                             
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("aok [cFiles]: ")+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("aok [cFiles]: ")+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 if( cFiles ) ;
-etThread.diskWalkF( tinBaseP , cDirs , cFiles , T("///z/archive/") , (boolT&)(const boolT&)ether , diskWalkArchiveRefileCorrectDateCBF /*, countT* const pcArgP = 0 , countT* pModuloDirsP = 0 , countT* pModuloFilesP = 0*/ ) ;
+etThread.diskWalkF( tin0P , cDirs , cFiles , T("///z/archive/") , (boolT&)(const boolT&)ether , diskWalkArchiveRefileCorrectDateCBF /*, countT* const pcArgP = 0 , countT* pModuloDirsP = 0 , countT* pModuloFilesP = 0*/ ) ;
 static countT cFiles ;
 static countT cDirs ;
 
@@ -22,32 +22,32 @@ TODO
     return bDoIt ;
     }
         }
-            etThread.delF( tinBaseP , posti ) ;
+            etThread.delF( tin0P , posti ) ;
 
             }
                 }
                     }
-                        etThread.traceF( tinBaseP , T("    [internal]:  ")+tInternalDateTime ) ;
-                        etThread.traceF( tinBaseP , T("    [external]:  ")+tExternalDateTime ) ;
-                        etThread.traceF( tinBaseP , tInternalName ) ;
-                        etThread.traceF( tinBaseP , tExternalName ) ;
+                        etThread.traceF( tin0P , T("    [internal]:  ")+tInternalDateTime ) ;
+                        etThread.traceF( tin0P , T("    [external]:  ")+tExternalDateTime ) ;
+                        etThread.traceF( tin0P , tInternalName ) ;
+                        etThread.traceF( tin0P , tExternalName ) ;
                     {
-                    if( etThread.strCompareF( tinBaseP , tInternalDateTime , tExternalDateTime ) )
+                    if( etThread.strCompareF( tin0P , tInternalDateTime , tExternalDateTime ) )
 
                     }
                         }
-                            etThread.delF( tinBaseP , psttGot ) ;
+                            etThread.delF( tin0P , psttGot ) ;
                             tExternalDateTime = T(psttGot) ;
-                            etThread.strSubstringF( tinBaseP , psttGot , idf , idl , tExternalName ) ; ___( psttGot ) ;
+                            etThread.strSubstringF( tin0P , psttGot , idf , idl , tExternalName ) ; ___( psttGot ) ;
                             countT idl = idf - 1 + 0xd ;
                             countT idf = idHitE ;
                             ZE( strokeS* , psttGot ) ;
                         {
 
                         }
-                            etThread.delF( tinBaseP , psttGot ) ;
+                            etThread.delF( tin0P , psttGot ) ;
                             tInternalDateTime = T(psttGot) ;
-                            etThread.strSubstringF( tinBaseP , psttGot , idf , idl , tInternalName ) ; ___( psttGot ) ;
+                            etThread.strSubstringF( tin0P , psttGot , idf , idl , tInternalName ) ; ___( psttGot ) ;
                             countT idl = idf - 1 + 0xd ;
                             countT idf = idHitI ;
                             ZE( strokeS* , psttGot ) ;
@@ -58,24 +58,24 @@ TODO
                 {
                 else
                 }
-                    if( !idHitE ) etThread.traceF( tinBaseP , T("cannot find datetime in external name:  ")+tExternalName ) ;
-                    if( !idHitI ) etThread.traceF( tinBaseP , T("cannot find datetime in internal name:  ")+tInternalName ) ;
+                    if( !idHitE ) etThread.traceF( tin0P , T("cannot find datetime in external name:  ")+tExternalName ) ;
+                    if( !idHitI ) etThread.traceF( tin0P , T("cannot find datetime in internal name:  ")+tInternalName ) ;
                 {
                 if( !idHitI || !idHitE )
 
-                countT idHitE = etThread.strIdF( tinBaseP, idf , sttq , tPatternDateAtTime , tExternalName ) ;
+                countT idHitE = etThread.strIdF( tin0P, idf , sttq , tPatternDateAtTime , tExternalName ) ;
                 idf = 1 ;
 
                 }
 
-                    idHitI = etThread.strIdF( tinBaseP, idf , sttq , tPatternDateAtTime , tInternalName ) ;
+                    idHitI = etThread.strIdF( tin0P, idf , sttq , tPatternDateAtTime , tInternalName ) ;
                     idf = 1 ;
 
                     tInternalName = T(posti) ;
                 {
                 if( !idHitI )
 
-                countT idHitI = etThread.strIdF( tinBaseP, idf , sttq , tPatternDateAtTime , tInternalName ) ;
+                countT idHitI = etThread.strIdF( tin0P, idf , sttq , tPatternDateAtTime , tInternalName ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                 countT idf = 1 ;
 
@@ -124,21 +124,21 @@ TODO
             {
             else
             }
-                etThread.traceF( tinBaseP , T("error: file is null length: ")+T(postNameP) ) ;
+                etThread.traceF( tin0P , T("error: file is null length: ")+T(postNameP) ) ;
             {
             else if( !posti || !costi )
 
             }
-                etThread.traceF( tinBaseP , T("error: could not read file: ")+T(postNameP) ) ;
+                etThread.traceF( tin0P , T("error: could not read file: ")+T(postNameP) ) ;
                 POOPR ;
             {
             if( POOP )
 
-            ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , T(ifFileNameC(tinBaseP,*((tin9S&)tinBaseP).pEtScratch,postNameP)) , 1 ) ; ___( posti ) ;
+            ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , T(ifFileNameC(tin0P,*((tin9S&)tin0P).pEtScratch,postNameP)) , 1 ) ; ___( posti ) ;
             ZE( countT   , costi ) ;
             ZE( osTextT* , posti ) ;
 
-            etherC& etThread = *((tin9S&)tinBaseP).pEther ;
+            etherC& etThread = *((tin9S&)tin0P).pEther ;
         {
         else if( strstr( postNameP , ".meta.currentname" ) )
         }
@@ -146,7 +146,7 @@ TODO
         if( bDir )
     
         boolT  bDir = postNameP[ costLike - 1 ] == '\\' ;
-        countT costLike = ((tin9S&)tinBaseP).brcRaw ;
+        countT costLike = ((tin9S&)tin0P).brcRaw ;
         BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
         CONoUTrAW( "." ) ;
     {
@@ -154,7 +154,7 @@ TODO
     ZE( boolT , bDoIt ) ;
     _IO_
 {
-/*1*/boolT diskWalkArchiveRefileCorrectDateCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkArchiveRefileCorrectDateCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
 
 

@@ -8,55 +8,55 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     }
-        etThread.osSleepF( tinBaseP , TOCK ) ;
+        etThread.osSleepF( tin0P , TOCK ) ;
 
         }
             etThread = 0 ;
-            sOut.writeF( tinBaseP , (byteT*)&cLen , sizeof cLen ) ;
+            sOut.writeF( tin0P , (byteT*)&cLen , sizeof cLen ) ;
             ZE( countT , cLen ) ;
             etThread = 0 ;
 
             }
-                etThread.osSleepF( tinBaseP , TUCK * 32 ) ;
+                etThread.osSleepF( tin0P , TUCK * 32 ) ;
             {
-            while( !ether && etThread.os_cAllKidThreadsI_IF( tinBaseP ) > !!( ether & fliEC_QUITTING ) )
+            while( !ether && etThread.os_cAllKidThreadsI_IF( tin0P ) > !!( ether & fliEC_QUITTING ) )
 
             }
-                else        { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmRouteF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&sOut , (countT)&bOut ) ; }
+                else        { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmRouteF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&sOut , (countT)&bOut ) ; }
                 if( ether ) { DEL( pso ) ; }
 
-                socket.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+                socket.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
                 ZE( countT , idPortPeer ) ;
                 nicNameC nnPeer ;
                 ZE( socketC* , pso ) ;
             {
             while( !etThread )
 
-            socket.listenF( tinBaseP ) ;
-            socket.bindF( tinBaseP , ifcPORToLD1dATArOUTER ) ;
-            socketC socket( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+            socket.listenF( tin0P ) ;
+            socket.bindF( tin0P , ifcPORToLD1dATArOUTER ) ;
+            socketC socket( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
-            sOut.connectF( tinBaseP , ifcPORToLD1dATArOUTER , 0x01010103 ) ; // HOST I00003
-            socketC sOut( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
-            batonC bOut( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sOut.connectF( tin0P , ifcPORToLD1dATArOUTER , 0x01010103 ) ; // HOST I00003
+            socketC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+            batonC bOut( tin0P , TAG( TAGiDnULL ) ) ;
         {
     {
     while( !ether )
 
-    etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City Data Router to Handler Host\r\ni route incoming data (normally from WAN remote hosts)\r\nto the (normally LAN local) host that handles data\r\n") ) ;
+    etThread.strokeF( tin0P , T("IdeaFarm " "(tm) City Data Router to Handler Host\r\ni route incoming data (normally from WAN remote hosts)\r\nto the (normally LAN local) host that handles data\r\n") ) ;
 {
 else
 }
-    etThread.strokeF( tinBaseP , T("Another ")+textIdFileC( tinBaseP , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tin0P , T("Another ")+textIdFileC( tin0P , DDNAME )+T(" appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("2f30104") ) ;
+batonC baton( tin0P , TAG( TAGiDnULL ) , T("2f30104") ) ;
 
 __1 // RETIRED
 
@@ -66,10 +66,10 @@ DONE( tmRouteF )
 
 }
     DEL( pso ) ;
-    etThread.strokeF( tinBaseP , T("client -\r\n") ) ;
-    etThread.sockRelayF( tinBaseP , sOut , *pso , &bOut ) ;
-    etThread.strokeF( tinBaseP , T("client +\r\n") ) ;
-    pso->etherF( tinBaseP , etThread ) ;
+    etThread.strokeF( tin0P , T("client -\r\n") ) ;
+    etThread.sockRelayF( tin0P , sOut , *pso , &bOut ) ;
+    etThread.strokeF( tin0P , T("client +\r\n") ) ;
+    pso->etherF( tin0P , etThread ) ;
     batonC&  bOut = *(batonC*) pTaskP->c3 ;
     socketC& sOut = *(socketC*)pTaskP->c2 ;
     socketC* pso  =  (socketC*)pTaskP->c1 ;

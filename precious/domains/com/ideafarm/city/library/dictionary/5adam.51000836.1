@@ -9,19 +9,19 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.delF( tinBaseP , pbi2 ) ;
-etThread.delF( tinBaseP , pbi1 ) ;
+etThread.delF( tin0P , pbi2 ) ;
+etThread.delF( tin0P , pbi1 ) ;
 
 
 }
-    etThread.traceF( tinBaseP , T("---- [offWoth,off,diff,cbRemaining]:    ")+TF2(offWoth,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbc1-pbi1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tb4+TF2(offWoth-(pbc1-pbi1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbe1-pbc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("---- [offWoth,off,diff,cbRemaining]:    ")+TF2(offWoth,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbc1-pbi1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tb4+TF2(offWoth-(pbc1-pbi1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbe1-pbc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     }
         }
             pbc1 += sizeof( count01T ) ;
-            etThread.traceF( tinBaseP , T("++++ [signature]:    ")+TF2(*(count02T*)pbc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN) ) ;
+            etThread.traceF( tin0P , T("++++ [signature]:    ")+TF2(*(count02T*)pbc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN) ) ;
         {
         default :
         }
@@ -55,19 +55,19 @@ etThread.delF( tinBaseP , pbi1 ) ;
             pbIndexLag = pbSave1 ;
             cbFileNameLag = pFE1->cbFileName ;
             
-            etThread.traceF( tinBaseP , T("index [cbFileName,fileName]:    ")+TF2(pFE1->cbFileName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postfnBuf) ) ; pbc1 += pFE1->cbFileName ;
+            etThread.traceF( tin0P , T("index [cbFileName,fileName]:    ")+TF2(pFE1->cbFileName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postfnBuf) ) ; pbc1 += pFE1->cbFileName ;
 
             postfnBuf[ pFE1->cbFileName ] = 0 ;
-            thirdC::c_memcpyIF( tinBaseP , postfnBuf , pbc1 , pFE1->cbFileName ) ;
+            thirdC::c_memcpyIF( tin0P , postfnBuf , pbc1 , pFE1->cbFileName ) ;
 
-            etThread.traceF( tinBaseP , T("index [cbEntry]:    ")+TF2(cbEntry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , T("index [cbEntry]:    ")+TF2(cbEntry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             countT cbEntry = pbSave1 - cbFileNameLag - pbIndexLag ;
 
             }
                 countT foo = 2 ;
             {
             if( bDiffOo )
-            bDiffOo = etThread.memCompareF( tinBaseP , (byteT*)pFE2 , (byteT*)pFE1 , sizeof( fileEntryS ) ) ;
+            bDiffOo = etThread.memCompareF( tin0P , (byteT*)pFE2 , (byteT*)pFE1 , sizeof( fileEntryS ) ) ;
             static boolT bDiffOo ;
 
             pFE2 = (fileEntryS*)pbc2 ; pbc2 += sizeof( fileEntryS ) ;
@@ -88,22 +88,22 @@ etThread.delF( tinBaseP , pbi1 ) ;
             
             pbc1 += pLFH1->cbExtraField ;
             
-            etThread.traceF( tinBaseP , T("data  [fileName]:    ")+T(postfnBuf) ) ; pbc1 += pLFH1->cbFileName ;
+            etThread.traceF( tin0P , T("data  [fileName]:    ")+T(postfnBuf) ) ; pbc1 += pLFH1->cbFileName ;
 
             postfnBuf[ pLFH1->cbFileName ] = 0 ;
-            thirdC::c_memcpyIF( tinBaseP , postfnBuf , pbc1 , pLFH1->cbFileName ) ;
+            thirdC::c_memcpyIF( tin0P , postfnBuf , pbc1 , pLFH1->cbFileName ) ;
 
             }
                 countT foo = 2 ;
             {
             if( bDiffWo )
-            bDiffWo = etThread.memCompareF( tinBaseP , (byteT*)pLFH2 , (byteT*)pLFH1 , sizeof( localFileHeaderS ) ) ;
+            bDiffWo = etThread.memCompareF( tin0P , (byteT*)pLFH2 , (byteT*)pLFH1 , sizeof( localFileHeaderS ) ) ;
             static boolT bDiffWo ;
 
             }
                 }
                     break ;
-                    etThread.traceF( tinBaseP , T("hit woth diff at [offi]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tin0P , T("hit woth diff at [offi]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT offWoth = offi ;
                 {
                 if( pbi2[ offi ] - pbi1[ offi ] )
@@ -118,7 +118,7 @@ etThread.delF( tinBaseP , pbi1 ) ;
         case 0x04034b50 :
     {
     switch( *(count02T*)pbc1 )
-    etThread.traceF( tinBaseP , T("++++ [offWoth,off,diff,cbRemaining]:    ")+TF2(offWoth,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbc1-pbi1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tb4+TF2(offWoth-(pbc1-pbi1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbe1-pbc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("++++ [offWoth,off,diff,cbRemaining]:    ")+TF2(offWoth,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbc1-pbi1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tb4+TF2(offWoth-(pbc1-pbi1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbe1-pbc1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     const byteT* pbSave2 = pbc2 ;
     const byteT* pbSave1 = pbc1 ;
@@ -129,14 +129,14 @@ ZE( const byteT* , pbIndexLag ) ;
 osTextT postfnBuf[ TUCK << 1 ] ;
 
 //if( bDiff ) { BLAMMO ; }
-static boolT bDiff = etThread.memCompareF( tinBaseP , pbi1 , pbi2 , cbi1 ) ;
+static boolT bDiff = etThread.memCompareF( tin0P , pbi1 , pbi2 , cbi1 ) ;
 
 //for( countT offo = offWoth ; offo < cbi1 ; offo ++ ) *(byteT*)&pbi1[ offo ] = 0xee ;
 
 }
     }
         break ;
-        etThread.traceF( tinBaseP , T("woth diff at [offi]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tin0P , T("woth diff at [offi]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         pbHit = pbi2 + offi ;
         offWoth = offi ;
     {
@@ -151,13 +151,13 @@ static countT cbDiff = cbi2 - cbi1 ;
 
 const byteT* pbe2 = pbi2 + cbi2 ;
 const byteT* pbc2 = pbi2 ;
-etThread.boxGetShadowF( tinBaseP , pbi2 , cbi2 , tZip2 ) ; ___( pbi2 ) ;
+etThread.boxGetShadowF( tin0P , pbi2 , cbi2 , tZip2 ) ; ___( pbi2 ) ;
 ZE( countT , cbi2 ) ;
 ZE( byteT* , pbi2 ) ;
 
 const byteT* pbe1 = pbi1 + cbi1 ;
 const byteT* pbc1 = pbi1 ;
-etThread.boxGetShadowF( tinBaseP , pbi1 , cbi1 , tZip1 ) ; ___( pbi1 ) ;
+etThread.boxGetShadowF( tin0P , pbi1 , cbi1 , tZip1 ) ; ___( pbi1 ) ;
 ZE( countT , cbi1 ) ;
 ZE( byteT* , pbi1 ) ;
 

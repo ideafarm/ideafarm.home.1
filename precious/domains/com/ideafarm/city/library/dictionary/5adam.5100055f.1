@@ -9,14 +9,14 @@
     
 REST
 
-etThread.delF( tinBaseP , psttValue ) ;
+etThread.delF( tin0P , psttValue ) ;
 
-etThread.strokeF( tinBaseP , T("\f") ) ;
-sDone_tmWatchPromptF.waitF( tinBaseP ) ;
-sPrompt.giveF( tinBaseP ) ;
-etThread.loafIF( tinBaseP ) ;
+etThread.strokeF( tin0P , T("\f") ) ;
+sDone_tmWatchPromptF.waitF( tin0P ) ;
+sPrompt.giveF( tin0P ) ;
+etThread.loafIF( tin0P ) ;
 
-etThread.strokeF( tinBaseP , tSay ) ;
+etThread.strokeF( tin0P , tSay ) ;
 
 ;
 
@@ -39,37 +39,37 @@ etThread.strokeF( tinBaseP , tSay ) ;
 tSay =
 TN( tSay , "" ) ;
 
-etThread.osThreadF( tinBaseP , countTC() , tmWatchPromptF , &sDone_tmWatchPromptF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&buPrompt , (countT)&buHint ) ;
-signC sDone_tmWatchPromptF( tinBaseP , TAG( TAGiDnULL ) ) ;
+etThread.osThreadF( tin0P , countTC() , tmWatchPromptF , &sDone_tmWatchPromptF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&buPrompt , (countT)&buHint ) ;
+signC sDone_tmWatchPromptF( tin0P , TAG( TAGiDnULL ) ) ;
 
-tcPromptC buPrompt( tinBaseP , etThread , psttValue , T("0>") , &bPrompt , &sPrompt , flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT | flTCfEATURE_TABhEREsUPPRESSEShOTkEYS ) ;
-etThread.strMakeF( tinBaseP , LF , psttValue , T("default value") ) ; ___( psttValue ) ;
+tcPromptC buPrompt( tin0P , etThread , psttValue , T("0>") , &bPrompt , &sPrompt , flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT | flTCfEATURE_TABhEREsUPPRESSEShOTkEYS ) ;
+etThread.strMakeF( tin0P , LF , psttValue , T("default value") ) ; ___( psttValue ) ;
 ZE( strokeS* , psttValue ) ;
-signC  sPrompt( tinBaseP , TAG( TAGiDnULL ) ) ;
-batonC bPrompt( tinBaseP , TAG( TAGiDnULL ) ) ;
+signC  sPrompt( tin0P , TAG( TAGiDnULL ) ) ;
+batonC bPrompt( tin0P , TAG( TAGiDnULL ) ) ;
 
-tcButtonC buHint( tinBaseP , 0 , 0 , flTCfEATURE_defaultButton , 0 , 0 , 1 ) ;
-tcButtonC buQuit( tinBaseP , buQuitCBF , 0 , flTCfEATURE_defaultButton , 0 , T("quit") ) ;
+tcButtonC buHint( tin0P , 0 , 0 , flTCfEATURE_defaultButton , 0 , 0 , 1 ) ;
+tcButtonC buQuit( tin0P , buQuitCBF , 0 , flTCfEATURE_defaultButton , 0 , T("quit") ) ;
 
 TODO
 
 DONE( tmWatchPromptF )
 }
     }
-        bPrompt.ungrabF( tinBaseP ) ;
+        bPrompt.ungrabF( tin0P ) ;
 
-        buPromptP.freshF( tinBaseP , TF1(++cKeys)+T(">") ) ;
+        buPromptP.freshF( tin0P , TF1(++cKeys)+T(">") ) ;
         static countT cKeys ;
-        etThread.strMakeF( tinBaseP , LF , psttValue , T("default value") ) ; ___( psttValue ) ;
-        etThread.delF( tinBaseP , psttValue ) ;
+        etThread.strMakeF( tin0P , LF , psttValue , T("default value") ) ; ___( psttValue ) ;
+        etThread.delF( tin0P , psttValue ) ;
 
-        buHintP.setF( tinBaseP , T("")+S3((measureT)psttValue->idAdam,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttValue)+S2(0,scOld_POPfRAME) ) ;
-        if( !psttValue ) { etThread.strMakeF( tinBaseP , LF , psttValue , T("this code expression is never executed") ) ; ___( psttValue ) ; }
+        buHintP.setF( tin0P , T("")+S3((measureT)psttValue->idAdam,scOld_mmFRAMEcELLS,(measureT)1.0)+T(psttValue)+S2(0,scOld_POPfRAME) ) ;
+        if( !psttValue ) { etThread.strMakeF( tin0P , LF , psttValue , T("this code expression is never executed") ) ; ___( psttValue ) ; }
 
-        bPrompt.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bPrompt.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
         if( ether ) break ;
-        sPrompt.waitF( tinBaseP ) ;
+        sPrompt.waitF( tin0P ) ;
     {
     for(;;)
 
@@ -84,7 +84,7 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmWatchPromptF )
 
 }
-    if( ((tin9S&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
+    if( ((tin9S&)tin0P).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
 
     }
         }
@@ -97,7 +97,7 @@ TASK( tmWatchPromptF )
     {
     switch( idTypeCallP )
 {
-voidT buQuitCBF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT buQuitCBF( tin0S& tin0P , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 /*1*/WAKEsHOW( "example.other.snip.00300d5.tcPromptC" )/*1*/
 /**/

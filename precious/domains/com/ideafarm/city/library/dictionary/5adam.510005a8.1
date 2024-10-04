@@ -10,13 +10,13 @@
 REST
 
 }
-    ether.loafIF( tinBaseP ) ;
+    ether.loafIF( tin0P ) ;
 
     etThread.osThreadF( TaRG1( tmLookF ) , (countT)&lever_idThread , (countT)&swsGot ) ;
 
     while( cToDo -- ) etThread.osThreadF( TaRG1( tmReadF ) , (countT)&qh , (countT)&lever_idThread , (countT)&swsGot ) ;
     cToDo = 0x10 ;
-    switchStackC swsGot( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , lever_idThread , flSTACKc_DOnOTsERIALIZE|flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ;
+    switchStackC swsGot( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , lever_idThread , flSTACKc_DOnOTsERIALIZE|flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ;
     ZE( countT , lever_idThread ) ;
 
     while( cToDo -- ) etThread.osThreadF( TaRG1( tmWriteF ) , (countT)&qh ) ;
@@ -31,8 +31,8 @@ REST
         {
         if( pbNapkin && cbNapkin > sizeof( queueHeaderOldC ) )
         }
-            napQueue.formattingIsDoneF( tinBaseP ) ;
-            new( 0 , tinBaseP , pbNapkin , sizeof( queueHeaderOldC ) ) queueHeaderOldC( tinBaseP , CBqUEUE ) ;
+            napQueue.formattingIsDoneF( tin0P ) ;
+            new( 0 , tin0P , pbNapkin , sizeof( queueHeaderOldC ) ) queueHeaderOldC( tin0P , CBqUEUE ) ;
         {
         if( pbNapkin && !napQueue.bFormattedF() )
         countT cbNapkin = napQueue ;
@@ -40,7 +40,7 @@ REST
     {
     ZE( countT , cbQueue ) ;
     ZE( byteT* , pbQueue ) ;
-    napkinC napQueue( tinBaseP , TAG( TAGiDnULL ) , "napQueuePlaycraft" , 0 , sizeof( queueHeaderOldC ) + CBqUEUE ) ;
+    napkinC napQueue( tin0P , TAG( TAGiDnULL ) , "napQueuePlaycraft" , 0 , sizeof( queueHeaderOldC ) + CBqUEUE ) ;
 {
 
 TODO
@@ -48,10 +48,10 @@ TODO
 DONE( tmLookF )
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-        swsGotP.ungrabF( tinBaseP ) ;
+        swsGotP.ungrabF( tin0P ) ;
         }
             }
                 //CONoUTrAW( "." ) ;
@@ -66,16 +66,16 @@ DONE( tmLookF )
             {
             if( cPlatesMax < swsGotP )
 
-            lever_idThreadP = swsGotP.leverF( tinBaseP , idf ) ;
+            lever_idThreadP = swsGotP.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swsGotP.cFlavorsF( tinBaseP ) ;
-        swsGotP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        countT cFlavors = swsGotP.cFlavorsF( tin0P ) ;
+        swsGotP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
     while( !ether )
     ZE( countT , cPlatesMax ) ;
 
-    switchC swLath( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , lever_idThreadP ) ;
+    switchC swLath( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , lever_idThreadP ) ;
 
     switchStackC& swsGotP         = *(switchStackC*)pTaskP->c2 ;
     countT&       lever_idThreadP =       *(countT*)pTaskP->c1 ;
@@ -86,13 +86,13 @@ TASK( tmLookF )
 DONE( tmReadF )
 }
     }
-        swsGotP.ungrabF( tinBaseP ) ;
-        swsGotP.sinkF( tinBaseP , countTC() , pc3[ 1 ] , flSTACKsINK_UNIQUE ) ;
+        swsGotP.ungrabF( tin0P ) ;
+        swsGotP.sinkF( tin0P , countTC() , pc3[ 1 ] , flSTACKsINK_UNIQUE ) ;
         lever_idThreadP = pc3[ 0 ] ;
-        swsGotP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        swsGotP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
         if( !( pc3[ 1 ] % TOCK ) ) { CONoUTrAW( T("received: ")+TF2(pc3[0],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" ")+TF2(pc3[1],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ) ; }
-        qhP.readF( tinBaseP , (byteT*)pc3 , sizeof pc3 ) ;
+        qhP.readF( tin0P , (byteT*)pc3 , sizeof pc3 ) ;
         countT pc3[ 3 ] ;
     {
     while( !ether )
@@ -110,9 +110,9 @@ DONE( tmWriteF )
 }
     }
         OSsLEEPf( 0 ) ; //BASE DOES NOT SUPPORT YIELDING LIKE THIS
-        qhP.writeF( tinBaseP , (byteT*)pc3 , sizeof pc3 ) ;
+        qhP.writeF( tin0P , (byteT*)pc3 , sizeof pc3 ) ;
 
-        countT pc3[] = { ((tin9S&)tinBaseP).monitor.idThread , ++ idCycle , 1/*TO CAUSE WRAP*/ } ;
+        countT pc3[] = { ((tin9S&)tin0P).monitor.idThread , ++ idCycle , 1/*TO CAUSE WRAP*/ } ;
     {
     while( !ether )
     ZE( countT , idCycle ) ;

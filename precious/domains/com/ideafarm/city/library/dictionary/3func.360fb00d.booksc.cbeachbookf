@@ -21,7 +21,7 @@
                 *pcpIdBookSizePairsP = cBooks ;
             {
             if( pcpIdBookSizePairsP )
-            ((tin9S&)tinBaseP).pEther->newF( tinBaseP , LF , pcpIdBookSizePairsP , 1 + ( cBooks << 1 ) ) ; ___( pcpIdBookSizePairsP ) ;
+            ((tin9S&)tin0P).pEther->newF( tin0P , LF , pcpIdBookSizePairsP , 1 + ( cBooks << 1 ) ) ; ___( pcpIdBookSizePairsP ) ;
         {
         if( cBooks )
         countT cBooks = stqIdBookCb ;
@@ -31,7 +31,7 @@
             DEL( pInfo ) ;
             }
                 DEL( pLook ) ;
-                ((tin9S&)tinBaseP).pEther->delF( tinBaseP , pcpIdLook ) ;
+                ((tin9S&)tin0P).pEther->delF( tin0P , pcpIdLook ) ;
                 }
                     //CONoUTrAW3( T("book: \"")+tName+T("\" [cbUsed]: ") , head.cbUsed , "\r\n" ) ;
 
@@ -44,7 +44,7 @@
 
                 THREADmODE4rESTORE
                 THREADmODE2rESTORE ;
-                bookC* pLook = new( 0 , tinBaseP , LF ) bookC( tinBaseP , TAG( TAGiDnULL ) , tName , idStateSpace , flagsCtBook & ~( F(flBOOKc_WRITER) ) , 0 , bFill , idMemorySpace ) ; ___( pLook ) ;
+                bookC* pLook = new( 0 , tin0P , LF ) bookC( tin0P , TAG( TAGiDnULL ) , tName , idStateSpace , flagsCtBook & ~( F(flBOOKc_WRITER) ) , 0 , bFill , idMemorySpace ) ; ___( pLook ) ;
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
                 THREADmODE4oN( flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
 
@@ -60,45 +60,45 @@
                 {
                 TN( tIdLook , "" ) ;
 
-                ((tin9S&)tinBaseP).pEther->delF( tinBaseP , pstt1w ) ;
+                ((tin9S&)tin0P).pEther->delF( tin0P , pstt1w ) ;
                 }
                     }
                         else                       pco -- ;
                         if( pco == pcpIdLook ) pco = pcpIdLook + cWords - 1 ;
-                        *pco = ((tin9S&)tinBaseP).pEther->strDigitsToSCountF( tinBaseP , psttc1 , 0 , 1 ) ;
+                        *pco = ((tin9S&)tin0P).pEther->strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ;
                     {
                     FORsTRINGSiN1( pstt1w )
 
                     countT* pco = pcpIdLook ;
                 {
                 if( pcpIdLook )
-                PUSE.newF( tinBaseP , LF , *(byteT**)&pcpIdLook , sizeof( countT ) * cWords ) ; ___( pcpIdLook ) ;
+                PUSE.newF( tin0P , LF , *(byteT**)&pcpIdLook , sizeof( countT ) * cWords ) ; ___( pcpIdLook ) ;
                 ZE( countT* , pcpIdLook ) ;
 
-                ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttw ) ;
-                countT cWords = ((tin9S&)tinBaseP).pEther->strWordsOldF( tinBaseP , pstt1w , psttw , sttq , tDot ) ; ___( pstt1w ) ;
+                ((tin9S&)tin0P).pEther->delF( tin0P , psttw ) ;
+                countT cWords = ((tin9S&)tin0P).pEther->strWordsOldF( tin0P , pstt1w , psttw , sttq , tDot ) ; ___( pstt1w ) ;
                 ZE( strokeS* , pstt1w ) ;
 
-                ((tin9S&)tinBaseP).pEther->strSubstringF( tinBaseP , psttw , idf , sttq , tAfter , pInfo->psttIfoName ) ; ___( psttw ) ;
-                ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttw ) ;
-                ((tin9S&)tinBaseP).pEther->strSubstringF( tinBaseP , psttw , idf , sttq , tBefore , pInfo->psttIfoName ) ; ___( psttw ) ;
+                ((tin9S&)tin0P).pEther->strSubstringF( tin0P , psttw , idf , sttq , tAfter , pInfo->psttIfoName ) ; ___( psttw ) ;
+                ((tin9S&)tin0P).pEther->delF( tin0P , psttw ) ;
+                ((tin9S&)tin0P).pEther->strSubstringF( tin0P , psttw , idf , sttq , tBefore , pInfo->psttIfoName ) ; ___( psttw ) ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttw ) ;
             {
             if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) )
-            ((tin9S&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
+            ((tin9S&)tin0P).pEtScratch->diskFindFileOrDirF( tin0P , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         do
-        handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+        handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
-        patternC pat( tinBaseP , *((tin9S&)tinBaseP).pEther , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-        fileNameC fnLike( tinBaseP , *((tin9S&)tinBaseP).pEther , psttFindLike ) ;
+        patternC pat( tin0P , *((tin9S&)tin0P).pEther , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+        fileNameC fnLike( tin0P , *((tin9S&)tin0P).pEther , psttFindLike ) ;
         TN( tDot , "." ) ;
         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
         TN( tAfter  , ".bookC" ) ;
         TN( tBefore , ".booksC.1.book." ) ;
-        staqC stqIdBookCb( tinBaseP , 2 * sizeof( countT ) , 0x20 ) ;
+        staqC stqIdBookCb( tin0P , 2 * sizeof( countT ) , 0x20 ) ;
     {
     if( idStateSpace )
 
@@ -114,7 +114,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT booksC::cbEachBookF( tin0S& tinBaseP , countT*& pcpIdBookSizePairsP )/*1*/
+/*1*/voidT booksC::cbEachBookF( tin0S& tin0P , countT*& pcpIdBookSizePairsP )/*1*/
 
 /**/
 */

@@ -10,8 +10,8 @@
 }
     }
         }
-            delF( tinBaseP , pstt1Old ) ;
-            delF( tinBaseP , pstt1New ) ;
+            delF( tin0P , pstt1Old ) ;
+            delF( tin0P , pstt1New ) ;
             _IO_
         {
         if( !bStringOfStringsNew )
@@ -24,11 +24,11 @@
                     if( POOP ) break ;
                     __( idImpotence ) ;
 
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("diskMove... /  0") ) ;
-                    delF( tinBaseP , postOld ) ;
-                    delF( tinBaseP , postNew ) ;
-                    delF( tinBaseP , pstto ) ;
-                    delF( tinBaseP , psttn ) ;
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("diskMove... /  0") ) ;
+                    delF( tin0P , postOld ) ;
+                    delF( tin0P , postNew ) ;
+                    delF( tin0P , pstto ) ;
+                    delF( tin0P , psttn ) ;
                     }
                         }
                             POOPRqUIET
@@ -36,15 +36,15 @@
                         {
                         if( POOP )
 
-                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("moved") ) ;
-                        ((thirdC&)*((tin9S&)tinBaseP).pEtScratch).dosMoveF( tinBaseP , osFileNameC( tinBaseP , *this , postNew ) , osFileNameC( tinBaseP , *this , postOld ) , cTriesP ) ;
-                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("moving") ) ;
+                        //((tin9S&)tin0P).pEther->traceF( tin0P , T("moved") ) ;
+                        ((thirdC&)*((tin9S&)tin0P).pEtScratch).dosMoveF( tin0P , osFileNameC( tin0P , *this , postNew ) , osFileNameC( tin0P , *this , postOld ) , cTriesP ) ;
+                        //((tin9S&)tin0P).pEther->traceF( tin0P , T("moving") ) ;
 
                         SCOOPS
                         _IO_
                     {
                     IFsCRATCH
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("diskMove... /  1") ) ;
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("diskMove... /  1") ) ;
 
                     if( postOld[ costOld - 1 ] == '/' ) postOld[ costOld - 1 ] = 0 ;
                     if( postNew[ costNew - 1 ] == '/' ) postNew[ costNew - 1 ] = 0 ;
@@ -54,11 +54,11 @@
                     __Z( postOld ) ;
                     __Z( costNew ) ;
                     __Z( postNew ) ;
-                    countT costOld = strMakeF( tinBaseP , LF , postOld , pstto ) ; ___( postOld ) ;
-                    countT costNew = strMakeF( tinBaseP , LF , postNew , psttn ) ; ___( postNew ) ;
+                    countT costOld = strMakeF( tin0P , LF , postOld , pstto ) ; ___( postOld ) ;
+                    countT costNew = strMakeF( tin0P , LF , postNew , psttn ) ; ___( postNew ) ;
                     ZE( osTextT* , postOld ) ;
                     ZE( osTextT* , postNew ) ;
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("diskMove... /  2") ) ;
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("diskMove... /  2") ) ;
 
                     }
                         if( POOP ) break ;
@@ -69,13 +69,13 @@
                                 idImpotence = POOP ;
                             {
                             if( POOP )
-                            if( bDir && bMade ) ((tin9S&)tinBaseP).pEtScratch->diskFileOrDirDeleteF( tinBaseP , psttc1 ) ;
+                            if( bDir && bMade ) ((tin9S&)tin0P).pEtScratch->diskFileOrDirDeleteF( tin0P , psttc1 ) ;
 
                             SCOOPS
                             _IO_
                         {
                         IFsCRATCH
-                        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("diskMove... /  3") ) ;
+                        //((tin9S&)tin0P).pEther->traceF( tin0P , T("diskMove... /  3") ) ;
 
                         if( POOP ) break ;
                         __( idImpotence ) ;
@@ -85,7 +85,7 @@
                                 idImpotence = POOP ;
                             {
                             if( POOP )
-                            bMade = ((tin9S&)tinBaseP).pEtScratch->diskMakeDirIfNeededF( tinBaseP , psttn ) ;  //U::20171120@1252: THIS IS A NONREENTRANT KLUDGE MADE NECESSARY BY THE RECENT CHANGE TO diskMakeDirIfNeededF.  THAT FUNCTION SHOULD BE CHANGED BACK TO ALWAYS IGNORE THE LEAF DIRECTORY, WHICH WILL REQUIRE REGRESSION TESTING TO LEARN WHY I MADE THE CHANGE
+                            bMade = ((tin9S&)tin0P).pEtScratch->diskMakeDirIfNeededF( tin0P , psttn ) ;  //U::20171120@1252: THIS IS A NONREENTRANT KLUDGE MADE NECESSARY BY THE RECENT CHANGE TO diskMakeDirIfNeededF.  THAT FUNCTION SHOULD BE CHANGED BACK TO ALWAYS IGNORE THE LEAF DIRECTORY, WHICH WILL REQUIRE REGRESSION TESTING TO LEARN WHY I MADE THE CHANGE
                             SCOOPS
                             _IO_
                         {
@@ -95,15 +95,15 @@
                     if( !( F(flagsP) & flFILEoRdIRmOVE_DOnOTmAKEdIRiFnEEDED ) )
 
                     ZE( countT , idImpotence ) ;
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("diskMove... /  4") ) ;                       //U::20231222@2206: REWRITE OR MAKE THI BLOCK OPTIONAL ; IT TAKES LOTS OF TIME
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("diskMove... /  4") ) ;                       //U::20231222@2206: REWRITE OR MAKE THI BLOCK OPTIONAL ; IT TAKES LOTS OF TIME
 
                     if( POOP ) break ;
                     boolT bDir = psttc1[ CSpREFIX - 1 + psttc1->idAdam ].idAdam == '/' ;
-                    diskMapFileNameF( tinBaseP , pstto , psttc2 ) ; ___( pstto ) ;
-                    diskMapFileNameF( tinBaseP , psttn , psttc1 ) ; ___( psttn ) ;
+                    diskMapFileNameF( tin0P , pstto , psttc2 ) ; ___( pstto ) ;
+                    diskMapFileNameF( tin0P , psttn , psttc1 ) ; ___( psttn ) ;
                     ZE( strokeS* , pstto ) ;
                     ZE( strokeS* , psttn ) ;
-                    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("diskMove... /  5") ) ;
+                    //((tin9S&)tin0P).pEther->traceF( tin0P , T("diskMove... /  5") ) ;
 
                     if( cSkip -- ) continue ;
                     _IO_
@@ -116,7 +116,7 @@
             {
             FORsTRINGSiN1( pstt1New )
             ZE( countT , idNew ) ;
-            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("diskMove... /  6") ) ;
+            //((tin9S&)tin0P).pEther->traceF( tin0P , T("diskMove... /  6") ) ;
             _IO_
         {
         if( !POOP )
@@ -134,8 +134,8 @@
         {
         else
         }
-            strFuseSeparateF( tinBaseP , pstt1Old , psttOldP ) ; ___( pstt1Old ) ;
-            strFuseSeparateF( tinBaseP , pstt1New , psttNewP ) ; ___( pstt1New ) ;
+            strFuseSeparateF( tin0P , pstt1Old , psttOldP ) ; ___( pstt1Old ) ;
+            strFuseSeparateF( tin0P , pstt1New , psttNewP ) ; ___( pstt1New ) ;
             _IO_
         {
         if( !bStringOfStringsNew )
@@ -160,9 +160,9 @@
     {
     IFbEcAREFUL
     SCOOP
-    //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("++++") ) ;
+    //((tin9S&)tin0P).pEther->traceF( tin0P , T("++++") ) ;
 {
-/**//*1*/voidT etherC::diskMoveFileOrDirF( tin0S& tinBaseP , const strokeS* const psttNewP , const strokeS* const psttOldP , const countT cTriesP , const flagsT flagsP )/*1*/
+/**//*1*/voidT etherC::diskMoveFileOrDirF( tin0S& tin0P , const strokeS* const psttNewP , const strokeS* const psttOldP , const countT cTriesP , const flagsT flagsP )/*1*/
 */
   flFILEoRdIRmOVE_DOnOTmAKEdIRiFnEEDED: suppress call to diskMakeDirIfNeededF, which can be expensive if the dad directory contains many files
  flagsP
@@ -181,7 +181,7 @@
 arguments
    else i will return immediately upon impotence
    if so, then i will try all listed file names
-  impotence behavior depends upon whether i am *((tin9S&)tinBaseP).pEtScratch
+  impotence behavior depends upon whether i am *((tin9S&)tin0P).pEtScratch
    the result is as if the caller called me repeatedly
   may also be a string of strings
  if wo is a list, then both must be lists, and both lists must contain the same number of strings

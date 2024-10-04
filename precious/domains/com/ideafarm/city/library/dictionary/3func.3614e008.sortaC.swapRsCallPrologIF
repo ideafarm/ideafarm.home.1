@@ -54,9 +54,9 @@
     ppMe[ idWorkerP - 1 ]->sp.pbHighs = ppMe[ idWorkerP - 1 ]->sp.pbDn ;
 
     if( F(ppMe[ idWorkerP - 1 ]->flagsCt) & flSORTAc_CHATTER ) ppMe[ idWorkerP - 1 ]->traceRangeF( pbP , cbP , T("after  swap") ) ;
-    thirdC::c_memcpyIF( tinBaseP ,                                 ppMe[ idWorkerP - 1 ]->sp.pbUp , ppMe[ idWorkerP - 1 ]->pbScratch , ppMe[ idWorkerP - 1 ]->cbElt ) ;
-    thirdC::c_memcpyIF( tinBaseP ,                  ppMe[ idWorkerP - 1 ]->sp.pbDn , ppMe[ idWorkerP - 1 ]->sp.pbUp                  , ppMe[ idWorkerP - 1 ]->cbElt ) ;
-    thirdC::c_memcpyIF( tinBaseP , ppMe[ idWorkerP - 1 ]->pbScratch , ppMe[ idWorkerP - 1 ]->sp.pbDn                                 , ppMe[ idWorkerP - 1 ]->cbElt ) ;            // DO THE SWAP
+    thirdC::c_memcpyIF( tin0P ,                                 ppMe[ idWorkerP - 1 ]->sp.pbUp , ppMe[ idWorkerP - 1 ]->pbScratch , ppMe[ idWorkerP - 1 ]->cbElt ) ;
+    thirdC::c_memcpyIF( tin0P ,                  ppMe[ idWorkerP - 1 ]->sp.pbDn , ppMe[ idWorkerP - 1 ]->sp.pbUp                  , ppMe[ idWorkerP - 1 ]->cbElt ) ;
+    thirdC::c_memcpyIF( tin0P , ppMe[ idWorkerP - 1 ]->pbScratch , ppMe[ idWorkerP - 1 ]->sp.pbDn                                 , ppMe[ idWorkerP - 1 ]->cbElt ) ;            // DO THE SWAP
 
     }
         ppMe[ idWorkerP - 1 ]->traceMarkSelectedElementsF( strokeS( 'S' ) , pbUpDn , 2 ) ;

@@ -9,10 +9,10 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.diskWalkF( tinBaseP , cDirs , cFiles , tPath , bQuit , diskWalkRenameCBF , pcArg ) ;
+etThread.diskWalkF( tin0P , cDirs , cFiles , tPath , bQuit , diskWalkRenameCBF , pcArg ) ;
 ZE( countT , bQuit ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
@@ -30,14 +30,14 @@ TODO
 }
     return 0 ;
 
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShort2 ) ;
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShort1 ) ;
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShort ) ;
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttShort2 ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttShort1 ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttShort ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttPath ) ;
 
     }
         }
-            ((tin9S&)tinBaseP).pEther->diskMoveFileOrDirF( tinBaseP , tNameNew , tNameOld , 1 ) ;
+            ((tin9S&)tin0P).pEther->diskMoveFileOrDirF( tin0P , tNameNew , tNameOld , 1 ) ;
 
             ;
                 : T(psttPath)+T(psttShort1)+tZeP+T(psttShort2)
@@ -45,13 +45,13 @@ TODO
             tNameNew = psttShort2[ CSpREFIX - 1 + 3 ].idAdam != '.'
             TN( tNameNew , "" ) ;
 
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttShort1 , 0 , tIdeafarm5DotP , tIdeafarm6DotP ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttShort1 , 0 , tIdeafarm5DotP , tIdeafarm6DotP ) ;
         {
-        if( 1 == ((tin9S&)tinBaseP).pEther->strIdF( tinBaseP , tIdeafarm5DotP , psttShort1 ) )
+        if( 1 == ((tin9S&)tin0P).pEther->strIdF( tin0P , tIdeafarm5DotP , psttShort1 ) )
 
-        ((tin9S&)tinBaseP).pEther->strSubstringF( tinBaseP , psttShort2 , idf , idl , psttShort ) ; ___( psttShort2 ) ;
+        ((tin9S&)tin0P).pEther->strSubstringF( tin0P , psttShort2 , idf , idl , psttShort ) ; ___( psttShort2 ) ;
         idl = 0 ;
-        ((tin9S&)tinBaseP).pEther->strSubstringF( tinBaseP , psttShort1 , idf , idl , psttShort ) ; ___( psttShort1 ) ;
+        ((tin9S&)tin0P).pEther->strSubstringF( tin0P , psttShort1 , idf , idl , psttShort ) ; ___( psttShort1 ) ;
         countT idl = 0x1a ;
         countT idf = 1 ;
     {
@@ -68,18 +68,18 @@ TODO
     // 123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0
     // 0              1               2               3               4
 
-    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , psttShort ) ;
-    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , psttPath ) ;
+    //etherC::etRockIF( tin0P ).traceF( tin0P , psttShort ) ;
+    //etherC::etRockIF( tin0P ).traceF( tin0P , psttPath ) ;
 
     ___( psttShort ) ;
     ___( psttPath ) ;
-    ((tin9S&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
+    ((tin9S&)tin0P).pEther->strBisectF( tin0P , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
     ZE( strokeS* , psttShort ) ;
     ZE( strokeS* , psttPath ) ;
 
-    TN( tNameOld , ifFileNameC( tinBaseP , *((tin9S&)tinBaseP).pEther , postNameP ) ) ;
+    TN( tNameOld , ifFileNameC( tin0P , *((tin9S&)tin0P).pEther , postNameP ) ) ;
 
-    if( !( cDoneP % TUCK ) ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("[cDoneP]: ")+TF2(cDoneP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    if( !( cDoneP % TUCK ) ) etherC::etRockIF( tin0P ).traceF( tin0P , T("[cDoneP]: ")+TF2(cDoneP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     cDoneP ++ ;
 
     textC&        tZeP           =         *(textC*)pcArgP[ 3 ] ;
@@ -87,7 +87,7 @@ TODO
     textC&        tIdeafarm5DotP =         *(textC*)pcArgP[ 1 ] ;
     countT&       cDoneP         =        *(countT*)pcArgP[ 0 ] ; 
 {
-boolT diskWalkRenameCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT diskWalkRenameCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 /*1*/WAKEsHOWtEXT( "tool.rename.archive.format.5.expand.sequence.to.3.bigits" )/*1*/
 /**/

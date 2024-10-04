@@ -1,5 +1,5 @@
 
-voidT etherBeImpotentF_o3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT etherBeImpotentF_o3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -14,14 +14,14 @@ voidT etherBeImpotentF_o3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , co
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 codeP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -30,21 +30,21 @@ voidT etherBeImpotentF_o3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , co
             }
         }
     }
-    if( !POOP ) etherP.etherBeImpotentF( tinBaseP , codeP ) ;
+    if( !POOP ) etherP.etherBeImpotentF( tin0P , codeP ) ;
 }
 
-voidT etherBlammoF_o_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT etherBlammoF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
     ZE( countT , idTypeNext ) ;
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
-    if( !POOP ) etherP.etherBlammoF( tinBaseP ) ;
-    if( ((tin9S&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( !POOP ) etherP.etherBlammoF( tin0P ) ;
+    if( ((tin9S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
-voidT etherParameterF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT etherParameterF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -58,35 +58,35 @@ voidT etherParameterF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , co
     if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
 
     ZE( boolT , noName ) ;
-    if( !POOP ) noName = etherP.etherParameterF( tinBaseP , psttP ) ;
-    etherP.delF( tinBaseP , psttP ) ;
+    if( !POOP ) noName = etherP.etherParameterF( tin0P , psttP ) ;
+    etherP.delF( tin0P , psttP ) ;
 
     slP << noName ;
 }
 
-voidT etherScanProcessParametersF_o_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT etherScanProcessParametersF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
     ZE( countT , idTypeNext ) ;
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
-    if( !POOP ) etherP.etherScanProcessParametersF( tinBaseP ) ;
-    if( ((tin9S&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( !POOP ) etherP.etherScanProcessParametersF( tin0P ) ;
+    if( ((tin9S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
-voidT etherTestF_o_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT etherTestF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
     ZE( countT , idTypeNext ) ;
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
-    if( !POOP ) etherP.etherTestF( tinBaseP ) ;
-    if( ((tin9S&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( !POOP ) etherP.etherTestF( tin0P ) ;
+    if( ((tin9S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
-voidT etherUidF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT etherUidF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -98,44 +98,44 @@ voidT etherUidF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const st
     SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
     ZE( strokeS* , psttUidP ) ;
     if( !POOP ) { slP >> psttUidP ; ___( psttUidP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.etherUidF( tinBaseP , psttUidP ) ;
-    etherP.delF( tinBaseP , psttUidP ) ;
+    if( !POOP ) etherP.etherUidF( tin0P , psttUidP ) ;
+    etherP.delF( tin0P , psttUidP ) ;
 }
 
-voidT ether_pstt1_processParametersI_F_o_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT ether_pstt1_processParametersI_F_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
     ZE( countT , idTypeNext ) ;
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
-    if( !POOP ) etherP.ether_pstt1_processParametersI_F( tinBaseP ) ;
-    if( ((tin9S&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( !POOP ) etherP.ether_pstt1_processParametersI_F( tin0P ) ;
+    if( ((tin9S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
-voidT ether_psttEarlyFolder_F_o_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT ether_psttEarlyFolder_F_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
     ZE( countT , idTypeNext ) ;
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
-    if( !POOP ) etherP.ether_psttEarlyFolder_F( tinBaseP ) ;
-    if( ((tin9S&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( !POOP ) etherP.ether_psttEarlyFolder_F( tin0P ) ;
+    if( ((tin9S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
-voidT ether_idCitizenHirerI_F_o_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT ether_idCitizenHirerI_F_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
     ZE( countT , idTypeNext ) ;
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
-    if( !POOP ) etherP.ether_idCitizenHirerI_F( tinBaseP ) ;
-    if( ((tin9S&)tinBaseP).fingerprint && _psttNameP && slP ) ;
+    if( !POOP ) etherP.ether_idCitizenHirerI_F( tin0P ) ;
+    if( ((tin9S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
-voidT etherWhereF_o373_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT etherWhereF_o373_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -155,14 +155,14 @@ voidT etherWhereF_o373_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 flagsP = flETHERwHERE_null ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -179,14 +179,14 @@ voidT etherWhereF_o373_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cThreadsMaxP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -195,10 +195,10 @@ voidT etherWhereF_o373_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const
             }
         }
     }
-    if( !POOP ) etherP.etherWhereF( tinBaseP , idActionP , flagsP , cThreadsMaxP ) ;
+    if( !POOP ) etherP.etherWhereF( tin0P , idActionP , flagsP , cThreadsMaxP ) ;
 }
 
-voidT poolNewF_o331P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT poolNewF_o331P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -225,13 +225,13 @@ voidT poolNewF_o331P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const 
    SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
     ZE( countT , cbP ) ;
     if( !POOP ) { slP >> cbP ; idArgNext ++ ; }
-    if( !POOP ) etherP.poolNewF( tinBaseP , idLineNewP , idiFileNewP , pbP , cbP ) ;
+    if( !POOP ) etherP.poolNewF( tin0P , idLineNewP , idiFileNewP , pbP , cbP ) ;
 
     if( !POOP ) slP << pbP ;
-    etherP.delF( tinBaseP , pbP ) ;
+    etherP.delF( tin0P , pbP ) ;
 }
 
-voidT delF_o1P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT delF_o1P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -243,13 +243,13 @@ voidT delF_o1P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS
     SOIXLoLDtESTtYPE( 0xdddd8015 , etherC )
     ZE( byteT* , pP ) ;
     if( !POOP ) { slP >> pP ; ___( pP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.delF( tinBaseP , pP ) ;
+    if( !POOP ) etherP.delF( tin0P , pP ) ;
 
     if( !POOP ) slP << pP ;
-    etherP.delF( tinBaseP , pP ) ;
+    etherP.delF( tin0P , pP ) ;
 }
 
-voidT delF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT delF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -261,13 +261,13 @@ voidT delF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS
     SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
     ZE( strokeS* , pP ) ;
     if( !POOP ) { slP >> pP ; ___( pP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.delF( tinBaseP , pP ) ;
+    if( !POOP ) etherP.delF( tin0P , pP ) ;
 
     if( !POOP ) slP << pP ;
-    etherP.delF( tinBaseP , pP ) ;
+    etherP.delF( tin0P , pP ) ;
 }
 
-voidT newF_o331P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT newF_o331P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -297,14 +297,14 @@ voidT newF_o331P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const stro
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cP = 1 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -313,13 +313,13 @@ voidT newF_o331P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const stro
             }
         }
     }
-    if( !POOP ) etherP.newF( tinBaseP , idLineP , idiFileP , pP , cP ) ;
+    if( !POOP ) etherP.newF( tin0P , idLineP , idiFileP , pP , cP ) ;
 
     if( !POOP ) slP << pP ;
-    etherP.delF( tinBaseP , pP ) ;
+    etherP.delF( tin0P , pP ) ;
 }
 
-voidT newF_o334P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT newF_o334P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -349,14 +349,14 @@ voidT newF_o334P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const stro
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cP = 1 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -365,13 +365,13 @@ voidT newF_o334P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const stro
             }
         }
     }
-    if( !POOP ) etherP.newF( tinBaseP , idLineP , idiFileP , pP , cP ) ;
+    if( !POOP ) etherP.newF( tin0P , idLineP , idiFileP , pP , cP ) ;
 
     if( !POOP ) slP << pP ;
-    etherP.delF( tinBaseP , pP ) ;
+    etherP.delF( tin0P , pP ) ;
 }
 
-voidT batonGrabF_ob_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT batonGrabF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -381,12 +381,12 @@ voidT batonGrabF_ob_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const st
 
    SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
    SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC handleP( /*GOOEY*/tinBaseP , TAG( TAGiDnULL ) ) ;
+    handleC handleP( /*GOOEY*/tin0P , TAG( TAGiDnULL ) ) ;
     if( !POOP ) { handleP << slP ; idArgNext ++ ; }
-    if( !POOP ) etherP.batonGrabF( tinBaseP , handleP ) ;
+    if( !POOP ) etherP.batonGrabF( tin0P , handleP ) ;
 }
 
-voidT batonLetGoF_ob_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT batonLetGoF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -396,12 +396,12 @@ voidT batonLetGoF_ob_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const s
 
    SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
    SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC handleP( /*GOOEY*/tinBaseP , TAG( TAGiDnULL ) ) ;
+    handleC handleP( /*GOOEY*/tin0P , TAG( TAGiDnULL ) ) ;
     if( !POOP ) { handleP << slP ; idArgNext ++ ; }
-    if( !POOP ) etherP.batonLetGoF( tinBaseP , handleP ) ;
+    if( !POOP ) etherP.batonLetGoF( tin0P , handleP ) ;
 }
 
-voidT batonOpenF_ob64P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT batonOpenF_ob64P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -411,7 +411,7 @@ voidT batonOpenF_ob64P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const
 
    SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
    SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC handleP( /*GOOEY*/tinBaseP , TAG( TAGiDnULL ) ) ;
+    handleC handleP( /*GOOEY*/tin0P , TAG( TAGiDnULL ) ) ;
     if( !POOP ) { handleP << slP ; idArgNext ++ ; }
 
    SOIXLoLDtESTeMPTY( 0x0 , etherC )
@@ -426,14 +426,14 @@ voidT batonOpenF_ob64P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 psttP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -442,11 +442,11 @@ voidT batonOpenF_ob64P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const
             }
         }
     }
-    if( !POOP ) etherP.batonOpenF( tinBaseP , handleP , fCreatorP , psttP ) ;
-    etherP.delF( tinBaseP , psttP ) ;
+    if( !POOP ) etherP.batonOpenF( tin0P , handleP , fCreatorP , psttP ) ;
+    etherP.delF( tin0P , psttP ) ;
 }
 
-voidT boxGetGenerationF_o1P34P4P33337_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxGetGenerationF_o1P34P4P33337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -486,14 +486,14 @@ voidT boxGetGenerationF_o1P34P4P33337_GF( tin0S& tinBaseP , etherC& etherP , sou
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 ageP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -510,14 +510,14 @@ voidT boxGetGenerationF_o1P34P4P33337_GF( tin0S& tinBaseP , etherC& etherP , sou
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cOpenTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -534,14 +534,14 @@ voidT boxGetGenerationF_o1P34P4P33337_GF( tin0S& tinBaseP , etherC& etherP , sou
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cZapTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -558,14 +558,14 @@ voidT boxGetGenerationF_o1P34P4P33337_GF( tin0S& tinBaseP , etherC& etherP , sou
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 flagsOpenDetailsP = flOPENdETAILS_null ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -574,17 +574,17 @@ voidT boxGetGenerationF_o1P34P4P33337_GF( tin0S& tinBaseP , etherC& etherP , sou
             }
         }
     }
-    if( !POOP ) etherP.boxGetGenerationF( tinBaseP , pbP , cbP , psttP , psttLikeP , csttEstimateP , ageP , cOpenTriesP , cZapTriesP , flagsOpenDetailsP ) ;
-    etherP.delF( tinBaseP , psttLikeP ) ;
+    if( !POOP ) etherP.boxGetGenerationF( tin0P , pbP , cbP , psttP , psttLikeP , csttEstimateP , ageP , cOpenTriesP , cZapTriesP , flagsOpenDetailsP ) ;
+    etherP.delF( tin0P , psttLikeP ) ;
 
     if( !POOP ) slP << psttP ;
-    etherP.delF( tinBaseP , psttP ) ;
+    etherP.delF( tin0P , psttP ) ;
 
     if( !POOP ) slP << pbP ;
-    etherP.delF( tinBaseP , pbP ) ;
+    etherP.delF( tin0P , pbP ) ;
 }
 
-voidT boxGetShadowGenerationF_o1P34P4P3337_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxGetShadowGenerationF_o1P34P4P3337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -624,14 +624,14 @@ voidT boxGetShadowGenerationF_o1P34P4P3337_GF( tin0S& tinBaseP , etherC& etherP 
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 ageP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -648,14 +648,14 @@ voidT boxGetShadowGenerationF_o1P34P4P3337_GF( tin0S& tinBaseP , etherC& etherP 
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cOpenTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -672,14 +672,14 @@ voidT boxGetShadowGenerationF_o1P34P4P3337_GF( tin0S& tinBaseP , etherC& etherP 
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 flagsOpenDetailsP = flOPENdETAILS_null ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -688,17 +688,17 @@ voidT boxGetShadowGenerationF_o1P34P4P3337_GF( tin0S& tinBaseP , etherC& etherP 
             }
         }
     }
-    if( !POOP ) etherP.boxGetShadowGenerationF( tinBaseP , pbP , cbP , psttP , psttLikeP , csttEstimateP , ageP , cOpenTriesP , flagsOpenDetailsP ) ;
-    etherP.delF( tinBaseP , psttLikeP ) ;
+    if( !POOP ) etherP.boxGetShadowGenerationF( tin0P , pbP , cbP , psttP , psttLikeP , csttEstimateP , ageP , cOpenTriesP , flagsOpenDetailsP ) ;
+    etherP.delF( tin0P , psttLikeP ) ;
 
     if( !POOP ) slP << psttP ;
-    etherP.delF( tinBaseP , psttP ) ;
+    etherP.delF( tin0P , psttP ) ;
 
     if( !POOP ) slP << pbP ;
-    etherP.delF( tinBaseP , pbP ) ;
+    etherP.delF( tin0P , pbP ) ;
 }
 
-voidT boxMailGetF_o4P4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxMailGetF_o4P4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -722,14 +722,14 @@ voidT boxMailGetF_o4P4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , con
     if( !POOP ) { slP >> csttEstimateP ; idArgNext ++ ; }
 
     ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.boxMailGetF( tinBaseP , psttLikeP , psttBoxIP , csttEstimateP ) ;
-    etherP.delF( tinBaseP , psttBoxIP ) ;
-    etherP.delF( tinBaseP , psttLikeP ) ;
+    if( !POOP ) noName = etherP.boxMailGetF( tin0P , psttLikeP , psttBoxIP , csttEstimateP ) ;
+    etherP.delF( tin0P , psttBoxIP ) ;
+    etherP.delF( tin0P , psttLikeP ) ;
 
     slP << noName ;
 }
 
-voidT boxPourF_o4P4P4P33_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxPourF_o4P4P4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -764,14 +764,14 @@ voidT boxPourF_o4P4P4P33_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , con
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cMaxP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -782,15 +782,15 @@ voidT boxPourF_o4P4P4P33_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , con
     }
 
     ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.boxPourF( tinBaseP , psttHostP , psttLikeToP , psttLikeFromP , csttEstimateP , cMaxP ) ;
-    etherP.delF( tinBaseP , psttLikeFromP ) ;
-    etherP.delF( tinBaseP , psttLikeToP ) ;
-    etherP.delF( tinBaseP , psttHostP ) ;
+    if( !POOP ) noName = etherP.boxPourF( tin0P , psttHostP , psttLikeToP , psttLikeFromP , csttEstimateP , cMaxP ) ;
+    etherP.delF( tin0P , psttLikeFromP ) ;
+    etherP.delF( tin0P , psttLikeToP ) ;
+    etherP.delF( tin0P , psttHostP ) ;
 
     slP << noName ;
 }
 
-voidT boxPourF_o4P4P33_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxPourF_o4P4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -820,14 +820,14 @@ voidT boxPourF_o4P4P33_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cMaxP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -838,14 +838,14 @@ voidT boxPourF_o4P4P33_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const
     }
 
     ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.boxPourF( tinBaseP , psttLikeToP , psttLikeFromP , csttEstimateP , cMaxP ) ;
-    etherP.delF( tinBaseP , psttLikeFromP ) ;
-    etherP.delF( tinBaseP , psttLikeToP ) ;
+    if( !POOP ) noName = etherP.boxPourF( tin0P , psttLikeToP , psttLikeFromP , csttEstimateP , cMaxP ) ;
+    etherP.delF( tin0P , psttLikeFromP ) ;
+    etherP.delF( tin0P , psttLikeToP ) ;
 
     slP << noName ;
 }
 
-voidT boxPutGenerationF_o4P4P31P337_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxPutGenerationF_o4P4P31P337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -880,14 +880,14 @@ voidT boxPutGenerationF_o4P4P31P337_GF( tin0S& tinBaseP , etherC& etherP , soulC
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cbP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -904,14 +904,14 @@ voidT boxPutGenerationF_o4P4P31P337_GF( tin0S& tinBaseP , etherC& etherP , soulC
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cOpenTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -928,14 +928,14 @@ voidT boxPutGenerationF_o4P4P31P337_GF( tin0S& tinBaseP , etherC& etherP , soulC
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 flagsOpenDetailsP = flOPENdETAILS_null ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -944,15 +944,15 @@ voidT boxPutGenerationF_o4P4P31P337_GF( tin0S& tinBaseP , etherC& etherP , soulC
             }
         }
     }
-    if( !POOP ) etherP.boxPutGenerationF( tinBaseP , psttP , psttLikeP , csttEstimateP , pbP , cbP , cOpenTriesP , flagsOpenDetailsP ) ;
-    etherP.delF( tinBaseP , pbP ) ;
-    etherP.delF( tinBaseP , psttLikeP ) ;
+    if( !POOP ) etherP.boxPutGenerationF( tin0P , psttP , psttLikeP , csttEstimateP , pbP , cbP , cOpenTriesP , flagsOpenDetailsP ) ;
+    etherP.delF( tin0P , pbP ) ;
+    etherP.delF( tin0P , psttLikeP ) ;
 
     if( !POOP ) slP << psttP ;
-    etherP.delF( tinBaseP , psttP ) ;
+    etherP.delF( tin0P , psttP ) ;
 }
 
-voidT boxPutHtmlF_o64P4P4P4P4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxPutHtmlF_o64P4P4P4P4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -997,14 +997,14 @@ voidT boxPutHtmlF_o64P4P4P4P4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& sl
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cOpenTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1013,15 +1013,15 @@ voidT boxPutHtmlF_o64P4P4P4P4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& sl
             }
         }
     }
-    if( !POOP ) etherP.boxPutHtmlF( tinBaseP , bOneFileP , psttLikeLocalP , psttLikeP , psttTitleP , psttOldCopyrightP , psttKnowledgeTreeP , cOpenTriesP ) ;
-    etherP.delF( tinBaseP , psttKnowledgeTreeP ) ;
-    etherP.delF( tinBaseP , psttOldCopyrightP ) ;
-    etherP.delF( tinBaseP , psttTitleP ) ;
-    etherP.delF( tinBaseP , psttLikeP ) ;
-    etherP.delF( tinBaseP , psttLikeLocalP ) ;
+    if( !POOP ) etherP.boxPutHtmlF( tin0P , bOneFileP , psttLikeLocalP , psttLikeP , psttTitleP , psttOldCopyrightP , psttKnowledgeTreeP , cOpenTriesP ) ;
+    etherP.delF( tin0P , psttKnowledgeTreeP ) ;
+    etherP.delF( tin0P , psttOldCopyrightP ) ;
+    etherP.delF( tin0P , psttTitleP ) ;
+    etherP.delF( tin0P , psttLikeP ) ;
+    etherP.delF( tin0P , psttLikeLocalP ) ;
 }
 
-voidT boxPutHtmlFromKnowledgeTreeBaseF_o64P4P4P4P4P33_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxPutHtmlFromKnowledgeTreeBaseF_o64P4P4P4P4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1066,14 +1066,14 @@ voidT boxPutHtmlFromKnowledgeTreeBaseF_o64P4P4P4P4P33_GF( tin0S& tinBaseP , ethe
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 csttExtraP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1090,14 +1090,14 @@ voidT boxPutHtmlFromKnowledgeTreeBaseF_o64P4P4P4P4P33_GF( tin0S& tinBaseP , ethe
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cOpenTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1106,15 +1106,15 @@ voidT boxPutHtmlFromKnowledgeTreeBaseF_o64P4P4P4P4P33_GF( tin0S& tinBaseP , ethe
             }
         }
     }
-    if( !POOP ) etherP.boxPutHtmlFromKnowledgeTreeBaseF( tinBaseP , bOneFileP , psttLikeLocalP , psttLikeP , psttTitleP , psttOldCopyrightP , psttFileP , csttExtraP , cOpenTriesP ) ;
-    etherP.delF( tinBaseP , psttFileP ) ;
-    etherP.delF( tinBaseP , psttOldCopyrightP ) ;
-    etherP.delF( tinBaseP , psttTitleP ) ;
-    etherP.delF( tinBaseP , psttLikeP ) ;
-    etherP.delF( tinBaseP , psttLikeLocalP ) ;
+    if( !POOP ) etherP.boxPutHtmlFromKnowledgeTreeBaseF( tin0P , bOneFileP , psttLikeLocalP , psttLikeP , psttTitleP , psttOldCopyrightP , psttFileP , csttExtraP , cOpenTriesP ) ;
+    etherP.delF( tin0P , psttFileP ) ;
+    etherP.delF( tin0P , psttOldCopyrightP ) ;
+    etherP.delF( tin0P , psttTitleP ) ;
+    etherP.delF( tin0P , psttLikeP ) ;
+    etherP.delF( tin0P , psttLikeLocalP ) ;
 }
 
-voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1144,14 +1144,14 @@ voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cbP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1168,14 +1168,14 @@ voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cOpenTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1192,14 +1192,14 @@ voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 flagsOpenDetailsP = flOPENdETAILS_null ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1208,15 +1208,15 @@ voidT boxPutUniqueF_o4P4P1P337_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP
             }
         }
     }
-    if( !POOP ) etherP.boxPutUniqueF( tinBaseP , psttP , psttLikeP , pbP , cbP , cOpenTriesP , flagsOpenDetailsP ) ;
-    etherP.delF( tinBaseP , pbP ) ;
-    etherP.delF( tinBaseP , psttLikeP ) ;
+    if( !POOP ) etherP.boxPutUniqueF( tin0P , psttP , psttLikeP , pbP , cbP , cOpenTriesP , flagsOpenDetailsP ) ;
+    etherP.delF( tin0P , pbP ) ;
+    etherP.delF( tin0P , psttLikeP ) ;
 
     if( !POOP ) slP << psttP ;
-    etherP.delF( tinBaseP , psttP ) ;
+    etherP.delF( tin0P , psttP ) ;
 }
 
-voidT boxServerF_o36_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxServerF_o36_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1231,14 +1231,14 @@ voidT boxServerF_o36_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const s
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 idPortP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1255,14 +1255,14 @@ voidT boxServerF_o36_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const s
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 bTalkP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1271,10 +1271,10 @@ voidT boxServerF_o36_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const s
             }
         }
     }
-    if( !POOP ) etherP.boxServerF( tinBaseP , idPortP , bTalkP ) ;
+    if( !POOP ) etherP.boxServerF( tin0P , idPortP , bTalkP ) ;
 }
 
-voidT boxZapF_o4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT boxZapF_o4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1294,14 +1294,14 @@ voidT boxZapF_o4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const str
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1310,11 +1310,11 @@ voidT boxZapF_o4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const str
             }
         }
     }
-    if( !POOP ) etherP.boxZapF( tinBaseP , psttP , cTriesP ) ;
-    etherP.delF( tinBaseP , psttP ) ;
+    if( !POOP ) etherP.boxZapF( tin0P , psttP , cTriesP ) ;
+    etherP.delF( tin0P , psttP ) ;
 }
 
-voidT diskFileOrDirDeleteF_o4P73_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskFileOrDirDeleteF_o4P73_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1334,14 +1334,14 @@ voidT diskFileOrDirDeleteF_o4P73_GF( tin0S& tinBaseP , etherC& etherP , soulC& s
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 flagsP = flFILEoRdIRdELETE_null ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1358,14 +1358,14 @@ voidT diskFileOrDirDeleteF_o4P73_GF( tin0S& tinBaseP , etherC& etherP , soulC& s
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1374,11 +1374,11 @@ voidT diskFileOrDirDeleteF_o4P73_GF( tin0S& tinBaseP , etherC& etherP , soulC& s
             }
         }
     }
-    if( !POOP ) etherP.diskFileOrDirDeleteF( tinBaseP , psttP , flagsP , cTriesP ) ;
-    etherP.delF( tinBaseP , psttP ) ;
+    if( !POOP ) etherP.diskFileOrDirDeleteF( tin0P , psttP , flagsP , cTriesP ) ;
+    etherP.delF( tin0P , psttP ) ;
 }
 
-voidT diskFileExistsF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskFileExistsF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1392,13 +1392,13 @@ voidT diskFileExistsF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , co
     if( !POOP ) { slP >> psttLikeP ; ___( psttLikeP ) ; idArgNext ++ ; }
 
     ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.diskFileExistsF( tinBaseP , psttLikeP ) ;
-    etherP.delF( tinBaseP , psttLikeP ) ;
+    if( !POOP ) noName = etherP.diskFileExistsF( tin0P , psttLikeP ) ;
+    etherP.delF( tin0P , psttLikeP ) ;
 
     slP << noName ;
 }
 
-voidT diskCopyFileF_o4P4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskCopyFileF_o4P4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1423,14 +1423,14 @@ voidT diskCopyFileF_o4P4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , c
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1439,12 +1439,12 @@ voidT diskCopyFileF_o4P4P3_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , c
             }
         }
     }
-    if( !POOP ) etherP.diskCopyFileF( tinBaseP , psttNewP , psttOldP , cTriesP ) ;
-    etherP.delF( tinBaseP , psttOldP ) ;
-    etherP.delF( tinBaseP , psttNewP ) ;
+    if( !POOP ) etherP.diskCopyFileF( tin0P , psttNewP , psttOldP , cTriesP ) ;
+    etherP.delF( tin0P , psttOldP ) ;
+    etherP.delF( tin0P , psttNewP ) ;
 }
 
-voidT diskMoveFileOrDirF_o4P4P37_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskMoveFileOrDirF_o4P4P37_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1469,14 +1469,14 @@ voidT diskMoveFileOrDirF_o4P4P37_GF( tin0S& tinBaseP , etherC& etherP , soulC& s
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1493,14 +1493,14 @@ voidT diskMoveFileOrDirF_o4P4P37_GF( tin0S& tinBaseP , etherC& etherP , soulC& s
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 flagsP = flFILEoRdIRmOVE_null ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1509,12 +1509,12 @@ voidT diskMoveFileOrDirF_o4P4P37_GF( tin0S& tinBaseP , etherC& etherP , soulC& s
             }
         }
     }
-    if( !POOP ) etherP.diskMoveFileOrDirF( tinBaseP , psttNewP , psttOldP , cTriesP , flagsP ) ;
-    etherP.delF( tinBaseP , psttOldP ) ;
-    etherP.delF( tinBaseP , psttNewP ) ;
+    if( !POOP ) etherP.diskMoveFileOrDirF( tin0P , psttNewP , psttOldP , cTriesP , flagsP ) ;
+    etherP.delF( tin0P , psttOldP ) ;
+    etherP.delF( tin0P , psttNewP ) ;
 }
 
-voidT diskMoveFileOrDirUniqueF_o4P4P4P34P6_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskMoveFileOrDirUniqueF_o4P4P4P34P6_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1539,14 +1539,14 @@ voidT diskMoveFileOrDirUniqueF_o4P4P4P34P6_GF( tin0S& tinBaseP , etherC& etherP 
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 psttNewLikeP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1563,14 +1563,14 @@ voidT diskMoveFileOrDirUniqueF_o4P4P4P34P6_GF( tin0S& tinBaseP , etherC& etherP 
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 cTriesP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1587,14 +1587,14 @@ voidT diskMoveFileOrDirUniqueF_o4P4P4P34P6_GF( tin0S& tinBaseP , etherC& etherP 
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 psttUniqueP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1611,14 +1611,14 @@ voidT diskMoveFileOrDirUniqueF_o4P4P4P34P6_GF( tin0S& tinBaseP , etherC& etherP 
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 bPrefixP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1627,16 +1627,16 @@ voidT diskMoveFileOrDirUniqueF_o4P4P4P34P6_GF( tin0S& tinBaseP , etherC& etherP 
             }
         }
     }
-    if( !POOP ) etherP.diskMoveFileOrDirUniqueF( tinBaseP , psttNewP , psttOldP , psttNewLikeP , cTriesP , psttUniqueP , bPrefixP ) ;
-    etherP.delF( tinBaseP , psttUniqueP ) ;
-    etherP.delF( tinBaseP , psttNewLikeP ) ;
-    etherP.delF( tinBaseP , psttOldP ) ;
+    if( !POOP ) etherP.diskMoveFileOrDirUniqueF( tin0P , psttNewP , psttOldP , psttNewLikeP , cTriesP , psttUniqueP , bPrefixP ) ;
+    etherP.delF( tin0P , psttUniqueP ) ;
+    etherP.delF( tin0P , psttNewLikeP ) ;
+    etherP.delF( tin0P , psttOldP ) ;
 
     if( !POOP ) slP << psttNewP ;
-    etherP.delF( tinBaseP , psttNewP ) ;
+    etherP.delF( tin0P , psttNewP ) ;
 }
 
-voidT diskFilePourF_o4P4P4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskFilePourF_o4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1658,13 +1658,13 @@ voidT diskFilePourF_o4P4P4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , 
     SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
     ZE( strokeS* , pstt1LocalP ) ;
     if( !POOP ) { slP >> pstt1LocalP ; ___( pstt1LocalP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskFilePourF( tinBaseP , psttHostP , pstt1RemoteP , pstt1LocalP ) ;
-    etherP.delF( tinBaseP , pstt1LocalP ) ;
-    etherP.delF( tinBaseP , pstt1RemoteP ) ;
-    etherP.delF( tinBaseP , psttHostP ) ;
+    if( !POOP ) etherP.diskFilePourF( tin0P , psttHostP , pstt1RemoteP , pstt1LocalP ) ;
+    etherP.delF( tin0P , pstt1LocalP ) ;
+    etherP.delF( tin0P , pstt1RemoteP ) ;
+    etherP.delF( tin0P , psttHostP ) ;
 }
 
-voidT diskFileQueryAttrF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskFileQueryAttrF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1678,13 +1678,13 @@ voidT diskFileQueryAttrF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP ,
     if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
 
     count2S noName ;
-    if( !POOP ) noName = etherP.diskFileQueryAttrF( tinBaseP , psttP ) ;
-    etherP.delF( tinBaseP , psttP ) ;
+    if( !POOP ) noName = etherP.diskFileQueryAttrF( tin0P , psttP ) ;
+    etherP.delF( tin0P , psttP ) ;
 
     noName >> slP ;
 }
 
-voidT diskFileRefreshF_o4P4P4P4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskFileRefreshF_o4P4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1711,16 +1711,16 @@ voidT diskFileRefreshF_o4P4P4P4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& s
     SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
     ZE( strokeS* , pstt1RemotePrefixP ) ;
     if( !POOP ) { slP >> pstt1RemotePrefixP ; ___( pstt1RemotePrefixP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskFileRefreshF( tinBaseP , pstt1NotRefreshedP , pstt1LocalP , pstt1RemoteP , pstt1RemotePrefixP ) ;
-    etherP.delF( tinBaseP , pstt1RemotePrefixP ) ;
-    etherP.delF( tinBaseP , pstt1RemoteP ) ;
-    etherP.delF( tinBaseP , pstt1LocalP ) ;
+    if( !POOP ) etherP.diskFileRefreshF( tin0P , pstt1NotRefreshedP , pstt1LocalP , pstt1RemoteP , pstt1RemotePrefixP ) ;
+    etherP.delF( tin0P , pstt1RemotePrefixP ) ;
+    etherP.delF( tin0P , pstt1RemoteP ) ;
+    etherP.delF( tin0P , pstt1LocalP ) ;
 
     if( !POOP ) slP << pstt1NotRefreshedP ;
-    etherP.delF( tinBaseP , pstt1NotRefreshedP ) ;
+    etherP.delF( tin0P , pstt1NotRefreshedP ) ;
 }
 
-voidT diskFileSetAttrF_o4P77_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskFileSetAttrF_o4P77_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1742,11 +1742,11 @@ voidT diskFileSetAttrF_o4P77_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP ,
    SOIXLoLDtESTtYPE( 0x0 , etherC )
     ZE( flagsT , flags2P ) ;
     if( !POOP ) { slP >> flags2P ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskFileSetAttrF( tinBaseP , psttP , flags1P , flags2P ) ;
-    etherP.delF( tinBaseP , psttP ) ;
+    if( !POOP ) etherP.diskFileSetAttrF( tin0P , psttP , flags1P , flags2P ) ;
+    etherP.delF( tin0P , psttP ) ;
 }
 
-voidT diskChooseSiteF_o4P4P4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskChooseSiteF_o4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1771,14 +1771,14 @@ voidT diskChooseSiteF_o4P4P4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP 
         if( !POOP )
         {
            idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tinBaseP , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
+            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
                 psttLikeP = 0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tinBaseP , psttNext ) ;
+                etherP.delF( tin0P , psttNext ) ;
             }
             else
             {
@@ -1789,17 +1789,17 @@ voidT diskChooseSiteF_o4P4P4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP 
     }
 
     ZE( countT , noName ) ;
-    if( !POOP ) noName = etherP.diskChooseSiteF( tinBaseP , psttP , psttKeyP , psttLikeP ) ;
-    etherP.delF( tinBaseP , psttLikeP ) ;
-    etherP.delF( tinBaseP , psttKeyP ) ;
+    if( !POOP ) noName = etherP.diskChooseSiteF( tin0P , psttP , psttKeyP , psttLikeP ) ;
+    etherP.delF( tin0P , psttLikeP ) ;
+    etherP.delF( tin0P , psttKeyP ) ;
 
     if( !POOP ) slP << psttP ;
-    etherP.delF( tinBaseP , psttP ) ;
+    etherP.delF( tin0P , psttP ) ;
 
     slP << noName ;
 }
 
-voidT diskFindMostFreeSpaceF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskFindMostFreeSpaceF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1811,13 +1811,13 @@ voidT diskFindMostFreeSpaceF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& s
     SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
     ZE( strokeS* , psttDiskP ) ;
     if( !POOP ) { slP >> psttDiskP ; ___( psttDiskP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskFindMostFreeSpaceF( tinBaseP , psttDiskP ) ;
+    if( !POOP ) etherP.diskFindMostFreeSpaceF( tin0P , psttDiskP ) ;
 
     if( !POOP ) slP << psttDiskP ;
-    etherP.delF( tinBaseP , psttDiskP ) ;
+    etherP.delF( tin0P , psttDiskP ) ;
 }
 
-voidT diskGetHoverF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT diskGetHoverF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1829,8 +1829,8 @@ voidT diskGetHoverF_o4P_GF( tin0S& tinBaseP , etherC& etherP , soulC& slP , cons
     SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
     ZE( strokeS* , psttP ) ;
     if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskGetHoverF( tinBaseP , psttP ) ;
+    if( !POOP ) etherP.diskGetHoverF( tin0P , psttP ) ;
 
     if( !POOP ) slP << psttP ;
-    etherP.delF( tinBaseP , psttP ) ;
+    etherP.delF( tin0P , psttP ) ;
 }

@@ -11,28 +11,28 @@
 
 REST
 
-etThread.boxPutF( tinBaseP , T("///d/ideafarm.rpt.fooey") , tr , tr.csF( tinBaseP ) ) ;
+etThread.boxPutF( tin0P , T("///d/ideafarm.rpt.fooey") , tr , tr.csF( tin0P ) ) ;
 
-etThread.delF( tinBaseP , psttr ) ;
-textC tr( tinBaseP , TAG( TAGiDnULL ) , psttr ) ;
+etThread.delF( tin0P , psttr ) ;
+textC tr( tin0P , TAG( TAGiDnULL ) , psttr ) ;
 
 
 }
-    etThread.strokeF( tinBaseP , tSay ) ;
-    etThread.strFuseF( tinBaseP , psttr , tSay ) ;
+    etThread.strokeF( tin0P , tSay ) ;
+    etThread.strFuseF( tin0P , psttr , tSay ) ;
     TN( tSay , "" ) ; tSay = T("i have ")+TF1(cHave)+T(" of ")+TF1(osIdName)+tcb+T(psttName)+tc ;
     strokeS*& psttName = (strokeS*&)swOsIdName( osIdName ) ;
     
     countT cHave = swTally ;
-    osIdName = swTally.leverF( tinBaseP , idf ) ;
+    osIdName = swTally.leverF( tin0P , idf ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-countT cFlavors = swTally.cFlavorsF( tinBaseP ) ;
+countT cFlavors = swTally.cFlavorsF( tin0P ) ;
 
 }
     }
         }
-            etThread.strFuseF( tinBaseP , psttr , T("*********************************** found!\r\n") ) ;
+            etThread.strFuseF( tin0P , psttr , T("*********************************** found!\r\n") ) ;
         {
         if( def.CounterNameTitleIndex == 952 || def.CounterNameTitleIndex == 676 )
     
@@ -51,8 +51,8 @@ countT cFlavors = swTally.cFlavorsF( tinBaseP ) ;
         ++ swTally ;
         osIdName = def.CounterNameTitleIndex ;
 
-        etThread.strokeF( tinBaseP , tSay ) ;
-        etThread.strFuseF( tinBaseP , psttr , tSay ) ;
+        etThread.strokeF( tin0P , tSay ) ;
+        etThread.strFuseF( tin0P , psttr , tSay ) ;
         TN( tSay , "" ) ; tSay = T("<")+TF1((countT)def.DetailLevel)+T(">    ")+TF3((countT)def.CounterNameTitleIndex,flFORMAT_null,9)+T("    ")+tb4+T(psttName)+tc ;
         strokeS*& psttNote = (strokeS*&)swOsIdNote( def.CounterHelpTitleIndex ) ;
         strokeS*& psttName = (strokeS*&)swOsIdName( def.CounterNameTitleIndex ) ;
@@ -67,8 +67,8 @@ countT cFlavors = swTally.cFlavorsF( tinBaseP ) ;
     ++ swTally ;
     osIdName = pType->ObjectNameTitleIndex ;
 
-    etThread.strokeF( tinBaseP , tSay ) ;
-    etThread.strFuseF( tinBaseP , psttr , tSay ) ;
+    etThread.strokeF( tin0P , tSay ) ;
+    etThread.strFuseF( tin0P , psttr , tSay ) ;
     TN( tSay , "" ) ; tSay = TF3((countT)pType->ObjectNameTitleIndex,flFORMAT_null,9)+T("    ")+( pType->NumInstances ? T("(")+TF1((countT)pType->NumInstances)+T(") ") : T("") )+T(psttName)+tcb+T(psttNote)+tc ;
     strokeS*& psttNote = (strokeS*&)swOsIdNote( pType->ObjectHelpTitleIndex ) ;
     strokeS*& psttName = (strokeS*&)swOsIdName( pType->ObjectNameTitleIndex ) ;
@@ -80,30 +80,30 @@ byteT* pbe = pbBuffer + pHeader->TotalByteLength ;
 __( cbBuffer - pHeader->TotalByteLength ) ;
 PERF_DATA_BLOCK* pHeader = (PERF_DATA_BLOCK*)pbc ; pbc += pHeader->HeaderLength ;
 byteT* pbc = pbBuffer ;
-etThread.strMakeF( tinBaseP , LF , psttr , T("") , 0x100000 ) ; ___( psttr ) ;
+etThread.strMakeF( tin0P , LF , psttr , T("") , 0x100000 ) ; ___( psttr ) ;
 ZE( strokeS* , psttr ) ;
 
 //THIS CODE SETS A CURSOR TO THE WO'TH COUNTER VALUE
 
 bFail = rc != ERROR_SUCCESS ;
-rc = ((tin9S&)tinBaseP).brcRaw ;
+rc = ((tin9S&)tin0P).brcRaw ;
 BOSdOnOTtEST( WHATgbo , RegCloseKey( HKEY_PERFORMANCE_DATA ) )
 boolT bFail = rc != ERROR_SUCCESS ;
-//countT rc = ((tin9S&)tinBaseP).brcRaw ;
+//countT rc = ((tin9S&)tin0P).brcRaw ;
 //BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "260" , 0 , (ULONG*)&idType , (UCHAR*)pbBuffer , (ULONG*)&cbBuffer ) )
-//B:countT rc = ((tin9S&)tinBaseP).brcRaw ;
+//B:countT rc = ((tin9S&)tin0P).brcRaw ;
 //B:BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "952" , 0 , (ULONG*)&idType , (UCHAR*)pbBuffer , (ULONG*)&cbBuffer ) )
-//countT rc = ((tin9S&)tinBaseP).brcRaw ;
+//countT rc = ((tin9S&)tin0P).brcRaw ;
 //BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Costly" , 0 , (ULONG*)&idType , (UCHAR*)pbBuffer , (ULONG*)&cbBuffer ) )
-countT rc = ((tin9S&)tinBaseP).brcRaw ;
+countT rc = ((tin9S&)tin0P).brcRaw ;
 BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Global" , 0 , (ULONG*)&idType , (UCHAR*)pbBuffer , (ULONG*)&cbBuffer ) )
 ZE( countT , idType ) ;
 
 }
-    etThread.delF( tinBaseP , pbNotes ) ;
+    etThread.delF( tin0P , pbNotes ) ;
     }
         }
-            pbc += thirdC::c_strlenIF( tinBaseP , pbc ) + 1 ;
+            pbc += thirdC::c_strlenIF( tin0P , pbc ) + 1 ;
             bIndex = !bIndex ;
             }
                 osIdNote = 0 ;
@@ -114,8 +114,8 @@ ZE( countT , idType ) ;
             {
             else
             }
-                osIdNote = etThread.strDigitsToSCountF( tinBaseP , tId , 0xa , 1 ) ;
-                //etThread.strokeF( tinBaseP , tId+tc ) ;
+                osIdNote = etThread.strDigitsToSCountF( tin0P , tId , 0xa , 1 ) ;
+                //etThread.strokeF( tin0P , tId+tc ) ;
                 TN( tId , "" ) ; tId = T(pbc) ;
                 __( osIdNote ) ;
             {
@@ -128,10 +128,10 @@ ZE( countT , idType ) ;
         byteT* pbc = pbNotes ;
     {
     
-    etThread.delF( tinBaseP , pbNames ) ;
+    etThread.delF( tin0P , pbNames ) ;
     }
         }
-            pbc += thirdC::c_strlenIF( tinBaseP , pbc ) + 1 ;
+            pbc += thirdC::c_strlenIF( tin0P , pbc ) + 1 ;
             bIndex = !bIndex ;
             }
                 osIdName = 0 ;
@@ -143,8 +143,8 @@ ZE( countT , idType ) ;
             {
             else
             }
-                osIdName = etThread.strDigitsToSCountF( tinBaseP , tId , 0xa , 1 ) ;
-                //etThread.strokeF( tinBaseP , tId+tc ) ;
+                osIdName = etThread.strDigitsToSCountF( tin0P , tId , 0xa , 1 ) ;
+                //etThread.strokeF( tin0P , tId+tc ) ;
                 TN( tId , "" ) ; tId = T(pbc) ;
                 __( osIdName ) ;
             {
@@ -157,34 +157,34 @@ ZE( countT , idType ) ;
     {
     
     bFail |= rc != ERROR_SUCCESS ;
-    rc = ((tin9S&)tinBaseP).brcRaw ;
+    rc = ((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Explain 009" , 0 , (ULONG*)&idType , (UCHAR*)pbNotes , (ULONG*)&cbNotes ) )
-    etThread.newF( tinBaseP , LF , pbNotes , cbNotes ) ; ___( pbNotes ) ;
+    etThread.newF( tin0P , LF , pbNotes , cbNotes ) ; ___( pbNotes ) ;
     ZE( byteT* , pbNotes ) ;
     
     bFail = rc != ERROR_SUCCESS ;
-    rc = ((tin9S&)tinBaseP).brcRaw ;
+    rc = ((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Explain 009" , 0 , (ULONG*)&idType , 0 , (ULONG*)&cbNotes ) )
     ZE( countT , cbNotes ) ;
     idType = 0 ;
     
     bFail |= rc != ERROR_SUCCESS ;
-    rc = ((tin9S&)tinBaseP).brcRaw ;
+    rc = ((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Counter 009" , 0 , (ULONG*)&idType , (UCHAR*)pbNames , (ULONG*)&cbNames ) )
-    etThread.newF( tinBaseP , LF , pbNames , cbNames ) ; ___( pbNames ) ;
+    etThread.newF( tin0P , LF , pbNames , cbNames ) ; ___( pbNames ) ;
     ZE( byteT* , pbNames ) ;
     
     boolT bFail = rc != ERROR_SUCCESS ;
-    LONG rc = ((tin9S&)tinBaseP).brcRaw ;
+    LONG rc = ((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , RegQueryValueEx( HKEY_PERFORMANCE_DATA , "Counter 009" , 0 , (ULONG*)&idType , 0 , (ULONG*)&cbNames ) )
     ZE( countT , cbNames ) ;
     ZE( countT , idType ) ;
 {
-switchC swTally( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , osIdName ) ;
+switchC swTally( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , osIdName ) ;
 ZE( countT , osIdName ) ;
-switchC swOsIdNote( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttNote ) ;
+switchC swOsIdNote( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttNote ) ;
 ZE( strokeS* , psttNote ) ;
-switchC swOsIdName( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttName ) ;
+switchC swOsIdName( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttName ) ;
 ZE( strokeS* , psttName ) ;
 TN( tb4 , "    " ) ;
 TN( tcb , ": " ) ;

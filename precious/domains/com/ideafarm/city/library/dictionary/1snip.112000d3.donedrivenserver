@@ -13,27 +13,27 @@
         dec02AM( jobP.cSession ) ;                                                                                                                      \
         taskDrivenServerJobS* pDoomed = &jobP ;                                                                                                         \
                                                                                                                                                         \
-        etThread.traceF( tinBaseP , T("DONEdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;                   \
+        etThread.traceF( tin0P , T("DONEdRIVENsERVER [cSession]:    ")+TF2(jobP.cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;                   \
                                                                                                                                                         \
-        /*etThread.delF( tinBaseP , psttPeerP ) ;*/                                                                                                         \
+        /*etThread.delF( tin0P , psttPeerP ) ;*/                                                                                                         \
                                                                                                                                                         \
-        jobP.sw_cSessionWithPeer.ungrabF( tinBaseP ) ;                                                                                                      \
+        jobP.sw_cSessionWithPeer.ungrabF( tin0P ) ;                                                                                                      \
         -- jobP.sw_cSessionWithPeer ;                                                                                                                   \
         jobP.lever_nnPeer = jobP.nnPeer ;                                                                                                               \
-        jobP.sw_cSessionWithPeer.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                     \
-        jobP.sessions.unregisterConnectionF( tinBaseP , jobP.nnPeer ) ;                                                                                     \
+        jobP.sw_cSessionWithPeer.grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                     \
+        jobP.sessions.unregisterConnectionF( tin0P , jobP.nnPeer ) ;                                                                                     \
                                                                                                                                                         \
         }                                                                                                                                               \
-            jobP.sw_pso.ungrabF( tinBaseP ) ;                                                                                                               \
+            jobP.sw_pso.ungrabF( tin0P ) ;                                                                                                               \
             else                                                 __1                                                                                    \
-            if( (countT)&psoP == (countT)&(countT&)jobP.sw_pso ) jobP.sw_pso.freeF( tinBaseP ) ;                                                            \
+            if( (countT)&psoP == (countT)&(countT&)jobP.sw_pso ) jobP.sw_pso.freeF( tin0P ) ;                                                            \
             jobP.lever_idSession = jobP.idSession ;                                                                                                     \
             DEL( psoP ) ;                                                                                                                               \
-            jobP.sw_pso.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                              \
+            jobP.sw_pso.grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                              \
                                                                                                                                                         \
             }                                                                                                                                           \
-                while( ((tin9S&)tinBaseP).cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 250 ) ; }                                                              \
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                   \
+                while( ((tin9S&)tin0P).cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tin0P , 250 ) ; }                                                              \
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                   \
             {                                                                                                                                           \
                                                                                                                                                         \
             }                                                                                                                                           \

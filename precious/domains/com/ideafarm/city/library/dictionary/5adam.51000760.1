@@ -9,9 +9,9 @@
                             
 REST
 
-etThread.traceF( tinBaseP , T("ok") ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 WAITuNTILaLMOSTaLONE( 1 )
-etThread.traceF( tinBaseP , T("waiting for all threads to finish") ) ;
+etThread.traceF( tin0P , T("waiting for all threads to finish") ) ;
 
 }
     etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)pptRoot[ offt ] , (countT)pcArgInner ) ;
@@ -28,8 +28,8 @@ switch( idComputer )
 textC*  pptRoot[ 0x10 ] ; //CS:CODEsYNC 51000760 51000760
 ZE( countT , cRoot ) ;
 
-etThread.traceF( tinBaseP , T("idComputer: ")+TF2(idComputer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-countT idComputer = etThread.diskIdF( tinBaseP , T("///c") ) ;
+etThread.traceF( tin0P , T("idComputer: ")+TF2(idComputer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+countT idComputer = etThread.diskIdF( tin0P , T("///c") ) ;
 
 TN( tRootTest , "///d/archive.test/1999/" ) ;
 
@@ -149,9 +149,9 @@ TODO
 
 DONE( tmWorkerF )
 }
-    etThread.traceF( tinBaseP , T("root ---- [cFiles,cDirs]:    ")+*ptRootP+tb4+TF2(cFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TF2(cDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-    etThread.diskWalkF( tinBaseP , cDirs , cFiles , *ptRootP , ether , flDISKwALK_null , workCBF , pcArgInnerP , 0 , 0 ) ;
-    etThread.traceF( tinBaseP , T("root ++++               :    ")+*ptRootP ) ;
+    etThread.traceF( tin0P , T("root ---- [cFiles,cDirs]:    ")+*ptRootP+tb4+TF2(cFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TF2(cDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    etThread.diskWalkF( tin0P , cDirs , cFiles , *ptRootP , ether , flDISKwALK_null , workCBF , pcArgInnerP , 0 , 0 ) ;
+    etThread.traceF( tin0P , T("root ++++               :    ")+*ptRootP ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
 
@@ -176,14 +176,14 @@ TASK( tmWorkerF )
                 }
                     }
                         }
-                            etherP.traceF( tinBaseP , T("could not rename to discardss") ) ;
+                            etherP.traceF( tin0P , T("could not rename to discardss") ) ;
                             POOPR
                         {
                         else
-                        if( !POOP ) ; //etherP.traceF( tinBaseP , T("renamed to discardss aok") ) ;
-                        ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNewPathRoot+tDiscardsSlashP+tNewLeafShort , tNameOld , 1 ) ;
+                        if( !POOP ) ; //etherP.traceF( tin0P , T("renamed to discardss aok") ) ;
+                        ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tNewPathRoot+tDiscardsSlashP+tNewLeafShort , tNameOld , 1 ) ;
 
-                        etherP.traceF( tinBaseP , T("content is different ; attempting to rename to discards") ) ;
+                        etherP.traceF( tin0P , T("content is different ; attempting to rename to discards") ) ;
 
                         DELzOMBIE( pFwsNew ) ;
                         DELzOMBIE( pFwsOld ) ;
@@ -191,14 +191,14 @@ TASK( tmWorkerF )
                     else if( !bQuitP )
                     }
                         }
-                            etherP.traceF( tinBaseP , T("could not rename to duplicates") ) ;
+                            etherP.traceF( tin0P , T("could not rename to duplicates") ) ;
                             POOPR
                         {
                         else
-                        if( !POOP ) ; //etherP.traceF( tinBaseP , T("renamed to duplicates aok") ) ;
-                        ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNewPathRoot+tDuplicatesSlashP+tNewLeafShort , tNameOld , 1 ) ;
+                        if( !POOP ) ; //etherP.traceF( tin0P , T("renamed to duplicates aok") ) ;
+                        ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tNewPathRoot+tDuplicatesSlashP+tNewLeafShort , tNameOld , 1 ) ;
 
-                        //etherP.traceF( tinBaseP , T("content is the same ; attempting to rename to duplicates") ) ;
+                        //etherP.traceF( tin0P , T("content is the same ; attempting to rename to duplicates") ) ;
 
                         DELzOMBIE( pFwsNew ) ;
                         DELzOMBIE( pFwsOld ) ;
@@ -208,22 +208,22 @@ TASK( tmWorkerF )
                     }
                         }
                             }
-                                etherP.traceF( tinBaseP , T("different content [idWindow]:    ")+TF2(idWindow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                                etherP.traceF( tin0P , T("different content [idWindow]:    ")+TF2(idWindow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                                 bSame = 0 ;
                             {
-                            else if( etherP.memCompareF( tinBaseP , pbwOld , pbwNew , cbwOld ) )
+                            else if( etherP.memCompareF( tin0P , pbwOld , pbwNew , cbwOld ) )
                             else if( !pbwOld || !cbwOld ) break ;
                             }
-                                etherP.traceF( tinBaseP , T("different sizes (unexpected) [idWindow]:    ")+TF2(idWindow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                                etherP.traceF( tin0P , T("different sizes (unexpected) [idWindow]:    ")+TF2(idWindow,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                                 bSame = 0 ;
                             {
                             if( cbwOld != cbwNew )
 
-                            pFwsNew->getF( tinBaseP , pbwNew , cbwNew ) ;
+                            pFwsNew->getF( tin0P , pbwNew , cbwNew ) ;
                             ZE( countT , cbwNew ) ;
                             ZE( byteT* , pbwNew ) ;
 
-                            pFwsOld->getF( tinBaseP , pbwOld , cbwOld ) ;
+                            pFwsOld->getF( tin0P , pbwOld , cbwOld ) ;
                             ZE( countT , cbwOld ) ;
                             ZE( byteT* , pbwOld ) ;
 
@@ -234,7 +234,7 @@ TASK( tmWorkerF )
                     {
                     else
                     }
-                        etherP.traceF( tinBaseP , T("different sizes") ) ;
+                        etherP.traceF( tin0P , T("different sizes") ) ;
                         bSame = 0 ;
                     {
                     if( pFwsOld->cbFileLoF() != pFwsNew->cbFileLoF() || pFwsOld->cbFileHiF() != pFwsNew->cbFileHiF() )
@@ -244,14 +244,14 @@ TASK( tmWorkerF )
                 else
                 }
                     }
-                        etherP.traceF( tinBaseP , T("could not rename") ) ;
+                        etherP.traceF( tin0P , T("could not rename") ) ;
                         POOPR
                     {
                     else
-                    if( !POOP ) ; //etherP.traceF( tinBaseP , T("renamed aok") ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tNameNew , tNameOld , 1 ) ;
+                    if( !POOP ) ; //etherP.traceF( tin0P , T("renamed aok") ) ;
+                    ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tNameNew , tNameOld , 1 ) ;
 
-                    //etherP.traceF( tinBaseP , T("could not ct both file windows ; attempting to rename") ) ;
+                    //etherP.traceF( tin0P , T("could not ct both file windows ; attempting to rename") ) ;
 
                     DELzOMBIE( pFwsNew ) ;
                     DELzOMBIE( pFwsOld ) ;
@@ -259,8 +259,8 @@ TASK( tmWorkerF )
                 {
                 if( POOP )
 
-                fileWindowsC* pFwsNew = new( 0 , tinBaseP , pb_fwsNew , sizeof pb_fwsNew ) fileWindowsC( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , tNameNew , flFILEwINDOW_null , 1 ) ;
-                fileWindowsC* pFwsOld = new( 0 , tinBaseP , pb_fwsOld , sizeof pb_fwsOld ) fileWindowsC( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , tNameOld , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsNew = new( 0 , tin0P , pb_fwsNew , sizeof pb_fwsNew ) fileWindowsC( tin0P , *((tin9S&)tin0P).pEtScratch , tNameNew , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsOld = new( 0 , tin0P , pb_fwsOld , sizeof pb_fwsOld ) fileWindowsC( tin0P , *((tin9S&)tin0P).pEtScratch , tNameOld , flFILEwINDOW_null , 1 ) ;
 
                 byteT pb_fwsNew[ sizeof( fileWindowsC ) ] ;
                 byteT pb_fwsOld[ sizeof( fileWindowsC ) ] ;
@@ -269,17 +269,17 @@ TASK( tmWorkerF )
             {
             IFsCRATCH
 
-            //etherP.traceF( tinBaseP , T("new duplicate: ")+tNewPathRoot+tDuplicatesSlashP+tNewLeafShort ) ;
-            //etherP.traceF( tinBaseP , T("         leaf: ")+tNewLeafShort ) ;
-            //etherP.traceF( tinBaseP , T("         root: ")+tNewPathRoot ) ;
-            //etherP.traceF( tinBaseP , T("          new: ")+tNameNew ) ;
+            //etherP.traceF( tin0P , T("new duplicate: ")+tNewPathRoot+tDuplicatesSlashP+tNewLeafShort ) ;
+            //etherP.traceF( tin0P , T("         leaf: ")+tNewLeafShort ) ;
+            //etherP.traceF( tin0P , T("         root: ")+tNewPathRoot ) ;
+            //etherP.traceF( tin0P , T("          new: ")+tNameNew ) ;
 
             }
-                etherP.delF( tinBaseP , psttNewLeafShort ) ;
-                etherP.delF( tinBaseP , psttNewPathRoot ) ;
+                etherP.delF( tin0P , psttNewLeafShort ) ;
+                etherP.delF( tin0P , psttNewPathRoot ) ;
                 tNewLeafShort = T(psttNewLeafShort) ;
                 tNewPathRoot  = T(psttNewPathRoot) ;
-                etherP.strBisectF( tinBaseP , psttNewPathRoot , psttNewLeafShort , tNameNew , tSlashP , - 3 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttNewPathRoot ) ; ___( psttNewLeafShort ) ;
+                etherP.strBisectF( tin0P , psttNewPathRoot , psttNewLeafShort , tNameNew , tSlashP , - 3 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttNewPathRoot ) ; ___( psttNewLeafShort ) ;
                 ZE( strokeS* , psttNewLeafShort ) ;
                 ZE( strokeS* , psttNewPathRoot ) ;
             {
@@ -288,8 +288,8 @@ TASK( tmWorkerF )
 
             }
 
-                etherP.delF( tinBaseP , psttSnip2 ) ;
-                etherP.delF( tinBaseP , psttSnip1 ) ;
+                etherP.delF( tin0P , psttSnip2 ) ;
+                etherP.delF( tin0P , psttSnip1 ) ;
                 tNameNew = T(psttSnip1) ;
 
 
@@ -298,36 +298,36 @@ TASK( tmWorkerF )
 
 
 
-                etherP.strFuseF( tinBaseP , psttSnip1 , psttSnip2 ) ;
-                etherP.strSubstringF( tinBaseP , psttSnip2 , idf , idl , tNameOld ) ; ___( psttSnip2 ) ;
+                etherP.strFuseF( tin0P , psttSnip1 , psttSnip2 ) ;
+                etherP.strSubstringF( tin0P , psttSnip2 , idf , idl , tNameOld ) ; ___( psttSnip2 ) ;
                 idl = 0 ;
                 idf = idHitSlashHey + 0x45 ;
                 ZE( strokeS* , psttSnip2 ) ;
 
 
-                etherP.strSubstringF( tinBaseP , psttSnip1 , idf , idl , tNameOld , tNameOld.csF( tinBaseP ) ) ; ___( psttSnip1 ) ;
+                etherP.strSubstringF( tin0P , psttSnip1 , idf , idl , tNameOld , tNameOld.csF( tin0P ) ) ; ___( psttSnip1 ) ;
                 countT idl = idHitSlashHey + 0x40 ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttSnip1 ) ;
             {
             TN( tNameNew , "" ) ;
 
-            etherP.traceF( tinBaseP , tNameOld ) ;
-            etherP.traceF( tinBaseP , T("------------------------------------------------------------------") ) ;
+            etherP.traceF( tin0P , tNameOld ) ;
+            etherP.traceF( tin0P , T("------------------------------------------------------------------") ) ;
         {
         if( idHitSlashHey && idHit == idHitSlashHey )
-        //etherP.traceF( tinBaseP , T("[idHit,name:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tNameOld ) ;
+        //etherP.traceF( tin0P , T("[idHit,name:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tNameOld ) ;
 
-        if( !( cFilesP % ( TOCK >> 4 ) ) ) etherP.traceF( tinBaseP , T("[cFiles]:    ")+TF2(cFilesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        if( !( cFilesP % ( TOCK >> 4 ) ) ) etherP.traceF( tin0P , T("[cFiles]:    ")+TF2(cFilesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        countT idHit = etherP.strIdF( tinBaseP, idf , sttqP , tPatternOldP , tNameOld ) ;
+        countT idHit = etherP.strIdF( tin0P, idf , sttqP , tPatternOldP , tNameOld ) ;
         idf = 1 ;
 
-        countT idHitSlashHey = etherP.strIdF( tinBaseP, idf , sttqP , tSlashHeyP , tNameOld ) ;
+        countT idHitSlashHey = etherP.strIdF( tin0P, idf , sttqP , tSlashHeyP , tNameOld ) ;
         countT idf = 1 ;
 
         TN( tNameOld , ifName ) ;
-        ifFileNameC ifName( tinBaseP , etherP , postNameP ) ;
+        ifFileNameC ifName( tin0P , etherP , postNameP ) ;
 
         textC&  tPatternOldP      =   *(textC*)pcArgP[ 6 ] ;
         textC&  tDiscardsSlashP   =   *(textC*)pcArgP[ 5 ] ;
@@ -341,7 +341,7 @@ TASK( tmWorkerF )
     if( postNameP )
     _IO_
 {
-boolT workCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT workCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 #define DESTINATIONgEN "009"
 

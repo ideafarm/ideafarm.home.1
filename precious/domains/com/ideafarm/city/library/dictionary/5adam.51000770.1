@@ -9,9 +9,9 @@
                             
 REST
 
-etThread.traceF( tinBaseP , T("bye") ) ;
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("workers launched") ) ;
+etThread.traceF( tin0P , T("bye") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("workers launched") ) ;
 
 }
     etThread.osThreadF( TaRG1( tmWorkerF ) ) ;
@@ -21,11 +21,11 @@ countT cDo = TUCK >> 4 ;
 
 }
     }
-        bksFoo.writeF( tinBaseP , (byteT*)&ii , sizeof ii , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND | flBOOKScwRITE_ALLOWoDDlENGTH , 0 ) ;
+        bksFoo.writeF( tin0P , (byteT*)&ii , sizeof ii , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND | flBOOKScwRITE_ALLOWoDDlENGTH , 0 ) ;
     {
     for( countT ii = 1 ; ii <= TUCK ; ii ++ )
 
-    booksC bksFoo( tinBaseP , TAG( TAGiDnULL ) , "foo" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flBOOKSc_PURGEoNcT | flBOOKSc_WRITER , TUCK - 1 , 0 , 0 , 0 , 0 , 0 , 0 ) ;
+    booksC bksFoo( tin0P , TAG( TAGiDnULL ) , "foo" , ifcIDsTATEsPACE_SINGLEaDAM( tin0P ) , flBOOKSc_PURGEoNcT | flBOOKSc_WRITER , TUCK - 1 , 0 , 0 , 0 , 0 , 0 , 0 ) ;
 {
 
 TODO
@@ -41,8 +41,8 @@ DONE( tmWorkerF )
                     THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
                 {
 
-                else                                 etThread.traceF( tinBaseP , T("read:    ")+TF2(*(countT*)pbzIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                else if( cbzIn != sizeof( countT ) ) etThread.traceF( tinBaseP , T("read:    unexpected data size:    ")+TF2(cbzIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                else                                 etThread.traceF( tin0P , T("read:    ")+TF2(*(countT*)pbzIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                else if( cbzIn != sizeof( countT ) ) etThread.traceF( tin0P , T("read:    unexpected data size:    ")+TF2(cbzIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 if( !cbzIn )                         break ;
 
                 const byteT* pbzIn = *pPageEvent ;
@@ -52,21 +52,21 @@ DONE( tmWorkerF )
 
                 THREADmODE2rESTORE
                 THREADmODE4rESTORE
-                bksFoo.readF( tinBaseP , *pPageEvent , hRead , flBOOKScrEAD_null ) ;
-                pPageEvent = new( 0 , tinBaseP , LF ) pageC( tinBaseP , bksFoo , sizeof( countT ) ) ; ___( pPageEvent ) ;
+                bksFoo.readF( tin0P , *pPageEvent , hRead , flBOOKScrEAD_null ) ;
+                pPageEvent = new( 0 , tin0P , LF ) pageC( tin0P , bksFoo , sizeof( countT ) ) ; ___( pPageEvent ) ;
                 THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                 ZE( pageC* , pPageEvent ) ;
             {
             while( !ether && !POOP && cDo -- )
             countT cDo = 0x10 ;
-            handleC hRead( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
-            booksC bksFoo( tinBaseP , TAG( TAGiDnULL ) , "foo" , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) , flBOOKSc_null , 0 , 0 , 0 , 0 , 0 , 0 , 0 ) ;
+            handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+            booksC bksFoo( tin0P , TAG( TAGiDnULL ) , "foo" , ifcIDsTATEsPACE_SINGLEaDAM( tin0P ) , flBOOKSc_null , 0 , 0 , 0 , 0 , 0 , 0 , 0 ) ;
         {
         while( cDoOuter -- )
         countT cDoOuter = 2 ;
 
-        etThread.traceF( tinBaseP , T("howdy!") ) ;
+        etThread.traceF( tin0P , T("howdy!") ) ;
     {
     while( !ether && !POOP )
 {

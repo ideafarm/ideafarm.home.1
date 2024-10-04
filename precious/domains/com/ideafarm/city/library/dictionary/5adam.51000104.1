@@ -10,36 +10,36 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.delF( tinBaseP , psttnu ) ;
-etThread.faceHearF( tinBaseP , psttnu ) ;
+etThread.delF( tin0P , psttnu ) ;
+etThread.faceHearF( tin0P , psttnu ) ;
 ZE( strokeS* , psttnu ) ;
-etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tin0P , T("\r\n\r\npress the enter key") ) ;
 
-etThread.osSleepF( tinBaseP , TOCK * 2 ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , ++ idt ) ; }
-sayF( tinBaseP , etThread , 1 ) ;
-thThread.dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK   ) ;
+etThread.osSleepF( tin0P , TOCK * 2 ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , ++ idt ) ; }
+sayF( tin0P , etThread , 1 ) ;
+thThread.dosPriorityIF( tin0P , ifcTHREADpRIORITY_SPINLOCK   ) ;
 
-etThread.osSleepF( tinBaseP , TOCK * 2 ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , ++ idt ) ; }
-sayF( tinBaseP , etThread , 1 ) ;
-thThread.dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_RUSH   ) ;
+etThread.osSleepF( tin0P , TOCK * 2 ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , ++ idt ) ; }
+sayF( tin0P , etThread , 1 ) ;
+thThread.dosPriorityIF( tin0P , ifcTHREADpRIORITY_RUSH   ) ;
 
-etThread.osSleepF( tinBaseP , TOCK * 2 ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , ++ idt ) ; }
-sayF( tinBaseP , etThread , 1 ) ;
-thThread.dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_NORMAL ) ;
+etThread.osSleepF( tin0P , TOCK * 2 ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , ++ idt ) ; }
+sayF( tin0P , etThread , 1 ) ;
+thThread.dosPriorityIF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
 
-etThread.osSleepF( tinBaseP , TOCK * 2 ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , ++ idt ) ; }
-sayF( tinBaseP , etThread , 1 ) ;
-thThread.dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_LAZIEST   ) ;
+etThread.osSleepF( tin0P , TOCK * 2 ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , ++ idt ) ; }
+sayF( tin0P , etThread , 1 ) ;
+thThread.dosPriorityIF( tin0P , ifcTHREADpRIORITY_LAZIEST   ) ;
 
-etThread.osSleepF( tinBaseP , TOCK * 2 ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , ++ idt ) ; }
-sayF( tinBaseP , etThread , 1 ) ;
+etThread.osSleepF( tin0P , TOCK * 2 ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , ++ idt ) ; }
+sayF( tin0P , etThread , 1 ) ;
 
 countT idt = 1 ;
 thirdC& thThread = etThread ;
@@ -47,24 +47,24 @@ thirdC& thThread = etThread ;
 TODO
 
 DONE( tmF )
-etThread.strokeF( tinBaseP , T("---------------------------------------------------\r\n") ) ;
-sayF( tinBaseP , etThread , idt ) ;
+etThread.strokeF( tin0P , T("---------------------------------------------------\r\n") ) ;
+sayF( tin0P , etThread , idt ) ;
 countT idt = pTaskP ? pTaskP->c1 : 0 ;
 TASK( tmF )
 
 }
     }
         default                     : { __1                                                                     ; break ; }
-        case ifcTHREADpRIORITY_SPINLOCK  : { etThread.strokeF( tinBaseP , T("thread ")+TF1(idtP)+T("'s priority is now RUDE\r\n"  ) ) ; break ; }
-        case ifcTHREADpRIORITY_RUSH  : { etThread.strokeF( tinBaseP , T("thread ")+TF1(idtP)+T("'s priority is now RUSH\r\n"  ) ) ; break ; }
-        case ifcTHREADpRIORITY_NORMAL: { etThread.strokeF( tinBaseP , T("thread ")+TF1(idtP)+T("'s priority is now NORMAL\r\n") ) ; break ; }
-        case ifcTHREADpRIORITY_LAZIEST  : { etThread.strokeF( tinBaseP , T("thread ")+TF1(idtP)+T("'s priority is now IDLE\r\n"  ) ) ; break ; }
+        case ifcTHREADpRIORITY_SPINLOCK  : { etThread.strokeF( tin0P , T("thread ")+TF1(idtP)+T("'s priority is now RUDE\r\n"  ) ) ; break ; }
+        case ifcTHREADpRIORITY_RUSH  : { etThread.strokeF( tin0P , T("thread ")+TF1(idtP)+T("'s priority is now RUSH\r\n"  ) ) ; break ; }
+        case ifcTHREADpRIORITY_NORMAL: { etThread.strokeF( tin0P , T("thread ")+TF1(idtP)+T("'s priority is now NORMAL\r\n") ) ; break ; }
+        case ifcTHREADpRIORITY_LAZIEST  : { etThread.strokeF( tin0P , T("thread ")+TF1(idtP)+T("'s priority is now IDLE\r\n"  ) ) ; break ; }
     {
-    switch( thThread.dosPriorityIF( tinBaseP ) )
+    switch( thThread.dosPriorityIF( tin0P ) )
     thirdC& thThread = etThread ;
-    etThread.osSleepF( tinBaseP , TOCK ) ;
+    etThread.osSleepF( tin0P , TOCK ) ;
 {
-voidT sayF( tin0S& tinBaseP , etherC& etThread , countT idtP )
+voidT sayF( tin0S& tin0P , etherC& etThread , countT idtP )
 
 /*1*/WAKEhIDE( "example.simplest.func.1020080.thirdC.dosPriorityIF" )/*1*/
 /**/

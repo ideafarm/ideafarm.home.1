@@ -15,8 +15,8 @@ REST
     //HEAReNTER( etThread ) ;
     BOSdOnOTtEST( WHATgbo , getch() )
 
-    etThread.delF( tinBaseP , psttr ) ;
-    etThread.strokeF( tinBaseP , psttr ) ;
+    etThread.delF( tin0P , psttr ) ;
+    etThread.strokeF( tin0P , psttr ) ;
 
     ) ; ___( psttr ) ;
 
@@ -34,17 +34,17 @@ REST
         T(         "IdeaFarm " "(tm) City driver age: ")+TT(time1N,time2N)+
         T("\f")+
 
-    etThread.strMakeF( tinBaseP , LF , psttr ,
+    etThread.strMakeF( tin0P , LF , psttr ,
     ZE( strokeS* , psttr ) ;
 
-    etThread.osTimeSubtractF( tinBaseP , time1N , time2N , ps.timeDriverStarted1 , ps.timeDriverStarted2 ) ;
-    etThread.osTimeNowF( tinBaseP , time1N , time2N ) ;
+    etThread.osTimeSubtractF( tin0P , time1N , time2N , ps.timeDriverStarted1 , ps.timeDriverStarted2 ) ;
+    etThread.osTimeNowF( tin0P , time1N , time2N ) ;
     ZE( sCountT , time2N ) ;
     ZE( countT , time1N ) ;
 {
 while( !ether && !etThread )
 
-{ ZE( countT , tid ) ; etThread.osThreadF( tinBaseP , tid , tmTockF ) ; }
+{ ZE( countT , tid ) ; etThread.osThreadF( tin0P , tid , tmTockF ) ; }
 
 poolOld SideS& ps = (poolOld SideS&)(p oolC&)etThread ;
 
@@ -58,8 +58,8 @@ TODO
 
 DONE( tmTockF )
 }
-    ether.osSleepF( tinBaseP , TOCK * 0x4 ) ;
-    etThread.paperTitleF( tinBaseP , TF1((countT)ps.mInstructionsPerTime)+T("/")+TF1((sCountT)mUsed)+T(" :: ")+TF1((sCountT)(0x100*mRatio)) ) ;
+    ether.osSleepF( tin0P , TOCK * 0x4 ) ;
+    etThread.paperTitleF( tin0P , TF1((countT)ps.mInstructionsPerTime)+T("/")+TF1((sCountT)mUsed)+T(" :: ")+TF1((sCountT)(0x100*mRatio)) ) ;
 
     measureT mRatio = mUsed / ps.mInstructionsPerTime ;
 

@@ -9,44 +9,44 @@
                             
 REST
 
-//listC::deleteIF( tinBaseP , count2S( LISTnAMEsYS_ROOTsYSTEM2 ) ) ;
-//listC::deleteIF( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
+//listC::deleteIF( tin0P , count2S( LISTnAMEsYS_ROOTsYSTEM2 ) ) ;
+//listC::deleteIF( tin0P , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
 
 THREADmODE3rESTORE
 }
-    listC::chatterIF( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
+    listC::chatterIF( tin0P , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
     CONoUTrAW( "application:\r\n" ) ;
-    listC::chatterIF( tinBaseP , count2S( LISTnAMEsYS_ROOTsYSTEM2 ) ) ;
+    listC::chatterIF( tin0P , count2S( LISTnAMEsYS_ROOTsYSTEM2 ) ) ;
     CONoUTrAW( "system:\r\n" ) ;
 
     }
         SAYfIELDoUT( "idAccount" ) ;
         CONoUTrAW( F(flagsRC) & flLISTwALKrETURNcODE_NEWlISTING ? "new account!\r\n" : "existing account\r\n" ) ;
-        flagsRC = listC::fieldIF( tinBaseP , pOut , hList , pczField , _fe_modePushIfNotExistC() + _fe_pushIdSerialC( "idAccount" ) + _fe_modeQueryNewC() +  _fe_queryC() , LF ) ;
+        flagsRC = listC::fieldIF( tin0P , pOut , hList , pczField , _fe_modePushIfNotExistC() + _fe_pushIdSerialC( "idAccount" ) + _fe_modeQueryNewC() +  _fe_queryC() , LF ) ;
 
         SAYfIELDoUT( "idAccount" ) ;
         CONoUTrAW( F(flagsRC) & flLISTwALKrETURNcODE_NEWlISTING ? "new account!\r\n" : "existing account\r\n" ) ;
-        flagsT flagsRC = listC::fieldIF( tinBaseP , pOut , hList , pczField , _fe_modePushIfNotExistC() + _fe_pushIdSerialC( "idAccount" ) + _fe_modeQueryNewC() +  _fe_queryC() , LF ) ;
+        flagsT flagsRC = listC::fieldIF( tin0P , pOut , hList , pczField , _fe_modePushIfNotExistC() + _fe_pushIdSerialC( "idAccount" ) + _fe_modeQueryNewC() +  _fe_queryC() , LF ) ;
         countT pczField[] = { /*idAccount*/0x87654321 , 0 } ;
         ZE( fieldEditParamOutC* , pOut ) ;
 
-        listC::openIF( tinBaseP , hList , pczList ) ;
-        handleC hList( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+        listC::openIF( tin0P , hList , pczList ) ;
+        handleC hList( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
     
-        grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
+        grabitC grabitx( tin0P , TAG( TAGiDnULL ) ) ;
     
-        listC::dictionaryReplaceOsTextIF( tinBaseP , pczList ) ;
+        listC::dictionaryReplaceOsTextIF( tin0P , pczList ) ;
         countT pczList[] = { LISTnAMEsYS_ROOTaPPLICATION , (countT)"bbbbbbbb" , 0 } ;
     {
 
     CONoUTrAW( "------------------------------------------------------------------------------------------------------\r\n" ) ;
-    listC::chatterIF( tinBaseP , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
+    listC::chatterIF( tin0P , count2S( LISTnAMEsYS_ROOTaPPLICATION ) ) ;
     CONoUTrAW( "at gen, application:\r\n" ) ;
-    listC::chatterIF( tinBaseP , count2S( LISTnAMEsYS_ROOTsYSTEM2 ) ) ;
+    listC::chatterIF( tin0P , count2S( LISTnAMEsYS_ROOTsYSTEM2 ) ) ;
     CONoUTrAW( "at gen, system:\r\n" ) ;
     CONoUTrAW( "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\r\n" ) ;
 
-    puseC pusem( tinBaseP , "list.serialname.doodle" , flPOOLc_null , ifcIDsTATEsPACE_SINGLEaDAM( tinBaseP ) ) ;
+    puseC pusem( tin0P , "list.serialname.doodle" , flPOOLc_null , ifcIDsTATEsPACE_SINGLEaDAM( tin0P ) ) ;
 {
 THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
 

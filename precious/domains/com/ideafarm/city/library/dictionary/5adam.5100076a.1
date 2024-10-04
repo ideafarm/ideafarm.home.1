@@ -9,8 +9,8 @@
                             
 REST
 
-ether.loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+ether.loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)ptRoot[ offt ] , (countT)pcArgInner ) ;
@@ -37,9 +37,9 @@ TODO
 
 DONE( tmWorkerF )
 }
-    etThread.traceF( tinBaseP , T("root ---- [cFiles,cDirs]:    ")+*ptRootP+tb4+TF2(cFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TF2(cDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-    etThread.diskWalkF( tinBaseP , cDirs , cFiles , *ptRootP , ether , flDISKwALK_null , healCBF , pcArgInnerP , 0 , 0 ) ;
-    etThread.traceF( tinBaseP , T("root ++++               :    ")+*ptRootP ) ;
+    etThread.traceF( tin0P , T("root ---- [cFiles,cDirs]:    ")+*ptRootP+tb4+TF2(cFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb4+TF2(cDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    etThread.diskWalkF( tin0P , cDirs , cFiles , *ptRootP , ether , flDISKwALK_null , healCBF , pcArgInnerP , 0 , 0 ) ;
+    etThread.traceF( tin0P , T("root ++++               :    ")+*ptRootP ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
 
@@ -56,20 +56,20 @@ TASK( tmWorkerF )
 
     }
         }
-            etherP.delF( tinBaseP , psttRelative ) ;
-            etherP.traceF( tinBaseP , T("[relative name:    ")+T(psttRelative) ) ;
-            etherP.strSubstringF( tinBaseP , psttRelative , idf , idl , tNameOld ) ; ___( psttRelative ) ;
+            etherP.delF( tin0P , psttRelative ) ;
+            etherP.traceF( tin0P , T("[relative name:    ")+T(psttRelative) ) ;
+            etherP.strSubstringF( tin0P , psttRelative , idf , idl , tNameOld ) ; ___( psttRelative ) ;
             ZE( countT , idl ) ;
             ZE( strokeS* , psttRelative ) ;
         {
         if( !POOP )
 
         __( idHit - 1 ) ;
-        countT idHit = etherP.strIdF( tinBaseP, idf , sttqP , tRootP , tNameOld ) ;
+        countT idHit = etherP.strIdF( tin0P, idf , sttqP , tRootP , tNameOld ) ;
         countT idf = 1 ;
 
         TN( tNameOld , ifName ) ;
-        ifFileNameC ifName( tinBaseP , etherP , postNameP ) ;
+        ifFileNameC ifName( tin0P , etherP , postNameP ) ;
 
         textC&  tPatternOldP =   *(textC*)pcArgP[ 1 ] ;
         textC&  tRootP       =   *(textC*)pcArgP[ 2 ] ;
@@ -78,7 +78,7 @@ TASK( tmWorkerF )
     {
     if( postNameP )
 {
-boolT healCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT healCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 //20200428@1830: RETIRED AS STARTED BUT NOT FINISHED
 

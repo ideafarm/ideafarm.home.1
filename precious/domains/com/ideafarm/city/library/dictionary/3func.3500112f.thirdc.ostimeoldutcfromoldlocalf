@@ -40,7 +40,7 @@
             }
                 timeErrDay2 = timeZ2 ;
                 timeErrDay1 = timeZ1 ;
-                osTimeSubtractF( tinBaseP , timeZ1 , timeZ2 , timeErrDay1 , timeErrDay2 ) ;
+                osTimeSubtractF( tin0P , timeZ1 , timeZ2 , timeErrDay1 , timeErrDay2 ) ;
                 ZE( sCountT , timeZ2 ) ;
                 ZE( countT , timeZ1 ) ;
             {
@@ -49,7 +49,7 @@
             }
                 timeErrStd2 = timeZ2 ;
                 timeErrStd1 = timeZ1 ;
-                osTimeSubtractF( tinBaseP , timeZ1 , timeZ2 , timeErrStd1 , timeErrStd2 ) ;
+                osTimeSubtractF( tin0P , timeZ1 , timeZ2 , timeErrStd1 , timeErrStd2 ) ;
                 ZE( sCountT , timeZ2 ) ;
                 ZE( countT , timeZ1 ) ;
             {
@@ -61,8 +61,8 @@
 
 //SAY( T("timeErrDay : ")+TT(timeErrDay1,timeErrDay2) )
 //SAY( T("timeErrStd : ")+TT(timeErrStd1,timeErrStd2) )
-        osTimeSubtractF( tinBaseP , timeErrDay1 , timeErrDay2 , timeL1 , timeL2 ) ;
-        osTimeSubtractF( tinBaseP , timeErrStd1 , timeErrStd2 , timeL1 , timeL2 ) ;
+        osTimeSubtractF( tin0P , timeErrDay1 , timeErrDay2 , timeL1 , timeL2 ) ;
+        osTimeSubtractF( tin0P , timeErrStd1 , timeErrStd2 , timeL1 , timeL2 ) ;
         sCountT timeErrDay2 = timeLDV2 ;
         countT  timeErrDay1 = timeLDV1 ;
         sCountT timeErrStd2 = timeLSV2 ;
@@ -71,15 +71,15 @@
     ZE( boolT , bDay ) ;
     //COMPARE LSV AND LDV TO LP TO DECIDE WHETHER TO RETURN US OR UD
 
-    osTimeFromOldTimeIF( tinBaseP , timeLDV1 , timeLDV2 , yLDV , mLDV , dLDV , hhLDV , mmLDV , ssLDV , msLDV , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+    osTimeFromOldTimeIF( tin0P , timeLDV1 , timeLDV2 , yLDV , mLDV , dLDV , hhLDV , mmLDV , ssLDV , msLDV , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
     ZE( sCountT , timeLDV2 ) ;
     ZE( countT  , timeLDV1 ) ; // LOCAL VALIDATION TIME IF LOCAL IS DAY
 
-    osTimeFromOldTimeIF( tinBaseP , timeLSV1 , timeLSV2 , yLSV , mLSV , dLSV , hhLSV , mmLSV , ssLSV , msLSV , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+    osTimeFromOldTimeIF( tin0P , timeLSV1 , timeLSV2 , yLSV , mLSV , dLSV , hhLSV , mmLSV , ssLSV , msLSV , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
     ZE( sCountT , timeLSV2 ) ;
     ZE( countT  , timeLSV1 ) ; // LOCAL VALIDATION TIME IF LOCAL IS STD
 
-    osTimeOldUtcToOldLocalF( tinBaseP , msLDV , ssLDV , mmLDV , hhLDV , dLDV , mLDV , yLDV , dowLDV , msUD , ssUD , mmUD , hhUD , dUD , mUD , yUD , dowUD , idZoneP ) ;
+    osTimeOldUtcToOldLocalF( tin0P , msLDV , ssLDV , mmLDV , hhLDV , dLDV , mLDV , yLDV , dowLDV , msUD , ssUD , mmUD , hhUD , dUD , mUD , yUD , dowUD , idZoneP ) ;
     ZE( countT  , dowLDV ) ;
     ZE( sCountT , yLDV   ) ;
     ZE( countT  , mLDV   ) ;
@@ -90,7 +90,7 @@
     ZE( countT  , msLDV  ) ; // LOCAL VALIDATION TIME IF LOCAL IS DAY
 
 //SAY( T("std guess v: ")+TX(yLSV)+T(".")+TX(mLSV)+T(".")+TX(dLSV)+T(" @ ")+TX(hhLSV)+T(":")+TX(mmLSV) )
-    osTimeOldUtcToOldLocalF( tinBaseP , msLSV , ssLSV , mmLSV , hhLSV , dLSV , mLSV , yLSV , dowLSV , msUS , ssUS , mmUS , hhUS , dUS , mUS , yUS , dowUS , idZoneP ) ;
+    osTimeOldUtcToOldLocalF( tin0P , msLSV , ssLSV , mmLSV , hhLSV , dLSV , mLSV , yLSV , dowLSV , msUS , ssUS , mmUS , hhUS , dUS , mUS , yUS , dowUS , idZoneP ) ;
     ZE( countT  , dowLSV ) ;
     ZE( sCountT , yLSV   ) ;
     ZE( countT  , mLSV   ) ;
@@ -100,7 +100,7 @@
     ZE( countT  , ssLSV  ) ;
     ZE( countT  , msLSV  ) ; // LOCAL VALIDATION TIME IF LOCAL IS STD
 
-    osTimeToOldTimeF( tinBaseP , msUD , ssUD , mmUD , hhUD , dUD , mUD , yUD , dowUD , timeUtcDay1 , timeUtcDay2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+    osTimeToOldTimeF( tin0P , msUD , ssUD , mmUD , hhUD , dUD , mUD , yUD , dowUD , timeUtcDay1 , timeUtcDay2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
     ZE( countT  , dowUD ) ;
     ZE( sCountT , yUD   ) ;
     ZE( countT  , mUD   ) ;
@@ -111,7 +111,7 @@
     ZE( countT  , msUD  ) ; //UTC TIME IF LOCAL IS DAY (GUESS 2)
 
 //SAY( T("std guess u: ")+TX(yUS)+T(".")+TX(mUS)+T(".")+TX(dUS)+T(" @ ")+TX(hhUS)+T(":")+TX(mmUS) )
-    osTimeToOldTimeF( tinBaseP , msUS , ssUS , mmUS , hhUS , dUS , mUS , yUS , dowUS , timeUtcStd1 , timeUtcStd2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+    osTimeToOldTimeF( tin0P , msUS , ssUS , mmUS , hhUS , dUS , mUS , yUS , dowUS , timeUtcStd1 , timeUtcStd2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
     ZE( countT  , dowUS ) ;
     ZE( sCountT , yUS   ) ;
     ZE( countT  , mUS   ) ;
@@ -121,12 +121,12 @@
     ZE( countT  , ssUS  ) ;
     ZE( countT  , msUS  ) ; //UTC TIME IF LOCAL IS STD (GUESS 1)
 
-    else          osTimeAddIF(      tinBaseP , timeUtcDay1 , timeUtcDay2 , timeBiasDay1 , timeBiasDay2 ) ;
-    if( bNegDay ) osTimeSubtractF( tinBaseP , timeUtcDay1 , timeUtcDay2 , timeBiasDay1 , timeBiasDay2 ) ;
+    else          osTimeAddIF(      tin0P , timeUtcDay1 , timeUtcDay2 , timeBiasDay1 , timeBiasDay2 ) ;
+    if( bNegDay ) osTimeSubtractF( tin0P , timeUtcDay1 , timeUtcDay2 , timeBiasDay1 , timeBiasDay2 ) ;
 
 //SAY( T("timeUtcStd : ")+TT(timeUtcStd1,timeUtcStd2) )
-    else          osTimeAddIF(      tinBaseP , timeUtcStd1 , timeUtcStd2 , timeBiasStd1 , timeBiasStd2 ) ;
-    if( bNegStd ) osTimeSubtractF( tinBaseP , timeUtcStd1 , timeUtcStd2 , timeBiasStd1 , timeBiasStd2 ) ;
+    else          osTimeAddIF(      tin0P , timeUtcStd1 , timeUtcStd2 , timeBiasStd1 , timeBiasStd2 ) ;
+    if( bNegStd ) osTimeSubtractF( tin0P , timeUtcStd1 , timeUtcStd2 , timeBiasStd1 , timeBiasStd2 ) ;
 
     sCountT timeUtcDay2 = timeL2 ;
     countT  timeUtcDay1 = timeL1 ;
@@ -134,10 +134,10 @@
     countT  timeUtcStd1 = timeL1 ;
 
 //SAY( T("timeLocal  : ")+TT(timeL1,timeL2) )
-    osTimeFromOldTimeIF( tinBaseP , timeL1 , timeL2 , yLP , mLP , dLP , hhLP , mmLP , ssLP , msLP , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+    osTimeFromOldTimeIF( tin0P , timeL1 , timeL2 , yLP , mLP , dLP , hhLP , mmLP , ssLP , msLP , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
 //SAY( T("timeBiasStd: ")+TT(timeBiasStd1,timeBiasStd2) )
-    timeFromSecondsIF( tinBaseP , timeBiasDay1 , timeBiasDay2 , ( bNegDay ? - biasDay : biasDay ) * 60 ) ;
-    timeFromSecondsIF( tinBaseP , timeBiasStd1 , timeBiasStd2 , ( bNegStd ? - biasStd : biasStd ) * 60 ) ;
+    timeFromSecondsIF( tin0P , timeBiasDay1 , timeBiasDay2 , ( bNegDay ? - biasDay : biasDay ) * 60 ) ;
+    timeFromSecondsIF( tin0P , timeBiasStd1 , timeBiasStd2 , ( bNegStd ? - biasStd : biasStd ) * 60 ) ;
     const boolT bNegDay = biasDay < 0 ;
     const boolT bNegStd = biasStd < 0 ;
     ZE( sCountT , timeL2 ) ;
@@ -150,7 +150,7 @@
 //SAY( T("biasStd: ")+TF4(biasStd,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) )
     sCountT biasDay = tzs.bias + tzs.biasDay ;
     sCountT biasStd = tzs.bias + tzs.biasStd ;
-    const timeZoneSpecS& tzs = timeZoneSpecF( tinBaseP , idZoneP ) ;
+    const timeZoneSpecS& tzs = timeZoneSpecF( tin0P , idZoneP ) ;
 
     // TO DISCOVER WHICH APPLIES, I SEE WHICH CALCULATED RESULT MAPS BACK TO WHAT I STARTED WITH
     // WO OF OO BIAS VALUES APPLIES
@@ -160,7 +160,7 @@
 
     }
         if( POOP ) return ;
-        __( idZoneP > cTimeZonesF( tinBaseP ) ) ;
+        __( idZoneP > cTimeZonesF( tin0P ) ) ;
         __Z( idZoneP ) ;
         __( dowUP ) ;
         __( yUP ) ;
@@ -175,17 +175,17 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::osTimeOldUtcFromOldLocalF( tin0S& tinBaseP , countT& msUP , countT& ssUP , countT& mmUP , countT& hhUP , countT& dUP , countT& mUP , sCountT& yUP , countT& dowUP , const countT msLP , const countT ssLP , const countT mmLP , const countT hhLP , const countT dLP , const countT mLP , const sCountT yLP , const countT dowLP , const countT idZoneP )/*1*/
+/*1*/voidT thirdC::osTimeOldUtcFromOldLocalF( tin0S& tin0P , countT& msUP , countT& ssUP , countT& mmUP , countT& hhUP , countT& dUP , countT& mUP , sCountT& yUP , countT& dowUP , const countT msLP , const countT ssLP , const countT mmLP , const countT hhLP , const countT dLP , const countT mLP , const sCountT yLP , const countT dowLP , const countT idZoneP )/*1*/
 
 #define TX(cP) TF4(cP,flFORMAT_FOREIGN|flFORMAT_NObASE,5,0xa)
-#define SAY(fooP) pEtherContainsMe->strokeF( tinBaseP , (fooP)+T("\r\n") ) ;
+#define SAY(fooP) pEtherContainsMe->strokeF( tin0P , (fooP)+T("\r\n") ) ;
 //U::
 
 //WIN32 DOES NOT INCLUDE AN API TO DO THIS, SO I ITERATE BACKWARDS
 
 /**/
 */
- tinBaseP
+ tin0P
 arguments
 /*
 

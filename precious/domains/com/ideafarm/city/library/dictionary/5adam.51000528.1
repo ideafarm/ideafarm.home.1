@@ -11,8 +11,8 @@ REST
 
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x20 ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TUCK * 0x20 ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
     ) ;
@@ -27,14 +27,14 @@ REST
         T("dwYpos:         ")+TF1((sCountT)info2.dwYpos)+tcr+
         T("dwXpos:         ")+TF1((sCountT)info2.dwXpos)+tcr+
 
-    etThread.strokeF( tinBaseP , tf+
+    etThread.strokeF( tin0P , tf+
 
     BOSdOnOTtEST( WHATgbo , joyGetPosEx( JOYSTICKID1 , &info2 ) )
     info2.dwFlags = JOY_RETURNALL ;
 {
 while( !ether )
 info2.dwSize = sizeof info2 ;
-etThread.memSetF( tinBaseP , (byteT*)&info2 , sizeof info2 ) ;
+etThread.memSetF( tin0P , (byteT*)&info2 , sizeof info2 ) ;
 JOYINFOEX info2 ;
 TN( tf , "\f" ) ;
 TN( tcr , "\r\n" ) ;

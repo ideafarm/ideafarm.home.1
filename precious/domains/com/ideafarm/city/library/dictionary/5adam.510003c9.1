@@ -8,12 +8,12 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-rptF( tinBaseP , etThread ) ;
+rptF( tin0P , etThread ) ;
 
-etThread.strokeF( tinBaseP , T("IdeaFarm (tm) City Key Reporter\r\ni write a formatted list of the current keys\r\nthis information is for internal use only within IdeaFarm " "(tm) City City Center\r\n\r\nidCitizen    key\r\n\r\n") ) ;
-//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
+etThread.strokeF( tin0P , T("IdeaFarm (tm) City Key Reporter\r\ni write a formatted list of the current keys\r\nthis information is for internal use only within IdeaFarm " "(tm) City City Center\r\n\r\nidCitizen    key\r\n\r\n") ) ;
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 
 { ZE( boolT , bnu ) ; __( !bnu && sizeof( measureT ) != sizeof( countT ) ) ; }
 
@@ -21,7 +21,7 @@ TODO
 
 }
     }
-        etThread.delF( tinBaseP , pbd ) ;
+        etThread.delF( tin0P , pbd ) ;
         byteT* pbd = (byteT*)cpbd ;
         stStringsOfBytesToDelete >> cpbd ;
         ZE( countT , cpbd ) ;
@@ -45,20 +45,20 @@ TODO
     while( stStacksToDelete )
 
     }
-        for( countT idr = 1 ; idr <= cRows ; idr ++ ) etThread.strokeF( tinBaseP , TF3(tbl._CT1_04F(idr,1),0,8)+T("    ")+TF3(tbl._CT1_04F(idr,2),0,8)+T("\r\n") ) ;
-        const countT cRows = tbl.cRowsF( tinBaseP ) ;
+        for( countT idr = 1 ; idr <= cRows ; idr ++ ) etThread.strokeF( tin0P , TF3(tbl._CT1_04F(idr,1),0,8)+T("    ")+TF3(tbl._CT1_04F(idr,2),0,8)+T("\r\n") ) ;
+        const countT cRows = tbl.cRowsF( tin0P ) ;
 
-        tbl.readF( tinBaseP , stStringsOfBytesToDelete , stTablesToDelete , stStacksToDelete , tKey ) ;
-        tableC tbl( tinBaseP , etThread ) ;
+        tbl.readF( tin0P , stStringsOfBytesToDelete , stTablesToDelete , stStacksToDelete , tKey ) ;
+        tableC tbl( tin0P , etThread ) ;
     {
-    if( etThread.diskFileExistsF( tinBaseP , tKey ) )
+    if( etThread.diskFileExistsF( tin0P , tKey ) )
     TN( tKey , "///ideafarm/ephemeral/domains/com/ideafarm/city/data/base/ae30104.key" ) ;
 
-    stackC stStacksToDelete( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
-    stackC stTablesToDelete( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
-    stackC stStringsOfBytesToDelete( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stStacksToDelete( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stTablesToDelete( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stStringsOfBytesToDelete( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 {
-voidT rptF( tin0S& tinBaseP , etherC& etThread )
+voidT rptF( tin0S& tin0P , etherC& etThread )
 
 /*1*/WAKEhIDE( "rptKeys" )/*1*/
 /**/

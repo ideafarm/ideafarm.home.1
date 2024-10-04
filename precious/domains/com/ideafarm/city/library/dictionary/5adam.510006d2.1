@@ -10,28 +10,28 @@
 REST
 
 }
-    etherC::loafIF( tinBaseP ) ;
-    etThread.traceF( tinBaseP , T("ok") ) ;
+    etherC::loafIF( tin0P ) ;
+    etThread.traceF( tin0P , T("ok") ) ;
 
-    bt.walkF( tinBaseP , pbBuffer , sizeof pbBuffer , countTC() , 0 , 0 ) ;
+    bt.walkF( tin0P , pbBuffer , sizeof pbBuffer , countTC() , 0 , 0 ) ;
     byteT pbBuffer[ TUCK ] ;
 
-    bt.traceF( tinBaseP , countTC() ) ;
+    bt.traceF( tin0P , countTC() ) ;
 
-    etThread.traceF( tinBaseP , T("query retrieved datum value: ")+TF2(cDatum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    boolT bFound = bt.queryF( tinBaseP , &bb0 , 0 , 2 , &cDatum ) ;
+    etThread.traceF( tin0P , T("query retrieved datum value: ")+TF2(cDatum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    boolT bFound = bt.queryF( tin0P , &bb0 , 0 , 2 , &cDatum ) ;
     cDatum = 0 ;
 
-    bt.newF( tinBaseP , LF , &bb0 , 0 , 1 , &cDatum ) ;
-    bt.newF( tinBaseP , LF , &bb2 , 0 , 2 , 0       ) ;
-    bt.newF( tinBaseP , LF , &bb0 , 0 , 2 , 0       ) ;
+    bt.newF( tin0P , LF , &bb0 , 0 , 1 , &cDatum ) ;
+    bt.newF( tin0P , LF , &bb2 , 0 , 2 , 0       ) ;
+    bt.newF( tin0P , LF , &bb0 , 0 , 2 , 0       ) ;
 
     byteT bb2 = 2 ;
     byteT bb0 = 0 ;
 
     countT cDatum = 0x44332211 ;
 
-    bitTreeC bt( tinBaseP , "foo" ) ;
+    bitTreeC bt( tin0P , "foo" ) ;
 {
 
 

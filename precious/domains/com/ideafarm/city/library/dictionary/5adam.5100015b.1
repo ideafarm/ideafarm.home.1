@@ -10,21 +10,21 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tin0P , T("\r\n\r\npress the enter key") ) ;
 
-sDoneS.waitF( tinBaseP ) ;
-sDoneR.waitF( tinBaseP ) ;
+sDoneS.waitF( tin0P ) ;
+sDoneR.waitF( tin0P ) ;
 bFire = 1 ;
-etThread.osSleepF( tinBaseP , TOCK * 16 ) ;
+etThread.osSleepF( tin0P , TOCK * 16 ) ;
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmSayF     , &sDoneS , flTHREADlAUNCH_null , 0 , 0 , (countT)&bFire , (countT)&sTick , (countT)&time1 , (countT)&time2 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmRefreshF , &sDoneR , flTHREADlAUNCH_null , 0 , 0 , (countT)&bFire , (countT)&sTick , (countT)&time1 , (countT)&time2 ) ; }
-signC sDoneS(  tinBaseP , TAG( TAGiDnULL ) ) ;
-signC sDoneR(  tinBaseP , TAG( TAGiDnULL ) ) ;
-signC sTick(  tinBaseP , TAG( TAGiDnULL ) ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmSayF     , &sDoneS , flTHREADlAUNCH_null , 0 , 0 , (countT)&bFire , (countT)&sTick , (countT)&time1 , (countT)&time2 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmRefreshF , &sDoneR , flTHREADlAUNCH_null , 0 , 0 , (countT)&bFire , (countT)&sTick , (countT)&time1 , (countT)&time2 ) ; }
+signC sDoneS(  tin0P , TAG( TAGiDnULL ) ) ;
+signC sDoneR(  tin0P , TAG( TAGiDnULL ) ) ;
+signC sTick(  tin0P , TAG( TAGiDnULL ) ) ;
 
 ZE( sCountT , time2 ) ;
 ZE(  countT , time1 ) ;
@@ -36,7 +36,7 @@ DONE( tmRefreshF )
 }
     ++ sTick ; // GIVE THIS SIGN ONE LAST TIME SO tmSayF CAN DETECT bFire AND END ITSELF
 
-    etThread.osTimeWatchF( tinBaseP , time1 , time2 , sTick , bFire ) ;
+    etThread.osTimeWatchF( tin0P , time1 , time2 , sTick , bFire ) ;
 
     sCountT& time2 = *(sCountT*)pTaskP->c4 ;
     countT&  time1 = *(countT*) pTaskP->c3 ;
@@ -51,9 +51,9 @@ DONE( tmSayF )
     ++ sTick ; // GIVE THIS SIGN ONE LAST TIME SO tmSayF CAN DETECT bFire AND END ITSELF
 
     }
-        if( !bFire ) etThread.strokeF( tinBaseP , T("\rthe time is now ")+TT(time1,time2) ) ;
+        if( !bFire ) etThread.strokeF( tin0P , T("\rthe time is now ")+TT(time1,time2) ) ;
         -- sTick ;
-        sTick.waitF( tinBaseP ) ;
+        sTick.waitF( tin0P ) ;
     {
     while( !bFire )
 

@@ -12,10 +12,10 @@
     }
         }
             }
-                default : { idHit = strIdF( tinBaseP , idFirstP , sttQuoteP , psttBigP[ CSpREFIX - 2 + idFirstP ] , psttBigP ) ; break ; }
+                default : { idHit = strIdF( tin0P , idFirstP , sttQuoteP , psttBigP[ CSpREFIX - 2 + idFirstP ] , psttBigP ) ; break ; }
                 }
                     break ;
-                    delF( tinBaseP , pstta ) ;_WQ
+                    delF( tin0P , pstta ) ;_WQ
     
                     }
                         if( cOpen ) idHit = 0 ;_WQ
@@ -25,14 +25,14 @@
                         if( !idHit ) ;
     
                         if( idHit && idFirstP > idHit + 1 ) idFirstP = idHit + 1 ; // IF WE FIND E.G. "()((()))()()()", WE WANT TO PROCESS EACH ONE, NOT JUMP TO THE END OF THIS STRING OF PARENS
-                        idHit = strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , pstta , psttBigP ) ;_WQ
+                        idHit = strIdAnyF( tin0P , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , pstta , psttBigP ) ;_WQ
                     {
                     while( idFirstP && !POOP && cOpen )
                     countT cOpen = 1 ;_WQ
                     ZE( boolT , bFound ) ;_WQ
     
-                    strFuseF( tinBaseP , pstta , stt2     ) ; ___( pstta ) ;_WQ
-                    strFuseF( tinBaseP , pstta , stt1 , 1 ) ; ___( pstta ) ;_WQ
+                    strFuseF( tin0P , pstta , stt2     ) ; ___( pstta ) ;_WQ
+                    strFuseF( tin0P , pstta , stt1 , 1 ) ; ___( pstta ) ;_WQ
                     ZE( strokeS* , pstta ) ;_WQ
                     else if( stt1 == S1C('<') ) stt2 = S1C('>') ;
                     else if( stt1 == S1C('{') ) stt2 = S1C('}') ;
@@ -51,7 +51,7 @@
         {
         if( idFirstP < psttBigP->idAdam )
     {
-    STRiDrECURSE( strIdMatchingF( tinBaseP , flagsStateP , idf , sttQuoteP , psttBigP , 1 ) )
+    STRiDrECURSE( strIdMatchingF( tin0P , flagsStateP , idf , sttQuoteP , psttBigP , 1 ) )
     _IO_
 
     }
@@ -64,7 +64,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/countT etherC::strIdMatchingF( tin0S& tinBaseP , flagsT& flagsStateP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* const psttBigP , sCountT idP )/*1*/
+/**//*1*/countT etherC::strIdMatchingF( tin0S& tin0P , flagsT& flagsStateP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* const psttBigP , sCountT idP )/*1*/
 */
   must not be 0
  psttBigP

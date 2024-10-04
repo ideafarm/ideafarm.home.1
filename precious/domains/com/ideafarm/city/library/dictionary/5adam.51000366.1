@@ -8,55 +8,55 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 #endif
 
-etThread.delF( tinBaseP , pbClick ) ;
-etThread.delF( tinBaseP , pbImage ) ;
-etThread.delF( tinBaseP , pbFace  ) ;
-etThread.delF( tinBaseP , postnu  ) ;
+etThread.delF( tin0P , pbClick ) ;
+etThread.delF( tin0P , pbImage ) ;
+etThread.delF( tin0P , pbFace  ) ;
+etThread.delF( tin0P , postnu  ) ;
 
 }
-    etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
-    etThread.strokeF( tinBaseP , T("\r")+TF1(etThread.os_cAllKidThreadsI_IF(tinBaseP)-cKidsBefore)+T(" clients are currently being served") ) ;
+    etThread.osSleepF( tin0P , TUCK * 0x40 ) ;
+    etThread.strokeF( tin0P , T("\r")+TF1(etThread.os_cAllKidThreadsI_IF(tin0P)-cKidsBefore)+T(" clients are currently being served") ) ;
 {
-while( etThread.os_cAllKidThreadsI_IF( tinBaseP ) > cKidsBefore )
+while( etThread.os_cAllKidThreadsI_IF( tin0P ) > cKidsBefore )
 
 }
     etThread = 0 ;
     }
         //U: CONJ: LEAK HERE pso
-        if( pso && !ether ) { ZE( countT , tid ) ; etThread.osThreadF( tinBaseP , tid , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pcp , (countT)pso ) ; }
-        etThread.strokeF( tinBaseP , T("\r")+TF1(++idClient) ) ;
-        sock.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ;
+        if( pso && !ether ) { ZE( countT , tid ) ; etThread.osThreadF( tin0P , tid , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pcp , (countT)pso ) ; }
+        etThread.strokeF( tin0P , T("\r")+TF1(++idClient) ) ;
+        sock.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
     {
     while( !etThread )
     ZE( countT , idClient ) ;
-    sock.listenF( tinBaseP ) ;
-    sock.bindF( tinBaseP , 8006 ) ;
-    socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    sock.listenF( tin0P ) ;
+    sock.bindF( tin0P , 8006 ) ;
+    socketC sock( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 {
 while( !ether )
-const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tinBaseP ) ;
+const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tin0P ) ;
 
 const countT pcp[] = { 0 , (countT)postnu , (countT)pbFace , cbFace , (countT)pbImage , cbImage , (countT)pbClick , cbClick , (countT)&cImages , (countT)&cClicks } ;
 ZE( countT , cClicks ) ;
 ZE( countT , cImages ) ;
 
-etThread.newF( tinBaseP , LF , postnu , COSTnu ) ;
+etThread.newF( tin0P , LF , postnu , COSTnu ) ;
 ZE( osTextT* , postnu ) ;
 
-ZE( byteT* , pbClick ) ; ZE( countT , cbClick ) ; etThread.boxGetShadowF( tinBaseP , pbClick , cbClick , T("///ideafarm/ephemeral/domains/com/ideafarm/tmp/7630104/reply.click") ) ; ___( pbClick ) ;
-ZE( byteT* , pbImage ) ; ZE( countT , cbImage ) ; etThread.boxGetShadowF( tinBaseP , pbImage , cbImage , T("///ideafarm/ephemeral/domains/com/ideafarm/tmp/7630104/reply.image") ) ; ___( pbImage ) ;
-ZE( byteT* , pbFace  ) ; ZE( countT , cbFace  ) ; etThread.boxGetShadowF( tinBaseP , pbFace  , cbFace  , T("///ideafarm/ephemeral/domains/com/ideafarm/tmp/7630104/reply.face" ) ) ; ___( pbFace  ) ;
+ZE( byteT* , pbClick ) ; ZE( countT , cbClick ) ; etThread.boxGetShadowF( tin0P , pbClick , cbClick , T("///ideafarm/ephemeral/domains/com/ideafarm/tmp/7630104/reply.click") ) ; ___( pbClick ) ;
+ZE( byteT* , pbImage ) ; ZE( countT , cbImage ) ; etThread.boxGetShadowF( tin0P , pbImage , cbImage , T("///ideafarm/ephemeral/domains/com/ideafarm/tmp/7630104/reply.image") ) ; ___( pbImage ) ;
+ZE( byteT* , pbFace  ) ; ZE( countT , cbFace  ) ; etThread.boxGetShadowF( tin0P , pbFace  , cbFace  , T("///ideafarm/ephemeral/domains/com/ideafarm/tmp/7630104/reply.face" ) ) ; ___( pbFace  ) ;
 
 LAUNCHhEAReNTER( tmHearEnterF , 8006 ) ;
 
-etThread.strokeF( tinBaseP , T("\"Lena\"\r\n\r\nMediaPlex Http Server\r\n\r\npress the Enter key to fire me\r\n\r\n") ) ;
+etThread.strokeF( tin0P , T("\"Lena\"\r\n\r\nMediaPlex Http Server\r\n\r\npress the Enter key to fire me\r\n\r\n") ) ;
 
 #if defined( NEVERdEFINED )
 
@@ -66,15 +66,15 @@ DONE( tmServeF )
 }
     DEL( pso ) ;
     etThread = 0 ;
-    if( !bAbort ) pso->readF( tinBaseP , (osTextT*)pcp[ 1 ] , COSTnu ) ;
+    if( !bAbort ) pso->readF( tin0P , (osTextT*)pcp[ 1 ] , COSTnu ) ;
 
     }
         default  : { bAbort = 1                                          ; break ; }
         }
             break ;
-            etThread.delF( tinBaseP , postr ) ;
-            pso->writeF( tinBaseP , postr , costr ) ;
-            countT costr = etThread.strMakeF( tinBaseP , LF , postr , T("HTTP/1.0 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tinBaseP),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
+            etThread.delF( tin0P , postr ) ;
+            pso->writeF( tin0P , postr , costr ) ;
+            countT costr = etThread.strMakeF( tin0P , LF , postr , T("HTTP/1.0 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
             ZE( osTextT* , postr ) ;
             textC tBody = tTitle+TF4(cImages,flFORMAT_NObASE,0xc,0xa)+T("    Impressions (estimate).  This is an estimate of the number of times someone viewed an image in this Datek Campaign.\r\n\r\n")+TF4(cClicks,flFORMAT_NObASE,0xc,0xa)+T("    Clicks.  This is the actual number of times that someone clicked into an image in this Datek Campaign.")+tFooter ;
 
@@ -114,17 +114,17 @@ DONE( tmServeF )
 
         {
         case 'r' :
-        case 'c' : { pso->writeF( tinBaseP , (byteT*)pcp[ 6  ] , pcp[ 7 ] ) ; cClicks ++ ; break ; }
-        case 'i' : { pso->writeF( tinBaseP , (byteT*)pcp[ 4  ] , pcp[ 5 ] ) ; cImages ++ ; break ; }
-        case 'f' : { pso->writeF( tinBaseP , (byteT*)pcp[ 2  ] , pcp[ 3 ] ) ; break ; }
+        case 'c' : { pso->writeF( tin0P , (byteT*)pcp[ 6  ] , pcp[ 7 ] ) ; cClicks ++ ; break ; }
+        case 'i' : { pso->writeF( tin0P , (byteT*)pcp[ 4  ] , pcp[ 5 ] ) ; cImages ++ ; break ; }
+        case 'f' : { pso->writeF( tin0P , (byteT*)pcp[ 2  ] , pcp[ 3 ] ) ; break ; }
     {
     switch( postc[ 5 ] )
     ZE( boolT , bAbort ) ;
 
-    pso->readF( tinBaseP , postc , sizeof postc ) ;
+    pso->readF( tin0P , postc , sizeof postc ) ;
     osTextT postc[ 0x6 ] ;
 
-    pso->etherF( tinBaseP , etThread ) ;
+    pso->etherF( tin0P , etThread ) ;
     countT&  cClicks = *(countT*)pcp[ 9 ] ;
     countT&  cImages = *(countT*)pcp[ 8 ] ;
     socketC* pso     = (socketC*)pTaskP->c2 ;

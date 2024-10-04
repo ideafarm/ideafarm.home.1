@@ -11,11 +11,11 @@
     }
         }
             __NZ( bDelete ) ;
-            boolT bDelete = bksData.readF( tinBaseP , pbP , cbP , *pHandleP , flBOOKScrEAD_STILLhUNGRYiSoK | flBOOKScrEAD_CURRENTbOOKoNLY ) ;
+            boolT bDelete = bksData.readF( tin0P , pbP , cbP , *pHandleP , flBOOKScrEAD_STILLhUNGRYiSoK | flBOOKScrEAD_CURRENTbOOKoNLY ) ;
             cbP = - 1 ;
             pbP = 0 ;
 
-            if( !*pHandleP ) bksData.selectBookF( tinBaseP , flBOOKScsELECT_WOTH ) ;
+            if( !*pHandleP ) bksData.selectBookF( tin0P , flBOOKScsELECT_WOTH ) ;
 
             booksC& bksData = *pJot ;
         {
@@ -46,7 +46,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT soulC::pbSoulF( tin0S& tinBaseP , const byteT*& pbP , countT& cbP , handleC* pHandleP )/*1*/
+/*1*/voidT soulC::pbSoulF( tin0S& tin0P , const byteT*& pbP , countT& cbP , handleC* pHandleP )/*1*/
 
 countT pcZe[] = { -(sCountT)FINGERnEG_SOULc , 1 , 0 } ;
 
@@ -79,7 +79,7 @@ the layout of the bytes is platform independent
   will point to an image
   must be 0
  pbP
- tinBaseP
+ tin0P
 parameters
   if *this does     use jotC then multiple images exist and the caller must call me repeatedly to obtain all images
   if *this does not use jotC then a single image is returned that includes a prefix

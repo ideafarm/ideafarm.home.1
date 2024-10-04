@@ -9,14 +9,14 @@
 
 REST
 
-etThread.osEditF( tinBaseP , tFile ) ; // THIS WILL ONLY BE USEFUL IF IFC HAS BEEN CONFIGURED TO USE AN EDITOR THAT CAN DISPLAY HEX
+etThread.osEditF( tin0P , tFile ) ; // THIS WILL ONLY BE USEFUL IF IFC HAS BEEN CONFIGURED TO USE AN EDITOR THAT CAN DISPLAY HEX
 
-etThread.delF( tinBaseP , pbr ) ;
-etThread.boxPutF( tinBaseP , tFile , pbr , cbr ) ;
+etThread.delF( tin0P , pbr ) ;
+etThread.boxPutF( tin0P , tFile , pbr , cbr ) ;
 TN( tFile , "///d/tmp/" ) ; tFile += TF1(DDNAME) ;
 
-etThread.delF( tinBaseP , pbq ) ;
-etThread.dnsReplyF( tinBaseP , pbr , cbr , pbq , str ) ;
+etThread.delF( tin0P , pbq ) ;
+etThread.dnsReplyF( tin0P , pbr , cbr , pbq , str ) ;
 ZE( countT , cbr ) ;
 ZE( byteT* , pbr ) ;
 
@@ -37,13 +37,13 @@ ZE( byteT* , pbr ) ;
         tName = TF1(4-cTries)+T(".")+tName ;
     {
     if( ps )
-    soulC* ps = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDtYPEdNSrEPLY_ANSWER ) ; ___( ps ) ;
+    soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDtYPEdNSrEPLY_ANSWER ) ; ___( ps ) ;
 {
 while( cTries -- )
 countT cTries = 4 ;
-stackC str( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
+stackC str( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
 
-etThread.dnsFormatQueryF( tinBaseP , pbq , cbq , tName , ifcIDtYPEdNSqUERY_A ) ; ___( pbq ) ;
+etThread.dnsFormatQueryF( tin0P , pbq , cbq , tName , ifcIDtYPEdNSqUERY_A ) ; ___( pbq ) ;
 ZE( countT , cbq ) ;
 ZE( byteT* , pbq ) ;
 

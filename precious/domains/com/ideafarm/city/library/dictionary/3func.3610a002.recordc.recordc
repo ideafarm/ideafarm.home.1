@@ -14,7 +14,7 @@
             *(countT*)vspIdgAccessBegun = idgAccess ;                                                                                                       // ... STORE MY idgAccess IN FIELD IDGaCCESSbEGUN OF RECORD pczNameP
             THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
             
-            countVSP vspIdgAccessBegun = listC::countIF( tinBaseP , hList , count2S( LISTnAMEsYS_IDGaCCESSbEGUN ) ) ;
+            countVSP vspIdgAccessBegun = listC::countIF( tin0P , hList , count2S( LISTnAMEsYS_IDGaCCESSbEGUN ) ) ;
         {
         if( !POOP && idgAccess )                                                                                                                            // IF !POOP AND pczNameP IS NOT THE globals RECORD ...
 
@@ -26,33 +26,33 @@
                 THREADmODE4rESTORE
                 countT*  pcIdgAccessBegun = vspIdgAccessBegun ;
                 THREADmODE4oN( flTHREADmODE4_ALLOWwRITEABLEpOINTERgET )
-                countVSP vspIdgAccessBegun = listC::countIF( tinBaseP , globals , count2S( LISTnAMEsYS_IDGaCCESSbEGUN ) ) ;
+                countVSP vspIdgAccessBegun = listC::countIF( tin0P , globals , count2S( LISTnAMEsYS_IDGaCCESSbEGUN ) ) ;
             {
             if( !POOP )
 
             __( (const countT&)(const poopC&)globals ) ;
-            recordC globals( tinBaseP , count4S( LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD ) , flLISToPEN_null , idGrabLayerP ) ;
+            recordC globals( tin0P , count4S( LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD ) , flLISToPEN_null , idGrabLayerP ) ;
         {
         if( !POOP && ( pczNameP[ 0 ] != LISTnAMEsYS_ROOT || pczNameP[ 1 ] != LISTnAMEsYS_ROOTaPPLICATION || pczNameP[ 2 ] != LISTnAMEsYS_GLOBALrECORD || pczNameP[ 3 ] ) )        // IF pczNameP DOES NOT NAME THE GLOBALS RECORD (TO AVOID INFINITE RECURSION) ...
 
         }
             __( !hList ) ;
-            listC::openIF( tinBaseP , hList , pczName , flagsP ) ;
-            thirdC::c_memcpyIF( tinBaseP , (byteT*)pczName , (byteT*)pczNameP , cba ) ;
+            listC::openIF( tin0P , hList , pczName , flagsP ) ;
+            thirdC::c_memcpyIF( tin0P , (byteT*)pczName , (byteT*)pczNameP , cba ) ;
         {
         if( !POOP )
         __Z( pczName ) ;
 
         }
-            PUSE.newF( tinBaseP , LF , *(byteT**)&pczName , cba ) ; ___( pczName ) ;
-            cba = sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tinBaseP , pczNameP ) ) ;
-            puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
+            PUSE.newF( tin0P , LF , *(byteT**)&pczName , cba ) ; ___( pczName ) ;
+            cba = sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pczNameP ) ) ;
+            puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ;
         {
         ZE( countT , cba ) ;
     {
     if( !POOP )
 
-    grabitx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    grabitx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     SCOOP
 
@@ -68,10 +68,10 @@ idgAccess( 0 )
 pEditOut( 0 ) ,
 flagsFieldOpen( flLISToPEN_null ) ,
 cFieldName( 0 ) ,
-hList( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ,
+hList( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ,
 pczName( 0 ) ,
-grabitx( tinBaseP , TAG( TAGiDnULL ) , 0 , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_SHARElAYER | flGRABITc_NOTjEALOUS , 0 , idGrabLayerP ) ,
-/*1*/recordC::recordC( tin0S& tinBaseP , const countT* const pczNameP , const flagsT flagsP , const countT idGrabLayerP ) :/*1*/
+grabitx( tin0P , TAG( TAGiDnULL ) , 0 , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_SHARElAYER | flGRABITc_NOTjEALOUS , 0 , idGrabLayerP ) ,
+/*1*/recordC::recordC( tin0S& tin0P , const countT* const pczNameP , const flagsT flagsP , const countT idGrabLayerP ) :/*1*/
 
 /**/
 */

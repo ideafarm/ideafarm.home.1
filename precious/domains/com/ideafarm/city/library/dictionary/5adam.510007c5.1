@@ -9,7 +9,7 @@
 
 REST
 
-etThread.traceF( tinBaseP , T("ok") ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 #endif
 
@@ -17,7 +17,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
     }
         }
-            etThread.traceF( tinBaseP , T("idSerial found:    ")+TF2(*(pcw++),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , T("idSerial found:    ")+TF2(*(pcw++),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         for( countT idSerial = 1 ; idSerial <= ccw ; idSerial ++ )
 
@@ -26,11 +26,11 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     {
     if( pbw && cbw )
 
-    fwsIn.getF( tinBaseP , pbw , cbw , TICK >> 2 , ( TICK >> 2 ) - sizeof( countT ) ) ;
+    fwsIn.getF( tin0P , pbw , cbw , TICK >> 2 , ( TICK >> 2 ) - sizeof( countT ) ) ;
     ZE( countT , cbw ) ;
     ZE( byteT* , pbw ) ;
 
-    fileWindowsC fwsIn( tinBaseP , etThread , tFile , flFILEwINDOW_DOnOTvALIDATE ) ;
+    fileWindowsC fwsIn( tin0P , etThread , tFile , flFILEwINDOW_DOnOTvALIDATE ) ;
 
 #else
 
@@ -45,12 +45,12 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     {
     if( pbw && cbw )
 
-    fwsOut.getF( tinBaseP , pbw , cbw , TICK >> 1 ) ;
+    fwsOut.getF( tin0P , pbw , cbw , TICK >> 1 ) ;
     ZE( countT , cbw ) ;
     ZE( byteT* , pbw ) ;
 
-    fileWindowsC fwsOut( tinBaseP , etThread , tFile , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
-    etThread.boxPutF( tinBaseP , tFile , "X" , 1 ) ;
+    fileWindowsC fwsOut( tin0P , etThread , tFile , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
+    etThread.boxPutF( tin0P , tFile , "X" , 1 ) ;
 
 #if defined( NEVERdEFINED )
 

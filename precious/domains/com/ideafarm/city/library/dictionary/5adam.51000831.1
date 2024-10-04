@@ -9,11 +9,11 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.delF( tinBaseP , pbPublicKey2 ) ;
-etThread.delF( tinBaseP , pbPublicKey1 ) ;
+etThread.delF( tin0P , pbPublicKey2 ) ;
+etThread.delF( tin0P , pbPublicKey1 ) ;
 
 // IF BOTH KEYS ARE LOST, THERE IS NO WAY TO RECOVER ACCESS TO THE HOME'S IDENTITY IN THE SYSTEM AND, TO CONTINUE TO USE THE HOME, A NEW HOME IDENTITY MUST BE PURCHASED
 // IF PUBLIC KEY 2 IS EVER USED, IT WILL IMMEDIATELY DISABLE PUBLIC KEY 1, WILL BECOME THE ACTIVE KEY, AND A NEW BACKUP KEY WILL BE IMMEDIATELY DISPENSED
@@ -25,9 +25,9 @@ etThread.delF( tinBaseP , pbPublicKey1 ) ;
 
 //U: NOTIFY THE PURCHASER OF THESE PUBLIC KEYS HERE ; ONCE I DELETE THESE BLOBS, THERE IS NO WAY TO RECOVER THEM (THEY ARE NOT STORED ANYWHERE)
 
-etThread.traceF( tinBaseP , T("[idjHomeIdg]:    ")+TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tin0P , T("[idjHomeIdg]:    ")+TF2(idgHome&~NM_HIGH,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-etThread.ifcCreateNewHomeF( tinBaseP , idgHome , pbPublicKey1 , cbPublicKey1 , pbPublicKey2 , cbPublicKey2 ) ;
+etThread.ifcCreateNewHomeF( tin0P , idgHome , pbPublicKey1 , cbPublicKey1 , pbPublicKey2 , cbPublicKey2 ) ;
 ZE( countT , cbPublicKey2  ) ;
 ZE( byteT* , pbPublicKey2  ) ;
 ZE( countT , cbPublicKey1  ) ;

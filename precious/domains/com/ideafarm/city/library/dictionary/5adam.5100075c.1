@@ -9,35 +9,35 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     }
         }
-            etThread.boxPutF( tinBaseP , tFile+T(".copy.after.")+tIdWindow , pbw , cbw ) ;
+            etThread.boxPutF( tin0P , tFile+T(".copy.after.")+tIdWindow , pbw , cbw ) ;
 
             for( countT offo = 0 ; offo < cbw ; offo ++ ) pbw[ offo ] = '7' ; // THIS WILL MODIFY THE INPUT FILE
 
-            etThread.boxPutF( tinBaseP , tFile+T(".copy.before.")+tIdWindow , pbw , cbw ) ;
-            //etThread.traceF( tinBaseP , T("[tIdWindow]:    ")+tIdWindow ) ;
+            etThread.boxPutF( tin0P , tFile+T(".copy.before.")+tIdWindow , pbw , cbw ) ;
+            //etThread.traceF( tin0P , T("[tIdWindow]:    ")+tIdWindow ) ;
             TN( tIdWindow , "" ) ; tIdWindow = TF3(++offWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
         {
         else
         if( !pbw || !cbw ) break ;
 
-        fws.getF( tinBaseP , pbw , cbw ) ;
+        fws.getF( tin0P , pbw , cbw ) ;
         ZE( countT , cbw ) ;
         ZE( byteT* , pbw ) ;
     {
     while( !ether )
     ZE( countT , offWindow ) ;
 
-    fileWindowsC fws( tinBaseP , etThread , tFile , flFILEwINDOW_WRITE ) ;
+    fileWindowsC fws( tin0P , etThread , tFile , flFILEwINDOW_WRITE ) ;
 {
 
 }
-    etThread.boxPutF( tinBaseP , tFile , pbo , sizeof pbo - 1 ) ;
+    etThread.boxPutF( tin0P , tFile , pbo , sizeof pbo - 1 ) ;
     byteT pbo[] = "abcdefghijklmnopqrstuvwxyz" ;
 {
 TN( tFile , "///d/tmp/alphabet.txt" ) ;

@@ -9,10 +9,10 @@
 
 REST
 
-etThread.strokeF( tinBaseP , T("elapsed time per 001: ")+TF1(((measureT)timeB1)*0x100/ct)+tc ) ;
-etThread.strokeF( tinBaseP , T("elapsed time: ")+TT(timeB1,timeB2)+tc ) ;
-etThread.osTimeSubtractF( tinBaseP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
-etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
+etThread.strokeF( tin0P , T("elapsed time per 001: ")+TF1(((measureT)timeB1)*0x100/ct)+tc ) ;
+etThread.strokeF( tin0P , T("elapsed time: ")+TT(timeB1,timeB2)+tc ) ;
+etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tin0P , timeB1 , timeB2 ) ;
 ZE( sCountT , timeB2 ) ;
 ZE( countT , timeB1 ) ;
 }
@@ -22,7 +22,7 @@ ZE( countT , timeB1 ) ;
 while( cTries -- )
 const countT ct = cTries ;
 countT cTries = 0x100000 ;
-etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
 ZE( sCountT , timeA2 ) ;
 ZE( countT , timeA1 ) ;
 ZE( countT , idCycle ) ;

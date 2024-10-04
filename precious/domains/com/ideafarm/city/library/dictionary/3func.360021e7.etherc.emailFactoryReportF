@@ -8,8 +8,8 @@
 
 
 }
-    boxPutF( tinBaseP , T("smtp.mailgun.org[internal]/b42/smtp/")+tHost+T("@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
-    traceF( tinBaseP , T("emailFactoryReportF [subject]: \"")+T(psttSubjectP)+T("\"") ) ;
+    boxPutF( tin0P , T("smtp.mailgun.org[internal]/b42/smtp/")+tHost+T("@ideafarm.com/ideafarm.factory.reports@gmail.com") , tBody ) ;
+    traceF( tin0P , T("emailFactoryReportF [subject]: \"")+T(psttSubjectP)+T("\"") ) ;
 
     if( psttBodyP && psttBodyP->idAdam ) tBody += T(psttBodyP)+T("\r\n") ;
     tBody += TT(timeN1,timeN2)+T(" ") ; //MY CELL PHONE LIMITS LENGTH OF SUBJECT; CAN PUT THIS INTO BODY IF NEEDED
@@ -19,8 +19,8 @@
     TN( tBody , "Subject: " ) ;
 
     }
-        if( !tAdam.csF( tinBaseP ) ) tAdam = TF2(((tin9S&)tinBaseP).pag1->idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ;
-        tAdam = T(mapAdam(((tin9S&)tinBaseP).pag1->idAdam)) ;
+        if( !tAdam.csF( tin0P ) ) tAdam = TF2(((tin9S&)tin0P).pag1->idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ;
+        tAdam = T(mapAdam(((tin9S&)tin0P).pag1->idAdam)) ;
         mapCTC& mapAdam = processGlobal4S::_processGlobal4I_IF().mapAdam ;
     {
     TN( tAdam , "" ) ;
@@ -31,17 +31,17 @@
     TN( tHome , "" ) ;
 
     }
-        if( !tHost.csF( tinBaseP ) ) tHost = T("factories") ;
-        delF( tinBaseP , postComputer ) ;
+        if( !tHost.csF( tin0P ) ) tHost = T("factories") ;
+        delF( tin0P , postComputer ) ;
         tHost = T(postComputer) ;
-        third.s_getComputerNameF( tinBaseP , postComputer ) ; ___( postComputer ) ;
+        third.s_getComputerNameF( tin0P , postComputer ) ; ___( postComputer ) ;
         ZE( osTextT* , postComputer ) ;
     {
     TN( tHost , "" ) ;
 
-    textC tTime( ifcIDtEXTgEN_TIMEnOWfOREIGN , tinBaseP , TAG( TAGiDnULL ) ) ;
+    textC tTime( ifcIDtEXTgEN_TIMEnOWfOREIGN , tin0P , TAG( TAGiDnULL ) ) ;
 
-    osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+    osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT  , timeN1 ) ;
 
@@ -55,7 +55,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::emailFactoryReportF( tin0S& tinBaseP , const strokeS* const psttSubjectP , const strokeS* const psttBodyP )/*1*/
+/*1*/voidT etherC::emailFactoryReportF( tin0S& tin0P , const strokeS* const psttSubjectP , const strokeS* const psttBodyP )/*1*/
 
 /**/
 

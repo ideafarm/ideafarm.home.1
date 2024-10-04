@@ -8,31 +8,31 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
-    etThread.osSleepF( tinBaseP , TOCK * 8 ) ;
-    etThread.delF( tinBaseP , psttTime ) ;
-    etThread.strokeF( tinBaseP , T("\r")+T(psttTime) ) ;
-    etThread.strFromTimeF( tinBaseP , psttTime , time1 , time2 ) ; ___( psttTime ) ;
+    etThread.osSleepF( tin0P , TOCK * 8 ) ;
+    etThread.delF( tin0P , psttTime ) ;
+    etThread.strokeF( tin0P , T("\r")+T(psttTime) ) ;
+    etThread.strFromTimeF( tin0P , psttTime , time1 , time2 ) ; ___( psttTime ) ;
     ZE( strokeS* , psttTime ) ;
-    etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
+    etThread.osTimeNowF( tin0P , time1 , time2 ) ;
     ZE( sCountT , time2 ) ;
     ZE( countT , time1 ) ;
 {
 while( !ether )
-etThread.strokeF( tinBaseP , T("press the enter key to fire me\r\n\r\n") ) ;
+etThread.strokeF( tin0P , T("press the enter key to fire me\r\n\r\n") ) ;
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmQuitF ) ; }
-//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmQuitF ) ; }
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
 
 TODO
 
 DONE( tmQuitF )
 
 FIREmYSELF ;
-etThread.delF( tinBaseP , pstte ) ;
-etThread.faceHearF( tinBaseP , pstte ) ;
+etThread.delF( tin0P , pstte ) ;
+etThread.faceHearF( tin0P , pstte ) ;
 ZE( strokeS* , pstte ) ;
 
 TASK( tmQuitF )

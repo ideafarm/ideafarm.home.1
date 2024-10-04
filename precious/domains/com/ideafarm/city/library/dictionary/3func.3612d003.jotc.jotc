@@ -8,9 +8,9 @@
 
 
 }
-    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("jotC + [this,tag,name]: ")+TF2((countT)this,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(tagHighNibble,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+T(postNameP) ) ;
+    //etherC::etRockIF( tin0P ).traceF( tin0P , T("jotC + [this,tag,name]: ")+TF2((countT)this,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(tagHighNibble,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+T(postNameP) ) ;
 
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , pcpIdBookSizePairs ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , pcpIdBookSizePairs ) ;
     }
         idMaxWritten += cJots ;
         }
@@ -31,7 +31,7 @@
     {
     if( pcpIdBookSizePairs )
 
-    bksIndex.cbEachBookF( tinBaseP , pcpIdBookSizePairs ) ;
+    bksIndex.cbEachBookF( tin0P , pcpIdBookSizePairs ) ;
     ZE( countT* , pcpIdBookSizePairs ) ;
 
     idMaxWritten = idLathRead = tagHighNibble ; // SEE jotC::writeF FOR THE SPECIFICATION OF THE BIT LAYOUT OF AN idJot VALUE
@@ -47,26 +47,28 @@
             }
                 break ;
                 idSlotJot = 1 + offr ;
-                ((tin9S&)tinBaseP).ppJot[ offr ] = this ;
+                ((tin9S&)tin0P).ppJot[ offr ] = this ;
             {
-            if( !((tin9S&)tinBaseP).ppJot[ offr ] )
+            if( !((tin9S&)tin0P).ppJot[ offr ] )
         {
         for( ; offr < CsLOTSjOTrEGISTRY ; offr ++ )
         ZE( countT , offr ) ;
+
+        if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
     {
     if( !( F(flagsP) & flJOTc_DOnOTrEGISTER ) )
 
-    //if( ((tin9S&)tinBaseP).pEther ) ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("jotC [postNameP]:    ")+T(postNameP) ) ;
+    //if( ((tin9S&)tin0P).pEther ) ((tin9S&)tin0P).pEther->traceF( tin0P , T("jotC [postNameP]:    ")+T(postNameP) ) ;
 
     }
         }
             }
-                //if( ((tin9S&)tinBaseP).pEther ) ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("jotC / existed       [postNameP]:    ")+T(postNameP) ) ;
+                //if( ((tin9S&)tin0P).pEther ) ((tin9S&)tin0P).pEther->traceF( tin0P , T("jotC / existed       [postNameP]:    ")+T(postNameP) ) ;
                 *(flagsT*)&flagsCt |= flJOTc_FILEeXISTED ;
             {
             else
             }
-                //if( ((tin9S&)tinBaseP).pEther ) ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("jotC / newly created [postNameP]:    ")+T(postNameP) ) ;
+                //if( ((tin9S&)tin0P).pEther ) ((tin9S&)tin0P).pEther->traceF( tin0P , T("jotC / newly created [postNameP]:    ")+T(postNameP) ) ;
             {
             if( !bDataExisted )
 
@@ -134,11 +136,11 @@ cIndexEntriesPerIndexBook( bksIndex.cbBodyBookF() / sizeof( handle0111C ) ) ,
     F(flagsP) & flJOTc_PRIVATE
     ,
             : T("") )+T(postNameP)+T(".jotC.index")
-            ? TF2(((tin9S&)tinBaseP).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tin9S&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")
+            ? TF2(((tin9S&)tin0P).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tin9S&)tin0P).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")
         F(flagsP) & flJOTc_PRIVATE
     (
     ,
-    tinBaseP , TAG( TAGiDnULL )
+    tin0P , TAG( TAGiDnULL )
 (
 bksIndex
 ) ,
@@ -180,18 +182,18 @@ bksIndex
     ,
     )
             : T("") )+T(postNameP)+T(".jotC.data"
-            ? TF2(((tin9S&)tinBaseP).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tin9S&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")
+            ? TF2(((tin9S&)tin0P).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tin9S&)tin0P).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")
         F(flagsP) & flJOTc_PRIVATE
     (
     ,
-    tinBaseP , TAG( TAGiDnULL )
+    tin0P , TAG( TAGiDnULL )
 (
 bksData
-_idThreadCt( ((tin9S&)tinBaseP).monitor.idThread ) ,
+_idThreadCt( ((tin9S&)tin0P).monitor.idThread ) ,
 tagHighNibble( 0 ) ,
 idSlotJot( 0 ) ,
-grabC( tinBaseP , TAG( TAGiDnULL ) , flagsGrabP | flGRABc_NOTjEALOUS , idGrabLayerP ) ,     // flGRABc_NOTjEALOUS IS ADDED BECAUSE USING ME WILL USUALLY OR ALWAYS RESULT IN booksC BEING GRABBED
-/*1*/jotC::jotC( tin0S& tinBaseP , const osTextT* const postNameP , const flagsT flagsP , const countT cKeepInactiveP , const countT cbDataBookP , const countT cIndexEntriesBookP , countT idGrabLayerP , flagsT flagsGrabP , countT idMemorySpaceP ) :/*1*/
+grabC( tin0P , TAG( TAGiDnULL ) , flagsGrabP | flGRABc_NOTjEALOUS , idGrabLayerP ) ,     // flGRABc_NOTjEALOUS IS ADDED BECAUSE USING ME WILL USUALLY OR ALWAYS RESULT IN booksC BEING GRABBED
+/*1*/jotC::jotC( tin0S& tin0P , const osTextT* const postNameP , const flagsT flagsP , const countT cKeepInactiveP , const countT cbDataBookP , const countT cIndexEntriesBookP , countT idGrabLayerP , flagsT flagsGrabP , countT idMemorySpaceP ) :/*1*/
 
 // IF flJOTc_DOnOTrEGISTER THEN I WILL NOT SET ANY BITS IN NM_HIGH FOR idJot VALUES
 

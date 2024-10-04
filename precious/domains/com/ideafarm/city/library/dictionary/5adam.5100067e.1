@@ -10,44 +10,44 @@
 REST
 
 CONoUTrAW( "bye\r\n" ) ;
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 CONoUTrAW( "done.\r\n" ) ;
 
-etThread.delF( tinBaseP , psttr ) ;
+etThread.delF( tin0P , psttr ) ;
 CONoUTrAW( T(psttr) ) ;
 
 }
-    etThread.delF( tinBaseP , ppsttSmallBigComment[ ( offSmallBig * 3 ) + 2 ] ) ;
-    etThread.delF( tinBaseP , ppsttSmallBigComment[ ( offSmallBig * 3 ) + 1 ] ) ;
-    etThread.delF( tinBaseP , ppsttSmallBigComment[   offSmallBig * 3       ] ) ;
+    etThread.delF( tin0P , ppsttSmallBigComment[ ( offSmallBig * 3 ) + 2 ] ) ;
+    etThread.delF( tin0P , ppsttSmallBigComment[ ( offSmallBig * 3 ) + 1 ] ) ;
+    etThread.delF( tin0P , ppsttSmallBigComment[   offSmallBig * 3       ] ) ;
 
-    etThread.strFuseF( tinBaseP , psttr , T("etherCstrIdF() returned ")+TF2(idFound,flFORMAT_NObIGITvALUES)+T(" and now idf is ")+TF2(idf,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    etThread.strFuseF( tin0P , psttr , T("etherCstrIdF() returned ")+TF2(idFound,flFORMAT_NObIGITvALUES)+T(" and now idf is ")+TF2(idf,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
 
-    countT idFound = etThread.strIdF( tinBaseP , idf , sttq , ppsttSmallBigComment[ offSmallBig * 3 ] , ppsttSmallBigComment[ ( offSmallBig * 3 ) + 1 ] , idl , 1 ) ;
+    countT idFound = etThread.strIdF( tin0P , idf , sttq , ppsttSmallBigComment[ offSmallBig * 3 ] , ppsttSmallBigComment[ ( offSmallBig * 3 ) + 1 ] , idl , 1 ) ;
     ZE( countT , idl ) ;
     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
     countT  idf = 1 ;
 
-    etThread.delF( tinBaseP , psttDumpBig   ) ;
-    etThread.delF( tinBaseP , psttDumpSmall ) ;
+    etThread.delF( tin0P , psttDumpBig   ) ;
+    etThread.delF( tin0P , psttDumpSmall ) ;
 
-    etThread.strFuseF( tinBaseP , psttr , T(psttDumpBig)+T("\r\n\r\n") ) ;
-    etThread.strFuseF( tinBaseP , psttr , T("\r\nbig  :    \"")+T(ppsttSmallBigComment[ ( offSmallBig * 3 ) + 1 ])+T("\"\r\n") ) ;
+    etThread.strFuseF( tin0P , psttr , T(psttDumpBig)+T("\r\n\r\n") ) ;
+    etThread.strFuseF( tin0P , psttr , T("\r\nbig  :    \"")+T(ppsttSmallBigComment[ ( offSmallBig * 3 ) + 1 ])+T("\"\r\n") ) ;
 
-    etThread.strFuseF( tinBaseP , psttr , T(psttDumpSmall)+T("\r\n") ) ;
-    etThread.strFuseF( tinBaseP , psttr , T("\r\nsmall:    \"")+T(ppsttSmallBigComment[   offSmallBig * 3       ])+T("\"\r\n") ) ;
+    etThread.strFuseF( tin0P , psttr , T(psttDumpSmall)+T("\r\n") ) ;
+    etThread.strFuseF( tin0P , psttr , T("\r\nsmall:    \"")+T(ppsttSmallBigComment[   offSmallBig * 3       ])+T("\"\r\n") ) ;
 
-    etThread.etherC::strDumpStrokesIF( tinBaseP , psttDumpBig   , ppsttSmallBigComment[ ( offSmallBig * 3 ) + 1 ] , tn ) ; ___( psttDumpBig   ) ;
-    etThread.etherC::strDumpStrokesIF( tinBaseP , psttDumpSmall , ppsttSmallBigComment[   offSmallBig * 3       ] , tn ) ; ___( psttDumpSmall ) ;
+    etThread.etherC::strDumpStrokesIF( tin0P , psttDumpBig   , ppsttSmallBigComment[ ( offSmallBig * 3 ) + 1 ] , tn ) ; ___( psttDumpBig   ) ;
+    etThread.etherC::strDumpStrokesIF( tin0P , psttDumpSmall , ppsttSmallBigComment[   offSmallBig * 3       ] , tn ) ; ___( psttDumpSmall ) ;
     ZE( strokeS* , psttDumpBig   ) ;
     ZE( strokeS* , psttDumpSmall ) ;
 
-    etThread.strFuseF( tinBaseP , psttr , T(USCORE79 "\r\n\r\n")+T(ppsttSmallBigComment[offSmallBig*3+2])+T(":\r\n" USCORE79 "\r\n") ) ;
+    etThread.strFuseF( tin0P , psttr , T(USCORE79 "\r\n\r\n")+T(ppsttSmallBigComment[offSmallBig*3+2])+T(":\r\n" USCORE79 "\r\n") ) ;
 {
 for( countT offSmallBig = 0 ; offSmallBig < cSmallBigComment ; offSmallBig ++ )
 TN( tn , "\r\n" ) ;
 
-etThread.strMakeF( tinBaseP , LF , psttr , 0 , TOCK ) ; ___( psttr ) ;
+etThread.strMakeF( tin0P , LF , psttr , 0 , TOCK ) ; ___( psttr ) ;
 ZE( strokeS* , psttr ) ;
 
 #endif
@@ -210,17 +210,17 @@ ZE( strokeS* , psttr ) ;
 {
 
 }
-    etThread.delF( tinBaseP , psttBig ) ;
+    etThread.delF( tin0P , psttBig ) ;
     LOADsb( "mark:sa_SSSmARKcONTROL repeat variable match" )
 
     TN( tBig , psttBig ) ;
 
     }
         if( ostg == 0xff ) break ;
-        etThread.strFuseF( tinBaseP , psttBig , S1C( ostg ) ) ;
+        etThread.strFuseF( tin0P , psttBig , S1C( ostg ) ) ;
     {
     for( osTextT ostg = 0 ;; ostg ++ )
-    etThread.strMakeF( tinBaseP , LF , psttBig , 0 , TUCK << 1 ) ; ___( psttBig ) ;
+    etThread.strMakeF( tin0P , LF , psttBig , 0 , TUCK << 1 ) ; ___( psttBig ) ;
     ZE( strokeS* , psttBig ) ;
 
     ;
@@ -235,17 +235,17 @@ ZE( strokeS* , psttr ) ;
 {
 
 }
-    etThread.delF( tinBaseP , psttBig ) ;
+    etThread.delF( tin0P , psttBig ) ;
     LOADsb( "mark:sa_SSSmARKgRAPHIC repeat variable match" )
 
     TN( tBig , psttBig ) ;
 
     }
         if( !ostg ) break ;
-        etThread.strFuseF( tinBaseP , psttBig , S1C( ostg ) ) ;
+        etThread.strFuseF( tin0P , psttBig , S1C( ostg ) ) ;
     {
     for( osTextT ostg = 0xff ;; ostg -- )
-    etThread.strMakeF( tinBaseP , LF , psttBig , 0 , TUCK << 1 ) ; ___( psttBig ) ;
+    etThread.strMakeF( tin0P , LF , psttBig , 0 , TUCK << 1 ) ; ___( psttBig ) ;
     ZE( strokeS* , psttBig ) ;
 
     ;
@@ -857,16 +857,16 @@ ZE( strokeS* , psttr ) ;
 
 #if defined( NEVERdEFINED )
 
-thirdC::c_memsetIF( tinBaseP , (byteT*)ppsttSmallBigComment , sizeof ppsttSmallBigComment ) ;
+thirdC::c_memsetIF( tin0P , (byteT*)ppsttSmallBigComment , sizeof ppsttSmallBigComment ) ;
 strokeS* ppsttSmallBigComment[ TUCK * 3 ] ;
 ZE( countT , cSmallBigComment ) ;
 
 TODO
 
     cSmallBigComment ++ ;
-    etThread.strMakeF( tinBaseP , LF , ppsttSmallBigComment[ ( cSmallBigComment * 3 ) + 2 ] , T(postCommentP) ) ; ___( ppsttSmallBigComment[ ( cSmallBigComment * 3 ) + 2 ] ) ;  \
-    etThread.strMakeF( tinBaseP , LF , ppsttSmallBigComment[ ( cSmallBigComment * 3 ) + 1 ] , tBig            ) ; ___( ppsttSmallBigComment[ ( cSmallBigComment * 3 ) + 1 ] ) ;  \
-    etThread.strMakeF( tinBaseP , LF , ppsttSmallBigComment[   cSmallBigComment * 3       ] , tSmall          ) ; ___( ppsttSmallBigComment[   cSmallBigComment * 3       ] ) ;  \
+    etThread.strMakeF( tin0P , LF , ppsttSmallBigComment[ ( cSmallBigComment * 3 ) + 2 ] , T(postCommentP) ) ; ___( ppsttSmallBigComment[ ( cSmallBigComment * 3 ) + 2 ] ) ;  \
+    etThread.strMakeF( tin0P , LF , ppsttSmallBigComment[ ( cSmallBigComment * 3 ) + 1 ] , tBig            ) ; ___( ppsttSmallBigComment[ ( cSmallBigComment * 3 ) + 1 ] ) ;  \
+    etThread.strMakeF( tin0P , LF , ppsttSmallBigComment[   cSmallBigComment * 3       ] , tSmall          ) ; ___( ppsttSmallBigComment[   cSmallBigComment * 3       ] ) ;  \
     __( cSmallBigComment * 3 + 2 >= sizeof ppsttSmallBigComment / sizeof ppsttSmallBigComment[ 0 ] ) ;                                                                  \
                                                                                                                                                                         \
 #define LOADsb(postCommentP)                                                                                                                              \

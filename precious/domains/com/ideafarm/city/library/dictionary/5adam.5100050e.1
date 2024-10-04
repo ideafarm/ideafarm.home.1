@@ -8,9 +8,9 @@
 
 REST
 
-sgnDone_tmWorkF.waitF( tinBaseP ) ;
+sgnDone_tmWorkF.waitF( tin0P ) ;
 etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
-signC sgnDone_tmWorkF( tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -20,14 +20,14 @@ DONE( tmWorkF )
 
         }
             }
-                ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x10 ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                ++ s ; ether.osSleepF( tin0P , TOCK * 0x10 ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
 
             //LOGrAW3( "ifcIDaDAM_HOMEfLAGS [home.flags]: " , home.flags , "\r\n" ) ;
 
-            //((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttRoster ) ;
-            //rosterF( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , psttRoster ) ; ___( psttRoster ) ;
+            //((tin9S&)tin0P).zEtScratch->delF( tin0P , psttRoster ) ;
+            //rosterF( tin0P , *((tin9S&)tin0P).zEtScratch , psttRoster ) ; ___( psttRoster ) ;
             //ZE( strokeS* , psttRoster ) ;
 
             }
@@ -40,11 +40,11 @@ DONE( tmWorkF )
                 ZE( flagsT , flagsNew ) ;
                 ZE( flagsT , flagsOld ) ;
 
-                etThread.traceF( tinBaseP , T("error:  IPDOS (tm) on this computer is stale.  please obtain a fresh (current) copy") ) ;
+                etThread.traceF( tin0P , T("error:  IPDOS (tm) on this computer is stale.  please obtain a fresh (current) copy") ) ;
             {
-            if( bDnsRefusedVersionF( tinBaseP , tVersionMe ) )
+            if( bDnsRefusedVersionF( tin0P , tVersionMe ) )
 
-            //OLD PRODUCTION: if( bOkDnsValueF( tinBaseP , tTime ) || bOkDnsValueF( tinBaseP , tGoogle ) ) flagsNew |= flHOMEs_ONLINE ;
+            //OLD PRODUCTION: if( bOkDnsValueF( tin0P , tTime ) || bOkDnsValueF( tin0P , tGoogle ) ) flagsNew |= flHOMEs_ONLINE ;
 
             }
                 while( flagsOld != setIfEqualsAM( home.flags , flagsNew , flagsOld ) ) ;
@@ -56,12 +56,12 @@ DONE( tmWorkF )
                 ZE( flagsT , flagsNew ) ;
                 ZE( flagsT , flagsOld ) ;
             {
-            if( bOkDnsValueF( tinBaseP , tIdeafarm ) )
+            if( bOkDnsValueF( tin0P , tIdeafarm ) )
 
             //tmWatchF WILL QUIT IF IT EVER SEES THE flHOMEs_VERSIONrEFUSED FLAG
         {
         while( !etThread && !ether )
-        etherC& etRock = etherC::etRockIF( tinBaseP ) ;
+        etherC& etRock = etherC::etRockIF( tin0P ) ;
         TN( tTimeHttp , "www.time.gov//http//" ) ;
         TN( tGoogleHttp , "www.google.com//http//" ) ;
         TN( tRosterHttp  , "www.ideafarm.com//http//" ) ;
@@ -77,9 +77,9 @@ DONE( tmWorkF )
         //ENABLE WO OF THESE LINES TO VERIFY THAT THE IPDOS SYSTEM SHUTS DOWN AS SOON AS THE COMPUTER IS ONLINE
 
         THREADmODE2oN( flTHREADmODE2_QUIETiMPOTENCE )
-        etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
+        etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 
-        if( etThread.diskIdF( tinBaseP , T("///c") ) == IDcOMPUTER_IPDOSmASTERcRAFTWORK ) etThread.osThreadF( TaRG1( tmUpd8PaidHListF ) ) ; //U:: USE A SETTINGS FILE
+        if( etThread.diskIdF( tin0P , T("///c") ) == IDcOMPUTER_IPDOSmASTERcRAFTWORK ) etThread.osThreadF( TaRG1( tmUpd8PaidHListF ) ) ; //U:: USE A SETTINGS FILE
         //U:: 20200920@1855: THIS SHOULD BE DONE BY factory3-5, AND IT SHOULD BE DONE IN A WAY THAT AVOIDS SPF (SINGLE POINT OF FAILURE) SO THAT IT WORKS EVEN IF ALL BUT WO FACTORY IS DOWN
 
         etThread.osThreadF( TaRG1( tmGetIdHomeF ) ) ;
@@ -87,8 +87,8 @@ DONE( tmWorkF )
     #if defined( NEVERdEFINED )
 
     }
-        etherC::loafIF( tinBaseP ) ;
-        ether.ifcHireF( tinBaseP , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //MUST HIRE PISS EVEN IF NO PAID PRIVILEGES IN ORDER TO ALLOW USER TO UPDATE SETTINGS
+        etherC::loafIF( tin0P ) ;
+        ether.ifcHireF( tin0P , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //MUST HIRE PISS EVEN IF NO PAID PRIVILEGES IN ORDER TO ALLOW USER TO UPDATE SETTINGS
 
         while( flagsOld != setIfEqualsAM( home.flags , flagsNew , flagsOld ) ) ;
         }
@@ -109,57 +109,57 @@ TASK( tmWorkF )
 DONE( tmUpd8PaidHListF )
 
 }
-    ether.osSleepF( tinBaseP , TOCK << 4 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-    //etThread.traceF( tinBaseP , T("napping for 01 tock") ) ;
+    ether.osSleepF( tin0P , TOCK << 4 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    //etThread.traceF( tin0P , T("napping for 01 tock") ) ;
 
-    //etThread.traceF( tinBaseP , T("cHomes: ")+TF2(cHomes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etThread.traceF( tin0P , T("cHomes: ")+TF2(cHomes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     
     }
         while( ~hFind && !ether && !POOP ) ;
         }
             DEL( pInfo ) ;
             }
-                etThread.delF( tinBaseP , psttShorter ) ;
-                etThread.fileWriteF( tinBaseP , fiPaid , tOut , tOut.csF( tinBaseP ) ) ;
+                etThread.delF( tin0P , psttShorter ) ;
+                etThread.fileWriteF( tin0P , fiPaid , tOut , tOut.csF( tin0P ) ) ;
                 TN( tOut , psttShorter ) ; tOut += tcr ;
         
-                etThread.delF( tinBaseP , psttShort ) ;
-                etThread.strSubstringF( tinBaseP , psttShorter , idf , idl , psttShort ) ; ___( psttShorter ) ;
+                etThread.delF( tin0P , psttShort ) ;
+                etThread.strSubstringF( tin0P , psttShorter , idf , idl , psttShort ) ; ___( psttShorter ) ;
                 countT idl = psttShort->idAdam - 9 ; // REMOVE ".home.txt"
                 countT idf = 1 ;
                 ZE( strokeS* , psttShorter ) ;
         
-                if( !( cHomes % TUCK ) ) etThread.traceF( tinBaseP , psttShort ) ;
+                if( !( cHomes % TUCK ) ) etThread.traceF( tin0P , psttShort ) ;
         
-                etThread.delF( tinBaseP , psttPath ) ;
+                etThread.delF( tin0P , psttPath ) ;
                 ___( psttShort ) ;
                 ___( psttPath ) ;
-                etThread.strBisectF( tinBaseP , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
+                etThread.strBisectF( tin0P , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
                 ZE( strokeS* , psttShort ) ;
                 ZE( strokeS* , psttPath ) ;
             {
             if( pInfo && pInfo->psttIfoName && pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam != '/' )
-            etThread.diskFindFileOrDirF( tinBaseP , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
+            etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
         
             cHomes ++ ;
         {
         do
-        handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+        handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
         TN( tSlash , "/" ) ;
         TN( tcr , "\r\n" ) ;
-        fileC fiPaid( tinBaseP , (strokeS*)T("///ideafarm/tmp/ipdos.home.privileges/!paid.txt") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+        fileC fiPaid( tin0P , (strokeS*)T("///ideafarm/tmp/ipdos.home.privileges/!paid.txt") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
 
-        patternC pat( tinBaseP , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-        fileNameC fnLike( tinBaseP , etThread , tLike ) ;
+        patternC pat( tin0P , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+        fileNameC fnLike( tin0P , etThread , tLike ) ;
     {
-    if( etThread.diskFileExistsF( tinBaseP , tLike ) )
+    if( etThread.diskFileExistsF( tin0P , tLike ) )
     TN( tLike , "///ideafarm/tmp/ipdos.home.registry/*.home.txt" ) ;
     ZE( countT , cHomes ) ;
 {
 while( !ether && !POOP )
-etherC& etRock = etherC::etRockIF( tinBaseP ) ;
+etherC& etRock = etherC::etRockIF( tin0P ) ;
 
 TASK( tmUpd8PaidHListF )
 
@@ -168,16 +168,16 @@ DONE( tmGetIdHomeF )
 }
     }
         }
-            ether.osSleepF( tinBaseP , bPaid ? TICK << 7 : TOCK << 4 ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-            etThread.traceF( tinBaseP , T(bPaid?"home privileges check / napping for 01 tick before checking again":"home privileges check / napping for 01 tock before checking again") ) ;
+            ether.osSleepF( tin0P , bPaid ? TICK << 7 : TOCK << 4 ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+            etThread.traceF( tin0P , T(bPaid?"home privileges check / napping for 01 tick before checking again":"home privileges check / napping for 01 tock before checking again") ) ;
 
             }
                 }
-                    etThread.delF( tinBaseP , postPaidList ) ;
+                    etThread.delF( tin0P , postPaidList ) ;
                     }
                         }
-                            ether.ifcHireF( tinBaseP , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //MUST HIRE PISS EVEN IF NO PAID PRIVILEGES IN ORDER TO ALLOW USER TO UPDATE SETTINGS
+                            ether.ifcHireF( tin0P , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //MUST HIRE PISS EVEN IF NO PAID PRIVILEGES IN ORDER TO ALLOW USER TO UPDATE SETTINGS
                             bPissHired = 1 ;
                         {
                         if( !bPissHired )
@@ -193,7 +193,7 @@ DONE( tmGetIdHomeF )
                             ZE( flagsT , flagsOld ) ;
 
                             }
-                                etThread.traceF( tinBaseP , T("this home does NOT have paid privileges") ) ;
+                                etThread.traceF( tin0P , T("this home does NOT have paid privileges") ) ;
                                 bSaidPaid    = 0 ;
                                 bSaidNotPaid = 1 ;
                             {
@@ -202,7 +202,7 @@ DONE( tmGetIdHomeF )
                         else
                         }
                             //break ;
-                            //ether.ifcHireF( tinBaseP , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                            //ether.ifcHireF( tin0P , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
                             //TO SUPPRESS CONTINUED CHECKING, HIRE AND BREAK HERE
 
                             while( flagsOld != setIfEqualsAM( home.flags , flagsNew , flagsOld ) ) ;
@@ -217,13 +217,13 @@ DONE( tmGetIdHomeF )
                             bPaid = 1 ;
 
                             }
-                                etThread.traceF( tinBaseP , T("this home has paid privileges") ) ;
+                                etThread.traceF( tin0P , T("this home has paid privileges") ) ;
                                 bSaidNotPaid = 0 ;
                                 bSaidPaid    = 1 ;
                             {
                             if( !bSaidPaid )
                         {
-                        if( thirdC::c_strstrIF( tinBaseP , postPaidList , home.postIdHomeGlobal ) )
+                        if( thirdC::c_strstrIF( tin0P , postPaidList , home.postIdHomeGlobal ) )
 
                         LOGrAW( "\r\n\r\n" ) ;
                         LOGrAW( postPaidList ) ;
@@ -233,29 +233,29 @@ DONE( tmGetIdHomeF )
                     {
                     else if( postPaidList && costPaidList )
                     }
-                        etThread.traceF( tinBaseP , T("home privileges check / could not download \"")+tShort+T("\" from \"")+tRemoteHomePrivileges+T("\" / will nap for 01 tock and then retry") ) ;
+                        etThread.traceF( tin0P , T("home privileges check / could not download \"")+tShort+T("\" from \"")+tRemoteHomePrivileges+T("\" / will nap for 01 tock and then retry") ) ;
                         POOPR
                     {
                     if( POOP )
-                    cloud.pullFileF( tinBaseP , postPaidList , costPaidList , tRemoteHomePrivileges , tShort , 1 ) ; ___( postPaidList ) ;
+                    cloud.pullFileF( tin0P , postPaidList , costPaidList , tRemoteHomePrivileges , tShort , 1 ) ; ___( postPaidList ) ;
                     ZE( countT , costPaidList ) ;
                     ZE( byteT* , postPaidList ) ;
                 {
                 else
                 }
-                    etThread.traceF( tinBaseP , T("home privileges check / cannot connect") ) ;
+                    etThread.traceF( tin0P , T("home privileges check / cannot connect") ) ;
                     POOPR
                 {
                 if( POOP )
 
-                cloudC cloud( tinBaseP , tName , ifcIDdOcLOUDiFdIFFER_NOTHING , flCLOUDc_NOcOPY | flCLOUDc_DOnOTlOADlOCAL | flCLOUDc_DOnOTlOADrEMOTE , ifcIDcLOUD_RACKSPACE , tBuilding , tUserPrivileges , tPasswordPrivileges , tRemoteHomePrivileges ) ;
-                etThread.traceF( tinBaseP , T("querying privileges") ) ;
+                cloudC cloud( tin0P , tName , ifcIDdOcLOUDiFdIFFER_NOTHING , flCLOUDc_NOcOPY | flCLOUDc_DOnOTlOADlOCAL | flCLOUDc_DOnOTlOADrEMOTE , ifcIDcLOUD_RACKSPACE , tBuilding , tUserPrivileges , tPasswordPrivileges , tRemoteHomePrivileges ) ;
+                etThread.traceF( tin0P , T("querying privileges") ) ;
             {
             else
             }
                 }
-                    ether.ifcHireF( tinBaseP , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //MUST HIRE PISS EVEN IF NO PAID PRIVILEGES IN ORDER TO ALLOW USER TO UPDATE SETTINGS
-                    etThread.traceF( tinBaseP , T("hiring PISS") ) ;
+                    ether.ifcHireF( tin0P , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //MUST HIRE PISS EVEN IF NO PAID PRIVILEGES IN ORDER TO ALLOW USER TO UPDATE SETTINGS
+                    etThread.traceF( tin0P , T("hiring PISS") ) ;
                     bPissHired = 1 ;
                 {
                 if( !bPissHired )
@@ -270,16 +270,16 @@ DONE( tmGetIdHomeF )
                 ZE( flagsT , flagsOld ) ;
 
                 bPaid = 1 ;
-                etThread.traceF( tinBaseP , T("home privileges check / this is IDcOMPUTER_IPDOSmASTERcRAFTWORK so has paid privileges") ) ;
+                etThread.traceF( tin0P , T("home privileges check / this is IDcOMPUTER_IPDOSmASTERcRAFTWORK so has paid privileges") ) ;
             {
             if( idComputer == IDcOMPUTER_IPDOSmASTERcRAFTWORK )
-            etThread.traceF( tinBaseP , T("[idComputer,idComputerCraftwork]:    ")+TF2(idComputer,flFORMAT_NObIGITvALUES|flFORMAT_FILLzE|flFORMAT_FOREIGN)+tb4+TF2(IDcOMPUTER_IPDOSmASTERcRAFTWORK,flFORMAT_NObIGITvALUES|flFORMAT_FILLzE|flFORMAT_FOREIGN) ) ;
-            countT idComputer = etThread.diskIdF( tinBaseP , T("///c") ) ;
+            etThread.traceF( tin0P , T("[idComputer,idComputerCraftwork]:    ")+TF2(idComputer,flFORMAT_NObIGITvALUES|flFORMAT_FILLzE|flFORMAT_FOREIGN)+tb4+TF2(IDcOMPUTER_IPDOSmASTERcRAFTWORK,flFORMAT_NObIGITvALUES|flFORMAT_FILLzE|flFORMAT_FOREIGN) ) ;
+            countT idComputer = etThread.diskIdF( tin0P , T("///c") ) ;
 
             ZE( boolT , bPaid ) ;
         {
         while( !ether && !POOP )
-        etherC& etRock = etherC::etRockIF( tinBaseP ) ;
+        etherC& etRock = etherC::etRockIF( tin0P ) ;
         TN( tb4 , "    " ) ;
         TN( tShort , "!paid.txt" ) ;
         ZE( boolT , bSaidPaid ) ;
@@ -293,78 +293,78 @@ DONE( tmGetIdHomeF )
 if( bApproved )
 
 }
-    etThread.delF( tinBaseP , psttArbitraryUniquifier1 ) ;
-    etThread.delF( tinBaseP , psttIdHomeDisk           ) ;
-    etThread.delF( tinBaseP , psttIdComputer           ) ;
-    etThread.delF( tinBaseP , psttUserName             ) ;
-    etThread.delF( tinBaseP , psttUserEmail            ) ;
+    etThread.delF( tin0P , psttArbitraryUniquifier1 ) ;
+    etThread.delF( tin0P , psttIdHomeDisk           ) ;
+    etThread.delF( tin0P , psttIdComputer           ) ;
+    etThread.delF( tin0P , psttUserName             ) ;
+    etThread.delF( tin0P , psttUserEmail            ) ;
     
     }
         }
             }
                 }
-                    ether.osSleepF( tinBaseP , TOCK << 4 ) ;
-                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-                    etThread.traceF( tinBaseP , T("home registration check / napping for 01 tock before retrying") ) ;
+                    ether.osSleepF( tin0P , TOCK << 4 ) ;
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+                    etThread.traceF( tin0P , T("home registration check / napping for 01 tock before retrying") ) ;
                 {
                 else if( !bUploadedOk )
                 if( bDone ) break ;
 
                 }
-                    etThread.delF( tinBaseP , postHe ) ;
+                    etThread.delF( tin0P , postHe ) ;
                     }
                         LOGrAW( postHe ) ;
 
                         }
                             bDone = 1 ;
-                            etThread.traceF( tinBaseP , T("file name collision:  please stop IPDOS (tm), edit your settings file to change the value of the arbitrary.uniquifier.1 setting, and then start IPDOS (tm)") ) ;
+                            etThread.traceF( tin0P , T("file name collision:  please stop IPDOS (tm), edit your settings file to change the value of the arbitrary.uniquifier.1 setting, and then start IPDOS (tm)") ) ;
                         {
                         else
                         }
-                            thirdC::c_strcpyIF( tinBaseP , home.postIdHomeGlobal , tPostIdHomeGlobal ) ;
+                            thirdC::c_strcpyIF( tin0P , home.postIdHomeGlobal , tPostIdHomeGlobal ) ;
                             bApproved = bDone = 1 ;
                         {
-                        if( costHe == costzMe && !thirdC::c_memcmpIF( tinBaseP , postHe , postzMe , costHe ) )
+                        if( costHe == costzMe && !thirdC::c_memcmpIF( tin0P , postHe , postzMe , costHe ) )
                     {
                     else if( postHe && costHe )
                     }
                         }
-                            etThread.traceF( tinBaseP , T("home registration check / could not upload / will nap for 01 tock and then retry") ) ;
+                            etThread.traceF( tin0P , T("home registration check / could not upload / will nap for 01 tock and then retry") ) ;
                             POOPR
                         {
                         else
                         if( !POOP ) bUploadedOk = 1 ;
 
-                        cloud.pushFileF( tinBaseP , tRemoteHomeRegistry , tShort , postzMe , costzMe ) ; //U:: cTries = 1
+                        cloud.pushFileF( tin0P , tRemoteHomeRegistry , tShort , postzMe , costzMe ) ; //U:: cTries = 1
 
-                        etThread.traceF( tinBaseP , T("home registration check / could not download") ) ;
+                        etThread.traceF( tin0P , T("home registration check / could not download") ) ;
 
                         POOPR
                     {
                     if( POOP )
-                    cloud.pullFileF( tinBaseP , postHe , costHe , tRemoteHomeRegistry , tShort , 1 ) ; ___( postHe ) ;
+                    cloud.pullFileF( tin0P , postHe , costHe , tRemoteHomeRegistry , tShort , 1 ) ; ___( postHe ) ;
                     ZE( countT , costHe ) ;
                     ZE( byteT* , postHe ) ;
-                    etThread.traceF( tinBaseP , T("home registration file: ")+tShort ) ;
+                    etThread.traceF( tin0P , T("home registration file: ")+tShort ) ;
                 {
                 else
                 }
                     }
-                        ether.ifcHireF( tinBaseP , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // IdeaFarm (tm) Bundle IS FREEWARE WHEN IdeaFarm (tm) ADMINISTRATIVE CLOUD IS NOT VISIBLE (E.G. IF I DIE AND MY RACKSPACE ACCOUNTS ARE CLOSED)
+                        ether.ifcHireF( tin0P , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // IdeaFarm (tm) Bundle IS FREEWARE WHEN IdeaFarm (tm) ADMINISTRATIVE CLOUD IS NOT VISIBLE (E.G. IF I DIE AND MY RACKSPACE ACCOUNTS ARE CLOSED)
                         bPissHired = 1 ;
                     {
                     if( !bPissHired )
 
-                    etThread.traceF( tinBaseP , T("home registration check / cannot connect") ) ;
+                    etThread.traceF( tin0P , T("home registration check / cannot connect") ) ;
                     POOPR
                 {
                 if( POOP )
                 ZE( boolT  , bUploadedOk ) ;
     
-                cloudC cloud( tinBaseP , tName , ifcIDdOcLOUDiFdIFFER_NOTHING , flCLOUDc_NOcOPY | flCLOUDc_DOnOTlOADlOCAL | flCLOUDc_DOnOTlOADrEMOTE , ifcIDcLOUD_RACKSPACE , tBuilding , tUserRegistry , tPasswordRegistry , tRemoteHomeRegistry ) ;
+                cloudC cloud( tin0P , tName , ifcIDdOcLOUDiFdIFFER_NOTHING , flCLOUDc_NOcOPY | flCLOUDc_DOnOTlOADlOCAL | flCLOUDc_DOnOTlOADrEMOTE , ifcIDcLOUD_RACKSPACE , tBuilding , tUserRegistry , tPasswordRegistry , tRemoteHomeRegistry ) ;
             {
             while( !ether && !POOP && !bDone )
-            etherC& etRock = etherC::etRockIF( tinBaseP ) ;
+            etherC& etRock = etherC::etRockIF( tin0P ) ;
             ZE( boolT , bDone ) ;
     
             SCOOPS
@@ -375,10 +375,10 @@ if( bApproved )
             psttBuilding = psttUser = psttPassword = psttRemoteHomeRegistry = 0 ;
             etThread.osThreadF( TaRG1( tmWatchIdeafarmF ) , (countT)psttBuilding , (countT)psttUser , (countT)psttPassword , (countT)psttRemoteHomeRegistry ) ;
 
-            etThread.strMakeF( tinBaseP , LF , psttRemoteHomeRegistry , tRemoteHomeRegistry ) ; ___( psttRemoteHomeRegistry ) ;
-            etThread.strMakeF( tinBaseP , LF , psttPassword           , tPasswordRegistry           ) ; ___( psttPassword           ) ;
-            etThread.strMakeF( tinBaseP , LF , psttUser               , tUserRegistry               ) ; ___( psttUser               ) ;
-            etThread.strMakeF( tinBaseP , LF , psttBuilding           , tBuilding           ) ; ___( psttBuilding           ) ;
+            etThread.strMakeF( tin0P , LF , psttRemoteHomeRegistry , tRemoteHomeRegistry ) ; ___( psttRemoteHomeRegistry ) ;
+            etThread.strMakeF( tin0P , LF , psttPassword           , tPasswordRegistry           ) ; ___( psttPassword           ) ;
+            etThread.strMakeF( tin0P , LF , psttUser               , tUserRegistry               ) ; ___( psttUser               ) ;
+            etThread.strMakeF( tin0P , LF , psttBuilding           , tBuilding           ) ; ___( psttBuilding           ) ;
             ZE( strokeS* , psttRemoteHomeRegistry ) ;
             ZE( strokeS* , psttPassword ) ;
             ZE( strokeS* , psttUser ) ;
@@ -389,12 +389,12 @@ if( bApproved )
         TN( tPostIdHomeGlobal , "" ) ; tPostIdHomeGlobal = tEmailCleaned+strokeS('.')+tHash ;
     
         }
-            etThread.delF( tinBaseP , psttc ) ;
+            etThread.delF( tin0P , psttc ) ;
             tEmailCleaned = T(psttc) ;
     
             }
-                etThread.delF( tinBaseP , psttd ) ;
-                etThread.strSubstringF( tinBaseP , psttc , idf , idl , psttd ) ; ___( psttc ) ;
+                etThread.delF( tin0P , psttd ) ;
+                etThread.strSubstringF( tin0P , psttc , idf , idl , psttd ) ; ___( psttc ) ;
                 countT idl = costEmailMax ;
                 countT idf = 1 ;
                                  psttc = 0 ;
@@ -402,9 +402,9 @@ if( bApproved )
             {
             if( psttc->idAdam > costEmailMax )
 
-            const countT costEmailMax = COSTiDhOMEgLOBALmAX - COSTpOSThASHmD5 - tShortSuffix.csF( tinBaseP ) - 1 ;
+            const countT costEmailMax = COSTiDhOMEgLOBALmAX - COSTpOSThASHmD5 - tShortSuffix.csF( tin0P ) - 1 ;
     
-            etThread.strReplaceF( tinBaseP , psttc , psttUserEmail , tSmallOld , tn ) ; ___( psttc ) ;
+            etThread.strReplaceF( tin0P , psttc , psttUserEmail , tSmallOld , tn ) ; ___( psttc ) ;
             TN( tn , "" ) ;
             ZE( strokeS* , psttc ) ;
     
@@ -425,35 +425,35 @@ if( bApproved )
         TN( tEmailCleaned , "" ) ;
     
         }
-            etThread.delF( tinBaseP , psttHash ) ;
+            etThread.delF( tin0P , psttHash ) ;
             tHash = T(psttHash) ;
-            hasher.queryStringF( tinBaseP , psttHash ) ; ___( psttHash ) ;
+            hasher.queryStringF( tin0P , psttHash ) ; ___( psttHash ) ;
             ZE( strokeS* , psttHash ) ;
 
-            hasher.eatF( tinBaseP , postzMe , costzMe ) ;
-            hasherC hasher( tinBaseP , etThread ) ;
+            hasher.eatF( tin0P , postzMe , costzMe ) ;
+            hasherC hasher( tin0P , etThread ) ;
         {
         TN( tHash , "" ) ;
    
         //LOGrAW( postzMe ) ;
     
-        countT   costzMe = thirdC::c_strlenIF( tinBaseP , postzMe ) ;       // DONE THIS WAY BECAUSE csF() COUNT WILL DIFFER IF SOME STROKES WERE SUPPRESSED WHEN CONVERTING TO osTextT
+        countT   costzMe = thirdC::c_strlenIF( tin0P , postzMe ) ;       // DONE THIS WAY BECAUSE csF() COUNT WILL DIFFER IF SOME STROKES WERE SUPPRESSED WHEN CONVERTING TO osTextT
         osTextT* postzMe = tMe ;
     
-        etThread.delF( tinBaseP , psttMe ) ;
+        etThread.delF( tin0P , psttMe ) ;
         TN( tMe , psttMe ) ;
     
-        etThread.strFuseF( tinBaseP , psttMe , tcr ) ;
-        etThread.strFuseF( tinBaseP , psttMe , psttArbitraryUniquifier1 ) ;
-        etThread.strFuseF( tinBaseP , psttMe , tcr ) ;
-        etThread.strFuseF( tinBaseP , psttMe , psttIdHomeDisk ) ;
-        etThread.strFuseF( tinBaseP , psttMe , tcr ) ;
-        etThread.strFuseF( tinBaseP , psttMe , psttIdComputer ) ;
-        etThread.strFuseF( tinBaseP , psttMe , tcr ) ;
-        etThread.strFuseF( tinBaseP , psttMe , psttUserName ) ;
-        etThread.strFuseF( tinBaseP , psttMe , tcr ) ;
-        etThread.strFuseF( tinBaseP , psttMe , psttUserEmail ) ;
-        etThread.strFuseF( tinBaseP , psttMe , T("ideafarm.com\r\nIPDOS (tm) - IdeaFarm (tm) Piggyback Distributed Operating System\r\nHome Folder Registration\r\nformat:1\r\n") ) ;
+        etThread.strFuseF( tin0P , psttMe , tcr ) ;
+        etThread.strFuseF( tin0P , psttMe , psttArbitraryUniquifier1 ) ;
+        etThread.strFuseF( tin0P , psttMe , tcr ) ;
+        etThread.strFuseF( tin0P , psttMe , psttIdHomeDisk ) ;
+        etThread.strFuseF( tin0P , psttMe , tcr ) ;
+        etThread.strFuseF( tin0P , psttMe , psttIdComputer ) ;
+        etThread.strFuseF( tin0P , psttMe , tcr ) ;
+        etThread.strFuseF( tin0P , psttMe , psttUserName ) ;
+        etThread.strFuseF( tin0P , psttMe , tcr ) ;
+        etThread.strFuseF( tin0P , psttMe , psttUserEmail ) ;
+        etThread.strFuseF( tin0P , psttMe , T("ideafarm.com\r\nIPDOS (tm) - IdeaFarm (tm) Piggyback Distributed Operating System\r\nHome Folder Registration\r\nformat:1\r\n") ) ;
     
         TN( tcr , "\r\n" ) ;
     
@@ -466,49 +466,49 @@ if( bApproved )
             psttUserName->idAdam                                    +
             psttUserEmail->idAdam                                   +
     
-        etThread.strMakeF( tinBaseP , LF , psttMe , 0 , 
+        etThread.strMakeF( tin0P , LF , psttMe , 0 , 
         ZE( strokeS* , psttMe ) ;
 
-        thirdC::c_strcpyIF( tinBaseP , home.postIdHomeGlobal , "!registering" ) ;
+        thirdC::c_strcpyIF( tin0P , home.postIdHomeGlobal , "!registering" ) ;
     {
     else
     }
-        ether.ifcHireF( tinBaseP , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //MUST HIRE PISS EVEN IF NO PAID PRIVILEGES IN ORDER TO ALLOW USER TO UPDATE SETTINGS
-        thirdC::c_strcpyIF( tinBaseP , home.postIdHomeGlobal , "!settingsAreInvalid" ) ;
+        ether.ifcHireF( tin0P , T("HOMEfLAGS") , ifcIDaDAM_PISS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; //MUST HIRE PISS EVEN IF NO PAID PRIVILEGES IN ORDER TO ALLOW USER TO UPDATE SETTINGS
+        thirdC::c_strcpyIF( tin0P , home.postIdHomeGlobal , "!settingsAreInvalid" ) ;
     {
     if( bSettingsAreBad )
 
     }
-             if( !psttArbitraryUniquifier1 ) { bSettingsAreBad |= 1 ; etThread.traceF( tinBaseP , (strokeS*)( T("invalid setting: the ")+tSuffixArbitraryUniquifier1+T(" setting is missing (it should normally be set to \"\", the null string)") ) ) ; }
+             if( !psttArbitraryUniquifier1 ) { bSettingsAreBad |= 1 ; etThread.traceF( tin0P , (strokeS*)( T("invalid setting: the ")+tSuffixArbitraryUniquifier1+T(" setting is missing (it should normally be set to \"\", the null string)") ) ) ; }
 
-        else if( !psttUserName->idAdam     ) { bSettingsAreBad |= 1 ; etThread.traceF( tinBaseP , (strokeS*)( T("invalid setting: the ")+tSuffixPrimaryEndUserName+T(" setting must be at least 1 character"                                     ) ) ) ; }
-             if( !psttUserName             ) { bSettingsAreBad |= 1 ; etThread.traceF( tinBaseP , (strokeS*)( T("invalid setting: the ")+tSuffixPrimaryEndUserName+T(" setting is missing"                                                       ) ) ) ; }
+        else if( !psttUserName->idAdam     ) { bSettingsAreBad |= 1 ; etThread.traceF( tin0P , (strokeS*)( T("invalid setting: the ")+tSuffixPrimaryEndUserName+T(" setting must be at least 1 character"                                     ) ) ) ; }
+             if( !psttUserName             ) { bSettingsAreBad |= 1 ; etThread.traceF( tin0P , (strokeS*)( T("invalid setting: the ")+tSuffixPrimaryEndUserName+T(" setting is missing"                                                       ) ) ) ; }
 
-        else if( !psttUserEmail->idAdam    ) { bSettingsAreBad |= 1 ; etThread.traceF( tinBaseP , (strokeS*)( T("invalid setting: the ")+tSuffixPrimaryEndUserEmail+T(" setting must be at least 1 character"                                    ) ) ) ; }
-             if( !psttUserEmail            ) { bSettingsAreBad |= 1 ; etThread.traceF( tinBaseP , (strokeS*)( T("invalid setting: the ")+tSuffixPrimaryEndUserEmail+T(" setting is missing"                                                      ) ) ) ; }
+        else if( !psttUserEmail->idAdam    ) { bSettingsAreBad |= 1 ; etThread.traceF( tin0P , (strokeS*)( T("invalid setting: the ")+tSuffixPrimaryEndUserEmail+T(" setting must be at least 1 character"                                    ) ) ) ; }
+             if( !psttUserEmail            ) { bSettingsAreBad |= 1 ; etThread.traceF( tin0P , (strokeS*)( T("invalid setting: the ")+tSuffixPrimaryEndUserEmail+T(" setting is missing"                                                      ) ) ) ; }
     {
     ZE( boolT , bSettingsAreBad ) ;
 
-    etThread.strFromF( tinBaseP , psttIdHomeDisk , idHomeDisk , flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_FILLzE , 2 * sizeof( countT ) ) ; ___( psttIdHomeDisk ) ;
+    etThread.strFromF( tin0P , psttIdHomeDisk , idHomeDisk , flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_FILLzE , 2 * sizeof( countT ) ) ; ___( psttIdHomeDisk ) ;
     ZE( strokeS* , psttIdHomeDisk ) ;
     countT idHomeDisk = etherC::ifc_idHomeIdisk_IF() ;
     
-    etThread.strFromF( tinBaseP , psttIdComputer , idComputer , flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_FILLzE , 2 * sizeof( countT ) ) ; ___( psttIdComputer ) ;
+    etThread.strFromF( tin0P , psttIdComputer , idComputer , flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_FILLzE , 2 * sizeof( countT ) ) ; ___( psttIdComputer ) ;
     ZE( strokeS* , psttIdComputer ) ;
-    countT idComputer = etThread.diskIdF( tinBaseP , T("///c") ) ;
+    countT idComputer = etThread.diskIdF( tin0P , T("///c") ) ;
 
-    if( psttUserEmail ) { etThread.strConvertToLowerCaseF( tinBaseP , psttUserEmail ) ; ___( psttUserEmail ) ; }
+    if( psttUserEmail ) { etThread.strConvertToLowerCaseF( tin0P , psttUserEmail ) ; ___( psttUserEmail ) ; }
     
-    ZE( strokeS* , psttArbitraryUniquifier1 ) ; etThread.querySettingF( tinBaseP , psttArbitraryUniquifier1 , tSettingPrefix+tSuffixArbitraryUniquifier1 ) ; ___( psttArbitraryUniquifier1 ) ;
-    ZE( strokeS* , psttUserName             ) ; etThread.querySettingF( tinBaseP , psttUserName             , tSettingPrefix+tSuffixPrimaryEndUserName   ) ; ___( psttUserName             ) ;
-    ZE( strokeS* , psttUserEmail            ) ; etThread.querySettingF( tinBaseP , psttUserEmail            , tSettingPrefix+tSuffixPrimaryEndUserEmail  ) ; ___( psttUserEmail            ) ;
+    ZE( strokeS* , psttArbitraryUniquifier1 ) ; etThread.querySettingF( tin0P , psttArbitraryUniquifier1 , tSettingPrefix+tSuffixArbitraryUniquifier1 ) ; ___( psttArbitraryUniquifier1 ) ;
+    ZE( strokeS* , psttUserName             ) ; etThread.querySettingF( tin0P , psttUserName             , tSettingPrefix+tSuffixPrimaryEndUserName   ) ; ___( psttUserName             ) ;
+    ZE( strokeS* , psttUserEmail            ) ; etThread.querySettingF( tin0P , psttUserEmail            , tSettingPrefix+tSuffixPrimaryEndUserEmail  ) ; ___( psttUserEmail            ) ;
 
     TN( tSuffixArbitraryUniquifier1 , "arbitrary.uniquifier.1" ) ;
     TN( tSuffixPrimaryEndUserName   , "primary.end.user.name"  ) ;
     TN( tSuffixPrimaryEndUserEmail  , "primary.end.user.email" ) ;
     TN( tSettingPrefix , "!ipdos." ) ;
 
-    thirdC::c_strcpyIF( tinBaseP , home.postIdHomeGlobal , "!queryingSettings" ) ;
+    thirdC::c_strcpyIF( tin0P , home.postIdHomeGlobal , "!queryingSettings" ) ;
 {
 ZE( boolT , bPissHired ) ;
 ZE( boolT , bApproved ) ;
@@ -519,15 +519,15 @@ TN( tRemoteHomeRegistry , "ipdos.home.registry" ) ;
 TN( tPasswordPrivileges , "749b4eaeb75c46ac86d12d6e8d059b09" ) ;  //THIS IS NOT SECRET
 TN( tUserPrivileges , "ipdos.01" ) ;
 
-//secretF( tinBaseP , etThread , tUserRegistry , tPasswordRegistry ) ;
+//secretF( tin0P , etThread , tUserRegistry , tPasswordRegistry ) ;
 TN( tPasswordRegistry , "d1fd7a5fea5b42018c98a434b42a56af" ) ;  //THIS IS NOT SECRET
 TN( tUserRegistry , "ipdos.public2" ) ;
 
 TN( tBuilding , "IAD" ) ;
 }
-    etThread.delF( tinBaseP , psttu ) ;
+    etThread.delF( tin0P , psttu ) ;
     tName = T(psttu) ;
-    etThread.strUniqueF( tinBaseP , psttu ) ; ___( psttu ) ;
+    etThread.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
     ZE( strokeS* , psttu ) ;
 {
 TN( tName , "" ) ;
@@ -538,70 +538,70 @@ TASK( tmGetIdHomeF )
 
 DONE( tmWatchIdeafarmF )
 }
-    etThread.delF( tinBaseP , psttRemoteHomeRegistryP ) ;
-    etThread.delF( tinBaseP , psttPasswordP           ) ;
-    etThread.delF( tinBaseP , psttUserP               ) ;
-    etThread.delF( tinBaseP , psttBuildingP           ) ;
+    etThread.delF( tin0P , psttRemoteHomeRegistryP ) ;
+    etThread.delF( tin0P , psttPasswordP           ) ;
+    etThread.delF( tin0P , psttUserP               ) ;
+    etThread.delF( tin0P , psttBuildingP           ) ;
     }
         }
-            //etRock.traceF( tinBaseP , T("tmWatchIdeafarmF / loop /-") ) ;
-            ++ s ; ether.osSleepF( tinBaseP , TICK << 7 ) ;                                         //20181110@1429: "TOCK << 4" -> "TICK << 7" TO REDUCE BANDWIDTH CHARGES; MIGHT NEED TO MAKE THIS MORE FREQUENT WHEN HAVE NEW USERS
-            //etRock.traceF( tinBaseP , T("tmWatchIdeafarmF / loop / napping for tick << 7") ) ;
+            //etRock.traceF( tin0P , T("tmWatchIdeafarmF / loop /-") ) ;
+            ++ s ; ether.osSleepF( tin0P , TICK << 7 ) ;                                         //20181110@1429: "TOCK << 4" -> "TICK << 7" TO REDUCE BANDWIDTH CHARGES; MIGHT NEED TO MAKE THIS MORE FREQUENT WHEN HAVE NEW USERS
+            //etRock.traceF( tin0P , T("tmWatchIdeafarmF / loop / napping for tick << 7") ) ;
 
             }
-                //etRock.traceF( tinBaseP , T("tmWatchIdeafarmF / loop /0") ) ;
+                //etRock.traceF( tin0P , T("tmWatchIdeafarmF / loop /0") ) ;
                 }
                     }
-                        if( ii > TUCK ) etRock.traceF( tinBaseP , tStuck2 ) ;
+                        if( ii > TUCK ) etRock.traceF( tin0P , tStuck2 ) ;
                         if( flagso == setIfEqualsAM( home.flags , flagsn , flagso ) ) break ;
                         flagsT flagsn = flagso & ~(F(flHOMEs_IDEAFARMcLOUDiSgONE)) ;
                         flagsT flagso = home.flags ;
                     {
                     if( F(home.flags) & flHOMEs_IDEAFARMcLOUDiSgONE ) for( countT ii = 0 ;; ii ++ )
 
-                    //etRock.traceF( tinBaseP , T("tmWatchIdeafarmF / connected aok to the IdeaFarm (tm) accounting cloud") ) ;
+                    //etRock.traceF( tin0P , T("tmWatchIdeafarmF / connected aok to the IdeaFarm (tm) accounting cloud") ) ;
                 {
                 else
                 }
                     }
-                        if( ii > TUCK ) etRock.traceF( tinBaseP , tStuck1 ) ;
+                        if( ii > TUCK ) etRock.traceF( tin0P , tStuck1 ) ;
                         if( flagso == setIfEqualsAM( home.flags , flagsn , flagso ) ) break ;
                         flagsT flagsn = flagso | flHOMEs_IDEAFARMcLOUDiSgONE ;
                         flagsT flagso = home.flags ;
                     {
                     if( !( F(home.flags) & flHOMEs_IDEAFARMcLOUDiSgONE ) ) for( countT ii = 0 ;; ii ++ )
 
-                    etRock.traceF( tinBaseP , T("tmWatchIdeafarmF / the IdeaFarm (tm) accounting cloud is not visible") ) ;
+                    etRock.traceF( tin0P , T("tmWatchIdeafarmF / the IdeaFarm (tm) accounting cloud is not visible") ) ;
                     POOPR
                 {
                 if( POOP )
                 TN( tStuck2 , "setIfEqualsAM is stuck 2" ) ;
                 TN( tStuck1 , "setIfEqualsAM is stuck 1" ) ;
         
-                //etRock.traceF( tinBaseP , T("tmWatchIdeafarmF / loop /1") ) ;
-                cloudC cloud( tinBaseP , tName , ifcIDdOcLOUDiFdIFFER_NOTHING , flCLOUDc_NOcOPY | flCLOUDc_DOnOTlOADlOCAL | flCLOUDc_DOnOTlOADrEMOTE , ifcIDcLOUD_RACKSPACE , psttBuildingP , psttUserP , psttPasswordP , psttRemoteHomeRegistryP ) ;
-                //etRock.traceF( tinBaseP , T("tmWatchIdeafarmF / loop /2") ) ;
+                //etRock.traceF( tin0P , T("tmWatchIdeafarmF / loop /1") ) ;
+                cloudC cloud( tin0P , tName , ifcIDdOcLOUDiFdIFFER_NOTHING , flCLOUDc_NOcOPY | flCLOUDc_DOnOTlOADlOCAL | flCLOUDc_DOnOTlOADrEMOTE , ifcIDcLOUD_RACKSPACE , psttBuildingP , psttUserP , psttPasswordP , psttRemoteHomeRegistryP ) ;
+                //etRock.traceF( tin0P , T("tmWatchIdeafarmF / loop /2") ) ;
             {
 
             }
-                etThread.delF( tinBaseP , psttu ) ;
+                etThread.delF( tin0P , psttu ) ;
                 tName = T(psttu) ;
-                etThread.strUniqueF( tinBaseP , psttu ) ; ___( psttu ) ;
+                etThread.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
                 ZE( strokeS* , psttu ) ;
             {
             TN( tName , "" ) ;
 
-            //etRock.traceF( tinBaseP , T("tmWatchIdeafarmF / loop /+") ) ;
+            //etRock.traceF( tin0P , T("tmWatchIdeafarmF / loop /+") ) ;
         {
         while( !ether && !etThread && !POOP )
-        etherC& etRock = etherC::etRockIF( tinBaseP ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        etherC& etRock = etherC::etRockIF( tin0P ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
         SCOOPS
     {
     IFsCRATCH
 
-    etherC& etRock = etherC::etRockIF( tinBaseP ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
     homeS& home = homeS::homeIF() ;
 
     strokeS* psttRemoteHomeRegistryP = (strokeS*)pTaskP->c4 ;
@@ -630,7 +630,7 @@ TASK( tmWatchIdeafarmF )
     countT pcPassword[] = { '8' ADDfLAK , 'd' ADDfLAK , 'b' ADDfLAK , 'b' ADDfLAK , '3' ADDfLAK , '6' ADDfLAK , 'b' ADDfLAK , 'a' ADDfLAK , '0' ADDfLAK , '3' ADDfLAK , 'd' ADDfLAK , 'a' ADDfLAK , '4' ADDfLAK , '0' ADDfLAK , '0' ADDfLAK , 'c' ADDfLAK , '8' ADDfLAK , 'f' ADDfLAK , 'c' ADDfLAK , 'f' ADDfLAK , '3' ADDfLAK , '6' ADDfLAK , '4' ADDfLAK , 'a' ADDfLAK , 'b' ADDfLAK , '9' ADDfLAK , 'c' ADDfLAK , 'e' ADDfLAK , 'e' ADDfLAK , 'f' ADDfLAK , 'b' ADDfLAK , '5' ADDfLAK } ;
     countT pcUser[]     = { 'i' ADDfLAK , 'p' ADDfLAK , 'd' ADDfLAK , 'o' ADDfLAK , 's' ADDfLAK , '.' ADDfLAK , '0' ADDfLAK , '1' ADDfLAK } ;
 {
-voidT secretF( tin0S& tinBaseP , etherC& etherP , textC& tUserP , textC& tPasswordP )
+voidT secretF( tin0S& tin0P , etherC& etherP , textC& tUserP , textC& tPasswordP )
 
 #if defined( NEVERdEFINED )
 //20210224@1610: THIS IS OBSOLETE NOW THAT CODE IS OPEN SOURCE
@@ -641,32 +641,32 @@ voidT secretF( tin0S& tinBaseP , etherC& etherP , textC& tUserP , textC& tPasswo
 }
     }
         }
-            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttP ) ;
+            ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttP ) ;
             POOPR
         {
         if( POOP )
     
-        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttAll ) ;
+        ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttAll ) ;
         }
-            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttSection ) ;
-            else                    ((tin9S&)tinBaseP).pEtScratch->strokeF( tinBaseP , T("<<<<")+T(psttSection)+T(">>>>") ) ;
+            ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttSection ) ;
+            else                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("<<<<")+T(psttSection)+T(">>>>") ) ;
             if( cSkip && cSkip -- ) ;
-            ((tin9S&)tinBaseP).pEtScratch->strSubstringF( tinBaseP , psttSection , idf , sttq , T("<hr>") , psttAll ) ; ___( psttSection ) ;
+            ((tin9S&)tin0P).pEtScratch->strSubstringF( tin0P , psttSection , idf , sttq , T("<hr>") , psttAll ) ; ___( psttSection ) ;
             ZE( strokeS* , psttSection ) ;
         {
         while( idf && !POOP )
-        etherC& etRock = etherC::etRockIF( tinBaseP ) ;
+        etherC& etRock = etherC::etRockIF( tin0P ) ;
         countT cSkip = 1 ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
     
-        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pbAll  ) ;
-        ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttAll , T(pbAll) ) ; ___( psttAll ) ;
+        ((tin9S&)tin0P).pEtScratch->delF( tin0P , pbAll  ) ;
+        ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttAll , T(pbAll) ) ; ___( psttAll ) ;
         ZE( strokeS* , psttAll ) ;
     
-        ((tin9S&)tinBaseP).pEtScratch->boxPutF( tinBaseP , T("///d/tmp.ideafarm.txt") , pbAll , cbAll ) ;
+        ((tin9S&)tin0P).pEtScratch->boxPutF( tin0P , T("///d/tmp.ideafarm.txt") , pbAll , cbAll ) ;
     
-        ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbAll , cbAll , tRosterHttp ) ; ___( pbAll  ) ;
+        ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbAll , cbAll , tRosterHttp ) ; ___( pbAll  ) ;
         ZE( countT , cbAll ) ;
         ZE( byteT* , pbAll  ) ;
         //TN( tRosterHttp  , "www.fuckyourbrain.com//http//index.htm" ) ;
@@ -675,7 +675,7 @@ voidT secretF( tin0S& tinBaseP , etherC& etherP , textC& tUserP , textC& tPasswo
     {
     IFsCRATCH
 {
-voidT rosterF( tin0S& tinBaseP , strokeS*& psttP )
+voidT rosterF( tin0S& tin0P , strokeS*& psttP )
 
 }
     return bOk ;
@@ -688,8 +688,8 @@ voidT rosterF( tin0S& tinBaseP , strokeS*& psttP )
             POOPR
         {
         if( POOP )
-        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pbHome  ) ;
-        ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbHome  , cbHome  , psttP  ) ; ___( pbHome  ) ;
+        ((tin9S&)tin0P).pEtScratch->delF( tin0P , pbHome  ) ;
+        ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbHome  , cbHome  , psttP  ) ; ___( pbHome  ) ;
         ZE( countT , cbHome ) ;
         ZE( byteT* , pbHome  ) ;
         SCOOPS
@@ -697,7 +697,7 @@ voidT rosterF( tin0S& tinBaseP , strokeS*& psttP )
     IFsCRATCH
     ZE( boolT , bOk ) ;
 {
-boolT bOkHttpPageF( tin0S& tinBaseP , const strokeS* const psttP )
+boolT bOkHttpPageF( tin0S& tin0P , const strokeS* const psttP )
 
 }
     return bRefused ;
@@ -706,13 +706,13 @@ boolT bOkHttpPageF( tin0S& tinBaseP , const strokeS* const psttP )
     }
         else if( nn.pcId[ 0 ] == 0xff00ff00 ) bRefused = 1 ;
         if( POOP ) POOPR
-        nicNameC nn = ((tin9S&)tinBaseP).pEtScratch->sockNicNameF( tinBaseP , psttP ) ;
+        nicNameC nn = ((tin9S&)tin0P).pEtScratch->sockNicNameF( tin0P , psttP ) ;
         SCOOPS
     {
     IFsCRATCH
     ZE( boolT , bRefused ) ; //VERSION REFUSED FLAG WILL BE SET ONLY IF I GET A POSITIVE DENIAL FROM THE DNS
 {
-boolT bDnsRefusedVersionF( tin0S& tinBaseP , const strokeS* const psttP )
+boolT bDnsRefusedVersionF( tin0S& tin0P , const strokeS* const psttP )
 
 }
     return bOk ;
@@ -726,13 +726,13 @@ boolT bDnsRefusedVersionF( tin0S& tinBaseP , const strokeS* const psttP )
             POOPR
         {
         if( POOP )
-        nicNameC nn = ((tin9S&)tinBaseP).pEtScratch->sockNicNameF( tinBaseP , psttP ) ;
+        nicNameC nn = ((tin9S&)tin0P).pEtScratch->sockNicNameF( tin0P , psttP ) ;
         SCOOPS
     {
     IFsCRATCH
     ZE( boolT , bOk ) ;
 {
-boolT bOkDnsValueF( tin0S& tinBaseP , const strokeS* const psttP )
+boolT bOkDnsValueF( tin0S& tin0P , const strokeS* const psttP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_HOMEfLAGS" )/*1*/
 /**/

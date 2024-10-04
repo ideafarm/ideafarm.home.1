@@ -8,9 +8,9 @@
 
 
 }
-    ether( tinBaseP , psFeature ) ;
+    ether( tin0P , psFeature ) ;
 
-    psFeature->removeAllF( tinBaseP ) ;
+    psFeature->removeAllF( tin0P ) ;
     *psFeaturesVT << *psFeature ;
     *psFeature << (countT)this ;
 
@@ -41,7 +41,7 @@
     *psFeature << (countT)ifcIDtYPEfEATUREsADAM_CALLbACK ;
 
     }
-        psFeature->removeAllF( tinBaseP ) ;
+        psFeature->removeAllF( tin0P ) ;
         *psFeaturesVT << *psFeature ;
         *psFeature << (countT)( flFEATUREsADAMkEYBOARD_ACTIONdOWN ) ;
         *psFeature << (countT)ifcIDtYPEfEATUREsADAM_KEYBOARD ;
@@ -49,7 +49,7 @@
     if( F(flFeaturesP) & flTCfEATURE_KEYaCTION )
 
     }
-        psFeature->removeAllF( tinBaseP ) ;
+        psFeature->removeAllF( tin0P ) ;
         *psFeaturesVT << *psFeature ;
         *psFeature << flags ;
         *psFeature << (countT)ifcIDtYPEfEATUREsADAM_ADAM ;
@@ -57,7 +57,7 @@
         flagsT flags = flFEATUREsADAMaDAM_null ;
         //U::ELIMINATE THIS SNIP OBSOLETED BY MIGRATING TO ifcIDtYPEfEATUREsADAM_TABpARTICIPANT
 
-        psFeature->removeAllF( tinBaseP ) ;
+        psFeature->removeAllF( tin0P ) ;
         *psFeaturesVT << *psFeature ;
         if( idTabP      ) *psFeature << idTabP      ;
         if( idTabClassP ) *psFeature << idTabClassP ;
@@ -66,7 +66,7 @@
     if( F(flFeaturesP) & flTCfEATURE_TABpARTICIPANT )
 
     }
-        psFeature->removeAllF( tinBaseP ) ;
+        psFeature->removeAllF( tin0P ) ;
         *psFeaturesVT << *psFeature ;
         *psFeature << (countT)flFEATUREsADAMdRAGGABLE_null ; // THIS IS WHERE A "PERSISTENCE" FLAG WOULD OPTIONALLY BE SET ; THIS LINE IS REQUIRED SO AS TO DOCUMENT HOW THE CODE IS TO BE ENHANCED TO SUPPORT PERISISTENCE
         *psFeature << (countT)ifcIDtYPEfEATUREsADAM_DRAGGABLE ;
@@ -74,14 +74,14 @@
     if( F(flFeaturesP) & flTCfEATURE_DRAGGABLE )
 
     }
-        psFeature->removeAllF( tinBaseP ) ;
+        psFeature->removeAllF( tin0P ) ;
         *psFeaturesVT << *psFeature ;
         *psFeature << (countT)ifcIDtYPEfEATUREsADAM_FLYOVERhIGHLIGHT ;
     {
     if( F(flFeaturesP) & flTCfEATURE_FLYOVERhIGHLIGHT )
 
     }
-        psFeature->removeAllF( tinBaseP ) ;
+        psFeature->removeAllF( tin0P ) ;
         *psFeaturesVT << *psFeature ;
 
         }
@@ -95,7 +95,7 @@
     if( F(flFeaturesP) & flTCfEATURE_HOTkEY )
 
     }
-        psFeature->removeAllF( tinBaseP ) ;
+        psFeature->removeAllF( tin0P ) ;
         *psFeaturesVT << *psFeature ;
         *psFeature << (countT)( flFEATUREsADAMmOUSE_TOOLpOSITION | flFEATUREsADAMmOUSE_OUTSIDE | flFEATUREsADAMmOUSE_ACTIONmOVE | flFEATUREsADAMmOUSE_ACTIONdOWN | flFEATUREsADAMmOUSE_ACTIONuP | flFEATUREsADAMmOUSE_TOOLbUTTONlEFT | flFEATUREsADAMmOUSE_TOOLbUTTONrIGHT ) ;
         *psFeature << (countT)ifcIDtYPEfEATUREsADAM_MOUSE ;
@@ -103,7 +103,7 @@
     if( F(flFeaturesP) & flTCfEATURE_MOUSE )
 
     }
-        psFeature->removeAllF( tinBaseP ) ;
+        psFeature->removeAllF( tin0P ) ;
         *psFeaturesVT << *psFeature ;
 
         }
@@ -123,7 +123,7 @@
     {
     if( F(flFeaturesP) & flTCfEATURE_FRAME )
 
-    ether( tinBaseP , psFeature , TAG( TAGiDnULL ) ) ;
+    ether( tin0P , psFeature , TAG( TAGiDnULL ) ) ;
     ZE( soulC* , psFeature ) ;
 {
 pFlagsTcFeatureDisable( pFlagsTcFeatureDisableP )
@@ -131,8 +131,8 @@ cArg( cArgP ) ,
 pTcStateCBF( pTcStateCBFP ) ,
 flagsTcState( flTCsTATE_null ) ,
 flFeatures( flFeaturesP ) ,
-vTextC( tinBaseP , postOldCommentP , psttP , csttReserveP , psFeaturesP , 0 , 0 , idToolFilterListP ) ,
-/*1*/tcButtonC::tcButtonC( tin0S& tinBaseP , const osTextT* const postOldCommentP , tcStateCBFT pTcStateCBFP , const countT cArgP , const flagsT flFeaturesP , flagsT* const pFlagsTcFeatureDisableP , const strokeS* const psttP , countT csttReserveP , const countT rgbFrameP , const countT cFrameNestDownP , const countT cFrameNestLeftP , const countT cFrameNestUpP , const countT cFrameNestRightP , const countT idTabClassP , const countT idTabP , soulC* const psFeaturesP , const countT idToolFilterListP ) :/*1*/
+vTextC( tin0P , postOldCommentP , psttP , csttReserveP , psFeaturesP , 0 , 0 , idToolFilterListP ) ,
+/*1*/tcButtonC::tcButtonC( tin0S& tin0P , const osTextT* const postOldCommentP , tcStateCBFT pTcStateCBFP , const countT cArgP , const flagsT flFeaturesP , flagsT* const pFlagsTcFeatureDisableP , const strokeS* const psttP , countT csttReserveP , const countT rgbFrameP , const countT cFrameNestDownP , const countT cFrameNestLeftP , const countT cFrameNestUpP , const countT cFrameNestRightP , const countT idTabClassP , const countT idTabP , soulC* const psFeaturesP , const countT idToolFilterListP ) :/*1*/
 
 /**/
 

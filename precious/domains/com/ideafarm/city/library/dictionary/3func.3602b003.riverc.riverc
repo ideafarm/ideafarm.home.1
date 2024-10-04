@@ -9,24 +9,24 @@
 
 }
     }
-        sgnReady.waitF( tinBaseP ) ;
-        { ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmRiverAcceptF , &sgnDone_tmRiverAccept , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&bDestroy , idPort , (countT)this , (countT)&sgnReady ) ; }
-        signC sgnReady( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sgnReady.waitF( tin0P ) ;
+        { ZE( countT , tnu ) ; ether.osThreadF( tin0P , tnu , tmRiverAcceptF , &sgnDone_tmRiverAccept , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&bDestroy , idPort , (countT)this , (countT)&sgnReady ) ; }
+        signC sgnReady( tin0P , TAG( TAGiDnULL ) ) ;
     
         }
             if( POOP ) POOPR
             }
-                if( psOut ) psOut->connectF( tinBaseP , idPort , nicName ) ;
-                psOut = new( 0 , tinBaseP , LF ) socketC( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
+                if( psOut ) psOut->connectF( tin0P , idPort , nicName ) ;
+                psOut = new( 0 , tin0P , LF ) socketC( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
                 }
-                    ++ s ; ((tin9S&)tinBaseP).pEtScratch->osSleepF( tinBaseP , TOCK ) ;
-                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    ++ s ; ((tin9S&)tin0P).pEtScratch->osSleepF( tin0P , TOCK ) ;
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 DEL( psOut ) ;
                 POOPR
             {
             while( POOP && !ether )
-            if( psOut ) psOut->connectF( tinBaseP , idPort , nicName ) ;
+            if( psOut ) psOut->connectF( tin0P , idPort , nicName ) ;
             SCOOPS
         {
     {
@@ -34,7 +34,7 @@
 
     }
         if( POOP ) return ;
-        __( nicNameP == socketC::nicNameIF( tinBaseP , etherP ) ) ;
+        __( nicNameP == socketC::nicNameIF( tin0P , etherP ) ) ;
         __Z( nicNameP ) ;
         if( POOP ) return ;
     {
@@ -43,15 +43,15 @@
     ___( psOut ) ;
     SCOOP
 {
-sgnDone_tmRiverAccept( tinBaseP , TAG( TAGiDnULL ) )
+sgnDone_tmRiverAccept( tin0P , TAG( TAGiDnULL ) )
 bDestroy( 0 ) ,
-psOut( new( 0 , tinBaseP , LF ) socketC( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ) ,
+psOut( new( 0 , tin0P , LF ) socketC( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ) ,
 idPort( idPortP ? idPortP : ifcPORToLD1rIVERdEFAULT ) ,
 nicName( nicNameP ) ,
-baton( tinBaseP , TAG( TAGiDnULL ) ) ,
+baton( tin0P , TAG( TAGiDnULL ) ) ,
 poop( etherP ) ,
 ether( etherP ) ,
-/*1*/riverC::riverC( tin0S& tinBaseP , etherC& etherP , const nicNameC nicNameP , const countT idPortP )/*1*/ :
+/*1*/riverC::riverC( tin0S& tin0P , etherC& etherP , const nicNameC nicNameP , const countT idPortP )/*1*/ :
 
 /**/
 */

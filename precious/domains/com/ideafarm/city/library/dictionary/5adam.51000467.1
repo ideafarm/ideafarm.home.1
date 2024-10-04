@@ -9,26 +9,26 @@
 
 REST
 
-etThread.delF( tinBaseP , pbr ) ;
+etThread.delF( tin0P , pbr ) ;
 
-etThread.osEditF( tinBaseP , tLog ) ; // THIS WILL ONLY BE USEFUL IF IFC HAS BEEN CONFIGURED TO USE AN EDITOR THAT CAN DISPLAY HEX
+etThread.osEditF( tin0P , tLog ) ; // THIS WILL ONLY BE USEFUL IF IFC HAS BEEN CONFIGURED TO USE AN EDITOR THAT CAN DISPLAY HEX
 
-etThread.delF( tinBaseP , psttl ) ;
+etThread.delF( tin0P , psttl ) ;
 etherC::ifcSayIF( T(psttl) , flSAY_APPEND | flSAY_LOG ) ;
-etThread.dnsLabelsF( tinBaseP , psttl , pbe , &header ) ; ___( psttl ) ;
+etThread.dnsLabelsF( tin0P , psttl , pbe , &header ) ; ___( psttl ) ;
 pbe += 2 * sizeof( count01T ) ;
 pbe +=     sizeof( count02T ) ;
 pbe += 2 * sizeof( count01T ) ;
-etThread.delF( tinBaseP , psttl ) ;
+etThread.delF( tin0P , psttl ) ;
 etherC::ifcSayIF( T(psttl) , flSAY_APPEND | flSAY_LOG ) ;
-etThread.dnsLabelsF( tinBaseP , psttl , pbe , &header ) ; ___( psttl ) ;
+etThread.dnsLabelsF( tin0P , psttl , pbe , &header ) ; ___( psttl ) ;
 
 }
     }
         pbe += 2 * sizeof( count01T ) ;
-        etThread.delF( tinBaseP , psttl ) ;
+        etThread.delF( tin0P , psttl ) ;
         //etherC::ifcSayIF( T(psttl) , flSAY_APPEND | flSAY_LOG ) ;
-        etThread.dnsLabelsF( tinBaseP , psttl , pbe , &header ) ; ___( psttl ) ;
+        etThread.dnsLabelsF( tin0P , psttl , pbe , &header ) ; ___( psttl ) ;
     {
     while( cq -- )
     headerTmp.swabF() ;
@@ -42,12 +42,12 @@ dnsMsgHeaderS& header = *(dnsMsgHeaderS*)pbr ;
 ZE( strokeS* , psttl ) ;
 //PARSE REPLY TO OBTAIN LABELS
 
-etThread.osEditF( tinBaseP , tFile ) ; // THIS WILL ONLY BE USEFUL IF IFC HAS BEEN CONFIGURED TO USE AN EDITOR THAT CAN DISPLAY HEX
+etThread.osEditF( tin0P , tFile ) ; // THIS WILL ONLY BE USEFUL IF IFC HAS BEEN CONFIGURED TO USE AN EDITOR THAT CAN DISPLAY HEX
 
-etThread.boxPutF( tinBaseP , tFile , pbr , cbr ) ;
+etThread.boxPutF( tin0P , tFile , pbr , cbr ) ;
 TN( tFile , "///d/tmp/" ) ; tFile += TF1(DDNAME) ;
 
-etThread.dnsQueryF( tinBaseP , pbr , cbr , tName , ifcIDtYPEdNSqUERY_A ) ; ___( pbr ) ;
+etThread.dnsQueryF( tin0P , pbr , cbr , tName , ifcIDtYPEdNSqUERY_A ) ; ___( pbr ) ;
 ZE( countT , cbr ) ;
 ZE( byteT* , pbr ) ;
 

@@ -8,54 +8,54 @@
 
 
 }
-    baton.ungrabF( tinBaseP ) ;
+    baton.ungrabF( tin0P ) ;
 
     }
-        sgn_cSubscribers.waitF( tinBaseP ) ;
+        sgn_cSubscribers.waitF( tin0P ) ;
         }
-            sgn_pbv.giveF( tinBaseP ) ;
+            sgn_pbv.giveF( tin0P ) ;
             }
                 pbvw = 0 ;
                 pbv = pbvw ;
-                if( cbv ) socko.readF( tinBaseP , pbvw , cbv ) ;
+                if( cbv ) socko.readF( tin0P , pbvw , cbv ) ;
                 pbvw[ cbv ] = 0 ;
             {
             if( pbvw )
-            ether.newF( tinBaseP , LF , pbvw , cbv + 1 ) ; ___( pbvw ) ;
+            ether.newF( tin0P , LF , pbvw , cbv + 1 ) ; ___( pbvw ) ;
             ZE( byteT* , pbvw ) ;
 
             cbv = cbvw ;
-            socko.readF( tinBaseP , (byteT*)&cbvw , sizeof cbvw ) ;
+            socko.readF( tin0P , (byteT*)&cbvw , sizeof cbvw ) ;
             ZE( countT , cbvw ) ;
 
             idCmd = idCmdw ;
-            socko.readF( tinBaseP , (byteT*)&idCmdw , sizeof idCmdw ) ;
+            socko.readF( tin0P , (byteT*)&idCmdw , sizeof idCmdw ) ;
 
-            ether.delF( tinBaseP , pbv ) ;
+            ether.delF( tin0P , pbv ) ;
 
-            socko.writeF( tinBaseP , (byteT*)&idPortSubscribe , sizeof idPortSubscribe ) ;
+            socko.writeF( tin0P , (byteT*)&idPortSubscribe , sizeof idPortSubscribe ) ;
 
-            socko.writeF( tinBaseP , (byteT*)&idCmdw , sizeof idCmdw ) ;
+            socko.writeF( tin0P , (byteT*)&idCmdw , sizeof idCmdw ) ;
             countT idCmdw = idCMDbUS_SUBSCRIBE ;
 
-            socko.writeF( tinBaseP , (byteT*)&idBus , sizeof idBus ) ;
+            socko.writeF( tin0P , (byteT*)&idBus , sizeof idBus ) ;
 
-            socko.connectF( tinBaseP , ifcPORToLD1bUSsERVER , socketC::nicNameIF( tinBaseP , ether , T(WWWiDEAFARMcOM) ) ) ;
-            socketC socko( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
+            socko.connectF( tin0P , ifcPORToLD1bUSsERVER , socketC::nicNameIF( tin0P , ether , T(WWWiDEAFARMcOM) ) ) ;
+            socketC socko( tin0P , ether , TAG( TAGiDnULL ) ) ;
 
-            sgnReady.waitF( tinBaseP ) ;
-            { ZE( countT , tnu ) ; ether.osThreadF( tinBaseP , tnu , tmSubscribeF , &sgnDone_tmSubscribe , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)this , (countT)&sgnQuit_tmSubscribe , (countT)&idPortSubscribe , (countT)&sgnReady , (countT)&sgn_cSubscribers , (countT)&sgn_pbv ) ; }
-            signC sgnReady( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sgnReady.waitF( tin0P ) ;
+            { ZE( countT , tnu ) ; ether.osThreadF( tin0P , tnu , tmSubscribeF , &sgnDone_tmSubscribe , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)this , (countT)&sgnQuit_tmSubscribe , (countT)&idPortSubscribe , (countT)&sgnReady , (countT)&sgn_cSubscribers , (countT)&sgn_pbv ) ; }
+            signC sgnReady( tin0P , TAG( TAGiDnULL ) ) ;
         {
 
         bSubscribe = 1 ;
     {
     if( !bSubscribe )
 
-    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _IO_
 {
-/*1*/voidT busC::subscribeIfF( tin0S& tinBaseP )/*1*/
+/*1*/voidT busC::subscribeIfF( tin0S& tin0P )/*1*/
 
 /**/
 

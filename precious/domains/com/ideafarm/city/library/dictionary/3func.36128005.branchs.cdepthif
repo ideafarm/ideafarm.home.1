@@ -36,7 +36,7 @@
                         if( !bFoundKid ) bFoundKid = 1 ;
                     {
                     if( cDepthKid != - 1 )
-                    countT cDepthKid = cDepthIF( tinBaseP , etherP , jc , cDepthMaxP - 1 , idEditionP ) ;
+                    countT cDepthKid = cDepthIF( tin0P , etherP , jc , cDepthMaxP - 1 , idEditionP ) ;
                 {
                 do
                 const countT jStart = jc ;
@@ -64,7 +64,7 @@
     if( bNix ) cDepth = - 1 ;
 
     }
-        if( jHe ) cDepthHe = cDepthIF( tinBaseP , etherP , jHe , cDepthMaxP , idEditionP ) ;
+        if( jHe ) cDepthHe = cDepthIF( tin0P , etherP , jHe , cDepthMaxP , idEditionP ) ;
 
         }
             }
@@ -76,7 +76,7 @@
             else
             }
                  valueHe = idTypeHe = jHe = 0 ;
-                 etherP.traceF( tinBaseP , T("branchS::cDepthIF: error: following a branch pointer led nowhere") ) ;
+                 etherP.traceF( tin0P , T("branchS::cDepthIF: error: following a branch pointer led nowhere") ) ;
             {
             else if( !valueHe )                                          //20180420@0954:  ADDED WITHOUT ANALYSIS TO HANDLE !jHe WHEN etherSoilF PROCESSES A KT WITH AN INTENTIONAL MISSING LABEL
             if( jStart == valueHe ) valueHe = idTypeHe = jHe = 0 ;
@@ -97,7 +97,7 @@
     if( !bNix && idTypeMe == ifcIDtYPEbRANCHs_branchSptr )
     ZE( countT , cDepthHe ) ;
 
-    boolT bNix = !!branchS::bEditionIF( tinBaseP , etherP , jMeP , idEditionP ) ;
+    boolT bNix = !!branchS::bEditionIF( tin0P , etherP , jMeP , idEditionP ) ;
 
     }
         idTypeMe = B(brMe).idType ;
@@ -109,7 +109,7 @@
 
     ZE( countT , cDepth ) ;
 {
-/*1*/countT branchS::cDepthIF( tin0S& tinBaseP , etherC& etherP , const countT jMeP , const countT cDepthMaxP , const countT idEditionP )/*1*/
+/*1*/countT branchS::cDepthIF( tin0S& tin0P , etherC& etherP , const countT jMeP , const countT cDepthMaxP , const countT idEditionP )/*1*/
 
 // IF I AM A REFERENCE, I RETURN THE MAXIMUM OF ITS DEPTH AND THE DEPTH OF THE BRANCH THAT I REFERENCE
 // I HANDLE LOOPING SILENTLY, CONTAINING ONLY THE LOGIC THAT I NEED TO RETURN PROMPTLY AS SOON AS I KNOW THAT DEPTH IS NOT DEFINED

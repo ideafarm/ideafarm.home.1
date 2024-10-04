@@ -9,25 +9,25 @@
                             
 REST
 
-etThread.traceF( tinBaseP , T("ok") ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 THREADmODE3rESTORE
 }
     }
-        ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
+        ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
     {
     while( ws.cWorkers )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-    //etThread.traceF( tinBaseP , T("waiting for worker") ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    //etThread.traceF( tin0P , T("waiting for worker") ) ;
 
     }
-        //etThread.traceF( tinBaseP , T("napped") ) ;
-        ++ s ; etThread.osSleepF( tinBaseP , TOCK << 2 ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-        //etThread.traceF( tinBaseP , T("napping") ) ;
+        //etThread.traceF( tin0P , T("napped") ) ;
+        ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        //etThread.traceF( tin0P , T("napping") ) ;
 
-        //etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER") , ifcIDaDAM_ACCESSeVENTS4rEPORT , 0 , flHIRE_WAIT | flHIRE_DISPLAYaUTO , 0 , 0 , 1 ) ;
-        //etThread.traceF( tinBaseP , T("hiring reporter and waiting") ) ;
+        //etThread.ifcHireF( tin0P , T("ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER") , ifcIDaDAM_ACCESSeVENTS4rEPORT , 0 , flHIRE_WAIT | flHIRE_DISPLAYaUTO , 0 , 0 , 1 ) ;
+        //etThread.traceF( tin0P , T("hiring reporter and waiting") ) ;
 
         if( bQuit ) break ;
 
@@ -36,10 +36,10 @@ THREADmODE3rESTORE
             }
                 }
                     }
-                        ++ s ; etThread.osSleepF( tinBaseP , TOCK >> 3 ) ;
+                        ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
                     {
                     while( ws.st_pPageEvent > ( TUCK >> 2 ) )
-                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( ws.st_pPageEvent > ( TUCK << 3 ) )
 
@@ -48,14 +48,14 @@ THREADmODE3rESTORE
                 bPrefix = !bPrefix ;
 
                 else          pbi = 0 ;
-                if( bDelete ) PUSE( tinBaseP , *(byteT**)&pbi ) ;
+                if( bDelete ) PUSE( tin0P , *(byteT**)&pbi ) ;
 
                 ;
                     : sizeof( countT )
                     ? *(countT*)pbi
                 cbi = bPrefix
 
-                //if( bPrefix && !( ++ ws.idIn % TUCK ) ) etThread.traceF( tinBaseP , T("[ws.idIn]:    ")+TF2(ws.idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //if( bPrefix && !( ++ ws.idIn % TUCK ) ) etThread.traceF( tin0P , T("[ws.idIn]:    ")+TF2(ws.idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                 }
                     ws.st_pPageEvent << *(countT*)&pPageEvent ;
@@ -69,10 +69,10 @@ THREADmODE3rESTORE
                     if( !(const byteT*)*pPageEvent )
 
                     THREADmODE4rESTORE
-                    //((tin9S&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
-                    bksAccessEvents.readF( tinBaseP , *pPageEvent , hRead , flBOOKScrEAD_null ) ;
-                    //((tin9S&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
-                    pPageEvent = new( 0 , tinBaseP , LF ) pageC( tinBaseP , bksAccessEvents , cbi ) ; ___( pPageEvent ) ;
+                    //((tin9S&)tin0P).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+                    bksAccessEvents.readF( tin0P , *pPageEvent , hRead , flBOOKScrEAD_null ) ;
+                    //((tin9S&)tin0P).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+                    pPageEvent = new( 0 , tin0P , LF ) pageC( tin0P , bksAccessEvents , cbi ) ; ___( pPageEvent ) ;
                     THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
                     ZE( pageC* , pPageEvent ) ;
                 {
@@ -86,9 +86,9 @@ THREADmODE3rESTORE
                         cbi = cbiSave ;
                     {
                     if( !pbi )
-                    //((tin9S&)tinBaseP).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
-                    bDelete = bksAccessEvents.readF( tinBaseP , pbi , cbi , hRead ) ;
-                    //((tin9S&)tinBaseP).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+                    //((tin9S&)tin0P).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+                    bDelete = bksAccessEvents.readF( tin0P , pbi , cbi , hRead ) ;
+                    //((tin9S&)tin0P).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
                 {
                 if( bPrefix )
                 ZE( boolT , bDelete ) ;
@@ -115,29 +115,29 @@ THREADmODE3rESTORE
     {
     while( !bQuit && !bQuit2 && !POOP )
     ZE( boolT , bQuit2 ) ;
-    handleC hRead( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+    handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
 
     #endif
-    //etThread.traceF( tinBaseP , T("napped  to let workers wake up") ) ;
+    //etThread.traceF( tin0P , T("napped  to let workers wake up") ) ;
     }
-        ++ s ; etThread.osSleepF( tinBaseP , TOCK << 4 ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; etThread.osSleepF( tin0P , TOCK << 4 ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
-    //etThread.traceF( tinBaseP , T("napping to let workers wake up") ) ;
+    //etThread.traceF( tin0P , T("napping to let workers wake up") ) ;
     #if defined( NEVERdEFINED )
 
     }
-        etThread.osThreadF( tinBaseP , countTC() , tmWorkerF , 0 , 0 , 0  , flTHREADlAUNCH_null , TOCK , (countT)&ws , (countT)&bksAccessEvents ) ;
+        etThread.osThreadF( tin0P , countTC() , tmWorkerF , 0 , 0 , 0  , flTHREADlAUNCH_null , TOCK , (countT)&ws , (countT)&bksAccessEvents ) ;
         inc02AM( ws.cWorkers ) ;
     {
     while( cDo -- )
     countT cDo = 0x10 ;
 
-    workS ws( tinBaseP , etThread ) ;
+    workS ws( tin0P , etThread ) ;
 {
 THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
 
-booksC bksAccessEvents( tinBaseP , TAG( TAGiDnULL ) , "bksAccessEvents.1.raw" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_null , 0 , 1 , 0 , 0 , 0 , 0 , &bQuit ) ;
+booksC bksAccessEvents( tin0P , TAG( TAGiDnULL ) , "bksAccessEvents.1.raw" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_null , 0 , 1 , 0 , 0 , 0 , 0 , &bQuit ) ;
 const boolT& bQuit = *(const boolT*)&(const countT&)ether ;
 
 
@@ -146,7 +146,7 @@ const boolT& bQuit = *(const boolT*)&(const countT&)ether ;
 //U:: REDUCE SIZE OF SOME OF THESE jotC INSTANCES
 
 
-//U::ether.ifcHireF( tinBaseP , T("ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER") , ifcIDaDAM_CLOUD , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
+//U::ether.ifcHireF( tin0P , T("ifcIDaDAM_ACCESSeVENTS2bOOKtOGETHER") , ifcIDaDAM_CLOUD , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
 
 TODO
 
@@ -158,54 +158,54 @@ DONE( tmWorkerF )
             THREADmODE2rESTORE
             THREADmODE3rESTORE
             }
-                wsP.st_pPageEvent.ungrabF( tinBaseP ) ;
+                wsP.st_pPageEvent.ungrabF( tin0P ) ;
                 }
-                    wsP.st_pPageEvent.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    wsP.st_pPageEvent.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     }
                         THREADmODE4rESTORE
                         DEL( pPageEvent ) ;
                         THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
 
-                        etThread.delF( tinBaseP , psttBrowser ) ;
-                        etThread.delF( tinBaseP , psttProtocol ) ;
-                        etThread.delF( tinBaseP , psttQuery ) ;
-                        etThread.delF( tinBaseP , psttUri ) ;
-                        etThread.delF( tinBaseP , psttContainer ) ;
-                        etThread.delF( tinBaseP , psttLogBucket ) ;
-                        etThread.delF( tinBaseP , psttMethod ) ;
+                        etThread.delF( tin0P , psttBrowser ) ;
+                        etThread.delF( tin0P , psttProtocol ) ;
+                        etThread.delF( tin0P , psttQuery ) ;
+                        etThread.delF( tin0P , psttUri ) ;
+                        etThread.delF( tin0P , psttContainer ) ;
+                        etThread.delF( tin0P , psttLogBucket ) ;
+                        etThread.delF( tin0P , psttMethod ) ;
 
                         }
                             }
                                 }
-                                    listC::fieldIF( tinBaseP , pOut , hRecordEvent , pczfBrowser   , _fe_pushC( pidj[ 6 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; } // DO NOT INDEX
-                                    listC::fieldIF( tinBaseP , pOut , hRecordEvent , pczfCbRequest , _fe_pushC( cbRequest ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
-                                    listC::fieldIF( tinBaseP , pOut , hRecordEvent , pczfCode      , _fe_pushC( code      ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
-                                    listC::fieldIF( tinBaseP , pOut , hRecordEvent , pczfProtocol  , _fe_pushC( pidj[ 5 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
-                                    listC::fieldIF( tinBaseP , pOut , hRecordEvent , pczfQuery     , _fe_pushC( pidj[ 4 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
-                                    listC::fieldIF( tinBaseP , pOut , hRecordEvent , pczfUri       , _fe_pushC( pidj[ 3 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; } // DO NOT INDEX
-                                    listC::fieldIF( tinBaseP , pOut , hRecordEvent , pczfContainer , _fe_pushC( pidj[ 2 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
-                                    listC::fieldIF( tinBaseP , pOut , hRecordEvent , pczfLogBucket , _fe_pushC( pidj[ 1 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
-                                    listC::fieldIF( tinBaseP , pOut , hRecordEvent , pczfMethod    , _fe_pushC( pidj[ 0 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
+                                    listC::fieldIF( tin0P , pOut , hRecordEvent , pczfBrowser   , _fe_pushC( pidj[ 6 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; } // DO NOT INDEX
+                                    listC::fieldIF( tin0P , pOut , hRecordEvent , pczfCbRequest , _fe_pushC( cbRequest ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
+                                    listC::fieldIF( tin0P , pOut , hRecordEvent , pczfCode      , _fe_pushC( code      ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
+                                    listC::fieldIF( tin0P , pOut , hRecordEvent , pczfProtocol  , _fe_pushC( pidj[ 5 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
+                                    listC::fieldIF( tin0P , pOut , hRecordEvent , pczfQuery     , _fe_pushC( pidj[ 4 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
+                                    listC::fieldIF( tin0P , pOut , hRecordEvent , pczfUri       , _fe_pushC( pidj[ 3 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; } // DO NOT INDEX
+                                    listC::fieldIF( tin0P , pOut , hRecordEvent , pczfContainer , _fe_pushC( pidj[ 2 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
+                                    listC::fieldIF( tin0P , pOut , hRecordEvent , pczfLogBucket , _fe_pushC( pidj[ 1 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
+                                    listC::fieldIF( tin0P , pOut , hRecordEvent , pczfMethod    , _fe_pushC( pidj[ 0 ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ; { puseC pu( wsP.puseAT ) ; DELlIST( fieldEditParamOutC , pOut ) ; }
 
-                                    listC::openIF( tinBaseP , hRecordEvent    , hIdJotUri       , pczRecordEvent    , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                    listC::openIF( tinBaseP , hIdJotUri       , hHashUri        , pczIdJotUri       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                    listC::openIF( tinBaseP , hHashUri        , hIdJotContainer , pczHashUri        , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                    listC::openIF( tinBaseP , hIdJotContainer , hContainers     , pczIdJotContainer , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                    listC::openIF( tinBaseP , hContainers     , pczContainers                       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                    listC::openIF( tin0P , hRecordEvent    , hIdJotUri       , pczRecordEvent    , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                    listC::openIF( tin0P , hIdJotUri       , hHashUri        , pczIdJotUri       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                    listC::openIF( tin0P , hHashUri        , hIdJotContainer , pczHashUri        , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                    listC::openIF( tin0P , hIdJotContainer , hContainers     , pczIdJotContainer , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                    listC::openIF( tin0P , hContainers     , pczContainers                       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
 
                                     puseC pu3( wsP.puseEvents ) ;
                                 {
 
-                                grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                grabitC grabitx( tin0P , TAG( TAGiDnULL ) ) ;
 
-                                if( !( idOutMine % TUCK ) ) etThread.traceF( tinBaseP , T("[idOut]:    ")+TF2(idOutMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                if( !( idOutMine % TUCK ) ) etThread.traceF( tin0P , T("[idOut]:    ")+TF2(idOutMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 countT idOutMine = 1 + incv02AM( wsP.idOut ) ;
 
-                                handleC hRecordEvent(    tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                                handleC hIdJotUri(       tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                                handleC hHashUri(        tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                                handleC hIdJotContainer( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                                handleC hContainers(     tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                handleC hRecordEvent(    tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                handleC hIdJotUri(       tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                handleC hHashUri(        tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                handleC hIdJotContainer( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                handleC hContainers(     tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                                 _IO_
                             {
 
@@ -224,7 +224,7 @@ DONE( tmWorkerF )
                                         : (const countT*)count4S( ((const countT*)nnHe)[ 0 ]                                                                                        , timeW1 , (countT)timeW2 )
                                         ? (const countT*)count7S( ((const countT*)nnHe)[ 0 ] , ((const countT*)nnHe)[ 1 ] , ((const countT*)nnHe)[ 2 ] , ((const countT*)nnHe)[ 3 ] , timeW1 , (countT)timeW2 )
                                     ccn > 1
-                                    tinBaseP , pcznu , 0 ,
+                                    tin0P , pcznu , 0 ,
                                 (
                                 etherC::strStretchIF
                                 countT* pcznu = pczRecordEvent ;
@@ -235,7 +235,7 @@ DONE( tmWorkerF )
                                 _IO_
                             {
 
-                            { countT* pcznu = pczIdJotUri ; etherC::strStretchIF( tinBaseP , pcznu , 0 , pidj[ 3 ] ) ; }
+                            { countT* pcznu = pczIdJotUri ; etherC::strStretchIF( tin0P , pcznu , 0 , pidj[ 3 ] ) ; }
 
                             // *****************************************************************************************************************************************************************************************************************************************************
                             // *****************************************************************************************************************************************************************************************************************************************************
@@ -248,56 +248,56 @@ DONE( tmWorkerF )
                             }
                                 if( !pidj[ offi ] ) { BLAMMO ; }
 
-                                ppjhs[ offi ]->ungrabF( tinBaseP ) ;
-                                //if( offi == 3 ) etThread.traceF( tinBaseP , T("serialized processing ---- for offi==3 [hash]:    ")+TF2(ph[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                ppjhs[ offi ]->ungrabF( tin0P ) ;
+                                //if( offi == 3 ) etThread.traceF( tin0P , T("serialized processing ---- for offi==3 [hash]:    ")+TF2(ph[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 }
-                                    etThread.traceF( tinBaseP , T("stored  [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[ offi ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
+                                    etThread.traceF( tin0P , T("stored  [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[ offi ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
                                     DELlIST( fieldEditParamOutC , pOut ) ;
-                                    puseC puseAT( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+                                    puseC puseAT( tin0P , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
                                     }
-                                        listC::fieldIF( tinBaseP , pOut , hHashUri  , pczfIdJotUri , _fe_pushC( pidj[ offi ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ;
+                                        listC::fieldIF( tin0P , pOut , hHashUri  , pczfIdJotUri , _fe_pushC( pidj[ offi ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ;
 
-                                        listC::openIF( tinBaseP , hHashUri        , hIdJotContainer , pczHashUri        , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                        listC::openIF( tinBaseP , hIdJotContainer , hContainers     , pczIdJotContainer , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
-                                        listC::openIF( tinBaseP , hContainers     , pczContainers                       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                        listC::openIF( tin0P , hHashUri        , hIdJotContainer , pczHashUri        , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                        listC::openIF( tin0P , hIdJotContainer , hContainers     , pczIdJotContainer , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                        listC::openIF( tin0P , hContainers     , pczContainers                       , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
 
                                         puseC pu1( wsP.puseEvents ) ;
 
-                                        grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                        grabitC grabitx( tin0P , TAG( TAGiDnULL ) ) ;
 
-                                        handleC hHashUri(        tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                                        handleC hIdJotContainer( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                                        handleC hContainers(     tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                        handleC hHashUri(        tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                        handleC hIdJotContainer( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                        handleC hContainers(     tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
 
-                                        //etThread.delF( tinBaseP , pczSquished ) ;
-                                        //etThread.traceF( tinBaseP , T("listing new uri [idJotNewUri,pczHashUri]:   ")+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pczSquished,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                        //etThread.strSquishIF( tinBaseP , pczSquished , pczHashUri ) ; ___( pczSquished ) ;     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
+                                        //etThread.delF( tin0P , pczSquished ) ;
+                                        //etThread.traceF( tin0P , T("listing new uri [idJotNewUri,pczHashUri]:   ")+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pczSquished,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        //etThread.strSquishIF( tin0P , pczSquished , pczHashUri ) ; ___( pczSquished ) ;     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
                                         //ZE( countT* , pczSquished ) ;
                                     {
                                     else if( offi == 3 )
                                     }
                                         DELlIST( fieldEditParamOutC , pOut ) ;
-                                        puseC puseAT( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+                                        puseC puseAT( tin0P , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
                                         }
-                                            listC::fieldIF( tinBaseP , pOut , hContainers  , pczfIdJotContainer , _fe_pushC( pidj[ offi ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ;
-                                            listC::openIF( tinBaseP , hContainers , pczContainers , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                            listC::fieldIF( tin0P , pOut , hContainers  , pczfIdJotContainer , _fe_pushC( pidj[ offi ] ) + _fe_modeMixinDoNotIndexC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ;
+                                            listC::openIF( tin0P , hContainers , pczContainers , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ;
                                             puseC pu1( wsP.puseEvents ) ;
                                         {
 
-                                        grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                        grabitC grabitx( tin0P , TAG( TAGiDnULL ) ) ;
 
-                                        handleC hContainers( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                        handleC hContainers( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
 
-                                        //etThread.delF( tinBaseP , pczSquished ) ;
-                                        //etThread.traceF( tinBaseP , T("listing new container [idJotNewContainer,pczContainers]:   ")+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pczSquished,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                        //etThread.strSquishIF( tinBaseP , pczSquished , pczContainers ) ; ___( pczSquished ) ;     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
+                                        //etThread.delF( tin0P , pczSquished ) ;
+                                        //etThread.traceF( tin0P , T("listing new container [idJotNewContainer,pczContainers]:   ")+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pczSquished,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        //etThread.strSquishIF( tin0P , pczSquished , pczContainers ) ; ___( pczSquished ) ;     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
                                         //ZE( countT* , pczSquished ) ;
                                     {
                                     if( offi == 2 )
                                     pidj[ offi ] = (countT)pbEncoded ;
-                                    etThread.strEncodeF( tinBaseP , pbEncoded , psttzv , 0 , sizeof( countT ) , (const byteT*)&ph[ offi ] ) ; ___( pbEncoded ) ;
+                                    etThread.strEncodeF( tin0P , pbEncoded , psttzv , 0 , sizeof( countT ) , (const byteT*)&ph[ offi ] ) ; ___( pbEncoded ) ;
                                     ZEJ( byteT* , pbEncoded , *ppjhs[ offi ] ) ;
-                                    //etThread.traceF( tinBaseP , T("storing [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[ offi ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
+                                    //etThread.traceF( tin0P , T("storing [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[ offi ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
                                     _IO_
                                 {
                                 if( !pidj[ offi ] )
@@ -307,14 +307,14 @@ DONE( tmWorkerF )
                                         break ;
                                         }
                                             }
-                                                etThread.delF( tinBaseP , psttHe ) ;
+                                                etThread.delF( tin0P , psttHe ) ;
                                                 }
-                                                    //etThread.traceF( tinBaseP , T("found   [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
+                                                    //etThread.traceF( tin0P , T("found   [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
                                                     pidj[ offi ] = ppjhs[ offi ]->idLathReadF() ;
                                                 {
-                                                if( !etThread.strCompareF( tinBaseP , psttzv , psttHe ) )
-                                                //etThread.traceF( tinBaseP , T("comparing [offi,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
-                                                etThread.strDecodeF( tinBaseP , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
+                                                if( !etThread.strCompareF( tin0P , psttzv , psttHe ) )
+                                                //etThread.traceF( tin0P , T("comparing [offi,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
+                                                etThread.strDecodeF( tin0P , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
                                                 ZE( strokeS* , psttHe ) ;
                                             {
                                             else if( *(countT*)pbEncodedHe == ph[ offi ] )
@@ -334,24 +334,24 @@ DONE( tmWorkerF )
                                     }
                                         break ;
 
-                                        stIdJotUri.purgeF( tinBaseP ) ;
+                                        stIdJotUri.purgeF( tin0P ) ;
                                         }
                                             }
-                                                etThread.delF( tinBaseP , psttHe ) ;
+                                                etThread.delF( tin0P , psttHe ) ;
                                                 }
                                                     break ;
-                                                    etThread.delF( tinBaseP , psttHe ) ;
-                                                    //etThread.traceF( tinBaseP , T("found! [offi,idJot,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
+                                                    etThread.delF( tin0P , psttHe ) ;
+                                                    //etThread.traceF( tin0P , T("found! [offi,idJot,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
                                                     pidj[ offi ] = idJot ;
                                                 {
-                                                if( !etThread.strCompareF( tinBaseP , psttzv , psttHe ) )
-                                                //etThread.traceF( tinBaseP , T("comparing [offi,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
-                                                etThread.strDecodeF( tinBaseP , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
+                                                if( !etThread.strCompareF( tin0P , psttzv , psttHe ) )
+                                                //etThread.traceF( tin0P , T("comparing [offi,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
+                                                etThread.strDecodeF( tin0P , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
                                                 ZE( strokeS* , psttHe ) ;
 
                                                 }
                                                     continue ;
-                                                    etThread.traceF( tinBaseP , T("error: unexpected hash [offi,idJot,actualHash,expectedHash]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(*(countT*)pbEncodedHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ph[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    etThread.traceF( tin0P , T("error: unexpected hash [offi,idJot,actualHash,expectedHash]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(*(countT*)pbEncodedHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ph[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
                                                 if( *(countT*)pbEncodedHe != ph[ offi ] )
                                             {
@@ -373,14 +373,14 @@ DONE( tmWorkerF )
 
                                         }
                                             DELlIST( fieldEditParamOutC , pOut ) ;
-                                            puseC puseAT( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+                                            puseC puseAT( tin0P , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
                                         {
                                         }
                                             }
                                                 pCursor = pCursor->pNext ;
                                                 }
                                                     stIdJotUri << idJotUri ;
-                                                    //etThread.traceF( tinBaseP , T("retrieved [idJotUri]:   ")+TF2(idJotUri,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    //etThread.traceF( tin0P , T("retrieved [idJotUri]:   ")+TF2(idJotUri,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     countT idJotUri = *(const countT*)pCursor->vspCount ;
                                                 {
                                                 if( (const countT*)pCursor->vspCount )
@@ -392,10 +392,10 @@ DONE( tmWorkerF )
 
                                         }
                                             //}
-                                            //    etThread.delF( tinBaseP , pczSquished ) ;
-                                            //    etThread.traceF( tinBaseP , T("querying container [pczHashUri]:   ")+TF2(pczSquished,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //    etThread.delF( tin0P , pczSquished ) ;
+                                            //    etThread.traceF( tin0P , T("querying container [pczHashUri]:   ")+TF2(pczSquished,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                             //        
-                                            //    etThread.strSquishIF( tinBaseP , pczSquished , pczHashUri ) ; ___( pczSquished ) ;     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
+                                            //    etThread.strSquishIF( tin0P , pczSquished , pczHashUri ) ; ___( pczSquished ) ;     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
                                             //    ZE( countT* , pczSquished ) ;
                                             //{
                                             //if( bSay )
@@ -404,54 +404,54 @@ DONE( tmWorkerF )
                                                 }
                                                     }
                                                         }
-                                                            listC::fieldIF( tinBaseP , pOut , hHashUri , pczfIdJotUri ,  _fe_queryC() + _fe_modeAllC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ;
+                                                            listC::fieldIF( tin0P , pOut , hHashUri , pczfIdJotUri ,  _fe_queryC() + _fe_modeAllC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ;
                                                             //bSay ++ ;
                                                         {
                                                         if( ~hHashUri )
-                                                        listC::openIF( tinBaseP , hHashUri , hIdJotContainer , pczHashUri , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                                        listC::openIF( tin0P , hHashUri , hIdJotContainer , pczHashUri , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
                                                     {
                                                     if( ~hIdJotContainer )
-                                                    listC::openIF( tinBaseP , hIdJotContainer , hContainers , pczIdJotContainer , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                                    listC::openIF( tin0P , hIdJotContainer , hContainers , pczIdJotContainer , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
                                                 {
                                                 if( ~hContainers )
 
-                                                listC::openIF( tinBaseP , hContainers , pczContainers , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                                listC::openIF( tin0P , hContainers , pczContainers , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
 
                                                 puseC pu2( wsP.puseEvents ) ;
-                                                grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                                grabitC grabitx( tin0P , TAG( TAGiDnULL ) ) ;
                                             {
                                             //ZE( boolT , bSay ) ;
 
-                                            handleC hHashUri(        tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                                            handleC hIdJotContainer( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
-                                            handleC hContainers(     tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                            handleC hHashUri(        tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                            handleC hIdJotContainer( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                            handleC hContainers(     tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
 
                                             _IO_
                                         {
 
-                                        { countT* pcznu = pczHashUri        ; etherC::strStretchIF( tinBaseP , pcznu , 0 , hashUri   ) ; }
-                                        { countT* pcznu = pczIdJotContainer ; etherC::strStretchIF( tinBaseP , pcznu , 0 , pidj[ 2 ] ) ; }
+                                        { countT* pcznu = pczHashUri        ; etherC::strStretchIF( tin0P , pcznu , 0 , hashUri   ) ; }
+                                        { countT* pcznu = pczIdJotContainer ; etherC::strStretchIF( tin0P , pcznu , 0 , pidj[ 2 ] ) ; }
                                     {                                           //  LISTnAMEsYS_STRETCHbEGINcOUNTsTRZ   |-------- idJotContainer OR hashUri ----------------------------------------------------|   LISTnAMEsYS_STRETCHeND
                                     case 3 :    // LOOK UP idJotUri
                                     }
                                         break ;
 
-                                        stIdJotContainer.purgeF( tinBaseP ) ;
+                                        stIdJotContainer.purgeF( tin0P ) ;
                                         }
                                             }
-                                                etThread.delF( tinBaseP , psttHe ) ;
+                                                etThread.delF( tin0P , psttHe ) ;
                                                 }
                                                     break ;
-                                                    etThread.delF( tinBaseP , psttHe ) ;
+                                                    etThread.delF( tin0P , psttHe ) ;
                                                     pidj[ offi ] = idJot ;
                                                 {
-                                                if( !etThread.strCompareF( tinBaseP , psttzv , psttHe ) )
-                                                etThread.strDecodeF( tinBaseP , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
+                                                if( !etThread.strCompareF( tin0P , psttzv , psttHe ) )
+                                                etThread.strDecodeF( tin0P , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
                                                 ZE( strokeS* , psttHe ) ;
 
                                                 }
                                                     continue ;
-                                                    etThread.traceF( tinBaseP , T("error: unexpected hash [offi,idJot,actualHash,expectedHash]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(*(countT*)pbEncodedHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ph[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    etThread.traceF( tin0P , T("error: unexpected hash [offi,idJot,actualHash,expectedHash]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(*(countT*)pbEncodedHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ph[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
                                                 if( *(countT*)pbEncodedHe != ph[ offi ] )
                                             {
@@ -473,14 +473,14 @@ DONE( tmWorkerF )
 
                                         }
                                             DELlIST( fieldEditParamOutC , pOut ) ;
-                                            puseC puseAT( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
+                                            puseC puseAT( tin0P , ifcIDpOOL_ADAMtEMP ) ;     //20240807@1521: ADDED W/O ANALYSIS OR TESTING
                                         {
                                         }
                                             }
                                                 pCursor = pCursor->pNext ;
                                                 }
                                                     stIdJotContainer << idJotContainer ;
-                                                    //etThread.traceF( tinBaseP , T("retrieved [idJotContainer]:   ")+TF2(idJotContainer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    //etThread.traceF( tin0P , T("retrieved [idJotContainer]:   ")+TF2(idJotContainer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     countT idJotContainer = *(const countT*)pCursor->vspCount ;
                                                 {
                                                 if( (const countT*)pCursor->vspCount )
@@ -492,25 +492,25 @@ DONE( tmWorkerF )
 
                                         }
                                             //}
-                                            //    etThread.delF( tinBaseP , pczSquished ) ;
-                                            //    etThread.traceF( tinBaseP , T("querying container [pczContainers]:   ")+TF2(pczSquished,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //    etThread.delF( tin0P , pczSquished ) ;
+                                            //    etThread.traceF( tin0P , T("querying container [pczContainers]:   ")+TF2(pczSquished,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                             //
-                                            //    etThread.strSquishIF( tinBaseP , pczSquished , pczContainers ) ; ___( pczSquished ) ;     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
+                                            //    etThread.strSquishIF( tin0P , pczSquished , pczContainers ) ; ___( pczSquished ) ;     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
                                             //    ZE( countT* , pczSquished ) ;
                                             //{
                                             //if( bSay )
 
                                             }
                                                 }
-                                                    listC::fieldIF( tinBaseP , pOut , hContainers , pczfIdJotContainer ,  _fe_queryC() + _fe_modeAllC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ;
+                                                    listC::fieldIF( tin0P , pOut , hContainers , pczfIdJotContainer ,  _fe_queryC() + _fe_modeAllC() , LF , flLISToPEN_null , ifcIDgRABlAYER_7BASEmISC3 ) ; ___( pOut ) ;
                                                     //bSay ++ ;
                                                 {
                                                 if( ~hContainers )
 
-                                                listC::openIF( tinBaseP , hContainers , pczContainers , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
+                                                listC::openIF( tin0P , hContainers , pczContainers , flLISToPEN_IFeXISTS , ifcIDgRABlAYER_7BASEmISC3 ) ;
                                                 puseC pu1( wsP.puseEvents ) ;
-                                                grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
-                                                handleC hContainers( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                                                grabitC grabitx( tin0P , TAG( TAGiDnULL ) ) ;
+                                                handleC hContainers( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                                             {
                                             //ZE( boolT , bSay ) ;
 
@@ -527,7 +527,7 @@ DONE( tmWorkerF )
                                     //{
                                     //if( idIn == 2 )
 
-                                    //etThread.traceF( tinBaseP , T("off==3 [idIn,uri]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(ppsttzValue[offi]) ) ;
+                                    //etThread.traceF( tin0P , T("off==3 [idIn,uri]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(ppsttzValue[offi]) ) ;
 
                                     //countT idIn = 1 + incv02AM( idInLath ) ;
                                     //static countT idInLath ;
@@ -535,8 +535,8 @@ DONE( tmWorkerF )
                                 //if( offi == 3 )
                                 //U:: TO FIND A BUG
 
-                                //if( offi == 3 ) etThread.traceF( tinBaseP , T("serialized processing ++++ for offi==3 [hash]:    ")+TF2(ph[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                ppjhs[ offi ]->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                //if( offi == 3 ) etThread.traceF( tin0P , T("serialized processing ++++ for offi==3 [hash]:    ")+TF2(ph[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                ppjhs[ offi ]->grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                                 if( offi != 2 && offi != 3 ) ph[ offi ] = hashF( (byteT*)psttzv , sizeof( strokeS ) * ( CSpREFIX + psttzv->idAdam ) , 0 ) ;          // I ALREADY HAVE HASH FOR OFFSETS 2 3
 
@@ -572,7 +572,7 @@ DONE( tmWorkerF )
 
                                                        //  LISTnAMEsYS_STRETCHbEGINcOUNTsTRZ   |-------- idJotContainer OR hashUri ----------------------------------------------------|   LISTnAMEsYS_STRETCHeND
 
-                            { countT* pcznu = pczContainers ; etherC::strStretchIF( tinBaseP , pcznu , pczPrefix , hashContainer ) ; }
+                            { countT* pcznu = pczContainers ; etherC::strStretchIF( tin0P , pcznu , pczPrefix , hashContainer ) ; }
 
                             } ;
                                 LISTnAMEsYS_PLACEhOLDER , 0                                                                            // LISTnAMEsYS_STRETCHeND
@@ -593,7 +593,7 @@ DONE( tmWorkerF )
                             const countT hashContainer = hashF( (byteT*)psttContainer , sizeof( strokeS ) * ( CSpREFIX + psttContainer->idAdam ) , 0 ) ;
 
                             //}
-                            //    etThread.traceF( tinBaseP , T("[nnHe,time,method,bucket,container,uri,query,protocol,code,cb,browser]:    ")+tSay ) ;
+                            //    etThread.traceF( tin0P , T("[nnHe,time,method,bucket,container,uri,query,protocol,code,cb,browser]:    ")+tSay ) ;
                             //
                             //    ;
                             //
@@ -622,7 +622,7 @@ DONE( tmWorkerF )
 
                             // A:ASSUME:  THIS CODE ASSUMES THAT EVENTS ARE UNIQUELY IDENTIFIED BY [hash,idJot,time,nn]; MULTIPLE EVENTS WILL RESULT IN MULTIPLE VALUES FOR THE FIELDS
 
-                            //etThread.traceF( tinBaseP , T(psttUri) ) ;
+                            //etThread.traceF( tin0P , T(psttUri) ) ;
 
                             // *****************************************************************************************************************************************************************************************************************************************************
                             // *****************************************************************************************************************************************************************************************************************************************************
@@ -634,7 +634,7 @@ DONE( tmWorkerF )
                             _IO_
                         {
                         else
-                        if( getNegAM( finger ) != FINGERnEG_ACCESSeVENTrAW || idFormat != 1 ) etThread.traceF( tinBaseP , T("unexpected format [finger,idFormat]:    ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        if( getNegAM( finger ) != FINGERnEG_ACCESSeVENTrAW || idFormat != 1 ) etThread.traceF( tin0P , T("unexpected format [finger,idFormat]:    ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                         sBookEntry >> psttBrowser ;             ___( psttBrowser ) ;
                         sBookEntry >> cbRequest ;
@@ -667,39 +667,39 @@ DONE( tmWorkerF )
                         ZE( countT   , finger        ) ;
 
                         }
-                            etThread.delF( tinBaseP , pbPageCopy ) ;
+                            etThread.delF( tin0P , pbPageCopy ) ;
                             }
-                                sBookEntry.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , *pPageEvent , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                                sBookEntry.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , *pPageEvent , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
 
-                                bksAccessEventsP.unlockF( tinBaseP ) ;
-                                etThread.memCopyF( tinBaseP , pbPageCopy , pbzPage , cbzPage ) ;
+                                bksAccessEventsP.unlockF( tin0P ) ;
+                                etThread.memCopyF( tin0P , pbPageCopy , pbzPage , cbzPage ) ;
                                 const byteT* pbzPage = *pPageEvent ;
-                                bksAccessEventsP.lockF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                bksAccessEventsP.lockF( tin0P , TAG( TAGiDnULL ) ) ;
                             {
                             if( !POOP )
 
                             __Z( pbPageCopy ) ;
-                            etThread.newF( tinBaseP , LF , pbPageCopy , cbzPage ) ; ___( pbPageCopy ) ;
+                            etThread.newF( tin0P , LF , pbPageCopy , cbzPage ) ; ___( pbPageCopy ) ;
                             ZE( byteT* , pbPageCopy ) ;
 
                             countT cbzPage = *pPageEvent ;
                         {
-                        soulC sBookEntry( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        soulC sBookEntry( tin0P , TAG( TAGiDnULL ) ) ;
 
                         _IO_
                     {
                     if( pPageEvent )
 
-                    wsP.st_pPageEvent.ungrabF( tinBaseP ) ;
+                    wsP.st_pPageEvent.ungrabF( tin0P ) ;
                     wsP.st_pPageEvent >> *(countT*)&pPageEvent ;
                     ZE( pageC* , pPageEvent ) ;
                     _IO_
                 {
                 while( wsP.st_pPageEvent )
-                wsP.st_pPageEvent.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                wsP.st_pPageEvent.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-                stackC stIdJotUri(       tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_countT ) ;
-                stackC stIdJotContainer( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_countT ) ;
+                stackC stIdJotUri(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_countT ) ;
+                stackC stIdJotContainer( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_countT ) ;
 
                 _IO_
             {
@@ -709,10 +709,10 @@ DONE( tmWorkerF )
         {
         else
         }
-            //etThread.traceF( tinBaseP , T("napped") ) ;
-            ++ s ; etThread.osSleepF( tinBaseP , TOCK << 2 ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-            //etThread.traceF( tinBaseP , T("napping") ) ;
+            //etThread.traceF( tin0P , T("napped") ) ;
+            ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+            //etThread.traceF( tin0P , T("napping") ) ;
         {
         if( !wsP.st_pPageEvent )
         _IO_
@@ -725,26 +725,26 @@ DONE( tmWorkerF )
     workS&  wsP              =  *(workS*)pTaskP->c1 ;
     _IO_
 
-    thirdC::c_memcpyIF( tinBaseP , (byteT*)((tin9S&)tinBaseP).ppJot , (byteT*)((tin9S*)pTaskP->pTinBaseDad)->ppJot , sizeof ((tin9S&)tinBaseP).ppJot ) ;    //U:: MOVE TO BASE (flTHREADlAUNCH)
+    thirdC::c_memcpyIF( tin0P , (byteT*)((tin9S&)tin0P).ppJot , (byteT*)((tin9S*)pTaskP->pTinBaseDad)->ppJot , sizeof ((tin9S&)tin0P).ppJot ) ;    //U:: MOVE TO BASE (flTHREADlAUNCH)
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmWorkerF )
 
 }
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfBrowser        ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfCbRequest      ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfCode           ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfProtocol       ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfQuery          ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfUri            ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfContainer      ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfLogBucket      ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfMethod         ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfNicName        ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfTime           ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfIdJotUri       ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczfIdJotContainer ) ;
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczPrefix          ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfBrowser        ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfCbRequest      ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfCode           ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfProtocol       ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfQuery          ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfUri            ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfContainer      ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfLogBucket      ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfMethod         ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfNicName        ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfTime           ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfIdJotUri       ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczfIdJotContainer ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczPrefix          ) ;
 
     puseC pu( puseEvents ) ;
 
@@ -756,21 +756,21 @@ TASK( tmWorkerF )
     // *****************************************************************************************************************************************************************************************************************************************************
     // *****************************************************************************************************************************************************************************************************************************************************
 {
-puseAT( tinBaseP , ifcIDpOOL_ADAMtEMP )
-puseEvents( tinBaseP , "uri.access.events" , flPOOLc_DOnOTiNDEXdURINGcT , ifcIDsTATEsPACE_MULTIPLEaDAMS , 3 , 6 , pczHintPreallocation ) ,
+puseAT( tin0P , ifcIDpOOL_ADAMtEMP )
+puseEvents( tin0P , "uri.access.events" , flPOOLc_DOnOTiNDEXdURINGcT , ifcIDsTATEsPACE_MULTIPLEaDAMS , 3 , 6 , pczHintPreallocation ) ,
 idOut( 0 ) ,
 idIn( 0 ) ,
 cWorkers( 0 ) ,
-st_pPageEvent( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_countT ) ,
-jhsOther(      tinBaseP , "jotAccessEvents.hash.string.other"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [STRING]; WO JOT PER UNIQUE STRING
-jhsBrowser(    tinBaseP , "jotAccessEvents.hash.string.browser" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
-jhsQuery(      tinBaseP , "jotAccessEvents.hash.string.query"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
-jhsUri(        tinBaseP , "jotAccessEvents.hash.string.uri"     , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
-workS::workS( tin0S& tinBaseP , etherC& etherP ) :
+st_pPageEvent( tin0P , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_countT ) ,
+jhsOther(      tin0P , "jotAccessEvents.hash.string.other"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [STRING]; WO JOT PER UNIQUE STRING
+jhsBrowser(    tin0P , "jotAccessEvents.hash.string.browser" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
+jhsQuery(      tin0P , "jotAccessEvents.hash.string.query"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
+jhsUri(        tin0P , "jotAccessEvents.hash.string.uri"     , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 , ifcIDgRABlAYER_7BASEmISC2 ) ,   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
+workS::workS( tin0S& tin0P , etherC& etherP ) :
 
 ;
 }
-    workS( tin0S& tinBaseP , etherC& etherP ) ;
+    workS( tin0S& tin0P , etherC& etherP ) ;
 
     puseC   puseAT ;
     puseC   puseEvents ;

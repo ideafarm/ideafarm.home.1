@@ -8,30 +8,30 @@
 
 
 REST
-etThread.ifcSayF( tinBaseP , T("final aok\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+etThread.ifcSayF( tin0P , T("final aok\r\n") , flSAY_APPEND | flSAY_LOG ) ;
 
 }
     DEL( pLake ) ;
-    etUsesPoolPrime.delF( tinBaseP , pbPackLag ) ;
+    etUsesPoolPrime.delF( tin0P , pbPackLag ) ;
     TELL( "cleaning up" ) ;
     }
-        else if( bMake ) etThread.osSleepF( tinBaseP , TICK ) ;
+        else if( bMake ) etThread.osSleepF( tin0P , TICK ) ;
         if( bWoPass ) break ;
-        //etThread.ifcSayF( tinBaseP , T("bf30104 cycle ")+tIdCycle+T(" this cycle has ended") , flSAY_APPEND | flSAY_LOG ) ;
+        //etThread.ifcSayF( tin0P , T("bf30104 cycle ")+tIdCycle+T(" this cycle has ended") , flSAY_APPEND | flSAY_LOG ) ;
         TELL( "ending a cycle" ) ;
 
         }
-            //etThread.ifcSayF( tinBaseP , T("bf30104 cycle ")+tIdCycle+T(" a fresh pack file has been made") , flSAY_APPEND | flSAY_LOG ) ;
-            makePackF( tinBaseP , ether , etThread , st1 , st2 , st3 , st4 , bTest , state ) ;
-            //etThread.ifcSayF( tinBaseP , T("bf30104 cycle ")+tIdCycle+T(" beginning to make a fresh pack file") , flSAY_APPEND | flSAY_LOG ) ;
+            //etThread.ifcSayF( tin0P , T("bf30104 cycle ")+tIdCycle+T(" a fresh pack file has been made") , flSAY_APPEND | flSAY_LOG ) ;
+            makePackF( tin0P , ether , etThread , st1 , st2 , st3 , st4 , bTest , state ) ;
+            //etThread.ifcSayF( tin0P , T("bf30104 cycle ")+tIdCycle+T(" beginning to make a fresh pack file") , flSAY_APPEND | flSAY_LOG ) ;
             TELL( "making a pack of fish" ) ;
         {
         if( !ether && bMake )
 
         }
-            if( !ether ) etThread.ifcSayF( tinBaseP , T("bf30104 cycle ")+tIdCycle+T(" the current pack file is loaded") , flSAY_APPEND | flSAY_LOG ) ;
-            loadPackF( tinBaseP , ether , etThread , etUsesPoolPrime , pLake , pbPackLag ) ;
-            //etThread.ifcSayF( tinBaseP , T("bf30104 cycle ")+tIdCycle+T(" beginning to load the current pack file") , flSAY_APPEND | flSAY_LOG ) ;
+            if( !ether ) etThread.ifcSayF( tin0P , T("bf30104 cycle ")+tIdCycle+T(" the current pack file is loaded") , flSAY_APPEND | flSAY_LOG ) ;
+            loadPackF( tin0P , ether , etThread , etUsesPoolPrime , pLake , pbPackLag ) ;
+            //etThread.ifcSayF( tin0P , T("bf30104 cycle ")+tIdCycle+T(" beginning to load the current pack file") , flSAY_APPEND | flSAY_LOG ) ;
             TELL( "loading a pack of fish into the lake" ) ;
         {
         if( bLoad )
@@ -43,28 +43,28 @@ etThread.ifcSayF( tinBaseP , T("final aok\r\n") , flSAY_APPEND | flSAY_LOG ) ;
     ZE( lakeC* , pLake ) ;
     ZE( countT , idCycle ) ;
     ZE( byteT* , pbPackLag ) ;
-    etherC etUsesPoolPrime( tinBaseP , TAG( TAGiDnULL ) ) ;
-    stateS state( tinBaseP , etThread ) ;
+    etherC etUsesPoolPrime( tin0P , TAG( TAGiDnULL ) ) ;
+    stateS state( tin0P , etThread ) ;
 {
 
-setupF( tinBaseP , etThread , st1 , st2 , st3 , st4 , bTest ) ;
-stackC st4( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
-stackC st3( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
-stackC st2( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
-stackC st1( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+setupF( tin0P , etThread , st1 , st2 , st3 , st4 , bTest ) ;
+stackC st4( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+stackC st3( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+stackC st2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+stackC st1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
 
 //U:etThread.flagsMode |= flTHIRDmODE_CHECKpOOLoLD ;
 
-etThread.ifcSayF( tinBaseP , T("IdeaFarm " "(tm) City Publisher\r\ni periodically write the city knowledge tree and associated html files\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+etThread.ifcSayF( tin0P , T("IdeaFarm " "(tm) City Publisher\r\ni periodically write the city knowledge tree and associated html files\r\n") , flSAY_APPEND | flSAY_LOG ) ;
 TN( tLog , "///d/log.ifc.html" ) ;
 
-const boolT bLoad   = etThread.etherParameterF( tinBaseP , T("!load")   ) ;
-const boolT bMake   = etThread.etherParameterF( tinBaseP , T("!make")   ) ;
-const boolT bTest   = etThread.etherParameterF( tinBaseP , T("!test")   ) ;
-const boolT bWoPass = etThread.etherParameterF( tinBaseP , T("!woPass") ) ; //U: THESE ARE OBSOLETE NOW THAT I CYCLE CONTINUOUSLY AS PART OF ifc11 SYSTEM
+const boolT bLoad   = etThread.etherParameterF( tin0P , T("!load")   ) ;
+const boolT bMake   = etThread.etherParameterF( tin0P , T("!make")   ) ;
+const boolT bTest   = etThread.etherParameterF( tin0P , T("!test")   ) ;
+const boolT bWoPass = etThread.etherParameterF( tin0P , T("!woPass") ) ; //U: THESE ARE OBSOLETE NOW THAT I CYCLE CONTINUOUSLY AS PART OF ifc11 SYSTEM
 
-//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ; // I ALSO TAKE NAPS FREQUENTLY TO MAKE EXTRA SURE THAT I DO NOT INTERFERE WITH HTTP SERVICE
-((thirdC&)etThread).third_bWatchful_F( tinBaseP ) = 0 ;
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ; // I ALSO TAKE NAPS FREQUENTLY TO MAKE EXTRA SURE THAT I DO NOT INTERFERE WITH HTTP SERVICE
+((thirdC&)etThread).third_bWatchful_F( tin0P ) = 0 ;
 TELL( "preparing for work" ) ;
 TODO
 
@@ -75,51 +75,51 @@ TODO
         }
             }
                 }
-                    __( !poolC::poolOldRootIF( tinBaseP ).offNewMinF( tinBaseP ) ) ;
+                    __( !poolC::poolOldRootIF( tin0P ).offNewMinF( tin0P ) ) ;
                     }
-                        poolC::poolOldRootIF( tinBaseP ).poolOldDelIF( tinBaseP , (voidT*)pbPad ) ; pbPad = 0 ;
-                        poolC::poolOldRootIF( tinBaseP ).flagsBackF( tinBaseP ) &= ~( F(flPOOLoLDbACK_NOcURSORrESET) ) ;
-                        poolC::poolOldRootIF( tinBaseP ).setPoolNewMinF( tinBaseP ) ;
+                        poolC::poolOldRootIF( tin0P ).poolOldDelIF( tin0P , (voidT*)pbPad ) ; pbPad = 0 ;
+                        poolC::poolOldRootIF( tin0P ).flagsBackF( tin0P ) &= ~( F(flPOOLoLDbACK_NOcURSORrESET) ) ;
+                        poolC::poolOldRootIF( tin0P ).setPoolNewMinF( tin0P ) ;
                         }
-                            db.idiOwner     = ((tin9S&)tinBaseP).idiOwner ;
+                            db.idiOwner     = ((tin9S&)tin0P).idiOwner ;
                             db.cbUsedReally = cba ;
                             db.idType       = ifcIDtYPEdROPnOTE_byteT ;
                             //DROPnOTErEF( pbPad ) ;
                         {
                         if( pbPad )
-                        byteT* pbPad = (byteT*)poolC::poolOldRootIF( tinBaseP ).poolNewF( tinBaseP , LF , cba ) ; ___( pbPad ) ;
+                        byteT* pbPad = (byteT*)poolC::poolOldRootIF( tin0P ).poolNewF( tin0P , LF , cba ) ; ___( pbPad ) ;
                         countT cba = cbSoFar * 2 ;
                     {
-                    __( !!poolC::poolOldRootIF( tinBaseP ).offNewMinF( tinBaseP ) ) ;
+                    __( !!poolC::poolOldRootIF( tin0P ).offNewMinF( tin0P ) ) ;
     
                     }
-                        poolC::poolOldRootIF( tinBaseP ).poolOldDelIF( tinBaseP , (voidT*)pbAt ) ; pbAt = 0 ;
-                        cbSoFar = ap_artmentOldC( tinBaseP , pbAt ) ;
+                        poolC::poolOldRootIF( tin0P ).poolOldDelIF( tin0P , (voidT*)pbAt ) ; pbAt = 0 ;
+                        cbSoFar = ap_artmentOldC( tin0P , pbAt ) ;
                         }
-                            db.idiOwner     = ((tin9S&)tinBaseP).idiOwner ;
+                            db.idiOwner     = ((tin9S&)tin0P).idiOwner ;
                             db.cbUsedReally = 0 ;
                             db.idType       = ifcIDtYPEdROPnOTE_byteT ;
                             //DROPnOTErEF( pbAt ) ;
                         {
                         if( pbAt )
-                        byteT* pbAt = (byteT*)poolC::poolOldRootIF( tinBaseP ).poolNewF( tinBaseP , LF , 0 ) ; ___( pbAt ) ;
+                        byteT* pbAt = (byteT*)poolC::poolOldRootIF( tin0P ).poolNewF( tin0P , LF , 0 ) ; ___( pbAt ) ;
                     {
                     ZE( countT , cbSoFar ) ;
                 {
                 if( !bNewMinIsSet )
     
                 }
-                    stockOneImageFishF( tinBaseP , etThread , lake , pcNameFlag  , T("///d/ideafarm.work/backed.up.daily/images/gif/flag.100x50.gif") , T("image/gif" ) , bNewMinIsSet ) ;
-                    stockOneImageFishF( tinBaseP , etThread , lake , pcNameMural , T("///d/ideafarm.work/backed.up.daily/images/jpeg/mural.jpg"      ) , T("image/jpeg") , bNewMinIsSet ) ;
-                    //stockOneImageFishF( tinBaseP , etThread , lake , pcNameFlag  , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/image/gif/flag.100x50.gif") , T("image/gif" ) , bNewMinIsSet ) ;
-                    //stockOneImageFishF( tinBaseP , etThread , lake , pcNameMural , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/image/jpg/mural.jpg"      ) , T("image/jpeg") , bNewMinIsSet ) ;
+                    stockOneImageFishF( tin0P , etThread , lake , pcNameFlag  , T("///d/ideafarm.work/backed.up.daily/images/gif/flag.100x50.gif") , T("image/gif" ) , bNewMinIsSet ) ;
+                    stockOneImageFishF( tin0P , etThread , lake , pcNameMural , T("///d/ideafarm.work/backed.up.daily/images/jpeg/mural.jpg"      ) , T("image/jpeg") , bNewMinIsSet ) ;
+                    //stockOneImageFishF( tin0P , etThread , lake , pcNameFlag  , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/image/gif/flag.100x50.gif") , T("image/gif" ) , bNewMinIsSet ) ;
+                    //stockOneImageFishF( tin0P , etThread , lake , pcNameMural , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/image/jpg/mural.jpg"      ) , T("image/jpeg") , bNewMinIsSet ) ;
                     countT pcNameFlag[]  = { 2 , 1 , 0 } ;
                     countT pcNameMural[] = { 2 , 2 , 0 } ;
                 {
     
-                //etThread.ifcSayF( tinBaseP , T("time to load ")+TF1(cPacks)+T(" packs containing ")+T(cFish)+T(" fish into the lake: ")+TT(time1b,time2b) , flSAY_APPEND | flSAY_LOG ) ;
-                etThread.osTimeSubtractF( tinBaseP , time1b , time2b , time1as , time2as ) ;
-                etThread.osTimeNowF( tinBaseP , time1b , time2b ) ;
+                //etThread.ifcSayF( tin0P , T("time to load ")+TF1(cPacks)+T(" packs containing ")+T(cFish)+T(" fish into the lake: ")+TT(time1b,time2b) , flSAY_APPEND | flSAY_LOG ) ;
+                etThread.osTimeSubtractF( tin0P , time1b , time2b , time1as , time2as ) ;
+                etThread.osTimeNowF( tin0P , time1b , time2b ) ;
                 ZE( sCountT , time2b ) ;
                 ZE( countT , time1b ) ;
             {
@@ -127,44 +127,44 @@ TODO
     
             time2a = time2bs ;
             time1a = time1bs ;
-            etThread.osTimeSubtractF( tinBaseP , time1b , time2b , time1a , time2a ) ;
+            etThread.osTimeSubtractF( tin0P , time1b , time2b , time1a , time2a ) ;
             sCountT time2bs = time2b ;
             countT time1bs = time1b ;
-            etThread.osTimeNowF( tinBaseP , time1b , time2b ) ;
+            etThread.osTimeNowF( tin0P , time1b , time2b ) ;
             ZE( sCountT , time2b ) ;
             ZE( countT , time1b ) ;
     
                                               //WO APPROACH: USE THE WO'TH NAME VALUE AS A SERIAL NUMBER AND PASS THROUGH THE ENTIRE LAKE DELETING SERIAL NUMBERS BELOW OR AT THE BACKING PACK THAT IS ABOUT TO BE DELETED
                                               //U: IF A FISH BECOMES OBSOLETE WITHOUT BEING REPLACED, IT WILL REMAIN IN THE LAKE EVEN THOUGH THE pbPack THAT IT POINTS TO HAS BEEN DELETED
             pbPackLagP = pbPack ; pbPack = 0 ; //pbPack CANNOT BE DELETED UNTIL AFTER ALL FISH THAT REFER TO IT ARE DELETED
-            etUsesPoolPrime.delF( tinBaseP , pbPackLagP ) ;
+            etUsesPoolPrime.delF( tin0P , pbPackLagP ) ;
             }
-                etThread.delF( tinBaseP , pcName ) ;
-                etThread.delF( tinBaseP , psttw ) ;
+                etThread.delF( tin0P , pcName ) ;
+                etThread.delF( tin0P , psttw ) ;
                 }
                     }
                         THREADmODE2rESTORE
-                        lake.writeF( tinBaseP , pcName , pbBlob , cbBlob , 1 ) ;
+                        lake.writeF( tin0P , pcName , pbBlob , cbBlob , 1 ) ;
                         THREADmODE2oN( flTHREADmODE2_POOLoLDsECTION1 ) ;
                     {
                     else
-                    if( !bNewMinIsSet ) lake.writeF( tinBaseP , pcName , pbBlob , cbBlob , 1 ) ;
+                    if( !bNewMinIsSet ) lake.writeF( tin0P , pcName , pbBlob , cbBlob , 1 ) ;
     
                     pcName[ off ] = 0 ;
                     }
-                        etThread.delF( tinBaseP , psttn ) ;
+                        etThread.delF( tin0P , psttn ) ;
                         }
                             if( !pcName[ off ] ) pcName[ off ] = - 1 ;
-                            etThread.delF( tinBaseP , psttn2 ) ;
+                            etThread.delF( tin0P , psttn2 ) ;
                             pcName[ off ] = dict( psttn2 ) ;
-                            etThread.strSubstringF( tinBaseP , psttn2 , idf , idl , psttn ) ; ___( psttn2 ) ;
+                            etThread.strSubstringF( tin0P , psttn2 , idf , idl , psttn ) ; ___( psttn2 ) ;
                             ZE( countT , idl ) ;
                             countT idf = 2 ;
                             ZE( strokeS* , psttn2 ) ;
                         {
                         else
-                        if( 1 != etThread.strIdF( tinBaseP , sttDollar , psttn ) ) pcName[ off ] = etThread.strDigitsToSCountF( tinBaseP , psttn ) ;
-                        etThread.strSubstringLineF( tinBaseP , psttn , idf , sttq , psttw , 1 , T(".") ) ; ___( psttn ) ;
+                        if( 1 != etThread.strIdF( tin0P , sttDollar , psttn ) ) pcName[ off ] = etThread.strDigitsToSCountF( tin0P , psttn ) ;
+                        etThread.strSubstringLineF( tin0P , psttn , idf , sttq , psttw , 1 , T(".") ) ; ___( psttn ) ;
                         ZE( strokeS* , psttn ) ;
                     {
                     for( countT off = 0 ; off < cWords ; off ++ )
@@ -173,13 +173,13 @@ TODO
                 {
                 if( pcName )
     
-                etThread.newF( tinBaseP , LF , pcName , cWords + 1 ) ; ___( pcName ) ;
+                etThread.newF( tin0P , LF , pcName , cWords + 1 ) ; ___( pcName ) ;
                 ZE( countT* , pcName ) ;
-                countT cWords = etThread.strCLinesF( tinBaseP , psttw , T(".") ) ;
+                countT cWords = etThread.strCLinesF( tin0P , psttw , T(".") ) ;
     
                 /*if( !( cFish % 0x100 ) )*/ etherC::ifcSayIF( TF1(cFish)+T(": \"")+T(psttName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
     
-                etThread.strWordF( tinBaseP , psttw , psttName , sttq , S1C('/') , - 1 ) ; ___( psttw ) ;
+                etThread.strWordF( tin0P , psttw , psttName , sttq , S1C('/') , - 1 ) ; ___( psttw ) ;
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , psttw ) ;
     
@@ -193,37 +193,37 @@ TODO
             countT off = sizeof( countT ) ;
     
             }
-                etThread.boxPutF( tinBaseP , tPackLoaded , (byteT*)&c2l , sizeof c2l ) ;
-                etThread.osTimeNowF( tinBaseP , c2l.c1 , (sCountT&)c2l.c2 ) ;
+                etThread.boxPutF( tin0P , tPackLoaded , (byteT*)&c2l , sizeof c2l ) ;
+                etThread.osTimeNowF( tin0P , c2l.c1 , (sCountT&)c2l.c2 ) ;
                 count2S c2l ;
             {
     
             //U:if( !etThread ) { __( *(countT*)pbPack - /*U:ifcIDfILEtYPE_PACKED*/0x29978341 ) ; }
-            __( !poolC::poolOldRootIF( tinBaseP ).bMineF( tinBaseP , pbPack ) ) ;
+            __( !poolC::poolOldRootIF( tin0P ).bMineF( tin0P , pbPack ) ) ;
             if( !etThread ) { __( cbPack < sizeof( countT ) ) ; }
             __( etUsesPoolPrime ) ;
-            etUsesPoolPrime.boxGetShadowF( tinBaseP , pbPack , cbPack , tPack ) ; ___( pbPack ) ;
+            etUsesPoolPrime.boxGetShadowF( tin0P , pbPack , cbPack , tPack ) ; ___( pbPack ) ;
             ZE( countT , cbPack ) ;
             ZE( byteT* , pbPack ) ;
         {
         if( !ether )
 
-        while( !ether && etThread.diskFileExistsF( tinBaseP , tPackLoaded ) ) ether.osSleepF( tinBaseP , TOCK * 0x10 ) ;
+        while( !ether && etThread.diskFileExistsF( tin0P , tPackLoaded ) ) ether.osSleepF( tin0P , TOCK * 0x10 ) ;
 
-        if( !bNewMinIsSet ) poolC::poolOldRootIF( tinBaseP ).flagsBackF( tinBaseP ) |= flPOOLoLDbACK_NOcURSORrESET ;
-        const boolT bNewMinIsSet = !!poolC::poolOldRootIF( tinBaseP ).offNewMinF( tinBaseP ) ;
+        if( !bNewMinIsSet ) poolC::poolOldRootIF( tin0P ).flagsBackF( tin0P ) |= flPOOLoLDbACK_NOcURSORrESET ;
+        const boolT bNewMinIsSet = !!poolC::poolOldRootIF( tin0P ).offNewMinF( tin0P ) ;
         ZE( countT , cFish ) ;
         ZE( countT , cPacks ) ;
         strokeS sttDollar( '$' ) ;
-        dictionary1C dict( tinBaseP , etThread ) ;
+        dictionary1C dict( tin0P , etThread ) ;
 
         sCountT time2as = time2a ;
         countT time1as = time1a ;
-        etThread.osTimeNowF( tinBaseP , time1a , time2a ) ;
+        etThread.osTimeNowF( tin0P , time1a , time2a ) ;
         ZE( sCountT , time2a ) ;
         ZE( countT , time1a ) ;
 
-        TN( tPackLoaded , "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack.loaded." ) ; tPackLoaded += TF1(etThread.diskIdF(tinBaseP,T("///c"))) ;
+        TN( tPackLoaded , "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack.loaded." ) ; tPackLoaded += TF1(etThread.diskIdF(tin0P,T("///c"))) ;
         TN( tPack       , "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack" ) ;
 
         lakeC& lake = *pLakeP ;
@@ -231,9 +231,9 @@ TODO
     if( pLakeP )
     TN( tLog , "///d/log.ifc.html" ) ;
 
-    if( !pLakeP ) pLakeP = new( 0 , tinBaseP , LF ) lakeC( tinBaseP , etThread ) ;
+    if( !pLakeP ) pLakeP = new( 0 , tin0P , LF ) lakeC( tin0P , etThread ) ;
 {
-voidT loadPackF( tin0S& tinBaseP , etherC& ether , etherC& etThread , etherC& etUsesPoolPrime , lakeC*& pLakeP , byteT*& pbPackLagP )
+voidT loadPackF( tin0S& tin0P , etherC& ether , etherC& etThread , etherC& etUsesPoolPrime , lakeC*& pLakeP , byteT*& pbPackLagP )
 */
   write the 2 image fish
     writes the blob to the lake, using name pcName
@@ -250,32 +250,32 @@ pseudocode
 
 }
     //etherC::ifcSayIF( T("stockOneImageFishF: ")+TF1(pcP)+T("  \"")+T(psttP)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
-    etThread.delF( tinBaseP , pbBlob ) ;
+    etThread.delF( tin0P , pbBlob ) ;
     }
         THREADmODE2rESTORE
-        lakeP.writeF( tinBaseP , pcP , pbBlob , cbBlob , 1 ) ;
+        lakeP.writeF( tin0P , pcP , pbBlob , cbBlob , 1 ) ;
         THREADmODE2oN( flTHREADmODE2_POOLoLDsECTION1 ) ;
     {
     else
-    if( !bNewMinIsSetP ) lakeP.writeF( tinBaseP , pcP , pbBlob , cbBlob , 1 ) ;
+    if( !bNewMinIsSetP ) lakeP.writeF( tin0P , pcP , pbBlob , cbBlob , 1 ) ;
 
-    etThread.delF( tinBaseP , pbi ) ;
-    etThread.memCopyF( tinBaseP , pbBlob + cb0 , pbi , cbi ) ;
-    etThread.memCopyF( tinBaseP , pbBlob       , t0  , cb0 ) ;
-    etThread.newF( tinBaseP , LF , pbBlob , cbBlob ) ; ___( pbBlob ) ;
+    etThread.delF( tin0P , pbi ) ;
+    etThread.memCopyF( tin0P , pbBlob + cb0 , pbi , cbi ) ;
+    etThread.memCopyF( tin0P , pbBlob       , t0  , cb0 ) ;
+    etThread.newF( tin0P , LF , pbBlob , cbBlob ) ; ___( pbBlob ) ;
     cbBlob = cb0 + cbi ;
-    countT cb0 = t0.csF( tinBaseP ) ;
+    countT cb0 = t0.csF( tin0P ) ;
 
     textC t0 = T("HTTP/1.0 200 OK\r\nContent-Type: ")+T(psttTypeP)+T("\r\nContent-Length: ")+TF4(cbi,flFORMAT_FILLzE|flFORMAT_NObASE|flFORMAT_FOREIGN,8,0xa)+T("\r\n\r\n") ;
 
-    etThread.boxGetShadowF( tinBaseP , pbi , cbi , psttP ) ; ___( pbi ) ;
+    etThread.boxGetShadowF( tin0P , pbi , cbi , psttP ) ; ___( pbi ) ;
     ZE( countT , cbi ) ;
     ZE( byteT* , pbi ) ;
     ZE( countT   , cbBlob ) ;
     ZE( osTextT* , pbBlob ) ;
     TN( tLog , "///d/log.ifc.html" ) ;
 {
-voidT stockOneImageFishF( tin0S& tinBaseP , etherC& etThread , lakeC& lakeP , const countT* const pcP , const strokeS* const psttP , const strokeS* const psttTypeP , const boolT bNewMinIsSetP )
+voidT stockOneImageFishF( tin0S& tin0P , etherC& etThread , lakeC& lakeP , const countT* const pcP , const strokeS* const psttP , const strokeS* const psttTypeP , const boolT bNewMinIsSetP )
 */
  writes reply blob to lake using name pcP
  makes reply blob by concatenating reply header with blob
@@ -295,41 +295,41 @@ pseudocode
     if( !ether && !etThread ) stateP.idStep = 0 ;
     //etherC::ifcSayIF( T("pass ")+TF1(stateP.idPass)+T(" done") , flSAY_APPEND | flSAY_LOG ) ;
 
-    FORsTRINGSiN1( pstt1m ) etThread.diskFileOrDirDeleteF( tinBaseP , psttc1 ) ;
-    etThread.boxMenuF( tinBaseP , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack.loaded.*") ) ;
+    FORsTRINGSiN1( pstt1m ) etThread.diskFileOrDirDeleteF( tin0P , psttc1 ) ;
+    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack.loaded.*") ) ;
     ZE( strokeS* , pstt1m ) ;
 
-    STEP( onePackF( tinBaseP , etThread ) ) ;
+    STEP( onePackF( tin0P , etThread ) ) ;
 
-    ((tin9S&)tinBaseP).flagsThreadMode2 = flagsThreadMode2Save ;
+    ((tin9S&)tin0P).flagsThreadMode2 = flagsThreadMode2Save ;
 
-    for( countT idt = 1 ; idt <= cTrees ; idt ++ ) STEP( etThread.boxPutHtmlFromKnowledgeTreeBaseF( tinBaseP , 1 , (strokeS*)st1P[ idt ] , (strokeS*)st2P[ idt ] , (strokeS*)st3P[ idt ] , tCopy , (strokeS*)st4P[ idt ] , 0x100000 , 1 ) ) ;
+    for( countT idt = 1 ; idt <= cTrees ; idt ++ ) STEP( etThread.boxPutHtmlFromKnowledgeTreeBaseF( tin0P , 1 , (strokeS*)st1P[ idt ] , (strokeS*)st2P[ idt ] , (strokeS*)st3P[ idt ] , tCopy , (strokeS*)st4P[ idt ] , 0x100000 , 1 ) ) ;
     const countT cTrees = st2P ;
     TN( tCopy , "(c) IdeaFarm " "(tm) City" ) ;
     __( st2P - st4P ) ;
     __( st2P - st3P ) ;
 
-    //STEP( verifyExampleSimplestExistsF( tinBaseP , etThread , bTestP                          ) ) ;
-    //STEP( insertInstanceSectionF(       tinBaseP , etThread , bTestP                          ) ) ;
-    //STEP( findFunctionCallInstancesF(   tinBaseP , etThread , bTestP , S1C('(') , T(TbLACK) ) ) ;
-    //STEP( writeSymbolBaseF(             tinBaseP , etThread , bTestP                          ) ) ;
-    //STEP( writeVisiblesHtmlF(           tinBaseP , etThread , bTestP                          ) ) ;
-    //STEP( listVisibleDefinitionsF(      tinBaseP , etThread , bTestP                          ) ) ;
-    //U: //STEP( testAutoF(                    tinBaseP , etThread , bTestP                          ) ) ;
-    //U: STEP( etThread.ifcHireF( tinBaseP , T("city.publisher") , ifcIDaDAMoLD_MAKEaLLaDAMS , T(bTestP?"!test":"") , flHIRE_WAIT ) ) ;
+    //STEP( verifyExampleSimplestExistsF( tin0P , etThread , bTestP                          ) ) ;
+    //STEP( insertInstanceSectionF(       tin0P , etThread , bTestP                          ) ) ;
+    //STEP( findFunctionCallInstancesF(   tin0P , etThread , bTestP , S1C('(') , T(TbLACK) ) ) ;
+    //STEP( writeSymbolBaseF(             tin0P , etThread , bTestP                          ) ) ;
+    //STEP( writeVisiblesHtmlF(           tin0P , etThread , bTestP                          ) ) ;
+    //STEP( listVisibleDefinitionsF(      tin0P , etThread , bTestP                          ) ) ;
+    //U: //STEP( testAutoF(                    tin0P , etThread , bTestP                          ) ) ;
+    //U: STEP( etThread.ifcHireF( tin0P , T("city.publisher") , ifcIDaDAMoLD_MAKEaLLaDAMS , T(bTestP?"!test":"") , flHIRE_WAIT ) ) ;
 
-    ((tin9S&)tinBaseP).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;
-    flagsT flagsThreadMode2Save = ((tin9S&)tinBaseP).flagsThreadMode2 ;
+    ((tin9S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;
+    flagsT flagsThreadMode2Save = ((tin9S&)tin0P).flagsThreadMode2 ;
 
     ZE( countT , idStep ) ;
     //etherC::ifcSayIF( T("pass ")+TF1(++stateP.idPass)+T(" begun") , flSAY_APPEND | flSAY_LOG ) ;
     TN( tLog , "///d/log.ifc.html" ) ;
 {
-voidT makePackF( tin0S& tinBaseP , etherC& ether , etherC& etThread , stackC& st1P , stackC& st2P , stackC& st3P , stackC& st4P , boolT bTestP , stateS& stateP )
+voidT makePackF( tin0S& tin0P , etherC& ether , etherC& etThread , stackC& st1P , stackC& st2P , stackC& st3P , stackC& st4P , boolT bTestP , stateS& stateP )
 
     }
         }                                                                                                                               \
-            /*(>>>>(p oolC&)et<<>>OBSOLETEDcODE:INTENTIONALcOMPILEeRROR<<<<Thread).walkF( tinBaseP , 0 , info , flPOOLoLDwALK_INCLUDEdROPSoTHERcLIENTS ) ;*/                                     \
+            /*(>>>>(p oolC&)et<<>>OBSOLETEDcODE:INTENTIONALcOMPILEeRROR<<<<Thread).walkF( tin0P , 0 , info , flPOOLoLDwALK_INCLUDEdROPSoTHERcLIENTS ) ;*/                                     \
             //etherC::ifcSayIF( T(#expP) , flSAY_APPEND | flSAY_LOG ) ;                                                                            \
             TN( tLogPool , "///d/ideafarm.log.thirdC" ) ;                                                                               \
             ZE( countT , info ) ;                                                                                                     \
@@ -346,110 +346,110 @@ voidT makePackF( tin0S& tinBaseP , etherC& ether , etherC& etThread , stackC& st
 
 }
     }
-        // /* 44 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("e") , T("etherC") ) ;
-        // /* 74 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("f3") , T("templates") ) ;
-        // /* 64 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("3") , T("dissertation") , T("Wo'O Ideafarm's Ph.D. Dissertation") ) ;
-        // /* 54 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("2") , T("symbols") ) ;
-        // /* 34 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("a2") , T("thirdC") ) ;
+        // /* 44 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("e") , T("etherC") ) ;
+        // /* 74 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("f3") , T("templates") ) ;
+        // /* 64 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("3") , T("dissertation") , T("Wo'O Ideafarm's Ph.D. Dissertation") ) ;
+        // /* 54 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("2") , T("symbols") ) ;
+        // /* 34 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("a2") , T("thirdC") ) ;
         // THESE ARE DONE LAST BECAUSE THEY ARE LARGE
 
         // ALPHABETICAL END
-        // /* 24 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("e2") , T("vectorOldC") ) ;
-        // /* 14 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("d2") , T("tin9S") ) ;
-        // /* 04 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("c2") , T("timeS") ) ;
-        // /* f3 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("b2") , T("thirdParties") ) ;
-        // /* e3 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("92") , T("textIdFileC") ) ;
-        // /* d3 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("82") , T("textC") ) ;
-        // /* c3 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("72") , T("taskS") ) ;
-        // /* b3 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("62") , T("tableC") ) ;
-        // /* a3 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("52") , T("switchStackC") ) ;
-        // /* 93 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("42") , T("switchC") ) ;
-        // /* 83 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("32") , T("strokeS") ) ;
-        // /* 73 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("22") , T("stackC") ) ;
-        // /* 63 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("12") , T("sqMatrixOldC") ) ;
-        // /* 53 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("02") , T("socketC") ) ;
-        // /* 43 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("f1") , T("signC") ) ;
-        // /* 23 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("d1") , T("sCountC") ) ;
-        // /* 13 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("e3") , T("riverC") ) ;
-        // /* 03 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("d3") , T("pricerC") ) ;
-        // /* e2 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("c1") , T("poolC") ) ;
-        // /* d2 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("b1") , T("plateS") ) ;
-        // /* c2 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("a1") , T("peekS") ) ;
-        // /* b2 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("91") , T("osFileNameC") ) ;
-        // /* a2 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("81") , T("maxC") ) ;
-        // /* 92 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("71") , T("mapC") ) ;
-        // /* 82 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("61") , T("mainS") ) ;
-        // /* 72 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("b3") , T("lakeC") ) ;
-        // /* 62 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("51") , T("infoFileS") ) ;
-        // /* 52 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("41") , T("infoDiskS") ) ;
-        // /* 42 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("31") , T("infoDisk1S") ) ;
-        // /* 32 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("21") , T("infoDisk1bS") ) ;
-        // /* 22 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("11") , T("infoDisk1aS") ) ;
-        // /* 12 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("01") , T("infoBoxGetPutS") ) ;
-        // /* 02 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("a3") , T("impotenceS") ) ;
-        // /* f1 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("f")  , T("ifFileNameC") ) ;
-        // /* e1 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("93") , T("ap_artmentOldC") ) ;
-        // /* d1 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("83") , T("dictionary1C") ) ;
-        // /* c1 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("d")  , T("count8S") ) ;
-        // /* b1 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("c")  , T("count7S") ) ;
-        // /* a1 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("b")  , T("count6S") ) ;
-        // /* 91 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("a")  , T("count5S") ) ;
-        // /* 81 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("9")  , T("count4S") ) ;
-        // /* 71 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("8")  , T("count3S") ) ;
-        // /* 61 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("7")  , T("count2S") ) ;
-        // /* 51 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("73") , T("countTC") ) ;
-        // /* 41 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("63") , T("carC") ) ;
-        // /* 31 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("53") , T("buoyFileC") ) ;
-        // /* 21 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("43") , T("buoyDireC") ) ;
-        // /* 11 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("33") , T("buoyDictionaryC") ) ;
-        // /* 01 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("23") , T("buoyBookOfLifeC") ) ;
-        // /* f0 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("13") , T("buoyC") ) ;
-        // /* e0 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("6")  , T("boxC") ) ;
-        // /* d0 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("5")  , T("batonC") ) ;
-        // /* c0 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("4")  , T("batonBoxC") ) ;
-        // /* b0 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("03") , T("anchorC") ) ;
+        // /* 24 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("e2") , T("vectorOldC") ) ;
+        // /* 14 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("d2") , T("tin9S") ) ;
+        // /* 04 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("c2") , T("timeS") ) ;
+        // /* f3 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("b2") , T("thirdParties") ) ;
+        // /* e3 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("92") , T("textIdFileC") ) ;
+        // /* d3 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("82") , T("textC") ) ;
+        // /* c3 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("72") , T("taskS") ) ;
+        // /* b3 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("62") , T("tableC") ) ;
+        // /* a3 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("52") , T("switchStackC") ) ;
+        // /* 93 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("42") , T("switchC") ) ;
+        // /* 83 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("32") , T("strokeS") ) ;
+        // /* 73 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("22") , T("stackC") ) ;
+        // /* 63 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("12") , T("sqMatrixOldC") ) ;
+        // /* 53 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("02") , T("socketC") ) ;
+        // /* 43 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("f1") , T("signC") ) ;
+        // /* 23 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("d1") , T("sCountC") ) ;
+        // /* 13 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("e3") , T("riverC") ) ;
+        // /* 03 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("d3") , T("pricerC") ) ;
+        // /* e2 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("c1") , T("poolC") ) ;
+        // /* d2 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("b1") , T("plateS") ) ;
+        // /* c2 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("a1") , T("peekS") ) ;
+        // /* b2 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("91") , T("osFileNameC") ) ;
+        // /* a2 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("81") , T("maxC") ) ;
+        // /* 92 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("71") , T("mapC") ) ;
+        // /* 82 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("61") , T("mainS") ) ;
+        // /* 72 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("b3") , T("lakeC") ) ;
+        // /* 62 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("51") , T("infoFileS") ) ;
+        // /* 52 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("41") , T("infoDiskS") ) ;
+        // /* 42 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("31") , T("infoDisk1S") ) ;
+        // /* 32 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("21") , T("infoDisk1bS") ) ;
+        // /* 22 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("11") , T("infoDisk1aS") ) ;
+        // /* 12 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("01") , T("infoBoxGetPutS") ) ;
+        // /* 02 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("a3") , T("impotenceS") ) ;
+        // /* f1 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("f")  , T("ifFileNameC") ) ;
+        // /* e1 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("93") , T("ap_artmentOldC") ) ;
+        // /* d1 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("83") , T("dictionary1C") ) ;
+        // /* c1 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("d")  , T("count8S") ) ;
+        // /* b1 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("c")  , T("count7S") ) ;
+        // /* a1 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("b")  , T("count6S") ) ;
+        // /* 91 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("a")  , T("count5S") ) ;
+        // /* 81 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("9")  , T("count4S") ) ;
+        // /* 71 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("8")  , T("count3S") ) ;
+        // /* 61 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("7")  , T("count2S") ) ;
+        // /* 51 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("73") , T("countTC") ) ;
+        // /* 41 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("63") , T("carC") ) ;
+        // /* 31 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("53") , T("buoyFileC") ) ;
+        // /* 21 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("43") , T("buoyDireC") ) ;
+        // /* 11 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("33") , T("buoyDictionaryC") ) ;
+        // /* 01 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("23") , T("buoyBookOfLifeC") ) ;
+        // /* f0 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("13") , T("buoyC") ) ;
+        // /* e0 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("6")  , T("boxC") ) ;
+        // /* d0 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("5")  , T("batonC") ) ;
+        // /* c0 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("4")  , T("batonBoxC") ) ;
+        // /* b0 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("03") , T("anchorC") ) ;
         // ALPHABETICAL BEGIN
     {
     if( !bTestP )
 
-    // /* a0 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("f2") , T("busC") ) ;
-    // /* U:WHAT IS THIS NUMERIC COMMENT MEAN? */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("04") , T("test") ) ;
+    // /* a0 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("f2") , T("busC") ) ;
+    // /* U:WHAT IS THIS NUMERIC COMMENT MEAN? */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("04") , T("test") ) ;
 
-    // /* 00 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("102") , T("102") , T("resume: Wo'O Ideafarm") ) ;
+    // /* 00 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("102") , T("102") , T("resume: Wo'O Ideafarm") ) ;
 
-    // /* 00 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("301") , T("301") , T("IdeaFarm " "(tm) City Market Plaza") ) ;
-    // /* 00 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("201") , T("201") , T("IdeaFarm " "(tm) City Free Trade Zone") ) ;
-    // /* 00 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("101") , T("101") , T("IdeaFarm " "(tm) ROC: pseudo perfect markets") ) ;
+    // /* 00 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("301") , T("301") , T("IdeaFarm " "(tm) City Market Plaza") ) ;
+    // /* 00 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("201") , T("201") , T("IdeaFarm " "(tm) City Free Trade Zone") ) ;
+    // /* 00 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("101") , T("101") , T("IdeaFarm " "(tm) ROC: pseudo perfect markets") ) ;
 
-    /* 90 */ htmlJobF( tinBaseP , etThread , st1P , st2P , st3P , st4P , T("1") , T("ideafarm") , T("IdeaFarm " "(tm) City Knowledge Tree") ) ;
+    /* 90 */ htmlJobF( tin0P , etThread , st1P , st2P , st3P , st4P , T("1") , T("ideafarm") , T("IdeaFarm " "(tm) City Knowledge Tree") ) ;
 {
-voidT setupF( tin0S& tinBaseP , etherC& etThread , stackC& st1P , stackC& st2P , stackC& st3P , stackC& st4P , boolT bTestP )
+voidT setupF( tin0S& tin0P , etherC& etThread , stackC& st1P , stackC& st2P , stackC& st3P , stackC& st4P , boolT bTestP )
 
 }
-    etThread.strMakeF( tinBaseP , LF , psttw , T("///ideafarm/precious/domains/com/ideafarm/city/library/base/")+T(psttOldClassP)+T(".base") ) ; st4P << psttw ; psttw = 0 ;
-    etThread.strMakeF( tinBaseP , LF , psttw , psttTitle                                                                           ) ; st3P << psttw ; psttw = 0 ;
-    etThread.strMakeF( tinBaseP , LF , psttw , T(WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/1.")+T(psttIdP)         ) ; st2P << psttw ; psttw = 0 ;
-    etThread.strMakeF( tinBaseP , LF , psttw , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/1.")+T(psttIdP)           ) ; st1P << psttw ; psttw = 0 ;
+    etThread.strMakeF( tin0P , LF , psttw , T("///ideafarm/precious/domains/com/ideafarm/city/library/base/")+T(psttOldClassP)+T(".base") ) ; st4P << psttw ; psttw = 0 ;
+    etThread.strMakeF( tin0P , LF , psttw , psttTitle                                                                           ) ; st3P << psttw ; psttw = 0 ;
+    etThread.strMakeF( tin0P , LF , psttw , T(WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/1.")+T(psttIdP)         ) ; st2P << psttw ; psttw = 0 ;
+    etThread.strMakeF( tin0P , LF , psttw , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/1.")+T(psttIdP)           ) ; st1P << psttw ; psttw = 0 ;
 
     ZE( strokeS* , psttw ) ;
 
     const strokeS* const psttTitle = psttTitleP ? psttTitleP : psttOldClassP ;
 {
-voidT htmlJobF( tin0S& tinBaseP , etherC& etThread , stackC& st1P , stackC& st2P , stackC& st3P , stackC& st4P , const strokeS* const psttIdP , const strokeS* const psttOldClassP , const strokeS* const psttTitleP = 0 )
+voidT htmlJobF( tin0S& tin0P , etherC& etThread , stackC& st1P , stackC& st2P , stackC& st3P , stackC& st4P , const strokeS* const psttIdP , const strokeS* const psttOldClassP , const strokeS* const psttTitleP = 0 )
 
 }
     }
-        etThread.delF( tinBaseP , pba ) ;
+        etThread.delF( tin0P , pba ) ;
         }
-            etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack") , pba , cba ) ;
+            etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack") , pba , cba ) ;
             //etherC::ifcSayIF( T("writing combined pack") , flSAY_APPEND | flSAY_LOG ) ;
 
             }
-                etThread.delF( tinBaseP , pc2p ) ;
+                etThread.delF( tin0P , pc2p ) ;
                 }
-                    etThread.delF( tinBaseP , pbPack ) ;
+                    etThread.delF( tin0P , pbPack ) ;
                     off += cbPack - sizeof( countT ) ;
-                    etThread.memCopyF( tinBaseP , pba + off , pbPack + sizeof( countT ) , cbPack - sizeof( countT ) ) ;
+                    etThread.memCopyF( tin0P , pba + off , pbPack + sizeof( countT ) , cbPack - sizeof( countT ) ) ;
                     byteT* pbPack = (byteT*)pc2p->c2 ;
                     countT cbPack = pc2p->c1 ;
                 {
@@ -464,23 +464,23 @@ voidT htmlJobF( tin0S& tinBaseP , etherC& etThread , stackC& st1P , stackC& st2P
             *(countT*)pba = ifcIDfILEtYPE_PACKED ;
         {
         if( pba )
-        etThread.newF( tinBaseP , LF , pba , cba ) ; ___( pba ) ;
+        etThread.newF( tin0P , LF , pba , cba ) ; ___( pba ) ;
         ZE( byteT* , pba ) ;
         idPack = 0 ;
 
         while( handle ) ;
         }
             if( pc2p ) cba += pc2p->c1 - sizeof( countT ) ;
-            count2S* pc2p = (count2S*)stPacks.downF( tinBaseP , handle ) ;
+            count2S* pc2p = (count2S*)stPacks.downF( tin0P , handle ) ;
         {
         do
-        handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         countT cba = sizeof( countT ) ;
     {
     if( stPacks )
 
     }
-        etThread.delF( tinBaseP , pstt1m ) ;
+        etThread.delF( tin0P , pstt1m ) ;
         }
             }
                 }
@@ -489,14 +489,14 @@ voidT htmlJobF( tin0S& tinBaseP , etherC& etThread , stackC& st1P , stackC& st2P
                     pc2p->c1 = cbPack ;
                 {
                 if( pc2p )
-                etThread.newF( tinBaseP , LF , pc2p ) ; ___( pc2p ) ;
+                etThread.newF( tin0P , LF , pc2p ) ; ___( pc2p ) ;
                 ZE( count2S* , pc2p ) ;
             {
             if( !etThread )
 
             if( !etThread ) { __( *(countT*)pbPack - ifcIDfILEtYPE_PACKED ) ; }
             if( !etThread ) { __( cbPack < sizeof( countT )               ) ; }
-            etThread.boxGetShadowF( tinBaseP , pbPack , cbPack , psttc1 ) ; ___( pbPack ) ;
+            etThread.boxGetShadowF( tin0P , pbPack , cbPack , psttc1 ) ; ___( pbPack ) ;
             ZE( countT , cbPack ) ;
             ZE( byteT* , pbPack ) ;
 
@@ -504,44 +504,44 @@ voidT htmlJobF( tin0S& tinBaseP , etherC& etThread , stackC& st1P , stackC& st2P
         {
         FORsTRINGSiN1( pstt1m )
 
-        cToDo = etThread.boxMenuF( tinBaseP , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/" "*") ) ; ___( pstt1m ) ;
+        cToDo = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/" "*") ) ; ___( pstt1m ) ;
         ZE( strokeS* , pstt1m ) ;
     {
-    stackC stPacks( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count2S ) ;
+    stackC stPacks( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count2S ) ;
     TN( tLog , "///d/log.ifc.html" ) ;
     ZE( countT , cToDo ) ;
     ZE( countT , idPack ) ;
 {
-voidT onePackF( tin0S& tinBaseP , etherC& etThread )
+voidT onePackF( tin0S& tin0P , etherC& etThread )
 // THIS CODE IS DUPLICATED IN 9e30104 AND IN dd30104
 
 //U: USE A MACRO TO GEN THE CODE FOR THESE BOOLEAN FUNCTIONS
 
 }
-    etThread.delF( tinBaseP , pstt1m ) ;
+    etThread.delF( tin0P , pstt1m ) ;
     }
-        etThread.boxPutHtmlFromKnowledgeTreeBaseF( tinBaseP , 1 , tHtmlLocal+tIdi , tHtml+tIdi , tIdi , tCopy , psttc1 , 0x100000 ) ;
+        etThread.boxPutHtmlFromKnowledgeTreeBaseF( tin0P , 1 , tHtmlLocal+tIdi , tHtml+tIdi , tIdi , tCopy , psttc1 , 0x100000 ) ;
         if( !( cToDo % 0x100 ) ) etherC::ifcSayIF( TF3(--cToDo,0,6) , flSAY_APPEND | flSAY_LOG ) ;
 
-        etThread.delF( tinBaseP , psttIdi ) ;
+        etThread.delF( tin0P , psttIdi ) ;
         TN( tIdi , psttIdi ) ;
-        etThread.delF( tinBaseP , psttw ) ;
-        etThread.strWordF( tinBaseP , psttIdi , psttw , sttq , S1C('.') , 2 ) ; ___( psttIdi ) ;
+        etThread.delF( tin0P , psttw ) ;
+        etThread.strWordF( tin0P , psttIdi , psttw , sttq , S1C('.') , 2 ) ; ___( psttIdi ) ;
         ZE( strokeS* , psttIdi ) ;
-        etThread.strWordF( tinBaseP , psttw , psttc1 , sttq , S1C('/') , - 1 ) ; ___( psttw ) ;
+        etThread.strWordF( tin0P , psttw , psttc1 , sttq , S1C('/') , - 1 ) ; ___( psttw ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , psttw ) ;
         //etherC::ifcSayIF( T("writeVisiblesHtmlF/")+T(psttc1) , flSAY_APPEND | flSAY_LOG ) ;
 
         //if( bSkip ) continue ;
-        //if( bSkip && !etThread.strCompareF( tinBaseP , psttc1 , tSkipTo ) ) bSkip = 0 ;
+        //if( bSkip && !etThread.strCompareF( tin0P , psttc1 , tSkipTo ) ) bSkip = 0 ;
     {
     FORsTRINGSiN1( pstt1m )
     //TN( tSkipTo , "" ) ; tSkipTo = tKt+T("5b10104.base") ;
     //boolT bSkip = 1 ;
     ZE( countT , idFile ) ;
-    else         { cToDo = etThread.boxMenuF( tinBaseP , soul1m , tKt+T("*.base") ) ; ___( pstt1m ) ; }
-    if( bTestP ) { cToDo = etThread.boxMenuF( tinBaseP , soul1m , tKt+T("6230104.base") ) ; ___( pstt1m ) ; }
+    else         { cToDo = etThread.boxMenuF( tin0P , soul1m , tKt+T("*.base") ) ; ___( pstt1m ) ; }
+    if( bTestP ) { cToDo = etThread.boxMenuF( tin0P , soul1m , tKt+T("6230104.base") ) ; ___( pstt1m ) ; }
     ZE( countT , cToDo ) ;
     ZE( strokeS* , pstt1m ) ;
     TN( tLog , "///d/log.ifc.html" ) ;
@@ -550,62 +550,62 @@ voidT onePackF( tin0S& tinBaseP , etherC& etThread )
     TN( tHtml , WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/5." ) ;
     TN( tKt2 , ".kt" ) ;
     }
-        etThread.delF( tinBaseP , psttm ) ;
+        etThread.delF( tin0P , psttm ) ;
         tKt = T(psttm) ;
-        etThread.diskMapFileNameF( tinBaseP , psttm , tKt ) ; // MAPPED WO TIME HERE, FOR SPEED
+        etThread.diskMapFileNameF( tin0P , psttm , tKt ) ; // MAPPED WO TIME HERE, FOR SPEED
         ZE( strokeS* , psttm ) ;
     {
     TN( tKt  , "///ideafarm/ephemeral/domains/com/ideafarm/gen/kt/visible." ) ;
 {
-voidT writeVisiblesHtmlF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
+voidT writeVisiblesHtmlF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
 
 }
-    baton.ungrabF( tinBaseP ) ;
+    baton.ungrabF( tin0P ) ;
 
     __( idDeathType ) ;
     __( value ) ;
-    else         etThread.osProcessF( value , idDeathType , tinBaseP , T("///d/ideafarm.work/backed.up.never/gen/exe/released.i00005/01000030.ipdos-we") , T("de30104 !woPass") ) ;
-    if( bTestP ) etThread.osProcessF( value , idDeathType , tinBaseP , T("///d/ideafarm.work/backed.up.never/gen/exe/released.i00005/01000030.ipdos-we") , T("de30104 !woPass !test") ) ;
+    else         etThread.osProcessF( value , idDeathType , tin0P , T("///d/ideafarm.work/backed.up.never/gen/exe/released.i00005/01000030.ipdos-we") , T("de30104 !woPass") ) ;
+    if( bTestP ) etThread.osProcessF( value , idDeathType , tin0P , T("///d/ideafarm.work/backed.up.never/gen/exe/released.i00005/01000030.ipdos-we") , T("de30104 !woPass !test") ) ;
     ZE( countT , idDeathType ) ;
     ZE( countT , value ) ;
 
-    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-    batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("ifc.hog") ) ;
+    baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    batonC baton( tin0P , TAG( TAGiDnULL ) , T("ifc.hog") ) ;
 {
-voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
+voidT testAutoF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
 
 }
-    etThread.delF( tinBaseP , pstt1mEx ) ;
+    etThread.delF( tin0P , pstt1mEx ) ;
     }
-        etThread.delF( tinBaseP , psttv ) ;
+        etThread.delF( tin0P , psttv ) ;
         }
-            etThread.delF( tinBaseP , pstts ) ;
+            etThread.delF( tin0P , pstts ) ;
             }
                 }
-                    etThread.delF( tinBaseP , posts ) ;
-                    etThread.boxPutF( tinBaseP , tSubjectFile , posts , costs ) ;
-                    countT costs = etThread.strMakeF( tinBaseP , LF , posts , pstts ) ; ___( posts ) ;
+                    etThread.delF( tin0P , posts ) ;
+                    etThread.boxPutF( tin0P , tSubjectFile , posts , costs ) ;
+                    countT costs = etThread.strMakeF( tin0P , LF , posts , pstts ) ; ___( posts ) ;
                     ZE( osTextT* , posts ) ;
-                    etThread.strReverseF( tinBaseP , pstts , 0 , T("\r\n") ) ; ___( pstts ) ;
+                    etThread.strReverseF( tin0P , pstts , 0 , T("\r\n") ) ; ___( pstts ) ;
                 {
                 if( bModified )
 
                 }
                     }
                         bModified = 1 ;
-                        etThread.strInsertF( tinBaseP , pstts , idlList , tLink ) ; ___( pstts ) ;
+                        etThread.strInsertF( tin0P , pstts , idlList , tLink ) ; ___( pstts ) ;
                         idlList ++ ;
                     {
                     if( !bListed )
 
                     }
-                        etThread.delF( tinBaseP , psttwl ) ;
+                        etThread.delF( tin0P , psttwl ) ;
 
-                        bListed = !!etThread.strIdF( tinBaseP , idfListed , sttqListed , tLink , psttwl ) ;
+                        bListed = !!etThread.strIdF( tin0P , idfListed , sttqListed , tLink , psttwl ) ;
                         strokeS sttqListed( (countT)0 , sc_IGNOREqUOTES ) ;
                         countT idfListed = 1 ;
 
-                        etThread.strSubstringF( tinBaseP , psttwl , idfwl , idlwl , pstts ) ; ___( psttwl ) ;
+                        etThread.strSubstringF( tin0P , psttwl , idfwl , idlwl , pstts ) ; ___( psttwl ) ;
                         countT idlwl = idlList ;
                         countT idfwl = idfList ;
                         ZE( strokeS* , psttwl ) ;
@@ -613,18 +613,18 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
                     if( idfList <= idlList )
                     ZE( boolT , bListed ) ;
 
-                    etThread.delF( tinBaseP , psttTitleOfSubject ) ;
+                    etThread.delF( tin0P , psttTitleOfSubject ) ;
                     textC tLink = t1+tIdi+t2+tIdi+T(":  ")+T(psttTitleOfSubject)+t3 ;
                     TN( t3 , "\\</A\\>\r\n" ) ;
                     TN( t2 , ".1" ".0\\\"\\>" ) ;
                     TN( t1 , "  \\<A HREF=\\\"http://" WWWiDEAFARMcOM "/5." ) ;
 
                     }
-                        if( !psttTitleOfSubject ) { etThread.strMakeF( tinBaseP , LF , psttTitleOfSubject , T("") ) ; ___( psttTitleOfSubject ) ; }
+                        if( !psttTitleOfSubject ) { etThread.strMakeF( tin0P , LF , psttTitleOfSubject , T("") ) ; ___( psttTitleOfSubject ) ; }
                         }
-                            else if( psttTitleOfSubject )    etThread.delF( tinBaseP , psttTitleOfSubject ) ;
+                            else if( psttTitleOfSubject )    etThread.delF( tin0P , psttTitleOfSubject ) ;
                                  if( idClass == 1 ) break ;
-                            etThread.strSubstringDelimitedF( tinBaseP , psttTitleOfSubject , idClass , idf , sttq , psttv ) ; ___( psttTitleOfSubject ) ;
+                            etThread.strSubstringDelimitedF( tin0P , psttTitleOfSubject , idClass , idf , sttq , psttv ) ; ___( psttTitleOfSubject ) ;
                             ZE( countT , idClass ) ;
                         {
                         while( !etThread && idf )
@@ -634,21 +634,21 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
                     ZE( strokeS* , psttTitleOfSubject ) ;
 
                     if( idlList ) idlList -- ;
-                    countT idlList = idNextSectionF( tinBaseP , etThread , pstts , idfList ) ;
+                    countT idlList = idNextSectionF( tin0P , etThread , pstts , idfList ) ;
                 {
                 if( !bSuppress )
 
                 }
                     }
-                        else idfList = idw + tSim.csF( tinBaseP ) ;
+                        else idfList = idw + tSim.csF( tin0P ) ;
                         }
                             bModified = 1 ;
                             idfList = idw ;
-                            etThread.strInsertF( tinBaseP , pstts , idw , T(" simplest\r\n") ) ;
-                            idw = idws + tExa.csF( tinBaseP ) ; // COULD NOT FIND THE "simplest" LINE, SO MAKE simplest LINE
+                            etThread.strInsertF( tin0P , pstts , idw , T(" simplest\r\n") ) ;
+                            idw = idws + tExa.csF( tin0P ) ; // COULD NOT FIND THE "simplest" LINE, SO MAKE simplest LINE
                         {
                         if( !idw )
-                        idw = etThread.strIdF( tinBaseP , idf , sttq , tSim , pstts ) ;
+                        idw = etThread.strIdF( tin0P , idf , sttq , tSim , pstts ) ;
                         const countT idws = idf = idw ; // FOUND examples LINE AT idws
                     {
                     else
@@ -656,7 +656,7 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
                         }
                             bModified = 1 ;
                             idfList = idw ;
-                            etThread.strInsertF( tinBaseP , pstts , idw , T("examples\r\n simplest\r\n") ) ;
+                            etThread.strInsertF( tin0P , pstts , idw , T("examples\r\n simplest\r\n") ) ;
                             idw += 6 ;
                         {
                         else
@@ -665,11 +665,11 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
                             etherC::ifcSayIF( T("could not find the expected \"\\r\\n/" "*\\r\\n\" in file \"")+tSubjectFile+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
                         {
                         if( !idw )
-                        idw = etThread.strIdF( tinBaseP , idf , sttq , T("\r\n/" "*\r\n") , pstts ) ;
+                        idw = etThread.strIdF( tin0P , idf , sttq , T("\r\n/" "*\r\n") , pstts ) ;
                         idf = 1 ; // COULD NOT FIND THE "examples" LINE, SO MAKE examples/simplest LINES
                     {
                     if( !idw )                                
-                    countT idw = etThread.strIdF( tinBaseP , idf , sttq , tExa , pstts ) ;
+                    countT idw = etThread.strIdF( tin0P , idf , sttq , tExa , pstts ) ;
                     idf = 1 ;
                     TN( tSim , "\r\n simplest\r\n" ) ;
                     TN( tExa , "\r\nexamples\r\n" ) ;
@@ -681,29 +681,29 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
             if( pstts )
 
             }
-                etThread.delF( tinBaseP , psttQuotedPart ) ;
+                etThread.delF( tin0P , psttQuotedPart ) ;
                 }
                     }
-                        etThread.strReverseF( tinBaseP , pstts , 0 , T("\r\n") ) ; ___( pstts ) ;
-                        etThread.delF( tinBaseP , posts ) ;
-                        etThread.strMakeF( tinBaseP , LF , pstts , T(posts) ) ; ___( pstts ) ;
+                        etThread.strReverseF( tin0P , pstts , 0 , T("\r\n") ) ; ___( pstts ) ;
+                        etThread.delF( tin0P , posts ) ;
+                        etThread.strMakeF( tin0P , LF , pstts , T(posts) ) ; ___( pstts ) ;
 
-                        etThread.boxGetShadowF( tinBaseP , posts , costs , tSubjectFile , 1 ) ; ___( posts ) ;
+                        etThread.boxGetShadowF( tin0P , posts , costs , tSubjectFile , 1 ) ; ___( posts ) ;
                         ZE( countT   , costs ) ;
                         ZE( osTextT* , posts ) ;
                     {
-                    if( etThread.diskFileExistsF( tinBaseP , tSubjectFile ) )
+                    if( etThread.diskFileExistsF( tin0P , tSubjectFile ) )
 
-                    etThread.delF( tinBaseP , psttw ) ;
+                    etThread.delF( tin0P , psttw ) ;
                     tSubjectFile = tDic+T(psttw) ;
-                    etThread.strSubstringF( tinBaseP , psttw , idf , idl , psttQuotedPart ) ; ___( psttw ) ;
+                    etThread.strSubstringF( tin0P , psttw , idf , idl , psttQuotedPart ) ; ___( psttw ) ;
                     ZE( strokeS* , psttw ) ;
                     ZE( countT , idl ) ;
                 {
-                if( psttQuotedPart && 1 == etThread.strIdF( tinBaseP , idf , sttq , T("example.simplest.") , psttQuotedPart ) && idf )
+                if( psttQuotedPart && 1 == etThread.strIdF( tin0P , idf , sttq , T("example.simplest.") , psttQuotedPart ) && idf )
                 countT idf = 1 ;
 
-                etThread.strWordF( tinBaseP , psttQuotedPart , tTitle , sttq , S1C(0x22) , 2 ) ; ___( psttQuotedPart ) ;
+                etThread.strWordF( tin0P , psttQuotedPart , tTitle , sttq , S1C(0x22) , 2 ) ; ___( psttQuotedPart ) ;
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , psttQuotedPart ) ;
             {
@@ -713,28 +713,28 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
 
             }
                 }
-                    etThread.delF( tinBaseP , postv ) ;
-                    etThread.boxPutF( tinBaseP , psttc1 , postv , costv ) ;
-                    etThread.delF( tinBaseP , psttv2 ) ;
-                    countT costv = etThread.strMakeF( tinBaseP , LF , postv , psttv2 ) ; ___( postv ) ;
+                    etThread.delF( tin0P , postv ) ;
+                    etThread.boxPutF( tin0P , psttc1 , postv , costv ) ;
+                    etThread.delF( tin0P , psttv2 ) ;
+                    countT costv = etThread.strMakeF( tin0P , LF , postv , psttv2 ) ; ___( postv ) ;
                     ZE( osTextT* , postv ) ;
-                    etThread.strReverseF( tinBaseP , psttv2 , psttv , T("\r\n") ) ; ___( psttv2 ) ;
+                    etThread.strReverseF( tin0P , psttv2 , psttv , T("\r\n") ) ; ___( psttv2 ) ;
                     ZE( strokeS* , psttv2 ) ;
 
                     }
-                        etThread.strInsertF( tinBaseP , psttv , idlList , tLink ) ; ___( psttv ) ;
+                        etThread.strInsertF( tin0P , psttv , idlList , tLink ) ; ___( psttv ) ;
                         idlList ++ ;
                     {
                     if( !bListed )
 
                     }
-                        etThread.delF( tinBaseP , psttwl ) ;
+                        etThread.delF( tin0P , psttwl ) ;
 
-                        bListed = !!etThread.strIdF( tinBaseP , idfListed , sttqListed , tLink , psttwl ) ;
+                        bListed = !!etThread.strIdF( tin0P , idfListed , sttqListed , tLink , psttwl ) ;
                         strokeS sttqListed( (countT)0 , sc_IGNOREqUOTES ) ;
                         countT idfListed = 1 ;
 
-                        etThread.strSubstringF( tinBaseP , psttwl , idfwl , idlwl , psttv ) ; ___( psttwl ) ;
+                        etThread.strSubstringF( tin0P , psttwl , idfwl , idlwl , psttv ) ; ___( psttwl ) ;
                         countT idlwl = idlList ;
                         countT idfwl = idfList ;
                         ZE( strokeS* , psttwl ) ;
@@ -743,7 +743,7 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
                     ZE( boolT , bListed ) ;
 
                     if( idlList ) idlList -- ;
-                    countT idlList = idNextSectionF( tinBaseP , etThread , psttv , idfList ) ;
+                    countT idlList = idNextSectionF( tin0P , etThread , psttv , idfList ) ;
                 {
                 if( !bSuppress )
 
@@ -754,12 +754,12 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
                         etherC::ifcSayIF( T("could not find the expected \"\\r\\n/" "*\\r\\n\" in file \"")+T(psttc1)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
                     {
                     if( !idw )
-                    idw = etThread.strIdF( tinBaseP , idf , sttq , T("\r\n/" "*\r\n") , psttv ) ;
+                    idw = etThread.strIdF( tin0P , idf , sttq , T("\r\n/" "*\r\n") , psttv ) ;
                     idf = 1 ;
                 {
                 else
                 if( idw ) bSuppress = 1 ;
-                countT idw = etThread.strIdF( tinBaseP , idf , sttq , tLink , psttv ) ;
+                countT idw = etThread.strIdF( tin0P , idf , sttq , tLink , psttv ) ;
                 idf = 1 ;
                 textC tLink = T("\\<A HREF=\\\"http://" WWWiDEAFARMcOM "/5.")+tIdi+T(".1.0\\\"\\>definition\\</A\\>\r\n") ;
                 ZE( countT , idfList ) ;
@@ -768,22 +768,22 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
             // INSERT A "DEFINITION" LINK LINE INTO FILE COMMENTS
 
             }
-                etThread.delF( tinBaseP , postx ) ;
-                etThread.boxPutF( tinBaseP , tKt+tIdi+tKt2 , postx , costx ) ;
-                else        { costx = etThread.strMakeF( tinBaseP , LF , postx , T("/" "/" "|" "|" "!" "k" "t" "|"    )+T(psttc1)+T("!||\r\n")+tIdi+T(":  ")+tTitle+T("\r\n") ) ; ___( postx ) ; }
-                if( bBase ) { costx = etThread.strMakeF( tinBaseP , LF , postx , T("/" "/" "|" "|" "!" "r" "a" "w" "|")+T(psttc1)+T("!||\r\n")+tIdi+T(":  ")+tTitle+T("\r\n") ) ; ___( postx ) ; }
+                etThread.delF( tin0P , postx ) ;
+                etThread.boxPutF( tin0P , tKt+tIdi+tKt2 , postx , costx ) ;
+                else        { costx = etThread.strMakeF( tin0P , LF , postx , T("/" "/" "|" "|" "!" "k" "t" "|"    )+T(psttc1)+T("!||\r\n")+tIdi+T(":  ")+tTitle+T("\r\n") ) ; ___( postx ) ; }
+                if( bBase ) { costx = etThread.strMakeF( tin0P , LF , postx , T("/" "/" "|" "|" "!" "r" "a" "w" "|")+T(psttc1)+T("!||\r\n")+tIdi+T(":  ")+tTitle+T("\r\n") ) ; ___( postx ) ; }
                 ZE( countT , costx ) ;
                 ZE( osTextT* , postx ) ; // WRITE THE BASE FILE
             {
 
             }
-                etThread.delF( tinBaseP , psttTitle ) ;
+                etThread.delF( tin0P , psttTitle ) ;
                 tTitle = T(psttTitle) ;
-                if( !psttTitle ) { etThread.strMakeF( tinBaseP , LF , psttTitle , T("") ) ; ___( psttTitle ) ; }
+                if( !psttTitle ) { etThread.strMakeF( tin0P , LF , psttTitle , T("") ) ; ___( psttTitle ) ; }
                 }
-                    else if( psttTitle )    etThread.delF( tinBaseP , psttTitle ) ;
+                    else if( psttTitle )    etThread.delF( tin0P , psttTitle ) ;
                          if( idClass == 1 ) break ;
-                    etThread.strSubstringDelimitedF( tinBaseP , psttTitle , idClass , idf , sttq , psttv ) ; ___( psttTitle ) ;
+                    etThread.strSubstringDelimitedF( tin0P , psttTitle , idClass , idf , sttq , psttv ) ; ___( psttTitle ) ;
                     ZE( countT , idClass ) ;
                 {
                 while( !etThread && idf )
@@ -794,38 +794,38 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
             TN( tTitle , "" ) ;
 
             }
-                etThread.delF( tinBaseP , psttIdi ) ;
+                etThread.delF( tin0P , psttIdi ) ;
                 tIdi = T(psttIdi) ;
-                etThread.delF( tinBaseP , psttw ) ;
-                etThread.strWordF( tinBaseP , psttIdi , psttw , sttqId , S1C('.') , 2 ) ; ___( psttIdi ) ;
+                etThread.delF( tin0P , psttw ) ;
+                etThread.strWordF( tin0P , psttIdi , psttw , sttqId , S1C('.') , 2 ) ; ___( psttIdi ) ;
                 ZE( strokeS* , psttIdi ) ;
                 strokeS sttqId( (countT)0 , sc_IGNOREqUOTES ) ;
 
                 __Z( psttw ) ;
-                etThread.strWordF( tinBaseP , psttw , psttc1 , sttqw , S1C('/') , - 1 ) ; ___( psttw ) ;
+                etThread.strWordF( tin0P , psttw , psttc1 , sttqw , S1C('/') , - 1 ) ; ___( psttw ) ;
                 strokeS sttqw( (countT)0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , psttw ) ;
             {
             TN( tIdi , "" ) ;
         {
-        if( bBase || etThread.strIdF( tinBaseP , idf , sttq , T("\r\n//VISIBLE\r\n") , psttv ) )
+        if( bBase || etThread.strIdF( tin0P , idf , sttq , T("\r\n//VISIBLE\r\n") , psttv ) )
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
 
         }
-            etThread.delF( tinBaseP , postv ) ;
-            etThread.strReverseF( tinBaseP , psttv , 0 , T("\r\n") ) ; ___( psttv ) ;
-            etThread.strMakeF( tinBaseP , LF , psttv , T(postv) ) ; ___( psttv ) ;
-            etThread.boxGetShadowF( tinBaseP , postv , costv , psttc1 , 1 ) ; ___( postv ) ;
+            etThread.delF( tin0P , postv ) ;
+            etThread.strReverseF( tin0P , psttv , 0 , T("\r\n") ) ; ___( psttv ) ;
+            etThread.strMakeF( tin0P , LF , psttv , T(postv) ) ; ___( psttv ) ;
+            etThread.boxGetShadowF( tin0P , postv , costv , psttc1 , 1 ) ; ___( postv ) ;
             ZE( countT , costv ) ;
             ZE( osTextT* , postv ) ;
         {
         ZE( strokeS* , psttv ) ;
 
-        //if( cToDo == cToDoSave && !etThread.strCompareF( tinBaseP , psttc1 , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.0000104") ) ) continue ;
+        //if( cToDo == cToDoSave && !etThread.strCompareF( tin0P , psttc1 , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.0000104") ) ) continue ;
 
         }
-            bBase = 1 != etThread.strIdF( tinBaseP , idf , sttq , tDic+T("adam.") , psttc1 ) ;
+            bBase = 1 != etThread.strIdF( tin0P , idf , sttq , tDic+T("adam.") , psttc1 ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
         {
@@ -834,10 +834,10 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
     {
     FORsTRINGSiN1( pstt1mEx )
     const countT cToDoSave = cToDo ;
-    else         { cToDo = etThread.boxMenuF( tinBaseP , soul1mEx , tDic+T("*") ) ; ___( pstt1mEx ) ; }
+    else         { cToDo = etThread.boxMenuF( tin0P , soul1mEx , tDic+T("*") ) ; ___( pstt1mEx ) ; }
     }
-        cToDo += etThread.boxMenuF( tinBaseP , soul1mEx , tDic+T("adam.6230104.*") ) ; ___( pstt1mEx ) ;
-        cToDo  = etThread.boxMenuF( tinBaseP , soul1mEx , tDic+T("func.1330004.*") ) ; ___( pstt1mEx ) ;
+        cToDo += etThread.boxMenuF( tin0P , soul1mEx , tDic+T("adam.6230104.*") ) ; ___( pstt1mEx ) ;
+        cToDo  = etThread.boxMenuF( tin0P , soul1mEx , tDic+T("func.1330004.*") ) ; ___( pstt1mEx ) ;
     {
     if( bTestP )
     ZE( countT , cToDo ) ;
@@ -845,59 +845,59 @@ voidT testAutoF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
     TN( tLog , "///d/log.ifc.html" ) ;
     TN( tKt2 , ".base" ) ;
     }
-        etThread.delF( tinBaseP , psttm ) ;
+        etThread.delF( tin0P , psttm ) ;
         tKt = T(psttm) ;
-        etThread.diskMapFileNameF( tinBaseP , psttm , tKt ) ; // MAPPING THIS WO TOO, FOR SPEED
+        etThread.diskMapFileNameF( tin0P , psttm , tKt ) ; // MAPPING THIS WO TOO, FOR SPEED
         ZE( strokeS* , psttm ) ;
     {
     TN( tKt  , "///ideafarm/ephemeral/domains/com/ideafarm/gen/kt/visible." ) ;
     }
-        etThread.delF( tinBaseP , psttm ) ;
+        etThread.delF( tin0P , psttm ) ;
         tDic = T(psttm) ;
-        etThread.diskMapFileNameF( tinBaseP , psttm , tDic ) ; // NEED TO MAP tDic CAUSE WILL SEARCH FOR IT IN FILE NAMES IN MENU
+        etThread.diskMapFileNameF( tin0P , psttm , tDic ) ; // NEED TO MAP tDic CAUSE WILL SEARCH FOR IT IN FILE NAMES IN MENU
         ZE( strokeS* , psttm ) ;
     {
     TN( tDic , "///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/" ) ;
 {
-voidT listVisibleDefinitionsF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
+voidT listVisibleDefinitionsF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
 
 }
     }
-        etThread.delF( tinBaseP , psttd ) ;
+        etThread.delF( tin0P , psttd ) ;
         stackDef >> psttd ;
         ZE( strokeS* , psttd ) ;        
     {
     while( stackDef )
 
     }
-        etThread.delF( tinBaseP , psttf ) ;
+        etThread.delF( tin0P , psttf ) ;
 
-        etThread.boxPutHtmlFromKnowledgeTreeBaseF( tinBaseP , 1 , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/6.$")+T(psttf) , T(WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/6.$")+T(psttf) , psttf , tCopy , tBase , 0x100000 ) ;
+        etThread.boxPutHtmlFromKnowledgeTreeBaseF( tin0P , 1 , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/6.$")+T(psttf) , T(WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/6.$")+T(psttf) , psttf , tCopy , tBase , 0x100000 ) ;
         TN( tCopy , "(c) IdeaFarm " "(tm) City" ) ;
 
-        etThread.delF( tinBaseP , posti ) ;
-        etThread.boxPutF( tinBaseP , tBase , posti , costi ) ;
+        etThread.delF( tin0P , posti ) ;
+        etThread.boxPutF( tin0P , tBase , posti , costi ) ;
         textC tBase = T("///ideafarm/ephemeral/domains/com/ideafarm/gen/kt/instances.")+T(psttf)+T(".base") ;
-        etThread.delF( tinBaseP , psttImage ) ;
-        else costi = etThread.strMakeF( tinBaseP , LF , posti , T("none") ) ; ___( posti ) ;
+        etThread.delF( tin0P , psttImage ) ;
+        else costi = etThread.strMakeF( tin0P , LF , posti , T("none") ) ; ___( posti ) ;
         }
-            costi = etThread.strMakeF( tinBaseP , LF , posti , psttImage ) ; ___( posti ) ;
-            etThread.strReverseF( tinBaseP , psttImage , 0 , T("\r\n") ) ; ___( psttImage ) ;
+            costi = etThread.strMakeF( tin0P , LF , posti , psttImage ) ; ___( posti ) ;
+            etThread.strReverseF( tin0P , psttImage , 0 , T("\r\n") ) ; ___( psttImage ) ;
         {
         if( psttImage ? psttImage->idAdam : 0 )
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
 
         }
-            etThread.delF( tinBaseP , psttl ) ;
-            etThread.strFuseF( tinBaseP , psttImage , psttl , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ 0x10000 ) ; ___( psttImage ) ;
-            else          { etThread.strFuseF( tinBaseP , psttImage , T("\r\n") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( psttImage ) ; }
+            etThread.delF( tin0P , psttl ) ;
+            etThread.strFuseF( tin0P , psttImage , psttl , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ 0x10000 ) ; ___( psttImage ) ;
+            else          { etThread.strFuseF( tin0P , psttImage , T("\r\n") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( psttImage ) ; }
             if( !bPrior ) bPrior = 1 ;
             stackLine >> psttl ;
             ZE( strokeS* , psttl ) ;        
         {
         while( stackLine )
-        etThread.strMakeF( tinBaseP , LF , psttImage , T("") , 0x10000 ) ; ___( psttImage ) ;
+        etThread.strMakeF( tin0P , LF , psttImage , T("") , 0x10000 ) ; ___( psttImage ) ;
         ZE( strokeS* , psttImage ) ;
         ZE( boolT , bPrior ) ;
 
@@ -905,22 +905,22 @@ voidT listVisibleDefinitionsF( tin0S& tinBaseP , etherC& etThread , const boolT 
             while( hTour ) ;
             }
                 }
-                    if( psttExample ) stackLine.sinkF( tinBaseP , idSlot , psttExample ) ;
+                    if( psttExample ) stackLine.sinkF( tin0P , idSlot , psttExample ) ;
                     ZE( countT , idSlot ) ;
-                    etThread.strSubstringExampleF( tinBaseP , psttExample , idfd , sttqd , psttd , psttf , sttOpenP , psttWhiteP ) ; ___( psttExample ) ;
+                    etThread.strSubstringExampleF( tin0P , psttExample , idfd , sttqd , psttd , psttf , sttOpenP , psttWhiteP ) ; ___( psttExample ) ;
                     ZE( strokeS* , psttExample ) ;
                 {
                 while( idfd )
                 countT idfd = 1 ;
                 strokeS sttqd( (countT)0 , sc_IGNOREqUOTES ) ;
-                strokeS* psttd = (strokeS*)stackDef.upF( tinBaseP , hTour ) ;
+                strokeS* psttd = (strokeS*)stackDef.upF( tin0P , hTour ) ;
                 if( !( ( ++ idTourStop ) % 0x10 ) ) etherC::ifcSayIF( T("3 functions not yet processed: ")+TF3(stackFun,0,6)+T(": tour stop ")+TF1(idTourStop) , flSAY_APPEND | flSAY_LOG ) ;
             {
             do
             ZE( countT , hTour ) ;
             ZE( countT , idTourStop ) ;
         {
-        stackC stackLine( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+        stackC stackLine( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
 
         stackFun >> psttf ;
         ZE( strokeS* , psttf ) ;        
@@ -928,57 +928,57 @@ voidT listVisibleDefinitionsF( tin0S& tinBaseP , etherC& etThread , const boolT 
     while( stackFun )
 
     }
-        etThread.delF( tinBaseP , pstt1mFun ) ;
+        etThread.delF( tin0P , pstt1mFun ) ;
         }
-            if( psttf && S1C('F') != psttf[ CSpREFIX - 1 + psttf->idAdam ] || ( stackFun.sinkF( tinBaseP , idSlot , psttf , flSTACKsINK_UNIQUE ) , !idSlot ) ) etThread.delF( tinBaseP , psttf ) ;
+            if( psttf && S1C('F') != psttf[ CSpREFIX - 1 + psttf->idAdam ] || ( stackFun.sinkF( tin0P , idSlot , psttf , flSTACKsINK_UNIQUE ) , !idSlot ) ) etThread.delF( tin0P , psttf ) ;
             ZE( countT , idSlot ) ;
-            etThread.strWordF( tinBaseP , psttf , psttc1 , sttq , S1C('.') , - 1 , 1 ) ; ___( psttf ) ;
+            etThread.strWordF( tin0P , psttf , psttc1 , sttq , S1C('.') , - 1 , 1 ) ; ___( psttf ) ;
             ZE( strokeS* , psttf ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             //etherC::ifcSayIF( T("2 building stack of function names")+TF3(--cToDo,0,6) , flSAY_APPEND | flSAY_LOG ) ;
         {
         FORsTRINGSiN1( pstt1mFun )
-        else         { cToDo = etThread.boxMenuF( tinBaseP , soul1mFun , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.*"        ) ) ; ___( pstt1mFun ) ; }
-        if( bTestP ) { cToDo = etThread.boxMenuF( tinBaseP , soul1mFun , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.1330004.*") ) ; ___( pstt1mFun ) ; }
+        else         { cToDo = etThread.boxMenuF( tin0P , soul1mFun , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.*"        ) ) ; ___( pstt1mFun ) ; }
+        if( bTestP ) { cToDo = etThread.boxMenuF( tin0P , soul1mFun , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.1330004.*") ) ; ___( pstt1mFun ) ; }
         ZE( countT , cToDo ) ;
         ZE( strokeS* , pstt1mFun ) ;
     {
-    stackC stackFun( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stackFun( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
 
     }
-        etThread.delF( tinBaseP , pstt1mEx ) ;
+        etThread.delF( tin0P , pstt1mEx ) ;
         }
             stackDef << psttd ;
-            etThread.strReverseF( tinBaseP , psttd , 0 , T("\r\n") ) ; ___( psttd ) ;
-            etThread.delF( tinBaseP , postd ) ;
-            etThread.strMakeF( tinBaseP , LF , psttd , T(postd) ) ; ___( psttd ) ;
+            etThread.strReverseF( tin0P , psttd , 0 , T("\r\n") ) ; ___( psttd ) ;
+            etThread.delF( tin0P , postd ) ;
+            etThread.strMakeF( tin0P , LF , psttd , T(postd) ) ; ___( psttd ) ;
             ZE( strokeS* , psttd ) ;
-            etThread.boxGetShadowF( tinBaseP , postd , costd , psttc1 , 1 ) ; ___( postd ) ;
+            etThread.boxGetShadowF( tin0P , postd , costd , psttc1 , 1 ) ; ___( postd ) ;
             ZE( countT , costd ) ;
             ZE( osTextT* , postd ) ;
             //etherC::ifcSayIF( T("1 building stack of reversed defs ")+TF3(--cToDo,0,6) , flSAY_APPEND | flSAY_LOG ) ;
         {
         FORsTRINGSiN1( pstt1mEx )
-        else         { cToDo = etThread.boxMenuF( tinBaseP , soul1mEx , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.*"      ) ) ; ___( pstt1mEx ) ; }
-        if( bTestP ) { cToDo = etThread.boxMenuF( tinBaseP , soul1mEx , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.6230104") ) ; ___( pstt1mEx ) ; }
+        else         { cToDo = etThread.boxMenuF( tin0P , soul1mEx , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.*"      ) ) ; ___( pstt1mEx ) ; }
+        if( bTestP ) { cToDo = etThread.boxMenuF( tin0P , soul1mEx , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.6230104") ) ; ___( pstt1mEx ) ; }
         ZE( countT , cToDo ) ;
         ZE( strokeS* , pstt1mEx ) ;
     {
-    stackC stackDef( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stackDef( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
     TN( tLog , "///d/log.ifc.html" ) ;
 {
-voidT findFunctionCallInstancesF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP , const strokeS sttOpenP , const strokeS* const psttWhiteP )
+voidT findFunctionCallInstancesF( tin0S& tin0P , etherC& etThread , const boolT bTestP , const strokeS sttOpenP , const strokeS* const psttWhiteP )
 
 }
-    etThread.delF( tinBaseP , pstt1mEx ) ;
+    etThread.delF( tin0P , pstt1mEx ) ;
     }
-        etThread.delF( tinBaseP , pstti ) ;
+        etThread.delF( tin0P , pstti ) ;
         }
-            etThread.delF( tinBaseP , posti ) ;
-            etThread.boxPutF( tinBaseP , psttc1 , posti , costi ) ;
+            etThread.delF( tin0P , posti ) ;
+            etThread.boxPutF( tin0P , psttc1 , posti , costi ) ;
             if( !( cToDo % 0x100 ) ) etherC::ifcSayIF( TF3(cToDo,0,6) , flSAY_APPEND | flSAY_LOG ) ;
-            costi = etThread.strMakeF( tinBaseP , LF , posti , pstti ) ; ___( posti ) ;
-            etThread.strReverseF( tinBaseP , pstti , 0 , T("\r\n") ) ; ___( pstti ) ;
+            costi = etThread.strMakeF( tin0P , LF , posti , pstti ) ; ___( posti ) ;
+            etThread.strReverseF( tin0P , pstti , 0 , T("\r\n") ) ; ___( pstti ) ;
         {
         if( bModified )
 
@@ -987,16 +987,16 @@ voidT findFunctionCallInstancesF( tin0S& tinBaseP , etherC& etThread , const boo
             }
                 }
                     bModified = 1 ;
-                    etThread.strInsertF( tinBaseP , pstti , idw , tLink ) ; ___( pstti ) ;
+                    etThread.strInsertF( tin0P , pstti , idw , tLink ) ; ___( pstti ) ;
                     if( !( cToDo % 0x100 ) ) etherC::ifcSayIF( TF3(cToDo,0,6) , flSAY_APPEND | flSAY_LOG ) ;
 
                     textC tLink = t1+tName+t2 ;
                     TN( t2 , ".0\\\"\\>instances\\</A\\>\r\n" ) ;
                     TN( t1 , "\\<A HREF=\\\"http://" WWWiDEAFARMcOM "/6.$" ) ;
 
-                    etThread.delF( tinBaseP , psttName ) ;
+                    etThread.delF( tin0P , psttName ) ;
                     TN( tName , psttName ) ;
-                    etThread.strWordF( tinBaseP , psttName , psttc1 , sttq , S1C('.') , - 1 ) ; ___( psttName ) ;
+                    etThread.strWordF( tin0P , psttName , psttc1 , sttq , S1C('.') , - 1 ) ; ___( psttName ) ;
                     //sttq = ze ;
                     ZE( strokeS* , psttName ) ;
 
@@ -1004,28 +1004,28 @@ voidT findFunctionCallInstancesF( tin0S& tinBaseP , etherC& etThread , const boo
                 {
                 else
                 if( !idw ) etherC::ifcSayIF( T("could not find the expected \"\\r\\n/" "*\\r\\n\" in file \"")+T(psttc1)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
-                countT idw = etThread.strIdF( tinBaseP , idf , sttq , T("\r\n/" "*\r\n") , pstti ) ;
+                countT idw = etThread.strIdF( tin0P , idf , sttq , T("\r\n/" "*\r\n") , pstti ) ;
                 //sttq = ze ;
                 idf = 1 ;
             {
-            if( !etThread.strIdF( tinBaseP , idf , sttq , tIns , pstti ) )
+            if( !etThread.strIdF( tin0P , idf , sttq , tIns , pstti ) )
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
             TN( tIns , "\r\n\\<A HREF=\\\"http://" WWWiDEAFARMcOM "/6." ) ;
         {
         ZE( boolT , bModified ) ;
 
-        etThread.strReverseF( tinBaseP , pstti , 0 , T("\r\n") ) ; ___( pstti ) ;
-        etThread.delF( tinBaseP , posti ) ;
-        etThread.strMakeF( tinBaseP , LF , pstti , T(posti) ) ; ___( pstti ) ;
+        etThread.strReverseF( tin0P , pstti , 0 , T("\r\n") ) ; ___( pstti ) ;
+        etThread.delF( tin0P , posti ) ;
+        etThread.strMakeF( tin0P , LF , pstti , T(posti) ) ; ___( pstti ) ;
         ZE( strokeS* , pstti ) ;
         if( !( cToDo % 0x100 ) ) etherC::ifcSayIF( TF3(cToDo,0,6) , flSAY_APPEND | flSAY_LOG ) ;
 
-        etThread.boxGetShadowF( tinBaseP , posti , costi , psttc1 , 1 ) ; ___( posti ) ;
+        etThread.boxGetShadowF( tin0P , posti , costi , psttc1 , 1 ) ; ___( posti ) ;
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
 
-        { countT idf = 1 ; strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ; if( etThread.strIdF( tinBaseP , idf , sttq , tOperator , psttc1 ) ) continue ; }
+        { countT idf = 1 ; strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ; if( etThread.strIdF( tin0P , idf , sttq , tOperator , psttc1 ) ) continue ; }
 
         if( !( cToDo % 0x100 ) ) etherC::ifcSayIF( TF3(--cToDo,0,6) , flSAY_APPEND | flSAY_LOG ) ;
     {
@@ -1033,35 +1033,35 @@ voidT findFunctionCallInstancesF( tin0S& tinBaseP , etherC& etThread , const boo
     TN( tLog , "///d/log.ifc.html" ) ;
     TN( tOperator , ".operator" ) ;
 
-    else         { cToDo = etThread.boxMenuF( tinBaseP , soul1mEx , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.*F"        ) ) ; ___( pstt1mEx ) ; }
-    if( bTestP ) { cToDo = etThread.boxMenuF( tinBaseP , soul1mEx , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.1330004.*F") ) ; ___( pstt1mEx ) ; }
+    else         { cToDo = etThread.boxMenuF( tin0P , soul1mEx , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.*F"        ) ) ; ___( pstt1mEx ) ; }
+    if( bTestP ) { cToDo = etThread.boxMenuF( tin0P , soul1mEx , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.1330004.*F") ) ; ___( pstt1mEx ) ; }
     ZE( countT , cToDo ) ;
     ZE( strokeS* , pstt1mEx ) ;
 {
-voidT insertInstanceSectionF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
+voidT insertInstanceSectionF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
 
 }
-    etThread.delF( tinBaseP , pstt1m ) ;
+    etThread.delF( tin0P , pstt1m ) ;
     }
-        etThread.delF( tinBaseP , psttd ) ;
-        etThread.delF( tinBaseP , psttw ) ;
+        etThread.delF( tin0P , psttd ) ;
+        etThread.delF( tin0P , psttw ) ;
 
         etherC::ifcSayIF( T("no example simplest exists for: ")+T(psttw) , flSAY_APPEND | flSAY_LOG ) ;
         )
-            ( idf = 1 , !etThread.strIdF( tinBaseP , idf , sttq , T("example.simplest.")+T(psttw) , psttd ) ) // "example.simplest.func.1234001.fooC.barF"
-            ( idf = 1 , !etThread.strIdF( tinBaseP , idf , sttq , T("\r\nit is illegal to refer to this symbol in the definition of an adam\r\n") , psttd ) ) &&
+            ( idf = 1 , !etThread.strIdF( tin0P , idf , sttq , T("example.simplest.")+T(psttw) , psttd ) ) // "example.simplest.func.1234001.fooC.barF"
+            ( idf = 1 , !etThread.strIdF( tin0P , idf , sttq , T("\r\nit is illegal to refer to this symbol in the definition of an adam\r\n") , psttd ) ) &&
         (
         if // FOR SPEED, sttq IS NOT REINITIALIZED FOR THE OO'TH strIdF CALL, SINCE IT SHOULD NOT HAVE CHANGED
 
-        etThread.strWordF( tinBaseP , psttw , psttc1 , sttq , S1C('/') , - 1 ) ; ___( psttw ) ; // "func.1234001.fooC.barF"
+        etThread.strWordF( tin0P , psttw , psttc1 , sttq , S1C('/') , - 1 ) ; ___( psttw ) ; // "func.1234001.fooC.barF"
         ZE( strokeS* , psttw ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         ZE( countT , idf ) ;
 
         }
-            etThread.delF( tinBaseP , postd ) ;
-            etThread.strMakeF( tinBaseP , LF , psttd , T(postd) ) ; ___( psttd ) ;
-            etThread.boxGetShadowF( tinBaseP , postd , costd , psttc1 , 1 ) ; ___( postd ) ;
+            etThread.delF( tin0P , postd ) ;
+            etThread.strMakeF( tin0P , LF , psttd , T(postd) ) ; ___( psttd ) ;
+            etThread.boxGetShadowF( tin0P , postd , costd , psttc1 , 1 ) ; ___( postd ) ;
             ZE( countT , costd ) ;
             ZE( osTextT* , postd ) ;
         {
@@ -1075,15 +1075,15 @@ voidT insertInstanceSectionF( tin0S& tinBaseP , etherC& etThread , const boolT b
     TN( tLog , "///d/log.ifc.html" ) ;
 
     }
-        cToDo += etThread.boxMenuF( tinBaseP , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.*") ) ; ___( pstt1m ) ;
-        cToDo  = etThread.boxMenuF( tinBaseP , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.*") ) ; ___( pstt1m ) ;
+        cToDo += etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.*") ) ; ___( pstt1m ) ;
+        cToDo  = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.*") ) ; ___( pstt1m ) ;
     {    
     else
-    if( bTestP ) { cToDo = etThread.boxMenuF( tinBaseP , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.1330004.*") ) ; ___( pstt1m ) ; }
+    if( bTestP ) { cToDo = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.1330004.*") ) ; ___( pstt1m ) ; }
     ZE( countT , cToDo ) ;
     ZE( strokeS* , pstt1m ) ;
 {
-voidT verifyExampleSimplestExistsF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
+voidT verifyExampleSimplestExistsF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
 
 }
     return idNextSection ;
@@ -1092,8 +1092,8 @@ voidT verifyExampleSimplestExistsF( tin0S& tinBaseP , etherC& etThread , const b
         idNextSection = idcr + 2 ;
 
         if(    !idcr || idcr >  psttP->idAdam - 2 || psttP[ CSpREFIX + 1 + idcr ] == S1C(' ') ) idcr = 0 ;
-        while(  idcr && idcr <= psttP->idAdam - 2 && psttP[ CSpREFIX + 1 + idcr ] == S1C(' ') ) idcr = etThread.strIdF( tinBaseP , idf , sttq , tCr , psttP ) ;
-        countT                                                                                idcr = etThread.strIdF( tinBaseP , idf , sttq , tCr , psttP ) ;
+        while(  idcr && idcr <= psttP->idAdam - 2 && psttP[ CSpREFIX + 1 + idcr ] == S1C(' ') ) idcr = etThread.strIdF( tin0P , idf , sttq , tCr , psttP ) ;
+        countT                                                                                idcr = etThread.strIdF( tin0P , idf , sttq , tCr , psttP ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = idFirstP ;    
         TN( tCr , "\r\n" ) ;
@@ -1103,28 +1103,28 @@ voidT verifyExampleSimplestExistsF( tin0S& tinBaseP , etherC& etThread , const b
 
     ZE( countT , idNextSection ) ;
 {
-countT idNextSectionF( tin0S& tinBaseP , etherC& etThread , const strokeS* const psttP , const countT idFirstP )
+countT idNextSectionF( tin0S& tin0P , etherC& etThread , const strokeS* const psttP , const countT idFirstP )
 
 }
-    etThread.delF( tinBaseP , postx ) ;
-    etThread.boxPutF( tinBaseP , T("///ideafarm/precious/domains/com/ideafarm/city/library/base/symbols.base") , postx , costx ) ;
-    etThread.delF( tinBaseP , pstto ) ;
-    countT costx = etThread.strMakeF( tinBaseP , LF , postx , pstto ) ; ___( postx ) ;
+    etThread.delF( tin0P , postx ) ;
+    etThread.boxPutF( tin0P , T("///ideafarm/precious/domains/com/ideafarm/city/library/base/symbols.base") , postx , costx ) ;
+    etThread.delF( tin0P , pstto ) ;
+    countT costx = etThread.strMakeF( tin0P , LF , postx , pstto ) ; ___( postx ) ;
     ZE( osTextT* , postx ) ;
 
-    etThread.strReverseF( tinBaseP , pstto , 0 , T("\r\n") ) ; ___( pstto ) ;
+    etThread.strReverseF( tin0P , pstto , 0 , T("\r\n") ) ; ___( pstto ) ;
 
-    etThread.delF( tinBaseP , pstt1m ) ;
+    etThread.delF( tin0P , pstt1m ) ;
     }
-        etThread.delF( tinBaseP , psttw2 ) ;
-        etThread.delF( tinBaseP , psttw1 ) ;
-        etThread.strFuseF( tinBaseP , pstto , T(psttw2)+t1+T(psttw1)+t2 ) ; ___( pstto ) ;
+        etThread.delF( tin0P , psttw2 ) ;
+        etThread.delF( tin0P , psttw1 ) ;
+        etThread.strFuseF( tin0P , pstto , T(psttw2)+t1+T(psttw1)+t2 ) ; ___( pstto ) ;
 
-        etThread.strWordF( tinBaseP , psttw2 , psttc1 , sttq2 , sttd2 , - 1 ) ; ___( psttw2 ) ;
+        etThread.strWordF( tin0P , psttw2 , psttc1 , sttq2 , sttd2 , - 1 ) ; ___( psttw2 ) ;
         strokeS sttq2( (countT)0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , psttw2 ) ;
 
-        etThread.strWordF( tinBaseP , psttw1 , psttc1 , sttq1 , sttd1 , - 1 ) ; ___( psttw1 ) ;
+        etThread.strWordF( tin0P , psttw1 , psttc1 , sttq1 , sttd1 , - 1 ) ; ___( psttw1 ) ;
         strokeS sttq1( (countT)0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , psttw1 ) ;
     {
@@ -1133,21 +1133,21 @@ countT idNextSectionF( tin0S& tinBaseP , etherC& etThread , const strokeS* const
     TN( t1 , "\r\n//||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/" ) ;
     strokeS sttd2( '.' ) ;
     strokeS sttd1( '/' ) ;
-    etThread.strMakeF( tinBaseP , LF , pstto , T("") , cToDo * 0x400 ) ; ___( pstto ) ;
+    etThread.strMakeF( tin0P , LF , pstto , T("") , cToDo * 0x400 ) ; ___( pstto ) ;
     ZE( strokeS* , pstto ) ;
-    else         { cToDo = etThread.boxMenuF( tinBaseP , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.0010???.*") ) ; ___( pstt1m ) ; }
-    if( bTestP ) { cToDo = etThread.boxMenuF( tinBaseP , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.0010001.*") ) ; ___( pstt1m ) ; }
+    else         { cToDo = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.0010???.*") ) ; ___( pstt1m ) ; }
+    if( bTestP ) { cToDo = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.0010001.*") ) ; ___( pstt1m ) ; }
     ZE( countT , cToDo ) ;
     ZE( strokeS* , pstt1m ) ;
 {
-voidT writeSymbolBaseF( tin0S& tinBaseP , etherC& etThread , const boolT bTestP )
+voidT writeSymbolBaseF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
 
 // ---- MAKE PACK: BEGIN ------------------------------------------------------------------------------------------------------------------------------------------
 
 }
 {
-stateC( tinBaseP , etherP , sizeof *this , 0 , translateStateF )
-stateS::stateS( tin0S& tinBaseP , etherC& etherP ) :
+stateC( tin0P , etherP , sizeof *this , 0 , translateStateF )
+stateS::stateS( tin0S& tin0P , etherC& etherP ) :
 
 TRANSLATEsTATE_END
     state.idMe ++ ;
@@ -1157,7 +1157,7 @@ TRANSLATEsTATE_BEGIN( stateS , 1 )
 
 ;
 }
-    stateS( tin0S& tinBaseP , etherC& etherP ) ;
+    stateS( tin0S& tin0P , etherC& etherP ) ;
 
     countT idStep ;
     countT idPass ;

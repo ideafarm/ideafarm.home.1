@@ -9,19 +9,19 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     DEL( pJotUnsortedShort ) ;
     }
         }
-            etThread.traceF( tinBaseP , T("!exception: walk failed") ) ;
+            etThread.traceF( tin0P , T("!exception: walk failed") ) ;
             POOPRqUIET
         {
         if( POOP )
 
-        ((tin9S&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , tPathToWalk  , bQuit , flDISKwALK_null , walkCBF , pcArg , 0 , 0 ) ;
+        ((tin9S&)tin0P).pEtScratch->diskWalkF( tin0P , cDirs , cFiles , tPathToWalk  , bQuit , flDISKwALK_null , walkCBF , pcArg , 0 , 0 ) ;
         SCOOPS
         _IO_
     {
@@ -62,11 +62,11 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     ZE( countT , cSetsDone ) ;
     ZE( boolT , bQuit ) ;
 
-    etThread.traceF( tinBaseP , T("[device]:    ")+tDevice ) ;
+    etThread.traceF( tin0P , T("[device]:    ")+tDevice ) ;
     }
-        etThread.delF( tinBaseP , psttw ) ;
+        etThread.delF( tin0P , psttw ) ;
         tDevice = T(psttw) ;
-        etThread.strWordF( tinBaseP , psttw , tPathToWalk , sttq , S1C('/') , - 4 ) ;
+        etThread.strWordF( tin0P , psttw , tPathToWalk , sttq , S1C('/') , - 4 ) ;
         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
         ZE( strokeS* , psttw ) ;
@@ -75,7 +75,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     {
     TN( tDevice , "" ) ;
 
-    etThread.traceF( tinBaseP , T("i will walk [path]:    ")+tPathToWalk ) ;
+    etThread.traceF( tin0P , T("i will walk [path]:    ")+tPathToWalk ) ;
     TN( tPathToWalk , psttPathP ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs  ) ;
@@ -84,17 +84,17 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 else
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK << 2 ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
 
         }
-            etThread.delF( tinBaseP , pstt1d ) ;
+            etThread.delF( tin0P , pstt1d ) ;
             }
                 }
                     break ;
                     }
-                        etThread.delF( tinBaseP , pstta ) ;
-                        etThread.ifcHireF( tinBaseP , T("ifcIDaDAM_SCRATCH0f") , 0 , tArgKeyName+T(" ")+T(pstta) , flHIRE_DISPLAYaUTO , nicNameC() ) ;
-                        etThread.traceF( tinBaseP , T("hiring [psttArchive]:    ")+T(pstta) ) ;
+                        etThread.delF( tin0P , pstta ) ;
+                        etThread.ifcHireF( tin0P , T("ifcIDaDAM_SCRATCH0f") , 0 , tArgKeyName+T(" ")+T(pstta) , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+                        etThread.traceF( tin0P , T("hiring [psttArchive]:    ")+T(pstta) ) ;
                         stArchiveDo >> pstta ;
                         ZE( strokeS* , pstta ) ;
                     {
@@ -106,30 +106,30 @@ else
                     }
                         }
                             stArchiveDo << pstta ;
-                            etThread.strMakeF( tinBaseP , LF , pstta , tArchiveTry ) ; ___( pstta ) ;
+                            etThread.strMakeF( tin0P , LF , pstta , tArchiveTry ) ; ___( pstta ) ;
                             ZE( strokeS* , pstta ) ;
                         {
                         else if( cFound )
                         }
                             break ;
                             tDeviceFailed = T(psttc1) ;
-                            etThread.traceF( tinBaseP , T("!exception: device failed; please power cycle the device: ")+T(psttc1) ) ;
+                            etThread.traceF( tin0P , T("!exception: device failed; please power cycle the device: ")+T(psttc1) ) ;
                         {
                         if( bFail )
 
-                        etThread.delF( tinBaseP , pstt1f ) ;
+                        etThread.delF( tin0P , pstt1f ) ;
                         }
-                            etThread.traceF( tinBaseP , T("    [found]:    ")+T(psttc2) ) ;
+                            etThread.traceF( tin0P , T("    [found]:    ")+T(psttc2) ) ;
                         {
                         FORsTRINGSiN2( pstt1f )
-                        etThread.traceF( tinBaseP , T("[cFound,tArchiveTry]:    ")+TF2(cFound,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tArchiveTry ) ;
+                        etThread.traceF( tin0P , T("[cFound,tArchiveTry]:    ")+TF2(cFound,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tArchiveTry ) ;
                         }
                             }
                                 bFail = 1 ;
                                 POOPRqUIET
                             {
                             if( POOP )
-                            cFound = ((tin9S&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pstt1f , tArchiveTry , 0 , flDISKfIND_null , 0 , 0 , 0 , 1 , 0 ) ;
+                            cFound = ((tin9S&)tin0P).pEtScratch->diskFindFileOrDirF( tin0P , pstt1f , tArchiveTry , 0 , flDISKfIND_null , 0 , 0 , 0 , 1 , 0 ) ;
                             SCOOPS
                         {
                         ZE( countT , cFound ) ;
@@ -138,17 +138,17 @@ else
                     {
                     if( !bSkip )
 
-                    if( !tDeviceFailed.csF( tinBaseP ) || !etThread.strCompareF( tinBaseP , psttc1 , tDeviceFailed ) ) bSkip = 0 ;
+                    if( !tDeviceFailed.csF( tin0P ) || !etThread.strCompareF( tin0P , psttc1 , tDeviceFailed ) ) bSkip = 0 ;
 
-                    //if( etThread.strCompareF( tinBaseP , psttc1 , T("///d/ideafarm.home.101/devices/ssd4.arc.20240214/") ) ) continue ; //TO FIND A BUG
-                    //etThread.traceF( tinBaseP , psttc1 ) ;
+                    //if( etThread.strCompareF( tin0P , psttc1 , T("///d/ideafarm.home.101/devices/ssd4.arc.20240214/") ) ) continue ; //TO FIND A BUG
+                    //etThread.traceF( tin0P , psttc1 ) ;
                 {
                 FORsTRINGSiN1( pstt1d )
                 boolT bSkip = 1 ;
             {
             else
             }
-                etThread.traceF( tinBaseP , T("!exception: could not obtain device list") ) ;
+                etThread.traceF( tin0P , T("!exception: could not obtain device list") ) ;
             {
             if( bFail )
             }
@@ -157,13 +157,13 @@ else
                     POOPRqUIET
                 {
                 if( POOP )
-                ((tin9S&)tinBaseP).pEtScratch->diskFindFileOrDirF( tinBaseP , pstt1d , tLongDevices , 0 , flDISKfIND_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1d ) ;
+                ((tin9S&)tin0P).pEtScratch->diskFindFileOrDirF( tin0P , pstt1d , tLongDevices , 0 , flDISKfIND_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1d ) ;
                 SCOOPS
             {
             ZE( boolT , bFail ) ;
             ZE( strokeS* , pstt1d ) ;
             TN( tLongDevices , "///d/ideafarm.home.101/devices/" ) ;
-            stackC stArchiveDo( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+            stackC stArchiveDo( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
             _IO_
         {
         IFsCRATCH
@@ -171,7 +171,7 @@ else
     {
     while( !ether )
     TN( tDeviceFailed , "" ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     _IO_
 {
 if( !psttPathP )
@@ -180,17 +180,17 @@ if( !psttPathP )
     }
         }
             break ;
-            etThread.strMakeF( tinBaseP , LF , psttPathP , psttc1 ) ; ___( psttPathP ) ;
+            etThread.strMakeF( tin0P , LF , psttPathP , psttc1 ) ; ___( psttPathP ) ;
             bArmed = 0 ;
         {
         else if( bArmed )
-        if( !etThread.strCompareF( tinBaseP , psttc1 , tArgKeyName ) ) bArmed = 1 ;
-        etThread.traceF( tinBaseP , T("param: ")+T(psttc1) ) ;
+        if( !etThread.strCompareF( tin0P , psttc1 , tArgKeyName ) ) bArmed = 1 ;
+        etThread.traceF( tin0P , T("param: ")+T(psttc1) ) ;
         _IO_
     {
     FORsTRINGSiN1( pstt1Param )
     ZE( boolT , bArmed ) ;
-    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
+    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
     _IO_
 {
 ZE( strokeS* , psttPathP ) ;
@@ -205,20 +205,20 @@ TODO
         }
             }
                 }
-                    if( !( ( idJot & ~NM_HIGH ) % TUCK ) ) etherP.traceF( tinBaseP , T("jotted [idJot,tShort]:    ")+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4P+tShortNew ) ;
-                    countT idJot = pJotUnsortedShortP->writeF( tinBaseP , tShortNew , tShortNew.csF( tinBaseP ) + 1 , 0 , 0 ) ;
+                    if( !( ( idJot & ~NM_HIGH ) % TUCK ) ) etherP.traceF( tin0P , T("jotted [idJot,tShort]:    ")+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4P+tShortNew ) ;
+                    countT idJot = pJotUnsortedShortP->writeF( tin0P , tShortNew , tShortNew.csF( tin0P ) + 1 , 0 , 0 ) ;
                     _IO_
                 {
-                if( tShortNew.csF( tinBaseP ) )
+                if( tShortNew.csF( tin0P ) )
 
                 }
-                    etherP.delF( tinBaseP , pstt1w ) ;
+                    etherP.delF( tin0P , pstt1w ) ;
                     }
                         }
                             tShortNew = tnP ;
-                            etherP.delF( tinBaseP , psttShortNew ) ;
-                            if( cHits ) etherP.diskMoveFileOrDirF( tinBaseP , tPathP+T(psttShortNew) , tPathP+tShort , 0 ) ;
-                            countT cHits = etherP.strReplaceF( tinBaseP , psttShortNew , tShort , tHeyIdeaFarmDot9DotP , tHeyIdeaFarmDotADotP , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
+                            etherP.delF( tin0P , psttShortNew ) ;
+                            if( cHits ) etherP.diskMoveFileOrDirF( tin0P , tPathP+T(psttShortNew) , tPathP+tShort , 0 ) ;
+                            countT cHits = etherP.strReplaceF( tin0P , psttShortNew , tShort , tHeyIdeaFarmDot9DotP , tHeyIdeaFarmDotADotP , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
                             ZE( strokeS* , psttShortNew ) ;
                             //CS:CODEsYNC: DUPLICATE CODE: 5101200f 5101200f
                         {
@@ -231,8 +231,8 @@ TODO
                                 }
                                     break ;
                                     bFail = !bData && !bMeta ;
-                                    boolT bMeta = !etherP.strCompareF( tinBaseP , psttc1 , tMetaP ) ;
-                                    boolT bData = !etherP.strCompareF( tinBaseP , psttc1 , tDataP ) ;
+                                    boolT bMeta = !etherP.strCompareF( tin0P , psttc1 , tMetaP ) ;
+                                    boolT bData = !etherP.strCompareF( tin0P , psttc1 , tDataP ) ;
                                 {
                                 case 0xa :
                                 }
@@ -259,22 +259,22 @@ TODO
                                 case 0x4 :
                                 }
                                     break ;
-                                    bFail = !!etherP.strCompareF( tinBaseP , psttc1 , t2P ) ;
+                                    bFail = !!etherP.strCompareF( tin0P , psttc1 , t2P ) ;
                                 {
                                 case 0x3 :
                                 }
                                     break ;
-                                    bFail = etherP.strCompareF( tinBaseP , psttc1 , t9P ) && etherP.strCompareF( tinBaseP , psttc1 , taP ) ;
+                                    bFail = etherP.strCompareF( tin0P , psttc1 , t9P ) && etherP.strCompareF( tin0P , psttc1 , taP ) ;
                                 {
                                 case 0x2 :
                                 }
                                     break ;
-                                    bFail = !!etherP.strCompareF( tinBaseP , psttc1 , tHeyIdeaFarmP ) ;
+                                    bFail = !!etherP.strCompareF( tin0P , psttc1 , tHeyIdeaFarmP ) ;
                                 {
                                 case 0x1 :
                             {
                             switch( ++ idw )
-                            //etherP.traceF( tinBaseP , tb4+T(psttc1) ) ;
+                            //etherP.traceF( tin0P , tb4+T(psttc1) ) ;
                             _IO_
                         {
                         FORsTRINGSiN1( pstt1w )
@@ -285,15 +285,15 @@ TODO
                     else
                     }
                         tShortNew = tnP ;
-                        etherP.delF( tinBaseP , psttShortNew ) ;
-                        if( cHits ) etherP.diskMoveFileOrDirF( tinBaseP , tPathP+T(psttShortNew) , tPathP+tShort , 0 ) ;
-                        countT cHits = etherP.strReplaceF( tinBaseP , psttShortNew , tShort , tHeyIdeaFarmDot9DotP , tHeyIdeaFarmDotADotP , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
+                        etherP.delF( tin0P , psttShortNew ) ;
+                        if( cHits ) etherP.diskMoveFileOrDirF( tin0P , tPathP+T(psttShortNew) , tPathP+tShort , 0 ) ;
+                        countT cHits = etherP.strReplaceF( tin0P , psttShortNew , tShort , tHeyIdeaFarmDot9DotP , tHeyIdeaFarmDotADotP , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
                         ZE( strokeS* , psttShortNew ) ;
                         _IO_
                     {
                     if( cWords < 0xb )
-                    //etherP.traceF( tinBaseP , T("cWords:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    countT cWords = etherP.strWordsF( tinBaseP , pstt1w , tShortNew , sttq , tDotP , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
+                    //etherP.traceF( tin0P , T("cWords:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    countT cWords = etherP.strWordsF( tin0P , pstt1w , tShortNew , sttq , tDotP , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1w ) ;
                     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                     ZE( strokeS* , pstt1w ) ;
 
@@ -314,20 +314,20 @@ TODO
 
                     _IO_
                 {
-                if( tShortNew.csF( tinBaseP ) )
+                if( tShortNew.csF( tin0P ) )
 
                 }
                     }
                         }
                             }
                                 tShortNew = tnP ;
-                                etherP.traceF( tinBaseP , T("!exception: could not move to eliminate underscore ; file will be ignored") ) ;
+                                etherP.traceF( tin0P , T("!exception: could not move to eliminate underscore ; file will be ignored") ) ;
                                 POOPRqUIET
                             {
                             if( POOP )
 
                             THREADmODE2rESTORE
-                            ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tLongNew , tPathP+tShort , 1 ) ;
+                            ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tLongNew , tPathP+tShort , 1 ) ;
                             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
                             SCOOPS
@@ -335,63 +335,63 @@ TODO
                         {
                         IFsCRATCH
 
-                        etherP.traceF( tinBaseP , T("to eliminate underscore, moving from:    ")+tPathP+tShort ) ;
-                        etherP.traceF( tinBaseP , T("to eliminate underscore, moving to  :    ")+tLongNew ) ;
+                        etherP.traceF( tin0P , T("to eliminate underscore, moving from:    ")+tPathP+tShort ) ;
+                        etherP.traceF( tin0P , T("to eliminate underscore, moving to  :    ")+tLongNew ) ;
                     {
                     if( cHits )
 
                     TN( tLongNew , "" ) ; tLongNew = tPathP+tShortNew ;
-                    etherP.delF( tinBaseP , psttShortNew ) ;
+                    etherP.delF( tin0P , psttShortNew ) ;
                     tShortNew = T(psttShortNew) ;
-                    countT cHits = etherP.strReplaceF( tinBaseP , psttShortNew , tShort , tUscore20P , tDot20P , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
+                    countT cHits = etherP.strReplaceF( tin0P , psttShortNew , tShort , tUscore20P , tDot20P , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
                     ZE( strokeS* , psttShortNew ) ;
                     _IO_
                 {
                 TN( tShortNew , "" ) ;
             {
-            else if( !etherP.strIdF( tinBaseP , tDotFsetDotZipP , tShort ) )
+            else if( !etherP.strIdF( tin0P , tDotFsetDotZipP , tShort ) )
             }
-                etherP.traceF( tinBaseP , T("!exception: zapped  unexpected file [tLong]:    ")+tPathP+tShort ) ;
-                etherP.boxZapF( tinBaseP , tPathP+tShort ) ;
-                etherP.traceF( tinBaseP , T("!exception: zapping unexpected file [tLong]:    ")+tPathP+tShort ) ;
+                etherP.traceF( tin0P , T("!exception: zapped  unexpected file [tLong]:    ")+tPathP+tShort ) ;
+                etherP.boxZapF( tin0P , tPathP+tShort ) ;
+                etherP.traceF( tin0P , T("!exception: zapping unexpected file [tLong]:    ")+tPathP+tShort ) ;
                 _IO_
             {
-            else if( etherP.strIdF( tinBaseP , tDotMetaDotDatafiletimesP , tShort ) )
+            else if( etherP.strIdF( tin0P , tDotMetaDotDatafiletimesP , tShort ) )
             }
-                etherP.delF( tinBaseP , psttShortNew ) ;
-                if( cHits ) etherP.diskMoveFileOrDirF( tinBaseP , tPath+T(psttShortNew) , tPath+tShort , 0 ) ;
-                countT cHits = etherP.strReplaceF( tinBaseP , psttShortNew , tShort , tHeyIdeaFarmDot9DotP , tHeyIdeaFarmDotADotP , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
+                etherP.delF( tin0P , psttShortNew ) ;
+                if( cHits ) etherP.diskMoveFileOrDirF( tin0P , tPath+T(psttShortNew) , tPath+tShort , 0 ) ;
+                countT cHits = etherP.strReplaceF( tin0P , psttShortNew , tShort , tHeyIdeaFarmDot9DotP , tHeyIdeaFarmDotADotP , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
                 ZE( strokeS* , psttShortNew ) ;
                 //CS:CODEsYNC: DUPLICATE CODE: 5101200f 5101200f
                 _IO_
             {
-            else if( etherP.strIdF( tinBaseP , tDotHeyDotControlDotP , tShort ) )
+            else if( etherP.strIdF( tin0P , tDotHeyDotControlDotP , tShort ) )
             }
                 _IO_
-                etherP.traceF( tinBaseP , T("!exception: file ignored (a particular file to ignore; it is a duplicate of another data file in the same set) [tLong]:    ")+tPathP+tShort ) ;
+                etherP.traceF( tin0P , T("!exception: file ignored (a particular file to ignore; it is a duplicate of another data file in the same set) [tLong]:    ")+tPathP+tShort ) ;
             {
-            else if( etherP.strIdF( tinBaseP , T(".data.tripod.speech.") , tShort ) )
+            else if( etherP.strIdF( tin0P , T(".data.tripod.speech.") , tShort ) )
             }
                 _IO_
-                etherP.traceF( tinBaseP , T("!exception: file ignored (name does not begin with !ideafarm.) [tLong]:    ")+tPathP+tShort ) ;
+                etherP.traceF( tin0P , T("!exception: file ignored (name does not begin with !ideafarm.) [tLong]:    ")+tPathP+tShort ) ;
             {
-            if( 1 != etherP.strIdF( tinBaseP , tHeyIdeaFarmDotP , tShort ) )
+            if( 1 != etherP.strIdF( tin0P , tHeyIdeaFarmDotP , tShort ) )
 
-            else { __NZ( etherP.strCompareF( tinBaseP , tPath , tPathP ) ) ; }
+            else { __NZ( etherP.strCompareF( tin0P , tPath , tPathP ) ) ; }
             }
-                //etherP.traceF( tinBaseP , T("walkCBF set [tPathP]:    ")+tPathP ) ;
+                //etherP.traceF( tin0P , T("walkCBF set [tPathP]:    ")+tPathP ) ;
                 tPathP = tPath ;
                 _IO_
             {
-            if( !tPathP.csF( tinBaseP ) )
+            if( !tPathP.csF( tin0P ) )
 
-            //etherP.traceF( tinBaseP , T("inspecting file [tShort]:    ")+tShort ) ;
+            //etherP.traceF( tin0P , T("inspecting file [tShort]:    ")+tShort ) ;
             }
-                etherP.delF( tinBaseP , psttShort ) ;
-                etherP.delF( tinBaseP , psttPath ) ;
+                etherP.delF( tin0P , psttShort ) ;
+                etherP.delF( tin0P , psttPath ) ;
                 tShort = T(psttShort) ;
                 tPath  = T(psttPath) ;
-                etherP.strBisectF( tinBaseP , psttPath , psttShort , tName , tSlashP , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+                etherP.strBisectF( tin0P , psttPath , psttShort , tName , tSlashP , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
                 ZE( strokeS* , psttShort ) ;
                 ZE( strokeS* , psttPath ) ;
                 _IO_
@@ -399,41 +399,41 @@ TODO
             TN( tShort , "" ) ;
             TN( tPath  , "" ) ;
 
-            //etherP.traceF( tinBaseP , T("walkCBF [tFile]:    ")+tName ) ;
+            //etherP.traceF( tin0P , T("walkCBF [tFile]:    ")+tName ) ;
             TN( tName , ifName ) ;
-            ifFileNameC ifName( tinBaseP , *((tin9S&)tinBaseP).pEther , postNameP ) ;
+            ifFileNameC ifName( tin0P , *((tin9S&)tin0P).pEther , postNameP ) ;
             _IO_
         {
         else if( bYearP && bYearDoP /*&& !cSetsDoneP*/ )
         }
             }
                 }
-                    pJotUnsortedShortP = new( 0 , tinBaseP , LF ) jotC( tinBaseP , tPart2 , flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_WRITE | flJOTc_PURGEoNcT | flJOTc_PATCHbOOKSfLAGStOpURGEoNdT , 1 , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ) ; ___( pJotUnsortedShortP ) ;
+                    pJotUnsortedShortP = new( 0 , tin0P , LF ) jotC( tin0P , tPart2 , flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_WRITE | flJOTc_PURGEoNcT | flJOTc_PATCHbOOKSfLAGStOpURGEoNdT , 1 , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ) ; ___( pJotUnsortedShortP ) ;
                     TN( tPart2  , "" ) ; tPart2  = tMigrateUnsortedPrefixP+tDeviceP+tDotP+tYearP ;
 
                     bYearDoP = 1 ;
-                    etherP.traceF( tinBaseP , T("year to do:    ")+tYearP ) ;
+                    etherP.traceF( tin0P , T("year to do:    ")+tYearP ) ;
                 {
-                if( !psttYearTestP->idAdam || etherP.strIdF( tinBaseP , tYearP , psttYearTestP , 1 ) )
+                if( !psttYearTestP->idAdam || etherP.strIdF( tin0P , tYearP , psttYearTestP , 1 ) )
 
-                etherP.traceF( tinBaseP , T("year      :    ")+tYearP ) ;
+                etherP.traceF( tin0P , T("year      :    ")+tYearP ) ;
                 }
-                    etherP.delF( tinBaseP , psttYear ) ;
+                    etherP.delF( tin0P , psttYear ) ;
                     tYearP  = T(psttYear) ;
 
-                    etherP.delF( tinBaseP , psttnu ) ;
-                    etherP.delF( tinBaseP , psttYearSlash ) ;
-                    etherP.strBisectF( tinBaseP , psttYear , psttnu , psttYearSlash , tSlashP , - 1 , flSTRbISECT_null ) ; ___( psttYear ) ; ___( psttnu ) ;
+                    etherP.delF( tin0P , psttnu ) ;
+                    etherP.delF( tin0P , psttYearSlash ) ;
+                    etherP.strBisectF( tin0P , psttYear , psttnu , psttYearSlash , tSlashP , - 1 , flSTRbISECT_null ) ; ___( psttYear ) ; ___( psttnu ) ;
                     ZE( strokeS* , psttYear ) ;
 
-                    etherP.delF( tinBaseP , psttnu ) ;
-                    etherP.strBisectF( tinBaseP , psttnu , psttYearSlash , tArchivesSlashArchiveSlashYearSlash , tSlashP , - 2 , flSTRbISECT_null ) ; ___( psttYearSlash ) ; ___( psttnu ) ;
+                    etherP.delF( tin0P , psttnu ) ;
+                    etherP.strBisectF( tin0P , psttnu , psttYearSlash , tArchivesSlashArchiveSlashYearSlash , tSlashP , - 2 , flSTRbISECT_null ) ; ___( psttYearSlash ) ; ___( psttnu ) ;
                     ZE( strokeS* , psttYearSlash ) ;
                     ZE( strokeS* , psttnu ) ;
                 {
 
                 bYearP = 1 ;
-                //etherP.traceF( tinBaseP , T("year:    ")+tArchivesSlashArchiveSlashYearSlash ) ;
+                //etherP.traceF( tin0P , T("year:    ")+tArchivesSlashArchiveSlashYearSlash ) ;
                 _IO_
             {
             else
@@ -442,27 +442,27 @@ TODO
                 if( bYearDoP || cYearKidDirectoriesP ) cYearKidDirectoriesP ++ ;
                 _IO_
             {
-            if( 1 != etherP.strIdF( tinBaseP , psttzArchivesP , tArchivesSlashArchiveSlashYearSlash , 1 ) )
+            if( 1 != etherP.strIdF( tin0P , psttzArchivesP , tArchivesSlashArchiveSlashYearSlash , 1 ) )
 
-            //etherP.traceF( tinBaseP , T("directory [tArchivesSlashArchiveSlashYearSlash]:    ")+tArchivesSlashArchiveSlashYearSlash ) ;
+            //etherP.traceF( tin0P , T("directory [tArchivesSlashArchiveSlashYearSlash]:    ")+tArchivesSlashArchiveSlashYearSlash ) ;
             }
-                etherP.delF( tinBaseP , psttnu ) ;
-                etherP.delF( tinBaseP , psttArchivesSlashArchiveSlashYearSlash ) ;
+                etherP.delF( tin0P , psttnu ) ;
+                etherP.delF( tin0P , psttArchivesSlashArchiveSlashYearSlash ) ;
 
                 tArchivesSlashArchiveSlashYearSlash  = T(psttArchivesSlashArchiveSlashYearSlash) ;
-                etherP.strBisectF( tinBaseP , psttnu , psttArchivesSlashArchiveSlashYearSlash , tName , tSlashP , - 4 , flSTRbISECT_null ) ; ___( psttArchivesSlashArchiveSlashYearSlash ) ; ___( psttnu ) ;
+                etherP.strBisectF( tin0P , psttnu , psttArchivesSlashArchiveSlashYearSlash , tName , tSlashP , - 4 , flSTRbISECT_null ) ; ___( psttArchivesSlashArchiveSlashYearSlash ) ; ___( psttnu ) ;
                 ZE( strokeS* , psttArchivesSlashArchiveSlashYearSlash ) ;
                 ZE( strokeS* , psttnu ) ;
                 _IO_
             {
             TN( tArchivesSlashArchiveSlashYearSlash , "" ) ;
 
-            //etherP.traceF( tinBaseP , T("walkCBF [tDirectory]:    ")+tName ) ;
+            //etherP.traceF( tin0P , T("walkCBF [tDirectory]:    ")+tName ) ;
             TN( tName , ifName ) ;
-            ifFileNameC ifName( tinBaseP , etherP , postNameP ) ;
+            ifFileNameC ifName( tin0P , etherP , postNameP ) ;
             _IO_
         {
-        else if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] == '\\' ) // IF DIRECTORY
+        else if( postNameP[ thirdC::c_strlenIF( tin0P , postNameP ) - 1 ] == '\\' ) // IF DIRECTORY
         }
             }
                 bYearDoP = bYearP = 0 ;
@@ -470,33 +470,33 @@ TODO
 
                 DEL( pJotSortedShort ) ;
                 }
-                    //etherP.traceF( tinBaseP , T("processed  sorted short names") ) ;
-                    consumeSortedShortF( tinBaseP , etherP , etPrime , *(boolT*)&bQuitP , *pJotSortedShort , tPathP , cSetsDoneP ) ;
-                    //etherP.traceF( tinBaseP , T("processing sorted short names") ) ;
+                    //etherP.traceF( tin0P , T("processed  sorted short names") ) ;
+                    consumeSortedShortF( tin0P , etherP , etPrime , *(boolT*)&bQuitP , *pJotSortedShort , tPathP , cSetsDoneP ) ;
+                    //etherP.traceF( tin0P , T("processing sorted short names") ) ;
                 {
                 if( !bQuitP )
 
                 }
-                    etherP.delF( tinBaseP , psttName ) ;
+                    etherP.delF( tin0P , psttName ) ;
                     DEL( pJotUnsortedShortP ) ;
                     if( pJotUnsortedShortP ) pJotUnsortedShortP->flagsCtRefF() |= flJOTc_PATCHbOOKSfLAGStOpURGEoNdT ;
                     if( !bQuitP && etPrime ) *(boolT*)&bQuitP = 1 ;
                     if( pJotSortedShort ) pJotSortedShort->flagsCtRefF() |= flJOTc_PATCHbOOKSfLAGStOpURGEoNdT ;
-                    sortF( tinBaseP , etherP , etPrime , pJotSortedShort , *pJotUnsortedShortP , psttName , tMigrateSortedPrefixP+tDeviceP+tDotP+tYearP , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES , TUCK << 0 , flSORTERc_SILENTLYsUPPRESSdUPLICATES , flJOTc_null , cShortNames , 0 ) ; ___( pJotSortedShort ) ;
+                    sortF( tin0P , etherP , etPrime , pJotSortedShort , *pJotUnsortedShortP , psttName , tMigrateSortedPrefixP+tDeviceP+tDotP+tYearP , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES , TUCK << 0 , flSORTERc_SILENTLYsUPPRESSdUPLICATES , flJOTc_null , cShortNames , 0 ) ; ___( pJotSortedShort ) ;
                     ZE( strokeS* , psttName ) ;
-                    //etherP.traceF( tinBaseP , T("sorting short names [cShortNames]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //etherP.traceF( tin0P , T("sorting short names [cShortNames]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 if( !bQuitP )
                 ZE( jotC* , pJotSortedShort ) ;
 
                 pJotUnsortedShortP->resetLathReadF() ;
                 }
-                    //etherP.traceF( tinBaseP , T("unsorted [tShort]:    ")+tShort ) ;
+                    //etherP.traceF( tin0P , T("unsorted [tShort]:    ")+tShort ) ;
         
                     }
                         }
                             *(boolT*)&bQuitP = 1 ;
-                            etherP.traceF( tinBaseP , T("!exception: could not obtain blob so aborting") ) ;
+                            etherP.traceF( tin0P , T("!exception: could not obtain blob so aborting") ) ;
                         {
                         else        
                         if( pbIn ) tShort = T(pbIn) ;
@@ -528,9 +528,9 @@ TODO
     {
     if( !bQuitP && !POOP )
 
-    //etherP.traceF( tinBaseP , T("walkCBF ++++ [tPathP]:    ")+tPathP ) ;
+    //etherP.traceF( tin0P , T("walkCBF ++++ [tPathP]:    ")+tPathP ) ;
 
-    //etherP.traceF( tinBaseP , T("walkCBF [tDeviceP,tYearP,postNameP]:    ")+tDeviceP+tb4P+tYearP+tb4P+T(postNameP) ) ;
+    //etherP.traceF( tin0P , T("walkCBF [tDeviceP,tYearP,postNameP]:    ")+tDeviceP+tb4P+tYearP+tb4P+T(postNameP) ) ;
 
     if( etPrime ) *(boolT*)&bQuitP = 1 ;
 
@@ -567,13 +567,13 @@ TODO
     countT&        cSetsDoneP                =       *(countT*)pcArgP[ 0x00 ] ;
 
     etherC& etPrime = etherC::etPrimeIF() ;
-    etherC& etherP = *((tin9S&)tinBaseP).pEther ;
+    etherC& etherP = *((tin9S&)tin0P).pEther ;
     _IO_
 {
-boolT walkCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT walkCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 }
-    if( stShort && !bQuitP && !etPrimeP ) bQuitP = flushFileSetF( tinBaseP , etherP , etPrimeP , cSetsDoneP , tShortPrefixLag , stShort , tPathP , tn , tb , tb4 , timeDataWritten ) ;
+    if( stShort && !bQuitP && !etPrimeP ) bQuitP = flushFileSetF( tin0P , etherP , etPrimeP , cSetsDoneP , tShortPrefixLag , stShort , tPathP , tn , tb , tb4 , timeDataWritten ) ;
 
     jotSortedShortP.resetLathReadF() ;
     }
@@ -581,17 +581,17 @@ boolT walkCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT&
             }
                 }
                     bQuitP = 1 ;
-                    etherP.delF( tinBaseP , psttShort ) ;
-                    etherP.traceF( tinBaseP , T("!exception: could not sink ; aborting [psttShort]:    ")+T(psttShort) ) ;
+                    etherP.delF( tin0P , psttShort ) ;
+                    etherP.traceF( tin0P , T("!exception: could not sink ; aborting [psttShort]:    ")+T(psttShort) ) ;
                 {
                 else
-                if( ids ) ; //etherP.traceF( tinBaseP , T("sinked (aok)  [psttShort]:    ")+T(psttShort) ) ;
-                stShort.sinkF( tinBaseP , ids , psttShort , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                if( ids ) ; //etherP.traceF( tin0P , T("sinked (aok)  [psttShort]:    ")+T(psttShort) ) ;
+                stShort.sinkF( tin0P , ids , psttShort , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                 ZE( countT , ids ) ;
-                //etherP.traceF( tinBaseP , T("sinking       [psttShort]:    ")+T(psttShort) ) ;
-                etherP.strMakeF( tinBaseP , LF , psttShort , tShort ) ; ___( psttShort ) ;
+                //etherP.traceF( tin0P , T("sinking       [psttShort]:    ")+T(psttShort) ) ;
+                etherP.strMakeF( tin0P , LF , psttShort , tShort ) ; ___( psttShort ) ;
                 ZE( strokeS* , psttShort ) ;
-                //etherP.traceF( tinBaseP , T("about to push [tShort]:    ")+tShort ) ;
+                //etherP.traceF( tin0P , T("about to push [tShort]:    ")+tShort ) ;
                 // IF GET HERE THEN THIS FILE IS ACCEPTED AS A MEMBER OF A FORMAT 9 FILESET
             {
             if( !bQuitP )
@@ -600,25 +600,25 @@ boolT walkCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT&
                 }
                     }
                         }
-                            etherP.traceF( tinBaseP , T("!exception: could not get file time [tShort]:    ")+tShort ) ;
+                            etherP.traceF( tin0P , T("!exception: could not get file time [tShort]:    ")+tShort ) ;
                             bQuitP = 1 ;
                             POOPRqUIET
                         {
                         if( POOP )
 
-                        //etherP.traceF( tinBaseP , T("      data file time written: ")+TT(timeDataWritten.time1,timeDataWritten.time2) ) ;
-                        thirdC::getFileTimeIF( tinBaseP , fiWo , &timeDataWritten , 0 , 0 ) ;
+                        //etherP.traceF( tin0P , T("      data file time written: ")+TT(timeDataWritten.time1,timeDataWritten.time2) ) ;
+                        thirdC::getFileTimeIF( tin0P , fiWo , &timeDataWritten , 0 , 0 ) ;
                         timeDataWritten = timeS() ;
                     {
                     else
                     }
-                        etherP.traceF( tinBaseP , T("!exception: could not open data file [tShort]:    ")+tShort ) ;
+                        etherP.traceF( tin0P , T("!exception: could not open data file [tShort]:    ")+tShort ) ;
                         bQuitP = 1 ;
                         POOPRqUIET
                     {
                     if( POOP )
 
-                    fileC fiWo( tinBaseP , (strokeS*)( tPathP+tShort ) , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+                    fileC fiWo( tin0P , (strokeS*)( tPathP+tShort ) , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
 
                     SCOOPS
                     _IO_
@@ -629,8 +629,8 @@ boolT walkCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT&
             if( !bQuitP && bData )
 
             bQuitP = !bData && !bMeta ;
-            boolT bMeta = 1 == etherP.strIdF( tinBaseP , tMeta , tShortAfterPrefix ) ;
-            boolT bData = 1 == etherP.strIdF( tinBaseP , tData , tShortAfterPrefix ) ;
+            boolT bMeta = 1 == etherP.strIdF( tin0P , tMeta , tShortAfterPrefix ) ;
+            boolT bData = 1 == etherP.strIdF( tin0P , tData , tShortAfterPrefix ) ;
 
             //20240324@1122: FILE NAME VALIDATION MOVED FROM HERE TO walkCBF IN ORDER TO AVOID THE NEED TO QUIT IF A NONCONFORMING FILE NAME IS ENCOUNTERED ; NOW THOSE FILES ARE JUST IGNORED
 
@@ -648,26 +648,26 @@ boolT walkCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT&
         }
             }
                 tShortPrefixLag = tShortPrefix ;
-                bTimeToQuit = flushFileSetF( tinBaseP , etherP , etPrimeP , cSetsDoneP , tShortPrefixLag , stShort , tPathP , tn , tb , tb4 , timeDataWritten ) ;
+                bTimeToQuit = flushFileSetF( tin0P , etherP , etPrimeP , cSetsDoneP , tShortPrefixLag , stShort , tPathP , tn , tb , tb4 , timeDataWritten ) ;
                 _IO_
             {
             else if( stShort )
-            if( !tShortPrefixLag.csF( tinBaseP ) ) tShortPrefixLag = tShortPrefix ;
-            //etherP.traceF( tinBaseP , T("the prefix has changed") ) ;
+            if( !tShortPrefixLag.csF( tin0P ) ) tShortPrefixLag = tShortPrefix ;
+            //etherP.traceF( tin0P , T("the prefix has changed") ) ;
 
             bTimeToQuit = !!etPrimeP ;     // THE INTENTION IS TO QUIT ONLY AT FILESET BOUNDARY, SO I INSPECT ether HERE
             _IO_
         {
-        if( etherP.strCompareF( tinBaseP , tShortPrefix , tShortPrefixLag ) )     //A:ASSUME: THIS CODE ASSUMES THAT THE FILES ARE PRESENTED IN SORTED ORDER
+        if( etherP.strCompareF( tin0P , tShortPrefix , tShortPrefixLag ) )     //A:ASSUME: THIS CODE ASSUMES THAT THE FILES ARE PRESENTED IN SORTED ORDER
         ZE( boolT , bTimeToQuit ) ;
 
-        //etherP.traceF( tinBaseP , T("the prefix of this file is:                     ")+tShortPrefix ) ;
+        //etherP.traceF( tin0P , T("the prefix of this file is:                     ")+tShortPrefix ) ;
         }
-            etherP.delF( tinBaseP , psttAfterPrefix ) ;
-            etherP.delF( tinBaseP , psttPrefix ) ;
+            etherP.delF( tin0P , psttAfterPrefix ) ;
+            etherP.delF( tin0P , psttPrefix ) ;
             tShortAfterPrefix  = T(psttAfterPrefix) ;
             tShortPrefix       = T(psttPrefix) ;
-            etherP.strBisectF( tinBaseP , psttPrefix , psttAfterPrefix , tShort , tDot , 9 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPrefix ) ; ___( psttAfterPrefix ) ;                                      // tDot
+            etherP.strBisectF( tin0P , psttPrefix , psttAfterPrefix , tShort , tDot , 9 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPrefix ) ; ___( psttAfterPrefix ) ;                                      // tDot
             ZE( strokeS* , psttAfterPrefix ) ;
             ZE( strokeS* , psttPrefix ) ;
             _IO_
@@ -675,13 +675,13 @@ boolT walkCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT&
         TN( tShortAfterPrefix , "" ) ;
         TN( tShortPrefix      , "" ) ;
 
-        etherP.traceF( tinBaseP , T("consuming sorted [tShort]:    ")+tShort ) ;
+        etherP.traceF( tin0P , T("consuming sorted [tShort]:    ")+tShort ) ;
         
         }
             }
                 break ;
                 bQuitP = 1 ;
-                etherP.traceF( tinBaseP , T("!exception: could not obtain blob so aborting") ) ;
+                etherP.traceF( tin0P , T("!exception: could not obtain blob so aborting") ) ;
             {
             else        
             if( pbIn ) tShort = T(pbIn) ;
@@ -691,14 +691,14 @@ boolT walkCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT&
         {
         TN( tShort , "" ) ;
 
-        // /*if( !( cDo % ( TUCK >> 5 ) ) )*/ etherP.traceF( tinBaseP , T("processing sorted short names [cShortNames,cRemaining]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        // /*if( !( cDo % ( TUCK >> 5 ) ) )*/ etherP.traceF( tin0P , T("processing sorted short names [cShortNames,cRemaining]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         
         _IO_
     {
     while( !etPrimeP && !bQuitP && cDo -- )
-    etherP.traceF( tinBaseP , T("beginning to process sorted short names [cShortNames,tPathP]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathP ) ;
+    etherP.traceF( tin0P , T("beginning to process sorted short names [cShortNames,tPathP]:    ")+TF2(cShortNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tPathP ) ;
     timeS timeDataWritten ;
-    stackC stShort( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stShort( tin0P , etherP , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
     TN( tShortPrefixLag  , "" ) ;
     TN( t2 , "2" ) ;
     TN( ta , "a" ) ;
@@ -714,7 +714,7 @@ boolT walkCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT&
     countT cShortNames = jotSortedShortP.cElementsF() ;
     _IO_
 {
-voidT consumeSortedShortF( tin0S& tinBaseP , etherC& etherP , etherC& etPrimeP , boolT& bQuitP , jotC& jotSortedShortP , textC& tPathP , countT& cSetsDoneP )
+voidT consumeSortedShortF( tin0S& tin0P , etherC& etherP , etherC& etPrimeP , boolT& bQuitP , jotC& jotSortedShortP , textC& tPathP , countT& cSetsDoneP )
 
 }
     return bFail ;
@@ -722,60 +722,60 @@ voidT consumeSortedShortF( tin0S& tinBaseP , etherC& etherP , etherC& etPrimeP ,
                                                  //OFFLINE FAILURES OBSERVED, SO:                   20240323@1739: "<< 2"
                                                  //OFFLINE FAILURES OBSERVED, SO:                   20240304@0810: "<< 1"
                                                  //                                                 20240303@1028: "<< 0"
-    //etPrimeP.osSleepF( tinBaseP , TOCK << 1 ) ;      //GIVE THE VOLUME TIME TO COMPLETE ITS I/O FLUSH ; 20240301@0917: "<< 1"
-    //sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;        //NAPPING HERE IS NEEDED FOR SSD BUT NOT FOR HDD
-    //etherP.traceF( tinBaseP , T("napping" ) ) ;
+    //etPrimeP.osSleepF( tin0P , TOCK << 1 ) ;      //GIVE THE VOLUME TIME TO COMPLETE ITS I/O FLUSH ; 20240301@0917: "<< 1"
+    //sleepC s( tin0P , TAG( TAGiDnULL ) ) ;        //NAPPING HERE IS NEEDED FOR SSD BUT NOT FOR HDD
+    //etherP.traceF( tin0P , T("napping" ) ) ;
 
     tShortPrefixP    = tnP     ;
-    //etherP.traceF( tinBaseP , T("flushed  [tShortPrefixP]:                       ")+tShortPrefixP ) ;
+    //etherP.traceF( tin0P , T("flushed  [tShortPrefixP]:                       ")+tShortPrefixP ) ;
 
     timeDataWrittenP = timeS() ;
-    //etherP.traceF( tinBaseP , T("purged  stShortP [cPlates]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    stShortP.purgeF( tinBaseP ) ;
-    //etherP.traceF( tinBaseP , T("purging stShortP [cPlates]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etherP.traceF( tin0P , T("purged  stShortP [cPlates]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    stShortP.purgeF( tin0P ) ;
+    //etherP.traceF( tin0P , T("purging stShortP [cPlates]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     }
         THREADmODE2rESTORE
         }
             }
-                //etherP.traceF( tinBaseP , T("flush [cDone]:    ")+TF2(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //etherP.traceF( tin0P , T("flush [cDone]:    ")+TF2(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 countT cDone = 1 + incv02AM( cSetsDoneP ) ;
 
                 }
-                    //etherP.traceF( tinBaseP , T("setted  zip file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
-                    ((thirdC&)etherP).setFileTimeF( tinBaseP , fiZip , &timeDataWrittenP , &timeDataWrittenP , &timeDataWrittenP ) ;
-                    //etherP.traceF( tinBaseP , T("setting zip file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
-                    fileC fiZip(   tinBaseP , (strokeS*)( tPathP+tShortZip ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
+                    //etherP.traceF( tin0P , T("setted  zip file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
+                    ((thirdC&)etherP).setFileTimeF( tin0P , fiZip , &timeDataWrittenP , &timeDataWrittenP , &timeDataWrittenP ) ;
+                    //etherP.traceF( tin0P , T("setting zip file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
+                    fileC fiZip(   tin0P , (strokeS*)( tPathP+tShortZip ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
                     _IO_
                 {
 
-                //etherP.traceF( tinBaseP , T("called  disZipF [tArgsPkZip]:    ")+tArgsPkZip ) ;
+                //etherP.traceF( tin0P , T("called  disZipF [tArgsPkZip]:    ")+tArgsPkZip ) ;
                 }
-                    etherP.diskZipOldF( tArgsInfoZip , tinBaseP , tArgsPkZip ) ;
+                    etherP.diskZipOldF( tArgsInfoZip , tin0P , tArgsPkZip ) ;
                     _IO_
                 {
             {
             if( !bFail && !bDoNothing )
 
-            //etherP.traceF( tinBaseP , T("calling disZipF [tArgsPkZip]:    ")+tArgsPkZip ) ;
+            //etherP.traceF( tin0P , T("calling disZipF [tArgsPkZip]:    ")+tArgsPkZip ) ;
             }
                 }
-                    etherP.delF( tinBaseP , psttShortNew ) ;
+                    etherP.delF( tin0P , psttShortNew ) ;
 
                     tArgsPkZip   += tbP+T(psttShortNew) ;
                     tArgsInfoZip += tbP+T(psttShortNew) ;
-                    //etherP.traceF( tinBaseP , T("moved [old]:    ")+tShort ) ;
-                    //etherP.traceF( tinBaseP , T("moved [new]:    ")+T(psttShortNew) ) ;
+                    //etherP.traceF( tin0P , T("moved [old]:    ")+tShort ) ;
+                    //etherP.traceF( tin0P , T("moved [new]:    ")+T(psttShortNew) ) ;
 
                     }
-                        etherP.diskMoveFileOrDirF( tinBaseP , tLongNew , tPathP+tShort , 0 ) ;
+                        etherP.diskMoveFileOrDirF( tin0P , tLongNew , tPathP+tShort , 0 ) ;
                     {
 
-                    //etherP.traceF( tinBaseP , T("moving from:    ")+tPathP+tShort ) ;
-                    //etherP.traceF( tinBaseP , T("moving to  :    ")+tLongNew ) ;
+                    //etherP.traceF( tin0P , T("moving from:    ")+tPathP+tShort ) ;
+                    //etherP.traceF( tin0P , T("moving to  :    ")+tLongNew ) ;
 
                     TN( tLongNew , "" ) ; tLongNew = tPathP+T(psttShortNew) ;
-                    etherP.strReplaceF( tinBaseP , psttShortNew , tShort , T("!ideafarm.9.") , T("!ideafarm.a.") , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
+                    etherP.strReplaceF( tin0P , psttShortNew , tShort , T("!ideafarm.9.") , T("!ideafarm.a.") , 0 , flSTRrEPLACE_null ) ; ___( psttShortNew ) ;
                     ZE( strokeS* , psttShortNew ) ;
                     _IO_
                 {
@@ -783,36 +783,36 @@ voidT consumeSortedShortF( tin0S& tinBaseP , etherC& etherP , etherC& etPrimeP ,
                 }
                     break ;
                     bDoNothing = 1 ;
-                    etherP.traceF( tinBaseP , T("    doing nothing with this prefix") ) ;
-                    etherP.traceF( tinBaseP , T("    ")+tShort ) ;
-                    etherP.traceF( tinBaseP , T("    ")+tShortPrefixP ) ;
-                    etherP.traceF( tinBaseP , T("!exception: not expected for current fileset [tShortPrefix,tShort]:") ) ;
+                    etherP.traceF( tin0P , T("    doing nothing with this prefix") ) ;
+                    etherP.traceF( tin0P , T("    ")+tShort ) ;
+                    etherP.traceF( tin0P , T("    ")+tShortPrefixP ) ;
+                    etherP.traceF( tin0P , T("!exception: not expected for current fileset [tShortPrefix,tShort]:") ) ;
                 {
-                if( 1 != etherP.strIdF( tinBaseP , tShortPrefixP , tShort , 1 ) )
+                if( 1 != etherP.strIdF( tin0P , tShortPrefixP , tShort , 1 ) )
 
                 }
                     }
                         }
                             }
-                                etherP.traceF( tinBaseP , T("!exception: could set file time [tShort]:    ")+tShort ) ;
+                                etherP.traceF( tin0P , T("!exception: could set file time [tShort]:    ")+tShort ) ;
                                 bFail = 1 ;
                                 POOPRqUIET
                             {
                             if( POOP )
 
-                            //etherP.traceF( tinBaseP , T("setted  file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
-                            ((thirdC&)*((tin9S&)tinBaseP).pEtScratch).setFileTimeF( tinBaseP , fiWo , &timeDataWrittenP , &timeDataWrittenP , &timeDataWrittenP ) ;
-                            //etherP.traceF( tinBaseP , T("setting file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
+                            //etherP.traceF( tin0P , T("setted  file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
+                            ((thirdC&)*((tin9S&)tin0P).pEtScratch).setFileTimeF( tin0P , fiWo , &timeDataWrittenP , &timeDataWrittenP , &timeDataWrittenP ) ;
+                            //etherP.traceF( tin0P , T("setting file time to:     ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
                         {
                         else
                         }
-                            etherP.traceF( tinBaseP , T("!exception: could not open [tShort]:    ")+tShort ) ;
+                            etherP.traceF( tin0P , T("!exception: could not open [tShort]:    ")+tShort ) ;
                             bFail = 1 ;
                             POOPRqUIET
                         {
                         if( POOP )
 
-                        fileC fiWo( tinBaseP , (strokeS*)( tPathP + tShort ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+                        fileC fiWo( tin0P , (strokeS*)( tPathP + tShort ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
 
                         SCOOPS
                         _IO_
@@ -824,9 +824,9 @@ voidT consumeSortedShortF( tin0S& tinBaseP , etherC& etherP , etherC& etPrimeP ,
                 // THIS IS TO SUPPRESS DIFFERENCES IN META DATA ACROSS VOLUMES THAT ARE DUE TO ACCESSING OR DUE TO AD HOC DATA RECOVERY AND MIGRATION ACTIVITIES
                 //PS:PERSONALITY: I CLOBBER FILE TIME METADATA SO THAT TIME WRITTEN, ACCESSED, AND CREATED FOR EVERY FILE IN THE FILESET ARE ALL SMUDGED TO THE TIME WRITTEN VALUE OF THE DATA FILE
 
-                //etherP.traceF( tinBaseP , T("popped [tShort]:    ")+tShort ) ;
+                //etherP.traceF( tin0P , T("popped [tShort]:    ")+tShort ) ;
                 }
-                    etherP.delF( tinBaseP , psttShort ) ;
+                    etherP.delF( tin0P , psttShort ) ;
                     tShort = T(psttShort) ;
                     stShortP >> psttShort ;
                     ZE( strokeS* , psttShort ) ;
@@ -836,19 +836,19 @@ voidT consumeSortedShortF( tin0S& tinBaseP , etherC& etherP , etherC& etPrimeP ,
             {
             while( !bFail && stShortP )
             ZE( boolT , bDoNothing ) ;
-            //etherP.traceF( tinBaseP , T("popping from stShortP [cPlates]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etherP.traceF( tin0P , T("popping from stShortP [cPlates]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             }
                 }
-                    etherP.delF( tinBaseP , psttShort ) ;
-                    etherP.traceF( tinBaseP , T("!exception: sink unique failed [psttShort]:    ")+T(psttShort) ) ;
+                    etherP.delF( tin0P , psttShort ) ;
+                    etherP.traceF( tin0P , T("!exception: sink unique failed [psttShort]:    ")+T(psttShort) ) ;
                 {
                 else
-                if( ids ) ; //etherP.traceF( tinBaseP , T("sinked (aok)  [psttShort]:    ")+T(psttShort) ) ;
-                stShortP.sinkF( tinBaseP , ids , psttShort , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                if( ids ) ; //etherP.traceF( tin0P , T("sinked (aok)  [psttShort]:    ")+T(psttShort) ) ;
+                stShortP.sinkF( tin0P , ids , psttShort , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                 ZE( countT , ids ) ;
-                //etherP.traceF( tinBaseP , T("sinking       [psttShort]:    ")+T(psttShort) ) ;
-                etherP.strMakeF( tinBaseP , LF , psttShort , tShortTimes ) ; ___( psttShort ) ;
+                //etherP.traceF( tin0P , T("sinking       [psttShort]:    ")+T(psttShort) ) ;
+                etherP.strMakeF( tin0P , LF , psttShort , tShortTimes ) ; ___( psttShort ) ;
                 ZE( strokeS* , psttShort ) ;
                 _IO_
             {
@@ -857,60 +857,60 @@ voidT consumeSortedShortF( tin0S& tinBaseP , etherC& etherP , etherC& etPrimeP ,
             }
                 }
                     }
-                        etherP.traceF( tinBaseP , T("!exception: could not write the file times metafile") ) ;
+                        etherP.traceF( tin0P , T("!exception: could not write the file times metafile") ) ;
                         bFail = 1 ;
                         POOPRqUIET
                     {
                     if( POOP )
-                    ((tin9S&)tinBaseP).pEtScratch->fileWriteF( tinBaseP , fiTimes , (byteT*)&timeDataWrittenP  , sizeof( timeS ) ) ;
+                    ((tin9S&)tin0P).pEtScratch->fileWriteF( tin0P , fiTimes , (byteT*)&timeDataWrittenP  , sizeof( timeS ) ) ;
                 {
                 else
                 }
-                    etherP.traceF( tinBaseP , T("!exception: could not create the file times metafile") ) ;
+                    etherP.traceF( tin0P , T("!exception: could not create the file times metafile") ) ;
                     bFail = 1 ;
                     POOPRqUIET
                 {
                 if( POOP )
 
-                fileC fiTimes( tinBaseP , (strokeS*)( tPathP + tShortTimes ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeF , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
+                fileC fiTimes( tin0P , (strokeS*)( tPathP + tShortTimes ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeF , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
 
                 SCOOPS
                 _IO_
             {
             IFsCRATCH
             TN( tShortTimes , "" ) ; tShortTimes = tShortPrefixP + T("meta.datafiletimes") ;
-            etherP.boxZapF( tinBaseP , tPathP+tShortZip ) ;
+            etherP.boxZapF( tin0P , tPathP+tShortZip ) ;
             TN( tArgsPkZip   , "" ) ; tArgsPkZip   = T("-max -add -move ") + tShortZip ;
             TN( tArgsInfoZip , "" ) ; tArgsInfoZip = T("-9m "            ) + tShortZip ;
 
-            hoverC hover( tinBaseP , etherP , tPathP ) ;
+            hoverC hover( tin0P , etherP , tPathP ) ;
         {
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
-        etherP.delF( tinBaseP , psttShortPrefixNew ) ;
+        etherP.delF( tin0P , psttShortPrefixNew ) ;
         TN( tShortZip , "" ) ; tShortZip = T(psttShortPrefixNew) + T("fset.zip") ;
 
-        etherP.strReplaceF( tinBaseP , psttShortPrefixNew , tShortPrefixP , T("!ideafarm.9.") , T("!ideafarm.a.") , 0 , flSTRrEPLACE_null ) ; ___( psttShortPrefixNew ) ;
+        etherP.strReplaceF( tin0P , psttShortPrefixNew , tShortPrefixP , T("!ideafarm.9.") , T("!ideafarm.a.") , 0 , flSTRrEPLACE_null ) ; ___( psttShortPrefixNew ) ;
         ZE( strokeS* , psttShortPrefixNew ) ;
 
-        //etherP.traceF( tinBaseP , T("flushing with data file time: ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
+        //etherP.traceF( tin0P , T("flushing with data file time: ")+TT(timeDataWrittenP.time1,timeDataWrittenP.time2) ) ;
         _IO_
     {
     else
     }
-        etherP.traceF( tinBaseP , T("!exception: null file time for the fset to be flushed, so doing nothing with these files [cFiles,shortPrefix]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tShortPrefixP ) ;
+        etherP.traceF( tin0P , T("!exception: null file time for the fset to be flushed, so doing nothing with these files [cFiles,shortPrefix]:    ")+TF2(stShortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tShortPrefixP ) ;
         _IO_
     {
     else if( !timeDataWrittenP )
     if( !stShortP ) ;
     ZE( boolT , bFail ) ;
 
-    //etherP.traceF( tinBaseP , T("flushing [tShortPrefixP]:                       ")+tShortPrefixP ) ;
-    //etherP.traceF( tinBaseP , T("                [tPathP]:                       ")+tPathP ) ;
+    //etherP.traceF( tin0P , T("flushing [tShortPrefixP]:                       ")+tShortPrefixP ) ;
+    //etherP.traceF( tin0P , T("                [tPathP]:                       ")+tPathP ) ;
 
     _IO_
 {
-boolT flushFileSetF( tin0S& tinBaseP , etherC& etherP , etherC& etPrimeP , countT& cSetsDoneP , textC& tShortPrefixP , stackC& stShortP , textC& tPathP , textC& tnP , textC& tbP , textC& tb4P , timeS& timeDataWrittenP )
+boolT flushFileSetF( tin0S& tin0P , etherC& etherP , etherC& etPrimeP , countT& cSetsDoneP , textC& tShortPrefixP , stackC& stShortP , textC& tPathP , textC& tnP , textC& tbP , textC& tb4P , timeS& timeDataWrittenP )
 
 #define CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ( TOCK << 2 )
 #define CBdATAbOOKsHORTfILEnAMES           ( TICK << 1 )

@@ -10,47 +10,47 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinBaseP , T("press the enter key") ) ;
+etThread.strokeF( tin0P , T("press the enter key") ) ;
 
-etThread.socksShutdownF( tinBaseP ) ;
+etThread.socksShutdownF( tin0P ) ;
 
-sDone.waitF( tinBaseP ) ;
-etThread.sockWriteF( tinBaseP , hs , "abcdefgh" ) ;
+sDone.waitF( tin0P ) ;
+etThread.sockWriteF( tin0P , hs , "abcdefgh" ) ;
 
-etThread.sockOptionLingerF( tinBaseP , hs ) ;
-etThread.sockAcceptF( tinBaseP , hs , idPortPeer , nnPeer , hl , countTC() ) ;
+etThread.sockOptionLingerF( tin0P , hs ) ;
+etThread.sockAcceptF( tin0P , hs , idPortPeer , nnPeer , hl , countTC() ) ;
 ZE( countT , idPortPeer ) ;
 nicNameC nnPeer ;
-handleC hs( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sDone , flTHREADlAUNCH_null , 0 , 0 , idpa ) ; }
-signC sDone(  tinBaseP , TAG( TAGiDnULL ) ) ;
+handleC hs( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , &sDone , flTHREADlAUNCH_null , 0 , 0 , idpa ) ; }
+signC sDone(  tin0P , TAG( TAGiDnULL ) ) ;
 
-etThread.sockListenF( tinBaseP , hl ) ;
-countT idpa = etThread.sockBindF( tinBaseP , hl ) ;
-etThread.sockOptionLingerF( tinBaseP , hl ) ;
-etThread.sockF( tinBaseP , hl ) ;
-handleC hl( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+etThread.sockListenF( tin0P , hl ) ;
+countT idpa = etThread.sockBindF( tin0P , hl ) ;
+etThread.sockOptionLingerF( tin0P , hl ) ;
+etThread.sockF( tin0P , hl ) ;
+handleC hl( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 
-etThread.socksSetupF( tinBaseP ) ;
+etThread.socksSetupF( tin0P ) ;
 
 etThread.flagsMode |= flTHIRDmODE_TESTaUTOdOsLEEPS ;
 
 TODO
 
 DONE( tmF )
-etThread.strokeF( tinBaseP , T("tmF received \"")+T(post80)+T("\"\r\n") ) ;
-etThread.sockReadF( tinBaseP , hc , post80 , 8 ) ;
+etThread.strokeF( tin0P , T("tmF received \"")+T(post80)+T("\"\r\n") ) ;
+etThread.sockReadF( tin0P , hc , post80 , 8 ) ;
 post80[ 8 ] = 0 ;
-etThread.memSetF( tinBaseP , post80 , sizeof post80 , '.' ) ;
+etThread.memSetF( tin0P , post80 , sizeof post80 , '.' ) ;
 osTextT post80[ 0x80 ] ;
-etThread.sockConnectF( tinBaseP , hc , idpa ) ;
-etThread.osSleepF( tinBaseP , TOCK ) ;
-etThread.sockOptionLingerF( tinBaseP , hc ) ;
-etThread.sockF( tinBaseP , hc ) ;
-handleC hc( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+etThread.sockConnectF( tin0P , hc , idpa ) ;
+etThread.osSleepF( tin0P , TOCK ) ;
+etThread.sockOptionLingerF( tin0P , hc ) ;
+etThread.sockF( tin0P , hc ) ;
+handleC hc( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
 countT idpa = pTaskP ? pTaskP->c1 : 0 ;
 TASK( tmF )
 

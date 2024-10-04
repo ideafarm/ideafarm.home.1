@@ -18,8 +18,8 @@
                 }
                     break ;
                     }
-                        if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tinBaseP , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , flagsOld , sadamP ) ;
-                        if( F(tc.flFeatures) & flTCfEATURE_ACTIONhIGHLIGHT ) sadamP.pStrike->sc.pPaper->sadamHighlightF( tinBaseP , sadamP , flSADAMhIGHLIGHT_DOWN ) ;
+                        if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tin0P , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , flagsOld , sadamP ) ;
+                        if( F(tc.flFeatures) & flTCfEATURE_ACTIONhIGHLIGHT ) sadamP.pStrike->sc.pPaper->sadamHighlightF( tin0P , sadamP , flSADAMhIGHLIGHT_DOWN ) ;
                         tc.flagsTcState &= ~( F(flTCsTATE_DOWN) ) ;
                         const flagsT flagsOld = tc.flagsTcState ;
                     {
@@ -32,8 +32,8 @@
                         }
                             break ;
                             }
-                                if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tinBaseP , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , flagsOld , sadamP ) ;
-                                if( F(tc.flFeatures) & flTCfEATURE_ACTIONhIGHLIGHT ) sadamP.pStrike->sc.pPaper->sadamHighlightF( tinBaseP , sadamP , flSADAMhIGHLIGHT_DOWN ) ;
+                                if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tin0P , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , flagsOld , sadamP ) ;
+                                if( F(tc.flFeatures) & flTCfEATURE_ACTIONhIGHLIGHT ) sadamP.pStrike->sc.pPaper->sadamHighlightF( tin0P , sadamP , flSADAMhIGHLIGHT_DOWN ) ;
                                 tc.flagsTcState &= ~( F(flTCsTATE_DOWN) ) ;
                                 const flagsT flagsOld = tc.flagsTcState ;
                             {
@@ -43,8 +43,8 @@
                         }
                             break ;
                             }
-                                if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tinBaseP , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , flagsOld , sadamP ) ;
-                                if( F(tc.flFeatures) & flTCfEATURE_ACTIONhIGHLIGHT ) sadamP.pStrike->sc.pPaper->sadamHighlightF( tinBaseP , sadamP , flSADAMhIGHLIGHT_DOWN ) ;
+                                if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tin0P , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , flagsOld , sadamP ) ;
+                                if( F(tc.flFeatures) & flTCfEATURE_ACTIONhIGHLIGHT ) sadamP.pStrike->sc.pPaper->sadamHighlightF( tin0P , sadamP , flSADAMhIGHLIGHT_DOWN ) ;
                                 else                                  tc.flagsTcState |=      flTCsTATE_ON    ;
                                 if( F(tc.flagsTcState) & flTCsTATE_ON ) tc.flagsTcState &= ~( F(flTCsTATE_ON) ) ;
                                 tc.flagsTcState |= flTCsTATE_DOWN ;
@@ -78,7 +78,7 @@
         }
             break ;
             }
-                if( idTool != ifcIDtYPEtOOL_TAB && idTool != ifcIDtYPEtOOL_TABbACK && tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tinBaseP , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , tc.flagsTcState , sadamP ) ;
+                if( idTool != ifcIDtYPEtOOL_TAB && idTool != ifcIDtYPEtOOL_TABbACK && tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tin0P , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , tc.flagsTcState , sadamP ) ;
                 const countT& idTool = pcNotesP[ 2 ] ;
             {
             if( !tc.pFlagsTcFeatureDisable || !( F(*tc.pFlagsTcFeatureDisable) & flTCfEATURE_KEYaCTION ) )
@@ -89,8 +89,8 @@
             }
                 }
                     }
-                        if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tinBaseP , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , tc.flagsTcState , sadamP ) ;
-                        if( F(tc.flFeatures) & flTCfEATURE_ACTIONhIGHLIGHT ) paperOldC::setFlashIF( tinBaseP , sadamP , 2 , 1 , flSADAMhIGHLIGHT_DOWN ) ;
+                        if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tin0P , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , tc.flagsTcState , sadamP ) ;
+                        if( F(tc.flFeatures) & flTCfEATURE_ACTIONhIGHLIGHT ) paperOldC::setFlashIF( tin0P , sadamP , 2 , 1 , flSADAMhIGHLIGHT_DOWN ) ;
                     {
                     else
                     if( F(tc.flFeatures) & flTCfEATURE_HOTkEYgRABStAB ) etherP.osThreadF( TaRG1( tmGrabTabF ) , (countT)&sadamP ) ; //I AM CALLED BY callSadamsIF, WHICH HAS GRABBED A BUNCH OF sadamC IMAGES, SO I'VE GOT TO DO THIS ON ANOTHER THREAD
@@ -102,7 +102,7 @@
         case ifcIDtYPEsTROKEcALLbACK_HOTkEY :
         }
             break ;
-            if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tinBaseP , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , flagsOld , sadamP ) ;
+            if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tin0P , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , flagsOld , sadamP ) ;
             tc.flagsTcState = flTCsTATE_null ;
             const flagsT flagsOld = tc.flagsTcState ;
         {
@@ -111,7 +111,7 @@
         case ifcIDtYPEsTROKEcALLbACK_SLEEP :
         }
             break ;
-            if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tinBaseP , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , tc.flagsTcState , sadamP ) ;
+            if( tc.pTcStateCBF ) bHandled = (*tc.pTcStateCBF)( tin0P , etherP , tc.cArg , idTypeCallP , idEventP , pcNotesP , tc.flagsTcState , tc.flagsTcState , sadamP ) ;
         {
         case ifcIDtYPEsTROKEcALLbACK_TABlEAVING  :
         case ifcIDtYPEsTROKEcALLbACK_TABaRRIVING :
@@ -128,7 +128,7 @@
 
     _IO_
 {
-/*1*/boolT _export _tcButtonCBF( tin0S& tinBaseP , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamC& sadamP )/*1*/
+/*1*/boolT _export _tcButtonCBF( tin0S& tin0P , etherC& etherP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , sadamC& sadamP )/*1*/
 
 /**/
 */

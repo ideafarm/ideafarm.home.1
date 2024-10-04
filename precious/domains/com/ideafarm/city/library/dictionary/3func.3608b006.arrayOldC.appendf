@@ -17,10 +17,10 @@
             pbHaveEnd = pbHave + cbHave ;
             pbHave = pbHaveNew ;
 
-            PUSE( tinBaseP , pbHave ) ;
+            PUSE( tin0P , pbHave ) ;
             }
-                thirdC::c_memcpyIF( tinBaseP , pbzUsedNew + cbUsedOld , pbP     , cbP       ) ;
-                thirdC::c_memcpyIF( tinBaseP , pbzUsedNew             , pbzUsed , cbUsedOld ) ;
+                thirdC::c_memcpyIF( tin0P , pbzUsedNew + cbUsedOld , pbP     , cbP       ) ;
+                thirdC::c_memcpyIF( tin0P , pbzUsedNew             , pbzUsed , cbUsedOld ) ;
             {
             if( pbHaveNew )
             byteT* pbzUsedNew = pbHaveNew           + cbHeader ;
@@ -33,11 +33,11 @@
                         pNote->idType       = ifcIDtYPEdROPnOTE_earDropImage ;
                     {
                     if( pNote )
-                    dropNoteS* pNote = PUSE.pDropNoteF( tinBaseP , (byteT*)pbHaveNew ) ;
+                    dropNoteS* pNote = PUSE.pDropNoteF( tin0P , (byteT*)pbHaveNew ) ;
                 {
                 if( pbHaveNew )
             #if defined( ENABLEdROPnOTES )
-            PUSE.newF( tinBaseP , LF , pbHaveNew , cbHave ) ; ___( pbHaveNew ) ;
+            PUSE.newF( tin0P , LF , pbHaveNew , cbHave ) ; ___( pbHaveNew ) ;
             ZE( byteT* , pbHaveNew ) ;
 
             while( cbHave <= cbWant ) cbHave <<= 1 ;
@@ -49,13 +49,13 @@
         else
         }
             pbzUsedEnd += cbP ;
-            thirdC::c_memcpyIF( tinBaseP , pbzUsedEnd       , pbP , cbP ) ;
+            thirdC::c_memcpyIF( tin0P , pbzUsedEnd       , pbP , cbP ) ;
         {
         else if( pbHaveEnd - pbzUsedEnd      >= cbP )
         }
             }
                 pbzUsedEnd = pbzUsed + cbP ;
-                thirdC::c_memcpyIF( tinBaseP , pbzUsed , pbP , cbP ) ;
+                thirdC::c_memcpyIF( tin0P , pbzUsed , pbP , cbP ) ;
             {
             if( pbzUsed )
             pbzUsed = pbHave + cbHeader ;
@@ -67,11 +67,11 @@
                         pNote->idType       = ifcIDtYPEdROPnOTE_earDropImage ;
                     {
                     if( pNote )
-                    dropNoteS* pNote = PUSE.pDropNoteF( tinBaseP , (byteT*)pbHave ) ;
+                    dropNoteS* pNote = PUSE.pDropNoteF( tin0P , (byteT*)pbHave ) ;
                 {
                 if( pbHave )
             #if defined( ENABLEdROPnOTES )
-            PUSE.newF( tinBaseP , LF , pbHave , cbHave ) ; ___( pbHave ) ;
+            PUSE.newF( tin0P , LF , pbHave , cbHave ) ; ___( pbHave ) ;
             while( cbHave <= cbWant ) cbHave <<= 1 ;
             countT cbHave = 1 ;
             countT cbWant = cbHeader + cbP ; // THE PUSE.newF ARGUMENT SHOULD ALWAYS BE A POWER OF 2
@@ -80,13 +80,13 @@
     {
     if( cbP )
 
-    if( !cbP ) cbP = thirdC::c_strlenIF( tinBaseP , pbP ) ;
+    if( !cbP ) cbP = thirdC::c_strlenIF( tin0P , pbP ) ;
 
     //CONJ: THIS COMMENT IS NOT REALLY TRUE
     //THIS IS DONE IN A WAY THAT ENSURES THAT ALL ALLOCATED SIZES >= sizeof( countT ) ARE MULTIPLES OF THE WORD SIZE
     //THIS CODE ENSURES THAT THE "END" OF THE USED BYTES IS ALWAYS ALLOCATED, SO APP CAN SET IT TO 0
 {
-/*1*/voidT arrayOldC::appendF( tin0S& tinBaseP , const byteT* const pbP , countT cbP )/*1*/
+/*1*/voidT arrayOldC::appendF( tin0S& tin0P , const byteT* const pbP , countT cbP )/*1*/
 
 /**/
 */

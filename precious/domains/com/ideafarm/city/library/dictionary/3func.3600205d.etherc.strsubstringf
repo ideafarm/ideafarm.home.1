@@ -10,21 +10,21 @@
 }
     return bFound ;
     }
-             else                             { strSubstringF( tinBaseP , psttP , idfSave , ccBig  , psttBigP  , csttExtraP ) ; }
-             else if( idd                   ) { strSubstringF( tinBaseP , psttP , idfSave , idLathI , psttBigP , csttExtraP ) ; }
-                  if( idd && idd == idfSave ) { strMakeF(      tinBaseP , LF , psttP , T("")                        , csttExtraP ) ; }
+             else                             { strSubstringF( tin0P , psttP , idfSave , ccBig  , psttBigP  , csttExtraP ) ; }
+             else if( idd                   ) { strSubstringF( tin0P , psttP , idfSave , idLathI , psttBigP , csttExtraP ) ; }
+                  if( idd && idd == idfSave ) { strMakeF(      tin0P , LF , psttP , T("")                        , csttExtraP ) ; }
 
         countT idLathI = idd - 1 ;_WQ
         bFound = !!idd ;_WQ
-        else        idd =    strIdF( tinBaseP , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , psttSmallP , psttBigP ) ;_WQ
-        if( bAnyP ) idd = strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , psttSmallP , psttBigP ) ;
+        else        idd =    strIdF( tin0P , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , psttSmallP , psttBigP ) ;_WQ
+        if( bAnyP ) idd = strIdAnyF( tin0P , 0 , flSTRmATCH_null , idFirstP , sttQuoteP , psttSmallP , psttBigP ) ;
         ZE( countT , idd ) ;_WQ
         countT idfSave = idFirstP ;_WQ
     {
     else
     }
         idFirstP = 0 ;_WQ
-        strMakeF( tinBaseP , LF , psttP , T("") ) ; // CALLER MUST TAG
+        strMakeF( tin0P , LF , psttP , T("") ) ; // CALLER MUST TAG
     {
     if( ccBig < idFirstP )
     countT ccBig = psttBigP->idAdam ;_WQ
@@ -46,7 +46,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT etherC::strSubstringF( tin0S& tinBaseP , strokeS*& psttP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* psttSmallP , const strokeS* psttBigP , const boolT bAnyP , const countT csttExtraP )/*1*/
+/*1*/boolT etherC::strSubstringF( tin0S& tin0P , strokeS*& psttP , countT& idFirstP , strokeS& sttQuoteP , const strokeS* psttSmallP , const strokeS* psttBigP , const boolT bAnyP , const countT csttExtraP )/*1*/
 
 /**/
 */

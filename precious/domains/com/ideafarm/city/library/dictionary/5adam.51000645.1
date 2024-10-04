@@ -9,57 +9,57 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
 CONoUTrAW( "\r\n" DASH127 "\r\n" ) ;
 
 }
-    etThread.strokeF( tinBaseP , T("[confMin,confMax]: ")+TF2(mConfMin,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mConfMax,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    etThread.strokeF( tin0P , T("[confMin,confMax]: ")+TF2(mConfMin,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mConfMax,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
 
     measureT mConfMax = mMean + 2.0 * mSD ;
     measureT mConfMin = mMean - 2.0 * mSD ;
 
-    etThread.strokeF( tinBaseP , T("[mean,stdDev]    : ")+TF2(mMean,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mSD,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    etThread.strokeF( tin0P , T("[mean,stdDev]    : ")+TF2(mMean,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mSD,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
 
-    measureT mSD   = ((tin9S&)tinBaseP).brcm04Raw ;
+    measureT mSD   = ((tin9S&)tin0P).brcm04Raw ;
     BOSmEASURE04( WHATgbo , sqrt( mIpaSumSq / cSampleSave - mMean * mMean ) )
     measureT mMean = mIpaSum / cSampleSave ;
 
-    etThread.strokeF( tinBaseP , T("\r\n[min,max]        : ")+TF2(mIpaMin,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mIpaMax,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    etThread.strokeF( tin0P , T("\r\n[min,max]        : ")+TF2(mIpaMin,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mIpaMax,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
 
     }
-        etThread.strokeF( tinBaseP , T("[cyclesPerTime,tally]    : ")+TF6(mLever,flFORMAT_FILLzE|flFORMAT_NObIGITvALUES,0,0,0,6)+T(" ")+TF2(tally,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+        etThread.strokeF( tin0P , T("[cyclesPerTime,tally]    : ")+TF6(mLever,flFORMAT_FILLzE|flFORMAT_NObIGITvALUES,0,0,0,6)+T(" ")+TF2(tally,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
         countT tally = swCyclesPerTime ;
         mLever = *(measureT*)&cLever ;
-        countT cLever = swCyclesPerTime.leverF( tinBaseP , idf ) ;
+        countT cLever = swCyclesPerTime.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    cFlavors = swCyclesPerTime.cFlavorsF( tinBaseP ) ;
+    cFlavors = swCyclesPerTime.cFlavorsF( tin0P ) ;
 
     CONoUTrAW( "\r\n" ) ;
     }
-        etThread.strokeF( tinBaseP , T("[inPerNano,tally]        : ")+TF6(mLever,flFORMAT_FILLzE|flFORMAT_NObIGITvALUES,0,0,0,6)+T(" ")+TF2(tally,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+        etThread.strokeF( tin0P , T("[inPerNano,tally]        : ")+TF6(mLever,flFORMAT_FILLzE|flFORMAT_NObIGITvALUES,0,0,0,6)+T(" ")+TF2(tally,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
         countT tally = swInPerNano ;
         mLever = *(measureT*)&cLever ;
-        countT cLever = swInPerNano.leverF( tinBaseP , idf ) ;
+        countT cLever = swInPerNano.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = swInPerNano.cFlavorsF( tinBaseP ) ;
+    countT cFlavors = swInPerNano.cFlavorsF( tin0P ) ;
 {
 if( cSample == - 1 )
 
 #endif
-    etThread.strokeF( tinBaseP , T("\r \r\n[dot]: ")+TF2(mC,flFORMAT_NObIGITvALUES)+T("    null loop\r\n\r\n") ) ;
+    etThread.strokeF( tin0P , T("\r \r\n[dot]: ")+TF2(mC,flFORMAT_NObIGITvALUES)+T("    null loop\r\n\r\n") ) ;
 #else
-    etThread.strokeF( tinBaseP , T("\r \r\n[dot]: ")+TF2(mC,flFORMAT_NObIGITvALUES)+T("    VECsSE\r\n\r\n") ) ;
+    etThread.strokeF( tin0P , T("\r \r\n[dot]: ")+TF2(mC,flFORMAT_NObIGITvALUES)+T("    VECsSE\r\n\r\n") ) ;
 #elif defined( VECsSE )
-    etThread.strokeF( tinBaseP , T("\r \r\n[dot]: ")+TF2(mC,flFORMAT_NObIGITvALUES)+T("    VECaLIGNED\r\n\r\n") ) ;
+    etThread.strokeF( tin0P , T("\r \r\n[dot]: ")+TF2(mC,flFORMAT_NObIGITvALUES)+T("    VECaLIGNED\r\n\r\n") ) ;
 #elif defined( VECaLIGNED )
-    etThread.strokeF( tinBaseP , T("\r \r\n[dot]: ")+TF2(mC,flFORMAT_NObIGITvALUES)+T("    VEC\r\n\r\n") ) ;
+    etThread.strokeF( tin0P , T("\r \r\n[dot]: ")+TF2(mC,flFORMAT_NObIGITvALUES)+T("    VEC\r\n\r\n") ) ;
 #if defined( VEC )
 
 }
-    //etThread.strokeF( tinBaseP , T("[cyclesPerNano,instructionsPerNano,instructionsPerNanoTheory]: ")+TF2(mCyclesPerNano,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mInstructionsPerNano,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mInstructionsPerNanoTheory,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    //etThread.strokeF( tin0P , T("[cyclesPerNano,instructionsPerNano,instructionsPerNanoTheory]: ")+TF2(mCyclesPerNano,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mInstructionsPerNano,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mInstructionsPerNanoTheory,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
     
     measureT mInstructionsPerNanoTheory = 1.66 ;
     
@@ -78,15 +78,15 @@ if( cSample == - 1 )
     measureT mInstructionsPerNano = insPerCycle * mCyclesPerNano ;
     measureT mCyclesPerNano       = mCyclesPerTime / mNanoPerTime ;
     
-    //etThread.strokeF( tinBaseP , T("[cycles per time]: ")+TF2(mCyclesPerTime,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    //etThread.strokeF( tin0P , T("[cycles per time]: ")+TF2(mCyclesPerTime,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
     
     measureT mCyclesPerTime = mCycles / mTime ;
     measureT mCycles = cDoSave ;
     measureT mTime = timeE1 ;
 
-    //etThread.strokeF( tinBaseP , T("[cycles,elapsedTime]: ")+TF2(cDoSave,flFORMAT_NObIGITvALUES)+T(" ")+TT(timeE1,timeE2)+T("\r\n") ) ;
-    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeN1 , timeN2 ) ;
-    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+    //etThread.strokeF( tin0P , T("[cycles,elapsedTime]: ")+TF2(cDoSave,flFORMAT_NObIGITvALUES)+T(" ")+TT(timeE1,timeE2)+T("\r\n") ) ;
+    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeN1 , timeN2 ) ;
+    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
     
     }
         #endif
@@ -101,7 +101,7 @@ if( cSample == - 1 )
     
     ZE( sCountT , timeE2 ) ;
     ZE( countT  , timeE1 ) ;
-    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+    etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT  , timeN1 ) ;
 
@@ -132,7 +132,7 @@ ZE( measureT , mC ) ;
 measureT pmB[] = { 4.0 , 5.0 , 6.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 } ;
 measureT pmA[] = { 1.0 , 2.0 , 3.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 } ;
 
-etThread.strokeF( tinBaseP , T("\r\n\r\n" DASH127 "\r\n\r\n[ns per time,micros per time, insPerCycle]: ")+TF2(mNanoPerTime,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mMicroPerTime,flFORMAT_NObIGITvALUES)+T(" ")+TF2(insPerCycle,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+etThread.strokeF( tin0P , T("\r\n\r\n" DASH127 "\r\n\r\n[ns per time,micros per time, insPerCycle]: ")+TF2(mNanoPerTime,flFORMAT_NObIGITvALUES)+T(" ")+TF2(mMicroPerTime,flFORMAT_NObIGITvALUES)+T(" ")+TF2(insPerCycle,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
 const measureT mNanoPerTime = 24.0 * 60.0 * 60.0 / 256.0 / 256.0 * 1e9 / 256.0 / 256.0 ;
 const measureT mMicroPerTime = 24.0 * 60.0 * 60.0 / 256.0 / 256.0 * 1e6 / 256.0 / 256.0 ;
 
@@ -152,8 +152,8 @@ ZE( measureT , mIpaSum ) ;
         const countT insPerCycle = 0x10 ;
     #if defined( VEC )
 
-switchC swCyclesPerTime( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , *(countT*)&mLever ) ;
-switchC swInPerNano( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , *(countT*)&mLever ) ;
+switchC swCyclesPerTime( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , *(countT*)&mLever ) ;
+switchC swInPerNano( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , *(countT*)&mLever ) ;
 ZE( measureT , mLever ) ;
 
 TODO

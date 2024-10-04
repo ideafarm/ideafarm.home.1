@@ -9,11 +9,11 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.strokeF( tinBaseP , T("\r\nok\r\n") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.strokeF( tin0P , T("\r\nok\r\n") ) ;
 
-etThread.delF( tinBaseP , psttOk2 ) ;
-etThread.delF( tinBaseP , psttOk1 ) ;
+etThread.delF( tin0P , psttOk2 ) ;
+etThread.delF( tin0P , psttOk1 ) ;
 }
     cDo = cDoSave ;
     }
@@ -26,10 +26,10 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                     DEL( pInfo ) ;
                     }
                         }
-                            etThread.delF( tinBaseP , pstta ) ;
+                            etThread.delF( tin0P , pstta ) ;
                             }
                                 bInspect1 = !bInspect1 ;
-                                etThread.delF( tinBaseP , psttp1 ) ;
+                                etThread.delF( tin0P , psttp1 ) ;
             
                                 }
                                     }
@@ -37,12 +37,12 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                             bInspect2 = !bInspect2 ;
                         
                                             }
-                                                else etThread.delF( tinBaseP , psttp2 ) ;
+                                                else etThread.delF( tin0P , psttp2 ) ;
                                                 }
-                                                    etThread.delF( tinBaseP , psttf ) ;
+                                                    etThread.delF( tin0P , psttf ) ;
                                                     }
                                                         }
-                                                            etThread.delF( tinBaseP , psttn ) ;
+                                                            etThread.delF( tin0P , psttn ) ;
                                                             }
                                                                 bDefineLag = bDefine ;
                                                                 }
@@ -50,11 +50,11 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                                                     }
                                                                         }
                                                                             }
-                                                                                etThread.delF( tinBaseP , psttShort ) ;
-                                                                                etThread.strokeF( tinBaseP , T("nonconformer: \"")+T(psttn)+T("\"\r\n") ) ;
+                                                                                etThread.delF( tin0P , psttShort ) ;
+                                                                                etThread.strokeF( tin0P , T("nonconformer: \"")+T(psttn)+T("\"\r\n") ) ;
                                                                                 LOGrAW( tnc+T(psttn)+tb8+T(psttShort)+tcr ) ;
-                                                                                etThread.delF( tinBaseP , psttPath ) ;
-                                                                                etThread.strBisectF( tinBaseP , psttPath , psttShort , pInfo->psttIfoName , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+                                                                                etThread.delF( tin0P , psttPath ) ;
+                                                                                etThread.strBisectF( tin0P , psttPath , psttShort , pInfo->psttIfoName , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
                                                                                 ZE( strokeS* , psttShort ) ;
                                                                                 ZE( strokeS* , psttPath ) ;
                                                                             {
@@ -84,7 +84,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                                                         {
                                                                         if( bFun )
                         
-                                                                        if( bFun && swIgnore.idSlotOfLeverF( tinBaseP , (countT)psttn ) ) bFun = 0 ; // RESET IF NAME IS A MACRO NAME
+                                                                        if( bFun && swIgnore.idSlotOfLeverF( tin0P , (countT)psttn ) ) bFun = 0 ; // RESET IF NAME IS A MACRO NAME
                     
                                                                         if( bFun and bClassLag ) bFun = 0 ;
                                 
@@ -123,21 +123,21 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                 
                                                                 idf2 = save ;
                 
-                                                                countT bDefine = !etThread.strCompareF( tinBaseP , tDefine , psttn ) ;
+                                                                countT bDefine = !etThread.strCompareF( tin0P , tDefine , psttn ) ;
                 
-                                                                //etThread.strokeF( tinBaseP , T("validating: \"")+T(psttn)+T("\"\r\n") ) ;
+                                                                //etThread.strokeF( tin0P , T("validating: \"")+T(psttn)+T("\"\r\n") ) ;
                                                             {
                                                             else
                                                             if( !idf2 ) idf2 = save ; // psttn CANNOT BE A FUNCTION CALL IF THERE AREN'T ANY STROKES AFTER IT
             
-                                                            etThread.strSubstringF( tinBaseP , psttn , idf2 , idl , psttf ) ; ___( psttn ) ;
+                                                            etThread.strSubstringF( tin0P , psttn , idf2 , idl , psttf ) ; ___( psttn ) ;
                                                             ZE( strokeS* , psttn ) ;
                                                             idf2 = idHit ;
                                                             countT idl = idf2 ? idf2 - 1 : 0 ;
                                                             countT save = idf2 ;
                                                         {
                                                         if( idHit )
-                                                        countT idHit = etThread.strIdAnyF( tinBaseP , idf2 , sttq2 , psttOk2 , psttf ) ;
+                                                        countT idHit = etThread.strIdAnyF( tin0P , idf2 , sttq2 , psttOk2 , psttf ) ;
                                                     {
                                                     while( idf2 )
                                                     ZE( boolT , bDefineLag ) ;
@@ -157,12 +157,12 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                                     // 
                                                     // DEFININTIONS
                         
-                                                    etThread.delF( tinBaseP , psttp2 ) ;
-                                                    filterF( tinBaseP , etThread , psttf , psttp2 , psttOk1 ) ; ___( psttf ) ;
+                                                    etThread.delF( tin0P , psttp2 ) ;
+                                                    filterF( tin0P , etThread , psttf , psttp2 , psttOk1 ) ; ___( psttf ) ;
                                                     ZE( strokeS* , psttf ) ;
 
                                                     }
-                                                        etThread.delF( tinBaseP , pstt1Lines ) ;
+                                                        etThread.delF( tin0P , pstt1Lines ) ;
                                                         }
                                                             }
                                                                 }
@@ -170,7 +170,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                                                     }
                                                                         }
                                                                             break ;
-                                                                            if( bKeep ) etThread.strFuseF( tinBaseP , psttp2 , psttc1[ CSpREFIX - 1 + ids ] ) ;
+                                                                            if( bKeep ) etThread.strFuseF( tin0P , psttp2 , psttc1[ CSpREFIX - 1 + ids ] ) ;
                                                                         {
                                                                         default :
                                                                         }
@@ -192,16 +192,16 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                                                 boolT bKeep = 1 ;
                                                             {
                                                             else
-                                                            if( !etThread.strCompareF( tinBaseP , psttc1 , tcr ) ) etThread.strFuseF( tinBaseP , psttp2 , tb ) ;
+                                                            if( !etThread.strCompareF( tin0P , psttc1 , tcr ) ) etThread.strFuseF( tin0P , psttp2 , tb ) ;
                                                         {
                                                         FORsTRINGSiN1( pstt1Lines )
 
-                                                        etThread.delF( tinBaseP , psttDoomed ) ;
-                                                        etThread.strWordsF( tinBaseP , pstt1Lines , psttDoomed , sttq3 , tcr , flSTRwORDS_DELIMITERS  ) ; ___( pstt1Lines ) ;
+                                                        etThread.delF( tin0P , psttDoomed ) ;
+                                                        etThread.strWordsF( tin0P , pstt1Lines , psttDoomed , sttq3 , tcr , flSTRwORDS_DELIMITERS  ) ; ___( pstt1Lines ) ;
                                                         strokeS sttq3( 0 , sc_IGNOREqUOTES ) ;
                                                         ZE( strokeS* , pstt1Lines ) ;
 
-                                                        etThread.strMakeF( tinBaseP , LF , psttp2 , 0 , psttDoomed->idAdam ) ; ___( psttp2 ) ;
+                                                        etThread.strMakeF( tin0P , LF , psttp2 , 0 , psttDoomed->idAdam ) ; ___( psttp2 ) ;
 
                                                                               psttp2 = 0 ;
                                                         strokeS* psttDoomed = psttp2 ;
@@ -209,31 +209,31 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                                     //ELIMINATE STRING LITERALS
 
                                                     }
-                                                        etThread.delF( tinBaseP , pstt1Lines ) ;
+                                                        etThread.delF( tin0P , pstt1Lines ) ;
                                                         }
                                                             }
-                                                                etThread.delF( tinBaseP , psttw ) ;
-                                                                etThread.strFuseF( tinBaseP , psttp2 , psttw ) ;
-                                                                etThread.strSubstringF( tinBaseP , psttw , idf3 , idl3 , psttc1 ) ; ___( psttw ) ;
+                                                                etThread.delF( tin0P , psttw ) ;
+                                                                etThread.strFuseF( tin0P , psttp2 , psttw ) ;
+                                                                etThread.strSubstringF( tin0P , psttw , idf3 , idl3 , psttc1 ) ; ___( psttw ) ;
                                                                 countT idl3 = idHit - 1 ;
                                                                 countT idf3 = 1 ;
                                                                 ZE( strokeS* , psttw ) ;
                                                             {
                                                             else if( idHit > 1 )
-                                                            if( !idHit ) etThread.strFuseF( tinBaseP , psttp2 , psttc1 ) ;
+                                                            if( !idHit ) etThread.strFuseF( tin0P , psttp2 , psttc1 ) ;
 
-                                                            countT idHit = etThread.strIdF( tinBaseP , idfss , sttqss , tSlashSlash , psttc1 ) ;
+                                                            countT idHit = etThread.strIdF( tin0P , idfss , sttqss , tSlashSlash , psttc1 ) ;
                                                             strokeS sttqss ;
                                                             countT idfss = 1 ;
                                                         {
                                                         FORsTRINGSiN1( pstt1Lines )
 
-                                                        etThread.delF( tinBaseP , psttDoomed ) ;
-                                                        etThread.strWordsF( tinBaseP , pstt1Lines , psttDoomed , sttq3 , tcr , flSTRwORDS_DELIMITERS  ) ; ___( pstt1Lines ) ;
+                                                        etThread.delF( tin0P , psttDoomed ) ;
+                                                        etThread.strWordsF( tin0P , pstt1Lines , psttDoomed , sttq3 , tcr , flSTRwORDS_DELIMITERS  ) ; ___( pstt1Lines ) ;
                                                         strokeS sttq3( 0 , sc_IGNOREqUOTES ) ;
                                                         ZE( strokeS* , pstt1Lines ) ;
 
-                                                        etThread.strMakeF( tinBaseP , LF , psttp2 , 0 , psttDoomed->idAdam ) ; ___( psttp2 ) ;
+                                                        etThread.strMakeF( tin0P , LF , psttp2 , 0 , psttDoomed->idAdam ) ; ___( psttp2 ) ;
 
                                                                               psttp2 = 0 ;
                                                         strokeS* psttDoomed = psttp2 ;
@@ -246,7 +246,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                         
                                             }
                                                 }
-                                                    if( idf22 <= idl2 ) { etThread.strSubstringF( tinBaseP , psttp2 , idf22 , idl2 , psttp1 ) ; ___( psttp2 ) ; } // WILL BE FALSE IF "BOS()"
+                                                    if( idf22 <= idl2 ) { etThread.strSubstringF( tin0P , psttp2 , idf22 , idl2 , psttp1 ) ; ___( psttp2 ) ; } // WILL BE FALSE IF "BOS()"
                                                     countT idf22 = save ;
                                                     countT idl2 = idHit - 1 ;
                                                 {
@@ -263,7 +263,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                                                  if( psttp1[ CSpREFIX - 1 + idHit ].idAdam == '(' ) ++ offNest ;
                                                         {
                                                         if( idHit )
-                                                        idHit = etThread.strIdAnyF( tinBaseP , idf2 , sttq2 , tParens , psttp1 ) ;
+                                                        idHit = etThread.strIdAnyF( tin0P , idf2 , sttq2 , tParens , psttp1 ) ;
                                                     {
                                                     while( idf2 && offNest )
                                                     ZE( boolT , bFound ) ;
@@ -273,7 +273,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                                 countT offNest = 1 ; // st_psttBos VALUES END WITH '('.  I AM LOOKING FOR THE MATCHING ')'
                                             {
                                             else
-                                            if( bInspect2 ) { etThread.strSubstringF( tinBaseP , psttp2 , idf2 , sttq2 , st_psttBos , countTC() , psttp1 ) ; ___( psttp2 ) ; }
+                                            if( bInspect2 ) { etThread.strSubstringF( tin0P , psttp2 , idf2 , sttq2 , st_psttBos , countTC() , psttp1 ) ; ___( psttp2 ) ; }
                                         {
                                         while( idf2 )
                                         boolT  bInspect2 = 1 ;
@@ -293,8 +293,8 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                 {
                                 if( psttp1 )
 
-                                else            { etThread.strSubstringF( tinBaseP , psttp1 , idf1 , sttq1 , tStarSlash , pstta ) ; ___( psttp1 ) ; }
-                                if( bInspect1 ) { etThread.strSubstringF( tinBaseP , psttp1 , idf1 , sttq1 , tSlashStar , pstta ) ; ___( psttp1 ) ; }
+                                else            { etThread.strSubstringF( tin0P , psttp1 , idf1 , sttq1 , tStarSlash , pstta ) ; ___( psttp1 ) ; }
+                                if( bInspect1 ) { etThread.strSubstringF( tin0P , psttp1 , idf1 , sttq1 , tSlashStar , pstta ) ; ___( psttp1 ) ; }
                                 //A:ASSUME: DELIMITED COMMENTS ("/*...*/") ARE NOT NESTED (BUT THEY MAY CONTAIN // COMMENTS)
 
                                 //
@@ -311,12 +311,12 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                             strokeS sttq1( 0 , sc_IGNOREqUOTES ) ;
                             ZE( strokeS* , psttp1 ) ; // "p":"PIECE"
             
-                            etThread.strReverseF( tinBaseP , pstta , 0 , T("\r\n") ) ; ___( pstta ) ;
-                            etThread.delF( tinBaseP , posta ) ;
-                            etThread.strMakeF( tinBaseP , LF , pstta , T(posta) ) ; ___( pstta ) ;
+                            etThread.strReverseF( tin0P , pstta , 0 , T("\r\n") ) ; ___( pstta ) ;
+                            etThread.delF( tin0P , posta ) ;
+                            etThread.strMakeF( tin0P , LF , pstta , T(posta) ) ; ___( pstta ) ;
                             ZE( strokeS* , pstta ) ;
                         
-                            etThread.boxGetShadowF( tinBaseP , posta , costa , pInfo->psttIfoName ) ; ___( posta ) ;
+                            etThread.boxGetShadowF( tin0P , posta , costa , pInfo->psttIfoName ) ; ___( posta ) ;
                         
                             ZE( countT , costa ) ;
                             ZE( osTextT* , posta ) ;
@@ -324,13 +324,13 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                         
                         if( !( cDo % 0x10 ) ) { CONoUTrAW3( "\r               \rcDo: " , cDo , "\r" ) ; }
                     {
-                    if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) && !etThread.strIdF( tinBaseP , tAsm , pInfo->psttIfoName ) )
-                    ((tin9S&)tinBaseP).pEtScratch->diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , *pptLike[ offl ] ) ; ___( pInfo ) ;
+                    if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) && !etThread.strIdF( tin0P , tAsm , pInfo->psttIfoName ) )
+                    ((tin9S&)tin0P).pEtScratch->diskFindFileOrDirOldF( tin0P , pInfo , hFind , *pptLike[ offl ] ) ; ___( pInfo ) ;
                     ZE( infoFileS* , pInfo ) ;
                     cDo -- ;
                 {
                 do
-                handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
             {
             for( countT offl = 0 ; !ether && offl < sizeof pptLike / sizeof pptLike[ 0 ] ; offl ++ )
             CONoUTrAW3( "\rcDo: " , cDo , "\r\n" ) ;
@@ -344,7 +344,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
             }
                 }
                     st_psttBos << pstts ;
-                    etThread.strMakeFromOsTextF( tinBaseP , pstts , ppostSmall[ offi ] ) ; ___( pstts ) ;
+                    etThread.strMakeFromOsTextF( tin0P , pstts , ppostSmall[ offi ] ) ; ___( pstts ) ;
                     ZE( strokeS* , pstts ) ;
                 {
                 for( countT offi = 0 ; offi < sizeof ppostSmall / sizeof ppostSmall[ 0 ] ; offi ++ )
@@ -365,7 +365,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                 {
                 osTextT* ppostSmall[] =         // THE MOST COMMON VALUES SHOULD BE EARLIEST IN THIS ARRAY
             {
-            stackC st_psttBos( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+            stackC st_psttBos( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
 
             TN( tDoubleQuote , "\"" ) ;
             TN( tSlashSlash , "//" ) ;
@@ -382,23 +382,23 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                     DEL( pInfo ) ;
                     }
                         }
-                            etThread.delF( tinBaseP , pstta ) ;
+                            etThread.delF( tin0P , pstta ) ;
                             }
                                 bInspect = !bInspect ;
             
-                                etThread.delF( tinBaseP , psttp ) ;
+                                etThread.delF( tin0P , psttp ) ;
                                 }
                                     }
-                                        etThread.delF( tinBaseP , pstt1Lines ) ;
+                                        etThread.delF( tin0P , pstt1Lines ) ;
                                         }
-                                            etThread.delF( tinBaseP , psttf ) ;
+                                            etThread.delF( tin0P , psttf ) ;
                                             }
                                                 }
-                                                    etThread.delF( tinBaseP , psttn ) ;
+                                                    etThread.delF( tin0P , psttn ) ;
                                                     ++ swIgnore ;
                                                     psttLever = psttn ;
-                                                    //etThread.strokeF( tinBaseP , T("member: \"")+T(psttn)+T("\"\r\n") ) ;
-                                                    etThread.strSubstringF( tinBaseP , psttn , idIdentifier , idIdentifierLath , psttf ) ; ___( psttn ) ;
+                                                    //etThread.strokeF( tin0P , T("member: \"")+T(psttn)+T("\"\r\n") ) ;
+                                                    etThread.strSubstringF( tin0P , psttn , idIdentifier , idIdentifierLath , psttf ) ; ___( psttn ) ;
                                                     ZE( strokeS* , psttn ) ;
                                                 {
                                                 if( bParen )
@@ -421,17 +421,17 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                             {
                                             if( idIdentifier && idIdentifier == idNonblank ) // IF THE WOTH NONBLANK IS THE BEGINNING OF AN IDENTIFIER
 
-                                            countT idIdentifier = etThread.strIdAnyF( tinBaseP , idf , sttq , psttOk2 , psttf ) ;
+                                            countT idIdentifier = etThread.strIdAnyF( tin0P , idf , sttq , psttOk2 , psttf ) ;
                                             idf = 1 ;
-                                            countT idNonblank = etThread.strIdAnyF( tinBaseP , idf , sttq , tb , psttf , 0 , 1 , flSTRiDaNY_NOT ) ;
+                                            countT idNonblank = etThread.strIdAnyF( tin0P , idf , sttq , tb , psttf , 0 , 1 , flSTRiDaNY_NOT ) ;
                                             countT idf = 1 ;
     
-                                            filterF( tinBaseP , etThread , psttf , psttc1 , psttOk1 ) ; ___( psttf ) ;
+                                            filterF( tin0P , etThread , psttf , psttc1 , psttOk1 ) ; ___( psttf ) ;
                                             ZE( strokeS* , psttf ) ;
                                         {
                                         FORsTRINGSiN1( pstt1Lines )
 
-                                        etThread.strWordsF( tinBaseP , pstt1Lines , psttp , sttq , tcr ) ; ___( pstt1Lines ) ;
+                                        etThread.strWordsF( tin0P , pstt1Lines , psttp , sttq , tcr ) ; ___( pstt1Lines ) ;
                                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                         ZE( strokeS* , pstt1Lines ) ;
 
@@ -457,7 +457,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
             
                                 }
                                     }
-                                        if( idf2 <= idl2 ) { etThread.strSubstringF( tinBaseP , psttp , idf2 , idl2 , pstta ) ; ___( psttp ) ; } // WILL BE FALSE IF "BOS()"
+                                        if( idf2 <= idl2 ) { etThread.strSubstringF( tin0P , psttp , idf2 , idl2 , pstta ) ; ___( psttp ) ; } // WILL BE FALSE IF "BOS()"
                                         countT idf2 = save ;
                                         countT idl2 = idHit - 1 ;
                                     {
@@ -480,10 +480,10 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                             {
                                             if( idOpen || idClose )
 
-                                            countT idClose = etThread.strIdF( tinBaseP , idf , sttq , st_psttCurlyClose , countTC() , pstta ) ;
+                                            countT idClose = etThread.strIdF( tin0P , idf , sttq , st_psttCurlyClose , countTC() , pstta ) ;
                                             idf = save2 ;
                                             countT save3 = idf ;
-                                            countT idOpen = etThread.strIdF( tinBaseP , idf , sttq , st_psttCurlyOpen , countTC() , pstta ) ;
+                                            countT idOpen = etThread.strIdF( tin0P , idf , sttq , st_psttCurlyOpen , countTC() , pstta ) ;
                                             countT save2 = idf ;
                                         {
                                         while( idf )
@@ -494,7 +494,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                     countT offNest = 1 ; // st_psttCurlyOpen ENDS WITH '{'.  I AM LOOKING FOR THE MATCHING '}'
                                 {
                                 else
-                                if( bInspect ) { etThread.strSubstringF( tinBaseP , psttp , idf , sttq , st_psttCurlyOpen , countTC() , pstta ) ; ___( psttp ) ; }
+                                if( bInspect ) { etThread.strSubstringF( tin0P , psttp , idf , sttq , st_psttCurlyOpen , countTC() , pstta ) ; ___( psttp ) ; }
                             {
                             while( idf )
                             boolT  bInspect = 1 ;
@@ -510,12 +510,12 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                             //
                             // RECIPE
             
-                            etThread.strReverseF( tinBaseP , pstta , 0 , T("\r\n") ) ; ___( pstta ) ;
-                            etThread.delF( tinBaseP , posta ) ;
-                            etThread.strMakeF( tinBaseP , LF , pstta , T(posta) ) ; ___( pstta ) ;
+                            etThread.strReverseF( tin0P , pstta , 0 , T("\r\n") ) ; ___( pstta ) ;
+                            etThread.delF( tin0P , posta ) ;
+                            etThread.strMakeF( tin0P , LF , pstta , T(posta) ) ; ___( pstta ) ;
                             ZE( strokeS* , pstta ) ;
                         
-                            etThread.boxGetShadowF( tinBaseP , posta , costa , pInfo->psttIfoName ) ; ___( posta ) ;
+                            etThread.boxGetShadowF( tin0P , posta , costa , pInfo->psttIfoName ) ; ___( posta ) ;
                         
                             ZE( countT , costa ) ;
                             ZE( osTextT* , posta ) ;
@@ -523,13 +523,13 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                         
                         if( !( cDo % 0x10 ) ) { CONoUTrAW3( "\r               \rcDo: " , cDo , "\r" ) ; }
                     {
-                    if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) && !etThread.strIdF( tinBaseP , tAsm , pInfo->psttIfoName ) )
-                    ((tin9S&)tinBaseP).pEtScratch->diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , *pptLike[ offl ] ) ; ___( pInfo ) ;
+                    if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) && !etThread.strIdF( tin0P , tAsm , pInfo->psttIfoName ) )
+                    ((tin9S&)tin0P).pEtScratch->diskFindFileOrDirOldF( tin0P , pInfo , hFind , *pptLike[ offl ] ) ; ___( pInfo ) ;
                     ZE( infoFileS* , pInfo ) ;
                     cDo -- ;
                 {
                 do
-                handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
             {
             for( countT offl = 0 ; !ether && offl < sizeof pptLike / sizeof pptLike[ 0 ] ; offl ++ )
             CONoUTrAW3( "\rcDo: " , cDo , "\r\n" ) ;
@@ -537,7 +537,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
             }
                 }
                     st_psttCurlyClose << pstts1 ;
-                    etThread.strMakeFromOsTextF( tinBaseP , pstts1 , ppostSmall[ offi ] ) ; ___( pstts1 ) ;
+                    etThread.strMakeFromOsTextF( tin0P , pstts1 , ppostSmall[ offi ] ) ; ___( pstts1 ) ;
                     ZE( strokeS* , pstts1 ) ;
                 {
                 for( countT offi = 0 ; offi < sizeof ppostSmall / sizeof ppostSmall[ 0 ] ; offi ++ )
@@ -551,7 +551,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
             }
                 }
                     st_psttCurlyOpen << pstts1 ;
-                    etThread.strMakeFromOsTextF( tinBaseP , pstts1 , ppostSmall[ offi ] ) ; ___( pstts1 ) ;
+                    etThread.strMakeFromOsTextF( tin0P , pstts1 , ppostSmall[ offi ] ) ; ___( pstts1 ) ;
                     ZE( strokeS* , pstts1 ) ;
                 {
                 for( countT offi = 0 ; offi < sizeof ppostSmall / sizeof ppostSmall[ 0 ] ; offi ++ )
@@ -562,8 +562,8 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                 {
                 osTextT* ppostSmall[] =         // THE MOST COMMON VALUES SHOULD BE EARLIEST IN THIS ARRAY
             {
-            stackC st_psttCurlyClose( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
-            stackC st_psttCurlyOpen(  tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+            stackC st_psttCurlyClose( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+            stackC st_psttCurlyOpen(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
             
             TN( tb8     , "        " ) ;
             TN( tb      , " " ) ;
@@ -579,17 +579,17 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                     DEL( pInfo ) ;
                     }
                         }
-                            etThread.delF( tinBaseP , pstta ) ;
+                            etThread.delF( tin0P , pstta ) ;
                             }
                                 }
                                     }
                                         }
-                                            etThread.delF( tinBaseP , psttm ) ;
+                                            etThread.delF( tin0P , psttm ) ;
                                             ++ swIgnore ;
                                             psttLever = psttm ;
-                                            //etThread.strokeF( tinBaseP , T("macro: \"")+T(psttm)+T("\"\r\n") ) ;
+                                            //etThread.strokeF( tin0P , T("macro: \"")+T(psttm)+T("\"\r\n") ) ;
 
-                                            etThread.strSubstringF( tinBaseP , psttm , idfName , idlName , pstta ) ; ___( psttm ) ;
+                                            etThread.strSubstringF( tin0P , psttm , idfName , idlName , pstta ) ; ___( psttm ) ;
                                             ZE( strokeS* , psttm ) ;
                                             countT idfName = idHit ;
                                         {
@@ -601,7 +601,7 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                     {
                                     if( idHit && idf )
 
-                                    countT idHit = etThread.strIdAnyF( tinBaseP , idf , sttq , psttOk2 , pstta ) ;
+                                    countT idHit = etThread.strIdAnyF( tin0P , idf , sttq , psttOk2 , pstta ) ;
                                 {
                                 if( idf )
 
@@ -617,12 +617,12 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                                     if( idf1 && idf2 )
 
                                     countT idf2   = idf ;
-                                    countT idHit2 = etThread.strIdF( tinBaseP , idf , sttqde2 , tTypedef , pstta ) ;
+                                    countT idHit2 = etThread.strIdF( tin0P , idf , sttqde2 , tTypedef , pstta ) ;
                                     strokeS sttqde2 ;
                                     idf = save ;
 
                                     countT idf1   = idf ;
-                                    countT idHit1 = etThread.strIdF( tinBaseP , idf , sttqde1 , tDefine , pstta ) ;
+                                    countT idHit1 = etThread.strIdF( tin0P , idf , sttqde1 , tDefine , pstta ) ;
                                     strokeS sttqde1 ;
                                     countT save = idf ;
                                 {
@@ -640,12 +640,12 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                             //
                             // RECIPE
             
-                            etThread.strReverseF( tinBaseP , pstta , 0 , T("\r\n") ) ; ___( pstta ) ;
-                            etThread.delF( tinBaseP , posta ) ;
-                            etThread.strMakeF( tinBaseP , LF , pstta , T(posta) ) ; ___( pstta ) ;
+                            etThread.strReverseF( tin0P , pstta , 0 , T("\r\n") ) ; ___( pstta ) ;
+                            etThread.delF( tin0P , posta ) ;
+                            etThread.strMakeF( tin0P , LF , pstta , T(posta) ) ; ___( pstta ) ;
                             ZE( strokeS* , pstta ) ;
                         
-                            etThread.boxGetShadowF( tinBaseP , posta , costa , pInfo->psttIfoName ) ; ___( posta ) ;
+                            etThread.boxGetShadowF( tin0P , posta , costa , pInfo->psttIfoName ) ; ___( posta ) ;
                         
                             ZE( countT , costa ) ;
                             ZE( osTextT* , posta ) ;
@@ -653,13 +653,13 @@ etThread.delF( tinBaseP , psttOk1 ) ;
                         
                         if( !( cDo % 0x10 ) ) { CONoUTrAW3( "\r               \rcDo: " , cDo , "\r" ) ; }
                     {
-                    if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) && !etThread.strIdF( tinBaseP , tAsm , pInfo->psttIfoName ) )
-                    ((tin9S&)tinBaseP).pEtScratch->diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , *pptLike[ offl ] ) ; ___( pInfo ) ;
+                    if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) && !etThread.strIdF( tin0P , tAsm , pInfo->psttIfoName ) )
+                    ((tin9S&)tin0P).pEtScratch->diskFindFileOrDirOldF( tin0P , pInfo , hFind , *pptLike[ offl ] ) ; ___( pInfo ) ;
                     ZE( infoFileS* , pInfo ) ;
                     cDo -- ;
                 {
                 do
-                handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
             {
             for( countT offl = 0 ; !ether && offl < sizeof pptLike / sizeof pptLike[ 0 ] ; offl ++ )
             CONoUTrAW3( "\rcDo: " , cDo , "\r\n" ) ;
@@ -857,17 +857,17 @@ TN( tTypedef          , "typedef" ) ; // EXAMPLE OF CODE THAT MUST PASS: extern 
     osTextT* ppostIgnore[] =
 {
 
-switchC swIgnore( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLever ) ;
+switchC swIgnore( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLever ) ;
 ZE( strokeS* , psttLever ) ;
 ZE( countT , idPass ) ;
             
 }
-    for( countT vv = min5 ; vv <= max5 ; vv ++ ) etThread.strFuseF( tinBaseP , psttOk2 , strokeS( vv ) ) ;
-    for( countT vv = min4 ; vv <= max4 ; vv ++ ) etThread.strFuseF( tinBaseP , psttOk2 , strokeS( vv ) ) ;
-    for( countT vv = min3 ; vv <= max3 ; vv ++ ) etThread.strFuseF( tinBaseP , psttOk2 , strokeS( vv ) ) ;
-    for( countT vv = min2 ; vv <= max2 ; vv ++ ) etThread.strFuseF( tinBaseP , psttOk2 , strokeS( vv ) ) ;
-    for( countT vv = min1 ; vv <= max1 ; vv ++ ) etThread.strFuseF( tinBaseP , psttOk2 , strokeS( vv ) ) ;
-    etThread.strMakeF( tinBaseP , LF , psttOk2 , 0 , max1 - min1 + max2 - min2 + max3 - min3 + max4 - min4 + max5 - min5 + 5 ) ; ___( psttOk2 ) ;
+    for( countT vv = min5 ; vv <= max5 ; vv ++ ) etThread.strFuseF( tin0P , psttOk2 , strokeS( vv ) ) ;
+    for( countT vv = min4 ; vv <= max4 ; vv ++ ) etThread.strFuseF( tin0P , psttOk2 , strokeS( vv ) ) ;
+    for( countT vv = min3 ; vv <= max3 ; vv ++ ) etThread.strFuseF( tin0P , psttOk2 , strokeS( vv ) ) ;
+    for( countT vv = min2 ; vv <= max2 ; vv ++ ) etThread.strFuseF( tin0P , psttOk2 , strokeS( vv ) ) ;
+    for( countT vv = min1 ; vv <= max1 ; vv ++ ) etThread.strFuseF( tin0P , psttOk2 , strokeS( vv ) ) ;
+    etThread.strMakeF( tin0P , LF , psttOk2 , 0 , max1 - min1 + max2 - min2 + max3 - min3 + max4 - min4 + max5 - min5 + 5 ) ; ___( psttOk2 ) ;
     countT max5 = '#' ;
     countT min5 = '#' ; // TO TREAT "postNameP##_footFinger1" AS AN IDENTIFIER FOR VALIDATION PURPOSES ; SEE 1snip.1120024e.FOOTMiNIT
     countT max4 = '_' ;
@@ -882,8 +882,8 @@ ZE( countT , idPass ) ;
 ZE( strokeS* , psttOk2 ) ;
             
 }
-    for( countT vv = min ; vv <= max ; vv ++ ) etThread.strFuseF( tinBaseP , psttOk1 , strokeS( vv ) ) ;
-    etThread.strMakeF( tinBaseP , LF , psttOk1 , 0 , max - min + 1 ) ; ___( psttOk1 ) ;
+    for( countT vv = min ; vv <= max ; vv ++ ) etThread.strFuseF( tin0P , psttOk1 , strokeS( vv ) ) ;
+    etThread.strMakeF( tin0P , LF , psttOk1 , 0 , max - min + 1 ) ; ___( psttOk1 ) ;
     countT max = 0x7f ;
     countT min = 0x20 ;
 {
@@ -898,11 +898,11 @@ ZE( strokeS* , psttOk1 ) ;
             cDo ++ ;
         {
         if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) )
-        ((tin9S&)tinBaseP).pEtScratch->diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , *pptLike[ offl ] ) ; ___( pInfo ) ;
+        ((tin9S&)tin0P).pEtScratch->diskFindFileOrDirOldF( tin0P , pInfo , hFind , *pptLike[ offl ] ) ; ___( pInfo ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 {
 for( countT offl = 0 ; !ether && offl < sizeof pptLike / sizeof pptLike[ 0 ] ; offl ++ )
 CONoUTrAW3( "\r\n               \rcDo: " , cDo , "\r" ) ;
@@ -939,28 +939,28 @@ TODO
 }
     }
         }
-            if( idf ) etherP.strFuseF( tinBaseP , psttP , tb ) ;
+            if( idf ) etherP.strFuseF( tin0P , psttP , tb ) ;
 
             idf = save ;
-            etherP.delF( tinBaseP , psttp ) ;
-            etherP.strFuseF( tinBaseP , psttP , psttp ) ;
-            etherP.strSubstringF( tinBaseP , psttp , idf , idl , psttRawP ) ; ___( psttp ) ;
+            etherP.delF( tin0P , psttp ) ;
+            etherP.strFuseF( tin0P , psttP , psttp ) ;
+            etherP.strSubstringF( tin0P , psttp , idf , idl , psttRawP ) ; ___( psttp ) ;
             ZE( strokeS* , psttp ) ;
             idf = idHit ;
             countT idl = idf ? idf - 1 : 0 ;
             countT save = idf ;
         {
         if( idHit )
-        countT idHit = etherP.strIdAnyF( tinBaseP , idf , sttq , psttOkP , psttRawP , 0 , 1 , bNotP ? flSTRiDaNY_NOT : flSTRiDaNY_null ) ;
+        countT idHit = etherP.strIdAnyF( tin0P , idf , sttq , psttOkP , psttRawP , 0 , 1 , bNotP ? flSTRiDaNY_NOT : flSTRiDaNY_null ) ;
     {
     while( idf )
     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
     TN( tb , " " ) ;
 
-    etherP.strMakeF( tinBaseP , LF , psttP , 0 , psttRawP->idAdam ) ; ___( psttP ) ; //U::O: IF psttRawP IS LONG, MAKE OO PASSES TO AVOID ALLOCATING MORE THAN I NEED
+    etherP.strMakeF( tin0P , LF , psttP , 0 , psttRawP->idAdam ) ; ___( psttP ) ; //U::O: IF psttRawP IS LONG, MAKE OO PASSES TO AVOID ALLOCATING MORE THAN I NEED
 {
-voidT filterF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP , const strokeS* psttRawP , const strokeS* psttOkP , const boolT bNotP = 0 )
+voidT filterF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , const strokeS* psttRawP , const strokeS* psttOkP , const boolT bNotP = 0 )
 
 /*1*/WAKEsHOWtEXT( "ifcIDaDAM_LINT" )/*1*/
 /**/

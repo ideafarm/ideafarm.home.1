@@ -8,10 +8,10 @@
 
 
 }
-    //etThread.traceF( tinBaseP , T("postBodyP:  ")+T(postBodyP) ) ;
-    //etThread.traceF( tinBaseP , T("psttPeerAgentP:  ")+T(psttPeerAgentP) ) ;
-    //etThread.traceF( tinBaseP , T("psttUrlP:  ")+T(psttUrlP) ) ;
-    etThread.traceF( tinBaseP , T("nnPeerP: ")+T(nnPeerP) ) ;
+    //etThread.traceF( tin0P , T("postBodyP:  ")+T(postBodyP) ) ;
+    //etThread.traceF( tin0P , T("psttPeerAgentP:  ")+T(psttPeerAgentP) ) ;
+    //etThread.traceF( tin0P , T("psttUrlP:  ")+T(psttUrlP) ) ;
+    etThread.traceF( tin0P , T("nnPeerP: ")+T(nnPeerP) ) ;
 
 #endif
 
@@ -21,7 +21,7 @@
 
             }
                 THREADmODE2rESTORE
-                etScratch.fileWriteF( tinBaseP , fo , WS( rec ) ) ;
+                etScratch.fileWriteF( tin0P , fo , WS( rec ) ) ;
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
                 rec << (strokeS*)tCountry ;
@@ -33,7 +33,7 @@
                 rec << (strokeS*)tPeer ;
                 rec << (countT)1 ;          // IDfORMAT
                 rec << finger ;
-                soulC rec( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC rec( tin0P , TAG( TAGiDnULL ) ) ;
 
                 putNegAM( *(countT*)&finger , FINGERnEG_WOtABLEuNCONFIRMEDeMAIL ) ;
                 ZE( countT , finger ) ;
@@ -41,9 +41,9 @@
             else
             if( POOP ) { POOPR ; } // EACH PEER IS ONLY ALLOWED WO PENDING REGISTRATION.  AS OF THIS WRITING, EACH FILE REMAINS UNTIL THE REGISTRATION SUCCEEDS OR UNTIL THE FILE IS MANUALLY DELETED
 
-            fileC fo( tinBaseP , (strokeS*)tIpFile , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeF , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
+            fileC fo( tin0P , (strokeS*)tIpFile , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeF , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
 
-            etherC& etScratch = *((tin9S&)tinBaseP).pEtScratch ;
+            etherC& etScratch = *((tin9S&)tin0P).pEtScratch ;
 
             SCOOPS
         {
@@ -53,7 +53,7 @@
 
     }
         }
-            etThread.boxPutF( tinBaseP , T("smtp.mailgun.org[unconfirmed]/b42/smtp/factories@ideafarm.com/")+tEmail+T("//wo@ideafarm.com") , tBody ) ;
+            etThread.boxPutF( tin0P , T("smtp.mailgun.org[unconfirmed]/b42/smtp/factories@ideafarm.com/")+tEmail+T("//wo@ideafarm.com") , tBody ) ;
 
             tBody += tMyNetBiosHostName+T(".ideafarm.com/emailzip.confirm.html?pass=")+tPass+T("\r\n") ;
 
@@ -113,20 +113,20 @@
 
             TN( tBody ,
 
-            boolT bDelete = psttDelete && !etThread.strCompareF( tinBaseP , psttDelete , T("yes") ) ;
+            boolT bDelete = psttDelete && !etThread.strCompareF( tin0P , psttDelete , T("yes") ) ;
 
             }
-                etThread.delF( tinBaseP , psttMyNetBiosHostName ) ;
+                etThread.delF( tin0P , psttMyNetBiosHostName ) ;
                 else                         tMyNetBiosHostName = T(psttMyNetBiosHostName) ;
-                if( !psttMyNetBiosHostName ) etThread.traceF( tinBaseP , T("error: reverse DNS lookup on myself failed") ) ;
-                etThread.sockPsttHostF( tinBaseP , psttMyNetBiosHostName , nicNameC() ) ; ___( psttMyNetBiosHostName ) ;
+                if( !psttMyNetBiosHostName ) etThread.traceF( tin0P , T("error: reverse DNS lookup on myself failed") ) ;
+                etThread.sockPsttHostF( tin0P , psttMyNetBiosHostName , nicNameC() ) ; ___( psttMyNetBiosHostName ) ;
                 ZE( strokeS* , psttMyNetBiosHostName ) ;
             {
             TN( tMyNetBiosHostName , "" ) ;
 
             TN( tPass , "" ) ; tPass = TF2(password,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 
-            swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP.ungrabF( tinBaseP ) ;
+            swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP.ungrabF( tin0P ) ;
 
             swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP << psttCountry ;
             swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP << psttZip     ;
@@ -134,29 +134,29 @@
             swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP << psttDelete  ;
             swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP << psttPeer    ;
 
-            swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP.purgeF( tinBaseP ) ;
+            swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP.purgeF( tin0P ) ;
 
             cLeverPasswordP = password ;
 
-            swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-            ZE( strokeS* , psttCountry ) ; etThread.strMakeF( tinBaseP , LF , psttCountry , tCountry ) ; ___( psttCountry ) ;
-            ZE( strokeS* , psttZip     ) ; etThread.strMakeF( tinBaseP , LF , psttZip     , tZip     ) ; ___( psttZip     ) ;
-            ZE( strokeS* , psttEmail   ) ; etThread.strMakeF( tinBaseP , LF , psttEmail   , tEmail   ) ; ___( psttEmail   ) ;
-            ZE( strokeS* , psttDelete  ) ; etThread.strMakeF( tinBaseP , LF , psttDelete  , tDelete  ) ; ___( psttDelete  ) ;
-            ZE( strokeS* , psttPeer    ) ; etThread.strMakeF( tinBaseP , LF , psttPeer    , tPeer    ) ; ___( psttPeer    ) ;
+            ZE( strokeS* , psttCountry ) ; etThread.strMakeF( tin0P , LF , psttCountry , tCountry ) ; ___( psttCountry ) ;
+            ZE( strokeS* , psttZip     ) ; etThread.strMakeF( tin0P , LF , psttZip     , tZip     ) ; ___( psttZip     ) ;
+            ZE( strokeS* , psttEmail   ) ; etThread.strMakeF( tin0P , LF , psttEmail   , tEmail   ) ; ___( psttEmail   ) ;
+            ZE( strokeS* , psttDelete  ) ; etThread.strMakeF( tin0P , LF , psttDelete  , tDelete  ) ; ___( psttDelete  ) ;
+            ZE( strokeS* , psttPeer    ) ; etThread.strMakeF( tin0P , LF , psttPeer    , tPeer    ) ; ___( psttPeer    ) ;
 
-            meP.pushSnipF(   tinBaseP , stBodyP , T("I will email a confirmation link to ")+tEmail+T(", which you must click within 10 minutes.\r\n") ) ;
+            meP.pushSnipF(   tin0P , stBodyP , T("I will email a confirmation link to ")+tEmail+T(", which you must click within 10 minutes.\r\n") ) ;
         {
         else
-        if( !bAllow ) meP.pushSnipF( tinBaseP , stBodyP , T("I think that you are a bot, not a human, because there is already one pending (not yet confirmed) registration request made from your IP address.\r\nIf you are a human, try using a different computer or a different Wifi hotspot.\r\nOr, to request assistance, email support@ideafarm.com.") ) ;
+        if( !bAllow ) meP.pushSnipF( tin0P , stBodyP , T("I think that you are a bot, not a human, because there is already one pending (not yet confirmed) registration request made from your IP address.\r\nIf you are a human, try using a different computer or a different Wifi hotspot.\r\nOr, to request assistance, email support@ideafarm.com.") ) ;
 
         }
             if( POOP ) POOPR
 
             }
                 THREADmODE2rESTORE
-                etScratch.fileWriteF( tinBaseP , fo , WS( rec ) ) ;
+                etScratch.fileWriteF( tin0P , fo , WS( rec ) ) ;
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
                 rec << (strokeS*)tCountry ;
@@ -168,7 +168,7 @@
                 rec << (strokeS*)tPeer ;
                 rec << (countT)1 ;          // IDfORMAT
                 rec << finger ;
-                soulC rec( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC rec( tin0P , TAG( TAGiDnULL ) ) ;
 
                 putNegAM( *(countT*)&finger , FINGERnEG_WOtABLEuNCONFIRMEDeMAIL ) ;
                 ZE( countT , finger ) ;
@@ -179,10 +179,10 @@
             else
             if( POOP ) { POOPR ; } // EACH PEER IS ONLY ALLOWED WO PENDING REGISTRATION.  AS OF THIS WRITING, EACH FILE REMAINS UNTIL THE REGISTRATION SUCCEEDS OR UNTIL THE FILE IS MANUALLY DELETED
 
-            fileC fo( tinBaseP , (strokeS*)tIpFile , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeF , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
+            fileC fo( tin0P , (strokeS*)tIpFile , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeF , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
             bWriteIpFile = 0 ;
 
-            etherC& etScratch = *((tin9S&)tinBaseP).pEtScratch ;
+            etherC& etScratch = *((tin9S&)tin0P).pEtScratch ;
 
             SCOOPS
         {
@@ -190,37 +190,37 @@
         ZE( boolT , bAllow ) ;
 
         countT password = ru ;
-        ranUniC ru( tinBaseP , MAXcOUNTT ) ;
+        ranUniC ru( tin0P , MAXcOUNTT ) ;
     {
     else
     }
-        meP.pushSnipF(   tinBaseP , stBodyP , T("I think that you are a bot, not a human, because you clicked the wrong image.\r\nTo request assistance, email support@ideafarm.com.\r\n") ) ;
+        meP.pushSnipF(   tin0P , stBodyP , T("I think that you are a bot, not a human, because you clicked the wrong image.\r\nTo request assistance, email support@ideafarm.com.\r\n") ) ;
         idRequestStatus = ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_BOTwRONGiMAGE ;
     {
-    else if( etThread.strCompareF( tinBaseP , psttUrlP , tUrlCorrect ) )
+    else if( etThread.strCompareF( tin0P , psttUrlP , tUrlCorrect ) )
 
 #if defined( NEVERdEFINED )
 //BAD ACTORS WILL CONTINUE TO EXERCISE ME
 //THIS ENTIRE FUNCTION IS OBSOLETED BY THE USE OF PAYPAL
 
     }
-        meP.pushSnipF(   tinBaseP , stBodyP , T("I think that you are a bot, not a human.\r\nTo request assistance, email support@ideafarm.com.") ) ;
+        meP.pushSnipF(   tin0P , stBodyP , T("I think that you are a bot, not a human.\r\nTo request assistance, email support@ideafarm.com.") ) ;
         idRequestStatus = ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_BOTwRONGsCHEME ;
     {
-    //if( etThread.strCompareF( tinBaseP , tScheme , tSchemeCorrect ) )
+    //if( etThread.strCompareF( tin0P , tScheme , tSchemeCorrect ) )
     ZE( countT , idRequestStatus )
     boolT bWriteIpFile = 1 ;
     TN( tUrlCorrect    , "/header/action/emailzip.captcha.4.html" ) ; //U:: REMOVE "header"
     TN( tSchemeCorrect , "1" ) ;
     TN( tIpFile , (strokeS*)( T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/wo.o.s.table/unconfirmed.email/ip.") + T(nnPeerP) ) ) ;
 
-    swKVP.ungrabF( tinBaseP ) ;
+    swKVP.ungrabF( tin0P ) ;
     psttLeverKVP = tKeyCountry ; tCountry = T((strokeS*)(countT)swKVP) ;
     psttLeverKVP = tKeyZip     ; tZip     = T((strokeS*)(countT)swKVP) ;
     psttLeverKVP = tKeyEmail   ; tEmail   = T((strokeS*)(countT)swKVP) ;
     psttLeverKVP = tKeyScheme  ; tScheme  = T((strokeS*)(countT)swKVP) ;
     psttLeverKVP = tKeyDelete  ; tDelete  = T((strokeS*)(countT)swKVP) ;
-    swKVP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    swKVP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tCountry , "" ) ;
     TN( tZip     , "" ) ;
     TN( tEmail   , "" ) ;
@@ -234,23 +234,23 @@
     TN( tKeyScheme  , "scheme" ) ;
     TN( tKeyDelete  , "delete" ) ;
 
-    //swKVP.ungrabF( tinBaseP ) ;
+    //swKVP.ungrabF( tin0P ) ;
     //}
-    //    etThread.traceF( tinBaseP           , T("KV:  ")+T(psttLeverKVP)+T(":  \"")+T(psttv)+T("\"") ) ;
+    //    etThread.traceF( tin0P           , T("KV:  ")+T(psttLeverKVP)+T(":  \"")+T(psttv)+T("\"") ) ;
     //
     //    strokeS* psttv = (strokeS*)(countT)swKVP ;
-    //    psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
+    //    psttLeverKVP = (strokeS*)swKVP.leverF( tin0P , idf ) ;
     //{
     //for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    //etThread.traceF(   tinBaseP , TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" KV's received:") ) ;
-    //countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
-    //swKVP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    //etThread.traceF(   tin0P , TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" KV's received:") ) ;
+    //countT cFlavors = swKVP.cFlavorsF( tin0P ) ;
+    //swKVP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     switchStackC& swsUnconfirmedPeerDeleteEmailZipCountryByPasswordP = *(switchStackC*)c8pP.c4 ;
     countT&       cLeverPasswordP                                    =       *(countT*)c8pP.c3 ;
     count8S&      c8pP                                               =        *(count8S*)cArgP ;
 {
-/*1*/voidT emailZipCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT emailZipCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 
 /**/

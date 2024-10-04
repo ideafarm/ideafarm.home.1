@@ -11,30 +11,30 @@ REST
 
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TUCK ) ;
+        ++ s ; ether.osSleepF( tin0P , TUCK ) ;
 
         mQuantity2 += mBuy ;
         //CONoUTrAW( "TODO/buy/-\r\n" ) ;
-        adam2.buyF( tinBaseP , 1 , mBuy ) ;
+        adam2.buyF( tin0P , 1 , mBuy ) ;
         //CONoUTrAW( "TODO/buy/+\r\n" ) ;
         measure04T mBuy = 1.0 / mPrice ;
-        measure04T mPrice = adam2.priceF( tinBaseP , 1 ) ;
+        measure04T mPrice = adam2.priceF( tin0P , 1 ) ;
 
         //CONoUTrAW( "TODO/sell/-\r\n" ) ;
-        adam1.sellF( tinBaseP , 1 , mSell ) ;
-        adam2.mannaF( tinBaseP , 1.0 ) ;
+        adam1.sellF( tin0P , 1 , mSell ) ;
+        adam2.mannaF( tin0P , 1.0 ) ;
         //CONoUTrAW( "TODO/sell/+\r\n" ) ;
         measure04T mSell = 1.0 ;
     {
     while( !ether && !etThread )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , idCycle ) ;
     ZE( measure04T , mQuantity2 ) ;
     ZE( measure04T , mQuantity1 ) ;
 
-    adamC adam2( tinBaseP , etThread ) ; //UNIT ELASTIC DEMAND; SPENDS 1.0 PER CYCLE
+    adamC adam2( tin0P , etThread ) ; //UNIT ELASTIC DEMAND; SPENDS 1.0 PER CYCLE
 
-    adamC adam1( tinBaseP , etThread ) ; //SUPPLIES 1.0 INELASTICALLY PER CYCLE
+    adamC adam1( tin0P , etThread ) ; //SUPPLIES 1.0 INELASTICALLY PER CYCLE
 {
 
 TODO

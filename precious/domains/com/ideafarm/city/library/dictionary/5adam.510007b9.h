@@ -233,46 +233,46 @@ TASK0PROTO( tmNodeBlowTeatF ) ;
  FRIENDS_nodeOldC
 
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.nodeOldC.nodeOldC!||
- nodeOldC( tin0S& tinBaseP , etherC& etThread , boolT& bReadyP ) ;
+ nodeOldC( tin0S& tin0P , etherC& etThread , boolT& bReadyP ) ;
 
  public :
 
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.nodeOldC.doWrapLocallyIfIF!||
- static voidT doWrapLocallyIfIF( tin0S& tinBaseP , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP = 0 ) ;
+ static voidT doWrapLocallyIfIF( tin0S& tin0P , etherC& etThread , OLDrELAYiNFOpARMS , const byteT* const pbsWrapP , const portTimeC& idptOriginP , const countT idPhaseP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34012.nodeOldC.helloToHandleIF!||
- static voidT helloToHandleIF( tin0S& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP ) ;
+ static voidT helloToHandleIF( tin0S& tin0P , portTimeC& idptP , countT& idSerialLathHeaderP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34011.nodeOldC.testIF!||
- static boolT testIF( tin0S& tinBaseP , portTimeC& idptP , countT& idSerialLathHeaderP , portTimeC& idptTestP ) ;
+ static boolT testIF( tin0S& tin0P , portTimeC& idptP , countT& idSerialLathHeaderP , portTimeC& idptTestP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.nodeOldC.gossipIfIF!||
- static portTimeC gossipIfIF( tin0S& tinBaseP , countT& idSerialLathHeaderP , stackC* const pStPop0P , stackC* const pStPop1P , stackC* const pStPop2P , stackC* const pStPop3P , stackC* const pStPop4P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP , stackC& stRelayAbsentP , portTimeC& idptGossipP , portTimeC& idptP , const countT idWorkP ) ;
+ static portTimeC gossipIfIF( tin0S& tin0P , countT& idSerialLathHeaderP , stackC* const pStPop0P , stackC* const pStPop1P , stackC* const pStPop2P , stackC* const pStPop3P , stackC* const pStPop4P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP , stackC& stRelayAbsentP , portTimeC& idptGossipP , portTimeC& idptP , const countT idWorkP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.nodeOldC.portTimeClientsExpectedIF!||
- static voidT portTimeClientsExpectedIF( tin0S& tinBaseP , stackC& stRelayExpectedP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const countT idWorkP = 0 ) ;
+ static voidT portTimeClientsExpectedIF( tin0S& tin0P , stackC& stRelayExpectedP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const countT idWorkP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.nodeOldC.portTimeClientIF!||
- static voidT portTimeClientIF( tin0S& tinBaseP , portTimeC& idptPeer1P , portTimeC& idptPeer2P , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idHisWorkP ) ;
+ static voidT portTimeClientIF( tin0S& tin0P , portTimeC& idptPeer1P , portTimeC& idptPeer2P , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idHisWorkP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.nodeOldC.idptSelectPeerIF!||
- static voidT idptSelectPeerIF( tin0S& tinBaseP , portTimeC& idptPeerP , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idMyWorkP , const flagsT flagsP = flSELECTpEER_null ) ;
+ static voidT idptSelectPeerIF( tin0S& tin0P , portTimeC& idptPeerP , stackC& stIdptOpenP , portTimeC& idptP , stackC& stIdptGossipP , const countT idMyWorkP , const flagsT flagsP = flSELECTpEER_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.nodeOldC.bListedIF!||
- static boolT bListedIF( tin0S& tinBaseP , stackC& stIdptOpenP , stackC& stIdptGossipP , const portTimeC& idptP ) ;
+ static boolT bListedIF( tin0S& tin0P , stackC& stIdptOpenP , stackC& stIdptGossipP , const portTimeC& idptP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.nodeOldC.idWorkInvertIF!||
- static voidT idWorkInvertIF( tin0S& tinBaseP , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP ) ;
+ static voidT idWorkInvertIF( tin0S& tin0P , countT& idWorkInvert1P , countT& idWorkInvert2P , const countT idWorkP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.nodeOldC.popIF!||
- static voidT popIF( tin0S& tinBaseP , stackC* pStPop0P , stackC* pStPop1P , stackC* pStPop2P , stackC* pStPop3P , stackC* pStPop4P , soulC& sBagP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const boolT bDudP = 0 ) ;
+ static voidT popIF( tin0S& tin0P , stackC* pStPop0P , stackC* pStPop1P , stackC* pStPop2P , stackC* pStPop3P , stackC* pStPop4P , soulC& sBagP , stackC& stIdptOpenP , stackC& stIdptGossipP , portTimeC& idptP , const boolT bDudP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.nodeOldC.hisListIF!||
- static countT hisListIF( tin0S& tinBaseP , stackC& stP , soulC& soulP , stackC& stIdptGossipP , countT& idFieldP ) ;
+ static countT hisListIF( tin0S& tin0P , stackC& stP , soulC& soulP , stackC& stIdptGossipP , countT& idFieldP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.nodeOldC.myListIF!||
- static voidT myListIF( tin0S& tinBaseP , soulC& soulP , stackC& stRelayP ) ;
+ static voidT myListIF( tin0S& tin0P , soulC& soulP , stackC& stRelayP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.nodeOldC.sortOpenIF!||
- static voidT sortOpenIF( tin0S& tinBaseP , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP ) ;
+ static voidT sortOpenIF( tin0S& tin0P , stackC& stIdptOpenP , stackC& stIdptGossipP , stackC& stIdptTempP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.nodeOldC.hdrBagIF!||
- static voidT hdrBagIF( tin0S& tinBaseP , soulC& sBagP , portTimeC& idptP , countT& idSerialLathHeaderP , const flagsT flagsP , const countT idTypeP ) ;
+ static voidT hdrBagIF( tin0S& tin0P , soulC& sBagP , portTimeC& idptP , countT& idSerialLathHeaderP , const flagsT flagsP , const countT idTypeP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.nodeOldC.handleQueryIF!||
- static portTimeC handleQueryIF( tin0S& tinBaseP , const countT* const pczChannelP = 0 ) ;
+ static portTimeC handleQueryIF( tin0S& tin0P , const countT* const pczChannelP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.nodeOldC.handleRefreshTimeStampIF!||
- static boolT handleRefreshTimeStampIF( tin0S& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP = 0 ) ;
+ static boolT handleRefreshTimeStampIF( tin0S& tin0P , portTimeC idptMeP , const countT* const pczChannelP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.nodeOldC.handleRegisterMeIfIF!||
- static boolT handleRegisterMeIfIF( tin0S& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP = 0 ) ;
+ static boolT handleRegisterMeIfIF( tin0S& tin0P , portTimeC idptMeP , const countT* const pczChannelP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.nodeOldC.handleUnregisterIF!||
- static boolT handleUnregisterIF( tin0S& tinBaseP , portTimeC idptMeP , const countT* const pczChannelP = 0 ) ;
+ static boolT handleUnregisterIF( tin0S& tin0P , portTimeC idptMeP , const countT* const pczChannelP = 0 ) ;
 {
 /*1*/class _export nodeOldC/*1*/
 
@@ -321,15 +321,15 @@ extern grabC*       pGrabHandleAll ;
 //
 
 
-    stRelayAbsent##idWorkP##.purgeF( tinBaseP ) ;
+    stRelayAbsent##idWorkP##.purgeF( tin0P ) ;
     }                                                                                                   \
         while( !stRelayAbsent##idWorkP##.third && ~hDown ) ;                               \
         }                                                                                               \
-            stRelayAbsent##idWorkP##Lag.sinkF( tinBaseP , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortsF , - 1 ) ; \
-            portTimeC& idpt = *(portTimeC*)&stRelayAbsent##idWorkP##.downF( tinBaseP , hDown ) ;        \
+            stRelayAbsent##idWorkP##Lag.sinkF( tin0P , countTC() , (byteT*)&idpt , flSTACKsINK_UNIQUE , subtractIdPortsF , - 1 ) ; \
+            portTimeC& idpt = *(portTimeC*)&stRelayAbsent##idWorkP##.downF( tin0P , hDown ) ;        \
         {                                                                                               \
         do                                                                                              \
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;                                 \
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;                                 \
     {                                                                                                   \
     if( stRelayAbsent##idWorkP## )                                                                      \
                                                                                                         \
@@ -356,15 +356,15 @@ extern grabC*       pGrabHandleAll ;
 
 
         }
-            stRelayAbsent##idWorkP##Lag.purgeF( tinBaseP ) ;                                                \
+            stRelayAbsent##idWorkP##Lag.purgeF( tin0P ) ;                                                \
             while( !stRelayAbsent##idWorkP##Lag.third && ~hDown ) ;                        \
             }                                                                                           \
                 if( idptAbsent##idWorkP## ) break ; /*SHOULD BE UNNECESSARY SINCE THERE SHOULD BE EITHER 0 OR 1 PLATES*/        \
-                idptAbsent##idWorkP## = nodeOldC::gossipIfIF( tinBaseP , idSerialLathHeaderP , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , stIdptOpenP , stIdptGossipP , stIdptTempP , stRelayAbsent##idWorkP## , idpt , idptP , idWorkP ) ; \
-                portTimeC& idpt = *(portTimeC*)&stRelayAbsent##idWorkP##Lag.downF( tinBaseP , hDown ) ; \
+                idptAbsent##idWorkP## = nodeOldC::gossipIfIF( tin0P , idSerialLathHeaderP , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , stIdptOpenP , stIdptGossipP , stIdptTempP , stRelayAbsent##idWorkP## , idpt , idptP , idWorkP ) ; \
+                portTimeC& idpt = *(portTimeC*)&stRelayAbsent##idWorkP##Lag.downF( tin0P , hDown ) ; \
             {                                                                                           \
             do                                                                                          \
-            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;                             \
+            handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;                             \
         {                                                                                               \
         if( stRelayAbsent##idWorkP##Lag )                                                               \
                                                                                                         \

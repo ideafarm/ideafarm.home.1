@@ -9,20 +9,20 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.traceF( tinBaseP , T("sorted  simple") ) ;
-etThread.ifcSortaF( tinBaseP , bQuit , pbArray2 , cbArray2 , sizeof( countT ) , 0 , sizeof( countT ) , flSORTAc_NOwORKERS ) ;
-etThread.traceF( tinBaseP , T("sorting simple") ) ;
+etThread.traceF( tin0P , T("sorted  simple") ) ;
+etThread.ifcSortaF( tin0P , bQuit , pbArray2 , cbArray2 , sizeof( countT ) , 0 , sizeof( countT ) , flSORTAc_NOwORKERS ) ;
+etThread.traceF( tin0P , T("sorting simple") ) ;
 
-etThread.traceF( tinBaseP , T("sorted  multithreaded") ) ;
-etThread.ifcSortaF( tinBaseP , bQuit , pbArray1 , cbArray1 , sizeof( countT ) , 0 , sizeof( countT ) ) ;
-etThread.traceF( tinBaseP , T("sorting multithreaded") ) ;
+etThread.traceF( tin0P , T("sorted  multithreaded") ) ;
+etThread.ifcSortaF( tin0P , bQuit , pbArray1 , cbArray1 , sizeof( countT ) , 0 , sizeof( countT ) ) ;
+etThread.traceF( tin0P , T("sorting multithreaded") ) ;
 
 ZE( boolT , bQuit ) ;
 
-etThread.traceF( tinBaseP , T("wrote   a tick of elements, each with wo ranUniC value") ) ;
+etThread.traceF( tin0P , T("wrote   a tick of elements, each with wo ranUniC value") ) ;
 }
     }
         case 1 : { pcArray2[ offca ] = pcArray1[ offca ] = 0x11111111 ; break ; }
@@ -31,7 +31,7 @@ etThread.traceF( tinBaseP , T("wrote   a tick of elements, each with wo ranUniC 
     switch( offca % 2 )
 {
 for( countT offca = 0 ; offca < ccArray1 ; offca ++ )
-etThread.traceF( tinBaseP , T("writing elements, each with wo ranUniC value") ) ;
+etThread.traceF( tin0P , T("writing elements, each with wo ranUniC value") ) ;
 
 countT  ccArray2 = sizeof pbArray2 / sizeof( countT ) ;
 countT* pcArray2 = (countT*)pbArray2 ;
@@ -39,8 +39,8 @@ countT* pcArray2 = (countT*)pbArray2 ;
 countT  ccArray1 = sizeof pbArray1 / sizeof( countT ) ;
 countT* pcArray1 = (countT*)pbArray1 ;
 
-ranUniC ruKey( tinBaseP , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
-//etThread.traceF( tinBaseP , T("[cSeed]:    ")+TF2(cSeed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
+ranUniC ruKey( tin0P , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
+//etThread.traceF( tin0P , T("[cSeed]:    ")+TF2(cSeed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
 cSeedLath = cSeed ;
 countT cSeed = 0x78E86FC1 /*slab.trueRandom*/ ;
 slabS& slab = slabS::slabIF() ;

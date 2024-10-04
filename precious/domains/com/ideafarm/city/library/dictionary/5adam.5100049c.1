@@ -8,26 +8,26 @@
 
 
 REST
-etThread.osThreadF( tinBaseP , countTC() , tmF ) ;
-etThread.osSleepF( tinBaseP , TOCK ) ;
-etThread.osThreadF( tinBaseP , countTC() , tmF ) ;
+etThread.osThreadF( tin0P , countTC() , tmF ) ;
+etThread.osSleepF( tin0P , TOCK ) ;
+etThread.osThreadF( tin0P , countTC() , tmF ) ;
 TODO
 
 DONE( tmF )
 }
-    else                                                                          etThread.strokeF( tinBaseP , T("opener    closing; contains ")+TF1(*(countT*)(byteT*)nap)+T(" at ")+TF1((countT)(byteT*)nap)+T("\r\n") ) ;
-    if( !( F(nap.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) etThread.strokeF( tinBaseP , T("formatter closing; contains ")+TF1(*(countT*)(byteT*)nap)+T(" at ")+TF1((countT)(byteT*)nap)+T("\r\n") ) ;
-    etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
+    else                                                                          etThread.strokeF( tin0P , T("opener    closing; contains ")+TF1(*(countT*)(byteT*)nap)+T(" at ")+TF1((countT)(byteT*)nap)+T("\r\n") ) ;
+    if( !( F(nap.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) etThread.strokeF( tin0P , T("formatter closing; contains ")+TF1(*(countT*)(byteT*)nap)+T(" at ")+TF1((countT)(byteT*)nap)+T("\r\n") ) ;
+    etThread.osSleepF( tin0P , TOCK * 4 ) ;
 
-    else etThread.strokeF( tinBaseP , T("opened; contains ")+TF1(*(countT*)(byteT*)nap)+T(" at ")+TF1((countT)(byteT*)nap)+T("\r\n") ) ;
+    else etThread.strokeF( tin0P , T("opened; contains ")+TF1(*(countT*)(byteT*)nap)+T(" at ")+TF1((countT)(byteT*)nap)+T("\r\n") ) ;
     }
-        etThread.strokeF( tinBaseP , T("formatted to contain ")+TF1(*(countT*)(byteT*)nap)+T(" at ")+TF1((countT)(byteT*)nap)+T("\r\n") ) ;
-        nap.formattingIsDoneF( tinBaseP ) ;
+        etThread.strokeF( tin0P , T("formatted to contain ")+TF1(*(countT*)(byteT*)nap)+T(" at ")+TF1((countT)(byteT*)nap)+T("\r\n") ) ;
+        nap.formattingIsDoneF( tin0P ) ;
         *(countT*)(byteT*)nap = 0x12344321 ;
     {
     if( !( F(nap.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
-    napkinC nap( tinBaseP , LF , (byteT*)bits , textC( tinBaseP , LF , (byteT*)bits , flTEXTc_null , "0a40104/race" ) , 0 , sizeof( countT ) ) ;
-    bitsC bits( tinBaseP , CbITSlIFI , 0 , 1 ) ;
+    napkinC nap( tin0P , LF , (byteT*)bits , textC( tin0P , LF , (byteT*)bits , flTEXTc_null , "0a40104/race" ) , 0 , sizeof( countT ) ) ;
+    bitsC bits( tin0P , CbITSlIFI , 0 , 1 ) ;
 {
 TASK( tmF )
 

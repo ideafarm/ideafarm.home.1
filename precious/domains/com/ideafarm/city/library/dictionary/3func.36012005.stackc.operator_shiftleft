@@ -13,14 +13,14 @@
     _OUTbATONsTACKc_
     }
         }
-            if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNnEWpLATE ) pSgnEvent->giveF( tinBaseP ) ;
-            newTabsIfF( tinBaseP , ppNew , 0 ) ;
+            if( pSgnEvent && F(flags) & flSTACKc_GIVEsIGNnEWpLATE ) pSgnEvent->giveF( tin0P ) ;
+            newTabsIfF( tin0P , ppNew , 0 ) ;
             // IF WE EVER NEED TO GIVE THE SIGN FOR pSwTin, THE giveTakeF MEMBER FOR signC WILL NEED TO BE OVERRIDDEN TO AVOID USING TINSL
 
 
             }
                 }
-                    adjustRefsF( tinBaseP , cPlates , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppNew ) ;
+                    adjustRefsF( tin0P , cPlates , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppNew ) ;
                     cPlates ++ ; //U::
                     ppBottom = ppNew ;
                     if( ppBottom ) ppBottom->ppD = ppNew ;
@@ -32,20 +32,20 @@
                     ppTop = ppNew ;
                     if( ppTop ) ppTop->ppU = ppNew ;
                     ppNew->ppD = ppTop ;
-                    adjustRefsF( tinBaseP , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_NEWaBOVE , ppNew ) ;
+                    adjustRefsF( tin0P , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_NEWaBOVE , ppNew ) ;
                 {
                 if( !( F(flags) & flSTACKc_FIFO ) )
             {
             else
             }
-                adjustRefsF( tinBaseP , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppNew ) ;
+                adjustRefsF( tin0P , 1 , ifcIDaCTIONsTACKaDJUSTrEFS_REFERENCE , ppNew ) ;
                 cPlates ++ ; //U::
                 ppTop = ppBottom = ppNew ;
             {
             if( !ppTop )
         {
         if( ppNew )
-        newPlateF( tinBaseP , ppNew , valueP ) ;
+        newPlateF( tin0P , ppNew , valueP ) ;
         ZE( plateS* , ppNew ) ;
         
         if( !( F(flagsState) & flSTACKsTATE_SHIFTlEFTuSED ) ) flagsState |= flSTACKsTATE_SHIFTlEFTuSED ;
@@ -83,7 +83,7 @@
   can be 0
  valueP
 arguments
-after calling this function, stackC::extractF( tinBaseP ) can be used to remove the item that it references
+after calling this function, stackC::extractF( tin0P ) can be used to remove the item that it references
 this function zees the internal cursor that is used to make operator [] speedy
 evaluates to a reference to this stack object
  this value might be a pointer

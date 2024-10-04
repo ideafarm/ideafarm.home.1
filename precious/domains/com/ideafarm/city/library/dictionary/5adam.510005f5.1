@@ -13,26 +13,26 @@
                     
 REST
 
-etThread.strokeF( tinBaseP , T("ok\1\n") ) ;
+etThread.strokeF( tin0P , T("ok\1\n") ) ;
 
 }
-    PUSE( tinBaseP , posto ) ;
-    etThread.boxPutF( tinBaseP , *pptFile[ offf ] , posto , costo ) ;
+    PUSE( tin0P , posto ) ;
+    etThread.boxPutF( tin0P , *pptFile[ offf ] , posto , costo ) ;
     
-    PUSE( tinBaseP , *(byteT**)&psttOut1 ) ;
-    countT costo = etThread.strMakeF( tinBaseP , LF , posto , psttOut1 ) ; ___( posto ) ;
+    PUSE( tin0P , *(byteT**)&psttOut1 ) ;
+    countT costo = etThread.strMakeF( tin0P , LF , posto , psttOut1 ) ; ___( posto ) ;
     ZE( osTextT* , posto ) ;
     
-    PUSE( tinBaseP , *(byteT**)&psttIn ) ;
+    PUSE( tin0P , *(byteT**)&psttIn ) ;
     __( cDone1 - 1 ) ;
-    countT cDone1 = etThread.strReplaceF( tinBaseP , psttOut1 , psttIn , *pptOld[ offf ] , *pptNew[ offf ] ) ; ___( psttOut1 ) ;
+    countT cDone1 = etThread.strReplaceF( tin0P , psttOut1 , psttIn , *pptOld[ offf ] , *pptNew[ offf ] ) ; ___( psttOut1 ) ;
     ZE( strokeS* , psttOut1 ) ;
     
-    PUSE( tinBaseP , posti ) ;
-    etThread.strMakeFromOsTextF( tinBaseP , psttIn , posti ) ; ___( psttIn ) ;
+    PUSE( tin0P , posti ) ;
+    etThread.strMakeFromOsTextF( tin0P , psttIn , posti ) ; ___( psttIn ) ;
     ZE( strokeS* , psttIn ) ;
     
-    etThread.boxGetShadowF( tinBaseP , posti , costi , *pptFile[ offf ] ) ; ___( posti ) ;
+    etThread.boxGetShadowF( tin0P , posti , costi , *pptFile[ offf ] ) ; ___( posti ) ;
     ZE( countT   , costi ) ;
     ZE( osTextT* , posti ) ;
 {

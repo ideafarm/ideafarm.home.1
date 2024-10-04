@@ -12,31 +12,31 @@
     //return !cb1P ? 0 : cbuOld ;
 
     //}
-    //        ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("i filled the book") ) ;
-    //    if( pHead->cbUsed == pHead->cbBody && !bFullAtStart && ((tin9S&)tinBaseP).pEther )
+    //        ((tin9S&)tin0P).pEther->traceF( tin0P , T("i filled the book") ) ;
+    //    if( pHead->cbUsed == pHead->cbBody && !bFullAtStart && ((tin9S&)tin0P).pEther )
     //{
-    //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] ) //U:: TO FIND A BUG
+    //if( ((tin9S&)tin0P).pc Utility[ 0 ] ) //U:: TO FIND A BUG
 
-    if( offPageEnd != offPageStart && F(flagsP) & flBOOK0cwRITE_FLUSHaTpAGE ) thirdC::flushViewOfFileIF( tinBaseP , (const byteT*)( offPageStart * cbPage ) , ( offPageEnd - offPageStart ) * cbPage , flagsFlush , phFileP ) ;
+    if( offPageEnd != offPageStart && F(flagsP) & flBOOK0cwRITE_FLUSHaTpAGE ) thirdC::flushViewOfFileIF( tin0P , (const byteT*)( offPageStart * cbPage ) , ( offPageEnd - offPageStart ) * cbPage , flagsFlush , phFileP ) ;
 
     const countT offPageEnd = (countT)pbc / cbPage  ;
 
     __NZ( F(flagsP) & flBOOK0cwRITE_SETrEMAINING && F(flagsResultP) & flBOOK0cwRITErESULT_WROTElATHbYTE ) ;  //THIS VERIFIES THAT SETrEMAINING DID NOT WRITE THE LATH BYTE, WHICH SHOUJLD BE IMPOSSIBLE
     if( pbc == pbBody + pHead->cbBody && cbuOld < pHead->cbBody && ( F(flagsP) & flBOOK0cwRITE_SETrEMAINING || cb1P || cbFill ) ) flagsResultP |= flBOOK0cwRITErESULT_WROTElATHbYTE ;
 
-    if( F(flagsP) & flBOOK0cwRITE_FLUSHaFTER ) thirdC::flushViewOfFileIF( tinBaseP , pbStart , pbc - pbStart , flagsFlush , phFileP ) ;
+    if( F(flagsP) & flBOOK0cwRITE_FLUSHaFTER ) thirdC::flushViewOfFileIF( tin0P , pbStart , pbc - pbStart , flagsFlush , phFileP ) ;
 
     }
         }
             if( setIfZeAM( pHead->cbFill , cbFill ) )     { BLAMMO ; } //THE BLAMMO SHOULD BE IMPOSSIBLE
-                                                              thirdC::c_memsetIF( tinBaseP , pbc , cbFill , FILLbYTE_BOOK0c ) ; pbc += cbFill ;
+                                                              thirdC::c_memsetIF( tin0P , pbc , cbFill , FILLbYTE_BOOK0c ) ; pbc += cbFill ;
         {
         if( cbFill )
 
         if( F(flagsP) & flBOOK0cwRITE_TAILfINGER      )     { putNegAM( *(countT*)pbc , FINGERnEG_BOOK0cwRITEtAIL )       ; pbc += sizeof( countT ) ; }
 
-        if( cb2P                                      )     { thirdC::c_memcpyIF( tinBaseP , pbc , pb2P , cb2P )              ; pbc += cb2P             ; }
-        if( pb1P && cb1P )                                    thirdC::c_memcpyIF( tinBaseP , pbc , pb1P , cb1P )              ; pbc += cb1P             ; // INTENTIONAL CONDITIONAL MEMCPY FOLLOWED BY UNCONDITIONAL INCREMENT OF pbc
+        if( cb2P                                      )     { thirdC::c_memcpyIF( tin0P , pbc , pb2P , cb2P )              ; pbc += cb2P             ; }
+        if( pb1P && cb1P )                                    thirdC::c_memcpyIF( tin0P , pbc , pb1P , cb1P )              ; pbc += cb1P             ; // INTENTIONAL CONDITIONAL MEMCPY FOLLOWED BY UNCONDITIONAL INCREMENT OF pbc
 
         if( pcOffWroteP ) *pcOffWroteP = pbc - pbBody ;
 
@@ -48,7 +48,7 @@
     else
     }
         }
-            thirdC::c_memsetIF( tinBaseP , pbc , cb1P , bSet ) ; pbc += cb1P  ;
+            thirdC::c_memsetIF( tin0P , pbc , cb1P , bSet ) ; pbc += cb1P  ;
             cb1P = pHead->cbBody - cbuOld - 1 ; // 1 IS SUBTRACTED TO PREVENT THE LATH BYTE FROM BEING SET ; THIS IS TO AVOID UNDESIRED CLOSURE O A booksC bookC INSTANCE ; AN APP THAT WANTS TO SET THE LATH BYTE MUST DO IT EXPLICITLY WITH AN OO'TH CALL TO writeF
             byteT bSet = (byteT)cb1P ;
         {
@@ -60,11 +60,11 @@
     const countT offPageStart = (countT)pbc / cbPage  ;
     byteT* pbc = pbStart ;
     byteT* const pbStart = pbBody + cbuOld ;
-    static const countT cbPage = thirdC::os_cbPage_IF( tinBaseP ) ; //A:ASSUME: PAGE SIZE DOES NOT CHANGE DURING LIFE OF BASE OS GEN
+    static const countT cbPage = thirdC::os_cbPage_IF( tin0P ) ; //A:ASSUME: PAGE SIZE DOES NOT CHANGE DURING LIFE OF BASE OS GEN
 
     if( F(flagsP) & flBOOK0cwRITE_PURGE ) cbuOld = 0 ;
 
-    if( F(flagsP) & flBOOK0cwRITE_FLUSHaFTER ) thirdC::flushViewOfFileIF( tinBaseP , (byteT*)pHead , sizeof( bookHeadS ) , flFLUSHvIEWoFfILE_null , phFileP ) ; // flFLUSHvIEWoFfILE_null BECAUSE ANOTHER FLUSH IS ABOUT TO OCCUR (FOR DATA)
+    if( F(flagsP) & flBOOK0cwRITE_FLUSHaFTER ) thirdC::flushViewOfFileIF( tin0P , (byteT*)pHead , sizeof( bookHeadS ) , flFLUSHvIEWoFfILE_null , phFileP ) ; // flFLUSHvIEWoFfILE_null BECAUSE ANOTHER FLUSH IS ABOUT TO OCCUR (FOR DATA)
 
     }
         }
@@ -127,14 +127,14 @@
      
             }
                 continue ;
-                ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;
+                ++ s ; thirdC::dosSleepWinkIF( tin0P ) ;
             {
             if( !cbuOld && !( F(pHead->flags) & flBOOKhEADs_PRIORbOOKnOTcONTINUEDhERE ) && !( F(flagsP) & flBOOK0cwRITE_CONTINUEfROMpRIOR ) )
     
             cbuOld = pHead->cbUsed ;
         {
         for(;;)
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     ZE( countT , cbFill ) ;
     ZE( countT , cbuOld ) ;
@@ -187,10 +187,10 @@
     //    countT foo = 2 ;
     //    if( pHead->cbUsed == pHead->cbBody ) bFullAtStart = 1 ;
     //{
-    //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] ) //U:: TO FIND A BUG
+    //if( ((tin9S&)tin0P).pc Utility[ 0 ] ) //U:: TO FIND A BUG
     ZE( boolT , bFullAtStart ) ;
 {
-/*1*/countT book0C::writeF( tin0S& tinBaseP , flagsT& flagsResultP , const byteT* const pb1P , countT& cb1P , const byteT* const pb2P , countT& cb2P , const flagsT flagsP , countT* const pcOffWroteP , const handleC* const phFileP )/*1*/
+/*1*/countT book0C::writeF( tin0S& tin0P , flagsT& flagsResultP , const byteT* const pb1P , countT& cb1P , const byteT* const pb2P , countT& cb2P , const flagsT flagsP , countT* const pcOffWroteP , const handleC* const phFileP )/*1*/
 
 
 /**/
@@ -222,7 +222,7 @@
   can be 0
  pb1P
  flagsResultP
- tinBaseP
+ tin0P
 parameters
 i evaluate to the offset at which i wrote the specified bytes
  the !pb1P functionality is referred to as "set" (i.e. "setting the bytes")

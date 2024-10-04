@@ -9,13 +9,13 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK ) ;
 
     }
-        etThread.strokeF( tinBaseP , T(bDoneCounting?"*":" ")+T("[pertuckDirs,pertuckFiles]: ")+TF2(pertuckDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb+TF2(pertuckFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr ) ;
+        etThread.strokeF( tin0P , T(bDoneCounting?"*":" ")+T("[pertuckDirs,pertuckFiles]: ")+TF2(pertuckDirs,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb+TF2(pertuckFiles,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr ) ;
 
         countT pertuckFiles = cFilesCopied * TUCK / cFiles ;
         countT pertuckDirs  = cDirsCopied  * TUCK / cDirs  ;
@@ -24,7 +24,7 @@ etherC::loafIF( tinBaseP ) ;
 {
 while( !ether && !bDoneCopying || ( cAfter && cAfter -- ) )
 countT cAfter = 1 ;
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 TN( tcr , "\r\n" ) ;
 TN( tb , " " ) ;
 
@@ -43,7 +43,7 @@ DONE( tmCopyF )
 }
     bDoneP = 1 ;
 
-    ((thirdC&)etThread).diskWalkCopyF( tinBaseP , cDirsP , cFilesP , ether , postTO , postFROM , myCBF ) ;
+    ((thirdC&)etThread).diskWalkCopyF( tin0P , cDirsP , cFilesP , ether , postTO , postFROM , myCBF ) ;
 
     boolT&  bDoneP  =  *(boolT*)pTaskP->c3 ;
     countT& cFilesP = *(countT*)pTaskP->c2 ;
@@ -58,11 +58,11 @@ DONE( tmCountF )
     cFilesP -- ;
     cDirsP -- ;
 
-    thirdC::diskWalkIF( tinBaseP , cDirsP , cFilesP , postFROM , ether ) ;
+    thirdC::diskWalkIF( tin0P , cDirsP , cFilesP , postFROM , ether ) ;
 
 
-    ++ s ; ether.osSleepF( tinBaseP , TOCK << 3 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     cFilesP ++ ;
     cDirsP ++ ;
@@ -80,9 +80,9 @@ TASK( tmCountF )
 }
     return bDoIt ;
 
-    boolT  bDoIt = !thirdC::c_strstrIF( tinBaseP , postNameP , "do.not.copy.a.file.with.this.in.its.name" ) ;
+    boolT  bDoIt = !thirdC::c_strstrIF( tin0P , postNameP , "do.not.copy.a.file.with.this.in.its.name" ) ;
 {
-boolT myCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
+boolT myCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP )
 
 /*1*/WAKEsHOWtEXT( "example.other.3func.34194.thirdC.diskWalkCopyF.progress.plain" )/*1*/
 /**/

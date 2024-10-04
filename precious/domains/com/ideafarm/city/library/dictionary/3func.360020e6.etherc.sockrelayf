@@ -8,31 +8,31 @@
 
 
 }
-    delF( tinBaseP , pbb ) ;
+    delF( tin0P , pbb ) ;
     }
-        __( sizeof cbi - sInP.readF( tinBaseP , (byteT*)&cbi , sizeof cbi ) ) ;
+        __( sizeof cbi - sInP.readF( tin0P , (byteT*)&cbi , sizeof cbi ) ) ;
 
-        if( pBatonOutP ) pBatonOutP->ungrabF( tinBaseP ) ;
-        sOutP.writeF( tinBaseP , pbb , cbi ) ;
-        sOutP.writeF( tinBaseP , (byteT*)&cbi , sizeof cbi ) ;
-        if( pBatonOutP ) pBatonOutP->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        if( pBatonOutP ) pBatonOutP->ungrabF( tin0P ) ;
+        sOutP.writeF( tin0P , pbb , cbi ) ;
+        sOutP.writeF( tin0P , (byteT*)&cbi , sizeof cbi ) ;
+        if( pBatonOutP ) pBatonOutP->grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-        __( cbi - sInP.readF( tinBaseP , pbb , cbi ) ) ;
+        __( cbi - sInP.readF( tin0P , pbb , cbi ) ) ;
 
         }
-            newF( tinBaseP , LF , pbb , cbb ) ; ___( pbb ) ;
+            newF( tin0P , LF , pbb , cbb ) ; ___( pbb ) ;
             cbb = cbi ;
-            delF( tinBaseP , pbb ) ;
+            delF( tin0P , pbb ) ;
         {
         if( cbb < cbi )
     {
     while( !POOP && cbi )
 
-    newF( tinBaseP , LF , pbb , cbb ) ; ___( pbb ) ;
+    newF( tin0P , LF , pbb , cbb ) ; ___( pbb ) ;
     if( !cbb ) cbb ++ ;
     if( cbb < cbEstimateP ) cbb = cbEstimateP ;
     cbb = cbi ;
-    __( sizeof cbi - sInP.readF( tinBaseP , (byteT*)&cbi , sizeof cbi ) ) ;
+    __( sizeof cbi - sInP.readF( tin0P , (byteT*)&cbi , sizeof cbi ) ) ;
 
     ZE( countT , cbi ) ;
     ZE( byteT* , pbb ) ;
@@ -46,7 +46,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::sockRelayF( tin0S& tinBaseP , socketC& sOutP , socketC& sInP , batonC* const pBatonOutP , const countT cbEstimateP )/*1*/
+/*1*/voidT etherC::sockRelayF( tin0S& tin0P , socketC& sOutP , socketC& sInP , batonC* const pBatonOutP , const countT cbEstimateP )/*1*/
 
 /**/
 */
@@ -61,7 +61,7 @@
  sInP
   must be connected and ready to write
  sOutP
- tinBaseP
+ tin0P
 arguments
 this function writes to sOutP exactly what it reads from sInP, excluding the terminating length value of 0
 this function will not return until the peer either writes a length prefix with value 0 or closes its socket

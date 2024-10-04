@@ -9,26 +9,26 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     }
-        sock.connectF( tinBaseP , idPort , pNicName[ offi ] ) ;
-        socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tin0P , idPort , pNicName[ offi ] ) ;
+        socketC sock( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
     if( !offi )
 
-    etThread.delF( tinBaseP , psttNew ) ;
-    etThread.traceF( tinBaseP , psttNew ) ;
-    etThread.strFromF( tinBaseP , psttNew , pNicName[ offi ] , flFORMAT_null , 0 , 0 , 0 , 0 ) ; ___( psttNew ) ;
+    etThread.delF( tin0P , psttNew ) ;
+    etThread.traceF( tin0P , psttNew ) ;
+    etThread.strFromF( tin0P , psttNew , pNicName[ offi ] , flFORMAT_null , 0 , 0 , 0 , 0 ) ; ___( psttNew ) ;
     ZE( strokeS* , psttNew ) ;
 
-    etThread.traceF( tinBaseP , T("address:    ")+T(pNicName[offi]) ) ;
+    etThread.traceF( tin0P , T("address:    ")+T(pNicName[offi]) ) ;
 {
 for( countT offi = 0 ; offi < cNicName ; offi ++ )
 
-etThread.sockNicNameF( tinBaseP , pNicName , cNicName , tName ) ; ___( pNicName ) ;
+etThread.sockNicNameF( tin0P , pNicName , cNicName , tName ) ; ___( pNicName ) ;
 ZE( countT    , cNicName ) ;
 ZE( nicNameC* , pNicName ) ;
 
@@ -37,10 +37,10 @@ ZE( nicNameC* , pNicName ) ;
 TN( tName , "factory1.ideafarm.com" ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK ) ;
 {
 while( !idPort )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
 etThread.osThreadF( TaRG1( tmListenF ) ) ;
 
@@ -48,17 +48,17 @@ TODO
 
 DONE( tmListenF )
 
-etThread.traceF( tinBaseP , T("a client has connected [nnHe]:    ")+T(nnHe) ) ;
+etThread.traceF( tin0P , T("a client has connected [nnHe]:    ")+T(nnHe) ) ;
 DEL( pso ) ;
-sl.acceptF( tinBaseP , pso , idpHe , nnHe , bRefuse ) ; ___( pso ) ;
+sl.acceptF( tin0P , pso , idpHe , nnHe , bRefuse ) ; ___( pso ) ;
 ZE( boolT , bRefuse ) ;
 nicNameC nnHe ;
 ZE( countT , idpHe ) ;
 ZE( socketC* , pso ) ;
 
-sl.listenF( tinBaseP ) ;
-idPort = sl.bindF( tinBaseP ) ;
-socketC sl( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+sl.listenF( tin0P ) ;
+idPort = sl.bindF( tin0P ) ;
+socketC sl( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 
 TASK( tmListenF )

@@ -9,46 +9,46 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
-etThread.delF( tinBaseP , pNicNameWhite ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
-sgnDone_tmUdpFilesEndpointThrowerF.waitF( tinBaseP ) ;
+etThread.delF( tin0P , pNicNameWhite ) ;
+etThread.traceF( tin0P , T("ok") ) ;
+sgnDone_tmUdpFilesEndpointThrowerF.waitF( tin0P ) ;
 
-etThread.traceF( tinBaseP , T("waiting for endpoints to end") ) ;
+etThread.traceF( tin0P , T("waiting for endpoints to end") ) ;
 bQuit = 1 ;
 
 }
     break ; //REMOVE FOR BURN-IN TESTING
 
-    etThread.traceF( tinBaseP , T("process [mTocks]:    ")+TT(timeE1,timeE2)+tb4+TF2(mTocksE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("throw   [mTocks]:    ")+TT(timeT1,timeT2)+tb4+TF2(mTocksT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("[mGBits]:            ")+TF2(mGBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("[cGram]:            ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("process [mTocks]:    ")+TT(timeE1,timeE2)+tb4+TF2(mTocksE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("throw   [mTocks]:    ")+TT(timeT1,timeT2)+tb4+TF2(mTocksT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[mGBits]:            ")+TF2(mGBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[cGram]:            ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     measureT mGBits = (measureT)( cb04Thrown << 3 ) / ( TICK << 2 ) ;
 
     measureT mTocksE = (measureT)timeE1 / TOCK ;
     measureT mTocksT = (measureT)timeT1 / TOCK ;
 
-    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO PROCESS
-    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO PROCESS
+    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
     ZE( sCountT , timeE2 ) ;
     ZE( countT  , timeE1 ) ;
 
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etThread.osTimeSubtractF( tinBaseP , timeT1 , timeT2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO THROW
-    etThread.osTimeNowF( tinBaseP , timeT1 , timeT2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeT1 , timeT2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO THROW
+    etThread.osTimeNowF( tin0P , timeT1 , timeT2 ) ;
     ZE( sCountT , timeT2 ) ;
     ZE( countT  , timeT1 ) ;
 
-    etThread.ifcUdpFileThrowFileF( tinBaseP , ether , idGram , secretToUse , cThrown , cb04Thrown , tTestFileToThrow ) ;
+    etThread.ifcUdpFileThrowFileF( tin0P , ether , idGram , secretToUse , cThrown , cb04Thrown , tTestFileToThrow ) ;
     ZE( count04T , cb04Thrown  ) ;
     ZE( countT   , cThrown     ) ;
     ZE( countT   , idGram      ) ;
 
-    etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
+    etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
     ZE( sCountT , timeA2 ) ;
     ZE( countT  , timeA1 ) ;
 {
@@ -56,8 +56,8 @@ while( !ether )
 ZE( count04T , cb04Thrown ) ;
 ZE( countT , cThrown ) ;
 
-//etThread.boxPutF( tinBaseP , tTestFileToThrow , T("hello at ")+TT(timeN1,timeN2)+T("\r\n") ) ;
-etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+//etThread.boxPutF( tin0P , tTestFileToThrow , T("hello at ")+TT(timeN1,timeN2)+T("\r\n") ) ;
+etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
 ZE( sCountT , timeN2 ) ;
 ZE( countT  , timeN1 ) ;
 
@@ -65,30 +65,30 @@ TN( tTestFileCaught  , "///ideafarm/files.in/web.root/3/index.html" ) ;
 
 TN( tTestFileToThrow , "///ideafarm/files.out/web.root/3/index.html" ) ;
 
-//++ s ; ether.osSleepF( tinBaseP , TICK << 4 ) ;         //U:: TO FIND A BUG
-++ s ; ether.osSleepF( tinBaseP , TOCK << 2 ) ;         // LET WORKER THREADS GET SET UP
+//++ s ; ether.osSleepF( tin0P , TICK << 4 ) ;         //U:: TO FIND A BUG
+++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;         // LET WORKER THREADS GET SET UP
 
-etThread.traceF( tinBaseP , T("waited  for woth secret") ) ;
+etThread.traceF( tin0P , T("waited  for woth secret") ) ;
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
-    etThread.traceF( tinBaseP , T("waiting for a secret 1 [&secretToUse,secretToUse]:    ")+TF2((countT)&secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+    etThread.traceF( tin0P , T("waiting for a secret 1 [&secretToUse,secretToUse]:    ")+TF2((countT)&secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 {
 while( !secretToUse && !ether )
-etThread.traceF( tinBaseP , T("waiting for woth secret") ) ;
+etThread.traceF( tin0P , T("waiting for woth secret") ) ;
 
 CONoUTrAW( "\r\n" ) ;
 
 //}
-//    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+//    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 //{
 //while( ( !slab.id PortUdpFileCatcher || !psoEndpointThrower ) && !ether )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 static slabS& slab = slabS::slabIF() ;
 
 etThread.osThreadF( TaRG2sGNdONE( tmUdpFilesEndpointThrowerF , sgnDone_tmUdpFilesEndpointThrowerF ) , (countT)&bQuit , (countT)&psoEndpointThrower , (countT)&grab_psoEndpointThrower , (countT)&pNicNameWhite , (countT)&cNicNameWhite , (countT)&grab_pNicNameWhite , (countT)&nicNameToUse , (countT)&secretToUse ) ;
-signC sgnDone_tmUdpFilesEndpointThrowerF(   tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmUdpFilesEndpointThrowerF(   tin0P , TAG( TAGiDnULL ) ) ;
 ZE( boolT , bQuit ) ;
-grabC grab_psoEndpointThrower(   tinBaseP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
+grabC grab_psoEndpointThrower(   tin0P , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
 ZE( socketC* , psoEndpointThrower ) ;
 static ZE( countT , secretToUse ) ;
 nicNameC nicNameToUse ;
@@ -99,11 +99,11 @@ TN( tb4 , "    " ) ;
 //    if( !pNicNameWhite ) { BLAMMO ; }
 //
 //    }
-//        etThread.traceF( tinBaseP , T("white:    ")+T(pNicNameWhite[offa]) ) ;
+//        etThread.traceF( tin0P , T("white:    ")+T(pNicNameWhite[offa]) ) ;
 //    {
 //    for( countT offa = 0 ; offa < cNicNameWhite ; offa ++ )
 //
-//    socketC::nicNameIF( tinBaseP , etThread , pNicNameWhite , cNicNameWhite , tListWhite ) ; ___( pNicNameWhite ) ;
+//    socketC::nicNameIF( tin0P , etThread , pNicNameWhite , cNicNameWhite , tListWhite ) ; ___( pNicNameWhite ) ;
 //
 //    tListWhite += T("factory9.ideafarm.com") ;
 //    tListWhite += T("factory8.ideafarm.com") ;
@@ -119,13 +119,13 @@ TN( tb4 , "    " ) ;
 //{
 ZE( countT    , cNicNameWhite ) ;
 ZE( nicNameC* , pNicNameWhite ) ;
-grabC grab_pNicNameWhite( tinBaseP , TAG( TAGiDnULL ) ) ;
+grabC grab_pNicNameWhite( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmUdpFilesEndpointThrowerF )
 }
-    etThread.ifcUdpFilesEndpointF( tinBaseP , bQuitP , idPortEndpointThrowerNU , TICK >> 0 , psoEndpointP , grab_psoEndpointP , pNicNameWhiteP , cNicNameWhiteP , grab_pNicNameWhiteP , pNicNameToUseP , pSecretToUseP ) ;
+    etThread.ifcUdpFilesEndpointF( tin0P , bQuitP , idPortEndpointThrowerNU , TICK >> 0 , psoEndpointP , grab_psoEndpointP , pNicNameWhiteP , cNicNameWhiteP , grab_pNicNameWhiteP , pNicNameToUseP , pSecretToUseP ) ;
     ZE( countT , idPortEndpointThrowerNU ) ;
 
     countT*          pSecretToUseP         =           (countT*)pTaskP->c8 ;

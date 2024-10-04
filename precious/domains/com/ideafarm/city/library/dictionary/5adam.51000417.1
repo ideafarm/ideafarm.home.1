@@ -8,37 +8,37 @@
 
 REST
 
-sgnDone_tmWorkF.waitF( tinBaseP ) ;
+sgnDone_tmWorkF.waitF( tin0P ) ;
 etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
-signC sgnDone_tmWorkF( tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmWorkF )
 }
-    etThread.strokeF( tinBaseP , T("ok\r\n") ) ;
-    writeTimeNowTableF( tinBaseP , etThread ) ;
-    writeValidFlagsTableF( tinBaseP , etThread , swValidFlags , idGroupFlags ) ;
+    etThread.strokeF( tin0P , T("ok\r\n") ) ;
+    writeTimeNowTableF( tin0P , etThread ) ;
+    writeValidFlagsTableF( tin0P , etThread , swValidFlags , idGroupFlags ) ;
 
-    etThread.delF( tinBaseP , postx ) ;
+    etThread.delF( tin0P , postx ) ;
 
-    etThread.boxPutF( tinBaseP , tFileOut2d , postSplitAt , costx - cost1 ) ;
-    etThread.boxPutF( tinBaseP , tFileOut2c , postSplitAt , costx - cost1 ) ;
-    etThread.boxPutF( tinBaseP , tFileOut2b , postSplitAt , costx - cost1 ) ;
-    etThread.boxPutF( tinBaseP , tFileOut2a , postSplitAt , costx - cost1 ) ;
-    //etThread.boxPutF( tinBaseP , tFileOut2  , postSplitAt , costx - cost1 ) ;
+    etThread.boxPutF( tin0P , tFileOut2d , postSplitAt , costx - cost1 ) ;
+    etThread.boxPutF( tin0P , tFileOut2c , postSplitAt , costx - cost1 ) ;
+    etThread.boxPutF( tin0P , tFileOut2b , postSplitAt , costx - cost1 ) ;
+    etThread.boxPutF( tin0P , tFileOut2a , postSplitAt , costx - cost1 ) ;
+    //etThread.boxPutF( tin0P , tFileOut2  , postSplitAt , costx - cost1 ) ;
 
-    etThread.boxPutF( tinBaseP , tFileOut1d , postx , cost1 ) ;
-    etThread.boxPutF( tinBaseP , tFileOut1c , postx , cost1 ) ;
-    etThread.boxPutF( tinBaseP , tFileOut1b , postx , cost1 ) ;
-    etThread.boxPutF( tinBaseP , tFileOut1a , postx , cost1 ) ;
-    //etThread.boxPutF( tinBaseP , tFileOut1  , postx , cost1 ) ;
+    etThread.boxPutF( tin0P , tFileOut1d , postx , cost1 ) ;
+    etThread.boxPutF( tin0P , tFileOut1c , postx , cost1 ) ;
+    etThread.boxPutF( tin0P , tFileOut1b , postx , cost1 ) ;
+    etThread.boxPutF( tin0P , tFileOut1a , postx , cost1 ) ;
+    //etThread.boxPutF( tin0P , tFileOut1  , postx , cost1 ) ;
 
     countT cost1 = postSplitAt - postx ;
 
     postSplitAt += 5 ;
     if( !postSplitAt ) { BLAMMO ; }
-    osTextT* postSplitAt = thirdC::c_strstrIF( tinBaseP , postx + costx / 2 , "END\r\n//SOURCE:" ) ; // SPLIT THE IMAGE INTO OO IMAGES TO AVOID CAUSING COMPILER (wpp386) TO CRAP AND DIE
+    osTextT* postSplitAt = thirdC::c_strstrIF( tin0P , postx + costx / 2 , "END\r\n//SOURCE:" ) ; // SPLIT THE IMAGE INTO OO IMAGES TO AVOID CAUSING COMPILER (wpp386) TO CRAP AND DIE
 
     TN( tFileOut2d , "///ideafarm/precious/domains/com/ideafarm/city/library/snip/ipdos.adam.hide.third.2.h" ) ;
     TN( tFileOut2c , "///ideafarm/precious/domains/com/ideafarm/city/library/snip/ipdos.adam.show.third.2.h" ) ;
@@ -56,7 +56,7 @@ DONE( tmWorkF )
     //TN( tFileOut2 , "///ideafarm/precious/domains/com/ideafarm/city/library/snip/ipdos.2.h" ) ;
     //TN( tFileOut1 , "///ideafarm/precious/domains/com/ideafarm/city/library/snip/ipdos.1.h" ) ;
 
-    etThread.boxPutF( tinBaseP , tFileOutAll , postx , costx ) ;
+    etThread.boxPutF( tin0P , tFileOutAll , postx , costx ) ;
     TN( tFileOutAll , "///ideafarm/precious/domains/com/ideafarm/city/library/snip/ipdos.h" ) ;
 
     // 
@@ -79,14 +79,14 @@ DONE( tmWorkF )
     // 
     // USAGE NOTES
 
-    etThread.delF( tinBaseP , pstto ) ;
-    countT costx = etThread.strMakeF( tinBaseP , LF , postx , pstto ) ; ___( postx ) ;
+    etThread.delF( tin0P , pstto ) ;
+    countT costx = etThread.strMakeF( tin0P , LF , postx , pstto ) ; ___( postx ) ;
     ZE( osTextT* , postx ) ;
 
     __( idLath > 0xdfffffff ) ;
-    etThread.strokeF( tinBaseP , TF2(idf,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    etThread.strokeF( tin0P , TF2(idf,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
     }
-        etThread.delF( tinBaseP , psttw ) ;
+        etThread.delF( tin0P , psttw ) ;
         }
             }
                 break ;
@@ -96,24 +96,24 @@ DONE( tmWorkF )
             default :
             //}
             //    break ;
-            //    etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(idLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-            //    etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+            //    etThread.strFuseF( tin0P , pstto , T("0x")+TF3(idLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+            //    etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
             //    bNewGroup = 0 ;
             //    __Z( bIn3block ) ;
             //{
             //case  :
             //}
             //    break ;
-            //    etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(idLath+1,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-            //    etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+            //    etThread.strFuseF( tin0P , pstto , T("0x")+TF3(idLath+1,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+            //    etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
             //    bNewGroup = 0 ;
             //    __Z( bIn3block ) ;
             //{
             //case  :
             //}
             //    break ;
-            //    etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(++idbLast,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2) ) ; ___( pstto ) ;
-            //    etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+            //    etThread.strFuseF( tin0P , pstto , T("0x")+TF3(++idbLast,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,2) ) ; ___( pstto ) ;
+            //    etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
             //    bNewGroup = 0 ;
             //    __Z( bIn3block ) ;
             //{
@@ -121,12 +121,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = idbLath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(idbLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(idbLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ idbLath ;
                 }
                     groupWoth = ++idbLath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -136,12 +136,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = idaLath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(idaLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(idaLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ idaLath ;
                 }
                     groupWoth = ++idaLath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -150,18 +150,18 @@ DONE( tmWorkF )
             case 0x10 :
             }
                 break ;
-                etThread.delF( tinBaseP , psttLathWord ) ;
+                etThread.delF( tin0P , psttLathWord ) ;
                 }
-                    etThread.strFuseF( tinBaseP , pstto , tLeft+T("_max     0x")+TF3(idr01Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                    etThread.strFuseF( tin0P , pstto , tLeft+T("_max     0x")+TF3(idr01Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
                     TN( tLeft , "\r\n#define " ) ; tLeft += T(psttLathWord) ;
                 {
                 if( psttLathWord && psttLathWord->idAdam )
 
                 idr01Lath += 0x10 - 1 ; //THIS RESERVES THE REMAINING f VALUES
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(++idr01Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(++idr01Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
 
-                etThread.strWordF( tinBaseP , psttLathWord , psttw , sttq , S1C(' ') , - 2 ) ; ___( psttLathWord ) ;
+                etThread.strWordF( tin0P , psttLathWord , psttw , sttq , S1C(' ') , - 2 ) ; ___( psttLathWord ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , psttLathWord ) ;
 
@@ -171,12 +171,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = id9Lath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(id9Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(id9Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ id9Lath ;
                 }
                     groupWoth = ++id9Lath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -186,12 +186,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = id8Lath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(id8Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(id8Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ id8Lath ;
                 }
                     groupWoth = ++id8Lath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -201,12 +201,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = id7Lath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(id7Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(id7Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ id7Lath ;
                 }
                     groupWoth = ++id7Lath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -216,12 +216,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = id5Lath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(id6Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(id6Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ id6Lath ;
                 }
                     groupWoth = ++id6Lath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -231,12 +231,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = id5Lath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(id5Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(id5Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ id5Lath ;
                 }
                     groupWoth = ++id5Lath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -246,12 +246,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = id4Lath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(id4Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(id4Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ id4Lath ;
                 }
                     groupWoth = ++id4Lath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -261,12 +261,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = id3Lath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(id3Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(id3Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ id3Lath ;
                 }
                     groupWoth = ++id3Lath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -276,12 +276,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = id2Lath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(id2Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(id2Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ id2Lath ;
                 }
                     groupWoth = ++id2Lath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -291,12 +291,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = id1Lath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(id1Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(id1Lath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ id1Lath ;
                 }
                     groupWoth = ++id1Lath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -306,12 +306,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = idwmLast ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(idwmLast,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(idwmLast,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ idwmLast ;
                 }
                     groupWoth = ++idwmLast ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -321,12 +321,12 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = fiLast ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(fiLast,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(fiLast,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ fiLast ;
                 }
                     groupWoth = ++fiLast ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
@@ -337,12 +337,12 @@ DONE( tmWorkF )
                 break ;
                 flNext <<= 1 ;
                 (countT&)swValidFlags |= vv ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(vv,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(vv,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
 
                 //LOGrAW3( "[vv]          :    " , vv                             , "\r\n" ) ; //U:: TO FIND A BUG
                 //LOGrAW3( "[markFlags]   :    " , markFlags                      , "\r\n" ) ; //U:: TO FIND A BUG
                 //LOGrAW3( "[flNext]      :    " , flNext                         , "\r\n" ) ; //U:: TO FIND A BUG
-                //LOGrAW3( "[cFlavors]    :    " , swValidFlags.cFlavorsF( tinBaseP ) , "\r\n" ) ; //U:: TO FIND A BUG
+                //LOGrAW3( "[cFlavors]    :    " , swValidFlags.cFlavorsF( tin0P ) , "\r\n" ) ; //U:: TO FIND A BUG
                 //LOGrAW3( "[idGroupFlags]:    " , idGroupFlags                   , "\r\n" ) ; //U:: TO FIND A BUG
 
                 flagsT vv = flNext | markFlags ;
@@ -360,23 +360,23 @@ DONE( tmWorkF )
 
                     b_fl = 1 ;
 
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
 
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
 
                 __Z( bIn3block ) ;
 
                 //}
-                //    etThread.delF( tinBaseP , posto ) ;
-                //    etThread.boxPutF( tinBaseP , T("///d/tmp/goo.ttt") , posto , costo ) ;
-                //    costo = etThread.strMakeF( tinBaseP , LF , posto , psttw ) ; ___( posto ) ;
+                //    etThread.delF( tin0P , posto ) ;
+                //    etThread.boxPutF( tin0P , T("///d/tmp/goo.ttt") , posto , costo ) ;
+                //    costo = etThread.strMakeF( tin0P , LF , posto , psttw ) ; ___( posto ) ;
                 //
-                //    etThread.delF( tinBaseP , posto ) ;
-                //    etThread.boxPutF( tinBaseP , T("///d/tmp/foo.ttt") , posto , costo ) ;
-                //    countT costo = etThread.strMakeF( tinBaseP , LF , posto , pstto ) ; ___( posto ) ;
+                //    etThread.delF( tin0P , posto ) ;
+                //    etThread.boxPutF( tin0P , T("///d/tmp/foo.ttt") , posto , costo ) ;
+                //    countT costo = etThread.strMakeF( tin0P , LF , posto , pstto ) ; ___( posto ) ;
                 //    ZE( osTextT* , posto ) ;
                 //{
                 //if( !bIn3block ) //U:: TO FIND A BUG
@@ -385,18 +385,18 @@ DONE( tmWorkF )
             }
                 break ;
                 groupLath = idLath ;
-                etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(idLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , T("0x")+TF3(idLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
                 else ++ idLath ;
                 }
                     groupWoth = ++idLath ;
-                    prefixF( tinBaseP , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
+                    prefixF( tin0P , etThread , psttGroup , psttw ) ; ___( psttGroup ) ;
                     bNewGroup = 0 ;
                 {
                 if( bNewGroup )
                 }
                     __Z( bIn3block ) ;
-                    etThread.strokeF( tinBaseP , T("ERROR: NOT DELIMITED BY \"/*3*/\": \"\r\n")+T(psttw)+T("\r\n\"\r\n") ) ;
+                    etThread.strokeF( tin0P , T("ERROR: NOT DELIMITED BY \"/*3*/\": \"\r\n")+T(psttw)+T("\r\n\"\r\n") ) ;
                 {
                 if( !bIn3block )
             {
@@ -404,7 +404,7 @@ DONE( tmWorkF )
             }
                 break ;
                 }
-                        etThread.delF( tinBaseP , psttGroup ) ;
+                        etThread.delF( tin0P , psttGroup ) ;
                         b_fl = 0 ;
                         bNewGroup = 0 ;
                 {
@@ -412,34 +412,34 @@ DONE( tmWorkF )
                 if( bIn3block ) bNewGroup = 1 ;
 
                 }
-                    etThread.strFuseF( tinBaseP , pstto , tLeft+T("_min     0x")+TF3(groupWoth,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tLeft+T("_max     0x")+TF3(groupLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
+                    etThread.strFuseF( tin0P , pstto , tLeft+T("_min     0x")+TF3(groupWoth,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tLeft+T("_max     0x")+TF3(groupLath,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ;
                     TN( tLeft , "\r\n#define " ) ; tLeft += T(psttGroup) ;
                 {
                 else if( !bIn3block && psttGroup && psttGroup->idAdam )
-                if( b_fl ) { etThread.strFuseF( tinBaseP , pstto , T("\r\n#define ")+T(psttGroup)+T("_null    0x")+TF3(markFlags,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ; }
+                if( b_fl ) { etThread.strFuseF( tin0P , pstto , T("\r\n#define ")+T(psttGroup)+T("_null    0x")+TF3(markFlags,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( pstto ) ; }
                 bIn3block = !bIn3block ;
-                etThread.strFuseF( tinBaseP , pstto , t3 ) ; ___( pstto ) ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , t3 ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
             {
             case 1 :
             }
                 break ;
-                etThread.strFuseF( tinBaseP , pstto , psttw ) ; ___( pstto ) ;
+                etThread.strFuseF( tin0P , pstto , psttw ) ; ___( pstto ) ;
             {
             case 0 :
         {
         switch( idsTag )
 
-        etThread.strSubstringF( tinBaseP , psttw , idf , sttq , stTag , idsTag , tIn ) ; ___( psttw ) ;
+        etThread.strSubstringF( tin0P , psttw , idf , sttq , stTag , idsTag , tIn ) ; ___( psttw ) ;
         idsTag = 0 ;
         ZE( strokeS* , psttw ) ;
-        if( !( idf % TUCK ) ) etThread.strokeF( tinBaseP , TF2(idf,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r") ) ;
+        if( !( idf % TUCK ) ) etThread.strokeF( tin0P , TF2(idf,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r") ) ;
     {
     while( !ether && !etThread && idf )
-    switchC swValidFlags( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idGroupFlags ) ;
+    switchC swValidFlags( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idGroupFlags ) ;
     ZE( boolT , b_fl ) ;
     ZE( strokeS* , psttGroup ) ;
-    etThread.strokeF( tinBaseP , T("editing (cursor position)\r\n") ) ;
+    etThread.strokeF( tin0P , T("editing (cursor position)\r\n") ) ;
     ZE( countT , groupLath ) ;
     ZE( countT , groupWoth ) ;
     ZE( flagsT , markFlags ) ;
@@ -470,7 +470,7 @@ DONE( tmWorkF )
     //sttq = ze ;
     idf = 1 ;
 
-    ) , tIn.csF( tinBaseP ) + csTags ) ; ___( pstto ) ;
+    ) , tIn.csF( tin0P ) + csTags ) ; ___( pstto ) ;
 
         "\r\n"
 
@@ -535,16 +535,16 @@ DONE( tmWorkF )
         "// IPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System\r\n"
         "\r\n"
 
-    etThread.strMakeF( tinBaseP , LF , pstto , T(
+    etThread.strMakeF( tin0P , LF , pstto , T(
     ZE( strokeS* , pstto ) ;
 
-    // Warning! W726: col(1) no reference to formal parameter 'tinBaseP'
+    // Warning! W726: col(1) no reference to formal parameter 'tin0P'
 
     }
         offbIdType = idMax ;
         offbFlags = idMin - 1 ;
         __( cGaps ) ;
-        maskExtentF( tinBaseP , etThread , idMin , idMax , cGaps , FL_maskFlags ) ;
+        maskExtentF( tin0P , etThread , idMin , idMax , cGaps , FL_maskFlags ) ;
         ZE( countT , cGaps ) ;
         ZE( countT , idMax ) ;
         ZE( countT , idMin ) ;
@@ -584,59 +584,59 @@ DONE( tmWorkF )
                 case   1  : { csTags += sw_cTag * 0x100 ; break ; } // NO EDITS, BUT ALLOCATE 0x100 BYTES FOR GENERATED DEFINITION LINES FOR EACH GROUP
             {
             switch( idsTag )
-            idsTag = sw_cTag.leverF( tinBaseP , idf ) ;
+            idsTag = sw_cTag.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = sw_cTag.cFlavorsF( tinBaseP ) ;
+        countT cFlavors = sw_cTag.cFlavorsF( tin0P ) ;
     {
     ZE( countT , csTags ) ;
 
-    //etThread.strokeF( tinBaseP , TF2(idf,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+    //etThread.strokeF( tin0P , TF2(idf,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
     }
         else                                                              break ;
-        if( etThread.strIdF( tinBaseP , idf , sttq , stTag , idsTag , tIn ) ) ( (countT&)sw_cTag ) ++ ;
+        if( etThread.strIdF( tin0P , idf , sttq , stTag , idsTag , tIn ) ) ( (countT&)sw_cTag ) ++ ;
         idsTag = 0 ;
-        /*if( idf && !( idf % TUCK ) )*/ etThread.strokeF( tinBaseP , TF2(idf,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r") ) ;
+        /*if( idf && !( idf % TUCK ) )*/ etThread.strokeF( tin0P , TF2(idf,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r") ) ;
     {
     while( !ether && !etThread && idf )
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     countT idf = 1 ;
-    etThread.strokeF( tinBaseP , T("counting tags (cursor position)\r\n") ) ;
+    etThread.strokeF( tin0P , T("counting tags (cursor position)\r\n") ) ;
 
-    switchC sw_cTag( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idsTag ) ;
+    switchC sw_cTag( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idsTag ) ;
     ZE( countT , idsTag ) ;
 
-    //U:stTag << psttOldC( tinBaseP , etThread , T("/*idLath*/") ) ; //
-    //U:stTag << psttOldC( tinBaseP , etThread , T("/*idNext*/") ) ; //
-    psttv = psttOldC( tinBaseP , etThread , T("/*idb*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 11
-    psttv = psttOldC( tinBaseP , etThread , T("/*ida*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 01
-    psttv = psttOldC( tinBaseP , etThread , T("/*idr.01*/" ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // f
-    psttv = psttOldC( tinBaseP , etThread , T("/*id9*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // e
-    psttv = psttOldC( tinBaseP , etThread , T("/*id8*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // d
-    psttv = psttOldC( tinBaseP , etThread , T("/*id7*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // c
-    psttv = psttOldC( tinBaseP , etThread , T("/*id6*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // b
-    psttv = psttOldC( tinBaseP , etThread , T("/*id5*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // a
-    psttv = psttOldC( tinBaseP , etThread , T("/*id4*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 9
-    psttv = psttOldC( tinBaseP , etThread , T("/*id3*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 8
-    psttv = psttOldC( tinBaseP , etThread , T("/*id2*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 7
-    psttv = psttOldC( tinBaseP , etThread , T("/*id1*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 6
-    psttv = psttOldC( tinBaseP , etThread , T("/*idwm*/"   ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 5
-    psttv = psttOldC( tinBaseP , etThread , T("/*fi*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 4
-    psttv = psttOldC( tinBaseP , etThread , T("/*fl*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 3
-    psttv = psttOldC( tinBaseP , etThread , T("/*id*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 2
-    psttv = psttOldC( tinBaseP , etThread , t3               ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; // 1
+    //U:stTag << psttOldC( tin0P , etThread , T("/*idLath*/") ) ; //
+    //U:stTag << psttOldC( tin0P , etThread , T("/*idNext*/") ) ; //
+    psttv = psttOldC( tin0P , etThread , T("/*idb*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 11
+    psttv = psttOldC( tin0P , etThread , T("/*ida*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 01
+    psttv = psttOldC( tin0P , etThread , T("/*idr.01*/" ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // f
+    psttv = psttOldC( tin0P , etThread , T("/*id9*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // e
+    psttv = psttOldC( tin0P , etThread , T("/*id8*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // d
+    psttv = psttOldC( tin0P , etThread , T("/*id7*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // c
+    psttv = psttOldC( tin0P , etThread , T("/*id6*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // b
+    psttv = psttOldC( tin0P , etThread , T("/*id5*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // a
+    psttv = psttOldC( tin0P , etThread , T("/*id4*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 9
+    psttv = psttOldC( tin0P , etThread , T("/*id3*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 8
+    psttv = psttOldC( tin0P , etThread , T("/*id2*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 7
+    psttv = psttOldC( tin0P , etThread , T("/*id1*/"    ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 6
+    psttv = psttOldC( tin0P , etThread , T("/*idwm*/"   ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 5
+    psttv = psttOldC( tin0P , etThread , T("/*fi*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 4
+    psttv = psttOldC( tin0P , etThread , T("/*fl*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 3
+    psttv = psttOldC( tin0P , etThread , T("/*id*/"     ) ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; ; // 2
+    psttv = psttOldC( tin0P , etThread , t3               ) ; ___( psttv ) ; stTag << psttv ; psttv = 0 ; // 1
     ZE( strokeS* , psttv ) ;
     //FOR BEST SPEED, IT IS VERY IMPORTANT THAT THE MOST FREQUENT TAGS BE LISTED WOTH
     //THESE LINES CORRESPOND TO THE HARDCODED CASE VALUES
 
     TN( t3 , "/*" "3*/" ) ;
 
-    stackC stTag( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+    stackC stTag( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
 
     }
-        etThread.delF( tinBaseP , posti ) ;
+        etThread.delF( tin0P , posti ) ;
         tIn = T(posti) ;
-        etThread.boxGetShadowF( tinBaseP , posti , countTC() , tFileIn ) ; ___( posti ) ;
+        etThread.boxGetShadowF( tin0P , posti , countTC() , tFileIn ) ; ___( posti ) ;
         ZE( osTextT* , posti ) ;
     {
     TN( tIn , "" ) ;
@@ -652,24 +652,24 @@ if( pTaskP )
 TASK( tmWorkF )
 
 }
-    etThread.delF( tinBaseP , psttw ) ;
+    etThread.delF( tin0P , psttw ) ;
     }
         }
-            if( idw < cWords - 1 ) { etThread.strFuseF( tinBaseP , psttP , tUnder ) ; ___( psttP ) ; }
-            etThread.delF( tinBaseP , psttn ) ;
-            etThread.strFuseF( tinBaseP , psttP , psttn ) ; ___( psttP ) ;
-            etThread.strWordF( tinBaseP , psttn , psttw , sttq , sttUnder , idw ) ; ___( psttn ) ;
+            if( idw < cWords - 1 ) { etThread.strFuseF( tin0P , psttP , tUnder ) ; ___( psttP ) ; }
+            etThread.delF( tin0P , psttn ) ;
+            etThread.strFuseF( tin0P , psttP , psttn ) ; ___( psttP ) ;
+            etThread.strWordF( tin0P , psttn , psttw , sttq , sttUnder , idw ) ; ___( psttn ) ;
             ZE( strokeS* , psttn ) ;
             //sttq = ze ;
         {
         for( countT idw = 1 ; idw < cWords ; idw ++ )
         strokeS sttUnder('_') ;
-        etThread.strFuseF( tinBaseP , psttP , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ psttw->idAdam ) ; ___( psttP ) ;
-        sCountT cWords = etThread.strCLinesF( tinBaseP , psttw , tUnder ) ;
+        etThread.strFuseF( tin0P , psttP , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ psttw->idAdam ) ; ___( psttP ) ;
+        sCountT cWords = etThread.strCLinesF( tin0P , psttw , tUnder ) ;
         TN( tUnder , "_" ) ;
     {
     if( psttw )
-    etThread.strWordF( tinBaseP , psttw , psttFromP , sttq , S1C(' ') , 2 ) ; ___( psttw ) ;
+    etThread.strWordF( tin0P , psttw , psttFromP , sttq , S1C(' ') , 2 ) ; ___( psttw ) ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     ZE( strokeS* , psttw ) ;
 
@@ -677,7 +677,7 @@ TASK( tmWorkF )
     //psttP IS SET TO "PREFIX1_PREFIX2_..._PREFIXN"
     //ASSUME: psttFromP IS OF THE FORM "#define PREFIX1_PREFIX2_..._PREFIXN_SUFFIX"
 {
-voidT prefixF( tin0S& tinBaseP , etherC& etThread , strokeS*& psttP , const strokeS* const psttFromP )
+voidT prefixF( tin0S& tin0P , etherC& etThread , strokeS*& psttP , const strokeS* const psttFromP )
 
 }
     cGapsP = cZe - cBitsOut ;
@@ -707,41 +707,41 @@ voidT prefixF( tin0S& tinBaseP , etherC& etThread , strokeS*& psttP , const stro
     {
     IFbEcAREFUL
 {
-voidT maskExtentF( tin0S& tinBaseP , etherC& etThread , countT& idMinP , countT& idMaxP , countT& cGapsP , const flagsT maskP )
+voidT maskExtentF( tin0S& tin0P , etherC& etThread , countT& idMinP , countT& idMaxP , countT& cGapsP , const flagsT maskP )
 
 }
-    etThread.delF( tinBaseP , postx ) ;
-    etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/workshop/snip/1snip.1900000b.genValidFlags.h") , postx , costx ) ;
-    etThread.delF( tinBaseP , pstto ) ;
-    countT costx = etThread.strMakeF( tinBaseP , LF , postx , pstto ) ; ___( postx ) ;
+    etThread.delF( tin0P , postx ) ;
+    etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/city/workshop/snip/1snip.1900000b.genValidFlags.h") , postx , costx ) ;
+    etThread.delF( tin0P , pstto ) ;
+    countT costx = etThread.strMakeF( tin0P , LF , postx , pstto ) ; ___( postx ) ;
     ZE( osTextT* , postx ) ;
 
     }
-        etThread.strFuseF( tinBaseP , pstto , T("0x")+TF3(vv,flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+(idf<cFlavors?T(" ,\r\n"):T("\r\n")) ) ;
+        etThread.strFuseF( tin0P , pstto , T("0x")+TF3(vv,flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+(idf<cFlavors?T(" ,\r\n"):T("\r\n")) ) ;
         //LOGrAW7( "write [idf,leverP,vv]    :    " , idf , "    " , leverP , "    " , vv , "\r\n" ) ; //U:: TO FIND A BUG
         flagsT vv = swP ;
-        leverP = swP.leverF( tinBaseP , idf ) ;
+        leverP = swP.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    etThread.strMakeF( tinBaseP , LF , pstto , tLine , cFlavors * tLine.csF( tinBaseP ) ) ; ___( pstto ) ;
+    etThread.strMakeF( tin0P , LF , pstto , tLine , cFlavors * tLine.csF( tin0P ) ) ; ___( pstto ) ;
     TN( tLine , "0x00000000 ,\r\n" ) ;
     ZE( strokeS* , pstto ) ;
 
     //LOGrAW3( "write [cFlavors]    :    " , cFlavors , "\r\n" ) ; //U:: TO FIND A BUG
 
-    countT cFlavors = swP.cFlavorsF( tinBaseP ) ;
+    countT cFlavors = swP.cFlavorsF( tin0P ) ;
 {
-voidT writeValidFlagsTableF( tin0S& tinBaseP , etherC& etThread , switchC& swP , countT& leverP )
+voidT writeValidFlagsTableF( tin0S& tin0P , etherC& etThread , switchC& swP , countT& leverP )
 
 }
-    etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/domains/com/ideafarm/city/workshop/snip/1snip.1900000c.genTimeNow.h") , (osTextT*)tt , tt.csF( tinBaseP ) ) ;
+    etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/city/workshop/snip/1snip.1900000c.genTimeNow.h") , (osTextT*)tt , tt.csF( tin0P ) ) ;
     TN( tt , "" ) ; tt = T("0x")+TF3(timeN1,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(" ,\r\n0x")+TF3(timeN2,flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T("\r\n") ;
 
-    etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+    etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT  , timeN1 ) ;
 {
-voidT writeTimeNowTableF( tin0S& tinBaseP , etherC& etThread )
+voidT writeTimeNowTableF( tin0S& tin0P , etherC& etThread )
 
 // "///ideafarm/precious/domains/com/ideafarm/city/library/snip/ipdos.h"
 // "\ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\ipdos.h"

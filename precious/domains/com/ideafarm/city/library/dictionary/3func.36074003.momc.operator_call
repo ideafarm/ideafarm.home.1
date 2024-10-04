@@ -8,26 +8,26 @@
 
 
 }
-    if( bExistingPin ) ether.delF( tinBaseP , *(byteT**)&pbP ) ;
+    if( bExistingPin ) ether.delF( tin0P , *(byteT**)&pbP ) ;
     }
         }
             }
-                ether.memCopyF( tinBaseP , (byteT*)pCursor , (byteT*)pczNameP , cczName * sizeof( countT ) ) ;
+                ether.memCopyF( tin0P , (byteT*)pCursor , (byteT*)pczNameP , cczName * sizeof( countT ) ) ;
                 *( pCursor ++ ) = (count01T)( cczName * sizeof( countT ) / sizeof( count01T ) ) ;
                 *( pCursor ++ ) = (count01T)( bPinP ? ifcIDcMDsPOUSE_INSERTnAMEDpIN : ifcIDcMDsPOUSE_INSERTnAMEDpILL ) ;
                 *( pCursor ++ ) = 0                                                                                    ; //ESCAPE CODE
                 count01T* pCursor = pcP ;
             {
             if( pcP )
-            ether.newF( tinBaseP , LF , pcP , ccP ) ; ___( pcP ) ;
+            ether.newF( tin0P , LF , pcP , ccP ) ; ___( pcP ) ;
             ccP = 3 + cczName * sizeof( countT ) / sizeof( count01T ) ; //A: ASSUME: sizeof( countT ) IS A MULTIPLE OF sizeof( count01T )
-            countT cczName = ether.strBodyLengthF( tinBaseP , pczNameP ) + 1 ;
+            countT cczName = ether.strBodyLengthF( tin0P , pczNameP ) + 1 ;
         
-            else if( !bExistingPin ) ether.boxPutF( tinBaseP , tBig , pbP , cbP ) ;
+            else if( !bExistingPin ) ether.boxPutF( tin0P , tBig , pbP , cbP ) ;
             }
                 ccBody = 0 ;
-                ether.delF( tinBaseP , pcBody ) ;
-                ether.boxPutF( tinBaseP , tBig , (byteT*)pcBody , sizeof( count01T ) * ccBody ) ;
+                ether.delF( tin0P , pcBody ) ;
+                ether.boxPutF( tin0P , tBig , (byteT*)pcBody , sizeof( count01T ) * ccBody ) ;
             {
             if( !bPinP )
         {
@@ -40,31 +40,31 @@
     
         }
             }
-                for( countT off = 0 ; off < cbP ; off ++ ) pcBody[ off ] = (*this)( tinBaseP , pbP[ off ] ) ;
+                for( countT off = 0 ; off < cbP ; off ++ ) pcBody[ off ] = (*this)( tin0P , pbP[ off ] ) ;
             {
             if( pcBody )
-            ether.newF( tinBaseP , LF , pcBody , ccBody ) ; ___( pcBody ) ;
+            ether.newF( tin0P , LF , pcBody , ccBody ) ; ___( pcBody ) ;
             ccBody = cbP ;
         {
         else
         }
-            for( countT off = 0 ; off < cbP ; off ++ ) (*this)( tinBaseP , pbP[ off ] ) ;
+            for( countT off = 0 ; off < cbP ; off ++ ) (*this)( tin0P , pbP[ off ] ) ;
         {
         if( pczNameP && bPinP )
         ZE( countT    , ccBody ) ;
         ZE( count01T* , pcBody ) ;
     
-        if( !cbP ) cbP = ether.strBodyLengthF( tinBaseP , pbP ) ;
+        if( !cbP ) cbP = ether.strBodyLengthF( tin0P , pbP ) ;
     {
     if( pbP )
 
-    if( bExistingPin ) { ether.boxGetShadowF( tinBaseP , *(byteT**)&pbP , cbP , tBig ) ; ___( pbP ) ; }
+    if( bExistingPin ) { ether.boxGetShadowF( tin0P , *(byteT**)&pbP , cbP , tBig ) ; ___( pbP ) ; }
     const boolT bExistingPin = !pbP && !cbP && pczNameP && bPinP ;
 
     }
         tBig = T("///desk/" POSTfOLDERsECURITYkEYdEPOSITORY )+(idHomeDisk==1?T(""):T(" (Home ")+TF1(idHomeDisk)+T(")"))+T("/")+tName ;
         countT idHomeDisk = etherC::ifc_idHomeIdisk_IF() ;
-        textC tName( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , pczNameP , flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE , 8 , 0 , tDot ) ;
+        textC tName( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , pczNameP , flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE , 8 , 0 , tDot ) ;
         TN( tDot , "." ) ;
     {
     if( pczNameP )
@@ -80,7 +80,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/voidT momC::operator ()( tin0S& tinBaseP , count01T*& pcP , countT& ccP , const byteT* pbP , countT cbP , const countT* const pczNameP , const boolT bPinP )/*1*/
+/*1*/voidT momC::operator ()( tin0S& tin0P , count01T*& pcP , countT& ccP , const byteT* pbP , countT cbP , const countT* const pczNameP , const boolT bPinP )/*1*/
 /**/
 */
    the file will not be overwritten because such an overwrite would not alter its contents
@@ -112,7 +112,7 @@
   will be allocated and will point to a string of ccP codes
   must be 0
  pcP
- tinBaseP
+ tin0P
 arguments
 high security relies on secure transport of "pills" via secondary channels, such as trusted courier
 medium security (no pills) relies on long connection duration (days or strongs)

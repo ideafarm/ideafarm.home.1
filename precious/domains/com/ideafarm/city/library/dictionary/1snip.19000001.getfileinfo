@@ -13,17 +13,17 @@
                     infoA.wMinute , infoA.wSecond , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
                     infoA.wDay - 1 , infoA.wHour ,
                     infoA.wYear - 1 , infoA.wMonth - 1 ,
-                osTimeFromOldTimeIF( tinBaseP , pInfoFileP->timeAccessed1 , pInfoFileP->timeAccessed2 ,
+                osTimeFromOldTimeIF( tin0P , pInfoFileP->timeAccessed1 , pInfoFileP->timeAccessed2 ,
 
                     infoW.wMinute , infoW.wSecond , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
                     infoW.wDay - 1 , infoW.wHour ,
                     infoW.wYear - 1 , infoW.wMonth - 1 ,
-                osTimeFromOldTimeIF( tinBaseP , pInfoFileP->timeWritten1 , pInfoFileP->timeWritten2 ,
+                osTimeFromOldTimeIF( tin0P , pInfoFileP->timeWritten1 , pInfoFileP->timeWritten2 ,
 
                     infoC.wMinute , infoC.wSecond , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
                     infoC.wDay - 1 , infoC.wHour ,
                     infoC.wYear - 1 , infoC.wMonth - 1 ,
-                osTimeFromOldTimeIF( tinBaseP , pInfoFileP->timeCreated1 , pInfoFileP->timeCreated2 ,
+                osTimeFromOldTimeIF( tin0P , pInfoFileP->timeCreated1 , pInfoFileP->timeCreated2 ,
 
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , FileTimeToSystemTime( &info.ftLastAccessTime , &infoA ) )
@@ -42,30 +42,30 @@
                 pInfoFileP->cbAllocated         = - 1 ;
                 pInfoFileP->cbUsedHigh          = info.nFileSizeHigh ;
                 pInfoFileP->cbUsed              = info.nFileSizeLow ;
-                pInfoFileP->flags               = fileAttrIfFromOs1IF( tinBaseP , info.dwFileAttributes ) ;
+                pInfoFileP->flags               = fileAttrIfFromOs1IF( tin0P , info.dwFileAttributes ) ;
 
             #elif defined( __NT__ )
 
                                    info.ftimeLastAccess.minutes , info.ftimeLastAccess.twosecs * 2 , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc) ;
                                    info.fdateLastAccess.day - 1 , info.ftimeLastAccess.hours ,
                                    info.fdateLastAccess.year + 1979 , info.fdateLastAccess.month - 1 ,
-                osTimeFromOldTimeIF( tinBaseP , pInfoFileP->timeAccessed1 , pInfoFileP->timeAccessed2 ,
+                osTimeFromOldTimeIF( tin0P , pInfoFileP->timeAccessed1 , pInfoFileP->timeAccessed2 ,
 
                                    info.ftimeLastWrite.minutes , info.ftimeLastWrite.twosecs * 2 , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
                                    info.fdateLastWrite.day - 1 , info.ftimeLastWrite.hours ,
                                    info.fdateLastWrite.year + 1979 , info.fdateLastWrite.month - 1 ,
-                osTimeFromOldTimeIF( tinBaseP , pInfoFileP->timeWritten1 , pInfoFileP->timeWritten2 ,
+                osTimeFromOldTimeIF( tin0P , pInfoFileP->timeWritten1 , pInfoFileP->timeWritten2 ,
 
                     info.ftimeCreation.minutes , info.ftimeCreation.twosecs * 2 , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
                     info.fdateCreation.day - 1 , info.ftimeCreation.hours ,
                     info.fdateCreation.year + 1979 , info.fdateCreation.month - 1 ,
-                osTimeFromOldTimeIF( tinBaseP , pInfoFileP->timeCreated1 , pInfoFileP->timeCreated2 ,
+                osTimeFromOldTimeIF( tin0P , pInfoFileP->timeCreated1 , pInfoFileP->timeCreated2 ,
 
                 pInfoFileP->cbAllocatedHigh     = 0 ;
                 pInfoFileP->cbAllocated         = info.cbFileAlloc ;
                 pInfoFileP->cbUsedHigh          = 0 ;
                 pInfoFileP->cbUsed              = info.cbFile ;
-                pInfoFileP->flags               = fileAttrIfFromOs1IF( tinBaseP , info.attrFile ) ;
+                pInfoFileP->flags               = fileAttrIfFromOs1IF( tin0P , info.attrFile ) ;
 
             #ifdef __OS2__
         {

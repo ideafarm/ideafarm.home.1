@@ -23,17 +23,17 @@
     //    OStEXTAK( ostoSay , "apt " ) ;
     //    OStEXT(   ostoSay , TUCK << 1 ) ;
     //{
-    //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] )
+    //if( ((tin9S&)tin0P).pc Utility[ 0 ] )
 
     byteT* pbRC = (*guts.ppSlots[ offs ])[ ( idAptP & ~( BM_HIGH | BM_HIGH2 ) ) >> guts.cBitsExpCbDrop ] ;  //A:ASSUME: countT IS 02 BITS
 
     __( !guts.ppSlots[ offs ] ) ;
 
     }
-        guts.pGrabNewElt[ offs ].ungrabF( tinBaseP ) ;
+        guts.pGrabNewElt[ offs ].ungrabF( tin0P ) ;
         }
             THREADmODE2rESTORE
-            guts.ppSlots[ offs ] = new( 0 , tinBaseP , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tinBaseP , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , offs , face.pcCbDropAdjust[ offs ] , face.cbDropSeparator , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
+            guts.ppSlots[ offs ] = new( 0 , tin0P , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tin0P , TAG( TAGiDnULL ) , LF , ostoName , guts.cBitsExpCbDrop , offs , face.pcCbDropAdjust[ offs ] , face.cbDropSeparator , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
         
             if( F(guts.flagsCt) & flPOOLc_NOdROPhEADERS ) flagsc |= flSLOTSc_NOdROPhEADERS ;
@@ -49,7 +49,7 @@
             OStEXT(   ostoName , TUCK << 2 )
         {
         if( !guts.ppSlots[ offs ] )
-        guts.pGrabNewElt[ offs ].grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        guts.pGrabNewElt[ offs ].grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
     if( !guts.ppSlots[ offs ] )
 
@@ -57,7 +57,7 @@ ppsDebug = guts.ppSlots ;
 static slotsC** ppsDebug ;
 
     const countT offs = guts.expCbDropMin + ( idAptP & ( 1 << guts.cBitsExpCbDrop ) - 1 ) ;     //U::O: STORE "( 1 << guts.cBitsExpCbDrop ) - 1" as a const countT
-    if( F(((tin9S&)tinBaseP).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
+    if( F(((tin9S&)tin0P).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
     _IO_
 
     }

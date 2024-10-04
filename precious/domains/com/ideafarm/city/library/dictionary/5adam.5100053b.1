@@ -19,7 +19,7 @@ REST
             case MMSYSERR_INVALHANDLE : { CONoUTrAW( "waveOutClose returned MMSYSERR_INVALHANDLE\r\n" ) ; break ; }
         {
         switch( rc )
-        rc = ((tin9S&)tinBaseP).brcRaw ;
+        rc = ((tin9S&)tin0P).brcRaw ;
         BOSdOnOTtEST( WHATgbo , waveOutClose( hwo ) )
 
         }
@@ -31,12 +31,12 @@ REST
                 case MMSYSERR_INVALHANDLE : { CONoUTrAW( "waveOutUnprepareHeader returned MMSYSERR_INVALHANDLE\r\n" ) ; break ; }
             {
             switch( rc )
-            rc = ((tin9S&)tinBaseP).brcRaw ;
+            rc = ((tin9S&)tin0P).brcRaw ;
             BOSdOnOTtEST( WHATgbo , waveOutUnprepareHeader( hwo , &hdr , sizeof hdr ) )
 
             }
-                ++ s ; ether.osSleepF( tinBaseP , TOCK * 3 ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                ++ s ; ether.osSleepF( tin0P , TOCK * 3 ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
 
             __( rc - MMSYSERR_NOERROR ) ;
@@ -47,7 +47,7 @@ REST
                 case MMSYSERR_INVALHANDLE : { CONoUTrAW( "waveOutWrite returned MMSYSERR_INVALHANDLE\r\n" ) ; break ; }
             {
             switch( rc )
-            rc = ((tin9S&)tinBaseP).brcRaw ;
+            rc = ((tin9S&)tin0P).brcRaw ;
             BOSdOnOTtEST( WHATgbo , waveOutWrite( hwo , &hdr , sizeof hdr ) )
     
             __( rc - MMSYSERR_NOERROR ) ;
@@ -57,12 +57,12 @@ REST
                 case MMSYSERR_INVALHANDLE : { CONoUTrAW( "waveOutPrepareHeader returned MMSYSERR_INVALHANDLE\r\n" ) ; break ; }
             {
             switch( rc )
-            rc = ((tin9S&)tinBaseP).brcRaw ;
+            rc = ((tin9S&)tin0P).brcRaw ;
             BOSdOnOTtEST( WHATgbo , waveOutPrepareHeader( hwo , &hdr , sizeof hdr ) )
 
             setWaveF( pbData , sizeof pbData , mFreq * TUCK ) ;
 
-            etThread.strokeF( tinBaseP , T("note: ")+TF1(idNote)+T("    ")+T("freq: ")+T(mFreq)+T("\r\n") ) ;
+            etThread.strokeF( tin0P , T("note: ")+TF1(idNote)+T("    ")+T("freq: ")+T(mFreq)+T("\r\n") ) ;
         {
         for( measureT mFreq = 1.0 ; ++ idNote <= 0x11 ; mFreq += mStep )
         ZE( countT , idNote ) ;
@@ -92,7 +92,7 @@ REST
         case MMSYSERR_ALLOCATED   : { CONoUTrAW( "waveOutOpen returned MMSYSERR_ALLOCATED  \r\n" ) ; break ; }
     {
     switch( rc )
-    MMRESULT rc = ((tin9S&)tinBaseP).brcRaw ;
+    MMRESULT rc = ((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , waveOutOpen( &hwo , 0 , &format , 0 , 0 , WAVE_ALLOWSYNC ) )
 
     format.cbSize = 0 ;
@@ -107,11 +107,11 @@ REST
 {
 if( cDevices )
 CONoUTrAW3( "cDevices: " , cDevices , "\r\n" ) ;
-countT cDevices = ((tin9S&)tinBaseP).brcRaw ;
+countT cDevices = ((tin9S&)tin0P).brcRaw ;
 BOSdOnOTtEST( WHATgbo , waveOutGetNumDevs() )
 
 const measureT mTockPerSec = (measureT)timePS1 / (measureT)TOCK ;
-thirdC::timeFromSecondsIF( tinBaseP , timePS1 , timePS2 , 1 ) ;
+thirdC::timeFromSecondsIF( tin0P , timePS1 , timePS2 , 1 ) ;
 ZE( sCountT , timePS2 ) ;
 ZE( countT , timePS1 ) ;
 
@@ -119,7 +119,7 @@ TODO
 
 }
     }
-        pbDataP[ off ] = (byteT)( 0x7f * ( 1.0 + thirdC::mathCosIF( tinBaseP , mOsAngle ) ) ) ;
+        pbDataP[ off ] = (byteT)( 0x7f * ( 1.0 + thirdC::mathCosIF( tin0P , mOsAngle ) ) ) ;
         measureT mOsAngle = osAngleF( (measureT)off / mSamplesPerCycle ) ;
     {
     for( countT off = 0 ; off < cbDataP ; off ++ )

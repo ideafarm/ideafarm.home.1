@@ -15,7 +15,7 @@
         // IT WOULD BE COOL TO BE ABLE TO DEPLOY SUCH ADAMS, BUT NO CAN DO, BECAUSE... WINDOZE SUCKS IN SO MANY WAYS!
         // IN PRODUCTION, GRAPHICS ADAMS NEVER HAVE CONSOLES
         // THIS PROBLEM ONLY OCCURS DURING DEBUGGING BECAUSE CURRENTLY AllocConsole() IS ONLY INVOKED FOR GRAPHICS ADAMS IN ORDER TO DEBUG THEM
-        // THIS RESULTS IN EXECUTION JUMPING TO THE COMPILER ROUTINE THAT DESTROYS STATIC GLOBALS ; I BLAMMO BECAUSE I AM THE BASE OF tinBreak BUT THE WRONG tinBaseP (tinInPoolMain) IS STILL REGISTERED FOR THE THREAD BECAUSE APPLICATION CODE NEVER HAD A CHANCE TO DT IT
+        // THIS RESULTS IN EXECUTION JUMPING TO THE COMPILER ROUTINE THAT DESTROYS STATIC GLOBALS ; I BLAMMO BECAUSE I AM THE BASE OF tinBreak BUT THE WRONG tin0P (tinInPoolMain) IS STILL REGISTERED FOR THE THREAD BECAUSE APPLICATION CODE NEVER HAD A CHANCE TO DT IT
         // THIS OCCURS BECAUSE THE BASE OPERATING SYSTEM APPARENTLY KILLS THE PROCESS WITHOUT CALLING THE CONSOLE HANDLER OR IN ANY OTHER WAY GIVING APPLICATION CODE A CHANCE TO TERMINATE NORMALLY
         // 20121104: THIS WILL BLAMMO IF AllocConsole() IS USED BY A GRAPHICS ADAM TO GET A CONSOLE WINDOW AND THEN "Close All Windows" IS CLICKED BY THE USER
         //
@@ -34,13 +34,13 @@
 
         }
             pc = pc->pD ;
-            //CONoUTrAW7( "                           [idThread,this,pc]: " , ((tin9S&)tinBaseP).monitor.idThread , " " , this , " " , pc , "\r\n" ) ;
+            //CONoUTrAW7( "                           [idThread,this,pc]: " , ((tin9S&)tin0P).monitor.idThread , " " , this , " " , pc , "\r\n" ) ;
         {
         while( pc )
-        //CONoUTrAW7( "~cleanC / validating chain [idThread,this,pc]: " , ((tin9S&)tinBaseP).monitor.idThread , " " , this , " " , pc , "\r\n" ) ;
+        //CONoUTrAW7( "~cleanC / validating chain [idThread,this,pc]: " , ((tin9S&)tin0P).monitor.idThread , " " , this , " " , pc , "\r\n" ) ;
         cleanC* pc = this ;
 
-        tin0S& tinBaseP = *pTin ;
+        tin0S& tin0P = *pTin ;
     {
     if( pTin )
     tin0S* pTin = pTinF() ; //WILL BE 0 FOR ~tin9S FOR tinNormalVeryVeryEarlyLateMainI

@@ -10,55 +10,55 @@
 }
     dec02AM( cFunctionsPending ) ;
     }
-        if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL && !( F(flags) & flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE ) ) shakeHandsAsClientF( tinBaseP ) ;
+        if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL && !( F(flags) & flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE ) ) shakeHandsAsClientF( tin0P ) ;
     
         if( timeAllowedConnected ) FRESHtIMEaTOMIC( *pEther , timeConnected.time1 , timeConnected.time2 )
     
         }
             //CONoUTrAW( " connected in the clear\r\n" ) ;
-            //CONoUTrAW( ((tin9S&)tinBaseP).postThreadName ) ;
-            bWrite.ungrabF( tinBaseP ) ;
-            bRead.ungrabF( tinBaseP ) ;
+            //CONoUTrAW( ((tin9S&)tin0P).postThreadName ) ;
+            bWrite.ungrabF( tin0P ) ;
+            bRead.ungrabF( tin0P ) ;
         {
         else
         }
-            bWrite.ungrabF( tinBaseP ) ;
-            bRead.ungrabF( tinBaseP ) ;
-            pEther->cioMakeKeyF( tinBaseP , pczKeyTopSecret , idbKEYtYPE_PIN , idbKEYpINtYPE_SOCKETcONNECTION ) ; ___( pczKeyTopSecret ) ;
+            bWrite.ungrabF( tin0P ) ;
+            bRead.ungrabF( tin0P ) ;
+            pEther->cioMakeKeyF( tin0P , pczKeyTopSecret , idbKEYtYPE_PIN , idbKEYpINtYPE_SOCKETcONNECTION ) ; ___( pczKeyTopSecret ) ;
             __NZ( pczKeyTopSecret ) ;
             //CONoUTrAW( "CONNECTED IN TOP SECRET MODE\r\n" ) ;
         {
         if( F(flags) & flSOCKETc_TOPsECRET )
     
         }
-            myNameF( tinBaseP , idPortMe , idh ) ;
+            myNameF( tin0P , idPortMe , idh ) ;
             nicNameC idh ;
             idPortMe = 0 ;
         {
     
         nnPeer = nicNameP ;
         THREADmODE2rESTORE
-        pEther->sockConnectF( tinBaseP , handle , idPort , nicNameP , cTriesP , time1P , time2P ) ;
+        pEther->sockConnectF( tin0P , handle , idPort , nicNameP , cTriesP , time1P , time2P ) ;
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
     
-        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-        bWrite.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        bWrite.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
         }
-            //pEther->strokeF( tinBaseP , T("the chat server told me to connect to port ")+TF1(idPort)+T("\r\n") ) ;
+            //pEther->strokeF( tin0P , T("the chat server told me to connect to port ")+TF1(idPort)+T("\r\n") ) ;
     
             souli >> idPort ;
             __( idReply - ifcIDcMDsESSION_NEWsOCKETrEPLY ) ;
             souli >> idReply ;
             ZE( countT , idReply ) ;
-            sChat.readF( tinBaseP , souli ) ;
-            soulC souli( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sChat.readF( tin0P , souli ) ;
+            soulC souli( tin0P , TAG( TAGiDnULL ) ) ;
     
-            sChat.writeF( tinBaseP , soulo ) ;
-            soulC soulo( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKET ) ;
+            sChat.writeF( tin0P , soulo ) ;
+            soulC soulo( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKET ) ;
     
-            sChat.connectF( tinBaseP , ifcPORToLD2_CHAT , nicNameP ) ;
-            socketC sChat( tinBaseP , *pEther , TAG( TAGiDnULL ) ) ;
+            sChat.connectF( tin0P , ifcPORToLD2_CHAT , nicNameP ) ;
+            socketC sChat( tin0P , *pEther , TAG( TAGiDnULL ) ) ;
         {
         if( !idPort )
         countT idPort = idPortP ;
@@ -67,7 +67,7 @@
             }
                 }
                     break ;
-                    CONoUTrAW9( "" , ((tin9S&)tinBaseP).pag1->idAdam , "/connectF: mapping connection to  " , *(const countT*)nicNameP , " port " , pMap->pPort[ offp ].idPortSpecified , " to port " , pMap->pPort[ offp ].idPortActual , "\r\n" ) ;
+                    CONoUTrAW9( "" , ((tin9S&)tin0P).pag1->idAdam , "/connectF: mapping connection to  " , *(const countT*)nicNameP , " port " , pMap->pPort[ offp ].idPortSpecified , " to port " , pMap->pPort[ offp ].idPortActual , "\r\n" ) ;
                     idPortP =  pMap->pPort[ offp ].idPortActual ; //U::RACE: MIGHT STILL BE ZE
                 {
                 if( idPortP == pMap->pPort[ offp ].idPortSpecified )
@@ -106,7 +106,7 @@
     {
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/voidT socketC::connectF( tin0S& tinBaseP , countT idPortP , const nicNameC nicNameP , countT cTriesP , const countT time1P , const sCountT time2P )/*1*/
+/*1*/voidT socketC::connectF( tin0S& tin0P , countT idPortP , const nicNameC nicNameP , countT cTriesP , const countT time1P , const sCountT time2P )/*1*/
 
 /**/
 */
@@ -119,9 +119,9 @@
   if 0 then will connect to a port specified by the port ifcPORToLD2_CHAT server of nicNameP
   can be 0
  idPortP
- tinBaseP
+ tin0P
 arguments
-most applications should only specify the tinBaseP argument
+most applications should only specify the tin0P argument
 the peer socket must be listening for new clients
 connects to a peer socket
   \<A HREF=\"5.8420104.1.1.0.html\"\>8420104:  WAKEsHOW( "example.simplest.func.1070007.socketC.connectF" )\</A\>

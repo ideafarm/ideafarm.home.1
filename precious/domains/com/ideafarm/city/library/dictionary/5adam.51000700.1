@@ -10,32 +10,32 @@
 REST
 
 }
-    etherC::loafIF( tinBaseP ) ;
-    etThread.traceF( tinBaseP , T("ok") ) ;
+    etherC::loafIF( tin0P ) ;
+    etThread.traceF( tin0P , T("ok") ) ;
 
     }
-        etThread.traceF( tinBaseP , T("[myByte]: ")+T(postByte) ) ;
+        etThread.traceF( tin0P , T("[myByte]: ")+T(postByte) ) ;
 
         byteT postByte[ 2 ] = { *(const byteT*)myPage , 0 } ;
-        pageC myPage = myJot.readF( tinBaseP , pcIdJot[ idDo - 1 ] ) ;
+        pageC myPage = myJot.readF( tin0P , pcIdJot[ idDo - 1 ] ) ;
     {
     for( countT idDo = 1 ; idDo <= CjOTS ; idDo ++ )
 
-    jotC myJot( tinBaseP , "myJot" , flJOTc_null , cbDataBook , cIndexEntriesBook , cKeepInactive ) ;
+    jotC myJot( tin0P , "myJot" , flJOTc_null , cbDataBook , cIndexEntriesBook , cKeepInactive ) ;
 {
 
 }
     }
         if( bOutLath == 'z' ) bOutLath = 'a' - 1 ;
-        etThread.traceF( tinBaseP , T("[pcIdJot[idDo-1]]: ")+TF2(pcIdJot[idDo-1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        pcIdJot[ idDo - 1 ] = myJot.writeF( tinBaseP , &( ++ bOutLath ) , 1 , 0 , 0 , flJOTcwRITE_null ) ;
+        etThread.traceF( tin0P , T("[pcIdJot[idDo-1]]: ")+TF2(pcIdJot[idDo-1],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        pcIdJot[ idDo - 1 ] = myJot.writeF( tin0P , &( ++ bOutLath ) , 1 , 0 , 0 , flJOTcwRITE_null ) ;
     {
     for( countT idDo = 1 ; idDo <= CjOTS ; idDo ++ )
     byteT bOutLath = 'a' - 1 ;
 
-    jotC myJot( tinBaseP , "myJot" , flJOTc_WRITE , cbDataBook , cIndexEntriesBook , cKeepInactive ) ;
+    jotC myJot( tin0P , "myJot" , flJOTc_WRITE , cbDataBook , cIndexEntriesBook , cKeepInactive ) ;
 {
-thirdC::c_memsetIF( tinBaseP , (byteT*)pcIdJot , sizeof pcIdJot , 0 ) ;
+thirdC::c_memsetIF( tin0P , (byteT*)pcIdJot , sizeof pcIdJot , 0 ) ;
 countT pcIdJot[ CjOTS ] ;
 
 countT cKeepInactive = 8 ;

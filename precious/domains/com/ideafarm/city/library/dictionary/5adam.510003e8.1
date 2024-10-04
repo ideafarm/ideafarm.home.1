@@ -8,11 +8,11 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     }
-        etThread.delF( tinBaseP , pbd ) ;
+        etThread.delF( tin0P , pbd ) ;
         byteT* pbd = (byteT*)cpbd ;
         stStringsOfBytesToDelete >> cpbd ;
         ZE( countT , cpbd ) ;
@@ -36,53 +36,53 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
     while( stStacksToDelete )
 
     }
-        bLever.ungrabF( tinBaseP ) ;
-        swsHistory.ungrabF( tinBaseP ) ;
+        bLever.ungrabF( tin0P ) ;
+        swsHistory.ungrabF( tin0P ) ;
         }
             }
-                etThread.delF( tinBaseP , pc4r ) ;
+                etThread.delF( tin0P , pc4r ) ;
                 swsHistory >> pc4r ;
                 ZE( count4S* , pc4r ) ;
             {
             while( swsHistory )
 
-            lever = swsHistory.leverF( tinBaseP , idl ) ;
+            lever = swsHistory.leverF( tin0P , idl ) ;
         {
         for( countT idl = 1 ; idl <= cLevers ; idl ++ )
-        const countT cLevers = swsHistory.cFlavorsF( tinBaseP ) ;
-        swsHistory.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-        bLever.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        const countT cLevers = swsHistory.cFlavorsF( tin0P ) ;
+        swsHistory.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        bLever.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
     }
-        bLever.ungrabF( tinBaseP ) ;
+        bLever.ungrabF( tin0P ) ;
         }
-            etThread.delF( tinBaseP , pc5s ) ;
+            etThread.delF( tin0P , pc5s ) ;
             count5S* pc5s = (count5S*)(countT)swState ;
-            lever = swState.leverF( tinBaseP , idl ) ;
+            lever = swState.leverF( tin0P , idl ) ;
         {
         for( countT idl = 1 ; idl <= cLevers ; idl ++ )
-        const countT cLevers = swState.cFlavorsF( tinBaseP ) ;
-        bLever.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        const countT cLevers = swState.cFlavorsF( tin0P ) ;
+        bLever.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
-    snapshotF( tinBaseP , etThread , tState , tKey , tHistory , bLever , lever , swState , swKey , swsHistory ) ;
+    snapshotF( tin0P , etThread , tState , tKey , tHistory , bLever , lever , swState , swKey , swsHistory ) ;
 
-    while( etThread.os_cAllKidThreadsI_IF( tinBaseP ) > cctAtStart ) etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
+    while( etThread.os_cAllKidThreadsI_IF( tin0P ) > cctAtStart ) etThread.osSleepF( tin0P , TUCK * 0x40 ) ;
 
     }
-        else                    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&lever , (countT)&bLever , (countT)&swKey , (countT)&swState , (countT)&swsHistory , (countT)&decoder ) ; }
+        else                    { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&lever , (countT)&bLever , (countT)&swKey , (countT)&swState , (countT)&swsHistory , (countT)&decoder ) ; }
         if( ether || etThread ) { DEL( pso ) ; }
-        socket.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+        socket.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
         ZE( countT , idPortPeer ) ;
         nicNameC nnPeer ;
         ZE( socketC* , pso ) ;
     {
     while( !ether && !etThread )
     ZE( countT , cIn ) ;
-    etThread.etherCryF( tinBaseP ) ;
+    etThread.etherCryF( tin0P ) ;
 
-    sqMatrixOldC decoder = coder.inverseF( tinBaseP ) ;
+    sqMatrixOldC decoder = coder.inverseF( tin0P ) ;
     }
         }
             }
@@ -98,12 +98,12 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
         ZE( countT , idc ) ;
         ZE( countT , idr ) ;
     {                
-    sqMatrixOldC coder( tinBaseP , etThread , cSize ) ;
+    sqMatrixOldC coder( tin0P , etThread , cSize ) ;
     const countT cSize = 4 ;
 
     }
         }
-            etThread.osThreadF( tinBaseP , tnu , tmSnapshotF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pstp , (countT)&lever , (countT)&bLever , (countT)&swState , (countT)&swKey , (countT)&swsHistory ) ;
+            etThread.osThreadF( tin0P , tnu , tmSnapshotF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pstp , (countT)&lever , (countT)&bLever , (countT)&swState , (countT)&swKey , (countT)&swsHistory ) ;
             ZE( countT , tnu ) ;
 
             *pstp << (countT)&tHistory ;
@@ -111,67 +111,67 @@ etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
             *pstp << (countT)&tState ;
         {
         if( pstp )
-        stackC* pstp = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+        stackC* pstp = new( 0 , tin0P , LF ) stackC( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
     {
 
-    loadDataF( tinBaseP , etThread , stStringsOfBytesToDelete , stTablesToDelete , stStacksToDelete , tState , tKey , tHistory , bLever , lever , swState , swKey , swsHistory ) ;
+    loadDataF( tin0P , etThread , stStringsOfBytesToDelete , stTablesToDelete , stStacksToDelete , tState , tKey , tHistory , bLever , lever , swState , swKey , swsHistory ) ;
     TN( tHistory , "///ideafarm/ephemeral/domains/com/ideafarm/city/data/base/ae30104.history" ) ;
     TN( tKey     , "///ideafarm/ephemeral/domains/com/ideafarm/city/data/base/ae30104.key"     ) ;
     TN( tState   , "///ideafarm/ephemeral/domains/com/ideafarm/city/data/base/ae30104.state"   ) ;
 
-    stackC stStacksToDelete( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
-    stackC stTablesToDelete( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
-    stackC stStringsOfBytesToDelete( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stStacksToDelete( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stTablesToDelete( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    stackC stStringsOfBytesToDelete( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
-    switchStackC swsHistory( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , lever , flSTACKc_null , ifcSTACKtYPE_PTR_count4S ) ;
-    switchC      swState( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , lever ) ;
-    switchC      swKey( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , lever ) ;
-    batonC       bLever( tinBaseP , TAG( TAGiDnULL ) ) ;
+    switchStackC swsHistory( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , lever , flSTACKc_null , ifcSTACKtYPE_PTR_count4S ) ;
+    switchC      swState( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , lever ) ;
+    switchC      swKey( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , lever ) ;
+    batonC       bLever( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , lever ) ;
 
-    socket.listenF( tinBaseP ) ;
-    countT idPort = socket.bindF( tinBaseP , ifcPORToLD1pASSCODE ) ;
-    socketC socket( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    socket.listenF( tin0P ) ;
+    countT idPort = socket.bindF( tin0P , ifcPORToLD1pASSCODE ) ;
+    socketC socket( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
-    etThread.strokeF( tinBaseP , TPS(""    ,0x17,S1C('-'))+T("  ")+TPS("caste"  ,8,S1C('-'))+T("  ")+TPS("id"     ,8,S1C('-'))+T("  ")+TPS("id"     ,8,S1C('-'))+T("  ")+TPS("id"      ,8,S1C('-'))+T("  ")+TPS("",8,S1C('-'))+T("\r\n\r\n") ) ;
-    etThread.strokeF( tinBaseP , TPS("time",0x17,S1C('-'))+T("  ")+TPS("citizen",8,S1C('-'))+T("  ")+TPS("citizen",8,S1C('-'))+T("  ")+TPS("session",8,S1C('-'))+T("  ")+TPS("computer",8,S1C('-'))+T("  ")+TPS("passcode",8,S1C('-'))+T("\r\n") ) ;
+    etThread.strokeF( tin0P , TPS(""    ,0x17,S1C('-'))+T("  ")+TPS("caste"  ,8,S1C('-'))+T("  ")+TPS("id"     ,8,S1C('-'))+T("  ")+TPS("id"     ,8,S1C('-'))+T("  ")+TPS("id"      ,8,S1C('-'))+T("  ")+TPS("",8,S1C('-'))+T("\r\n\r\n") ) ;
+    etThread.strokeF( tin0P , TPS("time",0x17,S1C('-'))+T("  ")+TPS("citizen",8,S1C('-'))+T("  ")+TPS("citizen",8,S1C('-'))+T("  ")+TPS("session",8,S1C('-'))+T("  ")+TPS("computer",8,S1C('-'))+T("  ")+TPS("passcode",8,S1C('-'))+T("\r\n") ) ;
 
-    etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City PassCode Authority\r\ni maintain the passcode list and approve/deny id/psw pairs\r\n\r\n") ) ;
+    etThread.strokeF( tin0P , T("IdeaFarm " "(tm) City PassCode Authority\r\ni maintain the passcode list and approve/deny id/psw pairs\r\n\r\n") ) ;
 
     { ZE( boolT , bnu ) ; __( !bnu && sizeof( measureT ) != sizeof( countT ) ) ; }
 
-    const countT cctAtStart = etThread.os_cAllKidThreadsI_IF( tinBaseP ) ;
+    const countT cctAtStart = etThread.os_cAllKidThreadsI_IF( tin0P ) ;
 {
 else
 }
-    etThread.strokeF( tinBaseP , T("Another ae30104 appears to be alive on this computer.  Only one is allowed.") ) ;
+    etThread.strokeF( tin0P , T("Another ae30104 appears to be alive on this computer.  Only one is allowed.") ) ;
     etThread = 0  ;
 {
 if( etThread )
 U:: USE napkinC OBJECT TO TEST FOR ALONENESS
-batonC baton( tinBaseP , TAG( TAGiDnULL ) , T("ae30104") ) ;
+batonC baton( tin0P , TAG( TAGiDnULL ) , T("ae30104") ) ;
 
 TODO
 
 }
-    bLeverP.ungrabF( tinBaseP ) ;
+    bLeverP.ungrabF( tin0P ) ;
 
     }
-        swsHistoryP.ungrabF( tinBaseP ) ;
+        swsHistoryP.ungrabF( tin0P ) ;
 
         }
             swsHistoryP << &tbl._CT1_0aF( idr , 2 ) ;
             leverP =  tbl._CT1_04F( idr , 1 ) ;
         {
         for( countT idr = 1 ; idr <= cRows ; idr ++ )
-        const countT cRows = tbl.cRowsF( tinBaseP ) ;
+        const countT cRows = tbl.cRowsF( tin0P ) ;
 
-        tbl.readF( tinBaseP , stStringsOfBytesToDeleteP , stTablesToDeleteP , stStacksToDeleteP , psttHistoryP ) ;
-        tableC tbl( tinBaseP , etThread ) ;
+        tbl.readF( tin0P , stStringsOfBytesToDeleteP , stTablesToDeleteP , stStacksToDeleteP , psttHistoryP ) ;
+        tableC tbl( tin0P , etThread ) ;
 
-        swsHistoryP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        swsHistoryP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
-    if( etThread.diskFileExistsF( tinBaseP , psttHistoryP ) )
+    if( etThread.diskFileExistsF( tin0P , psttHistoryP ) )
 
     }
         }
@@ -179,12 +179,12 @@ TODO
             leverP   =          tbl._CT1_04F( idr , 1 ) ;
         {
         for( countT idr = 1 ; idr <= cRows ; idr ++ )
-        const countT cRows = tbl.cRowsF( tinBaseP ) ;
+        const countT cRows = tbl.cRowsF( tin0P ) ;
 
-        tbl.readF( tinBaseP , stStringsOfBytesToDeleteP , stTablesToDeleteP , stStacksToDeleteP , psttStateP ) ;
-        tableC tbl( tinBaseP , etThread ) ;
+        tbl.readF( tin0P , stStringsOfBytesToDeleteP , stTablesToDeleteP , stStacksToDeleteP , psttStateP ) ;
+        tableC tbl( tin0P , etThread ) ;
     {
-    if( etThread.diskFileExistsF( tinBaseP , psttStateP ) )
+    if( etThread.diskFileExistsF( tin0P , psttStateP ) )
 
     }
         }
@@ -192,22 +192,22 @@ TODO
             leverP =  tbl._CT1_04F( idr , 1 ) ;
         {
         for( countT idr = 1 ; idr <= cRows ; idr ++ )
-        const countT cRows = tbl.cRowsF( tinBaseP ) ;
+        const countT cRows = tbl.cRowsF( tin0P ) ;
 
-        tbl.readF( tinBaseP , stStringsOfBytesToDeleteP , stTablesToDeleteP , stStacksToDeleteP , psttKeyP ) ;
-        tableC tbl( tinBaseP , etThread ) ;
+        tbl.readF( tin0P , stStringsOfBytesToDeleteP , stTablesToDeleteP , stStacksToDeleteP , psttKeyP ) ;
+        tableC tbl( tin0P , etThread ) ;
     {
-    if( etThread.diskFileExistsF( tinBaseP , psttKeyP ) )
+    if( etThread.diskFileExistsF( tin0P , psttKeyP ) )
 
-    bLeverP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    bLeverP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 {
-voidT loadDataF( tin0S& tinBaseP , etherC& etThread , stackC& stStringsOfBytesToDeleteP , stackC& stTablesToDeleteP , stackC& stStacksToDeleteP , const strokeS* const psttStateP , const strokeS* const psttKeyP , const strokeS* const psttHistoryP , batonC& bLeverP , countT& leverP , switchC& swStateP , switchC& swKeyP , switchStackC& swsHistoryP )
+voidT loadDataF( tin0S& tin0P , etherC& etThread , stackC& stStringsOfBytesToDeleteP , stackC& stTablesToDeleteP , stackC& stStacksToDeleteP , const strokeS* const psttStateP , const strokeS* const psttKeyP , const strokeS* const psttHistoryP , batonC& bLeverP , countT& leverP , switchC& swStateP , switchC& swKeyP , switchStackC& swsHistoryP )
 
 DONE( tmSnapshotF )
 }
     }
-        etThread.osSleepF( tinBaseP , TOCK ) ;
-        if( !( idTry % 0x40 ) && !ether ) snapshotF( tinBaseP , etThread , tState , tKey , tHistory , bLever , lever , swState , swKey , swsHistory ) ;
+        etThread.osSleepF( tin0P , TOCK ) ;
+        if( !( idTry % 0x40 ) && !ether ) snapshotF( tin0P , etThread , tState , tKey , tHistory , bLever , lever , swState , swKey , swsHistory ) ;
 
         idTry ++ ;
     {
@@ -230,129 +230,129 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5
 TASK( tmSnapshotF )
 
 }
-    bLeverP.ungrabF( tinBaseP ) ;
+    bLeverP.ungrabF( tin0P ) ;
 
     }
-        tbl.writeF( tinBaseP , psttHistoryP ) ;
+        tbl.writeF( tin0P , psttHistoryP ) ;
 
-        swsHistoryP.ungrabF( tinBaseP ) ;
+        swsHistoryP.ungrabF( tin0P ) ;
 
         }
             while( handle ) ;
             }
                 }
-                    tbl.newObjectF( tinBaseP , *pc4r ) ;
-                    tbl.newObjectF( tinBaseP , leverP ) ;
-                    tbl.newEventF( tinBaseP ) ;
+                    tbl.newObjectF( tin0P , *pc4r ) ;
+                    tbl.newObjectF( tin0P , leverP ) ;
+                    tbl.newEventF( tin0P ) ;
                 {
                 if( pc4r )
                 __Z( pc4r ) ;
-                count4S* pc4r = (count4S*)swsHistoryP.downF( tinBaseP , handle ) ;
+                count4S* pc4r = (count4S*)swsHistoryP.downF( tin0P , handle ) ;
             {
             do
-            handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
-            leverP = swsHistoryP.leverF( tinBaseP , idl ) ;
+            leverP = swsHistoryP.leverF( tin0P , idl ) ;
         {
         for( countT idl = 1 ; idl <= cLevers ; idl ++ )
 
-        tbl.newColF( tinBaseP ) ;
-        tbl.newColF( tinBaseP ) ;
-        tableC tbl( tinBaseP , etThread ) ;
+        tbl.newColF( tin0P ) ;
+        tbl.newColF( tin0P ) ;
+        tableC tbl( tin0P , etThread ) ;
 
-        const countT cLevers = swsHistoryP.cFlavorsF( tinBaseP ) ;
+        const countT cLevers = swsHistoryP.cFlavorsF( tin0P ) ;
 
-        swsHistoryP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        swsHistoryP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
     }
-        tbl.writeF( tinBaseP , psttKeyP ) ;
+        tbl.writeF( tin0P , psttKeyP ) ;
 
         }
-            tbl.newObjectF( tinBaseP , key ) ;
-            tbl.newObjectF( tinBaseP , leverP ) ;
-            tbl.newEventF( tinBaseP ) ;
+            tbl.newObjectF( tin0P , key ) ;
+            tbl.newObjectF( tin0P , leverP ) ;
+            tbl.newEventF( tin0P ) ;
             countT key = swKeyP ;
-            leverP = swKeyP.leverF( tinBaseP , idl ) ;
+            leverP = swKeyP.leverF( tin0P , idl ) ;
         {
         for( countT idl = 1 ; idl <= cLevers ; idl ++ )
 
-        tbl.newColF( tinBaseP ) ;
-        tbl.newColF( tinBaseP ) ;
-        tableC tbl( tinBaseP , etThread ) ;
+        tbl.newColF( tin0P ) ;
+        tbl.newColF( tin0P ) ;
+        tableC tbl( tin0P , etThread ) ;
 
-        const countT cLevers = swKeyP.cFlavorsF( tinBaseP ) ;
+        const countT cLevers = swKeyP.cFlavorsF( tin0P ) ;
     {
 
     }
-        tbl.writeF( tinBaseP , psttStateP ) ;
+        tbl.writeF( tin0P , psttStateP ) ;
 
         }
             }
-                tbl.newObjectF( tinBaseP , *pc5s ) ;
-                tbl.newObjectF( tinBaseP , leverP ) ;
-                tbl.newEventF( tinBaseP ) ;
+                tbl.newObjectF( tin0P , *pc5s ) ;
+                tbl.newObjectF( tin0P , leverP ) ;
+                tbl.newEventF( tin0P ) ;
             {
             if( pc5s )
             count5S* pc5s = (count5S*)(countT)swStateP ;
-            leverP = swStateP.leverF( tinBaseP , idl ) ;
+            leverP = swStateP.leverF( tin0P , idl ) ;
         {
         for( countT idl = 1 ; idl <= cLevers ; idl ++ )
 
-        tbl.newColF( tinBaseP ) ;
-        tbl.newColF( tinBaseP ) ;
-        tableC tbl( tinBaseP , etThread ) ;
+        tbl.newColF( tin0P ) ;
+        tbl.newColF( tin0P ) ;
+        tableC tbl( tin0P , etThread ) ;
 
-        const countT cLevers = swStateP.cFlavorsF( tinBaseP ) ;
+        const countT cLevers = swStateP.cFlavorsF( tin0P ) ;
     {
 
-    bLeverP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    bLeverP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 {
-voidT snapshotF( tin0S& tinBaseP , etherC& etThread , const strokeS* const psttStateP , const strokeS* const psttKeyP , const strokeS* const psttHistoryP , batonC& bLeverP , countT& leverP , switchC& swStateP , switchC& swKeyP , switchStackC& swsHistoryP )
+voidT snapshotF( tin0S& tin0P , etherC& etThread , const strokeS* const psttStateP , const strokeS* const psttKeyP , const strokeS* const psttHistoryP , batonC& bLeverP , countT& leverP , switchC& swStateP , switchC& swKeyP , switchStackC& swsHistoryP )
 
 DONE( tmServeF )
 
 }
     }
         DEL( pso ) ;
-        pso->writeF( tinBaseP , (byteT*)&bOk , sizeof bOk ) ;
+        pso->writeF( tin0P , (byteT*)&bOk , sizeof bOk ) ;
 
-        bLever.ungrabF( tinBaseP ) ;
+        bLever.ungrabF( tin0P ) ;
 
         }
             }
                 }
                     }
-                        else      etThread.strokeF( tinBaseP , T("  rejected\r\n") ) ;
-                        if( bOk ) etThread.strokeF( tinBaseP , T("  ok\r\n") ) ;
-                        etThread.strokeF( tinBaseP , TT(time1,time2)+T("  ")+TF3(query.c2,0,8)+T("  ")+TF3(query.c1,0,8)+T("  ")+TF3(ids,0,8)+T("  ")+TF3(query.c5,0,8) ) ;
+                        else      etThread.strokeF( tin0P , T("  rejected\r\n") ) ;
+                        if( bOk ) etThread.strokeF( tin0P , T("  ok\r\n") ) ;
+                        etThread.strokeF( tin0P , TT(time1,time2)+T("  ")+TF3(query.c2,0,8)+T("  ")+TF3(query.c1,0,8)+T("  ")+TF3(ids,0,8)+T("  ")+TF3(query.c5,0,8) ) ;
 
                         swsHistory << pc4r ;
                         pc4r->c4 = bOk ;
                         pc4r->c3 = query.c5 ;
                         pc4r->c2 = time2 ;
                         pc4r->c1 = time1 ;
-                        etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
+                        etThread.osTimeNowF( tin0P , time1 , time2 ) ;
                         ZE( sCountT , time2 ) ;
                         ZE( countT , time1 ) ;
                     {
                     if( pc4r )
                     __Z( pc4r ) ;
-                    etThread.newF( tinBaseP , LF , pc4r ) ; ___( pc4r ) ;
+                    etThread.newF( tin0P , LF , pc4r ) ; ___( pc4r ) ;
                     ZE( count4S* , pc4r ) ;
                 {
 
                 }
                     }
                         }
-                            etThread.delF( tinBaseP , postb ) ;
-                            etThread.delF( tinBaseP , psttEmail ) ;
-                            if( psttEmail ) etThread.boxPutF( tinBaseP , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+T(psttEmail) , postb , costb ) ;
-                            etThread.ifcExternalEmailFromIdCitizenF( tinBaseP , psttEmail , query.c1 ) ;
+                            etThread.delF( tin0P , postb ) ;
+                            etThread.delF( tin0P , psttEmail ) ;
+                            if( psttEmail ) etThread.boxPutF( tin0P , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+T(psttEmail) , postb , costb ) ;
+                            etThread.ifcExternalEmailFromIdCitizenF( tin0P , psttEmail , query.c1 ) ;
                             ZE( strokeS* , psttEmail ) ;
 
-                            etThread.delF( tinBaseP , psttb ) ;
-                            countT costb = etThread.strMakeF( tinBaseP , LF , postb , psttb ) ; ___( postb ) ;
+                            etThread.delF( tin0P , psttb ) ;
+                            countT costb = etThread.strMakeF( tin0P , LF , postb , psttb ) ; ___( postb ) ;
                             ZE( osTextT* , postb ) ;
 
                             ) ) ; ___( psttb ) ;
@@ -376,16 +376,16 @@ DONE( tmServeF )
                                 "\r\n"
                                 "Subject: IdeaFarm " "(tm) City: CIA lock\r\n"
 
-                            etThread.strMakeF( tinBaseP , LF , psttb , T(
+                            etThread.strMakeF( tin0P , LF , psttb , T(
 
                             ZE( strokeS* , psttb ) ;
                         {
 
                         //ids = 0 ;
                         swKey = (countT)ranUni ;
-                        ranUniC ranUni( tinBaseP , MAXcOUNTT , 0x32847 ) ; // AN UNGUESSABLE SEED IS SPECIFIED SO THAT THE SEQUENCE WILL HOPEFULLY NOT BE RECOGNIZABLE; (-1 WOULD PRODUCE A WELL KNOWN SEQUENCE)
+                        ranUniC ranUni( tin0P , MAXcOUNTT , 0x32847 ) ; // AN UNGUESSABLE SEED IS SPECIFIED SO THAT THE SEQUENCE WILL HOPEFULLY NOT BE RECOGNIZABLE; (-1 WOULD PRODUCE A WELL KNOWN SEQUENCE)
                         swState = 0 ;
-                        etThread.delF( tinBaseP , pc5s ) ;
+                        etThread.delF( tin0P , pc5s ) ;
                     {
                     if( !bOk )
 
@@ -394,7 +394,7 @@ DONE( tmServeF )
                             bOk = query.c3 == correct ;
 
                             }
-                                etThread.memCopyF( tinBaseP , (byteT*)&correct , (byteT*)&cpc , sizeof correct ) ;
+                                etThread.memCopyF( tin0P , (byteT*)&correct , (byteT*)&cpc , sizeof correct ) ;
                                 measureT cpc = (measureT)aa * (measureT)ids + (measureT)bb * ids2 + (measureT)cc * ids3 + (measureT)dd * ids4 ;
                                 measureT ids4 = ids3 * (measureT)ids ;
                                 measureT ids3 = ids2 * (measureT)ids ;
@@ -428,7 +428,7 @@ DONE( tmServeF )
                             v14( 3 ) = *(measureT*)&pc5s->c4 ;
                             v14( 2 ) = *(measureT*)&pc5s->c3 ;
                             v14( 1 ) = *(measureT*)&pc5s->c2 ;
-                            vectorOldC v14( tinBaseP , etThread , cSize ) ;
+                            vectorOldC v14( tin0P , etThread , cSize ) ;
 
                             const countT cSize = 4 ;
                             pc5s->c5 = query.c3 ;
@@ -451,8 +451,8 @@ DONE( tmServeF )
 
             }
                 swState = (countT)pc5s ;
-                etThread.memSetF( tinBaseP , (byteT*)pc5s , sizeof( count5S ) ) ;
-                etThread.newF( tinBaseP , LF , pc5s ) ; ___( pc5s ) ;
+                etThread.memSetF( tin0P , (byteT*)pc5s , sizeof( count5S ) ) ;
+                etThread.newF( tin0P , LF , pc5s ) ; ___( pc5s ) ;
                 ZE( count5S* , pc5s ) ;
             {
             if( !swState )
@@ -469,12 +469,12 @@ DONE( tmServeF )
 
         __( query.c2 - 1 ) ; //U: SUPPORT NONHUMAN CITIZENS ONCE LEVER CAN BE A NULL TERMINATED STRING OF countT OBJECTS
         lever = query.c1 ;
-        bLever.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bLever.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-        pso->readF( tinBaseP , (byteT*)&query , sizeof query ) ;
+        pso->readF( tin0P , (byteT*)&query , sizeof query ) ;
         count5S query ;
 
-        pso->etherF( tinBaseP , etThread ) ;
+        pso->etherF( tin0P , etThread ) ;
         sqMatrixOldC&    decoder    = *(sqMatrixOldC*)   pTaskP->c7 ;
         switchStackC& swsHistory = *(switchStackC*)pTaskP->c6 ;
         switchC&      swState    = *(switchC*)     pTaskP->c5 ;

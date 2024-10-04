@@ -16,35 +16,35 @@ TELL( "about to enter REST" )
 //if( etThread )
 
 TELL( "osDriverF has returned" )
-else                                                                       etThread.osProcessF( tinBaseP , countTC() , countTC() , idAdam ) ;
+else                                                                       etThread.osProcessF( tin0P , countTC() , countTC() , idAdam ) ;
 }
-    etThread.osDriverF( tinBaseP , idAdam ) ;
+    etThread.osDriverF( tin0P , idAdam ) ;
 {
-else if( !etThread.strCompareF( tinBaseP , etThread.osIdF( tinBaseP ) , T("w") ) )
-     if( !bLocal                                                         ) etThread.strokeF( tinBaseP , T("please copy my file to a local storage device and try again.\r\n") ) ;
+else if( !etThread.strCompareF( tin0P , etThread.osIdF( tin0P ) , T("w") ) )
+     if( !bLocal                                                         ) etThread.strokeF( tin0P , T("please copy my file to a local storage device and try again.\r\n") ) ;
 TELL( "about to call osDriverF" )
 
 }
-    etThread.delF( tinBaseP , psttDll ) ;
-    if( psttDll ) idAdam = etThread.strDigitsToSCountF( tinBaseP , psttDll ) ; // idAdam WILL NOT BE SET IF I WAS CALLED BY THE OPERATING SYSTEM SERVICE MANAGER
+    etThread.delF( tin0P , psttDll ) ;
+    if( psttDll ) idAdam = etThread.strDigitsToSCountF( tin0P , psttDll ) ; // idAdam WILL NOT BE SET IF I WAS CALLED BY THE OPERATING SYSTEM SERVICE MANAGER
     }
         break ;
-        etThread.strMakeF( tinBaseP , LF , psttDll , psttc1 ) ; ___( psttDll ) ;
+        etThread.strMakeF( tin0P , LF , psttDll , psttc1 ) ; ___( psttDll ) ;
         if( cSkip && cSkip -- ) continue ;
 
         }
             DEL( pInfo ) ;
             bLocal = pInfo ? !!( F(pInfo->flags) & flINFOdISK1s_LOCAL ) : 0 ;
-            etThread.delF( tinBaseP , psttw ) ;
-            etThread.diskInfoF( tinBaseP , pInfo , T(iffn) ) ; ___( pInfo ) ;
-            ifFileNameC iffn( tinBaseP , etThread , T(psttw) ) ;
+            etThread.delF( tin0P , psttw ) ;
+            etThread.diskInfoF( tin0P , pInfo , T(iffn) ) ; ___( pInfo ) ;
+            ifFileNameC iffn( tin0P , etThread , T(psttw) ) ;
             ZE( infoDiskS* , pInfo ) ;
-            etThread.strConvertToLowerCaseF( tinBaseP , psttw , psttc1 ) ; ___( psttw ) ;
+            etThread.strConvertToLowerCaseF( tin0P , psttw , psttc1 ) ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
         {
         if( cSkip == 2 )
     {
-    FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tinBaseP ) )
+    FORsTRINGSiN1( etThread.ether_pstt1_processParametersI_F( tin0P ) )
     countT cSkip = 2 ;
     ZE( strokeS* , psttDll ) ;
 {
@@ -52,7 +52,7 @@ ZE( countT , idAdam ) ;
 ZE( boolT , bLocal ) ;
 TELL( "inspecting process parameters" )
 
-//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ; //U:
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ; //U:
 TELL( "shifting into idle" )
 TODO
 

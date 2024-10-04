@@ -13,13 +13,13 @@
     }
         FORsTRINGSiNsPANNEDcOMBINEDtAIL1
         }
-            delF( tinBaseP , psttTo ) ;
-            diskMoveFileOrDirF( tinBaseP , psttTo , psttc1 ) ; //U: ENHANCE: SUPPORT CASE WHERE FILES ARE ON DIFFERENT VOLUMES
+            delF( tin0P , psttTo ) ;
+            diskMoveFileOrDirF( tin0P , psttTo , psttc1 ) ; //U: ENHANCE: SUPPORT CASE WHERE FILES ARE ON DIFFERENT VOLUMES
             }
-                delF( tinBaseP , psttSuffix ) ;
-                strFuseF( tinBaseP , psttTo , T(psttLikeToP)+T(psttSuffix) ) ; ___( psttTo ) ;
-                strSubstringF( tinBaseP , psttSuffix , ++ idf , idl , psttc1 ) ; ___( psttSuffix ) ;
-                countT idf = strIdF( tinBaseP , countTC( 1 ) , sttq , sttCut , psttc1 , 0 , - 1 ) ;
+                delF( tin0P , psttSuffix ) ;
+                strFuseF( tin0P , psttTo , T(psttLikeToP)+T(psttSuffix) ) ; ___( psttTo ) ;
+                strSubstringF( tin0P , psttSuffix , ++ idf , idl , psttc1 ) ; ___( psttSuffix ) ;
+                countT idf = strIdF( tin0P , countTC( 1 ) , sttq , sttCut , psttc1 , 0 , - 1 ) ;
 
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 ZE( countT , idl ) ;
@@ -31,13 +31,13 @@
         {
         FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
 
-        if( cFiles ) diskMakeDirIfNeededF( tinBaseP , psttLikeToP ) ;
+        if( cFiles ) diskMakeDirIfNeededF( tin0P , psttLikeToP ) ;
 
         __( sttCut != S1C('/') ) ;
         strokeS sttCut = psttLikeFromP[ CSpREFIX - 1 + psttLikeFromP->idAdam ] ;
 
-        cFiles = boxMenuF( tinBaseP , soul1m , T(psttLikeFromP) + T("*") , 0 , cMaxP ) ;
-        soulC soul1m( tinBaseP , TAG( TAGiDnULL ) ) ;
+        cFiles = boxMenuF( tin0P , soul1m , T(psttLikeFromP) + T("*") , 0 , cMaxP ) ;
+        soulC soul1m( tin0P , TAG( TAGiDnULL ) ) ;
     {
     ZE( countT , cFiles ) ;
     _IO_
@@ -51,7 +51,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/countT etherC::boxPourF( tin0S& tinBaseP , const strokeS* const psttLikeToP , const strokeS* const psttLikeFromP , const countT csttEstimateP , const countT cMaxP )/*1*/
+/**//*1*/countT etherC::boxPourF( tin0S& tin0P , const strokeS* const psttLikeToP , const strokeS* const psttLikeFromP , const countT csttEstimateP , const countT cMaxP )/*1*/
 */
   if not 0 then this is the maximum number of files that will be poured
   can be 0

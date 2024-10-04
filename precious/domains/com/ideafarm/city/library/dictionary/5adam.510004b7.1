@@ -10,19 +10,19 @@
 REST
 
 }
-    while( cGorillas ) { ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ; }
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    while( cGorillas ) { ++ s ; etThread.osSleepF( tin0P , TUCK * 0x40 ) ; }
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
 
 }
-    etThread.osThreadF( tinBaseP , countTC() , tmGorillaF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cGorillas , (countT)&cLever , (countT)&b_cLever , (countT)&swsg ) ;
+    etThread.osThreadF( tin0P , countTC() , tmGorillaF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cGorillas , (countT)&cLever , (countT)&b_cLever , (countT)&swsg ) ;
     cGorillas ++ ;
 {
 while( cTries -- )
 countT cTries = 0x10 ;
 
-switchStackC swsg( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLever ) ;
-batonC b_cLever( tinBaseP , TAG( TAGiDnULL ) ) ;
+switchStackC swsg( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLever ) ;
+batonC b_cLever( tin0P , TAG( TAGiDnULL ) ) ;
 ZE( countT , cLever ) ;
 ZE( countT , cGorillas ) ;
 
@@ -33,13 +33,13 @@ DONE( tmGorillaF )
     cGorillas -- ;
     }
         }
-            b_cLever.ungrabF( tinBaseP ) ;
+            b_cLever.ungrabF( tin0P ) ;
             }
                 serial ++ ;
                 }
-                    if( !swsg ) swsg.freeF( tinBaseP ) ;
+                    if( !swsg ) swsg.freeF( tin0P ) ;
                     }
-                        swsg.extractF( 0 , tinBaseP ) ;
+                        swsg.extractF( 0 , tin0P ) ;
                         CONoUT( postPull )
                     {
                     if( swsg( jj ) )
@@ -50,7 +50,7 @@ DONE( tmGorillaF )
             }
                 }
                     __Z( ids ) ;
-                    swsg.sinkF( tinBaseP , ids , jj , flSTACKsINK_UNIQUE ) ;
+                    swsg.sinkF( tin0P , ids , jj , flSTACKsINK_UNIQUE ) ;
                     ZE( countT , ids ) ;
                     CONoUT( postPush )
                 {
@@ -58,24 +58,24 @@ DONE( tmGorillaF )
             {
             if( !swsg )
             cLever = serial ;
-            b_cLever.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            b_cLever.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
         for( countT ii = 1 ; ii <= 0x1 ; ii ++ )
 
         //}
-        //    ++ s ; etThread.osSleepF( tinBaseP ) ;
-        //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //    ++ s ; etThread.osSleepF( tin0P ) ;
+        //    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         //{
         //U::WITHOUT THIS SLEEP, ONLY WO GORILLA EVER TRACES TO CONSOLE
     {
     while( !etThread && !ether && !swsg.third )
-    const osTextT postPull[] = { 'a' + ((tin9S&)tinBaseP).monitor.idThread % 26 , 0 } ;
-    const osTextT postPush[] = { 'A' + ((tin9S&)tinBaseP).monitor.idThread % 26 , 0 } ;
-    countT serial = ((tin9S&)tinBaseP).monitor.idThread * TICK ;
+    const osTextT postPull[] = { 'a' + ((tin9S&)tin0P).monitor.idThread % 26 , 0 } ;
+    const osTextT postPush[] = { 'A' + ((tin9S&)tin0P).monitor.idThread % 26 , 0 } ;
+    countT serial = ((tin9S&)tin0P).monitor.idThread * TICK ;
 
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
     switchStackC& swsg      = *(switchStackC*)pTaskP->c4 ;

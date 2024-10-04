@@ -9,24 +9,24 @@
 
 REST
 
-etThread.traceF( tinBaseP , T("ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK / -") ) ;
+etThread.traceF( tin0P , T("ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK / -") ) ;
 
 while( ~hFind && !POOP ) ;
 }
     }
         }
-            etThread.diskMoveFileOrDirF( tinBaseP , tToAll+tShort , tIfoName , 0 ) ;
+            etThread.diskMoveFileOrDirF( tin0P , tToAll+tShort , tIfoName , 0 ) ;
             DEL( pInfo ) ;
             }
-                etThread.delF( tinBaseP , pstt1Lines ) ;
+                etThread.delF( tin0P , pstt1Lines ) ;
 
                 }
-                    etThread.traceF( tinBaseP , T("[idJot]:    ")+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tin0P , T("[idJot]:    ")+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                    etThread.delF( tinBaseP , pstt1Entry ) ;
+                    etThread.delF( tin0P , pstt1Entry ) ;
                     }
                         idJot = (countT)pbEncoded ;
-                        etThread.strEncodeF( tinBaseP , pbEncoded , pstt1Entry , 0 , sizeof( countT ) , (const byteT*)&hash ) ; ___( pbEncoded ) ;
+                        etThread.strEncodeF( tin0P , pbEncoded , pstt1Entry , 0 , sizeof( countT ) , (const byteT*)&hash ) ; ___( pbEncoded ) ;
                         ZEJ( byteT* , pbEncoded , jotHashString ) ;
                     {
                     if( !idJot )
@@ -34,9 +34,9 @@ while( ~hFind && !POOP ) ;
                     }
                         }
                             }
-                                etThread.delF( tinBaseP , pstt1EntryHe ) ;
-                                if( !etThread.strCompareF( tinBaseP , pstt1Entry , pstt1EntryHe ) ) idJot = jotHashString.idLathReadF() ;
-                                etThread.strDecodeF( tinBaseP , pstt1EntryHe , pbEncodedHe + sizeof( countT ) ) ; ___( pstt1EntryHe ) ;
+                                etThread.delF( tin0P , pstt1EntryHe ) ;
+                                if( !etThread.strCompareF( tin0P , pstt1Entry , pstt1EntryHe ) ) idJot = jotHashString.idLathReadF() ;
+                                etThread.strDecodeF( tin0P , pstt1EntryHe , pbEncodedHe + sizeof( countT ) ) ; ___( pstt1EntryHe ) ;
                                 ZE( strokeS* , pstt1EntryHe ) ;
                             {
                             else if( *(countT*)pbEncodedHe == hash )
@@ -52,70 +52,70 @@ while( ~hFind && !POOP ) ;
                     {
                     ZE( countT , idJot ) ;
 
-                    //etThread.traceF( tinBaseP , T("[hash]:    ")+TF2(hash,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //etThread.traceF( tin0P , T("[hash]:    ")+TF2(hash,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT hash = hashF( (byteT*)pstt1Entry , sizeof( strokeS ) * ( CSpREFIX + pstt1Entry->idAdam ) , 0 ) ;
 
-                    etThread.strFuseSeparateF( tinBaseP , pstt1Entry , tURIContainerPlus ) ;
-                    etThread.strFuseSeparateF( tinBaseP , pstt1Entry , tContainer        ) ;
-                    etThread.strFuseSeparateF( tinBaseP , pstt1Entry , tLogBucket        , 0 , 0 , 0 , 0 , CSpREFIX * 2 + tContainer.csF( tinBaseP ) + tURIContainerPlus.csF( tinBaseP ) ) ; ___( pstt1Entry ) ;
+                    etThread.strFuseSeparateF( tin0P , pstt1Entry , tURIContainerPlus ) ;
+                    etThread.strFuseSeparateF( tin0P , pstt1Entry , tContainer        ) ;
+                    etThread.strFuseSeparateF( tin0P , pstt1Entry , tLogBucket        , 0 , 0 , 0 , 0 , CSpREFIX * 2 + tContainer.csF( tin0P ) + tURIContainerPlus.csF( tin0P ) ) ; ___( pstt1Entry ) ;
                     ZE( strokeS* , pstt1Entry ) ;
 
                     }
-                        etThread.delF( tinBaseP , psttGot ) ;
+                        etThread.delF( tin0P , psttGot ) ;
                         tURIContainerPlus = T(psttGot) ;
-                        etThread.strSubstringF( tinBaseP , psttGot , idf , idl , tURIContainerPlus , 0 ) ; ___( psttGot ) ;
+                        etThread.strSubstringF( tin0P , psttGot , idf , idl , tURIContainerPlus , 0 ) ; ___( psttGot ) ;
                         countT idl = idHit - 1 ;
                         countT idf = 1 ;
                         ZE( strokeS* , psttGot ) ;
                     {
                     if( idHit > 1 )
-                    idHit = tURIContainerPlus.csF( tinBaseP ) && etThread.strIdF( tinBaseP , idf , sttq , tBlankHttpSlash , tURIContainerPlus , 0 , 1 ) ;
+                    idHit = tURIContainerPlus.csF( tin0P ) && etThread.strIdF( tin0P , idf , sttq , tBlankHttpSlash , tURIContainerPlus , 0 , 1 ) ;
                     idf = 1 ;
 
                     }
-                        etThread.delF( tinBaseP , psttGot ) ;
+                        etThread.delF( tin0P , psttGot ) ;
                         tURIContainerPlus = T(psttGot) ;
-                        etThread.strSubstringF( tinBaseP , psttGot , idf , idl , tURIContainerPlus , 0 ) ; ___( psttGot ) ;
+                        etThread.strSubstringF( tin0P , psttGot , idf , idl , tURIContainerPlus , 0 ) ; ___( psttGot ) ;
                         countT idl = idHit - 1 ;
                         countT idf = 1 ;
                         ZE( strokeS* , psttGot ) ;
                     {
                     if( idHit > 1 )
-                    countT idHit = tURIContainerPlus.csF( tinBaseP ) && etThread.strIdF( tinBaseP , idf , sttq , sttDoubleQuote , tURIContainerPlus , 0 , 1 ) ;
+                    countT idHit = tURIContainerPlus.csF( tin0P ) && etThread.strIdF( tin0P , idf , sttq , sttDoubleQuote , tURIContainerPlus , 0 , 1 ) ;
                     idf = 1 ;
 
-                    etThread.traceF( tinBaseP , tURIContainerPlus ) ;
+                    etThread.traceF( tin0P , tURIContainerPlus ) ;
                     }
-                        etThread.delF( tinBaseP , psttGot ) ;
+                        etThread.delF( tin0P , psttGot ) ;
                         tURIContainerPlus = T(psttGot) ;
-                        etThread.strSubstringF( tinBaseP , psttGot , idf , idl , tURIContainerPlus , 0 ) ; ___( psttGot ) ;
+                        etThread.strSubstringF( tin0P , psttGot , idf , idl , tURIContainerPlus , 0 ) ; ___( psttGot ) ;
                         ZE( countT , idl ) ;
-                        countT idf = tContainer.csF( tinBaseP ) + 1 ;
+                        countT idf = tContainer.csF( tin0P ) + 1 ;
                         ZE( strokeS* , psttGot ) ;
                     {
-                    if( !etThread.strCompareF( tinBaseP , tLogBucket , tLogBucketAccessLogs ) && tContainer.csF( tinBaseP ) && tURIContainerPlus.csF( tinBaseP ) && 1 == etThread.strIdF( tinBaseP , tContainer , tURIContainerPlus , 1 ) && tContainer.csF( tinBaseP ) < tURIContainerPlus.csF( tinBaseP ) )
+                    if( !etThread.strCompareF( tin0P , tLogBucket , tLogBucketAccessLogs ) && tContainer.csF( tin0P ) && tURIContainerPlus.csF( tin0P ) && 1 == etThread.strIdF( tin0P , tContainer , tURIContainerPlus , 1 ) && tContainer.csF( tin0P ) < tURIContainerPlus.csF( tin0P ) )
 
-                    etThread.traceF( tinBaseP , tURIContainerPlus ) ;
+                    etThread.traceF( tin0P , tURIContainerPlus ) ;
                     }
-                        etThread.delF( tinBaseP , psttGot ) ;
+                        etThread.delF( tin0P , psttGot ) ;
                         tURIContainerPlus = T(psttGot) ;
-                        etThread.delF( tinBaseP , psttnu ) ;
-                        etThread.strBisectF( tinBaseP , psttnu , psttGot , tMethodPlus , tSlash , !etThread.strCompareF( tinBaseP , tLogBucket , tLogBucketAccessLogs ) ? 3 : 2 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttGot ) ;
+                        etThread.delF( tin0P , psttnu ) ;
+                        etThread.strBisectF( tin0P , psttnu , psttGot , tMethodPlus , tSlash , !etThread.strCompareF( tin0P , tLogBucket , tLogBucketAccessLogs ) ? 3 : 2 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttGot ) ;
                         ZE( strokeS* , psttGot ) ;
                         ZE( strokeS* , psttnu ) ;
                     {
                     TN( tURIContainerPlus , "" ) ;
 
-                    etThread.traceF( tinBaseP , tMethodPlus ) ;
+                    etThread.traceF( tin0P , tMethodPlus ) ;
 
                     }
-                        etThread.delF( tinBaseP , psttGot ) ;
+                        etThread.delF( tin0P , psttGot ) ;
                         tMethodPlus = T(psttGot) ;
-                        etThread.strSubstringF( tinBaseP , psttGot , idf , idl , psttc1 , 0 ) ; ___( psttGot ) ;
+                        etThread.strSubstringF( tin0P , psttGot , idf , idl , psttc1 , 0 ) ; ___( psttGot ) ;
                         ZE( countT , idl ) ;
                         ZE( strokeS* , psttGot ) ;
                     {
-                    if( psttc1->idAdam && etThread.strIdF( tinBaseP , idf , sttq , sttDoubleQuote , psttc1 , 0 , 1 ) )
+                    if( psttc1->idAdam && etThread.strIdF( tin0P , idf , sttq , sttDoubleQuote , psttc1 , 0 , 1 ) )
                     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                     countT idf = 1 ;
 
@@ -123,39 +123,39 @@ while( ~hFind && !POOP ) ;
                     // 204.213.85.999 - - [21/01/2018:23:58:02 +0000] "GET /v1/MossoCloudFS_921871/ipdos.home.registry?format=json HTTP/1.0" 200 7174 "-" "-"
                     TN( tMethodPlus , "" ) ;
 
-                    //etThread.traceF( tinBaseP , psttc1 ) ;
+                    //etThread.traceF( tin0P , psttc1 ) ;
                 {
                 FORsTRINGSiN1( pstt1Lines )
 
-                etThread.delF( tinBaseP , posti ) ;
-                etThread.strWordsF( tinBaseP , pstt1Lines , T(posti) , sttq , tCRLF , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1Lines ) ;
+                etThread.delF( tin0P , posti ) ;
+                etThread.strWordsF( tin0P , pstt1Lines , T(posti) , sttq , tCRLF , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1Lines ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , pstt1Lines ) ;
 
-                etThread.boxGetShadowF( tinBaseP , posti , costi , pInfo->psttIfoName ) ; ___( posti ) ;
+                etThread.boxGetShadowF( tin0P , posti , costi , pInfo->psttIfoName ) ; ___( posti ) ;
                 ZE( countT   , costi ) ;
                 ZE( osTextT* , posti ) ;
             {
 
-            etThread.traceF( tinBaseP , tLogBucket+tb4+tContainer ) ;
-            etThread.traceF( tinBaseP , tContainerPlus ) ;
-            etThread.traceF( tinBaseP , tAfterHey ) ;
-            etThread.traceF( tinBaseP , tLogBucket ) ;
+            etThread.traceF( tin0P , tLogBucket+tb4+tContainer ) ;
+            etThread.traceF( tin0P , tContainerPlus ) ;
+            etThread.traceF( tin0P , tAfterHey ) ;
+            etThread.traceF( tin0P , tLogBucket ) ;
 
             }
-                etThread.delF( tinBaseP , psttGot ) ;
+                etThread.delF( tin0P , psttGot ) ;
                 tContainer = T(psttGot) ;
-                etThread.delF( tinBaseP , psttnu ) ;
-                etThread.strBisectF( tinBaseP , psttGot , psttnu , tContainerPlus , tDot , -6 , flSTRbISECT_null ) ; ___( psttGot ) ; ___( psttnu ) ;
+                etThread.delF( tin0P , psttnu ) ;
+                etThread.strBisectF( tin0P , psttGot , psttnu , tContainerPlus , tDot , -6 , flSTRbISECT_null ) ; ___( psttGot ) ; ___( psttnu ) ;
                 ZE( strokeS* , psttnu ) ;
                 ZE( strokeS* , psttGot ) ;
             {
             TN( tContainer , "" ) ;
 
             }
-                etThread.delF( tinBaseP , psttGot ) ;
+                etThread.delF( tin0P , psttGot ) ;
                 tContainerPlus = T(psttGot) ;
-                etThread.strSubstringF( tinBaseP , psttGot , idf , idl , tAfterHey , 0 ) ; ___( psttGot ) ;
+                etThread.strSubstringF( tin0P , psttGot , idf , idl , tAfterHey , 0 ) ; ___( psttGot ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                 ZE( countT , idl ) ;
                 countT idf = 0x2e ; ;
@@ -164,14 +164,14 @@ while( ~hFind && !POOP ) ;
             TN( tContainerPlus , "" ) ;     // web.archiveview.2018.01.21.20.53c96b155170cfa84d4a67396da97101.log
 
             }
-                etThread.delF( tinBaseP , psttGot ) ;
+                etThread.delF( tin0P , psttGot ) ;
                 tAfterHey = T(psttGot) ;
-                etThread.strSubstringF( tinBaseP , psttGot , idf , idl , tShort , 0 ) ; ___( psttGot ) ;
+                etThread.strSubstringF( tin0P , psttGot , idf , idl , tShort , 0 ) ; ___( psttGot ) ;
                 ZE( countT , idl ) ;
 
-                etThread.delF( tinBaseP , psttGot ) ;
+                etThread.delF( tin0P , psttGot ) ;
                 tLogBucket = T(psttGot) ;
-                etThread.strSubstringF( tinBaseP , psttGot , idf , sttq , tDotHeyDot , tShort , 0 , 0 ) ; ___( psttGot ) ;
+                etThread.strSubstringF( tin0P , psttGot , idf , sttq , tDotHeyDot , tShort , 0 , 0 ) ; ___( psttGot ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttGot ) ;  // 0              1               2
@@ -182,10 +182,10 @@ while( ~hFind && !POOP ) ;
         if( !bDir )
 
         }
-            etThread.delF( tinBaseP , psttShort ) ;
+            etThread.delF( tin0P , psttShort ) ;
             tShort = T(psttShort) ;
-            etThread.delF( tinBaseP , psttnu ) ;
-            etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+            etThread.delF( tin0P , psttnu ) ;
+            etThread.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
             ZE( strokeS* , psttShort ) ;
             ZE( strokeS* , psttnu ) ;
         {
@@ -202,36 +202,36 @@ while( ~hFind && !POOP ) ;
     {
     if( !pInfo || !pInfo->psttIfoName )
 
-    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tToPending+T("*") ) ;
+    etThread.diskFindFileOrDirOldF( tin0P , pInfo , hFind , tToPending+T("*") ) ;
     ZE( infoFileS* , pInfo ) ;
 {
 do
-handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
 strokeS sttDoubleQuote( '\"' ) ;
 const countT tagHighNibble = jotHashString.tagHighNibbleF() ;
-jotC jotHashString( tinBaseP , "hash.string.triplets" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 ) ;   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
+jotC jotHashString( tin0P , "hash.string.triplets" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 ) ;   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
 
 }
-    etThread.traceF( tinBaseP , T("called  gzip to unpack all gz files in ")+tToPending ) ;
-    thirdC::c_systemIF( tinBaseP , tCmd ) ;
-    //etThread.traceF( tinBaseP , tCmd ) ;
+    etThread.traceF( tin0P , T("called  gzip to unpack all gz files in ")+tToPending ) ;
+    thirdC::c_systemIF( tin0P , tCmd ) ;
+    //etThread.traceF( tin0P , tCmd ) ;
     }
         tCmd += T(osfn)+T("*") ;
-        osFileNameC osfn( tinBaseP , etThread , tToPending ) ;
+        osFileNameC osfn( tin0P , etThread , tToPending ) ;
     {
     TN( tCmd , "gzip -d " ) ;
-    etThread.traceF( tinBaseP , T("calling gzip to unpack all gz files in ")+tToPending ) ;
+    etThread.traceF( tin0P , T("calling gzip to unpack all gz files in ")+tToPending ) ;
 
-    etThread.diskFileOrDirDeleteF( tinBaseP , tFrom , flFILEoRdIRdELETE_RECURSE ) ;
-    etThread.traceF( tinBaseP , T("deleting ")+tFrom+T("; WARNING: i assume that no other process is downloading or otherwise modifying the contents of ")+tFrom ) ;
+    etThread.diskFileOrDirDeleteF( tin0P , tFrom , flFILEoRdIRdELETE_RECURSE ) ;
+    etThread.traceF( tin0P , T("deleting ")+tFrom+T("; WARNING: i assume that no other process is downloading or otherwise modifying the contents of ")+tFrom ) ;
 
-    etThread.traceF( tinBaseP , T("new access logs [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.diskWalkGatherF( tinBaseP , cDirs , cFiles , countTC() , tToPending , tFrom , 0 , pcArgs ) ;
+    etThread.traceF( tin0P , T("new access logs [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.diskWalkGatherF( tin0P , cDirs , cFiles , countTC() , tToPending , tFrom , 0 , pcArgs ) ;
     countT pcArgs[] = { 2 } ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs ) ;
-    etThread.traceF( tinBaseP , T("gathering the poured files into the single directory ")+tToPending+T(" from ")+tFrom ) ;
+    etThread.traceF( tin0P , T("gathering the poured files into the single directory ")+tToPending+T(" from ")+tFrom ) ;
 {
 
 TN( tBlankHttpSlash ," HTTP/" ) ;
@@ -246,7 +246,7 @@ TN( tToAll     , "///d/tmp/cloud.access.log.entries.all/" ) ;
 TN( tToPending , "///d/tmp/cloud.access.log.entries.new/" ) ;
 TN( tFrom      , "///d/tmp/cloud.access.log.entries.incoming/" ) ;
 
-etThread.traceF( tinBaseP , T("ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK / +") ) ;
+etThread.traceF( tin0P , T("ifcIDaDAM_ACCESSeVENTS1gATHERuNPACK / +") ) ;
 
 TODO
 

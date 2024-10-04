@@ -9,35 +9,35 @@
                             
 REST
 
-etThread.delF( tinBaseP , pstt1m ) ;
+etThread.delF( tin0P , pstt1m ) ;
 }
     }
-        etThread.delF( tinBaseP , psttShort ) ;
+        etThread.delF( tin0P , psttShort ) ;
 
         }
             }
-                etThread.diskMoveFileOrDirF( tinBaseP , tNew , psttc1 ) ;
+                etThread.diskMoveFileOrDirF( tin0P , tNew , psttc1 ) ;
     
                 }
-                    etThread.delF( tinBaseP , psttw ) ;
+                    etThread.delF( tin0P , psttw ) ;
                     tNew += T(!bHaveDot1&&!bHaveDot2?".":"")+T(psttw) ;
                     boolT bHaveDot2 = psttw[ CSpREFIX ].idAdam == '.' ;
-                    etThread.strSubstringF( tinBaseP , psttw , idfRight , idlRight , psttShort ) ; ___( psttw );
+                    etThread.strSubstringF( tin0P , psttw , idfRight , idlRight , psttShort ) ; ___( psttw );
                 {
                 if( idfRight )
     
                 }
-                    etThread.delF( tinBaseP , psttw ) ;
+                    etThread.delF( tin0P , psttw ) ;
                     bHaveDot1 = psttw[ CSpREFIX - 1 + psttw->idAdam ].idAdam == '.' ;
                     tNew += T(".")+T(psttw) ;
-                    etThread.strSubstringF( tinBaseP , psttw , idfLeft , idlLeft , psttShort ) ; ___( psttw );
+                    etThread.strSubstringF( tin0P , psttw , idfLeft , idlLeft , psttShort ) ; ___( psttw );
                 {
                 if( idfLeft )
                 ZE( boolT , bHaveDot1 ) ;
     
-                etThread.delF( tinBaseP , psttw ) ;
+                etThread.delF( tin0P , psttw ) ;
                 tNew += T(psttw) ;
-                etThread.strSubstringF( tinBaseP , psttw , idf , idl , psttShort ) ; ___( psttw );
+                etThread.strSubstringF( tin0P , psttw , idf , idl , psttShort ) ; ___( psttw );
     
                 }
                     idlRight = psttShort->idAdam ;
@@ -61,20 +61,20 @@ etThread.delF( tinBaseP , pstt1m ) ;
         {
         if( idf ++ )
     
-        if( !idf ) idf = etThread.strIdF( tinBaseP , T("_2009_") , psttShort ) ;
-        countT     idf = etThread.strIdF( tinBaseP , T("_2010_") , psttShort ) ;
+        if( !idf ) idf = etThread.strIdF( tin0P , T("_2009_") , psttShort ) ;
+        countT     idf = etThread.strIdF( tin0P , T("_2010_") , psttShort ) ;
 
         }
-            etThread.strSubstringF( tinBaseP , psttShort , idf , idl , psttc1 ) ; ___( psttShort );
+            etThread.strSubstringF( tin0P , psttShort , idf , idl , psttc1 ) ; ___( psttShort );
             countT idl = psttc1->idAdam ;
             countT idf = ids + 1 ;
         {
         ZE( strokeS* , psttShort ) ;
 
         }
-            etThread.delF( tinBaseP , psttw ) ;
+            etThread.delF( tin0P , psttw ) ;
             tNew += T(psttw) ;
-            etThread.strSubstringF( tinBaseP , psttw , idf , idl , psttc1 ) ; ___( psttw );
+            etThread.strSubstringF( tin0P , psttw , idf , idl , psttc1 ) ; ___( psttw );
 
             countT idl = ids ;
             countT idf = 1 ;
@@ -83,14 +83,14 @@ etThread.delF( tinBaseP , pstt1m ) ;
         TN( tNew , "" ) ;
     {
     if( 1 < ids && ids < psttc1->idAdam )
-    countT ids = etThread.strIdF( tinBaseP , S1C('/') , psttc1 , - 1 ) ;
+    countT ids = etThread.strIdF( tin0P , S1C('/') , psttc1 , - 1 ) ;
 
-    etThread.strokeF( tinBaseP , T(psttc1)+T("\r\n") ) ;
+    etThread.strokeF( tin0P , T(psttc1)+T("\r\n") ) ;
 
     //if( !( cToDo -- ) ) break ;
 {
 FORsTRINGSiN1( pstt1m )
-countT cFound = etThread.boxMenuF( tinBaseP , soul , T("///d/tmp/archived/tmp/audio/*") , 0 /*, cToDo*/ ) ; ___( pstt1m ) ;
+countT cFound = etThread.boxMenuF( tin0P , soul , T("///d/tmp/archived/tmp/audio/*") , 0 /*, cToDo*/ ) ; ___( pstt1m ) ;
 ZE( strokeS* , pstt1m ) ;
 //countT cToDo = TUCK << 2 ;
 

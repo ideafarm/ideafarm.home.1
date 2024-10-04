@@ -12,12 +12,12 @@ REST
 #endif
 
     }
-        etThread.osSleepF( tinBaseP , TOCK ) ;
-        etThread.delF( tinBaseP , pbr ) ;
-        else                                     etThread.strokeF( tinBaseP , T("no reply received\r\n") ) ;
-        if( pbr && cbr == 2 * sizeof( countT ) ) etThread.strokeF( tinBaseP , T("the cell monitor assigned the id value range [")+TF1(pcr[0])+T(",")+TF1(pcr[1])+T("] to me\r\nfor whatever use i have for it\r\n") ) ;
+        etThread.osSleepF( tin0P , TOCK ) ;
+        etThread.delF( tin0P , pbr ) ;
+        else                                     etThread.strokeF( tin0P , T("no reply received\r\n") ) ;
+        if( pbr && cbr == 2 * sizeof( countT ) ) etThread.strokeF( tin0P , T("the cell monitor assigned the id value range [")+TF1(pcr[0])+T(",")+TF1(pcr[1])+T("] to me\r\nfor whatever use i have for it\r\n") ) ;
         countT* pcr = (countT*)pbr ;
-        thirdC::ifcMonQueryIF( tinBaseP , pbr , cbr , ifcIDtYPEqUERY_SNuNIQUEaLLcELLStHISmONITORmULTIPLE , (byteT*)&cWant , sizeof cWant ) ; ___( pbr ) ;
+        thirdC::ifcMonQueryIF( tin0P , pbr , cbr , ifcIDtYPEqUERY_SNuNIQUEaLLcELLStHISmONITORmULTIPLE , (byteT*)&cWant , sizeof cWant ) ; ___( pbr ) ;
         ZE( countT , cbr ) ;
         ZE( byteT* , pbr ) ;
         countT cWant = 0x100 ;
@@ -28,9 +28,9 @@ REST
 #else
 
     }
-        etThread.delF( tinBaseP , pbr ) ;
-        if( pbr && cbr == sizeof( countT ) ) etThread.strokeF( tinBaseP , T("the cell monitor assigned the id value ")+TF1(*(countT*)pbr)+T(" to me\r\nfor whatever use i have for it\r\n") ) ;
-        thirdC::ifcMonQueryIF( tinBaseP , pbr , cbr , ifcIDtYPEqUERY_SNuNIQUEaLLcELLStHISmONITOR ) ; ___( pbr ) ;
+        etThread.delF( tin0P , pbr ) ;
+        if( pbr && cbr == sizeof( countT ) ) etThread.strokeF( tin0P , T("the cell monitor assigned the id value ")+TF1(*(countT*)pbr)+T(" to me\r\nfor whatever use i have for it\r\n") ) ;
+        thirdC::ifcMonQueryIF( tin0P , pbr , cbr , ifcIDtYPEqUERY_SNuNIQUEaLLcELLStHISmONITOR ) ; ___( pbr ) ;
         ZE( countT , cbr ) ;
         ZE( byteT* , pbr ) ;
     {

@@ -17,7 +17,7 @@
     
             }
                 if( psttBigP[ CSpREFIX - 1 + idHit ] == sttSmallP ) break ;
-                if( bEscaped || ( bUseQuotes && strIsInQuoteF( tinBaseP , sttQuoteP , idHit , psttBigP ) ) ) continue ;
+                if( bEscaped || ( bUseQuotes && strIsInQuoteF( tin0P , sttQuoteP , idHit , psttBigP ) ) ) continue ;
 
                 boolT bEscaped = idHit > 1 && psttBigP[ CSpREFIX - 2 + idHit ].idAdam == '\\' ;
                 //U:: 20230615@2227: MAKE THIS USE OF bEscaped OPTIONAL TO AVOID BREAKING EXISTING CALLING CODE; THIS WAS ADDED W/O ANALYSIS AND W/O REGRESSION TESTING TO GET strIdMatchingF TO WORK WITH SOIL KT BODY INPUT THAT CONTAINS E.G. "\{"
@@ -37,7 +37,7 @@
         if( !POOP )
         ZE( countT , ccBig ) ;_WQ
     {
-    STRiDrECURSE( strIdF( tinBaseP , idf , sttQuoteP , sttSmallP , psttBigP , idLastP , 1 ) )
+    STRiDrECURSE( strIdF( tin0P , idf , sttQuoteP , sttSmallP , psttBigP , idLastP , 1 ) )
 
     _IO_
 
@@ -56,7 +56,7 @@
     const boolT bUseQuotes = sttQuoteP.idCaste != sc_IGNOREqUOTES ;_WQ
     SCOOP
 {
-/*1*/countT etherC::strIdF( tin0S& tinBaseP , countT& idFirstP , strokeS& sttQuoteP , const strokeS& sttSmallP , const strokeS* psttBigP , const countT idLastP , sCountT idP )/*1*/
+/*1*/countT etherC::strIdF( tin0S& tin0P , countT& idFirstP , strokeS& sttQuoteP , const strokeS& sttSmallP , const strokeS* psttBigP , const countT idLastP , sCountT idP )/*1*/
 
 /**/
 */

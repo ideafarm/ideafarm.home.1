@@ -9,21 +9,21 @@
 
 }
     return bOk ;
-    grab.ungrabF( tinBaseP ) ;
+    grab.ungrabF( tin0P ) ;
 
     }
         eqP = supply ;
-        epP = thirdC::mathExpIF( tinBaseP , logB - thirdC::mathLogIF( tinBaseP , supply ) ) ;
+        epP = thirdC::mathExpIF( tin0P , logB - thirdC::mathLogIF( tin0P , supply ) ) ;
         measure04T supply = ( s1qP + s2qP ) / 2.0 ;
-        measure04T logB   = ( thirdC::mathLogIF( tinBaseP , d1qP ) + thirdC::mathLogIF( tinBaseP , d2qP ) + thirdC::mathLogIF( tinBaseP , d1pP ) + thirdC::mathLogIF( tinBaseP , d2pP ) ) / 2.0 ;
+        measure04T logB   = ( thirdC::mathLogIF( tin0P , d1qP ) + thirdC::mathLogIF( tin0P , d2qP ) + thirdC::mathLogIF( tin0P , d1pP ) + thirdC::mathLogIF( tin0P , d2pP ) ) / 2.0 ;
     {
     else
     if( TINY3( d1qP ) || TINY3( d2qP ) || TINY3( d1pP ) || TINY3( d2pP ) ) bOk = 0 ;
     boolT bOk = 1 ;
 
-    grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 {
-/*1*/boolT marketC::equilibriumF( tin0S& tinBaseP , measure04T& epP , measure04T& eqP , const measure04T s1pP , const measure04T s1qP , const measure04T s2pP , const measure04T s2qP , const measure04T d1pP , const measure04T d1qP , const measure04T d2pP , const measure04T d2qP )/*1*/
+/*1*/boolT marketC::equilibriumF( tin0S& tin0P , measure04T& epP , measure04T& eqP , const measure04T s1pP , const measure04T s1qP , const measure04T s2pP , const measure04T s2qP , const measure04T d1pP , const measure04T d1qP , const measure04T d2pP , const measure04T d2qP )/*1*/
 
 // I COULD BE ENHANCED TO EXPLOIT THE AVAILABLE SYSTEM INFO TO CALCULATE GENERAL EQUILIBRIUM AND TO USE A WEIGHTED AVERAGE OF THE TWO RESULTS
 // INSTEAD, I JUST ESTIMATE DEMAND AND SUPPLY PARAMETRICALLY AND USE THOSE ESTIMATES TO SOLVE FOR EQUILIBRIUM

@@ -8,7 +8,7 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
     DEL( pstd ) ;
@@ -20,89 +20,89 @@ while( cStacks -- )
 countT cStacks = stStacksToDelete ;
 
 !final ;
-final.nameF( tinBaseP , T("final") ) ;
+final.nameF( tin0P , T("final") ) ;
 tableC final = selected << cols ;
 
 }
-    cols.newObjectF( tinBaseP , tCol2 ) ;
-    cols.newEventF( tinBaseP ) ;
+    cols.newObjectF( tin0P , tCol2 ) ;
+    cols.newEventF( tin0P ) ;
 
-    cols.newObjectF( tinBaseP , tCol1 ) ;
-    cols.newEventF( tinBaseP ) ;
+    cols.newObjectF( tin0P , tCol1 ) ;
+    cols.newEventF( tin0P ) ;
 
-    cols.newColF( tinBaseP , T("colsWanted") ) ;
+    cols.newColF( tin0P , T("colsWanted") ) ;
 {
-tableC cols( tinBaseP , ether , T("cols") ) ;
+tableC cols( tin0P , ether , T("cols") ) ;
 TN( tCol2 , "all.clients.client" ) ;
 TN( tCol1 , "all.salesReps.name" ) ;
 
 !selected ;
-selected.nameF( tinBaseP , T("selected") ) ;
+selected.nameF( tin0P , T("selected") ) ;
 tableC selected = all & values ;
 
 !values ;
-values.nameF( tinBaseP , T("selection scores") ) ;
+values.nameF( tin0P , T("selection scores") ) ;
 tableC values = okc.calcF( stStacksToDelete , all ) ;
 
 !okc ;
-okc.nameF( tinBaseP , T("okc") ) ;
+okc.nameF( tin0P , T("okc") ) ;
 tableC okc = all.compileF( stStacksToDelete , ok ) ;
-stackC stStacksToDelete( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
+stackC stStacksToDelete( tin0P , ether , TAG( TAGiDnULL ) ) ;
 
 !ok ;
 !all ;
 
 }
-    ok.newObjectF( tinBaseP , tOk2 ) ;
-    ok.newEventF( tinBaseP ) ;
+    ok.newObjectF( tin0P , tOk2 ) ;
+    ok.newEventF( tin0P ) ;
 
-    ok.newObjectF( tinBaseP , tOk1 ) ;
-    ok.newEventF( tinBaseP ) ;
+    ok.newObjectF( tin0P , tOk1 ) ;
+    ok.newEventF( tin0P ) ;
 
-    ok.newColF( tinBaseP , T("booleanExpression") ) ;
+    ok.newColF( tin0P , T("booleanExpression") ) ;
 {
-tableC ok( tinBaseP , ether , T("ok") ) ;
+tableC ok( tin0P , ether , T("ok") ) ;
 TN( tOk2 , "salesReps.name == clients.repName" ) ;
 TN( tOk1 , "salesReps.name == clients.repName" ) ;
 
-all.nameF( tinBaseP , T("all") ) ;
+all.nameF( tin0P , T("all") ) ;
 tableC all = salesReps * clients ;
 
 }
-    clients.newObjectF( tinBaseP , tVarian ) ;
-    clients.newObjectF( tinBaseP , tJoe ) ;
-    clients.newEventF( tinBaseP ) ;
+    clients.newObjectF( tin0P , tVarian ) ;
+    clients.newObjectF( tin0P , tJoe ) ;
+    clients.newEventF( tin0P ) ;
 
-    clients.newObjectF( tinBaseP , tIntel ) ;
-    clients.newObjectF( tinBaseP , tJoe ) ;
-    clients.newEventF( tinBaseP ) ;
+    clients.newObjectF( tin0P , tIntel ) ;
+    clients.newObjectF( tin0P , tJoe ) ;
+    clients.newEventF( tin0P ) ;
 
-    clients.newObjectF( tinBaseP , tHP ) ;
-    clients.newObjectF( tinBaseP , tBob ) ;
-    clients.newEventF( tinBaseP ) ;
+    clients.newObjectF( tin0P , tHP ) ;
+    clients.newObjectF( tin0P , tBob ) ;
+    clients.newEventF( tin0P ) ;
 
-    clients.newObjectF( tinBaseP , tAmd ) ;
-    clients.newObjectF( tinBaseP , tBob ) ;
-    clients.newEventF( tinBaseP ) ;
+    clients.newObjectF( tin0P , tAmd ) ;
+    clients.newObjectF( tin0P , tBob ) ;
+    clients.newEventF( tin0P ) ;
 
-    clients.newColF( tinBaseP , T("client") ) ;
-    clients.newColF( tinBaseP , T("repName") ) ;
+    clients.newColF( tin0P , T("client") ) ;
+    clients.newColF( tin0P , T("repName") ) ;
 {
-tableC clients( tinBaseP , ether , T("clients") ) ;
+tableC clients( tin0P , ether , T("clients") ) ;
 TN( tHP , "hp" ) ;
 TN( tVarian , "varian" ) ;
 TN( tAmd , "amd" ) ;
 TN( tIntel , "intel" ) ;
 
 }
-    salesReps.newObjectF( tinBaseP , tBob ) ;
-    salesReps.newEventF( tinBaseP ) ;
-    salesReps.newObjectF( tinBaseP , tJoe ) ;
-    salesReps.newEventF( tinBaseP ) ;
+    salesReps.newObjectF( tin0P , tBob ) ;
+    salesReps.newEventF( tin0P ) ;
+    salesReps.newObjectF( tin0P , tJoe ) ;
+    salesReps.newEventF( tin0P ) ;
 
-    salesReps.newColF( tinBaseP , T("name") ) ;
+    salesReps.newColF( tin0P , T("name") ) ;
 {
-tableC salesReps( tinBaseP , ether , T("salesReps") ) ;
+tableC salesReps( tin0P , ether , T("salesReps") ) ;
 TN( tBob , "bob" ) ;
 TN( tJoe , "joe" ) ;
 

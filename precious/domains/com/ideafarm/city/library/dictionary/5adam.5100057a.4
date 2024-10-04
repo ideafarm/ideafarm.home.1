@@ -11,17 +11,17 @@
     return *this ;
     cSessions += ((datumSessionC*)&plateP)->cSessions ;
 
-    ether.osTimeAddF( tinBaseP , timeLived1 , timeLived2 , datum.timeLived1 , datum.timeLived2 ) ;
+    ether.osTimeAddF( tin0P , timeLived1 , timeLived2 , datum.timeLived1 , datum.timeLived2 ) ;
 
     }
-        else { ether.strMakeF( tinBaseP , LF , psttPeer , datum.psttPeer ) ; ___( psttPeer ) ; }
+        else { ether.strMakeF( tin0P , LF , psttPeer , datum.psttPeer ) ; ___( psttPeer ) ; }
         }
             }
-                ether.delF( tinBaseP , psttd ) ;
-                ether.strMakeF( tinBaseP , LF , psttPeer , T(psttd)+T(" , ")+T(datum.psttPeer) ) ; ___( psttPeer ) ;
+                ether.delF( tin0P , psttd ) ;
+                ether.strMakeF( tin0P , LF , psttPeer , T(psttd)+T(" , ")+T(datum.psttPeer) ) ; ___( psttPeer ) ;
                 strokeS* psttd = psttPeer ; psttPeer = 0 ;
             {
-            if( ether.strCompareF( tinBaseP , psttPeer , datum.psttPeer ) )
+            if( ether.strCompareF( tin0P , psttPeer , datum.psttPeer ) )
         {
         if( psttPeer )
     {
@@ -43,10 +43,10 @@ plateC& datumSessionC::operator +=( plateC& plateP )
         +tb+TT4(timeLived1,timeLived2,3,5)
         TF3(nnPeer.pcId[0],flFORMAT_NObIGITvALUES|flFORMAT_FILLzE|flFORMAT_UNSIGNED,8)
 
-    ether.strMakeF( tinBaseP , LF , psttRpt ,
+    ether.strMakeF( tin0P , LF , psttRpt ,
     TN( tb , " " ) ;
 
-    ether.delF( tinBaseP , psttRpt ) ; //U::RECALC ONLY IF STALE
+    ether.delF( tin0P , psttRpt ) ; //U::RECALC ONLY IF STALE
     TINSL
 {
 datumSessionC::operator const strokeS*( voidT )
@@ -58,7 +58,7 @@ datumSessionC::operator const strokeS*( voidT )
 
     if( idFormat >= 4 ) soulP >> cTouch ;
 
-    ether.osTimeSubtractF( tinBaseP , timeLived1 , timeLived2 , timeCt1 , timeCt2 ) ;
+    ether.osTimeSubtractF( tin0P , timeLived1 , timeLived2 , timeCt1 , timeCt2 ) ;
     timeLived2 = timeLathTouch2 ;
     timeLived1 = timeLathTouch1 ;
 
@@ -109,7 +109,7 @@ timeCt1( 0 ) ,
 idSession( 0 ) ,
 idAdam( 0 ) ,
 ether( etherP ) ,
-datumSessionC::datumSessionC( tin0S& tinBaseP , etherC& etherP , soulC& soulP ) :
+datumSessionC::datumSessionC( tin0S& tin0P , etherC& etherP , soulC& soulP ) :
 
 }
 {
@@ -127,8 +127,8 @@ psttPeer( 0 ) ,
 timeCt2( 0 ) ,
 timeCt1( 0 ) ,
 idSession( 0 ) ,
-ether( *((tin9S&)tinBaseP).pEther ) ,
-datumSessionC::datumSessionC( tin0S& tinBaseP ) :
+ether( *((tin9S&)tin0P).pEther ) ,
+datumSessionC::datumSessionC( tin0S& tin0P ) :
 
 }
     return scSgn ;
@@ -144,11 +144,11 @@ sCountT datumSessionC::operator -( const plateC& plateP ) const
 }
     return *this ;
 
-    if( datum.psttRpt ) { ether.strMakeF( tinBaseP , LF , psttRpt , datum.psttRpt ) ; ___( psttRpt ) ; }
-    ether.delF( tinBaseP , psttRpt ) ;
+    if( datum.psttRpt ) { ether.strMakeF( tin0P , LF , psttRpt , datum.psttRpt ) ; ___( psttRpt ) ; }
+    ether.delF( tin0P , psttRpt ) ;
 
-    if( datum.psttPeer ) { ether.strMakeF( tinBaseP , LF , psttPeer , datum.psttPeer ) ; ___( psttPeer ) ; }
-    ether.delF( tinBaseP , psttPeer ) ;
+    if( datum.psttPeer ) { ether.strMakeF( tin0P , LF , psttPeer , datum.psttPeer ) ; ___( psttPeer ) ; }
+    ether.delF( tin0P , psttPeer ) ;
 
     nnPeer          = datum.nnPeer ;
     timeLived2      = datum.timeLived2 ;
@@ -165,9 +165,9 @@ sCountT datumSessionC::operator -( const plateC& plateP ) const
 plateC& datumSessionC::operator =( plateC& plateP )
 
 }
-    ether.delF( tinBaseP , psttRpt ) ;
-    ether.delF( tinBaseP , psttPeer ) ;
-    ether.delF( tinBaseP , psttUser ) ;
+    ether.delF( tin0P , psttRpt ) ;
+    ether.delF( tin0P , psttPeer ) ;
+    ether.delF( tin0P , psttUser ) ;
     TINSL
 {
 datumSessionC::~datumSessionC( voidT )
@@ -178,9 +178,9 @@ datumSessionC::~datumSessionC( voidT )
 plateC& datumSessionC::operator >>( soulC& sP )
 
 }
-    return new( 0 , tinBaseP , idLineP , idiFileP ) datumSessionC( tinBaseP ) ;
+    return new( 0 , tin0P , idLineP , idiFileP ) datumSessionC( tin0P ) ;
 {
-datumSessionC* datumSessionC::newF( tin0S& tinBaseP , const countT idLineP , const countT idiFileP , po olC& poolOldSetOldP )
+datumSessionC* datumSessionC::newF( tin0S& tin0P , const countT idLineP , const countT idiFileP , po olC& poolOldSetOldP )
 
 NEWdELcLASS( 1 , datumSessionC )
 

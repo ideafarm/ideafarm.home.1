@@ -9,55 +9,55 @@
 
 DONE( tmLoadSilentF )
 }
-    etThread.delF( tinBaseP , pc8tp ) ;
-    b_pnnSilentP.ungrabF( tinBaseP ) ;
+    etThread.delF( tin0P , pc8tp ) ;
+    b_pnnSilentP.ungrabF( tin0P ) ;
     cnnSilentP = 0 ;
-    etThread.delF( tinBaseP , pnnSilentP ) ;
-    b_pnnSilentP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-    etThread.traceF( tinBaseP , T("cleaning up") ) ;
+    etThread.delF( tin0P , pnnSilentP ) ;
+    b_pnnSilentP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    etThread.traceF( tin0P , T("cleaning up") ) ;
 
     }
         }
             }
-                ++ s ; etThread.osSleepF( tinBaseP , TOCK >> 2 ) ;
+                ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
             {
             while( !bQuitP && cToDo -- )
             countT cToDo = TUCK ;
 
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
-        //etThread.traceF( tinBaseP , T("napping") ) ;
+        //etThread.traceF( tin0P , T("napping") ) ;
 
-        etThread.delF( tinBaseP , psttAll ) ;
+        etThread.delF( tin0P , psttAll ) ;
         }
-            etThread.delF( tinBaseP , pstt1Lines ) ;
-            b_pnnSilentP.ungrabF( tinBaseP ) ;
+            etThread.delF( tin0P , pstt1Lines ) ;
+            b_pnnSilentP.ungrabF( tin0P ) ;
             }
-                etThread.delF( tinBaseP , psttnn ) ;
-                //etThread.strokeF( tinBaseP , T("i will silently ignore: ")+T(pnnSilentP[off-1])+T(" (\"")+T(psttnn)+T("\")\r\n") ) ;
-                pnnSilentP[ off ++ ] = etThread.strDigitsToNicNameF( tinBaseP , psttnn ) ;
-                etThread.strWordF( tinBaseP , psttnn , psttc1 , sttq , S1C(';') ) ; ___( psttnn ) ;
+                etThread.delF( tin0P , psttnn ) ;
+                //etThread.strokeF( tin0P , T("i will silently ignore: ")+T(pnnSilentP[off-1])+T(" (\"")+T(psttnn)+T("\")\r\n") ) ;
+                pnnSilentP[ off ++ ] = etThread.strDigitsToNicNameF( tin0P , psttnn ) ;
+                etThread.strWordF( tin0P , psttnn , psttc1 , sttq , S1C(';') ) ; ___( psttnn ) ;
                 ZE( strokeS* , psttnn ) ;
                 strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             {
             FORsTRINGSiN1( pstt1Lines )
             ZE( countT , off ) ;
-            etThread.newF( tinBaseP , LF , pnnSilentP , cnnSilentP ) ; ___( pnnSilentP ) ;
-            cnnSilentP = etThread.strWordsOldF( tinBaseP , pstt1Lines , psttAll , sttq , T("\r\n") ) ; ___( pstt1Lines ) ;
+            etThread.newF( tin0P , LF , pnnSilentP , cnnSilentP ) ; ___( pnnSilentP ) ;
+            cnnSilentP = etThread.strWordsOldF( tin0P , pstt1Lines , psttAll , sttq , T("\r\n") ) ; ___( pstt1Lines ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , pstt1Lines ) ;
 
             cnnSilentP = 0 ;
-            etThread.delF( tinBaseP , pnnSilentP ) ;
+            etThread.delF( tin0P , pnnSilentP ) ;
 
-            b_pnnSilentP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-            etThread.traceF( tinBaseP , T("loading pnnSilent[]") ) ;
+            b_pnnSilentP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+            etThread.traceF( tin0P , T("loading pnnSilent[]") ) ;
         {
         if( psttAll )
 
         GETsETTING( etThread , psttAll , T("nnSilent") ) //IN THE FORMER CODE, THERE WAS SERIALIZATION OF ACCESS TO THE SETTINGS FILE, BUT THAT SERIALIZATION CODE WAS COMMENTED OUT
 
-        //etThread.traceF( tinBaseP , T("getting the nnSilent setting") ) ;
+        //etThread.traceF( tin0P , T("getting the nnSilent setting") ) ;
     {
     while( !etThread && !bQuitP )
 

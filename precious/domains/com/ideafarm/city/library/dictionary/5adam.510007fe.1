@@ -9,26 +9,26 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     if( bChatter ) break ;
 
     }
         if( bChatter ) sorta.traceRangeF( pbArray , cbArray , T("after") ) ;
-        sorta.sortF( tinBaseP ) ;
+        sorta.sortF( tin0P ) ;
         if( bChatter ) sorta.traceRangeF( pbArray , cbArray , T("before") ) ;
-        sortaC sorta( tinBaseP , etThread , bQuit , pbArray , cbArray , sizeof( countT ) , sizeof( countT ) , sizeof( countT ) , 1 , 0 , bChatter ? flSORTAc_CHATTER : flSORTAc_null ) ;
-        if( bChatter ) etThread.traceF( tinBaseP , TPS("|",0x25+cCounts*0x9,'|') , flTRACE_NOpREFIX ) ;
+        sortaC sorta( tin0P , etThread , bQuit , pbArray , cbArray , sizeof( countT ) , sizeof( countT ) , sizeof( countT ) , 1 , 0 , bChatter ? flSORTAc_CHATTER : flSORTAc_null ) ;
+        if( bChatter ) etThread.traceF( tin0P , TPS("|",0x25+cCounts*0x9,'|') , flTRACE_NOpREFIX ) ;
     {
 
     //}
     //    if( bChatter ) sorta.traceRangeF( pbArray , cbArray , T("after") ) ;
-    //    sorta.sortF( tinBaseP ) ;
+    //    sorta.sortF( tin0P ) ;
     //    if( bChatter ) sorta.traceRangeF( pbArray , cbArray , T("before") ) ;
-    //    sortaC sorta( tinBaseP , etThread , bQuit , pbArray , cbArray , sizeof( countT ) , sizeof( countT ) , sizeof( countT ) , modulo , remainder , bChatter ? flSORTAc_CHATTER : flSORTAc_null ) ;
-    //    if( bChatter ) etThread.traceF( tinBaseP , TPS("|",0x25+cCounts*0x9,'|') , flTRACE_NOpREFIX ) ;
+    //    sortaC sorta( tin0P , etThread , bQuit , pbArray , cbArray , sizeof( countT ) , sizeof( countT ) , sizeof( countT ) , modulo , remainder , bChatter ? flSORTAc_CHATTER : flSORTAc_null ) ;
+    //    if( bChatter ) etThread.traceF( tin0P , TPS("|",0x25+cCounts*0x9,'|') , flTRACE_NOpREFIX ) ;
     //{
     //for( countT remainder = 0 ; remainder < modulo ; remainder ++ )
     //countT modulo = 4 ;
@@ -44,12 +44,12 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     {
     for( countT offca = 0 ; offca < ccArray ; offca ++ )
 
-    ranUniC ruChallenge( tinBaseP , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
-    //etThread.traceF( tinBaseP , T("[cSeed]:    ")+TF2(cSeed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
+    ranUniC ruChallenge( tin0P , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
+    //etThread.traceF( tin0P , T("[cSeed]:    ")+TF2(cSeed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
     cSeedLath = cSeed ;
     countT cSeed = 0x78E86FC1 /*slab.trueRandom*/ ;
 
-    if( !( ++ idPass % ( TOCK << 0 ) ) ) etThread.traceF( tinBaseP , T("[idPass]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ; ;
+    if( !( ++ idPass % ( TOCK << 0 ) ) ) etThread.traceF( tin0P , T("[idPass]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ; ;
 {
 while( !ether )
 ZE( countT , idPass ) ;

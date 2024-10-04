@@ -9,29 +9,29 @@
 
 }
     }
-        ((tin9S&)tinBaseP).monitor.idDirty ++ ;
-        ((tin9S&)tinBaseP).pIdInNest[ ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ] ++ ;
-        ((tin9S&)tinBaseP).pLFstep[ ( ((tin9S&)tinBaseP).monitor.idStep      & OFFsLOTtINsTEPmAX ) << 1 ] = ( ((tin9S&)tinBaseP).monitor.pLFnest[ ( ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ] = ifcLINE & ~fliSTEP_FLAGmASK ) | fliSTEP_NESTcHANGE ;
-        ((tin9S&)tinBaseP).pLFstep[ ( ( ((tin9S&)tinBaseP).monitor.idStep      & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] =   ((tin9S&)tinBaseP).monitor.pLFnest[ ( ( ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] = DDNUMB ;
-        _idProgressNestSave = ((tin9S&)tinBaseP).pIdProgressNest[ ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ] ;
-        _idInNestSave       = ((tin9S&)tinBaseP).pIdInNest[       ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ] ;
-        _idLineNestSave     = ((tin9S&)tinBaseP).monitor.pLFnest[     ( ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ] ;
-        _idFileNestSave     = ((tin9S&)tinBaseP).monitor.pLFnest[     ( ( ((tin9S&)tinBaseP).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
+        ((tin9S&)tin0P).monitor.idDirty ++ ;
+        ((tin9S&)tin0P).pIdInNest[ ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ] ++ ;
+        ((tin9S&)tin0P).pLFstep[ ( ((tin9S&)tin0P).monitor.idStep      & OFFsLOTtINsTEPmAX ) << 1 ] = ( ((tin9S&)tin0P).monitor.pLFnest[ ( ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ] = ifcLINE & ~fliSTEP_FLAGmASK ) | fliSTEP_NESTcHANGE ;
+        ((tin9S&)tin0P).pLFstep[ ( ( ((tin9S&)tin0P).monitor.idStep      & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] =   ((tin9S&)tin0P).monitor.pLFnest[ ( ( ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] = DDNUMB ;
+        _idProgressNestSave = ((tin9S&)tin0P).pIdProgressNest[ ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ] ;
+        _idInNestSave       = ((tin9S&)tin0P).pIdInNest[       ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ] ;
+        _idLineNestSave     = ((tin9S&)tin0P).monitor.pLFnest[     ( ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ] ;
+        _idFileNestSave     = ((tin9S&)tin0P).monitor.pLFnest[     ( ( ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
 
-        ((tin9S&)tinBaseP).monitor.cInNest ++ ;
-        ((tin9S&)tinBaseP).monitor.idStep ++ ;
-        ((tin9S&)tinBaseP).monitor.idDirty ++ ;
+        ((tin9S&)tin0P).monitor.cInNest ++ ;
+        ((tin9S&)tin0P).monitor.idStep ++ ;
+        ((tin9S&)tin0P).monitor.idDirty ++ ;
     {
-    if( F(((tin9S&)tinBaseP).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tin9S&)tinBaseP).monitor.idDirty % 2 ) )
+    if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL && F(((tin9S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tin9S&)tin0P).monitor.idDirty % 2 ) )
 
-                 ((tin9S&)tinBaseP).pEther       = pEtherUse ;
-    pEtherSave = ((tin9S&)tinBaseP).pEther                   ;
+                 ((tin9S&)tin0P).pEther       = pEtherUse ;
+    pEtherSave = ((tin9S&)tin0P).pEther                   ;
 
     if( pbBitsUseP ) ; //U::
     idiFileUse = idiFileUseP ;
     idLineUse  = idLineUseP  ;
 {
-/*1*/voidT upDnC::upF( tin0S& tinBaseP , countT idLineUseP , countT idiFileUseP , const byteT* const pbBitsUseP )/*1*/
+/*1*/voidT upDnC::upF( tin0S& tin0P , countT idLineUseP , countT idiFileUseP , const byteT* const pbBitsUseP )/*1*/
 
 /**/
 */

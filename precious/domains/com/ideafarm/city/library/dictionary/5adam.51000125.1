@@ -10,7 +10,7 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
 
@@ -28,20 +28,20 @@ DEL( pInfo ) ;
     T("postOsName:      \"")+T(pInfo->postOsName                        )+T("\"\r\n")+
     T("psttIfoName:     \"")+T(pInfo->psttIfoName                       )+T("\"\r\n")+
     T("File info for \"")+T(FILEnAME)+T("\":\r\n\r\n")+
-    tinBaseP ,
+    tin0P ,
 (
 etThread.strokeF
 
-etThread.diskFileOrDirDeleteF( tinBaseP , T(FILEnAME) ) ;
-etThread.diskFileQueryF( tinBaseP , pInfo , handle ) ;
+etThread.diskFileOrDirDeleteF( tin0P , T(FILEnAME) ) ;
+etThread.diskFileQueryF( tin0P , pInfo , handle ) ;
 ZE( infoFileS* , pInfo ) ;
-etThread.fileOpenF( tinBaseP , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , 0 , 0 , 0 , 1 ) ;
+etThread.fileOpenF( tin0P , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , 0 , 0 , 0 , 1 ) ;
 idResult = 0 ;
 
-etThread.fileWriteF( tinBaseP , handle , "this text will go into the file" ) ;
-etThread.fileOpenF( tinBaseP , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR , 0 , 0 , 0 , 1 ) ;
+etThread.fileWriteF( tin0P , handle , "this text will go into the file" ) ;
+etThread.fileOpenF( tin0P , handle , idResult , T(FILEnAME) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR , 0 , 0 , 0 , 1 ) ;
 ZE( countT , idResult ) ;
-handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
 TODO
 

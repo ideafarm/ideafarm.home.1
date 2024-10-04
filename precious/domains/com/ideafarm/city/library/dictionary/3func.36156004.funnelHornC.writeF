@@ -12,24 +12,24 @@
     inc02AM( cWriteEnd ) ;
     }
         ++ *(countT*)pbo ;
-        //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("writeF / setting \"not yet read\" flag") ) ;
+        //((tin9S&)tin0P).pEther->traceF( tin0P , T("writeF / setting \"not yet read\" flag") ) ;
         thirdC::c_memcpyIF( pbo + sizeof( countT ) , pbP , cbItemNet ) ;
     {
     else
     if( bQuit ) offo = - 1 ;
 
     }
-        ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;
-        if( !( ++ idWink % TUCK ) ) ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("writeF / slot has not yet been read, so napping for a wink [idWink]:    ")+TF2(idWink,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        ++ s ; thirdC::dosSleepWinkIF( tin0P ) ;
+        if( !( ++ idWink % TUCK ) ) ((tin9S&)tin0P).pEther->traceF( tin0P , T("writeF / slot has not yet been read, so napping for a wink [idWink]:    ")+TF2(idWink,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     while( *(countT*)pbo && !bQuit )                                                    // NAP UNTIL THE SLOT'S "NOT YET READ" FLAG HAS BEEN RESET
     ZE( countT , idWink ) ;
-    sleepC  s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC  s( tin0P , TAG( TAGiDnULL ) ) ;
 
     byteT* pbo = pbBuffer + offo * cbItemGross ;
     countT offo = incv02AM( cWriteBegin ) % cCapacity ;
 {
-/*1*/countT funnelHornC::writeF( tin0S& tinBaseP , const byteT* pbP )/*1*/
+/*1*/countT funnelHornC::writeF( tin0S& tin0P , const byteT* pbP )/*1*/
 
 /**/
 */

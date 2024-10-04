@@ -19,13 +19,13 @@
         measureT mrCol = (measureT)deviceP.cColF() / (measureT)cColP ;
     {
     else
-    if( cColP == deviceP.cColF() && cRowP == deviceP.cRowF() ) thirdC::c_memcpyIF( tinBaseP , (byteT*)pPoint , (byteT*)paperP.pPoint , sizeof( POINT ) * cPoint ) ;
+    if( cColP == deviceP.cColF() && cRowP == deviceP.cRowF() ) thirdC::c_memcpyIF( tin0P , (byteT*)pPoint , (byteT*)paperP.pPoint , sizeof( POINT ) * cPoint ) ;
     //A:ASSUME: sizeof( POINT ) == sizeof( cPoint2S ) AND FORMAT IS IDENTICAL
 
-    thirdC::c_memcpyIF( tinBaseP , (byteT*)pcSize , (byteT*)paperP.pcSize , sizeof( countT ) * cGlyph ) ;
+    thirdC::c_memcpyIF( tin0P , (byteT*)pcSize , (byteT*)paperP.pcSize , sizeof( countT ) * cGlyph ) ;
 
-    PUSE.newF( tinBaseP , LF , *(byteT**)&pPoint , sizeof( POINT ) * paperP.cPoint ) ; ___( pPoint ) ;
-    PUSE.newF( tinBaseP , LF , *(byteT**)&pcSize , sizeof( countT ) * paperP.cGlyph ) ; ___( pcSize ) ;
+    PUSE.newF( tin0P , LF , *(byteT**)&pPoint , sizeof( POINT ) * paperP.cPoint ) ; ___( pPoint ) ;
+    PUSE.newF( tin0P , LF , *(byteT**)&pcSize , sizeof( countT ) * paperP.cGlyph ) ; ___( pcSize ) ;
 {
 rgbOverride( 0 )
 offop( 0 ) ,
@@ -34,7 +34,7 @@ pPoint( 0 ) ,
 cPoint( paperP.cPoint ) ,
 pcSize( 0 ) ,
 cGlyph( paperP.cGlyph ) ,
-/*1*/pelS::pelS( tin0S& tinBaseP , const paperS& paperP , const countT cColP , const countT cRowP , const deviceC& deviceP ) :/*1*/
+/*1*/pelS::pelS( tin0S& tin0P , const paperS& paperP , const countT cColP , const countT cRowP , const deviceC& deviceP ) :/*1*/
 
 /**/
 */

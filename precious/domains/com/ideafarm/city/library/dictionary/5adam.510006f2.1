@@ -9,12 +9,12 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    if( idPass == 2 ) etThread.delF( tinBaseP , postBufferBodyLarge ) ;
-    etThread.delF( tinBaseP , postBufferHead ) ;
+    if( idPass == 2 ) etThread.delF( tin0P , postBufferBodyLarge ) ;
+    etThread.delF( tin0P , postBufferHead ) ;
 
     }
         ostInLag1 = ostIn ;
@@ -31,36 +31,36 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                         }
                             }
                                 }
-                                    if( !POOP ) thirdC::c_strcpyIF( tinBaseP , postOuterBoundary , postb ) ;
+                                    if( !POOP ) thirdC::c_strcpyIF( tin0P , postOuterBoundary , postb ) ;
                                     __( poste - postb > sizeof postOuterBoundary - 1 ) ;
                                     *poste = 0 ; //THIS MODIFIES THE HEADER IN THE BUFFER ; THIS CAN GOOF UP FUTURE CODE CHANGES ; IF NECESSARY, REWRITE THIS TO AOID MODIFYING postBufferHead
                                 {
                                 if( poste )
-                                osTextT* poste = thirdC::c_strstrIF( tinBaseP , postb , "\"" ) ;
+                                osTextT* poste = thirdC::c_strstrIF( tin0P , postb , "\"" ) ;
                                 postb += sizeof postLookBoundary - 1 ;
                             {
                             if( postb )
-                            osTextT* postb = thirdC::c_strstrIF( tinBaseP , postContentType , postLookBoundary ) ;
+                            osTextT* postb = thirdC::c_strstrIF( tin0P , postContentType , postLookBoundary ) ;
                         {
-                        if( thirdC::c_strstrIF( tinBaseP , postContentType , "multipart/alternative" ) )
+                        if( thirdC::c_strstrIF( tin0P , postContentType , "multipart/alternative" ) )
 
                         //Content-Type: multipart/alternative; 	boundary="===============2670898874187650734=="
 
                         *poste = 0 ; //THIS MODIFIES THE HEADER IN THE BUFFER ; THIS CAN GOOF UP FUTURE CODE CHANGES ; IF NECESSARY, REWRITE THIS TO AOID MODIFYING postBufferHead
                     {
                     if( poste )
-                    osTextT* poste = thirdC::c_strstrIF( tinBaseP , postContentType , "\r\n" ) ;
+                    osTextT* poste = thirdC::c_strstrIF( tin0P , postContentType , "\r\n" ) ;
                     postContentType += 2 ;
                 {
                 if( postContentType )
-                osTextT* postContentType = thirdC::c_strstrIF( tinBaseP , postBufferHead , "\r\nContent-Type:" ) ;
+                osTextT* postContentType = thirdC::c_strstrIF( tin0P , postBufferHead , "\r\nContent-Type:" ) ;
             {
             if( idPass == 2 )
 
-            bMime = !!thirdC::c_strstrIF( tinBaseP , postBufferHead , "\r\nMIME-Version:" ) ;
+            bMime = !!thirdC::c_strstrIF( tin0P , postBufferHead , "\r\nMIME-Version:" ) ;
 
             offCursorBody = costIn ;
-            etThread.fileWriteF( tinBaseP , fo , postBufferHead , offbhNext ) ;
+            etThread.fileWriteF( tin0P , fo , postBufferHead , offbhNext ) ;
             bHeader = 0 ;
         {
         )
@@ -120,21 +120,21 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         else
         }
             else              postBufferBodyLarge[ offbblNext ++ ] = ostIn ;
-            if( idPass == 1 ) etThread.fileWriteF( tinBaseP , fo , &ostIn , 1 ) ; // THIS LINE WILL WRITE THE "From" THAT BEGINS EACH NEW HEADER OTHER THAN THE WOTH HEADER
+            if( idPass == 1 ) etThread.fileWriteF( tin0P , fo , &ostIn , 1 ) ; // THIS LINE WILL WRITE THE "From" THAT BEGINS EACH NEW HEADER OTHER THAN THE WOTH HEADER
         {
         if( !bHeader )
 
         }
-            etThread.traceF( tinBaseP , T("beginning to process header [costBodyMax,costIn]: ")+TF2(costBodyMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(costIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , T("beginning to process header [costBodyMax,costIn]: ")+TF2(costBodyMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(costIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-            else              { offbhNext = 4 ;thirdC::c_memcpyIF( tinBaseP , postBufferHead , "From" , 4 ) ; }
+            else              { offbhNext = 4 ;thirdC::c_memcpyIF( tin0P , postBufferHead , "From" , 4 ) ; }
             if( idPass == 1 )   offbhNext = 0 ;
 
             }
 
                 offbblNext = 0 ;
 
-                emitAbridgementF( tinBaseP , etThread , fo , postBufferBodyLarge , bMime , postOuterBoundary ) ;
+                emitAbridgementF( tin0P , etThread , fo , postBufferBodyLarge , bMime , postOuterBoundary ) ;
                 postBufferBodyLarge[ offbblNext ] = 0 ;
 
                 offbblNext -= 4 ; // REMOVE "From"
@@ -167,7 +167,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
             }
                 }
-                    emitAbridgementF( tinBaseP , etThread , fo , postBufferBodyLarge , bMime , postOuterBoundary ) ;
+                    emitAbridgementF( tin0P , etThread , fo , postBufferBodyLarge , bMime , postOuterBoundary ) ;
                     postBufferBodyLarge[ offbblNext ] = 0 ;
                 {
                 else
@@ -180,7 +180,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             if( !bHeader )
         {
         if( !cba )
-        etThread.fileReadF( tinBaseP , &ostIn , cba , fi , 1 ) ;
+        etThread.fileReadF( tin0P , &ostIn , cba , fi , 1 ) ;
         countT cba = 1 ;
     {
     while( !ether && !POOP )
@@ -204,18 +204,18 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
     }
         __Z( postBufferBodyLarge  ) ;
-        etThread.newF( tinBaseP , LF , postBufferBodyLarge  , costBodyMax + 1 ) ; ___( postBufferBodyLarge  ) ;
+        etThread.newF( tin0P , LF , postBufferBodyLarge  , costBodyMax + 1 ) ; ___( postBufferBodyLarge  ) ;
     {
     if( idPass == 2 )
 
     __Z( postBufferHead ) ;
-    etThread.newF( tinBaseP , LF , postBufferHead , TOCK ) ; ___( postBufferHead ) ;
+    etThread.newF( tin0P , LF , postBufferHead , TOCK ) ; ___( postBufferHead ) ;
     ZE( osTextT* , postBufferBodyLarge ) ;
     ZE( osTextT* , postBufferHead ) ;
 
-    fileC   fo( tinBaseP , (strokeS*)T( idPass == 1 ?                                          "///d/tmp/gmail.download/2unwrapped.ttt" : "///d/tmp/gmail.download/3abridged.ttt" ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
-    fileC   fi( tinBaseP , (strokeS*)T( idPass == 1 ? "///d/tmp/gmail.download/gmail.mbox" : "///d/tmp/gmail.download/2unwrapped.ttt" ) ) ;
-    //fileC fi( tinBaseP , (strokeS*)T( idPass == 1 ? "///d/tmp/gmail.download/1small.ttt" : "///d/tmp/gmail.download/2unwrapped.ttt" ) ) ;
+    fileC   fo( tin0P , (strokeS*)T( idPass == 1 ?                                          "///d/tmp/gmail.download/2unwrapped.ttt" : "///d/tmp/gmail.download/3abridged.ttt" ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+    fileC   fi( tin0P , (strokeS*)T( idPass == 1 ? "///d/tmp/gmail.download/gmail.mbox" : "///d/tmp/gmail.download/2unwrapped.ttt" ) ) ;
+    //fileC fi( tin0P , (strokeS*)T( idPass == 1 ? "///d/tmp/gmail.download/1small.ttt" : "///d/tmp/gmail.download/2unwrapped.ttt" ) ) ;
 
     boolT bHeader = 1 ;
 {
@@ -225,16 +225,16 @@ ZE( countT , costBodyMax ) ;
 //BLAMMO ;
 
 //}
-//    etThread.delF( tinBaseP , postIn ) ;
+//    etThread.delF( tin0P , postIn ) ;
 //
-//    etThread.boxPutF( tinBaseP , T("///d/tmp/gmail.download/1small.ttt") , postIn , costaIn ) ;
+//    etThread.boxPutF( tin0P , T("///d/tmp/gmail.download/1small.ttt") , postIn , costaIn ) ;
 //
 //    }
-//        etThread.fileReadF( tinBaseP , postIn , cba , fi ) ;
+//        etThread.fileReadF( tin0P , postIn , cba , fi ) ;
 //        countT cba = costaIn ;
-//        fileC fi( tinBaseP , (strokeS*)T("///d/tmp/gmail.download/gmail.mbox") ) ;
+//        fileC fi( tin0P , (strokeS*)T("///d/tmp/gmail.download/gmail.mbox") ) ;
 //    {
-//    etThread.newF( tinBaseP , LF , postIn , costaIn ) ; ___( postIn ) ;
+//    etThread.newF( tin0P , LF , postIn , costaIn ) ; ___( postIn ) ;
 //    countT costaIn = TOCK << 4 ;
 //    ZE( osTextT* , postIn ) ;
 //{
@@ -245,36 +245,36 @@ TODO
 }
     }
         }
-            eatPartsF( tinBaseP , etherP , foP , postBufferInP , postOuterBoundaryP ) ;
-            etherP.traceF( tinBaseP , T("boundary marker: ")+T(postOuterBoundaryP) ) ;
+            eatPartsF( tin0P , etherP , foP , postBufferInP , postOuterBoundaryP ) ;
+            etherP.traceF( tin0P , T("boundary marker: ")+T(postOuterBoundaryP) ) ;
         {
         if( !POOP )
 
         __Z( postOuterBoundaryP && *postOuterBoundaryP ) ;
     {
     else
-    if( !bMimeP ) etherP.fileWriteF( tinBaseP , foP , postBufferInP , strlen( postBufferInP ) ) ; //U::FOR TESTING ONLY: THIS SHOULD RESULT IN AN OUTPUT FILE THAT IS IDENTICAL TO PASS 2 INPUT FILE
+    if( !bMimeP ) etherP.fileWriteF( tin0P , foP , postBufferInP , strlen( postBufferInP ) ) ; //U::FOR TESTING ONLY: THIS SHOULD RESULT IN AN OUTPUT FILE THAT IS IDENTICAL TO PASS 2 INPUT FILE
 
-    etherP.traceF( tinBaseP , T( bMimeP ? "the body will be parsed as a MIME body" : "the body will NOT be parsed as a MIME body" ) ) ;
+    etherP.traceF( tin0P , T( bMimeP ? "the body will be parsed as a MIME body" : "the body will NOT be parsed as a MIME body" ) ) ;
 {
-voidT emitAbridgementF( tin0S& tinBaseP , etherC& etherP , fileC& foP , osTextT* postBufferInP , const boolT bMimeP , const osTextT* const postOuterBoundaryP )
+voidT emitAbridgementF( tin0S& tin0P , etherC& etherP , fileC& foP , osTextT* postBufferInP , const boolT bMimeP , const osTextT* const postOuterBoundaryP )
 
 }
-    //U::    etherP.fileWriteF( tinBaseP , foP , postBufferInP , strlen( postBufferInP ) ) ; //U::FOR TESTING ONLY: THIS SHOULD RESULT IN AN OUTPUT FILE THAT IS IDENTICAL TO PASS 2 INPUT FILE
+    //U::    etherP.fileWriteF( tin0P , foP , postBufferInP , strlen( postBufferInP ) ) ; //U::FOR TESTING ONLY: THIS SHOULD RESULT IN AN OUTPUT FILE THAT IS IDENTICAL TO PASS 2 INPUT FILE
     }
         }
             }
                 postc = poste ;
 
-                eatHeaderBodyF( tinBaseP , etherP , foP , postc , poste ? poste - postc : thirdC::c_strlenIF( tinBaseP , postc ) ) ;
+                eatHeaderBodyF( tin0P , etherP , foP , postc , poste ? poste - postc : thirdC::c_strlenIF( tin0P , postc ) ) ;
 
-                osTextT* poste = thirdC::c_strstrIF( tinBaseP , postc , postLookMarker ) ;
+                osTextT* poste = thirdC::c_strstrIF( tin0P , postc , postLookMarker ) ;
 
                 postc += costLookMarker + 2 ; //A:ASSUME: MARKERS ARE ALWAYS FOLLOWED BY CRLF
             {
             else
             if( !postc ) break ;
-            postc = thirdC::c_strstrIF( tinBaseP , postc , postLookMarker ) ;
+            postc = thirdC::c_strstrIF( tin0P , postc , postLookMarker ) ;
         {
         while( postc )
         osTextT* postc = postP ;
@@ -282,53 +282,53 @@ voidT emitAbridgementF( tin0S& tinBaseP , etherC& etherP , fileC& foP , osTextT*
         *postEnd = 0 ;
     {
     if( postEnd )
-    osTextT* postEnd = thirdC::c_strstrIF( tinBaseP , postP , postLookMarkerEnd ) ;
+    osTextT* postEnd = thirdC::c_strstrIF( tin0P , postP , postLookMarkerEnd ) ;
 
-    thirdC::c_strcpyIF( tinBaseP , postLookMarkerEnd , T(postLookMarker)+T("--") ) ;
+    thirdC::c_strcpyIF( tin0P , postLookMarkerEnd , T(postLookMarker)+T("--") ) ;
     osTextT postLookMarkerEnd[ TUCK ] ;
 
-    const countT costLookMarker = thirdC::c_strlenIF( tinBaseP , postLookMarker ) ;
-    thirdC::c_strcpyIF( tinBaseP , postLookMarker , T("--")+T(postbP) ) ;
+    const countT costLookMarker = thirdC::c_strlenIF( tin0P , postLookMarker ) ;
+    thirdC::c_strcpyIF( tin0P , postLookMarker , T("--")+T(postbP) ) ;
     osTextT postLookMarker[ TUCK ] ;
 {
-voidT eatPartsF( tin0S& tinBaseP , etherC& etherP , fileC& foP , osTextT* postP , const osTextT* const postbP )
+voidT eatPartsF( tin0S& tin0P , etherC& etherP , fileC& foP , osTextT* postP , const osTextT* const postbP )
 
 }
     }
         }
-            etherP.fileWriteF( tinBaseP , foP , "---- END ------\r\n" , 0x11 ) ;
-            etherP.fileWriteF( tinBaseP , foP , postP , costP - costHead - 2 ) ;
-            etherP.fileWriteF( tinBaseP , foP , "---- BODY -----\r\n" , 0x11 ) ;
+            etherP.fileWriteF( tin0P , foP , "---- END ------\r\n" , 0x11 ) ;
+            etherP.fileWriteF( tin0P , foP , postP , costP - costHead - 2 ) ;
+            etherP.fileWriteF( tin0P , foP , "---- BODY -----\r\n" , 0x11 ) ;
 
             postP = postHdrEnd + 2 ;
 
-            //etherP.fileWriteF( tinBaseP , foP , "---- END ------\r\n" , 0x11 ) ;
-            //etherP.fileWriteF( tinBaseP , foP , postP , costHead ) ;
-            //etherP.fileWriteF( tinBaseP , foP , "---- HEAD -----\r\n" , 0x11 ) ;
+            //etherP.fileWriteF( tin0P , foP , "---- END ------\r\n" , 0x11 ) ;
+            //etherP.fileWriteF( tin0P , foP , postP , costHead ) ;
+            //etherP.fileWriteF( tin0P , foP , "---- HEAD -----\r\n" , 0x11 ) ;
         {
-        if( bWantHeadF( tinBaseP , etherP , postP , costHead ) )
+        if( bWantHeadF( tin0P , etherP , postP , costHead ) )
 
         countT costHead = postHdrEnd - postP ;
 
         postHdrEnd += 2 ;
     {
     if( postHdrEnd )
-    osTextT* postHdrEnd = thirdC::c_strstrIF( tinBaseP , postP , "\r\n\r\n" ) ;
+    osTextT* postHdrEnd = thirdC::c_strstrIF( tin0P , postP , "\r\n\r\n" ) ;
 {
-voidT eatHeaderBodyF( tin0S& tinBaseP , etherC& etherP , fileC& foP , osTextT* postP , const countT costP )
+voidT eatHeaderBodyF( tin0S& tin0P , etherC& etherP , fileC& foP , osTextT* postP , const countT costP )
 
 }
     return bWant ;
 
     postP[ costP ] = save ;
 
-    boolT bWant = !thirdC::c_strstrIF( tinBaseP , postP , "image/" ) ;
-    //boolT bWant = thirdC::c_strstrIF( tinBaseP , postP , "text/plain" ) && thirdC::c_strstrIF( tinBaseP , postP , "7bit" ) ;
+    boolT bWant = !thirdC::c_strstrIF( tin0P , postP , "image/" ) ;
+    //boolT bWant = thirdC::c_strstrIF( tin0P , postP , "text/plain" ) && thirdC::c_strstrIF( tin0P , postP , "7bit" ) ;
 
     postP[ costP ] = 0 ;
     osTextT save = postP[ costP ] ;
 {
-boolT bWantHeadF( tin0S& tinBaseP , etherC& etherP , osTextT* postP , const countT costP )
+boolT bWantHeadF( tin0S& tin0P , etherC& etherP , osTextT* postP , const countT costP )
 
 /*1*/WAKEsHOWtEXT( "doodle tool abridge mbox file" )/*1*/
 /**/

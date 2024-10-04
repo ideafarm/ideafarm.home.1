@@ -12,7 +12,7 @@
     DEL( pInfoDisk1 ) ;
     }
         if( !POOP ) *pInfoDiskP << *pInfoDisk1 ;
-        strMakeF( tinBaseP , LF , pInfoDiskP->psttVolumeName , T(pInfoDisk1->postVolumeName) ) ; ___( pInfoDiskP->psttVolumeName ) ;
+        strMakeF( tin0P , LF , pInfoDiskP->psttVolumeName , T(pInfoDisk1->postVolumeName) ) ; ___( pInfoDiskP->psttVolumeName ) ;
     {
     if( !POOP && pInfoDisk1 && pInfoDiskP )
 
@@ -21,15 +21,15 @@
     }
         __( !!pInfoDiskP->psttVolumeName ) ;
         __Z( pInfoDiskP ) ;
-        pInfoDiskP = new( 0 , tinBaseP , LF ) infoDiskS( tinBaseP , third ) ; ___( pInfoDiskP ) ;
+        pInfoDiskP = new( 0 , tin0P , LF ) infoDiskS( tin0P , third ) ; ___( pInfoDiskP ) ;
     {
     if( !POOP && pInfoDisk1 )
 
     if( POOP ) DEL( pInfoDisk1 ) ;
 
-    third.delF( tinBaseP , post ) ;
-    third.dosQueryFSInfoF( tinBaseP , pInfoDisk1 , post , cTriesP ) ; ___( pInfoDisk1 ) ;
-    strMakeF( tinBaseP , LF , post , psttDriveNameP ) ; ___( post ) ;
+    third.delF( tin0P , post ) ;
+    third.dosQueryFSInfoF( tin0P , pInfoDisk1 , post , cTriesP ) ; ___( pInfoDisk1 ) ;
+    strMakeF( tin0P , LF , post , psttDriveNameP ) ; ___( post ) ;
     ZE( osTextT* , post ) ;
     ZE( infoDisk1S* , pInfoDisk1 ) ;
     //IN_E
@@ -44,7 +44,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::diskInfoF( tin0S& tinBaseP , infoDiskS*& pInfoDiskP , const strokeS* const psttDriveNameP , const countT cTriesP )/*1*/
+/*1*/voidT etherC::diskInfoF( tin0S& tin0P , infoDiskS*& pInfoDiskP , const strokeS* const psttDriveNameP , const countT cTriesP )/*1*/
 
 /**/
 */

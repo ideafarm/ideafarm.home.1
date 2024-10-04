@@ -24,11 +24,11 @@
             //{
             //if( processGlobal1I.idAdamRoot == ifcIDaDAM_SCRATCH07 )
 
-            if( bIdeafarm ) thirdC::c_strncpyIF( tinBaseP , home.postHome , postP , sizeof home.postHome ) ;
+            if( bIdeafarm ) thirdC::c_strncpyIF( tin0P , home.postHome , postP , sizeof home.postHome ) ;
 
             }
                 }
-                    thirdC::c_strcpyIF( tinBaseP , postP , ostoHome ) ;
+                    thirdC::c_strcpyIF( tin0P , postP , ostoHome ) ;
 
                     OStEXTC(  ostoHome , etherC::ifc_idHomeIdisk_IF() , 0 ) ;
                     OStEXTAK( ostoHome , ".home." ) ;
@@ -70,7 +70,7 @@
                                         pci[ offi ] >>= 1 ;
 
                                         }
-                                            addF( tinBaseP , pTo , pcpSum , pcpTerm , 0 ) ;
+                                            addF( tin0P , pTo , pcpSum , pcpTerm , 0 ) ;
                                             countT* pTo = pcpSum ;
 
                                             }
@@ -109,7 +109,7 @@
                     {
                     if( DRIVE_FIXED == idType )
 
-                    countT idType = ((tin9S&)tinBaseP).brcRaw ;
+                    countT idType = ((tin9S&)tin0P).brcRaw ;
             
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , GetDriveType( postRoot ) )
@@ -157,13 +157,13 @@
 
                 __( ostSticky && *postP ) ; // ALREADY HAD A DEVICE LETTER HIT AND NOW I HAVE ANOTHER HIT (THE SEARCH HITS ON MULTIPLE DEVICES)
 
-                thirdC::dosFindFileOrDirSimpleIF( tinBaseP , postP , costaP , hFind , postLike ) ;          //WILL INTENTIONALLY FAIL IF ALREADY FOUND ON ANOTHER DEVICE
-                handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                thirdC::dosFindFileOrDirSimpleIF( tin0P , postP , costaP , hFind , postLike ) ;          //WILL INTENTIONALLY FAIL IF ALREADY FOUND ON ANOTHER DEVICE
+                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
                                                        *postP = 0 ;
                 if( !ostSticky && *postP ) ostSticky = *postP ;
 
-                if( DRIVE_FIXED != ((tin9S&)tinBaseP).brcRaw ) continue ;
+                if( DRIVE_FIXED != ((tin9S&)tin0P).brcRaw ) continue ;
 
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , GetDriveType( postRoot ) )
@@ -175,7 +175,7 @@
             ZE( osTextT , ostSticky ) ;
 
             }
-                thirdC::c_strcpyIF( tinBaseP , postLike , ostoLike ) ;
+                thirdC::c_strcpyIF( tin0P , postLike , ostoLike ) ;
 
                 OStEXTC(  ostoLike , etherC::ifc_idHomeIdisk_IF() , 0 ) ;
                 OStEXTAK( ostoLike , ".home." ) ;
@@ -201,9 +201,9 @@
                 //A:     ZE( countT , cSectorsPerCluster ) ;
                 //A:     const osTextT postRoot[] = { postP[ 0 ] , ':' , '\\' , 0 } ;
                 //A: 
-                //A:     thirdC::c_zReplaceIF( tinBaseP , postP , '/' , '\\' ) ;
+                //A:     thirdC::c_zReplaceIF( tin0P , postP , '/' , '\\' ) ;
                 //A:     postP[ costv - 3 ] = 0 ;
-                //A:     thirdC::c_memcpyIF( tinBaseP , postP + 2 , postP + 4 , costv - 3 ) ;
+                //A:     thirdC::c_memcpyIF( tin0P , postP + 2 , postP + 4 , costv - 3 ) ;
                 //A:     postP[ 1 ] = ':' ;
                 //A:     postP[ 0 ] = postP[ 3 ] ;
                 //A: {
@@ -221,10 +221,10 @@
                 //A: __( postP[ 2 ] - '/' ) ;
                 //A: __( postP[ 1 ] - '/' ) ;
                 //A: __( postP[ 0 ] - '/' ) ;
-                //A: costv = thirdC::c_strlenIF( tinBaseP , postP ) ;
-                //A: thirdC::dosReadIF( tinBaseP , postP , costv , ostoSetting ) ;
+                //A: costv = thirdC::c_strlenIF( tin0P , postP ) ;
+                //A: thirdC::dosReadIF( tin0P , postP , costv , ostoSetting ) ;
                 //A: countT costv = costaP ;
-                //A: thirdC::c_memsetIF( tinBaseP , postP , costaP ) ;
+                //A: thirdC::c_memsetIF( tin0P , postP , costaP ) ;
                 //A: POOPIE
                 //A: 
                 //A: countT  costValue = sizeof postValue ;
@@ -242,9 +242,9 @@
         #if defined( __NT__ )
     {
     else
-    if( bIdeafarm && home.postHome[ 0 ] ) thirdC::c_strncpyIF( tinBaseP , postP , home.postHome , costaP ) ;
+    if( bIdeafarm && home.postHome[ 0 ] ) thirdC::c_strncpyIF( tin0P , postP , home.postHome , costaP ) ;
 
-    boolT bIdeafarm = !thirdC::c_strcmpIF( tinBaseP , postKeyP , "ideafarm" ) ;
+    boolT bIdeafarm = !thirdC::c_strcmpIF( tin0P , postKeyP , "ideafarm" ) ;
     homeS& home = homeS::homeIF() ;
     postP[ 0 ] = 0 ;
     ZE( countT , cbFree ) ;
@@ -259,9 +259,9 @@
         if( POOP ) return 0 ;
     {
     IFbEcAREFUL
-    const countT costMax = dosQuerySysInfoMaxPathLengthIF( tinBaseP ) ;
+    const countT costMax = dosQuerySysInfoMaxPathLengthIF( tin0P ) ;
 {
-/*1*/countT thirdC::diskFindHomeIF( tin0S& tinBaseP , osTextT* const postP , const countT costaP , const osTextT* postKeyP )/*1*/
+/*1*/countT thirdC::diskFindHomeIF( tin0S& tin0P , osTextT* const postP , const countT costaP , const osTextT* postKeyP )/*1*/
 
 //IT MIGHT NOT BE AN EXACT FUNCTIONAL DUPLICATE IN THAT IT ONLY ADMITS FIXED DRIVES, EXCLUDING CDROM AND MEMORY STICKS AND OTHER REMOVABLES)
 //IT BREAKS CODE CONFORMANCE (ORTHOGONALITY, NO FUNCTIONAL REDUNDANCY) SO THAT THE FUNCTIONALITY IS AVAILABLE AT ANY TIME I.E. VERY EARLY/LATE WHEN NO poolC OR etherC INSTANCE EXISTS
@@ -276,7 +276,7 @@
  costaP
   must point to costaP writeable bytes
  postP
- tinBaseP
+ tin0P
 arguments
 illegal to use this except when cannot use etherC::diskChooseSiteF i.e. early/late
 like etherC::diskChooseSiteF except returns file name in base os syntax

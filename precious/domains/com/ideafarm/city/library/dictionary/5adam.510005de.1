@@ -14,20 +14,20 @@ CONoUTrAW( T("reply: \"")+T(postReply)+T("\"\r\n") ) ;
     POOPR
 
     *posti = 0 ;
-    while( !POOP ) sock.readF( tinBaseP , posti ++ , 1 ) ;
+    while( !POOP ) sock.readF( tin0P , posti ++ , 1 ) ;
     osTextT* posti = postReply ;
     
     }
         if( bNull ) break ;
-        etThread.delF( tinBaseP , psttl ) ;
+        etThread.delF( tin0P , psttl ) ;
         boolT bNull = !psttl || !psttl->idAdam ;
-        sock.readWoLineF( tinBaseP , psttl , TOCK ) ; ___( psttl ) ;
+        sock.readWoLineF( tin0P , psttl , TOCK ) ; ___( psttl ) ;
         ZE( strokeS* , psttl ) ;
     {
     while( !POOP )
     TN( tcr , "\r\n" ) ;
     
-    sock.writeF( tinBaseP , (osTextT*)tSay , tSay.csF( tinBaseP ) ) ;
+    sock.writeF( tin0P , (osTextT*)tSay , tSay.csF( tin0P ) ) ;
     
     TN( tSay , "" ) ; tSay = tSay1+tSayBody+tSay2 ;
     
@@ -36,10 +36,10 @@ CONoUTrAW( T("reply: \"")+T(postReply)+T("\"\r\n") ) ;
     
     TN( tSay2 , " HTTP/1.0\r\n\r\n" ) ;
     TN( tSay1 , "GET /cgi-bin/webscr?cmd=_notify-validate&" ) ;
-    sock.connectF( tinBaseP , 0x50 , nnPaypal ) ;
+    sock.connectF( tin0P , 0x50 , nnPaypal ) ;
     
-    nicNameC nnPaypal = socketC::nicNameIF( tinBaseP , etThread , T("www.paypal.com") ) ;
-    socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+    nicNameC nnPaypal = socketC::nicNameIF( tin0P , etThread , T("www.paypal.com") ) ;
+    socketC sock( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
 
     SCOOPS
 {

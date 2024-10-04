@@ -10,7 +10,7 @@
 }
     }
         }
-            thirdC::osTimeFromOldTimeIF( tinBaseP , pTimeAccessedP->time1 , pTimeAccessedP->time2 , sta.wYear - 1 , sta.wMonth - 1 , sta.wDay - 1 , sta.wHour , sta.wMinute , sta.wSecond , sta.wMilliseconds , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+            thirdC::osTimeFromOldTimeIF( tin0P , pTimeAccessedP->time1 , pTimeAccessedP->time2 , sta.wYear - 1 , sta.wMonth - 1 , sta.wDay - 1 , sta.wHour , sta.wMinute , sta.wSecond , sta.wMilliseconds , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , FileTimeToSystemTime( &ftAccessed , &sta ) )
             SYSTEMTIME sta ;
@@ -20,7 +20,7 @@
         if( pTimeAccessedP && !POOP )
 
         }
-            thirdC::osTimeFromOldTimeIF( tinBaseP , pTimeCreatedP->time1 , pTimeCreatedP->time2 , stc.wYear - 1 , stc.wMonth - 1 , stc.wDay - 1 , stc.wHour , stc.wMinute , stc.wSecond , stc.wMilliseconds , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+            thirdC::osTimeFromOldTimeIF( tin0P , pTimeCreatedP->time1 , pTimeCreatedP->time2 , stc.wYear - 1 , stc.wMonth - 1 , stc.wDay - 1 , stc.wHour , stc.wMinute , stc.wSecond , stc.wMilliseconds , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , FileTimeToSystemTime( &ftCreated , &stc ) )
             SYSTEMTIME stc ;
@@ -30,7 +30,7 @@
         if( pTimeCreatedP && !POOP )
 
         }
-            thirdC::osTimeFromOldTimeIF( tinBaseP , pTimeWrittenP->time1 , pTimeWrittenP->time2 , stw.wYear - 1 , stw.wMonth - 1 , stw.wDay - 1 , stw.wHour , stw.wMinute , stw.wSecond , stw.wMilliseconds , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+            thirdC::osTimeFromOldTimeIF( tin0P , pTimeWrittenP->time1 , pTimeWrittenP->time2 , stw.wYear - 1 , stw.wMonth - 1 , stw.wDay - 1 , stw.wHour , stw.wMinute , stw.wSecond , stw.wMilliseconds , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , FileTimeToSystemTime( &ftWritten , &stw ) )
             SYSTEMTIME stw ;
@@ -39,7 +39,7 @@
         {
         if( pTimeWrittenP )
 
-        ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("getFileTimeIF [hi,lo]:    0x")+TfORsTRING(pc2[1])+T(".")+TfORsTRING(pc2[0]) ) ;
+        ((tin9S&)tin0P).pEther->traceF( tin0P , T("getFileTimeIF [hi,lo]:    0x")+TfORsTRING(pc2[1])+T(".")+TfORsTRING(pc2[0]) ) ;
         countT* pc2 = (countT*)&ftWritten ;
     {
     if( !POOP )
@@ -61,7 +61,7 @@
     {
     IFbEcAREFUL        
 {
-/*1*/voidT thirdC::getFileTimeIF( tin0S& tinBaseP , const handleC& hFileP , timeS* pTimeWrittenP , timeS* pTimeCreatedP , timeS* pTimeAccessedP )/*1*/
+/*1*/voidT thirdC::getFileTimeIF( tin0S& tin0P , const handleC& hFileP , timeS* pTimeWrittenP , timeS* pTimeCreatedP , timeS* pTimeAccessedP )/*1*/
 
 /**/
 

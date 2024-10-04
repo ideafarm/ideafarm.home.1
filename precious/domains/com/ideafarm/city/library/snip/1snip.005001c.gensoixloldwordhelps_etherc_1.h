@@ -33,11 +33,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "etherBeImpotentF_o3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -73,11 +73,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "etherBlammoF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -116,11 +116,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "etherParameterF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -156,11 +156,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "etherScanProcessParametersF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -196,11 +196,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "etherTestF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -237,11 +237,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "etherUidF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -277,11 +277,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ether_pstt1_processParametersI_F_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -317,11 +317,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ether_psttEarlyFolder_F_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -357,11 +357,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ether_idCitizenHirerI_F_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -400,11 +400,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "etherWhereF_o373" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -446,11 +446,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "poolNewF_o331@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -489,11 +489,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "delF_o1@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -532,11 +532,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "delF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -578,11 +578,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "newF_o331@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -624,11 +624,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "newF_o334@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -665,11 +665,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "batonGrabF_ob" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -706,11 +706,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "batonLetGoF_ob" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -749,11 +749,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "batonOpenF_ob64@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -801,11 +801,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxGetGenerationF_o1@34@4@33337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -852,11 +852,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxGetShadowGenerationF_o1@34@4@3337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -897,11 +897,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxMailGetF_o4@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -944,11 +944,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxPourF_o4@4@4@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -990,11 +990,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxPourF_o4@4@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1039,11 +1039,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxPutGenerationF_o4@4@31@337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1086,11 +1086,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxPutHtmlF_o64@4@4@4@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1134,11 +1134,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxPutHtmlFromKnowledgeTreeBaseF_o64@4@4@4@4@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1182,11 +1182,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxPutUniqueF_o4@4@1@337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1224,11 +1224,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxServerF_o36" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1266,11 +1266,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "boxZapF_o4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1309,11 +1309,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskFileOrDirDeleteF_o4@73" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1352,11 +1352,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskFileExistsF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1395,11 +1395,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskCopyFileF_o4@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1439,11 +1439,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskMoveFileOrDirF_o4@4@37" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1487,11 +1487,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskMoveFileOrDirUniqueF_o4@4@4@34@6" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1530,11 +1530,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskFilePourF_o4@4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1573,11 +1573,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskFileQueryAttrF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1619,11 +1619,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskFileRefreshF_o4@4@4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1662,11 +1662,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskFileSetAttrF_o4@77" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1708,11 +1708,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskChooseSiteF_o4@4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1751,11 +1751,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskFindMostFreeSpaceF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1794,11 +1794,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskGetHoverF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1835,11 +1835,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskHoverF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1878,11 +1878,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskIdF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1921,11 +1921,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskMakeDirF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -1964,11 +1964,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskMakeDirIfNeededF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2007,11 +2007,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskMakeDirStupidlyF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2051,11 +2051,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskMapFileNameF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2096,11 +2096,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskMapFileNameHoverF_o4@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2137,11 +2137,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskSelectF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2183,11 +2183,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskWaitDirF_ob64@7" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2226,11 +2226,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskZipOldF_o4@4@7" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2268,11 +2268,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskZipOldF_4@o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2315,11 +2315,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskZipF_o4@4@4@4@4@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2363,11 +2363,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskUnzipF_o4@74@4@4@4@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2407,11 +2407,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskUnzipOldF_o4@4@4@7" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2451,11 +2451,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "diskRenameToHashF_o4@7" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2495,11 +2495,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "dllNameF_o4@b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2538,11 +2538,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "dllOpenF_ob4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2583,11 +2583,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "dnsNicNamesF_o4@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2629,11 +2629,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "dnsFormatQueryF_o1@34@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2671,11 +2671,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "emailFactoryReportF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2712,11 +2712,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strokeF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2753,11 +2753,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "paperTitleF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2804,11 +2804,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "fileOpenF_ob34@33737733" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2845,11 +2845,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "fileHoseConnectF_ob" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2887,11 +2887,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "fileHoseCreateF_ob4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2928,11 +2928,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "fileHoseDisconnectF_ob" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -2972,11 +2972,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "fileReadF_o1@3b6" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3015,11 +3015,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "fileSetPtrF_ob7count2S" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3058,11 +3058,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "fileWriteF_ob1@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3099,11 +3099,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "fileTimestampsF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3142,11 +3142,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "memCopyF_o1@1@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3188,11 +3188,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "memOpenSharedF_ob74@b@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3235,11 +3235,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "memReplaceF_o1@31@1@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3278,11 +3278,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "memSetF_o1@31" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3322,11 +3322,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcCellHostsF_o33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3365,11 +3365,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcDatumF_o2@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3409,11 +3409,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcExternalEmailFromIdCitizenF_o4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3452,11 +3452,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcIdCitizenFromExternalEmailF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3496,11 +3496,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcNicknameFromIdCitizenF_o4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3536,11 +3536,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcPortAuthorityF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3576,11 +3576,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcPortDelF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3620,11 +3620,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcPortNewF_o33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3662,11 +3662,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcPortNewIdMiscF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3702,11 +3702,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcPortNewProcessF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3746,11 +3746,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcPutHostLogEntryF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3787,11 +3787,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcPutHostLogEntryF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3832,11 +3832,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcIsSpammerF_o4@d" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3875,11 +3875,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcIsSpammerF_od" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3920,11 +3920,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcMonitorQueryOldF_o1@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -3965,11 +3965,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcQueryHandlesF_o4@3d" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4008,11 +4008,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcGetNextSerialNumberF_o2@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4052,11 +4052,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcIdCopyF_o33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4100,11 +4100,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcCreateNewHomeF_o31@31@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4148,11 +4148,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcCreateNewWightF_o31@31@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4195,11 +4195,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "ifcSortaF_o61@33337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4239,11 +4239,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "querySettingF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4281,11 +4281,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osClipboardFlavorsF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4321,11 +4321,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osClipboardGrabF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4361,11 +4361,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osClipboardLetGoF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4404,11 +4404,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osClipboardReadF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4445,11 +4445,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osClipboardWriteF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4485,11 +4485,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osDoNothingF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4527,11 +4527,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osDoNothingLoopF_o33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4568,11 +4568,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osDriverF_o3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4612,11 +4612,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osDriverNameFromMasterF_o4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4655,11 +4655,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "homeOsDriverNameF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4698,11 +4698,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osDriverRemoveOldF_o3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4742,11 +4742,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osDriverParseNameF_o3334@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4784,11 +4784,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osEditF_o4@6" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4827,11 +4827,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osEditorF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4869,11 +4869,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osHttpViewF_o4@6" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4912,11 +4912,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osHttpViewerF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4956,11 +4956,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osEnvironmentVariableF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -4998,11 +4998,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osFireF_o6d" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5041,11 +5041,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osSuspendF_o66d" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5083,11 +5083,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osMakeHoverFileF_o36" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5129,11 +5129,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osMessageBoxF_o4@4@77" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5179,11 +5179,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osProcessF_o333334@7b@b@b@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5229,11 +5229,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osProcessF_o33334@4@7b@b@b@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5277,11 +5277,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osProcessF_o3334@7b@b@b@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5325,11 +5325,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osProcessF_o334@4@7b@b@b@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5365,11 +5365,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osProcessForwardSignalsToMe_offF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5405,11 +5405,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osProcessForwardSignalsToMe_onF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5447,11 +5447,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osProcessIdF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5488,11 +5488,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osProcessInterruptF_o3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5529,11 +5529,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osProcessKillF_o3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5573,11 +5573,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osProcessWaitF_o3333" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5624,11 +5624,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osSessionF_o333334@33337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5675,11 +5675,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osSessionF_o33334@4@33337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5724,11 +5724,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osSessionF_o3334@33337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5773,11 +5773,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osSessionF_o334@4@33337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5816,11 +5816,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osSleepF_o337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5858,11 +5858,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osThreadIdF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5898,11 +5898,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osThreadSwitchingOffF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5938,11 +5938,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osThreadSwitchingOnF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -5978,11 +5978,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "osTimeSetF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6027,11 +6027,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "reportProcessNamePidF_o4@4@4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6067,11 +6067,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_setupF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6107,11 +6107,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_shutdownF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6150,11 +6150,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_getContextF_ob4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6192,11 +6192,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_getWrapperF_obb" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6234,11 +6234,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_wrapSocketF_obb" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6275,11 +6275,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_shakeHandsAsClientF_ob" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6316,11 +6316,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_shakeHandsAsServerF_ob" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6361,11 +6361,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_writeF_ob1@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6406,11 +6406,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_readF_o1@3b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6451,11 +6451,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_peekF_o1@3b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6492,11 +6492,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "openSslTls_waveByeF_ob" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6538,11 +6538,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockBindF_ob3d3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6579,11 +6579,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockCancelF_ob" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6621,11 +6621,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockOptionBroadcastF_ob6" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6663,11 +6663,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockOptionLingerF_ob3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6705,11 +6705,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockOptionReuseAddressF_ob6" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6747,11 +6747,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockOptionSendNowF_ob6" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6788,11 +6788,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockOptionDualStackF_ob" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6830,11 +6830,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockOptionMulticastF_ob4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6870,11 +6870,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "socksSetupF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6910,11 +6910,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "socksShutdownF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6953,11 +6953,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockF_ob6b@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -6996,11 +6996,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "chokeAttackerF_ob33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7042,11 +7042,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockAcceptF_ob3db6b@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7083,11 +7083,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockListenF_ob" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7126,11 +7126,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockMyNameF_o3db" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7169,11 +7169,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockPeerNameF_o3db" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7214,11 +7214,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockReadF_o61@3b3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7258,11 +7258,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockWriteF_ob1@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7304,11 +7304,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockWriteF_ob3d1@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7346,11 +7346,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockWriteQuitF_o3d" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7388,11 +7388,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockWriteQuitF_o34@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7428,11 +7428,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockFtpServerF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7471,11 +7471,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockNicNameF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7515,11 +7515,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sockPsttHostF_o4@d" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7560,11 +7560,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strAbridgeF_o4@4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7603,11 +7603,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strAsciiCodeTableF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7647,11 +7647,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strBadCodeLineF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7699,11 +7699,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strClockF_o4@333333334@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7740,11 +7740,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strConvertToLowerCaseF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7784,11 +7784,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strConvertToLowerCaseF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7825,11 +7825,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strConvertToOtherCaseF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7869,11 +7869,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strConvertToOtherCaseF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7910,11 +7910,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strConvertToUpperCaseF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7954,11 +7954,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strConvertToUpperCaseF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -7997,11 +7997,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strDeleteF_o4@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8042,11 +8042,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strDigitsToNicNameF_o4@36" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8087,11 +8087,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strDigitsToMeasureF_o4@36" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8133,11 +8133,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strEvaluateF_o4@34@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8179,11 +8179,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strEvaluateFormat01F_o4@34@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8224,11 +8224,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strFromIdPortNicNameF_o4@3d" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8272,11 +8272,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strFromProcessF_o4@4@4@4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8316,11 +8316,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strFromUrlF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8360,11 +8360,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strFromJsonF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8405,11 +8405,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strFromIdJotF_o4@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8454,11 +8454,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strFuseSeparateF_o4@4@33h@grabC@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8501,11 +8501,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strKTTrimF_o4@4@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8545,11 +8545,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strIdLathExpressionF_o4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8590,11 +8590,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strIndentF_o4@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8636,11 +8636,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strInsertF_o4@34@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8683,11 +8683,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strInsertF_o4@4@4@73" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8727,11 +8727,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strIsDigitsF_o4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8770,11 +8770,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strBodyLengthF_o2@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8815,11 +8815,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strCLinesF_o4@4@6" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8861,11 +8861,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strMakeFromOsTextF_o4@2@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8910,11 +8910,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strMakeF_o33pbRefC@4@37" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -8960,11 +8960,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strMakeF_o332@4@373" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9007,11 +9007,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strMakeF_o334@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9053,11 +9053,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strRemoveBlankLinesF_o4@4@4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9102,11 +9102,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strReplaceF_o4@4@4@4@37" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9150,11 +9150,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strReplaceF_o4@4@337" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9199,11 +9199,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strReplaceAnyF_o4@4@4@4@37" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9245,11 +9245,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strReplaceAutomaticallyF_o4@4@33" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9293,11 +9293,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strReverseF_o4@4@4@h@grabC@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9337,11 +9337,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strRulerF_o4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9384,11 +9384,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strSubstringF_o4@334@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9428,11 +9428,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strGetMimeHeaderF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9472,11 +9472,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strGetMimeBodyF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9518,11 +9518,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strSubstringMimeHeaderF_o4@4@4@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9562,11 +9562,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strToHtmlF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9607,11 +9607,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strToUrlF_o4@4@7" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9651,11 +9651,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strToFileNameF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9694,11 +9694,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strUniqueF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9738,11 +9738,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strUrlDecodeF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9781,11 +9781,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strUrlDecodeF_o4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9825,11 +9825,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strUrlNameF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9869,11 +9869,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strUrlSchemeF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9915,11 +9915,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strEncode_01F_o1@1@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -9963,11 +9963,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strEncodeF_o1@4@1@31@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10008,11 +10008,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strDecodeF_o4@1@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10059,11 +10059,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strBisectF_o4@4@4@4@373" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10103,11 +10103,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strFileMatchF_o4@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10148,11 +10148,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strEncodeBlobToRFC4648F_o4@1@3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10193,11 +10193,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "strDecodeBlobFromRFC4648F_o1@34@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10242,11 +10242,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "sssTestF_o64@4@334@4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10284,11 +10284,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "winAppendTitleF_o4@b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10329,11 +10329,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "winPostMessageAfterNapF_o3b333" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10373,11 +10373,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "winSetTitleF_o4@b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10413,11 +10413,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "cioSetupF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10454,11 +10454,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "cioSetQuitF_o6" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10495,11 +10495,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "cioSetArgF_o3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10538,11 +10538,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "traceF_o4@73" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10578,11 +10578,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "tracePoolTalliesF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10618,11 +10618,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "traceMemoryGrainRptF_o" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10660,11 +10660,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "hushWritePrivateKeyToFileF_o4@b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10702,11 +10702,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "hushWritePublicKeyToFileF_o4@b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10747,11 +10747,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "hushGetPublicKeyF_o1@3b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10792,11 +10792,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "hushGetPrivateKeyF_o1@3b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10834,11 +10834,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "hushReadPrivateKeyFromFileF_ob4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10876,11 +10876,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "hushReadPublicKeyFromFileF_ob4@" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10927,11 +10927,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "hushEncryptF_o1@31@31@31@3b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -10978,11 +10978,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "hushDecryptF_o1@31@31@31@3b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -11020,11 +11020,11 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "hushMakeKeyPairF_ob3" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 
 {
@@ -11067,9 +11067,9 @@
 
     TN( tDoc , postDoc ) ;
     TN( tNameSoixlOld , "hushWothNonceF_o6333b" ) ;
-   _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+   _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }
-   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tinBaseP , *this , tDoc ) ;
-   _pSwSoixlOldApi->ungrabF( tinBaseP ) ;
+   *_pSwSoixlOldApiDoc = (countT)(strokeS*)psttOldC( tin0P , *this , tDoc ) ;
+   _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }

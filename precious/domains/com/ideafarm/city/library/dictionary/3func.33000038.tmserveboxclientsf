@@ -12,15 +12,15 @@ DONE( tmServeBoxClientsF )
 }
     DEL( pso ) ;
     TELL( "cleaning up: final" )
-    __( pso->readF( tinBaseP , &bnu , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ) ; // PEER WILL NEVER WRITE A BYTE, BUT WILL CLOSE CONN INSTEAD
+    __( pso->readF( tin0P , &bnu , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ) ; // PEER WILL NEVER WRITE A BYTE, BUT WILL CLOSE CONN INSTEAD
     TELL( "cleaning up: waiting for client to disconnect" )
     ZE( byteT , bnu ) ;
-    etThread.delF( tinBaseP , psttList ) ;
+    etThread.delF( tin0P , psttList ) ;
     }
-        if( bTalk ) etThread.strokeF( tinBaseP , T("\r" BLANK79 "\r") ) ;
+        if( bTalk ) etThread.strokeF( tin0P , T("\r" BLANK79 "\r") ) ;
         }
-            etThread.delF( tinBaseP , pbAll ) ;
-            pso->writeF( tinBaseP , pbAll , cbAll ) ;
+            etThread.delF( tin0P , pbAll ) ;
+            pso->writeF( tin0P , pbAll , cbAll ) ;
             __Z( cbAll ) ;
         {
         else
@@ -28,8 +28,8 @@ DONE( tmServeBoxClientsF )
             __( cbAll ) ;
         {
         if( !pbAll )
-        pso->writeF( tinBaseP , (byteT*)&cbAll , sizeof cbAll ) ;
-        if( bTalk ) etThread.strokeF( tinBaseP , T("Sending aggregate.") ) ;
+        pso->writeF( tin0P , (byteT*)&cbAll , sizeof cbAll ) ;
+        if( bTalk ) etThread.strokeF( tin0P , T("Sending aggregate.") ) ;
 
         while( p1Root ) delete p1Root ; // DO NOT USE DEL HERE
 
@@ -39,19 +39,19 @@ DONE( tmServeBoxClientsF )
 
                 }
                     pbc += p1c->cbd ;
-                    etThread.memCopyF( tinBaseP , pbc , p1c->pbd , p1c->cbd ) ;
+                    etThread.memCopyF( tin0P , pbc , p1c->pbd , p1c->cbd ) ;
                 {
                 if( p1c->pbd )
 
                 pbc += sizeof p1c->cbd ;
-                etThread.memCopyF( tinBaseP , pbc , (byteT*)&p1c->cbd , sizeof p1c->cbd ) ;
+                etThread.memCopyF( tin0P , pbc , (byteT*)&p1c->cbd , sizeof p1c->cbd ) ;
             {
             while( p1c )
             pbc = pbAll ;
             ZE( byteT* , pbc ) ;
             p1c = p1Root ;
 
-            etThread.newF( tinBaseP , LF , pbAll , cbAll ) ; ___( pbAll ) ;
+            etThread.newF( tin0P , LF , pbAll , cbAll ) ; ___( pbAll ) ;
             }
                 p1c = p1c->pR ;
                 cbAll += p1c->cbd ;
@@ -63,28 +63,28 @@ DONE( tmServeBoxClientsF )
         {
 
         }
-            etThread.delF( tinBaseP , psttw ) ;
+            etThread.delF( tin0P , psttw ) ;
 
-            if( bTalk ) etThread.strokeF( tinBaseP , T("\r\n") ) ;
+            if( bTalk ) etThread.strokeF( tin0P , T("\r\n") ) ;
 
             }
                 if( POOP ) POOPR
 
                 }
                     if( POOP ) POOPR
-                    if( POOP && bTalk ) etThread.strokeF( tinBaseP , T(" (does not exist)") ) ;
-                    if( p1c ) { box.getF( tinBaseP , p1c->pbd , p1c->cbd ) ; ___( p1c->pbd ) ; } // SHOULD ALWAYS BE TRUE
-                    boxC box( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , psttw , 0 , 0 , 0 , 1 ) ;
+                    if( POOP && bTalk ) etThread.strokeF( tin0P , T(" (does not exist)") ) ;
+                    if( p1c ) { box.getF( tin0P , p1c->pbd , p1c->cbd ) ; ___( p1c->pbd ) ; } // SHOULD ALWAYS BE TRUE
+                    boxC box( tin0P , *((tin9S&)tin0P).pEtScratch , psttw , 0 , 0 , 0 , 1 ) ;
                 {
-                if( bTalk ) etThread.strokeF( tinBaseP , psttw ) ;
+                if( bTalk ) etThread.strokeF( tin0P , psttw ) ;
                 SCOOPS
             {
             IFsCRATCH
 
             }
-                etThread.delF( tinBaseP , psttFileId ) ;
-                if( bTalk ) etThread.strokeF( tinBaseP , T(psttFileId)+T("\t") ) ;
-                etThread.strFromF( tinBaseP , psttFileId , ++ fileId ) ; ___( psttFileId ) ;
+                etThread.delF( tin0P , psttFileId ) ;
+                if( bTalk ) etThread.strokeF( tin0P , T(psttFileId)+T("\t") ) ;
+                etThread.strFromF( tin0P , psttFileId , ++ fileId ) ; ___( psttFileId ) ;
                 ZE( strokeS* , psttFileId ) ;
             {
 
@@ -95,7 +95,7 @@ DONE( tmServeBoxClientsF )
                         p1c->pR->pL = p1c ;
                     {
                     if( p1c->pR )
-                    p1c->pR = new( 0 , tinBaseP , LF ) link189S( etThread , p1Root ) ; ___( p1c->pR ) ;
+                    p1c->pR = new( 0 , tin0P , LF ) link189S( etThread , p1Root ) ; ___( p1c->pR ) ;
                 {
                 if( p1c ) // SHOULD ALWAYS BE TRUE
                 while( p1c && p1c->pR ) p1c = p1c->pR ;
@@ -103,20 +103,20 @@ DONE( tmServeBoxClientsF )
             {
             else
             }
-                p1c = p1Root = new( 0 , tinBaseP , LF ) link189S( etThread , p1Root ) ; ___( p1Root ) ; ___( p1Root ) ;
+                p1c = p1Root = new( 0 , tin0P , LF ) link189S( etThread , p1Root ) ; ___( p1Root ) ; ___( p1Root ) ;
             {
             if( !p1Root )
             ZE( link189S* , p1c ) ;
 
             if( idl ) idf ++ ;
-            etThread.strSubstringF( tinBaseP , psttw , idf , idl , psttList ) ; ___( psttw ) ;
+            etThread.strSubstringF( tin0P , psttw , idf , idl , psttList ) ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
             }
                 sttq = sttqs ;
                 idf = idfs ;
                 if( idl > 1 ) idl -- ;
                 __( idl == 1 ) ;
-                idl = etThread.strIdF( tinBaseP , idf , sttq , S1C(' ') , psttList ) ;
+                idl = etThread.strIdF( tin0P , idf , sttq , S1C(' ') , psttList ) ;
                 strokeS sttqs = sttq ;
                 countT idfs = idf ;
             {
@@ -127,7 +127,7 @@ DONE( tmServeBoxClientsF )
         countT idf = 1 ;
         ZE( link189S* , p1Root ) ;
         ZE( countT , fileId ) ;
-        batonC bFileId( tinBaseP , TAG( TAGiDnULL ) ) ;
+        batonC bFileId( tin0P , TAG( TAGiDnULL ) ) ;
         // ALLOCATE p1Root TO POINT TO A CHAIN OF LINKS CONTAINING THESE BOXES
 
         ZE( countT , cbAll ) ;
@@ -136,16 +136,16 @@ DONE( tmServeBoxClientsF )
     {
     else
     }
-        pso->writeF( tinBaseP , (osTextT*)T("ok") ) ;
+        pso->writeF( tin0P , (osTextT*)T("ok") ) ;
         TELL( "writing ack to \"!quit\"" )
         FIREmYSELF ;
     {
-    if( !etThread.strCompareF( tinBaseP , psttList , T("!quit") ) )
-    pso->readWoLineF( tinBaseP , psttList , 0x10000 ) ; ___( psttList ) ;
+    if( !etThread.strCompareF( tin0P , psttList , T("!quit") ) )
+    pso->readWoLineF( tin0P , psttList , 0x10000 ) ; ___( psttList ) ;
     TELL( "reading wo line of a strokeS string" )
     ZE( strokeS* , psttList ) ;
 
-    pso->etherF( tinBaseP , etThread ) ;
+    pso->etherF( tin0P , etThread ) ;
     boolT  bTalk =           pTaskP->c2 ;
     socketC* pso = (socketC*)pTaskP->c1 ;
     TELL( "setting up" )

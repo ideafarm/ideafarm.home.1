@@ -10,15 +10,15 @@
 }
     return rc ;
     }
-        ((etherC*)0)->traceF( tinBaseP , (strokeS*)"--------------------------------------------------------------------------------------------------- mainThreadWorkF ----" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
-        rc = adamMainF( tinBaseP , idTypeP , cHowP , ppostHowP , hWindowingClientIP , hPreviousWindowingClientP , postP , idCmdShowP ) ;
-        ((etherC*)0)->traceF( tinBaseP , (strokeS*)"--------------------------------------------------------------------------------------------------- mainThreadWorkF ++++" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
+        ((etherC*)0)->traceF( tin0P , (strokeS*)"--------------------------------------------------------------------------------------------------- mainThreadWorkF ----" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
+        rc = adamMainF( tin0P , idTypeP , cHowP , ppostHowP , hWindowingClientIP , hPreviousWindowingClientP , postP , idCmdShowP ) ;
+        ((etherC*)0)->traceF( tin0P , (strokeS*)"--------------------------------------------------------------------------------------------------- mainThreadWorkF ++++" , flTRACE_PARAMETERiSoStEXT | flTRACE_FORCEnOsILENCE ) ;
         _IO_
     {
     ZE( countT , rc ) ;
 
-    if( idTypeP == ifcIDtYPEtLS_CONSOLE ) thirdC::dosPushConsoleHandlerIF( tinBaseP , hConsole ) ;
-    handleC hConsole( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_CONSOLEhANDLER ) ;
+    if( idTypeP == ifcIDtYPEtLS_CONSOLE ) thirdC::dosPushConsoleHandlerIF( tin0P , hConsole ) ;
+    handleC hConsole( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_CONSOLEhANDLER ) ;
     _IO_
     TINSL
     //U::THESE REMAIN HERE, OUTSIDE OF adamMainF
@@ -42,13 +42,13 @@
   partial scan of parameters using static functions
  this code does the following when building 0100002 (basic process driver)
 pseudocode
-it is illegal for application code to modify or replace ((tin9S&)tinBaseP).pag1->_etherC_.pstt1_processParameters
- be sure to use ether.ether_((tin9S&)tinBaseP).pag1->_etherC_.pstt1_processParameters_F( tinBaseP ) to refer to this static member
-application code can inspect all parameters by using a FORsTRINGSiN macro to inspect ((tin9S&)tinBaseP).pag1->_etherC_.pstt1_processParameters
+it is illegal for application code to modify or replace ((tin9S&)tin0P).pag1->_etherC_.pstt1_processParameters
+ be sure to use ether.ether_((tin9S&)tin0P).pag1->_etherC_.pstt1_processParameters_F( tin0P ) to refer to this static member
+application code can inspect all parameters by using a FORsTRINGSiN macro to inspect ((tin9S&)tin0P).pag1->_etherC_.pstt1_processParameters
     the "hirer" is used by city center to determine who is responsible for paying the wages of this worker adam
     in this example, citizen 21 is the "hirer" of this adam life
-   example: !((tin9S&)tinBaseP).pag1->_etherC_.idCitizenHirer 21
-  !((tin9S&)tinBaseP).pag1->_etherC_.idCitizenHirer <value>
+   example: !((tin9S&)tin0P).pag1->_etherC_.idCitizenHirer 21
+  !((tin9S&)tin0P).pag1->_etherC_.idCitizenHirer <value>
  multiple word directives
    causes function entries and exits to be logged to the face
   !bWatchSay

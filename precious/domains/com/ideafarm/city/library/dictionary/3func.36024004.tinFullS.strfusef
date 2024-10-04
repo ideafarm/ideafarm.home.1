@@ -8,7 +8,7 @@
 
 
 }
-    if( &tinBaseP == this ) flagsThreadMode2 = flagsThreadMode2Save ;
+    if( &tin0P == this ) flagsThreadMode2 = flagsThreadMode2Save ;
 
     }
         }
@@ -33,7 +33,7 @@
                 (ids==monitor.idStep||ids==idsMin?tStep:tStep2)+                                                        //Y
                 ti+                                                                                             //g
 
-            ether.strFuseF( tinBaseP , psttP ,
+            ether.strFuseF( tin0P , psttP ,
 
             }
                 }
@@ -44,7 +44,7 @@
                 if( pLFstep[ ( ids & OFFsLOTtINsTEPmAX ) << 1 ] & fliSTEP_NESToUT ) bOut = 1 ;
             {
             if( pLFstep[ ( ids & OFFsLOTtINsTEPmAX ) << 1 ] & fliSTEP_NESTcHANGE )
-            const osTextT* postFileStep = processGlobal8I.source.postFileTitleF( tinBaseP , processGlobal8I.source.idFileRankF( tinBaseP , pLFstep[ ( ( ids & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ) ) ;
+            const osTextT* postFileStep = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , pLFstep[ ( ( ids & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ) ) ;
         {
         for( countT ids = monitor.idStep ; ids >= idsMin ; ids -- )
         ZE( boolT , bOut ) ;
@@ -68,9 +68,9 @@
                 (idn==monitor.cInNest||idn==idnMin?tCalledBy:tCalledBy2)+                                                 //J
                 ti+                                                                                             //h
 
-            ether.strFuseF( tinBaseP , psttP ,
+            ether.strFuseF( tin0P , psttP ,
 
-            const osTextT* postFileNest = processGlobal8I.source.postFileTitleF( tinBaseP , processGlobal8I.source.idFileRankF( tinBaseP , monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ) ) ;
+            const osTextT* postFileNest = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ) ) ;
         {
         for( countT idn = monitor.cInNest ; idn >= idnMin ; idn -- )
     {
@@ -90,19 +90,19 @@
             T(ppostTitle[0xb])+                                                                                 //A
             ti+                                                                                                 //X
 
-        ether.strFuseF( tinBaseP , psttP ,
+        ether.strFuseF( tin0P , psttP ,
     {
     if( F(flags1) & flTINrPT1_pLFstepLast )
 
     }
-        if( F(flags1) & flTINrPT1_idWhat1               ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[0xa])+TP(processGlobal4I.mapWhat(monitor.idWhat1),csttWhereMax)                                                       +tc ) ; ___( psttP ) ; } //A //E
-        if( F(flags2) & flTINrPT2_postTellIf            ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[0x11])+tq+T(postTellIf)+tq                                                                            +tc ) ; ___( psttP ) ; } //A //m
-        if( F(flags2) & flTINrPT2_postTell              ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[0x10])+tq+T(postTell)+tq                                                                              +tc ) ; ___( psttP ) ; } //A //m
-        if( F(flags1) & flTINrPT1_postThreadName        ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[  1])+tq+T(postThreadName)+tq                                                                         +tc ) ; ___( psttP ) ; } //A //B
-        if( F(flags1) & flTINrPT1_idThread              ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[  2])+TF3(monitor.idThread,0,8)                                                                               +tc ) ; ___( psttP ) ; } //A //C
-        if( F(flags1) & flTINrPT1_idProcessOld             ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[0xd])+TF3(monitor.idProcessOld,0,8)                                                                              +tc ) ; ___( psttP ) ; } //A //C
-        if( F(flags1) & flTINrPT1_osTid                 ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[  3])+TF3(osTid,0,8)                                                                                  +tc ) ; ___( psttP ) ; } //A //C
-        if( F(flags1) & flTINrPT1_osPid                 ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[  4])+TF3(osPid,0,8)                                                                                  +tc ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_idWhat1               ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0xa])+TP(processGlobal4I.mapWhat(monitor.idWhat1),csttWhereMax)                                                       +tc ) ; ___( psttP ) ; } //A //E
+        if( F(flags2) & flTINrPT2_postTellIf            ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0x11])+tq+T(postTellIf)+tq                                                                            +tc ) ; ___( psttP ) ; } //A //m
+        if( F(flags2) & flTINrPT2_postTell              ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0x10])+tq+T(postTell)+tq                                                                              +tc ) ; ___( psttP ) ; } //A //m
+        if( F(flags1) & flTINrPT1_postThreadName        ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[  1])+tq+T(postThreadName)+tq                                                                         +tc ) ; ___( psttP ) ; } //A //B
+        if( F(flags1) & flTINrPT1_idThread              ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[  2])+TF3(monitor.idThread,0,8)                                                                               +tc ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_idProcessOld             ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0xd])+TF3(monitor.idProcessOld,0,8)                                                                              +tc ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_osTid                 ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[  3])+TF3(osTid,0,8)                                                                                  +tc ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_osPid                 ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[  4])+TF3(osPid,0,8)                                                                                  +tc ) ; ___( psttP ) ; } //A //C
 
         }
             ) ; ___( psttP ) ;
@@ -114,28 +114,28 @@
                 T(ppostTitle[0xc])+                                                                                 //A
                 ti+                                                                                                 //X
     
-            ether.strFuseF( tinBaseP , psttP ,
+            ether.strFuseF( tin0P , psttP ,
         {
         if( F(flags1) & flTINrPT1_idLineCt )
 
-        if( F(flags1) & flTINrPT1_idStep                ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[0xe])+TF3(monitor.idStep,0,8)                                                                                 +tc ) ; ___( psttP ) ; } //A //C
-        if( F(flags2) & flTINrPT2_idDirty               ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[0xf])+TF3(monitor.idDirty,0,8)                                                                                +tc ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_idStep                ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0xe])+TF3(monitor.idStep,0,8)                                                                                 +tc ) ; ___( psttP ) ; } //A //C
+        if( F(flags2) & flTINrPT2_idDirty               ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0xf])+TF3(monitor.idDirty,0,8)                                                                                +tc ) ; ___( psttP ) ; } //A //C
     {
     else
     }
-        if( bc ) { ether.strFuseF( tinBaseP , psttP , tc ) ; ___( psttP ) ; } //B
-        if( F(flags1) & flTINrPT1_idWhat1               ) { bc = 1 ; ether.strFuseF( tinBaseP , psttP , ti+TP(processGlobal4I.mapWhat(monitor.idWhat1),csttWhereMax)                                                       +t1b ) ; ___( psttP ) ; } //A //E
-        if( F(flags1) & flTINrPT1_postThreadName        ) { bc = 1 ; ether.strFuseF( tinBaseP , psttP , ti+T(postThreadName)                                                                               +t1b ) ; ___( psttP ) ; } //A //B
-        if( F(flags1) & flTINrPT1_idThread              ) { bc = 1 ; ether.strFuseF( tinBaseP , psttP , ti+TF1(monitor.idThread)                                                                                   +t1b ) ; ___( psttP ) ; } //A //C
-        if( F(flags1) & flTINrPT1_idProcessOld             ) { bc = 1 ; ether.strFuseF( tinBaseP , psttP , ti+TF1(monitor.idProcessOld)                                                                                  +t1b ) ; ___( psttP ) ; } //A //C
-        if( F(flags1) & flTINrPT1_osTid                 ) { bc = 1 ; ether.strFuseF( tinBaseP , psttP , ti+TF1(osTid)                                                                                      +t1b ) ; ___( psttP ) ; } //A //C
-        if( F(flags1) & flTINrPT1_osPid                 ) { bc = 1 ; ether.strFuseF( tinBaseP , psttP , ti+TF1(osPid)                                                                                      +t1b ) ; ___( psttP ) ; } //A //C
+        if( bc ) { ether.strFuseF( tin0P , psttP , tc ) ; ___( psttP ) ; } //B
+        if( F(flags1) & flTINrPT1_idWhat1               ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TP(processGlobal4I.mapWhat(monitor.idWhat1),csttWhereMax)                                                       +t1b ) ; ___( psttP ) ; } //A //E
+        if( F(flags1) & flTINrPT1_postThreadName        ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+T(postThreadName)                                                                               +t1b ) ; ___( psttP ) ; } //A //B
+        if( F(flags1) & flTINrPT1_idThread              ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TF1(monitor.idThread)                                                                                   +t1b ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_idProcessOld             ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TF1(monitor.idProcessOld)                                                                                  +t1b ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_osTid                 ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TF1(osTid)                                                                                      +t1b ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_osPid                 ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TF1(osPid)                                                                                      +t1b ) ; ___( psttP ) ; } //A //C
         ZE( boolT , bc ) ;
     {
     if( bb )
-    //if( !bb ) { ether.strFuseF( tinBaseP , psttP , ti+T(ppostTitle[0])+tc ) ; ___( psttP ) ; } //A
+    //if( !bb ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0])+tc ) ; ___( psttP ) ; } //A
 
-    ether.strFuseF( tinBaseP , psttP , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ csttn + csttExtraP ) ; ___( psttP ) ;
+    ether.strFuseF( tin0P , psttP , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ csttn + csttExtraP ) ; ___( psttP ) ;
 
     //U: TF3 -> TF1 and TP->T AFTER VERIFY THAT LENGTH CALCULATION IS CORRECT
 
@@ -149,16 +149,16 @@
             {
             if( bOut )
 
-            csttn += tc.csF( tinBaseP ) + cIndentP ; //g
-            if( postFileStep ) csttnb += t4b.csF( tinBaseP ) + 2 * tq.csF( tinBaseP ) + ether.strBodyLengthF( tinBaseP , postFileStep ) ; //f
+            csttn += tc.csF( tin0P ) + cIndentP ; //g
+            if( postFileStep ) csttnb += t4b.csF( tin0P ) + 2 * tq.csF( tin0P ) + ether.strBodyLengthF( tin0P , postFileStep ) ; //f
             csttn += 8 ; //e
             csttn += 3 ; //d
             csttna += 1 + idns ; //c
             csttn += 9 ; //k
             csttn += 0xc ; //b
-            csttn += tStepSuff.csF( tinBaseP ) ; //a
+            csttn += tStepSuff.csF( tin0P ) ; //a
             csttn += 8 ; //Z
-            csttn += tStep.csF( tinBaseP ) ; //Y
+            csttn += tStep.csF( tin0P ) ; //Y
 
             }
                 }
@@ -169,7 +169,7 @@
                 if( pLFstep[ ( ids & OFFsLOTtINsTEPmAX ) << 1 ] & fliSTEP_NESToUT ) bOut = 1 ;
             {
             if( pLFstep[ ( ids & OFFsLOTtINsTEPmAX ) << 1 ] & fliSTEP_NESTcHANGE )
-            const osTextT* postFileStep = processGlobal8I.source.postFileTitleF( tinBaseP , processGlobal8I.source.idFileRankF( tinBaseP , pLFstep[ ( ( ids & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ) ) ;
+            const osTextT* postFileStep = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , pLFstep[ ( ( ids & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ) ) ;
         {
         for( countT ids = monitor.idStep ; ids >= idsMin ; ids -- )
         ZE( boolT , bOut ) ;
@@ -180,25 +180,25 @@
         csttn += csttn6 ;
         csttn += csttn5 ;
         }
-            csttn += cIndentP + tc.csF( tinBaseP ) ;                                                                //h
-            if( postFileNest ) csttn6 += t4b.csF( tinBaseP ) + 2 * tq.csF( tinBaseP ) + ether.strBodyLengthF( tinBaseP , postFileNest ) ; //O
+            csttn += cIndentP + tc.csF( tin0P ) ;                                                                //h
+            if( postFileNest ) csttn6 += t4b.csF( tin0P ) + 2 * tq.csF( tin0P ) + ether.strBodyLengthF( tin0P , postFileNest ) ; //O
             csttn += 8 ;                                                                                        //N
             csttn += 9 ;                                                                                        //i
             csttn += 3 ;                                                                                        //M
             csttn5 += 1 + idn ;                                                                                 //L
             csttn += 0xc ;                                                                                      //K
-            csttn +=  tCalledBy.csF( tinBaseP ) ;                                                                   //J
+            csttn +=  tCalledBy.csF( tin0P ) ;                                                                   //J
 
-            const osTextT* postFileNest = processGlobal8I.source.postFileTitleF( tinBaseP , processGlobal8I.source.idFileRankF( tinBaseP , monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ) ) ;
+            const osTextT* postFileNest = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ) ) ;
         {
         for( countT idn = monitor.cInNest ; idn >= idnMin ; idn -- )
 
         csttn += cIndentP + csttWhereMax ;                                                                      //E
         csttn += csttn4 ;
-        if( postFileLast ) csttn4 = t4b.csF( tinBaseP ) + 2 * tq.csF( tinBaseP ) + ether.strBodyLengthF( tinBaseP , postFileLast ) ; //I
+        if( postFileLast ) csttn4 = t4b.csF( tin0P ) + 2 * tq.csF( tin0P ) + ether.strBodyLengthF( tin0P , postFileLast ) ; //I
 
-        csttn += 2 * ( cIndentP + tc.csF( tinBaseP ) ) ;                                                            //X
-        csttn += t1b.csF( tinBaseP ) ;                                                                              //V
+        csttn += 2 * ( cIndentP + tc.csF( tin0P ) ) ;                                                            //X
+        csttn += t1b.csF( tin0P ) ;                                                                              //V
         csttn += csttn3 ;
         csttn += 9 ;                                                                                            //g
         csttn3 = 1 + monitor.cInNest ;                                                                                    //G
@@ -207,13 +207,13 @@
         csttn += 2 * 0xc ;                                                                                      //F
         csttn += 0xa * 0xd + 0xc * cIndentP ;                                                                   //C
         csttn += csttn2 ;
-        csttn += cIndentP + ether.strBodyLengthF( tinBaseP , postTell       ) + 2 * tq.csF( tinBaseP ) ;                //m
-        csttn += cIndentP + ether.strBodyLengthF( tinBaseP , postTellIf     ) + 2 * tq.csF( tinBaseP ) ;                //m
+        csttn += cIndentP + ether.strBodyLengthF( tin0P , postTell       ) + 2 * tq.csF( tin0P ) ;                //m
+        csttn += cIndentP + ether.strBodyLengthF( tin0P , postTellIf     ) + 2 * tq.csF( tin0P ) ;                //m
         csttn2 = 0xc ;                                                                                          //W
-        csttn += cIndentP + ether.strBodyLengthF( tinBaseP , postThreadName ) + 2 * tq.csF( tinBaseP ) ;                //B
+        csttn += cIndentP + ether.strBodyLengthF( tin0P , postThreadName ) + 2 * tq.csF( tin0P ) ;                //B
 
         csttn += csttn1 ;
-        for( countT off = 0 ; off < sizeof ppostTitle / sizeof *ppostTitle ; off ++ ) csttn1 += ether.strBodyLengthF( tinBaseP , ppostTitle[ off ] ) + tc.csF( tinBaseP ) ; //A
+        for( countT off = 0 ; off < sizeof ppostTitle / sizeof *ppostTitle ; off ++ ) csttn1 += ether.strBodyLengthF( tin0P , ppostTitle[ off ] ) + tc.csF( tin0P ) ; //A
     {
     ZE( countT , csttnb ) ;
     ZE( countT , csttna ) ;
@@ -233,7 +233,7 @@
     countT idsMin = monitor.idStep > OFFsLOTtINsTEPmAX ? monitor.idStep - OFFsLOTtINsTEPmAX : 1 ;
     const countT idnMin =  monitor.cInNest > OFFsLOTtINnESTmAX ?  monitor.cInNest - OFFsLOTtINnESTmAX : 1 ;
 
-    const osTextT* postFileLast = processGlobal8I.source.postFileTitleF( tinBaseP , processGlobal8I.source.idFileRankF( tinBaseP , pLFstep[ ( ( monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ) ) ;
+    const osTextT* postFileLast = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , pLFstep[ ( ( monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ) ) ;
 
     TN( tStepSuff  , "     | "               ) ;
     TN( tStep2     , "|  | "                ) ; // ""
@@ -278,7 +278,7 @@
         flagsThreadMode2 &= ~( F(flTHREADmODE2_UPDATEtIN) ) ;
         flagsThreadMode2Save = flagsThreadMode2 ;
     {
-    if( &tinBaseP == this )
+    if( &tin0P == this )
     ZE( flagsT , flagsThreadMode2Save ) ;
 
     while( cToDo -- ) ti += T(" ") ;
@@ -289,7 +289,7 @@
 
     }
         if( POOP ) return ; // IF DO ANY TESTING THEN MUST DISABLE UPDATING EARLIER (BEFORE HERE)
-        __( &tinBaseP == this ) ;
+        __( &tin0P == this ) ;
         FV( flTINrPT2 , flagsExclude2P ) ;
         FV( flTINrPT2 , flagsInclude2P ) ;
         FV( flTINrPT1 , flagsExclude1P ) ;
@@ -297,9 +297,9 @@
         if( POOP ) return ; // IF DO ANY TESTING THEN MUST DISABLE UPDATING EARLIER (BEFORE HERE)
     {
     IFbEcAREFUL
-    scoopC scoop( tinBaseP , LF , ether ) ;
+    scoopC scoop( tin0P , LF , ether ) ;
 {
-/*1*/voidT tin9S::strFuseF( tin0S& tinBaseP , etherC& ether , strokeS*& psttP , const countT csttExtraP , const flagsT flagsInclude1P , const flagsT flagsInclude2P , const flagsT flagsExclude1P , const flagsT flagsExclude2P , countT idFormatP , const countT cIndentP )/*1*/
+/*1*/voidT tin9S::strFuseF( tin0S& tin0P , etherC& ether , strokeS*& psttP , const countT csttExtraP , const flagsT flagsInclude1P , const flagsT flagsInclude2P , const flagsT flagsExclude1P , const flagsT flagsExclude2P , countT idFormatP , const countT cIndentP )/*1*/
 
 /**/
 */
@@ -323,9 +323,9 @@
   can be 0
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.001014e.flTINrPT1!||
  flagsInclude1P
-  if tinBaseP is *this then i will disable *this so that it is not updated while i report on it
+  if tin0P is *this then i will disable *this so that it is not updated while i report on it
   can be *this
- tinBaseP
+ tin0P
 arguments
 it is illegal to refer to this symbol in the definition of an adam
   \<A HREF=\"5.7740104.1.1.0.html\"\>7740104:  WAKEsHOW( "example.simplest.func.12f0007.tin9S.strFuseF" )\</A\>

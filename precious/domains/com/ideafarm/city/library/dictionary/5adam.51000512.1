@@ -9,25 +9,25 @@
 
 REST
 
-etThread.delF( tinBaseP , pbOut ) ;
+etThread.delF( tin0P , pbOut ) ;
 }
-    etThread.delF( tinBaseP , pcCode ) ;
-    etThread.delF( tinBaseP , pbIn ) ;
+    etThread.delF( tin0P , pcCode ) ;
+    etThread.delF( tin0P , pbIn ) ;
     
-    etThread.boxPutF( tinBaseP , T("///d/test.in.")+TF1(idCycle) , pbIn , cbIn ) ;
+    etThread.boxPutF( tin0P , T("///d/test.in.")+TF1(idCycle) , pbIn , cbIn ) ;
     
-    etThread.strokeF( tinBaseP , T("\r\ndecoding done\r\n") ) ;
-    dad( tinBaseP , pbIn , cbIn , pcCode , ccCode ) ; ___( pbIn ) ;
+    etThread.strokeF( tin0P , T("\r\ndecoding done\r\n") ) ;
+    dad( tin0P , pbIn , cbIn , pcCode , ccCode ) ; ___( pbIn ) ;
     ZE( countT , cbIn ) ;
     ZE( byteT* , pbIn ) ;
     
-    etThread.boxPutF( tinBaseP , T("///d/test.codes.")+TF1(++idCycle) , (byteT*)pcCode , ccCode * sizeof( count01T ) ) ;
+    etThread.boxPutF( tin0P , T("///d/test.codes.")+TF1(++idCycle) , (byteT*)pcCode , ccCode * sizeof( count01T ) ) ;
     
-    etThread.strokeF( tinBaseP , T("\r\nencoding done; score: ")+TF1(score)+T(" of ")+TF1(ccCode-cProlog)+T(" (")+TF1((countT)(score*TOCK/(ccCode-cProlog)))+T("%%)\r\n") ) ;
-    countT score = etThread.tallyF( tinBaseP , pcCode + cProlog , ccCode - cProlog ) ;
+    etThread.strokeF( tin0P , T("\r\nencoding done; score: ")+TF1(score)+T(" of ")+TF1(ccCode-cProlog)+T(" (")+TF1((countT)(score*TOCK/(ccCode-cProlog)))+T("%%)\r\n") ) ;
+    countT score = etThread.tallyF( tin0P , pcCode + cProlog , ccCode - cProlog ) ;
     const countT cProlog = 0x200 ; //THE WOTH SECTION IS LIKELY TO CONTAIN MOST OF THE VALUE CONSTANTS SO IT IS EXCLUDED FROM THE EVALUATION
     
-    mom( tinBaseP , pcCode , ccCode , pbOut , cbOut ) ; ___( pcCode ) ;
+    mom( tin0P , pcCode , ccCode , pbOut , cbOut ) ; ___( pcCode ) ;
     ZE( countT    , ccCode ) ;
     ZE( count01T* , pcCode ) ;
 {
@@ -35,12 +35,12 @@ while( !ether )
 ZE( countT , idCycle ) ;
 
 CONoUTrAW3( "test cbOut:\r\n" , cbOut , "\r\n" ) ;
-etThread.boxGetShadowF( tinBaseP , pbOut , cbOut , T("///d/test") ) ; ___( pbOut ) ; //ANY FILE OF ANY SIZE
+etThread.boxGetShadowF( tin0P , pbOut , cbOut , T("///d/test") ) ; ___( pbOut ) ; //ANY FILE OF ANY SIZE
 ZE( countT , cbOut ) ;
 ZE( byteT* , pbOut ) ;
 
-dadC dad( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
-momC mom( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+dadC dad( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+momC mom( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 

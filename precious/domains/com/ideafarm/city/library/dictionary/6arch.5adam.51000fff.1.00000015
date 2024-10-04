@@ -11,7 +11,7 @@ REST
 
 THREADmODE3rESTORE
 }
-    PUSE( tinBaseP , *(byteT**)&pListing ) ;
+    PUSE( tin0P , *(byteT**)&pListing ) ;
 
     }
         listingVSP sp2 = sp1 ;
@@ -26,20 +26,20 @@ THREADmODE3rESTORE
             sp1 = *pEntry ;
             listingVSP sp1 ; //U::ADD SUPPORT FOR COPY CONSTRUCTOR SO THAT CAN USE A SINGLE STATEMENT FOR THIS CT AND ASSIGNMENT
         {
-        listing_listingVSP_C* pEntry = new( 0 , tinBaseP , LF ) listing_listingVSP_C( tinBaseP , pczList , *pListing ) ; //U:: THIS CT DOES NOT INCREMENT cRef
+        listing_listingVSP_C* pEntry = new( 0 , tin0P , LF ) listing_listingVSP_C( tin0P , pczList , *pListing ) ; //U:: THIS CT DOES NOT INCREMENT cRef
         countT pczList[] = { 0x11111111 , 0x22222222 , 0x33333333 , 0x44444444 , 0 } ;
     {
 
     }
         DEL( *(listingC**)&pEntry ) ;
-        listing_listingVSP_C* pEntry = new( 0 , tinBaseP , LF ) listing_listingVSP_C( tinBaseP , pczList , *pListing ) ; //U:: THIS CT DOES NOT INCREMENT cRef
+        listing_listingVSP_C* pEntry = new( 0 , tin0P , LF ) listing_listingVSP_C( tin0P , pczList , *pListing ) ; //U:: THIS CT DOES NOT INCREMENT cRef
         countT pczList[] = { 0x11111111 , 0x22222222 , 0x33333333 , 0x44444444 , 0 } ;
     {
 
-    listingC* pListing = new( 0 , tinBaseP , LF ) listingC( tinBaseP ) ;
+    listingC* pListing = new( 0 , tin0P , LF ) listingC( tin0P ) ;
 
     }
-        listing_countT_C entry( tinBaseP , pczList , 0x55555 ) ;
+        listing_countT_C entry( tin0P , pczList , 0x55555 ) ;
         countT pczList[] = { 0x11111111 , 0x22222222 , 0x33333333 , 0x44444444 , 0 } ;
     {
 

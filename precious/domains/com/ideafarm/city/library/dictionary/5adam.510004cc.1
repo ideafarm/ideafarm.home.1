@@ -9,16 +9,16 @@
 
 REST
 
-etThread.loafIF( tinBaseP ) ;
-sgnGo.giveF( tinBaseP ) ;
-etThread.strokeF( tinBaseP , T("giving sign\r\n") ) ;
-etThread.osSleepF( tinBaseP , TOCK ) ;
-etThread.strokeF( tinBaseP , T("all are ready. will give sign in a tock\r\n") ) ;
-while( cReady < CgORILLAS ) etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
-while( cTries -- ) etThread.osThreadF( tinBaseP , countTC() , tmnF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cReady , (countT)&sgnGo ) ;
+etThread.loafIF( tin0P ) ;
+sgnGo.giveF( tin0P ) ;
+etThread.strokeF( tin0P , T("giving sign\r\n") ) ;
+etThread.osSleepF( tin0P , TOCK ) ;
+etThread.strokeF( tin0P , T("all are ready. will give sign in a tock\r\n") ) ;
+while( cReady < CgORILLAS ) etThread.osSleepF( tin0P , TUCK * 0x40 ) ;
+while( cTries -- ) etThread.osThreadF( tin0P , countTC() , tmnF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cReady , (countT)&sgnGo ) ;
 ZE( countT , cReady ) ;
 countT cTries = CgORILLAS ;
-signC sgnGo( tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgnGo( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -29,11 +29,11 @@ DONE( tmnF )
             }
                 while( POOP ) ;
                 }
-                    thirdC::dosOpenSharedMemIF( tinBaseP , hNapkin , flags , "fc40104/tmnF" , sizeof( countT ) + sizeof( countT ) , ifcOPENsHAREDmEMORYhOW_nCeF ) ;
+                    thirdC::dosOpenSharedMemIF( tin0P , hNapkin , flags , "fc40104/tmnF" , sizeof( countT ) + sizeof( countT ) , ifcOPENsHAREDmEMORYhOW_nCeF ) ;
                     ZE( flagsT , flags ) ;
         
                     }
-                        thirdC::dosSleepRWinkIF( tinBaseP ) ;
+                        thirdC::dosSleepRWinkIF( tin0P ) ;
                         POOPR
                         ++ s ;
                     {
@@ -41,18 +41,18 @@ DONE( tmnF )
                     if( bWoth ) bWoth = 0 ;
                 {
                 do
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
             POOPIES
             boolT bNoQuitEarly = 0 ;
             boolT bNoQuit = 1 ;
             boolT bWoth = 1 ;
         {
-        handleC hNapkin( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SHAREDmEMORY ) ;
+        handleC hNapkin( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SHAREDmEMORY ) ;
     {
     while( !ether && !etThread )
 
-    sgnGo.waitF( tinBaseP ) ;
+    sgnGo.waitF( tin0P ) ;
     inc02AM( cReady ) ;
 
     signC&  sgnGo  =  *(signC*)pTaskP->c2 ;

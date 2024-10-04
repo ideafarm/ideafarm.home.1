@@ -9,17 +9,17 @@
                             
 REST
 
-etThread.osSuspendF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok.  hibernating") ) ;
+etThread.osSuspendF( tin0P ) ;
+etThread.traceF( tin0P , T("ok.  hibernating") ) ;
 
-//etherC::loafIF( tinBaseP ) ;
-//etThread.traceF( tinBaseP , T("ok.  loafing") ) ;
+//etherC::loafIF( tin0P ) ;
+//etThread.traceF( tin0P , T("ok.  loafing") ) ;
 
 }
     }
         }
             THREADmODE2rESTORE
-            while( cExecutiveHealYear ) thirdC::dosSleepWinkIF( tinBaseP ) ;
+            while( cExecutiveHealYear ) thirdC::dosSleepWinkIF( tin0P ) ;
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
         {
 
@@ -29,20 +29,20 @@ etThread.traceF( tinBaseP , T("ok.  hibernating") ) ;
                 etThread.osThreadF( TaRG3fLAGScBtLS( tmExecutiveHealYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cExecutiveHealYear , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort ) ;
                 inc02AM( cExecutiveHealYear ) ;
 
-                etThread.strMakeF( tinBaseP , LF , psttYear , psttzYear ) ; ___( psttYear ) ;
+                etThread.strMakeF( tin0P , LF , psttYear , psttzYear ) ; ___( psttYear ) ;
                 ZE( strokeS* , psttYear ) ;
 
-                etThread.traceF( tinBaseP , T("year to heal:    ")+T(psttzYear) ) ;
-                strokeS* psttzYear = (strokeS*)stYearToHeal.upF( tinBaseP , hStYearToHeal ) ;       //PROCESSES YEARS BEGINNING WITH MOST RECENT  (A:ASSUME: CURRENT YEARS ARE IN MOST NEED OF HEALING SINCE FILES ARE ADDED AND MODIFIED)
+                etThread.traceF( tin0P , T("year to heal:    ")+T(psttzYear) ) ;
+                strokeS* psttzYear = (strokeS*)stYearToHeal.upF( tin0P , hStYearToHeal ) ;       //PROCESSES YEARS BEGINNING WITH MOST RECENT  (A:ASSUME: CURRENT YEARS ARE IN MOST NEED OF HEALING SINCE FILES ARE ADDED AND MODIFIED)
 
                 }
                     THREADmODE2rESTORE
-                    while( CyEARSiNpARALLEL == cExecutiveHealYear ) thirdC::dosSleepWinkIF( tinBaseP ) ;
+                    while( CyEARSiNpARALLEL == cExecutiveHealYear ) thirdC::dosSleepWinkIF( tin0P ) ;
                     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                 {
             {
             do
-            handleC hStYearToHeal( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hStYearToHeal( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         {
         if( !bAbort )
         ZE( countT , cExecutiveHealYear ) ;
@@ -53,117 +53,117 @@ etThread.traceF( tinBaseP , T("ok.  hibernating") ) ;
                     }
                         break ;
                         bAbort = 1 ;
-                        etThread.delF( tinBaseP , psttYear ) ;
-                        etThread.traceF( tinBaseP , T("exception: duplicate year [psttYear]:    ")+T(psttYear) ) ;                        
+                        etThread.delF( tin0P , psttYear ) ;
+                        etThread.traceF( tin0P , T("exception: duplicate year [psttYear]:    ")+T(psttYear) ) ;                        
                     {
                     if( !idSlot ) //SHOULD BE IMPOSSIBLE
-                    stYearToHeal.sinkF( tinBaseP , idSlot , psttYear , flSTACKsINK_UNIQUE ) ;
+                    stYearToHeal.sinkF( tin0P , idSlot , psttYear , flSTACKsINK_UNIQUE ) ;
                     ZE( countT , idSlot ) ;
-                    etThread.strMakeF( tinBaseP , LF , psttYear , psttzYear ) ; ___( psttYear ) ;
+                    etThread.strMakeF( tin0P , LF , psttYear , psttzYear ) ; ___( psttYear ) ;
                     ZE( strokeS* , psttYear ) ;
                 {
                 if( tally > 1 )
                 countT tally = swTallyByYear ;
-                psttzYear = (strokeS*)swTallyByYear.leverF( tinBaseP , idf ) ;
+                psttzYear = (strokeS*)swTallyByYear.leverF( tin0P , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swTallyByYear.cFlavorsF( tinBaseP ) ;
+            countT cFlavors = swTallyByYear.cFlavorsF( tin0P ) ;
 
             while( ~hSwsPathToArchives ) ;
             }
-                etThread.delF( tinBaseP , pstt1PathToYear ) ;
+                etThread.delF( tin0P , pstt1PathToYear ) ;
                 }
-                    //etThread.traceF( tinBaseP , T("[tYear,tally]:    ")+tYear+tb4+TF2((countT)swTallyByYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //etThread.traceF( tin0P , T("[tYear,tally]:    ")+tYear+tb4+TF2((countT)swTallyByYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     swTallyByYear ++ ;
                     psttzYear = tYear ;
 
                     }
-                        etThread.delF( tinBaseP , psttYear ) ;
+                        etThread.delF( tin0P , psttYear ) ;
                         tYear = T(psttYear) ;
-                        etThread.strWordF( tinBaseP , psttYear , psttc1 , sttq , sttSlash , - 2 ) ; ___( psttYear ) ;
+                        etThread.strWordF( tin0P , psttYear , psttc1 , sttq , sttSlash , - 2 ) ; ___( psttYear ) ;
                         ZE( strokeS* , psttYear ) ;
                     {
                     TN( tYear , "" ) ;
                 {
                 FORsTRINGSiN1( pstt1PathToYear )
-                etThread.strConvertToLowerCaseF( tinBaseP , pstt1PathToYear ) ;
-                etThread.diskFindFileOrDirF( tinBaseP , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
-                patternC pat( tinBaseP , etThread , tYearPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                etThread.strConvertToLowerCaseF( tin0P , pstt1PathToYear ) ;
+                etThread.diskFindFileOrDirF( tin0P , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
+                patternC pat( tin0P , etThread , tYearPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                 ZE( strokeS* , pstt1PathToYear ) ;
 
-                //etThread.traceF( tinBaseP , T("new code [tPathToArchive]:    ")+tPathToArchive ) ;
+                //etThread.traceF( tin0P , T("new code [tPathToArchive]:    ")+tPathToArchive ) ;
                 TN( tPathToArchive , "" ) ; tPathToArchive = T(psttzPathToArchives)+T(psttzArchive)+tSlash ;
-                strokeS* psttzPathToArchives = *(strokeS**)&swsPathToArchivesByArchiveName.downF( tinBaseP , hSwsPathToArchives ) ;
+                strokeS* psttzPathToArchives = *(strokeS**)&swsPathToArchivesByArchiveName.downF( tin0P , hSwsPathToArchives ) ;
             {
             do
-            handleC hSwsPathToArchives( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hSwsPathToArchives( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             strokeS sttSlash( '/' ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 
-            switchC swTallyByYear( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzYear ) ;
+            switchC swTallyByYear( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzYear ) ;
             ZE( strokeS* , psttzYear ) ;
         {
-        stackC stYearToHeal( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+        stackC stYearToHeal( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
 
         // FOR EACH YEAR FOLDER (ALL YEARS FOR THIS ARCHIVE NAME (EXAMPLE: ALL YEAR PATHS FOR EVERY YEAR FOR "wo.ideafarm"), LAUNCH A FILE RECORD COLLECTION THREAD
     {
     if( cArchivesWithThisName > 1 )
-    etThread.traceF( tinBaseP , T("[cArchivesWithThisName,archive]:    ")+TF2(cArchivesWithThisName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzArchive) ) ;
-    swsPathToArchivesByArchiveName.ungrabF( tinBaseP ) ;
+    etThread.traceF( tin0P , T("[cArchivesWithThisName,archive]:    ")+TF2(cArchivesWithThisName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzArchive) ) ;
+    swsPathToArchivesByArchiveName.ungrabF( tin0P ) ;
     countT cArchivesWithThisName = swsPathToArchivesByArchiveName ;
-    psttzArchive = (strokeS*)swsPathToArchivesByArchiveName.leverF( tinBaseP , idf ) ;
-    swsPathToArchivesByArchiveName.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    psttzArchive = (strokeS*)swsPathToArchivesByArchiveName.leverF( tin0P , idf ) ;
+    swsPathToArchivesByArchiveName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 {
 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )    // FOR EACH ARCHIVE NAME (EXAMPLE: "wo.ideafarm")
 ZE( boolT , bAbort ) ;
-swsPathToArchivesByArchiveName.ungrabF( tinBaseP ) ;
-countT cFlavors = swsPathToArchivesByArchiveName.cFlavorsF( tinBaseP ) ;
-swsPathToArchivesByArchiveName.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+swsPathToArchivesByArchiveName.ungrabF( tin0P ) ;
+countT cFlavors = swsPathToArchivesByArchiveName.cFlavorsF( tin0P ) ;
+swsPathToArchivesByArchiveName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 TN( tYearPattern , "?" "?" "?" "?" "/" ) ;                                                              //20221118@1747: "????/" PROUCES A SPURIOUS COMPILER ERROR INVOLVING TRIGRAPH
 //TN( tYearPattern , "1999/" ) ;  //U:: TO FIND A BUG
 
-swsPathToArchivesByArchiveName.lockIfF( tinBaseP ) ;
+swsPathToArchivesByArchiveName.lockIfF( tin0P ) ;
 }
     }
-        etThread.delF( tinBaseP , pstt1Archives ) ;
+        etThread.delF( tin0P , pstt1Archives ) ;
         }
             }
-                swsPathToArchivesByArchiveName.sinkF( tinBaseP , countTC() , psttPathArchives ) ;                           // EXAMPLE: "///c/ipdos.arhives/"
+                swsPathToArchivesByArchiveName.sinkF( tin0P , countTC() , psttPathArchives ) ;                           // EXAMPLE: "///c/ipdos.arhives/"
 
                 psttzArchive = tArchive ;
 
-                etThread.traceF( tinBaseP , T("    [tPathArchives,tArchive]:    ")+T(psttPathArchives)+tb4+tArchive ) ;
+                etThread.traceF( tin0P , T("    [tPathArchives,tArchive]:    ")+T(psttPathArchives)+tb4+tArchive ) ;
 
                 }
-                    etThread.delF( tinBaseP , psttShorter ) ;
+                    etThread.delF( tin0P , psttShorter ) ;
                     tArchive = T(psttShorter) ;
-                    etThread.strSubstringF( tinBaseP , psttShorter , idf , idl , tArchiveSlash ) ; ___( psttShorter ) ;
+                    etThread.strSubstringF( tin0P , psttShorter , idf , idl , tArchiveSlash ) ; ___( psttShorter ) ;
                     ZE( strokeS* , psttShorter ) ;
                 {
                 if( idl )
-                countT idl = tArchiveSlash.csF( tinBaseP ) ? tArchiveSlash.csF( tinBaseP ) - 1 : 0 ;
+                countT idl = tArchiveSlash.csF( tin0P ) ? tArchiveSlash.csF( tin0P ) - 1 : 0 ;
                 countT idf = 1 ;
                 TN( tArchive , "" ) ;                                                                                   // EXAMPLE: "wo.ideafarm"
 
                 }
-                    etThread.delF( tinBaseP , psttArchiveSlash ) ;
+                    etThread.delF( tin0P , psttArchiveSlash ) ;
                     tArchiveSlash = T(psttArchiveSlash) ;
-                    etThread.strBisectF( tinBaseP , psttPathArchives , psttArchiveSlash , psttc1 , T("/") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPathArchives ) ; ___( psttArchiveSlash ) ;
+                    etThread.strBisectF( tin0P , psttPathArchives , psttArchiveSlash , psttc1 , T("/") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPathArchives ) ; ___( psttArchiveSlash ) ;
                     ZE( strokeS* , psttArchiveSlash ) ;
                 {
                 TN( tArchiveSlash , "" ) ;                                                                              // EXAMPLE: "wo.ideafarm/"
                 ZE( strokeS* , psttPathArchives ) ;                                                                     // EXAMPLE: "///c/ipdos.arhives/"
 
-                etThread.traceF( tinBaseP , T("processing archive ")+T(psttc1) ) ;                                          // EXAMPLE: "///c/ipdos.arhives/wo.ideafarm/"
+                etThread.traceF( tin0P , T("processing archive ")+T(psttc1) ) ;                                          // EXAMPLE: "///c/ipdos.arhives/wo.ideafarm/"
             {
             FORsTRINGSiN1( pstt1Archives )
-            etThread.diskFindFileOrDirF( tinBaseP , pstt1Archives , tLikeArchives ) ; ___( pstt1Archives ) ;
+            etThread.diskFindFileOrDirF( tin0P , pstt1Archives , tLikeArchives ) ; ___( pstt1Archives ) ;
         {
         ZE( strokeS* , pstt1Archives ) ;
     {
     TN( tLikeArchives , "///?/ipdos.archives/" ) ;
 {
-switchStackC swsPathToArchivesByArchiveName( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzArchive , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+switchStackC swsPathToArchivesByArchiveName( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzArchive , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
 ZE( strokeS* , psttzArchive ) ;
 // LOAD swsPathToArchivesByArchiveName WITH VALUES LIKE "///c/ipdos.arhives/" SWITCHED ON VALUES LIKE "wo.ideafarm"
 
@@ -176,20 +176,20 @@ DONE( tmExecutiveHealYearF )
 }
     dec02AM( cExecutiveHealYearP ) ;
     }
-        etThread.traceF( tinBaseP , T("done for archive ")+T(psttzArchiveP) ) ;
+        etThread.traceF( tin0P , T("done for archive ")+T(psttzArchiveP) ) ;
 
         DEL( pSwsMetaByShort ) ;
 
         }
-            //U::while( cWaiting ) sgnGo.giveF( tinBaseP ) ;       //cWaiting IS USED TO AVOID A RACE CONDITION: A THREAD THAT HAS INCREMENTED cCutoffUpdates BUT HAS NOT YET CALLED waitF WILL NOT SEE THIS SIGN
-            sgnGo.giveF( tinBaseP ) ;
-            thirdC::dosSleepWinkIF( tinBaseP ) ; // TO AVOID RACE
-            //etThread.traceF( tinBaseP , T("giving sign to unpause workers") ) ;
+            //U::while( cWaiting ) sgnGo.giveF( tin0P ) ;       //cWaiting IS USED TO AVOID A RACE CONDITION: A THREAD THAT HAS INCREMENTED cCutoffUpdates BUT HAS NOT YET CALLED waitF WILL NOT SEE THIS SIGN
+            sgnGo.giveF( tin0P ) ;
+            thirdC::dosSleepWinkIF( tin0P ) ; // TO AVOID RACE
+            //etThread.traceF( tin0P , T("giving sign to unpause workers") ) ;
 
-            pSwsMetaByShort->ungrabF( tinBaseP ) ;
+            pSwsMetaByShort->ungrabF( tin0P ) ;
 
-            //etThread.traceF( tinBaseP , T("after calling freeAllF [cFlavors]:    ")+TF2(pSwsMetaByShort->cFlavorsF(tinBaseP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            pSwsMetaByShort->freeAllF( tinBaseP ) ;
+            //etThread.traceF( tin0P , T("after calling freeAllF [cFlavors]:    ")+TF2(pSwsMetaByShort->cFlavorsF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            pSwsMetaByShort->freeAllF( tin0P ) ;
 
             }
                 }
@@ -204,18 +204,18 @@ DONE( tmExecutiveHealYearF )
                         for( countT offd = 0 ; offd < cResultStructsNeeded ; offd ++ )
 
                         fileMetaS*     pfmOuter = (fileMetaS*)( picOuter + cResultStructsNeeded ) ;
-                        imageCompareS* picOuter  = (imageCompareS*)&pSwsMetaByShort->downF( tinBaseP , hSwsOuter ) ;
+                        imageCompareS* picOuter  = (imageCompareS*)&pSwsMetaByShort->downF( tin0P , hSwsOuter ) ;
                     {
                     do
-                    handleC hSwsOuter( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC hSwsOuter( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( cFiles )
                 countT cFiles = *pSwsMetaByShort ;
-                postzShort = (osTextT*)pSwsMetaByShort->leverF( tinBaseP , idf ) ;
+                postzShort = (osTextT*)pSwsMetaByShort->leverF( tin0P , idf ) ;
             {
             for( countT idf = 1 ; idf <= cShortFileNames ; idf ++ )
             
-            //etThread.traceF( tinBaseP , T("deleting metadata") ) ;
+            //etThread.traceF( tin0P , T("deleting metadata") ) ;
 
             }
                 while( !ether && bCompareFail ) ;
@@ -224,13 +224,13 @@ DONE( tmExecutiveHealYearF )
                         }
                             break ;
                             bAbortP = 1 ;
-                            etThread.traceF( tinBaseP , T("exception: compare failed 8 times [tShort]:    ")+tShort ) ;
+                            etThread.traceF( tin0P , T("exception: compare failed 8 times [tShort]:    ")+tShort ) ;
                         {
                         if( ++ cCompareFail == 8 )
                     {
                     if( bCompareFail )
 
-                    etThread.traceF( tinBaseP , T("processed  [tShort,bCompareFail]:    ")+tShort+tb4+TF2(bCompareFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tin0P , T("processed  [tShort,bCompareFail]:    ")+tShort+tb4+TF2(bCompareFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                     // *********************************************************************************************************************************************************************************************************
                     // *********************************************************************************************************************************************************************************************************
@@ -253,11 +253,11 @@ DONE( tmExecutiveHealYearF )
                             }
                                 }
                                     etThread.osThreadF( TaRG3fLAGScBtLS( tmCopyFileF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)psttTo , (countT)psttFrom , (countT)&bAbortP ) ; psttTo = psttFrom = 0 ;
-                                    //etThread.traceF( tinBaseP , T("new      [psttTo,psttFrom]:    ")+TF2((countT)psttTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)psttFrom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    //etThread.traceF( tin0P , T("new      [psttTo,psttFrom]:    ")+TF2((countT)psttTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)psttFrom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                    //etThread.traceF( tinBaseP , T("copying [idFrom,new,old,idFrom]:    ")+TF2(idFrom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttTo)+tb4+T(psttFrom) ) ;
+                                    //etThread.traceF( tin0P , T("copying [idFrom,new,old,idFrom]:    ")+TF2(idFrom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttTo)+tb4+T(psttFrom) ) ;
 
-                                    etThread.strMakeF( tinBaseP , LF , psttFrom , (strokeS*)stFrom[ idFrom ] ) ; ___( psttFrom ) ;
+                                    etThread.strMakeF( tin0P , LF , psttFrom , (strokeS*)stFrom[ idFrom ] ) ; ___( psttFrom ) ;
                                     ZE( strokeS* , psttFrom ) ;
 
                                     countT idFrom = 1 + ( cDone ++ % cFrom ) ;
@@ -272,21 +272,21 @@ DONE( tmExecutiveHealYearF )
                                 while( ~hStPathToYear ) ;
                                 }
                                     }
-                                        if( !idSlot ) etThread.delF( tinBaseP , psttLong ) ;
-                                        stTo.sinkF( tinBaseP , idSlot , psttLong , flSTACKsINK_UNIQUE ) ;
+                                        if( !idSlot ) etThread.delF( tin0P , psttLong ) ;
+                                        stTo.sinkF( tin0P , idSlot , psttLong , flSTACKsINK_UNIQUE ) ;
                                         ZE( countT , idSlot ) ;
-                                        //etThread.traceF( tinBaseP , T("sinking to stTo 2 [long]:    ")+T(psttLong) ) ;
+                                        //etThread.traceF( tin0P , T("sinking to stTo 2 [long]:    ")+T(psttLong) ) ;
                                     {
                                     else
-                                    if( stFrom( psttLong ) ) etThread.delF( tinBaseP , psttLong ) ;
+                                    if( stFrom( psttLong ) ) etThread.delF( tin0P , psttLong ) ;
 
-                                    etThread.strMakeF( tinBaseP , LF , psttLong , T(psttPathToYear)+tShort ) ; ___( psttLong ) ;
+                                    etThread.strMakeF( tin0P , LF , psttLong , T(psttPathToYear)+tShort ) ; ___( psttLong ) ;
                                     ZE( strokeS* , psttLong ) ;
 
-                                    strokeS* psttPathToYear = (strokeS*)stPathToYear.downF( tinBaseP , hStPathToYear ) ;
+                                    strokeS* psttPathToYear = (strokeS*)stPathToYear.downF( tin0P , hStPathToYear ) ;
                                 {
                                 do
-                                handleC hStPathToYear( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hStPathToYear( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
                                 while( ~hStUnique ) ;
                                 }
@@ -294,20 +294,20 @@ DONE( tmExecutiveHealYearF )
                                         while( ~hSwsInner ) ;
                                         }
                                             }
-                                                if( !idSlot ) etThread.delF( tinBaseP , psttLong ) ;
+                                                if( !idSlot ) etThread.delF( tin0P , psttLong ) ;
                                                 }
-                                                    stTo.sinkF( tinBaseP , idSlot , psttLong , flSTACKsINK_UNIQUE ) ; psttLong = 0 ;
-                                                    //etThread.traceF( tinBaseP , T("sunk into stTo [cPlatesBefore,long]:    ")+TF2(stTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttLong) ) ;
+                                                    stTo.sinkF( tin0P , idSlot , psttLong , flSTACKsINK_UNIQUE ) ; psttLong = 0 ;
+                                                    //etThread.traceF( tin0P , T("sunk into stTo [cPlatesBefore,long]:    ")+TF2(stTo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttLong) ) ;
                                                 {
                                                 else
                                                 }
-                                                    stFrom.sinkF( tinBaseP , idSlot , psttLong , flSTACKsINK_UNIQUE ) ; psttLong = 0 ;
-                                                    //etThread.traceF( tinBaseP , T("sunk into stFrom [cPlatesBefore,long]:    ")+TF2(stFrom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttLong) ) ;
+                                                    stFrom.sinkF( tin0P , idSlot , psttLong , flSTACKsINK_UNIQUE ) ; psttLong = 0 ;
+                                                    //etThread.traceF( tin0P , T("sunk into stFrom [cPlatesBefore,long]:    ")+TF2(stFrom,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttLong) ) ;
                                                 {
                                                 if( bYoungestNotAlone && bWinner )
                                                 ZE( countT , idSlot ) ;
 
-                                                etThread.strMakeF( tinBaseP , LF , psttLong , T((strokeS*)stPathToYear[pfmInner->idSlotPathToYear])+tShort ) ; ___( psttLong ) ;
+                                                etThread.strMakeF( tin0P , LF , psttLong , T((strokeS*)stPathToYear[pfmInner->idSlotPathToYear])+tShort ) ; ___( psttLong ) ;
                                                 ZE( strokeS* , psttLong ) ;
                                             {
                                             if( bMatchImage && !( *pfmUnique - *(fileMetaS*)pfmInner ) )
@@ -322,30 +322,30 @@ DONE( tmExecutiveHealYearF )
                                             for( countT offc = 0 ; offc < cResultStructsNeeded ; offc ++ )
                                             boolT bMatchImage = 1 ;
 
-                                            //picInner->traceF( tinBaseP , T("inner :    ") ) ;
+                                            //picInner->traceF( tin0P , T("inner :    ") ) ;
                                             fileMetaS*     pfmInner = (fileMetaS*)( picInner + cResultStructsNeeded ) ;
-                                            imageCompareS* picInner  = (imageCompareS*)&pSwsMetaByShort->downF( tinBaseP , hSwsInner ) ;
+                                            imageCompareS* picInner  = (imageCompareS*)&pSwsMetaByShort->downF( tin0P , hSwsInner ) ;
                                         {
                                         do
-                                        handleC hSwsInner( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                        handleC hSwsInner( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                     {
 
-                                    //pfmUnique->traceF( tinBaseP , stPathToYear , T(bYoungestNotAlone?"reporting tallies (youngestNotAlone):    ":"reporting tallies            (other):    ") ) ;
+                                    //pfmUnique->traceF( tin0P , stPathToYear , T(bYoungestNotAlone?"reporting tallies (youngestNotAlone):    ":"reporting tallies            (other):    ") ) ;
 
-                                    //etThread.traceF( tinBaseP , T("[bYoungestNotAlone,bWinner,cVotes,cVotesMax]:    ")+TF2(bYoungestNotAlone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bWinner,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pfmUnique->cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cVotesMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    //etThread.traceF( tin0P , T("[bYoungestNotAlone,bWinner,cVotes,cVotesMax]:    ")+TF2(bYoungestNotAlone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bWinner,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pfmUnique->cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cVotesMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     boolT bWinner           = pfmUnique->cVotes         == cVotesMaxYoungestNotAlone      ;
                                     boolT bYoungestNotAlone = pfmUnique->timeModRounded == timeModRoundedYoungestNotAlone ;
 
-                                    //for( countT offc = 0 ; offc < cResultStructsNeeded ; offc ++ ) picUnique[ offc ].traceF( tinBaseP , T("reporting tallies:    ") ) ;
+                                    //for( countT offc = 0 ; offc < cResultStructsNeeded ; offc ++ ) picUnique[ offc ].traceF( tin0P , T("reporting tallies:    ") ) ;
 
-                                    //picUnique->traceF( tinBaseP , T("unique:    ") ) ;
+                                    //picUnique->traceF( tin0P , T("unique:    ") ) ;
                                     fileMetaS*     pfmUnique = (fileMetaS*)( picUnique + cResultStructsNeeded ) ;
-                                    imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tinBaseP , hStUnique ) ;
+                                    imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tin0P , hStUnique ) ;
                                 {
                                 do
-                                handleC hStUnique( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                                stackC stTo(     tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
-                                stackC stFrom(   tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+                                handleC hStUnique( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                stackC stTo(     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+                                stackC stFrom(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
                             {
                             else
                             }
@@ -353,18 +353,18 @@ DONE( tmExecutiveHealYearF )
                                 }
                                     etThread.osThreadF( TaRG3fLAGScBtLS( tmMoveFileToUniqueF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)psttLongInRejects , (countT)psttLong , (countT)&bAbortP ) ; psttLongInRejects = psttLong = 0 ;
 
-                                    etThread.strReplaceF( tinBaseP , psttLongInRejects , psttLong , tPatArchives , tPatRejects ) ; ___( psttLongInRejects ) ;
+                                    etThread.strReplaceF( tin0P , psttLongInRejects , psttLong , tPatArchives , tPatRejects ) ; ___( psttLongInRejects ) ;
                                     ZE( strokeS* , psttLongInRejects ) ;
 
-                                    etThread.strMakeF( tinBaseP , LF , psttLong , T((strokeS*)stPathToYear[pfmInner->idSlotPathToYear])+tShort ) ; ___( psttLong ) ;
+                                    etThread.strMakeF( tin0P , LF , psttLong , T((strokeS*)stPathToYear[pfmInner->idSlotPathToYear])+tShort ) ; ___( psttLong ) ;
                                     ZE( strokeS* , psttLong ) ;
 
                                     fileMetaS*     pfmInner = (fileMetaS*)( picInner + cResultStructsNeeded ) ;
-                                    imageCompareS* picInner  = (imageCompareS*)&pSwsMetaByShort->downF( tinBaseP , hSwsInner ) ;
+                                    imageCompareS* picInner  = (imageCompareS*)&pSwsMetaByShort->downF( tin0P , hSwsInner ) ;
                                 {
                                 do
-                                handleC hSwsInner( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                                etThread.traceF( tinBaseP , T("no, or too many (more than 1), winners (authoritative copies) so i will reject all copies [file]")+tShort ) ;
+                                handleC hSwsInner( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                etThread.traceF( tin0P , T("no, or too many (more than 1), winners (authoritative copies) so i will reject all copies [file]")+tShort ) ;
                             {
                             if( !cWinners || cWinners > 1 )
 
@@ -379,12 +379,12 @@ DONE( tmExecutiveHealYearF )
                                     (
                                     if
 
-                                    //picUnique->traceF( tinBaseP , T("unique:    ") ) ;
+                                    //picUnique->traceF( tin0P , T("unique:    ") ) ;
                                     fileMetaS*     pfmUnique = (fileMetaS*)( picUnique + cResultStructsNeeded ) ;
-                                    imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tinBaseP , hSt ) ;
+                                    imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tin0P , hSt ) ;
                                 {
                                 do
-                                handleC hSt( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hSt( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                             {
                             if( cVotesMaxYoungestNotAlone )        // IF ALL ARE ALONE THEN THERE WILL BE NO WINNER
                             ZE( countT , cWinners ) ;
@@ -405,12 +405,12 @@ DONE( tmExecutiveHealYearF )
                                     {
                                     if( timeModRoundedYoungest == pfmUnique->timeModRounded )
 
-                                    //picUnique->traceF( tinBaseP , T("unique:    ") ) ;
+                                    //picUnique->traceF( tin0P , T("unique:    ") ) ;
                                     fileMetaS*     pfmUnique = (fileMetaS*)( picUnique + cResultStructsNeeded ) ;
-                                    imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tinBaseP , hSt ) ;
+                                    imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tin0P , hSt ) ;
                                 {
                                 do
-                                handleC hSt( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hSt( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                             {
                             if( timeModRoundedYoungestNotAlone )        // IF ALL ARE ALONE THEN THERE WILL BE NO WINNER
                             ZE( countT , cVotesMaxYoungestNotAlone ) ;
@@ -422,10 +422,10 @@ DONE( tmExecutiveHealYearF )
                                     if( pfmUnique->cVotes > 1 && timeModRoundedYoungestNotAlone < pfmUnique->timeModRounded ) timeModRoundedYoungestNotAlone = pfmUnique->timeModRounded ;
 
                                     fileMetaS*     pfmUnique = (fileMetaS*)( picUnique + cResultStructsNeeded ) ;
-                                    imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tinBaseP , hSt ) ;
+                                    imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tin0P , hSt ) ;
                                 {
                                 do
-                                handleC hSt( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hSt( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                             {
                             ZE( countT , timeModRoundedYoungestNotAlone ) ;
                             // SET timeModRoundedYoungestNotAlone
@@ -448,35 +448,35 @@ DONE( tmExecutiveHealYearF )
                                         boolT bMatchImage = 1 ;
 
                                         //}
-                                        //    pfmInner->traceF( tinBaseP , stPathToYear , T("inner : ") ) ;
-                                        //    picInner->traceF( tinBaseP , T("inner :    ") ) ;
+                                        //    pfmInner->traceF( tin0P , stPathToYear , T("inner : ") ) ;
+                                        //    picInner->traceF( tin0P , T("inner :    ") ) ;
                                         //{
                                         //if( bChatter )
                                         fileMetaS*     pfmInner = (fileMetaS*)( picInner + cResultStructsNeeded ) ;
-                                        imageCompareS* picInner  = (imageCompareS*)&pSwsMetaByShort->downF( tinBaseP , hSwsOuter ) ;
+                                        imageCompareS* picInner  = (imageCompareS*)&pSwsMetaByShort->downF( tin0P , hSwsOuter ) ;
                                     {
                                     do
-                                    handleC hSwsOuter( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                    handleC hSwsOuter( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
                                     if( timeModRoundedYoungest < pfmUnique->timeModRounded ) timeModRoundedYoungest = pfmUnique->timeModRounded ;
 
                                     //}
-                                    //    pfmUnique->traceF( tinBaseP , stPathToYear , T("unique: ") ) ;
-                                    //    picUnique->traceF( tinBaseP , T("unique:    ") ) ;
+                                    //    pfmUnique->traceF( tin0P , stPathToYear , T("unique: ") ) ;
+                                    //    picUnique->traceF( tin0P , T("unique:    ") ) ;
                                     //{
                                     //if( bChatter )
                                     fileMetaS*     pfmUnique = (fileMetaS*)( picUnique + cResultStructsNeeded ) ;
-                                    imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tinBaseP , hSt ) ;
+                                    imageCompareS* picUnique  = (imageCompareS*)&stRecUnique.downF( tin0P , hSt ) ;
                                 {
                                 do
-                                handleC hSt( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hSt( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                             {
                             ZE( countT , timeModRoundedYoungest ) ;
                             // TALLY cVotes AND SET timeModRoundedYoungest
 
                             }
                                 bChatter = 1 ;
-                                etThread.traceF( tinBaseP , T("lengths or times or images differ [tShort]:    ")+tShort ) ;
+                                etThread.traceF( tin0P , T("lengths or times or images differ [tShort]:    ")+tShort ) ;
                             {
                             if( stRecUnique > 1 )
                             ZE( boolT , bChatter ) ;
@@ -485,14 +485,14 @@ DONE( tmExecutiveHealYearF )
                         }
                             break ;
                             bAbortP = 1 ;
-                            etThread.traceF( tinBaseP , T("exception: stRecUnique is empty") ) ;
+                            etThread.traceF( tin0P , T("exception: stRecUnique is empty") ) ;
                         {
                         if( !stRecUnique ) //SHOULD  BE IMPOSSIBLE
 
                         while( ~hSwsOuter ) ;
-                        do stRecUnique.sinkF( tinBaseP , countTC() , (byteT*)&pSwsMetaByShort->downF( tinBaseP , hSwsOuter ) , flSTACKsINK_UNIQUE , subtractFileMetaF ) ;
-                        stackC stRecUnique( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_BLOB , stPathToYear * sizeof( imageCompareS ) + sizeof( fileMetaS ) ) ;
-                        handleC hSwsOuter( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        do stRecUnique.sinkF( tin0P , countTC() , (byteT*)&pSwsMetaByShort->downF( tin0P , hSwsOuter ) , flSTACKsINK_UNIQUE , subtractFileMetaF ) ;
+                        stackC stRecUnique( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_BLOB , stPathToYear * sizeof( imageCompareS ) + sizeof( fileMetaS ) ) ;
+                        handleC hSwsOuter( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
                         // *********************************************************************************************************************************************************************************************************
                         // ****                *************************************************************************************************************************************************************************************
@@ -501,7 +501,7 @@ DONE( tmExecutiveHealYearF )
                         // *********************************************************************************************************************************************************************************************************
                     {
                     if( !bCompareFail && !ether && cCopies > 1 )
-                    //etThread.traceF( tinBaseP , T("[cFound,file]:    ")+TF2(cCopies,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postzShort) ) ;
+                    //etThread.traceF( tin0P , T("[cFound,file]:    ")+TF2(cCopies,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(postzShort) ) ;
 
                     // PHASE 4: COPY TO ALL ARCHIVE CONTAINERS THAT DO NOT HAVE A COPY OF THIS FILE NAME
                     // PHASE 3: OVERWRITE ALL COPIES THAT DO NOT MATCH THIS UNIQUE META
@@ -521,26 +521,26 @@ DONE( tmExecutiveHealYearF )
                         // ****                                      ***************************************************************************************************************************************************************
                         // *********************************************************************************************************************************************************************************************************
 
-                        etThread.delF( tinBaseP ,            pcBitsShiftLeftHeInMine ) ;
-                        etThread.delF( tinBaseP ,            pcBitsShiftLeftMeInHis  ) ;
-                        etThread.delF( tinBaseP , *(byteT**)&ppIdResultHeInMine      ) ;
-                        etThread.delF( tinBaseP , *(byteT**)&ppIdResultMeInHis       ) ;
-                        etThread.delF( tinBaseP ,            pcbwInner               ) ;
-                        etThread.delF( tinBaseP , *(byteT**)&ppbwInner               ) ;
+                        etThread.delF( tin0P ,            pcBitsShiftLeftHeInMine ) ;
+                        etThread.delF( tin0P ,            pcBitsShiftLeftMeInHis  ) ;
+                        etThread.delF( tin0P , *(byteT**)&ppIdResultHeInMine      ) ;
+                        etThread.delF( tin0P , *(byteT**)&ppIdResultMeInHis       ) ;
+                        etThread.delF( tin0P ,            pcbwInner               ) ;
+                        etThread.delF( tin0P , *(byteT**)&ppbwInner               ) ;
 
                         }
-                            etThread.delF( tinBaseP , *(byteT**)&pfwsInner ) ;
+                            etThread.delF( tin0P , *(byteT**)&pfwsInner ) ;
 
-                            etThread.delF( tinBaseP , pEqual ) ;
+                            etThread.delF( tin0P , pEqual ) ;
                             }
                                 }
-                                    //etThread.traceF( tinBaseP , T(pEqual[offo]?"        set other and myself to BITSrESULT_EQUAL because images match [offo]:    ":"        set other and myself to BITSrESULT_NOTeQUAL because images differ [offo]:    ")+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    //etThread.traceF( tin0P , T(pEqual[offo]?"        set other and myself to BITSrESULT_EQUAL because images match [offo]:    ":"        set other and myself to BITSrESULT_NOTeQUAL because images differ [offo]:    ")+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                     }
-                                        //etThread.traceF( tinBaseP , T("after  [offo,*ppIdResultHeInMine[offo],*ppIdResultMeInHis[offo]]:    ")+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(*ppIdResultHeInMine[ offo ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2)+tb4+TF4(*ppIdResultMeInHis[  offo ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
+                                        //etThread.traceF( tin0P , T("after  [offo,*ppIdResultHeInMine[offo],*ppIdResultMeInHis[offo]]:    ")+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(*ppIdResultHeInMine[ offo ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2)+tb4+TF4(*ppIdResultMeInHis[  offo ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
                                         *ppIdResultMeInHis[  offo ] |= BITSrESULT_NOTeQUAL << pcBitsShiftLeftMeInHis[  offo ] ;
                                         *ppIdResultHeInMine[ offo ] |= BITSrESULT_NOTeQUAL << pcBitsShiftLeftHeInMine[ offo ] ;
-                                        //etThread.traceF( tinBaseP , T("before [offo,*ppIdResultHeInMine[offo],*ppIdResultMeInHis[offo]]:    ")+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(*ppIdResultHeInMine[ offo ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2)+tb4+TF4(*ppIdResultMeInHis[  offo ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
+                                        //etThread.traceF( tin0P , T("before [offo,*ppIdResultHeInMine[offo],*ppIdResultMeInHis[offo]]:    ")+TF2(offo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF4(*ppIdResultHeInMine[ offo ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2)+tb4+TF4(*ppIdResultMeInHis[  offo ],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
                                     {
                                     else
                                     }
@@ -557,7 +557,7 @@ DONE( tmExecutiveHealYearF )
                             }
                                 }
                                     bAbortP = 1 ;
-                                    etThread.traceF( tinBaseP , T("exception [cbUsed,cbDone]:    ")+TT(pcbUsed[0],pcbUsed[1])+tb4+TT(pcbDone[0],pcbDone[1])+tb4+tLongOuter ) ;
+                                    etThread.traceF( tin0P , T("exception [cbUsed,cbDone]:    ")+TT(pcbUsed[0],pcbUsed[1])+tb4+TT(pcbDone[0],pcbDone[1])+tb4+tLongOuter ) ;
                                     countT* pcbDone = (countT*)&cbDone ;
                                     countT* pcbUsed = (countT*)&pfmOuter->cbUsed ;
                                 {
@@ -575,31 +575,31 @@ DONE( tmExecutiveHealYearF )
 
                                             }
                                                 }
-                                                    thirdC::dosSleepWinkIF( tinBaseP ) ;
-                                                    etThread.traceF( tinBaseP , T("exception while trying to access memory for a mapped file.  will retry [idWindow,idTry]:    ")+TF2(idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    thirdC::dosSleepWinkIF( tin0P ) ;
+                                                    etThread.traceF( tin0P , T("exception while trying to access memory for a mapped file.  will retry [idWindow,idTry]:    ")+TF2(idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
                                                 else
                                                 }
                                                     break;
                                                     }
-                                                        //etThread.traceF( tinBaseP , T("images match between unique and inner [idWindow,offi]:    ")+TF2(idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                        //etThread.traceF( tin0P , T("images match between unique and inner [idWindow,offi]:    ")+TF2(idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     {
                                                     else
                                                     }
-                                                        //etThread.delF( tinBaseP , psttGen ) ;
-                                                        //etThread.traceF( tinBaseP , T("wrote inner [gen]:    ")+T(psttGen) ) ;
-                                                        //etThread.boxPutGenerationF( tinBaseP , psttGen , tLikeInner+TF3(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) , TUCK , ppbwInner[ offi ] , cbwOuter ) ; ___( psttGen ) ;
+                                                        //etThread.delF( tin0P , psttGen ) ;
+                                                        //etThread.traceF( tin0P , T("wrote inner [gen]:    ")+T(psttGen) ) ;
+                                                        //etThread.boxPutGenerationF( tin0P , psttGen , tLikeInner+TF3(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) , TUCK , ppbwInner[ offi ] , cbwOuter ) ; ___( psttGen ) ;
 
-                                                        //etThread.delF( tinBaseP , psttGen ) ;
-                                                        //etThread.traceF( tinBaseP , T("wrote outer [gen]:    ")+T(psttGen) ) ;
-                                                        //etThread.boxPutGenerationF( tinBaseP , psttGen , tLikeOuter , TUCK , pbwOuter , cbwOuter ) ; ___( psttGen ) ;
+                                                        //etThread.delF( tin0P , psttGen ) ;
+                                                        //etThread.traceF( tin0P , T("wrote outer [gen]:    ")+T(psttGen) ) ;
+                                                        //etThread.boxPutGenerationF( tin0P , psttGen , tLikeOuter , TUCK , pbwOuter , cbwOuter ) ; ___( psttGen ) ;
                                                         //ZE( strokeS* , psttGen ) ;
 
                                                         pEqual[ offi ] = 0 ;
-                                                        etThread.traceF( tinBaseP , T("difference detected between unique and inner [idWindow,offi]:    ")+TF2(idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                        etThread.traceF( tin0P , T("difference detected between unique and inner [idWindow,offi]:    ")+TF2(idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                     {
-                                                    if( etThread.memCompareF( tinBaseP , pbwOuter , ppbwInner[ offi ] , cbwOuter ) )
-                                                    //etThread.traceF( tinBaseP , T("attempting to compare images [idWindow,idTry,offi]:    ")+TF2(idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    if( etThread.memCompareF( tin0P , pbwOuter , ppbwInner[ offi ] , cbwOuter ) )
+                                                    //etThread.traceF( tin0P , T("attempting to compare images [idWindow,idTry,offi]:    ")+TF2(idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
                                                 if( !_restart )
 
@@ -614,14 +614,14 @@ DONE( tmExecutiveHealYearF )
                                         }
                                             break ;
                                             bDone = 1 ;
-                                            //etThread.traceF( tinBaseP , T("done inspecting images [idWindow]:    ")+TF2(idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                            //etThread.traceF( tin0P , T("done inspecting images [idWindow]:    ")+TF2(idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         {
                                         if( !pbwOuter || !cbwOuter )
 
                                         }
                                             break ;  // REDO THIS SHORT NAME FROM THE BEGINNING
                                             bCompareFail = 1 ;
-                                            etThread.traceF( tinBaseP , T("byte by byte comparison failed [tLongOuter]:    ")+tLongOuter ) ;
+                                            etThread.traceF( tin0P , T("byte by byte comparison failed [tLongOuter]:    ")+tLongOuter ) ;
                                         {
                                         )
                                               cbwOuter !=   pcbwInner[ offi ]
@@ -632,17 +632,17 @@ DONE( tmExecutiveHealYearF )
                                         (
                                         if
 
-                                        //etThread.traceF( tinBaseP , T("fed this [(countT)ppbwInner[offi],ppbwInner[offi]]:    ")+TF3((countT)ppbwInner[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tb4+T(ppbwInner[offi]) ) ;
+                                        //etThread.traceF( tin0P , T("fed this [(countT)ppbwInner[offi],ppbwInner[offi]]:    ")+TF3((countT)ppbwInner[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tb4+T(ppbwInner[offi]) ) ;
 
                                         }
                                             }
                                                 break ;  // REDO THIS SHORT NAME FROM THE BEGINNING
                                                 bCompareFail = 1 ;
-                                                etThread.traceF( tinBaseP , T("exception:  pfwsInner[ offi ].getF [tLongOuter]:    ")+tLongOuter ) ;
+                                                etThread.traceF( tin0P , T("exception:  pfwsInner[ offi ].getF [tLongOuter]:    ")+tLongOuter ) ;
                                                 POOPR
                                             {
                                             if( POOP )
-                                            RETRY( 8 , ( ppbwInner[ offi ] = 0 , pcbwInner[ offi ] = 0 , pfwsInner[ offi ].getF( tinBaseP , ppbwInner[ offi ] , pcbwInner[ offi ] ) ) ) ;
+                                            RETRY( 8 , ( ppbwInner[ offi ] = 0 , pcbwInner[ offi ] = 0 , pfwsInner[ offi ].getF( tin0P , ppbwInner[ offi ] , pcbwInner[ offi ] ) ) ) ;
                                             SCOOPS
                                         {
                                         IFsCRATCH
@@ -653,11 +653,11 @@ DONE( tmExecutiveHealYearF )
                                         }
                                             break ;  // REDO THIS SHORT NAME FROM THE BEGINNING
                                             bCompareFail = 1 ;
-                                            etThread.traceF( tinBaseP , T("exception:  fwsOuter.getF [tLongOuter]:    ")+tLongOuter ) ;
+                                            etThread.traceF( tin0P , T("exception:  fwsOuter.getF [tLongOuter]:    ")+tLongOuter ) ;
                                             POOPR
                                         {
                                         if( POOP )
-                                        RETRY( 8 , ( pbwOuter = 0 , cbwOuter = 0 , fwsOuter.getF( tinBaseP , pbwOuter , cbwOuter ) ) )
+                                        RETRY( 8 , ( pbwOuter = 0 , cbwOuter = 0 , fwsOuter.getF( tin0P , pbwOuter , cbwOuter ) ) )
                                         SCOOPS
                                     {
                                     IFsCRATCH
@@ -674,20 +674,20 @@ DONE( tmExecutiveHealYearF )
                                 ZE( boolT , bDone ) ;
                                 ZE( count04T , cbDone ) ;
 
-                                //etThread.traceF( tinBaseP , T("inspecting images [cInnerImagesToInspect,tLongOuter]:    ")+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
-                                fileWindowsC fwsOuter( tinBaseP , etThread , tLongOuter ) ;
+                                //etThread.traceF( tin0P , T("inspecting images [cInnerImagesToInspect,tLongOuter]:    ")+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongOuter ) ;
+                                fileWindowsC fwsOuter( tin0P , etThread , tLongOuter ) ;
                             {
 
                             for( countT offo = 0 ; offo < cInnerImagesToInspect ; offo ++ ) pEqual[ offo ] = 1 ;
-                            etThread.newF( tinBaseP , LF , pEqual , cInnerImagesToInspect ) ; ___( pEqual ) ;
+                            etThread.newF( tin0P , LF , pEqual , cInnerImagesToInspect ) ; ___( pEqual ) ;
                             ZE( boolT* , pEqual ) ;
                             TN( tDot , "." ) ;
 
                             }
                                 }
-                                    etThread.delF( tinBaseP , psttLongInner ) ;
+                                    etThread.delF( tin0P , psttLongInner ) ;
 
-                                    new( 0 , tinBaseP , (byteT*)( pfwsInner + offi ) , sizeof( fileWindowsC ) ) fileWindowsC( tinBaseP , etThread , psttLongInner ) ;
+                                    new( 0 , tin0P , (byteT*)( pfwsInner + offi ) , sizeof( fileWindowsC ) ) fileWindowsC( tin0P , etThread , psttLongInner ) ;
 
                                     stLongInner >> psttLongInner ;
                                     ZE( strokeS* , psttLongInner ) ;
@@ -697,13 +697,13 @@ DONE( tmExecutiveHealYearF )
                             if( pfwsInner )
                             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
-                            etThread.newF( tinBaseP , LF , *(byteT**)&pfwsInner , cInnerImagesToInspect * sizeof( fileWindowsC ) ) ; ___( pfwsInner ) ;
+                            etThread.newF( tin0P , LF , *(byteT**)&pfwsInner , cInnerImagesToInspect * sizeof( fileWindowsC ) ) ; ___( pfwsInner ) ;
                             ZE( fileWindowsC* , pfwsInner ) ;
 
                             }
                                 break ;
                                 bAbortP = 1 ;                                
-                                etThread.traceF( tinBaseP , T("exception [cInnerImagesToInspect,stLongInner]:    ")+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE)+tb4+TF2(stLongInner,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                etThread.traceF( tin0P , T("exception [cInnerImagesToInspect,stLongInner]:    ")+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE)+tb4+TF2(stLongInner,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             {
                             if( stLongInner != cInnerImagesToInspect ) //SHOULD BE IMPOSSIBLE
                         {
@@ -720,14 +720,14 @@ DONE( tmExecutiveHealYearF )
                                             }
                                                 }
                                                     bAbortP = 1 ;                                                    
-                                                    etThread.traceF( tinBaseP , T("exception: iSlotLongInnr is null") ) ;
-                                                    etThread.delF( tinBaseP , psttLongInner ) ;
+                                                    etThread.traceF( tin0P , T("exception: iSlotLongInnr is null") ) ;
+                                                    etThread.delF( tin0P , psttLongInner ) ;
                                                 {
                                                 if( !idSlotLongInner ) //SHOULD BE IMPOSSIBLE
-                                                stLongInner.sinkF( tinBaseP , idSlotLongInner , psttLongInner , flSTACKsINK_UNIQUE ) ;
+                                                stLongInner.sinkF( tin0P , idSlotLongInner , psttLongInner , flSTACKsINK_UNIQUE ) ;
                                                 ZE( countT , idSlotLongInner ) ;
 
-                                                etThread.strMakeF( tinBaseP , LF , psttLongInner , tLongInner ) ; ___( psttLongInner ) ;
+                                                etThread.strMakeF( tin0P , LF , psttLongInner , tLongInner ) ; ___( psttLongInner ) ;
                                                 ZE( strokeS* , psttLongInner ) ;
 
                                                 offResult ++ ;
@@ -745,11 +745,11 @@ DONE( tmExecutiveHealYearF )
 
                                             }
                                                 cInnerImagesToInspect ++ ;
-                                                //etThread.traceF( tinBaseP , T("incrementing") ) ;
+                                                //etThread.traceF( tin0P , T("incrementing") ) ;
                                             {
                                             if( ( bitsResultHeInMine & maskHeInMine ) == BITSrESULT_UNKNOWN << cBitsShiftLeftHeInMine )
 
-                                            //etThread.traceF( tinBaseP , T("        maybe incrementing cInnerImagesToInspect [bitsResultHeInMine,maskHeInMine,masked,cBitsShiftLeftHeInMine,inner]:    ")+TF2(bitsResultHeInMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(maskHeInMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((bitsResultHeInMine&maskHeInMine),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBitsShiftLeftHeInMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongInner ) ;
+                                            //etThread.traceF( tin0P , T("        maybe incrementing cInnerImagesToInspect [bitsResultHeInMine,maskHeInMine,masked,cBitsShiftLeftHeInMine,inner]:    ")+TF2(bitsResultHeInMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(maskHeInMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((bitsResultHeInMine&maskHeInMine),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBitsShiftLeftHeInMine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongInner ) ;
                                         {
                                         case 2 :    // COUNT THE NUMBER OF INNER FILES FOR WHICH I MUST INSPECT THE IMAGE (I SET cInnerImagesToInspect HERE)
                                         }
@@ -759,15 +759,15 @@ DONE( tmExecutiveHealYearF )
                                                 }
                                                     bitsResultHeInMine |= BITSrESULT_NOTeQUAL << cBitsShiftLeftHeInMine ;
                                                     bitsResultMeInHis  |= BITSrESULT_NOTeQUAL << cBitsShiftLeftMeInHis  ;
-                                                    etThread.traceF( tinBaseP , T("        set other and myself to BITSrESULT_NOTeQUAL because cbUsed differs") ) ;
+                                                    etThread.traceF( tin0P , T("        set other and myself to BITSrESULT_NOTeQUAL because cbUsed differs") ) ;
                                                 {
                                                 if( pfmOuter->cbUsed != pfmInner->cbUsed )
                                             {
                                             else if( ( bitsResultHeInMine & maskHeInMine ) == BITSrESULT_UNKNOWN << cBitsShiftLeftHeInMine )
                                             }
-                                                //etThread.traceF( tinBaseP , T("        setted  myself to BITSrESULT_EQUAL [bitsResultMeInHis]:    ")+TF2(bitsResultMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                //etThread.traceF( tin0P , T("        setted  myself to BITSrESULT_EQUAL [bitsResultMeInHis]:    ")+TF2(bitsResultMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 bitsResultMeInHis |= BITSrESULT_EQUAL << cBitsShiftLeftMeInHis ;
-                                                //etThread.traceF( tinBaseP , T("        setting myself to BITSrESULT_EQUAL [&bitsResultMeInHis,bitsResultMeInHis,&cBitsShiftLeftMeInHis,cBitsShiftLeftMeInHis]:    ")+TF2(&bitsResultMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bitsResultMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(&cBitsShiftLeftMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBitsShiftLeftMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                //etThread.traceF( tin0P , T("        setting myself to BITSrESULT_EQUAL [&bitsResultMeInHis,bitsResultMeInHis,&cBitsShiftLeftMeInHis,cBitsShiftLeftMeInHis]:    ")+TF2(&bitsResultMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bitsResultMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(&cBitsShiftLeftMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBitsShiftLeftMeInHis,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                             {
                                             if( pfmInner == pfmOuter )
                                         {
@@ -775,10 +775,10 @@ DONE( tmExecutiveHealYearF )
                                     {
                                     switch( idPass )
 
-                                    etThread.strMakeF( tinBaseP , LF , psttLongInner , tLongInner ) ; ___( psttLongInner ) ;
+                                    etThread.strMakeF( tin0P , LF , psttLongInner , tLongInner ) ; ___( psttLongInner ) ;
                                     ZE( strokeS* , psttLongInner ) ;
 
-                                    //etThread.traceF( tinBaseP , T("    [idPass,tLongInner]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongInner ) ;
+                                    //etThread.traceF( tin0P , T("    [idPass,tLongInner]:    ")+TF2(idPass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongInner ) ;
                                     TN( tLongInner , "" ) ; tLongInner = T((strokeS*)stPathToYear[pfmInner->idSlotPathToYear])+tShort ;
 
                                     countT maskHeInMine = BITSrESULT_ALLbITS << cBitsShiftLeftHeInMine ;
@@ -790,32 +790,32 @@ DONE( tmExecutiveHealYearF )
                                     countT& bitsResultHeInMine    = picOuter[ ( pfmInner->idSlotPathToYear - 1 ) / cResultsPerStruct ].bitsResult ;
                                     countT& bitsResultMeInHis     = picInner[ ( pfmOuter->idSlotPathToYear - 1 ) / cResultsPerStruct ].bitsResult ;
 
-                                    //picInner->traceF( tinBaseP , T("inner :    ") ) ;
-                                    //pfmInner->traceF( tinBaseP , stPathToYear , T("inner: ") ) ;
+                                    //picInner->traceF( tin0P , T("inner :    ") ) ;
+                                    //pfmInner->traceF( tin0P , stPathToYear , T("inner: ") ) ;
                                     fileMetaS*     pfmInner = (fileMetaS*)( picInner + cResultStructsNeeded ) ;
 
-                                    //etThread.traceF( tinBaseP , T("    [picInner]:    ")+TF2((countT)picInner,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                    imageCompareS* picInner = (imageCompareS*)&pSwsMetaByShort->downF( tinBaseP , hSwsInner ) ;
+                                    //etThread.traceF( tin0P , T("    [picInner]:    ")+TF2((countT)picInner,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    imageCompareS* picInner = (imageCompareS*)&pSwsMetaByShort->downF( tin0P , hSwsInner ) ;
                                 {
                                 do
-                                handleC hSwsInner( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hSwsInner( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                             {
                             if( idPass != 3 || cInnerImagesToInspect )
 
                             }
-                                etThread.memSetF( tinBaseP , (byteT*)pcBitsShiftLeftHeInMine , cInnerImagesToInspect * sizeof( countT* ) ) ;
-                                etThread.memSetF( tinBaseP , (byteT*)pcBitsShiftLeftMeInHis  , cInnerImagesToInspect * sizeof( countT* ) ) ;
-                                etThread.memSetF( tinBaseP , (byteT*)ppIdResultHeInMine      , cInnerImagesToInspect * sizeof( countT* ) ) ;
-                                etThread.memSetF( tinBaseP , (byteT*)ppIdResultMeInHis       , cInnerImagesToInspect * sizeof( countT* ) ) ;
-                                etThread.memSetF( tinBaseP , (byteT*)pcbwInner               , cInnerImagesToInspect * sizeof( countT* ) ) ;
-                                etThread.memSetF( tinBaseP , (byteT*)ppbwInner               , cInnerImagesToInspect * sizeof( countT* ) ) ;
+                                etThread.memSetF( tin0P , (byteT*)pcBitsShiftLeftHeInMine , cInnerImagesToInspect * sizeof( countT* ) ) ;
+                                etThread.memSetF( tin0P , (byteT*)pcBitsShiftLeftMeInHis  , cInnerImagesToInspect * sizeof( countT* ) ) ;
+                                etThread.memSetF( tin0P , (byteT*)ppIdResultHeInMine      , cInnerImagesToInspect * sizeof( countT* ) ) ;
+                                etThread.memSetF( tin0P , (byteT*)ppIdResultMeInHis       , cInnerImagesToInspect * sizeof( countT* ) ) ;
+                                etThread.memSetF( tin0P , (byteT*)pcbwInner               , cInnerImagesToInspect * sizeof( countT* ) ) ;
+                                etThread.memSetF( tin0P , (byteT*)ppbwInner               , cInnerImagesToInspect * sizeof( countT* ) ) ;
 
-                                etThread.newF( tinBaseP , LF ,             pcBitsShiftLeftHeInMine , cInnerImagesToInspect ) ; ___( pcBitsShiftLeftHeInMine ) ;
-                                etThread.newF( tinBaseP , LF ,             pcBitsShiftLeftMeInHis  , cInnerImagesToInspect ) ; ___( pcBitsShiftLeftMeInHis  ) ;
-                                etThread.newF( tinBaseP , LF , *(countT**)&ppIdResultHeInMine      , cInnerImagesToInspect ) ; ___( ppIdResultHeInMine      ) ;
-                                etThread.newF( tinBaseP , LF , *(countT**)&ppIdResultMeInHis       , cInnerImagesToInspect ) ; ___( ppIdResultMeInHis       ) ;
-                                etThread.newF( tinBaseP , LF ,             pcbwInner               , cInnerImagesToInspect ) ; ___( pcbwInner               ) ;
-                                etThread.newF( tinBaseP , LF , *(countT**)&ppbwInner               , cInnerImagesToInspect ) ; ___( ppbwInner               ) ;
+                                etThread.newF( tin0P , LF ,             pcBitsShiftLeftHeInMine , cInnerImagesToInspect ) ; ___( pcBitsShiftLeftHeInMine ) ;
+                                etThread.newF( tin0P , LF ,             pcBitsShiftLeftMeInHis  , cInnerImagesToInspect ) ; ___( pcBitsShiftLeftMeInHis  ) ;
+                                etThread.newF( tin0P , LF , *(countT**)&ppIdResultHeInMine      , cInnerImagesToInspect ) ; ___( ppIdResultHeInMine      ) ;
+                                etThread.newF( tin0P , LF , *(countT**)&ppIdResultMeInHis       , cInnerImagesToInspect ) ; ___( ppIdResultMeInHis       ) ;
+                                etThread.newF( tin0P , LF ,             pcbwInner               , cInnerImagesToInspect ) ; ___( pcbwInner               ) ;
+                                etThread.newF( tin0P , LF , *(countT**)&ppbwInner               , cInnerImagesToInspect ) ; ___( ppbwInner               ) ;
                             {
                             if( idPass == 3 && cInnerImagesToInspect )
                         {
@@ -828,15 +828,15 @@ DONE( tmExecutiveHealYearF )
                         ZE( countT*  , pcbwInner               ) ;
                         ZE( byteT**  , ppbwInner               ) ;
                         ZE( countT   , cInnerImagesToInspect   ) ;
-                        stackC stLongInner( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+                        stackC stLongInner( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
 
-                        //pfmOuter->traceF( tinBaseP , stPathToYear , T("outer: ") ) ;
-                        //etThread.traceF( tinBaseP , T("[tLongOuter]:    ")+tLongOuter ) ;
+                        //pfmOuter->traceF( tin0P , stPathToYear , T("outer: ") ) ;
+                        //etThread.traceF( tin0P , T("[tLongOuter]:    ")+tLongOuter ) ;
                         TN( tLongOuter , "" ) ; tLongOuter = T((strokeS*)stPathToYear[pfmOuter->idSlotPathToYear])+tShort ;
 
-                        //picOuter->traceF( tinBaseP , T("outer :    ") ) ;
+                        //picOuter->traceF( tin0P , T("outer :    ") ) ;
                         fileMetaS*     pfmOuter = (fileMetaS*)( picOuter + cResultStructsNeeded ) ;
-                        imageCompareS* picOuter  = (imageCompareS*)&pSwsMetaByShort->downF( tinBaseP , hSwsOuter ) ;
+                        imageCompareS* picOuter  = (imageCompareS*)&pSwsMetaByShort->downF( tin0P , hSwsOuter ) ;
 
                         // *********************************************************************************************************************************************************************************************************
                         // ****                                      ***************************************************************************************************************************************************************
@@ -845,10 +845,10 @@ DONE( tmExecutiveHealYearF )
                         // *********************************************************************************************************************************************************************************************************
                     {
                     do
-                    handleC hSwsOuter( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC hSwsOuter( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     // SET ALL COMPARE META ELEMENTS FOR EACH FILE'S IMAGE COMPARE META ARRAY
 
-                    etThread.traceF( tinBaseP , T("processing [tShort             ]:    ")+tShort ) ;
+                    etThread.traceF( tin0P , T("processing [tShort             ]:    ")+tShort ) ;
 
                     // *********************************************************************************************************************************************************************************************************
                     // *********************************************************************************************************************************************************************************************************
@@ -867,65 +867,65 @@ DONE( tmExecutiveHealYearF )
                 //if( idf <= 4 ) // FOR TESTING.  IN PRODUCTION, COMMENT OUT THIS LINE
 
                 }
-                    etThread.traceF( tinBaseP , T("!tShort.csF() [cShortFileNames,idf]:    ")+TF2(cShortFileNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE)+tb4+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tin0P , T("!tShort.csF() [cShortFileNames,idf]:    ")+TF2(cShortFileNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE)+tb4+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
-                if( !tShort.csF( tinBaseP ) )
+                if( !tShort.csF( tin0P ) )
 
                 TN( tShort , postzShort ) ;
 
                 countT cCopies = *pSwsMetaByShort ;
-                postzShort = (osTextT*)pSwsMetaByShort->leverF( tinBaseP , idf ) ;
+                postzShort = (osTextT*)pSwsMetaByShort->leverF( tin0P , idf ) ;
 
                 }
-                    etThread.traceF( tinBaseP , T("[cFiles,perTuck,idf]:    ")+TF2(cShortFileNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF3(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,2)+tb+tPerTuck+tb4+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tin0P , T("[cFiles,perTuck,idf]:    ")+TF2(cShortFileNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF3(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,2)+tb+tPerTuck+tb4+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT perTuck = ( idf << 8 ) / cShortFileNames ;
                 {
                 if( !( idf % ( TUCK >> 4 ) ) )
             {
             for( countT idf = 1 ; !ether && idf <= cShortFileNames ; idf ++ )
-            etThread.traceF( tinBaseP , T("inspecting metadata and comparing images for each copy of each file") ) ;
+            etThread.traceF( tin0P , T("inspecting metadata and comparing images for each copy of each file") ) ;
 
-            const countT cShortFileNames = pSwsMetaByShort->cFlavorsF( tinBaseP ) ;
+            const countT cShortFileNames = pSwsMetaByShort->cFlavorsF( tin0P ) ;
 
-            pSwsMetaByShort->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;      //SHOULD NOT BE NEEDED SINCE ALL KIDS ARE GONE OR PAUSED
+            pSwsMetaByShort->grabF( tin0P , TAG( TAGiDnULL ) ) ;      //SHOULD NOT BE NEEDED SINCE ALL KIDS ARE GONE OR PAUSED
 
             // *pSwsMetaByShort NOW CONTAINS META (FILE META AND INITIALIZED ACCUMULATORS FOR COMPARE META)
 
-            //etThread.tracePoolTalliesF( tinBaseP ) ;
-            //etThread.traceF( tinBaseP , T("calling tracePoolTalliesF / file meta is loaded") ) ;
+            //etThread.tracePoolTalliesF( tin0P ) ;
+            //etThread.traceF( tin0P , T("calling tracePoolTalliesF / file meta is loaded") ) ;
 
-            etThread.delF( tinBaseP , postShortCutoff ) ;
+            etThread.delF( tin0P , postShortCutoff ) ;
             }
                 THREADmODE2rESTORE
                 }
                     if( cPausedAtCutoff == cWorkers ) break ;
-                    thirdC::dosSleepWinkIF( tinBaseP ) ;
+                    thirdC::dosSleepWinkIF( tin0P ) ;
                 {
                 for(;;)
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             {
-            etThread.traceF( tinBaseP , T("waiting for all workers to pause or die") ) ;
+            etThread.traceF( tin0P , T("waiting for all workers to pause or die") ) ;
 
-            //U::while( cWaiting ) sgnGo.giveF( tinBaseP ) ;       //cWaiting IS USED TO AVOID A RACE CONDITION: A THREAD THAT HAS INCREMENTED cCutoffUpdates BUT HAS NOT YET CALLED waitF WILL NOT SEE THIS SIGN
-            sgnGo.giveF( tinBaseP ) ;
-            thirdC::dosSleepWinkIF( tinBaseP ) ; // TO AVOID RACE
+            //U::while( cWaiting ) sgnGo.giveF( tin0P ) ;       //cWaiting IS USED TO AVOID A RACE CONDITION: A THREAD THAT HAS INCREMENTED cCutoffUpdates BUT HAS NOT YET CALLED waitF WILL NOT SEE THIS SIGN
+            sgnGo.giveF( tin0P ) ;
+            thirdC::dosSleepWinkIF( tin0P ) ; // TO AVOID RACE
             cCutoffUpdates = 0 ;
-            etThread.traceF( tinBaseP , T("final cutoff [postShortCutoff]:    ")+T(postShortCutoff) ) ;
+            etThread.traceF( tin0P , T("final cutoff [postShortCutoff]:    ")+T(postShortCutoff) ) ;
             }
                 THREADmODE2rESTORE
-                while( cCutoffUpdates < cWorkers ) thirdC::dosSleepWinkIF( tinBaseP ) ;
+                while( cCutoffUpdates < cWorkers ) thirdC::dosSleepWinkIF( tin0P ) ;
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             {
-            //etThread.traceF( tinBaseP , T("waiting for all workers to update postShortCutoff") ) ;
+            //etThread.traceF( tin0P , T("waiting for all workers to update postShortCutoff") ) ;
         {
         while( !bAbortP && cWorkers )
 
         }
-            if( idPass == 1 ) stPathToYear.lockIfF( tinBaseP ) ;
+            if( idPass == 1 ) stPathToYear.lockIfF( tin0P ) ;
 
             while( !bAbortP && ~hSwsPathToArchives ) ;
             }
-                etThread.delF( tinBaseP , pstt1PathToYear ) ;
+                etThread.delF( tin0P , pstt1PathToYear ) ;
                 }
                     }
                         etThread.osThreadF( TaRG3fLAGScBtLS( tmCollectFileMetaF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cWorkers , (countT)&stPathToYear , idSlotPathToYear , (countT)&postzShort , (countT)pSwsMetaByShort , (countT)&grabCutoff , (countT)&postShortCutoff , (countT)&cCutoffUpdates , (countT)&sgnGo , (countT)&cPausedAtCutoff , (countT)&cWaiting , (countT)&bAbortP ) ;
@@ -937,35 +937,35 @@ DONE( tmExecutiveHealYearF )
                         }
                             break ;
                             bAbortP = 1 ;
-                            etThread.traceF( tinBaseP , T("exception: idSlotPathToYear is null") ) ;
-                            etThread.delF( tinBaseP , psttPathToYear ) ;
+                            etThread.traceF( tin0P , T("exception: idSlotPathToYear is null") ) ;
+                            etThread.delF( tin0P , psttPathToYear ) ;
                         {
                         if( !idSlotPathToYear ) //SHOULD BE IMPOSSIBLE
-                        stPathToYear.sinkF( tinBaseP , idSlotPathToYear , psttPathToYear , flSTACKsINK_UNIQUE ) ;
+                        stPathToYear.sinkF( tin0P , idSlotPathToYear , psttPathToYear , flSTACKsINK_UNIQUE ) ;
                         ZE( countT , idSlotPathToYear ) ;
 
-                        etThread.strMakeF( tinBaseP , LF , psttPathToYear , psttc1 ) ; ___( psttPathToYear ) ;
+                        etThread.strMakeF( tin0P , LF , psttPathToYear , psttc1 ) ; ___( psttPathToYear ) ;
                         ZE( strokeS* , psttPathToYear ) ;
                     {
                     if( idPass == 1 )
                 {
                 FORsTRINGSiN1( pstt1PathToYear )
 
-                //etThread.traceF( tinBaseP , T("[pstt1PathToYear]:    ")+T(pstt1PathToYear) ) ;
-                etThread.strConvertToLowerCaseF( tinBaseP , pstt1PathToYear ) ;
-                etThread.diskFindFileOrDirF( tinBaseP , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
-                patternC pat( tinBaseP , etThread , tYearSlash , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                //etThread.traceF( tin0P , T("[pstt1PathToYear]:    ")+T(pstt1PathToYear) ) ;
+                etThread.strConvertToLowerCaseF( tin0P , pstt1PathToYear ) ;
+                etThread.diskFindFileOrDirF( tin0P , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
+                patternC pat( tin0P , etThread , tYearSlash , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                 ZE( strokeS* , pstt1PathToYear ) ;
 
-                //etThread.traceF( tinBaseP , T("[tPathToArchive]:    ")+tPathToArchive ) ;
+                //etThread.traceF( tin0P , T("[tPathToArchive]:    ")+tPathToArchive ) ;
                 TN( tPathToArchive , "" ) ; tPathToArchive = T(psttzPathToArchives)+T(psttzArchiveP)+tSlash ;
-                strokeS* psttzPathToArchives = *(strokeS**)&swsPathToArchivesByArchiveNameP.downF( tinBaseP , hSwsPathToArchives ) ;
+                strokeS* psttzPathToArchives = *(strokeS**)&swsPathToArchivesByArchiveNameP.downF( tin0P , hSwsPathToArchives ) ;
             {
             do
-            handleC hSwsPathToArchives( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hSwsPathToArchives( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
             }
-                pSwsMetaByShort = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_SINKrEVERSE | flSTACKc_SINKiGNOREtABS , &postzShort , flSTACKc_BLOB | flSTACKc_ALLOWzE , cResultStructsNeeded * sizeof( imageCompareS ) + sizeof( fileMetaS ) ) ; ___( pSwsMetaByShort ) ;
+                pSwsMetaByShort = new( 0 , tin0P , LF ) switchStackC( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_SINKrEVERSE | flSTACKc_SINKiGNOREtABS , &postzShort , flSTACKc_BLOB | flSTACKc_ALLOWzE , cResultStructsNeeded * sizeof( imageCompareS ) + sizeof( fileMetaS ) ) ; ___( pSwsMetaByShort ) ;
                 cResultStructsNeeded = 1 + cSlotsPathToYear / cResultsPerStruct ;
                 cSlotsPathToYear = stPathToYear ;
             {
@@ -974,20 +974,20 @@ DONE( tmExecutiveHealYearF )
         for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
         ZE( countT , cWaiting ) ;
         ZE( countT , cPausedAtCutoff ) ;
-        signC sgnGo( tinBaseP , TAG( TAGiDnULL ) ) ;
+        signC sgnGo( tin0P , TAG( TAGiDnULL ) ) ;
         ZE( countT   , cCutoffUpdates ) ;
         ZE( osTextT* , postShortCutoff ) ;
-        grabC grabCutoff( tinBaseP , TAG( TAGiDnULL ) ) ;
+        grabC grabCutoff( tin0P , TAG( TAGiDnULL ) ) ;
         ZE( countT , cWorkers ) ;
-        stackC stPathToYear( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+        stackC stPathToYear( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
         ZE( switchStackC* , pSwsMetaByShort ) ;       // cbData IS NOT KNOWN UNTIL PASS 1 COMPLETES ; WILL BE CT'D IN PASS 2 USING THE THEN KNOWN NUMBER OF PATHS FOR THIS ARCHIVE NAME
         ZE( osTextT* , postzShort  ) ;
         ZE( countT   , cResultStructsNeeded ) ;
         ZE( countT   , cSlotsPathToYear     ) ;     //U:: THIS IS CALCULATED INCORRECTLY EXCEPT WHEN THERE IS ONLY WO YEAR.  RATHER THAN FIX IT, REDESIGN CODE TO PROCESS WO YEAR AT A TIME (OR USE A SEPARATE SWS FOR EACH YEAR AND DO IT IN PARALLEL).  SUCH A REDESIGN WILL ALSO MAKE IT EASIER TO THROTTLE PUSHING TO LIMIT THE NUMBER OF FLAVORS IN THE SWS, WHICH IS NECEWSSARY TO AVOID EXHAUSTING MEMORY SPACE
         ZE( boolT    , bAbortP ) ;
 
-        etThread.traceF( tinBaseP , T("executive [pattern]:    ")+tYearSlash ) ;
-        etThread.delF( tinBaseP , psttYearP ) ;
+        etThread.traceF( tin0P , T("executive [pattern]:    ")+tYearSlash ) ;
+        etThread.delF( tin0P , psttYearP ) ;
         TN( tYearSlash , "" ) ; tYearSlash = T(psttYearP)+T("/") ;
 
         TN( tPatRejects  , "/ipdos.archives.rejects/" ) ;
@@ -1011,8 +1011,8 @@ TASK( tmExecutiveHealYearF )
 
 DONE( tmCopyFileF )
 }
-    etThread.delF( tinBaseP , psttFromP ) ;
-    etThread.delF( tinBaseP , psttToP   ) ;
+    etThread.delF( tin0P , psttFromP ) ;
+    etThread.delF( tin0P , psttToP   ) ;
 
     }
         }
@@ -1020,13 +1020,13 @@ DONE( tmCopyFileF )
                 }
                     }
                         bAbortP = 1 ;
-                        etThread.traceF( tinBaseP , T("diskCopyFileF failed too many times.  will not retry [to,from]:    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
+                        etThread.traceF( tin0P , T("diskCopyFileF failed too many times.  will not retry [to,from]:    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
                     {
                     if( !bOk )
                     }
                         }
-                            thirdC::dosSleepWinkIF( tinBaseP , 2 ) ;
-                            etThread.traceF( tinBaseP , T("diskCopyFileF failed.  will retry [cRetries,to,from]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
+                            thirdC::dosSleepWinkIF( tin0P , 2 ) ;
+                            etThread.traceF( tin0P , T("diskCopyFileF failed.  will retry [cRetries,to,from]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
                             POOPR
                         {
                         else
@@ -1035,31 +1035,31 @@ DONE( tmCopyFileF )
                             bOk = 1 ;
                         {
                         if( !POOP )
-                        ((tin9S&)tinBaseP).pEtScratch->diskCopyFileF( tinBaseP , psttToP , psttFromP , 1 ) ;
+                        ((tin9S&)tin0P).pEtScratch->diskCopyFileF( tin0P , psttToP , psttFromP , 1 ) ;
                     {
                     while( cTries && cTries -- )
                     ZE( boolT , bOk ) ;
 
                     cTries = 8 ;
 
-                    etThread.traceF( tinBaseP , T("copying [to,from]:    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
+                    etThread.traceF( tin0P , T("copying [to,from]:    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
                 {
                 else
                 }
                     bAbortP = 1 ;
-                    etThread.traceF( tinBaseP , T("bizarre!  there is still a file in the way, so not copying [to,from]:    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
+                    etThread.traceF( tin0P , T("bizarre!  there is still a file in the way, so not copying [to,from]:    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
                 {
                 else if( bExists )
                 }
                     bAbortP = 1 ;
-                    etThread.traceF( tinBaseP , T("after rejecting a file out of the way, not copying because could not obtain bExists (probable drive failure) [to,from]:    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
+                    etThread.traceF( tin0P , T("after rejecting a file out of the way, not copying because could not obtain bExists (probable drive failure) [to,from]:    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
                 {
                 if( !bOk    )
 
                 }
                     }
-                        thirdC::dosSleepWinkIF( tinBaseP , 2 ) ;
-                        etThread.traceF( tinBaseP , T("diskFileExistsF failed.  will retry [cRetries,to,from]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
+                        thirdC::dosSleepWinkIF( tin0P , 2 ) ;
+                        etThread.traceF( tin0P , T("diskFileExistsF failed.  will retry [cRetries,to,from]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
                         POOPR
                     {
                     else
@@ -1068,7 +1068,7 @@ DONE( tmCopyFileF )
                         bOk = 1 ;
                     {
                     if( !POOP )
-                    bExists = ((tin9S&)tinBaseP).pEtScratch->diskFileExistsF( tinBaseP , psttToP ) ;
+                    bExists = ((tin9S&)tin0P).pEtScratch->diskFileExistsF( tin0P , psttToP ) ;
                 {
                 while( cTries && cTries -- )
                 cTries = 8 ;
@@ -1079,24 +1079,24 @@ DONE( tmCopyFileF )
             if( !bAbortP )
 
             }
-                etThread.delF( tinBaseP , psttLongInRejects ) ;
-                etThread.delF( tinBaseP , psttRejected ) ;
+                etThread.delF( tin0P , psttLongInRejects ) ;
+                etThread.delF( tin0P , psttRejected ) ;
 
-                if( !bAbortP ) etThread.traceF( tinBaseP , T("rejected  file from archive because would have been overwritten [reject,from]:    ")+T(psttRejected)+T("    ")+T(psttToP) ) ;
+                if( !bAbortP ) etThread.traceF( tin0P , T("rejected  file from archive because would have been overwritten [reject,from]:    ")+T(psttRejected)+T("    ")+T(psttToP) ) ;
                 }
                     }
                         bAbortP = 1 ;
-                        etThread.traceF( tinBaseP , T("exception:  diskMoveFileOrDirUniqueF 2 [reject,from]:    ")+T(psttRejected)+T("    ")+T(psttToP) ) ;
+                        etThread.traceF( tin0P , T("exception:  diskMoveFileOrDirUniqueF 2 [reject,from]:    ")+T(psttRejected)+T("    ")+T(psttToP) ) ;
                         POOPR
                     {
                     if( POOP )
-                    RETRY( 8 , ( psttRejected = 0 , ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirUniqueF( tinBaseP , psttRejected , psttToP , psttLongInRejects ) ) ) ; ___( psttRejected ) ;
+                    RETRY( 8 , ( psttRejected = 0 , ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirUniqueF( tin0P , psttRejected , psttToP , psttLongInRejects ) ) ) ; ___( psttRejected ) ;
                     SCOOPS
                 {
                 IFsCRATCH
                 ZE( strokeS* , psttRejected ) ;
 
-                etThread.strReplaceF( tinBaseP , psttLongInRejects , psttToP , tPatArchives , tPatRejects ) ; ___( psttLongInRejects ) ;
+                etThread.strReplaceF( tin0P , psttLongInRejects , psttToP , tPatArchives , tPatRejects ) ; ___( psttLongInRejects ) ;
                 ZE( strokeS* , psttLongInRejects ) ;
             {
             if( bExists )
@@ -1104,14 +1104,14 @@ DONE( tmCopyFileF )
         else
         }
             bAbortP = 1 ;
-            etThread.traceF( tinBaseP , T("not copying because could not obtain bExists (probable drive failure) [to,from]:    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
+            etThread.traceF( tin0P , T("not copying because could not obtain bExists (probable drive failure) [to,from]:    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
         {
         if( !bOk )
 
         }
             }
-                thirdC::dosSleepWinkIF( tinBaseP , 2 ) ;
-                etThread.traceF( tinBaseP , T("diskFileExistsF failed.  will retry [cRetries,to,from]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
+                thirdC::dosSleepWinkIF( tin0P , 2 ) ;
+                etThread.traceF( tin0P , T("diskFileExistsF failed.  will retry [cRetries,to,from]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(psttToP)+T("    ")+T(psttFromP) ) ;
                 POOPR
             {
             else
@@ -1120,7 +1120,7 @@ DONE( tmCopyFileF )
                 bOk = 1 ;
             {
             if( !POOP )
-            bExists = ((tin9S&)tinBaseP).pEtScratch->diskFileExistsF( tinBaseP , psttToP ) ;
+            bExists = ((tin9S&)tin0P).pEtScratch->diskFileExistsF( tin0P , psttToP ) ;
         {
         while( cTries && cTries -- )
         ZE( boolT , bOk ) ;
@@ -1145,19 +1145,19 @@ TASK( tmCopyFileF )
 
 DONE( tmMoveFileToUniqueF )
 }
-    etThread.delF( tinBaseP , psttFromP ) ;
-    etThread.delF( tinBaseP , psttToP   ) ;
-    etThread.delF( tinBaseP , psttUnique ) ;
+    etThread.delF( tin0P , psttFromP ) ;
+    etThread.delF( tin0P , psttToP   ) ;
+    etThread.delF( tin0P , psttUnique ) ;
 
-    etThread.traceF( tinBaseP , T("moved [to,from]:    ")+T(psttUnique)+T("    ")+T(psttFromP) ) ;
+    etThread.traceF( tin0P , T("moved [to,from]:    ")+T(psttUnique)+T("    ")+T(psttFromP) ) ;
     }
         }
             bAbortP = 1 ;
-            etThread.traceF( tinBaseP , T("exception:  diskMoveFileOrDirUniqueF 1 [to,from]:    ")+T(psttUnique)+T("    ")+T(psttFromP) ) ;
+            etThread.traceF( tin0P , T("exception:  diskMoveFileOrDirUniqueF 1 [to,from]:    ")+T(psttUnique)+T("    ")+T(psttFromP) ) ;
             POOPR
         {
         if( POOP )
-        RETRY( 8 , ( psttUnique = 0 , ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirUniqueF( tinBaseP , psttUnique , psttFromP , psttToP ) ) ) ; ___( psttUnique ) ;
+        RETRY( 8 , ( psttUnique = 0 , ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirUniqueF( tin0P , psttUnique , psttFromP , psttToP ) ) ) ; ___( psttUnique ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -1178,27 +1178,27 @@ DONE( tmCollectFileMetaF )
         }
             }
                 }
-                    etThread.traceF( tinBaseP , T("ended archive pathToYear:    ")+tPathToYearP ) ;
+                    etThread.traceF( tin0P , T("ended archive pathToYear:    ")+tPathToYearP ) ;
                     }
                         while( ~hWalk ) ;
                         }
                             DEL( pInfoFile ) ;
                             }
-                                swsMetaByShortP.ungrabF( tinBaseP ) ;
-                                //etThread.traceF( tinBaseP , T("after pushing meta for a file [cFlavors]:    ")+TF2(swsMetaByShortP.cFlavorsF(tinBaseP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                swsMetaByShortP.ungrabF( tin0P ) ;
+                                //etThread.traceF( tin0P , T("after pushing meta for a file [cFlavors]:    ")+TF2(swsMetaByShortP.cFlavorsF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                new( 0 , tinBaseP , (byteT*)pCursor , sizeof( fileMetaS ) ) fileMetaS( tinBaseP , bAbortP , idSlotPathToYearP , time1Mod , time2Mod , cbUsed ) ;
+                                new( 0 , tin0P , (byteT*)pCursor , sizeof( fileMetaS ) ) fileMetaS( tin0P , bAbortP , idSlotPathToYearP , time1Mod , time2Mod , cbUsed ) ;
 
                                 pCursor += cResultStructsNeeded ;
-                                for( countT offs = 0 ; offs < cResultStructsNeeded ; offs ++ ) new( 0 , tinBaseP , (byteT*)( pCursor + offs ) , sizeof( imageCompareS ) ) imageCompareS ;
+                                for( countT offs = 0 ; offs < cResultStructsNeeded ; offs ++ ) new( 0 , tin0P , (byteT*)( pCursor + offs ) , sizeof( imageCompareS ) ) imageCompareS ;
                                 countT cResultStructsNeeded = 1 + cSlotsPathToYear / cResultsPerStruct ;
                                 imageCompareS* pCursor = (imageCompareS*)&swsMetaByShortP[ 1 ] ;
 
                                 swsMetaByShortP << (byteT*)0 ;
 
-                                //etThread.traceF( tinBaseP , T("[idFile,postzShortP]:    ")+TF2(idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE)+tb4+T(postzShortP) ) ;
+                                //etThread.traceF( tin0P , T("[idFile,postzShortP]:    ")+TF2(idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE)+tb4+T(postzShortP) ) ;
                                 postzShortP = tShort ;
-                                swsMetaByShortP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                swsMetaByShortP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                                 count04T cbUsed = pInfoFile->cbUsedHigh << sizeof( count02T ) * SB | pInfoFile->cbUsed ;
 
@@ -1206,7 +1206,7 @@ DONE( tmCollectFileMetaF )
                                 countT  time1Mod = pInfoFile->timeWritten1 ;
 
                                 }
-                                    etThread.traceF( tinBaseP , T("[perTuck,idFile]:    ")+TF3(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,2)+tb+tPerTuck+tb4+TF2(idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    etThread.traceF( tin0P , T("[perTuck,idFile]:    ")+TF3(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,2)+tb+tPerTuck+tb4+TF2(idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     countT perTuck = ( idFile << 8 ) / cFiles ;
                                 {
                                 if( !( idFile % ( TUCK << 2 ) ) )
@@ -1214,11 +1214,11 @@ DONE( tmCollectFileMetaF )
                                 ++ idFile ;
                                                                            
                                 }
-                                    etThread.delF( tinBaseP , psttYearSlashShort ) ;
-                                    etThread.delF( tinBaseP , psttPath ) ;
+                                    etThread.delF( tin0P , psttYearSlashShort ) ;
+                                    etThread.delF( tin0P , psttPath ) ;
                                     tYearSlashShort = T(psttYearSlashShort) ;
                                     tPath  = T(psttPath) ;
-                                    etThread.strBisectF( tinBaseP , psttPath , psttYearSlashShort , tFileName , T("/") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttYearSlashShort ) ;
+                                    etThread.strBisectF( tin0P , psttPath , psttYearSlashShort , tFileName , T("/") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttYearSlashShort ) ;
                                     ZE( strokeS* , psttYearSlashShort ) ;
                                     ZE( strokeS* , psttPath ) ;
                                 {
@@ -1234,55 +1234,55 @@ DONE( tmCollectFileMetaF )
                                     break ;
                                     DEL( pInfoFile ) ;
                                     bAbortP = 1 ;
-                                    etThread.traceF( tinBaseP , T("exception:  diskFileQueryF") ) ;
+                                    etThread.traceF( tin0P , T("exception:  diskFileQueryF") ) ;
                                     POOPR
                                 {
                                 if( POOP )
-                                RETRYsCR( 8 , diskFileQueryF( tinBaseP , pInfoFile , fi ) ) ; ___( pInfoFile ) ;
+                                RETRYsCR( 8 , diskFileQueryF( tin0P , pInfoFile , fi ) ) ; ___( pInfoFile ) ;
                                 SCOOPS
                             {
                             IFsCRATCH
-                            fileC fi( tinBaseP , (strokeS*)tLong , ifcOPENaCCESS_R ) ;
+                            fileC fi( tin0P , (strokeS*)tLong , ifcOPENaCCESS_R ) ;
                             ZE( infoFileS* , pInfoFile ) ;
 
                             TN( tLong , "" ) ; tLong = tPathToYearP+tShort ;
 
                             }
-                                //etThread.traceF( tinBaseP , T("resumed collecting file meta into sws, using stIdJot") ) ;
+                                //etThread.traceF( tin0P , T("resumed collecting file meta into sws, using stIdJot") ) ;
 
-                                //etThread.traceF( tinBaseP , T("waited  for sgnGo") ) ;
+                                //etThread.traceF( tin0P , T("waited  for sgnGo") ) ;
                                 dec02AM( cWaitingP ) ;
-                                sgnGoP.waitF( tinBaseP ) ;
+                                sgnGoP.waitF( tin0P ) ;
                                 inc02AM( cCutoffUpdatesP ) ;
                                 inc02AM( cWaitingP ) ;
-                                //etThread.traceF( tinBaseP , T("waiting for sgnGo") ) ;
+                                //etThread.traceF( tin0P , T("waiting for sgnGo") ) ;
 
                                 }
                                     }
                                         }
                                             break ;
                                             bAbortP = 1 ;
-                                            etThread.traceF( tinBaseP , T("exception: could not obtain a pageC instance containing a short file name 3") ) ;
+                                            etThread.traceF( tin0P , T("exception: could not obtain a pageC instance containing a short file name 3") ) ;
                                         {
                                         else
                                         }
-                                            grabCutoffP.ungrabF( tinBaseP ) ;
+                                            grabCutoffP.ungrabF( tin0P ) ;
 
                                             }
-                                                etThread.strMakeF( tinBaseP , LF , postShortCutoffP , tShortCutoff ) ; ___( postShortCutoffP ) ;
-                                                etThread.delF( tinBaseP , postShortCutoffP ) ;
+                                                etThread.strMakeF( tin0P , LF , postShortCutoffP , tShortCutoff ) ; ___( postShortCutoffP ) ;
+                                                etThread.delF( tin0P , postShortCutoffP ) ;
                                             {
-                                            if( !postShortCutoffP || 0 < thirdC::c_strcmpIF( tinBaseP , postShortCutoffP , tShortCutoff ) )
+                                            if( !postShortCutoffP || 0 < thirdC::c_strcmpIF( tin0P , postShortCutoffP , tShortCutoff ) )
 
-                                            grabCutoffP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                            grabCutoffP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                                             }
                                                 break ;
                                                 bAbortP = 1 ;
-                                                etThread.traceF( tinBaseP , T("exception: short cutoff is null length 3") ) ;
+                                                etThread.traceF( tin0P , T("exception: short cutoff is null length 3") ) ;
                                             {
-                                            if( !tShortCutoff.csF( tinBaseP ) )      //SHOULD BE IMPOSSIBLE
-                                            //etThread.traceF( tinBaseP , T("proposed [tShortCutoff]:    ")+tShortCutoff ) ;
+                                            if( !tShortCutoff.csF( tin0P ) )      //SHOULD BE IMPOSSIBLE
+                                            //etThread.traceF( tin0P , T("proposed [tShortCutoff]:    ")+tShortCutoff ) ;
                                             TN( tShortCutoff , (const byteT*)page ) ;
                                         {
                                         if( ~page )
@@ -1295,31 +1295,31 @@ DONE( tmCollectFileMetaF )
                                 if( stIdJot > idPlateCutoffWanted )
                                 countT idPlateCutoffWanted = idPlate - 1 + BATCHsIZE ;
                                 //CS:CODEsYNCH: PSEUDODUPLICATE 1
-                                //etThread.traceF( tinBaseP , T("calculating the next proposed cutoff value") ) ;
+                                //etThread.traceF( tin0P , T("calculating the next proposed cutoff value") ) ;
 
-                                //etThread.traceF( tinBaseP , T("waited  for sgnGo") ) ;
+                                //etThread.traceF( tin0P , T("waited  for sgnGo") ) ;
                                 dec02AM( cPausedAtCutoffP ) ;
                                 dec02AM( cWaitingP ) ;
-                                sgnGoP.waitF( tinBaseP ) ;
+                                sgnGoP.waitF( tin0P ) ;
                                 inc02AM( cPausedAtCutoffP ) ;
                                 inc02AM( cWaitingP ) ;
-                                //etThread.traceF( tinBaseP , T("waiting for sgnGo (the short name that i would now process is beyond the cutoff)") ) ;
+                                //etThread.traceF( tin0P , T("waiting for sgnGo (the short name that i would now process is beyond the cutoff)") ) ;
                             {
-                            if( postShortCutoffP && 0 < thirdC::c_strcmpIF( tinBaseP , tShort , postShortCutoffP ) )
+                            if( postShortCutoffP && 0 < thirdC::c_strcmpIF( tin0P , tShort , postShortCutoffP ) )
 
                             }
                                 break ;
                                 bAbortP = 1 ;
-                                etThread.traceF( tinBaseP , T("exception: short file name is null length") ) ;
+                                etThread.traceF( tin0P , T("exception: short file name is null length") ) ;
                             {
-                            if( !tShort.csF( tinBaseP ) )     //SHOULD BE IMPOSSIBLE
+                            if( !tShort.csF( tin0P ) )     //SHOULD BE IMPOSSIBLE
 
-                            //etThread.traceF( tinBaseP , tShort ) ;
+                            //etThread.traceF( tin0P , tShort ) ;
                             }
                                 }
                                     break ;
                                     bAbortP = 1 ;
-                                    etThread.traceF( tinBaseP , T("exception: could not obtain a pageC instance containing a short file name 2") ) ;
+                                    etThread.traceF( tin0P , T("exception: could not obtain a pageC instance containing a short file name 2") ) ;
                                 {
                                 else
                                 if( ~page ) tShort = T((const byteT*)page) ;
@@ -1327,24 +1327,24 @@ DONE( tmCollectFileMetaF )
                             {
                             TN( tShort , "" ) ;
 
-                            countT idj = stIdJot.upF( tinBaseP , hWalk ) ;
+                            countT idj = stIdJot.upF( tin0P , hWalk ) ;
 
                             idPlate ++ ; //SINCE I AM GOING UP, THIS IS NOT THE idPlate ASSOCIATED WITH stackC MEMBER FUNCTIONS, FOR WHICH THE TOP PLATE IS idPlate 1
                         {
                         do
-                        handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         ZE( countT , idFile ) ;
                         ZE( countT , idPlate ) ;
                     {
                     if( stIdJot )
-                    etThread.traceF( tinBaseP , T("collecting file meta into sws, using stIdJot") ) ;
+                    etThread.traceF( tin0P , T("collecting file meta into sws, using stIdJot") ) ;
 
-                    //etThread.traceF( tinBaseP , T("waited  for sgnGo") ) ;
+                    //etThread.traceF( tin0P , T("waited  for sgnGo") ) ;
                     dec02AM( cWaitingP ) ;
-                    sgnGoP.waitF( tinBaseP ) ;
+                    sgnGoP.waitF( tin0P ) ;
                     inc02AM( cCutoffUpdatesP ) ;
                     inc02AM( cWaitingP ) ;
-                    //etThread.traceF( tinBaseP , T("waiting for sgnGo") ) ;
+                    //etThread.traceF( tin0P , T("waiting for sgnGo") ) ;
                 {
                 if( !bAbortP )
 
@@ -1352,26 +1352,26 @@ DONE( tmCollectFileMetaF )
                     }
                         }
                             bAbortP = 1 ;
-                            etThread.traceF( tinBaseP , T("exception: could not obtain the pageC instance containing a short file name") ) ;
+                            etThread.traceF( tin0P , T("exception: could not obtain the pageC instance containing a short file name") ) ;
                         {
                         else
                         }
-                            grabCutoffP.ungrabF( tinBaseP ) ;
+                            grabCutoffP.ungrabF( tin0P ) ;
 
                             }
-                                etThread.strMakeF( tinBaseP , LF , postShortCutoffP , tShortCutoff ) ; ___( postShortCutoffP ) ;
-                                etThread.delF( tinBaseP , postShortCutoffP ) ;
+                                etThread.strMakeF( tin0P , LF , postShortCutoffP , tShortCutoff ) ; ___( postShortCutoffP ) ;
+                                etThread.delF( tin0P , postShortCutoffP ) ;
                             {
-                            if( !postShortCutoffP || 0 < thirdC::c_strcmpIF( tinBaseP , postShortCutoffP , tShortCutoff ) )
+                            if( !postShortCutoffP || 0 < thirdC::c_strcmpIF( tin0P , postShortCutoffP , tShortCutoff ) )
 
-                            grabCutoffP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            grabCutoffP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                             }
                                 bAbortP = 1 ;
-                                etThread.traceF( tinBaseP , T("exception: short cutoff is null length") ) ;
+                                etThread.traceF( tin0P , T("exception: short cutoff is null length") ) ;
                             {
-                            if( !tShortCutoff.csF( tinBaseP ) )   //SHOULD BE IMPOSSIBLE
-                            //etThread.traceF( tinBaseP , T("proposed [tShortCutoff]:             ")+tShortCutoff ) ;
+                            if( !tShortCutoff.csF( tin0P ) )   //SHOULD BE IMPOSSIBLE
+                            //etThread.traceF( tin0P , T("proposed [tShortCutoff]:             ")+tShortCutoff ) ;
                             TN( tShortCutoff , (const byteT*)page ) ;
                         {
                         if( ~page )
@@ -1383,43 +1383,43 @@ DONE( tmCollectFileMetaF )
                 {
                 if( stIdJot > BATCHsIZE )
                 //CS:CODEsYNCH: PSEUDODUPLICATE 1
-                //etThread.traceF( tinBaseP , T("calculating a proposed cutoff value") ) ;
+                //etThread.traceF( tin0P , T("calculating a proposed cutoff value") ) ;
 
                 //}
                 //    while( ~hWalk ) ;
                 //    }
                 //        else        { BL AMMO ; } //SHOULD BE IMPOSSIBLE
-                //        if( ~page ) etThread.traceF( tinBaseP , T((const byteT*)page) ) ;
+                //        if( ~page ) etThread.traceF( tin0P , T((const byteT*)page) ) ;
                 //
                 //        pageC page = jotShortFileNames[ idj ] ;
                 //
-                //        countT idj = stIdJot.upF( tinBaseP , hWalk ) ;
+                //        countT idj = stIdJot.upF( tin0P , hWalk ) ;
                 //    {
                 //    do
-                //    handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                //    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 //{
                 //if( stIdJot )
-                //etThread.traceF( tinBaseP , T("reading in sorted order, using stIdJot") ) ;
+                //etThread.traceF( tin0P , T("reading in sorted order, using stIdJot") ) ;
             {
             if( !bAbortP )
 
-            etThread.traceF( tinBaseP , T("counted files [cFiles,stIdJot]:    ")+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stIdJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , T("counted files [cFiles,stIdJot]:    ")+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)stIdJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             }
                 while( !ether && !bAbortP && ~hFindFile && !POOP ) ;
                 }
                     DEL( pInfoFile ) ;
                     }
                         }
-                            stIdJot.sinkF( tinBaseP , countTC() , idJot , flSTACKsINK_null , subtractJottedOsTextF , (countT)&bAbortP ) ;
-                            countT idJot = jotShortFileNames.writeF( tinBaseP , tShort , tShort.csF( tinBaseP ) + 1 ) ;
+                            stIdJot.sinkF( tin0P , countTC() , idJot , flSTACKsINK_null , subtractJottedOsTextF , (countT)&bAbortP ) ;
+                            countT idJot = jotShortFileNames.writeF( tin0P , tShort , tShort.csF( tin0P ) + 1 ) ;
                         {
-                        if( tShort.csF( tinBaseP ) )        // IF NOT A DIRECTORY
+                        if( tShort.csF( tin0P ) )        // IF NOT A DIRECTORY
                                                                    
                         }
-                            etThread.delF( tinBaseP , psttShort ) ;
-                            etThread.delF( tinBaseP , psttnu ) ;
+                            etThread.delF( tin0P , psttShort ) ;
+                            etThread.delF( tin0P , psttnu ) ;
                             tShort  = T(psttShort) ;
-                            etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
+                            etThread.strBisectF( tin0P , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
                             ZE( strokeS* , psttShort ) ;
                             ZE( strokeS* , psttnu ) ;
                         {
@@ -1436,44 +1436,44 @@ DONE( tmCollectFileMetaF )
                     }
                         }
                             bAbortP = 1 ;
-                            etThread.traceF( tinBaseP , T("exception:  diskFindFileOrDirF") ) ;
+                            etThread.traceF( tin0P , T("exception:  diskFindFileOrDirF") ) ;
                             POOPR
                         {
                         if( POOP )
-                        RETRYsCR( 8 , diskFindFileOrDirF( tinBaseP , pInfoFile , hFindFile , tPathToYearP ) )
+                        RETRYsCR( 8 , diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , tPathToYearP ) )
                         SCOOPS
                     {
                     IFsCRATCH
                     ZE( infoFileS* , pInfoFile ) ;
 
                     }
-                        etThread.traceF( tinBaseP , T("[cFiles,volume,pathToYear]:    ")+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tVolumeName+tb4+tPathToYearP ) ;
+                        etThread.traceF( tin0P , T("[cFiles,volume,pathToYear]:    ")+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tVolumeName+tb4+tPathToYearP ) ;
                     {
                     if( cFiles && !( cFiles % ( TUCK << 4 ) ) )
                 {
                 do
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-                handleC hFindFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+                handleC hFindFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
             {
             
             ZE( countT , cFiles ) ;
-            stackC stIdJot( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKiGNOREtABS | flSTACKc_SINKrEVERSE ) ;
-            jotC jotShortFileNames( tinBaseP , "short.file.names" , flJOTc_WRITE | flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_PURGEoNcT , 1 ) ;            //U:: 1 IS ARBITRARY AND WILL BE INSUFFICIENT WHEN SORTING MUST REACH BEYOND THE PRIOR BOOK.  ENHANCE jotC TO SUPPORT A REASONABLE DEFAULT NUMBER OF INACTIVE
-            etThread.traceF( tinBaseP , T("counting files") ) ;
+            stackC stIdJot( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKiGNOREtABS | flSTACKc_SINKrEVERSE ) ;
+            jotC jotShortFileNames( tin0P , "short.file.names" , flJOTc_WRITE | flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_PURGEoNcT , 1 ) ;            //U:: 1 IS ARBITRARY AND WILL BE INSUFFICIENT WHEN SORTING MUST REACH BEYOND THE PRIOR BOOK.  ENHANCE jotC TO SUPPORT A REASONABLE DEFAULT NUMBER OF INACTIVE
+            etThread.traceF( tin0P , T("counting files") ) ;
 
-            etThread.traceF( tinBaseP , T("this thread's job: [volume,pathToYear]:    ")+tVolumeName+tb4+tPathToYearP ) ;
+            etThread.traceF( tin0P , T("this thread's job: [volume,pathToYear]:    ")+tVolumeName+tb4+tPathToYearP ) ;
 
             //}
-            //    etThread.delF( tinBaseP , pstt1Words ) ;
+            //    etThread.delF( tin0P , pstt1Words ) ;
             //    }
             //        else if( bArm                                               ) bArm -- ;
-            //        else if( !etThread.strCompareF( tinBaseP , psttc1 , tArchives ) ) bArm = 2 ;
+            //        else if( !etThread.strCompareF( tin0P , psttc1 , tArchives ) ) bArm = 2 ;
             //             if( bArm == 1                                          ) tYear = T(psttc1) ;
             //    {
             //    FORsTRINGSiN1( pstt1Words )
             //    TN( tArchives , "ipdos.archives" ) ;
             //    ZE( boolT , bArm ) ;
-            //    etThread.strWordsF( tinBaseP , pstt1Words , tPathToYearP , sttq , T("/") ) ; ___( pstt1Words ) ;
+            //    etThread.strWordsF( tin0P , pstt1Words , tPathToYearP , sttq , T("/") ) ; ___( pstt1Words ) ;
             //    strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             //    ZE( strokeS* , pstt1Words ) ;
             //{
@@ -1484,22 +1484,22 @@ DONE( tmCollectFileMetaF )
         }
             DEL( pInfoDisk ) ;
             tVolumeName = T(pInfoDisk->psttVolumeName) ;
-            etThread.strConvertToLowerCaseF( tinBaseP , pInfoDisk->psttVolumeName ) ;
-            etThread.delF( tinBaseP , psttDisk ) ;
+            etThread.strConvertToLowerCaseF( tin0P , pInfoDisk->psttVolumeName ) ;
+            etThread.delF( tin0P , psttDisk ) ;
             }
                 }
                     bAbortP = 1 ;
-                    etThread.traceF( tinBaseP , T("exception:  diskInfoF: could not obtain volume name") ) ;
+                    etThread.traceF( tin0P , T("exception:  diskInfoF: could not obtain volume name") ) ;
                     POOPR
                 {
                 if( POOP )
-                RETRYsCR( 8 , diskInfoF( tinBaseP , pInfoDisk , psttDisk ) ) ; ___( pInfoDisk ) ;
+                RETRYsCR( 8 , diskInfoF( tin0P , pInfoDisk , psttDisk ) ) ; ___( pInfoDisk ) ;
                 SCOOPS
             {
             IFsCRATCH
             ZE( infoDiskS* , pInfoDisk ) ;
 
-            etThread.strSubstringF( tinBaseP , psttDisk , idf , idl , tPathToYearP ) ; ___( psttDisk ) ;
+            etThread.strSubstringF( tin0P , psttDisk , idf , idl , tPathToYearP ) ; ___( psttDisk ) ;
             countT idl = 5 ;
             countT idf = 1 ;
             ZE( strokeS* , psttDisk ) ;
@@ -1541,32 +1541,32 @@ TASK( tmCollectFileMetaF )
     return sgn ;
 
     }
-        ether.delF( tinBaseP , post1Copy ) ;
+        ether.delF( tin0P , post1Copy ) ;
 
-        sgn = bAbortP ? 0 : thirdC::c_strcmpIF( tinBaseP , post1Copy , post2 ) ; ;
-        //ether.traceF( tinBaseP , T("subtract [post1,post2]:    ")+T(post1Copy)+T("    ")+T(post2) ) ;
+        sgn = bAbortP ? 0 : thirdC::c_strcmpIF( tin0P , post1Copy , post2 ) ; ;
+        //ether.traceF( tin0P , T("subtract [post1,post2]:    ")+T(post1Copy)+T("    ")+T(post2) ) ;
 
         }
             bAbortP = 1 ;
-            ether.traceF( tinBaseP , T("subtractJottedOsTextF / could not obtain text [idJot]:    ")+TF2(c2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            ether.traceF( tin0P , T("subtractJottedOsTextF / could not obtain text [idJot]:    ")+TF2(c2P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         if( !post2 )
 
         }
             bAbortP = 1 ;
-            ether.traceF( tinBaseP , T("subtractJottedOsTextF / could not obtain text [idJot]:    ")+TF2(c1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            ether.traceF( tin0P , T("subtractJottedOsTextF / could not obtain text [idJot]:    ")+TF2(c1P,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         if( !post1Copy )
 
         const osTextT* post2 = page2 ;
-        pageC page2 = jotC::readIF( tinBaseP , c2P ) ;
+        pageC page2 = jotC::readIF( tin0P , c2P ) ;
 
         }
-            thirdC::c_memcpyIF( tinBaseP , post1Copy , post1 , cost1 ) ;    
-            ether.newF( tinBaseP , LF , post1Copy , cost1 ) ; ___( post1Copy ) ;
+            thirdC::c_memcpyIF( tin0P , post1Copy , post1 , cost1 ) ;    
+            ether.newF( tin0P , LF , post1Copy , cost1 ) ; ___( post1Copy ) ;
             countT         cost1 = page1 ;
             const osTextT* post1 = page1 ;
-            pageC page1 = jotC::readIF( tinBaseP , c1P ) ;
+            pageC page1 = jotC::readIF( tin0P , c1P ) ;
         {
         ZE( osTextT* , post1Copy ) ;
 
@@ -1580,7 +1580,7 @@ TASK( tmCollectFileMetaF )
     {
     IFbEcAREFUL
 {
-/*1*/countT subtractJottedOsTextF( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT subtractJottedOsTextF( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
     return *pfr1 - *pfr2 ;
@@ -1588,15 +1588,15 @@ TASK( tmCollectFileMetaF )
     fileMetaS* pfr2 = (fileMetaS*)c2P ;
     fileMetaS* pfr1 = (fileMetaS*)c1P ;
 {
-/*1*/countT subtractFileMetaF( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
+/*1*/countT subtractFileMetaF( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P )/*1*/
 
 }
-    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T(psttP)+T(" [bitsResult]:    ")+TF4(bitsResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
+    ((tin9S&)tin0P).pEther->traceF( tin0P , T(psttP)+T(" [bitsResult]:    ")+TF4(bitsResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
 {
-voidT imageCompareS::traceF( tin0S& tinBaseP , const strokeS* const psttP )
+voidT imageCompareS::traceF( tin0S& tin0P , const strokeS* const psttP )
 
 }
-    //traceF( tinBaseP , T("ct      :    ") ) ;
+    //traceF( tin0P , T("ct      :    ") ) ;
     TINSL
 {
 bitsResult( BITSrESULT_UNKNOWN )
@@ -1605,15 +1605,15 @@ imageCompareS::imageCompareS( voidT ) :
 NEWdELcLASS( 2 , imageCompareS ) ;
 
 }
-    return ((tin9S&)tinBaseP).pEther->memCompareF( tinBaseP , (byteT*)this , (byteT*)&frP , sizeof( countT ) + sizeof( count04T ) ) ;    //CS:CODEsYNC 1 1
+    return ((tin9S&)tin0P).pEther->memCompareF( tin0P , (byteT*)this , (byteT*)&frP , sizeof( countT ) + sizeof( count04T ) ) ;    //CS:CODEsYNC 1 1
     TINSL
 {
 sCountT fileMetaS::operator -( const fileMetaS& frP ) const
 
 }
-    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cVotes,idSlotPathToYear,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)stPathToYearP[idSlotPathToYear]) ) ;
+    ((tin9S&)tin0P).pEther->traceF( tin0P , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cVotes,idSlotPathToYear,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)stPathToYearP[idSlotPathToYear]) ) ;
 {
-voidT fileMetaS::traceF( tin0S& tinBaseP , stackC& stPathToYearP , const strokeS* const psttP )
+voidT fileMetaS::traceF( tin0S& tin0P , stackC& stPathToYearP , const strokeS* const psttP )
 
 }
     timeModRounded = *(countT*)( (byteT*)pc2 + 3 ) + bRoundUp ;
@@ -1623,7 +1623,7 @@ voidT fileMetaS::traceF( tin0S& tinBaseP , stackC& stPathToYearP , const strokeS
 
     }
         bAbortP = 1 ;
-        ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("fileMetaS::fileMetaS / exception: idSlotPathToYear is null") ) ;
+        ((tin9S&)tin0P).pEther->traceF( tin0P , T("fileMetaS::fileMetaS / exception: idSlotPathToYear is null") ) ;
     {
     if( !idSlotPathToYear )
 {
@@ -1633,7 +1633,7 @@ time2Mod( time2ModP ) ,
 time1Mod( time1ModP ) ,
 cbUsed( cbUsedP ) ,
 timeModRounded( 0 ) ,
-fileMetaS::fileMetaS( tin0S& tinBaseP , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) :
+fileMetaS::fileMetaS( tin0S& tin0P , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) :
 
 NEWdELcLASS( 1 , fileMetaS ) ;
 
@@ -1643,7 +1643,7 @@ const countT cResultsPerStruct = sizeof( countT ) * SB / 2 ;     // 2 BITS ARE U
 
 ;
 }
-    voidT traceF( tin0S& tinBaseP , const strokeS* const psttP = 0 ) ;
+    voidT traceF( tin0S& tin0P , const strokeS* const psttP = 0 ) ;
     inline sCountT operator -( imageCompareS& picP ) { return bitsResult - picP.bitsResult ; }
     imageCompareS( voidT ) ;
     NEWdELcLASSpROTOS
@@ -1655,8 +1655,8 @@ struct imageCompareS
 ;
 }
     sCountT operator -( const fileMetaS& frP ) const ;
-    voidT traceF( tin0S& tinBaseP , stackC& stPathToYearP , const strokeS* const psttP = 0 ) ;
-    fileMetaS( tin0S& tinBaseP , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) ;
+    voidT traceF( tin0S& tin0P , stackC& stPathToYearP , const strokeS* const psttP = 0 ) ;
+    fileMetaS( tin0S& tin0P , boolT& bAbortP , const countT idSlotPathToYearP , countT time1ModP , sCountT time2ModP , count04T cbUsedP ) ;
     NEWdELcLASSpROTOS
 
     countT   idSlotPathToYear ;

@@ -11,7 +11,7 @@
     _OUTsTACKc_
 
     cWaitingForEvent -- ;
-    pSgnEvent->waitF( tinBaseP ) ;
+    pSgnEvent->waitF( tin0P ) ;
     cWaitingForEvent ++ ;
 
     _INsTACKc_
@@ -21,14 +21,14 @@
     if( third ) return ;
     SCOOP
 {
-/*1*/voidT stackC::waitF( tin0S& tinBaseP )/*1*/
+/*1*/voidT stackC::waitF( tin0S& tin0P )/*1*/
 /**/
 
 */
- myStack.ungrabF( tinBaseP ) ;
+ myStack.ungrabF( tin0P ) ;
  <traverse or remove all plates in myStack>
- myStack.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
- myStack.waitF( tinBaseP ) ;
+ myStack.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+ myStack.waitF( tin0P ) ;
 for normal applications, do the following, in the order indicated
  when a plate is added to the stack, this function returns
 waits for new plates to be pushed onto the stack

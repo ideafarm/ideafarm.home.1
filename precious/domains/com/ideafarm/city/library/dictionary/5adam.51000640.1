@@ -12,8 +12,8 @@ REST
 ether.osThreadF( TaRG1( tmWorkF ) , (countT)&bat2 , (countT)&bat1 ) ;
 ether.osThreadF( TaRG1( tmWorkF ) , (countT)&bat1 , (countT)&bat2 ) ;
 
-batonC bat2( tinBaseP , TAG( TAGiDnULL ) ) ;
-batonC bat1( tinBaseP , TAG( TAGiDnULL ) ) ;
+batonC bat2( tin0P , TAG( TAGiDnULL ) ) ;
+batonC bat1( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
@@ -21,20 +21,20 @@ DONE( tmWorkF )
 }
     CONoUTrAW( "Bye!\r\n" ) ;
 
-    batOoP.ungrabF( tinBaseP ) ;
-    batWoP.ungrabF( tinBaseP ) ;
+    batOoP.ungrabF( tin0P ) ;
+    batWoP.ungrabF( tin0P ) ;
 
-    CONoUTrAW5( "grabbed  [idThread,&batOoP]: " , ((tin9S&)tinBaseP).monitor.idThread , " " , &batOoP , "\r\n" ) ;
-    batOoP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-    CONoUTrAW5( "grabbing [idThread,&batOoP]: " , ((tin9S&)tinBaseP).monitor.idThread , " " , &batOoP , "\r\n" ) ;
+    CONoUTrAW5( "grabbed  [idThread,&batOoP]: " , ((tin9S&)tin0P).monitor.idThread , " " , &batOoP , "\r\n" ) ;
+    batOoP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    CONoUTrAW5( "grabbing [idThread,&batOoP]: " , ((tin9S&)tin0P).monitor.idThread , " " , &batOoP , "\r\n" ) ;
     TELL( "grabbing to intentionally deadlock" )
 
-    ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    CONoUTrAW5( "grabbed  [idThread,&batWoP]: " , ((tin9S&)tinBaseP).monitor.idThread , " " , &batWoP , "\r\n" ) ;
-    batWoP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-    CONoUTrAW5( "grabbing [idThread,&batWoP]: " , ((tin9S&)tinBaseP).monitor.idThread , " " , &batWoP , "\r\n" ) ;
+    CONoUTrAW5( "grabbed  [idThread,&batWoP]: " , ((tin9S&)tin0P).monitor.idThread , " " , &batWoP , "\r\n" ) ;
+    batWoP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    CONoUTrAW5( "grabbing [idThread,&batWoP]: " , ((tin9S&)tin0P).monitor.idThread , " " , &batWoP , "\r\n" ) ;
 
     THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
 

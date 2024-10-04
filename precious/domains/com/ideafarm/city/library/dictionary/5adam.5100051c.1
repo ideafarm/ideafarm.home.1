@@ -9,25 +9,25 @@
 
 REST
 
-etThread.delF( tinBaseP , postTagPoolWork ) ;
-etThread.delF( tinBaseP , postTagPoolRoot ) ;
-etThread.delF( tinBaseP , postTagSearchFor2 ) ;
-etThread.delF( tinBaseP , postTagSearchFor1 ) ;
+etThread.delF( tin0P , postTagPoolWork ) ;
+etThread.delF( tin0P , postTagPoolRoot ) ;
+etThread.delF( tin0P , postTagSearchFor2 ) ;
+etThread.delF( tin0P , postTagSearchFor1 ) ;
 *postTagSearchFor2 = *postTagSearchFor1 = *postTagPoolRoot = *postTagPoolWork = '.' ;
 }
     while( !stRange.third && ~hDown ) ;
     }
         }
             //}
-            //    etThread.delF( tinBaseP , postd ) ;
-            //    etThread.boxPutF( tinBaseP , T("///" ifcSCRATCH "/tmp.dump.form.")+TF1(idRange) , postd , costd ) ;
-            //    etThread.delF( tinBaseP , psttd ) ;
-            //    countT costd = etThread.strMakeF( tinBaseP , LF , postd , psttd ) ; ___( postd ) ;
+            //    etThread.delF( tin0P , postd ) ;
+            //    etThread.boxPutF( tin0P , T("///" ifcSCRATCH "/tmp.dump.form.")+TF1(idRange) , postd , costd ) ;
+            //    etThread.delF( tin0P , psttd ) ;
+            //    countT costd = etThread.strMakeF( tin0P , LF , postd , psttd ) ; ___( postd ) ;
             //    ZE( osTextT* , postd ) ;
-            //    etThread.strDumpIF( tinBaseP , psttd , postc , poste - postc , 0x40 , 4 , ' ' , 0 ) ; ___( psttd ) ;
+            //    etThread.strDumpIF( tin0P , psttd , postc , poste - postc , 0x40 , 4 , ' ' , 0 ) ; ___( psttd ) ;
             //    ZE( strokeS* , psttd ) ;
             //
-            //    etThread.boxPutF( tinBaseP , T("///" ifcSCRATCH "/tmp.dump.unfo.")+TF1(idRange) , postc , poste - postc ) ;
+            //    etThread.boxPutF( tin0P , T("///" ifcSCRATCH "/tmp.dump.unfo.")+TF1(idRange) , postc , poste - postc ) ;
             //
             //    if( poste - postc > TOCK * 0x10 ) poste = postc + TOCK * 0x10 ;
             //    osTextT* poste = (osTextT*)minMax.c2 + 1 ;
@@ -35,7 +35,7 @@ etThread.delF( tinBaseP , postTagSearchFor1 ) ;
             //{
             //if( !postc )
     
-            etThread.strokeF( tinBaseP , T(postc ? postc : "no tag" )+T("\r\n") ) ;
+            etThread.strokeF( tin0P , T(postc ? postc : "no tag" )+T("\r\n") ) ;
     
             if( postc == poste ) postc = 0 ;
             while( postc < poste ) ;
@@ -43,50 +43,50 @@ etThread.delF( tinBaseP , postTagSearchFor1 ) ;
                 }
                     }
                         break ;
-                        etThread.strokeF( tinBaseP , T("tag found at offset ")+TF1((countT)postc-minMax.c1)+T("  ") ) ;
+                        etThread.strokeF( tin0P , T("tag found at offset ")+TF1((countT)postc-minMax.c1)+T("  ") ) ;
                         postc += costTagSearchFor2 ;
                     {
-                    if( !thThread.c_memcmpIF( tinBaseP , postc , postTagSearchFor2  , costTagSearchFor2 ) )
+                    if( !thThread.c_memcmpIF( tin0P , postc , postTagSearchFor2  , costTagSearchFor2 ) )
                     postc += costTagSearchFor1 ;
                 {
                 if( postc < poste )
-                postc = thThread.c_memmemIF( tinBaseP , postc , poste - postc , postTagSearchFor1  , costTagSearchFor1 ) ;
+                postc = thThread.c_memmemIF( tin0P , postc , poste - postc , postTagSearchFor1  , costTagSearchFor1 ) ;
             {
             do
         {
         else
-        if( postc[ 0 ] == 'M' && postc[ 1 ] == 'Z' ) etThread.strokeF( tinBaseP , T("dll or exe image\r\n") ) ;
+        if( postc[ 0 ] == 'M' && postc[ 1 ] == 'Z' ) etThread.strokeF( tin0P , T("dll or exe image\r\n") ) ;
 
         if( poste - postc > TOCK * 0x10 ) poste = postc + TOCK * 0x10 ;
         osTextT* poste = (osTextT*)minMax.c2 + 1 ;
         osTextT* postc = (osTextT*)minMax.c1 ;
 
-        etThread.strokeF( tinBaseP , TF3(idRange,flFORMAT_UNSIGNED,3)+T("[")+TF3(minMax.c1,flFORMAT_FILLzE,8)+T(",")+TF3(minMax.c2,flFORMAT_FILLzE,8)+T("] ") ) ;
+        etThread.strokeF( tin0P , TF3(idRange,flFORMAT_UNSIGNED,3)+T("[")+TF3(minMax.c1,flFORMAT_FILLzE,8)+T(",")+TF3(minMax.c2,flFORMAT_FILLzE,8)+T("] ") ) ;
 
         //if( idRange != 2 && idRange != 0x1c ) continue ;
-        count2S& minMax = *(count2S*)&stRange.downF( tinBaseP , hDown ) ;
+        count2S& minMax = *(count2S*)&stRange.downF( tin0P , hDown ) ;
         ++ idRange ;
     {
     do
-    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+    handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 {
 if( stRange )
 ZE( countT , idRange ) ;
-etherC::rangerF( tinBaseP , stRange , ether ) ;
-stackC stRange( tinBaseP , etThread , TAG( 0 ) , flSTACKc_FIFO|flSTACKc_BLOB , sizeof( count2S ) ) ;
+etherC::rangerF( tin0P , stRange , ether ) ;
+stackC stRange( tin0P , etThread , TAG( 0 ) , flSTACKc_FIFO|flSTACKc_BLOB , sizeof( count2S ) ) ;
 
 thirdC& thThread = etThread ;
 
-etThread.strMakeF( tinBaseP , LF , postTagPoolWork , tTag1+tTag2+T("poolC.")+T(poolOld.postName) ) ; ___( postTagPoolWork ) ;
+etThread.strMakeF( tin0P , LF , postTagPoolWork , tTag1+tTag2+T("poolC.")+T(poolOld.postName) ) ; ___( postTagPoolWork ) ;
 ZE( osTextT* , postTagPoolWork ) ;
 
-etThread.strMakeF( tinBaseP , LF , postTagPoolRoot , tTag1+tTag2+T("poolC.")+T(poolOldRoot.postName) ) ; ___( postTagPoolRoot ) ;
+etThread.strMakeF( tin0P , LF , postTagPoolRoot , tTag1+tTag2+T("poolC.")+T(poolOldRoot.postName) ) ; ___( postTagPoolRoot ) ;
 ZE( osTextT* , postTagPoolRoot ) ;
 
-countT costTagSearchFor2 = etThread.strMakeF( tinBaseP , LF , postTagSearchFor2 , tTag2 ) ; ___( postTagSearchFor2 ) ;
+countT costTagSearchFor2 = etThread.strMakeF( tin0P , LF , postTagSearchFor2 , tTag2 ) ; ___( postTagSearchFor2 ) ;
 ZE( osTextT* , postTagSearchFor2 ) ;
 
-countT costTagSearchFor1 = etThread.strMakeF( tinBaseP , LF , postTagSearchFor1 , tTag1 ) ; ___( postTagSearchFor1 ) ;
+countT costTagSearchFor1 = etThread.strMakeF( tin0P , LF , postTagSearchFor1 , tTag1 ) ; ___( postTagSearchFor1 ) ;
 ZE( osTextT* , postTagSearchFor1 ) ;
 
 TN( tTag2 , "RangerTag:") ;

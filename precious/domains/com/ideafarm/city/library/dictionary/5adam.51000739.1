@@ -9,22 +9,22 @@
                             
 REST
 
-etThread.traceF( tinBaseP , T("ok") ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     }
         }
-            ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
+            ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
         {
         while( ws.cWorkers )
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-        etThread.traceF( tinBaseP , T("waiting for worker") ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        etThread.traceF( tin0P , T("waiting for worker") ) ;
 
         }
-            //etThread.traceF( tinBaseP , T("napped") ) ;
-            ++ s ; etThread.osSleepF( tinBaseP , TOCK << 2 ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-            //etThread.traceF( tinBaseP , T("napping") ) ;
+            //etThread.traceF( tin0P , T("napped") ) ;
+            ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+            //etThread.traceF( tin0P , T("napping") ) ;
 
             if( bQuit ) break ;
 
@@ -33,11 +33,11 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                 }
                     }
                         }
-                            ++ s ; etThread.osSleepF( tinBaseP , TOCK >> 3 ) ;
-                            etThread.traceF( tinBaseP , T("waiting for queue to shrink [cPending]:    ")+TF2(ws.st_pPageEvent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
+                            etThread.traceF( tin0P , T("waiting for queue to shrink [cPending]:    ")+TF2(ws.st_pPageEvent,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
                         while( ws.st_pPageEvent > TUCK )
-                        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                     {
                     if( ws.st_pPageEvent > ( TUCK << 1 ) )                // THE QUEUE LENGTH MUST BE SMALL SO THAT IT IS IMPOSSIBLE FOR A QUEUED ITEM TO BE IN A BOOK OTHER THAN THE BOOK IMMEDIATELY PRECEDING THE BOOK BEING READ, ASSUMING THAT I ONLY KEEP WO INACTIVE BOOK
 
@@ -46,7 +46,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                     bPrefix = !bPrefix ;
 
                     else          pbi = 0 ;
-                    if( bDelete ) PUSE( tinBaseP , *(byteT**)&pbi ) ;
+                    if( bDelete ) PUSE( tin0P , *(byteT**)&pbi ) ;
 
                     ;
                         : sizeof( countT )
@@ -54,7 +54,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                     cbi = bPrefix
 
                     }
-                        if( ws.idIn < TUCK || !( ws.idIn % TUCK ) ) etThread.traceF( tinBaseP , T("[ws.idIn]:    ")+TF2(ws.idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        if( ws.idIn < TUCK || !( ws.idIn % TUCK ) ) etThread.traceF( tin0P , T("[ws.idIn]:    ")+TF2(ws.idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         ++ ws.idIn ;
                         ws.st_pPageEvent << *(countT*)&pPageEvent ;
 
@@ -68,8 +68,8 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                         if( !(const byteT*)*pPageEvent )        //SHOULD BE IMPOSSIBLE SINCE "ALL OR NONE" USED FOR WRITING BOOKTOGETHER AND I'VE ALREADY READ THE PREFIX
 
                         THREADmODE4rESTORE
-                        bksAccessEvents.readF( tinBaseP , *pPageEvent , hRead , flBOOKScrEAD_null ) ;
-                        pPageEvent = new( 0 , tinBaseP , LF ) pageC( tinBaseP , bksAccessEvents , cbi ) ; ___( pPageEvent ) ;
+                        bksAccessEvents.readF( tin0P , *pPageEvent , hRead , flBOOKScrEAD_null ) ;
+                        pPageEvent = new( 0 , tin0P , LF ) pageC( tin0P , bksAccessEvents , cbi ) ; ___( pPageEvent ) ;
                         THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
                         ZE( pageC* , pPageEvent ) ;
                     {
@@ -83,7 +83,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                             cbi = cbiSave ;
                         {
                         if( !pbi )
-                        bDelete = bksAccessEvents.readF( tinBaseP , pbi , cbi , hRead , flBOOKScrEAD_null , &bQuit ) ;
+                        bDelete = bksAccessEvents.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_null , &bQuit ) ;
                     {
                     if( bPrefix )
                     ZE( boolT , bDelete ) ;
@@ -111,25 +111,25 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         while( !bQuit && !bQuit2 && !POOP )
         ZE( boolT , bDestroyOutputBooks ) ;
         ZE( boolT , bQuit2 ) ;
-        handleC hRead( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
-        etThread.traceF( tinBaseP , T("search booksTogether / enering loop to read events") ) ;
+        handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
+        etThread.traceF( tin0P , T("search booksTogether / enering loop to read events") ) ;
 
         }
-            etThread.osThreadF( tinBaseP , countTC() , tmWorkerF , 0 , 0 , 0  , flTHREADlAUNCH_null , TOCK , (countT)&ws , (countT)&bksAccessEvents ) ;
+            etThread.osThreadF( tin0P , countTC() , tmWorkerF , 0 , 0 , 0  , flTHREADlAUNCH_null , TOCK , (countT)&ws , (countT)&bksAccessEvents ) ;
             inc02AM( ws.cWorkers ) ;
         {
         while( cDo -- )
         countT cDo = 0x40 ;
-        etThread.traceF( tinBaseP , T("search booksTogether / launching workers") ) ;
+        etThread.traceF( tin0P , T("search booksTogether / launching workers") ) ;
 
-        workS ws( tinBaseP , etThread ) ;
-        etThread.traceF( tinBaseP , T("search booksTogether / ct ws") ) ;
+        workS ws( tin0P , etThread ) ;
+        etThread.traceF( tin0P , T("search booksTogether / ct ws") ) ;
     {
 
     TN( tb4 , "    " ) ;
-    booksC bksAccessEvents( tinBaseP , TAG( TAGiDnULL ) , "bksAccessEvents.1.raw" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_null , 0 , 1 , 0 , 0 , 0 , 0 , &bQuit ) ;
+    booksC bksAccessEvents( tin0P , TAG( TAGiDnULL ) , "bksAccessEvents.1.raw" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_null , 0 , 1 , 0 , 0 , 0 , 0 , &bQuit ) ;
     const boolT& bQuit = *(const boolT*)&(const countT&)ether ;
-    etThread.traceF( tinBaseP , T("ct bksAccessEvents") ) ;
+    etThread.traceF( tin0P , T("ct bksAccessEvents") ) ;
 {
 
 TODO
@@ -141,25 +141,25 @@ DONE( tmWorkerF )
         }
             THREADmODE2rESTORE
             }
-                wsP.st_pPageEvent.ungrabF( tinBaseP ) ;
+                wsP.st_pPageEvent.ungrabF( tin0P ) ;
                 }
-                    wsP.st_pPageEvent.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    wsP.st_pPageEvent.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     }
                         THREADmODE4rESTORE
                         DEL( pPageEvent ) ;
                         THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
 
                         }
-                            etThread.delF( tinBaseP , psttBrowser ) ;
-                            etThread.delF( tinBaseP , psttProtocol ) ;
-                            etThread.delF( tinBaseP , psttQuery ) ;
-                            etThread.delF( tinBaseP , psttUri ) ;
-                            etThread.delF( tinBaseP , psttContainer ) ;
-                            etThread.delF( tinBaseP , psttLogBucket ) ;
-                            etThread.delF( tinBaseP , psttMethod ) ;
+                            etThread.delF( tin0P , psttBrowser ) ;
+                            etThread.delF( tin0P , psttProtocol ) ;
+                            etThread.delF( tin0P , psttQuery ) ;
+                            etThread.delF( tin0P , psttUri ) ;
+                            etThread.delF( tin0P , psttContainer ) ;
+                            etThread.delF( tin0P , psttLogBucket ) ;
+                            etThread.delF( tin0P , psttMethod ) ;
 
                             }
-                                etThread.traceF( tinBaseP , TT(timeW1,timeW2)+tb4+TF3(idMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttUri) ) ;
+                                etThread.traceF( tin0P , TT(timeW1,timeW2)+tb4+TF3(idMe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttUri) ) ;
 
                                 countT idMe = 1 + incv02AM( wsP.idInspected ) ;
 
@@ -173,7 +173,7 @@ DONE( tmWorkerF )
                                 _IO_
                             {
                             else
-                            if( getNegAM( finger ) != FINGERnEG_ACCESSeVENTrAW || idFormat != 1 ) etThread.traceF( tinBaseP , T("unexpected format [finger,idFormat]:    ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            if( getNegAM( finger ) != FINGERnEG_ACCESSeVENTrAW || idFormat != 1 ) etThread.traceF( tin0P , T("unexpected format [finger,idFormat]:    ")+TF2(finger,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idFormat,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                             sBookEntryIn >> psttBrowser ;             ___( psttBrowser ) ;
                             sBookEntryIn >> cbRequest ;
@@ -206,24 +206,24 @@ DONE( tmWorkerF )
                             ZE( countT   , finger        ) ;
 
                             }
-                                etThread.delF( tinBaseP , pbPageCopy ) ;
+                                etThread.delF( tin0P , pbPageCopy ) ;
                                 }
-                                    sBookEntryIn.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbPageCopy , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                                    sBookEntryIn.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbPageCopy , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
 
-                                    bksAccessEventsP.unlockF( tinBaseP ) ;
-                                    etThread.memCopyF( tinBaseP , pbPageCopy , pbzPage , cbzPage ) ;
+                                    bksAccessEventsP.unlockF( tin0P ) ;
+                                    etThread.memCopyF( tin0P , pbPageCopy , pbzPage , cbzPage ) ;
                                     const byteT* pbzPage = *pPageEvent ;
-                                    bksAccessEventsP.lockF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                    bksAccessEventsP.lockF( tin0P , TAG( TAGiDnULL ) ) ;
                                 {
                                 if( !POOP )
 
                                 __Z( pbPageCopy ) ;
-                                etThread.newF( tinBaseP , LF , pbPageCopy , cbzPage ) ; ___( pbPageCopy ) ;
+                                etThread.newF( tin0P , LF , pbPageCopy , cbzPage ) ; ___( pbPageCopy ) ;
                                 ZE( byteT* , pbPageCopy ) ;
 
                                 countT cbzPage = *pPageEvent ;
                             {
-                            soulC sBookEntryIn( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            soulC sBookEntryIn( tin0P , TAG( TAGiDnULL ) ) ;
                         {
                         if( !ether )
 
@@ -231,13 +231,13 @@ DONE( tmWorkerF )
                     {
                     if( pPageEvent )
 
-                    wsP.st_pPageEvent.ungrabF( tinBaseP ) ;
+                    wsP.st_pPageEvent.ungrabF( tin0P ) ;
                     wsP.st_pPageEvent >> *(countT*)&pPageEvent ;
                     ZE( pageC* , pPageEvent ) ;
                     _IO_
                 {
                 while( wsP.st_pPageEvent )
-                wsP.st_pPageEvent.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                wsP.st_pPageEvent.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                 _IO_
             {
@@ -246,10 +246,10 @@ DONE( tmWorkerF )
         {
         else
         }
-            //etThread.traceF( tinBaseP , T("napped") ) ;
-            ++ s ; etThread.osSleepF( tinBaseP , TOCK << 2 ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-            //etThread.traceF( tinBaseP , T("napping") ) ;
+            //etThread.traceF( tin0P , T("napped") ) ;
+            ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+            //etThread.traceF( tin0P , T("napping") ) ;
 
             if( ether ) break ;
         {
@@ -265,7 +265,7 @@ DONE( tmWorkerF )
     workS&  wsP              =  *(workS*)pTaskP->c1 ;
     _IO_
 
-    thirdC::c_memcpyIF( tinBaseP , (byteT*)((tin9S&)tinBaseP).ppJot , (byteT*)((tin9S*)pTaskP->pTinBaseDad)->ppJot , sizeof ((tin9S&)tinBaseP).ppJot ) ;    //U:: MOVE TO BASE (flTHREADlAUNCH)
+    thirdC::c_memcpyIF( tin0P , (byteT*)((tin9S&)tin0P).ppJot , (byteT*)((tin9S*)pTaskP->pTinBaseDad)->ppJot , sizeof ((tin9S&)tin0P).ppJot ) ;    //U:: MOVE TO BASE (flTHREADlAUNCH)
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmWorkerF )
@@ -275,8 +275,8 @@ TASK( tmWorkerF )
 idInspected( 0 )
 idIn( 0 ) ,
 cWorkers( 0 ) ,
-st_pPageEvent( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_countT ) ,
-workS::workS( tin0S& tinBaseP , etherC& etherP ) :
+st_pPageEvent( tin0P , etherP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_countT ) ,
+workS::workS( tin0S& tin0P , etherC& etherP ) :
 
 }
     TINSL
@@ -285,7 +285,7 @@ workS::~workS( voidT )
 
 ;
 }
-    workS( tin0S& tinBaseP , etherC& etherP ) ;
+    workS( tin0S& tin0P , etherC& etherP ) ;
     ~workS( voidT ) ;
 
     countT        idInspected ;

@@ -12,11 +12,11 @@ DONE( tmServePortF )
 }
     TELL( "cleaning up: final" )
     DEL( pso ) ;
-    pso->readF( tinBaseP , &bnu , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+    pso->readF( tin0P , &bnu , 1 , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
     TELL( "cleaning up: reading a byteT so client can disconnect" )
     ZE( byteT , bnu ) ;
 
-    pso->writeF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ;
+    pso->writeF( tin0P , (byteT*)&idAck , sizeof idAck ) ;
     etThread = 0 ;
     countT idAck = etThread ? ifcREPLY_NACK : ifcREPLY_ACK ;
 
@@ -32,17 +32,17 @@ DONE( tmServePortF )
             }
                 break ;
 
-                b_idProcessOldI.ungrabF( tinBaseP ) ;
+                b_idProcessOldI.ungrabF( tin0P ) ;
 
                 }
                     //U: OPTIMIZE: ELIMINATE THE WRITING OF REDUNDANT idiClass VALUES. ALT: SEND idiClass, cPort, idPort , idPort , ... FOR EACH DISTINCT idiClass
-                    else                                     pso->writeF( tinBaseP , (byteT*)pc2cp      , sizeof( count2S ) ) ;
-                    if( idCmd == ifcCMDpORTaUTHORITY_QUERY ) pso->writeF( tinBaseP , (byteT*)&pc2cp->c2 , sizeof( countT  ) ) ;
+                    else                                     pso->writeF( tin0P , (byteT*)pc2cp      , sizeof( count2S ) ) ;
+                    if( idCmd == ifcCMDpORTaUTHORITY_QUERY ) pso->writeF( tin0P , (byteT*)&pc2cp->c2 , sizeof( countT  ) ) ;
                     stc2p >> pc2cp ;
                     ZE( count2S* , pc2cp ) ;
                 {
                 while( stc2p )
-                pso->writeF( tinBaseP , (byteT*)&cPorts , sizeof cPorts ) ;
+                pso->writeF( tin0P , (byteT*)&cPorts , sizeof cPorts ) ;
                 TELL( "ifcCMDpORTaUTHORITY_QUERY ifcCMDpORTaUTHORITY_QUERYaLL: writing port authorities " )
                 countT cPorts = stc2p ;
 
@@ -50,28 +50,28 @@ DONE( tmServePortF )
                     }
                         }
                             __Z( idSlot ) ;
-                            stc2p.sinkF( tinBaseP , idSlot , pc2cp , flSTACKsINK_UNIQUE ) ;
+                            stc2p.sinkF( tin0P , idSlot , pc2cp , flSTACKsINK_UNIQUE ) ;
                             ZE( countT , idSlot ) ;
                         {
                         if( pc2cp && ( !idiClassWanted || idiClassWanted == pc2cp->c1 ) )
 
                         __Z( pc2cp ) ;
                         count2S* pc2cp = (count2S*)(countT)swc2 ;
-                        idProcessOldI = swc2.leverF( tinBaseP , idf ) ;
+                        idProcessOldI = swc2.leverF( tin0P , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                    countT cFlavors = swc2.cFlavorsF( tinBaseP ) ;
+                    countT cFlavors = swc2.cFlavorsF( tin0P ) ;
                 {
-                stackC stc2p( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count2S ) ; // WILL CONTAIN SORTED PROCESS [CLASS,PORT] PAIRS
+                stackC stc2p( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count2S ) ; // WILL CONTAIN SORTED PROCESS [CLASS,PORT] PAIRS
 
-                validateF( tinBaseP , etThread , swc2 , idProcessOldI ) ;
+                validateF( tin0P , etThread , swc2 , idProcessOldI ) ;
                 TELL( "ifcCMDpORTaUTHORITY_QUERY ifcCMDpORTaUTHORITY_QUERYaLL: validating" )
 
-                b_idProcessOldI.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                b_idProcessOldI.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                 }
                     __Z( idiClassWanted ) ;
-                    __( sizeof idiClassWanted - pso->readF( tinBaseP , (byteT*)&idiClassWanted , sizeof idiClassWanted ) ) ;
+                    __( sizeof idiClassWanted - pso->readF( tin0P , (byteT*)&idiClassWanted , sizeof idiClassWanted ) ) ;
                     TELL( "ifcCMDpORTaUTHORITY_QUERY ifcCMDpORTaUTHORITY_QUERYaLL: reading idiClassWanted" )
                 {
                 if( idCmd == ifcCMDpORTaUTHORITY_QUERY )
@@ -83,17 +83,17 @@ DONE( tmServePortF )
                 break ;
 
                 }
-                    b_idProcessOldI.ungrabF( tinBaseP ) ;
-                    etThread.delF( tinBaseP , pc2cp ) ;
-                    swc2.freeF( tinBaseP ) ;
+                    b_idProcessOldI.ungrabF( tin0P ) ;
+                    etThread.delF( tin0P , pc2cp ) ;
+                    swc2.freeF( tin0P ) ;
                     count2S* pc2cp = (count2S*)(countT)swc2 ;
                     idProcessOldI = idProcessOldIn ;
-                    b_idProcessOldI.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    b_idProcessOldI.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( !ether && !etThread )
 
                 __Z( idProcessOldIn ) ;
-                __( sizeof idProcessOldIn - pso->readF( tinBaseP , (byteT*)&idProcessOldIn , sizeof idProcessOldIn ) ) ;
+                __( sizeof idProcessOldIn - pso->readF( tin0P , (byteT*)&idProcessOldIn , sizeof idProcessOldIn ) ) ;
 
                 ZE( countT , idProcessOldIn ) ;
                 TELL( "ifcCMDpORTaUTHORITY_DELETE" )
@@ -103,7 +103,7 @@ DONE( tmServePortF )
                 break ;
 
                 }
-                    b_idProcessOldI.ungrabF( tinBaseP ) ;
+                    b_idProcessOldI.ungrabF( tin0P ) ;
                     }
                         }
                             swc2 = (countT)pc2cp ;
@@ -111,7 +111,7 @@ DONE( tmServePortF )
                             pc2cp->c1 = idiClassIn ;
                         {
                         if( pc2cp )
-                        etThread.newF( tinBaseP , LF , pc2cp ) ; ___( pc2cp ) ;
+                        etThread.newF( tin0P , LF , pc2cp ) ; ___( pc2cp ) ;
                         ZE( count2S* , pc2cp ) ;
                     {
                     if( !etThread )
@@ -119,7 +119,7 @@ DONE( tmServePortF )
                     __( (countT&)swc2 ) ;
 
                     idProcessOldI = idProcessOldIn ;
-                    b_idProcessOldI.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    b_idProcessOldI.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( !ether && !etThread )
 
@@ -128,7 +128,7 @@ DONE( tmServePortF )
                 __Z( idPortIn ) ;
                 __Z( idiClassIn ) ;
                 __Z( idProcessOldIn ) ;
-                __( sizeof c3i - pso->readF( tinBaseP , (byteT*)&c3i , sizeof c3i ) ) ;
+                __( sizeof c3i - pso->readF( tin0P , (byteT*)&c3i , sizeof c3i ) ) ;
 
                 countT& idPortIn    = c3i.c3 ;
                 countT& idiClassIn  = c3i.c2 ;
@@ -140,40 +140,40 @@ DONE( tmServePortF )
             }
                 break ;
 
-                pso->writeF( tinBaseP , (byteT*)&idProcessOldI , sizeof idProcessOldI ) ;
+                pso->writeF( tin0P , (byteT*)&idProcessOldI , sizeof idProcessOldI ) ;
                 TELL( "ifcCMDpORTaUTHORITY_NEWpROCESS: writing idProcessOldI" )
-                b_idProcessOldLast.ungrabF( tinBaseP ) ;
+                b_idProcessOldLast.ungrabF( tin0P ) ;
                 countT idProcessOldI = ++ idProcessOldLast ;
-                b_idProcessOldLast.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                b_idProcessOldLast.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
             case ifcCMDpORTaUTHORITY_NEWpROCESS :
             }
                 break ;
 
-                pso->writeF( tinBaseP , (byteT*)&idMisc , sizeof idMisc ) ;
+                pso->writeF( tin0P , (byteT*)&idMisc , sizeof idMisc ) ;
                 TELL( "ifcCMDpORTaUTHORITY_NEWiDmISC: writing idMisc" )
-                b_idMiscLast.ungrabF( tinBaseP ) ;
+                b_idMiscLast.ungrabF( tin0P ) ;
                 countT idMisc = ++ idMiscLast ;
-                b_idMiscLast.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                b_idMiscLast.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
             case ifcCMDpORTaUTHORITY_NEWiDmISC :
             }
                 break ;
-                etThread.delF( tinBaseP , psttArgs ) ;
+                etThread.delF( tin0P , psttArgs ) ;
 
-                etThread.osProcessF( tinBaseP , countTC() , countTC() , idAdam , T(psttArgs)+T(" !idKidI ")+TF1(idKidI)+T(" !idPortFaceDadI ")+TF1(idPortFaceDadI)+T(" !nicNamePaperDadI ")+TF1(nicNamePaperDadI) ) ;
+                etThread.osProcessF( tin0P , countTC() , countTC() , idAdam , T(psttArgs)+T(" !idKidI ")+TF1(idKidI)+T(" !idPortFaceDadI ")+TF1(idPortFaceDadI)+T(" !nicNamePaperDadI ")+TF1(nicNamePaperDadI) ) ;
                 TELL( "launching process" )
 
-                { countT cbi = sizeof( strokeS ) * ( CSpREFIX + csArgs ) ; __( cbi - pso->readF( tinBaseP , (byteT*)psttArgs , cbi ) ) ; }
+                { countT cbi = sizeof( strokeS ) * ( CSpREFIX + csArgs ) ; __( cbi - pso->readF( tin0P , (byteT*)psttArgs , cbi ) ) ; }
                 TELL( "ifcCMDpORTaUTHORITY_LAUNCHkIDpROCESS: reading psttArgs" )
-                etThread.newF( tinBaseP , LF , psttArgs , CSpREFIX + csArgs ) ; ___( psttArgs ) ;
+                etThread.newF( tin0P , LF , psttArgs , CSpREFIX + csArgs ) ; ___( psttArgs ) ;
                 ZE( strokeS* , psttArgs ) ;
 
-                __( processGlobal2I.cb_nicNameC_ - pso->readF( tinBaseP , (byteT*)&nicNamePaperDadI , processGlobal2I.cb_nicNameC_ ) ) ;
+                __( processGlobal2I.cb_nicNameC_ - pso->readF( tin0P , (byteT*)&nicNamePaperDadI , processGlobal2I.cb_nicNameC_ ) ) ;
                 TELL( "ifcCMDpORTaUTHORITY_LAUNCHkIDpROCESS: reading nicNamePaperDadI" )
                 nicNameC nicNamePaperDadI ;
 
-                __( sizeof c4i - pso->readF( tinBaseP , (byteT*)&c4i , sizeof c4i ) ) ;
+                __( sizeof c4i - pso->readF( tin0P , (byteT*)&c4i , sizeof c4i ) ) ;
                 TELL( "ifcCMDpORTaUTHORITY_LAUNCHkIDpROCESS: reading idKidI idAdam csArgs idPortFaceDadI" )
                 countT& idPortFaceDadI = c4i.c4 ;
                 countT& csArgs        = c4i.c3 ;
@@ -188,11 +188,11 @@ DONE( tmServePortF )
     if( !ether && !etThread )
 
     TELL( "processing idCmd" )
-    __( sizeof idCmd - pso->readF( tinBaseP , (byteT*)&idCmd , sizeof idCmd ) ) ;
+    __( sizeof idCmd - pso->readF( tin0P , (byteT*)&idCmd , sizeof idCmd ) ) ;
     TELL( "reading idCmd" )
     ZE( countT , idCmd ) ;
 
-    pso->etherF( tinBaseP , etThread ) ;
+    pso->etherF( tin0P , etThread ) ;
 
     countT&       idMiscLast      =  *(countT*)c7p1.c7 ;
     batonC&       b_idMiscLast    =  *(batonC*)c7p1.c6 ;

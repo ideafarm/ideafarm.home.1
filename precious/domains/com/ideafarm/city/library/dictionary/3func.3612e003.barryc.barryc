@@ -23,18 +23,18 @@
             __( hBitBook.cNoteF() - cBytesPerBook ) ;
 
             }
-                pBksBits->writeF( tinBaseP , hBitBookLath , &bLath , sizeof bLath ) ;
+                pBksBits->writeF( tin0P , hBitBookLath , &bLath , sizeof bLath ) ;
                 ZE( byteT , bLath ) ;
                 handle0111C hBitBookLath ;
             {
             if( idb < cBooksNeeded )
 
-            pBksBits->writeF( tinBaseP , hBitBook , 0 , 0 , 0 , 0 , flBOOKScwRITE_SETrEMAINING ) ;
+            pBksBits->writeF( tin0P , hBitBook , 0 , 0 , 0 , 0 , flBOOKScwRITE_SETrEMAINING ) ;
             handle0111C hBitBook ;
         {
         for( countT idb = 1 ; idb <= cBooksNeeded ; idb ++ )
 
-        pBksBits = new( 0 , tinBaseP , pbBksBits , sizeof pbBksBits ) booksC( tinBaseP , TAG( TAGiDnULL ) , T("barryC.")+TF2((countT)this,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tin9S&)tinBaseP).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tin9S&)tinBaseP).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , ifcIDsTATEsPACE_SCRATCH , /*flBOOKSc_LOCK |*/ flBOOKSc_DOnOTiNITIALIZEdATA | flBOOKSc_WRITER | flBOOKSc_PURGEoNcT | flBOOKSc_PURGEoNdT , cBytesPerBook + 1 , 3 ) ; // 1 EXTRA BYTE IS ALLOCATED THAT WILL NEVER BE WRITTEN TO, SO THAT CREATION OF ANOTHER BOOK IS AVOIDED
+        pBksBits = new( 0 , tin0P , pbBksBits , sizeof pbBksBits ) booksC( tin0P , TAG( TAGiDnULL ) , T("barryC.")+TF2((countT)this,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tin9S&)tin0P).osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(((tin9S&)tin0P).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) , ifcIDsTATEsPACE_SCRATCH , /*flBOOKSc_LOCK |*/ flBOOKSc_DOnOTiNITIALIZEdATA | flBOOKSc_WRITER | flBOOKSc_PURGEoNcT | flBOOKSc_PURGEoNdT , cBytesPerBook + 1 , 3 ) ; // 1 EXTRA BYTE IS ALLOCATED THAT WILL NEVER BE WRITTEN TO, SO THAT CREATION OF ANOTHER BOOK IS AVOIDED
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       //20170109@1746: ", 3" ADDED TO KEEP 3 INACTIVE AFTER INSPECTING LOG
         /*const countT*/ cBytesPerBook = 1 << expBytesPerBookP ;
 
@@ -89,7 +89,7 @@ bitsPerField( 0 ) ,
 expBytesPerCount( 0 ) ,
 expBitsPerField( expBitsPerFieldP ) ,
 pBksBits( 0 ) ,
-/*1*/barryC::barryC( tin0S& tinBaseP , const countT expBitsPerFieldP , countT cBitsIndexP , countT expBytesPerBookP ) :/*1*/
+/*1*/barryC::barryC( tin0S& tin0P , const countT expBitsPerFieldP , countT cBitsIndexP , countT expBytesPerBookP ) :/*1*/
 
 /**/
 
@@ -104,7 +104,7 @@ pBksBits( 0 ) ,
   if not 0 then must be >= 0x10
   if 0 then default is used
  expBytesPerBookP
- tinBaseP
+ tin0P
 parameters
 /*
 

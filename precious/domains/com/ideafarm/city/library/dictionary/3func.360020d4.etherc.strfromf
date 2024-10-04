@@ -9,12 +9,12 @@
 
 }
     }
-        if(    F(flagsFormatP) & flFORMAT_DIGITnAMES     ) { ___( psttP ) ; strReplaceF( tinBaseP , psttP , 0 , ifcIDtYPEsTRrEPLACE_DIGITStOdIGITnAMES , csttExtraP ) ; }
-        if( !( F(flagsFormatP) & flFORMAT_FOREIGN      ) ) { ___( psttP ) ; strReverseF( tinBaseP , psttP                                                           ) ; }
-        if(    F(flagsFormatP) & flFORMAT_SIGNcOLrIGHT   ) {                strFuseF(    tinBaseP , psttP , sttSign                                                 ) ; }
+        if(    F(flagsFormatP) & flFORMAT_DIGITnAMES     ) { ___( psttP ) ; strReplaceF( tin0P , psttP , 0 , ifcIDtYPEsTRrEPLACE_DIGITStOdIGITnAMES , csttExtraP ) ; }
+        if( !( F(flagsFormatP) & flFORMAT_FOREIGN      ) ) { ___( psttP ) ; strReverseF( tin0P , psttP                                                           ) ; }
+        if(    F(flagsFormatP) & flFORMAT_SIGNcOLrIGHT   ) {                strFuseF(    tin0P , psttP , sttSign                                                 ) ; }
 
         }
-            strFuseF( tinBaseP , psttP , psttBuf ) ; ___( psttP ) ;_WQ
+            strFuseF( tin0P , psttP , psttBuf ) ; ___( psttP ) ;_WQ
 
             }
                 else                   psttBuf[ CSpREFIX + 1 ] = S1C( '?' -  1 + radix - 62 ) ;
@@ -32,20 +32,20 @@
         {
         if( bRadixIndicator )
 
-        delF( tinBaseP , psttBigits ) ;_WQ
-        strFuseF( tinBaseP , psttP , psttBigits , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ 4 + csttExtraP ) ;_WQ
+        delF( tin0P , psttBigits ) ;_WQ
+        strFuseF( tin0P , psttP , psttBigits , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ 4 + csttExtraP ) ;_WQ
 
-        if( F(flagsFormatP) & flFORMAT_SIGNcOLlEFT ) strFuseF( tinBaseP , psttP , sttSign , 4 + csttExtraP ) ;_WQ
+        if( F(flagsFormatP) & flFORMAT_SIGNcOLlEFT ) strFuseF( tin0P , psttP , sttSign , 4 + csttExtraP ) ;_WQ
 
-        if( psttBigits ) { strMakeF( tinBaseP , LF , psttP , T("") , psttBigits->idAdam + 4 + csttExtraP ) ; }
+        if( psttBigits ) { strMakeF( tin0P , LF , psttP , T("") , psttBigits->idAdam + 4 + csttExtraP ) ; }
 
         }
             __Z( psttBigits ) ;_WQ
 
-            if( bPrependedSign && sttFill == s0 ) { strFuseF( tinBaseP , psttBigits , sttSign , 0 , 1 ) ; ___( psttBigits ) ; }
+            if( bPrependedSign && sttFill == s0 ) { strFuseF( tin0P , psttBigits , sttSign , 0 , 1 ) ; ___( psttBigits ) ; }
 
             }
-                if( psttBigits && psttBigits->idAdam < csd ) { strResizeF( tinBaseP , psttBigits , csd , sttFill , 1 , 1 ) ; ___( psttBigits ) ; }
+                if( psttBigits && psttBigits->idAdam < csd ) { strResizeF( tin0P , psttBigits , csd , sttFill , 1 , 1 ) ; ___( psttBigits ) ; }
 
                 }
                     if( bPrependedSign && sttFill == s0         ) csd -- ;_WQ
@@ -62,7 +62,7 @@
             {
             if( csP )
 
-            if( bPrependedSign && sttFill != s0 ) { strFuseF( tinBaseP , psttBigits , sttSign , 0 , 1 ) ; ___( psttBigits ) ; }
+            if( bPrependedSign && sttFill != s0 ) { strFuseF( tin0P , psttBigits , sttSign , 0 , 1 ) ; ___( psttBigits ) ; }
 
             else if( F(flagsFormatP) & flFORMAT_FILLsIGN ) sttFill = sttSign ;
                  if( F(flagsFormatP) & flFORMAT_FILLzE   ) sttFill = s0      ;
@@ -70,7 +70,7 @@
 
             }
                 }
-                    strFuseF( tinBaseP , psttBigits , stt , 0 , 1 ) ; ___( psttBigits ) ;_WQ
+                    strFuseF( tin0P , psttBigits , stt , 0 , 1 ) ; ___( psttBigits ) ;_WQ
 
                     }
                         else                  stt = '?' + digit - 62 ;
@@ -93,11 +93,11 @@
                 sCountC value( valueP ) ;
             {
             else
-            if( !( valueP > SC || *(sCountT*)*(sCountC*)&valueP ) ) { strFuseF( tinBaseP , psttBigits , s0 ) ; ___( psttBigits ) ; }
+            if( !( valueP > SC || *(sCountT*)*(sCountC*)&valueP ) ) { strFuseF( tin0P , psttBigits , s0 ) ; ___( psttBigits ) ; }
             strokeS s0 = bForeign || bNoBigitValues ? S1C( '0' ) : S2( sscDIGIT | SDBITS( cdBits ) , sc_cALPHABET1 ) ;_WQ
 
             }
-                strMakeF( tinBaseP , LF , psttBigits , 0 , cstta ) ; ___( psttBigits ) ;_WQ
+                strMakeF( tin0P , LF , psttBigits , 0 , cstta ) ; ___( psttBigits ) ;_WQ
                 if( csP != - 1 && cstta < csP ) cstta = csP ;_WQ
                 countT cstta = cBigitsMax + bPrependedSign ;_WQ
                 if( !cBigitsMax ) cBigitsMax = 1 ;
@@ -125,7 +125,7 @@
         ZE( countT , cdBits ) ; //"cDigitBits": 0-BASED: 0 MEANS 1 BIT; f MEANS 01 BITS
 
         const boolT bNoBigitValues = F(flagsFormatP) & flFORMAT_NObIGITvALUES /* || !thirdC::p WinRootIF() */ ;_WQ
-        const boolT bForeign       = !((tin9S&)tinBaseP).strokeMode.idCasteDefault ;_WQ
+        const boolT bForeign       = !((tin9S&)tin0P).strokeMode.idCasteDefault ;_WQ
 
         const boolT bRadixIndicator = radix != 16 && !( F(flagsFormatP) & flFORMAT_NObASE ) ;_WQ
 
@@ -149,11 +149,11 @@
 
         //U: OPTIMIZE: ELIMINATE THE USE OF strReverseF BY REWRITING THIS FUNCTION
 
-        sCountC bigZe( tinBaseP , *this , 0 ) ;
+        sCountC bigZe( tin0P , *this , 0 ) ;
     {
     else
     }
-        strMakeF( tinBaseP , LF , psttP , TF4(v4,flags,0,0xa)+tDot+TF4(v3,flags,0,0xa)+tDot+TF4(v2,flags,0,0xa)+tDot+TF4(v1,flags,0,0xa) ) ; // CALLER MUST TAG ___( psttP ) ;_WQ
+        strMakeF( tin0P , LF , psttP , TF4(v4,flags,0,0xa)+tDot+TF4(v3,flags,0,0xa)+tDot+TF4(v2,flags,0,0xa)+tDot+TF4(v1,flags,0,0xa) ) ; // CALLER MUST TAG ___( psttP ) ;_WQ
         flagsT flags = flFORMAT_NObIGITvALUES | flFORMAT_UNSIGNED | flFORMAT_FOREIGN | flFORMAT_NObASE ;_WQ
         TN( tDot , "." ) ;_WQ
         countT v4 = vv & 0xff ; vv >>= 8 ;_WQ
@@ -164,14 +164,14 @@
     {
     else if( F(flagsFormatP) & flFORMAT_DOTTEDdECIMAL )
     }
-        strFuseF( tinBaseP , psttP , tSuffix ) ; ___( psttP ) ;_WQ
-        strFromF( tinBaseP , psttP , valueP , flFORMAT_UNSIGNED , 0 , 0 , tSuffix.csF( tinBaseP ) + csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;_WQ
+        strFuseF( tin0P , psttP , tSuffix ) ; ___( psttP ) ;_WQ
+        strFromF( tin0P , psttP , valueP , flFORMAT_UNSIGNED , 0 , 0 , tSuffix.csF( tin0P ) + csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;_WQ
         TN( tSuffix , "@" "ideafarm.com" ) ;_WQ
     {
     else if( F(flagsFormatP) & flFORMAT_CITIZENeMAIL )
     }
-        strFuseF( tinBaseP , psttP , tSuffix ) ; ___( psttP ) ;_WQ
-        strFromF( tinBaseP , psttP , valueP , flFORMAT_DIGITnAMES | flFORMAT_UNSIGNED , 0 , 0 , tSuffix.csF( tinBaseP ) + csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;_WQ
+        strFuseF( tin0P , psttP , tSuffix ) ; ___( psttP ) ;_WQ
+        strFromF( tin0P , psttP , valueP , flFORMAT_DIGITnAMES | flFORMAT_UNSIGNED , 0 , 0 , tSuffix.csF( tin0P ) + csttExtraP ) ; // CALLER MUST TAG ___( psttP ) ;_WQ
         TN( tSuffix , "'O Ideafarm" ) ;_WQ
     {
     if( F(flagsFormatP) & flFORMAT_CITIZENnAME )
@@ -186,8 +186,8 @@
 
     }
         if( POOP ) return ;
-        __(  ((tin9S&)tinBaseP).strokeMode.idCasteDefault && radixP > 0x10000 ) ;_WQ
-        __( !((tin9S&)tinBaseP).strokeMode.idCasteDefault && radixP > 64 ) ;_WQ
+        __(  ((tin9S&)tin0P).strokeMode.idCasteDefault && radixP > 0x10000 ) ;_WQ
+        __( !((tin9S&)tin0P).strokeMode.idCasteDefault && radixP > 64 ) ;_WQ
         __( radixP && radixP < 2 ) ;_WQ
         __NZ( psttP ) ;_WQ
         if( POOP ) return ;
@@ -195,7 +195,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strFromF( tin0S& tinBaseP , strokeS*& psttP , const sCountC& valueP , const flagsT flagsFormatP , const countT csP , const countT radixP , const countT csttExtraP )/*1*/
+/*1*/voidT etherC::strFromF( tin0S& tin0P , strokeS*& psttP , const sCountC& valueP , const flagsT flagsFormatP , const countT csP , const countT radixP , const countT csttExtraP )/*1*/
 
 /**/
 */
@@ -208,8 +208,8 @@
    this would conform to the convention used for explicit radix indicators in the rendered text
    this function should have been written to use value 1 for binary, i.e. to require radixP to specify the maximum value representable by a single bigit
   example: value 2 produces binary
-  if not 0 and !!((tin9S&)tinBaseP).strokeMode.idCasteDefault then must be 2 <= radixP <= 65536_9 (00001)
-  if not 0 and  !((tin9S&)tinBaseP).strokeMode.idCasteDefault then must be 2 <= radixP <= 64_9
+  if not 0 and !!((tin9S&)tin0P).strokeMode.idCasteDefault then must be 2 <= radixP <= 65536_9 (00001)
+  if not 0 and  !((tin9S&)tin0P).strokeMode.idCasteDefault then must be 2 <= radixP <= 64_9
   if 0 then 16_9 is implied
   can be 0
  radixP

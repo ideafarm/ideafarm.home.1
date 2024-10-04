@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.delF( tinBaseP , pcWord ) ;
+etThread.delF( tin0P , pcWord ) ;
 
 }
     }
-        etThread.traceF( tinBaseP , T("[offw,idCell,idThread,idFile,idLine]:    ")+TF2(offw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF4(idLine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T("    ")+T(postTitle) ) ;
-        //etThread.traceF( tinBaseP , T("[offw,word]:    ")+TF2(offw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(pcWord[offw],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tin0P , T("[offw,idCell,idThread,idFile,idLine]:    ")+TF2(offw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF4(idLine,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T("    ")+T(postTitle) ) ;
+        //etThread.traceF( tin0P , T("[offw,word]:    ")+TF2(offw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(pcWord[offw],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         const osTextT* const postTitle = !idFile ? 0 : mapFileTitle( idFile ) + sizeof( countT ) ;
 
@@ -32,7 +32,7 @@ for( countT offw = 0 ; offw < cWords ; offw ++ )
 
 mapCTC& mapFileTitle = processGlobal4S::_processGlobal4I_IF().mapFileTitle ;
 
-countT cWords = etThread.snapWordF( tinBaseP , pcWord ) ; ___( pcWord ) ;
+countT cWords = etThread.snapWordF( tin0P , pcWord ) ; ___( pcWord ) ;
 ZE( countT* , pcWord ) ;
 
 _

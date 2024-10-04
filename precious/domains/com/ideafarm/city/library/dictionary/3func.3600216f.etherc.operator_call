@@ -12,31 +12,31 @@
         }
             break ;
             }
-                delF( tinBaseP , psttw ) ;_WQ
+                delF( tin0P , psttw ) ;_WQ
                 }
                     else       { POPUPsOIXLoLD( T("The word \"")+T(psttw)+T("\" is unknown to etherC object \"")+T(postName)+T("\".") ) ; }
-                    if( pApi ) (*pApi)( tinBaseP , *this , slP , T(postName) ) ;
+                    if( pApi ) (*pApi)( tin0P , *this , slP , T(postName) ) ;
     
                     }
-                        _pSwSoixlOldApi->ungrabF( tinBaseP ) ;_WQ
+                        _pSwSoixlOldApi->ungrabF( tin0P ) ;_WQ
                         pApi = (ifcSoixlOldApiFT)(countT)*_pSwSoixlOldApi ;_WQ
                         _psttLeverSoixlOldApi = psttw ;_WQ
-                        _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;_WQ
+                        _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;_WQ
                     {
                     ZE( ifcSoixlOldApiFT , pApi ) ;_WQ
                 {
-                else if( _pSwSoixlOldApi->idSlotOfLeverF( tinBaseP , (countT)psttw ) )
+                else if( _pSwSoixlOldApi->idSlotOfLeverF( tin0P , (countT)psttw ) )
                 }
-                    delF( tinBaseP , psttQueryWord ) ;_WQ
+                    delF( tin0P , psttQueryWord ) ;_WQ
                     }
                         POPUPsOIXLoLD( T("I, \"")+T(postName)+T("\", have placed \"")+tNameShort+T("\" onto your desk.  Read that document and then edit it to indicate what additional information you want.  Then drop it into the Depository to obtain the additional information.") ) ;_WQ
-                        boxPutF( tinBaseP , tName , tBody , tBody.csF(  tinBaseP ) ) ;_WQ
+                        boxPutF( tin0P , tName , tBody , tBody.csF(  tin0P ) ) ;_WQ
                         TN( tName , "" ) ; tName = T("///desk/")+tNameShort ;_WQ
                         TN( tNameShort , "") ; tNameShort = T("soixlOld.help.")+T(postName)+T(".")+T(psttQueryWord)+T(".txt") ;_WQ
         
-                        delF( tinBaseP , pstth ) ;_WQ
+                        delF( tin0P , pstth ) ;_WQ
                         TN( tBody , "" ) ; tBody = T(pstth) ;_WQ
-                        strReverseF( tinBaseP , pstth , T(psttzDoc) , T("\r\n") ) ; ___( pstth ) ;_WQ
+                        strReverseF( tin0P , pstth , T(psttzDoc) , T("\r\n") ) ; ___( pstth ) ;_WQ
                         ZE( strokeS* , pstth ) ;_WQ
                     {
                     else
@@ -44,13 +44,13 @@
 
                     }
                         }
-                            _pSwSoixlOldApi->ungrabF( tinBaseP ) ;_WQ
+                            _pSwSoixlOldApi->ungrabF( tin0P ) ;_WQ
                             psttzDoc = (strokeS*)(countT)*_pSwSoixlOldApiDoc ;_WQ
                             _psttLeverSoixlOldApi = psttQueryWord ;_WQ
-                            _pSwSoixlOldApi->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;_WQ
+                            _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;_WQ
                         {
                     {
-                    if( _pSwSoixlOldApiDoc && _pSwSoixlOldApiDoc->idSlotOfLeverF( tinBaseP , (countT)psttQueryWord ) )
+                    if( _pSwSoixlOldApiDoc && _pSwSoixlOldApiDoc->idSlotOfLeverF( tin0P , (countT)psttQueryWord ) )
                     ZE( strokeS* , psttzDoc ) ;_WQ
 
                     slP >> psttQueryWord ; ___( psttQueryWord ) ;_WQ
@@ -58,21 +58,21 @@
                     ZE( strokeS* , psttQueryWord ) ;_WQ
 
                     }
-                        if( _pSwSoixlOldApiDoc ) genSoixlOldWordHelpsF( tinBaseP ) ;_WQ
-                        _pSwSoixlOldApiDoc = new( 0 , tinBaseP , LF ) switchC( tinBaseP , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flSTACKc_null , _psttLeverSoixlOldApi ) ; ___( _pSwSoixlOldApiDoc ) ;_WQ
+                        if( _pSwSoixlOldApiDoc ) genSoixlOldWordHelpsF( tin0P ) ;_WQ
+                        _pSwSoixlOldApiDoc = new( 0 , tin0P , LF ) switchC( tin0P , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flSTACKc_null , _psttLeverSoixlOldApi ) ; ___( _pSwSoixlOldApiDoc ) ;_WQ
                     {
                     if( !_pSwSoixlOldApiDoc )
                 {
-                else if( !strCompareF( tinBaseP , psttw , T("??") ) )
+                else if( !strCompareF( tin0P , psttw , T("??") ) )
                 }
                     POPUPsOIXLoLD( T("I, \"")+T(postName)+T("\", have placed \"")+tNameShort+T("\" onto your desk.  Read that document and then edit it to indicate what additional information you want.  Then drop it into the Depository to obtain the additional information.") ) ;_WQ
-                    boxPutF( tinBaseP , tName , tBody , tBody.csF(  tinBaseP ) ) ;_WQ
+                    boxPutF( tin0P , tName , tBody , tBody.csF(  tin0P ) ) ;_WQ
                     TN( tName , "" ) ; tName = T("///desk/")+tNameShort ;_WQ
                     TN( tNameShort , "") ; tNameShort = T("soixlOld.help.")+T(postName)+T(".txt") ;_WQ
     
-                    delF( tinBaseP , pstth ) ;_WQ
+                    delF( tin0P , pstth ) ;_WQ
                     tBody = T(pstth) ;_WQ
-                    strReverseF( tinBaseP , pstth , tBody , T("\r\n") ) ; ___( pstth ) ;_WQ
+                    strReverseF( tin0P , pstth , tBody , T("\r\n") ) ; ___( pstth ) ;_WQ
                     ZE( strokeS* , pstth ) ;_WQ
     
                     ) ;_WQ
@@ -110,7 +110,7 @@
                     tBody = T(
                     TN( tBody , "" ) ;_WQ
                 {
-                if( !strCompareF( tinBaseP , psttw , T("?") ) )
+                if( !strCompareF( tin0P , psttw , T("?") ) )
                 slP >> psttw ; ___( psttw ) ;_WQ
                 //U::TEST FOR EMPTY HERE
                 ZE( strokeS* , psttw ) ;_WQ
@@ -118,8 +118,8 @@
             if( _pSwSoixlOldApi )
 
             }
-                if( _pSwSoixlOldApi ) genSoixlOldWordLoadsF( tinBaseP ) ;_WQ
-                _pSwSoixlOldApi = new( 0 , tinBaseP , LF ) switchC( tinBaseP , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flSTACKc_null , _psttLeverSoixlOldApi ) ; ___( _pSwSoixlOldApi ) ;_WQ
+                if( _pSwSoixlOldApi ) genSoixlOldWordLoadsF( tin0P ) ;_WQ
+                _pSwSoixlOldApi = new( 0 , tin0P , LF ) switchC( tin0P , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flSTACKc_null , _psttLeverSoixlOldApi ) ; ___( _pSwSoixlOldApi ) ;_WQ
             {
             if( !_pSwSoixlOldApi )
         {
@@ -147,7 +147,7 @@
         case ifcIDcMDbASE_INSTANCEnAME :
         }
             break ;
-            slP << (strokeS*)T(((tin9S&)tinBaseP).pag1->_etherC_.postOldClassName) ;_WQ
+            slP << (strokeS*)T(((tin9S&)tin0P).pag1->_etherC_.postOldClassName) ;_WQ
         {
         case ifcIDcMDbASE_CLASSnAME :
     {
@@ -162,7 +162,7 @@
     {
     SCOOP
 {
-/*1*/voidT etherC::operator ()( tin0S& tinBaseP , soulC& slP )/*1*/
+/*1*/voidT etherC::operator ()( tin0S& tin0P , soulC& slP )/*1*/
 
 /**/
 */

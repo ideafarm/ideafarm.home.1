@@ -10,19 +10,19 @@
 }
     return cbs ;
 
-    ether.delF( tinBaseP , pcUsage ) ;
-    ether.delF( tinBaseP , pstt1LogImpotence ) ;
-    ether.delF( tinBaseP , pstt1Log ) ;
+    ether.delF( tin0P , pcUsage ) ;
+    ether.delF( tin0P , pstt1LogImpotence ) ;
+    ether.delF( tin0P , pstt1Log ) ;
 
     }
         }
-            baton.ungrabF( tinBaseP ) ;
+            baton.ungrabF( tin0P ) ;
 
-            if( bResetP ) resetF( tinBaseP ) ;
+            if( bResetP ) resetF( tin0P ) ;
 
-            /*  + cbLogImpotence */ ether.memCopyF( tinBaseP , (byteT*)&pcc[ off ] + cbLog + cbLogImpotence , (byteT*)pcUsage           , cbUsage        ) ;
-            /*  + cbLog */          ether.memCopyF( tinBaseP , (byteT*)&pcc[ off ] + cbLog                  , (byteT*)pstt1LogImpotence , cbLogImpotence ) ;
-            /*  7 */                ether.memCopyF( tinBaseP , (byteT*)&pcc[ off ]                          , (byteT*)pstt1Log          , cbLog          ) ;
+            /*  + cbLogImpotence */ ether.memCopyF( tin0P , (byteT*)&pcc[ off ] + cbLog + cbLogImpotence , (byteT*)pcUsage           , cbUsage        ) ;
+            /*  + cbLog */          ether.memCopyF( tin0P , (byteT*)&pcc[ off ] + cbLog                  , (byteT*)pstt1LogImpotence , cbLogImpotence ) ;
+            /*  7 */                ether.memCopyF( tin0P , (byteT*)&pcc[ off ]                          , (byteT*)pstt1Log          , cbLog          ) ;
 
             /*  6 */ pcc[ off ++ ] = cbUsage ;
             /*  5 */ pcc[ off ++ ] = cbLogImpotence ;
@@ -33,11 +33,11 @@
             /*  0 */ pcc[ off ++ ] = cbs - sizeof( countT ) ;
             ZE( countT , off ) ;
 
-            baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
         if( pcc )
         countT* pcc = (countT*)pbP ;
-        ether.newF( tinBaseP , LF , pbP , cbs ) ; ___( pbP ) ;
+        ether.newF( tin0P , LF , pbP , cbs ) ; ___( pbP ) ;
 
         cbs = 7 * sizeof( countT ) + cbLog + cbLogImpotence + cbUsage ;
         countT cbUsage        = sizeof( countT  ) * ccUsage ;
@@ -54,66 +54,66 @@
     }
         }
             off += ccPart ;
-            ether.memCopyF( tinBaseP , (byteT*)&pcUsage[ off ] , (byteT*)pcPart , sizeof( countT ) * ccPart ) ;
+            ether.memCopyF( tin0P , (byteT*)&pcUsage[ off ] , (byteT*)pcPart , sizeof( countT ) * ccPart ) ;
             pcUsage[ off ++ ] = swUsage ;
-            countT ccPart = 1 + ether.strBodyLengthF( tinBaseP , pcPart ) ;
-            pcPart = (countT*)swUsage.leverF( tinBaseP , idf ) ;
+            countT ccPart = 1 + ether.strBodyLengthF( tin0P , pcPart ) ;
+            pcPart = (countT*)swUsage.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
         pcUsage[ off ++ ] = cFlavors ;
         ZE( countT , off ) ;
-        const countT cFlavors = swUsage.cFlavorsF( tinBaseP ) ;
+        const countT cFlavors = swUsage.cFlavorsF( tin0P ) ;
 
         // FORMAT OF pcUsage: FIRST countT IS cResources.  FOR EACH RESOURCE: qty , rid.  rid is null terminated.
     {
-    ether.newF( tinBaseP , LF , pcUsage , ccUsage ) ; ___( pcUsage ) ;
+    ether.newF( tin0P , LF , pcUsage , ccUsage ) ; ___( pcUsage ) ;
     ZE( countT* , pcUsage ) ;
-    countT ccUsage = ccF( tinBaseP , ether , swUsage ) ;
+    countT ccUsage = ccF( tin0P , ether , swUsage ) ;
 
-    if( !pstt1LogImpotence ) { ether.strFuseF( tinBaseP , pstt1LogImpotence , T("") ) ; ___( pstt1LogImpotence ) ; }
-    stLogImpotence.ungrabF( tinBaseP ) ;
+    if( !pstt1LogImpotence ) { ether.strFuseF( tin0P , pstt1LogImpotence , T("") ) ; ___( pstt1LogImpotence ) ; }
+    stLogImpotence.ungrabF( tin0P ) ;
     }
         while( !ether && ~handle ) ;
         }
-            if( psttl ) { ether.strFuseSeparateF( tinBaseP , pstt1LogImpotence , psttl , 0 , 0 , 0 , 0 , /*U::SOUL?*/ csNeeded ) ; ___( pstt1LogImpotence ) ; }
-            strokeS* psttl = (strokeS*)stLogImpotence.downF( tinBaseP , handle ) ;
+            if( psttl ) { ether.strFuseSeparateF( tin0P , pstt1LogImpotence , psttl , 0 , 0 , 0 , 0 , /*U::SOUL?*/ csNeeded ) ; ___( pstt1LogImpotence ) ; }
+            strokeS* psttl = (strokeS*)stLogImpotence.downF( tin0P , handle ) ;
         {
         do
 
         while( !ether && ~handle ) ;
         }
             csNeeded += CSpREFIX + ( psttl ? psttl->idAdam : 0 ) ;
-            strokeS* psttl = (strokeS*)stLogImpotence.downF( tinBaseP , handle ) ;
+            strokeS* psttl = (strokeS*)stLogImpotence.downF( tin0P , handle ) ;
         {
         do
-        handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         ZE( countT , csNeeded ) ;
     {
     if( stLogImpotence )
-    stLogImpotence.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    stLogImpotence.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( strokeS* , pstt1LogImpotence ) ;
 
-    if( !pstt1Log ) { ether.strFuseF( tinBaseP , pstt1Log , T("") ) ; ___( pstt1Log ) ; }
-    stLog.ungrabF( tinBaseP ) ;
+    if( !pstt1Log ) { ether.strFuseF( tin0P , pstt1Log , T("") ) ; ___( pstt1Log ) ; }
+    stLog.ungrabF( tin0P ) ;
     }
         while( !ether && ~handle ) ;
         }
-            if( psttl ) { ether.strFuseSeparateF( tinBaseP , pstt1Log , psttl , 0 , 0 , 0 , 0 , /*U::SOUL?*/ csNeeded ) ; ___( pstt1Log ) ; }
-            strokeS* psttl = (strokeS*)stLog.downF( tinBaseP , handle ) ;
+            if( psttl ) { ether.strFuseSeparateF( tin0P , pstt1Log , psttl , 0 , 0 , 0 , 0 , /*U::SOUL?*/ csNeeded ) ; ___( pstt1Log ) ; }
+            strokeS* psttl = (strokeS*)stLog.downF( tin0P , handle ) ;
         {
         do
 
         while( !ether && ~handle ) ;
         }
             csNeeded += CSpREFIX + ( psttl ? psttl->idAdam : 0 ) ;
-            strokeS* psttl = (strokeS*)stLog.downF( tinBaseP , handle ) ;
+            strokeS* psttl = (strokeS*)stLog.downF( tin0P , handle ) ;
         {
         do
-        handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         ZE( countT , csNeeded ) ;
     {
     if( stLog )
-    stLog.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    stLog.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( strokeS* , pstt1Log ) ;
 
     _IO_
@@ -122,7 +122,7 @@
     __NZ( pbP ) ;
     if( ether ) return 0 ;
 {
-/*1*/countT carC::soulF( tin0S& tinBaseP , byteT*& pbP , const boolT bResetP )/*1*/
+/*1*/countT carC::soulF( tin0S& tin0P , byteT*& pbP , const boolT bResetP )/*1*/
 
 /**/
 */
@@ -130,7 +130,7 @@
   this length-prefixed string of bytes contains the state information needed to reconstruct a carC object
   must not be 0
  pbP
- tinBaseP
+ tin0P
 arguments
  information is transmittable if it does not contain host-dependent information such as memory addresses
 reconstructs a carC object from transmittable state information

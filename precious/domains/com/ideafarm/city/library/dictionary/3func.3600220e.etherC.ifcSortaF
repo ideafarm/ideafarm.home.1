@@ -15,8 +15,8 @@
             }
                 pbArrayLater = pbc ;
                 }
-                    ifcSortaF( tinBaseP , bQuitP , pbArrayLater , cbArrayLater , cbSuffixP + cbKeyNow , cbPrefixLater , cbKeyLater , flagsP ) ;
-                    //traceF( tinBaseP , T("calling ifcSortaF for subrange using remainder of key") ) ;
+                    ifcSortaF( tin0P , bQuitP , pbArrayLater , cbArrayLater , cbSuffixP + cbKeyNow , cbPrefixLater , cbKeyLater , flagsP ) ;
+                    //traceF( tin0P , T("calling ifcSortaF for subrange using remainder of key") ) ;
                 {
                 if( cbArrayLater >= cbElt2 )
                 countT cbArrayLater = pbc - pbArrayLater ;
@@ -41,9 +41,9 @@
         countT cbElt2 = cbElt << 1 ;
         countT cbElt = cbPrefixP + cbKeyP + cbSuffixP ;
 
-        ifcSortaF( tinBaseP , bQuitP , pbArrayP , cbArrayP , cbSuffixP , cbPrefixNow , cbKeyNow , flagsP ) ;
+        ifcSortaF( tin0P , bQuitP , pbArrayP , cbArrayP , cbSuffixP , cbPrefixNow , cbKeyNow , flagsP ) ;
 
-        //traceF( tinBaseP , T("calling ifcSortaF for highest countT of key") ) ;
+        //traceF( tin0P , T("calling ifcSortaF for highest countT of key") ) ;
 
         countT cbPrefixLater = cbPrefixP              ;
         countT cbPrefixNow   = cbPrefixP + cbKeyLater ;
@@ -69,34 +69,34 @@
     {
     else if( cbKeyP >= sizeof( countT ) * 2 )
     }
-        if( F(flagsP) & flSORTAc_CHATTER ) traceF( tinBaseP , T("sorted  (final sort after multithreaded presort)") ) ;
+        if( F(flagsP) & flSORTAc_CHATTER ) traceF( tin0P , T("sorted  (final sort after multithreaded presort)") ) ;
         if( F(flagsP) & flSORTAc_CHATTER ) sorta.traceRangeF( pbArrayP , cbArrayP , T("result") ) ;
-        sorta.sortF( tinBaseP ) ;
-        if( F(flagsP) & flSORTAc_CHATTER ) traceF( tinBaseP , T("sorting (final sort after multithreaded presort)") ) ;
-        sortaC sorta( tinBaseP , *this , bQuitP , pbArrayP , cbArrayP , cbSuffixP , cbPrefixP , cbKeyP , 1 , 0 , flagsP ) ;
+        sorta.sortF( tin0P ) ;
+        if( F(flagsP) & flSORTAc_CHATTER ) traceF( tin0P , T("sorting (final sort after multithreaded presort)") ) ;
+        sortaC sorta( tin0P , *this , bQuitP , pbArrayP , cbArrayP , cbSuffixP , cbPrefixP , cbKeyP , 1 , 0 , flagsP ) ;
 
         }
             }
                 }
-                    thirdC::dosSleepWinkIF( tinBaseP ) ;
+                    thirdC::dosSleepWinkIF( tin0P ) ;
                 {
                 while( cPending )
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
                 }
                     pbc += cbPerWorker ;
                     osThreadF( TaRG1( tmWorkerSortaF ) , (countT)&cPending , (countT)&bQuitP , (countT)pbc , cbThis , cbSuffixP , cbPrefixP , cbKeyP , 1 , 0 , flagsP , ++ idWorkerLath ) ;
                     inc02AM( cPending ) ;
 
-                    if( F(flagsP) & flSORTAc_CHATTER ) traceF( tinBaseP , T("ifcSortaF / hiring worker [ceAll,offe,ce]:    ")+TF2(ceAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ce,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    if( F(flagsP) & flSORTAc_CHATTER ) traceF( tin0P , T("ifcSortaF / hiring worker [ceAll,offe,ce]:    ")+TF2(ceAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ce,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT ceAll  = cbArrayP / cbElt ;
                     countT ce     = cbThis / cbElt ;
                     countT offe   = ( pbc - pbArrayP ) / cbElt ;
                     countT cbThis = cDo ? cbPerWorker : cbPerWorker + cbExtra ;
 
                     //}
-                    //    thirdC::dosSleepIF( tinBaseP , TOCK << 2 ) ;
-                    //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    //    thirdC::dosSleepIF( tin0P , TOCK << 2 ) ;
+                    //    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                     //{
                 {
                 while( cDo -- )
@@ -113,14 +113,14 @@
                 countT cEltsPerWorker = cElts / cWorkers ;
                 countT cWorkers = cProcessors ;
             {
-            if( F(flagsP) & flSORTAc_CHATTER ) traceF( tinBaseP , T("ifcSortaF / hiring workers to presort subrange partitions of entire range") ) ;
+            if( F(flagsP) & flSORTAc_CHATTER ) traceF( tin0P , T("ifcSortaF / hiring workers to presort subrange partitions of entire range") ) ;
 
             }
                 }
-                    thirdC::dosSleepWinkIF( tinBaseP ) ;
+                    thirdC::dosSleepWinkIF( tin0P ) ;
                 {
                 while( cPending )
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
                 }
                     osThreadF( TaRG1( tmWorkerSortaF ) , (countT)&cPending , (countT)&bQuitP , (countT)pbArrayP , cbArrayP , cbSuffixP , cbPrefixP , cbKeyP , modulo , remainder ++ , flagsP , ++ idWorkerLath ) ;
@@ -133,9 +133,9 @@
                 countT cDo = modulo ;
                 countT modulo = cProcessors ;
             {
-            if( F(flagsP) & flSORTAc_CHATTER ) traceF( tinBaseP , T("ifcSortaF / hiring workers to presort modulo slices on entire range") ) ;
+            if( F(flagsP) & flSORTAc_CHATTER ) traceF( tin0P , T("ifcSortaF / hiring workers to presort modulo slices on entire range") ) ;
 
-            const countT cProcessors = thirdC::osProcessorsIF( tinBaseP ) ;
+            const countT cProcessors = thirdC::osProcessorsIF( tin0P ) ;
         {
         if( !( F(flagsP) & flSORTAc_NOwORKERS ) && TOCK <= cElts )
 
@@ -144,11 +144,11 @@
     {
     if( cbKeyP == sizeof( countT ) )
 
-    //traceF( tinBaseP , T("ifcSortaF / + [cbPrefixP,cbKeyP,cbSuffixP]:    ")+TF2(cbPrefixP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbKeyP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbSuffixP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //traceF( tin0P , T("ifcSortaF / + [cbPrefixP,cbKeyP,cbSuffixP]:    ")+TF2(cbPrefixP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbKeyP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbSuffixP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     //if( F(flagsP) & flSORTAc_CHATTER && ( cbSuffixP != sizeof( countT ) || cbPrefixP != sizeof( countT ) || cbKeyP != sizeof( countT ) ) ) { BLAMMO ; }    //U::  CHATTER CODE ASSUMES HARDCODED VALUES
 {
-/*1*/voidT etherC::ifcSortaF( tin0S& tinBaseP , const boolT& bQuitP , byteT* const pbArrayP , const countT cbArrayP , const countT cbSuffixP , const countT cbPrefixP , const countT cbKeyP , const flagsT flagsP )/*1*/
+/*1*/voidT etherC::ifcSortaF( tin0S& tin0P , const boolT& bQuitP , byteT* const pbArrayP , const countT cbArrayP , const countT cbSuffixP , const countT cbPrefixP , const countT cbKeyP , const flagsT flagsP )/*1*/
 
 /**/
 

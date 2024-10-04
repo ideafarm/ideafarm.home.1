@@ -10,17 +10,17 @@
                                                                                                             // (WITH IPDOS (tm), THE CODE MUST DELETE THE DROP EXPLICITLY, SO THE CODE CAN DETERMINE WHEN THAT OCCURS.)
 REST                                                                                                        // ONE CAN ALSO ARGUE THAT THIS IS A BENEFIT OF USING IPDOS (tm) RATHER THAN ANOTHER C++ ENVIRONMENT, ESPECIALLY WO THAT FEATURES GARBAGE COLLECTION, UNLESS THE GARBAGE COLLECTOR DETECTS MEMORY TRASHING AND DOES SO SOON ENOUGH TO BE BENEFICIAL
                                                                                                             // THE AVAILABILITY OF THIS DETECTION MECHANISM IS A BENEFIT OF ALLOCATING ARRAYS IN poolC DROPS RATHER THAN ON A THREAD STACK OR STATIC MEMORY OR OTHER MEMORY
-etherC::loafIF( tinBaseP ) ;                                                                                    // THIS DETECTION MECHANISM WILL WORK WELL FOR OVERFLOW OF AN ARRAY THAT RESIDES IN A poolC DROP, IF DELETION OF THE DROP IS DONE BEFORE THE TRASHED DROP(S) ARE ACCESSED
-etThread.traceF( tinBaseP , T("ok") ) ;                                                                         // IT WILL ALSO NOT BE DETECTED IF THERE ARE UNUSED BYTES ABOVE THE USED BYTES WITHIN THE SAME DROP AND ONLY THOSE UNUSED BYTES ARE TRASHED
+etherC::loafIF( tin0P ) ;                                                                                    // THIS DETECTION MECHANISM WILL WORK WELL FOR OVERFLOW OF AN ARRAY THAT RESIDES IN A poolC DROP, IF DELETION OF THE DROP IS DONE BEFORE THE TRASHED DROP(S) ARE ACCESSED
+etThread.traceF( tin0P , T("ok") ) ;                                                                         // IT WILL ALSO NOT BE DETECTED IF THERE ARE UNUSED BYTES ABOVE THE USED BYTES WITHIN THE SAME DROP AND ONLY THOSE UNUSED BYTES ARE TRASHED
                                                                                                             // NOTE: THE MEMORY TRASHING IS NOT DETECTED UNTIL pcFoo IS DELETED, WILL NOT BE DETECTED AT ALL IF pcFoo IS NOT DELETED, AND WILL ESCAPE DETECTION IF THE SEPARATOR VALUE IS NOT TRASHED
-PUSE( tinBaseP , *(byteT**)&pcFoo ) ;                                                                           // THE TRASHING OF THE NEXT SLOT'S SEPARATOR, WHICH IS SUPPOSED TO BE getNegAM( FINGERnEG_dropSeparator ), WILL BE DETECTED HERE, CAUSING A BLAMMO EXCEPTION
+PUSE( tin0P , *(byteT**)&pcFoo ) ;                                                                           // THE TRASHING OF THE NEXT SLOT'S SEPARATOR, WHICH IS SUPPOSED TO BE getNegAM( FINGERnEG_dropSeparator ), WILL BE DETECTED HERE, CAUSING A BLAMMO EXCEPTION
 
 }
     pcFoo[ offo ] = 0xbbbbbbbb ;                                                                            // WRITE TO THOSE BYTES AND CONTINUE TO TRASH SOME MEMORY ABOVE THOSE BYTES, WHICH WILL TRASH THE NEXT SLOT IN A sexC INSTANCE
 {
 for( countT offo = 0 ; offo < 8 ; offo ++ )
 
-PUSE.newF( tinBaseP , LF , *(byteT**)&pcFoo , 4 * sizeof( countT ) , flPOOLcnEW_null ) ; ___( pcFoo ) ;         // OBTAIN A poolC DROP OF REQUESTED SIZE 4 * sizeof( countT ), WHICH IS 01 BYTES ; THIS IS ALSO THE ACTUAL DROP SIZE SINCE IT IS A POWER OF 2
+PUSE.newF( tin0P , LF , *(byteT**)&pcFoo , 4 * sizeof( countT ) , flPOOLcnEW_null ) ; ___( pcFoo ) ;         // OBTAIN A poolC DROP OF REQUESTED SIZE 4 * sizeof( countT ), WHICH IS 01 BYTES ; THIS IS ALSO THE ACTUAL DROP SIZE SINCE IT IS A POWER OF 2
 ZE( countT* , pcFoo ) ;
 
 TODO

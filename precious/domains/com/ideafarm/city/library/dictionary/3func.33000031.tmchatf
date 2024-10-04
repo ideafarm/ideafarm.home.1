@@ -10,9 +10,9 @@
 DONE( tmChatF )
 }
     TELL( "cleaning up" )
-    sgnDone_tmRegisterPort.waitF( tinBaseP ) ;
+    sgnDone_tmRegisterPort.waitF( tin0P ) ;
     TELL( "waiting for sgnDone_tmRegisterPort" )
-    etThread.ifcDrivenServerF( tinBaseP , i1 , i2 ) ;
+    etThread.ifcDrivenServerF( tin0P , i1 , i2 ) ;
     serverInfo2S i2( idPortHint , flSOCKETc_null , T("[tmChatF]") , 0 , (countT)&c4p_tmcChat , 0 , - 1 , 0 ) ;
     serverInfo1S i1( 0 , 0 , bHandedOffNU , sgnIdPortReplaced , tmcChatF , idPort , ether , time1idleTimeoutRead , time1idleTimeoutWrite ) ;
     ZE( countT , time1idleTimeoutWrite ) ;
@@ -29,9 +29,9 @@ DONE( tmChatF )
     // IF A NONDEFAULT HANDLER IS SPECIFIED, THIS cArg WILL BE cArgAdamDef
     // tmcChatF's cArg MUST ALWAYS CONTAIN THE ADDRESS OF A count3S CONTAINING chatHandlerF cArg idAdamHandling
 
-    etThread.osThreadF( tinBaseP , countTC() , tmRegisterPortF , &sgnDone_tmRegisterPort , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnIdPortReplaced , (countT)&idPort , (countT)&sgnRegistered ) ;
-    signC sgnDone_tmRegisterPort( tinBaseP , TAG( TAGiDnULL ) ) ;
-    signC sgnIdPortReplaced( tinBaseP , TAG( TAGiDnULL ) ) ;
+    etThread.osThreadF( tin0P , countTC() , tmRegisterPortF , &sgnDone_tmRegisterPort , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnIdPortReplaced , (countT)&idPort , (countT)&sgnRegistered ) ;
+    signC sgnDone_tmRegisterPort( tin0P , TAG( TAGiDnULL ) ) ;
+    signC sgnIdPortReplaced( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , idPort ) ;
 
     if( !jobHearOrderF  ) jobHearOrderF  = jobHearOrderDfltF  ;

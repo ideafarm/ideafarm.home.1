@@ -10,25 +10,25 @@
 REST
 
 }
-    //etThread.traceF( tinBaseP , T("napped  for 20 minutes") ) ;
-    ////etThread.osSleepF( tinBaseP , TICK ) ;
+    //etThread.traceF( tin0P , T("napped  for 20 minutes") ) ;
+    ////etThread.osSleepF( tin0P , TICK ) ;
     //Sleep( 1000 * 60 * 20 ) ;
-    //etThread.traceF( tinBaseP , T("napping for 20 minutes") ) ;
+    //etThread.traceF( tin0P , T("napping for 20 minutes") ) ;
     //REMOVE IN PRODUCTION; THIS IS TO FACILITATE DEVELOPMENT OF SERVICE QUIT QUALITY
 
     }
-        //etThread.traceF( tinBaseP , T("cleaning up") ) ;
+        //etThread.traceF( tin0P , T("cleaning up") ) ;
         //U:: }
-        //U::     etThread.delF( tinBaseP , psttDriverName ) ;
+        //U::     etThread.delF( tin0P , psttDriverName ) ;
         //U::     }
         //U::         if( POOP ) POOPR
-        //U::         ((thirdC&)*((tin9S&)tinBaseP).pEtScratch).osDriverUnregisterF( tinBaseP , T(psttDriverName) ) ;
+        //U::         ((thirdC&)*((tin9S&)tin0P).pEtScratch).osDriverUnregisterF( tin0P , T(psttDriverName) ) ;
         //U::         SCOOPS
         //U::     {
         //U::     IFsCRATCH
-        //U::     etThread.osDriverNameFromMasterF( tinBaseP , psttDriverName , DDNUMB ) ; ___( psttDriverName ) ;
+        //U::     etThread.osDriverNameFromMasterF( tin0P , psttDriverName , DDNUMB ) ; ___( psttDriverName ) ;
         //U::     ZE( strokeS* , psttDriverName ) ;
-        //U::     buildRemovalUtilityF( tinBaseP , etThread ) ; //U::DOES NOT WORK
+        //U::     buildRemovalUtilityF( tin0P , etThread ) ; //U::DOES NOT WORK
         //U:: {
         //U:: if( !bKeep )
     
@@ -36,50 +36,50 @@ REST
         WAITuNTILaLMOSTaLONE( 0 )
         bQuitConsole = 1 ;
         //CONoUTrAW( "firing console\r\n" ) ;
-        //etThread.traceF( tinBaseP , T("firing console") ) ;
+        //etThread.traceF( tin0P , T("firing console") ) ;
 
         }    
             DELzOMBIE( pms ) ;
             memorySpaceS* pms = &memorySpaceGlass2 ;
             //CONoUTrAW( "glass2 is gone\r\n" ) ;
             WAITuNTILaLMOSTaLONE( 1 )
-            memorySpaceGlass2.sgnDone_tmEatTelemetrySysF_.waitF( tinBaseP ) ;
+            memorySpaceGlass2.sgnDone_tmEatTelemetrySysF_.waitF( tin0P ) ;
             bQuitConsole = memorySpaceGlass2.bQuitMonitor = memorySpaceGlass2.bQuitEating = 1 ;
             memorySpaceS& memorySpaceGlass2 = *(memorySpaceS*)&(countT&)swMemorySpace ;
             cLeverIdMemory = ifcIDmEMORYsPACE_GLASS2 ;
             thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_SUPPRESStELLS ; //RACE: A THREAD MIGHT HAVE ALREADY INSPECTED THE FLAGS BUT NOT YET WRITTEN TO THE MONITOR; THE CONSEQUENCE IS THAT SOME MESSAGES AREN'T PULLED;  THIS IS AOK AS LONG AS THE QUEUE ISN'T FILLED
             //CONoUTrAW( "firing glass2\r\n" ) ;
         {
-        etThread.traceF( tinBaseP , T("firing my queue monitor") ) ;
+        etThread.traceF( tin0P , T("firing my queue monitor") ) ;
 
         bChatterIf = 0 ;
 
         //Sleep( 1000 * 60 * 60 ) ;
-        //etThread.traceF( tinBaseP , T("TO TEST:sleeping forever before firing my queue monitor") ) ;
+        //etThread.traceF( tin0P , T("TO TEST:sleeping forever before firing my queue monitor") ) ;
     
         WAITuNTILaLMOSTaLONE( 3 )
         //20230905@1448: 3 <- 2 (NEEDED.  PROBABLY DUE TO ADDITION OF tmChatterF)
         //CONoUTrAW( "waiting for all threads other than console and glass2 to go away\r\n" ) ;
-        etThread.traceF( tinBaseP , T("waiting for all threads other than those for the queue monitor for me and below me and console to finish") ) ;
+        etThread.traceF( tin0P , T("waiting for all threads other than those for the queue monitor for me and below me and console to finish") ) ;
     
         THREADmODE2rESTORE
         YELL( "monitoring of every space above mine has ended" ) ;
         THREADmODE2oN( flTHREADmODE2_YELL )
-        etThread.traceF( tinBaseP , T("all queue monitors above mine are gone") ) ;
+        etThread.traceF( tin0P , T("all queue monitors above mine are gone") ) ;
     
         }
             }
                 }
                     DELzOMBIE( pms ) ;
                     memorySpaceS* pms = &memorySpace ;
-                    //etThread.traceF( tinBaseP , T("monitor is dead [idMemory]:    ")+TF2(idMemory,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-                    memorySpace.sgnDone_tmEatTelemetrySysF_.waitF( tinBaseP ) ;
-                    //etThread.traceF( tinBaseP , T("waiting for monitor to die [idMemory]:    ")+TF2(idMemory,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                    //etThread.traceF( tin0P , T("monitor is dead [idMemory]:    ")+TF2(idMemory,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                    memorySpace.sgnDone_tmEatTelemetrySysF_.waitF( tin0P ) ;
+                    //etThread.traceF( tin0P , T("waiting for monitor to die [idMemory]:    ")+TF2(idMemory,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                 {
                 else
                 }
                     memorySpace.bQuitMonitor = memorySpace.bQuitEating = 1 ;
-                    //etThread.traceF( tinBaseP , T("firing monitor [idMemory]:    ")+TF2(idMemory,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                    //etThread.traceF( tin0P , T("firing monitor [idMemory]:    ")+TF2(idMemory,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                 {
                 if( idPass == 1 )
 
@@ -90,12 +90,12 @@ REST
                 if( idMemory == ifcIDmEMORYsPACE_GLASS2                                                  ) continue ;   // DONE LATER
             {
             for( countT idMemory = idmMax ; idMemory >= idmMin ; idMemory -- )
-            etThread.traceF( tinBaseP , T(idPass==1?"all adams have been fired and have died ; firing the queue monitors above mine":"waiting for all queue monitors above mine to die") ) ;
+            etThread.traceF( tin0P , T(idPass==1?"all adams have been fired and have died ; firing the queue monitors above mine":"waiting for all queue monitors above mine to die") ) ;
         {
         for( countT idPass = 1 ; idPass <= 2 ; idPass ++ )
 
-        sgnDone_tmFireAllF_.waitF( tinBaseP ) ;
-        //etThread.traceF( tinBaseP , T("waiting for fire all thread to finish") ) ;
+        sgnDone_tmFireAllF_.waitF( tin0P ) ;
+        //etThread.traceF( tin0P , T("waiting for fire all thread to finish") ) ;
     
         //}
         //    }
@@ -103,54 +103,54 @@ REST
         //        }
         //            }
         //                else                { DEL( pso ) ; }
-        //                if( !ether && pso ) etThread.osThreadF( tinBaseP , countTC() , tmcMonitorServerF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&cLeverIdMemory , (countT)&swMemorySpace ) ;
+        //                if( !ether && pso ) etThread.osThreadF( tin0P , countTC() , tmcMonitorServerF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , (countT)&cLeverIdMemory , (countT)&swMemorySpace ) ;
         //
-        //                etRock.traceF( tinBaseP , T("main: called  acceptF for sListen") ) ;
-        //                sListen.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ;
-        //                etRock.traceF( tinBaseP , T("main: calling acceptF for sListen") ) ;
+        //                etRock.traceF( tin0P , T("main: called  acceptF for sListen") ) ;
+        //                sListen.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ;
+        //                etRock.traceF( tin0P , T("main: calling acceptF for sListen") ) ;
         //                ZE( countT , idPortPeer ) ;
         //                nicNameC nnPeer ;
         //                ZE( socketC* , pso ) ;
         //            {
         //            while( !POOP && !etThread && !ether )
-        //            sListen.listenF( tinBaseP ) ;
+        //            sListen.listenF( tin0P ) ;
         //        {
         //        else
         //        }
-        //            etThread.loafIF( tinBaseP ) ;
+        //            etThread.loafIF( tin0P ) ;
         //            POOPR
         //        {
         //        if( POOP )
         //
         //        //LOGrAW3( "home.idPortGlass2: " , home.idPortGlass2 , "\r\n" ) ;
-        //        etRock.traceF( tinBaseP , T("main: sListen bound to port ")+TF2(home.idPortGlass2,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-        //        home.idPortGlass2 = sListen.bindF( tinBaseP ) ;
+        //        etRock.traceF( tin0P , T("main: sListen bound to port ")+TF2(home.idPortGlass2,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+        //        home.idPortGlass2 = sListen.bindF( tin0P ) ;
         //        homeS& home = homeS::homeIF() ;
-        //        socketC sListen( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        //        socketC sListen( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
         //        SCOOPSnEW
         //    {
         //    IFsCRATCH
-        //    etThread.traceF( tinBaseP , T("listening for clients") ) ;
+        //    etThread.traceF( tin0P , T("listening for clients") ) ;
         //{
         //if( !ether )
         //U::TO FIND A BUG
     
         //etThread.osThreadF( TaRG1( tmHooF ) , (countT)&grabHoo , 1 ) ;
         //etThread.osThreadF( TaRG1( tmHooF ) , (countT)&grabHoo ) ;
-        //grabC grabHoo( tinBaseP , TAG( TAGiDnULL ) ) ;
-        //etThread.traceF( tinBaseP , T("launching grabC zombie threads") ) ;
+        //grabC grabHoo( tin0P , TAG( TAGiDnULL ) ) ;
+        //etThread.traceF( tin0P , T("launching grabC zombie threads") ) ;
         
         //etThread.osThreadF( TaRG1( tmGooF ) , (countT)&grabitFoo2 , (countT)&grabitFoo1 ) ;
         //etThread.osThreadF( TaRG1( tmGooF ) , (countT)&grabitFoo1 , (countT)&grabitFoo2 ) ;
-        //grabitC grabitFoo2( tinBaseP , TAG( TAGiDnULL ) , (byteT*)0 , 0 , 0 , 0 , flGRABITc_SUPPRESScTdT ) ;
-        //grabitC grabitFoo1( tinBaseP , TAG( TAGiDnULL ) , (byteT*)0 , 0 , 0 , 0 , flGRABITc_SUPPRESScTdT ) ;
-        //etThread.traceF( tinBaseP , T("launching grabitC deadlocker threads") ) ;
+        //grabitC grabitFoo2( tin0P , TAG( TAGiDnULL ) , (byteT*)0 , 0 , 0 , 0 , flGRABITc_SUPPRESScTdT ) ;
+        //grabitC grabitFoo1( tin0P , TAG( TAGiDnULL ) , (byteT*)0 , 0 , 0 , 0 , flGRABITc_SUPPRESScTdT ) ;
+        //etThread.traceF( tin0P , T("launching grabitC deadlocker threads") ) ;
         
         //etThread.osThreadF( TaRG1( tmFooF ) , (countT)&grabFoo2 , (countT)&grabFoo1 ) ;
         //etThread.osThreadF( TaRG1( tmFooF ) , (countT)&grabFoo1 , (countT)&grabFoo2 ) ;
-        //grabC grabFoo2( tinBaseP , TAG( TAGiDnULL ) ) ;
-        //grabC grabFoo1( tinBaseP , TAG( TAGiDnULL ) ) ;
-        //etThread.traceF( tinBaseP , T("launching grabC deadlocker threads") ) ;
+        //grabC grabFoo2( tin0P , TAG( TAGiDnULL ) ) ;
+        //grabC grabFoo1( tin0P , TAG( TAGiDnULL ) ) ;
+        //etThread.traceF( tin0P , T("launching grabC deadlocker threads") ) ;
 
           etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 3 ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidZombie , bConsoleP , (countT)&bKidsSuspended ) ;
         //etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 2 ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidZombie , bConsoleP , (countT)&bKidsSuspended ) ;
@@ -161,10 +161,10 @@ REST
         //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 1 ) , (countT)&bKidsSuspended ) ;
         //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 0 ) , (countT)&bKidsSuspended ) ;
         ZE( boolT , bKidsSuspended ) ;
-        signC sgnDone_tmFireAllF_( tinBaseP , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC2 ) ;
-        //etThread.osThreadF( tinBaseP , countTC() , tmKillYourselfImmediatelyF ) ;
-        //etThread.osThreadF( tinBaseP , countTC() , tmTestImpotenceF ) ;
-        //etThread.traceF( tinBaseP , T("launching ancillary threads") ) ;
+        signC sgnDone_tmFireAllF_( tin0P , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC2 ) ;
+        //etThread.osThreadF( tin0P , countTC() , tmKillYourselfImmediatelyF ) ;
+        //etThread.osThreadF( tin0P , countTC() , tmTestImpotenceF ) ;
+        //etThread.traceF( tin0P , T("launching ancillary threads") ) ;
 
         }
             }
@@ -188,43 +188,43 @@ REST
                 pcArg[ 0x2 ] = (countT)&cLeverIdMemory ;
                 pcArg[ 0x1 ] = idMemory ;
                 pcArg[ 0x0 ] = (countT)&memorySpace.bQuitEating ;
-                etThread.newF( tinBaseP , LF , pcArg , 0xf ) ; ___( pcArg ) ;   //CS:CODEsYNC: 510004fb.1 510004fb.1
+                etThread.newF( tin0P , LF , pcArg , 0xf ) ; ___( pcArg ) ;   //CS:CODEsYNC: 510004fb.1 510004fb.1
                 ZE( countT* , pcArg ) ;
 
-                swMemorySpace.ungrabF( tinBaseP ) ;
-                memorySpaceS& memorySpace = *new( 0 , tinBaseP , pbms , sizeof( memorySpaceS ) ) memorySpaceS( tinBaseP , etThread ) ;
+                swMemorySpace.ungrabF( tin0P ) ;
+                memorySpaceS& memorySpace = *new( 0 , tin0P , pbms , sizeof( memorySpaceS ) ) memorySpaceS( tin0P , etThread ) ;
                 byteT* pbms = (byteT*)&(countT&)swMemorySpace ;
                 cLeverIdMemory = idMemory ;
-                swMemorySpace.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                swMemorySpace.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                 if( idMemory >= ifcIDmEMORYsPACE_RESERVEDmIN && idMemory <= ifcIDmEMORYsPACE_RESERVEDmAX ) continue ;   //CS:CODEsYNC: 510004fb 510004fb
             {
             for( countT idMemory = idmMin ; idMemory <= idmMax ; idMemory ++ )
             countT idMinuteZe = timeN1 >> 0x16 ;    // 8:TUCK 01:TOCK 81:TICK 61:MINUTE(QUARTERTICK)
-            etThread.osTimeNowF( tinBaseP ,  timeN1 , timeN2 ) ;
+            etThread.osTimeNowF( tin0P ,  timeN1 , timeN2 ) ;
             ZE( sCountT , timeN2 ) ;
             ZE( countT  , timeN1 ) ;
         {
         TN( tEvent , "" ) ;
-        stackC stOsPidZombie( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE , ifcSTACKtYPE_countT ) ;
-        stackC stOsPid(       tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE , ifcSTACKtYPE_countT ) ;
+        stackC stOsPidZombie( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE , ifcSTACKtYPE_countT ) ;
+        stackC stOsPid(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE , ifcSTACKtYPE_countT ) ;
         ZE( countT , osTidEvent ) ;
         ZE( countT , osPidEvent ) ;
-        batonC bCompileReport( tinBaseP , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS ) ;
-        switchC swMemorySpace( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLeverIdMemory , 0 , sizeof( memorySpaceS ) ) ;
+        batonC bCompileReport( tin0P , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS ) ;
+        switchC swMemorySpace( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLeverIdMemory , 0 , sizeof( memorySpaceS ) ) ;
         osTextT postSnapShotRequest[ TUCK ] = "" ;
         ZE( flagsT , fliPendingSnapShotRequest ) ;
         ZE( countT , cHamburgers ) ;
         ZE( countT , cLeverIdMemory ) ;
         ZE( boolT , bQuitConsole ) ;
-        //etThread.traceF( tinBaseP , T("launching telemetry eater threads") ) ;
+        //etThread.traceF( tin0P , T("launching telemetry eater threads") ) ;
 
           etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 3 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
         //etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 2 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
         //etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 1 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
         ZE( boolT , bChatter ) ;
         boolT bChatterIf = 1 ;
-        //etThread.traceF( tinBaseP , T("launching chatter thread") ) ;
+        //etThread.traceF( tin0P , T("launching chatter thread") ) ;
     {
     if( !ether )
 
@@ -235,70 +235,70 @@ REST
     //const countT idmMin = ifcIDmEMORYsPACE_GLASS1 ;
 
     }
-        etThread.osDriverRemoveOldF( tinBaseP , DDNUMB ) ;
-        unregisterObsoleteDriversF( tinBaseP , etThread , DDNUMB ) ;
+        etThread.osDriverRemoveOldF( tin0P , DDNUMB ) ;
+        unregisterObsoleteDriversF( tin0P , etThread , DDNUMB ) ;
     {
     if( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_DRIVER ) //WILL FAIL IF I AM HIRED AT THE COMMAND LINE
-    const countT cKidsAtStart = ((tin9S&)tinBaseP).cKidThreads ;
-    //etThread.traceF( tinBaseP , T("removing obsolete drivers") ) ;
+    const countT cKidsAtStart = ((tin9S&)tin0P).cKidThreads ;
+    //etThread.traceF( tin0P , T("removing obsolete drivers") ) ;
     
     //U::__( etherC::ifc_idHomeI_IF() - etherC::ifc_idHomeIdisk_IF() ) ; // THE LOW idHomeG VALUES ARE RESERVED FOR USE BY ME; IT IS ILLEGAL TO LAUNCH AN ADAM FROM THE BASE OS CONSOLE WITHOUT SPECIFYING A HIGH !idHome VALUE (HIGH BIT SET)
     
     }
-        etThread.delF( tinBaseP , psttSetting ) ;
+        etThread.delF( tin0P , psttSetting ) ;
         bKeep = !!psttSetting ;
         GETsETTING( etThread , psttSetting , T("keep") )
     {
-    //etThread.traceF( tinBaseP , T("looking for the keep setting file") ) ;
+    //etThread.traceF( tin0P , T("looking for the keep setting file") ) ;
     ZE( boolT , bKeep ) ;
-    //if( IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 != etThread.diskIdF( tinBaseP , T("///c") ) )
+    //if( IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 != etThread.diskIdF( tin0P , T("///c") ) )
     //U::DO THIS IFF I AM ALONE (I MIGHT HAVE JUST BEEN FIRED BY A NEWER INSTANCE OF MYSELF
 
     }
-        //etThread.delF( tinBaseP , psttSetting ) ;
+        //etThread.delF( tin0P , psttSetting ) ;
         /*if( psttSetting )*/ homeS::homeIF().flags |= flHOMEs_FIREoSoNuNHANDLEDeXCEPTION ;
         //GETsETTING( etThread , psttSetting , T("reboot") )
         //20190812@1949: UNCONDITIONALLY SET THIS FLAG
     {
-    //etThread.traceF( tinBaseP , T("looking for the reboot setting file") ) ;
+    //etThread.traceF( tin0P , T("looking for the reboot setting file") ) ;
 
-    //stateS state( tinBaseP , etThread ) ;
+    //stateS state( tin0P , etThread ) ;
 {
 if( !ether )
 
 //thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_GRABoNLYwO ;
-etherC& etRock = etherC::etRockIF( tinBaseP ) ;
+etherC& etRock = etherC::etRockIF( tin0P ) ;
 
 //}
-//    etThread.delF( tinBaseP , postBody ) ;
-//    etThread.traceF( tinBaseP , T("called boxGetShadowF") ) ;
-//    etThread.boxGetShadowF( tinBaseP , postBody , costBody , T("////factory9/x/archive/2099/!ideafarm.8.2.00000000.00000001.20990018@0001.20190620@1125.001.6a585f340146ddf3075177c29b293bab.00000001.data.png") , 1 ) ;
-//    etThread.traceF( tinBaseP , T("calling boxGetShadowF") ) ;
-//    //((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postBody , costBody , T("////factory9/x/archive/1999/!ideafarm.8.2.00000000.00000001.00000000@0000.20170131@0012.001.2a24e441984f7650ef8982bc85155e1c.00000001.data.jpg") , 1 ) ;
+//    etThread.delF( tin0P , postBody ) ;
+//    etThread.traceF( tin0P , T("called boxGetShadowF") ) ;
+//    etThread.boxGetShadowF( tin0P , postBody , costBody , T("////factory9/x/archive/2099/!ideafarm.8.2.00000000.00000001.20990018@0001.20190620@1125.001.6a585f340146ddf3075177c29b293bab.00000001.data.png") , 1 ) ;
+//    etThread.traceF( tin0P , T("calling boxGetShadowF") ) ;
+//    //((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , postBody , costBody , T("////factory9/x/archive/1999/!ideafarm.8.2.00000000.00000001.00000000@0000.20170131@0012.001.2a24e441984f7650ef8982bc85155e1c.00000001.data.jpg") , 1 ) ;
 //    ZE( countT   , costBody ) ;
 //    ZE( osTextT* , postBody ) ;
 //{
 //U::TO FIND A BUG
 
-//ether.traceF( tinBaseP , T("initializing IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System") ) ;
-//ether.osSleepF( tinBaseP , TICK >> 2 ) ;
-//etThread.traceF( tinBaseP , T("napping for a quarter tick to enable base o.s. to finish initializing") ) ;
+//ether.traceF( tin0P , T("initializing IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System") ) ;
+//ether.osSleepF( tin0P , TICK >> 2 ) ;
+//etThread.traceF( tin0P , T("napping for a quarter tick to enable base o.s. to finish initializing") ) ;
 //etThread.osThreadF( TaRG1( tmCloakF ) ) ;
 //U:: ENABLE THIS WHEN ROCK SOLID ENOUGH TO LAUNCH EARLY RATHER THAN DELAYED
 
-//etRock.traceF( tinBaseP , T("TODO / i just called TRACEmYtHREAD") ) ; //U:: TO FIND A BUG
+//etRock.traceF( tin0P , T("TODO / i just called TRACEmYtHREAD") ) ; //U:: TO FIND A BUG
 //TRACEmYtHREAD ;
 
 }
     }
-        etThread.traceF( tinBaseP , T("netsh / opening port 64222_9 for outgoing [bFail]:    ")+TF2(bFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tin0P , T("netsh / opening port 64222_9 for outgoing [bFail]:    ")+TF2(bFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         bFail = system( "netsh advfirewall firewall add rule name=\"IPDOS (tm) Udp Echo Outgoing\" dir=out action=allow description=\"Allows IPDOS (tm) homes to communicate even through NAT and incoming firewalls.\" profile=any localport=64222 protocol=udp > nul" ) ;
     {
     if( bFail ) 
     bFail = system( "netsh advfirewall firewall show rule name=\"IPDOS (tm) Udp Echo Outgoing\" > nul" ) ;
 
     }
-        etThread.traceF( tinBaseP , T("netsh / opening port 64222_9 for incoming [bFail]:    ")+TF2(bFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tin0P , T("netsh / opening port 64222_9 for incoming [bFail]:    ")+TF2(bFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         bFail = system( "netsh advfirewall firewall add rule name=\"IPDOS (tm) Udp Echo Incoming\" dir=in  action=allow description=\"Allows IPDOS (tm) homes to communicate even through NAT and incoming firewalls.\" profile=any localport=64222 protocol=udp > nul" ) ;
     {
     if( bFail ) 
@@ -317,11 +317,11 @@ if( !bConsoleP )
             break ;
             bConsoleP = 1 ;
         {
-        if( !etThread.strCompareF( tinBaseP , psttc1 , tHeyConsole ) )
-        etThread.traceF( tinBaseP , T("param: ")+T(psttc1) ) ;
+        if( !etThread.strCompareF( tin0P , psttc1 , tHeyConsole ) )
+        etThread.traceF( tin0P , T("param: ")+T(psttc1) ) ;
     {
     FORsTRINGSiN1( pstt1Param )
-    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
+    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
 {
 TN( tHeyConsole , "!console" ) ;
 ZE( boolT , bConsoleP ) ;

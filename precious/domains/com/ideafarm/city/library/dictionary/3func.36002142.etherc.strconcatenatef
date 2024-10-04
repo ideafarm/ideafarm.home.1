@@ -11,16 +11,16 @@
     return bSOS ;
     if( psttP && psttP->idAdam && psttP[ CSpREFIX ].idCaste == sc_PREFIXlENGTH ) bSOS = 1 ;
 
-    if( bDelete ) delF( tinBaseP , (strokeS*&)pstt1P ) ;
+    if( bDelete ) delF( tin0P , (strokeS*&)pstt1P ) ;
     }
         }
-            if( psttDelimiterP && -- cIn ) strFuseF( tinBaseP , psttP , psttDelimiterP ) ;
+            if( psttDelimiterP && -- cIn ) strFuseF( tin0P , psttP , psttDelimiterP ) ;
             #include "\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\snip\1snip.19000010.strConcatenateF_woSnip.h"
         {
         FORsTRINGSiN1( (strokeS*)pstt1P )
         ZE( boolT , bNullLag ) ;
         TN( tNull , "" ) ; tNull = T("") + S2( (countT)0 , sc_NULL ) ;
-        strMakeF( tinBaseP , LF , psttP , T("") , csttValue + csttExtraP ) ; //CALLER MUST TAG ___( psttP ) ;
+        strMakeF( tin0P , LF , psttP , T("") , csttValue + csttExtraP ) ; //CALLER MUST TAG ___( psttP ) ;
 
         }
             if( psttDelimiterP ) csttValue += ( cIn - 1 ) * psttDelimiterP->idAdam ;
@@ -37,7 +37,7 @@
     {
     else
     }
-        strMakeF( tinBaseP , LF , psttP , pstt1P , csttExtraP ) ; //CALLER MUST TAG ___( psttP ) ;
+        strMakeF( tin0P , LF , psttP , pstt1P , csttExtraP ) ; //CALLER MUST TAG ___( psttP ) ;
     {
     if( !pstt1P->idAdam || pstt1P[ CSpREFIX ].idCaste != sc_PREFIXlENGTH )
     ZE( countT , cMarks ) ; //NOT RETURNED IN THIS OVERLOAD (U::THE HIGH ORDER BIT COULD BE USED FOR bSOS, OR A countT& PARAMETER)
@@ -52,8 +52,8 @@
     ZE( boolT , bDelete ) ;
 
     const boolT  bSeparate = !!( F(flagsP) & flSTRcONCATENATE_SEPARATE ) ;
-    const countT cExclude = pczIdCasteExcludeP ? thirdC::c_strlenIF( tinBaseP , pczIdCasteExcludeP ) : 0 ;
-    const countT cInclude = pczIdCasteIncludeP ? thirdC::c_strlenIF( tinBaseP , pczIdCasteIncludeP ) : 0 ;
+    const countT cExclude = pczIdCasteExcludeP ? thirdC::c_strlenIF( tin0P , pczIdCasteExcludeP ) : 0 ;
+    const countT cInclude = pczIdCasteIncludeP ? thirdC::c_strlenIF( tin0P , pczIdCasteIncludeP ) : 0 ;
 
     _IO_
 
@@ -67,7 +67,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT etherC::strConcatenateF( tin0S& tinBaseP , strokeS*& psttP , const strokeS* pstt1P , const strokeS* const psttDelimiterP , const flagsT flagsP , const countT* const pczIdCasteIncludeP , const countT* const pczIdCasteExcludeP , const countT csttExtraP )/*1*/
+/*1*/boolT etherC::strConcatenateF( tin0S& tin0P , strokeS*& psttP , const strokeS* pstt1P , const strokeS* const psttDelimiterP , const flagsT flagsP , const countT* const pczIdCasteIncludeP , const countT* const pczIdCasteExcludeP , const countT csttExtraP )/*1*/
 
 /**/
 */
@@ -86,7 +86,7 @@
  pstt1P
   must be 0
  psttP
- tinBaseP
+ tin0P
 arguments
 if psttP is a simple string then i just copy the string
 i evaluate to 1 iff the resulting psttP is (still) a string of strings

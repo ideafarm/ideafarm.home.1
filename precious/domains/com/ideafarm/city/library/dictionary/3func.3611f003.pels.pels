@@ -8,11 +8,11 @@
 
 
 }
-    //NOT NEEDED: thirdC::c_memsetIF( tinBaseP , (byteT*)pPoint , sizeof( POINT  ) * cPointP ) ;
-    thirdC::c_memsetIF( tinBaseP , (byteT*)pcSize , sizeof( countT ) * cGlyphP ) ;
+    //NOT NEEDED: thirdC::c_memsetIF( tin0P , (byteT*)pPoint , sizeof( POINT  ) * cPointP ) ;
+    thirdC::c_memsetIF( tin0P , (byteT*)pcSize , sizeof( countT ) * cGlyphP ) ;
 
-    PUSE.newF( tinBaseP , LF , *(byteT**)&pPoint , sizeof( POINT ) * cPointP ) ; ___( pPoint ) ;
-    PUSE.newF( tinBaseP , LF , *(byteT**)&pcSize , sizeof( countT ) * cGlyphP ) ; ___( pcSize ) ;
+    PUSE.newF( tin0P , LF , *(byteT**)&pPoint , sizeof( POINT ) * cPointP ) ; ___( pPoint ) ;
+    PUSE.newF( tin0P , LF , *(byteT**)&pcSize , sizeof( countT ) * cGlyphP ) ; ___( pcSize ) ;
 
     if( !cPointP ) { BLAMMO ; }
     if( !cGlyphP ) { BLAMMO ; }
@@ -24,7 +24,7 @@ pPoint( 0 ) ,
 cPoint( cPointP ) ,
 pcSize( 0 ) ,
 cGlyph( cGlyphP ) ,
-/*1*/pelS::pelS( tin0S& tinBaseP , const countT cGlyphP , const countT cPointP ) :/*1*/
+/*1*/pelS::pelS( tin0S& tin0P , const countT cGlyphP , const countT cPointP ) :/*1*/
 
 /**/
 */

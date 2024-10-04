@@ -10,36 +10,36 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.delF( tinBaseP , psttnu ) ;
-etThread.faceHearF( tinBaseP , psttnu ) ;
+etThread.delF( tin0P , psttnu ) ;
+etThread.faceHearF( tin0P , psttnu ) ;
 ZE( strokeS* , psttnu ) ;
 
 }
     default                             : { __1                                        ; break ; }
-    case ifcPROCESSdEATH_HARDWAREfAILURE : { etThread.strokeF( tinBaseP , T("hardware failure"             )+tEnter ) ; break ; }
-    case ifcPROCESSdEATH_SOFTWAREfAILURE : { etThread.strokeF( tinBaseP , T("software failure"             )+tEnter ) ; break ; }
-    case ifcPROCESSdEATH_MURDERED        : { etThread.strokeF( tinBaseP , T("murdered"                     )+tEnter ) ; break ; }
-    case ifcPROCESSdEATH_NORMAL          : { etThread.strokeF( tinBaseP , T("old age (or hired on windows)")+tEnter ) ; break ; }
+    case ifcPROCESSdEATH_HARDWAREfAILURE : { etThread.strokeF( tin0P , T("hardware failure"             )+tEnter ) ; break ; }
+    case ifcPROCESSdEATH_SOFTWAREfAILURE : { etThread.strokeF( tin0P , T("software failure"             )+tEnter ) ; break ; }
+    case ifcPROCESSdEATH_MURDERED        : { etThread.strokeF( tin0P , T("murdered"                     )+tEnter ) ; break ; }
+    case ifcPROCESSdEATH_NORMAL          : { etThread.strokeF( tin0P , T("old age (or hired on windows)")+tEnter ) ; break ; }
 {
 switch( idDeathType )
 TN( tEnter , "\r\npress the enter key now" ) ;
 
-etThread.delF( tinBaseP , psttIdDeathType ) ;
-etThread.delF( tinBaseP , psttValue ) ;
-etThread.strokeF( tinBaseP , T("\r\nvalue = ")+T(psttValue)+T("\r\nidDeathType = ")+T(psttIdDeathType)+T("\r\n") ) ;
-etThread.strFromF( tinBaseP , psttIdDeathType , idDeathType ) ;
-etThread.strFromF( tinBaseP , psttValue , value ) ;
+etThread.delF( tin0P , psttIdDeathType ) ;
+etThread.delF( tin0P , psttValue ) ;
+etThread.strokeF( tin0P , T("\r\nvalue = ")+T(psttValue)+T("\r\nidDeathType = ")+T(psttIdDeathType)+T("\r\n") ) ;
+etThread.strFromF( tin0P , psttIdDeathType , idDeathType ) ;
+etThread.strFromF( tin0P , psttValue , value ) ;
 ZE( strokeS* , psttIdDeathType ) ;
 ZE( strokeS* , psttValue ) ;
 
-etThread.osProcessWaitF( tinBaseP , value , idDeathType , tid , pid ) ;
+etThread.osProcessWaitF( tin0P , value , idDeathType , tid , pid ) ;
 ZE( countT , idDeathType ) ;
 ZE( countT , value ) ;
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmKillF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , pid ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmKillF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , pid ) ; }
 
-etThread.osSessionF( tinBaseP , tid , pid , 0x4010024 , 0 , 100 , 100 , 400 , 200 ) ;
+etThread.osSessionF( tin0P , tid , pid , 0x4010024 , 0 , 100 , 100 , 400 , 200 ) ;
 ZE( countT , pid ) ;
 ZE( countT , tid ) ;
 
@@ -47,8 +47,8 @@ TODO
 
 DONE( tmKillF )
 
-etThread.osProcessKillF( tinBaseP , pid ) ;
-etThread.osSleepF( tinBaseP , TOCK * 2 , 0 , flSLEEP_TALK ) ;
+etThread.osProcessKillF( tin0P , pid ) ;
+etThread.osSleepF( tin0P , TOCK * 2 , 0 , flSLEEP_TALK ) ;
 
 const countT pid = pTaskP ? pTaskP->c1 : 0 ;
 TASK( tmKillF )

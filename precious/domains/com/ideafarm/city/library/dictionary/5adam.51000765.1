@@ -10,13 +10,13 @@
 REST
 
 if( osh != INVALID_HANDLE_VALUE ) CloseHandle( osh ) ;
-etThread.traceF( tinBaseP , T("unlocking the directory") ) ;
+etThread.traceF( tin0P , T("unlocking the directory") ) ;
 
-ether.loafIF( tinBaseP ) ;
+ether.loafIF( tin0P ) ;
 
-else etThread.traceF( tinBaseP , T("locked the directory") ) ;
+else etThread.traceF( tin0P , T("locked the directory") ) ;
 }
-    etThread.traceF( tinBaseP , T("error: could not lock the directory; error code ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("error: could not lock the directory; error code ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     countT rc = GetLastError() ;
 {
 if( osh == INVALID_HANDLE_VALUE )

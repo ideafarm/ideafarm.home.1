@@ -13,13 +13,13 @@ DONE( tm_sessionsC_watchF )
 
     }
         }
-            //U::PROD: ++ s ; etThread.osSleepF( tinBaseP , TOCK >> 3 ) ;
-            ++ s ; etThread.osSleepF( tinBaseP , TUCK << 2 ) ;
+            //U::PROD: ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ;
+            ++ s ; etThread.osSleepF( tin0P , TUCK << 2 ) ;
         {
         while( !sessionsP.bQuitWatching && cToDo -- )
         countT cToDo = TUCK ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-        //etThread.traceF( tinBaseP , T("napping") ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        //etThread.traceF( tin0P , T("napping") ) ;
 
         }
             }
@@ -28,12 +28,12 @@ DONE( tm_sessionsC_watchF )
                 ZE( sessionC* , pSession ) ;
             {
             while( st_pSession )
-            etThread.traceF( tinBaseP , T("destroying sessions that have been idle too long") ) ;
+            etThread.traceF( tin0P , T("destroying sessions that have been idle too long") ) ;
         {
         if( st_pSession )
 
-        sessionsP.baton.ungrabF( tinBaseP ) ;
-        sessionsP.swSession.freeNullsF( tinBaseP ) ;
+        sessionsP.baton.ungrabF( tin0P ) ;
+        sessionsP.swSession.freeNullsF( tin0P ) ;
         }
             }
                 c_pSession = 0 ;
@@ -41,20 +41,20 @@ DONE( tm_sessionsC_watchF )
                 countT& c_pSession = sessionsP.swSession ;
             {
             if( idle.time2 || idle.time1 > ifcTIMEtIMEOUTsESSION )
-            timeS idle = session.idleF( tinBaseP ) ;
+            timeS idle = session.idleF( tin0P ) ;
 
             sessionC& session = *(sessionC*)(countT)sessionsP.swSession ;
-            sessionsP.nnLever_peer = *(nicNameC*)sessionsP.swSession.leverF( tinBaseP , idf ) ;
+            sessionsP.nnLever_peer = *(nicNameC*)sessionsP.swSession.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = sessionsP.swSession.cFlavorsF( tinBaseP ) ;
-        sessionsP.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        countT cFlavors = sessionsP.swSession.cFlavorsF( tin0P ) ;
+        sessionsP.baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         _IO_
 
-        //etThread.traceF( tinBaseP , T("inspecting sessions looking for those idle for a long time") ) ;
+        //etThread.traceF( tin0P , T("inspecting sessions looking for those idle for a long time") ) ;
     {
     while( !etThread && !sessionsP.bQuitWatching )
-    stackC st_pSession( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ;
+    stackC st_pSession( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ;
 
     sessionsC& sessionsP = *(sessionsC*)cArgThreadP ;
 

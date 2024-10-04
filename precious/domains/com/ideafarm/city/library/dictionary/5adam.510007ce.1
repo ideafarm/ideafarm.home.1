@@ -9,55 +9,55 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
-etThread.delF( tinBaseP , pNicNameWhite ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
-sgnDone_tmUdpFilesEndpointThrowerF.waitF( tinBaseP ) ;
-sgnDone_tmUdpFilesEndpointCatcherF.waitF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("waiting for endpoints to end") ) ;
+etThread.delF( tin0P , pNicNameWhite ) ;
+etThread.traceF( tin0P , T("ok") ) ;
+sgnDone_tmUdpFilesEndpointThrowerF.waitF( tin0P ) ;
+sgnDone_tmUdpFilesEndpointCatcherF.waitF( tin0P ) ;
+etThread.traceF( tin0P , T("waiting for endpoints to end") ) ;
 bQuit = 1 ;
 
 }
     break ; //REMOVE FOR BURN-IN TESTING
 
     cReceivedFileWindows = 0 ;
-    etThread.traceF( tinBaseP , T("received [cReceivedFileWindows]:    ")+TF2(cReceivedFileWindows,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("received [cReceivedFileWindows]:    ")+TF2(cReceivedFileWindows,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-    etThread.traceF( tinBaseP , T("process [mTocks]:    ")+TT(timeE1,timeE2)+tb4+TF2(mTocksE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("throw   [mTocks]:    ")+TT(timeT1,timeT2)+tb4+TF2(mTocksT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("[mGBits]:            ")+TF2(mGBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("[cGram]:            ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("process [mTocks]:    ")+TT(timeE1,timeE2)+tb4+TF2(mTocksE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("throw   [mTocks]:    ")+TT(timeT1,timeT2)+tb4+TF2(mTocksT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[mGBits]:            ")+TF2(mGBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[cGram]:            ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     measureT mGBits = (measureT)( cb04Thrown << 3 ) / ( TICK << 2 ) ;
 
     measureT mTocksE = (measureT)timeE1 / TOCK ;
     measureT mTocksT = (measureT)timeT1 / TOCK ;
 
-    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO PROCESS
-    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO PROCESS
+    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
     ZE( sCountT , timeE2 ) ;
     ZE( countT  , timeE1 ) ;
 
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etThread.osTimeSubtractF( tinBaseP , timeT1 , timeT2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO THROW
-    etThread.osTimeNowF( tinBaseP , timeT1 , timeT2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeT1 , timeT2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO THROW
+    etThread.osTimeNowF( tin0P , timeT1 , timeT2 ) ;
     ZE( sCountT , timeT2 ) ;
     ZE( countT  , timeT1 ) ;
 
     }
         }
-            etThread.delF( tinBaseP , psttName ) ;
+            etThread.delF( tin0P , psttName ) ;
 
             }
-                ether.osSleepF( tinBaseP , TOCK >> 3 ) ;
-                sThrow.writeF( tinBaseP , idPortEndpointCatcher , nicNameC() , pbGram , head.cbThisGram ) ;
-                //etThread.traceF( tinBaseP , T("throwing name") ) ;
+                ether.osSleepF( tin0P , TOCK >> 3 ) ;
+                sThrow.writeF( tin0P , idPortEndpointCatcher , nicNameC() , pbGram , head.cbThisGram ) ;
+                //etThread.traceF( tin0P , T("throwing name") ) ;
             {
             while( !ether && cDo -- )
             countT cDo = 8 ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
             head.cbThisGram = sizeof head + cbPayload ;
             head.idFileHi   = 0 ;
@@ -65,31 +65,31 @@ bQuit = 1 ;
             head.secret     = secretToUse ;
             head.idCmd      = ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME ;
 
-            countT cbPayload = thirdC::c_strlenIF( tinBaseP , pbPayload ) ;
-            thirdC::c_strcpyIF( tinBaseP , pbPayload , T(psttName) ) ;
+            countT cbPayload = thirdC::c_strlenIF( tin0P , pbPayload ) ;
+            thirdC::c_strcpyIF( tin0P , pbPayload , T(psttName) ) ;
 
             udpFileGramHeadBaseOSFileNameS& head      = *(udpFileGramHeadBaseOSFileNameS*)pbGram ;
             byteT*                          pbPayload = pbGram + sizeof( udpFileGramHeadBaseOSFileNameS ) ;
             byteT                           pbGram[ sizeof( udpFileGramHeadBaseOSFileNameS ) + CBuDPfILEnAMEpAYLOAD ] ;
 
-            etThread.strMakeF( tinBaseP , LF , psttName , T("///ideafarm/tmp/foo.from.udp.ttt") ) ; ___( psttName ) ;
+            etThread.strMakeF( tin0P , LF , psttName , T("///ideafarm/tmp/foo.from.udp.ttt") ) ; ___( psttName ) ;
             ZE( strokeS* , psttName ) ;
         {
         if( !ether )
 
         }
-            etThread.delF( tinBaseP , psttHash ) ;
+            etThread.delF( tin0P , psttHash ) ;
 
             }
-                ether.osSleepF( tinBaseP , TOCK >> 3 ) ;
-                sThrow.writeF( tinBaseP , idPortEndpointCatcher , nicNameC() , (byteT*)&gram , sizeof gram ) ;
-                //etThread.traceF( tinBaseP , T("throwing hash") ) ;
+                ether.osSleepF( tin0P , TOCK >> 3 ) ;
+                sThrow.writeF( tin0P , idPortEndpointCatcher , nicNameC() , (byteT*)&gram , sizeof gram ) ;
+                //etThread.traceF( tin0P , T("throwing hash") ) ;
             {
             while( !ether && cDo -- )
             countT cDo = 8 ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            thirdC::c_memcpyIF( tinBaseP , gram.postHash , T(psttHash) , sizeof gram.postHash ) ;
+            thirdC::c_memcpyIF( tin0P , gram.postHash , T(psttHash) , sizeof gram.postHash ) ;
             gram.cbFileHi   = (countT)( cbDone >> 0x20 ) ;
             gram.cbFileLo   = (countT)cbDone ;
             gram.idFileHi   = 0 ;
@@ -100,7 +100,7 @@ bQuit = 1 ;
             if( psttHash && psttHash->idAdam != sizeof gram.postHash ) { BLAMMO ; }
             udpFileGramHeadHashOfContentS gram ;
 
-            hasher.queryStringF( tinBaseP , psttHash ) ; ___( psttHash ) ;
+            hasher.queryStringF( tin0P , psttHash ) ; ___( psttHash ) ;
             ZE( strokeS* , psttHash ) ;
         {
         if( !ether )
@@ -114,16 +114,16 @@ bQuit = 1 ;
                     cb04Thrown += cbGram ;
                     cThrown ++ ;
 
-                    sThrow.writeF( tinBaseP , idPortEndpointCatcher , nicNameC() , pbGram , cbGram ) ;
-                    //if( !( idGram % TUCK ) ) etThread.traceF( tinBaseP , T("sending [idGram,cbNow,cbGram]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    sThrow.writeF( tin0P , idPortEndpointCatcher , nicNameC() , pbGram , cbGram ) ;
+                    //if( !( idGram % TUCK ) ) etThread.traceF( tin0P , T("sending [idGram,cbNow,cbGram]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT cbGram = sizeof( udpFileGramHeadFileWindowS ) + cbNow ;
                     //CONoUTrAW( "!" ) ;
-                    etThread.memCopyF( tinBaseP , pbPayload , pbc , cbNow ) ;
+                    etThread.memCopyF( tin0P , pbPayload , pbc , cbNow ) ;
                     head.secret = secretToUse ;
                     head.len    = cbNow  ;
                     head.off    = cbDone ;
                     head.cbThisGram = sizeof head + cbNow ;
-                    //etThread.traceF( tinBaseP , T("throwing window [secretToUse]:    ")+TF2(secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //etThread.traceF( tin0P , T("throwing window [secretToUse]:    ")+TF2(secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                     //CONoUTrAW( "+" ) ;
 
@@ -136,34 +136,34 @@ bQuit = 1 ;
                         ? cbDo
                     countT cbNow = cbDo < CBuDPfILEpAYLOAD
 
-                    //etThread.traceF( tinBaseP , T("waited  for a secret") ) ;
+                    //etThread.traceF( tin0P , T("waited  for a secret") ) ;
                     }
                         Sleep( 100 ) ;
                     {
                     while( !secretToUse )
-                    //etThread.traceF( tinBaseP , T("waiting for a secret") ) ;
+                    //etThread.traceF( tin0P , T("waiting for a secret") ) ;
                 {
                 while( cbDo )
                 countT cbDo = cbw ;
                 byteT* pbc = pbw ;
 
-                //etThread.boxPutF( tinBaseP , tFileIn+T(".window.")+tIdWindow , pbw , cbw ) ;
-                //etThread.traceF( tinBaseP , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //etThread.boxPutF( tin0P , tFileIn+T(".window.")+tIdWindow , pbw , cbw ) ;
+                //etThread.traceF( tin0P , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 TN( tIdWindow , "" ) ; tIdWindow = TF3(++idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
 
-                hasher.eatF( tinBaseP , pbw , cbw ) ;
+                hasher.eatF( tin0P , pbw , cbw ) ;
             {
             else
             if( !pbw || !cbw ) break ;
 
-            fwsIn.getF( tinBaseP , pbw , cbw ) ;
+            fwsIn.getF( tin0P , pbw , cbw ) ;
             ZE( countT , cbw ) ;
             ZE( byteT* , pbw ) ;
         {
         while( !ether )
         ZE( count04T , cbDone ) ;
         ZE( countT , idWindow ) ;
-        hasherC hasher( tinBaseP , etThread ) ;
+        hasherC hasher( tin0P , etThread ) ;
 
         head.idMeta     = 0 ;
         head.idMetaType = ifcIDuDPfILEmETAtYPE_CONTENT ;
@@ -175,14 +175,14 @@ bQuit = 1 ;
         byteT*                      pbPayload = pbGram + sizeof( udpFileGramHeadFileWindowS ) ;
         byteT                       pbGram[ sizeof( udpFileGramHeadFileWindowS ) + CBuDPfILEpAYLOAD ] ;
 
-        fileWindowsC fwsIn( tinBaseP , etThread , tFileIn ) ;
+        fileWindowsC fwsIn( tin0P , etThread , tFileIn ) ;
 
-        sThrow.bindF( tinBaseP ) ;
-        socketC sThrow( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+        sThrow.bindF( tin0P ) ;
+        socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
     {
     ZE( countT , idGram ) ;
 
-    etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
+    etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
     ZE( sCountT , timeA2 ) ;
     ZE( countT  , timeA1 ) ;
 {
@@ -191,15 +191,15 @@ TN( tFileIn     , "///d/tmp/foo.ttt" ) ;
 ZE( count04T , cb04Thrown ) ;
 ZE( countT , cThrown ) ;
 
-//++ s ; ether.osSleepF( tinBaseP , TICK << 4 ) ;         //U:: TO FIND A BUG
-++ s ; ether.osSleepF( tinBaseP , TOCK << 2 ) ;         // LET WORKER THREADS GET SET UP
+//++ s ; ether.osSleepF( tin0P , TICK << 4 ) ;         //U:: TO FIND A BUG
+++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;         // LET WORKER THREADS GET SET UP
 
-etThread.traceF( tinBaseP , T("waited  for woth secret") ) ;
+etThread.traceF( tin0P , T("waited  for woth secret") ) ;
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 {
 while( !secretToUse && !ether )
-etThread.traceF( tinBaseP , T("waiting for woth secret") ) ;
+etThread.traceF( tin0P , T("waiting for woth secret") ) ;
 
 CONoUTrAW( "\r\n" ) ;
 
@@ -212,21 +212,21 @@ CONoUTrAW( "\r\n" ) ;
 TN( tb4 , "    " ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 {
 while( ( !idPortEndpointCatcher || !psoEndpointThrower ) && !ether )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
 
 
 etThread.osThreadF( TaRG2sGNdONE( tmUdpFilesEndpointThrowerF , sgnDone_tmUdpFilesEndpointThrowerF ) , (countT)&bQuit , (countT)&psoEndpointThrower   , (countT)&grab_psoEndpointThrower   , (countT)&pNicNameWhite , (countT)&cNicNameWhite , (countT)&grab_pNicNameWhite , (countT)&secretToUse          ) ;
 etThread.osThreadF( TaRG2sGNdONE( tmUdpFilesEndpointCatcherF , sgnDone_tmUdpFilesEndpointCatcherF ) , (countT)&bQuit , (countT)&psoEndpointCatcherNU , (countT)&grab_psoEndpointCatcherNU , (countT)&pNicNameWhite , (countT)&cNicNameWhite , (countT)&grab_pNicNameWhite , (countT)&cReceivedFileWindows ) ;
-signC sgnDone_tmUdpFilesEndpointThrowerF(   tinBaseP , TAG( TAGiDnULL ) ) ;
-signC sgnDone_tmUdpFilesEndpointCatcherF(   tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmUdpFilesEndpointThrowerF(   tin0P , TAG( TAGiDnULL ) ) ;
+signC sgnDone_tmUdpFilesEndpointCatcherF(   tin0P , TAG( TAGiDnULL ) ) ;
 ZE( boolT , bQuit ) ;
 
-grabC grab_psoEndpointThrower(   tinBaseP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
-grabC grab_psoEndpointCatcherNU( tinBaseP , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
+grabC grab_psoEndpointThrower(   tin0P , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
+grabC grab_psoEndpointCatcherNU( tin0P , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
 
 ZE( socketC* , psoEndpointCatcherNU ) ;
 ZE( socketC* , psoEndpointThrower ) ;
@@ -239,11 +239,11 @@ ZE( countT , cReceivedFileWindows ) ;
     if( !pNicNameWhite ) { BLAMMO ; }
 
     }
-        etThread.traceF( tinBaseP , T("white:    ")+T(pNicNameWhite[offa]) ) ;
+        etThread.traceF( tin0P , T("white:    ")+T(pNicNameWhite[offa]) ) ;
     {
     for( countT offa = 0 ; offa < cNicNameWhite ; offa ++ )
 
-    socketC::nicNameIF( tinBaseP , etThread , pNicNameWhite , cNicNameWhite , tListWhite ) ; ___( pNicNameWhite ) ;
+    socketC::nicNameIF( tin0P , etThread , pNicNameWhite , cNicNameWhite , tListWhite ) ; ___( pNicNameWhite ) ;
 
     tListWhite += T("factory9.ideafarm.com") ;
     tListWhite += T("factory8.ideafarm.com") ;
@@ -259,13 +259,13 @@ ZE( countT , cReceivedFileWindows ) ;
 {
 ZE( countT    , cNicNameWhite ) ;
 ZE( nicNameC* , pNicNameWhite ) ;
-grabC grab_pNicNameWhite( tinBaseP , TAG( TAGiDnULL ) ) ;
+grabC grab_pNicNameWhite( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmUdpFilesEndpointThrowerF )
 }
-    etThread.ifcUdpFilesEndpointF( tinBaseP , bQuitP , idPortEndpointThrowerNU , TICK >> 0 , psoEndpointP , grab_psoEndpointP , pNicNameWhiteP , cNicNameWhiteP , grab_pNicNameWhiteP , pSecretToUseP ) ;
+    etThread.ifcUdpFilesEndpointF( tin0P , bQuitP , idPortEndpointThrowerNU , TICK >> 0 , psoEndpointP , grab_psoEndpointP , pNicNameWhiteP , cNicNameWhiteP , grab_pNicNameWhiteP , pSecretToUseP ) ;
     ZE( countT , idPortEndpointThrowerNU ) ;
 
     countT*          pSecretToUseP         =           (countT*)pTaskP->c7 ;
@@ -281,7 +281,7 @@ TASK( tmUdpFilesEndpointThrowerF )
 
 DONE( tmUdpFilesEndpointCatcherF )
 }
-    etThread.ifcUdpFilesEndpointF( tinBaseP , bQuitP , idPortEndpointCatcher   , TICK >> 0 , psoEndpointP , grab_psoEndpointP , pNicNameWhiteP , cNicNameWhiteP , grab_pNicNameWhiteP , 0 , &cReceivedFileWindowsP ) ;
+    etThread.ifcUdpFilesEndpointF( tin0P , bQuitP , idPortEndpointCatcher   , TICK >> 0 , psoEndpointP , grab_psoEndpointP , pNicNameWhiteP , cNicNameWhiteP , grab_pNicNameWhiteP , 0 , &cReceivedFileWindowsP ) ;
 
     countT&          cReceivedFileWindowsP =          *(countT*)pTaskP->c7 ;
     grabC&           grab_pNicNameWhiteP   =           *(grabC*)pTaskP->c6 ;

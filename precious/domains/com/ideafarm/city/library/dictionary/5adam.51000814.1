@@ -9,71 +9,71 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     }
         while( idjPart ) ;
         }
-            //etThread.traceF( tinBaseP , T("---- [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+            //etThread.traceF( tin0P , T("---- [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
             if( !idjWothBranch ) idjWothBranch = idjBranch ;
 
-            etThread.traceF( tinBaseP , T("read [value]:    ")+T(pbi) ) ;
+            etThread.traceF( tin0P , T("read [value]:    ")+T(pbi) ) ;
             countT       cbi = pagei ;
             const byteT* pbi = pagei ;
 
-            pageC pagei = jotFiles.readF( tinBaseP , idjPart , idjBranch , idjPart ? 0 : idjSoil , flJOTfILEScrEAD_null ) ;
-            //etThread.traceF( tinBaseP , T("++++ [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+            pageC pagei = jotFiles.readF( tin0P , idjPart , idjBranch , idjPart ? 0 : idjSoil , flJOTfILEScrEAD_null ) ;
+            //etThread.traceF( tin0P , T("++++ [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
         {
         do
         ZE( countT , idjBranch ) ;
         ZE( countT , idjPart   ) ;
 
-        jotFilesNamedC jotFiles( tinBaseP , etThread , postjg , flJOTc_null ) ;
-        tlsAllocStackExp_a_C tls( tinBaseP ) ;
+        jotFilesNamedC jotFiles( tin0P , etThread , postjg , flJOTc_null ) ;
+        tlsAllocStackExp_a_C tls( tin0P ) ;
     {
 
     }
-        etThread.traceF( tinBaseP , T("inserted 2 new branches after [idjWothBranch]:    ")+TF2(idjWothBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                              jotFiles.writeF( tinBaseP , "3bra1p2" , 0 , 0 , 0 , idjBranchNew  , flJOTfILEScwRITE_APPENDpART ) ; etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        countT idjBranchNew = jotFiles.writeF( tinBaseP , "3bra1p1" , 0 , 0 , 0 , idjWothBranch                               ) ; etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        jotFilesNamedC jotFiles( tinBaseP , etThread , postjg , flJOTc_WRITE ) ;
-        tlsAllocStackExp_a_C tls( tinBaseP ) ;
+        etThread.traceF( tin0P , T("inserted 2 new branches after [idjWothBranch]:    ")+TF2(idjWothBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                              jotFiles.writeF( tin0P , "3bra1p2" , 0 , 0 , 0 , idjBranchNew  , flJOTfILEScwRITE_APPENDpART ) ; etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        countT idjBranchNew = jotFiles.writeF( tin0P , "3bra1p1" , 0 , 0 , 0 , idjWothBranch                               ) ; etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        jotFilesNamedC jotFiles( tin0P , etThread , postjg , flJOTc_WRITE ) ;
+        tlsAllocStackExp_a_C tls( tin0P ) ;
     {
 
     }
         while( idjPart ) ;
         }
-            etThread.traceF( tinBaseP , T("data   [current value (wo part)]: ")+T(pbi) ) ;
+            etThread.traceF( tin0P , T("data   [current value (wo part)]: ")+T(pbi) ) ;
             if( !idjWothBranch ) idjWothBranch = idjBranch ;
 
             const byteT* pbi = pagei ;
 
-            pageC pagei = jotFiles.readFromNameF( tinBaseP , idjPart  , idjBranch, tName1 ) ;
-            //pageC pagei = jotFiles.readF( tinBaseP , idjPart , idjBranch , idjPart ? 0 : idjSoil , flJOTfILEScrEAD_null ) ;
+            pageC pagei = jotFiles.readFromNameF( tin0P , idjPart  , idjBranch, tName1 ) ;
+            //pageC pagei = jotFiles.readF( tin0P , idjPart , idjBranch , idjPart ? 0 : idjSoil , flJOTfILEScrEAD_null ) ;
         {
         do
         ZE( countT , idjBranch ) ;
         ZE( countT , idjPart ) ;
-        jotFilesNamedC jotFiles( tinBaseP , etThread , postjg ) ;
-        tlsAllocStackExp_a_C tls( tinBaseP ) ;
+        jotFilesNamedC jotFiles( tin0P , etThread , postjg ) ;
+        tlsAllocStackExp_a_C tls( tin0P ) ;
     {
     ZE( countT , idjWothBranch ) ;
 
     }
-          idjSoil = jotFiles.writeToNameF( tinBaseP , tName1 , 0 , "2bra2p2" , 0 , 0 , 0 , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tinBaseP , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-          idjSoil = jotFiles.writeToNameF( tinBaseP , tName1 , 0 , "2bra2p1"                                            ) ; //etThread.traceF( tinBaseP , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-          idjSoil = jotFiles.writeToNameF( tinBaseP , tName1 , 0 , "2bra1p2" , 0 , 0 , 0 , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tinBaseP , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-          idjSoil = jotFiles.writeToNameF( tinBaseP , tName1 , 0 , "2bra1p1" , 0 , 0 , 0 , flJOTfILEScwRITE_REPLACEfILE ) ; //etThread.traceF( tinBaseP , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+          idjSoil = jotFiles.writeToNameF( tin0P , tName1 , 0 , "2bra2p2" , 0 , 0 , 0 , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tin0P , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+          idjSoil = jotFiles.writeToNameF( tin0P , tName1 , 0 , "2bra2p1"                                            ) ; //etThread.traceF( tin0P , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+          idjSoil = jotFiles.writeToNameF( tin0P , tName1 , 0 , "2bra1p2" , 0 , 0 , 0 , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tin0P , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+          idjSoil = jotFiles.writeToNameF( tin0P , tName1 , 0 , "2bra1p1" , 0 , 0 , 0 , flJOTfILEScwRITE_REPLACEfILE ) ; //etThread.traceF( tin0P , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-          idjSoil = jotFiles.writeToNameF( tinBaseP , tName1 , 0 , "1bra2p2" , 0 , 0 , 0 , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tinBaseP , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-          idjSoil = jotFiles.writeToNameF( tinBaseP , tName1 , 0 , "1bra2p1"                                            ) ; //etThread.traceF( tinBaseP , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-          idjSoil = jotFiles.writeToNameF( tinBaseP , tName1 , 0 , "1bra1p2" , 0 , 0 , 0 , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tinBaseP , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-          idjSoil = jotFiles.writeToNameF( tinBaseP , tName1 , 0 , "1bra1p1"                                            ) ; //etThread.traceF( tinBaseP , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+          idjSoil = jotFiles.writeToNameF( tin0P , tName1 , 0 , "1bra2p2" , 0 , 0 , 0 , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tin0P , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+          idjSoil = jotFiles.writeToNameF( tin0P , tName1 , 0 , "1bra2p1"                                            ) ; //etThread.traceF( tin0P , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+          idjSoil = jotFiles.writeToNameF( tin0P , tName1 , 0 , "1bra1p2" , 0 , 0 , 0 , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tin0P , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+          idjSoil = jotFiles.writeToNameF( tin0P , tName1 , 0 , "1bra1p1"                                            ) ; //etThread.traceF( tin0P , T("wrote [idjSoil]:    ")+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        jotFilesNamedC jotFiles( tinBaseP , etThread , postjg , flJOTc_WRITE ) ;
-        tlsAllocStackExp_a_C tls( tinBaseP ) ;
+        jotFilesNamedC jotFiles( tin0P , etThread , postjg , flJOTc_WRITE ) ;
+        tlsAllocStackExp_a_C tls( tin0P ) ;
     {
     TN( tName1 , "name111" ) ;
     ZE( countT , idjSoil ) ;
@@ -86,67 +86,67 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     }
         while( idjPart ) ;
         }
-            //etThread.traceF( tinBaseP , T("---- [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+            //etThread.traceF( tin0P , T("---- [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
             if( !idjWothBranch ) idjWothBranch = idjBranch ;
 
-            etThread.traceF( tinBaseP , T("read [value]:    ")+T(pbi) ) ;
+            etThread.traceF( tin0P , T("read [value]:    ")+T(pbi) ) ;
             countT       cbi = pagei ;
             const byteT* pbi = pagei ;
 
-            pageC pagei = jotFiles.readF( tinBaseP , idjPart , idjBranch , idjPart ? 0 : idjSoil , flJOTfILEScrEAD_null ) ;
-            //etThread.traceF( tinBaseP , T("++++ [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+            pageC pagei = jotFiles.readF( tin0P , idjPart , idjBranch , idjPart ? 0 : idjSoil , flJOTfILEScrEAD_null ) ;
+            //etThread.traceF( tin0P , T("++++ [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
         {
         do
         ZE( countT , idjBranch ) ;
         ZE( countT , idjPart   ) ;
 
-        jotFilesC jotFiles( tinBaseP , postjf , flJOTc_null ) ;
-        tlsAllocStackExp_a_C tls( tinBaseP ) ;
+        jotFilesC jotFiles( tin0P , postjf , flJOTc_null ) ;
+        tlsAllocStackExp_a_C tls( tin0P ) ;
     {
 
     }
-        //etThread.traceF( tinBaseP , T("inserted 2 new branches after [idjWothBranch]:    ")+TF2(idjWothBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                              jotFiles.writeF( tinBaseP , "3bra1p2" , 0 , 0 , 0 , idjBranchNew  , flJOTfILEScwRITE_APPENDpART ) ; etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        countT idjBranchNew = jotFiles.writeF( tinBaseP , "3bra1p1" , 0 , 0 , 0 , idjWothBranch                               ) ; etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        jotFilesC jotFiles( tinBaseP , postjf , flJOTc_WRITE ) ;
-        tlsAllocStackExp_a_C tls( tinBaseP ) ;
+        //etThread.traceF( tin0P , T("inserted 2 new branches after [idjWothBranch]:    ")+TF2(idjWothBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                              jotFiles.writeF( tin0P , "3bra1p2" , 0 , 0 , 0 , idjBranchNew  , flJOTfILEScwRITE_APPENDpART ) ; etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        countT idjBranchNew = jotFiles.writeF( tin0P , "3bra1p1" , 0 , 0 , 0 , idjWothBranch                               ) ; etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        jotFilesC jotFiles( tin0P , postjf , flJOTc_WRITE ) ;
+        tlsAllocStackExp_a_C tls( tin0P ) ;
     {
 
     }
         while( idjPart ) ;
         }
-            //etThread.traceF( tinBaseP , T("---- [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+            //etThread.traceF( tin0P , T("---- [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
             if( !idjWothBranch ) idjWothBranch = idjBranch ;
 
-            etThread.traceF( tinBaseP , T("read [value]:    ")+T(pbi) ) ;
+            etThread.traceF( tin0P , T("read [value]:    ")+T(pbi) ) ;
             countT       cbi = pagei ;
             const byteT* pbi = pagei ;
 
-            pageC pagei = jotFiles.readF( tinBaseP , idjPart , idjBranch , idjPart ? 0 : idjSoil , flJOTfILEScrEAD_null ) ;
-            //etThread.traceF( tinBaseP , T("++++ [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+            pageC pagei = jotFiles.readF( tin0P , idjPart , idjBranch , idjPart ? 0 : idjSoil , flJOTfILEScrEAD_null ) ;
+            //etThread.traceF( tin0P , T("++++ [idjPart,idjBranch,idjSoil]:    ")+TF2(idjPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjBranch,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idjSoil,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
         {
         do
         ZE( countT , idjBranch ) ;
         ZE( countT , idjPart   ) ;
 
-        jotFilesC jotFiles( tinBaseP , postjf , flJOTc_null ) ;
-        tlsAllocStackExp_a_C tls( tinBaseP ) ;
+        jotFilesC jotFiles( tin0P , postjf , flJOTc_null ) ;
+        tlsAllocStackExp_a_C tls( tin0P ) ;
     {
     ZE( countT , idjWothBranch ) ;
 
     }
-        idjSoil = jotFiles.writeF( tinBaseP , "2bra2p2" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        idjSoil = jotFiles.writeF( tinBaseP , "2bra2p1" , 0 , 0 , 0 , idjSoil                                ) ; //etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        idjSoil = jotFiles.writeF( tinBaseP , "2bra1p2" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        idjSoil = jotFiles.writeF( tinBaseP , "2bra1p1" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_REPLACEfILE ) ; //etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        idjSoil = jotFiles.writeF( tin0P , "2bra2p2" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        idjSoil = jotFiles.writeF( tin0P , "2bra2p1" , 0 , 0 , 0 , idjSoil                                ) ; //etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        idjSoil = jotFiles.writeF( tin0P , "2bra1p2" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        idjSoil = jotFiles.writeF( tin0P , "2bra1p1" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_REPLACEfILE ) ; //etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        idjSoil = jotFiles.writeF( tinBaseP , "1bra2p2" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        idjSoil = jotFiles.writeF( tinBaseP , "1bra2p1" , 0 , 0 , 0 , idjSoil                                ) ; //etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        idjSoil = jotFiles.writeF( tinBaseP , "1bra1p2" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        idjSoil = jotFiles.writeF( tinBaseP , "1bra1p1" , 0 , 0 , 0 , 0                                      ) ; //etThread.traceF( tinBaseP , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        idjSoil = jotFiles.writeF( tin0P , "1bra2p2" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        idjSoil = jotFiles.writeF( tin0P , "1bra2p1" , 0 , 0 , 0 , idjSoil                                ) ; //etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        idjSoil = jotFiles.writeF( tin0P , "1bra1p2" , 0 , 0 , 0 , idjSoil , flJOTfILEScwRITE_APPENDpART  ) ; //etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        idjSoil = jotFiles.writeF( tin0P , "1bra1p1" , 0 , 0 , 0 , 0                                      ) ; //etThread.traceF( tin0P , T("[idjSoil]:    ")+TF2(idjSoil&~(NM_HIGH),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        jotFilesC jotFiles( tinBaseP , postjf , flJOTc_WRITE ) ;
-        tlsAllocStackExp_a_C tls( tinBaseP ) ;
+        jotFilesC jotFiles( tin0P , postjf , flJOTc_WRITE ) ;
+        tlsAllocStackExp_a_C tls( tin0P ) ;
     {
     ZE( countT , idjSoil ) ;
 

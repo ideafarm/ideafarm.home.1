@@ -34,14 +34,14 @@
                         sIn >>            ppDetail[ offo ]->moneyT1                       ;
                     {
                     if( ppDetail[ offo ] )
-                    ppDetail[ offo ] = new( 0 , tinBaseP , LF ) depositDetailS( tinBaseP ) ; ___( ppDetail[ offo ] ) ;
+                    ppDetail[ offo ] = new( 0 , tin0P , LF ) depositDetailS( tin0P ) ; ___( ppDetail[ offo ] ) ;
                 {
                 for( countT offo = 0 ; offo < cDeposits ; offo ++ )
 
-                thirdC::c_memsetIF( tinBaseP , (byteT*)ppDetail , cbaa ) ;
+                thirdC::c_memsetIF( tin0P , (byteT*)ppDetail , cbaa ) ;
             {
             if( ppDetail )
-            PUSE.newF( tinBaseP , LF , *(byteT**)&ppDetail , cbaa ) ; ___( ppDetail ) ;
+            PUSE.newF( tin0P , LF , *(byteT**)&ppDetail , cbaa ) ; ___( ppDetail ) ;
             const countT cbaa = sizeof( countT ) * cDeposits ;
         {
         if( cDeposits )
@@ -56,10 +56,10 @@
         sIn >> finger ;
         ZE( countT , finger ) ;
                     
-        sock.readF( tinBaseP , sIn ) ;
-        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sock.readF( tin0P , sIn ) ;
+        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
                     
-        sock.writeF( tinBaseP , sOut ) ;
+        sock.writeF( tin0P , sOut ) ;
 
         sOut << idAccCommissionP ;
         sOut << (countT)timeT2P ;
@@ -73,10 +73,10 @@
         sOut << (countT)ifcIDcMDlISTsERVERmONEYbUCKETS_GETdETAIL ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
                     
-        sock.connectF( tinBaseP , homeS::homeIF().idPortListMoneyBuckets ) ;
-        socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tin0P , homeS::homeIF().idPortListMoneyBuckets ) ;
+        socketC sock( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
 
         if( POOP ) { POOPR ; }
 
@@ -92,7 +92,7 @@
 {
 ppDetail( 0 )
 cDeposits( 0 ) ,
-/*1*/bucketDetailC::bucketDetailC( tin0S& tinBaseP , countT idAccBucketOwnerP , countT idBucketP , countT idProductP , countT idAccDepositorP , countT* pczNoteP , countT timeT1P , sCountT timeT2P , countT idAccCommissionP ) :/*1*/
+/*1*/bucketDetailC::bucketDetailC( tin0S& tin0P , countT idAccBucketOwnerP , countT idBucketP , countT idProductP , countT idAccDepositorP , countT* pczNoteP , countT timeT1P , sCountT timeT2P , countT idAccCommissionP ) :/*1*/
 
 /**/
 */

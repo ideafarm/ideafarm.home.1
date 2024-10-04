@@ -9,13 +9,13 @@
 
 REST
 
-etThread.strokeF( tinBaseP , T("\f") ) ;
+etThread.strokeF( tin0P , T("\f") ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK * 4 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK * 4 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etThread.strokeF( tinBaseP , ( ++ idCycle ) % 2 ? tSay : tSayErase ) ;
+    etThread.strokeF( tin0P , ( ++ idCycle ) % 2 ? tSay : tSayErase ) ;
 {
 while( !ether )
 ZE( countT , idCycle ) ;
@@ -45,18 +45,18 @@ TN( tSayErase , "" ) ; tSayErase = tSay + T("\f") ;
 tSay = 
 TN( tSay , "" ) ;
 
-win.baton.ungrabF( tinBaseP ) ;
+win.baton.ungrabF( tin0P ) ;
 win.cAnimateArg = (countT)&c4a ;
 win.pAnimateCBF = animateCBF ;
-win.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+win.baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 windowOldC& win = *thirdC::pWinRootIF() ;
 
 count4S c4a( (countT)&button1Inner , (countT)&button2Inner , (countT)&button1 , (countT)&button2 ) ;
 
-tcButtonC button2(      tinBaseP , tcStateCBF      , 0 , flFeatures      , 0 , T("e")+S2(' ',sc_NULL)+button2Inner+S2(' ',sc_NULL)+T("f") , 1 ) ;
-tcButtonC button1(      tinBaseP , tcStateCBF      , 0 , flFeatures      , 0 , T("b")+S2(' ',sc_NULL)+button1Inner+S2(' ',sc_NULL)+T("c") , 1 ) ;
-tcButtonC button2Inner( tinBaseP , tcStateInnerCBF , 0 , flFeaturesInner , 0 , T("grape")                       , 1 ) ;
-tcButtonC button1Inner( tinBaseP , tcStateInnerCBF , 0 , flFeaturesInner , 0 , T("apple")                       , 1 ) ;
+tcButtonC button2(      tin0P , tcStateCBF      , 0 , flFeatures      , 0 , T("e")+S2(' ',sc_NULL)+button2Inner+S2(' ',sc_NULL)+T("f") , 1 ) ;
+tcButtonC button1(      tin0P , tcStateCBF      , 0 , flFeatures      , 0 , T("b")+S2(' ',sc_NULL)+button1Inner+S2(' ',sc_NULL)+T("c") , 1 ) ;
+tcButtonC button2Inner( tin0P , tcStateInnerCBF , 0 , flFeaturesInner , 0 , T("grape")                       , 1 ) ;
+tcButtonC button1Inner( tin0P , tcStateInnerCBF , 0 , flFeaturesInner , 0 , T("apple")                       , 1 ) ;
 flagsT flFeatures      = flFeaturesCore ;
 flagsT flFeaturesInner = flFeaturesCore /*& ~( F(flTCfEATURE_DRAGGABLE) )*/ ;
 flagsT flFeaturesCore  = flTCfEATURE_DRAGGABLE | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEY | flTCfEATURE_FRAME ;
@@ -66,10 +66,10 @@ TODO
 }
     if( etherP && wP.bDoomed ) ;
     }
-        button2.setF(      tinBaseP , T("")+S3(2.0,scOld_mmPADfORsADAMfRAMES,2.0)+S3(9.0,scOld_mmFRAMEcELLS,1.0)+TP("",8)+S2(0,scOld_cPUSHrIPPLES)+T(pb2)+S2(0,scOld_POPrIPPLES)+S2(0,scOld_POPfRAME) ) ;
-        button1.setF(      tinBaseP , T("")+S3(2.0,scOld_mmPADfORsADAMfRAMES,2.0)+S3(9.0,scOld_mmFRAMEcELLS,1.0)+TP("",8)+S2(0,scOld_cPUSHrIPPLES)+T(pb2)+S2(0,scOld_POPrIPPLES)+S2(0,scOld_POPfRAME) ) ;
-        button2Inner.setF( tinBaseP , T("")+S3(2.0,scOld_mmPADfORsADAMfRAMES,2.0)+S3(6.0,scOld_mmFRAMEcELLS,1.0)+TP("",5)+S2(0,scOld_cPUSHrIPPLES)+T(pb2)+S2(0,scOld_POPrIPPLES)+S2(0,scOld_POPfRAME) ) ;
-        button1Inner.setF( tinBaseP , T("")+S3(2.0,scOld_mmPADfORsADAMfRAMES,2.0)+S3(6.0,scOld_mmFRAMEcELLS,1.0)+TP("",5)+S2(0,scOld_cPUSHrIPPLES)+T(pb2)+S2(0,scOld_POPrIPPLES)+S2(0,scOld_POPfRAME) ) ;
+        button2.setF(      tin0P , T("")+S3(2.0,scOld_mmPADfORsADAMfRAMES,2.0)+S3(9.0,scOld_mmFRAMEcELLS,1.0)+TP("",8)+S2(0,scOld_cPUSHrIPPLES)+T(pb2)+S2(0,scOld_POPrIPPLES)+S2(0,scOld_POPfRAME) ) ;
+        button1.setF(      tin0P , T("")+S3(2.0,scOld_mmPADfORsADAMfRAMES,2.0)+S3(9.0,scOld_mmFRAMEcELLS,1.0)+TP("",8)+S2(0,scOld_cPUSHrIPPLES)+T(pb2)+S2(0,scOld_POPrIPPLES)+S2(0,scOld_POPfRAME) ) ;
+        button2Inner.setF( tin0P , T("")+S3(2.0,scOld_mmPADfORsADAMfRAMES,2.0)+S3(6.0,scOld_mmFRAMEcELLS,1.0)+TP("",5)+S2(0,scOld_cPUSHrIPPLES)+T(pb2)+S2(0,scOld_POPrIPPLES)+S2(0,scOld_POPfRAME) ) ;
+        button1Inner.setF( tin0P , T("")+S3(2.0,scOld_mmPADfORsADAMfRAMES,2.0)+S3(6.0,scOld_mmFRAMEcELLS,1.0)+TP("",5)+S2(0,scOld_cPUSHrIPPLES)+T(pb2)+S2(0,scOld_POPrIPPLES)+S2(0,scOld_POPfRAME) ) ;
         tcButtonC& button2      = *(tcButtonC*)c4a.c4 ;
         tcButtonC& button1      = *(tcButtonC*)c4a.c3 ;
         tcButtonC& button2Inner = *(tcButtonC*)c4a.c2 ;
@@ -82,12 +82,12 @@ TODO
     {
     if( !( idCycleP % PERIOD ) )
 {
-voidT animateCBF( tin0S& tinBaseP , etherC& etherP , paperBackC& backP , const countT idCycleP , const countT cArgP )
+voidT animateCBF( tin0S& tin0P , etherC& etherP , paperBackC& backP , const countT idCycleP , const countT cArgP )
 
 #define PERIOD 0x1
 
 }
-    if( ((tin9S&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
+    if( ((tin9S&)tin0P).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
 
     }
         }
@@ -103,10 +103,10 @@ voidT animateCBF( tin0S& tinBaseP , etherC& etherP , paperBackC& backP , const c
     {
     switch( idTypeCallP )
 {
-voidT tcStateCBF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcStateCBF( tin0S& tin0P , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
-    if( ((tin9S&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
+    if( ((tin9S&)tin0P).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
 
     }
         }
@@ -124,7 +124,7 @@ voidT tcStateCBF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const 
     {
     switch( idTypeCallP )
 {
-voidT tcStateInnerCBF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcStateInnerCBF( tin0S& tin0P , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 /*1*/WAKEsHOW( "example.other.snip.00300d3.tcButtonC.nested.wrapped.adjacent" )/*1*/
 /**/

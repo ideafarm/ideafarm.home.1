@@ -9,19 +9,19 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.traceF( tinBaseP , T("sorted  (final sort after multithreaded presort)") ) ;
-sorta2.sortF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("sorting (final sort after multithreaded presort)") ) ;
-sortaC sorta2( tinBaseP , etThread , bQuit , pbArray2 , cbArray2 , sizeof( countT ) , 0 , sizeof( countT ) , 1 , 0 , flSORTAc_null ) ;
+etThread.traceF( tin0P , T("sorted  (final sort after multithreaded presort)") ) ;
+sorta2.sortF( tin0P ) ;
+etThread.traceF( tin0P , T("sorting (final sort after multithreaded presort)") ) ;
+sortaC sorta2( tin0P , etThread , bQuit , pbArray2 , cbArray2 , sizeof( countT ) , 0 , sizeof( countT ) , 1 , 0 , flSORTAc_null ) ;
 
 }
-    thirdC::dosSleepRWinkIF( tinBaseP ) ;
+    thirdC::dosSleepRWinkIF( tin0P ) ;
 {
 while( cPending )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
 }
     etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)&cPending , modulo , remainder ++ ) ;
@@ -32,17 +32,17 @@ ZE( countT , cPending ) ;
 ZE( countT , remainder ) ;
 countT cDo = modulo ;
 countT modulo = cProcessors ;
-const countT cProcessors = thirdC::osProcessorsIF( tinBaseP ) ;
+const countT cProcessors = thirdC::osProcessorsIF( tin0P ) ;
 
 }
-    etThread.traceF( tinBaseP , T("sorted  (simple sort: modulo 1)") ) ;
-    sorta1.sortF( tinBaseP ) ;
-    etThread.traceF( tinBaseP , T("sorting (simple sort: modulo 1)") ) ;
-    sortaC sorta1( tinBaseP , etThread , bQuit , pbArray1 , cbArray1 , sizeof( countT ) , 0 , sizeof( countT ) , 1 , 0 , flSORTAc_null ) ;
+    etThread.traceF( tin0P , T("sorted  (simple sort: modulo 1)") ) ;
+    sorta1.sortF( tin0P ) ;
+    etThread.traceF( tin0P , T("sorting (simple sort: modulo 1)") ) ;
+    sortaC sorta1( tin0P , etThread , bQuit , pbArray1 , cbArray1 , sizeof( countT ) , 0 , sizeof( countT ) , 1 , 0 , flSORTAc_null ) ;
 {
 ZE( boolT , bQuit ) ;
 
-etThread.traceF( tinBaseP , T("wrote   a tick of elements, each with wo ranUniC value") ) ;
+etThread.traceF( tin0P , T("wrote   a tick of elements, each with wo ranUniC value") ) ;
 }
     }
         case 1 : { pcArray2[ offca ] = pcArray1[ offca ] = 0x11111111  ; break ; }
@@ -51,10 +51,10 @@ etThread.traceF( tinBaseP , T("wrote   a tick of elements, each with wo ranUniC 
     switch( offca % 2 )
 {
 for( countT offca = 0 ; offca < ccArray1 ; offca ++ )
-etThread.traceF( tinBaseP , T("writing a tick of elements, each with wo ranUniC value") ) ;
+etThread.traceF( tin0P , T("writing a tick of elements, each with wo ranUniC value") ) ;
 
-ranUniC ruChallenge( tinBaseP , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
-//etThread.traceF( tinBaseP , T("[cSeed]:    ")+TF2(cSeed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
+ranUniC ruChallenge( tin0P , (measure04T)MAXcOUNTT + 1 , cSeed ) ;
+//etThread.traceF( tin0P , T("[cSeed]:    ")+TF2(cSeed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_NOpREFIX ) ;
 cSeedLath = cSeed ;
 countT cSeed = 0x78E86FC1 /*slab.trueRandom*/ ;
 
@@ -75,10 +75,10 @@ DONE( tmWorkerF )
     dec02AM( cPendingP ) ;
 
     }
-        etThread.traceF( tinBaseP , T("sorted  [remainderP]:    ")+TF2(remainderP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        sorta.sortF( tinBaseP ) ;
-        etThread.traceF( tinBaseP , T("sorting [remainderP]:    ")+TF2(remainderP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        sortaC sorta( tinBaseP , etThread , bQuit , pbArray2 , cbArray2 , sizeof( countT ) , 0 , sizeof( countT ) , moduloP , remainderP , flSORTAc_null ) ;
+        etThread.traceF( tin0P , T("sorted  [remainderP]:    ")+TF2(remainderP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        sorta.sortF( tin0P ) ;
+        etThread.traceF( tin0P , T("sorting [remainderP]:    ")+TF2(remainderP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        sortaC sorta( tin0P , etThread , bQuit , pbArray2 , cbArray2 , sizeof( countT ) , 0 , sizeof( countT ) , moduloP , remainderP , flSORTAc_null ) ;
     {
     ZE( boolT , bQuit ) ;
 

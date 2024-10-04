@@ -10,16 +10,16 @@
 REST
 
 }
-    etThread.delF( tinBaseP , psttFileName ) ;
+    etThread.delF( tin0P , psttFileName ) ;
     LOGrAW( T(psttFileName)+T(" founder:\"")+tName+T(" cSub:")+TF2(pFounders[off].cSub,flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
-    etThread.boxPutGenerationF( tinBaseP , psttFileName , T("///d/ideafarm.founders/founder") , TOCK * 2 , WS( sOut ) ) ;
+    etThread.boxPutGenerationF( tin0P , psttFileName , T("///d/ideafarm.founders/founder") , TOCK * 2 , WS( sOut ) ) ;
     ZE( strokeS* , psttFileName ) ;
     
     sOut << (strokeS*)tName ;
     sOut << pFounders[ off ].cSub ;
     TN( tName , pFounders[ off ].postName ) ;
     
-    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 {
 for( countT off = 0 ; off < sizeof pFounders / sizeof pFounders[ 0 ] ; off ++ )
 
@@ -41,7 +41,7 @@ founderS pFounders[] =
 
 }
     if( POOP ) { POOPR }
-    ((tin9S&)tinBaseP).pEtScratch->diskFileOrDirDeleteF( tinBaseP , tDir , flFILEoRdIRdELETE_RECURSE , 1 ) ;
+    ((tin9S&)tin0P).pEtScratch->diskFileOrDirDeleteF( tin0P , tDir , flFILEoRdIRdELETE_RECURSE , 1 ) ;
     TN( tDir , "///d/ideafarm.founders/" ) ;
 
     SCOOPS

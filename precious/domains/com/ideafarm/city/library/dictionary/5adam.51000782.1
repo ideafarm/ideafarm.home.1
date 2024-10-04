@@ -9,30 +9,30 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;                            
+etherC::loafIF( tin0P ) ;                            
 
 }
     }
-        etThread.traceF( tinBaseP , T("correct answer [idTest]: ")+TF2(offe+1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tin0P , T("correct answer [idTest]: ")+TF2(offe+1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     else
     }
-        etThread.traceF( tinBaseP , T("WARNING: INCORRECT ANSWER [idTest]: ")+TF2(offe+1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tin0P , T("WARNING: INCORRECT ANSWER [idTest]: ")+TF2(offe+1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     if( pExam[ offe ].bHitAnswer != pExam[ offe ].bHitCorrect )
 
     }
         pExam[ offe ].bHitAnswer = 0 ;
-        etThread.traceF( tinBaseP , T("miss") ) ;
+        etThread.traceF( tin0P , T("miss") ) ;
     {
     else
     }
         pExam[ offe ].bHitAnswer = 1 ;
-        etThread.traceF( tinBaseP , T("hit!") ) ;
+        etThread.traceF( tin0P , T("hit!") ) ;
     {
     IFpATTERN( etThread , pat , tTest )
 
-    patternC pat( tinBaseP , etThread , tPattern , pExam[ offe ].idTypePattern ) ;
+    patternC pat( tin0P , etThread , tPattern , pExam[ offe ].idTypePattern ) ;
 
     TN( tTest    , pExam[ offe ].postTest    ) ;
     TN( tPattern , pExam[ offe ].postPattern ) ;

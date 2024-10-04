@@ -9,14 +9,14 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
 }
-    etThread.osProcessF( tinBaseP , countTC() , countTC() , 0x40104ce , 0 , flPROCESShIRE_VISIBLE ) ;
-    ether.osSleepF( tinBaseP , TOCK * 0x10 ) ;
-    for( countT idCell = 1 ; idCell <= 0x20 ; idCell ++ ) etThread.osProcessF( tinBaseP , countTC() , countTC() , DDNUMB , T("!child !postHandoffOld ")+TF1(idCell) , flPROCESShIRE_VISIBLE ) ;
+    etThread.osProcessF( tin0P , countTC() , countTC() , 0x40104ce , 0 , flPROCESShIRE_VISIBLE ) ;
+    ether.osSleepF( tin0P , TOCK * 0x10 ) ;
+    for( countT idCell = 1 ; idCell <= 0x20 ; idCell ++ ) etThread.osProcessF( tin0P , countTC() , countTC() , DDNUMB , T("!child !postHandoffOld ")+TF1(idCell) , flPROCESShIRE_VISIBLE ) ;
 {
-if( !etThread.etherParameterF( tinBaseP , T("!child") ) )
+if( !etThread.etherParameterF( tin0P , T("!child") ) )
 
 TODO
 

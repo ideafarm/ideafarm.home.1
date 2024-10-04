@@ -9,41 +9,41 @@
 
 REST
 }
-    etThread.delF( tinBaseP , psttFile ) ;
+    etThread.delF( tin0P , psttFile ) ;
     
     }
-        b_pStTaskStart.ungrabF( tinBaseP ) ;
+        b_pStTaskStart.ungrabF( tin0P ) ;
         DEL( pStTaskStart ) ;
-        b_pStTaskStart.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        b_pStTaskStart.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
-        sgnDone_tmSaveTick.waitF( tinBaseP ) ;
-        etThread.faceStkNotifyAdamF( tinBaseP ) ;
+        sgnDone_tmSaveTick.waitF( tin0P ) ;
+        etThread.faceStkNotifyAdamF( tin0P ) ;
     
         TELL( "cleaning up" ) ;
         }
             }
-                ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
             TELL( "taking my cycle nap" ) ;
             
             }
-                etThread.delF( tinBaseP , psttc ) ;
-                etThread.osClipboardLetGoF( tinBaseP ) ;
-                if( !bGraphic && ( !psttc || !psttc->idAdam || bLooksLikeTimeF( tinBaseP , etThread , psttc ) ) ) etThread.osClipboardWriteF( tinBaseP , TT4(time1,time2,3,6) ) ;
-                boolT bGraphic = etThread.osClipboardFlavorsF( tinBaseP ) && !psttc ;
-                etThread.osClipboardReadF( tinBaseP , psttc ) ; ___( psttc ) ;
-                etThread.osClipboardGrabF( tinBaseP ) ;
+                etThread.delF( tin0P , psttc ) ;
+                etThread.osClipboardLetGoF( tin0P ) ;
+                if( !bGraphic && ( !psttc || !psttc->idAdam || bLooksLikeTimeF( tin0P , etThread , psttc ) ) ) etThread.osClipboardWriteF( tin0P , TT4(time1,time2,3,6) ) ;
+                boolT bGraphic = etThread.osClipboardFlavorsF( tin0P ) && !psttc ;
+                etThread.osClipboardReadF( tin0P , psttc ) ; ___( psttc ) ;
+                etThread.osClipboardGrabF( tin0P ) ;
                 ZE( strokeS* , psttc ) ;
             {
             TELL( "writing current time to os clipboard" ) ;
             
-            etThread.paperTitleF( tinBaseP , T("")+(idTaskCurrent?strokeS(idTaskCurrent):strokeS('.'))+T(" ")+T(ppsttDay[offd])+T(" ")+TT4(time1,time2,3,6) ) ;
+            etThread.paperTitleF( tin0P , T("")+(idTaskCurrent?strokeS(idTaskCurrent):strokeS('.'))+T(" ")+T(ppsttDay[offd])+T(" ")+TT4(time1,time2,3,6) ) ;
             
             }
                 }
-                    keyTaskNoticeHandlerF( tinBaseP , etThread , psttw , (countT)&c2i ) ;
-                    etThread.strMakeF( tinBaseP , LF , psttw , psttOne ) ; ___( psttw ) ;
+                    keyTaskNoticeHandlerF( tin0P , etThread , psttw , (countT)&c2i ) ;
+                    etThread.strMakeF( tin0P , LF , psttw , psttOne ) ; ___( psttw ) ;
                     ZE( strokeS* , psttw ) ;
                     psttOne[ CSpREFIX ] = S2( 'f' , scOld_CONTROLkEY ) ;
                     SETpREFIX( psttOne , 1 , 0 ) ;
@@ -58,15 +58,15 @@ REST
             if( idTaskEarliest )
             
             countT offd = time2 % 8 ;
-            etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
+            etThread.osTimeNowF( tin0P , time1 , time2 ) ;
             ZE( sCountT , time2 ) ;
             ZE( countT , time1 ) ;
             TELL( "preparing for work cycle" ) ;
         {
         while( !ether && !etThread )
     
-        //U::{ countT idAdam = 0x4010418 ; etThread.ifcHireF( tinBaseP , T("g orilla.http.ideafarm.2") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
-        //U::{ countT idAdam = 0x401049f ; etThread.ifcHireF( tinBaseP , T("clock") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
+        //U::{ countT idAdam = 0x4010418 ; etThread.ifcHireF( tin0P , T("g orilla.http.ideafarm.2") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
+        //U::{ countT idAdam = 0x401049f ; etThread.ifcHireF( tin0P , T("clock") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
         TELL( "hiring f94" )
 
         strokeS* ppsttDay[] = { t1 , t2 , t3 , t4 , t5 , t6 , t7 , t8 } ;
@@ -79,14 +79,14 @@ REST
         TN( t2 , "oo'da" ) ;
         TN( t1 , "wo'da" ) ;
     
-        { ZE( countT , tid ) ; etThread.osThreadF( tinBaseP , tid , tmSaveTickF , &sgnDone_tmSaveTick , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_pStTaskStart , (countT)&pStTaskStart , (countT)&etThread ) ; }
-        signC sgnDone_tmSaveTick( tinBaseP , TAG( TAGiDnULL ) ) ;
+        { ZE( countT , tid ) ; etThread.osThreadF( tin0P , tid , tmSaveTickF , &sgnDone_tmSaveTick , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_pStTaskStart , (countT)&pStTaskStart , (countT)&etThread ) ; }
+        signC sgnDone_tmSaveTick( tin0P , TAG( TAGiDnULL ) ) ;
     
-        etThread.faceStkNotifyAdamF( tinBaseP , keyTaskNoticeHandlerF , (countT)&c2i ) ;
+        etThread.faceStkNotifyAdamF( tin0P , keyTaskNoticeHandlerF , (countT)&c2i ) ;
     
         }
-            keyTaskNoticeHandlerF( tinBaseP , etThread , psttw , (countT)&c2i ) ;
-            etThread.strMakeF( tinBaseP , LF , psttw , psttOne ) ; ___( psttw ) ;
+            keyTaskNoticeHandlerF( tin0P , etThread , psttw , (countT)&c2i ) ;
+            etThread.strMakeF( tin0P , LF , psttw , psttOne ) ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
             psttOne[ CSpREFIX ] = S2( 't' , scOld_CONTROLkEY ) ;
             SETpREFIX( psttOne , 1 , 0 ) ;
@@ -136,23 +136,23 @@ REST
         ZE( sCountT , timeCurrent2 ) ;
         ZE( countT , timeCurrent1 ) ;
         ZE( countT , idTaskCurrent ) ;
-        stackC stDigits( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE ) ;
+        stackC stDigits( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE ) ;
     {
     if( pStTaskStart )
 
-    b_pStTaskStart.ungrabF( tinBaseP ) ;
-    stackC* pStTaskStart = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count3S , T(psttFile) ) ; ___( pStTaskStart ) ;
-    b_pStTaskStart.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-    batonC b_pStTaskStart( tinBaseP , TAG( TAGiDnULL ) , 0 , flBATONc_ALLOWsLEEPwHILEgRABBED ) ; //LEGACYwORKAROUND:ALLOWsLEEPwHILEgRABBED
+    b_pStTaskStart.ungrabF( tin0P ) ;
+    stackC* pStTaskStart = new( 0 , tin0P , LF ) stackC( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count3S , T(psttFile) ) ; ___( pStTaskStart ) ;
+    b_pStTaskStart.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    batonC b_pStTaskStart( tin0P , TAG( TAGiDnULL ) , 0 , flBATONc_ALLOWsLEEPwHILEgRABBED ) ; //LEGACYwORKAROUND:ALLOWsLEEPwHILEgRABBED
     
-    etThread.diskMapFileNameF( tinBaseP , psttFile , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/1530104/stTaskStart.vc") ) ;
-    etThread.strokeF( tinBaseP , T("IdeaFarm " "(tm) City Timecard\r\n \r\nto switch to a new task, press an UPPER case alphabetic key (A-Z)\r\noptionally, before doing this, enter a task number using radix z_ digits (0-9,a-z)\r\n \r\n") ) ;
+    etThread.diskMapFileNameF( tin0P , psttFile , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/1530104/stTaskStart.vc") ) ;
+    etThread.strokeF( tin0P , T("IdeaFarm " "(tm) City Timecard\r\n \r\nto switch to a new task, press an UPPER case alphabetic key (A-Z)\r\noptionally, before doing this, enter a task number using radix z_ digits (0-9,a-z)\r\n \r\n") ) ;
     
     TELL( "preparing for work" ) ;
 
-    stateS state( tinBaseP , etThread ) ;
+    stateS state( tin0P , etThread ) ;
 {
-etThread.winSetTitleF( tinBaseP , TF1(DDNUMB) ) ; //U::
+etThread.winSetTitleF( tin0P , TF1(DDNUMB) ) ; //U::
 TODO
 
 DONE( tmSaveTickF )
@@ -160,18 +160,18 @@ DONE( tmSaveTickF )
     TELL( "cleaning up" ) ;
     }
         }
-            b_pStTaskStart.ungrabF( tinBaseP ) ;
-            pStTaskStart = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThreadStack , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count3S , T(psttFile) ) ; ___( pStTaskStart ) ;
+            b_pStTaskStart.ungrabF( tin0P ) ;
+            pStTaskStart = new( 0 , tin0P , LF ) stackC( tin0P , etThreadStack , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count3S , T(psttFile) ) ; ___( pStTaskStart ) ;
             TELL( "reloading from data file" ) ;
             DEL( pStTaskStart ) ;
-            b_pStTaskStart.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            b_pStTaskStart.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             TELL( "flushing to data file" ) ;
         {
         if( !ether )
 
         }
-            ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x10 , TOCK ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tin0P , TOCK * 0x10 , TOCK ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
         TELL( "taking my cycle nap" ) ;
     {
@@ -187,19 +187,19 @@ TASK( tmSaveTickF )
 
 }
     }
-        etThread.delF( tinBaseP , psttOneP ) ;
+        etThread.delF( tin0P , psttOneP ) ;
         }
             }
-                b_pStTaskStart.ungrabF( tinBaseP ) ;
-                newTaskF( tinBaseP , etThread , *pStTaskStart , timeCurrent1 , timeCurrent2 , idTaskCurrent , idType , stDigits ) ;
-                b_pStTaskStart.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                b_pStTaskStart.ungrabF( tin0P ) ;
+                newTaskF( tin0P , etThread , *pStTaskStart , timeCurrent1 , timeCurrent2 , idTaskCurrent , idType , stDigits ) ;
+                b_pStTaskStart.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
             else if( idType >= 'A' && idType <= 'Z' )
             }
                 }
-                    else etThread.strokeF( tinBaseP , T("digit ")+TF4(digit,flFORMAT_NObASE,0,0x24)+T(" ignored\r\n") ) ;
+                    else etThread.strokeF( tin0P , T("digit ")+TF4(digit,flFORMAT_NObASE,0,0x24)+T(" ignored\r\n") ) ;
                     }
-                        etThread.strokeF( tinBaseP , TF4(digit,flFORMAT_NObASE,0,0x24) ) ;
+                        etThread.strokeF( tin0P , TF4(digit,flFORMAT_NObASE,0,0x24) ) ;
                         stDigits << digit ;
                     {
                     if( stDigits < 6 )
@@ -210,22 +210,22 @@ TASK( tmSaveTickF )
                     }
                         }
                             break ;
-                            etThread.strokeF( tinBaseP , T("\fan unrecognized control key was pressed\r\n") ) ;
+                            etThread.strokeF( tin0P , T("\fan unrecognized control key was pressed\r\n") ) ;
                         {
                         default :
                         }
                             break ;
-                            b_pStTaskStart.ungrabF( tinBaseP ) ;
+                            b_pStTaskStart.ungrabF( tin0P ) ;
 
-                            etThread.strokeF( tinBaseP , T("total work time budget, actual, variance: ")+TT(time1b,time2b)+T("    ")+TT(time1w,time2w)+T("    ")+TT(time1v,time2v)+T("\r\n") ) ;
+                            etThread.strokeF( tin0P , T("total work time budget, actual, variance: ")+TT(time1b,time2b)+T("    ")+TT(time1w,time2w)+T("    ")+TT(time1v,time2v)+T("\r\n") ) ;
 
-                            etThread.osTimeSubtractF( tinBaseP , time1v , time2v , time1b , time2b ) ;
+                            etThread.osTimeSubtractF( tin0P , time1v , time2v , time1b , time2b ) ;
                             sCountT time2v = time2w ;
                             countT  time1v = time1w ;
 
-                            etThread.osTimeAddF( tinBaseP , time1b , time2b , state.timeBudAdj1 , state.timeBudAdj2 ) ;
+                            etThread.osTimeAddF( tin0P , time1b , time2b , state.timeBudAdj1 , state.timeBudAdj2 ) ;
                             }
-                                while( offd -- ) etThread.osTimeAddF( tinBaseP , time1b , time2b , TICK * 0x10 * BUDGETEDwORKhOURSpERwORKdAY , 0 ) ;
+                                while( offd -- ) etThread.osTimeAddF( tin0P , time1b , time2b , TICK * 0x10 * BUDGETEDwORKhOURSpERwORKdAY , 0 ) ;
                                 offd ++ ;
                             {
                             if( offd <= 5 )
@@ -233,16 +233,16 @@ TASK( tmSaveTickF )
                             ZE( countT , time1b ) ;
 
                             }
-                                etThread.strokeF( tinBaseP , T("\r\n") ) ;
-                                if( idTask == idTaskCurrent ) etThread.strokeF( tinBaseP , T(" *") ) ;
+                                etThread.strokeF( tin0P , T("\r\n") ) ;
+                                if( idTask == idTaskCurrent ) etThread.strokeF( tin0P , T(" *") ) ;
                                 }
-                                    etThread.strokeF( tinBaseP , TT4(time1,time2,3,5) ) ;
-                                    else        etThread.strokeF( tinBaseP , TP("",0xd) ) ;
-                                    if( idJob ) etThread.strokeF( tinBaseP , T("/")+TF4(idJob,flFORMAT_NObASE,0xc,0x24) ) ;
-                                    etThread.strokeF( tinBaseP , T("")+T(post2) ) ;
+                                    etThread.strokeF( tin0P , TT4(time1,time2,3,5) ) ;
+                                    else        etThread.strokeF( tin0P , TP("",0xd) ) ;
+                                    if( idJob ) etThread.strokeF( tin0P , T("/")+TF4(idJob,flFORMAT_NObASE,0xc,0x24) ) ;
+                                    etThread.strokeF( tin0P , T("")+T(post2) ) ;
                                     const osTextT post2[] = { (osTextT)idType , 0 } ;
 
-                                    if( idType != 'O' ) etThread.osTimeAddF( tinBaseP , time1w , time2w , time1 , time2 ) ;
+                                    if( idType != 'O' ) etThread.osTimeAddF( tin0P , time1w , time2w , time1 , time2 ) ;
 
                                     countT idJob  = idTask >> 8 ;
                                     countT idType = idTask & 0xff ;
@@ -250,33 +250,33 @@ TASK( tmSaveTickF )
                                 sCountT time2 = swTime2 ;
                                 countT  time1 = swTime1 ;
 
-                                idTask = swTime1.leverF( tinBaseP , idf ) ;
+                                idTask = swTime1.leverF( tin0P , idf ) ;
                             {
                             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                            __( swTime2.cFlavorsF( tinBaseP ) - cFlavors ) ;
-                            countT cFlavors = swTime1.cFlavorsF( tinBaseP ) ;
+                            __( swTime2.cFlavorsF( tin0P ) - cFlavors ) ;
+                            countT cFlavors = swTime1.cFlavorsF( tin0P ) ;
                             ZE( sCountT , time2w ) ;
                             ZE( countT , time1w ) ;
 
                             }
-                                else         etThread.strokeF( tinBaseP , T("\f") ) ;
+                                else         etThread.strokeF( tin0P , T("\f") ) ;
                                 if( bFirst ) bFirst = 0 ;
                                 static countT bFirst = 1 ;
                             {
 
                             }
                                 offd = timeE2 % 8 ;
-                                etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+                                etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
                                 ZE( sCountT , timeE2 ) ;
                                 ZE( countT , timeE1 ) ;
                             {
                             else
                             }
                                 }
-                                    etThread.osTimeAddF( tinBaseP , swTime1 , (sCountT&)(countT&)swTime2 , timeE1 , timeE2 ) ;
-                                    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
+                                    etThread.osTimeAddF( tin0P , swTime1 , (sCountT&)(countT&)swTime2 , timeE1 , timeE2 ) ;
+                                    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;
                                     offd = timeE2 % 8 ;
-                                    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+                                    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
                                     ZE( sCountT , timeE2 ) ;
                                     ZE( countT , timeE1 ) ;
                                 {
@@ -289,8 +289,8 @@ TASK( tmSaveTickF )
                                         timeA2  = pc3s->c2 ;
                                         timeA1  = pc3s->c1 ;
                                         }
-                                            etThread.osTimeAddF( tinBaseP , swTime1 , (sCountT&)(countT&)swTime2 , timeE1 , timeE2 ) ;
-                                            etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
+                                            etThread.osTimeAddF( tin0P , swTime1 , (sCountT&)(countT&)swTime2 , timeE1 , timeE2 ) ;
+                                            etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;
                                             sCountT timeE2 = pc3s->c2 ;
                                             countT  timeE1 = pc3s->c1 ;
                                         {
@@ -298,67 +298,67 @@ TASK( tmSaveTickF )
                                         if( bFirst ) bFirst = 0 ;
                                     {
                                     if( pc3s )
-                                    count3S* pc3s = (count3S*)pStTaskStart->upF( tinBaseP , hUp ) ;
+                                    count3S* pc3s = (count3S*)pStTaskStart->upF( tin0P , hUp ) ;
                                 {
                                 do
-                                handleC hUp( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hUp( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                 boolT bFirst = 1 ;
                                 ZE( sCountT , timeA2 ) ;
                                 ZE( countT , timeA1 ) ;
                             {
                             if( *pStTaskStart )
                             ZE( countT , offd ) ;
-                            switchC swTime2( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idTask ) ;
-                            switchC swTime1( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idTask ) ;
+                            switchC swTime2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idTask ) ;
+                            switchC swTime1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idTask ) ;
                             ZE( countT , idTask ) ;
-                            b_pStTaskStart.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            b_pStTaskStart.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                             //PSEUDODUPLICATED CODE: CASES b t ARE VERY SIMILAR
                         {
                         case 't' : // DISPLAY TOTALS
                         }
                             //INTENTIONALLY CONTINUE INTO 't'
-                            b_pStTaskStart.ungrabF( tinBaseP ) ;
+                            b_pStTaskStart.ungrabF( tin0P ) ;
                             }
                                 idTaskEarliest = idTaskCurrent ;
                                 timeEarliest2 = timeCurrent2 ;
                                 timeEarliest1 = timeCurrent1 ;
-                                newTaskF( tinBaseP , etThread , *pStTaskStart , timeCurrent1 , timeCurrent2 , idTaskCurrent , idTaskCurrent , stDigits ) ;
+                                newTaskF( tin0P , etThread , *pStTaskStart , timeCurrent1 , timeCurrent2 , idTaskCurrent , idTaskCurrent , stDigits ) ;
                             {
                             if( pStTaskStart && idTaskCurrent )
-                            pStTaskStart = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count3S , T(psttFile) ) ; ___( pStTaskStart ) ;
-                            etThread.delF( tinBaseP , psttg ) ;
-                            etThread.strokeF( tinBaseP , T("totals have been moved to \"")+T(psttg)+T("\"\r\n") ) ;
-                            etThread.diskFileOrDirDeleteF( tinBaseP , psttFile ) ;
-                            etThread.delF( tinBaseP , pbCurrent ) ;
-                            etThread.boxPutGenerationF( tinBaseP , psttg , psttFile , CSaLLgENnAMES , pbCurrent , cbCurrent ) ;
+                            pStTaskStart = new( 0 , tin0P , LF ) stackC( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count3S , T(psttFile) ) ; ___( pStTaskStart ) ;
+                            etThread.delF( tin0P , psttg ) ;
+                            etThread.strokeF( tin0P , T("totals have been moved to \"")+T(psttg)+T("\"\r\n") ) ;
+                            etThread.diskFileOrDirDeleteF( tin0P , psttFile ) ;
+                            etThread.delF( tin0P , pbCurrent ) ;
+                            etThread.boxPutGenerationF( tin0P , psttg , psttFile , CSaLLgENnAMES , pbCurrent , cbCurrent ) ;
                             ZE( strokeS* , psttg ) ;
-                            etThread.boxGetShadowF( tinBaseP , pbCurrent , cbCurrent , psttFile ) ; ___( pbCurrent ) ;
+                            etThread.boxGetShadowF( tin0P , pbCurrent , cbCurrent , psttFile ) ; ___( pbCurrent ) ;
                             ZE( countT , cbCurrent ) ;
                             ZE( byteT* , pbCurrent ) ;
                             idTaskEarliest = timeEarliest2 = timeEarliest1 = 0 ;
                             DEL( pStTaskStart ) ;
 
-                            if( idTaskCurrent ) newTaskF( tinBaseP , etThread , *pStTaskStart , timeCurrent1 , timeCurrent2 , idTaskCurrent , idTaskCurrent , stDigits ) ;
-                            b_pStTaskStart.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            if( idTaskCurrent ) newTaskF( tin0P , etThread , *pStTaskStart , timeCurrent1 , timeCurrent2 , idTaskCurrent , idTaskCurrent , stDigits ) ;
+                            b_pStTaskStart.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                         {
                         case 'f' : // FLUSH TOTALS TO ARCHIVE AND RESET THEM TO ZE
                         }
                             break ;
-                            b_pStTaskStart.ungrabF( tinBaseP ) ;
-                            undoF( tinBaseP , etThread , *pStTaskStart , timeCurrent1 , timeCurrent2 , idTaskCurrent , stDigits ) ;
-                            b_pStTaskStart.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            b_pStTaskStart.ungrabF( tin0P ) ;
+                            undoF( tin0P , etThread , *pStTaskStart , timeCurrent1 , timeCurrent2 , idTaskCurrent , stDigits ) ;
+                            b_pStTaskStart.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                         {
                         case 'u' : // REMOVES THE MOST RECENT TASK CHANGE RECORD
                         }
                             break ;
-                            b_pStTaskStart.ungrabF( tinBaseP ) ;
+                            b_pStTaskStart.ungrabF( tin0P ) ;
 
-                            etThread.osTimeSubtractF( tinBaseP , state.timeBudAdj1 , state.timeBudAdj2 , time1b , time2b ) ;
+                            etThread.osTimeSubtractF( tin0P , state.timeBudAdj1 , state.timeBudAdj2 , time1b , time2b ) ;
                             state.timeBudAdj2 = time2w ;
                             state.timeBudAdj1 = time1w ;
 
                             }
-                                while( offd -- ) etThread.osTimeAddF( tinBaseP , time1b , time2b , TICK * 0x10 * BUDGETEDwORKhOURSpERwORKdAY , 0 ) ;
+                                while( offd -- ) etThread.osTimeAddF( tin0P , time1b , time2b , TICK * 0x10 * BUDGETEDwORKhOURSpERwORKdAY , 0 ) ;
                                 offd ++ ;
                             {
                             if( offd <= 5 )
@@ -366,16 +366,16 @@ TASK( tmSaveTickF )
                             ZE( countT , time1b ) ;
 
                             }
-                                etThread.strokeF( tinBaseP , T("\r\n") ) ;
-                                if( idTask == idTaskCurrent ) etThread.strokeF( tinBaseP , T(" *") ) ;
+                                etThread.strokeF( tin0P , T("\r\n") ) ;
+                                if( idTask == idTaskCurrent ) etThread.strokeF( tin0P , T(" *") ) ;
                                 }
-                                    etThread.strokeF( tinBaseP , TT4(time1,time2,3,5) ) ;
-                                    else        etThread.strokeF( tinBaseP , TP("",0xd) ) ;
-                                    if( idJob ) etThread.strokeF( tinBaseP , T("/")+TF4(idJob,flFORMAT_NObASE,0xc,0x24) ) ;
-                                    etThread.strokeF( tinBaseP , T("")+T(post2) ) ;
+                                    etThread.strokeF( tin0P , TT4(time1,time2,3,5) ) ;
+                                    else        etThread.strokeF( tin0P , TP("",0xd) ) ;
+                                    if( idJob ) etThread.strokeF( tin0P , T("/")+TF4(idJob,flFORMAT_NObASE,0xc,0x24) ) ;
+                                    etThread.strokeF( tin0P , T("")+T(post2) ) ;
                                     const osTextT post2[] = { (osTextT)idType , 0 } ;
 
-                                    if( idType != 'O' ) etThread.osTimeAddF( tinBaseP , time1w , time2w , time1 , time2 ) ;
+                                    if( idType != 'O' ) etThread.osTimeAddF( tin0P , time1w , time2w , time1 , time2 ) ;
 
                                     countT idJob  = idTask >> 8 ;
                                     countT idType = idTask & 0xff ;
@@ -383,33 +383,33 @@ TASK( tmSaveTickF )
                                 sCountT time2 = swTime2 ;
                                 countT  time1 = swTime1 ;
 
-                                idTask = swTime1.leverF( tinBaseP , idf ) ;
+                                idTask = swTime1.leverF( tin0P , idf ) ;
                             {
                             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                            __( swTime2.cFlavorsF( tinBaseP ) - cFlavors ) ;
-                            countT cFlavors = swTime1.cFlavorsF( tinBaseP ) ;
+                            __( swTime2.cFlavorsF( tin0P ) - cFlavors ) ;
+                            countT cFlavors = swTime1.cFlavorsF( tin0P ) ;
                             ZE( sCountT , time2w ) ;
                             ZE( countT , time1w ) ;
 
                             }
-                                else         etThread.strokeF( tinBaseP , T("\f") ) ;
+                                else         etThread.strokeF( tin0P , T("\f") ) ;
                                 if( bFirst ) bFirst = 0 ;
                                 static countT bFirst = 1 ;
                             {
 
                             }
                                 offd = timeE2 % 8 ;
-                                etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+                                etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
                                 ZE( sCountT , timeE2 ) ;
                                 ZE( countT , timeE1 ) ;
                             {
                             else
                             }
                                 }
-                                    etThread.osTimeAddF( tinBaseP , swTime1 , (sCountT&)(countT&)swTime2 , timeE1 , timeE2 ) ;
-                                    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
+                                    etThread.osTimeAddF( tin0P , swTime1 , (sCountT&)(countT&)swTime2 , timeE1 , timeE2 ) ;
+                                    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;
                                     offd = timeE2 % 8 ;
-                                    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+                                    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
                                     ZE( sCountT , timeE2 ) ;
                                     ZE( countT , timeE1 ) ;
                                 {
@@ -422,8 +422,8 @@ TASK( tmSaveTickF )
                                         timeA2  = pc3s->c2 ;
                                         timeA1  = pc3s->c1 ;
                                         }
-                                            etThread.osTimeAddF( tinBaseP , swTime1 , (sCountT&)(countT&)swTime2 , timeE1 , timeE2 ) ;
-                                            etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;
+                                            etThread.osTimeAddF( tin0P , swTime1 , (sCountT&)(countT&)swTime2 , timeE1 , timeE2 ) ;
+                                            etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;
                                             sCountT timeE2 = pc3s->c2 ;
                                             countT  timeE1 = pc3s->c1 ;
                                         {
@@ -431,20 +431,20 @@ TASK( tmSaveTickF )
                                         if( bFirst ) bFirst = 0 ;
                                     {
                                     if( pc3s )
-                                    count3S* pc3s = (count3S*)pStTaskStart->upF( tinBaseP , hUp ) ;
+                                    count3S* pc3s = (count3S*)pStTaskStart->upF( tin0P , hUp ) ;
                                 {
                                 do
-                                handleC hUp( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                handleC hUp( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                 boolT bFirst = 1 ;
                                 ZE( sCountT , timeA2 ) ;
                                 ZE( countT , timeA1 ) ;
                             {
                             if( *pStTaskStart )
                             ZE( countT , offd ) ;
-                            switchC swTime2( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idTask ) ;
-                            switchC swTime1( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idTask ) ;
+                            switchC swTime2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idTask ) ;
+                            switchC swTime1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idTask ) ;
                             ZE( countT , idTask ) ;
-                            b_pStTaskStart.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            b_pStTaskStart.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                             //PSEUDODUPLICATED CODE: CASES b t ARE VERY SIMILAR
                         {
                         case 'b' : // SET ADJUSTMENT VALUE SO THAT ADJUSTED BUDGET EQUALS CURRENT TOTAL
@@ -479,25 +479,25 @@ TASK( tmSaveTickF )
     {
     if( psttOneP && infoP )
 {
-voidT keyTaskNoticeHandlerF( tin0S& tinBaseP , etherC& etThread , strokeS*& psttOneP , const countT infoP )
+voidT keyTaskNoticeHandlerF( tin0S& tin0P , etherC& etThread , strokeS*& psttOneP , const countT infoP )
 
 }
     }
-        etThread.strokeF( tinBaseP , T(post2)+T("/")+TF4(idJob,flFORMAT_NObASE,8,0x24)+T("    ")+TT4(pc3s->c1,pc3s->c2,3,5)+T("\r\n") ) ;
+        etThread.strokeF( tin0P , T(post2)+T("/")+TF4(idJob,flFORMAT_NObASE,8,0x24)+T("    ")+TT4(pc3s->c1,pc3s->c2,3,5)+T("\r\n") ) ;
         const osTextT post2[] = { (osTextT)idTypeP , 0 } ;
         stTaskStartP << pc3s ;
         idTaskCurrentP = pc3s->c3 ;
         timeCurrent2P  = pc3s->c2 ;
         timeCurrent1P  = pc3s->c1 ;
         pc3s->c3 = idJob << 8 | idTypeP ;
-        etThread.osTimeNowF( tinBaseP , pc3s->c1 , (sCountT&)pc3s->c2 ) ;
-        etThread.memSetF( tinBaseP , (byteT*)pc3s , sizeof( count3S ) ) ;
+        etThread.osTimeNowF( tin0P , pc3s->c1 , (sCountT&)pc3s->c2 ) ;
+        etThread.memSetF( tin0P , (byteT*)pc3s , sizeof( count3S ) ) ;
 
-        if( !( ++ idKey % 0x10 ) ) etThread.strokeF( tinBaseP , T("\f") ) ;
+        if( !( ++ idKey % 0x10 ) ) etThread.strokeF( tin0P , T("\f") ) ;
         static countT idKey ;
     {
     if( pc3s )
-    etThread.newF( tinBaseP , LF , pc3s ) ; ___( pc3s ) ;
+    etThread.newF( tin0P , LF , pc3s ) ; ___( pc3s ) ;
     ZE( count3S* , pc3s ) ;
 
     }
@@ -506,7 +506,7 @@ voidT keyTaskNoticeHandlerF( tin0S& tinBaseP , etherC& etThread , strokeS*& pstt
         ZE( countT , digit ) ;
         else idJob *= 0x24 ;
         }
-            etThread.strokeF( tinBaseP , T("\r      \r") ) ;
+            etThread.strokeF( tin0P , T("\r      \r") ) ;
             bFirst = 0 ;
         {
         if( bFirst )
@@ -515,7 +515,7 @@ voidT keyTaskNoticeHandlerF( tin0S& tinBaseP , etherC& etThread , strokeS*& pstt
     boolT bFirst = 1 ;
     ZE( countT , idJob ) ;
 {
-voidT newTaskF( tin0S& tinBaseP , etherC& etThread , stackC& stTaskStartP , countT& timeCurrent1P , sCountT& timeCurrent2P , countT& idTaskCurrentP , const countT idTypeP , stackC& stDigitsP )
+voidT newTaskF( tin0S& tin0P , etherC& etThread , stackC& stTaskStartP , countT& timeCurrent1P , sCountT& timeCurrent2P , countT& idTaskCurrentP , const countT idTypeP , stackC& stDigitsP )
 
 }
     if( etThread ) ;
@@ -529,12 +529,12 @@ voidT newTaskF( tin0S& tinBaseP , etherC& etThread , stackC& stTaskStartP , coun
         {
         if( pc3s )
         pc3s = (count3S*)stTaskStartP[ 1 ] ;
-        etThread.delF( tinBaseP , pc3s ) ;
-        count3S* pc3s = (count3S*)stTaskStartP.extractF( tinBaseP , 1 ) ;
+        etThread.delF( tin0P , pc3s ) ;
+        count3S* pc3s = (count3S*)stTaskStartP.extractF( tin0P , 1 ) ;
     {
     else if( stTaskStartP )
     }
-        etThread.strokeF( tinBaseP , T("\b \b") ) ;
+        etThread.strokeF( tin0P , T("\b \b") ) ;
         stDigitsP >> digit ;
         ZE( countT , digit ) ;
     {
@@ -542,7 +542,7 @@ voidT newTaskF( tin0S& tinBaseP , etherC& etThread , stackC& stTaskStartP , coun
     boolT bFirst = 1 ;
     ZE( countT , idJob ) ;
 {
-voidT undoF( tin0S& tinBaseP , etherC& etThread , stackC& stTaskStartP , countT& timeCurrent1P , sCountT& timeCurrent2P , countT& idTaskCurrentP , stackC& stDigitsP )
+voidT undoF( tin0S& tin0P , etherC& etThread , stackC& stTaskStartP , countT& timeCurrent1P , sCountT& timeCurrent2P , countT& idTaskCurrentP , stackC& stDigitsP )
 
 }
     ;
@@ -554,7 +554,7 @@ voidT undoF( tin0S& tinBaseP , etherC& etThread , stackC& stTaskStartP , countT&
             0xb == psttP->idAdam &&
         (
         ||
-        !etThread.strCompareF( tinBaseP , psttP , T("!time") )
+        !etThread.strCompareF( tin0P , psttP , T("!time") )
 
     return
 
@@ -565,7 +565,7 @@ voidT undoF( tin0S& tinBaseP , etherC& etThread , stackC& stTaskStartP , countT&
     __Z( psttP ) ;
     if( etThread ) return 0 ;
 {
-boolT bLooksLikeTimeF( tin0S& tinBaseP , etherC& etThread , const strokeS* const psttP ) //EXAMPLE: T("12.34@56.78")
+boolT bLooksLikeTimeF( tin0S& tin0P , etherC& etThread , const strokeS* const psttP ) //EXAMPLE: T("12.34@56.78")
 
 strokeS* psttFile ;
 
@@ -576,8 +576,8 @@ strokeS* psttFile ;
 
 }
 {
-stateC( tinBaseP , etherP , sizeof *this , 0 , translateStateF )
-stateS::stateS( tin0S& tinBaseP , etherC& etherP ) :
+stateC( tin0P , etherP , sizeof *this , 0 , translateStateF )
+stateS::stateS( tin0S& tin0P , etherC& etherP ) :
 
 TRANSLATEsTATE_END
     state.idMe ++ ;
@@ -588,7 +588,7 @@ TRANSLATEsTATE_BEGIN( stateS , 2 )
 
 ;
 }
-    stateS( tin0S& tinBaseP , etherC& etherP ) ;
+    stateS( tin0S& tin0P , etherC& etherP ) ;
 
     sCountT  timeBudAdj2 ;
     countT   timeBudAdj1 ;

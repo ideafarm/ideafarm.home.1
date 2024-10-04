@@ -9,16 +9,16 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.traceF( tinBaseP , T("2 [pFoo,name]:    ")+TfORsTRING((countT)pFoo2)+T("    ")+T(pFoo2->sayF(fi2)) ) ;
-etThread.traceF( tinBaseP , T("1 [pFoo,name]:    ")+TfORsTRING((countT)pFoo1)+T("    ")+T(pFoo1->sayF(fi1)) ) ;
+etThread.traceF( tin0P , T("2 [pFoo,name]:    ")+TfORsTRING((countT)pFoo2)+T("    ")+T(pFoo2->sayF(fi2)) ) ;
+etThread.traceF( tin0P , T("1 [pFoo,name]:    ")+TfORsTRING((countT)pFoo1)+T("    ")+T(pFoo1->sayF(fi1)) ) ;
 
-fooC* pFoo2 = new( 0 , tinBaseP , pbFooShared , sizeof pbFooShared ) fooC( fi2 ) ;
-fooC* pFoo1 = new( 0 , tinBaseP , pbFooShared , sizeof pbFooShared ) fooC( fi1 ) ;
+fooC* pFoo2 = new( 0 , tin0P , pbFooShared , sizeof pbFooShared ) fooC( fi2 ) ;
+fooC* pFoo1 = new( 0 , tin0P , pbFooShared , sizeof pbFooShared ) fooC( fi1 ) ;
 
-thirdC::c_memsetIF( tinBaseP , pbFooShared , sizeof pbFooShared ) ;
+thirdC::c_memsetIF( tin0P , pbFooShared , sizeof pbFooShared ) ;
 byteT pbFooShared[ sizeof( fooC ) ] ;
 
 fooiC fi2( "myName2" ) ;

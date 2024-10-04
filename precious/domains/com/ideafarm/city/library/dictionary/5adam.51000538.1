@@ -15,26 +15,26 @@ sData << (countT)1 ;        //idResident: MANUALLY EDIT THIS TO BE CORRECT FOR T
 sData << (countT)time2 ;
 sData << time1 ;
 sData << idKey ;
-soulC sData( tinBaseP , TAG( TAGiDnULL ) ) ;
+soulC sData( tin0P , TAG( TAGiDnULL ) ) ;
 
 TN( tAddress , "8345 NW 66TH ST # 2685\r\nMIAMI, FL 33166-2626" ) ;
 TN( tName , "Wo'O Ideafarm" ) ;
 
-etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
+etThread.osTimeNowF( tin0P , time1 , time2 ) ;
 ZE( sCountT , time2 ) ;
 ZE( countT , time1 ) ;
 
 }
-    etThread.boxPutF( tinBaseP , tLath , (byteT*)&idKey , sizeof idKey ) ;
+    etThread.boxPutF( tin0P , tLath , (byteT*)&idKey , sizeof idKey ) ;
     idKey ++ ;
     }
-        etThread.delF( tinBaseP , pbi ) ;
+        etThread.delF( tin0P , pbi ) ;
         if( pbi && cbi == sizeof idKey ) idKey = *(countT*)pbi ;
-        etThread.boxGetF( tinBaseP , pbi , cbi , tLath ) ; ___( pbi ) ;
+        etThread.boxGetF( tin0P , pbi , cbi , tLath ) ; ___( pbi ) ;
         ZE( countT , cbi ) ;
         ZE( byteT* , pbi ) ;
     {
-    if( etThread.diskFileExistsF( tinBaseP , tLath ) )
+    if( etThread.diskFileExistsF( tin0P , tLath ) )
     TN( tLath , "///ideafarm/ephemeral/domains/com/ideafarm/" ) ; tLath += TF1(DDNUMB)+T("/idKeyLath") ;
 {
 ZE( countT , idKey ) ;

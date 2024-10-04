@@ -12,20 +12,20 @@
         }
             }
                 }
-                                                          c_strcatIF( tinBaseP , processGlobal2I.postDllsLoaded  , postP ) ;
-                    if( *processGlobal2I.postDllsLoaded ) c_strcatIF( tinBaseP , processGlobal2I.postDllsLoaded  , postPad ) ;
+                                                          c_strcatIF( tin0P , processGlobal2I.postDllsLoaded  , postP ) ;
+                    if( *processGlobal2I.postDllsLoaded ) c_strcatIF( tin0P , processGlobal2I.postDllsLoaded  , postPad ) ;
                 {
-                if( c_strlenIF( tinBaseP , processGlobal2I.postDllsLoaded ) + sizeof postPad + c_strlenIF( tinBaseP , postP ) < sizeof processGlobal2I.postDllsLoaded )
+                if( c_strlenIF( tin0P , processGlobal2I.postDllsLoaded ) + sizeof postPad + c_strlenIF( tin0P , postP ) < sizeof processGlobal2I.postDllsLoaded )
                 osTextT postPad[] = " " ;
                 _IO_
             {
-            if( !c_strstrIF( tinBaseP , processGlobal2I.postDllsLoaded , postP ) )  //20180117@1558: CHANGED SEMANTICS TO REGISTER ONLY UNIQUE DLL'S IN RESPONSE TO EXHAUSTING THE REGISTRY WHEN cloudC REPEATEDLY HIRES AN ADAM
+            if( !c_strstrIF( tin0P , processGlobal2I.postDllsLoaded , postP ) )  //20180117@1558: CHANGED SEMANTICS TO REGISTER ONLY UNIQUE DLL'S IN RESPONSE TO EXHAUSTING THE REGISTRY WHEN cloudC REPEATEDLY HIRES AN ADAM
             inc02AM( processGlobal2I.cDllLoaded ) ;
         {
         else
         }
             __1
-            if( pEtherP && !( F(flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ) pEtherP->traceF( tinBaseP , textC(tinBaseP,TAG( TAGiDnULL ),flTEXTc_null,postP) ) ;
+            if( pEtherP && !( F(flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ) pEtherP->traceF( tin0P , textC(tin0P,TAG( TAGiDnULL ),flTEXTc_null,postP) ) ;
             _IO_
         {
         if( bFail )
@@ -45,18 +45,18 @@
                                 LOGrAW3(                                    "!exception: LoadLibrary failed [rc,postP]:    " , rc , "    " ) ;
                             {
                             else
-                            if( ((tin9S&)tinBaseP).pEther ) ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("!exception: LoadLibrary failed [rc,postP]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postP) ) ;
+                            if( ((tin9S&)tin0P).pEther ) ((tin9S&)tin0P).pEther->traceF( tin0P , T("!exception: LoadLibrary failed [rc,postP]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postP) ) ;
                         {
                         //default :
                         //}
                         //    break ;
                         //
-                        //    if( ((tin9S&)tinBaseP).pEther ) ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T(postAnticipatedErrorP) ) ;
+                        //    if( ((tin9S&)tin0P).pEther ) ((tin9S&)tin0P).pEther->traceF( tin0P , T(postAnticipatedErrorP) ) ;
                         //
-                        //    thirdC::c_strcatIF( tinBaseP , postAnticipatedErrorP  , osto2 ) ;
-                        //    thirdC::c_strcatIF( tinBaseP , postAnticipatedErrorP  , postP ) ;
-                        //    thirdC::c_strcpyIF( tinBaseP , postAnticipatedErrorP  , osto1 ) ;
-                        //    newF( tinBaseP , LF , postAnticipatedErrorP , osto1.costF() + c_strlenIF( tinBaseP , postP ) + osto2.costF() + 1 ) ; ___( postAnticipatedErrorP ) ;
+                        //    thirdC::c_strcatIF( tin0P , postAnticipatedErrorP  , osto2 ) ;
+                        //    thirdC::c_strcatIF( tin0P , postAnticipatedErrorP  , postP ) ;
+                        //    thirdC::c_strcpyIF( tin0P , postAnticipatedErrorP  , osto1 ) ;
+                        //    newF( tin0P , LF , postAnticipatedErrorP , osto1.costF() + c_strlenIF( tin0P , postP ) + osto2.costF() + 1 ) ; ___( postAnticipatedErrorP ) ;
                         //    OStEXTV( osto2 , "\")." )
                         //    OStEXTV( osto1 , "Anticipated failure:  LoadLibrary(\"" )
                         //
@@ -72,7 +72,7 @@
                 else
                 }
                     INCoShANDLES
-                    handleP.osF( ifcIDtYPEhANDLE_DLL , ((tin9S&)tinBaseP).brcRaw ) ;
+                    handleP.osF( ifcIDtYPEhANDLE_DLL , ((tin9S&)tin0P).brcRaw ) ;
                 {
                 if( !POOP )
 
@@ -91,8 +91,8 @@
                 ZE( HMODULE , osh ) ;
                 countT cTries = 0 ; //U: WHAT IS CAUSING 8 TO BE NEEDED (AND NOT ALWAYS EFFECTIVE)? (WITH A TOCK WAIT AT THE END OF EACH TRY)
                 }
-                    ++ s ; dosSleepIF( tinBaseP , TOCK ) ; //U: 19970528: CONJ: THIS IS NEEDED SO GATE WILL OPEN
-                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    ++ s ; dosSleepIF( tin0P , TOCK ) ; //U: 19970528: CONJ: THIS IS NEEDED SO GATE WILL OPEN
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 {
     
             #ifdef __OS2__
@@ -124,7 +124,7 @@
     SCOOP
     _IO_
 {
-/**//*1*/voidT thirdC::dosLoadModuleF( tin0S& tinBaseP , handleC& handleP , osTextT*& postAnticipatedErrorP , const osTextT* const postP , etherC* const pEtherP )/*1*/
+/**//*1*/voidT thirdC::dosLoadModuleF( tin0S& tin0P , handleC& handleP , osTextT*& postAnticipatedErrorP , const osTextT* const postP , etherC* const pEtherP )/*1*/
 
 */
   if not ze then exception information will be logged to *pEther

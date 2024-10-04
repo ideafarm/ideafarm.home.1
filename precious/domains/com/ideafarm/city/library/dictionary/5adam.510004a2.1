@@ -9,32 +9,32 @@
 
 REST
 }
-    //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SHUTDOWN ) ; //U::
-    //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ; //U::
+    //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_SHUTDOWN ) ; //U::
+    //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ; //U::
     }
         OStEXTAK( napHomeJot  , "cell monitor: bequesting state" ) ;
-        cellC::classShutdown2F( tinBaseP ) ;
-        sgnDone_tmInspect.waitF( tinBaseP ) ;
-        cellC::classShutdown1F( tinBaseP , state.idCellLath , state.serialLath ) ;
-        cellC::classFireAllF( tinBaseP ) ;
+        cellC::classShutdown2F( tin0P ) ;
+        sgnDone_tmInspect.waitF( tin0P ) ;
+        cellC::classShutdown1F( tin0P , state.idCellLath , state.serialLath ) ;
+        cellC::classFireAllF( tin0P ) ;
         OStEXTAK( napHomeJot  , "cell monitor: cleaning up" ) ;
-        etThread.loafIF( tinBaseP ) ;
+        etThread.loafIF( tin0P ) ;
         OStEXTAK( napHomeJot  , "cell monitor: watching" ) ;
 
         if( !ether ) NEWcELL( etThread , ifcIDaDAMoLD_VIEWjOT , 0 )
-        ether.osSleepF( tinBaseP , TOCK * 0x8 ) ; //U::
+        ether.osSleepF( tin0P , TOCK * 0x8 ) ; //U::
         if( !ether ) NEWcELL( etThread , ifcIDaDAMoLD_LOGIN , 0 )
-        ether.osSleepF( tinBaseP , TOCK * 0x8 ) ; //U::
-        if( !ether ) etThread.ifcChatF( tinBaseP , 0 , DDNUMB , jobFillCourseF , jobHearOrderF ) ;
+        ether.osSleepF( tin0P , TOCK * 0x8 ) ; //U::
+        if( !ether ) etThread.ifcChatF( tin0P , 0 , DDNUMB , jobFillCourseF , jobHearOrderF ) ;
         if( !ether ) NEWcELL( etThread , ifcIDaDAMoLD_CHATsERVER , T("") )
-        //etThread.osThreadF( tinBaseP , countTC() , tmInspectPoolsF ) ;
-        //etThread.osThreadF( tinBaseP , countTC() , tmInspectF , &sgnDone_tmInspect ) ;
-        //etThread.osThreadF( tinBaseP , countTC() , tmFireMyselfF ) ;
-        cellC::classSetupF( tinBaseP , state.idCellLath , state.serialLath , 1 , windowTitle ) ;
-        signC sgnDone_tmInspect( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //etThread.osThreadF( tin0P , countTC() , tmInspectPoolsF ) ;
+        //etThread.osThreadF( tin0P , countTC() , tmInspectF , &sgnDone_tmInspect ) ;
+        //etThread.osThreadF( tin0P , countTC() , tmFireMyselfF ) ;
+        cellC::classSetupF( tin0P , state.idCellLath , state.serialLath , 1 , windowTitle ) ;
+        signC sgnDone_tmInspect( tin0P , TAG( TAGiDnULL ) ) ;
         OStEXTAK( napHomeJot  , "cell monitor: setting up" ) ;
     
-        stateS state( tinBaseP , etThread , T("monitored") ) ;
+        stateS state( tin0P , etThread , T("monitored") ) ;
         OStEXTAK( napHomeJot  , "cell monitor: inheriting state" ) ;
     {
     else
@@ -42,49 +42,49 @@ REST
         OStEXTAK( napHomeJot  , "base cell monitor: state has been bequested" ) ;
         }
             OStEXTAK( napHomeJot  , "base cell monitor: bequesting state" ) ;
-            cellC::classShutdown2F( tinBaseP ) ;
-            sgnDone_tmInspect.waitF( tinBaseP ) ;
-            cellC::classShutdown1F( tinBaseP , state.idCellLath , state.serialLath ) ;
-            cellC::classFireAllF( tinBaseP ) ;
+            cellC::classShutdown2F( tin0P ) ;
+            sgnDone_tmInspect.waitF( tin0P ) ;
+            cellC::classShutdown1F( tin0P , state.idCellLath , state.serialLath ) ;
+            cellC::classFireAllF( tin0P ) ;
             OStEXTAK( napHomeJot  , "base cell monitor: cleaning up" ) ;
-            etThread.loafIF( tinBaseP ) ;
+            etThread.loafIF( tin0P ) ;
 
             OStEXTAK( napHomeJot  , "base cell monitor: watching" ) ;
             NEWcELL( etThread , DDNUMB , TaRG1_OSmONITOR+T(".monitored !postHandoffOld monitored") )
             __( DDNUMB - countTC( ifcIDaDAM_2GLASS2 ) ) ;
-            //etThread.osThreadF( tinBaseP , countTC() , tmInspectF , &sgnDone_tmInspect ) ;
-            //etThread.osThreadF( tinBaseP , countTC() , tmFireMyselfF ) ;
-            cellC::classSetupF( tinBaseP , state.idCellLath , state.serialLath , 1 , windowTitle ) ;
-            signC sgnDone_tmInspect( tinBaseP , TAG( TAGiDnULL ) ) ;
+            //etThread.osThreadF( tin0P , countTC() , tmInspectF , &sgnDone_tmInspect ) ;
+            //etThread.osThreadF( tin0P , countTC() , tmFireMyselfF ) ;
+            cellC::classSetupF( tin0P , state.idCellLath , state.serialLath , 1 , windowTitle ) ;
+            signC sgnDone_tmInspect( tin0P , TAG( TAGiDnULL ) ) ;
             OStEXTAK( napHomeJot  , "base cell monitor: setting up" ) ;
         {
-        stateS state( tinBaseP , etThread ) ;
+        stateS state( tin0P , etThread ) ;
         OStEXTAK( napHomeJot  , "base cell monitor: inheriting state" ) ;
     {
-    else if( thirdC::ifcCellIsWorkingIF( tinBaseP , DDNUMB ) )
+    else if( thirdC::ifcCellIsWorkingIF( tin0P , DDNUMB ) )
     if( etThread ) ;
 
-    //ether.osThreadF( tinBaseP , countTC() , tmDeadLockF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&grab1 , (countT)&grab2 , 2 ) ;
-    //ether.osThreadF( tinBaseP , countTC() , tmDeadLockF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&grab1 , (countT)&grab2 , 1 ) ;
-    //grabOldS grab2( tinBaseP , TAG( TAGiDnULL ) ) ;
-    //grabOldS grab1( tinBaseP , TAG( TAGiDnULL ) ) ;
+    //ether.osThreadF( tin0P , countTC() , tmDeadLockF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&grab1 , (countT)&grab2 , 2 ) ;
+    //ether.osThreadF( tin0P , countTC() , tmDeadLockF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&grab1 , (countT)&grab2 , 1 ) ;
+    //grabOldS grab2( tin0P , TAG( TAGiDnULL ) ) ;
+    //grabOldS grab1( tin0P , TAG( TAGiDnULL ) ) ;
 
-    windowTitleS windowTitle( tinBaseP , etThread ) ;
-    //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ; //U::
-    //etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_SETUP , 8 ) ; //U::
+    windowTitleS windowTitle( tin0P , etThread ) ;
+    //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ; //U::
+    //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_SETUP , 8 ) ; //U::
     
     }
-        napHomeJot.formattingIsDoneF( tinBaseP ) ;
+        napHomeJot.formattingIsDoneF( tin0P ) ;
         if( !etThread ) *napHomeJot = 0 ;
     {
     if( !( F(napHomeJot.flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) )
     __( !(byteT*)napHomeJot ) ;
     __( (countT)napHomeJot - CBnAPjOT ) ;
-    napkinC napHomeJot( tinBaseP , LF , (byteT*)bits , "napHomeJot" , 0 , CBnAPjOT ) ;
-    bitsC bits( tinBaseP , CbITSlIFI , 0 , 1 ) ;
+    napkinC napHomeJot( tin0P , LF , (byteT*)bits , "napHomeJot" , 0 , CBnAPjOT ) ;
+    bitsC bits( tin0P , CbITSlIFI , 0 , 1 ) ;
 
-    __( !etThread.strIdF( tinBaseP , TF1(DDNUMB) , T(poolC::poolOldWorkIF(tinBaseP).postName) ) ) ;
-    __( !( F(poolC::poolOldRootIF(tinBaseP).flags) & flPOOLoLDc_NOcLIENTrIGHTS ) ) ;
+    __( !etThread.strIdF( tin0P , TF1(DDNUMB) , T(poolC::poolOldWorkIF(tin0P).postName) ) ) ;
+    __( !( F(poolC::poolOldRootIF(tin0P).flags) & flPOOLoLDc_NOcLIENTrIGHTS ) ) ;
 {
 TODO
 
@@ -92,7 +92,7 @@ TODO
 
 }
     return sgn ;
-    if( ((tin9S&)tinBaseP).fingerprint && c3P ) ;
+    if( ((tin9S&)tin0P).fingerprint && c3P ) ;
 
     }
         else if( pc4v1->c1 < pc4v2->c1 ) sgn = - 1 ;
@@ -113,11 +113,11 @@ TODO
     {
     IFbEcAREFUL
 {
-countT subtract_count4S_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_count4S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
-    if( ((tin9S&)tinBaseP).fingerprint && c3P ) ;
+    if( ((tin9S&)tin0P).fingerprint && c3P ) ;
 
     }
         else if( pTinc1->osTid < pTinc2->osTid ) sgn = - 1 ;
@@ -138,11 +138,11 @@ countT subtract_count4S_F( tin0S& tinBaseP , countT& pEther , countT& c1P , coun
     {
     IFbEcAREFUL
 {
-countT subtract_tinC_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_tinC_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
-    if( ((tin9S&)tinBaseP).fingerprint && c3P ) ;
+    if( ((tin9S&)tin0P).fingerprint && c3P ) ;
 
     }
         else if( pProcess1->osPid < pProcess2->osPid ) sgn = - 1 ;
@@ -163,11 +163,11 @@ countT subtract_tinC_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT&
     {
     IFbEcAREFUL
 {
-countT subtract_processC_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_processC_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return sgn ;
-    if( ((tin9S&)tinBaseP).fingerprint && c3P ) ;
+    if( ((tin9S&)tin0P).fingerprint && c3P ) ;
 
     }
         else if( pCell1->idCell < pCell2->idCell ) sgn = - 1 ;
@@ -188,20 +188,20 @@ countT subtract_processC_F( tin0S& tinBaseP , countT& pEther , countT& c1P , cou
     {
     IFbEcAREFUL
 {
-countT subtract_cellC_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_cellC_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return 0 ;
     THREADmODE2rESTORE
     }
         else                                       cell.fifoEvent << (countT)pEvent ;
-        else if( cell.fifoEvent.bLockedF( tinBaseP ) ) { DEL( pEvent ) ; }
+        else if( cell.fifoEvent.bLockedF( tin0P ) ) { DEL( pEvent ) ; }
         if( !pEvent ) ;
     
         __Z( pEvent ) ;
-        eventC* pEvent = new( 0 , tinBaseP , LF ) eventC( tinBaseP , cell , pbP , cbP ) ; ___( pEvent ) ;
+        eventC* pEvent = new( 0 , tin0P , LF ) eventC( tin0P , cell , pbP , cbP ) ; ___( pEvent ) ;
     
-        //cellC::pWindowTitle->writeF( tinBaseP ) ; //INFO MIGHT BE INCONSISTENT; NO SERIALIZATION IS DONE BECAUSE WE DON'T WANT DEADLOCKING POTENTIAL
+        //cellC::pWindowTitle->writeF( tin0P ) ; //INFO MIGHT BE INCONSISTENT; NO SERIALIZATION IS DONE BECAUSE WE DON'T WANT DEADLOCKING POTENTIAL
         inc02AM( cellC::pWindowTitle->cEvents ) ;
         inc02AM( cellC::pWindowTitle->cEventsPending ) ;
         cellC& cell = *cellC::pCellSelf ;
@@ -210,7 +210,7 @@ countT subtract_cellC_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT
     {
     THREADmODE2oN( flTHREADmODE2_DISALLOWtELLmONITOR )
 {
-boolT monitoredEventHandlerF( tin0S& tinBaseP , const byteT* const pbP , const countT cbP , countT cP )
+boolT monitoredEventHandlerF( tin0S& tin0P , const byteT* const pbP , const countT cbP , countT cP )
 
 //---- 9: GLOBAL FUNCTION DEFINITIONS : OTHER --------------------------------------------------------------------------------------------------
 
@@ -220,7 +220,7 @@ boolT monitoredEventHandlerF( tin0S& tinBaseP , const byteT* const pbP , const c
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobHearOrderF( tin0S& tinBaseP , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobHearOrderF( tin0S& tin0P , etherC& ether , etherC& etThread , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
     if( ether && cArgP && c8argP.c1 && sDataP && sNotesTextP && sNotesDataP && idChatSessionP ) ;
@@ -237,7 +237,7 @@ voidT jobHearOrderF( tin0S& tinBaseP , etherC& ether , etherC& etThread , const 
             }
                 }
                     break ;
-                    sDataP << cellC::classQuery_cHandle_F( tinBaseP ) ;
+                    sDataP << cellC::classQuery_cHandle_F( tin0P ) ;
                 {
                 case 1 :
             {
@@ -251,9 +251,9 @@ voidT jobHearOrderF( tin0S& tinBaseP , etherC& ether , etherC& etThread , const 
                 }
                     break ;
 
-                    ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , psttArgs ) ;
-                    ((tin9S&)tinBaseP).zEtScratch->osThreadF( tinBaseP , countTC() , tmNewCellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idAdam , (countT)pstta ) ;
-                    strokeS* pstta = (strokeS*)psttOldC( tinBaseP , *((tin9S&)tinBaseP).zEtScratch , (psttArgs?T(psttArgs):T("")) ) ; ___( pstta ) ;
+                    ((tin9S&)tin0P).zEtScratch->delF( tin0P , psttArgs ) ;
+                    ((tin9S&)tin0P).zEtScratch->osThreadF( tin0P , countTC() , tmNewCellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idAdam , (countT)pstta ) ;
+                    strokeS* pstta = (strokeS*)psttOldC( tin0P , *((tin9S&)tin0P).zEtScratch , (psttArgs?T(psttArgs):T("")) ) ; ___( pstta ) ;
         
                     sOrderP >> (countT&)time2Limit ;
                     ZE( sCountT , time2Limit ) ;
@@ -283,17 +283,17 @@ voidT jobHearOrderF( tin0S& tinBaseP , etherC& ether , etherC& etThread , const 
     {
     switch( idCmd )
 
-    countT idCmd = sOrderP.cFieldF( tinBaseP ) ;
+    countT idCmd = sOrderP.cFieldF( tin0P ) ;
 
     __( idAdamP - DDNUMB ) ;
 {
-voidT jobFillCourseF( tin0S& tinBaseP , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
+voidT jobFillCourseF( tin0S& tin0P , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 //---- 8: GLOBAL FUNCTION DEFINITIONS : CHAT --------------------------------------------------------------------------------------------------
 
 DONE( tmNewCellF )
 }
-    etThread.delF( tinBaseP , psttArgs ) ;
+    etThread.delF( tin0P , psttArgs ) ;
     NEWcELL( etThread , pTaskP->c1 , psttArgs )
     strokeS* psttArgs = (strokeS*)pTaskP->c2 ;
     countT   idAdam   =           pTaskP->c1 ;
@@ -307,31 +307,31 @@ THREADmODE2rESTORE
     OSsLEEPf( 0x400 * 0x40 ) ;
 
     //U::}
-    //U::    ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x10 ) ;
-    //U::    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    //U::    ++ s ; ether.osSleepF( tin0P , TOCK * 0x10 ) ;
+    //U::    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     //U::{
-    cellC::classInspectF( tinBaseP , stCellCopy , ether , st_pGrabP , stOsTidAllWanterP , stOsTidWanterP , stOsTidWanterInLoop , stOsTidWanterInLoopUnique , stThreads , c3lifi , swGrabTally ) ;
+    cellC::classInspectF( tin0P , stCellCopy , ether , st_pGrabP , stOsTidAllWanterP , stOsTidWanterP , stOsTidWanterInLoop , stOsTidWanterInLoopUnique , stThreads , c3lifi , swGrabTally ) ;
 {
-while( !etThread && cellC::classIdPhaseF( tinBaseP ) < 3 )
+while( !etThread && cellC::classIdPhaseF( tin0P ) < 3 )
 THREADmODE2oN( flTHREADmODE2_DISALLOWtELLmONITOR )
-switchC swGrabTally(              tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pczLever ) ;
+switchC swGrabTally(              tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , pczLever ) ;
 countT* pczLever = c3lifi ;
 count3S c3lifi ;
-stackC stThreads(                 tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count4S ) ) ;
-stackC stOsTidWanterInLoopUnique( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count5S ) ) ;
-stackC stOsTidWanterInLoop(       tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count5S ) ) ;
-stackC stOsTidWanterP(            tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count5S ) ) ;
-stackC stOsTidAllWanterP(         tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count5S ) ) ;
-stackC st_pGrabP(                 tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
-stackC stCellCopy(                tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
-//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
+stackC stThreads(                 tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count4S ) ) ;
+stackC stOsTidWanterInLoopUnique( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count5S ) ) ;
+stackC stOsTidWanterInLoop(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count5S ) ) ;
+stackC stOsTidWanterP(            tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count5S ) ) ;
+stackC stOsTidAllWanterP(         tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( count5S ) ) ;
+stackC st_pGrabP(                 tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+stackC stCellCopy(                tin0P , etThread , TAG( TAGiDnULL ) ) ;
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 TASK( tmInspectF )
 
 DONE( tmInspectPoolsF )
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TICK * 0x1 ) ; // HOURLY
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TICK * 0x1 ) ; // HOURLY
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
     }
@@ -339,16 +339,16 @@ DONE( tmInspectPoolsF )
         inc02AM( bInspector ) ;
 
         }
-            ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x10 ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tin0P , TOCK * 0x10 ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
     {
     if( !bInspector )
 {
-while( !ether && !etThread && cellC::classIdPhaseF( tinBaseP ) < 3 ) 
+while( !ether && !etThread && cellC::classIdPhaseF( tin0P ) < 3 ) 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK * 8 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK * 8 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
 TASK( tmInspectPoolsF )
 
@@ -356,13 +356,13 @@ DONE( tmFireMyselfF )
 CONoUT( "\r\ntmFireMyself: fired myself\r\n" )
 FIREmYSELF ;
 CONoUT( "\r\ntmFireMyself: firing myself\r\n" )
-cellC::classLogF( tinBaseP , T("firing myself!") ) ;
+cellC::classLogF( tin0P , T("firing myself!") ) ;
 }
-    ++ s ; ether.osSleepF( tinBaseP , time1fire ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , time1fire ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
 CONoUT( "\r\ntmFireMyself: going to seleep\r\n" )
-cellC::classLogF( tinBaseP , T("time1fire: ")+TF1(time1fire) ) ;
+cellC::classLogF( tin0P , T("time1fire: ")+TF1(time1fire) ) ;
 countT time1fire = bias + ru ;
 ranUniC ru( TOCK * 0x20 , 0 ) ; countT bias = TOCK * 0x0 ;
 TASK( tmFireMyselfF )
@@ -372,7 +372,7 @@ DONE( tmFireCellF )
     cFirePending -- ;
     }
         cell.unrefF() ;
-        cell.fireF( tinBaseP ) ;
+        cell.fireF( tin0P ) ;
     {
     cellC&  cell         =  *(cellC*)pTaskP->c2 ;
     countT& cFirePending = *(countT*)pTaskP->c1 ;
@@ -383,30 +383,30 @@ TASK( tmFireCellF )
 DONE( tmDeadLockF )
 }
     }
-        ungrabF( tinBaseP , grab2 ) ;
-        ungrabF( tinBaseP , grab1 ) ;
+        ungrabF( tin0P , grab2 ) ;
+        ungrabF( tin0P , grab1 ) ;
 
         }
-            ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
 
         }
-            grabF( tinBaseP , grab1 ) ;
+            grabF( tin0P , grab1 ) ;
             }
-                ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
-            grabF( tinBaseP , grab2 ) ;
+            grabF( tin0P , grab2 ) ;
         {
         else
         }
-            grabF( tinBaseP , grab2 ) ;
+            grabF( tin0P , grab2 ) ;
             }
-                ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
-            grabF( tinBaseP , grab1 ) ;
+            grabF( tin0P , grab1 ) ;
         {
         if( idDead == 1 )
     {
@@ -422,47 +422,47 @@ TASK( tmDeadLockF )
 //---- 7: GLOBAL FUNCTION DEFINITIONS : THREAD MAIN --------------------------------------------------------------------------------------------------
 
 }
-    ether.winSetTitleF( tinBaseP , TF1(cEvents)+T(" ")+TF1(cEventsPending) ) ;
+    ether.winSetTitleF( tin0P , TF1(cEvents)+T(" ")+TF1(cEventsPending) ) ;
 {
-voidT windowTitleS::writeF( tin0S& tinBaseP )
+voidT windowTitleS::writeF( tin0S& tin0P )
 
 }
 {
 cEvents( 0 )
 cEventsPending( 0 ) ,
 ether( etherP ) ,
-windowTitleS::windowTitleS( tin0S& tinBaseP , etherC& etherP ) :
+windowTitleS::windowTitleS( tin0S& tin0P , etherC& etherP ) :
 
 }
     }
-        if( !bOk ) ether.delF( tinBaseP , pbTin ) ;
+        if( !bOk ) ether.delF( tin0P , pbTin ) ;
 
         else if( getNegAM( tin.fingerprint ) != FINGERnEG_TINs || tin.idTin != idTin ) bOk = 0 ;
         if( !bOk ) ;
         tin0S& tinBase = *(tin0S*)pbTin ;
 
-        else        thirdC::dosReadProcessMemoryIF( tinBaseP , pbTin , sizeof( tin9S ) , bOk , pvOrIda , osPid ) ;
-        if( bSelf ) ether.memCopyF( tinBaseP , pbTin , (const byteT*)pvOrIda , sizeof( tin9S ) ) , bOk = 1 ;
+        else        thirdC::dosReadProcessMemoryIF( tin0P , pbTin , sizeof( tin9S ) , bOk , pvOrIda , osPid ) ;
+        if( bSelf ) ether.memCopyF( tin0P , pbTin , (const byteT*)pvOrIda , sizeof( tin9S ) ) , bOk = 1 ;
         ZE( boolT , bOk ) ;
-        if( !pbTin ) { ether.newF( tinBaseP , LF , pbTin , sizeof( tin9S ) ) ; ___( pbTin ) ; }
+        if( !pbTin ) { ether.newF( tin0P , LF , pbTin , sizeof( tin9S ) ) ; ___( pbTin ) ; }
         SLEEPwHILE( cRef_pbTin )
     {
     if( bCopy_pbTin )
     _IO_
 {
-voidT tinC::freshIfF( tin0S& tinBaseP )
+voidT tinC::freshIfF( tin0S& tin0P )
 
 }
     return bIs ;
-    boolT bIs = !thirdC::c_strcmpIF( tinBaseP , postThreadNameP , postThreadName ) ;
+    boolT bIs = !thirdC::c_strcmpIF( tin0P , postThreadNameP , postThreadName ) ;
     _IO_
 {
-boolT tinC::bIsF( tin0S& tinBaseP , const osTextT* const postThreadNameP )
+boolT tinC::bIsF( tin0S& tin0P , const osTextT* const postThreadNameP )
 
 }
     }
         if( info.ip ) ;
-        thirdC::c_strncpyIF( tinBaseP , postThreadName , info.postThreadName , sizeof postThreadName ) ;
+        thirdC::c_strncpyIF( tin0P , postThreadName , info.postThreadName , sizeof postThreadName ) ;
         idThread = info.idThread ;
         idTin = info.idTin ;    
         tellInfoSysTinS& info = *(tellInfoSysTinS*)saidP.pbData ;
@@ -485,14 +485,14 @@ osPid( saidP.osPid ) ,
 osTid( saidP.osTid ) ,
 cRef_pbTin( 0 ) ,
 bCopy_pbTin( !pbTin ) ,
-pbTin( pvOrIda && saidP.idType == ifcIDtYPEtELLsYS_TINcTI ? (byteT*)ap_artmentOldC( tinBaseP , (countT)pvOrIda ) : 0 ) ,
+pbTin( pvOrIda && saidP.idType == ifcIDtYPEtELLsYS_TINcTI ? (byteT*)ap_artmentOldC( tin0P , (countT)pvOrIda ) : 0 ) ,
 pvOrIda( saidP.pbData && saidP.cbData == sizeof( tellInfoSysTinS ) ? ((tellInfoSysTinS*)saidP.pbData)->ip : 0 ) ,
-ether( tinBaseP , TAG( TAGiDnULL ) , *((tin9S&)tinBaseP).pag1->pPoolAdamTemp ) ,
+ether( tin0P , TAG( TAGiDnULL ) , *((tin9S&)tin0P).pag1->pPoolAdamTemp ) ,
 bSelf( !pInfoP ) ,
-tinC::tinC( tin0S& tinBaseP , saidS& saidP , const ifcMonitorEventS* pInfoP ) :
+tinC::tinC( tin0S& tin0P , saidS& saidP , const ifcMonitorEventS* pInfoP ) :
 
 }
-    if( bCopy_pbTin ) ether.delF( tinBaseP , pbTin ) ;
+    if( bCopy_pbTin ) ether.delF( tin0P , pbTin ) ;
     SLEEPwHILE( cRef_pbTin )
     _IO_
     TINSL
@@ -507,11 +507,11 @@ NEWdELcLASSb( tinC )
         }
             }
                 __Z( bOk ) ;
-                Wo third.dosReadProcessMemoryIF( tinBaseP , (byteT*&)pbData , cbData , bOk , infoP.osSay_post + ( bText ? 0 : sizeof( tellS ) ) , infoP.osPid ) ; Wi
+                Wo third.dosReadProcessMemoryIF( tin0P , (byteT*&)pbData , cbData , bOk , infoP.osSay_post + ( bText ? 0 : sizeof( tellS ) ) , infoP.osPid ) ; Wi
                 ZE( boolT , bOk ) ;
             {
             if( pbData )
-            etherP.newF( tinBaseP , LF , (byteT*&)pbData , cbData ) ; ___( (byteT*&)pbData ) ;
+            etherP.newF( tin0P , LF , (byteT*&)pbData , cbData ) ; ___( (byteT*&)pbData ) ;
         {
         if( cbData )
     
@@ -526,7 +526,7 @@ NEWdELcLASSb( tinC )
     
             __( getNegAM( head.finger1 ) - ( FINGERnEG_TELEMETRY1 & 0xffffff00 ) ) ; //ASSUME HARDWARE: countT IS 4 BYTES
             __Z( bOk ) ;
-            Wo third.dosReadProcessMemoryIF( tinBaseP , (byteT*)&head , sizeof head , bOk , infoP.osSay_post , infoP.osPid ) ; Wi
+            Wo third.dosReadProcessMemoryIF( tin0P , (byteT*)&head , sizeof head , bOk , infoP.osSay_post , infoP.osPid ) ; Wi
             ZE( boolT , bOk ) ;
     
             struct tellS head ;
@@ -548,12 +548,12 @@ idType( 0 ) ,
 flags( 0 ) ,
 osPid( 0 ) ,
 osTid( 0 ) ,
-saidS::saidS( tin0S& tinBaseP , etherC& etherP , const ifcMonitorEventS& infoP ) :
+saidS::saidS( tin0S& tin0P , etherC& etherP , const ifcMonitorEventS& infoP ) :
 
 }
     }
-        etherP.memCopyF( tinBaseP , (byteT*&)pbData , pbP + sizeof( tellS ) , cbData ) ;
-        etherP.newF( tinBaseP , LF , (byteT*&)pbData , cbData ) ; ___( (byteT*&)pbData ) ;
+        etherP.memCopyF( tin0P , (byteT*&)pbData , pbP + sizeof( tellS ) , cbData ) ;
+        etherP.newF( tin0P , LF , (byteT*&)pbData , cbData ) ; ___( (byteT*&)pbData ) ;
     {
     if( cbData )
 
@@ -575,10 +575,10 @@ idType( 0 ) ,
 flags( 0 ) ,
 osPid( 0 ) ,
 osTid( 0 ) ,
-saidS::saidS( tin0S& tinBaseP , etherC& etherP , const byteT* const pbP , const countT cbP ) :
+saidS::saidS( tin0S& tin0P , etherC& etherP , const byteT* const pbP , const countT cbP ) :
 
 }
-    PUSE( tinBaseP , pbData ) ;
+    PUSE( tin0P , pbData ) ;
     TINSL
 {
 saidS::~saidS( voidT )
@@ -592,8 +592,8 @@ boolT processC::operator ==( const cP ) const
 {
 osPid( infoP.osPid )
 osTid( infoP.osTid ) ,
-ether( tinBaseP , TAG( TAGiDnULL ) , *((tin9S&)tinBaseP).pag1->pPoolAdamTemp ) ,
-processC::processC( tin0S& tinBaseP , const ifcMonitorEventS& infoP ) :
+ether( tin0P , TAG( TAGiDnULL ) , *((tin9S&)tin0P).pag1->pPoolAdamTemp ) ,
+processC::processC( tin0S& tin0P , const ifcMonitorEventS& infoP ) :
 
 NEWdELcLASSb( processC )
 
@@ -604,8 +604,8 @@ NEWdELcLASSb( processC )
     dec02AM( cHave ) ;
 
     }
-        while( !cHave ) { ++ s ; thirdC::dosSleepIF( tinBaseP , TUCK * 0x40 ) ; }
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        while( !cHave ) { ++ s ; thirdC::dosSleepIF( tin0P , TUCK * 0x40 ) ; }
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         TINSL
     {
 {
@@ -618,8 +618,8 @@ fifoC& fifoC::operator >>( countT& cP )
     pcStore[ offPutNext ++ ] = cP ;
 
     }
-        while( cHave == FIFOcAPACITY ) { ++ s ; thirdC::dosSleepIF( tinBaseP , TUCK * 0x40 ) ; }
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        while( cHave == FIFOcAPACITY ) { ++ s ; thirdC::dosSleepIF( tin0P , TUCK * 0x40 ) ; }
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         TINSL
     {
 
@@ -631,7 +631,7 @@ fifoC& fifoC::operator <<( countT cP )
 }
     return bLocked ;
 {
-boolT fifoC::bLockedF( tin0S& tinBaseP ) const
+boolT fifoC::bLockedF( tin0S& tin0P ) const
 
 }
     return cHave ;
@@ -644,29 +644,29 @@ bLocked( 0 )
 cHave( 0 ) ,
 offGetNext( 0 ) ,
 offPutNext( 0 ) ,
-fifoC::fifoC( tin0S& tinBaseP ) :
+fifoC::fifoC( tin0S& tin0P ) :
 
 }
     }
         }
             break ;
 
-            cellC::pBaton_lSerial->ungrabF( tinBaseP ) ;
+            cellC::pBaton_lSerial->ungrabF( tin0P ) ;
             }
-                if( !*cellC::pSwsGrabInfo ) cellC::pSwsGrabInfo->freeF( tinBaseP ) ;
+                if( !*cellC::pSwsGrabInfo ) cellC::pSwsGrabInfo->freeF( tin0P ) ;
                 else                                                                      __1
-                if( (*cellC::pSwsGrabInfo)( (byteT*)&info2 , 0 , subtract_grabInfoS_F ) ) cellC::pSwsGrabInfo->extractF( 0 , tinBaseP ) ;
+                if( (*cellC::pSwsGrabInfo)( (byteT*)&info2 , 0 , subtract_grabInfoS_F ) ) cellC::pSwsGrabInfo->extractF( 0 , tin0P ) ;
             {
             else
             }
                 THREADmODE2rESTORE
-                cellC::pSwsGrabInfo->sinkF( tinBaseP , ids , (byteT*)&info2 , flSTACKsINK_UNIQUE , 0 , subtract_grabInfoS_F ) ;
+                cellC::pSwsGrabInfo->sinkF( tin0P , ids , (byteT*)&info2 , flSTACKsINK_UNIQUE , 0 , subtract_grabInfoS_F ) ;
                 THREADmODE2oFF( flTHREADmODE2_DISALLOWtELLmONITOR )
                 ZE( countT , ids ) ;
             {
             if( bCA )
             cellC::lSerial = info.serial ;
-            cellC::pBaton_lSerial->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            cellC::pBaton_lSerial->grabF( tin0P , TAG( TAGiDnULL ) ) ;
             cellC::cAboutToGrab_lSerial ++ ;
 
             }
@@ -709,7 +709,7 @@ fifoC::fifoC( tin0S& tinBaseP ) :
 
             }
                 __Z( bOk ) ;
-                thirdC::dosWriteProcessMemoryIF( tinBaseP , bOk , (voidT*)ip , said.osPid , (byteT*)pReply , sizeof( monQueryReplyS ) ) ;
+                thirdC::dosWriteProcessMemoryIF( tin0P , bOk , (voidT*)ip , said.osPid , (byteT*)pReply , sizeof( monQueryReplyS ) ) ;
                 ZE( boolT , bOk ) ;
             {
             if( said.idType == ifcIDtYPEtELLsYS_QUERYP )
@@ -725,7 +725,7 @@ fifoC::fifoC( tin0S& tinBaseP ) :
                     break ;
                     }
                         THREADmODE2rESTORE
-                        cellC::classSerialNumberF( tinBaseP , snWoth , snLath , *(countT*)pReply->pbReply ) ;
+                        cellC::classSerialNumberF( tin0P , snWoth , snLath , *(countT*)pReply->pbReply ) ;
                         THREADmODE2oFF( flTHREADmODE2_DISALLOWtELLmONITOR )
                         countT& snLath = ((countT*)pReply->pbReply)[ 1 ] ;
                         countT& snWoth = ((countT*)pReply->pbReply)[ 0 ] ;
@@ -738,7 +738,7 @@ fifoC::fifoC( tin0S& tinBaseP ) :
                     break ;
                     }
                         THREADmODE2rESTORE
-                        *(countT*)pReply->pbReply = cellC::classSerialNumberF( tinBaseP ) ;
+                        *(countT*)pReply->pbReply = cellC::classSerialNumberF( tin0P ) ;
                         THREADmODE2oFF( flTHREADmODE2_DISALLOWtELLmONITOR )
                         pReply->cbReply = sizeof( countT ) ;
                     {
@@ -753,12 +753,12 @@ fifoC::fifoC( tin0S& tinBaseP ) :
 
             }
                 __Z( bOk ) ;
-                thirdC::dosReadProcessMemoryIF( tinBaseP , (byteT*)pReply , sizeof( monQueryReplyS )  , bOk , (voidT*)ip , said.osPid ) ;
+                thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)pReply , sizeof( monQueryReplyS )  , bOk , (voidT*)ip , said.osPid ) ;
                 ZE( boolT , bOk ) ;
                 pReply = (monQueryReplyS*)pbInvisible ;
             {
             else
-            if( said.idType == ifcIDtYPEtELLsYS_QUERYI ) pReply = (monQueryReplyS*)(byteT*)ap_artmentOldC( tinBaseP , *(countT*)said.pbData ) ;
+            if( said.idType == ifcIDtYPEtELLsYS_QUERYI ) pReply = (monQueryReplyS*)(byteT*)ap_artmentOldC( tin0P , *(countT*)said.pbData ) ;
             ZE( monQueryReplyS* , pReply ) ;
             byteT pbInvisible[ sizeof( monQueryReplyS ) ] ;
             countT ip = *(countT*)said.pbData ;
@@ -780,34 +780,34 @@ fifoC::fifoC( tin0S& tinBaseP ) :
         case ifcIDtYPEtELLsYS_FIREbASEmONITOR :
         }
             break ;
-            //cellC::classLogF( tinBaseP , T("GLObEGINdT") , 0 , pInfo ) ;
+            //cellC::classLogF( tin0P , T("GLObEGINdT") , 0 , pInfo ) ;
         {
         case ifcIDtYPEtELLsYS_GLObEGINdT :
         }
             break ;
-            //cellC::classLogF( tinBaseP , T("GLObEGINcT") , 0 , pInfo ) ;
+            //cellC::classLogF( tin0P , T("GLObEGINcT") , 0 , pInfo ) ;
         {
         case ifcIDtYPEtELLsYS_GLObEGINcT :
         }
             break ;
-            //cellC::classLogF( tinBaseP , T("AOKfYIjUSTcALLEDaDAMmAIN") , 0 , pInfo ) ;
+            //cellC::classLogF( tin0P , T("AOKfYIjUSTcALLEDaDAMmAIN") , 0 , pInfo ) ;
         {
         case ifcIDtYPEtELLsYS_AOKfYIjUSTcALLEDaDAMmAIN :
         }
             break ;
-            //cellC::classLogF( tinBaseP , T("AOKfYIaBOUTtOcALLaDAMmAIN") , 0 , pInfo ) ;
+            //cellC::classLogF( tin0P , T("AOKfYIaBOUTtOcALLaDAMmAIN") , 0 , pInfo ) ;
         {
         case ifcIDtYPEtELLsYS_AOKfYIaBOUTtOcALLaDAMmAIN :
         }
             break ;
         
-            cellC::classLogF( tinBaseP , tEntry , 0 , pInfo ) ;
-            cell.bError |= !!ether.strIdF( tinBaseP , T(" !setEcIfF ") , tEntry ) ;
-            bLogTinEventP = !!ether.strIdF( tinBaseP , T(" !tin9S ") , tEntry ) ;
+            cellC::classLogF( tin0P , tEntry , 0 , pInfo ) ;
+            cell.bError |= !!ether.strIdF( tin0P , T(" !setEcIfF ") , tEntry ) ;
+            bLogTinEventP = !!ether.strIdF( tin0P , T(" !tin9S ") , tEntry ) ;
             }
-                ether.delF( tinBaseP , pstte ) ;
+                ether.delF( tin0P , pstte ) ;
                 tEntry = T(pstte) ;
-                ether.strTrimF( tinBaseP , pstte , T(said.pbData) , T(TbLACKnEWlINE) ) ; ___( pstte ) ; //CAN EXHAUST THE WORKING POOLoLD
+                ether.strTrimF( tin0P , pstte , T(said.pbData) , T(TbLACKnEWlINE) ) ; ___( pstte ) ; //CAN EXHAUST THE WORKING POOLoLD
                 ZE( strokeS* , pstte ) ;
             {
             else
@@ -822,14 +822,14 @@ fifoC::fifoC( tin0S& tinBaseP ) :
             }
                 cell.pTincMainImage = 0 ;
                 __Z( ids ) ;
-                cell.stTinc.sinkF( tinBaseP , ids , (countT)cell.pTincMainImage , flSTACKsINK_UNIQUE , subtract_tinC_F ) ;
+                cell.stTinc.sinkF( tin0P , ids , (countT)cell.pTincMainImage , flSTACKsINK_UNIQUE , subtract_tinC_F ) ;
                 ZE( countT , ids ) ;
                 __( !cell.pTincMainImage ) ;
             {
             if( bRestoreImage )
             __Z( bFound ) ;
             
-            cell.stTinc.ungrabF( tinBaseP ) ;
+            cell.stTinc.ungrabF( tin0P ) ;
             }
                 while( !ether && ~hDown && !cell.stTinc.third ) ;
                 }
@@ -839,17 +839,17 @@ fifoC::fifoC( tin0S& tinBaseP ) :
                         THREADmODE2rESTORE
                         DEL( pt ) ;
                         THREADmODE2oFF( flTHREADmODE2_DISALLOWtELLmONITOR )
-                        cell.stTinc.extractF( tinBaseP ) ;
-                        bRestoreImage = pt->bIsF( tinBaseP , "mainTinInPool" ) ;
+                        cell.stTinc.extractF( tin0P ) ;
+                        bRestoreImage = pt->bIsF( tin0P , "mainTinInPool" ) ;
                     {
                     if( pt && pt->osTid == said.osTid )
-                    tinC* pt = (tinC*)cell.stTinc.downF( tinBaseP , hDown ) ;
+                    tinC* pt = (tinC*)cell.stTinc.downF( tin0P , hDown ) ;
                 {
                 do
-                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             {
             if( cell.stTinc )
-            cell.stTinc.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            cell.stTinc.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             ZE( boolT , bRestoreImage ) ;
             ZE( boolT , bFound ) ;
             TELL( "hearF: TINdTI TINdTP" )
@@ -863,19 +863,19 @@ fifoC::fifoC( tin0S& tinBaseP ) :
                 }
                     }
                         __Z( ids ) ;
-                        cell.stTinc.sinkF( tinBaseP , ids , (countT)pTinc , flSTACKsINK_UNIQUE , subtract_tinC_F ) ;
+                        cell.stTinc.sinkF( tin0P , ids , (countT)pTinc , flSTACKsINK_UNIQUE , subtract_tinC_F ) ;
                         ids = 0 ;
                         __( !cell.pTincMainImage ) ;
-                        cell.pTincMainImage = ids ? (tinC*)cell.stTinc.extractF( tinBaseP ) : 0 ;
+                        cell.pTincMainImage = ids ? (tinC*)cell.stTinc.extractF( tin0P ) : 0 ;
                         __( !!cell.pTincMainImage ) ;
-                        cell.stTinc.sinkF( tinBaseP , ids , (countT)pTinc , flSTACKsINK_QUERY , subtract_tinC_F ) ;
+                        cell.stTinc.sinkF( tin0P , ids , (countT)pTinc , flSTACKsINK_QUERY , subtract_tinC_F ) ;
                     {
                     else
                     }
                         __1
                         }
                             }
-                                cellC::classLogF( tinBaseP , tEntry , 0 , pInfo ) ;
+                                cellC::classLogF( tin0P , tEntry , 0 , pInfo ) ;
 
                                 ;
                                     +T("\"")
@@ -902,17 +902,17 @@ fifoC::fifoC( tin0S& tinBaseP ) :
                             tinC* pTincDup = (tinC*)cell.stTinc[ ids ] ;
                         {
                         if( ids )
-                        cell.stTinc.sinkF( tinBaseP , ids , (countT)pTinc , flSTACKsINK_QUERY , subtract_tinC_F ) ;
+                        cell.stTinc.sinkF( tin0P , ids , (countT)pTinc , flSTACKsINK_QUERY , subtract_tinC_F ) ;
                     {
-                    if( !pTinc->bIsF( tinBaseP , "mainTinInPool" ) )
+                    if( !pTinc->bIsF( tin0P , "mainTinInPool" ) )
                 {
                 if( !ids ) //ALLOWED ONLY FOR mainTinInImage mainTinInPool
-                cell.stTinc.sinkF( tinBaseP , ids , (countT)pTinc , flSTACKsINK_UNIQUE , subtract_tinC_F ) ;
+                cell.stTinc.sinkF( tin0P , ids , (countT)pTinc , flSTACKsINK_UNIQUE , subtract_tinC_F ) ;
                 ZE( countT , ids ) ;
             {
             if( pTinc )
             THREADmODE2rESTORE
-            tinC* pTinc = new( 0 , tinBaseP , LF ) tinC( tinBaseP , said , pInfo ) ; ___( pTinc ) ;
+            tinC* pTinc = new( 0 , tin0P , LF ) tinC( tin0P , said , pInfo ) ; ___( pTinc ) ;
             THREADmODE2oFF( flTHREADmODE2_DISALLOWtELLmONITOR )
             TELL( "hearF: TINcTI TINcTP" )
         {
@@ -920,13 +920,13 @@ fifoC::fifoC( tin0S& tinBaseP ) :
         case ifcIDtYPEtELLsYS_TINcTI :
         }
             break ;
-            //U::Y: cell.swHandle.ungrabF( tinBaseP ) ;
-            //U::Y: else           cell.swHandle.freeF( tinBaseP ) ;
+            //U::Y: cell.swHandle.ungrabF( tin0P ) ;
+            //U::Y: else           cell.swHandle.freeF( tin0P ) ;
             //U::Y: if( c3DLF.c1 ) c3DLF.c1 -- ;
             //U::Y: count3S& c3DLF = *(count3S*)&(countT&)cell.swHandle ; // {cDuplicate,idLine,idiFile}
-            //U::Y: __( !cell.swHandle.idSlotOfLeverF( tinBaseP , cell.leverHandle ) ) ;
+            //U::Y: __( !cell.swHandle.idSlotOfLeverF( tin0P , cell.leverHandle ) ) ;
             //U::Y: cell.leverHandle = *(countT*)said.pbData ;
-            //U::Y: cell.swHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            //U::Y: cell.swHandle.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             //U::Y: cell.cHandle -- ;
             //U::Y: __( said.cbData - sizeof( countT ) ) ;
             //U::Y: TELL( "hearF: OShANDLEdT" )
@@ -934,7 +934,7 @@ fifoC::fifoC( tin0S& tinBaseP ) :
         case ifcIDtYPEtELLsYS_OShANDLEdT :
         }
             break ;
-            //U::Y: cell.swHandle.ungrabF( tinBaseP ) ;
+            //U::Y: cell.swHandle.ungrabF( tin0P ) ;
             //U::Y: }
             //U::Y:     c3DLF.c3 = c3HLF.c3 ;
             //U::Y:     c3DLF.c2 = c3HLF.c2 ;
@@ -944,7 +944,7 @@ fifoC::fifoC( tin0S& tinBaseP ) :
             //U::Y: if( c3DLF.c2 || c3DLF.c3 ) c3DLF.c1 ++ ;
             //U::Y: count3S& c3DLF = *(count3S*)&(countT&)cell.swHandle ; // {cDuplicate,idLine,idiFile}
             //U::Y: cell.leverHandle = c3HLF.c1 ;
-            //U::Y: cell.swHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            //U::Y: cell.swHandle.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             //U::Y: count3S& c3HLF = *(count3S*)said.pbData ; // {handle,idLine,idiFile}
             //U::Y: cell.cHandle ++ ;
             //U::Y: __( said.cbData - sizeof( count3S ) ) ;
@@ -953,34 +953,34 @@ fifoC::fifoC( tin0S& tinBaseP ) :
         case ifcIDtYPEtELLsYS_OShANDLEcT :
         }
             break ;
-            cell.b_pv_bFired.ungrabF( tinBaseP ) ;
+            cell.b_pv_bFired.ungrabF( tin0P ) ;
             cell.pv_bFired = 0 ;
             cell.bQuitting = 1 ;
             __( (countT)cell.pv_bFired - *(countT*)said.pbData ) ;
             __( said.cbData - sizeof( countT ) ) ;
             __( !cell.pv_bFired ) ;
-            cell.b_pv_bFired.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            cell.b_pv_bFired.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             TELL( "hearF: FIREDdTP" )
         {
         case ifcIDtYPEtELLsYS_FIREDdTP :
         }
             break ;
-            cell.b_pv_bFired.ungrabF( tinBaseP ) ;
+            cell.b_pv_bFired.ungrabF( tin0P ) ;
             __( !cell.pv_bFired ) ;
             cell.pv_bFired = (voidT*)*(countT*)said.pbData ;
             __( said.cbData - sizeof( countT ) ) ;
             __( !!cell.pv_bFired ) ;
-            cell.b_pv_bFired.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            cell.b_pv_bFired.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             TELL( "hearF: FIREDcTP" )
         {
         case ifcIDtYPEtELLsYS_FIREDcTP :
         }
             break ;
             //U::Y: }
-            //U::Y:     cell.stOsPidMonitored.ungrabF( tinBaseP ) ;
+            //U::Y:     cell.stOsPidMonitored.ungrabF( tin0P ) ;
             //U::Y:     else                                       __1
-            //U::Y:     if( cell.stOsPidMonitored( said.pbData ) ) cell.stOsPidMonitored.extractF( 0 , tinBaseP ) ;
-            //U::Y:     cell.stOsPidMonitored.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            //U::Y:     if( cell.stOsPidMonitored( said.pbData ) ) cell.stOsPidMonitored.extractF( 0 , tin0P ) ;
+            //U::Y:     cell.stOsPidMonitored.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             //U::Y:     __( said.cbData - 2 * sizeof( countT ) ) ;
             //U::Y: {
             //U::Y: if( cell.bBase )
@@ -991,7 +991,7 @@ fifoC::fifoC( tin0S& tinBaseP ) :
             break ;
             //U::Y: }
             //U::Y:     __Z( ids ) ;
-            //U::Y:     cell.stOsPidMonitored.sinkF( tinBaseP , ids , said.pbData , flSTACKsINK_UNIQUE , subtractWothCountInBlobsF ) ;
+            //U::Y:     cell.stOsPidMonitored.sinkF( tin0P , ids , said.pbData , flSTACKsINK_UNIQUE , subtractWothCountInBlobsF ) ;
             //U::Y:     ZE( countT , ids ) ;
             //U::Y:     __( said.cbData - 2 * sizeof( countT ) ) ;
             //U::Y: {
@@ -1002,12 +1002,12 @@ fifoC::fifoC( tin0S& tinBaseP ) :
         }
             break ;
             }
-                cell.b_pv_cHeartBeat.ungrabF( tinBaseP ) ;
+                cell.b_pv_cHeartBeat.ungrabF( tin0P ) ;
                 cell.pv_cHeartBeat = 0 ;
                 __( (countT)cell.pv_cHeartBeat - *(countT*)said.pbData ) ;
                 __( said.cbData - sizeof( countT ) ) ;
                 __( !cell.pv_cHeartBeat ) ;
-                cell.b_pv_cHeartBeat.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                cell.b_pv_cHeartBeat.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             
                 THREADmODE2rESTORE
                 TELLsYSc3( ifcIDtYPEtELLsYS_HEARTbEATdTPoSpID , (byteT*)&info , sizeof info )
@@ -1040,12 +1040,12 @@ fifoC::fifoC( tin0S& tinBaseP ) :
                 {
                 struct
             
-                cell.b_pv_cHeartBeat.ungrabF( tinBaseP ) ;
+                cell.b_pv_cHeartBeat.ungrabF( tin0P ) ;
                 __( !cell.pv_cHeartBeat ) ;
                 cell.pv_cHeartBeat = (voidT*)*(countT*)said.pbData ;
                 __( said.cbData - sizeof( countT ) ) ;
                 __( !!cell.pv_cHeartBeat ) ;
-                cell.b_pv_cHeartBeat.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                cell.b_pv_cHeartBeat.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
             if( !cell.bBase )
             TELL( "hearF: HEARTbEATcTP" )
@@ -1053,22 +1053,22 @@ fifoC::fifoC( tin0S& tinBaseP ) :
         case ifcIDtYPEtELLsYS_HEARTbEATcTP :
         }
             break ;
-            cell.b_pv_handoffOld.ungrabF( tinBaseP ) ;
+            cell.b_pv_handoffOld.ungrabF( tin0P ) ;
             cell.pv_handoffOld = 0 ;
             __( (countT)cell.pv_handoffOld - *(countT*)said.pbData ) ;
             __( said.cbData - sizeof( countT ) ) ;
             __( !cell.pv_handoffOld ) ;
-            cell.b_pv_handoffOld.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            cell.b_pv_handoffOld.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             TELL( "hearF: HANDOFFoLDdETACH" )
         {
         case ifcIDtYPEtELLsYS_HANDOFFoLDdETACH :
         }
             break ;
-            cell.b_pv_handoffOld.ungrabF( tinBaseP ) ;
+            cell.b_pv_handoffOld.ungrabF( tin0P ) ;
             cell.pv_handoffOld = (voidT*)*(countT*)said.pbData ;
             __( said.cbData - sizeof( countT ) ) ;
             __( !!cell.pv_handoffOld ) ;
-            cell.b_pv_handoffOld.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            cell.b_pv_handoffOld.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             TELL( "hearF: HANDOFFoLDaTTACH" )
         {
         case ifcIDtYPEtELLsYS_HANDOFFoLDaTTACH :
@@ -1077,7 +1077,7 @@ fifoC::fifoC( tin0S& tinBaseP ) :
     _IO_
     TELL( "hearF: setting up" )
 {
-voidT eventC::hearF( tin0S& tinBaseP , boolT& bLogTinEventP )
+voidT eventC::hearF( tin0S& tin0P , boolT& bLogTinEventP )
 
 }
     }
@@ -1096,44 +1096,44 @@ voidT eventC::hearF( tin0S& tinBaseP , boolT& bLogTinEventP )
             break ;
 
             }
-                cellC::pBaton_lSerial->ungrabF( tinBaseP ) ;
+                cellC::pBaton_lSerial->ungrabF( tin0P ) ;
 
-                cFlavors = cellC::pSwsGrabInfo->cFlavorsF( tinBaseP ) ;
+                cFlavors = cellC::pSwsGrabInfo->cFlavorsF( tin0P ) ;
 
-                cellC::pSwsGrabInfo->freeNullFlavorsF( tinBaseP ) ;
+                cellC::pSwsGrabInfo->freeNullFlavorsF( tin0P ) ;
 
                 }
-                    if( !*cellC::pSwsGrabInfo ) cellC::pSwsGrabInfo->freeF( tinBaseP , 1 ) ;
-                    cellC::lSerial = cellC::pSwsGrabInfo->leverF( tinBaseP , idf ) ;
+                    if( !*cellC::pSwsGrabInfo ) cellC::pSwsGrabInfo->freeF( tin0P , 1 ) ;
+                    cellC::lSerial = cellC::pSwsGrabInfo->leverF( tin0P , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                cFlavors = cellC::pSwsGrabInfo->cFlavorsF( tinBaseP ) ;
+                cFlavors = cellC::pSwsGrabInfo->cFlavorsF( tin0P ) ;
         
                 }
                     }
                         while( !cellC::pSwsGrabInfo->third && ~hDown ) ;
                         }
-                            if( gInfo.osPid == pInfo->osPid ) cellC::pSwsGrabInfo->extractF( 0 , tinBaseP ) ;
-                            grabInfoS& gInfo = *(grabInfoS*)&cellC::pSwsGrabInfo->downF( tinBaseP , hDown ) ;
+                            if( gInfo.osPid == pInfo->osPid ) cellC::pSwsGrabInfo->extractF( 0 , tin0P ) ;
+                            grabInfoS& gInfo = *(grabInfoS*)&cellC::pSwsGrabInfo->downF( tin0P , hDown ) ;
                         {
                         do
-                        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     {
                     if( *cellC::pSwsGrabInfo )
-                    cellC::lSerial = cellC::pSwsGrabInfo->leverF( tinBaseP , idf ) ;
+                    cellC::lSerial = cellC::pSwsGrabInfo->leverF( tin0P , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
 
-                countT cFlavors = cellC::pSwsGrabInfo->cFlavorsF( tinBaseP ) ;
+                countT cFlavors = cellC::pSwsGrabInfo->cFlavorsF( tin0P ) ;
         
-                cellC::pBaton_lSerial->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                cellC::pBaton_lSerial->grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
             if( cell.bError )
             cell.bError = 0 ; //U::
             //REPORT AND REMOVE grabInfoS PLATES OF THE EXITING PROCESS
 
             __Z( bFound ) ;
-            cell.stProcess.ungrabF( tinBaseP ) ;
+            cell.stProcess.ungrabF( tin0P ) ;
             }
                 while( !ether && ~hDown ) ;
                 }
@@ -1142,27 +1142,27 @@ voidT eventC::hearF( tin0S& tinBaseP , boolT& bLogTinEventP )
                         THREADmODE2rESTORE
                         DEL( pp ) ;
                         THREADmODE2oFF( flTHREADmODE2_DISALLOWtELLmONITOR )
-                        cell.stProcess.extractF( tinBaseP ) ;
+                        cell.stProcess.extractF( tin0P ) ;
                         bFound = 1 ;
                     {
                     if( pp && *pp == pInfo->osPid )
-                    processC* pp = (processC*)cell.stProcess.downF( tinBaseP , hDown ) ;
+                    processC* pp = (processC*)cell.stProcess.downF( tin0P , hDown ) ;
                 {
                 do
-                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             {
             if( cell.stProcess )
-            cell.stProcess.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            cell.stProcess.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             ZE( boolT , bFound ) ;
         {
         case ifcIDeVENTmONITORED_EXITpROCESS :
         }
             break ;
             __Z( ids ) ;
-            cell.stProcess.sinkF( tinBaseP , ids , (countT)pp , flSTACKsINK_UNIQUE , subtract_processC_F ) ;
+            cell.stProcess.sinkF( tin0P , ids , (countT)pp , flSTACKsINK_UNIQUE , subtract_processC_F ) ;
             ZE( countT , ids ) ;
             THREADmODE2rESTORE
-            processC* pp = new( 0 , tinBaseP , LF ) processC( tinBaseP , *pInfo ) ; ___( pp ) ; //A PROCESS LAUNCHED BY THE CELL WILL BE REGISTERED HERE, TOO
+            processC* pp = new( 0 , tin0P , LF ) processC( tin0P , *pInfo ) ; ___( pp ) ; //A PROCESS LAUNCHED BY THE CELL WILL BE REGISTERED HERE, TOO
             THREADmODE2oFF( flTHREADmODE2_DISALLOWtELLmONITOR )
         {
         case ifcIDeVENTmONITORED_CREATEpROCESS :
@@ -1172,13 +1172,13 @@ voidT eventC::hearF( tin0S& tinBaseP , boolT& bLogTinEventP )
                 }
                     cell.bError |= 1 ;
                     }
-                        cellC::classLogF( tinBaseP , T(osto001) , 0 , pInfo ) ;
+                        cellC::classLogF( tin0P , T(osto001) , 0 , pInfo ) ;
                         OStEXTC( osto001 , pInfo->idException , 0 )
                         OStEXTAK( osto001 , "unlisted exception code:    " )
                         OStEXT( osto001 , 0x100 )
                     {
                     else
-                    if( poste ) cellC::classLogF( tinBaseP , T(poste) , 0 , pInfo ) ;
+                    if( poste ) cellC::classLogF( tin0P , T(poste) , 0 , pInfo ) ;
                     osTextT* poste = processGlobal4I.mapExceptionType( pInfo->idException ) ;
                     bLogTinEvent = 1 ;
                 {
@@ -1194,7 +1194,7 @@ voidT eventC::hearF( tin0S& tinBaseP , boolT& bLogTinEventP )
                     cell.bError |= 1 ;
                     bLogTinEvent = 1 ;
                     }
-                        cellC::classLogF( tinBaseP , T(osto001) , 0 , pInfo ) ;
+                        cellC::classLogF( tin0P , T(osto001) , 0 , pInfo ) ;
                         OStEXTC( osto001 , idLineCt , 0 )
                         OStEXTAK( osto001 , "; idLineCt: " ) ;
                         OStEXTC( osto001 , pInfo->osException_pbAt , 0 )
@@ -1205,7 +1205,7 @@ voidT eventC::hearF( tin0S& tinBaseP , boolT& bLogTinEventP )
                     {
                     else
                     }
-                        cellC::classLogF( tinBaseP , T(osto001) , 0 , pInfo ) ;
+                        cellC::classLogF( tin0P , T(osto001) , 0 , pInfo ) ;
                         OStEXTC( osto001 , pInfo->osException_pbAt , 0 )
                         OStEXTAK( osto001 , "access violation at " ) ;
                         OStEXT( osto001 , 0x100 )
@@ -1227,7 +1227,7 @@ voidT eventC::hearF( tin0S& tinBaseP , boolT& bLogTinEventP )
         case ifcIDeVENTmONITORED_CREATEtHREAD  :
         }
             break ;
-            hearF( tinBaseP , bLogTinEvent ) ;
+            hearF( tin0P , bLogTinEvent ) ;
         {
         case ifcIDeVENTmONITORED_SAY :
     {
@@ -1236,29 +1236,29 @@ voidT eventC::hearF( tin0S& tinBaseP , boolT& bLogTinEventP )
 
     if( ether ) return ;
 {
-voidT eventC::handleF( tin0S& tinBaseP )
+voidT eventC::handleF( tin0S& tin0P )
 
 }
 {
-said( tinBaseP , ether , pbP , cbP )
+said( tin0P , ether , pbP , cbP )
 pInfo( 0 ) ,
 cell( cellP ) ,
 ether( cellP.ether ) ,
 idEvent( ++ cellP.idEventLast ) ,
 osIdEvent( ifcIDeVENTmONITORED_SAY ) ,
-eventC::eventC( tin0S& tinBaseP , cellC& cellP , const byteT* const pbP , const countT cbP ) :
+eventC::eventC( tin0S& tin0P , cellC& cellP , const byteT* const pbP , const countT cbP ) :
 
 }
     pInfoP = 0 ;
     __Z( pInfo ) ;
 {
-said( tinBaseP , ether , *pInfoP )
+said( tin0P , ether , *pInfoP )
 pInfo( pInfoP ) ,
 cell( cellP ) ,
 ether( cellP.ether ) ,
 idEvent( ++ cellP.idEventLast ) ,
 osIdEvent( pInfoP->idEvent ) ,
-eventC::eventC( tin0S& tinBaseP , cellC& cellP , const ifcMonitorEventS*& pInfoP ) :
+eventC::eventC( tin0S& tin0P , cellC& cellP , const ifcMonitorEventS*& pInfoP ) :
 
 }
     DEL( (ifcMonitorEventS*&)pInfo ) ;
@@ -1272,7 +1272,7 @@ NEWdELcLASSb( eventC )
 
 }
     return pTinRaw ;
-    stTinc.ungrabF( tinBaseP ) ;
+    stTinc.ungrabF( tin0P ) ;
     }
         while( !ether && ~hDown && !stTinc.third ) ;
         }
@@ -1284,41 +1284,41 @@ NEWdELcLASSb( eventC )
                     ptc->cRef_pbTin ++ ;
                 {
                 if( ptc->pbTin && getNegAM( ((tin0S*)ptc->pbTin)->fingerprint ) == FINGERnEG_TINs )
-                ptc->freshIfF( tinBaseP ) ;
+                ptc->freshIfF( tin0P ) ;
             {
             if( ptc && ptc->osTid == infoP.osTid )
-            tinC* ptc = (tinC*)stTinc.downF( tinBaseP , hDown ) ;
+            tinC* ptc = (tinC*)stTinc.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stTinc )
-    stTinc.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    stTinc.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( tin0S* , pTinRaw ) ;
     __NZ( pcRefP ) ;
     _IO_
 {
-tin0S* const cellC::pTinRawF( tin0S& tinBaseP , countT*& pcRefP , const ifcMonitorEventS& infoP ) //RETURNS PTR TO A RAW COPY; DO NOT USE POINTER FIELDS
+tin0S* const cellC::pTinRawF( tin0S& tin0P , countT*& pcRefP , const ifcMonitorEventS& infoP ) //RETURNS PTR TO A RAW COPY; DO NOT USE POINTER FIELDS
 //U::CURRENTLY NOT USED.  MIGHT NEED TO BE REWRITTEN
 
 #if defined( NEVERdEFINED )
 
 }
     }
-        b_pv_bFired.ungrabF( tinBaseP ) ;
+        b_pv_bFired.ungrabF( tin0P ) ;
         }
             __Z( bOk ) ;
-            thirdC::dosWriteProcessMemoryIF( tinBaseP , bOk , pv_bFired , osPid , (byteT*)&bFired , sizeof bFired ) ;
+            thirdC::dosWriteProcessMemoryIF( tin0P , bOk , pv_bFired , osPid , (byteT*)&bFired , sizeof bFired ) ;
             ZE( boolT , bOk ) ;
             countT bFired = 1 ;
         {
         else
         if( !pv_bFired ) BLAMMO
-        b_pv_bFired.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        b_pv_bFired.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
         }
-            while( !pv_bFired && !bQuitting && !ether ) { ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x40 ) ; }
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            while( !pv_bFired && !bQuitting && !ether ) { ++ s ; ether.osSleepF( tin0P , TUCK * 0x40 ) ; }
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
     {
     else if( idAdam || psttExe )
@@ -1326,7 +1326,7 @@ tin0S* const cellC::pTinRawF( tin0S& tinBaseP , countT*& pcRefP , const ifcMonit
 
     _IO_
 {
-voidT cellC::fireF( tin0S& tinBaseP )
+voidT cellC::fireF( tin0S& tin0P )
 
 }
 
@@ -1337,13 +1337,13 @@ voidT cellC::fireF( tin0S& tinBaseP )
     DEL( pStCell ) ;
     DEL( pSwsGrabInfo ) ;
     DEL( pBaton_lSerial ) ;
-    if( pEtClass ) pEtClass->delF( tinBaseP , psttRpt ) ;
-    if( pEtClass ) pEtClass->delF( tinBaseP , psttLog ) ;
+    if( pEtClass ) pEtClass->delF( tin0P , psttRpt ) ;
+    if( pEtClass ) pEtClass->delF( tin0P , psttLog ) ;
     bEnabled = 0 ;
 
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classShutdown2F( tin0S& tinBaseP )
+voidT cellC::classShutdown2F( tin0S& tin0P )
 
 }
     idPhase = 3 ;
@@ -1354,65 +1354,65 @@ voidT cellC::classShutdown2F( tin0S& tinBaseP )
 
     }
         }
-            pEtClass->osSleepF( tinBaseP , TUCK * 0x40 ) ;
+            pEtClass->osSleepF( tin0P , TUCK * 0x40 ) ;
             if( *pEtClass ) BLAMMO
             ++ s ;
         {
         while( cExist > !!pCellSelf )
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
-    U:: NO LONGER SUPPORTED: if( bBase ) thirdC::thirdMonitoredEventHandlerF( tinBaseP ) ;
+    U:: NO LONGER SUPPORTED: if( bBase ) thirdC::thirdMonitoredEventHandlerF( tin0P ) ;
     bEnableNew = 0 ;
     idPhase = 2 ;
 
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classShutdown1F( tin0S& tinBaseP , countT& idCellLathP , countT& serialLathP )
+voidT cellC::classShutdown1F( tin0S& tin0P , countT& idCellLathP , countT& serialLathP )
 
 }
 
     }
         }
             }
-                ++ s ; pEtClass->osSleepF( tinBaseP , TUCK * 0x20 ) ;
+                ++ s ; pEtClass->osSleepF( tin0P , TUCK * 0x20 ) ;
                 if( *pEtClass ) BLAMMO ;
             {
             while( pCellSelf->fifoEvent )
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
 
         *pb2U = '.' ;
-        U:: NO LONGER SUPPORTED: thirdC::thirdMonitoredEventHandlerF( tinBaseP , monitoredEventHandlerF ) ;
-        pCellSelf = new( 0 , tinBaseP , LF ) cellC( tinBaseP ) ; ___( pCellSelf ) ;
+        U:: NO LONGER SUPPORTED: thirdC::thirdMonitoredEventHandlerF( tin0P , monitoredEventHandlerF ) ;
+        pCellSelf = new( 0 , tin0P , LF ) cellC( tin0P ) ; ___( pCellSelf ) ;
     {
     if( bBase )
 
     bEnabled = 1 ;
 
-    if( pEtClass ) { pEtClass->strMakeF( tinBaseP , LF , psttRpt , T(bBase?"///d/ideafarm.rpt.1":"///d/ideafarm.rpt.2") ) ; ___( psttRpt ) ; }
-    if( pEtClass ) { pEtClass->strMakeF( tinBaseP , LF , psttLog , T(bBase?"///d/ideafarm.log.1":"///d/ideafarm.log.2") ) ; ___( psttLog ) ; }
+    if( pEtClass ) { pEtClass->strMakeF( tin0P , LF , psttRpt , T(bBase?"///d/ideafarm.rpt.1":"///d/ideafarm.rpt.2") ) ; ___( psttRpt ) ; }
+    if( pEtClass ) { pEtClass->strMakeF( tin0P , LF , psttLog , T(bBase?"///d/ideafarm.log.1":"///d/ideafarm.log.2") ) ; ___( psttLog ) ; }
     pWindowTitle   = &windowTitleP ;
     serialLath     = serialLathP ;
     idCellLath     = idCellLathP ;
-    pSwsGrabInfo   = new( 0 , tinBaseP , LF ) switchStackC( tinBaseP , *pEtClass , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , lSerial , flSTACKc_BLOB | flSTACKc_DOnOTsERIALIZE , sizeof( grabInfoS ) ) ; ___( pSwsGrabInfo   ) ;
-    pBaton_lSerial = new( 0 , tinBaseP , LF ) batonC( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBaton_lSerial ) ;
-    pStCell        = new( 0 , tinBaseP , LF ) stackC( tinBaseP , *pEtClass , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;                                                                                         ___( pStCell        ) ;
-    pBatonSerial   = new( 0 , tinBaseP , LF ) batonC( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonSerial   ) ;
-    pBatonLog      = new( 0 , tinBaseP , LF ) batonC( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonLog      ) ;
-    pBatonClass    = new( 0 , tinBaseP , LF ) batonC( tinBaseP , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonClass    ) ;
-    pEtClass       = new( 0 , tinBaseP , LF ) etherC( tinBaseP , TAG( TAGiDnULL ) , *((tin9S&)tinBaseP).pag1->pPoolAdamTemp ) ;                                                                       ___( pEtClass       ) ;
+    pSwsGrabInfo   = new( 0 , tin0P , LF ) switchStackC( tin0P , *pEtClass , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , lSerial , flSTACKc_BLOB | flSTACKc_DOnOTsERIALIZE , sizeof( grabInfoS ) ) ; ___( pSwsGrabInfo   ) ;
+    pBaton_lSerial = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBaton_lSerial ) ;
+    pStCell        = new( 0 , tin0P , LF ) stackC( tin0P , *pEtClass , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;                                                                                         ___( pStCell        ) ;
+    pBatonSerial   = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonSerial   ) ;
+    pBatonLog      = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonLog      ) ;
+    pBatonClass    = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonClass    ) ;
+    pEtClass       = new( 0 , tin0P , LF ) etherC( tin0P , TAG( TAGiDnULL ) , *((tin9S&)tin0P).pag1->pPoolAdamTemp ) ;                                                                       ___( pEtClass       ) ;
     bBase = bBaseP ;
     idPhase = 1 ;
 
     if( pEtClass || idPhase ) BLAMMO ;
 {
-voidT cellC::classSetupF( tin0S& tinBaseP , const countT idCellLathP , const countT serialLathP , const boolT bBaseP , windowTitleS& windowTitleP )
+voidT cellC::classSetupF( tin0S& tin0P , const countT idCellLathP , const countT serialLathP , const boolT bBaseP , windowTitleS& windowTitleP )
 
 }
-    pEtClass->strokeF( tinBaseP , T("classSerialNumberF2: assigning range [")+TF1(wothP)+T(",")+TF1(lathP)+T("] (")+TF1(cWantP)+T(")\r\n") ) ;
+    pEtClass->strokeF( tin0P , T("classSerialNumberF2: assigning range [")+TF1(wothP)+T(",")+TF1(lathP)+T("] (")+TF1(cWantP)+T(")\r\n") ) ;
 
-    pBatonSerial->ungrabF( tinBaseP ) ;
+    pBatonSerial->ungrabF( tin0P ) ;
     }
         serialLath = lathP ;
         if( lathP < wothP ) lathP = - 1 ;
@@ -1421,17 +1421,17 @@ voidT cellC::classSetupF( tin0S& tinBaseP , const countT idCellLathP , const cou
     {
     else
     if( serialLath == - 1 ) wothP = lathP = 0 ;
-    pBatonSerial->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    pBatonSerial->grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     if( !pEtClass ) BLAMMO ;
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classSerialNumberF( tin0S& tinBaseP , countT& wothP , countT& lathP , const countT cWantP )
+voidT cellC::classSerialNumberF( tin0S& tin0P , countT& wothP , countT& lathP , const countT cWantP )
 */
  cWantP
  lathP
  wothP
- tinBaseP
+ tin0P
 arguments
 if my space is already exhausted, both the woth and the lath value will be 0
 if i exhaust my space, the range will be less than requested and the lath value will be - 1
@@ -1441,55 +1441,55 @@ i allocate a range of nonze serial numbers
 }
     return sn ;
 
-    pEtClass->strokeF( tinBaseP , T("classSerialNumberF1: assigning ")+TF1(sn)+T("\r\n") ) ;
+    pEtClass->strokeF( tin0P , T("classSerialNumberF1: assigning ")+TF1(sn)+T("\r\n") ) ;
 
-    pBatonSerial->ungrabF( tinBaseP ) ;
+    pBatonSerial->ungrabF( tin0P ) ;
     countT sn = ++ serialLath ;
-    pBatonSerial->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    pBatonSerial->grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     if( !pEtClass ) BLAMMO ;
     if( !bEnabled ) BLAMMO ;
 {
-countT cellC::classSerialNumberF( tin0S& tinBaseP )
+countT cellC::classSerialNumberF( tin0S& tin0P )
 
 static osTextT pb2U[] = "E" ;
 
 }
     return cHandle ;
 
-    pStCell->ungrabF( tinBaseP ) ;
+    pStCell->ungrabF( tin0P ) ;
     }
         while( ~hDown && !stCell.third ) ;
         }
             }
                 cHandle += pc->cHandle ;
-                __( pc->cHandle - pc->swHandle.cFlavorsF( tinBaseP ) ) ;
+                __( pc->cHandle - pc->swHandle.cFlavorsF( tin0P ) ) ;
             {
             if( pc )
-            cellC* pc = (cellC*)stCell.downF( tinBaseP , hDown ) ;
+            cellC* pc = (cellC*)stCell.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stCell )
     stackC& stCell = *pStCell ;
-    pStCell->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    pStCell->grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     ZE( countT , cHandle ) ;
     if( !pEtClass ) BLAMMO ;
     if( !bEnabled ) BLAMMO ;
 {
-countT cellC::classQuery_cHandle_F( tin0S& tinBaseP )
+countT cellC::classQuery_cHandle_F( tin0S& tin0P )
 
 }
     THREADmODE2rESTORE
-    pBatonLog->ungrabF( tinBaseP ) ;
-    ether.fileWriteF( tinBaseP , handle , tSuffix , tSuffix.csF( tinBaseP ) ) ;
-    ether.fileWriteF( tinBaseP , handle , tEntry  , tEntry.csF(  tinBaseP ) ) ;
-    ether.fileWriteF( tinBaseP , handle , tPrefix , tPrefix.csF( tinBaseP ) ) ;
-    { count2S c2s ; ether.fileSetPtrF( tinBaseP , handle , flSETfILEpTR_END , c2s ) ; }
-    ether.fileOpenF( tinBaseP , handle , countTC() , psttLog , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_FAIL | flOPENdETAILS_WRITEnOW /*| flOPENdETAILS_NOcACHE*/ , ifcOPENhOW_nCeO ) ;
-    handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+    pBatonLog->ungrabF( tin0P ) ;
+    ether.fileWriteF( tin0P , handle , tSuffix , tSuffix.csF( tin0P ) ) ;
+    ether.fileWriteF( tin0P , handle , tEntry  , tEntry.csF(  tin0P ) ) ;
+    ether.fileWriteF( tin0P , handle , tPrefix , tPrefix.csF( tin0P ) ) ;
+    { count2S c2s ; ether.fileSetPtrF( tin0P , handle , flSETfILEpTR_END , c2s ) ; }
+    ether.fileOpenF( tin0P , handle , countTC() , psttLog , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_FAIL | flOPENdETAILS_WRITEnOW /*| flOPENdETAILS_NOcACHE*/ , ifcOPENhOW_nCeO ) ;
+    handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
             
     }
         tSuffix += tdl ;
@@ -1498,17 +1498,17 @@ countT cellC::classQuery_cHandle_F( tin0S& tinBaseP )
     {
     if( !bTerse )
     TN( tSuffix , "\r\n" ) ;
-    TN( tPrefix , "" ) ; tPrefix = TT(timeN1,timeN2)+tb+TF1(pInfoP?pInfoP->osPid:0)+tb+TF1(etherC::ifc_idAdamG_IF(tinBaseP))+tb+T(pTinEventRawP?pTinEventRawP->postThreadName:"")+T(bTerse?": ":"\r\n") ;
+    TN( tPrefix , "" ) ; tPrefix = TT(timeN1,timeN2)+tb+TF1(pInfoP?pInfoP->osPid:0)+tb+TF1(etherC::ifc_idAdamG_IF(tin0P))+tb+T(pTinEventRawP?pTinEventRawP->postThreadName:"")+T(bTerse?": ":"\r\n") ;
     TN( tb , " " ) ;
     strokeS sd('-') ;
-    const boolT bTerse = !ether.strIdF( tinBaseP , tc , tEntry ) ;
+    const boolT bTerse = !ether.strIdF( tin0P , tc , tEntry ) ;
     TN( tc , "\r\n" ) ;
-    pBatonLog->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    pBatonLog->grabF( tin0P , TAG( TAGiDnULL ) ) ;
             
     tEntry = T(psttP) ;
     TN( tEntry , "" ) ;
             
-    ether.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+    ether.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT , timeN1 ) ;
     etherC& ether = *pEtClass ;
@@ -1516,88 +1516,88 @@ countT cellC::classQuery_cHandle_F( tin0S& tinBaseP )
 
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classLogF( tin0S& tinBaseP , const strokeS* const psttP , const tin0S* const pTinEventRawP , const ifcMonitorEventS* const pInfoP )
+voidT cellC::classLogF( tin0S& tin0P , const strokeS* const psttP , const tin0S* const pTinEventRawP , const ifcMonitorEventS* const pInfoP )
 
 }
-    ether.fileWriteF( tinBaseP , handle , tr , tr.csF( tinBaseP ) ) ;
-    ether.fileOpenF( tinBaseP , handle , countTC() , psttRpt , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_FAIL | flOPENdETAILS_WRITEnOW /*| flOPENdETAILS_NOcACHE*/ , ifcOPENhOW_nCeR ) ;
-    handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+    ether.fileWriteF( tin0P , handle , tr , tr.csF( tin0P ) ) ;
+    ether.fileOpenF( tin0P , handle , countTC() , psttRpt , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ | flOPENdETAILS_FAIL | flOPENdETAILS_WRITEnOW /*| flOPENdETAILS_NOcACHE*/ , ifcOPENhOW_nCeR ) ;
+    handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
     //CONoUT( tr ) ;
-    //thirdC::c_systemIF( tinBaseP , "cls" ) ; //U::REPLACE WITH BASE SUPPORTUSING A strokeS
-    ether.delF( tinBaseP , psttr ) ;
+    //thirdC::c_systemIF( tin0P , "cls" ) ; //U::REPLACE WITH BASE SUPPORTUSING A strokeS
+    ether.delF( tin0P , psttr ) ;
     TN( tr , psttr ) ;
     //DELIVER THE REPORT
 
     }
         }
             //}
-            //    ether.strFuseF( tinBaseP , psttr , T("  ")+TF3(swHandles1,flFORMAT_UNSIGNED,9)+TF3(c3LFz.c2,flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T("(")+tLine+T(")")+TP("",0x10-tLine.csF(tinBaseP))+T(processGlobal8I.source.postFileTitleF(tinBaseP,processGlobal8I.source.idFileRankF(tinBaseP,c3LFz.c2)))+T("\r\n") ) ;
+            //    ether.strFuseF( tin0P , psttr , T("  ")+TF3(swHandles1,flFORMAT_UNSIGNED,9)+TF3(c3LFz.c2,flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T("(")+tLine+T(")")+TP("",0x10-tLine.csF(tin0P))+T(processGlobal8I.source.postFileTitleF(tin0P,processGlobal8I.source.idFileRankF(tin0P,c3LFz.c2)))+T("\r\n") ) ;
             //    tLine = TF1(c3LFz.c1) ;
-            //    (count2S&)c3LFz = *(count2S*)swHandles1.leverF( tinBaseP , idf ) ;
+            //    (count2S&)c3LFz = *(count2S*)swHandles1.leverF( tin0P , idf ) ;
             //{
             //for( idf = 1 ; idf <= cFlavors ; idf ++ )
             //TN( tLine , "" ) ;
-            //cFlavors = swHandles1.cFlavorsF( tinBaseP ) ;
-            //ether.strFuseF( tinBaseP , psttr , T(" handle tally\r\n") ) ;
+            //cFlavors = swHandles1.cFlavorsF( tin0P ) ;
+            //ether.strFuseF( tin0P , psttr , T(" handle tally\r\n") ) ;
 
             }
-                stThreadsP.purgeF( tinBaseP ) ;
+                stThreadsP.purgeF( tin0P ) ;
                 while( !stThreadsP.third && ~hDown ) ;
                 }
-                    ether.delF( tinBaseP , *(strokeS**)&c4t.c4 ) ;
-                    ether.strFuseF( tinBaseP , psttr , TF3(c4t.c1,flFORMAT_UNSIGNED,9)+TF3(c4t.c2,flFORMAT_UNSIGNED,9)+TF3(c4t.c3,flFORMAT_UNSIGNED,9)+T("\"")+T((strokeS*)c4t.c4)+T("\"\r\n") ) ;
-                    count4S& c4t = *(count4S*)&stThreadsP.downF( tinBaseP , hDown ) ;
+                    ether.delF( tin0P , *(strokeS**)&c4t.c4 ) ;
+                    ether.strFuseF( tin0P , psttr , TF3(c4t.c1,flFORMAT_UNSIGNED,9)+TF3(c4t.c2,flFORMAT_UNSIGNED,9)+TF3(c4t.c3,flFORMAT_UNSIGNED,9)+T("\"")+T((strokeS*)c4t.c4)+T("\"\r\n") ) ;
+                    count4S& c4t = *(count4S*)&stThreadsP.downF( tin0P , hDown ) ;
                 {
                 do
-                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             {
             if( stThreadsP )
 
             pc->unrefF() ;
             }
                 }
-                    //pc->swHandle.ungrabF( tinBaseP ) ;
+                    //pc->swHandle.ungrabF( tin0P ) ;
                     //}
-                    //    ether.strFuseF( tinBaseP , psttr , T("handle entry: ")+TF3(c3DLF.c1,flFORMAT_UNSIGNED,9)+TF3(c3DLF.c2,flFORMAT_UNSIGNED,9)+TF3(c3DLF.c3,flFORMAT_UNSIGNED,9)+T("\r\n") ) ;
+                    //    ether.strFuseF( tin0P , psttr , T("handle entry: ")+TF3(c3DLF.c1,flFORMAT_UNSIGNED,9)+TF3(c3DLF.c2,flFORMAT_UNSIGNED,9)+TF3(c3DLF.c3,flFORMAT_UNSIGNED,9)+T("\r\n") ) ;
                     //    ((countT&)swHandles2) += c3DLF.c1 ;
                     //    ((countT&)swHandles1) ++ ;
                     //    c3LFz.c2 = c3DLF.c3 ;
                     //    c3LFz.c1 = c3DLF.c2 ;
                     //    count3S& c3DLF = *(count3S*)&(countT&)pc->swHandle ; // {cDuplicate,idLine,idiFile}
-                    //    pc->leverHandle = pc->swHandle.leverF( tinBaseP , idf ) ;
+                    //    pc->leverHandle = pc->swHandle.leverF( tin0P , idf ) ;
                     //{
                     //for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                    //countT cFlavors = pc->swHandle.cFlavorsF( tinBaseP ) ;
-                    //pc->swHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    //countT cFlavors = pc->swHandle.cFlavorsF( tin0P ) ;
+                    //pc->swHandle.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     //
                     //countT* pcl = c3LFz ;
                     //count3S c3LFz ;
                 {
 
-                pc->stTinc.ungrabF( tinBaseP ) ;
+                pc->stTinc.ungrabF( tin0P ) ;
                 }
                     while( !pc->stTinc.third && ~hDown ) ;
                     }
                         }
                             __Z( ids ) ;
-                            stThreadsP.sinkF( tinBaseP , ids , (byteT*)&c4t , flSTACKsINK_UNIQUE , subtract_count4S_F ) ;
+                            stThreadsP.sinkF( tin0P , ids , (byteT*)&c4t , flSTACKsINK_UNIQUE , subtract_count4S_F ) ;
                             ZE( countT , ids ) ;
-                            count4S c4t( pt->idThread , pt->osTid , pt->osPid , (countT)(strokeS*)psttOldC( tinBaseP , ether , T(pt->postThreadName) ) ) ;
+                            count4S c4t( pt->idThread , pt->osTid , pt->osPid , (countT)(strokeS*)psttOldC( tin0P , ether , T(pt->postThreadName) ) ) ;
                         {
                         if( pt )
-                        tinC* pt = (tinC*)pc->stTinc.downF( tinBaseP , hDown ) ;
+                        tinC* pt = (tinC*)pc->stTinc.downF( tin0P , hDown ) ;
                     {
                     do
-                    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( pc->stTinc )
-                pc->stTinc.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                pc->stTinc.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             {
-            //switchC swHandles2( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , pcl ) ;
-            //switchC swHandles1( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , pcl ) ;
+            //switchC swHandles2( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , pcl ) ;
+            //switchC swHandles1( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , pcl ) ;
 
-            ether.strFuseF( tinBaseP , psttr , T(" \r\n")+TF3(pc->idCell,flFORMAT_UNSIGNED,9)+TF3(pc->idAdam,flFORMAT_UNSIGNED,9)+TF3(pc->osPid,flFORMAT_UNSIGNED,9)+T("\"")+TF1(pc->psttTitle)+T("\"\r\n") ) ;
+            ether.strFuseF( tin0P , psttr , T(" \r\n")+TF3(pc->idCell,flFORMAT_UNSIGNED,9)+TF3(pc->idAdam,flFORMAT_UNSIGNED,9)+TF3(pc->osPid,flFORMAT_UNSIGNED,9)+T("\"")+TF1(pc->psttTitle)+T("\"\r\n") ) ;
         {
         if( pc )
         stCellCopyP >> (countT&)pc ;
@@ -1606,10 +1606,10 @@ voidT cellC::classLogF( tin0S& tinBaseP , const strokeS* const psttP , const tin
     while( stCellCopyP )
     //REPORT ON EACH CELL
 
-    ether.strFuseF( tinBaseP , psttr , T(" \r\n")+TPS("Cells ",0x80,S1C('-'))+T("\r\n \r\nidCell__ idAdam__ osPid___ cellTitle\r\nidThread osTid___ osPid___ threadTitle\r\n") ) ; ___( psttr ) ;
+    ether.strFuseF( tin0P , psttr , T(" \r\n")+TPS("Cells ",0x80,S1C('-'))+T("\r\n \r\nidCell__ idAdam__ osPid___ cellTitle\r\nidThread osTid___ osPid___ threadTitle\r\n") ) ; ___( psttr ) ;
 
     }
-        pStCell->ungrabF( tinBaseP ) ;
+        pStCell->ungrabF( tin0P ) ;
         }
             while( ~hDown && !stCell.third ) ;
             }
@@ -1618,26 +1618,26 @@ voidT cellC::classLogF( tin0S& tinBaseP , const strokeS* const psttP , const tin
                     stCellCopyP << (countT)pc ;
                 {
                 if( pc )
-                cellC* pc = (cellC*)stCell.downF( tinBaseP , hDown ) ;
+                cellC* pc = (cellC*)stCell.downF( tin0P , hDown ) ;
             {
             do
-            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         {
         if( stCell )
         stackC& stCell = *pStCell ;
-        pStCell->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        pStCell->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
     if( !etPrimeP )
     //GET A LIST OF CELLS TO REPORT ON
 
     }
-        stOsTidWanterInLoopUniqueP.purgeF( tinBaseP ) ;
-        stOsTidWanterInLoopP.purgeF( tinBaseP ) ;
-        stOsTidAllWanterP.purgeF( tinBaseP ) ;
-        swGrabTallyP.freeAllF( tinBaseP ) ;
+        stOsTidWanterInLoopUniqueP.purgeF( tin0P ) ;
+        stOsTidWanterInLoopP.purgeF( tin0P ) ;
+        stOsTidAllWanterP.purgeF( tin0P ) ;
+        swGrabTallyP.freeAllF( tin0P ) ;
 
         }
-            ether.delF( tinBaseP , pbCopy ) ;
+            ether.delF( tin0P , pbCopy ) ;
             st_pGrabP >> (countT&)pbCopy ;
             ZE( byteT* , pbCopy ) ;
         {
@@ -1645,28 +1645,28 @@ voidT cellC::classLogF( tin0S& tinBaseP , const strokeS* const psttP , const tin
 
         }
             }
-                if( pczLever ) { ether.strFuseF( tinBaseP , psttr , TF3(swGrabTallyP,flFORMAT_UNSIGNED,9)+TF3(pczLever[1],flFORMAT_UNSIGNED,9)+TF3(pczLever[0],flFORMAT_UNSIGNED,9)+T("\r\n") ) ; ___( psttr ) ; }
+                if( pczLever ) { ether.strFuseF( tin0P , psttr , TF3(swGrabTallyP,flFORMAT_UNSIGNED,9)+TF3(pczLever[1],flFORMAT_UNSIGNED,9)+TF3(pczLever[0],flFORMAT_UNSIGNED,9)+T("\r\n") ) ; ___( psttr ) ; }
                 c3lifiP.c2 = pczLever[ 1 ] ;
                 c3lifiP.c1 = pczLever[ 0 ] ;
-                countT* pczLever = (countT*)swGrabTallyP.leverF( tinBaseP , idf ) ;
+                countT* pczLever = (countT*)swGrabTallyP.leverF( tin0P , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swGrabTallyP.cFlavorsF( tinBaseP ) ;
+            countT cFlavors = swGrabTallyP.cFlavorsF( tin0P ) ;
         {
-        ether.strFuseF( tinBaseP , psttr , T(" \r\nTally of All Grab Objects\r\n \r\n") ) ; ___( psttr ) ;
+        ether.strFuseF( tin0P , psttr , T(" \r\nTally of All Grab Objects\r\n \r\n") ) ; ___( psttr ) ;
 
         }
-            ether.delF( tinBaseP , psttrLoops ) ;
+            ether.delF( tin0P , psttrLoops ) ;
             }
-                ether.strFuseF( tinBaseP , psttr , T(" \r\nLoop Key: WANTER.osTid HAS.serial WANTEDbY.osTid WHICHhAS.serial...\r\n \r\n")+T(psttrLoops)+T("\r\n") ) ; ___( psttr ) ;
+                ether.strFuseF( tin0P , psttr , T(" \r\nLoop Key: WANTER.osTid HAS.serial WANTEDbY.osTid WHICHhAS.serial...\r\n \r\n")+T(psttrLoops)+T("\r\n") ) ; ___( psttr ) ;
                 while( !stOsTidWanterInLoopUniqueP.third && ~hDown ) ;
                 }
-                    ether.strFuseF( tinBaseP , psttr , TF3(c5w.c1,flFORMAT_UNSIGNED,8)+T(" ")+TF3(c5w.c2,flFORMAT_UNSIGNED,8)+T(" ")+TF3(c5w.c3,flFORMAT_UNSIGNED,8)+T(" ")+TF3(c5w.c4,flFORMAT_UNSIGNED,8)+T("\r\n") ) ;
-                    count5S& c5w = *(count5S*)&stOsTidWanterInLoopUniqueP.downF( tinBaseP , hDown ) ;
+                    ether.strFuseF( tin0P , psttr , TF3(c5w.c1,flFORMAT_UNSIGNED,8)+T(" ")+TF3(c5w.c2,flFORMAT_UNSIGNED,8)+T(" ")+TF3(c5w.c3,flFORMAT_UNSIGNED,8)+T(" ")+TF3(c5w.c4,flFORMAT_UNSIGNED,8)+T("\r\n") ) ;
+                    count5S& c5w = *(count5S*)&stOsTidWanterInLoopUniqueP.downF( tin0P , hDown ) ;
                 {
                 do
-                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                ether.strFuseF( tinBaseP , psttr , T(" \r\nThreads locked in a grab loop:\r\n \r\n")+TPS("osTid",8,S1C('_'))+T(" ")+TPS("serial",8,S1C('_'))+T(" ")+TPS("idLineCt",8,S1C('_'))+T(" ")+TPS("idiFileC",8,S1C('_'))+T("\r\n \r\n") ) ;
+                handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                ether.strFuseF( tin0P , psttr , T(" \r\nThreads locked in a grab loop:\r\n \r\n")+TPS("osTid",8,S1C('_'))+T(" ")+TPS("serial",8,S1C('_'))+T(" ")+TPS("idLineCt",8,S1C('_'))+T(" ")+TPS("idiFileC",8,S1C('_'))+T("\r\n \r\n") ) ;
             {
             if( stOsTidWanterInLoopUniqueP )
     
@@ -1674,46 +1674,46 @@ voidT cellC::classLogF( tin0S& tinBaseP , const strokeS* const psttP , const tin
                 while( !stOsTidAllWanterP.third && ~hDown ) ;
                 }
                     }
-                        stOsTidWanterP.purgeF( tinBaseP ) ;
-                        ether.delF( tinBaseP , psttrl ) ;
+                        stOsTidWanterP.purgeF( tin0P ) ;
+                        ether.delF( tin0P , psttrl ) ;
                         }
-                            ether.strFuseF( tinBaseP , psttrLoops , T(psttrl)+T("\r\n") ) ; ___( psttrLoops ) ;
-                            else                   { ether.strFuseF( tinBaseP , psttrLoops , T("loop :") ) ; ___( psttrLoops ) ; }
-                            else if( bPseudo     ) { ether.strFuseF( tinBaseP , psttrLoops , T("sleep:") ) ; ___( psttrLoops ) ; }
-                            if( bLoop && bPseudo ) { ether.strFuseF( tinBaseP , psttrLoops , T("both :") ) ; ___( psttrLoops ) ; }
+                            ether.strFuseF( tin0P , psttrLoops , T(psttrl)+T("\r\n") ) ; ___( psttrLoops ) ;
+                            else                   { ether.strFuseF( tin0P , psttrLoops , T("loop :") ) ; ___( psttrLoops ) ; }
+                            else if( bPseudo     ) { ether.strFuseF( tin0P , psttrLoops , T("sleep:") ) ; ___( psttrLoops ) ; }
+                            if( bLoop && bPseudo ) { ether.strFuseF( tin0P , psttrLoops , T("both :") ) ; ___( psttrLoops ) ; }
                             }
-                                ether.delF( tinBaseP , pc5w ) ;
-                                stOsTidWanterInLoopUniqueP.sinkF( tinBaseP , countTC() , (byteT*)pc5w , flSTACKsINK_UNIQUE , subtractWantersF ) ;
+                                ether.delF( tin0P , pc5w ) ;
+                                stOsTidWanterInLoopUniqueP.sinkF( tin0P , countTC() , (byteT*)pc5w , flSTACKsINK_UNIQUE , subtractWantersF ) ;
                                 stOsTidWanterInLoopP >> (byteT*&)pc5w ; ___( pc5w ) ;
                                 ZE( count5S* , pc5w ) ;
                             {
                             while( stOsTidWanterInLoopP )
                         {
                         if( bLoop || bPseudo )
-                        boolT bLoop = lockedWantersRF( tinBaseP , ether , bPseudo , psttrl , stOsTidWanterP , osTidWanter , st_pGrabP , stOsTidWanterInLoopP ) ;
+                        boolT bLoop = lockedWantersRF( tin0P , ether , bPseudo , psttrl , stOsTidWanterP , osTidWanter , st_pGrabP , stOsTidWanterInLoopP ) ;
                         boolT bPseudo = F(osTidWanter.c5) & flWANTER_WANTSpSEUDO ? 1 : 0 ;
-                        ether.strMakeF( tinBaseP , LF , psttrl , T("") , 0x10000 ) ; ___( psttrl ) ;
+                        ether.strMakeF( tin0P , LF , psttrl , T("") , 0x10000 ) ; ___( psttrl ) ;
                         ZE( strokeS* , psttrl ) ;
                         __( stOsTidWanterP ) ;
                     {
                     //U::if( !stOsTidWanterInLoopUniqueP( (byteT*)&osTidWanter , subtractWantersF ) )
-                    count5S& osTidWanter = *(count5S*)&stOsTidAllWanterP.downF( tinBaseP , hDown ) ;
+                    count5S& osTidWanter = *(count5S*)&stOsTidAllWanterP.downF( tin0P , hDown ) ;
                 {
                 do
-                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             {
             if( stOsTidAllWanterP )                                                                 // FOR EACH WANTER
-            ether.strMakeF( tinBaseP , LF , psttrLoops , T("") , 0x10000 ) ; ___( psttrLoops ) ;
+            ether.strMakeF( tin0P , LF , psttrLoops , T("") , 0x10000 ) ; ___( psttrLoops ) ;
             ZE( strokeS* , psttrLoops ) ;
 
             }
                 while( !st_pGrabP.third && ~hDown ) ;
                 }
-                    if( pCopy ) wantersF( tinBaseP , stOsTidAllWanterP , *pCopy ) ;
-                    grabAnnotatedS* pCopy = (grabAnnotatedS*)st_pGrabP.downF( tinBaseP , hDown ) ;
+                    if( pCopy ) wantersF( tin0P , stOsTidAllWanterP , *pCopy ) ;
+                    grabAnnotatedS* pCopy = (grabAnnotatedS*)st_pGrabP.downF( tin0P , hDown ) ;
                 {
                 do
-                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             {
             if( st_pGrabP )
             __( stOsTidWanterInLoopUniqueP ) ;
@@ -1722,69 +1722,69 @@ voidT cellC::classLogF( tin0S& tinBaseP , const strokeS* const psttP , const tin
         {
 
         }
-            cellC::pBaton_lSerial->ungrabF( tinBaseP ) ;
+            cellC::pBaton_lSerial->ungrabF( tin0P ) ;
     
-            ether.strFuseF( tinBaseP , psttr , TF1(cWanted)+T(" grab objects are wanted\r\n") ) ;
+            ether.strFuseF( tin0P , psttr , TF1(cWanted)+T(" grab objects are wanted\r\n") ) ;
             }
                 }
                     while( !cellC::pSwsGrabInfo->third && ~hDown && !etPrimeP /* && cAboutToGrab_lSerialSave == cellC::cAboutToGrab_lSerial */ ) ;
                     }
                         }
                             if( bGot ) break ;
-                            else ether.delF( tinBaseP , (byteT*&)pCopy ) ;
+                            else ether.delF( tin0P , (byteT*&)pCopy ) ;
                             }
                                 st_pGrabP << (countT)pCopy ;
-                                ether.strFuseF( tinBaseP , psttr , T("\r\n") ) ;
+                                ether.strFuseF( tin0P , psttr , T("\r\n") ) ;
                                 }
-                                    //U::if( pCopy->pOsTidWant[ off ] ) ether.strFuseF( tinBaseP , psttr , T(" ")+TF3(pCopy->pOsTidWant[off],flFORMAT_UNSIGNED,4) ) ;
+                                    //U::if( pCopy->pOsTidWant[ off ] ) ether.strFuseF( tin0P , psttr , T(" ")+TF3(pCopy->pOsTidWant[off],flFORMAT_UNSIGNED,4) ) ;
                                 {
                                 for( countT off = 0 ; off < CgRABwANTmAX ; off ++ )
-                                ether.strFuseF( tinBaseP , psttr , TF3(pCopy->serial,flFORMAT_UNSIGNED,8)+T(" ")+TF1(pCopy->flags)+T(": ")+TF3(pCopy->osTidHave,flFORMAT_UNSIGNED,4)+T(" |") ) ;
+                                ether.strFuseF( tin0P , psttr , TF3(pCopy->serial,flFORMAT_UNSIGNED,8)+T(" ")+TF1(pCopy->flags)+T(": ")+TF3(pCopy->osTidHave,flFORMAT_UNSIGNED,4)+T(" |") ) ;
                                 
-                                else                                                                                                ether.strFuseF( tinBaseP , psttr , T("signC  ") ) ;
-                                else if( !( F(pCopy->grabNotes.flags) & ( flGRABnOTES_CTaSsIGNc | flGRABnOTES_ATTACHEDaSsIGNc ) ) ) ether.strFuseF( tinBaseP , psttr , T("batonC ") ) ;
+                                else                                                                                                ether.strFuseF( tin0P , psttr , T("signC  ") ) ;
+                                else if( !( F(pCopy->grabNotes.flags) & ( flGRABnOTES_CTaSsIGNc | flGRABnOTES_ATTACHEDaSsIGNc ) ) ) ether.strFuseF( tin0P , psttr , T("batonC ") ) ;
                                 }
-                                    else                                         ether.strFuseF( tinBaseP , psttr , T("grabOldS  ") ) ;
-                                    else if( F(pCopy->flags) & flGRABs_PSEUDO  ) ether.strFuseF( tinBaseP , psttr , T("sleep  ") ) ;
-                                    if( F(pCopy->flags) & flGRABs_PSEUDOoScALL ) ether.strFuseF( tinBaseP , psttr , T("osCall ") ) ;
+                                    else                                         ether.strFuseF( tin0P , psttr , T("grabOldS  ") ) ;
+                                    else if( F(pCopy->flags) & flGRABs_PSEUDO  ) ether.strFuseF( tin0P , psttr , T("sleep  ") ) ;
+                                    if( F(pCopy->flags) & flGRABs_PSEUDOoScALL ) ether.strFuseF( tin0P , psttr , T("osCall ") ) ;
                                 {
                                 if( !( F(pCopy->flags) & flGRABs_ANNOTATED ) )
                                 
-                                ether.strFuseF( tinBaseP , psttr , TF3(pCopy->idiFileCt,flFORMAT_UNSIGNED,7)+T("(")+TF3(pCopy->idLineCt,flFORMAT_UNSIGNED,8)+T(") ") ) ;
+                                ether.strFuseF( tin0P , psttr , TF3(pCopy->idiFileCt,flFORMAT_UNSIGNED,7)+T("(")+TF3(pCopy->idLineCt,flFORMAT_UNSIGNED,8)+T(") ") ) ;
     
                                 ++ cWanted ;
                                 bGot = 1 ;
                             {
                             )
-                                readProcessMemoryF( tinBaseP , ether , (byteT*)pCopy , info , F(pCopy->flags) & flGRABs_ANNOTATED ? sizeof( grabAnnotatedS ) : sizeof( grabOldS ) )
+                                readProcessMemoryF( tin0P , ether , (byteT*)pCopy , info , F(pCopy->flags) & flGRABs_ANNOTATED ? sizeof( grabAnnotatedS ) : sizeof( grabOldS ) )
                                 bWantedF( *pCopy , c3lifiP , swGrabTallyP )                                                                                                     &&
-                                readProcessMemoryF( tinBaseP , ether , (byteT*)pCopy , info , cbGrabTab )                                                                           &&
+                                readProcessMemoryF( tin0P , ether , (byteT*)pCopy , info , cbGrabTab )                                                                           &&
                             (
                             if
                             ZE( boolT , bGot ) ;
     
-                            ether.newF( tinBaseP , LF , (byteT*&)pCopy , sizeof( grabAnnotatedS ) ) ; ___( pCopy ) ;
+                            ether.newF( tin0P , LF , (byteT*&)pCopy , sizeof( grabAnnotatedS ) ) ; ___( pCopy ) ;
                             ZE( grabAnnotatedS* , pCopy ) ;
                         {
                         if( info.ip /* && cAboutToGrab_lSerialSave == cellC::cAboutToGrab_lSerial */ )
-                        grabInfoS& info = *(grabInfoS*)&cellC::pSwsGrabInfo->downF( tinBaseP , hDown ) ;
+                        grabInfoS& info = *(grabInfoS*)&cellC::pSwsGrabInfo->downF( tin0P , hDown ) ;
                     {
                     do
-                    handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 {
                 if( *cellC::pSwsGrabInfo )
-                cellC::lSerial = cellC::pSwsGrabInfo->leverF( tinBaseP , idf ) ;
+                cellC::lSerial = cellC::pSwsGrabInfo->leverF( tin0P , idf ) ;
             {
             for( countT idf = 1 ; !etPrimeP /* && cAboutToGrab_lSerialSave == cellC::cAboutToGrab_lSerial */ && idf <= cFlavors ; idf ++ )
             ZE( countT , idRead ) ;
             }
-                ether.strFuseF( tinBaseP , psttr , T(" \r\n")+TPS((osTextT*)tg,0x80,S1C('-'))+T("\r\n \r\n") ) ;
+                ether.strFuseF( tin0P , psttr , T(" \r\n")+TPS((osTextT*)tg,0x80,S1C('-'))+T("\r\n \r\n") ) ;
                 TN( tg , "Grabbing (" ) ; tg += TF1(cFlavors)+T(") ") ;
             {
-            countT cFlavors = cellC::pSwsGrabInfo->cFlavorsF( tinBaseP ) ;
+            countT cFlavors = cellC::pSwsGrabInfo->cFlavorsF( tin0P ) ;
             ZE( countT , cWanted ) ;
     
-            cellC::pBaton_lSerial->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            cellC::pBaton_lSerial->grabF( tin0P , TAG( TAGiDnULL ) ) ;
             //countT cAboutToGrab_lSerialSave = ++ cellC::cAboutToGrab_lSerial ;
     
             }
@@ -1796,14 +1796,14 @@ voidT cellC::classLogF( tin0S& tinBaseP , const strokeS* const psttP , const tin
         {
     {
     //INSPECT THE GRAB OBJECTS
-    ether.strMakeF( tinBaseP , LF , psttr , T("IdeaFarm " "(tm) Operating System Monitor Report ")+TF1(++idDisplayFresh)+T("\r\n") , 0x100000 ) ; ___( psttr ) ;
+    ether.strMakeF( tin0P , LF , psttr , T("IdeaFarm " "(tm) Operating System Monitor Report ")+TF1(++idDisplayFresh)+T("\r\n") , 0x100000 ) ; ___( psttr ) ;
     ZE( strokeS* , psttr ) ;
 
     etherC& ether = *pEtClass ;
 
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classInspectF( tin0S& tinBaseP , stackC& stCellCopyP , etherC& etPrimeP , stackC& st_pGrabP , stackC& stOsTidAllWanterP , stackC& stOsTidWanterP , stackC& stOsTidWanterInLoopP , stackC& stOsTidWanterInLoopUniqueP , stackC& stThreadsP , count3S& c3lifiP , switchC& swGrabTallyP )
+voidT cellC::classInspectF( tin0S& tin0P , stackC& stCellCopyP , etherC& etPrimeP , stackC& st_pGrabP , stackC& stOsTidAllWanterP , stackC& stOsTidWanterP , stackC& stOsTidWanterInLoopP , stackC& stOsTidWanterInLoopUniqueP , stackC& stThreadsP , count3S& c3lifiP , switchC& swGrabTallyP )
 
 }
     return bLoop ;
@@ -1817,10 +1817,10 @@ voidT cellC::classInspectF( tin0S& tinBaseP , stackC& stCellCopyP , etherC& etPr
         }
             }
                 }
-                    etherP.delF( tinBaseP , (countT*&)ppOsTidWanter ) ;
+                    etherP.delF( tin0P , (countT*&)ppOsTidWanter ) ;
                     }
                         }
-                            etherP.delF( tinBaseP , pc5w ) ;
+                            etherP.delF( tin0P , pc5w ) ;
                             stOsTidWanterInLoopP >> (byteT*&)pc5w ; ___( pc5w ) ;
                             ZE( count5S* , pc5w ) ;
                         {
@@ -1828,7 +1828,7 @@ voidT cellC::classInspectF( tin0S& tinBaseP , stackC& stCellCopyP , etherC& etPr
 
                         }
                             }
-                                bLoop = lockedWantersRF( tinBaseP , etherP , bPseudoP , psttP , stOsTidWanterP , osTidWanter , st_pGrabP , stOsTidWanterInLoopP ) ;
+                                bLoop = lockedWantersRF( tin0P , etherP , bPseudoP , psttP , stOsTidWanterP , osTidWanter , st_pGrabP , stOsTidWanterInLoopP ) ;
                                 osTidWanter.c5 |= flWANTER_INSPECTIONsTARTED ;
                             {
                             if( !( F(osTidWanter.c5) & flWANTER_INSPECTIONsTARTED ) )
@@ -1840,58 +1840,58 @@ voidT cellC::classInspectF( tin0S& tinBaseP , stackC& stCellCopyP , etherC& etPr
                         }
                             stOsTidWanterInLoopP << (byteT*)ppOsTidWanter[ off ++ ] ;
                             ZE( countT , ids ) ;
-                            ppOsTidWanter[ off ] = (count5S*)&stOsTidWanterP.downF( tinBaseP , hDown ) ;
+                            ppOsTidWanter[ off ] = (count5S*)&stOsTidWanterP.downF( tin0P , hDown ) ;
                         {
                         do
-                        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         ZE( countT , off ) ;
                         ZE( countT , cWanterInLoop ) ;
                     {
                     if( ppOsTidWanter )
-                    etherP.newF( tinBaseP , LF , (countT*&)ppOsTidWanter , cWanter ) ; ___( ppOsTidWanter ) ;
+                    etherP.newF( tin0P , LF , (countT*&)ppOsTidWanter , cWanter ) ; ___( ppOsTidWanter ) ;
                     ZE( count5S** , ppOsTidWanter ) ;
                 {
                 if( cWanter )
                 countT cWanter = stOsTidWanterP ;
             {
             if( !bLoop )
-            bLoop = wantersF( tinBaseP , stOsTidWanterP , *pCopy ) ;
+            bLoop = wantersF( tin0P , stOsTidWanterP , *pCopy ) ;
 
-            else                                                                                                { etherP.strFuseF( tinBaseP , psttP , T(".signC" ) ) ; ___( psttP ) ; }
-            else if( !( F(pCopy->grabNotes.flags) & ( flGRABnOTES_CTaSsIGNc | flGRABnOTES_ATTACHEDaSsIGNc ) ) ) { etherP.strFuseF( tinBaseP , psttP , T(".batonC") ) ; ___( psttP ) ; }
-            else if( !( F(pCopy->flags) & flGRABs_ANNOTATED ) )                                                 { etherP.strFuseF( tinBaseP , psttP , T(".grabOldS" ) ) ; ___( psttP ) ; }
+            else                                                                                                { etherP.strFuseF( tin0P , psttP , T(".signC" ) ) ; ___( psttP ) ; }
+            else if( !( F(pCopy->grabNotes.flags) & ( flGRABnOTES_CTaSsIGNc | flGRABnOTES_ATTACHEDaSsIGNc ) ) ) { etherP.strFuseF( tin0P , psttP , T(".batonC") ) ; ___( psttP ) ; }
+            else if( !( F(pCopy->flags) & flGRABs_ANNOTATED ) )                                                 { etherP.strFuseF( tin0P , psttP , T(".grabOldS" ) ) ; ___( psttP ) ; }
             }
                 bPseudoP |= 1 ;
-                etherP.strFuseF( tinBaseP , psttP , T(".sleep") ) ;
+                etherP.strFuseF( tin0P , psttP , T(".sleep") ) ;
             {
             if( F(pCopy->flags) & flGRABs_PSEUDO )
         {
         if( pCopy )
-        grabAnnotatedS* pCopy = pCopyF( tinBaseP , serial , st_pGrabP ) ;
-        etherP.strFuseF( tinBaseP , psttP , T(" H.")+TF1(serial) ) ;
+        grabAnnotatedS* pCopy = pCopyF( tin0P , serial , st_pGrabP ) ;
+        etherP.strFuseF( tin0P , psttP , T(" H.")+TF1(serial) ) ;
         stSerialHave >> serial ;
         ZE( countT , serial ) ;
     {
     while( stSerialHave )                                                 // FOR EACH DIRECTLY LOCKED SERIAL
     ZE( boolT , bLoop ) ;
-    haveF( tinBaseP , stSerialHave , osTidWanterP.c1 , st_pGrabP ) ; //SERIALS LOCKED DIRECTLY BY osTidWanterP
+    haveF( tin0P , stSerialHave , osTidWanterP.c1 , st_pGrabP ) ; //SERIALS LOCKED DIRECTLY BY osTidWanterP
     __( stSerialHave ) ;
         
-    etherP.strFuseF( tinBaseP , psttP , T(" W.")+TF1(osTidWanterP.c1) ) ;
+    etherP.strFuseF( tin0P , psttP , T(" W.")+TF1(osTidWanterP.c1) ) ;
 
     stackC& stSerialHave = *pnu ;
     }
         THREADmODE2rESTORE
-        pnu = new( 0 , tinBaseP , LF ) stackC( tinBaseP , etherP , TAG( TAGiDnULL ) ) ; ___( pnu ) ; //U::O: AVOID EMITTING TELLS BY USING A POOLoLD OF stackC OBJECTS AND NEWING THEM ONLY IF THE POOLoLD IS EXHAUSTED
+        pnu = new( 0 , tin0P , LF ) stackC( tin0P , etherP , TAG( TAGiDnULL ) ) ; ___( pnu ) ; //U::O: AVOID EMITTING TELLS BY USING A POOLoLD OF stackC OBJECTS AND NEWING THEM ONLY IF THE POOLoLD IS EXHAUSTED
         THREADmODE2oFF( flTHREADmODE2_DISALLOWtELLmONITOR )
     {
     ZE( stackC* , pnu ) ;
 {
-boolT lockedWantersRF( tin0S& tinBaseP , etherC& etherP , boolT& bPseudoP , strokeS*& psttP , stackC& stOsTidWanterP , count5S& osTidWanterP , stackC& st_pGrabP , stackC& stOsTidWanterInLoopP )
+boolT lockedWantersRF( tin0S& tin0P , etherC& etherP , boolT& bPseudoP , strokeS*& psttP , stackC& stOsTidWanterP , count5S& osTidWanterP , stackC& st_pGrabP , stackC& stOsTidWanterInLoopP )
 
 }
     return bLoop ;
-    if( ((tin9S&)tinBaseP).fingerprint && stOsTidWanterP && copyP.serial ) ;
+    if( ((tin9S&)tin0P).fingerprint && stOsTidWanterP && copyP.serial ) ;
     }
         //U::}
         //U::    }
@@ -1899,7 +1899,7 @@ boolT lockedWantersRF( tin0S& tinBaseP , etherC& etherP , boolT& bPseudoP , stro
         //U::        bLoop = 1 ;
         //U::    {
         //U::    if( !ids )
-        //U::    stOsTidWanterP.sinkF( tinBaseP , ids , (byteT*)&count5S( copyP.pOsTidWant[ off ] , copyP.serial , copyP.idLineCt , copyP.idiFileCt , ( F(copyP.flags) & flGRABs_PSEUDO ? flWANTER_WANTSpSEUDO : flWANTER_null ) ) , flSTACKsINK_UNIQUE , subtractWantersF ) ;
+        //U::    stOsTidWanterP.sinkF( tin0P , ids , (byteT*)&count5S( copyP.pOsTidWant[ off ] , copyP.serial , copyP.idLineCt , copyP.idiFileCt , ( F(copyP.flags) & flGRABs_PSEUDO ? flWANTER_WANTSpSEUDO : flWANTER_null ) ) , flSTACKsINK_UNIQUE , subtractWantersF ) ;
         //U::    ZE( countT , ids ) ;
         //U::{
         //U::if( copyP.pOsTidWant[ off ] )
@@ -1907,36 +1907,36 @@ boolT lockedWantersRF( tin0S& tinBaseP , etherC& etherP , boolT& bPseudoP , stro
     for( countT off = 0 ; off < CgRABwANTmAX ; off ++ )
     ZE( boolT , bLoop ) ;
 {
-boolT wantersF( tin0S& tinBaseP , stackC& stOsTidWanterP , grabAnnotatedS& copyP )
+boolT wantersF( tin0S& tin0P , stackC& stOsTidWanterP , grabAnnotatedS& copyP )
 
 }
     return *(countT*)c1P - *(countT*)c2P ;
-    if( pEther && ((tin9S&)tinBaseP).fingerprint && c3P ) ;
+    if( pEther && ((tin9S&)tin0P).fingerprint && c3P ) ;
 {
-countT subtractWantersF( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtractWantersF( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     return pc1[ 0 ] - pc2[ 0 ] ? pc1[ 0 ] - pc2[ 0 ] : pc1[ 1 ] - pc2[ 1 ] ;
 
     countT* pc2 = (countT*)c2P ;
     countT* pc1 = (countT*)c1P ;
-    if( pEther && ((tin9S&)tinBaseP).fingerprint && c3P ) ;
+    if( pEther && ((tin9S&)tin0P).fingerprint && c3P ) ;
 {
-countT subtract_grabInfoS_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
+countT subtract_grabInfoS_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
 }
     }
         while( !st_pGrabP.third && ~hDown ) ;
         }
-            if( pCopy && pCopy->osTidHave == osTidP ) stSerialHaveP.sinkF( tinBaseP , countTC() , pCopy->serial , flSTACKsINK_UNIQUE ) ;
-            grabAnnotatedS* pCopy = (grabAnnotatedS*)st_pGrabP.downF( tinBaseP , hDown ) ;
+            if( pCopy && pCopy->osTidHave == osTidP ) stSerialHaveP.sinkF( tin0P , countTC() , pCopy->serial , flSTACKsINK_UNIQUE ) ;
+            grabAnnotatedS* pCopy = (grabAnnotatedS*)st_pGrabP.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( st_pGrabP )
 {
-voidT haveF( tin0S& tinBaseP , stackC& stSerialHaveP , const countT osTidP , stackC& st_pGrabP )
+voidT haveF( tin0S& tin0P , stackC& stSerialHaveP , const countT osTidP , stackC& st_pGrabP )
 
 }
     return pFound ;
@@ -1945,15 +1945,15 @@ voidT haveF( tin0S& tinBaseP , stackC& stSerialHaveP , const countT osTidP , sta
         while( !st_pGrabP.third && ~hDown && !pFound ) ;
         }
             if( pCopy && pCopy->serial == serialP ) pFound = pCopy ;
-            grabAnnotatedS* pCopy = (grabAnnotatedS*)st_pGrabP.downF( tinBaseP , hDown ) ;
+            grabAnnotatedS* pCopy = (grabAnnotatedS*)st_pGrabP.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( st_pGrabP )
     ZE( grabAnnotatedS* , pFound ) ;
 {
-grabAnnotatedS* pCopyF( tin0S& tinBaseP , const countT serialP , stackC& st_pGrabP )
+grabAnnotatedS* pCopyF( tin0S& tin0P , const countT serialP , stackC& st_pGrabP )
 
 }
     return bOk ;
@@ -1961,11 +1961,11 @@ grabAnnotatedS* pCopyF( tin0S& tinBaseP , const countT serialP , stackC& st_pGra
     }
         }
             if( bOk ) bOk = pTo->fingerprint == FINGERnEG_grabOldS && c2fs.c1 == FINGERnEG_grabOldS && pTo->serial == c2fs.c2 ;
-            thirdC::dosReadProcessMemoryIF( tinBaseP , (byteT*)&c2fs , sizeof c2fs , bOk , (voidT*)infoP.ip , infoP.osPid ) ;
+            thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&c2fs , sizeof c2fs , bOk , (voidT*)infoP.ip , infoP.osPid ) ;
             bOk = 0 ;
         {
         if( bOk )
-        thirdC::dosReadProcessMemoryIF(     tinBaseP , pbToP         , cbP         , bOk , (voidT*)infoP.ip , infoP.osPid ) ;
+        thirdC::dosReadProcessMemoryIF(     tin0P , pbToP         , cbP         , bOk , (voidT*)infoP.ip , infoP.osPid ) ;
         count2S c2fs ;
         //CODE SYNC: 0030050 6a40104: serial      MUST BE AT OFFSET sizeof( countT )
         //CODE SYNC: 0030050 6a40104: fingerprint MUST BE AT OFFSET 0
@@ -1973,14 +1973,14 @@ grabAnnotatedS* pCopyF( tin0S& tinBaseP , const countT serialP , stackC& st_pGra
     else
     }
         if( pTo->fingerprint == FINGERnEG_grabOldS && pFrom->fingerprint == FINGERnEG_grabOldS && pTo->serial == pFrom->serial ) bOk = 1 ;
-        etherP.memCopyF( tinBaseP , pbToP , (byteT*)pFrom , cbP ) ;
-        grabOldS* pFrom = (grabOldS*)(byteT*)ap_artmentOldC( tinBaseP , infoP.ip ) ;
+        etherP.memCopyF( tin0P , pbToP , (byteT*)pFrom , cbP ) ;
+        grabOldS* pFrom = (grabOldS*)(byteT*)ap_artmentOldC( tin0P , infoP.ip ) ;
     {
     if( F(infoP.flags) & flGRABiNFOs_IDA )
     grabOldS* const pTo = (grabOldS*)pbToP ;
     ZE( boolT , bOk ) ;
 {
-boolT readProcessMemoryF( tin0S& tinBaseP , etherC& etherP , byteT* const pbToP , grabInfoS& infoP , const countT cbP )
+boolT readProcessMemoryF( tin0S& tin0P , etherC& etherP , byteT* const pbToP , grabInfoS& infoP , const countT cbP )
 
 }
     return 0 ;
@@ -1995,13 +1995,13 @@ inline boolT bWantedF( grabOldS& grabP , count3S& c3lifiP , switchC& swGrabTally
 }
     return idPhase ;
 {
-countT cellC::classIdPhaseF( tin0S& tinBaseP )
+countT cellC::classIdPhaseF( tin0S& tin0P )
 
 }
     SLEEPwHILE( cFirePending ) ;
     }
         }
-            ether.osThreadF( tinBaseP , countTC() , tmFireCellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cFirePending , (countT)pc ) ;
+            ether.osThreadF( tin0P , countTC() , tmFireCellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cFirePending , (countT)pc ) ;
             cFirePending ++ ;
         {
         if( pc )
@@ -2011,7 +2011,7 @@ countT cellC::classIdPhaseF( tin0S& tinBaseP )
     while( stCellCopy )
     ZE( countT , cFirePending ) ;
 
-    pStCell->ungrabF( tinBaseP ) ;
+    pStCell->ungrabF( tin0P ) ;
     }
         while( ~hDown && !stCell.third ) ;
         }
@@ -2020,25 +2020,25 @@ countT cellC::classIdPhaseF( tin0S& tinBaseP )
                 stCellCopy << (countT)pc ;
             {
             if( pc )
-            cellC* pc = (cellC*)stCell.downF( tinBaseP , hDown ) ;
+            cellC* pc = (cellC*)stCell.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stCell )
     stackC& stCell = *pStCell ;
-    pStCell->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-    stackC stCellCopy( tinBaseP , ether , TAG( TAGiDnULL ) ) ;
+    pStCell->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    stackC stCellCopy( tin0P , ether , TAG( TAGiDnULL ) ) ;
     etherC& ether = *pEtClass ;
 
     if( !bEnabled ) BLAMMO ;
 {
-voidT cellC::classFireAllF( tin0S& tinBaseP )
+voidT cellC::classFireAllF( tin0S& tin0P )
 
 }
-    _deleteMyselfF( tinBaseP ) ;
+    _deleteMyselfF( tin0P ) ;
 
-    sgnDone_tmHandleEvents.waitF( tinBaseP ) ; //CANNOT DELETE THE THREAD POOLoLD UNTIL ALL EVENTS ARE HANDLED
+    sgnDone_tmHandleEvents.waitF( tin0P ) ; //CANNOT DELETE THE THREAD POOLoLD UNTIL ALL EVENTS ARE HANDLED
 
     countT idc = idCell ;
     }
@@ -2047,15 +2047,15 @@ voidT cellC::classFireAllF( tin0S& tinBaseP )
         }
             if( bEnded ) break ;
 CONoUTrAW( "0" ) ; //U::
-            ((thirdC&)ether).dosContinueMonitoringF( tinBaseP , osTidEvent , osPidEvent , idCmd ) ;
+            ((thirdC&)ether).dosContinueMonitoringF( tin0P , osTidEvent , osPidEvent , idCmd ) ;
 CONoUTrAW( "1" ) ; //U::
 
             }
                 fifoEvent << (countT)pEvent ;
                 __Z( pEvent ) ;
-                eventC* pEvent = new( 0 , tinBaseP , LF ) eventC( tinBaseP , *this , pInfo ) ; ___( pEvent ) ;
+                eventC* pEvent = new( 0 , tin0P , LF ) eventC( tin0P , *this , pInfo ) ; ___( pEvent ) ;
 
-                //cellC::pWindowTitle->writeF( tinBaseP ) ; //INFO MIGHT BE INCONSISTENT; NO SERIALIZATION IS DONE BECAUSE WE DON'T WANT DEADLOCKING POTENTIAL
+                //cellC::pWindowTitle->writeF( tin0P ) ; //INFO MIGHT BE INCONSISTENT; NO SERIALIZATION IS DONE BECAUSE WE DON'T WANT DEADLOCKING POTENTIAL
                 inc02AM( cellC::pWindowTitle->cEvents ) ;
                 inc02AM( cellC::pWindowTitle->cEventsPending ) ;
             {
@@ -2090,7 +2090,7 @@ CONoUTrAW( "1" ) ; //U::
                         break ;
     
                         }
-                            b_pv_handoffOld.ungrabF( tinBaseP ) ;
+                            b_pv_handoffOld.ungrabF( tin0P ) ;
                             }
                                 THREADmODE2rESTORE
                                 }
@@ -2098,17 +2098,17 @@ CONoUTrAW( "1" ) ; //U::
                                     }
                                         }
                                             __Z( bOk ) ;
-                                            thirdC::dosWriteProcessMemoryIF( tinBaseP , bOk , (voidT*)( (byteT*)pv_handoffOld + ( (byteT*)&copy.osPid[ off01 ]    - (byteT*)&copy ) ) , osPid , (byteT*)&vv , sizeof vv ) ;
+                                            thirdC::dosWriteProcessMemoryIF( tin0P , bOk , (voidT*)( (byteT*)pv_handoffOld + ( (byteT*)&copy.osPid[ off01 ]    - (byteT*)&copy ) ) , osPid , (byteT*)&vv , sizeof vv ) ;
                                             vv = 0 ;
                                             bOk = 0 ;
                                 
                                             __Z( bOk ) ;
-                                            thirdC::dosWriteProcessMemoryIF( tinBaseP , bOk , (voidT*)( (byteT*)pv_handoffOld + ( (byteT*)&copy.idPhase[ off01 ]  - (byteT*)&copy ) ) , osPid , (byteT*)&vv , sizeof vv ) ;
+                                            thirdC::dosWriteProcessMemoryIF( tin0P , bOk , (voidT*)( (byteT*)pv_handoffOld + ( (byteT*)&copy.idPhase[ off01 ]  - (byteT*)&copy ) ) , osPid , (byteT*)&vv , sizeof vv ) ;
                                             vv = ifcIDpHASEhANDOFFoLD_GONE ;
                                             bOk = 0 ;
                                 
                                             __Z( bOk ) ;
-                                            thirdC::dosWriteProcessMemoryIF( tinBaseP , bOk , (voidT*)( (byteT*)pv_handoffOld + ( (byteT*)copy.postState[ off01 ] - (byteT*)&copy ) ) , osPid , (byteT*)&vv , 1 ) ;
+                                            thirdC::dosWriteProcessMemoryIF( tin0P , bOk , (voidT*)( (byteT*)pv_handoffOld + ( (byteT*)copy.postState[ off01 ] - (byteT*)&copy ) ) , osPid , (byteT*)&vv , 1 ) ;
                                 
                                             ZE( countT , vv ) ;
                                             ZE( boolT , bOk ) ;
@@ -2124,7 +2124,7 @@ CONoUTrAW( "1" ) ; //U::
                                             {
                                             if( bOk && ( copy.osPid[ 0 ] == osPid || copy.osPid[ 1 ] == osPid ) )
                                             //U::THIS SOMETIMES FAILS: __Z( bOk ) ;
-                                            thirdC::dosReadProcessMemoryIF( tinBaseP , (byteT*)&copy , sizeof copy , bOk , pv_handoffOld , osPid ) ;
+                                            thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&copy , sizeof copy , bOk , pv_handoffOld , osPid ) ;
                                             ZE( boolT , bOk ) ;
                                         {
                                         ZE( boolT , bValid ) ;
@@ -2137,7 +2137,7 @@ CONoUTrAW( "1" ) ; //U::
                                 ZE( countT , off01 ) ;
                             {
                             if( pv_handoffOld )
-                            b_pv_handoffOld.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            b_pv_handoffOld.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                         {
                         if( osPid == pInfo->osPid ) //WILL BE FALSE IF THE ENDING PROCESS WAS LAUNCHED BY THE CELL
                         //THIS CANNOT WAIT CAUSE PROCESS IS ABOUT TO GO AWAY
@@ -2175,7 +2175,7 @@ CONoUTrAW( "1" ) ; //U::
             if( !pInfo ) break ;
             __Z( pInfo ) ;
 CONoUTrAW( "2" ) ; //U::
-            ((thirdC&)ether).dosWaitForMonitorEventF( tinBaseP , (ifcMonitorEventS*&)pInfo , - 1 ) ; ___( pInfo ) ;
+            ((thirdC&)ether).dosWaitForMonitorEventF( tin0P , (ifcMonitorEventS*&)pInfo , - 1 ) ; ___( pInfo ) ;
             ZE( const ifcMonitorEventS* , pInfo ) ;
         {
         while( !ether ) //IF ether THEN MY THREAD WILL END, WHICH WILL CAUSE THE PROCESS TO BE TERMINATED (POSSIBLY DIRTILY)
@@ -2183,13 +2183,13 @@ CONoUTrAW( "2" ) ; //U::
 
         }
             else __1        
-            else if( psttExe ) ether.osProcessF( tinBaseP , osTidMain , osPid , psttExe , psttArgs , flPROCESShIRE_MONITORtHIS ) ;
+            else if( psttExe ) ether.osProcessF( tin0P , osTidMain , osPid , psttExe , psttArgs , flPROCESShIRE_MONITORtHIS ) ;
             }
                 else                                                                __1        
-                else if( !ether.strCompareF( tinBaseP , T("graphics") , psttDisplay ) ) ether.osSessionF( tinBaseP , osTidMain , osPid , idAdam  , psttArgs , 0 , 0 , 0 , 0 , flSESSION_MONITORtHIS                             ) ;
-                else if( !ether.strCompareF( tinBaseP , T("text"    ) , psttDisplay ) ) ether.osProcessF( tinBaseP , osTidMain , osPid , idAdam  , psttArgs                 , flPROCESShIRE_MONITORtHIS | flPROCESShIRE_VISIBLE ) ;
-                     if( !ether.strCompareF( tinBaseP , T("none"    ) , psttDisplay ) ) ether.osProcessF( tinBaseP , osTidMain , osPid , idAdam  , psttArgs                 , flPROCESShIRE_MONITORtHIS                         ) ;
-                ether.strokeF( tinBaseP , T("cell: ")+TF1(idAdam)+T(" \"")+T(psttArgs)+T("\"\r\n") ) ; //U::
+                else if( !ether.strCompareF( tin0P , T("graphics") , psttDisplay ) ) ether.osSessionF( tin0P , osTidMain , osPid , idAdam  , psttArgs , 0 , 0 , 0 , 0 , flSESSION_MONITORtHIS                             ) ;
+                else if( !ether.strCompareF( tin0P , T("text"    ) , psttDisplay ) ) ether.osProcessF( tin0P , osTidMain , osPid , idAdam  , psttArgs                 , flPROCESShIRE_MONITORtHIS | flPROCESShIRE_VISIBLE ) ;
+                     if( !ether.strCompareF( tin0P , T("none"    ) , psttDisplay ) ) ether.osProcessF( tin0P , osTidMain , osPid , idAdam  , psttArgs                 , flPROCESShIRE_MONITORtHIS                         ) ;
+                ether.strokeF( tin0P , T("cell: ")+TF1(idAdam)+T(" \"")+T(psttArgs)+T("\"\r\n") ) ; //U::
             {
             if( idAdam )
         {
@@ -2197,10 +2197,10 @@ CONoUTrAW( "2" ) ; //U::
         _IO_
     {
     if( !pEtClass ) BLAMMO ;
-    //ether.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
+    //ether.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
     etherC& ether = etThreadP ; //THIS HIDES this->ether SO THAT I USE THE THREAD'S UNSERIALIZED POOLoLD
 {
-cellC::_liveF( tin0S& tinBaseP , etherC& etThreadP )
+cellC::_liveF( tin0S& tin0P , etherC& etThreadP )
 
 */
   base monitor wants to grab X in order to handle event M
@@ -2215,7 +2215,7 @@ i capture event info and place it onto a stack
 }
     }
         }
-            _deleteMyselfF( tinBaseP ) ;
+            _deleteMyselfF( tin0P ) ;
             fifoEvent << (countT)0 ;
             countT idc = idCell ;
         {
@@ -2226,66 +2226,66 @@ i capture event info and place it onto a stack
 
     }
         if( !ids ) BLAMMO ;
-        pStCell->sinkF( tinBaseP , ids , (countT)this , flSTACKsINK_UNIQUE , subtract_cellC_F ) ;
+        pStCell->sinkF( tin0P , ids , (countT)this , flSTACKsINK_UNIQUE , subtract_cellC_F ) ;
         ZE( countT , ids ) ;
     {
     cExist ++ ;
 
-    pBatonClass->ungrabF( tinBaseP ) ;
+    pBatonClass->ungrabF( tin0P ) ;
     (countT&)idCell = bBase ? -- idCellLath : ++ idCellLath ;
-    pBatonClass->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    pBatonClass->grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     }
         }
-            ether.osSleepF( tinBaseP , TUCK * 0x40 ) ;
+            ether.osSleepF( tin0P , TUCK * 0x40 ) ;
             ++ s ;
         {
         while( !ether && !bEnabled )
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
     }
-        if( psttArgsP ) { psttArgs = psttOldC( tinBaseP , ether , psttArgsP ) ; ___( psttArgs ) ; }
+        if( psttArgsP ) { psttArgs = psttOldC( tin0P , ether , psttArgsP ) ; ___( psttArgs ) ; }
     {
     else if( psttExe )
     }
         }
             }
-                ether.strMakeF( tinBaseP , LF , psttDisplay , T(info.psttDirectivesReplied) ) ; ___( psttDisplay ) ;
+                ether.strMakeF( tin0P , LF , psttDisplay , T(info.psttDirectivesReplied) ) ; ___( psttDisplay ) ;
                 if( pPeekF ) (*pPeekF)( &info ) ;
-                peekS info( tinBaseP , ether , T("!display") ) ;
+                peekS info( tin0P , ether , T("!display") ) ;
             {
             }
-                ether.strMakeF( tinBaseP , LF , psttTitle , T(info.psttDirectivesReplied) ) ; ___( psttTitle ) ;
+                ether.strMakeF( tin0P , LF , psttTitle , T(info.psttDirectivesReplied) ) ; ___( psttTitle ) ;
                 if( pPeekF ) (*pPeekF)( &info ) ;
-                peekS info( tinBaseP , ether , T("!title") ) ;
+                peekS info( tin0P , ether , T("!title") ) ;
             {
             __Z( pPeekF ) ;
-            ether.dllEntryF( tinBaseP , pPeekF , hDllAdam , T("peekF") ) ;
+            ether.dllEntryF( tin0P , pPeekF , hDllAdam , T("peekF") ) ;
             ZE( peekFT , pPeekF ) ;
         {
-        ether.dllOpenF( tinBaseP , hDllAdam , T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/exedll/1/hover/")+TF1(idAdam)+T(".ipdos-wd") ) ;
-        ether.strMakeF( tinBaseP , LF , psttArgs , T(psttArgsP?"!monitored ":"!monitored")+T(psttArgsP) ) ; ___( psttArgs ) ;
+        ether.dllOpenF( tin0P , hDllAdam , T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/exedll/1/hover/")+TF1(idAdam)+T(".ipdos-wd") ) ;
+        ether.strMakeF( tin0P , LF , psttArgs , T(psttArgsP?"!monitored ":"!monitored")+T(psttArgsP) ) ; ___( psttArgs ) ;
     {
     else if( idAdam )
     if( bSelf ) ; //I AM DOING SELF MONITORING (MONITORING EVENTS ORIGINATING FROM CALLS TO thirdC::DosTellMonitorF BY THE PROCESS THAT CONTAINS ME
 
-    ether.osThreadF( tinBaseP , countTC() , tmHandleEventsF , &sgnDone_tmHandleEvents , flTHREADlAUNCH_null , 0 , 0 , (countT)this ) ;
+    ether.osThreadF( tin0P , countTC() , tmHandleEventsF , &sgnDone_tmHandleEvents , flTHREADlAUNCH_null , 0 , 0 , (countT)this ) ;
 
     _IO_
 {
-voidT cellC::ctF( tin0S& tinBaseP , const strokeS* const psttArgsP )
+voidT cellC::ctF( tin0S& tin0P , const strokeS* const psttArgsP )
 
 DONE( tmHandleEventsF )
-//etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ; //U::
+//etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ; //U::
 }
     }
         THREADmODE2rESTORE
         }
-            //cellC::pWindowTitle->writeF( tinBaseP ) ; //INFO MIGHT BE INCONSISTENT; NO SERIALIZATION IS DONE BECAUSE WE DON'T WANT DEADLOCKING POTENTIAL
+            //cellC::pWindowTitle->writeF( tin0P ) ; //INFO MIGHT BE INCONSISTENT; NO SERIALIZATION IS DONE BECAUSE WE DON'T WANT DEADLOCKING POTENTIAL
             dec02AM( cellC::pWindowTitle->cEventsPending ) ;
             DEL( pe ) ;
-            pe->handleF( tinBaseP ) ;
+            pe->handleF( tin0P ) ;
 
             }
                 break ;
@@ -2302,12 +2302,12 @@ DONE( tmHandleEventsF )
     cellC& cell = *(cellC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
-//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
-//etThread.etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ; //U::
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
+//etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ; //U::
 TASK( tmHandleEventsF )
 
 }
-    ctF( tinBaseP , psttArgsP ) ; //CAN DELETE *this
+    ctF( tin0P , psttArgsP ) ; //CAN DELETE *this
     _IO_
 {
 cDebug2( 0 )
@@ -2317,37 +2317,37 @@ idEventLast( 0 ) ,
 cRef( 0 ) ,
 bQuitting( 0 ) ,
 pTincMainImage( 0 ) ,
-sgnDone_tmHandleEvents( tinBaseP , TAG( TAGiDnULL ) ) ,
-fifoEvent( tinBaseP ) ,
-stOsPidInEvent(   tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE ) , //NOT SERIALIZED CAUSE OTHERWISE GET INFINITE RECURSION IN grabF
-stOsPidMonitored( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_BLOB , 2 * sizeof( countT ) ) , //NOT SERIALIZED CAUSE OTHERWISE GET INFINITE RECURSION IN grabF
-stTinc( tinBaseP , ether , TAG( TAGiDnULL ) ) ,
+sgnDone_tmHandleEvents( tin0P , TAG( TAGiDnULL ) ) ,
+fifoEvent( tin0P ) ,
+stOsPidInEvent(   tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE ) , //NOT SERIALIZED CAUSE OTHERWISE GET INFINITE RECURSION IN grabF
+stOsPidMonitored( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_BLOB , 2 * sizeof( countT ) ) , //NOT SERIALIZED CAUSE OTHERWISE GET INFINITE RECURSION IN grabF
+stTinc( tin0P , ether , TAG( TAGiDnULL ) ) ,
 cHandle( 0 ) ,
-swHandle( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , leverHandle , 3 * sizeof( countT ) ) ,
+swHandle( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , leverHandle , 3 * sizeof( countT ) ) ,
 leverHandle( 0 ) ,
-b_pv_handoffOld( tinBaseP , TAG( TAGiDnULL ) ) ,
+b_pv_handoffOld( tin0P , TAG( TAGiDnULL ) ) ,
 pv_handoffOld( 0 ) ,
-b_pv_bFired( tinBaseP , TAG( TAGiDnULL ) ) ,
+b_pv_bFired( tin0P , TAG( TAGiDnULL ) ) ,
 pv_bFired( 0 ) ,
-b_pv_cHeartBeat( tinBaseP , TAG( TAGiDnULL ) ) ,
+b_pv_cHeartBeat( tin0P , TAG( TAGiDnULL ) ) ,
 pv_cHeartBeat( 0 ) ,
-stProcess( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ,
+stProcess( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ,
 psttDisplay( 0 ) ,
-psttTitle( idAdamP ? (strokeS*)0 : (strokeS*)psttOldC( tinBaseP , ether , T("IdeaFarm " "(tm) Operating System Base Monitor") ) ) ,
+psttTitle( idAdamP ? (strokeS*)0 : (strokeS*)psttOldC( tin0P , ether , T("IdeaFarm " "(tm) Operating System Base Monitor") ) ) ,
 hDllAdam( TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ,
 psttArgs( 0 ) ,
-osPid( idAdamP ? 0 : osPidIF( tinBaseP ) ) ,
+osPid( idAdamP ? 0 : osPidIF( tin0P ) ) ,
 psttExe( 0 ) ,
 bSelf( !idAdamP ) ,
 idAdam( idAdamP ? idAdamP : DDNUMB ) ,
 idCell( 0 ) ,
-ether( tinBaseP , TAG( TAGiDnULL ) , poolOld ) ,
-poolOld( tinBaseP , TAG( TAGiDnULL ) , TF1(DDNUMB)+T(".cellC.")+TF1(idAdamP)+T(".")+TF1((countT)this) , CBpOOLoLDcELL ) ,
-cellC::cellC( tin0S& tinBaseP , const countT idAdamP , const strokeS* const psttArgsP ) :
+ether( tin0P , TAG( TAGiDnULL ) , poolOld ) ,
+poolOld( tin0P , TAG( TAGiDnULL ) , TF1(DDNUMB)+T(".cellC.")+TF1(idAdamP)+T(".")+TF1((countT)this) , CBpOOLoLDcELL ) ,
+cellC::cellC( tin0S& tin0P , const countT idAdamP , const strokeS* const psttArgsP ) :
 //IF !idAdamP THEN THE OBJECT WILL MONITOR THE PROCESS THAT CONTAINS IT
 
 }
-    ctF( tinBaseP , psttArgsP ) ; //CAN DELETE *this
+    ctF( tin0P , psttArgsP ) ; //CAN DELETE *this
     ___( psttExe ) ;
     _IO_
 {
@@ -2358,39 +2358,39 @@ idEventLast( 0 ) ,
 cRef( 0 ) ,
 bQuitting( 0 ) ,
 pTincMainImage( 0 ) ,
-sgnDone_tmHandleEvents( tinBaseP , TAG( TAGiDnULL ) ) ,
-fifoEvent( tinBaseP ) ,
-stOsPidInEvent(   tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE ) , //NOT SERIALIZED CAUSE OTHERWISE GET INFINITE RECURSION IN grabF
-stOsPidMonitored( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_BLOB , 2 * sizeof( countT ) ) , //NOT SERIALIZED CAUSE OTHERWISE GET INFINITE RECURSION IN grabF
-stTinc( tinBaseP , ether , TAG( TAGiDnULL ) ) ,
+sgnDone_tmHandleEvents( tin0P , TAG( TAGiDnULL ) ) ,
+fifoEvent( tin0P ) ,
+stOsPidInEvent(   tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE ) , //NOT SERIALIZED CAUSE OTHERWISE GET INFINITE RECURSION IN grabF
+stOsPidMonitored( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_BLOB , 2 * sizeof( countT ) ) , //NOT SERIALIZED CAUSE OTHERWISE GET INFINITE RECURSION IN grabF
+stTinc( tin0P , ether , TAG( TAGiDnULL ) ) ,
 cHandle( 0 ) ,
-swHandle( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , leverHandle , 3 * sizeof( countT ) ) ,
+swHandle( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , leverHandle , 3 * sizeof( countT ) ) ,
 leverHandle( 0 ) ,
-b_pv_handoffOld( tinBaseP , TAG( TAGiDnULL ) ) ,
+b_pv_handoffOld( tin0P , TAG( TAGiDnULL ) ) ,
 pv_handoffOld( 0 ) ,
-b_pv_bFired( tinBaseP , TAG( TAGiDnULL ) ) ,
+b_pv_bFired( tin0P , TAG( TAGiDnULL ) ) ,
 pv_bFired( 0 ) ,
-b_pv_cHeartBeat( tinBaseP , TAG( TAGiDnULL ) ) ,
+b_pv_cHeartBeat( tin0P , TAG( TAGiDnULL ) ) ,
 pv_cHeartBeat( 0 ) ,
-stProcess( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ,
+stProcess( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ,
 psttDisplay( 0 ) ,
 psttTitle( 0 ) ,
 hDllAdam( TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ,
 psttArgs( 0 ) ,
 osPid( 0 ) ,
-psttExe( psttOldC( tinBaseP , ether , psttExeP ) ) ,
+psttExe( psttOldC( tin0P , ether , psttExeP ) ) ,
 bSelf( 0 ) ,
 idAdam( 0 ) ,
 idCell( 0 ) ,
-ether( tinBaseP , TAG( TAGiDnULL ) ) ,
-poolOld( tinBaseP , TAG( TAGiDnULL ) , TF1(DDNUMB)+T(".cellC.")+T(psttExeP)+T(".")+TF1((countT)this) , CBpOOLoLDcELL ) ,
-cellC::cellC( tin0S& tinBaseP , const strokeS* const psttExeP , const strokeS* const psttArgsP ) :
+ether( tin0P , TAG( TAGiDnULL ) ) ,
+poolOld( tin0P , TAG( TAGiDnULL ) , TF1(DDNUMB)+T(".cellC.")+T(psttExeP)+T(".")+TF1((countT)this) , CBpOOLoLDcELL ) ,
+cellC::cellC( tin0S& tin0P , const strokeS* const psttExeP , const strokeS* const psttArgsP ) :
 
 }
 if( idAdam == 0x401044d ) dec02AM( bInspector ) ; //U::
     cExist -- ;
 
-    stTinc.ungrabF( tinBaseP ) ;
+    stTinc.ungrabF( tin0P ) ;
     DEL( pTincMainImage ) ; // MIGHT BE NONZE IF IMPOTENCE OCCURS THAT CAUSES _liveF LOOP TO EXIT
     }
         DEL( pt ) ;
@@ -2398,33 +2398,33 @@ if( idAdam == 0x401044d ) dec02AM( bInspector ) ; //U::
         ZE( tinC* , pt ) ;
     {
     while( stTinc )
-    stTinc.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    stTinc.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     ether = 0 ; //TO PREVENT: ether -> stTinc PLATES NOT DELETED -> 6a4 WON'T QUIT BECAUSE thirdC OBJECTS EXIST
 
-    stProcess.ungrabF( tinBaseP ) ;
+    stProcess.ungrabF( tin0P ) ;
     }
         DEL( pp ) ;
         stProcess >> (countT&)pp ;
         ZE( processC* , pp ) ;
     {
     while( stProcess )
-    stProcess.grabF( tinBaseP , TAG( TAGiDnULL ) ) ; // EXAMPLE: THE processC OBJECT FOR THE deadman PROCESS LAUNCHED BY 2540104
+    stProcess.grabF( tin0P , TAG( TAGiDnULL ) ) ; // EXAMPLE: THE processC OBJECT FOR THE deadman PROCESS LAUNCHED BY 2540104
     ether = 0 ; //TO PREVENT: ether -> stProcess PLATES NOT DELETED -> 6a4 WON'T QUIT BECAUSE thirdC OBJECTS EXIST
 
-    ether.delF( tinBaseP , psttExe ) ;
-    ether.delF( tinBaseP , psttArgs ) ;
-    ether.delF( tinBaseP , psttTitle ) ;
-    ether.delF( tinBaseP , psttDisplay ) ;
+    ether.delF( tin0P , psttExe ) ;
+    ether.delF( tin0P , psttArgs ) ;
+    ether.delF( tin0P , psttTitle ) ;
+    ether.delF( tin0P , psttDisplay ) ;
 
     SLEEPwHILErEF
 
-    pStCell->ungrabF( tinBaseP ) ;
+    pStCell->ungrabF( tin0P ) ;
     else                                                BLAMMO ;
-    if( (*pStCell)( (countT)this , subtract_cellC_F ) ) pStCell->extractF( tinBaseP ) ;
-    pStCell->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    if( (*pStCell)( (countT)this , subtract_cellC_F ) ) pStCell->extractF( tin0P ) ;
+    pStCell->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     ether = 0 ; //TO PREVENT: ether -> stProcess PLATES NOT DELETED -> 6a4 WON'T QUIT BECAUSE thirdC OBJECTS EXIST
 
-    sgnDone_tmHandleEvents.waitF( tinBaseP ) ;
+    sgnDone_tmHandleEvents.waitF( tin0P ) ;
     if( bSelf ) fifoEvent << (countT)0 ;
 
     _IO_
@@ -2469,8 +2469,8 @@ boolT bInspector ; //U::
 
 ;
 }
-    voidT writeF( tin0S& tinBaseP ) ;
-    windowTitleS( tin0S& tinBaseP , etherC& etherP ) ;
+    voidT writeF( tin0S& tin0P ) ;
+    windowTitleS( tin0S& tin0P , etherC& etherP ) ;
 
     countT          cEvents ;
     countT          cEventsPending ;
@@ -2480,12 +2480,12 @@ struct windowTitleS
 
 ;
 }
-    friend tin0S* const cellC::pTinRawF( tin0S& tinBaseP , countT*& pcRefP , const ifcMonitorEventS& infoP ) ;
-    friend countT  subtract_tinC_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+    friend tin0S* const cellC::pTinRawF( tin0S& tin0P , countT*& pcRefP , const ifcMonitorEventS& infoP ) ;
+    friend countT  subtract_tinC_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
 
-    boolT           bIsF( tin0S& tinBaseP , const osTextT* const postThreadNameP ) ;
-    voidT           freshIfF( tin0S& tinBaseP ) ;
-                    tinC( tin0S& tinBaseP , saidS& saidP , const ifcMonitorEventS* pInfoP = 0 ) ;
+    boolT           bIsF( tin0S& tin0P , const osTextT* const postThreadNameP ) ;
+    voidT           freshIfF( tin0S& tin0P ) ;
+                    tinC( tin0S& tin0P , saidS& saidP , const ifcMonitorEventS* pInfoP = 0 ) ;
                     ~tinC( voidT ) ;
                     NEWdELcLASSpROTOS( tinC , etherC , thirdC )
 
@@ -2508,10 +2508,10 @@ class tinC
 
 ;
 }
-    friend countT   subtract_processC_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+    friend countT   subtract_processC_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
 
     boolT           operator ==( const cP ) const ;
-                    processC( tin0S& tinBaseP , const ifcMonitorEventS& infoP ) ;
+                    processC( tin0S& tin0P , const ifcMonitorEventS& infoP ) ;
                     NEWdELcLASSpROTOS( processC , etherC , thirdC )
 
     public :
@@ -2535,15 +2535,15 @@ struct grabInfoS
 
 ;
 }
-    voidT                   handleF( tin0S& tinBaseP ) ;
-                            eventC( tin0S& tinBaseP , cellC& cellP , const byteT* const pbP , const countT cbP ) ;
-                            eventC( tin0S& tinBaseP , cellC& cellP , const ifcMonitorEventS*& pInfoP ) ;
+    voidT                   handleF( tin0S& tin0P ) ;
+                            eventC( tin0S& tin0P , cellC& cellP , const byteT* const pbP , const countT cbP ) ;
+                            eventC( tin0S& tin0P , cellC& cellP , const ifcMonitorEventS*& pInfoP ) ;
                             ~eventC( voidT ) ;
                             NEWdELcLASSpROTOS( eventC , etherC , thirdC )
 
                             public :
 
-    voidT                   hearF( tin0S& tinBaseP , boolT& bLogTinEventP ) ;
+    voidT                   hearF( tin0S& tin0P , boolT& bLogTinEventP ) ;
 
     saidS                   said ;
     const ifcMonitorEventS* pInfo ;
@@ -2556,8 +2556,8 @@ class eventC
 
 ;
 }
-            saidS( tin0S& tinBaseP , etherC& etherP , const byteT* const pbP , const countT cbP ) ;
-            saidS( tin0S& tinBaseP , etherC& etherP , const ifcMonitorEventS& infoP ) ;
+            saidS( tin0S& tin0P , etherC& etherP , const byteT* const pbP , const countT cbP ) ;
+            saidS( tin0S& tin0P , etherC& etherP , const ifcMonitorEventS& infoP ) ;
             ~saidS( voidT ) ;
 
             const byteT* const  pbData ;
@@ -2571,24 +2571,24 @@ struct saidS
 
 ;
 }
-    friend boolT    monitoredEventHandlerF( tin0S& tinBaseP , const byteT* const pbP , const countT cbP , countT cP ) ;
+    friend boolT    monitoredEventHandlerF( tin0S& tin0P , const byteT* const pbP , const countT cbP , countT cP ) ;
     friend class    eventC ;
     friend TASKpROTO( tmHandleEventsF ) ;
     friend TASKpROTO( tmFireCellF ) ;
-    friend countT   subtract_cellC_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+    friend countT   subtract_cellC_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
 
-    static voidT    classSerialNumberF( tin0S& tinBaseP , countT& wothP , countT& lathP , const countT cWantP ) ;
-    static countT   classSerialNumberF( tin0S& tinBaseP ) ;
-    static voidT    classLogF( tin0S& tinBaseP , const strokeS* const psttP , const tin0S* const pTinEventRawP = 0 , const ifcMonitorEventS* const pInfoP = 0 ) ;
-    static countT   classIdPhaseF( tin0S& tinBaseP ) ;
-    static voidT    classInspectF( tin0S& tinBaseP , stackC& stCellCopyP , etherC& etPrimeP , stackC& st_pGrabP , stackC& stOsTidAllWanterP , stackC& stOsTidWanterP , stackC& stOsTidWanterInLoopP , stackC& stOsTidWanterInLoopUniqueP , stackC& stThreadsP , count3S& c3lifiP , switchC& swGrabTallyP ) ;
-    static countT   classQuery_cHandle_F( tin0S& tinBaseP ) ;
-    static voidT    classFireAllF( tin0S& tinBaseP ) ;
-    static voidT    classShutdown2F( tin0S& tinBaseP ) ;
-    static voidT    classShutdown1F( tin0S& tinBaseP , countT& idCellLathP , countT& serialLathP ) ;
-    static voidT    classSetupF( tin0S& tinBaseP , const countT idCellLathP , const countT serialLathP , const boolT bBaseP , windowTitleS& windowTitleP ) ;
-                    cellC( tin0S& tinBaseP , const strokeS* const psttExeP , const strokeS* const psttArgsP = 0 ) ;
-                    cellC( tin0S& tinBaseP , const countT idAdamP = 0 , const strokeS* const psttArgsP = 0 ) ;
+    static voidT    classSerialNumberF( tin0S& tin0P , countT& wothP , countT& lathP , const countT cWantP ) ;
+    static countT   classSerialNumberF( tin0S& tin0P ) ;
+    static voidT    classLogF( tin0S& tin0P , const strokeS* const psttP , const tin0S* const pTinEventRawP = 0 , const ifcMonitorEventS* const pInfoP = 0 ) ;
+    static countT   classIdPhaseF( tin0S& tin0P ) ;
+    static voidT    classInspectF( tin0S& tin0P , stackC& stCellCopyP , etherC& etPrimeP , stackC& st_pGrabP , stackC& stOsTidAllWanterP , stackC& stOsTidWanterP , stackC& stOsTidWanterInLoopP , stackC& stOsTidWanterInLoopUniqueP , stackC& stThreadsP , count3S& c3lifiP , switchC& swGrabTallyP ) ;
+    static countT   classQuery_cHandle_F( tin0S& tin0P ) ;
+    static voidT    classFireAllF( tin0S& tin0P ) ;
+    static voidT    classShutdown2F( tin0S& tin0P ) ;
+    static voidT    classShutdown1F( tin0S& tin0P , countT& idCellLathP , countT& serialLathP ) ;
+    static voidT    classSetupF( tin0S& tin0P , const countT idCellLathP , const countT serialLathP , const boolT bBaseP , windowTitleS& windowTitleP ) ;
+                    cellC( tin0S& tin0P , const strokeS* const psttExeP , const strokeS* const psttArgsP = 0 ) ;
+                    cellC( tin0S& tin0P , const countT idAdamP = 0 , const strokeS* const psttArgsP = 0 ) ;
                     NEWdELcLASSpROTOS( cellC , etherC , thirdC ) //NEVER STORE A POINTER TO A cellC OBJECT; THE cellC OBJECT DESTROYS ITSELF VOLATILELY
                     LIFEpROTO
                     //WHEN INSERTING FUNCTION PROTOTYPES, PUT THEM BELOW, IN THE PRIVATE SECTION
@@ -2600,9 +2600,9 @@ struct saidS
 
     inline voidT    unrefF( voidT ) { dec02AM( cRef ) ; }
     inline voidT    refF(   voidT ) { inc02AM( cRef ) ; }
-    tin0S* const     pTinRawF( tin0S& tinBaseP , countT*& pcRefP , const ifcMonitorEventS& infoP ) ; //RETURNS PTR TO RAW COPY; DO NOT USE PTR FIELDS
-    voidT           fireF( tin0S& tinBaseP ) ;
-    voidT           ctF( tin0S& tinBaseP , const strokeS* const psttArgsP ) ;
+    tin0S* const     pTinRawF( tin0S& tin0P , countT*& pcRefP , const ifcMonitorEventS& infoP ) ; //RETURNS PTR TO RAW COPY; DO NOT USE PTR FIELDS
+    voidT           fireF( tin0S& tin0P ) ;
+    voidT           ctF( tin0S& tin0P , const strokeS* const psttArgsP ) ;
                     ~cellC( voidT ) ;
 
     countT          cDebug2 ;
@@ -2664,11 +2664,11 @@ class cellC
 
 ;
 }
-    boolT bLockedF( tin0S& tinBaseP ) const ;
+    boolT bLockedF( tin0S& tin0P ) const ;
     operator countT( voidT ) ;
     fifoC& operator >>( countT& cP ) ;//ASSUME: CALLED ONLY BY A SINGLE THREAD B (B AND A CAN BE THE SAME THREAD)
     fifoC& operator <<( countT cP ) ; //ASSUME: CALLED ONLY BY A SINGLE THREAD A
-    fifoC( tin0S& tinBaseP ) ;
+    fifoC( tin0S& tin0P ) ;
 
     public :
 
@@ -2691,15 +2691,15 @@ struct saidS ;
 TASKpROTO( tmFireCellF ) ;
 TASK0PROTO( tmFireCellF ) ;
 TASK0PROTO( tmFireMyselfF ) ;
-countT subtract_tinC_F(     tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-countT subtract_processC_F( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-countT subtract_count4S_F(  tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-countT subtract_cellC_F(    tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-boolT monitoredEventHandlerF( tin0S& tinBaseP , const byteT* const pbP , const countT cbP , countT cP ) ;
+countT subtract_tinC_F(     tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+countT subtract_processC_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+countT subtract_count4S_F(  tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+countT subtract_cellC_F(    tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+boolT monitoredEventHandlerF( tin0S& tin0P , const byteT* const pbP , const countT cbP , countT cP ) ;
 
 //---- 3: PROTOTYPES ------------------------------------------------------------------------------------------------------------------
 
-#define NEWcELL(etherP,idAdamP,psttArgsP) { cellC* pCell = new( 0 , tinBaseP , LF ) cellC( tinBaseP , idAdamP , psttArgsP ) ; ___( pCell ) ; }
+#define NEWcELL(etherP,idAdamP,psttArgsP) { cellC* pCell = new( 0 , tin0P , LF ) cellC( tin0P , idAdamP , psttArgsP ) ; ___( pCell ) ; }
 #define LEAKiNSPECTOR(etherP) NEWcELL( etherP , ifcIDaDAMoLD_POOLoLDlEAKiNSPECTOR , T(" !inspect a340104") ) ;
 //#define LEAKiNSPECTOR(etherP) NEWcELL( etherP , ifcIDaDAMoLD_POOLoLDlEAKiNSPECTOR , T("!inspect 6a40104.monitored") )
 #define FIFOcAPACITY 0x10000
@@ -2715,7 +2715,7 @@ boolT monitoredEventHandlerF( tin0S& tinBaseP , const byteT* const pbP , const c
 
 }
     CONoUT2( postP , info ) ;                                                                           \
-    ((p oolC&)cell.ether).walkF( tinBaseP , ifcIDtYPEpOOLoLDwALK_COUNTwOtYPE , info ) ;                         \
+    ((p oolC&)cell.ether).walkF( tin0P , ifcIDtYPEpOOLoLDwALK_COUNTwOtYPE , info ) ;                         \
     countT info = ifcIDtYPEdROPnOTE_tin9S ;                                                              \
 {                                                                                                       \
 if( cell.idAdam == 0x4010418 )                                                                          \
@@ -2724,7 +2724,7 @@ if( cell.idAdam == 0x4010418 )                                                  
 
 }
     CONoUT2( postP , info ) ;                                                                           \
-    (>>>>(p oolC&)et<<>>OBSOLETEDcODE:INTENTIONALcOMPILEeRROR<<<<her).walkF( tinBaseP , ifcIDtYPEpOOLoLDwALK_COUNTwOtYPE , info ) ;                              \
+    (>>>>(p oolC&)et<<>>OBSOLETEDcODE:INTENTIONALcOMPILEeRROR<<<<her).walkF( tin0P , ifcIDtYPEpOOLoLDwALK_COUNTwOtYPE , info ) ;                              \
     countT info = ifcIDtYPEdROPnOTE_tin9S ;                                                              \
 {                                                                                                       \
 if( idAdam == 0x4010418 )                                                                               \
@@ -2738,8 +2738,8 @@ if( idAdam == 0x4010418 )                                                       
 
 }
 {
-stateC( tinBaseP , etherP , sizeof *this , 0 , translateStateF , 0 , psttSuffixP )
-stateS::stateS( tin0S& tinBaseP , etherC& etherP , const strokeS* const psttSuffixP ) :
+stateC( tin0P , etherP , sizeof *this , 0 , translateStateF , 0 , psttSuffixP )
+stateS::stateS( tin0S& tin0P , etherC& etherP , const strokeS* const psttSuffixP ) :
 TRANSLATEsTATE_END
 ( state.idChatLath = state.idChatLath ) ;
 ( state.serialLath   = state.serialLath   ) ;
@@ -2754,7 +2754,7 @@ case 1 :
 TRANSLATEsTATE_BEGIN( stateS , 1 )
 ;
 }
-stateS( tin0S& tinBaseP , etherC& etherP , const strokeS* const psttSuffixP = 0 ) ;
+stateS( tin0S& tin0P , etherC& etherP , const strokeS* const psttSuffixP = 0 ) ;
 countT idChatLath ;
 countT serialLath ;
 countT idCellLath ;

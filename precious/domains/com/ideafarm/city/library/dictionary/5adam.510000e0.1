@@ -10,26 +10,26 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinBaseP , T("press the enter key") ) ;
-sDone4.waitF( tinBaseP ) ;
-sDone3.waitF( tinBaseP ) ;
-sDone2.waitF( tinBaseP ) ;
-sDone1.waitF( tinBaseP ) ;
+etThread.strokeF( tin0P , T("press the enter key") ) ;
+sDone4.waitF( tin0P ) ;
+sDone3.waitF( tin0P ) ;
+sDone2.waitF( tin0P ) ;
+sDone1.waitF( tin0P ) ;
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sDone4 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sDone3 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sDone2 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sDone1 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , &sDone4 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , &sDone3 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , &sDone2 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , &sDone1 ) ; }
 
-signC sDone4( tinBaseP , TAG( TAGiDnULL ) ) ;
-signC sDone3( tinBaseP , TAG( TAGiDnULL ) ) ;
-signC sDone2( tinBaseP , TAG( TAGiDnULL ) ) ;
-signC sDone1( tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sDone4( tin0P , TAG( TAGiDnULL ) ) ;
+signC sDone3( tin0P , TAG( TAGiDnULL ) ) ;
+signC sDone2( tin0P , TAG( TAGiDnULL ) ) ;
+signC sDone1( tin0P , TAG( TAGiDnULL ) ) ;
 
-etThread.strokeF( tinBaseP , T("the operating system knows my   primary   thread by its thread id: ")+TF3(idThread,0,8)+T("\r\n") ) ;
+etThread.strokeF( tin0P , T("the operating system knows my   primary   thread by its thread id: ")+TF3(idThread,0,8)+T("\r\n") ) ;
 const countT idThread = third.osTidIF() ;
 
 thirdC& third = ether ;
@@ -37,7 +37,7 @@ thirdC& third = ether ;
 TODO
 
 DONE( tmF )
-etThread.strokeF( tinBaseP , T("the operating system knows this secondary thread by its thread id: ")+TF3(idThread,0,8)+T("\r\n") ) ;
+etThread.strokeF( tin0P , T("the operating system knows this secondary thread by its thread id: ")+TF3(idThread,0,8)+T("\r\n") ) ;
 const countT idThread = third.osTidIF() ;
 thirdC& third = ether ;
 TASK( tmF )

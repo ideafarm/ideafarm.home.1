@@ -9,40 +9,40 @@
 
 }
     return fTagsStillExist ;
-    delF( tinBaseP , psttOld ) ;
+    delF( tin0P , psttOld ) ;
 
     //ifcSayIF( T("strEvaluateFormat01F: after (")+TF1(fTagsStillExist)+T("):\r\n" USCORE79 "\r\n\r\n")+T(psttP)+T("\r\n" USCORE79 "\r\n\r\n") , flSAY_APPEND | flSAY_LOG ) ; //U::
     __( STOP ) ;
     }
-        if( idd ) strFuseF( tinBaseP , psttP , crlf ) ;
+        if( idd ) strFuseF( tin0P , psttP , crlf ) ;
 
-        delF( tinBaseP , psttl ) ;
+        delF( tin0P , psttl ) ;
         }
             __( STOP ) ;
             }
                 else { __( ide ) ; }
                 }
-                    delF( tinBaseP , psttw ) ;
-                    strFuseF( tinBaseP , psttP , psttw ) ; ___( psttP ) ;
-                    if( idCol > 1 ) { strIndentOldF( tinBaseP , psttw , idCol - 1 , strokeS() , 0 , 0 ) ; ___( psttl ) ; }
+                    delF( tin0P , psttw ) ;
+                    strFuseF( tin0P , psttP , psttw ) ; ___( psttP ) ;
+                    if( idCol > 1 ) { strIndentOldF( tin0P , psttw , idCol - 1 , strokeS() , 0 , 0 ) ; ___( psttl ) ; }
                     //ifcSayIF( T("strEvaluateFormat01F: called  strEvaluateF got \"")+T(psttw)+T("\"\r\n") , flSAY_APPEND | flSAY_LOG ) ; //U::
-                    fTagsStillExist |= strEvaluateF( tinBaseP , psttw , csttExtraP , 0 ) ; ___( psttw ) ;
+                    fTagsStillExist |= strEvaluateF( tin0P , psttw , csttExtraP , 0 ) ; ___( psttw ) ;
                     //ifcSayIF( T("strEvaluateFormat01F: calling strEvaluateF for \"")+T(psttw)+T("\"\r\n") , flSAY_APPEND | flSAY_LOG ) ; //U::
                     sttq1 = sttqe ;
                     idf1 = ide ;
-                    strFuseF( tinBaseP , psttw , T("!" "|" "|") ) ; ___( psttw ) ;
-                    strSubstringF( tinBaseP , psttw , ide , sttqe , T("!" "|" "|") , psttl , 0 , 3 ) ; ___( psttw ) ;
+                    strFuseF( tin0P , psttw , T("!" "|" "|") ) ; ___( psttw ) ;
+                    strSubstringF( tin0P , psttw , ide , sttqe , T("!" "|" "|") , psttl , 0 , 3 ) ; ___( psttw ) ;
                     countT idCol = ide + 1 - idfLine ;
                     __Z( ide ) ;
                 {
                 if( idf1 )
 
-                delF( tinBaseP , psttw ) ;
-                strFuseF( tinBaseP , psttP , psttw ) ; ___( psttP ) ;
-                strSubstringF( tinBaseP , psttw , idf1 , sttq1 , expr , psttl , 0 ) ; ___( psttw ) ;
+                delF( tin0P , psttw ) ;
+                strFuseF( tin0P , psttP , psttw ) ; ___( psttP ) ;
+                strSubstringF( tin0P , psttw , idf1 , sttq1 , expr , psttl , 0 ) ; ___( psttw ) ;
                 ZE( strokeS* , psttw ) ;
 
-                { countT idfh = idf1 ; strokeS sttqh = sttq1 ; ide = strIdF( tinBaseP , 0 , flSTRmATCH_null , idfh , sttqh , expr , psttl ) ; }
+                { countT idfh = idf1 ; strokeS sttqh = sttq1 ; ide = strIdF( tin0P , 0 , flSTRmATCH_null , idfh , sttqh , expr , psttl ) ; }
                 strokeS sttqe( (countT)0 , sc_IGNOREqUOTES ) ;
                 ZE( countT , ide ) ;
                 countT idfLine = idf1 ;
@@ -51,10 +51,10 @@
             strokeS sttq1( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idf1 = 1 ;
         {
-        strSubstringF( tinBaseP , psttl , idf , sttq , crlf , psttOld ,0 ) ;    
+        strSubstringF( tin0P , psttl , idf , sttq , crlf , psttOld ,0 ) ;    
         ZE( strokeS* , psttl ) ;
 
-        { countT idfh = idf ; strokeS sttqh = sttq ; idd = strIdF( tinBaseP , 0 , flSTRmATCH_null , idfh , sttqh , crlf , psttOld ) ; }
+        { countT idfh = idf ; strokeS sttqh = sttq ; idd = strIdF( tin0P , 0 , flSTRmATCH_null , idfh , sttqh , crlf , psttOld ) ; }
         ZE( countT , idd ) ;
     {
     while( !STOP && !POOP && idf )
@@ -64,7 +64,7 @@
     TN( crlf , "\r\n" ) ;
 
     ZE( boolT , fTagsStillExist ) ;
-    strFuseF( tinBaseP , psttP , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ ( psttOld ? psttOld->idAdam : 0 ) + csttExtraP ) ; // CALLER MUST TAG
+    strFuseF( tin0P , psttP , T("") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ ( psttOld ? psttOld->idAdam : 0 ) + csttExtraP ) ; // CALLER MUST TAG
 
     //ifcSayIF( T("strEvaluateFormat01F: before:\r\n" USCORE79 "\r\n\r\n")+T(psttOld)+T("\r\n" USCORE79 "\r\n\r\n") , flSAY_APPEND | flSAY_LOG ) ; //U::
 
@@ -74,7 +74,7 @@
         psttOld = psttP ;
     {
     else
-    if( psttOldP ) { strFuseF( tinBaseP , psttOld , psttOldP ) ; ___( psttOld ) ; }
+    if( psttOldP ) { strFuseF( tin0P , psttOld , psttOldP ) ; ___( psttOld ) ; }
     ZE( strokeS* , psttOld ) ;
 
     _IO_
@@ -85,7 +85,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/boolT etherC::strEvaluateFormat01F( tin0S& tinBaseP , strokeS*& psttP , const countT csttExtraP , const strokeS* const psttOldP )/*1*/
+/**//*1*/boolT etherC::strEvaluateFormat01F( tin0S& tin0P , strokeS*& psttP , const countT csttExtraP , const strokeS* const psttOldP )/*1*/
 */
  psttOldP
  csttExtraP

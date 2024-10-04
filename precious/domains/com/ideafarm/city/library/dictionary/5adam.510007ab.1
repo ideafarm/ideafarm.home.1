@@ -9,18 +9,18 @@
                             
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 #endif
 
-etThread.traceF( tinBaseP , T("wrote 1") ) ;
-socko.writeF( tinBaseP , 12345 , nicNameC() , tSay , tSay.csF( tinBaseP ) ) ;
-etThread.traceF( tinBaseP , T("writing 1") ) ;
+etThread.traceF( tin0P , T("wrote 1") ) ;
+socko.writeF( tin0P , 12345 , nicNameC() , tSay , tSay.csF( tin0P ) ) ;
+etThread.traceF( tin0P , T("writing 1") ) ;
 
 TN( tSay , "Hello, Jesus!" ) ;
 
-socketC socko( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T("ff02::5:6") , 0 , 0 , 0 , 0 , 0 ) ;
+socketC socko( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T("ff02::5:6") , 0 , 0 , 0 , 0 , 0 ) ;
 
 #else
 
@@ -31,7 +31,7 @@ closesocket( sd ) ;
 //*************************************************************************************************************
 //*************************************************************************************************************
 
-etThread.traceF( tinBaseP , T("sent :    \"")+T(postBuf)+T("\"") ) ;
+etThread.traceF( tin0P , T("sent :    \"")+T(postBuf)+T("\"") ) ;
 if( cbOut < cbOutSave ) postBuf[ cbOut ] = 0 ;
 if( cbOut <= 0 ) { BLAMMO ; }
 int cbOut = sendto( sd , postBuf , cbOutSave , 0 , (const sockaddr *)&addrGroup , sizeof addrGroup ) ;

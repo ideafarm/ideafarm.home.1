@@ -9,20 +9,20 @@
                             
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    ++ s ; etThread.osSleepF( tinBaseP , TICK << 4 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; etThread.osSleepF( tin0P , TICK << 4 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     if( bQuit ) break ;
 
     }
         }
             }
-                etThread.traceF( tinBaseP , T("[host,min,mean,max,stdDev]:    ")+T(psttzLever)+tb4+TF3(stats.minTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)mMean,flFORMAT_NObIGITvALUES|flFORMAT_EXPONENT,9)+tb4+TF3(stats.maxTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)mStdDev,flFORMAT_NObIGITvALUES|flFORMAT_EXPONENT,9) ) ;
-                measure04T mStdDev = thirdC::mathSqrtIF( tinBaseP , mSquare ) ;
+                etThread.traceF( tin0P , T("[host,min,mean,max,stdDev]:    ")+T(psttzLever)+tb4+TF3(stats.minTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)mMean,flFORMAT_NObIGITvALUES|flFORMAT_EXPONENT,9)+tb4+TF3(stats.maxTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)mStdDev,flFORMAT_NObIGITvALUES|flFORMAT_EXPONENT,9) ) ;
+                measure04T mStdDev = thirdC::mathSqrtIF( tin0P , mSquare ) ;
             {
             if( 1e-8 < mSquare )
             measure04T mSquare = mMeans - mMean * mMean ;
@@ -32,17 +32,17 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         {
         if( stats.cObs )
 
-        etThread.traceF( tinBaseP , T("[host,cObs,sum,sumSquared]:    ")+T(psttzLever)+tb4+TF3(stats.cObs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)stats.sum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)stats.sumSquared,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9) ) ;
+        etThread.traceF( tin0P , T("[host,cObs,sum,sumSquared]:    ")+T(psttzLever)+tb4+TF3(stats.cObs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)stats.sum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)stats.sumSquared,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9) ) ;
         statsS& stats = *(statsS*)&(countT&)swAccumulator ;
-        psttzLever = (strokeS*)swAccumulator.leverF( tinBaseP , idf ) ;
+        psttzLever = (strokeS*)swAccumulator.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = swAccumulator.cFlavorsF( tinBaseP ) ;
+    countT cFlavors = swAccumulator.cFlavorsF( tin0P ) ;
 
     }
         }
-            etThread.traceF( tinBaseP , T("[min,mean,max,stdDev]:    ")+TF3(statsAll.minTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)mMean,flFORMAT_NObIGITvALUES|flFORMAT_EXPONENT,9)+tb4+TF3(statsAll.maxTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)mStdDev,flFORMAT_NObIGITvALUES|flFORMAT_EXPONENT,9) ) ;
-            measure04T mStdDev = thirdC::mathSqrtIF( tinBaseP , mSquare ) ;
+            etThread.traceF( tin0P , T("[min,mean,max,stdDev]:    ")+TF3(statsAll.minTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)mMean,flFORMAT_NObIGITvALUES|flFORMAT_EXPONENT,9)+tb4+TF3(statsAll.maxTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)mStdDev,flFORMAT_NObIGITvALUES|flFORMAT_EXPONENT,9) ) ;
+            measure04T mStdDev = thirdC::mathSqrtIF( tin0P , mSquare ) ;
         {
         if( 1e-8 < mSquare )
         measure04T mSquare = mMeans - mMean * mMean ;
@@ -52,14 +52,14 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     {
     if( statsAll.cObs )
 
-    etThread.traceF( tinBaseP , T("overall [cObs,sum,sumSquared]:    ")+TF3(statsAll.cObs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)statsAll.sum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)statsAll.sumSquared,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9) ) ;
+    etThread.traceF( tin0P , T("overall [cObs,sum,sumSquared]:    ")+TF3(statsAll.cObs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)statsAll.sum,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+tb4+TF3((measureT)statsAll.sumSquared,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9) ) ;
 
     while( /*-- cDo &&*/ !ether && ~hFind && !POOP ) ;
     }
         DEL( pInfo ) ;
         }
             }
-                etThread.delF( tinBaseP , psttHost ) ;
+                etThread.delF( tin0P , psttHost ) ;
                 }
                     if( statsAll.maxTime < time1 ) statsAll.maxTime = time1 ;
                     if( statsAll.minTime > time1 ) statsAll.minTime = time1 ;
@@ -75,15 +75,15 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                     statsS& stats = *(statsS*)&(countT&)swAccumulator ;
 
                     }
-                        new( 0 , tinBaseP , pba , cba ) statsS() ;
+                        new( 0 , tin0P , pba , cba ) statsS() ;
                         countT cba = swAccumulator.cbDataF() ;
                         byteT* pba = (byteT*)&(countT&)swAccumulator ;
-                        etThread.traceF( tinBaseP , T("initializing accumulator [host]:    ")+T(psttHost) ) ;
+                        etThread.traceF( tin0P , T("initializing accumulator [host]:    ")+T(psttHost) ) ;
                     {
-                    if( !swAccumulator.idSlotOfLeverF( tinBaseP , (countT)psttHost ) )
+                    if( !swAccumulator.idSlotOfLeverF( tin0P , (countT)psttHost ) )
                     psttzLever = psttHost ;
 
-                    //etThread.traceF( tinBaseP , T("[time,host]:    ")+TF3(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(psttHost) ) ;
+                    //etThread.traceF( tin0P , T("[time,host]:    ")+TF3(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(psttHost) ) ;
                 {
                 if( !bFail )
 
@@ -120,13 +120,13 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                         DEL( pInfo ) ;
 
                         if( POOP ) { POOPR }
-                        ((tin9S&)tinBaseP).pEtScratch->boxZapF( tinBaseP , tIfoName , 1 ) ;
+                        ((tin9S&)tin0P).pEtScratch->boxZapF( tin0P , tIfoName , 1 ) ;
 
                         POOPR
                     {
                     if( POOP )
-                    ((tin9S&)tinBaseP).pEtScratch->boxGetF( tinBaseP , rec , tIfoName ) ;
-                    soulC rec( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                    ((tin9S&)tin0P).pEtScratch->boxGetF( tin0P , rec , tIfoName ) ;
+                    soulC rec( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                 
                     SCOOPS
                 {
@@ -148,12 +148,12 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         {
         if( !pInfo || !pInfo->psttIfoName )
 
-        etThread.diskFindFileOrDirF( tinBaseP , pInfo , hFind , fnLike.pathF() , &pat ) ;
+        etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , fnLike.pathF() , &pat ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-    switchC swAccumulator( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzLever , 0 , sizeof( statsS ) ) ;
+    handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    switchC swAccumulator( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttzLever , 0 , sizeof( statsS ) ) ;
     ZE( strokeS* , psttzLever ) ;
     statsS statsAll ;
     //countT cDo = TUCK ;
@@ -161,8 +161,8 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 while( !bQuit && !POOP )
 const boolT& bQuit = *(const boolT*)&(const countT&)ether ;
 
-patternC pat( tinBaseP , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-fileNameC fnLike( tinBaseP , etThread , tLike ) ;
+patternC pat( tin0P , etThread , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+fileNameC fnLike( tin0P , etThread , tLike ) ;
 
 TN( tb4 , "    " ) ;
 TN( tLike , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/gorilla/*.ideafarm.com.root.to.form.response.soul" ) ;

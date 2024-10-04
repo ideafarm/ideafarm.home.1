@@ -11,23 +11,23 @@ DONE( tmDisplayF )
 }
     FIREmYSELF ;
 
-    displayP.liveF( tinBaseP ) ;
+    displayP.liveF( tin0P ) ;
 
-    sgnReadyP.giveF( tinBaseP ) ;
+    sgnReadyP.giveF( tin0P ) ;
 
-    ((thirdC&)etThread).winShowWindowF( tinBaseP , displayP , idcWINsHOW_SHOW ) ;
+    ((thirdC&)etThread).winShowWindowF( tin0P , displayP , idcWINsHOW_SHOW ) ;
 
-    else              displayP.positionF( tinBaseP , flDISPLAYpOSITION_CREATEwINDOW ) ;
-    if( bDebug33118 ) displayP.positionF( tinBaseP , flDISPLAYpOSITION_CREATEwINDOW , 0x80 , 0x80 , 0x0 , 0x10 ) ;
+    else              displayP.positionF( tin0P , flDISPLAYpOSITION_CREATEwINDOW ) ;
+    if( bDebug33118 ) displayP.positionF( tin0P , flDISPLAYpOSITION_CREATEwINDOW , 0x80 , 0x80 , 0x0 , 0x10 ) ;
 
-    displayP.stuff.pTinWindow = &tinBaseP ;
+    displayP.stuff.pTinWindow = &tin0P ;
 
     signC&    sgnReadyP =    *(signC*)pTaskP->c2 ;
     displayC& displayP  = *(displayC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
 
-etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ; //U::TO FIND A BUG
+etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ; //U::TO FIND A BUG
 
 /*1*/TASK( tmDisplayF )/*1*/
 

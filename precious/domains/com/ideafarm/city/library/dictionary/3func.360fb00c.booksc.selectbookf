@@ -15,31 +15,31 @@
 
         THREADmODE4rESTORE
         THREADmODE2rESTORE ;
-        new( 0 , tinBaseP , PBbOOKbACKnOW , SIZEOF_bookC ) bookC( tinBaseP , TAG( TAGiDnULL ) , postBookNameScratch , idStateSpace , flagsCtRead , 0 , bFill , idMemorySpace ) ;
+        new( 0 , tin0P , PBbOOKbACKnOW , SIZEOF_bookC ) bookC( tin0P , TAG( TAGiDnULL ) , postBookNameScratch , idStateSpace , flagsCtRead , 0 , bFill , idMemorySpace ) ;
         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
         THREADmODE4oN( flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
         NEWbOOK1bLAMMOiFcT
 
         flagsT flagsCtRead = flagsCtBook & ~( F(flBOOKSc_WRITER) ) ; // A:ASSUME: CALLER ALWAYS WANTS TO READ THE NEW BOOK ; TO SUPPORT A WRITER, A FLAG CAN BE DEFINED TO CHANGE THIS BEHAVIOR
 
-        setBookNameIdF( tinBaseP , flagsP , pcpIdBookScratch1 ) ;
+        setBookNameIdF( tin0P , flagsP , pcpIdBookScratch1 ) ;
 
         DELzOMBIEbOOKbACKnOWiF
 
-        //if( ((tin9S&)tinBaseP).pEther ) ((tin9S&)tinBaseP).pEther->trace F( tinBaseP , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": ")+T(postShort)+T(": ")+TF2(offBookBackNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": selectBookF / selected (not found so incremented)") ) ; //U:: TO FIND A BUG
+        //if( ((tin9S&)tin0P).pEther ) ((tin9S&)tin0P).pEther->trace F( tin0P , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": ")+T(postShort)+T(": ")+TF2(offBookBackNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": selectBookF / selected (not found so incremented)") ) ; //U:: TO FIND A BUG
 
         offBookBackNow = ++ offBookBackNowSave ;
 
         //}
-        //    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("booksC::selectBookF / ct'ing a book") ) ;
+        //    ((tin9S&)tin0P).pEther->traceF( tin0P , T("booksC::selectBookF / ct'ing a book") ) ;
         //{
-        //if( ((tin9S&)tinBaseP).pc Utility[ 0 ] )
+        //if( ((tin9S&)tin0P).pc Utility[ 0 ] )
     {
     else
     }
         BOOKnOW.flagsCtRefF() &= ~( F(flBOOKc_WRITER) ) ; // A:ASSUME: CALLER ALWAYS WANTS TO READ THE NEW BOOK ; TO SUPPORT A WRITER, A FLAG CAN BE DEFINED TO CHANGE THIS BEHAVIOR
 
-        //if( ((tin9S&)tinBaseP).pEther ) ((tin9S&)tinBaseP).pEther->trace F( tinBaseP , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": ")+T(postShort)+T(": ")+TF2(offBookBackNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": selectBookF / selected (found)") ) ; //U:: TO FIND A BUG
+        //if( ((tin9S&)tin0P).pEther ) ((tin9S&)tin0P).pEther->trace F( tin0P , TF3((countT)this,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T(": ")+T(postShort)+T(": ")+TF2(offBookBackNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(": selectBookF / selected (found)") ) ; //U:: TO FIND A BUG
     {
     if( offBookBackNow < CbOOKsLOTS )    // IF FOUND
 
@@ -48,7 +48,7 @@
 
         continue ;
         )
-            thirdC::c_memcmpIF( tinBaseP , (byteT*)( PCPiDbOOKnOW + 1 ) , (byteT*)( pcpIdBookScratch1 + 1 ) , *PCPiDbOOKnOW * sizeof( countT ) )
+            thirdC::c_memcmpIF( tin0P , (byteT*)( PCPiDbOOKnOW + 1 ) , (byteT*)( pcpIdBookScratch1 + 1 ) , *PCPiDbOOKnOW * sizeof( countT ) )
             ||
             *PCPiDbOOKnOW > *pcpIdBookScratch1
             ||
@@ -59,7 +59,7 @@
     for( offBookBackNow = 0 ; offBookBackNow < CbOOKsLOTS ; offBookBackNow ++ )
     countT offBookBackNowSave = offBookBackNow ;
 
-    setPcpIdBookWantF( tinBaseP , flagsP , pcpIdBookWantP , pbQuitP ) ;
+    setPcpIdBookWantF( tin0P , flagsP , pcpIdBookWantP , pbQuitP ) ;
 
     THREADmODE4oN( flTHREADmODE4_POOLaLLOCATEfROMhEAP )
 
@@ -68,7 +68,7 @@
     }
         if( POOP ) return ;
         }
-            __( ((tin9S&)tinBaseP).monitor.idThread != 1 ) ; //I WILL USE STATIC STORAGE SO WILL NOT BE THREAD SAFE; INTENDED ONLY FOR CT/DT OF INSTANCES IN STATIC STORAGE
+            __( ((tin9S&)tin0P).monitor.idThread != 1 ) ; //I WILL USE STATIC STORAGE SO WILL NOT BE THREAD SAFE; INTENDED ONLY FOR CT/DT OF INSTANCES IN STATIC STORAGE
         {
         if( F(flagsCt) & flBOOKSc_DOnOTuSEpUSE )
         __Z( *PCPiDbOOKnOW ) ;
@@ -77,11 +77,11 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT booksC::selectBookF( tin0S& tinBaseP , const flagsT flagsP , const countT* const pcpIdBookWantP , const boolT* pbQuitP )/*1*/
+/*1*/voidT booksC::selectBookF( tin0S& tin0P , const flagsT flagsP , const countT* const pcpIdBookWantP , const boolT* pbQuitP )/*1*/
 
 /**/
 */
- tinBaseP
+ tin0P
 arguments
 /*
 

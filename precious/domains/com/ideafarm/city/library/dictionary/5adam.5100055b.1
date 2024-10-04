@@ -9,13 +9,13 @@
 
 REST
 
-etThread.strokeF( tinBaseP , T("\f") ) ;
+etThread.strokeF( tin0P , T("\f") ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK * 4 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK * 4 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etThread.strokeF( tinBaseP , ( ++ idCycle ) % 2 ? tSay : tSayErase ) ;
+    etThread.strokeF( tin0P , ( ++ idCycle ) % 2 ? tSay : tSayErase ) ;
 {
 while( !ether )
 ZE( countT , idCycle ) ;
@@ -36,17 +36,17 @@ TN( tSayErase , "" ) ; tSayErase = tSay + T("\f") ;
 tSay = 
 TN( tSay , "" ) ;
 
-win.baton.ungrabF( tinBaseP ) ;
+win.baton.ungrabF( tin0P ) ;
 win.cAnimateArg = (countT)&c3a ;
 win.pAnimateCBF = animateCBF ;
-win.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+win.baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 windowOldC& win = *thirdC::pWinRootIF() ;
 
 count3S c3a( (countT)&button , (countT)&buttonv1 , (countT)&buttonv2 ) ;
 
-tcButtonC button(  tinBaseP , tcStateCBF         , 0 , flFeatures  , 0 , 0 , 1 ) ;
-tcButtonC buttonv2( tinBaseP , tcStateVolatileCBF , 0 , flFeaturesv , 0 , T("Y") ) ;
-tcButtonC buttonv1( tinBaseP , tcStateVolatileCBF , 0 , flFeaturesv , 0 , T("X") ) ;
+tcButtonC button(  tin0P , tcStateCBF         , 0 , flFeatures  , 0 , 0 , 1 ) ;
+tcButtonC buttonv2( tin0P , tcStateVolatileCBF , 0 , flFeaturesv , 0 , T("Y") ) ;
+tcButtonC buttonv1( tin0P , tcStateVolatileCBF , 0 , flFeaturesv , 0 , T("X") ) ;
 flagsT flFeatures     = flFeaturesCore ;
 flagsT flFeaturesv    = flFeaturesCore & ~( F(flTCfEATURE_DRAGGABLE) ) ;
 flagsT flFeaturesCore = flTCfEATURE_DRAGGABLE | flTCfEATURE_FLYOVER | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_MOUSE | flTCfEATURE_HOTkEY | flTCfEATURE_FRAME ;
@@ -54,9 +54,9 @@ flagsT flFeaturesCore = flTCfEATURE_DRAGGABLE | flTCfEATURE_FLYOVER | flTCfEATUR
 TODO
 
 }
-    if( etherP && wP.bDoomed && ((tin9S&)tinBaseP).fingerprint ) ;
+    if( etherP && wP.bDoomed && ((tin9S&)tin0P).fingerprint ) ;
     }
-        button.setF( tinBaseP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S2(0,scOld_cPUSHrIPPLES)+(idIn%2?buttonv1:buttonv2)+S2(0,scOld_POPrIPPLES)+S2(0,scOld_POPfRAME) ) ;
+        button.setF( tin0P , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S2(0,scOld_cPUSHrIPPLES)+(idIn%2?buttonv1:buttonv2)+S2(0,scOld_POPrIPPLES)+S2(0,scOld_POPfRAME) ) ;
         tcButtonC& buttonv2 = *(tcButtonC*)c3a.c3 ;
         tcButtonC& buttonv1 = *(tcButtonC*)c3a.c2 ;
         tcButtonC& button   = *(tcButtonC*)c3a.c1 ;
@@ -67,12 +67,12 @@ TODO
     {
     if( !( idCycleP % PERIOD ) )
 {
-voidT animateCBF( tin0S& tinBaseP , etherC& etherP , paperBackC& backP , const countT idCycleP , const countT cArgP )
+voidT animateCBF( tin0S& tin0P , etherC& etherP , paperBackC& backP , const countT idCycleP , const countT cArgP )
 
 #define PERIOD 0x10
 
 }
-    if( ((tin9S&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
+    if( ((tin9S&)tin0P).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
 
     }
         }
@@ -88,10 +88,10 @@ voidT animateCBF( tin0S& tinBaseP , etherC& etherP , paperBackC& backP , const c
     {
     switch( idTypeCallP )
 {
-voidT tcStateCBF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcStateCBF( tin0S& tin0P , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
-    if( ((tin9S&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
+    if( ((tin9S&)tin0P).fingerprint && etherP && cArgP && idTypeCallP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
 
     }
         }
@@ -109,7 +109,7 @@ voidT tcStateCBF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const 
     {
     switch( idTypeCallP )
 {
-voidT tcStateVolatileCBF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT tcStateVolatileCBF( tin0S& tin0P , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 /*1*/WAKEsHOW( "example.other.snip.00300d3.tcButtonC.volatile.button" )/*1*/
 /**/

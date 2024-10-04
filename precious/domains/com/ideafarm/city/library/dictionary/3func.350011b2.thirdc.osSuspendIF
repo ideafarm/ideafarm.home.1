@@ -13,7 +13,7 @@
         }
             BOSpOOP
         {
-        if( ((tin9S&)tinBaseP).bosFail && ((tin9S&)tinBaseP).brcLath != ERROR_SHUTDOWN_IN_PROGRESS )
+        if( ((tin9S&)tin0P).bosFail && ((tin9S&)tin0P).brcLath != ERROR_SHUTDOWN_IN_PROGRESS )
 
         BOS( WHATgbo , BOSoK , SetSuspendState( !bSleepP , 0 , !bAllowWakeUpP ) )
         
@@ -30,10 +30,10 @@
             BOSpOOP
             BOS( WHATgbo , BOSoK , OpenProcessToken( (HANDLE)handle.osF( ifcIDtYPEhANDLE_PROCESS ) , TOKEN_ADJUST_PRIVILEGES , &osh ) )
             ZE( HANDLE , osh ) ;
-            handleC hToken( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESStOKEN ) ; //NOT REALLY A HANDLE, SO I DO NOT REGISTER/DEREGISTER IT; NOTE THAT I DO NOT "CLOSE" IT
+            handleC hToken( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESStOKEN ) ; //NOT REALLY A HANDLE, SO I DO NOT REGISTER/DEREGISTER IT; NOTE THAT I DO NOT "CLOSE" IT
         
-            osOpenProcessIF( tinBaseP , handle ) ;
-            handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
+            osOpenProcessIF( tin0P , handle ) ;
+            handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
         {
 
     #elif defined( __NT__ )
@@ -42,7 +42,7 @@
 
     _IO_
 {
-/**//*1*/voidT thirdC::osSuspendIF( tin0S& tinBaseP , const boolT bSleepP , const boolT bAllowWakeUpP )/*1*/
+/**//*1*/voidT thirdC::osSuspendIF( tin0S& tin0P , const boolT bSleepP , const boolT bAllowWakeUpP )/*1*/
 */
 /*
 

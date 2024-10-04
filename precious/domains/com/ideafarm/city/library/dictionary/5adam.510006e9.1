@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     }
@@ -27,7 +27,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
                             //U::REPORT FRAME DETAILS HERE
 
-                            etThread.traceF( tinBaseP , T("frame [off,cb]:    ")+TF3(offCurrentFrame,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF2(cbFrame,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            etThread.traceF( tin0P , T("frame [off,cb]:    ")+TF3(offCurrentFrame,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T("    ")+TF2(cbFrame,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
                         if( offo > 2 )
 
@@ -39,7 +39,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                 {
                 if( bArmed )
 
-                etThread.fileReadF( tinBaseP , pbTock + ( offo ++ ) , cbr , fi , 0 ) ; cbToDo -- ;
+                etThread.fileReadF( tin0P , pbTock + ( offo ++ ) , cbr , fi , 0 ) ; cbToDo -- ;
             {
             while( !POOP )
             boolT bArmed = 1 ;  // I KNOW THAT THE CURRENT BYTE IS 0xff AND THAT IT MUST BE A SYNC BYTE
@@ -61,7 +61,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             if( pInfo ) cbUsedNet = pInfo->cbUsed - cbFileTag ;
 
             __Z( pInfo ) ;
-            etThread.diskFileQueryF( tinBaseP , pInfo , fi ) ; ___( pInfo ) ;
+            etThread.diskFileQueryF( tin0P , pInfo , fi ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         ZE( countT , cbUsedNet ) ;
@@ -71,14 +71,14 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     __( pbTock[ 0 ] != 0xff ) ;
 
     }
-        etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ; // LOAD THE WOTH BYTE OF THE WOTH SYNC
+        etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ; // LOAD THE WOTH BYTE OF THE WOTH SYNC
         cbr = 1 ;
 
         }
             }
                 }
                     cbToDo -= cbWo ;
-                    etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
+                    etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ;
                     cbr = cbWo ;
 
                     ;
@@ -91,7 +91,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             {
             else
             }
-                etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
+                etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ;
                 cbr = cbId3 ;
             {
             if( cbId3 <= sizeof pbTock )
@@ -118,19 +118,19 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         __Z( cbr == 0x9 && pbTock[ 0 ] == 'I' && pbTock[ 1 ] == 'D' && pbTock[ 2 ] == '3' ) ;
 
         cbFileTag += cbr ;
-        etThread.fileReadF( tinBaseP , pbTock + 1 , cbr , fi , 0 ) ;
+        etThread.fileReadF( tin0P , pbTock + 1 , cbr , fi , 0 ) ;
         cbr = 0x9 ;
         cbFileTag = 1 ;
     {
     if( pbTock[ 0 ] != 0xff ) // IF NOT A SYNC BYTE
     ZE( countT , cbFileTag ) ;
 
-    etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
+    etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ;
     countT cbr = 1 ;
 
     byteT pbTock[ TOCK ] ;
 
-    fileC fi( tinBaseP , (strokeS*)T("///d/tmp/x/test2.mp3") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ;
+    fileC fi( tin0P , (strokeS*)T("///d/tmp/x/test2.mp3") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ;
 {
 
 //BLAMMO ;
@@ -139,14 +139,14 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 //}
 //    DEL( pInfo ) ;
 //    }
-//        etThread.traceF( tinBaseP , pInfo->psttIfoName ) ;
+//        etThread.traceF( tin0P , pInfo->psttIfoName ) ;
 //    {
 //    if( pInfo )
-//    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ;
+//    etThread.diskFindFileOrDirOldF( tin0P , pInfo , hFind , tLike ) ;
 //    ZE( infoFileS* , pInfo ) ;
 //{
 //do
-//handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+//handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 //
 //TN( tLike    , "" ) ; tLike = tArchive+T("*.mp3") ;
 //TN( tArchive , "///d/ideafarm.home.101/IdeaFarm (tm)/SYSTEM/2.1. Drop Files Here To Archive Them/" ) ;

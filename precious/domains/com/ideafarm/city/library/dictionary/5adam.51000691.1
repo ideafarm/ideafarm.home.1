@@ -9,12 +9,12 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 CONoUTrAW( "ok\r\n" ) ;
 
 }
     }
-        etThread.delF( tinBaseP , poste ) ;
+        etThread.delF( tin0P , poste ) ;
         CONoUTrAW( "\"\r\n" ) ;
         CONoUTrAW( poste ) ;
         CONoUTrAW( "got from inner2: \"" ) ;
@@ -23,7 +23,7 @@ CONoUTrAW( "ok\r\n" ) ;
     {
     while( inner2 )
 
-    etThread.delF( tinBaseP , postFoo ) ;
+    etThread.delF( tin0P , postFoo ) ;
     CONoUTrAW( "\"\r\n" ) ;
     CONoUTrAW( postFoo ) ;
     CONoUTrAW( "got from outer after pulling to inner2: \"" ) ;
@@ -31,17 +31,17 @@ CONoUTrAW( "ok\r\n" ) ;
     ZE( osTextT* , postFoo ) ;
 
     outer >> inner2 ;
-    soulC inner2( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , !( pp % 2 )                      ? 0 : "inner2" ) ; // 01010101
+    soulC inner2( tin0P , TAG( TAGiDnULL ) , flSOUL_null , !( pp % 2 )                      ? 0 : "inner2" ) ; // 01010101
 
     outer << postSayFoo ;
     outer << inner ;
-    soulC outer(  tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , pp <= 2 || ( pp >=5 && pp <= 6 ) ? 0 : "outer"  ) ; // 00110011
+    soulC outer(  tin0P , TAG( TAGiDnULL ) , flSOUL_null , pp <= 2 || ( pp >=5 && pp <= 6 ) ? 0 : "outer"  ) ; // 00110011
 
     inner << postSay4 ;
     inner << postSay3 ;
     inner << postSay2 ;
     inner << postSay1 ;
-    soulC inner(  tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , pp <= 4                          ? 0 : "inner"  ) ; // 00001111
+    soulC inner(  tin0P , TAG( TAGiDnULL ) , flSOUL_null , pp <= 4                          ? 0 : "inner"  ) ; // 00001111
 
     CONoUTrAW3( "trial [pp]: " , pp , "\r\n" ) ;
 {

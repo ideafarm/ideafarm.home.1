@@ -10,26 +10,26 @@
 }
     }
         __( idAck - ifcREPLY_ACK ) ;
-        sock.readF( tinBaseP , (byteT*)&idAck , sizeof idAck ) ;
+        sock.readF( tin0P , (byteT*)&idAck , sizeof idAck ) ;
         ZE( countT , idAck ) ;
 
         }
-            delF( tinBaseP , pcp ) ;
+            delF( tin0P , pcp ) ;
             }
                 for( countT off = 0 ; off < cPorts ; off ++ ) stIdPortP << pcp[ off ] ;
-                sock.readF( tinBaseP , (byteT*)pcp , sizeof( countT ) * cPorts ) ;
+                sock.readF( tin0P , (byteT*)pcp , sizeof( countT ) * cPorts ) ;
             {
             if( pcp )
-            newF( tinBaseP , LF , pcp , cPorts ) ; ___( pcp ) ;
+            newF( tin0P , LF , pcp , cPorts ) ; ___( pcp ) ;
             ZE( countT* , pcp ) ;
         {
         if( cPorts )
-        sock.readF( tinBaseP , (byteT*)&cPorts , sizeof cPorts ) ;
+        sock.readF( tin0P , (byteT*)&cPorts , sizeof cPorts ) ;
         ZE( countT , cPorts ) ;
 
-        sock.writeF( tinBaseP , (byteT*)&c2o , sizeof c2o ) ;
-        sock.connectF( tinBaseP , ifcPORToLD1pORTaUTHORITY , nicNameP ) ;
-        socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
+        sock.writeF( tin0P , (byteT*)&c2o , sizeof c2o ) ;
+        sock.connectF( tin0P , ifcPORToLD1pORTaUTHORITY , nicNameP ) ;
+        socketC sock( tin0P , *this , TAG( TAGiDnULL ) ) ;
     {
 
     c2o.c2 = idiClassP ? idiClassP : processGlobal1I.idAdamRoot ;
@@ -40,14 +40,14 @@
 
     }
         if( POOP ) return ;
-        __( !((tin9S&)tinBaseP).pag1->_etherC_.pEtPrime ) ;
+        __( !((tin9S&)tin0P).pag1->_etherC_.pEtPrime ) ;
         __( stIdPortP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcPortQueryF( tin0S& tinBaseP , stackC& stIdPortP , const nicNameC nicNameP , const countT idiClassP )/*1*/
+/*1*/voidT etherC::ifcPortQueryF( tin0S& tin0P , stackC& stIdPortP , const nicNameC nicNameP , const countT idiClassP )/*1*/
 /**/
 */
   can be 0
@@ -58,7 +58,7 @@
   must be able to accept countT values
   must be empty
  stIdPortP
- tinBaseP
+ tin0P
 arguments
 \<A HREF=\"5.1030124.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$ifcPortQueryF.0.html\"\>instances\</A\>

@@ -14,14 +14,14 @@
         }
             }
                 }
-                    strMakeF( tinBaseP , LF , psttLine , 0 , TUCK + 2 ) ; ___( psttLine ) ;
-                    delF( tinBaseP , psttLine ) ;
-                    traceF( tinBaseP , psttLine , flTRACE_NOpREFIX ) ;
-                    strFuseF( tinBaseP , psttLine , tCRLF ) ;
+                    strMakeF( tin0P , LF , psttLine , 0 , TUCK + 2 ) ; ___( psttLine ) ;
+                    delF( tin0P , psttLine ) ;
+                    traceF( tin0P , psttLine , flTRACE_NOpREFIX ) ;
+                    strFuseF( tin0P , psttLine , tCRLF ) ;
                 {
                 if( !( ( offGrain + 1 ) % TUCK ) )
 
-                strFuseF( tinBaseP , psttLine , bUsed ? tAt : tDot ) ;
+                strFuseF( tin0P , psttLine , bUsed ? tAt : tDot ) ;
 
                 boolT bUsed = processGlobal2I.pbMemoryBitsAll[ offByte ] & mask ;
 
@@ -36,13 +36,13 @@
             {
             for( countT offGrain = 0 ; offGrain < ( TOCK >> 1 ) ; offGrain ++ )
 
-            strMakeF( tinBaseP , LF , psttLine , 0 , TUCK + 2 ) ; ___( psttLine ) ;
+            strMakeF( tin0P , LF , psttLine , 0 , TUCK + 2 ) ; ___( psttLine ) ;
             ZE( strokeS* , psttLine ) ;
             TN( tCRLF , "\r\n" ) ;
             TN( tAt   , "@"    ) ;
             TN( tDot  , "."    ) ;
 
-            traceF( tinBaseP , T("Memory Grain Report:") , flTRACE_null ) ;
+            traceF( tin0P , T("Memory Grain Report:") , flTRACE_null ) ;
         {
         THREADmODE4oN( flTHREADmODE4_POOLaLLOCATEfROMhEAP )
 
@@ -56,7 +56,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::traceMemoryGrainRptF( tin0S& tinBaseP )/*1*/
+/*1*/voidT etherC::traceMemoryGrainRptF( tin0S& tin0P )/*1*/
 
 /**/
 

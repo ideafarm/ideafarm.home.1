@@ -11,43 +11,43 @@ REST
 
 while( !etThread && ~hDown ) ;
 }
-    etThread.strokeF( tinBaseP , TF1(vv)+T("\r\n") ) ;
-    countT vv = stc.downF( tinBaseP , hDown ) ;
+    etThread.strokeF( tin0P , TF1(vv)+T("\r\n") ) ;
+    countT vv = stc.downF( tin0P , hDown ) ;
 {
 do
 hDown = 0 ;
-etThread.strokeF( tinBaseP , T("stack contents after insertion pass:\r\n") ) ;
+etThread.strokeF( tin0P , T("stack contents after insertion pass:\r\n") ) ;
 
-//stc.insertF( tinBaseP , 0x11 , ifcSTACKtYPE_countT , -3 ) ;
+//stc.insertF( tin0P , 0x11 , ifcSTACKtYPE_countT , -3 ) ;
 
 while( !etThread && ~hDown ) ;
 }
-    etThread.strokeF( tinBaseP , T("reference ")+TF1((sCountT)(cRefBefore+1))+T(":    ")+TF1(vv)+T("\r\n") ) ;
-    countT vv = stc.downF( tinBaseP , hDown ) ;
+    etThread.strokeF( tin0P , T("reference ")+TF1((sCountT)(cRefBefore+1))+T(":    ")+TF1(vv)+T("\r\n") ) ;
+    countT vv = stc.downF( tin0P , hDown ) ;
     }
-        etThread.strokeF( tinBaseP , T("insertion\r\n") ) ;
-        stc.downF( tinBaseP , hDown ) ;
-        stc.insertF( tinBaseP , 0x12 ) ;
-        stc.insertF( tinBaseP , 0x11 ) ;
-        stc.upF( tinBaseP , hDown ) ;
-        stc.upF( tinBaseP , hDown ) ;
-        stc.upF( tinBaseP , hDown ) ;
+        etThread.strokeF( tin0P , T("insertion\r\n") ) ;
+        stc.downF( tin0P , hDown ) ;
+        stc.insertF( tin0P , 0x12 ) ;
+        stc.insertF( tin0P , 0x11 ) ;
+        stc.upF( tin0P , hDown ) ;
+        stc.upF( tin0P , hDown ) ;
+        stc.upF( tin0P , hDown ) ;
     {
     if( !( cRefBefore -- ) )
 {
 do
 hDown = 0 ;
 countT cRefBefore = 3 ;
-etThread.strokeF( tinBaseP , T("insertion pass\r\n") ) ;
+etThread.strokeF( tin0P , T("insertion pass\r\n") ) ;
 
 while( !etThread && ~hDown ) ;
 }
-    etThread.strokeF( tinBaseP , TF1(vv)+T("\r\n") ) ;
-    countT vv = stc.downF( tinBaseP , hDown ) ;
+    etThread.strokeF( tin0P , TF1(vv)+T("\r\n") ) ;
+    countT vv = stc.downF( tin0P , hDown ) ;
 {
 do
-handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-etThread.strokeF( tinBaseP , T("stack contents before insertion pass:\r\n") ) ;
+handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+etThread.strokeF( tin0P , T("stack contents before insertion pass:\r\n") ) ;
 
 stc << ++ vLast ;
 stc << ++ vLast ;
@@ -58,7 +58,7 @@ stc << ++ vLast ;
 stc << ++ vLast ;
 stc << ++ vLast ;
 ZE( countT , vLast ) ;
-stackC stc( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+stackC stc( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
 
 TODO
 

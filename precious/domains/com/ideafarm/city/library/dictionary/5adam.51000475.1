@@ -11,23 +11,23 @@
 
 REST
 
-etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
+etThread.osSleepF( tin0P , TOCK * 4 ) ;
 
-etThread.strokeF( tinBaseP , T("did ")+T(CtRIES)+T(" hashes in time ")+TT(timeB1,timeB2)+T("\r\nhashes per time: ")+TF1(hashPerTime)+T("\r\n") ) ;
+etThread.strokeF( tin0P , T("did ")+T(CtRIES)+T(" hashes in time ")+TT(timeB1,timeB2)+T("\r\nhashes per time: ")+TF1(hashPerTime)+T("\r\n") ) ;
 countT hashPerTime = CtRIES / timeB1 ;
 __( timeB2 ) ;
-etThread.osTimeSubtractF( tinBaseP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
-etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
+etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tin0P , timeB1 , timeB2 ) ;
 ZE( sCountT , timeB2 ) ;
 ZE( countT  , timeB1 ) ;
 while( cTries -- ) hashF( pbFoo , cbFoo , 0 ) ;
-etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
+etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
 ZE( sCountT , timeA2 ) ;
 ZE( countT  , timeA1 ) ;
-etThread.strokeF( tinBaseP , T("hashing\r\n") ) ;
+etThread.strokeF( tin0P , T("hashing\r\n") ) ;
 countT cTries = CtRIES ;
 
-countT cbFoo =  etThread.strBodyLengthF( tinBaseP , pbFoo ) ;
+countT cbFoo =  etThread.strBodyLengthF( tin0P , pbFoo ) ;
 byteT* pbFoo = "abcdefghijklmnopqrstuvwxyz" ;
 
 TODO

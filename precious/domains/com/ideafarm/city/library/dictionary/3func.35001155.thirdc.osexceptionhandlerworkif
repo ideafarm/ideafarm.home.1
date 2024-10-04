@@ -36,8 +36,8 @@
                         //            BLAMMO ;
                         //            homeS::homeIF().flags |= flHOMEs_KILLsELFiMMEDIATELY ; //20191014@1759: ADDED WITHOUT ANALYSIS TO MAKE REBOOT MORE RELIABLE AND QUICKER
                         //
-                        //            thirdC::osFireIF( tinBaseP ) ;
-                        //            if( ((tin9S&)tinBaseP).pEtText ) ((tin9S&)tinBaseP).pEtText->emailFactoryReportF( tinBaseP , T("an exception occured.  rebooting") ) ;
+                        //            thirdC::osFireIF( tin0P ) ;
+                        //            if( ((tin9S&)tin0P).pEtText ) ((tin9S&)tin0P).pEtText->emailFactoryReportF( tin0P , T("an exception occured.  rebooting") ) ;
                         //            LOGrAW3( "on unhandled exception, firing the os at age (ms) since boot: " , msSinceBoot , "\r\n" ) ;
                         //        {
                         //        else
@@ -88,8 +88,8 @@
 
                             THREADmODE2rESTORE
                             }
-                                ++ s ; dosSleepIF( tinBaseP , TOCK ) ;_M
-                                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;_M
+                                ++ s ; dosSleepIF( tin0P , TOCK ) ;_M
+                                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;_M
                             {_M
                             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                             //U:: JUST TO MAKE SURE THAT IT HAS TIME TO CLOSE AND FLUSH (SHOULD NOT BE NECESSARY)
@@ -98,7 +98,7 @@
                                 }
                                     //CONoUTrAW( "appending memory readability bit dump to exception report: done\r\n" ) ;_M
                                     fileWriteGF( ostoFileName , postr , sizeof postr - 1 , 1 ) ;_M
-                                    etherC::ifcBitDumpIF( tinBaseP , postr , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;_M
+                                    etherC::ifcBitDumpIF( tin0P , postr , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;_M
     
                                     static byteT postr[ CBrEADABILITYmAPdUMP ] ;_M
                                     //CONoUTrAW( "appending memory readability bit dump to exception report\r\n" ) ;_M
@@ -107,11 +107,11 @@
                                 
                                 //CONoUTrAW3( "memory readability map [cbaNeeded]: " , cbaNeeded , "\r\n" ) ;_M
                                 LOGrAW3( "memory readability map [cbaNeeded]: " , cbaNeeded , "\r\n" ) ;_M
-                                countT cbaNeeded = etherC::ifcBitDumpIF( tinBaseP , 0 , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;_M
+                                countT cbaNeeded = etherC::ifcBitDumpIF( tin0P , 0 , pbBits , sizeof pbBits * SB , TUCK , cbGrain ) ;_M
                                 //[cbaNeeded]: 1858
                                 //[cbaNeeded]: 10858
                                 //[cbaNeeded]: 958
-                                countT cbGrain = thirdC::osMemoryReadabilityMapIF( tinBaseP , pbBits , sizeof pbBits ) ;_M
+                                countT cbGrain = thirdC::osMemoryReadabilityMapIF( tin0P , pbBits , sizeof pbBits ) ;_M
                                 
                                 //static byteT pbBits[ TOCK ] ;_M   //THERE ARE A TUCK OF CHAR PER LINE ; EACH LINE REPRESENTS 01 TOCK ; EACH CHAR REPRESENTS 01 TUCK (1 PAGE) ;
                                 static byteT pbBits[ TUCK << 4 ] ;_M //EACH LINE OF REPORT WILL REPRESENT 1 TICK OF MEMORY
@@ -129,7 +129,7 @@
                             {_M
                             OStEXT( ostoFileName , TUCK << 1 ) ;_M
 
-                            countT         costRpt = thirdC::c_strlenIF( tinBaseP , postRpt ) ;_M
+                            countT         costRpt = thirdC::c_strlenIF( tin0P , postRpt ) ;_M
                             const osTextT* postRpt = ostoRpt ;_M
 
                             OStEXTAK( ostoRpt , "Please always report to www.ideafarm.com that this information appeared,\r\nso that the quality of this software can be improved for you and also for others.\r\n" ) ;_M
@@ -202,7 +202,7 @@
                                         OStEXTA( ostoRpt , postTitle ) ;_M
                                     {_M
                                     if( postTitle )
-                                    const osTextT* postTitle = processGlobal8I.source.postFileTitleF( tinBaseP , processGlobal8I.source.idFileRankF( tinBaseP , idiFile ) ) ;_M
+                                    const osTextT* postTitle = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , idiFile ) ) ;_M
                                     OStEXTAK( ostoRpt , "    " ) ;_M
                                     OStEXTCmIN( ostoRpt , idiFile , 7 ) ;_M
                                     OStEXTAK( ostoRpt , "." ) ;_M
@@ -252,6 +252,7 @@
                             
                                 OStEXTAK( ostoRpt , "\r\n \r\nExecution Steps:\r\n \r\n" ) ;_M
                             {_M
+                            if( tin0Snap.idTypeTin == ifcIDtYPEtIN_FULL )
                             //CS:CODEsYNC: PSEUDOdUPLICATE: 35001155 510004fb.2
 
                             //A:ASSUME: idStep IS VALID
@@ -274,7 +275,7 @@
                                         OStEXTA( ostoRpt , postTitle ) ;_M
                                     {_M
                                     if( postTitle )
-                                    const osTextT* postTitle = processGlobal8I.source.postFileTitleF( tinBaseP , processGlobal8I.source.idFileRankF( tinBaseP , idiFile ) ) ;_M
+                                    const osTextT* postTitle = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , idiFile ) ) ;_M
                                     OStEXTAK( ostoRpt , "    " ) ;_M
                                     OStEXTCmIN( ostoRpt , idiFile , 7 ) ;_M
                                     OStEXTAK( ostoRpt , "." ) ;_M
@@ -299,7 +300,7 @@
                                 countT idnf = ((tin9S&)tin0Snap).monitor.cInNest - OFFsLOTtINnESTmAX ;_M
                                 OStEXTAK( ostoRpt , "\r\n \r\nCall Nest:\r\n \r\n" ) ;_M
                             {_M
-                            else
+                            else if( tin0Snap.idTypeTin == ifcIDtYPEtIN_FULL )
                             else if( (sCountT)((tin9S&)tin0Snap).monitor.cInNest < 0 ) { OStEXTAK( ostoRpt , "\r\n \r\nCall Nest:  error: cNest is negative\r\n" ) ;_M }
                             if( !((tin9S&)tin0Snap).monitor.cInNest ) { OStEXTAK( ostoRpt , "\r\n \r\nCall Nest:  no nest information exists\r\n" ) ;_M }
                             OStEXTC( ostoRpt , ((tin9S&)tin0Snap).monitor.cInNest , 0 ) ;_M
@@ -331,14 +332,14 @@
                             const osTextT* postIdPhase1 = processGlobal4I.mapThreadPhase( ((tin9S&)tin0Snap).idPhase1 ) ;
                             OStEXTAK( ostoRpt , "\r\nidPhase1: " ) ;_M
                             }
-                                OStEXTC( ostoRpt , ((tin9S&)tinBaseP).pag1->idPhaseAdam , 0 ) ;_M
+                                OStEXTC( ostoRpt , ((tin9S&)tin0P).pag1->idPhaseAdam , 0 ) ;_M
                             {_M
                             else
                             }
                                 OStEXTA( ostoRpt , postIdPhaseAdam ) ;_M
                             {_M
                             if( postIdPhaseAdam )
-                            const osTextT* postIdPhaseAdam = processGlobal4I.mapProcessPhase( ((tin9S&)tinBaseP).pag1->idPhaseAdam ) ;
+                            const osTextT* postIdPhaseAdam = processGlobal4I.mapProcessPhase( ((tin9S&)tin0P).pag1->idPhaseAdam ) ;
                             OStEXTAK( ostoRpt , "\r\nidPhaseAdamI: " ) ;_M
                             }
                                 OStEXTC( ostoRpt , processGlobal2I.idPhaseProcess , 0 ) ;_M
@@ -364,32 +365,35 @@
                             OStEXTAK( ostoRpt , "\r\ndll load history: " ) ;_M
                             OStEXTC(  ostoRpt ,      processGlobal2I.cDllLoaded , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\ncDllLoaded: " ) ;_M
-                            OStEXTC(  ostoRpt ,      thirdC::os_cAllOrphanThreadsI_IF( tinBaseP ) , 0 ) ;_M
+                            OStEXTC(  ostoRpt ,      thirdC::os_cAllOrphanThreadsI_IF( tin0P ) , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\ncAllOrphanThreadsI: " ) ;_M
                             OStEXTC(  ostoRpt ,      ((tin9S&)tin0Snap).cKidThreads , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).cKidThreads: " ) ;_M
-                            OStEXTC(  ostoRpt ,      thirdC::os_cAllKidThreadsI_IF( tinBaseP ) , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).pag1->_thirdC_.cAllKidThreads: " ) ;_M
-                            }}
-                                OStEXTC( ostoRpt , ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel[ off + 3 ] , 0 ) ;_M
-                                OStEXTAK( ostoRpt , " " ) ;_M
-                                OStEXTC( ostoRpt , ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel[ off + 2 ] , 0 ) ;_M
-                                OStEXTAK( ostoRpt , " " ) ;_M
-                                OStEXTC( ostoRpt , ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel[ off + 1 ] , 0 ) ;_M
-                                OStEXTAK( ostoRpt , " " ) ;_M
-                                OStEXTC( ostoRpt , ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel[ off + 0 ] , 0 ) ;_M
-                                OStEXTAK( ostoRpt , "](pandle,idLineGrab,idiFileGrab,cRecurse): " ) ;_M
-                                OStEXTC( ostoRpt , off , 0 ) ;_M
-                                OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).pPanLifiRecurseGrabbedLevel[" ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).cKidThreads: " ) ;_M
+                            OStEXTC(  ostoRpt ,      thirdC::os_cAllKidThreadsI_IF( tin0P ) , 0 ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).pag1->_thirdC_.cAllKidThreads: " ) ;_M
+                            }
+                                }}
+                                    OStEXTC( ostoRpt , ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel[ off + 3 ] , 0 ) ;_M
+                                    OStEXTAK( ostoRpt , " " ) ;_M
+                                    OStEXTC( ostoRpt , ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel[ off + 2 ] , 0 ) ;_M
+                                    OStEXTAK( ostoRpt , " " ) ;_M
+                                    OStEXTC( ostoRpt , ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel[ off + 1 ] , 0 ) ;_M
+                                    OStEXTAK( ostoRpt , " " ) ;_M
+                                    OStEXTC( ostoRpt , ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel[ off + 0 ] , 0 ) ;_M
+                                    OStEXTAK( ostoRpt , "](pandle,idLineGrab,idiFileGrab,cRecurse): " ) ;_M
+                                    OStEXTC( ostoRpt , off , 0 ) ;_M
+                                    OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).pPanLifiRecurseGrabbedLevel[" ) ;_M
+                                {
+                                {for( countT off = 0 ; off < sizeof ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel / sizeof ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel[ 0 ] ; off += 5 )
+                                }}
+                                    OStEXTC( ostoRpt , ((tin9S&)tin0Snap).pcUtility[ off ] , 0 ) ;_M
+                                    OStEXTAK( ostoRpt , "]: " ) ;_M
+                                    OStEXTC( ostoRpt , off , 0 ) ;_M
+                                    OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).pc" "Utility[" ) ;_M
+                                {
+                                {for( countT off = 0 ; off < sizeof ((tin9S&)tin0Snap).pcUtility / sizeof ((tin9S&)tin0Snap).pcUtility[ 0 ] ; off ++ )
                             {
-                            {for( countT off = 0 ; off < sizeof ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel / sizeof ((tin9S&)tin0Snap).pPanLifiRecurseGrabbedLevel[ 0 ] ; off += 5 )
-                            }}
-                                OStEXTC( ostoRpt , ((tin9S&)tin0Snap).pcUtility[ off ] , 0 ) ;_M
-                                OStEXTAK( ostoRpt , "]: " ) ;_M
-                                OStEXTC( ostoRpt , off , 0 ) ;_M
-                                OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).pc" "Utility[" ) ;_M
-                            {
-                            {for( countT off = 0 ; off < sizeof ((tin9S&)tin0Snap).pcUtility / sizeof ((tin9S&)tin0Snap).pcUtility[ 0 ] ; off ++ )
+                            if( tin0Snap.idTypeTin == ifcIDtYPEtIN_FULL )
                             }}
                                 OStEXTC( ostoRpt , rootAdamGlobal1I._etherC_.pcUtility[ off ] , 0 ) ;_M
                                 OStEXTAK( ostoRpt , "]: " ) ;_M
@@ -438,13 +442,13 @@
                             OStEXTC(  ostoRpt ,     ((tin9S&)tin0Snap).brcLath , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\nbrcLath: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin9S&)tin0Snap).cGrabitC_unregistered , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).cGrabitC_unregistered: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).cGrabitC_unregistered: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin9S&)tin0Snap).cGrabitC_registered , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).cGrabitC_registered: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).cGrabitC_registered: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin9S&)tin0Snap).cGrabitC_reset , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).cGrabitC_reset: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).cGrabitC_reset: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin9S&)tin0Snap).cGrabitC_set , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).cGrabitC_set: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).cGrabitC_set: " ) ;_M
                             OStEXTC(  ostoRpt ,      ((tin9S&)tin0Snap).monitor.cGrabbed , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\ncGrabbed: " ) ;_M
 
@@ -460,17 +464,17 @@
                             OStEXTAK( ostoRpt , "\r\nprocessGlobal2I.idLineBlammo: " ) ;_M
 
                             OStEXTC(  ostoRpt ,   ((tin9S&)tin0Snap).pag1->idBlammo , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).pag1->idBlammo: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).pag1->idBlammo: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin9S&)tin0Snap).pag1->idiFileBlammoCt , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).pag1->idiFileBlammoCt: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).pag1->idiFileBlammoCt: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin9S&)tin0Snap).pag1->idLineBlammoCt , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).pag1->idLineBlammoCt: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).pag1->idLineBlammoCt: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin9S&)tin0Snap).pag1->idiFileBlammo , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).pag1->idiFileBlammo: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).pag1->idiFileBlammo: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin9S&)tin0Snap).pag1->idLineBlammo , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).pag1->idLineBlammo: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).pag1->idLineBlammo: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin9S&)tin0Snap).pag1->flagsAdamState , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tinBaseP).pag1->flagsAdamState: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin9S&)tin0P).pag1->flagsAdamState: " ) ;_M
                             OStEXTC(  ostoRpt , bCleanFailed , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\nbCleanFailed: " ) ;_M
                             else                 { OStEXTC(  ostoRpt ,      (const countT)*((tin9S&)tin0Snap).pPoop , 0 ) ;_M }
@@ -511,9 +515,12 @@
                                     OStEXTAK( ostoRpt , "\r\ncodes [-8,7]: " ) ;_M
                                 {_M
                             
-                                OStEXTAK( ostoRpt , ")" ) ;_M
-                                OStEXTC(  ostoRpt , (countT)tellInfoSys.pvOffendingCode - ((tin9S&)tin0Snap).pEIPInNest[ ((tin9S&)tin0Snap).monitor.cInNest & OFFsLOTtINnESTmAX ] , 0 ) ;_M
-                                OStEXTAK( ostoRpt , " (offset from in: " ) ;_M
+                                }
+                                    OStEXTAK( ostoRpt , ")" ) ;_M
+                                    OStEXTC(  ostoRpt , (countT)tellInfoSys.pvOffendingCode - ((tin9S&)tin0Snap).pEIPInNest[ ((tin9S&)tin0Snap).monitor.cInNest & OFFsLOTtINnESTmAX ] , 0 ) ;_M
+                                    OStEXTAK( ostoRpt , " (offset from in: " ) ;_M
+                                {
+                                if( tin0Snap.idTypeTin == ifcIDtYPEtIN_FULL )
                                 OStEXTC(  ostoRpt , tellInfoSys.pvOffendingCode , 0 ) ;_M
                                 OStEXTAK( ostoRpt , " at " ) ;_M
                             {_M
@@ -571,7 +578,7 @@
                     }
                         Sleep( TUCK ) ;_M //SIMPLE, TO AVOID A NESTED EXCEPTION
                     {_M
-                    while( setIfZeAM( processGlobal2I.osTidReportingException , ((tin9S&)tinBaseP).osTid ) )
+                    while( setIfZeAM( processGlobal2I.osTidReportingException , ((tin9S&)tin0P).osTid ) )
                     //TO AVOID NESTED EXCEPTION, DON'T DO THIS: _IO_
                 {_M
                 if( !bFixed || !bQuiet )
@@ -604,7 +611,7 @@
                         //                 ( bFixed && ebpAtRestart && ebpAtRestart < (countT)((tin9S*)pTin)->pClean )
                         //             (
                         //             if
-                        //             tin0S& tinBaseP = *pTin ; //THIS IS JUST FOR THE CONoUTrAW CALLS
+                        //             tin0S& tin0P = *pTin ; //THIS IS JUST FOR THE CONoUTrAW CALLS
                         //         {
                         //         while( ((tin9S*)pTin)->pClean )
                         // 
@@ -632,19 +639,19 @@
                         //         //THINK: THIS CODE WAS WRITTEN MAINLY TO SERVE AS AN EXAMPLE OF HOW TO USE cleanC TO PERFORM CLEANUP DURING RESTART
                         //         //20171003@1354:  CONJECTURE: THE INTENT HERE IS TO DESTROY tin9S INSTANCES CONSTRUCTED ON THE STACK WITHIN THE RESTART BLOCK
                         // 
-                        //         tin0S* pTin = &tinBaseP ;
+                        //         tin0S* pTin = &tin0P ;
                         //         //CONoUTrAW( "osExceptionHandlerWorkIF: clean +\r\n" ) ;
                         // 
-                        //         if( !bFixed ) ((tin9S&)tinBaseP).cKidThreads = 0 ;
-                        //         if( &tinBaseP != pTinMainI ) { BLAMMO ; }
+                        //         if( !bFixed ) ((tin9S&)tin0P).cKidThreads = 0 ;
+                        //         if( &tin0P != pTinMainI ) { BLAMMO ; }
                         //         TINSL
                         //     {
                         //     ZE( countT , cDeleted ) ;
                         // 
                         //     ;
-                        //         : ( pTinF() = pTinMainI , &tinBaseP )
+                        //         : ( pTinF() = pTinMainI , &tin0P )
                         //         ? 0
-                        //     tin0S* pTinSave = &tinBaseP == pTinMainI
+                        //     tin0S* pTinSave = &tin0P == pTinMainI
                         // {_M
                         // else
                         // 20171003@1405:  COMMENTED THIS OUT TO WORK AROUND INSTABILITY DURING EXCEPTION HANDLING.  REWRITE IF cleanC SUPPORT IS EVER NEEDED.  THIS cleanC FUNCTIONALITY IS REALLY A DOODLE THAT ISN'T NEEDED FOR IPDOS (tm) TO WORK
@@ -665,7 +672,7 @@
                 //U::ISSUE: IF THE EXCEPTION IS NOT ON MAIN THREAD THEN THIS WILL NOT CLEAN UP THE INTENDED ITEMS FOR DLL TERMINATION
 
                 }
-                    processGlobal2I.osTidTerminator = ((tin9S&)tinBaseP).brcRaw ;
+                    processGlobal2I.osTidTerminator = ((tin9S&)tin0P).brcRaw ;
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , GetCurrentThreadId() )
                     processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_EXCEPTIONnOThANDLED ;
@@ -710,11 +717,11 @@
                     }
                         pr = pr->prD ;_M
 
-                        else if( pr->bAcceptF( &tinBaseP , tellInfoSys ) ) break ;
+                        else if( pr->bAcceptF( &tin0P , tellInfoSys ) ) break ;
                              if( F(pr->flags) & flRESTARTc_SKIP    ) ;
                     {_M
                     while( pr )
-                    pr = ((tin9S&)tinBaseP).pRestart ;_M
+                    pr = ((tin9S&)tin0P).pRestart ;_M
                     restartC* pr ;_M
                     //TELL( "osExceptionHandlerWorkIF/looking for a restartC" )
                     _IO_
@@ -778,8 +785,8 @@
                         //}
                         //    THREADmODE2rESTORE
                         //    }
-                        //        ++ s ; dosSleepIF( tinBaseP , cCodeReadRetries == 1 ? TUCK * 0x40 : TOCK ) ;
-                        //        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        //        ++ s ; dosSleepIF( tin0P , cCodeReadRetries == 1 ? TUCK * 0x40 : TOCK ) ;
+                        //        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                         //    {
                         //    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
                         //    LOGrAW5( "i will nap and then retry " , cCodeReadRetries , " to read code at " , tellInfoSys.pcInfo[ 1 ] , "\r\n" ) ;
@@ -858,17 +865,17 @@
                 const boolT bDriver = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_DRIVER ) ;_M
             {_M
         {_M
-        scoopC _scoop( tinBaseP , LF , _poop , flSCOOPc_DOnOTcHECKtINiD ) ;_M
+        scoopC _scoop( tin0P , LF , _poop , flSCOOPc_DOnOTcHECKtINiD ) ;_M
         poopC _poop( flPOOP_null ) ;_M
         static countT cCodeReadRetries ;
 
         const tin0S&        tin0Snap = *(tin0S*)tellInfoSys.pbTin ;
-        tellInfoSysExceptionS& tellInfoSys = *((tin9S&)tinBaseP).pzTieLath ;_M
+        tellInfoSysExceptionS& tellInfoSys = *((tin9S&)tin0P).pzTieLath ;_M
 
         //TELL( "osExceptionHandlerWorkIF/+" )
-        //A: ASSUME: ((tin9S&)tinBaseP).pzTieLath POINTS TO A STRUCTURE THAT CONTAINS AN IMAGE OF tinBaseP AT EXCEPTION EVENT TIME
+        //A: ASSUME: ((tin9S&)tin0P).pzTieLath POINTS TO A STRUCTURE THAT CONTAINS AN IMAGE OF tin0P AT EXCEPTION EVENT TIME
     {
-    if( ((tin9S&)tinBaseP).pzTieLath )
+    if( ((tin9S&)tin0P).pzTieLath )
     ZE( boolT , bFixed ) ;
     _IO_
 
@@ -888,9 +895,9 @@
 
 #define ADVICEdFLT ADVICE( ostoSuspectDflt , "Use the Services icon to stop the IdeaFarm driver.\r\nReboot if necessary.  Start the driver." , "" )
 
- thirdC::c_strncpyIF( tinBaseP , tellInfoSys.postFix2    , postFix2P    , sizeof tellInfoSys.postFix2    ) ;
- thirdC::c_strncpyIF( tinBaseP , tellInfoSys.postFix1    , postFix1P    , sizeof tellInfoSys.postFix1    ) ;  \
- thirdC::c_strncpyIF( tinBaseP , tellInfoSys.postSuspect , postSuspectP , sizeof tellInfoSys.postSuspect ) ;  \
+ thirdC::c_strncpyIF( tin0P , tellInfoSys.postFix2    , postFix2P    , sizeof tellInfoSys.postFix2    ) ;
+ thirdC::c_strncpyIF( tin0P , tellInfoSys.postFix1    , postFix1P    , sizeof tellInfoSys.postFix1    ) ;  \
+ thirdC::c_strncpyIF( tin0P , tellInfoSys.postSuspect , postSuspectP , sizeof tellInfoSys.postSuspect ) ;  \
                                                                                                     \
 #define ADVICE(postSuspectP,postFix1P,postFix2P)                                                    \
 

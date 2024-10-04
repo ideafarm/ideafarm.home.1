@@ -10,33 +10,33 @@
 REST
 
 }
-    etThread.delF( tinBaseP , psttPeer ) ;
-    etThread.strokeF( tinBaseP , T("peer: ")+T("\r\n") ) ;
-    etThread.strFromIdPortNicNameF( tinBaseP , psttPeer , idpPeer , nnPeer ) ; ___( psttPeer ) ;
+    etThread.delF( tin0P , psttPeer ) ;
+    etThread.strokeF( tin0P , T("peer: ")+T("\r\n") ) ;
+    etThread.strFromIdPortNicNameF( tin0P , psttPeer , idpPeer , nnPeer ) ; ___( psttPeer ) ;
     ZE( strokeS* , psttPeer ) ;
     //U::THIS DOES NOT WORK
     
     DEL( pso ) ;
     
-    etThread.delF( tinBaseP , postr ) ;
-    pso->writeF( tinBaseP , postr , costr ) ;
-    etThread.strokeF( tinBaseP , T("\r\n")+T(postr)+T("\r\n") ) ;
-    countT costr = etThread.strMakeF( tinBaseP , LF , postr , T("HTTP/1.1 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tinBaseP),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
+    etThread.delF( tin0P , postr ) ;
+    pso->writeF( tin0P , postr , costr ) ;
+    etThread.strokeF( tin0P , T("\r\n")+T(postr)+T("\r\n") ) ;
+    countT costr = etThread.strMakeF( tin0P , LF , postr , T("HTTP/1.1 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
     ZE( osTextT* , postr ) ;
     TN( tBody , "<pre>test page served over t-mobile from Wo'O Ideafarm\r\n\r\nclient " ) ; tBody += TF1(++idClient) ;
 
-    etThread.delF( tinBaseP , posti ) ;
-    etThread.strokeF( tinBaseP , T("\r\n")+T(posti)+T("\r\n") ) ;
-    pso->readToNullLineF( tinBaseP , posti , 0x10000 ) ; ___( posti ) ;
+    etThread.delF( tin0P , posti ) ;
+    etThread.strokeF( tin0P , T("\r\n")+T(posti)+T("\r\n") ) ;
+    pso->readToNullLineF( tin0P , posti , 0x10000 ) ; ___( posti ) ;
     ZE( osTextT* , posti ) ;
     
-    etThread.strokeF( tinBaseP , T("peer ip: ")+T(nnPeer)+T("\r\n") ) ;
-    pso->peerNameF( tinBaseP , idpPeer , nnPeer ) ;
+    etThread.strokeF( tin0P , T("peer ip: ")+T(nnPeer)+T("\r\n") ) ;
+    pso->peerNameF( tin0P , idpPeer , nnPeer ) ;
     nicNameC nnPeer ;
     ZE( countT , idpPeer ) ;
     
-    etThread.strokeF( tinBaseP , T("a client connected\r\n") ) ;
-    sli.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ;
+    etThread.strokeF( tin0P , T("a client connected\r\n") ) ;
+    sli.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ;
     ZE( countT , idPortPeer ) ;
     nicNameC nnPeer ;
     ZE( socketC* , pso ) ;
@@ -44,10 +44,10 @@ REST
 while( !ether )
 ZE( countT , idClient ) ;
 
-etThread.strokeF( tinBaseP , T("listening on port ")+TF4(idp,flFORMAT_null,0,0xa)+T("\r\n") ) ;
-sli.listenF( tinBaseP ) ;
-countT idp = sli.bindF( tinBaseP , /*80*/1273 ) ;
-socketC sli( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+etThread.strokeF( tin0P , T("listening on port ")+TF4(idp,flFORMAT_null,0,0xa)+T("\r\n") ) ;
+sli.listenF( tin0P ) ;
+countT idp = sli.bindF( tin0P , /*80*/1273 ) ;
+socketC sli( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 TODO
 

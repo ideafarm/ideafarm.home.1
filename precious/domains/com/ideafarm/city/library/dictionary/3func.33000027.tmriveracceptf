@@ -12,8 +12,8 @@ DONE( tmRiverAcceptF )
     TELL( "tmRiverAcceptF: cleaning up" )
     }
         }
-            ++ s ; etThread.osSleepF( tinBaseP , TOCK ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
     {
     while( !ether && !etThread && cClients )
@@ -22,25 +22,25 @@ DONE( tmRiverAcceptF )
     }
         }
             else                                   { DEL( pso ) ; }
-            if( !bDestroy && !ether && !etThread ) { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmRiverServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&bDestroy , (countT)pso , (countT)pRiver , (countT)&cClients ) ; }
+            if( !bDestroy && !ether && !etThread ) { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmRiverServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&bDestroy , (countT)pso , (countT)pRiver , (countT)&cClients ) ; }
             TELL( "launching a thread to serve connection" )
             __( bRefuse ) ;
-            in.acceptF( tinBaseP , pso , idPortPeer , nnPeer , bRefuse ) ;
+            in.acceptF( tin0P , pso , idPortPeer , nnPeer , bRefuse ) ;
             ZE( boolT , bRefuse ) ;
             ZE( countT , idPortPeer ) ;
             nicNameC nnPeer ;
             TELL( "waiting for a host to connect" )
             }
-                sgnReady.giveF( tinBaseP ) ;
+                sgnReady.giveF( tin0P ) ;
                 bSgnGiven = 1 ;
             {
             if( !bSgnGiven )
             ZE( socketC* , pso ) ;
         {
         while( !POOP && !bDestroy )
-        in.listenF( tinBaseP ) ;
-        in.bindF( tinBaseP , idPort ) ;
-        socketC in( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+        in.listenF( tin0P ) ;
+        in.bindF( tin0P , idPort ) ;
+        socketC in( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         TELL( "setting up a new or replacement socket" )
     {
     while( !ether && !bDestroy )

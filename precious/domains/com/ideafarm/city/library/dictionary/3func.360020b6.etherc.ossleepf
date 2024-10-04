@@ -10,18 +10,18 @@
 }
     }
         }
-            if( F(flagsP) & flSLEEP_TALK ) strokeF( tinBaseP , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT) ) ;_WQ
-            sleepEndF( tinBaseP ) ;_WQ
-            ++ s ; third.dosSleepIF( tinBaseP , timeGrain , timeGrain ) ;_WQ
-            sleepStartF( tinBaseP ) ;_WQ
+            if( F(flagsP) & flSLEEP_TALK ) strokeF( tin0P , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT) ) ;_WQ
+            sleepEndF( tin0P ) ;_WQ
+            ++ s ; third.dosSleepIF( tin0P , timeGrain , timeGrain ) ;_WQ
+            sleepStartF( tin0P ) ;_WQ
             }
-                delF( tinBaseP , psttw ) ;_WQ
-                strokeF( tinBaseP , T("")+S2(0,scOld_SYSmARK)+T(psttw) ) ;_WQ
-                strFromTimeF( tinBaseP , psttw , time1 , time2 ) ; ___( psttw ) ;_WQ
+                delF( tin0P , psttw ) ;_WQ
+                strokeF( tin0P , T("")+S2(0,scOld_SYSmARK)+T(psttw) ) ;_WQ
+                strFromTimeF( tin0P , psttw , time1 , time2 ) ; ___( psttw ) ;_WQ
                 ZE( strokeS* , psttw ) ;_WQ
             {
             if( F(flagsP) & flSLEEP_TALK )
-            osTimeSubtractF( tinBaseP , time1 , time2 , timeGrain , 0 ) ;_WQ
+            osTimeSubtractF( tin0P , time1 , time2 , timeGrain , 0 ) ;_WQ
         {
         while( !POOP && time2 >= 0 )
 
@@ -32,7 +32,7 @@
         if( !time2P && timeGrain > time1P ) timeGrain = time1P ;_WQ
         if( !timeGrain ) timeGrain = TOCK ;_WQ
         countT timeGrain = timeGrain1P ;_WQ
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;_WQ
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;_WQ
     {
     if( !( F(flagsMode) & flTHIRDmODE_TESTaUTO ) || F(flagsP) & flSLEEP_IGNORE_flTHIRDmODE_TESTaUTO || F(flagsMode) & flTHIRDmODE_TESTaUTOdOsLEEPS )
 
@@ -45,12 +45,12 @@
         __( timeGrain2P ) ;_WQ
         if( POOP ) return ;
 
-        if( POOP && this != &etPrimeIF( tinBaseP ) ) { BLAMMO ; }  // PREVENTS CPU PEGGING; WILL GET BLAMMO INSTEAD
+        if( POOP && this != &etPrimeIF( tin0P ) ) { BLAMMO ; }  // PREVENTS CPU PEGGING; WILL GET BLAMMO INSTEAD
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::osSleepF( tin0S& tinBaseP , const countT time1P , const sCountT time2P , const countT timeGrain1P , const sCountT timeGrain2P , const flagsT flagsP )/*1*/
+/*1*/voidT etherC::osSleepF( tin0S& tin0P , const countT time1P , const sCountT time2P , const countT timeGrain1P , const sCountT timeGrain2P , const flagsT flagsP )/*1*/
 /**/
 */
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.001004b.flSLEEP!||

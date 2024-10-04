@@ -35,10 +35,10 @@
                     }
                         adjustOldPairF( *pSw_idCursor , *(plateS**)&(countT&)*pSw_ppCursor , idSlotTargetP , idActionP ) ;
                         if( *pLeverLathRef == save ) continue ;
-                        *pLeverLathRef = pSw_ppCursor->leverF( tinBaseP , idf ) ;
+                        *pLeverLathRef = pSw_ppCursor->leverF( tin0P , idf ) ;
                     {
                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                    cFlavors = pSw_ppCursor->cFlavorsF( tinBaseP ) ;
+                    cFlavors = pSw_ppCursor->cFlavorsF( tin0P ) ;
         
                     }}
                         adjustOldPairF( *pSw_idLathRef , *(plateS**)&(countT&)*pSw_ppLathRef , idSlotTargetP , idActionP ) ;
@@ -48,10 +48,10 @@
                         //countT  leverUsed = *pLeverLathRef ;
 
                         if( *pLeverLathRef == save ) continue ;
-                        *pLeverLathRef = pSw_ppLathRef->leverF( tinBaseP , idf ) ;
+                        *pLeverLathRef = pSw_ppLathRef->leverF( tin0P , idf ) ;
                     {
                     {for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                    countT cFlavors = pSw_ppLathRef->cFlavorsF( tinBaseP ) ;
+                    countT cFlavors = pSw_ppLathRef->cFlavorsF( tin0P ) ;
         
                     countT save = *pLeverLathRef ;
                 {
@@ -104,7 +104,7 @@
     CURSOR
     _INbATON_
 {
-/*1*/voidT stackC::adjustRefsF( tin0S& tinBaseP , countT idSlotTargetP , const countT idActionP , plateS* ppNewP )/*1*/
+/*1*/voidT stackC::adjustRefsF( tin0S& tin0P , countT idSlotTargetP , const countT idActionP , plateS* ppNewP )/*1*/
 
 /**/
 */

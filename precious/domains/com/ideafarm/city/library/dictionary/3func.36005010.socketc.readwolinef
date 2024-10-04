@@ -13,31 +13,31 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        ((tin9S&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
-        pOdometer->cbWrite += ((tin9S&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tin9S&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*((tin9S&)tinBaseP).pag3->_socketC_.pSwOdometer ;
-        ((tin9S&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
-        ((tin9S&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ((tin9S&)tin0P).pag3->_socketC_.grab.ungrabF( tin0P ) ;
+        pOdometer->cbWrite += ((tin9S&)tin0P).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tin9S&)tin0P).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tin9S&)tin0P).pag3->_socketC_.pSwOdometer ;
+        ((tin9S&)tin0P).pag3->_socketC_.nnLever = nnPeer ;
+        ((tin9S&)tin0P).pag3->_socketC_.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
-        bRead.ungrabF( tinBaseP ) ;
+        bRead.ungrabF( tin0P ) ;
     
         if( idleTimeAllowedRead ) FRESHtIMEaTOMIC( *pEther , timeLathRead.time1 , timeLathRead.time2 )
     
-        if( !ostEscaped && !psttP ) { pEther->strMakeF( tinBaseP , LF , psttP , T("") ) ; ___( psttP ) ; }
+        if( !ostEscaped && !psttP ) { pEther->strMakeF( tin0P , LF , psttP , T("") ) ; ___( psttP ) ; }
         }
             }
-                pEther->strFuseF( tinBaseP , psttP , psttIn , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ csttEstimateP ) ; ___( psttP ) ;
+                pEther->strFuseF( tin0P , psttP , psttIn , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ csttEstimateP ) ; ___( psttP ) ;
                 psttIn[ CSpREFIX ] = bIn ;
             {
             else
             }
                 break ;
                 }
-                    readF( tinBaseP , &bIn , 1 ) ;
+                    readF( tin0P , &bIn , 1 ) ;
                 {
                 if( bIn == '\n' )
-                peekF( tinBaseP , &bIn , 1 ) ;
+                peekF( tin0P , &bIn , 1 ) ;
             {
             else if( bIn == '\r' )
             if( bIn == '\n' ) break ;
@@ -63,23 +63,23 @@
             {
             if( bWoth )
     
-            readF( tinBaseP , &bIn , 1 ) ;
+            readF( tin0P , &bIn , 1 ) ;
     
             if( !psttP[ 2 ].idAdam ) break ; //csttExtra (see s*.GETpREFIX)
         {
         if( psttP ) while( !*pEther )
         boolT bWoth = 1 ; //U:: TO FIND A BUG
-        pEther->strMakeF( tinBaseP , LF , psttP , 0 , csttEstimateP ) ; ___( psttP ) ;
+        pEther->strMakeF( tin0P , LF , psttP , 0 , csttEstimateP ) ; ___( psttP ) ;
         boolT bLookForEscape = !!postEscapeP ;
         psttIn[ CSpREFIX ] = 0 ;
         SETpREFIX( psttIn , 1 , 0 ) ;
         strokeS psttIn[ CSpREFIX + 1 ] ;
         ZE( byteT , bIn ) ;
         _IO_
-        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = ((tin9S&)tinBaseP).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tin9S&)tinBaseP).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tin9S&)tin0P).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tin9S&)tin0P).odoSockCbRead  ;
     
         }
             }
@@ -101,7 +101,7 @@
     ZE( osTextT , ostEscaped ) ;
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/osTextT socketC::readWoLineF( tin0S& tinBaseP , strokeS*& psttP , const countT csttEstimateP , const osTextT* const postEscapeP )/*1*/
+/*1*/osTextT socketC::readWoLineF( tin0S& tin0P , strokeS*& psttP , const countT csttEstimateP , const osTextT* const postEscapeP )/*1*/
 
 //U::NOTE I ALLREADY HAVE THE OTHER OVERLOAD
 //U::REWRITE TO ELIMINATE csttEstimateP

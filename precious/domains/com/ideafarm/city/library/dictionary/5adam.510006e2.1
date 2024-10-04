@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     }
         POOPR
         }
             __1
-            etThread.traceF( tinBaseP , T("got   [vv]:    ")+TF2(vv2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , T("got   [vv]:    ")+TF2(vv2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             countT vv2 = *(countT*)(const byteT*)page2 ;
             pageC page2 = jotFoo ;
         {    
@@ -25,7 +25,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         POOPR
         }
             __1
-            etThread.traceF( tinBaseP , T("got   [vv]:    ")+TF2(vv1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , T("got   [vv]:    ")+TF2(vv1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             countT vv1 = *(countT*)(const byteT*)page1 ;
             pageC page1 = jotFoo ;
         {    
@@ -35,8 +35,8 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     IFsCRATCH
 
     }
-        etThread.traceF( tinBaseP , T("wrote [idJot,vv]:    ")+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(vv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        countT idJot = jotFoo.writeF( tinBaseP , (byteT*)&vv , sizeof vv ) ;
+        etThread.traceF( tin0P , T("wrote [idJot,vv]:    ")+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(vv,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        countT idJot = jotFoo.writeF( tin0P , (byteT*)&vv , sizeof vv ) ;
 
         }
             vv |= ido ;
@@ -48,7 +48,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     {
     for( countT ido = 1 ; ido <= 2 ; ido ++ )
 
-    jotC jotFoo( tinBaseP , "foo" , flJOTc_WRITE | flJOTc_DELETE | flJOTc_DOnOTrEGISTER ) ;
+    jotC jotFoo( tin0P , "foo" , flJOTc_WRITE | flJOTc_DELETE | flJOTc_DOnOTrEGISTER ) ;
 {
 
 TODO

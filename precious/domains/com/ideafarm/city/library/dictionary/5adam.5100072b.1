@@ -10,15 +10,15 @@
 REST
 
 }
-    display.set_pDeviceCBF_F( tinBaseP , pDeviceNewCBF , cArgNew , pDeviceOldCBF , cArgOld ) ;
+    display.set_pDeviceCBF_F( tin0P , pDeviceNewCBF , cArgNew , pDeviceOldCBF , cArgOld ) ;
     ZE( countT     , cArgNew       ) ;
     ZE( deviceCBFT , pDeviceNewCBF ) ;
 
-    etherC::loafIF( tinBaseP ) ;
+    etherC::loafIF( tin0P ) ;
 
-    display.ungrabF( tinBaseP ) ;
+    display.ungrabF( tin0P ) ;
 
-    display.set_pDeviceCBF_F( tinBaseP , pDeviceOldCBF , cArgOld , deviceCBF , (countT)pcArg ) ;
+    display.set_pDeviceCBF_F( tin0P , pDeviceOldCBF , cArgOld , deviceCBF , (countT)pcArg ) ;
     ZE( countT     , cArgOld       ) ;
     ZE( deviceCBFT , pDeviceOldCBF ) ;
 
@@ -29,23 +29,23 @@ REST
     eye += surf ;
 
     }
-        eye.moveF( tinBaseP , vDeltaAt , aBad ) ;
-        vectorOldC vDeltaAt( tinBaseP , etThread ) ;
+        eye.moveF( tin0P , vDeltaAt , aBad ) ;
+        vectorOldC vDeltaAt( tin0P , etThread ) ;
         }
             aBad = 0 ;
             //aBad = PI / 2.0 ;
-            //aBad = etThread.strDigitsToMeasureF( tinBaseP , tStr , 0 , 0 ) ;
+            //aBad = etThread.strDigitsToMeasureF( tin0P , tStr , 0 , 0 ) ;
             //TN( tStr , "100+^bf1291." ) ;
         {
         ZE( measureT , aBad ) ;
     {
-    eyeC eye( tinBaseP , etThread ) ;
+    eyeC eye( tin0P , etThread ) ;
 
     surf += paper ;
-    surfC surf( tinBaseP , etThread , 0 , surfaceCBF , (countT)&sin , 0 , 0 , flSURFc_NOsMOOTHIES ) ;
+    surfC surf( tin0P , etThread , 0 , surfaceCBF , (countT)&sin , 0 , 0 , flSURFc_NOsMOOTHIES ) ;
     surfS sin ;
 
-    display.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    display.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     displayC& display = *pDisplay ;
 {
@@ -53,8 +53,8 @@ if( pDisplay )
 displayC* pDisplay = displayC::pDisplayIF() ;
 
 }
-    etThread.delF( tinBaseP , psttSay ) ;
-    paperBW.strokeF( tinBaseP , psttSay ) ;
+    etThread.delF( tin0P , psttSay ) ;
+    paperBW.strokeF( tin0P , psttSay ) ;
 
         }
             scSize += DELTA ;
@@ -78,14 +78,14 @@ displayC* pDisplay = displayC::pDisplayIF() ;
     APPENDcc( psttSay , sc_PUSHdETACH , 0 , 0 ) ;
     APPENDcc( psttSay , sc_cPUSHiDgRID , 3 , 0 ) ;
 
-    etThread.strMakeF( tinBaseP , LF , psttSay , 0 , TOCK ) ; ___( psttSay ) ;
+    etThread.strMakeF( tin0P , LF , psttSay , 0 , TOCK ) ; ___( psttSay ) ;
     ZE( strokeS* , psttSay ) ;
 {
-paperC paperBW( tinBaseP , etThread , TUCK , TUCK ) ;
+paperC paperBW( tin0P , etThread , TUCK , TUCK ) ;
 
 }
-    etThread.delF( tinBaseP , psttSay ) ;
-    paper.strokeF( tinBaseP , psttSay ) ;
+    etThread.delF( tin0P , psttSay ) ;
+    paper.strokeF( tin0P , psttSay ) ;
 
     #endif
 
@@ -187,10 +187,10 @@ paperC paperBW( tinBaseP , etThread , TUCK , TUCK ) ;
     APPENDcc( psttSay , sc_PUSHdETACH , 0 , 0 ) ;
     APPENDcc( psttSay , sc_cPUSHiDgRID , 3 , 0 ) ;
 
-    etThread.strMakeF( tinBaseP , LF , psttSay , 0 , TOCK ) ; ___( psttSay ) ;
+    etThread.strMakeF( tin0P , LF , psttSay , 0 , TOCK ) ; ___( psttSay ) ;
     ZE( strokeS* , psttSay ) ;
 {
-paperC paper( tinBaseP , etThread , TUCK , TUCK ) ;
+paperC paper( tin0P , etThread , TUCK , TUCK ) ;
 
 TODO
 
@@ -199,37 +199,37 @@ TODO
     }
         }
             break ;
-            etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("A") ) ;
+            etherC::etRockIF( tin0P ).traceF( tin0P , T("A") ) ;
 
             }
-                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("B") ) ;
-                ((tin9S&)tinBaseP).pEther->etherWhereF( tinBaseP , ifcIDaCTIONwHERE_UNWATCH ) ;
-                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("C") ) ;
-                //eyeP.moveF( tinBaseP , vDeltaAt , - PI / ( TUCK << 2 ) , - PI / ( TUCK << 2 ) , - PI / ( TUCK << 2 ) ) ;
-                //eyeP.moveF( tinBaseP , vDeltaAt , - PI / ( TUCK >> 2 ) , - PI / ( TUCK >> 2 ) , - PI / ( TUCK >> 2 ) ) ;
+                etherC::etRockIF( tin0P ).traceF( tin0P , T("B") ) ;
+                ((tin9S&)tin0P).pEther->etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;
+                etherC::etRockIF( tin0P ).traceF( tin0P , T("C") ) ;
+                //eyeP.moveF( tin0P , vDeltaAt , - PI / ( TUCK << 2 ) , - PI / ( TUCK << 2 ) , - PI / ( TUCK << 2 ) ) ;
+                //eyeP.moveF( tin0P , vDeltaAt , - PI / ( TUCK >> 2 ) , - PI / ( TUCK >> 2 ) , - PI / ( TUCK >> 2 ) ) ;
 
                 #endif
-                    eyeP.moveF( tinBaseP , vDeltaAt /*, 0.0 , 0.0*/ , + PI / ( TUCK >> 0 ) ) ;
+                    eyeP.moveF( tin0P , vDeltaAt /*, 0.0 , 0.0*/ , + PI / ( TUCK >> 0 ) ) ;
                 #elif defined( MOVE )
-                    eyeP.moveF( tinBaseP , vDeltaAt /*, 0.0 , 0.0*/ , + PI / ( TUCK >> 2 ) ) ;
+                    eyeP.moveF( tin0P , vDeltaAt /*, 0.0 , 0.0*/ , + PI / ( TUCK >> 2 ) ) ;
                 #if defined( JERK )
-                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("D") ) ;
+                etherC::etRockIF( tin0P ).traceF( tin0P , T("D") ) ;
 
-                //AOK: eyeP.moveF( tinBaseP , vDeltaAt , 0 , 0 , - PI / ( TUCK >> 0 ) ) ;
-                //AOK: eyeP.moveF( tinBaseP , vDeltaAt , 0 , - PI / ( TUCK >> 0 ) , 0 ) ;
-                //AOK: eyeP.moveF( tinBaseP , vDeltaAt , - PI / ( TUCK >> 0 ) , 0 , 0 ) ;
+                //AOK: eyeP.moveF( tin0P , vDeltaAt , 0 , 0 , - PI / ( TUCK >> 0 ) ) ;
+                //AOK: eyeP.moveF( tin0P , vDeltaAt , 0 , - PI / ( TUCK >> 0 ) , 0 ) ;
+                //AOK: eyeP.moveF( tin0P , vDeltaAt , - PI / ( TUCK >> 0 ) , 0 , 0 ) ;
 
-                ((tin9S&)tinBaseP).pEther->etherWhereF( tinBaseP , ifcIDaCTIONwHERE_WATCH ) ;
-                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("E") ) ;
-                vectorOldC vDeltaAt( tinBaseP , *((tin9S&)tinBaseP).pEther ) ;
-                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("F") ) ;
+                ((tin9S&)tin0P).pEther->etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;
+                etherC::etRockIF( tin0P ).traceF( tin0P , T("E") ) ;
+                vectorOldC vDeltaAt( tin0P , *((tin9S&)tin0P).pEther ) ;
+                etherC::etRockIF( tin0P ).traceF( tin0P , T("F") ) ;
             {
             #endif
                 if( !( idIn % ( TUCK << 3 ) ) )
                 countT idIn = 1 + incv02AM( idInLath ) ;
                 static countT idInLath ;
             #if defined( JERK )
-            etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("G") ) ;
+            etherC::etRockIF( tin0P ).traceF( tin0P , T("G") ) ;
 
             #endif
 
@@ -247,7 +247,7 @@ TODO
                 if( F(flagsP) & flDEVICEcbf_TOOsLOW && pPaperNowP != &paperBWP )
 
             #if defined( CHEAT )
-            etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("H") ) ;
+            etherC::etRockIF( tin0P ).traceF( tin0P , T("H") ) ;
         {
         case ifcIDeVENTdEVICEc_TICK :
     {
@@ -261,7 +261,7 @@ TODO
     countT*  pcDeviceArgP =  (countT*)cDeviceArgP ;
     _IO_
 {
-countT deviceCBF( tin0S& tinBaseP , const flagsT flagsP , deviceC& deviceP , const countT cDeviceArgP , const countT idEventP , const countT cEventArgP )
+countT deviceCBF( tin0S& tin0P , const flagsT flagsP , deviceC& deviceP , const countT cDeviceArgP , const countT idEventP , const countT cEventArgP )
 
 }
     if( toP.z ) ;
@@ -277,10 +277,10 @@ countT deviceCBF( tin0S& tinBaseP , const flagsT flagsP , deviceC& deviceP , con
     // SCALING
 
     }
-        toP.z = - mx * ((tin9S&)tinBaseP).brcm04Raw + mz * m1 ;
-        toP.x =   mx * m1 + mz * ((tin9S&)tinBaseP).brcm04Raw ;
+        toP.z = - mx * ((tin9S&)tin0P).brcm04Raw + mz * m1 ;
+        toP.x =   mx * m1 + mz * ((tin9S&)tin0P).brcm04Raw ;
         BOSmEASURE04( WHATgbo , sin( sinP.ah ) )
-        measure04T m1 = ((tin9S&)tinBaseP).brcm04Raw ;
+        measure04T m1 = ((tin9S&)tin0P).brcm04Raw ;
         BOSmEASURE04( WHATgbo , cos( sinP.ah ) )
 
         measureT mz = toP.z ;
@@ -289,10 +289,10 @@ countT deviceCBF( tin0S& tinBaseP , const flagsT flagsP , deviceC& deviceP , con
     // HEADING
 
     }
-        toP.z =   my * ((tin9S&)tinBaseP).brcm04Raw + mz * m1 ;
-        toP.y =   my * m1 - mz * ((tin9S&)tinBaseP).brcm04Raw ;
+        toP.z =   my * ((tin9S&)tin0P).brcm04Raw + mz * m1 ;
+        toP.y =   my * m1 - mz * ((tin9S&)tin0P).brcm04Raw ;
         BOSmEASURE04( WHATgbo , sin( - sinP.ae ) )
-        measure04T m1 = ((tin9S&)tinBaseP).brcm04Raw ;
+        measure04T m1 = ((tin9S&)tin0P).brcm04Raw ;
         BOSmEASURE04( WHATgbo , cos( - sinP.ae ) )
 
         measureT mz = toP.z ;
@@ -302,10 +302,10 @@ countT deviceCBF( tin0S& tinBaseP , const flagsT flagsP , deviceC& deviceP , con
 
     }
         toP.z = 0.0 ;
-        toP.y = - rx * ((tin9S&)tinBaseP).brcm04Raw + ry * m1 ;
-        toP.x =   rx * m1 + ry * ((tin9S&)tinBaseP).brcm04Raw ;
+        toP.y = - rx * ((tin9S&)tin0P).brcm04Raw + ry * m1 ;
+        toP.x =   rx * m1 + ry * ((tin9S&)tin0P).brcm04Raw ;
         BOSmEASURE04( WHATgbo , sin( sinP.ab ) )
-        measure04T m1 = ((tin9S&)tinBaseP).brcm04Raw ;
+        measure04T m1 = ((tin9S&)tin0P).brcm04Raw ;
         BOSmEASURE04( WHATgbo , cos( sinP.ab ) )
     {
     // BANK

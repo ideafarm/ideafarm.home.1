@@ -10,26 +10,26 @@
 REST
 
 }
-    etThread.loafIF( tinBaseP ) ;
+    etThread.loafIF( tin0P ) ;
 
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-        etThread.strokeF( tinBaseP , T("\r\n") ) ;
-        for( countT idg = 1 ; idg <= CgORILLAS && cToDo -- ; idg ++ ) etThread.strokeF( tinBaseP , TF3(pcTally[idg],flFORMAT_UNSIGNED,9) ) ;
-        etThread.strokeF( tinBaseP , TF1((measureT)grabMe.stat.cCollisions/(measureT)grabMe.stat.cAcquisitions)+T(" | ")+TF3(grabMe.stat.cAcquisitions,flFORMAT_UNSIGNED,9)+TF3(grabMe.stat.cCollisions,flFORMAT_UNSIGNED,9)+TF3(grabMe.stat.cCollisionsNew,flFORMAT_UNSIGNED,9)+T("| ") ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        etThread.strokeF( tin0P , T("\r\n") ) ;
+        for( countT idg = 1 ; idg <= CgORILLAS && cToDo -- ; idg ++ ) etThread.strokeF( tin0P , TF3(pcTally[idg],flFORMAT_UNSIGNED,9) ) ;
+        etThread.strokeF( tin0P , TF1((measureT)grabMe.stat.cCollisions/(measureT)grabMe.stat.cAcquisitions)+T(" | ")+TF3(grabMe.stat.cAcquisitions,flFORMAT_UNSIGNED,9)+TF3(grabMe.stat.cCollisions,flFORMAT_UNSIGNED,9)+TF3(grabMe.stat.cCollisionsNew,flFORMAT_UNSIGNED,9)+T("| ") ) ;
         countT cToDo = 0x6 ;
     {
     while( !ether && !etThread )
 
-    while( cGorillas -- ) etThread.osThreadF( tinBaseP , countTC() , tmGorillaF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&ru , (countT)&grabMe , (countT)pcTally ) ;
+    while( cGorillas -- ) etThread.osThreadF( tin0P , countTC() , tmGorillaF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&ru , (countT)&grabMe , (countT)pcTally ) ;
     countT cGorillas = CgORILLAS ;
 
-    etThread.strokeF( tinBaseP , T("idMe: ")+TF1(grabMe.idMe)+T("\r\n") ) ;
+    etThread.strokeF( tin0P , T("idMe: ")+TF1(grabMe.idMe)+T("\r\n") ) ;
 
-    etThread.memSetF( tinBaseP , (byteT*)pcTally , sizeof pcTally ) ;
+    etThread.memSetF( tin0P , (byteT*)pcTally , sizeof pcTally ) ;
     countT pcTally[ 1 + CgORILLAS ] ;
-    grabS  grabMe( tinBaseP , TAG( TAGiDnULL ) ) ;
+    grabS  grabMe( tin0P , TAG( TAGiDnULL ) ) ;
     ranUniC ru( TUCK , 1 ) ;
 {
 
@@ -41,21 +41,21 @@ DONE( tmGorillaF )
 THREADmODE2rESTORE
 }
     }
-        grabMe.ungrabF( tinBaseP ) ;
+        grabMe.ungrabF( tin0P ) ;
 
         //}
-        //    ++ s ; ether.osSleepF( tinBaseP , ru * ((tin9S&)tinBaseP).monitor.idThread ) ;
-        //    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //    ++ s ; ether.osSleepF( tin0P , ru * ((tin9S&)tin0P).monitor.idThread ) ;
+        //    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         //{
         //if( !( ru % 2 ) )
         //thirdC::dosWriteStdOutIF( post2 ) ;
 
         pcTally[ idMe ] ++ ;
 
-        grabMe.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
     while( !etThread && !ether )
-    const osTextT post2[] = { 'a' + ((tin9S&)tinBaseP).monitor.idThread % 26 , 0 } ;
+    const osTextT post2[] = { 'a' + ((tin9S&)tin0P).monitor.idThread % 26 , 0 } ;
 
     const countT idMe = 1 + incv02AM( idMeLath ) ;
     static countT idMeLath ;
@@ -66,7 +66,7 @@ THREADmODE2rESTORE
 {
 if( pTaskP && pTaskP->c1 )
 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_LAZIEST ) ;
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 TASK( tmGorillaF )
 
 countT idTrial ;

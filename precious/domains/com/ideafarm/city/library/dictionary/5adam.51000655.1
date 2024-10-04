@@ -10,28 +10,28 @@
 REST
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 3 ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 3 ) ;
     
     time1Lag = time1 ;
 
     }
-        etThread.delF( tinBaseP , posto ) ;
-        etThread.boxPutF( tinBaseP , T("///d/ideafarm.work/txt/calendar.ttt") , posto , costo ) ;
+        etThread.delF( tin0P , posto ) ;
+        etThread.boxPutF( tin0P , T("///d/ideafarm.work/txt/calendar.ttt") , posto , costo ) ;
 
-        etThread.delF( tinBaseP , psttw ) ;
-        countT costo = etThread.strMakeF( tinBaseP , LF , posto , psttw ) ; ___( posto ) ;
+        etThread.delF( tin0P , psttw ) ;
+        countT costo = etThread.strMakeF( tin0P , LF , posto , psttw ) ; ___( posto ) ;
         ZE( osTextT* , posto ) ;
 
-        etThread.strCalendarF( tinBaseP , psttw , time2 + 0 ) ; ___( psttw ) ;
+        etThread.strCalendarF( tin0P , psttw , time2 + 0 ) ; ___( psttw ) ;
 
         time2Lag = time2 ;
     {
     if( time2Lag != time2 )
 
     }
-        etThread.winSetTitleF( tinBaseP , tTitle ) ;
+        etThread.winSetTitleF( tin0P , tTitle ) ;
 
-        etThread.delF( tinBaseP , psttw ) ;
+        etThread.delF( tin0P , psttw ) ;
         ;
 
             +TF4(local.wSecond,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE|flFORMAT_NObASE,2,0xa)
@@ -61,7 +61,7 @@ REST
         
         TN( tTitle , psttw ) ; tTitle +=
 
-        etThread.strFromTimeF( tinBaseP , psttw , time1 , time2 , 3 ) ; ___( psttw ) ;
+        etThread.strFromTimeF( tin0P , psttw , time1 , time2 , 3 ) ; ___( psttw ) ;
     {
     if( !time1Lag || ( time1 & 0xffff0000 ) != ( time1Lag & 0xffff0000 ) )
     ZE( strokeS* , psttw ) ;
@@ -69,11 +69,11 @@ REST
     TN( tColon , ":" ) ;
     TN( tAt    , "@" ) ;
 
-    boolT bOk = ((tin9S&)tinBaseP).brcRaw ;
+    boolT bOk = ((tin9S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , SystemTimeToTzSpecificLocalTime( 0 , &utc , &local ) )
 
-    thirdC::c_memsetIF( tinBaseP , (byteT*)&local , sizeof local ) ;
+    thirdC::c_memsetIF( tin0P , (byteT*)&local , sizeof local ) ;
     SYSTEMTIME local ;
     utc.wMilliseconds = (WORD)ms ;
     utc.wSecond = (WORD)ss ;
@@ -88,7 +88,7 @@ REST
     date ++ ;
     month ++ ;
     year ++ ;
-    etThread.osTimeToOldTimeF( tinBaseP , ms , ss , mm , hh , date , month , year , day , time1 , time2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+    etThread.osTimeToOldTimeF( tin0P , ms , ss , mm , hh , date , month , year , day , time1 , time2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
     ZE( countT , day ) ;
     ZE( sCountT , year ) ;
     ZE( countT , month ) ;
@@ -98,12 +98,12 @@ REST
     ZE( countT , ss ) ;
     ZE( countT , ms ) ;
 
-    etThread.osTimeNowF( tinBaseP , time1 , time2 ) ;
+    etThread.osTimeNowF( tin0P , time1 , time2 ) ;
     ZE( sCountT , time2 ) ;
     ZE( countT , time1 ) ;
 {
 while( !ether )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 ZE( sCountT , time2Lag ) ;
 ZE( countT , time1Lag ) ;
 

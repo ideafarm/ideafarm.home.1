@@ -9,21 +9,21 @@
 
 DONE( tmUdpFileEndpointF )
 }
-    grab_psoEndpointP.ungrabF( tinBaseP ) ;
+    grab_psoEndpointP.ungrabF( tin0P ) ;
     psoEndpointP = 0 ;
-    grab_psoEndpointP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    grab_psoEndpointP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-    sEndpoint.readF( tinBaseP , bQuitP , pbFastBufferP , cbFastBufferP , cPouredP ) ;
-    if( idPortBoundP != ifcIDpORT_UDPfILEcATCHER ) etThread.traceF( tinBaseP , T("!exception: endpoint not bound to requested idPort [idPortBoundP,ifcIDpORT_UDPfILEcATCHER]:    ")+tSay ) ;
+    sEndpoint.readF( tin0P , bQuitP , pbFastBufferP , cbFastBufferP , cPouredP ) ;
+    if( idPortBoundP != ifcIDpORT_UDPfILEcATCHER ) etThread.traceF( tin0P , T("!exception: endpoint not bound to requested idPort [idPortBoundP,ifcIDpORT_UDPfILEcATCHER]:    ")+tSay ) ;
 
     TN( tSay , "" ) ; tSay = TF2(idPortBoundP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idPortBoundP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
     
-    grab_psoEndpointP.ungrabF( tinBaseP ) ;
+    grab_psoEndpointP.ungrabF( tin0P ) ;
     psoEndpointP = &sEndpoint ;
-    grab_psoEndpointP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    grab_psoEndpointP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-    idPortBoundP = sEndpoint.bindF( tinBaseP , ifcIDpORT_UDPfILEcATCHER ) ;
-    socketC sEndpoint( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    idPortBoundP = sEndpoint.bindF( tin0P , ifcIDpORT_UDPfILEcATCHER ) ;
+    socketC sEndpoint( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
     grabC&        grab_psoEndpointP =       *(grabC*)pTaskP->c7 ;
     socketC*&     psoEndpointP      =    *(socketC**)pTaskP->c6 ;

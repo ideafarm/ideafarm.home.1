@@ -32,13 +32,13 @@
                     default :
                     }
                         break ;
-                        slP.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulCpART , pbf , cbf /*20210222@1009 TO FIX A BUG: - 2 * sizeof( countT )*/ , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGEpART ) ;
+                        slP.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulCpART , pbf , cbf /*20210222@1009 TO FIX A BUG: - 2 * sizeof( countT )*/ , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGEpART ) ;
                     {
                     case ifcIDtYPEsOULiTEM_soulCpART :
                 {
                 switch( idTypef )
 
-                pbf     = pbFieldF( tinBaseP , idTypef , flagsf , cbf , 1 ) ;
+                pbf     = pbFieldF( tin0P , idTypef , flagsf , cbf , 1 ) ;
                 cbf     = 0 ;
                 flagsf  = 0 ;
                 idTypef = 0 ;
@@ -66,7 +66,7 @@
                     countT cbFree = !pJot
                     cFields -- ;
 
-                    slP.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbf , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                    slP.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbf , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                 {
                 if( !POOP )
                 __( ((countT*)pbf)[ - 2 ] - ifcIDtYPEsOULiTEM_soulC ) ;
@@ -79,7 +79,7 @@
         case ifcIDtYPEsOULiTEM_soulC :
     {
     switch( idTypef )
-    byteT* pbf = pbFieldF( tinBaseP , idTypef , flagsf , cbf , 1 ) ;
+    byteT* pbf = pbFieldF( tin0P , idTypef , flagsf , cbf , 1 ) ;
     ZE( countT , cbf ) ;
     ZE( flagsT , flagsf ) ;
     ZE( countT , idTypef ) ;
@@ -92,7 +92,7 @@
 
     }
         }
-            if( !POOP ) slP.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_soulC , pbi + 3 * sizeof( countT ) , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+            if( !POOP ) slP.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbi + 3 * sizeof( countT ) , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
             __( ((countT*)pbi)[ 1 ] - ifcIDtYPEsOULiTEM_soulC ) ;
         {
         if( !POOP )

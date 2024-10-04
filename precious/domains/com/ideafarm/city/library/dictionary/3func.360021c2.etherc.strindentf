@@ -9,11 +9,11 @@
 
 }
     }
-        strMakeF( tinBaseP , LF , psttP , T("") ) ; //CALLER MUST TAG
+        strMakeF( tin0P , LF , psttP , T("") ) ; //CALLER MUST TAG
     {
     if( !psttP ) // THIS WILL HAPPEN IF psttP IS NULL LENGTH
 
-    delF( tinBaseP , pstt1Lines ) ;
+    delF( tin0P , pstt1Lines ) ;
     }
         }
             }
@@ -23,10 +23,10 @@
                         }
                             break ;
                             
-                            delF( tinBaseP , psttw ) ;
-                            strFuseF( tinBaseP , psttP , psttw ) ;
-                            strFuseF( tinBaseP , psttP , tIndent ) ;
-                            strSubstringF( tinBaseP , psttw , idf , idl , psttc1 ) ; ___( psttw ) ;
+                            delF( tin0P , psttw ) ;
+                            strFuseF( tin0P , psttP , psttw ) ;
+                            strFuseF( tin0P , psttP , tIndent ) ;
+                            strSubstringF( tin0P , psttw , idf , idl , psttc1 ) ; ___( psttw ) ;
                             ZE( countT , idl ) ;
                             countT idf = idMin ;
                             ZE( strokeS* , psttw ) ;
@@ -38,25 +38,25 @@
                     switch( offPass )
                 {
                 if( idWoth )                                                                                    // IF THE LINE CONTAINS NONBLANK TEXT
-                countT idWoth = strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tb , psttc1 , 0 , 1 , flSTRiDaNY_NOT ) ;
+                countT idWoth = strIdAnyF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tb , psttc1 , 0 , 1 , flSTRiDaNY_NOT ) ;
                 idf = 1 ;
             {
             else
             }
                 }
-                    case 2 : { strFuseF( tinBaseP , psttP , tcr ) ; break ; }
+                    case 2 : { strFuseF( tin0P , psttP , tcr ) ; break ; }
                     case 1 : { cDelimitersNeeded ++ ; break ; }
                 {
                 switch( offPass )
             {
-            if( strIdAnyF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , tcr , psttc1 ) )                                                 // IF THE LINE IS DELIMITERS
+            if( strIdAnyF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tcr , psttc1 ) )                                                 // IF THE LINE IS DELIMITERS
             countT idf = 1 ;
 
             }
                 }
                     }
                         break ;
-                        strMakeF( tinBaseP , LF , psttP , 0 , cNonblankLines * csttP + csttText + cDelimitersNeeded * tcr.csF( tinBaseP ) ) ; //CALLER MUST TAG
+                        strMakeF( tin0P , LF , psttP , 0 , cNonblankLines * csttP + csttText + cDelimitersNeeded * tcr.csF( tin0P ) ) ; //CALLER MUST TAG
                     {
                     case 2 :
                 {
@@ -75,8 +75,8 @@
     ZE( countT , cDelimitersNeeded ) ;
     ZE( countT , idMin ) ;
 
-    if( bDeleteOld ) delF( tinBaseP , *(strokeS**)&psttOldP ) ;
-    strWordsF( tinBaseP , pstt1Lines , psttOldP , sttq , tcr , flSTRwORDS_DELIMITERS ) ; ___( pstt1Lines ) ;
+    if( bDeleteOld ) delF( tin0P , *(strokeS**)&psttOldP ) ;
+    strWordsF( tin0P , pstt1Lines , psttOldP , sttq , tcr , flSTRwORDS_DELIMITERS ) ; ___( pstt1Lines ) ;
     TN( tcr , "\r\n" ) ;
     TN( tb , " " ) ;
     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
@@ -100,7 +100,7 @@
 
     SCOOP
 {
-/**//*1*/voidT etherC::strIndentF( tin0S& tinBaseP , strokeS*& psttP , const strokeS* psttOldP , const countT csttP )/*1*/
+/**//*1*/voidT etherC::strIndentF( tin0S& tin0P , strokeS*& psttP , const strokeS* psttOldP , const countT csttP )/*1*/
 */
 /*
 

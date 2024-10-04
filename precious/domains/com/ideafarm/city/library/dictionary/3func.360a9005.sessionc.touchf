@@ -11,14 +11,14 @@
     timeLathTouch.time2 = timeN2 ;
     timeLathTouch.time1 = timeN1 ; // THIS CAN RACE WITH OTHER THREADS SO timeLathTouch CAN CHANGE BACKWARDS TO AN EARLIER TIME
 
-    ether.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+    ether.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT , timeN1 ) ;
 
     inc02AM( cTouch ) ;
     _IO_
 {
-/*1*/voidT sessionC::touchF( tin0S& tinBaseP , const strokeS* const psttUrlP )/*1*/
+/*1*/voidT sessionC::touchF( tin0S& tin0P , const strokeS* const psttUrlP )/*1*/
 
 /**/
 */

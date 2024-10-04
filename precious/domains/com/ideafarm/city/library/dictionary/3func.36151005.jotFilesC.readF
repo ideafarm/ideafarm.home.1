@@ -14,8 +14,8 @@
     if( POOP ) idjBranchP = idjPartP = 0 ;
 
     ;
-        : pageC( tinBaseP , jotNeverChanges )
-        ? jotTarget.readF( tinBaseP , idjData )
+        : pageC( tin0P , jotNeverChanges )
+        ? jotTarget.readF( tin0P , idjData )
     pageC pageData = idjData && !POOP
 
     jotC& jotTarget = F(flagsP) & flJOTfILEScrEAD_FROMcANcHANGE ? jotCanChange : jotNeverChanges ;
@@ -29,7 +29,7 @@
                     const jotFileBranchC& branch = *(const jotFileBranchC*)(const byteT*)pageBranch ;
                 {
                 if( pageBranch == sizeof( jotFileBranchC ) )
-                pageC pageBranch = jotCanChange.readF( tinBaseP , idjBranchP ) ;
+                pageC pageBranch = jotCanChange.readF( tin0P , idjBranchP ) ;
             {
             if( !POOP && idjBranchP )
 
@@ -40,7 +40,7 @@
                     const jotFileBranchC& branch = *(const jotFileBranchC*)(const byteT*)pageBranch ;
                 {
                 if( pageBranch == sizeof( jotFileBranchC ) )
-                pageC pageBranch = jotCanChange.readF( tinBaseP , idjBranchP ) ;
+                pageC pageBranch = jotCanChange.readF( tin0P , idjBranchP ) ;
             {
             countT save = idjBranchP ;
         {
@@ -57,7 +57,7 @@
                 const jotFilePartC& part = *(const jotFilePartC*)(const byteT*)pagePart ;
             {
             if( pagePart == sizeof( jotFilePartC ) )
-            pageC pagePart = jotCanChange.readF( tinBaseP , idjPartP ) ;
+            pageC pagePart = jotCanChange.readF( tin0P , idjPartP ) ;
         {
     {
     if( !POOP )
@@ -73,7 +73,7 @@
                 const jotFileBranchC& branch = *(const jotFileBranchC*)(const byteT*)pageBranch ;
             {
             if( pageBranch == sizeof( jotFileBranchC ) )
-            pageC pageBranch = jotCanChange.readF( tinBaseP , idjBranchP ) ;
+            pageC pageBranch = jotCanChange.readF( tin0P , idjBranchP ) ;
         {
         if( !POOP )
 
@@ -94,19 +94,19 @@
             {
             else
             if( pageSoil != sizeof( jotFileSoilC ) ) break ;
-            pageC pageSoil = jotCanChange.readF( tinBaseP , idjSoilP ) ;
+            pageC pageSoil = jotCanChange.readF( tin0P , idjSoilP ) ;
         {
         for(;;)
     {
     if( idjSoilP && !idjPartP && !idjBranchP )                                                              // IF WOTH CALL THEN SET idjPartP idjBranchP
 
     }
-        if( POOP ) return pageC( tinBaseP , jotNeverChanges ) ;
+        if( POOP ) return pageC( tin0P , jotNeverChanges ) ;
         __NZ(  idjPartP &&                 idjSoilP ) ;
         __NZ( !idjPartP &&  idjBranchP              ) ;
         __NZ(  idjPartP && !idjBranchP              ) ;                                                     // ON SUBSEQUENT CALLS, [idjPartP,idjBranchP] IS SPECIFIED BUT NOT idjSoilP
         __NZ( !idjPartP && !idjBranchP && !idjSoilP ) ;                                                     // ON THE WOTH   CALL , idjSoilP              IS SPECIFIED
-        if( POOP ) return pageC( tinBaseP , jotNeverChanges ) ;                                                 // [idjPartP,idjBranchP] IS USED LIKE A HANDLE FOR REPEATED CALLS TO READ EACH PART OF EACH BRANCH
+        if( POOP ) return pageC( tin0P , jotNeverChanges ) ;                                                 // [idjPartP,idjBranchP] IS USED LIKE A HANDLE FOR REPEATED CALLS TO READ EACH PART OF EACH BRANCH
     {
     IFbEcAREFUL
 
@@ -114,7 +114,7 @@
     idjBranchP &= ~NM_HIGH ;
     idjPartP   &= ~NM_HIGH ;
 {
-/*1*/pageC jotFilesC::readF( tin0S& tinBaseP , countT& idjPartP , countT& idjBranchP , countT idjSoilP , flagsT flagsP )/*1*/
+/*1*/pageC jotFilesC::readF( tin0S& tin0P , countT& idjPartP , countT& idjBranchP , countT idjSoilP , flagsT flagsP )/*1*/
 
 
 /**/

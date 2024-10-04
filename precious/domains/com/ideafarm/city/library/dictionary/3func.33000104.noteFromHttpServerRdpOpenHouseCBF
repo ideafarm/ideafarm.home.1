@@ -13,25 +13,25 @@
     }
         }
             DEL( prPosts ) ;
-            if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
+            if( prPosts ) meP.pushSnipF( tin0P , stBodyP , *prPosts ) ;
 
-            etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+            etThread.strMakeF( tin0P , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
             ZE( pbRefC* , prPosts ) ;
 
             TN( tSay , bMatch ? "Credentials accepted [" : "Credentials rejected [" ) ; tSay += TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("].\r\n" ) ;
         {
 
         }
-            etThread.traceF( tinBaseP , T("cdn open house / password received via http [nnPeerP]: ")+T(nnPeerP) ) ;
-            etThread.boxPutF( tinBaseP , tFileSecretReceived , "yes" , 3 ) ;
+            etThread.traceF( tin0P , T("cdn open house / password received via http [nnPeerP]: ")+T(nnPeerP) ) ;
+            etThread.boxPutF( tin0P , tFileSecretReceived , "yes" , 3 ) ;
             TN( tFileSecretReceived , "////" postCRAFTWORKfACTORY "/d/ideafarm.home.102/ephemeral/domains/com/ideafarm/rdp.open.house/secret.received" ) ;
         {
         if( bMatch )
 
-        boolT bMatch = tSecret.csF( tinBaseP ) && !etThread.strCompareF( tinBaseP , tSecret , tValueSecret ) ;
+        boolT bMatch = tSecret.csF( tin0P ) && !etThread.strCompareF( tin0P , tSecret , tValueSecret ) ;
 
         }
-            etThread.delF( tinBaseP , postSecret ) ;
+            etThread.delF( tin0P , postSecret ) ;
 
             }
                 tSecret = TF2(secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
@@ -41,11 +41,11 @@
 
             }
                 }
-                    etThread.traceF( tinBaseP , T("there is no secret, so RDP Open House is not currently available") ) ;
+                    etThread.traceF( tin0P , T("there is no secret, so RDP Open House is not currently available") ) ;
                     POOPRqUIET
                 {
                 if( POOP )
-                ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postSecret , costSecret , tFileSecret , 1 ) ; ___( postSecret ) ;
+                ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , postSecret , costSecret , tFileSecret , 1 ) ; ___( postSecret ) ;
                 SCOOPS
             {
             IFsCRATCH
@@ -58,15 +58,15 @@
     else
     }
         DEL( prPosts ) ;
-        if( prPosts ) meP.pushSnipF( tinBaseP , stBodyP , *prPosts ) ;
+        if( prPosts ) meP.pushSnipF( tin0P , stBodyP , *prPosts ) ;
 
-        etThread.strMakeF( tinBaseP , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
+        etThread.strMakeF( tin0P , LF , prPosts , tSay , 0 , flSTRmAKE_PREFIXlENGTH ) ; ___( prPosts ) ;
         ZE( pbRefC* , prPosts ) ;
 
-        etThread.traceF( tinBaseP , tSay ) ;
+        etThread.traceF( tin0P , tSay ) ;
         TN( tSay , "" ) ; tSay = T("You didn't present credentials [")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("].\r\n" ) ;
     {
-    if( !tValueSecret.csF( tinBaseP ) )
+    if( !tValueSecret.csF( tin0P ) )
 
     countT idIn = 1 + incv02AM( idInLath ) ;
     static countT idInLath ;
@@ -81,14 +81,14 @@
     }
         }
             }
-                if( !etThread.strCompareF( tinBaseP , psttLeverKVP , *pptKey[ offk ] ) ) *pptValue[ offk ] = T((strokeS*)(countT)swKVP) ;
+                if( !etThread.strCompareF( tin0P , psttLeverKVP , *pptKey[ offk ] ) ) *pptValue[ offk ] = T((strokeS*)(countT)swKVP) ;
             {
             for( countT offk = 0 ; offk < sizeof pptKey / sizeof pptKey[ 0 ] ; offk ++ )
 
-            psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
+            psttLeverKVP = (strokeS*)swKVP.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
+        countT cFlavors = swKVP.cFlavorsF( tin0P ) ;
 
         } ;
             &tValueSecret ,
@@ -131,7 +131,7 @@
     ZE( boolT , bGot ) ;
     ZE( boolT , bValid ) ;
 {
-/*1*/voidT noteFromHttpServerRdpOpenHouseCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT noteFromHttpServerRdpOpenHouseCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 /**/
 */

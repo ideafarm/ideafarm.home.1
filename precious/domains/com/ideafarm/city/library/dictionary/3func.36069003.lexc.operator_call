@@ -15,15 +15,15 @@
             }
                 }
                     break ;
-                    PUSE( tinBaseP , *(byteT**)&psttl ) ;
+                    PUSE( tin0P , *(byteT**)&psttl ) ;
                     }
                         slP >> *pSoul ;
-                        pSoul->removeAllF( tinBaseP ) ;
+                        pSoul->removeAllF( tin0P ) ;
                     {
                     if( pSoul )
 
                     else         { POPUP( T("WARNING: Word \"")+T(psttl)+T("\" is being redefined in lexC object \"")+T(postName)+T("\".  This might not be supported in the future.  It is bad code style.") ) ; }
-                    if( !pSoul ) pSoul = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    if( !pSoul ) pSoul = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
                     soulC*& pSoul = *(soulC**)&(countT&)swDef ;
 
                     slP >> psttl ; ___( psttl ) ;
@@ -38,21 +38,21 @@
         case ifcIDcMDbASE_CMDsPECIFIED :
         }
             break ;
-            PUSE( tinBaseP , *(byteT**)&psttw ) ;
+            PUSE( tin0P , *(byteT**)&psttw ) ;
 
             slP << bFound ;
             }
                 bFound = 1 ;
-                slP.playF( tinBaseP , slDef ) ;
+                slP.playF( tin0P , slDef ) ;
                 psttl = 0 ;
                 soulC& slDef = *(soulC*)(countT)swDef ;
                 psttl = psttw ;
             {
-            else if( swDef.idSlotOfLeverF( tinBaseP , (countT)psttw ) )
+            else if( swDef.idSlotOfLeverF( tin0P , (countT)psttw ) )
             }
                 POPUP( T(postName)+T(": \"?\" received.") ) ;
             {
-            if( !ether.strCompareF( tinBaseP , psttw , T("?") ) )
+            if( !ether.strCompareF( tin0P , psttw , T("?") ) )
             ZE( boolT , bFound ) ;
 
             slP >> psttw ; ___( psttw ) ;
@@ -82,7 +82,7 @@
         case ifcIDcMDbASE_INSTANCEnAME :
         }
             break ;
-            slP << (strokeS*)T(((tin9S&)tinBaseP).pag1->_lexC_.postOldClassName) ;
+            slP << (strokeS*)T(((tin9S&)tin0P).pag1->_lexC_.postOldClassName) ;
         {
         case ifcIDcMDbASE_CLASSnAME :
     {
@@ -96,7 +96,7 @@
         ZE( baseSoilXxxxC* , pMeI ) ;
     {
 {
-/*1*/voidT lexC::operator ()( tin0S& tinBaseP , soulC& slP )/*1*/
+/*1*/voidT lexC::operator ()( tin0S& tin0P , soulC& slP )/*1*/
 /**/
 */
 /*

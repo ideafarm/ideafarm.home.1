@@ -9,8 +9,8 @@
                             
 REST
 
-etherC::loafIF( tinBaseP ) ;
-PUSE( tinBaseP , postTo ) ;
+etherC::loafIF( tin0P ) ;
+PUSE( tin0P , postTo ) ;
 
 }
     postTo -= 2 * sizeof( countT ) ;
@@ -27,7 +27,7 @@ PUSE( tinBaseP , postTo ) ;
         blobVSP sp1( postTo ) ;
         CONoUTrAW3( "cRef: " , ((countT*)postTo)[ - 2 ] , "\r\n" ) ;
     
-        thirdC::c_strcpyIF( tinBaseP , postTo , postFrom ) ;
+        thirdC::c_strcpyIF( tin0P , postTo , postFrom ) ;
         ((countT*)postTo)[ - 1 ] = sizeof postFrom - 1 ;
         ((countT*)postTo)[ - 2 ] = 0 ;
     {
@@ -36,7 +36,7 @@ PUSE( tinBaseP , postTo ) ;
 {
 if( postTo )
 
-osTextT* postTo = PUSE.newF( tinBaseP , LF , 2 * sizeof( countT ) + sizeof postFrom ) ; ___( postTo ) ;
+osTextT* postTo = PUSE.newF( tin0P , LF , 2 * sizeof( countT ) + sizeof postFrom ) ; ___( postTo ) ;
 
 TODO
 

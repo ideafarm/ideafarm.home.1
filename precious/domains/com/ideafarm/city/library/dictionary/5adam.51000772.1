@@ -9,30 +9,30 @@
                             
 REST
 
-etThread.traceF( tinBaseP , T("ok") ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    ether.traceF( tinBaseP , T("ACCESSeVENTS2bOOKtOGETHER napped") ) ;
-    ++ s ; ether.osSleepF( tinBaseP , TICK ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-    ether.traceF( tinBaseP , T("ACCESSeVENTS2bOOKtOGETHER napping") ) ;
+    ether.traceF( tin0P , T("ACCESSeVENTS2bOOKtOGETHER napped") ) ;
+    ++ s ; ether.osSleepF( tin0P , TICK ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    ether.traceF( tin0P , T("ACCESSeVENTS2bOOKtOGETHER napping") ) ;
 
     while( !ether && ~hFind && !POOP ) ;
     }
         DEL( pInfo ) ;
         }
             }
-                if( idBookWoth && idBookLath ) etThread.diskMoveFileOrDirF( tinBaseP , tToAll+tBookDot+TF3(idBookWoth,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDot+TF3(idBookLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDot+tShort , tIfoName , 0 ) ;
+                if( idBookWoth && idBookLath ) etThread.diskMoveFileOrDirF( tin0P , tToAll+tBookDot+TF3(idBookWoth,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDot+TF3(idBookLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDot+tShort , tIfoName , 0 ) ;
 
                 }
-                    etThread.delF( tinBaseP , pstt1Lines ) ;
+                    etThread.delF( tin0P , pstt1Lines ) ;
     
                     }
                         if(  idBookLath < idBook ) idBookLath = idBook ;
                         if( !idBookWoth          ) idBookWoth = idBook ;
-                        countT idBook = bksAccessEvents.writeF( tinBaseP , (byteT*)&cbo , sizeof cbo , WS( soulRecord ) , flBOOKScwRITE_ALLOWoDDlENGTH | flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND , 0 ) ;
+                        countT idBook = bksAccessEvents.writeF( tin0P , (byteT*)&cbo , sizeof cbo , WS( soulRecord ) , flBOOKScwRITE_ALLOWoDDlENGTH | flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND , 0 ) ;
 
-                        countT cbo = soulRecord.cbF( tinBaseP ) ;
+                        countT cbo = soulRecord.cbF( tin0P ) ;
     
                         soulRecord << (strokeS*)tBrowser ;
                         soulRecord << cbRequest ;
@@ -48,12 +48,12 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                         soulRecord << timeW1 ;
                         soulRecord << (countT)1 ;                                               // IDfORMAT
                         soulRecord << finger ;                                  finger = 0 ;    // finger IS 0'D OUT ASAP; IT IS BAD CODE STYLE TO LEAVE FINGERPRINT VALUES IN MEMORY BECAUSE IT IS IMPORTANT THAT FINGERPRINT VALUES NEVER EXIST EXCEPT WHERE THEY ARE SUPPOSED TO
-                        soulC soulRecord( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        soulC soulRecord( tin0P , TAG( TAGiDnULL ) ) ;
     
                         putNegAM( finger, FINGERnEG_ACCESSeVENTrAW ) ;
                         ZE( countT , finger ) ;
     
-                        etThread.traceF( tinBaseP , T("[nnHe,time,method,bucket,container,uri,query,protocol,code,cb,browser]:    \"")+tSay+tdq ) ;
+                        etThread.traceF( tin0P , T("[nnHe,time,method,bucket,container,uri,query,protocol,code,cb,browser]:    \"")+tSay+tdq ) ;
     
                         ;
     
@@ -73,29 +73,29 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                         TN( tSay , "" ) ; tSay =
     
                         }
-                            if( tRawCbRequest.csF( tinBaseP ) ) cbRequest = etThread.strDigitsToSCountF( tinBaseP , tRawCbRequest , 0xa , 1 ) ;
+                            if( tRawCbRequest.csF( tin0P ) ) cbRequest = etThread.strDigitsToSCountF( tin0P , tRawCbRequest , 0xa , 1 ) ;
     
-                            if( tRawCode.csF( tinBaseP ) ) code = etThread.strDigitsToSCountF( tinBaseP , tRawCode , 0xa , 1 ) ;
+                            if( tRawCode.csF( tin0P ) ) code = etThread.strDigitsToSCountF( tin0P , tRawCode , 0xa , 1 ) ;
     
                             }
-                                //etThread.traceF( tinBaseP , T("[uri" ":    \"")+tUri+tdq ) ;
-                                //etThread.traceF( tinBaseP , T("[urilong:    \"")+tUriLong+tdq ) ;
+                                //etThread.traceF( tin0P , T("[uri" ":    \"")+tUri+tdq ) ;
+                                //etThread.traceF( tin0P , T("[urilong:    \"")+tUriLong+tdq ) ;
                                 }
-                                    etThread.delF( tinBaseP , psttQuery ) ;
-                                    etThread.delF( tinBaseP , psttUri ) ;
+                                    etThread.delF( tin0P , psttQuery ) ;
+                                    etThread.delF( tin0P , psttUri ) ;
                                     }
                                         tQuery = T(psttQuery) ;
                                         tUri   = T(psttUri) ;
                                     {
                                     else
                                     if( !idHit ) tUri = tUriLong ;
-                                    countT idHit = etThread.strBisectF( tinBaseP , psttUri , psttQuery , tUriLong , tQuestion , 1 , flSTRbISECT_null ) ; ___( psttUri ) ; ___( psttQuery ) ;
+                                    countT idHit = etThread.strBisectF( tin0P , psttUri , psttQuery , tUriLong , tQuestion , 1 , flSTRbISECT_null ) ; ___( psttUri ) ; ___( psttQuery ) ;
                                     ZE( strokeS* , psttQuery ) ;
                                     ZE( strokeS* , psttUri ) ;
                                 {
-                                if( tUriLong.csF( tinBaseP ) )
+                                if( tUriLong.csF( tin0P ) )
     
-                                etThread.delF( tinBaseP , pstt5Words ) ;
+                                etThread.delF( tin0P , pstt5Words ) ;
                                 }
                                     }
                                         }
@@ -108,19 +108,19 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                     FORsTRINGSiN5( pstt5Words )
                                     ZE( countT , idw ) ;
                                 {
-                                etThread.strWordsF( tinBaseP , pstt5Words , tRawUri , sttq , tb , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt5Words ) ;
+                                etThread.strWordsF( tin0P , pstt5Words , tRawUri , sttq , tb , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt5Words ) ;
                                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                 ZE( strokeS* , pstt5Words ) ;
                                 TN( tUriLong , "" ) ;
     
                                 // tRawUri      : GET /4e39b6468aeaa79a23d5-1252569462859d1220e63a54b0dcaa83.r91.cf5.rackcdn.com/robots.txt HTTP/1.1
                             {
-                            if( tRawUri.csF( tinBaseP ) )
+                            if( tRawUri.csF( tin0P ) )
 
                             }
                                 }
                                     //if( v_dow ) ;
-                                    //etThread.osTimeToOldTimeF( tinBaseP , v_ms , v_ss , v_mm , v_hh , v_d , v_m , v_y , v_dow , timeW1 , timeW2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+                                    //etThread.osTimeToOldTimeF( tin0P , v_ms , v_ss , v_mm , v_hh , v_d , v_m , v_y , v_dow , timeW1 , timeW2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
                                     //ZE( countT , v_dow ) ;
                                     //ZE( countT , v_ms ) ;
                                     //ZE( countT , v_ss ) ;
@@ -131,13 +131,13 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                     //ZE( countT , v_d ) ;
                                     // COMMENT OUT IN PRODUCTION; CAN BE USED TO VERIFY THAT THE CORRECT DOW IS IMPLIED BY timeW1 , timeW2
     
-                                    etThread.osTimeFromOldTimeF( tinBaseP , timeW1 , timeW2 , y , m , d , hh , mm , ss , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+                                    etThread.osTimeFromOldTimeF( tin0P , timeW1 , timeW2 , y , m , d , hh , mm , ss , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
     
-                                    etThread.delF( tinBaseP , pstt4Words ) ;
+                                    etThread.delF( tin0P , pstt4Words ) ;
                                     }
                                         }
                                             }
-                                                default: { etThread.traceF( tinBaseP , T("unexpected time word [idw]:    ")+TF2(idw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttc4) ) ; break ; }
+                                                default: { etThread.traceF( tin0P , T("unexpected time word [idw]:    ")+TF2(idw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttc4) ) ; break ; }
                                                 case 6 : { ss = vv     ; break ; }
                                                 case 5 : { mm = vv     ; break ; }
                                                 case 4 : { hh = vv     ; break ; }
@@ -151,30 +151,30 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     
                                                                                                     : 0
                                                                                                     ? 0xc
-                                                                                                : !etThread.strCompareF( tinBaseP , psttc4 , tDec )
+                                                                                                : !etThread.strCompareF( tin0P , psttc4 , tDec )
                                                                                                 ? 0xb
-                                                                                            : !etThread.strCompareF( tinBaseP , psttc4 , tNov )
+                                                                                            : !etThread.strCompareF( tin0P , psttc4 , tNov )
                                                                                             ? 0xa
-                                                                                        : !etThread.strCompareF( tinBaseP , psttc4 , tOct )
+                                                                                        : !etThread.strCompareF( tin0P , psttc4 , tOct )
                                                                                         ? 0x9
-                                                                                    : !etThread.strCompareF( tinBaseP , psttc4 , tSep )
+                                                                                    : !etThread.strCompareF( tin0P , psttc4 , tSep )
                                                                                     ? 0x8
-                                                                                : !etThread.strCompareF( tinBaseP , psttc4 , tAug )
+                                                                                : !etThread.strCompareF( tin0P , psttc4 , tAug )
                                                                                 ? 0x7
-                                                                            : !etThread.strCompareF( tinBaseP , psttc4 , tJul )
+                                                                            : !etThread.strCompareF( tin0P , psttc4 , tJul )
                                                                             ? 0x6
-                                                                        : !etThread.strCompareF( tinBaseP , psttc4 , tJun )
+                                                                        : !etThread.strCompareF( tin0P , psttc4 , tJun )
                                                                         ? 0x5
-                                                                    : !etThread.strCompareF( tinBaseP , psttc4 , tMay )
+                                                                    : !etThread.strCompareF( tin0P , psttc4 , tMay )
                                                                     ? 0x4
-                                                                : !etThread.strCompareF( tinBaseP , psttc4 , tApr )
+                                                                : !etThread.strCompareF( tin0P , psttc4 , tApr )
                                                                 ? 0x3
-                                                        : !etThread.strCompareF( tinBaseP , psttc4 , tMar )
+                                                        : !etThread.strCompareF( tin0P , psttc4 , tMar )
                                                         ? 0x2
-                                                    : !etThread.strCompareF( tinBaseP , psttc4 , tFeb )
+                                                    : !etThread.strCompareF( tin0P , psttc4 , tFeb )
                                                     ? 0x1
-                                                : !etThread.strCompareF( tinBaseP , psttc4 , tJan )
-                                                ? etThread.strDigitsToSCountF( tinBaseP , psttc4 , 0xa , 1 )
+                                                : !etThread.strCompareF( tin0P , psttc4 , tJan )
+                                                ? etThread.strDigitsToSCountF( tin0P , psttc4 , 0xa , 1 )
     
                                             countT vv = ++ idw != 2 || !bWindows
                                         {
@@ -198,7 +198,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                     // | tRawTime       :    [21/01/2018:20:04:16           [18/Jun/2018:10:00:29
                                     //                       RACKSPACE                      WINDOWS
     
-                                    etThread.strWordsF( tinBaseP , pstt4Words , tRawTime , sttq , tTimeDelims , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt4Words ) ;
+                                    etThread.strWordsF( tin0P , pstt4Words , tRawTime , sttq , tTimeDelims , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt4Words ) ;
                                     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                     ZE( strokeS* , pstt4Words ) ;
     
@@ -210,45 +210,45 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                 else
                                 }
                                     tRawTime = tn ;
-                                    etThread.traceF( tinBaseP , T("unexpected Time format (probably IPv6) [bWindows,rawTime:    \"")+T(bWindows?"windows":"rackspace")+tb4+tRawTime+tdq ) ;
+                                    etThread.traceF( tin0P , T("unexpected Time format (probably IPv6) [bWindows,rawTime:    \"")+T(bWindows?"windows":"rackspace")+tb4+tRawTime+tdq ) ;
                                 {
-                                if( tRawTime.csF( tinBaseP ) != 0x14 + bWindows )              // WINDOWS USES 3 CHAR FOR MONTH; RAX USES 2
+                                if( tRawTime.csF( tin0P ) != 0x14 + bWindows )              // WINDOWS USES 3 CHAR FOR MONTH; RAX USES 2
                             {
-                            if( tRawTime.csF( tinBaseP ) )
+                            if( tRawTime.csF( tin0P ) )
     
                             }
-                                //etThread.traceF( tinBaseP , T("[ipv4]:    ")+TF2(ipv4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                //etThread.traceF( tin0P , T("[ipv4]:    ")+TF2(ipv4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 nnHe = ipv4 ;
-                                etThread.delF( tinBaseP , pstt3Words ) ;
+                                etThread.delF( tin0P , pstt3Words ) ;
                                 }
                                     ipv4 = ( ipv4 << 8 ) | vv ;
-                                    countT vv = etThread.strDigitsToSCountF( tinBaseP , psttc3 , 0xa , 1 ) ;
+                                    countT vv = etThread.strDigitsToSCountF( tin0P , psttc3 , 0xa , 1 ) ;
                                 {
                                 FORsTRINGSiN3( pstt3Words )
                                 ZE( countT , ipv4 ) ;
-                                etThread.strWordsF( tinBaseP , pstt3Words , tRawIP , sttq , tDot , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt3Words ) ;
+                                etThread.strWordsF( tin0P , pstt3Words , tRawIP , sttq , tDot , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt3Words ) ;
                                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                 ZE( strokeS* , pstt3Words ) ;
     
                                 // CONJ: I HAVE CODE TO DO THIS FOR IPv4 ADDRESSES, BUT I CANNOT FIND IT
                             {
-                            if( tRawIP.csF( tinBaseP ) )
+                            if( tRawIP.csF( tin0P ) )
     
                             }
                                 tRawIP = tn ;
-                                etThread.traceF( tinBaseP , T("unexpected IP format (probably IPv6):    \"")+tRawIP+tdq ) ;       //U:: ADD CODE TO HANDLE IPv6 VALUES
+                                etThread.traceF( tin0P , T("unexpected IP format (probably IPv6):    \"")+tRawIP+tdq ) ;       //U:: ADD CODE TO HANDLE IPv6 VALUES
                             {
-                            if( tRawIP.csF( tinBaseP ) && etThread.strIdF( tinBaseP , sttColon , tRawIP ) )
+                            if( tRawIP.csF( tin0P ) && etThread.strIdF( tin0P , sttColon , tRawIP ) )
     
-                            //etThread.traceF( tinBaseP , T("tBrowser      : ")+tBrowser      ) ;
-                             //etThread.traceF( tinBaseP , T("tRawCbRequest : ")+tRawCbRequest ) ;
-                            //etThread.traceF( tinBaseP , T("tRawCode      : ")+tRawCode      ) ;
-                            //etThread.traceF( tinBaseP , T("tRawUri       : ")+tRawUri       ) ;
-                            //etThread.traceF( tinBaseP , T("tRawTime      : ")+tRawTime      ) ;
-                            //etThread.traceF( tinBaseP , T("tRawIP        : ")+tRawIP        ) ;
+                            //etThread.traceF( tin0P , T("tBrowser      : ")+tBrowser      ) ;
+                             //etThread.traceF( tin0P , T("tRawCbRequest : ")+tRawCbRequest ) ;
+                            //etThread.traceF( tin0P , T("tRawCode      : ")+tRawCode      ) ;
+                            //etThread.traceF( tin0P , T("tRawUri       : ")+tRawUri       ) ;
+                            //etThread.traceF( tin0P , T("tRawTime      : ")+tRawTime      ) ;
+                            //etThread.traceF( tin0P , T("tRawIP        : ")+tRawIP        ) ;
     
                             }
-                                if( !etThread.strCompareF( tinBaseP , *pptTo[ offt ] , tDash ) ) *pptTo[ offt ] = tn ;
+                                if( !etThread.strCompareF( tin0P , *pptTo[ offt ] , tDash ) ) *pptTo[ offt ] = tn ;
                             {
                             for( countT offt = 0 ; offt < sizeof pptTo / sizeof pptTo[ 0 ] ; offt ++ )
                             textC* pptTo[] = { &tRawIP , &tRawTime , &tRawUri , &tRawCode , &tRawCbRequest , &tBrowser } ;
@@ -264,7 +264,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                             //                0              1
     
                             }
-                                etThread.delF( tinBaseP , pstt2Words ) ;
+                                etThread.delF( tin0P , pstt2Words ) ;
                                 }
                                     if( ptTo ) *ptTo = T(psttc2) ;
     
@@ -279,11 +279,11 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                     switch( ++ idw )
                                     ZE( textC* , ptTo ) ;
     
-                                    //etThread.traceF( tinBaseP , T("word:    ")+T(psttc2) ) ;
+                                    //etThread.traceF( tin0P , T("word:    ")+T(psttc2) ) ;
                                 {
                                 FORsTRINGSiN2( pstt2Words )
                                 ZE( countT , idw ) ;
-                                etThread.strWordsF( tinBaseP , pstt2Words , psttc1 , sttq , tb , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt2Words ) ;
+                                etThread.strWordsF( tin0P , pstt2Words , psttc1 , sttq , tb , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt2Words ) ;
                                 strokeS sttq ;
                                 //strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                 ZE( strokeS* , pstt2Words ) ;
@@ -320,43 +320,43 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                         // 204.213.85.999 - - [21/01/2018:23:58:02 +0000] "GET /v1/MossoCloudFS_921871/ipdos.home.registry?format=json HTTP/1.0" 200 7174 "-" "-"
                         TN( tMethodPlus , "" ) ;
     
-                        //etThread.traceF( tinBaseP , T("line:    \"")+T(psttc1)+tdq ) ;
+                        //etThread.traceF( tin0P , T("line:    \"")+T(psttc1)+tdq ) ;
                     {
                     FORsTRINGSiN1( pstt1Lines )
     
-                    etThread.delF( tinBaseP , posti ) ;
-                    etThread.strWordsF( tinBaseP , pstt1Lines , T(posti) , sttq , tCRLF , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1Lines ) ;
+                    etThread.delF( tin0P , posti ) ;
+                    etThread.strWordsF( tin0P , pstt1Lines , T(posti) , sttq , tCRLF , flSTRwORDS_null , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1Lines ) ;
                     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                     ZE( strokeS* , pstt1Lines ) ;
     
-                    etThread.boxGetShadowF( tinBaseP , posti , costi , pInfo->psttIfoName ) ; ___( posti ) ;
+                    etThread.boxGetShadowF( tin0P , posti , costi , pInfo->psttIfoName ) ; ___( posti ) ;
                     ZE( countT   , costi ) ;
                     ZE( osTextT* , posti ) ;
                 {
                 ZE( countT , idBookLath ) ;
                 ZE( countT , idBookWoth ) ;
     
-                //etThread.traceF( tinBaseP , tLogBucket+tb4+tContainer ) ;
+                //etThread.traceF( tin0P , tLogBucket+tb4+tContainer ) ;
     
                 }
-                    etThread.diskMoveFileOrDirF( tinBaseP , tToRejected+tShort , tIfoName , 0 ) ;
-                    etThread.traceF( tinBaseP , T("file ignored because I could not obtain tLogBucket or tContainer [tShort]:    ")+tShort ) ;
+                    etThread.diskMoveFileOrDirF( tin0P , tToRejected+tShort , tIfoName , 0 ) ;
+                    etThread.traceF( tin0P , T("file ignored because I could not obtain tLogBucket or tContainer [tShort]:    ")+tShort ) ;
                 {
-                if( !tLogBucket.csF( tinBaseP ) || !tContainer.csF( tinBaseP ) )
+                if( !tLogBucket.csF( tin0P ) || !tContainer.csF( tin0P ) )
     
                 }
-                    etThread.delF( tinBaseP , psttGot ) ;
+                    etThread.delF( tin0P , psttGot ) ;
                     tContainer = T(psttGot) ;
-                    etThread.delF( tinBaseP , psttnu ) ;
-                    etThread.strBisectF( tinBaseP , psttGot , psttnu , tContainerPlus , tDot , -6 , flSTRbISECT_null ) ; ___( psttGot ) ; ___( psttnu ) ;
+                    etThread.delF( tin0P , psttnu ) ;
+                    etThread.strBisectF( tin0P , psttGot , psttnu , tContainerPlus , tDot , -6 , flSTRbISECT_null ) ; ___( psttGot ) ; ___( psttnu ) ;
                     ZE( strokeS* , psttnu ) ;
                     ZE( strokeS* , psttGot ) ;
     
-                    //etThread.traceF( tinBaseP , tContainerPlus ) ;
+                    //etThread.traceF( tin0P , tContainerPlus ) ;
                     }
-                        etThread.delF( tinBaseP , psttGot ) ;
+                        etThread.delF( tin0P , psttGot ) ;
                         tContainerPlus = T(psttGot) ;
-                        etThread.strSubstringF( tinBaseP , psttGot , idf , idl , tAfterHey , 0 ) ; ___( psttGot ) ;
+                        etThread.strSubstringF( tin0P , psttGot , idf , idl , tAfterHey , 0 ) ; ___( psttGot ) ;
                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                         ZE( countT , idl ) ;
                         countT idf = 0x2e ; ;
@@ -364,20 +364,20 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                     {
                     TN( tContainerPlus , "" ) ;     // web.archiveview.2018.01.21.20.53c96b155170cfa84d4a67396da97101.log
     
-                    //etThread.traceF( tinBaseP , tAfterHey ) ;
+                    //etThread.traceF( tin0P , tAfterHey ) ;
     
                     }
                         }
-                            etThread.delF( tinBaseP , psttGot ) ;
+                            etThread.delF( tin0P , psttGot ) ;
                             tAfterHey = T(psttGot) ;
-                            etThread.strSubstringF( tinBaseP , psttGot , idf , idl , tShort , 0 ) ; ___( psttGot ) ;
+                            etThread.strSubstringF( tin0P , psttGot , idf , idl , tShort , 0 ) ; ___( psttGot ) ;
                             ZE( countT , idl ) ;
                         {
                         if( idf )
     
-                        etThread.delF( tinBaseP , psttGot ) ;
+                        etThread.delF( tin0P , psttGot ) ;
                         tLogBucket = T(psttGot) ;
-                        etThread.strSubstringF( tinBaseP , psttGot , idf , sttq , tDotHeyDot , tShort , 0 , 0 ) ; ___( psttGot ) ;
+                        etThread.strSubstringF( tin0P , psttGot , idf , sttq , tDotHeyDot , tShort , 0 , 0 ) ; ___( psttGot ) ;
                         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                         countT idf = 0x23 ;
                         ZE( strokeS* , psttGot ) ;  // 0              1               2
@@ -390,7 +390,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                     tLogBucket = tLogBucketWindowsServer ;
                     bWindows = 1 ;
                 {
-                if( tShort.csF( tinBaseP ) == tExampleWindowsServerFileName.csF( tinBaseP ) && 1 == etThread.strIdF( tinBaseP , tExampleWindowsServerFileNameProlog , tShort ) )
+                if( tShort.csF( tin0P ) == tExampleWindowsServerFileName.csF( tin0P ) && 1 == etThread.strIdF( tin0P , tExampleWindowsServerFileNameProlog , tShort ) )
                 TN( tContainer , "" ) ;         // ipdos.home.registry
                 TN( tLogBucket , "" ) ;         // .CDN_ACCESS_LOGS
                 ZE( boolT , bWindows ) ;
@@ -408,10 +408,10 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             if( !bDir )
     
             }
-                etThread.delF( tinBaseP , psttShort ) ;
+                etThread.delF( tin0P , psttShort ) ;
                 tShort = T(psttShort) ;
-                etThread.delF( tinBaseP , psttnu ) ;
-                etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                etThread.delF( tin0P , psttnu ) ;
+                etThread.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
                 ZE( strokeS* , psttShort ) ;
                 ZE( strokeS* , psttnu ) ;
             {
@@ -428,11 +428,11 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         {
         if( !pInfo || !pInfo->psttIfoName )
     
-        etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tNew+tStarDotLog ) ;
+        etThread.diskFindFileOrDirOldF( tin0P , pInfo , hFind , tNew+tStarDotLog ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
     ZE( countT , cIn ) ;
 {
 while( !ether && !POOP )
@@ -472,7 +472,7 @@ TN( tToAll     , "///d/tmp/cloud.access.log.entries.all/" ) ;
 TN( tNew       , "///d/tmp/cloud.access.log.entries.new/" ) ;
 strokeS sttColon( ':' ) ;
 
-booksC bksAccessEvents( tinBaseP , TAG( TAGiDnULL ) , "bksAccessEvents.1.raw" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER | flBOOKSc_RESETcREFoNcT , TICK >> 2 ) ;           // TOCK >> 6 IS GOOD FOR TESTING; I WILL RESET CREF IN ALL BOOKS        //A:ASSUME: I AM THE WOTH PROCESS TO OPEN THESE BOOKS DURING SYSTEM GEN
+booksC bksAccessEvents( tin0P , TAG( TAGiDnULL ) , "bksAccessEvents.1.raw" , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER | flBOOKSc_RESETcREFoNcT , TICK >> 2 ) ;           // TOCK >> 6 IS GOOD FOR TESTING; I WILL RESET CREF IN ALL BOOKS        //A:ASSUME: I AM THE WOTH PROCESS TO OPEN THESE BOOKS DURING SYSTEM GEN
 //THIS IS EARLY, BEFORE HIRING, BECAUSE THIS LINE WILL RESET CREF IN THE BOOKS
 
 TODO

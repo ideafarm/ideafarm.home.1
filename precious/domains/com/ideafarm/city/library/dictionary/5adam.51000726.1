@@ -9,15 +9,15 @@
 
 REST
 
-etThread.traceF( tinBaseP , T("ok [cDuplicates]:  ")+TF2(cDuplicates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tin0P , T("ok [cDuplicates]:  ")+TF2(cDuplicates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK ) ;
 {
 while( cWorkers )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-etThread.delF( tinBaseP , psttYearP ) ;
+etThread.delF( tin0P , psttYearP ) ;
 while( ~hFind && !ether && !POOP ) ;
 }
     DEL( pInfo ) ;
@@ -29,7 +29,7 @@ while( ~hFind && !ether && !POOP ) ;
         {
         )
             )
-                !etThread.strCompareF( tinBaseP , psttYear , psttYearP )
+                !etThread.strCompareF( tin0P , psttYear , psttYearP )
                 ||
                 !psttYearP
             (
@@ -39,23 +39,23 @@ while( ~hFind && !ether && !POOP ) ;
         if
 
         }
-            etThread.delF( tinBaseP , psttnu ) ;
-            etThread.delF( tinBaseP , psttYearSlash ) ;
-            etThread.strBisectF( tinBaseP , psttYear , psttnu , psttYearSlash , tSlash , - 1 ) ; ___( psttnu ) ; ___( psttYear ) ;
+            etThread.delF( tin0P , psttnu ) ;
+            etThread.delF( tin0P , psttYearSlash ) ;
+            etThread.strBisectF( tin0P , psttYear , psttnu , psttYearSlash , tSlash , - 1 ) ; ___( psttnu ) ; ___( psttYear ) ;
             )
-                && etThread.strCompareF( tinBaseP , tDotDotSlash , psttYearSlash )
-                   etThread.strCompareF( tinBaseP , tDotSlash    , psttYearSlash )
+                && etThread.strCompareF( tin0P , tDotDotSlash , psttYearSlash )
+                   etThread.strCompareF( tin0P , tDotSlash    , psttYearSlash )
             (
             if
 
-            etThread.delF( tinBaseP , psttnu ) ;
-            etThread.strBisectF( tinBaseP , psttnu , psttYearSlash , pInfo->psttIfoName , tSlash , - 2 ) ; ___( psttnu ) ; ___( psttYearSlash ) ;
+            etThread.delF( tin0P , psttnu ) ;
+            etThread.strBisectF( tin0P , psttnu , psttYearSlash , pInfo->psttIfoName , tSlash , - 2 ) ; ___( psttnu ) ; ___( psttYearSlash ) ;
             ZE( strokeS* , psttYearSlash ) ;
             ZE( strokeS* , psttnu ) ;
 
-            etThread.traceF( tinBaseP , T(pInfo->psttIfoName) ) ;
+            etThread.traceF( tin0P , T(pInfo->psttIfoName) ) ;
         {
-        if( bDir && etThread.strCompareF( tinBaseP , tDotSlash , pInfo->psttIfoName ) && etThread.strCompareF( tinBaseP , tDotDotSlash , pInfo->psttIfoName ) )
+        if( bDir && etThread.strCompareF( tin0P , tDotSlash , pInfo->psttIfoName ) && etThread.strCompareF( tin0P , tDotDotSlash , pInfo->psttIfoName ) )
         ZE( strokeS* , psttYear ) ;
 
         const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
@@ -67,11 +67,11 @@ while( ~hFind && !ether && !POOP ) ;
     {
     if( !pInfo || !pInfo->psttIfoName )
 
-    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tPathArchive+tLike ) ; ___( pInfo ) ;
+    etThread.diskFindFileOrDirOldF( tin0P , pInfo , hFind , tPathArchive+tLike ) ; ___( pInfo ) ;
     ZE( infoFileS* , pInfo ) ;
 {
 do
-handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 TN( tPathArchive , "///d/archive/" ) ;
 TN( tDotDotSlash , "../"           ) ;
 TN( tDotSlash    , "./"            ) ;
@@ -79,21 +79,21 @@ TN( tSlash       , "/"             ) ;
 TN( tLike        , "*"             ) ;
 ZE( countT , cDuplicates ) ;
 
-etThread.winSetTitleF( tinBaseP , T("20171015@1405:  class!") ) ;
+etThread.winSetTitleF( tin0P , T("20171015@1405:  class!") ) ;
 
 }
     }
         }
-            etThread.strMakeF( tinBaseP , LF , psttYearP , psttc1 ) ; ___( psttYearP ) ;
+            etThread.strMakeF( tin0P , LF , psttYearP , psttc1 ) ; ___( psttYearP ) ;
             bArmed = 0 ;
         {
         else if( bArmed )
-        if( !etThread.strCompareF( tinBaseP , psttc1 , tArgYear ) ) bArmed = 1 ;
-        etThread.traceF( tinBaseP , T("param: ")+T(psttc1) ) ;
+        if( !etThread.strCompareF( tin0P , psttc1 , tArgYear ) ) bArmed = 1 ;
+        etThread.traceF( tin0P , T("param: ")+T(psttc1) ) ;
     {
     FORsTRINGSiN1( pstt1Param )
     ZE( boolT , bArmed ) ;
-    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
+    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
 {
 TN( tArgYear , "!year" ) ;
 ZE( strokeS* , psttYearP ) ;
@@ -103,13 +103,13 @@ TODO
 DONE( tmYearF )
 }
     dec02AM( cWorkers ) ;
-    etThread.traceF( tinBaseP , tYearP+T(":  all done") ) ;
+    etThread.traceF( tin0P , tYearP+T(":  all done") ) ;
 
     }
         }
-            etThread.delF( tinBaseP , psttName ) ;
+            etThread.delF( tin0P , psttName ) ;
             }
-                etThread.delF( tinBaseP , psttDoomedRoot ) ;
+                etThread.delF( tin0P , psttDoomedRoot ) ;
 
                 while( ~hFindFile && !ether && !POOP ) ;
                 }
@@ -117,16 +117,16 @@ DONE( tmYearF )
 
                     }
                         }
-                            etThread.traceF( tinBaseP , tYearP+T(":      moved :    ")+tShort ) ;
-                            etThread.diskMoveFileOrDirF( tinBaseP , tPathDoomed+tShort , tIfoName ) ;
-                            etThread.traceF( tinBaseP , tYearP+T(":      moving:    ")+tShort ) ;
+                            etThread.traceF( tin0P , tYearP+T(":      moved :    ")+tShort ) ;
+                            etThread.diskMoveFileOrDirF( tin0P , tPathDoomed+tShort , tIfoName ) ;
+                            etThread.traceF( tin0P , tYearP+T(":      moving:    ")+tShort ) ;
 
                             }
-                                etThread.delF( tinBaseP , psttShort ) ;
+                                etThread.delF( tin0P , psttShort ) ;
                                 tShort = T(psttShort) ;
-                                etThread.delF( tinBaseP , psttPath ) ;
+                                etThread.delF( tin0P , psttPath ) ;
                                 tPath = T(psttPath) ;
-                                etThread.strBisectF( tinBaseP , psttPath , psttShort , tIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttShort ) ; ___( psttPath ) ;
+                                etThread.strBisectF( tin0P , psttPath , psttShort , tIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttShort ) ; ___( psttPath ) ;
                                 ZE( strokeS* , psttShort ) ;
                                 ZE( strokeS* , psttPath ) ;
                             {
@@ -145,59 +145,59 @@ DONE( tmYearF )
                     {
                     if( !pInfoFile || !pInfoFile->psttIfoName )
 
-                    etThread.diskFindFileOrDirOldF( tinBaseP , pInfoFile , hFindFile , tLike ) ; ___( pInfoFile ) ;
+                    etThread.diskFindFileOrDirOldF( tin0P , pInfoFile , hFindFile , tLike ) ; ___( pInfoFile ) ;
                     ZE( infoFileS* , pInfoFile ) ;
                 {
                 do
-                handleC hFindFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                handleC hFindFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
                 TN( tLike , psttDoomedRoot ) ; tLike += T("*") ;
 
-                etThread.traceF( tinBaseP , tYearP+T(":  doomed:    ")+T(psttDoomedRoot) ) ;
+                etThread.traceF( tin0P , tYearP+T(":  doomed:    ")+T(psttDoomedRoot) ) ;
         
-                etThread.strSubstringF( tinBaseP , psttDoomedRoot , idf , idHit , psttName ) ; ___( psttDoomedRoot ) ;
+                etThread.strSubstringF( tin0P , psttDoomedRoot , idf , idHit , psttName ) ; ___( psttDoomedRoot ) ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttDoomedRoot ) ;
             {
             if( idHit )
-            countT idHit = etThread.strIdF( tinBaseP , tDotDataDot , psttName ) ;
+            countT idHit = etThread.strIdF( tin0P , tDotDataDot , psttName ) ;
 
             swsDoomed >> psttName ;
             ZE( strokeS* , psttName ) ;
         {
         while( swsDoomed )
 
-        etThread.traceF( tinBaseP , tYearP+T(":  22222222    ")+TF2(cbFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        cbFile = swsDoomed.leverF( tinBaseP , idf ) ;
+        etThread.traceF( tin0P , tYearP+T(":  22222222    ")+TF2(cbFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        cbFile = swsDoomed.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = swsDoomed.cFlavorsF( tinBaseP ) ;
+    countT cFlavors = swsDoomed.cFlavorsF( tin0P ) ;
     TN( tPathDoomed , "///d/tmp/duplicate.content.removed.from.archive/" ) ;
 
     }
         }
-            etThread.delF( tinBaseP , pbBufferOther  ) ;
-            etThread.delF( tinBaseP , pbBufferCursor ) ;
+            etThread.delF( tin0P , pbBufferOther  ) ;
+            etThread.delF( tin0P , pbBufferCursor ) ;
             }
                 }
                     while( ~hWalkCursor ) ;
                     }
-                        etThread.delF( tinBaseP , psttNameCursor ) ;
+                        etThread.delF( tin0P , psttNameCursor ) ;
                         while( ~hWalkOther ) ;
                         }
-                            etThread.delF( tinBaseP , psttNameOther ) ;
+                            etThread.delF( tin0P , psttNameOther ) ;
                             }
                                 }
                                     }
                                         inc02AM( cDuplicatesP ) ;
                                         cDoomed ++ ;
-                                        etThread.traceF( tinBaseP , tYearP+T(":  [cursor,other]:  ")+T(psttNameCursor)+T("    ")+T(psttNameOther)+T(bSame?"    MATCH":"            different") ) ;
+                                        etThread.traceF( tin0P , tYearP+T(":  [cursor,other]:  ")+T(psttNameCursor)+T("    ")+T(psttNameOther)+T(bSame?"    MATCH":"            different") ) ;
                                     {
                                     else
-                                    if( !ids ) etThread.delF( tinBaseP , psttFile ) ;
-                                    swsDoomed.sinkF( tinBaseP , ids , psttFile , flSTACKsINK_UNIQUE ) ;
+                                    if( !ids ) etThread.delF( tin0P , psttFile ) ;
+                                    swsDoomed.sinkF( tin0P , ids , psttFile , flSTACKsINK_UNIQUE ) ;
                                     ZE( countT , ids ) ;
 
-                                    etThread.strMakeF( tinBaseP , LF , psttFile , psttNameOther ) ; ___( psttFile ) ;
+                                    etThread.strMakeF( tin0P , LF , psttFile , psttNameOther ) ; ___( psttFile ) ;
                                     ZE( strokeS* , psttFile ) ;
                                 {
                                 if( bSame )
@@ -208,10 +208,10 @@ DONE( tmYearF )
                                             break ;
                                             bSame = 0 ;
                                         {
-                                        if( etThread.memCompareF( tinBaseP , pbBufferCursor , pbBufferOther , cbChunk ) )
+                                        if( etThread.memCompareF( tin0P , pbBufferCursor , pbBufferOther , cbChunk ) )
     
-                                        etThread.fileReadF( tinBaseP , pbBufferOther  , cbChunk , hFileOther  ) ;
-                                        etThread.fileReadF( tinBaseP , pbBufferCursor , cbChunk , hFileCursor ) ;
+                                        etThread.fileReadF( tin0P , pbBufferOther  , cbChunk , hFileOther  ) ;
+                                        etThread.fileReadF( tin0P , pbBufferCursor , cbChunk , hFileCursor ) ;
     
                                         cbToDo -= cbChunk ;
     
@@ -225,47 +225,47 @@ DONE( tmYearF )
                                 {
                                 boolT bSame = 1 ;
 
-                                etThread.fileOpenF( tinBaseP , hFileOther  , countTC() , psttNameOther  ) ;
-                                etThread.fileOpenF( tinBaseP , hFileCursor , countTC() , psttNameCursor ) ;
+                                etThread.fileOpenF( tin0P , hFileOther  , countTC() , psttNameOther  ) ;
+                                etThread.fileOpenF( tin0P , hFileCursor , countTC() , psttNameCursor ) ;
 
-                                handleC hFileOther(  tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
-                                handleC hFileCursor( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+                                handleC hFileOther(  tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+                                handleC hFileCursor( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
-                                //etThread.traceF( tinBaseP , tYearP+T(":  [cursor,other]:  ")+T(psttNameCursor)+T("    ")+T(psttNameOther) ) ;
+                                //etThread.traceF( tin0P , tYearP+T(":  [cursor,other]:  ")+T(psttNameCursor)+T("    ")+T(psttNameOther) ) ;
                             {
                             else if( bArmed )
-                            if( !etThread.strCompareF( tinBaseP , psttNameOther , psttNameCursor ) ) bArmed = 1 ;
+                            if( !etThread.strCompareF( tin0P , psttNameOther , psttNameCursor ) ) bArmed = 1 ;
 
-                            etThread.strDecodeF( tinBaseP , psttNameOther , pbEncodedOther ) ; ___( psttNameOther ) ;
+                            etThread.strDecodeF( tin0P , psttNameOther , pbEncodedOther ) ; ___( psttNameOther ) ;
                             ZE( strokeS* , psttNameOther ) ;
 
-                            byteT* pbEncodedOther = (byteT*)swsFileNames.downF( tinBaseP , hWalkOther ) ;
+                            byteT* pbEncodedOther = (byteT*)swsFileNames.downF( tin0P , hWalkOther ) ;
                         {
                         do
-                        handleC hWalkOther( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        handleC hWalkOther( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         ZE( boolT , bArmed ) ;
 
-                        etThread.strDecodeF( tinBaseP , psttNameCursor , pbEncodedCursor ) ; ___( psttNameCursor ) ;
+                        etThread.strDecodeF( tin0P , psttNameCursor , pbEncodedCursor ) ; ___( psttNameCursor ) ;
                         ZE( strokeS* , psttNameCursor ) ;
 
-                        byteT* pbEncodedCursor = (byteT*)swsFileNames.downF( tinBaseP , hWalkCursor ) ;
+                        byteT* pbEncodedCursor = (byteT*)swsFileNames.downF( tin0P , hWalkCursor ) ;
                     {
                     do
-                    handleC hWalkCursor( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC hWalkCursor( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     ZE( boolT , cDoomed ) ;
 
-                    etThread.traceF( tinBaseP , tYearP+T(":  [cFlavorsNotStarted,cbFile]:  ")+TF2(cFlavorsNotStarted,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("        ")+TF2(cbFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    etThread.traceF( tin0P , tYearP+T(":  [cFlavorsNotStarted,cbFile]:  ")+TF2(cFlavorsNotStarted,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("        ")+TF2(cbFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 if( swsFileNames > 1 )
 
-                cbFile = swsFileNames.leverF( tinBaseP , idf ) ;
+                cbFile = swsFileNames.leverF( tin0P , idf ) ;
 
                 cFlavorsNotStarted -- ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
             countT cFlavorsNotStarted = cFlavors ;
-            countT cFlavors = swsFileNames.cFlavorsF( tinBaseP ) ;
-            etThread.traceF( tinBaseP , tYearP+T(":  loading doomed file names into swsDoomed") ) ;
+            countT cFlavors = swsFileNames.cFlavorsF( tin0P ) ;
+            etThread.traceF( tin0P , tYearP+T(":  loading doomed file names into swsDoomed") ) ;
             
             }
                 while( ~hFind && !ether && !POOP ) ;
@@ -274,7 +274,7 @@ DONE( tmYearF )
                     }
                         }
                             swsFileNames << pbEncoded ;
-                            etThread.strEncodeF( tinBaseP , pbEncoded , tIfoName ) ; ___( pbEncoded ) ;
+                            etThread.strEncodeF( tin0P , pbEncoded , tIfoName ) ; ___( pbEncoded ) ;
                             ZE( byteT* , pbEncoded ) ;
 
                             cbFile = pInfoFile->cbUsed ;
@@ -295,31 +295,31 @@ DONE( tmYearF )
                     {
                     if( !pInfoFile || !pInfoFile->psttIfoName )
 
-                    etThread.diskFindFileOrDirOldF( tinBaseP , pInfoFile , hFind , tPathYear+tLikeFile ) ; ___( pInfoFile ) ;
+                    etThread.diskFindFileOrDirOldF( tin0P , pInfoFile , hFind , tPathYear+tLikeFile ) ; ___( pInfoFile ) ;
                     ZE( infoFileS* , pInfoFile ) ;
                 {                                                                                                                                   //20180702@1707: JPG: (pending)
                 do                                                                                                                                  //20180702@1706: AVI (done)
-                handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
                 TN( tLikeFile , "!ideafarm.8.2.00000000.00000001.*.data.mp3" ) ;                            // DONE: JPG    (I ONLY DO WO FILE TYPE AT A TIME (ONLY RUN ME FOR: AVI MP3 JPG AND OTHER TYPES THAT CLEARLY SHOULD NOT BE DUPLICATES.  TTT IS AN EXAMPLE OF A FILE TYPE THAT MIGHT WELL BE INTENTIONALLY DUPLICATED (MANY DAY TITLES ARE "-")
                 TN( tPathYear , "///d/archive/" ) ; tPathYear += tYearP+tSlash ;
             {
-            etThread.traceF( tinBaseP , tYearP+T(":  loading file names into swsFileNames") ) ;
+            etThread.traceF( tin0P , tYearP+T(":  loading file names into swsFileNames") ) ;
 
-            etThread.newF( tinBaseP , LF , pbBufferOther  , CBbUFFER ) ; ___( pbBufferOther  ) ;
-            etThread.newF( tinBaseP , LF , pbBufferCursor , CBbUFFER ) ; ___( pbBufferCursor ) ;
+            etThread.newF( tin0P , LF , pbBufferOther  , CBbUFFER ) ; ___( pbBufferOther  ) ;
+            etThread.newF( tin0P , LF , pbBufferCursor , CBbUFFER ) ; ___( pbBufferCursor ) ;
             ZE( byteT* , pbBufferOther  ) ;
             ZE( byteT* , pbBufferCursor ) ;
-            etThread.traceF( tinBaseP , tYearP+T(":  preallocating oo buffers") ) ;
+            etThread.traceF( tin0P , tYearP+T(":  preallocating oo buffers") ) ;
         {
-        switchStackC swsFileNames( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cbFile , flSTACKc_null , ifcSTACKtYPE_PTR_byteT ) ;
+        switchStackC swsFileNames( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cbFile , flSTACKc_null , ifcSTACKtYPE_PTR_byteT ) ;
     {
     TN( tDotDataDot , ".data." ) ;
     TN( tSlash , "/" ) ;
-    switchStackC swsDoomed( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cbFile , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
+    switchStackC swsDoomed( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cbFile , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
     ZE( countT , cbFile ) ;
 
     }
-        etThread.delF( tinBaseP , psttYearP ) ;
+        etThread.delF( tin0P , psttYearP ) ;
         tYearP = T(psttYearP) ;
         strokeS* psttYearP = (strokeS*)pTaskP->c1 ;
     {

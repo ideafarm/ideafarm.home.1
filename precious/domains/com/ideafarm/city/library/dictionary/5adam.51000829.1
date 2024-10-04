@@ -9,25 +9,25 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    etThread.traceF( tinBaseP , T("[receipt]:    ")+tValueReceiptUrl , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-    etThread.traceF( tinBaseP , T("[liveMode2]:    ")+tValueLiveMode2 , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-    etThread.traceF( tinBaseP , T("[liveMode1]:    ")+tValueLiveMode1 , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-    etThread.traceF( tinBaseP , T("[currency]:    ")+tValueCurrency , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-    etThread.traceF( tinBaseP , T("[email]:    ")+tValueEmail , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etThread.traceF( tin0P , T("[receipt]:    ")+tValueReceiptUrl , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etThread.traceF( tin0P , T("[liveMode2]:    ")+tValueLiveMode2 , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etThread.traceF( tin0P , T("[liveMode1]:    ")+tValueLiveMode1 , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etThread.traceF( tin0P , T("[currency]:    ")+tValueCurrency , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+    etThread.traceF( tin0P , T("[email]:    ")+tValueEmail , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 {
 )
-    && !etThread.strCompareF( tinBaseP , tValueStatus , T("succeeded") )
-    && !etThread.strCompareF( tinBaseP , tValueObject , T("charge") )
-    && !etThread.strCompareF( tinBaseP , tValuePaid , T("true") )
-    && !etThread.strCompareF( tinBaseP , tValueCaptured , T("true") )
-    && !etThread.strCompareF( tinBaseP , tValueDescriptor , T("IDEAFARM.COM") )
-    && !etThread.strCompareF( tinBaseP , tValueAmount , tValueAmountCaptured )
-    && !etThread.strCompareF( tinBaseP , tValueType , T("charge.succeeded") )
-       !etThread.strCompareF( tinBaseP , tValueVersion , T("2023-10-16") )
+    && !etThread.strCompareF( tin0P , tValueStatus , T("succeeded") )
+    && !etThread.strCompareF( tin0P , tValueObject , T("charge") )
+    && !etThread.strCompareF( tin0P , tValuePaid , T("true") )
+    && !etThread.strCompareF( tin0P , tValueCaptured , T("true") )
+    && !etThread.strCompareF( tin0P , tValueDescriptor , T("IDEAFARM.COM") )
+    && !etThread.strCompareF( tin0P , tValueAmount , tValueAmountCaptured )
+    && !etThread.strCompareF( tin0P , tValueType , T("charge.succeeded") )
+       !etThread.strCompareF( tin0P , tValueVersion , T("2023-10-16") )
 (
 if
 
@@ -35,14 +35,14 @@ DEL( pSwPathValue ) ;
 
 }
     }
-        etThread.delF( tinBaseP , psttValue ) ;
+        etThread.delF( tin0P , psttValue ) ;
 
         }
             }
-                etThread.traceF( tinBaseP , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                 *pptValue[ offe ] = T(psttValue) ;
             {
-            if( !etThread.strCompareF( tinBaseP , psttPath , *pptPath[ offe ] ) )
+            if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
         {
         for( countT offe = 0 ; offe < cPaths ; offe ++ )
 
@@ -50,16 +50,16 @@ DEL( pSwPathValue ) ;
         countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
         countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
 
-        //etThread.traceF( tinBaseP , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        //etThread.traceF( tinBaseP , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        //etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        //etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
         strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-        psttPath = (strokeS*)pSwPathValue->leverF( tinBaseP , idf ) ;
+        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
 
         _IO_
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = pSwPathValue->cFlavorsF( tinBaseP ) ;
+    countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
 {
 if( !POOP )
 
@@ -132,7 +132,7 @@ TN( tValueAmount         , "" ) ;
 TN( tValueVersion        , "" ) ;
 
 __Z( pSwPathValue ) ;
-etThread.strParseJsonF( tinBaseP , pSwPathValue , psttPath , postIn , flSTACKc_null ) ;
+etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , postIn , flSTACKc_null ) ;
 ZE( switchC* , pSwPathValue ) ;
 ZE( strokeS* , psttPath     ) ;
 

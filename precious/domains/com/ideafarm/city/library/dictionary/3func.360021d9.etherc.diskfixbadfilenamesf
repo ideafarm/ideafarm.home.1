@@ -12,7 +12,7 @@
 }
     return cBadOrCapFound ;
 
-    delF( tinBaseP , psttFolderMapped ) ;
+    delF( tin0P , psttFolderMapped ) ;
     while( ~hFind && ( !etPrime || bIgnoreEtPrime ) ) ;
     }
         DEL( pInfo ) ;
@@ -21,8 +21,8 @@
                 }
                     }
                         }
-                            delF( tinBaseP , postOsLongNew  ) ;
-                            delF( tinBaseP , postOsLongLike ) ;
+                            delF( tin0P , postOsLongNew  ) ;
+                            delF( tin0P , postOsLongLike ) ;
 
                             }
                                 while( ~hFind2 ) ;
@@ -30,16 +30,16 @@
                                     DEL( pInfo2 ) ;
                                     }
                                         }
-                                            delF( tinBaseP , postLongNew ) ;
-                                            delF( tinBaseP , postLongWas ) ;
+                                            delF( tin0P , postLongNew ) ;
+                                            delF( tin0P , postLongWas ) ;
                                             }
                                                 if( POOP ) POOPR
 
-                                                if( !bDone ) traceF( tinBaseP , T("could not rename file: ")+T(pInfo->postOsName) ) ;
+                                                if( !bDone ) traceF( tin0P , T("could not rename file: ")+T(pInfo->postOsName) ) ;
                                                 
                                                 }
                                                     }
-                                                        thirdC::c_strcatIF( tinBaseP , postLongNew , tSuffix ) ;
+                                                        thirdC::c_strcatIF( tin0P , postLongNew , tSuffix ) ;
                                                         TN( tSuffix , "." ) ; tSuffix += TF3(++idDupLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
                                                         postLongNew[ costLongNew ] = 0 ;
                                                         POOPR
@@ -50,14 +50,14 @@
                                                         bDone = 1 ;
                                                     {
                                                     if( !POOP )
-                                                    thScratch.dosMoveF( tinBaseP , postLongNew , postLongWas , 1 ) ;
+                                                    thScratch.dosMoveF( tin0P , postLongNew , postLongWas , 1 ) ;
                                                 {
                                                 while( cTry -- )
                                                 countT cTry = TUCK ;
                                                 ZE( boolT , bDone ) ;
                                                 ZE( countT , idDupLath ) ;
 
-                                                thirdC& thScratch = *((tin9S&)tinBaseP).pEtScratch ;
+                                                thirdC& thScratch = *((tin9S&)tin0P).pEtScratch ;
 
                                                 SCOOPS
                                             {
@@ -66,27 +66,27 @@
                                             // COLLISIONS ARE HANDLED BY UNIQUIFYING postLongNew BY APPENDING AN INTEGER
                                             // ONLY THE WOTH MATCHING FILE CAN BE RENAMED TO postLongNew
 
-                                            const countT costLongNew = strMakeF( tinBaseP , LF , postLongNew , T(postOsLongNew) , 9 ) ; ___( postLongNew ) ; // EXTRA IS ALLOCATED TO ACCOMMODATE tSuffix
-                                                                       strMakeF( tinBaseP , LF , postLongWas , T(pInfo2->postOsNameAlt?pInfo2->postOsNameAlt:pInfo2->postOsName) ) ; ___( postLongWas ) ;
+                                            const countT costLongNew = strMakeF( tin0P , LF , postLongNew , T(postOsLongNew) , 9 ) ; ___( postLongNew ) ; // EXTRA IS ALLOCATED TO ACCOMMODATE tSuffix
+                                                                       strMakeF( tin0P , LF , postLongWas , T(pInfo2->postOsNameAlt?pInfo2->postOsNameAlt:pInfo2->postOsName) ) ; ___( postLongWas ) ;
                                             ZE( osTextT* , postLongNew ) ;
                                             ZE( osTextT* , postLongWas ) ;
                                         {
-                                        if( bBadOrCapF( tinBaseP , pInfo2->postOsName ) )
+                                        if( bBadOrCapF( tin0P , pInfo2->postOsName ) )
                                     {
                                     if( pInfo2 )
-                                    diskFindFileOrDirF( tinBaseP , pInfo2 , hFind2 , fnLike.pathF() , &pat ) ;
+                                    diskFindFileOrDirF( tin0P , pInfo2 , hFind2 , fnLike.pathF() , &pat ) ;
                                     ZE( infoFileS* , pInfo2 ) ;
                                 {
                                 do
-                                handleC hFind2( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                                handleC hFind2( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
                                 
-                                patternC pat( tinBaseP , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-                                fileNameC fnLike( tinBaseP , *this , T(ifFileNameC(tinBaseP,third,postOsLongLike)) ) ;
+                                patternC pat( tin0P , *this , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                                fileNameC fnLike( tin0P , *this , T(ifFileNameC(tin0P,third,postOsLongLike)) ) ;
 
                             {                
-                            traceF( tinBaseP , T(" [new]: ")+T(postOsLongNew)     ) ;
-                            traceF( tinBaseP , T("[like]: ")+T(postOsLongLike)    ) ;
-                            traceF( tinBaseP , T(" [bad]: ")+T(pInfo->postOsName) ) ;
+                            traceF( tin0P , T(" [new]: ")+T(postOsLongNew)     ) ;
+                            traceF( tin0P , T("[like]: ")+T(postOsLongLike)    ) ;
+                            traceF( tin0P , T(" [bad]: ")+T(pInfo->postOsName) ) ;
 
                             }
                                 }
@@ -113,12 +113,12 @@
                             for( ; postOsLongLike[ offr ] ; offr ++ )
                             countT offr = offShort ;
 
-                            thirdC::c_strcpyIF( tinBaseP , postOsLongNew  , pInfo->postOsName ) ;
-                            thirdC::c_strcpyIF( tinBaseP , postOsLongLike , pInfo->postOsName ) ;
+                            thirdC::c_strcpyIF( tin0P , postOsLongNew  , pInfo->postOsName ) ;
+                            thirdC::c_strcpyIF( tin0P , postOsLongLike , pInfo->postOsName ) ;
                             }
-                                newF( tinBaseP , LF , postOsLongNew  , costa ) ; ___( postOsLongNew  ) ;
-                                newF( tinBaseP , LF , postOsLongLike , costa ) ; ___( postOsLongLike ) ;
-                                countT costa = thirdC::c_strlenIF( tinBaseP , pInfo->postOsName ) + 1 ;
+                                newF( tin0P , LF , postOsLongNew  , costa ) ; ___( postOsLongNew  ) ;
+                                newF( tin0P , LF , postOsLongLike , costa ) ; ___( postOsLongLike ) ;
+                                countT costa = thirdC::c_strlenIF( tin0P , pInfo->postOsName ) + 1 ;
                             {
                         {
                         ZE( osTextT* , postOsLongNew  ) ; // MADE FROM INVALID FILE NAME, WITH INVALID CHARACTERS REPLACED WITH '.'
@@ -126,42 +126,42 @@
 
                         //20150204@1508: UPPER CASE CHARACTERS ARE "PSEUDO-BAD" IN THAT AS POLICY THEY ARE CONVERTED TO LOWER CASE
 
-                        traceF( tinBaseP , T("invalid character found in file name.  repairing...") ) ;
+                        traceF( tin0P , T("invalid character found in file name.  repairing...") ) ;
                         cBadOrCapFound ++ ;
                     {
-                    if( bBadOrCapF( tinBaseP , postOsShort ) )
+                    if( bBadOrCapF( tin0P , postOsShort ) )
 
                     countT offShort = postOsShort - pInfo->postOsName ;
                     postOsShort ++ ;
                 {
                 if( postOsShort )
-                const osTextT* postOsShort = thirdC::c_strrchrIF( tinBaseP , pInfo->postOsName , '\\' ) ;
+                const osTextT* postOsShort = thirdC::c_strrchrIF( tin0P , pInfo->postOsName , '\\' ) ;
             {
             else if( !( F(flagsP) & flETHERfIXnAMES_FOLDERSoNLY ) )
             }
-                if( F(flagsP) & flETHERfIXnAMES_RECURSE && !strIdF( tinBaseP , tSDS , pInfo->psttIfoName ) && !strIdF( tinBaseP , tSDDS , pInfo->psttIfoName ) ) cBadOrCapFound += disk FixBadFileNamesF( tinBaseP , pInfo->psttIfoName , flagsP ) ;
+                if( F(flagsP) & flETHERfIXnAMES_RECURSE && !strIdF( tin0P , tSDS , pInfo->psttIfoName ) && !strIdF( tin0P , tSDDS , pInfo->psttIfoName ) ) cBadOrCapFound += disk FixBadFileNamesF( tin0P , pInfo->psttIfoName , flagsP ) ;
             {
             if( pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' )
         {
         if( pInfo && pInfo->psttIfoName )
-        diskFindFileOrDirF( tinBaseP , pInfo , hFind , T(psttFolderMapped) ) ;
+        diskFindFileOrDirF( tin0P , pInfo , hFind , T(psttFolderMapped) ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     do
-    handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
-    TN( tOsLikePath , osFileNameC( tinBaseP , third , T(psttFolderMapped) ) ) ;
+    handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    TN( tOsLikePath , osFileNameC( tin0P , third , T(psttFolderMapped) ) ) ;
     TN( tSDDS , "/../" ) ;
     TN( tSDS , "/./" ) ;
 
     //THE JOB IS DONE FOR THE CURRENT FOLDER, EXCEPT FOR RECURSION
 
-    if( !( F(flagsP) & flETHERfIXnAMES_SYSTEMpREwASH ) ) cBadOrCapFound = disk FixBadFileNamesF( tinBaseP , psttFolderMapped , ( flagsP & ~( F(flETHERfIXnAMES_RECURSE) ) ) | flETHERfIXnAMES_FOLDERSoNLY | flETHERfIXnAMES_SYSTEMpREwASH ) ; // THIS CLEANS UP THE DIRECTORY NAMES THAT MUST BE CLEAN WHEN I RECURSE INTO THEM
+    if( !( F(flagsP) & flETHERfIXnAMES_SYSTEMpREwASH ) ) cBadOrCapFound = disk FixBadFileNamesF( tin0P , psttFolderMapped , ( flagsP & ~( F(flETHERfIXnAMES_RECURSE) ) ) | flETHERfIXnAMES_FOLDERSoNLY | flETHERfIXnAMES_SYSTEMpREwASH ) ; // THIS CLEANS UP THE DIRECTORY NAMES THAT MUST BE CLEAN WHEN I RECURSE INTO THEM
     ZE( countT , cBadOrCapFound ) ;
 
-    diskMapFileNameF( tinBaseP , psttFolderMapped , psttFolderP ) ; ___( psttFolderMapped ) ;
+    diskMapFileNameF( tin0P , psttFolderMapped , psttFolderP ) ; ___( psttFolderMapped ) ;
     ZE( strokeS* , psttFolderMapped ) ;
 
-    etherC& etPrime = etPrimeIF( tinBaseP ) ;
+    etherC& etPrime = etPrimeIF( tin0P ) ;
     const boolT bIgnoreEtPrime = F(flagsP) & flETHERfIXnAMES_KEEPwORKINGiFfIRED ;
 
     _IO_
@@ -177,7 +177,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT etherC::disk FixBadFileNamesF( tin0S& tinBaseP , const strokeS* const psttFolderP , const flagsT flagsP )/*1*/
+/*1*/countT etherC::disk FixBadFileNamesF( tin0S& tin0P , const strokeS* const psttFolderP , const flagsT flagsP )/*1*/
 
 #if defined( NEVERdEFINED )
 //20170413@1406: THIS IS OBSOLETE NOW THAT FILESETS ARE USED FOR CLOUD ARCHIVAL; DISABLING THIS TO ENSURE THAT IT IS NOT USED TO MODIFY FILE NAMES; IT WORKS BUT SHOULD REMAIN DISABLED UNLESS A NEW NEED ARISES
@@ -210,7 +210,7 @@
     for( ; *postP ; postP ++ )
     ZE( boolT , bBadOrCap ) ;
 {
-boolT bBadOrCapF( tin0S& tinBaseP , const osTextT* postP )
+boolT bBadOrCapF( tin0S& tin0P , const osTextT* postP )
 
 /**/
 

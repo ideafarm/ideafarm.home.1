@@ -10,13 +10,13 @@
 REST
 
 }
-    etThread.strokeF( tinBaseP , T("test ")+TF1(idTest)+T(": ")+TF1(((measureT)time1S)/(measureT)CsAMPLES/(measureT)TOCK)+T(" sample average tocks to overflow\r\n") ) ;
+    etThread.strokeF( tin0P , T("test ")+TF1(idTest)+T(": ")+TF1(((measureT)time1S)/(measureT)CsAMPLES/(measureT)TOCK)+T(" sample average tocks to overflow\r\n") ) ;
     }
-        etThread.osTimeAddF( tinBaseP , time1S , time2S , time1B , time2B ) ;
-        //etThread.strokeF( tinBaseP , TT(time1B,time2B)+T("\r\n") ) ;
-        etThread.osTimeSubtractF( tinBaseP , time1B , time2B , time1A , time2A ) ;
+        etThread.osTimeAddF( tin0P , time1S , time2S , time1B , time2B ) ;
+        //etThread.strokeF( tin0P , TT(time1B,time2B)+T("\r\n") ) ;
+        etThread.osTimeSubtractF( tin0P , time1B , time2B , time1A , time2A ) ;
         
-        etThread.osTimeNowF( tinBaseP , time1B , time2B ) ;
+        etThread.osTimeNowF( tin0P , time1B , time2B ) ;
         ZE( sCountT , time2B ) ;
         ZE( countT , time1B ) ;
         
@@ -27,7 +27,7 @@ REST
         {
         switch( idTest )
         
-        etThread.osTimeNowF( tinBaseP , time1A , time2A ) ;
+        etThread.osTimeNowF( tin0P , time1A , time2A ) ;
         ZE( sCountT , time2A ) ;
         ZE( countT , time1A ) ;
         
@@ -39,7 +39,7 @@ REST
 {
 for( countT idTest = 1 ; idTest <= 3 ; idTest ++ )
 
-thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
+thirdC::dosPriorityIF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
 
 TODO
 

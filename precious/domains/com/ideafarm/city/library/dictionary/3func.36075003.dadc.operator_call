@@ -14,8 +14,8 @@
                 }
                     }
                         pb3 += cbSnip ;
-                        ether.delF( tinBaseP , pbSnip ) ;
-                        ether.memCopyF( tinBaseP , pb3 , pbSnip , cbSnip ) ;
+                        ether.delF( tin0P , pbSnip ) ;
+                        ether.memCopyF( tin0P , pb3 , pbSnip , cbSnip ) ;
                         stOut_cbSnip >> cbSnip ;
                         stOut_pbSnip >> pbSnip ;
                         ZE( countT , cbSnip ) ;
@@ -27,11 +27,11 @@
                     pbP[ cbAll ] = 0 ;
                 {
                 if( pbP )
-                ether.newF( tinBaseP , LF , pbP , cbAll + 1 ) ; ___( pbP ) ;
+                ether.newF( tin0P , LF , pbP , cbAll + 1 ) ; ___( pbP ) ;
 
                 while( !stOut_cbSnip.third && ~hDown ) ;
-                do cbAll += stOut_cbSnip.downF( tinBaseP , hDown ) ;
-                handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                do cbAll += stOut_cbSnip.downF( tin0P , hDown ) ;
+                handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                 ZE( countT , cbAll ) ;
             {
             if( stOut_cbSnip )
@@ -46,8 +46,8 @@
 
                 stOut_cbSnip << cbSnip ;
                 stOut_pbSnip << pbSnip ; pbSnip = 0 ;
-                if( pbSnip ) for( countT off = 0 ; off < cbSnip ; off ++ ) pbSnip[ off ] = (*this)( tinBaseP , pcSnip[ off ] ) ;
-                ether.newF( tinBaseP , LF , pbSnip , cbSnip ) ; ___( pbSnip ) ;
+                if( pbSnip ) for( countT off = 0 ; off < cbSnip ; off ++ ) pbSnip[ off ] = (*this)( tin0P , pcSnip[ off ] ) ;
+                ether.newF( tin0P , LF , pbSnip , cbSnip ) ; ___( pbSnip ) ;
                 ZE( byteT* , pbSnip ) ;
 
                 countT cbSnip = pcSnipe - pcSnip ; //CANNOT BE 0
@@ -62,23 +62,23 @@
                         break ;
 
                         }
-                            ether.delF( tinBaseP , pbIn ) ;
+                            ether.delF( tin0P , pbIn ) ;
                             }
                                 //stOut_cbSnip << cbIn ;
                                 //stOut_pbSnip << pbIn ; pbIn = 0 ;
                                 //PIN IMAGE IS PRESUMED TO BE UNWANTED (E.G. SRU VALUES)
 
-                                for( countT off = 0 ; off < cbIn ; off ++ ) rememberF( tinBaseP , pbIn[ off ] ) ;
+                                for( countT off = 0 ; off < cbIn ; off ++ ) rememberF( tin0P , pbIn[ off ] ) ;
                             {
                             if( !ether )
                         {
                         else
                         }
-                            ether.delF( tinBaseP , pbIn ) ;
+                            ether.delF( tin0P , pbIn ) ;
                             }
                                 stOut_cbSnip << cbSnip ;
                                 stOut_pbSnip << pbSnip ; pbSnip = 0 ;
-                                (*this)( tinBaseP , pbSnip , cbSnip , (const count01T*)pbIn , cbIn / sizeof( count01T ) ) ;
+                                (*this)( tin0P , pbSnip , cbSnip , (const count01T*)pbIn , cbIn / sizeof( count01T ) ) ;
                                 ZE( countT , cbSnip ) ;
                                 ZE( byteT* , pbSnip ) ;
                             {
@@ -96,18 +96,18 @@
                             }
                                 }
                                     //if( pcNameSave[ 3 ] == idbKEYpINtYPE_SOCKETcONNECTION ) { CONoUTrAW( T("dad: ")+TF1(cbIn)+T(" ")+tShort+T("\r\n") ) ; }
-                                    ether.boxGetShadowF( tinBaseP , pbIn , cbIn , tLong , 1 ) ; ___( pbIn ) ;
+                                    ether.boxGetShadowF( tin0P , pbIn , cbIn , tLong , 1 ) ; ___( pbIn ) ;
                                 {
                                 else
-                                //else                                                   { ether.boxGetShadowF( tinBaseP , pbIn , cbIn , tLong , 1 ) ; ___( pbIn ) ; }
-                                if( idCmd == (count01T)ifcIDcMDsPOUSE_INSERTnAMEDpILL ){ ether.boxGetF(       tinBaseP , pbIn , cbIn , tLong , 1 ) ; ___( pbIn ) ; }
+                                //else                                                   { ether.boxGetShadowF( tin0P , pbIn , cbIn , tLong , 1 ) ; ___( pbIn ) ; }
+                                if( idCmd == (count01T)ifcIDcMDsPOUSE_INSERTnAMEDpILL ){ ether.boxGetF(       tin0P , pbIn , cbIn , tLong , 1 ) ; ___( pbIn ) ; }
                             {
                             else
                             }
                                 }
                                     if( POOP ) POOPR
-                                    else                                                   { ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pbIn , cbIn , tLong , 1 ) ; ___( pbIn ) ; }
-                                    if( idCmd == (count01T)ifcIDcMDsPOUSE_INSERTnAMEDpILL ){ ((tin9S&)tinBaseP).pEtScratch->boxGetF(       tinBaseP , pbIn , cbIn , tLong , 1 ) ; ___( pbIn ) ; }
+                                    else                                                   { ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbIn , cbIn , tLong , 1 ) ; ___( pbIn ) ; }
+                                    if( idCmd == (count01T)ifcIDcMDsPOUSE_INSERTnAMEDpILL ){ ((tin9S&)tin0P).pEtScratch->boxGetF(       tin0P , pbIn , cbIn , tLong , 1 ) ; ___( pbIn ) ; }
                                     SCOOPS
                                 {
                                 IFsCRATCH
@@ -118,14 +118,14 @@
                             countT idHomeDisk = etherC::ifc_idHomeIdisk_IF() ;
                             pcSnip += cczName ;
                             countT* pcNameSave = (countT*)pcSnip ; //U::
-                            textC tShort( tinBaseP , TAG( TAGiDnULL ) , flTEXTc_null , (countT*)pcSnip , flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE , 8 , 0 , tDot ) ;
+                            textC tShort( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , (countT*)pcSnip , flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE , 8 , 0 , tDot ) ;
                             TN( tDot , "." ) ;
                         {
                         ZE( countT , cbIn ) ;
                         ZE( byteT* , pbIn ) ;
 
                         if( cczName - cczNameVerify ) { BLAMMO ; } //U::
-                        countT cczNameVerify = 2 * ( ether.strBodyLengthF( tinBaseP , (countT*)( ++ pcSnip ) ) + 1 ) ;
+                        countT cczNameVerify = 2 * ( ether.strBodyLengthF( tin0P , (countT*)( ++ pcSnip ) ) + 1 ) ;
                         countT cczName = *( ++ pcSnip ) ;
                     {
                     case (count01T)ifcIDcMDsPOUSE_INSERTnAMEDpIN :
@@ -141,17 +141,17 @@
         ZE( boolT , bFail ) ;
         const count01T*       pcSnip = pcP ;
         const count01T* const pcEnd = pcP + ccP ;
-        stackC stOut_cbSnip( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
-        stackC stOut_pbSnip( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
+        stackC stOut_cbSnip( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO ) ;
+        stackC stOut_pbSnip( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
     {
     else
     }
         }
             pbP[ off ] = 0 ;
-            for( countT off = 0 ; off < ccP ; off ++ ) pbP[ off ] = (*this)( tinBaseP , pcP[ off ] ) ;
+            for( countT off = 0 ; off < ccP ; off ++ ) pbP[ off ] = (*this)( tin0P , pcP[ off ] ) ;
         {
         if( pbP )
-        ether.newF( tinBaseP , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
+        ether.newF( tin0P , LF , pbP , cbP + 1 ) ; ___( pbP ) ;
         cbP = ccP ;
     {
     if( off == ccP ) //INPUT DOES NOT CONTAIN ESCAPE SEQUENCES
@@ -173,7 +173,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/voidT dadC::operator ()( tin0S& tinBaseP , byteT*& pbP , countT& cbP , const count01T* const pcP , countT ccP , const boolT bSilentFailP )/*1*/
+/*1*/voidT dadC::operator ()( tin0S& tin0P , byteT*& pbP , countT& cbP , const count01T* const pcP , countT ccP , const boolT bSilentFailP )/*1*/
 
 //MOTIVE: SO THAT CODE LIKE THAT OF socketC::readF CAN HANDLE INCOMING CODE STREAMS WITHOUT KNOWING THE ESCAPE CODE CMD LAYOUTS
 // LAYOUT: 0 , idCmd , ccLength , clobOfThatLength
@@ -194,7 +194,7 @@
  cbP
   must be 0
  pbP
- tinBaseP
+ tin0P
 arguments
 /*
 

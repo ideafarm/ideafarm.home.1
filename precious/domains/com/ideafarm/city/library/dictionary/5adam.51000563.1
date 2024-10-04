@@ -9,41 +9,41 @@
     
 REST
 
-SW etThread.strokeF( tinBaseP , T("\f") ) ;
-etThread.strokeF( tinBaseP , T("\f") ) ;
+SW etThread.strokeF( tin0P , T("\f") ) ;
+etThread.strokeF( tin0P , T("\f") ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK * ( idCycle % 2 ? 8 : 2 ) ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK * ( idCycle % 2 ? 8 : 2 ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     //LOGrAW3( "cycle " , idCycle , " -\r\n" ) ;
 
-    //win.baton.ungrabF( tinBaseP ) ;
+    //win.baton.ungrabF( tin0P ) ;
 
     }
         SW ST( etThread , "" )
-        etThread.strokeF( tinBaseP , T("\f") ) ;
+        etThread.strokeF( tin0P , T("\f") ) ;
         SW ST( etThread , "" )
-        etThread.strokeF( tinBaseP , T("\f") ) ;
+        etThread.strokeF( tin0P , T("\f") ) ;
     {
     if( !( idCycle % 2 ) )
 
     }
         SW ST( etThread , "" )
-        etThread.strokeF( tinBaseP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(1.0,scOld_mmPADfORsADAMfRAMES,1.0)+S3(32.0,scOld_mmFRAMEcELLS,8.0)+buQuit2+T(" ")+buSwitch2+S2(0,scOld_POPfRAME) ) ;
+        etThread.strokeF( tin0P , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(1.0,scOld_mmPADfORsADAMfRAMES,1.0)+S3(32.0,scOld_mmFRAMEcELLS,8.0)+buQuit2+T(" ")+buSwitch2+S2(0,scOld_POPfRAME) ) ;
         SW ST( etThread , "" )
-        etThread.strokeF( tinBaseP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(1.0,scOld_mmPADfORsADAMfRAMES,1.0)+S3(32.0,scOld_mmFRAMEcELLS,8.0)+buQuit1+T(" ")+buSwitch1+S2(0,scOld_POPfRAME) ) ;
+        etThread.strokeF( tin0P , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(1.0,scOld_mmPADfORsADAMfRAMES,1.0)+S3(32.0,scOld_mmFRAMEcELLS,8.0)+buQuit1+T(" ")+buSwitch1+S2(0,scOld_POPfRAME) ) ;
     {
     else
     }
         SW ST( etThread , "" )
-        etThread.strokeF( tinBaseP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(1.0,scOld_mmPADfORsADAMfRAMES,1.0)+S3(32.0,scOld_mmFRAMEcELLS,8.0)+buQuit1+T(" ")+buSwitch1+S2(0,scOld_POPfRAME) ) ;
+        etThread.strokeF( tin0P , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(1.0,scOld_mmPADfORsADAMfRAMES,1.0)+S3(32.0,scOld_mmFRAMEcELLS,8.0)+buQuit1+T(" ")+buSwitch1+S2(0,scOld_POPfRAME) ) ;
         SW ST( etThread , "" )
-        etThread.strokeF( tinBaseP , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(1.0,scOld_mmPADfORsADAMfRAMES,1.0)+S3(32.0,scOld_mmFRAMEcELLS,8.0)+buQuit2+T(" ")+buSwitch2+S2(0,scOld_POPfRAME) ) ;
+        etThread.strokeF( tin0P , T("")+S3(1,scOld_ccFRAMEfORsADAMfRAMES,1)+S3(1.0,scOld_mmPADfORsADAMfRAMES,1.0)+S3(32.0,scOld_mmFRAMEcELLS,8.0)+buQuit2+T(" ")+buSwitch2+S2(0,scOld_POPfRAME) ) ;
     {
-    if( 2 == win.idFaceF( tinBaseP , 0 , ifcIDaCTIONpAPER_QUERYdRAW ) )
+    if( 2 == win.idFaceF( tin0P , 0 , ifcIDaCTIONpAPER_QUERYdRAW ) )
     ST( etThread , "" )
 
-    //win.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    //win.baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     //LOGrAW3( "cycle " , idCycle , " +\r\n" ) ;
     idCycle ++ ;
@@ -51,21 +51,21 @@ etThread.strokeF( tinBaseP , T("\f") ) ;
 while( !ether )
 ZE( countT , idCycle ) ;
 
-win.baton.ungrabF( tinBaseP ) ;
+win.baton.ungrabF( tin0P ) ;
 win.cAnimateArg = (countT)&c8a ;
 win.pAnimateCBF = animateCBF ;
-win.baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+win.baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
 c8a1.c7 = (countT)&buSwitch2 ;
 c8a1.c6 = (countT)&buSwitch1 ;
-tcButtonC buSwitch2( tinBaseP , buSwitchCBF , (countT)&c8a , flFeature , 0 , T("switch2") , 2 ) ;
-tcButtonC buSwitch1( tinBaseP , buSwitchCBF , (countT)&c8a , flFeature , 0 , T("switch1") , 2 ) ;
+tcButtonC buSwitch2( tin0P , buSwitchCBF , (countT)&c8a , flFeature , 0 , T("switch2") , 2 ) ;
+tcButtonC buSwitch1( tin0P , buSwitchCBF , (countT)&c8a , flFeature , 0 , T("switch1") , 2 ) ;
 
 c8a1.c5 = (countT)&buQuit2 ;
 c8a1.c4 = (countT)&buQuit1 ;
 
-tcButtonC buQuit2( tinBaseP , buQuitCBF , 0 , flFeature , 0 , T("quit2") , 2 ) ;
-tcButtonC buQuit1( tinBaseP , buQuitCBF , 0 , flFeature , 0 , T("quit1") , 2 ) ;
+tcButtonC buQuit2( tin0P , buQuitCBF , 0 , flFeature , 0 , T("quit2") , 2 ) ;
+tcButtonC buQuit1( tin0P , buQuitCBF , 0 , flFeature , 0 , T("quit1") , 2 ) ;
 const flagsT flFeature = flTCfEATURE_defaultButton | flTCfEATURE_TABpARTICIPANT | flTCfEATURE_FLYOVERhIGHLIGHT | flTCfEATURE_DRAGGABLE ;
 
 count8S c8a( (countT)&c8a1 ) ;
@@ -79,19 +79,19 @@ windowOldC& win = *thirdC::pWinRootIF() ;
 TODO
 
 }
-    if( ((tin9S&)tinBaseP).fingerprint && idCycleP && etherP && wP.bDoomed ) ;
+    if( ((tin9S&)tin0P).fingerprint && idCycleP && etherP && wP.bDoomed ) ;
 
-    buSwitch2.setF( tinBaseP , T("")+S3(9.0,scOld_mmFRAMEcELLS,1.0)+S2(0x00ff00,scOld_cPUSHcOLOR)+TP("",8)+TF1(idCycleP%0xf)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAME) ) ;
-    buSwitch1.setF( tinBaseP , T("")+S3(9.0,scOld_mmFRAMEcELLS,1.0)+S2(0x00ff00,scOld_cPUSHcOLOR)+TP("",8)+TF1(idCycleP%0xf)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAME) ) ;
-    buQuit2.setF(   tinBaseP , T("")+S3(7.0,scOld_mmFRAMEcELLS,1.0)+S2(0x00ff00,scOld_cPUSHcOLOR)+TP("",6)+TF1(idCycleP%0xf)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAME) ) ;
-    buQuit1.setF(   tinBaseP , T("")+S3(7.0,scOld_mmFRAMEcELLS,1.0)+S2(0x00ff00,scOld_cPUSHcOLOR)+TP("",6)+TF1(idCycleP%0xf)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAME) ) ;
+    buSwitch2.setF( tin0P , T("")+S3(9.0,scOld_mmFRAMEcELLS,1.0)+S2(0x00ff00,scOld_cPUSHcOLOR)+TP("",8)+TF1(idCycleP%0xf)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAME) ) ;
+    buSwitch1.setF( tin0P , T("")+S3(9.0,scOld_mmFRAMEcELLS,1.0)+S2(0x00ff00,scOld_cPUSHcOLOR)+TP("",8)+TF1(idCycleP%0xf)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAME) ) ;
+    buQuit2.setF(   tin0P , T("")+S3(7.0,scOld_mmFRAMEcELLS,1.0)+S2(0x00ff00,scOld_cPUSHcOLOR)+TP("",6)+TF1(idCycleP%0xf)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAME) ) ;
+    buQuit1.setF(   tin0P , T("")+S3(7.0,scOld_mmFRAMEcELLS,1.0)+S2(0x00ff00,scOld_cPUSHcOLOR)+TP("",6)+TF1(idCycleP%0xf)+S2(0,scOld_POPcOLOR)+S2(0,scOld_POPfRAME) ) ;
 
     ARGS( cArgP )
 {
-voidT animateCBF( tin0S& tinBaseP , etherC& etherP , paperBackC& backP , const countT idCycleP , const countT cArgP )
+voidT animateCBF( tin0S& tin0P , etherC& etherP , paperBackC& backP , const countT idCycleP , const countT cArgP )
 
 }
-    if( ((tin9S&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
+    if( ((tin9S&)tin0P).fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
 
     }
         }
@@ -116,10 +116,10 @@ voidT animateCBF( tin0S& tinBaseP , etherC& etherP , paperBackC& backP , const c
 
     ARGS( cArgP )
 {
-voidT buSwitchCBF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT buSwitchCBF( tin0S& tin0P , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
 }
-    if( ((tin9S&)tinBaseP).fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
+    if( ((tin9S&)tin0P).fingerprint && etherP && cArgP && idTypeCallP && idEventP && pcNotesP && flTcStateNewP && flTcStateOldP ) ;
 
     }
         }
@@ -137,10 +137,10 @@ voidT buSwitchCBF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const
     {
     switch( idTypeCallP )
 {
-voidT buQuitCBF( tin0S& tinBaseP , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
+voidT buQuitCBF( tin0S& tin0P , etherC& etherP , const countT cArgP , const countT idTypeCallP , const countT idEventP , const countT* const pcNotesP , const flagsT flTcStateNewP , const flagsT flTcStateOldP )
 
-#define SW win.idFaceF( tinBaseP , 0 , ifcIDaCTIONpAPER_SWITCH , &idFaceShow , &idFaceDraw ) ;
-#define ST(etherP,postP) etherP.winSetTitleF( tinBaseP , T("show:")+TF1(idFaceShow)+T(" draw:")+TF1(idFaceDraw)+T(postP) ) ;
+#define SW win.idFaceF( tin0P , 0 , ifcIDaCTIONpAPER_SWITCH , &idFaceShow , &idFaceDraw ) ;
+#define ST(etherP,postP) etherP.winSetTitleF( tin0P , T("show:")+TF1(idFaceShow)+T(" draw:")+TF1(idFaceDraw)+T(postP) ) ;
 #define PERIOD 0x20
 
     tcButtonC& buSwitch2  = *(tcButtonC*)c8a1.c7 ;

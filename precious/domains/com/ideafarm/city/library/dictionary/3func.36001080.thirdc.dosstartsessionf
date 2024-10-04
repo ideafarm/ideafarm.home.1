@@ -8,8 +8,8 @@
 
 
 }
-    dosWaitChildF( tinBaseP , valueP , idDeathTypeP , osTidP , osPidP ) ;
-    dosStartSessionF( tinBaseP , osTidP , osPidP , postExeP , postArgsP , idColP , idRowP , cColP , cRowP , flags | flSESSION_REGISTERtHREADhANDLE | flSESSION_REGISTERpROCESShANDLE ) ;
+    dosWaitChildF( tin0P , valueP , idDeathTypeP , osTidP , osPidP ) ;
+    dosStartSessionF( tin0P , osTidP , osPidP , postExeP , postArgsP , idColP , idRowP , cColP , cRowP , flags | flSESSION_REGISTERtHREADhANDLE | flSESSION_REGISTERpROCESShANDLE ) ;
     _IO_
 
     #endif
@@ -31,7 +31,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT thirdC::dosStartSessionF( tin0S& tinBaseP , countT& osTidP , countT& osPidP , countT& valueP , countT& idDeathTypeP , const osTextT* const postExeP , const osTextT* const postArgsP , const sCountT idColP , const sCountT idRowP , const countT cColP , const countT cRowP , const flagsT flagsP )/*1*/
+/**//*1*/voidT thirdC::dosStartSessionF( tin0S& tin0P , countT& osTidP , countT& osPidP , countT& valueP , countT& idDeathTypeP , const osTextT* const postExeP , const osTextT* const postArgsP , const sCountT idColP , const sCountT idRowP , const countT cColP , const countT cRowP , const flagsT flagsP )/*1*/
 */
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/1snip.001000e.flSESSION!||
  flagsP
@@ -49,7 +49,7 @@
  osPidP
   must be 0
  osTidP
- tinBaseP
+ tin0P
 arguments
 os: on windows, kid processes are not supported, so the kid flag has no effect
  flSESSION_HIDE

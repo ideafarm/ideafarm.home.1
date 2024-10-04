@@ -20,11 +20,11 @@
 
                     }
                         pbPendingInOutFramePackets = pbn ;
-                        PUSE.newF( tinBaseP , LF , pbn , cba ) ; ___( pbn ) ;
+                        PUSE.newF( tin0P , LF , pbn , cba ) ; ___( pbn ) ;
                         ZE( byteT* , pbn ) ;                                // pbn IS USED TO PREVENT pbPendingInOutFramePackets FROM BEING USED BEFORE ITS WOTH countT IS INITIALIZED
                     {
                     else
-                    if( !pPoolUse ) pbPendingInOutFramePackets = processGlobal4I.heap.newF( tinBaseP , LF , cba ) ;
+                    if( !pPoolUse ) pbPendingInOutFramePackets = processGlobal4I.heap.newF( tin0P , LF , cba ) ;
 
                     countT cba = sizeof( countT ) + CmAXpENDINGiNoUTfRAMEpACKETS * sizeof( tellInfoAppInOutFrameS ) ;
                 {
@@ -32,14 +32,14 @@
             {
             if( monitor.idThread > 3 && !( F(flags) & flTINs_NOiNoUTfRAMEsUPPORT ) ) // FOR THREAD 1, SEE do3; THREAD 2 3 ARE tinHeart AND tinBreak
 
-            if( idTinNamed == ifcIDtINnAMED_tinBreakI ) thirdC::c_strncpyIF( tinBaseP , postTell , "refusalsToClose:0    logoffsSeen:0" , sizeof postTell ) ; //CODEsYNC: 12f0006 10200cc
-            thirdC::c_strncpyIF( tinBaseP , postTell , "tin9S::tin9S: i am now registered" , sizeof postTell ) ;
+            if( idTinNamed == ifcIDtINnAMED_tinBreakI ) thirdC::c_strncpyIF( tin0P , postTell , "refusalsToClose:0    logoffsSeen:0" , sizeof postTell ) ; //CODEsYNC: 12f0006 10200cc
+            thirdC::c_strncpyIF( tin0P , postTell , "tin9S::tin9S: i am now registered" , sizeof postTell ) ;
             }
                 TELLsYSc3LIFI( idTypeSay , (byteT*)&info , sizeof info , idLineCt , idiFileCt )
                 info.idiFileCt  = idiFileCt ;
                 info.idLineCt   = idLineCt ;
                 info.idTinNamed = idTinNamed ;
-                thirdC::c_strncpyIF( tinBaseP , info.postThreadName , postThreadName , sizeof info.postThreadName ) ;
+                thirdC::c_strncpyIF( tin0P , info.postThreadName , postThreadName , sizeof info.postThreadName ) ;
                 info.idTin      = idTin ;
                 //info.ip       = aptMe ? aptMe : (countT)this ;
                 info.ip         = (countT)this ;
@@ -47,16 +47,16 @@
                 tellInfoSysTinS info ;
                 //countT idTypeSay = aptMe ? ifcIDtYPEtELLsYS_TINcTI : ifcIDtYPEtELLsYS_TINcTP ;
                 countT idTypeSay = ifcIDtYPEtELLsYS_TINcTP ;
-                //ap_artmentOldC aptMe( tinBaseP , (byteT*)this ) ;
-                thirdC::c_strncpyIF( tinBaseP , postTell , "tin9S::tin9S: registering myself" , sizeof postTell ) ;
+                //ap_artmentOldC aptMe( tin0P , (byteT*)this ) ;
+                thirdC::c_strncpyIF( tin0P , postTell , "tin9S::tin9S: registering myself" , sizeof postTell ) ;
             {
             if( !( F(flags) & flTINs_CONSTRUCTqUIETLY ) )
     
             }
                 }
                     TELLsYSc3LIFI( ifcIDtYPEtELLsYS_LIFInAME , (byteT*)&info , sizeof info , idLineCt , idiFileCt ) ;
-                    info.costName = thirdC::c_strlenIF( tinBaseP , info.postName ) ;
-                    thirdC::c_strncpyIF( tinBaseP , info.postName , postOverride , sizeof info.postName ) ;
+                    info.costName = thirdC::c_strlenIF( tin0P , info.postName ) ;
+                    thirdC::c_strncpyIF( tin0P , info.postName , postOverride , sizeof info.postName ) ;
                     info.idiFile = idiFileCt ;
                     info.idLine = idLineCt & 0xfff ;
                     tellInfoSysLifiS info ;
@@ -66,7 +66,7 @@
                 if( postn )
         
                 }
-                    if( idTinNamed == ifcIDtINnAMED_tinHeartI || idTinNamed == ifcIDtINnAMED_tinBreakI ) thirdC::c_strncpyIF( tinBaseP , postThreadName , postn , sizeof postThreadName ) ;
+                    if( idTinNamed == ifcIDtINnAMED_tinHeartI || idTinNamed == ifcIDtINnAMED_tinBreakI ) thirdC::c_strncpyIF( tin0P , postThreadName , postn , sizeof postThreadName ) ;
                     }
                         }
                             break ;
@@ -89,7 +89,7 @@
             }
                 }
                     }
-                        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                        etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
 
                         OStEXTAK( ostoSay , "_" ) ;
                         OStEXTCF( ostoSay , pbThreadStackEnd , '0' ) ;
@@ -115,7 +115,7 @@
                     if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_CHATTERtHREADsTACK && ( idTinNamed == ifcIDtINnAMED_tinInPoolMain || this == &tin0SelfOrElderP ) )
 
                     }
-                        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , (const strokeS* const)(const osTextT* const)ostoSay , /*flTRACE_LOOP |*/ flTRACE_PARAMETERiSoStEXT ) ;
+                        etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS* const)(const osTextT* const)ostoSay , /*flTRACE_LOOP |*/ flTRACE_PARAMETERiSoStEXT ) ;
 
                         OStEXTAK( ostoSay , " ++++" ) ;
                         OStEXTA(  ostoSay , postThreadName ) ;
@@ -126,7 +126,7 @@
                         OStEXTAK( ostoSay , "tin9S [osPid,osTid]:    " ) ;
                         OStEXT(   ostoSay , TUCK >> 0 ) ;
 
-                        tin0S& tinBaseP = *this ;
+                        tin0S& tin0P = *this ;
                     {
                     if( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_CHATTERtHREADcTdT )
                 {
@@ -159,32 +159,32 @@
             if( !pbThreadStackStart )
 
             }
-                thirdC::c_strncpyIF( tinBaseP , postTell , "tin9S::tin9S: my image is now valid by raw construction" , sizeof postTell ) ;
+                thirdC::c_strncpyIF( tin0P , postTell , "tin9S::tin9S: my image is now valid by raw construction" , sizeof postTell ) ;
                 putNegAM( fingerprint , FINGERnEG_TINs ) ; //MY IMAGE IS NOW COMPLETELY VALID
                 monitor.idDirty ++ ;
         
                 }
-                    thirdC::c_strncpyIF( tinBaseP , processGlobal3I.pLowThread[ monitor.idThread ].postThreadName , postThreadName , sizeof processGlobal3I.pLowThread[ monitor.idThread ].postThreadName ) ;
+                    thirdC::c_strncpyIF( tin0P , processGlobal3I.pLowThread[ monitor.idThread ].postThreadName , postThreadName , sizeof processGlobal3I.pLowThread[ monitor.idThread ].postThreadName ) ;
                     processGlobal3I.pLowThread[ monitor.idThread ].osTid = osTid ;
                     if( processGlobal3I.pLowThread[ monitor.idThread ].osTid ) { BLAMMO ; }
                 {
                 if( monitor.idThread <= ClOWtHREADS )
                 
-                //U::WILL pPoop WORK?: declareVmUsageTypeGF( tinBaseP , (byteT*)((tin9S&)tinBaseP).pPoop , flVMuSAGEtYPE_CPUsTACK , monitor.idThread , postThreadName ) ;
-                thirdC::c_strncpyIF( tinBaseP , postThreadName , postThreadNameP , sizeof postThreadName ) ;
+                //U::WILL pPoop WORK?: declareVmUsageTypeGF( tin0P , (byteT*)((tin9S&)tin0P).pPoop , flVMuSAGEtYPE_CPUsTACK , monitor.idThread , postThreadName ) ;
+                thirdC::c_strncpyIF( tin0P , postThreadName , postThreadNameP , sizeof postThreadName ) ;
         
                 //monitor.pLFnest[ 3 ] = idiFileCt ;
                 //monitor.pLFnest[ 2 ] = idLineCt & ~fliSTEP_FLAGmASK ;
                 //monitor.cInNest = 1 ; //ENSURES THAT THE MONITOR WILL NEVER SEE A NULL monitor.cInNest (IF IT DOES, THERE IS A BUG)
                 
                 }
-                    thirdC::c_memsetIF( tinBaseP , postTellIf          , sizeof postTellIf ) ;
-                    thirdC::c_memsetIF( tinBaseP , postTellWait        , sizeof postTellWait ) ;
-                    thirdC::c_strncpyIF( tinBaseP , postTell , "constructing this tin9S, object" , sizeof postTell ) ;
+                    thirdC::c_memsetIF( tin0P , postTellIf          , sizeof postTellIf ) ;
+                    thirdC::c_memsetIF( tin0P , postTellWait        , sizeof postTellWait ) ;
+                    thirdC::c_strncpyIF( tin0P , postTell , "constructing this tin9S, object" , sizeof postTell ) ;
                 {
-                //thirdC::c_memsetIF( tinBaseP , (byteT*)ppTinKid   , sizeof ppTinKid    ) ;
-                thirdC::c_memsetIF( tinBaseP , (byteT*)pcUtility04  , sizeof pcUtility04 ) ;
-                thirdC::c_memsetIF( tinBaseP , (byteT*)pcUtility    , sizeof pcUtility   ) ;
+                //thirdC::c_memsetIF( tin0P , (byteT*)ppTinKid   , sizeof ppTinKid    ) ;
+                thirdC::c_memsetIF( tin0P , (byteT*)pcUtility04  , sizeof pcUtility04 ) ;
+                thirdC::c_memsetIF( tin0P , (byteT*)pcUtility    , sizeof pcUtility   ) ;
                 }
             
                     pFlagsThreadLevelMode[ off ] = flTHREADlEVELmODE_null ;
@@ -247,7 +247,7 @@
                 idSerial  = ph ? 1 + incv02AM( ph->idSerialLath ) : 0 ;
                 homeS* ph = processGlobal1I.pHome ;
             {
-            //U::VALIDATE flags...NOTE THAT flags IS NOT VALIDATED. THIS IS BECAUSE I DO NOT HAVE AN POOP TO SET U::CONJ: IT COULD BE VALIDATED NOW THAT I KNOW WHETHER I CAN USE tinBaseP AS MY ELDER)    
+            //U::VALIDATE flags...NOTE THAT flags IS NOT VALIDATED. THIS IS BECAUSE I DO NOT HAVE AN POOP TO SET U::CONJ: IT COULD BE VALIDATED NOW THAT I KNOW WHETHER I CAN USE tin0P AS MY ELDER)    
         
             idDesireSetBySelfProcess = thirdC::dosPriorityProcessIF( tin0SelfOrElderP ) ;
             idDesireSetBySelf = thirdC::dosPriorityIF( tin0SelfOrElderP ) ;
@@ -369,7 +369,7 @@ tin0S( tin0SelfOrElderP , idLineCtP , idiFileCtP , pbBitsCtP , ifcIDtYPEtIN_FULL
 // "tin0SelfOrElderP": USUALLY SO, BUT NOT ALWAYS (AN EXCEPTION TIN WILL BE, YOU GUESSED IT, AN EXCEPTION (S))
 
 //CONJ: THE PRECEDING COMMENT IS OBSOLETE AND NO LONGER TRUE
-// THIS DEFINITION MUST WORK WHEN tinBaseP REFERENCES BYTES THAT ARE ALL SET TO 0 ("tin9S. processGlobal4I.tinNormalVeryVeryEarlyLateMain( processGlobal4I.tinNormalVeryVeryEarlyLateMain , TAG( TAGiDnULL ) , flTINs_CONSTRUCTqUIETLY ) ;")
+// THIS DEFINITION MUST WORK WHEN tin0P REFERENCES BYTES THAT ARE ALL SET TO 0 ("tin9S. processGlobal4I.tinNormalVeryVeryEarlyLateMain( processGlobal4I.tinNormalVeryVeryEarlyLateMain , TAG( TAGiDnULL ) , flTINs_CONSTRUCTqUIETLY ) ;")
 
 /**/
 */

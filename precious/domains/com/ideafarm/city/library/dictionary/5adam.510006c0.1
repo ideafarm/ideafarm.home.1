@@ -9,26 +9,26 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-thirdC::openSsl_shutdownIF( tinBaseP ) ;
+thirdC::openSsl_shutdownIF( tin0P ) ;
 }
     }
         }
             }
                 shutdown( hSock , 2 ) ;
 
-                etThread.boxPutF( tinBaseP , T("///d/tmp/foo.ttt") , postHear , rc ) ;
-                etThread.traceF( tinBaseP , T(postHear) ) ;
+                etThread.boxPutF( tin0P , T("///d/tmp/foo.ttt") , postHear , rc ) ;
+                etThread.traceF( tin0P , T(postHear) ) ;
 
-                thirdC::openSsl_readIF( tinBaseP , postHear , sizeof postHear , hSslWrapper ) ;
+                thirdC::openSsl_readIF( tin0P , postHear , sizeof postHear , hSslWrapper ) ;
                 memset( postHear , 0 , sizeof postHear ) ;
                 char postHear[ 0x10000 ] ; 
 
-                thirdC::openSsl_writeIF( tinBaseP , hSslWrapper , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+                thirdC::openSsl_writeIF( tin0P , hSslWrapper , (osTextT*)tSay , (countT)tSay.csF( tin0P ) ) ;
 
-                tSay += TF4(tSayBody.csF(tinBaseP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tSayBody ;
+                tSay += TF4(tSayBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tSayBody ;
                 ) ;
 
                     "Content-Length: "
@@ -54,8 +54,8 @@ thirdC::openSsl_shutdownIF( tinBaseP ) ;
                     "{\r\n"
 
                 TN( tSayBody ,
-                thirdC::openSsl_shakeHandsAsClientIF( tinBaseP , hSslWrapper ) ;
-                thirdC::openSsl_wrapSocketIF( tinBaseP , hSslWrapper , hSock ) ;
+                thirdC::openSsl_shakeHandsAsClientIF( tin0P , hSslWrapper ) ;
+                thirdC::openSsl_wrapSocketIF( tin0P , hSslWrapper , hSock ) ;
 
                 int rc = connect( hSock , (sockaddr*)&info , sizeof info ) ;
                 info.sin_addr.s_addr = *(int*)pInfo->h_addr_list[ 0 ] ;
@@ -73,15 +73,15 @@ thirdC::openSsl_shutdownIF( tinBaseP ) ;
     {
     if( ~hSslWrapper )
 
-    thirdC::openSsl_getWrapperIF( tinBaseP , hSslWrapper , hSslContext ) ;
-    handleC hSslWrapper( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslWrapper ) ;
+    thirdC::openSsl_getWrapperIF( tin0P , hSslWrapper , hSslContext ) ;
+    handleC hSslWrapper( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslWrapper ) ;
 {
 if( ~hSslContext )
 
-thirdC::openSsl_getContextIF( tinBaseP , hSslContext ) ;
-handleC hSslContext( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslContext ) ;
+thirdC::openSsl_getContextIF( tin0P , hSslContext ) ;
+handleC hSslContext( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslContext ) ;
 
-thirdC::openSsl_setupIF( tinBaseP ) ;
+thirdC::openSsl_setupIF( tin0P ) ;
 
 TODO
 

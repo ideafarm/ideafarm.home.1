@@ -34,18 +34,18 @@
                 countT offp = pInfo->c_pbl >> cBitsGrain ;
             {
             if( pInfo )
-            ifInfoS* pInfo = (ifInfoS*)stInfo.downF( tinBaseP , hDown ) ;
+            ifInfoS* pInfo = (ifInfoS*)stInfo.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {   //COPY THE REGION INFORMATION FROM THE STACK PLATES INTO THE REGION INFORMATION ARRAYS
     if( !POOP )
 
-    c_memsetIF( tinBaseP , (byteT*)pVmRegionAllocP , sizeof( vmRegionS ) * ( 2 + cAllocs  ) ) ;
-    c_memsetIF( tinBaseP , (byteT*)pVmRegionP      , sizeof( vmRegionS ) * ( 2 + cRegions ) ) ;
+    c_memsetIF( tin0P , (byteT*)pVmRegionAllocP , sizeof( vmRegionS ) * ( 2 + cAllocs  ) ) ;
+    c_memsetIF( tin0P , (byteT*)pVmRegionP      , sizeof( vmRegionS ) * ( 2 + cRegions ) ) ;
 
-    newF( tinBaseP , LF , (byteT*&)pVmRegionAllocP , sizeof( vmRegionS ) * ( 2 + cAllocs  ) ) ; ___( pVmRegionAllocP ) ;
-    newF( tinBaseP , LF , (byteT*&)pVmRegionP      , sizeof( vmRegionS ) * ( 2 + cRegions ) ) ; ___( pVmRegionP ) ;
+    newF( tin0P , LF , (byteT*&)pVmRegionAllocP , sizeof( vmRegionS ) * ( 2 + cAllocs  ) ) ; ___( pVmRegionAllocP ) ;
+    newF( tin0P , LF , (byteT*&)pVmRegionP      , sizeof( vmRegionS ) * ( 2 + cRegions ) ) ; ___( pVmRegionP ) ;
 
     }
         }
@@ -69,10 +69,10 @@
                     if( c_pblaLast != pInfo->c_pbla )
                 {
                 if( pInfo )
-                ifInfoS* pInfo = (ifInfoS*)stInfo.downF( tinBaseP , hDown ) ;
+                ifInfoS* pInfo = (ifInfoS*)stInfo.downF( tin0P , hDown ) ;
             {
             do
-            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             ZE( countT , c_pblaLast ) ;
             countT idAllocNext = 1 ;
             countT idRegionNext = 1 ;
@@ -80,9 +80,9 @@
         {
         if( !POOP )
 
-        c_memsetIF( tinBaseP , pbIdAllocP , 1 + cRegions ) ;
+        c_memsetIF( tin0P , pbIdAllocP , 1 + cRegions ) ;
 
-        newF( tinBaseP , LF , pbIdAllocP , 2 + cRegions ) ; ___( pbIdAllocP ) ;
+        newF( tin0P , LF , pbIdAllocP , 2 + cRegions ) ; ___( pbIdAllocP ) ;
     {   //MAKE pbIdAllocP ARRAY
     ZE( countT , cAllocs ) ;
 
@@ -99,8 +99,8 @@
                     idRegionNext ++ ;
 
                     offPageNext = offPageEnd ;
-                    else              c_memsetIF( tinBaseP , pbIdRegionP + offPageNext , offPageEnd - offPageNext , (byteT)idRegionNext ) ;
-                    if( !offPageEnd ) c_memsetIF( tinBaseP , pbIdRegionP + offPageNext , cPages     - offPageNext , (byteT)idRegionNext ) ;
+                    else              c_memsetIF( tin0P , pbIdRegionP + offPageNext , offPageEnd - offPageNext , (byteT)idRegionNext ) ;
+                    if( !offPageEnd ) c_memsetIF( tin0P , pbIdRegionP + offPageNext , cPages     - offPageNext , (byteT)idRegionNext ) ;
 
                     __( offPageNext != offPageMin ) ;
                     __( offPageEnd  == offPageMin ) ;
@@ -108,19 +108,19 @@
                     countT offPageMin   = pInfo->c_pbl             >> cBitsGrain ;
                 {
                 if( pInfo )
-                ifInfoS* pInfo = (ifInfoS*)stInfo.downF( tinBaseP , hDown ) ;
+                ifInfoS* pInfo = (ifInfoS*)stInfo.downF( tin0P , hDown ) ;
             {
             do
-            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             ZE( countT , offPageNext ) ;
             countT idRegionNext = 1 ;
             pbIdRegionP[ cPages ] = 0 ;
         {
         if( !POOP )
 
-        c_memsetIF( tinBaseP , pbIdRegionP , cPages + 1 ) ;
+        c_memsetIF( tin0P , pbIdRegionP , cPages + 1 ) ;
 
-        newF( tinBaseP , LF , pbIdRegionP , cPages + 1 ) ; ___( pbIdRegionP ) ;
+        newF( tin0P , LF , pbIdRegionP , cPages + 1 ) ; ___( pbIdRegionP ) ;
         __Z( cPages ) ;
         countT cPages = cBitsGrain ? 1 << sizeof( countT ) * SB - cBitsGrain : 0 ;
     {   //MAKE pbIdRegionP ARRAY
@@ -143,10 +143,10 @@
         while( !third && ~hDown ) ;
         }
             if( pInfo ) bitsUsed |= pInfo->c_pbl | pInfo->cb ;
-            ifInfoS* pInfo = (ifInfoS*)stInfo.downF( tinBaseP , hDown ) ;
+            ifInfoS* pInfo = (ifInfoS*)stInfo.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         ZE( countT , bitsUsed ) ;
     {
     if( stInfo )
@@ -154,7 +154,7 @@
 
     }
         }
-            stInfo.insertF( tinBaseP , (countT)pbInfoi , ifcSTACKtYPE_PTR_byteT , -1 ) ;
+            stInfo.insertF( tin0P , (countT)pbInfoi , ifcSTACKtYPE_PTR_byteT , -1 ) ;
             c_pblEndMax = 0 ;
 
             pInfoi->fla    = pInfoi->fl = flVM_NOiNFOaVAILABLE ;
@@ -165,7 +165,7 @@
             ifInfoS* pInfoi = (ifInfoS*)pbInfoi ;
         {
         if( pbInfoi )
-        newF( tinBaseP , LF , pbInfoi , sizeof( ifInfoS ) ) ; ___( pbInfoi ) ;
+        newF( tin0P , LF , pbInfoi , sizeof( ifInfoS ) ) ; ___( pbInfoi ) ;
         ZE( byteT* , pbInfoi ) ;
     {
     if( c_pblEndMax )
@@ -178,16 +178,16 @@
 
                 }
                     else         hDown = hdSave ;
-                    if( ~hDown ) stInfo.downF( tinBaseP , hDown ) ;
+                    if( ~hDown ) stInfo.downF( tin0P , hDown ) ;
 
-                    if( pbInfoi2 ) stInfo.insertF( tinBaseP , (countT)pbInfoi2 , ifcSTACKtYPE_PTR_byteT ) ;
-                    else stInfo.insertF( tinBaseP , (countT)pbInfoi1 , ifcSTACKtYPE_PTR_byteT ) ;
+                    if( pbInfoi2 ) stInfo.insertF( tin0P , (countT)pbInfoi2 , ifcSTACKtYPE_PTR_byteT ) ;
+                    else stInfo.insertF( tin0P , (countT)pbInfoi1 , ifcSTACKtYPE_PTR_byteT ) ;
                     }
-                        stInfo.insertF( tinBaseP , (countT)pbInfoi1 , ifcSTACKtYPE_PTR_byteT , 1 ) ;
+                        stInfo.insertF( tin0P , (countT)pbInfoi1 , ifcSTACKtYPE_PTR_byteT , 1 ) ;
                         bTop = 0 ;
                     {
                     if( bTop )
-                    boolT bTop = !stInfo.downUndoF( tinBaseP , hDown ) ;
+                    boolT bTop = !stInfo.downUndoF( tin0P , hDown ) ;
                     handleC hdSave = hDown ;
                 {
                 if( pbInfoi1 )
@@ -207,7 +207,7 @@
                         ifInfoS* pInfoi = (ifInfoS*)pbInfoi ;
                     {
                     if( pbInfoi )
-                    newF( tinBaseP , LF , pbInfoi , sizeof( ifInfoS ) ) ; ___( pbInfoi ) ;
+                    newF( tin0P , LF , pbInfoi , sizeof( ifInfoS ) ) ; ___( pbInfoi ) ;
                     ZE( byteT* , pbInfoi ) ;
                 {
                 if( c_pblEndMax < pInfo->c_pbl )
@@ -225,7 +225,7 @@
                         ifInfoS* pInfoi = (ifInfoS*)pbInfoi ;
                     {
                     if( pbInfoi )
-                    newF( tinBaseP , LF , pbInfoi , sizeof( ifInfoS ) ) ; ___( pbInfoi ) ;
+                    newF( tin0P , LF , pbInfoi , sizeof( ifInfoS ) ) ; ___( pbInfoi ) ;
                     ZE( byteT* , pbInfoi ) ;
                 {
                 if( c_pblEndMax < pInfo->c_pbla )
@@ -235,10 +235,10 @@
                 countT c_pblEnd = pInfo->c_pbl + pInfo->cb ;
             {
             if( pInfo )
-            ifInfoS* pInfo = (ifInfoS*)stInfo.downF( tinBaseP , hDown ) ;
+            ifInfoS* pInfo = (ifInfoS*)stInfo.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stInfo ) // INSERT GENERATED ifInfoS OBJECTS TO ELIMINATE COVERAGE HOLES
     ZE( countT , c_pblEndMax ) ;
@@ -297,7 +297,7 @@
                             ifInfoS* pInfo = (ifInfoS*)pbInfo ;
                         {
                         if( pbInfo )
-                        newF( tinBaseP , LF , pbInfo , sizeof( ifInfoS ) ) ; ___( pbInfo ) ;
+                        newF( tin0P , LF , pbInfo , sizeof( ifInfoS ) ) ; ___( pbInfo ) ;
                         ZE( byteT* , pbInfo ) ;
 
                         __( c_pbq - (countT)osInfo.BaseAddress ) ;
@@ -308,13 +308,13 @@
                         else c_pbq += 0x1000 ; //ASSUME: REGIONS ARE ALIGNED ON NT PAGE BOUNDARIES (0x1000 IS THE SIZE OF AN NT PAGE)
                         }
                             __1
-                            __( ((tin9S&)tinBaseP).brcLath ) ;
+                            __( ((tin9S&)tin0P).brcLath ) ;
                         {
-                        else if( ((tin9S&)tinBaseP).brcLath != ERROR_NOACCESS          )
-                             if( ((tin9S&)tinBaseP).brcLath == ERROR_INVALID_PARAMETER ) c_pbq = c_pbqEnd ;
+                        else if( ((tin9S&)tin0P).brcLath != ERROR_NOACCESS          )
+                             if( ((tin9S&)tin0P).brcLath == ERROR_INVALID_PARAMETER ) c_pbq = c_pbqEnd ;
                     {
-                    if( ((tin9S&)tinBaseP).bosFail )
-                    countT cbw = ((tin9S&)tinBaseP).brcRaw ;
+                    if( ((tin9S&)tin0P).bosFail )
+                    countT cbw = ((tin9S&)tin0P).brcRaw ;
                     BOS( WHATgbo , BOSoK , VirtualQueryEx( (HANDLE)hProcessP , (voidT*)c_pbq , &osInfo , sizeof osInfo ) )
                     BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
                 {
@@ -334,7 +334,7 @@
         ZE( countT , c_pbqLag ) ;
         ZE( countT , c_pbq ) ;
     {
-    stackC stInfo( tinBaseP , third , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
+    stackC stInfo( tin0P , third , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_byteT ) ;
 
     _IO_
 
@@ -351,7 +351,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::osRegionInfoF( tin0S& tinBaseP , countT& cBitsGrainP , byteT*& pbIdRegionP , byteT*& pbIdAllocP , vmRegionS*& pVmRegionP , vmRegionS*& pVmRegionAllocP , countT hProcessP )/*1*/
+/*1*/voidT thirdC::osRegionInfoF( tin0S& tin0P , countT& cBitsGrainP , byteT*& pbIdRegionP , byteT*& pbIdAllocP , vmRegionS*& pVmRegionP , vmRegionS*& pVmRegionAllocP , countT hProcessP )/*1*/
 
 ;
 }
@@ -386,7 +386,7 @@ struct ifInfoS
   will be set to the number of low order bits that are never used in base addresses
   must be 0
  cBitsGrainP
- tinBaseP
+ tin0P
 arguments
 \<A HREF=\"5.102012f.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$osRegionInfoF.0.html\"\>instances\</A\>

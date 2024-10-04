@@ -9,9 +9,9 @@
 
 REST
 
-etThread.loafIF( tinBaseP ) ;
-etThread.osThreadF( tinBaseP , countTC() , tmWorkF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , 1/*U::OBSOLETE*/ ) ;
-etThread.osThreadF( tinBaseP , countTC() , tmWorkF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , 1 ) ;
+etThread.loafIF( tin0P ) ;
+etThread.osThreadF( tin0P , countTC() , tmWorkF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , 1/*U::OBSOLETE*/ ) ;
+etThread.osThreadF( tin0P , countTC() , tmWorkF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , 1 ) ;
 
 TODO
 
@@ -21,29 +21,29 @@ DONE( tmWorkF )
         if( POOP ) POOPR
         }
             }
-                sgnDone_tmPutPayloadsF.waitF( tinBaseP ) ;
+                sgnDone_tmPutPayloadsF.waitF( tin0P ) ;
                 bQuit = 1 ;
                 }
                     }
-                        else       { etThread.strokeF( tinBaseP , T("payload arrived\r\n") ) ; }
+                        else       { etThread.strokeF( tin0P , T("payload arrived\r\n") ) ; }
                         if( POOP ) POOPR
     
                         idptRelay << sIn ;
                         portTimeC idptRelay ;
     
                         sIn >> sPay ;
-                        soulC sPay( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        soulC sPay( tin0P , TAG( TAGiDnULL ) ) ;
     
                         sIn >> flags ;
                         ZE( flagsT , flags ) ;
     
                         sIn >> sToMediator ;
-                        soulC sToMediator( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        soulC sToMediator( tin0P , TAG( TAGiDnULL ) ) ;
     
                         sIn >> sTo ;
-                        soulC sTo( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        soulC sTo( tin0P , TAG( TAGiDnULL ) ) ;
     
-                        etThread.delF( tinBaseP , pczChannel ) ;
+                        etThread.delF( tin0P , pczChannel ) ;
                         sIn >> pczChannel ;
                         ZE( countT* , pczChannel ) ;
                     {
@@ -61,29 +61,29 @@ DONE( tmWorkF )
                     sIn >> idProtocol ;
                     ZE( countT , idProtocol ) ;
             
-                    etThread.delF( tinBaseP , psttTradeMark ) ;
-                    __( ((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttTradeMark , T("IdeaFarm " "(tm)") ) ) ;
+                    etThread.delF( tin0P , psttTradeMark ) ;
+                    __( ((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttTradeMark , T("IdeaFarm " "(tm)") ) ) ;
                     sIn >> psttTradeMark ;
                     ZE( strokeS* , psttTradeMark ) ;
             
-                    sock.readF( tinBaseP , sIn ) ;
-                    soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    sock.readF( tin0P , sIn ) ;
+                    soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 while( !ether && !etThread && !POOP )
     
-                etThread.osThreadF( tinBaseP , countTC() , tmPutPayloadsF , &sgnDone_tmPutPayloadsF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sock , (countT)&bQuit ) ;
-                signC sgnDone_tmPutPayloadsF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                etThread.osThreadF( tin0P , countTC() , tmPutPayloadsF , &sgnDone_tmPutPayloadsF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sock , (countT)&bQuit ) ;
+                signC sgnDone_tmPutPayloadsF( tin0P , TAG( TAGiDnULL ) ) ;
                 ZE( boolT , bQuit ) ;
             
-                sock.connectF( tinBaseP , idpTeat2 , (nicNameC&)idpTeat2 ) ;
-                socketC sock( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , TAG( TAGiDnULL ) ) ;
+                sock.connectF( tin0P , idpTeat2 , (nicNameC&)idpTeat2 ) ;
+                socketC sock( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
             {
             if( idpTeat2 )
             portC idpTeat2 = host.idpTeat ;
             
             }
-                while( !ether && !idpTeat ) { ++ s ; ether.osSleepF( tinBaseP , TUCK * 0x40 ) ; }
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                while( !ether && !idpTeat ) { ++ s ; ether.osSleepF( tin0P , TUCK * 0x40 ) ; }
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
         {
         while( !ether && !etThread )
@@ -102,13 +102,13 @@ DONE( tmPutPayloadsF )
 }
     }
         }
-            ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     
             if( POOP ) POOPR
             
-            sockP.writeF( tinBaseP , sWrap ) ;
-            etThread.strokeF( tinBaseP , T(USCORE79 "\r\n") ) ;
+            sockP.writeF( tin0P , sWrap ) ;
+            etThread.strokeF( tin0P , T(USCORE79 "\r\n") ) ;
     
             /* a-d */ homeS::homeIF().idptRelay >> sWrap ;
             /* 9 */ sWrap << sGift ;
@@ -120,11 +120,11 @@ DONE( tmPutPayloadsF )
             /* 3 */ sWrap << (countT)1 ; // idVersion
             /* 2 */ sWrap << (countT)ifcIDpROTOCOL_RELAYwRAP ;
             /* 1 */ sWrap << (strokeS*)tTM ;
-            soulC sGift( tinBaseP , TAG( TAGiDnULL ) ) ;
+            soulC sGift( tin0P , TAG( TAGiDnULL ) ) ;
             flagsT flags = flCIOpUT_null ;
-            soulC sToMediator( tinBaseP , TAG( TAGiDnULL ) ) ;
-            soulC sTo( tinBaseP , TAG( TAGiDnULL ) ) ;
-            soulC sWrap( tinBaseP , TAG( TAGiDnULL ) ) ;
+            soulC sToMediator( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sTo( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sWrap( tin0P , TAG( TAGiDnULL ) ) ;
         {
         while( !ether && !bQuitP && !etThread )
         count8S c8Channel( 1 , 2 , 3 , 4 ) ;

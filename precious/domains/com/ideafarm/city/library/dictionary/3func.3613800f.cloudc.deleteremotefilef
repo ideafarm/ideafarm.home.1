@@ -18,38 +18,38 @@
 
             }
                 continue ;
-                etPrime.osSleepF( tinBaseP , TOCK << 4 ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                etPrime.osSleepF( tin0P , TOCK << 4 ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("deleteRemoteFileF / unexpected reply (other than \"no content\" or \"not found\") ; will retry after napping 01 tock") ) ;
-                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , tHear ) ;
+                etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / unexpected reply (other than \"no content\" or \"not found\") ; will retry after napping 01 tock") ) ;
+                etherC::etRockIF( tin0P ).traceF( tin0P , tHear ) ;
                 POOPR
             {
             if( POOP )
-            __( !ether.strIdF( tinBaseP , tReplyCode204_NoContent , tHear ) && !ether.strIdF( tinBaseP , tReplyCode404_NotFound , tHear ) ) ;
+            __( !ether.strIdF( tin0P , tReplyCode204_NoContent , tHear ) && !ether.strIdF( tin0P , tReplyCode404_NotFound , tHear ) ) ;
 
             }
                 break ;
-                etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("authorization refused") ) ;
+                etherC::etRockIF( tin0P ).traceF( tin0P , T("authorization refused") ) ;
                 bPermanentFailure = 1 ;
                 POOPR
             {
             if( POOP )
-            __NZ( 1 == ether.strIdF( tinBaseP , tReplyCode401_Unauthorized , tHear ) ) ;
+            __NZ( 1 == ether.strIdF( tin0P , tReplyCode401_Unauthorized , tHear ) ) ;
 
             }
                 }
                     break ;
-                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("deleteRemoteFileF / connect , write, or read failed ; not forgiven") ) ;
+                    etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / connect , write, or read failed ; not forgiven") ) ;
                     bPermanentFailure = 1 ;
                 {
                 else
                 }
                     continue ;
-                    etPrime.osSleepF( tinBaseP , TOCK << 4 ) ;
-                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    etPrime.osSleepF( tin0P , TOCK << 4 ) ;
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("deleteRemoteFileF / connect , write, or read failed ; forgiven ; will retry after napping 01 tock.  (")+TF2(cForgive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" remain)") ) ;
+                    etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / connect , write, or read failed ; forgiven ; will retry after napping 01 tock.  (")+TF2(cForgive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" remain)") ) ;
                 {
                 if( cForgive -- )
 
@@ -59,17 +59,17 @@
 
             TN( tHear , postHear ) ;
 
-            costHear = ss.readF( tinBaseP , postHear , sizeof postHear , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
-            thirdC::c_memsetIF(  tinBaseP , postHear , sizeof postHear ) ;
+            costHear = ss.readF( tin0P , postHear , sizeof postHear , flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+            thirdC::c_memsetIF(  tin0P , postHear , sizeof postHear ) ;
 
-            ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
-            ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , etScratch , tHost ) ) ;
-            socketC ss( tinBaseP , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+            ss.writeF( tin0P , (osTextT*)tSay , (countT)tSay.csF( tin0P ) ) ;
+            ss.connectF( tin0P , 443 , socketC::nicNameIF( tin0P , etScratch , tHost ) ) ;
+            socketC ss( tin0P , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
         {
         while( !etPrime && !POOP )
         countT cForgive = 0x2 ;
-        etherC& etScratch = *((tin9S&)tinBaseP).pEtScratch ;
-        etherC& etPrime   = etherC::etPrimeIF( tinBaseP ) ;
+        etherC& etScratch = *((tin9S&)tin0P).pEtScratch ;
+        etherC& etPrime   = etherC::etPrimeIF( tin0P ) ;
         ZE( countT , costHear ) ;
         char postHear[ TOCK ] ; 
 
@@ -78,16 +78,16 @@
     IFsCRATCH
     ZE( boolT , bPermanentFailure ) ;
 
-    //ether.traceF( tinBaseP , T("the DELETE utterance has been appended to the log") ) ;
+    //ether.traceF( tin0P , T("the DELETE utterance has been appended to the log") ) ;
     //LOGrAW( tSay ) ;
 
     }
-        ether.delF( tinBaseP , psttShortUrlEncoded ) ;
+        ether.delF( tin0P , psttShortUrlEncoded ) ;
         }
-            bHandle.ungrabF( tinBaseP ) ;
+            bHandle.ungrabF( tin0P ) ;
             tSay = T("DELETE ")+tUrlCloudAgent+T("/")+T(psttCloudContainerP)+T("/")+T(psttShortUrlEncoded)+T(" HTTP/1.1\r\nHost: ")+tHost+T("\r\nX-Auth-Token: ")+cloudInfo.tRackspaceAccessToken+T("\r\n\r\n") ;
             cloudInfoS& cloudInfo = *(cloudInfoS*)hCloud.osF( ifcIDtYPEhANDLE_CLOUD ) ;
-            bHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            bHandle.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
 
         //  
@@ -97,7 +97,7 @@
         // 
         // EXAMPLE
 
-        ether.strToUrlF( tinBaseP , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
+        ether.strToUrlF( tin0P , psttShortUrlEncoded , psttShortP ) ; ___( psttShortUrlEncoded ) ;
         ZE( strokeS* , psttShortUrlEncoded ) ;
     {
     TN( tSay , "" ) ;
@@ -114,7 +114,7 @@
 
     SCOOP
 {
-/*1*/voidT cloudC::deleteRemoteFileF( tin0S& tinBaseP , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP )/*1*/
+/*1*/voidT cloudC::deleteRemoteFileF( tin0S& tin0P , const strokeS* const psttCloudContainerP , const strokeS* const psttShortP )/*1*/
 
 /**/
 */

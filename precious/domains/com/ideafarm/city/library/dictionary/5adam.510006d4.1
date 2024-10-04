@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.traceF( tinBaseP , T("done") ) ;
+etThread.traceF( tin0P , T("done") ) ;
 }
     #endif                                           
-        if( !( offi % TUCK ) ) etThread.traceF( tinBaseP , T("got    [offi,address,value]: ")+TF3(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3((countT)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb+TF3(*(countT*)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+        if( !( offi % TUCK ) ) etThread.traceF( tin0P , T("got    [offi,address,value]: ")+TF3(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3((countT)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb+TF3(*(countT*)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
     #else
-                               etThread.traceF( tinBaseP , T("got    [offi,address,value]: ")+TF3(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3((countT)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb+TF3(*(countT*)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                               etThread.traceF( tin0P , T("got    [offi,address,value]: ")+TF3(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3((countT)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb+TF3(*(countT*)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
     #if defined( STUPID )
 
     byteT* pbFoo = napsFoo[ pcpOffItem ] ;
@@ -35,14 +35,14 @@ etThread.traceF( tinBaseP , T("done") ) ;
     for( countT offi = 0 ; offi < TUCK ; offi ++ )
 #if defined( STUPID )
 
-etThread.traceF( tinBaseP , T("retrieving") ) ;
+etThread.traceF( tin0P , T("retrieving") ) ;
 
 }
 
     #endif                                           
-        if( !( offi % TUCK ) ) etThread.traceF( tinBaseP , T("loaded [offi,address,value]: ")+TF3(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3((countT)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb+TF3(*(countT*)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+        if( !( offi % TUCK ) ) etThread.traceF( tin0P , T("loaded [offi,address,value]: ")+TF3(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3((countT)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb+TF3(*(countT*)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
     #else
-                               etThread.traceF( tinBaseP , T("loaded [offi,address,value]: ")+TF3(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3((countT)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb+TF3(*(countT*)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                               etThread.traceF( tin0P , T("loaded [offi,address,value]: ")+TF3(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3((countT)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tb+TF3(*(countT*)pbFoo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
     #if defined( STUPID )
 
     *(countT*)pbFoo = offi | NM_HIGH ;               // NM_HIGH IS NOT REQUIRED AND HAS NO FUNCTION ; THE MEMORY OBTAINED CAN BE USED FOR ANY PURPOSE; WARNING: EACH POINTER RETRIEVAL RENDERS PRIOR POINTERS INVALID ; IT IS ILLEGAL TO REFER TO MEMORY USING A POINTER OTHER THAN THE WO MOST RECENTLY RETRIEVED
@@ -67,9 +67,9 @@ etThread.traceF( tinBaseP , T("retrieving") ) ;
 
 
 TN( tb , " " ) ;
-etThread.traceF( tinBaseP , T("loading") ) ;
+etThread.traceF( tin0P , T("loading") ) ;
 
-napkinsC napsFoo( tinBaseP , TAG( TAGiDnULL ) , "naps.foo" , 0x12 , 2 ) ;   // EACH ELEMENT IS A countT, AND EACH NAPKIN IS A TOCK OF countT
+napkinsC napsFoo( tin0P , TAG( TAGiDnULL ) , "naps.foo" , 0x12 , 2 ) ;   // EACH ELEMENT IS A countT, AND EACH NAPKIN IS A TOCK OF countT
 
 TODO
 

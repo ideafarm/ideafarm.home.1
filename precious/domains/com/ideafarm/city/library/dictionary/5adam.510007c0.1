@@ -9,25 +9,25 @@
                             
 REST
 
-etThread.osSuspendF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("waited for all kids to die") ) ;
+etThread.osSuspendF( tin0P ) ;
+etThread.traceF( tin0P , T("waited for all kids to die") ) ;
 WAITuNTILaLMOSTaLONE( 1 ) ;
-etThread.traceF( tinBaseP , T("waiting for all kids to die") ) ;
+etThread.traceF( tin0P , T("waiting for all kids to die") ) ;
 
-etThread.delF( tinBaseP , pstt1YearPath ) ;
+etThread.delF( tin0P , pstt1YearPath ) ;
 }
     }
         etThread.osThreadF( TaRG3fLAGScBtLS( tmRefreshYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)psttPath ) ;
-        etThread.strMakeF( tinBaseP , LF , psttPath , psttc1 ) ; ___( psttPath ) ;
+        etThread.strMakeF( tin0P , LF , psttPath , psttc1 ) ; ___( psttPath ) ;
         ZE( strokeS* , psttPath ) ;
     {
     FORsTRINGSiN1( pstt1YearPath )
 {
 if( pstt1YearPath && pstt1YearPath->idAdam )
 
-etThread.strConvertToLowerCaseF( tinBaseP , pstt1YearPath ) ;
-etThread.diskFindFileOrDirF( tinBaseP , pstt1YearPath , tLike , &pat ) ; ___( pstt1YearPath ) ;
-patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+etThread.strConvertToLowerCaseF( tin0P , pstt1YearPath ) ;
+etThread.diskFindFileOrDirF( tin0P , pstt1YearPath , tLike , &pat ) ; ___( pstt1YearPath ) ;
+patternC pat( tin0P , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
 TN( tPattern , "?" "?" "?" "?" "/" ) ;                                                              //20221118@1747: "????/" PROUCES A COMPILER ERROR INVOLVING TRIGRAPH
 TN( tLike , "///?/archive/" ) ;
 ZE( strokeS* , pstt1YearPath ) ;
@@ -36,51 +36,51 @@ TODO
 
 DONE( tmRefreshYearF )
 }
-    etThread.traceF( tinBaseP , T("ended archive year path:    ")+tYearPathP ) ;
+    etThread.traceF( tin0P , T("ended archive year path:    ")+tYearPathP ) ;
 
     while( !ether && ~hFindOuter && !POOP ) ;
     }
         DEL( pInfoOuter ) ;
         }
             }
-                etThread.boxPutF( tinBaseP , tFileHistory , tHistory , tHistory.csF( tinBaseP ) ) ;
+                etThread.boxPutF( tin0P , tFileHistory , tHistory , tHistory.csF( tin0P ) ) ;
                 tHistory += TF3(time2N,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDot+TF3(time1N,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tb4+tRecord+tCrlf ;
-                etThread.osTimeNowF( tinBaseP , time1N , time2N ) ;
+                etThread.osTimeNowF( tin0P , time1N , time2N ) ;
                 ZE( sCountT , time2N ) ;
                 ZE( countT , time1N ) ;
-                etThread.traceF( tinBaseP , T(bNoHistory?"no fileset history:    ":"fileset change detected:    ")+tShorter+T("*") ) ;
+                etThread.traceF( tin0P , T(bNoHistory?"no fileset history:    ":"fileset change detected:    ")+tShorter+T("*") ) ;
             {
             if( bChanged )
 
             }
                 }
-                    etThread.delF( tinBaseP , pstt1Lines ) ;
+                    etThread.delF( tin0P , pstt1Lines ) ;
                     }
                         }
-                            bChanged = !etThread.strIdF( tinBaseP , tRecord , psttc1 ) ;
-                            //etThread.traceF( tinBaseP , T("to new record:                                          ")+tRecord ) ;
-                            //etThread.traceF( tinBaseP , T("comparing lath line of history:    ")+T(psttc1) ) ;
+                            bChanged = !etThread.strIdF( tin0P , tRecord , psttc1 ) ;
+                            //etThread.traceF( tin0P , T("to new record:                                          ")+tRecord ) ;
+                            //etThread.traceF( tin0P , T("comparing lath line of history:    ")+T(psttc1) ) ;
                         {
                         if( BlATHsTRING( 1 ) )
                     {
                     FORsTRINGSiN1( pstt1Lines )
-                    etThread.strWordsF( tinBaseP , pstt1Lines , tHistory , sttq , tCrlf ) ; ___( pstt1Lines ) ;
+                    etThread.strWordsF( tin0P , pstt1Lines , tHistory , sttq , tCrlf ) ; ___( pstt1Lines ) ;
                     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                     ZE( strokeS* , pstt1Lines ) ;
 
                     bNoHistory = bChanged = 0 ;
                 {
-                if( tHistory.csF( tinBaseP ) )
+                if( tHistory.csF( tin0P ) )
                 ZE( strokeS* , psttLathLine ) ;
             {
             boolT bNoHistory = 1 ;
             boolT bChanged = 1 ;
 
             }
-                etThread.delF( tinBaseP , postiHistory ) ;
+                etThread.delF( tin0P , postiHistory ) ;
                 else       tHistory = T(postiHistory) ;
                 if( POOP ) { POOPRqUIET }
-                ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , postiHistory , costiHistory , tFileHistory , 1 ) ; ___( postiHistory ) ;
+                ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , postiHistory , costiHistory , tFileHistory , 1 ) ; ___( postiHistory ) ;
                 ZE( countT   , costiHistory ) ;
                 ZE( osTextT* , postiHistory ) ;
                 SCOOPS
@@ -89,13 +89,13 @@ DONE( tmRefreshYearF )
             TN( tFileHistory , "" ) ; tFileHistory = tPath + tShorter + tMetaDigestHistory ;
             TN( tHistory , "" ) ;
 
-            RETRYsCR( fileWriteF( tinBaseP , fiDigest , tCrlf , tCrlf.csF( tinBaseP ) ) )
-            RETRYsCR( fileWriteF( tinBaseP , fiDigest , tShorterSansDot , tShorterSansDot.csF( tinBaseP ) + 1 ) )        // TERMINATING NULL FOR HUMAN CONVENIENCE ; NOT NEEDED SINCE LENGTH CAN BE CALCULATED
-            RETRYsCR( fileWriteF( tinBaseP , fiDigest , (byteT*)&digest , sizeof digest ) )
+            RETRYsCR( fileWriteF( tin0P , fiDigest , tCrlf , tCrlf.csF( tin0P ) ) )
+            RETRYsCR( fileWriteF( tin0P , fiDigest , tShorterSansDot , tShorterSansDot.csF( tin0P ) + 1 ) )        // TERMINATING NULL FOR HUMAN CONVENIENCE ; NOT NEEDED SINCE LENGTH CAN BE CALCULATED
+            RETRYsCR( fileWriteF( tin0P , fiDigest , (byteT*)&digest , sizeof digest ) )
 
-            digest.costaFilesetPrefix = tShorterSansDot.csF( tinBaseP ) + 1 + tCrlf.csF( tinBaseP ) ;                   // tCrlf FOR HUMAN READABILITY OF THE BINARY FILE
-            thirdC::c_memcpyIF( tinBaseP , (byteT*)digest.pcHashMeta , (byteT*)pcHashMeta , sizeof digest.pcHashMeta ) ;
-            thirdC::c_memcpyIF( tinBaseP , (byteT*)digest.pcHashData , (byteT*)pcHashData , sizeof digest.pcHashData ) ;
+            digest.costaFilesetPrefix = tShorterSansDot.csF( tin0P ) + 1 + tCrlf.csF( tin0P ) ;                   // tCrlf FOR HUMAN READABILITY OF THE BINARY FILE
+            thirdC::c_memcpyIF( tin0P , (byteT*)digest.pcHashMeta , (byteT*)pcHashMeta , sizeof digest.pcHashMeta ) ;
+            thirdC::c_memcpyIF( tin0P , (byteT*)digest.pcHashData , (byteT*)pcHashData , sizeof digest.pcHashData ) ;
             digest.cbMeta = cbDoneMeta ;
             digest.cbData = cbDoneData ;
             digest.time2Data = pInfoOuter->timeWritten2 ;
@@ -104,16 +104,16 @@ DONE( tmRefreshYearF )
 
             }
                 }
-                    etThread.delF( tinBaseP , posti ) ;
+                    etThread.delF( tin0P , posti ) ;
 
                     }
-                        etThread.boxPutF( tinBaseP , tFileOut , postRecord , costRecord ) ;
-                        etThread.traceF( tinBaseP , T("writing record [file]:    ")+tFileOut ) ;
+                        etThread.boxPutF( tin0P , tFileOut , postRecord , costRecord ) ;
+                        etThread.traceF( tin0P , T("writing record [file]:    ")+tFileOut ) ;
                     {
-                    if( !posti || costi != costRecord || etThread.memCompareF( tinBaseP , posti , postRecord , costRecord ) )
+                    if( !posti || costi != costRecord || etThread.memCompareF( tin0P , posti , postRecord , costRecord ) )
 
                     if( POOP ) { POOPRqUIET }
-                    ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , tFileOut , 1 ) ; ___( posti ) ;
+                    ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tFileOut , 1 ) ; ___( posti ) ;
                     ZE( countT   , costi ) ;
                     ZE( osTextT* , posti ) ;
                     
@@ -124,7 +124,7 @@ DONE( tmRefreshYearF )
                 TN( tFileOut , "" ) ; tFileOut = tPath + tShorter + tMetaDigest ;
             {
 
-            const countT   costRecord = tRecord.csF( tinBaseP ) ;
+            const countT   costRecord = tRecord.csF( tin0P ) ;
             const osTextT* postRecord = tRecord ;
             TN( tRecord , "" ) ; tRecord = tTimeData + tb4 + tFileSizeData + tb4 + tHashData + tb4 + tFileSizeMeta + tb4 + tHashMeta ;
 
@@ -136,12 +136,12 @@ DONE( tmRefreshYearF )
 
             TN( tTimeData , "" ) ; tTimeData = TF3(pInfoOuter->timeWritten2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDot+TF3(pInfoOuter->timeWritten1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
 
-            etThread.delF( tinBaseP , psttHashMeta ) ;
+            etThread.delF( tin0P , psttHashMeta ) ;
             TN( tHashMeta , psttHashMeta ) ;
-            hasherMeta.queryStringF( tinBaseP , psttHashMeta ) ; ___( psttHashMeta ) ;
+            hasherMeta.queryStringF( tin0P , psttHashMeta ) ; ___( psttHashMeta ) ;
             ZE( strokeS* , psttHashMeta ) ;
 
-            hasherMeta.queryF( tinBaseP , (byteT*)pcHashMeta , sizeof pcHashMeta ) ;
+            hasherMeta.queryF( tin0P , (byteT*)pcHashMeta , sizeof pcHashMeta ) ;
             count02T pcHashMeta[ 4 ] ;
 
             }
@@ -153,25 +153,25 @@ DONE( tmRefreshYearF )
                             }
                                 }
                                     cbDoneMeta += cbw ;
-                                    hasherMeta.eatF( tinBaseP , pbw , cbw ) ;
+                                    hasherMeta.eatF( tin0P , pbw , cbw ) ;
                                 {
                                 else
                                 if( !pbw || !cbw ) break ;
 
-                                RETRY( fwsIn.getF( tinBaseP , pbw , cbw ) )
+                                RETRY( fwsIn.getF( tin0P , pbw , cbw ) )
                                 ZE( countT , cbw ) ;
                                 ZE( byteT* , pbw ) ;
                             {
                             while( !ether )
 
-                            fileWindowsC fwsIn( tinBaseP , etThread , tFileNameMeta ) ;
+                            fileWindowsC fwsIn( tin0P , etThread , tFileNameMeta ) ;
 
-                            //etThread.traceF( tinBaseP , tb4+tFileNameMeta ) ;
+                            //etThread.traceF( tin0P , tb4+tFileNameMeta ) ;
                             TN( tFileNameMeta , pInfoInner->psttIfoName ) ;
                         {
                         )
-                            //&& !etThread.strIdF( tinBaseP , tMetaDigestHistory , pInfoInner->psttIfoName )            THIS LINE IS REDUNDANT IF tMetaDigestHistory CONTAINS tMetaDigest
-                                 !etThread.strIdF( tinBaseP , tMetaDigest        , pInfoInner->psttIfoName )
+                            //&& !etThread.strIdF( tin0P , tMetaDigestHistory , pInfoInner->psttIfoName )            THIS LINE IS REDUNDANT IF tMetaDigestHistory CONTAINS tMetaDigest
+                                 !etThread.strIdF( tin0P , tMetaDigest        , pInfoInner->psttIfoName )
                         (
                         if
                     {
@@ -182,33 +182,33 @@ DONE( tmRefreshYearF )
                     {
                     if( !pInfoInner || !pInfoInner->psttIfoName )
 
-                    RETRYsCR( diskFindFileOrDirF( tinBaseP , pInfoInner , hFindInner , tYearPathP , &patInner ) )
+                    RETRYsCR( diskFindFileOrDirF( tin0P , pInfoInner , hFindInner , tYearPathP , &patInner ) )
                     ZE( infoFileS* , pInfoInner ) ;
                 {
                 do
-                handleC hFindInner( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                handleC hFindInner( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
-                patternC patInner( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                patternC patInner( tin0P , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                 TN( tPattern , "" ) ; tPattern = tShorter+T("meta.*") ;
             {
             ZE( count04T , cbDoneMeta ) ;
-            hasherC hasherMeta( tinBaseP , etThread ) ;
+            hasherC hasherMeta( tin0P , etThread ) ;
 
             }
-                etThread.delF( tinBaseP , psttnu ) ;
-                etThread.delF( tinBaseP , psttShorter ) ;
+                etThread.delF( tin0P , psttnu ) ;
+                etThread.delF( tin0P , psttShorter ) ;
                 }
-                    etThread.delF( tinBaseP , psttShorterSansDot ) ;
+                    etThread.delF( tin0P , psttShorterSansDot ) ;
                     tShorterSansDot = T(psttShorterSansDot) ;
-                    etThread.strSubstringF( tinBaseP , psttShorterSansDot , idf , idl , psttShorter ) ; ___( psttShorterSansDot ) ;
+                    etThread.strSubstringF( tin0P , psttShorterSansDot , idf , idl , psttShorter ) ; ___( psttShorterSansDot ) ;
                     ZE( strokeS* , psttShorterSansDot ) ;
-                    countT idl = tShorter.csF( tinBaseP ) - 1 ;
+                    countT idl = tShorter.csF( tin0P ) - 1 ;
                     countT idf = 1 ;
                 {
-                if( tShorter.csF( tinBaseP ) > 1 )
+                if( tShorter.csF( tin0P ) > 1 )
 
                 tShorter  = T(psttShorter) ;
-                etThread.strBisectF( tinBaseP , psttShorter , psttnu , tShort , T(".") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttShorter ) ; ___( psttnu ) ;
+                etThread.strBisectF( tin0P , psttShorter , psttnu , tShort , T(".") , - 2 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttShorter ) ; ___( psttnu ) ;
                 ZE( strokeS* , psttnu ) ;
                 ZE( strokeS* , psttShorter ) ;
             {
@@ -216,46 +216,46 @@ DONE( tmRefreshYearF )
             TN( tShorter  , "" ) ;
 
             }
-                etThread.delF( tinBaseP , psttShort ) ;
-                etThread.delF( tinBaseP , psttPath ) ;
+                etThread.delF( tin0P , psttShort ) ;
+                etThread.delF( tin0P , psttPath ) ;
                 tShort = T(psttShort) ;
                 tPath  = T(psttPath) ;
-                etThread.strBisectF( tinBaseP , psttPath , psttShort , tFileNameData , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+                etThread.strBisectF( tin0P , psttPath , psttShort , tFileNameData , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
                 ZE( strokeS* , psttShort ) ;
                 ZE( strokeS* , psttPath ) ;
             {
             TN( tShort , "" ) ;
             TN( tPath  , "" ) ;
 
-            etThread.delF( tinBaseP , psttHashData ) ;
+            etThread.delF( tin0P , psttHashData ) ;
             TN( tHashData , psttHashData ) ;
-            hasherData.queryStringF( tinBaseP , psttHashData ) ; ___( psttHashData ) ;
+            hasherData.queryStringF( tin0P , psttHashData ) ; ___( psttHashData ) ;
             ZE( strokeS* , psttHashData ) ;
 
-            hasherData.queryF( tinBaseP , (byteT*)pcHashData , sizeof pcHashData ) ;
+            hasherData.queryF( tin0P , (byteT*)pcHashData , sizeof pcHashData ) ;
             count02T pcHashData[ 4 ] ;
 
             }
                 }
                     }
                         cbDoneData += cbw ;
-                        hasherData.eatF( tinBaseP , pbw , cbw ) ;
+                        hasherData.eatF( tin0P , pbw , cbw ) ;
                     {
                     else
                     if( !pbw || !cbw ) break ;
 
-                    RETRY( fwsIn.getF( tinBaseP , pbw , cbw ) )
+                    RETRY( fwsIn.getF( tin0P , pbw , cbw ) )
                     ZE( countT , cbw ) ;
                     ZE( byteT* , pbw ) ;
                 {
                 while( !ether )
 
-                fileWindowsC fwsIn( tinBaseP , etThread , tFileNameData ) ;
+                fileWindowsC fwsIn( tin0P , etThread , tFileNameData ) ;
             {
             ZE( count04T , cbDoneData ) ;
-            hasherC hasherData( tinBaseP , etThread ) ;
+            hasherC hasherData( tin0P , etThread ) ;
 
-            etThread.traceF( tinBaseP , TF4(++idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0x10,0xa)+tb4+tFileNameData ) ;
+            etThread.traceF( tin0P , TF4(++idFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0x10,0xa)+tb4+tFileNameData ) ;
             TN( tFileNameData , pInfoOuter->psttIfoName ) ;
         {
         else
@@ -265,15 +265,15 @@ DONE( tmRefreshYearF )
         {
         if( !pInfoOuter || !pInfoOuter->psttIfoName )
 
-        RETRYsCR( diskFindFileOrDirF( tinBaseP , pInfoOuter , hFindOuter , tYearPathP , &patOuter ) )
+        RETRYsCR( diskFindFileOrDirF( tin0P , pInfoOuter , hFindOuter , tYearPathP , &patOuter ) )
         ZE( infoFileS* , pInfoOuter ) ;
     {
     do
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-    handleC hFindOuter( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    handleC hFindOuter( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
     ZE( countT , idFile ) ;
 
-    patternC patOuter( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+    patternC patOuter( tin0P , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tPattern , "*.data.*" ) ;
     TN( tMetaDigestHistory , "meta.digesthistory" ) ;
     TN( tMetaDigest , "meta.digest" ) ;
@@ -282,45 +282,45 @@ DONE( tmRefreshYearF )
     TN( tb , " " ) ;
     TN( tCrlf , "\r\n" ) ;
 
-    fileC fiDigest( tinBaseP , (strokeS*)tFileNameDigest , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
-    etThread.traceF( tinBaseP , T("[digest]:    ")+tFileNameDigest ) ;
+    fileC fiDigest( tin0P , (strokeS*)tFileNameDigest , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+    etThread.traceF( tin0P , T("[digest]:    ")+tFileNameDigest ) ;
     TN( tFileNameDigest , "" ) ; tFileNameDigest = T("///ideafarm/tmp/archive.digests/")+tVolumeName+T(".")+tYear+T(".digest") ;
 
-    etThread.traceF( tinBaseP , T("[year]:    ")+tYear ) ;
+    etThread.traceF( tin0P , T("[year]:    ")+tYear ) ;
     }
-        etThread.delF( tinBaseP , pstt1Words ) ;
+        etThread.delF( tin0P , pstt1Words ) ;
         }
-            else if( !etThread.strCompareF( tinBaseP , psttc1 , tArchive ) ) bArm = 1 ;
+            else if( !etThread.strCompareF( tin0P , psttc1 , tArchive ) ) bArm = 1 ;
                  if( bArm                                              ) tYear = T(psttc1) ;
         {
         FORsTRINGSiN1( pstt1Words )
         TN( tArchive , "archive" ) ;
         ZE( boolT , bArm ) ;
-        etThread.strWordsF( tinBaseP , pstt1Words , tYearPathP , sttq , T("/") ) ; ___( pstt1Words ) ;
+        etThread.strWordsF( tin0P , pstt1Words , tYearPathP , sttq , T("/") ) ; ___( pstt1Words ) ;
         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , pstt1Words ) ;
     {
     TN( tYear , "" ) ;
 
-    etThread.traceF( tinBaseP , T("[volumeName]:    ")+tVolumeName ) ;
+    etThread.traceF( tin0P , T("[volumeName]:    ")+tVolumeName ) ;
     }
         DEL( pInfoDisk ) ;
         tVolumeName = T(pInfoDisk->psttVolumeName) ;
-        etThread.strConvertToLowerCaseF( tinBaseP , pInfoDisk->psttVolumeName ) ;
-        etThread.delF( tinBaseP , psttDisk ) ;
-        etThread.diskInfoF( tinBaseP , pInfoDisk , psttDisk ) ; ___( pInfoDisk ) ;
+        etThread.strConvertToLowerCaseF( tin0P , pInfoDisk->psttVolumeName ) ;
+        etThread.delF( tin0P , psttDisk ) ;
+        etThread.diskInfoF( tin0P , pInfoDisk , psttDisk ) ; ___( pInfoDisk ) ;
         ZE( infoDiskS* , pInfoDisk ) ;
 
-        etThread.strSubstringF( tinBaseP , psttDisk , idf , idl , tYearPathP ) ; ___( psttDisk ) ;
+        etThread.strSubstringF( tin0P , psttDisk , idf , idl , tYearPathP ) ; ___( psttDisk ) ;
         countT idl = 5 ;
         countT idf = 1 ;
         ZE( strokeS* , psttDisk ) ;
     {
     TN( tVolumeName , "" ) ;
 
-    etThread.traceF( tinBaseP , T("begun archive year path:    ")+tYearPathP ) ;     //EXAMPLE: "///c/archive/1999/"
+    etThread.traceF( tin0P , T("begun archive year path:    ")+tYearPathP ) ;     //EXAMPLE: "///c/archive/1999/"
 
-    etThread.delF( tinBaseP , psttPathP ) ;
+    etThread.delF( tin0P , psttPathP ) ;
     TN( tYearPathP , psttPathP ) ;
 
     strokeS* psttPathP = (strokeS*)pTaskP->c1 ;

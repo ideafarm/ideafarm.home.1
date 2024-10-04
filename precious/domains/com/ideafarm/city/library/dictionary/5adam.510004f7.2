@@ -16,17 +16,17 @@ etherC::ifcSayIF( T("GOD: i am outa here") , flSAY_APPEND | flSAY_LOG ) ;
 
 }
     }
-        ++ s ; etThread.osSleepF( tinBaseP , TUCK * 0x40 ) ;
+        ++ s ; etThread.osSleepF( tin0P , TUCK * 0x40 ) ;
     {
     while( cNodes )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
 TELL( "waiting for all acceptors to die" )
 etherC::ifcSayIF( T("GOD: waiting for all nodes to die") , flSAY_APPEND | flSAY_LOG ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x8 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK * 0x8 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TELL( "napping" )
 
     }
@@ -41,22 +41,22 @@ etherC::ifcSayIF( T("GOD: waiting for all nodes to die") , flSAY_APPEND | flSAY_
                 //break ; //ENABLE FOR SINGLE SHOT; DISABLE FOR BURST
                 TELL( "launching tmNodeF-" )
                 if( !etThread ) cNodes ++ , cLaunches ++ ;
-                etThread.osThreadF( tinBaseP , countTC() , tmNodeF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cNodes ) ;
+                etThread.osThreadF( tin0P , countTC() , tmNodeF , 0 , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&cNodes ) ;
                 TELL( "launching tmNodeF+" )
             {
             while( cToDo -- )
             countT cToDo = CnODES - cNodes ;
-            //etThread.strokeF( tinBaseP , T("no backlog\r\n") ) ;
+            //etThread.strokeF( tin0P , T("no backlog\r\n") ) ;
             cSuppress = 0 ;
         {
         else if( !( cSuppress && cSuppress -- ) )
-        else if( cNodes > CnODES ) etThread.strokeF( tinBaseP , T("cNodes: ")+TF1(cNodes)+T("\r\n") ) ;
-        if( cBacklog ) etThread.strokeF( tinBaseP , T("----")+TF1(cBacklog)+T("----\r\n") ) ;
+        else if( cNodes > CnODES ) etThread.strokeF( tin0P , T("cNodes: ")+TF1(cNodes)+T("\r\n") ) ;
+        if( cBacklog ) etThread.strokeF( tin0P , T("----")+TF1(cBacklog)+T("----\r\n") ) ;
     {
     //if( cLaunches < 2 )
     TELL( "deciding whether to launch tmNodeF" )
 
-    countT cBacklog = godBacklogF( tinBaseP ) ;
+    countT cBacklog = godBacklogF( tin0P ) ;
     TELL( "calculating cBacklog" )
 {
 while( !ether )
@@ -67,37 +67,37 @@ ZE( countT , cNodes ) ;
 pRuAge = &ruAge ;
 ranUniC ruAge( TICK * 0x10 , 1 ) ;
 pStStBang = &stStBang ;
-stackC stStBang( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+stackC stStBang( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 TELL( "setting up 2" )
 
 pStNodeGod = &stNodeGod ;
-stackC stNodeGod( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
+stackC stNodeGod( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( nodeC ) ) ;
 TELL( "setting up" )
 
 TODO
 
 }
     return cBacklog ;
-    pStStBang->ungrabF( tinBaseP ) ;
+    pStStBang->ungrabF( tin0P ) ;
     }
         while( !pStStBang->third && ~hDown ) ;
         }
             if( pStBang && *pStBang ) cBacklog += *pStBang ;
-            stackC* pStBang = (stackC*)pStStBang->downF( tinBaseP , hDown ) ;
+            stackC* pStBang = (stackC*)pStStBang->downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( *pStStBang )
-    pStStBang->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    pStStBang->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( countT , cBacklog ) ;
 {
-countT godBacklogF( tin0S& tinBaseP )
+countT godBacklogF( tin0S& tin0P )
 
 DONE( tmNodeF )
 }
     cNodes -- ;
-    nodeMainF( tinBaseP , etThread ) ;
+    nodeMainF( tin0P , etThread ) ;
     countT& cNodes = *(countT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
@@ -105,29 +105,29 @@ TELL( "setting up" )
 TASK( tmNodeF )
 
 }
-    pStStBang->ungrabF( tinBaseP ) ;
-    if( (*pStStBang)( (countT)&stBangP ) ) pStStBang->extractF( tinBaseP ) ;
-    pStStBang->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    pStStBang->ungrabF( tin0P ) ;
+    if( (*pStStBang)( (countT)&stBangP ) ) pStStBang->extractF( tin0P ) ;
+    pStStBang->grabF( tin0P , TAG( TAGiDnULL ) ) ;
 {
-voidT godByeF( tin0S& tinBaseP , stackC& stBangP )
+voidT godByeF( tin0S& tin0P , stackC& stBangP )
 
 }
-    pStStBang->sinkF( tinBaseP , countTC() , (countT)&stBangP , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+    pStStBang->sinkF( tin0P , countTC() , (countT)&stBangP , flSTACKsINK_UNIQUE , subtractNodesF ) ;
 {
-voidT godHelloF( tin0S& tinBaseP , stackC& stBangP )
+voidT godHelloF( tin0S& tin0P , stackC& stBangP )
 
 }
-    pStNodeGod->ungrabF( tinBaseP ) ;
-    if( (*pStNodeGod)( (byteT*)nodeP , subtractNodesF ) ) pStNodeGod->extractF( 0 , tinBaseP ) ;
-    pStNodeGod->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    pStNodeGod->ungrabF( tin0P ) ;
+    if( (*pStNodeGod)( (byteT*)nodeP , subtractNodesF ) ) pStNodeGod->extractF( 0 , tin0P ) ;
+    pStNodeGod->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     bGasp = 1 ;
 {
-voidT godByeF( tin0S& tinBaseP , const nodeC& nodeP )
+voidT godByeF( tin0S& tin0P , const nodeC& nodeP )
 
 }
-    pStNodeGod->sinkF( tinBaseP , countTC() , (byteT*)nodeP , flSTACKsINK_UNIQUE , subtractNodesF ) ;
+    pStNodeGod->sinkF( tin0P , countTC() , (byteT*)nodeP , flSTACKsINK_UNIQUE , subtractNodesF ) ;
 {
-voidT godHelloF( tin0S& tinBaseP , const nodeC& nodeP )
+voidT godHelloF( tin0S& tin0P , const nodeC& nodeP )
 
 }
     //return TOCK * 0x10 + *pRuAge / ( nodeP.idMe % 2 ? 1.0 : 16.0 ) ;
@@ -146,12 +146,12 @@ voidT godHelloF( tin0S& tinBaseP , const nodeC& nodeP )
     //static countT pcAge[ 2 ] = { TICK * 0x10 , TOCK * 0x20 } ;
 
 {
-countT godMyLifespanF( tin0S& tinBaseP , nodeC& nodeP )
+countT godMyLifespanF( tin0S& tin0P , nodeC& nodeP )
 
 }
-    if( ((tin9S&)tinBaseP).fingerprint && etThread && stNodeOpenP ) ;
+    if( ((tin9S&)tin0P).fingerprint && etThread && stNodeOpenP ) ;
 
-    if( bTalkP ) etThread.strokeF( tinBaseP , tLine ) ;
+    if( bTalkP ) etThread.strokeF( tin0P , tLine ) ;
     tLine += T("\r\n") ;
     
     }
@@ -165,35 +165,35 @@ countT godMyLifespanF( tin0S& tinBaseP , nodeC& nodeP )
     {
     if( stIdMe )
     
-    stNodeOpenP.ungrabF( tinBaseP ) ;
+    stNodeOpenP.ungrabF( tin0P ) ;
     }
         while( !stNodeOpenP.third && ~hDown ) ;
         }
-            if( stIdMe( node.idMe ) ) stIdMe.extractF( tinBaseP ) ;
+            if( stIdMe( node.idMe ) ) stIdMe.extractF( tin0P ) ;
             tLine += T(" ")+TF1(node.idMe)+T((*pStNodeGod)((byteT*)&node,subtractNodesF)?" ":"~") ;
             //if( bGasp && !( node.idMe % 2 ) ) bTalkP = 1 ;
-            nodeC& node = *(nodeC*)&stNodeOpenP.downF( tinBaseP , hDown ) ;
+            nodeC& node = *(nodeC*)&stNodeOpenP.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stNodeOpenP )
-    stNodeOpenP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    stNodeOpenP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     bTalkP = 1 ;
     
-    pStNodeGod->ungrabF( tinBaseP ) ;
+    pStNodeGod->ungrabF( tin0P ) ;
     }
         while( !pStNodeGod->third && ~hUp ) ;
-        do stIdMe.sinkF( tinBaseP , countTC() , pStNodeGod->upF( tinBaseP , hUp ) , flSTACKsINK_UNIQUE ) ;
-        handleC hUp( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        do stIdMe.sinkF( tin0P , countTC() , pStNodeGod->upF( tin0P , hUp ) , flSTACKsINK_UNIQUE ) ;
+        handleC hUp( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( *pStNodeGod )
-    pStNodeGod->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-    stackC stIdMe( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+    pStNodeGod->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    stackC stIdMe( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
     TN( tLine , "" ) ; tLine = TF1(nodeP.idMe)+T(":") ;
 {
-voidT godPrayF( tin0S& tinBaseP , etherC& etThread , stackC& stNodeOpenP , const nodeC& nodeP , boolT& bTalkP )
+voidT godPrayF( tin0S& tin0P , etherC& etThread , stackC& stNodeOpenP , const nodeC& nodeP , boolT& bTalkP )
 
 boolT bGasp ;
 

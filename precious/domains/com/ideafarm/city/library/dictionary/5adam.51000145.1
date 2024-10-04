@@ -11,21 +11,21 @@
 
 REST
 
-etThread.osSleepF( tinBaseP , TOCK * 2 ) ;
-etThread.traceF( tinBaseP , T("ok\r\n") ) ;
+etThread.osSleepF( tin0P , TOCK * 2 ) ;
+etThread.traceF( tin0P , T("ok\r\n") ) ;
 
-etThread.boxZapF( tinBaseP , T("///ideafarm/ephemeral/tmp/5410104.four") ) ;
-etThread.boxZapF( tinBaseP , T("///ideafarm/ephemeral/tmp/5410104.three") ) ;
-etThread.boxZapF( tinBaseP , T("///ideafarm/ephemeral/tmp/5410104.two") ) ;
-etThread.boxZapF( tinBaseP , T("///ideafarm/ephemeral/tmp/5410104.one") ) ;
+etThread.boxZapF( tin0P , T("///ideafarm/ephemeral/tmp/5410104.four") ) ;
+etThread.boxZapF( tin0P , T("///ideafarm/ephemeral/tmp/5410104.three") ) ;
+etThread.boxZapF( tin0P , T("///ideafarm/ephemeral/tmp/5410104.two") ) ;
+etThread.boxZapF( tin0P , T("///ideafarm/ephemeral/tmp/5410104.one") ) ;
 
-etThread.traceF( tinBaseP , T("[cFound]:    ")+TF2(cFound,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-const countT cFound = etThread.diskFileExistsF( tinBaseP , T("///ideafarm/ephemeral/tmp/5410104.???") ) ;
+etThread.traceF( tin0P , T("[cFound]:    ")+TF2(cFound,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+const countT cFound = etThread.diskFileExistsF( tin0P , T("///ideafarm/ephemeral/tmp/5410104.???") ) ;
 
-etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/tmp/5410104.four" ) , "4444" ) ;
-etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/tmp/5410104.three") , "333" ) ;
-etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/tmp/5410104.two"  ) , "22" ) ;
-etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/tmp/5410104.one"  ) , "1" ) ;
+etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/tmp/5410104.four" ) , "4444" ) ;
+etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/tmp/5410104.three") , "333" ) ;
+etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/tmp/5410104.two"  ) , "22" ) ;
+etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/tmp/5410104.one"  ) , "1" ) ;
 
 TODO
 

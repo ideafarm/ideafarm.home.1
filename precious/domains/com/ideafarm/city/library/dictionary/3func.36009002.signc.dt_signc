@@ -13,15 +13,15 @@
         }
             THREADmODE2rESTORE ;
             }
-                while( cFunctionsPending > 1 ) { ++ s ; thirdC::dosSleepRawIF( tinBaseP , 0x100 ) ; }
+                while( cFunctionsPending > 1 ) { ++ s ; thirdC::dosSleepRawIF( tin0P , 0x100 ) ; }
 
-                ((tin9S&)tinBaseP).cYield = 0 ;
-                ++ s ; thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) ) ; // HOPEFULLY PENDING CALLS ON OTHER THREADS WILL COMPLETE HERE
-                ((tin9S&)tinBaseP).cYield = 0 ;
+                ((tin9S&)tin0P).cYield = 0 ;
+                ++ s ; thirdC::osThreadYieldIF( tin0P , TAG( TAGiDnULL ) ) ; // HOPEFULLY PENDING CALLS ON OTHER THREADS WILL COMPLETE HERE
+                ((tin9S&)tin0P).cYield = 0 ;
 
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                grabitC grabx( tinBaseP , TAG( TAGiDnULL ) ) ;
+                grabitC grabx( tin0P , TAG( TAGiDnULL ) ) ;
             {
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
         {

@@ -9,10 +9,10 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.diskWalkF( tinBaseP , cDirs , cFiles , T( "///d/archive" /*".dut.20180404@1426.page.titles.and.page.keywords"*/ "/") , bQuit , diskWalkFooCBF , (countT*)pcArg , 0 , 0 ) ;
+etThread.diskWalkF( tin0P , cDirs , cFiles , T( "///d/archive" /*".dut.20180404@1426.page.titles.and.page.keywords"*/ "/") , bQuit , diskWalkFooCBF , (countT*)pcArg , 0 , 0 ) ;
 ZE( boolT , bQuit ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
@@ -26,7 +26,7 @@ TN( tSlash , "/" ) ;
 TN( tn , "" ) ;
 TN( tDateLath , "" ) ;
 TN( tPathLath , "" ) ;
-stackC stKeywords( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS , ifcIDgRABlAYER_7BASEmISC1 , 0 , 0 , 0 , 0 , 0 ) ;
+stackC stKeywords( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS , ifcIDgRABlAYER_7BASEmISC1 , 0 , 0 , 0 , 0 , 0 ) ;
 
 TODO
 
@@ -35,131 +35,131 @@ TODO
     return bDoIt ;
 
     }
-        ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShort ) ;
-        ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
-        ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttDate ) ;
-        ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttMetaType ) ;
-        ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttNU ) ;
+        ((tin9S&)tin0P).pEther->delF( tin0P , psttShort ) ;
+        ((tin9S&)tin0P).pEther->delF( tin0P , psttPath ) ;
+        ((tin9S&)tin0P).pEther->delF( tin0P , psttDate ) ;
+        ((tin9S&)tin0P).pEther->delF( tin0P , psttMetaType ) ;
+        ((tin9S&)tin0P).pEther->delF( tin0P , psttNU ) ;
 
         }
-            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , pstt1Words ) ;
+            ((tin9S&)tin0P).pEther->delF( tin0P , psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->delF( tin0P , pstt1Words ) ;
 
             }
                 }
-                    if( !ids ) ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttWord ) ;
-                    stKeywordsP.sinkF( tinBaseP , ids , psttWord , flSTACKsINK_UNIQUE , 0 , 0 ) ;
+                    if( !ids ) ((tin9S&)tin0P).pEther->delF( tin0P , psttWord ) ;
+                    stKeywordsP.sinkF( tin0P , ids , psttWord , flSTACKsINK_UNIQUE , 0 , 0 ) ;
                     ZE( countT , ids ) ;
 
-                    ((tin9S&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttWord , psttc1 ) ; ___( psttWord ) ;
+                    ((tin9S&)tin0P).pEther->strMakeF( tin0P , LF , psttWord , psttc1 ) ; ___( psttWord ) ;
                     ZE( strokeS* , psttWord ) ;
                 {
                 )
-                    && ((tin9S&)tinBaseP).pEther->strCompareF( tinBaseP , psttc1 , T("private"                     ) )                                      // THESE WORDS ARE SUPPRESSED
-                    && ((tin9S&)tinBaseP).pEther->strCompareF( tinBaseP , psttc1 , T("for"                         ) )                                      // THESE WORDS ARE SUPPRESSED
-                       ((tin9S&)tinBaseP).pEther->strCompareF( tinBaseP , psttc1 , T("confidential"                ) )                                      // THESE WORDS ARE SUPPRESSED
+                    && ((tin9S&)tin0P).pEther->strCompareF( tin0P , psttc1 , T("private"                     ) )                                      // THESE WORDS ARE SUPPRESSED
+                    && ((tin9S&)tin0P).pEther->strCompareF( tin0P , psttc1 , T("for"                         ) )                                      // THESE WORDS ARE SUPPRESSED
+                       ((tin9S&)tin0P).pEther->strCompareF( tin0P , psttc1 , T("confidential"                ) )                                      // THESE WORDS ARE SUPPRESSED
                 (
                 if
 
-                //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("keyword [psttc1]: ")+T(psttc1) ) ;
+                //etherC::etRockIF( tin0P ).traceF( tin0P , T("keyword [psttc1]: ")+T(psttc1) ) ;
             {
             FORsTRINGSiN1( pstt1Words )
 
-            ((tin9S&)tinBaseP).pEther->strWordsF( tinBaseP , pstt1Words , tUse2 , sttq , tAlphaLowerP , flSTRwORDS_DELIMITERS | flSTRwORDS_ONLYdELIMITERS , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1Words ) ;
+            ((tin9S&)tin0P).pEther->strWordsF( tin0P , pstt1Words , tUse2 , sttq , tAlphaLowerP , flSTRwORDS_DELIMITERS | flSTRwORDS_ONLYdELIMITERS , 0 , 0 , 0 , 0 , 0 ) ; ___( pstt1Words ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , pstt1Words ) ;
 
-            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("[tUse]: ")+tUse2 ) ;
+            //etherC::etRockIF( tin0P ).traceF( tin0P , T("[tUse]: ")+tUse2 ) ;
 
-            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttPrefix2 ) ;
+            ((tin9S&)tin0P).pEther->delF( tin0P , psttPrefix2 ) ;
             TN( tUse2 , psttPrefix2 ? psttPrefix2 : (strokeS*)tUse ) ;
-            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttSuffix2 ) ;
-            ((tin9S&)tinBaseP).pEther->strBisectF( tinBaseP , psttPrefix2 , psttSuffix2 , tUse , tDotP , -1 , flSTRbISECT_null , 0 ) ;  ___( psttPrefix2 ) ; ___( psttSuffix2 ) ;
+            ((tin9S&)tin0P).pEther->delF( tin0P , psttSuffix2 ) ;
+            ((tin9S&)tin0P).pEther->strBisectF( tin0P , psttPrefix2 , psttSuffix2 , tUse , tDotP , -1 , flSTRbISECT_null , 0 ) ;  ___( psttPrefix2 ) ; ___( psttSuffix2 ) ;
             ZE( strokeS* , psttSuffix2 ) ;
             ZE( strokeS* , psttPrefix2 ) ;
 
-            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttSuffix ) ;
+            ((tin9S&)tin0P).pEther->delF( tin0P , psttSuffix ) ;
             TN( tUse , psttSuffix ? psttSuffix : psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttPrefix ) ;
-            ((tin9S&)tinBaseP).pEther->strBisectF( tinBaseP , psttPrefix , psttSuffix , psttCurrentName , T(".!.") , -1 , flSTRbISECT_null , 0 ) ;  ___( psttPrefix ) ; ___( psttSuffix ) ;
+            ((tin9S&)tin0P).pEther->delF( tin0P , psttPrefix ) ;
+            ((tin9S&)tin0P).pEther->strBisectF( tin0P , psttPrefix , psttSuffix , psttCurrentName , T(".!.") , -1 , flSTRbISECT_null , 0 ) ;  ___( psttPrefix ) ; ___( psttSuffix ) ;
             ZE( strokeS* , psttSuffix ) ;
             ZE( strokeS* , psttPrefix ) ;
 
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.e."  ) , T(".equipment."                 ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.p."  ) , T(".police."                    ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.e."  ) , T(".equipment."                 ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.p."  ) , T(".police."                    ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
 
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.5."  ) , T(".unknownaudiocode.5."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.i."  ) , T(".unknownaudiocode.i."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.n."  ) , T(".unknownaudiocode.n."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.s."  ) , T(".unknownaudiocode.s."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.w."  ) , T(".unknownaudiocode.w."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.y."  ) , T(".unknownaudiocode.y."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.j."  ) , T(".unknownaudiocode.j."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.z."  ) , T(".unknownaudiocode.z."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.v."  ) , T(".unknownaudiocode.v."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.l."  ) , T(".unknownaudiocode.l."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.c."  ) , T(".unknownaudiocode.c."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.t."  ) , T(".unknownaudiocode.t."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.d."  ) , T(".unknownaudiocode.d."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.a."  ) , T(".unknownaudiocode.a."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.q."  ) , T(".unknownaudiocode.q."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.m."  ) , T(".unknownaudiocode.m."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.o."  ) , T(".unknownaudiocode.o."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.x."  ) , T(".unknownaudiocode.x."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.f."  ) , T(".unknownaudiocode.f."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.h."  ) , T(".unknownaudiocode.h."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.p.r.") , T(".unknownaudiocode.p.r."      ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.p.c.") , T(".unknownaudiocode.p.c."      ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.p.j.") , T(".unknownaudiocode.p.j."      ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.5."  ) , T(".unknownaudiocode.5."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.i."  ) , T(".unknownaudiocode.i."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.n."  ) , T(".unknownaudiocode.n."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.s."  ) , T(".unknownaudiocode.s."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.w."  ) , T(".unknownaudiocode.w."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.y."  ) , T(".unknownaudiocode.y."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.j."  ) , T(".unknownaudiocode.j."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.z."  ) , T(".unknownaudiocode.z."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.v."  ) , T(".unknownaudiocode.v."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.l."  ) , T(".unknownaudiocode.l."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.c."  ) , T(".unknownaudiocode.c."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.t."  ) , T(".unknownaudiocode.t."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.d."  ) , T(".unknownaudiocode.d."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.a."  ) , T(".unknownaudiocode.a."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.q."  ) , T(".unknownaudiocode.q."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.m."  ) , T(".unknownaudiocode.m."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.o."  ) , T(".unknownaudiocode.o."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.x."  ) , T(".unknownaudiocode.x."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.f."  ) , T(".unknownaudiocode.f."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.h."  ) , T(".unknownaudiocode.h."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.p.r.") , T(".unknownaudiocode.p.r."      ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.p.c.") , T(".unknownaudiocode.p.c."      ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.p.j.") , T(".unknownaudiocode.p.j."      ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
 
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.p.i.") , T(".police.investigation."      ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
-            ((tin9S&)tinBaseP).pEther->strReplaceF( tinBaseP , psttCurrentName , 0 , T(".!.audio.p.e.") , T(".police.enforcement."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.p.i.") , T(".police.investigation."      ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strReplaceF( tin0P , psttCurrentName , 0 , T(".!.audio.p.e.") , T(".police.enforcement."        ) , 0 , flSTRrEPLACE_null ) ; ___( psttCurrentName ) ;
 
-            ((tin9S&)tinBaseP).pEther->strConvertToLowerCaseF( tinBaseP , psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->strConvertToLowerCaseF( tin0P , psttCurrentName ) ;
 
-            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , posti ) ;
-            ((tin9S&)tinBaseP).pEther->strMakeFromOsTextF( tinBaseP , psttCurrentName , posti ) ; ___( psttCurrentName ) ;
+            ((tin9S&)tin0P).pEther->delF( tin0P , posti ) ;
+            ((tin9S&)tin0P).pEther->strMakeFromOsTextF( tin0P , psttCurrentName , posti ) ; ___( psttCurrentName ) ;
             ZE( strokeS* , psttCurrentName ) ;
 
-            ((tin9S&)tinBaseP).pEther->boxGetShadowF( tinBaseP , posti , costi , tName ) ; ___( posti ) ;
+            ((tin9S&)tin0P).pEther->boxGetShadowF( tin0P , posti , costi , tName ) ; ___( posti ) ;
             ZE( countT   , costi ) ;
             ZE( osTextT* , posti ) ;
         {
-        if( !((tin9S&)tinBaseP).pEther->strCompareF( tinBaseP , psttMetaType , tMetaDotCurrentnameP ) )
+        if( !((tin9S&)tin0P).pEther->strCompareF( tin0P , psttMetaType , tMetaDotCurrentnameP ) )
 
-        //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("[psttMetaType]: ")+T(psttMetaType) ) ;
-        ((tin9S&)tinBaseP).pEther->strBisectF( tinBaseP , psttNU , psttMetaType , psttShort , tDotP , -2 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttNU ) ; ___( psttMetaType ) ;
+        //etherC::etRockIF( tin0P ).traceF( tin0P , T("[psttMetaType]: ")+T(psttMetaType) ) ;
+        ((tin9S&)tin0P).pEther->strBisectF( tin0P , psttNU , psttMetaType , psttShort , tDotP , -2 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttNU ) ; ___( psttMetaType ) ;
         ZE( strokeS* , psttMetaType ) ;
         ZE( strokeS* , psttNU ) ;
 
         }
             tDateLathP = T(psttDate) ;
             FLUSHkEYWORDS
-            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("date has changed [tDateLathP]: ")+tDateLathP ) ;
+            //etherC::etRockIF( tin0P ).traceF( tin0P , T("date has changed [tDateLathP]: ")+tDateLathP ) ;
         {
-        if( ((tin9S&)tinBaseP).pEther->strCompareF( tinBaseP , psttDate , tDateLathP ) )
+        if( ((tin9S&)tin0P).pEther->strCompareF( tin0P , psttDate , tDateLathP ) )
 
-        //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("[psttDate]: ")+T(psttDate) ) ;
-        ((tin9S&)tinBaseP).pEther->strSubstringF( tinBaseP , psttDate , idf , idl , psttShort , 0 ) ; ___( psttDate ) ;
+        //etherC::etRockIF( tin0P ).traceF( tin0P , T("[psttDate]: ")+T(psttDate) ) ;
+        ((tin9S&)tin0P).pEther->strSubstringF( tin0P , psttDate , idf , idl , psttShort , 0 ) ; ___( psttDate ) ;
         ZE( strokeS* , psttDate ) ;
         countT idl = 0x28 ;
         countT idf = 0x21 ;
 
-        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("[psttShort]: ")+T(psttShort) ) ;
+        etherC::etRockIF( tin0P ).traceF( tin0P , T("[psttShort]: ")+T(psttShort) ) ;
 
         tPathLathP = T(psttPath) ;
-        ((tin9S&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShort , tName , tSlashP , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShort ) ;
+        ((tin9S&)tin0P).pEther->strBisectF( tin0P , psttPath , psttShort , tName , tSlashP , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShort ) ;
         ZE( strokeS* , psttShort ) ;
         ZE( strokeS* , psttPath ) ;
 
         TN( tName , ifName ) ;
-        ifFileNameC ifName( tinBaseP , *((tin9S&)tinBaseP).pEther , postNameP ) ;
+        ifFileNameC ifName( tin0P , *((tin9S&)tin0P).pEther , postNameP ) ;
     {
-    else if( postNameP[ thirdC::c_strlenIF( tinBaseP , postNameP ) - 1 ] != '\\' && ((tin9S&)tinBaseP).pEther ) // IF NOT A DIRECTORY
+    else if( postNameP[ thirdC::c_strlenIF( tin0P , postNameP ) - 1 ] != '\\' && ((tin9S&)tin0P).pEther ) // IF NOT A DIRECTORY
     }
         tDateLathP = tnP ;
         FLUSHkEYWORDS
-        //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("end of file list [tDateLathP]: ")+tDateLathP ) ;
+        //etherC::etRockIF( tin0P ).traceF( tin0P , T("end of file list [tDateLathP]: ")+tDateLathP ) ;
     {
     if( !postNameP )
 
@@ -177,37 +177,37 @@ TODO
 
     _IO_
 {
-/*1*/boolT diskWalkFooCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
+/*1*/boolT diskWalkFooCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloFilesP , const countT* const pModuloDirsP )/*1*/
 
     }
-        ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttAllWords ) ;                                                                                                          \
+        ((tin9S&)tin0P).pEther->delF( tin0P , psttAllWords ) ;                                                                                                          \
                                                                                                                                                             \
-        ((tin9S&)tinBaseP).pEther->boxPutF( tinBaseP , tPathOutP+T("!ideafarm.8.2.00000000.00000001.")+tDateLathP+T("@0000.!.control.page.keywords") , posto , costo ) ;      \
-        countT   costo = tAllWords.csF( tinBaseP ) ;                                                                                                            \
+        ((tin9S&)tin0P).pEther->boxPutF( tin0P , tPathOutP+T("!ideafarm.8.2.00000000.00000001.")+tDateLathP+T("@0000.!.control.page.keywords") , posto , costo ) ;      \
+        countT   costo = tAllWords.csF( tin0P ) ;                                                                                                            \
         osTextT* posto = tAllWords ;                                                                                                                        \
                                                                                                                                                             \
-        /*etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("[tDateLathP,psttAllWords]:    ")+tDateLathP+T("    ")+tAllWords ) ;*/                                              \
+        /*etherC::etRockIF( tin0P ).traceF( tin0P , T("[tDateLathP,psttAllWords]:    ")+tDateLathP+T("    ")+tAllWords ) ;*/                                              \
         TN( tAllWords , psttAllWords ) ;                                                                                                                    \
                                                                                                                                                             \
         }                                                                                                                                                   \
-            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttWord ) ;                                                                                                          \
-                                       ((tin9S&)tinBaseP).pEther->strFuseF( tinBaseP , psttAllWords , psttWord ) ;                                                            \
-            if( psttAllWords->idAdam ) ((tin9S&)tinBaseP).pEther->strFuseF( tinBaseP , psttAllWords , T(" ") ) ;                                                              \
+            ((tin9S&)tin0P).pEther->delF( tin0P , psttWord ) ;                                                                                                          \
+                                       ((tin9S&)tin0P).pEther->strFuseF( tin0P , psttAllWords , psttWord ) ;                                                            \
+            if( psttAllWords->idAdam ) ((tin9S&)tin0P).pEther->strFuseF( tin0P , psttAllWords , T(" ") ) ;                                                              \
             stKeywordsP >> psttWord ;                                                                                                                       \
             ZE( strokeS* , psttWord ) ;                                                                                                                     \
         {                                                                                                                                                   \
         while( stKeywordsP )                                                                                                                                \
                                                                                                                                                             \
-        ((tin9S&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttAllWords , 0 , csttNeeded ) ; ___( psttAllWords ) ;                                                               \
+        ((tin9S&)tin0P).pEther->strMakeF( tin0P , LF , psttAllWords , 0 , csttNeeded ) ; ___( psttAllWords ) ;                                                               \
         ZE( strokeS* , psttAllWords ) ;                                                                                                                     \
                                                                                                                                                             \
         while( !stKeywordsP.third && ~hWalk ) ;                                                                                                             \
         }                                                                                                                                                   \
             csttNeeded += !!csttNeeded + psttzWord->idAdam ;                                                                                                \
-            strokeS* psttzWord = (strokeS*)stKeywordsP.downF( tinBaseP , hWalk ) ;                                                                              \
+            strokeS* psttzWord = (strokeS*)stKeywordsP.downF( tin0P , hWalk ) ;                                                                              \
         {                                                                                                                                                   \
         do                                                                                                                                                  \
-        handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;                                                                              \
+        handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;                                                                              \
         ZE( countT , csttNeeded ) ;                                                                                                                         \
     {                                                                                                                                                       \
     if( stKeywordsP )                                                                                                                                       \

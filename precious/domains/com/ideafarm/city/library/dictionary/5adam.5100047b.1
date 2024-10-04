@@ -11,7 +11,7 @@
 
 REST
 
-etThread.loafIF( tinBaseP ) ;
+etThread.loafIF( tin0P ) ;
 
 BOSpOOP
 BOS( WHATgbo , BOSoK , ReleaseDC( (HWND)(countT)window , hdc ) )
@@ -22,9 +22,9 @@ BOS( WHATgbo , BOSoK , TextOut( hdc , osColF( 9 )  , osRowF( 16 , window ) , "M|
 //BOSpOOP
 //BOS( WHATgbo , BOSoK , TextOut( hdc , osColF( 9 )  , osRowF( 16 , window ) , "123456789abcdef.123456789abcdef.123456789abcdef.123456789abcdef.123456789abcdef.123456789abcdef.123456789abcdef.123456789abcdef." , 0x80 ) )
 }
-    hObjFont    = (HGDIOBJ)((tin9S&)tinBaseP).brcRaw ;
+    hObjFont    = (HGDIOBJ)((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , SelectObject( hdc , hFont ) )
-    HFONT hFont = (HFONT)((tin9S&)tinBaseP).brcRaw ;
+    HFONT hFont = (HFONT)((tin9S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , CreateFontIndirect( &info ) )
 
@@ -42,11 +42,11 @@ BOS( WHATgbo , BOSoK , TextOut( hdc , osColF( 9 )  , osRowF( 16 , window ) , "M|
     //info.lfEscapement     = 0 ;
     //info.lfWidth            =   7 ;
     info.lfHeight           = 0x8 ;
-    etThread.memSetF( tinBaseP , (byteT*)&info , sizeof info ) ;
+    etThread.memSetF( tin0P , (byteT*)&info , sizeof info ) ;
     LOGFONT info ;
 {
 ZE( HGDIOBJ , hObjFont ) ;
-HDC hdc = (HDC)((tin9S&)tinBaseP).brcRaw ;
+HDC hdc = (HDC)((tin9S&)tin0P).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , GetDC( (HWND)(countT)window ) )
 windowOldC& window = thirdC::winRootIF() ;

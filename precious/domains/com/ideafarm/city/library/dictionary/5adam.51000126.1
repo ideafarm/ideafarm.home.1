@@ -10,27 +10,27 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
-etThread.strokeF( tinBaseP , T("the file contained: \"")+T(posti100)+T("\"\r\nok\r\n") ) ;
+etThread.osSleepF( tin0P , TOCK * 4 ) ;
+etThread.strokeF( tin0P , T("the file contained: \"")+T(posti100)+T("\"\r\nok\r\n") ) ;
 
-etThread.diskFileOrDirDeleteF( tinBaseP , T(FILEnAMEnEW) ) ;
+etThread.diskFileOrDirDeleteF( tin0P , T(FILEnAMEnEW) ) ;
 
-etThread.fileReadF( tinBaseP , posti100 , sizeof posti100 , handle , 1 ) ;
-etThread.memSetF( tinBaseP , posti100 , sizeof posti100 ) ;
+etThread.fileReadF( tin0P , posti100 , sizeof posti100 , handle , 1 ) ;
+etThread.memSetF( tin0P , posti100 , sizeof posti100 ) ;
 osTextT posti100[ 0x100 ] ;
-etThread.fileOpenF( tinBaseP , handle , idResult , T(FILEnAMEnEW) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , 0 , 0 , 0 , 1 ) ;
+etThread.fileOpenF( tin0P , handle , idResult , T(FILEnAMEnEW) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , 0 , 0 , 0 , 1 ) ;
 idResult = 0 ;
 
-etThread.diskMoveFileOrDirF( tinBaseP , T(FILEnAMEnEW) , T(FILEnAMEoLD) ) ;
-etThread.diskMakeDirIfNeededF( tinBaseP , T(FILEnAMEnEW) ) ;
+etThread.diskMoveFileOrDirF( tin0P , T(FILEnAMEnEW) , T(FILEnAMEoLD) ) ;
+etThread.diskMakeDirIfNeededF( tin0P , T(FILEnAMEnEW) ) ;
 
-etThread.fileWriteF( tinBaseP , handle , "this text will go into the file" ) ;
-etThread.fileOpenF( tinBaseP , handle , idResult , T(FILEnAMEoLD) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR , 0 , 0 , 0 , 1 ) ;
-etThread.diskMakeDirIfNeededF( tinBaseP , T(FILEnAMEoLD) ) ;
+etThread.fileWriteF( tin0P , handle , "this text will go into the file" ) ;
+etThread.fileOpenF( tin0P , handle , idResult , T(FILEnAMEoLD) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR , 0 , 0 , 0 , 1 ) ;
+etThread.diskMakeDirIfNeededF( tin0P , T(FILEnAMEoLD) ) ;
 ZE( countT , idResult ) ;
-handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
 TODO
 

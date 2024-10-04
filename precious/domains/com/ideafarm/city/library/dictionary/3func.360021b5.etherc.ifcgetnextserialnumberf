@@ -22,19 +22,19 @@
     sIn >> finger ;
     ZE( countT , finger ) ;
 
-    sock.readF( tinBaseP , sIn ) ;
-    soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sock.readF( tin0P , sIn ) ;
+    soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
 
-    sock.writeF( tinBaseP , sOut ) ;
+    sock.writeF( tin0P , sOut ) ;
 
     sOut << pczP ;
     sOut << (countT)ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEcOUNTsTRING ;
     sOut << (countT)1 ;
     sOut << (countT)FINGERnEG_SERIALnUMBERdISPENSERcMD ;
-    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 
-    sock.connectF( tinBaseP , idPortDispenser ) ;
-    socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
+    sock.connectF( tin0P , idPortDispenser ) ;
+    socketC sock( tin0P , *this , TAG( TAGiDnULL ) ) ;
 
     CONoUTrAW( T("ifcGetNextSerialNumberF [pczP]: \"")+T(pczP)+T("\"\r\n") ) ; //U::
 
@@ -49,7 +49,7 @@
     IFbEcAREFUL
     const countT idPortDispenser = homeS::homeIF().idPortSerialNumberDispenser ;
 {
-/*1*/countT etherC::ifcGetNextSerialNumberF( tin0S& tinBaseP , const countT* const pczP )/*1*/
+/*1*/countT etherC::ifcGetNextSerialNumberF( tin0S& tin0P , const countT* const pczP )/*1*/
 
 /**/
 */
@@ -57,7 +57,7 @@
   must be terminated by 0
   must not be 0
  pczP
- tinBaseP
+ tin0P
 parameters
 /*
 

@@ -6,8 +6,15 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
-
-#define J(idJotP) ( !( (countT)(idJotP) & BM_HIGH ) ? (byteT*)(idJotP) : (byteT*)( *((tin9S&)tinBaseP).ppJot[ ( (countT)(idJotP) & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] )[ (countT)(idJotP) ] )
+    )
+                : (byteT*)( *((tin9S&)tin0P).ppJot[ ( (countT)(idJotP) & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] )[ (countT)(idJotP) ] )      \
+                ? (byteT*)0                                                                                                                     \
+            : tin0P.idTypeTin != ifcIDtYPEtIN_FULL                                                                                              \
+            ? (byteT*)(idJotP)                                                                                                                  \
+        !( (countT)(idJotP) & BM_HIGH )                                                                                                         \
+    (                                                                                                                                           \
+                                                                                                                                                \
+#define J(idJotP)                                                                                                                               \
 
 /*1*//*J(idJotP)*//*1*/
 

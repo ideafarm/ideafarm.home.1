@@ -19,7 +19,7 @@
 
         BOSpOOP
         BOS( WHATgbo , BOSoK , SystemTimeToTzSpecificLocalTime( 0 , &utc , &local ) ) ;
-        thirdC::c_memsetIF( tinBaseP , (byteT*)&local , sizeof local ) ;
+        thirdC::c_memsetIF( tin0P , (byteT*)&local , sizeof local ) ;
         SYSTEMTIME local ;
         utc.wMilliseconds = (WORD)msP ;
         utc.wSecond       = (WORD)ssP ;
@@ -53,16 +53,16 @@
     // SET mP
 
     }
-        osTimeSubtractF( tinBaseP , time1r , time2r , time1 , time2 ) ;
+        osTimeSubtractF( tin0P , time1r , time2r , time1 , time2 ) ;
         yP = yTrial ;
         }
-            osTimeFromOldTimeIF( tinBaseP , time1 , time2 , yTrial , 0 , 0 , 0 , 0 , 0 , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+            osTimeFromOldTimeIF( tin0P , time1 , time2 , yTrial , 0 , 0 , 0 , 0 , 0 , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
             time2 = 0 ;
             time1 = 0 ;
             yTrial -- ;
         {
         while( time2 > time2r )
-        osTimeFromOldTimeIF( tinBaseP , time1 , time2 , yTrial , 0 , 0 , 0 , 0 , 0 , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+        osTimeFromOldTimeIF( tin0P , time1 , time2 , yTrial , 0 , 0 , 0 , 0 , 0 , 0 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
         ZE( sCountT , time2 ) ;
         ZE( countT , time1 ) ;
         countT yTrial = 1 + (measureT)time2r / mDaysPerYear ;
@@ -119,7 +119,7 @@
     IFbEcAREFUL        
     SCOOP
 {
-/*1*/voidT thirdC::osTimeToOldTimeF( tin0S& tinBaseP , countT& msP , countT& ssP , countT& mmP , countT& hhP , countT& dP , countT& mP , sCountT& yP , countT& dowP , const countT time1P , const sCountT time2P , const flagsT flagsP )/*1*/
+/*1*/voidT thirdC::osTimeToOldTimeF( tin0S& tin0P , countT& msP , countT& ssP , countT& mmP , countT& hhP , countT& dP , countT& mP , sCountT& yP , countT& dowP , const countT time1P , const sCountT time2P , const flagsT flagsP )/*1*/
 
 /**/
 */

@@ -9,26 +9,26 @@
                             
 REST
 
-ether.loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+ether.loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.delF( tinBaseP , posti ) ;
-etThread.delF( tinBaseP , pstti ) ;
+etThread.delF( tin0P , posti ) ;
+etThread.delF( tin0P , pstti ) ;
 
-if( tLath.csF( tinBaseP ) ) etThread.traceF( tinBaseP , TF3(cLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+tb4+tLath ) ;
+if( tLath.csF( tin0P ) ) etThread.traceF( tin0P , TF3(cLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+tb4+tLath ) ;
 }
-    etThread.delF( tinBaseP , psttLine ) ;
+    etThread.delF( tin0P , psttLine ) ;
     }
         }
             tLath = T(psttLine) ;
             cLath = 1 ;
-            if( tLath.csF( tinBaseP ) ) etThread.traceF( tinBaseP , TF3(cLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+tb4+tLath ) ;
+            if( tLath.csF( tin0P ) ) etThread.traceF( tin0P , TF3(cLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+tb4+tLath ) ;
         {
         else
-        if( !etThread.strCompareF( tinBaseP , psttLine , tLath ) ) cLath ++ ;
+        if( !etThread.strCompareF( tin0P , psttLine , tLath ) ) cLath ++ ;
     {
     if( bFound )
-    boolT bFound = etThread.strSubstringF( tinBaseP , psttLine , idf , sttq , tCrlf , pstti ) ; ___( psttLine ) ;
+    boolT bFound = etThread.strSubstringF( tin0P , psttLine , idf , sttq , tCrlf , pstti ) ; ___( psttLine ) ;
     ZE( strokeS* , psttLine ) ;
 {
 while( idf )
@@ -39,10 +39,10 @@ TN( tCrlf , "\r\n" ) ;
 TN( tb4 , "    " ) ;
 countT idf = 1 ;
 
-etThread.strMakeFromOsTextF( tinBaseP , pstti , posti , costi ) ; ___( pstti ) ;
+etThread.strMakeFromOsTextF( tin0P , pstti , posti , costi ) ; ___( pstti ) ;
 ZE( strokeS* , pstti ) ;
 
-etThread.boxGetShadowF( tinBaseP , posti , costi , T("///d/tmp/sor") ) ; ___( posti ) ;
+etThread.boxGetShadowF( tin0P , posti , costi , T("///d/tmp/sor") ) ; ___( posti ) ;
 ZE( countT   , costi ) ;
 ZE( osTextT* , posti ) ;
 

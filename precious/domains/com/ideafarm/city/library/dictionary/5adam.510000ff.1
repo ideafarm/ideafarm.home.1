@@ -10,25 +10,25 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 }
 HEAReNTER( etThread )
-    etThread.strokeF( tinBaseP , T("\r\npress the enter key") ) ;
+    etThread.strokeF( tin0P , T("\r\npress the enter key") ) ;
     }
-        while( cDone < 4 ) { ++ s ; etThread.osSleepF( tinBaseP , TUCK * 64 ) ; }
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        while( cDone < 4 ) { ++ s ; etThread.osSleepF( tin0P , TUCK * 64 ) ; }
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cTries , ++ idt , (countT)&cDone ) ; }
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cTries , ++ idt , (countT)&cDone ) ; }
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cTries , ++ idt , (countT)&cDone ) ; }
-    { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cTries , ++ idt , (countT)&cDone ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cTries , ++ idt , (countT)&cDone ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cTries , ++ idt , (countT)&cDone ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cTries , ++ idt , (countT)&cDone ) ; }
+    { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cTries , ++ idt , (countT)&cDone ) ; }
     ZE( countT , idt ) ;
     ZE( countT , cDone ) ;
 
-    else         etThread.strokeF( tinBaseP , T("now the digits should appear in a single group for each value\r\n") ) ;
-    if( cTries ) etThread.strokeF( tinBaseP , T("the following digits should be slightly intermixed due to thread switching\r\n") ) ;
+    else         etThread.strokeF( tin0P , T("now the digits should appear in a single group for each value\r\n") ) ;
+    if( cTries ) etThread.strokeF( tin0P , T("the following digits should be slightly intermixed due to thread switching\r\n") ) ;
 {
 while( !etThread && cTries -- )
 countT cTries = 2 ;
@@ -39,9 +39,9 @@ DONE( tmF )
 
 }
     cDone ++ ;
-    if( !cTries ) third.dosExitCritSecF( tinBaseP ) ;
-    for( countT ii = 1 ; ii <= 0x100 ; ii ++ ) etThread.strokeF( tinBaseP , TF1(idt) ) ;
-    if( !cTries ) third.dosEnterCritSecF( tinBaseP ) ;
+    if( !cTries ) third.dosExitCritSecF( tin0P ) ;
+    for( countT ii = 1 ; ii <= 0x100 ; ii ++ ) etThread.strokeF( tin0P , TF1(idt) ) ;
+    if( !cTries ) third.dosEnterCritSecF( tin0P ) ;
     thirdC& third = etThread ;
 
     countT& cDone = *(countT*)pTaskP->c3 ;

@@ -9,18 +9,18 @@
 
 }
     }
-        sock.connectF( tinBaseP , idPortP , nicNameP ) ;
-        socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tin0P , idPortP , nicNameP ) ;
+        socketC sock( tin0P , *this , TAG( TAGiDnULL ) ) ;
     {
 
     }
         __( pb3[ 1 ] - 'k' ) ;
         __( pb3[ 0 ] - 'o' ) ;
-        __( 2 - sock.readF( tinBaseP , pb3 , 2 ) ) ;
+        __( 2 - sock.readF( tin0P , pb3 , 2 ) ) ;
         osTextT pb3[] = { 0 , 0 , 0 } ;
-        sock.writeF( tinBaseP , (osTextT*)T("!quit\r\n") ) ;
-        sock.connectF( tinBaseP , idPortP , nicNameP ) ;
-        socketC sock( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
+        sock.writeF( tin0P , (osTextT*)T("!quit\r\n") ) ;
+        sock.connectF( tin0P , idPortP , nicNameP ) ;
+        socketC sock( tin0P , *this , TAG( TAGiDnULL ) ) ;
     {
 
     _IO_
@@ -31,7 +31,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::sockWriteQuitF( tin0S& tinBaseP , const countT idPortP , const nicNameC nicNameP )/*1*/
+/**//*1*/voidT etherC::sockWriteQuitF( tin0S& tin0P , const countT idPortP , const nicNameC nicNameP )/*1*/
 */
   can be 0
  nicNameP

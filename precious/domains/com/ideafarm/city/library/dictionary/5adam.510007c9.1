@@ -9,35 +9,35 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
-etThread.traceF( tinBaseP , T("ok") ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     break ; //REMOVE FOR BURN-IN TESTING
 
     cReceivedFileWindows = 0 ;
-    etThread.traceF( tinBaseP , T("received [cReceivedFileWindows]:    ")+TF2(cReceivedFileWindows,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("received [cReceivedFileWindows]:    ")+TF2(cReceivedFileWindows,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-    etThread.traceF( tinBaseP , T("process [mTocks]:    ")+TT(timeE1,timeE2)+tb4+TF2(mTocksE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("throw   [mTocks]:    ")+TT(timeT1,timeT2)+tb4+TF2(mTocksT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("[mGBits]:            ")+TF2(mGBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("[cGram]:            ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("process [mTocks]:    ")+TT(timeE1,timeE2)+tb4+TF2(mTocksE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("throw   [mTocks]:    ")+TT(timeT1,timeT2)+tb4+TF2(mTocksT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[mGBits]:            ")+TF2(mGBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[cGram]:            ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     measureT mGBits = (measureT)( cb04Thrown << 3 ) / ( TICK << 2 ) ;
 
     measureT mTocksE = (measureT)timeE1 / TOCK ;
     measureT mTocksT = (measureT)timeT1 / TOCK ;
 
-    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO PROCESS
-    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO PROCESS
+    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
     ZE( sCountT , timeE2 ) ;
     ZE( countT  , timeE1 ) ;
 
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etThread.osTimeSubtractF( tinBaseP , timeT1 , timeT2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO THROW
-    etThread.osTimeNowF( tinBaseP , timeT1 , timeT2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeT1 , timeT2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO THROW
+    etThread.osTimeNowF( tin0P , timeT1 , timeT2 ) ;
     ZE( sCountT , timeT2 ) ;
     ZE( countT  , timeT1 ) ;
 
@@ -51,16 +51,16 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                     cb04Thrown += cbGram ;
                     cThrown ++ ;
 
-                    sThrow.writeF( tinBaseP , idPortEndpointCatcher , nicNameC() , pbGram , cbGram ) ;
-                    //if( !( idGram % TUCK ) ) etThread.traceF( tinBaseP , T("sending [idGram,cbNow,cbGram]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    sThrow.writeF( tin0P , idPortEndpointCatcher , nicNameC() , pbGram , cbGram ) ;
+                    //if( !( idGram % TUCK ) ) etThread.traceF( tin0P , T("sending [idGram,cbNow,cbGram]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT cbGram = sizeof( udpFileGramHeadFileWindowS ) + cbNow ;
                     //CONoUTrAW( "!" ) ;
-                    etThread.memCopyF( tinBaseP , pbPayload , pbc , cbNow ) ;
+                    etThread.memCopyF( tin0P , pbPayload , pbc , cbNow ) ;
                     head.secret = secretToUse ;
                     head.len    = cbNow  ;
                     head.off    = cbDone ;
                     head.cbThisGram = sizeof head + cbNow ;
-                    //etThread.traceF( tinBaseP , T("throwing window [secretToUse]:    ")+TF2(secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //etThread.traceF( tin0P , T("throwing window [secretToUse]:    ")+TF2(secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                     //CONoUTrAW( "+" ) ;
 
@@ -73,25 +73,25 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                         ? cbDo
                     countT cbNow = cbDo < CBuDPfILEpAYLOAD
 
-                    //etThread.traceF( tinBaseP , T("waited  for a secret") ) ;
+                    //etThread.traceF( tin0P , T("waited  for a secret") ) ;
                     }
                         Sleep( 100 ) ;
                     {
                     while( !secretToUse )
-                    //etThread.traceF( tinBaseP , T("waiting for a secret") ) ;
+                    //etThread.traceF( tin0P , T("waiting for a secret") ) ;
                 {
                 while( cbDo )
                 countT cbDo = cbw ;
                 byteT* pbc = pbw ;
 
-                //etThread.boxPutF( tinBaseP , tFileIn+T(".window.")+tIdWindow , pbw , cbw ) ;
-                //etThread.traceF( tinBaseP , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //etThread.boxPutF( tin0P , tFileIn+T(".window.")+tIdWindow , pbw , cbw ) ;
+                //etThread.traceF( tin0P , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 TN( tIdWindow , "" ) ; tIdWindow = TF3(++idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
             {
             else
             if( !pbw || !cbw ) break ;
 
-            fwsIn.getF( tinBaseP , pbw , cbw ) ;
+            fwsIn.getF( tin0P , pbw , cbw ) ;
             ZE( countT , cbw ) ;
             ZE( byteT* , pbw ) ;
         {
@@ -109,14 +109,14 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         byteT*               pbPayload = pbGram + sizeof( udpFileGramHeadFileWindowS ) ;
         byteT                pbGram[ sizeof( udpFileGramHeadFileWindowS ) + CBuDPfILEpAYLOAD ] ;
 
-        fileWindowsC fwsIn( tinBaseP , etThread , tFileIn ) ;
+        fileWindowsC fwsIn( tin0P , etThread , tFileIn ) ;
 
-        sThrow.bindF( tinBaseP ) ;
-        socketC sThrow( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+        sThrow.bindF( tin0P ) ;
+        socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
     {
     ZE( countT , idGram ) ;
 
-    etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
+    etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
     ZE( sCountT , timeA2 ) ;
     ZE( countT  , timeA1 ) ;
 {
@@ -125,15 +125,15 @@ TN( tFileIn     , "///d/tmp/foo.ttt" ) ;
 ZE( count04T , cb04Thrown ) ;
 ZE( countT , cThrown ) ;
 
-//++ s ; ether.osSleepF( tinBaseP , TICK << 4 ) ;         //U:: TO FIND A BUG
-++ s ; ether.osSleepF( tinBaseP , TOCK << 2 ) ;         // LET WORKER THREADS GET SET UP
+//++ s ; ether.osSleepF( tin0P , TICK << 4 ) ;         //U:: TO FIND A BUG
+++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;         // LET WORKER THREADS GET SET UP
 
-etThread.traceF( tinBaseP , T("waited  for woth secret") ) ;
+etThread.traceF( tin0P , T("waited  for woth secret") ) ;
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 {
 while( !secretToUse && !ether )
-etThread.traceF( tinBaseP , T("waiting for woth secret") ) ;
+etThread.traceF( tin0P , T("waiting for woth secret") ) ;
 
 CONoUTrAW( "\r\n" ) ;
 
@@ -146,10 +146,10 @@ CONoUTrAW( "\r\n" ) ;
 TN( tb4 , "    " ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 {
 while( ( !idPortEndpointCatcher || !psoEndpointThrower ) && !ether )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
 etThread.osThreadF( TaRG1( tmUdpFilesEndpointThrowerF ) , (countT)&psoEndpointThrower   , (countT)&secretToUse          ) ;
 etThread.osThreadF( TaRG1( tmUdpFilesEndpointCatcherF ) , (countT)&psoEndpointCatcherNU , (countT)&cReceivedFileWindows ) ;
@@ -163,7 +163,7 @@ TODO
 
 DONE( tmUdpFilesEndpointThrowerF )
 }
-    etThread.ifcUdpFilesEndpointF( tinBaseP , ether , idPortEndpointThrowerNU , TICK >> 0 , psoEndpointP , pSecretToUseP ) ;
+    etThread.ifcUdpFilesEndpointF( tin0P , ether , idPortEndpointThrowerNU , TICK >> 0 , psoEndpointP , pSecretToUseP ) ;
     ZE( countT , idPortEndpointThrowerNU ) ;
 
     countT*   pSecretToUseP =    (countT*)pTaskP->c2 ;
@@ -174,7 +174,7 @@ TASK( tmUdpFilesEndpointThrowerF )
 
 DONE( tmUdpFilesEndpointCatcherF )
 }
-    etThread.ifcUdpFilesEndpointF( tinBaseP , ether , idPortEndpointCatcher , TICK >> 0 , psoEndpointP , 0 , &cReceivedFileWindowsP ) ;
+    etThread.ifcUdpFilesEndpointF( tin0P , ether , idPortEndpointCatcher , TICK >> 0 , psoEndpointP , 0 , &cReceivedFileWindowsP ) ;
 
     countT&   cReceivedFileWindowsP =   *(countT*)pTaskP->c2 ;
     socketC*& psoEndpointP          = *(socketC**)pTaskP->c1 ;

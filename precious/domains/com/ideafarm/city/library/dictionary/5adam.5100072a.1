@@ -9,14 +9,14 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
 
 #endif
 
-    etThread.traceF( tinBaseP , T("recording duration: ")+TF4(cHours,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T(":")+TF4(cMinutes,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T(":")+TF4(cSeconds,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) ) ;
+    etThread.traceF( tin0P , T("recording duration: ")+TF4(cHours,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T(":")+TF4(cMinutes,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T(":")+TF4(cSeconds,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) ) ;
 
     cMinutes -= cHours * 60 ;
     countT cHours = cMinutes / 60 ;
@@ -30,7 +30,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         ((byteT*)&head)[ 2 ] = pbTock[ 1 ] ;
         ((byteT*)&head)[ 3 ] = pbTock[ 0 ] ;
 
-        etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ; cbNotYetRead -= cbr ;
+        etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ; cbNotYetRead -= cbr ;
         cbr = sizeof head ;
 
         if( cbNotYetRead < sizeof head ) break ;
@@ -38,7 +38,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         // }
         //     if( pbTock[ 1 ] & 0xe0 == 0xe0 ) break ;
         // 
-        //     etThread.fileReadF( tinBaseP , pbTock + 1 , cbr , fi , 0 ) ; cbNotYetRead -- ;
+        //     etThread.fileReadF( tin0P , pbTock + 1 , cbr , fi , 0 ) ; cbNotYetRead -- ;
         // {
         // while( cbNotYetRead )
         // //FIND A POSSIBLE SYNCoOTH
@@ -46,7 +46,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         // }
         //     if( *pbTock == 0xff ) break ;
         // 
-        //     etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ; cbNotYetRead -- ;
+        //     etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ; cbNotYetRead -- ;
         // {
         // while( cbNotYetRead )
         // cbr = 1 ;
@@ -61,15 +61,15 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         //**************************************************************************************************************************************************
 
         }
-            //etThread.delF( tinBaseP , psttDump ) ;
+            //etThread.delF( tin0P , psttDump ) ;
             //LOGrAW( "------------------------------ END   -------------------------------------------------------------------\r\n" ) ;
             //LOGrAW( T(psttDump) ) ;
             //LOGrAW( "\r\n------------------------------ BEGIN -------------------------------------------------------------------\r\n" ) ;
-            //etThread.strDumpIF( tinBaseP , psttDump , pbTock , cbFrameBody , flSTRdUMP_null , 0x10 , 0x4 , '.' , 0x4 ) ; ___( psttDump ) ;
+            //etThread.strDumpIF( tin0P , psttDump , pbTock , cbFrameBody , flSTRdUMP_null , 0x10 , 0x4 , '.' , 0x4 ) ; ___( psttDump ) ;
             //                                                                            //bPerLineP , bPerGroupP , bReadableP , bPerGrouprP
             //ZE( strokeS* , psttDump ) ;
         
-            etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ; cbNotYetRead -= cbr ; 
+            etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ; cbNotYetRead -= cbr ; 
             cbr = cbFrameBody ;
         {
 
@@ -86,27 +86,27 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         //**************************************************************************************************************************************************
 
         //}
-        //    etThread.delF( tinBaseP , psttSay ) ;
-        //    etThread.traceF( tinBaseP , psttSay ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , TF3(head.idEmphasis                 ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    //etThread.strFuseF( tinBaseP , psttSay , TF3(head.bOriginal                ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    //etThread.strFuseF( tinBaseP , psttSay , TF3(head.bCopyright               ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , TF3(head.idModeExtension            ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , TF3(head.idChannelMode              ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    //etThread.strFuseF( tinBaseP , psttSay , TF3(head.bPrivate                 ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , TF3(cbFrame                         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,5) ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , TF3(head.bPadded                    ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , TF4(samplesPerSec                   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,6,0xa)+tb ) ;
-        //    //etThread.strFuseF( tinBaseP , psttSay , TF3(head.idSamplingRate           ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , TF4(bitsPerSec                      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,6,0xa)+tb ) ;
-        //    //etThread.strFuseF( tinBaseP , psttSay , TF3(head.idBitRate                ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , TF3(head.bNoCRC                     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    //etThread.strFuseF( tinBaseP , psttSay , TF3(head.idLayer                  ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , T(ppostVersion[idMpegVersion])+tb ) ;
-        //    //etThread.strFuseF( tinBaseP , psttSay , TF3(head.idVersion                ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , TF3(cbNotYetRead                    ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
-        //    etThread.strFuseF( tinBaseP , psttSay , TF3(idFrame                       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
-        //    etThread.strMakeF( tinBaseP , LF , psttSay , 0 , TOCK ) ; ___( psttSay ) ;
+        //    etThread.delF( tin0P , psttSay ) ;
+        //    etThread.traceF( tin0P , psttSay ) ;
+        //    etThread.strFuseF( tin0P , psttSay , TF3(head.idEmphasis                 ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    //etThread.strFuseF( tin0P , psttSay , TF3(head.bOriginal                ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    //etThread.strFuseF( tin0P , psttSay , TF3(head.bCopyright               ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    etThread.strFuseF( tin0P , psttSay , TF3(head.idModeExtension            ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    etThread.strFuseF( tin0P , psttSay , TF3(head.idChannelMode              ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    //etThread.strFuseF( tin0P , psttSay , TF3(head.bPrivate                 ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    etThread.strFuseF( tin0P , psttSay , TF3(cbFrame                         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,5) ) ;
+        //    etThread.strFuseF( tin0P , psttSay , TF3(head.bPadded                    ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    etThread.strFuseF( tin0P , psttSay , TF4(samplesPerSec                   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,6,0xa)+tb ) ;
+        //    //etThread.strFuseF( tin0P , psttSay , TF3(head.idSamplingRate           ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    etThread.strFuseF( tin0P , psttSay , TF4(bitsPerSec                      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,6,0xa)+tb ) ;
+        //    //etThread.strFuseF( tin0P , psttSay , TF3(head.idBitRate                ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    etThread.strFuseF( tin0P , psttSay , TF3(head.bNoCRC                     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    //etThread.strFuseF( tin0P , psttSay , TF3(head.idLayer                  ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    etThread.strFuseF( tin0P , psttSay , T(ppostVersion[idMpegVersion])+tb ) ;
+        //    //etThread.strFuseF( tin0P , psttSay , TF3(head.idVersion                ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,2) ) ;
+        //    etThread.strFuseF( tin0P , psttSay , TF3(cbNotYetRead                    ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
+        //    etThread.strFuseF( tin0P , psttSay , TF3(idFrame                       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
+        //    etThread.strMakeF( tin0P , LF , psttSay , 0 , TOCK ) ; ___( psttSay ) ;
         //    ZE( strokeS* , psttSay ) ;
         //{
         ++ idFrame ;
@@ -127,7 +127,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             }
                 }
                     break ;
-                    etThread.traceF( tinBaseP , T("unrecognized MPEG version") ) ;
+                    etThread.traceF( tin0P , T("unrecognized MPEG version") ) ;
                 {
                 default :
                 }
@@ -150,7 +150,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             {
             switch( idMpegVersion )
 
-            if( head.idLayer != 1 ) etThread.traceF( tinBaseP , T("unexpected MPEG layer (not layer III)") ) ;
+            if( head.idLayer != 1 ) etThread.traceF( tin0P , T("unexpected MPEG layer (not layer III)") ) ;
         {
         ZE( countT , samplesPerSec ) ;
         ZE( countT , bitsPerSec ) ;
@@ -220,7 +220,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         ((byteT*)&head)[ 2 ] = pbTock[ 1 ] ;
         ((byteT*)&head)[ 3 ] = pbTock[ 0 ] ;
 
-        etThread.fileReadF( tinBaseP , pbTock + 1 , cbr , fi , 0 ) ; cbNotYetRead -= cbr ;
+        etThread.fileReadF( tin0P , pbTock + 1 , cbr , fi , 0 ) ; cbNotYetRead -= cbr ;
         cbr = 3 ;
         //READ REMAINDER OF WOTH HEAD (WOTH BYTE HAS ALREADY BEEN READ)
     {
@@ -237,7 +237,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             if( pInfo ) cbUsedNet = pInfo->cbUsed - cbFileTag ;
 
             __Z( pInfo ) ;
-            etThread.diskFileQueryF( tinBaseP , pInfo , fi ) ; ___( pInfo ) ;
+            etThread.diskFileQueryF( tin0P , pInfo , fi ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         ZE( countT , cbUsedNet ) ;
@@ -248,14 +248,14 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     __( pbTock[ 0 ] != 0xff ) ;
 
     }
-        etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ; // LOAD THE WOTH BYTE OF THE WOTH SYNC
+        etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ; // LOAD THE WOTH BYTE OF THE WOTH SYNC
         cbr = 1 ;
 
         }
             }
                 }
                     cbToDo -= cbWo ;
-                    etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
+                    etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ;
                     cbr = cbWo ;
 
                     ;
@@ -268,7 +268,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             {
             else
             }
-                etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
+                etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ;
                 cbr = cbId3 ;
             {
             if( cbId3 <= sizeof pbTock )
@@ -295,14 +295,14 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         __Z( cbr == 0x9 && pbTock[ 0 ] == 'I' && pbTock[ 1 ] == 'D' && pbTock[ 2 ] == '3' ) ;
 
         cbFileTag += cbr ;
-        etThread.fileReadF( tinBaseP , pbTock + 1 , cbr , fi , 0 ) ;
+        etThread.fileReadF( tin0P , pbTock + 1 , cbr , fi , 0 ) ;
         cbr = 0x9 ;
         cbFileTag = 1 ;
     {
     if( pbTock[ 0 ] != 0xff ) // IF NOT A SYNC BYTE
     ZE( countT , cbFileTag ) ;
 
-    etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
+    etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ;
     countT cbr = 1 ;
 
     //**************************************************************************************************************************************************
@@ -319,7 +319,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     
     countT cbLo = fw ;
     
-    fileWindowC fw( tinBaseP , etThread , fi , 0 , 0 , cbWindow , flFILEwINDOW_WRITE ) ;
+    fileWindowC fw( tin0P , etThread , fi , 0 , 0 , cbWindow , flFILEwINDOW_WRITE ) ;
     const countT cbWindow = TUCK ;
 
 #if defined( NEVERdEFINED )
@@ -331,9 +331,9 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
 
 
-    fileC fi( tinBaseP , (strokeS*)T("///d/tmp/x/a.20150409@1024.mp3") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ;
+    fileC fi( tin0P , (strokeS*)T("///d/tmp/x/a.20150409@1024.mp3") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ;
 {
-etThread.traceF( tinBaseP , T("opening the file") ) ;
+etThread.traceF( tin0P , T("opening the file") ) ;
 
 TODO
 

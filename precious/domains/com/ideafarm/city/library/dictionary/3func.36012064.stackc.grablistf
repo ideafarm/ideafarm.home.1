@@ -8,7 +8,7 @@
 
 
 }
-    //CALLER MUST DO THIS: if( pBaton ) pBaton->ungrabF( tinBaseP ) ;
+    //CALLER MUST DO THIS: if( pBaton ) pBaton->ungrabF( tin0P ) ;
     _OUTsTACKc_
 
     }
@@ -29,12 +29,12 @@
     
             ppcUpP[ 0 ] = ppcDownP[ 0 ] = *p_ppLathRef ? (countT*)( *p_ppLathRef + 1 ) : 0 ;
     
-            third.c_memsetIF( tinBaseP , (byteT*)ppcUpP   , sizeof( countT ) * ( 1 + cUpMax   ) ) ;
-            third.c_memsetIF( tinBaseP , (byteT*)ppcDownP , sizeof( countT ) * ( 1 + cDownMax ) ) ;
+            third.c_memsetIF( tin0P , (byteT*)ppcUpP   , sizeof( countT ) * ( 1 + cUpMax   ) ) ;
+            third.c_memsetIF( tin0P , (byteT*)ppcDownP , sizeof( countT ) * ( 1 + cDownMax ) ) ;
         {
         if( ppcDownP && ppcUpP )
-        third.newF( tinBaseP , LF , *(countT**)&ppcUpP   , 1 + cUpMax   ) ; ___CT( ppcUpP   ) ;
-        third.newF( tinBaseP , LF , *(countT**)&ppcDownP , 1 + cDownMax ) ; ___CT( ppcDownP ) ;
+        third.newF( tin0P , LF , *(countT**)&ppcUpP   , 1 + cUpMax   ) ; ___CT( ppcUpP   ) ;
+        third.newF( tin0P , LF , *(countT**)&ppcDownP , 1 + cDownMax ) ; ___CT( ppcDownP ) ;
 
         }
             *p_idLathRef = ppTop ? 1 : 0 ;
@@ -53,9 +53,9 @@
 
     _INsTACKc_
 
-    else if( osTidOwner != ((tin9S&)tinBaseP).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
-    else if( !osTidOwner ) osTidOwner = ((tin9S&)tinBaseP).osTid ;
-    else if( pBaton ) pBaton->grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    else if( osTidOwner != ((tin9S&)tin0P).osTid && !bDying && !( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) ) BLAMMO ;
+    else if( !osTidOwner ) osTidOwner = ((tin9S&)tin0P).osTid ;
+    else if( pBaton ) pBaton->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     if( bNoGrabP ) ;
     //CODEsYNCH: 115006a 00103a2
 
@@ -68,7 +68,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT stackC::grabListF( tin0S& tinBaseP , countT**& ppcDownP , countT**& ppcUpP , countT& cDownP , countT& cUpP , const boolT bNoGrabP )/*1*/
+/*1*/voidT stackC::grabListF( tin0S& tin0P , countT**& ppcDownP , countT**& ppcUpP , countT& cDownP , countT& cUpP , const boolT bNoGrabP )/*1*/
 /**/
 */
    this parameter is intended for use by switchC and switchStackC
@@ -95,7 +95,7 @@
   offset 0 will contain the address of the plate at *p_ppLathRef
   must be 0
  ppcDownP
- tinBaseP
+ tin0P
 arguments
 if !cDownP and !cUpP after calling me, the caller can inspect *ppcDownP (or *ppcUpP) to see whether a *p_ppLathRef plate exists
 after calling ungrabF, the caller must not use the lists

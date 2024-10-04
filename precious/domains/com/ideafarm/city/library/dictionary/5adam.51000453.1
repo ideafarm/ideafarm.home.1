@@ -11,12 +11,12 @@ REST
 
 #endif
 
-etThread.osEditF( tinBaseP , tLogFile ) ;
+etThread.osEditF( tin0P , tLogFile ) ;
 
 }
-    trialF( tinBaseP , etThread , ether , 0x40 , 2 , idaDead ) ;
-    //etThread.ifcSayF( tinBaseP , T("idaDead:")+TF1(idaDead)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
-    etThread.strokeF( tinBaseP , T("idaDead:")+TF1(idaDead)+T("\r\n") ) ;
+    trialF( tin0P , etThread , ether , 0x40 , 2 , idaDead ) ;
+    //etThread.ifcSayF( tin0P , T("idaDead:")+TF1(idaDead)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+    etThread.strokeF( tin0P , T("idaDead:")+TF1(idaDead)+T("\r\n") ) ;
 {
 //for( countT idaDead = 0 ; idaDead <= 0 ; idaDead ++ )
 for( countT idaDead = 0x17 ; idaDead <= 0x17 ; idaDead ++ )
@@ -26,16 +26,16 @@ TN( tLogFile , "///d/ideafarm.log." ) ; tLogFile += TF1(DDNUMB) ;
 
     }
         }
-                trialF( tinBaseP , etThread , ether , cn , cg , idad ) ;
+                trialF( tin0P , etThread , ether , cn , cg , idad ) ;
             for( countT cg = cgMin ; cg <= cgMax ; cg ++ )
-            //etThread.ifcSayF( tinBaseP , T("idaDead:")+TF1(idad)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+            //etThread.ifcSayF( tin0P , T("idaDead:")+TF1(idad)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
         {
         countT idad = idaDead ;
         //for( countT idad = 1 ; idad <= cn ; idad ++ )
     {
     for( countT cn = cnMin ; cn <= cnMax ; cn ++ )
     
-    //etThread.ifcSayF( tinBaseP , TPS("cGossip",8,sttDash)+tb+TPS("cSaw",8,sttDash)+tb+TPS("by_cNics",8,sttDash)+tb+TPS("of_cNics",8,sttDash) , flSAY_APPEND | flSAY_LOG ) ;
+    //etThread.ifcSayF( tin0P , TPS("cGossip",8,sttDash)+tb+TPS("cSaw",8,sttDash)+tb+TPS("by_cNics",8,sttDash)+tb+TPS("of_cNics",8,sttDash) , flSAY_APPEND | flSAY_LOG ) ;
     TN( tb , " " ) ;
     strokeS sttDash('-') ;
     TN( tLogFile , "///d/ideafarm.log." ) ; tLogFile += TF1(DDNUMB) ;
@@ -54,14 +54,14 @@ TN( tLogFile , "///d/ideafarm.log." ) ; tLogFile += TF1(DDNUMB) ;
     
     }
         }
-            else if(    idp == 6 ) idaDead = etThread.strDigitsToSCountF( tinBaseP , psttc1 ) ;
-            else if(    idp == 5 ) bExact  = etThread.strDigitsToSCountF( tinBaseP , psttc1 ) ;
-            else if(    idp == 4 ) cgMax   = etThread.strDigitsToSCountF( tinBaseP , psttc1 ) ;
-                 if( ++ idp == 3 ) cnMax   = etThread.strDigitsToSCountF( tinBaseP , psttc1 ) ;
+            else if(    idp == 6 ) idaDead = etThread.strDigitsToSCountF( tin0P , psttc1 ) ;
+            else if(    idp == 5 ) bExact  = etThread.strDigitsToSCountF( tin0P , psttc1 ) ;
+            else if(    idp == 4 ) cgMax   = etThread.strDigitsToSCountF( tin0P , psttc1 ) ;
+                 if( ++ idp == 3 ) cnMax   = etThread.strDigitsToSCountF( tin0P , psttc1 ) ;
         {
         FORsTRINGSiN1( pstt1p )
         ZE( countT , idp ) ;
-        strokeS* pstt1p = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
+        strokeS* pstt1p = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
     {
     ZE( countT , idaDead ) ;
     ZE( boolT  , bExact ) ;
@@ -73,55 +73,55 @@ TN( tLogFile , "///d/ideafarm.log." ) ; tLogFile += TF1(DDNUMB) ;
 TODO
 
 }
-    lnicC::armageddonF( tinBaseP , etThread , tLogFile ) ;
-    //etThread.strokeF( tinBaseP , T("armageddonF\r\n") ) ;
-    //etThread.ifcSayF( tinBaseP , T("cExplosions: ")+TF1(lnicC::cExplosions)+T("\r\nmExplosionsPerTock: ")+TF1((measureT)lnicC::cExplosions/(idTickTock-1)) , flSAY_APPEND | flSAY_LOG ) ;
+    lnicC::armageddonF( tin0P , etThread , tLogFile ) ;
+    //etThread.strokeF( tin0P , T("armageddonF\r\n") ) ;
+    //etThread.ifcSayF( tin0P , T("cExplosions: ")+TF1(lnicC::cExplosions)+T("\r\nmExplosionsPerTock: ")+TF1((measureT)lnicC::cExplosions/(idTickTock-1)) , flSAY_APPEND | flSAY_LOG ) ;
     
     }
-            if( lnicC::ppln[ uida ] ) lnicC::ppln[ uida ]->tockF( tinBaseP ) ;
+            if( lnicC::ppln[ uida ] ) lnicC::ppln[ uida ]->tockF( tin0P ) ;
         for( countT uida = 1 ; uida <= lnicC::cpln ; uida ++ )
-            if( lnicC::ppln[ uida ] ) lnicC::ppln[ uida ]->tickF( tinBaseP , idTickTock , uida ) ;
+            if( lnicC::ppln[ uida ] ) lnicC::ppln[ uida ]->tickF( tin0P , idTickTock , uida ) ;
         for( countT uida = 1 ; uida <= lnicC::cpln ; uida ++ )
-        //etThread.ifcSayF( tinBaseP , T("******************************** tock ")+TF1(idTickTock)+T(" ********************************") , flSAY_APPEND | flSAY_LOG ) ;
-        etThread.strokeF( tinBaseP , T("tock ")+TF1(idTickTock)+T("\r\n") ) ;
+        //etThread.ifcSayF( tin0P , T("******************************** tock ")+TF1(idTickTock)+T(" ********************************") , flSAY_APPEND | flSAY_LOG ) ;
+        etThread.strokeF( tin0P , T("tock ")+TF1(idTickTock)+T("\r\n") ) ;
     {
     while( !ether && ++ idTickTock <= 0x40 )
-    //while( !ether && !lnicC::bFlashSeenByAllF( tinBaseP , etThread ) )
+    //while( !ether && !lnicC::bFlashSeenByAllF( tin0P , etThread ) )
     ZE( countT , idTickTock ) ;
     
     }
-        //etThread.strokeF( tinBaseP , T("\r\n") ) ;
+        //etThread.strokeF( tin0P , T("\r\n") ) ;
         }
             }
-                lnicC::ppln[ ida1 ]->logF( tinBaseP , tInitialized2 ) ;
-                lnicC::ppln[ ida1 ]->freshKnownF( tinBaseP , 1 ) ;
-                lnicC::ppln[ ida1 ]->readNewsF( tinBaseP ) ;
+                lnicC::ppln[ ida1 ]->logF( tin0P , tInitialized2 ) ;
+                lnicC::ppln[ ida1 ]->freshKnownF( tin0P , 1 ) ;
+                lnicC::ppln[ ida1 ]->readNewsF( tin0P ) ;
     
                 }
-                    if( lnicC::ppln[ ida2 ] ) lnicC::ppln[ ida1 ]->newsNewF( tinBaseP , lnicC::ppln[ ida2 ]->nicNameMe ) ;
+                    if( lnicC::ppln[ ida2 ] ) lnicC::ppln[ ida1 ]->newsNewF( tin0P , lnicC::ppln[ ida2 ]->nicNameMe ) ;
                 {
                 for( countT ida2 = 1 ; ida2 <= lnicC::cpln ; ida2 ++ )
             {
             if( lnicC::ppln[ ida1 ] )
-            //etThread.strokeF( tinBaseP , T(".") ) ;
+            //etThread.strokeF( tin0P , T(".") ) ;
         {
         for( countT ida1 = 1 ; !ether && ida1 <= lnicC::cpln ; ida1 ++ )
         TN( tInitialized2 , "init" ) ;
     {
     if( lnicC::ppln )
-    //etThread.strokeF( tinBaseP , T("using newsNewF to tell each (even the dead wo) about all\r\n") ) ;
+    //etThread.strokeF( tin0P , T("using newsNewF to tell each (even the dead wo) about all\r\n") ) ;
     
-    lnicC::genesisF( tinBaseP , etThread , cNicP , cGossipP , idaDeadP ) ;
-    //etThread.strokeF( tinBaseP , T("genesisF\r\n") ) ;
-    lnicC::setupF( tinBaseP ) ;
+    lnicC::genesisF( tin0P , etThread , cNicP , cGossipP , idaDeadP ) ;
+    //etThread.strokeF( tin0P , T("genesisF\r\n") ) ;
+    lnicC::setupF( tin0P ) ;
 
-    //etThread.ifcSayF( tinBaseP , T("******************************** T R I A L ********************************") , flSAY_APPEND | flSAY_LOG ) ;
+    //etThread.ifcSayF( tin0P , T("******************************** T R I A L ********************************") , flSAY_APPEND | flSAY_LOG ) ;
     TN( tLogFile , "///d/ideafarm.log." ) ; tLogFile += TF1(DDNUMB) ;
 {
-voidT trialF( tin0S& tinBaseP , etherC& etThread , etherC& ether , const countT cNicP , const countT cGossipP , const countT idaDeadP )
+voidT trialF( tin0S& tin0P , etherC& etThread , etherC& ether , const countT cNicP , const countT cGossipP , const countT idaDeadP )
 
 }
-    swDeclareNextTock.freeAllF( tinBaseP ) ;
+    swDeclareNextTock.freeAllF( tin0P ) ;
 
     }
         }
@@ -129,15 +129,15 @@ voidT trialF( tin0S& tinBaseP , etherC& etThread , etherC& ether , const countT 
             souDeclare = *pSouLever ;
         {
         if( pSouLever )
-        soulC* pSouLever = (soulC*)swDeclareNextTock.leverF( tinBaseP , idf ) ;
+        soulC* pSouLever = (soulC*)swDeclareNextTock.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = swDeclareNextTock.cFlavorsF( tinBaseP ) ;
+    countT cFlavors = swDeclareNextTock.cFlavorsF( tin0P ) ;
 {
-voidT lnicC::tockF( tin0S& tinBaseP )
+voidT lnicC::tockF( tin0S& tin0P )
 
 }
-    swDeclare.freeAllF( tinBaseP ) ;
+    swDeclare.freeAllF( tin0P ) ;
 
     while( stDead ) ;
     }
@@ -150,12 +150,12 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                                 }
                                     }
                                         if( stDead ) idHitDead = 4 ;
-                                        if( /*idHitDeadLag <= 4 &&*/ know.pLnicExHit2 && know.pLnicExHit2->shockF( tinBaseP , souShock4 ) ) stDead << know.pLnicExHit2->nicNameMe ;
+                                        if( /*idHitDeadLag <= 4 &&*/ know.pLnicExHit2 && know.pLnicExHit2->shockF( tin0P , souShock4 ) ) stDead << know.pLnicExHit2->nicNameMe ;
                                     {
                                     else
                                     if( stDead ) idHitDead = 3 ;
-                                    if( idHitDeadLag <= 3 && know.pLnicExHit1 && know.pLnicExHit1->shockF( tinBaseP , souShock3 ) ) stDead << know.pLnicExHit1->nicNameMe ;
-                                    freshKnownF( tinBaseP ) ;
+                                    if( idHitDeadLag <= 3 && know.pLnicExHit1 && know.pLnicExHit1->shockF( tin0P , souShock3 ) ) stDead << know.pLnicExHit1->nicNameMe ;
+                                    freshKnownF( tin0P ) ;
                                     souShock4 = souShock3 ;
                                     souShock3 << souDebugNotes ;
                                     souShock3 << souHandlers ;
@@ -168,8 +168,8 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                                     souShock3 << idNewsMe ;
                                     souShock3 << flNews ;
                                     souShock3 << (countT)ifcIDcMDsESSION_NEWS ;
-                                    soulC souShock4( tinBaseP , TAG( TAGiDnULL ) ) ;
-                                    soulC souShock3( tinBaseP , TAG( TAGiDnULL ) ) ;
+                                    soulC souShock4( tin0P , TAG( TAGiDnULL ) ) ;
+                                    soulC souShock3( tin0P , TAG( TAGiDnULL ) ) ;
                                     cSawFlash ++ ;
                                 {
                                 if( bGossip )
@@ -178,12 +178,12 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                             {
                             else
                             if( stDead ) idHitDead = 2 ;
-                            if( idHitDeadLag <= 2 && know.pLnicExHit2 && know.pLnicExHit2->shockF( tinBaseP , souShock2 ) ) stDead << know.pLnicExHit2->nicNameMe ;
-                            if( cGossip ) souShock2.cFieldF( tinBaseP , 8 ) = 0 ; // SINCE HIT1 WILL GOSSIP, DO NOT TELL HIT2 TO GOSSIP (WANT GOSSIP TO BE LINEAR, NOT EXPLOSIVE, IN cGossip)
+                            if( idHitDeadLag <= 2 && know.pLnicExHit2 && know.pLnicExHit2->shockF( tin0P , souShock2 ) ) stDead << know.pLnicExHit2->nicNameMe ;
+                            if( cGossip ) souShock2.cFieldF( tin0P , 8 ) = 0 ; // SINCE HIT1 WILL GOSSIP, DO NOT TELL HIT2 TO GOSSIP (WANT GOSSIP TO BE LINEAR, NOT EXPLOSIVE, IN cGossip)
                         {
                         else
                         if( stDead ) idHitDead = 1 ;
-                        if( idHitDeadLag <= 1 && know.pLnicExHit1 && know.pLnicExHit1->shockF( tinBaseP , souShock1 ) ) stDead << know.pLnicExHit1->nicNameMe ;
+                        if( idHitDeadLag <= 1 && know.pLnicExHit1 && know.pLnicExHit1->shockF( tin0P , souShock1 ) ) stDead << know.pLnicExHit1->nicNameMe ;
                     {
                     else
                     }
@@ -192,14 +192,14 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                             idHitDead = 1 ;
                             stDead << know.pLnicImHit->nicNameMe ;
                         {
-                        if( idHitDeadLag <= 1 && know.pLnicImHit && know.pLnicImHit->shockF( tinBaseP , souShock1 ) )
+                        if( idHitDeadLag <= 1 && know.pLnicImHit && know.pLnicImHit->shockF( tin0P , souShock1 ) )
                     {
                     if( bImplode || bDirect )
 
                     idHitDead = 0 ;
                     countT idHitDeadLag = idHitDead ;
 
-                    freshKnownF( tinBaseP , stKnow( nicNameSingularity ) , bImplode ? swDeclare_cImDead : 0 , bDirect ) ;
+                    freshKnownF( tin0P , stKnow( nicNameSingularity ) , bImplode ? swDeclare_cImDead : 0 , bDirect ) ;
                     if( !bImplode && !bDirect ) souShock2 = souShock1 ;
                     souShock1 << souDebugNotes ;
                     souShock1 << souHandlers ;
@@ -212,21 +212,21 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                     souShock1 << idNewsMe ;
                     souShock1 << flNews ;
                     souShock1 << (countT)ifcIDcMDsESSION_NEWS ;
-                    soulC souShock2( tinBaseP , TAG( TAGiDnULL ) ) ;
-                    soulC souShock1( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    soulC souShock2( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC souShock1( tin0P , TAG( TAGiDnULL ) ) ;
     
                     else if( bGossip ) cGossip -- ;
                     if( bImplode ) cGossip = 0 ;
                     boolT bGossip = !bImplode && !!cGossip && nicNameSingularity != nicNameMe ;
     
                     souDeclare >> souDebugNotes ;
-                    soulC souDebugNotes( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
 
                     souDeclare >> souHandlers ;
-                    soulC souHandlers( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
 
                     souDeclare >> souNewsOrReplies ;
-                    soulC souNewsOrReplies( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    soulC souNewsOrReplies( tin0P , TAG( TAGiDnULL ) ) ;
 
                     souDeclare >> nicNameAckTo ;
                     nicNameC nicNameAckTo ;
@@ -260,26 +260,26 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                                 *psd = souDeclare ;
                             {
                             if( psd )
-                            soulC* psd = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+                            soulC* psd = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
                         {
                         if( !swDeclareSent )
-                        idNewsAck = souDeclare.cFieldF( tinBaseP , 2 ) ;
+                        idNewsAck = souDeclare.cFieldF( tin0P , 2 ) ;
                     {
 
                     souDeclare = *pSouLever ;
                 {
                 if( pSouLever )
-                soulC* pSouLever = (soulC*)swDeclare.leverF( tinBaseP , idf ) ;
+                soulC* pSouLever = (soulC*)swDeclare.leverF( tin0P , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = swDeclare.cFlavorsF( tinBaseP ) ;
+            countT cFlavors = swDeclare.cFlavorsF( tin0P ) ;
     
-            freshKnownF( tinBaseP ) ;
-            readNewsF( tinBaseP ) ;
+            freshKnownF( tin0P ) ;
+            readNewsF( tin0P ) ;
     
             cExplosions ++ ;
         {
-        if( swDeclare.cFlavorsF( tinBaseP ) )
+        if( swDeclare.cFlavorsF( tin0P ) )
 
         }
             }
@@ -292,19 +292,19 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                 souDeclare << (countT)0 ; // idNewsRef
                 souDeclare << ++ idNewsDeclareLast ;
                 souDeclare << (countT)flNEWS_DOnOTaCK ;
-                souDeclare.removeAllF( tinBaseP ) ;
+                souDeclare.removeAllF( tin0P ) ;
 
-                soulC souDebugNotes( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
 
                 souHandlers << nicNameMe ;
-                soulC souHandlers( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
 
                 souNews << nicNameDead ;
-                soulC souNews( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSeX_DEL ) ;
+                soulC souNews( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSeX_DEL ) ;
         
-                newsDelF( tinBaseP , nicNameDead ) ;
+                newsDelF( tin0P , nicNameDead ) ;
 
-                //ether.ifcSayF( tinBaseP , TF1(uidaF(nicNameMe))+T(" is reporting that ")+TF1(uidaDead)+T(" is dead") , flSAY_APPEND | flSAY_LOG ) ;
+                //ether.ifcSayF( tin0P , TF1(uidaF(nicNameMe))+T(" is reporting that ")+TF1(uidaDead)+T(" is dead") , flSAY_APPEND | flSAY_LOG ) ;
                 //countT uidaDead = uidaF( nicNameDead ) ;
             {
             if( nicNameDead )
@@ -316,13 +316,13 @@ voidT lnicC::tockF( tin0S& tinBaseP )
     do
     ZE( countT , idHitDead ) ;
     ZE( countT , cImDead ) ;
-    stackC stDead( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
+    stackC stDead( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ;
 
     }
         }
             }
                 }
-                    ether.ifcSayF( tinBaseP , tEntry , flSAY_APPEND | flSAY_LOG ) ;
+                    ether.ifcSayF( tin0P , tEntry , flSAY_APPEND | flSAY_LOG ) ;
     
                     }
                         //KEEP THIS soulC AROUND SO CAN REPORT TIMED OUT NEWS: DEL( (soulC*&)(countT&)swDeclareSent ) ;
@@ -335,7 +335,7 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                             while( !ether && ~hDown ) ;
                             }
                                 swDeclare = 0 ;
-                                souDeclare.nicNameFieldF( tinBaseP , 4 ) = *(nicNameC*)&swsNack.downF( tinBaseP , hDown ) ;
+                                souDeclare.nicNameFieldF( tin0P , 4 ) = *(nicNameC*)&swsNack.downF( tin0P , hDown ) ;
 
                                 //}
                                 //    nn = 
@@ -347,14 +347,14 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                                 //__( idType - ifcIDtYPEsOULiTEM_nicNameC ) ;
                                 //if( pbnn ) pbnn ++ ;
                                 //__Z( pbnn ) ;
-                                //const byteT* pbnn = souDeclare.pbFieldF( tinBaseP , idType , flags , cbd , 4 ) ;
+                                //const byteT* pbnn = souDeclare.pbFieldF( tin0P , idType , flags , cbd , 4 ) ;
                                 //ZE( countT , cbd ) ;
                                 //ZE( countT , flags ) ;
                                 //ZE( countT , idType ) ;
                                 //U:
                             {
                             do
-                            handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                            handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
                             flNews |= (countT)( flNEWS_DIRECT | flNEWS_DOnOThOLD ) ;
                             flNews &= ~(countT)( F(flNEWS_IMPLODE) ) ;
@@ -362,7 +362,7 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                             __( idNewsMe - idNewsAck ) ;
 
 
-                            souDeclare.nicNameFieldF( tinBaseP , 5 ) = nicNameMe ;
+                            souDeclare.nicNameFieldF( tin0P , 5 ) = nicNameMe ;
 
                             //}
                             //    nn = nicNameMe ;
@@ -374,13 +374,13 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                             //__( idType - ifcIDtYPEsOULiTEM_nicNameC ) ;
                             //if( pbnn ) pbnn ++ ;
                             //__Z( pbnn ) ;
-                            //const byteT* pbnn = souDeclare.pbFieldF( tinBaseP , idType , flags , cbd , 5 ) ;
+                            //const byteT* pbnn = souDeclare.pbFieldF( tin0P , idType , flags , cbd , 5 ) ;
                             //ZE( countT , cbd ) ;
                             //ZE( countT , flags ) ;
                             //ZE( countT , idType ) ;
 
-                            countT& idNewsMe = souDeclare.cFieldF( tinBaseP , 2 ) ;
-                            flagsT& flNews = souDeclare.cFieldF( tinBaseP , 1 ) ;
+                            countT& idNewsMe = souDeclare.cFieldF( tin0P , 2 ) ;
+                            flagsT& flNews = souDeclare.cFieldF( tin0P , 1 ) ;
                             souDeclare = *psd ;
                         {
                         if( psd )
@@ -392,11 +392,11 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                     }
                         while( !ether && ~hDown ) ;
                         }
-                            tEntry += TF1(uidaF(*(nicNameC*)&swsNack.downF(tinBaseP,hDown))) ;
+                            tEntry += TF1(uidaF(*(nicNameC*)&swsNack.downF(tin0P,hDown))) ;
                             if( hDown ) tEntry += T(",") ;
                         {
                         do
-                        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                         tEntry += T("*") ;
                     {
                     if( swsNack )
@@ -404,11 +404,11 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                     }
                         while( !ether && ~hDown ) ;
                         }
-                            tEntry += TF1(uidaF(*(nicNameC*)&swsAck.downF(tinBaseP,hDown))) ;
+                            tEntry += TF1(uidaF(*(nicNameC*)&swsAck.downF(tin0P,hDown))) ;
                             if( hDown ) tEntry += T(",") ;
                         {
                         do
-                        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                     {
                     if( swsAck )
     
@@ -422,22 +422,22 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                 if( !swAckAok && tr )
         
                 countT& tr = swNackTimeRemaining ;
-                __( idNewsAck - swsNack.leverF( tinBaseP , idf ) ) ;
-                idNewsAck = swsAck.leverF( tinBaseP , idf ) ;
+                __( idNewsAck - swsNack.leverF( tin0P , idf ) ) ;
+                idNewsAck = swsAck.leverF( tin0P , idf ) ;
             {
             for( countT idf = 1 ; idf <= cFlavorsAck ; idf ++ )
         {
         if( !ether )
         __( cFlavorsAck - cFlavorsNack ) ;
-        countT cFlavorsNack = swsNack.cFlavorsF( tinBaseP ) ;
-        countT cFlavorsAck = swsAck.cFlavorsF( tinBaseP ) ;
+        countT cFlavorsNack = swsNack.cFlavorsF( tin0P ) ;
+        countT cFlavorsAck = swsAck.cFlavorsF( tin0P ) ;
     
-        //if( know.uidaMe == 1 ) logKnowF( tinBaseP ) ;
+        //if( know.uidaMe == 1 ) logKnowF( tin0P ) ;
 
         }
             }
-                swsDebugNotesPending.freeF( tinBaseP ) ;
-                swsRepliesPending.freeF( tinBaseP ) ;
+                swsDebugNotesPending.freeF( tin0P ) ;
+                swsRepliesPending.freeF( tin0P ) ;
 
                 swDeclare = 0 ;
                 souDeclare << souDebugNotes ;
@@ -448,7 +448,7 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                 souDeclare << (countT)0 ; // idNewsRef
                 souDeclare << ++ idNewsDeclareLast ;
                 souDeclare << flNews ;
-                souDeclare.removeAllF( tinBaseP ) ;
+                souDeclare.removeAllF( tin0P ) ;
 
                 flNews |= stKnow( nicNameImPending ) ? flNEWS_IMPLODE : flNEWS_DIRECT ;
                 flagsT flNews = flNEWS_REPLIES ;
@@ -459,14 +459,14 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                     ZE( strokeS* , psttn ) ;
                 {
                 while( swsDebugNotesPending )
-                soulC souDebugNotes( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
 
                 souHandlers << nicNameMe ;
-                soulC souHandlers( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
         
                 souReplies << souReply ;
                 souReply << nicNameMe ;
-                soulC souReply( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_TIMEOUT ) ;
+                soulC souReply( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_TIMEOUT ) ;
         
                 }
                     if( psour ) souReplies << *psour ;
@@ -474,13 +474,13 @@ voidT lnicC::tockF( tin0S& tinBaseP )
                     ZE( soulC* , psour ) ;
                 {
                 while( swsRepliesPending )
-                soulC souReplies( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC souReplies( tin0P , TAG( TAGiDnULL ) ) ;
             {
             if( idTick - swIdTickPending > 8 )
-            nicNameImPending = *(nicNameC*)swsRepliesPending.leverF( tinBaseP , idf ) ;
+            nicNameImPending = *(nicNameC*)swsRepliesPending.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swsRepliesPending.cFlavorsF( tinBaseP ) ;
+        countT cFlavors = swsRepliesPending.cFlavorsF( tin0P ) ;
     {
     else
     }
@@ -493,25 +493,25 @@ voidT lnicC::tockF( tin0S& tinBaseP )
         souDeclare << (countT)0 ; // idNewsRef
         souDeclare << ++ idNewsDeclareLast ; // idNewsMe
         souDeclare << (countT)( flNEWS_IMPLODE | flNEWS_REPLIES ) ;
-        souDeclare.removeAllF( tinBaseP ) ;
+        souDeclare.removeAllF( tin0P ) ;
 
-        soulC souDebugNotes( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
 
         souHandlers << nicNameMe ;
-        soulC souHandlers( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
 
         souReplies << souReply ;
-        soulC souReplies( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC souReplies( tin0P , TAG( TAGiDnULL ) ) ;
 
         souReply << nicNameMe ;
-        soulC souReply( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_FLASH ) ;
+        soulC souReply( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_FLASH ) ;
 
         bIgniter = 1 ;
-        ether.strokeF( tinBaseP , T("ignition ")+TF1(nicNameMe)+T("\r\n") ) ;
+        ether.strokeF( tin0P , T("ignition ")+TF1(nicNameMe)+T("\r\n") ) ;
     {
     else if( idTickP == 1 && uidaP >= 1 && idFlashMode == ifcIDfLASHmODE_IMPLODE && ppln && ppln[ 1 ] && ppln[ 1 ]->nicNameMe )
     }
-        loadNackF( tinBaseP , idNewsDeclareLast ) ;
+        loadNackF( tin0P , idNewsDeclareLast ) ;
         swDeclare = cGossipOrdered ;
 
         souDeclare << souDebugNotes ;
@@ -522,42 +522,42 @@ voidT lnicC::tockF( tin0S& tinBaseP )
         souDeclare << (countT)0 ; // idNewsRef
         souDeclare << ++ idNewsDeclareLast ; // idNewsMe
         souDeclare << (countT)flNEWS_null ;
-        souDeclare.removeAllF( tinBaseP ) ;
+        souDeclare.removeAllF( tin0P ) ;
 
-        soulC souDebugNotes( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
 
         souHandlers << nicNameMe ;
-        soulC souHandlers( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
 
         souNews << nicNameMe ;
-        soulC souNews( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSeX_FLASH ) ;
+        soulC souNews( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSeX_FLASH ) ;
 
         cSawFlash ++ ;
         bIgniter = 1 ;
-        ether.strokeF( tinBaseP , T("ignition\r\n") ) ;
+        ether.strokeF( tin0P , T("ignition\r\n") ) ;
     {
     if( idTickP == 1 && uidaP == 1 && idFlashMode == ifcIDfLASHmODE_EXPLODE )
     ZE( boolT , bIgniter ) ;
 
     idTick = idTickP ;
 {
-voidT lnicC::tickF( tin0S& tinBaseP , const countT idTickP , const countT uidaP )
+voidT lnicC::tickF( tin0S& tin0P , const countT idTickP , const countT uidaP )
 
 }
-    stNew.sinkF( tinBaseP , countTC() , nicNameP , flSTACKsINK_UNIQUE ) ;
+    stNew.sinkF( tin0P , countTC() , nicNameP , flSTACKsINK_UNIQUE ) ;
 {
-voidT lnicC::newsNewF( tin0S& tinBaseP , const nicNameC& nicNameP )
+voidT lnicC::newsNewF( tin0S& tin0P , const nicNameC& nicNameP )
 
 }
-    stHello.sinkF( tinBaseP , countTC() , nicNameP , flSTACKsINK_UNIQUE ) ;
+    stHello.sinkF( tin0P , countTC() , nicNameP , flSTACKsINK_UNIQUE ) ;
 {
-voidT lnicC::newsHelloF( tin0S& tinBaseP , const nicNameC& nicNameP )
+voidT lnicC::newsHelloF( tin0S& tin0P , const nicNameC& nicNameP )
 
 }
-    stFlash.sinkF( tinBaseP , countTC() , nicNameP , flSTACKsINK_UNIQUE ) ;
+    stFlash.sinkF( tin0P , countTC() , nicNameP , flSTACKsINK_UNIQUE ) ;
     cSawFlash ++ ;
 {
-voidT lnicC::newsFlashF( tin0S& tinBaseP , const nicNameC& nicNameP )
+voidT lnicC::newsFlashF( tin0S& tin0P , const nicNameC& nicNameP )
 
 }
     }
@@ -567,14 +567,14 @@ voidT lnicC::newsFlashF( tin0S& tinBaseP , const nicNameC& nicNameP )
     while( stFlash )
 
     }
-        stKnow.sinkF( tinBaseP , countTC() , nicName , flSTACKsINK_UNIQUE ) ;
+        stKnow.sinkF( tin0P , countTC() , nicName , flSTACKsINK_UNIQUE ) ;
         stHello >> nicName ;
         nicNameC nicName ;
     {
     while( stHello )
 
     }
-        stKnow.sinkF( tinBaseP , countTC() , nicName , flSTACKsINK_UNIQUE ) ;
+        stKnow.sinkF( tin0P , countTC() , nicName , flSTACKsINK_UNIQUE ) ;
         stNew >> nicName ;
         nicNameC nicName ;
     {
@@ -584,18 +584,18 @@ voidT lnicC::newsFlashF( tin0S& tinBaseP , const nicNameC& nicNameP )
         }
             }
                 __( nnd - nicName ) ;
-                swsNack.extractF( tinBaseP , nnd ) ;
+                swsNack.extractF( tin0P , nnd ) ;
                 nicNameC nnd ;
             {
             if( swsNack( nicName ) )
-            idNewsAck = swsNack.leverF( tinBaseP , idf ) ;
+            idNewsAck = swsNack.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swsNack.cFlavorsF( tinBaseP ) ;
+        countT cFlavors = swsNack.cFlavorsF( tin0P ) ;
 
         }
             __( nnd - nicName ) ;
-            stKnow.extractF( tinBaseP , nnd ) ;
+            stKnow.extractF( tin0P , nnd ) ;
             nicNameC nnd ;
         {
         if( stKnow( nicName ) )
@@ -604,12 +604,12 @@ voidT lnicC::newsFlashF( tin0S& tinBaseP , const nicNameC& nicNameP )
     {
     while( stDel )
 {
-voidT lnicC::readNewsF( tin0S& tinBaseP )
+voidT lnicC::readNewsF( tin0S& tin0P )
 
 }
-    stDel.sinkF( tinBaseP , countTC() , nicNameP , flSTACKsINK_UNIQUE ) ;
+    stDel.sinkF( tin0P , countTC() , nicNameP , flSTACKsINK_UNIQUE ) ;
 {
-voidT lnicC::newsDelF( tin0S& tinBaseP , const nicNameC& nicNameP )
+voidT lnicC::newsDelF( tin0S& tin0P , const nicNameC& nicNameP )
 
 }
 
@@ -661,32 +661,32 @@ voidT lnicC::newsDelF( tin0S& tinBaseP , const nicNameC& nicNameP )
     {
     if( !ether )
     __( know.exTime > 0x1e ) ;
-    know.exTime         = know.idrMe ? (countT)((tin9S&)tinBaseP).brcm04Raw : 0 ;
+    know.exTime         = know.idrMe ? (countT)((tin9S&)tin0P).brcm04Raw : 0 ;
     BOSmEASURE04( WHATgbo , log2( know.idrMe ) )
     know.idrMe          = idrF( know.idaMe , know.idaSingularity , know.cKnown ) ;
     know.idaSingularity = idaSingularityP ? idaSingularityP : know.idaMe ;
 
     know.uidaMe         = uidaF( nicNameMe ) ;
     know.idaMe          = stKnow( nicNameMe ) ;
-    know.exTimeMax      = know.cKnown ? (countT)((tin9S&)tinBaseP).brcm04Raw : 0 ;
+    know.exTimeMax      = know.cKnown ? (countT)((tin9S&)tin0P).brcm04Raw : 0 ;
     BOSmEASURE04( WHATgbo , log2( know.cKnown ) )
     know.cKnown         = stKnow ;
 
-    ether.memSetF( tinBaseP , (byteT*)&know , sizeof know ) ;
+    ether.memSetF( tin0P , (byteT*)&know , sizeof know ) ;
 
     __( bDirectP && !idaSingularityP ) ;
     __( bDirectP && cImDeadP ) ;
 
 {
-voidT lnicC::freshKnownF( tin0S& tinBaseP , const countT idaSingularityP , const countT cImDeadP , const boolT bDirectP )
+voidT lnicC::freshKnownF( tin0S& tin0P , const countT idaSingularityP , const countT cImDeadP , const boolT bDirectP )
 
 }
     __Z( idp ) ;
-    stKnow.sinkF( tinBaseP , idp , nicNameMe , flSTACKsINK_UNIQUE ) ;
+    stKnow.sinkF( tin0P , idp , nicNameMe , flSTACKsINK_UNIQUE ) ;
     ZE( countT , idp ) ;
 
-    ether.memSetF( tinBaseP , (byteT*)&know , sizeof know ) ;
-    ether.strMakeF( tinBaseP , LF , psttLogFile , T("///d/ideafarm.log.")+TF1(DDNUMB) ) ; ___( psttLogFile ) ;
+    ether.memSetF( tin0P , (byteT*)&know , sizeof know ) ;
+    ether.strMakeF( tin0P , LF , psttLogFile , T("///d/ideafarm.log.")+TF1(DDNUMB) ) ; ___( psttLogFile ) ;
 
     }
         if( ether ) return ;
@@ -695,32 +695,32 @@ voidT lnicC::freshKnownF( tin0S& tinBaseP , const countT idaSingularityP , const
     {
     IFbEcAREFUL
 {
-swNackTimeRemaining( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , idNewsAck )
-swAckAok( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , idNewsAck ) ,
-swsNack( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , idNewsAck , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ,
-swsAck( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , idNewsAck , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ,
+swNackTimeRemaining( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , idNewsAck )
+swAckAok( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , idNewsAck ) ,
+swsNack( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , idNewsAck , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ,
+swsAck( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , idNewsAck , flSTACKc_FIFO , ifcSTACKtYPE_nicNameC ) ,
 idNewsAck( 0 ) ,
 idNewsDeclareLast( 0 ) ,
 idTick( 0 ) ,
-swIdTickPending( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , nicNameImPending ) ,
-swsDebugNotesPending( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , nicNameImPending , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ,
-swsRepliesPending( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , nicNameImPending , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ,
+swIdTickPending( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , nicNameImPending ) ,
+swsDebugNotesPending( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , nicNameImPending , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ,
+swsRepliesPending( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , nicNameImPending , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ,
 cSawFlash( 0 ) ,
 psttLogFile( 0 ) ,
 bOnline( 1 ) ,
-swDeclareSent( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , idNewsAck ) ,
-swDeclare_cImDead( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , souDeclare ) ,
-swDeclareNextTock( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , souDeclare ) ,
-swDeclare( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , souDeclare ) ,
-souDeclare( tinBaseP , ether ) ,
-stDel(          tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ,
-stNew(          tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ,
-stFlash(        tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ,
-stHello(        tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ,
-stKnow(         tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ,
+swDeclareSent( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , idNewsAck ) ,
+swDeclare_cImDead( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , souDeclare ) ,
+swDeclareNextTock( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , souDeclare ) ,
+swDeclare( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , souDeclare ) ,
+souDeclare( tin0P , ether ) ,
+stDel(          tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ,
+stNew(          tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ,
+stFlash(        tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ,
+stHello(        tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ,
+stKnow(         tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ,
 nicNameMe( nicNameMeP ) ,
 ether( etherP ) ,
-lnicC::lnicC( tin0S& tinBaseP , etherC& etherP , const nicNameC& nicNameMeP ) :
+lnicC::lnicC( tin0S& tin0P , etherC& etherP , const nicNameC& nicNameMeP ) :
 
 }
 
@@ -729,7 +729,7 @@ lnicC::lnicC( tin0S& tinBaseP , etherC& etherP , const nicNameC& nicNameMeP ) :
     cpln = 0 ;
     cGossipOrdered = 0 ;
 {
-voidT lnicC::setupF( tin0S& tinBaseP )
+voidT lnicC::setupF( tin0S& tin0P )
 
 const countT    lnicC::idFlashMode = ifcIDfLASHmODE_EXPLODE ;
 countT          lnicC::cExplosions ;
@@ -738,15 +738,15 @@ countT          lnicC::cpln ;
 countT          lnicC::cGossipOrdered ;
 
 }
-    ether.delF( tinBaseP , psttLogFile ) ;
+    ether.delF( tin0P , psttLogFile ) ;
 
     }
         }
             DEL( (soulC*&)(countT&)swDeclareSent ) ;
-            idNewsAck = swDeclareSent.leverF( tinBaseP , idf ) ;
+            idNewsAck = swDeclareSent.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swDeclareSent.cFlavorsF( tinBaseP ) ;
+        countT cFlavors = swDeclareSent.cFlavorsF( tin0P ) ;
     {
 
     TINSL
@@ -775,16 +775,16 @@ NEWdELcLASSb( lnicC )
     {
     IFbEcAREFUL
 {
-boolT lnicC::bFlashSeenByAllF( tin0S& tinBaseP , etherC& etThreadP )
+boolT lnicC::bFlashSeenByAllF( tin0S& tin0P , etherC& etThreadP )
 
 }
     }
-        //etThreadP.ifcSayF( tinBaseP , TF3(cGossipOrdered,flFORMAT_null,8)+tb+TF3(cLever,flFORMAT_null,8)+tb+TF3(swSawFlash,flFORMAT_null,8)+tb+TF3(cpln,flFORMAT_null,8) , flSAY_APPEND | flSAY_LOG ) ;
-        etThreadP.ifcSayF( tinBaseP , T("**** the flash was seen ")+TF1(cLever)+T(" times by ")+TF1(swSawFlash)+T(" nics") , flSAY_APPEND | flSAY_LOG ) ;
-        cLever = swSawFlash.leverF( tinBaseP , idf ) ;
+        //etThreadP.ifcSayF( tin0P , TF3(cGossipOrdered,flFORMAT_null,8)+tb+TF3(cLever,flFORMAT_null,8)+tb+TF3(swSawFlash,flFORMAT_null,8)+tb+TF3(cpln,flFORMAT_null,8) , flSAY_APPEND | flSAY_LOG ) ;
+        etThreadP.ifcSayF( tin0P , T("**** the flash was seen ")+TF1(cLever)+T(" times by ")+TF1(swSawFlash)+T(" nics") , flSAY_APPEND | flSAY_LOG ) ;
+        cLever = swSawFlash.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = swSawFlash.cFlavorsF( tinBaseP ) ;
+    countT cFlavors = swSawFlash.cFlavorsF( tin0P ) ;
     TN( tb , " " ) ;
 
     for( countT idn = 1 ; idn <= cpln ; idn ++ ) { DEL( ppln[ idn ] ) ; }
@@ -793,12 +793,12 @@ boolT lnicC::bFlashSeenByAllF( tin0S& tinBaseP , etherC& etThreadP )
         }
             ++ ( (countT&)swSawFlash ) ;
             cLever = ppln[ idn ]->cSawFlash ;
-            etThreadP.ifcSayF( tinBaseP , T("[")+TF1(idn)+T("] saw the flash ")+TF1(ppln[idn]->cSawFlash)+T(" times")+(ppln[idn]->bOnlineF(tinBaseP)?T(""):T(" OFFLINE"))+(ppln[idn]->cSawFlash?T(""):T(" BLIND")) , flSAY_APPEND | flSAY_LOG ) ;
+            etThreadP.ifcSayF( tin0P , T("[")+TF1(idn)+T("] saw the flash ")+TF1(ppln[idn]->cSawFlash)+T(" times")+(ppln[idn]->bOnlineF(tin0P)?T(""):T(" OFFLINE"))+(ppln[idn]->cSawFlash?T(""):T(" BLIND")) , flSAY_APPEND | flSAY_LOG ) ;
         {
         if( ppln[ idn ] )
     {
     for( countT idn = 1 ; idn <= cpln ; idn ++ )
-    switchC swSawFlash( tinBaseP , etThreadP , TAG( TAGiDnULL ) , flSTACKc_null , cLever ) ;
+    switchC swSawFlash( tin0P , etThreadP , TAG( TAGiDnULL ) , flSTACKc_null , cLever ) ;
     ZE( countT , cLever ) ;
 
     }
@@ -808,7 +808,7 @@ boolT lnicC::bFlashSeenByAllF( tin0S& tinBaseP , etherC& etThreadP )
     {
     IFbEcAREFUL
 {
-voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* const psttLogFileP )
+voidT lnicC::armageddonF( tin0S& tin0P , etherC& etThreadP , const strokeS* const psttLogFileP )
 
 }
     return !bOnline ;
@@ -816,7 +816,7 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
     }
         }
             }
-                else ether.ifcSayF( tinBaseP , T("[")+TF1(idNewsMe)+tc+TF1(idNewsRef)+T("] i")+TF1(uidaF(nicNameSingularity))+TPS(".",1+know.exTime,S1C('.'))+T("|")+TF1(uidaF(nicNameMe))+T("<")+TF1(uidaF(nicNameFrom))+tb81+tNewsOrReplies+tb81+tHandlers+tb81+tDebugNotes , flSAY_APPEND | flSAY_LOG ) ;
+                else ether.ifcSayF( tin0P , T("[")+TF1(idNewsMe)+tc+TF1(idNewsRef)+T("] i")+TF1(uidaF(nicNameSingularity))+TPS(".",1+know.exTime,S1C('.'))+T("|")+TF1(uidaF(nicNameMe))+T("<")+TF1(uidaF(nicNameFrom))+tb81+tNewsOrReplies+tb81+tHandlers+tb81+tDebugNotes , flSAY_APPEND | flSAY_LOG ) ;
                 }
                     if( swDeclareNextTock < cGossip ) swDeclareNextTock = cGossip ;
                     souDeclare << souDebugNotes ;
@@ -827,15 +827,15 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                     souDeclare << idNewsRef ;
                     souDeclare << idNewsMe ;
                     souDeclare << flNews ;
-                    souDeclare.removeAllF( tinBaseP ) ;
-                    ether.ifcSayF( tinBaseP , T("[")+TF1(idNewsMe)+tc+TF1(idNewsRef)+T("] i")+TF1(uidaF(nicNameSingularity))+TPS(".",1+know.exTime,S1C('.'))+T("<")+TF1(uidaF(nicNameMe))+T("<")+TF1(uidaF(nicNameFrom))+tb81+tNewsOrReplies+tb81+tHandlers+tb81+tDebugNotes , flSAY_APPEND | flSAY_LOG ) ;
+                    souDeclare.removeAllF( tin0P ) ;
+                    ether.ifcSayF( tin0P , T("[")+TF1(idNewsMe)+tc+TF1(idNewsRef)+T("] i")+TF1(uidaF(nicNameSingularity))+TPS(".",1+know.exTime,S1C('.'))+T("<")+TF1(uidaF(nicNameMe))+T("<")+TF1(uidaF(nicNameFrom))+tb81+tNewsOrReplies+tb81+tHandlers+tb81+tDebugNotes , flSAY_APPEND | flSAY_LOG ) ;
                 {
                 if( bFlush )
     
-                freshKnownF( tinBaseP , stKnow( nicNameSingularity ) ) ;
+                freshKnownF( tin0P , stKnow( nicNameSingularity ) ) ;
         
                 }                   // ALL REPLIES THAT I HAVE ARE NOW EITHER IN souReplies OR IN swsRepliesPending (DITTO FOR NOTES)
-                    swsDebugNotesPending.freeF( tinBaseP ) ;
+                    swsDebugNotesPending.freeF( tin0P ) ;
                     }
                         souDebugNotes << psttn ;
                         swsDebugNotesPending >> psttn ;
@@ -843,7 +843,7 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                     {
                     while( swsDebugNotesPending )
     
-                    swsRepliesPending.freeF( tinBaseP ) ;
+                    swsRepliesPending.freeF( tin0P ) ;
                     }
                         if( psour ) souReplies << *psour ;
                         swsRepliesPending >> psour ;
@@ -868,7 +868,7 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                         souReplies >> *psour ;
                     {
                     if( psour )
-                    soulC* psour = new( 0 , tinBaseP , LF ) soulC( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    soulC* psour = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 while( souReplies )
     
@@ -888,17 +888,17 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                         }
                             break ;
 
-                            swsAck.sinkF( tinBaseP , countTC() , nicNameReplier ) ;
+                            swsAck.sinkF( tin0P , countTC() , nicNameReplier ) ;
 
                             }
                                 __1
                                 __( uidaF( nicNameReplier ) ) ;
-                                ether.ifcSayF( tinBaseP , T("unexpected ack received by ")+TF1(uidaF(nicNameMe))+T(" from ")+TF1(uidaF(nicNameReplier)) , flSAY_APPEND | flSAY_LOG ) ;
+                                ether.ifcSayF( tin0P , T("unexpected ack received by ")+TF1(uidaF(nicNameMe))+T(" from ")+TF1(uidaF(nicNameReplier)) , flSAY_APPEND | flSAY_LOG ) ;
                             {
                             else if( !swsAck(  nicNameReplier ) )
                             }
                                 __( nnd - nicNameReplier ) ;
-                                swsNack.extractF( tinBaseP , nnd ) ;
+                                swsNack.extractF( tin0P , nnd ) ;
                                 nicNameC nnd ;
                             {
                             if(  swsNack( nicNameReplier ) )
@@ -919,11 +919,11 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                     ZE( countT , idType ) ;
 
                     souReplies >> souReply ;
-                    soulC souReply( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    soulC souReply( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 while( souReplies )
 
-                ether.ifcSayF( tinBaseP , tEntry , flSAY_APPEND | flSAY_LOG ) ;
+                ether.ifcSayF( tin0P , tEntry , flSAY_APPEND | flSAY_LOG ) ;
                 tEntry += T("[")+TF1(idNewsMe)+tc+TF1(idNewsRef)+T("] s")+TF1(uidaF(nicNameMe))+T("<")+TF1(uidaF(nicNameFrom))+tb81+tNewsOrReplies+tb81+tHandlers+tb81+tDebugNotes ;
                 TN( tEntry , "" ) ;
             {
@@ -943,18 +943,18 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                 souDeclare << idNewsMe ;
                 souDeclare << ++ idNewsDeclareLast ;
                 souDeclare << (countT)( bDirect ? flNEWS_DIRECT | flNEWS_REPLIES : flNEWS_IMPLODE | flNEWS_REPLIES ) ;
-                souDeclare.removeAllF( tinBaseP ) ;
+                souDeclare.removeAllF( tin0P ) ;
                 
                 souHandlersA << nicNameMe ;
-                soulC souHandlersA( tinBaseP , TAG( TAGiDnULL ) ) ;
-                soulC souDebugNotes( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC souHandlersA( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
                 
                 souReplies << souReply ;
-                soulC souReplies( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC souReplies( tin0P , TAG( TAGiDnULL ) ) ;
                 
                 souReply << idNewsMe ;
                 souReply << nicNameMe ;
-                soulC souReply( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_ACK ) ;
+                soulC souReply( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_ACK ) ;
             {
             if( !( F(flNews) & flNEWS_DOnOTaCK ) )
 
@@ -972,22 +972,22 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                         souDeclare << idNewsRef ;
                         souDeclare << idNewsMe ;
                         souDeclare << flNews ;
-                        souDeclare.removeAllF( tinBaseP ) ;
+                        souDeclare.removeAllF( tin0P ) ;
     
                         souNews << nicNameData ;
-                        soulC souNews( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , idNewsType ) ;
+                        soulC souNews( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idNewsType ) ;
 
                         __( F(flNews) & flNEWS_IMPLODE ) ; //THERE IS CODE FOR IMPLODING REPLIES BUT NOT NEWS
                     {
                     if( !bDirect )
     
-                    ether.ifcSayF( tinBaseP , T("[")+TF1(idNewsMe)+tc+TF1(idNewsRef)+T("] e")+TF1(uidaF(nicNameSingularity))+TPS(".",1+know.exTime,S1C('.'))+TF1(uidaF(nicNameFrom))+T(">")+TF1(uidaF(nicNameMe))+T(";")+TF1(idNewsType)+tc+TF1(cGossip)+tc+TF1(uidaF(nicNameData))+tb81+tNewsOrReplies+tb81+tHandlers+tb81+tDebugNotes , flSAY_APPEND | flSAY_LOG ) ;
-                    freshKnownF( tinBaseP , stKnow( nicNameSingularity ) ) ;
+                    ether.ifcSayF( tin0P , T("[")+TF1(idNewsMe)+tc+TF1(idNewsRef)+T("] e")+TF1(uidaF(nicNameSingularity))+TPS(".",1+know.exTime,S1C('.'))+TF1(uidaF(nicNameFrom))+T(">")+TF1(uidaF(nicNameMe))+T(";")+TF1(idNewsType)+tc+TF1(cGossip)+tc+TF1(uidaF(nicNameData))+tb81+tNewsOrReplies+tb81+tHandlers+tb81+tDebugNotes , flSAY_APPEND | flSAY_LOG ) ;
+                    freshKnownF( tin0P , stKnow( nicNameSingularity ) ) ;
     
                     }
-                        case ifcIDnEWSeX_DEL   : { newsDelF(   tinBaseP , nicNameData ) ; break ; }
-                        case ifcIDnEWSeX_FLASH : { newsFlashF( tinBaseP , nicNameData ) ; break ; }
-                        case ifcIDnEWSeX_HELLO : { newsHelloF( tinBaseP , nicNameData ) ; break ; }
+                        case ifcIDnEWSeX_DEL   : { newsDelF(   tin0P , nicNameData ) ; break ; }
+                        case ifcIDnEWSeX_FLASH : { newsFlashF( tin0P , nicNameData ) ; break ; }
+                        case ifcIDnEWSeX_HELLO : { newsHelloF( tin0P , nicNameData ) ; break ; }
                     {
                     switch( idNewsType )
     
@@ -1008,19 +1008,19 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
         boolT bDirect = !!( F(flNews) & flNEWS_DIRECT ) ;
 
         }
-            if( tDebugNotes.csF( tinBaseP ) ) tDebugNotes += T("|") ;
+            if( tDebugNotes.csF( tin0P ) ) tDebugNotes += T("|") ;
             }
                 }
                     tDebugNotes += T(psttNote) ;
                     else                           tDebugNotes += tc ;
-                    if( !tDebugNotes.csF( tinBaseP ) ) tDebugNotes = ti ;
+                    if( !tDebugNotes.csF( tin0P ) ) tDebugNotes = ti ;
     
                     __( cb - 1 - sizeof( strokeS ) * ( psttNote->idAdam + CSpREFIX ) ) ;
                     __( idType - ifcIDtYPEsOULiTEM_strokeSptr ) ;
                 {
                 if( 1 < (countT)psttNote )
 
-                const strokeS* const psttNote = (strokeS*)( 1 + souDebugNotes.pbFieldF( tinBaseP , idType , flags , cb , idn ) ) ;
+                const strokeS* const psttNote = (strokeS*)( 1 + souDebugNotes.pbFieldF( tin0P , idType , flags , cb , idn ) ) ;
                 ZE( countT , cb ) ;
                 ZE( flagsT , flags ) ;
                 ZE( countT , idType ) ;
@@ -1032,9 +1032,9 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
         TN( tDebugNotes , "" ) ;
     
         }
-            if( tHandlers.csF( tinBaseP ) ) tHandlers += T("}") ;
+            if( tHandlers.csF( tin0P ) ) tHandlers += T("}") ;
             }
-                tHandlers += TF1(uidaF(souHandlers.nicNameFieldF(tinBaseP,idh))) ;
+                tHandlers += TF1(uidaF(souHandlers.nicNameFieldF(tin0P,idh))) ;
 
                 //}
                 //    tHandlers += T(uidaF(nn)) ;
@@ -1046,14 +1046,14 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                 //__( idType - ifcIDtYPEsOULiTEM_nicNameC ) ;
                 //if( pbnn ) pbnn ++ ;
                 //__Z( pbnn ) ;
-                //const byteT* pbnn = souHandlers.pbFieldF( tinBaseP , idType , flags , cbd , idh ) ;
+                //const byteT* pbnn = souHandlers.pbFieldF( tin0P , idType , flags , cbd , idh ) ;
                 //ZE( countT , cbd ) ;
                 //ZE( countT , flags ) ;
                 //ZE( countT , idType ) ;
                 //U:
 
                 else                         tHandlers += tc ;
-                if( !tHandlers.csF( tinBaseP ) ) tHandlers = ti ;
+                if( !tHandlers.csF( tin0P ) ) tHandlers = ti ;
             {
             for( countT idh = 1 ; idh <= cHandlers ; idh ++ )
             const countT cHandlers = souHandlers ;
@@ -1062,7 +1062,7 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
         TN( tHandlers , "" ) ;
     
         }
-            //if( tNewsOrReplies.csF( tinBaseP ) ) tNewsOrReplies += T(".") ;
+            //if( tNewsOrReplies.csF( tin0P ) ) tNewsOrReplies += T(".") ;
             }
                 }
                     }
@@ -1073,7 +1073,7 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                     }
                         break ;
 
-                        tNewsOrReplies += TF1(uidaF(souNewsOrReplies.nicNameFieldF(tinBaseP,2))) ;
+                        tNewsOrReplies += TF1(uidaF(souNewsOrReplies.nicNameFieldF(tin0P,2))) ;
 
                         //}
                         //    tNewsOrReplies += TF1(uidaF(nn)) ;
@@ -1085,7 +1085,7 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                         //__( idType - ifcIDtYPEsOULiTEM_nicNameC ) ;
                         //if( pbnn ) pbnn ++ ;
                         //__Z( pbnn ) ;
-                        //const byteT* pbnn = souNewsOrReplies.pbFieldF( tinBaseP , idType , flags , cbd , 2 ) ;
+                        //const byteT* pbnn = souNewsOrReplies.pbFieldF( tin0P , idType , flags , cbd , 2 ) ;
                         //ZE( countT , cbd ) ;
                         //ZE( countT , flags ) ;
                         //ZE( countT , idType ) ;
@@ -1103,7 +1103,7 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                     case ifcIDnEWSeX_HELLO :
                 {
                 switch( idType )
-                countT idType = souNewsOrReplies.cFieldF( tinBaseP , 1 ) ;
+                countT idType = souNewsOrReplies.cFieldF( tin0P , 1 ) ;
                 //tNewsOrReplies = ti ;
             {
             else
@@ -1115,7 +1115,7 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                                 break ;
                                 tNewsOrReplies += (idType==ifcIDnEWSiM_ACK?T("a")+T("-")+TF1(uidaF(nicNameImPending))+T(".")+TF1(idNewsAcked):T("t"))+T(":")+TF1(uidaF(nicNameReplier)) ;
                                 else                              tNewsOrReplies += tc ;
-                                if( !tNewsOrReplies.csF( tinBaseP ) ) /*tNewsOrReplies  = ti*/ ;
+                                if( !tNewsOrReplies.csF( tin0P ) ) /*tNewsOrReplies  = ti*/ ;
 
                                 if( idType == ifcIDnEWSiM_ACK ) souReply >> idNewsAcked ;
                                 ZE( countT , idNewsAcked ) ;
@@ -1129,11 +1129,11 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
                         switch( idType )
                         souReply >> idType ;
                         ZE( countT , idType ) ;
-                        soulC souReply( tinBaseP , TAG( TAGiDnULL ) , pbs , flSOUL_null , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                        soulC souReply( tin0P , TAG( TAGiDnULL ) , pbs , flSOUL_null , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                         __( idType - ifcIDtYPEsOULiTEM_soulC ) ;
                     {
                     if( pbs )
-                    const byteT* pbs = souNewsOrReplies.pbFieldF( tinBaseP , idType , flags , cb , idr ) ;
+                    const byteT* pbs = souNewsOrReplies.pbFieldF( tin0P , idType , flags , cb , idr ) ;
                     ZE( countT , cb ) ;
                     ZE( flagsT , flags ) ;
                     ZE( countT , idType ) ;
@@ -1149,14 +1149,14 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
         TN( tc , "," ) ;
     
         soulP >> souDebugNotes ;
-        soulC souDebugNotes( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
 
         souHandlers << nicNameMe ;
         soulP >> souHandlers ;
-        soulC souHandlers( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
 
         soulP >> souNewsOrReplies ;
-        soulC souNewsOrReplies( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC souNewsOrReplies( tin0P , TAG( TAGiDnULL ) ) ;
 
         soulP >> cGossip ;
         ZE( countT , cGossip ) ;
@@ -1187,30 +1187,30 @@ voidT lnicC::armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* c
     {
     if( bOnline && soulP )
 {
-boolT lnicC::shockF( tin0S& tinBaseP , soulC& soulP )
+boolT lnicC::shockF( tin0S& tin0P , soulC& soulP )
 
 }
     }
-        if( idaDeadP && idaDeadP <= cpln && ppln[ idaDeadP ] ) ppln[ idaDeadP ]->bOnlineF( tinBaseP , 0 ) ;
+        if( idaDeadP && idaDeadP <= cpln && ppln[ idaDeadP ] ) ppln[ idaDeadP ]->bOnlineF( tin0P , 0 ) ;
 
-        for( countT idn = 1 ; idn <= cpln ; idn ++ ) ppln[ idn ] = new( 0 , tinBaseP , LF ) lnicC( tinBaseP , etThreadP , *(nicNameC*)&stLNNA[ idn ] ) ;
+        for( countT idn = 1 ; idn <= cpln ; idn ++ ) ppln[ idn ] = new( 0 , tin0P , LF ) lnicC( tin0P , etThreadP , *(nicNameC*)&stLNNA[ idn ] ) ;
         *ppln = 0 ;                                             // CONSTRUCT THE LOGICAL NIC HARDWARE
     {
     if( ppln )
-    etThreadP.newF( tinBaseP , LF , (countT*&)ppln , 1 + cpln ) ; ___( ppln ) ;
+    etThreadP.newF( tin0P , LF , (countT*&)ppln , 1 + cpln ) ; ___( ppln ) ;
     
     cpln = stLNNA ;
     }
         }
-            while( !idp ) stLNNA.sinkF( tinBaseP , idp , nicNameC( 1 + ru , 1 + ru , 1 + ru , 1 + ru ) , flSTACKsINK_UNIQUE ) ;
+            while( !idp ) stLNNA.sinkF( tin0P , idp , nicNameC( 1 + ru , 1 + ru , 1 + ru , 1 + ru ) , flSTACKsINK_UNIQUE ) ;
             ZE( countT , idp ) ;
         {
         while( !etPrime && cTries -- )
         countT cTries = cLNicsP ;
         ranUniC ru( 0xffffffff , - 1 ) ;
-        etherC& etPrime = etThreadP.etPrimeIF( tinBaseP ) ;
+        etherC& etPrime = etThreadP.etPrimeIF( tin0P ) ;
     {
-    stackC stLNNA( tinBaseP , etThreadP , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ; // GENERATE A LIST OF ASSIGNED nicNameC VALUES
+    stackC stLNNA( tin0P , etThreadP , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_nicNameC ) ; // GENERATE A LIST OF ASSIGNED nicNameC VALUES
 
     TN( tp , "pushing " ) ;
     TN( td , "." ) ;
@@ -1226,10 +1226,10 @@ boolT lnicC::shockF( tin0S& tinBaseP , soulC& soulP )
     {
     IFbEcAREFUL
 {
-voidT lnicC::genesisF( tin0S& tinBaseP , etherC& etThreadP , const countT cLNicsP , const countT cGossipP , const countT idaDeadP )
+voidT lnicC::genesisF( tin0S& tin0P , etherC& etThreadP , const countT cLNicsP , const countT cGossipP , const countT idaDeadP )
 
 }
-    //ether.ifcSayF( tinBaseP , tEntry , flSAY_APPEND | flSAY_LOG ) ;
+    //ether.ifcSayF( tin0P , tEntry , flSAY_APPEND | flSAY_LOG ) ;
 
     ;
 
@@ -1260,21 +1260,21 @@ voidT lnicC::genesisF( tin0S& tinBaseP , etherC& etThreadP , const countT cLNics
     TN( tc , ":" ) ;
     TN( tb , " " ) ;
 {
-voidT lnicC::logF( tin0S& tinBaseP , const strokeS* const psttTitleP )
+voidT lnicC::logF( tin0S& tin0P , const strokeS* const psttTitleP )
 
 }
     }
-        logF( tinBaseP , bOnline ? T("DATA CABLE FIXED") : T("DATA CABLE KICKED OUT OF WALL SOCKET") ) ;
+        logF( tin0P , bOnline ? T("DATA CABLE FIXED") : T("DATA CABLE KICKED OUT OF WALL SOCKET") ) ;
         bOnline = !!bOnlineP ;
     {
     if( !!bOnlineP - !!bOnline )
 {
-voidT lnicC::bOnlineF( tin0S& tinBaseP , const boolT bOnlineP )
+voidT lnicC::bOnlineF( tin0S& tin0P , const boolT bOnlineP )
 
 }
     return bOnline ;
 {
-boolT lnicC::bOnlineF( tin0S& tinBaseP )
+boolT lnicC::bOnlineF( tin0S& tin0P )
 
 }
     return uida ;
@@ -1292,7 +1292,7 @@ boolT lnicC::bOnlineF( tin0S& tinBaseP )
 countT lnicC::uidaF( const nicNameC& nicNameP )
 
 }
-    //if( tEntry.csF( tinBaseP ) ) ether.ifcSayF( tinBaseP , tEntry , flSAY_APPEND | flSAY_LOG ) ;
+    //if( tEntry.csF( tin0P ) ) ether.ifcSayF( tin0P , tEntry , flSAY_APPEND | flSAY_LOG ) ;
 
     }
         while( !ether && ~hDown ) ;
@@ -1300,20 +1300,20 @@ countT lnicC::uidaF( const nicNameC& nicNameP )
             }
                 tEntry += TF1(uidaF(nicName)) ;
                 else                      tEntry += T(",") ;
-                if( !tEntry.csF( tinBaseP ) ) tEntry = TF1(uidaF(nicNameMe))+T(" loading swsNack: ") ;
+                if( !tEntry.csF( tin0P ) ) tEntry = TF1(uidaF(nicNameMe))+T(" loading swsNack: ") ;
 
-                swsNack.sinkF( tinBaseP , countTC() , nicName , flSTACKsINK_UNIQUE ) ;
+                swsNack.sinkF( tin0P , countTC() , nicName , flSTACKsINK_UNIQUE ) ;
             {
             if( nicName != nicNameMe )
-            nicNameC nicName = *(nicNameC*)&stKnow.downF( tinBaseP , hDown ) ;
+            nicNameC nicName = *(nicNameC*)&stKnow.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         swNackTimeRemaining = TIMEoUT ;
 
         }
             swsAck >> nnb ;
-            swsAck.sinkF( tinBaseP , countTC() , nnb ) ; // TO ENSURE THAT ALL FLAVORS IN swsNack ARE ALSO IN swsAck
+            swsAck.sinkF( tin0P , countTC() , nnb ) ; // TO ENSURE THAT ALL FLAVORS IN swsNack ARE ALSO IN swsAck
             nicNameC nnb ;
             __( swsAck ) ;
         {
@@ -1322,44 +1322,44 @@ countT lnicC::uidaF( const nicNameC& nicNameP )
     if( stKnow )
     TN( tEntry , "" ) ;
 {
-voidT lnicC::loadNackF( tin0S& tinBaseP , const countT idNewsDeclareP )
+voidT lnicC::loadNackF( tin0S& tin0P , const countT idNewsDeclareP )
 
 }
-    ether.ifcSayF( tinBaseP , tEntry , flSAY_APPEND | flSAY_LOG ) ;
+    ether.ifcSayF( tin0P , tEntry , flSAY_APPEND | flSAY_LOG ) ;
 
     }
         while( !ether && ~hDown ) ;
         }
             tEntry += TF1(uidaF(nicName)) ;
             else                      tEntry += T(",") ;
-            if( !tEntry.csF( tinBaseP ) ) tEntry = TF1(uidaF(nicNameMe))+T(" knows: ") ;
-            nicNameC nicName = *(nicNameC*)&stKnow.downF( tinBaseP , hDown ) ;
+            if( !tEntry.csF( tin0P ) ) tEntry = TF1(uidaF(nicNameMe))+T(" knows: ") ;
+            nicNameC nicName = *(nicNameC*)&stKnow.downF( tin0P , hDown ) ;
         {
         do
-        handleC hDown( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
     if( stKnow )
     TN( tEntry , "" ) ;
 {
-voidT lnicC::logKnowF( tin0S& tinBaseP )
+voidT lnicC::logKnowF( tin0S& tin0P )
 
 ;
 }
-    voidT                       logKnowF( tin0S& tinBaseP ) ;
-    voidT                       loadNackF( tin0S& tinBaseP , const countT idNewsDeclareP ) ;
-    boolT                       shockF( tin0S& tinBaseP , soulC& soulP ) ;
-    boolT                       bOnlineF( tin0S& tinBaseP ) ;
-    voidT                       bOnlineF( tin0S& tinBaseP , const boolT bOnlineP ) ;
-    voidT                       tockF( tin0S& tinBaseP ) ;
-    voidT                       tickF( tin0S& tinBaseP , const countT idTickP , const countT uidaP ) ;
-    voidT                       readNewsF( tin0S& tinBaseP ) ;
-    voidT                       logF( tin0S& tinBaseP , const strokeS* const psttTitleP ) ;
-    voidT                       freshKnownF( tin0S& tinBaseP , const countT idaSingularityP = 0 , const countT cImDeadP = 0 , const boolT bDirectP = 0 ) ;
-    voidT                       newsDelF( tin0S& tinBaseP , const nicNameC& nicNameP ) ;
-    voidT                       newsNewF( tin0S& tinBaseP , const nicNameC& nicNameP ) ;
-    voidT                       newsFlashF( tin0S& tinBaseP , const nicNameC& nicNameP ) ;
-    voidT                       newsHelloF( tin0S& tinBaseP , const nicNameC& nicNameP ) ;
-                                lnicC( tin0S& tinBaseP , etherC& etherP , const nicNameC& nicNameMeP ) ;
+    voidT                       logKnowF( tin0S& tin0P ) ;
+    voidT                       loadNackF( tin0S& tin0P , const countT idNewsDeclareP ) ;
+    boolT                       shockF( tin0S& tin0P , soulC& soulP ) ;
+    boolT                       bOnlineF( tin0S& tin0P ) ;
+    voidT                       bOnlineF( tin0S& tin0P , const boolT bOnlineP ) ;
+    voidT                       tockF( tin0S& tin0P ) ;
+    voidT                       tickF( tin0S& tin0P , const countT idTickP , const countT uidaP ) ;
+    voidT                       readNewsF( tin0S& tin0P ) ;
+    voidT                       logF( tin0S& tin0P , const strokeS* const psttTitleP ) ;
+    voidT                       freshKnownF( tin0S& tin0P , const countT idaSingularityP = 0 , const countT cImDeadP = 0 , const boolT bDirectP = 0 ) ;
+    voidT                       newsDelF( tin0S& tin0P , const nicNameC& nicNameP ) ;
+    voidT                       newsNewF( tin0S& tin0P , const nicNameC& nicNameP ) ;
+    voidT                       newsFlashF( tin0S& tin0P , const nicNameC& nicNameP ) ;
+    voidT                       newsHelloF( tin0S& tin0P , const nicNameC& nicNameP ) ;
+                                lnicC( tin0S& tin0P , etherC& etherP , const nicNameC& nicNameMeP ) ;
                                 ~lnicC( voidT ) ;
                                 NEWdELcLASSpROTOS( lnicC , etherC , thirdC )
 
@@ -1397,10 +1397,10 @@ voidT lnicC::logKnowF( tin0S& tinBaseP )
     private :
 
     static countT               uidaF( const nicNameC& nicNameP ) ;
-    static voidT                setupF( tin0S& tinBaseP ) ;
-    static boolT                bFlashSeenByAllF( tin0S& tinBaseP , etherC& etThreadP ) ;
-    static voidT                armageddonF( tin0S& tinBaseP , etherC& etThreadP , const strokeS* const psttLogFileP ) ;
-    static voidT                genesisF( tin0S& tinBaseP , etherC& etThreadP , const countT cLNicsP , const countT cGossipP , const countT idaDeadP ) ;
+    static voidT                setupF( tin0S& tin0P ) ;
+    static boolT                bFlashSeenByAllF( tin0S& tin0P , etherC& etThreadP ) ;
+    static voidT                armageddonF( tin0S& tin0P , etherC& etThreadP , const strokeS* const psttLogFileP ) ;
+    static voidT                genesisF( tin0S& tin0P , etherC& etThreadP , const countT cLNicsP , const countT cGossipP , const countT idaDeadP ) ;
 
     static countT               cExplosions ;
     static countT               cpln ;
@@ -1456,14 +1456,14 @@ class lnicC ;
 
     }
         }
-            //etThread.strokeF( tinBaseP , te ) ;
+            //etThread.strokeF( tin0P , te ) ;
             }
                 __( ida - idaF( idr , id1 , 8 ) ) ;
-                //etThread.strokeF( tinBaseP , TF3(idr,flFORMAT_null,9) ) ;
+                //etThread.strokeF( tin0P , TF3(idr,flFORMAT_null,9) ) ;
                 countT idr = idrF(ida,id1,8) ;
             {
             for( countT ida = 1 ; ida <= 8 ; ida ++ )
-            //etThread.strokeF( tinBaseP , TF3(id1,flFORMAT_null,8)+tv ) ;
+            //etThread.strokeF( tin0P , TF3(id1,flFORMAT_null,8)+tv ) ;
         {
         for( countT id1 = 1 ; id1 <= 8 ; id1 ++ )
         TN( tv , "|" ) ;                                            // GENERALLY USEFUL STACK OBJECTS

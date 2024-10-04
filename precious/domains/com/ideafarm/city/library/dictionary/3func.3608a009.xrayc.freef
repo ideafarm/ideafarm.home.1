@@ -12,7 +12,7 @@
 
     }
         }
-            PUSE( tinBaseP , ppbx[ offxBefore ] ) ; ppbx[ offxBefore ] = 0 ;
+            PUSE( tin0P , ppbx[ offxBefore ] ) ; ppbx[ offxBefore ] = 0 ;
             //CONoUTrAW3( "freeing a lifo extent at " , offxBefore , "\r\n" ) ;
         {
         if( bFree )
@@ -34,7 +34,7 @@
         }
             }
                 if( offxFifoPull == CxRAYeXTENTS ) offxFifoPull = 0 ;
-                PUSE( tinBaseP , ppbx[ offxFifoPull ] ) ; ppbx[ offxFifoPull ++ ] = 0 ;
+                PUSE( tin0P , ppbx[ offxFifoPull ] ) ; ppbx[ offxFifoPull ++ ] = 0 ;
                 offsrFifoPull = 0 ;
                 //CONoUTrAW5( "freeing a fifo extent at " , offxFifoPull , " of " , pcsx[ offxFifoPull ] , " slots\r\n" ) ;
             {
@@ -47,7 +47,7 @@
             }
                 offsrFifoPush = 0 ;
                 if( offxFifoPush == CxRAYeXTENTS ) offxFifoPush = 0 ;
-                PUSE( tinBaseP , ppbx[ offxFifoPush ] ) ; ppbx[ offxFifoPush ] = 0 ;
+                PUSE( tin0P , ppbx[ offxFifoPush ] ) ; ppbx[ offxFifoPush ] = 0 ;
                 //CONoUTrAW5( "freeing a fifo extent at " , offxFifoPush , " of " , pcsx[ offxFifoPush ] , " slots\r\n" ) ;
             {
             if( !cElements || !offsrFifoPush )
@@ -70,7 +70,7 @@
 
     //NO OVERHEAD CODE OR ERROR DETECTION CODE, FOR MAX SPEED
 {
-/*1*/countT xrayC::freeF( tin0S& tinBaseP , const boolT bFifoLathP )/*1*/
+/*1*/countT xrayC::freeF( tin0S& tin0P , const boolT bFifoLathP )/*1*/
 
 /**/
 */

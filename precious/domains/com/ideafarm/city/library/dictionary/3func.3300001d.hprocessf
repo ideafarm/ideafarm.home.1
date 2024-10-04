@@ -19,22 +19,22 @@
         //U:: {
         //U:: else
         //U:: }
-        //U::     ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsPid.ungrabF( tinBaseP ) ;
+        //U::     ((tin9S&)tin0P).pag4->_thirdC_grab_lOsPid.ungrabF( tin0P ) ;
         //U::     hProcess.osF( ifcIDtYPEhANDLE_PROCESS , hProcessMem ) ;
         //U::     if( !hProcessMem ) hProcessMem = (countT)OpenProcess( PROCESS_ALL_ACCESS , 0 , osPidP ) ;
-        //U::     countT& hProcessMem = *((tin9S&)tinBaseP).pag1->_thirdC_.pSwProcessHandle ; //U: OS DEPENDENT; ASSUMES THAT OS RETURNS 0 FOR INVALID PROCESS HANDLE
-        //U::     ((tin9S&)tinBaseP).pag1->_thirdC_.lOsPid = osPidP ;
-        //U::     ((tin9S&)tinBaseP).pag4->_thirdC_grab_lOsPid.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        //U::     countT& hProcessMem = *((tin9S&)tin0P).pag1->_thirdC_.pSwProcessHandle ; //U: OS DEPENDENT; ASSUMES THAT OS RETURNS 0 FOR INVALID PROCESS HANDLE
+        //U::     ((tin9S&)tin0P).pag1->_thirdC_.lOsPid = osPidP ;
+        //U::     ((tin9S&)tin0P).pag4->_thirdC_grab_lOsPid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         //U:: {
-        //U:: if( ((tin9S&)tinBaseP).pag1->_thirdC_.pSwProcessHandle )
+        //U:: if( ((tin9S&)tin0P).pag1->_thirdC_.pSwProcessHandle )
         //U:: DECIDE WHETHER I WANT TO PERMIT "DANGLING HANDLES" IN ORDER TO AVOID THE COST OF HANDLE DUPLICATION
     {
     else
     if( osPidP == osPidMeP ) hProcess.osF( ifcIDtYPEhANDLE_PROCESS , thirdC::osOpenProcessIF() ) ;
 
-    handleC hProcess( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
+    handleC hProcess( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
 {
-/*1*/handleC hProcessF( tin0S& tinBaseP , const countT osPidP , const countT osPidMeP )/*1*/
+/*1*/handleC hProcessF( tin0S& tin0P , const countT osPidP , const countT osPidMeP )/*1*/
 
 /**/
 */

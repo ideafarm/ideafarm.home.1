@@ -9,34 +9,34 @@
 
 DONE( tmPoolFlushF )
 }
-    etThread.traceF( tinBaseP , T("--------") ) ;
+    etThread.traceF( tin0P , T("--------") ) ;
 
-    processGlobal5I._poolC_grab_pPool.ungrabF( tinBaseP ) ;
+    processGlobal5I._poolC_grab_pPool.ungrabF( tin0P ) ;
     processGlobal2I._poolC_bQuitFlushing -- ;
-    processGlobal5I._poolC_grab_pPool.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    processGlobal5I._poolC_grab_pPool.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
 
-        processGlobal5I._poolC_grab_pPool.ungrabF( tinBaseP ) ;
-        etThread.traceF( tinBaseP , T("flushed  all pools to disk [idFlush]:    ")+TF2(processGlobal2I._poolC_idFlushLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        processGlobal5I._poolC_grab_pPool.ungrabF( tin0P ) ;
+        etThread.traceF( tin0P , T("flushed  all pools to disk [idFlush]:    ")+TF2(processGlobal2I._poolC_idFlushLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         }
             pCursor = pCursor->pNext ;
-            pCursor->flushF( tinBaseP ) ;
+            pCursor->flushF( tin0P ) ;
         {
         while( pCursor )
         poolC* pCursor = processGlobal2I._poolC_pPool ;
 
-        etThread.traceF( tinBaseP , T("flushing all pools to disk [idFlush]:    ")+TF2(processGlobal2I._poolC_idFlushLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tin0P , T("flushing all pools to disk [idFlush]:    ")+TF2(processGlobal2I._poolC_idFlushLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         processGlobal2I._poolC_idFlushLath ++ ;
 
-        processGlobal5I._poolC_grab_pPool.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        processGlobal5I._poolC_grab_pPool.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
     while( !ether && !etThread && !processGlobal2I._poolC_bQuitFlushing )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etThread.traceF( tinBaseP , T("++++++++") ) ;
+    etThread.traceF( tin0P , T("++++++++") ) ;
 {
 if( pTaskP )
 /*1*/TASK( tmPoolFlushF )/*1*/

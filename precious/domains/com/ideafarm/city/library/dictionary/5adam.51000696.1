@@ -9,42 +9,42 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
-etThread.osThreadSwitchingDesireF( tinBaseP , idDesireWas ) ;
+etThread.osThreadSwitchingDesireF( tin0P , idDesireWas ) ;
 
-grabx.ungrabF( tinBaseP ) ;
-grabx.ungrabF( tinBaseP ) ;
-grabx.ungrabF( tinBaseP ) ;
-grabx.ungrabF( tinBaseP ) ;
+grabx.ungrabF( tin0P ) ;
+grabx.ungrabF( tin0P ) ;
+grabx.ungrabF( tin0P ) ;
+grabx.ungrabF( tin0P ) ;
 
-grabx.aimF( tinBaseP , flGRABITcaIMmASK_offP , 0 , 0 ) ;
+grabx.aimF( tin0P , flGRABITcaIMmASK_offP , 0 , 0 ) ;
 
-grabx.ungrabF( tinBaseP ) ;
-grabx.ungrabF( tinBaseP ) ;
-grabx.ungrabF( tinBaseP ) ;
-grabx.ungrabF( tinBaseP ) ;
+grabx.ungrabF( tin0P ) ;
+grabx.ungrabF( tin0P ) ;
+grabx.ungrabF( tin0P ) ;
+grabx.ungrabF( tin0P ) ;
 
-grabx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-grabx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-grabx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-grabx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+grabx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+grabx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+grabx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+grabx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-grabx.aimF( tinBaseP , flGRABITcaIMmASK_offP , 0 , 1 ) ;
+grabx.aimF( tin0P , flGRABITcaIMmASK_offP , 0 , 1 ) ;
 
-grabx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-grabx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-grabx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
-grabx.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+grabx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+grabx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+grabx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+grabx.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-countT idDesireWas = etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
+countT idDesireWas = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
 
-grabitC grabx( tinBaseP , TAG( TAGiDnULL ) , reg.pbBitGrab , 0 , reg.pcGrabberOsTid , reg.pcGrabberRecurse , flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES | flGRABITc_IMAGEiSvISIBLEtOoTHERtHREADS ) ;
+grabitC grabx( tin0P , TAG( TAGiDnULL ) , reg.pbBitGrab , 0 , reg.pcGrabberOsTid , reg.pcGrabberRecurse , flGRABITc_IMAGEiSvISIBLEtOoTHERpROCESSES | flGRABITc_IMAGEiSvISIBLEtOoTHERtHREADS ) ;
 
 poolRegistrationS& reg = *(poolRegistrationS*)home.pb_pPoolReg ;
 //homeS& home = homeS::homeIF() ;
 
-homeS home( tinBaseP ) ;
+homeS home( tin0P ) ;
 
 TODO
 

@@ -10,8 +10,8 @@
 REST
 
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("done ; loafing") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("done ; loafing") ) ;
 
 while( ~hFind && !POOP && !ether ) ;
 }
@@ -19,49 +19,49 @@ while( ~hFind && !POOP && !ether ) ;
         DEL( pInfo ) ;
         }
             }
-                etThread.delF( tinBaseP , postName ) ;
+                etThread.delF( tin0P , postName ) ;
 
                 }
-                    etThread.diskMoveFileOrDirF( tinBaseP , tNewData , pInfo->psttIfoName ) ;
+                    etThread.diskMoveFileOrDirF( tin0P , tNewData , pInfo->psttIfoName ) ;
 
-                    etThread.traceF( tinBaseP , tNewData ) ;
+                    etThread.traceF( tin0P , tNewData ) ;
                     TN( tNewData , "" ) ; tNewData = tPath+tShort+tDotExt ;
 
                     }
-                        etThread.delF( tinBaseP , psttDotExt ) ;
-                        etThread.delF( tinBaseP , psttnu ) ;
+                        etThread.delF( tin0P , psttDotExt ) ;
+                        etThread.delF( tin0P , psttnu ) ;
                         tDotExt = T(psttDotExt) ;
-                        etThread.strBisectF( tinBaseP , psttnu , psttDotExt , T(postName) , tDot , - 1 , flSTRbISECT_PREPENDdELIMITER ) ; ___( psttnu ) ; ___( psttDotExt ) ;
+                        etThread.strBisectF( tin0P , psttnu , psttDotExt , T(postName) , tDot , - 1 , flSTRbISECT_PREPENDdELIMITER ) ; ___( psttnu ) ; ___( psttDotExt ) ;
                         ZE( strokeS* , psttDotExt ) ;
                         ZE( strokeS* , psttnu ) ;
                     {
                     TN( tDotExt , "" ) ;
 
-                    //etThread.traceF( tinBaseP , T(postName) ) ;
+                    //etThread.traceF( tin0P , T(postName) ) ;
                 {
                 if( postName && costName )
 
-                etThread.boxGetShadowF( tinBaseP , postName , costName , tLongMetaName ) ; ___( postName ) ;
+                etThread.boxGetShadowF( tin0P , postName , costName , tLongMetaName ) ; ___( postName ) ;
                 ZE( countT   , costName ) ;
                 ZE( osTextT* , postName ) ;
             {
-            if( etThread.diskFileExistsF( tinBaseP , tLongMetaName ) )
+            if( etThread.diskFileExistsF( tin0P , tLongMetaName ) )
 
             TN( tLongMetaName , "" ) ; tLongMetaName = tPath+tShorter+T("meta.currentname") ;
 
-            //etThread.traceF( tinBaseP , tShorter ) ;
+            //etThread.traceF( tin0P , tShorter ) ;
             }
-                etThread.delF( tinBaseP , psttShorter ) ;
+                etThread.delF( tin0P , psttShorter ) ;
                 tShorter = T(psttShorter) ;
-                etThread.delF( tinBaseP , psttnu ) ;
-                if( etThread.strCompareF( tinBaseP , psttnu , tData ) ) { BLAMMO ; } 
-                etThread.strBisectF( tinBaseP , psttShorter , psttnu , tShort , tDot , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShorter ) ;
+                etThread.delF( tin0P , psttnu ) ;
+                if( etThread.strCompareF( tin0P , psttnu , tData ) ) { BLAMMO ; } 
+                etThread.strBisectF( tin0P , psttShorter , psttnu , tShort , tDot , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShorter ) ;
                 ZE( strokeS* , psttnu ) ;
                 ZE( strokeS* , psttShorter ) ;
             {
             TN( tShorter , "" ) ;
 
-            //etThread.traceF( tinBaseP , tShort ) ;
+            //etThread.traceF( tin0P , tShort ) ;
         {
         else
         }
@@ -69,11 +69,11 @@ while( ~hFind && !POOP && !ether ) ;
         if( bDir )
 
         }
-            etThread.delF( tinBaseP , psttShort ) ;
-            etThread.delF( tinBaseP , psttPath ) ;
+            etThread.delF( tin0P , psttShort ) ;
+            etThread.delF( tin0P , psttPath ) ;
             tShort = T(psttShort) ;
             tPath  = T(psttPath) ;
-            etThread.strBisectF( tinBaseP , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+            etThread.strBisectF( tin0P , psttPath , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
             ZE( strokeS* , psttShort ) ;
             ZE( strokeS* , psttPath ) ;
         {
@@ -82,7 +82,7 @@ while( ~hFind && !POOP && !ether ) ;
 
         const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
 
-        //etRock.traceF( tinBaseP , T("cloudC: [file]: ")+tIfoName ) ;
+        //etRock.traceF( tin0P , T("cloudC: [file]: ")+tIfoName ) ;
         TN( tIfoName , pInfo->psttIfoName ) ;
     {
     else
@@ -92,11 +92,11 @@ while( ~hFind && !POOP && !ether ) ;
     {
     if( !pInfo || !pInfo->psttIfoName )
 
-    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ;
+    etThread.diskFindFileOrDirOldF( tin0P , pInfo , hFind , tLike ) ;
     ZE( infoFileS* , pInfo ) ;
 {
 do
-handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 TN( tLike , "///d/archive/*.data" ) ;
 TN( tSlash , "/" ) ;
 TN( tDot , "." ) ;

@@ -15,10 +15,10 @@
 
         }
             break ;
-            etRock.traceF( tinBaseP , T("marker: \"")+tMarkerP+T("\"") ) ;
+            etRock.traceF( tin0P , T("marker: \"")+tMarkerP+T("\"") ) ;
             tMarkerP = T(postShort) ;
 
-            ether.delF( tinBaseP , postBody ) ;
+            ether.delF( tin0P , postBody ) ;
             }
                 }
                     }
@@ -28,7 +28,7 @@
                                     }
                                         }
                                             }
-                                                ((keyValuePairsC*)pb_kvFileMetaByNameRemote)->newF( tinBaseP , LF , postReversedBits , 0 , costo * SB , (byteT*)&meta , sizeof meta ) ;
+                                                ((keyValuePairsC*)pb_kvFileMetaByNameRemote)->newF( tin0P , LF , postReversedBits , 0 , costo * SB , (byteT*)&meta , sizeof meta ) ;
                                                 cGot ++ ;
 
                                                 countT costo = posto - postReversedBits ;
@@ -38,10 +38,10 @@
                                                 byteT* posti = postShort ;
                                                 osTextT postReversedBits[ sizeof postShort ] ; // TOCK TO AVOID LIMITING FILE NAME LENGTH ; THIS COULD BE ALLOCATED FROM THE POOL TO LENGTH OF postHead STRING
 
-                                                etRock.traceF( tinBaseP , T("remoteFile: ")+T(postShort) , flTRACE_null , ifcIDtRACEdIVERT_8 ) ; //U:: SUPPRESS THIS UNLESS FLAG IS SET BY THE CONSTRUCTOR CALLER
+                                                etRock.traceF( tin0P , T("remoteFile: ")+T(postShort) , flTRACE_null , ifcIDtRACEdIVERT_8 ) ; //U:: SUPPRESS THIS UNLESS FLAG IS SET BY THE CONSTRUCTOR CALLER
                                             {
                                             else
-                                            if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / impotent, so not adding to kvFileMetaByNameRemote") ) ;
+                                            if( POOP ) etRock.traceF( tin0P , T("listFilesF / impotent, so not adding to kvFileMetaByNameRemote") ) ;
                                             //THIS IS THE POINT OF NO RETURN SINCE I AM ABOUT TO MODIFY btP ; IF POOP OCCURS, THERE'S NO WAY FOR ME TO CLEAN UP
 
                                             }
@@ -59,30 +59,30 @@
                                                                 // b780cb58f1e55912cac006cb7594edac
                                                             {
                                                             else
-                                                            if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / length of hash is not 02") ) ;
+                                                            if( POOP ) etRock.traceF( tin0P , T("listFilesF / length of hash is not 02") ) ;
 
-                                                            __( thirdC::c_strlenIF( tinBaseP , postc ) - 0x20 ) ;
+                                                            __( thirdC::c_strlenIF( tin0P , postc ) - 0x20 ) ;
                                                             *poste = 0 ;
                                                         {
                                                         else
-                                                        if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / could not find trailing double quote for hash") ) ;
+                                                        if( POOP ) etRock.traceF( tin0P , T("listFilesF / could not find trailing double quote for hash") ) ;
 
                                                         __Z( poste ) ;
-                                                        osTextT* poste = thirdC::c_strstrIF( tinBaseP , postc , "\"" ) ;
+                                                        osTextT* poste = thirdC::c_strstrIF( tin0P , postc , "\"" ) ;
                                                         postc ++ ;
                                                     {
                                                     else
-                                                    if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / woth nonblank in hash is not double quote") ) ;
+                                                    if( POOP ) etRock.traceF( tin0P , T("listFilesF / woth nonblank in hash is not double quote") ) ;
 
                                                     __NZ( *postc != '"' ) ;
                                                     while( *postc == ' ' ) postc ++ ;
                                                     postc += sizeof postKey - 1 ;
                                                 {
                                                 else
-                                                if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / could not find \"hash\" key") ) ;
+                                                if( POOP ) etRock.traceF( tin0P , T("listFilesF / could not find \"hash\" key") ) ;
 
                                                 __Z( postc ) ;
-                                                osTextT* postc = thirdC::c_strstrIF( tinBaseP , postSet , postKey ) ;
+                                                osTextT* postc = thirdC::c_strstrIF( tin0P , postSet , postKey ) ;
                                                 osTextT postKey[] = "\"hash\":" ;
                                             {
                                         {
@@ -111,19 +111,19 @@
                                                 postc += sizeof postKey - 1 ;
                                             {
                                             else
-                                            if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / could not find \"bytes\" key") ) ;
+                                            if( POOP ) etRock.traceF( tin0P , T("listFilesF / could not find \"bytes\" key") ) ;
 
                                             __Z( postc ) ;
-                                            osTextT* postc = thirdC::c_strstrIF( tinBaseP , postSet , postKey ) ;
+                                            osTextT* postc = thirdC::c_strstrIF( tin0P , postSet , postKey ) ;
                                             osTextT postKey[] = "\"bytes\":" ;
                                         {
-                                        metaS meta( tinBaseP ) ;
+                                        metaS meta( tin0P ) ;
                                     {
                                     if( !bIgnoreName )
 
                                     }
                                         if( bIgnoreName ) cGot ++ ;
-                                        bIgnoreName = !ether.strFileMatchF( tinBaseP , psttLikeP , T(postShort) ) ;
+                                        bIgnoreName = !ether.strFileMatchF( tin0P , psttLikeP , T(postShort) ) ;
                                     {
                                     if( !bIgnoreName && psttLikeP && psttLikeP->idAdam )
 
@@ -131,30 +131,30 @@
                                         }
                                             }
                                                 }
-                                                    thirdC::c_strncpyIF( tinBaseP , postShort , postc , sizeof postShort ) ;
+                                                    thirdC::c_strncpyIF( tin0P , postShort , postc , sizeof postShort ) ;
                                                     *poste = 0 ;
                                                 {
                                                 else if( !bIgnoreName )
-                                                if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / could not find trailing double quote for name") ) ;
+                                                if( POOP ) etRock.traceF( tin0P , T("listFilesF / could not find trailing double quote for name") ) ;
 
                                                 __Z( poste ) ;
-                                                osTextT* poste = thirdC::c_strstrIF( tinBaseP , postc , "\"" ) ;
+                                                osTextT* poste = thirdC::c_strstrIF( tin0P , postc , "\"" ) ;
                                                 postc ++ ;
                                             {
                                             else
-                                            if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / woth nonblank in name is not double quote") ) ;
+                                            if( POOP ) etRock.traceF( tin0P , T("listFilesF / woth nonblank in name is not double quote") ) ;
 
                                             __NZ( *postc != '"' ) ;
                                             while( *postc == ' ' ) postc ++ ;
                                             postc += sizeof postKey - 1 ;
                                         {
                                         else
-                                        if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / could not find \"name\" key") ) ;
+                                        if( POOP ) etRock.traceF( tin0P , T("listFilesF / could not find \"name\" key") ) ;
 
-                                        bIgnoreName = !!thirdC::c_strstrIF( tinBaseP , postSet , postKeyIgnore ) ;
+                                        bIgnoreName = !!thirdC::c_strstrIF( tin0P , postSet , postKeyIgnore ) ;
 
                                         __Z( postc ) ;
-                                        osTextT* postc = thirdC::c_strstrIF( tinBaseP , postSet , postKey ) ;
+                                        osTextT* postc = thirdC::c_strstrIF( tin0P , postSet , postKey ) ;
                                     {
                                     ZE( boolT , bIgnoreName ) ;
 
@@ -170,15 +170,15 @@
                                     *poste = 0 ;
                                 {
                                 else
-                                if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / could not find close curly bracket") ) ;
+                                if( POOP ) etRock.traceF( tin0P , T("listFilesF / could not find close curly bracket") ) ;
 
                                 __Z( poste ) ;
-                                osTextT* poste = thirdC::c_strstrIF( tinBaseP , postSet , "}" ) ;
+                                osTextT* poste = thirdC::c_strstrIF( tin0P , postSet , "}" ) ;
 
                                 postSet ++ ;
 
                                 if( !postSet ) break ;
-                                osTextT* postSet = thirdC::c_strstrIF( tinBaseP , postc , "{" ) ;
+                                osTextT* postSet = thirdC::c_strstrIF( tin0P , postc , "{" ) ;
                             {
                             while( !POOP && postc && *postc )
                             osTextT postKeyIgnore[] = "\"content_type\": \"application/directory\"" ;
@@ -190,18 +190,18 @@
 
                             }
                                 }
-                                    etRock.traceF( tinBaseP , T("listFilesF / if this is in a file name, please rename the file to eliminate square (and curly) brackets") ) ;
-                                    etRock.traceF( tinBaseP , T("dump: ")+T(postDump) ) ;
+                                    etRock.traceF( tin0P , T("listFilesF / if this is in a file name, please rename the file to eliminate square (and curly) brackets") ) ;
+                                    etRock.traceF( tin0P , T("dump: ")+T(postDump) ) ;
                                     if( postDump < postSets ) postDump = postSets ;
                                     osTextT* postDump = postv - 0x20 ;
-                                    etRock.traceF( tinBaseP , T("listFilesF / unexpected close square bracket encountered in:") ) ;
+                                    etRock.traceF( tin0P , T("listFilesF / unexpected close square bracket encountered in:") ) ;
                                 {
                                 if( poste - postv )
-                                osTextT* postv = thirdC::c_strstrIF( tinBaseP , postSets , "]" ) ;
+                                osTextT* postv = thirdC::c_strstrIF( tin0P , postSets , "]" ) ;
                             {
                         {
                         else
-                        if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / lath character in body is not close square bracket") ) ;
+                        if( POOP ) etRock.traceF( tin0P , T("listFilesF / lath character in body is not close square bracket") ) ;
 
                         __( *poste - ']' ) ;
 
@@ -209,15 +209,15 @@
                         postSets ++ ;
                     {
                     else
-                    if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / the woth open square bracket is not exactly at the beginning of the body as expected") ) ;
+                    if( POOP ) etRock.traceF( tin0P , T("listFilesF / the woth open square bracket is not exactly at the beginning of the body as expected") ) ;
 
                     __( postSets - postBody ) ;
                 {
                 else
-                if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / could not find open square bracket") ) ;
+                if( POOP ) etRock.traceF( tin0P , T("listFilesF / could not find open square bracket") ) ;
 
                 __Z( postSets ) ;
-                osTextT* postSets = thirdC::c_strstrIF( tinBaseP , postBody , "[" ) ;
+                osTextT* postSets = thirdC::c_strstrIF( tin0P , postBody , "[" ) ;
 
                 //    ]
                 //        }
@@ -254,10 +254,10 @@
                 }
                     continue ;
 
-                    etPrime.osSleepF( tinBaseP , TOCK << 4 ) ;
-                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    etPrime.osSleepF( tin0P , TOCK << 4 ) ;
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                    etRock.traceF( tinBaseP , T("listFilesF 2 / connect, write, or read failed / will retry after napping for 01 tock") ) ;
+                    etRock.traceF( tin0P , T("listFilesF 2 / connect, write, or read failed / will retry after napping for 01 tock") ) ;
 
                     POOPR
                 {
@@ -268,7 +268,7 @@
                         cDo   -= costBite ;
                         posti += costBite ;
                         __Z( costBite ) ;
-                        countT costBite = ss.readF( tinBaseP , posti , cDo ) ;
+                        countT costBite = ss.readF( tin0P , posti , cDo ) ;
                     {
                     while( !POOP && cDo )
                     countT cDo = costBody ;
@@ -278,11 +278,11 @@
                 postBody[ costBody ] = 0 ;
             {
             else
-            if( POOP ) etRock.traceF( tinBaseP , T("listFilesF / could not get pool drop") ) ;
+            if( POOP ) etRock.traceF( tin0P , T("listFilesF / could not get pool drop") ) ;
             osTextT postShort[ TUCK ] = "" ;
 
             __Z( postBody ) ;
-            ether.newF( tinBaseP , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
+            ether.newF( tin0P , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
             ZE( osTextT* , postBody ) ;
 
             }
@@ -296,33 +296,33 @@
                     postc += sizeof postTag - 1 ;
                 {
                 if( postc )
-                postc = thirdC::c_strstrIF( tinBaseP , postHead , postTag ) ;
+                postc = thirdC::c_strstrIF( tin0P , postHead , postTag ) ;
 
                 osTextT postTag[] = "\r\nContent-Length:" ;
 
                 }
                     continue ;
 
-                    etPrime.osSleepF( tinBaseP , TOCK << 4 ) ;
-                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    etPrime.osSleepF( tin0P , TOCK << 4 ) ;
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                    etRock.traceF( tinBaseP , T("listFilesF 1 / suggestion: verify that this container exists:    ")+T(psttCloudContainerP) ) ;
-                    etRock.traceF( tinBaseP , T("listFilesF 1 / unexpected reply code / will retry after napping for 01 tock") ) ;
-                    etRock.traceF( tinBaseP , T(postHead) ) ;
+                    etRock.traceF( tin0P , T("listFilesF 1 / suggestion: verify that this container exists:    ")+T(psttCloudContainerP) ) ;
+                    etRock.traceF( tin0P , T("listFilesF 1 / unexpected reply code / will retry after napping for 01 tock") ) ;
+                    etRock.traceF( tin0P , T(postHead) ) ;
 
                     POOPR
                 {
                 if( POOP )
-                __NZ( thirdC::c_memcmpIF( tinBaseP , postHead , tReplyCode200_OK , tReplyCode200_OK.csF( tinBaseP ) ) ) ;
+                __NZ( thirdC::c_memcmpIF( tin0P , postHead , tReplyCode200_OK , tReplyCode200_OK.csF( tin0P ) ) ) ;
 
-                if( !thirdC::c_memcmpIF( tinBaseP , postHead , tReplyCode204_NoContent , tReplyCode204_NoContent.csF( tinBaseP ) ) ) break ;
+                if( !thirdC::c_memcmpIF( tin0P , postHead , tReplyCode204_NoContent , tReplyCode204_NoContent.csF( tin0P ) ) ) break ;
 
                 }
                     break ;
-                    etRock.traceF( tinBaseP , T("authorization refused") ) ;
+                    etRock.traceF( tin0P , T("authorization refused") ) ;
                 {
                 if( POOP )
-                __Z( thirdC::c_memcmpIF( tinBaseP , tReplyCode401_Unauthorized , postHead , tReplyCode401_Unauthorized.csF( tinBaseP ) ) ) ;
+                __Z( thirdC::c_memcmpIF( tin0P , tReplyCode401_Unauthorized , postHead , tReplyCode401_Unauthorized.csF( tin0P ) ) ) ;
 
                 //LOGrAW( "\r\n---------------------------------------------------------------------------------------------\r\n" ) ;
                 //LOGrAW( postHead ) ; //U:: TO FIND A BUG
@@ -331,10 +331,10 @@
                 }
                     continue ;
 
-                    etPrime.osSleepF( tinBaseP , TOCK << 4 ) ;
-                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    etPrime.osSleepF( tin0P , TOCK << 4 ) ;
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                    etRock.traceF( tinBaseP , T("listFilesF 1 / connect, write, or read failed / will retry after napping for 01 tock") ) ;
+                    etRock.traceF( tin0P , T("listFilesF 1 / connect, write, or read failed / will retry after napping for 01 tock") ) ;
 
                     POOPR
                 {
@@ -351,50 +351,50 @@
                     {
                     if( postc - postHead >= 3 && postc[ 0 ] == '\n' && postc[ - 1 ] == '\r' && postc[ - 2 ] == '\n' && postc[ - 3 ] == '\r' )
                 {
-                while( postc < poste && ss.readF( tinBaseP , postc , 1 ) )
+                while( postc < poste && ss.readF( tin0P , postc , 1 ) )
                 ZE( boolT , bGotHead ) ;
 
                 osTextT* poste = postHead + sizeof postHead - 1 ;
                 osTextT* postc = postHead ;
 
-                thirdC::c_memsetIF( tinBaseP , postHead , sizeof postHead ) ;
+                thirdC::c_memsetIF( tin0P , postHead , sizeof postHead ) ;
                 osTextT postHead[ TOCK ] ; 
             {
             ZE( countT , costBody ) ;
             //LOAD THE REPLY HEADER
 
-            ss.writeF( tinBaseP , (osTextT*)tSay , (countT)tSay.csF( tinBaseP ) ) ;
+            ss.writeF( tin0P , (osTextT*)tSay , (countT)tSay.csF( tin0P ) ) ;
 
             //LOGrAW( "\r\n---------------------------------------------------------------------------------------------\r\n" ) ;
             //LOGrAW( tSay ) ; //U:: TO FIND A BUG
             //LOGrAW( "\r\n---------------------------------------------------------------------------------------------\r\n" ) ;
 
-            etRock.traceF( tinBaseP , T(POOP?"listFilesF / could not connect to \"":"listFilesF / connected to \"")+tHost+T("\"") ) ;
-            ss.connectF( tinBaseP , 443 , socketC::nicNameIF( tinBaseP , etScratch , tHost ) ) ;
-            etRock.traceF( tinBaseP , T("listFilesF / connecting to \"")+tHost+T("\"") ) ;
-            socketC ss( tinBaseP , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+            etRock.traceF( tin0P , T(POOP?"listFilesF / could not connect to \"":"listFilesF / connected to \"")+tHost+T("\"") ) ;
+            ss.connectF( tin0P , 443 , socketC::nicNameIF( tin0P , etScratch , tHost ) ) ;
+            etRock.traceF( tin0P , T("listFilesF / connecting to \"")+tHost+T("\"") ) ;
+            socketC ss( tin0P , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
         {
         while( !etPrime && !ether && !POOP )
         const countT idIn = ++ idInLath ;
         static countT idInLath ;
 
-        etherC& etPrime   = etherC::etPrimeIF( tinBaseP ) ;
-        etherC& etScratch = *((tin9S&)tinBaseP).pEtScratch ;
+        etherC& etPrime   = etherC::etPrimeIF( tin0P ) ;
+        etherC& etScratch = *((tin9S&)tin0P).pEtScratch ;
         SCOOPS
     {
     IFsCRATCH
     ZE( countT , cGot ) ; // INCLUDES ITEMS FILTERED OUT BY FAILING TO MATCH psttLikeP
 
-    //etRock.traceF( tinBaseP , tSay ) ;
-    etherC& etRock = etherC::etRockIF( tinBaseP ) ;
+    //etRock.traceF( tin0P , tSay ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     }
-        bHandle.ungrabF( tinBaseP ) ;
+        bHandle.ungrabF( tin0P ) ;
         tSay += T(" HTTP/1.1\r\nHost: ")+tHost+T("\r\nX-Auth-Token: ")+cloudInfo.tRackspaceAccessToken+T("\r\n\r\n") ;
         cloudInfoS& cloudInfo = *(cloudInfoS*)hCloud.osF( ifcIDtYPEhANDLE_CLOUD ) ;
-        bHandle.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bHandle.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-        ether.delF( tinBaseP , psttMarkerEncoded ) ;
+        ether.delF( tin0P , psttMarkerEncoded ) ;
         if( psttMarkerEncoded ) tSay += T("&marker=")+T(psttMarkerEncoded) ;
         tSay = T("GET ")+tUrlCloudAgent+T("/")+T(psttCloudContainerP)+T("?format=json") ;
 
@@ -403,7 +403,7 @@
         // GET /v1/MossoCloudFS_0672d7fa-9f85-4a81-a3ab-adb66a880123/test HTTP/1.1
         // EXAMPLE OF QUERY (NO BODY IS SENT)
 
-        if( tMarkerP.csF( tinBaseP ) ) { ether.strToUrlF( tinBaseP , psttMarkerEncoded , tMarkerP ) ; ___( psttMarkerEncoded ) ; }
+        if( tMarkerP.csF( tin0P ) ) { ether.strToUrlF( tin0P , psttMarkerEncoded , tMarkerP ) ; ___( psttMarkerEncoded ) ; }
         ZE( strokeS* , psttMarkerEncoded ) ;
     {
     TN( tSay , "" ) ;
@@ -417,7 +417,7 @@
 
     SCOOP
 {
-/*1*/countT cloudC::listFilesF( tin0S& tinBaseP , const strokeS* const psttCloudContainerP , textC& tMarkerP , const strokeS* const psttLikeP , const countT cbMinP , const countT cbMaxP )/*1*/
+/*1*/countT cloudC::listFilesF( tin0S& tin0P , const strokeS* const psttCloudContainerP , textC& tMarkerP , const strokeS* const psttLikeP , const countT cbMinP , const countT cbMaxP )/*1*/
 
 /**/
 */

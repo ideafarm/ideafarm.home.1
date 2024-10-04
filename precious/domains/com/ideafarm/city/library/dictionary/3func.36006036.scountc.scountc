@@ -8,12 +8,12 @@
 
 
 }
-    setBitRangeF( tinBaseP , pc , cbit , cbitOld - 1 ) ;
-    cbit = cbitF( tinBaseP , pc , cbit ) ;
+    setBitRangeF( tin0P , pc , cbit , cbitOld - 1 ) ;
+    cbit = cbitF( tin0P , pc , cbit ) ;
     countT cbitOld = cbit ;
-    ether.memCopyF( tinBaseP , (byteT*)pc , (byteT*)pcP , cBytes ) ;
-    ether.memSetF( tinBaseP , (byteT*)pc , cWords * (SC/SB) ) ;
-    ether.newF( tinBaseP , LF , pc , cWords ) ; ___( pc ) ;
+    ether.memCopyF( tin0P , (byteT*)pc , (byteT*)pcP , cBytes ) ;
+    ether.memSetF( tin0P , (byteT*)pc , cWords * (SC/SB) ) ;
+    ether.newF( tin0P , LF , pc , cWords ) ; ___( pc ) ;
     countT cWords = 1 + cbit / SC ; // A "word" HERE IS THE SIZE OF countT
     countT cBytes = 1 + cbit / SB ;
     _IO_
@@ -36,7 +36,7 @@
 pc( 0 )
 cbit( cbitP ) ,
 ether( etherP ) ,
-/**//*1*/sCountC::sCountC( tin0S& tinBaseP , etherC& etherP , const countT* pcP , const countT cbitP )/*1*/ :
+/**//*1*/sCountC::sCountC( tin0S& tin0P , etherC& etherP , const countT* pcP , const countT cbitP )/*1*/ :
 */
  cbitP
  pcP

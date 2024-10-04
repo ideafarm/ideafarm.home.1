@@ -9,41 +9,41 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 #endif
 
-etThread.traceF( tinBaseP , T("time look: ")+TTF(timeWrittenLook.time1,timeWrittenLook.time2) ) ;
+etThread.traceF( tin0P , T("time look: ")+TTF(timeWrittenLook.time1,timeWrittenLook.time2) ) ;
 }
-    thirdC::getFileTimeIF( tinBaseP , fir , &timeWrittenLook , 0 , 0 ) ;
-    fileC fir( tinBaseP , (strokeS*)tBox , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+    thirdC::getFileTimeIF( tin0P , fir , &timeWrittenLook , 0 , 0 ) ;
+    fileC fir( tin0P , (strokeS*)tBox , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
 {
 timeWrittenLook  = timeS() ;
 
 }
-    ((thirdC&)etThread).setFileTimeF( tinBaseP , fiw , &timeWrittenLook , &timeWrittenLook , &timeWrittenLook ) ;
-    fileC fiw( tinBaseP , (strokeS*)tBox , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+    ((thirdC&)etThread).setFileTimeF( tin0P , fiw , &timeWrittenLook , &timeWrittenLook , &timeWrittenLook ) ;
+    fileC fiw( tin0P , (strokeS*)tBox , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
 {
 
-etThread.traceF( tinBaseP , T("time look: ")+TTF(timeWrittenLook.time1,timeWrittenLook.time2) ) ;
+etThread.traceF( tin0P , T("time look: ")+TTF(timeWrittenLook.time1,timeWrittenLook.time2) ) ;
 }
-    thirdC::getFileTimeIF( tinBaseP , fir , &timeWrittenLook , 0 , 0 ) ;
-    fileC fir( tinBaseP , (strokeS*)tBox , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+    thirdC::getFileTimeIF( tin0P , fir , &timeWrittenLook , 0 , 0 ) ;
+    fileC fir( tin0P , (strokeS*)tBox , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
 {
 timeS timeWrittenLook  = timeS() ;
 
-etThread.boxPutF( tinBaseP , tBox , "abcd" , 4 ) ;
+etThread.boxPutF( tin0P , tBox , "abcd" , 4 ) ;
 TN( tBox , "///d/tmp/xoo.ttt" ) ;
 
 #else
 
-etThread.traceF( tinBaseP , T("time now (verify): ")+TTF(timeNS1,timeNS2) ) ;
-thirdC::osTimeFromOldTimeIF( tinBaseP , timeV1 , timeV2 , y_s , m_s , d_s , hh_s , mm_s , ss_s , ms_s , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+etThread.traceF( tin0P , T("time now (verify): ")+TTF(timeNS1,timeNS2) ) ;
+thirdC::osTimeFromOldTimeIF( tin0P , timeV1 , timeV2 , y_s , m_s , d_s , hh_s , mm_s , ss_s , ms_s , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
 ZE( sCountT , timeV2 ) ;
 ZE( countT , timeV1 ) ;
 
-thThread.osTimeToOldTimeF( tinBaseP , ms_s , ss_s , mm_s , hh_s , d_s , m_s , y_s , dow_s , timeNS1 , timeNS2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+thThread.osTimeToOldTimeF( tin0P , ms_s , ss_s , mm_s , hh_s , d_s , m_s , y_s , dow_s , timeNS1 , timeNS2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
 static ZE( countT , dow_s ) ;
 static ZE( sCountT , y_s ) ;
 static ZE( countT , m_s ) ;
@@ -53,7 +53,7 @@ static ZE( countT , mm_s ) ;
 static ZE( countT , ss_s ) ;
 static ZE( countT , ms_s ) ;
 
-thThread.osTimeToOldTimeF( tinBaseP , ms_q , ss_q , mm_q , hh_q , d_q , m_q , y_q , dow_q , timeNQ1 , timeNQ2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
+thThread.osTimeToOldTimeF( tin0P , ms_q , ss_q , mm_q , hh_q , d_q , m_q , y_q , dow_q , timeNQ1 , timeNQ2 , flOStIMEfROMoLDtIME_OLDtIMEiSutc ) ;
 static ZE( countT , dow_q ) ;
 static ZE( sCountT , y_q ) ;
 static ZE( countT , m_q ) ;
@@ -67,13 +67,13 @@ thirdC& thThread = etThread ;
 
 #if defined( NEVERdEFINED )
 
-etThread.traceF( tinBaseP , T("time now (sloow):  ")+TTF(timeNS1,timeNS2) ) ;
-((thirdC&)etThread).osTimeNowF( tinBaseP , timeNS1 , timeNS2 , 1 ) ;
+etThread.traceF( tin0P , T("time now (sloow):  ")+TTF(timeNS1,timeNS2) ) ;
+((thirdC&)etThread).osTimeNowF( tin0P , timeNS1 , timeNS2 , 1 ) ;
 ZE( sCountT , timeNS2 ) ;
 ZE( countT , timeNS1 ) ;
 
-etThread.traceF( tinBaseP , T("time now (quick):  ")+TTF(timeNQ1,timeNQ2) ) ;
-etThread.osTimeNowF( tinBaseP , timeNQ1 , timeNQ2 ) ;
+etThread.traceF( tin0P , T("time now (quick):  ")+TTF(timeNQ1,timeNQ2) ) ;
+etThread.osTimeNowF( tin0P , timeNQ1 , timeNQ2 ) ;
 ZE( sCountT , timeNQ2 ) ;
 ZE( countT , timeNQ1 ) ;
 

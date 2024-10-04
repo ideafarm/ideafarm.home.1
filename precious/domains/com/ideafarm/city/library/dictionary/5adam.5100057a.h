@@ -11,8 +11,8 @@
 }
     plateC& operator +=( plateC& plateP ) ;
     operator const strokeS*( voidT ) ;
-    datumSessionC( tin0S& tinBaseP , etherC& etherP , soulC& soulP ) ;
-    datumSessionC( tin0S& tinBaseP ) ;
+    datumSessionC( tin0S& tin0P , etherC& etherP , soulC& soulP ) ;
+    datumSessionC( tin0S& tin0P ) ;
     PLATEcsTANDARDdECLARATIONS( datumSessionC )
     static voidT setModeF( const boolT bReverseP = 0 ) ;
 
@@ -51,8 +51,8 @@ class datumSessionC : public plateC
     inline const strokeS* psttUrlF(     voidT ) const { return psttUrl ; }
     plateC& operator +=( plateC& plateP ) ;
     operator const strokeS*( voidT ) ;
-    datumPeanutC( tin0S& tinBaseP , etherC& etherP , soulC& soulP ) ;
-    datumPeanutC( tin0S& tinBaseP ) ;
+    datumPeanutC( tin0S& tin0P , etherC& etherP , soulC& soulP ) ;
+    datumPeanutC( tin0S& tin0P ) ;
     PLATEcsTANDARDdECLARATIONS( datumPeanutC )
     static voidT setModeF( const boolT bUrlOnlyP = 0 ) ;
 
@@ -79,8 +79,8 @@ class datumPeanutC : public plateC
     inline const strokeS* psttOldCountryF(  voidT ) const { return psttOldCountry  ; }
     plateC& operator +=( plateC& plateP ) ;
     operator const strokeS*( voidT ) ;
-    datumEmailZipC( tin0S& tinBaseP , etherC& etherP , soulC& soulP ) ;
-    datumEmailZipC( tin0S& tinBaseP ) ;
+    datumEmailZipC( tin0S& tin0P , etherC& etherP , soulC& soulP ) ;
+    datumEmailZipC( tin0S& tin0P ) ;
     PLATEcsTANDARDdECLARATIONS( datumEmailZipC )
     static voidT setModeF( const countT idSortModeP = idMODEeMAILzIPsORT_eMAILzIPnOTE ) ;
 
@@ -104,14 +104,14 @@ class datumEmailZipC : public plateC
             ? - 1                                                                           \
         : datum.psttP                                                                       \
             : 1                                                                             \
-            ? ether.strCompareF( tinBaseP , psttP , datum.psttP )                               \
+            ? ether.strCompareF( tin0P , psttP , datum.psttP )                               \
         ? datum.psttP                                                                       \
     scSgn = psttP                                                                           \
                                                                                             \
 #define COMPARE(psttP)                                                                      \
 
-    if( datum.psttP ) { ether.strMakeF( tinBaseP , LF , psttP , datum.psttP ) ; ___( psttP ) ; }
-    ether.delF( tinBaseP , psttP ) ;                                                            \
+    if( datum.psttP ) { ether.strMakeF( tin0P , LF , psttP , datum.psttP ) ; ___( psttP ) ; }
+    ether.delF( tin0P , psttP ) ;                                                            \
                                                                                             \
 #define SETsTRING(psttP)                                                                    \
 

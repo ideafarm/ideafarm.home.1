@@ -11,7 +11,7 @@
     return bMade ;
     _OUTbATONsTACKc_
 
-    //validateF( tinBaseP ) ; //U::REMOVE THIS WHEN CONFIDENT; THIS IS EXPENSIVE
+    //validateF( tin0P ) ; //U::REMOVE THIS WHEN CONFIDENT; THIS IS EXPENSIVE
 
     }
         }
@@ -63,26 +63,26 @@
                 {
                 if( ppTab && pcTabIdSlot )
                 }
-                    third.c_memsetIF( tinBaseP , (byteT*)pcTabIdSlot , cTabs * sizeof( countT ) ) ;
+                    third.c_memsetIF( tin0P , (byteT*)pcTabIdSlot , cTabs * sizeof( countT ) ) ;
                     _IO_
                 {
                 }
-                    third.c_memsetIF( tinBaseP , (byteT*)ppTab         , cTabs * sizeof( countT ) ) ;
+                    third.c_memsetIF( tin0P , (byteT*)ppTab         , cTabs * sizeof( countT ) ) ;
                     _IO_
                 {
                 }
-                    third.newF( tinBaseP , LF , pcTabIdSlot     , cTabs ) ; ___CT( pcTabIdSlot ) ;
+                    third.newF( tin0P , LF , pcTabIdSlot     , cTabs ) ; ___CT( pcTabIdSlot ) ;
                     _IO_
                 {
                 }
-                    third.newF( tinBaseP , LF , *(countT**)&ppTab , cTabs ) ; ___CT( ppTab ) ;
+                    third.newF( tin0P , LF , *(countT**)&ppTab , cTabs ) ; ___CT( ppTab ) ;
                     _IO_
                 {
                 _IO_
             {
             if( cTabs )
-            third.delF( tinBaseP , pcTabIdSlot ) ;
-            third.delF( tinBaseP , *(countT**)&ppTab ) ;
+            third.delF( tin0P , pcTabIdSlot ) ;
+            third.delF( tin0P , *(countT**)&ppTab ) ;
             cTabs = cPlates / cPlatesPerTab ;
             countT cPlatesPerTab = 0x10 ;
             cTabAge = 0 ;
@@ -95,7 +95,7 @@
     if( !third && F(flagsState) & flSTACKsTATE_MAINTAINtABS )
     ZE( boolT , bMade ) ;
 
-    //validateF( tinBaseP ) ; //U::REMOVE THIS WHEN CONFIDENT; THIS IS EXPENSIVE
+    //validateF( tin0P ) ; //U::REMOVE THIS WHEN CONFIDENT; THIS IS EXPENSIVE
 
     _INbATONsTACKc_
 
@@ -104,7 +104,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/boolT stackC::newTabsIfF( tin0S& tinBaseP , plateS* ppNewDelP , const boolT bDelP )/*1*/
+/*1*/boolT stackC::newTabsIfF( tin0S& tin0P , plateS* ppNewDelP , const boolT bDelP )/*1*/
 
 // pcTabIdSlot[ ii ] IS THE NUMBER OF PLATES AT OR ABOVE TAB ii, I.E. THE idSlot OF THE TABBED PLATE
 
@@ -112,7 +112,7 @@
 */
   the plate that has just been added or removed
  ppNewDelP
- tinBaseP
+ tin0P
 arguments
  call me after the new plate has been added to the chain
 i must not be called between the time that newPlateF is called and the time that the new plate is added to the chain

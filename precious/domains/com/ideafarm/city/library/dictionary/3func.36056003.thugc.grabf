@@ -11,12 +11,12 @@
     osTidGrabber = osTidMe ;
     if( bMeFrustrated ) dec02AM( cFrustratedGrabbers ) ;
 
-    thirdC::dosPriorityIF( tinBaseP , idDesireSave ) ;
+    thirdC::dosPriorityIF( tin0P , idDesireSave ) ;
 
-    ((tin9S&)tinBaseP).cYield = 0 ;
+    ((tin9S&)tin0P).cYield = 0 ;
     }
         }
-            ++ s ; thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ++ s ; thirdC::osThreadYieldIF( tin0P , TAG( TAGiDnULL ) ) ;
 
             }
                 bMeFrustrated = 1 ;
@@ -25,22 +25,22 @@
             if( cTries == TOCK )
         {
         while( setIfZeAM( bGrabbed , 1 ) )
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     ZE( boolT , bMeFrustrated ) ;
     ZE( countT , cTries ) ;
 
     }
-        ++ s ; thirdC::osThreadYieldIF( tinBaseP , TAG( TAGiDnULL ) ) ; //IF A THREAD IS FRUSTRATED THEN ALL THREADS MUST SLEEP BEFORE ATTEMPTING TO GRAB
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; thirdC::osThreadYieldIF( tin0P , TAG( TAGiDnULL ) ) ; //IF A THREAD IS FRUSTRATED THEN ALL THREADS MUST SLEEP BEFORE ATTEMPTING TO GRAB
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     if( cFrustratedGrabbers )
     if( osTidMe == osTidGrabber ) BLAMMO ; //RECURSIVE GRAB
     countT osTidMe = osTidIF() ;
 
-    ((tin9S&)tinBaseP).cYield = 0 ;
-    thirdC::dosPriorityIF( tinBaseP , ifcTHREADpRIORITY_SPINLOCK ) ;
-    const countT idDesireSave = thirdC::dosPriorityIF( tinBaseP ) ;
+    ((tin9S&)tin0P).cYield = 0 ;
+    thirdC::dosPriorityIF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
+    const countT idDesireSave = thirdC::dosPriorityIF( tin0P ) ;
 
     TINSL
 {

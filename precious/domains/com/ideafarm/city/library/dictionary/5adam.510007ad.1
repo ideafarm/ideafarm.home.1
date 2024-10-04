@@ -9,7 +9,7 @@
                             
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
 etThread.osThreadF( TaRG1( tmSayF ) ) ;
 
@@ -22,55 +22,55 @@ DONE( tmHearF )
 
 }
     }
-        etThread.traceF( tinBaseP , T("yippee! [nnWo]:    ")+T(nnWo)+T(nnWo.isIPv4F()?"    IPv4":"    IPv6") ) ;
+        etThread.traceF( tin0P , T("yippee! [nnWo]:    ")+T(nnWo)+T(nnWo.isIPv4F()?"    IPv4":"    IPv6") ) ;
         soulNicNameIn >> nnWo ;
         nicNameC nnWo ;
     {
     while( soulNicNameIn )
 
-    etThread.traceF( tinBaseP , T("called readF [nnHe,idpHe]:    ")+T(nnHe)+T("    ")+TF2(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    socki.readF( tinBaseP , soulNicNameIn , idpHe , nnHe , 0 , 0 ) ;
-    soulC soulNicNameIn( tinBaseP , TAG( TAGiDnULL ) ) ;
-    etThread.traceF( tinBaseP , T("calling readF") ) ;
+    etThread.traceF( tin0P , T("called readF [nnHe,idpHe]:    ")+T(nnHe)+T("    ")+TF2(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    socki.readF( tin0P , soulNicNameIn , idpHe , nnHe , 0 , 0 ) ;
+    soulC soulNicNameIn( tin0P , TAG( TAGiDnULL ) ) ;
+    etThread.traceF( tin0P , T("calling readF") ) ;
     ZE( countT , idpHe ) ;
     nicNameC nnHe ;
 {
 while( !POOP && !ether )
 
-countT idpMe = socki.bindF( tinBaseP , 12345 , nnAny , 1 , 0 ) ;
-socketC socki( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T(postADDRgROUP) , 0 , 0 , 0 , 0 , 0 ) ;
+countT idpMe = socki.bindF( tin0P , 12345 , nnAny , 1 , 0 ) ;
+socketC socki( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T(postADDRgROUP) , 0 , 0 , 0 , 0 , 0 ) ;
 
-nicNameC nnAny = socketC::nicNameIF( tinBaseP , etThread , T("::") ) ;
+nicNameC nnAny = socketC::nicNameIF( tin0P , etThread , T("::") ) ;
 
 TASK( tmHearF )
 
 DONE( tmSayF )
 
-socko.writeF( tinBaseP , 12345 , nicNameC() , soulNicName ) ;
+socko.writeF( tin0P , 12345 , nicNameC() , soulNicName ) ;
 
-socketC socko( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T(postADDRgROUP) , 0 , 0 , 0 , 0 , 0 ) ;
+socketC socko( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T(postADDRgROUP) , 0 , 0 , 0 , 0 , 0 ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK << 2 ) ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
 
 }
-    etThread.delF( tinBaseP , pnnMe ) ;
+    etThread.delF( tin0P , pnnMe ) ;
     }
-        else etThread.traceF( tinBaseP , T("NON-routable    :    ")+T(pnnMe[offi]) ) ;
+        else etThread.traceF( tin0P , T("NON-routable    :    ")+T(pnnMe[offi]) ) ;
         }
             soulNicName << pnnMe[ offi ] ;
-            etThread.traceF( tinBaseP ,  T("routable unicast:    ")+T(pnnMe[offi]) ) ;
+            etThread.traceF( tin0P ,  T("routable unicast:    ")+T(pnnMe[offi]) ) ;
         {
         if( pnnMe[ offi ].isRoutableUnicastF() )
     {
     for( countT offi = 0 ; offi < cnnMe ; offi ++ )
-    socketC::nicNameIF( tinBaseP , etThread , pnnMe , cnnMe , 0 ) ; ___( pnnMe ) ;
+    socketC::nicNameIF( tin0P , etThread , pnnMe , cnnMe , 0 ) ; ___( pnnMe ) ;
     ZE( countT    , cnnMe ) ;
     ZE( nicNameC* , pnnMe ) ;
 {
-soulC soulNicName( tinBaseP , TAG( TAGiDnULL ) ) ;
+soulC soulNicName( tin0P , TAG( TAGiDnULL ) ) ;
 
 TASK( tmSayF )
 

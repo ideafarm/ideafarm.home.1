@@ -11,30 +11,30 @@ REST
 
 }
     }
-        //++ s ; ether.osSleepF( tinBaseP , TUCK << 2 ) ;
-        actF( tinBaseP , etThread , ether , 1 + incv02AM( idAct ) , adamSeller , adamBuyer ) ;
+        //++ s ; ether.osSleepF( tin0P , TUCK << 2 ) ;
+        actF( tin0P , etThread , ether , 1 + incv02AM( idAct ) , adamSeller , adamBuyer ) ;
     {
     while( !ether && !etThread )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 {
 //etThread.osThreadF( TaRG1( tmHelpF ) , (countT)&adamSeller , (countT)&adamBuyer , (countT)&buQuit , (countT)&idAct ) ;
-adamC adamBuyer( tinBaseP , etThread ) ;
-adamC adamSeller( tinBaseP , etThread ) ;
+adamC adamBuyer( tin0P , etThread ) ;
+adamC adamSeller( tin0P , etThread ) ;
 
 ZE( countT , idAct ) ;
 
-tcButtonQuitC buQuit( tinBaseP , "buQuit" ) ;
+tcButtonQuitC buQuit( tin0P , "buQuit" ) ;
 
 TODO
 
 DONE( tmHelpF )
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TUCK << 2 ) ;
-        actF( tinBaseP , etThread , ether , 1 + incv02AM( idActP ) , adamSellerP , adamBuyerP ) ;
+        ++ s ; ether.osSleepF( tin0P , TUCK << 2 ) ;
+        actF( tin0P , etThread , ether , 1 + incv02AM( idActP ) , adamSellerP , adamBuyerP ) ;
     {
     while( !ether && !etThread )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     countT&         idActP       =        *(countT*)pTaskP->c4 ;
     tcButtonQuitC&  buQuitP      = *(tcButtonQuitC*)pTaskP->c3 ;
@@ -51,33 +51,33 @@ TASK( tmHelpF )
             mToSpend -= mTry * mPrice ;
 
             if( !mTry ) break ;
-            adamBuyerP.buyF( tinBaseP , 1 , mTry , flagsBuy , mPrice , mPrice ) ;
+            adamBuyerP.buyF( tin0P , 1 , mTry , flagsBuy , mPrice , mPrice ) ;
 
             ;
                 : TOCK
                 ? mToSpend / mPrice
             measure04T mTry = mPrice
 
-            measure04T mPrice = adamBuyerP.priceF( tinBaseP , 1 ) ;
+            measure04T mPrice = adamBuyerP.priceF( tin0P , 1 ) ;
         {
         while( mToSpend )
         measure04T mToSpend = 256.0 * mScale ;
         flagsT flagsBuy = flMARKETbUY_IFpRICEiNrANGE ;
 
-        adamBuyerP.mannaF( tinBaseP , 256.0 * mScale ) ;
+        adamBuyerP.mannaF( tin0P , 256.0 * mScale ) ;
         //CONoUTrAW( "d" ) ;
 
         measure04T mScale = 1.0 / 16.0 ;
     {
     else
     }
-        adamSellerP.sellF( tinBaseP , 1 , mSell ) ;
+        adamSellerP.sellF( tin0P , 1 , mSell ) ;
         measure04T mSell = 256.0 ;
         //CONoUTrAW( "s" ) ;
     {
     if( !( idActP % 2 ) )
 {
-voidT actF( tin0S& tinBaseP , etherC& etThread , etherC& ether , const countT idActP , adamC& adamSellerP , adamC& adamBuyerP )
+voidT actF( tin0S& tin0P , etherC& etThread , etherC& ether , const countT idActP , adamC& adamSellerP , adamC& adamBuyerP )
 
 /*1*/WAKEsHOW( "example.other.snip.003014b.adamC" )/*1*/
 /**/

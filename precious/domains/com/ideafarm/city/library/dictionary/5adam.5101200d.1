@@ -9,20 +9,20 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    diskZipNewF( tinBaseP , etThread , "zippy.zip" , "*.txt" , "b.txt" , 0 , 0 , 0 ) ;
+    diskZipNewF( tin0P , etThread , "zippy.zip" , "*.txt" , "b.txt" , 0 , 0 , 0 ) ;
 
-    hoverC hover( tinBaseP , etThread , T("///d/tmp/zipplay/") ) ;
+    hoverC hover( tin0P , etThread , T("///d/tmp/zipplay/") ) ;
 {
 
 
 TODO
 
 }
-    etThread.traceF( tinBaseP , T("zip ")+tArgsInfoZip ) ;
+    etThread.traceF( tin0P , T("zip ")+tArgsInfoZip ) ;
 
     TN( tArgsInfoZip , "" ) ; tArgsInfoZip = (postOptionsPKZipP?T(postOptionsPKZipP):tn)+tb+T(postZipP)+tb+T(postWildP)+(postWildIncludeP?T(" -i ")+T(postWildIncludeP):tn)+(postWildExcludeP?T(" -x ")+T(postWildExcludeP):tn) ;
 
@@ -30,7 +30,7 @@ TODO
 
     // infozip: zip    [-options] [-b path] [-t mmddyyyy] [-n suffixes] [zipfile list]              [-xi list]
 
-    etThread.traceF( tinBaseP , T("pkzipc ")+tArgsPKZip ) ;
+    etThread.traceF( tin0P , T("pkzipc ")+tArgsPKZip ) ;
 
     TN( tArgsPKZip , "" ) ; tArgsPKZip = T("-add")+(postOptionsPKZipP?tb+T(postOptionsPKZipP):tn)+(postWildIncludeP?T(" -include:\"")+T(postWildIncludeP)+tq:tn)+(postWildExcludeP?T(" -exclude:\"")+T(postWildExcludeP)+tq:tn)+tb+T(postZipP)+tb+T(postWildP) ;
 
@@ -42,16 +42,16 @@ TODO
     TN( tb , " " ) ;
     TN( tn , "" ) ;
 
-    etThread.traceF( tinBaseP , T("[postOptionsInfoZipP]:    ")+T(postOptionsInfoZipP) ) ;
-    etThread.traceF( tinBaseP , T("[postOptionsPKZipP]  :    ")+T(postOptionsPKZipP  ) ) ;
-    etThread.traceF( tinBaseP , T("[postWildExcludeP]   :    ")+T(postWildExcludeP   ) ) ;
-    etThread.traceF( tinBaseP , T("[postWildIncludeP]   :    ")+T(postWildIncludeP   ) ) ;
-    etThread.traceF( tinBaseP , T("[postWildP]          :    ")+T(postWildP          ) ) ;
-    etThread.traceF( tinBaseP , T("[postZipP]           :    ")+T(postZipP           ) ) ;
+    etThread.traceF( tin0P , T("[postOptionsInfoZipP]:    ")+T(postOptionsInfoZipP) ) ;
+    etThread.traceF( tin0P , T("[postOptionsPKZipP]  :    ")+T(postOptionsPKZipP  ) ) ;
+    etThread.traceF( tin0P , T("[postWildExcludeP]   :    ")+T(postWildExcludeP   ) ) ;
+    etThread.traceF( tin0P , T("[postWildIncludeP]   :    ")+T(postWildIncludeP   ) ) ;
+    etThread.traceF( tin0P , T("[postWildP]          :    ")+T(postWildP          ) ) ;
+    etThread.traceF( tin0P , T("[postZipP]           :    ")+T(postZipP           ) ) ;
 
-    etherC& etThread = *((tin9S&)tinBaseP).pEther ;
+    etherC& etThread = *((tin9S&)tin0P).pEther ;
 {
-voidT diskZipNewF( tin0S& tinBaseP , thirdC& thirdP , const osTextT* postZipP , const osTextT* postWildP , const osTextT* postWildIncludeP , const osTextT* postWildExcludeP , const osTextT* postOptionsPKZipP , const osTextT* postOptionsInfoZipP )
+voidT diskZipNewF( tin0S& tin0P , thirdC& thirdP , const osTextT* postZipP , const osTextT* postWildP , const osTextT* postWildIncludeP , const osTextT* postWildExcludeP , const osTextT* postOptionsPKZipP , const osTextT* postOptionsInfoZipP )
 
 /*1*/WAKEsHOWtEXT( "scratch" )/*1*/
 /**/

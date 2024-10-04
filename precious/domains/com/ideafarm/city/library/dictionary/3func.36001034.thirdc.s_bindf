@@ -10,12 +10,12 @@
 }
     return idPort ;
     }
-        if( !POOP ) idPort = ((tin9S&)tinBaseP).brcRaw ;
+        if( !POOP ) idPort = ((tin9S&)tin0P).brcRaw ;
         BOSdOnOTtEST( WHATgbo , ntohs( info.sin6_port ) )
         BOSpOOP
         BOSS( WHATsir , BOSfAIL , getsockname( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , &cbInfo ) )
         sCountT cbInfo = sizeof info ;
-        c_memsetIF( tinBaseP , (byteT* const)&info , sizeof info ) ;
+        c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;
     {
     if( !POOP )
     ZE( countT , idPort ) ;
@@ -36,26 +36,26 @@
             {
             else
             }
-                if( bAgain ) { ++ s ; dosSleepIF( tinBaseP , TUCK * 0x40 ) ; }
+                if( bAgain ) { ++ s ; dosSleepIF( tin0P , TUCK * 0x40 ) ; }
 
-                //if( ((tin9S&)tinBaseP).pEther ) ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("bindF failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                countT rc = ((tin9S&)tinBaseP).brcRaw ;
+                //if( ((tin9S&)tin0P).pEther ) ((tin9S&)tin0P).pEther->traceF( tin0P , T("bindF failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                countT rc = ((tin9S&)tin0P).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
             {
-            if( ((tin9S&)tinBaseP).bosFail )
+            if( ((tin9S&)tin0P).bosFail )
             BOSS( WHATgbo , BOSfAIL , bind( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info ) )
 
-            bAgain = !*this && ( bNoQuit || ( bNoQuitEarly && !thPrimeIF( tinBaseP ) ) || ( cTriesP && -- cTriesP ) ) ;
+            bAgain = !*this && ( bNoQuit || ( bNoQuitEarly && !thPrimeIF( tin0P ) ) || ( cTriesP && -- cTriesP ) ) ;
 
             cDebug5 = cTriesP ;
-            cDebug4 = !thPrimeIF( tinBaseP ) ;
+            cDebug4 = !thPrimeIF( tin0P ) ;
             cDebug3 = bNoQuitEarly ;
             cDebug2 = bNoQuit ;
             cDebug1 = *this ;
         {
         do
         ZE( boolT , bAgain ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     boolT bFail = 1 ;
     boolT bNoQuitEarly = !cTriesP ;
@@ -67,12 +67,12 @@
     ZE( countT , cDebug2 ) ;
     ZE( countT , cDebug1 ) ;
 
-    *(countT*)info.sin6_addr.u.Byte = ((tin9S&)tinBaseP).brcRaw ; //U: SUPPORTS ONLY IPV4 (NOT IPV6)
+    *(countT*)info.sin6_addr.u.Byte = ((tin9S&)tin0P).brcRaw ; //U: SUPPORTS ONLY IPV4 (NOT IPV6)
     BOSdOnOTtEST( WHATgbo , htonl( *(const countT*)nicNameP ) )
-    info.sin6_port = (count01T)((tin9S&)tinBaseP).brcRaw ;
+    info.sin6_port = (count01T)((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , htons( (count01T)( idPortP ? idPortP : INADDR_ANY ) ) )
     info.sin6_family = AF_INET6 ;
-    c_memsetIF( tinBaseP , (byteT* const)&info , sizeof info ) ;
+    c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;
     sockaddr_in6 info ;
     _IO_
 
@@ -84,13 +84,13 @@
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/countT thirdC::s_bindF( tin0S& tinBaseP , const handleC& handleP , const countT idPortP , const nicNameC nicNameP , countT cTriesP )/*1*/
+/*1*/countT thirdC::s_bindF( tin0S& tin0P , const handleC& handleP , const countT idPortP , const nicNameC nicNameP , countT cTriesP )/*1*/
 
 /**/
 */
-  if - 1 then will retry forever even if thPrimeIF( tinBaseP ) is impotent
-  if not 0 then will try cTriesP times (even if thPrimeIF( tinBaseP ) is impotent)
-  if 0 then will retry forever unless thPrimeIF( tinBaseP ) is impotent
+  if - 1 then will retry forever even if thPrimeIF( tin0P ) is impotent
+  if not 0 then will try cTriesP times (even if thPrimeIF( tin0P ) is impotent)
+  if 0 then will retry forever unless thPrimeIF( tin0P ) is impotent
   can be 0
  cTriesP
    if the host has more than one LAN adapter card, the nicName assignment might be deferred

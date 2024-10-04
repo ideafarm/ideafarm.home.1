@@ -12,7 +12,7 @@ REST
 }
     bArm = 1 ;    
 
-    etThread.traceF( tinBaseP , TF3(++icCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T("speed [mean,cDoneNew,time1E,cDonePerTime,cDone1,cDone2]: ")+TF3(mean,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDoneNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(time1E,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDonePerTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDone1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tDot+TF3(cDone2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
+    etThread.traceF( tin0P , TF3(++icCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T("speed [mean,cDoneNew,time1E,cDonePerTime,cDone1,cDone2]: ")+TF3(mean,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDoneNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(time1E,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDonePerTime,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb+TF3(cDone1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tDot+TF3(cDone2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8) ) ;
 
     mean /= cGot ;
     for( countT offi = 0 ; offi < cGot ; offi ++ ) mean += pcDonePerTime[ offi ] ;
@@ -28,7 +28,7 @@ REST
 
     countT cDonePerTime = cDoneNew /** TUCK*/ / time1E ; // REALLY PER TUCK, NOT PER TIME, DUE TO "* TUCK"
 
-    etThread.osTimeSubtractF( tinBaseP , time1E , time2E , time1LathSave , time2LathSave ) ;
+    etThread.osTimeSubtractF( tin0P , time1E , time2E , time1LathSave , time2LathSave ) ;
 
     cDone1Lag = cDone1Snap ;
     countT cDoneNew = cDone1Snap - cDone1Lag ;
@@ -38,7 +38,7 @@ REST
 
     time2Lath = time2E ;
     time1Lath = time1E ;
-    etThread.osTimeNowF( tinBaseP , time1E , time2E ) ;
+    etThread.osTimeNowF( tin0P , time1E , time2E ) ;
     ZE( sCountT , time2E ) ;
     ZE( countT  , time1E ) ;
 
@@ -46,8 +46,8 @@ REST
     countT  time1LathSave = time1Lath ;
 
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK << 0 ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK << 0 ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 {
 while( !ether )
@@ -59,7 +59,7 @@ countT pcDonePerTime[ 0x10 ] ;
 cDone2Lag = cDone2 ;
 cDone1Lag = cDone1 ;
 
-etThread.osTimeNowF( tinBaseP , time1Lath , time2Lath ) ;
+etThread.osTimeNowF( tin0P , time1Lath , time2Lath ) ;
 ZE( sCountT , time2Lath ) ;
 ZE( countT  , time1Lath ) ;
 TN( tDot , "." ) ;
@@ -73,16 +73,16 @@ countT cDo = TUCK >> 1 ;
 //G: CNR: countT cDo = 2 ;
 //B: SAMEO: countT cDo = 12 ;
 
-etThread.traceF( tinBaseP , T("[offo,bitsReally]: ")+TF2(idBit-ifcIDgRABITbIT_00,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(bitsReally,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tin0P , T("[offo,bitsReally]: ")+TF2(idBit-ifcIDgRABITbIT_00,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(bitsReally,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
 TODO
 
 DONE( tmGorilla5F )
 
 }
-    gg.ungrabF( tinBaseP ) ;
+    gg.ungrabF( tin0P ) ;
     inc02AM( cDone1 ) ;
-    gg.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    gg.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     idCycle ++ ;
 {
 while( !ether /*&& cDo --*/ )
@@ -90,7 +90,7 @@ countT cDo = TOCK << 2 ;
 countT idCycle ;
 TN( tb , " " ) ;
 
-grabitC gg( tinBaseP , TAG( TAGiDnULL ) , bb , idBit , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_SUPPRESScTdT , TUCK , ifcIDgRABlAYER_7BASEmISC1 ) ;
+grabitC gg( tin0P , TAG( TAGiDnULL ) , bb , idBit , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_SUPPRESScTdT , TUCK , ifcIDgRABlAYER_7BASEmISC1 ) ;
 
 TASK( tmGorilla5F )             // SPEED: 3
 

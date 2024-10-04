@@ -46,9 +46,9 @@
         +T(
         tPrivilegesOld
 
-    meP.pushSnipF( tinBaseP , stBodyP ,
+    meP.pushSnipF( tin0P , stBodyP ,
 
-    if( !tPrivilegesOld.csF( tinBaseP ) ) tPrivilegesOld = T("(none)<BR>") ;
+    if( !tPrivilegesOld.csF( tin0P ) ) tPrivilegesOld = T("(none)<BR>") ;
 
     tPrivilegesNew += T("<INPUT TYPE=CHECKBOX NAME=\"")+tKeyPrivelege_viewServerReports+T("\" VALUE=\"")+tValue_on+T("\" ")+T(F(flagsp)&flSESSIONpRIVILEGE_VIEWsERVERrEPORTS  ?"CHECKED":"")+T("> ")+tKeyPrivelege_viewServerReports+tsssbr ;
     tPrivilegesNew += T("<INPUT TYPE=CHECKBOX NAME=\"")+tKeyPrivilege_sendReceiveEmail +T("\" VALUE=\"")+tValue_on+T("\" ")+T(F(flagsp)&flSESSIONpRIVILEGE_SENDaNDrECEIVEeMAIL?"CHECKED":"")+T("> ")+tKeyPrivilege_sendReceiveEmail +tssbr  ;
@@ -70,8 +70,8 @@
     TN( tbr , "<BR>" ) ;
     TN( tPrivilegesOld , "" ) ;
 
-    flagsT flagsp = session.privilegesF( tinBaseP ) ;
-    sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
+    flagsT flagsp = session.privilegesF( tin0P ) ;
+    sessionC& session = sessionsP( tin0P , nnPeerP ) ;
     //CS:CODEsYNC: 0010435 1850104
 
     }
@@ -82,98 +82,98 @@
                 }
                     }
                         }
-                            if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttLeverKVP , tKeyPrivelege_viewServerReports.psttLowerF( tinBaseP ) ) && !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , pzsttv , tValue_on ) ) session.privilegesF( tinBaseP , session.privilegesF( tinBaseP ) | flSESSIONpRIVILEGE_VIEWsERVERrEPORTS   ) ;
+                            if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttLeverKVP , tKeyPrivelege_viewServerReports.psttLowerF( tin0P ) ) && !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , pzsttv , tValue_on ) ) session.privilegesF( tin0P , session.privilegesF( tin0P ) | flSESSIONpRIVILEGE_VIEWsERVERrEPORTS   ) ;
                         {
                         if( cPrivilegeLevel >= 2 ) //WORKAROUND TO CLOSE SECURITY HOLE NOW THAT ANYWO CAN GET A LOGIN ACCOUNT
 
-                        //else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttLeverKVP , tKeyPrivilege_hideAdLinks.psttLowerF( tinBaseP )       ) && !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , pzsttv , tValue_on ) ) session.privilegesF( tinBaseP , session.privilegesF( tinBaseP ) | flSESSIONpRIVILEGE_HIDEaDlINKS         ) ;
-                             if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttLeverKVP , tKeyPrivilege_sendReceiveEmail.psttLowerF( tinBaseP )  ) && !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , pzsttv , tValue_on ) ) session.privilegesF( tinBaseP , session.privilegesF( tinBaseP ) | flSESSIONpRIVILEGE_SENDaNDrECEIVEeMAIL ) ;
+                        //else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttLeverKVP , tKeyPrivilege_hideAdLinks.psttLowerF( tin0P )       ) && !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , pzsttv , tValue_on ) ) session.privilegesF( tin0P , session.privilegesF( tin0P ) | flSESSIONpRIVILEGE_HIDEaDlINKS         ) ;
+                             if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttLeverKVP , tKeyPrivilege_sendReceiveEmail.psttLowerF( tin0P )  ) && !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , pzsttv , tValue_on ) ) session.privilegesF( tin0P , session.privilegesF( tin0P ) | flSESSIONpRIVILEGE_SENDaNDrECEIVEeMAIL ) ;
                     {
                     else if( cPrivilegeLevel )
-                    //else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttLeverKVP , tKeyPrivilege_hideImageAds.psttLowerF( tinBaseP )      ) && !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , pzsttv , tValue_on ) ) session.privilegesF( tinBaseP , session.privilegesF( tinBaseP ) | flSESSIONpRIVILEGE_HIDEiMAGEaDS      ) ;
-                         if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttLeverKVP , tKeyPrivilege_viewUntestedPages.psttLowerF( tinBaseP ) ) && !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , pzsttv , tValue_on ) ) session.privilegesF( tinBaseP , session.privilegesF( tinBaseP ) | flSESSIONpRIVILEGE_VIEWuNTESTEDpAGES ) ;
+                    //else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttLeverKVP , tKeyPrivilege_hideImageAds.psttLowerF( tin0P )      ) && !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , pzsttv , tValue_on ) ) session.privilegesF( tin0P , session.privilegesF( tin0P ) | flSESSIONpRIVILEGE_HIDEiMAGEaDS      ) ;
+                         if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttLeverKVP , tKeyPrivilege_viewUntestedPages.psttLowerF( tin0P ) ) && !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , pzsttv , tValue_on ) ) session.privilegesF( tin0P , session.privilegesF( tin0P ) | flSESSIONpRIVILEGE_VIEWuNTESTEDpAGES ) ;
 
                     //LOGrAW( tSay ) ;
                     //TN( tSay , "" ) ; tSay = T("\"")+T(psttLeverKVP)+T("\":\"")+T(pzsttv)+T("\"\r\n") ;
                     strokeS* pzsttv = (strokeS*)(countT)swKVP ;
-                    psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
+                    psttLeverKVP = (strokeS*)swKVP.leverF( tin0P , idf ) ;
 
                     if( idf == idLeverAction || idf == idLeverUser || idf == idLeverPassword ) continue ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
+                sessionC& session = sessionsP( tin0P , nnPeerP ) ;
 
                 }
                     }
                         }
                             }
-                                etThread.delF( tinBaseP , pstt1w ) ;
+                                etThread.delF( tin0P , pstt1w ) ;
                                 }
                                     }
                                         break ;
                                         cPrivilegeLevel = 2 ;
                                     {
-                                    if( !etThread.strCompareF( tinBaseP , psttc1 , T("all") ) )
+                                    if( !etThread.strCompareF( tin0P , psttc1 , T("all") ) )
                                 {
                                 FORsTRINGSiN1( pstt1w )
-                                etThread.strWordsOldF( tinBaseP , pstt1w , T(posti) , sttq ) ; ___( pstt1w ) ;
+                                etThread.strWordsOldF( tin0P , pstt1w , T(posti) , sttq ) ; ___( pstt1w ) ;
                                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                 ZE( strokeS* , pstt1w ) ;
                             {
                             else if( posti )
                             if( POOP ) { POOPR ; }
-                            ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , posti , costi , tDirAccount+T("privileges.txt") , 1 ) ; ___( posti ) ;
+                            ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tDirAccount+T("privileges.txt") , 1 ) ; ___( posti ) ;
                             ZE( countT   , costi ) ;
                             ZE( osTextT* , posti ) ;
 
-                            sessionsP.registerConnectionF( tinBaseP , nnPeerP , 0 , pzsttvUser , 1 ) ;
+                            sessionsP.registerConnectionF( tin0P , nnPeerP , 0 , pzsttvUser , 1 ) ;
                         {
                         if( cPrivilegeLevel )
 
-                        cPrivilegeLevel = ((tin9S&)tinBaseP).pEtScratch->diskFileExistsF( tinBaseP , tDirAccount ) && ((tin9S&)tinBaseP).pEtScratch->diskFileExistsF( tinBaseP , tFilePassword ) ; //!! ELIMINATED FROM WOTH TERM BECAUSE REDUNDANT (&& RETURNS 0 OR 1)
+                        cPrivilegeLevel = ((tin9S&)tin0P).pEtScratch->diskFileExistsF( tin0P , tDirAccount ) && ((tin9S&)tin0P).pEtScratch->diskFileExistsF( tin0P , tFilePassword ) ; //!! ELIMINATED FROM WOTH TERM BECAUSE REDUNDANT (&& RETURNS 0 OR 1)
 
                         TN( tFilePassword , "" ) ; tFilePassword = tDirAccount+tShortFilePassword+T(pzsttvPassword) ;
                         TN( tShortFilePassword   , "password." ) ;
                         TN( tDirAccount   , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/accounts/" ) ; tDirAccount += T(pzsttvUser)+T("/") ;
 
                         strokeS* pzsttvPassword = (strokeS*)(countT)swKVP ;
-                        psttLeverKVP = tKeyPassword.psttLowerF( tinBaseP ) ;
+                        psttLeverKVP = tKeyPassword.psttLowerF( tin0P ) ;
 
                         strokeS* pzsttvUser = (strokeS*)(countT)swKVP ;
-                        psttLeverKVP = tKeyUser.psttLowerF( tinBaseP ) ;
+                        psttLeverKVP = tKeyUser.psttLowerF( tin0P ) ;
                     {
                     if( idLeverUser && idLeverPassword )
                 {
                 ZE( countT , cPrivilegeLevel ) ;
-                const countT idLeverPassword = swKVP.idSlotOfLeverF( tinBaseP , (countT)tKeyPassword.psttLowerF( tinBaseP ) ) ;
-                const countT idLeverUser     = swKVP.idSlotOfLeverF( tinBaseP , (countT)tKeyUser.psttLowerF( tinBaseP )     ) ;
+                const countT idLeverPassword = swKVP.idSlotOfLeverF( tin0P , (countT)tKeyPassword.psttLowerF( tin0P ) ) ;
+                const countT idLeverUser     = swKVP.idSlotOfLeverF( tin0P , (countT)tKeyUser.psttLowerF( tin0P )     ) ;
             {
-            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , pzsttvAction , tAction_setMyPrivileges ) )
-            if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , pzsttvAction , tAction_clearMyPrivileges ) ) sessionsP.registerConnectionF( tinBaseP , nnPeerP , 0 , 0 , 1 ) ;
+            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , pzsttvAction , tAction_setMyPrivileges ) )
+            if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , pzsttvAction , tAction_clearMyPrivileges ) ) sessionsP.registerConnectionF( tin0P , nnPeerP , 0 , 0 , 1 ) ;
 
             }
-                session.privilegesF( tinBaseP , flSESSIONpRIVILEGE_null ) ;
-                sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
+                session.privilegesF( tin0P , flSESSIONpRIVILEGE_null ) ;
+                sessionC& session = sessionsP( tin0P , nnPeerP ) ;
             {
     
             strokeS* pzsttvAction = (strokeS*)(countT)swKVP ;
-            psttLeverKVP = tKeyAction.psttLowerF( tinBaseP ) ;
+            psttLeverKVP = tKeyAction.psttLowerF( tin0P ) ;
         {
         if( idLeverAction )
-        const countT idLeverAction = swKVP.idSlotOfLeverF( tinBaseP , (countT)tKeyAction.psttLowerF( tinBaseP ) ) ;
+        const countT idLeverAction = swKVP.idSlotOfLeverF( tin0P , (countT)tKeyAction.psttLowerF( tin0P ) ) ;
 
         //}
         //    LOGrAW( tSay ) ; //U::
         //    TN( tSay , "" ) ; tSay = T("\"")+T(psttLeverKVP)+T("\":\"")+T(pzsttv)+T("\"\r\n") ;
         //    strokeS* pzsttv = (strokeS*)(countT)swKVP ;
-        //    psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
+        //    psttLeverKVP = (strokeS*)swKVP.leverF( tin0P , idf ) ;
         //{
         //for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
         //LOGrAW( tSay ) ; //U::
         //TN( tSay , "" ) ; tSay = T("---- keys and value  received ----------------------------------\r\n") ;
     {
     if( cFlavors )
-    countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
+    countT cFlavors = swKVP.cFlavorsF( tin0P ) ;
 
     TN( tKeyPassword                                , "Password"   ) ;
     TN( tKeyUser                                    , "User Id"     ) ;
@@ -191,7 +191,7 @@
 
     TN( tValue_on                                   , "on" ) ;
 {
-/*1*/voidT privilegesCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT privilegesCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 /**/
 */

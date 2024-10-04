@@ -13,10 +13,10 @@
             info.idiFile = DDNUMB ;                                                             \
             info.idLine = ifcLINE ;                                                             \
             info.costName = ostoName.costF() ;                                                  \
-            thirdC::c_strncpyIF( tinBaseP , info.postName , ostoName , sizeof info.postName ) ;     \
+            thirdC::c_strncpyIF( tin0P , info.postName , ostoName , sizeof info.postName ) ;     \
             OStEXTAK( ostoName , postP )                                                        \
             OStEXTAK( ostoName , "." )                                                          \
-            if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoName , ((tin9S&)tinBaseP).postThreadName )                                           \
+            if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoName , ((tin9S&)tin0P).postThreadName )                                           \
             OStEXT( ostoName , sizeof info.postName )                                           \
             tellInfoSysLifiS info ;                                                                \
                                                                                                 \
@@ -34,7 +34,7 @@
 */
 most application code should use TLNA rather than TELLsYSlIFInAME
 this causes this line to be supressed in the TG report
-like TELLsYSlIFInAME but appends postP to ((tin9S&)tinBaseP).postThreadName
+like TELLsYSlIFInAME but appends postP to ((tin9S&)tin0P).postThreadName
 /*
 
 //

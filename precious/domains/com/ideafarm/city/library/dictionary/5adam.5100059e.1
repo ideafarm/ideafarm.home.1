@@ -13,28 +13,28 @@ REST
 
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TICK * 0x10 ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TICK * 0x10 ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     
-        etThread.delF( tinBaseP , pstt1m ) ;
+        etThread.delF( tin0P , pstt1m ) ;
         }
             }
-                etThread.delF( tinBaseP , psttw ) ;
-                if( !etThread.diskFileExistsF( tinBaseP , tFile ) ) etThread.boxPutF( tinBaseP , tFile , tName , tName.csF( tinBaseP ) ) ;
+                etThread.delF( tin0P , psttw ) ;
+                if( !etThread.diskFileExistsF( tin0P , tFile ) ) etThread.boxPutF( tin0P , tFile , tName , tName.csF( tin0P ) ) ;
                 TN( tFile , "" ) ; tFile = T(psttc1)+T("txt.ipname.")+tName ;
 
                 TN( tName , "" ) ; tName = T(psttw) ;
-                etThread.sockPsttHostF( tinBaseP , psttw , nnAttacker ) ;
+                etThread.sockPsttHostF( tin0P , psttw , nnAttacker ) ;
 
-                etThread.delF( tinBaseP , psttw ) ;
-                nnAttacker = etThread.strDigitsToNicNameF( tinBaseP , psttw ) ;
-                etThread.strWordF( tinBaseP , psttw , psttc1 , sttq , sttSlash , - 2 ) ; ___( psttw ) ;
+                etThread.delF( tin0P , psttw ) ;
+                nnAttacker = etThread.strDigitsToNicNameF( tin0P , psttw ) ;
+                etThread.strWordF( tin0P , psttw , psttc1 , sttq , sttSlash , - 2 ) ; ___( psttw ) ;
                 ZE( strokeS* , psttw ) ;
             {
             nicNameC nnAttacker  ;
         {
         FORsTRINGSiN1( pstt1m )
-        etThread.boxMenuF( tinBaseP , soul , tFolder+tStar , 0 , 0x10 ) ; ___( pstt1m ) ;
+        etThread.boxMenuF( tin0P , soul , tFolder+tStar , 0 , 0x10 ) ; ___( pstt1m ) ;
         ZE( strokeS* , pstt1m ) ;
     {
     while( !ether && !etThread )

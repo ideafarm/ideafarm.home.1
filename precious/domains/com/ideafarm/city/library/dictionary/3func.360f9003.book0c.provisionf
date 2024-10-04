@@ -19,11 +19,11 @@
     {
     if( F(flagsP) & flBOOK0pROVISION_RESETcREFoNcT && pHead->cRef )
 
-    if( F(flagsP) & flBOOK0pROVISION_FORMAT && !( F(flagsP) & flBOOK0pROVISION_DOnOTiNITIALIZE ) ) setF( tinBaseP , bFillP ) ;
+    if( F(flagsP) & flBOOK0pROVISION_FORMAT && !( F(flagsP) & flBOOK0pROVISION_DOnOTiNITIALIZE ) ) setF( tin0P , bFillP ) ;
 
     ;
         : (bookHeadS*)pbP
-        ? new( 0 , tinBaseP , pbP , sizeof( bookHeadS ) ) bookHeadS( cbP - sizeof( bookHeadS ) )
+        ? new( 0 , tin0P , pbP , sizeof( bookHeadS ) ) bookHeadS( cbP - sizeof( bookHeadS ) )
     *(bookHeadS**)&pHead = F(flagsP) & flBOOK0pROVISION_FORMAT
 
     *(byteT**)&pbBody = pbP + sizeof( bookHeadS ) ;
@@ -38,7 +38,7 @@
     {
     IFbEcAREFUL    
 {
-/*1*/voidT book0C::provisionF( tin0S& tinBaseP , byteT* const pbP , const countT cbP , const flagsT flagsP , const byteT bFillP )/*1*/
+/*1*/voidT book0C::provisionF( tin0S& tin0P , byteT* const pbP , const countT cbP , const flagsT flagsP , const byteT bFillP )/*1*/
 
 /**/
 */

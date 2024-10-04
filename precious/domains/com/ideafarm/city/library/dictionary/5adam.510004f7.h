@@ -11,12 +11,12 @@
 }
     friend TASKpROTO( tmKillF ) ;
     friend TASKpROTO( tmBangClientF ) ;
-    friend countT godMyLifespanF( tin0S& tinBaseP , nodeC& nodeP ) ;
-    friend voidT nodeMainF( tin0S& tinBaseP , etherC& etThread ) ;
-    friend voidT writeF( tin0S& tinBaseP , const nodeC& nodeP , soulC& soulP ) ;
-    friend voidT godPrayF( tin0S& tinBaseP , etherC& etThread , stackC& stNodeOpenP , const nodeC& nodeP , boolT& bTalkP ) ;
+    friend countT godMyLifespanF( tin0S& tin0P , nodeC& nodeP ) ;
+    friend voidT nodeMainF( tin0S& tin0P , etherC& etThread ) ;
+    friend voidT writeF( tin0S& tin0P , const nodeC& nodeP , soulC& soulP ) ;
+    friend voidT godPrayF( tin0S& tin0P , etherC& etThread , stackC& stNodeOpenP , const nodeC& nodeP , boolT& bTalkP ) ;
 
-    static nodeC& fieldF( tin0S& tinBaseP , soulC& soulP , const countT idFieldP ) ;
+    static nodeC& fieldF( tin0S& tin0P , soulC& soulP , const countT idFieldP ) ;
     operator byteT*( voidT ) const ;
     sCountT operator -( nodeC& nodeP ) const ;
     boolT operator !=( nodeC& nodeP ) const ;
@@ -24,7 +24,7 @@
     nodeC& operator =( const countT idpP ) ;
     nodeC& operator =( nodeC& nodeP ) ;
     operator boolT( voidT ) const ;
-    nodeC( tin0S& tinBaseP , etherC& etThread , const countT idMeP ) ;
+    nodeC( tin0S& tin0P , etherC& etThread , const countT idMeP ) ;
     nodeC( voidT ) ;
 
     public :
@@ -36,15 +36,15 @@
 {
 class nodeC
 
-countT subtractNodesF( tin0S& tinBaseP , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
-voidT  godPrayF( tin0S& tinBaseP , etherC& etThread , stackC& stNodeOpenP , const nodeC& nodeP ) ;
-countT godBacklogF( tin0S& tinBaseP ) ;
-countT godMyLifespanF( tin0S& tinBaseP , nodeC& nodeP ) ;
-voidT  godHelloF( tin0S& tinBaseP , const nodeC& nodeP ) ;
-voidT  godHelloF( tin0S& tinBaseP , stackC& stBangP ) ;
-voidT  godByeF( tin0S& tinBaseP , const nodeC& nodeP ) ;
-voidT  godByeF( tin0S& tinBaseP , stackC& stBangP ) ;
-voidT  nodeMainF( tin0S& tinBaseP , etherC& etThread ) ;
+countT subtractNodesF( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;
+voidT  godPrayF( tin0S& tin0P , etherC& etThread , stackC& stNodeOpenP , const nodeC& nodeP ) ;
+countT godBacklogF( tin0S& tin0P ) ;
+countT godMyLifespanF( tin0S& tin0P , nodeC& nodeP ) ;
+voidT  godHelloF( tin0S& tin0P , const nodeC& nodeP ) ;
+voidT  godHelloF( tin0S& tin0P , stackC& stBangP ) ;
+voidT  godByeF( tin0S& tin0P , const nodeC& nodeP ) ;
+voidT  godByeF( tin0S& tin0P , stackC& stBangP ) ;
+voidT  nodeMainF( tin0S& tin0P , etherC& etThread ) ;
 
 class nodeC ;
 

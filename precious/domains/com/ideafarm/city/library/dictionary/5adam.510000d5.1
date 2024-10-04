@@ -10,30 +10,30 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.osSleepF( tinBaseP , TOCK ) ;
-etThread.strokeF( tinBaseP , T("ok\r\n") ) ;
-third.dosCloseMutexSemIF( tinBaseP , handle ) ;
+etThread.osSleepF( tin0P , TOCK ) ;
+etThread.strokeF( tin0P , T("ok\r\n") ) ;
+third.dosCloseMutexSemIF( tin0P , handle ) ;
 
-sgn4.waitF( tinBaseP ) ;
-sgn3.waitF( tinBaseP ) ;
-sgn2.waitF( tinBaseP ) ;
-sgn1.waitF( tinBaseP ) ;
+sgn4.waitF( tin0P ) ;
+sgn3.waitF( tin0P ) ;
+sgn2.waitF( tin0P ) ;
+sgn1.waitF( tin0P ) ;
 
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sgn4 , flTHREADlAUNCH_null , 0 , 0 , handle , 4 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sgn3 , flTHREADlAUNCH_null , 0 , 0 , handle , 3 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sgn2 , flTHREADlAUNCH_null , 0 , 0 , handle , 2 ) ; }
-{ ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF , &sgn1 , flTHREADlAUNCH_null , 0 , 0 , handle , 1 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , &sgn4 , flTHREADlAUNCH_null , 0 , 0 , handle , 4 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , &sgn3 , flTHREADlAUNCH_null , 0 , 0 , handle , 3 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , &sgn2 , flTHREADlAUNCH_null , 0 , 0 , handle , 2 ) ; }
+{ ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF , &sgn1 , flTHREADlAUNCH_null , 0 , 0 , handle , 1 ) ; }
 
-signC sgn4( tinBaseP , TAG( TAGiDnULL ) ) ;
-signC sgn3( tinBaseP , TAG( TAGiDnULL ) ) ;
-signC sgn2( tinBaseP , TAG( TAGiDnULL ) ) ;
-signC sgn1( tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgn4( tin0P , TAG( TAGiDnULL ) ) ;
+signC sgn3( tin0P , TAG( TAGiDnULL ) ) ;
+signC sgn2( tin0P , TAG( TAGiDnULL ) ) ;
+signC sgn1( tin0P , TAG( TAGiDnULL ) ) ;
 
-third.dosCreateMutexSemIF( tinBaseP , handle , bCreator ) ;
+third.dosCreateMutexSemIF( tin0P , handle , bCreator ) ;
 ZE( boolT , bCreator ) ;
-handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_MUTEXsEMAPHORE ) ;
+handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_MUTEXsEMAPHORE ) ;
 
 thirdC& third = ether ;
 
@@ -41,16 +41,16 @@ TODO
 
 DONE( tmF )
 
-third.dosReleaseMutexSemIF( tinBaseP , handle ) ;
+third.dosReleaseMutexSemIF( tin0P , handle ) ;
 
 }
-    etThread.osSleepF( tinBaseP , TUCK * 64 ) ;
-    etThread.strokeF( tinBaseP , TF1(id) ) ;
+    etThread.osSleepF( tin0P , TUCK * 64 ) ;
+    etThread.strokeF( tin0P , TF1(id) ) ;
 {
 while( cTries -- )
 countT cTries = 8 ;
 
-third.dosRequestMutexSemIF( tinBaseP , handle ) ;
+third.dosRequestMutexSemIF( tin0P , handle ) ;
 thirdC& third = ether ;
 
 const countT id     = pTaskP ? pTaskP->c2 : 0 ;

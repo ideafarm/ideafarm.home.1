@@ -9,23 +9,23 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
-             pbi = fun.readF( tinBaseP ) ; etThread.traceF( tinBaseP , T("received: ")+T(pbi) ) ;
-             pbi = fun.readF( tinBaseP ) ; etThread.traceF( tinBaseP , T("received: ")+T(pbi) ) ;
-const byteT* pbi = fun.readF( tinBaseP ) ; etThread.traceF( tinBaseP , T("received: ")+T(pbi) ) ;
+             pbi = fun.readF( tin0P ) ; etThread.traceF( tin0P , T("received: ")+T(pbi) ) ;
+             pbi = fun.readF( tin0P ) ; etThread.traceF( tin0P , T("received: ")+T(pbi) ) ;
+const byteT* pbi = fun.readF( tin0P ) ; etThread.traceF( tin0P , T("received: ")+T(pbi) ) ;
 
 etThread.osThreadF( TaRG1( tmPushF ) , (countT)&fun ) ;
-funnelHornC fun( tinBaseP , etThread , ether , 1 , 1 ) ;
+funnelHornC fun( tin0P , etThread , ether , 1 , 1 ) ;
 
 TODO
 
 DONE( tmPushF )
 }
-    etThread.traceF( tinBaseP , T("wrote   b") ) ;
-    funP.writeF( tinBaseP , "b" ) ;
-    etThread.traceF( tinBaseP , T("writing b") ) ;
-    funP.writeF( tinBaseP , "a" ) ;
+    etThread.traceF( tin0P , T("wrote   b") ) ;
+    funP.writeF( tin0P , "b" ) ;
+    etThread.traceF( tin0P , T("writing b") ) ;
+    funP.writeF( tin0P , "a" ) ;
     funnelHornC& funP = *(funnelHornC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )

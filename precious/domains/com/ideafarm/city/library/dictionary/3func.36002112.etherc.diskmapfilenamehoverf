@@ -9,18 +9,18 @@
 
 }
     }
-        //traceF( tinBaseP , T("diskMapFileNameHoverF / mapped to  [psttP]:    ")+T(psttP) ) ; //U::
+        //traceF( tin0P , T("diskMapFileNameHoverF / mapped to  [psttP]:    ")+T(psttP) ) ; //U::
         }
             }
-                delF( tinBaseP , psttw3 ) ;
-                delF( tinBaseP , psttw1 ) ;
+                delF( tin0P , psttw3 ) ;
+                delF( tin0P , psttw1 ) ;
 
-                strFuseF( tinBaseP , psttP , T(psttw1)+TF3(idCopy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T(psttw3) ) ; ___( psttP ) ;
+                strFuseF( tin0P , psttP , T(psttw1)+TF3(idCopy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T(psttw3) ) ; ___( psttP ) ;
 
-                strSubstringF( tinBaseP , psttw3 , idf , idl , psttRawP ) ; ___( psttw3 ) ;
+                strSubstringF( tin0P , psttw3 , idf , idl , psttRawP ) ; ___( psttw3 ) ;
                 idl = idlPart3 ;
                 idf = idfPart3 ;
-                strSubstringF( tinBaseP , psttw1 , idf , idl , psttRawP ) ; ___( psttw1 ) ;
+                strSubstringF( tin0P , psttw1 , idf , idl , psttRawP ) ; ___( psttw1 ) ;
                 ZE( strokeS* , psttw3 ) ;
                 ZE( strokeS* , psttw1 ) ;
                 //sttq = ze ;
@@ -33,15 +33,15 @@
             }
                 else __1
                 }
-                    //traceF( tinBaseP , T("diskMapFileNameHoverF / called  ifcIdCopyF [cName,idCopy]:    ")+TF2(cName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idCopy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U::
-                    idCopy = ifcIdCopyF( tinBaseP , cName , cTriesP ) ;
-                    //traceF( tinBaseP , T("diskMapFileNameHoverF / calling ifcIdCopyF [cName]:    ")+TF2(cName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U::
+                    //traceF( tin0P , T("diskMapFileNameHoverF / called  ifcIdCopyF [cName,idCopy]:    ")+TF2(cName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idCopy,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U::
+                    idCopy = ifcIdCopyF( tin0P , cName , cTriesP ) ;
+                    //traceF( tin0P , T("diskMapFileNameHoverF / calling ifcIdCopyF [cName]:    ")+TF2(cName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U::
                 {
                 if( cName )
 
-                delF( tinBaseP , psttn ) ;
-                countT cName = strDigitsToSCountF( tinBaseP , psttn , 0 , 1 ) ;
-                strSubstringF( tinBaseP , psttn , idf , idl , psttRawP ) ; ___( psttn ) ;
+                delF( tin0P , psttn ) ;
+                countT cName = strDigitsToSCountF( tin0P , psttn , 0 , 1 ) ;
+                strSubstringF( tin0P , psttn , idf , idl , psttRawP ) ; ___( psttn ) ;
                 ZE( strokeS* , psttn ) ;
                 countT idl = idf + 7 ;
             {
@@ -53,11 +53,11 @@
             //A:ASSUME: FILE NAME IS OF THIS FORM (EXAMPLE): ideafarm.51000fff.ipdos-wm
         {                                                  //123456789abcdef0123456789a
         else                                               //0              1
-        if( !idh ) { strMakeF( tinBaseP , LF , psttP , psttRawP ) ; ___( psttP ) ; }
-        countT idh = strIdF( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , T("/hover/ideafarm.") , psttRawP ) ;     // idf -> 01000020.ipdos-wm
+        if( !idh ) { strMakeF( tin0P , LF , psttP , psttRawP ) ; ___( psttP ) ; }
+        countT idh = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , T("/hover/ideafarm.") , psttRawP ) ;     // idf -> 01000020.ipdos-wm
         countT idf = 1 ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
-        //traceF( tinBaseP , T("diskMapFileNameHoverF / mapping [psttRawP]:    ")+T(psttRawP) ) ; //U::
+        //traceF( tin0P , T("diskMapFileNameHoverF / mapping [psttRawP]:    ")+T(psttRawP) ) ; //U::
     {
     _IO_
 
@@ -72,7 +72,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::diskMapFileNameHoverF( tin0S& tinBaseP , strokeS*& psttP , const strokeS* const psttRawP , const countT cTriesP )/*1*/
+/*1*/voidT etherC::diskMapFileNameHoverF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttRawP , const countT cTriesP )/*1*/
 
 /**/
 */

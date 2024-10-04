@@ -18,7 +18,7 @@
             BOSpOOP
             BOSS( WHATsn , BOSfAIL , DosSleep( ms ) )
         #ifdef __OS2__
-        countT ms = msFromTimeIF( tinBaseP , tNow , 0 ) ;
+        countT ms = msFromTimeIF( tin0P , tNow , 0 ) ;
 
         countT tNow = tNap < tRem ? tNap : tRem ;
     {
@@ -27,10 +27,10 @@
     countT tNap = timeNapP ? timeNapP : TUCK * 0x40 ;
     countT tAll = timeP    ? timeP    : TOCK ;
 
-    //    etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("nonze sleep for time ")+TF2(timeP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
-    //if( !((tin9S&)tinBaseP).pc Utility[ 0 ] && timeP && ((tin9S&)tinBaseP).pEther )
+    //    etherC::etRockIF( tin0P ).traceF( tin0P , T("nonze sleep for time ")+TF2(timeP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
+    //if( !((tin9S&)tin0P).pc Utility[ 0 ] && timeP && ((tin9S&)tin0P).pEther )
 
-    sleepC::blammoIfIF( tinBaseP ) ;
+    sleepC::blammoIfIF( tin0P ) ;
 
     _IO_
 
@@ -39,7 +39,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::dosSleepIF( tin0S& tinBaseP , const countT timeP , const countT timeNapP )/*1*/
+/*1*/voidT thirdC::dosSleepIF( tin0S& tin0P , const countT timeP , const countT timeNapP )/*1*/
 
 /**/
 */

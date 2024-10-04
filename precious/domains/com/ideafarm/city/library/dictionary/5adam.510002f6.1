@@ -10,26 +10,26 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinBaseP , T("\r\n\r\npress the enter key") ) ;
+etThread.strokeF( tin0P , T("\r\n\r\npress the enter key") ) ;
 
-etThread.strokeF( tinBaseP , TF1(etThread.os_cAllKidThreadsI_IF(tinBaseP)-cKidsBefore)+T("\r\n") ) ;
+etThread.strokeF( tin0P , TF1(etThread.os_cAllKidThreadsI_IF(tin0P)-cKidsBefore)+T("\r\n") ) ;
 }
-    etThread.osSleepF( tinBaseP , TUCK * 32 ) ;
-    etThread.strokeF( tinBaseP , TF1(etThread.os_cAllKidThreadsI_IF(tinBaseP)-cKidsBefore)+T("\r\n") ) ;
+    etThread.osSleepF( tin0P , TUCK * 32 ) ;
+    etThread.strokeF( tin0P , TF1(etThread.os_cAllKidThreadsI_IF(tin0P)-cKidsBefore)+T("\r\n") ) ;
 {
-while( etThread.os_cAllKidThreadsI_IF( tinBaseP ) > cKidsBefore ) 
+while( etThread.os_cAllKidThreadsI_IF( tin0P ) > cKidsBefore ) 
 
-while( cTries -- ) { ZE( countT , tnu ) ; etThread.osThreadF( tinBaseP , tnu , tmF ) ; }
+while( cTries -- ) { ZE( countT , tnu ) ; etThread.osThreadF( tin0P , tnu , tmF ) ; }
 countT cTries = 0x10 ;
-const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tinBaseP ) ;
+const countT cKidsBefore = etThread.os_cAllKidThreadsI_IF( tin0P ) ;
 
 TODO
 
 DONE( tmF )
-etThread.osSleepF( tinBaseP , TOCK ) ;
+etThread.osSleepF( tin0P , TOCK ) ;
 TASK( tmF )
 
 /*1*/WAKEhIDE( "example.simplest.func.10300e8.etherC.os_cAllKidThreadsI_IF" )/*1*/

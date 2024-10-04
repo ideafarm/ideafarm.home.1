@@ -9,11 +9,11 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
-etThread.traceF( tinBaseP , T("[csttMaxOld,csttMaxNew]: ")+TF2(csttMaxOld,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" ")+TF2(csttMaxNew,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+etThread.traceF( tin0P , T("[csttMaxOld,csttMaxNew]: ")+TF2(csttMaxOld,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" ")+TF2(csttMaxNew,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
 
-etThread.diskWalkF( tinBaseP , cDirs , cFiles , T("///a/ideafarm.home.101/IdeaFarm (tm)/2.1. Drop Files Here To Archive Them/") , bQuit , diskWalkRenameCBF , pcArg ) ;
+etThread.diskWalkF( tin0P , cDirs , cFiles , T("///a/ideafarm.home.101/IdeaFarm (tm)/2.1. Drop Files Here To Archive Them/") , bQuit , diskWalkRenameCBF , pcArg ) ;
 ZE( countT , bQuit ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
@@ -32,55 +32,55 @@ TODO
 }
     return 0 ;
 
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShort3 ) ;
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShort2 ) ;
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShort1 ) ;
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShort ) ;
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttShort3 ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttShort2 ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttShort1 ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttShort ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttPath ) ;
 
     }
         }
-            ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttNew ) ;
+            ((tin9S&)tin0P).pEther->delF( tin0P , psttNew ) ;
 
-            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , psttNew ) ;
+            //etherC::etRockIF( tin0P ).traceF( tin0P , psttNew ) ;
 
-            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , psttShort3 ) ;
-            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , psttShort2 ) ;
-            //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , psttShort1 ) ;
+            //etherC::etRockIF( tin0P ).traceF( tin0P , psttShort3 ) ;
+            //etherC::etRockIF( tin0P ).traceF( tin0P , psttShort2 ) ;
+            //etherC::etRockIF( tin0P ).traceF( tin0P , psttShort1 ) ;
 
-            else                                 ((tin9S&)tinBaseP).pEther->diskMoveFileOrDirF( tinBaseP , psttNew , tNameOld) ;
-            if( psttNew->idAdam > IPDOSmAXpATH ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("remove ")+TF2(psttNew->idAdam-IPDOSmAXpATH,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" from: ")+T(psttShort) ) ;
+            else                                 ((tin9S&)tin0P).pEther->diskMoveFileOrDirF( tin0P , psttNew , tNameOld) ;
+            if( psttNew->idAdam > IPDOSmAXpATH ) etherC::etRockIF( tin0P ).traceF( tin0P , T("remove ")+TF2(psttNew->idAdam-IPDOSmAXpATH,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" from: ")+T(psttShort) ) ;
 
             if( csttMaxNewP < psttNew->idAdam ) csttMaxNewP = psttNew->idAdam ;
 
-            ((tin9S&)tinBaseP).pEther->strFuseF( tinBaseP , psttNew , psttShort3 ) ;
-            ((tin9S&)tinBaseP).pEther->strFuseF( tinBaseP , psttNew , TF3(++idLathP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".") ) ;
-            ((tin9S&)tinBaseP).pEther->strFuseF( tinBaseP , psttNew , psttShort2 ) ;
-            ((tin9S&)tinBaseP).pEther->strFuseF( tinBaseP , psttNew , tFormatNewP ) ;
-            ((tin9S&)tinBaseP).pEther->strFuseF( tinBaseP , psttNew , psttPath ) ;
-            ((tin9S&)tinBaseP).pEther->strMakeF( tinBaseP , LF , psttNew , 0 , TUCK << 2 ) ; ___( psttNew ) ;
+            ((tin9S&)tin0P).pEther->strFuseF( tin0P , psttNew , psttShort3 ) ;
+            ((tin9S&)tin0P).pEther->strFuseF( tin0P , psttNew , TF3(++idLathP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,2)+T(".") ) ;
+            ((tin9S&)tin0P).pEther->strFuseF( tin0P , psttNew , psttShort2 ) ;
+            ((tin9S&)tin0P).pEther->strFuseF( tin0P , psttNew , tFormatNewP ) ;
+            ((tin9S&)tin0P).pEther->strFuseF( tin0P , psttNew , psttPath ) ;
+            ((tin9S&)tin0P).pEther->strMakeF( tin0P , LF , psttNew , 0 , TUCK << 2 ) ; ___( psttNew ) ;
             ZE( strokeS* , psttNew ) ;
 
             }
                 idLathP    = 0 ;
                 tTimeLathP = T(psttShort2) ;
             {
-            if( ((tin9S&)tinBaseP).pEther->strCompareF( tinBaseP , tTimeLathP , psttShort2 ) )
+            if( ((tin9S&)tin0P).pEther->strCompareF( tin0P , tTimeLathP , psttShort2 ) )
         {
         )
             psttShort2[ CSpREFIX - 1 + 0xe ].idAdam == '.'
             &&
             psttShort2[ CSpREFIX - 1 + 9   ].idAdam == '@'
             &&
-            !((tin9S&)tinBaseP).pEther->strCompareF( tinBaseP , tFormatOldP , psttShort1 )
+            !((tin9S&)tin0P).pEther->strCompareF( tin0P , tFormatOldP , psttShort1 )
         (
         if
 
-        ((tin9S&)tinBaseP).pEther->strSubstringF( tinBaseP , psttShort3 , idf , idl , psttShort ) ; ___( psttShort3 ) ;
+        ((tin9S&)tin0P).pEther->strSubstringF( tin0P , psttShort3 , idf , idl , psttShort ) ; ___( psttShort3 ) ;
         idl = 0 ;
-        ((tin9S&)tinBaseP).pEther->strSubstringF( tinBaseP , psttShort2 , idf , idl , psttShort ) ; ___( psttShort2 ) ;
+        ((tin9S&)tin0P).pEther->strSubstringF( tin0P , psttShort2 , idf , idl , psttShort ) ; ___( psttShort2 ) ;
         idl = 0x1a ;
-        ((tin9S&)tinBaseP).pEther->strSubstringF( tinBaseP , psttShort1 , idf , idl , psttShort ) ; ___( psttShort1 ) ;
+        ((tin9S&)tin0P).pEther->strSubstringF( tin0P , psttShort1 , idf , idl , psttShort ) ; ___( psttShort1 ) ;
         countT idl = 0xc ;
         countT idf = 1 ;
     {
@@ -95,20 +95,20 @@ TODO
     // 123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0
     // 0              1               2               3               4
 
-    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , psttShort ) ;
-    //etherC::etRockIF( tinBaseP ).traceF( tinBaseP , psttPath ) ;
+    //etherC::etRockIF( tin0P ).traceF( tin0P , psttShort ) ;
+    //etherC::etRockIF( tin0P ).traceF( tin0P , psttPath ) ;
 
     if( csttMaxOldP < psttShort->idAdam ) csttMaxOldP = psttShort->idAdam ;
 
     ___( psttShort ) ;
     ___( psttPath ) ;
-    ((tin9S&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
+    ((tin9S&)tin0P).pEther->strBisectF( tin0P , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
     ZE( strokeS* , psttShort ) ;
     ZE( strokeS* , psttPath ) ;
 
-    TN( tNameOld , ifFileNameC( tinBaseP , *((tin9S&)tinBaseP).pEther , postNameP ) ) ;
+    TN( tNameOld , ifFileNameC( tin0P , *((tin9S&)tin0P).pEther , postNameP ) ) ;
 
-    if( !( cDoneP % TUCK ) ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("[cDoneP]: ")+TF2(cDoneP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    if( !( cDoneP % TUCK ) ) etherC::etRockIF( tin0P ).traceF( tin0P , T("[cDoneP]: ")+TF2(cDoneP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     cDoneP ++ ;
 
     textC&  tFormatNewP =  *(textC*)pcArgP[ 6 ] ;
@@ -119,7 +119,7 @@ TODO
     countT& cDoneP      = *(countT*)pcArgP[ 1 ] ; 
     textC&  tTimeLathP =   *(textC*)pcArgP[ 0 ] ;
 {
-boolT diskWalkRenameCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT diskWalkRenameCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 /*1*/WAKEsHOWtEXT( "tool.rename.archive.format.4.to.5" )/*1*/
 /**/

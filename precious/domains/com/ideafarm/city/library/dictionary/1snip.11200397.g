@@ -7,7 +7,7 @@
 //
 
 
-#define G(aptP) grabitC::grabIF( tinBaseP , TAG( TAGiDnULL ) , &APT( listingC , aptP ).flagsRefF() , ifcIDgRABITbIT_00 + offLISTINGgRABBEDbIT )
+#define G(aptP) grabitC::grabIF( tin0P , TAG( TAGiDnULL ) , &APT( listingC , aptP ).flagsRefF() , ifcIDgRABITbIT_00 + offLISTINGgRABBEDbIT )
 
 /*1*//*G(aptP)*//*1*/
 /**/

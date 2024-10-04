@@ -10,7 +10,7 @@
 }
     }
         }
-            (*pCbfP)( tinBaseP , cDirsP , cFilesP , bQuitP , 0 , pcArgP , pModuloDirsP , pModuloFilesP ) ;          //20180406@1337: ADDED WITHOUT ANALYSIS
+            (*pCbfP)( tin0P , cDirsP , cFilesP , bQuitP , 0 , pcArgP , pModuloDirsP , pModuloFilesP ) ;          //20180406@1337: ADDED WITHOUT ANALYSIS
             _IO_
         {
         if( pCbfP )
@@ -19,8 +19,8 @@
         BOSpOOP ;
         BOS( WHATsfr , BOSoK , FindClose( oshFind ) ) ;
         }
-            if( !((tin9S&)tinBaseP).brcRaw ) break ;
-            if( ((tin9S&)tinBaseP).bosFail && ((tin9S&)tinBaseP).brcQuery != ERROR_NO_MORE_FILES ) BOSpOOP ;
+            if( !((tin9S&)tin0P).brcRaw ) break ;
+            if( ((tin9S&)tin0P).bosFail && ((tin9S&)tin0P).brcQuery != ERROR_NO_MORE_FILES ) BOSpOOP ;
 
             if( bRetry ) { __( ifcIDiMPOTENCEbASEeRRORcODE_NOTrEADY ) ; }
             while( bRetry && -- cDo ) ;
@@ -32,8 +32,8 @@
                     Sleep( 2000 ) ;
                     _IO_
                 {
-                else if( ((tin9S&)tinBaseP).brcLath == ERROR_NOT_READY )
-                if( !((tin9S&)tinBaseP).bosFail ) break ;
+                else if( ((tin9S&)tin0P).brcLath == ERROR_NOT_READY )
+                if( !((tin9S&)tin0P).bosFail ) break ;
                 BOS( WHATsfr , BOSoK , FindNextFile( oshFind , &info ) ) ;
                 _IO_
             {
@@ -49,7 +49,7 @@
     
                 ;
                     : 1
-                    ? (*pCbfP)( tinBaseP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP , pModuloDirsP , pModuloFilesP )
+                    ? (*pCbfP)( tin0P , cDirsP , cFilesP , bQuitP , postNameP , pcArgP , pModuloDirsP , pModuloFilesP )
                 boolT bDoIt = pCbfP && ( !pModuloFilesP || !( cDirsP % *pModuloFilesP ) )
 
                 strcpy( postNameEnd , info.cFileName ) ;
@@ -63,7 +63,7 @@
                         *postNameEnd = 0 ;
         
                         }
-                            diskWalkPrivateIF( tinBaseP , cDirsP , cFilesP , postNameP , bQuitP , flagsP , pCbfP , pcArgP , pModuloDirsP , pModuloFilesP ) ;
+                            diskWalkPrivateIF( tin0P , cDirsP , cFilesP , postNameP , bQuitP , flagsP , pCbfP , pcArgP , pModuloDirsP , pModuloFilesP ) ;
                             cDirsP ++ ;
                             _IO_
                         {
@@ -71,7 +71,7 @@
         
                         ;
                             : 1
-                            ? (*pCbfP)( tinBaseP , cDirsP , cFilesP , bQuitP , postNameP , pcArgP , pModuloDirsP , pModuloFilesP )
+                            ? (*pCbfP)( tin0P , cDirsP , cFilesP , bQuitP , postNameP , pcArgP , pModuloDirsP , pModuloFilesP )
                         boolT bDoIt = pCbfP && ( !pModuloDirsP || !( cDirsP % *pModuloDirsP ) )
         
                         BOSdOnOTtEST( WHATgbo , strcat( postNameEnd , "\\" ) )
@@ -79,9 +79,9 @@
                         _IO_
                     {
                     if( b1 && b2 )
-                    boolT b2 = ((tin9S&)tinBaseP).brcRaw ;
+                    boolT b2 = ((tin9S&)tin0P).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , strcmp( info.cFileName , ".." ) )
-                    boolT b1 = ((tin9S&)tinBaseP).brcRaw ;
+                    boolT b1 = ((tin9S&)tin0P).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , strcmp( info.cFileName , "." ) )
                     _IO_
                 {
@@ -100,15 +100,15 @@
     }
         }
             default :                  { BOSpOOP          ; break ; }
-            case ERROR_ACCESS_DENIED : { ((tin9S&)tinBaseP).bosFail = 0 ; break ; }
+            case ERROR_ACCESS_DENIED : { ((tin9S&)tin0P).bosFail = 0 ; break ; }
             case ERROR_HOST_UNREACHABLE :                                   //20180602@1653: ADDED TO MAKE WALK OF c :\ WORK (OTHERWISE FAILS FOR postNameP == "d:\DFSRoots\Shared Folders\Company\*")
             case ERROR_PATH_NOT_FOUND :
             case ERROR_NO_MORE_FILES :
         {
-        switch( ((tin9S&)tinBaseP).brcQuery )
+        switch( ((tin9S&)tin0P).brcQuery )
         _IO_
     {
-    if( ((tin9S&)tinBaseP).bosFail )
+    if( ((tin9S&)tin0P).bosFail )
 
     if( bRetry ) { __( ifcIDiMPOTENCEbASEeRRORcODE_NOTrEADY ) ; }
     while( bRetry && -- cDo ) ;
@@ -119,8 +119,8 @@
             bRetry = 1 ;
             Sleep( 2000 ) ;
         {
-        else if( ((tin9S&)tinBaseP).brcLath == ERROR_NOT_READY )
-        if( !((tin9S&)tinBaseP).bosFail ) oshFind = (HANDLE)((tin9S&)tinBaseP).brcRaw ;
+        else if( ((tin9S&)tin0P).brcLath == ERROR_NOT_READY )
+        if( !((tin9S&)tin0P).bosFail ) oshFind = (HANDLE)((tin9S&)tin0P).brcRaw ;
         BOS( WHATsfr , BOShANDLE , FindFirstFile( postNameP , &info ) )
         _IO_
     {
@@ -132,7 +132,7 @@
 
     BOSdOnOTtEST( WHATgbo , strcpy( postNameEnd , "*" ) )
     osTextT* const postNameEnd = postNameP + costName ;
-    countT         costName    = ((tin9S&)tinBaseP).brcRaw ;
+    countT         costName    = ((tin9S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
     _IO_
 
@@ -144,7 +144,7 @@
     {
     IFbEcAREFUL
 {
-/*1*/voidT thirdC::diskWalkPrivateIF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , osTextT* const postNameP , const boolT& bQuitP , const flagsT flagsP , diskWalkCBFT pCbfP , countT* const pcArgP , countT* pModuloDirsP , countT* pModuloFilesP )/*1*/
+/*1*/voidT thirdC::diskWalkPrivateIF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , osTextT* const postNameP , const boolT& bQuitP , const flagsT flagsP , diskWalkCBFT pCbfP , countT* const pcArgP , countT* pModuloDirsP , countT* pModuloFilesP )/*1*/
 
 /**/
 */
@@ -159,7 +159,7 @@
  postNameP
  cFilesP
  cDirsP
- tinBaseP
+ tin0P
 arguments
  the callback function is also called with a null postNameP at the end of each enumeration of a directory
  all are counted except when the callback function returns 0

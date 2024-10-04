@@ -13,16 +13,16 @@
     _OUTbATONsTACKc_
 
     }
-        if( ~handleP ) pv = &downF( tinBaseP , handleP ) ;       //      1            2          0           0
-                   upF(   tinBaseP , handleP ) ;                //      2            1          1           0
-                   upF(   tinBaseP , handleP ) ;                //      3            2          2           1
+        if( ~handleP ) pv = &downF( tin0P , handleP ) ;       //      1            2          0           0
+                   upF(   tin0P , handleP ) ;                //      2            1          1           0
+                   upF(   tin0P , handleP ) ;                //      3            2          2           1
     {
     else                                                    //      2            3          1           2
     }
         }
-           pv   = &downF( tinBaseP , handleP ) ;                //                              1           2
-                   upF(   tinBaseP , handleP ) ;                //                              1           0
-                   upF(   tinBaseP , handleP ) ;                //                              2           1
+           pv   = &downF( tin0P , handleP ) ;                //                              1           2
+                   upF(   tin0P , handleP ) ;                //                              1           0
+                   upF(   tin0P , handleP ) ;                //                              2           1
         {
         else                                                //                              2           0
             handleP = 0 ;                                   //                              0           0
@@ -47,7 +47,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/countT& stackC::downUndoF( tin0S& tinBaseP , handleC& handleP )/*1*/
+/*1*/countT& stackC::downUndoF( tin0S& tin0P , handleC& handleP )/*1*/
 
 // FOR cPlates > 2, THE CODE MUST DETECT WHEN ONLY 1 downF CALL HAS BEEN MADE
 // MY DEFINITION EXPLICITLY CODES FOR ALL POSSIBLE CASES WHEN cPlates <= 2

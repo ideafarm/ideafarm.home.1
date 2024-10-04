@@ -10,29 +10,29 @@
 //VISIBLE
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinBaseP , T("press the enter key to fire me") ) ;
+etThread.strokeF( tin0P , T("press the enter key to fire me") ) ;
 
 HEAReNTER( ether )
-etThread.strokeF( tinBaseP , T("press the enter key to close my access to the shared memory") ) ;
+etThread.strokeF( tin0P , T("press the enter key to close my access to the shared memory") ) ;
 
-if( pca ) etThread.strokeF( tinBaseP , T("the value of the fourth countT object is ")+TF2(pca[3],flFORMAT_UNSIGNED)+T("\r\n") ) ;
+if( pca ) etThread.strokeF( tin0P , T("the value of the fourth countT object is ")+TF2(pca[3],flFORMAT_UNSIGNED)+T("\r\n") ) ;
 HEAReNTER( ether )
-etThread.strokeF( tinBaseP , T("press the enter key to tell me to read that object again") ) ;
+etThread.strokeF( tin0P , T("press the enter key to tell me to read that object again") ) ;
 
-if( pca ) etThread.strokeF( tinBaseP , T("the value of the fourth countT object is ")+TF2(pca[3],flFORMAT_UNSIGNED)+T("\r\n") ) ;
+if( pca ) etThread.strokeF( tin0P , T("the value of the fourth countT object is ")+TF2(pca[3],flFORMAT_UNSIGNED)+T("\r\n") ) ;
 countT* pca = (countT*)pva ;
 
-if( !( F(flagsResult) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) thThread.c_memsetIF( tinBaseP , (byteT*)pva , CBaLLOC , 0xcd ) ;
+if( !( F(flagsResult) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ) thThread.c_memsetIF( tin0P , (byteT*)pva , CBaLLOC , 0xcd ) ;
 
 pva = (voidT*)handle.cNoteF() ;
-thThread.dosOpenSharedMemIF( tinBaseP , handle , flagsResult , MEMORYnAME , CBaLLOC , ifcOPENsHAREDmEMORYhOW_nCeO ) ;
+thThread.dosOpenSharedMemIF( tin0P , handle , flagsResult , MEMORYnAME , CBaLLOC , ifcOPENsHAREDmEMORYhOW_nCeO ) ;
 ZE( flagsT , flagsResult ) ;
-handleC handle( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 ZE( voidT* , pva ) ;
-etThread.strokeF( tinBaseP , T("requesting ")+TF1(CBaLLOC)+T(" (")+TF4(CBaLLOC,0,0,10)+T(") bytes that i will share\r\n") ) ;
+etThread.strokeF( tin0P , T("requesting ")+TF1(CBaLLOC)+T(" (")+TF4(CBaLLOC,0,0,10)+T(") bytes that i will share\r\n") ) ;
 
 thirdC& thThread = etThread ;
 

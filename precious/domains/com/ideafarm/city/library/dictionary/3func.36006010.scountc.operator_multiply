@@ -12,18 +12,18 @@
     sCountC cResult( acc ) ;
     // RETURN THE RESULT AS A TEMPORARY sCountC OBJECT
 
-    ether.delF( tinBaseP , pcr ) ;
+    ether.delF( tin0P , pcr ) ;
     }
         if( fNeg1 != fNeg2 ) acc = - acc ;
         }
             }
                 }
-                    acc += sCountC( tinBaseP , ether , pcr , cbitn ) ;
-                    setBitF( tinBaseP , pcr , boff1 + boff2 , 1 ) ;
-                    ether.memSetF( tinBaseP , (byteT*)pcr , cWords * (SC/SB) ) ;
+                    acc += sCountC( tin0P , ether , pcr , cbitn ) ;
+                    setBitF( tin0P , pcr , boff1 + boff2 , 1 ) ;
+                    ether.memSetF( tin0P , (byteT*)pcr , cWords * (SC/SB) ) ;
                     countT one = 1 ;
                 {
-                if( bitF( tinBaseP , pc1 , boff1 ) && bitF( tinBaseP , pc2 , boff2 ) )
+                if( bitF( tin0P , pc1 , boff1 ) && bitF( tin0P , pc2 , boff2 ) )
             {
             for( countT boff2 = 0 ; boff2 < boffSign2 ; boff2 ++ )
         {
@@ -32,11 +32,11 @@
         countT boffSign1 = cbit1 - 1 ;
     {
     if( !ether )
-    sCountC acc( tinBaseP , ether , (countT)0 ) ;
+    sCountC acc( tin0P , ether , (countT)0 ) ;
     // PERFORM THE MULTIPLICATION
 
-    ether.memSetF( tinBaseP , (byteT*)pcr , cWords * (SC/SB) ) ;
-    ether.newF( tinBaseP , LF , pcr , cWords ) ; ___( pcr ) ;
+    ether.memSetF( tin0P , (byteT*)pcr , cWords * (SC/SB) ) ;
+    ether.newF( tin0P , LF , pcr , cWords ) ; ___( pcr ) ;
     countT cWords = 1 + cbitn / SC ;
     countT cbitn = cbit1 + cbit2 ;
     pc2 = c2 ;
@@ -46,14 +46,14 @@
     ZE( countT* , pc1 ) ;
     cbit2 = c2 ;
     cbit1 = c1 ;
-    c2.growBitsToF( tinBaseP , cbit2 + 1 ) ;
-    c1.growBitsToF( tinBaseP , cbit1 + 1 ) ;
+    c2.growBitsToF( tin0P , cbit2 + 1 ) ;
+    c1.growBitsToF( tin0P , cbit1 + 1 ) ;
     countT cbit2 = c2 ;
     countT cbit1 = c1 ;
     if( fNeg2 ) c2 = - c2 ;
     if( fNeg1 ) c1 = - c1 ;
-    boolT fNeg2 = c2.fNegativeF( tinBaseP ) ;
-    boolT fNeg1 = c1.fNegativeF( tinBaseP ) ;
+    boolT fNeg2 = c2.fNegativeF( tin0P ) ;
+    boolT fNeg1 = c1.fNegativeF( tin0P ) ;
     sCountC c2( cP ) ;
     sCountC c1( *this ) ;
     _IO_
@@ -73,7 +73,7 @@
     // THIS FUNCTION MULTIPLIES TWO BINARY NUMBERS OF ARBITRARY LENGTH
 
     }
-        if( ether ) return sCountC( tinBaseP , ether ) ;
+        if( ether ) return sCountC( tin0P , ether ) ;
     {
     IFbEcAREFUL
 

@@ -10,43 +10,43 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
 }
-    etThread.delF( tinBaseP , psttTrimmed ) ;
+    etThread.delF( tin0P , psttTrimmed ) ;
     }
-        etThread.delF( tinBaseP , pstts ) ;
+        etThread.delF( tin0P , pstts ) ;
         }
             CONoUTrAW( T("------------> \"")+T(psttc1)+T("\" <-----------------\r\n") ) ;
         {
         FORsTRINGSiN1( pstts )
-        countT cErrors = etThread.etherSoilF( tinBaseP , pstts , psttTrimmed , ifcIDmODEsTRfROMsOIXLoLD_QUERYvaLUES , T("c") ) ; ___( pstts ) ;
+        countT cErrors = etThread.etherSoilF( tin0P , pstts , psttTrimmed , ifcIDmODEsTRfROMsOIXLoLD_QUERYvaLUES , T("c") ) ; ___( pstts ) ;
         ZE( strokeS* , pstts ) ;
         CONoUTrAW( T("********************************\r\nQUERYING\r\n********************************\r\n") ) ;
     {
     if( !cErrors )
 
-    etThread.delF( tinBaseP , pstts ) ;
+    etThread.delF( tin0P , pstts ) ;
     CONoUTrAW( T("\"")+tAfter+T("\"\r\n") ) ;
     osTextT* posts = tAfter ;
     TN( tAfter , pstts ) ;
-    etThread.etherSoil2F( tinBaseP , pstts ) ; ___( pstts ) ;
+    etThread.etherSoil2F( tin0P , pstts ) ; ___( pstts ) ;
 
-    etThread.strMakeF( tinBaseP , LF , psttTrimmed , pstts ) ; ___( psttTrimmed ) ;
+    etThread.strMakeF( tin0P , LF , psttTrimmed , pstts ) ; ___( psttTrimmed ) ;
     ZE( strokeS* , psttTrimmed ) ;
 
-    countT cErrors = etThread.etherSoilF( tinBaseP , pstts , tSource , ifcIDmODEsTRfROMsOIXLoLD_TRIM ) ; ___( pstts ) ;
+    countT cErrors = etThread.etherSoilF( tin0P , pstts , tSource , ifcIDmODEsTRfROMsOIXLoLD_TRIM ) ; ___( pstts ) ;
     ZE( strokeS* , pstts ) ;
     CONoUTrAW( T("********************************\r\nTRIMMING\r\n********************************\r\n") ) ;
 {
 if( !cFlags )
 
-etThread.delF( tinBaseP , pstts ) ;
+etThread.delF( tin0P , pstts ) ;
 CONoUTrAW( T("\"")+tAfter+T("\"\r\n") ) ;
 osTextT* posts = tAfter ;
 TN( tAfter , pstts ) ;
-etThread.etherSoil2F( tinBaseP , pstts ) ; ___( pstts ) ;
-countT cFlags = etThread.etherSoilF( tinBaseP , pstts , tSource , ifcIDmODEsTRfROMsOIXLoLD_LINT ) ; ___( pstts ) ;
+etThread.etherSoil2F( tin0P , pstts ) ; ___( pstts ) ;
+countT cFlags = etThread.etherSoilF( tin0P , pstts , tSource , ifcIDmODEsTRfROMsOIXLoLD_LINT ) ; ___( pstts ) ;
 ZE( strokeS* , pstts ) ;
 
 TN( tKey    , "" ) ;

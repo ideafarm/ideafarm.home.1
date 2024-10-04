@@ -9,8 +9,8 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     //if( !cbMax ) cbMax = - 1 ;
@@ -18,12 +18,12 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
     //if( cbMax == -1 ) break ;
 
-    poolC::deleteEmptiesIfIF( tinBaseP ) ;
+    poolC::deleteEmptiesIfIF( tin0P ) ;
     }
         }
-            poolC::deleteEmptiesIfIF( tinBaseP ) ;
+            poolC::deleteEmptiesIfIF( tin0P ) ;
             }
-                poolC::deleteEmptiesIfIF( tinBaseP ) ;
+                poolC::deleteEmptiesIfIF( tin0P ) ;
                 }
                     }
                         }
@@ -31,14 +31,14 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                 }
                                     }
                                         }
-                                            etThread.delF( tinBaseP , psttShortest ) ;
+                                            etThread.delF( tin0P , psttShortest ) ;
                                             }
-                                                etThread.delF( tinBaseP , psttShort ) ;
+                                                etThread.delF( tin0P , psttShort ) ;
 
-                                                if( !bShortest ) etThread.diskFileOrDirDeleteF( tinBaseP , tPathArchive+T(psttShort) ) ;
+                                                if( !bShortest ) etThread.diskFileOrDirDeleteF( tin0P , tPathArchive+T(psttShort) ) ;
 
-                                                etThread.traceF( tinBaseP , T(bShortest?"keep     ":/*cbFileUse==cbFile?*/"delete   "/*:"delete ? "*/)+T(psttShort) ) ;
-                                                boolT bShortest = !etThread.strCompareF( tinBaseP , psttShort , psttShortest ) ;
+                                                etThread.traceF( tin0P , T(bShortest?"keep     ":/*cbFileUse==cbFile?*/"delete   "/*:"delete ? "*/)+T(psttShort) ) ;
+                                                boolT bShortest = !etThread.strCompareF( tin0P , psttShort , psttShortest ) ;
                                                 swsNameByBlobPart >> psttShort ;
                                                 ZE( strokeS* , psttShort ) ;
                                             {
@@ -49,16 +49,16 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                                 while( !ether && ~hWalk ) ;
                                                 }
                                                     }
-                                                        if( !psttShortest                                           ) { etThread.strMakeF( tinBaseP , LF , psttShortest , psttfns ) ; ___( psttShortest ) ; }
-                                                        if(  psttShortest && psttfns->idAdam < psttShortest->idAdam ) etThread.delF( tinBaseP , psttShortest ) ;
+                                                        if( !psttShortest                                           ) { etThread.strMakeF( tin0P , LF , psttShortest , psttfns ) ; ___( psttShortest ) ; }
+                                                        if(  psttShortest && psttfns->idAdam < psttShortest->idAdam ) etThread.delF( tin0P , psttShortest ) ;
                                                     {
                                                     if( !bIgnore )
 
-                                                    boolT bIgnore = bFoundNotPicture && etThread.strIdF( tinBaseP , tPicture , psttfns ) ;
-                                                    strokeS* psttfns = (strokeS*)swsNameByBlobPart.downF( tinBaseP , hWalk ) ;
+                                                    boolT bIgnore = bFoundNotPicture && etThread.strIdF( tin0P , tPicture , psttfns ) ;
+                                                    strokeS* psttfns = (strokeS*)swsNameByBlobPart.downF( tin0P , hWalk ) ;
                                                 {
                                                 do
-                                                handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                                handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
                                             {
                                             ZE( strokeS* , psttShortest ) ;
@@ -70,28 +70,28 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                                         break ;
                                                         bFoundNotPicture = 1 ;
                                                     {
-                                                    if( !etThread.strIdF( tinBaseP , tPicture , psttfns ) )
-                                                    strokeS* psttfns = (strokeS*)swsNameByBlobPart.downF( tinBaseP , hWalk ) ;
+                                                    if( !etThread.strIdF( tin0P , tPicture , psttfns ) )
+                                                    strokeS* psttfns = (strokeS*)swsNameByBlobPart.downF( tin0P , hWalk ) ;
                                                 {
                                                 do
-                                                handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                                                handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
                                             {
                                             ZE( boolT , bFoundNotPicture ) ;
                                         {
                                         else
-                                        if( !bIdentical ) etThread.traceF( tinBaseP , T("WARNING: blob parts were identical but whole files were not.  no files were deleted for this set") ) ;
+                                        if( !bIdentical ) etThread.traceF( tin0P , T("WARNING: blob parts were identical but whole files were not.  no files were deleted for this set") ) ;
                                     {
                                     if( !POOP )
 
                                     }
-                                        etThread.delF( tinBaseP , *(byteT**)&phFile ) ;
+                                        etThread.delF( tin0P , *(byteT**)&phFile ) ;
                                         }
                                             DELzOMBIE( phDoomed ) ;
                                             handleC* phDoomed = phFile + offh ;
                                         {
                                         for( countT offh = 0 ; offh < cBuf ; offh ++ )
 
-                                        etThread.delF( tinBaseP , pbBuf ) ;
+                                        etThread.delF( tin0P , pbBuf ) ;
                                         }
                                             }
                                                 }
@@ -100,7 +100,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                                             break ;
                                                             bIdentical = 0 ;
                                                         {
-                                                        if( etThread.memCompareF( tinBaseP , pbBuf , pbBuf + offb * TOCK , cbBite ) )
+                                                        if( etThread.memCompareF( tin0P , pbBuf , pbBuf + offb * TOCK , cbBite ) )
                                                     {
                                                     for( countT offb = 0 ; offb < cBuf ; offb ++ )
                                                 {
@@ -108,7 +108,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
                                                 }
                                                     __NZ( cbWant - cbBite ) ;
-                                                    etThread.fileReadF( tinBaseP , pbBuf + offb * TOCK , cbWant , phFile[ offb ] ) ;
+                                                    etThread.fileReadF( tin0P , pbBuf + offb * TOCK , cbWant , phFile[ offb ] ) ;
                                                     countT cbWant = cbBite ;
                                                 {
                                                 for( countT offb = 0 ; offb < cBuf ; offb ++ )
@@ -120,18 +120,18 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                             countT cbDo = cbFile ;
 
                                             }
-                                                etThread.fileOpenF( tinBaseP , phFile[ offb ] , countTC() , tPathArchive+T((strokeS*)swsNameByBlobPart[offb+1]) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
-                                                new( 0 , tinBaseP , (byteT*)( phFile + offb ) , sizeof( handleC ) ) handleC( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+                                                etThread.fileOpenF( tin0P , phFile[ offb ] , countTC() , tPathArchive+T((strokeS*)swsNameByBlobPart[offb+1]) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
+                                                new( 0 , tin0P , (byteT*)( phFile + offb ) , sizeof( handleC ) ) handleC( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
                                             {
                                             for( countT offb = 0 ; offb < cBuf ; offb ++ )
                                         {
                                         if( !POOP )
 
-                                        etThread.newF( tinBaseP , LF , *(byteT**)&phFile , sizeof( handleC ) * cBuf ) ; ___( phFile ) ;
+                                        etThread.newF( tin0P , LF , *(byteT**)&phFile , sizeof( handleC ) * cBuf ) ; ___( phFile ) ;
                                         ZE( handleC* , phFile ) ;
 
                                         __Z( pbBuf ) ;
-                                        etThread.newF( tinBaseP , LF , pbBuf , TOCK * cBuf ) ; ___( pbBuf ) ;
+                                        etThread.newF( tin0P , LF , pbBuf , TOCK * cBuf ) ; ___( pbBuf ) ;
                                         ZE( byteT* , pbBuf ) ;
                                         countT cBuf = swsNameByBlobPart ;
 
@@ -146,43 +146,43 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                     if( cbFileUse < cbFile )
                                     boolT bIdentical = 1 ;
 
-                                    etThread.traceF( tinBaseP , T("for size ")+TF2(cbFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(", found ")+TF2((countT)swsNameByBlobPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" duplicates") ) ;
+                                    etThread.traceF( tin0P , T("for size ")+TF2(cbFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(", found ")+TF2((countT)swsNameByBlobPart,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" duplicates") ) ;
                                 {
                                 else
                                 }
-                                    etThread.delF( tinBaseP , psttShort ) ;
+                                    etThread.delF( tin0P , psttShort ) ;
                                     swsNameByBlobPart >> psttShort ;
                                     ZE( strokeS* , psttShort ) ;
                                 {
                                 if( swsNameByBlobPart == 1 || !cbFile )
 
-                                pbLeverBlobPart = (byteT*)swsNameByBlobPart.leverF( tinBaseP , idfBlobPart ) ;
+                                pbLeverBlobPart = (byteT*)swsNameByBlobPart.leverF( tin0P , idfBlobPart ) ;
                             {
                             for( countT idfBlobPart = 1 ; idfBlobPart <= cFlavorsBlobPart ; idfBlobPart ++ )
-                            countT cFlavorsBlobPart = swsNameByBlobPart.cFlavorsF( tinBaseP ) ;
+                            countT cFlavorsBlobPart = swsNameByBlobPart.cFlavorsF( tin0P ) ;
                             //FOR EACH BLOB VALUE, REPORT AND DELETE DUPLICATES
 
-                            poolC::deleteEmptiesIfIF( tinBaseP ) ;
+                            poolC::deleteEmptiesIfIF( tin0P ) ;
                             }
                                 }
-                                    etThread.delF( tinBaseP , pbLeverBlobPart ) ;
+                                    etThread.delF( tin0P , pbLeverBlobPart ) ;
                                 
                                     if( !POOP ) swsNameByBlobPart << psttShort ;
                                     __NZ( cbWant - cbFileUse ) ;
-                                    etThread.fileReadF( tinBaseP , pbLeverBlobPart , cbWant , hFile ) ;
+                                    etThread.fileReadF( tin0P , pbLeverBlobPart , cbWant , hFile ) ;
                                     countT cbWant = cbFileUse ;
                                 
-                                    etThread.fileOpenF( tinBaseP , hFile , countTC() , tPathArchive+T(psttShort) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
-                                    handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+                                    etThread.fileOpenF( tin0P , hFile , countTC() , tPathArchive+T(psttShort) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
+                                    handleC hFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
                                     
-                                    etThread.newF( tinBaseP , LF , pbLeverBlobPart , cbFileUse ) ; ___( pbLeverBlobPart ) ;
+                                    etThread.newF( tin0P , LF , pbLeverBlobPart , cbFileUse ) ; ___( pbLeverBlobPart ) ;
                                 {
                                 else
                                 }
-                                    etThread.delF( tinBaseP , pbLeverBlobPart ) ;
+                                    etThread.delF( tin0P , pbLeverBlobPart ) ;
                                     if( !POOP ) swsNameByBlobPart << psttShort ;
                                     __NZ( cbIn - cbFile ) ;
-                                    etThread.boxGetShadowF( tinBaseP , pbLeverBlobPart , cbIn , tPathArchive+T(psttShort) ) ; ___( pbLeverBlobPart ) ;
+                                    etThread.boxGetShadowF( tin0P , pbLeverBlobPart , cbIn , tPathArchive+T(psttShort) ) ; ___( pbLeverBlobPart ) ;
                                     ZE( countT , cbIn ) ;
                                 {
                                 if( cbFileUse == cbFile )
@@ -191,37 +191,37 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                 ZE( strokeS* , psttShort ) ;
                             {
                             while( swsNameByHash )
-                            switchStackC swsNameByBlobPart( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , *(const byteT**)&pbLeverBlobPart , cbFileUse , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+                            switchStackC swsNameByBlobPart( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , *(const byteT**)&pbLeverBlobPart , cbFileUse , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
                             ZE( byteT* , pbLeverBlobPart ) ;
                             // LOAD swsNameByBlobPart WITH FILE NAMES SWITCHED ON THE BLOB VALUE
 
-                            cLeverHash = swsNameByHash.leverF( tinBaseP , idfHash ) ;
+                            cLeverHash = swsNameByHash.leverF( tin0P , idfHash ) ;
                         {
                         for( countT idfHash = 1 ; idfHash <= cFlavorsHash ; idfHash ++ )
                         //FOR EACH HASH
                     {
                     if( cFlavorsHash < cFiles ) // LOOK FOR DUPLICATES ONLY IF I HAVE FEWER DISTINCT HASHES THAN FILES
-                    countT cFlavorsHash = swsNameByHash.cFlavorsF( tinBaseP ) ;
+                    countT cFlavorsHash = swsNameByHash.cFlavorsF( tin0P ) ;
 
                     }
                         }
 
                             }
                                 swsNameByHash << psttShort ;
-                                etThread.delF( tinBaseP , pbIn ) ;
+                                etThread.delF( tin0P , pbIn ) ;
                                 cLeverHash = hashF( pbIn , cbFileUse , 0 ) ;
                             {
                             else            
-                            if( POOP ) etThread.delF( tinBaseP , pbIn ) ;
+                            if( POOP ) etThread.delF( tin0P , pbIn ) ;
 
                             __NZ( cbWant - cbFileUse ) ;
-                            etThread.fileReadF( tinBaseP , pbIn , cbWant , hFile ) ;
+                            etThread.fileReadF( tin0P , pbIn , cbWant , hFile ) ;
                             countT cbWant = cbFileUse ;
                         
-                            etThread.fileOpenF( tinBaseP , hFile , countTC() , tPathArchive+T(psttShort) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
-                            handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+                            etThread.fileOpenF( tin0P , hFile , countTC() , tPathArchive+T(psttShort) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
+                            handleC hFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
                             
-                            etThread.newF( tinBaseP , LF , pbIn , cbFileUse ) ; ___( pbIn ) ;
+                            etThread.newF( tin0P , LF , pbIn , cbFileUse ) ; ___( pbIn ) ;
                             ZE( byteT* , pbIn ) ;
                         {
                         else
@@ -229,29 +229,29 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                             }
                                 }
                                     swsNameByHash << psttShort ;
-                                    etThread.delF( tinBaseP , pbIn ) ;
+                                    etThread.delF( tin0P , pbIn ) ;
                                     cLeverHash = hashF( pbIn , cbIn , 0 ) ;
                                 {
                                 else
-                                if( POOP ) etThread.delF( tinBaseP , pbIn ) ;
+                                if( POOP ) etThread.delF( tin0P , pbIn ) ;
 
                                 __NZ( cbIn - cbFile ) ;
-                                etThread.boxGetShadowF( tinBaseP , pbIn , cbIn , tPathArchive+T(psttShort) ) ; ___( pbIn ) ;
+                                etThread.boxGetShadowF( tin0P , pbIn , cbIn , tPathArchive+T(psttShort) ) ; ___( pbIn ) ;
                                 ZE( countT , cbIn ) ;
                                 ZE( byteT* , pbIn ) ;
                             {
                             else
-                            if( !cbFile ) etThread.delF( tinBaseP , psttShort ) ;
+                            if( !cbFile ) etThread.delF( tin0P , psttShort ) ;
                         {
                         if( cbFileUse == cbFile )
 
-                        //etThread.traceF( tinBaseP , psttShort ) ;
+                        //etThread.traceF( tin0P , psttShort ) ;
                         soulSws >> psttShort ; ___( psttShort ) ;
                         ZE( strokeS* , psttShort ) ;
                     {
                     while( !ether && cDo -- )
                     countT cDo = cFiles ;
-                    switchStackC swsNameByHash( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverHash , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+                    switchStackC swsNameByHash( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverHash , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
                     ZE( countT , cLeverHash ) ;
                     // LOAD swsNameByHash WITH FILE NAMES SWITCHED ON THE HASH VALUE CALCULATED FROM THE BLOB VALUE
                 {
@@ -261,7 +261,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                     ? cbFile
                 countT cbFileUse = cbFile < TICK
 
-                //etThread.traceF( tinBaseP , T("stacking names by hash [soulSws,cbFile,cFiles]:    ")+TF2((countT)soulSws,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //etThread.traceF( tin0P , T("stacking names by hash [soulSws,cbFile,cFiles]:    ")+TF2((countT)soulSws,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 soulSws >> cFiles ;
                 soulSws >> cbFile ;
                 ZE( countT , cFiles ) ;
@@ -270,22 +270,22 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         {
         while( !ether && soulSws )
         TN( tPicture , ".picture." ) ;
-        etThread.traceF( tinBaseP , T("eating soulSws") ) ;
+        etThread.traceF( tin0P , T("eating soulSws") ) ;
 
-        poolC::deleteEmptiesIfIF( tinBaseP ) ;
-        etThread.traceF( tinBaseP , T("deleting empty pools") ) ;
+        poolC::deleteEmptiesIfIF( tin0P ) ;
+        etThread.traceF( tin0P , T("deleting empty pools") ) ;
         }
-            etThread.traceF( tinBaseP , T("destroying swsFiles") ) ;
+            etThread.traceF( tin0P , T("destroying swsFiles") ) ;
             }
                 }
                     while( !ether && ~hWalk ) ;
                     }
                         soulSws << psttfns ;
-                        //etThread.traceF( tinBaseP , psttfns ) ;
-                        strokeS* psttfns = (strokeS*)swsFiles.downF( tinBaseP , hWalk ) ;
+                        //etThread.traceF( tin0P , psttfns ) ;
+                        strokeS* psttfns = (strokeS*)swsFiles.downF( tin0P , hWalk ) ;
                     {
                     do
-                    handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
 
                     soulSws << (countT)swsFiles ;
                 {
@@ -295,21 +295,21 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
                 soulSws << cLeverCbFile ;
 
-                etThread.traceF( tinBaseP , T("loading soulSws [idfFiles,cbFile]:    ")+TF2(idfFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cLeverCbFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                etThread.traceF( tin0P , T("loading soulSws [idfFiles,cbFile]:    ")+TF2(idfFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cLeverCbFile,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                cLeverCbFile = swsFiles.leverF( tinBaseP , idfFiles ) ;
+                cLeverCbFile = swsFiles.leverF( tin0P , idfFiles ) ;
             {
             for( countT idfFiles = 1 ; !ether && idfFiles <= cFlavorsFiles ; idfFiles ++ )
-            countT cFlavorsFiles = swsFiles.cFlavorsF( tinBaseP ) ;
-            etThread.traceF( tinBaseP , T("loading soulSws") ) ;
+            countT cFlavorsFiles = swsFiles.cFlavorsF( tin0P ) ;
+            etThread.traceF( tin0P , T("loading soulSws") ) ;
 
-            etThread.diskWalkF( tinBaseP , cDirs , cFiles , tPathArchive , (countT&)(const countT&)ether , diskWalkCBF , pcArgs ) ;
+            etThread.diskWalkF( tin0P , cDirs , cFiles , tPathArchive , (countT&)(const countT&)ether , diskWalkCBF , pcArgs ) ;
             ZE( countT , cFiles ) ;
             ZE( countT , cDirs ) ;
 
             countT pcArgs[] = { (countT)&etThread , (countT)&cLeverCbFile , (countT)&swsFiles , (countT)(strokeS*)tSlash /*, cbMin , cbMax*/ } ;
 
-            //etThread.traceF( tinBaseP , T("[cbMin,cbMax]:    ")+TF2(cbMin,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etThread.traceF( tin0P , T("[cbMin,cbMax]:    ")+TF2(cbMin,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             //;
             //
@@ -320,11 +320,11 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             //
             //countT cbMin = cbMax == TUCK
 
-            switchStackC swsFiles( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverCbFile , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
+            switchStackC swsFiles( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverCbFile , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
             ZE( countT , cLeverCbFile ) ;
-            etThread.traceF( tinBaseP , T("loading swsFiles") ) ;
+            etThread.traceF( tin0P , T("loading swsFiles") ) ;
         {
-        soulC soulSws( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , "sws.cb.name" ) ;
+        soulC soulSws( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "sws.cb.name" ) ;
     {
 {
 //for(;;)
@@ -341,34 +341,34 @@ TODO
 
     DEL( pInfo ) ;
 
-    etherP.delF( tinBaseP , psttfn ) ;
+    etherP.delF( tin0P , psttfn ) ;
     }
         swsFilesP << psttfnShort ; psttfnShort = 0 ;
         cLeverCbFileP = pInfo->cbUsed ;
-        etherP.traceF( tinBaseP , psttfnShort ) ;
+        etherP.traceF( tin0P , psttfnShort ) ;
 
         }
-            etherP.delF( tinBaseP , psttfnPath ) ;
+            etherP.delF( tin0P , psttfnPath ) ;
             ___( psttfnShort ) ;
             ___( psttfnPath ) ;
-            etherP.strBisectF( tinBaseP , psttfnPath , psttfnShort , psttfn , psttSlashP , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
+            etherP.strBisectF( tin0P , psttfnPath , psttfnShort , psttfn , psttSlashP , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
             ZE( strokeS* , psttfnPath ) ;
         {
         ZE( strokeS* , psttfnShort ) ;
     {
     //if( !pInfo->cbUsedHigh && cbMinP <= pInfo->cbUsed && pInfo->cbUsed <= cbMaxP )
 
-    etherP.diskFileQueryF( tinBaseP , pInfo , hFile ) ;
+    etherP.diskFileQueryF( tin0P , pInfo , hFile ) ;
     ZE( infoFileS* , pInfo ) ;
 
-    etherP.fileOpenF( tinBaseP , hFile , countTC() , psttfn , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
-    handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+    etherP.fileOpenF( tin0P , hFile , countTC() , psttfn , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
+    handleC hFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 
-    if( !( cFilesP % TUCK ) ) etherP.traceF( tinBaseP , T("loaded ")+TF2(cFilesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" files") ) ;
+    if( !( cFilesP % TUCK ) ) etherP.traceF( tin0P , T("loaded ")+TF2(cFilesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" files") ) ;
 
-    etherP.strMakeFromOsTextF( tinBaseP , psttfn , iffn ) ; ___( psttfn ) ;
+    etherP.strMakeFromOsTextF( tin0P , psttfn , iffn ) ; ___( psttfn ) ;
     ZE( strokeS* , psttfn ) ;
-    ifFileNameC iffn( tinBaseP , etherP , postNameP ) ;
+    ifFileNameC iffn( tin0P , etherP , postNameP ) ;
 
     //const countT   cbMaxP        =                 pcArgP[ 5 ] ;
     const countT   cbMinP        =                 pcArgP[ 4 ] ;
@@ -377,7 +377,7 @@ TODO
     countT&        cLeverCbFileP =       *(countT*)pcArgP[ 1 ] ;
     etherC&        etherP        =       *(etherC*)pcArgP[ 0 ] ;
 {
-boolT diskWalkCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT diskWalkCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 #define CBfILEhiGHwATERdONEaOK 0x1fd4f28
 

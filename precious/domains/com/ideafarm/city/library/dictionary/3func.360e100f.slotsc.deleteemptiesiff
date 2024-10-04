@@ -11,12 +11,12 @@
     }
         inc02AM( pcTallyOut[ offs ] ) ;
         }
-            /**/ pGrabNewElt[ offs ].ungrabF( tinBaseP ) ;
+            /**/ pGrabNewElt[ offs ].ungrabF( tin0P ) ;
             /**/ 
             /**/ THREADmODE2rESTORE
             /**/ }
             /**/     }
-            /**/         ++ s ; thirdC::dosSleepWinkIF( tinBaseP ) ;                                                        // NAP A WINK
+            /**/         ++ s ; thirdC::dosSleepWinkIF( tin0P ) ;                                                        // NAP A WINK
             /**/ 
             /**/         else if( setIfZeAM( *(countT*)( ppSex + offs ) , (countT)psDoomed ) ) { BLAMMO ; }             // SHOW THIS sexC (BLAMMO SHOULD BE IMPOSSIBLE)
             /**/         }
@@ -55,10 +55,10 @@
             /**/     countT tallyIn  = pcTallyIn[  offs ] ; // ENTRIES AND EXITS OF ALL CODE THAT ACCESSES THIS sexC
             /**/ {
             /**/ for(;;)                                                                                                // FOREVER
-            /**/ sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            /**/ sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             /**/ THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             /**/ 
-            /**/ pGrabNewElt[ offs ].grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            /**/ pGrabNewElt[ offs ].grabF( tin0P , TAG( TAGiDnULL ) ) ;
             /**/ 
             /**/ // SERIALIZATION IS ONLY USED WHEN CONSTRUCTING OR DESTROYING sexC INSTANCES (WHICH ARE REGISTERED IN ppSex[])
             /**/ // FOR SPEED, SERIALIZATION IS NOT USED FOR NORMAL POOL DROP NEW/DEL OPERATIONS
@@ -90,14 +90,14 @@
                 inc02AM( pReg->cRefPoolReg ) ;
                 pReg = pRegs + offr ;
             {
-            if( !thirdC::c_strcmpIF( tinBaseP , pRegs[ offr ].postPoolName , postPoolName ) && !pReg )
-            grabitC grabx( tinBaseP , TAG( TAGiDnULL ) , (byteT*)&pRegs[ offr ].flagsi , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_9POOLlAYER2) ;
+            if( !thirdC::c_strcmpIF( tin0P , pRegs[ offr ].postPoolName , postPoolName ) && !pReg )
+            grabitC grabx( tin0P , TAG( TAGiDnULL ) , (byteT*)&pRegs[ offr ].flagsi , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_9POOLlAYER2) ;
         {
         for( countT offr = 0 ; offr < CpOOLrEGISTRATIONSmAX ; offr ++ )
 
-        grabitC grabx( tinBaseP , TAG( TAGiDnULL ) , (byteT*)&home.fliGrab , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_9POOLlAYER1 ) ;
+        grabitC grabx( tin0P , TAG( TAGiDnULL ) , (byteT*)&home.fliGrab , ifcIDgRABITbIT_00 , *(grabitC*)0 , 0 , 0 , 0 , flGRABITc_null , 0 , ifcIDgRABlAYER_9POOLlAYER1 ) ;
 
-        const osTextT* postPoolName = pPoolContainsMe->postNameF( tinBaseP ) ;
+        const osTextT* postPoolName = pPoolContainsMe->postNameF( tin0P ) ;
         poolRegistrationS* pRegs = (poolRegistrationS*)home.pb_pPoolReg ;
         homeS& home = homeS::homeIF() ;
         POOPIE
@@ -116,7 +116,7 @@
 
     _IO_
 {
-/*1*/voidT slotsC::deleteEmptiesIfF( tin0S& tinBaseP )/*1*/
+/*1*/voidT slotsC::deleteEmptiesIfF( tin0S& tin0P )/*1*/
 
 /**/
 

@@ -8,22 +8,22 @@
 
 
 REST
-etThread.osProcessIdPhaseAdamF( tinBaseP , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
-etThread.delF( tinBaseP , postList ) ;
-etThread.boxPutF( tinBaseP , T("///ideafarm/ephemeral/tmp/8c30104.nicName.list.port.80.servers") , postList , costList ) ;
-etThread.delF( tinBaseP , psttList ) ;
-countT costList = etThread.strMakeF( tinBaseP , LF , postList , psttList ) ; ___( postList ) ;
+etThread.delF( tin0P , postList ) ;
+etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/tmp/8c30104.nicName.list.port.80.servers") , postList , costList ) ;
+etThread.delF( tin0P , psttList ) ;
+countT costList = etThread.strMakeF( tin0P , LF , postList , psttList ) ; ___( postList ) ;
 ZE( osTextT* , postList ) ;
 
 }
     DEL( pNicName ) ;
-    if( pNicName ) { etThread.strFuseF( tinBaseP , psttList , TF1(*pNicName)+T("\r\n") ) ; ___( psttList ) ; }
+    if( pNicName ) { etThread.strFuseF( tin0P , psttList , TF1(*pNicName)+T("\r\n") ) ; ___( psttList ) ; }
     stackNicNames >> pNicName ;
     ZE( nicNameC* , pNicName ) ;
 {
 while( stackNicNames )
-etThread.strMakeF( tinBaseP , LF , psttList , T("") , stackNicNames * 0xa ) ; ___( psttList ) ;
+etThread.strMakeF( tin0P , LF , psttList , T("") , stackNicNames * 0xa ) ; ___( psttList ) ;
 ZE( strokeS* , psttList ) ;
 
 }
@@ -33,17 +33,17 @@ ZE( strokeS* , psttList ) ;
             *pNicName = nicName ;
         {
         if( pNicName )
-        etThread.newF( tinBaseP , LF , pNicName ) ; ___( pNicName ) ;
+        etThread.newF( tin0P , LF , pNicName ) ; ___( pNicName ) ;
         ZE( nicNameC* , pNicName ) ;
-        etThread.strokeF( tinBaseP , S1C('@') ) ;
+        etThread.strokeF( tin0P , S1C('@') ) ;
     {
     else
-    if( etThread ) etThread.strokeF( tinBaseP , S1C('.') ) ;
+    if( etThread ) etThread.strokeF( tin0P , S1C('.') ) ;
 
     }
         //U: RETRIEVE THE / PAGE, JUST TO SEE IF REALLY CONNECTED
-        sock.connectF( tinBaseP , 80 , nicName ) ;
-        socketC sock( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+        sock.connectF( tin0P , 80 , nicName ) ;
+        socketC sock( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
     etThread = 0 ;
 {
@@ -51,7 +51,7 @@ for( nicName = 0x12345600 ; (countT)nicName <= 0x12345703 ; ++ nicName ) //U:
 //U:while( !ether && -- nicName )
 nicNameC nicName ;
 
-stackC stackNicNames( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_nicNameC ) ;
+stackC stackNicNames( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_nicNameC ) ;
 
 TODO
 

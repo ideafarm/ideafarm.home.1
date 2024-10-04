@@ -9,18 +9,18 @@
 
 REST
 
-sgnGo.giveResetF( tinBaseP ) ;
-etThread.osSleepF( tinBaseP , TOCK * 4 ) ;
-while( cTries -- ) etThread.osThreadF( tinBaseP , countTC() , tmNullF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnGo ) ;
+sgnGo.giveResetF( tin0P ) ;
+etThread.osSleepF( tin0P , TOCK * 4 ) ;
+while( cTries -- ) etThread.osThreadF( tin0P , countTC() , tmNullF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&sgnGo ) ;
 countT cTries = 0x10 ;
 
-signC sgnGo( tinBaseP , TAG( TAGiDnULL ) ) ;
+signC sgnGo( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
 
 DONE( tmNullF )
 }
-    sgnGo.waitF( tinBaseP ) ;
+    sgnGo.waitF( tin0P ) ;
     signC& sgnGo = *(signC*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )

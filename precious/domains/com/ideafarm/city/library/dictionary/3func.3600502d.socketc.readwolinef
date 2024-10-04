@@ -13,14 +13,14 @@
     dec02AM( cFunctionsPending ) ;
     }
     
-        ((tin9S&)tinBaseP).pag3->_socketC_.grab.ungrabF( tinBaseP ) ;
-        pOdometer->cbWrite += ((tin9S&)tinBaseP).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tin9S&)tinBaseP).odoSockCbRead  - _odoSockCbReadOpen  ;
-        pOdometer = (sockOdometerS*)&(countT&)*((tin9S&)tinBaseP).pag3->_socketC_.pSwOdometer ;
-        ((tin9S&)tinBaseP).pag3->_socketC_.nnLever = nnPeer ;
-        ((tin9S&)tinBaseP).pag3->_socketC_.grab.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ((tin9S&)tin0P).pag3->_socketC_.grab.ungrabF( tin0P ) ;
+        pOdometer->cbWrite += ((tin9S&)tin0P).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tin9S&)tin0P).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tin9S&)tin0P).pag3->_socketC_.pSwOdometer ;
+        ((tin9S&)tin0P).pag3->_socketC_.nnLever = nnPeer ;
+        ((tin9S&)tin0P).pag3->_socketC_.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
-        bRead.ungrabF( tinBaseP ) ;
+        bRead.ungrabF( tin0P ) ;
     
         if( idleTimeAllowedRead ) FRESHtIMEaTOMIC( *pEther , timeLathRead.time1 , timeLathRead.time2 )
     
@@ -28,8 +28,8 @@
             else postP[ offP ++ ] = bIn ;
             }
                 break ;
-                if( bIn == '\n' ) readF( tinBaseP , &bIn , 1 ) ;
-                peekF( tinBaseP , &bIn , 1 ) ;
+                if( bIn == '\n' ) readF( tin0P , &bIn , 1 ) ;
+                peekF( tin0P , &bIn , 1 ) ;
             {
             else if( bIn == '\r' )
             if( bIn == '\n' ) break ;
@@ -50,16 +50,16 @@
             {
             if( bLookForEscape )
     
-            readF( tinBaseP , &bIn , 1 ) ;
+            readF( tin0P , &bIn , 1 ) ;
         {
         while( !*pEther && offP < costaP )
         boolT bLookForEscape = !!postEscapeP ;
         ZE( byteT , bIn ) ;
         _IO_
-        bRead.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        bRead.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = ((tin9S&)tinBaseP).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tin9S&)tinBaseP).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tin9S&)tin0P).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tin9S&)tin0P).odoSockCbRead  ;
     
         }
             }
@@ -81,7 +81,7 @@
     ZE( osTextT , ostEscaped ) ;
     inc02AM( cFunctionsPending ) ;
 {
-/*1*/osTextT socketC::readWoLineF( tin0S& tinBaseP , countT& offP , osTextT* const postP , const countT costaP , const osTextT* const postEscapeP )/*1*/
+/*1*/osTextT socketC::readWoLineF( tin0S& tin0P , countT& offP , osTextT* const postP , const countT costaP , const osTextT* const postEscapeP )/*1*/
 
 /**/
 */

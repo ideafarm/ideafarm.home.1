@@ -11,13 +11,13 @@
     THREADmODE4rESTORE
 
     }
-        PUSE( tinBaseP , *(byteT**)&pcpIdBookMax ) ;
-        PUSE( tinBaseP , *(byteT**)&pcpIdBookMin ) ;
+        PUSE( tin0P , *(byteT**)&pcpIdBookMax ) ;
+        PUSE( tin0P , *(byteT**)&pcpIdBookMin ) ;
     {
     if( !( F(flagsCt) & flBOOKSc_DOnOTuSEpUSE ) )
 
     }
-        else                thirdC::c_memcpyIF( tinBaseP , (byteT*)pcpIdBookScratch1 , (byteT*)pcpIdBookUse , sizeof( countT ) * ( 1 + *pcpIdBookUse ) ) ;
+        else                thirdC::c_memcpyIF( tin0P , (byteT*)pcpIdBookScratch1 , (byteT*)pcpIdBookUse , sizeof( countT ) * ( 1 + *pcpIdBookUse ) ) ;
         if( !pcpIdBookUse ) pcpIdBookScratch1[ 1 ] = pcpIdBookScratch1[ 0 ] = 1 ;
 
         ;
@@ -33,7 +33,7 @@
     {
     if( !POOP )
                                                                                                                     //20210705@0924: NO CHANGES HERE BECAUSE CODE ALREADY APPEARS TO HANDLE !pcpIdBookMin (MY CODE WILL NOW SET pcpIdBookScratch1)
-    if( idStateSpace && !pcpIdBookWantP ) idBookMinMaxF( tinBaseP , pcpIdBookMin , pcpIdBookMax , flagsP , pbQuitP ) ;  //20210705@0924: idBookMinMaxF NOW NO LONGER SETS IMPOTENCE IF QUITTING AND NO BOOK EVER FOUND
+    if( idStateSpace && !pcpIdBookWantP ) idBookMinMaxF( tin0P , pcpIdBookMin , pcpIdBookMax , flagsP , pbQuitP ) ;  //20210705@0924: idBookMinMaxF NOW NO LONGER SETS IMPOTENCE IF QUITTING AND NO BOOK EVER FOUND
     ZE( countT* , pcpIdBookMax ) ;
     ZE( countT* , pcpIdBookMin ) ;
 
@@ -49,12 +49,12 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT booksC::setPcpIdBookWantF( tin0S& tinBaseP , const flagsT flagsP , const countT* const pcpIdBookWantP , const boolT* pbQuitP )/*1*/
+/*1*/voidT booksC::setPcpIdBookWantF( tin0S& tin0P , const flagsT flagsP , const countT* const pcpIdBookWantP , const boolT* pbQuitP )/*1*/
 
 /**/
 */
 i set pcpIdBookScratch1
- tinBaseP
+ tin0P
 arguments
 /*
 

@@ -10,28 +10,28 @@
 REST
 
 }
-    etThread.loafIF( tinBaseP ) ;
+    etThread.loafIF( tin0P ) ;
 
-    //{ countT idAdam = 0x4010350 ; etThread.ifcHireF( tinBaseP , T("tool.gorilla.http.ideafarm.3") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
+    //{ countT idAdam = 0x4010350 ; etThread.ifcHireF( tin0P , T("tool.gorilla.http.ideafarm.3") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
     TELL( "hiring 0530104" ) ;
 
-    //U::etThread.osThreadF( tinBaseP , countTC() , tmWatchDogF ) ;
+    //U::etThread.osThreadF( tin0P , countTC() , tmWatchDogF ) ;
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK * 2 ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK * 2 ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
-    while( cGorillas -- ) etThread.osThreadF( tinBaseP , countTC() , tmGorillaF ) ;
+    while( cGorillas -- ) etThread.osThreadF( tin0P , countTC() , tmGorillaF ) ;
     countT cGorillas = 1 ;
 
-    stateS state( tinBaseP , etThread ) ;
+    stateS state( tin0P , etThread ) ;
 {
 
 TODO
 
 DONE( tmWatchDogF )
 
-etThread.delF( tinBaseP , psttServer ) ;
+etThread.delF( tin0P , psttServer ) ;
         
 }
     }
@@ -39,11 +39,11 @@ etThread.delF( tinBaseP , psttServer ) ;
             break ;
             }
                 }
-                    ++ s ; ether.osSleepF( tinBaseP , TICK * 0x10 , TOCK ) ;
-                    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    ++ s ; ether.osSleepF( tin0P , TICK * 0x10 , TOCK ) ;
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 {
     
-                //etThread.strokeF( tinBaseP , T("notified Wo'O that http is down\r\n") ) ;
+                //etThread.strokeF( tin0P , T("notified Wo'O that http is down\r\n") ) ;
                 //}
                 //    WRITE( 221 , T("quit\r\n") ) ;
                 //    WRITE( 250 , T("Subject: http down\r\n\r\nhttp is down at ")+TT(timeN1,timeN2)+T("\r\n.\r\n") ) ;
@@ -53,30 +53,30 @@ etThread.delF( tinBaseP , psttServer ) ;
                 //    WRITE( 250 , T("helo ")+TF1(DDNUMB)+T(".ideafarm.com\r\n") ) ;
                 //    TN( tOut , "" ) ;
                 //
-                //    __( sockc.readWoReplyF( tinBaseP , psttr ) - 220 ) ;
-                //    sockc.connectF( tinBaseP , 0x19 , nnServer , 1 ) ;
+                //    __( sockc.readWoReplyF( tin0P , psttr ) - 220 ) ;
+                //    sockc.connectF( tin0P , 0x19 , nnServer , 1 ) ;
                 //
-                //    socketC sockc( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+                //    socketC sockc( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 //    ZE( strokeS* , psttr ) ;
                 //{
-                //etThread.strokeF( tinBaseP , TT(timeN1,timeN2)+T(": notifying Wo'O that http is down\r\n") ) ;
+                //etThread.strokeF( tin0P , TT(timeN1,timeN2)+T(": notifying Wo'O that http is down\r\n") ) ;
                 //
-                //etThread.osTimeNowF( tinBaseP , timeN1 , timeN2 ) ;
+                //etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                 //ZE( sCountT , timeN2 ) ;
                 //ZE( countT , timeN1 ) ;
             {
             if( !ether )
 
             }
-                ++ s ; ether.osSleepF( tinBaseP , TOCK * 2 ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                ++ s ; ether.osSleepF( tin0P , TOCK * 2 ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
         {
         if( cOk == cOkSave && !ether )
     
         }
-            ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x20 ) ; //OCCASIONAL FALSE ALARMS AT 0x8
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ++ s ; ether.osSleepF( tin0P , TOCK * 0x20 ) ; //OCCASIONAL FALSE ALARMS AT 0x8
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
         countT cOkSave = cOk ;
     {
@@ -84,9 +84,9 @@ etThread.delF( tinBaseP , psttServer ) ;
 {
 while( !ether && !etThread )
 
-nicNameC nnServer = socketC::nicNameIF( tinBaseP , etThread , psttServer ) ;
-etThread.strokeF( tinBaseP , T("name server: \"")+T(psttServer)+T("\"\r\n") ) ;
-etThread.dnsNicNamesF( tinBaseP , psttServer , psttd , ifcIDtYPEdNSqUERY_MX ) ; ___( psttServer ) ;
+nicNameC nnServer = socketC::nicNameIF( tin0P , etThread , psttServer ) ;
+etThread.strokeF( tin0P , T("name server: \"")+T(psttServer)+T("\"\r\n") ) ;
+etThread.dnsNicNamesF( tin0P , psttServer , psttd , ifcIDtYPEdNSqUERY_MX ) ; ___( psttServer ) ;
 strokeS* psttd = tDomain ;
 TN( tDomain , "vtext.com" ) ;
 ZE( strokeS* , psttServer ) ;
@@ -96,35 +96,35 @@ DONE( tmGorillaF )
 
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , /*ru*/TOCK ) ;
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , /*ru*/TOCK ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     else
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK * 0x10 ) ; //ALLOWS TERMINATING THREADS TO COMPLETE
-        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK * 0x10 ) ; //ALLOWS TERMINATING THREADS TO COMPLETE
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     if( !( idMe % 0x1000 ) )
 
     }
-        etThread.ifcSayF( tinBaseP , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBad)+T("; request for ")+tHome+T(" fulfilled aok\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+        etThread.ifcSayF( tin0P , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBad)+T("; request for ")+tHome+T(" fulfilled aok\r\n") , flSAY_APPEND | flSAY_LOG ) ;
         cOk ++ ;
     {
     else
     }
-        //U::etThread.ifcSayF( tinBaseP , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBadMe)+T("; request for ")+tHome+T(" FAILED ********\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+        //U::etThread.ifcSayF( tin0P , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBadMe)+T("; request for ")+tHome+T(" FAILED ********\r\n") , flSAY_APPEND | flSAY_LOG ) ;
         countT cBadMe = 1 + incv02AM( cBad ) ;
-        *((tin9S&)tinBaseP).zEtScratch = 0 ;
+        *((tin9S&)tin0P).zEtScratch = 0 ;
     {
-    if( *((tin9S&)tinBaseP).zEtScratch || !cbHome /*|| cbHome != cbHomeWoth*/ )
+    if( *((tin9S&)tin0P).zEtScratch || !cbHome /*|| cbHome != cbHomeWoth*/ )
     if( !cbHomeWoth  ) cbHomeWoth  = cbHome ;   
-    { ZE( byteT* , pbHome  ) ; ((tin9S&)tinBaseP).zEtScratch->boxGetShadowF( tinBaseP , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; ((tin9S&)tinBaseP).zEtScratch->delF( tinBaseP , pbHome  ) ; }
+    { ZE( byteT* , pbHome  ) ; ((tin9S&)tin0P).zEtScratch->boxGetShadowF( tin0P , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; ((tin9S&)tin0P).zEtScratch->delF( tin0P , pbHome  ) ; }
     ZE( countT , cbHome ) ;
-    etThread.strokeF( tinBaseP , T("trial ")+TF1(idMe)+T("\r\n") ) ;
+    etThread.strokeF( tin0P , T("trial ")+TF1(idMe)+T("\r\n") ) ;
     countT idMe = 1 + incv02AM( idTrial ) ;
 {
 while( !etThread && !ether )
-ranUniC ru( TICK , ((tin9S&)tinBaseP).monitor.idThread ) ;
+ranUniC ru( TICK , ((tin9S&)tin0P).monitor.idThread ) ;
 ZE( countT , cbHomeWoth ) ;
 TN( tb , " " ) ;
 
@@ -133,7 +133,7 @@ TN( tb , " " ) ;
 TN( tHome  , "127.1.1.1//http//newblabroom.html" ) ;
 
 THREADmODE2oN( flTHREADmODE2_QUIETiMPOTENCE )
-//etThread.osThreadSwitchingDesireF( tinBaseP , ifcTHREADpRIORITY_RUSH ) ;
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
 
 TASK( tmGorillaF )
 
@@ -141,13 +141,13 @@ countT cBad ;
 countT cOk ;
 countT idTrial ;
 
-    etThread.delF( tinBaseP , psttr ) ;
+    etThread.delF( tin0P , psttr ) ;
     }                                                                                           \
         CONoUT2( T(psttr) , rc ) ;                                                              \
         __( rc - rcOkP ) ;                                                          \
-        countT rc = sockc.readWoReplyF( tinBaseP , psttr ) ;                                       \
+        countT rc = sockc.readWoReplyF( tin0P , psttr ) ;                                       \
     {                                                                                           \
-    sockc.writeF( tinBaseP , (osTextT*)tOut , tOut.csF( tinBaseP ) ) ;                                 \
+    sockc.writeF( tin0P , (osTextT*)tOut , tOut.csF( tin0P ) ) ;                                 \
     tOut = textP ;                                                                              \
                                                                                                 \
 #define WRITE(rcOkP,textP)                                                                      \

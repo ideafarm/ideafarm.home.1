@@ -13,18 +13,18 @@
     //U::     OStEXTA( *postP , postPenanceP )
     //U::     OStEXTA( *postP , pposta[ 7 ] )
     //U::     OStEXTC( *postP , idFileP , 0 )
-    //U::     OStEXTC( *postP , ((tin9S&)tinBaseP).pLFstep[ ( ( ((tin9S&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] , 0 )
+    //U::     OStEXTC( *postP , ((tin9S&)tin0P).pLFstep[ ( ( ((tin9S&)tin0P).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] , 0 )
     //U::     OStEXTA( *postP , pposta[ 6 ] )
     //U::     OStEXTC( *postP , idLineP , 0 )
-    //U::     OStEXTC( *postP , ((tin9S&)tinBaseP).pLFstep[ ( ((tin9S&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] & 0xfffffff , 0 )
+    //U::     OStEXTC( *postP , ((tin9S&)tin0P).pLFstep[ ( ((tin9S&)tin0P).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] & 0xfffffff , 0 )
     //U::     OStEXTA( *postP , pposta[ 5 ] )
     //U::     OStEXTA( *postP , postSinP )
     //U::     OStEXTA( *postP , pposta[ 4 ] )
     //U::     OStEXTC( *postP , processGlobal1I.idAdamRoot , 0 )
     //U::     OStEXTA( *postP , pposta[ 3 ] )
-    //U::     OStEXTA( *postP , ((tin9S&)tinBaseP).postThreadName )
+    //U::     OStEXTA( *postP , ((tin9S&)tin0P).postThreadName )
     //U::     OStEXTA( *postP , pposta[ 2 ] )
-    //U::     OStEXTC( *postP , ((tin9S&)tinBaseP).monitor.idThread , 0 )
+    //U::     OStEXTC( *postP , ((tin9S&)tin0P).monitor.idThread , 0 )
     //U::     OStEXTA( *postP , pposta[ 1 ] )
     //U::     OStEXTcLEAR( *postP )
     //U::     ZE( countT , ecnu ) ;
@@ -33,36 +33,36 @@
 
 
     }
-        thirdC::c_strncpyIF( tinBaseP , postP , ostot , ostot.costF() + 1 ) ;
-        ((tin9S&)tinBaseP).pEther->newF( tinBaseP , LF , postP , ostot.costF() + 1 ) ; ___( postP ) ;
+        thirdC::c_strncpyIF( tin0P , postP , ostot , ostot.costF() + 1 ) ;
+        ((tin9S&)tin0P).pEther->newF( tin0P , LF , postP , ostot.costF() + 1 ) ; ___( postP ) ;
 
         OStEXTA( ostot , postPenanceP )
         OStEXTA( ostot , pposta[ 7 ] )
         OStEXTC( ostot , idFileP , 0 )
-        OStEXTC( ostot , ((tin9S&)tinBaseP).pLFstep[ ( ( ((tin9S&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] , 0 )
+        OStEXTC( ostot , ((tin9S&)tin0P).pLFstep[ ( ( ((tin9S&)tin0P).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] , 0 )
         OStEXTA( ostot , pposta[ 6 ] )
         OStEXTC( ostot , idLineP , 0 )
-        OStEXTC( ostot , ((tin9S&)tinBaseP).pLFstep[ ( ((tin9S&)tinBaseP).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] & 0xfffffff , 0 )
+        OStEXTC( ostot , ((tin9S&)tin0P).pLFstep[ ( ((tin9S&)tin0P).monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ] & 0xfffffff , 0 )
         OStEXTA( ostot , pposta[ 5 ] )
         OStEXTA( ostot , postSinP )
         OStEXTA( ostot , pposta[ 4 ] )
         OStEXTC( ostot , processGlobal1I.idAdamRoot , 0 )
         OStEXTA( ostot , pposta[ 3 ] )
-        if( tinBaseP.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostot , ((tin9S&)tinBaseP).postThreadName )
+        if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostot , ((tin9S&)tin0P).postThreadName )
         OStEXTA( ostot , pposta[ 2 ] )
-        OStEXTC( ostot , ((tin9S&)tinBaseP).monitor.idThread , 0 )
+        OStEXTC( ostot , ((tin9S&)tin0P).monitor.idThread , 0 )
         OStEXTA( ostot , pposta[ 1 ] )
         OStEXT( ostot , 0x400 )
     {
-    if( ((tin9S&)tinBaseP).pEther )
+    if( ((tin9S&)tin0P).pEther )
 
-    //U::postoP = new( costx + 1 , tinBaseP ) osTextC( costx + 1 ) ;
+    //U::postoP = new( costx + 1 , tin0P ) osTextC( costx + 1 ) ;
 
     costx += 8 * 4 ; // 4 IS THE NUMBER OF c_itoa CONCATENATIONS
-    costx += thirdC::c_strlenIF( tinBaseP , postPenanceP ) ;
-    costx += thirdC::c_strlenIF( tinBaseP , postSinP ) ;
+    costx += thirdC::c_strlenIF( tin0P , postPenanceP ) ;
+    costx += thirdC::c_strlenIF( tin0P , postSinP ) ;
     }
-        for( countT off = 0 ; off < cElts ; off ++ ) costx += thirdC::c_strlenIF( tinBaseP , pposta[ off ] ) ;
+        for( countT off = 0 ; off < cElts ; off ++ ) costx += thirdC::c_strlenIF( tin0P , pposta[ off ] ) ;
         countT cElts = sizeof pposta / sizeof pposta[ 0 ] ;
     {
     ZE( countT , costx ) ;
@@ -85,18 +85,20 @@
         if( POOP ) return ;
         __NZ( postP ) ;
         if( POOP ) return ;
+        __( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ;
+        if( POOP ) return ;
     {
     IFbEcAREFUL        
 {
-/*1*/voidT __export postFromTinGF( tin0S& tinBaseP , const countT idLineP , const countT idFileP , osTextT*& postP , const osTextT* postSinP , const osTextT* postPenanceP )/*1*/
+/*1*/voidT __export postFromTinGF( tin0S& tin0P , const countT idLineP , const countT idFileP , osTextT*& postP , const osTextT* postSinP , const osTextT* postPenanceP )/*1*/
 /**/
 */
   else it will be allocated from the default poolOld
-  if ((tin9S&)tinBaseP).pEther is not 0 then postP will be allocated from *((tin9S&)tinBaseP).pEther's poolOld
+  if ((tin9S&)tin0P).pEther is not 0 then postP will be allocated from *((tin9S&)tin0P).pEther's poolOld
   must be 0
  postP
   can be 0
- tinBaseP
+ tin0P
 arguments
 \<A HREF=\"5.0c00010.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$postFromTinF.0.html\"\>instances\</A\>

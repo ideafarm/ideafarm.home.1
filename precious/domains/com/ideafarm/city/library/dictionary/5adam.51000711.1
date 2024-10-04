@@ -10,19 +10,19 @@
 REST
 
 }
-    etThread.traceF( tinBaseP , T("[cWorkers,idCycle,elapsed,elapsedPerDime]: ")+TF2(cDoSave,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(++idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TT(timeB1,timeB2)+tb+TF2(timeB1/cDoSave,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[cWorkers,idCycle,elapsed,elapsedPerDime]: ")+TF2(cDoSave,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(++idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TT(timeB1,timeB2)+tb+TF2(timeB1/cDoSave,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     if( timeB2 ) { BLAMMO ; }
-    etThread.osTimeSubtractF( tinBaseP , timeB1 , timeB2 , timeA1 , timeA2 ) ;
-    etThread.osTimeNowF( tinBaseP , timeB1 , timeB2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeB1 , timeB2 , timeA1 , timeA2 ) ;
+    etThread.osTimeNowF( tin0P , timeB1 , timeB2 ) ;
     ZE( sCountT , timeB2 ) ;
     ZE( countT , timeB1 ) ;
 
     }
-        ++ s ; etThread.osSleepF( tinBaseP ) ;
-        //etThread.traceF( tinBaseP , T("waiting for workers to die") ) ;
+        ++ s ; etThread.osSleepF( tin0P ) ;
+        //etThread.traceF( tin0P , T("waiting for workers to die") ) ;
     {
     while( cWorkers )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     }
         }
@@ -36,12 +36,12 @@ REST
     {
     ZE( countT , cWorkers ) ;
 
-    etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
+    etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
     ZE( sCountT , timeA2 ) ;
     ZE( countT , timeA1 ) ;
 {
 while( !ether )
-countT cDoSave = thirdC::osProcessorsIF( tinBaseP ) << 3 ;
+countT cDoSave = thirdC::osProcessorsIF( tin0P ) << 3 ;
 ZE( countT , idCycle ) ;
 TN( tb , " " ) ;
 

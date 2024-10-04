@@ -9,21 +9,21 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 
 }
-    if( nnWo.isRoutableUnicastF()     ) etThread.traceF( tinBaseP , T("    routable unicast") ) ;
-    if( nnWo.isIPv4F()                ) etThread.traceF( tinBaseP , T("    ipv4") ) ;
-    if( nnWo.isLoopbackOldDoNotUseF() ) etThread.traceF( tinBaseP , T("    loopback") ) ;
+    if( nnWo.isRoutableUnicastF()     ) etThread.traceF( tin0P , T("    routable unicast") ) ;
+    if( nnWo.isIPv4F()                ) etThread.traceF( tin0P , T("    ipv4") ) ;
+    if( nnWo.isLoopbackOldDoNotUseF() ) etThread.traceF( tin0P , T("    loopback") ) ;
 
-    etThread.traceF( tinBaseP , T(nnWo) ) ;
+    etThread.traceF( tin0P , T(nnWo) ) ;
 
     nicNameC& nnWo = pnn[ offn ] ;
 {
 for( countT offn = 0 ; offn < cnn ; offn ++ )
-socketC::nicNameIF( tinBaseP , etThread , pnn , cnn , 0 ) ;
+socketC::nicNameIF( tin0P , etThread , pnn , cnn , 0 ) ;
 ZE( countT    , cnn ) ;
 ZE( nicNameC* , pnn ) ;
 

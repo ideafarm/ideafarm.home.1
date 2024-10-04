@@ -8,33 +8,33 @@
 
 
 }
-    baton.ungrabF( tinBaseP ) ;
+    baton.ungrabF( tin0P ) ;
 
     }
-        baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+        baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         }
             }
-                third.dosSleepIF( tinBaseP , TUCK * 0x40 ) ;
-                sgnCatch.giveF( tinBaseP )  ;
+                third.dosSleepIF( tin0P , TUCK * 0x40 ) ;
+                sgnCatch.giveF( tin0P )  ;
                 ++ s ;
             {
             while( cReadPending )
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
-        baton.ungrabF( tinBaseP ) ;
+        baton.ungrabF( tin0P ) ;
 
         }
             }
-                third.dosSleepIF( tinBaseP , TUCK * 0x40 ) ;
-                third.s_writeF( tinBaseP , hSoc , idPort , nicNameC() , soulo ) ;
-                soulC soulo( tinBaseP , TAG( TAGiDnULL ) , flSOUL_null , ifcIDtYPEdATAGRAM_NETc_NULL ) ;
-                third.s_bindF( tinBaseP , hSoc ) ;
-                third.s_socketIF( tinBaseP , hSoc , ifcSOCKETtYPE_DATAgRAM ) ;
-                handleC hSoc( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
+                third.dosSleepIF( tin0P , TUCK * 0x40 ) ;
+                third.s_writeF( tin0P , hSoc , idPort , nicNameC() , soulo ) ;
+                soulC soulo( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDtYPEdATAGRAM_NETc_NULL ) ;
+                third.s_bindF( tin0P , hSoc ) ;
+                third.s_socketIF( tin0P , hSoc , ifcSOCKETtYPE_DATAgRAM ) ;
+                handleC hSoc( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_SOCKET ) ;
                 ++ s ;
             {
             while( !third && !bDone_tmCatch )
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
         bQuit_tmCatch = 1 ;
     {
@@ -42,7 +42,7 @@
     bDestructionInProgress ++ ;
 
     _IO_
-    baton.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     }
         if( third ) return ;

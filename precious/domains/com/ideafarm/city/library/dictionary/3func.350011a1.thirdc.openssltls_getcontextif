@@ -17,14 +17,14 @@
 
         __( ec ) ;
         }
-            if( ec & 8 ) etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("openSslTls_getContextIF / could not read private key [postPemPrivateKeyP]:    ")+T(postPemPrivateKeyP)   ) ;
-            if( ec & 4 ) etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("openSslTls_getContextIF / could not read certificate [postPemCertificatesP]:  ")+T(postPemCertificatesP) ) ;
-            if( ec & 2 ) etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("openSslTls_getContextIF / could not obtain context") ) ;
-            if( ec & 1 ) etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("openSslTls_getContextIF / exception caught") ) ;
+            if( ec & 8 ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_getContextIF / could not read private key [postPemPrivateKeyP]:    ")+T(postPemPrivateKeyP)   ) ;
+            if( ec & 4 ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_getContextIF / could not read certificate [postPemCertificatesP]:  ")+T(postPemCertificatesP) ) ;
+            if( ec & 2 ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_getContextIF / could not obtain context") ) ;
+            if( ec & 1 ) etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_getContextIF / exception caught") ) ;
             //CS:CODEsYNC: 350011a1 30000003
         {
         else
-        if( !ec ) /*etherC::etTextIF( tinBaseP ).traceF( tinBaseP , T("openSslTls_getContextIF / aok") )*/ ;
+        if( !ec ) /*etherC::etTextIF( tin0P ).traceF( tin0P , T("openSslTls_getContextIF / aok") )*/ ;
 
         SSL_CTX* pContext = c_openSslTls_getContextIF( &ec , postPemCertificatesP , postPemPrivateKeyP ) ;
         ZE( countT , ec ) ;
@@ -32,7 +32,7 @@
     #elif defined( __NT__ )
     #ifdef __OS2__
 
-    if( !( F(((tin9S&)tinBaseP).flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL ) ) { BLAMMO ; }
+    if( !( F(((tin9S&)tin0P).flagsThreadMode5) & flTHREADmODE5_ARMoPENsSL ) ) { BLAMMO ; }
 
     _IO_
 
@@ -46,7 +46,7 @@
     {
     IFbEcAREFUL
 {
-/**//*1*/voidT thirdC::openSslTls_getContextIF( tin0S& tinBaseP , handleC& handleP , const osTextT* const postPemCertificatesP , const osTextT* const postPemPrivateKeyP )/*1*/
+/**//*1*/voidT thirdC::openSslTls_getContextIF( tin0S& tin0P , handleC& handleP , const osTextT* const postPemCertificatesP , const osTextT* const postPemPrivateKeyP )/*1*/
 */
 /*
 

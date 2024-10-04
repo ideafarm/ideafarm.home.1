@@ -12,7 +12,7 @@ DONE( tmUdpFileEpochClockF )
 }
     }
         }
-            //etThread.traceF( tinBaseP , T("ready to test incoming secrets") ) ;
+            //etThread.traceF( tin0P , T("ready to test incoming secrets") ) ;
             bSetup = 0 ;
         {
         if( bSetup && !OFFuDPfILEePOCHhONOR_MIN )          // OFFuDPfILEePOCHhONOR_MIN IS INITIALLY NEGATIVE ; WHEN IT BECOMES 0, WE ARE READY TO START TESTING INCOMING SECRETS
@@ -20,7 +20,7 @@ DONE( tmUdpFileEpochClockF )
         offEpochFresheningP ++ ;
 
         }
-            while( !bQuitP && cNap -- ) { ++ s ; ether.osSleepF( tinBaseP , timeNap ) ; }
+            while( !bQuitP && cNap -- ) { ++ s ; ether.osSleepF( tin0P , timeNap ) ; }
             countT cNap = TIMEuDPfILEePOCH / timeNap ;
             countT timeNap = TOCK >> 2 ;
         {
@@ -30,16 +30,16 @@ DONE( tmUdpFileEpochClockF )
             ppcHashSecretsP[ offSlotFreshen ][ offSecret ] = ru2 ;
         {
         for( countT offSecret = 0 ; offSecret < CuDPfILEhASHsECRETS ; offSecret ++ )
-        ranUniC ru2( tinBaseP , (measure04T)MAXcOUNTT + 1 , slab.trueRandom ) ;
+        ranUniC ru2( tin0P , (measure04T)MAXcOUNTT + 1 , slab.trueRandom ) ;
 
         }
             ppcSecretsP[ offSlotFreshen ][ offSecret ] = ru1 ;
         {
         for( countT offSecret = 0 ; offSecret < CuDPfILEsECRETS ; offSecret ++ )
-        ranUniC ru1( tinBaseP , (measure04T)MAXcOUNTT + 1 , slab.trueRandom ) ;
+        ranUniC ru1( tin0P , (measure04T)MAXcOUNTT + 1 , slab.trueRandom ) ;
 
-        //etThread.traceF( tinBaseP , T("[offEpochFresheningP,OFFuDPfILEePOCHhONOR_MIN,OFFuDPfILEePOCHhONOR_MAX]:    ")+TF2(offEpochFresheningP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(OFFuDPfILEePOCHhONOR_MIN,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(OFFuDPfILEePOCHhONOR_MAX,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        //etThread.traceF( tinBaseP , T("[offSlotFreshen,offSlotHonorOldest,offEpochSlotHonorNewest]:    ")+TF2(offSlotFreshen,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSlotHonorOldest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offEpochSlotHonorNewest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tin0P , T("[offEpochFresheningP,OFFuDPfILEePOCHhONOR_MIN,OFFuDPfILEePOCHhONOR_MAX]:    ")+TF2(offEpochFresheningP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(OFFuDPfILEePOCHhONOR_MIN,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(OFFuDPfILEePOCHhONOR_MAX,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tin0P , T("[offSlotFreshen,offSlotHonorOldest,offEpochSlotHonorNewest]:    ")+TF2(offSlotFreshen,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSlotHonorOldest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offEpochSlotHonorNewest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         countT offEpochSlotHonorNewest = OFFuDPfILEePOCHhONOR_MAX   % CuDPfILEePOCHsLOTS ;
         countT offSlotHonorOldest = OFFuDPfILEePOCHhONOR_MIN   % CuDPfILEePOCHsLOTS ;
@@ -48,7 +48,7 @@ DONE( tmUdpFileEpochClockF )
     while( !bQuitP )
     slabS& slab = slabS::slabIF() ;
     boolT bSetup = 1 ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tb4 , "    " ) ;
 
     countT&  offEpochFresheningP = *(countT*)pTaskP->c4 ;

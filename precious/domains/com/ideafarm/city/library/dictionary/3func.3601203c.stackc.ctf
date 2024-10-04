@@ -12,29 +12,29 @@
     __Z( idType ) ;
 
     }
-        new( 0 , tinBaseP , (byteT*)pXray , sizeof( xrayC ) ) xrayC( tinBaseP , F(flags) & flSTACKc_FIFO ? flXRAY_FIFO : flXRAY_null , sizeof( plateS ) + cbData ) ;
-        third.newF( tinBaseP , LF , *(byteT**)&pXray , sizeof( xrayC ) ) ; ___CT( pXray ) ;
+        new( 0 , tin0P , (byteT*)pXray , sizeof( xrayC ) ) xrayC( tin0P , F(flags) & flSTACKc_FIFO ? flXRAY_FIFO : flXRAY_null , sizeof( plateS ) + cbData ) ;
+        third.newF( tin0P , LF , *(byteT**)&pXray , sizeof( xrayC ) ) ; ___CT( pXray ) ;
     {
     if( F(flags) & flSTACKc_XRAY )
 
     }
-        pSgnEvent = new( 0 , tinBaseP , LF ) signC( tinBaseP , TAG( TAGiDnULL ) ) ; ___CT( pSgnEvent ) ; //U:: SEPARATE LINE TO FIND A BUG
+        pSgnEvent = new( 0 , tin0P , LF ) signC( tin0P , TAG( TAGiDnULL ) ) ; ___CT( pSgnEvent ) ; //U:: SEPARATE LINE TO FIND A BUG
     {
     if( F(flags) & ( flSTACKc_GIVEsIGNnEWpLATE | flSTACKc_GIVEsIGNdELpLATE ) )
 
     if( pSoulP ) operator <<( *pSoulP ) ;
 
     }
-        third.c_memsetIF( tinBaseP , pbnu , cbData ) ;
-        third.newF( tinBaseP , LF , pbnu , cbData ) ; ___CT( pbnu ) ;
+        third.c_memsetIF( tin0P , pbnu , cbData ) ;
+        third.newF( tin0P , LF , pbnu , cbData ) ; ___CT( pbnu ) ;
     {
     if( cbData ) //U::PROVIDE A pbnu FOR THE CASE OF VARYING LENGTH BLOBS
 
     }
-        pSw_idLathRef = new( 0 , tinBaseP , LF ) switchC( tinBaseP , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flagsSwitch , *pLeverLathRef ) ; ___CT( pSw_idLathRef ) ;
-        pSw_ppLathRef = new( 0 , tinBaseP , LF ) switchC( tinBaseP , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flagsSwitch , *pLeverLathRef ) ; ___CT( pSw_ppLathRef ) ;
-        pSw_idCursor  = new( 0 , tinBaseP , LF ) switchC( tinBaseP , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flagsSwitch , *pLeverLathRef ) ; ___CT( pSw_idCursor  ) ;
-        pSw_ppCursor  = new( 0 , tinBaseP , LF ) switchC( tinBaseP , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flagsSwitch , *pLeverLathRef ) ; ___CT( pSw_ppCursor  ) ;
+        pSw_idLathRef = new( 0 , tin0P , LF ) switchC( tin0P , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flagsSwitch , *pLeverLathRef ) ; ___CT( pSw_idLathRef ) ;
+        pSw_ppLathRef = new( 0 , tin0P , LF ) switchC( tin0P , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flagsSwitch , *pLeverLathRef ) ; ___CT( pSw_ppLathRef ) ;
+        pSw_idCursor  = new( 0 , tin0P , LF ) switchC( tin0P , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flagsSwitch , *pLeverLathRef ) ; ___CT( pSw_idCursor  ) ;
+        pSw_ppCursor  = new( 0 , tin0P , LF ) switchC( tin0P , third , TAGoR( TAGiDnULL , idLineCt , idiFileCt , pbBitsCt ) , flagsSwitch , *pLeverLathRef ) ; ___CT( pSw_ppCursor  ) ;
 
         if( F(flags) & flSTACKc_ALLOWmULTIPLEuNSERIALIZED ) flagsSwitch |= flSTACKc_ALLOWmULTIPLEuNSERIALIZED ;
         if( F(flags) & flSTACKc_DOnOTsERIALIZE            ) flagsSwitch |= flSTACKc_DOnOTsERIALIZE ;
@@ -57,7 +57,7 @@
     // ALL CONSTRUCTORS MUST DO THIS, TO ENSURE THAT THE DEFAULT subtractF FOR sinkF WORKS PROPERLY
     SCOOP
 {
-/*1*/voidT stackC::ctF( tin0S& tinBaseP , soulC* pSoulP )/*1*/
+/*1*/voidT stackC::ctF( tin0S& tin0P , soulC* pSoulP )/*1*/
 
 /**/
 */

@@ -10,7 +10,7 @@
 }
     }
         }
-            ph->grabSuperRandom.ungrabF( tinBaseP ) ;
+            ph->grabSuperRandom.ungrabF( tin0P ) ;
 
             }
                 }
@@ -19,19 +19,19 @@
                 {
                 if( bDelete )
     
-                if( cc2 ) thirdC::c_memcpyIF( tinBaseP , (byteT*)( pcP + cc1 ) , (byteT*)  ph->pcSuperRandom                            , cc2 * sizeof( countT ) ) ;
-                if( cc1 ) thirdC::c_memcpyIF( tinBaseP , (byteT*)  pcP         , (byteT*)( ph->pcSuperRandom + ph->offNextSuperRandom ) , cc1 * sizeof( countT ) ) ;
+                if( cc2 ) thirdC::c_memcpyIF( tin0P , (byteT*)( pcP + cc1 ) , (byteT*)  ph->pcSuperRandom                            , cc2 * sizeof( countT ) ) ;
+                if( cc1 ) thirdC::c_memcpyIF( tin0P , (byteT*)  pcP         , (byteT*)( ph->pcSuperRandom + ph->offNextSuperRandom ) , cc1 * sizeof( countT ) ) ;
                 const countT cc2 = cc1 < ccP ? ccP - cc1 : 0 ;
                 if( cc1 > ccP ) cc1 = ccP ;
                 countT cc1 = cca - ph->offNextSuperRandom ;
 
-                PUSE.newF( tinBaseP , LF , *(byteT**)&pcP , ccP * sizeof( countT ) ) ; ___( pcP ) ;
+                PUSE.newF( tin0P , LF , *(byteT**)&pcP , ccP * sizeof( countT ) ) ; ___( pcP ) ;
 
                 if( ccP > ph->cNextSuperRandom ) ccP = ph->cNextSuperRandom ;
             {
             if( ph->cNextSuperRandom && ccP <= ph->cNextSuperRandom || !bExact )
     
-            ph->grabSuperRandom.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ph->grabSuperRandom.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
         if( ph )
     
@@ -43,7 +43,7 @@
     const countT cca = !ph ? 0 : sizeof ph->pcSuperRandom / sizeof ph->pcSuperRandom[ 0 ] ;
     homeS* ph = processGlobal1I.pHome ;
 {
-/*1*/voidT homeS::superRandomIF( tin0S& tinBaseP , countT*& pcP , countT& ccP , const flagsT flagsP )/*1*/
+/*1*/voidT homeS::superRandomIF( tin0S& tin0P , countT*& pcP , countT& ccP , const flagsT flagsP )/*1*/
 
 /**/
 */
@@ -55,7 +55,7 @@
  ccP
   must be 0
  pcP
- tinBaseP
+ tin0P
 arguments
 /*
 

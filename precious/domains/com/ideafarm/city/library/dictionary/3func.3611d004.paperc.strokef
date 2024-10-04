@@ -11,9 +11,9 @@
 #undef M2
 
 }
-    moonThePhotographersF( tinBaseP ) ;
+    moonThePhotographersF( tin0P ) ;
 
-    ungrabF( tinBaseP ) ;
+    ungrabF( tin0P ) ;
 
     }
         }
@@ -24,22 +24,22 @@
             {
             else
             }
-                stq_bDetached.purgeF( tinBaseP ) ;
-                stq_grid.purgeF( tinBaseP ) ;
+                stq_bDetached.purgeF( tin0P ) ;
+                stq_grid.purgeF( tin0P ) ;
 
                 }
                     }
                         //LOGrAW9( "swgt [idf,rgb,cGlyph,cPoint]: " , idf , " " , cLever_rgb , " " , gt.cGlyph , " " , gt.cPoint , "\r\n" ) ;
 
-                        new( 0 , tinBaseP , (byteT*)pPaper , sizeof( paperS ) ) paperS( tinBaseP , gt.cGlyph , gt.cPoint ) ;
+                        new( 0 , tin0P , (byteT*)pPaper , sizeof( paperS ) ) paperS( tin0P , gt.cGlyph , gt.cPoint ) ;
                         paperS* pPaper = (paperS*)&(countT&)swPaper ;
                     {
                     if( gt.cGlyph && gt.cPoint )
                     glyphTallyS& gt = *(glyphTallyS*)&(countT&)swgt ;
-                    cLever_rgb = swgt.leverF( tinBaseP , idf ) ;
+                    cLever_rgb = swgt.leverF( tin0P , idf ) ;
                 {
                 for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                countT cFlavors = swgt.cFlavorsF( tinBaseP ) ;
+                countT cFlavors = swgt.cFlavorsF( tin0P ) ;
 
                 }
                                    cPointNew = 0 ;
@@ -113,7 +113,7 @@
                     }
                         break ;
                         }
-                            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("sc_mmLINEtO [x,y]:    ")+TF2(ptLag1.x,flFORMAT_NObIGITvALUES)+T("    ")+TF2(ptLag1.y,flFORMAT_NObIGITvALUES) ) ;
+                            //((tin9S&)tin0P).pEther->traceF( tin0P , T("sc_mmLINEtO [x,y]:    ")+TF2(ptLag1.x,flFORMAT_NObIGITvALUES)+T("    ")+TF2(ptLag1.y,flFORMAT_NObIGITvALUES) ) ;
                             //LOGrAW5( "paper mmLINEtO [x,y]: " , ptLag1.x , " " , ptLag1.y , "\r\n" ) ;
                             pGridDad->highWaterF( ptLag1 ) ;
                             pPaper->pPoint[ pPaper->offop ++ ] = ptLag1 ;
@@ -192,7 +192,7 @@
                     }
                         break ;
                         }
-                            //((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("sc_mmMOVEtO [x,y]:    ")+TF2(ptLag1.x,flFORMAT_NObIGITvALUES)+T("    ")+TF2(ptLag1.y,flFORMAT_NObIGITvALUES) ) ;
+                            //((tin9S&)tin0P).pEther->traceF( tin0P , T("sc_mmMOVEtO [x,y]:    ")+TF2(ptLag1.x,flFORMAT_NObIGITvALUES)+T("    ")+TF2(ptLag1.y,flFORMAT_NObIGITvALUES) ) ;
                             //LOGrAW5( "\r\npaper mmMOVEtO [x,y]: " , ptLag1.x , " " , ptLag1.y , "\r\n" ) ;
                             SETlAG( p00.x , p00.y )                                                                                                                     \
                             cPoint2S p00 = { pGrid->offCol + pGrid->offColMax * *(measureT*)&psttP[ offi ].idAdam , pGrid->offRow + pGrid->offRowMax * *(measureT*)&psttP[ offi ].cNote } ;
@@ -222,7 +222,7 @@
                                 pPaper = (paperS*)&(countT&)swPaper ;
                                 cLever_rgb = psttP[ offi ].idAdam ;
                             {
-                            if( swPaper.idSlotOfLeverF( tinBaseP , psttP[ offi ].idAdam ) )
+                            if( swPaper.idSlotOfLeverF( tin0P , psttP[ offi ].idAdam ) )
 
                             if( pPaper && pPaper->pcSize[ pPaper->offos ] ) ++ pPaper->offos ;
                         {
@@ -231,7 +231,7 @@
                             pgt = (glyphTallyS*)&(countT&)swgt ;
                             cLever_rgb = psttP[ offi ].idAdam ;
 
-                            if( !pgt->cGlyph ) swgt.freeF( tinBaseP ) ;
+                            if( !pgt->cGlyph ) swgt.freeF( tin0P ) ;
 
                             }
                                                cPointNew = 0 ;
@@ -263,7 +263,7 @@
                     countT offColNew = pGrid->offCol + ( pGrid->cColPad + pGrid->offColMax + 1 ) * csttWordHere ;
                     countT offColEnd = pGridDad->offCol + pGridDad->offColMax + 1 ;
 
-                    stq_bDetachedFuture.purgeF( tinBaseP ) ;
+                    stq_bDetachedFuture.purgeF( tin0P ) ;
                     }
                         csttWordHere ++ ;
 
@@ -351,8 +351,8 @@
             ZE( countT , cPointNew ) ;
             cPoint2S ptLag1 = { 0 , 0 } ; //A REASONABLE IMPLIED STARTING POINT SO THAT OMISSION OF AN EXPLICIT MOVE WILL PRODUCE REASONABLE OUTPUT
             cPoint2S ptLag2 = { 0 , 0 } ;
-            staqC stq_bDetachedFuture( tinBaseP ) ;
-            staqC stq_bDetached( tinBaseP ) ;
+            staqC stq_bDetachedFuture( tin0P ) ;
+            staqC stq_bDetached( tin0P ) ;
             ZE( countT , offpInGlyph ) ;
             ZE( countT , offosHead ) ;
             ZE( paperS* , pPaperHead ) ;
@@ -360,7 +360,7 @@
 
             }
                 if( idf ) pPaper = (paperS*)&swPaper[ idf ] ;
-                countT idf = swPaper.idSlotOfLeverF( tinBaseP , ifcRGB_W4 ) ;
+                countT idf = swPaper.idSlotOfLeverF( tin0P , ifcRGB_W4 ) ;
             {
             else
             }
@@ -376,10 +376,10 @@
             gridS* pGridDad = (gridS*)&stq_grid[ stq_idGrid[ 1 ] + ( stq_idGrid[ 1 ] < stq_grid ) ] ;
 
             stq_idGrid << (countT)1 ;
-            staqC stq_idGrid( tinBaseP , sizeof( countT ) , 8 ) ;
+            staqC stq_idGrid( tin0P , sizeof( countT ) , 8 ) ;
 
             }
-                new( 0 , tinBaseP , (byteT*)pGridText , sizeof( gridS ) ) gridS( pGridDeviceNet->offCol , pGridDeviceNet->offRow , cColPer , cRowPer , /*flGRIDs_PAD |*/ flGRIDs_WRAP ) ;
+                new( 0 , tin0P , (byteT*)pGridText , sizeof( gridS ) ) gridS( pGridDeviceNet->offCol , pGridDeviceNet->offRow , cColPer , cRowPer , /*flGRIDs_PAD |*/ flGRIDs_WRAP ) ;
                 pGridText = (gridS*)&(countT&)stq_grid[ 1 ] ;
                 stq_grid << (byteT*)0 ;
 
@@ -389,7 +389,7 @@
             ZE( gridS* , pGridText ) ; // 06 COLS BY 81 ROWS
 
             }
-                new( 0 , tinBaseP , (byteT*)pGridDeviceNet , sizeof( gridS ) ) gridS( cColMargin , cRowMargin , 1 + pGridDeviceGross->offColMax - ( cColMargin << 1 ) , 1 + pGridDeviceGross->offRowMax - ( cRowMargin << 1 ) , flGRIDs_DETACHEDaLWAYS ) ;
+                new( 0 , tin0P , (byteT*)pGridDeviceNet , sizeof( gridS ) ) gridS( cColMargin , cRowMargin , 1 + pGridDeviceGross->offColMax - ( cColMargin << 1 ) , 1 + pGridDeviceGross->offRowMax - ( cRowMargin << 1 ) , flGRIDs_DETACHEDaLWAYS ) ;
                 pGridDeviceNet = (gridS*)&(countT&)stq_grid[ 1 ] ;
                 stq_grid << (byteT*)0 ;
                 countT cRowMargin = 0/*pGridDeviceGross->cRow / ( TUCK >> 2 )*/ ;
@@ -398,34 +398,34 @@
             ZE( gridS* , pGridDeviceNet ) ;
 
             }
-                new( 0 , tinBaseP , (byteT*)pGridDeviceGross , sizeof( gridS ) ) gridS( 0 , 0 , cCol , cRow , flGRIDs_DETACHEDaLWAYS ) ;
+                new( 0 , tin0P , (byteT*)pGridDeviceGross , sizeof( gridS ) ) gridS( 0 , 0 , cCol , cRow , flGRIDs_DETACHEDaLWAYS ) ;
                 pGridDeviceGross = (gridS*)&(countT&)stq_grid[ 1 ] ;
                 stq_grid << (byteT*)0 ;
             {
             ZE( gridS* , pGridDeviceGross ) ;
-            staqC stq_grid( tinBaseP , sizeof( gridS ) , 8 ) ;
+            staqC stq_grid( tin0P , sizeof( gridS ) , 8 ) ;
 
             //LOGrAW3( "********************************************************************* [offPass]: " , offPass , "\r\n" ) ;
         {
         for( countT offPass = 0 ; offPass <= 1 ; offPass ++ )
-        switchC swgt( tinBaseP , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLever_rgb , 0 , sizeof( glyphTallyS ) ) ;
+        switchC swgt( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLever_rgb , 0 , sizeof( glyphTallyS ) ) ;
     {
     if( psttP && psttP->idAdam )
 
     }
-        swPaper.freeAllF( tinBaseP ) ;
+        swPaper.freeAllF( tin0P ) ;
         }
             DELzOMBIE( pPaper ) ;
             paperS* pPaper = (paperS*)&(countT&)swPaper ;
-            cLever_rgb = swPaper.leverF( tinBaseP , idf ) ;
+            cLever_rgb = swPaper.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-        countT cFlavors = swPaper.cFlavorsF( tinBaseP ) ;
+        countT cFlavors = swPaper.cFlavorsF( tin0P ) ;
     {
 
-    grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+    grabF( tin0P , TAG( TAGiDnULL ) ) ;
 {
-/*1*/voidT paperC::strokeF( tin0S& tinBaseP , const strokeS* const psttP )/*1*/
+/*1*/voidT paperC::strokeF( tin0S& tin0P , const strokeS* const psttP )/*1*/
 
     }
         /*LOGrAW5( "paper L2 [x,y]: " , ptLag1.x , " " , ptLag1.y , "\r\n" ) ;*/                                                                    \

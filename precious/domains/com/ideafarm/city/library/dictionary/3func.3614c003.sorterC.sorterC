@@ -16,7 +16,7 @@
                 ? flSORTERcrESULT_NOTfULLYsORTED
             flagsResult = cOutOfOrder 
 
-            ether.traceF( tinBaseP , T("[cOutOfOrder]:    ")+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            ether.traceF( tin0P , T("[cOutOfOrder]:    ")+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             while( ~hSt && -- cDo ) ;
             }
@@ -24,23 +24,23 @@
                     idJotOutLath = idJotOut ;
 
                     if( sgnOrder < 0 ) cOutOfOrder ++ ;
-                    sCountT sgnOrder = !idJotOutLath ? 0 : subtractJotsF( tinBaseP , c_pEther , idJotOut , idJotOutLath , param ) ;
+                    sCountT sgnOrder = !idJotOutLath ? 0 : subtractJotsF( tin0P , c_pEther , idJotOut , idJotOutLath , param ) ;
                     countT param = (countT)pc3p ;
 
-                    countT idJotOut = jotOut.writeF( tinBaseP , pbi , cbi ) ;
+                    countT idJotOut = jotOut.writeF( tin0P , pbi , cbi ) ;
                 {
                 if( pbi && cbi )
 
                 countT       cbi = pagei ;
                 const byteT* pbi = pagei ;
-                pageC pagei = jotC::readIF( tinBaseP , idJotIn ) ;
+                pageC pagei = jotC::readIF( tin0P , idJotIn ) ;
 
-                stIdJot.extractF( 0 , tinBaseP ) ;
-                countT idJotIn = stIdJot.upF( tinBaseP , hSt ) ;
+                stIdJot.extractF( 0 , tin0P ) ;
+                countT idJotIn = stIdJot.upF( tin0P , hSt ) ;
             {
             do
-            handleC hSt( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-            //ether.traceF( tinBaseP , T("flushing stIdJot final / [cDo]:    ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            handleC hSt( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            //ether.traceF( tin0P , T("flushing stIdJot final / [cDo]:    ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             countT cDo = stIdJot ;
         {
         if( !POOP && !bQuitP && stIdJot )
@@ -55,19 +55,19 @@
                                 idJotOutLath = idJotOut ;
 
                                 if( sgnOrder < 0 ) cOutOfOrder ++ ;
-                                sCountT sgnOrder = !idJotOutLath ? 0 : subtractJotsF( tinBaseP , c_pEther , idJotOut , idJotOutLath , param ) ;
+                                sCountT sgnOrder = !idJotOutLath ? 0 : subtractJotsF( tin0P , c_pEther , idJotOut , idJotOutLath , param ) ;
                                 countT param = (countT)pc3p ;
 
                                 }
-                                    ether.traceF( tinBaseP , T("sorterC [cEstimateOut,cOut,perTuck]          :    ")+TF2(cEstimateOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %") ) ;
-                                    ether.traceF( tinBaseP , T("sorterC [cEstimateIn,cIn,perTuck,cOutOfOrder]:    ")+TF2(cEstimateIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %")+tb4+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    ether.traceF( tin0P , T("sorterC [cEstimateOut,cOut,perTuck]          :    ")+TF2(cEstimateOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %") ) ;
+                                    ether.traceF( tin0P , T("sorterC [cEstimateIn,cIn,perTuck,cOutOfOrder]:    ")+TF2(cEstimateIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %")+tb4+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     countT perTuck = ( cOut << 8 ) / cEstimateOut ;
                                 {
                                 if( !( ++ cOut % TUCK ) )
-                                countT idJotOut = jotOut.writeF( tinBaseP , pbi , cbi ) ;
+                                countT idJotOut = jotOut.writeF( tin0P , pbi , cbi ) ;
 
                                 //}
-                                //    ((tin9S&)tinBaseP).pEther->traceF( tinBaseP , T("out:    ")+TT(pcCbUsed[0],pcCbUsed[1])+T("    ")+T(psttShort) ) ;
+                                //    ((tin9S&)tin0P).pEther->traceF( tin0P , T("out:    ")+TT(pcCbUsed[0],pcCbUsed[1])+T("    ")+T(psttShort) ) ;
                                 //    strokeS* psttShort = (strokeS*)( pbi + sizeof( count04T ) ) ;
                                 //    countT* pcCbUsed = (countT*)pbi ;
                                 //{
@@ -76,42 +76,42 @@
 
                             countT       cbi = pagei ;
                             const byteT* pbi = pagei ;
-                            pageC pagei = jotC::readIF( tinBaseP , idJotToFlush ) ;
+                            pageC pagei = jotC::readIF( tin0P , idJotToFlush ) ;
 
-                            stIdJot.extractF( 0 , tinBaseP ) ;
-                            countT idJotToFlush = stIdJot.upF( tinBaseP , hSt ) ;
+                            stIdJot.extractF( 0 , tin0P ) ;
+                            countT idJotToFlush = stIdJot.upF( tin0P , hSt ) ;
                         {
                         do
-                        handleC hSt( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                        //ether.traceF( tinBaseP , T("flushing stIdJot excess / [cDo]:    ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        handleC hSt( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                        //ether.traceF( tin0P , T("flushing stIdJot excess / [cDo]:    ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         countT cDo = stIdJot - cSortingSlots ;
                     {
                     if( stIdJot > cSortingSlots )
 
-                    //ether.traceF( tinBaseP , T("sunk aok [ids,idJot]:    ")+TF2(ids,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //ether.traceF( tin0P , T("sunk aok [ids,idJot]:    ")+TF2(ids,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 else
                 }
                     }
                         __1
-                        ether.traceF( tinBaseP , T("exception: sinkF failed silently [idJot]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;   //SHOULD BE IMPOSSIBLE
+                        ether.traceF( tin0P , T("exception: sinkF failed silently [idJot]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;   //SHOULD BE IMPOSSIBLE
                     {
                     if( !bSuppressDuplicates )
                 {
                 else if( !ids )
                 }
                     __1
-                    ether.traceF( tinBaseP , T("exception: sink failed [idJot]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ether.traceF( tin0P , T("exception: sink failed [idJot]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 if( bFailed )
-                //((tin9S&)tinBaseP).pc Utility[ 0 ] -- ;
-                stIdJot.sinkF( tinBaseP , ids , idJotIn , bSuppressDuplicates ? flSTACKsINK_UNIQUE : flSTACKsINK_null , subtractJotsF , param ) ;
-                //((tin9S&)tinBaseP).pc Utility[ 0 ] ++ ;
+                //((tin9S&)tin0P).pc Utility[ 0 ] -- ;
+                stIdJot.sinkF( tin0P , ids , idJotIn , bSuppressDuplicates ? flSTACKsINK_UNIQUE : flSTACKsINK_null , subtractJotsF , param ) ;
+                //((tin9S&)tin0P).pc Utility[ 0 ] ++ ;
                 countT param = (countT)pc3p ;
                 ZE( countT , ids ) ;
 
                 }
-                    ether.traceF( tinBaseP , T("sorterC [cEstimateIn,cIn,perTuck,cOutOfOrder]:    ")+TF2(cEstimateIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %")+tb4+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ether.traceF( tin0P , T("sorterC [cEstimateIn,cIn,perTuck,cOutOfOrder]:    ")+TF2(cEstimateIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %")+tb4+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT perTuck = ( cIn << 8 ) / cEstimateIn ;
                 {
                 if( !( ++ cIn % TUCK ) )
@@ -120,7 +120,7 @@
 
             }
                 else        idJotIn = jotIn.idLathReadF() ;
-                if( !pbIn ) ether.traceF( tinBaseP , T("sorterC / exception: could not obtain blob so ignoring this page") ) ;
+                if( !pbIn ) ether.traceF( tin0P , T("sorterC / exception: could not obtain blob so ignoring this page") ) ;
 
                 countT       cbIn = pageIn ;
                 const byteT* pbIn = pageIn ;
@@ -149,11 +149,11 @@
 flagsResult( flSORTERcrESULT_null )
 flagsMode( flagsModeP ) ,
 cSortingSlots( cSortingSlotsP ) ,
-stIdJot( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKiGNOREtABS | flSTACKc_SINKrEVERSE ) ,
+stIdJot( tin0P , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_SINKiGNOREtABS | flSTACKc_SINKrEVERSE ) ,
 jotIn( jotInP ) ,
 jotOut( jotOutP ) ,
 ether( etherP ) ,
-/*1*/sorterC::sorterC( tin0S& tinBaseP , etherC& etherP , const boolT& bQuitP , jotC& jotOutP , jotC& jotInP , countT cSortingSlotsP , flagsT flagsModeP , countT cEstimateOutP , countT cbIgnoreP ) :/*1*/
+/*1*/sorterC::sorterC( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , jotC& jotOutP , jotC& jotInP , countT cSortingSlotsP , flagsT flagsModeP , countT cEstimateOutP , countT cbIgnoreP ) :/*1*/
 
 /**/
 

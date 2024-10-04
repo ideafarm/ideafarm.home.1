@@ -13,17 +13,17 @@ THREADmODE3rESTORE0( flagsSave )
 }
     THREADmODE3oN0( flTHREADmODE3_UNLOCKpOOLiDENTITY )
     THREADmODE3sAVE0( flagsSave )
-    etThread.loafIF( tinBaseP ) ;
+    etThread.loafIF( tin0P ) ;
     
-    if( etherC::ifc_idHomeIdisk_IF() != TUCK ) ether.osThreadAdamF( tinBaseP , ifcIDaDAM_ROOThTTPsERVER ) ;
-    //ether.ifcHireF( tinBaseP , T("ifcIDaDAM_3PANICdOOR") , ifcIDaDAM_ROOThTTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
+    if( etherC::ifc_idHomeIdisk_IF() != TUCK ) ether.osThreadAdamF( tin0P , ifcIDaDAM_ROOThTTPsERVER ) ;
+    //ether.ifcHireF( tin0P , T("ifcIDaDAM_3PANICdOOR") , ifcIDaDAM_ROOThTTPsERVER , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ;
     
     etThread.osThreadF( TaRG1( tmDoorF ) , ifcIDpORT_DOOR      , (countT)&tDoor      , (countT)&tUdpErrorDoor      , (countT)&pusePeanut ) ;
     etThread.osThreadF( TaRG1( tmDoorF ) , ifcIDpORT_PANICdOOR , (countT)&tPanicDoor , (countT)&tUdpErrorPanicDoor , (countT)&pusePeanut ) ;
     
     THREADmODE3rESTORE0( flagsSave )
-    puseC puse( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
-    puseC pusePeanut( tinBaseP , "list.lath.peanut" , flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
+    puseC puse( tin0P , ifcIDpOOL_ADAMtEMP ) ;
+    puseC pusePeanut( tin0P , "list.lath.peanut" , flPOOLc_null , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
     THREADmODE3oN0( flTHREADmODE3_UNLOCKpOOLiDENTITY )
     THREADmODE3sAVE0( flagsSave )
 {
@@ -58,12 +58,12 @@ DONE( tmDoorF )
 }
     }
         }
-            etThread.delF( tinBaseP , pbi ) ;
+            etThread.delF( tin0P , pbi ) ;
             }
                 }
                     }
                         break ;
-                        sCatch.writeF( tinBaseP , idPort , nicName , tUdpErrorP , tUdpErrorP.csF( tinBaseP ) ) ;
+                        sCatch.writeF( tin0P , idPort , nicName , tUdpErrorP , tUdpErrorP.csF( tin0P ) ) ;
                     {
                     default : //INVALID idFormat, SO REPLY WITH INSTRUCTIONS
                     }
@@ -71,30 +71,30 @@ DONE( tmDoorF )
     
                         }
                             }
-                                sCatch.writeF( tinBaseP , idPort , nicName , postr , sizeof postr - 1 ) ;
+                                sCatch.writeF( tin0P , idPort , nicName , postr , sizeof postr - 1 ) ;
                                 osTextT postr[] = "That command was not understood.  Nothing was done.\r\nSend the command \"space help ;\" (without quotes)\r\nto receive help information." ;
                             {
                             else
                             }
-                                etThread.delF( tinBaseP , postr ) ;
-                                sCatch.writeF( tinBaseP , idPort , nicName , postr , costr ) ;
-                                etThread.delF( tinBaseP , psttReply ) ;
-                                countT costr = etThread.strMakeF( tinBaseP , LF , postr , psttReply ) ; ___( postr ) ;
+                                etThread.delF( tin0P , postr ) ;
+                                sCatch.writeF( tin0P , idPort , nicName , postr , costr ) ;
+                                etThread.delF( tin0P , psttReply ) ;
+                                countT costr = etThread.strMakeF( tin0P , LF , postr , psttReply ) ; ___( postr ) ;
                                 ZE( osTextT* , postr ) ;
                             {
                             if( psttReply )
         
-                            obeyF( tinBaseP , cArgApp , psttReply , T(pbi+1) ) ; ___( psttReply ) ;
+                            obeyF( tin0P , cArgApp , psttReply , T(pbi+1) ) ; ___( psttReply ) ;
                             ZE( strokeS* , psttReply ) ;
                         {
                         else
                         }
-                            sCatch.writeF( tinBaseP , idPort , nicName , postr , sizeof postr - 1 ) ;
+                            sCatch.writeF( tin0P , idPort , nicName , postr , sizeof postr - 1 ) ;
                             osTextT postr[] = "Send the command \"space help ;\" (without quotes) to receive help information." ;
                         {
                         else if( cbi >= 2 && !pbi[ 1 ] )
                         }
-                            sCatch.writeF( tinBaseP , idPort , nicName , postr , sizeof postr - 1 ) ;
+                            sCatch.writeF( tin0P , idPort , nicName , postr , sizeof postr - 1 ) ;
                             osTextT postr[] = "The idFormat byte must be followed by a null terminated ASCII string that contains SOIL (tm) commands.\r\nSend the command \"space help ;\" (without quotes) to receive help information." ;
                         {
                         if( cbi < 2 )
@@ -105,7 +105,7 @@ DONE( tmDoorF )
             {
             if( !ether && pbi && cbi )
         
-            sCatch.readF( tinBaseP , pbi , cbi , idPort , nicName ) ; ___( pbi ) ;
+            sCatch.readF( tin0P , pbi , cbi , idPort , nicName ) ; ___( pbi ) ;
             nicNameC nicName ;
             ZE( countT , idPort ) ;
             ZE( countT , cbi ) ;
@@ -114,7 +114,7 @@ DONE( tmDoorF )
         while( !etThread && !ether )
         //U::ENHANCE TO SUPPORT SESSION CONCEPT FOR DATAGRAM "SESSIONS"
     
-        httpServerC server( tinBaseP , arg1 , arg2 ) ;
+        httpServerC server( tin0P , arg1 , arg2 ) ;
         arg2.pHttpRawCommandServerCBF        = httpRawCommandServerCBF ;
         arg2.pHttpFreshenCacheCBF            = httpFreshenCacheCBF ;
         arg2.pHttpLoadContentDynamicF        = httpLoadContentDynamicCBF ;
@@ -124,8 +124,8 @@ DONE( tmDoorF )
         countT cArgApp = (countT)&c8p ;
         count8S c8p( (countT)&pusePeanutP , idPortP == ifcIDpORT_PANICdOOR ) ;
 
-        sCatch.bindF( tinBaseP , idPortP + 2 * !!( etherC::ifc_idHomeIdisk_IF() == TUCK ) ) ; //DONE BEFORE CT server TO AVOID RACING, WHICH IS A PROBLEM IF PORT MAPPING IS IN EFFECT
-        socketC sCatch( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+        sCatch.bindF( tin0P , idPortP + 2 * !!( etherC::ifc_idHomeIdisk_IF() == TUCK ) ) ; //DONE BEFORE CT server TO AVOID RACING, WHICH IS A PROBLEM IF PORT MAPPING IS IN EFFECT
+        socketC sCatch( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
     {
 
     puseC& pusePeanutP   = *(puseC*)pTaskP->c4 ;
@@ -140,20 +140,20 @@ TASK( tmDoorF )
     }
         }
             }
-                sockP.writeF( tinBaseP , postr , sizeof postr - 1 ) ;
+                sockP.writeF( tin0P , postr , sizeof postr - 1 ) ;
                 osTextT postr[] = "That command was not understood.  Nothing was done.\r\n" ;
             {
             else
             }
-                etThread.delF( tinBaseP , postr ) ;
-                sockP.writeF( tinBaseP , postr , costr ) ;
-                etThread.delF( tinBaseP , psttReply ) ;
-                countT costr = etThread.strMakeF( tinBaseP , LF , postr , psttReply ) ; ___( postr ) ;
+                etThread.delF( tin0P , postr ) ;
+                sockP.writeF( tin0P , postr , costr ) ;
+                etThread.delF( tin0P , psttReply ) ;
+                countT costr = etThread.strMakeF( tin0P , LF , postr , psttReply ) ; ___( postr ) ;
                 ZE( osTextT* , postr ) ;
             {
             if( psttReply )
-            bQuit = obeyF( tinBaseP , cArgP , psttReply , T(postOldCmd) , flDOORoBEY_null , &session ) ; ___( psttReply ) ;
-            sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
+            bQuit = obeyF( tin0P , cArgP , psttReply , T(postOldCmd) , flDOORoBEY_null , &session ) ; ___( psttReply ) ;
+            sessionC& session = sessionsP( tin0P , nnPeerP ) ;
             ZE( strokeS* , psttReply ) ;
         {
         if( !bQuit && bComplete )
@@ -163,7 +163,7 @@ TASK( tmDoorF )
                 break ;
                 bComplete = 1 ;
                 postOldCmd[ ++ offi ] = 0 ;
-                sockP.writeF( tinBaseP , "\r\n" , 2 ) ;
+                sockP.writeF( tin0P , "\r\n" , 2 ) ;
             {
             if( postOldCmd[ offi ] == ';' )
 
@@ -173,7 +173,7 @@ TASK( tmDoorF )
                 POOPR
             {
             if( POOP )
-            sockP.readF( tinBaseP , postOldCmd + offi , 1 ) ; //IF CLIENT IS GONE THEN POOP AND bIn REMAINS 0
+            sockP.readF( tin0P , postOldCmd + offi , 1 ) ; //IF CLIENT IS GONE THEN POOP AND bIn REMAINS 0
             postOldCmd[ offi ] = 0 ;
         {
         for( countT offi = 0 ; offi < sizeof postOldCmd - 1 ; offi ++ )
@@ -181,8 +181,8 @@ TASK( tmDoorF )
         osTextT postOldCmd[ TUCK ] ;
 
         }
-            else          sockP.writeF( tinBaseP , postOldCmdBannerDoor  , sizeof postOldCmdBannerDoor  - 1 ) ;
-            if( bPanicP ) sockP.writeF( tinBaseP , postOldCmdBannerPanic , sizeof postOldCmdBannerPanic - 1 ) ;
+            else          sockP.writeF( tin0P , postOldCmdBannerDoor  , sizeof postOldCmdBannerDoor  - 1 ) ;
+            if( bPanicP ) sockP.writeF( tin0P , postOldCmdBannerPanic , sizeof postOldCmdBannerPanic - 1 ) ;
     
             ;
 
@@ -257,26 +257,26 @@ TASK( tmDoorF )
     boolT bPanicP = c8p.c2 ;
     count8S& c8p = *(count8S*)cArgP ;
 {
-voidT httpRawCommandServerCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , countT& cArgP , socketC& sockP , countT& time1idleTimeoutReadP , countT& time1idleTimeoutWriteP , sessionsC& sessionsP , nicNameC& nnPeerP , const countT idEscapedP )
+voidT httpRawCommandServerCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , countT& cArgP , socketC& sockP , countT& time1idleTimeoutReadP , countT& time1idleTimeoutWriteP , sessionsC& sessionsP , nicNameC& nnPeerP , const countT idEscapedP )
 
 }
 {
-voidT httpLoadContentStaticCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
+voidT httpLoadContentStaticCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
 
 }
-    meP.storeReplyF( tinBaseP , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(bPanicP?"Panic Door to IdeaFarm " "(tm) Space":"Door to IdeaFarm " "(tm) Space") , T("SOIL (tm) <> Sentient Object Interface Language") , T("SOIL (tm) <> Sentient Object Interface Language") , T("Where humans and robots converse...") , T("") , T("") , homeOld20190809CBF ) ;
+    meP.storeReplyF( tin0P , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T(bPanicP?"Panic Door to IdeaFarm " "(tm) Space":"Door to IdeaFarm " "(tm) Space") , T("SOIL (tm) <> Sentient Object Interface Language") , T("SOIL (tm) <> Sentient Object Interface Language") , T("Where humans and robots converse...") , T("") , T("") , homeOld20190809CBF ) ;
 
     boolT bPanicP = c8p.c2 ;
     count8S& c8p = *(count8S*)cArgP ;
 {
-voidT httpLoadContentDynamicCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
+voidT httpLoadContentDynamicCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP )
 
 }
 {
-voidT httpFreshenCacheCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , sessionsC& sessionsP , countT& cArgP , const boolT bCleanupP )
+voidT httpFreshenCacheCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , sessionsC& sessionsP , countT& cArgP , const boolT bCleanupP )
 
 }
-    meP.pushSnipF( tinBaseP , stBodyP , ( session.psttKeyDefPending ? tFormDefine : tForm ) + tContent ) ;
+    meP.pushSnipF( tin0P , stBodyP , ( session.psttKeyDefPending ? tFormDefine : tForm ) + tContent ) ;
 
     }
         tFormDefine = tFormPart1+tFormPart2+T("Enter the definition and then click \"Done\":")+tFormPart3+tFormPart4+T(session.psttKeyDefPending)+tFormPart5 ;
@@ -400,55 +400,55 @@ voidT httpFreshenCacheCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQu
         while( ~hWalk ) ;
         }
             tContent += T(pstte)+tbr ;
-            strokeS* pstte = (strokeS*)session.stJournal.upF( tinBaseP , hWalk ) ;
+            strokeS* pstte = (strokeS*)session.stJournal.upF( tin0P , hWalk ) ;
         {
         do
-        handleC hWalk( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+        handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
         TN( tbr , "<BR>" ) ;
     {
 
-    session.stJournal.purgeF( tinBaseP , TUCK >> 3 ) ;
+    session.stJournal.purgeF( tin0P , TUCK >> 3 ) ;
     }
         }
-            etThread.delF( tinBaseP , psttReply ) ;
+            etThread.delF( tin0P , psttReply ) ;
             }
                 pMemory->bOk = 1 ;
                 session.stJournal << psttv ; psttv = 0 ;
-                psttv = psttOldC( tinBaseP , etThread , psttReply ) ; ___( psttv ) ;
+                psttv = psttOldC( tin0P , etThread , psttReply ) ; ___( psttv ) ;
                 session.stJournal << psttv ; psttv = 0 ;
-                strokeS* psttv = psttOldC( tinBaseP , etThread , T("<SPAN CLASS=\"spaXXSmall\" STYLE=\"color:" ifcCOLORhTMLwHAT_FOREnOTEbRIGHT  " ;\">")+(bDef?T("<pre>")+T(pzsttCmd)+T("</pre>"):T(pzsttCmd))+T("</SPAN>") ) ; ___( psttv ) ;
+                strokeS* psttv = psttOldC( tin0P , etThread , T("<SPAN CLASS=\"spaXXSmall\" STYLE=\"color:" ifcCOLORhTMLwHAT_FOREnOTEbRIGHT  " ;\">")+(bDef?T("<pre>")+T(pzsttCmd)+T("</pre>"):T(pzsttCmd))+T("</SPAN>") ) ; ___( psttv ) ;
             {
             if( psttReply )
-            obeyF( tinBaseP , cArgP , psttReply , pzsttCmd , flDOORoBEY_HTML | flDOORoBEY_FIXEDwIDTHfONT , &session ) ; ___( psttReply ) ;
+            obeyF( tin0P , cArgP , psttReply , pzsttCmd , flDOORoBEY_HTML | flDOORoBEY_FIXEDwIDTHfONT , &session ) ; ___( psttReply ) ;
             ZE( strokeS* , psttReply ) ;
             pzsttCmd = (strokeS*)(countT)swKVP ;
         {
         if( bCmd || bDef )
 
-        const boolT bDef = !etThread.strCompareF( tinBaseP , psttLeverKVP , T("def") ) ;
-        const boolT bCmd = !etThread.strCompareF( tinBaseP , psttLeverKVP , T("cmd") ) ;
+        const boolT bDef = !etThread.strCompareF( tin0P , psttLeverKVP , T("def") ) ;
+        const boolT bCmd = !etThread.strCompareF( tin0P , psttLeverKVP , T("cmd") ) ;
 
-        psttLeverKVP = (strokeS*)swKVP.leverF( tinBaseP , idf ) ;
+        psttLeverKVP = (strokeS*)swKVP.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    countT cFlavors = swKVP.cFlavorsF( tinBaseP ) ;
+    countT cFlavors = swKVP.cFlavorsF( tin0P ) ;
     TN( tContent , "" ) ;
     pMemory->bOk = 0 ;
     ZE( strokeS* , pzsttCmd ) ;
 
     }
         pMemory = (sessionMemoryS*)(byteT*)session ;
-        etThread.memSetF( tinBaseP , pbMemory , sizeof( sessionMemoryS ) ) ;
-        etThread.newF( tinBaseP , LF , pbMemory , sizeof( sessionMemoryS ) ) ; ___( pbMemory ) ;
+        etThread.memSetF( tin0P , pbMemory , sizeof( sessionMemoryS ) ) ;
+        etThread.newF( tin0P , LF , pbMemory , sizeof( sessionMemoryS ) ) ; ___( pbMemory ) ;
         byteT*& pbMemory = session ;
     {
     if( !pMemory )
     sessionMemoryS* pMemory = (sessionMemoryS*)(byteT*)session ;
 
-    countT idShow = session.dispenseIdF( tinBaseP , ClEVERdISPENSEiD_SHOW ) ;
-    sessionC& session = sessionsP( tinBaseP , nnPeerP , psttPeerAgentP ) ;
+    countT idShow = session.dispenseIdF( tin0P , ClEVERdISPENSEiD_SHOW ) ;
+    sessionC& session = sessionsP( tin0P , nnPeerP , psttPeerAgentP ) ;
 {
-voidT homeOld20190809CBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
+voidT homeOld20190809CBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )
 
 }
     return bQuit ;
@@ -457,55 +457,55 @@ voidT homeOld20190809CBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQui
         POOPR ;
     
         }
-            (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , pStkWords ) ;
+            (*((tin9S&)tin0P).pEtScratch)( tin0P , pStkWords ) ;
             }
                 }
                     }
                         break ;
                         }
-                            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                            ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                             POOPR
 
                             }
-                                peanutsF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , psttReplyP ) ; ___( psttReplyP ) ;
+                                peanutsF( tin0P , *((tin9S&)tin0P).pEtScratch , psttReplyP ) ; ___( psttReplyP ) ;
                             {
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("peanutz" ) ) )  //U::PROTECT WITH ACCT LOGIN
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("calendar") ) ) idDo = 5 ;
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("define"  ) ) ) idDo = 4 ;
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("echo"    ) ) ) idDo = 3 ;
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("home"    ) ) ) idDo = 2 ;
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("port"    ) ) ) idDo = 1 ;
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("peanutz" ) ) )  //U::PROTECT WITH ACCT LOGIN
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("calendar") ) ) idDo = 5 ;
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("define"  ) ) ) idDo = 4 ;
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("echo"    ) ) ) idDo = 3 ;
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("home"    ) ) ) idDo = 2 ;
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("port"    ) ) ) idDo = 1 ;
                             }
                                 break ;
-                                ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                                ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                                 POOPR
 
-                                ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttReplyP , T(bOk?"ok\r\n":"no\r\n") ) ; ___( psttReplyP ) ;
+                                ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttReplyP , T(bOk?"ok\r\n":"no\r\n") ) ; ___( psttReplyP ) ;
 
                                 }
                                     else tFile += T("/")+T(psttzw) ;
-                                    else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzw , T("bcc") ) ) tFile += T(bSawCC?"/":"//") ;
+                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttzw , T("bcc") ) ) tFile += T(bSawCC?"/":"//") ;
                                     }
                                         tFile += T("/") ;
                                         bSawCC = 1 ;
                                     {
-                                    else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzw , T("cc") ) )
-                                    else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttzw , T("body") ) ) bBody = 1 ;
+                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttzw , T("cc") ) )
+                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttzw , T("body") ) ) bBody = 1 ;
                                     }
                                         break ;
 
                                         else       bOk = 1 ;
                                         if( POOP ) POOPR
-                                        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , postb ) ;
-                                        ((tin9S&)tinBaseP).pEtScratch->boxPutF( tinBaseP , tFile , postb , costb ) ;
-                                        countT costb = ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , postb , psttzw ) ; ___( postb ) ;
+                                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , postb ) ;
+                                        ((tin9S&)tin0P).pEtScratch->boxPutF( tin0P , tFile , postb , costb ) ;
+                                        countT costb = ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , postb , psttzw ) ; ___( postb ) ;
                                         ZE( osTextT* , postb ) ;
                                     {
                                     if( bBody )
 
-                                    strokeS* psttzw = psttWordF( tinBaseP , psttw , pSessionP ) ;
+                                    strokeS* psttzw = psttWordF( tin0P , psttw , pSessionP ) ;
                                     *pStkWords >> psttw ; ___( psttw ) ;
-                                    ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                                    ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                                 {
                                 while( *pStkWords )
                                 ZE( boolT , bOk ) ;
@@ -513,83 +513,83 @@ voidT homeOld20190809CBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQui
                                 ZE( boolT , bSawCC ) ;
                                 TN( tFile , "//smtp" ) ;
                             {
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("mail") ) ) // FORMAT: mail [from] [to] [to] cc [cc] [cc] bcc [bcc] [bcc] body [body] ;
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("mail") ) ) // FORMAT: mail [from] [to] [to] cc [cc] [cc] bcc [bcc] [bcc] body [body] ;
                             }
                                 break ;
-                                ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                                ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                                 POOPR
 
-                                clockF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , psttReplyP ) ; ___( psttReplyP ) ;
+                                clockF( tin0P , *((tin9S&)tin0P).pEtScratch , psttReplyP ) ; ___( psttReplyP ) ;
                             {
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("clock") ) )
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("clock") ) )
                             }
                                 break ;
-                                ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                                ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                                 POOPR
 
-                                reportF( tinBaseP , (*((tin9S&)tinBaseP).pEtScratch) , psttReplyP , flagsP ) ; ___( psttReplyP ) ;
+                                reportF( tin0P , (*((tin9S&)tin0P).pEtScratch) , psttReplyP , flagsP ) ; ___( psttReplyP ) ;
                             {
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("report") ) )
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("report") ) )
                             }
                                 break ;
-                                ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                                ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                                 POOPR
 
-                                helpF( tinBaseP , (*((tin9S&)tinBaseP).pEtScratch) , cArgP , psttReplyP , flagsP ) ; ___( psttReplyP ) ;
+                                helpF( tin0P , (*((tin9S&)tin0P).pEtScratch) , cArgP , psttReplyP , flagsP ) ; ___( psttReplyP ) ;
                             {
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("help") ) )
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("help") ) )
                             }
                                 break ;
-                                ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                                ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                                 POOPR
 
                                 }
-                                    else { ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttReplyP , T("done.  i will be dying momentarily...\r\n") ) ; ___( psttReplyP ) ; }
+                                    else { ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttReplyP , T("done.  i will be dying momentarily...\r\n") ) ; ___( psttReplyP ) ; }
                                     }
-                                        ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttReplyP , T("could not fire the os\r\n") ) ; ___( psttReplyP ) ;
+                                        ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttReplyP , T("could not fire the os\r\n") ) ; ___( psttReplyP ) ;
                                         POOPR ;
                                     {
                                     if( POOP )
-                                    ((tin9S&)tinBaseP).pEtScratch->osFireF( tinBaseP ) ;
+                                    ((tin9S&)tin0P).pEtScratch->osFireF( tin0P ) ;
                                 {
                                 else
-                                if( !bPanicP ) { ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttReplyP , T("yeah, right.\r\n") ) ; ___( psttReplyP ) ; }
+                                if( !bPanicP ) { ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttReplyP , T("yeah, right.\r\n") ) ; ___( psttReplyP ) ; }
                             {
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("booot") ) ) //U::DO NOT DOCUMENT UNTIL SESSIONS ARE SECURED WITH LOGIN, AND THIS COMMAND IS SECURED
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("booot") ) ) //U::DO NOT DOCUMENT UNTIL SESSIONS ARE SECURED WITH LOGIN, AND THIS COMMAND IS SECURED
                             }
                                 break ;
-                                ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
+                                ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                                 POOPR
 
                                 bQuit = 1 ;
-                                ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttReplyP , T("ok. bye.\r\n") ) ; ___( psttReplyP ) ;
+                                ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttReplyP , T("ok. bye.\r\n") ) ; ___( psttReplyP ) ;
                             {
-                            else if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttw , T("bye") ) )
+                            else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , T("bye") ) )
                             }
                                 idDo = 0 ;
                                 }
                                     }
                                         break ;
-                                        calendarF( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , psttReplyP , scDaysOff ) ; ___( psttReplyP ) ;
-                                        const sCountT scDaysOff = ((tin9S&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttzw ) ;
-                                        strokeS* psttzw = psttWordF( tinBaseP , psttw , pSessionP ) ;
+                                        calendarF( tin0P , *((tin9S&)tin0P).pEtScratch , psttReplyP , scDaysOff ) ; ___( psttReplyP ) ;
+                                        const sCountT scDaysOff = ((tin9S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttzw ) ;
+                                        strokeS* psttzw = psttWordF( tin0P , psttw , pSessionP ) ;
                                     {
                                     case 5 :
                                     }
                                         break ;
-                                        ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttReplyP , T("ok\r\n") ) ; ___( psttReplyP ) ;
+                                        ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttReplyP , T("ok\r\n") ) ; ___( psttReplyP ) ;
     
                                         }
                                             }
                                                 *pStkWords >> psttv ; ___( psttv ) ;
-                                                ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttv ) ;
+                                                ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttv ) ;
                                                 strokeS*& psttv = *(strokeS**)&(countT&)pSessionP->swStringVariable ;
                                                 pSessionP->psttzKey = psttw ;
                                             {
                                             else
                                             }
                                                 pSessionP->psttKeyDefPending = psttw ; psttw = 0 ;
-                                                ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pSessionP->psttKeyDefPending ) ;
+                                                ((tin9S&)tin0P).pEtScratch->delF( tin0P , pSessionP->psttKeyDefPending ) ;
                                             {
                                             if( !*pStkWords )
                                         {
@@ -598,22 +598,22 @@ voidT homeOld20190809CBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQui
                                     case 4 :
                                     }
                                         break ;
-                                        ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttReplyP , T("<pre>")+T(psttzw)+T("</pre>\r\n") ) ; ___( psttReplyP ) ;
-                                        strokeS* psttzw = psttWordF( tinBaseP , psttw , pSessionP ) ;
+                                        ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttReplyP , T("<pre>")+T(psttzw)+T("</pre>\r\n") ) ; ___( psttReplyP ) ;
+                                        strokeS* psttzw = psttWordF( tin0P , psttw , pSessionP ) ;
                                     {
                                     case 3 :
                                     }
                                         break ;
-                                        ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttReplyP , T(nnHome)+T(" ok\r\n") ) ; ___( psttReplyP ) ;
-                                        nnHome = socketC::nicNameIF( tinBaseP , (*((tin9S&)tinBaseP).pEtScratch) , psttzw ) ;
-                                        strokeS* psttzw = psttWordF( tinBaseP , psttw , pSessionP ) ;
+                                        ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttReplyP , T(nnHome)+T(" ok\r\n") ) ; ___( psttReplyP ) ;
+                                        nnHome = socketC::nicNameIF( tin0P , (*((tin9S&)tin0P).pEtScratch) , psttzw ) ;
+                                        strokeS* psttzw = psttWordF( tin0P , psttw , pSessionP ) ;
                                     {
                                     case 2 :
                                     }
                                         break ;
-                                        ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttReplyP , T("ok\r\n") ) ; ___( psttReplyP ) ;
-                                        idPortHome = ((tin9S&)tinBaseP).pEtScratch->strDigitsToSCountF( tinBaseP , psttzw ) ;
-                                        strokeS* psttzw = psttWordF( tinBaseP , psttw , pSessionP ) ;
+                                        ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttReplyP , T("ok\r\n") ) ; ___( psttReplyP ) ;
+                                        idPortHome = ((tin9S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttzw ) ;
+                                        strokeS* psttzw = psttWordF( tin0P , psttw , pSessionP ) ;
                                     {
                                     case 1 :
                                 {
@@ -633,40 +633,40 @@ voidT homeOld20190809CBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQui
             {
             if( !bContinue )
         
-            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pstt1w ) ;
+            ((tin9S&)tin0P).pEtScratch->delF( tin0P , pstt1w ) ;
             }
                 }
                     *pStkWords << psttw ;
-                    strokeS* psttw = psttOldC( tinBaseP , (*((tin9S&)tinBaseP).pEtScratch) , psttc1 ) ; ___( psttw ) ;
+                    strokeS* psttw = psttOldC( tin0P , (*((tin9S&)tin0P).pEtScratch) , psttc1 ) ; ___( psttw ) ;
                 {
                 else
                 }
-                    if( ((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T(";") ) ) bContinue = 1 ;
+                    if( ((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttc1 , T(";") ) ) bContinue = 1 ;
                 {
                 else if( BlATHsTRING1 )
                 }
-                    if( !((tin9S&)tinBaseP).pEtScratch->strCompareF( tinBaseP , psttc1 , T("space") ) ) idObject = IDoBJECT_space ;
+                    if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttc1 , T("space") ) ) idObject = IDoBJECT_space ;
                 {
                 if( BwOTHsTRING1 )
             {
             FORsTRINGSiN1( pstt1w )
             ZE( boolT  , bContinue ) ;
             ZE( countT , idObject ) ;
-            ((tin9S&)tinBaseP).pEtScratch->strWordsOldF( tinBaseP , pstt1w , psttOldCmdP , sttq ) ; ___( pstt1w ) ;
+            ((tin9S&)tin0P).pEtScratch->strWordsOldF( tin0P , pstt1w , psttOldCmdP , sttq ) ; ___( pstt1w ) ;
             strokeS sttq ;
             ZE( strokeS* , pstt1w ) ;
         
-            (*((tin9S&)tinBaseP).pEtScratch)( tinBaseP , pStkWords , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
+            (*((tin9S&)tin0P).pEtScratch)( tin0P , pStkWords , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_strokeS ) ;
             ZE( stackC* , pStkWords ) ;
         
             if( psttReplyP ) { BLAMMO ; }
         {
         else
         }
-            ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttReplyP , T("ok\r\n") ) ; ___( psttReplyP ) ;
-            ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , psttv , psttOldCmdP ) ; ___( psttv ) ;
-            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttv ) ;
-            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pSessionP->psttKeyDefPending ) ;
+            ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttReplyP , T("ok\r\n") ) ; ___( psttReplyP ) ;
+            ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttv , psttOldCmdP ) ; ___( psttv ) ;
+            ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttv ) ;
+            ((tin9S&)tin0P).pEtScratch->delF( tin0P , pSessionP->psttKeyDefPending ) ;
             strokeS*& psttv = *(strokeS**)&(countT&)pSessionP->swStringVariable ;
             pSessionP->psttzKey = pSessionP->psttKeyDefPending ;
         {
@@ -680,7 +680,7 @@ voidT homeOld20190809CBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQui
     boolT bPanicP = c8p.c2 ;
     count8S& c8p = *(count8S*)cArgP ;
 {
-boolT obeyF( tin0S& tinBaseP , countT& cArgP , strokeS*& psttReplyP , const strokeS* const psttOldCmdP , const flagsT flagsP = flDOORoBEY_null , sessionC* pSessionP = 0 )
+boolT obeyF( tin0S& tin0P , countT& cArgP , strokeS*& psttReplyP , const strokeS* const psttOldCmdP , const flagsT flagsP = flDOORoBEY_null , sessionC* pSessionP = 0 )
 
 }
     return psttzw ;
@@ -690,21 +690,21 @@ boolT obeyF( tin0S& tinBaseP , countT& cArgP , strokeS*& psttReplyP , const stro
             psttzw = *(strokeS**)&(countT&)pSessionP->swStringVariable ;
             pSessionP->psttzKey = psttzw ;
         {
-        if( pSessionP->swStringVariable.idSlotOfLeverF( tinBaseP , (countT)psttzw ) )
+        if( pSessionP->swStringVariable.idSlotOfLeverF( tin0P , (countT)psttzw ) )
     {
     if( pSessionP )
     strokeS* psttzw = psttP ;
 {
-strokeS* psttWordF( tin0S& tinBaseP , strokeS* const psttP , sessionC* pSessionP = 0 )
+strokeS* psttWordF( tin0S& tin0P , strokeS* const psttP , sessionC* pSessionP = 0 )
 
 }
-    etherP.strFuseF( tinBaseP , psttP , tEnd ) ;
+    etherP.strFuseF( tin0P , psttP , tEnd ) ;
     }
         }
             }
                 }
                     }
-                        etherP.delF( tinBaseP , pbTin ) ;
+                        etherP.delF( tin0P , pbTin ) ;
                         }
                             }
                                 }
@@ -713,9 +713,9 @@ strokeS* psttWordF( tin0S& tinBaseP , strokeS* const psttP , sessionC* pSessionP
                 
                                             TF2(tinc.monitor.pPanLifiGrabbing[2],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+top+TF2(tinc.monitor.pPanLifiGrabbing[1],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcp+tcr
                     
-                                        etherP.strFuseF( tinBaseP , psttP ,
+                                        etherP.strFuseF( tin0P , psttP ,
                                     {
-                                    if( ((tin9S&)tinBaseP).pPanLifiRecurseGrabbedLevel[ off ] )
+                                    if( ((tin9S&)tin0P).pPanLifiRecurseGrabbedLevel[ off ] )
                                 {
                                 for( countT off = 0 ; off < offEnd ; off += 5 )
                                 const countT offEnd = OFFgRABBEDmAX * 5 ;
@@ -725,15 +725,15 @@ strokeS* psttWordF( tin0S& tinBaseP , strokeS* const psttP , sessionC* pSessionP
                                     +tb+TF2(tinc.monitor.pPanLifiGrabbing[2],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+top+TF2(tinc.monitor.pPanLifiGrabbing[2],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcp
                                     TF3(tinc.monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+TP(tinc.postThreadName,0x20)
 
-                                etherP.strFuseF( tinBaseP , psttP ,
+                                etherP.strFuseF( tin0P , psttP ,
                             {
-                            if( tinc.monitor.pPanLifiGrabbing[ 0 ] )
+                            if( tin0c.idTypeTin == ifcIDtYPEtIN_FULL && tinc.monitor.pPanLifiGrabbing[ 0 ] )
                             //CONoUTrAW( T("[osPid,bIda,ip]:")+tb+TF2(osPid,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb+TF2(bIda,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tb+TF2(ip,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr ) ;
         
-                            tin0S& tinBasec = *(tin0S*)pbTin ;
+                            tin0S& tin0c = *(tin0S*)pbTin ;
                         {
                         if( pbTin && cbTin == sizeof( tin9S ) )
-                        sIn2.shiftRightF( tinBaseP , pbTin , cbTin , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbTin ) ;
+                        sIn2.shiftRightF( tin0P , pbTin , cbTin , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbTin ) ;
                         ZE( countT , cbTin ) ;
                         ZE( byteT* , pbTin ) ;
                     {
@@ -746,15 +746,15 @@ strokeS* psttWordF( tin0S& tinBaseP , strokeS* const psttP , sessionC* pSessionP
                     sIn2 >> idReply ;
                     ZE( countT , idReply ) ;
                     
-                    sockm.readF( tinBaseP , sIn2 ) ;
-                    soulC sIn2( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    sockm.readF( tin0P , sIn2 ) ;
+                    soulC sIn2( tin0P , TAG( TAGiDnULL ) ) ;
                     
-                    sockm.writeF( tinBaseP , sOut2 ) ;
+                    sockm.writeF( tin0P , sOut2 ) ;
                     sOut2 << sizeof( tin9S ) ;
                     sOut2 << ip ;
                     sOut2 << osPid ;
                     sOut2 << (countT)ifcIDcMDmONITOR_IMAGE ;
-                    soulC sOut2( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    soulC sOut2( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( !bIda )
 
@@ -771,7 +771,7 @@ strokeS* psttWordF( tin0S& tinBaseP , strokeS* const psttP , sessionC* pSessionP
             sIn >> cTin ;
             ZE( countT , cTin ) ;
     
-            etherP.strFuseF( tinBaseP , psttP , T("memory space: ")+TF2(idMemorySpace,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr ) ;
+            etherP.strFuseF( tin0P , psttP , T("memory space: ")+TF2(idMemorySpace,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr ) ;
             sIn >> idMemorySpace ;
             ZE( countT , idMemorySpace ) ;
         {
@@ -786,14 +786,14 @@ strokeS* psttWordF( tin0S& tinBaseP , strokeS* const psttP , sessionC* pSessionP
     sIn >> idReply ;
     ZE( countT , idReply ) ;
     
-    sockm.readF( tinBaseP , sIn ) ;
-    soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sockm.readF( tin0P , sIn ) ;
+    soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
     
-    sockm.writeF( tinBaseP , sOut ) ;
+    sockm.writeF( tin0P , sOut ) ;
     sOut << (countT)ifcIDcMDmONITOR_tin9S ;
-    soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etherP.strMakeF( tinBaseP , LF , psttP , tBegin+T("IPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System")+tcr+T("Performance Monitor")+tcr , TOCK ) ; ___( psttP ) ;
+    etherP.strMakeF( tin0P , LF , psttP , tBegin+T("IPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System")+tcr+T("Performance Monitor")+tcr , TOCK ) ; ___( psttP ) ;
 
     TN( tEnd   , !( F(flagsP) & flDOORoBEY_FIXEDwIDTHfONT ) ? "" : "</SPAN></PRE>" ) ;
     TN( tBegin , !( F(flagsP) & flDOORoBEY_FIXEDwIDTHfONT ) ? "" : "<PRE><SPAN style=\"font-family:monospace\">" ) ;
@@ -803,43 +803,43 @@ strokeS* psttWordF( tin0S& tinBaseP , strokeS* const psttP , sessionC* pSessionP
     TN( tb   , " " ) ;
     TN( tcr  , "\r\n" ) ;
     
-    //sockm.connectF( tinBaseP , 0x40c , socketC::nicNameIF( tinBaseP , etherP , T("ideafarm.com") ) ) ;
-    //sockm.connectF( tinBaseP , home.idPortGlass2 , socketC::nicNameIF( tinBaseP , etherP , T("10.1.1.1") ) ) ;
+    //sockm.connectF( tin0P , 0x40c , socketC::nicNameIF( tin0P , etherP , T("ideafarm.com") ) ) ;
+    //sockm.connectF( tin0P , home.idPortGlass2 , socketC::nicNameIF( tin0P , etherP , T("10.1.1.1") ) ) ;
 
-    else                         sockm.connectF( tinBaseP , idPortHome , nnHome ) ;
-    if( !idPortHome || !nnHome ) sockm.connectF( tinBaseP , home.idPortGlass2 ) ;
+    else                         sockm.connectF( tin0P , idPortHome , nnHome ) ;
+    if( !idPortHome || !nnHome ) sockm.connectF( tin0P , home.idPortGlass2 ) ;
 
-    socketC sockm( tinBaseP , etherP , TAG( TAGiDnULL ) ) ;
+    socketC sockm( tin0P , etherP , TAG( TAGiDnULL ) ) ;
     
     homeS& home = homeS::homeIF() ;
 {
-voidT reportF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP , const flagsT flagsP = flDOORoBEY_null )
+voidT reportF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , const flagsT flagsP = flDOORoBEY_null )
 
 }
-    etherP.delF( tinBaseP , psttw ) ;
-    etherP.strMakeF( tinBaseP , LF , psttP , T("<span class=\"spaXSmall\"><pre>")+T(psttw)+T("</pre></span>") ) ; ___( psttP ) ;
-    etherP.strClockOldF( tinBaseP , psttw , time1 ) ; ___( psttw ) ;
+    etherP.delF( tin0P , psttw ) ;
+    etherP.strMakeF( tin0P , LF , psttP , T("<span class=\"spaXSmall\"><pre>")+T(psttw)+T("</pre></span>") ) ; ___( psttP ) ;
+    etherP.strClockOldF( tin0P , psttw , time1 ) ; ___( psttw ) ;
     ZE( strokeS* , psttw ) ;
     
-    etherP.osTimeNowF( tinBaseP , time1 , *(sCountT*)&countTC() ) ;
+    etherP.osTimeNowF( tin0P , time1 , *(sCountT*)&countTC() ) ;
     ZE( countT , time1 ) ;
 {
-voidT clockF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP )
+voidT clockF( tin0S& tin0P , etherC& etherP , strokeS*& psttP )
 
 }
-    etherP.delF( tinBaseP , psttw ) ;
-    etherP.strMakeF( tinBaseP , LF , psttP , T("<pre>")+T(psttw)+T("</pre>") ) ; ___( psttP ) ;
-    etherP.strCalendarF( tinBaseP , psttw , time2 + scDaysOffP ) ; ___( psttw ) ;
+    etherP.delF( tin0P , psttw ) ;
+    etherP.strMakeF( tin0P , LF , psttP , T("<pre>")+T(psttw)+T("</pre>") ) ; ___( psttP ) ;
+    etherP.strCalendarF( tin0P , psttw , time2 + scDaysOffP ) ; ___( psttw ) ;
     ZE( strokeS* , psttw ) ;
     
-    etherP.osTimeNowF( tinBaseP , countTC() , time2 ) ;
+    etherP.osTimeNowF( tin0P , countTC() , time2 ) ;
     ZE( sCountT , time2 ) ;
 {
-voidT calendarF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP , const sCountT scDaysOffP = 0 )
+voidT calendarF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , const sCountT scDaysOffP = 0 )
 
 }
     }
-        etherP.strMakeF( tinBaseP , LF , psttP , tContent ) ; ___( psttP ) ;
+        etherP.strMakeF( tin0P , LF , psttP , tContent ) ; ___( psttP ) ;
         tContent += T("</PRE></SPAN>") ;
         }
             tContent += tpa ;
@@ -852,28 +852,28 @@ voidT calendarF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP , const sCou
             while( sws_pDatum )
     
             tContent += TF2(((datumPeanutC*)pDatumLever)->idAdamF(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tsp+T(((datumPeanutC*)pDatumLever)->psttUrlF())+tpa ;
-            pDatumLever = (datumPeanutC*)sws_pDatum.leverF( tinBaseP , idf ) ;
+            pDatumLever = (datumPeanutC*)sws_pDatum.leverF( tin0P , idf ) ;
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
         TN( tpa , "\r\n\r\n" ) ;
         TN( tcr , "\r\n" ) ;
         TN( tsp , " " ) ;
-        countT cFlavors = sws_pDatum.cFlavorsF( tinBaseP ) ;
+        countT cFlavors = sws_pDatum.cFlavorsF( tin0P ) ;
     
         }
-            etherP.delF( tinBaseP , pstt1m ) ;
+            etherP.delF( tin0P , pstt1m ) ;
             }
-                etherP.delF( tinBaseP , psttShort ) ;
-                etherP.delF( tinBaseP , psttDirOld ) ;
-                etherP.delF( tinBaseP , psttDirNew ) ;
+                etherP.delF( tin0P , psttShort ) ;
+                etherP.delF( tin0P , psttDirOld ) ;
+                etherP.delF( tin0P , psttDirNew ) ;
                 }
                     }
                         }
                             datumPeanutC::setModeF() ;
-                            sws_pDatum.sinkF( tinBaseP , countTC() , pDatum ) ;
+                            sws_pDatum.sinkF( tin0P , countTC() , pDatum ) ;
                             datumPeanutC::setModeF( 1 ) ;
                             pDatumLever = pDatum ;
-                            datumPeanutC* pDatum = new( 0 , tinBaseP , LF ) datumPeanutC( tinBaseP , etherP , sIn ) ; ___( pDatum ) ;
+                            datumPeanutC* pDatum = new( 0 , tin0P , LF ) datumPeanutC( tin0P , etherP , sIn ) ; ___( pDatum ) ;
                         {
                         else
                         }
@@ -882,29 +882,29 @@ voidT calendarF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP , const sCou
                         {
                         if( POOP )
                             
-                        etherP.boxGetShadowF( tinBaseP , sIn , tAllNew ) ;
-                        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        etherP.boxGetShadowF( tin0P , sIn , tAllNew ) ;
+                        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
                     {
                     else
                     if( POOP ) { POOPR ; }
-                    ((tin9S&)tinBaseP).pEtScratch->diskMoveFileOrDirF( tinBaseP , tAllNew , T(psttDirOld)+tShort ) ;
+                    ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tAllNew , T(psttDirOld)+tShort ) ;
                     TN( tAllNew , "" ) ; tAllNew = T(psttDirNew)+tShort ;
                     TN( tShort , "" ) ; tShort = T(psttShort) ;
                 {
                 if( psttDirNew && psttDirOld && psttShort )
-                etherP.strReplaceF( tinBaseP , psttDirNew , psttDirOld , tOldDir , tNewDir ) ; ___( psttDirNew ) ;
-                etherP.strBisectF( tinBaseP , psttDirOld , psttShort , psttc1 , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttDirOld ) ; ___( psttShort ) ;
+                etherP.strReplaceF( tin0P , psttDirNew , psttDirOld , tOldDir , tNewDir ) ; ___( psttDirNew ) ;
+                etherP.strBisectF( tin0P , psttDirOld , psttShort , psttc1 , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttDirOld ) ; ___( psttShort ) ;
                 ZE( strokeS* , psttShort ) ;
                 ZE( strokeS* , psttDirOld ) ;
                 ZE( strokeS* , psttDirNew ) ;
             {
             FORsTRINGSiN1( pstt1m )
-            etherP.boxMenuF( tinBaseP , soul , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF2(ifcIDaDAM_ROOTfORMdATAeATER,flFORMAT_NObIGITvALUES)+T("/arc/form.peanut*") , 0 , TUCK ) ; ___( pstt1m ) ;
+            etherP.boxMenuF( tin0P , soul , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF2(ifcIDaDAM_ROOTfORMdATAeATER,flFORMAT_NObIGITvALUES)+T("/arc/form.peanut*") , 0 , TUCK ) ; ___( pstt1m ) ;
             TN( tNewDir , "/arc.seen/" ) ;
             TN( tOldDir , "/arc/" ) ;
             ZE( strokeS* , pstt1m ) ;
         {
-        switchStackC sws_pDatum( tinBaseP , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pDatumLever , flSTACKc_null , ifcSTACKtYPE_PTR_plateC ) ;
+        switchStackC sws_pDatum( tin0P , etherP , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pDatumLever , flSTACKc_null , ifcSTACKtYPE_PTR_plateC ) ;
         ZE( plateC* , pDatumLever ) ;
     
         tContent = T("<SPAN STYLE=\"font-family: monospace\"><PRE>") ;
@@ -912,12 +912,12 @@ voidT calendarF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP , const sCou
     {
     IFsCRATCH
 {
-voidT peanutsF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP )
+voidT peanutsF( tin0S& tin0P , etherC& etherP , strokeS*& psttP )
 
 }
     }
-        if( cbGrab != sizeof( grabC ) || getNegAM( ((grabC*)pbGrabP)->finger ) != FINGERnEG_BASEgRABc ) etherP.delF( tinBaseP , pbGrabP ) ;
-        sIn3.shiftRightF( tinBaseP , pbGrabP , cbGrab , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbGrabP ) ;
+        if( cbGrab != sizeof( grabC ) || getNegAM( ((grabC*)pbGrabP)->finger ) != FINGERnEG_BASEgRABc ) etherP.delF( tin0P , pbGrabP ) ;
+        sIn3.shiftRightF( tin0P , pbGrabP , cbGrab , ifcIDtYPEsOULiTEM_byteTptr ) ; ___( pbGrabP ) ;
         ZE( countT , cbGrab ) ;
     {
     if( bOk )
@@ -929,17 +929,17 @@ voidT peanutsF( tin0S& tinBaseP , etherC& etherP , strokeS*& psttP )
     sIn3 >> idReply ;
     ZE( countT , idReply ) ;
                                     
-    sockP.readF( tinBaseP , sIn3 ) ;
-    soulC sIn3( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sockP.readF( tin0P , sIn3 ) ;
+    soulC sIn3( tin0P , TAG( TAGiDnULL ) ) ;
                                     
-    sockP.writeF( tinBaseP , sOut3 ) ;
+    sockP.writeF( tin0P , sOut3 ) ;
     sOut3 << sizeof( grabC ) ;
     sOut3 << (countT)pForeignGrabP ;
     sOut3 << osPidP ;
     sOut3 << (countT)ifcIDcMDmONITOR_IMAGE ;
-    soulC sOut3( tinBaseP , TAG( TAGiDnULL ) ) ;
+    soulC sOut3( tin0P , TAG( TAGiDnULL ) ) ;
 {
-voidT image_grabC_F( tin0S& tinBaseP , etherC& etherP , byteT*& pbGrabP , socketC& sockP , baseGrabC* pForeignGrabP , countT osPidP )
+voidT image_grabC_F( tin0S& tin0P , etherC& etherP , byteT*& pbGrabP , socketC& sockP , baseGrabC* pForeignGrabP , countT osPidP )
 
 }
 
@@ -998,7 +998,7 @@ voidT image_grabC_F( tin0S& tinBaseP , etherC& etherP , byteT*& pbGrabP , socket
         +T("IPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System")+tpa
         tCenterOn
 
-    etherP.strMakeF( tinBaseP , LF , psttP ,
+    etherP.strMakeF( tin0P , LF , psttP ,
 
     TN( tListEnd   , !( F(flagsP) & flDOORoBEY_HTML ) ? "" : "</UL>" ) ;
     TN( tListItem  , !( F(flagsP) & flDOORoBEY_HTML ) ? "    " : "<LI>" ) ;
@@ -1013,7 +1013,7 @@ voidT image_grabC_F( tin0S& tinBaseP , etherC& etherP , byteT*& pbGrabP , socket
     boolT bPanicP = c8p.c2 ;
     count8S& c8p = *(count8S*)cArgP ;
 {
-voidT helpF( tin0S& tinBaseP , etherC& etherP , countT& cArgP , strokeS*& psttP , const flagsT flagsP = flDOORoBEY_null )
+voidT helpF( tin0S& tin0P , etherC& etherP , countT& cArgP , strokeS*& psttP , const flagsT flagsP = flDOORoBEY_null )
 
 countT idPortHome ;
 nicNameC nnHome ;

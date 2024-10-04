@@ -9,29 +9,29 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 
 #endif
 
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
     {
     while( cWalkers )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    etThread.delF( tinBaseP , pstt1PseudoVolumes ) ;
+    etThread.delF( tin0P , pstt1PseudoVolumes ) ;
     }
         etThread.osThreadF( TaRG1( tmWorkerF ) , (countT)&cWalkers , (countT)psttRootFolder ) ; psttRootFolder = 0 ;
         inc02AM( cWalkers ) ;
-        etThread.strMakeF( tinBaseP , LF , psttRootFolder , T(psttc1)+T("ideafarm.archives.rejects/") ) ; ___( psttRootFolder ) ;
+        etThread.strMakeF( tin0P , LF , psttRootFolder , T(psttc1)+T("ideafarm.archives.rejects/") ) ; ___( psttRootFolder ) ;
         ZE( strokeS* , psttRootFolder ) ;
 
         if( ether ) break ;
     {
     FORsTRINGSiN1( pstt1PseudoVolumes )
-    etThread.diskFindFileOrDirF( tinBaseP , pstt1PseudoVolumes , tLikePseudoVolumes ) ; ___( pstt1PseudoVolumes ) ;
+    etThread.diskFindFileOrDirF( tin0P , pstt1PseudoVolumes , tLikePseudoVolumes ) ; ___( pstt1PseudoVolumes ) ;
     ZE( strokeS* , pstt1PseudoVolumes ) ;
     TN( tLikePseudoVolumes , "///d/ideafarm.home.101/devices/" ) ;
 
@@ -39,7 +39,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
 
 #else
 
-    etThread.diskWalkF( tinBaseP , cDirs , cFiles , T("///e/") , ether , flDISKwALK_null , workCBF , 0 , 0 , 0 ) ;
+    etThread.diskWalkF( tin0P , cDirs , cFiles , T("///e/") , ether , flDISKwALK_null , workCBF , 0 , 0 , 0 ) ;
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs  ) ;
 
@@ -50,25 +50,25 @@ TODO
 
 DONE( tmWorkerF )
 }
-    etThread.traceF( tinBaseP , T("end:      ")+TF2(cWalkersP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tRootFolder ) ;
+    etThread.traceF( tin0P , T("end:      ")+TF2(cWalkersP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tRootFolder ) ;
     dec02AM( cWalkersP ) ;
 
     }
         }
-            etThread.traceF( tinBaseP , T("failed:   ")+tRootFolder ) ;
+            etThread.traceF( tin0P , T("failed:   ")+tRootFolder ) ;
             POOPRqUIET
         {
         if( POOP )
-        ((tin9S&)tinBaseP).pEtScratch->diskWalkF( tinBaseP , cDirs , cFiles , tRootFolder , ether , flDISKwALK_null , workCBF , 0 , 0 , 0 ) ;
+        ((tin9S&)tin0P).pEtScratch->diskWalkF( tin0P , cDirs , cFiles , tRootFolder , ether , flDISKwALK_null , workCBF , 0 , 0 , 0 ) ;
         SCOOPS
     {
     IFsCRATCH    
     ZE( countT , cFiles ) ;
     ZE( countT , cDirs  ) ;
 
-    etThread.traceF( tinBaseP , T("begin:    ")+tRootFolder ) ;
+    etThread.traceF( tin0P , T("begin:    ")+tRootFolder ) ;
 
-    etThread.delF( tinBaseP , psttRootFolderP ) ;
+    etThread.delF( tin0P , psttRootFolderP ) ;
     TN( tRootFolder , psttRootFolderP ) ;
     TN( tb4    , "    " ) ;
 
@@ -84,14 +84,14 @@ TASK( tmWorkerF )
     }
         }
             }
-                etThread.delF( tinBaseP , psttLower ) ;
-                etThread.delF( tinBaseP , pstt1w ) ;
+                etThread.delF( tin0P , psttLower ) ;
+                etThread.delF( tin0P , pstt1w ) ;
                 }
                     }
                         }
                             }
 #endif
-                                etThread.delF( tinBaseP , psttFind ) ;
+                                etThread.delF( tin0P , psttFind ) ;
 
                                 }
                                     }
@@ -102,47 +102,47 @@ TASK( tmWorkerF )
                                                 }
                                                     bFound = 1 ;
                                                     }
-                                                        etThread.traceF( tinBaseP , T("zapped:     ")+tLong ) ;
-                                                        etThread.boxZapF( tinBaseP , tLong ) ;
-                                                        etThread.traceF( tinBaseP , T("zapping:    ")+tLong ) ;
+                                                        etThread.traceF( tin0P , T("zapped:     ")+tLong ) ;
+                                                        etThread.boxZapF( tin0P , tLong ) ;
+                                                        etThread.traceF( tin0P , T("zapping:    ")+tLong ) ;
                                                     {
                                                     else
                                                     }
-                                                        etThread.traceF( tinBaseP , T("found2: [timeWritten,name]:    ")+TT(timeWrittenArchive.time1,timeWrittenArchive.time2)+tb4+tShort ) ;
-                                                        etThread.traceF( tinBaseP , T("found1: [timeWritten,name]:    ")+TT(pInfoFile->timeWritten1,pInfoFile->timeWritten2)+tb4+tShort ) ;
-                                                        etThread.traceF( tinBaseP , T("elapse:                        ")+TT(timeE.time1,timeE.time2) ) ;
+                                                        etThread.traceF( tin0P , T("found2: [timeWritten,name]:    ")+TT(timeWrittenArchive.time1,timeWrittenArchive.time2)+tb4+tShort ) ;
+                                                        etThread.traceF( tin0P , T("found1: [timeWritten,name]:    ")+TT(pInfoFile->timeWritten1,pInfoFile->timeWritten2)+tb4+tShort ) ;
+                                                        etThread.traceF( tin0P , T("elapse:                        ")+TT(timeE.time1,timeE.time2) ) ;
                                                     {
                                                     if( timeE.time2 > 0 || ( !timeE.time2 && timeE.time1 > TICK ) )
-                                                    etThread.osTimeSubtractF( tinBaseP , timeE.time1 , timeE.time2 , timeWrittenArchive.time1 , timeWrittenArchive.time2 ) ;
+                                                    etThread.osTimeSubtractF( tin0P , timeE.time1 , timeE.time2 , timeWrittenArchive.time1 , timeWrittenArchive.time2 ) ;
                                                     timeS timeE = timeWrittenReject ;
 
                                                     }
-                                                        thirdC::getFileTimeIF( tinBaseP , fir , &timeWrittenArchive , 0 , 0 ) ;
-                                                        fileC fir( tinBaseP , pInfoFile->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
+                                                        thirdC::getFileTimeIF( tin0P , fir , &timeWrittenArchive , 0 , 0 ) ;
+                                                        fileC fir( tin0P , pInfoFile->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
                                                     {
                                                     timeS timeWrittenArchive = timeS() ;
                                                 {
                                                 else
                                                 }
                                                     bFound = 1 ;
-                                                    etThread.traceF( tinBaseP , T("folder found: ")+tShort ) ;
+                                                    etThread.traceF( tin0P , T("folder found: ")+tShort ) ;
 
                                                     }
-                                                        etThread.delF( tinBaseP , psttShort ) ;
-                                                        etThread.delF( tinBaseP , psttnu ) ;
+                                                        etThread.delF( tin0P , psttShort ) ;
+                                                        etThread.delF( tin0P , psttnu ) ;
                                                         tShort  = T(psttShort) ;
-                                                        etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 2 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                                        etThread.strBisectF( tin0P , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 2 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
                                                         ZE( strokeS* , psttShort ) ;
                                                         ZE( strokeS* , psttnu ) ;
                                                     {
                                                 {
-                                                if( !tShort.csF( tinBaseP ) )        // IF A DIRECTORY
+                                                if( !tShort.csF( tin0P ) )        // IF A DIRECTORY
 
                                                 }
-                                                    etThread.delF( tinBaseP , psttShort ) ;
-                                                    etThread.delF( tinBaseP , psttnu ) ;
+                                                    etThread.delF( tin0P , psttShort ) ;
+                                                    etThread.delF( tin0P , psttnu ) ;
                                                     tShort  = T(psttShort) ;
-                                                    etThread.strBisectF( tinBaseP , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                                    etThread.strBisectF( tin0P , psttnu , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_null ) ; ___( psttnu ) ; ___( psttShort ) ;
                                                     ZE( strokeS* , psttShort ) ;
                                                     ZE( strokeS* , psttnu ) ;
                                                 {
@@ -152,53 +152,53 @@ TASK( tmWorkerF )
                                             }
                                                 break ;
                                                 DEL( pInfoFile ) ;
-                                                if( !bFound ) etThread.traceF( tinBaseP , T("not found") ) ;
+                                                if( !bFound ) etThread.traceF( tin0P , T("not found") ) ;
                                             {
                                             if( !pInfoFile || !pInfoFile->psttIfoName )
 
-                                            etThread.traceF( tinBaseP , T("called  diskFindFileOrDirF") ) ;
-                                            etThread.diskFindFileOrDirF( tinBaseP , pInfoFile , hFindFile , tPath , &pat ) ; ___( pInfoFile ) ;
-                                            etThread.traceF( tinBaseP , T("calling diskFindFileOrDirF") ) ;
+                                            etThread.traceF( tin0P , T("called  diskFindFileOrDirF") ) ;
+                                            etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , tPath , &pat ) ; ___( pInfoFile ) ;
+                                            etThread.traceF( tin0P , T("calling diskFindFileOrDirF") ) ;
                                             ZE( infoFileS* , pInfoFile ) ;
                                         {
                                         do
-                                        sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
-                                        handleC hFindFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                                        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+                                        handleC hFindFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
                                     {
                                     ZE( boolT , bFound ) ;
 
-                                    patternC pat( tinBaseP , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+                                    patternC pat( tin0P , etThread , tPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                                 {
 
-                                //etThread.traceF( tinBaseP , tPath+tb4+tPattern ) ;
+                                //etThread.traceF( tin0P , tPath+tb4+tPattern ) ;
                                 TN( tPattern , "" ) ; tPattern = T("*")+T(psttFind)+T("*") ;
                                 TN( tPath    , "" ) ; tPath    = T("///e/ideafarm.archives/wo.ideafarm/")+tYear+T("/") ;
 
-                                //etThread.traceF( tinBaseP , tYear+tb4+T(psttFind) ) ;
-                                etThread.strSubstringF( tinBaseP , psttFind , idf , idl , psttc1 , 0 ) ; ___( psttFind ) ;
+                                //etThread.traceF( tin0P , tYear+tb4+T(psttFind) ) ;
+                                etThread.strSubstringF( tin0P , psttFind , idf , idl , psttc1 , 0 ) ; ___( psttFind ) ;
                                 ZE( strokeS* , psttFind ) ;
 
-                                countT idl = etThread.strIdF( tinBaseP , T(".") , psttc1 , 8 ) ;
-                                countT idf = etThread.strIdF( tinBaseP , T(".") , psttc1 , 5 ) ;
+                                countT idl = etThread.strIdF( tin0P , T(".") , psttc1 , 8 ) ;
+                                countT idf = etThread.strIdF( tin0P , T(".") , psttc1 , 5 ) ;
 
                                 // !ideafarm.a.2.00000000.00000001.20001231@1617.20170131@0335.9a088138d0158dd07a8035d87a7cbdce.001.fset.zip
                                 //                                |------------------------------------------------------------|
 
-                                //etThread.traceF( tinBaseP , tYear+tb4+T(psttc1) ) ;
+                                //etThread.traceF( tin0P , tYear+tb4+T(psttc1) ) ;
 #if defined( NEVERdEFINED )
 
-if( !( cRejectsWas % TUCK ) ) etThread.traceF( tinBaseP , TF2(cRejectsWas,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+if( !( cRejectsWas % TUCK ) ) etThread.traceF( tin0P , TF2(cRejectsWas,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 countT cRejectsWas = incv02AM( cRejects ) ;
                             {
                             else
-                            if( 1 != etThread.strIdF( tinBaseP , T("!ideafarm.") , psttc1 , 1 ) ) bNope = 1 ;
+                            if( 1 != etThread.strIdF( tin0P , T("!ideafarm.") , psttc1 , 1 ) ) bNope = 1 ;
                         {
 #endif
 
                         case 9:
                         case 8: { tYear = T(psttc1)                                                                          ; break ; }
-                        case 7: { if( 1 != etThread.strIdF( tinBaseP , T("wo.ideafarm"              ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
-                        case 5: { if( 1 != etThread.strIdF( tinBaseP , T("ideafarm.archives.rejects") , psttc1 , 1 ) ) bNope = 1 ; break ; }
+                        case 7: { if( 1 != etThread.strIdF( tin0P , T("wo.ideafarm"              ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
+                        case 5: { if( 1 != etThread.strIdF( tin0P , T("ideafarm.archives.rejects") , psttc1 , 1 ) ) bNope = 1 ; break ; }
 
                         // | 9        !ideafarm.a.2.00000000.00000001.20001231@1617.20170131@0335.9a088138d0158dd07a8035d87a7cbdce.001.fset.zip
                         // | 8        2008
@@ -214,9 +214,9 @@ countT cRejectsWas = incv02AM( cRejects ) ;
 #else
                         case 7:
                         case 6: { tYear = T(psttc1)                                                                          ; break ; }
-                        case 5: { if( 1 != etThread.strIdF( tinBaseP , T("wo.ideafarm"              ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
-                        case 3: { if( 1 != etThread.strIdF( tinBaseP , T("ideafarm.archives.rejects") , psttc1 , 1 ) ) bNope = 1 ; break ; }
-                        case 2: { if( 1 != etThread.strIdF( tinBaseP , T("from."                    ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
+                        case 5: { if( 1 != etThread.strIdF( tin0P , T("wo.ideafarm"              ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
+                        case 3: { if( 1 != etThread.strIdF( tin0P , T("ideafarm.archives.rejects") , psttc1 , 1 ) ) bNope = 1 ; break ; }
+                        case 2: { if( 1 != etThread.strIdF( tin0P , T("from."                    ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
 
                         // | 7        !ideafarm.a.2.00000000.00000001.20001231@1617.20170131@0335.9a088138d0158dd07a8035d87a7cbdce.001.fset.zip
                         // | 6        2008
@@ -231,7 +231,7 @@ countT cRejectsWas = incv02AM( cRejects ) ;
                     {
                     switch( ++ idw )
 
-                    //etThread.traceF( tinBaseP , TF3((countT)(idw+1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(psttc1) ) ;
+                    //etThread.traceF( tin0P , TF3((countT)(idw+1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(psttc1) ) ;
 
                     if( bNope ) break ;
                 {
@@ -240,22 +240,22 @@ countT cRejectsWas = incv02AM( cRejects ) ;
                 ZE( boolT  , bNope  ) ;
                 ZE( countT , idw    ) ;
 
-                etThread.strWordsF( tinBaseP , pstt1w , psttLower , sttq , T("/") ) ; ___( pstt1w ) ;
+                etThread.strWordsF( tin0P , pstt1w , psttLower , sttq , T("/") ) ; ___( pstt1w ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , pstt1w ) ;
 
                 // ///e/from.ssd2.arc.years01/ideafarm.archives.rejects/000b46a1.f1086dbc.3c259f6f.45b00000.05700000/wo.ideafarm/2009/!ideafarm.a.2.00000000.00000001.20090508@2258.20150910@0342.23a33919970b0e2827e5350b0079f255.001.fset.zip
 
-                //etThread.traceF( tinBaseP , psttLower ) ;
-                etThread.strConvertToLowerCaseF( tinBaseP , psttLower , psttzLong ) ; ___( psttLower ) ;
+                //etThread.traceF( tin0P , psttLower ) ;
+                etThread.strConvertToLowerCaseF( tin0P , psttLower , psttzLong ) ; ___( psttLower ) ;
                 ZE( strokeS* , psttLower ) ;
 
-                //etThread.traceF( tinBaseP , T("reject: [timeWritten,name]:    ")+TT(timeWrittenReject.time1,timeWrittenReject.time2)+tb4+tLong ) ;
-                //etThread.traceF( tinBaseP , tLong ) ;
+                //etThread.traceF( tin0P , T("reject: [timeWritten,name]:    ")+TT(timeWrittenReject.time1,timeWrittenReject.time2)+tb4+tLong ) ;
+                //etThread.traceF( tin0P , tLong ) ;
 
                 }
-                    thirdC::getFileTimeIF( tinBaseP , fir , &timeWrittenReject , 0 , 0 ) ;
-                    fileC fir( tinBaseP , (strokeS*)tLong , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
+                    thirdC::getFileTimeIF( tin0P , fir , &timeWrittenReject , 0 , 0 ) ;
+                    fileC fir( tin0P , (strokeS*)tLong , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
                 {
                 timeS timeWrittenReject = timeS() ;
                 TN( tb4    , "    " ) ;
@@ -266,12 +266,12 @@ countT cRejectsWas = incv02AM( cRejects ) ;
             strokeS* psttzLong = tLong ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             TN( tLong , iffn ) ;
-            ifFileNameC iffn( tinBaseP , etThread , postNameP ) ;
+            ifFileNameC iffn( tin0P , etThread , postNameP ) ;
         {
         if( !bQuitP )
 
         etherC& ether    = etherC::etPrimeIF() ;
-        etherC& etThread = *((tin9S&)tinBaseP).pEther ;
+        etherC& etThread = *((tin9S&)tin0P).pEther ;
 
         _IO_
     {
@@ -279,7 +279,7 @@ countT cRejectsWas = incv02AM( cRejects ) ;
 
     _IO_
 {
-boolT workCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT workCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 countT cRejects ;
 

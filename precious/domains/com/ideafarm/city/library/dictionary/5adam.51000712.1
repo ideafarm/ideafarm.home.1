@@ -9,13 +9,13 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.delF( tinBaseP , posti ) ;
-etThread.delF( tinBaseP , posto ) ;
+etThread.delF( tin0P , posti ) ;
+etThread.delF( tin0P , posto ) ;
 
-etThread.boxPutF( tinBaseP , T("///d/tmp/fcmp..diff.ttt") , costo ? posto : 0 , costo ) ;
+etThread.boxPutF( tin0P , T("///d/tmp/fcmp..diff.ttt") , costo ? posto : 0 , costo ) ;
 
 }
     }
@@ -26,7 +26,7 @@ etThread.boxPutF( tinBaseP , T("///d/tmp/fcmp..diff.ttt") , costo ? posto : 0 , 
     }
         postc += costoNew ;
         costo += costoNew ;
-        thirdC::c_memcpyIF( tinBaseP , posto + costo , postc , costoNew ) ;
+        thirdC::c_memcpyIF( tin0P , posto + costo , postc , costoNew ) ;
         countT costoNew = postEnd - postc ;
         const osTextT* postEnd = postFound1 + costKey1 ;
     {
@@ -34,7 +34,7 @@ etThread.boxPutF( tinBaseP , T("///d/tmp/fcmp..diff.ttt") , costo ? posto : 0 , 
     }
         postc += costoNew ;
         costo += costoNew ;
-        thirdC::c_memcpyIF( tinBaseP , posto + costo , postc , costoNew ) ;
+        thirdC::c_memcpyIF( tin0P , posto + costo , postc , costoNew ) ;
         countT costoNew = postEnd - postc ;
         const osTextT* postEnd = postMin + costMin ;
 
@@ -55,7 +55,7 @@ etThread.boxPutF( tinBaseP , T("///d/tmp/fcmp..diff.ttt") , costo ? posto : 0 , 
     }
         postc = postie ;
         costo += costoNew ;
-        thirdC::c_memcpyIF( tinBaseP , posto + costo , postc , costoNew ) ;
+        thirdC::c_memcpyIF( tin0P , posto + costo , postc , costoNew ) ;
         countT costoNew = costi - ( postc - posti ) ;
     {
     else if( !postFound1 || !postFound2 || !postFound3 )                                                        // SOME KEYS NOT FOUND SO PROCESS THE REMAINDER OF THE INPUT
@@ -64,7 +64,7 @@ etThread.boxPutF( tinBaseP , T("///d/tmp/fcmp..diff.ttt") , costo ? posto : 0 , 
     {
     if( postc[ 0 ] == '\r' && postc[ 1 ] == '\n' )                                                              // IF CURSORED AT A BLANK LINE THEN SUPPRESS IT
 
-    postNextKeysF( tinBaseP , postFound1 , postFound2 , postFound3 , postc , postKey1 , postKey2 , postKey3 ) ;
+    postNextKeysF( tin0P , postFound1 , postFound2 , postFound3 , postc , postKey1 , postKey2 , postKey3 ) ;
     ZE( const osTextT* , postFound3 ) ;
     ZE( const osTextT* , postFound2 ) ;
     ZE( const osTextT* , postFound1 ) ;
@@ -100,11 +100,11 @@ const countT  costKey1 = sizeof postKey1 - 1 ;
 const osTextT postKey1[] = "Comparing files " ;
 
 ZE( countT , costo ) ;
-etThread.newF( tinBaseP , LF , posto , costi ) ; ___( posto ) ;
+etThread.newF( tin0P , LF , posto , costi ) ; ___( posto ) ;
 ZE( osTextT* , posto ) ;
 
 const osTextT* postie = posti + costi ;
-etThread.boxGetShadowF( tinBaseP , posti , costi , T("///d/tmp/fcmp..ttt") ) ; ___( posti ) ;
+etThread.boxGetShadowF( tin0P , posti , costi , T("///d/tmp/fcmp..ttt") ) ; ___( posti ) ;
 ZE( countT   , costi ) ;
 ZE( osTextT* , posti ) ;
 
@@ -119,11 +119,11 @@ CONoUTrAW( "yippee\r\n" ) ;//U:: TO FIND A BUG
 TODO
 
 }
-    postFound3P = thirdC::c_strstrIF( tinBaseP , postBigP , postSmall3P ) ;
-    postFound2P = thirdC::c_strstrIF( tinBaseP , postBigP , postSmall2P ) ;
-    postFound1P = thirdC::c_strstrIF( tinBaseP , postBigP , postSmall1P ) ;
+    postFound3P = thirdC::c_strstrIF( tin0P , postBigP , postSmall3P ) ;
+    postFound2P = thirdC::c_strstrIF( tin0P , postBigP , postSmall2P ) ;
+    postFound1P = thirdC::c_strstrIF( tin0P , postBigP , postSmall1P ) ;
 {
-voidT postNextKeysF( tin0S& tinBaseP , const osTextT*& postFound1P , const osTextT*& postFound2P , const osTextT*& postFound3P , const osTextT* const postBigP , const osTextT* const postSmall1P , const osTextT* const postSmall2P , const osTextT* const postSmall3P ) 
+voidT postNextKeysF( tin0S& tin0P , const osTextT*& postFound1P , const osTextT*& postFound2P , const osTextT*& postFound3P , const osTextT* const postBigP , const osTextT* const postSmall1P , const osTextT* const postSmall2P , const osTextT* const postSmall3P ) 
 
 /*1*/WAKEsHOWtEXT( "tool.abridge.fc.output.to.suppress.no.differences.entries" )/*1*/
 /**/

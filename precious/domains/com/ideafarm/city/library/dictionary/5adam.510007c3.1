@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    etThread.traceF( tinBaseP , T("end") ) ;
+    etThread.traceF( tin0P , T("end") ) ;
 
-    etThread.traceF( tinBaseP , T("time taken:    ")+TT(timeE1,timeE2) ) ;
-    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeS1 , timeS2 ) ;
-    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+    etThread.traceF( tin0P , T("time taken:    ")+TT(timeE1,timeE2) ) ;
+    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeS1 , timeS2 ) ;
+    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
     ZE( sCountT , timeE2 ) ;
     ZE( countT , timeE1 ) ;
 
@@ -28,24 +28,24 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         else
         if( !pbw || !cbw ) break ;
 
-        fws.getF( tinBaseP , pbw , cbw ) ;
+        fws.getF( tin0P , pbw , cbw ) ;
         ZE( countT , cbw ) ;
         ZE( byteT* , pbw ) ;
     {
     while( !ether && cDo -- )
 
-    etThread.osTimeNowF( tinBaseP , timeS1 , timeS2 ) ;
+    etThread.osTimeNowF( tin0P , timeS1 , timeS2 ) ;
     ZE( sCountT , timeS2 ) ;
     ZE( countT , timeS1 ) ;
 
-    etThread.traceF( tinBaseP , T("start") ) ;
+    etThread.traceF( tin0P , T("start") ) ;
     countT cDo = TUCK >> 0 ;
     TN( tb4 , "    " ) ;
 
-    fileWindowsC fws( tinBaseP , etThread , tFile , flFILEwINDOW_WRITE ) ;
+    fileWindowsC fws( tin0P , etThread , tFile , flFILEwINDOW_WRITE ) ;
 {
 
-etThread.boxPutF( tinBaseP , tFile , "X" , 1 ) ;
+etThread.boxPutF( tin0P , tFile , "X" , 1 ) ;
 TN( tFile , "///d/tmp/bitbucket" ) ;
 
 TODO

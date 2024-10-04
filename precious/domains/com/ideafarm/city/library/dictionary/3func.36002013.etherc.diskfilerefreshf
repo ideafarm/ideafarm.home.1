@@ -9,13 +9,13 @@
 
 }
     }
-        delF( tinBaseP , pcRemoteFileTimes ) ;
-        delF( tinBaseP , pfWanted ) ;
-        delF( tinBaseP , psttRemoteWanted ) ;
-        if( !pstt1NotRefreshedP ) { strFuseF( tinBaseP , pstt1NotRefreshedP , T("") ) ; ___( pstt1NotRefreshedP ) ; }
+        delF( tin0P , pcRemoteFileTimes ) ;
+        delF( tin0P , pfWanted ) ;
+        delF( tin0P , psttRemoteWanted ) ;
+        if( !pstt1NotRefreshedP ) { strFuseF( tin0P , pstt1NotRefreshedP , T("") ) ; ___( pstt1NotRefreshedP ) ; }
     
         }
-            delF( tinBaseP , pba ) ;
+            delF( tin0P , pba ) ;
     
             }
                 off ++ ;
@@ -24,15 +24,15 @@
                     pbac += sizeof( countT ) + ( pbac ? *(countT*)pbac : 0 ) ;
                     if( !fAggregate ) break ;
                     }
-                        strFuseSeparateF( tinBaseP , pstt1NotRefreshedP , psttc1 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x100000 ) ;
+                        strFuseSeparateF( tin0P , pstt1NotRefreshedP , psttc1 , 0 , 0 , 0 , 0 , /*U::SOUL?*/ 0x100000 ) ;
                         SCOOPSdEL
                         POOPR
                     {
                     else
                     if( !POOP ) SCOOPSdEL
-                    ((tin9S&)tinBaseP).pEtScratch->boxPutF( tinBaseP , T(psttc1)+T(".time") , (byteT*)&pcRemoteFileTimes[ 2 * off ] , 2 * sizeof( countT ) ) ;
-                    else             ((tin9S&)tinBaseP).pEtScratch->boxPutF( tinBaseP , psttc1 , pbac                    , cba            ) ;
-                    if( fAggregate ) ((tin9S&)tinBaseP).pEtScratch->boxPutF( tinBaseP , psttc1 , pbac + sizeof( countT ) , pbac ? *(countT*)pbac : 0 ) ;
+                    ((tin9S&)tin0P).pEtScratch->boxPutF( tin0P , T(psttc1)+T(".time") , (byteT*)&pcRemoteFileTimes[ 2 * off ] , 2 * sizeof( countT ) ) ;
+                    else             ((tin9S&)tin0P).pEtScratch->boxPutF( tin0P , psttc1 , pbac                    , cba            ) ;
+                    if( fAggregate ) ((tin9S&)tin0P).pEtScratch->boxPutF( tin0P , psttc1 , pbac + sizeof( countT ) , pbac ? *(countT*)pbac : 0 ) ;
                     SCOOPSnEW
                 {
                 if( pfWanted[ off ] )
@@ -46,14 +46,14 @@
     
             __Z( cba ) ;
             __Z( pba ) ;
-            boxGetShadowF( tinBaseP , pba , cba , psttRemoteWanted ) ; ___( pba ) ;
+            boxGetShadowF( tin0P , pba , cba , psttRemoteWanted ) ; ___( pba ) ;
             ZE( countT , cba ) ;
             ZE( byteT* , pba ) ;
             // GET THE AGGREGATE IMAGE FOR THE REMOTE FILES
         {
-        if( pcRemoteFileTimes && strCompareF( tinBaseP , psttRemoteWanted , psttRemotePrefixP ) )
+        if( pcRemoteFileTimes && strCompareF( tin0P , psttRemoteWanted , psttRemotePrefixP ) )
     
-        delF( tinBaseP , pcLocalFileTimes ) ;
+        delF( tin0P , pcLocalFileTimes ) ;
     
         }
             }
@@ -61,16 +61,16 @@
     
                 }
                     fPrior = 1 ;
-                    strFuseF( tinBaseP , psttRemoteWanted , psttc1 ) ; ___( psttRemoteWanted ) ;
-                    if( fPrior ) { fAggregate = 1 ; strFuseF( tinBaseP , psttRemoteWanted , T(" ") ) ; ___( psttRemoteWanted ) ; }
+                    strFuseF( tin0P , psttRemoteWanted , psttc1 ) ; ___( psttRemoteWanted ) ;
+                    if( fPrior ) { fAggregate = 1 ; strFuseF( tin0P , psttRemoteWanted , T(" ") ) ; ___( psttRemoteWanted ) ; }
                     pfWanted[ off ] = 1 ;
                 {
-                if( memCompareF( tinBaseP , (byteT*)&pcRemoteFileTimes[ 2 * off ] , (byteT*)&pcLocalFileTimes[ 2 * off ] , 2 * sizeof( countT ) ) )
+                if( memCompareF( tin0P , (byteT*)&pcRemoteFileTimes[ 2 * off ] , (byteT*)&pcLocalFileTimes[ 2 * off ] , 2 * sizeof( countT ) ) )
                 if( POOP ) break ;
             {
             FORsTRINGSiN1( (strokeS*)pstt1RemoteP )
             ZE( boolT , fPrior ) ;
-            strFuseF( tinBaseP , psttRemoteWanted , psttRemotePrefixP , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ 2 * ( pstt1RemoteP ? pstt1RemoteP->idAdam : 0 ) ) ; ___( psttRemoteWanted ) ;
+            strFuseF( tin0P , psttRemoteWanted , psttRemotePrefixP , 0 , 0 , strokeS() , 0 , 0 ,/*U::SOUL?*/ 2 * ( pstt1RemoteP ? pstt1RemoteP->idAdam : 0 ) ) ; ___( psttRemoteWanted ) ;
             ZE( countT , off ) ;
         {
         if( pcRemoteFileTimes )
@@ -82,7 +82,7 @@
             }
                 off ++ ;
     
-                delF( tinBaseP , pblt ) ;
+                delF( tin0P , pblt ) ;
                 }
                     pcLocalFileTimes[ 2 * off + 1 ] = ((countT*)pblt)[ 1 ] ;
                     pcLocalFileTimes[ 2 * off     ] = ((countT*)pblt)[ 0 ] ;
@@ -100,13 +100,13 @@
                     POOPR
                 {
                 if( POOP )
-                delF( tinBaseP , psttl ) ;
-                ((tin9S&)tinBaseP).pEtScratch->boxGetShadowF( tinBaseP , pblt , cblt , psttl , 1 ) ; ___( pblt ) ;
+                delF( tin0P , psttl ) ;
+                ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pblt , cblt , psttl , 1 ) ; ___( pblt ) ;
                 SCOOPSnEW
                 ZE( countT , cblt ) ;
                 ZE( byteT* , pblt ) ;
     
-                strFuseF( tinBaseP , psttl , T(psttc1)+T(".time") ) ; ___( psttl ) ;
+                strFuseF( tin0P , psttl , T(psttc1)+T(".time") ) ; ___( psttl ) ;
                 ZE( strokeS* , psttl ) ;
                 if( POOP ) break ;
             {
@@ -117,7 +117,7 @@
         // GET THE LOCAL FILE TIMES
     
         }
-            delF( tinBaseP , pba ) ;
+            delF( tin0P , pba ) ;
             }
                 }
                     }
@@ -136,31 +136,31 @@
             {
             if( !POOP && pba )
     
-            delF( tinBaseP , pstta ) ;
+            delF( tin0P , pstta ) ;
             else              { __( cba != cFiles * 3 * sizeof( countT ) ) ; }
             if( cFiles == 1 ) { __( cba != cFiles * 2 * sizeof( countT ) ) ; }
             __Z( pba ) ;
-            boxGetShadowF( tinBaseP , pba , cba , pstta ) ; ___( pba ) ;
+            boxGetShadowF( tin0P , pba , cba , pstta ) ; ___( pba ) ;
             ZE( countT , cba ) ;
             ZE( byteT* , pba ) ;
     
             }
-                if( psttc1 + CSpREFIX + psttc1->idAdam < pstte1 ) { strFuseF( tinBaseP , pstta , T(" ") ) ; ___( pstta ) ; }
-                strFuseF( tinBaseP , pstta , T(psttc1)+tTime ) ; ___( pstta ) ;
+                if( psttc1 + CSpREFIX + psttc1->idAdam < pstte1 ) { strFuseF( tin0P , pstta , T(" ") ) ; ___( pstta ) ; }
+                strFuseF( tin0P , pstta , T(psttc1)+tTime ) ; ___( pstta ) ;
                 if( POOP ) break ;
             {
             FORsTRINGSiN1( (strokeS*)pstt1RemoteP )
-            strMakeF( tinBaseP , LF , pstta , psttRemotePrefixP , ( pstt1RemoteP ? pstt1RemoteP->idAdam : 0 ) + cFiles * ( 1 + tTime.csF( tinBaseP ) ) ) ; ___( pstta ) ;
+            strMakeF( tin0P , LF , pstta , psttRemotePrefixP , ( pstt1RemoteP ? pstt1RemoteP->idAdam : 0 ) + cFiles * ( 1 + tTime.csF( tin0P ) ) ) ; ___( pstta ) ;
             ZE( strokeS* , pstta ) ;
             TN( tTime , ".time" ) ;
         {
         if( !POOP )
         // GET THE REMOTE FILE TIMES
     
-        memSetF( tinBaseP , (byteT*)pfWanted , cFiles * sizeof( boolT ) ) ;
-        newF( tinBaseP , LF , pfWanted  , cFiles ) ; ___( pfWanted ) ;
-        newF( tinBaseP , LF , pcLocalFileTimes  , cFiles * 2 ) ; ___( pcLocalFileTimes ) ;
-        newF( tinBaseP , LF , pcRemoteFileTimes , cFiles * 2 ) ; ___( pcRemoteFileTimes ) ;
+        memSetF( tin0P , (byteT*)pfWanted , cFiles * sizeof( boolT ) ) ;
+        newF( tin0P , LF , pfWanted  , cFiles ) ; ___( pfWanted ) ;
+        newF( tin0P , LF , pcLocalFileTimes  , cFiles * 2 ) ; ___( pcLocalFileTimes ) ;
+        newF( tin0P , LF , pcRemoteFileTimes , cFiles * 2 ) ; ___( pcRemoteFileTimes ) ;
         ZE( boolT* , pfWanted ) ;
         ZE( countT* , pcLocalFileTimes ) ;
         ZE( countT* , pcRemoteFileTimes ) ;
@@ -189,7 +189,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/**//*1*/voidT etherC::diskFileRefreshF( tin0S& tinBaseP , strokeS*& pstt1NotRefreshedP , const strokeS* const pstt1LocalP , const strokeS* const pstt1RemoteP , const strokeS* const psttRemotePrefixP )/*1*/
+/**//*1*/voidT etherC::diskFileRefreshF( tin0S& tin0P , strokeS*& pstt1NotRefreshedP , const strokeS* const pstt1LocalP , const strokeS* const pstt1RemoteP , const strokeS* const psttRemotePrefixP )/*1*/
 */
  psttRemotePrefixP
  pstt1RemoteP

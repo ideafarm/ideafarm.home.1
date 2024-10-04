@@ -17,7 +17,7 @@
                 
             T(
 
-        meP.pushSnipF( tinBaseP , stBodyP ,
+        meP.pushSnipF( tin0P , stBodyP ,
 
         }
             ) ;
@@ -28,7 +28,7 @@
                     
                 T(
 
-            meP.pushSnipF( tinBaseP , stBodyP ,
+            meP.pushSnipF( tin0P , stBodyP ,
 
             }
                 ) ;
@@ -45,7 +45,7 @@
     
                     T(
 
-                meP.pushSnipF( tinBaseP , stBodyP ,
+                meP.pushSnipF( tin0P , stBodyP ,
             {
             for( countT offs = 0 ; offs < cElt - 1 ; offs ++ )
 
@@ -59,7 +59,7 @@
                     
                 T(
 
-            meP.pushSnipF( tinBaseP , stBodyP ,
+            meP.pushSnipF( tin0P , stBodyP ,
         {
         if( !bThanksVisible )
 
@@ -101,7 +101,7 @@
                 bThanksVisible
             (
 
-        meP.pushSnipF( tinBaseP , stBodyP ,
+        meP.pushSnipF( tin0P , stBodyP ,
     {
     if( bEpilog )
 
@@ -154,7 +154,7 @@
                 
                 T(
 
-            meP.pushSnipF( tinBaseP , stBodyP ,
+            meP.pushSnipF( tin0P , stBodyP ,
 
             bEpilog = 0 ;
         {
@@ -186,15 +186,15 @@
 
         countT offs = ( idSlide - 1 ) % cElt ;
 
-        countT idSlide = session.dispenseIdF( tinBaseP , 2 , bBackward ) ;
-        sessionC& session = sessionsP( tinBaseP , nnPeerP ) ;
+        countT idSlide = session.dispenseIdF( tin0P , 2 , bBackward ) ;
+        sessionC& session = sessionsP( tin0P , nnPeerP ) ;
     {
     if( bSlideRequested )
     ZE( boolT , bThanksVisible ) ;
     boolT bEpilog = 1 ;
-    boolT bSlideRequested = bForward || bBackward || ( zsttMode && !etThread.strCompareF( tinBaseP , zsttMode , tModeSlides ) ) ;
-    boolT bBackward = zsttNext && !etThread.strCompareF( tinBaseP , zsttNext , tNextBackward ) ;
-    boolT bForward  = zsttNext && !etThread.strCompareF( tinBaseP , zsttNext , tNextForward ) ;
+    boolT bSlideRequested = bForward || bBackward || ( zsttMode && !etThread.strCompareF( tin0P , zsttMode , tModeSlides ) ) ;
+    boolT bBackward = zsttNext && !etThread.strCompareF( tin0P , zsttNext , tNextBackward ) ;
+    boolT bForward  = zsttNext && !etThread.strCompareF( tin0P , zsttNext , tNextForward ) ;
 
     const countT cElt = sizeof ppostSlide / sizeof ppostSlide[ 0 ] ;
     } ;
@@ -275,14 +275,14 @@
         zsttNext = (strokeS*)(countT)swKVP ;
         psttLeverKVP = tKeyNext ;
     {
-    if( swKVP.idSlotOfLeverF( tinBaseP , (countT)(strokeS*)tKeyNext ) )
+    if( swKVP.idSlotOfLeverF( tin0P , (countT)(strokeS*)tKeyNext ) )
     ZE( strokeS* , zsttNext ) ;
 
     }
         zsttMode = (strokeS*)(countT)swKVP ;
         psttLeverKVP = tKeyMode ;
     {
-    if( swKVP.idSlotOfLeverF( tinBaseP , (countT)(strokeS*)tKeyMode ) )
+    if( swKVP.idSlotOfLeverF( tin0P , (countT)(strokeS*)tKeyMode ) )
     ZE( strokeS* , zsttMode ) ;
 
     TN( tNextBackward , "<" ) ;
@@ -293,7 +293,7 @@
     TN( tModeList   , "View List of All Slides" ) ;
     TN( tKeyMode , "mode" ) ;
 {
-/*1*/voidT slideShowTellinItCBF( tin0S& tinBaseP , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
+/*1*/voidT slideShowTellinItCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , const osTextT* const postBodyP )/*1*/
 
 /**/
 */

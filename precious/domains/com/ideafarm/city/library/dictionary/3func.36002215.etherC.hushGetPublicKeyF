@@ -8,18 +8,18 @@
 
 
 }
-    delF( tinBaseP , post64 ) ;
+    delF( tin0P , post64 ) ;
 
-    strDecodeBlobFromRFC4648F( tinBaseP , pbP , cbP , T(post64) ) ;
+    strDecodeBlobFromRFC4648F( tin0P , pbP , cbP , T(post64) ) ;
 
-    //traceF( tinBaseP , T("[cost64Actual]:    ")+TF2(cost64Actual,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    countT cost64Actual = thirdC::c_strlenIF( tinBaseP , post64 ) ;
+    //traceF( tin0P , T("[cost64Actual]:    ")+TF2(cost64Actual,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    countT cost64Actual = thirdC::c_strlenIF( tin0P , post64 ) ;
 
-    delF( tinBaseP , post64Tmp ) ;
-    thirdC::openSslCrypto_getPublicKeyBase64IF( tinBaseP , post64 , cost64 , post64Tmp , cost64Tmp , handleP ) ;
+    delF( tin0P , post64Tmp ) ;
+    thirdC::openSslCrypto_getPublicKeyBase64IF( tin0P , post64 , cost64 , post64Tmp , cost64Tmp , handleP ) ;
 
-    newF( tinBaseP , LF , post64Tmp , cost64Tmp ) ; ___( post64Tmp ) ;
-    newF( tinBaseP , LF , post64    , cost64    ) ; ___( post64    ) ;
+    newF( tin0P , LF , post64Tmp , cost64Tmp ) ; ___( post64Tmp ) ;
+    newF( tin0P , LF , post64    , cost64    ) ; ___( post64    ) ;
 
     countT cost64Tmp = TUCK << 1 ;
     countT cost64    = TUCK << 1 ;
@@ -38,7 +38,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::hushGetPublicKeyF( tin0S& tinBaseP , byteT*& pbP , countT& cbP , handleC& handleP )/*1*/
+/*1*/voidT etherC::hushGetPublicKeyF( tin0S& tin0P , byteT*& pbP , countT& cbP , handleC& handleP )/*1*/
 
 /**/
 */

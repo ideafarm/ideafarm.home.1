@@ -16,29 +16,29 @@
             }
                 }
                     DELlIST( fieldEditParamOutC , pOut ) ;
-                    listC::fieldIF( tinBaseP , pOut , hTo , pczField , _fe_pushC( record ) + _fe_modePushSinkC() + _fe_modeUniqueC() , LF ) ;
+                    listC::fieldIF( tin0P , pOut , hTo , pczField , _fe_pushC( record ) + _fe_modePushSinkC() + _fe_modeUniqueC() , LF ) ;
                     countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                                                                 \
                     ZE( fieldEditParamOutC* , pOut ) ;
         
-                    listC::openIF( tinBaseP , hTo , pczTo ) ;
-                    handleC hTo( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                    listC::openIF( tin0P , hTo , pczTo ) ;
+                    handleC hTo( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                     countT pczTo[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , idNameToP , 0 } ;
         
-                    puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
+                    puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ;
                 {
                 //SINK UNIQUE A listingVSP for record INTO A TEMPORARY LIST
             {
             if( isListed )
 
             }
-                ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;
-                isListed = selectHeP.isListedF( tinBaseP , record ) ;
-                ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;
-                puseC puseRecord( tinBaseP , *((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
+                ((tin9S&)tin0P).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;
+                isListed = selectHeP.isListedF( tin0P , record ) ;
+                ((tin9S&)tin0P).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;
+                puseC puseRecord( tin0P , *((tin9S&)tin0P).ta.retained.u.listWalk.walk.pPoolRecord ) ;
             {
             ZE( boolT , isListed ) ;
 
-            __( !listingC::bIsListingIF( tinBaseP , &record ) ) ;
+            __( !listingC::bIsListingIF( tin0P , &record ) ) ;
             const listingC& record = *(const listingC*)spRecord ;
 
             listingVSP spRecord = entry ;
@@ -49,29 +49,29 @@
             }
                 }
                     DELlIST( fieldEditParamOutC , pOut ) ;
-                    listOfSetC::fieldIF( tinBaseP , pOut , hTo , pczField , _fe_pushC( record ) + _fe_modePushSinkC() + _fe_modeUniqueC() , LF ) ;
+                    listOfSetC::fieldIF( tin0P , pOut , hTo , pczField , _fe_pushC( record ) + _fe_modePushSinkC() + _fe_modeUniqueC() , LF ) ;
                     countT pczField[] = { LISTnAMEsYS_RECORD , 0 } ;                                                                                                                                                 \
                     ZE( fieldEditParamOutC* , pOut ) ;
         
-                    listOfSetC::openIF( tinBaseP , hTo , pczTo ) ;
-                    handleC hTo( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
+                    listOfSetC::openIF( tin0P , hTo , pczTo ) ;
+                    handleC hTo( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;
                     countT pczTo[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM4 , LISTnAMEsYS_TEMPORARY , LISTnAMEsYS_SELECTED , idNameToP , 0 } ;
         
-                    puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
+                    puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ;
                 {
                 //SINK UNIQUE A listingVSP for record INTO A TEMPORARY LIST
             {
             if( isListed )
 
             }
-                ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;
-                isListed = selectHeP.isListedF( tinBaseP , record ) ;
-                ((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;
-                puseC puseRecord( tinBaseP , *((tin9S&)tinBaseP).ta.retained.u.listWalk.walk.pPoolRecord ) ;
+                ((tin9S&)tin0P).ta.retained.u.listWalk.walk.pPoolRecord = &PUSE ;
+                isListed = selectHeP.isListedF( tin0P , record ) ;
+                ((tin9S&)tin0P).ta.retained.u.listWalk.walk.pPoolRecord = 0 ;
+                puseC puseRecord( tin0P , *((tin9S&)tin0P).ta.retained.u.listWalk.walk.pPoolRecord ) ;
             {
             ZE( boolT , isListed ) ;
 
-            __( !listingOfSetC::bIsListingIF( tinBaseP , &record ) ) ;
+            __( !listingOfSetC::bIsListingIF( tin0P , &record ) ) ;
             const listingOfSetC& record = *(const listingOfSetC*)(const listingC*)spRecord ;
 
             listingVSP spRecord = entry ;
@@ -81,16 +81,16 @@
     {
     if( pListingP && !( pListingP->flagsF() & fliLISTINGc_MIXINlIST ) && pListingP->idTypeDatumF() == ifcIDtYPEmIXINdATUM_listingVSP )
 
-    selectC&  selectHeP = *(selectC*)((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-    countT    idNameToP =            ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
-    listingC* pListingP =            ((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
+    selectC&  selectHeP = *(selectC*)((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+    countT    idNameToP =            ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 0 ] ;
+    listingC* pListingP =            ((tin9S&)tin0P).ta.pushed.u.listWalk.cbf.pListingP ;
     GRABtINaRGS( ifcIDtYPEtINaRGiNuSE_LIST )
 
     const boolT  bOfSet = F(flagsPoolFormat) & flPOOLfORMAT_SETS ;
-    const flagsT flagsPoolFormat = !((tin9S&)tinBaseP).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
-    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
+    const flagsT flagsPoolFormat = !((tin9S&)tin0P).pPoolUse ? 0 : PUSE.flagsPoolFormatF() ;
+    if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( 0x12121212 ) ; }
 {
-/*1*/flagsT _export listWalkSelectAndCBF( tin0S& tinBaseP )/*1*/
+/*1*/flagsT _export listWalkSelectAndCBF( tin0S& tin0P )/*1*/
 
 /**/
 */

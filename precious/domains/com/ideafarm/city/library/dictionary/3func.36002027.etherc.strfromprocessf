@@ -8,21 +8,21 @@
 
 
 }
-    delF( tinBaseP , argError.post ) ;
-    delF( tinBaseP , argOut.post ) ;
-    strMakeF( tinBaseP , LF , psttErrorP , T(argError.post) ) ; // CALLER MUST TAG ___( psttErrorP ) ;
-    strMakeF( tinBaseP , LF , psttOutP   , T(argOut.post)   ) ; // CALLER MUST TAG ___( psttOutP ) ;
-    delF( tinBaseP , psttUnique ) ;
-    sgnDone_tmError.waitF( tinBaseP ) ;
-    sgnDone_tmOut.waitF( tinBaseP ) ;
+    delF( tin0P , argError.post ) ;
+    delF( tin0P , argOut.post ) ;
+    strMakeF( tin0P , LF , psttErrorP , T(argError.post) ) ; // CALLER MUST TAG ___( psttErrorP ) ;
+    strMakeF( tin0P , LF , psttOutP   , T(argOut.post)   ) ; // CALLER MUST TAG ___( psttOutP ) ;
+    delF( tin0P , psttUnique ) ;
+    sgnDone_tmError.waitF( tin0P ) ;
+    sgnDone_tmOut.waitF( tin0P ) ;
 
     }
         __Z( bDone ) ;
         while( !POOP && cTries -- ) ;
         }
             }
-                ++ s ; osSleepF( tinBaseP , TUCK * 0x10 ) ;
-                sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+                ++ s ; osSleepF( tin0P , TUCK * 0x10 ) ;
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 SCOOPSdEL
                 POOPR
             {
@@ -34,7 +34,7 @@
             {
             if( !POOP )
 
-            boxC process( tinBaseP , *((tin9S&)tinBaseP).pEtScratch , T("//process/")+T(psttUnique)+T("/")+T(psttExeP) , 0 , 0 , 0 , 1 ) ;
+            boxC process( tin0P , *((tin9S&)tin0P).pEtScratch , T("//process/")+T(psttUnique)+T("/")+T(psttExeP) , 0 , 0 , 0 , 1 ) ;
 
             SCOOPSnEW
         {
@@ -46,17 +46,17 @@
 
     }
         }
-            ++ s ; osSleepF( tinBaseP , TOCK ) ; //U: IF THIS ISN''T LONG ENOUGH, THE PROCESS BOX WON''T CONSTRUCT AND WE''LL HAVE A LEAK
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            ++ s ; osSleepF( tin0P , TOCK ) ; //U: IF THIS ISN''T LONG ENOUGH, THE PROCESS BOX WON''T CONSTRUCT AND WE''LL HAVE A LEAK
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
-        { ZE( countT , tnu ) ; osThreadF( tinBaseP , tnu , tmErrorF , &sgnDone_tmError , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&argError ) ; }
-        { ZE( countT , tnu ) ; osThreadF( tinBaseP , tnu , tmOutF   , &sgnDone_tmOut   , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&argOut   ) ; }
+        { ZE( countT , tnu ) ; osThreadF( tin0P , tnu , tmErrorF , &sgnDone_tmError , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&argError ) ; }
+        { ZE( countT , tnu ) ; osThreadF( tin0P , tnu , tmOutF   , &sgnDone_tmOut   , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)&argOut   ) ; }
     {
-    signC sgnDone_tmError( tinBaseP , TAG( TAGiDnULL ) ) ;
-    signC sgnDone_tmOut( tinBaseP , TAG( TAGiDnULL ) ) ;
+    signC sgnDone_tmError( tin0P , TAG( TAGiDnULL ) ) ;
+    signC sgnDone_tmOut( tin0P , TAG( TAGiDnULL ) ) ;
     argS argError( *this , psttUnique , psttExeP ) ;
     argS argOut( *this , psttUnique , psttExeP ) ;
-    strUniqueF( tinBaseP , psttUnique ) ; ___( psttUnique ) ;
+    strUniqueF( tin0P , psttUnique ) ; ___( psttUnique ) ;
     ZE( strokeS* , psttUnique ) ;
     _IO_
 
@@ -72,7 +72,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strFromProcessF( tin0S& tinBaseP , strokeS*& psttOutP , strokeS*& psttErrorP , const strokeS* const psttExeP , const strokeS* const psttArgsP , const strokeS* const psttInP )/*1*/
+/*1*/voidT etherC::strFromProcessF( tin0S& tin0P , strokeS*& psttOutP , strokeS*& psttErrorP , const strokeS* const psttExeP , const strokeS* const psttArgsP , const strokeS* const psttInP )/*1*/
 
 /**/
 */

@@ -18,21 +18,21 @@ REST
             }
                 break ;
 
-                etThread.delF( tinBaseP , psttFileName ) ;
-                etThread.delF( tinBaseP , pbFile ) ;
+                etThread.delF( tin0P , psttFileName ) ;
+                etThread.delF( tin0P , pbFile ) ;
 
                 CONoUT( "quitting\r\n" ) ;
-                pso->readF( tinBaseP , sIn ) ;
+                pso->readF( tin0P , sIn ) ;
                 CONoUT( "waiting for client to go away\r\n" ) ;
 
-                pso->writeF( tinBaseP , sOut ) ;
+                pso->writeF( tin0P , sOut ) ;
 
-                if( cbFile ) sOut.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbFile , cbFile ) ;
+                if( cbFile ) sOut.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_byteTptr , pbFile , cbFile ) ;
                 sOut << cbFile ;
-                soulC sOut( tinBaseP , TAG( TAGiDnULL ) ) ;
+                soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
                 CONoUT( T("putting file \"")+T(psttFileName)+T("\"\r\n") ) ;
 
-                etThread.boxGetShadowF( tinBaseP , pbFile , cbFile , psttFileName ) ; ___( pbFile ) ;
+                etThread.boxGetShadowF( tin0P , pbFile , cbFile , psttFileName ) ; ___( pbFile ) ;
                 ZE( countT , cbFile ) ;
                 ZE( byteT* , pbFile ) ;
                 CONoUT( T("retrieving file \"")+T(psttFileName)+T("\"\r\n") ) ;
@@ -47,31 +47,31 @@ REST
         sIn >> idCmd ;
         ZE( countT , idCmd ) ;
 
-        pso->readF( tinBaseP , sIn ) ;
-        soulC sIn( tinBaseP , TAG( TAGiDnULL ) ) ;
+        pso->readF( tin0P , sIn ) ;
+        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
         CONoUT( "reading command\r\n" ) ;
 #if defined( NEVERdEFINED )
 
-        pso->writeF( tinBaseP , pbFile , cbFile ) ;
-        pso->writeF( tinBaseP , (byteT*)&cbFile , sizeof cbFile ) ;
+        pso->writeF( tin0P , pbFile , cbFile ) ;
+        pso->writeF( tin0P , (byteT*)&cbFile , sizeof cbFile ) ;
 
-        etThread.boxGetShadowF( tinBaseP , pbFile , cbFile , T("///d/txt.zip") ) ; ___( pbFile ) ;
+        etThread.boxGetShadowF( tin0P , pbFile , cbFile , T("///d/txt.zip") ) ; ___( pbFile ) ;
         ZE( countT , cbFile ) ;
         ZE( byteT* , pbFile ) ;
 
         //U::TO FIND A BUG
     {
     if( pso )
-    sock.acceptF( tinBaseP , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+    sock.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
     ZE( countT , idPortPeer ) ;
     nicNameC nnPeer ;
     ZE( socketC* , pso ) ;
 {
 //while( !ether )
 
-sock.listenF( tinBaseP ) ;
-countT idPort = sock.bindF( tinBaseP , 0x8324 ) ;
-socketC sock( tinBaseP , ether , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
+sock.listenF( tin0P ) ;
+countT idPort = sock.bindF( tin0P , 0x8324 ) ;
+socketC sock( tin0P , ether , TAG( TAGiDnULL ) , 0 , flSOCKETc_NOsECRECY ) ;
 
 TODO
 

@@ -13,7 +13,7 @@ REST
     }
         if( bEnded ) break ;
         DEL( pInfo ) ;
-        ((thirdC&)etThread).dosContinueMonitoringF( tinBaseP , pInfo->osTid , pInfo->osPid , idCmd ) ;
+        ((thirdC&)etThread).dosContinueMonitoringF( tin0P , pInfo->osTid , pInfo->osPid , idCmd ) ;
         boolT bEnded = pInfo->idEvent == ifcIDeVENTmONITORED_EXITpROCESS ;
     
         }
@@ -65,12 +65,12 @@ REST
         if( !etThread && pInfo ) switch( pInfo->idEvent )
         countT idCmd = ifcIDcMDmoNITOR_DOhANDLERS ;
     
-        ((thirdC&)etThread).dosWaitForMonitorEventF( tinBaseP , pInfo , - 1 ) ; ___( pInfo ) ;
+        ((thirdC&)etThread).dosWaitForMonitorEventF( tin0P , pInfo , - 1 ) ; ___( pInfo ) ;
         ZE( ifcMonitorEventS* , pInfo ) ;
     {
     while( !etThread )
     
-    ether.osProcessF( tinBaseP , countTC() , countTC() , T("null.exe") , 0 , flPROCESShIRE_MONITORtHIS ) ;
+    ether.osProcessF( tin0P , countTC() , countTC() , T("null.exe") , 0 , flPROCESShIRE_MONITORtHIS ) ;
 {
 while( !ether )
 

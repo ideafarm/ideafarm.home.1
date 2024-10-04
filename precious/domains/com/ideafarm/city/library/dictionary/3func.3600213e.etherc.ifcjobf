@@ -16,14 +16,14 @@
                 //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/destroying sgnReadTested") , flSAY_APPEND | flSAY_LOG ) ;
                 }
                     //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/destroying sgnDone_tmStackCourses") , flSAY_APPEND | flSAY_LOG ) ;
-                    sgnDone_tmStackCourses.waitF( tinBaseP ) ;
+                    sgnDone_tmStackCourses.waitF( tin0P ) ;
                     //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/waiting for tmStackCourses to end") , flSAY_APPEND | flSAY_LOG ) ;
                     }
-                        stOrdersP.ungrabF( tinBaseP ) ;
+                        stOrdersP.ungrabF( tin0P ) ;
                         }
                             DEL( psOrder ) ;
                             }
-                                else            soUp.writeF( tinBaseP , *psOrder ) ;
+                                else            soUp.writeF( tin0P , *psOrder ) ;
                                 if( !*psOrder ) bEmpty = 1 ;
                             {
                             if( psOrder )
@@ -32,40 +32,40 @@
                         {
                         while( !POOP && stOrdersP && !bEmpty )
                         //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/emptying stOrdersP") , flSAY_APPEND | flSAY_LOG ) ;
-                        stOrdersP.grabF( tinBaseP , TAG( TAGiDnULL ) ) ;
+                        stOrdersP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                         //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/grabbing stOrdersP") , flSAY_APPEND | flSAY_LOG ) ;
-                        stOrdersP.waitF( tinBaseP ) ;
+                        stOrdersP.waitF( tin0P ) ;
                         //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/waiting for an order to be pushed into stOrdersP") , flSAY_APPEND | flSAY_LOG ) ;
                     {
                     while( !POOP && !bEmpty )
                     ZE( boolT , bEmpty ) ;
                 
                     //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/returned from waiting on sgnReadTested") , flSAY_APPEND | flSAY_LOG ) ;
-                    if( !POOP ) sgnReadTested.waitF( tinBaseP ) ;
+                    if( !POOP ) sgnReadTested.waitF( tin0P ) ;
                     //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/waiting for sgnReadTested") , flSAY_APPEND | flSAY_LOG ) ;
-                    osThreadF( tinBaseP , countTC() , tmStackCoursesF , &sgnDone_tmStackCourses , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)this , (countT)&stCoursesP , (countT)&soUp , (countT)&sgnReadTested , (countT)&stOrdersP , (countT)(strokeS*)psttOldC( tinBaseP , *this , psttOldCommentP ) ) ;
-                    signC sgnDone_tmStackCourses( tinBaseP , TAG( TAGiDnULL ) ) ;
+                    osThreadF( tin0P , countTC() , tmStackCoursesF , &sgnDone_tmStackCourses , 0 , flTHREADlAUNCH_null , 0 , 0 , (countT)this , (countT)&stCoursesP , (countT)&soUp , (countT)&sgnReadTested , (countT)&stOrdersP , (countT)(strokeS*)psttOldC( tin0P , *this , psttOldCommentP ) ) ;
+                    signC sgnDone_tmStackCourses( tin0P , TAG( TAGiDnULL ) ) ;
                 {
-                signC sgnReadTested( tinBaseP , TAG( TAGiDnULL ) ) ;
+                signC sgnReadTested( tin0P , TAG( TAGiDnULL ) ) ;
             {
 
-            soUp.writeF( tinBaseP , sRelay ) ;
+            soUp.writeF( tin0P , sRelay ) ;
             //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/writing relay package soulC") , flSAY_APPEND | flSAY_LOG ) ;
-            soUp.connectF( tinBaseP , 0 , nicNameC() , 1 ) ;
-            socketC soUp( tinBaseP , *this , TAG( TAGiDnULL ) ) ;
+            soUp.connectF( tin0P , 0 , nicNameC() , 1 ) ;
+            socketC soUp( tin0P , *this , TAG( TAGiDnULL ) ) ;
         {
         //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/connecting to local chat server") , flSAY_APPEND | flSAY_LOG ) ;
     
         }
-            ifcChatRelayPackageF( tinBaseP , sRelay , sJob , idAdamP , T(psttOldCommentP)+T(" (ifcJobF/inner)") , 1 , 0 , nicNameP ) ;
+            ifcChatRelayPackageF( tin0P , sRelay , sJob , idAdamP , T(psttOldCommentP)+T(" (ifcJobF/inner)") , 1 , 0 , nicNameP ) ;
     
             sJob << sOrderPrimaryP ;
             sJob << (boolT)0 ; // bAccepted
             nicNameP >> sJob ;
             sJob << idAdamP ;
-            soulC sJob( tinBaseP , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_JOB ) ;
+            soulC sJob( tin0P , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_JOB ) ;
         {
-        soulC sRelay( tinBaseP , TAG( TAGiDnULL ) ) ;
+        soulC sRelay( tin0P , TAG( TAGiDnULL ) ) ;
         //ifcSayIF( TP("",9)+T(psttOldCommentP)+tBar+TF3(processGlobal1I.idAdamRoot,flFORMAT_UNSIGNED,9)+T("etherC::ifcJobF/inner/setting up") , flSAY_APPEND | flSAY_LOG ) ;
         TN( tBar , "| " ) ;
     {
@@ -74,19 +74,19 @@
     }
         if( POOP ) return ;
         __Z( idAdamP ) ;
-        __(  stOrdersP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_soulC ) ;
-        __(  !( F(stOrdersP.flagsF(tinBaseP)) & flSTACKc_GIVEsIGNnEWpLATE ) ) ;
-        __(  !( F(stOrdersP.flagsF(tinBaseP)) & flSTACKc_FIFO ) ) ;
-        __(  stCoursesP.idTypeF( tinBaseP ) - ifcSTACKtYPE_PTR_soulC ) ;
-        __(  !( F(stCoursesP.flagsF(tinBaseP)) & flSTACKc_GIVEsIGNnEWpLATE ) ) ;
-        __(  !( F(stCoursesP.flagsF(tinBaseP)) & flSTACKc_FIFO ) ) ;
+        __(  stOrdersP.idTypeF( tin0P ) - ifcSTACKtYPE_PTR_soulC ) ;
+        __(  !( F(stOrdersP.flagsF(tin0P)) & flSTACKc_GIVEsIGNnEWpLATE ) ) ;
+        __(  !( F(stOrdersP.flagsF(tin0P)) & flSTACKc_FIFO ) ) ;
+        __(  stCoursesP.idTypeF( tin0P ) - ifcSTACKtYPE_PTR_soulC ) ;
+        __(  !( F(stCoursesP.flagsF(tin0P)) & flSTACKc_GIVEsIGNnEWpLATE ) ) ;
+        __(  !( F(stCoursesP.flagsF(tin0P)) & flSTACKc_FIFO ) ) ;
         __(  stCoursesP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::ifcJobF( stackC& stCoursesP , tin0S& tinBaseP , const countT idAdamP , soulC& sOrderPrimaryP , stackC& stOrdersP , const strokeS* const psttOldCommentP , const nicNameC nicNameP )/*1*/
+/*1*/voidT etherC::ifcJobF( stackC& stCoursesP , tin0S& tin0P , const countT idAdamP , soulC& sOrderPrimaryP , stackC& stOrdersP , const strokeS* const psttOldCommentP , const nicNameC nicNameP )/*1*/
 
 /**/
 */
@@ -107,7 +107,7 @@
   this is the order that defines the job
  sOrderPrimaryP
  idAdamP
- tinBaseP
+ tin0P
   must be empty
   must be flSTACKc_FIFO
   must be flSTACKc_GIVEsIGNnEWpLATE

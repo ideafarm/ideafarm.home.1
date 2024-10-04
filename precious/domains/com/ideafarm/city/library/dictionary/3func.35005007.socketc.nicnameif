@@ -12,12 +12,12 @@
     }
         ;
         
-            : ether.sockNicNameF( tinBaseP , psttP )
+            : ether.sockNicNameF( tin0P , psttP )
             ? pMap->nnHome
         
         nicName = pMap
     
-        //if( pMap ) { CONoUTrAW3( "" , ((tin9S&)tinBaseP).pag1->idAdam , T("/nicNameIF: mapping ")+T(psttP)+T(" to ")+T(pMap->nnHome)+T("\r\n") ) ; }
+        //if( pMap ) { CONoUTrAW3( "" , ((tin9S&)tin0P).pag1->idAdam , T("/nicNameIF: mapping ")+T(psttP)+T(" to ")+T(pMap->nnHome)+T("\r\n") ) ; }
     
         }
             if( !cToDo || F(pMap->flagsHome) & flIPmAPhOMEs_NOmAPPING ) pMap = 0 ;
@@ -25,7 +25,7 @@
             }
                 cToDo -- ;
                 pMap ++ ;
-                if( !ether.strCompareF( tinBaseP , psttP , T(pMap->postDomainName) ) ) break ; //U::flagsP TO TELL ME TO USE postMxName INSTEAD
+                if( !ether.strCompareF( tin0P , psttP , T(pMap->postDomainName) ) ) break ; //U::flagsP TO TELL ME TO USE postMxName INSTEAD
             {
             while( cToDo )
             countT cToDo = CiPmAPhOME ;
@@ -44,7 +44,7 @@
     {
     nicNameC nicName ;
 {
-/*1*/nicNameC socketC::nicNameIF( tin0S& tinBaseP , etherC& ether , const strokeS* const psttP )/*1*/
+/*1*/nicNameC socketC::nicNameIF( tin0S& tin0P , etherC& ether , const strokeS* const psttP )/*1*/
 
 /**/
 */

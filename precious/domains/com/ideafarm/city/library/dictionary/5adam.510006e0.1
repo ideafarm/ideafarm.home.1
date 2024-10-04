@@ -9,16 +9,16 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.traceF( tinBaseP , T("cDuplicates: ")+TF2(cDuplicates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+etThread.traceF( tin0P , T("cDuplicates: ")+TF2(cDuplicates,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
 }
     }
         }
-            etThread.delF( tinBaseP , postf ) ;
-            etThread.traceF( tinBaseP , T(postf) ) ;
+            etThread.delF( tin0P , postf ) ;
+            etThread.traceF( tin0P , T(postf) ) ;
             swsNameByHash >> postf ;
             ZE( osTextT* , postf ) ;
         {
@@ -26,21 +26,21 @@ etThread.traceF( tinBaseP , T("cDuplicates: ")+TF2(cDuplicates,flFORMAT_NObIGITv
 
         }
             cDuplicates += cEqual - 1 ;
-            etThread.traceF( tinBaseP , T("cEqual: ")+TF2(cEqual,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , T("cEqual: ")+TF2(cEqual,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         if( cEqual > 1 )
         countT cEqual = swsNameByHash ;
 
-        etThread.delF( tinBaseP , psttd ) ;
-        etThread.traceF( tinBaseP , T(psttd) ) ;
-        etThread.strDumpIF( tinBaseP , psttd , pbLever , sizeof pbHash , flSTRdUMP_FOREIGN ) ; ___( psttd ) ;
+        etThread.delF( tin0P , psttd ) ;
+        etThread.traceF( tin0P , T(psttd) ) ;
+        etThread.strDumpIF( tin0P , psttd , pbLever , sizeof pbHash , flSTRdUMP_FOREIGN ) ; ___( psttd ) ;
         ZE( strokeS* , psttd ) ;
 
-        pbLever = (byteT*)swsNameByHash.leverF( tinBaseP , idf ) ;
+        pbLever = (byteT*)swsNameByHash.leverF( tin0P , idf ) ;
     {
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-    etThread.traceF( tinBaseP , T("cFlavors: ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF4(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
-    countT cFlavors = swsNameByHash.cFlavorsF( tinBaseP ) ;
+    etThread.traceF( tin0P , T("cFlavors: ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF4(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+    countT cFlavors = swsNameByHash.cFlavorsF( tin0P ) ;
 {
 ZE( countT , cDuplicates ) ;
 
@@ -50,26 +50,26 @@ while( !ether && !POOP && ~hFind ) ;
     }
         swsNameByHash << postf ; postf = 0 ;
 
-        etThread.strMakeF( tinBaseP , LF , postf , pInfo->psttIfoName ) ; ___( postf ) ;
+        etThread.strMakeF( tin0P , LF , postf , pInfo->psttIfoName ) ; ___( postf ) ;
         ZE( osTextT* , postf ) ;
 
-        hasher.queryF( tinBaseP , pbHash , sizeof pbHash ) ;
-        hasher.eatF( tinBaseP , pInfo->psttIfoName ) ;
-        hasherC hasher( tinBaseP , etThread ) ;
+        hasher.queryF( tin0P , pbHash , sizeof pbHash ) ;
+        hasher.eatF( tin0P , pInfo->psttIfoName ) ;
+        hasherC hasher( tin0P , etThread ) ;
 
-        etThread.traceF( tinBaseP , pInfo->psttIfoName ) ;
+        etThread.traceF( tin0P , pInfo->psttIfoName ) ;
     {
     if( pInfo && pInfo->psttIfoName && pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam != '/' )
-    etThread.diskFindFileOrDirOldF( tinBaseP , pInfo , hFind , tLike ) ;
+    etThread.diskFindFileOrDirOldF( tin0P , pInfo , hFind , tLike ) ;
     ZE( infoFileS* , pInfo ) ;
 {
 do
-handleC hFind( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
 TN( tLike , "///d/ideafarm.home.101/IdeaFarm (tm)/SYSTEM/2.1. Drop Files Here To Archive Them/*" ) ;
 //TN( tLike , "///d/tmp/x/a/*" ) ;
 
-switchStackC swsNameByHash( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pbLever , sizeof pbHash , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_byteT ) ;
+switchStackC swsNameByHash( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , pbLever , sizeof pbHash , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_byteT ) ;
 const byteT* pbLever = pbHash ;
 byteT pbHash[ 4 * sizeof( count02T ) ] ;
 

@@ -12,46 +12,46 @@ REST
 THREADmODE2rESTORE
 THREADmODE3rESTORE
 }
-    etThread.traceF( tinBaseP , T("chattered  uri.access.events") ) ;
+    etThread.traceF( tin0P , T("chattered  uri.access.events") ) ;
     }
         POPtINaRGS
-        listC::walkIF( tinBaseP , pczEvents , flLISToPEN_IFeXISTS ) ;
+        listC::walkIF( tin0P , pczEvents , flLISToPEN_IFeXISTS ) ;
 
-        ((tin9S&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 3 ] = (countT)&hFileReport ;
-        ((tin9S&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 2 ] = 0 ;                                         // WILL HOLD idJotUri       FOR THE URI CURRENTLY BEING PROCESSED
-        ((tin9S&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 1 ] = 0 ;                                         // WILL HOLD idJotContainer FOR THE URI CURRENTLY BEING PROCESSED
-        ((tin9S&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 0 ] = sizeof( countT ) ;
+        ((tin9S&)tin0P).ta.retained.u.listWalk.util.pcP[ 3 ] = (countT)&hFileReport ;
+        ((tin9S&)tin0P).ta.retained.u.listWalk.util.pcP[ 2 ] = 0 ;                                         // WILL HOLD idJotUri       FOR THE URI CURRENTLY BEING PROCESSED
+        ((tin9S&)tin0P).ta.retained.u.listWalk.util.pcP[ 1 ] = 0 ;                                         // WILL HOLD idJotContainer FOR THE URI CURRENTLY BEING PROCESSED
+        ((tin9S&)tin0P).ta.retained.u.listWalk.util.pcP[ 0 ] = sizeof( countT ) ;
 
-        ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_MAPiDjOTvALUES ;
-        ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 0 ] = pczEvents[ 1 ] ;
-        ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_IGNOREdELETErEQUESTEDbIT ;
-        ((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkReportAccessEventsCBF ;
+        ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_MAPiDjOTvALUES ;
+        ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 0 ] = pczEvents[ 1 ] ;
+        ((tin9S&)tin0P).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_IGNOREdELETErEQUESTEDbIT ;
+        ((tin9S&)tin0P).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkReportAccessEventsCBF ;
         PUSHtINaRGS
 
-        grabitC grabitx( tinBaseP , TAG( TAGiDnULL ) ) ;
+        grabitC grabitx( tin0P , TAG( TAGiDnULL ) ) ;
     {
-    etThread.traceF( tinBaseP , T("chattering uri.access.events") ) ;
+    etThread.traceF( tin0P , T("chattering uri.access.events") ) ;
 
-    listC::dictionaryReplaceOsTextIF( tinBaseP , pczEvents ) ;
+    listC::dictionaryReplaceOsTextIF( tin0P , pczEvents ) ;
     countT pczEvents[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , (countT)"listAccessEeventsByContainerUri" , 0 } ;
 
-    listC::chatterIF( tinBaseP ) ;
+    listC::chatterIF( tin0P ) ;
 
-    puseC puseEvents( tinBaseP , "uri.access.events" , flPOOLc_DOnOTiNDEXdURINGcT , ifcIDsTATEsPACE_MULTIPLEaDAMS , 3 , 6 ) ;
-    puseC puseAT( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
+    puseC puseEvents( tin0P , "uri.access.events" , flPOOLc_DOnOTiNDEXdURINGcT , ifcIDsTATEsPACE_MULTIPLEaDAMS , 3 , 6 ) ;
+    puseC puseAT( tin0P , ifcIDpOOL_ADAMtEMP ) ;
 
-    handleC hFileReport( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+    handleC hFileReport( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 {
 THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
 
-jotC jhsOther(   tinBaseP , "jotAccessEvents.hash.string.other"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 ) ;   // [STRING]; WO JOT PER UNIQUE STRING
-jotC jhsBrowser( tinBaseP , "jotAccessEvents.hash.string.browser" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 ) ;   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
-jotC jhsQuery(   tinBaseP , "jotAccessEvents.hash.string.query"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 ) ;   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
-jotC jhsUri(     tinBaseP , "jotAccessEvents.hash.string.uri"     , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 ) ;   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
+jotC jhsOther(   tin0P , "jotAccessEvents.hash.string.other"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 ) ;   // [STRING]; WO JOT PER UNIQUE STRING
+jotC jhsBrowser( tin0P , "jotAccessEvents.hash.string.browser" , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 ) ;   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
+jotC jhsQuery(   tin0P , "jotAccessEvents.hash.string.query"   , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 ) ;   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
+jotC jhsUri(     tin0P , "jotAccessEvents.hash.string.uri"     , flJOTc_WRITE , TICK << 2 , TOCK << 6 , 1 ) ;   // [HASH,STRING]; WO JOT PER UNIQUE STRING (A GIVEN HASH VALUE MIGHT APPEAR IN MULTIPLE JOTS)
 //CS:CODEsYNC: 73a 740 (THESE MUST BE CT IN THE SAME ORDER SO THAT THE SAME TAG VALES ARE ASSIGNED
 
-if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
+if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
 
 TODO
 
@@ -66,107 +66,107 @@ TODO
             }
                 }
                     }
-                        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pstto ) ;
+                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , pstto ) ;
                         POOPR
                     {
                     else
                     }
                         break ;
-                        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pstto ) ;
-                        ((tin9S&)tinBaseP).pEtScratch->traceF( tinBaseP , pstto ) ;
+                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , pstto ) ;
+                        ((tin9S&)tin0P).pEtScratch->traceF( tin0P , pstto ) ;
                     {
                     if( !POOP )
 
-                    if( flagsi & fliLISTINGc_DELETErEQUESTED ) ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("DELETErEQUESTED") ) ;
+                    if( flagsi & fliLISTINGc_DELETErEQUESTED ) ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("DELETErEQUESTED") ) ;
 
                     }
                         THREADmODE2rESTORE
                         }
-                            ((tin9S&)tinBaseP).tlsDelF( *(byteT**)&pczHe ) ;
-                            //{ puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinBaseP , *(byteT**)&pczHe ) ; }
+                            ((tin9S&)tin0P).tlsDelF( *(byteT**)&pczHe ) ;
+                            //{ puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ; PUSE( tin0P , *(byteT**)&pczHe ) ; }
 
                             }
-                                if( pczHe[ ++ offo ] ) { ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("/") ) ; }
+                                if( pczHe[ ++ offo ] ) { ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("/") ) ; }
             
                                 }
                                     }
-                                        ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("\"") ) ;
-                                        ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T((const byteT*)vspo) ) ;
-                                        ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("\"") ) ;
+                                        ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("\"") ) ;
+                                        ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T((const byteT*)vspo) ) ;
+                                        ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("\"") ) ;
                                     {
                                     else            
-                                    if( !(const byteT*)vspo ) { ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , TF2(pczHe[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
+                                    if( !(const byteT*)vspo ) { ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2(pczHe[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
                 
-                                    if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tinBaseP , pczHe[ offo ] ) ;
+                                    if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tin0P , pczHe[ offo ] ) ;
                                     blobVSP vspo ;
                                 {
                                 else
-                                if( postzMap ) { ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(postzMap) ) ; }
+                                if( postzMap ) { ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(postzMap) ) ; }
                                 const osTextT* postzMap = pg3.mapListName( pczHe[ offo ] ) ;
                             {
                             while( pczHe[ offo ] )
                             countT offo = 0 ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(" Refers to: ") ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(" Refers to: ") ) ;
 
-                            ((const listingC*)vspValue)->nameF( tinBaseP , pczHe ) ; //___( pczHe ) ;
+                            ((const listingC*)vspValue)->nameF( tin0P , pczHe ) ; //___( pczHe ) ;
                             ZE( countT* , pczHe ) ;
 
-                            if( flagsi & fliLISTINGc_DELETErEQUESTED ) ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(" DELETErEQUESTED") ) ;
+                            if( flagsi & fliLISTINGc_DELETErEQUESTED ) ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(" DELETErEQUESTED") ) ;
                             }
-                                ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("\"") ) ;
-                                ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(postNamePool) ) ;
-                                ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(" in pool: \"") ) ;
+                                ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("\"") ) ;
+                                ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(postNamePool) ) ;
+                                ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(" in pool: \"") ) ;
                             {
                             if( postNamePool )
-                            const osTextT* postNamePool = ((tin9S&)tinBaseP).pPoolUse ? ((tin9S&)tinBaseP).pPoolUse->postNameF( tinBaseP ) : 0 ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , TF2(aptRef,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(" a: ") ) ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , TF2((countT)(const listingC*)vspValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("listingVSP: p: ") ) ;
+                            const osTextT* postNamePool = ((tin9S&)tin0P).pPoolUse ? ((tin9S&)tin0P).pPoolUse->postNameF( tin0P ) : 0 ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2(aptRef,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(" a: ") ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2((countT)(const listingC*)vspValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("listingVSP: p: ") ) ;
             
-                            aptC aptRef( tinBaseP , vspValue ) ;
+                            aptC aptRef( tin0P , vspValue ) ;
             
-                            puseC puseRecord( tinBaseP , *pPool ) ;
+                            puseC puseRecord( tin0P , *pPool ) ;
 
                             __Z( pPool ) ;
-                            poolC* pPool = poolC::pPoolIF( tinBaseP , (byteT*)(const listingC*)vspValue ) ;
+                            poolC* pPool = poolC::pPoolIF( tin0P , (byteT*)(const listingC*)vspValue ) ;
                         {
                         THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
                     {
                     else if( (const listingC*)vspValue )
                     }
                         }
-                            if( pczValue[ ++ offo ] ) { ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("/") ) ; }
+                            if( pczValue[ ++ offo ] ) { ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("/") ) ; }
 
                             }
                                 }
-                                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("\"") ) ;
-                                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T((const byteT*)vspo) ) ;
-                                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("\"") ) ;
+                                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("\"") ) ;
+                                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T((const byteT*)vspo) ) ;
+                                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("\"") ) ;
                                 {
                                 else            
-                                if( !(const byteT*)vspo ) { ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , TF2(pczValue[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
+                                if( !(const byteT*)vspo ) { ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2(pczValue[offo],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
             
-                                if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tinBaseP , pczValue[ offo ] ) ;
+                                if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tin0P , pczValue[ offo ] ) ;
                                 blobVSP vspo ;
                             {
                             else
-                            if( postzMap ) { ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(postzMap) ) ; }
+                            if( postzMap ) { ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(postzMap) ) ; }
                             const osTextT* postzMap = pg3.mapListName( pczValue[ offo ] ) ;
                         {
                         while( pczValue[ offo ] )
                         countT offo = 0 ;
 
-                        ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("countTstrz: ") ) ;
+                        ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("countTstrz: ") ) ;
                     {
                     else if( pczValue )
                     }
                         }
-                            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttw ) ;
-                            if( bPartial ) ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , (strokeS*)( T(" ... (there are ")+TF2(cbv,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" total bytes)") ) ) ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(psttw) ) ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("blob):\r\n") ) ;
-                            ((tin9S&)tinBaseP).pEtScratch->strDumpIF( tinBaseP , psttw , postValue , bPartial ? TUCK : cbv , flSTRdUMP_null , 0x20 , 4 , '~' ) ; ___( psttw ) ;
+                            ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
+                            if( bPartial ) ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , (strokeS*)( T(" ... (there are ")+TF2(cbv,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" total bytes)") ) ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(psttw) ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("blob):\r\n") ) ;
+                            ((tin9S&)tin0P).pEtScratch->strDumpIF( tin0P , psttw , postValue , bPartial ? TUCK : cbv , flSTRdUMP_null , 0x20 , 4 , '~' ) ; ___( psttw ) ;
                             ZE( strokeS* , psttw ) ;
 
                             }
@@ -181,9 +181,9 @@ TODO
                         {
                         else
                         }
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("\"") ) ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(postValue) ) ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("blob: \"") ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("\"") ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(postValue) ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("blob: \"") ) ;
                         {
                         if( bText )
 
@@ -207,48 +207,48 @@ TODO
                     }
                         }
                             }
-                                ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttJot ) ;
-                                ((tin9S&)tinBaseP).pEther->fileWriteF( tinBaseP , hFileReportP , tSay , tSay.csF( tinBaseP ) ) ;
+                                ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttJot ) ;
+                                ((tin9S&)tin0P).pEther->fileWriteF( tin0P , hFileReportP , tSay , tSay.csF( tin0P ) ) ;
                                 TN( tSay , "" ) ; tSay = T("\r\n")+T(psttJot) ;
 
-                                ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , tb4+T(psttJot) ) ;
+                                ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , tb4+T(psttJot) ) ;
                             {
                             else
                             if( POOP ) POOPR
-                            ((tin9S&)tinBaseP).pEtScratch->strFromIdJotF( tinBaseP , psttJot , *pcValue , cbJotStringDecodePrefixP ) ; ___( psttJot ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFromIdJotF( tin0P , psttJot , *pcValue , cbJotStringDecodePrefixP ) ; ___( psttJot ) ;
                             ZE( strokeS* , psttJot ) ;
                         {
                         if( F(flagsP) & flLISTwALKcHATTER_MAPiDjOTvALUES )
 
-                        ((tin9S&)tinBaseP).pEther->fileWriteF( tinBaseP , hFileReportP , tSay , tSay.csF( tinBaseP ) ) ;
+                        ((tin9S&)tin0P).pEther->fileWriteF( tin0P , hFileReportP , tSay , tSay.csF( tin0P ) ) ;
                         TN( tSay , "" ) ; tSay = T("\r\n")+T("countT: ")+TF2(*pcValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 
-                        ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , TF2(*pcValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("countT: ") ) ;
+                        ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2(*pcValue,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("countT: ") ) ;
                     {
                     if( pcValue )
 
                     }
-                        ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(" ") ) ;
-                        ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , TF2(cName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(" ") ) ;
+                        ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2(cName,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     else if( cName )
                     }
-                        ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(" ") ) ;
-                        ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(postzName) ) ;
+                        ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(" ") ) ;
+                        ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(postzName) ) ;
                     {
                     if( postzName )
-                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(postMark) ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(" | ") ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , TF2(aptListing,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(" | a: ") ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , TF2((countT)pListing,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(" | p: ") ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , TF2(((tin9S&)tinBaseP).ta.pushed.u.listWalk.walk.cRecurseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(" | ") ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(((tin9S&)tinBaseP).pPoolUse->postNameF(tinBaseP)) ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(postMark) ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(" | ") ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2(aptListing,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(" | a: ") ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2((countT)pListing,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(" | p: ") ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2(((tin9S&)tin0P).ta.pushed.u.listWalk.walk.cRecurseP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(" | ") ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(((tin9S&)tin0P).pPoolUse->postNameF(tin0P)) ) ;
 
-                    ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , pstto , 0 , max ) ; ___( pstto ) ;
+                    ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , pstto , 0 , max ) ; ___( pstto ) ;
                     ZE( strokeS* , pstto ) ;
                 {
                 for( countT max = TOCK ;; max <<= 1 )
@@ -259,7 +259,7 @@ TODO
             }
                 }
                     if( (const byteT*)vspbName ) postzName = (const byteT*)vspbName ;
-                    vspbName = listC::dictionaryQueryFromIdIF( tinBaseP , cName ) ;
+                    vspbName = listC::dictionaryQueryFromIdIF( tin0P , cName ) ;
                 {
                 else if( bUseDictionary && cName )
                 if( postzMap ) postzName = postzMap ;
@@ -267,7 +267,7 @@ TODO
                 }
                     countT foo = 2 ;
                 {
-                if( postzMap && !thirdC::c_strcmpIF( tinBaseP , postzMap , "ROOTaPPLICATION" ) )
+                if( postzMap && !thirdC::c_strcmpIF( tin0P , postzMap , "ROOTaPPLICATION" ) )
 
                 const osTextT* postzMap = pg3.mapListName( cName ) ;
 
@@ -321,9 +321,9 @@ TODO
             flrc |= flLISTwALKcALLbACKrETURNcODE_QUIT ;
             CONoUTrAW( "EXCEPTION: An apartment was encountered that does not contain a valid listingC object.  quitting\r\n" ) ;
         {
-        if( !listingC::bIsListingIF( tinBaseP , aptListing ) )
+        if( !listingC::bIsListingIF( tin0P , aptListing ) )
 
-        aptC aptListing( tinBaseP , pListing ) ;
+        aptC aptListing( tin0P , pListing ) ;
     {
     if( pListing )
     flagsT flrc = flLISTwALKcALLbACKrETURNcODE_null ;
@@ -332,37 +332,37 @@ TODO
         }
             }
                 }
-                    ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pstto ) ;
+                    ((tin9S&)tin0P).pEtScratch->delF( tin0P , pstto ) ;
                     POOPR
                 {
                 else
                 }
                     break ;
-                    ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , pstto ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->traceF( tinBaseP , pstto ) ;
+                    ((tin9S&)tin0P).pEtScratch->delF( tin0P , pstto ) ;
+                    ((tin9S&)tin0P).pEtScratch->traceF( tin0P , pstto ) ;
                 {
                 if( !POOP )
 
-                { puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinBaseP , *(byteT**)&pczSquished ) ; }
-                ((tin9S&)tinBaseP).tlsDelF( *(byteT**)&pczName ) ;
-                //{ puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ; PUSE( tinBaseP , *(byteT**)&pczName ) ; }
+                { puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ; PUSE( tin0P , *(byteT**)&pczSquished ) ; }
+                ((tin9S&)tin0P).tlsDelF( *(byteT**)&pczName ) ;
+                //{ puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ; PUSE( tin0P , *(byteT**)&pczName ) ; }
                 }
-                    if( pczSquished[ ++ offi ] ) { ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("/") ) ; }
+                    if( pczSquished[ ++ offi ] ) { ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("/") ) ; }
 
                     }
                         }
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("\"") ) ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T((const byteT*)vspo) ) ;
-                            ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T("\"") ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("\"") ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T((const byteT*)vspo) ) ;
+                            ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T("\"") ) ;
                         {
                         else            
-                        if( !(const byteT*)vspo ) { ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , TF2(pczSquished[offi],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ; }
+                        if( !(const byteT*)vspo ) { ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , TF2(pczSquished[offi],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ; }
             
-                        if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tinBaseP , pczSquished[ offi ] ) ;
+                        if( bUseDictionary ) vspo = listC::dictionaryQueryFromIdIF( tin0P , pczSquished[ offi ] ) ;
                         blobVSP vspo ;
                     {
                     else
-                    if( postzMap ) { ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(postzMap) ) ; }
+                    if( postzMap ) { ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(postzMap) ) ; }
 
                     const osTextT* postzMap = pg3.mapListName( pczSquished[ offi ] ) ;
                 {
@@ -371,7 +371,7 @@ TODO
 
                 }
                     }
-                        ((tin9S&)tinBaseP).pEther->fileWriteF( tinBaseP , hFileReportP , tSay , tSay.csF( tinBaseP ) ) ;
+                        ((tin9S&)tin0P).pEther->fileWriteF( tin0P , hFileReportP , tSay , tSay.csF( tin0P ) ) ;
 
                         ) ;
 
@@ -385,36 +385,36 @@ TODO
 
                         TN( tSay , "" ) ; tSay = T(
 
-                        ((tin9S&)tinBaseP).pEther->fileOpenF( tinBaseP , hFileReportP , countTC() , T("///d/web.reports/access/")+tContainer+tSlash+tUri+T(".txt") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR , flFILEaTTR1_null , flFILEaTTR2_null , 0 , 0 ) ;                    
+                        ((tin9S&)tin0P).pEther->fileOpenF( tin0P , hFileReportP , countTC() , T("///d/web.reports/access/")+tContainer+tSlash+tUri+T(".txt") , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR , flFILEaTTR1_null , flFILEaTTR2_null , 0 , 0 ) ;                    
 
-                        etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("writing/replacing report file [container,uri]:    ")+tb4+tContainer+tb4+tUri ) ;
+                        etherC::etRockIF( tin0P ).traceF( tin0P , T("writing/replacing report file [container,uri]:    ")+tb4+tContainer+tb4+tUri ) ;
 
                         }
-                            ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttWant ) ;
+                            ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttWant ) ;
                             tUri = T(psttWant) ;
-                            ((tin9S&)tinBaseP).pEther->strSubstringF( tinBaseP , psttWant , idf , idl , tUri ) ; ___( psttWant ) ;
+                            ((tin9S&)tin0P).pEther->strSubstringF( tin0P , psttWant , idf , idl , tUri ) ; ___( psttWant ) ;
                             ZE( countT , idl ) ;
-                            countT idf = idHit + tLook.csF( tinBaseP ) ;
+                            countT idf = idHit + tLook.csF( tin0P ) ;
                             ZE( strokeS* , psttWant ) ;
                         {
                         if( idHit )
-                        countT idHit = ((tin9S&)tinBaseP).pEther->strIdF( tinBaseP , tLook , tUri ) ;
+                        countT idHit = ((tin9S&)tin0P).pEther->strIdF( tin0P , tLook , tUri ) ;
                         TN( tLook , ".rackcdn.com/" ) ;
 
-                        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttJotUri       ) ;
-                        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttJotContainer ) ;
+                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttJotUri       ) ;
+                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttJotContainer ) ;
                         TN( tUri       , psttJotUri       ) ;
                         TN( tContainer , psttJotContainer ) ;
                     {
                     else
                     }
-                        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttJotUri       ) ;
-                        ((tin9S&)tinBaseP).pEtScratch->delF( tinBaseP , psttJotContainer ) ;
+                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttJotUri       ) ;
+                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttJotContainer ) ;
                         POOPR
                     {
                     if( POOP )
-                    ((tin9S&)tinBaseP).pEtScratch->strFromIdJotF( tinBaseP , psttJotUri       , idJotUriP       , cbJotStringDecodePrefixP ) ; ___( psttJotUri       ) ;
-                    ((tin9S&)tinBaseP).pEtScratch->strFromIdJotF( tinBaseP , psttJotContainer , idJotContainerP , cbJotStringDecodePrefixP ) ; ___( psttJotContainer ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFromIdJotF( tin0P , psttJotUri       , idJotUriP       , cbJotStringDecodePrefixP ) ; ___( psttJotUri       ) ;
+                    ((tin9S&)tin0P).pEtScratch->strFromIdJotF( tin0P , psttJotContainer , idJotContainerP , cbJotStringDecodePrefixP ) ; ___( psttJotContainer ) ;
                     ZE( strokeS* , psttJotUri       ) ;
                     ZE( strokeS* , psttJotContainer ) ;
 
@@ -422,20 +422,20 @@ TODO
                     idJotUriP       = pczSquished[ 0xd ] ;
                     idJotContainerP = pczSquished[ 0x7 ] ;
 
-                    puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ;
+                    puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ;
                 {                                                                                                                                                     //          0    1               2                                 3                 4        5          6                 7        8          9                 a        b          c                 d        e
-                if( pczSquished && 0xe <= thirdC::c_strlenIF( tinBaseP , pczSquished ) && ( idJotContainerP != pczSquished[ 0x7 ] || idJotUriP != pczSquished[ 0xd ] ) )  // EXAMPLE: ROOT/ROOTaPPLICATION/"listAccessEeventsByContainerUri"/STRETCHbEGINcOUNT/d99bfcf8/STRETCHeND/STRETCHbEGINcOUNT/3000000b/STRETCHeND/STRETCHbEGINcOUNT/c945d60d/STRETCHeND/STRETCHbEGINcOUNT/10000008/STRETCHeND/STRETCHbEGINcOUNTsTRZ/acd3b/76054e6d/44494263/STRETCHeND/RECORD/"browser"
+                if( pczSquished && 0xe <= thirdC::c_strlenIF( tin0P , pczSquished ) && ( idJotContainerP != pczSquished[ 0x7 ] || idJotUriP != pczSquished[ 0xd ] ) )  // EXAMPLE: ROOT/ROOTaPPLICATION/"listAccessEeventsByContainerUri"/STRETCHbEGINcOUNT/d99bfcf8/STRETCHeND/STRETCHbEGINcOUNT/3000000b/STRETCHeND/STRETCHbEGINcOUNT/c945d60d/STRETCHeND/STRETCHbEGINcOUNT/10000008/STRETCHeND/STRETCHbEGINcOUNTsTRZ/acd3b/76054e6d/44494263/STRETCHeND/RECORD/"browser"
 
-                { puseC puseat( tinBaseP , ifcIDpOOL_ADAMtEMP ) ; etherC::strSquishIF( tinBaseP , pczSquished , pczName ) ; ___( pczSquished ) ; }     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
+                { puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ; etherC::strSquishIF( tin0P , pczSquished , pczName ) ; ___( pczSquished ) ; }     //U::20240828@1056: THIS OVERLOAD OF strSquishIF NOW RETURNS OUTPUT STRING LENGTH AND OUTPUT STRING CAN NOW CONTAIN NULL VALUES
                 ZE( countT* , pczSquished ) ;
 
-                ((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP->nameF( tinBaseP , pczName ) ; // ___( pczName ) ;
+                ((tin9S&)tin0P).ta.pushed.u.listWalk.cbf.pDadP->nameF( tin0P , pczName ) ; // ___( pczName ) ;
                 ZE( countT* , pczName ) ;
 
-                ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(bUseDictionary?" | ------------------------------------------------------------------------------- ":" | ------------------------------------------------------------------------------- (NO DICTIONARY LOOKUP) ") ) ;
-                ((tin9S&)tinBaseP).pEtScratch->strFuseF( tinBaseP , pstto , T(((tin9S&)tinBaseP).pPoolUse->postNameF(tinBaseP)) ) ;
+                ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(bUseDictionary?" | ------------------------------------------------------------------------------- ":" | ------------------------------------------------------------------------------- (NO DICTIONARY LOOKUP) ") ) ;
+                ((tin9S&)tin0P).pEtScratch->strFuseF( tin0P , pstto , T(((tin9S&)tin0P).pPoolUse->postNameF(tin0P)) ) ;
 
-                ((tin9S&)tinBaseP).pEtScratch->strMakeF( tinBaseP , LF , pstto , 0 , max ) ; ___( pstto ) ;
+                ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , pstto , 0 , max ) ; ___( pstto ) ;
                 ZE( strokeS* , pstto ) ;
             {
             for( countT max = TOCK ;; max <<= 1 )
@@ -443,7 +443,7 @@ TODO
         {
         IFsCRATCH
     {
-    if( ((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.idCallP == 1 )
+    if( ((tin9S&)tin0P).ta.pushed.u.listWalk.cbf.idCallP == 1 )
     processGlobal4S& pg3 = processGlobal4S::_processGlobal4I_IF() ;
 
     TN( tSlash , "/" ) ;
@@ -460,25 +460,25 @@ TODO
     const countT levelReNameUse = levelReNameMe ? levelReNameMe : levelReNameDad ;
     const countT levelOoNameUse = levelOoNameMe ? levelOoNameMe : levelOoNameDad ;
 
-    const countT levelReNameDad = !((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP ? 0 : ((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP->nameF( 3 ) ;
+    const countT levelReNameDad = !((tin9S&)tin0P).ta.pushed.u.listWalk.cbf.pDadP ? 0 : ((tin9S&)tin0P).ta.pushed.u.listWalk.cbf.pDadP->nameF( 3 ) ;
     const countT levelReNameMe  = !pListing                          ? 0 : pListing->nameF( 3 )                          ;
 
-    const countT levelOoNameDad = !((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP ? 0 : ((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pDadP->nameF( 2 ) ;
+    const countT levelOoNameDad = !((tin9S&)tin0P).ta.pushed.u.listWalk.cbf.pDadP ? 0 : ((tin9S&)tin0P).ta.pushed.u.listWalk.cbf.pDadP->nameF( 2 ) ;
     const countT levelOoNameMe  = !pListing                          ? 0 : pListing->nameF( 2 )                          ;
 
     //U::FV( flLISTwALKcHATTER , flagsP ) ;
 
-    handleC&  hFileReportP             = *(handleC*)((tin9S&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 3 ] ;
-    countT&   idJotUriP                =            ((tin9S&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 2 ] ;
-    countT&   idJotContainerP          =            ((tin9S&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 1 ] ;
-    countT    cbJotStringDecodePrefixP =            ((tin9S&)tinBaseP).ta.retained.u.listWalk.util.pcP[ 0 ] ;
+    handleC&  hFileReportP             = *(handleC*)((tin9S&)tin0P).ta.retained.u.listWalk.util.pcP[ 3 ] ;
+    countT&   idJotUriP                =            ((tin9S&)tin0P).ta.retained.u.listWalk.util.pcP[ 2 ] ;
+    countT&   idJotContainerP          =            ((tin9S&)tin0P).ta.retained.u.listWalk.util.pcP[ 1 ] ;
+    countT    cbJotStringDecodePrefixP =            ((tin9S&)tin0P).ta.retained.u.listWalk.util.pcP[ 0 ] ;
 
-    flagsT    flagsP                   =            ((tin9S&)tinBaseP).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
-    listingC* pListing                 =            ((tin9S&)tinBaseP).ta.pushed.u.listWalk.cbf.pListingP ;
+    flagsT    flagsP                   =            ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 1 ] ;
+    listingC* pListing                 =            ((tin9S&)tin0P).ta.pushed.u.listWalk.cbf.pListingP ;
 
-    if( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tinBaseP.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
+    if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
 {
-flagsT listWalkReportAccessEventsCBF( tin0S& tinBaseP )
+flagsT listWalkReportAccessEventsCBF( tin0S& tin0P )
 
 
 /*1*/WAKEsHOWtEXT( "ifcIDaDAM_ACCESSeVENTS4rEPORT" )/*1*/

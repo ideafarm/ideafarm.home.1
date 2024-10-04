@@ -9,11 +9,11 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    etThread.traceF( tinBaseP , T("song duration [seconds]: ")+TF4((countT)((measureT)cFrames/27.8),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
+    etThread.traceF( tin0P , T("song duration [seconds]: ")+TF4((countT)((measureT)cFrames/27.8),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
 
     }
         DEL( pInfo ) ;
@@ -22,7 +22,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             countT cbNet = pInfo->cbUsed - cbFileTag ;
         {
         if( pInfo )
-        etThread.diskFileQueryF( tinBaseP , pInfo , fi ) ; ___( pInfo ) ;
+        etThread.diskFileQueryF( tin0P , pInfo , fi ) ; ___( pInfo ) ;
         ZE( infoFileS* , pInfo ) ;
     {
     ZE( countT , cFrames ) ;
@@ -48,7 +48,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                 {
                 if( bArmed )
 
-                etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ; cbRead ++ ;
+                etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ; cbRead ++ ;
             {
             while( !POOP )
             ZE( countT , cSyncFound ) ;
@@ -66,14 +66,14 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     __( pbTock[ 0 ] != 0xff ) ;
 
     }
-        etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ; // LOAD THE WOTH BYTE OF THE WOTH SYNC
+        etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ; // LOAD THE WOTH BYTE OF THE WOTH SYNC
         cbr = 1 ;
 
         }
             }
                 }
                     cbToDo -= cbWo ;
-                    etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
+                    etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ;
                     cbr = cbWo ;
 
                     ;
@@ -86,7 +86,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
             {
             else
             }
-                etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
+                etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ;
                 cbr = cbId3 ;
             {
             if( cbId3 <= sizeof pbTock )
@@ -113,19 +113,19 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         __Z( cbr == 0x9 && pbTock[ 0 ] == 'I' && pbTock[ 1 ] == 'D' && pbTock[ 2 ] == '3' ) ;
 
         cbFileTag += cbr ;
-        etThread.fileReadF( tinBaseP , pbTock + 1 , cbr , fi , 0 ) ;
+        etThread.fileReadF( tin0P , pbTock + 1 , cbr , fi , 0 ) ;
         cbr = 0x9 ;
         cbFileTag = 1 ;
     {
     if( pbTock[ 0 ] != 0xff ) // IF NOT A SYNC BYTE
     ZE( countT , cbFileTag ) ;
 
-    etThread.fileReadF( tinBaseP , pbTock , cbr , fi , 0 ) ;
+    etThread.fileReadF( tin0P , pbTock , cbr , fi , 0 ) ;
     countT cbr = 1 ;
 
     byteT pbTock[ TOCK ] ;
 
-    fileC fi( tinBaseP , (strokeS*)T("///d/tmp/x/test2.mp3") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ;
+    fileC fi( tin0P , (strokeS*)T("///d/tmp/x/test2.mp3") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 ) ;
 {
 
 TODO

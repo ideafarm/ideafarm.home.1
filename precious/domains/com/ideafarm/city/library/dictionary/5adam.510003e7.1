@@ -22,16 +22,16 @@ REST
                 break ;
 
                 //U:HEX DUMP THIS BIT MAP; BETTER: INTERPRET IT AND LIST THE idPort VALUES FOR WHICH THE BIT IS SET
-                //U: soul.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbData , rMiddle.cbData - 5 ) ;             // BIT MAP
+                //U: soul.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_byteTptr , pbData , rMiddle.cbData - 5 ) ;             // BIT MAP
 
-                etThread.strokeF( tinBaseP , TF1(idProtocol)+te ) ;
+                etThread.strokeF( tin0P , TF1(idProtocol)+te ) ;
                 soul >> idProtocol ;
                 ZE( countT , idProtocol ) ;
 
-                etThread.strokeF( tinBaseP , T(idh)+tb ) ;
+                etThread.strokeF( tin0P , T(idh)+tb ) ;
                 soul >> idh ;
                 nicNameC idh ;
-                etThread.strokeF( tinBaseP , T("WKS")+tb ) ;
+                etThread.strokeF( tin0P , T("WKS")+tb ) ;
             {
             case ifcIDtYPEdNSqUERY_WKS :
             }
@@ -39,7 +39,7 @@ REST
 
                 }
                     time2 = time1 = 0 ;
-                    etThread.strokeF( tinBaseP , TT(time1,time2)+(cTries?tb:te) ) ;
+                    etThread.strokeF( tin0P , TT(time1,time2)+(cTries?tb:te) ) ;
                     soul >> (countT&)time2 ;
                     soul >> time1 ;
                 {
@@ -48,75 +48,75 @@ REST
                 ZE( sCountT , time2 ) ;
                 ZE( countT  , time1 ) ;
 
-                etThread.strokeF( tinBaseP , TF1(cSerial)+tb ) ;
+                etThread.strokeF( tin0P , TF1(cSerial)+tb ) ;
                 soul >> cSerial ;
                 ZE( countT , cSerial ) ;
 
-                etThread.delF( tinBaseP , psttw ) ;
-                etThread.strokeF( tinBaseP , tq+T(psttw)+tq+tb ) ;
+                etThread.delF( tin0P , psttw ) ;
+                etThread.strokeF( tin0P , tq+T(psttw)+tq+tb ) ;
                 soul >> psttw ;
 
-                etThread.delF( tinBaseP , psttw ) ;
-                etThread.strokeF( tinBaseP , tq+T(psttw)+tq+tb ) ;
+                etThread.delF( tin0P , psttw ) ;
+                etThread.strokeF( tin0P , tq+T(psttw)+tq+tb ) ;
                 soul >> psttw ;
                 ZE( strokeS* , psttw ) ;
-                etThread.strokeF( tinBaseP , T("SOA")+tb ) ;
+                etThread.strokeF( tin0P , T("SOA")+tb ) ;
             {
             case ifcIDtYPEdNSqUERY_SOA :
             }
                 break ;
-                etThread.strokeF( tinBaseP , te ) ;
+                etThread.strokeF( tin0P , te ) ;
                 //U:HEX DUMP THIS DATA
-                //U:soul.shiftLeftF( tinBaseP , ifcIDtYPEsOULiTEM_byteTptr , pbData , rMiddle.cbData ) ;
-                etThread.strokeF( tinBaseP , T("NULL")+tb ) ;
+                //U:soul.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_byteTptr , pbData , rMiddle.cbData ) ;
+                etThread.strokeF( tin0P , T("NULL")+tb ) ;
             {
             case ifcIDtYPEdNSqUERY_NULL :
             }
                 break ;
 
-                etThread.delF( tinBaseP , psttw ) ;
-                etThread.strokeF( tinBaseP , tq+T(psttw)+tq+te ) ;
+                etThread.delF( tin0P , psttw ) ;
+                etThread.strokeF( tin0P , tq+T(psttw)+tq+te ) ;
                 soul >> psttw ;
                 ZE( strokeS* , psttw ) ;
 
-                etThread.strokeF( tinBaseP , TF1(cRank)+tb ) ;
+                etThread.strokeF( tin0P , TF1(cRank)+tb ) ;
                 soul >> cRank ;
                 ZE( countT , cRank ) ;
-                etThread.strokeF( tinBaseP , T("MX")+tb ) ;
+                etThread.strokeF( tin0P , T("MX")+tb ) ;
             {
             case ifcIDtYPEdNSqUERY_MX :
             }
                 break ;
 
                 }
-                    etThread.delF( tinBaseP , psttw ) ;
-                    etThread.strokeF( tinBaseP , tq+T(psttw)+tq+(cText?tb:te) ) ;
+                    etThread.delF( tin0P , psttw ) ;
+                    etThread.strokeF( tin0P , tq+T(psttw)+tq+(cText?tb:te) ) ;
                     soul >> psttw ;
                     ZE( strokeS* , psttw ) ;
                 {
                 while( cText -- )
 
-                etThread.strokeF( tinBaseP , TF1(cText)+tb ) ;
+                etThread.strokeF( tin0P , TF1(cText)+tb ) ;
                 soul >> cText ;
                 ZE( countT , cText ) ;
-                etThread.strokeF( tinBaseP , T("")+tb ) ;
+                etThread.strokeF( tin0P , T("")+tb ) ;
             {
             case ifcIDtYPEdNSqUERY_TXT :
             case ifcIDtYPEdNSqUERY_HINFO :
             }
                 break ;
-                etThread.delF( tinBaseP , psttw ) ;
-                etThread.strokeF( tinBaseP , tq+T(psttw)+tq+te ) ;
+                etThread.delF( tin0P , psttw ) ;
+                etThread.strokeF( tin0P , tq+T(psttw)+tq+te ) ;
                 soul >> psttw ;
                 ZE( strokeS* , psttw ) ;
 
                 }
-                    case ifcIDtYPEdNSqUERY_PTR   : { etThread.strokeF( tinBaseP , T("PTR")+tb ) ; break ; }
-                    case ifcIDtYPEdNSqUERY_MR    : { etThread.strokeF( tinBaseP , T("MR")+tb ) ; break ; }
-                    case ifcIDtYPEdNSqUERY_MG    : { etThread.strokeF( tinBaseP , T("MG")+tb ) ; break ; }
-                    case ifcIDtYPEdNSqUERY_MB    : { etThread.strokeF( tinBaseP , T("MB")+tb ) ; break ; }
-                    case ifcIDtYPEdNSqUERY_CNAME : { etThread.strokeF( tinBaseP , T("CNAME")+tb ) ; break ; }
-                    case ifcIDtYPEdNSqUERY_NS    : { etThread.strokeF( tinBaseP , T("NS")+tb ) ; break ; }
+                    case ifcIDtYPEdNSqUERY_PTR   : { etThread.strokeF( tin0P , T("PTR")+tb ) ; break ; }
+                    case ifcIDtYPEdNSqUERY_MR    : { etThread.strokeF( tin0P , T("MR")+tb ) ; break ; }
+                    case ifcIDtYPEdNSqUERY_MG    : { etThread.strokeF( tin0P , T("MG")+tb ) ; break ; }
+                    case ifcIDtYPEdNSqUERY_MB    : { etThread.strokeF( tin0P , T("MB")+tb ) ; break ; }
+                    case ifcIDtYPEdNSqUERY_CNAME : { etThread.strokeF( tin0P , T("CNAME")+tb ) ; break ; }
+                    case ifcIDtYPEdNSqUERY_NS    : { etThread.strokeF( tin0P , T("NS")+tb ) ; break ; }
                 {
                 switch( idTypeInfo )
             {
@@ -127,19 +127,19 @@ REST
             case ifcIDtYPEdNSqUERY_CNAME :
             case ifcIDtYPEdNSqUERY_NS :
             }
-                etThread.delF( tinBaseP , psttw ) ; // INTENTIONAL FALLTHROUGH
-                etThread.strokeF( tinBaseP , tq+T(psttw)+tq+tb ) ;
+                etThread.delF( tin0P , psttw ) ; // INTENTIONAL FALLTHROUGH
+                etThread.strokeF( tin0P , tq+T(psttw)+tq+tb ) ;
                 soul >> psttw ;
                 ZE( strokeS* , psttw ) ;
-                etThread.strokeF( tinBaseP , T("MINFO")+tb ) ;
+                etThread.strokeF( tin0P , T("MINFO")+tb ) ;
             {
             case ifcIDtYPEdNSqUERY_MINFO :
             }
                 break ;
-                etThread.strokeF( tinBaseP , T(idh)+te ) ;
+                etThread.strokeF( tin0P , T(idh)+te ) ;
                 soul >> idh ;
                 nicNameC idh ;
-                etThread.strokeF( tinBaseP , T("A")+tb ) ;
+                etThread.strokeF( tin0P , T("A")+tb ) ;
             {
             case ifcIDtYPEdNSqUERY_A :
         {
@@ -147,14 +147,14 @@ REST
 
         }
             time2 = time1 = 0 ;
-            etThread.strokeF( tinBaseP , TT(time1,time2)+tb ) ;
+            etThread.strokeF( tin0P , TT(time1,time2)+tb ) ;
             soul >> (countT&)time2 ;
             soul >> time1 ;
             ZE( sCountT , time2 ) ;
             ZE( countT  , time1 ) ;
         {
 
-        etThread.strokeF( tinBaseP , TF1(idClass)+tb ) ;
+        etThread.strokeF( tin0P , TF1(idClass)+tb ) ;
         soul >> idClass ;
         ZE( countT , idClass ) ;
 
@@ -162,8 +162,8 @@ REST
         ZE( countT , idTypeInfo ) ;
 
         }
-            etThread.delF( tinBaseP , psttw ) ;
-            etThread.strokeF( tinBaseP , tq+T(psttw)+tq+tb ) ;
+            etThread.delF( tin0P , psttw ) ;
+            etThread.strokeF( tin0P , tq+T(psttw)+tq+tb ) ;
             soul >> psttw ;
             ZE( strokeS* , psttw ) ;
         {
@@ -174,9 +174,9 @@ REST
                 __( idTypeAnswer ) ;
             {
             default:
-            case ifcIDtYPEdNSrEPLY_NOTE      : { etThread.strokeF( tinBaseP , tNote+tb ) ; break ; }
-            case ifcIDtYPEdNSrEPLY_AUTHORITY : { etThread.strokeF( tinBaseP , tAuth+tb ) ; break ; }
-            case ifcIDtYPEdNSrEPLY_ANSWER    : { etThread.strokeF( tinBaseP , tAnsw+tb ) ; break ; }
+            case ifcIDtYPEdNSrEPLY_NOTE      : { etThread.strokeF( tin0P , tNote+tb ) ; break ; }
+            case ifcIDtYPEdNSrEPLY_AUTHORITY : { etThread.strokeF( tin0P , tAuth+tb ) ; break ; }
+            case ifcIDtYPEdNSrEPLY_ANSWER    : { etThread.strokeF( tin0P , tAnsw+tb ) ; break ; }
         {
         switch( idTypeAnswer )
         soul >> idTypeAnswer ;
@@ -196,9 +196,9 @@ TN( tNote , "note" ) ;
 TN( tAuth , "auth" ) ;
 TN( tAnsw , "answ" ) ;
 
-etThread.strokeF( tinBaseP , T("cRecords: ")+TF1((countT)stSoul)+T("\r\n") ) ;
-etThread.dnsQueryF( tinBaseP , stSoul , tDomain , ifcIDtYPEdNSqUERY_ALL ) ;
-stackC stSoul( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
+etThread.strokeF( tin0P , T("cRecords: ")+TF1((countT)stSoul)+T("\r\n") ) ;
+etThread.dnsQueryF( tin0P , stSoul , tDomain , ifcIDtYPEdNSqUERY_ALL ) ;
+stackC stSoul( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_soulC ) ;
 
 }
     }
@@ -208,7 +208,7 @@ stackC stSoul( tinBaseP , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACK
     {
     FORsTRINGSiN1( pstt1p )
     countT cSkip = 2 ;
-    strokeS* pstt1p = etThread.ether_pstt1_processParametersI_F( tinBaseP ) ;
+    strokeS* pstt1p = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
 {
 TN( tDomain , "ideafarm.com" ) ;
 

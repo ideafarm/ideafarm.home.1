@@ -9,24 +9,24 @@
 
 }
     }
-        if( bDeleteOld ) delF( tinBaseP , *(strokeS**)&psttOldP ) ;
+        if( bDeleteOld ) delF( tin0P , *(strokeS**)&psttOldP ) ;
 
         }
             }
-                if( bFound ) strFuseF( tinBaseP , *pSoulP , psttDelimiterP ) ;
+                if( bFound ) strFuseF( tin0P , *pSoulP , psttDelimiterP ) ;
     
-                delF( tinBaseP , psttw ) ;
+                delF( tin0P , psttw ) ;
                 }
                     }
-                        strPourF( tinBaseP , *pSoulP , soulPour ) ;
-                        strFuseF( tinBaseP , soulPour , psttw ) ;
-                        soulC soulPour( tinBaseP , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
+                        strPourF( tin0P , *pSoulP , soulPour ) ;
+                        strFuseF( tin0P , soulPour , psttw ) ;
+                        soulC soulPour( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
                     {
                     else
-                    if( psttw->idAdam <= CSTTsOULfUSEdEFAULT ) strFuseF( tinBaseP , *pSoulP , psttw ) ;
+                    if( psttw->idAdam <= CSTTsOULfUSEdEFAULT ) strFuseF( tin0P , *pSoulP , psttw ) ;
                 {
                 if( psttw && psttw->idAdam )
-                boolT bFound = strSubstringF( tinBaseP , psttw , idf , sttq , psttDelimiterP , psttOldP ) ; ___( psttw ) ;
+                boolT bFound = strSubstringF( tin0P , psttw , idf , sttq , psttDelimiterP , psttOldP ) ; ___( psttw ) ;
                 idfLath = idf ;
                 ZE( strokeS* , psttw ) ;
             {
@@ -38,28 +38,28 @@
         else
         }
             }
-                delF( tinBaseP , psttp ) ;
-                strFuseF( tinBaseP , psttP , psttp ) ;
+                delF( tin0P , psttp ) ;
+                strFuseF( tin0P , psttP , psttp ) ;
                 souli >> psttp ; ___( psttp ) ;
                 ZE( strokeS* , psttp ) ;
             {
             while( souli )
 
             }
-                if( bFound ) strFuseF( tinBaseP , souli , psttDelimiterP ) ;
+                if( bFound ) strFuseF( tin0P , souli , psttDelimiterP ) ;
     
-                delF( tinBaseP , psttw ) ;
+                delF( tin0P , psttw ) ;
                 }
                     }
-                        strPourF( tinBaseP , souli , soulPour ) ;
-                        strFuseF( tinBaseP , soulPour , psttw ) ;
-                        soulC soulPour( tinBaseP , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
+                        strPourF( tin0P , souli , soulPour ) ;
+                        strFuseF( tin0P , soulPour , psttw ) ;
+                        soulC soulPour( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
                     {
                     else
-                    if( psttw->idAdam <= CSTTsOULfUSEdEFAULT ) strFuseF( tinBaseP , souli , psttw ) ;
+                    if( psttw->idAdam <= CSTTsOULfUSEdEFAULT ) strFuseF( tin0P , souli , psttw ) ;
                 {
                 if( psttw && psttw->idAdam )
-                boolT bFound = strSubstringF( tinBaseP , psttw , idf , sttq , psttDelimiterP , psttOldP ) ; ___( psttw ) ;
+                boolT bFound = strSubstringF( tin0P , psttw , idf , sttq , psttDelimiterP , psttOldP ) ; ___( psttw ) ;
                 idfLath = idf ;
                 ZE( strokeS* , psttw ) ;
             {
@@ -67,9 +67,9 @@
             ZE( countT , idfLath ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
-            soulC souli( tinBaseP , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
+            soulC souli( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
 
-            strMakeF( tinBaseP , LF , psttP , 0 , psttOldP->idAdam ) ; ___( psttP ) ;
+            strMakeF( tin0P , LF , psttP , 0 , psttOldP->idAdam ) ; ___( psttP ) ;
         {
         if( !pSoulP )
     {
@@ -77,24 +77,24 @@
     }
         }
             }
-                delF( tinBaseP , psttp ) ;
+                delF( tin0P , psttp ) ;
                 *pSoulP << psttp ;
-                strReverseF( tinBaseP , psttp , 0 ) ; ___( psttp ) ;
+                strReverseF( tin0P , psttp , 0 ) ; ___( psttp ) ;
                 souli >> psttp ; ___( psttp ) ;
                 ZE( strokeS* , psttp ) ;
             {
             while( souli )
 
-            if( bDeleteOld ) delF( tinBaseP , *(strokeS**)&psttOldP ) ;
-            strFuseF( tinBaseP , souli , psttOldP ) ;
-            soulC souli( tinBaseP , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
+            if( bDeleteOld ) delF( tin0P , *(strokeS**)&psttOldP ) ;
+            strFuseF( tin0P , souli , psttOldP ) ;
+            soulC souli( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
             countT cExtra = psttOldP[ 2 ].idAdam + csttExtraP ;
             countT cDo = psttOldP->idAdam ;
         {
         else
         }
             }
-                delF( tinBaseP , psttp ) ;
+                delF( tin0P , psttp ) ;
                 while( cDoPiece -- ) *( pstto -- ) = *( pstti ++ ) ;
                 countT cDoPiece = psttp->idAdam ;
                 strokeS* pstti = psttp + CSpREFIX ;
@@ -105,11 +105,11 @@
             strokeS* pstto = psttP + CSpREFIX - 1 + cDo ;
 
             SETpREFIX( psttP , cDo , cExtra ) ;
-            strMakeF( tinBaseP , LF , psttP , 0 , cDo + cExtra ) ; // CALLER MUST TAG ___( psttP ) ;
+            strMakeF( tin0P , LF , psttP , 0 , cDo + cExtra ) ; // CALLER MUST TAG ___( psttP ) ;
 
-            if( bDeleteOld ) delF( tinBaseP , *(strokeS**)&psttOldP ) ;
-            strFuseF( tinBaseP , souli , psttOldP ) ;
-            soulC souli( tinBaseP , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
+            if( bDeleteOld ) delF( tin0P , *(strokeS**)&psttOldP ) ;
+            strFuseF( tin0P , souli , psttOldP ) ;
+            soulC souli( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
             countT cExtra = psttOldP[ 2 ].idAdam + csttExtraP ;
             countT cDo = psttOldP->idAdam ;
         {
@@ -131,7 +131,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT etherC::strReverseF( tin0S& tinBaseP , strokeS*& psttP , const strokeS* psttOldP , const strokeS* const psttDelimiterP , soulC* pSoulP , grabC* pGrabP , const countT csttExtraP )/*1*/
+/*1*/voidT etherC::strReverseF( tin0S& tin0P , strokeS*& psttP , const strokeS* psttOldP , const strokeS* const psttDelimiterP , soulC* pSoulP , grabC* pGrabP , const countT csttExtraP )/*1*/
 
 /**/
 */

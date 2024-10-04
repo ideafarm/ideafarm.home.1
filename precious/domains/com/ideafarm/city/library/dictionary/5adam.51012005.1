@@ -9,15 +9,15 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TICK >> 2 ) ;
+    ++ s ; ether.osSleepF( tin0P , TICK >> 2 ) ;
 
-    etThread.traceF( tinBaseP , T("napping for a minute") ) ;
-    etThread.boxPutF( tinBaseP , tFileReport , tReport , tReport.csF( tinBaseP ) ) ;
-    etThread.traceF( tinBaseP , T("writing minute report file") ) ;
+    etThread.traceF( tin0P , T("napping for a minute") ) ;
+    etThread.boxPutF( tin0P , tFileReport , tReport , tReport.csF( tin0P ) ) ;
+    etThread.traceF( tin0P , T("writing minute report file") ) ;
 
     }
         }
@@ -26,7 +26,7 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                 DEL( pInfoFile ) ;
                 }
                     }
-                        etThread.delF( tinBaseP , posti ) ;
+                        etThread.delF( tin0P , posti ) ;
                         }
                             }
                                 }
@@ -37,11 +37,11 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                                     {
                                     else
                                     if( !postHitEnd ) break ;
-                                    osTextT* postHitEnd = thirdC::c_strstrIF( tinBaseP , postHit , "\r\n" ) ;
+                                    osTextT* postHitEnd = thirdC::c_strstrIF( tin0P , postHit , "\r\n" ) ;
                                 {
                                 else
                                 if( !postHit ) break ;
-                                osTextT* postHit = thirdC::c_strstrIF( tinBaseP , postc , "!exception" ) ;
+                                osTextT* postHit = thirdC::c_strstrIF( tin0P , postc , "!exception" ) ;
 
                             {
                             while( postc < poste )
@@ -58,20 +58,20 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                             osTextT* postc = posti ;
                         {
                         else
-                        if( !posti ) etThread.traceF( tinBaseP , T("null length file:    ")+tShort ) ;
+                        if( !posti ) etThread.traceF( tin0P , T("null length file:    ")+tShort ) ;
 
-                        etThread.boxGetShadowF( tinBaseP , posti , costi , tFolder+tShort ) ; ___( posti ) ;
+                        etThread.boxGetShadowF( tin0P , posti , costi , tFolder+tShort ) ; ___( posti ) ;
                         ZE( countT   , costi ) ;
                         ZE( osTextT* , posti ) ;
                     {
-                    if( tShort.csF( tinBaseP ) )        // IF NOT A DIRECTORY
+                    if( tShort.csF( tin0P ) )        // IF NOT A DIRECTORY
                                                                
                     }
-                        etThread.delF( tinBaseP , psttShort ) ;
-                        etThread.delF( tinBaseP , psttFolder ) ;
+                        etThread.delF( tin0P , psttShort ) ;
+                        etThread.delF( tin0P , psttFolder ) ;
                         tShort  = T(psttShort) ;
                         tFolder = T(psttFolder) ;
-                        etThread.strBisectF( tinBaseP , psttFolder , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttFolder ) ; ___( psttShort ) ;
+                        etThread.strBisectF( tin0P , psttFolder , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttFolder ) ; ___( psttShort ) ;
                         ZE( strokeS* , psttShort ) ;
                         ZE( strokeS* , psttFolder ) ;
                     {
@@ -85,11 +85,11 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                 {
                 if( !pInfoFile || !pInfoFile->psttIfoName )
 
-                etThread.diskFindFileOrDirF( tinBaseP , pInfoFile , hFindFile , tTraceFolder , &pat2 ) ; ___( pInfoFile ) ;
+                etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , tTraceFolder , &pat2 ) ; ___( pInfoFile ) ;
                 ZE( infoFileS* , pInfoFile ) ;
             {
             do
-            handleC hFindFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            handleC hFindFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
         {
 
         tReport += tcrlf+tcrlf ;
@@ -100,30 +100,30 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                 DEL( pInfoFile ) ;
                 }
                     }
-                        etThread.delF( tinBaseP , posti ) ;
-                        etThread.delF( tinBaseP , psttYear ) ;
+                        etThread.delF( tin0P , posti ) ;
+                        etThread.delF( tin0P , psttYear ) ;
 
                         tReport += T(psttYear)+tb4+T(posti)+tcrlf ;
 
-                        etThread.strSubstringF( tinBaseP , psttYear , idf , idl , tShort ) ; ___( psttYear ) ;
+                        etThread.strSubstringF( tin0P , psttYear , idf , idl , tShort ) ; ___( psttYear ) ;
                         countT idl = 0x17 ;
                         countT idf = 0x14 ;
                         ZE( strokeS* , psttYear ) ;
 
-                        etThread.boxGetShadowF( tinBaseP , posti , costi , tFolder+tShort ) ; ___( posti ) ;
+                        etThread.boxGetShadowF( tin0P , posti , costi , tFolder+tShort ) ; ___( posti ) ;
                         ZE( countT   , costi ) ;
                         ZE( osTextT* , posti ) ;
 
-                        //etThread.traceF( tinBaseP , tShort ) ;
+                        //etThread.traceF( tin0P , tShort ) ;
                     {
-                    if( tShort.csF( tinBaseP ) && !etThread.strIdF( tinBaseP , tDotHeyWritingDot , tShort ) )        // IF NOT A DIRECTORY
+                    if( tShort.csF( tin0P ) && !etThread.strIdF( tin0P , tDotHeyWritingDot , tShort ) )        // IF NOT A DIRECTORY
                                                                
                     }
-                        etThread.delF( tinBaseP , psttShort ) ;
-                        etThread.delF( tinBaseP , psttFolder ) ;
+                        etThread.delF( tin0P , psttShort ) ;
+                        etThread.delF( tin0P , psttFolder ) ;
                         tShort  = T(psttShort) ;
                         tFolder = T(psttFolder) ;
-                        etThread.strBisectF( tinBaseP , psttFolder , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttFolder ) ; ___( psttShort ) ;
+                        etThread.strBisectF( tin0P , psttFolder , psttShort , pInfoFile->psttIfoName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttFolder ) ; ___( psttShort ) ;
                         ZE( strokeS* , psttShort ) ;
                         ZE( strokeS* , psttFolder ) ;
                     {
@@ -137,21 +137,21 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                 {
                 if( !pInfoFile || !pInfoFile->psttIfoName )
 
-                etThread.diskFindFileOrDirF( tinBaseP , pInfoFile , hFindFile , tStateFolder , &pat1 ) ; ___( pInfoFile ) ;
+                etThread.diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , tStateFolder , &pat1 ) ; ___( pInfoFile ) ;
                 ZE( infoFileS* , pInfoFile ) ;
             {
             do
-            handleC hFindFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            handleC hFindFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
         {
     {
 
     TN( tReport , "IdeaFarm (tm) Archive Healer - Minute Report\r\n\r\nyear    LathFileHealed\r\n\r\n" ) ;
 {
 while( !ether && !POOP )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-patternC pat2( tinBaseP , etThread , tPatternTraceFile         , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-patternC pat1( tinBaseP , etThread , tPatternLathFileCompleted , ifcIDtYPEpATTERN_LITERAL               ) ;
+patternC pat2( tin0P , etThread , tPatternTraceFile         , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+patternC pat1( tin0P , etThread , tPatternLathFileCompleted , ifcIDtYPEpATTERN_LITERAL               ) ;
 TN( tFileReport  , "///d/ideafarm.home.101/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/rpt.minute.ttt" ) ;
 TN( tStateFolder , "///d/ideafarm.home.101/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/" ) ;
 TN( tDotHeyWritingDot , ".!writing." ) ;

@@ -9,22 +9,22 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
-    etThread.delF( tinBaseP , posto ) ;
-    //etThread.boxPutF( tinBaseP , T("///d/tmp/lost3.after.ttt")  , posto , postoc - posto ) ;
-      etThread.boxPutF( tinBaseP , T("///d/tmp/lost3.before.ttt") , posto , postoc - posto ) ;
+    etThread.delF( tin0P , posto ) ;
+    //etThread.boxPutF( tin0P , T("///d/tmp/lost3.after.ttt")  , posto , postoc - posto ) ;
+      etThread.boxPutF( tin0P , T("///d/tmp/lost3.before.ttt") , posto , postoc - posto ) ;
 
-    etThread.delF( tinBaseP , postiShortAll ) ;
+    etThread.delF( tin0P , postiShortAll ) ;
 
     }
         if( postic > postie ) break ;
         postic = postieWo + 2 ;
 
         }
-            if( !( cWritten % TUCK ) ) etThread.traceF( tinBaseP , TF2(cWritten,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            if( !( cWritten % TUCK ) ) etThread.traceF( tin0P , TF2(cWritten,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             cWritten ++ ;
             postiLathWritten = postic ;
 
@@ -33,24 +33,24 @@ etThread.traceF( tinBaseP , T("ok") ) ;
         {
         if( !bSkip )
 
-        //boolT bSkip = postiLathWritten && !thirdC::c_strcmpIF( tinBaseP , postic , postiLathWritten , 0 ) ;
+        //boolT bSkip = postiLathWritten && !thirdC::c_strcmpIF( tin0P , postic , postiLathWritten , 0 ) ;
           boolT bSkip = postiLathWritten && !memcmp( postic , postiLathWritten , costic ) ;
 
         }
-            etThread.traceF( tinBaseP , T("neither dot nor underscore: ")+T(postic) ) ;
+            etThread.traceF( tin0P , T("neither dot nor underscore: ")+T(postic) ) ;
         {
         else if( postic[ 0x2d ] != '.' )
         }
-            etThread.traceF( tinBaseP , T("smudged:  ")+T(postic) ) ;
+            etThread.traceF( tin0P , T("smudged:  ")+T(postic) ) ;
             postic[ 0x2d ] =  '.' ;
-            etThread.traceF( tinBaseP , T("smudging: ")+T(postic) ) ;
+            etThread.traceF( tin0P , T("smudging: ")+T(postic) ) ;
         {
         if( postic[ 0x2d ] == '_' )
 
         countT costic = postieWo - postic ;
         *postieWo = 0 ;
 
-        //osTextT* postieWo = thirdC::c_strstrIF( tinBaseP , postic , "\r\n" ) ;
+        //osTextT* postieWo = thirdC::c_strstrIF( tin0P , postic , "\r\n" ) ;
           osTextT* postieWo = strstr( postic , "\r\n" ) ;
     {
     while( !ether )
@@ -58,13 +58,13 @@ etThread.traceF( tinBaseP , T("ok") ) ;
     ZE( osTextT* , postiLathWritten ) ;
 
     osTextT* postoc = posto ;
-    etThread.newF( tinBaseP , LF , posto , costiShortAll ) ; ___( posto ) ;
+    etThread.newF( tin0P , LF , posto , costiShortAll ) ; ___( posto ) ;
     ZE( osTextT* , posto ) ;
 
     osTextT* postie = postiShortAll + costiShortAll ;
     osTextT* postic = postiShortAll ;
-    //etThread.boxGetShadowF( tinBaseP , postiShortAll , costiShortAll , T("///d/tmp/from.u.all.sorted.ttt") ) ; ___( postiShortAll ) ;
-      etThread.boxGetShadowF( tinBaseP , postiShortAll , costiShortAll , T("///d/tmp/0.all.data.meta.filenames.from.lapblack.has.duplicates.ttt") ) ; ___( postiShortAll ) ;
+    //etThread.boxGetShadowF( tin0P , postiShortAll , costiShortAll , T("///d/tmp/from.u.all.sorted.ttt") ) ; ___( postiShortAll ) ;
+      etThread.boxGetShadowF( tin0P , postiShortAll , costiShortAll , T("///d/tmp/0.all.data.meta.filenames.from.lapblack.has.duplicates.ttt") ) ; ___( postiShortAll ) ;
     ZE( countT   , costiShortAll ) ;
     ZE( osTextT* , postiShortAll ) ;
 {

@@ -9,10 +9,10 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
-etThread.traceF( tinBaseP , T("ok") ) ;
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
-etThread.diskWalkF( tinBaseP , cDirs , cFiles , tPath , bQuit , diskWalkRenameCBF ) ;
+etThread.diskWalkF( tin0P , cDirs , cFiles , tPath , bQuit , diskWalkRenameCBF ) ;
 ZE( countT , bQuit ) ;
 ZE( countT , cFiles ) ;
 ZE( countT , cDirs ) ;
@@ -23,26 +23,26 @@ TODO
 }
     return 0 ;
 
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShort ) ;
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttPath ) ;
-    ((tin9S&)tinBaseP).pEther->delF( tinBaseP , psttShortNew ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttShort ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttPath ) ;
+    ((tin9S&)tin0P).pEther->delF( tin0P , psttShortNew ) ;
 
-    if( ((tin9S&)tinBaseP).pEther->strCompareF( tinBaseP , psttShortNew , psttShort ) ) ((tin9S&)tinBaseP).pEther->diskMoveFileOrDirF( tinBaseP , T(psttPath)+T(psttShortNew) , tNameOld ) ;
+    if( ((tin9S&)tin0P).pEther->strCompareF( tin0P , psttShortNew , psttShort ) ) ((tin9S&)tin0P).pEther->diskMoveFileOrDirF( tin0P , T(psttPath)+T(psttShortNew) , tNameOld ) ;
 
-    ((tin9S&)tinBaseP).pEther->strConvertToLowerCaseF( tinBaseP , psttShortNew , psttShort ) ; ___( psttShortNew ) ;
+    ((tin9S&)tin0P).pEther->strConvertToLowerCaseF( tin0P , psttShortNew , psttShort ) ; ___( psttShortNew ) ;
     ZE( strokeS* , psttShortNew ) ;
 
     ___( psttShort ) ;
     ___( psttPath ) ;
-    ((tin9S&)tinBaseP).pEther->strBisectF( tinBaseP , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
+    ((tin9S&)tin0P).pEther->strBisectF( tin0P , psttPath , psttShort , tNameOld , 0 , - 1 , flSTRbISECT_APPENDdELIMITER ) ;
     ZE( strokeS* , psttShort ) ;
     ZE( strokeS* , psttPath ) ;
 
-    TN( tNameOld , ifFileNameC( tinBaseP , *((tin9S&)tinBaseP).pEther , postNameP ) ) ;
+    TN( tNameOld , ifFileNameC( tin0P , *((tin9S&)tin0P).pEther , postNameP ) ) ;
 
-    if( !( cFilesP % TUCK ) ) etherC::etRockIF( tinBaseP ).traceF( tinBaseP , T("[cFilesP]: ")+TF2(cFilesP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    if( !( cFilesP % TUCK ) ) etherC::etRockIF( tin0P ).traceF( tin0P , T("[cFilesP]: ")+TF2(cFilesP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
 {
-boolT diskWalkRenameCBF( tin0S& tinBaseP , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+boolT diskWalkRenameCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
 
 /*1*/WAKEsHOWtEXT( "tool.rename.archive.to.lower.case" )/*1*/
 /**/

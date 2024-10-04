@@ -11,7 +11,7 @@
     *(flagsT*)&flagsCt |= flBOOKc_FILEiScONSTRUCTED ;
 
     THREADmODE3rESTORE
-    new( 0 , tinBaseP , pbFile , sizeof pbFile ) fileC( tinBaseP , ostoName , access , share , flagsDetails , how , flFILEaTTR1_null , flFILEaTTR2_null , F(flagsCt) & flBOOKc_DELETE ? flFILEc_DELETE : flFILEc_null ) ;
+    new( 0 , tin0P , pbFile , sizeof pbFile ) fileC( tin0P , ostoName , access , share , flagsDetails , how , flFILEaTTR1_null , flFILEaTTR2_null , F(flagsCt) & flBOOKc_DELETE ? flFILEc_DELETE : flFILEc_null ) ;
     THREADmODE3oN( flTHREADmODE3_DISALLOWpUSE )
 
     /*if( F(flagsCt) & ( flBOOKc_DOnOTuSEpUSE | flBOOKc_DOnOTrEGISTERfILE ) )*/ flagsDetails |= flOPENdETAILS_DOnOTrEGISTER ;    
@@ -23,21 +23,21 @@
     //}
     //    OStEXTA( ostoName , osName ) ;
     //
-    //    ether.delF( tinBaseP , psttm ) ;
-    //    osFileNameC osName( tinBaseP , ether , T(psttm) ) ;
-    //    ether.diskMapFileNameF( tinBaseP , psttm , tName ) ; ___( psttm ) ;
+    //    ether.delF( tin0P , psttm ) ;
+    //    osFileNameC osName( tin0P , ether , T(psttm) ) ;
+    //    ether.diskMapFileNameF( tin0P , psttm , tName ) ; ___( psttm ) ;
     //    ZE( strokeS* , psttm ) ;
-    //    etherC& ether = *((tin9S&)tinBaseP).pEther ;
+    //    etherC& ether = *((tin9S&)tin0P).pEther ;
     //
-    //    ctFileNameIF( tinBaseP , tName , postShortP , postPathP , idStateSpaceP , idMemorySpaceP , flagsCt ) ;
+    //    ctFileNameIF( tin0P , tName , postShortP , postPathP , idStateSpaceP , idMemorySpaceP , flagsCt ) ;
     //    TN( tName , "" ) ;
     //{
     //else
     //20171113@0847: TO ELIMINATE NONMONOTONIC GRABBING, ELIMINATE ALL USE OF poolC BY booksC bookC
     }
         }
-            ((tin9S&)tinBaseP).pEther->diskMakeDirIfNeededF( tinBaseP , T(iffn) ) ;  //DO THIS ONLY IF EXPLICIT PATH, WHICH SHOULD AVOID NONMONOTONIC GRABBING SINCE IT WILL AVOID bksTelemetry AND bksTrace* booksC FILES
-            ifFileNameC iffn( tinBaseP , *((tin9S&)tinBaseP).pEther , ostoName ) ;
+            ((tin9S&)tin0P).pEther->diskMakeDirIfNeededF( tin0P , T(iffn) ) ;  //DO THIS ONLY IF EXPLICIT PATH, WHICH SHOULD AVOID NONMONOTONIC GRABBING SINCE IT WILL AVOID bksTelemetry AND bksTrace* booksC FILES
+            ifFileNameC iffn( tin0P , *((tin9S&)tin0P).pEther , ostoName ) ;
 
             OStEXTAK( ostoName , ".bookC" ) ;
             OStEXTA(  ostoName , postShortP ) ;
@@ -45,7 +45,7 @@
                 OStEXTAK( ostoName , "." ) ;
                 OStEXTCF( ostoName , idStateSpaceP , '0' ) ;
                 OStEXTAK( ostoName , "." ) ;
-                OStEXTCF( ostoName , idMemorySpaceP ? idMemorySpaceP : ((tin9S&)tinBaseP).pag1->idMemorySpace , '0' ) ;
+                OStEXTCF( ostoName , idMemorySpaceP ? idMemorySpaceP : ((tin9S&)tin0P).pag1->idMemorySpace , '0' ) ;
                 OStEXTAK( ostoName , "." ) ;
                 OStEXTA(  ostoName , thirdC::postUserNameIF() ) ;
             {
@@ -62,24 +62,24 @@
             OStEXTAK( ostoName , ".bookC" ) ;
             OStEXTA(  ostoName , postShortP ) ;
             OStEXTAK( ostoName , "\\" ) ;
-            OStEXTCF( ostoName , idStateSpaceP , '0' ) ;                                                            thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
+            OStEXTCF( ostoName , idStateSpaceP , '0' ) ;                                                            thirdC::dosCreateDirIF( tin0P , ostoName ) ;
             OStEXTAK( ostoName , "\\" ) ;
-            OStEXTAK( ostoName , "\\stateSpaces" ) ;                                                                thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
-            OStEXTCF( ostoName , idMemorySpaceP ? idMemorySpaceP : ((tin9S&)tinBaseP).pag1->idMemorySpace , '0' ) ;               thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
+            OStEXTAK( ostoName , "\\stateSpaces" ) ;                                                                thirdC::dosCreateDirIF( tin0P , ostoName ) ;
+            OStEXTCF( ostoName , idMemorySpaceP ? idMemorySpaceP : ((tin9S&)tin0P).pag1->idMemorySpace , '0' ) ;               thirdC::dosCreateDirIF( tin0P , ostoName ) ;
             OStEXTAK( ostoName , "\\" ) ;
-            OStEXTA(  ostoName , thirdC::postUserNameIF() ) ;                                                       thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
+            OStEXTA(  ostoName , thirdC::postUserNameIF() ) ;                                                       thirdC::dosCreateDirIF( tin0P , ostoName ) ;
             OStEXTAK( ostoName , "\\" ) ;
-            OStEXTAK( ostoName , "\\memorySpaces" ) ;                                                               thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
-            OStEXTAK( ostoName , "\\ipdos" ) ;                                                                      thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
-            OStEXTAK( ostoName , "\\ideafarm" ) ;                                                                   thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
-            OStEXTAK( ostoName , "\\com" ) ;                                                                        thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
-            OStEXTAK( ostoName , "\\domains" ) ;                                                                    thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
-            OStEXTAK( ostoName , "\\backed.up.daily" ) ;                                                            thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
-            OStEXTAK( ostoName , "\\ephemeral" ) ;                                                                  thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
-            OStEXTA(  ostoName , postHome ) ;                                                                       thirdC::dosCreateDirIF( tinBaseP , ostoName ) ;
+            OStEXTAK( ostoName , "\\memorySpaces" ) ;                                                               thirdC::dosCreateDirIF( tin0P , ostoName ) ;
+            OStEXTAK( ostoName , "\\ipdos" ) ;                                                                      thirdC::dosCreateDirIF( tin0P , ostoName ) ;
+            OStEXTAK( ostoName , "\\ideafarm" ) ;                                                                   thirdC::dosCreateDirIF( tin0P , ostoName ) ;
+            OStEXTAK( ostoName , "\\com" ) ;                                                                        thirdC::dosCreateDirIF( tin0P , ostoName ) ;
+            OStEXTAK( ostoName , "\\domains" ) ;                                                                    thirdC::dosCreateDirIF( tin0P , ostoName ) ;
+            OStEXTAK( ostoName , "\\backed.up.daily" ) ;                                                            thirdC::dosCreateDirIF( tin0P , ostoName ) ;
+            OStEXTAK( ostoName , "\\ephemeral" ) ;                                                                  thirdC::dosCreateDirIF( tin0P , ostoName ) ;
+            OStEXTA(  ostoName , postHome ) ;                                                                       thirdC::dosCreateDirIF( tin0P , ostoName ) ;
 
             if( POOP ) { BLAMMO ; }
-            thirdC::diskFindHomeIF( tinBaseP , postHome , sizeof postHome , "ideafarm" ) ;
+            thirdC::diskFindHomeIF( tin0P , postHome , sizeof postHome , "ideafarm" ) ;
             osTextT postHome[ TUCK << 1 ] ;
 
             SCOOP
@@ -95,17 +95,17 @@
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(((tin9S&)tinBaseP).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tinBaseP ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tinBaseP ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(((tin9S&)tin0P).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tin0P ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         __Z( idStateSpaceP ) ;
         __Z( postShortP ) ;
         if( POOP ) return ;
     {
     IFbEcAREFUL    
 
-    //if( !idMemorySpaceP ) idMemorySpaceP = ((tin9S&)tinBaseP).pag1->idMemorySpace ;
+    //if( !idMemorySpaceP ) idMemorySpaceP = ((tin9S&)tin0P).pag1->idMemorySpace ;
     //20200417@1855: KEEP idMemorySpaceP NULL SO THAT CALLER DOES NOT HAVE TO SET flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE
 {
-/*1*/voidT bookC::ctFileF( tin0S& tinBaseP , const osTextT* const postShortP , const osTextT* const postPathP , const countT idStateSpaceP , countT idMemorySpaceP )/*1*/
+/*1*/voidT bookC::ctFileF( tin0S& tin0P , const osTextT* const postShortP , const osTextT* const postPathP , const countT idStateSpaceP , countT idMemorySpaceP )/*1*/
 
 /**/
 */

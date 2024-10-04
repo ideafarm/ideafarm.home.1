@@ -9,37 +9,37 @@
 
 REST
 
-etherC::loafIF( tinBaseP ) ;
+etherC::loafIF( tin0P ) ;
 
-etThread.traceF( tinBaseP , T("ok") ) ;
+etThread.traceF( tin0P , T("ok") ) ;
 
 }
     cReceivedFileWindows = 0 ;
-    etThread.traceF( tinBaseP , T("received [cReceivedFileWindows]:    ")+TF2(cReceivedFileWindows,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("received [cReceivedFileWindows]:    ")+TF2(cReceivedFileWindows,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-    etThread.traceF( tinBaseP , T("process [mTocks]:    ")+TT(timeE1,timeE2)+tb4+TF2(mTocksE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("throw   [mTocks]:    ")+TT(timeT1,timeT2)+tb4+TF2(mTocksT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("[mGBits]:            ")+TF2(mGBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-    etThread.traceF( tinBaseP , T("[cGram]:            ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("process [mTocks]:    ")+TT(timeE1,timeE2)+tb4+TF2(mTocksE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("throw   [mTocks]:    ")+TT(timeT1,timeT2)+tb4+TF2(mTocksT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[mGBits]:            ")+TF2(mGBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[cGram]:            ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     measureT mGBits = (measureT)( cb04Thrown << 3 ) / ( TICK << 2 ) ;
 
     measureT mTocksE = (measureT)timeE1 / TOCK ;
     measureT mTocksT = (measureT)timeT1 / TOCK ;
 
-    etThread.osTimeSubtractF( tinBaseP , timeE1 , timeE2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO PROCESS
-    etThread.osTimeNowF( tinBaseP , timeE1 , timeE2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO PROCESS
+    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
     ZE( sCountT , timeE2 ) ;
     ZE( countT  , timeE1 ) ;
 
     }
-        ++ s ; ether.osSleepF( tinBaseP , TOCK >> 4 ) ;
-        etThread.traceF( tinBaseP , T("waiting [cThrown,cCaught1,cCaught2,cProcessed]:    ")+TF2(cThrown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cCaught1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cCaught2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+        etThread.traceF( tin0P , T("waiting [cThrown,cCaught1,cCaught2,cProcessed]:    ")+TF2(cThrown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cCaught1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cCaught2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     while( cProcessed < cThrown )
 
-    etThread.osTimeSubtractF( tinBaseP , timeT1 , timeT2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO THROW
-    etThread.osTimeNowF( tinBaseP , timeT1 , timeT2 ) ;
+    etThread.osTimeSubtractF( tin0P , timeT1 , timeT2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO THROW
+    etThread.osTimeNowF( tin0P , timeT1 , timeT2 ) ;
     ZE( sCountT , timeT2 ) ;
     ZE( countT  , timeT1 ) ;
 
@@ -53,17 +53,17 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                     cb04Thrown += cbGram ;
                     cThrown ++ ;
 
-                    sThrow.writeF( tinBaseP , idPortCatch , nicNameC() , pbGram , cbGram ) ;
-                    //if( !( idGram % TUCK ) ) etThread.traceF( tinBaseP , T("sending [idGram,cbNow,cbGram]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    sThrow.writeF( tin0P , idPortCatch , nicNameC() , pbGram , cbGram ) ;
+                    //if( !( idGram % TUCK ) ) etThread.traceF( tin0P , T("sending [idGram,cbNow,cbGram]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbNow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT cbGram = sizeof( gramHeadFileWindowS ) + cbNow ;
                     //CONoUTrAW( "!" ) ;
-                    etThread.memCopyF( tinBaseP , pbPayload , pbc , cbNow ) ;
+                    etThread.memCopyF( tin0P , pbPayload , pbc , cbNow ) ;
                     head.secret = secretToUse ;
                     head.len    = cbNow  ;
                     head.off    = cbDone ;
                     head.idCmd  = ifcIDcMDgRAM_PUTfILEwINDOW ;
                     head.cbThisGram = sizeof head + cbNow ;
-                    //etThread.traceF( tinBaseP , T("throwing window [secretToUse]:    ")+TF2(secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //etThread.traceF( tin0P , T("throwing window [secretToUse]:    ")+TF2(secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                     //CONoUTrAW( "+" ) ;
 
@@ -76,44 +76,44 @@ etThread.traceF( tinBaseP , T("ok") ) ;
                         ? cbDo
                     countT cbNow = cbDo < CBpAYLOAD
 
-                    //etThread.traceF( tinBaseP , T("waited  for a secret") ) ;
+                    //etThread.traceF( tin0P , T("waited  for a secret") ) ;
                     }
                         Sleep( 100 ) ;
                     {
                     while( !secretToUse )
-                    //etThread.traceF( tinBaseP , T("waiting for a secret") ) ;
+                    //etThread.traceF( tin0P , T("waiting for a secret") ) ;
                 {
                 while( cbDo )
                 countT cbDo = cbw ;
                 byteT* pbc = pbw ;
 
-                //etThread.boxPutF( tinBaseP , tFileIn+T(".window.")+tIdWindow , pbw , cbw ) ;
-                //etThread.traceF( tinBaseP , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                //etThread.boxPutF( tin0P , tFileIn+T(".window.")+tIdWindow , pbw , cbw ) ;
+                //etThread.traceF( tin0P , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 TN( tIdWindow , "" ) ; tIdWindow = TF3(++idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
             {
             else
             if( !pbw || !cbw ) break ;
 
-            fwsIn.getF( tinBaseP , pbw , cbw ) ;
+            fwsIn.getF( tin0P , pbw , cbw ) ;
             ZE( countT , cbw ) ;
             ZE( byteT* , pbw ) ;
         {
         while( !ether )
-        //etThread.traceF( tinBaseP , T("sending begun") ) ;
+        //etThread.traceF( tin0P , T("sending begun") ) ;
         ZE( count04T , cbDone ) ;
         byteT*     pbPayload = pbGram + sizeof( gramHeadFileWindowS ) ;
         gramHeadFileWindowS& head      = *(gramHeadFileWindowS*)pbGram ;
         byteT      pbGram[ sizeof( gramHeadFileWindowS ) + CBpAYLOAD ] ;
         ZE( countT , idWindow ) ;
 
-        fileWindowsC fwsIn( tinBaseP , etThread , tFileIn ) ;
+        fileWindowsC fwsIn( tin0P , etThread , tFileIn ) ;
 
-        sThrow.bindF( tinBaseP ) ;
-        socketC sThrow( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+        sThrow.bindF( tin0P ) ;
+        socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
     {
     ZE( countT , idGram ) ;
 
-    etThread.osTimeNowF( tinBaseP , timeA1 , timeA2 ) ;
+    etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
     ZE( sCountT , timeA2 ) ;
     ZE( countT  , timeA1 ) ;
 {
@@ -129,10 +129,10 @@ ZE( countT , secretToUse ) ;
 etThread.osThreadF( TaRG1( tmEpochClockF )                        ) ;
 
 }
-    ++ s ; ether.osSleepF( tinBaseP , TOCK >> 2 ) ;
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 {
 while( !idPortCatch )
-sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 TN( tb4 , "    " ) ;
 
 etThread.osThreadF( TaRG1( tmCatchF ) , (countT)&cPoured ) ;
@@ -142,10 +142,10 @@ TODO
 
 DONE( tmCatchF )
 }
-    sCatch.readF( tinBaseP , (const countT&)ether , pbFastBuffer , sizeof pbFastBuffer , cPouredP ) ;
+    sCatch.readF( tin0P , (const countT&)ether , pbFastBuffer , sizeof pbFastBuffer , cPouredP ) ;
 
-    idPortCatch = sCatch.bindF( tinBaseP ) ;
-    socketC sCatch( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    idPortCatch = sCatch.bindF( tin0P ) ;
+    socketC sCatch( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
     countT& cPouredP = *(countT*)pTaskP->c1 ;
 {
@@ -174,7 +174,7 @@ DONE( tmObey1F )
                 pbco = pbw ;
                 pbwe = pbw + cbw ;
                 if( !pbw || !cbw ) { BLAMMO ; }
-                fwsBuffer.getF( tinBaseP , pbw , cbw ) ;
+                fwsBuffer.getF( tin0P , pbw , cbw ) ;
                 cbw = 0 ;
                 pbw = 0 ;
 
@@ -231,23 +231,23 @@ DONE( tmObey1F )
     ZE( countT , cWorker ) ;
     countT cDo = cProcessorsObey2 ;
 
-    etThread.traceF( tinBaseP , T("using [cProcessors,cProcessorsObey2]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessorsObey2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("using [cProcessors,cProcessorsObey2]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessorsObey2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT cProcessorsObey2 = cProcessors < 7 ? 1 : cProcessors - 5 ;     // "- 5" IS OPTIMAL ON factory2
-    const countT cProcessors      = thirdC::osProcessorsIF( tinBaseP ) ;
+    const countT cProcessors      = thirdC::osProcessorsIF( tin0P ) ;
 
-    etThread.boxPutF( tinBaseP , tFileOut , "X" , 1 ) ;
+    etThread.boxPutF( tin0P , tFileOut , "X" , 1 ) ;
     TN( tFileOut , "///d/tmp/foo.received.fws.ttt" ) ;
     TN( tb4 , "    " ) ;
 
     byteT* pbco = pbw ;
     byteT* pbwe = pbw + cbw ;
     if( !pbw || !cbw ) { BLAMMO ; }         //SHOULD BE IMPOSSIBLE SINCE OPENING FOR WRITING ; U:: fileWindowsC WILL FAIL IF NO MORE SPACE ON DISK OR DISK I/O FAILURE
-    fwsBuffer.getF( tinBaseP , pbw , cbw ) ;    //U:: ACCESSES TO THIS MEMORY WILL EXCEPTION IF DISK I/O FAILURE ; NEED TO USE RESTART TO RECOVER FROM SUCH A FAILURE
+    fwsBuffer.getF( tin0P , pbw , cbw ) ;    //U:: ACCESSES TO THIS MEMORY WILL EXCEPTION IF DISK I/O FAILURE ; NEED TO USE RESTART TO RECOVER FROM SUCH A FAILURE
     ZE( countT , cbw ) ;
     ZE( byteT* , pbw ) ;
 
-    fileWindowsC fwsBuffer( tinBaseP , etThread , tFileBuffer , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
-    etThread.boxPutF( tinBaseP , tFileBuffer , "X" , 1 ) ;
+    fileWindowsC fwsBuffer( tin0P , etThread , tFileBuffer , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
+    etThread.boxPutF( tin0P , tFileBuffer , "X" , 1 ) ;
     TN( tFileBuffer     , "///d/tmp/foo.buffer.ttt" ) ;
 
     etThread.osThreadF( TaRG1( tmComplainF ) ) ;
@@ -264,7 +264,7 @@ DONE( tmObey2F )
         Sleep( 0 ) ;
         }
             }
-                //etThread.traceF( tinBaseP , T("moving file window") ) ;
+                //etThread.traceF( tin0P , T("moving file window") ) ;
                 }
                     cb04BufferDone += pbci - pbciSave ;
 
@@ -272,28 +272,28 @@ DONE( tmObey2F )
                         }
                             }
                                 }
-                                    //etThread.traceF( tinBaseP , T("backlog [thrown,processed,backlog]:    ")+TF2(cThrown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBacklog,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    //etThread.traceF( tin0P , T("backlog [thrown,processed,backlog]:    ")+TF2(cThrown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBacklog,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     countT cBacklog = cThrown - cProcessed ;
                                     inc02AM( cProcessed ) ;
 
                                     }
-                                        if( pbw && cbw == head.len ) etThread.memCopyF( tinBaseP , pbw , pbPayload , head.len ) ;
+                                        if( pbw && cbw == head.len ) etThread.memCopyF( tin0P , pbw , pbPayload , head.len ) ;
 
-                                        fwsOut.getF( tinBaseP , pbw , cbw , head.len , head.off ) ;
+                                        fwsOut.getF( tin0P , pbw , cbw , head.len , head.off ) ;
                                         ZE( countT , cbw ) ;
                                         ZE( byteT* , pbw ) ;
                                     {
 
-                                    // etThread.traceF( tinBaseP , T("received [cmd,off,len]:    ")+TF2(head.idCmd,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)head.off,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(head.len,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    // etThread.traceF( tin0P , T("received [cmd,off,len]:    ")+TF2(head.idCmd,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)head.off,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(head.len,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                     inc02AM( cReceivedFileWindows ) ;
 
                                     byteT* pbPayload = pbData + sizeof( gramHeadFileWindowS ) ;
 
-                                    //etThread.traceF( tinBaseP , T("===================================== file window accepted [cAccepted]:    ")+TF2(++cAccepted,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    //etThread.traceF( tin0P , T("===================================== file window accepted [cAccepted]:    ")+TF2(++cAccepted,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 {
                                 else
-                                if( !bOk ) etThread.traceF( tinBaseP , T("secret rejected") ) ;
+                                if( !bOk ) etThread.traceF( tin0P , T("secret rejected") ) ;
 
                                 }
                                     }
@@ -302,18 +302,18 @@ DONE( tmObey2F )
                                     {
                                     if( secretTry == secretOk )
 
-                                    //etThread.traceF( tinBaseP , T("PUTfILEwINDOW [offEpochHonor,offSlot,offSecret,secretOk[0],secretOk[1],secretOk,secretTry,bOk]:    ")+TF2(offEpochHonor,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSlot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(secretTry==secretOk?".":"X") ) ;
+                                    //etThread.traceF( tin0P , T("PUTfILEwINDOW [offEpochHonor,offSlot,offSecret,secretOk[0],secretOk[1],secretOk,secretTry,bOk]:    ")+TF2(offEpochHonor,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSlot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretOk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secretTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(secretTry==secretOk?".":"X") ) ;
 
                                     //countT secretOk1 = ppcSecrets[ offSlot ][ 1 ] ;
                                     //countT secretOk0 = ppcSecrets[ offSlot ][ 0 ] ;
                                     countT secretOk  = ppcSecrets[ offSlot ][ offSecret ] ;
                                     countT secretTry = head.secret ;
-                                    countT offSecret = offSecretF( tinBaseP , etThread , nnFrom , offSlot ) ;
+                                    countT offSecret = offSecretF( tin0P , etThread , nnFrom , offSlot ) ;
                                     countT offSlot   = offEpochHonor % CePOCHsLOTS ;
                                 {
                                 for( countT offEpochHonor = OFFePOCHhONORmIN ; offEpochHonor <= OFFePOCHhONORmAX ; offEpochHonor ++ )           //U:: NEED TO HANDLE WRAP OF offEpochHonor EVERY 136 YEARS
                                 ZE( boolT , bOk ) ;
-                                //etThread.traceF( tinBaseP , T("PUTfILEwINDOW ---------------------------------------------------------------------------------") ) ;
+                                //etThread.traceF( tin0P , T("PUTfILEwINDOW ---------------------------------------------------------------------------------") ) ;
 
                                 gramHeadFileWindowS& head = *(gramHeadFileWindowS*)pbData ;
                             {
@@ -321,13 +321,13 @@ DONE( tmObey2F )
                             }
                                 break ;
                                 secretToUseP = head.secret ;        //A:ASSUME: ATOMIC (secretToUseP MUST ALWAYS CONTAIN A VALID SECRET)
-                                //etThread.traceF( tinBaseP , T("received [secret]:    ")+TF2(head.secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                //etThread.traceF( tin0P , T("received [secret]:    ")+TF2(head.secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 gramHeadSecretS& head = *(gramHeadSecretS*)pbData ;
                             {
                             case ifcIDcMDgRAM_USEtHISsECRET :
                             }
                                 break ;
-                                sThrow.writeF( tinBaseP , idPortCatch /*idpFrom*/ , nnFrom , (byteT*)&gram , sizeof gram ) ;
+                                sThrow.writeF( tin0P , idPortCatch /*idpFrom*/ , nnFrom , (byteT*)&gram , sizeof gram ) ;
 
                                 //gram.pad3   = 0x3d3d3d3d ;
                                 //gram.pad2   = 0x3d3d3d3d ;
@@ -337,9 +337,9 @@ DONE( tmObey2F )
                                 gram.cbThisGram = sizeof gram ;
                                 gramHeadSecretS gram ;
 
-                                //etThread.traceF( tinBaseP , T("dispensing [offSlotHonorNewest,offSecret,secret]:    ")+TF2(offSlotHonorNewest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                //etThread.traceF( tin0P , T("dispensing [offSlotHonorNewest,offSecret,secret]:    ")+TF2(offSlotHonorNewest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 countT secret    = ppcSecrets[ offSlotHonorNewest ][ offSecret ] ;
-                                countT offSecret = offSecretF( tinBaseP , etThread , nnFrom , offSlotHonorNewest ) ;
+                                countT offSecret = offSecretF( tin0P , etThread , nnFrom , offSlotHonorNewest ) ;
 
                                 countT offSlotHonorNewest = OFFePOCHhONORmAX   % CePOCHsLOTS ;
                             {
@@ -354,13 +354,13 @@ DONE( tmObey2F )
                                 }
                                     break ;
                                     BLAMMO ;
-                                    etThread.traceF( tinBaseP , T("received unexpected [from.sin6_family]:    ")+TF2(from.sin6_family,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    etThread.traceF( tin0P , T("received unexpected [from.sin6_family]:    ")+TF2(from.sin6_family,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 {
                                 default :
                                 }
                                     break ;
                                     BLAMMO ;
-                                    etThread.traceF( tinBaseP , T("received AF_INET [from.sin6_family]:    ")+TF2(from.sin6_family,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    etThread.traceF( tin0P , T("received AF_INET [from.sin6_family]:    ")+TF2(from.sin6_family,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 {
                                 case AF_INET :
                                 }
@@ -369,14 +369,14 @@ DONE( tmObey2F )
                                     if( !nnFrom ) nnFrom = NICnAMElOCAL ;
 
                                     }
-                                        pcOut[ 3 - offi ] = ((tin9S&)tinBaseP).brcRaw ;
+                                        pcOut[ 3 - offi ] = ((tin9S&)tin0P).brcRaw ;
                                         BOSdOnOTtEST( WHATgbo , ntohl( pcIn[ offi ] ) )
                                     {
                                     for( countT offi = 0 ; offi < 4 ; offi ++ )
                                     countT* pcOut = (countT*)(const countT*)nnFrom ;
                                     countT* pcIn  = (countT*)from.sin6_addr.u.Byte ;
 
-                                    idpFrom = ((tin9S&)tinBaseP).brcRaw ;
+                                    idpFrom = ((tin9S&)tin0P).brcRaw ;
                                     BOSdOnOTtEST( WHATgbo , ntohs( from.sin6_port ) )
                                 {
                                 case AF_INET6 :
@@ -439,20 +439,20 @@ DONE( tmObey2F )
 
                 }
                     break ;
-                    //etThread.traceF( tinBaseP , T("recd: no more input") ) ;
+                    //etThread.traceF( tin0P , T("recd: no more input") ) ;
                 {
                 if( !pbBufw || !cbBufw )
 
-                //etThread.traceF( tinBaseP , T("window [cb04BufferDone,cbBufw]:    ")+TF2((countT)cb04BufferDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbBufw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                fwsBuffer.getF( tinBaseP , pbBufw , cbBufw , 0 , cb04BufferDone ) ;
+                //etThread.traceF( tin0P , T("window [cb04BufferDone,cbBufw]:    ")+TF2((countT)cb04BufferDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbBufw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                fwsBuffer.getF( tin0P , pbBufw , cbBufw , 0 , cb04BufferDone ) ;
                 ZE( countT , cbBufw ) ;
                 ZE( byteT* , pbBufw ) ;
 
-                fileWindowsC fwsBuffer( tinBaseP , etThread , tFileBuffer , flFILEwINDOW_DOnOTvALIDATE ) ;
+                fileWindowsC fwsBuffer( tin0P , etThread , tFileBuffer , flFILEwINDOW_DOnOTvALIDATE ) ;
             {
             while( !ether )
         {
-        //etThread.traceF( tinBaseP , T("constructing fwsBuffer for reading") ) ;
+        //etThread.traceF( tin0P , T("constructing fwsBuffer for reading") ) ;
     {
     while( !ether )
     ZE( countT , cAccepted ) ;
@@ -462,10 +462,10 @@ DONE( tmObey2F )
 
     TN( tb4 , "    " ) ;
     const countT cbMin = 0xc + ifcCBdATAGRAMmAX + sizeof( sockaddr_in6 ) ;
-    sThrow.bindF( tinBaseP ) ;
-    socketC sThrow( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    sThrow.bindF( tin0P ) ;
+    socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
-    fileWindowsC fwsOut( tinBaseP , etThread , tFileOut , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
+    fileWindowsC fwsOut( tin0P , etThread , tFileOut , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
     TN( tFileOut , "///d/tmp/foo.received.fws.ttt" ) ;
 
     countT&      idGramPouredLathP = *(countT*)pTaskP->c4     ;
@@ -483,7 +483,7 @@ DONE( tmComplainF )
 
         }
             dec02AM( cComplaintPending ) ;
-            etThread.traceF( tinBaseP , t1+TF2(cComplaintPending,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etThread.traceF( tin0P , t1+TF2(cComplaintPending,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         while( cComplaintPending )
     {
@@ -497,11 +497,11 @@ TASK( tmComplainF )
 DONE( tmGetSecretF )
 }
     }
-        ++ s ; ether.osSleepF( tinBaseP , TIMEePOCH >> 1 ) ;
+        ++ s ; ether.osSleepF( tin0P , TIMEePOCH >> 1 ) ;
 
         }
-            ++ s ; ether.osSleepF( tinBaseP , TOCK >> 4 ) ;
-            sThrow.writeF( tinBaseP , idPortCatch , nicNameC() , (byteT*)&gram , sizeof gram ) ;
+            ++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
+            sThrow.writeF( tin0P , idPortCatch , nicNameC() , (byteT*)&gram , sizeof gram ) ;
             gram.idCmd = ifcIDcMDgRAM_DISPENSEsECRET ;
             gram.cbThisGram = sizeof gram ;
             gramHeadSecretS gram ;
@@ -511,10 +511,10 @@ DONE( tmGetSecretF )
         countT old =  secretToUseP ;
     {
     while( !ether )
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    sThrow.bindF( tinBaseP ) ;
-    socketC sThrow( tinBaseP , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    sThrow.bindF( tin0P ) ;
+    socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
 
     countT& secretToUseP = *(countT*)pTaskP->c1 ;
 {
@@ -525,29 +525,29 @@ DONE( tmEpochClockF )
 }
     }
         }
-            //etThread.traceF( tinBaseP , T("ready to test incoming secrets") ) ;
+            //etThread.traceF( tin0P , T("ready to test incoming secrets") ) ;
             bSetup = 0 ;
         {
         if( bSetup && !OFFePOCHhONORmIN )          // OFFePOCHhONORmIN IS INITIALLY NEGATIVE ; WHEN IT BECOMES 0, WE ARE READY TO START TESTING INCOMING SECRETS
 
         offEpochFreshening ++ ;
 
-        if( !bSetup ) { ++ s ; ether.osSleepF( tinBaseP , TIMEePOCH ) ; }
+        if( !bSetup ) { ++ s ; ether.osSleepF( tin0P , TIMEePOCH ) ; }
 
         }
             ppcHashSecrets[ offSlotFreshen ][ offSecret ] = ru2 ;
         {
         for( countT offSecret = 0 ; offSecret < ChASHsECRETS ; offSecret ++ )
-        ranUniC ru2( tinBaseP , (measure04T)MAXcOUNTT + 1 , slab.trueRandom ) ;
+        ranUniC ru2( tin0P , (measure04T)MAXcOUNTT + 1 , slab.trueRandom ) ;
 
         }
             ppcSecrets[ offSlotFreshen ][ offSecret ] = ru1 ;
         {
         for( countT offSecret = 0 ; offSecret < CsECRETS ; offSecret ++ )
-        ranUniC ru1( tinBaseP , (measure04T)MAXcOUNTT + 1 , slab.trueRandom ) ;
+        ranUniC ru1( tin0P , (measure04T)MAXcOUNTT + 1 , slab.trueRandom ) ;
 
-        //etThread.traceF( tinBaseP , T("[offEpochFreshening,OFFePOCHhONORmIN,OFFePOCHhONORmAX]:    ")+TF2(offEpochFreshening,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(OFFePOCHhONORmIN,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(OFFePOCHhONORmAX,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-        //etThread.traceF( tinBaseP , T("[offSlotFreshen,offSlotHonorOldest,offSlotHonorNewest]:    ")+TF2(offSlotFreshen,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSlotHonorOldest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSlotHonorNewest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tin0P , T("[offEpochFreshening,OFFePOCHhONORmIN,OFFePOCHhONORmAX]:    ")+TF2(offEpochFreshening,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(OFFePOCHhONORmIN,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(OFFePOCHhONORmAX,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tin0P , T("[offSlotFreshen,offSlotHonorOldest,offSlotHonorNewest]:    ")+TF2(offSlotFreshen,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSlotHonorOldest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offSlotHonorNewest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         countT offSlotHonorNewest = OFFePOCHhONORmAX   % CePOCHsLOTS ;
         countT offSlotHonorOldest = OFFePOCHhONORmIN   % CePOCHsLOTS ;
@@ -556,7 +556,7 @@ DONE( tmEpochClockF )
     while( !ether )
     slabS& slab = slabS::slabIF() ;
     boolT bSetup = 1 ;
-    sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     TN( tb4 , "    " ) ;
 {
 if( pTaskP )
@@ -565,11 +565,11 @@ TASK( tmEpochClockF )
 }
     return offs % CsECRETS ;
 
-    //etherP.traceF( tinBaseP , T("offSecretF [off,nn,offSlotP]:    ")+TF2(offs%CsECRETS,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnP)+tb4+TF2(offSlotP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+    //etherP.traceF( tin0P , T("offSecretF [off,nn,offSlotP]:    ")+TF2(offs%CsECRETS,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnP)+tb4+TF2(offSlotP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
 
     }
         offs ^= *( pcc ++ ) ^ hashSecret ;
-        //etherP.traceF( tinBaseP , T("offSecretF [offhs,hashSecret]:    ")+TF2(offhs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(hashSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etherP.traceF( tin0P , T("offSecretF [offhs,hashSecret]:    ")+TF2(offhs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(hashSecret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         countT hashSecret = ppcHashSecrets[ offSlotP ][ offhs ] ;
     {
     for( countT offhs = 0 ; pcc < pce && offhs < ChASHsECRETS ; offhs ++ )
@@ -579,7 +579,7 @@ TASK( tmEpochClockF )
     countT* pce = pcc + sizeof nnP / sizeof( countT ) ;         //A:ASSUME: nicNameC IS AN INTEGRAL NUMBER OF countT ; IF NOT TRUE THEN THE TRAILING PORTION WILL NOT BE HASHED
     countT* pcc = (countT*)&nnP ;
 {
-countT offSecretF( tin0S& tinBaseP , etherC& etherP , const nicNameC& nnP , const countT offSlotP )
+countT offSecretF( tin0S& tin0P , etherC& etherP , const nicNameC& nnP , const countT offSlotP )
 
 ;
 }

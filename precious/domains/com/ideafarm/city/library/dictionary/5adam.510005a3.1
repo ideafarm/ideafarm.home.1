@@ -10,80 +10,80 @@
 REST
 
 }
-    etThread.delF( tinBaseP , pbChunk ) ;
+    etThread.delF( tin0P , pbChunk ) ;
     DEL( pInfo ) ;
     }
         CONoUTrAW( postb ) ;
         DEL( pso ) ;
-        pso->readWoLineF( tinBaseP , countTC() , postb , sizeof postb ) ;
+        pso->readWoLineF( tin0P , countTC() , postb , sizeof postb ) ;
         osTextT postb[ TUCK ] ;
         
         }
             cbFile -= cbChunk ;
-            pso->writeF( tinBaseP , pbChunk , cbChunk ) ;
-            etThread.fileReadF( tinBaseP , pbChunk , cbChunk , hFile ) ;
+            pso->writeF( tin0P , pbChunk , cbChunk ) ;
+            etThread.fileReadF( tin0P , pbChunk , cbChunk , hFile ) ;
             countT cbChunk = cbFile < CBcHUNK ? cbFile : CBcHUNK ;
         {
         while( cbFile )
     
-        pso->writeF( tinBaseP , (byteT*)&cbFile , sizeof cbFile ) ;
+        pso->writeF( tin0P , (byteT*)&cbFile , sizeof cbFile ) ;
         
         CONoUTrAW( "client connection accepted\r\n" ) ;
-        sOut.acceptF( tinBaseP , pso , countTC() , nicNameC() , countTC() ) ; ___( pso ) ;
+        sOut.acceptF( tin0P , pso , countTC() , nicNameC() , countTC() ) ; ___( pso ) ;
         ZE( socketC* , pso ) ;
-        sOut.listenF( tinBaseP ) ;
-        etThread.strokeF( tinBaseP , T("listening on port ")+TF2(idPort,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
-        countT idPort = sOut.bindF( tinBaseP , 81 ) ;
-        socketC sOut( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+        sOut.listenF( tin0P ) ;
+        etThread.strokeF( tin0P , T("listening on port ")+TF2(idPort,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ) ;
+        countT idPort = sOut.bindF( tin0P , 81 ) ;
+        socketC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         countT cbFile = pInfo->cbUsed ;
     {
     if( pInfo && pbChunk )
-    etThread.newF( tinBaseP , LF , pbChunk , CBcHUNK ) ; ___( pbChunk ) ;
+    etThread.newF( tin0P , LF , pbChunk , CBcHUNK ) ; ___( pbChunk ) ;
     ZE( byteT* , pbChunk ) ;
-    etThread.diskFileQueryF( tinBaseP , pInfo , hFile ) ; ___( pInfo ) ;
+    etThread.diskFileQueryF( tin0P , pInfo , hFile ) ; ___( pInfo ) ;
     ZE( infoFileS* , pInfo ) ;
-    etThread.fileOpenF( tinBaseP , hFile , countTC() , T("///d/tmp/blob.out") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
-    handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+    etThread.fileOpenF( tin0P , hFile , countTC() , T("///d/tmp/blob.out") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
+    handleC hFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 {
 else
 }
-    etThread.delF( tinBaseP , pbChunk ) ;
+    etThread.delF( tin0P , pbChunk ) ;
     DEL( pInfo ) ;
     }
         CONoUTrAW( postb ) ;
-        sOut.readWoLineF( tinBaseP , countTC() , postb , sizeof postb ) ;
+        sOut.readWoLineF( tin0P , countTC() , postb , sizeof postb ) ;
         osTextT postb[ TUCK ] ;
         
         }
             cbFile -= cbChunk ;
-            sOut.writeF( tinBaseP , pbChunk , cbChunk ) ;
-            etThread.fileReadF( tinBaseP , pbChunk , cbChunk , hFile ) ;
+            sOut.writeF( tin0P , pbChunk , cbChunk ) ;
+            etThread.fileReadF( tin0P , pbChunk , cbChunk , hFile ) ;
             countT cbChunk = cbFile < CBcHUNK ? cbFile : CBcHUNK ;
         {
         while( cbFile )
     
-        sOut.writeF( tinBaseP , (byteT*)&cbFile , sizeof cbFile ) ;
+        sOut.writeF( tin0P , (byteT*)&cbFile , sizeof cbFile ) ;
         CONoUTrAW( "connected\r\n" ) ;
-        sOut.connectF( tinBaseP , 81 , socketC::nicNameIF( tinBaseP , etThread , T("72.167.92.180") ) ) ;
+        sOut.connectF( tin0P , 81 , socketC::nicNameIF( tin0P , etThread , T("72.167.92.180") ) ) ;
         CONoUTrAW( "connecting\r\n" ) ;
-        sOut.bindF( tinBaseP ) ;
-        socketC sOut( tinBaseP , etThread , TAG( TAGiDnULL ) ) ;
+        sOut.bindF( tin0P ) ;
+        socketC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         countT cbFile = pInfo->cbUsed ;
     {
     if( pInfo && pbChunk )
-    etThread.newF( tinBaseP , LF , pbChunk , CBcHUNK ) ; ___( pbChunk ) ;
+    etThread.newF( tin0P , LF , pbChunk , CBcHUNK ) ; ___( pbChunk ) ;
     ZE( byteT* , pbChunk ) ;
-    etThread.diskFileQueryF( tinBaseP , pInfo , hFile ) ; ___( pInfo ) ;
+    etThread.diskFileQueryF( tin0P , pInfo , hFile ) ; ___( pInfo ) ;
     ZE( infoFileS* , pInfo ) ;
-    etThread.fileOpenF( tinBaseP , hFile , countTC() , T("///d/tmp/blob.out") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
-    handleC hFile( tinBaseP , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+    etThread.fileOpenF( tin0P , hFile , countTC() , T("///d/tmp/blob.out") , ifcOPENaCCESS_R , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO ) ;
+    handleC hFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
 {
 if( bLaptop )
 
-const boolT bCenter = IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 == etThread.diskIdF( tinBaseP , T("///c") ) ;
-const boolT bLaptop = IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0     == etThread.diskIdF( tinBaseP , T("///c") ) ;
+const boolT bCenter = IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 == etThread.diskIdF( tin0P , T("///c") ) ;
+const boolT bLaptop = IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0     == etThread.diskIdF( tin0P , T("///c") ) ;
 
 TODO
 

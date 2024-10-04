@@ -11,15 +11,15 @@
     return cReplacements ;
 
     }
-        else if( bPool ) delF( tinBaseP , psttOut ) ;
+        else if( bPool ) delF( tin0P , psttOut ) ;
         if( !POOP      ) psttNewBigP = psttOut ; // psttOut COULD BE ELIMINATED ; IT IS USED ONLY TO MAKE THIS CODE MORE READABLE
 
-        if( !bReadOnly ) delF( tinBaseP , *(strokeS**)&psttIn ) ;
+        if( !bReadOnly ) delF( tin0P , *(strokeS**)&psttIn ) ;
 
         psttOut->idAdam += scDelta ;
 
         }
-            else { strSubstringF( tinBaseP , psttOut , idf , countTC() , psttIn ) ; ___( psttOut ) ; }
+            else { strSubstringF( tin0P , psttOut , idf , countTC() , psttIn ) ; ___( psttOut ) ; }
             }
                 while( csttCopy -- ) *( pstto ++ ) = *( pstti ++ ) ;
                 countT csttCopy = psttIn->idAdam - idf + 1 ;
@@ -31,12 +31,12 @@
 
         }
             }
-                else       idHit = STRiDf_OR_sTRiDaNYf( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , psttOldSmallP , psttIn ) ;
+                else       idHit = STRiDf_OR_sTRiDaNYf( tin0P , 0 , flSTRmATCH_null , idf , sttq , psttOldSmallP , psttIn ) ;
                 if( !idf ) idHit = 0 ;
                 idfPrefix = idf ;
                 // MOVE THE HIT CURSOR TO THE NEXT HIT
     
-                else { strFuseF( tinBaseP , psttOut , psttNewSmallP ) ; ___( psttOut ) ; }
+                else { strFuseF( tin0P , psttOut , psttNewSmallP ) ; ___( psttOut ) ; }
                 }
                     scDelta += csttns - csttMatched ;
                     pstti += csttMatched ; // CSTTmATCHED
@@ -53,7 +53,7 @@
                 }
                     idf = idfSuffix ;
     
-                    else { strSubstringF( tinBaseP , psttOut , idf , idl , psttIn ) ; ___( psttOut ) ; }
+                    else { strSubstringF( tin0P , psttOut , idf , idl , psttIn ) ; ___( psttOut ) ; }
                     }
                         else while( csttCopy -- ) *( pstto ++ ) = *( pstti ++ ) ;
                         }
@@ -73,7 +73,7 @@
                 // APPEND THE PREFIX
             {
             while( idHit )
-            countT idHit = STRiDf_OR_sTRiDaNYf( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , psttOldSmallP , psttIn ) ;
+            countT idHit = STRiDf_OR_sTRiDaNYf( tin0P , 0 , flSTRmATCH_null , idf , sttq , psttOldSmallP , psttIn ) ;
             if( F(flagsP) & flSTRrEPLACE_IGNOREqUOTES ) sttq.idCaste = sc_IGNOREqUOTES ;
             strokeS sttq ;
         {
@@ -95,7 +95,7 @@
     
         }
             bPool = 1 ;
-            strMakeF( tinBaseP , LF , psttOut , 0 , psttIn->idAdam + psttIn[ 2 ].idAdam + scGrow + csttExtraP ) ; // CALLER MUST TAG ___( psttOut ) ;
+            strMakeF( tin0P , LF , psttOut , 0 , psttIn->idAdam + psttIn[ 2 ].idAdam + scGrow + csttExtraP ) ; // CALLER MUST TAG ___( psttOut ) ;
         {
         if( !psttOut )
 
@@ -109,14 +109,14 @@
                 }
                     ;
                         : 0
-                        ? STRiDf_OR_sTRiDaNYf( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , psttOldSmallP , psttIn )
+                        ? STRiDf_OR_sTRiDaNYf( tin0P , 0 , flSTRmATCH_null , idf , sttq , psttOldSmallP , psttIn )
                     idHit = idf
 
                     csttHit += ( idf ? idf : psttIn->idAdam + 1 ) - idHit ;
                     cHits ++ ;
                 {
                 while( idHit )
-                countT idHit = STRiDf_OR_sTRiDaNYf( tinBaseP , 0 , flSTRmATCH_null , idf , sttq , psttOldSmallP , psttIn ) ;
+                countT idHit = STRiDf_OR_sTRiDaNYf( tin0P , 0 , flSTRmATCH_null , idf , sttq , psttOldSmallP , psttIn ) ;
 
                 if( F(flagsP) & flSTRrEPLACE_IGNOREqUOTES ) sttq.idCaste = sc_IGNOREqUOTES ;
                 strokeS sttq ;
@@ -186,7 +186,7 @@
   else must be large enough to hold the result
   if 0 then will be allocated
  psttNewBigP
- tinBaseP
+ tin0P
 parameters
 it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.0050004.1.0.html\"\>definition\</A\>

@@ -31,13 +31,13 @@
             }
                 //U: }
                 //U:     }
-                //U:         win Destroy WindowF( tinBaseP , hWindowP ) ;
+                //U:         win Destroy WindowF( tin0P , hWindowP ) ;
                 //U:     {
                 //U:     if( cRow < 0x100 )
-                //U:     winClientSizeF( tinBaseP , cCol , cRow , hWindowP ) ;
+                //U:     winClientSizeF( tin0P , cCol , cRow , hWindowP ) ;
                 //U:     ZE( countT , cRow ) ;
                 //U:     ZE( countT , cCol ) ;
-                //U:     winShowWindowF( tinBaseP , hWindowP , idcWINsHOW_MAXIMIZE ) ;
+                //U:     winShowWindowF( tin0P , hWindowP , idcWINsHOW_MAXIMIZE ) ;
                 //U: {
                 //U: if( ~hWindowP && cRowP >= 0x100 ) //TEST THE WINDOW TO DECIDE WHETHER TO KEEP IT
 
@@ -47,13 +47,13 @@
                     ((HANDLEaPPnOTEScOUNTcLASS&)hWindowP).c2 = cRowClientP ;
                     ((HANDLEaPPnOTEScOUNTcLASS&)hWindowP).c1 = cColClientP ;
 
-                    //winClientSizeF( tinBaseP , cColClient , cRowClient , hWindowP ) ;
+                    //winClientSizeF( tin0P , cColClient , cRowClient , hWindowP ) ;
                     //ZE( countT , cRowClient ) ;
                     //ZE( countT , cColClient ) ;
                     //DOES NOT RETURN THE CORRECT VALUES; WINDOWS IS SUCH SHIT
 
                     INCoShANDLES
-                    hWindowP.osF( ifcIDtYPEhANDLE_WINDOW , ((tin9S&)tinBaseP).brcRaw ) ;
+                    hWindowP.osF( ifcIDtYPEhANDLE_WINDOW , ((tin9S&)tin0P).brcRaw ) ;
                     BOS( WHATgbo , BOSoK , CreateWindowEx( flagsStyleEx , postOldClassP , postTitleP , flagsStyle , xx , yy , cx , cy , oshDad , 0 , oshClient , 0 ) )
 
                     HWND oshDad = (HWND)( ~hWindowParentOrOwnerP ? hWindowParentOrOwnerP.osF( ifcIDtYPEhANDLE_WINDOW ) : 0 ) ;
@@ -62,7 +62,7 @@
 
                 }
                     }
-                        ++ s ; dosSleepIF( tinBaseP , TOCK * 4 ) ;
+                        ++ s ; dosSleepIF( tin0P , TOCK * 4 ) ;
                     {
                     }
                         ;//TELLsYSc1( ifcIDtYPEtELLsYS_AOKfYIcANNOTcREATEwINDOWnOW ) 
@@ -75,10 +75,10 @@
             {
             do
             boolT bWoth = 1 ;
-            sleepC s( tinBaseP , TAG( TAGiDnULL ) ) ;
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         {
         ZE( countT , idLastReport ) ; // 1: CANNOT CREATE  2: CREATED AOK
-        thirdC& thPrime = thirdC::thPrimeIF( tinBaseP ) ;
+        thirdC& thPrime = thirdC::thPrimeIF( tin0P ) ;
 
         boolT bNoQuitEarly = !cTriesP ;
 
@@ -118,7 +118,7 @@
                 if( idColP == - 1 ) xx = CW_USEDEFAULT ; //ARBITRARY SPECIAL VALUE
             {
             if( pwDad )
-            windowOldC* pwDad = windowOldC::pWindowIF( tinBaseP , hWindowParentOrOwnerP ) ;
+            windowOldC* pwDad = windowOldC::pWindowIF( tin0P , hWindowParentOrOwnerP ) ;
         {
         if( ~hWindowParentOrOwnerP )
         ZE( countT  , cy ) ;
@@ -167,7 +167,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT thirdC::winCreateWindowF( tin0S& tinBaseP , const handleC& hWindowParentOrOwnerP , handleC& hWindowP , const osTextT* const postTitleP , const osTextT* const postOldClassP , const countT idTypeP , sCountT idColP , sCountT idRowP , countT cColP , countT cRowP , const countT cColClientP , const countT cRowClientP , const handleC& hWindowingClientIP , const boolT bNotVisibleP , countT cTriesP )/*1*/
+/*1*/voidT thirdC::winCreateWindowF( tin0S& tin0P , const handleC& hWindowParentOrOwnerP , handleC& hWindowP , const osTextT* const postTitleP , const osTextT* const postOldClassP , const countT idTypeP , sCountT idColP , sCountT idRowP , countT cColP , countT cRowP , const countT cColClientP , const countT cRowClientP , const handleC& hWindowingClientIP , const boolT bNotVisibleP , countT cTriesP )/*1*/
 
 /**/
 */
@@ -204,7 +204,7 @@
  hWindowP
   can be 0 unless idTypeP is "kid"
  hWindowParentOrOwnerP
- tinBaseP
+ tin0P
 arguments
 \<A HREF=\"5.10200bb.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$winCreateWindowF.0.html\"\>instances\</A\>
