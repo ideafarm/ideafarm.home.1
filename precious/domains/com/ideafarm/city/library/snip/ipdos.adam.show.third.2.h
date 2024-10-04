@@ -27609,6 +27609,7 @@ struct bookMarkOldS
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin0S : 1snip.150001c4.tin0S END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin9S : 1snip.15000026.tin9S BEGIN
 
+
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -27744,12 +27745,12 @@ it is illegal to modify any member other than pc Utility in the definition of an
         jotC*                   ppJot[ CsLOTSjOTrEGISTRY ] ;        /*J*/      // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
         countT                  pcUtility[ CCuTILITY ] ;
 /*@  */ count04T                pcUtility04[ 4 ] ;
-        flagsT                  pFlagsThreadLevelMode[ 1 + OFFsLOTtINnESTmAX        ] ;                                 //CS:CODEsYNC: 003004f 003002a
-        countT                  pLFstep[             ( 1 + OFFsLOTtINsTEPmAX ) << 1 ] ;
-        countT                  pIdInNest[             1 + OFFsLOTtINnESTmAX        ] ;
-        countT                  pEIPInNest[            1 + OFFsLOTtINnESTmAX        ] ;
-        countT                  pIdProgressNest[       1 + OFFsLOTtINnESTmAX        ] ;
-        countT                  pPanLifiRecurseGrabbedLevel[ ( 1 + OFFgRABBEDmAX ) * 5 ] ; // [pandle,idLineGrab,idiFileGrab,cRecurse,idGrabLevel]  (A PANDLE IS A POINTER THAT IS BEING USED AS A HANDLE)
+        flagsT                  pFlagsThreadLevelMode[         1 + OFFsLOTtINnESTmAX        ] ;                                 //CS:CODEsYNC: 003004f 003002a
+        countT                  pLFstep[                     ( 1 + OFFsLOTtINsTEPmAX ) << 1 ] ;
+        countT                  pIdInNest[                     1 + OFFsLOTtINnESTmAX        ] ;
+        countT                  pEIPInNest[                    1 + OFFsLOTtINnESTmAX        ] ;
+        countT                  pIdProgressNest[               1 + OFFsLOTtINnESTmAX        ] ;
+        countT                  pPanLifiRecurseGrabbedLevel[ ( 1 + OFFgRABBEDmAX     ) * 5  ] ; // [pandle,idLineGrab,idiFileGrab,cRecurse,idGrabLevel]  (A PANDLE IS A POINTER THAT IS BEING USED AS A HANDLE)
 
 /*@@@*/ osTextT                 postTell[         COSTmAXtELL         + 1 ] ;
 /*@@@*/ osTextT                 postTellWait[     COSTmAXtELL         + 1 ] ;
@@ -42011,6 +42012,7 @@ base class to make a derived class of objects easily contained by a stackC objec
 
     inline countT idSlotJotF( tin0S& tin0P ) const // IT IS ILLEGAL FOR ANY CODE OTHER THAN ZEJ() TO CALL ME
     {
+        if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
         ZE( countT , ids ) ;
         for( countT offs = 0 ; offs < sizeof ((tin9S&)tin0P).ppJot / sizeof ((tin9S&)tin0P).ppJot[ 0 ] ; offs ++ )
         {
@@ -42026,7 +42028,8 @@ base class to make a derived class of objects easily contained by a stackC objec
 
     inline static pageC readIF( tin0S& tin0P , countT idJotP )
     {
-        if( !ISvALIDjpOINTER( idJotP ) ) { BLAMMO ; }
+        if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
+        if( !ISvALIDjpOINTER( idJotP )          ) { BLAMMOiD( 0x77777777                          ) ; }
 
         jotC& jot = *((tin9S&)tin0P).ppJot[ ( idJotP & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] ;
         return jot.readF( tin0P , idJotP ) ;

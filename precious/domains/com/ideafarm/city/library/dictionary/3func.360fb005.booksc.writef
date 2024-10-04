@@ -24,7 +24,6 @@
 
         }
             processGlobal4I.heap.delF( tin0P , pbtScratchBuffer ) ;
-            ((tin9S&)tin0P).tlsDelF( LF , *(byteT**)&pBk0Doomed ) ;
             DELzOMBIE( pBk0Doomed ) ;
 
             }
@@ -246,7 +245,7 @@
                             //if( !(    (bookHeadS&)**ppBk0Scratch    ).cbBody ) { BLAMMO ; } //U::TO FIND A BUG  20140401
                             ((bookHeadS&)**ppBk0Scratch).flags |= flBOOKhEADs_PRIORbOOKnOTcONTINUEDhERE ;
                             }
-                                *ppBk0Scratch = new( 0 , tin0P , pbtBook0 , cbtBook0 ) book0C( tin0P , pbtScratchBuffer , cbtBuffer ) ;
+                                *ppBk0Scratch = new( 0 , tin0P , pbaBook0 , cbaBook0 ) book0C( tin0P , pbtScratchBuffer , cbtBuffer ) ;
                             {
 
                             ;
@@ -258,15 +257,9 @@
                             _IO_
                         {
                         else
-                        if( !pbtScratchBuffer || !pbtBook0 ) { BLAMMO ; }
-
-                        }
-                            TELL( "booksC::writeF / called tlsNewF 2" )
-                            pbtBook0  = ((tin9S&)tin0P).tlsNewF( LF , cbtBook0 ) ;
-                            TELL( "booksC::writeF / calling tlsNewF 2" )
-                            _IO_
-                        {
-                        ZE( byteT* , pbtBook0 ) ;
+                        if( !pbtScratchBuffer ) { BLAMMO ; }
+                        byteT pbaBook0[ cbaBook0 ] ;
+                        const countT cbaBook0 = sizeof( book0C ) ;
 
                         }
                             TELL( "booksC::writeF / called heapC::newF 1" )
@@ -274,7 +267,6 @@
                             TELL( "booksC::writeF / calling heapC::newF 1" )
                             _IO_
                         {
-                        const countT cbtBook0  = sizeof( book0C ) ;
 
                           const countT cbtBuffer = CBTsCRATCHbUFFER ;
                         //const countT cbtBuffer = TOCK << 4 ; //20211117@1225: OLD CODE FAILS ; RATHER THAN ANALYZE, JUST THROW MORE BYTES AT THE PROBLEM

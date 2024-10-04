@@ -5721,22 +5721,22 @@ U: redesign this to work well with all types of process face
 //U:
 #if defined( NEVERdEFINED )
 
-#define PROSHO                                                                                                  \
-                                                                                                                \
+#define PROSHO                                                                                                      \
+                                                                                                                    \
 if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL && F(((tin9S&)tin0P).flagsThreadMode2) & flTHREADmODE2_SHOWpROGRESS )      \
-{                                                                                                               \
-    ZE( countT , ecnu ) ;                                                                                     \
-    countT cNest = ((tin9S&)tin0P).monitor.cInNest ;                                                                                 \
-    countT cToDo = 1 + ( cNest <= 7 ? cNest : 7 ) ;                                                             \
-                                                                                                                \
-    thirdC::dosWriteStdOutIF( tin0P , "\r" BLANK79 "\r" ) ;                                                      \
-    while( cToDo -- )                                                                                           \
-    {                                                                                                           \
-        OStEXT( ostod , 0x9 )                                                                                   \
-        OStEXTC( ostod , ((tin9S&)tin0P).pIdProgressNest[ ( cNest -- ) & OFFsLOTtINnESTmAX ] , 0 )                         \
-        thirdC::dosWriteStdOutIF( tin0P , ostod ) ;                                                              \
-        if( cToDo ) thirdC::dosWriteStdOutIF( tin0P , '.' ) ;                                                    \
-    }                                                                                                           \
+{                                                                                                                   \
+    ZE( countT , ecnu ) ;                                                                                           \
+    countT cNest = ((tin9S&)tin0P).monitor.cInNest ;                                                                \
+    countT cToDo = 1 + ( cNest <= 7 ? cNest : 7 ) ;                                                                 \
+                                                                                                                    \
+    thirdC::dosWriteStdOutIF( tin0P , " \r" BLANK79 "\r" ) ;                                                        \
+    while( cToDo -- )                                                                                               \
+    {                                                                                                               \
+        OStEXT( ostod , 0x9 )                                                                                       \
+        OStEXTC( ostod , ((tin9S&)tin0P).pIdProgressNest[ ( cNest -- ) & OFFsLOTtINnESTmAX ] , 0 )                  \
+        thirdC::dosWriteStdOutIF( tin0P , ostod ) ;                                                                 \
+        if( cToDo ) thirdC::dosWriteStdOutIF( tin0P , '.' ) ;                                                       \
+    }                                                                                                               \
 }
 
 #else
@@ -9474,7 +9474,7 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 #define flTINrPT1_idLineCt                  0xe000101b
 #define flTINrPT1_postThreadName            0xe000201b
 #define flTINrPT1_idThread                  0xe000401b
-#define flTINrPT1_idProcessOld                 0xe000801b
+#define flTINrPT1_idProcessOld              0xe000801b
 #define flTINrPT1_time1                     0xe001001b
 #define flTINrPT1_time2                     0xe002001b
 #define flTINrPT1_idiTask                   0xe004001b
@@ -12532,6 +12532,7 @@ these values are used in the foreign domain name system
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200137.tell END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200138.tellconcat BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -18548,20 +18549,20 @@ if cBitsP is f then 01 bits is indicated
 /**/
 /*1*//*SET_bStopOk*//*1*/
 
-#define SET_bStopOk                                                                                     \
-                                                                                                        \
-    boolT _bStopOk = 1 ;                                                                                \
+#define SET_bStopOk                                                                                                                                                         \
+                                                                                                                                                                            \
+    boolT _bStopOk = 1 ;                                                                                                                                                    \
     if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL && ((tin9S&)tin0P).monitor.cGrabbed && !( F(((tin9S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) )       \
-    {                                                                                                   \
-        const countT offEnd = OFFgRABBEDmAX * 5 ;                                                       \
-        for( countT off = 0 ; off < offEnd ; off += 5 )                                                 \
-        {                                                                                               \
-            if( ((tin9S&)tin0P).pPanLifiRecurseGrabbedLevel[ off ] )                                               \
-            {                                                                                           \
-                _bStopOk = 0 ;                                                                          \
-                break ;                                                                                 \
-            }                                                                                           \
-        }                                                                                               \
+    {                                                                                                                                                                       \
+        const countT offEnd = OFFgRABBEDmAX * 5 ;                                                                                                                           \
+        for( countT off = 0 ; off < offEnd ; off += 5 )                                                                                                                     \
+        {                                                                                                                                                                   \
+            if( ((tin9S&)tin0P).pPanLifiRecurseGrabbedLevel[ off ] )                                                                                                        \
+            {                                                                                                                                                               \
+                _bStopOk = 0 ;                                                                                                                                              \
+                break ;                                                                                                                                                     \
+            }                                                                                                                                                               \
+        }                                                                                                                                                                   \
     }
 
 
@@ -34089,11 +34090,11 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*1*//*DROPnOTEdOESnOTwANTmE*//*1*/
 
-#define DROPnOTEdOESnOTwANTmE                                                                           \
-                                                                                                        \
-    if( F(((tin9S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tin9S&)tin0P).monitor.idDirty % 2 ) )                   \
-    {                                                                                                   \
-        FLAGScALLER( 0 ) |= flTHREADlEVELmODE_DROPnOTEdOESnOTwANTmE ;                                   \
+#define DROPnOTEdOESnOTwANTmE                                                                                           \
+                                                                                                                        \
+    if( F(((tin9S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tin9S&)tin0P).monitor.idDirty % 2 ) )     \
+    {                                                                                                                   \
+        FLAGScALLER( 0 ) |= flTHREADlEVELmODE_DROPnOTEdOESnOTwANTmE ;                                                   \
     }
 
 
@@ -45235,8 +45236,15 @@ this macro detects an invalid jPointer value and, if valid, evaluates to the (co
 
 /*1*//*J(idJotP)*//*1*/
 
-#define J(idJotP) ( !( (countT)(idJotP) & BM_HIGH ) ? (byteT*)(idJotP) : (byteT*)( *((tin9S&)tin0P).ppJot[ ( (countT)(idJotP) & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] )[ (countT)(idJotP) ] )
-
+#define J(idJotP)                                                                                                                               \
+                                                                                                                                                \
+    (                                                                                                                                           \
+        !( (countT)(idJotP) & BM_HIGH )                                                                                                         \
+            ? (byteT*)(idJotP)                                                                                                                  \
+            : tin0P.idTypeTin != ifcIDtYPEtIN_FULL                                                                                              \
+                ? (byteT*)0                                                                                                                     \
+                : (byteT*)( *((tin9S&)tin0P).ppJot[ ( (countT)(idJotP) & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] )[ (countT)(idJotP) ] )      \
+    )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
