@@ -27750,7 +27750,6 @@ struct bookMarkOldS
     timeS       timeTraceWoth ;
     timeS       timeTraceLath ;
     count4S     c4Tell ;
-    tinTallyS   tally ;
     strokeModeS strokeMode ;
 
     tin_part2_S( tin0S& tin0P ) ;
@@ -27798,6 +27797,7 @@ struct bookMarkOldS
     zapC            zap_pPanLifiRecurseGrabbedLevel_ ;
     ranUniC         ranUni ;
     tinArgS         ta ;
+    tinTallyS       tally ;
 
     tin_part3_S( tin0S& tin0P , countT idThreadP ) ;
 }
@@ -27809,7 +27809,6 @@ struct bookMarkOldS
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin9S : 1snip.15000026.tin9S BEGIN
 
