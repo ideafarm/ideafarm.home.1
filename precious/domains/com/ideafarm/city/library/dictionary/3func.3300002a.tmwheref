@@ -220,8 +220,8 @@ DONE( tmWhereF )
                     }
                         while( where.idDirty % 2 || where.idDirty != idDirtyVerify ) ;
                         }
-                            idDirtyVerify = ((tin9S*)ppTinBaseWhereI[ off ])->monitor.idDirty ;
-                            thirdC::c_memcpyIF( tin0P , pbWhere , (byteT*)&((tin9S*)ppTinBaseWhereI[ off ])->monitor , sizeof pbWhere ) ;
+                            idDirtyVerify = ((tin9S*)ppTin0WhereI[ off ])->monitor.idDirty ;
+                            thirdC::c_memcpyIF( tin0P , pbWhere , (byteT*)&((tin9S*)ppTin0WhereI[ off ])->monitor , sizeof pbWhere ) ;
                         {
                         do
                         countT idDirtyVerify ; //INTENTIONALLY NOT INITIALIZED, FOR SPEED
@@ -229,7 +229,7 @@ DONE( tmWhereF )
                     whereS& where = *(whereS*)pbWhere ;
                     byteT pbWhere[ sizeof( whereS ) ] ;                    
                 {
-                if( ppTinBaseWhereI[ off ] ) //U:: USE A grabC TO SERIALIZE SO DON'T GET BIT BY A DANGLING POINTER TO A DOOMED tin9S, OBJECT
+                if( ppTin0WhereI[ off ] ) //U:: USE A grabC TO SERIALIZE SO DON'T GET BIT BY A DANGLING POINTER TO A DOOMED tin9S, OBJECT
             {
             for( countT off = 0 ; off < cThreadsMaxWhereI ; off ++ )
             //etThread.traceF( tin0P , tSay1 ) ; //U:: COMMENT OUT IN PRODUCTION
@@ -257,7 +257,7 @@ DONE( tmWhereF )
 
     grabC&  grabWhere          =  *(grabC*)pTaskP->c7 ;
     countT& cThreadsMaxWhereI  = *(countT*)pTaskP->c6 ;
-    tin0S**  ppTinBaseWhereI        =   (tin0S**)pTaskP->c5 ;
+    tin0S**  ppTin0WhereI        =   (tin0S**)pTaskP->c5 ;
     countT& idTypeReportWhereI = *(countT*)pTaskP->c4 ;
     countT& cEnabledWhereI     = *(countT*)pTaskP->c3 ;
     signC&  sgnReady           =  *(signC*)pTaskP->c2 ;

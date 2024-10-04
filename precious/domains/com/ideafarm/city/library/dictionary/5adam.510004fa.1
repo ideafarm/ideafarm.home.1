@@ -1306,7 +1306,7 @@ voidT tallyF( tin0S& tin0P , etherC& etThread , whereTalliesGrossS& wtgP , where
 //        pc = pc->pTinKid ;                                                                  \
 //    {                                                                                       \
 //    if( pc->pTinKid )                                                                       \
-//    tin0S* pc = ((tin9S&)tin0P).pTinBaseDad ;                                                               \
+//    tin0S* pc = ((tin9S&)tin0P).pTin0Dad ;                                                               \
 //    etThread.strMakeF( tin0P , LF , psttl , TF1(idP)+T(": ") , 0x1000 ) ; ___( psttl ) ;          \
 //    ZE( strokeS* , psttl ) ;                                                              \
 //    TN( tb , " " ) ;                                                                        \
@@ -1668,9 +1668,9 @@ TELL( "i am outa here" )
                                         case ifcIDtINnAMED_tinInPoolMain             : { tIdName = T("main ") ; break ; }
                                         case ifcIDtINnAMED_tinEarlyLateMain          : { tIdName = T("mel3 ") ; break ; }
                                         case ifcIDtINnAMED_tinBreakG                 : { tIdName = T("brea ") ; break ; }
-                                        case ifcIDtINnAMED_tinNormalVeryEarlyLateMainG     : { tIdName = T("mel2 ") ; break ; }
+                                        case ifcIDtINnAMED_tin9VeryEarlyLateMainG     : { tIdName = T("mel2 ") ; break ; }
                                         case ifcIDtINnAMED_tinHeartG                 : { tIdName = T("hear ") ; break ; }
-                                        case ifcIDtINnAMED_tinNormalVeryVeryEarlyLateMainG : { tIdName = T("mel1 ") ; break ; }
+                                        case ifcIDtINnAMED_tin9VeryVeryEarlyLateMainG : { tIdName = T("mel1 ") ; break ; }
                                     {
                                     switch( tin.idTinNamed )
                                     TN( tIdName , "" ) ;
@@ -1688,7 +1688,7 @@ TELL( "i am outa here" )
                                     boolT bMark = !tin.monitor.cNewSteps || ( tin.osTid && stOsTidLooped( tin.osTid ) ) ; // tin.osTid WILL BE 0 FOR tinBreakG
                                 {
                                 if( idPass == 1 )
-                                tin0S& tinBase = *(tin0S*)entry.pbCopy ;
+                                tin0S& tin0 = *(tin0S*)entry.pbCopy ;
                             {
                             if( !bMonitorEnded && entry.pbCopy )
 
@@ -3163,7 +3163,7 @@ voidT writeLogF( tin0S& tin0P , etherC& etThread , const byteT* const pbCircleP 
                                 if( info.idException != ifcIDeVENTeXCEPTIONmONITORED_GRUNT ) { etherP.strFuseF( tin0P , psttl , T(" pvOffendingCode: ")+TF1((countT)info.pvOffendingCode)+T("\r\n") ) ; ___( psttl ) ; }
                                 etherP.strFuseF( tin0P , psttl , T(processGlobal4I.mapExceptionType(info.idException))+T(" exception\r\n") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( psttl ) ;
                                 ZE( strokeS* , psttl ) ;
-                                tin0S& tinBase = *(tin0S*)info.pbTin ;
+                                tin0S& tin0 = *(tin0S*)info.pbTin ;
                 
                                 tellInfoSysExceptionS& info = *(tellInfoSysExceptionS*)pbData ;
                             {

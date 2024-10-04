@@ -526,7 +526,7 @@ if( entry.osPid != ((tin9S&)tin0P).osPid ) { CONoUTrAW( TF3(entry.idSerial,flFOR
                      if( info.idException == ifcIDeVENTeXCEPTIONmONITORED_NOTlISTED       ) etherP.strFuseF( tin0P , psttl , T(" raw exception code: ")+TF1(info.pcInfo[0])+T("\r\n") ) ;
                 etherP.strFuseF( tin0P , psttl , T(processGlobal4I.mapExceptionType(info.idException))+T(" exception\r\n pvOffendingCode: ")+TF1((countT)info.pvOffendingCode)+T("\r\n") , 0 , 0 , strokeS() , 0 , 0 , /*U::SOUL?*/ 0x10000 ) ; ___( psttl ) ;
                 ZE( strokeS* , psttl ) ;
-                tin0S& tinBase = *(tin0S*)info.pbTin ;
+                tin0S& tin0 = *(tin0S*)info.pbTin ;
 
                 tellInfoSysExceptionS& info = *(tellInfoSysExceptionS*)pbData ;
 
@@ -711,7 +711,7 @@ DONE( tmRptF )
                                 etThread.strFuseF( tin0P , psttr , T(" \r\n[TD]\r\n") ) ;
                             {
                             if( !tin.monitor.cNewSteps || stOsTidLooped( tin.osTid ) )
-                            tin0S& tinBase = *(tin0S*)entry.pbCopy ;
+                            tin0S& tin0 = *(tin0S*)entry.pbCopy ;
                         {
                         if( entry.pbCopy )
     
@@ -728,7 +728,7 @@ DONE( tmRptF )
                         }
                             }
                                 if( !tin.monitor.cNewSteps || stOsTidLooped( tin.osTid ) ) etThread.strFuseF( tin0P , psttr , TF3(tin.osTid,flFORMAT_UNSIGNED,9)+TF3(tin.osPid,flFORMAT_UNSIGNED,9)+T("\"")+T(tin.postThreadName)+T("\"\r\n") ) ;
-                                tin0S& tinBase = *pCopy ;
+                                tin0S& tin0 = *pCopy ;
     
                                 etThread.memCopyF( tin0P , entry.pbCopy , pbCopy , sizeof pbCopy ) ;
                                 etThread.newF( tin0P , LF , entry.pbCopy , sizeof pbCopy ) ; ___( entry.pbCopy ) ;

@@ -531,7 +531,7 @@ it is illegal to refer to this symbol in the definition of an adam
         mainS* const& pmp = pMainParametersP ;                                                                                                                                      \
         if( pmp )                                                                                                                                                                   \
         {                                                                                                                                                                           \
-            tin0S& tin0P = pmp->tinBase ;                                                                                                                                     \
+            tin0S& tin0P = pmp->tin0 ;                                                                                                                                     \
             _IO_                                                                                                                                                                    \
             TELL( "MAINF/+" ) ;                                                                                                                                                     \
             thirdC::osTraceWrongNodeIF( tin0P , (byteT*)mainF , "mainF" ) ;                                                                                                      \
@@ -595,7 +595,7 @@ it is illegal to refer to this symbol in the definition of an adam
         ppp = pPeekParametersP ;                                                                                    \
         if( ppp )                                                                                                   \
         {                                                                                                           \
-            tin0S& tin0P  = ppp->tinBase ;                                                                    \
+            tin0S& tin0P  = ppp->tin0 ;                                                                    \
             etherC& ether = ppp->ether ;                                                                            \
             boolT save = bTlsEarlyLateIF() ;                                                                        \
             bTlsEarlyLateIF() = 0 ;                                                                                 \
@@ -1996,9 +1996,9 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
         else                                                                                                                                                                                                                                                                                                      \
         {                                                                                                                                                                                                                                                                                                         \
-            tin0S* const pTinBaseDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinBaseDad ;                                                                                                                                                                                                    \
+            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                                    \
             TELL( "TASK0: newing a tin9S in the working poolOld" )                                                                                                                                                                                                                                           \
-            tin0S* pTin = new( 0 , tin0P , LF ) tin9S( tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinBaseDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin9S( tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
             if( pTin )                                                                                                                                                                                                                                                                                            \
             {                                                                                                                                                                                                                                                                                                     \
                 bTinOk = 1 ;                                                                                                                                                                                                                                                                                      \
@@ -15942,8 +15942,8 @@ these flag values are used by oo flagsT objects
 // CODING CONVENTION: SYMBOLIC CONSTANTS ARE CAPITALIZED, EXCEPT PORTIONS THAT ARE IDENTIFIERS (THIS IS SO THAT ANY GLOBAL REPLACEMENT TO RENAME AN IDENTIFIER ALSO RENAMES THAT PORTION OF ANY SYMBOLIC CONSTANT THAT CONTAINS ITS NAME)
 
 /*3*/
-#define flCTdTg_tinNormalVeryVeryEarlyLateMainI       0xe0000141
-#define flCTdTg_tinNormalVeryEarlyLateMainI           0xe0000241
+#define flCTdTg_tin9VeryVeryEarlyLateMainI       0xe0000141
+#define flCTdTg_tin9VeryEarlyLateMainI           0xe0000241
 #define flCTdTg_tinMainInPool                   0xe0000441
 #define flCTdTg_THREADlOCALsTORAGE              0xe0000841
 #define flCTdTg_bksTelemetrySys                 0xe0001041
@@ -18010,9 +18010,9 @@ if cBitsP is f then 01 bits is indicated
 //CODEsYNC: 00102a0 2e40104
 
 /*3*/
-#define ifcIDtINnAMED_tinNormalVeryVeryEarlyLateMainI 0xdddd06a4
+#define ifcIDtINnAMED_tin9VeryVeryEarlyLateMainI 0xdddd06a4
 #define ifcIDtINnAMED_tinHeartI                 0xdddd06a5
-#define ifcIDtINnAMED_tinNormalVeryEarlyLateMainI     0xdddd06a6
+#define ifcIDtINnAMED_tin9VeryEarlyLateMainI     0xdddd06a6
 #define ifcIDtINnAMED_tinBreakI                 0xdddd06a7
 #define ifcIDtINnAMED_tinEarlyLateMain          0xdddd06a8
 #define ifcIDtINnAMED_tinInPoolMain             0xdddd06a9
@@ -32261,7 +32261,7 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 /**/
 /*1*//*FRIENDS_tin0S*//*1*/
 
-#define FRIENDS_tin9S                                                                                                                                                                    \
+#define FRIENDS_tin_part1_S                                                                                                                                                                    \
                                                                                                                                                                                         \
  friend class  cC ;                                                                                                                                                                     \
  friend class  grabC ;                                                                                                                                                                  \

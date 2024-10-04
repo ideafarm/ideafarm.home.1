@@ -1248,7 +1248,7 @@ countT cbGrabImageF( tin0S& tin0P , etherC& etherP , const byteT* const pbP )
 //U:     TN( tNote , "" ) ;
 //U:     countT idStepLast = tinDead.idStep ;
 //U: 
-//U:     tin0S& tinBaseDead = *(tin0S*)pTaskP->c1 ;
+//U:     tin0S& tin0Dead = *(tin0S*)pTaskP->c1 ;
 //U:     TELL( "setting up" )
 //U: {
 //U: if( pTaskP && pTaskP->c1 )
@@ -2065,8 +2065,8 @@ voidT pTinEventF( tin0S& tin0P , etherC& etThread , stackC& st_pTinEventOriginal
 
     }
         sgn = tin1.idThread - tin2.idThread ;
-        tin0S& tinBase2 = *(tin0S*)c2P ;
-        tin0S& tinBase1 = *(tin0S*)c1P ;
+        tin0S& tin02 = *(tin0S*)c2P ;
+        tin0S& tin01 = *(tin0S*)c1P ;
         etherC& ether = *(etherC*)pEtherP ;
     {
     if( pEtherP && c1P && c2P )
@@ -3566,7 +3566,7 @@ voidT pTinCopyF( tin0S& tin0P , etherC& etThread , tin0S*& pTinCopyP , const voi
     if( bCopyP ) { tinToLogP.strFuseF( tin0P , etThread , psttr , 0 , flagsInclude1P , flagsInclude2P , flagsExclude1P , flagsExclude2P , idFormatP ) ; ___( psttr ) ; }
     ZE( strokeS* , psttr ) ;
 {
-voidT logTinF( tin0S& tin0P , etherC& etThread , stackC& stPhrasesP , tin0S& tinBaseToLogP , boolT& bCopyP , const countT flagsInclude1P = flTINrPT1_null , const countT flagsInclude2P = flTINrPT2_null , const countT flagsExclude1P = flTINrPT1_null , const countT flagsExclude2P = flTINrPT2_null , countT idFormatP = 0 )
+voidT logTinF( tin0S& tin0P , etherC& etThread , stackC& stPhrasesP , tin0S& tin0ToLogP , boolT& bCopyP , const countT flagsInclude1P = flTINrPT1_null , const countT flagsInclude2P = flTINrPT2_null , const countT flagsExclude1P = flTINrPT1_null , const countT flagsExclude2P = flTINrPT2_null , countT idFormatP = 0 )
 // bCopyP IS A REFERENCE TO FORCE THE CODE TO SPECIFY "bCopy" RATHER THAN A HARDCODED VALUE SUCH AS 1 OR 0
 
 }

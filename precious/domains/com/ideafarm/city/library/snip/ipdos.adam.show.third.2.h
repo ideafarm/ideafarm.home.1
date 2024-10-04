@@ -4114,9 +4114,9 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
         else                                                                                                                                                                                                                                                                                                      \
         {                                                                                                                                                                                                                                                                                                         \
-            tin0S* const pTinBaseDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinBaseDad ;                                                                                                                                                                                                    \
+            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                                    \
             TELL( "TASK0: newing a tin9S in the working poolOld" )                                                                                                                                                                                                                                           \
-            tin0S* pTin = new( 0 , tin0P , LF ) tin9S( tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinBaseDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin9S( tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
             if( pTin )                                                                                                                                                                                                                                                                                            \
             {                                                                                                                                                                                                                                                                                                     \
                 bTinOk = 1 ;                                                                                                                                                                                                                                                                                      \
@@ -4492,9 +4492,9 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
         else                                                                                                                                                                                                                                                                                                      \
         {                                                                                                                                                                                                                                                                                                         \
-            tin0S* const pTinBaseDad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTinBaseDad ;                                                                                                                                                                                                    \
+            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                                    \
             TELL( "TASK0: newing a tin9S in the working poolOld" )                                                                                                                                                                                                                                           \
-            tin0S* pTin = new( 0 , tin0P , LF ) tin9S( tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTinBaseDad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin9S( tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
             if( pTin )                                                                                                                                                                                                                                                                                            \
             {                                                                                                                                                                                                                                                                                                     \
                 bTinOk = 1 ;                                                                                                                                                                                                                                                                                      \
@@ -7122,7 +7122,7 @@ typedef voidT (*/*ff*/treeOldCBFT/*ff*/)( tin0S& tin0P , etherC& etherP , const 
 */
 /**/
 
-/*1*/typedef voidT (*/*ff*/tinWalkerFT/*ff*/)( tin0S& tin0P , tin0S& tinBaseFocusP , countT& cArgP ) ;/*1*/    /*ff*//**//*ff*/
+/*1*/typedef voidT (*/*ff*/tinWalkerFT/*ff*/)( tin0S& tin0P , tin0S& tin0FocusP , countT& cArgP ) ;/*1*/    /*ff*//**//*ff*/
 
 
 //
@@ -13162,7 +13162,7 @@ parameters
 */
 /**/
 
-/*1*/voidT tinWalkerF( tin0S& tin0P , tin0S& tinBaseFocusP , countT& cArgP ) ;/*1*/
+/*1*/voidT tinWalkerF( tin0S& tin0P , tin0S& tin0FocusP , countT& cArgP ) ;/*1*/
 
 
 //
@@ -15886,7 +15886,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 /*1*/class _export inOutFrameC/*1*/
 {
     inOutFrameC* const        pDad                      ;
-    tin0S&                 tinBaseCt                 ;
+    tin0S&                 tin0Ct                 ;
     const countT              idLineCt                  ;
     const countT              idiFileCt                 ;
     inOutFrameAuditCpuCyclesS auditCpuCycles            ;
@@ -26117,7 +26117,7 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 
 /* face */
- tin0S&    tinBase ;
+ tin0S&    tin0 ;
  etherC&  ether ;
  etherC&  etThread ;
  strokeS* psttDirectives ;
@@ -26215,7 +26215,7 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 
 /* face */
- tin0S& tinBase ;
+ tin0S& tin0 ;
  etherC&   ether ;
  strokeS*  psttDirectives ;
  strokeS*  psttDirectivesReplied ;
@@ -26268,7 +26268,7 @@ it is illegal to refer to this symbol in the definition of an adam
  flagsT        flags ;
  flagsT        flagsThreadMode1Dad ;
  flagsT        flagsThreadMode2Dad ;
- tin0S*         pTinBaseDad ;
+ tin0S*         pTin0Dad ;
  byteT*        pbTlsInPool ;
  countT        cbTlsInPool ;
  countT        c1  ;
@@ -27293,7 +27293,7 @@ it is used by classes such as batonC and signC to store functionality added by t
     zapC                   zap_pPanLifiGrabbing_ ;
     countT                 cGrabbed ;                   //MUST BE BEFORE baseGrabC DERIVED OBJECTS
 
-    monitorS( tin0S& tin0P , const countT idThreadP ) ;
+    monitorS( tin0S& tin0P , const countT idThreadP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.monitorS.monitorS!||
 
 /**/
@@ -27580,11 +27580,11 @@ struct bookMarkOldS
         topC                     top_pTinMainI_ ;
         const countT             idTinNamed ;                        /*C*/
     protected :
-        tin0S* const          pTinBasePrior ;                           /*B*/
+        tin0S* const          pTin0Prior ;                           /*B*/
         grabC                    grabPseudo   ;                      /*A*/       // MUST BE CONSTRUCTED LATE ENOUGH THAT I CAN BE USED TO REGISTER IT WITH THE MONITOR 6a40104; I AM USED TO INFORM THE MONITOR THAT THE THREAD IS IN A SLEEP LOOP OR IS OTHERWISE STOPPED (E.G. IS IN A BLOCKING OS CALL)
         // countT                cGrab_pTinKid ;                     /*C*/
         // countT                idDesireSetBySelf_cGrab_pTinKid ;   /*C*/
-        // tin0S* const       pTinBaseDad ;                           /*B*/
+        // tin0S* const       pTin0Dad ;                           /*B*/
         // tin0S*             pTinBro ;                           /*B*/
         // tin0S*             pTinKid ;                           /*B*/
         // tin0S*             ppTinKid[ ClOWtHREADS ] ;           /*B*/ //U::TEMPORARY, TO DEBUG PROBLEM WITH pTinKid pTinBro LIST
@@ -27594,7 +27594,9 @@ struct bookMarkOldS
         const countT             idiFileCt ;                         /*C*/
         signC*                   pSgnUtility ;                       /*F*/
 
-        tin0S( tin0S& tin0SelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , countT idTypeTinP , tin0S* const pTinBaseDadP , const flagsT flagsP , const countT idTinNamedP ) ;
+    tin0S( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , countT idTypeTinP , tin0S* const pTin0DadP , const flagsT flagsP , const countT idTinNamedP ) ;
+
+    FRIENDS_tin_part1_S
 }
 ;
 
@@ -27607,8 +27609,209 @@ struct bookMarkOldS
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin0S : 1snip.150001c4.tin0S END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin9S : 1snip.15000026.tin9S BEGIN
 
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/struct _export tin_part1_S/*1*/
+{
+    scoopC*                 pScoopEtThread ;
+    scoopC*                 pScoops ;
+    const byteT* const      pbThreadStackStart  ;
+    const byteT* const      pbThreadStackEnd    ;
+    const byteT*            pbThreadStackLowest ;
+
+    protected :
+
+    countT                  cTls ;
+    byteT* const            pbTls ;                             //MUST BE BEFORE grabC OBJECTS AND OTHERS WHOSE CONSTRUCTORS CALL TAG OR TAGoR MACROS; THIS STORAGE IS NOT INITIALIZED
+    const countT            cbTls ;                             //MUST BE BEFORE grabC OBJECTS AND OTHERS WHOSE CONSTRUCTORS CALL TAG OR TAGoR MACROS
+    countT                  idDesireSetBySelf ;                 //MUST BE EARLY BECAUSE dosPriorityIF CAN BE (WHEN DEBUGGING) CALLED IN inOutFrameC CT/DT, AND BEFORE ANY SUCH CALLS idDesireSetBySelf MUST BE INITIALIZED
+    countT                  idDesireSetBySelfProcess ;
+
+    public :
+
+    countT                  cTellsWriteInOutTelemetry ;
+    inOutFrameC*            pInOutFrame ;                       //THIS AND POSSIBLY ITS ACCOMPANYING MEMBERS MUST BE EARLY SINCE _IO_ IS USED DURING CT OF tin9S
+    byteT*                  pbPendingInOutFramePackets ;
+    etherC*       /*o  8*/  pEther ;                            // USED IF !0.              FOR USE BY STATIC thirdC FUNCTIONS, GLOBAL FUNCTIONS, AND OBJECTS SUCH AS strokeS THAT DO NOT CARRY THEIR OWN REFERENCES.  ADDED LATE.
+    countT        /*o 01*/  osTid ;                             // MUST BE AFTER pEther.  
+    countT        /*o 41*/  osPid ;                             // MUST BE AFTER pEther. OFFSET IS HARDCODED IN 0d0000c.grabSleepF       ; U::20241004@1001: EDIT THE HARDCODED VALUE TO POINT TO THIS NEW LOCATION
+    adamGlobal1S*           pag1 ;
+    adamGlobal2S*           pag2 ;
+    adamGlobal3S*           pag3 ;
+    adamGlobal4S*           pag4 ;
+    adamGlobal5S*           pag5 ;
+    adamGlobal6S*           pag6 ;
+    countT                  time1 ;
+    sCountT                 time2 ;
+    countT                  idiTask ;
+    countT                  idlTask ;
+    countT                  brcRaw ;
+    boolT                   bosFail ;  // PASS/FAIL RESULT OF LATH BOS CALL
+    countT                  brcQuery ; // LATH RETURN VALUE QUERIED BECAUSE bosFail WAS SET ON THIS THREAD
+    countT                  brcLath ;  // LATH NONZE RETURN CODE FROM A BOS (BASE OPERATING SYSTEM, E.G. WIN32) CALL ON THIS THREAD
+    countT                  idLine_brcLath ;
+    countT                  idiFile_brcLath ;
+    countT                  idBlammo ;
+    flagsT                  flagsThreadMode2 ;
+    flagsT                  flagsThreadMode3 ;
+    flagsT                  flagsThreadMode4 ;
+    flagsT                  flagsThreadMode5 ;
+    countT                  cKidThreads ;
+    countT                  cRain ;                                                                                 //CODEsYNC: 2e40104 003002a
+    countT                  cManna ;
+    countT                  idPhase1 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
+    countT                  idPhase2 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
+    countT                  idPhase3 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
+    const countT*           pcQuit ;
+    countT                  msSleepWhenGrabbing ;
+    countT                  cGrabitC_set ;
+    countT                  cGrabitC_reset ;
+    countT                  cGrabitC_registered ;
+    countT                  cGrabitC_unregistered ;
+    etherC*                 pEtText ;       // USED IF !0
+    etherC*                 pEtScratch ;
+    restartC*               pRestart ;
+    countT                  cYield ;
+    countT                  idLineMile ;
+    countT                  idiFileMile ;
+    countT                  idLineMileDad ;
+    countT                  idiFileMileDad ;
+    tellInfoSysExceptionS*  pzTieLath ;
+    const countT*           pczl_pSwsRecycle ;
+    switchStackC*           pSwsRecycle ;
+    countT                  odoSockCbRead  ;
+    countT                  odoSockCbWrite ;
+    poolC*                  pPoolUse ;
+    adamC*                  pAdam ;
+    book0C*                 pBk0TelemetrySysScratch ;
+    book0C*                 pBk0TelemetryAppScratch ;
+    book0C*                 pBk0TraceScratch ;
+    cleanC*                 pClean ;
+    count04T*               pcExitsWhere ; //EXISTS SO CODE IN ADAM DEF CAN SEE THIS GLOBALS ARRAY
+    countT                  ccExitsWhere ; //EXISTS SO CODE IN ADAM DEF CAN SEE THIS GLOBALS ARRAY
+    countT                  cArmTrace_soulC ; //APP CODE CAN SET THIS: 0:DISARMED; -1:traceF WILL BE CALLED FOR ALL SUBSEQUENT soulC NEW'D OR RETRIEVED FROM RECYCLING; N:COUNTDOWN TO THE NEW/RETRIEVED INSTANCE TO CALL traceF FOR
+    flagsT                  flagsTrace_soulC ; //FLAGS MUST INCLUDE flTRACEsOULc_ON AND MUST NOT SPECIFY flTRACEsOULc_PURGE
+    countT*                 pcWatchedByInOut ;
+    countT                  valueExpectedByInOut ;
+    countT                  cPoolDropCt ;
+    countT                  cPoolDropDt ;
+    barryC*                 pBarryUtility ;                         // NOT REFERENCED BY tin9S OR BY IPDOS SYSTEM CODE ; AVAILABLE FOR USE BY APPLICATION CODE
+    sexC*                   pSexLifoConstructing ;                  // USED BY sexC TO DETECT RECURSIVE CYCLING DURING CT
+    byteT*                  pbRecursiveParameters ;                 // PROTOCOL: (1) CODE MUST VERIFY THAT THIS IS NULL BEFORE SETTING IT.  (2) THE CODE THAT SETS THIS MUST ALSO RESET IT SO THAT OTHER CODE CAN USE IT.  USE THIS TO PASS PARAMETERS RECURSIVELY TO AVOID USING THE THREAD STACK
+    boolT                   bSuppressInOutTrace ;                   // INCREMENTED WHEN CALL trace WITHIN inOutFrameC::*inOutFrameC
+    countT                  cSpins1 ;
+    countT                  cSpins2 ;
+    countT                  cSpins3 ;
+    countT                  cSpins4 ;
+    countT                  cOsHandles ;                            // TALLY OF BASE O.S. HANDLES OPENED AND CLOSED BY THIS THREAD, ACCORDING TO THE handleC MEMBER FUNCTIONS
+    tlsHeaderS*             pTlsHeader ;                            //U:: REMOVE IN PRODUCTION ; THIS IS TO FIND A BUG
+
+    tin_part1_S( tin0S& tin0P , tin0S* const pTin0DadP , const countT idTinNamedP , byteT* const pbTlsP , const countT cbTlsP ) ;
+
+    FRIENDS_tin_part1_S
+}
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/struct _export tin_part2_S/*1*/
+{
+    count04T    cCpuCyclesWriteInOutTelemetry ;
+    count04T    cTimeWriteInOutTelemetry ;
+    count04T    cCpuCycles2Or5Lath ;
+    count04T    cTime2Or5Lath ;
+    measure04T  brcm04Raw ;
+    timeS       timeTraceWoth ;
+    timeS       timeTraceLath ;
+    count4S     c4Tell ;
+    tinTallyS   tally ;
+    strokeModeS strokeMode ;
+
+    tin_part2_S( tin0S& tin0P ) ;
+}
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/struct _export tin_part3_S/*1*/
+{
+    monitorS        monitor ;                                                               // flagsThreadMode1 IS IN HERE
+    jotC*           ppJot[                             CsLOTSjOTrEGISTRY        ] ;         // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
+    countT          pcUtility[                         CCuTILITY                ] ;
+    count04T        pcUtility04[                       4                        ] ;
+    flagsT          pFlagsThreadLevelMode[         1 + OFFsLOTtINnESTmAX        ] ;         // CS:CODEsYNC: 003004f 003002a
+    countT          pLFstep[                     ( 1 + OFFsLOTtINsTEPmAX ) << 1 ] ;
+    countT          pIdInNest[                     1 + OFFsLOTtINnESTmAX        ] ;
+    countT          pEIPInNest[                    1 + OFFsLOTtINnESTmAX        ] ;
+    countT          pIdProgressNest[               1 + OFFsLOTtINnESTmAX        ] ;
+    countT          pPanLifiRecurseGrabbedLevel[ ( 1 + OFFgRABBEDmAX     ) * 5  ] ;         // [pandle,idLineGrab,idiFileGrab,cRecurse,idGrabLevel]  (A PANDLE IS A POINTER THAT IS BEING USED AS A HANDLE)
+    osTextT         postTell[                          COSTmAXtELL         + 1  ] ;
+    osTextT         postTellWait[                      COSTmAXtELL         + 1  ] ;
+    osTextT         postTellIf[                        COSTmAXtELL         + 1  ] ;
+    osTextT         postThreadName[                    COSTmAXtHREADnAME   + 1  ] ;
+    const byteT*    ppbGrabitRecurse[                  CmAXgRABITrECURSEiNtINs  ] ;
+    countT          pcGrabitOsTid[                     CmAXgRABITrECURSEiNtINs  ] ;
+    countT          pcGrabitRecurse[                   CmAXgRABITrECURSEiNtINs  ] ;
+    bookMarkS       pBookMark[                         CbOOKmARK                ] ;         // USED BY pageC TO REGISTER A PENDING SMART POINTER ; INCREASE THE NUMBER
+    zapC            zap_pPanLifiRecurseGrabbedLevel_ ;
+    ranUniC         ranUni ;
+    tinArgS         ta ;
+
+    tin_part3_S( tin0S& tin0P , countT idThreadP ) ;
+}
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin9S : 1snip.15000026.tin9S BEGIN
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -27632,144 +27835,14 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //THE DEF OF voidT zePointerFieldsF( tin0S& tin0P ) MUST ALSO BE UPDATED
 //TRY TO AVOID POINTER FIELDS, BECAUSE THIS IS A PITA TO SUPPORT IN ctF SINCE tin9S, OBJECTS ARE ACCESSED BY MULTIPLE PROCESSES
 
-/*1*/struct _export tin9S : public tin0S/*1*/
+/*1*/struct _export tin9S : public tin0S , public tin_part1_S , public tin_part2_S , public tin_part3_S/*1*/
 {
-    //CODEsYNCHeND: DO NOT CHANGE THIS CODE WITHOUT ALSO CHANGING THE SYNC CODE ; 20240925@1736: HUH?
-
-    //ASSUME: FIELDS AFTER HERE CAN BE COPIED AND RESET (SEE THE CT/DT OF processGlobal5I.tinNormalVeryEarlyLateMain AND THE MAIN THREAD'S tin9S, IN POOLoLD)
-
-        scoopC*                 pScoopEtThread ;
-        scoopC*                 pScoops ;
-
-        const byteT* const      pbThreadStackStart  ;
-        const byteT* const      pbThreadStackEnd    ;
-        const byteT*            pbThreadStackLowest ;
-    private :
-        countT                  cTls ;
-        byteT* const            pbTls ;                             //MUST BE BEFORE grabC OBJECTS AND OTHERS WHOSE CONSTRUCTORS CALL TAG OR TAGoR MACROS; THIS STORAGE IS NOT INITIALIZED
-        const countT            cbTls ;                             //MUST BE BEFORE grabC OBJECTS AND OTHERS WHOSE CONSTRUCTORS CALL TAG OR TAGoR MACROS
-        countT                  idDesireSetBySelf ;                 //MUST BE EARLY BECAUSE dosPriorityIF CAN BE (WHEN DEBUGGING) CALLED IN inOutFrameC CT/DT, AND BEFORE ANY SUCH CALLS idDesireSetBySelf MUST BE INITIALIZED
-        countT                  idDesireSetBySelfProcess ;
-    public :
-        countT                  cTellsWriteInOutTelemetry ;
-        inOutFrameC*            pInOutFrame ;                       //THIS AND POSSIBLY ITS ACCOMPANYING MEMBERS MUST BE EARLY SINCE _IO_ IS USED DURING CT OF tin9S
-        byteT*                  pbPendingInOutFramePackets ;
-        etherC*       /*o  8*/  pEther ;                            // USED IF !0.              FOR USE BY STATIC thirdC FUNCTIONS, GLOBAL FUNCTIONS, AND OBJECTS SUCH AS strokeS THAT DO NOT CARRY THEIR OWN REFERENCES.  ADDED LATE.
-        countT        /*o 01*/  osTid ;                             // MUST BE AFTER pEther.  
-        countT        /*o 41*/  osPid ;                             // MUST BE AFTER pEther. OFFSET IS HARDCODED IN 0d0000c.grabSleepF
-        adamGlobal1S*           pag1 ;
-        adamGlobal2S*           pag2 ;
-        adamGlobal3S*           pag3 ;
-        adamGlobal4S*           pag4 ;
-        adamGlobal5S*           pag5 ;
-        adamGlobal6S*           pag6 ;
-        countT                  time1 ;
-        sCountT                 time2 ;
-        countT                  idiTask ;
-        countT                  idlTask ;
-        countT                  brcRaw ;
-        boolT                   bosFail ;  // PASS/FAIL RESULT OF LATH BOS CALL
-        countT                  brcQuery ; // LATH RETURN VALUE QUERIED BECAUSE bosFail WAS SET ON THIS THREAD
-        countT                  brcLath ;  // LATH NONZE RETURN CODE FROM A BOS (BASE OPERATING SYSTEM, E.G. WIN32) CALL ON THIS THREAD
-        countT                  idLine_brcLath ;
-        countT                  idiFile_brcLath ;
-        countT                  idBlammo ;
-        flagsT                  flagsThreadMode2 ;
-        flagsT                  flagsThreadMode3 ;
-        flagsT                  flagsThreadMode4 ;
-        flagsT                  flagsThreadMode5 ;
-        countT                  cKidThreads ;
-        countT                  cRain ;                                                                                 //CODEsYNC: 2e40104 003002a
-        countT                  cManna ;
-        countT                  idPhase1 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
-        countT                  idPhase2 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
-        countT                  idPhase3 ; //THIS IS ADJACENT TO pLFnest SO THAT MONITOR CAN GET BOTH WITH A SINGLE MEMORY READ
-        const countT*           pcQuit ;
-        countT                  msSleepWhenGrabbing ;
-        countT                  cGrabitC_set ;
-        countT                  cGrabitC_reset ;
-        countT                  cGrabitC_registered ;
-        countT                  cGrabitC_unregistered ;
-        etherC*                 pEtText ;       // USED IF !0
-        etherC*                 pEtScratch ;
-        restartC*               pRestart ;
-        countT                  cYield ;
-        countT                  idLineMile ;
-        countT                  idiFileMile ;
-        countT                  idLineMileDad ;
-        countT                  idiFileMileDad ;
-        tellInfoSysExceptionS*  pzTieLath ;
-        const countT*           pczl_pSwsRecycle ;
-        switchStackC*           pSwsRecycle ;
-        countT                  odoSockCbRead  ;
-        countT                  odoSockCbWrite ;
-        poolC*                  pPoolUse ;
-        adamC*                  pAdam ;
-        book0C*                 pBk0TelemetrySysScratch ;
-        book0C*                 pBk0TelemetryAppScratch ;
-        book0C*                 pBk0TraceScratch ;
-        cleanC*                 pClean ;
-        count04T*               pcExitsWhere ; //EXISTS SO CODE IN ADAM DEF CAN SEE THIS GLOBALS ARRAY
-        countT                  ccExitsWhere ; //EXISTS SO CODE IN ADAM DEF CAN SEE THIS GLOBALS ARRAY
-        countT                  cArmTrace_soulC ; //APP CODE CAN SET THIS: 0:DISARMED; -1:traceF WILL BE CALLED FOR ALL SUBSEQUENT soulC NEW'D OR RETRIEVED FROM RECYCLING; N:COUNTDOWN TO THE NEW/RETRIEVED INSTANCE TO CALL traceF FOR
-        flagsT                  flagsTrace_soulC ; //FLAGS MUST INCLUDE flTRACEsOULc_ON AND MUST NOT SPECIFY flTRACEsOULc_PURGE
-        countT*                 pcWatchedByInOut ;
-        countT                  valueExpectedByInOut ;
-        countT                  cPoolDropCt ;
-        countT                  cPoolDropDt ;
-        barryC*                 pBarryUtility ;                         // NOT REFERENCED BY tin9S OR BY IPDOS SYSTEM CODE ; AVAILABLE FOR USE BY APPLICATION CODE
-        sexC*                   pSexLifoConstructing ;                  // USED BY sexC TO DETECT RECURSIVE CYCLING DURING CT
-        byteT*                  pbRecursiveParameters ;                 // PROTOCOL: (1) CODE MUST VERIFY THAT THIS IS NULL BEFORE SETTING IT.  (2) THE CODE THAT SETS THIS MUST ALSO RESET IT SO THAT OTHER CODE CAN USE IT.  USE THIS TO PASS PARAMETERS RECURSIVELY TO AVOID USING THE THREAD STACK
-        boolT                   bSuppressInOutTrace ;                   // INCREMENTED WHEN CALL trace WITHIN inOutFrameC::*inOutFrameC
-        countT                  cSpins1 ;
-        countT                  cSpins2 ;
-        countT                  cSpins3 ;
-        countT                  cSpins4 ;
-        countT                  cOsHandles ;                            // TALLY OF BASE O.S. HANDLES OPENED AND CLOSED BY THIS THREAD, ACCORDING TO THE handleC MEMBER FUNCTIONS
-        tlsHeaderS*             pTlsHeader ;                            //U:: REMOVE IN PRODUCTION ; THIS IS TO FIND A BUG
-
-/*@  */ count04T                cCpuCyclesWriteInOutTelemetry ;
-/*@  */ count04T                cTimeWriteInOutTelemetry ;
-/*@  */ count04T                cCpuCycles2Or5Lath ;
-/*@  */ count04T                cTime2Or5Lath ;
-/*@  */ measure04T              brcm04Raw ;
-/*@  */ timeS                   timeTraceWoth ;
-/*@  */ timeS                   timeTraceLath ;
-
-/*@@ */ monitorS                monitor ;          // flagsThreadMode1 IS IN HERE
-/*@@ */ count4S                 c4Tell ;
-/*@@ */ tinTallyS               tally ;
-/*@@ */ strokeModeS             strokeMode ;
-/*@@ */ zapC                    zap_pPanLifiRecurseGrabbedLevel_ ;
-
-        jotC*                   ppJot[ CsLOTSjOTrEGISTRY ] ;        /*J*/      // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
-        countT                  pcUtility[ CCuTILITY ] ;
-/*@  */ count04T                pcUtility04[ 4 ] ;
-        flagsT                  pFlagsThreadLevelMode[         1 + OFFsLOTtINnESTmAX        ] ;                                 //CS:CODEsYNC: 003004f 003002a
-        countT                  pLFstep[                     ( 1 + OFFsLOTtINsTEPmAX ) << 1 ] ;
-        countT                  pIdInNest[                     1 + OFFsLOTtINnESTmAX        ] ;
-        countT                  pEIPInNest[                    1 + OFFsLOTtINnESTmAX        ] ;
-        countT                  pIdProgressNest[               1 + OFFsLOTtINnESTmAX        ] ;
-        countT                  pPanLifiRecurseGrabbedLevel[ ( 1 + OFFgRABBEDmAX     ) * 5  ] ; // [pandle,idLineGrab,idiFileGrab,cRecurse,idGrabLevel]  (A PANDLE IS A POINTER THAT IS BEING USED AS A HANDLE)
-
-/*@@@*/ osTextT                 postTell[         COSTmAXtELL         + 1 ] ;
-/*@@@*/ osTextT                 postTellWait[     COSTmAXtELL         + 1 ] ;
-/*@@@*/ osTextT                 postTellIf[       COSTmAXtELL         + 1 ] ;
-/*@@@*/ osTextT                 postThreadName[   COSTmAXtHREADnAME   + 1 ] ;
-/*@@@*/ const byteT*            ppbGrabitRecurse[ CmAXgRABITrECURSEiNtINs ] ;
-/*@@@*/ countT                  pcGrabitOsTid[    CmAXgRABITrECURSEiNtINs ] ;
-/*@@@*/ countT                  pcGrabitRecurse[  CmAXgRABITrECURSEiNtINs ] ;
-/*@@@*/ bookMarkS               pBookMark[        CbOOKmARK               ] ;                // USED BY pageC TO REGISTER A PENDING SMART POINTER ; INCREASE THE NUMBER
-/*@@@*/ ranUniC                 ranUni ;
-/*@@@*/ tinArgS                 ta ;
-
-
         /* birth , death */
         NEWdELcLASSpROTOS
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tin9S.NEWdELcLASSppOOLoLD!||
         ~tin9S( voidT ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tin9S.dt_tin9S!||
-        tin9S( tin0S& tinBaseNormalSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tin0S* const pTinBaseDadP = 0 , const osTextT* const postThreadNameP = 0 , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
+        tin9S( tin0S& tin0NormalSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tin0S* const pTin0DadP = 0 , const osTextT* const postThreadNameP = 0 , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.tin9S.tin9S!||
 
         /* commands */
@@ -27794,7 +27867,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34012.tin9S.get_pIdProgressNest_F!||
         tin9S& rootF( voidT ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.tin9S.rootF!||
-        voidT walkF( tin0S& tinBaseRootP , tinWalkerFT tinWalkerFP , countT& cArgP ) ;
+        voidT walkF( tin0S& tin0RootP , tinWalkerFT tinWalkerFP , countT& cArgP ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.tin9S.walkF!||
         voidT deregisterIfF( tin0S& tin0P ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.tin9S.deregisterIfF!||
@@ -27814,8 +27887,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024016.tins.tlsTraceF!||
         byteT* pbF( countT idP = 1 ) ;
         //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.tin9S.pbF!||
-    private :
-        FRIENDS_tin9S
 }
 ;
 
@@ -30130,8 +30201,8 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340cf.thirdC.thirdWaitTillQuittingF!||
  voidT thirdLaunchLateThreadsF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340d0.thirdC.thirdLaunchLateThreadsF!||
- static tin9S& tinNormalVeryEarlyLateMain_IF( voidT ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3411d.thirdC.tinNormalVeryEarlyLateMain_IF!||
+ static tin9S& tin9VeryEarlyLateMain_IF( voidT ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3411d.thirdC.tin9VeryEarlyLateMain_IF!||
  static countT* third_pcDebugI_IF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34121.thirdC.third_pcDebugI_IF!||
  static flagsT& third_flagsModeProcess1I_IF( voidT ) ;
@@ -36036,7 +36107,7 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*/struct _export mainRefsS/*1*/
 {
-    tin0S&             tinBase ;
+    tin0S&             tin0 ;
     etherC&           ether ;
     etherC*&          pEtThread ;
 
@@ -40865,7 +40936,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     osTextT                         ostLathLog ;
     sharedMemInfoS                  _thirdC_pSharedMemInfo[ CsHAREDmEMiNFO ] ;
     etherC*                         pEtThreadServiceEventHandler ;
-    tin0S*                           pTinBaseDadService ;
+    tin0S*                           pTin0DadService ;
     byteT                           pb_bNapkinCt[         CBzOMBIEbATONc ] ;
     byteT                           pb_bMemorySpace[      CBzOMBIEbATONc ] ;
     byteT                           pb_bLog[              CBzOMBIEbATONc ] ;
@@ -41370,7 +41441,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     cryC                                     cry308 ;
     gloSecurityGC           /*P3*/ /*CT:70*/ gloSecurity ;
     cryC                                     cry309 ;
-    tin9S                    /*P3*/ /*CT:80*/ tinNormalVeryVeryEarlyLateMain ; // MUST BE CT AFTER ((tin9S&)tin0P).pag1->pPoolHomeTemp AND BEFORE ANY GLOBALS THAT USE IT SUCH AS A grabC OBJECT
+    tin9S                    /*P3*/ /*CT:80*/ tin9VeryVeryEarlyLateMain ; // MUST BE CT AFTER ((tin9S&)tin0P).pag1->pPoolHomeTemp AND BEFORE ANY GLOBALS THAT USE IT SUCH AS A grabC OBJECT
     heapC                                    heap ;                     // SIMPLE HEAP USED WHEN poolC CANNOT BE USED (E.G. TO AVOID NONMONOTONIC GRABBING)
     bookC                                    bkTelemetrySysEarlyLate ;
     bookC                                    bkTelemetryAppEarlyLate ;
@@ -41509,7 +41580,7 @@ base class to make a derived class of objects easily contained by a stackC objec
 {
     tin9S              /*P4*/ /*CT:12*/ tinHeart ; // USED BY tmHeartF, A RAW THREAD
     processGlobalBeginC     /*P4*/ /*CT:22*/ processGloBegin ;
-    tin9S              /*P4*/ /*CT:32*/ tinNormalVeryEarlyLateMain ;  // MUST BE CT AFTER ((tin9S&)tin0P).pag1->pPoolHomeTemp AND BEFORE ANY GLOBALS THAT USE IT SUCH AS A grabC OBJECT
+    tin9S              /*P4*/ /*CT:32*/ tin9VeryEarlyLateMain ;  // MUST BE CT AFTER ((tin9S&)tin0P).pag1->pPoolHomeTemp AND BEFORE ANY GLOBALS THAT USE IT SUCH AS A grabC OBJECT
     ranUniC                 /*P4*/ /*CT:42*/ _thugC_ru ;
     batonC                                   bMemorySpace ;
     napkinC                                  _marketC_napGoodRegistry ;
