@@ -83,13 +83,13 @@ TODO
                 (
                 if
 
-                boolT bOk3 = ((tin9S&)tin0P).brcRaw ;
+                boolT bOk3 = ((tin123S&)tin0P).brcRaw ;
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , FileTimeToLocalFileTime( &infoUtcWrite  , &infoLocalWrite2  ) )
-                boolT bOk2 = ((tin9S&)tin0P).brcRaw ;
+                boolT bOk2 = ((tin123S&)tin0P).brcRaw ;
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , FileTimeToLocalFileTime( &infoUtcAccess , &infoLocalAccess2 ) )
-                boolT bOk1 = ((tin9S&)tin0P).brcRaw ;
+                boolT bOk1 = ((tin123S&)tin0P).brcRaw ;
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , FileTimeToLocalFileTime( &infoUtcCreate , &infoLocalCreate2 ) )
 
@@ -97,7 +97,7 @@ TODO
                 FILETIME infoLocalAccess2 ;
                 FILETIME infoLocalCreate2 ;
             {
-            if( ((tin9S&)tin0P).brcRaw )
+            if( ((tin123S&)tin0P).brcRaw )
             BOSpOOP
             BOS( WHATgbo , BOSoK , GetFileTime( (HANDLE)hFile.osF( ifcIDtYPEhANDLE_FILE ) , &infoUtcCreate , &infoUtcAccess , &infoUtcWrite ) )
             FILETIME infoUtcWrite ; 
@@ -115,7 +115,7 @@ TODO
     if( !bDir )
 
     boolT bDir = postNameP[ costName - 1 ] == '\\' ;
-    countT costName = ((tin9S&)tin0P).brcRaw ;
+    countT costName = ((tin123S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , strlen( postNameP ) )
 {
 boolT myCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )

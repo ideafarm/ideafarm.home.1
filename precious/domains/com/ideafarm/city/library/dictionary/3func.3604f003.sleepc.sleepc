@@ -10,27 +10,27 @@
 }
     if( pbBitsCtP ) ; //U::
 
-    if( bOsCall ) ((tin9S*)pTin)->grabPseudo.flags |= flGRABc_PSEUDOoScALL ; //IT IS ILLEGAL, THOUGH NOT ENFORCED, TO CONSTRUCT A sleepC OBJECT ON THIS THREAD WHILE I EXIST; THIS IS BECAUSE I DO NOT SAVE AND RESTORE THE grabC FLAGS
-    (countT&)((tin9S*)pTin)->grabPseudo.idiFileCt = idiFileCtP ;
-    (countT&)((tin9S*)pTin)->grabPseudo.idLineCt  = idLineCtP  ;
+    if( bOsCall ) ((tin123S*)pTin)->grabPseudo.flags |= flGRABc_PSEUDOoScALL ; //IT IS ILLEGAL, THOUGH NOT ENFORCED, TO CONSTRUCT A sleepC OBJECT ON THIS THREAD WHILE I EXIST; THIS IS BECAUSE I DO NOT SAVE AND RESTORE THE grabC FLAGS
+    (countT&)((tin123S*)pTin)->grabPseudo.idiFileCt = idiFileCtP ;
+    (countT&)((tin123S*)pTin)->grabPseudo.idLineCt  = idLineCtP  ;
     }
-        ((tin9S*)pTin)->grabPseudo.cGrabbed ++ ;
-        if( ((tin9S*)pTin)->grabPseudo.stat.cAcquisitions != - 1 ) inc02AM( ((tin9S*)pTin)->grabPseudo.stat.cAcquisitions ) ;
-        else                         ((tin9S*)pTin)->grabPseudo.osTid = ((tin9S&)tin0P).osTid ;
+        ((tin123S*)pTin)->grabPseudo.cGrabbed ++ ;
+        if( ((tin123S*)pTin)->grabPseudo.stat.cAcquisitions != - 1 ) inc02AM( ((tin123S*)pTin)->grabPseudo.stat.cAcquisitions ) ;
+        else                         ((tin123S*)pTin)->grabPseudo.osTid = ((tin123S&)tin0P).osTid ;
         }
             { BLAMMO ; }
         {
-        if( ((tin9S*)pTin)->grabPseudo.osTid )
+        if( ((tin123S*)pTin)->grabPseudo.osTid )
         }
             { BLAMMO ; }
         {
-        if( ((tin9S*)pTin)->grabPseudo.cGrabbed == - 1 )
-        ((tin9S*)pTin)->grabPseudo.stat.cCollisionsNew = 0 ; //U:MIGHT OVERWRITE A FEW COLLISIONS THAT SHOULD BE COUNTED AS NEW (I.E. SINCE INCREMENTING idGrabberOk)
+        if( ((tin123S*)pTin)->grabPseudo.cGrabbed == - 1 )
+        ((tin123S*)pTin)->grabPseudo.stat.cCollisionsNew = 0 ; //U:MIGHT OVERWRITE A FEW COLLISIONS THAT SHOULD BE COUNTED AS NEW (I.E. SINCE INCREMENTING idGrabberOk)
         }
             { BLAMMO ; }
         {
-        if( ((tin9S*)pTin)->grabPseudo.idGrabberOk != idGrabberMe )
-        countT idGrabberMe = 1 + incv02AM( ((tin9S*)pTin)->grabPseudo.idGrabberHigh ) ;
+        if( ((tin123S*)pTin)->grabPseudo.idGrabberOk != idGrabberMe )
+        countT idGrabberMe = 1 + incv02AM( ((tin123S*)pTin)->grabPseudo.idGrabberHigh ) ;
         //CODE SYNCH: 17f0005 1700003
         //SIMULATE WHATEVER grabF DOES TO MAKE grabPseudo LOOK GRABBED
     {
@@ -46,20 +46,20 @@
             //OStEXTC( ostoBuf , bTlsEarlyLateI , 0 ) ;
             OStEXTC( ostoBuf , bTlsEarlyLateIF() , 0 ) ;
             OStEXTAK( ostoBuf , " bTlsEarlyLateI: " ) ;
-            OStEXTC( ostoBuf , ((tin9S&)tin0P).idTin , 0 ) ;
+            OStEXTC( ostoBuf , ((tin123S&)tin0P).idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
-            if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tin0P).postThreadName ) ;
+            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\nTINSL: \"" ) ;
-            OStEXTC( ostoBuf , ((tin9S*)pTin)->idTin , 0 ) ;
+            OStEXTC( ostoBuf , ((tin123S*)pTin)->idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
-            OStEXTA( ostoBuf , ((tin9S*)pTin)->postThreadName ) ;
+            OStEXTA( ostoBuf , ((tin123S*)pTin)->postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\npTin : \"" ) ;
             OStEXT( ostoBuf , 0x80 )
         {
         if( pTin != &tin0P )
         TINSL
     {
-    if( ((tin9S*)pTin)->idTinNamed != ifcIDtINnAMED_tinHeartI )
+    if( ((tin123S*)pTin)->idTinNamed != ifcIDtINnAMED_tinHeartI )
 
     }
         }
@@ -68,11 +68,11 @@
             etherC::ifcSayIF( ostor , flSAY_LOG | flSAY_APPEND ) ;
 
             OStEXTAK( ostor , "\r\n" ) ;
-            OStEXTC( ostor , ((tin9S&)tin0P).idLineMile , 0 ) ;
+            OStEXTC( ostor , ((tin123S&)tin0P).idLineMile , 0 ) ;
             OStEXTAK( ostor , "; idLineMile is " ) ;
-            //OStEXTC( ostor , ((tin9S&)tin0P).pc Utility[ 1 ] , 0 ) ;
+            //OStEXTC( ostor , ((tin123S&)tin0P).pc Utility[ 1 ] , 0 ) ;
             OStEXTAK( ostor , "\"; pcUtilityI[1] is " ) ;
-            if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostor , ((tin9S&)tin0P).postThreadName )
+            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostor , ((tin123S&)tin0P).postThreadName )
             OStEXTAK( ostor , "sleep blammo 1 (sleepC constructor) on thread \"" )
             OStEXT( ostor , 0x100 ) ;
             LOGcALLnEST( "sleep blammo 1" )
@@ -82,7 +82,7 @@
 
         SET_bStopOk
     {
-    if( !( F(((tin9S&)tin0P).flagsThreadMode4) & flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS ) )
+    if( !( F(((tin123S&)tin0P).flagsThreadMode4) & flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS ) )
     //CODEsYNC DUPLICATE CODE: 1700005 1700003
 
     blammoIfIF( tin0P ) ;
@@ -94,11 +94,11 @@
 
     _IO_
 {
-bOuter( !((tin9S&)tin0P).grabPseudo.cGrabbed )
+bOuter( !((tin123S&)tin0P).grabPseudo.cGrabbed )
 bOsCall( bOsCallP ) ,
 pTin( &tin0P ) ,
-idiFileCtSave( ((tin9S&)tin0P).grabPseudo.idiFileCt ) ,
-idLineCtSave( ((tin9S&)tin0P).grabPseudo.idLineCt ) ,
+idiFileCtSave( ((tin123S&)tin0P).grabPseudo.idiFileCt ) ,
+idLineCtSave( ((tin123S&)tin0P).grabPseudo.idLineCt ) ,
 /*1*/sleepC::sleepC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const boolT bOsCallP ) :/*1*/
 
 /**/

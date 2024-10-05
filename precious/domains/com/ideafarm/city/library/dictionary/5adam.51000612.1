@@ -62,8 +62,8 @@ DONE( tmGorillaReadF )
         }
             //CONoUTrAW5( "[idCycle,cSteps]: " , idCycle , "    " , cSteps , "1\r\n" ) ;
             countT cSteps = idStepEnd - idStepBegin ;
-            countT idStepEnd = ((tin9S&)tin0P).monitor.idStep ;
-            ((tin9S&)tin0P).pc Utility[ 0 ] -- ;
+            countT idStepEnd = ((tin123S&)tin0P).monitor.idStep ;
+            ((tin123S&)tin0P).pc Utility[ 0 ] -- ;
             // /*if( idGorillaReadP == 1 ) */{ CONoUTrAW( "2\r\n" ) ; }
 
             }
@@ -84,8 +84,8 @@ DONE( tmGorillaReadF )
                 // /*if( idGorillaReadP == 1 ) */{ CONoUTrAW( "9\r\n" ) ; }
             {
 
-            ((tin9S&)tin0P).pc Utility[ 0 ] ++ ;
-            countT idStepBegin = ((tin9S&)tin0P).monitor.idStep ;
+            ((tin123S&)tin0P).pc Utility[ 0 ] ++ ;
+            countT idStepBegin = ((tin123S&)tin0P).monitor.idStep ;
             // /*if( idGorillaReadP == 1 ) */{ CONoUTrAW( "a\r\n" ) ; }
             
             //DELlIST( datumS , pDatum ) ;
@@ -165,14 +165,14 @@ TASK( tmGorillaReadF )
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (END) ==============================\r\n" ) ;
     POPtINaRGS
     flagsT flagsRC = listC::walkIF( tin0P , hRecordP ) ;
-    ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
-    ((tin9S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 0 ] = ( (listC*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) )->idNameF() ;
-    ((tin9S&)tin0P).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
-    ((tin9S&)tin0P).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
+    ((tin123S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 1 ] = flLISTwALKcHATTER_null ;
+    ((tin123S&)tin0P).ta.pushed.u.listWalk.util.pcP[ 0 ] = ( (listC*)hRecordP.osF( ifcIDtYPEhANDLE_LISTING ) )->idNameF() ;
+    ((tin123S&)tin0P).ta.pushed.u.listWalk.walk.flagsWalkP = flLISTwALK_null ;
+    ((tin123S&)tin0P).ta.pushed.u.listWalk.walk.pListWalkCBFP = listWalkChatterCBF ;
     PUSHtINaRGS
     CONoUTrAW( "================== **** CHATTERING SELECTED RECORD (BEGIN) ==============================\r\n" ) ;
 
-    if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
+    if( tin0P.idTypeTin - ifcIDtYPEtIN_123 ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_123 ) ; }
 {
 flagsT selectWalkCBF( tin0S& tin0P , etherC& etThread , handleC& hRecordP )
 

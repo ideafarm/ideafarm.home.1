@@ -11,7 +11,7 @@
     }
                                  pdTinNormal->flagsThreadMode3  |=    F(flTHREADmODE3_DOnOTcaLLdELif)   ;               // IF ZOMBIE FLAG WAS SET THEN SET   IT
 
-        tin9S* pdTinNormal = (tin9S*)&tin0P ;
+        tin123S* pdTinNormal = (tin123S*)&tin0P ;
         TINSL
     {
     if( bZombie )
@@ -22,15 +22,15 @@
             if(  bZombie     )   pdTinNormal->flagsThreadMode3  &= ~( F(flTHREADmODE3_DOnOTcaLLdELif) ) ;               // IF ZOMBIE FLAG IS  SET THEN CLEAR IT
                  bZombie     = F(pdTinNormal->flagsThreadMode3) &       flTHREADmODE3_DOnOTcaLLdELif    ;
         {
-        if( !( F(((tin9S&)tin0P).flagsThreadMode5) & flTHREADmODE5_TINiSnOTiNpOOL ) )                           // IF tin0P IS IN POOL
+        if( !( F(((tin123S&)tin0P).flagsThreadMode5) & flTHREADmODE5_TINiSnOTiNpOOL ) )                           // IF tin0P IS IN POOL
 
-        tin9S* pdTinNormal = (tin9S*)&tin0P ;
-        ((tin9S&)tin0P).flags &= ~( F(flTINs_REGISTERED) ) ;
+        tin123S* pdTinNormal = (tin123S*)&tin0P ;
+        ((tin123S&)tin0P).flags &= ~( F(flTINs_REGISTERED) ) ;
 
         }
             }
-                __( !( F(((tin9S&)tin0P).flags) & flTINs_REGISTERED ) ) ;
-                __( !((tin9S&)tin0P).pag1->_thirdC_.pThPrime ) ;
+                __( !( F(((tin123S&)tin0P).flags) & flTINs_REGISTERED ) ) ;
+                __( !((tin123S&)tin0P).pag1->_thirdC_.pThPrime ) ;
             {
             IFbEcAREFUL
             SCOOP

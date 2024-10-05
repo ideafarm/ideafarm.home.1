@@ -11,22 +11,22 @@
     }
         phDll = 0 ;
         }
-            dec02AM( ((tin9S&)tin0P).cKidThreads ) ;
-            dec02AM( ((tin9S&)tin0P).pag1->_thirdC_.cAllKidThreads ) ;
+            dec02AM( ((tin123S&)tin0P).cKidThreads ) ;
+            dec02AM( ((tin123S&)tin0P).pag1->_thirdC_.cAllKidThreads ) ;
         {
         if( POOP )
-        //if( POOP ) dec02AM( ((tin9S&)tin0P).pag1->_thirdC_.cAllOrphanThreads ) ;
+        //if( POOP ) dec02AM( ((tin123S&)tin0P).pag1->_thirdC_.cAllOrphanThreads ) ;
 
-        if( !( ++ processGlobal2I.pcPhaseLow[ ((tin9S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+        if( !( ++ processGlobal2I.pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
         BOSpOOP
         BOS( WHATgbo , BOSoK , StartServiceCtrlDispatcher( tbl ) )
-        if( !( ++ processGlobal2I.pcPhaseLow[ ((tin9S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
-        ((tin9S&)tin0P).pag1->_etherC_.pHdll = phDll = &hDll ;
+        if( !( ++ processGlobal2I.pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+        ((tin123S&)tin0P).pag1->_etherC_.pHdll = phDll = &hDll ;
         handleC hDll( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ; //OPENED BY tmServiceMainF; CANNOT BE CLOSED (FOR UNK REASON) UNTIL AFTER StartServiceCtrlDispatcher RETURNS
 
-        inc02AM( ((tin9S&)tin0P).cKidThreads ) ;
-        inc02AM( ((tin9S&)tin0P).pag1->_thirdC_.cAllKidThreads ) ;
-        //inc02AM( ((tin9S&)tin0P).pag1->_thirdC_.cAllOrphanThreads ) ;
+        inc02AM( ((tin123S&)tin0P).cKidThreads ) ;
+        inc02AM( ((tin123S&)tin0P).pag1->_thirdC_.cAllKidThreads ) ;
+        //inc02AM( ((tin123S&)tin0P).pag1->_thirdC_.cAllOrphanThreads ) ;
 
         processGlobal2I.pEtThreadServiceEventHandler = pEtherContainsMe ;
         processGlobal2I.pTin0DadService = &tin0P ;
@@ -34,7 +34,7 @@
         tbl[ 1 ].lpServiceProc = 0 ;
         tbl[ 1 ].lpServiceName = 0 ;
         tbl[ 0 ].lpServiceProc = osServiceMainF ;
-        tbl[ 0 ].lpServiceName = (osTextT*)((tin9S&)tin0P).pag1->postServiceName ;
+        tbl[ 0 ].lpServiceName = (osTextT*)((tin123S&)tin0P).pag1->postServiceName ;
         SERVICE_TABLE_ENTRY tbl[ 2 ] ;
     {
     if( !POOP )
@@ -47,24 +47,24 @@
     BOSpOOP
     BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
     BOSpOOP
-    BOS( WHATgbo , BOSoK , QueryServiceStatus( hsv , (SERVICE_STATUS*)((tin9S&)tin0P).pag1->pcServiceStatus ) )
+    BOS( WHATgbo , BOSoK , QueryServiceStatus( hsv , (SERVICE_STATUS*)((tin123S&)tin0P).pag1->pcServiceStatus ) )
     BOSpOOP
-    SC_HANDLE hsv = (SC_HANDLE)((tin9S&)tin0P).brcRaw ;
+    SC_HANDLE hsv = (SC_HANDLE)((tin123S&)tin0P).brcRaw ;
     INCoShANDLES
     BOSpOOP
-    BOS( WHATgbo , BOSoK , OpenService( hsm , ((tin9S&)tin0P).pag1->postServiceName , SERVICE_ALL_ACCESS ) )
+    BOS( WHATgbo , BOSoK , OpenService( hsm , ((tin123S&)tin0P).pag1->postServiceName , SERVICE_ALL_ACCESS ) )
     INCoShANDLES
-    SC_HANDLE hsm = (SC_HANDLE)((tin9S&)tin0P).brcRaw ;
+    SC_HANDLE hsm = (SC_HANDLE)((tin123S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
-    ((tin9S&)tin0P).pag1->postServiceName = postNameP ;
+    ((tin123S&)tin0P).pag1->postServiceName = postNameP ;
 
     _IO_
 
     }
         if( POOP ) return ;
         __( !!( F(flagsMode) & flTHIRDmODE_TINoWNER ) ) ; // THIS AND THE PRECEDING LINE ENSURES THAT pEtherContainsMe DOES NOT POINT TO etPrime (HOPEFULLY IT POINTS TO etThread) SO THAT THAT IDENTIFIER IS NOT MISLEADING
-        __( ((tin9S&)tin0P).monitor.idThread - 1 ) ;
+        __( ((tin123S&)tin0P).monitor.idThread - 1 ) ;
         __Z( pEtherContainsMe ) ;
         if( POOP ) return ;
         __( cIn > 1 ) ;

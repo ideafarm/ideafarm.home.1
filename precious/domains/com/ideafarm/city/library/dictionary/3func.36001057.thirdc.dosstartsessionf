@@ -14,19 +14,19 @@
             }
                 }
                     hThread.resetF() ;
-                    ((tin9S&)tin0P).pag4->_thirdC_grab_lOsTid.ungrabF( tin0P ) ;
-                    *((tin9S&)tin0P).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
-                    ((tin9S&)tin0P).pag1->_thirdC_.lOsTid = tidP ;
-                    ((tin9S&)tin0P).pag4->_thirdC_grab_lOsTid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                    ((tin123S&)tin0P).pag4->_thirdC_grab_lOsTid.ungrabF( tin0P ) ;
+                    *((tin123S&)tin0P).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
+                    ((tin123S&)tin0P).pag1->_thirdC_.lOsTid = tidP ;
+                    ((tin123S&)tin0P).pag4->_thirdC_grab_lOsTid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( tidP && tidP != - 1 && F(flagsP) & flSESSION_REGISTERtHREADhANDLE )
     
                 }
                     hProcess.resetF() ;
-                    ((tin9S&)tin0P).pag4->_thirdC_grab_lOsPid.ungrabF( tin0P ) ;
-                    *((tin9S&)tin0P).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
-                    ((tin9S&)tin0P).pag1->_thirdC_.lOsPid = pidP ;
-                    ((tin9S&)tin0P).pag4->_thirdC_grab_lOsPid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                    ((tin123S&)tin0P).pag4->_thirdC_grab_lOsPid.ungrabF( tin0P ) ;
+                    *((tin123S&)tin0P).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
+                    ((tin123S&)tin0P).pag1->_thirdC_.lOsPid = pidP ;
+                    ((tin123S&)tin0P).pag4->_thirdC_grab_lOsPid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( pidP && pidP != - 1 && F(flagsP) & flSESSION_REGISTERpROCESShANDLE )
 
@@ -64,7 +64,7 @@
                 ZE( osTextT* , postp ) ;
                 //THIS CODE IS DUPLICATED IN 102006a AND 102005d
             {
-            if( ((tin9S&)tin0P).bosFail )
+            if( ((tin123S&)tin0P).bosFail )
 
             }
                 }
@@ -98,14 +98,14 @@
                         costa += TUCK ; // FOR !idNumaNode 12345678
 
                         }
-                            costa = 2 * ((tin9S&)tin0P).brcRaw + 2 ;
+                            costa = 2 * ((tin123S&)tin0P).brcRaw + 2 ;
                             BOSdOnOTtEST( WHATgbo , strlen( postExeP ) )
                         {
                         else
                         }
-                            costa = 2 * c1 + 2 + ((tin9S&)tin0P).brcRaw + 1 ;
+                            costa = 2 * c1 + 2 + ((tin123S&)tin0P).brcRaw + 1 ;
                             BOSdOnOTtEST( WHATgbo , strlen( postArgsP ) )
-                            countT c1 = ((tin9S&)tin0P).brcRaw ;
+                            countT c1 = ((tin123S&)tin0P).brcRaw ;
                             BOSdOnOTtEST( WHATgbo , strlen( postExeP ) )
                         {
                         if( postArgsP )
@@ -173,7 +173,7 @@
 
             if( !POOP ) pidP = processId ;
             BOSpOOP
-            if( ((tin9S&)tin0P).bosFail && ((tin9S&)tin0P).brcLath == ERROR_SMG_START_IO_BACKGROUND ) ((tin9S&)tin0P).bosFail = 0 ;
+            if( ((tin123S&)tin0P).bosFail && ((tin123S&)tin0P).brcLath == ERROR_SMG_START_IO_BACKGROUND ) ((tin123S&)tin0P).bosFail = 0 ;
             BOSI( WHATsfr , BOSfAIL , DosStartSession( &info , &sessionId , &processId ) )
 
             PID   processId = 0 ;
@@ -217,8 +217,8 @@
     }
         if( POOP ) return ;
         FV( flSESSION , flagsP ) ;
-        __( !((tin9S&)tin0P).pag1->_thirdC_.pSwThreadHandle ) ;
-        __( !((tin9S&)tin0P).pag1->_thirdC_.pSwProcessHandle ) ;
+        __( !((tin123S&)tin0P).pag1->_thirdC_.pSwThreadHandle ) ;
+        __( !((tin123S&)tin0P).pag1->_thirdC_.pSwProcessHandle ) ;
         __Z( postExeP ) ;
         __NZ( pidP ) ;
         __NZ( tidP ) ;

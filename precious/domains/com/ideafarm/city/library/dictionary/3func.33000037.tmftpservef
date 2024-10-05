@@ -16,8 +16,8 @@ DONE( tmFtpServeF )
 
         cDone ++ ;
         }
-            //((tin9S&)tin0P).pEtScratch->delF( tin0P , psttPeer ) ;
-            //((tin9S&)tin0P).pEtScratch->ifcSayIF( tPrefix+T("client ")+T(nicNamePeer)+T(" \"")+T(psttPeer)+T("\"-") , flSAY_APPEND | flSAY_LOG ) ;
+            //((tin123S&)tin0P).pEtScratch->delF( tin0P , psttPeer ) ;
+            //((tin123S&)tin0P).pEtScratch->ifcSayIF( tPrefix+T("client ")+T(nicNamePeer)+T(" \"")+T(psttPeer)+T("\"-") , flSAY_APPEND | flSAY_LOG ) ;
         
             //U:DEL( psoPassiveData ) ;
             DEL( pso ) ;
@@ -25,7 +25,7 @@ DONE( tmFtpServeF )
             //    POOPR
             //    TELL( "cleaning up" )
             //    }
-            //        ++ s ; ((tin9S&)tin0P).pEtScratch->osSleepF( tin0P , TUCK * 0x80 ) ; //AS COURTESY
+            //        ++ s ; ((tin123S&)tin0P).pEtScratch->osSleepF( tin0P , TUCK * 0x80 ) ; //AS COURTESY
             //        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             //    {
             //    //pso->readF( tin0P , &bIn , 1 ) ;
@@ -51,7 +51,7 @@ DONE( tmFtpServeF )
                                     break ;
                                     idArm = 0 ;
                                     pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                     TN( tReply , "600 error\r\n" ) ;
                                     TELL( "writing nack for \"type\"" )
                                 {
@@ -60,7 +60,7 @@ DONE( tmFtpServeF )
                                     break ;
                                     idArm = 0 ;
                                     pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                     TN( tReply , "200 ok\r\n" ) ;
                                     TELL( "writing ack for \"type i\"" )
                                 {
@@ -68,7 +68,7 @@ DONE( tmFtpServeF )
                                 }
                                     break ;
                                     idArm = 0 ;
-                                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                     pso->writeF( tin0P , (osTextT*)tReply ) ;
                                     TN( tReply , "600 error\r\n" ) ;
                                     TELL( "writing nack for \"pass\"" )
@@ -77,7 +77,7 @@ DONE( tmFtpServeF )
                                 }
                                     break ;
                                     idArm = 0 ;
-                                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                     pso->writeF( tin0P , (osTextT*)tReply ) ;
                                     TN( tReply , "230 ok\r\n" ) ;
                                     TELL( "writing ack for \"pass\"" )
@@ -86,7 +86,7 @@ DONE( tmFtpServeF )
                                 }
                                     break ;
                                     idArm = 0 ;
-                                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                     pso->writeF( tin0P , (osTextT*)tReply ) ;
                                     TN( tReply , "600 error\r\n" ) ;
                                     TELL( "writing nack for \"user\"" )
@@ -95,7 +95,7 @@ DONE( tmFtpServeF )
                                 }
                                     break ;
                                     idArm = 0 ;
-                                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                     pso->writeF( tin0P , (osTextT*)tReply ) ;
                                     TN( tReply , "331 ok\r\n" ) ;
                                     TELL( "writing ack for \"user\"" )
@@ -110,7 +110,7 @@ DONE( tmFtpServeF )
                                     }
                                         }
                                             pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                            ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                            ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                             tReply = T("226 ok\r\n") ;
                                             }
                                                 sData.writeF( tin0P , pbi , cbi ) ;
@@ -128,11 +128,11 @@ DONE( tmFtpServeF )
                                                 while( cbi < cbia )
                                                 POOPR //REDUNDANT; JUST TO MAKE SURE
 
-                                                ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                                ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                             
                                                 sData.connectF( tin0P , portClient , nicNameClient , 1 , TOCK * 4 ) ;
-                                                ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("connecting to port ")+TF2(portClient,flFORMAT_NObIGITvALUES)+T(" of nn ")+T(nicNameClient)+T("\r\n") ) ;
-                                                socketC sData( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                                                ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("connecting to port ")+TF2(portClient,flFORMAT_NObIGITvALUES)+T(" of nn ")+T(nicNameClient)+T("\r\n") ) ;
+                                                socketC sData( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                                             {
                                             TN( tReply , "150 ok\r\n" ) ;
                                         {
@@ -158,7 +158,7 @@ DONE( tmFtpServeF )
                                     ZE( countT , cbi ) ;
                                     ZE( byteT* , pbi ) ;
 
-                                    cleanFileNameF( tin0P , *((tin9S&)tin0P).pEtScratch , tLastFile ) ;
+                                    cleanFileNameF( tin0P , *((tin123S&)tin0P).pEtScratch , tLastFile ) ;
                                     tLastFile = T(psttc1) ;
                                     TELL( "preparing a reply to \"stor\"" )
                                     idArm = 0 ;
@@ -169,7 +169,7 @@ DONE( tmFtpServeF )
                                 }
                                     break ;
                                     }
-                                        ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                        ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                         pso->writeF( tin0P , (osTextT*)tReply ) ;
                                         TN( tReply , "600 error\r\n" ) ;
                                         TELL( "writing nack for \"retr\"" )
@@ -179,36 +179,36 @@ DONE( tmFtpServeF )
                                         bClientQuit = 1 ; //MS IE DOESN'T EVER SEND A QUIT (FUCKIN SHIT SOFTWARE)
                                         }
                                             //}
-                                            //    *((tin9S&)tin0P).pEtScratch = 0 ;
+                                            //    *((tin123S&)tin0P).pEtScratch = 0 ;
                                             //    sData.readF( tin0P , &bIn , 1 ) ;
                                             //    ZE( byteT , bIn ) ;
                                             //{
-                                            //if( !etThread && !*((tin9S&)tin0P).pEtScratch )
+                                            //if( !etThread && !*((tin123S&)tin0P).pEtScratch )
                                             //IE DOESN'T EVER SEND ANYTHING AND DOES NOT DISCONNECT EITHER
                         
                                             pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                            ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                            ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                             tReply = T("226 ok\r\n") ;
                                             sData.writeF( tin0P , pbi , cbi ) ;
                                             pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                            ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                            ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                             TN( tReply , "150 ok\r\n" ) ;
                         
                                             sData.connectF( tin0P , portClient , nicNameClient , 1 , TOCK * 4 ) ;
-                                            ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("connecting to port ")+TF2(portClient,flFORMAT_NObIGITvALUES)+T(" of nn ")+T(nicNameClient)+T("\r\n") ) ;
-                                            socketC sData( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                                            ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("connecting to port ")+TF2(portClient,flFORMAT_NObIGITvALUES)+T(" of nn ")+T(nicNameClient)+T("\r\n") ) ;
+                                            socketC sData( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                                         {
                                         else
                                         }
                                             pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                            ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                            ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                             TN( tReply , "226 ok\r\n" ) ;
 
                                             DEL( psoPassiveData ) ;
                                             psoPassiveData->writeF( tin0P , pbi , cbi ) ;
 
                                             //pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                            //((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                            //((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                             //TN( tReply , "150 ok\r\n" ) ;
                                             //OPERA BROWSER DOES NOT EXPECT THIS
                                         {
@@ -218,10 +218,10 @@ DONE( tmFtpServeF )
                                     if( pbi )
 
                                     if( pbi ) { CHECKqUOTA( cbi ) ; if( bRefuse ) pbi = 0 ; }
-                                    pbcbF( tin0P , *((tin9S&)tin0P).pEtScratch , pbi , cbi , tLastFile , psttLever , swImage ) ;
+                                    pbcbF( tin0P , *((tin123S&)tin0P).pEtScratch , pbi , cbi , tLastFile , psttLever , swImage ) ;
                                     ZE( countT , cbi ) ;
                                     ZE( byteT* , pbi ) ;
-                                    cleanFileNameF( tin0P , *((tin9S&)tin0P).pEtScratch , tLastFile ) ;
+                                    cleanFileNameF( tin0P , *((tin123S&)tin0P).pEtScratch , tLastFile ) ;
                                     tLastFile = T(psttc1) ;
                                     TELL( "preparing a reply to \"retr\"" )
                                     idArm = 0 ;
@@ -231,14 +231,14 @@ DONE( tmFtpServeF )
                                     break ;
 
                                     }
-                                        ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                        ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                         pso->writeF( tin0P , (osTextT*)tReply ) ;
                                         TN( tReply , "600 error\r\n" ) ;
                                         TELL( "writing nack for \"size\"" )
                                     {
                                     else
                                     }
-                                        ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                        ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                         TN( tReply , "" ) ; tReply = tr ;
                     
                                         pso->writeF( tin0P , (osTextT*)tr , tr.csF( tin0P ) ) ;
@@ -248,10 +248,10 @@ DONE( tmFtpServeF )
                                     if( pbi )
 
                                     if( POOP ) { POOPR ; pbi = 0 ; }
-                                    pbcbF( tin0P , *((tin9S&)tin0P).pEtScratch , pbi , cbi , tLastFile , psttLever , swImage ) ;
+                                    pbcbF( tin0P , *((tin123S&)tin0P).pEtScratch , pbi , cbi , tLastFile , psttLever , swImage ) ;
                                     ZE( countT , cbi ) ;
                                     ZE( byteT* , pbi ) ;
-                                    cleanFileNameF( tin0P , *((tin9S&)tin0P).pEtScratch , tLastFile ) ;
+                                    cleanFileNameF( tin0P , *((tin123S&)tin0P).pEtScratch , tLastFile ) ;
                                     tLastFile = T(psttc1) ;
                                     TELL( "preparing a reply to \"size\"" )
                                     idArm = 0 ;
@@ -260,11 +260,11 @@ DONE( tmFtpServeF )
                                 }
                                     break ;
                                     pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                     TN( tReply , "200 ok\r\n" ) ;
                                     TELL( "writing reply to \"port\"" )
                         
-                                    ((tin9S&)tin0P).pEtScratch->delF( tin0P , pstt1w ) ;
+                                    ((tin123S&)tin0P).pEtScratch->delF( tin0P , pstt1w ) ;
                                     }
                                         else { portClient <<= 8 ; portClient |= vv ; }
                                         }
@@ -274,11 +274,11 @@ DONE( tmFtpServeF )
                                         {
                                         if( ++ idw < 5 ) //U: DOES NOT SUPPORT IPV6 (128 BIT nicName VALUES)
                         
-                                        countT vv = ((tin9S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttc1 , 0xa , 1 ) ;
+                                        countT vv = ((tin123S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttc1 , 0xa , 1 ) ;
                                     {
                                     FORsTRINGSiN1( pstt1w )
                                     ZE( countT , idw ) ;
-                                    ((tin9S&)tin0P).pEtScratch->strWordsOldF( tin0P , pstt1w , psttc1 , sttq , T(",") ) ; ___( pstt1w ) ;
+                                    ((tin123S&)tin0P).pEtScratch->strWordsOldF( tin0P , pstt1w , psttc1 , sttq , T(",") ) ; ___( pstt1w ) ;
                                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                                     ZE( strokeS* , pstt1w ) ;
                         
@@ -289,7 +289,7 @@ DONE( tmFtpServeF )
                                 }
                                     break ;
                                     }
-                                        ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                        ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                         ( idArm == ifcIDaRM_STAT ? pso : psoPassiveData )->writeF( tin0P , (osTextT*)tReply ) ;
                                         TN( tReply , "600 error\r\n" ) ;
                                         TELL( "writing nack for \"stat\" or \"list\"" )
@@ -297,17 +297,17 @@ DONE( tmFtpServeF )
                                     else
                                     }
                                         pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                        ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                        ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                         TELL( "writing reply to \"stat\" or \"list\"" )
                                         textC tReply = T("213-status\r\n- 111 222 333 ")+TF4(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FOREIGN,0,0xa)+T(" 555 666 777 888 999\r\n213 status\r\n") ;
                                     {
                                     if( pbi )
 
                                     if( POOP ) { POOPR ; pbi = 0 ; }
-                                    pbcbF( tin0P , *((tin9S&)tin0P).pEtScratch , pbi , cbi , tLastFile , psttLever , swImage ) ;
+                                    pbcbF( tin0P , *((tin123S&)tin0P).pEtScratch , pbi , cbi , tLastFile , psttLever , swImage ) ;
                                     ZE( countT , cbi ) ;
                                     ZE( byteT* , pbi ) ;
-                                    cleanFileNameF( tin0P , *((tin9S&)tin0P).pEtScratch , tLastFile ) ;
+                                    cleanFileNameF( tin0P , *((tin123S&)tin0P).pEtScratch , tLastFile ) ;
                                     tLastFile = T(psttc1) ;
                                     ZE( strokeS* , psttn ) ;
                                     TELL( "preparing to reply to \"stat\" or \"list\"" )
@@ -334,7 +334,7 @@ DONE( tmFtpServeF )
                                     {
                                     else
                                     if( !POOP ) idArm = ifcIDaRM_PASSCODEaCK ;
-                                    ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tDirNew+tShort , tDirOld+tShort ) ;
+                                    ((tin123S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tDirNew+tShort , tDirOld+tShort ) ;
 
                                     TN( tShort  , "soul.ticket." ) ; tShort += T(psttc1)+T(".soul") ;
                                     TN( tDirNew , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/tickets.used/" ) ;
@@ -366,16 +366,16 @@ DONE( tmFtpServeF )
                                 
                                     }
                                         pso->writeF( tin0P , (osTextT*)to ) ;
-                                        ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+to ) ;
+                                        ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+to ) ;
                                         pso->writeF( tin0P , (osTextT*)to ) ;
                                 
-                                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttnp ) ;
+                                        ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttnp ) ;
                                         TN( to , "" ) ; to = T("227 entering passive mode (")+T(psttnp)+T(")\r\n") ;
                                         sockA.listenF( tin0P ) ;
-                                        ((tin9S&)tin0P).pEtScratch->strFromIdPortNicNameF( tin0P , psttnp , sockA.bindF( tin0P , *((tin9S&)tin0P).pEtScratch ) ) ; ___( psttnp ) ;
+                                        ((tin123S&)tin0P).pEtScratch->strFromIdPortNicNameF( tin0P , psttnp , sockA.bindF( tin0P , *((tin123S&)tin0P).pEtScratch ) ) ; ___( psttnp ) ;
                                         ZE( strokeS* , psttnp ) ;
                                     {
-                                    socketC sockA( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                                    socketC sockA( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                                     TELL( "writing a reply to \"pasv\"" )
                                     idArm = 0 ;
                                 {
@@ -384,7 +384,7 @@ DONE( tmFtpServeF )
                                     break ;
                                     idArm = 0 ;
                                     pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                     TN( tReply , "257 \"/\" is current directory.\r\n" ) ;
                                     TELL( "writing a reply to \"pwd\"" )
                                 {
@@ -394,7 +394,7 @@ DONE( tmFtpServeF )
                                     idArm = 0 ;
                                     bClientQuit = 1 ;
                                     pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                     TN( tReply , "221 ok\r\n" ) ;
                                     TELL( "writing ack for \"quit\"" )
                                 {
@@ -404,7 +404,7 @@ DONE( tmFtpServeF )
 
                             }
                                 pso->writeF( tin0P , (osTextT*)tReply ) ;
-                                ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
+                                ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("REPLY: ")+tReply ) ;
                                 TN( tReply , "502 command not implemented\r\n" ) ;
                                 TELL( "writing a reply to a command that is not implemented" )
                             {
@@ -433,19 +433,19 @@ DONE( tmFtpServeF )
                 ZE( countT , idArm ) ;
                 ZE( countT , idWord ) ;
 
-                countT cWords = ((tin9S&)tin0P).pEtScratch->strWordsOldF( tin0P , pstt1words , psttl , sttq ) ; ___( pstt1words ) ;
+                countT cWords = ((tin123S&)tin0P).pEtScratch->strWordsOldF( tin0P , pstt1words , psttl , sttq ) ; ___( pstt1words ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , pstt1words ) ;
         
                 }
-                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T(" replacing goofy (and illegal) REST command with: ")+T(psttl)+T("\r\n") ) ;
-                    ((tin9S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttl , T("retr ")+tLastFile ) ; ___( psttl ) ;
-                    ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttl ) ;
+                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T(" replacing goofy (and illegal) REST command with: ")+T(psttl)+T("\r\n") ) ;
+                    ((tin123S&)tin0P).pEtScratch->strMakeF( tin0P , LF , psttl , T("retr ")+tLastFile ) ; ___( psttl ) ;
+                    ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttl ) ;
                 {
-                if( 1 == ((tin9S&)tin0P).pEtScratch->strIdF( tin0P , psttl , tRest ) && tLastFile.csF( tin0P ) )
+                if( 1 == ((tin123S&)tin0P).pEtScratch->strIdF( tin0P , psttl , tRest ) && tLastFile.csF( tin0P ) )
                 //REPLACE GOOFY ILLEGAL USE OF R ESTART COMMAND (BY WIN98 CLIENT)
         
-                ((tin9S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttl ) ;
+                ((tin123S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttl ) ;
         
                 }
                     break ;
@@ -455,8 +455,8 @@ DONE( tmFtpServeF )
                 {
                 if( POOP || !psttl )
                 TELL( "setting up to process wo line of a strokeS string" )
-                //((tin9S&)tin0P).pEtScratch->ifcSayIF( tPrefix+T("\"")+T(psttl)+T("\"") , flSAY_APPEND | flSAY_LOG ) ; //U:
-                ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T(" ")+T(psttl)+T("\r\n") ) ;
+                //((tin123S&)tin0P).pEtScratch->ifcSayIF( tPrefix+T("\"")+T(psttl)+T("\"") , flSAY_APPEND | flSAY_LOG ) ; //U:
+                ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T(" ")+T(psttl)+T("\r\n") ) ;
                 pso->readWoLineF( tin0P , psttl , 0x100 ) ; ___( psttl ) ; // MICROSOFT'S PIECE OF SHIT Internet Explorer DOES THIS; IT DOES NOT SEND "QUIT"
                 TELL( "reading wo line of a strokeS string" )
             {
@@ -469,8 +469,8 @@ DONE( tmFtpServeF )
             ZE( countT , portClient ) ;
             nicNameC nicNameClient ;
         
-            //((tin9S&)tin0P).pEtScratch->ifcSayIF( tPrefix+T("client ")+T(nicNamePeer)+T(" \"")+T(psttPeer)+T("\"+") , flSAY_APPEND | flSAY_LOG ) ;
-            //((tin9S&)tin0P).pEtScratch->strokeF( tin0P , T("client \"")+T(psttPeer)+T("\"+\r\n") ) ;
+            //((tin123S&)tin0P).pEtScratch->ifcSayIF( tPrefix+T("client ")+T(nicNamePeer)+T(" \"")+T(psttPeer)+T("\"+") , flSAY_APPEND | flSAY_LOG ) ;
+            //((tin123S&)tin0P).pEtScratch->strokeF( tin0P , T("client \"")+T(psttPeer)+T("\"+\r\n") ) ;
         
             pso->writeF( tin0P , (osTextT*)T("220 ok\r\n") ) ;
             TELL( "writing welcome ack" )
@@ -486,13 +486,13 @@ DONE( tmFtpServeF )
         ZE( boolT , bRefuse ) ;
     
         //U::20200728@1950: SHOULD NOT BE ABLE TO GO IMPOTENT
-        //U::CONJ: THIS CAN FAIL, CAUSING IMPOTENCE: ((tin9S&)tin0P).pEtScratch->sockPsttHostF( tin0P , psttPeer , nicNamePeer ) ; ___( psttPeer ) ;
+        //U::CONJ: THIS CAN FAIL, CAUSING IMPOTENCE: ((tin123S&)tin0P).pEtScratch->sockPsttHostF( tin0P , psttPeer , nicNamePeer ) ; ___( psttPeer ) ;
         //ZE( strokeS* , psttPeer ) ;
         //{ ZE( countT , idp ) ; pso->peerNameF( tin0P , idp , nicNamePeer ) ; } //IMPOTENCE DURING TERMINATION
         //nicNameC nicNamePeer ;
     
         TN( tPrefix , "ftp." ) ; tPrefix += TF2(idClient,flFORMAT_NObIGITvALUES)+T("| ") ;
-        pso->etherF( tin0P , *((tin9S&)tin0P).pEtScratch ) ;
+        pso->etherF( tin0P , *((tin123S&)tin0P).pEtScratch ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -502,7 +502,7 @@ DONE( tmFtpServeF )
             batQuotaP.ungrabF( tin0P ) ;
             if( POOP ) POOPR
             THREADmODE2rESTORE
-            ((tin9S&)tin0P).pEtScratch->boxPutF( tin0P , tFileQuota , (byteT*)&cbForDay , sizeof cbForDay , 1 ) ;
+            ((tin123S&)tin0P).pEtScratch->boxPutF( tin0P , tFileQuota , (byteT*)&cbForDay , sizeof cbForDay , 1 ) ;
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             countT cbForDay = TICK * 0x16 ;
             batQuotaP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
@@ -541,12 +541,12 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c7 )
             }                                                                                                   \
                 else       bRefuse = 0 ;                                                                        \
                 if( POOP ) POOPR                                                                                \
-                ((tin9S&)tin0P).pEtScratch->boxPutF( tin0P , tFileQuota , pbi , cbi , 1 ) ; ___( pbi ) ;                    \
+                ((tin123S&)tin0P).pEtScratch->boxPutF( tin0P , tFileQuota , pbi , cbi , 1 ) ; ___( pbi ) ;                    \
                 *(countT*)pbi -= (cbWantP) ;                                                                    \
             {                                                                                                   \
             else if( cbi == sizeof( countT ) && *(countT*)pbi >= (cbWantP) )                                    \
             if( POOP ) POOPR                                                                                    \
-            ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbi , cbi , tFileQuota , 1 ) ; ___( pbi ) ;                  \
+            ((tin123S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbi , cbi , tFileQuota , 1 ) ; ___( pbi ) ;                  \
             THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )                                               \
             ZE( countT , cbi ) ;                                                                              \
             ZE( byteT* , pbi ) ;                                                                              \
@@ -556,7 +556,7 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c7 )
                                                                                                                 \
 #define CHECKqUOTA(cbWantP)                                                                                     \
 
-#define SETiDaRM(postOldCmdP,idArmP) if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttc1 , T(postOldCmdP) ) ) idArm = idArmP ;
+#define SETiDaRM(postOldCmdP,idArmP) if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttc1 , T(postOldCmdP) ) ) idArm = idArmP ;
 
 #define ifcIDaRM_TYPEnACK        0x12
 #define ifcIDaRM_TYPEaCKi        0x11

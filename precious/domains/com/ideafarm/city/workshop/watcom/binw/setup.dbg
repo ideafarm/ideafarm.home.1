@@ -36,7 +36,7 @@ display stack /close 8000,4995,2000,4995
 display thread /close 2460,2187,1700,4671
 display variable /close 245,6732,1665,1053
 display locals /open 5035,2412,4420,6471
-display calls /open 6820,5562,3125,4437
+display calls /open 6830,5562,3125,4437
 display modules /open 8405,0,1585,9918
 display source /open 10,0,7105,9999
 display watch /open 7075,0,2925,9999
@@ -104,6 +104,10 @@ set types {
    field pbThreadStackEnd { pointer }
   }
   struct tinNormalS { 
+   field pbThreadStackEnd { pointer }
+   field pbThreadStackLowest { pointer }
+  }
+  struct tin123S { 
    field pbThreadStackEnd { pointer }
    field pbThreadStackLowest { pointer }
   }

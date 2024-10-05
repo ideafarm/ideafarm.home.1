@@ -51,7 +51,7 @@
 pTin( &tin0P ) //FOR MY DESTRUCTOR
 pbData( 0 ) ,
 ebp( ebpP ) ,
-bUsePool(    !pbZombieP && ((tin9S&)tin0P).pPoolUse ) ,
+bUsePool(    !pbZombieP && ((tin123S&)tin0P).pPoolUse ) ,
 bUseZombie( !!pbZombieP ) ,
 /*1*/tellC::tellC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT idTypeP , const byteT* const pbP , const countT cbP , byteT* const pbZombieP , const countT cbZombieP , const boolT bSynchP , const countT ebpP ) :/*1*/
 
@@ -63,7 +63,7 @@ bUseZombie( !!pbZombieP ) ,
   if pbZombieP then must be >= sizeof( tellS ) + cbP
   if !pbZombieP then can be 0
  cbZombieP
-  if 0 then *((tin9S&)tin0P).pPoolUse or processGlobal4I.heap will be used
+  if 0 then *((tin123S&)tin0P).pPoolUse or processGlobal4I.heap will be used
   for speed, specify bytes on the thread stack if cbP is known at compile time
   can be 0
  pbZombieP

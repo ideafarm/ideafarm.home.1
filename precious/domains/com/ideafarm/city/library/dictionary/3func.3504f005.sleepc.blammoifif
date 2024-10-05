@@ -21,11 +21,11 @@
             LOGrAW( ostor ) ;
             etherC::ifcSayIF( ostor , flSAY_LOG | flSAY_APPEND ) ;
             OStEXTAK( ostor , "\r\n" ) ;
-            OStEXTC( ostor , ((tin9S&)tin0P).idLineMile , 0 ) ;
+            OStEXTC( ostor , ((tin123S&)tin0P).idLineMile , 0 ) ;
             OStEXTAK( ostor , "; idLineMile is " ) ;
-            //OStEXTC( ostor , ((tin9S&)tin0P).pc Utility[ 1 ] , 0 ) ;
+            //OStEXTC( ostor , ((tin123S&)tin0P).pc Utility[ 1 ] , 0 ) ;
             OStEXTAK( ostor , "\"; pc" "UtilityI[1] is " ) ;
-            if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostor , ((tin9S&)tin0P).postThreadName )
+            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostor , ((tin123S&)tin0P).postThreadName )
             OStEXTAK( ostor , "sleep blammo 2 (flTHREADmODE2_ALLOWsTOPwHILEgRABBING is not set) on thread \"" )
             OStEXT( ostor , 0x100 ) ;
             LOGcALLnEST( "sleep blammo 2" )
@@ -34,12 +34,12 @@
         if( !_bStopOk )
         SET_bStopOk
 
-        if( ((tin9S&)tin0P).grabPseudo.osTid && ((tin9S&)tin0P).grabPseudo.osTid != ((tin9S&)tin0P).osTid ) { BLAMMO ; }
-        //if( !((tin9S&)tin0P).grabPseudo.cGrabbed            ) { BLAMMO ; }
+        if( ((tin123S&)tin0P).grabPseudo.osTid && ((tin123S&)tin0P).grabPseudo.osTid != ((tin123S&)tin0P).osTid ) { BLAMMO ; }
+        //if( !((tin123S&)tin0P).grabPseudo.cGrabbed            ) { BLAMMO ; }
         //NEXT LINE COMMENTED OUT SO I CAN BE CALLED BY sleepC::sleepC TO ENSURE THAT CONSTRUCTING CODE MAY, AT CT TIME, SLEEP
         _IO_
     {
-    if( !( F(((tin9S&)tin0P).flagsThreadMode4) & flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS ) )
+    if( !( F(((tin123S&)tin0P).flagsThreadMode4) & flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS ) )
     //CODEsYNC DUPLICATE CODE: 1700005 1700003
 
     _IO_

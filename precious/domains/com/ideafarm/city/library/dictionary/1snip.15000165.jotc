@@ -11,10 +11,10 @@
 }
     }
         return jot.readF( tin0P , idJotP ) ;
-        jotC& jot = *((tin9S&)tin0P).ppJot[ ( idJotP & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] ;
+        jotC& jot = *((tin123S&)tin0P).ppJot[ ( idJotP & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] ;
 
         if( !ISvALIDjpOINTER( idJotP )          ) { BLAMMOiD( 0x77777777                          ) ; }
-        if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
+        if( tin0P.idTypeTin - ifcIDtYPEtIN_123 ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_123 ) ; }
     {
     inline static pageC readIF( tin0S& tin0P , countT idJotP )
 
@@ -26,11 +26,11 @@
                 break ;
                 ids = offs + 1 ;
             {
-            if( ((tin9S&)tin0P).ppJot[ offs ] == this )
+            if( ((tin123S&)tin0P).ppJot[ offs ] == this )
         {
-        for( countT offs = 0 ; offs < sizeof ((tin9S&)tin0P).ppJot / sizeof ((tin9S&)tin0P).ppJot[ 0 ] ; offs ++ )
+        for( countT offs = 0 ; offs < sizeof ((tin123S&)tin0P).ppJot / sizeof ((tin123S&)tin0P).ppJot[ 0 ] ; offs ++ )
         ZE( countT , ids ) ;
-        if( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_FULL ) ; }
+        if( tin0P.idTypeTin - ifcIDtYPEtIN_123 ) { BLAMMOiD( tin0P.idTypeTin - ifcIDtYPEtIN_123 ) ; }
     {
     inline countT idSlotJotF( tin0S& tin0P ) const // IT IS ILLEGAL FOR ANY CODE OTHER THAN ZEJ() TO CALL ME
 

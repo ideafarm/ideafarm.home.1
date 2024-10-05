@@ -28,14 +28,14 @@
             sOut << psttvTrimmed ;
             sOut << psttLeverKVP ;
                             
-            else if(  ((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttLeverKVP , T("submit") ) ) tReport += T(psttLeverKVP)+T(": \"")+T(psttvTrimmed)+T("\"<BR>\r\n") ;
+            else if(  ((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttLeverKVP , T("submit") ) ) tReport += T(psttLeverKVP)+T(": \"")+T(psttvTrimmed)+T("\"<BR>\r\n") ;
             }
                 etThread.strMakeF( tin0P , LF , psttForm , psttvTrimmed ) ; ___( psttForm ) ;
                 etThread.delF( tin0P , psttForm ) ;
                 etThread.traceF( tin0P , T("coding error / multiple \"form\" keys received [lag,now]:    ")+T(psttForm)+T("    ")+T(psttvTrimmed) ) ;
                 //U::BUG? WILL THE NEXT LINE ALWAYS COMPLAIN, EVEN IF ONLY WO form LEVER IS SEEN?
             {
-            if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttLeverKVP , T("form"  ) ) )
+            if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttLeverKVP , T("form"  ) ) )
 
             etThread.strTrimF( tin0P , psttvTrimmed , psttv , T(TbLACKnEWlINE) ) ; ___( psttvTrimmed ) ;
             ZE( strokeS* , psttvTrimmed ) ;

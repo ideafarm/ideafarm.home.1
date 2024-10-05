@@ -7,9 +7,9 @@
 //
 
     )
-                : (byteT*)( *((tin9S&)tin0P).ppJot[ ( (countT)(idJotP) & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] )[ (countT)(idJotP) ] )      \
+                : (byteT*)( *((tin123S&)tin0P).ppJot[ ( (countT)(idJotP) & ~BM_HIGH ) >> sizeof( countT ) * SB - 4 ] )[ (countT)(idJotP) ] )      \
                 ? (byteT*)0                                                                                                                     \
-            : tin0P.idTypeTin != ifcIDtYPEtIN_FULL                                                                                              \
+            : tin0P.idTypeTin != ifcIDtYPEtIN_123                                                                                              \
             ? (byteT*)(idJotP)                                                                                                                  \
         !( (countT)(idJotP) & BM_HIGH )                                                                                                         \
     (                                                                                                                                           \

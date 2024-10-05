@@ -57,7 +57,7 @@ REST
                                             POOPR
                                         {
                                         if( POOP )
-                                        ((tin9S&)tin0P).pEtScratch->osThreadF( TaRG3fLAGScBtLS( tmExecutiveHealYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cExecutiveHealYear , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&stJob ) ;
+                                        ((tin123S&)tin0P).pEtScratch->osThreadF( TaRG3fLAGScBtLS( tmExecutiveHealYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cExecutiveHealYear , (countT)psttYear , (countT)&psttzArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&stJob ) ;
                                         SCOOPS
                                         _IO_
                                     {
@@ -143,7 +143,7 @@ REST
                                         POOPR
                                     {
                                     if( POOP )
-                                    ((tin9S&)tin0P).pEtScratch->diskFindFileOrDirF( tin0P , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
+                                    ((tin123S&)tin0P).pEtScratch->diskFindFileOrDirF( tin0P , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
                                     SCOOPS
                                     _IO_
                                 {
@@ -326,7 +326,7 @@ DONE( tmExecutiveHealYearF )
                 }
                     }
                         if( POOP ) POOPR
-                        ((tin9S&)tin0P).pEtScratch->boxZapF( tin0P , tLong , 1 ) ;
+                        ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , tLong , 1 ) ;
                         SCOOPS
                     {
                     IFsCRATCH
@@ -876,7 +876,7 @@ DONE( tmExecutiveHealYearF )
                                                         POOPR
                                                     {
                                                     if( POOP )
-                                                    new( 0 , tin0P , (byteT*)pfwsOuter , sizeof( fileWindowsC ) ) fileWindowsC( tin0P , *((tin9S&)tin0P).pEtScratch , tLongOuter ) ;
+                                                    new( 0 , tin0P , (byteT*)pfwsOuter , sizeof( fileWindowsC ) ) fileWindowsC( tin0P , *((tin123S&)tin0P).pEtScratch , tLongOuter ) ;
                                                     SCOOPS
                                                 {
 
@@ -905,7 +905,7 @@ DONE( tmExecutiveHealYearF )
                                                         POOPR
                                                     {
                                                     if( POOP )
-                                                    new( 0 , tin0P , (byteT*)( pfwsInner + offi ) , sizeof( fileWindowsC ) ) fileWindowsC( tin0P , *((tin9S&)tin0P).pEtScratch , psttLongInner ) ;
+                                                    new( 0 , tin0P , (byteT*)( pfwsInner + offi ) , sizeof( fileWindowsC ) ) fileWindowsC( tin0P , *((tin123S&)tin0P).pEtScratch , psttLongInner ) ;
                                                     SCOOPS
                                                 {
                                                 IFsCRATCH
@@ -1393,7 +1393,7 @@ DONE( tmExecutiveHealYearF )
                         {
                         else if( posti && costi && *posti )
                              if( POOP                     ) POOPRqUIET
-                        ((tin9S&)tin0P).pEtScratch->boxGetF( tin0P , posti , costi , tLong , 1 ) ; ___( posti ) ;
+                        ((tin123S&)tin0P).pEtScratch->boxGetF( tin0P , posti , costi , tLong , 1 ) ; ___( posti ) ;
                         ZE( countT   , costi ) ;
                         ZE( osTextT* , posti ) ;
                         SCOOPS
@@ -1444,7 +1444,7 @@ DONE( tmExecutiveHealYearF )
             {
             else
             if( POOP ) POOPRqUIET
-            ((tin9S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tLong , 1 ) ; ___( posti ) ;
+            ((tin123S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tLong , 1 ) ; ___( posti ) ;
             TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/status.")+tArchive+tDot+tYear+T(".completed.ttt") ;
             ZE( countT   , costi ) ;
             ZE( osTextT* , posti ) ;
@@ -1514,7 +1514,7 @@ DONE( tmDoJobF )
                                         bOk = 1 ;
                                     {
                                     if( !POOP )
-                                    ((tin9S&)tin0P).pEtScratch->diskCopyFileF( tin0P , woJob.psttTo , woJob.psttFrom , 1 ) ;
+                                    ((tin123S&)tin0P).pEtScratch->diskCopyFileF( tin0P , woJob.psttTo , woJob.psttFrom , 1 ) ;
                                 {
                                 while( cTries && cTries -- )
                                 ZE( boolT , bOk ) ;
@@ -1539,7 +1539,7 @@ DONE( tmDoJobF )
                                     bOk = 1 ;
                                 {
                                 if( !POOP )
-                                bExists = ((tin9S&)tin0P).pEtScratch->diskFileExistsF( tin0P , woJob.psttTo ) ;
+                                bExists = ((tin123S&)tin0P).pEtScratch->diskFileExistsF( tin0P , woJob.psttTo ) ;
                             {
                             while( cTries && cTries -- )
                             bOk = bExists = 0 ;
@@ -1556,7 +1556,7 @@ DONE( tmDoJobF )
                                         POOPR
                                     {
                                     if( POOP )
-                                    RETRY( 8 , ( psttRejected = 0 , ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirUniqueF( tin0P , psttRejected , woJob.psttTo , psttLongInRejects ) ) ) ; ___( psttRejected ) ;
+                                    RETRY( 8 , ( psttRejected = 0 , ((tin123S&)tin0P).pEtScratch->diskMoveFileOrDirUniqueF( tin0P , psttRejected , woJob.psttTo , psttLongInRejects ) ) ) ; ___( psttRejected ) ;
                                     SCOOPS
                                 {
                                 IFsCRATCH
@@ -1582,7 +1582,7 @@ DONE( tmDoJobF )
                                 bOk = 1 ;
                             {
                             if( !POOP )
-                            bExists = ((tin9S&)tin0P).pEtScratch->diskFileExistsF( tin0P , woJob.psttTo ) ;
+                            bExists = ((tin123S&)tin0P).pEtScratch->diskFileExistsF( tin0P , woJob.psttTo ) ;
                         {
                         while( cTries && cTries -- )
                         ZE( boolT , bOk ) ;
@@ -1606,7 +1606,7 @@ DONE( tmDoJobF )
                             POOPR
                         {
                         if( POOP )
-                        RETRY( 8 , ( psttUnique = 0 , ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirUniqueF( tin0P , psttUnique , woJob.psttFrom , woJob.psttTo , 0 , woJob.psttUnique , 1 ) ) ) ; ___( psttUnique ) ;
+                        RETRY( 8 , ( psttUnique = 0 , ((tin123S&)tin0P).pEtScratch->diskMoveFileOrDirUniqueF( tin0P , psttUnique , woJob.psttFrom , woJob.psttTo , 0 , woJob.psttUnique , 1 ) ) ) ; ___( psttUnique ) ;
                         SCOOPS
                     {
                     IFsCRATCH
@@ -1794,7 +1794,7 @@ jobS::~jobS( voidT )
 NEWdELcLASS( 3 , jobS ) ;
 
 }
-    ((tin9S&)tin0P).pEther->traceF( tin0P , T(psttP)+T(" [bitsResult]:    ")+TF4(bitsResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
+    ((tin123S&)tin0P).pEther->traceF( tin0P , T(psttP)+T(" [bitsResult]:    ")+TF4(bitsResult,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,0x20,2) ) ;
 {
 voidT imageCompareS::traceF( tin0S& tin0P , const strokeS* const psttP )
 
@@ -1808,13 +1808,13 @@ imageCompareS::imageCompareS( voidT ) :
 NEWdELcLASS( 2 , imageCompareS ) ;
 
 }
-    return ((tin9S&)tin0P).pEther->memCompareF( tin0P , (byteT*)this , (byteT*)&frP , sizeof( countT ) + sizeof( count04T ) ) ;    //CS:CODEsYNC 1 1
+    return ((tin123S&)tin0P).pEther->memCompareF( tin0P , (byteT*)this , (byteT*)&frP , sizeof( countT ) + sizeof( count04T ) ) ;    //CS:CODEsYNC 1 1
     TINSL
 {
 sCountT fileMetaS::operator -( const fileMetaS& frP ) const
 
 }
-    ((tin9S&)tin0P).pEther->traceF( tin0P , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cVotes,idSlotPathToYear,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)stPathToYearP[idSlotPathToYear]) ) ;
+    ((tin123S&)tin0P).pEther->traceF( tin0P , T(psttP)+T(" [timeModRounded,timeMod,cbUsed,cVotes,idSlotPathToYear,path]:    ")+TF3(timeModRounded,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("    ")+TT(time1Mod,time2Mod)+T("    ")+TT(((countT*)&cbUsed)[0],((countT*)&cbUsed)[1])+T("    ")+TF2(cVotes,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idSlotPathToYear,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((strokeS*)stPathToYearP[idSlotPathToYear]) ) ;
 {
 voidT fileMetaS::traceF( tin0S& tin0P , stackC& stPathToYearP , const strokeS* const psttP )
 
@@ -1826,7 +1826,7 @@ voidT fileMetaS::traceF( tin0S& tin0P , stackC& stPathToYearP , const strokeS* c
 
     }
         bAbortP = 1 ;
-        ((tin9S&)tin0P).pEther->traceF( tin0P , T("fileMetaS::fileMetaS / exception: idSlotPathToYear is null") ) ;
+        ((tin123S&)tin0P).pEther->traceF( tin0P , T("fileMetaS::fileMetaS / exception: idSlotPathToYear is null") ) ;
     {
     if( !idSlotPathToYear )
 {

@@ -14,21 +14,21 @@ REST
 
     TELL( "cleaning up" ) ;
     }
-        *((tin9S&)tin0P).pEtScratch = 0 ; //U: WORKAROUND TO SEE WHETHER PREVENTS BLOCK IN bindF
+        *((tin123S&)tin0P).pEtScratch = 0 ; //U: WORKAROUND TO SEE WHETHER PREVENTS BLOCK IN bindF
         TELL( "destroying the catching socket" ) ;
         }
-            ((tin9S&)tin0P).pEtScratch->delF( tin0P , pbq ) ;
+            ((tin123S&)tin0P).pEtScratch->delF( tin0P , pbq ) ;
             }
-                if( bFireOs ) ((tin9S&)tin0P).pEtScratch->osFireF( tin0P ) ;
+                if( bFireOs ) ((tin123S&)tin0P).pEtScratch->osFireF( tin0P ) ;
 
                 TELL( "query packet handled" ) ;
                 }
-                    ((tin9S&)tin0P).pEtScratch->delF( tin0P , pbr ) ;
+                    ((tin123S&)tin0P).pEtScratch->delF( tin0P , pbr ) ;
                     while( cTries -- ) sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
                     countT cTries = 8 ;
                     TELL( "writing a reply" ) ;
 
-                    ((tin9S&)tin0P).pEtScratch->dnsReplyF( tin0P , pbr , cbr , pbq , stsReplies , 1 , idError ) ;
+                    ((tin123S&)tin0P).pEtScratch->dnsReplyF( tin0P , pbr , cbr , pbq , stsReplies , 1 , idError ) ;
                     ZE( countT , cbr ) ;
                     ZE( byteT* , pbr ) ;
                     TELL( "composing a reply" ) ;
@@ -36,32 +36,32 @@ REST
                 if( !bSilent )
     
                 }
-                    ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttPeer ) ;
+                    ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttPeer ) ;
                     TELL( "cleaning up after handling the query datagram" ) ;
                     }
                         DEL( ps ) ;
                         }
                             TELL( "cleaning up after handling a single query" ) ;
-                            ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
+                            ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                             }
                                 }
                                     break ;
                                     idError = ifcIDeRRORdNS_QUERYnOTsUPPORTED ;
-                                    //((tin9S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": nOTsUPPORTED: ")+T(psttw)+T("\r\n") ) ;
+                                    //((tin123S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": nOTsUPPORTED: ")+T(psttw)+T("\r\n") ) ;
                                     TELL( "ifcIDeRRORdNS_QUERYnOTsUPPORTED" ) ;
                                 {
                                 default :
                                 }
                                     break ;
                                     idError = ifcIDeRRORdNS_QUERYnOTsUPPORTED ;
-                                    //((tin9S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": OPTION: ")+T(psttw)+T("\r\n") ) ;
+                                    //((tin123S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": OPTION: ")+T(psttw)+T("\r\n") ) ;
                                     TELL( "ifcIDtYPEdNSqUERY_OPTION" ) ;
                                 {
                                 case ifcIDtYPEdNSqUERY_OPTION :
                                 }
                                     break ;
-                                    if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) ) rec_SOA_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs1 , tEmail ) ;
-                                    //((tin9S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": SOA: ")+T(psttw)+T("\r\n") ) ;
+                                    if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) ) rec_SOA_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs1 , tEmail ) ;
+                                    //((tin123S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": SOA: ")+T(psttw)+T("\r\n") ) ;
                                     TELL( "ifcIDtYPEdNSqUERY_SOA" ) ;
                                 {
                                 case ifcIDtYPEdNSqUERY_SOA :
@@ -72,8 +72,8 @@ REST
                                         rec_NS_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs2 ) ;
                                         rec_NS_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs1 ) ;
                                     {
-                                    if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) )
-                                    //((tin9S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": NS: ")+T(psttw)+T("\r\n") ) ;
+                                    if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) )
+                                    //((tin123S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": NS: ")+T(psttw)+T("\r\n") ) ;
                                     TELL( "ifcIDtYPEdNSqUERY_NS" ) ;
                                 {
                                 case ifcIDtYPEdNSqUERY_NS :
@@ -83,8 +83,8 @@ REST
                                         rec_A_F(  tin0P , stsReplies , ifcIDtYPEdNSrEPLY_NOTE   , tMail , nnRoot ) ;
                                         rec_MX_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tMail ) ;
                                     {
-                                    if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) )
-                                    ((tin9S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": MX: ")+T(psttw)+T("\r\n") ) ;
+                                    if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) )
+                                    ((tin123S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": MX: ")+T(psttw)+T("\r\n") ) ;
                                     TELL( "ifcIDtYPEdNSqUERY_MX" ) ;
                                 {
                                 case ifcIDtYPEdNSqUERY_MX :
@@ -92,52 +92,52 @@ REST
                                     break ;
         
                                     else        rec_A_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , nnOut ) ;
-                                    if( bNope ) ;//((tin9S&)tin0P).pEtScratch->ifcSayF( tin0P , T("NOPE: \"")+T(psttw)+T("\"\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                                    if( bNope ) ;//((tin123S&)tin0P).pEtScratch->ifcSayF( tin0P , T("NOPE: \"")+T(psttw)+T("\"\r\n") , flSAY_APPEND | flSAY_LOG ) ;
         
                                     else bNope = 1 ;
-                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tSingularity ) ) nnOut = nnSingularity ; //MIGHT BE 0.  THIS MEANS THAT A SINGULARITY IS NOT REGISTERED
-                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNs5         ) ) nnOut = nnRoot ;
-                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNs          ) ) nnOut = nnRoot ;
-                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tMail        ) ) nnOut = nnRoot ;
-                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tFtp         ) ) nnOut = nnRoot ;
-                                    else if( ((tin9S&)tin0P).pEtScratch->strIdF(       tin0P , tHostOk , psttw      ) ) { nnOut = nnRoot /*ANY NONZE VALUE WILL DO*/ ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
-                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tFireOs      ) ) { nnOut = nnRoot ; bFireOs = 1 ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
-                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWww         ) ) nnOut = nnRoot ;
-                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot        ) ) nnOut = nnRoot ;
+                                    else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tSingularity ) ) nnOut = nnSingularity ; //MIGHT BE 0.  THIS MEANS THAT A SINGULARITY IS NOT REGISTERED
+                                    else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNs5         ) ) nnOut = nnRoot ;
+                                    else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNs          ) ) nnOut = nnRoot ;
+                                    else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tMail        ) ) nnOut = nnRoot ;
+                                    else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tFtp         ) ) nnOut = nnRoot ;
+                                    else if( ((tin123S&)tin0P).pEtScratch->strIdF(       tin0P , tHostOk , psttw      ) ) { nnOut = nnRoot /*ANY NONZE VALUE WILL DO*/ ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
+                                    else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tFireOs      ) ) { nnOut = nnRoot ; bFireOs = 1 ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
+                                    else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWww         ) ) nnOut = nnRoot ;
+                                    else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot        ) ) nnOut = nnRoot ;
                                     }
-                                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , psttDigits ) ;
-                                        //((tin9S&)tin0P).pEtScratch->ifcSayF( tin0P , T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                                        ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttDigits ) ;
+                                        //((tin123S&)tin0P).pEtScratch->ifcSayF( tin0P , T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
                                         swNicName.ungrabF( tin0P ) ;
                                         nnOut = *(nicNameC*)&(countT&)swNicName ;
-                                        idComputer = ((tin9S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttDigits ) ;
+                                        idComputer = ((tin123S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttDigits ) ;
                                         swNicName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                                        ((tin9S&)tin0P).pEtScratch->strWordF( tin0P , psttDigits , psttw , sttq , S1C('.') ) ; ___( psttDigits ) ; ;
+                                        ((tin123S&)tin0P).pEtScratch->strWordF( tin0P , psttDigits , psttw , sttq , S1C('.') ) ; ___( psttDigits ) ; ;
                                         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                                         ZE( strokeS* , psttDigits ) ;
                                     {
-                                    else if( ((tin9S&)tin0P).pEtScratch->strIdF( tin0P , tQueryHostSuffix , psttw ) )
-                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tIfc5        ) ) nnOut = nnRoot ;
-                                    else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tIfc1        ) ) nnOut = nnRoot ;
+                                    else if( ((tin123S&)tin0P).pEtScratch->strIdF( tin0P , tQueryHostSuffix , psttw ) )
+                                    else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tIfc5        ) ) nnOut = nnRoot ;
+                                    else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tIfc1        ) ) nnOut = nnRoot ;
                                     }
-                                        //((tin9S&)tin0P).pEtScratch->ifcSayF( tin0P , T("looked up teacher's nicNameC value: ")+T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                                        //((tin123S&)tin0P).pEtScratch->ifcSayF( tin0P , T("looked up teacher's nicNameC value: ")+T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
                                         swNicName.ungrabF( tin0P ) ;
                                         nnOut = *(nicNameC*)&(countT&)swNicName ;
                                         idComputer = 0x4c3b8d9f  ; // SERIAL OF DRIVE ///c ON IFC12 (LAPTOP)
                                         swNicName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                                     {
-                                    if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tTeacher ) )
+                                    if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tTeacher ) )
                                     ZE( boolT , bNope ) ;
         
                                     nicNameC nnOut ;
                                     //CONoUTRaw( TF1(idClient)+T(" ")+T(nnPeer)+T(" ")+T(psttPeer)+T(": A: \"")+T(psttw)+T("\"\r\n") ) ;
-                                    //((tin9S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": A: \"")+T(psttw)+T("\"\r\n") ) ;
-                                    //((tin9S&)tin0P).pEtScratch->ifcSayF( tin0P , TF1(idClient)+T(" ")+T(nnPeer)+T(" ")+T(psttPeer)+T(": A: \"")+T(psttw)+T("\"\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                                    //((tin123S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": A: \"")+T(psttw)+T("\"\r\n") ) ;
+                                    //((tin123S&)tin0P).pEtScratch->ifcSayF( tin0P , TF1(idClient)+T(" ")+T(nnPeer)+T(" ")+T(psttPeer)+T(": A: \"")+T(psttw)+T("\"\r\n") , flSAY_APPEND | flSAY_LOG ) ;
                                     TELL( "ifcIDtYPEdNSqUERY_A" ) ;
                                 {
                                 case ifcIDtYPEdNSqUERY_A :
                             {
                             else if( idClass == 1 ) switch( idType )
-                            if( bSilent ) ;//((tin9S&)tin0P).pEtScratch->ifcSayF( tin0P , T("---- SILENT REFUSAL: ")+T(nnPeer)+T(" ")+T(psttPeer)+T(": A: ")+T(psttw)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                            if( bSilent ) ;//((tin123S&)tin0P).pEtScratch->ifcSayF( tin0P , T("---- SILENT REFUSAL: ")+T(nnPeer)+T(" ")+T(psttPeer)+T(": A: ")+T(psttw)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
         
                             *ps >> idClass ;
                             ZE( countT , idClass ) ;
@@ -145,7 +145,7 @@ REST
                             *ps >> idType ;
                             ZE( countT , idType ) ;
 
-                            ((tin9S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
+                            ((tin123S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
                             *ps >> psttw ;
                             ZE( strokeS* , psttw ) ;
                             TELL( "preparing to respond to a single query" ) ;
@@ -159,8 +159,8 @@ REST
                     TELL( "counting the remaining queries" ) ;
 
                     }
-                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , pbNU ) ;
-                        ((tin9S&)tin0P).pEtScratch->dnsParseF( tin0P , pbNU , countTC() , stsQueries , stsRepliesNU , pbq ) ;
+                        ((tin123S&)tin0P).pEtScratch->delF( tin0P , pbNU ) ;
+                        ((tin123S&)tin0P).pEtScratch->dnsParseF( tin0P , pbNU , countTC() , stsQueries , stsRepliesNU , pbq ) ;
                         ZE( byteT* , pbNU ) ;
 
                         stsRepliesNU.purgeF( tin0P ) ;
@@ -168,7 +168,7 @@ REST
                     {
                     TELL( "parsing the queries" ) ;
 
-                    //((tin9S&)tin0P).pEtScratch->sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
+                    //((tin123S&)tin0P).pEtScratch->sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
                     TELL( "transcribing the peer nicName" ) ;
                     ZE( strokeS* , psttPeer ) ;
                     //etThread.strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T("parsing request")+te ) ;
@@ -204,7 +204,7 @@ REST
             ZE( countT , cbq ) ;
             ZE( byteT* , pbq ) ;
         {
-        while( !ether && !etThread && !*((tin9S&)tin0P).pEtScratch )
+        while( !ether && !etThread && !*((tin123S&)tin0P).pEtScratch )
 
         nicNameC nnRoot2 = etThread.sockNicNameF( tin0P , T("69.0.244.16") ) ;
 
@@ -240,16 +240,16 @@ REST
         TN( tRoot  ,         "ideafarm.com" ) ;
     
         sockd.bindF( tin0P , ifcPORToLD2_DNS ) ;
-        socketC sockd( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+        socketC sockd( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
         TELL( "preparing to catch query datagrams" ) ;
         stsReplies.purgeF( tin0P ) ;
         stsQueries.purgeF( tin0P ) ;
-        *((tin9S&)tin0P).pEtScratch = 0 ;
+        *((tin123S&)tin0P).pEtScratch = 0 ;
     {
     while( !ether && !etThread )
-    stackC stsQueries(   tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
-    stackC stsReplies(   tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
-    stackC stsRepliesNU( tin0P , *((tin9S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stsQueries(   tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stsReplies(   tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
+    stackC stsRepliesNU( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
     ZE( countT , idClient ) ;
 
     //etThread.osThreadF( tin0P , countTC() , tmHireF ) ;
@@ -436,7 +436,7 @@ voidT rec_A_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReplyP
 //==== MOONLIGHT WORK (BELOW THIS LINE) ===================================================================================
 
 }
-    if( ether && *((tin9S&)tin0P).pEtScratch && sNotesTextP && sNotesDataP && idChatSessionP ) ;
+    if( ether && *((tin123S&)tin0P).pEtScratch && sNotesTextP && sNotesDataP && idChatSessionP ) ;
 
     }
         }
@@ -453,13 +453,13 @@ voidT rec_A_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReplyP
     
                 else __1
                 }
-                    else                          { CONoUTrAW( "!idComputerNicName: *((tin9S&)tin0P).pEtScratch is IMPOTENT\r\n" ) ; }
+                    else                          { CONoUTrAW( "!idComputerNicName: *((tin123S&)tin0P).pEtScratch is IMPOTENT\r\n" ) ; }
                     else if( etThread )           { CONoUTrAW( "!idComputerNicName: etThread is IMPOTENT\r\n" ) ; }
                     }
                         //CONoUT( T("idc ")+TF1(idc)+T(" is at nn=")+T(nni) ) ;
                         //etThread.ifcSayF( tin0P , T("registered idc=")+TF1(idc)+T(" at nn=")+T(nni)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
                     {
-                    if( !etThread && !*((tin9S&)tin0P).pEtScratch )
+                    if( !etThread && !*((tin123S&)tin0P).pEtScratch )
 
                     swNicName.ungrabF( tin0P ) ;
 
@@ -473,14 +473,14 @@ voidT rec_A_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReplyP
                     sOrderP >> idc ;
                     ZE( countT , idc ) ;
                 {
-                else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttJobType , T("!idComputerNicName") ) )
+                else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttJobType , T("!idComputerNicName") ) )
                 }
                     }
                         }
                             //etThread.ifcSayF( tin0P , T(psttJobType)+T("/")+TF1(idCourseP)+T("/singularity: ")+T(nnSingularity)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
                             sDataP << idCourseP ;
                             }
-                                ++ s ; ((tin9S&)tin0P).pEtScratch->osSleepF( tin0P , TOCK ) ;
+                                ++ s ; ((tin123S&)tin0P).pEtScratch->osSleepF( tin0P , TOCK ) ;
                                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                             {
                         {
@@ -497,18 +497,18 @@ voidT rec_A_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReplyP
                     {
                     if( idCourseP == 1 && !nnSingularity )
                 {
-                else if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttJobType , T("!iWillBeSingularity") ) ) // I AM VOLUNTEERING TO BE THE SINGULARITY
+                else if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttJobType , T("!iWillBeSingularity") ) ) // I AM VOLUNTEERING TO BE THE SINGULARITY
                 }
                     }
                         sDataP << idCourseP ;
                         }
-                            ++ s ; ((tin9S&)tin0P).pEtScratch->osSleepF( tin0P , TOCK ) ;
+                            ++ s ; ((tin123S&)tin0P).pEtScratch->osSleepF( tin0P , TOCK ) ;
                             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                         {
                     {
                     if( idCourseP <= 8 )
                 {
-                if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttJobType , T("!queryWoTa") ) ) // I AM BEING ASKED TO COUNT FROM 1 TO 8
+                if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttJobType , T("!queryWoTa") ) ) // I AM BEING ASKED TO COUNT FROM 1 TO 8
 
                 //etThread.ifcSayF( tin0P , T(psttJobType)+T(": ")+TF1(idCourseP)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
                 if( idCourseP == 1 ) { sOrderP >> psttJobType ; ___( psttJobType ) ; }
@@ -571,7 +571,7 @@ voidT jobFillCourseF( tin0S& tin0P , etherC& ether , etherC& etThread , soulC& s
                 {
                 if( bVolunteeerAccepted && ++ bClientQuit == 1 )
             {
-            if( !((tin9S&)tin0P).pEtScratch->strCompareF( tin0P , psttJobType , T("!iWillBeSingularity") ) ) // I WAS VOLUNTEERING TO BE THE SINGULARITY
+            if( !((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttJobType , T("!iWillBeSingularity") ) ) // I WAS VOLUNTEERING TO BE THE SINGULARITY
             bParams.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
         if( idJobType == ifcIDcMDjOBoRDER_NAMED )

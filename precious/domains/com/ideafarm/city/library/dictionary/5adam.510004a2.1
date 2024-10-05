@@ -92,7 +92,7 @@ TODO
 
 }
     return sgn ;
-    if( ((tin9S&)tin0P).fingerprint && c3P ) ;
+    if( ((tin123S&)tin0P).fingerprint && c3P ) ;
 
     }
         else if( pc4v1->c1 < pc4v2->c1 ) sgn = - 1 ;
@@ -117,7 +117,7 @@ countT subtract_count4S_F( tin0S& tin0P , countT& pEther , countT& c1P , countT&
 
 }
     return sgn ;
-    if( ((tin9S&)tin0P).fingerprint && c3P ) ;
+    if( ((tin123S&)tin0P).fingerprint && c3P ) ;
 
     }
         else if( pTinc1->osTid < pTinc2->osTid ) sgn = - 1 ;
@@ -142,7 +142,7 @@ countT subtract_tinC_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2
 
 }
     return sgn ;
-    if( ((tin9S&)tin0P).fingerprint && c3P ) ;
+    if( ((tin123S&)tin0P).fingerprint && c3P ) ;
 
     }
         else if( pProcess1->osPid < pProcess2->osPid ) sgn = - 1 ;
@@ -167,7 +167,7 @@ countT subtract_processC_F( tin0S& tin0P , countT& pEther , countT& c1P , countT
 
 }
     return sgn ;
-    if( ((tin9S&)tin0P).fingerprint && c3P ) ;
+    if( ((tin123S&)tin0P).fingerprint && c3P ) ;
 
     }
         else if( pCell1->idCell < pCell2->idCell ) sgn = - 1 ;
@@ -251,9 +251,9 @@ voidT jobHearOrderF( tin0S& tin0P , etherC& ether , etherC& etThread , const cou
                 }
                     break ;
 
-                    ((tin9S&)tin0P).zEtScratch->delF( tin0P , psttArgs ) ;
-                    ((tin9S&)tin0P).zEtScratch->osThreadF( tin0P , countTC() , tmNewCellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idAdam , (countT)pstta ) ;
-                    strokeS* pstta = (strokeS*)psttOldC( tin0P , *((tin9S&)tin0P).zEtScratch , (psttArgs?T(psttArgs):T("")) ) ; ___( pstta ) ;
+                    ((tin123S&)tin0P).zEtScratch->delF( tin0P , psttArgs ) ;
+                    ((tin123S&)tin0P).zEtScratch->osThreadF( tin0P , countTC() , tmNewCellF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , idAdam , (countT)pstta ) ;
+                    strokeS* pstta = (strokeS*)psttOldC( tin0P , *((tin123S&)tin0P).zEtScratch , (psttArgs?T(psttArgs):T("")) ) ; ___( pstta ) ;
         
                     sOrderP >> (countT&)time2Limit ;
                     ZE( sCountT , time2Limit ) ;
@@ -441,10 +441,10 @@ windowTitleS::windowTitleS( tin0S& tin0P , etherC& etherP ) :
         if( !bOk ) ;
         tin0S& tin0 = *(tin0S*)pbTin ;
 
-        else        thirdC::dosReadProcessMemoryIF( tin0P , pbTin , sizeof( tin9S ) , bOk , pvOrIda , osPid ) ;
-        if( bSelf ) ether.memCopyF( tin0P , pbTin , (const byteT*)pvOrIda , sizeof( tin9S ) ) , bOk = 1 ;
+        else        thirdC::dosReadProcessMemoryIF( tin0P , pbTin , sizeof( tin123S ) , bOk , pvOrIda , osPid ) ;
+        if( bSelf ) ether.memCopyF( tin0P , pbTin , (const byteT*)pvOrIda , sizeof( tin123S ) ) , bOk = 1 ;
         ZE( boolT , bOk ) ;
-        if( !pbTin ) { ether.newF( tin0P , LF , pbTin , sizeof( tin9S ) ) ; ___( pbTin ) ; }
+        if( !pbTin ) { ether.newF( tin0P , LF , pbTin , sizeof( tin123S ) ) ; ___( pbTin ) ; }
         SLEEPwHILE( cRef_pbTin )
     {
     if( bCopy_pbTin )
@@ -487,7 +487,7 @@ cRef_pbTin( 0 ) ,
 bCopy_pbTin( !pbTin ) ,
 pbTin( pvOrIda && saidP.idType == ifcIDtYPEtELLsYS_TINcTI ? (byteT*)ap_artmentOldC( tin0P , (countT)pvOrIda ) : 0 ) ,
 pvOrIda( saidP.pbData && saidP.cbData == sizeof( tellInfoSysTinS ) ? ((tellInfoSysTinS*)saidP.pbData)->ip : 0 ) ,
-ether( tin0P , TAG( TAGiDnULL ) , *((tin9S&)tin0P).pag1->pPoolAdamTemp ) ,
+ether( tin0P , TAG( TAGiDnULL ) , *((tin123S&)tin0P).pag1->pPoolAdamTemp ) ,
 bSelf( !pInfoP ) ,
 tinC::tinC( tin0S& tin0P , saidS& saidP , const ifcMonitorEventS* pInfoP ) :
 
@@ -592,7 +592,7 @@ boolT processC::operator ==( const cP ) const
 {
 osPid( infoP.osPid )
 osTid( infoP.osTid ) ,
-ether( tin0P , TAG( TAGiDnULL ) , *((tin9S&)tin0P).pag1->pPoolAdamTemp ) ,
+ether( tin0P , TAG( TAGiDnULL ) , *((tin123S&)tin0P).pag1->pPoolAdamTemp ) ,
 processC::processC( tin0S& tin0P , const ifcMonitorEventS& infoP ) :
 
 NEWdELcLASSb( processC )
@@ -803,7 +803,7 @@ fifoC::fifoC( tin0S& tin0P ) :
         
             cellC::classLogF( tin0P , tEntry , 0 , pInfo ) ;
             cell.bError |= !!ether.strIdF( tin0P , T(" !setEcIfF ") , tEntry ) ;
-            bLogTinEventP = !!ether.strIdF( tin0P , T(" !tin9S ") , tEntry ) ;
+            bLogTinEventP = !!ether.strIdF( tin0P , T(" !tin123S ") , tEntry ) ;
             }
                 ether.delF( tin0P , pstte ) ;
                 tEntry = T(pstte) ;
@@ -1081,7 +1081,7 @@ voidT eventC::hearF( tin0S& tin0P , boolT& bLogTinEventP )
 
 }
     }
-        //U::GET A tin9S IMAGE AND LOG IT
+        //U::GET A tin123S IMAGE AND LOG IT
     {
     if( !ether && bLogTinEvent )
 
@@ -1401,7 +1401,7 @@ voidT cellC::classShutdown1F( tin0S& tin0P , countT& idCellLathP , countT& seria
     pBatonSerial   = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonSerial   ) ;
     pBatonLog      = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonLog      ) ;
     pBatonClass    = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonClass    ) ;
-    pEtClass       = new( 0 , tin0P , LF ) etherC( tin0P , TAG( TAGiDnULL ) , *((tin9S&)tin0P).pag1->pPoolAdamTemp ) ;                                                                       ___( pEtClass       ) ;
+    pEtClass       = new( 0 , tin0P , LF ) etherC( tin0P , TAG( TAGiDnULL ) , *((tin123S&)tin0P).pag1->pPoolAdamTemp ) ;                                                                       ___( pEtClass       ) ;
     bBase = bBaseP ;
     idPhase = 1 ;
 
@@ -1891,7 +1891,7 @@ boolT lockedWantersRF( tin0S& tin0P , etherC& etherP , boolT& bPseudoP , strokeS
 
 }
     return bLoop ;
-    if( ((tin9S&)tin0P).fingerprint && stOsTidWanterP && copyP.serial ) ;
+    if( ((tin123S&)tin0P).fingerprint && stOsTidWanterP && copyP.serial ) ;
     }
         //U::}
         //U::    }
@@ -1911,7 +1911,7 @@ boolT wantersF( tin0S& tin0P , stackC& stOsTidWanterP , grabAnnotatedS& copyP )
 
 }
     return *(countT*)c1P - *(countT*)c2P ;
-    if( pEther && ((tin9S&)tin0P).fingerprint && c3P ) ;
+    if( pEther && ((tin123S&)tin0P).fingerprint && c3P ) ;
 {
 countT subtractWantersF( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
@@ -1920,7 +1920,7 @@ countT subtractWantersF( tin0S& tin0P , countT& pEther , countT& c1P , countT& c
 
     countT* pc2 = (countT*)c2P ;
     countT* pc1 = (countT*)c1P ;
-    if( pEther && ((tin9S&)tin0P).fingerprint && c3P ) ;
+    if( pEther && ((tin123S&)tin0P).fingerprint && c3P ) ;
 {
 countT subtract_grabInfoS_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P )
 
@@ -2716,7 +2716,7 @@ boolT monitoredEventHandlerF( tin0S& tin0P , const byteT* const pbP , const coun
 }
     CONoUT2( postP , info ) ;                                                                           \
     ((p oolC&)cell.ether).walkF( tin0P , ifcIDtYPEpOOLoLDwALK_COUNTwOtYPE , info ) ;                         \
-    countT info = ifcIDtYPEdROPnOTE_tin9S ;                                                              \
+    countT info = ifcIDtYPEdROPnOTE_tin123S ;                                                              \
 {                                                                                                       \
 if( cell.idAdam == 0x4010418 )                                                                          \
                                                                                                         \
@@ -2725,7 +2725,7 @@ if( cell.idAdam == 0x4010418 )                                                  
 }
     CONoUT2( postP , info ) ;                                                                           \
     (>>>>(p oolC&)et<<>>OBSOLETEDcODE:INTENTIONALcOMPILEeRROR<<<<her).walkF( tin0P , ifcIDtYPEpOOLoLDwALK_COUNTwOtYPE , info ) ;                              \
-    countT info = ifcIDtYPEdROPnOTE_tin9S ;                                                              \
+    countT info = ifcIDtYPEdROPnOTE_tin123S ;                                                              \
 {                                                                                                       \
 if( idAdam == 0x4010418 )                                                                               \
                                                                                                         \

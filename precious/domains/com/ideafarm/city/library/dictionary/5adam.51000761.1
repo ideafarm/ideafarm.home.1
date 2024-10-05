@@ -192,7 +192,7 @@ TASK( tmWorkerF )
                         {
                         else
                         if( !POOP ) ; //etherP.traceF( tin0P , T("renamed to discardss aok") ) ;
-                        ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tNewPathRoot+tDiscardsSlashP+tNewLeafShort , tNameOld , 1 ) ;
+                        ((tin123S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tNewPathRoot+tDiscardsSlashP+tNewLeafShort , tNameOld , 1 ) ;
 
                         etherP.traceF( tin0P , T("content is different ; attempting to rename to discards") ) ;
 
@@ -207,7 +207,7 @@ TASK( tmWorkerF )
                         {
                         else
                         if( !POOP ) ; //etherP.traceF( tin0P , T("renamed to duplicates aok") ) ;
-                        ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tNewPathRoot+tDuplicatesSlashP+tNewLeafShort , tNameOld , 1 ) ;
+                        ((tin123S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tNewPathRoot+tDuplicatesSlashP+tNewLeafShort , tNameOld , 1 ) ;
 
                         //etherP.traceF( tin0P , T("content is the same ; attempting to rename to duplicates") ) ;
 
@@ -260,7 +260,7 @@ TASK( tmWorkerF )
                     {
                     else
                     if( !POOP ) ; //etherP.traceF( tin0P , T("renamed aok") ) ;
-                    ((tin9S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tNameNew , tNameOld , 1 ) ;
+                    ((tin123S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tNameNew , tNameOld , 1 ) ;
 
                     //etherP.traceF( tin0P , T("could not ct both file windows ; attempting to rename") ) ;
 
@@ -270,8 +270,8 @@ TASK( tmWorkerF )
                 {
                 if( POOP )
 
-                fileWindowsC* pFwsNew = new( 0 , tin0P , pb_fwsNew , sizeof pb_fwsNew ) fileWindowsC( tin0P , *((tin9S&)tin0P).pEtScratch , tNameNew , flFILEwINDOW_null , 1 ) ;
-                fileWindowsC* pFwsOld = new( 0 , tin0P , pb_fwsOld , sizeof pb_fwsOld ) fileWindowsC( tin0P , *((tin9S&)tin0P).pEtScratch , tNameOld , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsNew = new( 0 , tin0P , pb_fwsNew , sizeof pb_fwsNew ) fileWindowsC( tin0P , *((tin123S&)tin0P).pEtScratch , tNameNew , flFILEwINDOW_null , 1 ) ;
+                fileWindowsC* pFwsOld = new( 0 , tin0P , pb_fwsOld , sizeof pb_fwsOld ) fileWindowsC( tin0P , *((tin123S&)tin0P).pEtScratch , tNameOld , flFILEwINDOW_null , 1 ) ;
 
                 byteT pb_fwsNew[ sizeof( fileWindowsC ) ] ;
                 byteT pb_fwsOld[ sizeof( fileWindowsC ) ] ;

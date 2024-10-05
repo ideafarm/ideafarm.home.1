@@ -308,13 +308,13 @@
                         else c_pbq += 0x1000 ; //ASSUME: REGIONS ARE ALIGNED ON NT PAGE BOUNDARIES (0x1000 IS THE SIZE OF AN NT PAGE)
                         }
                             __1
-                            __( ((tin9S&)tin0P).brcLath ) ;
+                            __( ((tin123S&)tin0P).brcLath ) ;
                         {
-                        else if( ((tin9S&)tin0P).brcLath != ERROR_NOACCESS          )
-                             if( ((tin9S&)tin0P).brcLath == ERROR_INVALID_PARAMETER ) c_pbq = c_pbqEnd ;
+                        else if( ((tin123S&)tin0P).brcLath != ERROR_NOACCESS          )
+                             if( ((tin123S&)tin0P).brcLath == ERROR_INVALID_PARAMETER ) c_pbq = c_pbqEnd ;
                     {
-                    if( ((tin9S&)tin0P).bosFail )
-                    countT cbw = ((tin9S&)tin0P).brcRaw ;
+                    if( ((tin123S&)tin0P).bosFail )
+                    countT cbw = ((tin123S&)tin0P).brcRaw ;
                     BOS( WHATgbo , BOSoK , VirtualQueryEx( (HANDLE)hProcessP , (voidT*)c_pbq , &osInfo , sizeof osInfo ) )
                     BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
                 {

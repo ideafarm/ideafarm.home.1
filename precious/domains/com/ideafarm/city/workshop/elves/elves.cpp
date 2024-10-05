@@ -3365,7 +3365,12 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.tlsHeaderS"                                  ,
                     "1snip.15*.tallyC"                                      ,
                     "1snip.15*.tlsBlobC"                                    ,
-                    "1snip.15*.tin9S"                                       ,
+                    "1snip.15*.tin1S"                                       ,
+                    "1snip.15*.tin12S"                                      ,
+                    "1snip.15*.tin123S"                                     ,
+                    "1snip.15*.tin_part3_S"                                 ,
+                    "1snip.15*.tin_part2_S"                                 ,
+                    "1snip.15*.tin_part1_S"                                 ,
                     "1snip.15*.tin0S"                                       ,
                     "1snip.15*.bookMarkS"                                   ,
                     "1snip.15*.topC"                                        ,
@@ -3850,7 +3855,9 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
             !strcmp( postGroupP , "3602e" ) ||      // windowOldC
             !strcmp( postGroupP , "36097" ) ||      // eyeOldC
             !strcmp( postGroupP , "3609a" ) ||      // backOldC
-            !strcmp( postGroupP , "3609b" )         // winPulpOldC
+            !strcmp( postGroupP , "3609b" ) ||      // winPulpOldC
+            !strcmp( postGroupP , "36176" ) ||      // tin12S
+            !strcmp( postGroupP , "36177" )         // tin1S
 
         ;
 

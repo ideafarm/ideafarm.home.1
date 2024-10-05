@@ -13,7 +13,7 @@
 
 #else
 
-#define PRO ( tin0P.idTypeTin != ifcIDtYPEtIN_FULL ? cProgressDflt : ((tin9S&)tin0P).pIdProgressNest[ ((tin9S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ] )
+#define PRO ( tin0P.idTypeTin != ifcIDtYPEtIN_123 ? cProgressDflt : ((tin123S&)tin0P).pIdProgressNest[ ((tin123S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ] )
 
 #if defined( NEVERdEFINED )
 //U:

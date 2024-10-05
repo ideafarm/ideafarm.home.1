@@ -8,13 +8,13 @@
 
 
 }
-    (countT&)((tin9S*)pTin)->grabPseudo.idiFileCt = idiFileCtSave ;
-    (countT&)((tin9S*)pTin)->grabPseudo.idLineCt  = idLineCtSave  ;
-    if( bOsCall ) ((tin9S*)pTin)->grabPseudo.flags &= ~( F(flGRABc_PSEUDOoScALL) ) ;
+    (countT&)((tin123S*)pTin)->grabPseudo.idiFileCt = idiFileCtSave ;
+    (countT&)((tin123S*)pTin)->grabPseudo.idLineCt  = idLineCtSave  ;
+    if( bOsCall ) ((tin123S*)pTin)->grabPseudo.flags &= ~( F(flGRABc_PSEUDOoScALL) ) ;
 
     }
-        ((tin9S*)pTin)->grabPseudo.idGrabberOk ++ ;
-        ((tin9S*)pTin)->grabPseudo.osTid = ((tin9S*)pTin)->grabPseudo.cGrabbed = 0 ;
+        ((tin123S*)pTin)->grabPseudo.idGrabberOk ++ ;
+        ((tin123S*)pTin)->grabPseudo.osTid = ((tin123S*)pTin)->grabPseudo.cGrabbed = 0 ;
         //SIMULATE WHAT grabC::ungrabF WOULD DO TO RESET THE OBJECT
         //CODE SYNCH: 1700002 17f0006
     {
@@ -30,20 +30,20 @@
             //OStEXTC( ostoBuf , bTlsEarlyLateI , 0 ) ;
             OStEXTC( ostoBuf , bTlsEarlyLateIF() , 0 ) ;
             OStEXTAK( ostoBuf , " bTlsEarlyLateI: " ) ;
-            OStEXTC( ostoBuf , ((tin9S&)tin0P).idTin , 0 ) ;
+            OStEXTC( ostoBuf , ((tin123S&)tin0P).idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
-            if( tin0P.idTypeTin == ifcIDtYPEtIN_FULL ) OStEXTA( ostoBuf , ((tin9S&)tin0P).postThreadName ) ;
+            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\nTINSL: \"" ) ;
-            OStEXTC( ostoBuf , ((tin9S*)pTin)->idTin , 0 ) ;
+            OStEXTC( ostoBuf , ((tin123S*)pTin)->idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
-            OStEXTA( ostoBuf , ((tin9S*)pTin)->postThreadName ) ;
+            OStEXTA( ostoBuf , ((tin123S*)pTin)->postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\npTin : \"" ) ;
             OStEXT( ostoBuf , 0x80 )
         {
         if( pTin != &tin0P )
         TINSL
     {
-    if( ((tin9S*)pTin)->idTinNamed != ifcIDtINnAMED_tinHeartI )
+    if( ((tin123S*)pTin)->idTinNamed != ifcIDtINnAMED_tinHeartI )
 {
 /*1*/sleepC::~sleepC( voidT )/*1*/
 

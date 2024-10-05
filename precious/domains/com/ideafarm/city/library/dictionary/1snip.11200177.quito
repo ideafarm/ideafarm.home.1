@@ -7,7 +7,7 @@
 //
 
 
-#define QUITO(pcQuitP) const countT* _pcQuitSave = ((tin9S&)tin0P).pcQuit ; ((tin9S&)tin0P).pcQuit = (pcQuitP) ;
+#define QUITO(pcQuitP) const countT* _pcQuitSave = ((tin123S&)tin0P).pcQuit ; ((tin123S&)tin0P).pcQuit = (pcQuitP) ;
 
 /**/
 /*1*//*QUITO(pcQuitP)*//*1*/
@@ -16,8 +16,8 @@ code that refers to me -must- use QUITR to undo my effects
  to cause quitting to be controled by some other countT value, specify QUITO( &someCount )
 to suppress quitting, either specify QUITOZ or QUITO( )
 for example, etherC::boxMenuF will return a useable but incomplete list if asynch impotence occurs while it is working
-on each thread, ((tin9S&)tin0P).pcQuit is initially set to &(const countT&)etPrime
-some system functions inspect ((tin9S&)tin0P).pcQuit and silently quit early (no impotence) if *((tin9S&)tin0P).pcQuit
+on each thread, ((tin123S&)tin0P).pcQuit is initially set to &(const countT&)etPrime
+some system functions inspect ((tin123S&)tin0P).pcQuit and silently quit early (no impotence) if *((tin123S&)tin0P).pcQuit
 use me to modify the default early quit behavior for system functions
 \<A HREF=\"5.0010216.1.0.html\"\>definition\</A\>
 /*

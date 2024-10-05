@@ -185,7 +185,7 @@ DONE( tmHireF )
                                         else switch( info3.u.Exception.ExceptionRecord.ExceptionCode )
                                         }
                                             default                                  : { tEvent += T("    notes:"                                                                                                          ) ; break ; }
-                                            case ifcIDeVENTeXCEPTIONmONITORED_BLAMMO : { tEvent += T("    [idLine,idiFile,idLineCt,idiFileCt,idBlammo,((tin9S&)tin0P).idTinNamed,tinName,((tin9S&)tin0P).monitor.idThread,((tin9S&)tin0P).osTid,osTidIF()]:") ; break ; }
+                                            case ifcIDeVENTeXCEPTIONmONITORED_BLAMMO : { tEvent += T("    [idLine,idiFile,idLineCt,idiFileCt,idBlammo,((tin123S&)tin0P).idTinNamed,tinName,((tin123S&)tin0P).monitor.idThread,((tin123S&)tin0P).osTid,osTidIF()]:") ; break ; }
                                             case ifcIDeVENTeXCEPTIONmONITORED_GRUNT  : { tEvent += T("    [idLine,idiFile,idSubType,idType]:"                                                                              ) ; break ; }
                                         {
                                         if( ifcUnexpectedExceptionCode ) switch( ifcUnexpectedExceptionCode )
@@ -446,7 +446,7 @@ DONE( tmHireF )
         {
         if( idAdamRequested )
 
-        etherC& etScratch = *((tin9S&)tin0P).pEtScratch ;
+        etherC& etScratch = *((tin123S&)tin0P).pEtScratch ;
 
         SCOOPS
     {
@@ -489,7 +489,7 @@ DONE( tmHireF )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     
-    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin9S&)tin0P).monitor.idThread - ifcIDtHREADlOW_tmHireF ) ; }
+    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin123S&)tin0P).monitor.idThread - ifcIDtHREADlOW_tmHireF ) ; }
 
     boolT&   bKidsSuspendedP            =  *(boolT*)pTaskP->ca ;
     boolT    bConsoleP                  =    (boolT)pTaskP->c9 ;
@@ -511,10 +511,10 @@ DONE( tmChatterF )
 
     }
         if( POOP ) POOPRqUIET
-        ((tin9S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChattering , 1 ) ;
+        ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChattering , 1 ) ;
 
         if( POOP ) POOPRqUIET
-        ((tin9S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChatterOn , 1 ) ;
+        ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChatterOn , 1 ) ;
         SCOOPS
     {
     IFsCRATCH
@@ -529,7 +529,7 @@ DONE( tmChatterF )
             if( bChattering != bChatteringLag ) etThread.traceF( tin0P , T("unchattering ; this will not affect chattering that is in progress") ) ;
             }
                 if( POOP ) POOPRqUIET
-                ((tin9S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChattering , 1 ) ;
+                ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChattering , 1 ) ;
                 SCOOPS
             {
             IFsCRATCH
@@ -574,10 +574,10 @@ DONE( tmChatterF )
     }
         }
             if( POOP ) POOPRqUIET
-            ((tin9S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChattering , 1 ) ;
+            ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChattering , 1 ) ;
 
             if( POOP ) POOPRqUIET
-            ((tin9S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChatterOn , 1 ) ;
+            ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChatterOn , 1 ) ;
 
             SCOOPS
         {
@@ -615,7 +615,7 @@ TASK( tmChatterF )
             }
                 }
                     LOGrAW3( "[idError]: " , idError , "\r\n" ) ;
-                    countT idError = ((tin9S&)tin0P).brcRaw ;
+                    countT idError = ((tin123S&)tin0P).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , GetLastError() )
                 {
                 else
@@ -624,7 +624,7 @@ TASK( tmChatterF )
                     BOS( WHATgbo , BOSoK , CloseHandle( oshThread ) )
                 {
                 if( oshThread )
-                HANDLE oshThread = (HANDLE)((tin9S&)tin0P).brcRaw ;
+                HANDLE oshThread = (HANDLE)((tin123S&)tin0P).brcRaw ;
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , CreateThread( &sa , TOCK , tmGorillaRawF , 0 , 0 , &osTid ) )
                 ZE( DWORD , osTid ) ;
@@ -833,7 +833,7 @@ DONE( tmFireAllF )
         slabS& slab = slabS::slabIF() ;
     {
 
-    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin9S&)tin0P).monitor.idThread - ifcIDtHREADlOW_tmFireAllF ) ; }
+    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin123S&)tin0P).monitor.idThread - ifcIDtHREADlOW_tmFireAllF ) ; }
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     boolT& bKidsSuspendedP = *(boolT*)pTaskP->c1 ;
@@ -845,7 +845,7 @@ DONE( tmEatTelemetrySysF )
 //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 0") ) ;
 TELL( "cleaning up 0" )
 }
-    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 1 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 1 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     TELL( "cleaning up 1" )
     }
         while( ~hWalk && -- cToDo ) ;
@@ -861,20 +861,20 @@ TELL( "cleaning up 0" )
     if( stPeriodData )
     TELL( "purging period data" )
 
-    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 2 / sgnDone_tmReportF_ seen [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 2 / sgnDone_tmReportF_ seen [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     sgnDone_tmReportF_.waitF( tin0P ) ;
-    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 3 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 3 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     TELL( "waiting for tmReportF to end" )
 
     THREADmODE4rESTORE
-    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 4 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 4 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     }
-        //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 5 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 5 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         if( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ) bksTelemetrySys.fileFlagsRefF() &= ~flFILEc_DELETE ; // I AM PROBABLY READING THE CURRENT bookC, WHICH IS STILL OPEN FOR WRITING SO CANNOT BE DELETED NOW
         //U::THE NEXT LINE NO LONGER WILL WORK BECAUSE THE DELETE FLAG HAS ALREADY BEEN SPECIFIED WHEN CT fileC ; IT ALSO WOULDN'T WORK BECAUSE IT DOES NOT CHANGE THE FLAGS THAT ARE USED TO CT bookC INSTANCE
 
         }
-            //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 6 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 6 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             }
                 //CONoUTrAW( "." ) ;
                 ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
@@ -1078,7 +1078,7 @@ TELL( "cleaning up 0" )
                                                 //if( !etThread.strCompareF( tin0P , T("tmHireF") , T(note.postThreadName) ) )
 
                                                 }
-                                                    //etRock.traceF( tin0P , T("error: tin9S destruction told but entry not found in swsTin [idThread,postThreadName]: ")+TF2(told.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(note.postThreadName) ) ;
+                                                    //etRock.traceF( tin0P , T("error: tin123S destruction told but entry not found in swsTin [idThread,postThreadName]: ")+TF2(told.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(note.postThreadName) ) ;
                                                     _IO_
                                                 {
                                                 else
@@ -1147,7 +1147,7 @@ TELL( "cleaning up 0" )
             
                                         }
                                             }
-                                                //etRock.traceF( tin0P , T("U::: tin9S ct told [&told,idThread,postThreadName]: ")+TF2((countT)&told,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(told.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(note.postThreadName) ) ;
+                                                //etRock.traceF( tin0P , T("U::: tin123S ct told [&told,idThread,postThreadName]: ")+TF2((countT)&told,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(told.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+T(note.postThreadName) ) ;
                                                 //LOGrAW5( "TINcTP [cFlavors,cPlatesAll]:" , memorySpace.swsTin.cFlavorsF( tin0P ) , " " , memorySpace.swsTin.cPlatesAllF( tin0P ) , "\r\n" ) ;
 
                                                 //}
@@ -1280,10 +1280,10 @@ TELL( "cleaning up 0" )
                                     case ifcIDtYPEtELLsYS_GLObEGINdT :
                                     }
                                         break ;
-                                          if( told.osPid != ((tin9S&)tin0P).osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 3 ) , (countT)&bQuitEatingP , told.osPid ) ;
-                                        //if( told.osPid != ((tin9S&)tin0P).osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 2 ) , (countT)&bQuitEatingP , told.osPid ) ;
-                                        //if( told.osPid != ((tin9S&)tin0P).osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 1 ) , (countT)&bQuitEatingP , told.osPid ) ;
-                                        //if( told.osPid != ((tin9S&)tin0P).osPid ) etThread.osThreadF( TaRG1( tmVultureF ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                          if( told.osPid != ((tin123S&)tin0P).osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 3 ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                        //if( told.osPid != ((tin123S&)tin0P).osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 2 ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                        //if( told.osPid != ((tin123S&)tin0P).osPid ) etThread.osThreadF( TaRG2cBsTACK( tmVultureF , CBsTACKmIN << 1 ) , (countT)&bQuitEatingP , told.osPid ) ;
+                                        //if( told.osPid != ((tin123S&)tin0P).osPid ) etThread.osThreadF( TaRG1( tmVultureF ) , (countT)&bQuitEatingP , told.osPid ) ;
                                         //etRock.traceF( tin0P , T("ifcIDtYPEtELLsYS_GLObEGINcT [osPid]: ")+TF4(told.osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;
                                         _IO_
                                     {
@@ -1391,14 +1391,14 @@ TELL( "cleaning up 0" )
                     TELL( "waiting to read a new telemetry item / U:: 0" )
     
                     //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 7") ) ;
-                    //((tin9S&)tin0P).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
+                    //((tin123S&)tin0P).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
                     TELL( "waiting to read a new telemetry item / U:: 1" )
                     boolT bDelete = bksTelemetrySys.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
                     //etRock.traceF( tin0P , T("eating telemetry at [idDebug,off,idBook]:    ")+TF2(idDebug,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(ch.c1,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(ch.c2,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                     TELL( "waiting to read a new telemetry item / U:: 2" )
                     HANDLEaPPnOTEScOUNTcLASS ch = hRead ;
                     TELL( "waiting to read a new telemetry item / U:: 3" )
-                    //((tin9S&)tin0P).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
+                    //((tin123S&)tin0P).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
                     //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 8") ) ;
                     TELL( "waiting to read a new telemetry item" )
 
@@ -1414,7 +1414,7 @@ TELL( "cleaning up 0" )
                 TELL( "eating 1" )
             {
             while( !bQuitEatingP && !POOP )
-            //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 9 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 9 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             ZE( countT , idDebug ) ;
             TELL( "eating 0" )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -1427,11 +1427,11 @@ TELL( "cleaning up 0" )
         {
         if( !(const poopC&)bksTelemetrySys )
 
-//((tin9S&)tin0P).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
-        //etRock.traceF( tin0P , T("tmEatTelemetrySysF / ct'ed bksTelemetrySys [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//((tin123S&)tin0P).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+        //etRock.traceF( tin0P , T("tmEatTelemetrySysF / ct'ed bksTelemetrySys [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         booksC bksTelemetrySys( tin0P , TAG( TAGiDnULL ) , "bksTelemetrySys" , ifcIDsTATEsPACE_MULTIPLEaDAMS , idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ? flBOOKSc_null : flBOOKSc_USEgRABmEMORYsPACEoVERRIDE , 0 , 0 , 0 , 0 , 0 , idMemorySpaceP , &bQuitEatingP ) ;
-        //etRock.traceF( tin0P , T("tmEatTelemetrySysF / ct'ing bksTelemetrySys [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-//((tin9S&)tin0P).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+        //etRock.traceF( tin0P , T("tmEatTelemetrySysF / ct'ing bksTelemetrySys [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+//((tin123S&)tin0P).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
 
         //U:: THE NEXT LINE USED TO SPECIFY THE DELETE FLAG, BUT AS OF 20131222@1558 THIS CAUSES FAILURES ; DELETE FLAG REMOVED WITHOUT ANALYSIS
 
@@ -1440,13 +1440,13 @@ TELL( "cleaning up 0" )
     THREADmODE4oN( flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
 
     }
-        //etRock.traceF( tin0P , T("tmEatTelemetrySysF / launched  tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tin0P , T("tmEatTelemetrySysF / launched  tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
           etThread.osThreadF( tin0P , countTC() , tmReportF , &sgnDone_tmReportF_ , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 3 , 0 , (countT)pcArg ) ;
         //etThread.osThreadF( tin0P , countTC() , tmReportF , &sgnDone_tmReportF_ , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 2 , 0 , (countT)pcArg ) ;
         //etThread.osThreadF( tin0P , countTC() , tmReportF , &sgnDone_tmReportF_ , 0  , flTHREADlAUNCH_null , CBsTACKmIN << 1 , 0 , (countT)pcArg ) ;
 
-        //etRock.traceF( tin0P , T("tmEatTelemetrySysF / launching tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tin0P , T("tmEatTelemetrySysF / launching tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         pcArg[ 0xb ] = (countT)&bChatterP ;
         pcArg[ 0xa ] = (countT)&tEventP ;
@@ -1484,15 +1484,15 @@ TELL( "cleaning up 0" )
 
     //if( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ) etThread.osThreadF( TaRG1( tmYellF ) ) ;
 
-    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / ++ [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / ++ [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     //CONoUTrAW3( "tmEatTelemetrySysF [idMemorySpaceP]: " , idMemorySpaceP , "\r\n" ) ;
 
     TN( tb4 , "    " ) ;
 
-    ((tin9S&)tin0P).c4Tell.c1 = idMemorySpaceP ;
+    ((tin123S&)tin0P).c4Tell.c1 = idMemorySpaceP ;
 
-    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / i just called TRACEmYtHREAD [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin9S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tin0P , T("tmEatTelemetrySysF / i just called TRACEmYtHREAD [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     //TRACEmYtHREAD ;
 
     etThread.delF( tin0P , pcArgP ) ;
@@ -1891,15 +1891,15 @@ DONE( tmReportF )
                                         boolT bIn ;
                                         boolT bOut ;
                                 
-                                        countT idiFile = ((tin9S&)tin0Copy).pLFstep[ offe + 1 ] ;
-                                        countT idLine  = ((tin9S&)tin0Copy).pLFstep[ offe     ] ;
+                                        countT idiFile = ((tin123S&)tin0Copy).pLFstep[ offe + 1 ] ;
+                                        countT idLine  = ((tin123S&)tin0Copy).pLFstep[ offe     ] ;
                                         countT offe = ( ids & OFFsLOTtINsTEPmAX ) << 1 ;
 
                                         OStEXT( ostoLine , TUCK << 2 ) ;            //20230908@1445: 2 <- 1 DUE TO EXHAUSTION
                                     {
-                                    for( countT ids = ((tin9S&)tin0Copy).monitor.idStep ; cDo -- ; ids -- )
+                                    for( countT ids = ((tin123S&)tin0Copy).monitor.idStep ; cDo -- ; ids -- )
                                     countT cDo = OFFsLOTtINsTEPmAX + 1 ;                          // IF idStep IS SMALL AND NOT BECAUSE OF WRAP THEN SOME REPORT LINES WILL BE FROM [0,0] PAIRS ; TO KISS, I DO NOT TEST FOR THIS SO I WILL REPORT EVEN IF pLFstep HAS BEEN TRASHED
-                                    countT cIndent = ((tin9S&)tin0Copy).monitor.cInNest ;
+                                    countT cIndent = ((tin123S&)tin0Copy).monitor.cInNest ;
                                 
                                     sRptTin << (strokeS*)( T("Execution Steps:\r\n \r\n") ) ;
                                     _IO_
@@ -1921,20 +1921,20 @@ DONE( tmReportF )
                                     OStEXTAK(   ostoRpt , "." ) ;
                                     OStEXTCmIN( ostoRpt , idLine , 4 ) ;
                                     OStEXTAK(   ostoRpt , "'th: " ) ;
-                                    OStEXTC(    ostoRpt , ((tin9S&)tin0Copy).pIdInNest[ offez ] , ' ' ) ;
+                                    OStEXTC(    ostoRpt , ((tin123S&)tin0Copy).pIdInNest[ offez ] , ' ' ) ;
                                     OStEXTAK(   ostoRpt , " | " ) ;
-                                    OStEXTC(    ostoRpt , ((tin9S&)tin0Copy).pEIPInNest[ offez ] , ' ' ) ;
+                                    OStEXTC(    ostoRpt , ((tin123S&)tin0Copy).pEIPInNest[ offez ] , ' ' ) ;
                                     OStEXT(     ostoRpt , OFFsLOTtINnESTmAX * TUCK )
                                         
-                                    countT idiFile = ((tin9S&)tin0Copy).monitor.pLFnest[ offe + 1 ] ;
-                                    countT idLine  = ((tin9S&)tin0Copy).monitor.pLFnest[ offe     ] ;
+                                    countT idiFile = ((tin123S&)tin0Copy).monitor.pLFnest[ offe + 1 ] ;
+                                    countT idLine  = ((tin123S&)tin0Copy).monitor.pLFnest[ offe     ] ;
                                     countT offe = ( idn & OFFsLOTtINnESTmAX ) << 1 ;
                                     countT offez = idn & OFFsLOTtINnESTmAX ;
                                     _IO_
                                 {
-                                for( countT idn = ((tin9S&)tin0Copy).monitor.cInNest ; idn >= idnf && !bQuitEatingP ; idn -- )
+                                for( countT idn = ((tin123S&)tin0Copy).monitor.cInNest ; idn >= idnf && !bQuitEatingP ; idn -- )
                                 if( (sCountT)idnf < 1 ) idnf = 1 ;
-                                countT idnf = ((tin9S&)tin0Copy).monitor.cInNest - OFFsLOTtINnESTmAX ;
+                                countT idnf = ((tin123S&)tin0Copy).monitor.cInNest - OFFsLOTtINnESTmAX ;
                                 if( bDash ) sRptTin << (strokeS*)( T(DASH256 "\r\n") ) ;
                                 //etRock.traceF( tin0P , T("tmReportF a/ 3") ) ; //U:: TO FIND A BUG
                     
@@ -1962,7 +1962,7 @@ DONE( tmReportF )
                                                         {
                                                         if( bOk )
                                                         }
-                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabotC ) , bOk , (voidT*)((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin9S&)tin0Copy).osPid ) ;
+                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabotC ) , bOk , (voidT*)((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
                                                             _IO_
                                                         {
                                                         ZE( boolT , bOk ) ;
@@ -1987,7 +1987,7 @@ DONE( tmReportF )
                                                         {
                                                         if( bOk )
                                                         }
-                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabitC ) , bOk , (voidT*)((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin9S&)tin0Copy).osPid ) ;
+                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabitC ) , bOk , (voidT*)((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
                                                             _IO_
                                                         {
                                                         ZE( boolT , bOk ) ;
@@ -2019,7 +2019,7 @@ DONE( tmReportF )
                                                                 else
                                                                 }
                                                                     //etRock.traceF( tin0P , T("tmReportF a/ 9 / 6") ) ; //U:: TO FIND A BUG
-                                                                    sRptTin << (strokeS*)( T("this is grabbed by osTid:")+TF1(grab.osTidF())+T(" idAdamRoot:")+TF1(idAdamRoot)+T(" idAdam:")+TF1(idAdam)+T(" idThread:")+TF1(((tin9S&)tin0Copy).monitor.idThread)+T(" postThreadName:\"")+TF1(((tin9S&)tin0Copy).postThreadName)+T("\"\r\n") ) ;
+                                                                    sRptTin << (strokeS*)( T("this is grabbed by osTid:")+TF1(grab.osTidF())+T(" idAdamRoot:")+TF1(idAdamRoot)+T(" idAdam:")+TF1(idAdam)+T(" idThread:")+TF1(((tin123S&)tin0Copy).monitor.idThread)+T(" postThreadName:\"")+TF1(((tin123S&)tin0Copy).postThreadName)+T("\"\r\n") ) ;
                                                                     //etRock.traceF( tin0P , T("tmReportF a/ 9 / 7") ) ; //U:: TO FIND A BUG
 
                                                                     }
@@ -2039,7 +2039,7 @@ DONE( tmReportF )
                                                                                     {
                                                                                     if( bOk )
                                                                                     }
-                                                                                        thirdC::dosReadProcessMemoryIF( tin0P , pbCopy2 , sizeof( processGlobal1S ) , bOk , (voidT*)ag1.pProcessGlobal1 , ((tin9S&)tin0Copy).osPid ) ;
+                                                                                        thirdC::dosReadProcessMemoryIF( tin0P , pbCopy2 , sizeof( processGlobal1S ) , bOk , (voidT*)ag1.pProcessGlobal1 , ((tin123S&)tin0Copy).osPid ) ;
                                                                                         _IO_
                                                                                     {
                                                                                     ZE( boolT , bOk ) ;
@@ -2076,7 +2076,7 @@ DONE( tmReportF )
                                                                             {
                                                                             if( bOk )
                                                                             }
-                                                                                thirdC::dosReadProcessMemoryIF( tin0P , pbCopy1 , sizeof( adamGlobal1S ) , bOk , (voidT*)((tin9S&)tin0Copy).pag1 , ((tin9S&)tin0Copy).osPid ) ;
+                                                                                thirdC::dosReadProcessMemoryIF( tin0P , pbCopy1 , sizeof( adamGlobal1S ) , bOk , (voidT*)((tin123S&)tin0Copy).pag1 , ((tin123S&)tin0Copy).osPid ) ;
                                                                                 _IO_
                                                                             {
                                                                             ZE( boolT , bOk ) ;
@@ -2112,7 +2112,7 @@ DONE( tmReportF )
                                                         {
                                                         if( bOk )
                                                         }
-                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabC ) , bOk , (voidT*)((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin9S&)tin0Copy).osPid ) ;
+                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabC ) , bOk , (voidT*)((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
                                                             _IO_
                                                         {
                                                         ZE( boolT , bOk ) ;
@@ -2137,7 +2137,7 @@ DONE( tmReportF )
                                         }
                                             if( !bOk || getNegAM( recheck ) != FINGERnEG_GRABc ) pbg = 0 ;
                                             }
-                                                thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&recheck , sizeof( recheck ) , bOk , (voidT*)((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin9S&)tin0Copy).osPid ) ;
+                                                thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&recheck , sizeof( recheck ) , bOk , (voidT*)((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
                                                 _IO_
                                             {
                                             ZE( countT , recheck ) ;
@@ -2147,7 +2147,7 @@ DONE( tmReportF )
                                         else
                                         if( !bOk || getNegAM( pbg->finger ) != FINGERnEG_GRABc ) pbg = 0 ;
                                         }
-                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( baseGrabC ) , bOk , (voidT*)((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin9S&)tin0Copy).osPid ) ;
+                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( baseGrabC ) , bOk , (voidT*)((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
                                             _IO_
                                         {
                                         ZE( boolT , bOk ) ;
@@ -2161,26 +2161,26 @@ DONE( tmReportF )
                                     ZE( byteT* , pbCopy ) ;
             
                                     bDash |= reportGrabF( tin0P , sRptTin , T("grabbing:") , pcPanLifi ) ;
-                                    //countT pcPanLifi[] = { 0 , ((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 1 ] , ((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 2 ] } ; // THE PAN IS NOT USED BECAUSE HERE IT IS ALWAYS baseGrabC*, UNLIKE WHAT IS DONE IN THE GRABBED ARRAY
-                                    countT pcPanLifi[] = { ((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 1 ] , ((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 2 ] } ;
+                                    //countT pcPanLifi[] = { 0 , ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 1 ] , ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 2 ] } ; // THE PAN IS NOT USED BECAUSE HERE IT IS ALWAYS baseGrabC*, UNLIKE WHAT IS DONE IN THE GRABBED ARRAY
+                                    countT pcPanLifi[] = { ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 1 ] , ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 2 ] } ;
                                     //etRock.traceF( tin0P , T("tmReportF a/ c") ) ; //U:: TO FIND A BUG
                                     _IO_
                                 {
-                                if( ((tin9S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] && !bQuitEatingP )
+                                if( ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] && !bQuitEatingP )
                                 //etRock.traceF( tin0P , T("tmReportF a/ d") ) ; //U:: TO FIND A BUG
             
                                 }
                                     }
                                         }
-                                            bDash |= reportGrabF( tin0P , sRptTin , T("got     :") , ((tin9S&)tin0Copy).pPanLifiRecurseGrabbedLevel + off , ((tin9S&)tin0Copy).osPid ) ;
+                                            bDash |= reportGrabF( tin0P , sRptTin , T("got     :") , ((tin123S&)tin0Copy).pPanLifiRecurseGrabbedLevel + off , ((tin123S&)tin0Copy).osPid ) ;
                                         {
-                                        if( ((tin9S&)tin0Copy).pPanLifiRecurseGrabbedLevel[ off ] )
+                                        if( ((tin123S&)tin0Copy).pPanLifiRecurseGrabbedLevel[ off ] )
                                     {
                                     for( countT off = 0 ; off < offEnd ; off += 5 )
                                     const countT offEnd = OFFgRABBEDmAX * 5 ;
                                     _IO_
                                 {
-                                if( ((tin9S&)tin0Copy).monitor.cGrabbed )
+                                if( ((tin123S&)tin0Copy).monitor.cGrabbed )
                     
                                 ZE( boolT , bDash ) ;
                             
@@ -2189,11 +2189,11 @@ DONE( tmReportF )
                                     bEvent = 1 ;
                                     _IO_
                                 {
-                                if( osPidEventP == ((tin9S&)tin0Copy).osPid && osTidEventP == ((tin9S&)tin0Copy).osTid )
+                                if( osPidEventP == ((tin123S&)tin0Copy).osPid && osTidEventP == ((tin123S&)tin0Copy).osTid )
                     
-                                sRptTin << (strokeS*)( T("\r\n\r\n")+TF3(((tin9S&)tin0Copy).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+TP(((tin9S&)tin0Copy).postThreadName,0x10)+T(" ")+TF3(((tin9S&)tin0Copy).monitor.idStep,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+TF3(head.cStepsNew,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+tc4+T(((tin9S&)tin0Copy).postTell)+T("\r\n" DASH256 "\r\n") ) ;
+                                sRptTin << (strokeS*)( T("\r\n\r\n")+TF3(((tin123S&)tin0Copy).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+TP(((tin123S&)tin0Copy).postThreadName,0x10)+T(" ")+TF3(((tin123S&)tin0Copy).monitor.idStep,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+TF3(head.cStepsNew,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+tc4+T(((tin123S&)tin0Copy).postTell)+T("\r\n" DASH256 "\r\n") ) ;
 
-                                //CONoUTrAW( TF2(idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": ")+TF2(head.idAdamRoot,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(head.idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" ")+T(((tin9S&)tin0Copy).postThreadName)+T("\r\n") ) ;
+                                //CONoUTrAW( TF2(idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": ")+TF2(head.idAdamRoot,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(head.idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" ")+T(((tin123S&)tin0Copy).postThreadName)+T("\r\n") ) ;
                     
                                 }
                                     sRptTin << (strokeS*)( T("\r\n")+TF2(head.idAdamRoot,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("/")+TF2(head.idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n\r\n") ) ;
@@ -2211,33 +2211,33 @@ DONE( tmReportF )
                                 WRITEaRRAY( pLFstep )                                                                                                                                                       /*H*/
                                 WRITEaRRAYmONITOR( pLFnest )                                                                                                                                                       /*G*/
                 
-                                costai = 1 + thirdC::c_strlenIF( tin0P , ((tin9S&)tin0Copy).postTellIf        ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin9S&)tin0Copy).postTellIf       , costai )  ; pbc += costai ;               /*F*/
-                                costai = 1 + thirdC::c_strlenIF( tin0P , ((tin9S&)tin0Copy).postTellWait      ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin9S&)tin0Copy).postTellWait     , costai )  ; pbc += costai ;               /*E*/
-                                costai = 1 + thirdC::c_strlenIF( tin0P , ((tin9S&)tin0Copy).postTell          ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin9S&)tin0Copy).postTell         , costai )  ; pbc += costai ;               /*D*/
+                                costai = 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postTellIf        ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin123S&)tin0Copy).postTellIf       , costai )  ; pbc += costai ;               /*F*/
+                                costai = 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postTellWait      ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin123S&)tin0Copy).postTellWait     , costai )  ; pbc += costai ;               /*E*/
+                                costai = 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postTell          ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin123S&)tin0Copy).postTell         , costai )  ; pbc += costai ;               /*D*/
                                 costai = 1 + tc4.csF( tin0P )                                        ; thirdC::c_memcpyIF( tin0P , pbc , tc4                      , costai )  ; pbc += costai ;               /*M*/
-                                costai = 1 + thirdC::c_strlenIF( tin0P , ((tin9S&)tin0Copy).postThreadName    ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin9S&)tin0Copy).postThreadName   , costai )  ; pbc += costai ;               /*C*/
+                                costai = 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postThreadName    ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin123S&)tin0Copy).postThreadName   , costai )  ; pbc += costai ;               /*C*/
                                 ZE( countT , costai ) ;
                 
-                                thirdC::c_memcpyIF( tin0P , pbc , (byteT*)&((tin9S&)tin0Copy).monitor , sizeof( monitorS ) ) ; pbc += sizeof( monitorS ) ; /*B*/
+                                thirdC::c_memcpyIF( tin0P , pbc , (byteT*)&((tin123S&)tin0Copy).monitor , sizeof( monitorS ) ) ; pbc += sizeof( monitorS ) ; /*B*/
                                 costaVarying += 1 + tc4.csF( tin0P ) ;
-                                TN( tc4 , "" ) ; tc4 = T("[")+T((countT*)((tin9S&)tin0Copy).c4Tell)+T("]") ;
+                                TN( tc4 , "" ) ; tc4 = T("[")+T((countT*)((tin123S&)tin0Copy).c4Tell)+T("]") ;
                                 //etRock.traceF( tin0P , T("tmReportF a/ e") ) ; //U:: TO FIND A BUG
                                 _IO_
                             {
-                            if( /*!head.cStepsNew &&*/ !( F(((tin9S&)tin0Copy).flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE ) && !bQuitEatingP )
+                            if( /*!head.cStepsNew &&*/ !( F(((tin123S&)tin0Copy).flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE ) && !bQuitEatingP )
 
                             }
                                 CONoUTrAW( os ) ;
                                 OStEXTAK( os , "\"\r\n" ) ;
-                                OStEXTA(  os , ((tin9S&)tin0Copy).postThreadName ) ;
+                                OStEXTA(  os , ((tin123S&)tin0Copy).postThreadName ) ;
                                 OStEXTAK( os , "\"" ) ;
-                                OStEXTC(  os , ((tin9S&)tin0Copy).monitor.idThread , 0 ) ;
+                                OStEXTC(  os , ((tin123S&)tin0Copy).monitor.idThread , 0 ) ;
                                 OStEXTAK( os , "suppressing detail for thread " ) ;
                                 OStEXT(  os , TUCK ) ;
                             {
-                            if( F(((tin9S&)tin0Copy).flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE )
+                            if( F(((tin123S&)tin0Copy).flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE )
 
-                            //etRock.traceF( tin0P , T("reporting on tin9S [idThread,postThreadName]:    ")+TF2(((tin9S&)tin0Copy).monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(((tin9S&)tin0Copy).postThreadName) ) ;
+                            //etRock.traceF( tin0P , T("reporting on tin123S [idThread,postThreadName]:    ")+TF2(((tin123S&)tin0Copy).monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(((tin123S&)tin0Copy).postThreadName) ) ;
                 
                             tin0S&   tin0Copy     = *(tin0S*)( pbFrom + sizeof( copyHeadS ) ) ;
                             copyHeadS& head     = *(copyHeadS*)pbFrom ;
@@ -2287,16 +2287,16 @@ DONE( tmReportF )
                             ACCsIZE( pLFstep )                                                                                                                                              /*H*/
                             ACCsIZEmONITOR( pLFnest )                                                       
             
-                            costaVarying += 1 + thirdC::c_strlenIF( tin0P , ((tin9S&)tin0Copy).postTellIf     ) ;                                                                                       /*F*/
-                            costaVarying += 1 + thirdC::c_strlenIF( tin0P , ((tin9S&)tin0Copy).postTellWait   ) ;                                                                                       /*E*/
-                            costaVarying += 1 + thirdC::c_strlenIF( tin0P , ((tin9S&)tin0Copy).postTell       ) ;                                                                                       /*D*/
+                            costaVarying += 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postTellIf     ) ;                                                                                       /*F*/
+                            costaVarying += 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postTellWait   ) ;                                                                                       /*E*/
+                            costaVarying += 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postTell       ) ;                                                                                       /*D*/
                             costaVarying += 1 + tc4.csF( tin0P ) ;                                                                                                                           /*M*/
-                            costaVarying += 1 + thirdC::c_strlenIF( tin0P , ((tin9S&)tin0Copy).postThreadName ) ;                                                                                       /*C*/
-                            TN( tc4 , "" ) ; tc4 = T("[")+T((countT*)((tin9S&)tin0Copy).c4Tell)+T("]") ;
+                            costaVarying += 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postThreadName ) ;                                                                                       /*C*/
+                            TN( tc4 , "" ) ; tc4 = T("[")+T((countT*)((tin123S&)tin0Copy).c4Tell)+T("]") ;
                             //etThread.traceF( tin0P , T("report on me [idMemorySpaceP,cFlavorsToReport]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFlavorsToReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             cFlavorsToReport ++ ;
                         {
-                        if( tin0Copy.idTypeTin == ifcIDtYPEtIN_FULL && /*!head.cStepsNew &&*/ !( F(((tin9S&)tin0Copy).flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE ) )
+                        if( tin0Copy.idTypeTin == ifcIDtYPEtIN_123 && /*!head.cStepsNew &&*/ !( F(((tin123S&)tin0Copy).flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE ) )
 
                         tin0S&  tin0Copy = *(tin0S*)( pbFrom + sizeof( copyHeadS ) ) ;
                         copyHeadS& head = *(copyHeadS*)pbFrom ;
@@ -2404,7 +2404,7 @@ DONE( tmReportF )
                                             {
                                             ZE( sexHeadS* , pCopyMetaHead ) ;
                                         {
-                                        if( pCopySex ) // pCopySex IS EITHER 0 OR A VALID IMAGE OF A sexC (U:: ADD FINGERPRINT CHECK LIKE tin9S)
+                                        if( pCopySex ) // pCopySex IS EITHER 0 OR A VALID IMAGE OF A sexC (U:: ADD FINGERPRINT CHECK LIKE tin123S)
                                             
                                         }
                                             if( bOk ) pCopySex = (sexC*)pbCopySex ; ;
@@ -2505,10 +2505,10 @@ DONE( tmReportF )
                                         }
                                             //if( bChatter ) { CONoUTrAW( "COPIED sw\r\n" ) ; }
             
-                                            thirdC::c_memcpyIF( tin0P , pbTo + sizeof( copyHeadS ) , (byteT*)pCopy , sizeof( tin9S ) ) ;
+                                            thirdC::c_memcpyIF( tin0P , pbTo + sizeof( copyHeadS ) , (byteT*)pCopy , sizeof( tin123S ) ) ;
             
-                                                                                                    entry.idStepLath = ((tin9S*)pCopy)->monitor.idStep ;
-                                            head.cStepsNew = ((tin9S*)pCopy)->monitor.idStep - entry.idStepLath ;
+                                                                                                    entry.idStepLath = ((tin123S*)pCopy)->monitor.idStep ;
+                                            head.cStepsNew = ((tin123S*)pCopy)->monitor.idStep - entry.idStepLath ;
             
                                             head.idAdam     = memorySpaceP.pczLeverAdam[ 1 ] ;
                                             head.idAdamRoot = memorySpaceP.pczLeverAdam[ 0 ] ;
@@ -2519,14 +2519,14 @@ DONE( tmReportF )
                                             cLeverOsTid = entry.osTid ;
                                             //etThread.traceF( tin0P , T("copying to swTinCopy [idMemorySpaceP,idf]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         {
-                                        if( pCopy&& !bQuitEatingP ) // pCopy IS EITHER 0 OR A VALID IMAGE OF A tin9S
+                                        if( pCopy&& !bQuitEatingP ) // pCopy IS EITHER 0 OR A VALID IMAGE OF A tin123S
                                             
                                         }
                                             }
                                                 }
                                                     //U::LOG postThreadName AND idThread
 
-                                                    //LOGrAW9( "tmReportF/detected odor while sniffing tin9S again to verify [bOk,fingerprint,entry.idSerial,idSerial]: " , bOk , "    " , pc2[ 0 ] , "    " , entry.idSerial , "    " , pc2[ 1 ] , "\r\n" ) ;
+                                                    //LOGrAW9( "tmReportF/detected odor while sniffing tin123S again to verify [bOk,fingerprint,entry.idSerial,idSerial]: " , bOk , "    " , pc2[ 0 ] , "    " , entry.idSerial , "    " , pc2[ 1 ] , "\r\n" ) ;
                                                     pCopy = 0 ;
                                                     //etThread.traceF( tin0P , T("U:: 1 [idf]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
@@ -2543,13 +2543,13 @@ DONE( tmReportF )
                                             }
                                                 //U::LOG postThreadName AND idThread
 
-                                                //LOGrAW9( "tmReportF/detected odor while sniffing tin9S full [bOk,fingerprint,entry.idSerial,idSerial]: " , bOk , "    " , pCopy->fingerprint , "    " , entry.idSerial , "    " , pCopy->idSerial , "\r\n" ) ;
+                                                //LOGrAW9( "tmReportF/detected odor while sniffing tin123S full [bOk,fingerprint,entry.idSerial,idSerial]: " , bOk , "    " , pCopy->fingerprint , "    " , entry.idSerial , "    " , pCopy->idSerial , "\r\n" ) ;
                                                 pCopy = 0 ;
                                                 //etThread.traceF( tin0P , T("U:: 3 [idf]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                             {
                                             if( !bOk || getNegAM( pCopy->fingerprint ) != FINGERnEG_TINs || entry.idSerial != pCopy->idSerial )
                                             }
-                                                thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( tin9S ) , bOk , (voidT*)entry.ip , entry.osPid ) ;
+                                                thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( tin123S ) , bOk , (voidT*)entry.ip , entry.osPid ) ;
                                                 _IO_
                                             {
                                             ZE( boolT , bOk ) ;
@@ -2559,10 +2559,10 @@ DONE( tmReportF )
                                         tin0S* pCopy = (tin0S*)pbCopy ;
                                         //etThread.traceF( tin0P , T("U:: 5 [idf]:    ")+TF2(idf,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                        //U:: INSPECT pCopy->idTypeTin AND HANDLE CORRECTLY IF NOT tin9S
+                                        //U:: INSPECT pCopy->idTypeTin AND HANDLE CORRECTLY IF NOT tin123S
                                     {
                                     if( pbCopy )
-                                    PUSE.newF( tin0P , LF , pbCopy , sizeof( tin9S ) ) ; ___( pbCopy ) ;
+                                    PUSE.newF( tin0P , LF , pbCopy , sizeof( tin123S ) ) ; ___( pbCopy ) ;
                                     ZE( byteT* , pbCopy ) ;
                     
                                     //}
@@ -2766,7 +2766,7 @@ DONE( tmReportF )
     ZE( countT , idCycle ) ;
     TN( tcr , "\r\n" ) ;
 
-    switchC swTinCopy( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverOsTid , 0 , sizeof( copyHeadS ) + sizeof( tin9S ) ) ;
+    switchC swTinCopy( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , cLeverOsTid , 0 , sizeof( copyHeadS ) + sizeof( tin123S ) ) ;
     ZE( countT , cLeverOsTid ) ;
 
     //booksC bkReport( tin0P , TAG( TAGiDnULL ) , tBooks , ifcIDsTATEsPACE_MULTIPLEaDAMS , flBOOKSc_WRITER , TICK ) ; //A SEPARATE BOOKS OBJECT IS USED FOR EACH MEMORY SPACE TO ELIMINATE SERIALIZATION COLLISIONS; WHICH ARE SUPPORTED BUT WHY TAKE A CHANCE WITH THE GLASS2!
@@ -2777,7 +2777,7 @@ DONE( tmReportF )
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ; //CHANGE TO RUSH IF NEED TO ANALYZE BEHAVIOR INVOLVING CPU PEGGING
 
-    ((tin9S&)tin0P).c4Tell.c1 = idMemorySpaceP ;
+    ((tin123S&)tin0P).c4Tell.c1 = idMemorySpaceP ;
 
     const flagsT fliMyBit = 1 << idMemorySpaceP - ifcIDmEMORYsPACE_min - cSkip ;       //A:ASSUME: THE NUMBER OF NONRESERVED MEMORY SPACE VALUES IS NOT GREATER THAN THE NUMBER OF BITS IN A flagsT INSTANCE
 
@@ -2820,9 +2820,9 @@ TASK( tmReportF )
     }
         thirdC::c_memcpyIF( tin0P , pbc , (byteT*)pci , costai ) ; pbc += costai ;                       \
         costai = sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;                          \
-        ((tin9S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
+        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
         countT pci[ cci + 1 ] ;                                                                             \
-        const countT cci = sizeof ((tin9S&)tin0P).monitor.##arrayP ;                                \
+        const countT cci = sizeof ((tin123S&)tin0P).monitor.##arrayP ;                                \
     {                                                                                                       \
                                                                                                             \
 #define WRITEaRRAYmONITOR(arrayP)                                                                           \
@@ -2830,27 +2830,27 @@ TASK( tmReportF )
     }
         thirdC::c_memcpyIF( tin0P , pbc , (byteT*)pci , costai ) ; pbc += costai ;                       \
         costai = sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;                          \
-        ((tin9S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
+        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
         countT pci[ cci + 1 ] ;                                                                             \
-        const countT cci = sizeof ((tin9S&)tin0P).##arrayP ;                                        \
+        const countT cci = sizeof ((tin123S&)tin0P).##arrayP ;                                        \
     {                                                                                                       \
                                                                                                             \
 #define WRITEaRRAY(arrayP)                                                                                  \
 
     }
         costaVarying += sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;                   \
-        ((tin9S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
+        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
         countT pci[ cci + 1 ] ;                                                                             \
-        const countT cci = sizeof ((tin9S&)tin0P).##arrayP ;                                        \
+        const countT cci = sizeof ((tin123S&)tin0P).##arrayP ;                                        \
     {                                                                                                       \
                                                                                                             \
 #define ACCsIZE(arrayP)                                                                                     \
 
     }
         costaVarying += sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;                   \
-        ((tin9S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
+        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
         countT pci[ cci + 1 ] ;                                                                             \
-        const countT cci = sizeof ((tin9S&)tin0P).monitor.##arrayP ;                                \
+        const countT cci = sizeof ((tin123S&)tin0P).monitor.##arrayP ;                                \
     {                                                                                                       \
                                                                                                             \
 #define ACCsIZEmONITOR(arrayP)                                                                              \
@@ -3050,19 +3050,19 @@ DONE( tmcMonitorServerF )
                         sOut << cFlavorsMemory ;
                         countT cFlavorsMemory = swMemorySpaceP.cFlavorsF( tin0P ) ;
                         swMemorySpaceP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                        sOut << (countT)ifcIDrEPLYmONITOR_tin9S ;
+                        sOut << (countT)ifcIDrEPLYmONITOR_tin123S ;
                     {
-                    case ifcIDcMDmONITOR_tin9S :
+                    case ifcIDcMDmONITOR_tin123S :
                     }
                         break ;
 
-                        ((tin9S&)tin0P).pEtScratch->delF( tin0P , pbCopy ) ;
+                        ((tin123S&)tin0P).pEtScratch->delF( tin0P , pbCopy ) ;
                         if( bOk ) sOut.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_byteTptr , pbCopy , cbAt ) ;
                         sOut << bOk ;
                         sOut << (countT)ifcIDrEPLYmONITOR_IMAGE ;
 
                         if( pbCopy ) thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , cbAt , bOk , pvAt , osPid ) ;
-                        ((tin9S&)tin0P).pEtScratch->newF( tin0P , LF , pbCopy , cbAt ) ; ___( pbCopy ) ;
+                        ((tin123S&)tin0P).pEtScratch->newF( tin0P , LF , pbCopy , cbAt ) ; ___( pbCopy ) ;
                         ZE( boolT , bOk ) ;
                         ZE( byteT* , pbCopy ) ;
 
@@ -3088,12 +3088,12 @@ DONE( tmcMonitorServerF )
         soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
         soulC sIn(  tin0P , TAG( TAGiDnULL ) ) ;
     
-        psoP->etherF( tin0P , *((tin9S&)tin0P).pEtScratch ) ;
+        psoP->etherF( tin0P , *((tin123S&)tin0P).pEtScratch ) ;
         SCOOPS
     {
     IFsCRATCH
 
-    ((tin9S&)tin0P).c4Tell.c1 = cLeverIdMemoryP ;
+    ((tin123S&)tin0P).c4Tell.c1 = cLeverIdMemoryP ;
 
     switchC& swMemorySpaceP  = *(switchC*)pTaskP->c3 ;
     countT&  cLeverIdMemoryP =  *(countT*)pTaskP->c2 ;

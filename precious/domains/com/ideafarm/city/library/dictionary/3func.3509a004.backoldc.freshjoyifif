@@ -8,7 +8,7 @@
 
 
 }
-    ((tin9S&)tin0P).pag5->frPaper.grab.ungrabF( tin0P ) ;
+    ((tin123S&)tin0P).pag5->frPaper.grab.ungrabF( tin0P ) ;
     }
         }
             }
@@ -27,7 +27,7 @@
                     countT offb = idToolb - ifcIDtYPEtOOL_JOY1bUTTON1 ;
                     static boolT pbDownLag[ 0x20 ] ;
         
-                    boolT bDown = !!( F(((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pfToolState_f[idToolb-ifcIDtYPEtOOL_begin-1]) & flTOOL_DOWN ) ;
+                    boolT bDown = !!( F(((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pfToolState_f[idToolb-ifcIDtYPEtOOL_begin-1]) & flTOOL_DOWN ) ;
                 {
                 for( countT idToolb = pcMinMax[ off ][ 0 ] ; idToolb <= pcMinMax[ off ][ 1 ] ; idToolb ++ )
                 countT pcMinMax[ 2 ][ 2 ] = { ifcIDtYPEtOOL_JOY1bUTTON1 , ifcIDtYPEtOOL_JOY1bUTTON02 , ifcIDtYPEtOOL_JOY2bUTTON1 , ifcIDtYPEtOOL_JOY2bUTTON02 } ;
@@ -56,7 +56,7 @@
             if( pbNPLag[ off ] != bNP )
 
             boolT bNP = !!( F(*pFlags) & flTOOL_NOTpRESENT ) ;
-            const flagsT* pFlags = &((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pfToolState_f[ ( off ? ifcIDtYPEtOOL_JOY2pOSITION : ifcIDtYPEtOOL_JOY1pOSITION ) - ifcIDtYPEtOOL_begin - 1 ] ;
+            const flagsT* pFlags = &((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pfToolState_f[ ( off ? ifcIDtYPEtOOL_JOY2pOSITION : ifcIDtYPEtOOL_JOY1pOSITION ) - ifcIDtYPEtOOL_begin - 1 ] ;
 
             joyPosF( tin0P , pmxNew , sizeof pmxNew / sizeof pmxNew[ 0 ] , 1 + off ) ;
             measureT pmxNew[ 7 ] ;
@@ -69,95 +69,95 @@
 
         }
             }
-                for( countT off = 0 ; off < 0x20 ; off ++ ) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY2bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_NOTpRESENT ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_NOTpRESENT ;
+                for( countT off = 0 ; off < 0x20 ; off ++ ) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY2bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_NOTpRESENT ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_NOTpRESENT ;
             {
             else
             }
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_77Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwVpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_67Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwUpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_57Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwRpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_47Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwZpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_37Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwYpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_27Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwXpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_17Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwPOV ) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV  ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_77Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwVpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_67Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwUpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_57Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwRpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_47Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwZpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_37Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwYpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_27Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwXpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_17Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwPOV ) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17Max[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV  ;
     
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_77Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwVpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_67Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwUpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_57Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwRpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_47Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwZpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_37Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwYpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_27Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwXpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_17Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwPOV ) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV  ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_77Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwVpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_67Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwUpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_57Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwRpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_47Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwZpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_37Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwYpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_27Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwXpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_17Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwPOV ) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17Min[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV  ;
     
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV ;
     
                 }
                     off ++ ;
                     flButtons >>= 1 ;
         
-                    ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY2bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = ( flButtons & 1 ) ? flTOOL_DOWN : flTOOL_null ;
+                    ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY2bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = ( flButtons & 1 ) ? flTOOL_DOWN : flTOOL_null ;
                 {
                 while( off < 0x20 )
                 ZE( countT , off ) ;
                 flagsT flButtons = info.dwButtons ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_null ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY2pOSITION - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_null ;
             {
-            if( JOYERR_NOERROR == ((tin9S&)tin0P).brcRaw )
+            if( JOYERR_NOERROR == ((tin123S&)tin0P).brcRaw )
             BOSdOnOTtEST( WHATgbo , joyGetPosEx( JOYSTICKID2 , &info ) )
             info.dwFlags = JOY_RETURNALL ;
             info.dwSize = sizeof info ;
             etherP.memSetF( tin0P , (byteT*)&info , sizeof info ) ;
     
             }
-                for( countT off = 0 ; off < 0x20 ; off ++ ) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY1bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_NOTpRESENT ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_NOTpRESENT ;
+                for( countT off = 0 ; off < 0x20 ; off ++ ) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY1bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_NOTpRESENT ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_NOTpRESENT ;
             {
             else
             }
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_77Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwVpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_67Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwUpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_57Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwRpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_47Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwZpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_37Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwYpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_27Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwXpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_17Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwPOV ) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV  ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_77Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwVpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_67Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwUpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_57Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwRpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_47Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwZpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_37Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwYpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_27Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwXpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_17Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] < info.dwPOV ) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17Max[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV  ;
     
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_77Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwVpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_67Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwUpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_57Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwRpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_47Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwZpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_37Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwYpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_27Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwXpos) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
-                if( ((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_17Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwPOV ) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV  ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_77Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwVpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_67Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwUpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_57Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwRpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_47Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwZpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_37Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwYpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_27Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwXpos) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
+                if( ((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.pcToolState_17Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] > info.dwPOV ) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17Min[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV  ;
     
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_77[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwVpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_67[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwUpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_57[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwRpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_47[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwZpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_37[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwYpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_27[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwXpos ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pcToolState_17[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_x7Begin - 1 ] = info.dwPOV ;
     
                 }
                     off ++ ;
                     flButtons >>= 1 ;
         
-                    ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY1bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = ( flButtons & 1 ) ? flTOOL_DOWN : flTOOL_null ;
+                    ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY1bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = ( flButtons & 1 ) ? flTOOL_DOWN : flTOOL_null ;
                 {
                 while( off < 0x20 )
                 ZE( countT , off ) ;
                 flagsT flButtons = info.dwButtons ;
 
-                ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_null ;
+                ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY1pOSITION - ifcIDtYPEtOOL_begin - 1 ] = flTOOL_null ;
             {
-            if( JOYERR_NOERROR == ((tin9S&)tin0P).brcRaw )
+            if( JOYERR_NOERROR == ((tin123S&)tin0P).brcRaw )
             BOSdOnOTtEST( WHATgbo , joyGetPosEx( JOYSTICKID1 , &info ) )
             info.dwFlags = JOY_RETURNALL ;
             info.dwSize = sizeof info ;
@@ -167,7 +167,7 @@
         //CAPTURE JOYSTICK POSITION
     {
     else
-    if( !( F(((tin9S&)tin0P).pag1->_backOldC_.rowBack.ro.flagsPaperBackMode) & flPAPERbACKmODE_POLLjOYeVENwHENcONSOLEhIDDEN ) && bSuppressJoyInspection ) for( countT off = 0 ; off < 0x20 ; off ++ ) ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY2bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = ((tin9S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY1bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = 0 ;
+    if( !( F(((tin123S&)tin0P).pag1->_backOldC_.rowBack.ro.flagsPaperBackMode) & flPAPERbACKmODE_POLLjOYeVENwHENcONSOLEhIDDEN ) && bSuppressJoyInspection ) for( countT off = 0 ; off < 0x20 ; off ++ ) ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY2bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = ((tin123S&)tin0P).pag1->_backOldC_.rowBack.rw.pfToolState_f[ ifcIDtYPEtOOL_JOY1bUTTON1 + off - ifcIDtYPEtOOL_begin - 1 ] = 0 ;
 
     }
         pRootI->letRefF() ;
@@ -176,7 +176,7 @@
     if( pRootI )
     windowOldC* pRootI = windowOldC::getRefIF( tin0P ) ;
     boolT bSuppressJoyInspection = 1 ;
-    ((tin9S&)tin0P).pag5->frPaper.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    ((tin123S&)tin0P).pag5->frPaper.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 {
 /*1*/voidT backOldC::freshJoyIfIF( tin0S& tin0P , etherC& etherP )/*1*/
 

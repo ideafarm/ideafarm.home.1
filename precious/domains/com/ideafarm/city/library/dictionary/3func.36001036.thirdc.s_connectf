@@ -21,12 +21,12 @@
         __1
         #endif
 
-            __( ((tin9S&)tin0P).brcRaw - WSABASEERR ) ;
+            __( ((tin123S&)tin0P).brcRaw - WSABASEERR ) ;
             BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
 
         #elif defined( __NT__ )
 
-            __( ((tin9S&)tin0P).brcRaw - SOCBASEERR ) ;
+            __( ((tin123S&)tin0P).brcRaw - SOCBASEERR ) ;
             BOSdOnOTtEST( WHATgbo , sock_errno() )
 
         #if defined( __OS2__ )
@@ -42,7 +42,7 @@
                 bFail = 0 ;
 
                 //}
-                //    ((tin9S&)tin0P).pEther->traceF( tin0P , T("s_connectF / connect aok") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
+                //    ((tin123S&)tin0P).pEther->traceF( tin0P , T("s_connectF / connect aok") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
                 //{
                 //if( idPortP == 0x50 )   //U:: TO FIND A BUG
             {
@@ -52,32 +52,32 @@
                 ++ s ;
 
                 #endif
-                    if( ((tin9S&)tin0P).brcLath == WSAENOTSOCK ) break ; //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP
+                    if( ((tin123S&)tin0P).brcLath == WSAENOTSOCK ) break ; //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP
                 #elif defined( __NT__ )
                     //U:
                 #if defined( __OS2__ )
 
                 //}
-                //    ((tin9S&)tin0P).pEther->traceF( tin0P , T("s_connectF / connect failed") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
+                //    ((tin123S&)tin0P).pEther->traceF( tin0P , T("s_connectF / connect failed") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
                 //{
                 //if( idPortP == 0x50 )   //U:: TO FIND A BUG
             {
-            if( ((tin9S&)tin0P).bosFail )
+            if( ((tin123S&)tin0P).bosFail )
 
-            //etherC::etRockIF( tin0P ).traceF( tin0P , T("s_connect [bFail,bKilled]:    ")+TF3(((tin9S&)tin0P).bosFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)+T("    ")+TF2(pks->bKilled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
+            //etherC::etRockIF( tin0P ).traceF( tin0P , T("s_connect [bFail,bKilled]:    ")+TF3(((tin123S&)tin0P).bosFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)+T("    ")+TF2(pks->bKilled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
 
             //}
-            //    ((tin9S&)tin0P).brcRaw = _brcRawExp ;
-            //    ((tin9S&)tin0P).monitor.idWhat1 = _idWhatSaveBos ;
+            //    ((tin123S&)tin0P).brcRaw = _brcRawExp ;
+            //    ((tin123S&)tin0P).monitor.idWhat1 = _idWhatSaveBos ;
             //    }
             //        }
-            //            /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin9S&)tin0P).brcLath , " " , ((tin9S&)tin0P).idLine_brcLath , " " , ((tin9S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/
-            //            ((tin9S&)tin0P).idiFile_brcLath = DDNUMB ;
-            //            ((tin9S&)tin0P).idLine_brcLath = ifcLINE ;
-            //            ((tin9S&)tin0P).brcLath = ((tin9S&)tin0P).brcQuery ;
+            //            /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin123S&)tin0P).brcLath , " " , ((tin123S&)tin0P).idLine_brcLath , " " , ((tin123S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/
+            //            ((tin123S&)tin0P).idiFile_brcLath = DDNUMB ;
+            //            ((tin123S&)tin0P).idLine_brcLath = ifcLINE ;
+            //            ((tin123S&)tin0P).brcLath = ((tin123S&)tin0P).brcQuery ;
             //        {
-            //        if( ((tin9S&)tin0P).brcQuery )
-            //        ((tin9S&)tin0P).brcQuery = _brcRaw ;
+            //        if( ((tin123S&)tin0P).brcQuery )
+            //        ((tin123S&)tin0P).brcQuery = _brcRaw ;
             //        _brcRaw -= WSABASEERR ;
             //        }
             //            }
@@ -91,10 +91,10 @@
             //        {
             //        ZE( countT , _brcRaw ) ;
             //    {
-            //    if( ((tin9S&)tin0P).bosFail )
+            //    if( ((tin123S&)tin0P).bosFail )
             //    }
-            //        if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin9S&)tin0P).bosFail , ((tin9S&)tin0P).bosFail ? idMeFail : idMeOk , "connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info )" ) ;
-            //        countT tally = processGlobal1I.pHome->tallyHo.tallyF( ((tin9S&)tin0P).bosFail ? idMeFail : idMeOk ) ;
+            //        if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin123S&)tin0P).bosFail , ((tin123S&)tin0P).bosFail ? idMeFail : idMeOk , "connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info )" ) ;
+            //        countT tally = processGlobal1I.pHome->tallyHo.tallyF( ((tin123S&)tin0P).bosFail ? idMeFail : idMeOk ) ;
             //        static countT idMeFail ;
             //        static countT idMeOk ;
             //    {
@@ -110,21 +110,21 @@
             //            s_shutdown2IF( tin0P ) ;
             //        {
             //        if( rc == WSAECONNREFUSED )
-            //        ((tin9S&)tin0P).bosFail = 1 ;
+            //        ((tin123S&)tin0P).bosFail = 1 ;
             //        countT rc = WSAGetLastError() ;
             //    {
             //    if( _brcRawExp )
             //
-            //    //((tin9S&)tin0P).bosFail = !!_brcRawExp ;
+            //    //((tin123S&)tin0P).bosFail = !!_brcRawExp ;
             //
             //
             //
             //
             //    countT _brcRawExp = (countT)( connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info ) ) ;
             //    WHATsir
-            //    countT _idWhatSaveBos = ((tin9S&)tin0P).monitor.idWhat1 ;
+            //    countT _idWhatSaveBos = ((tin123S&)tin0P).monitor.idWhat1 ;
             //{
-            //20141124@1644: WEIRD BEHAVIOR: THE ((tin9S&)tin0P).bosFail = !!_brcRawExp ; LINE WAS OBSERVED IN WDW TO SET handleP.osh TO -1 (THE VALUE OF _brcRawExp)
+            //20141124@1644: WEIRD BEHAVIOR: THE ((tin123S&)tin0P).bosFail = !!_brcRawExp ; LINE WAS OBSERVED IN WDW TO SET handleP.osh TO -1 (THE VALUE OF _brcRawExp)
 
             BOSS( WHATsir , BOSfAIL , connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info ) )
 
@@ -132,12 +132,12 @@
 
 
             //}
-            //    ((tin9S&)tin0P).pEther->traceF( tin0P , T("s_connectF / connecting to port 05") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
+            //    ((tin123S&)tin0P).pEther->traceF( tin0P , T("s_connectF / connecting to port 05") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
             //{
             //if( idPortP == 0x50 )   //U:: TO FIND A BUG
 
 
-            //CONoUTrAW5( "" , ((tin9S&)tin0P).pag1->idAdam , ": connecting to port " , idPortP , "\r\n" ) ;
+            //CONoUTrAW5( "" , ((tin123S&)tin0P).pag1->idAdam , ": connecting to port " , idPortP , "\r\n" ) ;
     
             if( !handleP ) break ;
         {
@@ -153,7 +153,7 @@
     //etherC::etRockIF( tin0P ).traceF( tin0P , T("s_connect [sin_addr.s_addr,sin_port]: ")+TF3((countT)info.sin6_addr.s_addr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)+T("    ")+TF2((countT)info.sin6_port,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     }
-        pcTo[ 3 - offi ] = ((tin9S&)tin0P).brcRaw ;
+        pcTo[ 3 - offi ] = ((tin123S&)tin0P).brcRaw ;
         BOSdOnOTtEST( WHATgbo , htonl( pcFrom[ offi ] ) )
     {
     for( countT offi = 0 ; offi < 4 ; offi ++ )
@@ -161,7 +161,7 @@
     countT* pcTo   = (countT*)info.sin6_addr.u.Byte ;
     //CS:CODEsYNC: 350011ab 36001036
 
-    info.sin6_port = (count01T)((tin9S&)tin0P).brcRaw ;
+    info.sin6_port = (count01T)((tin123S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , htons( (count01T)idPortP ) )
     info.sin6_family = AF_INET6 ;
     c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;

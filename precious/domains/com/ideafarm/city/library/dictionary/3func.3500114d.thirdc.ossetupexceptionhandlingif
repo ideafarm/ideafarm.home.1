@@ -13,13 +13,13 @@
     #endif
 
         //THE COMMENT ON THE PRECEDING LINE MIGHT BE OBSOLETE ; IT IS LEFT OVER FROM WHEN SetErrorMode WAS CALLED ON A SINGLE LINE
-        countT rc = ((tin9S&)tin0P).brcRaw ; //DOC SAYS THAT THIS DOES NOTHING, BUT IT APPEARS TO WORK, AND ASSEMBLY CODE LOOKS LIKE IT IS DOING SOMETHING; BUT IT DOES ONLY RETURN A USELESS CONSTANT
+        countT rc = ((tin123S&)tin0P).brcRaw ; //DOC SAYS THAT THIS DOES NOTHING, BUT IT APPEARS TO WORK, AND ASSEMBLY CODE LOOKS LIKE IT IS DOING SOMETHING; BUT IT DOES ONLY RETURN A USELESS CONSTANT
         BOSdOnOTtEST( WHATgbo , SetErrorMode( SEM_FAILCRITICALERRORS | SEM_NOOPENFILEERRORBOX | SEM_NOGPFAULTERRORBOX ) )
 
     #if defined( __NT__ )
 
     hP.osF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER , (countT)pHandler , 0 , (countT)pHandlerOld ) ;
-    pHandlerOld = (rootExceptionFilterFT)((tin9S&)tin0P).brcRaw ;
+    pHandlerOld = (rootExceptionFilterFT)((tin123S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , SetUnhandledExceptionFilter( pHandler ) ) //THIS IS DONE IN CT'OR IN ORDER TO AVOID NEEDING TO CT ANOTHER OBJECT EARLY IN THE GLOBAL STATIC LIST
     rootExceptionFilter_NT_FT pHandler = (rootExceptionFilter_NT_FT)rootExceptionFilterF ;
     ZE( rootExceptionFilterFT , pHandlerOld ) ;

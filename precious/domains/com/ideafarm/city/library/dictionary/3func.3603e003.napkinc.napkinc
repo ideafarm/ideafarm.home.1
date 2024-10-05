@@ -33,7 +33,7 @@
         ti.pbData    = pbNapkin + sizeof( napkinHeaderS ) ;    // IF flNAPKINc_DOnOTcOMMIT THEN MONITOR WILL DISCOVER THE HARD WAY THAT IT CANNOT READ THIS MEMORY
         ti.costName  = thirdC::c_strlenIF( tin0P , ti.postName ) ;
         thirdC::c_strncpyIF( tin0P , ti.postName , postName , sizeof ti.postName ) ;
-        ti.osPid     = ((tin9S&)tin0P).osPid ;
+        ti.osPid     = ((tin123S&)tin0P).osPid ;
         tellInfoSysNapkinS ti ;
     {
     if( pbNapkin && F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED && this != &processGlobal4I.napHome ) //ASSUME: napHome IS CT WOTH
@@ -65,7 +65,7 @@
                 //OStEXTAK( ostoLog , " will be mapped to ports selected at run time rather than specified in code\r\n" ) ;
                 //OStEXTC( ostoLog , etherC::ifc_idHomeIdisk_IF() , 0 ) ;
                 //OStEXTAK( ostoLog , "/napkinC: home " ) ;
-                //OStEXTC( ostoLog , ((tin9S&)tin0P).pag1->idAdam , 0 ) ;
+                //OStEXTC( ostoLog , ((tin123S&)tin0P).pag1->idAdam , 0 ) ;
                 //OStEXT( ostoLog , TUCK << 2 ) ;
 
                 pMap->nnHome = nnHome ;
@@ -74,7 +74,7 @@
             {
             else
             }
-                //LOGrAW5( "" , ((tin9S&)tin0P).pag1->idAdam , "/napkinC: no mapping for home  " , etherC::ifc_idHomeIdisk_IF() , "\r\n" ) ;
+                //LOGrAW5( "" , ((tin123S&)tin0P).pag1->idAdam , "/napkinC: no mapping for home  " , etherC::ifc_idHomeIdisk_IF() , "\r\n" ) ;
                 pMap->flagsHome |= flIPmAPhOMEs_NOmAPPING ;
             {
             if( !nnHome )
@@ -271,7 +271,7 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&((tin9S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_WATCH ;
+                *(countT*)&((tin123S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_WATCH ;
             {
             case ifcIDaDAM_PREPARElISTS : //THIS LINE FACILITATES DEBUGGING AND HAS NO EFFECT IN PRODUCTION
             case ifcIDaDAM_WATCHiDLEcPU :
@@ -280,7 +280,7 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&((tin9S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_MEMBRANE ;                               //ifcIDmEMORYsPACE_MEMBRANE IS WRITTEN BY GLASS2 AND READ BY ifcIDaDAM_MEMBRANEgLASS; NO OTHER PROCESS MAY ACCESS THE MEMBRANE SPACE
+                *(countT*)&((tin123S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_MEMBRANE ;                               //ifcIDmEMORYsPACE_MEMBRANE IS WRITTEN BY GLASS2 AND READ BY ifcIDaDAM_MEMBRANEgLASS; NO OTHER PROCESS MAY ACCESS THE MEMBRANE SPACE
             {
             case ifcIDaDAM_MEMBRANEgLASS :
             //case 0x4010fff : //REMOVE IN PRODUCTION
@@ -288,7 +288,7 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&((tin9S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS2 ;                                 //ifcIDmEMORYsPACE_GLASS2 IS RESERVED FOR THE EXCLUSIVE USE OF GLASS2
+                *(countT*)&((tin123S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS2 ;                                 //ifcIDmEMORYsPACE_GLASS2 IS RESERVED FOR THE EXCLUSIVE USE OF GLASS2
             {
             case ifcIDaDAM_2GLASS2 :
             case ifcIDaDAM_1DRIVER :
@@ -296,14 +296,14 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&((tin9S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS1 ;                                 //ifcIDmEMORYsPACE_GLASS1 IS RESERVED FOR THE EXCLUSIVE USE OF GLASS1
+                *(countT*)&((tin123S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS1 ;                                 //ifcIDmEMORYsPACE_GLASS1 IS RESERVED FOR THE EXCLUSIVE USE OF GLASS1
             {
             case ifcIDaDAM_GLASS1 :
             }
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&((tin9S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_CLOAK ;                                  //ifcIDmEMORYsPACE_CLOAK IS RESERVED FOR THE EXCLUSIVE USE OF ifcIDaDAM_CLOAK (ANTI-MALWARE SYSTEM INTEGRITY CHECKER)
+                *(countT*)&((tin123S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_CLOAK ;                                  //ifcIDmEMORYsPACE_CLOAK IS RESERVED FOR THE EXCLUSIVE USE OF ifcIDaDAM_CLOAK (ANTI-MALWARE SYSTEM INTEGRITY CHECKER)
             {
             case ifcIDaDAM_CLOAK :
         {
@@ -348,7 +348,7 @@
     }
         }
             thirdC::dosPriorityIF( tin0P , idDesireCtSave ) ;
-            ((tin9S&)tin0P).cYield = 0 ;
+            ((tin123S&)tin0P).cYield = 0 ;
     
             //THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
 
@@ -374,9 +374,9 @@
                 //OStEXTAK( ostoSay , "\r\n" ) ;
                 //OStEXTA(  ostoSay , postName ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin9S&)tin0P).pag1->idMemorySpace , '0' ) ;
+                //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace , '0' ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , ((tin9S&)tin0P).pag1->idAdam , '0' ) ;
+                //OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , '0' ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
                 //OStEXTC(  ostoSay , ((napkinHeaderS*)pbNapkin)->cRef , '0' ) ;
                 //OStEXTAK( ostoSay , "napkinC 3: ++++ [cRef after ++++    ,idAdam,postP]:    " ) ;
@@ -387,18 +387,18 @@
 
                 }
                     BLAMMO ;
-                    //((tin9S&)tin0P).pc Utility[ 3 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
-                    //((tin9S&)tin0P).pc Utility[ 2 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
-                    //((tin9S&)tin0P).pc Utility[ 1 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
-                    //((tin9S&)tin0P).pc Utility[ 0 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
+                    //((tin123S&)tin0P).pc Utility[ 3 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
+                    //((tin123S&)tin0P).pc Utility[ 2 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
+                    //((tin123S&)tin0P).pc Utility[ 1 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
+                    //((tin123S&)tin0P).pc Utility[ 0 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
 
                     //LOGrAW(   ostoSay ) ;
                     //OStEXTAK( ostoSay , "\r\n" ) ;
                     //OStEXTA(  ostoSay , postName ) ;
                     //OStEXTAK( ostoSay , "    " ) ;
-                    //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin9S&)tin0P).pag1->idMemorySpace , '0' ) ;
+                    //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace , '0' ) ;
                     //OStEXTAK( ostoSay , "    " ) ;
-                    //OStEXTC(  ostoSay , ((tin9S&)tin0P).pag1->idAdam , '0' ) ;
+                    //OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , '0' ) ;
                     //OStEXTAK( ostoSay , "    " ) ;
                     //OStEXTC(  ostoSay , ((napkinHeaderS*)pbNapkin)->cRef , '0' ) ;
                     //OStEXTAK( ostoSay , "napkinC 2: ++++ [cRef BEFORE ++++ !!!,idAdam,postP]:    " ) ;
@@ -435,9 +435,9 @@
                 //OStEXTAK( ostoSay , "\r\n" ) ;
                 //OStEXTA(  ostoSay , postName ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin9S&)tin0P).pag1->idMemorySpace , '0' ) ;
+                //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace , '0' ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , ((tin9S&)tin0P).pag1->idAdam , '0' ) ;
+                //OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , '0' ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
                 //OStEXTC(  ostoSay , ((napkinHeaderS*)pbNapkin)->cRef , '0' ) ;
                 //OStEXTAK( ostoSay , "napkinC 1: +**+ [cRef after set to 1,idAdam,postP]:    " ) ;
@@ -463,7 +463,7 @@
     else
     }
         thirdC::dosPriorityIF( tin0P , idDesireCtSave ) ;
-        ((tin9S&)tin0P).cYield = 0 ;
+        ((tin123S&)tin0P).cYield = 0 ;
 
         //THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
         }
@@ -573,7 +573,7 @@
                         pzbMemorySpaceUse->grabF( tin0P , TAG( TAGiDnULL ) ) ;
                         THREADmODE5oN0( flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY )
                         THREADmODE5sAVE0( flThreadMode5Save )
-                        ((tin9S&)tin0P).flushPendingInOutFrameTelemetryIfF() ;
+                        ((tin123S&)tin0P).flushPendingInOutFrameTelemetryIfF() ;
                     {
                     if( !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT ) )
 
@@ -604,7 +604,7 @@
         ? 1 << thirdC::os_expCbPage_IF( tin0P )
     const countT cbaHeader = F(flagsCt) & flNAPKINc_PAGEaLIGNdATA
 
-    ((tin9S&)tin0P).cYield = 0 ;
+    ((tin123S&)tin0P).cYield = 0 ;
     thirdC::dosPriorityIF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
 
     }
@@ -624,7 +624,7 @@
         )
             F(flagsCt) & flNAPKINc_USEgRABmEMORYsPACEoVERRIDE
             ||
-            ( idMemorySpaceP && idMemorySpaceP != ((tin9S&)tin0P).pag1->idMemorySpace )
+            ( idMemorySpaceP && idMemorySpaceP != ((tin123S&)tin0P).pag1->idMemorySpace )
         (
         &&
         !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT )
@@ -638,7 +638,7 @@
     //if( thirdC::c_strstrIF( ostoNapkinName , "sexC/data/" ) )
         
     }
-        OStEXTC( ostoNapkinName , ((tin9S&)tin0P).osPid , 0 ) ;
+        OStEXTC( ostoNapkinName , ((tin123S&)tin0P).osPid , 0 ) ;
         OStEXTAK( ostoNapkinName , "." ) ;
     {
     else if( bSexReg )                                                                                          //U:: THIS IS A WORKAROUND TO ELIM OVERFLOW WHEN HAVE MANY PROCESS INSTANCES OF THE SAME ADAM ; THE WORKAROUND DEFEATS THE IDEA OF A GLOBAL REGISTRY
@@ -651,7 +651,7 @@
         
         OStEXTC( ostoNapkinName , ++ idLath , 0 ) ;
         OStEXTAK( ostoNapkinName , "." ) ;
-        OStEXTC( ostoNapkinName , ((tin9S&)tin0P).osPid , 0 ) ;
+        OStEXTC( ostoNapkinName , ((tin123S&)tin0P).osPid , 0 ) ;
         OStEXTAK( ostoNapkinName , "." ) ;
         OStEXTC( ostoNapkinName , processGlobal1I.idAdamRoot , 0 ) ;
         
@@ -672,7 +672,7 @@
     //{
     //if( this == &processGlobal4I._grabC_napGrabWant )
 
-    //if( !idMemorySpaceP ) idMemorySpaceP = ((tin9S&)tin0P).pag1->idMemorySpace ;
+    //if( !idMemorySpaceP ) idMemorySpaceP = ((tin123S&)tin0P).pag1->idMemorySpace ;
     //20200417@1855: KEEP idMemorySpaceP NULL SO THAT CALLER DOES NOT HAVE TO SET flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE
 
     //}
@@ -702,10 +702,10 @@
     //
     //        }
     //            b Fail = !!POOP ;
-    //            ((tin9S&)tin0P).flagsThreadMode2 = fSave ;
+    //            ((tin123S&)tin0P).flagsThreadMode2 = fSave ;
     //            cbToRead = thirdC::fileReadIF( tin0P , 0 , cbRead , ostoFileName ) ;
-    //            ((tin9S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE ;
-    //            flagsT fSave = ((tin9S&)tin0P).flagsThreadMode2 ;
+    //            ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE ;
+    //            flagsT fSave = ((tin123S&)tin0P).flagsThreadMode2 ;
     //            ZE( countT , cbRead ) ;
     //            POOPIE
     //        {
@@ -741,9 +741,9 @@
 
     }
         if( POOP ) BLAMMO ;
-        __( idMemorySpaceP && !( F(((tin9S&)tin0P).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tin0P ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(((tin123S&)tin0P).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tin0P ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
         if( POOP ) BLAMMO ; //U:: TO FIND A BUG
-        //__( F(((tin9S&)tin0P).flagsThreadMode4) & flTHREADmODE4_SUPPRESStRACING ) ;  // I USE THIS FLAG IN A WAY THAT DOES NOT SUPPORT RECURSION (I AND formattingIsDoneF RESET THE FLAG RATHER THAN USE RESTORE)
+        //__( F(((tin123S&)tin0P).flagsThreadMode4) & flTHREADmODE4_SUPPRESStRACING ) ;  // I USE THIS FLAG IN A WAY THAT DOES NOT SUPPORT RECURSION (I AND formattingIsDoneF RESET THE FLAG RATHER THAN USE RESTORE)
         if( POOP ) BLAMMO ; //U:: TO FIND A BUG
         FV(flNAPKINc,flagsCt)
         if( POOP ) BLAMMO ; //U:: TO FIND A BUG
@@ -756,7 +756,7 @@
     {
     IFbEcAREFUL
 
-    //if( ((tin9S&)tin0P).pc Utility[ 0 ] ) thirdC::third_pcDebugI_IF( tin0P ) ; //U:: SHOULD BE COMMENTED OUT IN PRODUCTION; TO FACILITATE DEBUGGING USING WDW
+    //if( ((tin123S&)tin0P).pc Utility[ 0 ] ) thirdC::third_pcDebugI_IF( tin0P ) ; //U:: SHOULD BE COMMENTED OUT IN PRODUCTION; TO FACILITATE DEBUGGING USING WDW
 
     else            thirdC::c_memsetIF( tin0P , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
     if( pbBitsCtP ) thirdC::c_memcpyIF( tin0P , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
@@ -766,7 +766,7 @@
     THREADmODE5oN0( flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY ) ;
     THREADmODE5sAVE0( flagsSave4 ) ;
     ZE( flagsT , flagsSave4 ) ;
-    ((tin9S&)tin0P).flushPendingInOutFrameTelemetryIfF() ;
+    ((tin123S&)tin0P).flushPendingInOutFrameTelemetryIfF() ;
     // THE EFFECT OF THIS CODE IS THAT MY _IO_ NEVER EMITS TELEMETRY
     // inOutFrameC TELEMETRY BEHAVIOR IS DETERMINED BY THE STATE OF THE FLAG DURING CT, EVEN THOUGH EMISSION OCCURS DURING DT
     // THIS IS NEEDED BECAUSE NORMALLY I SET flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY SINCE I GRAB THE MEMORY SPACE AND EXIT WITH IT STILL GRABBED (TO BE UNGRABBED BY formattingIsDoneF)
@@ -780,16 +780,16 @@
     //    countT idIn = 1 + incv02AM( idInLath ) ;
     //    static countT idInLath ;
     //{
-    //if( ((tin9S&)tin0P).pc Utility[ 0 ] )
+    //if( ((tin123S&)tin0P).pc Utility[ 0 ] )
 
     SCOOP
 {
-idMemorySpace( idMemorySpaceP ? idMemorySpaceP : ((tin9S&)tin0P).pag1->idMemorySpace )
+idMemorySpace( idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace )
 phFile( phFileP ) ,
 flagsState( F(flagsP) & flNAPKINc_DOnOTcOMMIT ? flNAPKINcsTATE_NOTyETcOMMITTED : flNAPKINcsTATE_null ) ,
 flThreadMode5Save( flTHREADmODE5_null ) ,
 idDesireCtSave( thirdC::dosPriorityIF( tin0P ) ) ,
-osTidCt( ((tin9S&)tin0P).osTid ) ,
+osTidCt( ((tin123S&)tin0P).osTid ) ,
 pzbMemorySpaceUse( &processGlobal5I.bMemorySpace ) ,
 pbMemorySpaceOverride( 0 ) ,
 bDataAreaFormatted( 0 ) ,

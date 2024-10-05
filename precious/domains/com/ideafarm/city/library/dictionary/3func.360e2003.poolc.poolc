@@ -14,9 +14,9 @@
 
     }
         stPoolNames.sinkF( tin0P , countTC() , (countT)guts.postName ) ;
-        stackC& stPoolNames = ((tin9S&)tin0P).pEther->ifcStkPoolNamesF( tin0P ) ;
+        stackC& stPoolNames = ((tin123S&)tin0P).pEther->ifcStkPoolNamesF( tin0P ) ;
     {
-    if( ((tin9S&)tin0P).pEther )                                                                               // CS:CODEsYNC: 360e2003 360e2003
+    if( ((tin123S&)tin0P).pEther )                                                                               // CS:CODEsYNC: 360e2003 360e2003
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // REGISTER MY NAME SO THAT tmWatchF CAN SEE WHICH poolC NAMES THIS PROCESSES IS USING
@@ -66,7 +66,7 @@
     {
     if( F(flagsP) & flPOOLc_RESETiNDEXbITS )
 
-    ((tin9S&)tin0P).flagsThreadMode2 = saveThreadMode2 ;
+    ((tin123S&)tin0P).flagsThreadMode2 = saveThreadMode2 ;
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // MAYBE RESET ALL INDEX BITS
@@ -74,12 +74,12 @@
 
     batPoolCt.ungrabF( tin0P ) ;
                                                                                                         // CS:CODEsYNC: 360e2003 360e2003
-    else if( !((tin9S&)tin0P).pEther                      ) { BLAMMO ; }                                           // IT IS ILLEGAL TO CT A poolC INSTANCE OTHER THAN THOSE WHICH ARE REGISTERED IN tin0P IF !((tin9S&)tin0P).pEther BECAUSE I WILL NOT BE ABLE TO REGISTER MY NAME INTO stPoolNames
-    else if( this == (poolC*)((tin9S&)tin0P).pag1->pbzphp )                 ((tin9S&)tin0P).pag1->pPoolHomePerm = this ;
-    else if( this == (poolC*)((tin9S&)tin0P).pag1->pbzpap )                 ((tin9S&)tin0P).pag1->pPoolAdamPerm = this ;
-    else if( this == (poolC*)((tin9S&)tin0P).pag1->pbzpsc )                 ((tin9S&)tin0P).pag1->pPoolScratch  = this ;
-    else if( this == (poolC*)((tin9S&)tin0P).pag1->pbzpht )                 ((tin9S&)tin0P).pag1->pPoolHomeTemp = this ;
-         if( !((tin9S&)tin0P).pag1->pPoolAdamTemp         ) ((tin9S&)tin0P).pPoolUse = ((tin9S&)tin0P).pag1->pPoolAdamTemp = this ; //A:ASSUME: THE ADAM TEMP POOL IS CT WOTH
+    else if( !((tin123S&)tin0P).pEther                      ) { BLAMMO ; }                                           // IT IS ILLEGAL TO CT A poolC INSTANCE OTHER THAN THOSE WHICH ARE REGISTERED IN tin0P IF !((tin123S&)tin0P).pEther BECAUSE I WILL NOT BE ABLE TO REGISTER MY NAME INTO stPoolNames
+    else if( this == (poolC*)((tin123S&)tin0P).pag1->pbzphp )                 ((tin123S&)tin0P).pag1->pPoolHomePerm = this ;
+    else if( this == (poolC*)((tin123S&)tin0P).pag1->pbzpap )                 ((tin123S&)tin0P).pag1->pPoolAdamPerm = this ;
+    else if( this == (poolC*)((tin123S&)tin0P).pag1->pbzpsc )                 ((tin123S&)tin0P).pag1->pPoolScratch  = this ;
+    else if( this == (poolC*)((tin123S&)tin0P).pag1->pbzpht )                 ((tin123S&)tin0P).pag1->pPoolHomeTemp = this ;
+         if( !((tin123S&)tin0P).pag1->pPoolAdamTemp         ) ((tin123S&)tin0P).pPoolUse = ((tin123S&)tin0P).pag1->pPoolAdamTemp = this ; //A:ASSUME: THE ADAM TEMP POOL IS CT WOTH
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // REGISTER MYSELF AS AN ADAM/HOME TEMP/PERM (OR SCRATCH) INSTANCE
@@ -88,7 +88,7 @@
     processGlobal5I._poolC_grab_pPool.ungrabF( tin0P ) ;
 
     }
-        ((tin9S&)tin0P).pEther->osThreadF( TaRG1( tmPoolFlushF ) ) ;
+        ((tin123S&)tin0P).pEther->osThreadF( TaRG1( tmPoolFlushF ) ) ;
         puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ;
     {
     if( idStateSpaceP && ! processGlobal2I._poolC_cBacked ++ )
@@ -239,7 +239,7 @@
     // CREATE AND FORMAT REGISTRATION RECORD OR WAIT UNTIL ANOTHER poolC INSTANCE HAS DONE SO
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    napGuts.formattingIsDoneF( tin0P ) ; //MUST BE DONE AFTER napFace IS FULLY CT SO THAT ((tin9S&)tin0P).idDesireSetBySelf IS UNWOUND CORRECTLY
+    napGuts.formattingIsDoneF( tin0P ) ; //MUST BE DONE AFTER napFace IS FULLY CT SO THAT ((tin123S&)tin0P).idDesireSetBySelf IS UNWOUND CORRECTLY
     new( 0 , tin0P , &napGuts ) guts_poolC_S( tin0P , idLineCtP , idiFileCtP , pbBitsCtP , postNameP , flagsP , idStateSpaceP , expCbDropMinP , expCbDropMaxP , idMemorySpaceP ) ;
     
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -258,7 +258,7 @@
 
     //20170830@2027: ctFaceF WAS CALLED HERE.  MOVED TO EARLIER TO AVOID RECURSIVELY GRABBING GRABmEMORYsPACE
 
-    if( F(((tin9S&)tin0P).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
+    if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
 
     }
         if( aptnu ) ;
@@ -270,37 +270,37 @@
         __( cbDropSeparatorP && cbDropSeparatorP - sizeof( countT ) ) ;
         __( idMemorySpaceP && ( idMemorySpaceP < ifcIDmEMORYsPACE_min || idMemorySpaceP > ifcIDmEMORYsPACE_max ) ) ;
         FV( flPOOLc , flagsP ) ;
-        FV( flTHREADmODE2 , ((tin9S&)tin0P).flagsThreadMode2 ) ;
+        FV( flTHREADmODE2 , ((tin123S&)tin0P).flagsThreadMode2 ) ;
         FV( flTHREADmODE2 , saveThreadMode2 ) ;
     {
     IFbEcAREFUL
 
-                                                    ((tin9S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:1
-                                                    ((tin9S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:2
-                                                    ((tin9S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:3
-    flagsT saveThreadMode2 = *(flagsT*)((tin9S&)tin0P).pbF() ; ((tin9S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:4
-                                                    ((tin9S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:5
-                                                    ((tin9S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:6
+                                                    ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:1
+                                                    ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:2
+                                                    ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:3
+    flagsT saveThreadMode2 = *(flagsT*)((tin123S&)tin0P).pbF() ; ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:4
+                                                    ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:5
+                                                    ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:6
     _IO_
 {
 pSexLifoConstructed( 0 )
 face( *(face_poolC_S*)(byteT*)napFace ) ,
 guts( *(guts_poolC_S*)(byteT*)napGuts ) ,
 ) ,
-    0 , sizeof( guts_poolC_S ) , ifcOPENsHAREDmEMORYhOW_nCeF //ALWAYS USES MEMORY SPACE DEDICATED TO EXCLUSIVE USE BY THE CONSTRUCTING PROCESS (((tin9S&)tin0P).osPid IS USED TO UNIQUIFY THE NAME)
+    0 , sizeof( guts_poolC_S ) , ifcOPENsHAREDmEMORYhOW_nCeF //ALWAYS USES MEMORY SPACE DEDICATED TO EXCLUSIVE USE BY THE CONSTRUCTING PROCESS (((tin123S&)tin0P).osPid IS USED TO UNIQUIFY THE NAME)
     ) ,
         )
-            ((tin9S&)tin0P).pbF( 2 )                                                                                        //TLS:5
+            ((tin123S&)tin0P).pbF( 2 )                                                                                        //TLS:5
             ) ,
                 "."
                 ) ,
-                    idStateSpaceP ? ((tin9S&)tin0P).pbF( 5 ) : ""                                                           //TLS:2
+                    idStateSpaceP ? ((tin123S&)tin0P).pbF( 5 ) : ""                                                           //TLS:2
                     ) ,
                         idStateSpaceP ? "." : ""
                         ) ,
                             postNameP
                             ) ,
-                                tin0P , ((tin9S&)tin0P).pbF() , "poolC/guts/"                                                //TLS:6
+                                tin0P , ((tin123S&)tin0P).pbF() , "poolC/guts/"                                                //TLS:6
                             (
                             thirdC::c_strcpyIF
                             tin0P ,
@@ -318,9 +318,9 @@ guts( *(guts_poolC_S*)(byteT*)napGuts ) ,
             tin0P ,
         (
         thirdC::c_strcatIF
-        ((tin9S&)tin0P).tlsNewF( LF , TUCK ) ,                                                                              //TLS:6  ======== NEW ==========================================================    TUCK        "poolC/guts/[postNameP].[idStateSpaceP].[osPid]"
-        thirdC::c_itoaIF( tin0P , ((tin9S&)tin0P).pbF() , 0x10 , ((tin9S&)tin0P).osPid ) ,                                              //TLS:2
-        ((tin9S&)tin0P).tlsNewF( LF , TUCK >> 4 ) ,                                                                         //TLS:5  ======== NEW ==========================================================    TUCK >> 4   [osPid]
+        ((tin123S&)tin0P).tlsNewF( LF , TUCK ) ,                                                                              //TLS:6  ======== NEW ==========================================================    TUCK        "poolC/guts/[postNameP].[idStateSpaceP].[osPid]"
+        thirdC::c_itoaIF( tin0P , ((tin123S&)tin0P).pbF() , 0x10 , ((tin123S&)tin0P).osPid ) ,                                              //TLS:2
+        ((tin123S&)tin0P).tlsNewF( LF , TUCK >> 4 ) ,                                                                         //TLS:5  ======== NEW ==========================================================    TUCK >> 4   [osPid]
     (
     tin0P , idLineCtP , idiFileCtP , pbBitsCtP ,
 (
@@ -329,9 +329,9 @@ flagsInstance( flPOOLiNSTANCE_null ) ,
 ) ,
     )
         (poolC*)0
-        ((tin9S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_ALLOWsTOPwHILEgRABBING ,
-        *(flagsT*)((tin9S&)tin0P).pbF() = ((tin9S&)tin0P).flagsThreadMode2 ,                                                           //TLS:4
-        ((tin9S&)tin0P).tlsNewF( LF , sizeof( flagsT ) ) ,                                                                  //TLS:4  ======== NEW ==========================================================    4           [flagsThreadMode2]
+        ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_ALLOWsTOPwHILEgRABBING ,
+        *(flagsT*)((tin123S&)tin0P).pbF() = ((tin123S&)tin0P).flagsThreadMode2 ,                                                           //TLS:4
+        ((tin123S&)tin0P).tlsNewF( LF , sizeof( flagsT ) ) ,                                                                  //TLS:4  ======== NEW ==========================================================    4           [flagsThreadMode2]
         ) ,
             cbDropSeparatorP , idStateSpaceP
             ,
@@ -361,13 +361,13 @@ pNext
     (
     ) ,
         )
-            idStateSpaceP ? ((tin9S&)tin0P).pbF( 2 ) : ""                                                                   //TLS:2
+            idStateSpaceP ? ((tin123S&)tin0P).pbF( 2 ) : ""                                                                   //TLS:2
             ) ,
                 idStateSpaceP ? "." : ""
                 ) ,
                     postNameP
                     ) ,
-                        tin0P , ((tin9S&)tin0P).pbF() , "poolC/face/"                                                        //TLS:3
+                        tin0P , ((tin123S&)tin0P).pbF() , "poolC/face/"                                                        //TLS:3
                     (
                     thirdC::c_strcpyIF
                     tin0P ,
@@ -379,9 +379,9 @@ pNext
             tin0P ,
         (
         thirdC::c_strcatIF
-        ((tin9S&)tin0P).tlsNewF( LF , TUCK ) ,                                                                              //TLS:3  ======== NEW ==========================================================    TUCK        "poolC/face/[postNameP].[idStateSpaceP]"
-        thirdC::c_itoaIF( tin0P , ((tin9S&)tin0P).pbF() , 0x10 , idStateSpaceP ) ,                                           //TLS:2
-        ((tin9S&)tin0P).tlsNewF( LF , TUCK >> 4 ) ,                                                                         //TLS:2  ======== NEW ==========================================================    TUCK >> 4   [idStateSpaceP]
+        ((tin123S&)tin0P).tlsNewF( LF , TUCK ) ,                                                                              //TLS:3  ======== NEW ==========================================================    TUCK        "poolC/face/[postNameP].[idStateSpaceP]"
+        thirdC::c_itoaIF( tin0P , ((tin123S&)tin0P).pbF() , 0x10 , idStateSpaceP ) ,                                           //TLS:2
+        ((tin123S&)tin0P).tlsNewF( LF , TUCK >> 4 ) ,                                                                         //TLS:2  ======== NEW ==========================================================    TUCK >> 4   [idStateSpaceP]
     (
     tin0P ,idLineCtP , idiFileCtP , pbBitsCtP ,
 (
@@ -392,13 +392,13 @@ napFace
         )
             postNameP
             ) ,
-                tin0P , ((tin9S&)tin0P).pbF() , "poolC/batonCt/"                                                             //TLS:1
+                tin0P , ((tin123S&)tin0P).pbF() , "poolC/batonCt/"                                                             //TLS:1
             (
             thirdC::c_strcpyIF
             tin0P ,
         (
         thirdC::c_strcatIF
-        ((tin9S&)tin0P).tlsNewF( LF , TUCK ) ,                                                                              //TLS:1  ======== NEW ==========================================================    TUCK        "poolC/batonCt/[postNameP]"
+        ((tin123S&)tin0P).tlsNewF( LF , TUCK ) ,                                                                              //TLS:1  ======== NEW ==========================================================    TUCK        "poolC/batonCt/[postNameP]"
     (
     tin0P , idLineCtP , idiFileCtP , pbBitsCtP ,
 (

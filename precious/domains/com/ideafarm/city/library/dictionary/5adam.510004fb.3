@@ -31,9 +31,9 @@ TASK( tmHooF )
 DONE( tmGooF )
 }
     THREADmODE2rESTORE ;
-    //CONoUTrAW3( "tmGooF/" , ((tin9S&)tin0P).monitor.idThread , ": you'll never see this\r\n" ) ;
+    //CONoUTrAW3( "tmGooF/" , ((tin123S&)tin0P).monitor.idThread , ": you'll never see this\r\n" ) ;
     grab2.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    //CONoUTrAW3( "tmGooF/" , ((tin9S&)tin0P).monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
+    //CONoUTrAW3( "tmGooF/" , ((tin123S&)tin0P).monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
     }
         ++ s ; ether.osSleepF( tin0P , TOCK ) ;
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -50,9 +50,9 @@ TASK( tmGooF )
 DONE( tmFooF )
 }
     THREADmODE2rESTORE ;
-    //CONoUTrAW3( "tmFooF/" , ((tin9S&)tin0P).monitor.idThread , ": you'll never see this\r\n" ) ;
+    //CONoUTrAW3( "tmFooF/" , ((tin123S&)tin0P).monitor.idThread , ": you'll never see this\r\n" ) ;
     grab2.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    //CONoUTrAW3( "tmFooF/" , ((tin9S&)tin0P).monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
+    //CONoUTrAW3( "tmFooF/" , ((tin123S&)tin0P).monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
     }
         ++ s ; ether.osSleepF( tin0P , TOCK ) ;
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -104,21 +104,21 @@ DONE( tmConsoleF )
                                         {
                                         else
                                         if( !bOk || getNegAM( pCopyGrab->finger ) != FINGERnEG_GRABc ) pCopyGrab = 0 ;
-                                        thirdC::dosReadProcessMemoryIF( tin0P , pbCopyGrab , sizeof( grabC ) , bOk , (voidT*)((tin9S*)pCopyTin)->pPanLifiRecurseGrabbedLevel[ off ] , info.osPid ) ;
+                                        thirdC::dosReadProcessMemoryIF( tin0P , pbCopyGrab , sizeof( grabC ) , bOk , (voidT*)((tin123S*)pCopyTin)->pPanLifiRecurseGrabbedLevel[ off ] , info.osPid ) ;
                                         ZE( boolT , bOk ) ;
                                         grabC* pCopyGrab = (grabC*)pbCopyGrab ;
                                         byteT pbCopyGrab[ sizeof( grabC ) ] ;
                                     {
-                                    if( ((tin9S*)pCopyTin)->pPanLifiRecurseGrabbedLevel[ off ] )
+                                    if( ((tin123S*)pCopyTin)->pPanLifiRecurseGrabbedLevel[ off ] )
                                 {                                                                                                                              //U::BUG: SHOULD BE off += 5?
-                                for( countT off = 0 ; off < sizeof ((tin9S*)pCopyTin)->pPanLifiRecurseGrabbedLevel / sizeof ((tin9S*)pCopyTin)->pPanLifiRecurseGrabbedLevel[ 0 ] ; off ++ ) //U::OBSOLETED BY MIGRATION TO pPanLifiRecurseGrabbedLevel; SEE tmReportF
+                                for( countT off = 0 ; off < sizeof ((tin123S*)pCopyTin)->pPanLifiRecurseGrabbedLevel / sizeof ((tin123S*)pCopyTin)->pPanLifiRecurseGrabbedLevel[ 0 ] ; off ++ ) //U::OBSOLETED BY MIGRATION TO pPanLifiRecurseGrabbedLevel; SEE tmReportF
     
                                 etThread.strFuseF( tin0P , psttr , tcr ) ;
     
                                 ) ;
                                     
-                                    +top+TF2(((tin9S*)pCopyTin)->monitor.pPanLifiGrabbing[1],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcp
-                                    tb+TF2(((tin9S*)pCopyTin)->monitor.pPanLifiGrabbing[2],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)
+                                    +top+TF2(((tin123S*)pCopyTin)->monitor.pPanLifiGrabbing[1],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcp
+                                    tb+TF2(((tin123S*)pCopyTin)->monitor.pPanLifiGrabbing[2],flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)
                                     
                                 etThread.strFuseF( tin0P , psttr ,
     
@@ -129,7 +129,7 @@ DONE( tmConsoleF )
                             
                                 etThread.strFuseF( tin0P , psttr , 
                             {
-                            if( pCopyTin && ((tin9S*)pCopyTin)->monitor.pPanLifiGrabbing[ 0 ] )
+                            if( pCopyTin && ((tin123S*)pCopyTin)->monitor.pPanLifiGrabbing[ 0 ] )
     
                             }
                                 if( !bOk || getNegAM( pc2[ 0 ] ) != FINGERnEG_TINs || info.idSerial != pc2[ 1 ] ) pCopyTin = 0 ;
@@ -138,13 +138,13 @@ DONE( tmConsoleF )
                                 countT pc2[ 2 ] ; //CODE SYNC: ad40104 003002a: fingerprint idSerial MUST BE AT OFFSETS 0 4
                             {
                             else
-                            if( !bOk || getNegAM( ((tin9S*)pCopyTin)->fingerprint ) != FINGERnEG_TINs || info.idSerial != ((tin9S*)pCopyTin)->idSerial ) pCopyTin = 0 ;
-                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopyTin , sizeof( tin9S ) , bOk , (voidT*)info.ip , info.osPid ) ;
+                            if( !bOk || getNegAM( ((tin123S*)pCopyTin)->fingerprint ) != FINGERnEG_TINs || info.idSerial != ((tin123S*)pCopyTin)->idSerial ) pCopyTin = 0 ;
+                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopyTin , sizeof( tin123S ) , bOk , (voidT*)info.ip , info.osPid ) ;
                             ZE( boolT , bOk ) ;
                             tin0S* pCopyTin = (tin0S*)pbCopyTin ;
-                            byteT pbCopyTin[ sizeof( tin9S ) ] ;
+                            byteT pbCopyTin[ sizeof( tin123S ) ] ;
 
-                            //U:: INSPECT pCopyTin->idTypeTin AND HANDLE CORRECTLY IF NOT tin9S
+                            //U:: INSPECT pCopyTin->idTypeTin AND HANDLE CORRECTLY IF NOT tin123S
     
                             tinEntryS& info = *(tinEntryS*)&memorySpace.swsTin.downF( tin0P , hWalk ) ;
                         {

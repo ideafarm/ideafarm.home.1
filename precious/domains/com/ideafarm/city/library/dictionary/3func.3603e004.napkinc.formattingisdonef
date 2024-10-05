@@ -18,12 +18,12 @@
         ti.pbData    = pbNapkin + sizeof( napkinHeaderS ) ;
         ti.costName  = thirdC::c_strlenIF( tin0P , ti.postName ) ;
         thirdC::c_strncpyIF( tin0P , ti.postName , postName , sizeof ti.postName ) ;
-        ti.osPid     = ((tin9S&)tin0P).osPid ;
+        ti.osPid     = ((tin123S&)tin0P).osPid ;
         tellInfoSysNapkinS ti ;
     {
     if( !bNoTellP && pbNapkin && this != &processGlobal4I.napHome ) //ASSUME: napHome IS CT WOTH
 
-    ((tin9S&)tin0P).cYield = 0 ;
+    ((tin123S&)tin0P).cYield = 0 ;
     thirdC::dosPriorityIF( tin0P , idDesireCtSave ) ;
 
     THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
@@ -47,7 +47,7 @@
     }
         if( POOP ) BLAMMO ;
         __Z( pbNapkin ) ;
-        __( osTidCt - ((tin9S&)tin0P).osTid ) ;
+        __( osTidCt - ((tin123S&)tin0P).osTid ) ;
         __( bDataAreaFormatted ) ;
         __( F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ;
         if( POOP ) BLAMMO ;

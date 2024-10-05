@@ -43,7 +43,7 @@ voidT socksSetupF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strok
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.socksSetupF( tin0P ) ;
-    if( ((tin9S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT socksShutdownF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -54,7 +54,7 @@ voidT socksShutdownF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const st
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.socksShutdownF( tin0P ) ;
-    if( ((tin9S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT sockF_ob6bP_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -562,7 +562,7 @@ voidT sockFtpServerF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const st
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.sockFtpServerF( tin0P ) ;
-    if( ((tin9S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT sockNicNameF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )

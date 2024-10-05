@@ -21,7 +21,7 @@
     boolT                   bSuppressInOutTrace ;                   // INCREMENTED WHEN CALL trace WITHIN inOutFrameC::*inOutFrameC
     byteT*                  pbRecursiveParameters ;                 // PROTOCOL: (1) CODE MUST VERIFY THAT THIS IS NULL BEFORE SETTING IT.  (2) THE CODE THAT SETS THIS MUST ALSO RESET IT SO THAT OTHER CODE CAN USE IT.  USE THIS TO PASS PARAMETERS RECURSIVELY TO AVOID USING THE THREAD STACK
     sexC*                   pSexLifoConstructing ;                  // USED BY sexC TO DETECT RECURSIVE CYCLING DURING CT
-    barryC*                 pBarryUtility ;                         // NOT REFERENCED BY tin9S OR BY IPDOS SYSTEM CODE ; AVAILABLE FOR USE BY APPLICATION CODE
+    barryC*                 pBarryUtility ;                         // NOT REFERENCED BY tin123S OR BY IPDOS SYSTEM CODE ; AVAILABLE FOR USE BY APPLICATION CODE
     countT                  cPoolDropDt ;
     countT                  cPoolDropCt ;
     countT                  valueExpectedByInOut ;
@@ -86,7 +86,7 @@
     countT        /*o 01*/  osTid ;                             // MUST BE AFTER pEther.  
     etherC*       /*o  8*/  pEther ;                            // USED IF !0.              FOR USE BY STATIC thirdC FUNCTIONS, GLOBAL FUNCTIONS, AND OBJECTS SUCH AS strokeS THAT DO NOT CARRY THEIR OWN REFERENCES.  ADDED LATE.
     byteT*                  pbPendingInOutFramePackets ;
-    inOutFrameC*            pInOutFrame ;                       //THIS AND POSSIBLY ITS ACCOMPANYING MEMBERS MUST BE EARLY SINCE _IO_ IS USED DURING CT OF tin9S
+    inOutFrameC*            pInOutFrame ;                       //THIS AND POSSIBLY ITS ACCOMPANYING MEMBERS MUST BE EARLY SINCE _IO_ IS USED DURING CT OF tin123S
     countT                  cTellsWriteInOutTelemetry ;
 
     public :

@@ -36,7 +36,7 @@ STATE0
 
 
 }
-    if( ether && *((tin9S&)tin0P).zEtScratch && sNotesTextP && sNotesDataP && idChatSessionP && sDataP && cArgP && c8argP ) ;
+    if( ether && *((tin123S&)tin0P).zEtScratch && sNotesTextP && sNotesDataP && idChatSessionP && sDataP && cArgP && c8argP ) ;
 
     }
         }
@@ -54,23 +54,23 @@ STATE0
                 }
                     sDataP << cBound ;
                     }
-                        ((tin9S&)tin0P).zEtScratch->delF( tin0P , pstt1f ) ;
+                        ((tin123S&)tin0P).zEtScratch->delF( tin0P , pstt1f ) ;
                         }
                             cBound ++ ;
-                            addTimeF( tin0P , *((tin9S&)tin0P).zEtScratch , idComputer , 0 , 0x100 , 2 ) ;
-                            ((tin9S&)tin0P).zEtScratch->diskFileOrDirDeleteF( tin0P , psttc2 ) ;
+                            addTimeF( tin0P , *((tin123S&)tin0P).zEtScratch , idComputer , 0 , 0x100 , 2 ) ;
+                            ((tin123S&)tin0P).zEtScratch->diskFileOrDirDeleteF( tin0P , psttc2 ) ;
                         {
                         FORsTRINGSiN2( pstt1f )
-                        ((tin9S&)tin0P).zEtScratch->diskFindFileOrDirOldF( tin0P , pstt1f , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttEmail)+T(".$note.b.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
+                        ((tin123S&)tin0P).zEtScratch->diskFindFileOrDirOldF( tin0P , pstt1f , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttEmail)+T(".$note.b.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
 
-                        ((tin9S&)tin0P).zEtScratch->delF( tin0P , pstt1f ) ;
+                        ((tin123S&)tin0P).zEtScratch->delF( tin0P , pstt1f ) ;
                         }
                             cBound ++ ;
-                            addTimeF( tin0P , *((tin9S&)tin0P).zEtScratch , idComputer , 0 , 0x40 , 1 ) ;
-                            ((tin9S&)tin0P).zEtScratch->diskFileOrDirDeleteF( tin0P , psttc1 ) ;
+                            addTimeF( tin0P , *((tin123S&)tin0P).zEtScratch , idComputer , 0 , 0x40 , 1 ) ;
+                            ((tin123S&)tin0P).zEtScratch->diskFileOrDirDeleteF( tin0P , psttc1 ) ;
                         {
                         FORsTRINGSiN1( pstt1f )
-                        ((tin9S&)tin0P).zEtScratch->diskFindFileOrDirOldF( tin0P , pstt1f , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttEmail)+T(".$note.9.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
+                        ((tin123S&)tin0P).zEtScratch->diskFindFileOrDirOldF( tin0P , pstt1f , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttEmail)+T(".$note.9.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
                         ZE( strokeS* , pstt1f ) ;
                     {
                     ZE( countT , cBound ) ;
@@ -80,12 +80,12 @@ STATE0
                     ZE( strokeS* , psttEmail ) ;
                     ZE( countT , idComputer ) ;
                 {
-                else if( !((tin9S&)tin0P).zEtScratch->strCompareF( tin0P , psttJobType , T("!bindPaymentsToMe") ) )
+                else if( !((tin123S&)tin0P).zEtScratch->strCompareF( tin0P , psttJobType , T("!bindPaymentsToMe") ) )
                 }
                     etThread.strokeF( tin0P , T("sData << ")+TT(timeR1,timeR2)+T("\r\n") ) ; //U::
                     sDataP << (countT&)timeR2 ;
                     sDataP << timeR1 ;
-                    queryTimeF( tin0P , *((tin9S&)tin0P).zEtScratch , timeR1 , timeR2 , idComputer , idType ) ;
+                    queryTimeF( tin0P , *((tin123S&)tin0P).zEtScratch , timeR1 , timeR2 , idComputer , idType ) ;
                     ZE( sCountT , timeR2 ) ;
                     ZE( countT , timeR1 ) ;
 
@@ -94,9 +94,9 @@ STATE0
                     ZE( countT , idType ) ;
                     ZE( countT , idComputer ) ;
                 {
-                else if( !((tin9S&)tin0P).zEtScratch->strCompareF( tin0P , psttJobType , T("!queryTimeRemaining") ) )
+                else if( !((tin123S&)tin0P).zEtScratch->strCompareF( tin0P , psttJobType , T("!queryTimeRemaining") ) )
                 }
-                    addTimeF( tin0P , *((tin9S&)tin0P).zEtScratch , idComputer , timeP1 , timeP2 , idType ) ;
+                    addTimeF( tin0P , *((tin123S&)tin0P).zEtScratch , idComputer , timeP1 , timeP2 , idType ) ;
 
                     sOrderP >> (countT&)timeP2 ;
                     sOrderP >> timeP1 ;
@@ -107,7 +107,7 @@ STATE0
                     ZE( countT , idType ) ;
                     ZE( countT , idComputer ) ;
                 {
-                if( !((tin9S&)tin0P).zEtScratch->strCompareF( tin0P , psttJobType , T("!addTime") ) )
+                if( !((tin123S&)tin0P).zEtScratch->strCompareF( tin0P , psttJobType , T("!addTime") ) )
 
                 sOrderP >> psttJobType ; ___( psttJobType ) ;
                 ZE( strokeS* , psttJobType ) ;
@@ -125,7 +125,7 @@ STATE0
 voidT jobFillCourseF( tin0S& tin0P , etherC& ether , etherC& etThread , soulC& sDataP , soulC& sNotesTextP , soulC& sNotesDataP , const countT idCourseP , const countT idAdamP , const countT idChatSessionP , soulC& sOrderP , countT& cArgP , count8S& c8argP )
 
 }
-    if(  ether && *((tin9S&)tin0P).zEtScratch && idChatSessionP && sOrderP && cArgP && c8argP ) ;
+    if(  ether && *((tin123S&)tin0P).zEtScratch && idChatSessionP && sOrderP && cArgP && c8argP ) ;
 
     __( idAdamP - DDNUMB ) ;
 {
