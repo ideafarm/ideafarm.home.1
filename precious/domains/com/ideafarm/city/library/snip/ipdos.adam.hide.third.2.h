@@ -27568,32 +27568,39 @@ struct bookMarkOldS
 
 /*1*/struct _export tin0S/*1*/
 {
-        countT         /*o  0*/  fingerprint ;                      // MUST BE CONTIGUOUS AND AT THE BEGINNING OF ME SO THAT MONITOR CAN READ THIS PAIR EFFICIENTLY
-        countT         /*o  4*/  idSerial ;                         // MUST BE CONTIGUOUS AND AT THE BEGINNING OF ME SO THAT MONITOR CAN READ THIS PAIR EFFICIENTLY
-        const countT             idTypeTin ;
-        const countT             idTin ;                            /*C*/
+    countT         /*o  0*/  fingerprint ;                      // MUST BE CONTIGUOUS AND AT THE BEGINNING OF ME SO THAT MONITOR CAN READ THIS PAIR EFFICIENTLY
+    countT         /*o  4*/  idSerial ;                         // MUST BE CONTIGUOUS AND AT THE BEGINNING OF ME SO THAT MONITOR CAN READ THIS PAIR EFFICIENTLY
+    const countT             idTypeTin ;
+    const countT             idTin ;                            /*C*/
 
-        const poopC*             pPoop ;                             //INITIALIZED TO &poop BEFORE poop IS CONSTRUCTED (THIS IS OK) ; 20240927@1511: RETAINING THIS ALTHOUGH DON'T REMEMBER WHY I DO THIS ; PRESUMABLY SO THAT pPoop IS VALID DURING CT OF poop
+    const poopC*             pPoop ;                             //INITIALIZED TO &poop BEFORE poop IS CONSTRUCTED (THIS IS OK) ; 20240927@1511: RETAINING THIS ALTHOUGH DON'T REMEMBER WHY I DO THIS ; PRESUMABLY SO THAT pPoop IS VALID DURING CT OF poop
+
     protected :
-        poopC                    poop ;                              //MUST BE CT EARLY, BEFORE POOP MACRO IS INVOKED DURING tin123S CONSTRUCTION
+
+    poopC                    poop ;                              //MUST BE CT EARLY, BEFORE POOP MACRO IS INVOKED DURING tin123S CONSTRUCTION
+
     public :
 
-        topC                     top_pTinMainI_ ;
-        const countT             idTinNamed ;                        /*C*/
+    topC                     top_pTinMainI_ ;
+    const countT             idTinNamed ;                        /*C*/
+
     protected :
-        tin0S* const          pTin0Prior ;                           /*B*/
-        grabC                    grabPseudo   ;                      /*A*/       // MUST BE CONSTRUCTED LATE ENOUGH THAT I CAN BE USED TO REGISTER IT WITH THE MONITOR 6a40104; I AM USED TO INFORM THE MONITOR THAT THE THREAD IS IN A SLEEP LOOP OR IS OTHERWISE STOPPED (E.G. IS IN A BLOCKING OS CALL)
-        // countT                cGrab_pTinKid ;                     /*C*/
-        // countT                idDesireSetBySelf_cGrab_pTinKid ;   /*C*/
-        // tin0S* const       pTin0Dad ;                           /*B*/
-        // tin0S*             pTinBro ;                           /*B*/
-        // tin0S*             pTinKid ;                           /*B*/
-        // tin0S*             ppTinKid[ ClOWtHREADS ] ;           /*B*/ //U::TEMPORARY, TO DEBUG PROBLEM WITH pTinKid pTinBro LIST
+
+    tin0S* const          pTin0Prior ;                           /*B*/
+    grabC                    grabPseudo   ;                      /*A*/       // MUST BE CONSTRUCTED LATE ENOUGH THAT I CAN BE USED TO REGISTER IT WITH THE MONITOR 6a40104; I AM USED TO INFORM THE MONITOR THAT THE THREAD IS IN A SLEEP LOOP OR IS OTHERWISE STOPPED (E.G. IS IN A BLOCKING OS CALL)
+    // countT                cGrab_pTinKid ;                     /*C*/
+    // countT                idDesireSetBySelf_cGrab_pTinKid ;   /*C*/
+    // tin0S* const       pTin0Dad ;                           /*B*/
+    // tin0S*             pTinBro ;                           /*B*/
+    // tin0S*             pTinKid ;                           /*B*/
+    // tin0S*             ppTinKid[ ClOWtHREADS ] ;           /*B*/ //U::TEMPORARY, TO DEBUG PROBLEM WITH pTinKid pTinBro LIST
+
     public :
-        flagsT                   flags ;                             /*D*/
-        const countT             idLineCt ;                          /*C*/
-        const countT             idiFileCt ;                         /*C*/
-        signC*                   pSgnUtility ;                       /*F*/
+
+    flagsT                   flags ;                             /*D*/
+    const countT             idLineCt ;                          /*C*/
+    const countT             idiFileCt ;                         /*C*/
+    signC*                   pSgnUtility ;                       /*F*/
 
     tin0S( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , countT idTypeTinP , tin0S* const pTin0DadP , const flagsT flagsP , const countT idTinNamedP ) ;
 
@@ -27610,6 +27617,8 @@ struct bookMarkOldS
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin0S : 1snip.150001c4.tin0S END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin_part1_S : 1snip.150001c5.tin_part1_S BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -27645,7 +27654,7 @@ struct bookMarkOldS
     byteT*                  pbPendingInOutFramePackets ;
     etherC*       /*o  8*/  pEther ;                            // USED IF !0.              FOR USE BY STATIC thirdC FUNCTIONS, GLOBAL FUNCTIONS, AND OBJECTS SUCH AS strokeS THAT DO NOT CARRY THEIR OWN REFERENCES.  ADDED LATE.
     countT        /*o 01*/  osTid ;                             // MUST BE AFTER pEther.  
-    countT        /*o 41*/  osPid ;                             // MUST BE AFTER pEther. OFFSET IS HARDCODED IN 0d0000c.grabSleepF       ; U::20241004@1001: EDIT THE HARDCODED VALUE TO POINT TO THIS NEW LOCATION
+    countT        /*o 41*/  osPid ;                             // MUST BE AFTER pEther. OFFSET IS HARDCODED IN 0d0000c.grabSleepF       ; U::20241004@1001: EDIT THE HARDCODED VALUE TO POINT TO THIS NEW LOCATION ; 20241004@1325: COULD NOT FIND "grabSleepF" ANYWHERE BUT HERE
     adamGlobal1S*           pag1 ;
     adamGlobal2S*           pag2 ;
     adamGlobal3S*           pag3 ;
@@ -27730,6 +27739,9 @@ struct bookMarkOldS
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin_part1_S : 1snip.150001c5.tin_part1_S END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin_part2_S : 1snip.150001c6.tin_part2_S BEGIN
+
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -27763,6 +27775,9 @@ struct bookMarkOldS
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin_part2_S : 1snip.150001c6.tin_part2_S END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin_part3_S : 1snip.150001c7.tin_part3_S BEGIN
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -27811,7 +27826,9 @@ struct bookMarkOldS
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin_part3_S : 1snip.150001c7.tin_part3_S END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin123S : 1snip.15000026.tin123S BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -27837,56 +27854,56 @@ it is illegal to modify any member other than pc Utility in the definition of an
 
 /*1*/struct _export tin123S : public tin0S , public tin_part1_S , public tin_part2_S , public tin_part3_S/*1*/
 {
-        /* birth , death */
-        NEWdELcLASSpROTOS
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tin123S.NEWdELcLASSppOOLoLD!||
-        ~tin123S( voidT ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tin123S.dt_tin123S!||
-        tin123S( tin0S& tin0NormalSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tin0S* const pTin0DadP = 0 , const osTextT* const postThreadNameP = 0 , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.tin123S.tin123S!||
+    /* birth , death */
+    NEWdELcLASSpROTOS
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tin123S.NEWdELcLASSppOOLoLD!||
+    ~tin123S( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tin123S.dt_tin123S!||
+    tin123S( tin0S& tin0NormalSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tin0S* const pTin0DadP = 0 , const osTextT* const postThreadNameP = 0 , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.tin123S.tin123S!||
 
-        /* commands */
-        voidT strFuseF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , const countT csttExtraP = 0 , const flagsT flagsInclude1P = flTINrPT1_null , const flagsT flagsInclude2P = flTINrPT2_null , const flagsT flagsExclude1P = flTINrPT1_null , const flagsT flagsExclude2P = flTINrPT2_null , countT idFormatP = 0 , const countT cIndentP = 0 ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.tin123S.strFuseF!||
-        voidT zePointerFieldsF( tin0S& tin0P ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.tin123S.zePointerFieldsF!||
-        voidT levelModeF( const flagsT flagsModeP = flTHREADlEVELmODE_null , sCountT cLevelsP = 0 , const sCountT offRelLevelP = 0 ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.tin123S.levelModeF!||
-        inline flagsT flagsF( voidT ) { return flags ; }
-        voidT get_pLFnest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.tin123S.get_pLFnest_F!||
-        voidT get_pLFstep_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.tin123S.get_pLFstep_F!||
-        voidT get_pFlagsThreadLevelMode_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.tin123S.get_pFlagsThreadLevelMode_F!||
-        voidT get_pIdInNest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.tin123S.get_pIdInNest_F!||
-        voidT get_pEIPInNest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34011.tin123S.get_pEIPInNest_F!||
-        voidT get_pIdProgressNest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34012.tin123S.get_pIdProgressNest_F!||
-        tin123S& rootF( voidT ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.tin123S.rootF!||
-        voidT walkF( tin0S& tin0RootP , tinWalkerFT tinWalkerFP , countT& cArgP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.tin123S.walkF!||
-        voidT deregisterIfF( tin0S& tin0P ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.tin123S.deregisterIfF!||
-        voidT tell_tmWatchF_toIgnoreMeF( voidT ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.tin123S.tell_tmWatchF_toIgnoreMeF!||
-        voidT flushPendingInOutFrameTelemetryIfF( voidT ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024014.tins.flushPendingInOutFrameTelemetryIfF!||
+    /* commands */
+    voidT strFuseF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , const countT csttExtraP = 0 , const flagsT flagsInclude1P = flTINrPT1_null , const flagsT flagsInclude2P = flTINrPT2_null , const flagsT flagsExclude1P = flTINrPT1_null , const flagsT flagsExclude2P = flTINrPT2_null , countT idFormatP = 0 , const countT cIndentP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.tin123S.strFuseF!||
+    voidT zePointerFieldsF( tin0S& tin0P ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.tin123S.zePointerFieldsF!||
+    voidT levelModeF( const flagsT flagsModeP = flTHREADlEVELmODE_null , sCountT cLevelsP = 0 , const sCountT offRelLevelP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.tin123S.levelModeF!||
+    inline flagsT flagsF( voidT ) { return flags ; }
+    voidT get_pLFnest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.tin123S.get_pLFnest_F!||
+    voidT get_pLFstep_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.tin123S.get_pLFstep_F!||
+    voidT get_pFlagsThreadLevelMode_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400f.tin123S.get_pFlagsThreadLevelMode_F!||
+    voidT get_pIdInNest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34010.tin123S.get_pIdInNest_F!||
+    voidT get_pEIPInNest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34011.tin123S.get_pEIPInNest_F!||
+    voidT get_pIdProgressNest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34012.tin123S.get_pIdProgressNest_F!||
+    tin123S& rootF( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.tin123S.rootF!||
+    voidT walkF( tin0S& tin0RootP , tinWalkerFT tinWalkerFP , countT& cArgP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.tin123S.walkF!||
+    voidT deregisterIfF( tin0S& tin0P ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400a.tin123S.deregisterIfF!||
+    voidT tell_tmWatchF_toIgnoreMeF( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34013.tin123S.tell_tmWatchF_toIgnoreMeF!||
+    voidT flushPendingInOutFrameTelemetryIfF( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024014.tins.flushPendingInOutFrameTelemetryIfF!||
 
-        /*tls*/
-        byteT* tlsNewF( const countT idLineP , const countT idiFileP , const countT cbP , const osTextT* const postNameP = 0 , const osTextT* const postGroupP = 0 ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.tin123S.tlsNewF!||
-        voidT tlsDelF( const countT idLineP , const countT idiFileP , byteT*& pbMeP ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.tin123S.tlsDelF!||
-        voidT tlsCheckF( voidT ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024015.tins.tlsCheckF!||
-        voidT tlsTraceF( voidT ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024016.tins.tlsTraceF!||
-        byteT* pbF( countT idP = 1 ) ;
-        //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.tin123S.pbF!||
+    /*tls*/
+    byteT* tlsNewF( const countT idLineP , const countT idiFileP , const countT cbP , const osTextT* const postNameP = 0 , const osTextT* const postGroupP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400b.tin123S.tlsNewF!||
+    voidT tlsDelF( const countT idLineP , const countT idiFileP , byteT*& pbMeP ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400c.tin123S.tlsDelF!||
+    voidT tlsCheckF( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024015.tins.tlsCheckF!||
+    voidT tlsTraceF( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024016.tins.tlsTraceF!||
+    byteT* pbF( countT idP = 1 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.tin123S.pbF!||
 }
 ;
 
@@ -27899,6 +27916,8 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin123S : 1snip.15000026.tin123S END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin12S : 1snip.150001c8.tin12S BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -27955,6 +27974,8 @@ it is illegal to modify any member other than pc Utility in the definition of an
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin12S : 1snip.150001c8.tin12S END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin1S : 1snip.150001c9.tin1S BEGIN
 
 
 //
@@ -28013,7 +28034,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin1S : 1snip.150001c9.tin1S END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsBlobC : 1snip.15000088.tlsBlobC BEGIN
 
 
@@ -28824,114 +28845,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsAllocStackExp_01_C : 1snip.150001c3.tlsAllocStackExp_01_C END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrame123S : 1snip.15000062.tlsstackframes BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-
-
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrame123S/*1*/
-{
-    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
-    //const countT            fingerTlsEnd ;
-      tallyC                  tallyKid ;
-    //zapC                    zap_pbTls ;
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                   pTin ;
-      tin123S                    tinEarlyLate ;
-      countT                  rc ;
-    //tlsAllocStackExp_01_C   tlsForMe ;
-    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
-    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
-
-    ~tlsStackFrame123S(      voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame123S.dt_tlsStackFrame123S!||
-    tlsStackFrame123S(      const countT idTypeP ,       countT ebpP , const osTextT* const postP , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame123S.tlsStackFrame123S!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrame123S : 1snip.15000062.tlsstackframes END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameNoTls123S : 1snip.15000087.tlsstackframenotlss BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
-//U::RENAME ME TO tlsStackFrame123S
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrameNoTls123S/*1*/
-{
-
-
-
-
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                   pTin ;
-      tin123S                    tinEarlyLate ;
-      countT                  rc ;
-      //tlsAllocStackExp_01_C tlsForMe ;
-      //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
-      //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
-
-    ~tlsStackFrameNoTls123S( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls123S.dt_tlsStackFrameNoTls123S!||
-    tlsStackFrameNoTls123S( const countT idTypeP , const countT ebpP , const osTextT* const postP , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls123S.tlsStackFrameNoTls123S!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameNoTls123S : 1snip.15000087.tlsstackframenotlss END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameLocationS : 1snip.15000068.tlsstackframelocations BEGIN
 
 
@@ -28979,6 +28892,108 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameLocationS : 1snip.15000068.tlsstackframelocations END
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
+//U::RENAME ME TO tlsStackFrame123S
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrameNoTls123S/*1*/
+{
+
+
+
+
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin123S                 tinEarlyLate ;
+      countT                  rc ;
+      //tlsAllocStackExp_01_C tlsForMe ;
+      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
+      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrameNoTls123S( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls123S.dt_tlsStackFrameNoTls123S!||
+    tlsStackFrameNoTls123S( const countT idTypeP , const countT ebpP , const osTextT* const postP , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls123S.tlsStackFrameNoTls123S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+
+
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrame123S/*1*/
+{
+    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+    //const countT            fingerTlsEnd ;
+      tallyC                  tallyKid ;
+    //zapC                    zap_pbTls ;
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin123S                 tinEarlyLate ;
+      countT                  rc ;
+    //tlsAllocStackExp_01_C   tlsForMe ;
+    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
+    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrame123S(      voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame123S.dt_tlsStackFrame123S!||
+    tlsStackFrame123S(      const countT idTypeP ,       countT ebpP , const osTextT* const postP , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame123S.tlsStackFrame123S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.grabAnnotatedS : 1snip.15000051.grabannotateds BEGIN
 
 

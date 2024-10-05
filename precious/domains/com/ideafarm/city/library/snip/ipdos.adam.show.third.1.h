@@ -173,12 +173,12 @@ class  /*ff*/threadCheckC/*ff*/                                         ; /*ff*/
 class  /*ff*/thugC/*ff*/                                                ; /*ff*//**//*ff*/
 struct /*ff*/timeS/*ff*/                                                ; /*ff*//**//*ff*/
 struct /*ff*/timeZoneSpecS/*ff*/                                        ; /*ff*//**//*ff*/
-struct /*ff*/tin0S/*ff*/                                             ; /*ff*//*o*//*ff*/
-struct /*ff*/tin123S/*ff*/                                           ; /*ff*//*o*//*ff*/
+struct /*ff*/tin0S/*ff*/                                                ; /*ff*//*o*//*ff*/
+struct /*ff*/tin123S/*ff*/                                              ; /*ff*//*o*//*ff*/
 struct /*ff*/tinTallyS/*ff*/                                            ; /*ff*//**//*ff*/
 struct /*ff*/tlsStackFrameLocationS/*ff*/                               ; /*ff*//**//*ff*/
-struct /*ff*/tlsStackFrame123S/*ff*/                                       ; /*ff*//**//*ff*/
-struct /*ff*/tlsStackFrameNoTls123S/*ff*/                                  ; /*ff*//**//*ff*/
+struct /*ff*/tlsStackFrame123S/*ff*/                                    ; /*ff*//**//*ff*/
+struct /*ff*/tlsStackFrameNoTls123S/*ff*/                               ; /*ff*//**//*ff*/
 class  /*ff*/treeOldC/*ff*/                                             ; /*ff*//*p*//*ff*/
 class  /*ff*/upDnC/*ff*/                                                ; /*ff*//**//*ff*/
 class  /*ff*/vectorOldC/*ff*/                                           ; /*ff*//**//*ff*/
@@ -401,18 +401,18 @@ class   /*ff*/jotFileSoilC/*ff*/                                        ; /*ff*/
 class   /*ff*/jotFilesC/*ff*/                                           ; /*ff*//**//*ff*/
 class   /*ff*/nicNamesAllowedStripeWebHookNotificationsC/*ff*/          ; /*ff*//**//*ff*/
 class   /*ff*/homeIdgC/*ff*/                                            ; /*ff*//**//*ff*/
-class   /*ff*/stateListingSetS/*ff*/                                   ; /*ff*//**//*ff*/
-class   /*ff*/offStateListingSetC/*ff*/                                ; /*ff*//**//*ff*/
-class   /*ff*/listingOfSetC/*ff*/                                  ; /*ff*//**//*ff*/
-class   /*ff*/listOfSetC/*ff*/                                     ; /*ff*//**//*ff*/
-class   /*ff*/listingOfSet_listingVSP_C/*ff*/                      ; /*ff*//**//*ff*/
-class   /*ff*/listOfSet_countT_C/*ff*/                             ; /*ff*//**//*ff*/
-class   /*ff*/listOfSet_blob_C/*ff*/                               ; /*ff*//**//*ff*/
-class   /*ff*/listOfSet_countTstrz_C/*ff*/                         ; /*ff*//**//*ff*/
-class   /*ff*/listOfSet_listingVSP_C/*ff*/                         ; /*ff*//**//*ff*/
-class   /*ff*/listingOfSet_countT_C/*ff*/                          ; /*ff*//**//*ff*/
-class   /*ff*/listingOfSet_blob_C/*ff*/                            ; /*ff*//**//*ff*/
-class   /*ff*/listingOfSet_countTstrz_C/*ff*/                      ; /*ff*//**//*ff*/
+class   /*ff*/stateListingSetS/*ff*/                                    ; /*ff*//**//*ff*/
+class   /*ff*/offStateListingSetC/*ff*/                                 ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSetC/*ff*/                                       ; /*ff*//**//*ff*/
+class   /*ff*/listOfSetC/*ff*/                                          ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_listingVSP_C/*ff*/                           ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_countT_C/*ff*/                                  ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_blob_C/*ff*/                                    ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_countTstrz_C/*ff*/                              ; /*ff*//**//*ff*/
+class   /*ff*/listOfSet_listingVSP_C/*ff*/                              ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_countT_C/*ff*/                               ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_blob_C/*ff*/                                 ; /*ff*//**//*ff*/
+class   /*ff*/listingOfSet_countTstrz_C/*ff*/                           ; /*ff*//**//*ff*/
 
 //INCLUDE GENERATED SNIPPETS HERE
 
@@ -12514,12 +12514,12 @@ these values are used in the foreign domain name system
 /*1*//*TELL(postFromP)*//*1*/
 /**/
 
-#define TELL(postFromP)                                                                         \
-                                                                                                \
-    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 )                                               \
-    {                                                                                           \
-        thirdC::c_strncpyIF( tin0P , ((tin123S&)tin0P).postTell , postFromP , sizeof ((tin123S&)tin0P).postTell ) ;        \
-        *((tin123S&)tin0P).postTellIf = 0 ;                                                                  \
+#define TELL(postFromP)                                                                                                 \
+                                                                                                                        \
+    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 )                                                                           \
+    {                                                                                                                   \
+        thirdC::c_strncpyIF( tin0P , ((tin123S&)tin0P).postTell , postFromP , sizeof ((tin123S&)tin0P).postTell ) ;     \
+        *((tin123S&)tin0P).postTellIf = 0 ;                                                                             \
     }
 
 
