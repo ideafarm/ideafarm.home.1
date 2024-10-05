@@ -1,4 +1,8 @@
 
+#define TASK123(taskFP) TASKpART0( taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone123 ) ;
+#define TASK12(taskFP)  TASKpART0( taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone12  ) ;
+#define TASK1(taskFP)   TASKpART0( taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone1   ) ;
+
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -19,6 +23,7 @@ examples
 
     #define DONE123(taskFP)                                                                                                                                                                                 \
                                                                                                                                                                                                             \
+                        if( _notUsedMatchingTaskDone123 ) ;                                                                                                                                                 \
                         DONEpART0                                                                                                                                                                           \
                                                                                                                                                                                                             \
         TASKpART0PROTO( taskFP )                                                                                                                                                                            \
@@ -30,6 +35,7 @@ examples
 
     #define DONE123(taskFP)                                                                                                                                                                                 \
                                                                                                                                                                                                             \
+                        if( _notUsedMatchingTaskDone123 ) ;                                                                                                                                                 \
                         DONEpART0                                                                                                                                                                           \
                                                                                                                                                                                                             \
         TASKpART0PROTO( taskFP )                                                                                                                                                                            \
@@ -59,7 +65,6 @@ examples
 //
 
 
-#define TASK123(taskFP) TASKpART0( taskFP , flTHIRDmODE_null )
 
 
 //
@@ -82,6 +87,7 @@ examples
 
     #define DONE1(taskFP)                                                                                                                                                                               \
                                                                                                                                                                                                         \
+                        if( _notUsedMatchingTaskDone1 ) ;                                                                                                                                                 \
                         DONEpART0                                                                                                                                                                       \
                                                                                                                                                                                                         \
         TASKpART0PROTO( taskFP )                                                                                                                                                                        \
@@ -93,6 +99,7 @@ examples
 
     #define DONE1(taskFP)                                                                                                                                                                               \
                                                                                                                                                                                                         \
+                        if( _notUsedMatchingTaskDone1 ) ;                                                                                                                                                 \
                         DONEpART0                                                                                                                                                                       \
                                                                                                                                                                                                         \
         TASKpART0PROTO( taskFP )                                                                                                                                                                        \
@@ -142,6 +149,7 @@ examples
 
     #define DONE12(taskFP)                                                                                                                                                                                  \
                                                                                                                                                                                                             \
+                        if( _notUsedMatchingTaskDone12 ) ;                                                                                                                                                 \
                         DONEpART0                                                                                                                                                                           \
                                                                                                                                                                                                             \
         TASKpART0PROTO( taskFP )                                                                                                                                                                            \
@@ -153,6 +161,7 @@ examples
 
     #define DONE12(taskFP)                                                                                                                                                                                  \
                                                                                                                                                                                                             \
+                        if( _notUsedMatchingTaskDone12 ) ;                                                                                                                                                 \
                         DONEpART0                                                                                                                                                                           \
                                                                                                                                                                                                             \
         TASKpART0PROTO( taskFP )                                                                                                                                                                            \
@@ -194,7 +203,6 @@ examples
 /**/
 /*1*//*TASK1(taskFP)*//*1*/
 
-#define TASK1(taskFP)   TASKpART0( taskFP , flTHIRDmODE_null )
 
 
 //
@@ -217,7 +225,6 @@ examples
 /**/
 /*1*//*TASK12(taskFP)*//*1*/
 
-#define TASK12(taskFP)  TASKpART0( taskFP , flTHIRDmODE_null )
 
 
 //
