@@ -16,8 +16,8 @@
 //extern "C" int matherr( struct exception *err )
 //U::GET THIS TO WORK
 
-TASK0PROTO( tmSetFloorUsersF ) ;
-TASK0PROTO( tmRestoreTabbingF ) ;
+TASKpART0PROTO( tmSetFloorUsersF ) ;
+TASKpART0PROTO( tmRestoreTabbingF ) ;
 
 voidT filterGrabMouseF( tin0S& tin0P , const countT cArgP ) ;
 voidT popButtonsF(     tin0S& tin0P , etherC& etherP , const countT cArgP ) ;

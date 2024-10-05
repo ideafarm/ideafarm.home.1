@@ -95,8 +95,12 @@ MYpREFIX void**          _export __cdecl   c_openSslAppLinkInnerIF( void ) ;
 MYpREFIX unsigned        _export __watcall c_debugIF( unsigned pP ) ;
 MYpREFIX void            _export __watcall c_getaddrinfoF( char* pbListP , unsigned cbListP , const char* const postNameP ) ;
 MYpREFIX void            _export           c_traceHelperIF( unsigned pP ) ;
-MYpREFIX int             _export __watcall c_threadTry1OuterF( unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;     //CS:PSEUDOdUPLICATE CODE: 01000002 
-MYpREFIX int             _export __watcall threadTry2InnerF( unsigned bMainP , unsigned c1P , unsigned c2P , unsigned c3P ) ;
+MYpREFIX int             _export __watcall c_threadTry1Outer123F( unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;     //CS:PSEUDOdUPLICATE CODE: 01000002 
+MYpREFIX int             _export __watcall c_threadTry1Outer12F(  unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;     //CS:PSEUDOdUPLICATE CODE: 01000002 
+MYpREFIX int             _export __watcall c_threadTry1Outer1F(   unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;     //CS:PSEUDOdUPLICATE CODE: 01000002 
+MYpREFIX int             _export __watcall threadTry2Inner123F(   unsigned bMainP , unsigned c1P , unsigned c2P , unsigned c3P ) ;
+MYpREFIX int             _export __watcall threadTry2Inner12F(    unsigned bMainP , unsigned c1P , unsigned c2P , unsigned c3P ) ;
+MYpREFIX int             _export __watcall threadTry2Inner1F(     unsigned bMainP , unsigned c1P , unsigned c2P , unsigned c3P ) ;
 
 #if defined( __cplusplus )
     unsigned _export _stdcall  rootExceptionFilterF( void* pvOsInfoP ) ;

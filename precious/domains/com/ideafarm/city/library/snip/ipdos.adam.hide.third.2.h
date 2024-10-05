@@ -4054,7 +4054,7 @@ all values that can be returned by GetThreadPriority() (Win32)
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005f9.TaRG5sGNdONEfLAGScBsTACKcBtLS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fa.TASK0nOeTsCRATCH BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fa.TASKpART0nOeTsCRATCH BEGIN
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -4068,11 +4068,11 @@ all values that can be returned by GetThreadPriority() (Win32)
 it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
-/*1*//*TASK0nOeTsCRATCH(taskFP,flagsThirdModeP)*//*1*/
+/*1*//*TASKpART0nOeTsCRATCH(taskFP,flagsThirdModeP)*//*1*/
 
 //CODEsYNC: 0010055 0010056
 
-#define TASK0nOeTsCRATCH(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                                                  \
+#define TASKpART0nOeTsCRATCH(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                                                  \
                                                                                                                                                                                                                                                                                                                   \
     countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                                          \
     {                                                                                                                                                                                                                                                                                                             \
@@ -4091,7 +4091,7 @@ it is illegal to refer to this symbol in the definition of an adam
         /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */                                                                                                                                                                 \
         /*OStEXTcLEAR( _ostoTmp )                                                                                                              */                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                                   \
-        TELL( "TASK0: workF+" )                                                                                                                                                                                                                                                                                   \
+        TELL( "TASKpART0: workF+" )                                                                                                                                                                                                                                                                                   \
         taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                                            \
         thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                                   \
         thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                                   \
@@ -4115,7 +4115,7 @@ it is illegal to refer to this symbol in the definition of an adam
         else                                                                                                                                                                                                                                                                                                      \
         {                                                                                                                                                                                                                                                                                                         \
             tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                                    \
-            TELL( "TASK0: newing a tin123S in the working poolOld" )                                                                                                                                                                                                                                           \
+            TELL( "TASKpART0: newing a tin123S in the working poolOld" )                                                                                                                                                                                                                                           \
             tin0S* pTin = new( 0 , tin0P , LF ) tin123S( tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
             if( pTin )                                                                                                                                                                                                                                                                                            \
             {                                                                                                                                                                                                                                                                                                     \
@@ -4127,23 +4127,23 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
                                                                                                                                                                                                                                                                                                                   \
         /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                                     \
-        TELL( "TASK0: after newing either a tin123S in the working poolOld" )                                                                                                                                                                                                                                  \
+        TELL( "TASKpART0: after newing either a tin123S in the working poolOld" )                                                                                                                                                                                                                                  \
         if( bTinOk )                                                                                                                                                                                                                                                                                              \
         {                                                                                                                                                                                                                                                                                                         \
             TINSL                                                                                                                                                                                                                                                                                                 \
             thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                                \
             etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                                       \
             etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                                       \
-            TELL( "TASK0: setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                                             \
+            TELL( "TASKpART0: setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                                             \
             ((tin123S&)tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                                           \
             ((tin123S&)tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                                          \
             ((tin123S&)tin0P).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tin0P ) ;                                                                                                                                                                                                           \
             ((tin123S&)tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                                                                   \
-            /*etRock.traceF( tin0P , T("TASK0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                                    \
+            /*etRock.traceF( tin0P , T("TASKpART0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                                    \
                                                                                                                                                                                                                                                                                                                   \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                                         \
-            TELL( "TASK0: setting flagsThreadMode2" )                                                                                                                                                                                                                                                             \
+            TELL( "TASKpART0: setting flagsThreadMode2" )                                                                                                                                                                                                                                                             \
             if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                                  \
             if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                                  \
             if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                                  \
@@ -4151,13 +4151,13 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                                  \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                                  \
                                                                                                                                                                                                                                                                                                                   \
-            TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                                                      \
+            TELL( "TASKpART0: newing etThread" )                                                                                                                                                                                                                                                                      \
               byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                                                \
             /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                                              \
               etherC* pEtThread = new( 0 , tin0P , pbEther1 , sizeof pbEther1 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                               \
             /*((tin123S&)tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                                   \
             /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                                     \
-            TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                                                                \
+            TELL( "TASKpART0: after newing etThread" )                                                                                                                                                                                                                                                                \
             ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                                     \
               if( pEtThread /*&& ((tin123S&)tin0P).pEtScratch*/ )                                                                                                                                                                                                                                           \
             {                                                                                                                                                                                                                                                                                                     \
@@ -4167,7 +4167,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                                                                   \
                 /*POPUP( TF1(((tin123S&)tin0P).monitor.idThread)+T(" ")+T(((tin123S&)tin0P).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
                                                                                                                                                                                                                                                                                                                   \
-                TELL( "TASK0: final setup" )                                                                                                                                                                                                                                                                      \
+                TELL( "TASKpART0: final setup" )                                                                                                                                                                                                                                                                      \
                   ((tin123S&)tin0P).pEther = &etThread ;                                                                                                                                                                                                                                                    \
                                                                                                                                                                                                                                                                                                                   \
                   signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
@@ -4183,7 +4183,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                                     \
                     }                                                                                                                                                                                                                                                                                             \
                       if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                                  \
-                    TELL( "TASK0: entering application code" )                                                                                                                                                                                                                                                    \
+                    TELL( "TASKpART0: entering application code" )                                                                                                                                                                                                                                                    \
                     /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                                           \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                                               \
                     if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
@@ -4197,7 +4197,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fa.TASK0nOeTsCRATCH END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fa.TASKpART0nOeTsCRATCH END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fb.TASKnOeTsCRATCH BEGIN
 
 
@@ -4217,7 +4217,7 @@ examples
 /**/
 /*1*//*TASKnOeTsCRATCH(taskFP)*//*1*/
 
-#define TASKnOeTsCRATCH(taskFP) TASK0nOeTsCRATCH( taskFP , flTHIRDmODE_null )
+#define TASKnOeTsCRATCH(taskFP) TASKpART0nOeTsCRATCH( taskFP , flTHIRDmODE_null )
 
 
 //
@@ -4228,7 +4228,7 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fb.TASKnOeTsCRATCH END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fc.DONE0nOeTsCRATCH BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fc.DONEpART0nOeTsCRATCH BEGIN
 
 
 //
@@ -4243,13 +4243,13 @@ examples
 it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
-/*1*//*DONE0nOeTsCRATCH*//*1*/
+/*1*//*DONEpART0nOeTsCRATCH*//*1*/
 
 //CODEsYNC: 0010055 0010056
 
-//INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK0
+//INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASKpART0
     
-#define DONE0nOeTsCRATCH                                                                                                                                                                                                                                               \
+#define DONEpART0nOeTsCRATCH                                                                                                                                                                                                                                               \
                                                                                                                                                                                                                                                                        \
                     /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                                                 \
                                                                                                                                                                                                                                                                        \
@@ -4260,12 +4260,12 @@ it is illegal to refer to this symbol in the definition of an adam
                         if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
                         if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                          \
                         ((tin123S&)tin0P).idPhase2 = 0 ;                                                                                                                                                                                                         \
-                        TELL( "DONE0: after returning from application code" ) ;                                                                                                                                                                                       \
+                        TELL( "DONEpART0: after returning from application code" ) ;                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                        \
                         if( ((tin123S&)tin0P).pag1->cYieldHighWater )                                                                                                                                                                                            \
                         {                                                                                                                                                                                                                                              \
                             OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                                                          \
-                            OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                                               \
+                            OStEXTAK( ostoSay , "DONEpART0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                                               \
                             OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , 0 ) ;                                                                                                                                                                           \
                             OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
                             OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                  \
@@ -4285,19 +4285,19 @@ it is illegal to refer to this symbol in the definition of an adam
                         if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                         \
                         else                                                                                                                                                                                                                                           \
                         {                                                                                                                                                                                                                                              \
-                            TELL( "DONE0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                       \
+                            TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                       \
                             if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;               \
                                                                                                                                                                                                                                                                        \
-                            TELL( "DONE0: waiting for my kid threads to end" ) ;                                                                                                                                                                                       \
+                            TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                                       \
                             {                                                                                                                                                                                                                                          \
                                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                                        \
                                 while( ((tin123S&)tin0P).cKidThreads )                                                                                                                                                                                           \
                                 {                                                                                                                                                                                                                                      \
-                                    etherC::etRockIF( tin0P ).traceF( tin0P , T("DONE0 / napping a wink for my kids to end [((tin123S&)tin0P).cKidThreads]:    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
+                                    etherC::etRockIF( tin0P ).traceF( tin0P , T("DONEpART0 / napping a wink for my kids to end [((tin123S&)tin0P).cKidThreads]:    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
                                     ++ s ; thirdC::dosSleepRawIF( tin0P , 250 ) ;                                                                                                                                                                                   \
                                 }                                                                                                                                                                                                                                      \
                             }                                                                                                                                                                                                                                          \
-                            TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                             \
+                            TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                             \
                         }                                                                                                                                                                                                                                              \
                         if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                      \
                         if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
@@ -4312,14 +4312,14 @@ it is illegal to refer to this symbol in the definition of an adam
                     {                                                                                                                                                                                                                                                  \
                         if( psttThreadFile )                                                                                                                                                                                                                           \
                         {                                                                                                                                                                                                                                              \
-                            TELL( "DONE0: deleting thread file" ) ;                                                                                                                                                                                                    \
+                            TELL( "DONEpART0: deleting thread file" ) ;                                                                                                                                                                                                    \
                             ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , psttThreadFile ) ;                                                                                                                                                                 \
                             ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttThreadFile ) ;                                                                                                                                                                    \
                         }                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
-                        TELL( "DONE0: testing poolOld" ) ;                                                                                                                                                                                                             \
+                        TELL( "DONEpART0: testing poolOld" ) ;                                                                                                                                                                                                             \
                         ((tin123S&)tin0P).pEther = 0 ;                                                                                                                                                                                                           \
-                        TELL( "DONE0: deleting etThread (and tin0P)" ) ;                                                                                                                                                                                            \
+                        TELL( "DONEpART0: deleting etThread (and tin0P)" ) ;                                                                                                                                                                                            \
                         DELzOMBIE( ((tin123S&)tin0P).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                           \
                         /*DELzOMBIE( ((tin123S&)tin0P).pEtScratch ) ;*/                                                                                                                                                                                          \
                         if( *(countT*)&pEtThread )                                                                                                                                                                                                                     \
@@ -4333,7 +4333,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                        \
             {                                                                                                                                                                                                                                                          \
                 TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                              \
-                TELL( "DONE0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                                                 \
+                TELL( "DONEpART0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                                                 \
                 boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                                                                                                                          \
                 countT& cAllThreads = bOrphan                                                                                                                                                                                                                          \
                     ? thirdC::os_cAllOrphanThreadsI_IF( tin0P )                                                                                                                                                                                                     \
@@ -4353,13 +4353,13 @@ it is illegal to refer to this symbol in the definition of an adam
                     DEL( pTaskP ) ;                                                                                                                                                                                                                                    \
                 }                                                                                                                                                                                                                                                      \
                                                                                                                                                                                                                                                                        \
-                TELL( "DONE0: i am outa here" )                                                                                                                                                                                                                        \
+                TELL( "DONEpART0: i am outa here" )                                                                                                                                                                                                                        \
                 if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] = - 1 ;                                                                                    \
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                                                       \
             }                                                                                                                                                                                                                                                          \
         }                                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
-        DONE1
+        DONEpART1
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -4368,7 +4368,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fc.DONE0nOeTsCRATCH END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fc.DONEpART0nOeTsCRATCH END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fd.DONEnOeTsCRATCH BEGIN
 
 
@@ -4392,9 +4392,9 @@ examples
 
     #define DONEnOeTsCRATCH(taskFP)                                                                                                                                                                                 \
                                                                                                                                                                                                                     \
-                        DONE0nOeTsCRATCH                                                                                                                                                                            \
+                        DONEpART0nOeTsCRATCH                                                                                                                                                                            \
                                                                                                                                                                                                                     \
-        TASK0PROTO( taskFP )                                                                                                                                                                                        \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                                        \
         {                                                                                                                                                                                                           \
             threadLocalStorage123F( ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                                     \
         }
@@ -4403,9 +4403,9 @@ examples
 
     #define DONEnOeTsCRATCH(taskFP)                                                                                                                                                                                 \
                                                                                                                                                                                                                     \
-                        DONE0nOeTsCRATCH                                                                                                                                                                            \
+                        DONEpART0nOeTsCRATCH                                                                                                                                                                            \
                                                                                                                                                                                                                     \
-        TASK0PROTO( taskFP )                                                                                                                                                                                        \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                                        \
         {                                                                                                                                                                                                           \
             /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                                      \
             /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                                     \
@@ -4418,7 +4418,7 @@ examples
                                                                                                                                                                                                                     \
             countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;               \
                                                                                                                                                                                                                     \
-            return c_threadTry1OuterF( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                                      \
+            return c_threadTry1Outer123F( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                                      \
         }
 
 #endif
@@ -4432,7 +4432,7 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fd.DONEnOeTsCRATCH END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fe.TASK0nOeTHERS BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fe.TASKpART0nOeTHERS BEGIN
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -4446,11 +4446,11 @@ examples
 it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
-/*1*//*TASK0nOeTHERS(taskFP,flagsThirdModeP)*//*1*/
+/*1*//*TASKpART0nOeTHERS(taskFP,flagsThirdModeP)*//*1*/
 
 //CODEsYNC: 0010055 0010056
 
-#define TASK0nOeTHERS(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                                                     \
+#define TASKpART0nOeTHERS(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                                                     \
                                                                                                                                                                                                                                                                                                                   \
     countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                                          \
     {                                                                                                                                                                                                                                                                                                             \
@@ -4469,7 +4469,7 @@ it is illegal to refer to this symbol in the definition of an adam
         /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */                                                                                                                                                                 \
         /*OStEXTcLEAR( _ostoTmp )                                                                                                              */                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                                   \
-        TELL( "TASK0: workF+" )                                                                                                                                                                                                                                                                                   \
+        TELL( "TASKpART0: workF+" )                                                                                                                                                                                                                                                                                   \
         taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                                            \
         thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                                   \
         thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                                   \
@@ -4493,7 +4493,7 @@ it is illegal to refer to this symbol in the definition of an adam
         else                                                                                                                                                                                                                                                                                                      \
         {                                                                                                                                                                                                                                                                                                         \
             tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                                    \
-            TELL( "TASK0: newing a tin123S in the working poolOld" )                                                                                                                                                                                                                                           \
+            TELL( "TASKpART0: newing a tin123S in the working poolOld" )                                                                                                                                                                                                                                           \
             tin0S* pTin = new( 0 , tin0P , LF ) tin123S( tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                       \
             if( pTin )                                                                                                                                                                                                                                                                                            \
             {                                                                                                                                                                                                                                                                                                     \
@@ -4505,23 +4505,23 @@ it is illegal to refer to this symbol in the definition of an adam
         }                                                                                                                                                                                                                                                                                                         \
                                                                                                                                                                                                                                                                                                                   \
         /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                                     \
-        TELL( "TASK0: after newing either a tin123S in the working poolOld" )                                                                                                                                                                                                                                  \
+        TELL( "TASKpART0: after newing either a tin123S in the working poolOld" )                                                                                                                                                                                                                                  \
         if( bTinOk )                                                                                                                                                                                                                                                                                              \
         {                                                                                                                                                                                                                                                                                                         \
             TINSL                                                                                                                                                                                                                                                                                                 \
             thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                                \
             etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                                       \
             etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                                       \
-            TELL( "TASK0: setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                                             \
+            TELL( "TASKpART0: setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                                             \
             ((tin123S&)tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                                           \
             ((tin123S&)tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                                          \
             ((tin123S&)tin0P).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tin0P ) ;                                                                                                                                                                                                           \
             ((tin123S&)tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                                                                   \
-            /*etRock.traceF( tin0P , T("TASK0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                                    \
+            /*etRock.traceF( tin0P , T("TASKpART0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                                    \
                                                                                                                                                                                                                                                                                                                   \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                                         \
-            TELL( "TASK0: setting flagsThreadMode2" )                                                                                                                                                                                                                                                             \
+            TELL( "TASKpART0: setting flagsThreadMode2" )                                                                                                                                                                                                                                                             \
             if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                                  \
             if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                                  \
             if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                                  \
@@ -4529,13 +4529,13 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                                  \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                                  \
                                                                                                                                                                                                                                                                                                                   \
-            TELL( "TASK0: newing etThread" )                                                                                                                                                                                                                                                                      \
+            TELL( "TASKpART0: newing etThread" )                                                                                                                                                                                                                                                                      \
             /*byteT pbEther1[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                                              \
             /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                                              \
             /*etherC* pEtThread = new( 0 , tin0P , pbEther1 , sizeof pbEther1 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;*/                                                                                                                                             \
             /*((tin123S&)tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                                   \
             /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                                     \
-            TELL( "TASK0: after newing etThread" )                                                                                                                                                                                                                                                                \
+            TELL( "TASKpART0: after newing etThread" )                                                                                                                                                                                                                                                                \
             ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                                     \
             /*if( pEtThread   && ((tin123S&)tin0P).pEtScratch   )*/                                                                                                                                                                                                                                         \
             {                                                                                                                                                                                                                                                                                                     \
@@ -4545,7 +4545,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                                                                   \
                 /*POPUP( TF1(((tin123S&)tin0P).monitor.idThread)+T(" ")+T(((tin123S&)tin0P).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                           \
                                                                                                                                                                                                                                                                                                                   \
-                TELL( "TASK0: final setup" )                                                                                                                                                                                                                                                                      \
+                TELL( "TASKpART0: final setup" )                                                                                                                                                                                                                                                                      \
                 /*((tin123S&)tin0P).pEther = &etThread ;*/                                                                                                                                                                                                                                                  \
                                                                                                                                                                                                                                                                                                                   \
                 /*signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                                                            \
@@ -4561,7 +4561,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         ether.boxPutF(    tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                                     \
                     }                                                                                                                                                                                                                                                                                             \
                     /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;*/                                                                \
-                    TELL( "TASK0: entering application code" )                                                                                                                                                                                                                                                    \
+                    TELL( "TASKpART0: entering application code" )                                                                                                                                                                                                                                                    \
                     /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                                           \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                                               \
                     if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                               \
@@ -4575,7 +4575,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fe.TASK0nOeTHERS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fe.TASKpART0nOeTHERS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ff.TASKnOeTHERS BEGIN
 
 
@@ -4595,7 +4595,7 @@ examples
 /**/
 /*1*//*TASKnOeTHERS(taskFP)*//*1*/
 
-#define TASKnOeTHERS(taskFP) TASK0nOeTHERS( taskFP , flTHIRDmODE_null )
+#define TASKnOeTHERS(taskFP) TASKpART0nOeTHERS( taskFP , flTHIRDmODE_null )
 
 
 //
@@ -4606,7 +4606,7 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ff.TASKnOeTHERS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200600.DONE0nOeTHERS BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200600.DONEpART0nOeTHERS BEGIN
 
 
 //
@@ -4621,13 +4621,13 @@ examples
 it is illegal to refer to this symbol in the definition of an adam
 */
 /**/
-/*1*//*DONE0nOeTHERS*//*1*/
+/*1*//*DONEpART0nOeTHERS*//*1*/
 
 //CODEsYNC: 0010055 0010056
 
-//INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK0
+//INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASKpART0
     
-#define DONE0nOeTHERS                                                                                                                                                                                                                                                  \
+#define DONEpART0nOeTHERS                                                                                                                                                                                                                                                  \
                                                                                                                                                                                                                                                                        \
                     /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                                                 \
                                                                                                                                                                                                                                                                        \
@@ -4638,12 +4638,12 @@ it is illegal to refer to this symbol in the definition of an adam
                         if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
                         if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                          \
                         ((tin123S&)tin0P).idPhase2 = 0 ;                                                                                                                                                                                                         \
-                        TELL( "DONE0: after returning from application code" ) ;                                                                                                                                                                                       \
+                        TELL( "DONEpART0: after returning from application code" ) ;                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                        \
                         if( ((tin123S&)tin0P).pag1->cYieldHighWater )                                                                                                                                                                                            \
                         {                                                                                                                                                                                                                                              \
                             OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                                                          \
-                            OStEXTAK( ostoSay , "DONE0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                                               \
+                            OStEXTAK( ostoSay , "DONEpART0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                                               \
                             OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , 0 ) ;                                                                                                                                                                           \
                             OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
                             OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                  \
@@ -4663,19 +4663,19 @@ it is illegal to refer to this symbol in the definition of an adam
                         /*if( !pEtThread ) ;*/ /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                     \
                         /*else*/                                                                                                                                                                                                                                       \
                         {                                                                                                                                                                                                                                              \
-                            TELL( "DONE0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                       \
+                            TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                       \
                             /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;*/           \
                                                                                                                                                                                                                                                                        \
-                            TELL( "DONE0: waiting for my kid threads to end" ) ;                                                                                                                                                                                       \
+                            TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                                       \
                             {                                                                                                                                                                                                                                          \
                                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                                        \
                                 while( ((tin123S&)tin0P).cKidThreads )                                                                                                                                                                                           \
                                 {                                                                                                                                                                                                                                      \
-                                    etherC::etRockIF( tin0P ).traceF( tin0P , T("DONE0 / napping a wink for my kids to end [((tin123S&)tin0P).cKidThreads]:    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
+                                    etherC::etRockIF( tin0P ).traceF( tin0P , T("DONEpART0 / napping a wink for my kids to end [((tin123S&)tin0P).cKidThreads]:    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
                                     ++ s ; thirdC::dosSleepRawIF( tin0P , 250 ) ;                                                                                                                                                                                   \
                                 }                                                                                                                                                                                                                                      \
                             }                                                                                                                                                                                                                                          \
-                            TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                             \
+                            TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                             \
                         }                                                                                                                                                                                                                                              \
                         if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                      \
                         if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
@@ -4690,14 +4690,14 @@ it is illegal to refer to this symbol in the definition of an adam
                     {                                                                                                                                                                                                                                                  \
                         if( psttThreadFile )                                                                                                                                                                                                                           \
                         {                                                                                                                                                                                                                                              \
-                            TELL( "DONE0: deleting thread file" ) ;                                                                                                                                                                                                    \
+                            TELL( "DONEpART0: deleting thread file" ) ;                                                                                                                                                                                                    \
                             ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , psttThreadFile ) ;                                                                                                                                                                 \
                             ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttThreadFile ) ;                                                                                                                                                                    \
                         }                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
-                        TELL( "DONE0: testing poolOld" ) ;                                                                                                                                                                                                             \
+                        TELL( "DONEpART0: testing poolOld" ) ;                                                                                                                                                                                                             \
                         ((tin123S&)tin0P).pEther = 0 ;                                                                                                                                                                                                           \
-                        TELL( "DONE0: deleting etThread (and tin0P)" ) ;                                                                                                                                                                                            \
+                        TELL( "DONEpART0: deleting etThread (and tin0P)" ) ;                                                                                                                                                                                            \
                         /*DELzOMBIE( ((tin123S&)tin0P).pScoopEtThread ) ;*/ /*CODEsYNC: 0010056 1020171 */                                                                                                                                                       \
                         /*DELzOMBIE( ((tin123S&)tin0P).pEtScratch ) ;*/                                                                                                                                                                                          \
                         /*if( *(countT*)&pEtThread )*/                                                                                                                                                                                                                 \
@@ -4711,7 +4711,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                        \
             {                                                                                                                                                                                                                                                          \
                 TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                              \
-                TELL( "DONE0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                                                 \
+                TELL( "DONEpART0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                                                 \
                 boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                                                                                                                          \
                 countT& cAllThreads = bOrphan                                                                                                                                                                                                                          \
                     ? thirdC::os_cAllOrphanThreadsI_IF( tin0P )                                                                                                                                                                                                     \
@@ -4731,13 +4731,13 @@ it is illegal to refer to this symbol in the definition of an adam
                     DEL( pTaskP ) ;                                                                                                                                                                                                                                    \
                 }                                                                                                                                                                                                                                                      \
                                                                                                                                                                                                                                                                        \
-                TELL( "DONE0: i am outa here" )                                                                                                                                                                                                                        \
+                TELL( "DONEpART0: i am outa here" )                                                                                                                                                                                                                        \
                 if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] = - 1 ;                                                                                    \
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                                                       \
             }                                                                                                                                                                                                                                                          \
         }                                                                                                                                                                                                                                                              \
                                                                                                                                                                                                                                                                        \
-        DONE1
+        DONEpART1
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -4746,7 +4746,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200600.DONE0nOeTHERS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200600.DONEpART0nOeTHERS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200601.DONEnOeTHERS BEGIN
 
 
@@ -4770,9 +4770,9 @@ examples
 
     #define DONEnOeTHERS(taskFP)                                                                                                                                                                                    \
                                                                                                                                                                                                                     \
-                        DONE0nOeTHERS                                                                                                                                                                               \
+                        DONEpART0nOeTHERS                                                                                                                                                                               \
                                                                                                                                                                                                                     \
-        TASK0PROTO( taskFP )                                                                                                                                                                                        \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                                        \
         {                                                                                                                                                                                                           \
             threadLocalStorage123F( ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                                     \
         }
@@ -4781,9 +4781,9 @@ examples
 
     #define DONEnOeTHERS(taskFP)                                                                                                                                                                                    \
                                                                                                                                                                                                                     \
-                        DONE0nOeTHERS                                                                                                                                                                               \
+                        DONEpART0nOeTHERS                                                                                                                                                                               \
                                                                                                                                                                                                                     \
-        TASK0PROTO( taskFP )                                                                                                                                                                                        \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                                        \
         {                                                                                                                                                                                                           \
             /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                                      \
             /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                                     \
@@ -4796,7 +4796,7 @@ examples
                                                                                                                                                                                                                     \
             countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;               \
                                                                                                                                                                                                                     \
-            return c_threadTry1OuterF( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                                      \
+            return c_threadTry1Outer123F( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                                      \
         }
 
 #endif
@@ -8446,7 +8446,7 @@ it is illegal to refer to this symbol in the definition of an adam
 */
 /*1*//*tmWatchF*//*1*/
 
-TASK0PROTO( tmWatchF ) ;
+TASKpART0PROTO( tmWatchF ) ;
 
 
 //
@@ -8524,7 +8524,7 @@ it is illegal to refer to this symbol in the definition of an adam
 */
 /*1*//*tmRelayOldChatRepliesF*//*1*/
 
-TASK0PROTO( tmRelayOldChatRepliesF ) ;
+TASKpART0PROTO( tmRelayOldChatRepliesF ) ;
 
 
 //
@@ -8718,6 +8718,154 @@ for fast execution, specify seedP so that it is not loaded at run time
 /**/
 
 /*1*/countT __export threadLocalStorage123F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/countT __export threadLocalStorageNoTls1F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/countT __export threadLocalStorageNoTls12F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/countT __export threadLocalStorage1F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/countT __export threadLocalStorage12F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/countT __export threadLocalStorageNoTls123F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0040040.1.0.html\"\>definition\</A\>
+*/
+/**/
+
+/*1*/countT __export threadLocalStorageLocationF( const countT oshWindowP , const countT idCmdP , const countT p1P , const countT p2P ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
 
 
 //
@@ -9051,7 +9199,7 @@ it is illegal to refer to this symbol in the definition of an adam
 */
 /*1*//*tmWatchFlagsF*//*1*/
 
-TASK0PROTO( tmWatchFlagsF ) ;
+TASKpART0PROTO( tmWatchFlagsF ) ;
 
 
 //
@@ -9076,7 +9224,7 @@ TASK0PROTO( tmWatchFlagsF ) ;
 */
 /*1*//*_tmCatchF*//*1*/
 
-TASK0PROTO( _tmCatchF ) ;
+TASKpART0PROTO( _tmCatchF ) ;
 
 
 //
@@ -9101,7 +9249,7 @@ TASK0PROTO( _tmCatchF ) ;
 */
 /*1*//*tmRiverServeF*//*1*/
 
-TASK0PROTO( tmRiverServeF ) ;
+TASKpART0PROTO( tmRiverServeF ) ;
 
 
 //
@@ -9126,7 +9274,7 @@ TASK0PROTO( tmRiverServeF ) ;
 */
 /*1*//*tmRiverAcceptF*//*1*/
 
-TASK0PROTO( tmRiverAcceptF ) ;
+TASKpART0PROTO( tmRiverAcceptF ) ;
 
 
 //
@@ -9151,7 +9299,7 @@ TASK0PROTO( tmRiverAcceptF ) ;
 */
 /*1*//*tmQuitSubscribeF*//*1*/
 
-TASK0PROTO( tmQuitSubscribeF ) ;
+TASKpART0PROTO( tmQuitSubscribeF ) ;
 
 
 //
@@ -9176,7 +9324,7 @@ TASK0PROTO( tmQuitSubscribeF ) ;
 */
 /*1*//*tmSubscribeF*//*1*/
 
-TASK0PROTO( tmSubscribeF ) ;
+TASKpART0PROTO( tmSubscribeF ) ;
 
 
 //
@@ -9201,7 +9349,7 @@ TASK0PROTO( tmSubscribeF ) ;
 */
 /*1*//*tmWhereF*//*1*/
 
-TASK0PROTO( tmWhereF ) ;
+TASKpART0PROTO( tmWhereF ) ;
 
 
 //
@@ -9226,7 +9374,7 @@ TASK0PROTO( tmWhereF ) ;
 */
 /*1*//*tmTimeoutF*//*1*/
 
-TASK0PROTO( tmTimeoutF ) ;
+TASKpART0PROTO( tmTimeoutF ) ;
 
 
 //
@@ -9251,7 +9399,7 @@ TASK0PROTO( tmTimeoutF ) ;
 */
 /*1*//*tmAskDnsF*//*1*/
 
-TASK0PROTO( tmAskDnsF ) ;
+TASKpART0PROTO( tmAskDnsF ) ;
 
 
 //
@@ -9276,7 +9424,7 @@ TASK0PROTO( tmAskDnsF ) ;
 */
 /*1*//*tmStackCoursesF*//*1*/
 
-TASK0PROTO( tmStackCoursesF ) ;
+TASKpART0PROTO( tmStackCoursesF ) ;
 
 
 //
@@ -9301,7 +9449,7 @@ TASK0PROTO( tmStackCoursesF ) ;
 */
 /*1*//*tmMakeTraysF*//*1*/
 
-TASK0PROTO( tmMakeTraysF ) ;
+TASKpART0PROTO( tmMakeTraysF ) ;
 
 
 //
@@ -9326,7 +9474,7 @@ TASK0PROTO( tmMakeTraysF ) ;
 */
 /*1*//*tmRegisterPortF*//*1*/
 
-TASK0PROTO( tmRegisterPortF ) ;
+TASKpART0PROTO( tmRegisterPortF ) ;
 
 
 //
@@ -9351,7 +9499,7 @@ TASK0PROTO( tmRegisterPortF ) ;
 */
 /*1*//*tmChatF*//*1*/
 
-TASK0PROTO( tmChatF ) ;
+TASKpART0PROTO( tmChatF ) ;
 
 
 //
@@ -9376,7 +9524,7 @@ TASK0PROTO( tmChatF ) ;
 */
 /*1*//*tmLoadSilentF*//*1*/
 
-TASK0PROTO( tmLoadSilentF ) ;
+TASKpART0PROTO( tmLoadSilentF ) ;
 
 
 //
@@ -9401,7 +9549,7 @@ TASK0PROTO( tmLoadSilentF ) ;
 */
 /*1*//*tmPaperOpenCatchF*//*1*/
 
-TASK0PROTO( tmPaperOpenCatchF ) ;
+TASKpART0PROTO( tmPaperOpenCatchF ) ;
 
 
 //
@@ -9426,7 +9574,7 @@ TASK0PROTO( tmPaperOpenCatchF ) ;
 */
 /*1*//*tmServePortF*//*1*/
 
-TASK0PROTO( tmServePortF ) ;
+TASKpART0PROTO( tmServePortF ) ;
 
 
 //
@@ -9451,7 +9599,7 @@ TASK0PROTO( tmServePortF ) ;
 */
 /*1*//*tmPortAuthorityF*//*1*/
 
-TASK0PROTO( tmPortAuthorityF ) ;
+TASKpART0PROTO( tmPortAuthorityF ) ;
 
 
 //
@@ -9476,7 +9624,7 @@ TASK0PROTO( tmPortAuthorityF ) ;
 */
 /*1*//*tmNapF*//*1*/
 
-TASK0PROTO( tmNapF ) ;
+TASKpART0PROTO( tmNapF ) ;
 
 
 //
@@ -9501,7 +9649,7 @@ TASK0PROTO( tmNapF ) ;
 */
 /*1*//*tmFtpServeF*//*1*/
 
-TASK0PROTO( tmFtpServeF ) ;
+TASKpART0PROTO( tmFtpServeF ) ;
 
 
 //
@@ -9526,7 +9674,7 @@ TASK0PROTO( tmFtpServeF ) ;
 */
 /*1*//*tmServeBoxClientsF*//*1*/
 
-TASK0PROTO( tmServeBoxClientsF ) ;
+TASKpART0PROTO( tmServeBoxClientsF ) ;
 
 
 //
@@ -9551,7 +9699,7 @@ TASK0PROTO( tmServeBoxClientsF ) ;
 */
 /*1*//*tmOutF*//*1*/
 
-TASK0PROTO( tmOutF ) ;
+TASKpART0PROTO( tmOutF ) ;
 
 
 //
@@ -9576,7 +9724,7 @@ TASK0PROTO( tmOutF ) ;
 */
 /*1*//*tmErrorF*//*1*/
 
-TASK0PROTO( tmErrorF ) ;
+TASKpART0PROTO( tmErrorF ) ;
 
 
 //
@@ -9601,7 +9749,7 @@ TASK0PROTO( tmErrorF ) ;
 */
 /*1*//*tmTimeNowF*//*1*/
 
-TASK0PROTO( tmTimeNowF ) ;
+TASKpART0PROTO( tmTimeNowF ) ;
 
 
 //
@@ -9626,7 +9774,7 @@ TASK0PROTO( tmTimeNowF ) ;
 */
 /*1*//*tmServiceMainF*//*1*/
 
-TASK0PROTO( tmServiceMainF ) ;
+TASKpART0PROTO( tmServiceMainF ) ;
 
 
 //
@@ -9651,7 +9799,7 @@ TASK0PROTO( tmServiceMainF ) ;
 */
 /*1*//*tmKillSocketF*//*1*/
 
-TASK0PROTO( tmKillSocketF ) ;
+TASKpART0PROTO( tmKillSocketF ) ;
 
 
 //
@@ -9676,7 +9824,7 @@ TASK0PROTO( tmKillSocketF ) ;
 */
 /*1*//*tmKillZombieF*//*1*/
 
-TASK0PROTO( tmKillZombieF ) ;
+TASKpART0PROTO( tmKillZombieF ) ;
 
 
 //
@@ -9801,7 +9949,7 @@ voidT jobHearOrderDfltF( tin0S& tin0P , etherC& ether , etherC& etThread , const
 */
 /*1*//*tmcChatF*//*1*/
 
-TASK0PROTO( tmcChatF ) ;
+TASKpART0PROTO( tmcChatF ) ;
 
 
 //
@@ -9999,7 +10147,7 @@ voidT pbcbF( tin0S& tin0P , etherC& etThread , byteT*& pbP , countT& cbP , strok
 */
 /*1*//*tmRelayOldTeatAcceptorF*//*1*/
 
-TASK0PROTO( tmRelayOldTeatAcceptorF ) ;
+TASKpART0PROTO( tmRelayOldTeatAcceptorF ) ;
 
 
 //
@@ -10024,7 +10172,7 @@ TASK0PROTO( tmRelayOldTeatAcceptorF ) ;
 */
 /*1*//*tmRelayOldServerCatchBagF*//*1*/
 
-TASK0PROTO( tmRelayOldServerCatchBagF ) ;
+TASKpART0PROTO( tmRelayOldServerCatchBagF ) ;
 
 
 //
@@ -10049,7 +10197,7 @@ TASK0PROTO( tmRelayOldServerCatchBagF ) ;
 */
 /*1*//*tmRelayOldServerWrapToAppF*//*1*/
 
-TASK0PROTO( tmRelayOldServerWrapToAppF ) ;
+TASKpART0PROTO( tmRelayOldServerWrapToAppF ) ;
 
 
 //
@@ -10074,7 +10222,7 @@ TASK0PROTO( tmRelayOldServerWrapToAppF ) ;
 */
 /*1*//*tmRelayOldInitiatorF*//*1*/
 
-TASK0PROTO( tmRelayOldInitiatorF ) ;
+TASKpART0PROTO( tmRelayOldInitiatorF ) ;
 
 
 //
@@ -10099,7 +10247,7 @@ TASK0PROTO( tmRelayOldInitiatorF ) ;
 */
 /*1*//*tmRelayOldKillF*//*1*/
 
-TASK0PROTO( tmRelayOldKillF ) ;
+TASKpART0PROTO( tmRelayOldKillF ) ;
 
 
 //
@@ -10124,7 +10272,7 @@ TASK0PROTO( tmRelayOldKillF ) ;
 */
 /*1*//*tmRelayOldTickleF*//*1*/
 
-TASK0PROTO( tmRelayOldTickleF ) ;
+TASKpART0PROTO( tmRelayOldTickleF ) ;
 
 
 //
@@ -10149,7 +10297,7 @@ TASK0PROTO( tmRelayOldTickleF ) ;
 */
 /*1*//*tmRelayOldTeatServerF*//*1*/
 
-TASK0PROTO( tmRelayOldTeatServerF ) ;
+TASKpART0PROTO( tmRelayOldTeatServerF ) ;
 
 
 //
@@ -10174,7 +10322,7 @@ TASK0PROTO( tmRelayOldTeatServerF ) ;
 */
 /*1*//*tmRelayOldPopClientF*//*1*/
 
-TASK0PROTO( tmRelayOldPopClientF ) ;
+TASKpART0PROTO( tmRelayOldPopClientF ) ;
 
 
 //
@@ -10249,7 +10397,6 @@ TASK0PROTO( tmRelayOldPopClientF ) ;
 */
 /**/
 
-/*1*/countT __export threadLocalStorageNoTls123F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
 
 
 //
@@ -10471,7 +10618,7 @@ TASK0PROTO( tmRelayOldPopClientF ) ;
 */
 /*1*//*tmAnimateSadamsOnPaperF*//*1*/
 
-TASK0PROTO( tmAnimateSadamsOnPaperF ) ;
+TASKpART0PROTO( tmAnimateSadamsOnPaperF ) ;
 
 
 //
@@ -10496,7 +10643,7 @@ TASK0PROTO( tmAnimateSadamsOnPaperF ) ;
 */
 /*1*//*tm_httpServerC_F*//*1*/
 
-TASK0PROTO( tm_httpServerC_F ) ;
+TASKpART0PROTO( tm_httpServerC_F ) ;
 
 
 //
@@ -10619,7 +10766,7 @@ TASK0PROTO( tm_httpServerC_F ) ;
 */
 /*1*//*tm_sessionsC_watchF*//*1*/
 
-TASK0PROTO( tm_sessionsC_watchF ) ;
+TASKpART0PROTO( tm_sessionsC_watchF ) ;
 
 
 //
@@ -11079,7 +11226,7 @@ TASK0PROTO( tm_sessionsC_watchF ) ;
 */
 /*1*//*tmAdamMainF*//*1*/
 
-TASK0PROTO( tmAdamMainF ) ;
+TASKpART0PROTO( tmAdamMainF ) ;
 
 
 //
@@ -11280,7 +11427,7 @@ TASK0PROTO( tmAdamMainF ) ;
 */
 /*1*//*tmcHttpServerWoJobF*//*1*/
 
-TASK0PROTO( tmcHttpServerWoJobF ) ;
+TASKpART0PROTO( tmcHttpServerWoJobF ) ;
 
 
 //
@@ -11655,7 +11802,7 @@ TASK0PROTO( tmcHttpServerWoJobF ) ;
 */
 /*1*//*tmDrawF*//*1*/
 
-TASK0PROTO( tmDrawF ) ;
+TASKpART0PROTO( tmDrawF ) ;
 
 
 //
@@ -14490,7 +14637,7 @@ parameters
 */
 /*1*//*tmGrabTabF*//*1*/
 
-TASK0PROTO( tmGrabTabF ) ;
+TASKpART0PROTO( tmGrabTabF ) ;
 
 
 //
@@ -14640,7 +14787,7 @@ TASK0PROTO( tmGrabTabF ) ;
 */
 /*1*//*tmPoolFlushF*//*1*/
 
-TASK0PROTO( tmPoolFlushF ) ;
+TASKpART0PROTO( tmPoolFlushF ) ;
 
 
 //
@@ -14665,7 +14812,7 @@ TASK0PROTO( tmPoolFlushF ) ;
 */
 /*1*//*tmPutEditionF*//*1*/
 
-TASK0PROTO( tmPutEditionF ) ;
+TASKpART0PROTO( tmPutEditionF ) ;
 
 
 //
@@ -14690,7 +14837,7 @@ TASK0PROTO( tmPutEditionF ) ;
 */
 /*1*//*tmDrawHelperF*//*1*/
 
-TASK0PROTO( tmDrawHelperF ) ;
+TASKpART0PROTO( tmDrawHelperF ) ;
 
 
 //
@@ -14715,7 +14862,7 @@ TASK0PROTO( tmDrawHelperF ) ;
 */
 /*1*//*tmDisplayF*//*1*/
 
-TASK0PROTO( tmDisplayF ) ;
+TASKpART0PROTO( tmDisplayF ) ;
 
 
 //
@@ -14740,7 +14887,7 @@ TASK0PROTO( tmDisplayF ) ;
 */
 /*1*//*tmCioF*//*1*/
 
-TASK0PROTO( tmCioF ) ;
+TASKpART0PROTO( tmCioF ) ;
 
 
 //
@@ -14765,7 +14912,7 @@ TASK0PROTO( tmCioF ) ;
 */
 /*1*//*tmRelayOldBlowTeatF*//*1*/
 
-TASK0PROTO( tmRelayOldBlowTeatF ) ;
+TASKpART0PROTO( tmRelayOldBlowTeatF ) ;
 
 
 //
@@ -15345,7 +15492,7 @@ TASK0PROTO( tmRelayOldBlowTeatF ) ;
 */
 /*1*//*tmcHttpServerWorkerF*//*1*/
 
-TASK0PROTO( tmcHttpServerWorkerF ) ;
+TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 
 
 //
@@ -15356,7 +15503,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022a.tmchttpserverworkerf END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022b.c_threadTry1OuterF BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022b.c_threadTry1Outer123F BEGIN
 
 
 //
@@ -15373,7 +15520,9 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 /*1*/voidT _export emitWordIF( const countT idLineP , const countT idFileP ) ;/*1*/
 
 
-/*1*/extern "C" int _export __watcall c_threadTry1OuterF( unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;/*1*/
+/*1*/extern "C" int _export __watcall c_threadTry1Outer123F( unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;/*1*/
+/*1*/extern "C" int _export __watcall c_threadTry1Outer12F(  unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;/*1*/
+/*1*/extern "C" int _export __watcall c_threadTry1Outer1F(   unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;/*1*/
 
 //CS:PSEUDOdUPLICATE CODE: 01000002 
 
@@ -15384,7 +15533,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022b.c_threadTry1OuterF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022b.c_threadTry1Outer123F END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022b.tmUdpFileEpochClockF BEGIN
 
 
@@ -15402,7 +15551,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 
 /**/
 
-/*1*/TASK0PROTO( tmUdpFileEpochClockF ) ;/*1*/
+/*1*/TASKpART0PROTO( tmUdpFileEpochClockF ) ;/*1*/
 
 
 //
@@ -15429,7 +15578,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 
 /**/
 
-/*1*/TASK0PROTO( tmUdpFileGetSecretF ) ;/*1*/
+/*1*/TASKpART0PROTO( tmUdpFileGetSecretF ) ;/*1*/
 
 
 
@@ -15457,7 +15606,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 
 /**/
 
-/*1*/TASK0PROTO( tmUdpFileObey2F ) ;/*1*/
+/*1*/TASKpART0PROTO( tmUdpFileObey2F ) ;/*1*/
 
 
 
@@ -15486,7 +15635,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 
 /**/
 
-/*1*/TASK0PROTO( tmUdpFileObey1F ) ;/*1*/
+/*1*/TASKpART0PROTO( tmUdpFileObey1F ) ;/*1*/
 
 
 
@@ -15514,7 +15663,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 
 /**/
 
-/*1*/TASK0PROTO( tmUdpFileEndpointF ) ;/*1*/
+/*1*/TASKpART0PROTO( tmUdpFileEndpointF ) ;/*1*/
 
 
 //
@@ -15565,7 +15714,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 /**/
 
 
-/*1*/TASK0PROTO( tmWorkerSortaF ) ;/*1*/
+/*1*/TASKpART0PROTO( tmWorkerSortaF ) ;/*1*/
 
 
 //
@@ -15693,7 +15842,7 @@ TASK0PROTO( tmcHttpServerWorkerF ) ;
 /**/
 
 
-/*1*/TASK0PROTO( tmStripeWebHookIpListF ) ;/*1*/
+/*1*/TASKpART0PROTO( tmStripeWebHookIpListF ) ;/*1*/
 
 
 //
@@ -27977,7 +28126,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin12S : 1snip.150001c8.tin12S END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin1S : 1snip.150001c9.tin1S BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -27986,22 +28134,50 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //
 
 /*
+
+
+
+
+
 */
 /**/
+
+
+
+
+
+
 
 /*1*/struct _export tin1S : public tin0S , public tin_part1_S/*1*/
 {
     /* birth , death */
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tin1S.NEWdELcLASSppOOLoLD!||
-    ~tin1S( voidT ) ;
+    ~tin1S(   voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tin1S.dt_tin1S!||
-    tin1S( tin0S& tin0NormalSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tin0S* const pTin0DadP = 0 , const osTextT* const postThreadNameP = 0 , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
+    tin1S(   tin0S& tin0SelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tin0S* const pTin0DadP = 0                                            , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.tin1S.tin1S!||
 
     /* commands */
-    inline flagsT flagsF( voidT ) { return flags ; }
-    tin1S& rootF( voidT ) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    tin1S&   rootF( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.tin1S.rootF!||
     voidT walkF( tin0S& tin0RootP , tinWalkerFT tinWalkerFP , countT& cArgP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.tin1S.walkF!||
@@ -28023,9 +28199,10 @@ it is illegal to modify any member other than pc Utility in the definition of an
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024016.tins.tlsTraceF!||
     byteT* pbF( countT idP = 1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.tin1S.pbF!||
+
+    inline flagsT flagsF( voidT ) { return flags ; }
 }
 ;
-
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -28958,6 +29135,107 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //CODE SYNCH: 003007f 1750003
 //0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
 
+//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
+//U::RENAME ME TO tlsStackFrame12S
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrameNoTls12S/*1*/
+{
+
+
+
+
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin12S                  tinEarlyLate ;
+      countT                  rc ;
+      //tlsAllocStackExp_01_C tlsForMe ;
+      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
+      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrameNoTls12S(  voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls12S.dt_tlsStackFrameNoTls12S!||
+    tlsStackFrameNoTls12S(  const countT idTypeP , const countT ebpP , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls12S.tlsStackFrameNoTls12S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrameNoTls1S/*1*/
+{
+
+
+
+
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin1S                   tinEarlyLate ;
+      countT                  rc ;
+      //tlsAllocStackExp_01_C tlsForMe ;
+      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
+      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrameNoTls1S(   voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls1S.dt_tlsStackFrameNoTls1S!||
+    tlsStackFrameNoTls1S(   const countT idTypeP , const countT ebpP , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls1S.tlsStackFrameNoTls1S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
 
 
 
@@ -28993,6 +29271,109 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+
+
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrame12S/*1*/
+{
+    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+    //const countT            fingerTlsEnd ;
+      tallyC                  tallyKid ;
+    //zapC                    zap_pbTls ;
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin12S                  tinEarlyLate ;
+      countT                  rc ;
+    //tlsAllocStackExp_01_C   tlsForMe ;
+    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
+    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrame12S(       voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame12S.dt_tlsStackFrame12S!||
+    tlsStackFrame12S(       const countT idTypeP ,       countT ebpP , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame12S.tlsStackFrame12S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+
+
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrame1S/*1*/
+{
+    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+    //const countT            fingerTlsEnd ;
+      tallyC                  tallyKid ;
+    //zapC                    zap_pbTls ;
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin1S                   tinEarlyLate ;
+      countT                  rc ;
+    //tlsAllocStackExp_01_C   tlsForMe ;
+    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
+    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrame1S(        voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame1S.dt_tlsStackFrame1S!||
+    tlsStackFrame1S(        const countT idTypeP ,       countT ebpP , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame1S.tlsStackFrame1S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.grabAnnotatedS : 1snip.15000051.grabannotateds BEGIN
 

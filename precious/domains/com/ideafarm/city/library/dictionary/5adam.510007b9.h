@@ -7,7 +7,7 @@
 //
 
 
-TASK0PROTO( tmNodeOldChatRepliesF ) ;
+TASKpART0PROTO( tmNodeOldChatRepliesF ) ;
 
 /*1*//*tmNodeOldChatRepliesF*//*1*/
 */
@@ -30,7 +30,7 @@ TASK0PROTO( tmNodeOldChatRepliesF ) ;
 //
 
 
-TASK0PROTO( tmNodeTeatAcceptorF ) ;
+TASKpART0PROTO( tmNodeTeatAcceptorF ) ;
 
 /*1*//*tmNodeTeatAcceptorF*//*1*/
 */
@@ -52,7 +52,7 @@ TASK0PROTO( tmNodeTeatAcceptorF ) ;
 //
 
 
-TASK0PROTO( tmNodeServerCatchBagF ) ;
+TASKpART0PROTO( tmNodeServerCatchBagF ) ;
 
 /*1*//*tmNodeServerCatchBagF*//*1*/
 */
@@ -74,7 +74,7 @@ TASK0PROTO( tmNodeServerCatchBagF ) ;
 //
 
 
-TASK0PROTO( tmNodeServerWrapToAppF ) ;
+TASKpART0PROTO( tmNodeServerWrapToAppF ) ;
 
 /*1*//*tmNodeServerWrapToAppF*//*1*/
 */
@@ -96,7 +96,7 @@ TASK0PROTO( tmNodeServerWrapToAppF ) ;
 //
 
 
-TASK0PROTO( tmNodeInitiatorF ) ;
+TASKpART0PROTO( tmNodeInitiatorF ) ;
 
 /*1*//*tmNodeInitiatorF*//*1*/
 */
@@ -118,7 +118,7 @@ TASK0PROTO( tmNodeInitiatorF ) ;
 //
 
 
-TASK0PROTO( tmNodeKillF ) ;
+TASKpART0PROTO( tmNodeKillF ) ;
 
 /*1*//*tmNodeKillF*//*1*/
 */
@@ -140,7 +140,7 @@ TASK0PROTO( tmNodeKillF ) ;
 //
 
 
-TASK0PROTO( tmNodeTickleF ) ;
+TASKpART0PROTO( tmNodeTickleF ) ;
 
 /*1*//*tmNodeTickleF*//*1*/
 */
@@ -162,7 +162,7 @@ TASK0PROTO( tmNodeTickleF ) ;
 //
 
 
-TASK0PROTO( tmNodeTeatServerF ) ;
+TASKpART0PROTO( tmNodeTeatServerF ) ;
 
 /*1*//*tmNodeTeatServerF*//*1*/
 */
@@ -184,7 +184,7 @@ TASK0PROTO( tmNodeTeatServerF ) ;
 //
 
 
-TASK0PROTO( tmNodePopClientF ) ;
+TASKpART0PROTO( tmNodePopClientF ) ;
 
 /*1*//*tmNodePopClientF*//*1*/
 */
@@ -206,7 +206,7 @@ TASK0PROTO( tmNodePopClientF ) ;
 //
 
 
-TASK0PROTO( tmNodeBlowTeatF ) ;
+TASKpART0PROTO( tmNodeBlowTeatF ) ;
 
 /*1*//*tmNodeBlowTeatF*//*1*/
 */

@@ -6,20 +6,20 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
-TASK0PROTO( tmTestImpotenceF ) ;
-TASK0PROTO( tmKillYourselfImmediatelyF ) ;
-//TASK0PROTO( tmGorillasRawF ) ;
-TASK0PROTO( tmHooF ) ;
-TASK0PROTO( tmGooF ) ;
-TASK0PROTO( tmFooF ) ;
-TASK0PROTO( tmEatTelemetrySysF ) ;
-TASK0PROTO( tmFireAllF ) ;
-TASK0PROTO( tmConsoleF ) ;
-TASK0PROTO( tmCloakF ) ;
-TASK0PROTO( tmHireF ) ;
-TASK0PROTO( tmChatterF ) ;
+TASKpART0PROTO( tmTestImpotenceF ) ;
+TASKpART0PROTO( tmKillYourselfImmediatelyF ) ;
+//TASKpART0PROTO( tmGorillasRawF ) ;
+TASKpART0PROTO( tmHooF ) ;
+TASKpART0PROTO( tmGooF ) ;
+TASKpART0PROTO( tmFooF ) ;
+TASKpART0PROTO( tmEatTelemetrySysF ) ;
+TASKpART0PROTO( tmFireAllF ) ;
+TASKpART0PROTO( tmConsoleF ) ;
+TASKpART0PROTO( tmCloakF ) ;
+TASKpART0PROTO( tmHireF ) ;
+TASKpART0PROTO( tmChatterF ) ;
 
-TASK0PROTO( tmcMonitorServerF ) ;
+TASKpART0PROTO( tmcMonitorServerF ) ;
 
 boolT reportGrabF( tin0S& tin0P , soulC& sRptP , const strokeS* const psttPrefixP , const countT* const pcPanLifiP , const countT osPidP = 0 ) ;
 countT subtract_tinEntryS_F( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P , countT& c3P ) ;

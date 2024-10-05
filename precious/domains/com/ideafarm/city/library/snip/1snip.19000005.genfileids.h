@@ -2298,7 +2298,7 @@
 0x17000129 , 0x000008fa ,   // 1snip.17000129.noteFromSnailMailerCBF
 0x1700012a , 0x000008fb ,   // 1snip.1700012a.noteFromHttpServerRdpOpenHouseCBF
 0x1700022a , 0x000008fc ,   // 1snip.1700022a.tmchttpserverworkerf
-0x1700022b , 0x000008fd ,   // 1snip.1700022b.c_threadTry1OuterF
+0x1700022b , 0x000008fd ,   // 1snip.1700022b.c_threadTry1Outer123F
 0x1700022b , 0x000008fe ,   // 1snip.1700022b.tmUdpFileEpochClockF
 0x1700022c , 0x000008ff ,   // 1snip.1700022c.tmUdpFileGetSecretF
 0x1700022d , 0x00000900 ,   // 1snip.1700022d.tmUdpFileObey2F
@@ -2441,7 +2441,7 @@
 0x3000000c , 0x00000989 ,   // 3func.3000000c.c_openssltls_wrapperFreeIF
 0x3000000d , 0x0000098a ,   // 3func.3000000d.c_getaddrinfoF
 0x3000000e , 0x0000098b ,   // 3func.3000000e.c_opensslcrypto_errorcodeif
-0x3000000e , 0x0000098c ,   // 3func.3000000e.c_threadTry1OuterF
+0x3000000e , 0x0000098c ,   // 3func.3000000e.c_threadTry1Outer123F
 0x3000000f , 0x0000098d ,   // 3func.3000000f.c_opensslcrypto_keypairif
 0x30000010 , 0x0000098e ,   // 3func.30000010.c_openSslAppLinkInnerIF
 0x30000011 , 0x0000098f ,   // 3func.30000011.c_openSslCrypto_writePrivateKeyToFileIF
@@ -2476,7 +2476,7 @@
 0x320000f8 , 0x000009ac ,   // 3func.320000f8.dosgetinfoblocksidthreadif
 0x320000f9 , 0x000009ad ,   // 3func.320000f9.raiseworkingsetsizehintsif
 0x320000fa , 0x000009ae ,   // 3func.320000fa.diskWalkSearchCBF
-0x320000fb , 0x000009af ,   // 3func.320000fb.threadTry2InnerF
+0x320000fb , 0x000009af ,   // 3func.320000fb.threadTry2Inner123F
 0x320000fc , 0x000009b0 ,   // 3func.320000fc.rootExceptionFilterF
 0x33000002 , 0x000009b1 ,   // 3func.33000002.tmboxgetputdeadmanf
 0x33000003 , 0x000009b2 ,   // 3func.33000003.winmessagehandlerf

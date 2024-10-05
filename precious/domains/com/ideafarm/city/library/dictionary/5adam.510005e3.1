@@ -107,23 +107,23 @@ TASK( tmTestF )
         }
             return threadLocalStorage123F( ifcIDtYPEtLS_KID , tmListServeF_workF , (countT)argP , 0 , 0 , 0 , 0 , "tmListServeF" ) ;
         {
-        TASK0PROTO( tmListServeF )
+        TASKpART0PROTO( tmListServeF )
 
 
-        DONE1
+        DONEpART1
         }
             }
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */
                 if( !bFake ) { DEL( pTaskP ) ; } /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.  THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */
                 if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] = - 1 ;
-                TELL( "DONE0: i am outa here" )
+                TELL( "DONEpART0: i am outa here" )
                 ;
                     : thirdC::os_cAllKidThreadsI_IF( tin0P )
                     ? thirdC::os_cAllOrphanThreadsI_IF( tin0P )
                 countT& cAllThreads = bOrphan
                 boolT bFake   = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE   ) : 0 ;
                 boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;
-                TELL( "DONE0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )
+                TELL( "DONEpART0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )
                 TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */
             {
             if( pEtThread ) *pEtThread = 0 ;
@@ -132,7 +132,7 @@ TASK( tmTestF )
                 }
                     }
                         }
-                            TELL( "DONE0: after deleting pEtThread, which destroys tin0P in poolOld" )
+                            TELL( "DONEpART0: after deleting pEtThread, which destroys tin0P in poolOld" )
                             if( pEtThread ) { BLAMMO ; }
                             PUSE( tin0P , *(byteT**)&pEtThread ) ;
                             TINSL
@@ -143,14 +143,14 @@ TASK( tmTestF )
                         {
                         DEL( ((tin123S&)tin0P).pEtScratch ) ;
                         DEL( ((tin123S&)tin0P).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
-                        TELL( "DONE0: deleting etThread (and tin0P)" ) ;
+                        TELL( "DONEpART0: deleting etThread (and tin0P)" ) ;
                         ((tin123S&)tin0P).pEther = 0 ;
-                        TELL( "DONE0: testing poolOld" ) ;
+                        TELL( "DONEpART0: testing poolOld" ) ;
 
                         }
                             ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttThreadFile ) ;
                             ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , psttThreadFile ) ;
-                            TELL( "DONE0: deleting thread file" ) ;
+                            TELL( "DONEpART0: deleting thread file" ) ;
                         {
                         if( psttThreadFile )
                     {
@@ -163,20 +163,20 @@ TASK( tmTestF )
                         if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
                         if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;
                         }
-                            TELL( "DONE0: destroying all adam objects that remain on the thread stack" ) ;
+                            TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;
                             }
                                 while( ((tin123S&)tin0P).cKidThreads ) { ++ s ; thirdC::dosSleepRawIF( tin0P , 250 ) ; }
                                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                             {
-                            TELL( "DONE0: waiting for my kid threads to end" ) ;
+                            TELL( "DONEpART0: waiting for my kid threads to end" ) ;
 
                             if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;
-                            TELL( "DONE0: conditionally calling etherWhereF" ) ;
+                            TELL( "DONEpART0: conditionally calling etherWhereF" ) ;
                         {
                         else
                         if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */
 
-                        TELL( "DONE0: after returning from application code" ) ;
+                        TELL( "DONEpART0: after returning from application code" ) ;
                         ((tin123S&)tin0P).idPhase2 = 0 ;
                         if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;
                         if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
