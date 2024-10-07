@@ -14,19 +14,19 @@
             }
                 }
                     hThread.resetF() ;
-                    ((tin123S&)tin0P).pag4->_thirdC_grab_lOsTid.ungrabF( tin0P ) ;
-                    *((tin123S&)tin0P).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
-                    ((tin123S&)tin0P).pag1->_thirdC_.lOsTid = tidP ;
-                    ((tin123S&)tin0P).pag4->_thirdC_grab_lOsTid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                    ((tin1S&)tin0P).pag4->_thirdC_grab_lOsTid.ungrabF( tin0P ) ;
+                    *((tin1S&)tin0P).pag1->_thirdC_.pSwThreadHandle = hThread.osF( ifcIDtYPEhANDLE_THREAD ) ; // THIS HANDLE NEEDS TO BE KEPT BECAUSE THERE IS NO WAY TO GET IT LATER
+                    ((tin1S&)tin0P).pag1->_thirdC_.lOsTid = tidP ;
+                    ((tin1S&)tin0P).pag4->_thirdC_grab_lOsTid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( tidP && tidP != - 1 && F(flagsP) & flSESSION_REGISTERtHREADhANDLE )
     
                 }
                     hProcess.resetF() ;
-                    ((tin123S&)tin0P).pag4->_thirdC_grab_lOsPid.ungrabF( tin0P ) ;
-                    *((tin123S&)tin0P).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
-                    ((tin123S&)tin0P).pag1->_thirdC_.lOsPid = pidP ;
-                    ((tin123S&)tin0P).pag4->_thirdC_grab_lOsPid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                    ((tin1S&)tin0P).pag4->_thirdC_grab_lOsPid.ungrabF( tin0P ) ;
+                    *((tin1S&)tin0P).pag1->_thirdC_.pSwProcessHandle = hProcess.osF( ifcIDtYPEhANDLE_PROCESS ) ;
+                    ((tin1S&)tin0P).pag1->_thirdC_.lOsPid = pidP ;
+                    ((tin1S&)tin0P).pag4->_thirdC_grab_lOsPid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( pidP && pidP != - 1 && F(flagsP) & flSESSION_REGISTERpROCESShANDLE )
 
@@ -217,8 +217,8 @@
     }
         if( POOP ) return ;
         FV( flSESSION , flagsP ) ;
-        __( !((tin123S&)tin0P).pag1->_thirdC_.pSwThreadHandle ) ;
-        __( !((tin123S&)tin0P).pag1->_thirdC_.pSwProcessHandle ) ;
+        __( !((tin1S&)tin0P).pag1->_thirdC_.pSwThreadHandle ) ;
+        __( !((tin1S&)tin0P).pag1->_thirdC_.pSwProcessHandle ) ;
         __Z( postExeP ) ;
         __NZ( pidP ) ;
         __NZ( tidP ) ;

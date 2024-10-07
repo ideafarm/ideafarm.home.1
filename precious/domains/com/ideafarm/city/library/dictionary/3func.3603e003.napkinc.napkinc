@@ -65,7 +65,7 @@
                 //OStEXTAK( ostoLog , " will be mapped to ports selected at run time rather than specified in code\r\n" ) ;
                 //OStEXTC( ostoLog , etherC::ifc_idHomeIdisk_IF() , 0 ) ;
                 //OStEXTAK( ostoLog , "/napkinC: home " ) ;
-                //OStEXTC( ostoLog , ((tin123S&)tin0P).pag1->idAdam , 0 ) ;
+                //OStEXTC( ostoLog , ((tin1S&)tin0P).pag1->idAdam , 0 ) ;
                 //OStEXT( ostoLog , TUCK << 2 ) ;
 
                 pMap->nnHome = nnHome ;
@@ -74,7 +74,7 @@
             {
             else
             }
-                //LOGrAW5( "" , ((tin123S&)tin0P).pag1->idAdam , "/napkinC: no mapping for home  " , etherC::ifc_idHomeIdisk_IF() , "\r\n" ) ;
+                //LOGrAW5( "" , ((tin1S&)tin0P).pag1->idAdam , "/napkinC: no mapping for home  " , etherC::ifc_idHomeIdisk_IF() , "\r\n" ) ;
                 pMap->flagsHome |= flIPmAPhOMEs_NOmAPPING ;
             {
             if( !nnHome )
@@ -271,7 +271,7 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&((tin123S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_WATCH ;
+                *(countT*)&((tin1S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_WATCH ;
             {
             case ifcIDaDAM_PREPARElISTS : //THIS LINE FACILITATES DEBUGGING AND HAS NO EFFECT IN PRODUCTION
             case ifcIDaDAM_WATCHiDLEcPU :
@@ -280,7 +280,7 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&((tin123S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_MEMBRANE ;                               //ifcIDmEMORYsPACE_MEMBRANE IS WRITTEN BY GLASS2 AND READ BY ifcIDaDAM_MEMBRANEgLASS; NO OTHER PROCESS MAY ACCESS THE MEMBRANE SPACE
+                *(countT*)&((tin1S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_MEMBRANE ;                               //ifcIDmEMORYsPACE_MEMBRANE IS WRITTEN BY GLASS2 AND READ BY ifcIDaDAM_MEMBRANEgLASS; NO OTHER PROCESS MAY ACCESS THE MEMBRANE SPACE
             {
             case ifcIDaDAM_MEMBRANEgLASS :
             //case 0x4010fff : //REMOVE IN PRODUCTION
@@ -288,7 +288,7 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&((tin123S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS2 ;                                 //ifcIDmEMORYsPACE_GLASS2 IS RESERVED FOR THE EXCLUSIVE USE OF GLASS2
+                *(countT*)&((tin1S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS2 ;                                 //ifcIDmEMORYsPACE_GLASS2 IS RESERVED FOR THE EXCLUSIVE USE OF GLASS2
             {
             case ifcIDaDAM_2GLASS2 :
             case ifcIDaDAM_1DRIVER :
@@ -296,14 +296,14 @@
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&((tin123S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS1 ;                                 //ifcIDmEMORYsPACE_GLASS1 IS RESERVED FOR THE EXCLUSIVE USE OF GLASS1
+                *(countT*)&((tin1S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_GLASS1 ;                                 //ifcIDmEMORYsPACE_GLASS1 IS RESERVED FOR THE EXCLUSIVE USE OF GLASS1
             {
             case ifcIDaDAM_GLASS1 :
             }
                 break ;
                 //conGF( "memory space changed\r\n" ) ;
                 bMemorySpaceChanged = 1 ;
-                *(countT*)&((tin123S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_CLOAK ;                                  //ifcIDmEMORYsPACE_CLOAK IS RESERVED FOR THE EXCLUSIVE USE OF ifcIDaDAM_CLOAK (ANTI-MALWARE SYSTEM INTEGRITY CHECKER)
+                *(countT*)&((tin1S&)tin0P).pag1->idMemorySpace = ifcIDmEMORYsPACE_CLOAK ;                                  //ifcIDmEMORYsPACE_CLOAK IS RESERVED FOR THE EXCLUSIVE USE OF ifcIDaDAM_CLOAK (ANTI-MALWARE SYSTEM INTEGRITY CHECKER)
             {
             case ifcIDaDAM_CLOAK :
         {
@@ -374,9 +374,9 @@
                 //OStEXTAK( ostoSay , "\r\n" ) ;
                 //OStEXTA(  ostoSay , postName ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace , '0' ) ;
+                //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace , '0' ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , '0' ) ;
+                //OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idAdam , '0' ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
                 //OStEXTC(  ostoSay , ((napkinHeaderS*)pbNapkin)->cRef , '0' ) ;
                 //OStEXTAK( ostoSay , "napkinC 3: ++++ [cRef after ++++    ,idAdam,postP]:    " ) ;
@@ -396,9 +396,9 @@
                     //OStEXTAK( ostoSay , "\r\n" ) ;
                     //OStEXTA(  ostoSay , postName ) ;
                     //OStEXTAK( ostoSay , "    " ) ;
-                    //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace , '0' ) ;
+                    //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace , '0' ) ;
                     //OStEXTAK( ostoSay , "    " ) ;
-                    //OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , '0' ) ;
+                    //OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idAdam , '0' ) ;
                     //OStEXTAK( ostoSay , "    " ) ;
                     //OStEXTC(  ostoSay , ((napkinHeaderS*)pbNapkin)->cRef , '0' ) ;
                     //OStEXTAK( ostoSay , "napkinC 2: ++++ [cRef BEFORE ++++ !!!,idAdam,postP]:    " ) ;
@@ -435,9 +435,9 @@
                 //OStEXTAK( ostoSay , "\r\n" ) ;
                 //OStEXTA(  ostoSay , postName ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace , '0' ) ;
+                //OStEXTC(  ostoSay , idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace , '0' ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
-                //OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , '0' ) ;
+                //OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idAdam , '0' ) ;
                 //OStEXTAK( ostoSay , "    " ) ;
                 //OStEXTC(  ostoSay , ((napkinHeaderS*)pbNapkin)->cRef , '0' ) ;
                 //OStEXTAK( ostoSay , "napkinC 1: +**+ [cRef after set to 1,idAdam,postP]:    " ) ;
@@ -624,7 +624,7 @@
         )
             F(flagsCt) & flNAPKINc_USEgRABmEMORYsPACEoVERRIDE
             ||
-            ( idMemorySpaceP && idMemorySpaceP != ((tin123S&)tin0P).pag1->idMemorySpace )
+            ( idMemorySpaceP && idMemorySpaceP != ((tin1S&)tin0P).pag1->idMemorySpace )
         (
         &&
         !( F(flagsCt) & flNAPKINc_DOnOTsERIALIZEcT )
@@ -672,7 +672,7 @@
     //{
     //if( this == &processGlobal4I._grabC_napGrabWant )
 
-    //if( !idMemorySpaceP ) idMemorySpaceP = ((tin123S&)tin0P).pag1->idMemorySpace ;
+    //if( !idMemorySpaceP ) idMemorySpaceP = ((tin1S&)tin0P).pag1->idMemorySpace ;
     //20200417@1855: KEEP idMemorySpaceP NULL SO THAT CALLER DOES NOT HAVE TO SET flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE
 
     //}
@@ -784,7 +784,7 @@
 
     SCOOP
 {
-idMemorySpace( idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace )
+idMemorySpace( idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace )
 phFile( phFileP ) ,
 flagsState( F(flagsP) & flNAPKINc_DOnOTcOMMIT ? flNAPKINcsTATE_NOTyETcOMMITTED : flNAPKINcsTATE_null ) ,
 flThreadMode5Save( flTHREADmODE5_null ) ,

@@ -11,13 +11,13 @@
     }
         //CONoUTrAW( "cioPutF: done\r\n" ) ;
         }
-            ((tin123S&)tin0P).pag1->_etherC_.cio_pStkOut->ungrabF( tin0P ) ;
-            //{ CONoUTrAW3( "queue: " , *((tin123S&)tin0P).pag1->_etherC_.cio_pStkOut , "\r\n" ) ; }
-            *((tin123S&)tin0P).pag1->_etherC_.cio_pStkOut << (countT)psWrap ; psWrap = 0 ;
+            ((tin1S&)tin0P).pag1->_etherC_.cio_pStkOut->ungrabF( tin0P ) ;
+            //{ CONoUTrAW3( "queue: " , *((tin1S&)tin0P).pag1->_etherC_.cio_pStkOut , "\r\n" ) ; }
+            *((tin1S&)tin0P).pag1->_etherC_.cio_pStkOut << (countT)psWrap ; psWrap = 0 ;
             //CONoUTrAW( "cioPutF: pushing wrap onto stack\r\n" ) ;
         {
-        //U::if( ((tin123S&)tin0P).pag1->_etherC_.cio_pStkOut->waitGrabF( tin0P , 0x10 , bQuitP ) )
-        if( ((tin123S&)tin0P).pag1->_etherC_.cio_pStkOut->waitGrabF( tin0P , 0x100 , bQuitP ) ) //U::
+        //U::if( ((tin1S&)tin0P).pag1->_etherC_.cio_pStkOut->waitGrabF( tin0P , 0x10 , bQuitP ) )
+        if( ((tin1S&)tin0P).pag1->_etherC_.cio_pStkOut->waitGrabF( tin0P , 0x100 , bQuitP ) ) //U::
         //CONoUTrAW( "cioPutF: waitGrabF\r\n" ) ;
         //CONoUTrAW( "cioPutF: pushing to *cio_pStkOutI\r\n" ) ;
 
@@ -54,7 +54,7 @@
     soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
 
     //CONoUTrAW( "cioPutF: after cioSetupF\r\n" ) ;
-    if( !((tin123S&)tin0P).pag1->_etherC_.cio_pStkOut ) cioSetupF( tin0P ) ;
+    if( !((tin1S&)tin0P).pag1->_etherC_.cio_pStkOut ) cioSetupF( tin0P ) ;
     //CONoUTrAW( "cioPutF: cioSetupF\r\n" ) ;
     _IO_
 

@@ -8,7 +8,7 @@
 
 
 DONE( tmDrawHelperF )
-dec02AM( ((tin123S&)tin0P).pag1->_deviceC_cHelper ) ;
+dec02AM( ((tin1S&)tin0P).pag1->_deviceC_cHelper ) ;
 }
     //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNREGISTERtHREAD ) ;
 
@@ -608,7 +608,7 @@ dec02AM( ((tin123S&)tin0P).pag1->_deviceC_cHelper ) ;
             stJob.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
         else
-        if( F(((tin123S&)tin0P).pag1->_deviceC_flagsHelper) & flDEVICEchELPER_QUIT ) break ;
+        if( F(((tin1S&)tin0P).pag1->_deviceC_flagsHelper) & flDEVICEchELPER_QUIT ) break ;
 
         //etThread.traceF( tin0P , T("emptying queue") ) ;
         etThread.traceF( tin0P , T("waited  for a push [idjobLath]:    ")+TF2(idJobLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -620,7 +620,7 @@ dec02AM( ((tin123S&)tin0P).pag1->_deviceC_cHelper ) ;
     ZE( countT , cPointMax ) ;
     boolT bFreshenMaxPoints = 1 ;
 
-    grabC& grabHelper = ((tin123S&)tin0P).pag5->_deviceC_grabHelper ;
+    grabC& grabHelper = ((tin1S&)tin0P).pag5->_deviceC_grabHelper ;
 
     // I USE grabHelper TO SERIALIZE MY PROCESSING OF JOBS AS NEEDED (E.G. WHEN ACTUALLY WRITING TO THE DEVICE)
     // I ASSUME THAT deviceP IS GRABBED BY THE THREAD THAT IS PUSHING JOBS
@@ -636,7 +636,7 @@ dec02AM( ((tin123S&)tin0P).pag1->_deviceC_cHelper ) ;
     arrayC aTmp1( tin0P , sizeof( mPoint3S   ) , cea ) ; //A:ASSUME: CODE ASSUMES THAT ALL OF THESE ARRAYS ARE ALWAYS KEPT AT THE SAME CAPACITY cea ; THIS IS NOT ENFORCED
     countT cea = TUCK << 4 ;
 
-    stackC& stJob = *((tin123S&)tin0P).pag1->_deviceC_pStkJob ;
+    stackC& stJob = *((tin1S&)tin0P).pag1->_deviceC_pStkJob ;
     deviceC& deviceP = *(deviceC*)pTaskP->c1 ;
 
     //etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_REGISTERtHREAD ) ;

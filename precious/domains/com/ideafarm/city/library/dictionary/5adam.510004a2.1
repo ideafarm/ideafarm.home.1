@@ -487,7 +487,7 @@ cRef_pbTin( 0 ) ,
 bCopy_pbTin( !pbTin ) ,
 pbTin( pvOrIda && saidP.idType == ifcIDtYPEtELLsYS_TINcTI ? (byteT*)ap_artmentOldC( tin0P , (countT)pvOrIda ) : 0 ) ,
 pvOrIda( saidP.pbData && saidP.cbData == sizeof( tellInfoSysTinS ) ? ((tellInfoSysTinS*)saidP.pbData)->ip : 0 ) ,
-ether( tin0P , TAG( TAGiDnULL ) , *((tin123S&)tin0P).pag1->pPoolAdamTemp ) ,
+ether( tin0P , TAG( TAGiDnULL ) , *((tin1S&)tin0P).pag1->pPoolAdamTemp ) ,
 bSelf( !pInfoP ) ,
 tinC::tinC( tin0S& tin0P , saidS& saidP , const ifcMonitorEventS* pInfoP ) :
 
@@ -592,7 +592,7 @@ boolT processC::operator ==( const cP ) const
 {
 osPid( infoP.osPid )
 osTid( infoP.osTid ) ,
-ether( tin0P , TAG( TAGiDnULL ) , *((tin123S&)tin0P).pag1->pPoolAdamTemp ) ,
+ether( tin0P , TAG( TAGiDnULL ) , *((tin1S&)tin0P).pag1->pPoolAdamTemp ) ,
 processC::processC( tin0S& tin0P , const ifcMonitorEventS& infoP ) :
 
 NEWdELcLASSb( processC )
@@ -1401,7 +1401,7 @@ voidT cellC::classShutdown1F( tin0S& tin0P , countT& idCellLathP , countT& seria
     pBatonSerial   = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonSerial   ) ;
     pBatonLog      = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonLog      ) ;
     pBatonClass    = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                ___( pBatonClass    ) ;
-    pEtClass       = new( 0 , tin0P , LF ) etherC( tin0P , TAG( TAGiDnULL ) , *((tin123S&)tin0P).pag1->pPoolAdamTemp ) ;                                                                       ___( pEtClass       ) ;
+    pEtClass       = new( 0 , tin0P , LF ) etherC( tin0P , TAG( TAGiDnULL ) , *((tin1S&)tin0P).pag1->pPoolAdamTemp ) ;                                                                       ___( pEtClass       ) ;
     bBase = bBaseP ;
     idPhase = 1 ;
 

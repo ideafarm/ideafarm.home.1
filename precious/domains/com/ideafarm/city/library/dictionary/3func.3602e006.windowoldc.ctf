@@ -11,9 +11,9 @@
     ctSuffixF( tin0P , (countT)&hDrawWindow , pPaperToBackCBFP , cPaperToBackArgP ) ;
 
     etherC::ether_pBatWindowDeletionI_F( tin0P )->ungrabF( tin0P ) ;
-    if( !((tin123S&)tin0P).pag1->_windowOldC_.pRoot ) ((tin123S&)tin0P).pag1->_windowOldC_.pRoot = this ; //NEEDED BY paperOldC PENDING REDESIGN OF SERIALIZATION FOR CLASSES RELATED TO paperOldC
+    if( !((tin1S&)tin0P).pag1->_windowOldC_.pRoot ) ((tin1S&)tin0P).pag1->_windowOldC_.pRoot = this ; //NEEDED BY paperOldC PENDING REDESIGN OF SERIALIZATION FOR CLASSES RELATED TO paperOldC
     etherC::ether_pBatWindowDeletionI_F( tin0P )->grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    //U::MOVE THIS TO LATH THING DONE WHEN paperOldC NO LONGER NEEDS ((tin123S&)tin0P).pag1->_windowOldC_.pRoot
+    //U::MOVE THIS TO LATH THING DONE WHEN paperOldC NO LONGER NEEDS ((tin1S&)tin0P).pag1->_windowOldC_.pRoot
     
     ((thirdC&)ether).winOpenDrawingHandleF( tin0P , hDrawWindow , hWindow ) ;
 
@@ -51,9 +51,9 @@
     if( ((tin123S&)tin0P).monitor.idThread == thirdC::third_idThreadWindowsIF( tin0P ) ) ((thirdC&)ether).winCreateWindowF( tin0P , pWindowP ? *pWindowP : handleC( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_WINDOW ) , hWindow , MAINwINDOWcLASSnAME , MAINwINDOWcLASSnAME , pWindowP ? ( bRootP ? idtWIN_ROOT : idtWIN_KID ) : idtWIN_ROOT , idColP , idRowP , cColP , cRowP , cColClientP , cRowClientP , thirdC::third_hWindowingClientIF( tin0P ) , bNotVisibleP , cTriesP ) ;
     //LOGrAWtID4( "windowOldC::ctF calling winCreateWindowF (cColP,cRowP): " , cColP , " " , cRowP ) ;
     
-    if( ((tin123S&)tin0P).pag1->_windowOldC_.pstWindow ) *((tin123S&)tin0P).pag1->_windowOldC_.pstWindow << (countT)this ;
+    if( ((tin1S&)tin0P).pag1->_windowOldC_.pstWindow ) *((tin1S&)tin0P).pag1->_windowOldC_.pstWindow << (countT)this ;
     
-    if( !((tin123S&)tin0P).pag1->_windowOldC_.pstWindow ) { ((tin123S&)tin0P).pag1->_windowOldC_.pstWindow = new( 0 , tin0P , LF ) stackC( tin0P , ether , TAG( TAGiDnULL ) ) ; ___( ((tin123S&)tin0P).pag1->_windowOldC_.pstWindow ) ; }
+    if( !((tin1S&)tin0P).pag1->_windowOldC_.pstWindow ) { ((tin1S&)tin0P).pag1->_windowOldC_.pstWindow = new( 0 , tin0P , LF ) stackC( tin0P , ether , TAG( TAGiDnULL ) ) ; ___( ((tin1S&)tin0P).pag1->_windowOldC_.pstWindow ) ; }
     
     }
         }

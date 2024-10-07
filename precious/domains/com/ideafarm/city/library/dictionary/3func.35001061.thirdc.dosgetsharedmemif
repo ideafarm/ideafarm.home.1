@@ -105,7 +105,7 @@
                 //    OStEXTAK( ostoSay , "\" dosGetSharedMemIF OpenFileMapping [osh]: " ) ;
                 //    OStEXTA(  ostoSay , postP ) ;
                 //    OStEXTAK( ostoSay , " \"" ) ;
-                //    OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , 0 ) ;
+                //    OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idAdam , 0 ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
                 //if( ((tin123S&)tin0P).pc Utility[ 0 ] )
@@ -215,10 +215,10 @@
         c_zReplaceIF( tin0P , (osTextT*)(const osTextT*)ostoOsName , '/' , '.' ) ;
         OStEXTA(  ostoOsName  , postP ) ;
         OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace , '0' ) ; }
+        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace , '0' ) ; }
         if( F(flagsP) & flOPENsHAREDmEMORY_ALLmEMORYsPACES )  { OStEXTAK( ostoOsName  , "_" ) ; }
         OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && ((tin123S&)tin0P).pag1->_thirdC_.idHomeOverride ? ((tin123S&)tin0P).pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
+        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && ((tin1S&)tin0P).pag1->_thirdC_.idHomeOverride ? ((tin1S&)tin0P).pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
         if( F(flagsP) & flOPENsHAREDmEMORY_ALLhOMES         ) { OStEXTAK( ostoOsName  , "_" ) ; }
         OStEXTAK( ostoOsName  , "." ) ;
         else                                                  { OStEXTA(  ostoOsName , thirdC::postUserNameIF() ) ; }

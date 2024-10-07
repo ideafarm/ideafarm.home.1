@@ -45,7 +45,7 @@
                 OStEXTAK( ostoName , "." ) ;
                 OStEXTCF( ostoName , idStateSpaceP , '0' ) ;
                 OStEXTAK( ostoName , "." ) ;
-                OStEXTCF( ostoName , idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace , '0' ) ;
+                OStEXTCF( ostoName , idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace , '0' ) ;
                 OStEXTAK( ostoName , "." ) ;
                 OStEXTA(  ostoName , thirdC::postUserNameIF() ) ;
             {
@@ -65,7 +65,7 @@
             OStEXTCF( ostoName , idStateSpaceP , '0' ) ;                                                            thirdC::dosCreateDirIF( tin0P , ostoName ) ;
             OStEXTAK( ostoName , "\\" ) ;
             OStEXTAK( ostoName , "\\stateSpaces" ) ;                                                                thirdC::dosCreateDirIF( tin0P , ostoName ) ;
-            OStEXTCF( ostoName , idMemorySpaceP ? idMemorySpaceP : ((tin123S&)tin0P).pag1->idMemorySpace , '0' ) ;               thirdC::dosCreateDirIF( tin0P , ostoName ) ;
+            OStEXTCF( ostoName , idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace , '0' ) ;               thirdC::dosCreateDirIF( tin0P , ostoName ) ;
             OStEXTAK( ostoName , "\\" ) ;
             OStEXTA(  ostoName , thirdC::postUserNameIF() ) ;                                                       thirdC::dosCreateDirIF( tin0P , ostoName ) ;
             OStEXTAK( ostoName , "\\" ) ;
@@ -102,7 +102,7 @@
     {
     IFbEcAREFUL    
 
-    //if( !idMemorySpaceP ) idMemorySpaceP = ((tin123S&)tin0P).pag1->idMemorySpace ;
+    //if( !idMemorySpaceP ) idMemorySpaceP = ((tin1S&)tin0P).pag1->idMemorySpace ;
     //20200417@1855: KEEP idMemorySpaceP NULL SO THAT CALLER DOES NOT HAVE TO SET flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE
 {
 /*1*/voidT bookC::ctFileF( tin0S& tin0P , const osTextT* const postShortP , const osTextT* const postPathP , const countT idStateSpaceP , countT idMemorySpaceP )/*1*/

@@ -42,13 +42,13 @@
   partial scan of parameters using static functions
  this code does the following when building 0100002 (basic process driver)
 pseudocode
-it is illegal for application code to modify or replace ((tin123S&)tin0P).pag1->_etherC_.pstt1_processParameters
- be sure to use ether.ether_((tin123S&)tin0P).pag1->_etherC_.pstt1_processParameters_F( tin0P ) to refer to this static member
-application code can inspect all parameters by using a FORsTRINGSiN macro to inspect ((tin123S&)tin0P).pag1->_etherC_.pstt1_processParameters
+it is illegal for application code to modify or replace ((tin1S&)tin0P).pag1->_etherC_.pstt1_processParameters
+ be sure to use ether.ether_((tin1S&)tin0P).pag1->_etherC_.pstt1_processParameters_F( tin0P ) to refer to this static member
+application code can inspect all parameters by using a FORsTRINGSiN macro to inspect ((tin1S&)tin0P).pag1->_etherC_.pstt1_processParameters
     the "hirer" is used by city center to determine who is responsible for paying the wages of this worker adam
     in this example, citizen 21 is the "hirer" of this adam life
-   example: !((tin123S&)tin0P).pag1->_etherC_.idCitizenHirer 21
-  !((tin123S&)tin0P).pag1->_etherC_.idCitizenHirer <value>
+   example: !((tin1S&)tin0P).pag1->_etherC_.idCitizenHirer 21
+  !((tin1S&)tin0P).pag1->_etherC_.idCitizenHirer <value>
  multiple word directives
    causes function entries and exits to be logged to the face
   !bWatchSay

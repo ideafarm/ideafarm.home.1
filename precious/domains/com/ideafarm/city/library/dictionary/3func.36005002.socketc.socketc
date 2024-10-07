@@ -94,9 +94,9 @@
         IFbEcAREFUL
         SCOOPP
 
-        ((tin123S&)tin0P).pag3->_socketC_.grab.ungrabF( tin0P ) ;
+        ((tin1S&)tin0P).pag3->_socketC_.grab.ungrabF( tin0P ) ;
         }
-            ((tin123S&)tin0P).pag3->_socketC_.pSwOdometer = new( 0 , tin0P , LF ) switchC( tin0P , etRock , idLineCtP , idiFileCtP , pbBitsCtP , flSTACKc_null , ((tin123S&)tin0P).pag3->_socketC_.nnLever , 0 , sizeof( sockOdometerS ) ) ; ___( ((tin123S&)tin0P).pag3->_socketC_.pSwOdometer ) ;
+            ((tin1S&)tin0P).pag3->_socketC_.pSwOdometer = new( 0 , tin0P , LF ) switchC( tin0P , etRock , idLineCtP , idiFileCtP , pbBitsCtP , flSTACKc_null , ((tin1S&)tin0P).pag3->_socketC_.nnLever , 0 , sizeof( sockOdometerS ) ) ; ___( ((tin1S&)tin0P).pag3->_socketC_.pSwOdometer ) ;
             etherC& etRock = etherC::etRockIF( tin0P ) ;
 
             }
@@ -105,15 +105,15 @@
                     }
                         ++ s ; thirdC::dosSleepWinkIF( tin0P ) ;
                     {
-                    while( ((tin123S&)tin0P).pag3->_socketC_.pSwOdometer )
+                    while( ((tin1S&)tin0P).pag3->_socketC_.pSwOdometer )
                     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
             {
-            if( ((tin123S&)tin0P).pag3->_socketC_.pSwOdometer )
+            if( ((tin1S&)tin0P).pag3->_socketC_.pSwOdometer )
         {
-        if( !incv02AM( ((tin123S&)tin0P).pag3->_socketC_.cRef ) )
-        ((tin123S&)tin0P).pag3->_socketC_.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        if( !incv02AM( ((tin1S&)tin0P).pag3->_socketC_.cRef ) )
+        ((tin1S&)tin0P).pag3->_socketC_.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         //20141028@0638: REGISTRATION MOVED TO HERE
     {
     inc02AM( cFunctionsPending ) ;
@@ -122,9 +122,9 @@ psttPemPrivateKey( 0 )
 psttPemCertificates( 0 ) ,
 hSslContext( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_openSslContext ) ,
 pMapPortBind( 0 ) ,
-idleTimeAllowedWrite( pIdleTimeAllowedWriteP ? *pIdleTimeAllowedWriteP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tin123S&)tin0P).pag3->_socketC_.alwaysTimeoutDefaultWan : ((tin123S&)tin0P).pag3->_socketC_.alwaysZe ) ,
-idleTimeAllowedRead(  pIdleTimeAllowedReadP  ? *pIdleTimeAllowedReadP  : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tin123S&)tin0P).pag3->_socketC_.alwaysTimeoutDefaultWan : ((tin123S&)tin0P).pag3->_socketC_.alwaysZe ) ,
-timeAllowedConnected( pTimeAllowedConnectedP ? *pTimeAllowedConnectedP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tin123S&)tin0P).pag3->_socketC_.alwaysZe                : ((tin123S&)tin0P).pag3->_socketC_.alwaysZe ) , // SSL IS A PIECE OF SHIT: IT CAN PEG CPU FOREVER IN AN INFINITE LOOP ; 20161201@1201: CHANGED FROM TICK TO ZE TO AVOID CANCELING LONG CLOUD TRANSFERS.  HOPEFULLY THE IDLE LIMITS WILL SUFFICE TO KILL SSL PEGGING CPU
+idleTimeAllowedWrite( pIdleTimeAllowedWriteP ? *pIdleTimeAllowedWriteP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tin1S&)tin0P).pag3->_socketC_.alwaysTimeoutDefaultWan : ((tin1S&)tin0P).pag3->_socketC_.alwaysZe ) ,
+idleTimeAllowedRead(  pIdleTimeAllowedReadP  ? *pIdleTimeAllowedReadP  : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tin1S&)tin0P).pag3->_socketC_.alwaysTimeoutDefaultWan : ((tin1S&)tin0P).pag3->_socketC_.alwaysZe ) ,
+timeAllowedConnected( pTimeAllowedConnectedP ? *pTimeAllowedConnectedP : F(flagsP) & flSOCKETc_CRYPTfOREIGNsSL ? ((tin1S&)tin0P).pag3->_socketC_.alwaysZe                : ((tin1S&)tin0P).pag3->_socketC_.alwaysZe ) , // SSL IS A PIECE OF SHIT: IT CAN PEG CPU FOREVER IN AN INFINITE LOOP ; 20161201@1201: CHANGED FROM TICK TO ZE TO AVOID CANCELING LONG CLOUD TRANSFERS.  HOPEFULLY THE IDLE LIMITS WILL SUFFICE TO KILL SSL PEGGING CPU
 psttName( 0 ) ,
 pczKeyTopSecretPeer( 0 ) ,
 pczKeyTopSecret( 0 ) ,

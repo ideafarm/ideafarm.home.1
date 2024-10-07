@@ -59,6 +59,7 @@ tinEarlyLate
         idTypeP == ifcIDtYPEtLS_BENCH || idTypeP == ifcIDtYPEtLS_CONSOLE || idTypeP == ifcIDtYPEtLS_WINDOW
         putNegAM( *(countT*)&finger       , FINGERnEG_THREADlOCALsTORAGE       ) ,
         putNegAM( *(countT*)&fingerVerify , FINGERnEG_THREADlOCALsTORAGEvERIFY ) ,
+        offFingerVerify123I = ebpP - (countT)&fingerVerify                       ,                              //MUST BE DONE BEFORE pTin1*AM OR pTinFromEbx1*AM ARE CALLED ; THIS IS THE OFFSET OF FINGERvERIFY *BELOW* EBP, CALCULATED HERE SO THAT ITS VALUE IS POSITIVE, TO MAKE DEBUGGER DISPLAYS EASIER TO READ
     (
 (
 pTin

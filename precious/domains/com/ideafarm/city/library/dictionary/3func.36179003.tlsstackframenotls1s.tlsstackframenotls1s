@@ -59,6 +59,7 @@ tinEarlyLate
         idTypeP == ifcIDtYPEtLS_BENCH || idTypeP == ifcIDtYPEtLS_CONSOLE || idTypeP == ifcIDtYPEtLS_WINDOW
         putNegAM( *(countT*)&finger       , FINGERnEG_THREADlOCALsTORAGE       ) ,
         putNegAM( *(countT*)&fingerVerify , FINGERnEG_THREADlOCALsTORAGEvERIFY ) ,
+        offFingerVerify1I   = ebpP - (countT)&fingerVerify                       ,                              //MUST BE DONE BEFORE pTin1*AM OR pTinFromEbx1*AM ARE CALLED ; THIS IS THE OFFSET OF FINGERvERIFY *BELOW* EBP, CALCULATED HERE SO THAT ITS VALUE IS POSITIVE, TO MAKE DEBUGGER DISPLAYS EASIER TO READ
     (
 (
 pTin
@@ -76,7 +77,7 @@ zap_fingerVerify( (byteT*)&fingerVerify , sizeof fingerVerify , flZAP_DT ) ,
 
 
 
-/*1*/tlsStackFrameNoTls1S::tlsStackFrameNoTls1S(     const countT idTypeP , const countT ebpP                           , const countT cArgP ) :/*1*/
+/*1*/tlsStackFrameNoTls1S::tlsStackFrameNoTls1S(     const countT idTypeP , const countT ebpP                              , const countT cArgP ) :/*1*/
 
 //CODEsYNCH: 19d0003 17b0003 IDENTICAL EXCEPT FOR pbTls
 

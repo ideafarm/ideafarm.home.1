@@ -75,11 +75,11 @@
     batPoolCt.ungrabF( tin0P ) ;
                                                                                                         // CS:CODEsYNC: 360e2003 360e2003
     else if( !((tin123S&)tin0P).pEther                      ) { BLAMMO ; }                                           // IT IS ILLEGAL TO CT A poolC INSTANCE OTHER THAN THOSE WHICH ARE REGISTERED IN tin0P IF !((tin123S&)tin0P).pEther BECAUSE I WILL NOT BE ABLE TO REGISTER MY NAME INTO stPoolNames
-    else if( this == (poolC*)((tin123S&)tin0P).pag1->pbzphp )                 ((tin123S&)tin0P).pag1->pPoolHomePerm = this ;
-    else if( this == (poolC*)((tin123S&)tin0P).pag1->pbzpap )                 ((tin123S&)tin0P).pag1->pPoolAdamPerm = this ;
-    else if( this == (poolC*)((tin123S&)tin0P).pag1->pbzpsc )                 ((tin123S&)tin0P).pag1->pPoolScratch  = this ;
-    else if( this == (poolC*)((tin123S&)tin0P).pag1->pbzpht )                 ((tin123S&)tin0P).pag1->pPoolHomeTemp = this ;
-         if( !((tin123S&)tin0P).pag1->pPoolAdamTemp         ) ((tin123S&)tin0P).pPoolUse = ((tin123S&)tin0P).pag1->pPoolAdamTemp = this ; //A:ASSUME: THE ADAM TEMP POOL IS CT WOTH
+    else if( this == (poolC*)((tin1S&)tin0P).pag1->pbzphp )                 ((tin1S&)tin0P).pag1->pPoolHomePerm = this ;
+    else if( this == (poolC*)((tin1S&)tin0P).pag1->pbzpap )                 ((tin1S&)tin0P).pag1->pPoolAdamPerm = this ;
+    else if( this == (poolC*)((tin1S&)tin0P).pag1->pbzpsc )                 ((tin1S&)tin0P).pag1->pPoolScratch  = this ;
+    else if( this == (poolC*)((tin1S&)tin0P).pag1->pbzpht )                 ((tin1S&)tin0P).pag1->pPoolHomeTemp = this ;
+         if( !((tin1S&)tin0P).pag1->pPoolAdamTemp         ) ((tin123S&)tin0P).pPoolUse = ((tin1S&)tin0P).pag1->pPoolAdamTemp = this ; //A:ASSUME: THE ADAM TEMP POOL IS CT WOTH
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // REGISTER MYSELF AS AN ADAM/HOME TEMP/PERM (OR SCRATCH) INSTANCE

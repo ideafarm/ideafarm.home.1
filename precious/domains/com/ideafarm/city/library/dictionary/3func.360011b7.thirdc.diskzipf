@@ -169,7 +169,7 @@
 
                         {
                         const flagsT flagsUse = flLISToPEN_IFeXISTS | flLISToPEN_REFRESHaNDrETRYfOREVER ;
-                        countT pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD , LISTnAMEsYS_PROCESSrEPORT , ((tin123S&)tin0P).pag1->idCell | BM_HIGH , idReport | BM_HIGH , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , 0 } ;
+                        countT pcNameRecord[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTaPPLICATION , LISTnAMEsYS_GLOBALrECORD , LISTnAMEsYS_PROCESSrEPORT , ((tin1S&)tin0P).pag1->idCell | BM_HIGH , idReport | BM_HIGH , ifcIDaDAM_HIREwITHOUTdEBUGGING | BM_HIGH , 0 } ;
 
                         listC::dictionaryReplaceOsTextIF( tin0P , c2Text ) ;
                         count2S c2Text( (countT)"myFieldName" ) ;
@@ -210,7 +210,7 @@
 
             }
                 c4Result = pEtherContainsMe->ifcHireF( tin0P , T("ifcIDaDAM_HEALaRCHIVES") , ifcIDaDAM_HIREwITHOUTdEBUGGING , tArgs , flHIRE_DISPLAYaUTO , 0 , 0 , 1 , nicNameC() ) ;
-                TN( tArgs , "" ) ; tArgs = T("!ignore [comment can go here] !maxValue 0 !reportToCell ")+TF2(((tin123S&)tin0P).pag1->idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" !idReport ")+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" !hireLater pkzipc.exe ")+T(postArgs1) ;
+                TN( tArgs , "" ) ; tArgs = T("!ignore [comment can go here] !maxValue 0 !reportToCell ")+TF2(((tin1S&)tin0P).pag1->idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" !idReport ")+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" !hireLater pkzipc.exe ")+T(postArgs1) ;
                 _IO_
             {
             countT& osPid = c4Result.c2 ;
@@ -225,7 +225,7 @@
 
         TN( tSgnReady    , "report.is.ready."    ) ; tSgnReady    += tUniquify ;
         TN( tSgnReceived , "report.is.received." ) ; tSgnReceived += tUniquify ;
-        TN( tUniquify , ""                       ) ; tUniquify     = TF2(((tin123S&)tin0P).pag1->idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDot+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+        TN( tUniquify , ""                       ) ; tUniquify     = TF2(((tin1S&)tin0P).pag1->idCell,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tDot+TF2(idReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
         TN( tDot      , "."                      ) ;
 
         }

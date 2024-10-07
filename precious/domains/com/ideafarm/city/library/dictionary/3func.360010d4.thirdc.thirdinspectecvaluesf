@@ -11,20 +11,20 @@
     return ecMerged ;
     }
         }
-            ((tin123S&)tin0P).pag1->_thirdC_.ecMergedHighWater |= flagHigh ;
-            ((tin123S&)tin0P).pag1->_thirdC_.ecMergedHighWater  = codeHigh ;
+            ((tin1S&)tin0P).pag1->_thirdC_.ecMergedHighWater |= flagHigh ;
+            ((tin1S&)tin0P).pag1->_thirdC_.ecMergedHighWater  = codeHigh ;
 
             flagHigh |= flagAcc ;
             if( codeHigh < codeMax ) codeHigh = codeMax ;
 
-            countT codeHigh = ((tin123S&)tin0P).pag1->_thirdC_.ecMergedHighWater & ~fliEC_FLAGmASK ;
-            countT flagHigh = ((tin123S&)tin0P).pag1->_thirdC_.ecMergedHighWater &  fliEC_FLAGmASK ;
+            countT codeHigh = ((tin1S&)tin0P).pag1->_thirdC_.ecMergedHighWater & ~fliEC_FLAGmASK ;
+            countT flagHigh = ((tin1S&)tin0P).pag1->_thirdC_.ecMergedHighWater &  fliEC_FLAGmASK ;
         {
 
         ecMerged |= flagAcc ;
         ecMerged  = codeMax ;
 
-        ((tin123S&)tin0P).pag1->_thirdC_.pStk_pThird->ungrabF( tin0P ) ;
+        ((tin1S&)tin0P).pag1->_thirdC_.pStk_pThird->ungrabF( tin0P ) ;
         while( ~hDown ) ;
         }
             flagAcc |= ecFlag ;
@@ -35,17 +35,17 @@
             countT ecFlag = ecOne &  fliEC_FLAGmASK ;
             countT ecOne = 0 ; //WAS POINTING TO third.ec
 
-            if( !pThird ) break ; // WILL HAPPEN IF *((tin123S&)tin0P).pag1->_thirdC_.pStk_pThird IS IMPOTENT
-            thirdC* pThird = (thirdC*)((tin123S&)tin0P).pag1->_thirdC_.pStk_pThird->downF( tin0P , hDown ) ;
+            if( !pThird ) break ; // WILL HAPPEN IF *((tin1S&)tin0P).pag1->_thirdC_.pStk_pThird IS IMPOTENT
+            thirdC* pThird = (thirdC*)((tin1S&)tin0P).pag1->_thirdC_.pStk_pThird->downF( tin0P , hDown ) ;
         {
         do
         handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-        ((tin123S&)tin0P).pag1->_thirdC_.pStk_pThird->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+        ((tin1S&)tin0P).pag1->_thirdC_.pStk_pThird->grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
         ZE( flagsT , flagAcc ) ;
         ZE( countT , codeMax ) ;
     {
-    if( ((tin123S&)tin0P).pag1->_thirdC_.pStk_pThird )
+    if( ((tin1S&)tin0P).pag1->_thirdC_.pStk_pThird )
     ZE( countT , ecMerged ) ;
 
     _IO_

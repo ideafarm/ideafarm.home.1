@@ -59,12 +59,11 @@
 
 
             processGlobal2I.flCt |= flCTdTg_THREADlOCALsTORAGE ;
-            offFingerVerifyI = ebpAM() - (countT)&sf.fingerVerify ; //MUST BE DONE BEFORE pTinAM OR pTin2AM ARE CALLED ; THIS IS THE OFFSET OF FINGERvERIFY *BELOW* EBP, CALCULATED HERE SO THAT ITS VALUE IS POSITIVE, TO MAKE DEBUGGER DISPLAYS EASIER TO READ
         {
         if( idTypeP == ifcIDtYPEtLS_CONSOLE || idTypeP == ifcIDtYPEtLS_WINDOW || idTypeP == ifcIDtYPEtLS_BENCH )
     
         //IF WDW EVER FAILS TO LOAD ITS INFO, DEBUG STARTUP (IF YOU CAN); ELSE USE OTHER MEANS (WRITE TO CONSOLE) TO SEE THE NEW OFFSETS
-        //I HAVE SEEN WDW FAIL TO LOAD SYMBOLIC INFO BECAUSE THE OFFSET OF sf FROM [ebp] CHANGED, AND APPARENTLY pTinAM CRAPPED EARLY ON SOME DEBUGGING INFO SO WDW COULDN'T EVEN GET THE MODULE LOADED
+        //I HAVE SEEN WDW FAIL TO LOAD SYMBOLIC INFO BECAUSE THE OFFSET OF sf FROM [ebp] CHANGED, AND APPARENTLY pTin1AM   CRAPPED EARLY ON SOME DEBUGGING INFO SO WDW COULDN'T EVEN GET THE MODULE LOADED
 
         tlsStackFrame1S        sf( idTypeP , ebpAM()         , cArgP ) ; //CODE SYNC: THE OFFSET OF SOME MEMBERS OF sf FROM [ebp] (THE STACK FRAME) IS HARDCODED IN snip.009*
     {
@@ -96,7 +95,7 @@
 
 /**/
 */
-pTin, if not ze, points to the tin1S, object for this thread
+pTin, if not ze, points to the tin1S  , object for this thread
 then the value in pTin can be obtained
 my stack frame can be found by walking the stack looking for FINGERnEG_THREADlOCALsTORAGE
 i allocate oo objects on the thread's stack so that they can be found at known offsets within the stack frame

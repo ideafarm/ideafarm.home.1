@@ -1,4 +1,7 @@
 
+#define TASK1nOeTHERS(taskFP)   TASK1pART0nOeTHERS(   taskFP , flTHIRDmODE_null )
+#define TASK12nOeTHERS(taskFP)  TASK12pART0nOeTHERS(  taskFP , flTHIRDmODE_null )
+
 #define TASK123(taskFP) TASK123pART0( taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone123 ) ;
 #define TASK12(taskFP)  TASK12pART0(  taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone12  ) ;
 #define TASK1(taskFP)   TASK1pART0(   taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone1   ) ;
@@ -800,7 +803,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                     \
             }                                                                                                                                                                       \
             signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                      \
-            ((tin123S&)tin0P).pSgnUtility = &_sgnUtility ;                                                                                                                    \
+            tin0P.pSgnUtility = &_sgnUtility ;                                                                                                                    \
                                                                                                                                                                                     \
             {                                                                                                                                                                       \
                 _IO_
@@ -937,7 +940,7 @@ it is illegal to refer to this symbol in the definition of an adam
                     pRootI->letRefF() ;                                                                                             \
                 }                                                                                                                   \
             }                                                                                                                       \
-            ((tin123S&)tin0P).pSgnUtility = 0 ;                                                                                                  \
+            tin0P.pSgnUtility = 0 ;                                                                                                  \
             etThread = 0 ;                                                                                                          \
             TELL( "REST: cleaning up" ) ;                                                                                           \
             thirdC::thirdImpotenceHandlerIF( tin0P ) ;                                                                               \
@@ -2241,7 +2244,7 @@ it is illegal to refer to this symbol in the definition of an adam
         {                                                                                                                                                                                                                                                                                       \
             tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
             TELL( "TASK1pART0:   newing a tin1S   in the working poolOld" )                                                                                                                                                                                                                     \
-            tin0S* pTin = new( 0 , tin0P , LF ) tin1S(   tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin1S(   tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
             if( pTin )                                                                                                                                                                                                                                                                          \
             {                                                                                                                                                                                                                                                                                   \
                 bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
@@ -2296,7 +2299,7 @@ it is illegal to refer to this symbol in the definition of an adam
                   ((tin1S&  )tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
                                                                                                                                                                                                                                                                                                 \
                   signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                               \
-                  ((tin1S&  )tin0P).pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                \
+                  tin0P.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                \
                                                                                                                                                                                                                                                                                                 \
                 {                                                                                                                                                                                                                                                                               \
                                                                                                                                                                                                                                                                                                 \
@@ -2382,7 +2385,7 @@ it is illegal to refer to this symbol in the definition of an adam
         {                                                                                                                                                                                                                                                                                       \
             tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
             TELL( "TASK12pART0:  newing a tin12S  in the working poolOld" )                                                                                                                                                                                                                     \
-            tin0S* pTin = new( 0 , tin0P , LF ) tin12S(  tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin12S(  tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
             if( pTin )                                                                                                                                                                                                                                                                          \
             {                                                                                                                                                                                                                                                                                   \
                 bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
@@ -2437,7 +2440,7 @@ it is illegal to refer to this symbol in the definition of an adam
                   ((tin12S& )tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
                                                                                                                                                                                                                                                                                                 \
                   signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                               \
-                  ((tin12S& )tin0P).pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                \
+                  tin0P.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                \
                                                                                                                                                                                                                                                                                                 \
                 {                                                                                                                                                                                                                                                                               \
                                                                                                                                                                                                                                                                                                 \
@@ -2578,7 +2581,7 @@ it is illegal to refer to this symbol in the definition of an adam
                   ((tin123S&)tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
                                                                                                                                                                                                                                                                                                 \
                   signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                               \
-                  ((tin123S&)tin0P).pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                \
+                  tin0P.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                \
                                                                                                                                                                                                                                                                                                 \
                 {                                                                                                                                                                                                                                                                               \
                     /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tin123S&)tin0P).osPid)+T(" ")+TF1(((tin123S&)tin0P).osTid)+T(" \"")+T(((tin123S&)tin0P).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/    \
@@ -2625,117 +2628,154 @@ it is illegal to refer to this symbol in the definition of an adam
 //CODEsYNC: 0010055 0010056
 
 //INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK123pART0
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000024.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*DONEpART0*//*1*/
+
+//CODEsYNC: 0010055 0010056
+
+//INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK123pART0
     
-#define DONEpART0                                                                                                                                                                                                                                                          \
-                                                                                                                                                                                                                                                                       \
-                    /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                                                 \
-                                                                                                                                                                                                                                                                       \
-                    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/                                                                                                      \
-                                                                                                                                                                                                                                                                       \
-                    {                                                                                                                                                                                                                                                  \
-                        TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                      \
-                        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
-                        if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                          \
-                        ((tin123S&)tin0P).idPhase2 = 0 ;                                                                                                                                                                                                         \
-                        TELL( "DONEpART0: after returning from application code" ) ;                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                       \
-                        if( ((tin123S&)tin0P).pag1->cYieldHighWater )                                                                                                                                                                                            \
-                        {                                                                                                                                                                                                                                              \
-                            OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                                                          \
-                            OStEXTAK( ostoSay , "DONEpART0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                                               \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , 0 ) ;                                                                                                                                                                           \
-                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                  \
-                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins1 , '0' ) ;                                                                                                                                                                              \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins2 , '0' ) ;                                                                                                                                                                              \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins3 , '0' ) ;                                                                                                                                                                              \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins4 , '0' ) ;                                                                                                                                                                              \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cOsHandles , '0' ) ;                                                                                                                                                                           \
-                            etThread.traceF( tin0P , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                                                                                                                              \
-                        }                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                       \
-                        if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                         \
-                        else                                                                                                                                                                                                                                           \
-                        {                                                                                                                                                                                                                                              \
-                            TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                       \
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;               \
-                                                                                                                                                                                                                                                                       \
-                            TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                                       \
-                            {                                                                                                                                                                                                                                          \
-                                sleepC s( tin0P , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                                        \
-                                while( ((tin123S&)tin0P).cKidThreads )                                                                                                                                                                                           \
-                                {                                                                                                                                                                                                                                      \
-                                    etherC::etRockIF( tin0P ).traceF( tin0P , T("DONEpART0 / napping a wink for my kids to end [((tin123S&)tin0P).cKidThreads]:    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
-                                    ++ s ; thirdC::dosSleepRawIF( tin0P , 250 ) ;                                                                                                                                                                                   \
-                                }                                                                                                                                                                                                                                      \
-                            }                                                                                                                                                                                                                                          \
-                            TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                             \
-                        }                                                                                                                                                                                                                                              \
-                        if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                      \
-                        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
-                    }                                                                                                                                                                                                                                                  \
-                }                                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                       \
-                ((tin123S&)tin0P).pSgnUtility = 0 ;                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                       \
-                {                                                                                                                                                                                                                                                      \
-                    TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                          \
-                    if( pEtThread ) /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/                                                                                                                                                                                 \
-                    {                                                                                                                                                                                                                                                  \
-                        if( psttThreadFile )                                                                                                                                                                                                                           \
-                        {                                                                                                                                                                                                                                              \
-                            TELL( "DONEpART0: deleting thread file" ) ;                                                                                                                                                                                                    \
-                            ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , psttThreadFile ) ;                                                                                                                                                                 \
-                            ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttThreadFile ) ;                                                                                                                                                                    \
-                        }                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                       \
-                        TELL( "DONEpART0: testing poolOld" ) ;                                                                                                                                                                                                             \
-                        ((tin123S&)tin0P).pEther = 0 ;                                                                                                                                                                                                           \
-                        TELL( "DONEpART0: deleting etThread (and tin0P)" ) ;                                                                                                                                                                                            \
-                        DELzOMBIE( ((tin123S&)tin0P).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                           \
-                          DELzOMBIE( ((tin123S&)tin0P).pEtScratch ) ;                                                                                                                                                                                            \
-                        if( *(countT*)&pEtThread )                                                                                                                                                                                                                     \
-                        {                                                                                                                                                                                                                                              \
-                            DELzOMBIE( pEtThread ) ; /* tin0P IS DESTROYED HERE */                                                                                                                                                                                  \
-                            TINSL                                                                                                                                                                                                                                      \
-                        }                                                                                                                                                                                                                                              \
-                    }                                                                                                                                                                                                                                                  \
-                }                                                                                                                                                                                                                                                      \
-            }                                                                                                                                                                                                                                                          \
-                                                                                                                                                                                                                                                                       \
-            {                                                                                                                                                                                                                                                          \
-                TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                              \
-                TELL( "DONEpART0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                                                 \
-                boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                                                                                                                          \
-                countT& cAllThreads = bOrphan                                                                                                                                                                                                                          \
-                    ? thirdC::os_cAllOrphanThreadsI_IF( tin0P )                                                                                                                                                                                                     \
-                    : thirdC::os_cAllKidThreadsI_IF( tin0P )                                                                                                                                                                                                        \
-                ;                                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                       \
-                if( pTaskP && F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                                                                                                                                                                                          \
-                {                                                                                                                                                                                                                                                      \
-                    THREADmODE5oFF( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                   \
-                }                                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                       \
-                boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                                              \
-                if( !bFake )                                                                                                                                                                                                                                           \
-                {                                                                                                                                                                                                                                                      \
-                    /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.                   */                                                                                                                                             \
-                    /* THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */                                                                                                                                             \
-                    DEL( pTaskP ) ;                                                                                                                                                                                                                                    \
-                }                                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                       \
-                TELL( "DONEpART0: i am outa here" )                                                                                                                                                                                                                        \
-                if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] = - 1 ;                                                                                    \
-                dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                                                       \
-            }                                                                                                                                                                                                                                                          \
-        }                                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                       \
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000024.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*DONEpART0*//*1*/
+
+//CODEsYNC: 0010055 0010056
+
+//INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK123pART0
+    
+#define DONEpART0                                                                                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                     \
+                    /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                                                               \
+                                                                                                                                                                                                                                                                                     \
+                    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/                                                                                                                       \
+                                                                                                                                                                                                                                                                                     \
+                    {                                                                                                                                                                                                                                                                \
+                        TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                                       \
+                        if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                               \
+                        if( ((tin1S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin1S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                                                        \
+                        ((tin1S&)tin0P).idPhase2 = 0 ;                                                                                                                                                                                                                               \
+                        TELL( "DONEpART0: after returning from application code" ) ;                                                                                                                                                                                                 \
+                                                                                                                                                                                                                                                                                     \
+                        if( ((tin1S&)tin0P).pag1->cYieldHighWater )                                                                                                                                                                                                                  \
+                        {                                                                                                                                                                                                                                                            \
+                            OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                                                                        \
+                            OStEXTAK( ostoSay , "DONEpART0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                                                         \
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idAdam , 0 ) ;                                                                                                                                                                                                 \
+                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                                           \
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                                        \
+                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                                           \
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).cSpins1 , '0' ) ;                                                                                                                                                                                                    \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).cSpins2 , '0' ) ;                                                                                                                                                                                                    \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).cSpins3 , '0' ) ;                                                                                                                                                                                                    \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).cSpins4 , '0' ) ;                                                                                                                                                                                                    \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).cOsHandles , '0' ) ;                                                                                                                                                                                                 \
+                            etThread.traceF( tin0P , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                                                                                                                                               \
+                        }                                                                                                                                                                                                                                                            \
+                                                                                                                                                                                                                                                                                     \
+                        if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                          \
+                        else                                                                                                                                                                                                                                                         \
+                        {                                                                                                                                                                                                                                                            \
+                            TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                                 \
+                            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;  \
+                                                                                                                                                                                                                                                                                     \
+                            TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                                                 \
+                            {                                                                                                                                                                                                                                                        \
+                                sleepC s( tin0P , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                                                         \
+                                while( ((tin1S&)tin0P).cKidThreads )                                                                                                                                                                                                                 \
+                                {                                                                                                                                                                                                                                                    \
+                                    etherC::etRockIF( tin0P ).traceF( tin0P , T("DONEpART0 / napping a wink for my kids to end [((tin1S&)tin0P).cKidThreads]:    ")+TF2(((tin1S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;                                    \
+                                    ++ s ; thirdC::dosSleepRawIF( tin0P , 250 ) ;                                                                                                                                                                                                    \
+                                }                                                                                                                                                                                                                                                    \
+                            }                                                                                                                                                                                                                                                        \
+                            TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                                       \
+                        }                                                                                                                                                                                                                                                            \
+                        if( ((tin1S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin1S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                                                    \
+                        if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                               \
+                    }                                                                                                                                                                                                                                                                \
+                }                                                                                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                     \
+                tin0P.pSgnUtility = 0 ;                                                                                                                                                                                                                                              \
+                                                                                                                                                                                                                                                                                     \
+                {                                                                                                                                                                                                                                                                    \
+                    TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                                           \
+                    if( ((tin1S&)tin0P).pEtScratch && pEtThread ) /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/                                                                                                                                                                 \
+                    {                                                                                                                                                                                                                                                                \
+                        if( psttThreadFile )                                                                                                                                                                                                                                         \
+                        {                                                                                                                                                                                                                                                            \
+                            TELL( "DONEpART0: deleting thread file" ) ;                                                                                                                                                                                                              \
+                            ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , psttThreadFile ) ;                                                                                                                                                                                          \
+                            ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttThreadFile ) ;                                                                                                                                                                                             \
+                        }                                                                                                                                                                                                                                                            \
+                                                                                                                                                                                                                                                                                     \
+                        TELL( "DONEpART0: testing poolOld" ) ;                                                                                                                                                                                                                       \
+                        ((tin1S&)tin0P).pEther = 0 ;                                                                                                                                                                                                                                 \
+                        TELL( "DONEpART0: deleting etThread (and tin0P)" ) ;                                                                                                                                                                                                         \
+                        DELzOMBIE( ((tin1S&)tin0P).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                                                 \
+                          DELzOMBIE( ((tin1S&)tin0P).pEtScratch ) ;                                                                                                                                                                                                                  \
+                        if( pEtThread )                                                                                                                                                                                                                      \
+                        {                                                                                                                                                                                                                                                            \
+                            DELzOMBIE( pEtThread ) ; /* tin0P IS DESTROYED HERE */                                                                                                                                                                                                   \
+                            TINSL                                                                                                                                                                                                                                                    \
+                        }                                                                                                                                                                                                                                                            \
+                    }                                                                                                                                                                                                                                                                \
+                }                                                                                                                                                                                                                                                                    \
+            }                                                                                                                                                                                                                                                                        \
+                                                                                                                                                                                                                                                                                     \
+            {                                                                                                                                                                                                                                                                        \
+                TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                                               \
+                TELL( "DONEpART0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                                                           \
+                boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                                                                                                                                        \
+                countT& cAllThreads = bOrphan                                                                                                                                                                                                                                        \
+                    ? thirdC::os_cAllOrphanThreadsI_IF( tin0P )                                                                                                                                                                                                                      \
+                    : thirdC::os_cAllKidThreadsI_IF( tin0P )                                                                                                                                                                                                                         \
+                ;                                                                                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                     \
+                if( pTaskP && F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                                                                                                                                                                                                        \
+                {                                                                                                                                                                                                                                                                    \
+                    THREADmODE5oFF( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                 \
+                }                                                                                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                     \
+                boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                                                            \
+                if( !bFake )                                                                                                                                                                                                                                                         \
+                {                                                                                                                                                                                                                                                                    \
+                    /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.                   */                                                                                                                                                           \
+                    /* THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */                                                                                                                                                           \
+                    DEL( pTaskP ) ;                                                                                                                                                                                                                                                  \
+                }                                                                                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                     \
+                TELL( "DONEpART0: i am outa here" )                                                                                                                                                                                                                                  \
+                if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] = - 1 ;                                                                       \
+                dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                                                                     \
+            }                                                                                                                                                                                                                                                                        \
+        }                                                                                                                                                                                                                                                                            \
+                                                                                                                                                                                                                                                                                     \
         DONEpART1
 
 //
@@ -7307,13 +7347,13 @@ flTHREADlAUNCH_ORPHAN
 /*
 \<A HREF=\"5.00100f8.1.0.html\"\>definition\</A\>
 it is illegal to refer to this symbol in the definition of an adam
-be sure to set all ((tin123S&)tin0P).pag1->_thirdC_.break_idThread and ((tin123S&)tin0P).pag1->_thirdC_.break_idStep allocations used in the executable
+be sure to set all ((tin1S&)tin0P).pag1->_thirdC_.break_idThread and ((tin1S&)tin0P).pag1->_thirdC_.break_idStep allocations used in the executable
  each executable image will have a set of static variable allocations
 */
 /**/
 
 /*1*//*BREAKiF*//*1*/
-#define BREAKiF if( ((tin123S&)tin0P).pag1->_thirdC_.break_idStep && ((tin123S&)tin0P).pag1->_thirdC_.break_idStep <= ((tin123S&)tin0P).monitor.idStep && ( !((tin123S&)tin0P).pag1->_thirdC_.break_idThread || ((tin123S&)tin0P).pag1->_thirdC_.break_idThread == ((tin123S&)tin0P).monitor.idThread ) ) thirdC::thirdBreakIF( tin0P )
+#define BREAKiF if( ((tin1S&)tin0P).pag1->_thirdC_.break_idStep && ((tin1S&)tin0P).pag1->_thirdC_.break_idStep <= ((tin123S&)tin0P).monitor.idStep && ( !((tin1S&)tin0P).pag1->_thirdC_.break_idThread || ((tin1S&)tin0P).pag1->_thirdC_.break_idThread == ((tin123S&)tin0P).monitor.idThread ) ) thirdC::thirdBreakIF( tin0P )
 
 
 //
@@ -7565,10 +7605,10 @@ to use this, the object must be of a class that provides operator byteT* which r
 
 /*1*//*IFbEcAREFUL*//*1*/
 
-#define IFbEcAREFUL if( !((tin123S&)tin0P).pag1 || ((tin123S&)tin0P).pag1->_thirdC_.bCareful )
+#define IFbEcAREFUL if( !((tin1S&)tin0P).pag1 || ((tin1S&)tin0P).pag1->_thirdC_.bCareful )
 
 //U:: THIS FAILS BECAUSE SOME FUNCTIONS MUST NOT CT _IO_
-//U:: #define IFbEcAREFUL _IO1_(1) if( ((tin123S&)tin0P).pag1->_thirdC_.bCareful )
+//U:: #define IFbEcAREFUL _IO1_(1) if( ((tin1S&)tin0P).pag1->_thirdC_.bCareful )
 
 
 //
@@ -8631,29 +8671,31 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifcIDtYPEdROPnOTE_thirdCpoolNewF                                0xdddd043b
 #define ifcIDtYPEdROPnOTE_threadC                                       0xdddd043c
 #define ifcIDtYPEdROPnOTE_thugC                                         0xdddd043d
-#define ifcIDtYPEdROPnOTE_tin123S                                          0xdddd043e
-#define ifcIDtYPEdROPnOTE_tlsAllocPoolC                                 0xdddd043f
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_01_C                         0xdddd0440
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_8_C                          0xdddd0441
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_9_C                          0xdddd0442
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_a_C                          0xdddd0443
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_b_C                          0xdddd0444
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_c_C                          0xdddd0445
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_d_C                          0xdddd0446
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_e_C                          0xdddd0447
-#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_f_C                          0xdddd0448
-#define ifcIDtYPEdROPnOTE_VARIABLE                                      0xdddd0449
-#define ifcIDtYPEdROPnOTE_vBodyS                                        0xdddd044a
-#define ifcIDtYPEdROPnOTE_vmAllocS                                      0xdddd044b
-#define ifcIDtYPEdROPnOTE_voidT                                         0xdddd044c
-#define ifcIDtYPEdROPnOTE_vTextC                                        0xdddd044d
-#define ifcIDtYPEdROPnOTE_windowOldC                                    0xdddd044e
-#define ifcIDtYPEdROPnOTE_x0SwitchStackC                                0xdddd044f
-#define ifcIDtYPEdROPnOTE_xrayC                                         0xdddd0450
-#define ifcIDtYPEdROPnOTE_xSwitchStackC                                 0xdddd0451
+#define ifcIDtYPEdROPnOTE_tin123S                                       0xdddd043e
+#define ifcIDtYPEdROPnOTE_tin12S                                        0xdddd043f
+#define ifcIDtYPEdROPnOTE_tin1S                                         0xdddd0440
+#define ifcIDtYPEdROPnOTE_tlsAllocPoolC                                 0xdddd0441
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_01_C                         0xdddd0442
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_8_C                          0xdddd0443
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_9_C                          0xdddd0444
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_a_C                          0xdddd0445
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_b_C                          0xdddd0446
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_c_C                          0xdddd0447
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_d_C                          0xdddd0448
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_e_C                          0xdddd0449
+#define ifcIDtYPEdROPnOTE_tlsAllocStackExp_f_C                          0xdddd044a
+#define ifcIDtYPEdROPnOTE_VARIABLE                                      0xdddd044b
+#define ifcIDtYPEdROPnOTE_vBodyS                                        0xdddd044c
+#define ifcIDtYPEdROPnOTE_vmAllocS                                      0xdddd044d
+#define ifcIDtYPEdROPnOTE_voidT                                         0xdddd044e
+#define ifcIDtYPEdROPnOTE_vTextC                                        0xdddd044f
+#define ifcIDtYPEdROPnOTE_windowOldC                                    0xdddd0450
+#define ifcIDtYPEdROPnOTE_x0SwitchStackC                                0xdddd0451
+#define ifcIDtYPEdROPnOTE_xrayC                                         0xdddd0452
+#define ifcIDtYPEdROPnOTE_xSwitchStackC                                 0xdddd0453
 /*3*/
 #define ifcIDtYPEdROPnOTE__1S_min     0xdddd033e
-#define ifcIDtYPEdROPnOTE__1S_max     0xdddd0451
+#define ifcIDtYPEdROPnOTE__1S_max     0xdddd0453
 
 
 //
@@ -24008,7 +24050,7 @@ examples
                                                                                                                                                         \
     {                                                                                                                                                   \
         thirdC::third_flagsModeProcess2I_IF() |= flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ;                                                                   \
-        ((tin123S&)tin0P).pag1->flagsAdamState |= flADAMsTATE_FIRED ;                                                                                                \
+        ((tin1S&)tin0P).pag1->flagsAdamState |= flADAMsTATE_FIRED ;                                                                                                \
         etherC* pEtPrime = &etherC::etPrimeIF() ;                                                                                                       \
         if( !pEtPrime ) { BLAMMO ; }                                                                                                                    \
         else            ((poopC&)(const poopC&)*pEtPrime).gruntF( tin0P , TAG( TAGiDnULL ) , ifcIDsUBtYPEpOOP_FIREDbYsELF , ifcIDtYPEpOOP_FIRED ) ;      \
@@ -26369,7 +26411,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         count2S c2Lever( ifcIDtYPErECYCLE_##classP ) ;                                                                                                                                                                                                             \
                                                                                                                                                                                                                                                                    \
         boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin123S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
+        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
@@ -26378,14 +26420,14 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         }                                                                                                                                                                                                                                                          \
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c2Lever ;                                                                                                                                                                                                                           \
-            if( *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c2Lever ;                                                                                                                                                                                                                           \
+            if( *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP ) pObjectP = classP::newRecyclableIF( tin0P ) ;                                                                                                                                                                                               \
-        else if( c2Lever.c1 == ifcIDtYPErECYCLE_soulC && ((tin123S&)tin0P).pag1->_soulC_.pStkTrace && ((tin123S&)tin0P).cArmTrace_soulC && ( ((tin123S&)tin0P).cArmTrace_soulC == - 1 || !( -- ((tin123S&)tin0P).cArmTrace_soulC ) ) ) ((soulC*)pObjectP)->traceF( tin0P , ((tin123S&)tin0P).flagsTrace_soulC , T("RgET") ) ;                                        \
+        else if( c2Lever.c1 == ifcIDtYPErECYCLE_soulC && ((tin1S&)tin0P).pag1->_soulC_.pStkTrace && ((tin123S&)tin0P).cArmTrace_soulC && ( ((tin123S&)tin0P).cArmTrace_soulC == - 1 || !( -- ((tin123S&)tin0P).cArmTrace_soulC ) ) ) ((soulC*)pObjectP)->traceF( tin0P , ((tin123S&)tin0P).flagsTrace_soulC , T("RgET") ) ;                                        \
                                                                                                                                                                                                                                                                    \
         ___BITS( pObjectP , 0x1235 , idLineP , idiFileP , pbBitsP ) ;                                                                                                                                                                                              \
     }
@@ -26433,7 +26475,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         if( !c4Lever.c2 ) c4Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
         boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin123S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
+        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
@@ -26442,10 +26484,10 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         }                                                                                                                                                                                                                                                          \
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c4Lever ;                                                                                                                                                                                                                           \
-            if( *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c4Lever ;                                                                                                                                                                                                                           \
+            if( *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP )                                                                                                                                                                                                                                            \
@@ -26491,7 +26533,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         {                                                                                                                           \
             count2S c2Lever( ifcIDtYPErECYCLE_##classP ) ;                                                                          \
                                                                                                                                     \
-            if( ((tin123S&)tin0P).pag1->_soulC_.pStkTrace && c2Lever.c1 == ifcIDtYPErECYCLE_soulC ) ((soulC*)pObjectP)->traceF( tin0P , flTRACEsOULc_PURGE , T("RpUT") ) ; \
+            if( ((tin1S&)tin0P).pag1->_soulC_.pStkTrace && c2Lever.c1 == ifcIDtYPErECYCLE_soulC ) ((soulC*)pObjectP)->traceF( tin0P , flTRACEsOULc_PURGE , T("RpUT") ) ; \
                                                                                                                                     \
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tin0P ) ;                                                                                       \
@@ -26503,10 +26545,10 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             }                                                                                                                       \
             else                                                                                                                    \
             {                                                                                                                       \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c2Lever ;                                                                                        \
-                *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c2Lever ;                                                                                        \
+                *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -26557,10 +26599,10 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             }                                                                                                                       \
             else                                                                                                                    \
             {                                                                                                                       \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c4Lever ;                                                                                        \
-                *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c4Lever ;                                                                                        \
+                *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -26645,7 +26687,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         if( !c6Lever.c2 ) c6Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
         boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin123S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
+        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
@@ -26656,10 +26698,10 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
             /*LOGrAWtID( "GETfROMrECYCLER4: using process recycler" ) ;                                                                                                                                                                                             */ \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c6Lever ;                                                                                                                                                                                                                           \
-            if( *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c6Lever ;                                                                                                                                                                                                                           \
+            if( *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP )                                                                                                                                                                                                                                            \
@@ -26719,10 +26761,10 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             }                                                                                                                       \
             else                                                                                                                    \
             {                                                                                                                       \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c6Lever ;                                                                                        \
-                *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c6Lever ;                                                                                        \
+                *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -26773,7 +26815,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         if( !c7Lever.c2 ) c7Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
         boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin123S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
+        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
@@ -26784,10 +26826,10 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
             /*LOGrAWtID8( "GETfROMrECYCLER5: using process recycler              " , c7Lever.c2 , " " , c7Lever.c3 , " " , c7Lever.c4 , " " , c7Lever.c5 ) ;                                                                                                  */   \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c7Lever ;                                                                                                                                                                                                                           \
-            if( *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c7Lever ;                                                                                                                                                                                                                           \
+            if( *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP )                                                                                                                                                                                                                                            \
@@ -26850,10 +26892,10 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             else                                                                                                                    \
             {                                                                                                                       \
                 /*LOGrAWtID8( "GETfROMrECYCLER5: RETURN process                      " , c7Lever.c2 , " " , c7Lever.c3 , " " , c7Lever.c4 , " " , c7Lever.c5 ) ;                                                                                                             */   \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c7Lever ;                                                                                        \
-                *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c7Lever ;                                                                                        \
+                *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -26949,7 +26991,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         if( !c8Lever.c2 ) c8Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
         boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin123S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
+        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
@@ -26960,10 +27002,10 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
             /*LOGrAWtIDc( "GETfROMrECYCLER6: using process recycler              " , c8Lever.c2 , " " , c8Lever.c3 , " " , c8Lever.c4 , " " , c8Lever.c5 , " " , c8Lever.c6 , " " , c8Lever.c7 ) ;                                                             */  \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c8Lever ;                                                                                                                                                                                                                           \
-            if( *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c8Lever ;                                                                                                                                                                                                                           \
+            if( *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP )                                                                                                                                                                                                                                            \
@@ -27027,10 +27069,10 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             else                                                                                                                    \
             {                                                                                                                       \
                 /*LOGrAWtIDc( "RETURNtOrECYCLER6: RETURN process                     " , c8Lever.c2 , " " , c8Lever.c3 , " " , c8Lever.c4 , " " , c8Lever.c5 , " " , c8Lever.c6 , " " , c8Lever.c7 ) */; \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c8Lever ;                                                                                        \
-                *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c8Lever ;                                                                                        \
+                *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -28080,7 +28122,7 @@ flBRANCHs_SHADOW is reserved for future enhancement
         count3S c3Lever( ifcIDtYPErECYCLE_##classP , recycleLever1P ) ;                                                                                                                                                                                            \
                                                                                                                                                                                                                                                                    \
         boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
-        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin123S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
+        if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
         {                                                                                                                                                                                                                                                          \
@@ -28089,10 +28131,10 @@ flBRANCHs_SHADOW is reserved for future enhancement
         }                                                                                                                                                                                                                                                          \
         else                                                                                                                                                                                                                                                       \
         {                                                                                                                                                                                                                                                          \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
-            ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c3Lever ;                                                                                                                                                                                                                           \
-            if( *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
-            ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                        \
+            ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c3Lever ;                                                                                                                                                                                                                           \
+            if( *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle ) *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle >> *(countT*)&pObjectP ;                                                                                                                                                                                               \
+            ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                                                                                                                                                         \
         }                                                                                                                                                                                                                                                          \
                                                                                                                                                                                                                                                                    \
         if( !pObjectP )                                                                                                                                                                                                                                            \
@@ -28148,10 +28190,10 @@ flBRANCHs_SHADOW is reserved for future enhancement
             }                                                                                                                       \
             else                                                                                                                    \
             {                                                                                                                       \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
-                ((tin123S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c3Lever ;                                                                                        \
-                *((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
-                ((tin123S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->grabF( tin0P , TAG( TAGiDnULL ) ) ;                                                                     \
+                ((tin1S&)tin0P).pag1->_etherC_.pczl_pSwsRecycle = c3Lever ;                                                                                        \
+                *((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                                   \
+                ((tin1S&)tin0P).pag1->_etherC_.pSwsRecycle->ungrabF( tin0P ) ;                                                                                      \
             }                                                                                                                       \
         }                                                                                                                           \
     }
@@ -28987,7 +29029,7 @@ can be used for sCountC as well as measureT and sCountT and countT
     static countT  _wwSlots ;                                                                               \
     static countT* _wwPcTally ;                                                                             \
     static countT  _wwOff ;                                                                                 \
-    if( !_wwIdMine && ( !idAdamP || idAdamP == ((tin123S&)tin0P).pag1->idAdam ) )                                \
+    if( !_wwIdMine && ( !idAdamP || idAdamP == ((tin1S&)tin0P).pag1->idAdam ) )                                \
     {                                                                                                       \
         /*CS:CODEsYNC: 0010409 0030100 0030100 1dd0003*/                                                    \
         for( _wwIdMine = 1 ; _wwIdMine <= 2 ; _wwIdMine ++ )                                                \
@@ -33080,22 +33122,22 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
         const boolT b_tmWindows    = !!( F(thirdC::third_flagsModeAdam1I_IF(tin0P))    & flADAMmODE1_tmWindows          ) ;                                  \
         const boolT bService       = !!( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_SERVICE         ) ;                                  \
         const boolT bSysThreads    =  !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ;                                  \
-        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin123S&)tin0P).pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */             \
+        /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */             \
         countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tin0P ) ;                                                                                \
         countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tin0P ) ;                                                                             \
         IFsCRATCH                                                                                                                                           \
         {                                                                                                                                                   \
             SCOOPS                                                                                                                                          \
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                           \
-            while( cAllKidThreadsI + cAllOrphanThreadsI > bService + b_tmWindows * 2 + ((tin123S&)tin0P).pag1->_deviceC_cHelper + bSysThreads * 2 /*tmWatchF,tmKillSocketF*/ + (cKidsOrphansAllowP) )  \
+            while( cAllKidThreadsI + cAllOrphanThreadsI > bService + b_tmWindows * 2 + ((tin1S&)tin0P).pag1->_deviceC_cHelper + bSysThreads * 2 /*tmWatchF,tmKillSocketF*/ + (cKidsOrphansAllowP) )  \
             {                                                                                                                                               \
-                /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin123S&)tin0P).pag1->idAdam , "/waiting for " , ( cAllKidThreadsI + cAllOrphanThreadsI - bService - b_tmWindows * 2 - 2 - (cKidsOrphansAllowP) ) , " kid threads to end\r\n" ) ;*/ \
+                /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/waiting for " , ( cAllKidThreadsI + cAllOrphanThreadsI - bService - b_tmWindows * 2 - 2 - (cKidsOrphansAllowP) ) , " kid threads to end\r\n" ) ;*/ \
                 ++ s ; thirdC::dosSleepWinkIF( tin0P , 1 ) ;                                                                                                 \
             }                                                                                                                                               \
                                                                                                                                                             \
             if( POOP ) POOPR                                                                                                                                \
         }                                                                                                                                                   \
-        /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin123S&)tin0P).pag1->idAdam , "/ending wait\r\n" ) ;*/                            \
+        /*CONoUTrAW5( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/ending wait\r\n" ) ;*/                            \
         /* ONLY main,tmWindowsF,tmWatchF,tmKillSocketF REMAIN */                                                                                            \
     }                                                                                                                                                       \
 
@@ -34554,7 +34596,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 #define DROPnOTEdOESnOTwANTmE                                                                                           \
                                                                                                                         \
-    if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tin123S&)tin0P).monitor.idDirty % 2 ) )     \
+    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tin123S&)tin0P).monitor.idDirty % 2 ) )    \
     {                                                                                                                   \
         FLAGScALLER( 0 ) |= flTHREADlEVELmODE_DROPnOTEdOESnOTwANTmE ;                                                   \
     }
@@ -35033,7 +35075,7 @@ coding standard
 #define ifcIDsTATEsPACE_SCRATCH                 ( - 0x10000 )
 #define ifcIDsTATEsPACE_MULTIPLEaDAMS           ( - 0x10001 )
 #define ifcIDsTATEsPACE_SINGLEaDAMnOtIN         ( ((tin123S*)pTinAM())->pag1->idAdam )
-#define ifcIDsTATEsPACE_SINGLEaDAM(tin0P)        ( ((tin123S&)tin0P).pag1->idAdam )
+#define ifcIDsTATEsPACE_SINGLEaDAM(tin0P)        ( ((tin1S&)tin0P).pag1->idAdam )
 /*3*/
 
 
@@ -38066,7 +38108,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 */
 /*1*//*DcON(postP)*//*1*/
 
-#define DcON(postP) { if( (byteT*)this == ((tin123S&)tin0P).pag1->pbDebug ) { CONoUTrAW( postP ) ; } }
+#define DcON(postP) { if( (byteT*)this == ((tin1S&)tin0P).pag1->pbDebug ) { CONoUTrAW( postP ) ; } }
 
 
 //
@@ -38095,7 +38137,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 
 #define DcON3(post1P,cP,post2P)                                                                                        \
                                                                                                                        \
-    if( (byteT*)this == ((tin123S&)tin0P).pag1->pbDebug )                                                                   \
+    if( (byteT*)this == ((tin1S&)tin0P).pag1->pbDebug )                                                                   \
     {                                                                                                                  \
         OStEXT( ostoBuf , 0x140 )                                                                                      \
         OStEXTA( ostoBuf , post1P ) ;                                                                                  \
@@ -38127,7 +38169,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 */
 /*1*//*DlOG(postP)*//*1*/
 
-#define DlOG(postP) { if( (byteT*)this == ((tin123S&)tin0P).pag1->pbDebug ) { LOGrAW( postP ) ; } }
+#define DlOG(postP) { if( (byteT*)this == ((tin1S&)tin0P).pag1->pbDebug ) { LOGrAW( postP ) ; } }
 
 
 //
@@ -38156,7 +38198,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 
 #define DlOG3(post1P,cP,post2P)                                                                                        \
                                                                                                                        \
-    if( (byteT*)this == ((tin123S&)tin0P).pag1->pbDebug )                                                                   \
+    if( (byteT*)this == ((tin1S&)tin0P).pag1->pbDebug )                                                                   \
     {                                                                                                                  \
         LOGrAW3( post1P , cP , post2P ) ;                                                                              \
     }
@@ -52411,9 +52453,9 @@ values at and above 00ff are used by spouseC to encode literal byte values
         ZE( boolT , bSet ) ;                                                                                \
         for( countT offo = 0 ; offo < CiDtHREADtRACE ; offo ++ )                                            \
         {                                                                                                   \
-            if( !((tin123S&)tin0P).pag1->pcIdThreadTrace[ offo ] )                                               \
+            if( !((tin1S&)tin0P).pag1->pcIdThreadTrace[ offo ] )                                               \
             {                                                                                               \
-                ((tin123S&)tin0P).pag1->pcIdThreadTrace[ offo ] = ((tin123S&)tin0P).monitor.idThread ;                        \
+                ((tin1S&)tin0P).pag1->pcIdThreadTrace[ offo ] = ((tin123S&)tin0P).monitor.idThread ;                        \
                 bSet ++ ;                                                                                   \
                 break ;                                                                                     \
             }                                                                                               \

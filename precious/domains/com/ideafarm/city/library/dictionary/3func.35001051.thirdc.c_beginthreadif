@@ -11,10 +11,10 @@
     }
         }
             dec02AM( ((tin123S&)tin0P).cKidThreads ) ; //ADDED RECENTLY CAUSE ABSENCE SEEMED TO BE A BUG
-            dec02AM( ((tin123S&)tin0P).pag1->_thirdC_.cAllKidThreads ) ;
+            dec02AM( ((tin1S&)tin0P).pag1->_thirdC_.cAllKidThreads ) ;
         {
         else
-        if( F(flagsP) & flTHREADlAUNCH_ORPHAN ) dec02AM( ((tin123S&)tin0P).pag1->_thirdC_.cAllOrphanThreads ) ;
+        if( F(flagsP) & flTHREADlAUNCH_ORPHAN ) dec02AM( ((tin1S&)tin0P).pag1->_thirdC_.cAllOrphanThreads ) ;
     {
     if( POOP )
 
@@ -28,10 +28,10 @@
                 }
                     }
                         hThreadKid.resetF() ;
-                        ((tin123S&)tin0P).pag4->_thirdC_grab_lOsTid.ungrabF( tin0P ) ;
-                        *((tin123S&)tin0P).pag1->_thirdC_.pSwThreadHandle = hThreadKid.osF( ifcIDtYPEhANDLE_THREAD ) ;
-                        ((tin123S&)tin0P).pag1->_thirdC_.lOsTid = tidP ;
-                        ((tin123S&)tin0P).pag4->_thirdC_grab_lOsTid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                        ((tin1S&)tin0P).pag4->_thirdC_grab_lOsTid.ungrabF( tin0P ) ;
+                        *((tin1S&)tin0P).pag1->_thirdC_.pSwThreadHandle = hThreadKid.osF( ifcIDtYPEhANDLE_THREAD ) ;
+                        ((tin1S&)tin0P).pag1->_thirdC_.lOsTid = tidP ;
+                        ((tin1S&)tin0P).pag4->_thirdC_grab_lOsTid.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     {
                     if( tidP && tidP != - 1 )
         
@@ -52,7 +52,7 @@
                     //                ? ifcIDtYPEtHREAD_SHOWpONY
                     //            : F(flagsP) & flTHREADlAUNCH_SHOWpONY
                     //            ? ifcIDtYPEtHREAD_GLASS2
-                    //        : ((tin123S&)tin0P).pag1->idCell < 3
+                    //        : ((tin1S&)tin0P).pag1->idCell < 3
                     //        ? ifcIDtYPEtHREAD_WORKhORSE
                     //    countT idType = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS || etherC::ifc_idHomeIdisk_IF() < 0x100
                     //{
@@ -88,19 +88,19 @@
 
     //PSEUDODUPLICATED CODE: 1020057 1610003
 
-    inc02AM( ((tin123S&)tin0P).pag1->ctWatch ) ;
-    //CONoUTrAW3( "c_beginThreadIF [cThreadsFor _tmWatchF_toWatch] <-- " , 1 + incv02AM( ((tin123S&)tin0P).pag1->cThreadsFor _tmWatchF_toWatch ) , "\r\n" ) ;
+    inc02AM( ((tin1S&)tin0P).pag1->ctWatch ) ;
+    //CONoUTrAW3( "c_beginThreadIF [cThreadsFor _tmWatchF_toWatch] <-- " , 1 + incv02AM( ((tin1S&)tin0P).pag1->cThreadsFor _tmWatchF_toWatch ) , "\r\n" ) ;
 
     }
         inc02AM( ((tin123S&)tin0P).cKidThreads ) ;
-        inc02AM( ((tin123S&)tin0P).pag1->_thirdC_.cAllKidThreads ) ;
+        inc02AM( ((tin1S&)tin0P).pag1->_thirdC_.cAllKidThreads ) ;
     {
     else
-    if( F(flagsP) & flTHREADlAUNCH_ORPHAN ) inc02AM( ((tin123S&)tin0P).pag1->_thirdC_.cAllOrphanThreads ) ;
+    if( F(flagsP) & flTHREADlAUNCH_ORPHAN ) inc02AM( ((tin1S&)tin0P).pag1->_thirdC_.cAllOrphanThreads ) ;
     third_flagsProcessStateI_IF( tin0P , flPROCESSsTATE_MAINtHREADiSaLONE , 0 ) ;
 
     }
-        //while( !POOP && ((tin123S&)tin0P).pag1->_thirdC_.cAllKidThreads > 0x100 ) { ++ s ; dosSleepWinkIF( tin0P ) ; }
+        //while( !POOP && ((tin1S&)tin0P).pag1->_thirdC_.cAllKidThreads > 0x100 ) { ++ s ; dosSleepWinkIF( tin0P ) ; }
         //sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     //U::PROVIDE A PARAMETER OR PERHAPS A PROCESS MODE TO ENABLE THIS OVERRUN PROTECTION
@@ -120,7 +120,7 @@
         #ifdef __OS2__
         ZE( boolT , fnu ) ;
         if( POOP ) return ;
-        __( !((tin123S&)tin0P).pag1->_thirdC_.pSwThreadHandle ) ;
+        __( !((tin1S&)tin0P).pag1->_thirdC_.pSwThreadHandle ) ;
         __Z( tmFP ) ;
         __( tidP ) ;
         FV( flTHREADlAUNCH , flagsP )
@@ -150,7 +150,7 @@ arguments
  example
  to do this, pass a reference to the thread so it can decrement
 the thread must decrement this counter just before ending
-cAllKidThreadsI or ((tin123S&)tin0P).pag1->_thirdC_.cAllOrphanThreads is incremented
+cAllKidThreadsI or ((tin1S&)tin0P).pag1->_thirdC_.cAllOrphanThreads is incremented
 the new thread inherits the priority of the calling thread
 creates a new thread of execution
 it is illegal to refer to this symbol in the definition of an adam

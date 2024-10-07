@@ -29,7 +29,7 @@
                 OStEXT( ostoFile , 0x100 )
             {
             if( &ebpTlsAM() != &sf.ebp )
-            offFingerVerifyLocationI = ebpAM() - (countT)&sf.fingerVerify ; //MUST BE DONE BEFORE ebpTlsAM IS CALLED ; THIS IS THE OFFSET OF FINGERvERIFY *BELOW* EBP, CALCULATED HERE SO THAT ITS VALUE IS POSITIVE, TO MAKE DEBUGGER DISPLAYS EASIER TO READ
+            if( !offFingerVerifyLocationI ) offFingerVerifyLocationI = ebpAM() - (countT)&sf.fingerVerify ; //MUST BE DONE BEFORE ebpTlsAM IS CALLED ; THIS IS THE OFFSET OF FINGERvERIFY *BELOW* EBP, CALCULATED HERE SO THAT ITS VALUE IS POSITIVE, TO MAKE DEBUGGER DISPLAYS EASIER TO READ
         {
         tlsStackFrameLocationS sf ; //CODE SYNC: THE OFFSET OF SOME MEMBERS OF sf FROM [ebp] (THE STACK FRAME) IS HARDCODED IN snip.009*
     {

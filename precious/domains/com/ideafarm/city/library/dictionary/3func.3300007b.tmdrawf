@@ -12,7 +12,7 @@ DONE( tmDrawF )
 }
 #endif
     }
-        LOGrAW( T("mean nap time [mean,((tin123S&)tin0P).m01DrawSmooth]: ")+TF1(mean)+T(" ")+TF6(((tin123S&)tin0P).pag1->m01DrawSmooth,flFORMAT_EXPONENT,0,0,2,6)+T("\r\n") ) ;
+        LOGrAW( T("mean nap time [mean,((tin123S&)tin0P).m01DrawSmooth]: ")+TF1(mean)+T(" ")+TF6(((tin1S&)tin0P).pag1->m01DrawSmooth,flFORMAT_EXPONENT,0,0,2,6)+T("\r\n") ) ;
         mean /= sizeof pcNap / sizeof pcNap[ 0 ] ;
         for( countT offi = 0 ; offi < sizeof pcNap / sizeof pcNap[ 0 ] ; offi ++ ) mean += pcNap[ offi ] ;
         ZE( measureT , mean ) ;
@@ -32,23 +32,23 @@ DONE( tmDrawF )
 #endif
             msAgeLath = msAge ;
             }
-                //((tin123S&)tin0P).pag1->m01DrawSmooth  = 1.0                         ; //TO SUPPRESS GIVING THIS HINT TO APPLICATION CODE ; NORMALLY THIS SHOULD BE COMMENTED OUT
+                //((tin1S&)tin0P).pag1->m01DrawSmooth  = 1.0                         ; //TO SUPPRESS GIVING THIS HINT TO APPLICATION CODE ; NORMALLY THIS SHOULD BE COMMENTED OUT
                 //flagsCbf                         &= ~( F(flDEVICEcbf_TOOsLOW) ) ; //TO SUPPRESS GIVING THIS HINT TO APPLICATION CODE ; NORMALLY THIS SHOULD BE COMMENTED OUT
             
                 }
-                    else if(  ((tin123S&)tin0P).pag1->m01DrawSmooth                  ) ((tin123S&)tin0P).pag1->m01DrawSmooth      = 0.0 ;
-                    else if(  ((tin123S&)tin0P).pag1->m01DrawSmooth >= 1.0 / 16.0    ) ((tin123S&)tin0P).pag1->m01DrawSmooth     /= 2.0 ;
+                    else if(  ((tin1S&)tin0P).pag1->m01DrawSmooth                  ) ((tin1S&)tin0P).pag1->m01DrawSmooth      = 0.0 ;
+                    else if(  ((tin1S&)tin0P).pag1->m01DrawSmooth >= 1.0 / 16.0    ) ((tin1S&)tin0P).pag1->m01DrawSmooth     /= 2.0 ;
                     else if( !( F(flagsCbf) & flDEVICEcbf_TOOsLOW )             ) flagsCbf                             |= flDEVICEcbf_TOOsLOW ;
-                    else if(  ((tin123S&)tin0P).pag1->m01DrawSmooth >= 2.0 / 16.0    ) ((tin123S&)tin0P).pag1->m01DrawSmooth     /= 2.0 ;
+                    else if(  ((tin1S&)tin0P).pag1->m01DrawSmooth >= 2.0 / 16.0    ) ((tin1S&)tin0P).pag1->m01DrawSmooth     /= 2.0 ;
                          if(  msNap >= 2                                        ) msNap >>= 1 ;
                 {
                 else if( msOlder > msTarget ) // TOO SLOW
                 }
                     else                                                          msNap ++ ;
-                    else if(  ((tin123S&)tin0P).pag1->m01DrawSmooth <= 8.0 / 16.0    ) ((tin123S&)tin0P).pag1->m01DrawSmooth     *= 2                           ;
+                    else if(  ((tin1S&)tin0P).pag1->m01DrawSmooth <= 8.0 / 16.0    ) ((tin1S&)tin0P).pag1->m01DrawSmooth     *= 2                           ;
                     else if(  F(flagsCbf) & flDEVICEcbf_TOOsLOW                 ) flagsCbf                             &= ~( F(flDEVICEcbf_TOOsLOW) ) ;
-                    else if(  ((tin123S&)tin0P).pag1->m01DrawSmooth <= 1.0 / 16.0    ) ((tin123S&)tin0P).pag1->m01DrawSmooth     *= 2                           ;
-                         if( !((tin123S&)tin0P).pag1->m01DrawSmooth                  ) ((tin123S&)tin0P).pag1->m01DrawSmooth      = 1.0 / 16.0                  ;
+                    else if(  ((tin1S&)tin0P).pag1->m01DrawSmooth <= 1.0 / 16.0    ) ((tin1S&)tin0P).pag1->m01DrawSmooth     *= 2                           ;
+                         if( !((tin1S&)tin0P).pag1->m01DrawSmooth                  ) ((tin1S&)tin0P).pag1->m01DrawSmooth      = 1.0 / 16.0                  ;
                 {
                 if( msOlder < msTarget ) // TOO FAST
             
@@ -76,7 +76,7 @@ DONE( tmDrawF )
                 (*deviceP.pDeviceCBF)( tin0P , flagsCbf , deviceP , deviceP.cArg , ifcIDeVENTdEVICEc_TICK , ++ idTickLath ) ;
                 //_IO_
             
-                // CALLBACK SHOULD INSPECT flagsP AND/OR WATCH ((tin123S&)tin0P).pag1->m01DrawSmooth AND ADJUST ITS BEHAVIOR TO MAINTAIN A BALANCE BETWEEN SPEED, COMPLEXITY, AND DESIRED SMOOTHING
+                // CALLBACK SHOULD INSPECT flagsP AND/OR WATCH ((tin1S&)tin0P).pag1->m01DrawSmooth AND ADJUST ITS BEHAVIOR TO MAINTAIN A BALANCE BETWEEN SPEED, COMPLEXITY, AND DESIRED SMOOTHING
                 // ALL CHANGES TO ASSOCIATES OF deviceP SHOULD BE MADE WITHIN THIS CALL ; APPLICATION CODE THAT MAKES SUCH CHANGES AT ANY OTHER TIME MUST GRAB deviceP BEFORE DOING SO TO AVOID DEADLOCKING WITH ME BY GRABBING ANOTHER ASSOCIATE AND THEN ATTEMPTING TO GRAB THE deviceP ASSOCIATE ; IOW, THE deviceP ASSOCIATE MUST ALWAYS BE THE WOTH ASSOCIATE GRABBED, AND THIS IS DONE BY EXPLICITLY GRABBING deviceP WOTH ; THE ASSOCIATION TOPOLOGY IS UNCONSTRAINED, SO VARIOUS ASSOCIATES WALKING EACH'S ASSOCIATE STACK CAN RESULT IN GRABBING IN ARBITRARY ORDERINGS, CAUSING DEADLOCK
             {
             if( deviceP.pDeviceCBF )

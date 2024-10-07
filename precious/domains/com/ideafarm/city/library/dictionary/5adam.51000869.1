@@ -138,7 +138,7 @@ TODO
                     TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */
                 {
 
-                ((tin123S&)tin0P).pSgnUtility = 0 ;
+                tin0P.pSgnUtility = 0 ;
 
                 }
                     }
@@ -174,13 +174,13 @@ TODO
                             OStEXTAK( ostoSay , "." ) ;
                             OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins1 , '0' ) ;
                             OStEXTAK( ostoSay , "    " ) ;
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->cYieldHighWater , 0 ) ;
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->cYieldHighWater , 0 ) ;
                             OStEXTAK( ostoSay , "    " ) ;
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).pag1->idAdam , 0 ) ;
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idAdam , 0 ) ;
                             OStEXTAK( ostoSay , "DONEpART0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;
                             OStEXT(   ostoSay , TUCK << 2 ) ;
                         {
-                        if( ((tin123S&)tin0P).pag1->cYieldHighWater )
+                        if( ((tin1S&)tin0P).pag1->cYieldHighWater )
 
                         TELL( "DONEpART0: after returning from application code" ) ;
                         ((tin123S&)tin0P).idPhase2 = 0 ;
@@ -231,7 +231,7 @@ THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL ) ;
                     /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tin123S&)tin0P).osPid)+T(" ")+TF1(((tin123S&)tin0P).osTid)+T(" \"")+T(((tin123S&)tin0P).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/
                 {
 
-                /*((tin123S&)tin0P).pSgnUtility = &_sgnUtility ;*/
+                /*tin0P.pSgnUtility = &_sgnUtility ;*/
                 /*signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;*/
 
                 /*((tin123S&)tin0P).pEther = &etThread ;*/
@@ -348,9 +348,9 @@ THREADmODE4oN( flTHREADmODE4_NOsEXiNpOOL ) ;
 //
 // NOTES IN ebp DURING INIT OF tmWorkF
 
-//#define TASKpART0nOeTHERS(tmWorkF,flagsThirdModeP)
+//#define TASK123pART0nOeTHERS(tmWorkF,flagsThirdModeP)
 
-//#define TASK123nOeTHERS(tmWorkF) TASKpART0nOeTHERS( tmWorkF , flTHIRDmODE_null )
+//#define TASK123nOeTHERS(tmWorkF) TASK123pART0nOeTHERS( tmWorkF , flTHIRDmODE_null )
 //TASK123nOeTHERS( tmWorkF )
 
 //#define CwORKERS ( 0x1000 + 99 )
