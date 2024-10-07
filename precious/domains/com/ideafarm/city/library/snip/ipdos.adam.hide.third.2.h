@@ -1,120 +1,3 @@
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b6.flSORTERc BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*flSORTER*//*1*/
-
-/*3*/
-#define flSORTERc_REQUIREuNIQUE                 0xe0000115
-#define flSORTERc_SILENTLYsUPPRESSdUPLICATES    0xe0000215
-/*3*/
-#define flSORTERc_null    0xe0000015
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b6.flSORTERc END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b7.flSORTERcrESULT BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*flSORTERrESULT*//*1*/
-
-/*3*/
-#define flSORTERcrESULT_NOTfULLYsORTED 0xe0000116
-#define flSORTERcrESULT_FULLYsORTED    0xe0000216
-/*3*/
-#define flSORTERcrESULT_null    0xe0000016
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b7.flSORTERcrESULT END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b8.TRACEcALLnEST BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*TRACEcALLnEST*//*1*/
-
-#define TRACEcALLnEST(postP)                                                                                                                                                                          \
-                                                                                                                                                                                                      \
-    {                                                                                                                                                                                                 \
-        _IO_                                                                                                                                                                                          \
-                                                                                                                                                                                                      \
-        OStEXT(   ostoSay , TUCK << 0 ) ;                                                                                                                                                             \
-        OStEXTA(  ostoSay , postP ) ;                                                                                                                                                                 \
-        OStEXTAK( ostoSay , " / call nest:" ) ;                                                                                                                                                       \
-        etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS* const)(const osTextT* const)ostoSay , /*flTRACE_LOOP |*/ flTRACE_PARAMETERiSoStEXT ) ;                                                \
-                                                                                                                                                                                                      \
-        const countT ccNest = sizeof ((tin123S&)tin0P).monitor.pLFnest / sizeof ((tin123S&)tin0P).monitor.pLFnest[ 0 ] ;                                                                                                        \
-        countT pcNest[ ccNest + 1 ] ;                                                                                                                                                                 \
-        ((tin123S&)tin0P).get_pLFnest_F( tin0P , pcNest , ccNest + 1 ) ;                                                                                                                                            \
-                                                                                                                                                                                                      \
-        countT* pcc = pcNest ;                                                                                                                                                                        \
-        countT* pce = pcNest + ccNest ;                                                                                                                                                               \
-                                                                                                                                                                                                      \
-        ZE( countT , offDown )                                                                                                                                                                        \
-        while( pcc < pce && *pcc )                                                                                                                                                                    \
-        {                                                                                                                                                                                             \
-            OStEXT(   ostoLine , TUCK << 1 ) ;                                                                                                                                                        \
-            OStEXTAK( ostoLine , "  " ) ;                                                                                                                                                             \
-            OStEXTC(  ostoLine , ++ offDown , 0 ) ;                                                                                                                                                   \
-            OStEXTAK( ostoLine , "  " ) ;                                                                                                                                                             \
-            OStEXTC(  ostoLine , *( pcc ++ ) , 0 ) ;                                                                                                                                                  \
-            OStEXTAK( ostoLine , "  " ) ;                                                                                                                                                             \
-            const osTextT* postFile = processGlobal8S::_processGlobal8I_IF().source.postFileTitleF( tin0P , processGlobal8S::_processGlobal8I_IF().source.idFileRankF( tin0P , *( pcc ++ ) ) ) ;        \
-            if( postFile ) { OStEXTA(  ostoLine , postFile ) ; }                                                                                                                                      \
-            else           { OStEXTC(  ostoLine , *( pcc - 1 ) , 0 ) }                                                                                                                                \
-            etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS* const)(const osTextT* const)ostoLine , flTRACE_PARAMETERiSoStEXT ) ;                                                              \
-        }                                                                                                                                                                                             \
-    }
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b8.TRACEcALLnEST END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT BEGIN
 
 
@@ -2257,11 +2140,11 @@ these "status codes" are returned by some MS Windows api's
 /*1*//*ifcIDtYPEeCHOpACKET*//*1*/
 
 /*3*/
-#define ifcIDtYPEeCHOpACKET_ECHO              0xdddd120e
-#define ifcIDtYPEeCHOpACKET_ECHOrEPLY         0xdddd120f
+#define ifcIDtYPEeCHOpACKET_ECHO              0xdddd1210
+#define ifcIDtYPEeCHOpACKET_ECHOrEPLY         0xdddd1211
 /*3*/
-#define ifcIDtYPEeCHOpACKET_min     0xdddd120e
-#define ifcIDtYPEeCHOpACKET_max     0xdddd120f                                                               
+#define ifcIDtYPEeCHOpACKET_min     0xdddd1210
+#define ifcIDtYPEeCHOpACKET_max     0xdddd1211                                                               
 
 
 //
@@ -2290,16 +2173,16 @@ these "status codes" are returned by some MS Windows api's
 //CS:CODEsYNC: 510007e9 112005be
 
 /*3*/
-#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE1          0xdddd1210
-#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE2          0xdddd1211
-#define ifcIDiMPOTENCEmEMcMP_LATHbYTE1          0xdddd1212
-#define ifcIDiMPOTENCEmEMcMP_LATHbYTE2          0xdddd1213
-#define ifcIDiMPOTENCEmEMcMP_COMPARE0           0xdddd1214
-#define ifcIDiMPOTENCEmEMcMP_COMPARE1           0xdddd1215
-#define ifcIDiMPOTENCEmEMcMP_COMPARE2           0xdddd1216
+#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE1          0xdddd1212
+#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE2          0xdddd1213
+#define ifcIDiMPOTENCEmEMcMP_LATHbYTE1          0xdddd1214
+#define ifcIDiMPOTENCEmEMcMP_LATHbYTE2          0xdddd1215
+#define ifcIDiMPOTENCEmEMcMP_COMPARE0           0xdddd1216
+#define ifcIDiMPOTENCEmEMcMP_COMPARE1           0xdddd1217
+#define ifcIDiMPOTENCEmEMcMP_COMPARE2           0xdddd1218
 /*3*/
-#define ifcIDiMPOTENCEmEMcMP_min     0xdddd1210
-#define ifcIDiMPOTENCEmEMcMP_max     0xdddd1216                                                               
+#define ifcIDiMPOTENCEmEMcMP_min     0xdddd1212
+#define ifcIDiMPOTENCEmEMcMP_max     0xdddd1218                                                               
 
 
 //
@@ -2686,17 +2569,17 @@ these "status codes" are returned by some MS Windows api's
 
 
 /*3*/
-#define ifcIDtYPEsTEPrECURSION_PROLOG              0xdddd1217
-#define ifcIDtYPEsTEPrECURSION_CALLpROLOG          0xdddd1218
-#define ifcIDtYPEsTEPrECURSION_CALLpUSH            0xdddd1219
-#define ifcIDtYPEsTEPrECURSION_CALL                0xdddd121a
-#define ifcIDtYPEsTEPrECURSION_CALLpOP             0xdddd121b
-#define ifcIDtYPEsTEPrECURSION_CALLePILOG          0xdddd121c
-#define ifcIDtYPEsTEPrECURSION_EPILOG              0xdddd121d
-#define ifcIDtYPEsTEPrECURSION_DONE                0xdddd121e
+#define ifcIDtYPEsTEPrECURSION_PROLOG              0xdddd1219
+#define ifcIDtYPEsTEPrECURSION_CALLpROLOG          0xdddd121a
+#define ifcIDtYPEsTEPrECURSION_CALLpUSH            0xdddd121b
+#define ifcIDtYPEsTEPrECURSION_CALL                0xdddd121c
+#define ifcIDtYPEsTEPrECURSION_CALLpOP             0xdddd121d
+#define ifcIDtYPEsTEPrECURSION_CALLePILOG          0xdddd121e
+#define ifcIDtYPEsTEPrECURSION_EPILOG              0xdddd121f
+#define ifcIDtYPEsTEPrECURSION_DONE                0xdddd1220
 /*3*/
-#define ifcIDtYPEsTEPrECURSION_min     0xdddd1217
-#define ifcIDtYPEsTEPrECURSION_max     0xdddd121e                                                               
+#define ifcIDtYPEsTEPrECURSION_min     0xdddd1219
+#define ifcIDtYPEsTEPrECURSION_max     0xdddd1220                                                               
 
 
 //
@@ -2724,11 +2607,11 @@ these "status codes" are returned by some MS Windows api's
 
 
 /*3*/
-#define IDeRRORsORTAc_STACKnEWLYeXHAUSTED     0xdddd121f
-#define IDeRRORsORTAc_STACKeXHAUSTED          0xdddd1220
+#define IDeRRORsORTAc_STACKnEWLYeXHAUSTED     0xdddd1221
+#define IDeRRORsORTAc_STACKeXHAUSTED          0xdddd1222
 /*3*/
-#define IDeRRORsORTAc_min     0xdddd121f
-#define IDeRRORsORTAc_max     0xdddd1220                                                               
+#define IDeRRORsORTAc_min     0xdddd1221
+#define IDeRRORsORTAc_max     0xdddd1222                                                               
 
 
 //
@@ -3303,23 +3186,23 @@ these "status codes" are returned by some MS Windows api's
 /*1*//*ifcEXITcODE*//*1*/
 
 /*3*/
-#define ifcEXITcODE_THREADaOK                                           0xdddd1221
-#define ifcEXITcODE_THREADiMPOTENT                                      0xdddd1222
-#define ifcEXITcODE_EXITpROCESStOOlOW                                   0xdddd1223
-#define ifcEXITcODE_EXITpROCESSaOK                                      0xdddd1224
-#define ifcEXITcODE_EXITpROCESSiMPOTENT                                 0xdddd1225
-#define ifcEXITcODE_EXITpROCESSsIGNAL                                   0xdddd1226
-#define ifcEXITcODE_EXITpROCESSeXCEPTION                                0xdddd1227
-#define ifcEXITcODE_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP             0xdddd1228
-#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOmE                    0xdddd1229
-#define ifcEXITcODE_EXITpROCESSdTtINSsOMETHINGgRABBED                   0xdddd122a
-#define ifcEXITcODE_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE              0xdddd122b
-#define ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED                         0xdddd122c
-#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOeLDER                 0xdddd122d
-#define ifcEXITcODE_EXITpROCESStOOhIGH                                  0xdddd122e
+#define ifcEXITcODE_THREADaOK                                           0xdddd1223
+#define ifcEXITcODE_THREADiMPOTENT                                      0xdddd1224
+#define ifcEXITcODE_EXITpROCESStOOlOW                                   0xdddd1225
+#define ifcEXITcODE_EXITpROCESSaOK                                      0xdddd1226
+#define ifcEXITcODE_EXITpROCESSiMPOTENT                                 0xdddd1227
+#define ifcEXITcODE_EXITpROCESSsIGNAL                                   0xdddd1228
+#define ifcEXITcODE_EXITpROCESSeXCEPTION                                0xdddd1229
+#define ifcEXITcODE_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP             0xdddd122a
+#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOmE                    0xdddd122b
+#define ifcEXITcODE_EXITpROCESSdTtINSsOMETHINGgRABBED                   0xdddd122c
+#define ifcEXITcODE_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE              0xdddd122d
+#define ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED                         0xdddd122e
+#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOeLDER                 0xdddd122f
+#define ifcEXITcODE_EXITpROCESStOOhIGH                                  0xdddd1230
 /*3*/
-#define ifcEXITcODE_min     0xdddd1221
-#define ifcEXITcODE_max     0xdddd122e                                                               
+#define ifcEXITcODE_min     0xdddd1223
+#define ifcEXITcODE_max     0xdddd1230                                                               
 
 
 //
@@ -3593,11 +3476,11 @@ all values that can be returned by GetThreadPriority() (Win32)
 /*1*//*ifcIDzIPPER*//*1*/
 
 /*3*/
-#define ifcIDzIPPER_PKZIPC          0xdddd122f
-#define ifcIDzIPPER_INFOZIP         0xdddd1230
+#define ifcIDzIPPER_PKZIPC          0xdddd1231
+#define ifcIDzIPPER_INFOZIP         0xdddd1232
 /*3*/
-#define ifcIDzIPPER_min     0xdddd122f
-#define ifcIDzIPPER_max     0xdddd1230                                                               
+#define ifcIDzIPPER_min     0xdddd1231
+#define ifcIDzIPPER_max     0xdddd1232                                                               
 
 
 //
@@ -4071,6 +3954,132 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*TASK123pART0nOeTsCRATCH(taskFP,flagsThirdModeP)*//*1*/
 
 //CODEsYNC: 0010055 0010056
+
+#define TASK123pART0nOeTsCRATCH(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                         \
+                                                                                                                                                                                                                                                                                                \
+    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                                                                           \
+        TINSL                                                                                                                                                                                                                                                                                   \
+        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                 \
+        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                          */                                                                                                                                               \
+        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                        */                                                                                                                                               \
+        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                      */                                                                                                                                               \
+        /*OStEXTA(  _ostoTmp , ((tin123S&)tin0P).postThreadName )                                                                                           */                                                                                                                                  \
+        /*OStEXTAK( _ostoTmp , "." )                                                                                                           */                                                                                                                                               \
+        /*OStEXTC(  _ostoTmp , ((tin123S&)tin0P).monitor.idThread , 0 )                                                                                     */                                                                                                                                  \
+        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
+        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
+        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */                                                                                                                                               \
+        /*OStEXTcLEAR( _ostoTmp )                                                                                                              */                                                                                                                                               \
+                                                                                                                                                                                                                                                                                                \
+        TELL( "TASK123pART0: workF+" )                                                                                                                                                                                                                                                          \
+        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                                \
+        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
+        {                                                                                                                                                                                                                                                                                       \
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
+            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
+            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
+            {                                                                                                                                                                                                                                                                                   \
+                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin123S IN POOL*/                                                                                                                               \
+        {                                                                                                                                                                                                                                                                                       \
+            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
+            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+        }                                                                                                                                                                                                                                                                                       \
+        else                                                                                                                                                                                                                                                                                    \
+        {                                                                                                                                                                                                                                                                                       \
+            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
+            TELL( "TASK123pART0: newing a tin123S in the working poolOld" )                                                                                                                                                                                                                     \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin123S( tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
+            if( pTin )                                                                                                                                                                                                                                                                          \
+            {                                                                                                                                                                                                                                                                                   \
+                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
+                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
+                TINSL                                                                                                                                                                                                                                                                           \
+                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
+        TELL( "TASK123pART0: after newing either a tin123S in the working poolOld" )                                                                                                                                                                                                            \
+        if( bTinOk )                                                                                                                                                                                                                                                                            \
+        {                                                                                                                                                                                                                                                                                       \
+            TINSL                                                                                                                                                                                                                                                                               \
+            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
+            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            TELL( "TASK123pART0: setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
+            ((tin123S&)tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
+            ((tin123S&)tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
+            ((tin123S&)tin0P).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tin0P ) ;                                                                                                                                                                                                  \
+            ((tin123S&)tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
+                                                                                                                                                                                                                                                                                                \
+            /*etRock.traceF( tin0P , T("TASK123pART0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                    \
+                                                                                                                                                                                                                                                                                                \
+            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
+            TELL( "TASK123pART0: setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+            TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
+              byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
+            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
+              etherC* pEtThread = new( 0 , tin0P , pbEther1 , sizeof pbEther1 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                   \
+            /*((tin123S&)tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                             \
+            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                   \
+            TELL( "TASK123pART0: after newing etThread" )                                                                                                                                                                                                                                       \
+            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
+              if( pEtThread /*&& ((tin123S&)tin0P).pEtScratch*/ )                                                                                                                                                                                                                               \
+            {                                                                                                                                                                                                                                                                                   \
+                  etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                                              \
+                  byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                           \
+                  ((tin123S&)tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin123S&)tin0P).pScoopEtThread  ) ;                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+                /*POPUP( TF1(((tin123S&)tin0P).monitor.idThread)+T(" ")+T(((tin123S&)tin0P).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                     \
+                                                                                                                                                                                                                                                                                                \
+                TELL( "TASK123pART0: final setup" )                                                                                                                                                                                                                                             \
+                  ((tin123S&)tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
+                                                                                                                                                                                                                                                                                                \
+                  signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                               \
+                  tin0P.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                            \
+                                                                                                                                                                                                                                                                                                \
+                {                                                                                                                                                                                                                                                                               \
+                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tin123S&)tin0P).osPid)+T(" ")+TF1(((tin123S&)tin0P).osTid)+T(" \"")+T(((tin123S&)tin0P).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/    \
+                    etThread.osTimeNowF( tin0P , ((tin123S&)tin0P).time1 , ((tin123S&)tin0P).time2 ) ;                                                                                                                                                                                          \
+                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
+                    {                                                                                                                                                                                                                                                                           \
+                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
+                        etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;                                         \
+                        etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
+                    }                                                                                                                                                                                                                                                                           \
+                      if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
+                    TELL( "TASK123pART0: entering application code" )                                                                                                                                                                                                                           \
+                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
+                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
+                    if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
+                    _IO_                                                                                                                                                                                                                                                                        \
+                    if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fa.TASK123pART0nOeTsCRATCH END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fb.TASKnOeTsCRATCH BEGIN
 
@@ -4102,7 +4111,7 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fb.TASKnOeTsCRATCH END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fc.DONEpART0nOeTsCRATCH BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fc.DONE0nOeTsCRATCH BEGIN
 
 
 //
@@ -4123,116 +4132,116 @@ it is illegal to refer to this symbol in the definition of an adam
 
 //INDENTATION SHOULD CORRESPOND TO THAT IN snip.001*.TASK123pART0
     
-#define DONEpART0nOeTsCRATCH                                                                                                                                                                                                                                               \
-                                                                                                                                                                                                                                                                       \
-                    /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                                                 \
-                                                                                                                                                                                                                                                                       \
-                    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/                                                                                                      \
-                                                                                                                                                                                                                                                                       \
-                    {                                                                                                                                                                                                                                                  \
-                        TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                      \
-                        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
-                        if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                          \
-                        ((tin123S&)tin0P).idPhase2 = 0 ;                                                                                                                                                                                                         \
-                        TELL( "DONEpART0: after returning from application code" ) ;                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                       \
-                        if( ((tin1S&)tin0P).pag1->cYieldHighWater )                                                                                                                                                                                            \
-                        {                                                                                                                                                                                                                                              \
-                            OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                                                          \
-                            OStEXTAK( ostoSay , "DONEpART0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                                               \
-                            OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idAdam , 0 ) ;                                                                                                                                                                           \
-                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
-                            OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                                  \
-                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                                             \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins1 , '0' ) ;                                                                                                                                                                              \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins2 , '0' ) ;                                                                                                                                                                              \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins3 , '0' ) ;                                                                                                                                                                              \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins4 , '0' ) ;                                                                                                                                                                              \
-                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                                \
-                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cOsHandles , '0' ) ;                                                                                                                                                                           \
-                            etThread.traceF( tin0P , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                                                                                                                              \
-                        }                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                       \
-                        if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                         \
-                        else                                                                                                                                                                                                                                           \
-                        {                                                                                                                                                                                                                                              \
-                            TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                       \
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;               \
-                                                                                                                                                                                                                                                                       \
-                            TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                                       \
-                            {                                                                                                                                                                                                                                          \
-                                sleepC s( tin0P , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                                        \
-                                while( ((tin123S&)tin0P).cKidThreads )                                                                                                                                                                                           \
-                                {                                                                                                                                                                                                                                      \
-                                    etherC::etRockIF( tin0P ).traceF( tin0P , T("DONEpART0 / napping a wink for my kids to end [((tin123S&)tin0P).cKidThreads]:    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;    \
-                                    ++ s ; thirdC::dosSleepRawIF( tin0P , 250 ) ;                                                                                                                                                                                   \
-                                }                                                                                                                                                                                                                                      \
-                            }                                                                                                                                                                                                                                          \
-                            TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                             \
-                        }                                                                                                                                                                                                                                              \
-                        if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                      \
-                        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                            \
-                    }                                                                                                                                                                                                                                                  \
-                }                                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                       \
-                tin0P.pSgnUtility = 0 ;                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                       \
-                {                                                                                                                                                                                                                                                      \
-                    TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                          \
-                    if( pEtThread ) /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/                                                                                                                                                                                 \
-                    {                                                                                                                                                                                                                                                  \
-                        if( psttThreadFile )                                                                                                                                                                                                                           \
-                        {                                                                                                                                                                                                                                              \
-                            TELL( "DONEpART0: deleting thread file" ) ;                                                                                                                                                                                                    \
-                            ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , psttThreadFile ) ;                                                                                                                                                                 \
-                            ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttThreadFile ) ;                                                                                                                                                                    \
-                        }                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                       \
-                        TELL( "DONEpART0: testing poolOld" ) ;                                                                                                                                                                                                             \
-                        ((tin123S&)tin0P).pEther = 0 ;                                                                                                                                                                                                           \
-                        TELL( "DONEpART0: deleting etThread (and tin0P)" ) ;                                                                                                                                                                                            \
-                        DELzOMBIE( ((tin123S&)tin0P).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                           \
-                        /*DELzOMBIE( ((tin123S&)tin0P).pEtScratch ) ;*/                                                                                                                                                                                          \
-                        if( *(countT*)&pEtThread )                                                                                                                                                                                                                     \
-                        {                                                                                                                                                                                                                                              \
-                            DELzOMBIE( pEtThread ) ; /* tin0P IS DESTROYED HERE */                                                                                                                                                                                  \
-                            TINSL                                                                                                                                                                                                                                      \
-                        }                                                                                                                                                                                                                                              \
-                    }                                                                                                                                                                                                                                                  \
-                }                                                                                                                                                                                                                                                      \
-            }                                                                                                                                                                                                                                                          \
-                                                                                                                                                                                                                                                                       \
-            {                                                                                                                                                                                                                                                          \
-                TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                              \
-                TELL( "DONEpART0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                                                 \
-                boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                                                                                                                          \
-                countT& cAllThreads = bOrphan                                                                                                                                                                                                                          \
-                    ? thirdC::os_cAllOrphanThreadsI_IF( tin0P )                                                                                                                                                                                                     \
-                    : thirdC::os_cAllKidThreadsI_IF( tin0P )                                                                                                                                                                                                        \
-                ;                                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                       \
-                if( pTaskP && F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                                                                                                                                                                                          \
-                {                                                                                                                                                                                                                                                      \
-                    THREADmODE5oFF( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                   \
-                }                                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                       \
-                boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                                              \
-                if( !bFake )                                                                                                                                                                                                                                           \
-                {                                                                                                                                                                                                                                                      \
-                    /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.                   */                                                                                                                                             \
-                    /* THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */                                                                                                                                             \
-                    DEL( pTaskP ) ;                                                                                                                                                                                                                                    \
-                }                                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                       \
-                TELL( "DONEpART0: i am outa here" )                                                                                                                                                                                                                        \
-                if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] = - 1 ;                                                                                    \
-                dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                                                       \
-            }                                                                                                                                                                                                                                                          \
-        }                                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                       \
+#define DONEpART0nOeTsCRATCH                                                                                                                                                                                                                            \
+                                                                                                                                                                                                                                                        \
+                    /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                                                                                                                                  \
+                                                                                                                                                                                                                                                        \
+                    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ; /*TO PREVENT LAME DUCK THREADS FROM ACCUMULATING AND CLOGGING SYS*/                                                                                          \
+                                                                                                                                                                                                                                                        \
+                    {                                                                                                                                                                                                                                   \
+                        TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                          \
+                        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                         \
+                        if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                       \
+                        ((tin123S&)tin0P).idPhase2 = 0 ;                                                                                                                                                                                                \
+                        TELL( "DONEpART0: after returning from application code" ) ;                                                                                                                                                                    \
+                                                                                                                                                                                                                                                        \
+                        if( ((tin1S&)tin0P).pag1->cYieldHighWater )                                                                                                                                                                                   \
+                        {                                                                                                                                                                                                                               \
+                            OStEXT(   ostoSay , TUCK << 2 ) ;                                                                                                                                                                                           \
+                            OStEXTAK( ostoSay , "DONEpART0     [idAdam,cYieldHighWater,cSpins1,cSpins2,cSpins3,cSpins4,cOsHandles]:    " ) ;                                                                                                            \
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idAdam , 0 ) ;                                                                                                                                                                  \
+                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->cYieldHighWater , 0 ) ;                                                                                                                                                         \
+                            OStEXTAK( ostoSay , "    " ) ;                                                                                                                                                                                              \
+                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins1 , '0' ) ;                                                                                                                                                                     \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                 \
+                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins2 , '0' ) ;                                                                                                                                                                     \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                 \
+                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins3 , '0' ) ;                                                                                                                                                                     \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                 \
+                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cSpins4 , '0' ) ;                                                                                                                                                                     \
+                            OStEXTAK( ostoSay , "." ) ;                                                                                                                                                                                                 \
+                            OStEXTC(  ostoSay , ((tin123S&)tin0P).cOsHandles , '0' ) ;                                                                                                                                                                  \
+                            etThread.traceF( tin0P , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;                                                                                                                                  \
+                        }                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                        \
+                        if( !pEtThread ) ; /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                             \
+                        else                                                                                                                                                                                                                            \
+                        {                                                                                                                                                                                                                               \
+                            TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                    \
+                            if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;            \
+                                                                                                                                                                                                                                                        \
+                            TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                    \
+                            {                                                                                                                                                                                                                           \
+                                sleepC s( tin0P , TAG( TAGiDnULL ) ) ; /* WILL BLAMMO IF ANYTHING IS GRABBED (THIS IS DESIRABLE BEHAVIOR) */                                                                                                            \
+                                while( ((tin123S&)tin0P).cKidThreads )                                                                                                                                                                                  \
+                                {                                                                                                                                                                                                                       \
+                                    etherC::etRockIF( tin0P ).traceF( tin0P , T("DONEpART0 / napping a wink for my kids to end [((tin123S&)tin0P).cKidThreads]:    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;   \
+                                    ++ s ; thirdC::dosSleepRawIF( tin0P , 250 ) ;                                                                                                                                                                       \
+                                }                                                                                                                                                                                                                       \
+                            }                                                                                                                                                                                                                           \
+                            TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                          \
+                        }                                                                                                                                                                                                                               \
+                        if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                   \
+                        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                         \
+                    }                                                                                                                                                                                                                                   \
+                }                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                        \
+                tin0P.pSgnUtility = 0 ;                                                                                                                                                                                                     \
+                                                                                                                                                                                                                                                        \
+                {                                                                                                                                                                                                                                       \
+                    TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                              \
+                    if( pEtThread ) /*THREADS THAT DELETE etThread EARLY: tmWindowsF*/                                                                                                                                                                  \
+                    {                                                                                                                                                                                                                                   \
+                        if( psttThreadFile )                                                                                                                                                                                                            \
+                        {                                                                                                                                                                                                                               \
+                            TELL( "DONEpART0: deleting thread file" ) ;                                                                                                                                                                                 \
+                            ((tin123S&)tin0P).pEtScratch->boxZapF( tin0P , psttThreadFile ) ;                                                                                                                                                           \
+                            ((tin123S&)tin0P).pEtScratch->delF( tin0P , psttThreadFile ) ;                                                                                                                                                              \
+                        }                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                        \
+                        TELL( "DONEpART0: testing poolOld" ) ;                                                                                                                                                                                          \
+                        ((tin123S&)tin0P).pEther = 0 ;                                                                                                                                                                                                  \
+                        TELL( "DONEpART0: deleting etThread (and tin0P)" ) ;                                                                                                                                                                            \
+                        DELzOMBIE( ((tin123S&)tin0P).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */                                                                                                                                                  \
+                        /*DELzOMBIE( ((tin123S&)tin0P).pEtScratch ) ;*/                                                                                                                                                                                 \
+                        if( *(countT*)&pEtThread )                                                                                                                                                                                                      \
+                        {                                                                                                                                                                                                                               \
+                            DELzOMBIE( pEtThread ) ; /* tin0P IS DESTROYED HERE */                                                                                                                                                                      \
+                            TINSL                                                                                                                                                                                                                       \
+                        }                                                                                                                                                                                                                               \
+                    }                                                                                                                                                                                                                                   \
+                }                                                                                                                                                                                                                                       \
+            }                                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                        \
+            {                                                                                                                                                                                                                                           \
+                TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                  \
+                TELL( "DONEpART0: deregistering myself from either cAllOrphanThreadsI or cAllKidThreadsI (my final act)" )                                                                                                                              \
+                boolT bOrphan = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ) : 0 ;                                                                                                                                                           \
+                countT& cAllThreads = bOrphan                                                                                                                                                                                                           \
+                    ? thirdC::os_cAllOrphanThreadsI_IF( tin0P )                                                                                                                                                                                         \
+                    : thirdC::os_cAllKidThreadsI_IF( tin0P )                                                                                                                                                                                            \
+                ;                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                        \
+                if( pTaskP && F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                                                                                                                                                                           \
+                {                                                                                                                                                                                                                                       \
+                    THREADmODE5oFF( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                    \
+                }                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                        \
+                boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                               \
+                if( !bFake )                                                                                                                                                                                                                            \
+                {                                                                                                                                                                                                                                       \
+                    /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.                   */                                                                                                                              \
+                    /* THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */                                                                                                                              \
+                    DEL( pTaskP ) ;                                                                                                                                                                                                                     \
+                }                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                        \
+                TELL( "DONEpART0: i am outa here" )                                                                                                                                                                                                     \
+                if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] = - 1 ;                                                                                 \
+                dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                                        \
+            }                                                                                                                                                                                                                                           \
+        }                                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                        \
         DONEpART1
 
 //
@@ -4242,7 +4251,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fc.DONEpART0nOeTsCRATCH END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fc.DONE0nOeTsCRATCH END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fd.DONEnOeTsCRATCH BEGIN
 
 
@@ -4264,35 +4273,35 @@ examples
 
 #ifdef __OS2__
 
-    #define DONEnOeTsCRATCH(taskFP)                                                                                                                                                                                 \
-                                                                                                                                                                                                                    \
-                        DONEpART0nOeTsCRATCH                                                                                                                                                                            \
-                                                                                                                                                                                                                    \
-        TASKpART0PROTO( taskFP )                                                                                                                                                                                        \
-        {                                                                                                                                                                                                           \
-            threadLocalStorage123F( ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                                     \
+    #define DONEnOeTsCRATCH(taskFP)                                                                                                                                                                         \
+                                                                                                                                                                                                            \
+                        DONEpART0nOeTsCRATCH                                                                                                                                                                \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            threadLocalStorage123F( ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                          \
         }
 
 #elif defined( __NT__ )
 
-    #define DONEnOeTsCRATCH(taskFP)                                                                                                                                                                                 \
-                                                                                                                                                                                                                    \
-                        DONEpART0nOeTsCRATCH                                                                                                                                                                            \
-                                                                                                                                                                                                                    \
-        TASKpART0PROTO( taskFP )                                                                                                                                                                                        \
-        {                                                                                                                                                                                                           \
-            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                                      \
-            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                                     \
-            /* ZE( countT , foo ) ;                          */                                                                                                                                                     \
-            /* ZE( countT , goo ) ;                          */                                                                                                                                                     \
-            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                                     \
-            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                                     \
-            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                                     \
-            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                                     \
-                                                                                                                                                                                                                    \
-            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;               \
-                                                                                                                                                                                                                    \
-            return c_threadTry1Outer123F( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                                      \
+    #define DONEnOeTsCRATCH(taskFP)                                                                                                                                                                         \
+                                                                                                                                                                                                            \
+                        DONEpART0nOeTsCRATCH                                                                                                                                                                \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                              \
+            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                             \
+            /* ZE( countT , foo ) ;                          */                                                                                                                                             \
+            /* ZE( countT , goo ) ;                          */                                                                                                                                             \
+            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                             \
+            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                             \
+            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                             \
+            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                             \
+                                                                                                                                                                                                            \
+            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;       \
+                                                                                                                                                                                                            \
+            return c_threadTry1Outer123F( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                           \
         }
 
 #endif
@@ -4307,696 +4316,6 @@ examples
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fd.DONEnOeTsCRATCH END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fe.TASK123pART0nOeTHERS BEGIN
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK123pART0nOeTsCRATCH(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fe.TASK123pART0nOeTHERS END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ff.TASK123nOeTHERS BEGIN
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-#define TASK1pART0nOeTHERS(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
-    {                                                                                                                                                                                                                                                                                           \
-        TINSL                                                                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                                                                                \
-        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
-                                                                                                                                                                                                                                                                                                \
-        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
-        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                         */                                                                                                                                              \
-        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
-        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
-        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
-        /*OStEXTcLEAR( _ostoTmp )                                                                                                               */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        TELL( "TASK1pART0:   workF+" )                                                                                                                                                                                                                                                          \
-        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
-        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
-        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
-                                                                                                                                                                                                                                                                                                \
-        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
-        {                                                                                                                                                                                                                                                                                       \
-            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
-            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
-            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
-            {                                                                                                                                                                                                                                                                                   \
-                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
-            }                                                                                                                                                                                                                                                                                   \
-        }                                                                                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                                                \
-        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin1S   IN POOL*/                                                                                                                               \
-        {                                                                                                                                                                                                                                                                                       \
-            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
-        }                                                                                                                                                                                                                                                                                       \
-        else                                                                                                                                                                                                                                                                                    \
-        {                                                                                                                                                                                                                                                                                       \
-            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
-            TELL( "TASK1pART0:   newing a tin1S   in the working poolOld" )                                                                                                                                                                                                                     \
-            tin0S* pTin = new( 0 , tin0P , LF ) tin1S(   tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad           , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
-            if( pTin )                                                                                                                                                                                                                                                                          \
-            {                                                                                                                                                                                                                                                                                   \
-                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
-                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
-                TINSL                                                                                                                                                                                                                                                                           \
-                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
-            }                                                                                                                                                                                                                                                                                   \
-        }                                                                                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                                                \
-        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
-        TELL( "TASK1pART0:   after newing either a tin1S   in the working poolOld" )                                                                                                                                                                                                            \
-        if( bTinOk )                                                                                                                                                                                                                                                                            \
-        {                                                                                                                                                                                                                                                                                       \
-            TINSL                                                                                                                                                                                                                                                                               \
-            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
-            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
-            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
-            TELL( "TASK1pART0:   setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
-            ((tin1S&  )tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
-            ((tin1S&  )tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-            ((tin1S&  )tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
-                                                                                                                                                                                                                                                                                                \
-            /*etRock.traceF( tin0P , T("TASK1pART0 [osTid]: ")+TF4(((tin1S&  )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK1pART0:   setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-            TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
-            /*byteT pbEther1[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
-            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
-            ZE( etherC* , pEtThread ) ;                                                                                                                                                                                                                                                         \
-            /*((tin123S&)tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                             \
-            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                   \
-            TELL( "TASK123pART0: after newing etThread" )                                                                                                                                                                                                                                       \
-            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
-            /*if( pEtThread   && ((tin123S&)tin0P).pEtScratch   )*/                                                                                                                                                                                                                             \
-            {                                                                                                                                                                                                                                                                                   \
-                /*etherC& etThread  = *pEtThread ;*/                                                                                                                                                                                                                                            \
-                /*byteT pbScoop[ sizeof( scoopC ) ] ;*/                                                                                                                                                                                                                                         \
-                /*((tin123S&)tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin123S&)tin0P).pScoopEtThread  ) ;*/                                                                                                                 \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-                TELL( "TASK1pART0: final setup" )                                                                                                                                                                                                                                               \
-                /*((tin123S&)tin0P).pEther = &etThread ;*/                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-                /*signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                                             \
-                /*tin0P.pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                                          \
-                                                                                                                                                                                                                                                                                                \
-                {                                                                                                                                                                                                                                                                               \
-                                                                                                                                                                                                                                                                                                \
-                    ether.osTimeNowF( tin0P , ((tin1S&)tin0P).time1 , ((tin1S&)tin0P).time2 ) ;                                                                                                                                                                                                 \
-                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
-                    {                                                                                                                                                                                                                                                                           \
-                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-                        ether.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                         \
-                    }                                                                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                                                                                \
-                    TELL( "TASK1pART0:   entering application code" )                                                                                                                                                                                                                           \
-                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
-                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
-                    if( ((tin1S&  )tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin1S&  )tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
-                    _IO_                                                                                                                                                                                                                                                                        \
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK12pART0(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-#define TASK12pART0nOeTHERS(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                             \
-                                                                                                                                                                                                                                                                                                \
-    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
-    {                                                                                                                                                                                                                                                                                           \
-        TINSL                                                                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                                                                                \
-        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
-                                                                                                                                                                                                                                                                                                \
-        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
-        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                         */                                                                                                                                              \
-        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
-        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
-        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
-        /*OStEXTcLEAR( _ostoTmp )                                                                                                               */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        TELL( "TASK12pART0:  workF+" )                                                                                                                                                                                                                                                          \
-        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
-        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
-        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
-                                                                                                                                                                                                                                                                                                \
-        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
-        {                                                                                                                                                                                                                                                                                       \
-            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
-            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
-            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
-            {                                                                                                                                                                                                                                                                                   \
-                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
-            }                                                                                                                                                                                                                                                                                   \
-        }                                                                                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                                                \
-        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin12S  IN POOL*/                                                                                                                               \
-        {                                                                                                                                                                                                                                                                                       \
-            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
-        }                                                                                                                                                                                                                                                                                       \
-        else                                                                                                                                                                                                                                                                                    \
-        {                                                                                                                                                                                                                                                                                       \
-            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
-            TELL( "TASK12pART0:  newing a tin12S  in the working poolOld" )                                                                                                                                                                                                                     \
-            tin0S* pTin = new( 0 , tin0P , LF ) tin12S(  tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad           , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
-            if( pTin )                                                                                                                                                                                                                                                                          \
-            {                                                                                                                                                                                                                                                                                   \
-                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
-                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
-                TINSL                                                                                                                                                                                                                                                                           \
-                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
-            }                                                                                                                                                                                                                                                                                   \
-        }                                                                                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                                                \
-        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
-        TELL( "TASK12pART0:  after newing either a tin12S  in the working poolOld" )                                                                                                                                                                                                            \
-        if( bTinOk )                                                                                                                                                                                                                                                                            \
-        {                                                                                                                                                                                                                                                                                       \
-            TINSL                                                                                                                                                                                                                                                                               \
-            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
-            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
-            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
-            TELL( "TASK12pART0:  setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
-            ((tin12S& )tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
-            ((tin12S& )tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-            ((tin12S& )tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
-                                                                                                                                                                                                                                                                                                \
-            /*etRock.traceF( tin0P , T("TASK12pART0 [osTid]: ")+TF4(((tin12S& )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
-                                                                                                                                                                                                                                                                                                \
-            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK12pART0:  setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-            TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
-            /*byteT pbEther1[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
-            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
-            ZE( etherC* , pEtThread ) ;                                                                                                                                                                                                                                                         \
-            /*((tin123S&)tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                             \
-            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                   \
-            TELL( "TASK123pART0: after newing etThread" )                                                                                                                                                                                                                                       \
-            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
-            /*if( pEtThread   && ((tin123S&)tin0P).pEtScratch   )*/                                                                                                                                                                                                                             \
-            {                                                                                                                                                                                                                                                                                   \
-                /*etherC& etThread  = *pEtThread ;*/                                                                                                                                                                                                                                            \
-                /*byteT pbScoop[ sizeof( scoopC ) ] ;*/                                                                                                                                                                                                                                         \
-                /*((tin123S&)tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin123S&)tin0P).pScoopEtThread  ) ;*/                                                                                                                 \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-                TELL( "TASK12pART0:  final setup" )                                                                                                                                                                                                                                             \
-                /*((tin123S&)tin0P).pEther = &etThread ;*/                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-                /*signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                                             \
-                /*tin0P.pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                                          \
-                                                                                                                                                                                                                                                                                                \
-                {                                                                                                                                                                                                                                                                               \
-                                                                                                                                                                                                                                                                                                \
-                    ether.osTimeNowF( tin0P , ((tin1S&)tin0P).time1 , ((tin1S&)tin0P).time2 ) ;                                                                                                                                                                                                 \
-                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
-                    {                                                                                                                                                                                                                                                                           \
-                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
-                        ether.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin12S& )tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)                                              ) ; ___( psttThreadFile ) ;                                            \
-                        ether.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                         \
-                    }                                                                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                                                                                \
-                    TELL( "TASK12pART0:  entering application code" )                                                                                                                                                                                                                           \
-                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
-                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
-                    if( ((tin12S& )tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin12S& )tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
-                    _IO_                                                                                                                                                                                                                                                                        \
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-#define TASK1pART0nOeTsCRATCH(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                                                                                \
-    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
-    {                                                                                                                                                                                                                                                                                           \
-        TINSL                                                                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                                                                                \
-        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
-                                                                                                                                                                                                                                                                                                \
-        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
-        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                         */                                                                                                                                              \
-        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
-        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
-        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
-        /*OStEXTcLEAR( _ostoTmp )                                                                                                               */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        TELL( "TASK1pART0:   workF+" )                                                                                                                                                                                                                                                          \
-        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
-        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
-        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
-                                                                                                                                                                                                                                                                                                \
-        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
-        {                                                                                                                                                                                                                                                                                       \
-            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
-            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
-            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
-            {                                                                                                                                                                                                                                                                                   \
-                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
-            }                                                                                                                                                                                                                                                                                   \
-        }                                                                                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                                                \
-        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin1S   IN POOL*/                                                                                                                               \
-        {                                                                                                                                                                                                                                                                                       \
-            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
-        }                                                                                                                                                                                                                                                                                       \
-        else                                                                                                                                                                                                                                                                                    \
-        {                                                                                                                                                                                                                                                                                       \
-            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
-            TELL( "TASK1pART0:   newing a tin1S   in the working poolOld" )                                                                                                                                                                                                                     \
-            tin0S* pTin = new( 0 , tin0P , LF ) tin1S(   tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad           , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
-            if( pTin )                                                                                                                                                                                                                                                                          \
-            {                                                                                                                                                                                                                                                                                   \
-                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
-                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
-                TINSL                                                                                                                                                                                                                                                                           \
-                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
-            }                                                                                                                                                                                                                                                                                   \
-        }                                                                                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                                                \
-        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
-        TELL( "TASK1pART0:   after newing either a tin1S   in the working poolOld" )                                                                                                                                                                                                            \
-        if( bTinOk )                                                                                                                                                                                                                                                                            \
-        {                                                                                                                                                                                                                                                                                       \
-            TINSL                                                                                                                                                                                                                                                                               \
-            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
-            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
-            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
-            TELL( "TASK1pART0:   setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
-            ((tin1S&  )tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
-            ((tin1S&  )tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-            ((tin1S&  )tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
-                                                                                                                                                                                                                                                                                                \
-            /*etRock.traceF( tin0P , T("TASK1pART0 [osTid]: ")+TF4(((tin1S&  )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK1pART0:   setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-            TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
-              byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
-            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
-              etherC* pEtThread = new( 0 , tin0P , pbEther1 , sizeof pbEther1 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                   \
-            /*((tin1S&  )tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                             \
-            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                   \
-            TELL( "TASK1pART0:   after newing etThread" )                                                                                                                                                                                                                                       \
-            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
-              if( pEtThread /*&& ((tin1S&  )tin0P).pEtScratch*/ )                                                                                                                                                                                                                               \
-            {                                                                                                                                                                                                                                                                                   \
-                  etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                                              \
-                  byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                           \
-                  ((tin1S&  )tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin1S&  )tin0P).pScoopEtThread  ) ;                                                                                                                   \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-                TELL( "TASK1pART0: final setup" )                                                                                                                                                                                                                                               \
-                  ((tin1S&  )tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
-                                                                                                                                                                                                                                                                                                \
-                /*signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                                             \
-                /*tin0P.pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                                          \
-                                                                                                                                                                                                                                                                                                \
-                {                                                                                                                                                                                                                                                                               \
-                                                                                                                                                                                                                                                                                                \
-                    etThread.osTimeNowF( tin0P , ((tin1S&)tin0P).time1 , ((tin1S&  )tin0P).time2 ) ;                                                                                                                                                                                            \
-                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
-                    {                                                                                                                                                                                                                                                                           \
-                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-                        etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
-                    }                                                                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                                                                                \
-                    TELL( "TASK1pART0:   entering application code" )                                                                                                                                                                                                                           \
-                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
-                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
-                    if( ((tin1S&  )tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin1S&  )tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
-                    _IO_                                                                                                                                                                                                                                                                        \
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK12pART0(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-#define TASK12pART0nOeTsCRATCH(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                          \
-                                                                                                                                                                                                                                                                                                \
-    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
-    {                                                                                                                                                                                                                                                                                           \
-        TINSL                                                                                                                                                                                                                                                                                   \
-                                                                                                                                                                                                                                                                                                \
-        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
-                                                                                                                                                                                                                                                                                                \
-        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
-        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                         */                                                                                                                                              \
-        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
-        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
-        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
-        /*OStEXTcLEAR( _ostoTmp )                                                                                                               */                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-        TELL( "TASK12pART0:  workF+" )                                                                                                                                                                                                                                                          \
-        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
-        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
-        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
-                                                                                                                                                                                                                                                                                                \
-        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
-        {                                                                                                                                                                                                                                                                                       \
-            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
-            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
-            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
-            {                                                                                                                                                                                                                                                                                   \
-                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
-            }                                                                                                                                                                                                                                                                                   \
-        }                                                                                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                                                \
-        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin12S  IN POOL*/                                                                                                                               \
-        {                                                                                                                                                                                                                                                                                       \
-            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
-        }                                                                                                                                                                                                                                                                                       \
-        else                                                                                                                                                                                                                                                                                    \
-        {                                                                                                                                                                                                                                                                                       \
-            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
-            TELL( "TASK12pART0:  newing a tin12S  in the working poolOld" )                                                                                                                                                                                                                     \
-            tin0S* pTin = new( 0 , tin0P , LF ) tin12S(  tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad           , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
-            if( pTin )                                                                                                                                                                                                                                                                          \
-            {                                                                                                                                                                                                                                                                                   \
-                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
-                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
-                TINSL                                                                                                                                                                                                                                                                           \
-                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
-            }                                                                                                                                                                                                                                                                                   \
-        }                                                                                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                                                \
-        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
-        TELL( "TASK12pART0:  after newing either a tin12S  in the working poolOld" )                                                                                                                                                                                                            \
-        if( bTinOk )                                                                                                                                                                                                                                                                            \
-        {                                                                                                                                                                                                                                                                                       \
-            TINSL                                                                                                                                                                                                                                                                               \
-            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
-            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
-            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
-            TELL( "TASK12pART0:  setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
-            ((tin12S& )tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
-            ((tin12S& )tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                                                                \
-            ((tin12S& )tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
-                                                                                                                                                                                                                                                                                                \
-            /*etRock.traceF( tin0P , T("TASK12pART0 [osTid]: ")+TF4(((tin12S& )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
-                                                                                                                                                                                                                                                                                                \
-            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK12pART0:  setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-            TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
-              byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
-            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
-              etherC* pEtThread = new( 0 , tin0P , pbEther1 , sizeof pbEther1 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                   \
-            /*((tin12S& )tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                             \
-            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                   \
-            TELL( "TASK12pART0:  after newing etThread" )                                                                                                                                                                                                                                       \
-            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
-              if( pEtThread /*&& ((tin12S& )tin0P).pEtScratch*/ )                                                                                                                                                                                                                               \
-            {                                                                                                                                                                                                                                                                                   \
-                  etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                                              \
-                  byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                           \
-                  ((tin12S& )tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin12S& )tin0P).pScoopEtThread  ) ;                                                                                                                   \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-                                                                                                                                                                                                                                                                                                \
-                TELL( "TASK12pART0:  final setup" )                                                                                                                                                                                                                                             \
-                  ((tin12S& )tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
-                                                                                                                                                                                                                                                                                                \
-                /*signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                                             \
-                /*tin0P.pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                                          \
-                                                                                                                                                                                                                                                                                                \
-                {                                                                                                                                                                                                                                                                               \
-                                                                                                                                                                                                                                                                                                \
-                    etThread.osTimeNowF( tin0P , ((tin12S&)tin0P).time1 , ((tin12S& )tin0P).time2 ) ;                                                                                                                                                                                           \
-                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
-                    {                                                                                                                                                                                                                                                                           \
-                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
-                        etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin12S& )tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)                                              ) ; ___( psttThreadFile ) ;                                         \
-                        etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
-                    }                                                                                                                                                                                                                                                                           \
-                                                                                                                                                                                                                                                                                                \
-                    TELL( "TASK12pART0:  entering application code" )                                                                                                                                                                                                                           \
-                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
-                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
-                    if( ((tin12S& )tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin12S& )tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
-                    _IO_                                                                                                                                                                                                                                                                        \
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -5139,147 +4458,8 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
-it is illegal to refer to this symbol in the definition of an adam
-*/
-/**/
-/*1*//*TASK123pART0nOeTsCRATCH(taskFP,flagsThirdModeP)*//*1*/
-
-//CODEsYNC: 0010055 0010056
-
-#define TASK123pART0nOeTsCRATCH(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                         \
-                                                                                                                                                                                                                                                                                                \
-    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
-    {                                                                                                                                                                                                                                                                                           \
-        TINSL                                                                                                                                                                                                                                                                                   \
-        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                 \
-        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
-                                                                                                                                                                                                                                                                                                \
-        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                          */                                                                                                                                               \
-        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                        */                                                                                                                                               \
-        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                      */                                                                                                                                               \
-        /*OStEXTA(  _ostoTmp , ((tin123S&)tin0P).postThreadName )                                                                                           */                                                                                                                                  \
-        /*OStEXTAK( _ostoTmp , "." )                                                                                                           */                                                                                                                                               \
-        /*OStEXTC(  _ostoTmp , ((tin123S&)tin0P).monitor.idThread , 0 )                                                                                     */                                                                                                                                  \
-        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
-        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
-        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */                                                                                                                                               \
-        /*OStEXTcLEAR( _ostoTmp )                                                                                                              */                                                                                                                                               \
-                                                                                                                                                                                                                                                                                                \
-        TELL( "TASK123pART0: workF+" )                                                                                                                                                                                                                                                          \
-        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
-        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
-        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
-                                                                                                                                                                                                                                                                                                \
-        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
-        {                                                                                                                                                                                                                                                                                       \
-            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
-            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
-            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
-            {                                                                                                                                                                                                                                                                                   \
-                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
-            }                                                                                                                                                                                                                                                                                   \
-        }                                                                                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                                                \
-        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
-        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin123S IN POOL*/                                                                                                                               \
-        {                                                                                                                                                                                                                                                                                       \
-            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
-        }                                                                                                                                                                                                                                                                                       \
-        else                                                                                                                                                                                                                                                                                    \
-        {                                                                                                                                                                                                                                                                                       \
-            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
-            TELL( "TASK123pART0: newing a tin123S in the working poolOld" )                                                                                                                                                                                                                     \
-            tin0S* pTin = new( 0 , tin0P , LF ) tin123S( tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad , #taskFP , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
-            if( pTin )                                                                                                                                                                                                                                                                          \
-            {                                                                                                                                                                                                                                                                                   \
-                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
-                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
-                TINSL                                                                                                                                                                                                                                                                           \
-                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
-            }                                                                                                                                                                                                                                                                                   \
-        }                                                                                                                                                                                                                                                                                       \
-                                                                                                                                                                                                                                                                                                \
-        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
-        TELL( "TASK123pART0: after newing either a tin123S in the working poolOld" )                                                                                                                                                                                                            \
-        if( bTinOk )                                                                                                                                                                                                                                                                            \
-        {                                                                                                                                                                                                                                                                                       \
-            TINSL                                                                                                                                                                                                                                                                               \
-            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
-            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
-            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
-            TELL( "TASK123pART0: setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
-            ((tin123S&)tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
-            ((tin123S&)tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
-            ((tin123S&)tin0P).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tin0P ) ;                                                                                                                                                                                                  \
-            ((tin123S&)tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
-                                                                                                                                                                                                                                                                                                \
-            /*etRock.traceF( tin0P , T("TASK123pART0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                    \
-                                                                                                                                                                                                                                                                                                \
-            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK123pART0: setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                      \
-                                                                                                                                                                                                                                                                                                \
-            TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
-              byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
-            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
-              etherC* pEtThread = new( 0 , tin0P , pbEther1 , sizeof pbEther1 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                   \
-            /*((tin123S&)tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                             \
-            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                   \
-            TELL( "TASK123pART0: after newing etThread" )                                                                                                                                                                                                                                       \
-            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
-              if( pEtThread /*&& ((tin123S&)tin0P).pEtScratch*/ )                                                                                                                                                                                                                               \
-            {                                                                                                                                                                                                                                                                                   \
-                  etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                                              \
-                  byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                           \
-                  ((tin123S&)tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin123S&)tin0P).pScoopEtThread  ) ;                                                                                                                   \
-                                                                                                                                                                                                                                                                                                \
-                /*POPUP( TF1(((tin123S&)tin0P).monitor.idThread)+T(" ")+T(((tin123S&)tin0P).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                     \
-                                                                                                                                                                                                                                                                                                \
-                TELL( "TASK123pART0: final setup" )                                                                                                                                                                                                                                             \
-                  ((tin123S&)tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
-                                                                                                                                                                                                                                                                                                \
-                  signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                               \
-                  tin0P.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                            \
-                                                                                                                                                                                                                                                                                                \
-                {                                                                                                                                                                                                                                                                               \
-                    /*etherC::ifcSayIF( T("ADAM CELL (idAdam,osPid): ")+TF1(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T(" ")+TF1(((tin123S&)tin0P).osPid)+T(" ")+TF1(((tin123S&)tin0P).osTid)+T(" \"")+T(((tin123S&)tin0P).postThreadName)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;*/    \
-                    etThread.osTimeNowF( tin0P , ((tin123S&)tin0P).time1 , ((tin123S&)tin0P).time2 ) ;                                                                                                                                                                                          \
-                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
-                    {                                                                                                                                                                                                                                                                           \
-                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
-                        etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;                                         \
-                        etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
-                    }                                                                                                                                                                                                                                                                           \
-                      if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
-                    TELL( "TASK123pART0: entering application code" )                                                                                                                                                                                                                           \
-                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
-                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
-                    if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
-                    _IO_                                                                                                                                                                                                                                                                        \
-                    if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005fe.TASK123pART0nOeTHERS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ff.TASK123nOeTHERS BEGIN
 
 
 //
@@ -5298,7 +4478,7 @@ examples
 /**/
 /*1*//*TASK123nOeTHERS(taskFP)*//*1*/
 
-#define TASK123nOeTHERS(taskFP) TASK123pART0nOeTHERS( taskFP , flTHIRDmODE_null )
+#define TASK123nOeTHERS(taskFP) TASK123pART0nOeTHERS( taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone123 ) ;
 
 
 //
@@ -5310,6 +4490,7 @@ examples
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ff.TASK123nOeTHERS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200600.DONEpART0nOeTHERS BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -5451,125 +4632,6 @@ it is illegal to refer to this symbol in the definition of an adam
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200600.DONEpART0nOeTHERS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200601.DONE123nOeTHERS BEGIN
 
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
-examples
- simplest
-  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
-*/
-/**/
-/*1*//*DONE1nOeTHERS(taskFP)*//*1*/
-
-#ifdef __OS2__
-
-    #define DONE1nOeTHERS(taskFP)                                                                                                                                                                           \
-                                                                                                                                                                                                            \
-                        DONEpART0nOeTHERS                                                                                                                                                                   \
-                                                                                                                                                                                                            \
-        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
-        {                                                                                                                                                                                                   \
-            threadLocalStorage1F(   ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                          \
-        }
-
-#elif defined( __NT__ )
-
-    #define DONE1nOeTHERS(taskFP)                                                                                                                                                                           \
-                                                                                                                                                                                                            \
-                        DONEpART0nOeTHERS                                                                                                                                                                   \
-                                                                                                                                                                                                            \
-        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
-        {                                                                                                                                                                                                   \
-            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                              \
-            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                             \
-            /* ZE( countT , foo ) ;                          */                                                                                                                                             \
-            /* ZE( countT , goo ) ;                          */                                                                                                                                             \
-            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                             \
-            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                             \
-            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                             \
-            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                             \
-                                                                                                                                                                                                            \
-            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;       \
-                                                                                                                                                                                                            \
-            return c_threadTry1Outer1F(   0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                           \
-        }
-
-#endif
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
-examples
- simplest
-  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
-*/
-/**/
-/*1*//*DONE12nOeTHERS(taskFP)*//*1*/
-
-#ifdef __OS2__
-
-    #define DONE12nOeTHERS(taskFP)                                                                                                                                                                          \
-                                                                                                                                                                                                            \
-                        DONEpART0nOeTHERS                                                                                                                                                                   \
-                                                                                                                                                                                                            \
-        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
-        {                                                                                                                                                                                                   \
-            threadLocalStorage12F(  ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                          \
-        }
-
-#elif defined( __NT__ )
-
-    #define DONE12nOeTHERS(taskFP)                                                                                                                                                                          \
-                                                                                                                                                                                                            \
-                        DONEpART0nOeTHERS                                                                                                                                                                   \
-                                                                                                                                                                                                            \
-        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
-        {                                                                                                                                                                                                   \
-            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                              \
-            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                             \
-            /* ZE( countT , foo ) ;                          */                                                                                                                                             \
-            /* ZE( countT , goo ) ;                          */                                                                                                                                             \
-            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                             \
-            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                             \
-            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                             \
-            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                             \
-                                                                                                                                                                                                            \
-            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;       \
-                                                                                                                                                                                                            \
-            return c_threadTry1Outer12F(  0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                           \
-        }
-
-#endif
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -5591,6 +4653,7 @@ examples
 
     #define DONE123nOeTHERS(taskFP)                                                                                                                                                                         \
                                                                                                                                                                                                             \
+                        if( _notUsedMatchingTaskDone123 ) ;                                                                                                                                                 \
                         DONEpART0nOeTHERS                                                                                                                                                                   \
                                                                                                                                                                                                             \
         TASKpART0PROTO( taskFP )                                                                                                                                                                            \
@@ -5602,6 +4665,7 @@ examples
 
     #define DONE123nOeTHERS(taskFP)                                                                                                                                                                         \
                                                                                                                                                                                                             \
+                        if( _notUsedMatchingTaskDone123 ) ;                                                                                                                                                 \
                         DONEpART0nOeTHERS                                                                                                                                                                   \
                                                                                                                                                                                                             \
         TASKpART0PROTO( taskFP )                                                                                                                                                                            \
@@ -5648,12 +4712,12 @@ examples
 /*1*//*ifcIDtYPEtIN*//*1*/
 
 /*3*/
-#define ifcIDtYPEtIN_123        0xdddd1231
-#define ifcIDtYPEtIN_12         0xdddd1232
-#define ifcIDtYPEtIN_1          0xdddd1233
+#define ifcIDtYPEtIN_123        0xdddd1233
+#define ifcIDtYPEtIN_12         0xdddd1234
+#define ifcIDtYPEtIN_1          0xdddd1235
 /*3*/
-#define ifcIDtYPEtIN_min     0xdddd1231
-#define ifcIDtYPEtIN_max     0xdddd1233
+#define ifcIDtYPEtIN_min     0xdddd1233
+#define ifcIDtYPEtIN_max     0xdddd1235
 
 
 //
@@ -5697,6 +4761,1292 @@ as of 20240929@1534, this is the maximum number of threads that can be launched 
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200603.CtHREADSmAX END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200604.TASK BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TASK(taskFP)*//*1*/
+
+#define TASK(taskFP) TASK123( taskFP )
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200604.TASK END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200605.DONE BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*DONE(taskFP)*//*1*/
+
+#define DONE(taskFP) DONE123( taskFP )
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200605.DONE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200606.DONE12 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
+*/
+/**/
+/*1*//*DONE12(taskFP)*//*1*/
+
+#ifdef __OS2__
+
+    #define DONE12(taskFP)                                                                                                                                                                                  \
+                                                                                                                                                                                                            \
+                        if( _notUsedMatchingTaskDone12 ) ;                                                                                                                                                  \
+                        DONEpART0                                                                                                                                                                           \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            threadLocalStorage12F(  ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                          \
+        }
+
+#elif defined( __NT__ )
+
+    #define DONE12(taskFP)                                                                                                                                                                                  \
+                                                                                                                                                                                                            \
+                        if( _notUsedMatchingTaskDone12 ) ;                                                                                                                                                  \
+                        DONEpART0                                                                                                                                                                           \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                              \
+            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                             \
+            /* ZE( countT , foo ) ;                          */                                                                                                                                             \
+            /* ZE( countT , goo ) ;                          */                                                                                                                                             \
+            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                             \
+            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                             \
+            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                             \
+            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                             \
+                                                                                                                                                                                                            \
+            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;       \
+                                                                                                                                                                                                            \
+            return c_threadTry1Outer12F(  0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                           \
+        }
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200606.DONE12 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200607.DONE1 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
+*/
+/**/
+/*1*//*DONE1(taskFP)*//*1*/
+
+#ifdef __OS2__
+
+    #define DONE1(taskFP)                                                                                                                                                                                   \
+                                                                                                                                                                                                            \
+                        if( _notUsedMatchingTaskDone1 ) ;                                                                                                                                                   \
+                        DONEpART0                                                                                                                                                                           \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            threadLocalStorage1F(   ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                          \
+        }
+
+#elif defined( __NT__ )
+
+    #define DONE1(taskFP)                                                                                                                                                                                   \
+                                                                                                                                                                                                            \
+                        if( _notUsedMatchingTaskDone1 ) ;                                                                                                                                                   \
+                        DONEpART0                                                                                                                                                                           \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                              \
+            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                             \
+            /* ZE( countT , foo ) ;                          */                                                                                                                                             \
+            /* ZE( countT , goo ) ;                          */                                                                                                                                             \
+            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                             \
+            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                             \
+            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                             \
+            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                             \
+                                                                                                                                                                                                            \
+            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;       \
+                                                                                                                                                                                                            \
+            return c_threadTry1Outer1F(   0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                           \
+        }
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200607.DONE1 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200608.TASK12 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TASK12(taskFP)*//*1*/
+
+#define TASK12(taskFP)  TASK12pART0(  taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone12  ) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200608.TASK12 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200609.TASK1 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*TASK1(taskFP)*//*1*/
+
+#define TASK1(taskFP)   TASK1pART0(   taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone1   ) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200609.TASK1 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060a.TASK12pART0 BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*TASK12pART0(taskFP,flagsThirdModeP)*//*1*/
+
+//CODEsYNC: 0010055 0010056
+
+#define TASK12pART0(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                                     \
+                                                                                                                                                                                                                                                                                                \
+    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                                                                           \
+        TINSL                                                                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                         */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
+        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
+        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
+        /*OStEXTcLEAR( _ostoTmp )                                                                                                               */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        TELL( "TASK12pART0:  workF+" )                                                                                                                                                                                                                                                          \
+        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                                \
+        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
+        {                                                                                                                                                                                                                                                                                       \
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
+            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
+            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
+            {                                                                                                                                                                                                                                                                                   \
+                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin12S  IN POOL*/                                                                                                                               \
+        {                                                                                                                                                                                                                                                                                       \
+            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
+            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+        }                                                                                                                                                                                                                                                                                       \
+        else                                                                                                                                                                                                                                                                                    \
+        {                                                                                                                                                                                                                                                                                       \
+            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
+            TELL( "TASK12pART0:  newing a tin12S  in the working poolOld" )                                                                                                                                                                                                                     \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin12S(  tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad           , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
+            if( pTin )                                                                                                                                                                                                                                                                          \
+            {                                                                                                                                                                                                                                                                                   \
+                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
+                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
+                TINSL                                                                                                                                                                                                                                                                           \
+                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
+        TELL( "TASK12pART0:  after newing either a tin12S  in the working poolOld" )                                                                                                                                                                                                            \
+        if( bTinOk )                                                                                                                                                                                                                                                                            \
+        {                                                                                                                                                                                                                                                                                       \
+            TINSL                                                                                                                                                                                                                                                                               \
+            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
+            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            TELL( "TASK12pART0:  setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
+            ((tin12S& )tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
+            ((tin12S& )tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+            ((tin12S& )tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
+                                                                                                                                                                                                                                                                                                \
+            /*etRock.traceF( tin0P , T("TASK12pART0 [osTid]: ")+TF4(((tin12S& )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
+                                                                                                                                                                                                                                                                                                \
+            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
+            TELL( "TASK12pART0:  setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+            TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
+              byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
+              byteT pbEther2[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
+              etherC* pEtThread = new( 0 , tin0P , pbEther1 , sizeof pbEther1 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                   \
+              ((tin12S& )tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;                                                                                                                               \
+              TESTsCRATCH ;                                                                                                                                                                                                                                                                     \
+            TELL( "TASK12pART0:  after newing etThread" )                                                                                                                                                                                                                                       \
+            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
+              if( pEtThread   && ((tin12S& )tin0P).pEtScratch   )                                                                                                                                                                                                                               \
+            {                                                                                                                                                                                                                                                                                   \
+                  etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                                              \
+                  byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                           \
+                  ((tin12S& )tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin12S& )tin0P).pScoopEtThread  ) ;                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                TELL( "TASK12pART0:  final setup" )                                                                                                                                                                                                                                             \
+                  ((tin12S& )tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
+                                                                                                                                                                                                                                                                                                \
+                  signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                               \
+                  tin0P.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                            \
+                                                                                                                                                                                                                                                                                                \
+                {                                                                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                                                                \
+                    etThread.osTimeNowF( tin0P , ((tin12S&)tin0P).time1 , ((tin12S& )tin0P).time2 ) ;                                                                                                                                                                                           \
+                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
+                    {                                                                                                                                                                                                                                                                           \
+                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
+                        etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin12S& )tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)                                              ) ; ___( psttThreadFile ) ;                                         \
+                        etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
+                    }                                                                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                                                \
+                    TELL( "TASK12pART0:  entering application code" )                                                                                                                                                                                                                           \
+                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
+                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
+                    if( ((tin12S& )tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin12S& )tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
+                    _IO_                                                                                                                                                                                                                                                                        \
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060a.TASK12pART0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060b.TASK1pART0 BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
+
+//CODEsYNC: 0010055 0010056
+
+#define TASK1pART0(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                                                                           \
+        TINSL                                                                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                         */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
+        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
+        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
+        /*OStEXTcLEAR( _ostoTmp )                                                                                                               */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        TELL( "TASK1pART0:   workF+" )                                                                                                                                                                                                                                                          \
+        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                                \
+        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
+        {                                                                                                                                                                                                                                                                                       \
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
+            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
+            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
+            {                                                                                                                                                                                                                                                                                   \
+                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin1S   IN POOL*/                                                                                                                               \
+        {                                                                                                                                                                                                                                                                                       \
+            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
+            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+        }                                                                                                                                                                                                                                                                                       \
+        else                                                                                                                                                                                                                                                                                    \
+        {                                                                                                                                                                                                                                                                                       \
+            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
+            TELL( "TASK1pART0:   newing a tin1S   in the working poolOld" )                                                                                                                                                                                                                     \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin1S(   tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad           , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
+            if( pTin )                                                                                                                                                                                                                                                                          \
+            {                                                                                                                                                                                                                                                                                   \
+                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
+                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
+                TINSL                                                                                                                                                                                                                                                                           \
+                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
+        TELL( "TASK1pART0:   after newing either a tin1S   in the working poolOld" )                                                                                                                                                                                                            \
+        if( bTinOk )                                                                                                                                                                                                                                                                            \
+        {                                                                                                                                                                                                                                                                                       \
+            TINSL                                                                                                                                                                                                                                                                               \
+            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
+            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            TELL( "TASK1pART0:   setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
+            ((tin1S&  )tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
+            ((tin1S&  )tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+            ((tin1S&  )tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
+                                                                                                                                                                                                                                                                                                \
+            /*etRock.traceF( tin0P , T("TASK1pART0 [osTid]: ")+TF4(((tin1S&  )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
+            TELL( "TASK1pART0:   setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+            TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
+              byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
+              byteT pbEther2[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
+              etherC* pEtThread = new( 0 , tin0P , pbEther1 , sizeof pbEther1 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                   \
+              ((tin1S&  )tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;                                                                                                                               \
+              TESTsCRATCH ;                                                                                                                                                                                                                                                                     \
+            TELL( "TASK1pART0:   after newing etThread" )                                                                                                                                                                                                                                       \
+            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
+              if( pEtThread   && ((tin1S&  )tin0P).pEtScratch   )                                                                                                                                                                                                                               \
+            {                                                                                                                                                                                                                                                                                   \
+                  etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                                              \
+                  byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                           \
+                  ((tin1S&  )tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin1S&  )tin0P).pScoopEtThread  ) ;                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                TELL( "TASK1pART0: final setup" )                                                                                                                                                                                                                                               \
+                  ((tin1S&  )tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
+                                                                                                                                                                                                                                                                                                \
+                  signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                               \
+                  tin0P.pSgnUtility = &_sgnUtility ;                                                                                                                                                                                                                                            \
+                                                                                                                                                                                                                                                                                                \
+                {                                                                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                                                                \
+                    etThread.osTimeNowF( tin0P , ((tin1S&)tin0P).time1 , ((tin1S&  )tin0P).time2 ) ;                                                                                                                                                                                            \
+                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
+                    {                                                                                                                                                                                                                                                                           \
+                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                        etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
+                    }                                                                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                                                \
+                    TELL( "TASK1pART0:   entering application code" )                                                                                                                                                                                                                           \
+                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
+                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
+                    if( ((tin1S&  )tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin1S&  )tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
+                    _IO_                                                                                                                                                                                                                                                                        \
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060b.TASK1pART0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060c.TASK12pART0nOeTsCRATCH BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*TASK12pART0(taskFP,flagsThirdModeP)*//*1*/
+
+//CODEsYNC: 0010055 0010056
+
+#define TASK12pART0nOeTsCRATCH(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                          \
+                                                                                                                                                                                                                                                                                                \
+    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                                                                           \
+        TINSL                                                                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                         */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
+        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
+        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
+        /*OStEXTcLEAR( _ostoTmp )                                                                                                               */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        TELL( "TASK12pART0:  workF+" )                                                                                                                                                                                                                                                          \
+        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                                \
+        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
+        {                                                                                                                                                                                                                                                                                       \
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
+            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
+            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
+            {                                                                                                                                                                                                                                                                                   \
+                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin12S  IN POOL*/                                                                                                                               \
+        {                                                                                                                                                                                                                                                                                       \
+            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
+            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+        }                                                                                                                                                                                                                                                                                       \
+        else                                                                                                                                                                                                                                                                                    \
+        {                                                                                                                                                                                                                                                                                       \
+            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
+            TELL( "TASK12pART0:  newing a tin12S  in the working poolOld" )                                                                                                                                                                                                                     \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin12S(  tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad           , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
+            if( pTin )                                                                                                                                                                                                                                                                          \
+            {                                                                                                                                                                                                                                                                                   \
+                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
+                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
+                TINSL                                                                                                                                                                                                                                                                           \
+                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
+        TELL( "TASK12pART0:  after newing either a tin12S  in the working poolOld" )                                                                                                                                                                                                            \
+        if( bTinOk )                                                                                                                                                                                                                                                                            \
+        {                                                                                                                                                                                                                                                                                       \
+            TINSL                                                                                                                                                                                                                                                                               \
+            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
+            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            TELL( "TASK12pART0:  setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
+            ((tin12S& )tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
+            ((tin12S& )tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+            ((tin12S& )tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
+                                                                                                                                                                                                                                                                                                \
+            /*etRock.traceF( tin0P , T("TASK12pART0 [osTid]: ")+TF4(((tin12S& )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
+                                                                                                                                                                                                                                                                                                \
+            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
+            TELL( "TASK12pART0:  setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+            TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
+              byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
+            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
+              etherC* pEtThread = new( 0 , tin0P , pbEther1 , sizeof pbEther1 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                   \
+            /*((tin12S& )tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                             \
+            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                   \
+            TELL( "TASK12pART0:  after newing etThread" )                                                                                                                                                                                                                                       \
+            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
+              if( pEtThread /*&& ((tin12S& )tin0P).pEtScratch*/ )                                                                                                                                                                                                                               \
+            {                                                                                                                                                                                                                                                                                   \
+                  etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                                              \
+                  byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                           \
+                  ((tin12S& )tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin12S& )tin0P).pScoopEtThread  ) ;                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                TELL( "TASK12pART0:  final setup" )                                                                                                                                                                                                                                             \
+                  ((tin12S& )tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
+                                                                                                                                                                                                                                                                                                \
+                /*signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                                             \
+                /*tin0P.pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                                          \
+                                                                                                                                                                                                                                                                                                \
+                {                                                                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                                                                \
+                    etThread.osTimeNowF( tin0P , ((tin12S&)tin0P).time1 , ((tin12S& )tin0P).time2 ) ;                                                                                                                                                                                           \
+                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
+                    {                                                                                                                                                                                                                                                                           \
+                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
+                        etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin12S& )tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)                                              ) ; ___( psttThreadFile ) ;                                         \
+                        etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
+                    }                                                                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                                                \
+                    TELL( "TASK12pART0:  entering application code" )                                                                                                                                                                                                                           \
+                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
+                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
+                    if( ((tin12S& )tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin12S& )tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
+                    _IO_                                                                                                                                                                                                                                                                        \
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060c.TASK12pART0nOeTsCRATCH END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060d.TASK1pART0nOeTsCRATCH BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
+
+//CODEsYNC: 0010055 0010056
+
+#define TASK1pART0nOeTsCRATCH(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                                                \
+    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                                                                           \
+        TINSL                                                                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                         */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
+        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
+        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
+        /*OStEXTcLEAR( _ostoTmp )                                                                                                               */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        TELL( "TASK1pART0:   workF+" )                                                                                                                                                                                                                                                          \
+        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                                \
+        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
+        {                                                                                                                                                                                                                                                                                       \
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
+            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
+            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
+            {                                                                                                                                                                                                                                                                                   \
+                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin1S   IN POOL*/                                                                                                                               \
+        {                                                                                                                                                                                                                                                                                       \
+            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
+            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+        }                                                                                                                                                                                                                                                                                       \
+        else                                                                                                                                                                                                                                                                                    \
+        {                                                                                                                                                                                                                                                                                       \
+            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
+            TELL( "TASK1pART0:   newing a tin1S   in the working poolOld" )                                                                                                                                                                                                                     \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin1S(   tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad           , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
+            if( pTin )                                                                                                                                                                                                                                                                          \
+            {                                                                                                                                                                                                                                                                                   \
+                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
+                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
+                TINSL                                                                                                                                                                                                                                                                           \
+                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
+        TELL( "TASK1pART0:   after newing either a tin1S   in the working poolOld" )                                                                                                                                                                                                            \
+        if( bTinOk )                                                                                                                                                                                                                                                                            \
+        {                                                                                                                                                                                                                                                                                       \
+            TINSL                                                                                                                                                                                                                                                                               \
+            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
+            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            TELL( "TASK1pART0:   setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
+            ((tin1S&  )tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
+            ((tin1S&  )tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+            ((tin1S&  )tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
+                                                                                                                                                                                                                                                                                                \
+            /*etRock.traceF( tin0P , T("TASK1pART0 [osTid]: ")+TF4(((tin1S&  )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
+            TELL( "TASK1pART0:   setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+            TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
+              byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
+            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
+              etherC* pEtThread = new( 0 , tin0P , pbEther1 , sizeof pbEther1 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_TINoWNER | flagsThirdModeP ) ;                                                                                                                                   \
+            /*((tin1S&  )tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                             \
+            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                   \
+            TELL( "TASK1pART0:   after newing etThread" )                                                                                                                                                                                                                                       \
+            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
+              if( pEtThread /*&& ((tin1S&  )tin0P).pEtScratch*/ )                                                                                                                                                                                                                               \
+            {                                                                                                                                                                                                                                                                                   \
+                  etherC& etThread  = *pEtThread ;                                                                                                                                                                                                                                              \
+                  byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                           \
+                  ((tin1S&  )tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin1S&  )tin0P).pScoopEtThread  ) ;                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                TELL( "TASK1pART0: final setup" )                                                                                                                                                                                                                                               \
+                  ((tin1S&  )tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
+                                                                                                                                                                                                                                                                                                \
+                /*signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                                             \
+                /*tin0P.pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                                          \
+                                                                                                                                                                                                                                                                                                \
+                {                                                                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                                                                \
+                    etThread.osTimeNowF( tin0P , ((tin1S&)tin0P).time1 , ((tin1S&  )tin0P).time2 ) ;                                                                                                                                                                                            \
+                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
+                    {                                                                                                                                                                                                                                                                           \
+                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                        etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
+                    }                                                                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                                                \
+                    TELL( "TASK1pART0:   entering application code" )                                                                                                                                                                                                                           \
+                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
+                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
+                    if( ((tin1S&  )tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin1S&  )tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
+                    _IO_                                                                                                                                                                                                                                                                        \
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060d.TASK1pART0nOeTsCRATCH END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060e.TASK12pART0nOeTHERS BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*TASK12pART0(taskFP,flagsThirdModeP)*//*1*/
+
+//CODEsYNC: 0010055 0010056
+
+#define TASK12pART0nOeTHERS(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                             \
+                                                                                                                                                                                                                                                                                                \
+    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                                                                           \
+        TINSL                                                                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                         */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
+        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
+        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
+        /*OStEXTcLEAR( _ostoTmp )                                                                                                               */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        TELL( "TASK12pART0:  workF+" )                                                                                                                                                                                                                                                          \
+        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                                \
+        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
+        {                                                                                                                                                                                                                                                                                       \
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
+            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
+            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
+            {                                                                                                                                                                                                                                                                                   \
+                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin12S  IN POOL*/                                                                                                                               \
+        {                                                                                                                                                                                                                                                                                       \
+            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
+            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+        }                                                                                                                                                                                                                                                                                       \
+        else                                                                                                                                                                                                                                                                                    \
+        {                                                                                                                                                                                                                                                                                       \
+            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
+            TELL( "TASK12pART0:  newing a tin12S  in the working poolOld" )                                                                                                                                                                                                                     \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin12S(  tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad           , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
+            if( pTin )                                                                                                                                                                                                                                                                          \
+            {                                                                                                                                                                                                                                                                                   \
+                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
+                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
+                TINSL                                                                                                                                                                                                                                                                           \
+                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
+        TELL( "TASK12pART0:  after newing either a tin12S  in the working poolOld" )                                                                                                                                                                                                            \
+        if( bTinOk )                                                                                                                                                                                                                                                                            \
+        {                                                                                                                                                                                                                                                                                       \
+            TINSL                                                                                                                                                                                                                                                                               \
+            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
+            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            TELL( "TASK12pART0:  setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
+            ((tin12S& )tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
+            ((tin12S& )tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+            ((tin12S& )tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
+                                                                                                                                                                                                                                                                                                \
+            /*etRock.traceF( tin0P , T("TASK12pART0 [osTid]: ")+TF4(((tin12S& )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
+                                                                                                                                                                                                                                                                                                \
+            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
+            TELL( "TASK12pART0:  setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+            TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
+            /*byteT pbEther1[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
+            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
+            ZE( etherC* , pEtThread ) ;                                                                                                                                                                                                                                                         \
+            /*((tin123S&)tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                             \
+            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                   \
+            TELL( "TASK123pART0: after newing etThread" )                                                                                                                                                                                                                                       \
+            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
+            /*if( pEtThread   && ((tin123S&)tin0P).pEtScratch   )*/                                                                                                                                                                                                                             \
+            {                                                                                                                                                                                                                                                                                   \
+                /*etherC& etThread  = *pEtThread ;*/                                                                                                                                                                                                                                            \
+                /*byteT pbScoop[ sizeof( scoopC ) ] ;*/                                                                                                                                                                                                                                         \
+                /*((tin123S&)tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin123S&)tin0P).pScoopEtThread  ) ;*/                                                                                                                 \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                TELL( "TASK12pART0:  final setup" )                                                                                                                                                                                                                                             \
+                /*((tin123S&)tin0P).pEther = &etThread ;*/                                                                                                                                                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                /*signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                                             \
+                /*tin0P.pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                                          \
+                                                                                                                                                                                                                                                                                                \
+                {                                                                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                                                                \
+                    ether.osTimeNowF( tin0P , ((tin1S&)tin0P).time1 , ((tin1S&)tin0P).time2 ) ;                                                                                                                                                                                                 \
+                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
+                    {                                                                                                                                                                                                                                                                           \
+                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
+                        ether.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin12S& )tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)                                              ) ; ___( psttThreadFile ) ;                                            \
+                        ether.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                         \
+                    }                                                                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                                                \
+                    TELL( "TASK12pART0:  entering application code" )                                                                                                                                                                                                                           \
+                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
+                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
+                    if( ((tin12S& )tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin12S& )tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
+                    _IO_                                                                                                                                                                                                                                                                        \
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060e.TASK12pART0nOeTHERS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060f.TASK1pART0nOeTHERS BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000023.1.0.html\"\>definition\</A\>
+it is illegal to refer to this symbol in the definition of an adam
+*/
+/**/
+/*1*//*TASK1pART0(taskFP,flagsThirdModeP)*//*1*/
+
+//CODEsYNC: 0010055 0010056
+
+#define TASK1pART0nOeTHERS(taskFP,flagsThirdModeP)                                                                                                                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+    countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                                                                           \
+        TINSL                                                                                                                                                                                                                                                                                   \
+                                                                                                                                                                                                                                                                                                \
+        _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "!ifc" )                                                                                                         */                                                                                                                                              \
+        /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
+        /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
+        /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
+        /*OStEXTcLEAR( _ostoTmp )                                                                                                               */                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+        TELL( "TASK1pART0:   workF+" )                                                                                                                                                                                                                                                          \
+        taskS* pTaskP = (taskS*)argP ;                                                                                                                                                                                                                                                          \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)argP , #taskFP , "_workF: argP"      ) ;                                                                                                                                                                                                    \
+        thirdC::osTraceWrongNodeIF( tin0P , (byteT*)&pTaskP , #taskFP , "_workF: pTaskP" ) ;                                                                                                                                                                                                    \
+                                                                                                                                                                                                                                                                                                \
+        if( pTaskP->pcAlive )   /* ALLOWS THE LAUNCHING THREAD TO LAUNCH MANY THREADS, WAIT FOR ALL THREAD STACKS TO BE ALLOCATED, AND THEN SAY "GO" TO HAVE THEM ALL PROCEED, IN ORDER TO REDUCE FRAGMENTATION OF ADDRESS SPACE */                                                             \
+        {                                                                                                                                                                                                                                                                                       \
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                                                                                                                                              \
+            inc02AM( *pTaskP->pcAlive ) ;                                                                                                                                                                                                                                                       \
+            while( *pTaskP->pcAlive )                                                                                                                                                                                                                                                           \
+            {                                                                                                                                                                                                                                                                                   \
+                ++ s ; thirdC::dosSleepIF( tin0P , TOCK >> 3 ) ;                                                                                                                                                                                                                                \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        ZE( boolT , bTinOk ) ;                                                                                                                                                                                                                                                                  \
+        if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin1S   IN POOL*/                                                                                                                               \
+        {                                                                                                                                                                                                                                                                                       \
+            bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
+            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+        }                                                                                                                                                                                                                                                                                       \
+        else                                                                                                                                                                                                                                                                                    \
+        {                                                                                                                                                                                                                                                                                       \
+            tin0S* const pTin0Dad = F(pTaskP->flags) & flTHREADlAUNCH_ORPHAN ? 0 : pTaskP->pTin0Dad ;                                                                                                                                                                                           \
+            TELL( "TASK1pART0:   newing a tin1S   in the working poolOld" )                                                                                                                                                                                                                     \
+            tin0S* pTin = new( 0 , tin0P , LF ) tin1S(   tin0P , TAG( TAGiDnULL ) , ebpAM() , pTaskP->idThread , pTin0Dad           , F(pTaskP->flags) & flTHREADlAUNCH_INHERITjOTrEGISTRATIONS ? flTINs_INHERITjOTrEGISTRATIONS : flTINs_null , ifcIDtINnAMED_tinInPool ) ;                    \
+            if( pTin )                                                                                                                                                                                                                                                                          \
+            {                                                                                                                                                                                                                                                                                   \
+                bTinOk = 1 ;                                                                                                                                                                                                                                                                    \
+                /*pTinF() = pTin ;*/                                                                                                                                                                                                                                                            \
+                TINSL                                                                                                                                                                                                                                                                           \
+                ___( pTin ) ;                                                                                                                                                                                                                                                                   \
+            }                                                                                                                                                                                                                                                                                   \
+        }                                                                                                                                                                                                                                                                                       \
+                                                                                                                                                                                                                                                                                                \
+        /* AFTER THIS LINE, DO NOT CONSTRUCT ANY OBJECTS THAT HAVE DESTRUCTORS (BECAUSE DECREMENTING cAllKidThreadsI cAllOrphanThreadsI MUST BE THE VERY LAST THING THAT THIS THREAD DOES) */                                                                                                   \
+        TELL( "TASK1pART0:   after newing either a tin1S   in the working poolOld" )                                                                                                                                                                                                            \
+        if( bTinOk )                                                                                                                                                                                                                                                                            \
+        {                                                                                                                                                                                                                                                                                       \
+            TINSL                                                                                                                                                                                                                                                                               \
+            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)taskFP##_workF , #taskFP , "_workF" ) ;                                                                                                                                                                                                 \
+            etherC& ether = etherC::etPrimeIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                                                                                                                                        \
+            TELL( "TASK1pART0:   setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
+            ((tin1S&  )tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
+            ((tin1S&  )tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
+                                                                                                                                                                                                                                                                                                \
+            ((tin1S&  )tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
+                                                                                                                                                                                                                                                                                                \
+            /*etRock.traceF( tin0P , T("TASK1pART0 [osTid]: ")+TF4(((tin1S&  )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+            /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
+            TELL( "TASK1pART0:   setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+            TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
+            /*byteT pbEther1[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
+            /*byteT pbEther2[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
+            ZE( etherC* , pEtThread ) ;                                                                                                                                                                                                                                                         \
+            /*((tin123S&)tin0P).pEtScratch   = new( 0 , tin0P , pbEther2 , sizeof pbEther2 ) etherC( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ;*/                                                                                                                             \
+            /*TESTsCRATCH ;*/                                                                                                                                                                                                                                                                   \
+            TELL( "TASK123pART0: after newing etThread" )                                                                                                                                                                                                                                       \
+            ZE( strokeS* , psttThreadFile ) ;                                                                                                                                                                                                                                                   \
+            /*if( pEtThread   && ((tin123S&)tin0P).pEtScratch   )*/                                                                                                                                                                                                                             \
+            {                                                                                                                                                                                                                                                                                   \
+                /*etherC& etThread  = *pEtThread ;*/                                                                                                                                                                                                                                            \
+                /*byteT pbScoop[ sizeof( scoopC ) ] ;*/                                                                                                                                                                                                                                         \
+                /*((tin123S&)tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin123S&)tin0P).pScoopEtThread  ) ;*/                                                                                                                 \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                                                                                                                                                                                                                                                                                                \
+                TELL( "TASK1pART0: final setup" )                                                                                                                                                                                                                                               \
+                /*((tin123S&)tin0P).pEther = &etThread ;*/                                                                                                                                                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                /*signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;*/                                                                                                                                                                                                                             \
+                /*tin0P.pSgnUtility = &_sgnUtility ;*/                                                                                                                                                                                                                                          \
+                                                                                                                                                                                                                                                                                                \
+                {                                                                                                                                                                                                                                                                               \
+                                                                                                                                                                                                                                                                                                \
+                    ether.osTimeNowF( tin0P , ((tin1S&)tin0P).time1 , ((tin1S&)tin0P).time2 ) ;                                                                                                                                                                                                 \
+                    if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
+                    {                                                                                                                                                                                                                                                                           \
+                        TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
+                                                                                                                                                                                                                                                                                                \
+                        ether.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                         \
+                    }                                                                                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                                                                                \
+                    TELL( "TASK1pART0:   entering application code" )                                                                                                                                                                                                                           \
+                    /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
+                    /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
+                    if( ((tin1S&  )tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin1S&  )tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
+                    _IO_                                                                                                                                                                                                                                                                        \
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120060f.TASK1pART0nOeTHERS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200610.TASK12nOeTHERS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000025.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.a500104.1.1.0.html\"\>a500104:  WAKEsHOW( "example.simplest.snip.11000025.TASK" )\</A\>
+*/
+/**/
+/*1*//*TASK12nOeTHERS(taskFP)*//*1*/
+
+#define TASK12nOeTHERS(taskFP)  TASK12pART0nOeTHERS(  taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone12 ) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200610.TASK12nOeTHERS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200611.TASK1nOeTHERS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000025.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.a500104.1.1.0.html\"\>a500104:  WAKEsHOW( "example.simplest.snip.11000025.TASK" )\</A\>
+*/
+/**/
+/*1*//*TASK1nOeTHERS(taskFP)*//*1*/
+
+#define TASK1nOeTHERS(taskFP)   TASK1pART0nOeTHERS(   taskFP , flTHIRDmODE_null ) ZE( countT , _notUsedMatchingTaskDone1 ) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200611.TASK1nOeTHERS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200612.DONE12nOeTHERS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
+*/
+/**/
+/*1*//*DONE12nOeTHERS(taskFP)*//*1*/
+
+#ifdef __OS2__
+
+    #define DONE12nOeTHERS(taskFP)                                                                                                                                                                          \
+                                                                                                                                                                                                            \
+                        if( _notUsedMatchingTaskDone12 ) ;                                                                                                                                                  \
+                        DONEpART0nOeTHERS                                                                                                                                                                   \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            threadLocalStorage12F(  ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                          \
+        }
+
+#elif defined( __NT__ )
+
+    #define DONE12nOeTHERS(taskFP)                                                                                                                                                                          \
+                                                                                                                                                                                                            \
+                        if( _notUsedMatchingTaskDone12 ) ;                                                                                                                                                  \
+                        DONEpART0nOeTHERS                                                                                                                                                                   \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                              \
+            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                             \
+            /* ZE( countT , foo ) ;                          */                                                                                                                                             \
+            /* ZE( countT , goo ) ;                          */                                                                                                                                             \
+            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                             \
+            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                             \
+            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                             \
+            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                             \
+                                                                                                                                                                                                            \
+            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;       \
+                                                                                                                                                                                                            \
+            return c_threadTry1Outer12F(  0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                           \
+        }
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200612.DONE12nOeTHERS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200613.DONE1nOeTHERS BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
+*/
+/**/
+/*1*//*DONE1nOeTHERS(taskFP)*//*1*/
+
+#ifdef __OS2__
+
+    #define DONE1nOeTHERS(taskFP)                                                                                                                                                                           \
+                                                                                                                                                                                                            \
+                        if( _notUsedMatchingTaskDone1 ) ;                                                                                                                                                   \
+                        DONEpART0nOeTHERS                                                                                                                                                                   \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            threadLocalStorage1F(   ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                          \
+        }
+
+#elif defined( __NT__ )
+
+    #define DONE1nOeTHERS(taskFP)                                                                                                                                                                           \
+                                                                                                                                                                                                            \
+                        if( _notUsedMatchingTaskDone1 ) ;                                                                                                                                                   \
+                        DONEpART0nOeTHERS                                                                                                                                                                   \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                              \
+            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                             \
+            /* ZE( countT , foo ) ;                          */                                                                                                                                             \
+            /* ZE( countT , goo ) ;                          */                                                                                                                                             \
+            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                             \
+            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                             \
+            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                             \
+            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                             \
+                                                                                                                                                                                                            \
+            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;       \
+                                                                                                                                                                                                            \
+            return c_threadTry1Outer1F(   0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                           \
+        }
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200613.DONE1nOeTHERS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -9525,7 +9875,6 @@ for fast execution, specify seedP so that it is not loaded at run time
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700001d.subtractwothcountinblobsf END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700001e.threadlocalstoragef BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -9534,159 +9883,10 @@ for fast execution, specify seedP so that it is not loaded at run time
 //
 
 /*
-\<A HREF=\"5.004003a.1.0.html\"\>definition\</A\>
 */
 /**/
 
 /*1*/countT __export threadLocalStorage123F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/countT __export threadLocalStorageNoTls1F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/countT __export threadLocalStorageNoTls12F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/countT __export threadLocalStorage1F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/countT __export threadLocalStorage12F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/countT __export threadLocalStorageNoTls123F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0040040.1.0.html\"\>definition\</A\>
-*/
-/**/
-
-/*1*/countT __export threadLocalStorageLocationF( const countT oshWindowP , const countT idCmdP , const countT p1P , const countT p2P ) ;/*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
 
 
 //
@@ -11206,7 +11406,6 @@ TASKpART0PROTO( tmRelayOldPopClientF ) ;
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700005a.subtractidportsf END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700005b.threadlocalstoragenotlsf BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -11218,6 +11417,7 @@ TASKpART0PROTO( tmRelayOldPopClientF ) ;
 */
 /**/
 
+/*1*/countT __export threadLocalStorageNoTls123F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
 
 
 //
@@ -16324,8 +16524,7 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022a.tmchttpserverworkerf END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022b.c_threadTry1Outer123F BEGIN
-
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022b.c_threadTry1OuterF BEGIN
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -16338,12 +16537,7 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 */
 /**/
 
-/*1*/voidT _export emitWordIF( const countT idLineP , const countT idFileP ) ;/*1*/
-
-
 /*1*/extern "C" int _export __watcall c_threadTry1Outer123F( unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;/*1*/
-/*1*/extern "C" int _export __watcall c_threadTry1Outer12F(  unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;/*1*/
-/*1*/extern "C" int _export __watcall c_threadTry1Outer1F(   unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;/*1*/
 
 //CS:PSEUDOdUPLICATE CODE: 01000002 
 
@@ -16354,7 +16548,7 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022b.c_threadTry1Outer123F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022b.c_threadTry1OuterF END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700022b.tmUdpFileEpochClockF BEGIN
 
 
@@ -16674,6 +16868,152 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000235.tmStripeWebHookIpListF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000236.c_threadTry1Outer12F BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/extern "C" int _export __watcall c_threadTry1Outer12F(  unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;/*1*/
+
+//CS:PSEUDOdUPLICATE CODE: 01000002 
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000236.c_threadTry1Outer12F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000237.c_threadTry1Outer1F BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/extern "C" int _export __watcall c_threadTry1Outer1F(   unsigned bMainP , unsigned pExceptionHandlerFP , unsigned c1P , unsigned c2P , unsigned c3P ) ;/*1*/
+
+//CS:PSEUDOdUPLICATE CODE: 01000002 
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000237.c_threadTry1Outer1F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000238.threadLocalStorage12F BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/countT __export threadLocalStorage12F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000238.threadLocalStorage12F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000239.threadLocalStorage1F BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/countT __export threadLocalStorage1F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000239.threadLocalStorage1F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700023a.threadLocalStorageNoTls12F BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/countT __export threadLocalStorageNoTls12F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700023a.threadLocalStorageNoTls12F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700023b.threadLocalStorageNoTls1F BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/countT __export threadLocalStorageNoTls1F( const countT idTypeP , kidFT pThreadWorkF , countT cArgP , countT cHowP = 0 , const osTextT** ppostHowP = 0 , countT hWindowingClientIP = 0 , countT hPreviousWindowingClientP = 0 , osTextT* postP = 0 , countT idCmdShowP = 0 ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700023b.threadLocalStorageNoTls1F END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tellInfoAppInOutFrameS : 1snip.15000188.tellinfoappinoutframes BEGIN
 
 
@@ -20188,79 +20528,7 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b000009.processglobal1i END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b00000a.offfingerverifyi BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*/extern countT offFingerVerify1I ;/*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*/extern countT offFingerVerify12I ;/*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*/extern countT offFingerVerifyLocationI ;/*1*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b00000a.offFingerVerify123I BEGIN
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -20282,16 +20550,7 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b00000a.offfingerverifyi END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b00000a.offFingerVerify123I END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b00000b.btlsearlylatei BEGIN
 
 
@@ -20593,6 +20852,7 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 /*
 */
 /**/
+/*1*/extern countT offFingerVerifyLocationI ;/*1*/
 
 
 //
@@ -20627,6 +20887,52 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b000018.processglobal0i END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b000019.offFingerVerify12I BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/extern countT offFingerVerify12I ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b000019.offFingerVerify12I END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b00001a.offFingerVerify1I BEGIN
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*/extern countT offFingerVerify1I ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1b* : 1snip.1b00001a.offFingerVerify1I END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000001.inc02am BEGIN
 
 
@@ -20762,196 +21068,7 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000004.setifequalsam END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000005.ptinam BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0090009.1.0.html\"\>definition\</A\>
-i obtain the current thread's tin1S  , by walking up the thread stack until i find my ifc thread local storage
-as i climb the stack, i look for either a tls or a frame that contains a new ebp value to use
-if the new ebp value is 0 then i assume that my caller is an exception handler, and i return &tinExceptionHanderDfltG
-*/
-/**/
-
-/*
-    code notes
-
-        register uses
-
-            eax     address of sf.fingerVerify
-                    return value: address of sf.pTin            
-
-            ebx     ebp value for the stack frame being inspected
-
-            ecx     test value (finger or fingerVerify)
-
-*/
-
-/*1*/tin0S*& __export pTin1AM(   voidT ) ;/*1*/
-
-//2002.12.20: finger offset from ebp: -8 -> -01 (I DO NOT KNOW WHAT IS IN THE HIGHEST 2 countT OF THE FRAME, AND WHY THIS CHANGED TO 4)
-
-//CODE SYNC: 0080009 001024e 0010265
-
-//PSEUDOdUPLICATEcODE THIS FILE
-#pragma aux pTin1AM   =                                                                                                             \
-                                                                                                                                    \
-    "                cmp    bTlsEarlyLateI , 01h                                "                                                   \
-    "                je     early                                               "                                                   \
-    "                mov    ebx , ebp                                           "                                                   \
-    "   again:       mov    eax , ebx                                           "                                                   \
-    "                sub    eax , offFingerVerifyLocationI                      "                                                   \
-    "                cmp    eax , esp                                           "                                                   \
-    "                jl     climb                                               "                                                   \
-    "                mov    ecx , dword ptr [eax]                               "  /*fingerVerify (loc)*/                           \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0035h                                   "                                                   \
-    "                je     chkloc                                              "                                                   \
-    "                mov    eax , ebx                                           "                                                   \
-    "                sub    eax , offFingerVerify1I                             "                                                   \
-    "                cmp    eax , esp                                           "                                                   \
-    "                jl     climb                                               "                                                   \
-    "                mov    ecx , dword ptr [eax]                               "  /*fingerVerify*/                                 \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0035h                                   "                                                   \
-                                                                                                                                    \
-    "                jne    climb                                               "                                                   \
-    "   chktls:      mov    ecx , dword ptr 04h[eax]                            "  /*finger*/                                       \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0033h                                   "                                                   \
-    "                je     foundtls                                            "                                                   \
-    "                jmp    climb                                               "                                                   \
-    "   chkloc :     mov    ecx , dword ptr 04h[eax]                            "  /*finger (loc)*/                                 \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0034h                                   "                                                   \
-    "                je     foundloc                                            "                                                   \
-    "   climb:       mov    ecx , ebx                                           "                                                   \
-    "                mov    ebx , dword ptr [ebx]                               "                                                   \
-    "                cmp    ecx , ebx                                           "                                                   \
-    "                jne    again                                               "                                                   \
-    "                mov    eax , 0h                                            "  /*INF LOOP SO MUST BE IN EXCEP HANDLER*/         \
-    "                jmp    fin                                                 "                                                   \
-    "   foundtls:    add    eax , 08h                                           "                                                   \
-    "                jmp    fin                                                 "                                                   \
-    "   foundloc :   mov    ebx , dword ptr 08h[eax]                            "                                                   \
-    "                jmp    again                                               "                                                   \
-    "   early:       lea    eax , pTinMainI                                     "                                                   \
-    "   fin:         nop                                                        "                                                   \
-                                                                                                                                    \
-                                                                                                                                    \
-    modify [ebx ecx]                                                                                                                \
-    value [eax]                                                                                                                     \
-                                                                                                                                    \
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0090009.1.0.html\"\>definition\</A\>
-i obtain the current thread's tin12S , by walking up the thread stack until i find my ifc thread local storage
-as i climb the stack, i look for either a tls or a frame that contains a new ebp value to use
-if the new ebp value is 0 then i assume that my caller is an exception handler, and i return &tinExceptionHanderDfltG
-*/
-/**/
-
-/*
-    code notes
-
-        register uses
-
-            eax     address of sf.fingerVerify
-                    return value: address of sf.pTin            
-
-            ebx     ebp value for the stack frame being inspected
-
-            ecx     test value (finger or fingerVerify)
-
-*/
-
-/*1*/tin0S*& __export pTin12AM(  voidT ) ;/*1*/
-
-//2002.12.20: finger offset from ebp: -8 -> -01 (I DO NOT KNOW WHAT IS IN THE HIGHEST 2 countT OF THE FRAME, AND WHY THIS CHANGED TO 4)
-
-//CODE SYNC: 0080009 001024e 0010265
-
-//PSEUDOdUPLICATEcODE THIS FILE
-#pragma aux pTin12AM  =                                                                                                             \
-                                                                                                                                    \
-    "                cmp    bTlsEarlyLateI , 01h                                "                                                   \
-    "                je     early                                               "                                                   \
-    "                mov    ebx , ebp                                           "                                                   \
-    "   again:       mov    eax , ebx                                           "                                                   \
-    "                sub    eax , offFingerVerifyLocationI                      "                                                   \
-    "                cmp    eax , esp                                           "                                                   \
-    "                jl     climb                                               "                                                   \
-    "                mov    ecx , dword ptr [eax]                               "  /*fingerVerify (loc)*/                           \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0035h                                   "                                                   \
-    "                je     chkloc                                              "                                                   \
-    "                mov    eax , ebx                                           "                                                   \
-    "                sub    eax , offFingerVerify12I                            "                                                   \
-    "                cmp    eax , esp                                           "                                                   \
-    "                jl     climb                                               "                                                   \
-    "                mov    ecx , dword ptr [eax]                               "  /*fingerVerify*/                                 \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0035h                                   "                                                   \
-                                                                                                                                    \
-    "                jne    climb                                               "                                                   \
-    "   chktls:      mov    ecx , dword ptr 04h[eax]                            "  /*finger*/                                       \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0033h                                   "                                                   \
-    "                je     foundtls                                            "                                                   \
-    "                jmp    climb                                               "                                                   \
-    "   chkloc :     mov    ecx , dword ptr 04h[eax]                            "  /*finger (loc)*/                                 \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0034h                                   "                                                   \
-    "                je     foundloc                                            "                                                   \
-    "   climb:       mov    ecx , ebx                                           "                                                   \
-    "                mov    ebx , dword ptr [ebx]                               "                                                   \
-    "                cmp    ecx , ebx                                           "                                                   \
-    "                jne    again                                               "                                                   \
-    "                mov    eax , 0h                                            "  /*INF LOOP SO MUST BE IN EXCEP HANDLER*/         \
-    "                jmp    fin                                                 "                                                   \
-    "   foundtls:    add    eax , 08h                                           "                                                   \
-    "                jmp    fin                                                 "                                                   \
-    "   foundloc :   mov    ebx , dword ptr 08h[eax]                            "                                                   \
-    "                jmp    again                                               "                                                   \
-    "   early:       lea    eax , pTinMainI                                     "                                                   \
-    "   fin:         nop                                                        "                                                   \
-                                                                                                                                    \
-                                                                                                                                    \
-    modify [ebx ecx]                                                                                                                \
-    value [eax]                                                                                                                     \
-                                                                                                                                    \
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000005.pTinAM BEGIN
 
 
 //
@@ -21047,7 +21164,7 @@ if the new ebp value is 0 then i assume that my caller is an exception handler, 
     "                je     chktls                                              " /*                                                                             */ \
                                                                                                                                                                     \
     /* ========================================================================================================================================================= */ \
-    /* ====  LOOK FOR A 123 FINGERvERIFY                 (SMALLEST SO MUST BE LA'TH)                                                                        ==== */ \
+    /* ====  LOOK FOR A 123 FINGERvERIFY                 (LARGEST SO MUST BE LA'TH)                                                                         ==== */ \
     /* ========================================================================================================================================================= */ \
                                                                                                                                                                     \
     "                mov    eax , ebx                                           " /* SET TARGET TO 123                                                           */ \
@@ -21115,9 +21232,7 @@ if the new ebp value is 0 then i assume that my caller is an exception handler, 
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000005.ptinam END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000005.pTinAM END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000006.idcpuam BEGIN
 
 
@@ -21224,184 +21339,7 @@ it is used to mark code so that i can see where i am when wdw tracing into code 
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000008.incv02am END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000009.ptin2am BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.009000e.1.0.html\"\>definition\</A\>
-i obtain the current thread's tin1S  , by walking up the thread stack from a specified address until i find my ifc thread local storage
-*/
-/**/
-
-/*
-    code notes
-
-        register uses
-
-            eax     address of sf.fingerVerify
-                    return value: address of sf.pTin            
-
-            ebx     ebp value for the stack frame being inspected
-
-            ecx     test value (finger or fingerVerify)
-
-*/
-
-/*1*/tin0S*& __export pTinFromEbx1AM(   countT ebpP ) ;/*1*/
-
-//PSEUDOdUPLICATEcODE THIS FILE
-#pragma aux pTinFromEbx1AM   =                                                                                                      \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-    "   again:       mov    eax , ebx                                           "                                                   \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-    "                sub    eax , offFingerVerify1I                             "                                                   \
-    "                cmp    eax , esp                                           "                                                   \
-    "                jl     climb                                               "                                                   \
-    "                mov    ecx , dword ptr [eax]                               "  /*fingerVerify*/                                 \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0035h                                   "                                                   \
-    "                je     chktls                                              "                                                   \
-    "                jmp    climb                                               "                                                   \
-    "   chktls:      mov    ecx , dword ptr 04h[eax]                            "  /*finger*/                                       \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0033h                                   "                                                   \
-    "                je     foundtls                                            "                                                   \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-    "   climb:       nop                                                        "                                                   \
-    "                mov    ebx , dword ptr [ebx]                               "                                                   \
-                                                                                                                                    \
-    "                jmp    again                                               "                                                   \
-                                                                                                                                    \
-                                                                                                                                    \
-    "   foundtls:    add    eax , 08h                                           "                                                   \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-    parm [ebx]                                                                                                                      \
-    modify [    ecx]                                                                                                                \
-    value [eax]                                                                                                                     \
-                                                                                                                                    \
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.009000e.1.0.html\"\>definition\</A\>
-i obtain the current thread's tin12S , by walking up the thread stack from a specified address until i find my ifc thread local storage
-*/
-/**/
-
-/*
-    code notes
-
-        register uses
-
-            eax     address of sf.fingerVerify
-                    return value: address of sf.pTin            
-
-            ebx     ebp value for the stack frame being inspected
-
-            ecx     test value (finger or fingerVerify)
-
-*/
-
-/*1*/tin0S*& __export pTinFromEbx12AM(  countT ebpP ) ;/*1*/
-
-//PSEUDOdUPLICATEcODE THIS FILE
-#pragma aux pTinFromEbx12AM  =                                                                                                      \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-    "   again:       mov    eax , ebx                                           "                                                   \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-    "                sub    eax , offFingerVerify12I                            "                                                   \
-    "                cmp    eax , esp                                           "                                                   \
-    "                jl     climb                                               "                                                   \
-    "                mov    ecx , dword ptr [eax]                               "  /*fingerVerify*/                                 \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0035h                                   "                                                   \
-    "                je     chktls                                              "                                                   \
-    "                jmp    climb                                               "                                                   \
-    "   chktls:      mov    ecx , dword ptr 04h[eax]                            "  /*finger*/                                       \
-    "                neg    ecx                                                 "                                                   \
-    "                cmp    ecx , -0cccc0033h                                   "                                                   \
-    "                je     foundtls                                            "                                                   \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-    "   climb:       nop                                                        "                                                   \
-    "                mov    ebx , dword ptr [ebx]                               "                                                   \
-                                                                                                                                    \
-    "                jmp    again                                               "                                                   \
-                                                                                                                                    \
-                                                                                                                                    \
-    "   foundtls:    add    eax , 08h                                           "                                                   \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-                                                                                                                                    \
-    parm [ebx]                                                                                                                      \
-    modify [    ecx]                                                                                                                \
-    value [eax]                                                                                                                     \
-                                                                                                                                    \
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000009.pTinFromEbx123AM BEGIN
 
 
 //
@@ -21492,7 +21430,7 @@ i obtain the current thread's tin123S, by walking up the thread stack from a spe
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000009.ptin2am END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000009.pTinFromEbx123AM END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000a.ebptlsam BEGIN
 
 
@@ -25062,6 +25000,190 @@ countT __export btrKeyedAM( byteT* pbP , countT& keyToP , countT offP , countT k
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00003d.btrkeyedam END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000040.pTinFromEbx12AM BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.009000e.1.0.html\"\>definition\</A\>
+i obtain the current thread's tin12S , by walking up the thread stack from a specified address until i find my ifc thread local storage
+*/
+/**/
+
+/*
+    code notes
+
+        register uses
+
+            eax     address of sf.fingerVerify
+                    return value: address of sf.pTin            
+
+            ebx     ebp value for the stack frame being inspected
+
+            ecx     test value (finger or fingerVerify)
+
+*/
+
+/*1*/tin0S*& __export pTinFromEbx12AM(  countT ebpP ) ;/*1*/
+
+//PSEUDOdUPLICATEcODE THIS FILE
+#pragma aux pTinFromEbx12AM  =                                                                                                      \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+    "   again:       mov    eax , ebx                                           "                                                   \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+    "                sub    eax , offFingerVerify12I                            "                                                   \
+    "                cmp    eax , esp                                           "                                                   \
+    "                jl     climb                                               "                                                   \
+    "                mov    ecx , dword ptr [eax]                               "  /*fingerVerify*/                                 \
+    "                neg    ecx                                                 "                                                   \
+    "                cmp    ecx , -0cccc0035h                                   "                                                   \
+    "                je     chktls                                              "                                                   \
+    "                jmp    climb                                               "                                                   \
+    "   chktls:      mov    ecx , dword ptr 04h[eax]                            "  /*finger*/                                       \
+    "                neg    ecx                                                 "                                                   \
+    "                cmp    ecx , -0cccc0033h                                   "                                                   \
+    "                je     foundtls                                            "                                                   \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+    "   climb:       nop                                                        "                                                   \
+    "                mov    ebx , dword ptr [ebx]                               "                                                   \
+                                                                                                                                    \
+    "                jmp    again                                               "                                                   \
+                                                                                                                                    \
+                                                                                                                                    \
+    "   foundtls:    add    eax , 08h                                           "                                                   \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+    parm [ebx]                                                                                                                      \
+    modify [    ecx]                                                                                                                \
+    value [eax]                                                                                                                     \
+                                                                                                                                    \
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000040.pTinFromEbx12AM END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000041.pTinFromEbx1AM BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.009000e.1.0.html\"\>definition\</A\>
+i obtain the current thread's tin1S  , by walking up the thread stack from a specified address until i find my ifc thread local storage
+*/
+/**/
+
+/*
+    code notes
+
+        register uses
+
+            eax     address of sf.fingerVerify
+                    return value: address of sf.pTin            
+
+            ebx     ebp value for the stack frame being inspected
+
+            ecx     test value (finger or fingerVerify)
+
+*/
+
+/*1*/tin0S*& __export pTinFromEbx1AM(   countT ebpP ) ;/*1*/
+
+//PSEUDOdUPLICATEcODE THIS FILE
+#pragma aux pTinFromEbx1AM   =                                                                                                      \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+    "   again:       mov    eax , ebx                                           "                                                   \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+    "                sub    eax , offFingerVerify1I                             "                                                   \
+    "                cmp    eax , esp                                           "                                                   \
+    "                jl     climb                                               "                                                   \
+    "                mov    ecx , dword ptr [eax]                               "  /*fingerVerify*/                                 \
+    "                neg    ecx                                                 "                                                   \
+    "                cmp    ecx , -0cccc0035h                                   "                                                   \
+    "                je     chktls                                              "                                                   \
+    "                jmp    climb                                               "                                                   \
+    "   chktls:      mov    ecx , dword ptr 04h[eax]                            "  /*finger*/                                       \
+    "                neg    ecx                                                 "                                                   \
+    "                cmp    ecx , -0cccc0033h                                   "                                                   \
+    "                je     foundtls                                            "                                                   \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+    "   climb:       nop                                                        "                                                   \
+    "                mov    ebx , dword ptr [ebx]                               "                                                   \
+                                                                                                                                    \
+    "                jmp    again                                               "                                                   \
+                                                                                                                                    \
+                                                                                                                                    \
+    "   foundtls:    add    eax , 08h                                           "                                                   \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+                                                                                                                                    \
+    parm [ebx]                                                                                                                      \
+    modify [    ecx]                                                                                                                \
+    value [eax]                                                                                                                     \
+                                                                                                                                    \
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000041.pTinFromEbx1AM END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1d* : 1snip.1d000001.idrf BEGIN
 
 
@@ -29371,7 +29493,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tin123S.NEWdELcLASSppOOLoLD!||
     ~tin123S( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tin123S.dt_tin123S!||
-    tin123S( tin0S& tin0NormalSelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tin0S* const pTin0DadP = 0 , const osTextT* const postThreadNameP = 0 , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
+    tin123S( tin0S& tin0SelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tin0S* const pTin0DadP = 0 , const osTextT* const postThreadNameP = 0 , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.tin123S.tin123S!||
 
     /* commands */
@@ -29381,7 +29503,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.tin123S.zePointerFieldsF!||
     voidT levelModeF( const flagsT flagsModeP = flTHREADlEVELmODE_null , sCountT cLevelsP = 0 , const sCountT offRelLevelP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.tin123S.levelModeF!||
-    inline flagsT flagsF( voidT ) { return flags ; }
     voidT get_pLFnest_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.tin123S.get_pLFnest_F!||
     voidT get_pLFstep_F( tin0S& tin0P , countT* const pcP , const countT ccP ) ;
@@ -29416,9 +29537,10 @@ it is illegal to modify any member other than pc Utility in the definition of an
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024016.tins.tlsTraceF!||
     byteT* pbF( countT idP = 1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.tin123S.pbF!||
+
+    inline flagsT flagsF( voidT ) { return flags ; }
 }
 ;
-
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -29439,22 +29561,50 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //
 
 /*
+
+
+
+
+
 */
 /**/
+
+
+
+
+
+
 
 /*1*/struct _export tin12S : public tin0S , public tin_part1_S , public tin_part2_S/*1*/
 {
     /* birth , death */
     NEWdELcLASSpROTOS
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tin12S.NEWdELcLASSppOOLoLD!||
-    ~tin12S( voidT ) ;
+    ~tin12S(  voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tin12S.dt_tin12S!||
-    tin12S( tin0S& tin0SelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tin0S* const pTin0DadP = 0 , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
+    tin12S(  tin0S& tin0SelfOrElderP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const countT ebpP , const countT idThreadP , tin0S* const pTin0DadP = 0                                            , const flagsT flagsP = flTINs_null , const countT idTinNamedP = 0 , byteT* const pbTlsP = 0 , const countT cbTlsP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.tin12S.tin12S!||
 
     /* commands */
-    inline flagsT flagsF( voidT ) { return flags ; }
-    tin12S& rootF( voidT ) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    tin12S&  rootF( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.tin12S.rootF!||
     voidT walkF( tin0S& tin0RootP , tinWalkerFT tinWalkerFP , countT& cArgP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.tin12S.walkF!||
@@ -29476,6 +29626,8 @@ it is illegal to modify any member other than pc Utility in the definition of an
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.36024016.tins.tlsTraceF!||
     byteT* pbF( countT idP = 1 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.tin12S.pbF!||
+
+    inline flagsT flagsF( voidT ) { return flags ; }
 }
 ;
 
@@ -29488,6 +29640,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin12S : 1snip.150001c8.tin12S END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tin1S : 1snip.150001c9.tin1S BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -30385,53 +30538,6 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsAllocStackExp_01_C : 1snip.150001c3.tlsAllocStackExp_01_C END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameLocationS : 1snip.15000068.tlsstackframelocations BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.15000068.1.0.html\"\>definition\</A\>
-*/
-/**/
-
-/*1*/struct _export tlsStackFrameLocationS/*1*/
-{
-
-
-
-
- zapC         zap_fingerVerify ;
- countT       fingerVerify ;
- countT       finger ;
-
- countT       ebp ;
- countT       rc ;
-
-
-
-
- ~tlsStackFrameLocationS( voidT ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameLocationS.dt_tlsStackFrameLocationS!||
- tlsStackFrameLocationS( voidT ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameLocationS.tlsStackFrameLocationS!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameLocationS : 1snip.15000068.tlsstackframelocations END
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -30448,7 +30554,208 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
 
 //I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
-//U::RENAME ME TO tlsStackFrame123S
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrameNoTls1S/*1*/
+{
+
+
+
+
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin1S                   tinEarlyLate ;
+      countT                  rc ;
+      //tlsAllocStackExp_01_C tlsForMe ;
+      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
+      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrameNoTls1S(   voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls1S.dt_tlsStackFrameNoTls1S!||
+    tlsStackFrameNoTls1S(   const countT idTypeP , const countT ebpP                              , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls1S.tlsStackFrameNoTls1S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrameNoTls12S/*1*/
+{
+
+
+
+
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin12S                  tinEarlyLate ;
+      countT                  rc ;
+      //tlsAllocStackExp_01_C tlsForMe ;
+      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
+      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrameNoTls12S(  voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls12S.dt_tlsStackFrameNoTls12S!||
+    tlsStackFrameNoTls12S(  const countT idTypeP , const countT ebpP                              , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls12S.tlsStackFrameNoTls12S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+
+
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrame1S/*1*/
+{
+    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+    //const countT            fingerTlsEnd ;
+      tallyC                  tallyKid ;
+    //zapC                    zap_pbTls ;
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin1S                   tinEarlyLate ;
+      countT                  rc ;
+    //tlsAllocStackExp_01_C   tlsForMe ;
+    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
+    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrame1S(        voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame1S.dt_tlsStackFrame1S!||
+    tlsStackFrame1S(        const countT idTypeP ,       countT ebpP                              , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame1S.tlsStackFrame1S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+
+
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrame12S/*1*/
+{
+    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+    //const countT            fingerTlsEnd ;
+      tallyC                  tallyKid ;
+    //zapC                    zap_pbTls ;
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin12S                  tinEarlyLate ;
+      countT                  rc ;
+    //tlsAllocStackExp_01_C   tlsForMe ;
+    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
+    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrame12S(       voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame12S.dt_tlsStackFrame12S!||
+    tlsStackFrame12S(       const countT idTypeP ,       countT ebpP                              , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame12S.tlsStackFrame12S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
 
 //CODEsYNCH: 00300a7 003007f
 
@@ -30492,87 +30799,30 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //
 
 /*
+\<A HREF=\"5.15000068.1.0.html\"\>definition\</A\>
 */
 /**/
 
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
-//U::RENAME ME TO tlsStackFrame12S
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrameNoTls12S/*1*/
+/*1*/struct _export tlsStackFrameLocationS/*1*/
 {
 
 
 
 
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                  pTin ;
-      tin12S                  tinEarlyLate ;
-      countT                  rc ;
-      //tlsAllocStackExp_01_C tlsForMe ;
-      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
-      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+ zapC         zap_fingerVerify ;
+ countT       fingerVerify ;
+ countT       finger ;
 
-    ~tlsStackFrameNoTls12S(  voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls12S.dt_tlsStackFrameNoTls12S!||
-    tlsStackFrameNoTls12S(  const countT idTypeP , const countT ebpP , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls12S.tlsStackFrameNoTls12S!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrameNoTls1S/*1*/
-{
+ countT       ebp ;
+ countT       rc ;
 
 
 
 
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                  pTin ;
-      tin1S                   tinEarlyLate ;
-      countT                  rc ;
-      //tlsAllocStackExp_01_C tlsForMe ;
-      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
-      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
-
-    ~tlsStackFrameNoTls1S(   voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls1S.dt_tlsStackFrameNoTls1S!||
-    tlsStackFrameNoTls1S(   const countT idTypeP , const countT ebpP , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls1S.tlsStackFrameNoTls1S!||
+ ~tlsStackFrameLocationS( voidT ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameLocationS.dt_tlsStackFrameLocationS!||
+ tlsStackFrameLocationS( voidT ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameLocationS.tlsStackFrameLocationS!||
 }
 ;
 
@@ -30635,56 +30885,8 @@ it is illegal to modify any member other than pc Utility in the definition of an
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-
-
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrame12S/*1*/
-{
-    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
-    //const countT            fingerTlsEnd ;
-      tallyC                  tallyKid ;
-    //zapC                    zap_pbTls ;
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                  pTin ;
-      tin12S                  tinEarlyLate ;
-      countT                  rc ;
-    //tlsAllocStackExp_01_C   tlsForMe ;
-    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
-    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
-
-    ~tlsStackFrame12S(       voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame12S.dt_tlsStackFrame12S!||
-    tlsStackFrame12S(       const countT idTypeP ,       countT ebpP , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame12S.tlsStackFrame12S!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameNoTls123S : 1snip.15000087.tlsstackframenotls123s END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameLocationS : 1snip.15000068.tlsstackframelocations BEGIN
 
 
 //
@@ -30695,39 +30897,9 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //
 
 /*
+\<A HREF=\"5.15000068.1.0.html\"\>definition\</A\>
 */
 /**/
-
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-
-
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrame1S/*1*/
-{
-    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
-    //const countT            fingerTlsEnd ;
-      tallyC                  tallyKid ;
-    //zapC                    zap_pbTls ;
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                  pTin ;
-      tin1S                   tinEarlyLate ;
-      countT                  rc ;
-    //tlsAllocStackExp_01_C   tlsForMe ;
-    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
-    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
-
-    ~tlsStackFrame1S(        voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame1S.dt_tlsStackFrame1S!||
-    tlsStackFrame1S(        const countT idTypeP ,       countT ebpP , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame1S.tlsStackFrame1S!||
-}
-;
 
 
 //
@@ -30737,7 +30909,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameLocationS : 1snip.15000068.tlsstackframelocations END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.grabAnnotatedS : 1snip.15000051.grabannotateds BEGIN
 
 
