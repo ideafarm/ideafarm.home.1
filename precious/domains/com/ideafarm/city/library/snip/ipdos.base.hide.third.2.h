@@ -30538,301 +30538,7 @@ it is illegal to modify any member other than pc Utility in the definition of an
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsAllocStackExp_01_C : 1snip.150001c3.tlsAllocStackExp_01_C END
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrameNoTls1S/*1*/
-{
-
-
-
-
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                  pTin ;
-      tin1S                   tinEarlyLate ;
-      countT                  rc ;
-      //tlsAllocStackExp_01_C tlsForMe ;
-      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
-      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
-
-    ~tlsStackFrameNoTls1S(   voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls1S.dt_tlsStackFrameNoTls1S!||
-    tlsStackFrameNoTls1S(   const countT idTypeP , const countT ebpP                              , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls1S.tlsStackFrameNoTls1S!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrameNoTls12S/*1*/
-{
-
-
-
-
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                  pTin ;
-      tin12S                  tinEarlyLate ;
-      countT                  rc ;
-      //tlsAllocStackExp_01_C tlsForMe ;
-      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
-      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
-
-    ~tlsStackFrameNoTls12S(  voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls12S.dt_tlsStackFrameNoTls12S!||
-    tlsStackFrameNoTls12S(  const countT idTypeP , const countT ebpP                              , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls12S.tlsStackFrameNoTls12S!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-
-
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrame1S/*1*/
-{
-    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
-    //const countT            fingerTlsEnd ;
-      tallyC                  tallyKid ;
-    //zapC                    zap_pbTls ;
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                  pTin ;
-      tin1S                   tinEarlyLate ;
-      countT                  rc ;
-    //tlsAllocStackExp_01_C   tlsForMe ;
-    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
-    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
-
-    ~tlsStackFrame1S(        voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame1S.dt_tlsStackFrame1S!||
-    tlsStackFrame1S(        const countT idTypeP ,       countT ebpP                              , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame1S.tlsStackFrame1S!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-
-
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrame12S/*1*/
-{
-    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
-    //const countT            fingerTlsEnd ;
-      tallyC                  tallyKid ;
-    //zapC                    zap_pbTls ;
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                  pTin ;
-      tin12S                  tinEarlyLate ;
-      countT                  rc ;
-    //tlsAllocStackExp_01_C   tlsForMe ;
-    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
-    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
-
-    ~tlsStackFrame12S(       voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame12S.dt_tlsStackFrame12S!||
-    tlsStackFrame12S(       const countT idTypeP ,       countT ebpP                              , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame12S.tlsStackFrame12S!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-//CODE SYNCH: 003007f 1750003
-//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
-
-//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
-
-//CODEsYNCH: 00300a7 003007f
-
-/*1*/struct _export tlsStackFrameNoTls123S/*1*/
-{
-
-
-
-
-      zapC                    zap_fingerVerify ;
-      const countT            fingerVerify ;
-      const countT            finger ;
-      tin0S*                  pTin ;
-      tin123S                 tinEarlyLate ;
-      countT                  rc ;
-      //tlsAllocStackExp_01_C tlsForMe ;
-      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
-      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
-
-    ~tlsStackFrameNoTls123S( voidT ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls123S.dt_tlsStackFrameNoTls123S!||
-    tlsStackFrameNoTls123S( const countT idTypeP , const countT ebpP , const osTextT* const postP , const countT cArgP = 0 ) ;
-    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls123S.tlsStackFrameNoTls123S!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.15000068.1.0.html\"\>definition\</A\>
-*/
-/**/
-
-/*1*/struct _export tlsStackFrameLocationS/*1*/
-{
-
-
-
-
- zapC         zap_fingerVerify ;
- countT       fingerVerify ;
- countT       finger ;
-
- countT       ebp ;
- countT       rc ;
-
-
-
-
- ~tlsStackFrameLocationS( voidT ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameLocationS.dt_tlsStackFrameLocationS!||
- tlsStackFrameLocationS( voidT ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameLocationS.tlsStackFrameLocationS!||
-}
-;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrame123S : 1snip.15000062.tlsstackframe123s BEGIN
 
 
 //
@@ -30885,7 +30591,271 @@ it is illegal to modify any member other than pc Utility in the definition of an
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrame123S : 1snip.15000062.tlsstackframe123s END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrame12S : 1snip.150001ca.tlsstackframe12s BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+
+
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrame12S/*1*/
+{
+    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+    //const countT            fingerTlsEnd ;
+      tallyC                  tallyKid ;
+    //zapC                    zap_pbTls ;
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin12S                  tinEarlyLate ;
+      countT                  rc ;
+    //tlsAllocStackExp_01_C   tlsForMe ;
+    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
+    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrame12S(       voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame12S.dt_tlsStackFrame12S!||
+    tlsStackFrame12S(       const countT idTypeP ,       countT ebpP                              , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame12S.tlsStackFrame12S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrame12S : 1snip.150001ca.tlsstackframe12s END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrame1S : 1snip.150001cb.tlsstackframe1s BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+
+
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrame1S/*1*/
+{
+    //byteT                   pbTls[ CB tLSmAIN ] ; //MUST BE WOTH TO AVOID AFFECTING OFFSETS OF OTHER MEMBERS FROM ebp; FUTURE: DEFINE FLAVORS OF ME OFFERING A CHOICE OF SIZES FROM 2,4,8,01,02,...,00001
+    //const countT            fingerTlsEnd ;
+      tallyC                  tallyKid ;
+    //zapC                    zap_pbTls ;
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin1S                   tinEarlyLate ;
+      countT                  rc ;
+    //tlsAllocStackExp_01_C   tlsForMe ;
+    //tlsBlobC                tlsBlobTellInfoSysExceptionLath ;
+    //tlsBlobC                tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrame1S(        voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrame1S.dt_tlsStackFrame1S!||
+    tlsStackFrame1S(        const countT idTypeP ,       countT ebpP                              , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrame1S.tlsStackFrame1S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrame1S : 1snip.150001cb.tlsstackframe1s END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameNoTls123S : 1snip.15000087.tlsstackframenotls123s BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrameNoTls123S/*1*/
+{
+
+
+
+
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin123S                 tinEarlyLate ;
+      countT                  rc ;
+      //tlsAllocStackExp_01_C tlsForMe ;
+      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
+      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrameNoTls123S( voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls123S.dt_tlsStackFrameNoTls123S!||
+    tlsStackFrameNoTls123S( const countT idTypeP , const countT ebpP , const osTextT* const postP , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls123S.tlsStackFrameNoTls123S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameNoTls123S : 1snip.15000087.tlsstackframenotls123s END
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrameNoTls1S/*1*/
+{
+
+
+
+
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin1S                   tinEarlyLate ;
+      countT                  rc ;
+      //tlsAllocStackExp_01_C tlsForMe ;
+      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
+      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrameNoTls1S(   voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls1S.dt_tlsStackFrameNoTls1S!||
+    tlsStackFrameNoTls1S(   const countT idTypeP , const countT ebpP                              , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls1S.tlsStackFrameNoTls1S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameNoTls12S : 1snip.150001cc.tlsstackframenotls12s BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+//CODE SYNCH: 003007f 1750003
+//0030086 003007F: fingerVerify finger ebp/pTin MUST LOCATE AT THE SAME OFFSET IN THE STACK FRAME
+
+//I AM USED ON THE main THREAD, WHICH USES processGlobal2I.pbTlsMain
+
+//CODEsYNCH: 00300a7 003007f
+
+/*1*/struct _export tlsStackFrameNoTls12S/*1*/
+{
+
+
+
+
+      zapC                    zap_fingerVerify ;
+      const countT            fingerVerify ;
+      const countT            finger ;
+      tin0S*                  pTin ;
+      tin12S                  tinEarlyLate ;
+      countT                  rc ;
+      //tlsAllocStackExp_01_C tlsForMe ;
+      //tlsBlobC              tlsBlobTellInfoSysExceptionLath ;
+      //tlsBlobC              tlsBlobStackTop ; //KEEP THIS AT THE TOP OF THIS CLASS LAYOUT UNLESS THERE IS A REASON TO DO OTHERWISE (ITS LOCATION AT THE TOP MIGHT BECOME USEFUL)
+
+    ~tlsStackFrameNoTls12S(  voidT ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameNoTls12S.dt_tlsStackFrameNoTls12S!||
+    tlsStackFrameNoTls12S(  const countT idTypeP , const countT ebpP                              , const countT cArgP = 0 ) ;
+    //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameNoTls12S.tlsStackFrameNoTls12S!||
+}
+;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameNoTls12S : 1snip.150001cc.tlsstackframenotls12s END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tlsStackFrameLocationS : 1snip.15000068.tlsstackframelocations BEGIN
 
 
@@ -30900,6 +30870,29 @@ it is illegal to modify any member other than pc Utility in the definition of an
 \<A HREF=\"5.15000068.1.0.html\"\>definition\</A\>
 */
 /**/
+
+/*1*/struct _export tlsStackFrameLocationS/*1*/
+{
+
+
+
+
+ zapC         zap_fingerVerify ;
+ countT       fingerVerify ;
+ countT       finger ;
+
+ countT       ebp ;
+ countT       rc ;
+
+
+
+
+ ~tlsStackFrameLocationS( voidT ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.tlsStackFrameLocationS.dt_tlsStackFrameLocationS!||
+ tlsStackFrameLocationS( voidT ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.tlsStackFrameLocationS.tlsStackFrameLocationS!||
+}
+;
 
 
 //

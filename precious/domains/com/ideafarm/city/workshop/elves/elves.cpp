@@ -3342,7 +3342,7 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.batonC"                                      ,
                     "1snip.15*.grabAnnotatedS"                              ,
                     "1snip.15*.tlsStackFrameLocationS"                      ,
-                    "1snip.15*.tlsStackFrameNoTls3S"                        ,
+                    "1snip.15*.tlsStackFrameNoTls1S"                        ,
                     "1snip.15*.tlsStackFrameNoTls12S"                       ,
                     "1snip.15*.tlsStackFrameNoTls123S"                      ,
                     "1snip.15*.tlsStackFrame1S"                             ,
