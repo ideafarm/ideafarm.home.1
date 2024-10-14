@@ -200,14 +200,14 @@
 0x112000cf , 0x000000c8 ,   // 1snip.112000cf.csdrivernamemax
 0x112000d0 , 0x000000c9 ,   // 1snip.112000d0.ifcidfylename1masterexedll
 0x112000d1 , 0x000000ca ,   // 1snip.112000d1.fldrivenyouarefired
-0x112000d2 , 0x000000cb ,   // 1snip.112000d2.TASKdRIVENsERVER
-0x112000d3 , 0x000000cc ,   // 1snip.112000d3.DONEdRIVENsERVER
-0x112000d4 , 0x000000cd ,   // 1snip.112000d4.TASKdRIVENsERVERnEWsOCKET
+0x112000d2 , 0x000000cb ,   // 1snip.112000d2.taskdrivenserver
+0x112000d3 , 0x000000cc ,   // 1snip.112000d3.donedrivenserver
+0x112000d4 , 0x000000cd ,   // 1snip.112000d4.taskdrivenservernewsocket
 0x112000d5 , 0x000000ce ,   // 1snip.112000d5.ifcideventmonitored
 0x112000d6 , 0x000000cf ,   // 1snip.112000d6.ifcideventexceptionmonitored
 0x112000d7 , 0x000000d0 ,   // 1snip.112000d7.ifcidcmdeventmonitored
 0x112000d8 , 0x000000d1 ,   // 1snip.112000d8.flforestfire
-0x112000d9 , 0x000000d2 ,   // 1snip.112000d9.TASK0pROTO
+0x112000d9 , 0x000000d2 ,   // 1snip.112000d9.task0proto
 0x112000da , 0x000000d3 ,   // 1snip.112000da.ifcopensharedmemoryhow
 0x112000db , 0x000000d4 ,   // 1snip.112000db.flstep
 0x112000dc , 0x000000d5 ,   // 1snip.112000dc.fltinrpt1
@@ -263,7 +263,7 @@
 0x11200119 , 0x00000107 ,   // 1snip.11200119.costnarrative_title
 0x1120011a , 0x00000108 ,   // 1snip.1120011a.costnarrative_note
 0x1120011b , 0x00000109 ,   // 1snip.1120011b.postifcnameserver
-0x1120011c , 0x0000010a ,   // 1snip.1120011c.DONEdRIVENsERVERnEWsOCKET
+0x1120011c , 0x0000010a ,   // 1snip.1120011c.donedrivenservernewsocket
 0x1120011d , 0x0000010b ,   // 1snip.1120011d.tt5
 0x1120011e , 0x0000010c ,   // 1snip.1120011e.ifcidtextgen
 0x1120011f , 0x0000010d ,   // 1snip.1120011f.ti
@@ -387,7 +387,7 @@
 0x112001a3 , 0x00000183 ,   // 1snip.112001a3.ifcidactionwhere
 0x112001a4 , 0x00000184 ,   // 1snip.112001a4.ifcidtypetls
 0x112001a5 , 0x00000185 ,   // 1snip.112001a5.DONEpART1
-0x112001a6 , 0x00000186 ,   // 1snip.112001a6.TASKpROTO
+0x112001a6 , 0x00000186 ,   // 1snip.112001a6.taskproto
 0x112001a7 , 0x00000187 ,   // 1snip.112001a7.flplate
 0x112001a9 , 0x00000188 ,   // 1snip.112001a9.ifcidtypehandle
 0x112001aa , 0x00000189 ,   // 1snip.112001aa.conoutraw
@@ -2395,7 +2395,7 @@
 0x1c000002 , 0x0000095b ,   // 1snip.1c000002.dec02am
 0x1c000003 , 0x0000095c ,   // 1snip.1c000003.setifzeam
 0x1c000004 , 0x0000095d ,   // 1snip.1c000004.setifequalsam
-0x1c000005 , 0x0000095e ,   // 1snip.1c000005.pTinAM
+0x1c000005 , 0x0000095e ,   // 1snip.1c000005.ptinam
 0x1c000006 , 0x0000095f ,   // 1snip.1c000006.idcpuam
 0x1c000007 , 0x00000960 ,   // 1snip.1c000007.telltaleam
 0x1c000008 , 0x00000961 ,   // 1snip.1c000008.incv02am
