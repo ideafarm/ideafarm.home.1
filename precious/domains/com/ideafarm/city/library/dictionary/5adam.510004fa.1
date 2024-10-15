@@ -1196,7 +1196,7 @@ whereTalliesGrossS* pwtGrossF( tin0S& tin0P , thirdC& thirdP , stackC& stRecycle
         pcloIn[ offo ++ ] = copy1P.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
         pcloIn[ offo ++ ] = copy1P.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] ;
     {
-    for( countT idn = idnf ; idn <= copy1P.monitor.cInNest ; idn ++ )
+    for( countT idn = idnf ; idn <= copy1P.where.cInNest ; idn ++ )
     TELL( "making lever for tally 3 (outermost inward)" )
             
     ZE( countT , offo ) ;
@@ -1206,8 +1206,8 @@ whereTalliesGrossS* pwtGrossF( tin0S& tin0P , thirdC& thirdP , stackC& stRecycle
             
     wtfP.swTally2.ungrabF( tin0P ) ;
     ++ wtfP.swTally2 ;
-    wtfP.lifiLever2.c2 = copy1P.pLFnest[ ( ( copy1P.monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
-    wtfP.lifiLever2.c1 = copy1P.pLFnest[   ( copy1P.monitor.cInNest & OFFsLOTtINnESTmAX ) << 1       ] ;
+    wtfP.lifiLever2.c2 = copy1P.pLFnest[ ( ( copy1P.where.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
+    wtfP.lifiLever2.c1 = copy1P.pLFnest[   ( copy1P.where.cInNest & OFFsLOTtINnESTmAX ) << 1       ] ;
     TELL( "tally 2 (innermost)" )
     wtfP.swTally2.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
@@ -1231,7 +1231,7 @@ whereTalliesGrossS* pwtGrossF( tin0S& tin0P , thirdC& thirdP , stackC& stRecycle
                 copy1P.pLFnest[ ( ( idnfa & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] == 0x3000b71 ||
                 copy1P.pLFnest[ ( ( idnfa & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] == 0x10000a0 ||
             (
-            idnfa < copy1P.monitor.cInNest &&
+            idnfa < copy1P.where.cInNest &&
         (
         while
         }
@@ -1275,7 +1275,7 @@ whereTalliesGrossS* pwtGrossF( tin0S& tin0P , thirdC& thirdP , stackC& stRecycle
         TELL( "tally 1 (outermost)" )
         countT idnfa = idnf ;
     {
-    const countT idnf = copy1P.monitor.cInNest < 1 + OFFsLOTtINnESTmAX ? 1 : ( copy1P.monitor.cInNest - OFFsLOTtINnESTmAX ) & OFFsLOTtINnESTmAX ;
+    const countT idnf = copy1P.where.cInNest < 1 + OFFsLOTtINnESTmAX ? 1 : ( copy1P.where.cInNest - OFFsLOTtINnESTmAX ) & OFFsLOTtINnESTmAX ;
 {
 voidT tallyF( tin0S& tin0P , etherC& etThread , whereTalliesFineS& wtfP , whereOldS& copy1P , stackC& stLifiP )
 
@@ -1618,7 +1618,7 @@ TELL( "i am outa here" )
                                             stRpt << psttr5 ; psttr5 = 0 ;
                                             psttOldCallNestF( tin0P , etThread , psttr5 , stLifiP , 0x12 + clf1 * 2 , tin.pLFnest            , 0 , clf2 ) ; ___( psttr5 ) ;
                                         {
-                                        if( clf1 < tin.monitor.cInNest )
+                                        if( clf1 < tin.where.cInNest )
                                         stRpt << psttr5 ; psttr5 = 0 ;
                                         psttOldCallNestF( tin0P , etThread , psttr5 , stLifiP , 0x12            , tin.pLFnest + 2 * idnf , 0 , clf1 ) ; ___( psttr5 ) ;
                                         stRpt << psttOldC( tin0P , etThread , tc ) ;
@@ -1626,17 +1626,17 @@ TELL( "i am outa here" )
                                             stRpt << psttr5 ; psttr5 = 0 ;
                                             psttOldCallNestF( tin0P , etThread , psttr5 , stLifiP , 0x12 + clf1 * 2 , tin.pLFnest            , 1 , clf2 ) ; ___( psttr5 ) ;
                                         {
-                                        if( clf1 < tin.monitor.cInNest )
+                                        if( clf1 < tin.where.cInNest )
                                         stRpt << psttr5 ; psttr5 = 0 ;
                                         psttOldCallNestF( tin0P , etThread , psttr5 , stLifiP , 0x12            , tin.pLFnest + 2 * idnf , 1 , clf1 ) ; ___( psttr5 ) ;
                                         countT clf2 = OFFsLOTtINnESTmAX + 1 - clf1 ;
-                                        if( clf1 > tin.monitor.cInNest ) clf1 = tin.monitor.cInNest ;
+                                        if( clf1 > tin.where.cInNest ) clf1 = tin.where.cInNest ;
                                         countT clf1 = OFFsLOTtINnESTmAX + 1 - idnf ;
     
                                         if( (sCountT)idnf < 1 ) idnf = 1 ;
-                                        countT idnf = tin.monitor.cInNest - OFFsLOTtINnESTmAX ;
+                                        countT idnf = tin.where.cInNest - OFFsLOTtINnESTmAX ;
                                     {
-                                    if( tin.monitor.cInNest )
+                                    if( tin.where.cInNest )
 
                                     stRpt << psttr5 ; psttr5 = 0 ;
                                     etThread.strMakeF( tin0P , LF , psttr5 , T(tin.postThreadName) ) ; ___( psttr5 ) ;
@@ -1657,7 +1657,7 @@ TELL( "i am outa here" )
                                 }
                                     }
                                         stRpt << psttr5 ; psttr5 = 0 ;
-                                        etThread.strFuseF( tin0P , psttr5 , TF3(tin.monitor.cNewSteps,flFORMAT_UNSIGNED,9)+tType+tIdName+TF3(tin.osTid,flFORMAT_UNSIGNED,9)+TF3(tin.osPid,flFORMAT_UNSIGNED,9)+TF3(tin.idThread,flFORMAT_UNSIGNED,9)+TP(tin.postThreadName,0x20)+tb+TF3(tin.cNest,flFORMAT_UNSIGNED,4)+TF3(tin.pLFnest[((tin.monitor.cInNest&OFFsLOTtINnESTmAX)<<1)+1],flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+tMark2+(bMark?T("* "):T("  "))+T(tin.postTell)+(tin.postTellIf[0]?tBar:tNull)+T(tin.postTellIf)+tc ) ; ___( psttr5 ) ;
+                                        etThread.strFuseF( tin0P , psttr5 , TF3(tin.monitor.cNewSteps,flFORMAT_UNSIGNED,9)+tType+tIdName+TF3(tin.osTid,flFORMAT_UNSIGNED,9)+TF3(tin.osPid,flFORMAT_UNSIGNED,9)+TF3(tin.idThread,flFORMAT_UNSIGNED,9)+TP(tin.postThreadName,0x20)+tb+TF3(tin.cNest,flFORMAT_UNSIGNED,4)+TF3(tin.pLFnest[((tin.where.cInNest&OFFsLOTtINnESTmAX)<<1)+1],flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+tMark2+(bMark?T("* "):T("  "))+T(tin.postTell)+(tin.postTellIf[0]?tBar:tNull)+T(tin.postTellIf)+tc ) ; ___( psttr5 ) ;
                                         ZE( strokeS* , psttr5 ) ;
                                     {
 

@@ -51,7 +51,7 @@
         //
         //#if defined( ENABLEdROPnOTES )
 
-        ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GOiNoUTfRAMED ;_
+        ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GOiNoUTfRAMED ;_
         }
             _MOLE
             //}
@@ -105,7 +105,7 @@
                 {
                 if( ((tin123S&)tin0P).idTinNamed != ifcIDtINnAMED_tinHeartI && ((tin123S&)tin0P).idTinNamed != ifcIDtINnAMED_tinBreakI && thirdC::third_idPhaseProcess_IF() >= ifcIDpHASEpROCESS_PROLOGaLLgLOBALScONSTRUCTED && thirdC::third_idPhaseProcess_IF() < ifcIDpHASEpROCESS_EPILOGdESTROYINGgLOBALS )
 
-                ((tin123S&)tin0P).monitor.idWhat2 = idiFileCt >> 0xc ;_
+                ((tin123S&)tin0P).where.idWhat2 = idiFileCt >> 0xc ;_
 
                 thirdC::inOutChatterIfIF( tin0P ) ;_
 
@@ -145,7 +145,7 @@
 
                 homeS* ph = &homeS::homeIF() ;_
 
-                ((tin123S&)tin0P).monitor.idDirty ++ ;_
+                ((tin123S&)tin0P).where.idDirty ++ ;_
 
                                                   eipF( &((tin123S&)tin0P).pEIPInNest[ offon ] ) ;_
                 eipInNestSave               =            ((tin123S&)tin0P).pEIPInNest[ offon ]   ;_
@@ -153,28 +153,28 @@
                 ((tin123S&)tin0P).pIdInNest[ offonk    ] = 0 ;_
                 ((tin123S&)tin0P).pIdInNest[ offon     ] ++ ;_
 
-                ((tin123S&)tin0P).pLFstep  [ offos2 + 1 ] =           ((tin123S&)tin0P).monitor.pLFnest      [ offon2 + 1 ] = idiFileCt                                                       ;_
-                idFileNestSave               =           ((tin123S&)tin0P).monitor.pLFnest      [ offon2 + 1 ]                                                                   ;_
+                ((tin123S&)tin0P).pLFstep  [ offos2 + 1 ] =           ((tin123S&)tin0P).where.pLFnest      [ offon2 + 1 ] = idiFileCt                                                       ;_
+                idFileNestSave               =           ((tin123S&)tin0P).where.pLFnest      [ offon2 + 1 ]                                                                   ;_
 
-                ((tin123S&)tin0P).pLFstep  [ offos2     ] =      (    ((tin123S&)tin0P).monitor.pLFnest      [ offon2     ] = idLineCt & ~fliSTEP_FLAGmASK    )    |    fliSTEP_NESTcHANGE    ;_
-                idLineNestSave               =           ((tin123S&)tin0P).monitor.pLFnest      [ offon2     ]                                                                   ;_
+                ((tin123S&)tin0P).pLFstep  [ offos2     ] =      (    ((tin123S&)tin0P).where.pLFnest      [ offon2     ] = idLineCt & ~fliSTEP_FLAGmASK    )    |    fliSTEP_NESTcHANGE    ;_
+                idLineNestSave               =           ((tin123S&)tin0P).where.pLFnest      [ offon2     ]                                                                   ;_
 
                 pFlagsThreadLevelModeSave    =           ((tin123S&)tin0P).pFlagsThreadLevelMode[ offon ]                                                                       ;_
                 idProgressNestSave           =           ((tin123S&)tin0P).pIdProgressNest      [ offon ]                                                                       ;_
 
-                const countT offonk = ( ((tin123S&)tin0P).monitor.cInNest + 1 ) & OFFsLOTtINnESTmAX ; // "k" IS FOR "KID"
-                const countT offon  = ((tin123S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ; const countT offon2 = offon << 1 ;_
+                const countT offonk = ( ((tin123S&)tin0P).where.cInNest + 1 ) & OFFsLOTtINnESTmAX ; // "k" IS FOR "KID"
+                const countT offon  = ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ; const countT offon2 = offon << 1 ;_
                 const countT offos  = ((tin123S&)tin0P).monitor.idStep  & OFFsLOTtINsTEPmAX ; const countT offos2 = offos << 1 ;_
 
-                ((tin123S&)tin0P).monitor.cInNest ++ ;_
+                ((tin123S&)tin0P).where.cInNest ++ ;_
                 ((tin123S&)tin0P).monitor.idStep ++ ;_
-                ((tin123S&)tin0P).monitor.idDirty ++ ;_
+                ((tin123S&)tin0P).where.idDirty ++ ;_
             {
-            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( ((tin123S&)tin0P).monitor.idDirty % 2 ) )
+            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( ((tin123S&)tin0P).where.idDirty % 2 ) )
             _MILE
         {
         if( F(flagsCt) & flINoUTfRAMEc_REGISTERcALLnEST )
-        ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GOiNoUTcT ;_
+        ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GOiNoUTcT ;_
 
         }
             }
@@ -321,8 +321,8 @@
 //INTENTIONALLY UNINITIALIZED FOR SPEED: eipInNestSave
 //INTENTIONALLY UNINITIALIZED FOR SPEED: idLineNestSave
 //INTENTIONALLY UNINITIALIZED FOR SPEED: idFileNestSave
-idWhat2Save( ((tin123S&)tin0P).monitor.idWhat2 )
-idWhat1Save( ((tin123S&)tin0P).monitor.idWhat1 ) ,
+idWhat2Save( ((tin123S&)tin0P).where.idWhat2 )
+idWhat1Save( ((tin123S&)tin0P).where.idWhat1 ) ,
 ) ,
     )
                         //: flINoUTfRAMEc_null                            //TO ENABLE  GENERALLY  (ENABLE THIS LINE IN PRODUCTION IFF WANT FULL TIME TELEMETRY)

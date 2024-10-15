@@ -335,14 +335,14 @@ DONE( tmWhereF )
                         pcloOut[ offo ++ ] = whereCopy.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
                         pcloOut[ offo ++ ] = whereCopy.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] ;
                     {
-                    for( countT idn = whereCopy.monitor.cInNest ; idn >= idnf ; idn -- )
+                    for( countT idn = whereCopy.where.cInNest ; idn >= idnf ; idn -- )
                     offo = 2 ;
 
                     }
                         pcloIn[ offo ++ ] = whereCopy.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
                         pcloIn[ offo ++ ] = whereCopy.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] ;
                     {
-                    for( countT idn = idnf ; idn <= whereCopy.monitor.cInNest ; idn ++ )
+                    for( countT idn = idnf ; idn <= whereCopy.where.cInNest ; idn ++ )
     
                     countT offo = 2 ;
                     pcloOut[ 1 ] = pcloIn[ 1 ] = 0x20 ; //U::PLACEHOLDER FOR idPhase3 idPhase
@@ -353,23 +353,23 @@ DONE( tmWhereF )
                     countT pcloIn[  3 + sizeof whereCopy.pLFnest / sizeof whereCopy.pLFnest[ 0 ] ] ;
     
                     ++ swTally2P ;
-                    lifiLeverP.c2 = whereCopy.pLFnest[ ( ( whereCopy.monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
-                    lifiLeverP.c1 = whereCopy.pLFnest[   ( whereCopy.monitor.cInNest & OFFsLOTtINnESTmAX ) << 1       ] ;
+                    lifiLeverP.c2 = whereCopy.pLFnest[ ( ( whereCopy.where.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
+                    lifiLeverP.c1 = whereCopy.pLFnest[   ( whereCopy.where.cInNest & OFFsLOTtINnESTmAX ) << 1       ] ;
 
                     ++ swTally1P ;
                     lifiLeverP.c2 = whereCopy.pLFnest[ ( ( idnf & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
                     lifiLeverP.c1 = whereCopy.pLFnest[   ( idnf & OFFsLOTtINnESTmAX ) << 1       ] ;
     
                     if( (sCountT)idnf < 1 ) idnf = 1 ;
-                    idnf = whereCopy.monitor.cInNest - OFFsLOTtINnESTmAX ;
+                    idnf = whereCopy.where.cInNest - OFFsLOTtINnESTmAX ;
                 {
                 if( bOk )
 
-                else thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&whereCopy , sizeof whereCopy , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).monitor.cInNest - (byteT*)&tin0P ) ) , entry.osPid ) ;
+                else thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&whereCopy , sizeof whereCopy , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).where.cInNest - (byteT*)&tin0P ) ) , entry.osPid ) ;
                 }
                     bOk = 1 ;
                     thirdC::c_memcpyIF( tin0P , (byteT*)&whereCopy , (byteT*)pWhere , sizeof whereCopy ) ; //A COPY IS MADE EVEN IF IDA TO INCREASE THE PROBABILITY THAT THE DATA ARE CONSISTENT
-                    whereOldS* pWhere = (whereOldS*)( (byteT*)ap_artmentOldC( tin0P , entry.ip ) + ( (byteT*)&((tin123S&)tin0P).monitor.cInNest - (byteT*)&tin0P ) ) ;
+                    whereOldS* pWhere = (whereOldS*)( (byteT*)ap_artmentOldC( tin0P , entry.ip ) + ( (byteT*)&((tin123S&)tin0P).where.cInNest - (byteT*)&tin0P ) ) ;
                 {
                 if( entry.bIda )
                 ZE( boolT , bOk ) ;

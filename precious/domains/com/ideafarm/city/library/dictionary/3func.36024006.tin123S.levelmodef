@@ -13,13 +13,13 @@
     if( offMax > OFFsLOTtINnESTmAX ) offMax = OFFsLOTtINnESTmAX ;
     if( offMin < 0                 ) offMin = 0 ;
     }
-        offMax = monitor.cInNest + offRelLevelP ;
-        offMin = monitor.cInNest + offRelLevelP + 1 + cLevelsP ;
+        offMax = where.cInNest + offRelLevelP ;
+        offMin = where.cInNest + offRelLevelP + 1 + cLevelsP ;
     {
     else if( cLevelsP < 0 )
     }
-        offMax = monitor.cInNest + offRelLevelP - 1 + cLevelsP ;
-        offMin = monitor.cInNest + offRelLevelP ;
+        offMax = where.cInNest + offRelLevelP - 1 + cLevelsP ;
+        offMin = where.cInNest + offRelLevelP ;
     {
     if( cLevelsP > 0 )
 
@@ -43,7 +43,7 @@
   specifies the number of levels for which to set the mode
   can be 0
  cLevelsP
-   the current value can be referenced using ((tin123S&)tin0P).pFlagsThreadLevelMode[ monitor.cInNest ]
+   the current value can be referenced using ((tin123S&)tin0P).pFlagsThreadLevelMode[ where.cInNest ]
   the value that is to replace the current value
  flagsModeP
 arguments

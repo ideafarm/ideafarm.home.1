@@ -2380,7 +2380,7 @@ these "status codes" are returned by some MS Windows api's
 
 #define THREADmODEwHEREoFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadModeWhereSave = ((tin123S&)tin0P).monitor.flagsThreadModeWhere ;                                                                \
+    flagsT _flagsThreadModeWhereSave = ((tin123S&)tin0P).where.flagsThreadModeWhere ;                                                                \
     THREADmODEwHEREoFF0( flagsP )
 
 
@@ -2437,7 +2437,7 @@ these "status codes" are returned by some MS Windows api's
 
 #define THREADmODEwHEREoN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadModeWhereSave = ((tin123S&)tin0P).monitor.flagsThreadModeWhere ;                                                                \
+    flagsT _flagsThreadModeWhereSave = ((tin123S&)tin0P).where.flagsThreadModeWhere ;                                                                \
     THREADmODEwHEREoN0( flagsP )
 
 
@@ -2464,7 +2464,7 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*THREADmODEwHEREsAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODEwHEREsAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).monitor.flagsThreadModeWhere ;
+#define THREADmODEwHEREsAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).where.flagsThreadModeWhere ;
 
 
 //
@@ -2490,7 +2490,7 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*THREADmODEwHEREoFF0(flagsP)*//*1*/
 
-#define THREADmODEwHEREoFF0(flagsP) ((tin123S&)tin0P).monitor.flagsThreadModeWhere &= ~( F(flagsP) ) ;
+#define THREADmODEwHEREoFF0(flagsP) ((tin123S&)tin0P).where.flagsThreadModeWhere &= ~( F(flagsP) ) ;
 
 
 //
@@ -2516,7 +2516,7 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*THREADmODEwHEREoN0(flagsP)*//*1*/
 
-#define THREADmODEwHEREoN0(flagsP) ((tin123S&)tin0P).monitor.flagsThreadModeWhere |= (flagsP) ;
+#define THREADmODEwHEREoN0(flagsP) ((tin123S&)tin0P).where.flagsThreadModeWhere |= (flagsP) ;
 
 
 //
@@ -2542,7 +2542,7 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*THREADmODEwHERErESTORE0*//*1*/
 
-#define THREADmODEwHERErESTORE0(flagsSaveP) ((tin123S&)tin0P).monitor.flagsThreadModeWhere = (flagsSaveP) ;
+#define THREADmODEwHERErESTORE0(flagsSaveP) ((tin123S&)tin0P).where.flagsThreadModeWhere = (flagsSaveP) ;
 
 
 //
@@ -4032,7 +4032,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).where.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
               byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
@@ -4065,7 +4065,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;                                         \
                         etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
                     }                                                                                                                                                                                                                                                                           \
-                      if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
+                      if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
                     TELL( "TASK123pART0: entering application code" )                                                                                                                                                                                                                           \
                     /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
@@ -4169,7 +4169,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         else                                                                                                                                                                                                                            \
                         {                                                                                                                                                                                                                               \
                             TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                    \
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;            \
+                            if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;            \
                                                                                                                                                                                                                                                         \
                             TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                    \
                             {                                                                                                                                                                                                                           \
@@ -4410,7 +4410,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).where.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
             /*byteT pbEther1[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
@@ -4443,7 +4443,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         ether.strMakeF(    tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;                                         \
                         ether.boxPutF(    tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
                     }                                                                                                                                                                                                                                                                           \
-                    /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;*/                                                          \
+                    /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;*/                                                          \
                     TELL( "TASK123pART0: entering application code" )                                                                                                                                                                                                                           \
                     /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
@@ -4547,7 +4547,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         /*else*/                                                                                                                                                                                                                     \
                         {                                                                                                                                                                                                                            \
                             TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                 \
-                            /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;*/     \
+                            /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;*/     \
                                                                                                                                                                                                                                                      \
                             TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                 \
                             {                                                                                                                                                                                                                        \
@@ -28919,7 +28919,7 @@ it is used by classes such as batonC and signC to store functionality added by t
 */
 /**/
 
-/*1*/struct __export monitorS : public whereS/*1*/
+/*1*/struct __export monitorS/*1*/
 {
     countT                 idProcessOld ;
     const countT           idThread ;
@@ -29426,6 +29426,7 @@ struct bookMarkOldS
 
 /*1*/struct _export tin_part3_S/*1*/
 {
+    whereS          where ;
     monitorS        monitor ;                                                               // flagsThreadModeWhere IS IN HERE
     jotC*           ppJot[                             CsLOTSjOTrEGISTRY        ] ;         // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
     countT          pcUtility[                         CCuTILITY                ] ;

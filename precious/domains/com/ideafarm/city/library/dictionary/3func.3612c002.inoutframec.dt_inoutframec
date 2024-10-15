@@ -150,11 +150,11 @@
         {
         if( F(flagsCt) & flINoUTfRAMEc_DOnOTcOLLECTaPPtELEMETRY )
 
-        ((tin123S&)tin0P).monitor.idWhat1 = idWhat1Save ;_
+        ((tin123S&)tin0P).where.idWhat1 = idWhat1Save ;_
 
         }
             _MOLE
-            ((tin123S&)tin0P).monitor.idWhat2 = idWhat2Save ;_
+            ((tin123S&)tin0P).where.idWhat2 = idWhat2Save ;_
             }
                 thirdC::inOutChatterIfIF( tin0P ) ;_
 
@@ -179,21 +179,21 @@
                 if( ph && ph->flags & F(flHOMEs_INoUTtRACE) )
                 homeS* ph = &homeS::homeIF() ;_
 
-                ((tin123S&)tin0P).monitor.idDirty ++ ;_
+                ((tin123S&)tin0P).where.idDirty ++ ;_
 
                 ((tin123S&)tin0P).pLFstep[ offos2New + 1 ] = idiFileCt ;_
                 ((tin123S&)tin0P).pLFstep[ offos2New     ] = idLineCt & ~fliSTEP_FLAGmASK | fliSTEP_NESTcHANGE | fliSTEP_NESToUT ;_
 
                 const countT offosNew  =   ((tin123S&)tin0P).monitor.idStep        & OFFsLOTtINsTEPmAX ; const countT offos2New = offosNew << 1 ;_
-                ((tin123S&)tin0P).monitor.cInNest -- ;_
+                ((tin123S&)tin0P).where.cInNest -- ;_
                 ((tin123S&)tin0P).monitor.idStep ++ ;_
 
                 ((tin123S&)tin0P).pFlagsThreadLevelMode[ offon      ] = pFlagsThreadLevelModeSave ;_
                 ((tin123S&)tin0P).pIdProgressNest[       offon      ] = idProgressNestSave ;_
                 ((tin123S&)tin0P).pEIPInNest[            offon      ] = eipInNestSave ;_
                 ((tin123S&)tin0P).pIdInNest[             offonk     ] = 0 ;_
-                ((tin123S&)tin0P).monitor.pLFnest[       offon2 + 1 ] = idFileNestSave ;_
-                ((tin123S&)tin0P).monitor.pLFnest[       offon2     ] = idLineNestSave ;_
+                ((tin123S&)tin0P).where.pLFnest[       offon2 + 1 ] = idFileNestSave ;_
+                ((tin123S&)tin0P).where.pLFnest[       offon2     ] = idLineNestSave ;_
 
                 }
                     }
@@ -212,13 +212,13 @@
 
                 if( ((tin123S&)tin0P).tally.bTally ) ((tin123S&)tin0P).tally.pcExits[ IDFILE ] ++ ;_
 
-                const countT offonk = ( ((tin123S&)tin0P).monitor.cInNest + 1 ) & OFFsLOTtINnESTmAX ; // "k" IS FOR "KID"
-                const countT offon  =   ((tin123S&)tin0P).monitor.cInNest       & OFFsLOTtINnESTmAX ; const countT offon2 = offon << 1 ;_
+                const countT offonk = ( ((tin123S&)tin0P).where.cInNest + 1 ) & OFFsLOTtINnESTmAX ; // "k" IS FOR "KID"
+                const countT offon  =   ((tin123S&)tin0P).where.cInNest       & OFFsLOTtINnESTmAX ; const countT offon2 = offon << 1 ;_
                 const countT offos  =   ((tin123S&)tin0P).monitor.idStep        & OFFsLOTtINsTEPmAX ; const countT offos2 = offos << 1 ;_
 
-                ((tin123S&)tin0P).monitor.idDirty ++ ;_
+                ((tin123S&)tin0P).where.idDirty ++ ;_
             {
-            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( ((tin123S&)tin0P).monitor.idDirty % 2 ) )
+            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( ((tin123S&)tin0P).where.idDirty % 2 ) )
 
             //}
             //    }
@@ -237,7 +237,7 @@
         {
         if( F(flagsCt) & flINoUTfRAMEc_REGISTERcALLnEST )
 
-        ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GOiNoUTdT ;_
+        ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GOiNoUTdT ;_
 
 //    #endif
 //

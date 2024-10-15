@@ -12,16 +12,16 @@
 
     pcP[ offo ] = 0 ;
     }
-        pcP[ offo ++ ] = monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
-        pcP[ offo ++ ] = monitor.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] ;
+        pcP[ offo ++ ] = where.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
+        pcP[ offo ++ ] = where.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] ;
 
         if( offo >= ccP - 1 ) break ;
     {
-    for( countT idn = monitor.cInNest ; idn >= idnf ; idn -- )
+    for( countT idn = where.cInNest ; idn >= idnf ; idn -- )
     ZE( countT , offo ) ;
 
     if( (sCountT)idnf < 1 ) idnf = 1 ;
-    countT idnf = monitor.cInNest - OFFsLOTtINnESTmAX ;
+    countT idnf = where.cInNest - OFFsLOTtINnESTmAX ;
 
     //IN
 
@@ -36,7 +36,7 @@
 /*1*/voidT tin123S::get_pLFnest_F( tin0S& tin0P , countT* const pcP , const countT ccP )/*1*/
 /**/
 */
-  set it to sizeof ((tin123S&)tin0P).monitor.pLFnest + 1 unless you are only interested in looking up a few levels
+  set it to sizeof ((tin123S&)tin0P).where.pLFnest + 1 unless you are only interested in looking up a few levels
   1 will work, but the caller will only get the null terminator
   must be an odd value
  ccP

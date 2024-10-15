@@ -248,7 +248,7 @@
                                 {_M
                                 for( countT ids = ((tin123S&)tin0Snap).monitor.idStep ; cDo -- ; ids -- )
                                 countT cDo = OFFsLOTtINsTEPmAX + 1 ;_M                          // IF idStep IS SMALL AND NOT BECAUSE OF WRAP THEN SOME REPORT LINES WILL BE FROM [0,0] PAIRS ; TO KISS, I DO NOT TEST FOR THIS SO I WILL REPORT EVEN IF pLFstep HAS BEEN TRASHED
-                                countT cIndent = ((tin123S&)tin0Snap).monitor.cInNest ;_M
+                                countT cIndent = ((tin123S&)tin0Snap).where.cInNest ;_M
                             
                                 OStEXTAK( ostoRpt , "\r\n \r\nExecution Steps:\r\n \r\n" ) ;_M
                             {_M
@@ -285,25 +285,25 @@
                                     OStEXTAK( ostoRpt , " | " ) ;_M
                                     OStEXTC( ostoRpt , ((tin123S&)tin0Snap).pEIPInNest[ offez ] , ' ' ) ;_M
                             
-                                    countT idiFile = ((tin123S&)tin0Snap).monitor.pLFnest[ offe + 1 ] ;_M
-                                    countT idLine  = ((tin123S&)tin0Snap).monitor.pLFnest[ offe     ] ;_M
+                                    countT idiFile = ((tin123S&)tin0Snap).where.pLFnest[ offe + 1 ] ;_M
+                                    countT idLine  = ((tin123S&)tin0Snap).where.pLFnest[ offe     ] ;_M
                                     countT offe = ( idn & OFFsLOTtINnESTmAX ) << 1 ;
                                     countT offez = idn & OFFsLOTtINnESTmAX ;
                                 {_M
-                                for( countT idn = ((tin123S&)tin0Snap).monitor.cInNest ; idn >= idnf ; idn -- )
+                                for( countT idn = ((tin123S&)tin0Snap).where.cInNest ; idn >= idnf ; idn -- )
                                 /*PSEUDODUPLICATE CODE: 2e40104 0010266*/
                             
                                 }
                                     idnf = 1 ;_M
                                 {_M
                                 if( (sCountT)idnf < 1 )
-                                countT idnf = ((tin123S&)tin0Snap).monitor.cInNest - OFFsLOTtINnESTmAX ;_M
+                                countT idnf = ((tin123S&)tin0Snap).where.cInNest - OFFsLOTtINnESTmAX ;_M
                                 OStEXTAK( ostoRpt , "\r\n \r\nCall Nest:\r\n \r\n" ) ;_M
                             {_M
                             else if( tin0Snap.idTypeTin == ifcIDtYPEtIN_123 )
-                            else if( (sCountT)((tin123S&)tin0Snap).monitor.cInNest < 0 ) { OStEXTAK( ostoRpt , "\r\n \r\nCall Nest:  error: cNest is negative\r\n" ) ;_M }
-                            if( !((tin123S&)tin0Snap).monitor.cInNest ) { OStEXTAK( ostoRpt , "\r\n \r\nCall Nest:  no nest information exists\r\n" ) ;_M }
-                            OStEXTC( ostoRpt , ((tin123S&)tin0Snap).monitor.cInNest , 0 ) ;_M
+                            else if( (sCountT)((tin123S&)tin0Snap).where.cInNest < 0 ) { OStEXTAK( ostoRpt , "\r\n \r\nCall Nest:  error: cNest is negative\r\n" ) ;_M }
+                            if( !((tin123S&)tin0Snap).where.cInNest ) { OStEXTAK( ostoRpt , "\r\n \r\nCall Nest:  no nest information exists\r\n" ) ;_M }
+                            OStEXTC( ostoRpt , ((tin123S&)tin0Snap).where.cInNest , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\ncNest: " ) ;_M
                             OStEXTC( ostoRpt , tellInfoSys.cFixed , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\ncFixed: " ) ;_M
@@ -422,19 +422,19 @@
                             OStEXTAK( ostoRpt , "\"\r\npostTellWait: \"" ) ;_M
                             if( tin0Snap.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA(  ostoRpt , ((tin123S&)tin0Snap).postTell ) ;_M
                             OStEXTAK( ostoRpt , "\r\npostTell: \"" ) ;_M
-                            OStEXTC(  ostoRpt , ((tin123S&)tin0Snap).monitor.idWhat2 , 0 ) ;_M
+                            OStEXTC(  ostoRpt , ((tin123S&)tin0Snap).where.idWhat2 , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\nidWhat2: " ) ;_M
                             }
-                                OStEXTC( ostoRpt , ((tin123S&)tin0Snap).monitor.idWhat1 , 0 ) ;_M
+                                OStEXTC( ostoRpt , ((tin123S&)tin0Snap).where.idWhat1 , 0 ) ;_M
                             {_M
                             else
                             }
                                 OStEXTA( ostoRpt , postWhat ) ;_M
                             {_M
                             if( postWhat )
-                            const osTextT* postWhat = processGlobal4I.mapWhat( ((tin123S&)tin0Snap).monitor.idWhat1 ) ;
-                            OStEXTC(  ostoRpt ,      ((tin123S&)tin0Snap).monitor.idWhat1 , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin123S&)tin0Snap).monitor.idWhat1: " ) ;_M
+                            const osTextT* postWhat = processGlobal4I.mapWhat( ((tin123S&)tin0Snap).where.idWhat1 ) ;
+                            OStEXTC(  ostoRpt ,      ((tin123S&)tin0Snap).where.idWhat1 , 0 ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin123S&)tin0Snap).where.idWhat1: " ) ;_M
                             OStEXTC(  ostoRpt , ((tin123S&)tin0Snap).idiFile_brcLath , 0 ) ;_M
                             OStEXTAK( ostoRpt ,   "\r\nidiFile_brcLath: " ) ;_M
                             OStEXTC(  ostoRpt , ((tin123S&)tin0Snap).idLine_brcLath , 0 ) ;_M
@@ -517,7 +517,7 @@
                             
                                 }
                                     OStEXTAK( ostoRpt , ")" ) ;_M
-                                    OStEXTC(  ostoRpt , (countT)tellInfoSys.pvOffendingCode - ((tin123S&)tin0Snap).pEIPInNest[ ((tin123S&)tin0Snap).monitor.cInNest & OFFsLOTtINnESTmAX ] , 0 ) ;_M
+                                    OStEXTC(  ostoRpt , (countT)tellInfoSys.pvOffendingCode - ((tin123S&)tin0Snap).pEIPInNest[ ((tin123S&)tin0Snap).where.cInNest & OFFsLOTtINnESTmAX ] , 0 ) ;_M
                                     OStEXTAK( ostoRpt , " (offset from in: " ) ;_M
                                 {
                                 if( tin0Snap.idTypeTin == ifcIDtYPEtIN_123 )

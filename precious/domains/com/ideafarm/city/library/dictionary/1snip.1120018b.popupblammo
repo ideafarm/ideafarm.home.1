@@ -24,7 +24,7 @@
         OStEXTAK( postBody , "\r\nargs:\r\n" ) ;                                                                       \
                                                                                                                         \
         }                                                                                                               \
-            OStEXTC( postBody , ((tin123S&)tin0P).monitor.pLFnest[ ( ( cNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] , 0 ) ;                                 \
+            OStEXTC( postBody , ((tin123S&)tin0P).where.pLFnest[ ( ( cNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] , 0 ) ;                                 \
             OStEXTAK( postBody , " " ) ;                                                                               \
             OStEXTC( postBody , cNest , 0 ) ;                                                                         \
         {                                                                                                               \
@@ -39,7 +39,7 @@
         {                                                                                                               \
         if( cNest == 1 )                                                                                                \
         const countT cNestStop = cNest > 0x10 ? cNest - 0x10 : 0 ;                                                      \
-        countT cNest = 1 + ((tin123S&)tin0P).monitor.cInNest ;                                                                                 \
+        countT cNest = 1 + ((tin123S&)tin0P).where.cInNest ;                                                                                 \
         OStEXT( postBody , 0x100 )                                                                                      \
                                                                                                                         \
         OStEXTAK( ostoTitle , "\"" ) ;                                                                                 \

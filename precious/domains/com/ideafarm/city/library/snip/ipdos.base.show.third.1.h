@@ -2035,7 +2035,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).where.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
               byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
@@ -2068,7 +2068,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;                                         \
                         etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
                     }                                                                                                                                                                                                                                                                           \
-                      if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
+                      if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
                     TELL( "TASK123pART0: entering application code" )                                                                                                                                                                                                                           \
                     /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
@@ -2142,7 +2142,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         else                                                                                                                                                                                                                                                         \
                         {                                                                                                                                                                                                                                                            \
                             TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                                 \
-                            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;  \
+                            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;  \
                                                                                                                                                                                                                                                                                      \
                             TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                                                 \
                             {                                                                                                                                                                                                                                                        \
@@ -5566,7 +5566,7 @@ U: redesign this to work well with all types of process face
 //U:
 #if defined( NEVERdEFINED )
 
-#define PRO ( tin0P.idTypeTin != ifcIDtYPEtIN_123 ? cProgressDflt : ((tin123S&)tin0P).pIdProgressNest[ ((tin123S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ] )
+#define PRO ( tin0P.idTypeTin != ifcIDtYPEtIN_123 ? cProgressDflt : ((tin123S&)tin0P).pIdProgressNest[ ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ] )
 
 #else
 
@@ -5728,7 +5728,7 @@ U: redesign this to work well with all types of process face
 if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_SHOWpROGRESS )      \
 {                                                                                                                   \
     ZE( countT , ecnu ) ;                                                                                           \
-    countT cNest = ((tin123S&)tin0P).monitor.cInNest ;                                                                \
+    countT cNest = ((tin123S&)tin0P).where.cInNest ;                                                                \
     countT cToDo = 1 + ( cNest <= 7 ? cNest : 7 ) ;                                                                 \
                                                                                                                     \
     thirdC::dosWriteStdOutIF( tin0P , " \r" BLANK79 "\r" ) ;                                                        \
@@ -8494,31 +8494,31 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifcIDwHAT_max     0xdddd0471
 
 // whatP VALUES
-#define WHATga   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GOaDAM             ; }
-#define WHATgape { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GOpROLOGePILOG     ; }
-#define WHATgbl  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSclIB          ; }
-#define WHATgbm  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSmONITOR       ; }
-#define WHATgbd  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSdRAW          ; }
-#define WHATgbo  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSoTHER         ; }
-#define WHATgbt  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOStHIRD         ; }
-#define WHATsb   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPbATON          ; }
-#define WHATsbl  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPbOSclIB        ; }
-#define WHATsbt  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPbOStHIRD       ; }
-#define WHATsfr  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPfILErEAD       ; }
-#define WHATsfw  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPfILEwRITE      ; }
-#define WHATsg   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPgRAB           ; }
-#define WHATsia  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPiNTaCCEPT      ; }
-#define WHATsir  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPiNTrEAD        ; }
-#define WHATsiw  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPiNTwRITE       ; }
-#define WHATsm   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPmONITORING     ; }
-#define WHATsy   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPyIELD          ; }
-#define WHATsn   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPnAP            ; }
-#define WHATso   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPoTHER          ; }
-#define WHATss   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPsIGN           ; }
-#define WHATssu  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPsUSPENDED      ; }
-#define WHATsw   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPwIN            ; }
-#define WHATswr  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPwINrEAD        ; }
-#define WHATsww  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPwINwRITE       ; }
+#define WHATga   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GOaDAM             ; }
+#define WHATgape { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GOpROLOGePILOG     ; }
+#define WHATgbl  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GObOSclIB          ; }
+#define WHATgbm  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GObOSmONITOR       ; }
+#define WHATgbd  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GObOSdRAW          ; }
+#define WHATgbo  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GObOSoTHER         ; }
+#define WHATgbt  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_GObOStHIRD         ; }
+#define WHATsb   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPbATON          ; }
+#define WHATsbl  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPbOSclIB        ; }
+#define WHATsbt  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPbOStHIRD       ; }
+#define WHATsfr  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPfILErEAD       ; }
+#define WHATsfw  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPfILEwRITE      ; }
+#define WHATsg   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPgRAB           ; }
+#define WHATsia  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPiNTaCCEPT      ; }
+#define WHATsir  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPiNTrEAD        ; }
+#define WHATsiw  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPiNTwRITE       ; }
+#define WHATsm   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPmONITORING     ; }
+#define WHATsy   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPyIELD          ; }
+#define WHATsn   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPnAP            ; }
+#define WHATso   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPoTHER          ; }
+#define WHATss   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPsIGN           ; }
+#define WHATssu  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPsUSPENDED      ; }
+#define WHATsw   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPwIN            ; }
+#define WHATswr  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPwINrEAD        ; }
+#define WHATsww  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).where.idWhat1 = ifcIDwHAT_STOPwINwRITE       ; }
 
 // typeP VALUES
 #define BOSwAITcODE     ((tin123S&)tin0P).bosFail = _brcRawExp == WAIT_FAILED
@@ -8545,7 +8545,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                         \
     {                                                                                                                                                   \
         ((tin123S&)tin0P).brcLath = ((tin123S&)tin0P).brcQuery = 0 ;                                                                                                              \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).monitor.idWhat1 ;                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         expResetErrorP ;                                                                                                                                \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
@@ -8571,7 +8571,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin123S&)tin0P).brcLath , " " , ((tin123S&)tin0P).idLine_brcLath , " " , ((tin123S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/ \
             }                                                                                                                                           \
         }                                                                                                                                               \
-        ((tin123S&)tin0P).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         ((tin123S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                      \
     }
 
@@ -8579,7 +8579,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                         \
     {                                                                                                                                                   \
         ((tin123S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).monitor.idWhat1 ;                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         errno = 0 ;                                                                                                                                     \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
@@ -8604,7 +8604,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSL   [brcLath,idLine,idiFile]: " , ((tin123S&)tin0P).brcLath , " " , ((tin123S&)tin0P).idLine_brcLath , " " , ((tin123S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/ \
             }                                                                                                                                           \
         }                                                                                                                                               \
-        ((tin123S&)tin0P).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         ((tin123S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                      \
     }
 
@@ -8612,7 +8612,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                         \
     {                                                                                                                                                   \
         ((tin123S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).monitor.idWhat1 ;                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         typeP ;                                                                                                                                         \
@@ -8636,7 +8636,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin123S&)tin0P).brcLath , " " , ((tin123S&)tin0P).idLine_brcLath , " " , ((tin123S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/ \
             }                                                                                                                                           \
         }                                                                                                                                               \
-        ((tin123S&)tin0P).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         ((tin123S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                      \
     }
 
@@ -8644,7 +8644,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                         \
     {                                                                                                                                                   \
         ((tin123S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).monitor.idWhat1 ;                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         typeP ;                                                                                                                                         \
@@ -8667,7 +8667,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSrAW [brcLath,idLine,idiFile]: " , ((tin123S&)tin0P).brcLath , " " , ((tin123S&)tin0P).idLine_brcLath , " " , ((tin123S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/ \
             }                                                                                                                                           \
         }                                                                                                                                               \
-        ((tin123S&)tin0P).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         ((tin123S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                      \
     }
 
@@ -8705,7 +8705,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                         \
     {                                                                                                                                                   \
         ((tin123S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).monitor.idWhat1 ;                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         countT _brcRawExp = (countT)(expP) ;                                                                                                            \
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
@@ -8715,7 +8715,7 @@ it is illegal to refer to this symbol in the definition of an adam
             countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
             if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
         }                                                                                                                                               \
-        ((tin123S&)tin0P).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         ((tin123S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                      \
     }
 
@@ -8723,7 +8723,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                         \
     {                                                                                                                                                   \
         ((tin123S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).monitor.idWhat1 ;                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         measure04T _brcm04RawExp = (measure04T)(expP) ;                                                                                                 \
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
@@ -8733,7 +8733,7 @@ it is illegal to refer to this symbol in the definition of an adam
             countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
             if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
         }                                                                                                                                               \
-        ((tin123S&)tin0P).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
         ((tin123S&)tin0P).brcm04Raw = _brcm04RawExp ;                                                                                                                \
     }
 
@@ -8741,7 +8741,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                         \
     {                                                                                                                                                   \
         ((tin123S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).monitor.idWhat1 ;                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
         whatP                                                                                                                                           \
         { expP ; }                                                                                                                                      \
         processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
@@ -8751,7 +8751,7 @@ it is illegal to refer to this symbol in the definition of an adam
             countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
             if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
         }                                                                                                                                               \
-        ((tin123S&)tin0P).monitor.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
     }
 
 #define BOSnOvALUEnOtIN(expP)                                                                                                                           \
@@ -15313,7 +15313,7 @@ see QUITO
         OStEXTAK( ostoTitle , "\"" ) ;                                                                                 \
                                                                                                                         \
         OStEXT( postBody , 0x100 )                                                                                      \
-        countT cNest = 1 + ((tin123S&)tin0P).monitor.cInNest ;                                                                                 \
+        countT cNest = 1 + ((tin123S&)tin0P).where.cInNest ;                                                                                 \
         const countT cNestStop = cNest > 0x10 ? cNest - 0x10 : 0 ;                                                      \
         if( cNest == 1 )                                                                                                \
         {                                                                                                               \
@@ -15328,7 +15328,7 @@ see QUITO
         {                                                                                                               \
             OStEXTC( postBody , cNest , 0 ) ;                                                                         \
             OStEXTAK( postBody , " " ) ;                                                                               \
-            OStEXTC( postBody , ((tin123S&)tin0P).monitor.pLFnest[ ( ( cNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] , 0 ) ;                                 \
+            OStEXTC( postBody , ((tin123S&)tin0P).where.pLFnest[ ( ( cNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] , 0 ) ;                                 \
         }                                                                                                               \
                                                                                                                         \
         OStEXTAK( postBody , "\r\nargs:\r\n" ) ;                                                                       \
@@ -16689,15 +16689,15 @@ after i return, that countT object will contain 1
                                                                                                                                 \
         OStEXTAK( ostoBuf , "Call Nest:\r\n \r\n" ) ;                                                                          \
                                                                                                                                 \
-        countT idnf = ((tin123S&)tin0P).monitor.cInNest - OFFsLOTtINnESTmAX ;                                                                          \
+        countT idnf = ((tin123S&)tin0P).where.cInNest - OFFsLOTtINnESTmAX ;                                                                          \
         if( (sCountT)idnf < 1 ) idnf = 1 ;                                                                                      \
                                                                                                                                 \
         /*PSEUDODUPLICATE CODE: 2e40104 0010266*/                                                                               \
         countT offo = 2 ;                                                                                                       \
-        for( countT idn = ((tin123S&)tin0P).monitor.cInNest ; idn >= idnf ; idn -- )                                                                   \
+        for( countT idn = ((tin123S&)tin0P).where.cInNest ; idn >= idnf ; idn -- )                                                                   \
         {                                                                                                                       \
-            countT idiFile =     ((tin123S&)tin0P).monitor.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;                                     \
-            OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] , 0 ) ;                               \
+            countT idiFile =     ((tin123S&)tin0P).where.pLFnest[ ( ( idn & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;                                     \
+            OStEXTC( ostoBuf , ((tin123S&)tin0P).where.pLFnest[   ( idn & OFFsLOTtINnESTmAX ) << 1       ] , 0 ) ;                               \
             OStEXTAK( ostoBuf , "." ) ;                                                                                        \
             OStEXTC( ostoBuf , idiFile , 0 ) ;                                                                                \
             OStEXTAK( ostoBuf , "    " ) ;                                                                                     \
@@ -25727,7 +25727,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 /*1*//*IDIfILEcALLER(offP)*//*1*/
 
-#define IDIfILEcALLER(offP) ( ((tin123S&)tin0P).monitor.pLFnest[ ( ( ( ((tin123S&)tin0P).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] )
+#define IDIfILEcALLER(offP) ( ((tin123S&)tin0P).where.pLFnest[ ( ( ( ((tin123S&)tin0P).where.cInNest - (offP) ) & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] )
 
 
 //
@@ -25754,7 +25754,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 /*1*//*IFwHEREiSwATCHING*//*1*/
 
-#define IFwHEREiSwATCHING if( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_WHEREiSwATCHING )
+#define IFwHEREiSwATCHING if( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_WHEREiSwATCHING )
 
 
 //
@@ -27471,7 +27471,7 @@ add constants here as needed to avoid this
                                                                                                                 \
     {                                                                                                           \
         LOGrAW( postP ": call nest:" ) ;                                                                        \
-        const countT ccNest = sizeof ((tin123S&)tin0P).monitor.pLFnest / sizeof ((tin123S&)tin0P).monitor.pLFnest[ 0 ] ;                                  \
+        const countT ccNest = sizeof ((tin123S&)tin0P).where.pLFnest / sizeof ((tin123S&)tin0P).where.pLFnest[ 0 ] ;                                  \
         countT pcNest[ ccNest + 1 ] ;                                                                           \
         ((tin123S&)tin0P).get_pLFnest_F( tin0P , pcNest , ccNest + 1 ) ;                                                      \
                                                                                                                 \
@@ -33935,7 +33935,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*1*//*IDlINEcALLER(offP)*//*1*/
 
-#define IDlINEcALLER(offP) ( ((tin123S&)tin0P).monitor.pLFnest[ ( ( ( ((tin123S&)tin0P).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ) << 1 ) ] )
+#define IDlINEcALLER(offP) ( ((tin123S&)tin0P).where.pLFnest[ ( ( ( ((tin123S&)tin0P).where.cInNest - (offP) ) & OFFsLOTtINnESTmAX ) << 1 ) ] )
 
 
 //
@@ -34067,7 +34067,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 /*1*//*FLAGScALLER(offP)*//*1*/
 
-#define FLAGScALLER(offP) ( tin0P.idTypeTin != ifcIDtYPEtIN_123 ? *(countT*)0 : ((tin123S&)tin0P).pFlagsThreadLevelMode[ ( ((tin123S&)tin0P).monitor.cInNest - (offP) ) & OFFsLOTtINnESTmAX ] )
+#define FLAGScALLER(offP) ( tin0P.idTypeTin != ifcIDtYPEtIN_123 ? *(countT*)0 : ((tin123S&)tin0P).pFlagsThreadLevelMode[ ( ((tin123S&)tin0P).where.cInNest - (offP) ) & OFFsLOTtINnESTmAX ] )
 
 
 //
@@ -34096,7 +34096,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 #define DROPnOTEdOESnOTwANTmE                                                                                                                                   \
                                                                                                                                                                 \
-    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( ((tin123S&)tin0P).monitor.idDirty % 2 ) )    \
+    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( ((tin123S&)tin0P).where.idDirty % 2 ) )    \
     {                                                                                                                                                           \
         FLAGScALLER( 0 ) |= flTHREADlEVELmODE_DROPnOTEdOESnOTwANTmE ;                                                                                           \
     }
@@ -37213,7 +37213,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
                                                                                                                 \
     {                                                                                                           \
         CONoUTrAW( postP ": call nest:" ) ;                                                                     \
-        const countT ccNest = sizeof ((tin123S&)tin0P).monitor.pLFnest / sizeof ((tin123S&)tin0P).monitor.pLFnest[ 0 ] ;                                  \
+        const countT ccNest = sizeof ((tin123S&)tin0P).where.pLFnest / sizeof ((tin123S&)tin0P).where.pLFnest[ 0 ] ;                                  \
         countT pcNest[ ccNest + 1 ] ;                                                                           \
         ((tin123S&)tin0P).get_pLFnest_F( tin0P , pcNest , ccNest + 1 ) ;                                                      \
                                                                                                                 \
@@ -47698,7 +47698,7 @@ use this rather than _ to avoid the overhead of _
 
 // THE REQUIRED BUFFER SIZE VARIES BECAUSE postName CAN BE OF VARYING LENGTH.  SEE booksC::booksC
 
-#define INtALLY ( tin0P.idTypeTin != ifcIDtYPEtIN_123 ? 0 : ((tin123S&)tin0P).pIdInNest[ ((tin123S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ] )
+#define INtALLY ( tin0P.idTypeTin != ifcIDtYPEtIN_123 ? 0 : ((tin123S&)tin0P).pIdInNest[ ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ] )
 
 
 //
@@ -47999,7 +47999,7 @@ use this rather than _ to avoid the overhead of _
 #define BLAMMOiFcALLEDbY(postP)                                                                                                                                                                     \
                                                                                                                                                                                                     \
     {                                                                                                                                                                                               \
-        const countT ccNest = sizeof ((tin123S&)tin0P).monitor.pLFnest / sizeof ((tin123S&)tin0P).monitor.pLFnest[ 0 ] ;                                                                                                      \
+        const countT ccNest = sizeof ((tin123S&)tin0P).where.pLFnest / sizeof ((tin123S&)tin0P).where.pLFnest[ 0 ] ;                                                                                                      \
         countT pcNest[ ccNest + 1 ] ;                                                                                                                                                               \
         ((tin123S&)tin0P).get_pLFnest_F( tin0P , pcNest , ccNest + 1 ) ;                                                                                                                                          \
                                                                                                                                                                                                     \
@@ -49767,7 +49767,7 @@ use this rather than _ to avoid the overhead of _
 
 /*1*//*IFwHEREkNOWStHREAD*//*1*/
 
-#define IFwHEREkNOWStHREAD if( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_REGISTEREDwITHwHERE )
+#define IFwHEREkNOWStHREAD if( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_REGISTEREDwITHwHERE )
 
 
 //
@@ -50851,7 +50851,7 @@ after i return, that countT object will contain 1
                                                                                                                 \
     {                                                                                                           \
         CONoUTrAW( postP ": call nest:" ) ;                                                                     \
-        const countT ccNest = sizeof ((tin123S&)tin0P).monitor.pLFnest / sizeof ((tin123S&)tin0P).monitor.pLFnest[ 0 ] ;                  \
+        const countT ccNest = sizeof ((tin123S&)tin0P).where.pLFnest / sizeof ((tin123S&)tin0P).where.pLFnest[ 0 ] ;                  \
         countT pcNest[ ccNest + 1 ] ;                                                                           \
         ((tin123S&)tin0P).get_pLFnest_F( tin0P , pcNest , ccNest + 1 ) ;                                                      \
                                                                                                                 \
@@ -53818,7 +53818,7 @@ this list corresponds exactly (offsets) to the error codes defined in winerr.h
         OStEXTAK( ostoSay , " / call nest:" ) ;                                                                                                                                                       \
         etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS* const)(const osTextT* const)ostoSay , /*flTRACE_LOOP |*/ flTRACE_PARAMETERiSoStEXT ) ;                                                \
                                                                                                                                                                                                       \
-        const countT ccNest = sizeof ((tin123S&)tin0P).monitor.pLFnest / sizeof ((tin123S&)tin0P).monitor.pLFnest[ 0 ] ;                                                                                                        \
+        const countT ccNest = sizeof ((tin123S&)tin0P).where.pLFnest / sizeof ((tin123S&)tin0P).where.pLFnest[ 0 ] ;                                                                                                        \
         countT pcNest[ ccNest + 1 ] ;                                                                                                                                                                 \
         ((tin123S&)tin0P).get_pLFnest_F( tin0P , pcNest , ccNest + 1 ) ;                                                                                                                                            \
                                                                                                                                                                                                       \

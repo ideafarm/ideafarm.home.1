@@ -23,7 +23,7 @@
                 pMyNote->idThreadDel = 0 ;
                 }
                     pMyNote->idThreadNew = ((tin123S&)tin0P).monitor.idThread ;
-                    thirdC::c_memcpyIF( tin0P , (byteT*)&pMyNote->cNest , (byteT*)&((tin123S&)tin0P).monitor.cInNest , sizeof pMyNote->cNest + sizeof pMyNote->pLFnest + sizeof pMyNote->pFlagsThreadLevelMode ) ;
+                    thirdC::c_memcpyIF( tin0P , (byteT*)&pMyNote->cNest , (byteT*)&((tin123S&)tin0P).where.cInNest , sizeof pMyNote->cNest + sizeof pMyNote->pLFnest + sizeof pMyNote->pFlagsThreadLevelMode ) ;
                 {
                 if( tin0P.idTypeTin == ifcIDtYPEtIN_123 )
                 pMyNote->idAdam    = ((tin1S&)tin0P).pag1->idAdam ;
@@ -43,8 +43,8 @@
                 {
                 if( !pMyNote->idLineTagged || !pMyNote->idiFileTagged )
 
-                pMyNote->idiFileTagged = ((tin123S&)tin0P).monitor.pLFnest[ ( ( ((tin123S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
-                pMyNote->idLineTagged  = ((tin123S&)tin0P).monitor.pLFnest[ ( ( ((tin123S&)tin0P).monitor.cInNest & OFFsLOTtINnESTmAX ) << 1 )     ] ;
+                pMyNote->idiFileTagged = ((tin123S&)tin0P).where.pLFnest[ ( ( ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
+                pMyNote->idLineTagged  = ((tin123S&)tin0P).where.pLFnest[ ( ( ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ) << 1 )     ] ;
                 //USE THIS TO INVESTIGATE LEAKS THAT REPORT AS aaaaaaaa(aaaaaaaa) I.E. WERE NEVER TAGGED
 
                 pMyNote->dropHeaderCopy = ((countT*)pbDrop)[ - 1 ] ;

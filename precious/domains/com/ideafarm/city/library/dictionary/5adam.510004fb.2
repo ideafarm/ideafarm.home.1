@@ -1899,7 +1899,7 @@ DONE( tmReportF )
                                     {
                                     for( countT ids = ((tin123S&)tin0Copy).monitor.idStep ; cDo -- ; ids -- )
                                     countT cDo = OFFsLOTtINsTEPmAX + 1 ;                          // IF idStep IS SMALL AND NOT BECAUSE OF WRAP THEN SOME REPORT LINES WILL BE FROM [0,0] PAIRS ; TO KISS, I DO NOT TEST FOR THIS SO I WILL REPORT EVEN IF pLFstep HAS BEEN TRASHED
-                                    countT cIndent = ((tin123S&)tin0Copy).monitor.cInNest ;
+                                    countT cIndent = ((tin123S&)tin0Copy).where.cInNest ;
                                 
                                     sRptTin << (strokeS*)( T("Execution Steps:\r\n \r\n") ) ;
                                     _IO_
@@ -1926,15 +1926,15 @@ DONE( tmReportF )
                                     OStEXTC(    ostoRpt , ((tin123S&)tin0Copy).pEIPInNest[ offez ] , ' ' ) ;
                                     OStEXT(     ostoRpt , OFFsLOTtINnESTmAX * TUCK )
                                         
-                                    countT idiFile = ((tin123S&)tin0Copy).monitor.pLFnest[ offe + 1 ] ;
-                                    countT idLine  = ((tin123S&)tin0Copy).monitor.pLFnest[ offe     ] ;
+                                    countT idiFile = ((tin123S&)tin0Copy).where.pLFnest[ offe + 1 ] ;
+                                    countT idLine  = ((tin123S&)tin0Copy).where.pLFnest[ offe     ] ;
                                     countT offe = ( idn & OFFsLOTtINnESTmAX ) << 1 ;
                                     countT offez = idn & OFFsLOTtINnESTmAX ;
                                     _IO_
                                 {
-                                for( countT idn = ((tin123S&)tin0Copy).monitor.cInNest ; idn >= idnf && !bQuitEatingP ; idn -- )
+                                for( countT idn = ((tin123S&)tin0Copy).where.cInNest ; idn >= idnf && !bQuitEatingP ; idn -- )
                                 if( (sCountT)idnf < 1 ) idnf = 1 ;
-                                countT idnf = ((tin123S&)tin0Copy).monitor.cInNest - OFFsLOTtINnESTmAX ;
+                                countT idnf = ((tin123S&)tin0Copy).where.cInNest - OFFsLOTtINnESTmAX ;
                                 if( bDash ) sRptTin << (strokeS*)( T(DASH256 "\r\n") ) ;
                                 //etRock.traceF( tin0P , T("tmReportF a/ 3") ) ; //U:: TO FIND A BUG
                     
@@ -2209,7 +2209,7 @@ DONE( tmReportF )
                                 WRITEaRRAY( pIdInNest )                                                                                                                                                     /*J*/
                                 WRITEaRRAY( pFlagsThreadLevelMode )                                                                                                                                         /*I*/
                                 WRITEaRRAY( pLFstep )                                                                                                                                                       /*H*/
-                                WRITEaRRAYmONITOR( pLFnest )                                                                                                                                                       /*G*/
+                                WRITEaRRAYwHERE( pLFnest )                                                                                                                                                       /*G*/
                 
                                 costai = 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postTellIf        ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin123S&)tin0Copy).postTellIf       , costai )  ; pbc += costai ;               /*F*/
                                 costai = 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postTellWait      ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin123S&)tin0Copy).postTellWait     , costai )  ; pbc += costai ;               /*E*/
@@ -2285,7 +2285,7 @@ DONE( tmReportF )
                             ACCsIZE( pIdInNest )                                                                                                                                            /*J*/
                             ACCsIZE( pFlagsThreadLevelMode )                                                                                                                                /*I*/
                             ACCsIZE( pLFstep )                                                                                                                                              /*H*/
-                            ACCsIZEmONITOR( pLFnest )                                                       
+                            ACCsIZEwHERE( pLFnest )                                                       
             
                             costaVarying += 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postTellIf     ) ;                                                                                       /*F*/
                             costaVarying += 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postTellWait   ) ;                                                                                       /*E*/
@@ -2818,42 +2818,42 @@ if( pTaskP && pTaskP->c1 )
 TASK( tmReportF )
 
     }
-        thirdC::c_memcpyIF( tin0P , pbc , (byteT*)pci , costai ) ; pbc += costai ;                       \
-        costai = sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;                          \
-        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
-        countT pci[ cci + 1 ] ;                                                                             \
-        const countT cci = sizeof ((tin123S&)tin0P).monitor.##arrayP ;                                \
-    {                                                                                                       \
-                                                                                                            \
-#define WRITEaRRAYmONITOR(arrayP)                                                                           \
+        thirdC::c_memcpyIF( tin0P , pbc , (byteT*)pci , costai ) ; pbc += costai ;          \
+        costai = sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;             \
+        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                    \
+        countT pci[ cci + 1 ] ;                                                             \
+        const countT cci = sizeof ((tin123S&)tin0P).where.##arrayP ;                        \
+    {                                                                                       \
+                                                                                            \
+#define WRITEaRRAYwHERE(arrayP)                                                             \
 
     }
-        thirdC::c_memcpyIF( tin0P , pbc , (byteT*)pci , costai ) ; pbc += costai ;                       \
-        costai = sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;                          \
-        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
-        countT pci[ cci + 1 ] ;                                                                             \
-        const countT cci = sizeof ((tin123S&)tin0P).##arrayP ;                                        \
-    {                                                                                                       \
-                                                                                                            \
-#define WRITEaRRAY(arrayP)                                                                                  \
+        thirdC::c_memcpyIF( tin0P , pbc , (byteT*)pci , costai ) ; pbc += costai ;          \
+        costai = sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;             \
+        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                    \
+        countT pci[ cci + 1 ] ;                                                             \
+        const countT cci = sizeof ((tin123S&)tin0P).##arrayP ;                              \
+    {                                                                                       \
+                                                                                            \
+#define WRITEaRRAY(arrayP)                                                                  \
 
     }
-        costaVarying += sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;                   \
-        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
-        countT pci[ cci + 1 ] ;                                                                             \
-        const countT cci = sizeof ((tin123S&)tin0P).##arrayP ;                                        \
-    {                                                                                                       \
-                                                                                                            \
-#define ACCsIZE(arrayP)                                                                                     \
+        costaVarying += sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;      \
+        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                    \
+        countT pci[ cci + 1 ] ;                                                             \
+        const countT cci = sizeof ((tin123S&)tin0P).##arrayP ;                              \
+    {                                                                                       \
+                                                                                            \
+#define ACCsIZE(arrayP)                                                                     \
 
     }
-        costaVarying += sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;                   \
-        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                           \
-        countT pci[ cci + 1 ] ;                                                                             \
-        const countT cci = sizeof ((tin123S&)tin0P).monitor.##arrayP ;                                \
-    {                                                                                                       \
-                                                                                                            \
-#define ACCsIZEmONITOR(arrayP)                                                                              \
+        costaVarying += sizeof( countT ) * ( 1 + thirdC::c_strlenIF( tin0P , pci ) ) ;      \
+        ((tin123S&)tin0Copy).get_##arrayP##_F( tin0P , pci , cci + 1 ) ;                    \
+        countT pci[ cci + 1 ] ;                                                             \
+        const countT cci = sizeof ((tin123S&)tin0P).where.##arrayP ;                        \
+    {                                                                                       \
+                                                                                            \
+#define ACCsIZEwHERE(arrayP)                                                                \
 
 ;
 }
