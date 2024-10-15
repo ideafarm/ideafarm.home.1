@@ -25,7 +25,7 @@ REST
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         etThread.traceF( tin0P , T("ifcIDaDAM_ACCESSeVENTS3bOOKbYhASHbYTE1 napping [cIn,cOut]:    ")+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        THREADmODE2rESTORE
+        THREADmODE1rESTORE
         }
             }
                 }
@@ -61,17 +61,17 @@ REST
                         hRead = hReadSave ;
                         cbi = cbiSave ;
 
-                        THREADmODE4rESTORE
+                        THREADmODE3rESTORE
                         DEL( pPageEvent ) ;
-                        THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
+                        THREADmODE3oN( flTHREADmODE3_DOnOTrEGISTERpAGEc )
                         BLAMMO ;                                                //SHOULD BE IMPOSSIBLE SINCE "ALL OR NONE" USED FOR WRITING BOOKTOGETHER AND I'VE ALREADY READ THE PREFIX
                     {
                     if( !(const byteT*)*pPageEvent )
 
-                    THREADmODE4rESTORE
+                    THREADmODE3rESTORE
                     bksAccessEvents.readF( tin0P , *pPageEvent , hRead , flBOOKScrEAD_null , 0 , &hCursor ) ;
                     pPageEvent = new( 0 , tin0P , LF ) pageC( tin0P , bksAccessEvents , cbi ) ; ___( pPageEvent ) ;
-                    THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
+                    THREADmODE3oN( flTHREADmODE3_DOnOTrEGISTERpAGEc )
                     ZE( pageC* , pPageEvent ) ;
                 {
                 else
@@ -108,7 +108,7 @@ REST
             // *****************************************************************************************************************************************************************************************************************************************************
             // *****************************************************************************************************************************************************************************************************************************************************
         {
-        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+        THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
     {
     while( !bQuit && !POOP )
     handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
@@ -146,15 +146,15 @@ DONE( tmWorkerF )
     dec02AM( wsP.cWorkers ) ;
     }
         }
-            THREADmODE2rESTORE
+            THREADmODE1rESTORE
             }
                 wsP.st_pPageEvent.ungrabF( tin0P ) ;
                 }
                     wsP.st_pPageEvent.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     }
-                        THREADmODE4rESTORE
+                        THREADmODE3rESTORE
                         DEL( pPageEvent ) ;
-                        THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
+                        THREADmODE3oN( flTHREADmODE3_DOnOTrEGISTERpAGEc )
 
                         }
                             //((tin123S&)tin0P).monitor.idWhat2 = 0x01000000 ;           //WHERE INTERVAL
@@ -530,7 +530,7 @@ DONE( tmWorkerF )
 
                 _IO_
             {
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             _IO_
         {
         else

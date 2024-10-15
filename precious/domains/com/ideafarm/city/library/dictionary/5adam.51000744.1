@@ -20,7 +20,7 @@ REST
         }
             DEL( pInfo ) ;
             }
-                THREADmODE2rESTORE
+                THREADmODE1rESTORE
                 }
                     etThread.traceF( tin0P , T("all workers are gone") ) ;
                     }
@@ -31,7 +31,7 @@ REST
                     etThread.traceF( tin0P , T("waiting for workers") ) ;
                     ws.bFireWorkers = 1 ;
 
-                    THREADmODE2rESTORE
+                    THREADmODE1rESTORE
                     }
                         }
                             }
@@ -66,17 +66,17 @@ REST
                                 hRead = hReadSave ;
                                 cbi = cbiSave ;
 
-                                THREADmODE4rESTORE
+                                THREADmODE3rESTORE
                                 DEL( pPageEvent ) ;
-                                THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
+                                THREADmODE3oN( flTHREADmODE3_DOnOTrEGISTERpAGEc )
                                 BLAMMO ;                                                //SHOULD BE IMPOSSIBLE SINCE "ALL OR NONE" USED FOR WRITING BOOKTOGETHER AND I'VE ALREADY READ THE PREFIX
                             {
                             if( !(const byteT*)*pPageEvent )
 
-                            THREADmODE4rESTORE
+                            THREADmODE3rESTORE
                             bksAccessEventsIn.readF( tin0P , *pPageEvent , hRead , flBOOKScrEAD_null , 0 , &hCursor , idCursor ) ;
                             pPageEvent = new( 0 , tin0P , LF ) pageC( tin0P , bksAccessEventsIn , cbi ) ; ___( pPageEvent ) ;
-                            THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
+                            THREADmODE3oN( flTHREADmODE3_DOnOTrEGISTERpAGEc )
                             ZE( pageC* , pPageEvent ) ;
                         {
                         else
@@ -112,7 +112,7 @@ REST
                     // *****************************************************************************************************************************************************************************************************************************************************
                     // *****************************************************************************************************************************************************************************************************************************************************
 
-                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
                     handleC hCursor( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKSrEADcURSOR ) ;
                     handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
@@ -173,7 +173,7 @@ REST
                     TN( tShort , "" ) ;            // bksAccessEvents.2.hash1.6b.accessEvents.booksC.1.book.00000001.00000041.bookC
                 {
                 if( !bDir )
-                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
                 const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
 
@@ -214,15 +214,15 @@ DONE( tmWorkerF )
     dec02AM( wsP.cWorkers ) ;
     }
         }
-            THREADmODE2rESTORE
+            THREADmODE1rESTORE
             }
                 wsP.st_pPageEvent.ungrabF( tin0P ) ;
                 }
                     wsP.st_pPageEvent.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     }
-                        THREADmODE4rESTORE
+                        THREADmODE3rESTORE
                         DEL( pPageEvent ) ;
-                        THREADmODE4oN( flTHREADmODE4_DOnOTrEGISTERpAGEc )
+                        THREADmODE3oN( flTHREADmODE3_DOnOTrEGISTERpAGEc )
 
                         }
                             }
@@ -299,7 +299,7 @@ DONE( tmWorkerF )
 
                 _IO_
             {
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             _IO_
         {
         else

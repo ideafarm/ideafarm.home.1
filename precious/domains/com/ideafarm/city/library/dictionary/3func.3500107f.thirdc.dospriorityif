@@ -24,7 +24,7 @@
 
                 countT idExceptionEventMe = 1 + incv02AM( processGlobal2S::_processGlobal2I_IF().idExceptionEvent ) ;
             {
-            if( ((tin123S&)tin0P).idDesireSetBySelf && idDesire != ((tin123S&)tin0P).idDesireSetBySelf && !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_ALLOWvOLATILEdESIRE ) )         // I ENFORCE THE CODING CONVENTION THAT A THREAD'S PRIORITY MAY ONLY BE CHANGED BY ITSELF ; NO OTHER THREAD OR PROCESS IS ALLOWED TO CHANGE IT
+            if( ((tin123S&)tin0P).idDesireSetBySelf && idDesire != ((tin123S&)tin0P).idDesireSetBySelf && !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ALLOWvOLATILEdESIRE ) )         // I ENFORCE THE CODING CONVENTION THAT A THREAD'S PRIORITY MAY ONLY BE CHANGED BY ITSELF ; NO OTHER THREAD OR PROCESS IS ALLOWED TO CHANGE IT
         {
         if( osTidIF() == ((tin123S&)tin0P).osTid )   // tin0P WILL BE A tin123S INSTANCE FOR THREAM tm1F IF ANOTHER THREAD CALLS ExitProcess() ; SEE E.G. rootExceptionFilterF() ; CALLING ExitProcess() WILL CAUSE THE EXCEPTING THREAD TO EXECUTE THE DESTRUCTORS FOR THE GLOBAL OBJECTS, WHICH ALL USE WO OF THE GLOBAL tin123S INSTANCES INTENDED FOR THE MAIN THREAD
 

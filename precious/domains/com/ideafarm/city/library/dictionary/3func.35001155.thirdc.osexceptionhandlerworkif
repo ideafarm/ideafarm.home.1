@@ -10,7 +10,7 @@
 }
     return bFixed ;     //U:: 20240708@0855: CONJ: THIS SHOULD BE WO OF THE BASE O.S. CONSTANTS SUCH AS EXCEPTION_CONTINUE_SEARCH, EXCEPTION_CONTINUE_EXECUTION, or EXCEPTION_EXECUTE_HANDLER
     }
-        THREADmODE4rESTORE
+        THREADmODE3rESTORE
         TINSL
     {
 
@@ -70,9 +70,9 @@
                                     //THE REPORT FILE IS WRITTEN BEFORE ME BECAUSE SOMETIMES MY TELLsYSc3EBP CALL AV'S
                                     //I CAN DELETE THE REPORT FILE THAT I JUST WROTE TO DISK BECAUSE I WAS ABLE TO TELL THE MONITOR
                                     bTold = 1 ;_M
-                                    THREADmODE2rESTORE
+                                    THREADmODE1rESTORE
                                     TELLsYSc3( ifcIDtYPEtELLsYS_ERROReXCEPTION , (byteT*)&tellInfoSys , sizeof tellInfoSys ) _M         //20240716@1359: OBSERVED TO FAIL (ACCESS VIOLATION DUE TO BLAMMO DUE TO FALSE DESIRE DETECTED IN thirdC::dosPriorityIF())
-                                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                                    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                                 {_M
                                 if( !*prFloatP )
 
@@ -86,12 +86,12 @@
                         }
                             //TELL( "osExceptionHandlerWorkIF/reported the exception to disk" )
 
-                            THREADmODE2rESTORE
+                            THREADmODE1rESTORE
                             }
                                 ++ s ; dosSleepIF( tin0P , TOCK ) ;_M
                                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;_M
                             {_M
-                            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                             //U:: JUST TO MAKE SURE THAT IT HAS TIME TO CLOSE AND FLUSH (SHOULD NOT BE NECESSARY)
 
                             }
@@ -598,10 +598,10 @@
                         //             if( ((tin123S*)pTin)->pClean == pTin ) pTin = pTinF() ;
                         // 
                         //             cDeleted ++ ;
-                        //             { TINSL THREADmODE4rESTORE THREADmODE3rESTORE }
+                        //             { TINSL THREADmODE3rESTORE THREADmODE2rESTORE }
                         //             delete ((tin123S*)pTin)->pClean ;
-                        //             THREADmODE4oN( flTHREADmODE4_EXCEPTIONcLEANUPdELETIONiNpROGRESS )
-                        //             THREADmODE3oN( flTHREADmODE3_DOnOTcaLLdELif )
+                        //             THREADmODE3oN( flTHREADmODE3_EXCEPTIONcLEANUPdELETIONiNpROGRESS )
+                        //             THREADmODE2oN( flTHREADmODE2_DOnOTcaLLdELif )
                         //             //CONoUTrAW3( "osExceptionHandlerWorkIF:   deleting [pClean]: " , ((tin123S*)pTin)->pClean , "\r\n" ) ;
                         // 
                         //             break ;
@@ -783,12 +783,12 @@
                         if( cCodeReadRetries ) ;
                         //else
                         //}
-                        //    THREADmODE2rESTORE
+                        //    THREADmODE1rESTORE
                         //    }
                         //        ++ s ; dosSleepIF( tin0P , cCodeReadRetries == 1 ? TUCK * 0x40 : TOCK ) ;
                         //        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                         //    {
-                        //    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                        //    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                         //    LOGrAW5( "i will nap and then retry " , cCodeReadRetries , " to read code at " , tellInfoSys.pcInfo[ 1 ] , "\r\n" ) ;
                         //    bQuiet = bFixed = 1 ;_M
                         //{_M
@@ -879,7 +879,7 @@
     ZE( boolT , bFixed ) ;
     _IO_
 
-    THREADmODE4oN( flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS )
+    THREADmODE3oN( flTHREADmODE3_EXCEPTIONrEPORTINGiNpROGRESS )
 
     TINSL
     ebpTlsAM() = ebpOffenderP ; //THIS IS NEEDED BECAUSE SOMETIMES THE TLS IS NOT IN THE STACK CHAIN (E.G. WHEN TINSL WOULD FAIL AT BEGINNING OF winMessageHandlerWorkF)

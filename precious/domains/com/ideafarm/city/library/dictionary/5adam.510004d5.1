@@ -162,7 +162,7 @@ DONE( tmWhereRptF )
         
             etThread.strFuseF( tin0P , psttr ,
     
-            ((tin123S&)tin0P).flagsThreadMode2 &= ~( F(flTHREADmODE2_DISALLOWtELLmONITOR) ) ;
+            ((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWtELLmONITOR) ) ;
             stTinWhereP.ungrabF( tin0P ) ;
 
             }
@@ -283,7 +283,7 @@ DONE( tmWhereRptF )
             ZE( countT , timeN1 ) ;
 
             stTinWhereP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-            ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_DISALLOWtELLmONITOR ;
+            ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
             bNewWhereRptP = 0 ;
         {
         if( bNewWhereRptP && ( !stTinWhereP || idCycle % 0x10 == 1 ) ) //ONLY EVERY TICK IF AM WATCHING WHERE WO OR MORE THREADS ARE
@@ -583,7 +583,7 @@ DONE( tmRptF )
 }
     bQuitMonitoring = 1 ;
     ((tin123S&)tin0P).pEtText = 0 ;
-    ((tin123S&)tin0P).flagsThreadMode2 &= ~( F(flTHREADmODE2_DISALLOWgRAB) ) ;
+    ((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWgRAB) ) ;
     thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_NOsYNCHRONOUStELLS ;
     }
         }
@@ -944,7 +944,7 @@ DONE( tmRptF )
         while( !etThread && etherC::os_cAllKidThreadsI_IF( tin0P ) > 3 ) //THIS WORKS BECAUSE tmTimeNowF EXISTS UNTIL I AM FIRED; THE 3 KID THREADS EXPECTED TO HANG AROUND: watch, tell, rpt
     {
     ((tin123S&)tin0P).pEtText = &etThread ;
-    ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_DISALLOWgRAB ;
+    ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWgRAB ;
     ZE( countT , idStepReporterLath ) ;
     boolT bWoth = 1 ;
     TN( tFile , "///d/ideafarm.rpt.monitor" ) ;

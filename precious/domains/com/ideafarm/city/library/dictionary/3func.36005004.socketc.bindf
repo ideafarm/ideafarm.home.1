@@ -35,9 +35,9 @@
             TN( tSay , "" ) ; tSay = TF2(((tin1S&)tin0P).pag1->idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("/bindF: bound to port ")+TF4(idPortMe,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN,0,0xa)+T(" rather than to ")+TF2(idPortP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n") ;
         {
         if( pMap )
-        THREADmODE2rESTORE
+        THREADmODE1rESTORE
         idPortMe = pEther->sockBindF( tin0P , handle , idPortRequest , nicNameP , cTriesP ) ;
-        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+        THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
         countT idPortRequest = pMap ? idPortActual : idPortP ;
         if( bInUseOkP ) pEther->sockOptionReuseAddressF( tin0P , handle ) ;
         bRead.grabF( tin0P , TAG( TAGiDnULL ) ) ;

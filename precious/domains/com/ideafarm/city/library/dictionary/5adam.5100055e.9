@@ -153,7 +153,7 @@ boolT vtEyeCBF( tin0S& tin0P , etherC& etherP , const countT idTypeCallP , const
             const countT cRows = paramP.cDown + 1 + paramP.cUp ;
             const countT cCols = paramP.cLeft + 1 + paramP.cRight ;
         
-            THREADmODE2rESTORE
+            THREADmODE1rESTORE
             etherP.delF( tin0P , *(countT**)&paramP.pptcView ) ;
             }
                 delete paramP.pptcView[ off ] ;
@@ -161,7 +161,7 @@ boolT vtEyeCBF( tin0S& tin0P , etherC& etherP , const countT idTypeCallP , const
                 countT* pcArg = (countT*)paramP.pptcView[ off ]->cArgF() ;
             {
             for( countT off = 0 ; off < paramP.cvtView ; off ++ )
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
         {
         if( (*vb.ppsttSpec)->idAdam == 1 )
         vBodyS& vb = *(vBodyS*)&(countT&)sadamStateP.prs->swVolBody ; //THIS REFERENCE IS VOLATILE DUE TO SNAP/RESTORE DURING RENDERING

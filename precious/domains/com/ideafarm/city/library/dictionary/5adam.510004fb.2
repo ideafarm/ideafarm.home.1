@@ -866,7 +866,7 @@ TELL( "cleaning up 0" )
     //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 3 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     TELL( "waiting for tmReportF to end" )
 
-    THREADmODE4rESTORE
+    THREADmODE3rESTORE
     //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 4 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     }
         //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 5 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1437,7 +1437,7 @@ TELL( "cleaning up 0" )
 
         TELL( "constructing telemetry books" ) //THE NEXT LINE WILL BLOCK UNTIL A BOOK ENTRY IS WRITTEN , SO I WILL NOT BE ABLE TO QUIT UNTIL THAT HAPPENS
     {
-    THREADmODE4oN( flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
+    THREADmODE3oN( flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE )
 
     }
         //etRock.traceF( tin0P , T("tmEatTelemetrySysF / launched  tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin123S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1555,9 +1555,9 @@ DONE( tmYellF )
         ++ s ; ether.osSleepF( tin0P , TOCK ) ;
 
         //CONoUTrAW( "tmYell/yell/-\r\n" ) ;
-        THREADmODE2rESTORE
+        THREADmODE1rESTORE
         YELL( "yippee!" ) ;
-        THREADmODE2oN( flTHREADmODE2_YELL )
+        THREADmODE1oN( flTHREADmODE1_YELL )
         //CONoUTrAW( "tmYell/yell/+\r\n" ) ;
     {
     while( !ether )
@@ -2224,7 +2224,7 @@ DONE( tmReportF )
                                 //etRock.traceF( tin0P , T("tmReportF a/ e") ) ; //U:: TO FIND A BUG
                                 _IO_
                             {
-                            if( /*!head.cStepsNew &&*/ !( F(((tin123S&)tin0Copy).flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE ) && !bQuitEatingP )
+                            if( /*!head.cStepsNew &&*/ !( F(((tin123S&)tin0Copy).flagsThreadMode2) & flTHREADmODE2_MONITORdOnOTrEPORToNmE ) && !bQuitEatingP )
 
                             }
                                 CONoUTrAW( os ) ;
@@ -2235,7 +2235,7 @@ DONE( tmReportF )
                                 OStEXTAK( os , "suppressing detail for thread " ) ;
                                 OStEXT(  os , TUCK ) ;
                             {
-                            if( F(((tin123S&)tin0Copy).flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE )
+                            if( F(((tin123S&)tin0Copy).flagsThreadMode2) & flTHREADmODE2_MONITORdOnOTrEPORToNmE )
 
                             //etRock.traceF( tin0P , T("reporting on tin123S [idThread,postThreadName]:    ")+TF2(((tin123S&)tin0Copy).monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(((tin123S&)tin0Copy).postThreadName) ) ;
                 
@@ -2296,7 +2296,7 @@ DONE( tmReportF )
                             //etThread.traceF( tin0P , T("report on me [idMemorySpaceP,cFlavorsToReport]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFlavorsToReport,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             cFlavorsToReport ++ ;
                         {
-                        if( tin0Copy.idTypeTin == ifcIDtYPEtIN_123 && /*!head.cStepsNew &&*/ !( F(((tin123S&)tin0Copy).flagsThreadMode3) & flTHREADmODE3_MONITORdOnOTrEPORToNmE ) )
+                        if( tin0Copy.idTypeTin == ifcIDtYPEtIN_123 && /*!head.cStepsNew &&*/ !( F(((tin123S&)tin0Copy).flagsThreadMode2) & flTHREADmODE2_MONITORdOnOTrEPORToNmE ) )
 
                         tin0S&  tin0Copy = *(tin0S*)( pbFrom + sizeof( copyHeadS ) ) ;
                         copyHeadS& head = *(copyHeadS*)pbFrom ;
@@ -2759,7 +2759,7 @@ DONE( tmReportF )
         _IO_
     {
     while( !bQuitEatingP )
-    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //bCompileReportP ADDED 20180108@1021
+    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) //bCompileReportP ADDED 20180108@1021
     //etRock.traceF( tin0P , T("tmReportF f/ ") ) ; //U:: TO FIND A BUG
     ZE( countT , idFoTock ) ; // THIS IS USED ONLY IF flHOMEsuTILITY_SNAPsHOT
     countT idMinute = idMinuteZeP ;
@@ -2882,9 +2882,9 @@ DONE( tmcMonitorServerF )
                         etThread.delF( tin0P , psttName ) ;
                         }
                             //etThread.strokeF( tin0P , T("walked  ")+TF1(idMemorySpace)+T(" name \"")+T(psttName)+T("\"\r\n") ) ;
-                            THREADmODE3rESTORE
+                            THREADmODE2rESTORE
                             poo.walkF( tin0P , ifcIDtYPEpOOLoLDwALK_MONITORwALK1 , info ) ;
-                            THREADmODE3oN( flTHREADmODE3_MARKnEWdROPSqUIETdURINGwALK )
+                            THREADmODE2oN( flTHREADmODE2_MARKnEWdROPSqUIETdURINGwALK )
                             //etThread.strokeF( tin0P , T("walking ")+TF1(idMemorySpace)+T(" name \"")+T(psttName)+T("\"\r\n") ) ;
                             countT info = (countT)&c8i ;
                             count8S c8i( (countT)&sOut , 0/*idDrop*/ ) ;

@@ -57,7 +57,7 @@
 
         }
             TELLaPPc3LIFI( ifcIDtYPEtELLaPP_INoUTtINdT , (byteT*)&info , sizeof info , ifcLINE , DDNUMB ) ;
-            THREADmODE5oN0( flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY ) ;
+            THREADmODE4oN0( flTHREADmODE4_INoUTfRAMEdEFERwRITINGaPPtELEMETRY ) ;
 
                                                  cCpuCyclesWriteInOutTelemetry = 0 ;
             info.cCpuCyclesWriteInOutTelemetry = cCpuCyclesWriteInOutTelemetry ;
@@ -92,7 +92,7 @@
             if( ((tin123S&)tin0P).pbPendingInOutFramePackets )
             //PSEUDOdUPLICATEcODE 360fc002 33000065
 
-            THREADmODE5oN0( flTHREADmODE5_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY | flTHREADmODE5_DOnOTfLUSHpENDINGaPPtELEMETRY ) ;
+            THREADmODE4oN0( flTHREADmODE4_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY | flTHREADmODE4_DOnOTfLUSHpENDINGaPPtELEMETRY ) ;
         {
         if( monitor.idThread > 3 ) // FOR THREAD 1, SEE doC::~doC; THREAD 2 AND 3 ARE tinHeart AND tinBreak, WHICH NORMALLY ACCUMULATE NO TELEMETRY
 
@@ -123,7 +123,7 @@
     }
         DEL( pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
         }
-            THREADmODE2rESTORE
+            THREADmODE1rESTORE
             }
                 }
                     }
@@ -151,7 +151,7 @@
             {
             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
             countT cFlavors = pSwsRecycle->cFlavorsF( tin0P ) ;
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
         {
         if( pSwsRecycle )
         //PSEUDODUPLICATE CODE: 1450002 12f0002 1030003 1020171
@@ -199,7 +199,7 @@
                     thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP ) ;
                     CONoUTrAW( "~tin123S: calling ExitProcess because i am being cleaned up and i have kid threads.\r\n" ) ;
                 {
-                if( F(flagsThreadMode4) & flTHREADmODE4_EXCEPTIONcLEANUPdELETIONiNpROGRESS || F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXCEPTIONnOThANDLED )
+                if( F(flagsThreadMode3) & flTHREADmODE3_EXCEPTIONcLEANUPdELETIONiNpROGRESS || F(processGlobal2I._thirdC_flagsProcessState) & flPROCESSsTATE_EXCEPTIONnOThANDLED )
             {
             while( cKidThreads ) //tmWindowsF must not put itself into this list because main CANNOT BLOCK HERE FOR tmWindowsF TO END BECAUSE tmWindowsF ENDS LATER
             countT cQuiet = 0x40 ; //INCR FROM 01 TO 04 TO AVOID LOGrAW

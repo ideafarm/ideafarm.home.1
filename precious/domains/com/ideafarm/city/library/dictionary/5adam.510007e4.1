@@ -18,9 +18,9 @@ etThread.traceF( tin0P , T("ok.  hibernating") ) ;
 }
     }
         }
-            THREADmODE2rESTORE
+            THREADmODE1rESTORE
             while( cExecutiveHealYear ) thirdC::dosSleepWinkIF( tin0P ) ;
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
         {
 
         }
@@ -36,9 +36,9 @@ etThread.traceF( tin0P , T("ok.  hibernating") ) ;
                 strokeS* psttzYear = (strokeS*)stYearToHeal.upF( tin0P , hStYearToHeal ) ;       //PROCESSES YEARS BEGINNING WITH MOST RECENT  (A:ASSUME: CURRENT YEARS ARE IN MOST NEED OF HEALING SINCE FILES ARE ADDED AND MODIFIED)
 
                 }
-                    THREADmODE2rESTORE
+                    THREADmODE1rESTORE
                     while( CyEARSiNpARALLEL == cExecutiveHealYear ) thirdC::dosSleepWinkIF( tin0P ) ;
-                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                 {
             {
             do
@@ -553,7 +553,7 @@ DONE( tmExecutiveHealYearF )
                             {
                             if( !bCompareFail )
 
-                            THREADmODE2rESTORE
+                            THREADmODE1rESTORE
                             }
                                 }
                                     bAbortP = 1 ;
@@ -695,7 +695,7 @@ DONE( tmExecutiveHealYearF )
                                 for( countT offi = 0 ; offi < cInnerImagesToInspect ; offi ++ )
                             {
                             if( pfwsInner )
-                            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
                             etThread.newF( tin0P , LF , *(byteT**)&pfwsInner , cInnerImagesToInspect * sizeof( fileWindowsC ) ) ; ___( pfwsInner ) ;
                             ZE( fileWindowsC* , pfwsInner ) ;
@@ -896,13 +896,13 @@ DONE( tmExecutiveHealYearF )
 
             etThread.delF( tin0P , postShortCutoff ) ;
             }
-                THREADmODE2rESTORE
+                THREADmODE1rESTORE
                 }
                     if( cPausedAtCutoff == cWorkers ) break ;
                     thirdC::dosSleepWinkIF( tin0P ) ;
                 {
                 for(;;)
-                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             {
             etThread.traceF( tin0P , T("waiting for all workers to pause or die") ) ;
 
@@ -912,9 +912,9 @@ DONE( tmExecutiveHealYearF )
             cCutoffUpdates = 0 ;
             etThread.traceF( tin0P , T("final cutoff [postShortCutoff]:    ")+T(postShortCutoff) ) ;
             }
-                THREADmODE2rESTORE
+                THREADmODE1rESTORE
                 while( cCutoffUpdates < cWorkers ) thirdC::dosSleepWinkIF( tin0P ) ;
-                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             {
             //etThread.traceF( tin0P , T("waiting for all workers to update postShortCutoff") ) ;
         {

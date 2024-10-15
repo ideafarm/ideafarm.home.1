@@ -9,7 +9,7 @@
 
 }
     }
-                                 pdTinNormal->flagsThreadMode3  |=    F(flTHREADmODE3_DOnOTcaLLdELif)   ;               // IF ZOMBIE FLAG WAS SET THEN SET   IT
+                                 pdTinNormal->flagsThreadMode2  |=    F(flTHREADmODE2_DOnOTcaLLdELif)   ;               // IF ZOMBIE FLAG WAS SET THEN SET   IT
 
         tin123S* pdTinNormal = (tin123S*)&tin0P ;
         TINSL
@@ -19,10 +19,10 @@
     }
         }
             DEL( pdTinNormal )                                                                          ;               // DELETE IN POOL
-            if(  bZombie     )   pdTinNormal->flagsThreadMode3  &= ~( F(flTHREADmODE3_DOnOTcaLLdELif) ) ;               // IF ZOMBIE FLAG IS  SET THEN CLEAR IT
-                 bZombie     = F(pdTinNormal->flagsThreadMode3) &       flTHREADmODE3_DOnOTcaLLdELif    ;
+            if(  bZombie     )   pdTinNormal->flagsThreadMode2  &= ~( F(flTHREADmODE2_DOnOTcaLLdELif) ) ;               // IF ZOMBIE FLAG IS  SET THEN CLEAR IT
+                 bZombie     = F(pdTinNormal->flagsThreadMode2) &       flTHREADmODE2_DOnOTcaLLdELif    ;
         {
-        if( !( F(((tin123S&)tin0P).flagsThreadMode5) & flTHREADmODE5_TINiSnOTiNpOOL ) )                           // IF tin0P IS IN POOL
+        if( !( F(((tin123S&)tin0P).flagsThreadMode4) & flTHREADmODE4_TINiSnOTiNpOOL ) )                           // IF tin0P IS IN POOL
 
         tin123S* pdTinNormal = (tin123S*)&tin0P ;
         ((tin123S&)tin0P).flags &= ~( F(flTINs_REGISTERED) ) ;

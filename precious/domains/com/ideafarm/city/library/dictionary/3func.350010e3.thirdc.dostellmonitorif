@@ -9,7 +9,7 @@
 
 }
     //}
-    //    if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_SUPPRESStELLmONITOR ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the thread") ) ;
+    //    if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_SUPPRESStELLmONITOR ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the thread") ) ;
     //    if( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_SUPPRESStELLS           ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the process") ) ;
     //    _bWoth = 0 ;
     //{
@@ -35,8 +35,8 @@
             //if( F(processGlobal2I.flCt) & flCTdTg_THREADlOCALsTORAGE && !( F(processGlobal2I.flDt) & flCTdTg_THREADlOCALsTORAGE ) )
             //U::
 
+            THREADmODE1rESTORE
             THREADmODE2rESTORE
-            THREADmODE3rESTORE
 
             }
                 default : { BLAMMO ; break ; }
@@ -141,8 +141,8 @@
             //U:: {
             //U:: COMMENTED OUT TO FIND A BUG: CONJ: SERVER WILL BE STABLE IF NOTHING IS WRITTEN TO THE MONITOR
 
-            THREADmODE3oN( flTHREADmODE3_DISALLOWpUSE )
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            THREADmODE2oN( flTHREADmODE2_DISALLOWpUSE )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
             //)
             //    OutputDebugString( pbTell ) ;
@@ -166,13 +166,13 @@
         IFbEcAREFUL
     {
     )
-        !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_SUPPRESStELLmONITOR )
+        !( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_SUPPRESStELLmONITOR )
         &&
         !( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_SUPPRESStELLS )
     (
     if
 
-    if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DISALLOWtELLmONITOR ) { BLAMMO ; }
+    if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_DISALLOWtELLmONITOR ) { BLAMMO ; }
 {
 /*1*/voidT thirdC::dosTellMonitorIF( tin0S& tin0P , const tellC& tellP , const countT idBooksP )/*1*/
 

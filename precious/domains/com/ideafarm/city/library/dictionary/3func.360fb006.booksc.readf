@@ -10,7 +10,7 @@
 }
     return bCallerMustDelete ;
 
-    THREADmODE4rESTORE
+    THREADmODE3rESTORE
 
     }
         grabBookNow.ungrabF( tin0P ) ;
@@ -217,8 +217,8 @@
 
             }
                 }
-                    THREADmODE4rESTORE
-                    THREADmODE2rESTORE ;
+                    THREADmODE3rESTORE
+                    THREADmODE1rESTORE ;
                     }
                         NEWbOOK2sETfLAG
                         new( 0 , tin0P , PBbOOKbACKnOW , SIZEOF_bookC ) bookC( tin0P , TAG( TAGiDnULL ) , tName , idStateSpace , flagsCtBook & ~( F(flBOOKSc_WRITER) ) , 0 , bFill , idMemorySpace ) ; // A:ASSUME: CALLER ALWAYS WANTS TO READ THE NEW BOOK ; TO SUPPORT A WRITER, A FLAG CAN BE DEFINED TO CHANGE THIS BEHAVIOR
@@ -235,12 +235,12 @@
                         cbToDo = 0 ;
                     {
                     if( F(flagsP) & flBOOKScrEAD_STILLhUNGRYiSoK && !bookC::bFileExistsIF( tin0P , *((tin123S&)tin0P).pEther , tName , 0 , idStateSpace , idMemorySpace , flagsCtBook ) )
-                    THREADmODE4oN( flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
+                    THREADmODE3oN( flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE )
 
                     //20181107@1116: THIS BUG WAS WORKED AROUND BY EDITING OTHER CODE SO THAT THIS CODE ISN'T EXERCIZED.  THIS CODE IS INCORRECT.  CORRECT CODE WILL AVOID DELETING A bookC AND THEN ATTEMPTING TO UNDO THAT DELETION
                     //U:: BUG: THIS WILL CREATE A ZOMBIE POINTER TO book0C; REWRITE TO AVOID DELETING THE BOOK
 
-                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
+                    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) ;
 
                     ;
                         : T(postPath)+T(postShort)+T(".booksC.1.book.")+tIdBook
@@ -296,12 +296,12 @@
                 if( bQuit ) break ;
             
                 grabBookNow.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                THREADmODE2rESTORE
+                THREADmODE1rESTORE
                 }
                     ++ s ; thirdC::dosSleepWinkIF( tin0P ) ; // THIS SHOULD BE LONG ENOUGH TO MAKE IT UNLIKELY THAT I WILL GET LUCKY AND "GET IN" IF ANOTHER THREAD IS ACTIVELY READING THE CURRENT BOOK
                     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 {
-                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                 grabBookNow.ungrabF( tin0P ) ;
             {
             if( bWrongBook && ((bookHeadS&)BOOKnOW).cRef )
@@ -423,7 +423,7 @@
     if( phCursorP )
     HANDLEaPPnOTEScOUNTcLASS cursor ;
 
-    THREADmODE4oN( flTHREADmODE4_POOLaLLOCATEfROMhEAP )
+    THREADmODE3oN( flTHREADmODE3_POOLaLLOCATEfROMhEAP )
 
     const boolT& bQuit = pbQuitP ? *pbQuitP : bnu ;
     ZE( boolT , bnu ) ;

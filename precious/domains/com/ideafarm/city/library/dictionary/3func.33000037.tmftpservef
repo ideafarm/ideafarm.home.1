@@ -501,9 +501,9 @@ DONE( tmFtpServeF )
         }
             batQuotaP.ungrabF( tin0P ) ;
             if( POOP ) POOPR
-            THREADmODE2rESTORE
+            THREADmODE1rESTORE
             ((tin123S&)tin0P).pEtScratch->boxPutF( tin0P , tFileQuota , (byteT*)&cbForDay , sizeof cbForDay , 1 ) ;
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             countT cbForDay = TICK * 0x16 ;
             batQuotaP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
@@ -529,7 +529,7 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c7 )
         batQuotaP.ungrabF( tin0P ) ;
         }                                                                                                       \
             etThread.delF( tin0P , pbi ) ;                                                                       \
-            THREADmODE2rESTORE                                                                                  \
+            THREADmODE1rESTORE                                                                                  \
             }                                                                                                   \
                 LOGrAW( tSay ) ;                                                                                \
                 TN( tSay , "" ) ; tSay = TT(timeNow.time1,timeNow.time2)+T(": ftp refused request of ")+TF2((countT)(cbWantP),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" bytes because remaining quota for day is only ")+TF2(*(countT*)pbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".\r\n") ; \
@@ -547,7 +547,7 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c7 )
             else if( cbi == sizeof( countT ) && *(countT*)pbi >= (cbWantP) )                                    \
             if( POOP ) POOPR                                                                                    \
             ((tin123S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbi , cbi , tFileQuota , 1 ) ; ___( pbi ) ;                  \
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )                                               \
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )                                               \
             ZE( countT , cbi ) ;                                                                              \
             ZE( byteT* , pbi ) ;                                                                              \
             bRefuse = 1 ;                                                                                       \

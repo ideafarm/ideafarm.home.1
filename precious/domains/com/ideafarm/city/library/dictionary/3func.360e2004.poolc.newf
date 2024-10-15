@@ -53,7 +53,7 @@
                 {
                 if( !pbP /*&& !bDoNotBlock*/ )      //20221228@1503: PERSONALITY CHANGE: NOW ADAM TEMP POOL DOES NOT BLOCK, AND HERE I ALWAYS CAUSE IMPOTENCE IF ALLOCATION FAILED, SO CALLING CODE CAN HANDLE GRACEFULLY
 
-                THREADmODE5rESTORE
+                THREADmODE4rESTORE
 
                 }
                     }
@@ -83,7 +83,7 @@
 
                 pbP = guts.ppSlots[ offs ]->newF( tin0P , idLineP , idiFileP , flagsSlots ) ;
 
-                THREADmODE5oN( flTHREADmODE5_DOnOTtESTdROPhEADERS )
+                THREADmODE4oN( flTHREADmODE4_DOnOTtESTdROPhEADERS )
 
                 //if( offs == 0x18 ) etherC::etRockIF( tin0P ).traceF( tin0P , T("++++++++ new") ) ; //U::20140808@1936: TO FIND A BUG
 
@@ -95,9 +95,9 @@
                 }
                     guts.pGrabNewElt[ offs ].ungrabF( tin0P ) ;
                     }
-                        THREADmODE2rESTORE
+                        THREADmODE1rESTORE
                         guts.ppSlots[ offs ] = new( 0 , tin0P , guts.pbza + offs * sizeof( slotsC ) , sizeof( slotsC ) ) slotsC( tin0P , TAG( TAGiDnULL ) , idLineP , idiFileP , ostoName , guts.cBitsExpCbDrop , offs , face.pcCbDropAdjust[ offs ] , face.cbDropSeparator , flagsc , guts.idStateSpace , guts.idMemorySpace , this ) ;
-                        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                        THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                 
                         if( F(guts.flagsCt) & flPOOLc_NOdROPhEADERS ) flagsc |= flSLOTSc_NOdROPhEADERS ;
                         if( F(guts.flagsCt) & flPOOLc_NOsEXiNpOOL   ) flagsc |= flSLOTSc_NOsEXiNpOOL   ;
@@ -130,13 +130,13 @@
             //if( ((tin123S&)tin0P).pc Utility[ 0 ] )
             //DISABLE THIS IN PRODUCTION ; TO FIND A BUG
 
-            if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
-            if( this != ((tin1S&)tin0P).pag1->pPoolAdamTemp && !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP ) ) { BLAMMO ; }
+            if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DISALLOWpUSE ) { BLAMMO ; }
+            if( this != ((tin1S&)tin0P).pag1->pPoolAdamTemp && !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ALLOWnEWdROPnOTiNaDAMtEMP ) ) { BLAMMO ; }
 
             if( F(guts.flagsCt) & flPOOLc_READoNLY ) { BLAMMO ; }
         {
         else
-        else if( F(((tin123S&)tin0P).flagsThreadMode4) & flTHREADmODE4_POOLaLLOCATEfROMhEAP ) pbP = processGlobal4I.heap.newF( tin0P , idLineP , idiFileP , cbP ) ;
+        else if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_POOLaLLOCATEfROMhEAP ) pbP = processGlobal4I.heap.newF( tin0P , idLineP , idiFileP , cbP ) ;
         }
             pbP          = (byteT*)idJot ;
             countT idJot = juse.writeF( tin0P , 0 , cbP ) ;

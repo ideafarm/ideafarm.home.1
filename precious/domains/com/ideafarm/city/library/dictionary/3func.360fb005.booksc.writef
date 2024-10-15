@@ -14,8 +14,8 @@
 
     //DELzOMBIE( pInOutFrame ) ;
 
-    THREADmODE2rESTORE
-    THREADmODE4rESTORE
+    THREADmODE1rESTORE
+    THREADmODE3rESTORE
 
     }
         //if( bDeleteOutParam ) { PUSE( tin0P , *(byteT**)ppcpIdAptP ) ; }
@@ -27,9 +27,9 @@
             DELzOMBIE( pBk0Doomed ) ;
 
             }
-                THREADmODE2rESTORE ;
+                THREADmODE1rESTORE ;
                 writeF( tin0P , pbi , cbi ) ; //THIS LINE MIGHT USE CONSTRUCT AND USE A NEW SCRATCH BOOK
-                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
+                THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) ;
                 _IO_
             {
             if( cbi )
@@ -51,7 +51,7 @@
                 if( bNullWrite || F(flagsP) & flBOOKScwRITE_SETrEMAINING || ( F(flagsP) & flBOOKScwRITE_ALLoRsOME && cbDone1 ) ) break ;
 
                 }
-                    THREADmODE5rESTORE
+                    THREADmODE4rESTORE
                     }
                         }
                             }
@@ -95,7 +95,7 @@
 
                     pcRef_postBookNameNoPuse2[ offEltMyHeap ] = 0 ;                                     //THIS FREES THE HEAP ALLOCATION THAT I WAS USING FOR THE NAME
                     //if( !( F(flagsCt) & flBOOKSc_DOnOTuSEpUSE ) ) PUSE( tin0P , postBookName ) ;
-                    THREADmODE2rESTORE ;
+                    THREADmODE1rESTORE ;
                     //CONoUTrAW( "\r\n+++++++++++ NEWED  BOOK ------------" ) ;
 
                     pBookUse = &BOOKnOW ;
@@ -104,19 +104,19 @@
                         NEWbOOK2sETfLAG
 
                         //((tin123S&)tin0P).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
-                        THREADmODE4rESTORE
+                        THREADmODE3rESTORE
                         }
-                            THREADmODE4rESTORE
+                            THREADmODE3rESTORE
                             }
-                                THREADmODE4rESTORE
+                                THREADmODE3rESTORE
                                 new( 0 , tin0P , PBbOOKbACKnOW , SIZEOF_bookC ) bookC( tin0P , TAG( TAGiDnULL ) , postBookName , idStateSpace , flagsCtBook , F(flagsCt) & flBOOKSc_WRITER ? cbBodyNew : 0 , bFill , idMemorySpace ) ;
-                                THREADmODE4oFF( flTHREADmODE4_SUPPRESStRACING )
+                                THREADmODE3oFF( flTHREADmODE3_SUPPRESStRACING )
                                 _IO_
                             {
-                            THREADmODE4oN(  flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
+                            THREADmODE3oN(  flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE )
                             _IO_
                         {
-                        THREADmODE4oN( flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
+                        THREADmODE3oN( flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE )
                         //((tin123S&)tin0P).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
 
                         //}
@@ -133,7 +133,7 @@
                     if( bBookNowIsDestroyed )
 
                     //CONoUTrAW( "\r\n+++++++++++ NEWING BOOK ++++++++++++" ) ;
-                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
+                    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) ;
 
                     //}
                     //    if( postBookName ) thirdC::c_strcpyIF( tin0P , postBookName , tName ) ;
@@ -321,7 +321,7 @@
                     ZE( countT   , offEltMyHeap ) ;
                     ZE( osTextT* , postBookName ) ;   //U:: BUG: THIS IS NOT REENTRANT.  I NEED TO USE POOL OR SOME OTHER MEMORY ALLOCATION SCHEME FOR THIS NAME SO THAT I AM REENTRANT
                     //ALLOCATE postBookNameNoPuse2 (PUSE IS NOT USED TO AVOID NONMONOTONIC GRABBING.  SO I NEED TO HAVE MY OWN LITTLE HEAP)
-                    THREADmODE5oFF( flTHREADmODE5_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY )
+                    THREADmODE4oFF( flTHREADmODE4_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY )
                     _IO_
                 {
                 else
@@ -394,9 +394,9 @@
                 if( phWroteP && ( cbDone1 || bNullWrite ) )
 
                 }
-                    THREADmODE2rESTORE ;
+                    THREADmODE1rESTORE ;
                     offAt = pBookUse->writeF( tin0P , flagsResult , pb1P , cbDone1 , pb2P , cbDone2 , flagsWrite , phWroteP ? &offWrote : 0 ) ;
-                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
+                    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) ;
                     _IO_
                 {
                 ZE( countT , offAt ) ;
@@ -414,7 +414,7 @@
 
                 _IO_
             {
-            //U:: IS A MYSTERY BECAUSE flTHREADmODE4_POOLaLLOCATEfROMhEAP IS SET
+            //U:: IS A MYSTERY BECAUSE flTHREADmODE3_POOLaLLOCATEfROMhEAP IS SET
             //U:: IS USING poolC SOMEWHERE IN HERE, WHICH CAUSES NONMONOTONIC GRAB BLAMMO ; THE CALL NEST CONTAINS OO LEVELS WITH BLANK idiFile ; SO _IO_ LINES ARE ADDED TO SQUEEZE THIS
 
             _IO_
@@ -504,9 +504,9 @@
     //if( this == &processGlobal4I.bksTelemetrySys || this == &processGlobal4I.bksTelemetryApp /*|| this == &processGlobal4I.bksTrace || this == &processGlobal4I.bksTraceDivert01*/ || this == &processGlobal4I.bksWord || this == &processGlobal4I.bksWords ) return 0 ;  //U:: TO WORKAROUND A BUG (NONMONOTONIC GRABBING)
     //U::DELETE THE NEXT LINE ONCE I AM TESTED TO VERIFY THAT I DO NOT TRIGGER NONMONOTONIC GRABBING BLAMMO
 
-    THREADmODE4oN( flTHREADmODE4_POOLaLLOCATEfROMhEAP )
+    THREADmODE3oN( flTHREADmODE3_POOLaLLOCATEfROMhEAP )
 
-    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )     //20200912@1846: ADDED WITHOUT ANALYSIS TO PREVENT RARE EVENT FAILURE THAT I CANNOT LOCATE
+    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )     //20200912@1846: ADDED WITHOUT ANALYSIS TO PREVENT RARE EVENT FAILURE THAT I CANNOT LOCATE
 
     _IO_
 

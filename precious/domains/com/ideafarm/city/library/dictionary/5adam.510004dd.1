@@ -88,7 +88,7 @@ TELL( "entering REST" )
         etThread.etherReadFromCyrcleOldF( tin0P , pNapMonitor , cirMonitorF , c2mpr , bDestroyCircleMonitor , T("napMonitor") , CBmONITORbUFFER ) ;
 U::NEED TO PASS IN A bitsC REFERENCE
         etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
-        //((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR ; //U::FIGURE OUT A WAY TO AVOID SUPPRESSING TELLS; CONJ: SET A CALLBACK FUNCTION THAT CAN UNGRAB THE NAPKIN SO THAT THE EXCEPTION HANDLER CAN EMIT A NOTE
+        //((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR ; //U::FIGURE OUT A WAY TO AVOID SUPPRESSING TELLS; CONJ: SET A CALLBACK FUNCTION THAT CAN UNGRAB THE NAPKIN SO THAT THE EXCEPTION HANDLER CAN EMIT A NOTE
         //U::CONJ: THE GRABBING OF THE CIRCLE NAPKIN IS NOT NECESSARY
     
         etThread.boxPutF( tin0P , tActive , "" , 1 ) ; //U::KLUGE NEEDED CAUSE PACKAGE IS DENIED ACCESS TO napHomeJot
@@ -390,7 +390,7 @@ TELL( "i'm outa here" )
         countT cToDo = TUCK * 0x10 ;
         //etThread.strokeF( tin0P , T("\r\nwrote where report ")+TF1(idReport)+T("\r\n") ) ;
 
-        //((tin123S&)tin0P).flagsThreadMode2 &= ~( F(flTHREADmODE2_DISALLOWtELLmONITOR) ) ;
+        //((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWtELLmONITOR) ) ;
             
         }
             etThread.delF( tin0P , psttFileName ) ;
@@ -536,7 +536,7 @@ TELL( "i'm outa here" )
                     {
                     TN( tLifiName , "unknown" ) ;
             
-                    //((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_DISALLOWtELLmONITOR ;
+                    //((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
                     pwtg->bNewWhereRpt = 0 ;
                 {
                 if( pwtg->bNewWhereRpt /*U:: && ( !stTinWhereP || idCycle % 0x10 == 1 ) */ ) //ONLY EVERY TICK IF AM WATCHING WHERE WO OR MORE THREADS ARE
@@ -938,7 +938,7 @@ TASK( tmWhereRptF )
                 if( !bAdam && !bClass )
                 TN( tLifiName , "unknown" ) ;
         
-                //((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_DISALLOWtELLmONITOR ;
+                //((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
                 pwtf->bNewWhereRpt = 0 ;
             {
             if( pwtf->bNewWhereRpt /*U:: && ( !stTinWhereP || idCycle % 0x10 == 1 ) */ ) //ONLY EVERY TICK IF AM WATCHING WHERE WO OR MORE THREADS ARE
@@ -1565,7 +1565,7 @@ DONE( tmRptMainF )
 TELL( "i am outa here" )
 }
     ((tin123S&)tin0P).pEtText = 0 ;
-    ((tin123S&)tin0P).flagsThreadMode2 &= ~( F(flTHREADmODE2_DISALLOWgRAB) ) ;
+    ((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWgRAB) ) ;
     TELL( "cleaning up" )
     //POPUP( "tmRptMainF/about to set my done flag" ) ; //U::
     }
@@ -1620,7 +1620,7 @@ TELL( "i am outa here" )
             TELL( "explanatory notes" )
             
             //if( !setIfEqualsAM( conditionalGrab , 0 , 1 ) ) { BLAMMO ; } // THE flSTACKc_ALLOWmULTIPLEuNSERIALIZED stackC objects MUST NOT BE REFERENCED AFTER THIS
-            //THREADmODE2rESTORE
+            //THREADmODE1rESTORE
             ////***********************************************************************************************************************
             //bGrabbedConditionalGrab = 0 ;
             //TELL( "resetting conditionalGrab" )
@@ -2244,7 +2244,7 @@ TELL( "i am outa here" )
             TELL( "getting the time" )
 
             ////***********************************************************************************************************************
-            //THREADmODE2oN( flTHREADmODE2_USEaSYNCHtELLmONITOR )
+            //THREADmODE1oN( flTHREADmODE1_USEaSYNCHtELLmONITOR )
             //bGrabbedConditionalGrab = 1 ;
             //}
             //    while( setIfZeAM( conditionalGrab , 1 ) ) { ++ s ; thirdC::dosSleepIF( tin0P , TUCK * 0x40 ) ; }
@@ -2408,7 +2408,7 @@ TELL( "i am outa here" )
         TELL( "setting up: 2: stroke strings" )
     
         ((tin123S&)tin0P).pEtText = &etThread ;
-        ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_DISALLOWgRAB ;
+        ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWgRAB ;
         ZE( countT , idStepReporterLath ) ;
         boolT bWoth = 1 ;
         ZE( countT , idReport ) ;

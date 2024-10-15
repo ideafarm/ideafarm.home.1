@@ -9,7 +9,7 @@
 
 }
     }
-        ((tin123S&)tin0P).flagsThreadMode2 = tmSave ;
+        ((tin123S&)tin0P).flagsThreadMode1 = tmSave ;
 
         }
             thirdC::dosRaiseExceptionIF( tin0P , ifcIDeVENTeXCEPTIONmONITORED_GRUNT , pcArgs , sizeof pcArgs / sizeof pcArgs[ 0 ] ) ;
@@ -45,9 +45,9 @@
             OStEXTC(  ostoSay , idLineP , 0 ) ;
             OStEXTAK( ostoSay , " ) at " ) ;
             //OStEXTA(  ostoSay , slabS::slabIF().flagsi & fliSLABs_SHUTDOWN             ? " shutdown"    : "" ) ;
-            OStEXTA(  ostoSay , F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SMELLY         ? " forceSmelly" : "" ) ;
+            OStEXTA(  ostoSay , F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_SMELLY         ? " forceSmelly" : "" ) ;
             OStEXTA(  ostoSay , F(flags) & flPOOP_SMELLY                                ? " smelly"      : "" ) ;
-            OStEXTA(  ostoSay , F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_QUIETiMPOTENCE ? " quiet"       : "" ) ;
+            OStEXTA(  ostoSay , F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_QUIETiMPOTENCE ? " quiet"       : "" ) ;
             OStEXTA(  ostoSay , idTypeP == ifcIDtYPEpOOP_FIRED                          ? " fired"       : "" ) ;
             OStEXTAK( ostoSay , "gruntF (" ) ;
             OStEXT(   ostoSay , TUCK << 2 ) ;
@@ -67,22 +67,22 @@
 
             !( slabS::slabIF().flagsi & fliSLABs_SHUTDOWN )
             &&
-            ( F(flags) & flPOOP_SMELLY || F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SMELLY )
+            ( F(flags) & flPOOP_SMELLY || F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_SMELLY )
             &&
-            !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_QUIETiMPOTENCE )
+            !( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_QUIETiMPOTENCE )
 
         const boolT bRaiseException =
         //ZE( countT , ze ) ;
 
-        const boolT bTrace = F(flags) & flPOOP_SMELLY && !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_QUIETiMPOTENCE ) && F(processGlobal2I.flCt) & flCTdTg_WITHINlIFETIMEoFmAIN && !( F(processGlobal2I.flDt) & flCTdTg_WITHINlIFETIMEoFmAIN ) ; //SILENCES EARLY/LATE TRACING
+        const boolT bTrace = F(flags) & flPOOP_SMELLY && !( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_QUIETiMPOTENCE ) && F(processGlobal2I.flCt) & flCTdTg_WITHINlIFETIMEoFmAIN && !( F(processGlobal2I.flDt) & flCTdTg_WITHINlIFETIMEoFmAIN ) ; //SILENCES EARLY/LATE TRACING
 
         idiFileGrunt = idiFileP ;
         idLineGrunt = idLineP ;
         if( idTypeP == ifcIDtYPEpOOP_FIRED ) flags &= ~( F(flPOOP_SMELLY) ) ;
         idType = idTypeP ;
 
-        ((tin123S&)tin0P).flagsThreadMode2 &= ~( F(flTHREADmODE2_UPDATEtIN) ) ; //CONJ: NO LONGER NEEDED (IF IN OUT IS REMOVED)
-        flagsT tmSave = ((tin123S&)tin0P).flagsThreadMode2 ;
+        ((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_UPDATEtIN) ) ; //CONJ: NO LONGER NEEDED (IF IN OUT IS REMOVED)
+        flagsT tmSave = ((tin123S&)tin0P).flagsThreadMode1 ;
 
         }
             *pcBlammo = 0x12345678 ;

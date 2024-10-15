@@ -23,7 +23,7 @@
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     }
-        THREADmODE3rESTORE
+        THREADmODE2rESTORE
         }
             }
                 listC::indexIF( tin0P , hList ) ;
@@ -40,7 +40,7 @@
 
             puseC puseMe( tin0P , *this ) ;
         {
-        THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
+        THREADmODE2oN( flTHREADmODE2_UNLOCKpOOLiDENTITY )
     {                                                                                                                   // INDEX ALL OF MY DATUM VALUES
     )
         && !( F(flagsP) & flPOOLc_DOnOTiNDEXdURINGcT                                 )                                  // MY CALLER DIDN'T FORBID ME TO INDEX MYSELF               (DO NOTHING IF I AM TOLD TO DO NOTHING)
@@ -66,7 +66,7 @@
     {
     if( F(flagsP) & flPOOLc_RESETiNDEXbITS )
 
-    ((tin123S&)tin0P).flagsThreadMode2 = saveThreadMode2 ;
+    ((tin123S&)tin0P).flagsThreadMode1 = saveThreadMode1 ;
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // MAYBE RESET ALL INDEX BITS
@@ -258,7 +258,7 @@
 
     //20170830@2027: ctFaceF WAS CALLED HERE.  MOVED TO EARLIER TO AVOID RECURSIVELY GRABBING GRABmEMORYsPACE
 
-    if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_DISALLOWpUSE ) { BLAMMO ; }
+    if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DISALLOWpUSE ) { BLAMMO ; }
 
     }
         if( aptnu ) ;
@@ -270,15 +270,15 @@
         __( cbDropSeparatorP && cbDropSeparatorP - sizeof( countT ) ) ;
         __( idMemorySpaceP && ( idMemorySpaceP < ifcIDmEMORYsPACE_min || idMemorySpaceP > ifcIDmEMORYsPACE_max ) ) ;
         FV( flPOOLc , flagsP ) ;
-        FV( flTHREADmODE2 , ((tin123S&)tin0P).flagsThreadMode2 ) ;
-        FV( flTHREADmODE2 , saveThreadMode2 ) ;
+        FV( flTHREADmODE1 , ((tin123S&)tin0P).flagsThreadMode1 ) ;
+        FV( flTHREADmODE1 , saveThreadMode1 ) ;
     {
     IFbEcAREFUL
 
                                                     ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:1
                                                     ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:2
                                                     ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:3
-    flagsT saveThreadMode2 = *(flagsT*)((tin123S&)tin0P).pbF() ; ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:4
+    flagsT saveThreadMode1 = *(flagsT*)((tin123S&)tin0P).pbF() ; ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:4
                                                     ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:5
                                                     ((tin123S&)tin0P).tlsDelF( LF , countTC() ) ; //TLS:6
     _IO_
@@ -329,9 +329,9 @@ flagsInstance( flPOOLiNSTANCE_null ) ,
 ) ,
     )
         (poolC*)0
-        ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_ALLOWsTOPwHILEgRABBING ,
-        *(flagsT*)((tin123S&)tin0P).pbF() = ((tin123S&)tin0P).flagsThreadMode2 ,                                                           //TLS:4
-        ((tin123S&)tin0P).tlsNewF( LF , sizeof( flagsT ) ) ,                                                                  //TLS:4  ======== NEW ==========================================================    4           [flagsThreadMode2]
+        ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_ALLOWsTOPwHILEgRABBING ,
+        *(flagsT*)((tin123S&)tin0P).pbF() = ((tin123S&)tin0P).flagsThreadMode1 ,                                                           //TLS:4
+        ((tin123S&)tin0P).tlsNewF( LF , sizeof( flagsT ) ) ,                                                                  //TLS:4  ======== NEW ==========================================================    4           [flagsThreadMode1]
         ) ,
             cbDropSeparatorP , idStateSpaceP
             ,

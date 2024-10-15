@@ -17,12 +17,12 @@
         }
             break ;
             dec02AM( ((tin1S&)tin0P).pag1->_etherC_.cEnabledWhere ) ;
-            THREADmODE1oFF( flTHREADmODE1_WHEREiSwATCHING )
+            THREADmODEwHEREoFF( flTHREADmODEwHERE_WHEREiSwATCHING )
         {
         case ifcIDaCTIONwHERE_UNWATCH :
         }
             break ;
-            THREADmODE1oN( flTHREADmODE1_WHEREiSwATCHING )
+            THREADmODEwHEREoN( flTHREADmODEwHERE_WHEREiSwATCHING )
             inc02AM( ((tin1S&)tin0P).pag1->_etherC_.cEnabledWhere ) ;
         {
         case ifcIDaCTIONwHERE_WATCH :
@@ -32,7 +32,7 @@
             __( off == ((tin1S&)tin0P).pag1->_etherC_.cThreadsMaxWhere ) ;
             for( ; off < ((tin1S&)tin0P).pag1->_etherC_.cThreadsMaxWhere ; off ++ ) if( (countT)&tin0P == setIfEqualsAM( *(countT*)&((tin1S&)tin0P).pag1->_etherC_.ppTinWhere[ off ] , 0 , (countT)&tin0P ) ) break ;
             ZE( countT , off ) ;
-            THREADmODE1oFF( flTHREADmODE1_REGISTEREDwITHwHERE )
+            THREADmODEwHEREoFF( flTHREADmODEwHERE_REGISTEREDwITHwHERE )
             __Z( cWhereSetup ) ;
             ((tin1S&)tin0P).pag4->_etherC_grabWhere.grabF( tin0P , TAG( TAGiDnULL ) ) ;
         {
@@ -41,7 +41,7 @@
             break ;
             ((tin1S&)tin0P).pag4->_etherC_grabWhere.ungrabF( tin0P ) ;
             __( off == ((tin1S&)tin0P).pag1->_etherC_.cThreadsMaxWhere ) ;
-            THREADmODE1oN( flTHREADmODE1_REGISTEREDwITHwHERE )
+            THREADmODEwHEREoN( flTHREADmODEwHERE_REGISTEREDwITHwHERE )
             }
                 if( !old ) break ;
                 countT old = setIfZeAM( *(countT*)&((tin1S&)tin0P).pag1->_etherC_.ppTinWhere[ off ] , (countT)&tin0P ) ;
@@ -56,10 +56,10 @@
             break ;
             ((tin1S&)tin0P).pag4->_etherC_grabWhere.ungrabF( tin0P ) ;
             delF( tin0P , (countT*&)((tin1S&)tin0P).pag1->_etherC_.ppTinWhere ) ;
-            THREADmODE2rESTORE
+            THREADmODE1rESTORE
             DEL( ((tin1S&)tin0P).pag1->_etherC_.pSgnDone_tmWhere ) ;
             ((tin1S&)tin0P).pag1->_etherC_.pSgnDone_tmWhere->waitF( tin0P ) ;
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             ((tin1S&)tin0P).pag1->_etherC_.bQuitWhere = 1 ;
             __( !( cWhereSetup -- ) ) ;
             ((tin1S&)tin0P).pag4->_etherC_grabWhere.grabF( tin0P , TAG( TAGiDnULL ) ) ;
@@ -69,12 +69,12 @@
             break ;
             ((tin1S&)tin0P).pag4->_etherC_grabWhere.ungrabF( tin0P ) ;
             __( cWhereSetup ++ ) ;
-            THREADmODE1rESTORE
-            THREADmODE2rESTORE                                                                            // CBsTACK IS MINIMIZED
+            THREADmODEwHERErESTORE
+            THREADmODE1rESTORE                                                                            // CBsTACK IS MINIMIZED
             sgnReady.waitF( tin0P ) ;
             osThreadF( TaRG3sGNdONEcBsTACK( tmWhereF , *((tin1S&)tin0P).pag1->_etherC_.pSgnDone_tmWhere , CBsTACKmIN << 4 ) , (countT)&((tin1S&)tin0P).pag1->_etherC_.bQuitWhere , (countT)&sgnReady , (countT)&((tin1S&)tin0P).pag1->_etherC_.cEnabledWhere , (countT)&((tin1S&)tin0P).pag1->_etherC_.idTypeReportWhere , (countT)((tin1S&)tin0P).pag1->_etherC_.ppTinWhere , (countT)&((tin1S&)tin0P).pag1->_etherC_.cThreadsMaxWhere , (countT)&((tin1S&)tin0P).pag4->_etherC_grabWhere ) ;
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
-            THREADmODE1oN( flTHREADmODE1_NOwHERE )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
+            THREADmODEwHEREoN( flTHREADmODEwHERE_NOwHERE )
             signC sgnReady( tin0P , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC3 ) ;
             ((tin1S&)tin0P).pag1->_etherC_.pSgnDone_tmWhere = new( 0 , tin0P , LF ) signC( tin0P , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC2 ) ; ___( ((tin1S&)tin0P).pag1->_etherC_.pSgnDone_tmWhere ) ;
             memSetF( tin0P , (byteT*)((tin1S&)tin0P).pag1->_etherC_.ppTinWhere , ((tin1S&)tin0P).pag1->_etherC_.cThreadsMaxWhere * sizeof( countT ) ) ;

@@ -44,11 +44,11 @@
             //DOES NOT WORK
 
             }
-                THREADmODE2rESTORE //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
+                THREADmODE1rESTORE //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
                 TINSL
             {
             else
-            if( bOkToUseIfcObjects ) THREADmODE2rESTORE //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
+            if( bOkToUseIfcObjects ) THREADmODE1rESTORE //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
 
             }
                 default: { rc = thirdC::winDefaultMessageHandlerIF( tin0P , oshWindowP , idCmdP , p1P , p2P ) ; break ; }
@@ -442,12 +442,12 @@
                     //bDoDefault = 0 ; //WAS 1 (SET TO 0 ON 7/26/2004)
 
                     }
-                        //THREADmODE2rESTORE
+                        //THREADmODE1rESTORE
                         //}
                         //    while( !( F(thirdC::third_flagsProcessStateI_IF(tin0P)) & flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE ) ) { ++ s ; thirdC::dosSleepRawIF( tin0P , 250 ) ; }
                         //    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                         //{
-                        //THREADmODE2oN( flTHREADmODE2_ALLOWuNMONITOREDsLEEP )
+                        //THREADmODE1oN( flTHREADmODE1_ALLOWuNMONITOREDsLEEP )
                         //CONJ: THE PURPOSE OF THIS BLOCKAGE WAS TO ENSURE THAT SHUTDOWN DOES NOT COMPLETE UNTIL MAIN COMPLETES
 
                         //MAY NOT REFER TO IFC OBJECTS NOW SINCE MAIN IS DELETING THEM ALL
@@ -465,9 +465,9 @@
 
                     }                                                                                                                    \
                         (pEtThread) = 0 ;                                                                                                      \
-                        THREADmODE3rESTORE                                                                                               \
+                        THREADmODE2rESTORE                                                                                               \
                         delete (pEtThread) ;                                                                                                   \
-                        THREADmODE3oFF( flTHREADmODE3_DOnOTcaLLdELif )                                                                   \
+                        THREADmODE2oFF( flTHREADmODE2_DOnOTcaLLdELif )                                                                   \
                     {                                                                                                                    \
                     if( *(countT*)&(pEtThread) )                                                                                               \
 
@@ -498,7 +498,7 @@
 
                     DEL( ((tin123S&)tin0P).pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
                     }
-                        THREADmODE2rESTORE
+                        THREADmODE1rESTORE
                         }
                             }
                                 }
@@ -524,7 +524,7 @@
                         {
                         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                         countT cFlavors = ((tin123S&)tin0P).pSwsRecycle->cFlavorsF( tin0P ) ;
-                        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                        THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                     {
                     if( ((tin123S&)tin0P).pSwsRecycle )
                     //PSEUDODUPLICATE CODE: 1450002 12f0002 1030003 1020171
@@ -765,7 +765,7 @@
             {
             switch( idCmdP )
             tin0S* pTinDebug3 = &tin0P ; //U::
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) //LEGACY WORKAROUND (DO THIS FOR ALL HANDLING SO DON'T NEED TO FIGURE OUT WHAT CAUSES FAIL)
 
             //WWiNIT
 

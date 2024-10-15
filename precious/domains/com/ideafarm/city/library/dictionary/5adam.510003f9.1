@@ -143,9 +143,9 @@ TODO
                 etThread.delF( tin0P , psttw ) ;
                 }
                     }
-                        THREADmODE2rESTORE
+                        THREADmODE1rESTORE
                         lake.writeF( tin0P , pcName , pbBlob , cbBlob , 1 ) ;
-                        THREADmODE2oN( flTHREADmODE2_POOLoLDsECTION1 ) ;
+                        THREADmODE1oN( flTHREADmODE1_POOLoLDsECTION1 ) ;
                     {
                     else
                     if( !bNewMinIsSet ) lake.writeF( tin0P , pcName , pbBlob , cbBlob , 1 ) ;
@@ -252,9 +252,9 @@ pseudocode
     //etherC::ifcSayIF( T("stockOneImageFishF: ")+TF1(pcP)+T("  \"")+T(psttP)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
     etThread.delF( tin0P , pbBlob ) ;
     }
-        THREADmODE2rESTORE
+        THREADmODE1rESTORE
         lakeP.writeF( tin0P , pcP , pbBlob , cbBlob , 1 ) ;
-        THREADmODE2oN( flTHREADmODE2_POOLoLDsECTION1 ) ;
+        THREADmODE1oN( flTHREADmODE1_POOLoLDsECTION1 ) ;
     {
     else
     if( !bNewMinIsSetP ) lakeP.writeF( tin0P , pcP , pbBlob , cbBlob , 1 ) ;
@@ -301,7 +301,7 @@ pseudocode
 
     STEP( onePackF( tin0P , etThread ) ) ;
 
-    ((tin123S&)tin0P).flagsThreadMode2 = flagsThreadMode2Save ;
+    ((tin123S&)tin0P).flagsThreadMode1 = flagsThreadMode1Save ;
 
     for( countT idt = 1 ; idt <= cTrees ; idt ++ ) STEP( etThread.boxPutHtmlFromKnowledgeTreeBaseF( tin0P , 1 , (strokeS*)st1P[ idt ] , (strokeS*)st2P[ idt ] , (strokeS*)st3P[ idt ] , tCopy , (strokeS*)st4P[ idt ] , 0x100000 , 1 ) ) ;
     const countT cTrees = st2P ;
@@ -318,8 +318,8 @@ pseudocode
     //U: //STEP( testAutoF(                    tin0P , etThread , bTestP                          ) ) ;
     //U: STEP( etThread.ifcHireF( tin0P , T("city.publisher") , ifcIDaDAMoLD_MAKEaLLaDAMS , T(bTestP?"!test":"") , flHIRE_WAIT ) ) ;
 
-    ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;
-    flagsT flagsThreadMode2Save = ((tin123S&)tin0P).flagsThreadMode2 ;
+    ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;
+    flagsT flagsThreadMode1Save = ((tin123S&)tin0P).flagsThreadMode1 ;
 
     ZE( countT , idStep ) ;
     //etherC::ifcSayIF( T("pass ")+TF1(++stateP.idPass)+T(" begun") , flSAY_APPEND | flSAY_LOG ) ;

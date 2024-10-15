@@ -8,7 +8,7 @@
 
 
 }
-    if( &tin0P == this ) flagsThreadMode2 = flagsThreadMode2Save ;
+    if( &tin0P == this ) flagsThreadMode1 = flagsThreadMode1Save ;
 
     }
         }
@@ -275,11 +275,11 @@
     const flagsT flags1 = ( F(flagsInclude1P) ? flagsInclude1P : FaLLsET( flagsInclude1P ) ) & ~( F(flagsExclude1P) ) ;
 
     }
-        flagsThreadMode2 &= ~( F(flTHREADmODE2_UPDATEtIN) ) ;
-        flagsThreadMode2Save = flagsThreadMode2 ;
+        flagsThreadMode1 &= ~( F(flTHREADmODE1_UPDATEtIN) ) ;
+        flagsThreadMode1Save = flagsThreadMode1 ;
     {
     if( &tin0P == this )
-    ZE( flagsT , flagsThreadMode2Save ) ;
+    ZE( flagsT , flagsThreadMode1Save ) ;
 
     while( cToDo -- ) ti += T(" ") ;
     countT cToDo = cIndentP ;

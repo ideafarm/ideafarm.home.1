@@ -22,12 +22,12 @@ DONE( tmServiceMainF )
             if( /*ether &&*/ !bServiceFired )
             //THIS IS ILLEGAL; win32 SILENTLY CRAPS WHEN A SERVICE CALLS HIRE AND/OR FIRE FOR A SERVICE
     
-            ((tin123S&)tin0P).flagsThreadMode2 &= ~( F(flTHREADmODE2_DRIVERaDAM) ) ;
+            ((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DRIVERaDAM) ) ;
             if( !( ++ processGlobal2I.pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
             TELL( "pMainF has returned" )
             (*pMainF)( &main ) ; //ASSUME: DEFINITION BLOCKS UNTIL QUITTING
             if( !( ++ processGlobal2I.pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
-            ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_DRIVERaDAM ;
+            ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DRIVERaDAM ;
             TELL( "calling the adam" )
         {
         if( pMainF )

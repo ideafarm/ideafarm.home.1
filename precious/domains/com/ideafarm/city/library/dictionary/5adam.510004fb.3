@@ -11,7 +11,7 @@
 
 DONE( tmHooF )
 }
-    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ; //INTENTIONALLY NOT RESTORED
+    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) ; //INTENTIONALLY NOT RESTORED
     grab1.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     }
@@ -30,7 +30,7 @@ TASK( tmHooF )
 
 DONE( tmGooF )
 }
-    THREADmODE2rESTORE ;
+    THREADmODE1rESTORE ;
     //CONoUTrAW3( "tmGooF/" , ((tin123S&)tin0P).monitor.idThread , ": you'll never see this\r\n" ) ;
     grab2.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     //CONoUTrAW3( "tmGooF/" , ((tin123S&)tin0P).monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
@@ -39,7 +39,7 @@ DONE( tmGooF )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     grab1.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
+    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) ;
 
     grabitC& grab2 = *(grabitC*)pTaskP->c2 ;
     grabitC& grab1 = *(grabitC*)pTaskP->c1 ;
@@ -49,7 +49,7 @@ TASK( tmGooF )
 
 DONE( tmFooF )
 }
-    THREADmODE2rESTORE ;
+    THREADmODE1rESTORE ;
     //CONoUTrAW3( "tmFooF/" , ((tin123S&)tin0P).monitor.idThread , ": you'll never see this\r\n" ) ;
     grab2.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     //CONoUTrAW3( "tmFooF/" , ((tin123S&)tin0P).monitor.idThread , ": grabbing (this should deadlock)\r\n" ) ;
@@ -58,7 +58,7 @@ DONE( tmFooF )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     grab1.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) ;
+    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) ;
 
     grabC& grab2 = *(grabC*)pTaskP->c2 ;
     grabC& grab1 = *(grabC*)pTaskP->c1 ;

@@ -19,7 +19,7 @@ TODO
 DONE( tmHoverF )
 }
     etThread.traceF( tin0P , T("dt'ed  hover [tHoverA]:    ")+tHoverA ) ;
-    THREADmODE2rESTORE
+    THREADmODE1rESTORE
     }
         etThread.traceF( tin0P , T("dt'ing hover [tHoverA]:    ")+tHoverA ) ;
         ether.osSleepF( tin0P , TICK >> 4 ) ;
@@ -32,7 +32,7 @@ DONE( tmHoverF )
         etThread.traceF( tin0P , T("ct'ed  hover [tHoverA]:    ")+tHoverA ) ;
         hoverC hover( tin0P , etThread , tHoverA ) ;
     {
-    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING | flTHREADmODE2_ALLOWmULTItHREADEDhOVER ) ;
+    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING | flTHREADmODE1_ALLOWmULTItHREADEDhOVER ) ;
     etThread.traceF( tin0P , T("ct'ing hover [tHoverA]:    ")+tHoverA ) ;
 
     TN( tHoverB , "" ) ; tHoverB = tHoverA+T("fooey/") ;
@@ -47,7 +47,7 @@ TASK( tmHoverF )
 /*1*/WAKEsHOWtEXT( "example.other.1snip.15000182.hoverC.multithreaded" )/*1*/
 /**/
 */
- but if used on multiple threads, impotence will occur if flTHREADmODE2_ALLOWmULTItHREADEDhOVER is not specified
+ but if used on multiple threads, impotence will occur if flTHREADmODE1_ALLOWmULTItHREADEDhOVER is not specified
  hoverC instances can be nested on the same thread, as my code shows
  this should be considered when designing such code
  when used on multiple threads, hoverC will serialize so that only wo instance exists at a time

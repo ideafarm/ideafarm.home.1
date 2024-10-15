@@ -2329,7 +2329,7 @@ these "status codes" are returned by some MS Windows api's
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c3.HUSHbITSdEFAULT END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c4.flthreadmode1 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c4.flthreadmodewhere BEGIN
 
 
 //
@@ -2342,16 +2342,16 @@ these "status codes" are returned by some MS Windows api's
 /*
 */
 /**/
-/*1*//*flTHREADmODE1*//*1*/
+/*1*//*flTHREADmODEwHERE*//*1*/
 
 //CODEsYNC: 00100df 0010055
 
 /*3*/
-#define flTHREADmODE1_REGISTEREDwITHwHERE                       0xe0000119
-#define flTHREADmODE1_WHEREiSwATCHING                           0xe0000219
-#define flTHREADmODE1_NOwHERE                                   0xe0000419
+#define flTHREADmODEwHERE_REGISTEREDwITHwHERE                       0xe0000119
+#define flTHREADmODEwHERE_WHEREiSwATCHING                           0xe0000219
+#define flTHREADmODEwHERE_NOwHERE                                   0xe0000419
 /*3*/
-#define flTHREADmODE1_null    0xe0000019
+#define flTHREADmODEwHERE_null    0xe0000019
 
 
 //
@@ -2361,8 +2361,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c4.flthreadmode1 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c5.threadmode1off BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c4.flthreadmodewhere END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c5.threadmodewhereoff BEGIN
 
 
 //
@@ -2376,12 +2376,12 @@ these "status codes" are returned by some MS Windows api's
 \<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE1oFF(flagsP)*//*1*/
+/*1*//*THREADmODEwHEREoFF(flagsP)*//*1*/
 
-#define THREADmODE1oFF(flagsP)                                                                                            \
+#define THREADmODEwHEREoFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode1Save = ((tin123S&)tin0P).monitor.flagsThreadMode1 ;                                                                \
-    THREADmODE1oFF0( flagsP )
+    flagsT _flagsThreadModeWhereSave = ((tin123S&)tin0P).monitor.flagsThreadModeWhere ;                                                                \
+    THREADmODEwHEREoFF0( flagsP )
 
 
 //
@@ -2391,8 +2391,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c5.threadmode1off END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c6.threadmode1restore BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c5.threadmodewhereoff END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c6.threadmodewhererestore BEGIN
 
 
 //
@@ -2406,9 +2406,9 @@ these "status codes" are returned by some MS Windows api's
 \<A HREF=\"5.001016f.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE1rESTORE*//*1*/
+/*1*//*THREADmODEwHERErESTORE*//*1*/
 
-#define THREADmODE1rESTORE THREADmODE1rESTORE0( _flagsThreadMode1Save )
+#define THREADmODEwHERErESTORE THREADmODEwHERErESTORE0( _flagsThreadModeWhereSave )
 
 
 //
@@ -2418,8 +2418,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c6.threadmode1restore END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c7.threadmode1on BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c6.threadmodewhererestore END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c7.threadmodewhereon BEGIN
 
 
 //
@@ -2433,12 +2433,12 @@ these "status codes" are returned by some MS Windows api's
 \<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE1oN(flagsP)*//*1*/
+/*1*//*THREADmODEwHEREoN(flagsP)*//*1*/
 
-#define THREADmODE1oN(flagsP)                                                                                            \
+#define THREADmODEwHEREoN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode1Save = ((tin123S&)tin0P).monitor.flagsThreadMode1 ;                                                                \
-    THREADmODE1oN0( flagsP )
+    flagsT _flagsThreadModeWhereSave = ((tin123S&)tin0P).monitor.flagsThreadModeWhere ;                                                                \
+    THREADmODEwHEREoN0( flagsP )
 
 
 //
@@ -2448,34 +2448,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c7.threadmode1on END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c8.threadmode1save0 BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*THREADmODE1sAVE0(flagsSaveP)*//*1*/
-
-#define THREADmODE1sAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).monitor.flagsThreadMode1 ;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c8.threadmode1save0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c9.threadmode1off0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c7.threadmodewhereon END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c8.threadmodewheresave0 BEGIN
 
 
 //
@@ -2488,35 +2462,9 @@ these "status codes" are returned by some MS Windows api's
 /*
 */
 /**/
-/*1*//*THREADmODE1oFF0(flagsP)*//*1*/
+/*1*//*THREADmODEwHEREsAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODE1oFF0(flagsP) ((tin123S&)tin0P).monitor.flagsThreadMode1 &= ~( F(flagsP) ) ;
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c9.threadmode1off0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ca.threadmode1on0 BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*THREADmODE1oN0(flagsP)*//*1*/
-
-#define THREADmODE1oN0(flagsP) ((tin123S&)tin0P).monitor.flagsThreadMode1 |= (flagsP) ;
+#define THREADmODEwHEREsAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).monitor.flagsThreadModeWhere ;
 
 
 //
@@ -2526,8 +2474,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ca.threadmode1on0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005cb.threadmode1restore0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c8.threadmodewheresave0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c9.threadmodewhereoff0 BEGIN
 
 
 //
@@ -2540,9 +2488,9 @@ these "status codes" are returned by some MS Windows api's
 /*
 */
 /**/
-/*1*//*THREADmODE1rESTORE0*//*1*/
+/*1*//*THREADmODEwHEREoFF0(flagsP)*//*1*/
 
-#define THREADmODE1rESTORE0(flagsSaveP) ((tin123S&)tin0P).monitor.flagsThreadMode1 = (flagsSaveP) ;
+#define THREADmODEwHEREoFF0(flagsP) ((tin123S&)tin0P).monitor.flagsThreadModeWhere &= ~( F(flagsP) ) ;
 
 
 //
@@ -2552,7 +2500,59 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005cb.threadmode1restore0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c9.threadmodewhereoff0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ca.threadmodewhereon0 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*THREADmODEwHEREoN0(flagsP)*//*1*/
+
+#define THREADmODEwHEREoN0(flagsP) ((tin123S&)tin0P).monitor.flagsThreadModeWhere |= (flagsP) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ca.threadmodewhereon0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005cb.threadmodewhererestore0 BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*THREADmODEwHERErESTORE0*//*1*/
+
+#define THREADmODEwHERErESTORE0(flagsSaveP) ((tin123S&)tin0P).monitor.flagsThreadModeWhere = (flagsSaveP) ;
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005cb.threadmodewhererestore0 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005cc.ifcIDtYPEsTEPrECURSION BEGIN
 
 
@@ -3993,7 +3993,7 @@ it is illegal to refer to this symbol in the definition of an adam
         if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin123S IN POOL*/                                                                                                                               \
         {                                                                                                                                                                                                                                                                                       \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+            THREADmODE4oN( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                                                       \
         else                                                                                                                                                                                                                                                                                    \
         {                                                                                                                                                                                                                                                                                       \
@@ -4026,13 +4026,13 @@ it is illegal to refer to this symbol in the definition of an adam
             /*etRock.traceF( tin0P , T("TASK123pART0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                    \
                                                                                                                                                                                                                                                                                                 \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK123pART0: setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                      \
+            TELL( "TASK123pART0: setting flagsThreadMode1" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
               byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
@@ -4065,7 +4065,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;                                         \
                         etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
                     }                                                                                                                                                                                                                                                                           \
-                      if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
+                      if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
                     TELL( "TASK123pART0: entering application code" )                                                                                                                                                                                                                           \
                     /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
@@ -4169,7 +4169,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         else                                                                                                                                                                                                                            \
                         {                                                                                                                                                                                                                               \
                             TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                    \
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;            \
+                            if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;            \
                                                                                                                                                                                                                                                         \
                             TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                    \
                             {                                                                                                                                                                                                                           \
@@ -4225,7 +4225,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                         \
                 if( pTaskP && F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                                                                                                                                                                           \
                 {                                                                                                                                                                                                                                       \
-                    THREADmODE5oFF( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                    \
+                    THREADmODE4oFF( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                    \
                 }                                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                         \
                 boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                               \
@@ -4371,7 +4371,7 @@ it is illegal to refer to this symbol in the definition of an adam
         if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin123S IN POOL*/                                                                                                                               \
         {                                                                                                                                                                                                                                                                                       \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+            THREADmODE4oN( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                                                       \
         else                                                                                                                                                                                                                                                                                    \
         {                                                                                                                                                                                                                                                                                       \
@@ -4404,13 +4404,13 @@ it is illegal to refer to this symbol in the definition of an adam
             /*etRock.traceF( tin0P , T("TASK123pART0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                    \
                                                                                                                                                                                                                                                                                                 \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK123pART0: setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                      \
+            TELL( "TASK123pART0: setting flagsThreadMode1" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
             /*byteT pbEther1[ sizeof( etherC ) ] ;*/                                                                                                                                                                                                                                            \
@@ -4443,7 +4443,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         ether.strMakeF(    tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;                                         \
                         ether.boxPutF(    tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
                     }                                                                                                                                                                                                                                                                           \
-                    /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;*/                                                          \
+                    /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;*/                                                          \
                     TELL( "TASK123pART0: entering application code" )                                                                                                                                                                                                                           \
                     /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
@@ -4547,7 +4547,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         /*else*/                                                                                                                                                                                                                     \
                         {                                                                                                                                                                                                                            \
                             TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                 \
-                            /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;*/     \
+                            /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;*/     \
                                                                                                                                                                                                                                                      \
                             TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                 \
                             {                                                                                                                                                                                                                        \
@@ -4603,7 +4603,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                      \
                 if( pTaskP && F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                                                                                                                                                                        \
                 {                                                                                                                                                                                                                                    \
-                    THREADmODE5oFF( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                 \
+                    THREADmODE4oFF( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                 \
                 }                                                                                                                                                                                                                                    \
                                                                                                                                                                                                                                                      \
                 boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                            \
@@ -5049,7 +5049,7 @@ it is illegal to refer to this symbol in the definition of an adam
         if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin12S  IN POOL*/                                                                                                                               \
         {                                                                                                                                                                                                                                                                                       \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+            THREADmODE4oN( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                                                       \
         else                                                                                                                                                                                                                                                                                    \
         {                                                                                                                                                                                                                                                                                       \
@@ -5082,12 +5082,12 @@ it is illegal to refer to this symbol in the definition of an adam
             /*etRock.traceF( tin0P , T("TASK12pART0 [osTid]: ")+TF4(((tin12S& )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
                                                                                                                                                                                                                                                                                                 \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK12pART0:  setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+            TELL( "TASK12pART0:  setting flagsThreadMode1" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
@@ -5193,7 +5193,7 @@ it is illegal to refer to this symbol in the definition of an adam
         if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin1S   IN POOL*/                                                                                                                               \
         {                                                                                                                                                                                                                                                                                       \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+            THREADmODE4oN( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                                                       \
         else                                                                                                                                                                                                                                                                                    \
         {                                                                                                                                                                                                                                                                                       \
@@ -5226,12 +5226,12 @@ it is illegal to refer to this symbol in the definition of an adam
             /*etRock.traceF( tin0P , T("TASK1pART0 [osTid]: ")+TF4(((tin1S&  )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK1pART0:   setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+            TELL( "TASK1pART0:   setting flagsThreadMode1" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
@@ -5337,7 +5337,7 @@ it is illegal to refer to this symbol in the definition of an adam
         if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin12S  IN POOL*/                                                                                                                               \
         {                                                                                                                                                                                                                                                                                       \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+            THREADmODE4oN( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                                                       \
         else                                                                                                                                                                                                                                                                                    \
         {                                                                                                                                                                                                                                                                                       \
@@ -5370,12 +5370,12 @@ it is illegal to refer to this symbol in the definition of an adam
             /*etRock.traceF( tin0P , T("TASK12pART0 [osTid]: ")+TF4(((tin12S& )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
                                                                                                                                                                                                                                                                                                 \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK12pART0:  setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+            TELL( "TASK12pART0:  setting flagsThreadMode1" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
@@ -5481,7 +5481,7 @@ it is illegal to refer to this symbol in the definition of an adam
         if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin1S   IN POOL*/                                                                                                                               \
         {                                                                                                                                                                                                                                                                                       \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+            THREADmODE4oN( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                                                       \
         else                                                                                                                                                                                                                                                                                    \
         {                                                                                                                                                                                                                                                                                       \
@@ -5514,12 +5514,12 @@ it is illegal to refer to this symbol in the definition of an adam
             /*etRock.traceF( tin0P , T("TASK1pART0 [osTid]: ")+TF4(((tin1S&  )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK1pART0:   setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+            TELL( "TASK1pART0:   setting flagsThreadMode1" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
@@ -5625,7 +5625,7 @@ it is illegal to refer to this symbol in the definition of an adam
         if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin12S  IN POOL*/                                                                                                                               \
         {                                                                                                                                                                                                                                                                                       \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+            THREADmODE4oN( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                                                       \
         else                                                                                                                                                                                                                                                                                    \
         {                                                                                                                                                                                                                                                                                       \
@@ -5658,12 +5658,12 @@ it is illegal to refer to this symbol in the definition of an adam
             /*etRock.traceF( tin0P , T("TASK12pART0 [osTid]: ")+TF4(((tin12S& )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                     \
                                                                                                                                                                                                                                                                                                 \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK12pART0:  setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+            TELL( "TASK12pART0:  setting flagsThreadMode1" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin12S& )tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
@@ -5769,7 +5769,7 @@ it is illegal to refer to this symbol in the definition of an adam
         if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin1S   IN POOL*/                                                                                                                               \
         {                                                                                                                                                                                                                                                                                       \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+            THREADmODE4oN( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                                                       \
         else                                                                                                                                                                                                                                                                                    \
         {                                                                                                                                                                                                                                                                                       \
@@ -5802,12 +5802,12 @@ it is illegal to refer to this symbol in the definition of an adam
             /*etRock.traceF( tin0P , T("TASK1pART0 [osTid]: ")+TF4(((tin1S&  )tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK1pART0:   setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
+            TELL( "TASK1pART0:   setting flagsThreadMode1" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&  )tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
@@ -27901,8 +27901,8 @@ it is illegal to refer to this symbol in the definition of an adam
  signC*        pSgnDone ;
  countT* const pcAlive ;
  flagsT        flags ;
+ flagsT        flagsThreadModeWhereDad ;
  flagsT        flagsThreadMode1Dad ;
- flagsT        flagsThreadMode2Dad ;
  tin0S*         pTin0Dad ;
  byteT*        pbTlsInPool ;
  countT        cbTlsInPool ;
@@ -28132,7 +28132,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
  const countT         osTidCt ;
  const countT         idDesireCtSave ;
- flagsT               flThreadMode5Save ;
+ flagsT               flThreadMode4Save ;
  flagsT               flagsState ;
  const handleC* const phFile ;
  osTextT              postName[ COSTnAPKINnAMEmAX + 1 ] ;
@@ -28883,7 +28883,7 @@ it is used by classes such as batonC and signC to store functionality added by t
 /*1*/struct __export whereS/*1*/
 {
     countT idDirty                                   ;
-    flagsT flagsThreadMode1                          ;
+    flagsT flagsThreadModeWhere                          ;
     countT idWhat1                                   ;
     countT idWhat2                                   ;
     countT cInNest                                   ;
@@ -29306,10 +29306,10 @@ struct bookMarkOldS
     countT                  idLine_brcLath ;
     countT                  idiFile_brcLath ;
     countT                  idBlammo ;
+    flagsT                  flagsThreadMode1 ;
     flagsT                  flagsThreadMode2 ;
     flagsT                  flagsThreadMode3 ;
     flagsT                  flagsThreadMode4 ;
-    flagsT                  flagsThreadMode5 ;
     countT                  cKidThreads ;
     countT                  cRain ;                                                                                 //CODEsYNC: 2e40104 003002a
     countT                  cManna ;
@@ -29426,7 +29426,7 @@ struct bookMarkOldS
 
 /*1*/struct _export tin_part3_S/*1*/
 {
-    monitorS        monitor ;                                                               // flagsThreadMode1 IS IN HERE
+    monitorS        monitor ;                                                               // flagsThreadModeWhere IS IN HERE
     jotC*           ppJot[                             CsLOTSjOTrEGISTRY        ] ;         // THIS IS HERE SO THAT flTHREADlAUNCH_INHERITjOTrEGISTRATIONS CAN BE SUPPORTED
     countT          pcUtility[                         CCuTILITY                ] ;
     count04T        pcUtility04[                       4                        ] ;
@@ -47964,7 +47964,7 @@ i am nonconformant in that all of my member function definitions are in a single
 {
     etherC&      ether ;
     strokeS*     psttFolderWas ;
-    const flagsT _flagsThreadMode2Save ;
+    const flagsT _flagsThreadMode1Save ;
 
     public :
 
@@ -48601,14 +48601,14 @@ i am nonconformant in that all of my member function definitions are in a single
 /*1*/class _export armSslC/*1*/
 {
     flagsT& flagsOpenSslFails ;
-    flagsT  _flagsThreadMode5Save ;
+    flagsT  _flagsThreadMode4Save ;
 
     public :
 
     inline ~armSslC( voidT )
     {
         TINSL
-        THREADmODE5rESTORE
+        THREADmODE4rESTORE
 
         switch( POOP )
         {
@@ -48629,9 +48629,9 @@ i am nonconformant in that all of my member function definitions are in a single
     }
     inline armSslC( tin0S& tin0P , flagsT& flagsOpenSslFailsP ) :
     flagsOpenSslFails( flagsOpenSslFailsP ) ,
-    _flagsThreadMode5Save( ((tin123S&)tin0P).flagsThreadMode5 )
+    _flagsThreadMode4Save( ((tin123S&)tin0P).flagsThreadMode4 )
     {
-        THREADmODE5oN0( flTHREADmODE5_ARMoPENsSL )
+        THREADmODE4oN0( flTHREADmODE4_ARMoPENsSL )
     }
 }
 ;

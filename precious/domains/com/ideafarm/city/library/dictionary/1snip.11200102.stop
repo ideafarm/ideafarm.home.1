@@ -7,7 +7,7 @@
 //
 
 
-#define STOP ( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE && thirdC::thPrimeIF( tin0P ) )
+#define STOP ( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE && thirdC::thPrimeIF( tin0P ) )
 
 //IF THAT EVER BECOMES A PROBLEM, JUST PUT IN THE TEST FOR EXISTENCE AND ENSURE THAT thPrime CANNOT BE DESTRUCTED AFTER THE TEST AND BEFORE THE QUERY
 //THIS WILL BLOCK FOREVER (REALLY STOP!) IF USED VERY EARLY OR VERY LATE
@@ -24,7 +24,7 @@ in the ifc base code, it is illegal to abort normal functioning due to STOP with
 it is good style to always set impotence if normal completion is aborted because STOP is true
  normally, asynchronous impotence only affects code that explicitly looks for it
 the normal behavior for all etherC and thirdC functions is to -not- look for asynch impotence and not be affected by it
-even where i am used, asynch impotence has no effect unless the caller has set flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE
+even where i am used, asynch impotence has no effect unless the caller has set flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE
 i am used in some base function definitions that take much time to complete
 i can be used to check for asynchronous impotence
 \<A HREF=\"5.0010179.1.0.html\"\>definition\</A\>

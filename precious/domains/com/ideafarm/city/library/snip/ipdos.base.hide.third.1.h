@@ -553,7 +553,7 @@ it is illegal to refer to this symbol in the definition of an adam
             /*tlsAllocStackExp_7_C tlsForMe( tin0P ) ;                    */                                                                                                     \
             /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                     \
             /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                         \
-            if( !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                                                       \
+            if( !( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_DRIVERaDAM ) )                                                                                       \
             {                                                                                                                                                                       \
                 if( thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_DLLwORKING1 )                                                                                         \
                     thirdC::third_idPhaseAdam_IF( tin0P ) = ifcIDpHASEaDAM_DLLwORKING1 ;                                                                                         \
@@ -668,7 +668,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                     \
                 /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/                  \
                 TELL( "REST: ++" ) ;                                                                                                \
-                if( !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
+                if( !( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_DRIVERaDAM ) )                                                      \
                 {                                                                                                                   \
                     if( thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE )            \
                         thirdC::third_idPhaseAdam_IF( tin0P ) = ifcIDpHASEaDAM_EXEePILOGaDAMrESTwAITINGuNTILaLMOSTaLONE ;            \
@@ -682,7 +682,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 TELL( "REST: calling WAITuNTILaLMOSTaLONE" ) ;                                                                      \
                 WAITuNTILaLMOSTaLONE( 0 )                                                                                           \
                 TELL( "REST: called WAITuNTILaLMOSTaLONE" ) ;                                                                       \
-                if( !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DRIVERaDAM ) )                                                      \
+                if( !( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_DRIVERaDAM ) )                                                      \
                 {                                                                                                                   \
                     if( thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE )                      \
                         thirdC::third_idPhaseAdam_IF( tin0P ) = ifcIDpHASEaDAM_EXEePILOGaDAMrESTaMaLMOSTaLONE ;                      \
@@ -1860,9 +1860,9 @@ use me iff pvP was obtained from operator new
     {                                                                                                                    \
         if( *(countT*)&(pvP) )                                                                                           \
         {                                                                                                                \
-            THREADmODE3oFF( flTHREADmODE3_DOnOTcaLLdELif )                                                               \
+            THREADmODE2oFF( flTHREADmODE2_DOnOTcaLLdELif )                                                               \
             delete (pvP) ;                                                                                               \
-            THREADmODE3rESTORE                                                                                           \
+            THREADmODE2rESTORE                                                                                           \
             (pvP) = 0 ;                                                                                                  \
         }                                                                                                                \
     }
@@ -1996,7 +1996,7 @@ it is illegal to refer to this symbol in the definition of an adam
         if( F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                     /*20240919@1534: I DON'T REMEMBER WHAT THE BENEFIT IS OF CT'ING tin123S IN POOL*/                                                                                                                               \
         {                                                                                                                                                                                                                                                                                       \
             bTinOk = 1 ;                                                                                                                                                                                                                                                                        \
-            THREADmODE5oN( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
+            THREADmODE4oN( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                                     \
         }                                                                                                                                                                                                                                                                                       \
         else                                                                                                                                                                                                                                                                                    \
         {                                                                                                                                                                                                                                                                                       \
@@ -2029,13 +2029,13 @@ it is illegal to refer to this symbol in the definition of an adam
             /*etRock.traceF( tin0P , T("TASK123pART0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                    \
                                                                                                                                                                                                                                                                                                 \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
-            TELL( "TASK123pART0: setting flagsThreadMode2" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SHOWpROGRESS            )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SHOWpROGRESS            ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_QUIETiMPOTENCE          )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_QUIETiMPOTENCE          ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_YELL                    )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode2Dad ) & flTHREADmODE2_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode2 |= flTHREADmODE2_SUPPRESStELLmONITOR     ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadMode1 |= flTHREADmODE1_NOwHERE                 ;                                                                                                      \
+            TELL( "TASK123pART0: setting flagsThreadMode1" )                                                                                                                                                                                                                                    \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).monitor.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
               byteT pbEther1[ sizeof( etherC ) ] ;                                                                                                                                                                                                                                              \
@@ -2068,7 +2068,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;                                         \
                         etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
                     }                                                                                                                                                                                                                                                                           \
-                      if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
+                      if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
                     TELL( "TASK123pART0: entering application code" )                                                                                                                                                                                                                           \
                     /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                                                                                                                            \
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
@@ -2142,7 +2142,7 @@ it is illegal to refer to this symbol in the definition of an adam
                         else                                                                                                                                                                                                                                                         \
                         {                                                                                                                                                                                                                                                            \
                             TELL( "DONEpART0: conditionally calling etherWhereF" ) ;                                                                                                                                                                                                 \
-                            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;  \
+                            if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;  \
                                                                                                                                                                                                                                                                                      \
                             TELL( "DONEpART0: waiting for my kid threads to end" ) ;                                                                                                                                                                                                 \
                             {                                                                                                                                                                                                                                                        \
@@ -2198,7 +2198,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                                      \
                 if( pTaskP && F(pTaskP->flags) & flTHREADlAUNCH_NOtINiNpOOL )                                                                                                                                                                                                        \
                 {                                                                                                                                                                                                                                                                    \
-                    THREADmODE5oFF( flTHREADmODE5_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                 \
+                    THREADmODE4oFF( flTHREADmODE4_TINiSnOTiNpOOL ) ;                                                                                                                                                                                                                 \
                 }                                                                                                                                                                                                                                                                    \
                                                                                                                                                                                                                                                                                      \
                 boolT bFake = pTaskP ? !!( F(pTaskP->flags) & flTHREADlAUNCH_FAKE ) : 0 ;                                                                                                                                                                                            \
@@ -5230,9 +5230,9 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                             \
             inOutFrameC _inOutFrame( tin0P , LF , IDFILE , BiFCcLASS ) ;                                                                                     \
                                                                                                                                                             \
-            if( processGlobal1S::_processGlobal1I_IF().idAdamRoot == ifcIDaDAM_SCRATCH0d && !( F(((tin123S&)tin0P).flagsThreadMode5) & flTHREADmODE5_STFU1iOmACRO ) )    \
+            if( processGlobal1S::_processGlobal1I_IF().idAdamRoot == ifcIDaDAM_SCRATCH0d && !( F(((tin123S&)tin0P).flagsThreadMode4) & flTHREADmODE4_STFU1iOmACRO ) )    \
             {                                                                                                                                               \
-                THREADmODE5oN( flTHREADmODE5_STFU1iOmACRO )                                                                                                 \
+                THREADmODE4oN( flTHREADmODE4_STFU1iOmACRO )                                                                                                 \
                 {                                                                                                                                           \
                     OStEXT(    ostoSay , TUCK << 0 ) ;                                                                                                      \
                     OStEXTAK(  ostoSay , "[ebp-esp]: " ) ;                                                                                                  \
@@ -5242,7 +5242,7 @@ it is illegal to refer to this symbol in the definition of an adam
                     OStEXTAK(  ostoSay , "\r\n" ) ;                                                                                                         \
                     CONoUTrAW( ostoSay ) ;                                                                                                                  \
                 }                                                                                                                                           \
-                THREADmODE5rESTORE                                                                                                                          \
+                THREADmODE4rESTORE                                                                                                                          \
             }                                                                                                                                               \
     
     
@@ -5660,36 +5660,36 @@ generic local ip
 /*
 \<A HREF=\"5.00100df.1.0.html\"\>definition\</A\>
 code that supports the following flags is commented out for added speed but can be enabled if needed
- flTHREADmODE2_LOG_grabC
+ flTHREADmODE1_LOG_grabC
 */
 /**/
-/*1*//*flTHREADmODE2_*//*1*/
+/*1*//*flTHREADmODE1_*//*1*/
 
 //CODEsYNC: 00100df 0010055
 
 /*3*/
-#define flTHREADmODE2_POOLoLDsECTION1                           0xe000010f
-#define flTHREADmODE2_SHOWpROGRESS                              0xe000020f
-#define flTHREADmODE2_IMPOTENCEpENDING                          0xe000040f
-#define flTHREADmODE2_UPDATEtIN                                 0xe000080f
-#define flTHREADmODE2_QUIETiMPOTENCE                            0xe000100f
-#define flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE                   0xe000200f
-#define flTHREADmODE2_DOnOTcALLmONITOReVENThANDLER              0xe000400f
-#define flTHREADmODE2_YELL                                      0xe000800f
-#define flTHREADmODE2_ALLOWuNMONITOREDsLEEP                     0xe001000f
-#define flTHREADmODE2_DISALLOWgRAB                              0xe002000f
-#define flTHREADmODE2_DISALLOWmULTIPLEgRAB                      0xe004000f
-#define flTHREADmODE2_DISALLOWgRABoFiNTERPROCESSgRABs           0xe008000f
-#define flTHREADmODE2_DISALLOWtELLmONITOR                       0xe010000f
-#define flTHREADmODE2_SUPPRESSgRAB                              0xe020000f
-#define flTHREADmODE2_DRIVERaDAM                                0xe040000f
-#define flTHREADmODE2_SUPPRESStELLmONITOR                       0xe080000f
-#define flTHREADmODE2_USEaSYNCHtELLmONITOR                      0xe100000f
-#define flTHREADmODE2_ALLOWsTOPwHILEgRABBING                    0xe200000f
-#define flTHREADmODE2_ALLOWeMITwORD                             0xe400000f
-#define flTHREADmODE2_ALLOWmULTItHREADEDhOVER                   0xe800000f
+#define flTHREADmODE1_POOLoLDsECTION1                           0xe000010f
+#define flTHREADmODE1_SHOWpROGRESS                              0xe000020f
+#define flTHREADmODE1_IMPOTENCEpENDING                          0xe000040f
+#define flTHREADmODE1_UPDATEtIN                                 0xe000080f
+#define flTHREADmODE1_QUIETiMPOTENCE                            0xe000100f
+#define flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE                   0xe000200f
+#define flTHREADmODE1_DOnOTcALLmONITOReVENThANDLER              0xe000400f
+#define flTHREADmODE1_YELL                                      0xe000800f
+#define flTHREADmODE1_ALLOWuNMONITOREDsLEEP                     0xe001000f
+#define flTHREADmODE1_DISALLOWgRAB                              0xe002000f
+#define flTHREADmODE1_DISALLOWmULTIPLEgRAB                      0xe004000f
+#define flTHREADmODE1_DISALLOWgRABoFiNTERPROCESSgRABs           0xe008000f
+#define flTHREADmODE1_DISALLOWtELLmONITOR                       0xe010000f
+#define flTHREADmODE1_SUPPRESSgRAB                              0xe020000f
+#define flTHREADmODE1_DRIVERaDAM                                0xe040000f
+#define flTHREADmODE1_SUPPRESStELLmONITOR                       0xe080000f
+#define flTHREADmODE1_USEaSYNCHtELLmONITOR                      0xe100000f
+#define flTHREADmODE1_ALLOWsTOPwHILEgRABBING                    0xe200000f
+#define flTHREADmODE1_ALLOWeMITwORD                             0xe400000f
+#define flTHREADmODE1_ALLOWmULTItHREADEDhOVER                   0xe800000f
 /*3*/
-#define flTHREADmODE2_null    0xe000000f
+#define flTHREADmODE1_null    0xe000000f
 
 
 //
@@ -5725,7 +5725,7 @@ U: redesign this to work well with all types of process face
 
 #define PROSHO                                                                                                      \
                                                                                                                     \
-if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_SHOWpROGRESS )      \
+if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_SHOWpROGRESS )      \
 {                                                                                                                   \
     ZE( countT , ecnu ) ;                                                                                           \
     countT cNest = ((tin123S&)tin0P).monitor.cInNest ;                                                                \
@@ -8494,31 +8494,31 @@ it is illegal to refer to this symbol in the definition of an adam
 #define ifcIDwHAT_max     0xdddd0471
 
 // whatP VALUES
-#define WHATga   { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GOaDAM             ; }
-#define WHATgape { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GOpROLOGePILOG     ; }
-#define WHATgbl  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSclIB          ; }
-#define WHATgbm  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSmONITOR       ; }
-#define WHATgbd  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSdRAW          ; }
-#define WHATgbo  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSoTHER         ; }
-#define WHATgbt  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOStHIRD         ; }
-#define WHATsb   { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPbATON          ; }
-#define WHATsbl  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPbOSclIB        ; }
-#define WHATsbt  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPbOStHIRD       ; }
-#define WHATsfr  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPfILErEAD       ; }
-#define WHATsfw  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPfILEwRITE      ; }
-#define WHATsg   { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPgRAB           ; }
-#define WHATsia  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPiNTaCCEPT      ; }
-#define WHATsir  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPiNTrEAD        ; }
-#define WHATsiw  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPiNTwRITE       ; }
-#define WHATsm   { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPmONITORING     ; }
-#define WHATsy   { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPyIELD          ; }
-#define WHATsn   { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPnAP            ; }
-#define WHATso   { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPoTHER          ; }
-#define WHATss   { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPsIGN           ; }
-#define WHATssu  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPsUSPENDED      ; }
-#define WHATsw   { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPwIN            ; }
-#define WHATswr  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPwINrEAD        ; }
-#define WHATsww  { if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPwINwRITE       ; }
+#define WHATga   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GOaDAM             ; }
+#define WHATgape { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GOpROLOGePILOG     ; }
+#define WHATgbl  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSclIB          ; }
+#define WHATgbm  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSmONITOR       ; }
+#define WHATgbd  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSdRAW          ; }
+#define WHATgbo  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOSoTHER         ; }
+#define WHATgbt  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_GObOStHIRD         ; }
+#define WHATsb   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPbATON          ; }
+#define WHATsbl  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPbOSclIB        ; }
+#define WHATsbt  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPbOStHIRD       ; }
+#define WHATsfr  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPfILErEAD       ; }
+#define WHATsfw  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPfILEwRITE      ; }
+#define WHATsg   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPgRAB           ; }
+#define WHATsia  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPiNTaCCEPT      ; }
+#define WHATsir  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPiNTrEAD        ; }
+#define WHATsiw  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPiNTwRITE       ; }
+#define WHATsm   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPmONITORING     ; }
+#define WHATsy   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPyIELD          ; }
+#define WHATsn   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPnAP            ; }
+#define WHATso   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPoTHER          ; }
+#define WHATss   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPsIGN           ; }
+#define WHATssu  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPsUSPENDED      ; }
+#define WHATsw   { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPwIN            ; }
+#define WHATswr  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPwINrEAD        ; }
+#define WHATsww  { if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN ) ((tin123S&)tin0P).monitor.idWhat1 = ifcIDwHAT_STOPwINwRITE       ; }
 
 // typeP VALUES
 #define BOSwAITcODE     ((tin123S&)tin0P).bosFail = _brcRawExp == WAIT_FAILED
@@ -10149,7 +10149,7 @@ parentheses should be used whenever an operator is intended to be applied to the
 
 /*3*/
 #define flTINrPT2_pIdProgressNest           0xe0000121
-#define flTINrPT2_flagsThreadMode2          0xe0000221
+#define flTINrPT2_flagsThreadMode1          0xe0000221
 #define flTINrPT2_cKidThreads               0xe0000421
 #define flTINrPT2_rv                        0xe0000821
 #define flTINrPT2_pcUtilityI                0xe0001021
@@ -10402,12 +10402,12 @@ it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE2oFF(flagsP)*//*1*/
+/*1*//*THREADmODE1oFF(flagsP)*//*1*/
 
-#define THREADmODE2oFF(flagsP)                                                                                            \
+#define THREADmODE1oFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode2Save = ((tin123S&)tin0P).flagsThreadMode2 ;                                                                \
-    THREADmODE2oFF0( flagsP )
+    flagsT _flagsThreadMode1Save = ((tin123S&)tin0P).flagsThreadMode1 ;                                                                \
+    THREADmODE1oFF0( flagsP )
 
 
 //
@@ -10432,9 +10432,9 @@ it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.001016f.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE2rESTORE*//*1*/
+/*1*//*THREADmODE1rESTORE*//*1*/
 
-#define THREADmODE2rESTORE THREADmODE2rESTORE0( _flagsThreadMode2Save )
+#define THREADmODE1rESTORE THREADmODE1rESTORE0( _flagsThreadMode1Save )
 
 
 //
@@ -10459,12 +10459,12 @@ it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE2oN(flagsP)*//*1*/
+/*1*//*THREADmODE1oN(flagsP)*//*1*/
 
-#define THREADmODE2oN(flagsP)                                                                                            \
+#define THREADmODE1oN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode2Save = ((tin123S&)tin0P).flagsThreadMode2 ;                                                                \
-    THREADmODE2oN0( flagsP )
+    flagsT _flagsThreadMode1Save = ((tin123S&)tin0P).flagsThreadMode1 ;                                                                \
+    THREADmODE1oN0( flagsP )
 
 
 //
@@ -10651,7 +10651,7 @@ it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.0010179.1.0.html\"\>definition\</A\>
 i can be used to check for asynchronous impotence
 i am used in some base function definitions that take much time to complete
-even where i am used, asynch impotence has no effect unless the caller has set flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE
+even where i am used, asynch impotence has no effect unless the caller has set flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE
 the normal behavior for all etherC and thirdC functions is to -not- look for asynch impotence and not be affected by it
  normally, asynchronous impotence only affects code that explicitly looks for it
 it is good style to always set impotence if normal completion is aborted because STOP is true
@@ -10668,7 +10668,7 @@ in the ifc base code, it is illegal to abort normal functioning due to STOP with
 //THIS WILL BLOCK FOREVER (REALLY STOP!) IF USED VERY EARLY OR VERY LATE
 //IF THAT EVER BECOMES A PROBLEM, JUST PUT IN THE TEST FOR EXISTENCE AND ENSURE THAT thPrime CANNOT BE DESTRUCTED AFTER THE TEST AND BEFORE THE QUERY
 
-#define STOP ( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_WATCHfORaSYNCHiMPOTENCE && thirdC::thPrimeIF( tin0P ) )
+#define STOP ( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE && thirdC::thPrimeIF( tin0P ) )
 
 
 //
@@ -14422,9 +14422,9 @@ use me iff pvP was obtained from operator new[]
                                                                                                                          \
     if( pvP )                                                                                                            \
     {                                                                                                                    \
-        THREADmODE3oFF( flTHREADmODE3_DOnOTcaLLdELif )                                                                   \
+        THREADmODE2oFF( flTHREADmODE2_DOnOTcaLLdELif )                                                                   \
         delete[] (pvP) ;                                                                                                 \
-        THREADmODE3rESTORE                                                                                               \
+        THREADmODE2rESTORE                                                                                               \
         (pvP) = 0 ;                                                                                                      \
     }                                                                                                                    \
 
@@ -14460,9 +14460,9 @@ see NEWdELcLASSuSEnORMALpOOLoLD
                                                                                                                          \
     if( pvP )                                                                                                            \
     {                                                                                                                    \
-        THREADmODE3oN( flTHREADmODE3_DOnOTcaLLdELif )                                                                    \
+        THREADmODE2oN( flTHREADmODE2_DOnOTcaLLdELif )                                                                    \
         delete[] (pvP) ;                                                                                                 \
-        THREADmODE3rESTORE                                                                                               \
+        THREADmODE2rESTORE                                                                                               \
         (pvP) = 0 ;                                                                                                      \
     }                                                                                                                    \
 
@@ -14498,9 +14498,9 @@ see NEWdELcLASSuSEnORMALpOOLoLD
                                                                                                                          \
     if( pvP )                                                                                                            \
     {                                                                                                                    \
-        THREADmODE3oN( flTHREADmODE3_DOnOTcaLLdELif )                                                                    \
+        THREADmODE2oN( flTHREADmODE2_DOnOTcaLLdELif )                                                                    \
         delete (pvP) ;                                                                                                   \
-        THREADmODE3rESTORE                                                                                               \
+        THREADmODE2rESTORE                                                                                               \
         (pvP) = 0 ;                                                                                                      \
     }                                                                                                                    \
 
@@ -14702,7 +14702,7 @@ arguments
 
     #define YELL(postFromP)                                                                                             \
                                                                                                                         \
-        if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_YELL )                                                             \
+        if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_YELL )                                                             \
         {                                                                                                               \
             OStEXTV( posty , postFromP )                                                                                \
             byteT pbZombie[ sizeof posty + sizeof( tellS ) ] ;                                                    \
@@ -14715,7 +14715,7 @@ arguments
 
     #define YELL(postFromP)                                                                                                     \
                                                                                                                                 \
-        if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_YELL )                                                                     \
+        if( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_YELL )                                                                     \
         {                                                                                                                       \
             osTextT posta[ sizeof postFromP + CBtOaLIGN02( sizeof postFromP ) ] = postFromP ;                                     \
             byteT pbZombie[ sizeof( tellS ) + sizeof posta ] ;                                                            \
@@ -18556,7 +18556,7 @@ if cBitsP is f then 01 bits is indicated
 #define SET_bStopOk                                                                                                                                                         \
                                                                                                                                                                             \
     boolT _bStopOk = 1 ;                                                                                                                                                    \
-    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).monitor.cGrabbed && !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ALLOWsTOPwHILEgRABBING ) )       \
+    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).monitor.cGrabbed && !( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) )       \
     {                                                                                                                                                                       \
         const countT offEnd = OFFgRABBEDmAX * 5 ;                                                                                                                           \
         for( countT off = 0 ; off < offEnd ; off += 5 )                                                                                                                     \
@@ -19268,33 +19268,33 @@ after i return, that countT object will contain 1
 /*
 */
 /**/
-/*1*//*flTHREADmODE3*//*1*/
+/*1*//*flTHREADmODE2*//*1*/
 
 //CODEsYNC: 00100df 0010055
 
 /*3*/
-#define flTHREADmODE3_MARKnEWdROPSqUIETdURINGwALK               0xe000014a
-#define flTHREADmODE3_SOIXLoLDnOpOPUPoNeRROR                    0xe000024a
-#define flTHREADmODE3_INoUTcHATTER                              0xe000044a
-#define flTHREADmODE3_SECREThANDsHAKER                          0xe000084a
-#define flTHREADmODE3_CHATTERgRABwANTfREEZES                    0xe000104a
-#define flTHREADmODE3_POOLoLDtURBO                              0xe000204a
-#define flTHREADmODE3_MYoWNrECYCLER                             0xe000404a
-#define flTHREADmODE3_ADAMmAINtHREAD                            0xe000804a
-#define flTHREADmODE3_LOCKdESIRE                                0xe001004a
-#define flTHREADmODE3_SMELLY                                    0xe002004a
-#define flTHREADmODE3_DOnOTcaLLdELif                            0xe004004a
-#define flTHREADmODE3_UNLOCKpOOLiDENTITY                        0xe008004a
-#define flTHREADmODE3_ALLOWnEWdROPnOTiNaDAMtEMP                 0xe010004a
-#define flTHREADmODE3_DISALLOWpUSE                              0xe020004a
-#define flTHREADmODE3_MONITORdOnOTrEPORToNmE                    0xe040004a
-#define flTHREADmODE3_ALLOWcONSTRUCTIONoFlISTINGc               0xe080004a
-#define flTHREADmODE3_ALLOWdESTRUCTIONoFlISTINGc                0xe100004a
-#define flTHREADmODE3_TINaRGSpUSHED                             0xe200004a
-#define flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING              0xe400004a
-#define flTHREADmODE3_ALLOWvOLATILEdESIRE                       0xe800004a
+#define flTHREADmODE2_MARKnEWdROPSqUIETdURINGwALK               0xe000014a
+#define flTHREADmODE2_SOIXLoLDnOpOPUPoNeRROR                    0xe000024a
+#define flTHREADmODE2_INoUTcHATTER                              0xe000044a
+#define flTHREADmODE2_SECREThANDsHAKER                          0xe000084a
+#define flTHREADmODE2_CHATTERgRABwANTfREEZES                    0xe000104a
+#define flTHREADmODE2_POOLoLDtURBO                              0xe000204a
+#define flTHREADmODE2_MYoWNrECYCLER                             0xe000404a
+#define flTHREADmODE2_ADAMmAINtHREAD                            0xe000804a
+#define flTHREADmODE2_LOCKdESIRE                                0xe001004a
+#define flTHREADmODE2_SMELLY                                    0xe002004a
+#define flTHREADmODE2_DOnOTcaLLdELif                            0xe004004a
+#define flTHREADmODE2_UNLOCKpOOLiDENTITY                        0xe008004a
+#define flTHREADmODE2_ALLOWnEWdROPnOTiNaDAMtEMP                 0xe010004a
+#define flTHREADmODE2_DISALLOWpUSE                              0xe020004a
+#define flTHREADmODE2_MONITORdOnOTrEPORToNmE                    0xe040004a
+#define flTHREADmODE2_ALLOWcONSTRUCTIONoFlISTINGc               0xe080004a
+#define flTHREADmODE2_ALLOWdESTRUCTIONoFlISTINGc                0xe100004a
+#define flTHREADmODE2_TINaRGSpUSHED                             0xe200004a
+#define flTHREADmODE2_ALLOWdICTIONARYwHILEgRABBING              0xe400004a
+#define flTHREADmODE2_ALLOWvOLATILEdESIRE                       0xe800004a
 /*3*/
-#define flTHREADmODE3_null    0xe000004a
+#define flTHREADmODE2_null    0xe000004a
 
 
 //
@@ -19972,8 +19972,8 @@ i am used with a soulC object to use that object as a forth-like program executo
 #define IFbADpEEK(slP,psttP,idTypeP)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \
     SOIXLoLDpEEK                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \
-    if( !slP )                       { __1 ; if( !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SOIXLoLDnOpOPUPoNeRROR ) ) { POPUP( T("Stack object \"")+T(slP.postNameF(tin0P))+T("\" is empty, so root word \"")+T(psttP)+T("\" cannot pop the \"")+T(processGlobal4I.mapSoulItem(idTypeP))+T("\" object that it expects. ")+T("(argument pop ")+TF1(idArgNext)+T(")") ) ; } }                                                                   \
-    else if( idTypeNext != idTypeP ) { __1 ; if( !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SOIXLoLDnOpOPUPoNeRROR ) ) { POPUP( T("The poppable item on stack object \"")+T(slP.postNameF(tin0P))+T("\" is of type \"")+T(processGlobal4I.mapSoulItem(idTypeNext))+T("\", but root word \"")+T(psttP)+T("\" wants to pop a \"")+T(processGlobal4I.mapSoulItem(idTypeP))+T("\" object. ")+T("(argument pop ")+TF1(idArgNext)+T(")") ) ; } }
+    if( !slP )                       { __1 ; if( !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_SOIXLoLDnOpOPUPoNeRROR ) ) { POPUP( T("Stack object \"")+T(slP.postNameF(tin0P))+T("\" is empty, so root word \"")+T(psttP)+T("\" cannot pop the \"")+T(processGlobal4I.mapSoulItem(idTypeP))+T("\" object that it expects. ")+T("(argument pop ")+TF1(idArgNext)+T(")") ) ; } }                                                                   \
+    else if( idTypeNext != idTypeP ) { __1 ; if( !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_SOIXLoLDnOpOPUPoNeRROR ) ) { POPUP( T("The poppable item on stack object \"")+T(slP.postNameF(tin0P))+T("\" is of type \"")+T(processGlobal4I.mapSoulItem(idTypeNext))+T("\", but root word \"")+T(psttP)+T("\" wants to pop a \"")+T(processGlobal4I.mapSoulItem(idTypeP))+T("\" object. ")+T("(argument pop ")+TF1(idArgNext)+T(")") ) ; } }
 
 
 //
@@ -25754,7 +25754,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
 
 /*1*//*IFwHEREiSwATCHING*//*1*/
 
-#define IFwHEREiSwATCHING if( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_WHEREiSwATCHING )
+#define IFwHEREiSwATCHING if( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_WHEREiSwATCHING )
 
 
 //
@@ -25910,7 +25910,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                                                                                                                                                                                                    \
         count2S c2Lever( ifcIDtYPErECYCLE_##classP ) ;                                                                                                                                                                                                             \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER ;                                                                                                                                                                                      \
         if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
@@ -25974,7 +25974,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         count4S c4Lever( ifcIDtYPErECYCLE_##classP , recycleLever1P , recycleLever2P ) ;                                                                                                                                                                           \
         if( !c4Lever.c2 ) c4Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER ;                                                                                                                                                                                      \
         if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
@@ -26038,7 +26038,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tin0P ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
+            if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
             {                                                                                                                       \
                 ((tin123S&)tin0P).pczl_pSwsRecycle = c2Lever ;                                                                                   \
                 *((tin123S&)tin0P).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
@@ -26092,7 +26092,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tin0P ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
+            if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
             {                                                                                                                       \
                 ((tin123S&)tin0P).pczl_pSwsRecycle = c4Lever ;                                                                                   \
                 *((tin123S&)tin0P).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
@@ -26186,7 +26186,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         if( !c6Lever.c3 ) c6Lever.c3 = - 1 ;                                                                                                                                                                                                                       \
         if( !c6Lever.c2 ) c6Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER ;                                                                                                                                                                                      \
         if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
@@ -26254,7 +26254,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tin0P ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
+            if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
             {                                                                                                                       \
                 ((tin123S&)tin0P).pczl_pSwsRecycle = c6Lever ;                                                                                   \
                 *((tin123S&)tin0P).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
@@ -26314,7 +26314,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         if( !c7Lever.c3 ) c7Lever.c3 = - 1 ;                                                                                                                                                                                                                       \
         if( !c7Lever.c2 ) c7Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER ;                                                                                                                                                                                      \
         if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
@@ -26383,7 +26383,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tin0P ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
+            if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
             {                                                                                                                       \
                 /*LOGrAWtID8( "GETfROMrECYCLER5: RETURN thread                       " , c7Lever.c2 , " " , c7Lever.c3 , " " , c7Lever.c4 , " " , c7Lever.c5 ) ;                                                                                                             */   \
                 ((tin123S&)tin0P).pczl_pSwsRecycle = c7Lever ;                                                                                   \
@@ -26490,7 +26490,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
         if( !c8Lever.c3 ) c8Lever.c3 = - 1 ;                                                                                                                                                                                                                       \
         if( !c8Lever.c2 ) c8Lever.c2 = - 1 ;                                                                                                                                                                                                                       \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER ;                                                                                                                                                                                      \
         if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
@@ -26560,7 +26560,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tin0P ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
+            if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
             {                                                                                                                       \
                 /*LOGrAWtIDc( "RETURNtOrECYCLER6: RETURN thread                      " , c8Lever.c2 , " " , c8Lever.c3 , " " , c8Lever.c4 , " " , c8Lever.c5 , " " , c8Lever.c6 , " " , c8Lever.c7 ) */; \
                 ((tin123S&)tin0P).pczl_pSwsRecycle = c8Lever ;                                                                                   \
@@ -27621,7 +27621,7 @@ flBRANCHs_SHADOW is reserved for future enhancement
                                                                                                                                                                                                                                                                    \
         count3S c3Lever( ifcIDtYPErECYCLE_##classP , recycleLever1P ) ;                                                                                                                                                                                            \
                                                                                                                                                                                                                                                                    \
-        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER ;                                                                                                                                                                                      \
+        boolT bOwn = F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER ;                                                                                                                                                                                      \
         if( bOwn && !((tin123S&)tin0P).pSwsRecycle ) { ((tin123S&)tin0P).pSwsRecycle = new( 0 , tin0P , LF ) switchStackC( tin0P , *((tin1S&)tin0P).pag1->_etherC_.pEtRock , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ((tin123S&)tin0P).pczl_pSwsRecycle , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY ) ; ___( ((tin123S&)tin0P).pSwsRecycle ) ; }  \
                                                                                                                                                                                                                                                                    \
         if( bOwn && ((tin123S&)tin0P).pSwsRecycle )                                                                                                                                                                                                                             \
@@ -27683,7 +27683,7 @@ flBRANCHs_SHADOW is reserved for future enhancement
             ___( pObjectP ) ;                                                                                                       \
             pObjectP->recycleCleanF( tin0P ) ;                                                                                       \
                                                                                                                                     \
-            if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
+            if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_MYoWNrECYCLER && ((tin123S&)tin0P).pSwsRecycle )                                        \
             {                                                                                                                       \
                 ((tin123S&)tin0P).pczl_pSwsRecycle = c3Lever ;                                                                                   \
                 *((tin123S&)tin0P).pSwsRecycle << (countT)pObjectP ; pObjectP = 0 ;                                                              \
@@ -29683,7 +29683,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMOiD( 0x1 ) ; }                             \
                                                                                                                                                 \
-            if( pvP && !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
                 PUSE( tin0P , *(byteT**)&pvP ) ;                                                                                                 \
             }                                                                                                                                   \
@@ -29797,7 +29797,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMOiD( 0xc ) ; }                             \
                                                                                                                                                 \
-            if( pvP && !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
                 PUSE( tin0P , *(byteT**)&pvP ) ;                                                                                                 \
             }                                                                                                                                   \
@@ -33711,7 +33711,7 @@ it is illegal to refer to this symbol in the definition of an adam
             _IO_                                                                                                                                \
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
-            if( pvP && !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
                 if( !((tin123S&)tin0P).pPoolUse ) { BLAMMO ; }                                                                                               \
                 PUSE( tin0P , *(byteT**)&pvP ) ;                                                                                                 \
@@ -33819,7 +33819,7 @@ it is illegal to refer to this symbol in the definition of an adam
             _IO_                                                                                                                                \
             countT idType = ifcIDtYPEdROPnOTE_##typeP ;                                                                                         \
             if( idType == ifcIDtYPEdROPnOTE_strokeS && ((strokeS*)pvP)->idCaste != sc_cADAM ) { BLAMMO ; }                                      \
-            if( pvP && !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_DOnOTcaLLdELif ) )                                                           \
+            if( pvP && !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DOnOTcaLLdELif ) )                                                           \
             {                                                                                                                                   \
                 if( !((tin123S&)tin0P).pPoolUse ) { BLAMMO ; }                                                                                               \
                 PUSE( tin0P , *(byteT**)&pvP ) ;                                                                                                 \
@@ -34096,7 +34096,7 @@ it is illegal to refer to this symbol in the definition of an adam
 
 #define DROPnOTEdOESnOTwANTmE                                                                                                                                   \
                                                                                                                                                                 \
-    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_UPDATEtIN && !( ((tin123S&)tin0P).monitor.idDirty % 2 ) )    \
+    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( ((tin123S&)tin0P).monitor.idDirty % 2 ) )    \
     {                                                                                                                                                           \
         FLAGScALLER( 0 ) |= flTHREADlEVELmODE_DROPnOTEdOESnOTwANTmE ;                                                                                           \
     }
@@ -35871,9 +35871,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*
 */
 /**/
-/*1*//*THREADmODE2sAVE0(flagsSaveP)*//*1*/
+/*1*//*THREADmODE1sAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODE2sAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).flagsThreadMode2 ;
+#define THREADmODE1sAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).flagsThreadMode1 ;
 
 
 //
@@ -35897,9 +35897,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*
 */
 /**/
-/*1*//*THREADmODE2oFF0(flagsP)*//*1*/
+/*1*//*THREADmODE1oFF0(flagsP)*//*1*/
 
-#define THREADmODE2oFF0(flagsP) ((tin123S&)tin0P).flagsThreadMode2 &= ~( F(flagsP) ) ;
+#define THREADmODE1oFF0(flagsP) ((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flagsP) ) ;
 
 
 //
@@ -35923,9 +35923,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*
 */
 /**/
-/*1*//*THREADmODE2oN0(flagsP)*//*1*/
+/*1*//*THREADmODE1oN0(flagsP)*//*1*/
 
-#define THREADmODE2oN0(flagsP) ((tin123S&)tin0P).flagsThreadMode2 |= (flagsP) ;
+#define THREADmODE1oN0(flagsP) ((tin123S&)tin0P).flagsThreadMode1 |= (flagsP) ;
 
 
 //
@@ -35949,9 +35949,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*
 */
 /**/
-/*1*//*THREADmODE2rESTORE0*//*1*/
+/*1*//*THREADmODE1rESTORE0*//*1*/
 
-#define THREADmODE2rESTORE0(flagsSaveP) ((tin123S&)tin0P).flagsThreadMode2 = (flagsSaveP) ;
+#define THREADmODE1rESTORE0(flagsSaveP) ((tin123S&)tin0P).flagsThreadMode1 = (flagsSaveP) ;
 
 
 //
@@ -35976,12 +35976,12 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 \<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE3oFF(flagsP)*//*1*/
+/*1*//*THREADmODE2oFF(flagsP)*//*1*/
 
-#define THREADmODE3oFF(flagsP)                                                                                            \
+#define THREADmODE2oFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode3Save = ((tin123S&)tin0P).flagsThreadMode3 ;                                                                \
-    THREADmODE3oFF0( flagsP )
+    flagsT _flagsThreadMode2Save = ((tin123S&)tin0P).flagsThreadMode2 ;                                                                \
+    THREADmODE2oFF0( flagsP )
 
 
 //
@@ -36006,9 +36006,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 \<A HREF=\"5.001016f.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE3rESTORE*//*1*/
+/*1*//*THREADmODE2rESTORE*//*1*/
 
-#define THREADmODE3rESTORE THREADmODE3rESTORE0( _flagsThreadMode3Save )
+#define THREADmODE2rESTORE THREADmODE2rESTORE0( _flagsThreadMode2Save )
 
 
 //
@@ -36033,12 +36033,12 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 \<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE3oN(flagsP)*//*1*/
+/*1*//*THREADmODE2oN(flagsP)*//*1*/
 
-#define THREADmODE3oN(flagsP)                                                                                            \
+#define THREADmODE2oN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode3Save = ((tin123S&)tin0P).flagsThreadMode3 ;                                                                \
-    THREADmODE3oN0( flagsP )
+    flagsT _flagsThreadMode2Save = ((tin123S&)tin0P).flagsThreadMode2 ;                                                                \
+    THREADmODE2oN0( flagsP )
 
 
 //
@@ -36062,9 +36062,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*
 */
 /**/
-/*1*//*THREADmODE3sAVE0(flagsSaveP)*//*1*/
+/*1*//*THREADmODE2sAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODE3sAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).flagsThreadMode3 ;
+#define THREADmODE2sAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).flagsThreadMode2 ;
 
 
 //
@@ -36088,9 +36088,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*
 */
 /**/
-/*1*//*THREADmODE3oFF0(flagsP)*//*1*/
+/*1*//*THREADmODE2oFF0(flagsP)*//*1*/
 
-#define THREADmODE3oFF0(flagsP) ((tin123S&)tin0P).flagsThreadMode3 &= ~( F(flagsP) ) ;
+#define THREADmODE2oFF0(flagsP) ((tin123S&)tin0P).flagsThreadMode2 &= ~( F(flagsP) ) ;
 
 
 //
@@ -36114,9 +36114,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*
 */
 /**/
-/*1*//*THREADmODE3oN0(flagsP)*//*1*/
+/*1*//*THREADmODE2oN0(flagsP)*//*1*/
 
-#define THREADmODE3oN0(flagsP) ((tin123S&)tin0P).flagsThreadMode3 |= (flagsP) ;
+#define THREADmODE2oN0(flagsP) ((tin123S&)tin0P).flagsThreadMode2 |= (flagsP) ;
 
 
 //
@@ -36140,9 +36140,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*
 */
 /**/
-/*1*//*THREADmODE3rESTORE0*//*1*/
+/*1*//*THREADmODE2rESTORE0*//*1*/
 
-#define THREADmODE3rESTORE0(flagsSaveP) ((tin123S&)tin0P).flagsThreadMode3 = (flagsSaveP) ;
+#define THREADmODE2rESTORE0(flagsSaveP) ((tin123S&)tin0P).flagsThreadMode2 = (flagsSaveP) ;
 
 
 //
@@ -38403,7 +38403,7 @@ args
         countT idKeyInIndex = idKeyP ;                                                                                                                                                                            \
         if( ~hIndexP || thirdC::c_strcmpIF( tin0P , postMasterPool , "adam.temp" ) )                                                                                                                           \
         {                                                                                                                                                                                                         \
-            THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                                                                           \
+            THREADmODE2oN( flTHREADmODE2_ALLOWdICTIONARYwHILEgRABBING )                                                                                                                                           \
             {                                                                                                                                                                                                     \
                 boolT bLiteralKey =                                                                                                                                                                               \
                 (                                                                                                                                                                                                 \
@@ -38439,7 +38439,7 @@ args
                     DELzOMBIE( pvspPostKey ) ;                                                                                                                                                                    \
                 }                                                                                                                                                                                                 \
             }                                                                                                                                                                                                     \
-            THREADmODE3rESTORE                                                                                                                                                                                    \
+            THREADmODE2rESTORE                                                                                                                                                                                    \
         }                                                                                                                                                                                                         \
                                                                                                                                                                                                                   \
         handleC hIK( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;                                                                                                                                    \
@@ -38451,9 +38451,9 @@ args
         else                                                                                                                                                                                                      \
         {                                                                                                                                                                                                         \
             countT pczIK[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3 , LISTnAMEsYS_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAMEsYS_INDEXaPPLICATION , idKeyInIndex , 0 } ;                            \
-            THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                                                                           \
+            THREADmODE2oN( flTHREADmODE2_ALLOWdICTIONARYwHILEgRABBING )                                                                                                                                           \
             listC::dictionaryReplaceOsTextIF( tin0P , pczIK ) ;                                                                                                                                                \
-            THREADmODE3rESTORE                                                                                                                                                                                    \
+            THREADmODE2rESTORE                                                                                                                                                                                    \
             listC::openIF( tin0P , hIK , pczIK ) ;                                                                                                                                                             \
         }                                                                                                                                                                                                         \
                                                                                                                                                                                                                   \
@@ -38574,7 +38574,7 @@ args
         countT idKeyInIndex = idKeyP ;                                                                                                                                                                                           \
         if( !bOpenIK || thirdC::c_strcmpIF( tin0P , postMasterPool , "adam.temp" ) )                                                                                                                                          \
         {                                                                                                                                                                                                                        \
-            THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                                                                                          \
+            THREADmODE2oN( flTHREADmODE2_ALLOWdICTIONARYwHILEgRABBING )                                                                                                                                                          \
             {                                                                                                                                                                                                                    \
                 boolT bLiteralKey =                                                                                                                                                                                              \
                 (                                                                                                                                                                                                                \
@@ -38610,16 +38610,16 @@ args
                     DELzOMBIE( pvspPostKey ) ;                                                                                                                                                                                   \
                 }                                                                                                                                                                                                                \
             }                                                                                                                                                                                                                    \
-            THREADmODE3rESTORE                                                                                                                                                                                                   \
+            THREADmODE2rESTORE                                                                                                                                                                                                   \
         }                                                                                                                                                                                                                        \
                                                                                                                                                                                                                                  \
         ZE( boolT , bFail ) ;                                                                                                                                                                                                    \
         countT pczIK[] = { LISTnAMEsYS_ROOT , LISTnAMEsYS_ROOTsYSTEM3 , LISTnAMEsYS_FIELDvALUEiNDEX , (countT)postMasterPool , LISTnAMEsYS_INDEXaPPLICATION , idKeyInIndex , 0 } ;                                               \
         if( bOpenIK )                                                                                                                                                                                                            \
         {                                                                                                                                                                                                                        \
-            THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                                                                                          \
+            THREADmODE2oN( flTHREADmODE2_ALLOWdICTIONARYwHILEgRABBING )                                                                                                                                                          \
             listC::dictionaryReplaceOsTextIF( tin0P , pczIK ) ;                                                                                                                                                               \
-            THREADmODE3rESTORE                                                                                                                                                                                                   \
+            THREADmODE2rESTORE                                                                                                                                                                                                   \
             listC::openIF( tin0P , hIKP , pczIK , flLISToPEN_IFeXISTS ) ;                                                                                                                                                     \
             if( !hIKP ) bFail = 1 ;                                                                                                                                                                                              \
             if( bFail && bSmelly ) { __1 }                                                                                                                                                                                       \
@@ -38759,7 +38759,7 @@ args
             if( POOP ) return flagsRC ;                                                                                                                                                               \
             __Z( idKeyP ) ;                                                                                                                                                                           \
             { countT pczName[] = { idKeyP , 0 } ; LNV( pczName ) ; }                                                                                                                                  \
-            __( !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_TINaRGSpUSHED ) ) ; /*INTENDED TO FORCE APPLICATION CODE TO PUSH THE TIN ARGS AND SET THEM BEFORE EACH CALL TO ME*/    \
+            __( !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_TINaRGSpUSHED ) ) ; /*INTENDED TO FORCE APPLICATION CODE TO PUSH THE TIN ARGS AND SET THEM BEFORE EACH CALL TO ME*/    \
             __( !((tin123S&)tin0P).ta.pushed.u.listWalk.walk.pListWalkCBFP ) ;                                                                                                                  \
             __(  ((tin123S&)tin0P).ta.pushed.u.listWalk.walk.cRecurseP ) ;                                                                                                                      \
             FV( flLISTwALK , ((tin123S&)tin0P).ta.pushed.u.listWalk.walk.flagsWalkP ) ;                                                                                                         \
@@ -38823,9 +38823,9 @@ args
             PUSE( tin0P , *(byteT**)&pczIKV ) ;                                                                                                                                                    \
         }                                                                                                                                                                                             \
                                                                                                                                                                                                       \
-        THREADmODE3oN( flTHREADmODE3_ALLOWdICTIONARYwHILEgRABBING )                                                                                                                                   \
+        THREADmODE2oN( flTHREADmODE2_ALLOWdICTIONARYwHILEgRABBING )                                                                                                                                   \
         dictionaryReplaceOsTextIF( tin0P , pczIKVR ) ;                                                                                                                                             \
-        THREADmODE3rESTORE                                                                                                                                                                            \
+        THREADmODE2rESTORE                                                                                                                                                                            \
         LNV( pczIKVR )                                                                                                                                                                                \
                                                                                                                                                                                                       \
         handleC hIKVR( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_LISTING ) ;                                                                                                                      \
@@ -38880,8 +38880,8 @@ args
                                                                                                                 \
     SAVEtINaRGS                                                                                                 \
     CLEARtINaRGS                                                                                                \
-    flagsT _fWasPushed = F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_TINaRGSpUSHED ;                               \
-    THREADmODE3oN( flTHREADmODE3_TINaRGSpUSHED )
+    flagsT _fWasPushed = F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_TINaRGSpUSHED ;                               \
+    THREADmODE2oN( flTHREADmODE2_TINaRGSpUSHED )
 
 
 //
@@ -38911,8 +38911,8 @@ args
 #define POPtINaRGS                                                                                                                     \
                                                                                                                                        \
     RESTOREtINaRGS                                                                                                                     \
-    if( _fWasPushed ) ((tin123S&)tin0P).flagsThreadMode3 |=      flTHREADmODE3_TINaRGSpUSHED    ;                                                   \
-    else              ((tin123S&)tin0P).flagsThreadMode3 &= ~( F(flTHREADmODE3_TINaRGSpUSHED) ) ;
+    if( _fWasPushed ) ((tin123S&)tin0P).flagsThreadMode2 |=      flTHREADmODE2_TINaRGSpUSHED    ;                                                   \
+    else              ((tin123S&)tin0P).flagsThreadMode2 &= ~( F(flTHREADmODE2_TINaRGSpUSHED) ) ;
 
 
 //
@@ -39211,32 +39211,32 @@ args
 /*
 */
 /**/
-/*1*//*flTHREADmODE4*//*1*/
+/*1*//*flTHREADmODE3*//*1*/
 
 //CODEsYNC: 00100df 0010055
 
 /*3*/
-#define flTHREADmODE4_GRABoNLYwO                                0xe00001c8
-#define flTHREADmODE4_IGNOREmE_tmWatchF_                        0xe00002c8
-#define flTHREADmODE4_EXCEPTIONcLEANUPdELETIONiNpROGRESS        0xe00004c8
-#define flTHREADmODE4_EXCEPTIONrEPORTINGiNpROGRESS              0xe00008c8
-#define flTHREADmODE4_ALLOWwRITEABLEpOINTERgET                  0xe00010c8
-#define flTHREADmODE4_INoUTfRAMErEGISTERcALLnEST                0xe00020c8
-#define flTHREADmODE4_NOsEXiNpOOL                               0xe00040c8
-#define flTHREADmODE4_DOnOTrEGISTERpAGEc                        0xe00080c8
-#define flTHREADmODE4_DEBUG1                                    0xe00100c8
-#define flTHREADmODE4_DEBUG2                                    0xe00200c8
-#define flTHREADmODE4_DEBUG3                                    0xe00400c8
-#define flTHREADmODE4_DEBUG4                                    0xe00800c8
-#define flTHREADmODE4_SIMULATEoFFLINE                           0xe01000c8
-#define flTHREADmODE4_SUPPRESStRACING                           0xe02000c8
-#define flTHREADmODE4_GO                                        0xe04000c8
-#define flTHREADmODE4_LOGsPINcALLnEST                           0xe08000c8
-#define flTHREADmODE4_POOLaLLOCATEfROMhEAP                      0xe10000c8
-#define flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE                  0xe20000c8
-#define flTHREADmODE4_POOLdELtRYhARDERaNDtRACE                  0xe40000c8
+#define flTHREADmODE3_GRABoNLYwO                                0xe00001c8
+#define flTHREADmODE3_IGNOREmE_tmWatchF_                        0xe00002c8
+#define flTHREADmODE3_EXCEPTIONcLEANUPdELETIONiNpROGRESS        0xe00004c8
+#define flTHREADmODE3_EXCEPTIONrEPORTINGiNpROGRESS              0xe00008c8
+#define flTHREADmODE3_ALLOWwRITEABLEpOINTERgET                  0xe00010c8
+#define flTHREADmODE3_INoUTfRAMErEGISTERcALLnEST                0xe00020c8
+#define flTHREADmODE3_NOsEXiNpOOL                               0xe00040c8
+#define flTHREADmODE3_DOnOTrEGISTERpAGEc                        0xe00080c8
+#define flTHREADmODE3_DEBUG1                                    0xe00100c8
+#define flTHREADmODE3_DEBUG2                                    0xe00200c8
+#define flTHREADmODE3_DEBUG3                                    0xe00400c8
+#define flTHREADmODE3_DEBUG4                                    0xe00800c8
+#define flTHREADmODE3_SIMULATEoFFLINE                           0xe01000c8
+#define flTHREADmODE3_SUPPRESStRACING                           0xe02000c8
+#define flTHREADmODE3_GO                                        0xe04000c8
+#define flTHREADmODE3_LOGsPINcALLnEST                           0xe08000c8
+#define flTHREADmODE3_POOLaLLOCATEfROMhEAP                      0xe10000c8
+#define flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE                  0xe20000c8
+#define flTHREADmODE3_POOLdELtRYhARDERaNDtRACE                  0xe40000c8
 /*3*/
-#define flTHREADmODE4_null    0xe00000c8
+#define flTHREADmODE3_null    0xe00000c8
 
 
 //
@@ -39261,12 +39261,12 @@ args
 \<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE4oFF(flagsP)*//*1*/
+/*1*//*THREADmODE3oFF(flagsP)*//*1*/
 
-#define THREADmODE4oFF(flagsP)                                                                                            \
+#define THREADmODE3oFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode4Save = ((tin123S&)tin0P).flagsThreadMode4 ;                                                                \
-    THREADmODE4oFF0( flagsP )
+    flagsT _flagsThreadMode3Save = ((tin123S&)tin0P).flagsThreadMode3 ;                                                                \
+    THREADmODE3oFF0( flagsP )
 
 
 //
@@ -39291,9 +39291,9 @@ args
 \<A HREF=\"5.001016f.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE4rESTORE*//*1*/
+/*1*//*THREADmODE3rESTORE*//*1*/
 
-#define THREADmODE4rESTORE THREADmODE4rESTORE0( _flagsThreadMode4Save )
+#define THREADmODE3rESTORE THREADmODE3rESTORE0( _flagsThreadMode3Save )
 
 
 //
@@ -39318,12 +39318,12 @@ args
 \<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE4oN(flagsP)*//*1*/
+/*1*//*THREADmODE3oN(flagsP)*//*1*/
 
-#define THREADmODE4oN(flagsP)                                                                                            \
+#define THREADmODE3oN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode4Save = ((tin123S&)tin0P).flagsThreadMode4 ;                                                                \
-    THREADmODE4oN0( flagsP )
+    flagsT _flagsThreadMode3Save = ((tin123S&)tin0P).flagsThreadMode3 ;                                                                \
+    THREADmODE3oN0( flagsP )
 
 
 //
@@ -39347,9 +39347,9 @@ args
 /*
 */
 /**/
-/*1*//*THREADmODE4sAVE0(flagsSaveP)*//*1*/
+/*1*//*THREADmODE3sAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODE4sAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).flagsThreadMode4 ;
+#define THREADmODE3sAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).flagsThreadMode3 ;
 
 
 //
@@ -39373,9 +39373,9 @@ args
 /*
 */
 /**/
-/*1*//*THREADmODE4oFF0(flagsP)*//*1*/
+/*1*//*THREADmODE3oFF0(flagsP)*//*1*/
 
-#define THREADmODE4oFF0(flagsP) ((tin123S&)tin0P).flagsThreadMode4 &= ~( F(flagsP) ) ;
+#define THREADmODE3oFF0(flagsP) ((tin123S&)tin0P).flagsThreadMode3 &= ~( F(flagsP) ) ;
 
 
 //
@@ -39399,9 +39399,9 @@ args
 /*
 */
 /**/
-/*1*//*THREADmODE4oN0(flagsP)*//*1*/
+/*1*//*THREADmODE3oN0(flagsP)*//*1*/
 
-#define THREADmODE4oN0(flagsP) ((tin123S&)tin0P).flagsThreadMode4 |= (flagsP) ;
+#define THREADmODE3oN0(flagsP) ((tin123S&)tin0P).flagsThreadMode3 |= (flagsP) ;
 
 
 //
@@ -39425,9 +39425,9 @@ args
 /*
 */
 /**/
-/*1*//*THREADmODE4rESTORE0*//*1*/
+/*1*//*THREADmODE3rESTORE0*//*1*/
 
-#define THREADmODE4rESTORE0(flagsSaveP) ((tin123S&)tin0P).flagsThreadMode4 = (flagsSaveP) ;
+#define THREADmODE3rESTORE0(flagsSaveP) ((tin123S&)tin0P).flagsThreadMode3 = (flagsSaveP) ;
 
 
 //
@@ -41818,7 +41818,7 @@ code that uses me is probably using the high bit for some application purpose
         if( P(pv) )                                                                                                                                                 \
         {                                                                                                                                                           \
             TINSL                                                                                                                                                   \
-            if( !( F(((tin123S&)tin0P).flagsThreadMode4) & flTHREADmODE4_ALLOWwRITEABLEpOINTERgET ) ) { BLAMMO ; }                                                               \
+            if( !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_ALLOWwRITEABLEpOINTERgET ) ) { BLAMMO ; }                                                               \
             /*if( !thirdC::bCanAccessMemoryIF( (byteT*)P(pv) , cbTestP ) ) { BLAMMO ; }*/                                                                           \
             if( !( F(flags) & flVSP_NONCONSTANTrEFdISPENSED ) )                                                                                                     \
             {                                                                                                                                                       \
@@ -47612,7 +47612,7 @@ use this rather than _ to avoid the overhead of _
 
 #define IFsIMULATEoFFLINEpOOP                                                                                           \
                                                                                                                         \
-    __NZ( F(((tin123S&)tin0P).flagsThreadMode4)                     & flTHREADmODE4_SIMULATEoFFLINE  ) ;                             \
+    __NZ( F(((tin123S&)tin0P).flagsThreadMode3)                     & flTHREADmODE3_SIMULATEoFFLINE  ) ;                             \
     __NZ( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_SIMULATEoFFLINE ) ;
 
 //
@@ -49767,7 +49767,7 @@ use this rather than _ to avoid the overhead of _
 
 /*1*//*IFwHEREkNOWStHREAD*//*1*/
 
-#define IFwHEREkNOWStHREAD if( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_REGISTEREDwITHwHERE )
+#define IFwHEREkNOWStHREAD if( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_REGISTEREDwITHwHERE )
 
 
 //
@@ -50617,20 +50617,20 @@ after i return, that countT object will contain 1
 /*
 */
 /**/
-/*1*//*flTHREADmODE5*//*1*/
+/*1*//*flTHREADmODE4*//*1*/
 
 /*3*/
-#define flTHREADmODE5_INoUTfRAMEdEFERwRITINGaPPtELEMETRY                                0xe0000110
-#define flTHREADmODE5_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY                                0xe0000210
-#define flTHREADmODE5_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY                                0xe0000410
-#define flTHREADmODE5_DOnOTfLUSHpENDINGaPPtELEMETRY                                     0xe0000810
-#define flTHREADmODE5_DOnOTtESTdROPhEADERS                                              0xe0001010
-#define flTHREADmODE5_STFU1iOmACRO                                                      0xe0002010
-#define flTHREADmODE5_ARMoPENsSL                                                        0xe0004010
-#define flTHREADmODE5_DOnOTfREEsSLcONTEXT                                               0xe0008010
-#define flTHREADmODE5_TINiSnOTiNpOOL                                                    0xe0010010
+#define flTHREADmODE4_INoUTfRAMEdEFERwRITINGaPPtELEMETRY                                0xe0000110
+#define flTHREADmODE4_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY                                0xe0000210
+#define flTHREADmODE4_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY                                0xe0000410
+#define flTHREADmODE4_DOnOTfLUSHpENDINGaPPtELEMETRY                                     0xe0000810
+#define flTHREADmODE4_DOnOTtESTdROPhEADERS                                              0xe0001010
+#define flTHREADmODE4_STFU1iOmACRO                                                      0xe0002010
+#define flTHREADmODE4_ARMoPENsSL                                                        0xe0004010
+#define flTHREADmODE4_DOnOTfREEsSLcONTEXT                                               0xe0008010
+#define flTHREADmODE4_TINiSnOTiNpOOL                                                    0xe0010010
 /*3*/
-#define flTHREADmODE5_null    0xe0000010
+#define flTHREADmODE4_null    0xe0000010
 
 
 //
@@ -50655,12 +50655,12 @@ after i return, that countT object will contain 1
 \<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE5oFF(flagsP)*//*1*/
+/*1*//*THREADmODE4oFF(flagsP)*//*1*/
 
-#define THREADmODE5oFF(flagsP)                                                                                            \
+#define THREADmODE4oFF(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode5Save = ((tin123S&)tin0P).flagsThreadMode5 ;                                                                \
-    THREADmODE5oFF0( flagsP )
+    flagsT _flagsThreadMode4Save = ((tin123S&)tin0P).flagsThreadMode4 ;                                                                \
+    THREADmODE4oFF0( flagsP )
 
 
 //
@@ -50685,9 +50685,9 @@ after i return, that countT object will contain 1
 \<A HREF=\"5.001016f.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE5rESTORE*//*1*/
+/*1*//*THREADmODE4rESTORE*//*1*/
 
-#define THREADmODE5rESTORE THREADmODE5rESTORE0( _flagsThreadMode5Save )
+#define THREADmODE4rESTORE THREADmODE4rESTORE0( _flagsThreadMode4Save )
 
 
 //
@@ -50712,12 +50712,12 @@ after i return, that countT object will contain 1
 \<A HREF=\"5.001016e.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*THREADmODE5oN(flagsP)*//*1*/
+/*1*//*THREADmODE4oN(flagsP)*//*1*/
 
-#define THREADmODE5oN(flagsP)                                                                                            \
+#define THREADmODE4oN(flagsP)                                                                                            \
                                                                                                                           \
-    flagsT _flagsThreadMode5Save = ((tin123S&)tin0P).flagsThreadMode5 ;                                                                \
-    THREADmODE5oN0( flagsP )
+    flagsT _flagsThreadMode4Save = ((tin123S&)tin0P).flagsThreadMode4 ;                                                                \
+    THREADmODE4oN0( flagsP )
 
 
 //
@@ -50741,9 +50741,9 @@ after i return, that countT object will contain 1
 /*
 */
 /**/
-/*1*//*THREADmODE5sAVE0(flagsSaveP)*//*1*/
+/*1*//*THREADmODE4sAVE0(flagsSaveP)*//*1*/
 
-#define THREADmODE5sAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).flagsThreadMode5 ;
+#define THREADmODE4sAVE0(flagsSaveP) (flagsSaveP) = ((tin123S&)tin0P).flagsThreadMode4 ;
 
 
 //
@@ -50767,9 +50767,9 @@ after i return, that countT object will contain 1
 /*
 */
 /**/
-/*1*//*THREADmODE5oFF0(flagsP)*//*1*/
+/*1*//*THREADmODE4oFF0(flagsP)*//*1*/
 
-#define THREADmODE5oFF0(flagsP) ((tin123S&)tin0P).flagsThreadMode5 &= ~( F(flagsP) ) ;
+#define THREADmODE4oFF0(flagsP) ((tin123S&)tin0P).flagsThreadMode4 &= ~( F(flagsP) ) ;
 
 
 //
@@ -50793,9 +50793,9 @@ after i return, that countT object will contain 1
 /*
 */
 /**/
-/*1*//*THREADmODE5oN0(flagsP)*//*1*/
+/*1*//*THREADmODE4oN0(flagsP)*//*1*/
 
-#define THREADmODE5oN0(flagsP) ((tin123S&)tin0P).flagsThreadMode5 |= (flagsP) ;
+#define THREADmODE4oN0(flagsP) ((tin123S&)tin0P).flagsThreadMode4 |= (flagsP) ;
 
 
 //
@@ -50819,9 +50819,9 @@ after i return, that countT object will contain 1
 /*
 */
 /**/
-/*1*//*THREADmODE5rESTORE0*//*1*/
+/*1*//*THREADmODE4rESTORE0*//*1*/
 
-#define THREADmODE5rESTORE0(flagsSaveP) ((tin123S&)tin0P).flagsThreadMode5 = (flagsSaveP) ;
+#define THREADmODE4rESTORE0(flagsSaveP) ((tin123S&)tin0P).flagsThreadMode4 = (flagsSaveP) ;
 
 
 //

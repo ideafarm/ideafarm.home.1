@@ -17,7 +17,7 @@
     {
     if( !POOP && ((tin123S&)tin0P).pPoolUse && F(flagsP) & flBOOKSc_RESETcREFoNcT )
 
-    THREADmODE4rESTORE
+    THREADmODE3rESTORE
 
     //CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
 
@@ -28,7 +28,7 @@
         else if( this == &processGlobal4I.bksWord  ) processGlobal2I.flCt |= flCTdTg_bksWord         ;
         }
 #endif
-            THREADmODE5rESTORE
+            THREADmODE4rESTORE
             processGlobal4I.bkTelemetryAppEarlyLate.purgeF( tin0P ) ;
             writeF( tin0P , pbi , cbi , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND , 0 ) ;
 
@@ -41,7 +41,7 @@
             //{
 
             processGlobal4I.bkTelemetryAppEarlyLate.readF( tin0P , pbi , cbi , offi ) ;      //U:: THIS STUDY IS LOW PRIORITY BECAUSE THE PENDING BUFFER DOES NOT YET EXIST AND 0 TELEMETRY IS POURED
-            THREADmODE5oN( flTHREADmODE5_DOnOTfLUSHpENDINGaPPtELEMETRY ) ;                  //U:: WARRANTS FURTHER STUDY AND CRAFTWORK ; THE GOAL IS TO PREVENT OUT OF ORDER APP TELEMETRY DO TO APP TELEMETRY GENERATED DURING THIS POUR OPERATION
+            THREADmODE4oN( flTHREADmODE4_DOnOTfLUSHpENDINGaPPtELEMETRY ) ;                  //U:: WARRANTS FURTHER STUDY AND CRAFTWORK ; THE GOAL IS TO PREVENT OUT OF ORDER APP TELEMETRY DO TO APP TELEMETRY GENERATED DURING THIS POUR OPERATION
             ZE( countT , offi ) ;
             countT cbi = - 1 ;
             ZE( const byteT* , pbi  ) ;
@@ -75,9 +75,9 @@
         if( PCPiDbOOKnOW[ 0 ] == 1 && PCPiDbOOKnOW[ 1 ] == 1 ) ((bookHeadS&)BOOKnOW).flags |= flBOOKhEADs_PRIORbOOKnOTcONTINUEDhERE ;
 
         NEWbOOK2sETfLAG
-        THREADmODE4rESTORE
+        THREADmODE3rESTORE
         new( 0 , tin0P , PBbOOKbACKnOW , SIZEOF_bookC ) bookC( tin0P , idLineCtP , idiFileCtP , pbBitsCtP , postBookNameScratch , idStateSpace , flagsCtBook , F(flagsCtBook) & flBOOKc_WRITER ? cbBodyNew : 0 , bFill , idMemorySpace ) ;
-        THREADmODE4oN( flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
+        THREADmODE3oN( flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE )
         NEWbOOK1bLAMMOiFcT
     {
     if( !POOP )
@@ -155,7 +155,7 @@
 
     //CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
 
-    THREADmODE4oN( flTHREADmODE4_POOLaLLOCATEfROMhEAP | flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE )
+    THREADmODE3oN( flTHREADmODE3_POOLaLLOCATEfROMhEAP | flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE )
 
     }
 
@@ -206,7 +206,7 @@
 
     }
         if( POOP ) return ;
-        __( idMemorySpaceP && !( F(((tin123S&)tin0P).flagsThreadMode4) & flTHREADmODE4_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tin0P ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
+        __( idMemorySpaceP && !( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE ) && thirdC::third_idPhaseAdam_IF( tin0P ) >= ifcIDpHASEaDAM_EXEpROLOGaDAMmAIN1 && thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_EXEePILOGaDAMmAINa1 ) ;
 
         //20240330@1559: ADDED flBOOKSc_PURGEoNcTiFcLOAK
         //U:: DESIGN PROBLEM: INSTANCE SHARED BY MULTIPLE PROCESSES CANNOT PURGEoNcT: __NZ( F(flagsCt) & flBOOKSc_CYCLE && !( F(flagsCt) & flBOOKSc_PURGEoNcT ) ) ;

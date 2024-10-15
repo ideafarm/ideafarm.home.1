@@ -11,9 +11,9 @@
     baton.ungrabF( tin0P ) ;
     swSession.freeAllF( tin0P ) ;
     }
-        THREADmODE2rESTORE
+        THREADmODE1rESTORE
         DEL( pSession ) ;
-        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+        THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
         sessionC*& pSession = *(sessionC**)&(countT&)swSession ;
         nnLever_peer = *(nicNameC*)swSession.leverF( tin0P , idf ) ;
     {
@@ -21,13 +21,13 @@
     countT cFlavors = swSession.cFlavorsF( tin0P ) ;
     baton.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-    THREADmODE2rESTORE
+    THREADmODE1rESTORE
     }
         ++ s ; ether.osSleepF( tin0P , TOCK >> 3 ) ;
     {
     while( bQuitWatching )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
     bQuitWatching = 1 ;
 
     TINSL

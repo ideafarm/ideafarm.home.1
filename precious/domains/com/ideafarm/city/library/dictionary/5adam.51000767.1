@@ -750,7 +750,7 @@ voidT reportFilesF( tin0S& tin0P , etherC& etherP , soulC*& psOutP , socketC*& p
 voidT reportFilesSimpleF( tin0S& tin0P , etherC& etherP , socketC*& psoP , fileC*& pFlockP , const strokeS* const psttFolderP , const strokeS* const psttPatternP )
 
 }
-    THREADmODE2rESTORE
+    THREADmODE1rESTORE
     }
         }
             //etherP.traceF( tin0P , T("folder relocked:    ")+T(psttFolderP) ) ;
@@ -774,7 +774,7 @@ voidT reportFilesSimpleF( tin0S& tin0P , etherC& etherP , socketC*& psoP , fileC
 
     DEL( pFlockP ) ; //THIS IS NEEDED BECAUSE WINDOWS IS SUCH A PIECE OF SHIT: THERE IS NO OTHER WAY TO RESET THE HANDLE SO THAT THE NEXT QUERY DOES NOT RECEIVE "ERROR_NO_MORE_FILES"
 
-    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
     //U:: ALT: IF I CANNOT REOPEN THE FILE, SHUT DOWN THE COMPUTER IMMEDIATELY (DECISION: DO THIS)
     //U:: ALT: SUPPORT THIS COMMAND ONLY ONCE PER PERIOD AND LAUNCH A THREAD TO WAIT A RANDOM AMOUNT OF TIME BEFORE CLOSING AND IMMEDIATELY REOPENING THIS FILE

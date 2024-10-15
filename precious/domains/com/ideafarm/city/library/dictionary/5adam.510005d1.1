@@ -11,7 +11,7 @@ REST
 
 CONoUTrAW( "ok\r\n" ) ;
 
-THREADmODE3rESTORE
+THREADmODE2rESTORE
 }
     }
         }
@@ -46,7 +46,7 @@ THREADmODE3rESTORE
     puseC puseHelper( tin0P , "list.email.to.idAccount" ) ;
     _IO_
 {
-THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
+THREADmODE2oN( flTHREADmODE2_UNLOCKpOOLiDENTITY )
 
 TODO
 
@@ -87,7 +87,7 @@ DONE( tmLoadHelperF )
     {
     //ENSURE THAT MY ACCOUNT IS DEFINED, EVEN IF I ZAP ALL LISTS ON DEVELOPMENT MACHINE
 
-    THREADmODE3rESTORE
+    THREADmODE2rESTORE
     }
         PUSE.listOld2012F( tin0P , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , ifcIDhOWlIST_FIFO , 0 , 0 , listingInspect_ad5_chatterHelper_CBF ) ;
         puseC puseh( puseHelperP ) ;
@@ -103,7 +103,7 @@ DONE( tmLoadHelperF )
 
         puseC pusem( puseMasterP ) ;
     {
-    THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
+    THREADmODE2oN( flTHREADmODE2_UNLOCKpOOLiDENTITY )
 
     }
         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
@@ -291,14 +291,14 @@ sCountT listingInspect_ad5_chatterHelper_CBF( tin0S& tin0P , aptC& aptP , listWa
                                 }
                                     if( idAccountVerify != idAccount ) bDelete = 1 ;
     
-                                    THREADmODE3rESTORE
+                                    THREADmODE2rESTORE
                                     //CONoUTrAW3( "STORED  idAcc " , idAccount , " into helper file using postzEmail as list name\r\n" ) ;
                                     }
                                         idAccountVerify = PUSE.list_countT_Old2012F( tin0P , pczEmail , idAccount ) ;
                                         puseC puseHelper( *(puseC*)argP.pc Utility[ 0 ] ) ;
                                     {
                                     //CONoUTrAW3( "STORING idAcc " , idAccount , " into helper file using postzEmail as list name\r\n" ) ;
-                                    THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
+                                    THREADmODE2oN( flTHREADmODE2_UNLOCKpOOLiDENTITY )
                                     ZE( countT , idAccountVerify ) ;
             
                                     //CONoUTrAW( T(pczEmail)+T("\r\n") ) ;
@@ -449,7 +449,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tin0S& tin0P , aptC& aptP , listWa
                             {
                             TELL( "DONEpART0: waiting for my kid threads to end" ) ;
 
-                            if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadMode1) & flTHREADmODE1_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;
+                            if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).monitor.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;
                             TELL( "DONEpART0: conditionally calling etherWhereF" ) ;
                         {
                         else
@@ -498,7 +498,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tin0S& tin0P , aptC& aptP , listWa
                     }
                         PUSE( tin0P , *(byteT**)&pczIdAccount ) ;
                         }
-                            THREADmODE3rESTORE
+                            THREADmODE2rESTORE
                             }
                                 }
                                     listC::fieldIF( tin0P , pOutMaster , hList , pczField ,  _fe_queryC() , LF ) ; ___( pOutMaster ) ;
@@ -512,7 +512,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tin0S& tin0P , aptC& aptP , listWa
 
                                 puseC puseMaster( puseMasterP ) ;
                             {
-                            THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
+                            THREADmODE2oN( flTHREADmODE2_UNLOCKpOOLiDENTITY )
 
                             //CONoUTrAW( T(pczIdAccount)+T("\r\n") ) ;
                             etherC::strStretchIF( tin0P , pczIdAccount , count2S( LISTnAMEsYS_ROOTaPPLICATION ) , idAccount ) ;
@@ -539,7 +539,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tin0S& tin0P , aptC& aptP , listWa
                     }
                         PUSE( tin0P , *(byteT**)&pczEmail ) ;
                         }
-                            THREADmODE3rESTORE
+                            THREADmODE2rESTORE
                             }
                                 }
                                     DELlIST( fieldEditParamOutC , pOutMaster ) ;
@@ -623,7 +623,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tin0S& tin0P , aptC& aptP , listWa
                                 puseC puseHelper( puseHelperP ) ;
                             {
                             ZE( boolT , bNew ) ;
-                            THREADmODE3oN( flTHREADmODE3_UNLOCKpOOLiDENTITY )
+                            THREADmODE2oN( flTHREADmODE2_UNLOCKpOOLiDENTITY )
 
                             //
                             // THE FOLLOWING CODE EXERCISES THE QUERY CALLS THAT WILL BE NEEDED, BUT ASSUMES THAT I AM THE ONLY CELL

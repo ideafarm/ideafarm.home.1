@@ -584,9 +584,9 @@ DONE( tmNodeServerCatchBagF )
                                     ((stackC&)swsId).purgeF( tin0P ) ;
                                 {
                                 if( swsId > 0x100 )
-                                THREADmODE2rESTORE
+                                THREADmODE1rESTORE
                                 swsId.sinkF( tin0P , countTC() , idSerial , flSTACKsINK_UNIQUE ) ;
-                                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                                THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                                 switchStackC& swsId = bAltSwsP ? swsIdSerialReceivedAltP : swsIdSerialReceivedP ;
                                 TELL( "registering serial" )
                             {
@@ -899,7 +899,7 @@ DONE( tmNodeInitiatorF )
             swsIdptMediatorP.ungrabF( tin0P ) ;
             swsIdptMediatorAltP.ungrabF( tin0P ) ;
 
-            THREADmODE2rESTORE
+            THREADmODE1rESTORE
             swsIdptMediatorP.freeAllF( tin0P ) ;
 
             }
@@ -921,7 +921,7 @@ DONE( tmNodeInitiatorF )
             countT cFlavors = swsIdptMediatorP.cFlavorsF( tin0P ) ;
 
             swsIdptMediatorAltP.freeAllF( tin0P ) ;
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
             swsIdptMediatorAltP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             swsIdptMediatorP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
@@ -933,7 +933,7 @@ DONE( tmNodeInitiatorF )
         UNGRABrELAYlISTS
         //CONoUTrAW( "tmNodeInitiatorF: 6 register myself as handle\r\n" ) ;
 
-        //THREADmODE2rESTORE
+        //THREADmODE1rESTORE
         //}
         //    while( !stIdptPopClientP.third && ~hDown ) ;
         //    }
@@ -948,7 +948,7 @@ DONE( tmNodeInitiatorF )
         //    TN( tcol , ":" ) ;
         //{
         //if( stIdptOpenP )
-        //THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+        //THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
         //CHATTER MY OPEN LIST
 
         }
@@ -966,7 +966,7 @@ DONE( tmNodeInitiatorF )
                 //etThread.traceF( tin0P , T("loading ifcOLDiDtYPEbAG_CLIENTpOPpING bag [cNodesOpen,cNodesGossip]:    ")+TF2(stIdptOpenP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(stIdptGossipP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                 }
-                    THREADmODE2rESTORE
+                    THREADmODE1rESTORE
                     while( !stIdptGossipP.third && ~hDown ) ;
                     }
                         }
@@ -979,7 +979,7 @@ DONE( tmNodeInitiatorF )
                     {
                     do
                     handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                    THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                 {
                 if( stIdptGossipP )
                 //P: A RELAY THAT THINKS THAT IT IS ROOT WILL TEST ALL GOSSIPPED RELAYS AND DELIST THOSE THAT FAIL
@@ -1157,9 +1157,9 @@ DONE( tmNodeTeatServerF )
     
         swsWrapRefP.ungrabF( tin0P ) ;
         }
-            THREADmODE2rESTORE
+            THREADmODE1rESTORE
             swsWrapRefP.freeF( tin0P ) ;
-            THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+            THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             cLeverPayloadP = ((tin123S&)tin0P).monitor.idThread ;
         {
     
@@ -1292,9 +1292,9 @@ DONE( tmNodeTeatServerF )
                                 }
                                     while( !stIdptOpenP.third && ~hDown ) ;
                                     }
-                                        THREADmODE2rESTORE
+                                        THREADmODE1rESTORE
                                         //CONoUTrAW( TF1(++ids)+T(": ")+TT(time.time1,time.time2)+T(" ")+TF1((countT)idpt)+T(" ")+TF1((nicNameC&)idpt)+T("\r\n") ) ;
-                                        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                                        THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                                         timeS time = idpt ;
                                         portTimeC& idpt = *(portTimeC*)&stIdptOpenP.downF( tin0P , hDown ) ;
                                     {
@@ -1336,9 +1336,9 @@ DONE( tmNodeTeatServerF )
                             if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION ) { static countT idIn ; ((tin123S&)tin0P).pEther->traceF( tin0P , TF2(++idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tmNodeTeatServerF: ifcOLDiDtYPEwRAP_GIFT (mediator registration channel)") ) ; }
         
                             }
-                                THREADmODE2rESTORE
+                                THREADmODE1rESTORE
                                 //((tin123S&)tin0P).pEther->traceF( tin0P , T("wrap from app for channel ")+T(pczChannel) ) ;
-                                THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+                                THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                             {
                             else
                             if( bDebug ) { CONoUTrAW3( "teat read a secret wrap that contains " , (countT)*psWrap , " members\r\n" ) ; }
@@ -1479,9 +1479,9 @@ DONE( tmNodeTeatServerF )
         stackC stChannelInclude( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count4S ) ;
     
         swsWrapRefP.ungrabF( tin0P ) ;
-        THREADmODE2rESTORE
+        THREADmODE1rESTORE
         stackC& stWrapRef = (stackC&)swsWrapRefP ;
-        THREADmODE2oN( flTHREADmODE2_ALLOWsTOPwHILEgRABBING )
+        THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
         cLeverPayloadP = ((tin123S&)tin0P).monitor.idThread ;
         swsWrapRefP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     {
