@@ -246,7 +246,7 @@
                                     countT idLine  = ((tin123S&)tin0Snap).pLFstep[ offe     ] ;_M
                                     countT offe = ( ids & OFFsLOTtINsTEPmAX ) << 1 ;_M
                                 {_M
-                                for( countT ids = ((tin123S&)tin0Snap).monitor.idStep ; cDo -- ; ids -- )
+                                for( countT ids = ((tin123S&)tin0Snap).glass.idStep ; cDo -- ; ids -- )
                                 countT cDo = OFFsLOTtINsTEPmAX + 1 ;_M                          // IF idStep IS SMALL AND NOT BECAUSE OF WRAP THEN SOME REPORT LINES WILL BE FROM [0,0] PAIRS ; TO KISS, I DO NOT TEST FOR THIS SO I WILL REPORT EVEN IF pLFstep HAS BEEN TRASHED
                                 countT cIndent = ((tin123S&)tin0Snap).where.cInNest ;_M
                             
@@ -260,10 +260,10 @@
                             //20191104@2007: REWRITE TO UNCONDITIONALLY GIVE THE FULL STEP ARRAY
 
                             //else
-                            //else if( (sCountT)((tin123S&)tin0Snap).monitor.idStep < 0 ) { OStEXTAK( ostoRpt , "\r\n \r\nExecution Steps:  error: idStep is negative\r\n" ) ;_M }
+                            //else if( (sCountT)((tin123S&)tin0Snap).glass.idStep < 0 ) { OStEXTAK( ostoRpt , "\r\n \r\nExecution Steps:  error: idStep is negative\r\n" ) ;_M }
                             //U::WE CAN GET FANCY HERE; I HAVE NOT DONE SO TO KISS SO THAT THIS CODE IS RELIABLE.  THE CHANCE OF AN EXCEPTION HAPPENING IMMEDIATELY AFTER WRAP IS EXTREMELY LOW
                             //20160603@1931: THE NEXT LINE COMMENTED OUT WITHOUT ANALYSIS ;  SHOULD NOW GET A STEP LISTING EXCEPT WHEN, UNLUCKILY, idStep IS 0 OR VERY SMALL
-                            //if( !((tin123S&)tin0Snap).monitor.idStep ) { OStEXTAK( ostoRpt , "\r\n \r\nExecution Steps:  no step information exists\r\n" ) ;_M }
+                            //if( !((tin123S&)tin0Snap).glass.idStep ) { OStEXTAK( ostoRpt , "\r\n \r\nExecution Steps:  no step information exists\r\n" ) ;_M }
                             //20160604@1657: MADE THIS UNCONDITIONAL WITHOUT ANALYSIS, RELYING ON 2'S COMPLEMENT PROPERTIES TO CORRECTLY DISPLAY STEPS EVEN IF idStep IS NEAR ZE
                             //20191104@2007: REWRITE THIS OLD COMMENTED OUT CODE SO THAT GET CORRECT STEP REPORT EVEN IF idStep HAS WRAPPED
 
@@ -359,7 +359,7 @@
                             OStEXTAK( ostoRpt , "\"\r\nprocessGlobal2I.idHome: " ) ;_M
                             OStEXTA(  ostoRpt , thirdC::postUserNameIF() ) ;_M
                             OStEXTAK( ostoRpt , "\r\nbase os user name: \"" ) ;_M
-                            OStEXTC(  ostoRpt ,      ((tin123S&)tin0Snap).monitor.idThread , 0 ) ;_M
+                            OStEXTC(  ostoRpt ,      ((tin123S&)tin0Snap).glass.idThread , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\nidThread: " ) ;_M
                             OStEXTA(  ostoRpt ,      processGlobal2I.postDllsLoaded ) ;_M
                             OStEXTAK( ostoRpt , "\r\ndll load history: " ) ;_M
@@ -449,7 +449,7 @@
                             OStEXTAK( ostoRpt , "\r\n((tin123S&)tin0P).cGrabitC_reset: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin123S&)tin0Snap).cGrabitC_set , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\n((tin123S&)tin0P).cGrabitC_set: " ) ;_M
-                            OStEXTC(  ostoRpt ,      ((tin123S&)tin0Snap).monitor.cGrabbed , 0 ) ;_M
+                            OStEXTC(  ostoRpt ,      ((tin123S&)tin0Snap).glass.cGrabbed , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\ncGrabbed: " ) ;_M
 
                             OStEXTC(  ostoRpt ,      processGlobal2I.idBlammo , 0 ) ;_M

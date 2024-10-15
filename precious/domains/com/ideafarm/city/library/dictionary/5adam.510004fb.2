@@ -185,7 +185,7 @@ DONE( tmHireF )
                                         else switch( info3.u.Exception.ExceptionRecord.ExceptionCode )
                                         }
                                             default                                  : { tEvent += T("    notes:"                                                                                                          ) ; break ; }
-                                            case ifcIDeVENTeXCEPTIONmONITORED_BLAMMO : { tEvent += T("    [idLine,idiFile,idLineCt,idiFileCt,idBlammo,((tin123S&)tin0P).idTinNamed,tinName,((tin123S&)tin0P).monitor.idThread,((tin123S&)tin0P).osTid,osTidIF()]:") ; break ; }
+                                            case ifcIDeVENTeXCEPTIONmONITORED_BLAMMO : { tEvent += T("    [idLine,idiFile,idLineCt,idiFileCt,idBlammo,((tin123S&)tin0P).idTinNamed,tinName,((tin123S&)tin0P).glass.idThread,((tin123S&)tin0P).osTid,osTidIF()]:") ; break ; }
                                             case ifcIDeVENTeXCEPTIONmONITORED_GRUNT  : { tEvent += T("    [idLine,idiFile,idSubType,idType]:"                                                                              ) ; break ; }
                                         {
                                         if( ifcUnexpectedExceptionCode ) switch( ifcUnexpectedExceptionCode )
@@ -489,7 +489,7 @@ DONE( tmHireF )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
     
-    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin123S&)tin0P).monitor.idThread - ifcIDtHREADlOW_tmHireF ) ; }
+    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin123S&)tin0P).glass.idThread - ifcIDtHREADlOW_tmHireF ) ; }
 
     boolT&   bKidsSuspendedP            =  *(boolT*)pTaskP->ca ;
     boolT    bConsoleP                  =    (boolT)pTaskP->c9 ;
@@ -833,7 +833,7 @@ DONE( tmFireAllF )
         slabS& slab = slabS::slabIF() ;
     {
 
-    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin123S&)tin0P).monitor.idThread - ifcIDtHREADlOW_tmFireAllF ) ; }
+    //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin123S&)tin0P).glass.idThread - ifcIDtHREADlOW_tmFireAllF ) ; }
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     boolT& bKidsSuspendedP = *(boolT*)pTaskP->c1 ;
@@ -1897,7 +1897,7 @@ DONE( tmReportF )
 
                                         OStEXT( ostoLine , TUCK << 2 ) ;            //20230908@1445: 2 <- 1 DUE TO EXHAUSTION
                                     {
-                                    for( countT ids = ((tin123S&)tin0Copy).monitor.idStep ; cDo -- ; ids -- )
+                                    for( countT ids = ((tin123S&)tin0Copy).glass.idStep ; cDo -- ; ids -- )
                                     countT cDo = OFFsLOTtINsTEPmAX + 1 ;                          // IF idStep IS SMALL AND NOT BECAUSE OF WRAP THEN SOME REPORT LINES WILL BE FROM [0,0] PAIRS ; TO KISS, I DO NOT TEST FOR THIS SO I WILL REPORT EVEN IF pLFstep HAS BEEN TRASHED
                                     countT cIndent = ((tin123S&)tin0Copy).where.cInNest ;
                                 
@@ -1962,7 +1962,7 @@ DONE( tmReportF )
                                                         {
                                                         if( bOk )
                                                         }
-                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabotC ) , bOk , (voidT*)((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
+                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabotC ) , bOk , (voidT*)((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
                                                             _IO_
                                                         {
                                                         ZE( boolT , bOk ) ;
@@ -1987,7 +1987,7 @@ DONE( tmReportF )
                                                         {
                                                         if( bOk )
                                                         }
-                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabitC ) , bOk , (voidT*)((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
+                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabitC ) , bOk , (voidT*)((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
                                                             _IO_
                                                         {
                                                         ZE( boolT , bOk ) ;
@@ -2019,7 +2019,7 @@ DONE( tmReportF )
                                                                 else
                                                                 }
                                                                     //etRock.traceF( tin0P , T("tmReportF a/ 9 / 6") ) ; //U:: TO FIND A BUG
-                                                                    sRptTin << (strokeS*)( T("this is grabbed by osTid:")+TF1(grab.osTidF())+T(" idAdamRoot:")+TF1(idAdamRoot)+T(" idAdam:")+TF1(idAdam)+T(" idThread:")+TF1(((tin123S&)tin0Copy).monitor.idThread)+T(" postThreadName:\"")+TF1(((tin123S&)tin0Copy).postThreadName)+T("\"\r\n") ) ;
+                                                                    sRptTin << (strokeS*)( T("this is grabbed by osTid:")+TF1(grab.osTidF())+T(" idAdamRoot:")+TF1(idAdamRoot)+T(" idAdam:")+TF1(idAdam)+T(" idThread:")+TF1(((tin123S&)tin0Copy).glass.idThread)+T(" postThreadName:\"")+TF1(((tin123S&)tin0Copy).postThreadName)+T("\"\r\n") ) ;
                                                                     //etRock.traceF( tin0P , T("tmReportF a/ 9 / 7") ) ; //U:: TO FIND A BUG
 
                                                                     }
@@ -2112,7 +2112,7 @@ DONE( tmReportF )
                                                         {
                                                         if( bOk )
                                                         }
-                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabC ) , bOk , (voidT*)((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
+                                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( grabC ) , bOk , (voidT*)((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
                                                             _IO_
                                                         {
                                                         ZE( boolT , bOk ) ;
@@ -2137,7 +2137,7 @@ DONE( tmReportF )
                                         }
                                             if( !bOk || getNegAM( recheck ) != FINGERnEG_GRABc ) pbg = 0 ;
                                             }
-                                                thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&recheck , sizeof( recheck ) , bOk , (voidT*)((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
+                                                thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&recheck , sizeof( recheck ) , bOk , (voidT*)((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
                                                 _IO_
                                             {
                                             ZE( countT , recheck ) ;
@@ -2147,7 +2147,7 @@ DONE( tmReportF )
                                         else
                                         if( !bOk || getNegAM( pbg->finger ) != FINGERnEG_GRABc ) pbg = 0 ;
                                         }
-                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( baseGrabC ) , bOk , (voidT*)((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
+                                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof( baseGrabC ) , bOk , (voidT*)((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).osPid ) ;
                                             _IO_
                                         {
                                         ZE( boolT , bOk ) ;
@@ -2161,12 +2161,12 @@ DONE( tmReportF )
                                     ZE( byteT* , pbCopy ) ;
             
                                     bDash |= reportGrabF( tin0P , sRptTin , T("grabbing:") , pcPanLifi ) ;
-                                    //countT pcPanLifi[] = { 0 , ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 1 ] , ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 2 ] } ; // THE PAN IS NOT USED BECAUSE HERE IT IS ALWAYS baseGrabC*, UNLIKE WHAT IS DONE IN THE GRABBED ARRAY
-                                    countT pcPanLifi[] = { ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 1 ] , ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 2 ] } ;
+                                    //countT pcPanLifi[] = { 0 , ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 1 ] , ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 2 ] } ; // THE PAN IS NOT USED BECAUSE HERE IT IS ALWAYS baseGrabC*, UNLIKE WHAT IS DONE IN THE GRABBED ARRAY
+                                    countT pcPanLifi[] = { ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 1 ] , ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 2 ] } ;
                                     //etRock.traceF( tin0P , T("tmReportF a/ c") ) ; //U:: TO FIND A BUG
                                     _IO_
                                 {
-                                if( ((tin123S&)tin0Copy).monitor.pPanLifiGrabbing[ 0 ] && !bQuitEatingP )
+                                if( ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 0 ] && !bQuitEatingP )
                                 //etRock.traceF( tin0P , T("tmReportF a/ d") ) ; //U:: TO FIND A BUG
             
                                 }
@@ -2180,7 +2180,7 @@ DONE( tmReportF )
                                     const countT offEnd = OFFgRABBEDmAX * 5 ;
                                     _IO_
                                 {
-                                if( ((tin123S&)tin0Copy).monitor.cGrabbed )
+                                if( ((tin123S&)tin0Copy).glass.cGrabbed )
                     
                                 ZE( boolT , bDash ) ;
                             
@@ -2191,7 +2191,7 @@ DONE( tmReportF )
                                 {
                                 if( osPidEventP == ((tin123S&)tin0Copy).osPid && osTidEventP == ((tin123S&)tin0Copy).osTid )
                     
-                                sRptTin << (strokeS*)( T("\r\n\r\n")+TF3(((tin123S&)tin0Copy).monitor.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+TP(((tin123S&)tin0Copy).postThreadName,0x10)+T(" ")+TF3(((tin123S&)tin0Copy).monitor.idStep,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+TF3(head.cStepsNew,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+tc4+T(((tin123S&)tin0Copy).postTell)+T("\r\n" DASH256 "\r\n") ) ;
+                                sRptTin << (strokeS*)( T("\r\n\r\n")+TF3(((tin123S&)tin0Copy).glass.idThread,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+TP(((tin123S&)tin0Copy).postThreadName,0x10)+T(" ")+TF3(((tin123S&)tin0Copy).glass.idStep,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+TF3(head.cStepsNew,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES,9)+tc4+T(((tin123S&)tin0Copy).postTell)+T("\r\n" DASH256 "\r\n") ) ;
 
                                 //CONoUTrAW( TF2(idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(": ")+TF2(head.idAdamRoot,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(".")+TF2(head.idAdam,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" ")+T(((tin123S&)tin0Copy).postThreadName)+T("\r\n") ) ;
                     
@@ -2218,7 +2218,7 @@ DONE( tmReportF )
                                 costai = 1 + thirdC::c_strlenIF( tin0P , ((tin123S&)tin0Copy).postThreadName    ) ; thirdC::c_memcpyIF( tin0P , pbc , ((tin123S&)tin0Copy).postThreadName   , costai )  ; pbc += costai ;               /*C*/
                                 ZE( countT , costai ) ;
                 
-                                thirdC::c_memcpyIF( tin0P , pbc , (byteT*)&((tin123S&)tin0Copy).monitor , sizeof( monitorS ) ) ; pbc += sizeof( monitorS ) ; /*B*/
+                                thirdC::c_memcpyIF( tin0P , pbc , (byteT*)&((tin123S&)tin0Copy).glass , sizeof( glassS ) ) ; pbc += sizeof( glassS ) ; /*B*/
                                 costaVarying += 1 + tc4.csF( tin0P ) ;
                                 TN( tc4 , "" ) ; tc4 = T("[")+T((countT*)((tin123S&)tin0Copy).c4Tell)+T("]") ;
                                 //etRock.traceF( tin0P , T("tmReportF a/ e") ) ; //U:: TO FIND A BUG
@@ -2231,13 +2231,13 @@ DONE( tmReportF )
                                 OStEXTAK( os , "\"\r\n" ) ;
                                 OStEXTA(  os , ((tin123S&)tin0Copy).postThreadName ) ;
                                 OStEXTAK( os , "\"" ) ;
-                                OStEXTC(  os , ((tin123S&)tin0Copy).monitor.idThread , 0 ) ;
+                                OStEXTC(  os , ((tin123S&)tin0Copy).glass.idThread , 0 ) ;
                                 OStEXTAK( os , "suppressing detail for thread " ) ;
                                 OStEXT(  os , TUCK ) ;
                             {
                             if( F(((tin123S&)tin0Copy).flagsThreadMode2) & flTHREADmODE2_MONITORdOnOTrEPORToNmE )
 
-                            //etRock.traceF( tin0P , T("reporting on tin123S [idThread,postThreadName]:    ")+TF2(((tin123S&)tin0Copy).monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(((tin123S&)tin0Copy).postThreadName) ) ;
+                            //etRock.traceF( tin0P , T("reporting on tin123S [idThread,postThreadName]:    ")+TF2(((tin123S&)tin0Copy).glass.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(((tin123S&)tin0Copy).postThreadName) ) ;
                 
                             tin0S&   tin0Copy     = *(tin0S*)( pbFrom + sizeof( copyHeadS ) ) ;
                             copyHeadS& head     = *(copyHeadS*)pbFrom ;
@@ -2272,7 +2272,7 @@ DONE( tmReportF )
                     ;
 
                         + costaVarying
-                        + sizeof( monitorS ) * (countT)cFlavorsToReport /*B*/
+                        + sizeof( glassS ) * (countT)cFlavorsToReport /*B*/
                         4 * sizeof( countT )                    /*A*/
 
                     cbBookOut =
@@ -2507,8 +2507,8 @@ DONE( tmReportF )
             
                                             thirdC::c_memcpyIF( tin0P , pbTo + sizeof( copyHeadS ) , (byteT*)pCopy , sizeof( tin123S ) ) ;
             
-                                                                                                    entry.idStepLath = ((tin123S*)pCopy)->monitor.idStep ;
-                                            head.cStepsNew = ((tin123S*)pCopy)->monitor.idStep - entry.idStepLath ;
+                                                                                                    entry.idStepLath = ((tin123S*)pCopy)->glass.idStep ;
+                                            head.cStepsNew = ((tin123S*)pCopy)->glass.idStep - entry.idStepLath ;
             
                                             head.idAdam     = memorySpaceP.pczLeverAdam[ 1 ] ;
                                             head.idAdamRoot = memorySpaceP.pczLeverAdam[ 0 ] ;

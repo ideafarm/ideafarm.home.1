@@ -99,7 +99,7 @@ DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
                 }
                     dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */
                     if( !bFake ) { DEL( pTaskP ) ; } /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.  THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */
-                    if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] = - 1 ;_
+                    if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] = - 1 ;_
                     TELL( "DONEpART0: i am outa here" )
                     ;_
                         : thirdC::os_cAllKidThreadsI_IF( tin0P )
@@ -141,7 +141,7 @@ DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
 
                     }
                         }
-                            if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+                            if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
                             if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;_
                             }
                                 TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;_
@@ -160,7 +160,7 @@ DWORD WINAPI tmGorillaRawF( LPVOID pvArgP )
                             TELL( "DONEpART0: after returning from application code" ) ;_
                             ((tin123S&)tin0P).idPhase2 = 0 ;_
                             if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;_
-                            if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+                            if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
                             TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */
                         {
 
@@ -217,7 +217,7 @@ if( pTaskP )
 
 
 
-                    if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+                    if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
                     _IO_
                     if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;_
                     (countT&)_stackTop = espAM() ;_
@@ -226,7 +226,7 @@ if( pTaskP )
                     if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;_
                     }
                         etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;_
-                        etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T("tmGorillaF")+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;_
+                        etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T("tmGorillaF")+tDot+TF1(((tin123S&)tin0P).glass.idThread) ) ; ___( psttThreadFile ) ;_
                         TN( tDot , "." ) ;_
                     {
                     if( F( ((thirdC&)etThread).third_flagsModeAdam1I_IF( tin0P ) ) & flADAMmODE1_SEEtHREADSaSfILES )
@@ -237,7 +237,7 @@ if( pTaskP )
                 ((tin123S&)tin0P).pEther = &etThread ;_
                 TELL( "TASK123pART0: final setup" )
 
-                /*POPUP( TF1(((tin123S&)tin0P).monitor.idThread)+T(" ")+T(((tin123S&)tin0P).postThreadName)+T("\r\n") ) ;*/
+                /*POPUP( TF1(((tin123S&)tin0P).glass.idThread)+T(" ")+T(((tin123S&)tin0P).postThreadName)+T("\r\n") ) ;*/
 
                 ((tin123S&)tin0P).pScoopEtThread = new( 0 , tin0P , LF ) scoopC( tin0P , etThread ) ; ___( ((tin123S&)tin0P).pScoopEtThread  ) ;_
                 etherC& etThread  = *pEtThread ;_
@@ -258,7 +258,7 @@ if( pTaskP )
             /*CODEsYNC: 00100df 0010055*/
 
             ((tin123S&)tin0P).pcQuit = &(const countT&)ether ;_
-            ((tin123S&)tin0P).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tin0P ) ;_
+            ((tin123S&)tin0P).glass.idProcessOld = thirdC::third_idProcessOldI_IF( tin0P ) ;_
             ((tin123S&)tin0P).idlTask  = ifcLINE ;_
             ((tin123S&)tin0P).idiTask  = DDNUMB ;_
             TELL( "TASK123pART0: setting miscellaneous fields in tin0P" )
@@ -290,7 +290,7 @@ if( pTaskP )
         OStEXTcLEAR( _ostoTmp )
         osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _statRangerTag , _statRangerTag.cbF() ) ;_
         tlsBlobC _statRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;_
-        OStEXTC(  _ostoTmp , ((tin123S&)tin0P).monitor.idThread , 0 )
+        OStEXTC(  _ostoTmp , ((tin123S&)tin0P).glass.idThread , 0 )
         OStEXTAK( _ostoTmp , "." )
         OStEXTA(  _ostoTmp , ((tin123S&)tin0P).postThreadName )
         OStEXTAK( _ostoTmp , "RangerTag:threadStack." )
@@ -298,7 +298,7 @@ if( pTaskP )
         OStEXT(   _ostoTmp , 0x80 )
 
         _IO_ TELLsYSlIFInAME( "tmGorillaF" )
-        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+        if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
         TINSL
     {
     countT tmGorillaF_workF( countT argP )

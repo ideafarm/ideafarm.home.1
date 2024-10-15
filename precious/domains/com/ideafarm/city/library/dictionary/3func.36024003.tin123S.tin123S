@@ -8,7 +8,7 @@
 
 
 }
-    if( this == &tin0SelfOrElderP && monitor.idThread > 3 ) flagsThreadMode4 &= ~( F(flTHREADmODE4_INoUTfRAMEdEFERwRITINGaPPtELEMETRY) ) ;
+    if( this == &tin0SelfOrElderP && glass.idThread > 3 ) flagsThreadMode4 &= ~( F(flTHREADmODE4_INoUTfRAMEdEFERwRITINGaPPtELEMETRY) ) ;
 
     }
         //SAYnAME( " tin123S/-\r\n" )
@@ -30,7 +30,7 @@
                 {
                 if( !pbPendingInOutFramePackets )
             {
-            if( monitor.idThread > 3 && !( F(flags) & flTINs_NOiNoUTfRAMEsUPPORT ) ) // FOR THREAD 1, SEE do3; THREAD 2 3 ARE tinHeart AND tinBreak
+            if( glass.idThread > 3 && !( F(flags) & flTINs_NOiNoUTfRAMEsUPPORT ) ) // FOR THREAD 1, SEE do3; THREAD 2 3 ARE tinHeart AND tinBreak
 
             if( idTinNamed == ifcIDtINnAMED_tinBreakI ) thirdC::c_strncpyIF( tin0P , postTell , "refusalsToClose:0    logoffsSeen:0" , sizeof postTell ) ; //CODEsYNC: 12f0006 10200cc
             thirdC::c_strncpyIF( tin0P , postTell , "tin123S::tin123S: i am now registered" , sizeof postTell ) ;
@@ -83,7 +83,7 @@
             {
             if( idTinNamed == ifcIDtINnAMED_tinHeartI || idTinNamed == ifcIDtINnAMED_tinBreakI || idTinNamed == ifcIDtINnAMED_tinEarlyLate )
         
-            if( idTinNamed == ifcIDtINnAMED_tin9VeryVeryEarlyLateMainI && monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2I.pcPhaseLow[ monitor.idThread ] ) ) { BLAMMO ; }
+            if( idTinNamed == ifcIDtINnAMED_tin9VeryVeryEarlyLateMainI && glass.idThread <= ClOWtHREADS && !( ++ processGlobal2I.pcPhaseLow[ glass.idThread ] ) ) { BLAMMO ; }
 
             TELL( "tin123S: after setting processGlobal2I.flCt flag" )
             }
@@ -98,7 +98,7 @@
                         OStEXTAK( ostoSay , "    " ) ;
                         OStEXTC(  ostoSay , cbStack , 0 ) ;
                         OStEXTAK( ostoSay , "    " ) ;
-                        OStEXTC(  ostoSay , monitor.idThread , 0 ) ;
+                        OStEXTC(  ostoSay , glass.idThread , 0 ) ;
                         OStEXTAK( ostoSay , "_9    " ) ;
                         OStEXTC9( ostoSay , osTid ) ;
                         OStEXTAK( ostoSay , "_9    " ) ;
@@ -164,13 +164,13 @@
                 where.idDirty ++ ;
         
                 }
-                    thirdC::c_strncpyIF( tin0P , processGlobal3I.pLowThread[ monitor.idThread ].postThreadName , postThreadName , sizeof processGlobal3I.pLowThread[ monitor.idThread ].postThreadName ) ;
-                    processGlobal3I.pLowThread[ monitor.idThread ].osTid = osTid ;
-                    if( processGlobal3I.pLowThread[ monitor.idThread ].osTid ) { BLAMMO ; }
+                    thirdC::c_strncpyIF( tin0P , processGlobal3I.pLowThread[ glass.idThread ].postThreadName , postThreadName , sizeof processGlobal3I.pLowThread[ glass.idThread ].postThreadName ) ;
+                    processGlobal3I.pLowThread[ glass.idThread ].osTid = osTid ;
+                    if( processGlobal3I.pLowThread[ glass.idThread ].osTid ) { BLAMMO ; }
                 {
-                if( monitor.idThread <= ClOWtHREADS )
+                if( glass.idThread <= ClOWtHREADS )
                 
-                //U::WILL pPoop WORK?: declareVmUsageTypeGF( tin0P , (byteT*)((tin123S&)tin0P).pPoop , flVMuSAGEtYPE_CPUsTACK , monitor.idThread , postThreadName ) ;
+                //U::WILL pPoop WORK?: declareVmUsageTypeGF( tin0P , (byteT*)((tin123S&)tin0P).pPoop , flVMuSAGEtYPE_CPUsTACK , glass.idThread , postThreadName ) ;
                 thirdC::c_strncpyIF( tin0P , postThreadName , postThreadNameP , sizeof postThreadName ) ;
         
                 //where.pLFnest[ 3 ] = idiFileCt ;
@@ -215,7 +215,7 @@
         
                 }
                     }
-                        //LOG rAW3nOtIN( "/" , monitor.idThread , "/+\r\n" ) ;
+                        //LOG rAW3nOtIN( "/" , glass.idThread , "/+\r\n" ) ;
                         //LOG rAWnOtIN( postThreadNameP ) ;
                         //LOG rAW3nOtIN( "" , pag1->idAdam , " " ) ;
                     {

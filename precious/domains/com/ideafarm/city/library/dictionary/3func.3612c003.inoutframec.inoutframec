@@ -125,7 +125,7 @@
                         OStEXTC(  ostoSay , idiFileCt , 0 ) ;_
                         OStEXT(   ostoSay , TUCK << 1 ) ;_
                     {
-                    if( !( ((tin123S&)tin0P).bSuppressInOutTrace ++ ) && ((tin123S&)tin0P).monitor.idThread != ifcIDtHREADlOW_tmHeartF && ((tin123S&)tin0P).monitor.idThread != ifcIDtHREADlOW_break && ((tin123S&)tin0P).monitor.idThread != ifcIDtHREADlOW_tmKillSocketF && ((tin123S&)tin0P).monitor.idThread != ifcIDtHREADlOW_tmWatchF && ((tin123S&)tin0P).monitor.idThread != ifcIDtHREADlOW_tmTimeNowF )
+                    if( !( ((tin123S&)tin0P).bSuppressInOutTrace ++ ) && ((tin123S&)tin0P).glass.idThread != ifcIDtHREADlOW_tmHeartF && ((tin123S&)tin0P).glass.idThread != ifcIDtHREADlOW_break && ((tin123S&)tin0P).glass.idThread != ifcIDtHREADlOW_tmKillSocketF && ((tin123S&)tin0P).glass.idThread != ifcIDtHREADlOW_tmWatchF && ((tin123S&)tin0P).glass.idThread != ifcIDtHREADlOW_tmTimeNowF )
                 {
                 if( ph && ph->flags & F(flHOMEs_INoUTtRACE) )
 
@@ -164,10 +164,10 @@
 
                 const countT offonk = ( ((tin123S&)tin0P).where.cInNest + 1 ) & OFFsLOTtINnESTmAX ; // "k" IS FOR "KID"
                 const countT offon  = ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ; const countT offon2 = offon << 1 ;_
-                const countT offos  = ((tin123S&)tin0P).monitor.idStep  & OFFsLOTtINsTEPmAX ; const countT offos2 = offos << 1 ;_
+                const countT offos  = ((tin123S&)tin0P).glass.idStep  & OFFsLOTtINsTEPmAX ; const countT offos2 = offos << 1 ;_
 
                 ((tin123S&)tin0P).where.cInNest ++ ;_
-                ((tin123S&)tin0P).monitor.idStep ++ ;_
+                ((tin123S&)tin0P).glass.idStep ++ ;_
                 ((tin123S&)tin0P).where.idDirty ++ ;_
             {
             if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( ((tin123S&)tin0P).where.idDirty % 2 ) )
@@ -275,7 +275,7 @@
 
         }
             //}
-            //    CONoUTrAW5( "\r\ninOutFrameC thread stack max usage [idThread,usedPerTuck]:    " , ((tin123S&)tin0P).monitor.idThread , "    " , usedPerTuck , "\r\n" ) ;
+            //    CONoUTrAW5( "\r\ninOutFrameC thread stack max usage [idThread,usedPerTuck]:    " , ((tin123S&)tin0P).glass.idThread , "    " , usedPerTuck , "\r\n" ) ;
             //    countT usedPerTuck = cbStackUsed * 0x100 / cbStackAll ;
             //    countT cbStackUsed = ((tin123S&)tin0P).pbThreadStackEnd - ((tin123S&)tin0P).pbThreadStackLowest ;
             //    countT cbStackAll  = ((tin123S&)tin0P).pbThreadStackEnd - ((tin123S&)tin0P).pbThreadStackStart ;

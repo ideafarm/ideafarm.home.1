@@ -329,7 +329,7 @@ class   /*ff*/booksC/*ff*/                                              ; /*ff*/
 class   /*ff*/pageC/*ff*/                                               ; /*ff*//**//*ff*/
 class   /*ff*/branchPageC/*ff*/                                         ; /*ff*//**//*ff*/
 class   /*ff*/jotC/*ff*/                                                ; /*ff*//**//*ff*/
-struct  /*ff*/monitorS/*ff*/                                            ; /*ff*//**//*ff*/
+struct  /*ff*/glassS/*ff*/                                              ; /*ff*//**//*ff*/
 struct  /*ff*/fireGroupS/*ff*/                                          ; /*ff*//**//*ff*/
 struct  /*ff*/doC/*ff*/                                                 ; /*ff*//**//*ff*/
 class   /*ff*/refCounterC/*ff*/                                         ; /*ff*//**//*ff*/
@@ -1963,7 +1963,7 @@ it is illegal to refer to this symbol in the definition of an adam
     countT taskFP##_workF( countT argP )                                                                                                                                                                                                                                                        \
     {                                                                                                                                                                                                                                                                                           \
         TINSL                                                                                                                                                                                                                                                                                   \
-        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                                                                                                 \
+        if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }                                                                                                                 \
         _IO_ TELLsYSlIFInAME( #taskFP )                                                                                                                                                                                                                                                         \
                                                                                                                                                                                                                                                                                                 \
         /*OStEXT(   _ostoTmp , 0x80 )                                                                                                           */                                                                                                                                              \
@@ -1971,7 +1971,7 @@ it is illegal to refer to this symbol in the definition of an adam
         /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                       */                                                                                                                                              \
         /*OStEXTA(  _ostoTmp , ((tin123S&)tin0P).postThreadName )                                                                               */                                                                                                                                              \
         /*OStEXTAK( _ostoTmp , "." )                                                                                                            */                                                                                                                                              \
-        /*OStEXTC(  _ostoTmp , ((tin123S&)tin0P).monitor.idThread , 0 )                                                                         */                                                                                                                                              \
+        /*OStEXTC(  _ostoTmp , ((tin123S&)tin0P).glass.idThread , 0 )                                                                         */                                                                                                                                              \
         /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */                                                                                                                                              \
         /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/                                                                                                                                              \
         /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                      */                                                                                                                                              \
@@ -2023,7 +2023,7 @@ it is illegal to refer to this symbol in the definition of an adam
             TELL( "TASK123pART0: setting miscellaneous fields in tin0P" )                                                                                                                                                                                                                       \
             ((tin123S&)tin0P).idiTask  = DDNUMB ;                                                                                                                                                                                                                                               \
             ((tin123S&)tin0P).idlTask  = ifcLINE ;                                                                                                                                                                                                                                              \
-            ((tin123S&)tin0P).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tin0P ) ;                                                                                                                                                                                                  \
+            ((tin123S&)tin0P).glass.idProcessOld = thirdC::third_idProcessOldI_IF( tin0P ) ;                                                                                                                                                                                                  \
             ((tin123S&)tin0P).pcQuit = &(const countT&)ether ;                                                                                                                                                                                                                                  \
                                                                                                                                                                                                                                                                                                 \
             /*etRock.traceF( tin0P , T("TASK123pART0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/                                                                                                    \
@@ -2051,7 +2051,7 @@ it is illegal to refer to this symbol in the definition of an adam
                   byteT pbScoop[ sizeof( scoopC ) ] ;                                                                                                                                                                                                                                           \
                   ((tin123S&)tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin123S&)tin0P).pScoopEtThread  ) ;                                                                                                                   \
                                                                                                                                                                                                                                                                                                 \
-                /*POPUP( TF1(((tin123S&)tin0P).monitor.idThread)+T(" ")+T(((tin123S&)tin0P).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                     \
+                /*POPUP( TF1(((tin123S&)tin0P).glass.idThread)+T(" ")+T(((tin123S&)tin0P).postThreadName)+T("\r\n") ) ;*/                                                                                                                                                                     \
                                                                                                                                                                                                                                                                                                 \
                 TELL( "TASK123pART0: final setup" )                                                                                                                                                                                                                                             \
                   ((tin123S&)tin0P).pEther = &etThread ;                                                                                                                                                                                                                                        \
@@ -2065,7 +2065,7 @@ it is illegal to refer to this symbol in the definition of an adam
                     if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )                                                                                                                                                                                            \
                     {                                                                                                                                                                                                                                                                           \
                         TN( tDot , "." ) ;                                                                                                                                                                                                                                                      \
-                        etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;                                         \
+                        etThread.strMakeF( tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T(#taskFP)+tDot+TF1(((tin123S&)tin0P).glass.idThread) ) ; ___( psttThreadFile ) ;                                         \
                         etThread.boxPutF( tin0P , psttThreadFile , "T" ) ;                                                                                                                                                                                                                      \
                     }                                                                                                                                                                                                                                                                           \
                       if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;                                                            \
@@ -2074,7 +2074,7 @@ it is illegal to refer to this symbol in the definition of an adam
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                                                                                                                             \
                     if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                                                                                                                         \
                     _IO_                                                                                                                                                                                                                                                                        \
-                    if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+                    if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -2113,7 +2113,7 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                                      \
                     {                                                                                                                                                                                                                                                                \
                         TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */                                                                                                                                                                                       \
-                        if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                               \
+                        if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }                                               \
                         if( ((tin1S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin1S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;                                                                                                                                        \
                         ((tin1S&)tin0P).idPhase2 = 0 ;                                                                                                                                                                                                                               \
                         TELL( "DONEpART0: after returning from application code" ) ;                                                                                                                                                                                                 \
@@ -2156,7 +2156,7 @@ it is illegal to refer to this symbol in the definition of an adam
                             TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;                                                                                                                                                                       \
                         }                                                                                                                                                                                                                                                            \
                         if( ((tin1S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin1S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;                                                                                                                                    \
-                        if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }                                               \
+                        if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }                                               \
                     }                                                                                                                                                                                                                                                                \
                 }                                                                                                                                                                                                                                                                    \
                                                                                                                                                                                                                                                                                      \
@@ -2210,7 +2210,7 @@ it is illegal to refer to this symbol in the definition of an adam
                 }                                                                                                                                                                                                                                                                    \
                                                                                                                                                                                                                                                                                      \
                 TELL( "DONEpART0: i am outa here" )                                                                                                                                                                                                                                  \
-                if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] = - 1 ;                                                                       \
+                if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] = - 1 ;                                                                       \
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */                                                                                                                                                                                     \
             }                                                                                                                                                                                                                                                                        \
         }                                                                                                                                                                                                                                                                            \
@@ -6853,7 +6853,7 @@ be sure to set all ((tin1S&)tin0P).pag1->_thirdC_.break_idThread and ((tin1S&)ti
 /**/
 
 /*1*//*BREAKiF*//*1*/
-#define BREAKiF if( ((tin1S&)tin0P).pag1->_thirdC_.break_idStep && ((tin1S&)tin0P).pag1->_thirdC_.break_idStep <= ((tin123S&)tin0P).monitor.idStep && ( !((tin1S&)tin0P).pag1->_thirdC_.break_idThread || ((tin1S&)tin0P).pag1->_thirdC_.break_idThread == ((tin123S&)tin0P).monitor.idThread ) ) thirdC::thirdBreakIF( tin0P )
+#define BREAKiF if( ((tin1S&)tin0P).pag1->_thirdC_.break_idStep && ((tin1S&)tin0P).pag1->_thirdC_.break_idStep <= ((tin123S&)tin0P).glass.idStep && ( !((tin1S&)tin0P).pag1->_thirdC_.break_idThread || ((tin1S&)tin0P).pag1->_thirdC_.break_idThread == ((tin123S&)tin0P).glass.idThread ) ) thirdC::thirdBreakIF( tin0P )
 
 
 //
@@ -13237,7 +13237,7 @@ saOLD_KTaTTACH*
     {                                                                                                                       \
         TINSL                                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                                           \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , ' ' ) ;                                                                          \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , ' ' ) ;                                                                          \
         OStEXTAK( ostoBuf , "." ) ;                                                                                         \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                                                          \
         OStEXTAK( ostoBuf , ": " ) ;                                                                                        \
@@ -15307,7 +15307,7 @@ see QUITO
         OStEXTAK( ostoTitle , "idAdam:" ) ;                                                                              \
         OStEXTC( ostoTitle , processGlobal1S::_processGlobal1I_IF().idAdamRoot , 0 ) ;                                                   \
         OStEXTAK( ostoTitle , " ; idThread:" )  ;                                                                      \
-        OStEXTC( ostoTitle , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                                                    \
+        OStEXTC( ostoTitle , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                                                    \
         OStEXTAK( ostoTitle , " ; thread:\"" ) ;                                                                       \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoTitle , ((tin123S&)tin0P).postThreadName ) ;                                                                  \
         OStEXTAK( ostoTitle , "\"" ) ;                                                                                 \
@@ -18556,7 +18556,7 @@ if cBitsP is f then 01 bits is indicated
 #define SET_bStopOk                                                                                                                                                         \
                                                                                                                                                                             \
     boolT _bStopOk = 1 ;                                                                                                                                                    \
-    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).monitor.cGrabbed && !( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) )       \
+    if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && ((tin123S&)tin0P).glass.cGrabbed && !( F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) )       \
     {                                                                                                                                                                       \
         const countT offEnd = OFFgRABBEDmAX * 5 ;                                                                                                                           \
         for( countT off = 0 ; off < offEnd ; off += 5 )                                                                                                                     \
@@ -24599,7 +24599,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
     /*if( !thirdC::c_strcmpIF( tin0P , ((tin123S&)tin0P).postThreadName , "tmAnimateSadamsOnPaperF" ) )*/             \
     {                                                                                                   \
         OStEXT( ostoBuf , 0x2000 )                                                                      \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                                \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                                \
         OStEXTAK( ostoBuf , " " ) ;                                                                     \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                                      \
         OStEXTAK( ostoBuf , " | " ) ;                                                                   \
@@ -25316,7 +25316,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -25354,7 +25354,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -25394,7 +25394,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -26428,7 +26428,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -26605,7 +26605,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -26651,7 +26651,7 @@ it is illegal to refer to this symbol anywhere but in the definition of a BwOTHs
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -28537,7 +28537,7 @@ can be used for sCountC as well as measureT and sCountT and countT
             napkinC& napWord = *etherC::ifc_ppNapWordI_IF()[ _wwIdMine ] ;                                  \
             _wwPcSlots = (countT*)(byteT*)napWord + 4 ;                                                     \
             if( getNegAM( _wwPcSlots[ - 4 ] ) != FINGERnEG_NAPwORD ) { BLAMMO ; }                           \
-            if( !setIfZeAM( _wwPcSlots[ - 3 ] , ((tin123S&)tin0P).monitor.idThread ) )                                   \
+            if( !setIfZeAM( _wwPcSlots[ - 3 ] , ((tin123S&)tin0P).glass.idThread ) )                                   \
             {                                                                                               \
                 _wwPcTally = _wwPcSlots - 2 ;                                                               \
                 _wwSlots = _wwPcSlots[ - 1 ] ;                                                              \
@@ -28822,7 +28822,7 @@ can be used for sCountC as well as measureT and sCountT and countT
                                                                                                     \
     {                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                   \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                            \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                            \
         OStEXTAK( ostoBuf , " " ) ;                                                                 \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                                  \
         OStEXTAK( ostoBuf , " | " ) ;                                                               \
@@ -49107,7 +49107,7 @@ use this rather than _ to avoid the overhead of _
     /*if( !thirdC::c_strcmpIF( tin0P , ((tin123S&)tin0P).postThreadName , "tmAnimateSadamsOnPaperF" ) )*/             \
     {                                                                                                   \
         OStEXT( ostoBuf , 0x2000 )                                                                      \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                                \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                                \
         OStEXTAK( ostoBuf , " " ) ;                                                                     \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                                      \
         OStEXTAK( ostoBuf , " | " ) ;                                                                   \
@@ -49144,7 +49144,7 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -49182,7 +49182,7 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -49222,7 +49222,7 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -49264,7 +49264,7 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -49308,7 +49308,7 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -49354,7 +49354,7 @@ use this rather than _ to avoid the overhead of _
                                                                                          \
     {                                                                                    \
         OStEXT( ostoBuf , 0x140 )                                                        \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                 \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                 \
         OStEXTAK( ostoBuf , " " ) ;                                                      \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                       \
         OStEXTAK( ostoBuf , " | " ) ;                                                    \
@@ -49488,7 +49488,7 @@ use this rather than _ to avoid the overhead of _
                                                                                                     \
     {                                                                                               \
         OStEXT( ostoBuf , 0x140 )                                                                   \
-        OStEXTC( ostoBuf , ((tin123S&)tin0P).monitor.idThread , 0 ) ;                                            \
+        OStEXTC( ostoBuf , ((tin123S&)tin0P).glass.idThread , 0 ) ;                                            \
         OStEXTAK( ostoBuf , " " ) ;                                                                 \
         if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;                                                  \
         OStEXTAK( ostoBuf , " | " ) ;                                                               \
@@ -51955,7 +51955,7 @@ values at and above 00ff are used by spouseC to encode literal byte values
         {                                                                                                   \
             if( !((tin1S&)tin0P).pag1->pcIdThreadTrace[ offo ] )                                               \
             {                                                                                               \
-                ((tin1S&)tin0P).pag1->pcIdThreadTrace[ offo ] = ((tin123S&)tin0P).monitor.idThread ;                        \
+                ((tin1S&)tin0P).pag1->pcIdThreadTrace[ offo ] = ((tin123S&)tin0P).glass.idThread ;                        \
                 bSet ++ ;                                                                                   \
                 break ;                                                                                     \
             }                                                                                               \

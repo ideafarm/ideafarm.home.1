@@ -206,7 +206,7 @@ U::NEED TO PASS IN A bitsC REFERENCE
         stackC  stGrab(                     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB                /*flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | */ , sizeof( grabEntryS       ) ) ;
 
         //thirdC  thUnserializedPool(         tin0P , TAG( TAGiDnULL ) , poolOldSetOldUnserialized ) ;
-        //p oolC   poolOldSetOldUnserialized(     tin0P , TAG( TAGiDnULL ) , T("monitor.unserialized.main.")+TF1(((tin123S&)tin0P).osPid)+T(".")+TF1(((tin123S&)tin0P).monitor.idThread) , flPOOLoLDc_UNSERIALIZED | flPOOLoLDc_UNSERIALIZEDmULTItHREAD ) ; U:: FLAG "UNSERIALIZED"
+        //p oolC   poolOldSetOldUnserialized(     tin0P , TAG( TAGiDnULL ) , T("monitor.unserialized.main.")+TF1(((tin123S&)tin0P).osPid)+T(".")+TF1(((tin123S&)tin0P).glass.idThread) , flPOOLoLDc_UNSERIALIZED | flPOOLoLDc_UNSERIALIZEDmULTItHREAD ) ; U:: FLAG "UNSERIALIZED"
         //U::CONJ: OBSOLETE: 
 
         ZE( countT , conditionalGrab ) ;
@@ -1847,13 +1847,13 @@ TELL( "i am outa here" )
                         }
                             }
                                 cNewSteps += monitor.cNewSteps ;
-                                thirdC::dosWriteProcessMemoryIF( tin0P , countTC() , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).monitor - (byteT*)&tin0P ) ) , entry.osPid , (byteT*)&monitor , sizeof monitor ) ;
+                                thirdC::dosWriteProcessMemoryIF( tin0P , countTC() , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).glass - (byteT*)&tin0P ) ) , entry.osPid , (byteT*)&monitor , sizeof monitor ) ;
                                 stampF( tin0P , etThread , monitor , idStep ) ;
                                 monitorOldS& monitor = *(monitorOldS*)( &idStep + 1 ) ;
                                 countT&   idStep  = *(countT*)pbCopy ;
                             {
                             if( bOk )
-                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof pbCopy , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).monitor.idStep - (byteT*)&tin0P ) ) , entry.osPid ) ;
+                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof pbCopy , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).glass.idStep - (byteT*)&tin0P ) ) , entry.osPid ) ;
                             ZE( boolT , bOk ) ;
                             byteT pbCopy[ sizeof( countT ) + sizeof( monitorOldS ) ] ;
                         {
@@ -1862,7 +1862,7 @@ TELL( "i am outa here" )
                             cNewSteps += monitor.cNewSteps ;
                             stampF( tin0P , etThread , monitor , idStep ) ;
                             monitorOldS& monitor = *(monitorOldS*)( &idStep + 1 ) ;
-                            countT&   idStep  = *(countT*)( (byteT*)ap_artmentOldC( tin0P , entry.ip ) + ( (byteT*)&((tin123S&)tin0P).monitor.idStep - (byteT*)&tin0P ) ) ;
+                            countT&   idStep  = *(countT*)( (byteT*)ap_artmentOldC( tin0P , entry.ip ) + ( (byteT*)&((tin123S&)tin0P).glass.idStep - (byteT*)&tin0P ) ) ;
                         {
                         if( entry.bIda )
             

@@ -11,15 +11,15 @@
     }
         ((tin123S&)tin0P).where.idDirty ++ ;
         ((tin123S&)tin0P).pIdInNest[ ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ] ++ ;
-        ((tin123S&)tin0P).pLFstep[ ( ((tin123S&)tin0P).monitor.idStep      & OFFsLOTtINsTEPmAX ) << 1 ] = ( ((tin123S&)tin0P).where.pLFnest[ ( ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ) << 1 ] = ifcLINE & ~fliSTEP_FLAGmASK ) | fliSTEP_NESTcHANGE ;
-        ((tin123S&)tin0P).pLFstep[ ( ( ((tin123S&)tin0P).monitor.idStep      & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] =   ((tin123S&)tin0P).where.pLFnest[ ( ( ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] = DDNUMB ;
+        ((tin123S&)tin0P).pLFstep[ ( ((tin123S&)tin0P).glass.idStep      & OFFsLOTtINsTEPmAX ) << 1 ] = ( ((tin123S&)tin0P).where.pLFnest[ ( ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ) << 1 ] = ifcLINE & ~fliSTEP_FLAGmASK ) | fliSTEP_NESTcHANGE ;
+        ((tin123S&)tin0P).pLFstep[ ( ( ((tin123S&)tin0P).glass.idStep      & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] =   ((tin123S&)tin0P).where.pLFnest[ ( ( ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] = DDNUMB ;
         _idProgressNestSave = ((tin123S&)tin0P).pIdProgressNest[ ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ] ;
         _idInNestSave       = ((tin123S&)tin0P).pIdInNest[       ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ] ;
         _idLineNestSave     = ((tin123S&)tin0P).where.pLFnest[     ( ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ) << 1 ] ;
         _idFileNestSave     = ((tin123S&)tin0P).where.pLFnest[     ( ( ((tin123S&)tin0P).where.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
 
         ((tin123S&)tin0P).where.cInNest ++ ;
-        ((tin123S&)tin0P).monitor.idStep ++ ;
+        ((tin123S&)tin0P).glass.idStep ++ ;
         ((tin123S&)tin0P).where.idDirty ++ ;
     {
     if( tin0P.idTypeTin == ifcIDtYPEtIN_123 && F(((tin123S&)tin0P).flagsThreadMode1) & flTHREADmODE1_UPDATEtIN && !( ((tin123S&)tin0P).where.idDirty % 2 ) )

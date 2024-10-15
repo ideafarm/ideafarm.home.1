@@ -88,7 +88,7 @@ TODO
         }
             }
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */
-                if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] = - 1 ;
+                if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] = - 1 ;
                 TELL( "DONEpART0: i am outa here" )
 
                 }
@@ -142,7 +142,7 @@ TODO
 
                 }
                     }
-                        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+                        if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
                         if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;
                         }
                             TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;
@@ -185,7 +185,7 @@ TODO
                         TELL( "DONEpART0: after returning from application code" ) ;
                         ((tin123S&)tin0P).idPhase2 = 0 ;
                         if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;
-                        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+                        if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
                         TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */
                     {
 
@@ -214,7 +214,7 @@ THREADmODE3oN( flTHREADmODE3_NOsEXiNpOOL ) ;
 #if defined( NEVERdEFINED )
 
 
-                    if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+                    if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
                     _IO_
                     if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;
                     /*(countT&)_tlsBlobStackTop = espAM() ;                      */
@@ -223,7 +223,7 @@ THREADmODE3oN( flTHREADmODE3_NOsEXiNpOOL ) ;
                     /*if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_WHEREaLL && !( F(((tin123S&)tin0P).where.flagsThreadModeWhere) & flTHREADmODEwHERE_NOwHERE ) ) etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;*/
                     }
                         ether.boxPutF(    tin0P , psttThreadFile , "T" ) ;
-                        ether.strMakeF(    tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T("tmWorkF")+tDot+TF1(((tin123S&)tin0P).monitor.idThread) ) ; ___( psttThreadFile ) ;
+                        ether.strMakeF(    tin0P , LF , psttThreadFile , T("///ideafarm/ephemeral/tmp/threads/")+TF1(((tin123S&)tin0P).osPid)+tDot+TF1(DDNUMB)+tDot+T("tmWorkF")+tDot+TF1(((tin123S&)tin0P).glass.idThread) ) ; ___( psttThreadFile ) ;
                         TN( tDot , "." ) ;
                     {
                     if( F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_SEEtHREADSaSfILES )
@@ -237,7 +237,7 @@ THREADmODE3oN( flTHREADmODE3_NOsEXiNpOOL ) ;
                 /*((tin123S&)tin0P).pEther = &etThread ;*/
                 TELL( "TASK123pART0: final setup" )
 
-                /*POPUP( TF1(((tin123S&)tin0P).monitor.idThread)+T(" ")+T(((tin123S&)tin0P).postThreadName)+T("\r\n") ) ;*/
+                /*POPUP( TF1(((tin123S&)tin0P).glass.idThread)+T(" ")+T(((tin123S&)tin0P).postThreadName)+T("\r\n") ) ;*/
 
                 /*((tin123S&)tin0P).pScoopEtThread = new( 0 , tin0P , pbScoop , sizeof pbScoop ) scoopC( tin0P , LF , etThread ) ; ___( ((tin123S&)tin0P).pScoopEtThread  ) ;*/
                 /*byteT pbScoop[ sizeof( scoopC ) ] ;*/
@@ -265,7 +265,7 @@ THREADmODE3oN( flTHREADmODE3_NOsEXiNpOOL ) ;
             /*etRock.traceF( tin0P , T("TASK123pART0 [osTid]: ")+TF4(((tin123S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) , flTRACE_FORCEnOsILENCE ) ;*/
 
             ((tin123S&)tin0P).pcQuit = &(const countT&)ether ;
-            ((tin123S&)tin0P).monitor.idProcessOld = thirdC::third_idProcessOldI_IF( tin0P ) ;
+            ((tin123S&)tin0P).glass.idProcessOld = thirdC::third_idProcessOldI_IF( tin0P ) ;
             ((tin123S&)tin0P).idlTask  = ifcLINE ;
             ((tin123S&)tin0P).idiTask  = DDNUMB ;
             TELL( "TASK123pART0: setting miscellaneous fields in tin0P" )
@@ -317,7 +317,7 @@ THREADmODE3oN( flTHREADmODE3_NOsEXiNpOOL ) ;
         /*osTextC _ostRangerTag( _ostoTmp.costF() + 1 , _ostoTmp , _tlsBlobStatRangerTag , _tlsBlobStatRangerTag.cbF() ) ;                     */
         /*tlsBlobC _tlsBlobStatRangerTag( tin0P , "rangerTag" , "sys" , 2 * sizeof( countT ) + _ostoTmp.costF() + 1 , ifcIDtYPEtLSbLOBc_FOOT ) ;*/
         /*tlsAllocStackExp_8_C tlsForMe( tin0P ) ;                                                                                              */
-        /*OStEXTC(  _ostoTmp , ((tin123S&)tin0P).monitor.idThread , 0 )                                                                                     */
+        /*OStEXTC(  _ostoTmp , ((tin123S&)tin0P).glass.idThread , 0 )                                                                                     */
         /*OStEXTAK( _ostoTmp , "." )                                                                                                           */
         /*OStEXTA(  _ostoTmp , ((tin123S&)tin0P).postThreadName )                                                                                           */
         /*OStEXTAK( _ostoTmp , "RangerTag:threadStack." )                                                                                      */
@@ -325,7 +325,7 @@ THREADmODE3oN( flTHREADmODE3_NOsEXiNpOOL ) ;
         /*OStEXT(   _ostoTmp , 0x80 )                                                                                                          */
 
         _IO_ TELLsYSlIFInAME( "tmWorkF" )
-        if( ((tin123S&)tin0P).monitor.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).monitor.idThread ] ) ) { BLAMMO ; }
+        if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
         TINSL
     {
     countT tmWorkF_workF( countT argP )

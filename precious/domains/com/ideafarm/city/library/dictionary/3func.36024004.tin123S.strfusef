@@ -30,7 +30,7 @@
                 TF4(pLFstep[(ids&OFFsLOTtINsTEPmAX)<<1]&~fliSTEP_FLAGmASK,flFORMAT_FOREIGN|flFORMAT_UNSIGNED,0xc,0xa)+ //b
                 tStepSuff+                                                                                      //a
                 TF3(ids,0,8)+                                                                                   //Z
-                (ids==monitor.idStep||ids==idsMin?tStep:tStep2)+                                                        //Y
+                (ids==glass.idStep||ids==idsMin?tStep:tStep2)+                                                        //Y
                 ti+                                                                                             //g
 
             ether.strFuseF( tin0P , psttP ,
@@ -46,10 +46,10 @@
             if( pLFstep[ ( ids & OFFsLOTtINsTEPmAX ) << 1 ] & fliSTEP_NESTcHANGE )
             const osTextT* postFileStep = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , pLFstep[ ( ( ids & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ) ) ;
         {
-        for( countT ids = monitor.idStep ; ids >= idsMin ; ids -- )
+        for( countT ids = glass.idStep ; ids >= idsMin ; ids -- )
         ZE( boolT , bOut ) ;
         idns = where.cInNest ;
-        if( !( F(flags1) & flTINrPT1_pLFstepAll ) && monitor.idStep - idsMin > 0xf ) idsMin = monitor.idStep - 0xf ;
+        if( !( F(flags1) & flTINrPT1_pLFstepAll ) && glass.idStep - idsMin > 0xf ) idsMin = glass.idStep - 0xf ;
     {
     if( ( F(flags1) & flTINrPT1_pLFstepAll ) | ( F(flags1) & flTINrPT1_pLFstepLast01 ) )
 
@@ -81,12 +81,12 @@
 
             tc                                                                                                  //X
             (bb?T(""):(postFileLast?t4b+tq+T(postFileLast)+tq:T("")))+                                          //I
-            T((sCountT)pLFstep[((monitor.idStep&OFFsLOTtINsTEPmAX)<<1)+1]<0?"":" ")+                                    //C
-            TF3(pLFstep[((monitor.idStep&OFFsLOTtINsTEPmAX)<<1)+1],flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+              //C
+            T((sCountT)pLFstep[((glass.idStep&OFFsLOTtINsTEPmAX)<<1)+1]<0?"":" ")+                                    //C
+            TF3(pLFstep[((glass.idStep&OFFsLOTtINsTEPmAX)<<1)+1],flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+              //C
             t9b+                                                                                                //l
             TF3(where.cInNest,0,3)+                                                                                     //H
             TP("",1+where.cInNest)+                                                                                     //G
-            TF4(pLFstep[(monitor.idStep&OFFsLOTtINsTEPmAX)<<1]&~fliSTEP_FLAGmASK,flFORMAT_FOREIGN|flFORMAT_UNSIGNED,0xc,0xa)+ //F
+            TF4(pLFstep[(glass.idStep&OFFsLOTtINsTEPmAX)<<1]&~fliSTEP_FLAGmASK,flFORMAT_FOREIGN|flFORMAT_UNSIGNED,0xc,0xa)+ //F
             T(ppostTitle[0xb])+                                                                                 //A
             ti+                                                                                                 //X
 
@@ -99,8 +99,8 @@
         if( F(flags2) & flTINrPT2_postTellIf            ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0x11])+tq+T(postTellIf)+tq                                                                            +tc ) ; ___( psttP ) ; } //A //m
         if( F(flags2) & flTINrPT2_postTell              ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0x10])+tq+T(postTell)+tq                                                                              +tc ) ; ___( psttP ) ; } //A //m
         if( F(flags1) & flTINrPT1_postThreadName        ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[  1])+tq+T(postThreadName)+tq                                                                         +tc ) ; ___( psttP ) ; } //A //B
-        if( F(flags1) & flTINrPT1_idThread              ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[  2])+TF3(monitor.idThread,0,8)                                                                               +tc ) ; ___( psttP ) ; } //A //C
-        if( F(flags1) & flTINrPT1_idProcessOld             ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0xd])+TF3(monitor.idProcessOld,0,8)                                                                              +tc ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_idThread              ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[  2])+TF3(glass.idThread,0,8)                                                                               +tc ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_idProcessOld             ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0xd])+TF3(glass.idProcessOld,0,8)                                                                              +tc ) ; ___( psttP ) ; } //A //C
         if( F(flags1) & flTINrPT1_osTid                 ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[  3])+TF3(osTid,0,8)                                                                                  +tc ) ; ___( psttP ) ; } //A //C
         if( F(flags1) & flTINrPT1_osPid                 ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[  4])+TF3(osPid,0,8)                                                                                  +tc ) ; ___( psttP ) ; } //A //C
 
@@ -118,7 +118,7 @@
         {
         if( F(flags1) & flTINrPT1_idLineCt )
 
-        if( F(flags1) & flTINrPT1_idStep                ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0xe])+TF3(monitor.idStep,0,8)                                                                                 +tc ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_idStep                ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0xe])+TF3(glass.idStep,0,8)                                                                                 +tc ) ; ___( psttP ) ; } //A //C
         if( F(flags2) & flTINrPT2_idDirty               ) { ether.strFuseF( tin0P , psttP , ti+T(ppostTitle[0xf])+TF3(where.idDirty,0,8)                                                                                +tc ) ; ___( psttP ) ; } //A //C
     {
     else
@@ -126,8 +126,8 @@
         if( bc ) { ether.strFuseF( tin0P , psttP , tc ) ; ___( psttP ) ; } //B
         if( F(flags1) & flTINrPT1_idWhat1               ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TP(processGlobal4I.mapWhat(where.idWhat1),csttWhereMax)                                                       +t1b ) ; ___( psttP ) ; } //A //E
         if( F(flags1) & flTINrPT1_postThreadName        ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+T(postThreadName)                                                                               +t1b ) ; ___( psttP ) ; } //A //B
-        if( F(flags1) & flTINrPT1_idThread              ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TF1(monitor.idThread)                                                                                   +t1b ) ; ___( psttP ) ; } //A //C
-        if( F(flags1) & flTINrPT1_idProcessOld             ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TF1(monitor.idProcessOld)                                                                                  +t1b ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_idThread              ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TF1(glass.idThread)                                                                                   +t1b ) ; ___( psttP ) ; } //A //C
+        if( F(flags1) & flTINrPT1_idProcessOld             ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TF1(glass.idProcessOld)                                                                                  +t1b ) ; ___( psttP ) ; } //A //C
         if( F(flags1) & flTINrPT1_osTid                 ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TF1(osTid)                                                                                      +t1b ) ; ___( psttP ) ; } //A //C
         if( F(flags1) & flTINrPT1_osPid                 ) { bc = 1 ; ether.strFuseF( tin0P , psttP , ti+TF1(osPid)                                                                                      +t1b ) ; ___( psttP ) ; } //A //C
         ZE( boolT , bc ) ;
@@ -171,7 +171,7 @@
             if( pLFstep[ ( ids & OFFsLOTtINsTEPmAX ) << 1 ] & fliSTEP_NESTcHANGE )
             const osTextT* postFileStep = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , pLFstep[ ( ( ids & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ) ) ;
         {
-        for( countT ids = monitor.idStep ; ids >= idsMin ; ids -- )
+        for( countT ids = glass.idStep ; ids >= idsMin ; ids -- )
         ZE( boolT , bOut ) ;
 
         csttn += csttn9 ;
@@ -230,10 +230,10 @@
     countT csttWhereMax = processGlobal4I.mapWhat.costMaxF() ;
     ZE( countT , csttn ) ;
     countT idns = where.cInNest ;
-    countT idsMin = monitor.idStep > OFFsLOTtINsTEPmAX ? monitor.idStep - OFFsLOTtINsTEPmAX : 1 ;
+    countT idsMin = glass.idStep > OFFsLOTtINsTEPmAX ? glass.idStep - OFFsLOTtINsTEPmAX : 1 ;
     const countT idnMin =  where.cInNest > OFFsLOTtINnESTmAX ?  where.cInNest - OFFsLOTtINnESTmAX : 1 ;
 
-    const osTextT* postFileLast = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , pLFstep[ ( ( monitor.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ) ) ;
+    const osTextT* postFileLast = processGlobal8I.source.postFileTitleF( tin0P , processGlobal8I.source.idFileRankF( tin0P , pLFstep[ ( ( glass.idStep & OFFsLOTtINsTEPmAX ) << 1 ) + 1 ] ) ) ;
 
     TN( tStepSuff  , "     | "               ) ;
     TN( tStep2     , "|  | "                ) ; // ""

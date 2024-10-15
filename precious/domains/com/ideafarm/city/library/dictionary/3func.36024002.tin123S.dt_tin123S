@@ -63,7 +63,7 @@
             info.cCpuCyclesWriteInOutTelemetry = cCpuCyclesWriteInOutTelemetry ;
                           cTellsWriteInOutTelemetry = 0 ;
             info.cTells = cTellsWriteInOutTelemetry ;
-            info.idThreadReporting = monitor.idThread ;
+            info.idThreadReporting = glass.idThread ;
             tellInfoAppInOutFrameTinDtS info ;
             //PS:PSEUDOdUPLICATE CODE: 36024002 360fc002
 
@@ -94,7 +94,7 @@
 
             THREADmODE4oN0( flTHREADmODE4_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY | flTHREADmODE4_DOnOTfLUSHpENDINGaPPtELEMETRY ) ;
         {
-        if( monitor.idThread > 3 ) // FOR THREAD 1, SEE doC::~doC; THREAD 2 AND 3 ARE tinHeart AND tinBreak, WHICH NORMALLY ACCUMULATE NO TELEMETRY
+        if( glass.idThread > 3 ) // FOR THREAD 1, SEE doC::~doC; THREAD 2 AND 3 ARE tinHeart AND tinBreak, WHICH NORMALLY ACCUMULATE NO TELEMETRY
 
         TINSL       // I CANNOT USE MYSELF BECAUSE I MIGHT BE tinHeart OR tinBreak
     {
@@ -170,7 +170,7 @@
             for( countT off = 0 ; off < offEnd ; off += 5 )
             const countT offEnd = OFFgRABBEDmAX * 5 ;
         {
-        if( ((tin123S&)tin0P).monitor.cGrabbed )
+        if( ((tin123S&)tin0P).glass.cGrabbed )
         TELL( "verifying that nothing is now grabbed by this thread" )
 
         TELL( "~tin123S: after setting processGlobal2I.flDt flag" )
@@ -216,7 +216,7 @@
             //
             //    OStEXTC(  ostoSay , usedPerTuck , 0 ) ;
             //    OStEXTAK( ostoSay , "    " ) ;
-            //    OStEXTC(  ostoSay , monitor.idThread , 0 ) ;
+            //    OStEXTC(  ostoSay , glass.idThread , 0 ) ;
             //    OStEXTAK( ostoSay , "~tin123S thread stack max usage [idThread,usedPerTuck]:    " ) ;
             //    OStEXT(   ostoSay , TUCK << 0 ) ;
             //{
@@ -232,7 +232,7 @@
 {
 /*1*/tin123S::~tin123S( voidT )/*1*/
 
-//#define SAYnAME(postP) { CONoUTrAW7( "[idTin,idThread,idSerial,name]: " , idTin , " " , monitor.idThread , " " , idSerial , " " ) ; CONoUTrAW( NAME( idTinNamed ) ) ; CONoUTrAW( " " postP ) ; }
+//#define SAYnAME(postP) { CONoUTrAW7( "[idTin,idThread,idSerial,name]: " , idTin , " " , glass.idThread , " " , idSerial , " " ) ; CONoUTrAW( NAME( idTinNamed ) ) ; CONoUTrAW( " " postP ) ; }
 
 //#define NAME(idP) processGlobal4I.mapTinName( idP )
 

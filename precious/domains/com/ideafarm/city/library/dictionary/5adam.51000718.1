@@ -115,10 +115,10 @@ DONE( tmGorilla999F )
     //    {
     //    if( bDoze )
     //
-    //    etThread.traceF( tin0P , TF2(((tin123S&)tin0P).monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bDoze?" uh oh: will sleep for tick":"") ) ;
+    //    etThread.traceF( tin0P , TF2(((tin123S&)tin0P).glass.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(bDoze?" uh oh: will sleep for tick":"") ) ;
     //
-    //                  idtLath =  ((tin123S&)tin0P).monitor.idThread ;
-    //    boolT bDoze = idtLath == ((tin123S&)tin0P).monitor.idThread ;
+    //                  idtLath =  ((tin123S&)tin0P).glass.idThread ;
+    //    boolT bDoze = idtLath == ((tin123S&)tin0P).glass.idThread ;
     //
     //    static countT idtLath ;
     //{
@@ -187,7 +187,7 @@ DONE( tmGorilla4F )
 
 }
     if( !was1 ) { BLAMMO ; }
-    countT was1 = btrKeyedAM( &bb , keyIdThread , 0 , ((tin123S&)tin0P).monitor.idThread ) ;
+    countT was1 = btrKeyedAM( &bb , keyIdThread , 0 , ((tin123S&)tin0P).glass.idThread ) ;
 
     cDone1 ++ ;
     //inc02AM( cDone1 ) ;
@@ -195,7 +195,7 @@ DONE( tmGorilla4F )
     }
         OSsLEEPf( 0 ) ;
     {
-    while( btsKeyedAM( &bb , keyIdThread , 0 , ((tin123S&)tin0P).monitor.idThread ) )
+    while( btsKeyedAM( &bb , keyIdThread , 0 , ((tin123S&)tin0P).glass.idThread ) )
     idCycle ++ ;
 {
 while( !ether )
@@ -244,7 +244,7 @@ DONE( tmGorilla1F )
     while( btsAM( &bb , 0 ) )
     ((tin123S&)tin0P).cYield = 0 ;
 
-    if( !( idCycle % TICK ) ) etThread.traceF( tin0P , TF2(((tin123S&)tin0P).monitor.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    if( !( idCycle % TICK ) ) etThread.traceF( tin0P , TF2(((tin123S&)tin0P).glass.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb+TF2(idCycle,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     idCycle ++ ;
 {
 while( !ether )
