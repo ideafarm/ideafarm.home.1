@@ -88,7 +88,7 @@ TELL( "entering REST" )
         etThread.etherReadFromCyrcleOldF( tin0P , pNapMonitor , cirMonitorF , c2mpr , bDestroyCircleMonitor , T("napMonitor") , CBmONITORbUFFER ) ;
 U::NEED TO PASS IN A bitsC REFERENCE
         etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
-        //((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR ; //U::FIGURE OUT A WAY TO AVOID SUPPRESSING TELLS; CONJ: SET A CALLBACK FUNCTION THAT CAN UNGRAB THE NAPKIN SO THAT THE EXCEPTION HANDLER CAN EMIT A NOTE
+        //((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR ; //U::FIGURE OUT A WAY TO AVOID SUPPRESSING TELLS; CONJ: SET A CALLBACK FUNCTION THAT CAN UNGRAB THE NAPKIN SO THAT THE EXCEPTION HANDLER CAN EMIT A NOTE
         //U::CONJ: THE GRABBING OF THE CIRCLE NAPKIN IS NOT NECESSARY
     
         etThread.boxPutF( tin0P , tActive , "" , 1 ) ; //U::KLUGE NEEDED CAUSE PACKAGE IS DENIED ACCESS TO napHomeJot
@@ -206,7 +206,7 @@ U::NEED TO PASS IN A bitsC REFERENCE
         stackC  stGrab(                     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB                /*flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | */ , sizeof( grabEntryS       ) ) ;
 
         //thirdC  thUnserializedPool(         tin0P , TAG( TAGiDnULL ) , poolOldSetOldUnserialized ) ;
-        //p oolC   poolOldSetOldUnserialized(     tin0P , TAG( TAGiDnULL ) , T("monitor.unserialized.main.")+TF1(((tin123S&)tin0P).osPid)+T(".")+TF1(((tin123S&)tin0P).glass.idThread) , flPOOLoLDc_UNSERIALIZED | flPOOLoLDc_UNSERIALIZEDmULTItHREAD ) ; U:: FLAG "UNSERIALIZED"
+        //p oolC   poolOldSetOldUnserialized(     tin0P , TAG( TAGiDnULL ) , T("monitor.unserialized.main.")+TF1(((tin123S&)tin0P).osPid)+T(".")+TF1(((tin1S&)tin0P).glass.idThread) , flPOOLoLDc_UNSERIALIZED | flPOOLoLDc_UNSERIALIZEDmULTItHREAD ) ; U:: FLAG "UNSERIALIZED"
         //U::CONJ: OBSOLETE: 
 
         ZE( countT , conditionalGrab ) ;
@@ -390,7 +390,7 @@ TELL( "i'm outa here" )
         countT cToDo = TUCK * 0x10 ;
         //etThread.strokeF( tin0P , T("\r\nwrote where report ")+TF1(idReport)+T("\r\n") ) ;
 
-        //((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWtELLmONITOR) ) ;
+        //((tin1S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWtELLmONITOR) ) ;
             
         }
             etThread.delF( tin0P , psttFileName ) ;
@@ -536,7 +536,7 @@ TELL( "i'm outa here" )
                     {
                     TN( tLifiName , "unknown" ) ;
             
-                    //((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
+                    //((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
                     pwtg->bNewWhereRpt = 0 ;
                 {
                 if( pwtg->bNewWhereRpt /*U:: && ( !stTinWhereP || idCycle % 0x10 == 1 ) */ ) //ONLY EVERY TICK IF AM WATCHING WHERE WO OR MORE THREADS ARE
@@ -938,7 +938,7 @@ TASK( tmWhereRptF )
                 if( !bAdam && !bClass )
                 TN( tLifiName , "unknown" ) ;
         
-                //((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
+                //((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
                 pwtf->bNewWhereRpt = 0 ;
             {
             if( pwtf->bNewWhereRpt /*U:: && ( !stTinWhereP || idCycle % 0x10 == 1 ) */ ) //ONLY EVERY TICK IF AM WATCHING WHERE WO OR MORE THREADS ARE
@@ -1565,7 +1565,7 @@ DONE( tmRptMainF )
 TELL( "i am outa here" )
 }
     ((tin123S&)tin0P).pEtText = 0 ;
-    ((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWgRAB) ) ;
+    ((tin1S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWgRAB) ) ;
     TELL( "cleaning up" )
     //POPUP( "tmRptMainF/about to set my done flag" ) ; //U::
     }
@@ -1853,7 +1853,7 @@ TELL( "i am outa here" )
                                 countT&   idStep  = *(countT*)pbCopy ;
                             {
                             if( bOk )
-                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof pbCopy , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).glass.idStep - (byteT*)&tin0P ) ) , entry.osPid ) ;
+                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof pbCopy , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin1S&)tin0P).glass.idStep - (byteT*)&tin0P ) ) , entry.osPid ) ;
                             ZE( boolT , bOk ) ;
                             byteT pbCopy[ sizeof( countT ) + sizeof( monitorOldS ) ] ;
                         {
@@ -1862,7 +1862,7 @@ TELL( "i am outa here" )
                             cNewSteps += monitor.cNewSteps ;
                             stampF( tin0P , etThread , monitor , idStep ) ;
                             monitorOldS& monitor = *(monitorOldS*)( &idStep + 1 ) ;
-                            countT&   idStep  = *(countT*)( (byteT*)ap_artmentOldC( tin0P , entry.ip ) + ( (byteT*)&((tin123S&)tin0P).glass.idStep - (byteT*)&tin0P ) ) ;
+                            countT&   idStep  = *(countT*)( (byteT*)ap_artmentOldC( tin0P , entry.ip ) + ( (byteT*)&((tin1S&)tin0P).glass.idStep - (byteT*)&tin0P ) ) ;
                         {
                         if( entry.bIda )
             
@@ -2408,7 +2408,7 @@ TELL( "i am outa here" )
         TELL( "setting up: 2: stroke strings" )
     
         ((tin123S&)tin0P).pEtText = &etThread ;
-        ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWgRAB ;
+        ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWgRAB ;
         ZE( countT , idStepReporterLath ) ;
         boolT bWoth = 1 ;
         ZE( countT , idReport ) ;

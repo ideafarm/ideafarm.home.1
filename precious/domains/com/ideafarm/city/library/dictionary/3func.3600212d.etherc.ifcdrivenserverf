@@ -807,8 +807,8 @@
         __( F(flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ;
         __( F(flagsMode) & flTHIRDmODE_QUITTER ) ;
 
-        __( !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ADAMmAINtHREAD ) && !( F(flagsMode) & flTHIRDmODE_TINoWNER ) ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED
-        __(    F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ADAMmAINtHREAD   &&    F(flagsMode) & flTHIRDmODE_TINoWNER   ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED (THIS LINE WILL DETECT THE USE OF etPrimeF() BUT WILL FAIL TO DETECT THE USE OF AN etherC OBJECT OTHER THAN ether AND etThread ON THREAD 1)
+        __( !( F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ADAMmAINtHREAD ) && !( F(flagsMode) & flTHIRDmODE_TINoWNER ) ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED
+        __(    F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ADAMmAINtHREAD   &&    F(flagsMode) & flTHIRDmODE_TINoWNER   ) ; // THESE 2 CHECKS ENSURE etThread IS BEING USED (THIS LINE WILL DETECT THE USE OF etPrimeF() BUT WILL FAIL TO DETECT THE USE OF AN etherC OBJECT OTHER THAN ether AND etThread ON THREAD 1)
 
         if( POOP ) return ;
     {

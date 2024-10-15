@@ -289,9 +289,9 @@ DONE( tmDisplayF )
                     break ;
 
                     }
-                        ((tin123S&)tin0P).glass.idStep ++ ;
+                        ((tin1S&)tin0P).glass.idStep ++ ;
                         grabOldS grab( tin0P , TAG( TAGiDnULL ) , flGRABs_DISABLED ) ;
-                        ((tin123S&)tin0P).glass.idStep ++ ;
+                        ((tin1S&)tin0P).glass.idStep ++ ;
                     {
                     while( !baP.idDisplayRequest )
                 {
@@ -1236,7 +1236,7 @@ countT cbGrabImageF( tin0S& tin0P , etherC& etherP , const byteT* const pbP )
 //U:         idStepLast = tinDead.idStep ;
 //U:         }
 //U:             thirdC::dosWriteStdOutIF( tin0P , tNote ) ;
-//U:             tNote = T("\f")+TF1(((tin123S&)tin0P).glass.idStep)+T(" thread \"")+T(tinDead.postThreadName)+T("\" deadlocked while \"")+T(tinDead.postTell)+T("\"\r\n") ;
+//U:             tNote = T("\f")+TF1(((tin1S&)tin0P).glass.idStep)+T(" thread \"")+T(tinDead.postThreadName)+T("\" deadlocked while \"")+T(tinDead.postTell)+T("\"\r\n") ;
 //U:             TELL( "reporting a locked up thread" )
 //U:         {
 //U:         if( idStepLast == tinDead.idStep )
@@ -4480,7 +4480,7 @@ poolOldSnapS::poolOldSnapS( tin0S& tin0P , etherC& etherP ) :
 }
 
     ((thirdC&)ether).osOpenProcessF( tin0P , hProcess ) ;
-    __( ((tin123S&)tin0P).glass.idThread - 1 ) ;
+    __( ((tin1S&)tin0P).glass.idThread - 1 ) ;
     logF( tin0P , T("log file opened") , 0 , 0 ) ;
 {
 bLog(                tin0P , TAG( TAGiDnULL ) )

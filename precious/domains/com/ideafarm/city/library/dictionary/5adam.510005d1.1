@@ -394,7 +394,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tin0S& tin0P , aptC& aptP , listWa
             }
                 dec02AM( cAllThreads ) ; /* MUST BE THE VERY LAST THING THAT THIS THREAD DOES */
                 if( !bFake ) { DEL( pTaskP ) ; } /* MUST BE AS LATE AS POSSIBLE BECAUSE IT GIVES THE SIGN THAT THE THREAD IS DONE.  THE PROCESS MUST SLEEP AFTER RECEIVING THIS SIGN BEFORE ENDING, SO THAT THIS THREAD CAN COMPLETE */
-                if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] = - 1 ;
+                if( ((tin1S&)tin0P).glass.idThread <= ClOWtHREADS ) processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin1S&)tin0P).glass.idThread ] = - 1 ;
                 TELL( "DONEpART0: i am outa here" )
                 ;
                     : thirdC::os_cAllKidThreadsI_IF( tin0P )
@@ -439,7 +439,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tin0S& tin0P , aptC& aptP , listWa
 
                 }
                     }
-                        if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
+                        if( ((tin1S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin1S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
                         if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGnOkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGnOkIDS ;
                         }
                             TELL( "DONEpART0: destroying all adam objects that remain on the thread stack" ) ;
@@ -458,7 +458,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tin0S& tin0P , aptC& aptP , listWa
                         TELL( "DONEpART0: after returning from application code" ) ;
                         ((tin123S&)tin0P).idPhase2 = 0 ;
                         if( ((tin123S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_EPILOGkIDS ) ((tin123S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_EPILOGkIDS ;
-                        if( ((tin123S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
+                        if( ((tin1S&)tin0P).glass.idThread <= ClOWtHREADS && !( ++ processGlobal2S::_processGlobal2I_IF().pcPhaseLow[ ((tin1S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
                         TINSL /*THIS IS NEEDED BECAUSE tin0P WAS DELETED IF I AM tmWindowsF */
                     {
                     /*DO NOT CLOSE THE CODE BLOCK HERE BECAUSE KID THREADS MIGHT BE USING OBJECTS THAT WOULD DT HERE*/

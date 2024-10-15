@@ -22,12 +22,12 @@ DONE( tmServiceMainF )
             if( /*ether &&*/ !bServiceFired )
             //THIS IS ILLEGAL; win32 SILENTLY CRAPS WHEN A SERVICE CALLS HIRE AND/OR FIRE FOR A SERVICE
     
-            ((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DRIVERaDAM) ) ;
-            if( !( ++ processGlobal2I.pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
+            ((tin1S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DRIVERaDAM) ) ;
+            if( !( ++ processGlobal2I.pcPhaseLow[ ((tin1S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
             TELL( "pMainF has returned" )
             (*pMainF)( &main ) ; //ASSUME: DEFINITION BLOCKS UNTIL QUITTING
-            if( !( ++ processGlobal2I.pcPhaseLow[ ((tin123S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
-            ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DRIVERaDAM ;
+            if( !( ++ processGlobal2I.pcPhaseLow[ ((tin1S&)tin0P).glass.idThread ] ) ) { BLAMMO ; }
+            ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DRIVERaDAM ;
             TELL( "calling the adam" )
         {
         if( pMainF )
@@ -69,7 +69,7 @@ DONE( tmServiceMainF )
     ((tin1S&)tin0P).pag1->oshServiceStatus = ((tin123S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , RegisterServiceCtrlHandler( ((tin1S&)tin0P).pag1->postServiceName , serviceHandlerF ) )
-    if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin123S&)tin0P).glass.idThread - ifcIDtHREADlOW_tmWindowsOrServiceMainF ) ; }
+    if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin1S&)tin0P).glass.idThread - ifcIDtHREADlOW_tmWindowsOrServiceMainF ) ; }
 
     thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_SERVICE ;
 

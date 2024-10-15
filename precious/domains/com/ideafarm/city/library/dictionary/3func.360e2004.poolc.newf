@@ -130,13 +130,13 @@
             //if( ((tin123S&)tin0P).pc Utility[ 0 ] )
             //DISABLE THIS IN PRODUCTION ; TO FIND A BUG
 
-            if( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DISALLOWpUSE ) { BLAMMO ; }
-            if( this != ((tin1S&)tin0P).pag1->pPoolAdamTemp && !( F(((tin123S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ALLOWnEWdROPnOTiNaDAMtEMP ) ) { BLAMMO ; }
+            if( F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DISALLOWpUSE ) { BLAMMO ; }
+            if( this != ((tin1S&)tin0P).pag1->pPoolAdamTemp && !( F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_ALLOWnEWdROPnOTiNaDAMtEMP ) ) { BLAMMO ; }
 
             if( F(guts.flagsCt) & flPOOLc_READoNLY ) { BLAMMO ; }
         {
         else
-        else if( F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_POOLaLLOCATEfROMhEAP ) pbP = processGlobal4I.heap.newF( tin0P , idLineP , idiFileP , cbP ) ;
+        else if( F(((tin1S&)tin0P).flagsThreadMode3) & flTHREADmODE3_POOLaLLOCATEfROMhEAP ) pbP = processGlobal4I.heap.newF( tin0P , idLineP , idiFileP , cbP ) ;
         }
             pbP          = (byteT*)idJot ;
             countT idJot = juse.writeF( tin0P , 0 , cbP ) ;

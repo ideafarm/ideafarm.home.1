@@ -189,7 +189,7 @@
                     while( costPad -- ) { OStEXTAK( ostoSay , " " ) ; }
                     if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA(  ostoSay , ((tin123S&)tin0P).postThreadName ) ;
                     OStEXTAK( ostoSay , " % " ) ;
-                    OStEXTC(  ostoSay , ((tin123S&)tin0P).glass.idThread , ' ' ) ;
+                    OStEXTC(  ostoSay , ((tin1S&)tin0P).glass.idThread , ' ' ) ;
                     OStEXTAK( ostoSay , " $ " ) ;
                     OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idCell , ' ' ) ;
                     OStEXTAK( ostoSay , " # " ) ;
@@ -279,16 +279,16 @@
             //LOGrAW( "\r\ntraceF: suppressing trace:  " ) ;
             //U:: ENHANCE TO POSTPONE BY WRITING TO A TEMPORARY BUFFER THAT IS FLUSHED BY booksC WHEN IT CAN DO SO
 
-            //CONoUTrAW3( "[F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SUPPRESStRACING         ]:    " , F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SUPPRESStRACING , "\r\n" ) ; //U:: TO FIND A BUG
+            //CONoUTrAW3( "[F(((tin1S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SUPPRESStRACING         ]:    " , F(((tin1S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SUPPRESStRACING , "\r\n" ) ; //U:: TO FIND A BUG
             //CONoUTrAW3( "[F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_NOtRACING]:    " , F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_NOtRACING , "\r\n" ) ; //U:: TO FIND A BUG
             //CONoUTrAW3( "[!bTraceOk                                                        ]:    " , !bTraceOk , "\r\n" ) ; //U:: TO FIND A BUG
 
-            //CONoUTrAW3( "[((tin123S&)tin0P).flagsThreadMode3                                            ]:    " , ((tin123S&)tin0P).flagsThreadMode3 , "\r\n" ) ; //U:: TO FIND A BUG
+            //CONoUTrAW3( "[((tin1S&)tin0P).flagsThreadMode3                                            ]:    " , ((tin1S&)tin0P).flagsThreadMode3 , "\r\n" ) ; //U:: TO FIND A BUG
             //CONoUTrAW3( "[thirdC::third_flagsModeAdam1I_IF(tin0P)                           ]:    " , thirdC::third_flagsModeAdam1I_IF(tin0P) , "\r\n" ) ; //U:: TO FIND A BUG
             //CONoUTrAW3( "[bTraceOk                                                         ]:    " , bTraceOk , "\r\n" ) ; //U:: TO FIND A BUG
             _IO_
         {
-        if( !bForceTrace && ( !bTraceOk || F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_NOtRACING || F(((tin123S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SUPPRESStRACING ) )
+        if( !bForceTrace && ( !bTraceOk || F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_NOtRACING || F(((tin1S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SUPPRESStRACING ) )
         //if( !thirdC::c_strcmpIF( tin0P , ((tin123S&)tin0P).postThreadName , "tmGetIdHomeF" ) )
 
         //if( ((tin123S&)tin0P).pc Utility[ 0 ] ) { CONoUTrAWb( "\r\ntraceF [idAdam,flagsP,home.flags,bTraceOk,bDivertOk]:    " , ((tin1S&)tin0P).pag1->idAdam , "    " , flagsP , "    " , home.flags , "    " , bTraceOk , "    " , bDivertOk , "\r\n" ) ; } //U:: TO FIND A BUG
@@ -322,7 +322,7 @@
                     break ;
                     bTrace ++ ;
                 {
-                if( ((tin1S&)tin0P).pag1->pcIdThreadTrace[ offi ] == ((tin123S&)tin0P).glass.idThread )
+                if( ((tin1S&)tin0P).pag1->pcIdThreadTrace[ offi ] == ((tin1S&)tin0P).glass.idThread )
                 if( bAll ) bAll -- ;
             {
             if( ((tin1S&)tin0P).pag1->pcIdThreadTrace[ offi ] )

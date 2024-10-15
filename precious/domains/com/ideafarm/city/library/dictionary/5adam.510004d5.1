@@ -59,7 +59,7 @@ ZE( boolT , bQuitLogging ) ;
 //THESE ARE HERE SO THAT tmRptF DOES NOT GENERATE grabOldS CT/DT NOTES
 
 thirdC thUnserializedPool( tin0P , TAG( TAGiDnULL ) , poolOldSetOldUnserialized  ) ;
-p oolC poolOldSetOldUnserialized( tin0P , T("monitor.unserialized.main.")+TF1(((tin123S&)tin0P).osPid)+T(".")+TF1(((tin123S&)tin0P).glass.idThread) ) ; U::ENHANCE TO SUPPORT FLAGS SUCH AS "UNSERIALIZED"
+p oolC poolOldSetOldUnserialized( tin0P , T("monitor.unserialized.main.")+TF1(((tin123S&)tin0P).osPid)+T(".")+TF1(((tin1S&)tin0P).glass.idThread) ) ; U::ENHANCE TO SUPPORT FLAGS SUCH AS "UNSERIALIZED"
     
 //U::{ countT idAdam = ifcIDaDAMoLD_CHATsERVER ; ether.ifcHireF( tin0P , T("city.monitor") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
 //{ countT idAdam = 0x40104de ; ether.ifcHireF( tin0P , T("city.monitor") , idAdam , 0 , flHIRE_DISPLAYaUTO , nicNameC() ) ; }
@@ -162,7 +162,7 @@ DONE( tmWhereRptF )
         
             etThread.strFuseF( tin0P , psttr ,
     
-            ((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWtELLmONITOR) ) ;
+            ((tin1S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWtELLmONITOR) ) ;
             stTinWhereP.ungrabF( tin0P ) ;
 
             }
@@ -283,7 +283,7 @@ DONE( tmWhereRptF )
             ZE( countT , timeN1 ) ;
 
             stTinWhereP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-            ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
+            ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
             bNewWhereRptP = 0 ;
         {
         if( bNewWhereRptP && ( !stTinWhereP || idCycle % 0x10 == 1 ) ) //ONLY EVERY TICK IF AM WATCHING WHERE WO OR MORE THREADS ARE
@@ -583,7 +583,7 @@ DONE( tmRptF )
 }
     bQuitMonitoring = 1 ;
     ((tin123S&)tin0P).pEtText = 0 ;
-    ((tin123S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWgRAB) ) ;
+    ((tin1S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWgRAB) ) ;
     thirdC::third_flagsModeProcess1I_IF() |= flMODEpROCESS1_NOsYNCHRONOUStELLS ;
     }
         }
@@ -779,7 +779,7 @@ DONE( tmRptF )
                                 countT&   idStep  = *(countT*)pbCopy ;
                             {
                             if( bOk )
-                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof pbCopy , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).glass.idStep - (byteT*)&tin0P ) ) , entry.osPid ) ;
+                            thirdC::dosReadProcessMemoryIF( tin0P , pbCopy , sizeof pbCopy , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin1S&)tin0P).glass.idStep - (byteT*)&tin0P ) ) , entry.osPid ) ;
                             ZE( boolT , bOk ) ;
                             byteT pbCopy[ sizeof( countT ) + sizeof( monitorOldS ) ] ;
                         {
@@ -788,7 +788,7 @@ DONE( tmRptF )
                             //CONoUTrAW( T(entry.postThreadName)+T(": ")+T(monitor.mStepsPerTuck)+T("\r\n") ) ; //U::
                             stampF( tin0P , etThread , monitor , idStep ) ;
                             monitorOldS& monitor = *(monitorOldS*)( &idStep + 1 ) ;
-                            countT&   idStep  = *(countT*)( (byteT*)ap_artmentOldC( tin0P , entry.ip ) + ( (byteT*)&((tin123S&)tin0P).glass.idStep - (byteT*)&tin0P ) ) ;
+                            countT&   idStep  = *(countT*)( (byteT*)ap_artmentOldC( tin0P , entry.ip ) + ( (byteT*)&((tin1S&)tin0P).glass.idStep - (byteT*)&tin0P ) ) ;
                         {
                         if( entry.bIda )
     
@@ -944,7 +944,7 @@ DONE( tmRptF )
         while( !etThread && etherC::os_cAllKidThreadsI_IF( tin0P ) > 3 ) //THIS WORKS BECAUSE tmTimeNowF EXISTS UNTIL I AM FIRED; THE 3 KID THREADS EXPECTED TO HANG AROUND: watch, tell, rpt
     {
     ((tin123S&)tin0P).pEtText = &etThread ;
-    ((tin123S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWgRAB ;
+    ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWgRAB ;
     ZE( countT , idStepReporterLath ) ;
     boolT bWoth = 1 ;
     TN( tFile , "///d/ideafarm.rpt.monitor" ) ;
