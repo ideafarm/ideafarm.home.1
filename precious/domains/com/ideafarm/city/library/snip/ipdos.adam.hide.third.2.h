@@ -4751,7 +4751,7 @@ as of 20240929@1534, this is the maximum number of threads that can be launched 
 
 /*1*//*CtHREADSmAX*//*1*/
 
-#define CtHREADSmAX ( 0x107d )
+#define CtHREADSmAX ( 0x10ec )
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
