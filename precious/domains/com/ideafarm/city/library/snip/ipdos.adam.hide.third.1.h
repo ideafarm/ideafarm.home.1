@@ -1,67 +1,4 @@
 
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
-examples
- simplest
-  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
-*/
-/**/
-/*1*//*DONE123nOeTsCRATCH(taskFP)*//*1*/
-
-#ifdef __OS2__
-
-    #define DONE123nOeTsCRATCH(taskFP)                                                                                                                                                                      \
-                                                                                                                                                                                                            \
-                        DONEpART0nOeTsCRATCH                                                                                                                                                                \
-                                                                                                                                                                                                            \
-        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
-        {                                                                                                                                                                                                   \
-            threadLocalStorage123F( ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                          \
-        }
-
-#elif defined( __NT__ )
-
-    #define DONE123nOeTsCRATCH(taskFP)                                                                                                                                                                      \
-                                                                                                                                                                                                            \
-                        DONEpART0nOeTsCRATCH                                                                                                                                                                \
-                                                                                                                                                                                                            \
-        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
-        {                                                                                                                                                                                                   \
-            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                              \
-            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                             \
-            /* ZE( countT , foo ) ;                          */                                                                                                                                             \
-            /* ZE( countT , goo ) ;                          */                                                                                                                                             \
-            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                             \
-            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                             \
-            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                             \
-            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                             \
-                                                                                                                                                                                                            \
-            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;       \
-                                                                                                                                                                                                            \
-            return c_threadTry1Outer123F( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                           \
-        }
-
-#endif
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
-#define TASK123nOeTsCRATCH(taskFP) TASK123pART0nOeTsCRATCH( taskFP , flTHIRDmODE_null )
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -392,7 +329,7 @@ class   /*ff*/booksC/*ff*/                                              ; /*ff*/
 class   /*ff*/pageC/*ff*/                                               ; /*ff*//**//*ff*/
 class   /*ff*/branchPageC/*ff*/                                         ; /*ff*//**//*ff*/
 class   /*ff*/jotC/*ff*/                                                ; /*ff*//**//*ff*/
-struct  /*ff*/glassS/*ff*/                                              ; /*ff*//**//*ff*/
+struct  /*ff*/glassS/*ff*/                                            ; /*ff*//**//*ff*/
 struct  /*ff*/fireGroupS/*ff*/                                          ; /*ff*//**//*ff*/
 struct  /*ff*/doC/*ff*/                                                 ; /*ff*//**//*ff*/
 class   /*ff*/refCounterC/*ff*/                                         ; /*ff*//**//*ff*/
@@ -5710,7 +5647,7 @@ generic local ip
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120008f.nicnamelocal END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200090.flthreadmode2 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200090.flTHREADmODE1 BEGIN
 
 
 //
@@ -5762,7 +5699,7 @@ code that supports the following flags is commented out for added speed but can 
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200090.flthreadmode2 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200090.flTHREADmODE1 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200091.prosho BEGIN
 
 
@@ -10451,7 +10388,7 @@ it is illegal to refer to this symbol in the definition of an adam
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000f9.flvmusagetype END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fa.threadmode2off BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fa.THREADmODE1oFF BEGIN
 
 
 //
@@ -10467,9 +10404,9 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*THREADmODE1oFF(flagsP)*//*1*/
 
-#define THREADmODE1oFF(flagsP)                                                                                            \
-                                                                                                                          \
-    flagsT _flagsThreadMode1Save = ((tin1S&)tin0P).flagsThreadMode1 ;                                                                \
+#define THREADmODE1oFF(flagsP)                                                  \
+                                                                                \
+    flagsT _flagsThreadMode1Save = ((tin1S&)tin0P).flagsThreadMode1 ;         \
     THREADmODE1oFF0( flagsP )
 
 
@@ -10480,8 +10417,8 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fa.threadmode2off END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fb.threadmode2restore BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fa.THREADmODE1oFF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fb.THREADmODE1rESTORE BEGIN
 
 
 //
@@ -10507,8 +10444,8 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fb.threadmode2restore END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fc.threadmode2on BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fb.THREADmODE1rESTORE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fc.THREADmODE1oN BEGIN
 
 
 //
@@ -10524,9 +10461,9 @@ it is illegal to refer to this symbol in the definition of an adam
 /**/
 /*1*//*THREADmODE1oN(flagsP)*//*1*/
 
-#define THREADmODE1oN(flagsP)                                                                                            \
-                                                                                                                          \
-    flagsT _flagsThreadMode1Save = ((tin1S&)tin0P).flagsThreadMode1 ;                                                                \
+#define THREADmODE1oN(flagsP)                                                   \
+                                                                                \
+    flagsT _flagsThreadMode1Save = ((tin1S&)tin0P).flagsThreadMode1 ;         \
     THREADmODE1oN0( flagsP )
 
 
@@ -10537,7 +10474,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fc.threadmode2on END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fc.THREADmODE1oN END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000fd.concat BEGIN
 
 
@@ -19318,7 +19255,7 @@ after i return, that countT object will contain 1
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f9.ifcidreplymonitor END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001fa.flthreadmode3 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001fa.flTHREADmODE2 BEGIN
 
 
 //
@@ -19367,7 +19304,7 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001fa.flthreadmode3 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001fa.flTHREADmODE2 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001fb.___bitsct BEGIN
 
 
@@ -35921,7 +35858,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c3.tnowtock END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c4.threadmode2save0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c4.THREADmODE1sAVE0 BEGIN
 
 
 //
@@ -35946,8 +35883,8 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c4.threadmode2save0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c5.threadmode2off0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c4.THREADmODE1sAVE0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c5.THREADmODE1oFF0 BEGIN
 
 
 //
@@ -35972,8 +35909,8 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c5.threadmode2off0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c6.threadmode2on0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c5.THREADmODE1oFF0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c6.THREADmODE1oN0 BEGIN
 
 
 //
@@ -35998,8 +35935,8 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c6.threadmode2on0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c7.threadmode2restore0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c6.THREADmODE1oN0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c7.THREADmODE1rESTORE0 BEGIN
 
 
 //
@@ -36024,8 +35961,8 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c7.threadmode2restore0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c8.threadmode3off BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c7.THREADmODE1rESTORE0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c8.THREADmODE2oFF BEGIN
 
 
 //
@@ -36041,9 +35978,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /**/
 /*1*//*THREADmODE2oFF(flagsP)*//*1*/
 
-#define THREADmODE2oFF(flagsP)                                                                                            \
-                                                                                                                          \
-    flagsT _flagsThreadMode2Save = ((tin1S&)tin0P).flagsThreadMode2 ;                                                                \
+#define THREADmODE2oFF(flagsP)                                                  \
+                                                                                \
+    flagsT _flagsThreadMode2Save = ((tin1S&)tin0P).flagsThreadMode2 ;         \
     THREADmODE2oFF0( flagsP )
 
 
@@ -36054,8 +35991,8 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c8.threadmode3off END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c9.threadmode3restore BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c8.THREADmODE2oFF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c9.THREADmODE2rESTORE BEGIN
 
 
 //
@@ -36081,8 +36018,8 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c9.threadmode3restore END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003ca.threadmode3on BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003c9.THREADmODE2rESTORE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003ca.THREADmODE2oN BEGIN
 
 
 //
@@ -36098,9 +36035,9 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /**/
 /*1*//*THREADmODE2oN(flagsP)*//*1*/
 
-#define THREADmODE2oN(flagsP)                                                                                            \
-                                                                                                                          \
-    flagsT _flagsThreadMode2Save = ((tin1S&)tin0P).flagsThreadMode2 ;                                                                \
+#define THREADmODE2oN(flagsP)                                                   \
+                                                                                \
+    flagsT _flagsThreadMode2Save = ((tin1S&)tin0P).flagsThreadMode2 ;         \
     THREADmODE2oN0( flagsP )
 
 
@@ -36111,8 +36048,8 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003ca.threadmode3on END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cb.threadmode3save0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003ca.THREADmODE2oN END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cb.THREADmODE2sAVE0 BEGIN
 
 
 //
@@ -36137,8 +36074,8 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cb.threadmode3save0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cc.threadmode3off0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cb.THREADmODE2sAVE0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cc.THREADmODE2oFF0 BEGIN
 
 
 //
@@ -36163,8 +36100,8 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cc.threadmode3off0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cd.threadmode3on0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cc.THREADmODE2oFF0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cd.THREADmODE2oN0 BEGIN
 
 
 //
@@ -36189,8 +36126,8 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cd.threadmode3on0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003ce.threadmode3restore0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cd.THREADmODE2oN0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003ce.THREADmODE2rESTORE0 BEGIN
 
 
 //
@@ -36215,7 +36152,7 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003ce.threadmode3restore0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003ce.THREADmODE2rESTORE0 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112003cf.ifcidheadflavor BEGIN
 
 
@@ -39261,7 +39198,7 @@ args
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200429.ostextc9 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042a.flthreadmode4 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042a.flTHREADmODE3 BEGIN
 
 
 //
@@ -39309,8 +39246,8 @@ args
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042a.flthreadmode4 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042b.threadmode4off BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042a.flTHREADmODE3 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042b.THREADmODE3oFF BEGIN
 
 
 //
@@ -39326,9 +39263,9 @@ args
 /**/
 /*1*//*THREADmODE3oFF(flagsP)*//*1*/
 
-#define THREADmODE3oFF(flagsP)                                                                                            \
-                                                                                                                          \
-    flagsT _flagsThreadMode3Save = ((tin1S&)tin0P).flagsThreadMode3 ;                                                                \
+#define THREADmODE3oFF(flagsP)                                                  \
+                                                                                \
+    flagsT _flagsThreadMode3Save = ((tin1S&)tin0P).flagsThreadMode3 ;         \
     THREADmODE3oFF0( flagsP )
 
 
@@ -39339,8 +39276,8 @@ args
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042b.threadmode4off END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042c.threadmode4restore BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042b.THREADmODE3oFF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042c.THREADmODE3rESTORE BEGIN
 
 
 //
@@ -39366,8 +39303,8 @@ args
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042c.threadmode4restore END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042d.threadmode4on BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042c.THREADmODE3rESTORE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042d.THREADmODE3oN BEGIN
 
 
 //
@@ -39383,9 +39320,9 @@ args
 /**/
 /*1*//*THREADmODE3oN(flagsP)*//*1*/
 
-#define THREADmODE3oN(flagsP)                                                                                            \
-                                                                                                                          \
-    flagsT _flagsThreadMode3Save = ((tin1S&)tin0P).flagsThreadMode3 ;                                                                \
+#define THREADmODE3oN(flagsP)                                                   \
+                                                                                \
+    flagsT _flagsThreadMode3Save = ((tin1S&)tin0P).flagsThreadMode3 ;         \
     THREADmODE3oN0( flagsP )
 
 
@@ -39396,8 +39333,8 @@ args
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042d.threadmode4on END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042e.threadmode4save0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042d.THREADmODE3oN END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042e.THREADmODE3sAVE0 BEGIN
 
 
 //
@@ -39422,8 +39359,8 @@ args
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042e.threadmode4save0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042f.threadmode4off0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042e.THREADmODE3sAVE0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042f.THREADmODE3oFF0 BEGIN
 
 
 //
@@ -39448,8 +39385,8 @@ args
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042f.threadmode4off0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200430.threadmode4on0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120042f.THREADmODE3oFF0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200430.THREADmODE3oN0 BEGIN
 
 
 //
@@ -39474,8 +39411,8 @@ args
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200430.threadmode4on0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200431.threadmode4restore0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200430.THREADmODE3oN0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200431.THREADmODE3rESTORE0 BEGIN
 
 
 //
@@ -39500,7 +39437,7 @@ args
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200431.threadmode4restore0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200431.THREADmODE3rESTORE0 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200432.ifcidgrablayer BEGIN
 
 
@@ -50667,7 +50604,7 @@ after i return, that countT object will contain 1
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057e.tellappc3slifi END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057f.flthreadmode5 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057f.flTHREADmODE4 BEGIN
 
 
 //
@@ -50703,8 +50640,8 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057f.flthreadmode5 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200580.threadmode5off BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120057f.flTHREADmODE4 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200580.THREADmODE4oFF BEGIN
 
 
 //
@@ -50720,9 +50657,9 @@ after i return, that countT object will contain 1
 /**/
 /*1*//*THREADmODE4oFF(flagsP)*//*1*/
 
-#define THREADmODE4oFF(flagsP)                                                                                            \
-                                                                                                                          \
-    flagsT _flagsThreadMode4Save = ((tin1S&)tin0P).flagsThreadMode4 ;                                                                \
+#define THREADmODE4oFF(flagsP)                                                  \
+                                                                                \
+    flagsT _flagsThreadMode4Save = ((tin1S&)tin0P).flagsThreadMode4 ;         \
     THREADmODE4oFF0( flagsP )
 
 
@@ -50733,8 +50670,8 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200580.threadmode5off END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200581.threadmode5restore BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200580.THREADmODE4oFF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200581.THREADmODE4rESTORE BEGIN
 
 
 //
@@ -50760,8 +50697,8 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200581.threadmode5restore END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200582.threadmode5on BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200581.THREADmODE4rESTORE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200582.THREADmODE4oN BEGIN
 
 
 //
@@ -50777,9 +50714,9 @@ after i return, that countT object will contain 1
 /**/
 /*1*//*THREADmODE4oN(flagsP)*//*1*/
 
-#define THREADmODE4oN(flagsP)                                                                                            \
-                                                                                                                          \
-    flagsT _flagsThreadMode4Save = ((tin1S&)tin0P).flagsThreadMode4 ;                                                                \
+#define THREADmODE4oN(flagsP)                                                   \
+                                                                                \
+    flagsT _flagsThreadMode4Save = ((tin1S&)tin0P).flagsThreadMode4 ;         \
     THREADmODE4oN0( flagsP )
 
 
@@ -50790,8 +50727,8 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200582.threadmode5on END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200583.threadmode5save0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200582.THREADmODE4oN END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200583.THREADmODE4sAVE0 BEGIN
 
 
 //
@@ -50816,8 +50753,8 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200583.threadmode5save0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200584.threadmode5off0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200583.THREADmODE4sAVE0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200584.THREADmODE4oFF0 BEGIN
 
 
 //
@@ -50842,8 +50779,8 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200584.threadmode5off0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200585.threadmode5on0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200584.THREADmODE4oFF0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200585.THREADmODE4oN0 BEGIN
 
 
 //
@@ -50868,8 +50805,8 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200585.threadmode5on0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200586.threadmode5restore0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200585.THREADmODE4oN0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200586.THREADmODE4rESTORE0 BEGIN
 
 
 //
@@ -50894,7 +50831,7 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200586.threadmode5restore0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200586.THREADmODE4rESTORE0 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200588.conoutcallnestsafe BEGIN
 
 
@@ -53913,3 +53850,64 @@ this list corresponds exactly (offsets) to the error codes defined in winerr.h
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b8.TRACEcALLnEST END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*flRESTARTrEPORT*//*1*/
+
+/*3*/
+#define flRESTARTrEPORT_TRACE   0xe0000117
+#define flRESTARTrEPORT_SNAP    0xe0000217
+/*3*/
+#define flRESTARTrEPORT_null    0xe0000017
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ba.RESTARTrEPORT BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*RESTARTrEPORT*//*1*/
+
+
+#define RESTARTrEPORT(flagsP)                                                   \
+                                                                                \
+    tellInfoSysExceptionS _restartInfo ;                                        \
+    countT _pcRestartArg[] = { (flagsP) , (countT)&_restartInfo } ;             \
+    RESTARTiFqUERY( bAcceptEventReportF , _pcRestartArg )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ba.RESTARTrEPORT END

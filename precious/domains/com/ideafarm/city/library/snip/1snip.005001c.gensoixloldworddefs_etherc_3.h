@@ -1126,7 +1126,7 @@ voidT osProcessForwardSignalsToMe_offF_o_GF( tin0S& tin0P , etherC& etherP , sou
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.osProcessForwardSignalsToMe_offF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT osProcessForwardSignalsToMe_onF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -1137,7 +1137,7 @@ voidT osProcessForwardSignalsToMe_onF_o_GF( tin0S& tin0P , etherC& etherP , soul
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.osProcessForwardSignalsToMe_onF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT osProcessIdF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -1150,7 +1150,7 @@ voidT osProcessIdF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const stro
 
     ZE( countT , noName ) ;
     if( !POOP ) noName = etherP.osProcessIdF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 
     slP << noName ;
 }
@@ -2009,7 +2009,7 @@ voidT osThreadIdF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strok
 
     ZE( countT , noName ) ;
     if( !POOP ) noName = etherP.osThreadIdF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 
     slP << noName ;
 }
@@ -2022,7 +2022,7 @@ voidT osThreadSwitchingOffF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , c
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.osThreadSwitchingOffF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT osThreadSwitchingOnF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -2033,7 +2033,7 @@ voidT osThreadSwitchingOnF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , co
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.osThreadSwitchingOnF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT osTimeSetF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -2044,7 +2044,7 @@ voidT osTimeSetF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const stroke
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.osTimeSetF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT reportProcessNamePidF_o4P4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -2097,7 +2097,7 @@ voidT openSslTls_setupF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.openSslTls_setupF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT openSslTls_shutdownF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -2108,7 +2108,7 @@ voidT openSslTls_shutdownF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , co
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.openSslTls_shutdownF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT openSslTls_getContextF_ob4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )

@@ -1606,7 +1606,7 @@ voidT ifcPortAuthorityF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.ifcPortAuthorityF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT ifcPortDelF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -1617,7 +1617,7 @@ voidT ifcPortDelF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strok
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.ifcPortDelF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT ifcPortNewF_o33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -1673,7 +1673,7 @@ voidT ifcPortNewIdMiscF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
 
     ZE( countT , noName ) ;
     if( !POOP ) noName = etherP.ifcPortNewIdMiscF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 
     slP << noName ;
 }
@@ -1686,7 +1686,7 @@ voidT ifcPortNewProcessF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , cons
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.ifcPortNewProcessF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT ifcPutHostLogEntryF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -2135,7 +2135,7 @@ voidT osClipboardFlavorsF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , con
 
     ZE( countT , noName ) ;
     if( !POOP ) noName = etherP.osClipboardFlavorsF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 
     slP << noName ;
 }
@@ -2148,7 +2148,7 @@ voidT osClipboardGrabF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const 
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.osClipboardGrabF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT osClipboardLetGoF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -2159,7 +2159,7 @@ voidT osClipboardLetGoF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.osClipboardLetGoF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT osClipboardReadF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -2204,7 +2204,7 @@ voidT osDoNothingF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const stro
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.osDoNothingF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT osDoNothingLoopF_o33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )

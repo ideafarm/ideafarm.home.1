@@ -1,64 +1,3 @@
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*flRESTARTrEPORT*//*1*/
-
-/*3*/
-#define flRESTARTrEPORT_TRACE   0xe0000117
-#define flRESTARTrEPORT_SNAP    0xe0000217
-/*3*/
-#define flRESTARTrEPORT_null    0xe0000017
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ba.RESTARTrEPORT BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*RESTARTrEPORT*//*1*/
-
-
-#define RESTARTrEPORT(flagsP)                                                   \
-                                                                                \
-    tellInfoSysExceptionS _restartInfo ;                                        \
-    countT _pcRestartArg[] = { (flagsP) , (countT)&_restartInfo } ;             \
-    RESTARTiFqUERY( bAcceptEventReportF , _pcRestartArg )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ba.RESTARTrEPORT END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005bb.ifcBOScODEwINDOWS BEGIN
 
 
@@ -2329,7 +2268,7 @@ these "status codes" are returned by some MS Windows api's
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c3.HUSHbITSdEFAULT END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c4.flthreadmodewhere BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c4.flTHREADmODEwHERE BEGIN
 
 
 //
@@ -2361,8 +2300,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c4.flthreadmodewhere END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c5.threadmodewhereoff BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c4.flTHREADmODEwHERE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c5.THREADmODEwHEREoFF BEGIN
 
 
 //
@@ -2378,9 +2317,9 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*THREADmODEwHEREoFF(flagsP)*//*1*/
 
-#define THREADmODEwHEREoFF(flagsP)                                                                                            \
-                                                                                                                          \
-    flagsT _flagsThreadModeWhereSave = ((tin123S&)tin0P).where.flagsThreadModeWhere ;                                                                \
+#define THREADmODEwHEREoFF(flagsP)                                                          \
+                                                                                            \
+    flagsT _flagsThreadModeWhereSave = ((tin123S&)tin0P).where.flagsThreadModeWhere ;     \
     THREADmODEwHEREoFF0( flagsP )
 
 
@@ -2391,8 +2330,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c5.threadmodewhereoff END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c6.threadmodewhererestore BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c5.THREADmODEwHEREoFF END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c6.THREADmODEwHERErESTORE BEGIN
 
 
 //
@@ -2418,8 +2357,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c6.threadmodewhererestore END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c7.threadmodewhereon BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c6.THREADmODEwHERErESTORE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c7.THREADmODEwHEREoN BEGIN
 
 
 //
@@ -2435,9 +2374,9 @@ these "status codes" are returned by some MS Windows api's
 /**/
 /*1*//*THREADmODEwHEREoN(flagsP)*//*1*/
 
-#define THREADmODEwHEREoN(flagsP)                                                                                            \
-                                                                                                                          \
-    flagsT _flagsThreadModeWhereSave = ((tin123S&)tin0P).where.flagsThreadModeWhere ;                                                                \
+#define THREADmODEwHEREoN(flagsP)                                                           \
+                                                                                            \
+    flagsT _flagsThreadModeWhereSave = ((tin123S&)tin0P).where.flagsThreadModeWhere ;     \
     THREADmODEwHEREoN0( flagsP )
 
 
@@ -2448,8 +2387,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c7.threadmodewhereon END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c8.threadmodewheresave0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c7.THREADmODEwHEREoN END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c8.THREADmODEwHEREsAVE0 BEGIN
 
 
 //
@@ -2474,8 +2413,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c8.threadmodewheresave0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c9.threadmodewhereoff0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c8.THREADmODEwHEREsAVE0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c9.THREADmODEwHEREoFF0 BEGIN
 
 
 //
@@ -2500,8 +2439,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c9.threadmodewhereoff0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ca.threadmodewhereon0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005c9.THREADmODEwHEREoFF0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ca.THREADmODEwHEREoN0 BEGIN
 
 
 //
@@ -2526,8 +2465,8 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ca.threadmodewhereon0 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005cb.threadmodewhererestore0 BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ca.THREADmODEwHEREoN0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005cb.THREADmODEwHERErESTORE0 BEGIN
 
 
 //
@@ -2552,7 +2491,7 @@ these "status codes" are returned by some MS Windows api's
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005cb.threadmodewhererestore0 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005cb.THREADmODEwHERErESTORE0 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005cc.ifcIDtYPEsTEPrECURSION BEGIN
 
 
@@ -5803,11 +5742,11 @@ it is illegal to refer to this symbol in the definition of an adam
                                                                                                                                                                                                                                                                                                 \
             /*CODEsYNC: 00100df 0010055*/                                                                                                                                                                                                                                                       \
             TELL( "TASK1pART0:   setting flagsThreadMode1" )                                                                                                                                                                                                                                    \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                        \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                        \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                        \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                        \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                        \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SHOWpROGRESS            )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SHOWpROGRESS            ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
@@ -6047,6 +5986,99 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200613.DONE1nOeTHERS END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200614.TASK123nOeTsCRATCH BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.11000025.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.a500104.1.1.0.html\"\>a500104:  WAKEsHOW( "example.simplest.snip.11000025.TASK" )\</A\>
+*/
+/**/
+/*1*//*TASKnOeTsCRATCH(taskFP)*//*1*/
+
+#define TASK123nOeTsCRATCH(taskFP) TASK123pART0nOeTsCRATCH( taskFP , flTHIRDmODE_null )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200614.TASK123nOeTsCRATCH END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200615.DONE123nOeTsCRATCH BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
+*/
+/**/
+/*1*//*DONE123nOeTsCRATCH(taskFP)*//*1*/
+
+#ifdef __OS2__
+
+    #define DONE123nOeTsCRATCH(taskFP)                                                                                                                                                                      \
+                                                                                                                                                                                                            \
+                        DONEpART0nOeTsCRATCH                                                                                                                                                                \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            threadLocalStorage123F( ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                          \
+        }
+
+#elif defined( __NT__ )
+
+    #define DONE123nOeTsCRATCH(taskFP)                                                                                                                                                                      \
+                                                                                                                                                                                                            \
+                        DONEpART0nOeTsCRATCH                                                                                                                                                                \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                              \
+            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                             \
+            /* ZE( countT , foo ) ;                          */                                                                                                                                             \
+            /* ZE( countT , goo ) ;                          */                                                                                                                                             \
+            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                             \
+            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                             \
+            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                             \
+            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                             \
+                                                                                                                                                                                                            \
+            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;       \
+                                                                                                                                                                                                            \
+            return c_threadTry1Outer123F( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                           \
+        }
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200615.DONE123nOeTsCRATCH END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -28883,7 +28915,7 @@ it is used by classes such as batonC and signC to store functionality added by t
 /*1*/struct __export whereS/*1*/
 {
     countT idDirty                                   ;
-    flagsT flagsThreadModeWhere                          ;
+    flagsT flagsThreadModeWhere                      ;
     countT idWhat1                                   ;
     countT idWhat2                                   ;
     countT cInNest                                   ;
@@ -28905,7 +28937,7 @@ it is used by classes such as batonC and signC to store functionality added by t
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.whereS : 1snip.15000136.wheres END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.glassS : 1snip.15000113.monitors BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.monitorS : 1snip.15000113.monitors BEGIN
 
 
 //
@@ -28943,7 +28975,7 @@ it is used by classes such as batonC and signC to store functionality added by t
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.glassS : 1snip.15000113.monitors END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.monitorS : 1snip.15000113.monitors END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tinArgS : 1snip.1500011e.tinargs BEGIN
 
 
@@ -29359,7 +29391,7 @@ struct bookMarkOldS
     countT                  cSpins4 ;
     countT                  cOsHandles ;                            // TALLY OF BASE O.S. HANDLES OPENED AND CLOSED BY THIS THREAD, ACCORDING TO THE handleC MEMBER FUNCTIONS
     tlsHeaderS*             pTlsHeader ;                            //U:: REMOVE IN PRODUCTION ; THIS IS TO FIND A BUG
-    glassS                  glass ;                                                               // flagsThreadModeWhere IS IN HERE
+    glassS                  glass ;
 
     tin_part1_S( tin0S& tin0P , tin0S* const pTin0DadP , const countT idTinNamedP , countT idThreadP , byteT* const pbTlsP , const countT cbTlsP ) ;
 

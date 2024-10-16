@@ -2831,7 +2831,7 @@ voidT cioSetupF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.cioSetupF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT cioSetQuitF_o6_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -2955,7 +2955,7 @@ voidT tracePoolTalliesF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.tracePoolTalliesF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT traceMemoryGrainRptF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
@@ -2966,7 +2966,7 @@ voidT traceMemoryGrainRptF_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP , co
     ZE( flagsT , flagsNext ) ;
     ZE( countT , cbFieldNext ) ;
     if( !POOP ) etherP.traceMemoryGrainRptF( tin0P ) ;
-    if( ((tin123S&)tin0P).fingerprint && _psttNameP && slP ) ;
+    if( ((tin1S&)tin0P).fingerprint && _psttNameP && slP ) ;
 }
 
 voidT hushWritePrivateKeyToFileF_o4Pb_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
