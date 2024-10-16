@@ -1,4 +1,67 @@
 
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+\<A HREF=\"5.0010058.1.0.html\"\>definition\</A\>
+examples
+ simplest
+  \<A HREF=\"5.b500104.1.1.0.html\"\>b500104:  WAKEsHOW( "example.simplest.snip.0010058.DONE" )\</A\>
+*/
+/**/
+/*1*//*DONE123nOeTsCRATCH(taskFP)*//*1*/
+
+#ifdef __OS2__
+
+    #define DONE123nOeTsCRATCH(taskFP)                                                                                                                                                                      \
+                                                                                                                                                                                                            \
+                        DONEpART0nOeTsCRATCH                                                                                                                                                                \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            threadLocalStorage123F( ifcIDtYPEtLS_KID , taskFP##_workF , (countT)argP , 0 , 0 , 0 , 0 , #taskFP ) ;                                                                                          \
+        }
+
+#elif defined( __NT__ )
+
+    #define DONE123nOeTsCRATCH(taskFP)                                                                                                                                                                      \
+                                                                                                                                                                                                            \
+                        DONEpART0nOeTsCRATCH                                                                                                                                                                \
+                                                                                                                                                                                                            \
+        TASKpART0PROTO( taskFP )                                                                                                                                                                            \
+        {                                                                                                                                                                                                   \
+            /* TO USE THIS CODE, REPLACE "DONE" WITH THIS DEFINITION AND THEN REMOVE THE COMMENT DELIMITERS */                                                                                              \
+            /* 20210321@2028: ADDED TO INSPECT STACK SIZE    */                                                                                                                                             \
+            /* ZE( countT , foo ) ;                          */                                                                                                                                             \
+            /* ZE( countT , goo ) ;                          */                                                                                                                                             \
+            /* static countT addr1 = (countT)&foo ;          */                                                                                                                                             \
+            /* static countT addr2 = (countT)&goo ;          */                                                                                                                                             \
+            /* static MEMORY_BASIC_INFORMATION info ;        */                                                                                                                                             \
+            /* VirtualQuery( &foo , &info , sizeof info ) ;  */                                                                                                                                             \
+                                                                                                                                                                                                            \
+            countT c_osh = !processGlobal1S::_processGlobal1I_IF().phExceptionHandler ? 0 : processGlobal1S::_processGlobal1I_IF().phExceptionHandler->osNoTinF( ifcIDtYPEhANDLE_EXCEPTIONhANDLER ) ;       \
+                                                                                                                                                                                                            \
+            return c_threadTry1Outer123F( 0 , c_osh , (countT)taskFP##_workF , (countT)argP , (countT)#taskFP ) ;                                                                                           \
+        }
+
+#endif
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
+#define TASK123nOeTsCRATCH(taskFP) TASK123pART0nOeTsCRATCH( taskFP , flTHIRDmODE_null )
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
