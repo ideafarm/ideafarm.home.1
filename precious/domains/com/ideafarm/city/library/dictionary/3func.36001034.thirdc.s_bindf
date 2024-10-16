@@ -10,7 +10,7 @@
 }
     return idPort ;
     }
-        if( !POOP ) idPort = ((tin123S&)tin0P).brcRaw ;
+        if( !POOP ) idPort = ((tin1S&)tin0P).brcRaw ;
         BOSdOnOTtEST( WHATgbo , ntohs( info.sin6_port ) )
         BOSpOOP
         BOSS( WHATsir , BOSfAIL , getsockname( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , &cbInfo ) )
@@ -38,11 +38,11 @@
             }
                 if( bAgain ) { ++ s ; dosSleepIF( tin0P , TUCK * 0x40 ) ; }
 
-                //if( ((tin123S&)tin0P).pEther ) ((tin123S&)tin0P).pEther->traceF( tin0P , T("bindF failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                countT rc = ((tin123S&)tin0P).brcRaw ;
+                //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("bindF failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                countT rc = ((tin1S&)tin0P).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
             {
-            if( ((tin123S&)tin0P).bosFail )
+            if( ((tin1S&)tin0P).bosFail )
             BOSS( WHATgbo , BOSfAIL , bind( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info ) )
 
             bAgain = !*this && ( bNoQuit || ( bNoQuitEarly && !thPrimeIF( tin0P ) ) || ( cTriesP && -- cTriesP ) ) ;
@@ -67,9 +67,9 @@
     ZE( countT , cDebug2 ) ;
     ZE( countT , cDebug1 ) ;
 
-    *(countT*)info.sin6_addr.u.Byte = ((tin123S&)tin0P).brcRaw ; //U: SUPPORTS ONLY IPV4 (NOT IPV6)
+    *(countT*)info.sin6_addr.u.Byte = ((tin1S&)tin0P).brcRaw ; //U: SUPPORTS ONLY IPV4 (NOT IPV6)
     BOSdOnOTtEST( WHATgbo , htonl( *(const countT*)nicNameP ) )
-    info.sin6_port = (count01T)((tin123S&)tin0P).brcRaw ;
+    info.sin6_port = (count01T)((tin1S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , htons( (count01T)( idPortP ? idPortP : INADDR_ANY ) ) )
     info.sin6_family = AF_INET6 ;
     c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;

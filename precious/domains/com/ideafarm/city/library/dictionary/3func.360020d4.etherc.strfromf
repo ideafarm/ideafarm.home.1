@@ -125,7 +125,7 @@
         ZE( countT , cdBits ) ; //"cDigitBits": 0-BASED: 0 MEANS 1 BIT; f MEANS 01 BITS
 
         const boolT bNoBigitValues = F(flagsFormatP) & flFORMAT_NObIGITvALUES /* || !thirdC::p WinRootIF() */ ;_WQ
-        const boolT bForeign       = !((tin123S&)tin0P).strokeMode.idCasteDefault ;_WQ
+        const boolT bForeign       = !((tin12S&)tin0P).strokeMode.idCasteDefault ;_WQ
 
         const boolT bRadixIndicator = radix != 16 && !( F(flagsFormatP) & flFORMAT_NObASE ) ;_WQ
 
@@ -186,8 +186,8 @@
 
     }
         if( POOP ) return ;
-        __(  ((tin123S&)tin0P).strokeMode.idCasteDefault && radixP > 0x10000 ) ;_WQ
-        __( !((tin123S&)tin0P).strokeMode.idCasteDefault && radixP > 64 ) ;_WQ
+        __(  ((tin12S&)tin0P).strokeMode.idCasteDefault && radixP > 0x10000 ) ;_WQ
+        __( !((tin12S&)tin0P).strokeMode.idCasteDefault && radixP > 64 ) ;_WQ
         __( radixP && radixP < 2 ) ;_WQ
         __NZ( psttP ) ;_WQ
         if( POOP ) return ;
@@ -208,8 +208,8 @@
    this would conform to the convention used for explicit radix indicators in the rendered text
    this function should have been written to use value 1 for binary, i.e. to require radixP to specify the maximum value representable by a single bigit
   example: value 2 produces binary
-  if not 0 and !!((tin123S&)tin0P).strokeMode.idCasteDefault then must be 2 <= radixP <= 65536_9 (00001)
-  if not 0 and  !((tin123S&)tin0P).strokeMode.idCasteDefault then must be 2 <= radixP <= 64_9
+  if not 0 and !!((tin12S&)tin0P).strokeMode.idCasteDefault then must be 2 <= radixP <= 65536_9 (00001)
+  if not 0 and  !((tin12S&)tin0P).strokeMode.idCasteDefault then must be 2 <= radixP <= 64_9
   if 0 then 16_9 is implied
   can be 0
  radixP

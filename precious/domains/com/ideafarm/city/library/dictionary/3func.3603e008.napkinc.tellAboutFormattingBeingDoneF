@@ -18,7 +18,7 @@
         ti.pbData    = pbNapkin + sizeof( napkinHeaderS ) ;
         ti.costName  = thirdC::c_strlenIF( tin0P , ti.postName ) ;
         thirdC::c_strncpyIF( tin0P , ti.postName , postName , sizeof ti.postName ) ;
-        ti.osPid     = ((tin123S&)tin0P).osPid ;
+        ti.osPid     = ((tin1S&)tin0P).osPid ;
         tellInfoSysNapkinS ti ;
     {
     if( pbNapkin && this != &processGlobal4I.napHome ) //ASSUME: napHome IS CT WOTH
@@ -28,7 +28,7 @@
     }
         if( POOP ) BLAMMO ;
         __Z( pbNapkin ) ;
-        __( osTidCt - ((tin123S&)tin0P).osTid ) ;
+        __( osTidCt - ((tin1S&)tin0P).osTid ) ;
         __( !bDataAreaFormatted ) ;
         __( F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED ) ;
         if( POOP ) BLAMMO ;

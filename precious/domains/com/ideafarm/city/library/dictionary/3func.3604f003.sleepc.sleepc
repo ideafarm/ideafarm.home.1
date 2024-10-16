@@ -16,7 +16,7 @@
     }
         ((tin123S*)pTin)->grabPseudo.cGrabbed ++ ;
         if( ((tin123S*)pTin)->grabPseudo.stat.cAcquisitions != - 1 ) inc02AM( ((tin123S*)pTin)->grabPseudo.stat.cAcquisitions ) ;
-        else                         ((tin123S*)pTin)->grabPseudo.osTid = ((tin123S&)tin0P).osTid ;
+        else                         ((tin123S*)pTin)->grabPseudo.osTid = ((tin1S&)tin0P).osTid ;
         }
             { BLAMMO ; }
         {
@@ -46,7 +46,7 @@
             //OStEXTC( ostoBuf , bTlsEarlyLateI , 0 ) ;
             OStEXTC( ostoBuf , bTlsEarlyLateIF() , 0 ) ;
             OStEXTAK( ostoBuf , " bTlsEarlyLateI: " ) ;
-            OStEXTC( ostoBuf , ((tin123S&)tin0P).idTin , 0 ) ;
+            OStEXTC( ostoBuf , ((tin1S&)tin0P).idTin , 0 ) ;
             OStEXTAK( ostoBuf , "\" idTin: " ) ;
             if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostoBuf , ((tin123S&)tin0P).postThreadName ) ;
             OStEXTAK( ostoBuf , "\r\nTINSL: \"" ) ;
@@ -68,9 +68,9 @@
             etherC::ifcSayIF( ostor , flSAY_LOG | flSAY_APPEND ) ;
 
             OStEXTAK( ostor , "\r\n" ) ;
-            OStEXTC( ostor , ((tin123S&)tin0P).idLineMile , 0 ) ;
+            OStEXTC( ostor , ((tin1S&)tin0P).idLineMile , 0 ) ;
             OStEXTAK( ostor , "; idLineMile is " ) ;
-            //OStEXTC( ostor , ((tin123S&)tin0P).pc Utility[ 1 ] , 0 ) ;
+            //OStEXTC( ostor , ((tin1S&)tin0P).pc Utility[ 1 ] , 0 ) ;
             OStEXTAK( ostor , "\"; pcUtilityI[1] is " ) ;
             if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA( ostor , ((tin123S&)tin0P).postThreadName )
             OStEXTAK( ostor , "sleep blammo 1 (sleepC constructor) on thread \"" )
@@ -94,11 +94,11 @@
 
     _IO_
 {
-bOuter( !((tin123S&)tin0P).grabPseudo.cGrabbed )
+bOuter( !((tin1S&)tin0P).grabPseudo.cGrabbed )
 bOsCall( bOsCallP ) ,
 pTin( &tin0P ) ,
-idiFileCtSave( ((tin123S&)tin0P).grabPseudo.idiFileCt ) ,
-idLineCtSave( ((tin123S&)tin0P).grabPseudo.idLineCt ) ,
+idiFileCtSave( ((tin1S&)tin0P).grabPseudo.idiFileCt ) ,
+idLineCtSave( ((tin1S&)tin0P).grabPseudo.idLineCt ) ,
 /*1*/sleepC::sleepC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const boolT bOsCallP ) :/*1*/
 
 /**/

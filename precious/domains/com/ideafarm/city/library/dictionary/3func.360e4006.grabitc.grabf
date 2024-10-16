@@ -10,11 +10,11 @@
 }
     //ctCheckF() ;
 
-    //((tin123S&)tin0P).cGrabitC_registered ++ ; //TO FIND A BUG
+    //((tin1S&)tin0P).cGrabitC_registered ++ ; //TO FIND A BUG
     registerDoneF( tin0P , idLineP , idiFileP ) ;
 
     }
-        if( pcGOT ) *pcGOT = ((tin123S&)tin0P).osTid ;
+        if( pcGOT ) *pcGOT = ((tin1S&)tin0P).osTid ;
 
         //}
         //    emitWordsIF( tin0P , ifcLINE , IDFILE , pcSuffix , 4 ) ;
@@ -42,9 +42,9 @@
         //countT offTraceMe = incv02AM( processGlobal2I.cTrace ) ;
         //TO FIND A BUG
 
-        ((tin123S&)tin0P).cGrabitC_set ++ ; //U:: TO FIND A BUG
-        ((tin123S&)tin0P).cYield = 0 ;
-        countT cYield = ((tin123S&)tin0P).cYield ;
+        ((tin1S&)tin0P).cGrabitC_set ++ ; //U:: TO FIND A BUG
+        ((tin1S&)tin0P).cYield = 0 ;
+        countT cYield = ((tin1S&)tin0P).cYield ;
         //savebyte2 = *pbo ;
 
         //}
@@ -74,7 +74,7 @@
         {
 
         // savebyte1 = *pbo ;
-        ((tin123S&)tin0P).cYield = 0 ;
+        ((tin1S&)tin0P).cYield = 0 ;
         idiFileGrabber = idiFileP ; //SINCE THESE VALUES ARE RETAINED WHEN NOT GRABBED, THE MONITOR CAN SEE WHICH GRAB LINES ARE CURRENTLY ACTIVE
         idLineGrabber  = idLineP ; //THESE ARE INFORMATORY ONLY; THEY ARE NOT RESET; THEY ARE OVERWRITTEN HERE
     
@@ -101,7 +101,7 @@
 
         if( !pcGR ) { BLAMMO ; }                    // THEN I SHOULD HAVE SET pcGR TO HOLD A RECURSION COUNT
     {
-    if( pcGOT && *pcGOT == ((tin123S&)tin0P).osTid )             // IF I HAVE ALREADY GRABBED AND AM RECURSING
+    if( pcGOT && *pcGOT == ((tin1S&)tin0P).osTid )             // IF I HAVE ALREADY GRABBED AND AM RECURSING
 
     ;
         : poff_cGrabberRecurse                                    
@@ -153,7 +153,7 @@
     {
     if( F(flagsCt2) & flGRABITc_RECURSEuSINGtINs )
 
-    if( ((tin123S&)tin0P).idDesireSetBySelf != ifcTHREADpRIORITY_SPINLOCK ) { BLAMMOiD( 0x34343434 ) ; }
+    if( ((tin1S&)tin0P).idDesireSetBySelf != ifcTHREADpRIORITY_SPINLOCK ) { BLAMMOiD( 0x34343434 ) ; }
     if( tin0P.idTypeTin - ifcIDtYPEtIN_123                                  ) { BLAMMOiD( 0x12121212 ) ; }
 
     _IO_

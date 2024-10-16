@@ -65,11 +65,11 @@
             if( cbaFoot )                                                                                                                       \
             }                                                                                                                                   \
                 BLAMMOiD( 0x11 ) ;                                                                                                              \
-                /*((tin123S&)tin0P).pc Utility[ 4 ] = sizeof( batonC ) ; */                                                                                  \
-                /*((tin123S&)tin0P).pc Utility[ 3 ] = cbP ;              */                                                                                  \
-                /*((tin123S&)tin0P).pc Utility[ 2 ] = cbaFoot ;          */                                                                                  \
-                /*((tin123S&)tin0P).pc Utility[ 1 ] = cbaFoot + cbP ;    */                                                                                  \
-                /*((tin123S&)tin0P).pc Utility[ 0 ] = cbZombieP ;        */                                                                                  \
+                /*((tin1S&)tin0P).pc Utility[ 4 ] = sizeof( batonC ) ; */                                                                                  \
+                /*((tin1S&)tin0P).pc Utility[ 3 ] = cbP ;              */                                                                                  \
+                /*((tin1S&)tin0P).pc Utility[ 2 ] = cbaFoot ;          */                                                                                  \
+                /*((tin1S&)tin0P).pc Utility[ 1 ] = cbaFoot + cbP ;    */                                                                                  \
+                /*((tin1S&)tin0P).pc Utility[ 0 ] = cbZombieP ;        */                                                                                  \
             {                                                                                                                                   \
             if( cbZombieP - ( cbaFoot + cbP ) )   /* DO A FULL BUILD (REFRESH HEADERS) IF THIS HAPPENS */                                       \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
@@ -94,7 +94,7 @@
                 PUSE.newF( tin0P , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ;                                                                   \
             {                                                                                                                                   \
             else                                                                                                                                \
-            if( !((tin123S&)tin0P).pPoolUse ) *(byteT**)&pvn = (processGlobal4IP).heap.newF( tin0P , LF , ( cbaFoot + cbP ) ) ;                               \
+            if( !((tin1S&)tin0P).pPoolUse ) *(byteT**)&pvn = (processGlobal4IP).heap.newF( tin0P , LF , ( cbaFoot + cbP ) ) ;                               \
             ZE( voidT* , pvn ) ;                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             _IO_                                                                                                                                \
@@ -201,14 +201,14 @@
                 pNote->idType       = ifcIDtYPEdROPnOTE_##typeP ;                                                                               \
             {                                                                                                                                   \
             if( pNote )                                                                                                                         \
-            dropNoteS* pNote = !((tin123S&)tin0P).pPoolUse ? 0 : PUSE.pDropNoteF( tin0P , (byteT*)pvn ) ;                                                     \
+            dropNoteS* pNote = !((tin1S&)tin0P).pPoolUse ? 0 : PUSE.pDropNoteF( tin0P , (byteT*)pvn ) ;                                                     \
                                                                                                                                                 \
             }                                                                                                                                   \
                 ___LF( pvn , idLineP , idiFileP ) ;                                                                                             \
                 PUSE.newF( tin0P , LF , *(byteT**)&pvn , ( cbaFoot + cbP ) ) ;                                                                   \
             {                                                                                                                                   \
             else                                                                                                                                \
-            if( !((tin123S&)tin0P).pPoolUse ) *(byteT**)&pvn = (processGlobal4IP).heap.newF( tin0P , LF , ( cbaFoot + cbP ) ) ;                               \
+            if( !((tin1S&)tin0P).pPoolUse ) *(byteT**)&pvn = (processGlobal4IP).heap.newF( tin0P , LF , ( cbaFoot + cbP ) ) ;                               \
             ZE( voidT* , pvn ) ;                                                                                                                \
             countT cbaFoot = cbFootP ? cbFootP + 2 * sizeof( countT ) : 0 ;                                                                     \
             _IO_                                                                                                                                \

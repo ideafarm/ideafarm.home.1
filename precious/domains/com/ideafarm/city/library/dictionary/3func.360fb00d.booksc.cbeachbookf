@@ -21,7 +21,7 @@
                 *pcpIdBookSizePairsP = cBooks ;
             {
             if( pcpIdBookSizePairsP )
-            ((tin123S&)tin0P).pEther->newF( tin0P , LF , pcpIdBookSizePairsP , 1 + ( cBooks << 1 ) ) ; ___( pcpIdBookSizePairsP ) ;
+            ((tin1S&)tin0P).pEther->newF( tin0P , LF , pcpIdBookSizePairsP , 1 + ( cBooks << 1 ) ) ; ___( pcpIdBookSizePairsP ) ;
         {
         if( cBooks )
         countT cBooks = stqIdBookCb ;
@@ -31,7 +31,7 @@
             DEL( pInfo ) ;
             }
                 DEL( pLook ) ;
-                ((tin123S&)tin0P).pEther->delF( tin0P , pcpIdLook ) ;
+                ((tin1S&)tin0P).pEther->delF( tin0P , pcpIdLook ) ;
                 }
                     //CONoUTrAW3( T("book: \"")+tName+T("\" [cbUsed]: ") , head.cbUsed , "\r\n" ) ;
 
@@ -60,12 +60,12 @@
                 {
                 TN( tIdLook , "" ) ;
 
-                ((tin123S&)tin0P).pEther->delF( tin0P , pstt1w ) ;
+                ((tin1S&)tin0P).pEther->delF( tin0P , pstt1w ) ;
                 }
                     }
                         else                       pco -- ;
                         if( pco == pcpIdLook ) pco = pcpIdLook + cWords - 1 ;
-                        *pco = ((tin123S&)tin0P).pEther->strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ;
+                        *pco = ((tin1S&)tin0P).pEther->strDigitsToSCountF( tin0P , psttc1 , 0 , 1 ) ;
                     {
                     FORsTRINGSiN1( pstt1w )
 
@@ -75,25 +75,25 @@
                 PUSE.newF( tin0P , LF , *(byteT**)&pcpIdLook , sizeof( countT ) * cWords ) ; ___( pcpIdLook ) ;
                 ZE( countT* , pcpIdLook ) ;
 
-                ((tin123S&)tin0P).pEther->delF( tin0P , psttw ) ;
-                countT cWords = ((tin123S&)tin0P).pEther->strWordsOldF( tin0P , pstt1w , psttw , sttq , tDot ) ; ___( pstt1w ) ;
+                ((tin1S&)tin0P).pEther->delF( tin0P , psttw ) ;
+                countT cWords = ((tin1S&)tin0P).pEther->strWordsOldF( tin0P , pstt1w , psttw , sttq , tDot ) ; ___( pstt1w ) ;
                 ZE( strokeS* , pstt1w ) ;
 
-                ((tin123S&)tin0P).pEther->strSubstringF( tin0P , psttw , idf , sttq , tAfter , pInfo->psttIfoName ) ; ___( psttw ) ;
-                ((tin123S&)tin0P).pEther->delF( tin0P , psttw ) ;
-                ((tin123S&)tin0P).pEther->strSubstringF( tin0P , psttw , idf , sttq , tBefore , pInfo->psttIfoName ) ; ___( psttw ) ;
+                ((tin1S&)tin0P).pEther->strSubstringF( tin0P , psttw , idf , sttq , tAfter , pInfo->psttIfoName ) ; ___( psttw ) ;
+                ((tin1S&)tin0P).pEther->delF( tin0P , psttw ) ;
+                ((tin1S&)tin0P).pEther->strSubstringF( tin0P , psttw , idf , sttq , tBefore , pInfo->psttIfoName ) ; ___( psttw ) ;
                 countT idf = 1 ;
                 ZE( strokeS* , psttw ) ;
             {
             if( pInfo && !( F(pInfo->flags) & flFILEaTTR1_DIRECTORY ) )
-            ((tin123S&)tin0P).pEtScratch->diskFindFileOrDirF( tin0P , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
+            ((tin1S&)tin0P).pEtScratch->diskFindFileOrDirF( tin0P , pInfo , hFind , fnLike.pathF() , &pat ) ; ___( pInfo ) ;
             ZE( infoFileS* , pInfo ) ;
         {
         do
         handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
-        patternC pat( tin0P , *((tin123S&)tin0P).pEther , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
-        fileNameC fnLike( tin0P , *((tin123S&)tin0P).pEther , psttFindLike ) ;
+        patternC pat( tin0P , *((tin1S&)tin0P).pEther , fnLike , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
+        fileNameC fnLike( tin0P , *((tin1S&)tin0P).pEther , psttFindLike ) ;
         TN( tDot , "." ) ;
         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
         TN( tAfter  , ".bookC" ) ;

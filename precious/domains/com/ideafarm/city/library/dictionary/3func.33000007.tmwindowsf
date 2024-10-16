@@ -30,7 +30,7 @@ THREADmODE1rESTORE
 
         }
             thirdC::winDestroyWindowClassIF( tin0P , MAINwINDOWcLASSnAME ) ;
-            ((tin123S&)tin0P).idPhase2 = 3 ;
+            ((tin1S&)tin0P).idPhase2 = 3 ;
             //LOGrAW( "tmWindowsF/dispatchola/-\r\n" ) ;
             TINSL
         {
@@ -49,7 +49,7 @@ THREADmODE1rESTORE
             thirdC::winDispatchMessagesIF( tin0P ) ; // WM_CLOSE WILL DELETE pEtThread (WHICH DELETES tin0P) BEFORE THIS RETURNS
             //LOGrAW( "tmWindowsF/dispatchola/+\r\n" ) ;
             //FROM HERE ON DO NOT REFER TO ANY IFC OBJECTS (EG etThread)
-            ((tin123S&)tin0P).idPhase2 = 2 ;
+            ((tin1S&)tin0P).idPhase2 = 2 ;
             DEL( pTaskP ) ;
             TELL( "pumping window messages" )
         {
@@ -143,7 +143,7 @@ THREADmODE1rESTORE
             countT osMin = thirdC::winIdMsgUserIF( tin0P ) ;
         {
     
-        ((tin123S&)tin0P).idPhase2 = 1 ;
+        ((tin1S&)tin0P).idPhase2 = 1 ;
         processGlobal2I.ebp_tmWindowsF_ = ebpAM() ; //winMessageHandlerWorkF WILL USE THIS VALUE TO FIND tin0P
         if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin1S&)tin0P).glass.idThread - ifcIDtHREADlOW_tmWindowsOrServiceMainF ) ; }
         TELL( "setting up" )
@@ -200,7 +200,7 @@ i create windows, handle their messages, and destroy them
     }
         }
             break ;
-            rc = ((tin123S&)tin0P).brcRaw ;
+            rc = ((tin1S&)tin0P).brcRaw ;
             BOSdOnOTtEST( WHATgbo , DefWindowProc( (HWND)hWindowP , idCmdP , p1P , p2P ) )
         {
         default:
@@ -215,7 +215,7 @@ i create windows, handle their messages, and destroy them
             break ;
             BOSpOOP
             BOS( WHATgbo , BOSoK , PostMessage( (HANDLE)hWindowP , WM_QUIT , 0 , 0 ) )
-            rc = ((tin123S&)tin0P).brcRaw ;
+            rc = ((tin1S&)tin0P).brcRaw ;
             BOSdOnOTtEST( WHATgbo , DefWindowProc( (HWND)hWindowP , idCmdP , p1P , p2P ) )
             }
                 while( !( F(thirdC::third_flagsProcessStateI_IF(tin0P)) & flPROCESSsTATE_MAINtHREADcLEANUPiScOMPLETE ) ) { ++ s ; thirdC::dosSleepRawIF( tin0P , 250 ) ; }
@@ -226,7 +226,7 @@ i create windows, handle their messages, and destroy them
             DEL( etherC::ether_pMainRefsIF( tin0P ) ) ; // NO FURTHER USE FOR THIS
             TINSL
             DEL( pEtThread ) ; //THIS ALSO CAUSES tin0P TO BE DESTROYED
-            DEL( ((tin123S&)tin0P).pEtScratch ) ;
+            DEL( ((tin1S&)tin0P).pEtScratch ) ;
             etherC*& pEtThread  = etherC::ether_pMainRefsIF( tin0P )->pEtThread ;
         {
         case idwm_CLOSE :

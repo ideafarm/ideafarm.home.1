@@ -12,7 +12,7 @@
     if( idFail == 3 ) idFail = 0 ; //SO UTILITY APIS CAN SUSPEND/RESUME ARBITRARY THREADS IN THE PROCESS
 
     thirdC::dosPriorityIF( tin0P , idDesireSave ) ;
-    ((tin123S&)tin0P).cYield = 0 ;
+    ((tin1S&)tin0P).cYield = 0 ;
 
     #endif
 
@@ -29,7 +29,7 @@
 
             //if( !cSuspendPrior ) { CONoUTrAW( "NOT FROZEN\r\n" ) ; }
 
-            countT cSuspendPrior = ((tin123S&)tin0P).brcRaw ;
+            countT cSuspendPrior = ((tin1S&)tin0P).brcRaw ;
             BOS( WHATgbo , BOSmAXcOUNTT , ResumeThread( (HANDLE)osh ) )
             countT osh = hP.osF( ifcIDtYPEhANDLE_THREAD ) ;
         {
@@ -39,7 +39,7 @@
 
     ZE( countT , idFail ) ;
 
-    ((tin123S&)tin0P).cYield = 0 ;
+    ((tin1S&)tin0P).cYield = 0 ;
     thirdC::dosPriorityIF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
     const countT idDesireSave = thirdC::dosPriorityIF( tin0P ) ;
 

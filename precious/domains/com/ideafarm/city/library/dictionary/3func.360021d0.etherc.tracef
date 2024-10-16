@@ -207,27 +207,27 @@
                         OStEXTAK( ostoTimeElapsed , "." ) ;
                         OStEXTCF(  ostoTimeElapsed , timeE2 , '0' ) ;
 
-                        osTimeSubtractF( tin0P , timeE1 , timeE2 , ((tin123S&)tin0P).timeTraceWoth.time1 , ((tin123S&)tin0P).timeTraceWoth.time2 ) ;
-                        sCountT timeE2 = ((tin123S&)tin0P).timeTraceLath.time2 ;
-                        countT  timeE1 = ((tin123S&)tin0P).timeTraceLath.time1 ;
+                        osTimeSubtractF( tin0P , timeE1 , timeE2 , ((tin12S&)tin0P).timeTraceWoth.time1 , ((tin12S&)tin0P).timeTraceWoth.time2 ) ;
+                        sCountT timeE2 = ((tin12S&)tin0P).timeTraceLath.time2 ;
+                        countT  timeE1 = ((tin12S&)tin0P).timeTraceLath.time1 ;
 
-                        OStEXTCF(  ostoTime , ((tin123S&)tin0P).timeTraceLath.time1 , '0' ) ;
+                        OStEXTCF(  ostoTime , ((tin12S&)tin0P).timeTraceLath.time1 , '0' ) ;
                         OStEXTAK( ostoTime , "." ) ;
-                        OStEXTCF(  ostoTime , ((tin123S&)tin0P).timeTraceLath.time2 , '0' ) ;
+                        OStEXTCF(  ostoTime , ((tin12S&)tin0P).timeTraceLath.time2 , '0' ) ;
 
                         OStEXTCF(  ostoTimeDelta , timeDelta1 , '0' ) ;
                         OStEXTAK( ostoTimeDelta , "." ) ;
                         OStEXTCF(  ostoTimeDelta , timeDelta2 , '0' ) ;
 
-                        ((tin123S&)tin0P).timeTraceLath = now ;
-                        osTimeSubtractF( tin0P , timeDelta1 , timeDelta2 , ((tin123S&)tin0P).timeTraceLath.time1 , ((tin123S&)tin0P).timeTraceLath.time2 ) ;
-                        if( bReset ) ((tin123S&)tin0P).timeTraceWoth = ((tin123S&)tin0P).timeTraceLath = now ;
+                        ((tin12S&)tin0P).timeTraceLath = now ;
+                        osTimeSubtractF( tin0P , timeDelta1 , timeDelta2 , ((tin12S&)tin0P).timeTraceLath.time1 , ((tin12S&)tin0P).timeTraceLath.time2 ) ;
+                        if( bReset ) ((tin12S&)tin0P).timeTraceWoth = ((tin12S&)tin0P).timeTraceLath = now ;
                         timeS now( timeDelta1 , timeDelta2 ) ;
                         osTimeNowF( tin0P , timeDelta1 , timeDelta2 ) ;
                         ZE( sCountT , timeDelta2 ) ;
                         ZE( countT  , timeDelta1 ) ;
 
-                        boolT bReset = ( !((tin123S&)tin0P).timeTraceWoth.time2 && !((tin123S&)tin0P).timeTraceWoth.time1 ) || F(flagsP) & flTRACE_RESET ;
+                        boolT bReset = ( !((tin12S&)tin0P).timeTraceWoth.time2 && !((tin12S&)tin0P).timeTraceWoth.time1 ) || F(flagsP) & flTRACE_RESET ;
                     {
                     else
                     }
@@ -291,7 +291,7 @@
         if( !bForceTrace && ( !bTraceOk || F(thirdC::third_flagsModeAdam1I_IF(tin0P)) & flADAMmODE1_NOtRACING || F(((tin1S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SUPPRESStRACING ) )
         //if( !thirdC::c_strcmpIF( tin0P , ((tin123S&)tin0P).postThreadName , "tmGetIdHomeF" ) )
 
-        //if( ((tin123S&)tin0P).pc Utility[ 0 ] ) { CONoUTrAWb( "\r\ntraceF [idAdam,flagsP,home.flags,bTraceOk,bDivertOk]:    " , ((tin1S&)tin0P).pag1->idAdam , "    " , flagsP , "    " , home.flags , "    " , bTraceOk , "    " , bDivertOk , "\r\n" ) ; } //U:: TO FIND A BUG
+        //if( ((tin1S&)tin0P).pc Utility[ 0 ] ) { CONoUTrAWb( "\r\ntraceF [idAdam,flagsP,home.flags,bTraceOk,bDivertOk]:    " , ((tin1S&)tin0P).pag1->idAdam , "    " , flagsP , "    " , home.flags , "    " , bTraceOk , "    " , bDivertOk , "\r\n" ) ; } //U:: TO FIND A BUG
 
         //LOGrAWb( "\r\ntraceF [idAdam,flagsP,home.flags,bTraceOk,bDivertOk]:    " , ((tin1S&)tin0P).pag1->idAdam , "    " , flagsP , "    " , home.flags , "    " , bTraceOk , "    " , bDivertOk , "\r\n" ) ; //U:: TO FIND A BUG
 

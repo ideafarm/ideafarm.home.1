@@ -35,21 +35,21 @@
                 socketC* psoDoomed = pso ;                                                                                                      \
                 sol2.listenF( tin0P ) ;                                                                                                         \
                 _sOut << sol2.bindF( tin0P ) ;                                                                                                  \
-                socketC sol2( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;                                                      \
-                soulC _sOut( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKETrEPLY ) ;        \
+                socketC sol2( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;                                                      \
+                soulC _sOut( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKETrEPLY ) ;        \
             {                                                                                                                                   \
             else                                                                                                                                \
             }                                                                                                                                   \
                 psoP->writeF( tin0P , _sErr ) ;                                                                                                 \
                 TELL( "TASKdRIVENsERVER: writing a ifcIDcMDsESSION_ERROR soulC" )                                                               \
-                soulC _sErr( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;                 \
+                soulC _sErr( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;                 \
                 POOPR                                                                                                                           \
             {                                                                                                                                   \
             if( bFail )                                                                                                                         \
             bFail = POOP || _sIn.cFieldF( tin0P ) != ifcIDcMDsESSION_NEWsOCKET ;                                                                \
             psoP->readF( tin0P , _sIn ) ;                                                                                                       \
             TELL( "TASKdRIVENsERVER: reading a soulC" )                                                                                         \
-            soulC _sIn( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;                                                            \
+            soulC _sIn( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;                                                            \
             SCOOPS                                                                                                                              \
         {                                                                                                                                       \
         ZE( boolT , bFail ) ;                                                                                                                   \
@@ -67,7 +67,7 @@
 if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will not be executed
   in this case, i will block until my process has been fired, and pso will be 0 when i deblock
  this will also occur if i write the private idPort value aok but the client never connects to it
-  in this case, the accept will fail and return immediately, *((tin123S&)tin0P).pEtScratch will be impotent, and pso will be 0
+  in this case, the accept will fail and return immediately, *((tin1S&)tin0P).pEtScratch will be impotent, and pso will be 0
  this will occur if the write of the private idPort value to the client fails
 note that pso can be 0 after i have executed
 \<A HREF=\"5.0010143.1.0.html\"\>definition\</A\>

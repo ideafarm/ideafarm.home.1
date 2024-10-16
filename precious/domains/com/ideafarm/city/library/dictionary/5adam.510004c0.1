@@ -114,11 +114,11 @@ DONE( tmGorillaF )
     }
         //U::etThread.ifcSayF( tin0P , TF1(DDNUMB)+T(" [idMe,cBad]: ")+TF1(idMe)+tb+TF1(cBadMe)+T("; request for ")+tHome+T(" FAILED ********\r\n") , flSAY_APPEND | flSAY_LOG ) ;
         countT cBadMe = 1 + incv02AM( cBad ) ;
-        *((tin123S&)tin0P).zEtScratch = 0 ;
+        *((tin1S&)tin0P).zEtScratch = 0 ;
     {
-    if( *((tin123S&)tin0P).zEtScratch || !cbHome /*|| cbHome != cbHomeWoth*/ )
+    if( *((tin1S&)tin0P).zEtScratch || !cbHome /*|| cbHome != cbHomeWoth*/ )
     if( !cbHomeWoth  ) cbHomeWoth  = cbHome ;   
-    { ZE( byteT* , pbHome  ) ; ((tin123S&)tin0P).zEtScratch->boxGetShadowF( tin0P , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; ((tin123S&)tin0P).zEtScratch->delF( tin0P , pbHome  ) ; }
+    { ZE( byteT* , pbHome  ) ; ((tin1S&)tin0P).zEtScratch->boxGetShadowF( tin0P , pbHome  , cbHome  , tHome  ) ; ___( pbHome  ) ; ((tin1S&)tin0P).zEtScratch->delF( tin0P , pbHome  ) ; }
     ZE( countT , cbHome ) ;
     etThread.strokeF( tin0P , T("trial ")+TF1(idMe)+T("\r\n") ) ;
     countT idMe = 1 + incv02AM( idTrial ) ;

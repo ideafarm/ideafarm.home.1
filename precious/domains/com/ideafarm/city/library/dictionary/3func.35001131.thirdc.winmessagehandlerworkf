@@ -490,13 +490,13 @@
 
 
                     if( thirdC::third_idPhaseProcess_IF() < ifcIDpHASEpROCESS_WORKINGwINDOWtINgONE ) thirdC::third_idPhaseProcess_IF() = ifcIDpHASEpROCESS_WORKINGwINDOWtINgONE ;
-                    DEL( ((tin123S&)tin0P).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
-                    DEL( ((tin123S&)tin0P).pEtScratch ) ;
+                    DEL( ((tin1S&)tin0P).pScoopEtThread ) ; /*CODEsYNC: 0010056 1020171 */
+                    DEL( ((tin1S&)tin0P).pEtScratch ) ;
 
                     bOkToUseIfcObjects = 0 ; hWindow.closeIfF() ;
                     FIREmYSELF ;
 
-                    DEL( ((tin123S&)tin0P).pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
+                    DEL( ((tin1S&)tin0P).pSwsRecycle ) ; //TO MAKE SURE THAT etRock EXISTS WHEN THESE ARE DELETED
                     }
                         THREADmODE1rESTORE
                         }
@@ -509,24 +509,24 @@
                                         case ifcIDtYPErECYCLE_stackC       : { DEL(       *(stackC**)&pObject ) ; break ; }
                                         case ifcIDtYPErECYCLE_soulC        : { DEL(        *(soulC**)&pObject ) ; break ; }
                                     {
-                                    switch( *((tin123S&)tin0P).pczl_pSwsRecycle )
+                                    switch( *((tin1S&)tin0P).pczl_pSwsRecycle )
                                 {
-                                if( ((tin123S&)tin0P).pczl_pSwsRecycle && pObject )
+                                if( ((tin1S&)tin0P).pczl_pSwsRecycle && pObject )
 
-                                //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , ((tin123S&)tin0P).pczl_pSwsRecycle ) ; //U::
+                                //LOGrAWtID4( "deleting object " , (countT)pObject , " using pcz lever at " , ((tin1S&)tin0P).pczl_pSwsRecycle ) ; //U::
             
-                                *((tin123S&)tin0P).pSwsRecycle >> *(countT*)&pObject ;
+                                *((tin1S&)tin0P).pSwsRecycle >> *(countT*)&pObject ;
                                 ZE( voidT* , pObject ) ;
                             {
-                            while( *((tin123S&)tin0P).pSwsRecycle )
+                            while( *((tin1S&)tin0P).pSwsRecycle )
             
-                            ((tin123S&)tin0P).pczl_pSwsRecycle = (countT*)((tin123S&)tin0P).pSwsRecycle->leverF( tin0P , idf ) ;
+                            ((tin1S&)tin0P).pczl_pSwsRecycle = (countT*)((tin1S&)tin0P).pSwsRecycle->leverF( tin0P , idf ) ;
                         {
                         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                        countT cFlavors = ((tin123S&)tin0P).pSwsRecycle->cFlavorsF( tin0P ) ;
+                        countT cFlavors = ((tin1S&)tin0P).pSwsRecycle->cFlavorsF( tin0P ) ;
                         THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                     {
-                    if( ((tin123S&)tin0P).pSwsRecycle )
+                    if( ((tin1S&)tin0P).pSwsRecycle )
                     //PSEUDODUPLICATE CODE: 1450002 12f0002 1030003 1020171
 
                     }
@@ -594,7 +594,7 @@
                              static boolT bDone ;
 
                             ((backOldC*)pRootI)->freshToolsMousePositionF( tin0P ) ;
-                            //SetCursorPos( winOsColIF( ((tin123S&)tin0P).brcRaw / 2 ) , winOsRowIF( 1 ) ) ;
+                            //SetCursorPos( winOsColIF( ((tin1S&)tin0P).brcRaw / 2 ) , winOsRowIF( 1 ) ) ;
                             //BOSpOOP
                             //BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CXSCREEN ) )
     
@@ -635,9 +635,9 @@
                     if( idMyNewState == WA_INACTIVE )
 
                     countT hWindowOther = p2P ;
-                    boolT bWasMinimized = ((tin123S&)tin0P).brcRaw ;
+                    boolT bWasMinimized = ((tin1S&)tin0P).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , HIWORD( p1P ) )
-                    countT idMyNewState = ((tin123S&)tin0P).brcRaw ;
+                    countT idMyNewState = ((tin1S&)tin0P).brcRaw ;
                     BOSdOnOTtEST( WHATgbo , LOWORD( p1P ) )
                     TELL( "winMessageHandlerWorkF: WM_ACTIVATE" )
                 {
@@ -716,10 +716,10 @@
                                         
                             BOSpOOP
                             BOS( WHATgbo , BOSoK , AdjustWindowRect( &info , WS_OVERLAPPEDWINDOW , 0 ) )
-                            info.bottom = ((tin123S&)tin0P).brcRaw - 1 ;
+                            info.bottom = ((tin1S&)tin0P).brcRaw - 1 ;
                             BOSpOOP
                             BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CYSCREEN ) )
-                            info.right  = ((tin123S&)tin0P).brcRaw - 1 ;
+                            info.right  = ((tin1S&)tin0P).brcRaw - 1 ;
                             BOSpOOP
                             BOS( WHATgbo , BOSoK , GetSystemMetrics( SM_CXSCREEN ) )
                             info.top    = 0 ;

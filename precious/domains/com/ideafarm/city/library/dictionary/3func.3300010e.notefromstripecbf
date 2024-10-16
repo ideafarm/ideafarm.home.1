@@ -669,13 +669,13 @@
 
                 sock.writeF( tin0P , (osTextT*)tValidationRequest , tValidationRequest.csF( tin0P ) ) ;
                 sock.connectF( tin0P , 443 , nnStripe ) ;
-                socketC sock( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
+                socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
             {
             if( nnStripe ) while( !bGot && cTries -- )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             countT cTries = TUCK >> 4 ;
 
-            nicNameC nnStripe = socketC::nicNameIF( tin0P , *((tin123S&)tin0P).pEtScratch , T(bSandbox?"www.sandbox.stripe.com":"www.stripe.com") ) ;
+            nicNameC nnStripe = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , T(bSandbox?"www.sandbox.stripe.com":"www.stripe.com") ) ;
         
             SCOOPS
         {

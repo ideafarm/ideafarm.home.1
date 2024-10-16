@@ -10,7 +10,7 @@
 #endif
 
     }
-        ((tin123S&)tin0P).cYield = 0 ;
+        ((tin1S&)tin0P).cYield = 0 ;
         thirdC::dosPriorityIF( tin0P , idDesireSave ) ;
         }
             }
@@ -21,7 +21,7 @@
         {
         cYield = cYield % cMaxP + 1 ;
         countT cYield = ((tin123S&)tin0P).ranUni % TUCK ;
-        ((tin123S&)tin0P).cYield = 0 ;
+        ((tin1S&)tin0P).cYield = 0 ;
         thirdC::dosPriorityIF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
         const countT idDesireSave = thirdC::dosPriorityIF( tin0P ) ;
         if( tin0P.idTypeTin - ifcIDtYPEtIN_123 ) { BLAMMOiD( 0x12121212 ) ; }
@@ -32,7 +32,7 @@
 
 /**/
 */
-the caller must reset ((tin123S&)tin0P).cYield outside of whatever loop, if any, i am called from
+the caller must reset ((tin1S&)tin0P).cYield outside of whatever loop, if any, i am called from
 i will yield the cpu a random number [1,cMaxP] of times
 \<A HREF=\"5.0c0002a.1.0.html\"\>definition\</A\>
 \<A HREF=\"6.$ranYieldF.0.html\"\>instances\</A\>

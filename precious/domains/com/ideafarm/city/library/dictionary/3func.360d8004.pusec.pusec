@@ -8,10 +8,10 @@
 
 
 }
-    //if( ((tin123S&)tin0P).pPoolUse != ((tin1S&)tin0P).pag1->pPoolAdamTemp ) ((tin123S&)tin0P).pc Utility[ 0 ] = (countT)((tin123S&)tin0P).pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
+    //if( ((tin1S&)tin0P).pPoolUse != ((tin1S&)tin0P).pag1->pPoolAdamTemp ) ((tin1S&)tin0P).pc Utility[ 0 ] = (countT)((tin1S&)tin0P).pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
 
-    else                                         flagsMode |= flPUSEcmODE_DOnOTrESTOREtINwHENdIE ; //O: OPTIMIZATION: THIS LINE HAS NO EFFECT SINCE RESTORING ((tin123S&)tin0P).pPoolUse FROM pPoolUseLag WILL NOT CHANGE ITS VALUE
-    if( !( F(flagsMode) & flPUSEcmODE_HIDDEN ) ) ((tin123S&)tin0P).pPoolUse = pPoolUse ;
+    else                                         flagsMode |= flPUSEcmODE_DOnOTrESTOREtINwHENdIE ; //O: OPTIMIZATION: THIS LINE HAS NO EFFECT SINCE RESTORING ((tin1S&)tin0P).pPoolUse FROM pPoolUseLag WILL NOT CHANGE ITS VALUE
+    if( !( F(flagsMode) & flPUSEcmODE_HIDDEN ) ) ((tin1S&)tin0P).pPoolUse = pPoolUse ;
 
     }
         }
@@ -34,7 +34,7 @@
 {
 flagsMode( flagsModeP )
 pPoolUse( 0 ) ,
-pPoolUseLag( ((tin123S&)tin0P).pPoolUse ) ,
+pPoolUseLag( ((tin1S&)tin0P).pPoolUse ) ,
 /*1*/puseC::puseC( tin0S& tin0P , const countT idPoolP , const flagsT flagsModeP ) :/*1*/
 
 /**/

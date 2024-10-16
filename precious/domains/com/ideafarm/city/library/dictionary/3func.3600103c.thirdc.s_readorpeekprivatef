@@ -25,17 +25,17 @@
 
             cbToDo             -= cbNew ;
             offo               += cbNew ;
-            ((tin123S&)tin0P).odoSockCbRead += cbNew ;
+            ((tin1S&)tin0P).odoSockCbRead += cbNew ;
 
             //}
-            //    else                   ((tin123S&)tin0P).pEther->traceF( tin0P , T("s_readOrPeekPrivateF [time in recv]:    fast") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
-            //    if( timeE1 || timeE2 ) ((tin123S&)tin0P).pEther->traceF( tin0P , T("s_readOrPeekPrivateF [time in recv]:    slow    ")+TTF(timeE1,timeE2) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
-            //    ((tin123S&)tin0P).pEther->osTimeSubtractF( tin0P , timeE1 , timeE2 , timeB1 , timeB2 ) ;
-            //    ((tin123S&)tin0P).pEther->osTimeNowF(      tin0P , timeE1 , timeE2 ) ;
+            //    else                   ((tin1S&)tin0P).pEther->traceF( tin0P , T("s_readOrPeekPrivateF [time in recv]:    fast") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
+            //    if( timeE1 || timeE2 ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("s_readOrPeekPrivateF [time in recv]:    slow    ")+TTF(timeE1,timeE2) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ; //U:: TO FIND A BUG
+            //    ((tin1S&)tin0P).pEther->osTimeSubtractF( tin0P , timeE1 , timeE2 , timeB1 , timeB2 ) ;
+            //    ((tin1S&)tin0P).pEther->osTimeNowF(      tin0P , timeE1 , timeE2 ) ;
             //    ZE( sCountT , timeE2 ) ;
             //    ZE( countT  , timeE1 ) ;
             //{
-            //if( ((tin123S&)tin0P).pc Utility[ 1 ] && ((tin123S&)tin0P).pEther )
+            //if( ((tin1S&)tin0P).pc Utility[ 1 ] && ((tin1S&)tin0P).pEther )
 
             }
                 }
@@ -59,7 +59,7 @@
                         cbNew = 0 ;
                     {
                     if( cbNew == SOCKET_ERROR )
-                    if( !POOP ) cbNew = ((tin123S&)tin0P).brcRaw ;
+                    if( !POOP ) cbNew = ((tin1S&)tin0P).brcRaw ;
                     BOSpOOP
                     BOSS( WHATsir , BOSsOCKETcODE2 , recv( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , pbP + offo , cbBite , flagsTcpP ) )
                     _IO_
@@ -69,7 +69,7 @@
             switch( idModeP )
             ZE( sCountT , cbNew ) ;
 
-            //if( ((tin123S&)tin0P).pc Utility[ 1 ] && ((tin123S&)tin0P).pEther ) ((tin123S&)tin0P).pEther->osTimeNowF( tin0P , timeB1 , timeB2 ) ;
+            //if( ((tin1S&)tin0P).pc Utility[ 1 ] && ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->osTimeNowF( tin0P , timeB1 , timeB2 ) ;
             //ZE( sCountT , timeB2 ) ;
             //ZE( countT  , timeB1 ) ;
 

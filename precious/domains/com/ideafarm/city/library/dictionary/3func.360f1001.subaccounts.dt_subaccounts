@@ -11,12 +11,12 @@
     }
         if( POOP ) POOPR
 
-        { _IO_ if( pStkEmailPenpalContainsAnd ) (*((tin123S&)tin0P).pEtScratch)( tin0P , pStkEmailPenpalContainsAnd ) ; }
-        { _IO_ if( pStkEmailPenpalContainsOr  ) (*((tin123S&)tin0P).pEtScratch)( tin0P , pStkEmailPenpalContainsOr  ) ; }
-        { _IO_ if( pStkEmailPenpalExactOr     ) (*((tin123S&)tin0P).pEtScratch)( tin0P , pStkEmailPenpalExactOr     ) ; }
-        { _IO_ if( pStkRecipe                 ) (*((tin123S&)tin0P).pEtScratch)( tin0P , pStkRecipe                 ) ; }
-        { _IO_ if( pStkAutoresponse           ) (*((tin123S&)tin0P).pEtScratch)( tin0P , pStkAutoresponse           ) ; }
-        { _IO_ if( pStkEmailRelay             ) (*((tin123S&)tin0P).pEtScratch)( tin0P , pStkEmailRelay             ) ; }
+        { _IO_ if( pStkEmailPenpalContainsAnd ) (*((tin1S&)tin0P).pEtScratch)( tin0P , pStkEmailPenpalContainsAnd ) ; }
+        { _IO_ if( pStkEmailPenpalContainsOr  ) (*((tin1S&)tin0P).pEtScratch)( tin0P , pStkEmailPenpalContainsOr  ) ; }
+        { _IO_ if( pStkEmailPenpalExactOr     ) (*((tin1S&)tin0P).pEtScratch)( tin0P , pStkEmailPenpalExactOr     ) ; }
+        { _IO_ if( pStkRecipe                 ) (*((tin1S&)tin0P).pEtScratch)( tin0P , pStkRecipe                 ) ; }
+        { _IO_ if( pStkAutoresponse           ) (*((tin1S&)tin0P).pEtScratch)( tin0P , pStkAutoresponse           ) ; }
+        { _IO_ if( pStkEmailRelay             ) (*((tin1S&)tin0P).pEtScratch)( tin0P , pStkEmailRelay             ) ; }
     
         PUSE( tin0P , *(byteT**)&psttNameOut ) ;
         PUSE( tin0P , *(byteT**)&psttNameIn  ) ;
@@ -68,7 +68,7 @@
             soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
                     
             sock.connectF( tin0P , homeS::homeIF().idPortListServerIdAccountDescription ) ;
-            socketC sock( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+            socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
         {
         if( F(flagsThis) & flSUBACCOUNT_SET )
 

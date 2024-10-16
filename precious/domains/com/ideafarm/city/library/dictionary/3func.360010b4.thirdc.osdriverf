@@ -11,7 +11,7 @@
     }
         phDll = 0 ;
         }
-            dec02AM( ((tin123S&)tin0P).cKidThreads ) ;
+            dec02AM( ((tin1S&)tin0P).cKidThreads ) ;
             dec02AM( ((tin1S&)tin0P).pag1->_thirdC_.cAllKidThreads ) ;
         {
         if( POOP )
@@ -24,7 +24,7 @@
         ((tin1S&)tin0P).pag1->_etherC_.pHdll = phDll = &hDll ;
         handleC hDll( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_DLL ) ; //OPENED BY tmServiceMainF; CANNOT BE CLOSED (FOR UNK REASON) UNTIL AFTER StartServiceCtrlDispatcher RETURNS
 
-        inc02AM( ((tin123S&)tin0P).cKidThreads ) ;
+        inc02AM( ((tin1S&)tin0P).cKidThreads ) ;
         inc02AM( ((tin1S&)tin0P).pag1->_thirdC_.cAllKidThreads ) ;
         //inc02AM( ((tin1S&)tin0P).pag1->_thirdC_.cAllOrphanThreads ) ;
 
@@ -49,12 +49,12 @@
     BOSpOOP
     BOS( WHATgbo , BOSoK , QueryServiceStatus( hsv , (SERVICE_STATUS*)((tin1S&)tin0P).pag1->pcServiceStatus ) )
     BOSpOOP
-    SC_HANDLE hsv = (SC_HANDLE)((tin123S&)tin0P).brcRaw ;
+    SC_HANDLE hsv = (SC_HANDLE)((tin1S&)tin0P).brcRaw ;
     INCoShANDLES
     BOSpOOP
     BOS( WHATgbo , BOSoK , OpenService( hsm , ((tin1S&)tin0P).pag1->postServiceName , SERVICE_ALL_ACCESS ) )
     INCoShANDLES
-    SC_HANDLE hsm = (SC_HANDLE)((tin123S&)tin0P).brcRaw ;
+    SC_HANDLE hsm = (SC_HANDLE)((tin1S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
     ((tin1S&)tin0P).pag1->postServiceName = postNameP ;

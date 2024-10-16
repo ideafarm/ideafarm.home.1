@@ -14,9 +14,9 @@
 
     }
         stPoolNames.sinkF( tin0P , countTC() , (countT)guts.postName ) ;
-        stackC& stPoolNames = ((tin123S&)tin0P).pEther->ifcStkPoolNamesF( tin0P ) ;
+        stackC& stPoolNames = ((tin1S&)tin0P).pEther->ifcStkPoolNamesF( tin0P ) ;
     {
-    if( ((tin123S&)tin0P).pEther )                                                                               // CS:CODEsYNC: 360e2003 360e2003
+    if( ((tin1S&)tin0P).pEther )                                                                               // CS:CODEsYNC: 360e2003 360e2003
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // REGISTER MY NAME SO THAT tmWatchF CAN SEE WHICH poolC NAMES THIS PROCESSES IS USING
@@ -74,12 +74,12 @@
 
     batPoolCt.ungrabF( tin0P ) ;
                                                                                                         // CS:CODEsYNC: 360e2003 360e2003
-    else if( !((tin123S&)tin0P).pEther                      ) { BLAMMO ; }                                           // IT IS ILLEGAL TO CT A poolC INSTANCE OTHER THAN THOSE WHICH ARE REGISTERED IN tin0P IF !((tin123S&)tin0P).pEther BECAUSE I WILL NOT BE ABLE TO REGISTER MY NAME INTO stPoolNames
+    else if( !((tin1S&)tin0P).pEther                      ) { BLAMMO ; }                                           // IT IS ILLEGAL TO CT A poolC INSTANCE OTHER THAN THOSE WHICH ARE REGISTERED IN tin0P IF !((tin1S&)tin0P).pEther BECAUSE I WILL NOT BE ABLE TO REGISTER MY NAME INTO stPoolNames
     else if( this == (poolC*)((tin1S&)tin0P).pag1->pbzphp )                 ((tin1S&)tin0P).pag1->pPoolHomePerm = this ;
     else if( this == (poolC*)((tin1S&)tin0P).pag1->pbzpap )                 ((tin1S&)tin0P).pag1->pPoolAdamPerm = this ;
     else if( this == (poolC*)((tin1S&)tin0P).pag1->pbzpsc )                 ((tin1S&)tin0P).pag1->pPoolScratch  = this ;
     else if( this == (poolC*)((tin1S&)tin0P).pag1->pbzpht )                 ((tin1S&)tin0P).pag1->pPoolHomeTemp = this ;
-         if( !((tin1S&)tin0P).pag1->pPoolAdamTemp         ) ((tin123S&)tin0P).pPoolUse = ((tin1S&)tin0P).pag1->pPoolAdamTemp = this ; //A:ASSUME: THE ADAM TEMP POOL IS CT WOTH
+         if( !((tin1S&)tin0P).pag1->pPoolAdamTemp         ) ((tin1S&)tin0P).pPoolUse = ((tin1S&)tin0P).pag1->pPoolAdamTemp = this ; //A:ASSUME: THE ADAM TEMP POOL IS CT WOTH
 
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // REGISTER MYSELF AS AN ADAM/HOME TEMP/PERM (OR SCRATCH) INSTANCE
@@ -88,7 +88,7 @@
     processGlobal5I._poolC_grab_pPool.ungrabF( tin0P ) ;
 
     }
-        ((tin123S&)tin0P).pEther->osThreadF( TaRG1( tmPoolFlushF ) ) ;
+        ((tin1S&)tin0P).pEther->osThreadF( TaRG1( tmPoolFlushF ) ) ;
         puseC puseat( tin0P , ifcIDpOOL_ADAMtEMP ) ;
     {
     if( idStateSpaceP && ! processGlobal2I._poolC_cBacked ++ )
@@ -239,7 +239,7 @@
     // CREATE AND FORMAT REGISTRATION RECORD OR WAIT UNTIL ANOTHER poolC INSTANCE HAS DONE SO
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    napGuts.formattingIsDoneF( tin0P ) ; //MUST BE DONE AFTER napFace IS FULLY CT SO THAT ((tin123S&)tin0P).idDesireSetBySelf IS UNWOUND CORRECTLY
+    napGuts.formattingIsDoneF( tin0P ) ; //MUST BE DONE AFTER napFace IS FULLY CT SO THAT ((tin1S&)tin0P).idDesireSetBySelf IS UNWOUND CORRECTLY
     new( 0 , tin0P , &napGuts ) guts_poolC_S( tin0P , idLineCtP , idiFileCtP , pbBitsCtP , postNameP , flagsP , idStateSpaceP , expCbDropMinP , expCbDropMaxP , idMemorySpaceP ) ;
     
     // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -287,7 +287,7 @@ pSexLifoConstructed( 0 )
 face( *(face_poolC_S*)(byteT*)napFace ) ,
 guts( *(guts_poolC_S*)(byteT*)napGuts ) ,
 ) ,
-    0 , sizeof( guts_poolC_S ) , ifcOPENsHAREDmEMORYhOW_nCeF //ALWAYS USES MEMORY SPACE DEDICATED TO EXCLUSIVE USE BY THE CONSTRUCTING PROCESS (((tin123S&)tin0P).osPid IS USED TO UNIQUIFY THE NAME)
+    0 , sizeof( guts_poolC_S ) , ifcOPENsHAREDmEMORYhOW_nCeF //ALWAYS USES MEMORY SPACE DEDICATED TO EXCLUSIVE USE BY THE CONSTRUCTING PROCESS (((tin1S&)tin0P).osPid IS USED TO UNIQUIFY THE NAME)
     ) ,
         )
             ((tin123S&)tin0P).pbF( 2 )                                                                                        //TLS:5
@@ -319,7 +319,7 @@ guts( *(guts_poolC_S*)(byteT*)napGuts ) ,
         (
         thirdC::c_strcatIF
         ((tin123S&)tin0P).tlsNewF( LF , TUCK ) ,                                                                              //TLS:6  ======== NEW ==========================================================    TUCK        "poolC/guts/[postNameP].[idStateSpaceP].[osPid]"
-        thirdC::c_itoaIF( tin0P , ((tin123S&)tin0P).pbF() , 0x10 , ((tin123S&)tin0P).osPid ) ,                                              //TLS:2
+        thirdC::c_itoaIF( tin0P , ((tin123S&)tin0P).pbF() , 0x10 , ((tin1S&)tin0P).osPid ) ,                                              //TLS:2
         ((tin123S&)tin0P).tlsNewF( LF , TUCK >> 4 ) ,                                                                         //TLS:5  ======== NEW ==========================================================    TUCK >> 4   [osPid]
     (
     tin0P , idLineCtP , idiFileCtP , pbBitsCtP ,

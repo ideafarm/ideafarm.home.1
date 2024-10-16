@@ -194,7 +194,7 @@ DONE( tmRelayOldTeatServerF )
                                 if( bDontHoldBreath ) relayOldC::doWrapLocallyIfIF( tin0P , etThread , RELAYiNFOaRGS , *psWrap , idptP ) ;
             
                                 relayOldC::popIF( tin0P , pStPop0P , pStPop1P , pStPop2P , pStPop3P , pStPop4P , *psBag , stIdptOpenP , stIdptGossipP , idptP ) ;
-                                //((tin123S&)tin0P).pEther->traceF( tin0P , T("tmRelayOldTeatServerF: calling popIF [bRoot,bDontHoldBreath]:    ")+TF2(bRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bDontHoldBreath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                //((tin1S&)tin0P).pEther->traceF( tin0P , T("tmRelayOldTeatServerF: calling popIF [bRoot,bDontHoldBreath]:    ")+TF2(bRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(bDontHoldBreath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                 *psBag << *psWrap ;
                                 relayOldC::hdrBagIF( tin0P , *psBag , idptP , idSerialLathHeaderP , bRoot ? flOLDrELAYpOP_UP : flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_WRAP ) ;
@@ -208,11 +208,11 @@ DONE( tmRelayOldTeatServerF )
                             if( psBag )
                             soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
         
-                            if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION ) { static countT idIn ; ((tin123S&)tin0P).pEther->traceF( tin0P , TF2(++idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tmRelayOldTeatServerF: ifcOLDiDtYPEwRAP_GIFT (mediator registration channel)") ) ; }
+                            if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION ) { static countT idIn ; ((tin1S&)tin0P).pEther->traceF( tin0P , TF2(++idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tmRelayOldTeatServerF: ifcOLDiDtYPEwRAP_GIFT (mediator registration channel)") ) ; }
         
                             }
                                 THREADmODE1rESTORE
-                                //((tin123S&)tin0P).pEther->traceF( tin0P , T("wrap from app for channel ")+T(pczChannel) ) ;
+                                //((tin1S&)tin0P).pEther->traceF( tin0P , T("wrap from app for channel ")+T(pczChannel) ) ;
                                 THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                             {
                             else
@@ -280,12 +280,12 @@ DONE( tmRelayOldTeatServerF )
                         }
                             bQuit = 1 ;
                             POOPRqUIET
-                            ((tin123S&)tin0P).pEther->traceF( tin0P , T("tmRelayOldTeatServerF / wrapper contains garbage") ) ;
+                            ((tin1S&)tin0P).pEther->traceF( tin0P , T("tmRelayOldTeatServerF / wrapper contains garbage") ) ;
                         {
                         if( POOP )
                         __( psWrap->cFieldF( tin0P , ifcOLDiDfIELDwRAP_IDvERSION ) - 1 ) ; //idVersion
                         __( psWrap->cFieldF( tin0P , ifcOLDiDfIELDwRAP_IDpROTOCOL ) - ifcIDpROTOCOL_RELAYwRAP ) ;
-                        __( ((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , psttTM , T("IdeaFarm " "(tm)") ) ) ;
+                        __( ((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttTM , T("IdeaFarm " "(tm)") ) ) ;
                         __( idTypeTM - ifcIDtYPEsOULiTEM_strokeSptr ) ;
                         __Z( psttTM ) ;
                         SCOOPS
@@ -352,7 +352,7 @@ DONE( tmRelayOldTeatServerF )
         ZE( countT , idAdamClient ) ;
         ZE( boolT , bQuit ) ;
     
-        psoP->etherF( tin0P , *((tin123S&)tin0P).pEtScratch ) ;
+        psoP->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;
     
         stackC stChannelExclude( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count4S ) ;
         stackC stChannelInclude( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_count4S ) ;

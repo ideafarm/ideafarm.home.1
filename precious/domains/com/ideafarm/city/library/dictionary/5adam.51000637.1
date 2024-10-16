@@ -38,15 +38,15 @@ etherC::loafIF( tin0P ) ;
 // 
 // #if defined( NEVERdEFINED )
 // 
-// ((tin123S&)tin0P).pEther->osTimeSubtractF( tin0P , timeE1 , timeE2 , timeS1 , timeS2 ) ;
-// ((tin123S&)tin0P).pEther->osTimeNowF( tin0P , timeE1 , timeE2 ) ;
+// ((tin1S&)tin0P).pEther->osTimeSubtractF( tin0P , timeE1 , timeE2 , timeS1 , timeS2 ) ;
+// ((tin1S&)tin0P).pEther->osTimeNowF( tin0P , timeE1 , timeE2 ) ;
 // ZE( sCountT , timeE2 ) ;
 // ZE( countT , timeE1 ) ;
 // 
-// //bOk = ((tin123S&)tin0P).brcRaw ;
+// //bOk = ((tin1S&)tin0P).brcRaw ;
 // //BOSpOOP
 // //BOS( WHATgbo , BOSoK , PolyPolyline( oshdc , ppt , (DWORD*)pcSize , 1 ) )
-// bOk = ((tin123S&)tin0P).brcRaw ;
+// bOk = ((tin1S&)tin0P).brcRaw ;
 //BOSpOOP
 //BOS( WHATgbo , BOSoK , Polyline( oshdc , ppt , 5 ) )
 
@@ -68,10 +68,10 @@ BOSdOnOTtEST( WHATgbo , SelectObject( oshdc , oshb ) )
 
 ZE( boolT , bOk ) ;
 
-HPEN   oshp = (HPEN)((tin123S&)tin0P).brcRaw ;
+HPEN   oshp = (HPEN)((tin1S&)tin0P).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , CreatePen( PS_SOLID , 1 , 0xffffff ) )
-HBRUSH oshb = (HBRUSH)((tin123S&)tin0P).brcRaw ;
+HBRUSH oshb = (HBRUSH)((tin1S&)tin0P).brcRaw ;
 BOSpOOP
 BOS( WHATgbo , BOSoK , CreateSolidBrush( 0 ) )
 
@@ -102,7 +102,7 @@ POINT p01 = p00 ;
 POINT p10 = p00 ;
 POINT p00 = { rectClient.right - rectClient.left , rectClient.bottom - rectClient.top } ;
 
-((tin123S&)tin0P).pEther->osTimeNowF( tin0P , timeS1 , timeS2 ) ;
+((tin1S&)tin0P).pEther->osTimeNowF( tin0P , timeS1 , timeS2 ) ;
 ZE( sCountT , timeS2 ) ;
 ZE( countT , timeS1 ) ;
 

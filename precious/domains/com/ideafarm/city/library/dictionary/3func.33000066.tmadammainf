@@ -40,9 +40,9 @@
             __( rc - ifcEXITcODE_EXITpROCESSaOK ) ;
             }
                 }
-                    ((tin123S&)tin0P).pPoolUse = pSave ;
+                    ((tin1S&)tin0P).pPoolUse = pSave ;
                     rc = adamMainF( tin0P , ifcIDtYPEtLS_WITHINpROCESS , 0 , 0 , 0 , 0 , ostoCmdLine , 0 ) ;
-                    poolC* pSave = ((tin123S&)tin0P).pPoolUse ; ((tin123S&)tin0P).pPoolUse = 0 ; //U::BUG: I SHOULD NOT BE PASSING MY OWN tin0P INTO adamMainF ; I SHOULD CT A VIRGIN tin123S
+                    poolC* pSave = ((tin1S&)tin0P).pPoolUse ; ((tin1S&)tin0P).pPoolUse = 0 ; //U::BUG: I SHOULD NOT BE PASSING MY OWN tin0P INTO adamMainF ; I SHOULD CT A VIRGIN tin123S
                 {                                                      //20181112@2041: CONJ: THE NEXT LINE'S COMMENT IS WRONG.  THERE IS NOTHING WRONG WITH USING tin0P, WHICH I THINK WAS CT BY A CALLER
                 _IO_
             {

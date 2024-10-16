@@ -30,9 +30,9 @@ REST
                 if( POOP )
 
                 etThread.delF( tin0P , psttShort ) ;
-                else ((tin123S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tOutboxSent+T(psttShort) , psttRenamed ) ;
+                else ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tOutboxSent+T(psttShort) , psttRenamed ) ;
                 }
-                    ((tin123S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tOutboxNotSent+T(psttShort) , psttRenamed ) ;
+                    ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tOutboxNotSent+T(psttShort) , psttRenamed ) ;
                     bRejected = 1 ;
                     POOPR
                 {
@@ -43,7 +43,7 @@ REST
                 ZE( strokeS* , psttShort ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
 
-                ((tin123S&)tin0P).pEtScratch->boxPutF( tin0P , tName , posti , costi ) ;
+                ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tName , posti , costi ) ;
                 //}
                 //    etThread.delF( tin0P , pstte ) ;
                 //    tName += T("/")+T(pstte) ;
@@ -100,7 +100,7 @@ REST
             {
             else
             if( POOP ) { POOPR ; }
-            ((tin123S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , psttRenamed ) ; ___( posti ) ;
+            ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , psttRenamed ) ; ___( posti ) ;
             ZE( countT , costi ) ;
             ZE( osTextT* , posti ) ;
             CONoUTrAW( T("RENAMED: ")+T(psttRenamed)+T("\r\n") ) ;
@@ -110,7 +110,7 @@ REST
                 POOPR
             {
             if( POOP )
-            ((tin123S&)tin0P).pEtScratch->diskMoveFileOrDirUniqueF( tin0P , psttRenamed , psttc1 ) ;
+            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirUniqueF( tin0P , psttRenamed , psttc1 ) ;
             ZE( strokeS* , psttRenamed ) ;
 
             CONoUTrAW( T("   FILE: ")+T(psttc1)+T("\r\n") ) ;
@@ -131,7 +131,7 @@ REST
                     if( POOP ) { POOPR }
 
                     etThread.delF( tin0P , psttShort ) ;
-                    ((tin123S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , (off?tOutboxNotSent:tOutboxSent)+T(psttShort) , psttr ) ;
+                    ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , (off?tOutboxNotSent:tOutboxSent)+T(psttShort) , psttr ) ;
                     etThread.strWordF( tin0P , psttShort , psttr , sttq , sSlash , - 1 ) ; ___( psttShort ) ;
                     ZE( strokeS* , psttShort ) ;
                     strokeS sttq( 0 , sc_IGNOREqUOTES ) ;

@@ -42,23 +42,23 @@ TODO
     return bDoIt ;
 
     }
-        ((tin123S&)tin0P).pEther->delF( tin0P , psttShortNew ) ;
-        ((tin123S&)tin0P).pEther->delF( tin0P , psttShortOld ) ;
-        ((tin123S&)tin0P).pEther->delF( tin0P , psttPath ) ;
+        ((tin1S&)tin0P).pEther->delF( tin0P , psttShortNew ) ;
+        ((tin1S&)tin0P).pEther->delF( tin0P , psttShortOld ) ;
+        ((tin1S&)tin0P).pEther->delF( tin0P , psttPath ) ;
 
         etherC::etRockIF( tin0P ).traceF( tin0P , T("new: ")+T(psttShortNew) ) ;
-        ((tin123S&)tin0P).pEther->diskMoveFileOrDirF( tin0P , T(psttPath)+T(psttShortNew) , tOld , 0 ) ;
-        ((tin123S&)tin0P).pEther->strReplaceF( tin0P , psttShortNew , psttShortOld , T("!ideafarm.7.") , T("!ideafarm.8.2.00000000.00000001.") , 0 , flSTRrEPLACE_null ) ;
+        ((tin1S&)tin0P).pEther->diskMoveFileOrDirF( tin0P , T(psttPath)+T(psttShortNew) , tOld , 0 ) ;
+        ((tin1S&)tin0P).pEther->strReplaceF( tin0P , psttShortNew , psttShortOld , T("!ideafarm.7.") , T("!ideafarm.8.2.00000000.00000001.") , 0 , flSTRrEPLACE_null ) ;
         ZE( strokeS* , psttShortNew ) ;
 
-        ((tin123S&)tin0P).pEther->strBisectF( tin0P , psttPath , psttShortOld , tOld , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShortOld ) ;
+        ((tin1S&)tin0P).pEther->strBisectF( tin0P , psttPath , psttShortOld , tOld , T("/") , -1 , flSTRbISECT_APPENDdELIMITER , 0 ) ;  ___( psttPath ) ; ___( psttShortOld ) ;
         ZE( strokeS* , psttShortOld ) ;
         ZE( strokeS* , psttPath ) ;
 
         TN( tOld , ifName ) ;
-        ifFileNameC ifName( tin0P , *((tin123S&)tin0P).pEther , postNameP ) ;
+        ifFileNameC ifName( tin0P , *((tin1S&)tin0P).pEther , postNameP ) ;
     {
-    if( postNameP[ thirdC::c_strlenIF( tin0P , postNameP ) - 1 ] != '\\' && ((tin123S&)tin0P).pEther ) // IF NOT A DIRECTORY
+    if( postNameP[ thirdC::c_strlenIF( tin0P , postNameP ) - 1 ] != '\\' && ((tin1S&)tin0P).pEther ) // IF NOT A DIRECTORY
     ZE( boolT , bDoIt ) ;
     _IO_
 {

@@ -9,13 +9,13 @@
 
 REST
 CONoUTrAW( "shutdown/0\r\n" ) ; //U::
-((tin123S&)tin0P).idPhase2 = 0 ;
+((tin1S&)tin0P).idPhase2 = 0 ;
 TELL( "entering REST" )
 }
     CONoUTrAW( "shutdown/1\r\n" ) ; //U::
     }
         }
-            *((tin123S&)tin0P).zEtScratch = 0 ;
+            *((tin1S&)tin0P).zEtScratch = 0 ;
             etThread.delF( tin0P , psttDriverName ) ;
             ((thirdC&)etScratch).osDriverUnregisterF( tin0P , T(psttDriverName) ) ;
             etThread.osDriverNameFromMasterF( tin0P , psttDriverName , DDNUMB ) ; ___( psttDriverName ) ;
@@ -206,7 +206,7 @@ U::NEED TO PASS IN A bitsC REFERENCE
         stackC  stGrab(                     tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB                /*flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | */ , sizeof( grabEntryS       ) ) ;
 
         //thirdC  thUnserializedPool(         tin0P , TAG( TAGiDnULL ) , poolOldSetOldUnserialized ) ;
-        //p oolC   poolOldSetOldUnserialized(     tin0P , TAG( TAGiDnULL ) , T("monitor.unserialized.main.")+TF1(((tin123S&)tin0P).osPid)+T(".")+TF1(((tin1S&)tin0P).glass.idThread) , flPOOLoLDc_UNSERIALIZED | flPOOLoLDc_UNSERIALIZEDmULTItHREAD ) ; U:: FLAG "UNSERIALIZED"
+        //p oolC   poolOldSetOldUnserialized(     tin0P , TAG( TAGiDnULL ) , T("monitor.unserialized.main.")+TF1(((tin1S&)tin0P).osPid)+T(".")+TF1(((tin1S&)tin0P).glass.idThread) , flPOOLoLDc_UNSERIALIZED | flPOOLoLDc_UNSERIALIZEDmULTItHREAD ) ; U:: FLAG "UNSERIALIZED"
         //U::CONJ: OBSOLETE: 
 
         ZE( countT , conditionalGrab ) ;
@@ -245,7 +245,7 @@ U::NEED TO PASS IN A bitsC REFERENCE
     PC
     threadCheckC tc( tin0P , TAG( TAGiDnULL ) ) ;
 {
-((tin123S&)tin0P).idPhase2 = 1 ;
+((tin1S&)tin0P).idPhase2 = 1 ;
 thirdC::third_flagsModeAdam1I_IF( tin0P ) |= flADAMmODE1_DEBUG1 ; //U::CAUSES THE DFLT EXCEPTION HANDLER TO SLEEP FOREVER
 TODO
 
@@ -283,7 +283,7 @@ DONE( tmLockupF )
     ( idMe == 1 ? g1 : g2 ).grabF( tin0P , TAG( TAGiDnULL ) ) ;
     TELL( "about to grab woth" )
 
-    etThread.strokeF( tin0P , T("tmLockupF ")+TF1(idMe)+T("; osTid: ")+TF1(((tin123S&)tin0P).osTid)+T("; serial numbers: ")+TF1(g1.idMe)+ T(" ")+TF1(g2.idMe)+T("\r\n") ) ;
+    etThread.strokeF( tin0P , T("tmLockupF ")+TF1(idMe)+T("; osTid: ")+TF1(((tin1S&)tin0P).osTid)+T("; serial numbers: ")+TF1(g1.idMe)+ T(" ")+TF1(g2.idMe)+T("\r\n") ) ;
 
     countT idMe =          pTaskP->c3 ;
     grabS& g2   = *(grabS*)pTaskP->c2 ;
@@ -371,7 +371,7 @@ TASK( tmFireAllF )
 #define ClOOKsLOTS 0x10
 
 DONE( tmWhereRptF )
-((tin123S&)tin0P).idPhase2 = 0 ;
+((tin1S&)tin0P).idPhase2 = 0 ;
 TELL( "i'm outa here" )
 }
     bDestroyCircleMonitor = 1 ;
@@ -697,7 +697,7 @@ TELL( "i'm outa here" )
     TELL( "setting up" )
 {
 if( pTaskP && pTaskP->c1 )
-((tin123S&)tin0P).idPhase2 = 1 ;
+((tin1S&)tin0P).idPhase2 = 1 ;
 TASK( tmWhereRptF )
 
 }
@@ -1056,7 +1056,7 @@ voidT writeFineReportF( tin0S& tin0P , etherC& etThread , stackC& st_psttrBodyP 
 #define IDtYPErPT_THREAD         0x1
 
 DONE( tmWhereF )
-((tin123S&)tin0P).idPhase2 = 0 ;
+((tin1S&)tin0P).idPhase2 = 0 ;
 }
     }
         TELL( "awakening" )
@@ -1158,11 +1158,11 @@ DONE( tmWhereF )
                                     bOk = 0 ;
                                 {
                                 if( bOk )
-                                thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&copy2 , sizeof copy2 - CBwHEREsUFFIX , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).idWhat - (byteT*)&tin0P ) ) , entry.osPid ) ;
+                                thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&copy2 , sizeof copy2 - CBwHEREsUFFIX , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin1S&)tin0P).idWhat - (byteT*)&tin0P ) ) , entry.osPid ) ;
                                 bOk = 0 ;
                             {
                             if( bOk )
-                            thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&copy1 , sizeof copy1 - CBwHEREsUFFIX , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).idWhat - (byteT*)&tin0P ) ) , entry.osPid ) ;
+                            thirdC::dosReadProcessMemoryIF( tin0P , (byteT*)&copy1 , sizeof copy1 - CBwHEREsUFFIX , bOk , (voidT*)( entry.ip + ( (byteT*)&((tin1S&)tin0P).idWhat - (byteT*)&tin0P ) ) , entry.osPid ) ;
                             bOk = 0 ;
                         {
                         if( bOk )
@@ -1174,7 +1174,7 @@ DONE( tmWhereF )
                         thirdC::c_memcpyIF( tin0P , (byteT*)&fingerprint2 , (byteT*)ap_artmentOldC( tin0P , entry.ip ) , sizeof fingerprint2 ) ;
                         thirdC::c_memcpyIF( tin0P , (byteT*)&copy2 , (byteT*)pWhere , sizeof copy2 - CBwHEREsUFFIX ) ; //A COPY IS MADE EVEN IF IDA TO INCREASE THE PROBABILITY THAT THE DATA ARE CONSISTENT
                         thirdC::c_memcpyIF( tin0P , (byteT*)&copy1 , (byteT*)pWhere , sizeof copy1 - CBwHEREsUFFIX ) ; //A COPY IS MADE EVEN IF IDA TO INCREASE THE PROBABILITY THAT THE DATA ARE CONSISTENT
-                        whereOldS* pWhere   = (whereOldS*)( (byteT*)ap_artmentOldC( tin0P , entry.ip ) + ( (byteT*)&((tin123S&)tin0P).idWhat - (byteT*)&tin0P ) ) ;
+                        whereOldS* pWhere   = (whereOldS*)( (byteT*)ap_artmentOldC( tin0P , entry.ip ) + ( (byteT*)&((tin1S&)tin0P).idWhat - (byteT*)&tin0P ) ) ;
                         thirdC::c_memcpyIF( tin0P , (byteT*)&fingerprint1 , (byteT*)ap_artmentOldC( tin0P , entry.ip ) , sizeof fingerprint1 ) ;
                     {
                     if( entry.bIda )
@@ -1248,7 +1248,7 @@ DONE( tmWhereF )
     TELL( "setting up" )
 {
 if( pTaskP && pTaskP->c1 )
-((tin123S&)tin0P).idPhase2 = 1 ;
+((tin1S&)tin0P).idPhase2 = 1 ;
 TASK( tmWhereF )
 
 }
@@ -1371,7 +1371,7 @@ whereTalliesGrossS* pwtGrossF( tin0S& tin0P , thirdC& thirdP , stackC& stRecycle
 voidT tallyF( tin0S& tin0P , etherC& etThread , whereTalliesFineS& wtfP , whereOldS& copy1P , stackC& stLifiP )
 
 }
-    if( ((tin123S&)tin0P).fingerprint && etThread && stLifiP ) ; //SO MACRO CAN BE USED
+    if( ((tin1S&)tin0P).fingerprint && etThread && stLifiP ) ; //SO MACRO CAN BE USED
     if( !wtgP.bNewWhereRpt ) wtgP.bNewWhereRpt = 1 ;
 
     wtgP.swTally.ungrabF( tin0P ) ;
@@ -1397,7 +1397,7 @@ voidT tallyF( tin0S& tin0P , etherC& etThread , whereTalliesGrossS& wtgP , where
 //        pc = pc->pTinKid ;                                                                  \
 //    {                                                                                       \
 //    if( pc->pTinKid )                                                                       \
-//    tin0S* pc = ((tin123S&)tin0P).pTin0Dad ;                                                               \
+//    tin0S* pc = ((tin1S&)tin0P).pTin0Dad ;                                                               \
 //    etThread.strMakeF( tin0P , LF , psttl , TF1(idP)+T(": ") , 0x1000 ) ; ___( psttl ) ;          \
 //    ZE( strokeS* , psttl ) ;                                                              \
 //    TN( tb , " " ) ;                                                                        \
@@ -1406,7 +1406,7 @@ voidT tallyF( tin0S& tin0P , etherC& etThread , whereTalliesGrossS& wtgP , where
 //U::
 
 DONE( tmRptPoolF )
-((tin123S&)tin0P).idPhase2 = 0 ;
+((tin1S&)tin0P).idPhase2 = 0 ;
 }
     }
         }
@@ -1557,14 +1557,14 @@ DONE( tmRptPoolF )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
-((tin123S&)tin0P).idPhase2 = 1 ;
+((tin1S&)tin0P).idPhase2 = 1 ;
 TASK( tmRptPoolF )
 
 DONE( tmRptMainF )
-((tin123S&)tin0P).idPhase2 = 0 ;
+((tin1S&)tin0P).idPhase2 = 0 ;
 TELL( "i am outa here" )
 }
-    ((tin123S&)tin0P).pEtText = 0 ;
+    ((tin1S&)tin0P).pEtText = 0 ;
     ((tin1S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWgRAB) ) ;
     TELL( "cleaning up" )
     //POPUP( "tmRptMainF/about to set my done flag" ) ; //U::
@@ -1847,7 +1847,7 @@ TELL( "i am outa here" )
                         }
                             }
                                 cNewSteps += monitor.cNewSteps ;
-                                thirdC::dosWriteProcessMemoryIF( tin0P , countTC() , (voidT*)( entry.ip + ( (byteT*)&((tin123S&)tin0P).glass - (byteT*)&tin0P ) ) , entry.osPid , (byteT*)&monitor , sizeof monitor ) ;
+                                thirdC::dosWriteProcessMemoryIF( tin0P , countTC() , (voidT*)( entry.ip + ( (byteT*)&((tin1S&)tin0P).glass - (byteT*)&tin0P ) ) , entry.osPid , (byteT*)&monitor , sizeof monitor ) ;
                                 stampF( tin0P , etThread , monitor , idStep ) ;
                                 monitorOldS& monitor = *(monitorOldS*)( &idStep + 1 ) ;
                                 countT&   idStep  = *(countT*)pbCopy ;
@@ -2407,7 +2407,7 @@ TELL( "i am outa here" )
         TN( tBar , " | " ) ;
         TELL( "setting up: 2: stroke strings" )
     
-        ((tin123S&)tin0P).pEtText = &etThread ;
+        ((tin1S&)tin0P).pEtText = &etThread ;
         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWgRAB ;
         ZE( countT , idStepReporterLath ) ;
         boolT bWoth = 1 ;
@@ -2474,7 +2474,7 @@ TELL( "i am outa here" )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 )
 etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
-((tin123S&)tin0P).idPhase2 = 1 ;
+((tin1S&)tin0P).idPhase2 = 1 ;
 TASK( tmRptMainF )
 
 }
@@ -2680,7 +2680,7 @@ voidT psttOldCallNestF( tin0S& tin0P , etherC& etThread , strokeS*& psttP , stac
 voidT monitorLookF( tin0S& tin0P , grabWantS*& pGrabWantP , countT& cGrabWantP , grabHaveS*& pGrabHaveP , countT& cGrabHaveP )
 
 DONE( tmLogSnapF )
-((tin123S&)tin0P).idPhase2 = 0 ;
+((tin1S&)tin0P).idPhase2 = 0 ;
 }
     bDestroyCircleLog = 1 ;
     }
@@ -2718,11 +2718,11 @@ DONE( tmLogSnapF )
     signC&    sgnDone_tmRptMainF =    *(signC*)pTaskP->c1 ;
 {                     
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
-((tin123S&)tin0P).idPhase2 = 1 ;
+((tin1S&)tin0P).idPhase2 = 1 ;
 TASK( tmLogSnapF )
 
 DONE( tmCircleLogF )
-((tin123S&)tin0P).idPhase2 = 0 ;
+((tin1S&)tin0P).idPhase2 = 0 ;
 FIREmYSELF ; // REDUNDANT EXCEPT WHEN GET HERE DUE TO AN EXCEPTION IN 2e40104
 }
     DEL( pNapLog ) ;
@@ -2735,7 +2735,7 @@ U::NEED TO PASS IN A bitsC REFERENCE
     napkinC*& pNapLog           = *(napkinC**)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
-((tin123S&)tin0P).idPhase2 = 1 ;
+((tin1S&)tin0P).idPhase2 = 1 ;
 TASK( tmCircleLogF )
 
 }
@@ -2756,7 +2756,7 @@ voidT unregisterInactiveDriversF( tin0S& tin0P , etherC& etThread )
 }
     return - sgn ; // HIGHEST TALLY IS "LIGHTEST"
     }
-        if( ((tin123S&)tin0P).fingerprint && c3P ) ;
+        if( ((tin1S&)tin0P).fingerprint && c3P ) ;
     
         }                       
             else if( pc1->c2 > pc2->c2 ) sgn = - 1 ;
@@ -2787,7 +2787,7 @@ countT subtractTallyF( tin0S& tin0P , countT& pEther , countT& c1P , countT& c2P
     return 0 ;
     }
         TELL( "cirLogF/-" )
-        if( ((tin123S&)tin0P).fingerprint && etherP && cParmP && pbP && cbP ) ;
+        if( ((tin1S&)tin0P).fingerprint && etherP && cParmP && pbP && cbP ) ;
         TELL( "cirLogF/+" )
     {
     _IO_    TLNA( "cirLogF" )
@@ -3558,7 +3558,7 @@ boolT bAcceptEventF( tin0S* pTinP , tellInfoSysExceptionS& infoP , countT* pcArg
 
 }
     return sgn ;
-    if( ((tin123S&)tin0P).fingerprint && c3P ) ;
+    if( ((tin1S&)tin0P).fingerprint && c3P ) ;
     }                       
         else if( pe1->ip       < pe2->ip       ) sgn = - 1 ;
         else if( pe1->ip       > pe2->ip       ) sgn =   1 ;
@@ -3593,7 +3593,7 @@ countT subtract_tinEntryS_F( tin0S& tin0P , countT& pEther , countT& c1P , count
 
 }
     return sgn ;
-    if( ((tin123S&)tin0P).fingerprint && c3P ) ;
+    if( ((tin1S&)tin0P).fingerprint && c3P ) ;
     }                       
         else if( pe1->cbd       < pe2->cbd       ) sgn = - 1 ;
         else if( pe1->cbd       > pe2->cbd       ) sgn =   1 ;
@@ -3628,7 +3628,7 @@ countT subtract_napkinEntryS_F( tin0S& tin0P , countT& pEther , countT& c1P , co
 
 }
     return sgn ;
-    if( ((tin123S&)tin0P).fingerprint && c3P ) ;
+    if( ((tin1S&)tin0P).fingerprint && c3P ) ;
     }                       
         }                       
             else if( pe1->pvMe     < pe2->pvMe     ) sgn = - 1 ;
@@ -3661,7 +3661,7 @@ countT subtract_poolOldEntryS_F( tin0S& tin0P , countT& pEther , countT& c1P , c
 
 }
     return sgn ;
-    if( ((tin123S&)tin0P).fingerprint && c3P ) ;
+    if( ((tin1S&)tin0P).fingerprint && c3P ) ;
 
     }                       
         else if( pe1->idLine  < pe2->idLine  ) sgn = - 1 ;
@@ -3689,7 +3689,7 @@ countT subtract_lifiEntryS_F( tin0S& tin0P , countT& pEther , countT& c1P , coun
 
 }
     return sgn ;
-    if( ((tin123S&)tin0P).fingerprint && c3P ) ;
+    if( ((tin1S&)tin0P).fingerprint && c3P ) ;
 
     }                       
         else if( pe1->ip       < pe2->ip       ) sgn = - 1 ;

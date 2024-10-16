@@ -69,9 +69,9 @@ THREADmODE2rESTORE
                     if( !(const byteT*)*pPageEvent )
 
                     THREADmODE3rESTORE
-                    //((tin123S&)tin0P).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+                    //((tin1S&)tin0P).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
                     bksAccessEvents.readF( tin0P , *pPageEvent , hRead , flBOOKScrEAD_null ) ;
-                    //((tin123S&)tin0P).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+                    //((tin1S&)tin0P).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
                     pPageEvent = new( 0 , tin0P , LF ) pageC( tin0P , bksAccessEvents , cbi ) ; ___( pPageEvent ) ;
                     THREADmODE3oN( flTHREADmODE3_DOnOTrEGISTERpAGEc )
                     ZE( pageC* , pPageEvent ) ;
@@ -86,9 +86,9 @@ THREADmODE2rESTORE
                         cbi = cbiSave ;
                     {
                     if( !pbi )
-                    //((tin123S&)tin0P).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
+                    //((tin1S&)tin0P).pc Utility[ 0 ] -- ; //U:: TO FIND A BUG
                     bDelete = bksAccessEvents.readF( tin0P , pbi , cbi , hRead ) ;
-                    //((tin123S&)tin0P).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
+                    //((tin1S&)tin0P).pc Utility[ 0 ] ++ ; //U:: TO FIND A BUG
                 {
                 if( bPrefix )
                 ZE( boolT , bDelete ) ;
@@ -725,7 +725,7 @@ DONE( tmWorkerF )
     workS&  wsP              =  *(workS*)pTaskP->c1 ;
     _IO_
 
-    thirdC::c_memcpyIF( tin0P , (byteT*)((tin123S&)tin0P).ppJot , (byteT*)((tin123S*)pTaskP->pTin0Dad)->ppJot , sizeof ((tin123S&)tin0P).ppJot ) ;    //U:: MOVE TO BASE (flTHREADlAUNCH)
+    thirdC::c_memcpyIF( tin0P , (byteT*)((tin123S&)tin0P).ppJot , (byteT*)((tin123S*)pTaskP->pTin0Dad)->ppJot , sizeof( ((tin123S&)tin0P).ppJot ) ) ;    //U:: MOVE TO BASE (flTHREADlAUNCH)
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmWorkerF )

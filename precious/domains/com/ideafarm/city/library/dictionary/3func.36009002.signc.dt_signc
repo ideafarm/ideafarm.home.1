@@ -15,9 +15,9 @@
             }
                 while( cFunctionsPending > 1 ) { ++ s ; thirdC::dosSleepRawIF( tin0P , 0x100 ) ; }
 
-                ((tin123S&)tin0P).cYield = 0 ;
+                ((tin1S&)tin0P).cYield = 0 ;
                 ++ s ; thirdC::osThreadYieldIF( tin0P , TAG( TAGiDnULL ) ) ; // HOPEFULLY PENDING CALLS ON OTHER THREADS WILL COMPLETE HERE
-                ((tin123S&)tin0P).cYield = 0 ;
+                ((tin1S&)tin0P).cYield = 0 ;
 
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 

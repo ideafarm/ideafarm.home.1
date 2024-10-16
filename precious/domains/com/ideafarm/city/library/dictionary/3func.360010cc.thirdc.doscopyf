@@ -15,17 +15,17 @@
             }
                 ++ s ; dosSleepIF( tin0P , TOCK >> 2 ) ;
 
-                if( pEtRock ) pEtRock->traceF( tin0P , T("dosCopyF [brcQuery,cTries,new,old]: ")+TF2(((tin123S&)tin0P).brcQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cTriesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postNewP)+T("    ")+T(postOldP) ) ;
+                if( pEtRock ) pEtRock->traceF( tin0P , T("dosCopyF [brcQuery,cTries,new,old]: ")+TF2(((tin1S&)tin0P).brcQuery,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cTriesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T(postNewP)+T("    ")+T(postOldP) ) ;
                 etherC* pEtRock = &etherC::etRockIF( tin0P ) ;
             {
             else if( ( !cTriesP || cTriesP > 1 ) )
-            if( !((tin123S&)tin0P).bosFail ) break ;
+            if( !((tin1S&)tin0P).bosFail ) break ;
 
             }
-                ((tin123S&)tin0P).brcQuery = ((tin123S&)tin0P).brcRaw ;
+                ((tin1S&)tin0P).brcQuery = ((tin1S&)tin0P).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , GetLastError() )
             {
-            if( ((tin123S&)tin0P).bosFail )
+            if( ((tin1S&)tin0P).bosFail )
 
             #endif
                 BOS( WHATsfw , BOSoK , CopyFile( postOldP , postNewP , 0 ) )

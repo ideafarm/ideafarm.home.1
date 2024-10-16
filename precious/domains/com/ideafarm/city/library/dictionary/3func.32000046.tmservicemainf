@@ -66,7 +66,7 @@ DONE( tmServiceMainF )
     ((SERVICE_STATUS*)((tin1S&)tin0P).pag1->pcServiceStatus)->dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SHUTDOWN ;
     ((SERVICE_STATUS*)((tin1S&)tin0P).pag1->pcServiceStatus)->dwCurrentState = SERVICE_START_PENDING ;
 
-    ((tin1S&)tin0P).pag1->oshServiceStatus = ((tin123S&)tin0P).brcRaw ;
+    ((tin1S&)tin0P).pag1->oshServiceStatus = ((tin1S&)tin0P).brcRaw ;
     BOSpOOP
     BOS( WHATgbo , BOSoK , RegisterServiceCtrlHandler( ((tin1S&)tin0P).pag1->postServiceName , serviceHandlerF ) )
     if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin1S&)tin0P).glass.idThread - ifcIDtHREADlOW_tmWindowsOrServiceMainF ) ; }

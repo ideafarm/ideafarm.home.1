@@ -13,12 +13,12 @@
 
         #endif
 
-            __( ((tin123S&)tin0P).brcRaw - WSABASEERR ) ;
+            __( ((tin1S&)tin0P).brcRaw - WSABASEERR ) ;
             BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
 
         #elif defined( __NT__ )
 
-            __( ((tin123S&)tin0P).brcRaw - SOCBASEERR ) ;
+            __( ((tin1S&)tin0P).brcRaw - SOCBASEERR ) ;
             BOSdOnOTtEST( WHATgbo , sock_errno() )
 
         #if defined( __OS2__ )
@@ -38,12 +38,12 @@
                 ++ s ;
 
                 #endif
-                    if( ((tin123S&)tin0P).brcLath == WSAENOTSOCK ) break ; //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP
+                    if( ((tin1S&)tin0P).brcLath == WSAENOTSOCK ) break ; //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP
                 #elif defined( __NT__ )
                     //U:
                 #if defined( __OS2__ )
             {
-            if( ((tin123S&)tin0P).bosFail )
+            if( ((tin1S&)tin0P).bosFail )
 
             BOSS( WHATsir , BOSfAIL , connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info ) )
 
@@ -57,7 +57,7 @@
     boolT bNoQuit = cTriesP == - 1 ;
 
     }
-        pcTo[ 3 - offi ] = ((tin123S&)tin0P).brcRaw ;
+        pcTo[ 3 - offi ] = ((tin1S&)tin0P).brcRaw ;
         BOSdOnOTtEST( WHATgbo , htonl( pcFrom[ offi ] ) )
     {
     for( countT offi = 0 ; offi < 4 ; offi ++ )
@@ -65,7 +65,7 @@
     countT* pcTo   = (countT*)info.sin6_addr.u.Byte ;
     //CS:CODEsYNC: 350011ab 36001036
 
-    info.sin6_port = (count01T)((tin123S&)tin0P).brcRaw ;
+    info.sin6_port = (count01T)((tin1S&)tin0P).brcRaw ;
     BOSdOnOTtEST( WHATgbo , htons( (count01T)idPortP ) )
     info.sin6_family = AF_INET6 ;
     c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;

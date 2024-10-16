@@ -12,8 +12,8 @@
     }
     
         ((tin1S&)tin0P).pag3->_socketC_.grab.ungrabF( tin0P ) ;
-        pOdometer->cbWrite += ((tin123S&)tin0P).odoSockCbWrite - _odoSockCbWriteOpen ;
-        pOdometer->cbRead  += ((tin123S&)tin0P).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer->cbWrite += ((tin1S&)tin0P).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tin1S&)tin0P).odoSockCbRead  - _odoSockCbReadOpen  ;
         pOdometer = (sockOdometerS*)&(countT&)*((tin1S&)tin0P).pag3->_socketC_.pSwOdometer ;
         ((tin1S&)tin0P).pag3->_socketC_.nnLever = nnPeer ;
         ((tin1S&)tin0P).pag3->_socketC_.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
@@ -289,10 +289,10 @@
     
         bRead.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     
-        const countT _odoSockCbWriteOpen = ((tin123S&)tin0P).odoSockCbWrite ;
-        const countT _odoSockCbReadOpen  = ((tin123S&)tin0P).odoSockCbRead  ;
+        const countT _odoSockCbWriteOpen = ((tin1S&)tin0P).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tin1S&)tin0P).odoSockCbRead  ;
 
-//((tin123S&)tin0P).pc Utility[ 2 ] = idIn ;
+//((tin1S&)tin0P).pc Utility[ 2 ] = idIn ;
 countT idIn = 1 + incv02AM( idInLath ) ;
 static countT idInLath ;
 //U:: TO FIND A BUG

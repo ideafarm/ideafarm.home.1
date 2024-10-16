@@ -37,7 +37,7 @@
                         //            homeS::homeIF().flags |= flHOMEs_KILLsELFiMMEDIATELY ; //20191014@1759: ADDED WITHOUT ANALYSIS TO MAKE REBOOT MORE RELIABLE AND QUICKER
                         //
                         //            thirdC::osFireIF( tin0P ) ;
-                        //            if( ((tin123S&)tin0P).pEtText ) ((tin123S&)tin0P).pEtText->emailFactoryReportF( tin0P , T("an exception occured.  rebooting") ) ;
+                        //            if( ((tin1S&)tin0P).pEtText ) ((tin1S&)tin0P).pEtText->emailFactoryReportF( tin0P , T("an exception occured.  rebooting") ) ;
                         //            LOGrAW3( "on unhandled exception, firing the os at age (ms) since boot: " , msSinceBoot , "\r\n" ) ;
                         //        {
                         //        else
@@ -368,7 +368,7 @@
                             OStEXTC(  ostoRpt ,      thirdC::os_cAllOrphanThreadsI_IF( tin0P ) , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\ncAllOrphanThreadsI: " ) ;_M
                             OStEXTC(  ostoRpt ,      ((tin123S&)tin0Snap).cKidThreads , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin123S&)tin0P).cKidThreads: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin1S&)tin0P).cKidThreads: " ) ;_M
                             OStEXTC(  ostoRpt ,      thirdC::os_cAllKidThreadsI_IF( tin0P ) , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\n((tin1S&)tin0P).pag1->_thirdC_.cAllKidThreads: " ) ;_M
                             }
@@ -389,7 +389,7 @@
                                     OStEXTC( ostoRpt , ((tin123S&)tin0Snap).pcUtility[ off ] , 0 ) ;_M
                                     OStEXTAK( ostoRpt , "]: " ) ;_M
                                     OStEXTC( ostoRpt , off , 0 ) ;_M
-                                    OStEXTAK( ostoRpt , "\r\n((tin123S&)tin0P).pc" "Utility[" ) ;_M
+                                    OStEXTAK( ostoRpt , "\r\n((tin1S&)tin0P).pc" "Utility[" ) ;_M
                                 {
                                 {for( countT off = 0 ; off < sizeof ((tin123S&)tin0Snap).pcUtility / sizeof ((tin123S&)tin0Snap).pcUtility[ 0 ] ; off ++ )
                             {
@@ -442,13 +442,13 @@
                             OStEXTC(  ostoRpt ,     ((tin123S&)tin0Snap).brcLath , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\nbrcLath: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin123S&)tin0Snap).cGrabitC_unregistered , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin123S&)tin0P).cGrabitC_unregistered: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin1S&)tin0P).cGrabitC_unregistered: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin123S&)tin0Snap).cGrabitC_registered , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin123S&)tin0P).cGrabitC_registered: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin1S&)tin0P).cGrabitC_registered: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin123S&)tin0Snap).cGrabitC_reset , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin123S&)tin0P).cGrabitC_reset: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin1S&)tin0P).cGrabitC_reset: " ) ;_M
                             OStEXTC(  ostoRpt ,   ((tin123S&)tin0Snap).cGrabitC_set , 0 ) ;_M
-                            OStEXTAK( ostoRpt , "\r\n((tin123S&)tin0P).cGrabitC_set: " ) ;_M
+                            OStEXTAK( ostoRpt , "\r\n((tin1S&)tin0P).cGrabitC_set: " ) ;_M
                             OStEXTC(  ostoRpt ,      ((tin123S&)tin0Snap).glass.cGrabbed , 0 ) ;_M
                             OStEXTAK( ostoRpt , "\r\ncGrabbed: " ) ;_M
 
@@ -578,7 +578,7 @@
                     }
                         Sleep( TUCK ) ;_M //SIMPLE, TO AVOID A NESTED EXCEPTION
                     {_M
-                    while( setIfZeAM( processGlobal2I.osTidReportingException , ((tin123S&)tin0P).osTid ) )
+                    while( setIfZeAM( processGlobal2I.osTidReportingException , ((tin1S&)tin0P).osTid ) )
                     //TO AVOID NESTED EXCEPTION, DON'T DO THIS: _IO_
                 {_M
                 if( !bFixed || !bQuiet )
@@ -642,7 +642,7 @@
                         //         tin0S* pTin = &tin0P ;
                         //         //CONoUTrAW( "osExceptionHandlerWorkIF: clean +\r\n" ) ;
                         // 
-                        //         if( !bFixed ) ((tin123S&)tin0P).cKidThreads = 0 ;
+                        //         if( !bFixed ) ((tin1S&)tin0P).cKidThreads = 0 ;
                         //         if( &tin0P != pTinMainI ) { BLAMMO ; }
                         //         TINSL
                         //     {
@@ -672,7 +672,7 @@
                 //U::ISSUE: IF THE EXCEPTION IS NOT ON MAIN THREAD THEN THIS WILL NOT CLEAN UP THE INTENDED ITEMS FOR DLL TERMINATION
 
                 }
-                    processGlobal2I.osTidTerminator = ((tin123S&)tin0P).brcRaw ;
+                    processGlobal2I.osTidTerminator = ((tin1S&)tin0P).brcRaw ;
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , GetCurrentThreadId() )
                     processGlobal2I._thirdC_flagsProcessState |= flPROCESSsTATE_EXCEPTIONnOThANDLED ;
@@ -721,7 +721,7 @@
                              if( F(pr->flags) & flRESTARTc_SKIP    ) ;
                     {_M
                     while( pr )
-                    pr = ((tin123S&)tin0P).pRestart ;_M
+                    pr = ((tin1S&)tin0P).pRestart ;_M
                     restartC* pr ;_M
                     //TELL( "osExceptionHandlerWorkIF/looking for a restartC" )
                     _IO_
@@ -870,12 +870,12 @@
         static countT cCodeReadRetries ;
 
         const tin0S&        tin0Snap = *(tin0S*)tellInfoSys.pbTin ;
-        tellInfoSysExceptionS& tellInfoSys = *((tin123S&)tin0P).pzTieLath ;_M
+        tellInfoSysExceptionS& tellInfoSys = *((tin1S&)tin0P).pzTieLath ;_M
 
         //TELL( "osExceptionHandlerWorkIF/+" )
-        //A: ASSUME: ((tin123S&)tin0P).pzTieLath POINTS TO A STRUCTURE THAT CONTAINS AN IMAGE OF tin0P AT EXCEPTION EVENT TIME
+        //A: ASSUME: ((tin1S&)tin0P).pzTieLath POINTS TO A STRUCTURE THAT CONTAINS AN IMAGE OF tin0P AT EXCEPTION EVENT TIME
     {
-    if( ((tin123S&)tin0P).pzTieLath )
+    if( ((tin1S&)tin0P).pzTieLath )
     ZE( boolT , bFixed ) ;
     _IO_
 

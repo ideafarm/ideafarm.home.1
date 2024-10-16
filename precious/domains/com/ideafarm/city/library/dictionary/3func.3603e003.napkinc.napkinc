@@ -33,7 +33,7 @@
         ti.pbData    = pbNapkin + sizeof( napkinHeaderS ) ;    // IF flNAPKINc_DOnOTcOMMIT THEN MONITOR WILL DISCOVER THE HARD WAY THAT IT CANNOT READ THIS MEMORY
         ti.costName  = thirdC::c_strlenIF( tin0P , ti.postName ) ;
         thirdC::c_strncpyIF( tin0P , ti.postName , postName , sizeof ti.postName ) ;
-        ti.osPid     = ((tin123S&)tin0P).osPid ;
+        ti.osPid     = ((tin1S&)tin0P).osPid ;
         tellInfoSysNapkinS ti ;
     {
     if( pbNapkin && F(flagsSharedMemory) & flOPENsHAREDmEMORYrESULT_ALREADYeXISTED && this != &processGlobal4I.napHome ) //ASSUME: napHome IS CT WOTH
@@ -348,7 +348,7 @@
     }
         }
             thirdC::dosPriorityIF( tin0P , idDesireCtSave ) ;
-            ((tin123S&)tin0P).cYield = 0 ;
+            ((tin1S&)tin0P).cYield = 0 ;
     
             //THREADmODE3oFF( flTHREADmODE3_SUPPRESStRACING )
 
@@ -387,10 +387,10 @@
 
                 }
                     BLAMMO ;
-                    //((tin123S&)tin0P).pc Utility[ 3 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
-                    //((tin123S&)tin0P).pc Utility[ 2 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
-                    //((tin123S&)tin0P).pc Utility[ 1 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
-                    //((tin123S&)tin0P).pc Utility[ 0 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
+                    //((tin1S&)tin0P).pc Utility[ 3 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
+                    //((tin1S&)tin0P).pc Utility[ 2 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
+                    //((tin1S&)tin0P).pc Utility[ 1 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
+                    //((tin1S&)tin0P).pc Utility[ 0 ] = ((napkinHeaderS*)pbNapkin)->cRef ;
 
                     //LOGrAW(   ostoSay ) ;
                     //OStEXTAK( ostoSay , "\r\n" ) ;
@@ -463,7 +463,7 @@
     else
     }
         thirdC::dosPriorityIF( tin0P , idDesireCtSave ) ;
-        ((tin123S&)tin0P).cYield = 0 ;
+        ((tin1S&)tin0P).cYield = 0 ;
 
         //THREADmODE3oFF( flTHREADmODE3_SUPPRESStRACING )
         }
@@ -604,7 +604,7 @@
         ? 1 << thirdC::os_expCbPage_IF( tin0P )
     const countT cbaHeader = F(flagsCt) & flNAPKINc_PAGEaLIGNdATA
 
-    ((tin123S&)tin0P).cYield = 0 ;
+    ((tin1S&)tin0P).cYield = 0 ;
     thirdC::dosPriorityIF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
 
     }
@@ -638,7 +638,7 @@
     //if( thirdC::c_strstrIF( ostoNapkinName , "sexC/data/" ) )
         
     }
-        OStEXTC( ostoNapkinName , ((tin123S&)tin0P).osPid , 0 ) ;
+        OStEXTC( ostoNapkinName , ((tin1S&)tin0P).osPid , 0 ) ;
         OStEXTAK( ostoNapkinName , "." ) ;
     {
     else if( bSexReg )                                                                                          //U:: THIS IS A WORKAROUND TO ELIM OVERFLOW WHEN HAVE MANY PROCESS INSTANCES OF THE SAME ADAM ; THE WORKAROUND DEFEATS THE IDEA OF A GLOBAL REGISTRY
@@ -651,7 +651,7 @@
         
         OStEXTC( ostoNapkinName , ++ idLath , 0 ) ;
         OStEXTAK( ostoNapkinName , "." ) ;
-        OStEXTC( ostoNapkinName , ((tin123S&)tin0P).osPid , 0 ) ;
+        OStEXTC( ostoNapkinName , ((tin1S&)tin0P).osPid , 0 ) ;
         OStEXTAK( ostoNapkinName , "." ) ;
         OStEXTC( ostoNapkinName , processGlobal1I.idAdamRoot , 0 ) ;
         
@@ -756,7 +756,7 @@
     {
     IFbEcAREFUL
 
-    //if( ((tin123S&)tin0P).pc Utility[ 0 ] ) thirdC::third_pcDebugI_IF( tin0P ) ; //U:: SHOULD BE COMMENTED OUT IN PRODUCTION; TO FACILITATE DEBUGGING USING WDW
+    //if( ((tin1S&)tin0P).pc Utility[ 0 ] ) thirdC::third_pcDebugI_IF( tin0P ) ; //U:: SHOULD BE COMMENTED OUT IN PRODUCTION; TO FACILITATE DEBUGGING USING WDW
 
     else            thirdC::c_memsetIF( tin0P , (byteT*)pbBitsCt , sizeof pbBitsCt ) ;
     if( pbBitsCtP ) thirdC::c_memcpyIF( tin0P , (byteT*)pbBitsCt , (byteT*)pbBitsCtP , sizeof pbBitsCt ) ;
@@ -780,7 +780,7 @@
     //    countT idIn = 1 + incv02AM( idInLath ) ;
     //    static countT idInLath ;
     //{
-    //if( ((tin123S&)tin0P).pc Utility[ 0 ] )
+    //if( ((tin1S&)tin0P).pc Utility[ 0 ] )
 
     SCOOP
 {
@@ -789,7 +789,7 @@ phFile( phFileP ) ,
 flagsState( F(flagsP) & flNAPKINc_DOnOTcOMMIT ? flNAPKINcsTATE_NOTyETcOMMITTED : flNAPKINcsTATE_null ) ,
 flThreadMode4Save( flTHREADmODE4_null ) ,
 idDesireCtSave( thirdC::dosPriorityIF( tin0P ) ) ,
-osTidCt( ((tin123S&)tin0P).osTid ) ,
+osTidCt( ((tin1S&)tin0P).osTid ) ,
 pzbMemorySpaceUse( &processGlobal5I.bMemorySpace ) ,
 pbMemorySpaceOverride( 0 ) ,
 bDataAreaFormatted( 0 ) ,

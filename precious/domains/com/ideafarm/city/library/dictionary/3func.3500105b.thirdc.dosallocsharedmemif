@@ -68,7 +68,7 @@
                         //if( thirdC::c_strstrIF( tin0P , ostoOsName , "napSlab" ) )
                         //CAN WRITE TO LOG SINCE NO EXCEPTION HANDLER WILL BE REGISTERED
 
-                        //if( ((tin123S&)tin0P).pc Utility[ 0 ] )
+                        //if( ((tin1S&)tin0P).pc Utility[ 0 ] )
                     {
                     else
                     }
@@ -88,15 +88,15 @@
                     //    OStEXTC(  ostoSay , save , '0' ) ;
                     //    OStEXT(   ostoSay , TUCK >> 2 ) ;
                     //{
-                    //if( ((tin123S&)tin0P).pc Utility[ 0 ] )
+                    //if( ((tin1S&)tin0P).pc Utility[ 0 ] )
 
-                    voidT* pv = (voidT*)((tin123S&)tin0P).brcRaw ;
-                    countT save = ((tin123S&)tin0P).brcRaw ;
+                    voidT* pv = (voidT*)((tin1S&)tin0P).brcRaw ;
+                    countT save = ((tin1S&)tin0P).brcRaw ;
                 {
                 else
                 }
-                    //LOGrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , ((tin123S&)tin0P).brcRaw , "\r\n" ) ;
-                    //CONoUTrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , ((tin123S&)tin0P).brcRaw , "\r\n" ) ;
+                    //LOGrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , ((tin1S&)tin0P).brcRaw , "\r\n" ) ;
+                    //CONoUTrAW3( "DosAllocSharedMem: MapViewOfFileExNuma returned " , ((tin1S&)tin0P).brcRaw , "\r\n" ) ;
                     BOSdOnOTtEST( WHATgbo , GetLastError() )
 
                     osh = 0 ;
@@ -114,7 +114,7 @@
                 //    OStEXTAK( ostoSay , "\"\r\n" ) ;
                 //    OStEXTA(  ostoSay , postP ) ;
                 //    OStEXTAK( ostoSay , " \"" ) ;
-                //    OStEXTC(  ostoSay , ((tin123S&)tin0P).brcRaw , 0 ) ;
+                //    OStEXTC(  ostoSay , ((tin1S&)tin0P).brcRaw , 0 ) ;
                 //    OStEXTAK( ostoSay , " " ) ;
                 //    OStEXTC(  ostoSay , cbw , 0 ) ;
                 //    OStEXTAK( ostoSay , " " ) ;
@@ -124,7 +124,7 @@
                 //    OStEXTAK( ostoSay , "dosAllocSharedMemIF [idAdam,cbP,cbw,osh,postP]: " ) ;
                 //    OStEXT(   ostoSay , TUCK << 2 ) ;
                 //{
-                //if( ((tin123S&)tin0P).pc Utility[ 0 ] )
+                //if( ((tin1S&)tin0P).pc Utility[ 0 ] )
 
                 ;
                     : FILE_MAP_ALL_ACCESS
@@ -151,10 +151,10 @@
             {
             if( bExisted )
 
-            HANDLE osh = (HANDLE)((tin123S&)tin0P).brcRaw ;
+            HANDLE osh = (HANDLE)((tin1S&)tin0P).brcRaw ;
 
             BOSpOOP
-            boolT bExisted = ((tin123S&)tin0P).brcQuery == ERROR_ALREADY_EXISTS ;
+            boolT bExisted = ((tin1S&)tin0P).brcQuery == ERROR_ALREADY_EXISTS ;
             BOS( WHATgbo , BOSoK , CreateFileMappingNuma( (voidT*)( phFileP ? phFileP->osF( ifcIDtYPEhANDLE_FILE ) : -1 ) , &sa , osFlagsOpen , 0 , cbw , ostoOsName , thirdC::osOffNumaNodeValidChosenIF( processGlobal2I.idNumaNode ) ) )
 
             if( F(flagsP) & flOPENsHAREDmEMORY_DOnOTcOMMIT ) osFlagsOpen |= SEC_RESERVE ;

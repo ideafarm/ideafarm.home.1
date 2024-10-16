@@ -264,7 +264,7 @@ DONE( tmHearNodeAdvertisementF )
         nodeListS& nl = *(nodeListS*)(byteT*)napNodeListP ;
 
         countT idpMe = socki.bindF( tin0P , ifcIDpORT_MULTICASTaDVERTISElANnODES , nnAny , 1 , 0 ) ;
-        socketC socki( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T(postIPaDDRgROUP_ADVERTISElANnODE) , 0 , 0 , 0 , 0 , 0 ) ;
+        socketC socki( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_null , T(postIPaDDRgROUP_ADVERTISElANnODE) , 0 , 0 , 0 , 0 , 0 ) ;
 
         SCOOPS
     {
@@ -334,7 +334,7 @@ DONE( tmWatch05GorillaHomeF )
                                 {
                                 if( POOP )
 
-                                __NZ( ((tin123S&)tin0P).pEtScratch->strCompareF( tin0P , T(postEX) , tEX ) ) ;
+                                __NZ( ((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , T(postEX) , tEX ) ) ;
 
                                 //etThread.traceF( tin0P , T("gorillaHome:  received [timeE1|timeE2,postEX]:    ")+TT(timeE1,timeE2)+T("    \"")+T(postEX)+T("\"") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
@@ -415,11 +415,11 @@ DONE( tmWatch05GorillaHomeF )
 
                 //etThread.traceF( tin0P , T("gorillaHome:  connecting:    ") , flTRACE_HOMEeCHOgORILLAhOME | flTRACE_ECHOoNLY | flTRACE_FORCEnOsILENCE ) ;
                 home.idPortWatchHttpDeadman1 = sGet.bindF( tin0P ) ;
-                socketC sGet( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                socketC sGet( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
 
                 __Z( cNicName ) ;
                 __Z( pNicName ) ;
-                socketC::nicNameIF( tin0P , *((tin123S&)tin0P).pEtScratch , pNicName , cNicName , 0/*T("factory3.ideafarm.com")*/ ) ; ___( pNicName ) ;
+                socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , pNicName , cNicName , 0/*T("factory3.ideafarm.com")*/ ) ; ___( pNicName ) ;
                 ZE( nicNameC* , pNicName ) ;
                 ZE( countT , cNicName ) ;
 
@@ -438,7 +438,7 @@ DONE( tmWatch05GorillaHomeF )
 
                 etThread.delF( tin0P , pbAll ) ;
                 __Z( pbAll ) ;
-                ((tin123S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbAll , cbAll , tNameHome ) ; ___( pbAll  ) ;
+                ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , pbAll , cbAll , tNameHome ) ; ___( pbAll  ) ;
                 ZE( countT , cbAll ) ;
                 ZE( byteT* , pbAll  ) ;
 
@@ -600,7 +600,7 @@ DONE( tmWatch05Deadman2F )
                         sGet.connectF( tin0P , 0x50 , pNicName[ 0 ] , 1 ) ;
                         //etThread.traceF( tin0P , T("deadman2:  connecting [home.idPortWatchHttpDeadman2]:    ")+TF2(home.idPortWatchHttpDeadman2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN2 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                         home.idPortWatchHttpDeadman2 = sGet.bindF( tin0P ) ;
-                        socketC sGet( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                        socketC sGet( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                     {
                 {
                 else
@@ -612,7 +612,7 @@ DONE( tmWatch05Deadman2F )
 
                 __Z( cNicName ) ;
                 __Z( pNicName ) ;
-                socketC::nicNameIF( tin0P , *((tin123S&)tin0P).pEtScratch , pNicName , cNicName , 0/*T("factory3.ideafarm.com")*/ ) ; ___( pNicName ) ;
+                socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , pNicName , cNicName , 0/*T("factory3.ideafarm.com")*/ ) ; ___( pNicName ) ;
                 ZE( nicNameC* , pNicName ) ;
                 ZE( countT , cNicName ) ;
 
@@ -773,7 +773,7 @@ DONE( tmWatch05Deadman1F )
                         sGet.connectF( tin0P , 0x50 , pNicName[ 0 ] , 1 ) ;
                         etThread.traceF( tin0P , T("deadman1:  connecting [home.idPortWatchHttpDeadman1]:    ")+TF2(home.idPortWatchHttpDeadman1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                         home.idPortWatchHttpDeadman1 = sGet.bindF( tin0P ) ;
-                        socketC sGet( tin0P , *((tin123S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , countTC( SOCKETtIMEOUTdEFAULTlAN ) , countTC( SOCKETtIMEOUTdEFAULTlAN ) , countTC( SOCKETtIMEOUTdEFAULTlAN ) ) ;
+                        socketC sGet( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , countTC( SOCKETtIMEOUTdEFAULTlAN ) , countTC( SOCKETtIMEOUTdEFAULTlAN ) , countTC( SOCKETtIMEOUTdEFAULTlAN ) ) ;
                     {
                 {
                 else
@@ -785,7 +785,7 @@ DONE( tmWatch05Deadman1F )
 
                 __Z( cNicName ) ;
                 __Z( pNicName ) ;
-                socketC::nicNameIF( tin0P , *((tin123S&)tin0P).pEtScratch , pNicName , cNicName , 0/*T("factory3.ideafarm.com")*/ ) ; ___( pNicName ) ;
+                socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , pNicName , cNicName , 0/*T("factory3.ideafarm.com")*/ ) ; ___( pNicName ) ;
                 ZE( nicNameC* , pNicName ) ;
                 ZE( countT , cNicName ) ;
 
@@ -842,7 +842,7 @@ DONE( tmWatchFileF )
             {
             else
             if( POOP ) { POOPR ; }
-            ((tin123S&)tin0P).pEtScratch->boxGetF( tin0P , posti , costi , tTriggerFile , 1 ) ; ___( posti ) ;
+            ((tin1S&)tin0P).pEtScratch->boxGetF( tin0P , posti , costi , tTriggerFile , 1 ) ; ___( posti ) ;
             ZE( countT   , costi ) ;
             ZE( osTextT* , posti ) ;
 

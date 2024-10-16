@@ -65,8 +65,8 @@ DONEdRIVENsERVER( tmcF )
         stPhrases << postOldC( tin0P , etThread , T("peer: ")+T(nicNamePeer)+T("\r\n") ) ;
         stPhrases << postOldC( tin0P , etThread , T("peer: \"")+T(psttPeer)+T("\"\r\n") ) ;
     {
-    if( !*((tin123S&)tin0P).zEtScratch )
-    readRequestF( tin0P , etThread , *((tin123S&)tin0P).zEtScratch , *pso , stPhrases , tblKeyValue , std_pstt , psttPeer , nicNamePeer ) ;
+    if( !*((tin1S&)tin0P).zEtScratch )
+    readRequestF( tin0P , etThread , *((tin1S&)tin0P).zEtScratch , *pso , stPhrases , tblKeyValue , std_pstt , psttPeer , nicNamePeer ) ;
     stackC std_pstt( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS ) ;
     ZE( strokeS* , psttPeer ) ;
 
@@ -138,49 +138,49 @@ TRANSLATEsTATEdRIVENsERVER_BEGIN( stateS , 2 )
         ZE( strokeS* , psttBody ) ;
 
         if( postBody ) postBody[ costBody ] = 0 ;
-        if( *((tin123S&)tin0P).zEtScratch ) break ;
+        if( *((tin1S&)tin0P).zEtScratch ) break ;
         sInP.readF( tin0P , postBody , costBody ) ;
         etThread.newF( tin0P , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
         ZE( osTextT* , postBody ) ;
     {
-    if( !*((tin123S&)tin0P).zEtScratch && costBody )
+    if( !*((tin1S&)tin0P).zEtScratch && costBody )
 
     }
-        ((tin123S&)tin0P).zEtScratch->delF( tin0P , psttl ) ;
+        ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttl ) ;
         }
             break ;
-            ((tin123S&)tin0P).zEtScratch->delF( tin0P , psttl ) ;
+            ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttl ) ;
         {
         else
         }
-            ((tin123S&)tin0P).zEtScratch->delF( tin0P , psttValue ) ;
-            ((tin123S&)tin0P).zEtScratch->delF( tin0P , psttKey ) ;
-            if( !((tin123S&)tin0P).zEtScratch->strCompareF( tin0P , tContentLength , psttKey ) ) costBody = ((tin123S&)tin0P).zEtScratch->strDigitsToSCountF( tin0P , psttValue , 0xa , 1 ) ;
-            ((tin123S&)tin0P).zEtScratch->strSubstringF( tin0P , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
+            ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttValue ) ;
+            ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttKey ) ;
+            if( !((tin1S&)tin0P).zEtScratch->strCompareF( tin0P , tContentLength , psttKey ) ) costBody = ((tin1S&)tin0P).zEtScratch->strDigitsToSCountF( tin0P , psttValue , 0xa , 1 ) ;
+            ((tin1S&)tin0P).zEtScratch->strSubstringF( tin0P , psttValue , idf , idl , psttl ) ; ___( psttValue ) ;
             ZE( countT , idl ) ;
-            ((tin123S&)tin0P).zEtScratch->strConvertToLowerCaseF( tin0P , psttKey ) ; ___( psttKey ) ;
-            ((tin123S&)tin0P).zEtScratch->strSubstringF( tin0P , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
+            ((tin1S&)tin0P).zEtScratch->strConvertToLowerCaseF( tin0P , psttKey ) ; ___( psttKey ) ;
+            ((tin1S&)tin0P).zEtScratch->strSubstringF( tin0P , psttKey , idf , sttq , tColonWhite , psttl , 1 ) ; ___( psttKey ) ;
             countT idf = 1 ;
             ZE( strokeS* , psttValue ) ;
             ZE( strokeS* , psttKey ) ;
         {
         else if( psttl && psttl->idAdam )
         }
-            ((tin123S&)tin0P).zEtScratch->strWordF( tin0P , psttName , psttl , sttq , sttb , 2 ) ; ___( psttName ) ;
+            ((tin1S&)tin0P).zEtScratch->strWordF( tin0P , psttName , psttl , sttq , sttb , 2 ) ; ___( psttName ) ;
             //sttq = ze ;
 
-            ((tin123S&)tin0P).zEtScratch->strConvertToLowerCaseF( tin0P , psttl ) ; ___( psttl ) ;
-            ((tin123S&)tin0P).zEtScratch->strWordF( tin0P , psttAction , psttl , sttq , sttb , 1 ) ; ___( psttAction ) ;
+            ((tin1S&)tin0P).zEtScratch->strConvertToLowerCaseF( tin0P , psttl ) ; ___( psttl ) ;
+            ((tin1S&)tin0P).zEtScratch->strWordF( tin0P , psttAction , psttl , sttq , sttb , 1 ) ; ___( psttAction ) ;
         {
         if( !psttAction )
         stPhrasesP << postOldC( tin0P , etThread , T("HEADER: \"")+T(psttl)+T("\"\r\n") ) ;
 
-        if( *((tin123S&)tin0P).zEtScratch ) break ;
+        if( *((tin1S&)tin0P).zEtScratch ) break ;
         sInP.readWoLineF( tin0P , psttl , 0x200 ) ; ___( psttl ) ;
         ZE( strokeS* , psttl ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     {
-    while( !*((tin123S&)tin0P).zEtScratch && !etThread )
+    while( !*((tin1S&)tin0P).zEtScratch && !etThread )
     ZE( countT , costBody ) ;
     ZE( strokeS* , psttName ) ;
     ZE( strokeS* , psttAction ) ;
@@ -189,7 +189,7 @@ TRANSLATEsTATEdRIVENsERVER_BEGIN( stateS , 2 )
     TN( tContentLength , "content-length" ) ;
     TN( tColonWhite , ": " ) ;
 
-    ((tin123S&)tin0P).zEtScratch->sockPsttHostF( tin0P , psttPeerP , nicNamePeerP ) ; ___( psttPeerP ) ;
+    ((tin1S&)tin0P).zEtScratch->sockPsttHostF( tin0P , psttPeerP , nicNamePeerP ) ; ___( psttPeerP ) ;
     { ZE( countT , idp ) ; sInP.peerNameF( tin0P , idp , nicNamePeerP ) ; }
 {
 voidT readRequestF( tin0S& tin0P , etherC& etThread , socketC& sInP , stackC& stPhrasesP , tableC& tblKeyValueP , stackC& std_psttP , strokeS*& psttPeerP , nicNameC& nicNamePeerP )

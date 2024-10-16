@@ -9,7 +9,7 @@
 
 REST
 
-while( stPhrasesLog || ((tin123S&)tin0P).cKidThreads ) etThread.osSleepF( tin0P , TOCK ) ;
+while( stPhrasesLog || ((tin1S&)tin0P).cKidThreads ) etThread.osSleepF( tin0P , TOCK ) ;
 }
     etThread.delF( tin0P , psttr ) ;
     etThread.boxPutF( tin0P , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM) , postr , costr ) ;
@@ -34,7 +34,7 @@ etThread.ifcChatF( tin0P , cArg , DDNUMB , chatHandlerF ) ;
 etThread.osThreadF(  tin0P , countTC() , tmLogF  , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , cArg ) ;
 
 countT cArg = (countT)&c8p ;
-c8p.c5 = (countT)&((tin123S&)tin0P).cKidThreads ;
+c8p.c5 = (countT)&((tin1S&)tin0P).cKidThreads ;
 c8p.c4 = (countT)&stPhrasesLog ;
 c8p.c3 = (countT)&stPhrases ;
 c8p.c2 = (countT)&b_pbdVarying ;
@@ -72,11 +72,11 @@ TODO
             {
             switch( sInP.cFieldF( tin0P ) )
         {
-        if( !etThread && !*((tin123S&)tin0P).zEtScratch )
+        if( !etThread && !*((tin1S&)tin0P).zEtScratch )
         psoP->readF( tin0P , sInP ) ;
         soulC sInP( tin0P , TAG( TAGiDnULL ) ) ;
     {
-    while( !ether && !etThread && !*((tin123S&)tin0P).zEtScratch && !bBye )
+    while( !ether && !etThread && !*((tin1S&)tin0P).zEtScratch && !bBye )
     ZE( boolT , bBye ) ;
 {
 voidT chatHandlerF( tin0S& tin0P , etherC& ether , etherC& etThread , socketC*& psoP , const countT idChatSessionP , countT cArgP , const countT idAdamHandlingP )
@@ -114,7 +114,7 @@ TASK( tmLogF )
 
 DONEdRIVENsERVER( tmcF )
 }
-    while( !bQuit ) bQuit = woRequestF( tin0P , etThread , *((tin123S&)tin0P).zEtScratch , *pso , stPhrases , stPhrasesLog ) ;
+    while( !bQuit ) bQuit = woRequestF( tin0P , etThread , *((tin1S&)tin0P).zEtScratch , *pso , stPhrases , stPhrasesLog ) ;
     ZE( boolT , bQuit ) ;
 
     b_pbdVarying.ungrabF( tin0P ) ;
@@ -161,7 +161,7 @@ TRANSLATEsTATEdRIVENsERVER_BEGIN( stateS , 2 )
             {
             if( postBody && costBody )
         {
-        if( !*((tin123S&)tin0P).zEtScratch )
+        if( !*((tin1S&)tin0P).zEtScratch )
         sClientP.writeF( tin0P , "\r\n" , 2 ) ;
         }
             etThread.delF( tin0P , postl ) ;
@@ -225,7 +225,7 @@ TRANSLATEsTATEdRIVENsERVER_BEGIN( stateS , 2 )
         socketC sServer( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         // WRITE REQUEST TO SERVER
     {
-    if( !*((tin123S&)tin0P).zEtScratch && stHeaderLines ) // DO NOT KNOW WHY THIS HAPPENS WITH IE5.5: CONJ: WHEN I AM RUN ON IFC21, I AM SO SLOW THAT IE5.5 ABANDONS THE REQUEST
+    if( !*((tin1S&)tin0P).zEtScratch && stHeaderLines ) // DO NOT KNOW WHY THIS HAPPENS WITH IE5.5: CONJ: WHEN I AM RUN ON IFC21, I AM SO SLOW THAT IE5.5 ABANDONS THE REQUEST
 
     sayF( tin0P , etThread , stPhrasesP , stPhrasesLogP , T("psttHost: \"")+T(psttHost)+T("\"\r\n") ) ;
 
@@ -239,15 +239,15 @@ TRANSLATEsTATEdRIVENsERVER_BEGIN( stateS , 2 )
                 etThread.strMakeF( tin0P , LF , psttBody , T(postBody) ) ; ___( psttBody ) ;
                 if( postBody ) postBody[ costBody ] = 0 ;
             {
-            if( !*((tin123S&)tin0P).zEtScratch )
+            if( !*((tin1S&)tin0P).zEtScratch )
             sClientP.readF( tin0P , postBody , costBody ) ;
             etThread.newF( tin0P , LF , postBody , costBody + 1 ) ; ___( postBody ) ;
             ZE( osTextT* , postBody ) ;
             sayF( tin0P , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_1B) ) ;
         {
-        if( !*((tin123S&)tin0P).zEtScratch && costBody )
+        if( !*((tin1S&)tin0P).zEtScratch && costBody )
 
-        readHeaderLinesF( tin0P , etThread , *((tin123S&)tin0P).zEtScratch , sClientP , stPhrasesP , stPhrasesLogP , stHeaderLines , costBody , bEncodedBody , psttHost ) ;
+        readHeaderLinesF( tin0P , etThread , *((tin1S&)tin0P).zEtScratch , sClientP , stPhrasesP , stPhrasesLogP , stHeaderLines , costBody , bEncodedBody , psttHost ) ;
         bEncodedBody = 0 ;
         sayF( tin0P , etThread , stPhrasesP , stPhrasesLogP , T(postSEPARATOR_1A) ) ;
         ZE( countT , costBody ) ;
@@ -342,12 +342,12 @@ boolT woRequestF( tin0S& tin0P , etherC& etThread , socketC& sClientP , stackC& 
 
             stP << psttOldC( tin0P , etThread , psttl ) ;
         {
-        if( !*((tin123S&)tin0P).zEtScratch && psttl && psttl->idAdam )
+        if( !*((tin1S&)tin0P).zEtScratch && psttl && psttl->idAdam )
         sInP.readWoLineF( tin0P , psttl , 0x200 ) ; ___( psttl ) ;
         ZE( strokeS* , psttl ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     {
-    while( !*((tin123S&)tin0P).zEtScratch && !etThread )
+    while( !*((tin1S&)tin0P).zEtScratch && !etThread )
 
     ZE( strokeS* , psttPVersion ) ;
     ZE( strokeS* , psttProtocol ) ;

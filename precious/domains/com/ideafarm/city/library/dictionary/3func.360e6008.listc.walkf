@@ -53,7 +53,7 @@
             //    OStEXTA(  ostoSay , bOk ? " (is a           listingC)" : " (is NOT a           listingC)" ) ;
             //    OStEXTA(  ostoSay , pPoolIn ? pPoolIn->postNameF( tin0P ) : "unknown" ) ;
             //    OStEXTAK( ostoSay , " " ) ;
-            //    OStEXTA(  ostoSay , ((tin123S&)tin0P).pPoolUse->postNameF( tin0P ) ) ;
+            //    OStEXTA(  ostoSay , ((tin1S&)tin0P).pPoolUse->postNameF( tin0P ) ) ;
             //    OStEXTAK( ostoSay , " " ) ;
             //    OStEXTC(  ostoSay , pNew , 0 ) ;
             //    OStEXTAK( ostoSay , " " ) ;
@@ -66,7 +66,7 @@
             //    boolT  bOk     =           listingC::bIsListingIF( tin0P , pNew ) ;
             //    poolC* pPoolIn = poolC::pPoolIF( tin0P , (byteT*)pNew ) ;
             //{
-            //if( ((tin123S&)tin0P).pc Utility[ 0 ] && idName == LISTnAMEsYS_RECORD )
+            //if( ((tin1S&)tin0P).pc Utility[ 0 ] && idName == LISTnAMEsYS_RECORD )
 
                                          *pApt = pNew ;
                 ((          listC*)pNew)->aptBro = *pApt ;
@@ -379,7 +379,7 @@
     //    OStEXTA(  ostoSay , bOk  ? " (is a           listingC)" : " (is NOT a           listingC)" ) ;
     //    OStEXTA(  ostoSay , pPoolIn ? pPoolIn->postNameF( tin0P ) : "unknown" ) ;
     //    OStEXTAK( ostoSay , " " ) ;
-    //    OStEXTA(  ostoSay , ((tin123S&)tin0P).pPoolUse->postNameF( tin0P ) ) ;
+    //    OStEXTA(  ostoSay , ((tin1S&)tin0P).pPoolUse->postNameF( tin0P ) ) ;
     //    OStEXTAK( ostoSay , " " ) ;
     //    OStEXTC(  ostoSay , pk , 0 ) ;
     //    OStEXTAK( ostoSay , " " ) ;
@@ -392,7 +392,7 @@
     //    boolT  bOk     =           listingC::bIsListingIF( tin0P , pk ) ;
     //    poolC* pPoolIn = poolC::pPoolIF( tin0P , (byteT*)pk ) ;
     //{
-    //if( ((tin123S&)tin0P).pc Utility[ 0 ] && idName == LISTnAMEsYS_RECORD && pk )
+    //if( ((tin1S&)tin0P).pc Utility[ 0 ] && idName == LISTnAMEsYS_RECORD && pk )
 
     //listC* pklNU = pk && pk->flagsF() & fliLISTINGc_MIXINlIST ? (          listC*)pk : 0 ; //FOR DEBUGGING CONVENIENCE ; NOT USED
 
@@ -475,8 +475,8 @@
 arguments for the outermost call to walkF
 it is illegal for any application code to reference           listingC instances anywhere other than within the definition of a listWalkCBFT function
 it is illegal for listWalkCBFT to store a pointer or reference to any           listingC object for use outside of the callback function
- the outermost caller of me must clear the entire ((tin123S&)tin0P). ta.a.pc1 and ((tin123S&)tin0P). ta.a.pc2 AND ((tin123S&)tin0P). ta.a.pc3 arrays and then set them as specified in the following
- for efficiency and to avoid exhausting the thread stack, i use ((tin123S&)tin0P). ta.a.pc for my arguments
+ the outermost caller of me must clear the entire ((tin1S&)tin0P). ta.a.pc1 and ((tin1S&)tin0P). ta.a.pc2 AND ((tin1S&)tin0P). ta.a.pc3 arrays and then set them as specified in the following
+ for efficiency and to avoid exhausting the thread stack, i use ((tin1S&)tin0P). ta.a.pc for my arguments
 i call myself recursively, perhaps deeply
 /*
 

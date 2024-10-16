@@ -10,7 +10,7 @@
 }
     return cUngrabsDone ;
 
-    //if( ((tin123S&)tin0P).pc Utility[ 0 ] ) { CONoUTrAW3( "\r\n" , this , " - - - - \r\n" ) ; }
+    //if( ((tin1S&)tin0P).pc Utility[ 0 ] ) { CONoUTrAW3( "\r\n" , this , " - - - - \r\n" ) ; }
 
     //if( (countT)this == etherC::ether_cUtility_IF( tin0P , 0 ) ) { LOGrAWtID( "U-" ) ; }
 
@@ -45,7 +45,7 @@
     //    OStEXTAK( os , " " ) ;
     //    OStEXTC(  os , ((tin1S&)tin0P).glass.idThread , 0 ) ;
     //    OStEXTAK( os , " | " ) ;
-    //    OStEXTC9( os , ((tin123S&)tin0P).osTid ) ;
+    //    OStEXTC9( os , ((tin1S&)tin0P).osTid ) ;
     //    OStEXTAK( os , "         | " ) ;
     //    OStEXT(   os , TUCK << 2 ) ;
     //{
@@ -60,7 +60,7 @@
 
                 thirdC::dosPriorityIF( tin0P , idDesireSave ) ;
 
-                ((tin123S&)tin0P).cYield = 0 ;
+                ((tin1S&)tin0P).cYield = 0 ;
                 }
                     if( !bWoth && ogw < processGlobal2I._grabC_cgw ) break ;
         
@@ -95,18 +95,18 @@
         
                             hProcessMe.osF( ifcIDtYPEhANDLE_PROCESS , (countT)thirdC::osOpenProcessIF() ) ;
                             handleC hProcessMe( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_PROCESS ) ;
-                            //U:O: if processGlobal2I._grabC_pgw[ ogw ].osPid == ((tin123S&)tin0P).osPid THEN JUST USE PSEUDOHANDLE FOR hProcessWant
-                            //U:O: USE ((tin123S&)tin0P).osPid
+                            //U:O: if processGlobal2I._grabC_pgw[ ogw ].osPid == ((tin1S&)tin0P).osPid THEN JUST USE PSEUDOHANDLE FOR hProcessWant
+                            //U:O: USE ((tin1S&)tin0P).osPid
         
                             if( !processGlobal2I._grabC_pgw[ ogw ].hThread ) { BLAMMO ; }
 
                             }
                                 if( processGlobal2I._grabC_pgw[ ogw ].idGrab != idMe || processGlobal2I._grabC_pgw[ ogw ].idGrabber != idGrabberKiss ) continue ;
 
-                                ((tin123S&)tin0P).cYield = save ;
+                                ((tin1S&)tin0P).cYield = save ;
                                 while( processGlobal2I._grabC_pgw[ ogw ].bDirty ) thirdC::osThreadYieldIF( tin0P , TAG( TAGiDnULL ) ) ;
-                                              ((tin123S&)tin0P).cYield = 0 ;
-                                countT save = ((tin123S&)tin0P).cYield ;
+                                              ((tin1S&)tin0P).cYield = 0 ;
+                                countT save = ((tin1S&)tin0P).cYield ;
                                 ZE( countT , idCycle2 ) ;
                             {
                             if( processGlobal2I._grabC_pgw[ ogw ].bDirty ) //SOME DIRTY ENTRIES ARE TENTATIVE AND WILL DISAPPEAR (E.G. IF WANTER IS WILLING TO WITHDRAW FROM KISS BANK)
@@ -132,7 +132,7 @@
                 const countT idDesireSave = thirdC::dosPriorityIF( tin0P ) ;
         
                 osTid = idDesireGrabber = 0 ;
-                ((tin123S&)tin0P).cYield = 0 ;
+                ((tin1S&)tin0P).cYield = 0 ;
             {
             if( bKiss )
     
@@ -150,7 +150,7 @@
                 for(;;)
                 ZE( countT , cDone ) ;
     
-                if( osTid != ((tin123S&)tin0P).osTid ) { BLAMMO ; } //CATCH PROBABLE APPLICATION CODE ERROR
+                if( osTid != ((tin1S&)tin0P).osTid ) { BLAMMO ; } //CATCH PROBABLE APPLICATION CODE ERROR
             {
             else
             }
@@ -192,7 +192,7 @@
         if( F(flags) & flGRABc_DISABLED ) { BLAMMO ; }
     {
     else
-    if( this == &((tin123S&)tin0P).grabPseudo ) cGrabbed -- ;
+    if( this == &((tin1S&)tin0P).grabPseudo ) cGrabbed -- ;
     countT cUngrabsDone = 1 ;
 
     SCOOP

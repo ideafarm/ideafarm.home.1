@@ -73,7 +73,7 @@
 
                     }
                         thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_APP ) ;
-                        tellC tell( tin0P , LF , 0 , ifcIDtYPEtELLaPP_INoUTaRRAY , ((tin123S&)tin0P).pbPendingInOutFramePackets , sizeof( countT ) + cPending * sizeof( tellInfoAppInOutFrameS ) ) ;
+                        tellC tell( tin0P , LF , 0 , ifcIDtYPEtELLaPP_INoUTaRRAY , ((tin1S&)tin0P).pbPendingInOutFramePackets , sizeof( countT ) + cPending * sizeof( tellInfoAppInOutFrameS ) ) ;
                     {
 
                     }
@@ -83,13 +83,13 @@
                     {
                     if( cPending > CmAXpENDINGiNoUTfRAMEpACKETS )
 
-                    tellInfoAppInOutFrameS* pPending = (tellInfoAppInOutFrameS*)( ((tin123S&)tin0P).pbPendingInOutFramePackets + sizeof( countT ) ) ;
+                    tellInfoAppInOutFrameS* pPending = (tellInfoAppInOutFrameS*)( ((tin1S&)tin0P).pbPendingInOutFramePackets + sizeof( countT ) ) ;
                 {
                 if( cPending )
 
-                countT& cPending = *(countT*)((tin123S&)tin0P).pbPendingInOutFramePackets ;
+                countT& cPending = *(countT*)((tin1S&)tin0P).pbPendingInOutFramePackets ;
             {
-            if( ((tin123S&)tin0P).pbPendingInOutFramePackets )
+            if( ((tin1S&)tin0P).pbPendingInOutFramePackets )
             //PSEUDOdUPLICATEcODE 360fc002 33000065
 
             THREADmODE4oN0( flTHREADmODE4_INoUTfRAMEdOnOTcOLLECTaPPtELEMETRY | flTHREADmODE4_DOnOTfLUSHpENDINGaPPtELEMETRY ) ;

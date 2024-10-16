@@ -59,7 +59,7 @@
                 pThird->newF( tin0P , LF , pbz , sizeof( fileOpenS ) ) ; ___( pbz ) ;  //U::LEAKS ; 20190129@1340: pbz IS (SOMETIMES? ALWAYS?) WRITTEN TO pSwFileOpen SO MIGHT OR MIGHT NOT BE A LEAK
                 ZE( byteT* , pbz ) ;
             {
-            if( ((tin123S&)tin0P).pPoolUse && pThird && !POOP && !( F(flagsDetailsP) & flOPENdETAILS_DOnOTrEGISTER ) && ~hTag )
+            if( ((tin1S&)tin0P).pPoolUse && pThird && !POOP && !( F(flagsDetailsP) & flOPENdETAILS_DOnOTrEGISTER ) && ~hTag )
     
             //}
             //    //U: LOG THIS ostoEntry
@@ -76,8 +76,8 @@
 
             BOSpOOP
             }
-                ((tin123S&)tin0P).brcQuery = idErrorOs ;
-                ((tin123S&)tin0P).bosFail = 1 ;
+                ((tin1S&)tin0P).brcQuery = idErrorOs ;
+                ((tin1S&)tin0P).bosFail = 1 ;
             {
             if( idErrorOs )
 
@@ -85,7 +85,7 @@
                 }
                     case ERROR_SHARING_VIOLATION : { idResultP = ifcOPENrESULT_ERRORsHARINGvIOLATION ; break ; }
                 {
-                switch( ((tin123S&)tin0P).brcLath )
+                switch( ((tin1S&)tin0P).brcLath )
             #if defined( __NT__ )
 
             //}
@@ -100,11 +100,11 @@
             //    OStEXTAK( ostoSay , " " ) ;
             //    OStEXTC(  ostoSay , bNoQuitEarly , 0 ) ;
             //    OStEXTAK( ostoSay , " " ) ;
-            //    OStEXTC(  ostoSay , ((tin123S&)tin0P).brcLath , 0 ) ;
+            //    OStEXTC(  ostoSay , ((tin1S&)tin0P).brcLath , 0 ) ;
             //    OStEXTAK( ostoSay , "dosOpenIF [brcLath,bNoQuitEarly,idAccessP,idShareP,postP]: " ) ;
             //    OStEXT(   ostoSay , TUCK << 1 ) ;
             //{
-            //if( ((tin123S&)tin0P).bosFail && ((tin123S&)tin0P).pPoop->flagsF() & flPOOP_SMELLY )
+            //if( ((tin1S&)tin0P).bosFail && ((tin1S&)tin0P).pPoop->flagsF() & flPOOP_SMELLY )
             //THIS DOES NOT WORK
 
             #endif
@@ -154,9 +154,9 @@
 
                         }
                             handleP.osF( ifcIDtYPEhANDLE_FILE , osh ) ;
-                            idErrorOs = ((tin123S&)tin0P).brcRaw ;
+                            idErrorOs = ((tin1S&)tin0P).brcRaw ;
                             BOSdOnOTtEST( WHATgbo , GetLastError() )
-                            countT osh = ((tin123S&)tin0P).brcRaw ;
+                            countT osh = ((tin1S&)tin0P).brcRaw ;
                             BOS( WHATgbo , BOShANDLE , CreateFile( postP , flagsAccess , flagsShare , &sa , how , flagsDetails , 0 ) )
                             BOSnOvALUE( WHATgbo , SetLastError( 0 ) )
                             SECURITYaTTRIBUTE_saUNRESTRICTED( 1 ) ; //U:: SET bInherit IN OBEDIENCE TO A PARAMETRIC FLAG
@@ -167,7 +167,7 @@
                         if( rc ) handleP.closeIfF() ;
         
                         handleP.osF( ifcIDtYPEhANDLE_FILE , (countT)osh ) ;
-                        rc = ((tin123S&)tin0P).brcRaw ;
+                        rc = ((tin1S&)tin0P).brcRaw ;
                         BOS( WHATsfw , BOSfAIL , DosOpen( postP , &osh , (ULONG*)&idResultP , cbP , flagsAttribute1 , flagsAttribute2 , how , flagsAccess | flagsShare | flagsDetails , 0 ) )
                         ZE( HFILE , osh ) ;
         
@@ -233,17 +233,17 @@
                 }
                     }
                         thirdC::dosSleepWinkIF( tin0P , 2 ) ;
-                        ((tin123S&)tin0P).pEtScratch->traceF( tin0P , T("my call to diskMakeDirIfNeededF failed    [cRetries,cFail,file]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(++cFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tFile ) ;
+                        ((tin1S&)tin0P).pEtScratch->traceF( tin0P , T("my call to diskMakeDirIfNeededF failed    [cRetries,cFail,file]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(++cFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tFile ) ;
                         POOPR
                     {
                     else
                     }
                         break ;
-                        if( cFail ) ((tin123S&)tin0P).pEtScratch->traceF( tin0P , T("my call to diskMakeDirIfNeededF succeeded [cRetries,cFail,file]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tFile ) ;
+                        if( cFail ) ((tin1S&)tin0P).pEtScratch->traceF( tin0P , T("my call to diskMakeDirIfNeededF succeeded [cRetries,cFail,file]:    ")+TF2(cTries,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tFile ) ;
                     {
                     if( !POOP )
 
-                    ((tin123S&)tin0P).pEtScratch->diskMakeDirIfNeededF( tin0P , tFile ) ;
+                    ((tin1S&)tin0P).pEtScratch->diskMakeDirIfNeededF( tin0P , tFile ) ;
                 {
                 while( bNoQuitEarly || ( cTries && -- cTries ) )
                 ZE( countT , cFail ) ;
@@ -254,8 +254,8 @@
             countT cTries = cTriesP ;
             TN( tFile , ifFileNameC( tin0P , *pThird , postP ) ) ;
         {
-        if( !( F(flagsDetailsP) & flOPENdETAILS_DOnOTmAKEdIRiFnEEDED ) && !( F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DISALLOWpUSE ) && pThird && pThird->pEtherContainsMe && ((tin123S&)tin0P).pPoolUse )
-        thirdC* pThird = ((tin123S&)tin0P).pEther ? &(thirdC&)*((tin123S&)tin0P).pEther : 0 ;
+        if( !( F(flagsDetailsP) & flOPENdETAILS_DOnOTmAKEdIRiFnEEDED ) && !( F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_DISALLOWpUSE ) && pThird && pThird->pEtherContainsMe && ((tin1S&)tin0P).pPoolUse )
+        thirdC* pThird = ((tin1S&)tin0P).pEther ? &(thirdC&)*((tin1S&)tin0P).pEther : 0 ;
 
         boolT bNoQuitEarly = !cTriesP ;
     {
@@ -288,8 +288,8 @@
 
 #endif
 
-            ((tin123S&)tin0P).pEther->traceF( tin0P , textC(tin0P,TAG( TAGiDnULL ),flTEXTc_null,"1020022: could not open \"") + textC(tin0P,TAG( TAGiDnULL ),flTEXTc_null,postP) + textC(tin0P,TAG( TAGiDnULL ),flTEXTc_null,"\".") ) ;
-        if( bFailP && !( pThird && F(pThird->flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) && ((tin123S&)tin0P).pEther )                            \
+            ((tin1S&)tin0P).pEther->traceF( tin0P , textC(tin0P,TAG( TAGiDnULL ),flTEXTc_null,"1020022: could not open \"") + textC(tin0P,TAG( TAGiDnULL ),flTEXTc_null,postP) + textC(tin0P,TAG( TAGiDnULL ),flTEXTc_null,"\".") ) ;
+        if( bFailP && !( pThird && F(pThird->flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) && ((tin1S&)tin0P).pEther )                            \
                                                                                                                                       \
     #define LOG1020022(bFailP)                                                                                                        \
 

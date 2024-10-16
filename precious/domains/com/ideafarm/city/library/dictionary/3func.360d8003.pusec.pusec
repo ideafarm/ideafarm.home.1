@@ -8,9 +8,9 @@
 
 
 }
-    //((tin123S&)tin0P).pc Utility[ 0 ] = (countT)((tin123S&)tin0P).pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
+    //((tin1S&)tin0P).pc Utility[ 0 ] = (countT)((tin1S&)tin0P).pPoolUse ; //U:: NORMALLY COMMENTED OUT; CAN BE USED ALONG WITH CODE IN poolC::newF TO VERIFY THAT ADAM TEMP IS USED FOR TEMPORARY DROPS
 
-    ((tin123S&)tin0P).pPoolUse = pPoolUse ; //MUST BE DONE AFTER THE ___() ON THE PRECEDING LINE
+    ((tin1S&)tin0P).pPoolUse = pPoolUse ; //MUST BE DONE AFTER THE ___() ON THE PRECEDING LINE
 
     }
         pPoolUse = new( 0 , tin0P , LF ) poolC( tin0P , TAG( TAGiDnULL ) , postNameP ? postNameP : "apartments" , sizeof( countT ) , flagsP , idStateSpaceP , expCbDropMinP , expCbDropMaxP , pczHintPreallocationP , idMemorySpaceP ) ; ___( pPoolUse ) ;
@@ -22,7 +22,7 @@
 {
 flagsMode( flPUSEcmODE_DELETE )
 pPoolUse( 0 ) ,
-pPoolUseLag( ((tin123S&)tin0P).pPoolUse ) ,
+pPoolUseLag( ((tin1S&)tin0P).pPoolUse ) ,
 /*1*/puseC::puseC( tin0S& tin0P , const osTextT* const postNameP , const flagsT flagsP , const countT idStateSpaceP , const countT expCbDropMinP , const countT expCbDropMaxP , const countT* const pczHintPreallocationP , const countT idMemorySpaceP ) :/*1*/
 
 // I THINK THAT THIS IS THE ONLY COMPILER BUG THAT I HAVE FOUND, OTHER THAN THE DESIGN IMPERFECTION THAT I PATCH FOR DURING BUILD

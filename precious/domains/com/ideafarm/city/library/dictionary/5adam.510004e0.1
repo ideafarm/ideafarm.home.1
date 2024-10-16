@@ -28,23 +28,23 @@ countT cFlavors = swImage.cFlavorsF( tin0P ) ;
 {
 
 }
-    *((tin123S&)tin0P).zEtScratch = 0 ;
+    *((tin1S&)tin0P).zEtScratch = 0 ;
     }
         }
-            else           { ZE( countT , tnu ) ; ((tin123S&)tin0P).zEtScratch->osThreadF( tin0P , tnu , tmFtpServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , ++ idClient , (countT)&cDone , (countT)&psttLever , (countT)&swImage ) ; }
-            if( *((tin123S&)tin0P).zEtScratch ) { DEL( pso ) ; }
+            else           { ZE( countT , tnu ) ; ((tin1S&)tin0P).zEtScratch->osThreadF( tin0P , tnu , tmFtpServeF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)pso , ++ idClient , (countT)&cDone , (countT)&psttLever , (countT)&swImage ) ; }
+            if( *((tin1S&)tin0P).zEtScratch ) { DEL( pso ) ; }
             socket.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
             ZE( countT , idPortPeer ) ;
             nicNameC nnPeer ;
             ZE( socketC* , pso ) ;
         {
-        while( !cQuit && !*((tin123S&)tin0P).zEtScratch )
+        while( !cQuit && !*((tin1S&)tin0P).zEtScratch )
 
         socket.listenF( tin0P ) ;
         __( socket.bindF( tin0P , ifcPORToLD2_IFCfTP ) - ifcPORToLD2_IFCfTP ) ;
-        socketC socket( tin0P , *((tin123S&)tin0P).zEtScratch , TAG( TAGiDnULL ) ) ;
+        socketC socket( tin0P , *((tin1S&)tin0P).zEtScratch , TAG( TAGiDnULL ) ) ;
     {
-    while( !cQuit && !*((tin123S&)tin0P).zEtScratch )
+    while( !cQuit && !*((tin1S&)tin0P).zEtScratch )
 {
 while( !cQuit )
 ZE( countT , cDone ) ;
@@ -96,7 +96,7 @@ DONE( tmFtpServeF )
     ZE( byteT* , pbi ) ;
 
     }
-        ((tin123S&)tin0P).zEtScratch->delF( tin0P , psttw ) ;
+        ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttw ) ;
         tName = T(psttw) ;
         sIn >> cbw ; // CAN BE 0 (CLIENT WOULD DO THIS TO QUERY FOR FILE SIZE)
         sIn >> offw ;
@@ -109,7 +109,7 @@ DONE( tmFtpServeF )
     ZE( countT , cbw ) ;
     ZE( countT , offw ) ; // "w": "wanted"
 
-    pso->etherF( tin0P , *((tin123S&)tin0P).zEtScratch ) ;
+    pso->etherF( tin0P , *((tin1S&)tin0P).zEtScratch ) ;
 
     switchC&  swImage   =  *(switchC*)pTaskP->c5 ;
     strokeS*& psttLever = *(strokeS**)pTaskP->c4 ;
@@ -133,22 +133,22 @@ TASK( tmFtpServeF )
 
     }
         }
-            *((tin123S&)tin0P).zEtScratch = 0 ;
+            *((tin1S&)tin0P).zEtScratch = 0 ;
             DEL( pInfo ) ;
             }
                 ((byteT*)pc2pbcb->c1)[ cba ] = 0 ;
-                ((tin123S&)tin0P).zEtScratch->fileReadF( tin0P , (byteT*)pc2pbcb->c1 , cba , handle ) ;
+                ((tin1S&)tin0P).zEtScratch->fileReadF( tin0P , (byteT*)pc2pbcb->c1 , cba , handle ) ;
                 countT cba = pc2pbcb->c2 ;
                 etThread.newF( tin0P , LF , *(byteT**)&pc2pbcb->c1 , pc2pbcb->c2 + 1 ) ; ___( pbP ) ;
                 pc2pbcb->c2 = pInfo->cbUsed ;
             {
             if( pInfo )
-            ((tin123S&)tin0P).zEtScratch->diskFileQueryF( tin0P , pInfo , handle ) ; ___( pInfo ) ;
-            ((tin123S&)tin0P).zEtScratch->fileOpenF( tin0P , handle , idr , T(psttNameP) , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , 0 , 1 ) ;
+            ((tin1S&)tin0P).zEtScratch->diskFileQueryF( tin0P , pInfo , handle ) ; ___( pInfo ) ;
+            ((tin1S&)tin0P).zEtScratch->fileOpenF( tin0P , handle , idr , T(psttNameP) , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , 0 , 1 ) ;
             ZE( infoFileS* , pInfo ) ;
             ZE( countT , idr ) ;
             handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
-            *((tin123S&)tin0P).zEtScratch = 0 ;
+            *((tin1S&)tin0P).zEtScratch = 0 ;
         {
         if( pc2pbcb )
         etThread.newF( tin0P , LF , pc2pbcb ) ; ___( pc2pbcb ) ;
