@@ -1,4 +1,37 @@
 
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*ifcIDtYPEaDDRESSuSAGE*//*1*/
+
+/*3*/
+#define ifcIDtYPEaDDRESSuSAGE_CODE        1
+#define ifcIDtYPEaDDRESSuSAGE_DATA        2
+#define ifcIDtYPEaDDRESSuSAGE_STACK       3
+#define ifcIDtYPEaDDRESSuSAGE_PRIVATE     4
+#define ifcIDtYPEaDDRESSuSAGE_SHARED      5
+#define ifcIDtYPEaDDRESSuSAGE_SEX         6
+#define ifcIDtYPEaDDRESSuSAGE_FILE        7
+/*3*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -47247,7 +47280,6 @@ parameters
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200521.ifcidmodesockets END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200522.idcomputer BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -47274,7 +47306,10 @@ parameters
 #define IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD1      IDcOMPUTER_WOiDEAFARMlAPTOP
 #define IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0      IDcOMPUTER_GOdADDYvps
 
-#define IDcOMPUTER_IPDOSmASTERcRAFTWORK IDcOMPUTER_WOiDEAFARMlAPTOPbLACK
+#define IDcOMPUTER_WOiDEAfARMlAPsILVER1 0xf6f952c3
+
+//RETIRED 20241016@1547: #define IDcOMPUTER_IPDOSmASTERcRAFTWORK IDcOMPUTER_WOiDEAFARMlAPTOPbLACK
+#define IDcOMPUTER_IPDOSmASTERcRAFTWORK IDcOMPUTER_WOiDEAfARMlAPsILVER1
 
 #define IDcOMPUTER_FACTORY1            0xbe29b623
 #define IDcOMPUTER_FACTORY2            0xb41e0c2d

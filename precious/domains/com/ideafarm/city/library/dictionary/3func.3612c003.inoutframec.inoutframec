@@ -303,11 +303,15 @@
     if( !( F(thirdC::third_flagsModeProcess2I_IF()) & flMODEpROCESS2_SUPPRESSiNoUTfRAMEc ) )
 
     }
-        if( pbEbp <  ((tin1S&)tin0P).pbThreadStackLowest ) ((tin1S&)tin0P).pbThreadStackLowest = pbEbp ;
+        if( pbEsp <  ((tin1S&)tin0P).pbThreadStackLowest ) ((tin1S&)tin0P).pbThreadStackLowest = pbEsp ;
+
+        if( ((tin1S&)tin0P).pbThreadStackEnd   && pbEsp >= ((tin1S&)tin0P).pbThreadStackEnd    ) { BLAMMO ; }
+        if( ((tin1S&)tin0P).pbThreadStackStart && pbEsp <  ((tin1S&)tin0P).pbThreadStackStart  ) { BLAMMO ; }
 
         if( ((tin1S&)tin0P).pbThreadStackEnd   && pbEbp >= ((tin1S&)tin0P).pbThreadStackEnd    ) { BLAMMO ; }
         if( ((tin1S&)tin0P).pbThreadStackStart && pbEbp <  ((tin1S&)tin0P).pbThreadStackStart  ) { BLAMMO ; }
 
+        const byteT* pbEsp = (const byteT*)espAM() ;
         const byteT* pbEbp = (const byteT*)ebpAM() ;
     {
     if( ((tin1S&)tin0P).idTinNamed != ifcIDtINnAMED_tinHeartI && ((tin1S&)tin0P).idTinNamed != ifcIDtINnAMED_tinBreakI )

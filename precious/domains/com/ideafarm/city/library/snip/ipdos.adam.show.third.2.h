@@ -32348,6 +32348,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3500119e.thirdC.exeFromFileExtensionIF!||
  count04T idIdeaFarmKeysF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011b4.thirdc.idIdeaFarmKeysF!||
+ static voidT setMemoryBitsIF( tin0S& tin0P , const byteT* pbP , countT idTypeP ) ;
 
 /**/
  FRIENDS_thirdC                                                                                                                                                                                                                                      \
@@ -42949,7 +42950,6 @@ base class to make a derived class of objects easily contained by a stackC objec
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.fireGroupS : 1snip.15000114.firegroups END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.processGlobal2S : 1snip.150000c2.processglobal2s BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -43051,9 +43051,12 @@ base class to make a derived class of objects easily contained by a stackC objec
     countT                          idBlammo        ;
     byteT                           pbMemoryBitsAll[     ( TOCK >> 1 ) / SB ] ;
     byteT                           pbMemoryBitsCode[    ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbMemoryBitsData[    ( TOCK >> 1 ) / SB ] ;
     byteT                           pbMemoryBitsStack[   ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbMemoryBitsShared[  ( TOCK >> 1 ) / SB ] ;
     byteT                           pbMemoryBitsPrivate[ ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbMemoryBitsShared[  ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbMemoryBitsSex[     ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbMemoryBitsFile[    ( TOCK >> 1 ) / SB ] ;
     byteT                           pbUtility[ TUCK * 5 ] ;                            // THIS MAY BE USED TEMPORARILY FOR ANY PURPOSE BUT ONLY ON MAIN THREAD (TO PREVENT COLLISIONS BY MULTIPLE THREADS) ; INITIALLY, IT EXISTS TO FACILITATE TEMPORARY CONSTRUCTION OF tlsAllocStackExp_8_C INSTANCES
 
     //PUT PLATFORM DEPENDENT MEMBERS HERE SO THAT OFFSETS TO THE OTHER MEMBERS ARE INVARIANT
