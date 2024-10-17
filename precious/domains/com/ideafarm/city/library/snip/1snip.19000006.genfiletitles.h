@@ -2991,7 +2991,7 @@
 0x00000baf , "\0\0\0\0countT thirdC::diskFindHomeIF( tin0S& tin0P , osTextT* const postP , const countT costaP , const osTextT* postKeyP )" ,
 0x00000bb0 , "\0\0\0\0voidT thirdC::flushViewOfFileIF( tin0S& tin0P , const byteT* const pbP , const countT cbP , const flagsT flagsP , const handleC* const phFileP )" ,
 0x00000bb1 , "\0\0\0\0countT thirdC::os_cbPage_IF( tin0S& tin0P )" ,
-0x00000bb2 , "\0\0\0\0countT thirdC::os_cbAllocationGrain_IF( tin0S& tin0P )" ,
+0x00000bb2 , "\0\0\0\0countT thirdC::os_cbAllocationGrain_IF( voidT )" ,
 0x00000bb3 , "\0\0\0\0sCountT thirdC::c_strcmpIF( tin0S& tin0P , const countT* const pc1P , const countT* const pc2P , const countT ccP )" ,
 0x00000bb4 , "\0\0\0\0boolT thirdC::bCanAccessMemoryIF( byteT* pbP , countT cbP )" ,
 0x00000bb5 , "\0\0\0\0voidT thirdC::ctrlCIF( tin0S& tin0P )" ,

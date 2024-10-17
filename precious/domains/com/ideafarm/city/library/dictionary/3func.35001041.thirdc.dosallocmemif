@@ -9,13 +9,7 @@
 
 }
     #endif
-        processGlobal2I.pbMemoryBitsPrivate[ offByte ] |= mask ;
-        processGlobal2I.pbMemoryBitsAll[     offByte ] |= mask ;
-        if( offByte >= sizeof processGlobal2I.pbMemoryBitsPrivate ) { BLAMMO ; }
-        byteT  mask     = (byteT)( 1 << offBit ) ;
-        countT offBit   = offGrain % SB ;
-        countT offByte  = offGrain / SB ;
-        countT offGrain = (countT)pvP / TOCK ;
+        thirdC::setMemoryUsageBitsIF( (const byteT*)pvP , ifcIDtYPEaDDRESSuSAGE_PRIVATE ) ;
     #if defined( SHOWmEMgRAINS )
     //CS:PSEUDOdUPLICATE: 35001041 3500105b 3300000d 3300002d
 
