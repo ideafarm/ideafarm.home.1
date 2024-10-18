@@ -60,6 +60,8 @@
     #pragma aux (cdecl) SSL_write                                  ;
     #pragma aux (cdecl) TLS_method                                 ;
 
+    #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\1snip.0060001.genModuleCodeCallProtos.h"
+
 #else
 
     #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\include\openssl\ssl.h"

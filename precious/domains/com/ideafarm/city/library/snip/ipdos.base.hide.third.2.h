@@ -12565,6 +12565,8 @@ TASKpART0PROTO( tmAdamMainF ) ;
 
 /*1*/voidT _export debugF( voidT ) ;/*1*/
 
+/*1*/voidT _export registerModuleEipRangesGF( voidT ) ;/*1*/
+
 
 //
 // Respecting the rights of other people is an important part of empowering one another.

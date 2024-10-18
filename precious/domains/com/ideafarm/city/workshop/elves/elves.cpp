@@ -2567,6 +2567,8 @@ void elf_obey_C::liveF( void )
         {
             int bOk  = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw"    ) ;
                 bOk &= ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\4report" ) ;
+                bOk &= ether.deleteAllF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\" , "1snip.0060001.genModuleCodeCalls.h" ) ;
+                bOk &= ether.deleteAllF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\" , "1snip.0060001.genModuleCodeCallProtos.h" ) ;
     
             int cGroupsPushed = 0 ;
             if( bOk )
@@ -3693,9 +3695,22 @@ void elf_obey_C::liveF( void )
 
 int elf_obey_C::pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILETIME ftSnipP )
 {
+sayF( "\r\n" , flSAY_START   ) ;
+sayF( postGroupP , flSAY_MIDDLE ) ;
+sayF( " ++++" , flSAY_END   ) ;
+
     int bStale = 0 ;
     if( postGroupP[ 0 ] )
     {
+        if( strcmp( postGroupP , "30000" ) && strcmp( postGroupP , "31000" ) )
+        {
+            { char postCmd[ 0x200 ] = "echo moduleCodeHeader_"  ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF() ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCalls.h" ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "echo moduleCodeTrailer_" ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF() ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCalls.h" ) ; system( postCmd ) ; }
+
+            { char postCmd[ 0x200 ] = "echo extern \"C\" voidT moduleCodeHeader_"  ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF( voidT ) ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCallProtos.h" ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "echo extern \"C\" voidT moduleCodeTrailer_"  ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF( voidT ) ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCallProtos.h" ) ; system( postCmd ) ; }
+        }
+
         char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\" ;
         strcat( postObj , postGroupP ) ;
         strcat( postObj , ".obj" ) ;
@@ -3723,6 +3738,9 @@ int elf_obey_C::pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILE
         }
     }
 
+sayF( "\r\n" , flSAY_START   ) ;
+sayF( postGroupP , flSAY_MIDDLE ) ;
+sayF( " ----" , flSAY_END   ) ;
     return bStale ;
 }
 
