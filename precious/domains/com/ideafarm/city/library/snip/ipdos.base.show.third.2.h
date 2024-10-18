@@ -1,3 +1,64 @@
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*flRESTARTrEPORT*//*1*/
+
+/*3*/
+#define flRESTARTrEPORT_TRACE   0xe0000117
+#define flRESTARTrEPORT_SNAP    0xe0000217
+/*3*/
+#define flRESTARTrEPORT_null    0xe0000017
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ba.RESTARTrEPORT BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*RESTARTrEPORT*//*1*/
+
+
+#define RESTARTrEPORT(flagsP)                                                   \
+                                                                                \
+    tellInfoSysExceptionS _restartInfo ;                                        \
+    countT _pcRestartArg[] = { (flagsP) , (countT)&_restartInfo } ;             \
+    RESTARTiFqUERY( bAcceptEventReportF , _pcRestartArg )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ba.RESTARTrEPORT END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005bb.ifcBOScODEwINDOWS BEGIN
 
 
@@ -6079,6 +6140,103 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200615.DONE123nOeTsCRATCH END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200616.ifcIDtYPEaDDRESSuSAGE BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*ifcIDtYPEaDDRESSuSAGE*//*1*/
+
+/*3*/
+#define ifcIDtYPEaDDRESSuSAGE_CODE        0xdddd1236
+#define ifcIDtYPEaDDRESSuSAGE_DATA        0xdddd1237
+#define ifcIDtYPEaDDRESSuSAGE_STACK       0xdddd1238
+#define ifcIDtYPEaDDRESSuSAGE_PRIVATE     0xdddd1239
+#define ifcIDtYPEaDDRESSuSAGE_SHARED      0xdddd123a
+#define ifcIDtYPEaDDRESSuSAGE_SEX         0xdddd123b
+#define ifcIDtYPEaDDRESSuSAGE_FILE        0xdddd123c
+/*3*/
+#define ifcIDtYPEaDDRESSuSAGE_min     0xdddd1236
+#define ifcIDtYPEaDDRESSuSAGE_max     0xdddd123c
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200616.ifcIDtYPEaDDRESSuSAGE END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200617.MODULEcODEtRAILERfUNCTION BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*MODULEcODEtRAILERfUNCTION(idModuleP)*//*1*/
+
+#define MODULEcODEtRAILERfUNCTION(idModuleP)                                    \
+                                                                                \
+    extern "C" voidT moduleCodeTrailer_##idModuleP##_GF( voidT )                \
+    {                                                                           \
+        registerEipGF( 0x##idModuleP , (const byteT*)eipAM() , 1 ) ;            \
+    }
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+ 
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200617.MODULEcODEtRAILERfUNCTION END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200618.MODULEcODEhEADERfUNCTION BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*MODULEcODEhEADERfUNCTION(idModuleP)*//*1*/
+
+#define MODULEcODEhEADERfUNCTION(idModuleP)                                     \
+                                                                                \
+    extern "C" voidT moduleCodeHeader_##idModuleP##_GF( voidT )                 \
+    {                                                                           \
+        registerEipGF( 0x##idModuleP , (const byteT*)eipAM() , 0 ) ;            \
+    }
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+ 
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200618.MODULEcODEhEADERfUNCTION END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -9584,9 +9742,6 @@ it is illegal to refer to this symbol in the definition of an adam
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000011.bleapyearf END
-
-/*1*/voidT _export registerEipGF( countT idModuleP , const byteT* pbEipP , boolT bLathP ) ;/*1*/
-
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.17000012.postfromtingf BEGIN
 
 
@@ -17049,6 +17204,31 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700023b.threadLocalStorageNoTls1F END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700023c.registerModuleEipGF BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/voidT _export registerEipGF( countT idModuleP , const byteT* pbEipP , boolT bLathP ) ;/*1*/
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700023c.registerModuleEipGF END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tellInfoAppInOutFrameS : 1snip.15000188.tellinfoappinoutframes BEGIN
 
 
@@ -21737,7 +21917,7 @@ arguments
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000e.putregsam END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000f.espam BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000f.espAM BEGIN
 
 
 //
@@ -21768,46 +21948,7 @@ arguments
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000f.espam END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000f.espam BEGIN
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*/countT __export eipAM( voidT ) ;/*1*/
-
-#pragma aux eipAM =                                                                                                                                                 \
-                                                                                                                                                                    \
-    "                                                                           " /*U:: eip CANNOT BE DIRECTLY ACCESSED, SO I WILL USE THE call INSTRUCTION      */ \
-                                                                                                                                                                    \
-    "                call   called                                              "                                                                                   \
-    "                jmp    fin                                                 "                                                                                   \
-                                                                                                                                                                    \
-    "   called:      mov    eax , dword ptr [esp]                               "                                                                                   \
-    "                ret                                                        "                                                                                   \
-                                                                                                                                                                    \
-    "   fin:         nop                                                        "                                                                                   \
-                                                                                                                                                                    \
-    value [eax]                                                                                                                                                     \
-                                                                                                                                                                    \
-;
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000f.espam END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000f.espAM END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000010.btsam BEGIN
 
 
@@ -25258,6 +25399,46 @@ i obtain the current thread's tin1S  , by walking up the thread stack from a spe
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000041.pTinFromEbx1AM END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000042.eipAM BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/countT __export eipAM( voidT ) ;/*1*/
+
+#pragma aux eipAM =                                                                                                                                                 \
+                                                                                                                                                                    \
+    "                                                                           " /*U:: eip CANNOT BE DIRECTLY ACCESSED, SO I WILL USE THE call INSTRUCTION      */ \
+                                                                                                                                                                    \
+    "                call   called                                              "                                                                                   \
+    "                jmp    fin                                                 "                                                                                   \
+                                                                                                                                                                    \
+    "   called:      mov    eax , dword ptr [esp]                               "                                                                                   \
+    "                ret                                                        "                                                                                   \
+                                                                                                                                                                    \
+    "   fin:         nop                                                        "                                                                                   \
+                                                                                                                                                                    \
+    value [eax]                                                                                                                                                     \
+                                                                                                                                                                    \
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000042.eipAM END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1d* : 1snip.1d000001.idrf BEGIN
 
 
@@ -32391,6 +32572,7 @@ private :
  count04T idIdeaFarmKeysF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011b4.thirdc.idIdeaFarmKeysF!||
  static voidT setMemoryUsageBitsIF( const byteT* pbP , countT idTypeP ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011c9.thirdC.setMemoryUsageBitsIF!||
 
 /**/
  FRIENDS_thirdC                                                                                                                                                                                                                                      \
@@ -42991,6 +43173,7 @@ base class to make a derived class of objects easily contained by a stackC objec
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.fireGroupS : 1snip.15000114.firegroups END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.processGlobal2S : 1snip.150000c2.processglobal2s BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.

@@ -1,90 +1,4 @@
 
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*MODULEcODEhEADERfUNCTION(idModuleP)*//*1*/
-
-#define MODULEcODEhEADERfUNCTION(idModuleP)                                     \
-                                                                                \
-    extern "C" voidT moduleCodeHeader_##idModuleP##_GF( voidT )                 \
-    {                                                                           \
-        registerEipGF( 0x##idModuleP , (const byteT*)eipAM() , 0 ) ;            \
-    }
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
- 
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*MODULEcODEtRAILERfUNCTION(idModuleP)*//*1*/
-
-#define MODULEcODEtRAILERfUNCTION(idModuleP)                                    \
-                                                                                \
-    extern "C" voidT moduleCodeTrailer_##idModuleP##_GF( voidT )                \
-    {                                                                           \
-        registerEipGF( 0x##idModuleP , (const byteT*)eipAM() , 1 ) ;            \
-    }
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
- 
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-
-/*1*//*ifcIDtYPEaDDRESSuSAGE*//*1*/
-
-/*3*/
-#define ifcIDtYPEaDDRESSuSAGE_CODE        1
-#define ifcIDtYPEaDDRESSuSAGE_DATA        2
-#define ifcIDtYPEaDDRESSuSAGE_STACK       3
-#define ifcIDtYPEaDDRESSuSAGE_PRIVATE     4
-#define ifcIDtYPEaDDRESSuSAGE_SHARED      5
-#define ifcIDtYPEaDDRESSuSAGE_SEX         6
-#define ifcIDtYPEaDDRESSuSAGE_FILE        7
-/*3*/
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -621,33 +535,33 @@ it is illegal to refer to this symbol in the definition of an adam
         mainS* const& pmp = pMainParametersP ;                                                                                                                                      \
         if( pmp )                                                                                                                                                                   \
         {                                                                                                                                                                           \
-            tin0S& tin0P = pmp->tin0 ;                                                                                                                                     \
+            tin0S& tin0P = pmp->tin0 ;                                                                                                                                              \
             _IO_                                                                                                                                                                    \
-            thirdC::setMemoryUsageBitsIF( (const byteT*)mainF , ifcIDtYPEaDDRESSuSAGE_CODE ) ;                                                                              \
+            thirdC::setMemoryUsageBitsIF( (const byteT*)mainF , ifcIDtYPEaDDRESSuSAGE_CODE ) ;                                                                                      \
             TELL( "MAINF/+" ) ;                                                                                                                                                     \
-            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)mainF , "mainF" ) ;                                                                                                      \
+            thirdC::osTraceWrongNodeIF( tin0P , (byteT*)mainF , "mainF" ) ;                                                                                                         \
             etherC& ether = pmp->ether ;                                                                                                                                            \
-            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                         \
+            etherC& etRock = etherC::etRockIF( tin0P ) ;                                                                                                                            \
             timeS timeBorn ;                                                                                                                                                        \
             etherC& etThread = pmp->etThread ;                                                                                                                                      \
             handleC& hDll = pmp->hDll ;                                                                                                                                             \
-            /*etRock.traceF( tin0P , T("osTid: ")+TF4(((tin1S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;*/                       \
-            etThread.osTimeNowF( tin0P , timeBorn.time1 , timeBorn.time2 ) ;                                                                                                     \
-            etThread.ifcDatumF( tin0P , flDATUM1_CLASStRACEaLWAYShIREdLL , flDATUM2_null , 0 , 0 , 0 , (voidT*)DDNAME ) ;                                                        \
+            /*etRock.traceF( tin0P , T("osTid: ")+TF4(((tin1S&)tin0P).osTid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa) ) ;*/                                  \
+            etThread.osTimeNowF( tin0P , timeBorn.time1 , timeBorn.time2 ) ;                                                                                                        \
+            etThread.ifcDatumF( tin0P , flDATUM1_CLASStRACEaLWAYShIREdLL , flDATUM2_null , 0 , 0 , 0 , (voidT*)DDNAME ) ;                                                           \
             /*U:REPLACE THESE HARDCODED idAdam VALUES WITH ifcIDaDAM SYMBOLS*/                                                                                                      \
-            /*U:{ countT idio = DDNUMB ; if( idio != 0x 4010354 && idio != 0x 4010405 && idio != 0x 40103c1 && idio != 0x 40103d1 ) etThread.ifcPortNewProcessF( tin0P ) ; }*/   \
+            /*U:{ countT idio = DDNUMB ; if( idio != 0x 4010354 && idio != 0x 4010405 && idio != 0x 40103c1 && idio != 0x 40103d1 ) etThread.ifcPortNewProcessF( tin0P ) ; }*/      \
             TELL( "MAINF: entering application code" ) ;                                                                                                                            \
-            /*tlsAllocStackExp_7_C tlsForMe( tin0P ) ;                    */                                                                                                     \
-            /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                     \
+            /*tlsAllocStackExp_7_C tlsForMe( tin0P ) ;                    */                                                                                                        \
+            /*tlsBlobC _tlsBlobStackTop( tin0P , "appStackTop" , "tin" ) ;*/                                                                                                        \
             /*(countT&)_tlsBlobStackTop = espAM() ;                      */                                                                                                         \
-            if( !( F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_DRIVERaDAM ) )                                                                                       \
+            if( !( F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_DRIVERaDAM ) )                                                                                               \
             {                                                                                                                                                                       \
-                if( thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_DLLwORKING1 )                                                                                         \
-                    thirdC::third_idPhaseAdam_IF( tin0P ) = ifcIDpHASEaDAM_DLLwORKING1 ;                                                                                         \
-                if( ((tin1S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin1S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                     \
+                if( thirdC::third_idPhaseAdam_IF( tin0P ) < ifcIDpHASEaDAM_DLLwORKING1 )                                                                                            \
+                    thirdC::third_idPhaseAdam_IF( tin0P ) = ifcIDpHASEaDAM_DLLwORKING1 ;                                                                                            \
+                if( ((tin1S&)tin0P).idPhase1 < ifcIDpHASEtHREAD_WORKING ) ((tin1S&)tin0P).idPhase1 = ifcIDpHASEtHREAD_WORKING ;                                                     \
             }                                                                                                                                                                       \
-            signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                      \
-            tin0P.pSgnUtility = &_sgnUtility ;                                                                                                                    \
+            signC _sgnUtility( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                                         \
+            tin0P.pSgnUtility = &_sgnUtility ;                                                                                                                                      \
                                                                                                                                                                                     \
             {                                                                                                                                                                       \
                 _IO_
@@ -5265,7 +5179,8 @@ in the "IN_NORMAL" macros, it is redefined so that the _ macro sets the high ord
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200082.ifcflagin END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._io_ BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._IO_ BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
@@ -5291,7 +5206,6 @@ it is illegal to refer to this symbol in the definition of an adam
 //20210709@1526: NEVERdEFINED3: DISABLE THIS CHATTER SINCE I WANT TO USE SCRATCH0d
 
 // flM0DEpR0CESS2_SUPPRESSiNoUTfRAMEc MUST BE SET IF NOiNoUTfRAME IS DEFINED
-
 
 #if defined( NOiNoUTfRAME )
 
@@ -5350,7 +5264,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._io_ END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._IO_ END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200084.posthtmlbodypart1 BEGIN
 
 
@@ -8628,230 +8542,230 @@ it is illegal to refer to this symbol in the definition of an adam
 #define BOSS(whatP,typeP,expP)  BOS0( whatP , typeP , expP , BOSnOtIN( WSAGetLastError() ) _brcRaw -= WSABASEERR , BOSnOvALUEnOtIN( WSASetLastError( 0 ) ) )
 #define BOSSO(whatP,typeP,expP) BOS0( whatP , typeP , expP , BOSnOtIN( sock_errno()      ) _brcRaw -= SOCBASEERR , ((tin1S&)tin0P).brcRaw = 0                         )
 
-#define BOS0(whatP,typeP,expP,expGetErrorP,expResetErrorP)                                                                                              \
-                                                                                                                                                        \
-    {                                                                                                                                                   \
-        ((tin1S&)tin0P).brcLath = ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                              \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
-        whatP                                                                                                                                           \
-        expResetErrorP ;                                                                                                                                \
-        countT _brcRawExp = (countT)(expP) ;                                                                                                            \
-        typeP ;                                                                                                                                         \
-        ZE( countT , _brcRaw ) ;                                                                                                                        \
-        expGetErrorP ;                                                                                                                                  \
-        ((tin1S&)tin0P).brcQuery = _brcRaw ;                                                                                                                       \
-        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        if( pg1.pHome )                                                                                                                                 \
-        {                                                                                                                                               \
-            static countT idMeOk ;                                                                                                                      \
-            static countT idMeFail ;                                                                                                                    \
-            countT tally = pg1.pHome->tallyHo.tallyF( ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk ) ;                                                              \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin1S&)tin0P).bosFail , ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
-        }                                                                                                                                               \
-        if( ((tin1S&)tin0P).bosFail )                                                                                                                              \
-        {                                                                                                                                               \
-            if( ((tin1S&)tin0P).brcQuery )                                                                                                                         \
-            {                                                                                                                                           \
-                ((tin1S&)tin0P).brcLath = ((tin1S&)tin0P).brcQuery ;                                                                                                          \
-                ((tin1S&)tin0P).idLine_brcLath = ifcLINE ;                                                                                                         \
-                ((tin1S&)tin0P).idiFile_brcLath = DDNUMB ;                                                                                                         \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin1S&)tin0P).brcLath , " " , ((tin1S&)tin0P).idLine_brcLath , " " , ((tin1S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/ \
-            }                                                                                                                                           \
-        }                                                                                                                                               \
-        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tin1S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                      \
+#define BOS0(whatP,typeP,expP,expGetErrorP,expResetErrorP)                                                                                                                                                                              \
+                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                   \
+        ((tin1S&)tin0P).brcLath = ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                                                                        \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                                                                                       \
+        whatP                                                                                                                                                                                                                           \
+        expResetErrorP ;                                                                                                                                                                                                                \
+        countT _brcRawExp = (countT)(expP) ;                                                                                                                                                                                            \
+        typeP ;                                                                                                                                                                                                                         \
+        ZE( countT , _brcRaw ) ;                                                                                                                                                                                                        \
+        expGetErrorP ;                                                                                                                                                                                                                  \
+        ((tin1S&)tin0P).brcQuery = _brcRaw ;                                                                                                                                                                                            \
+        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                                                                                                 \
+        if( pg1.pHome )                                                                                                                                                                                                                 \
+        {                                                                                                                                                                                                                               \
+            static countT idMeOk ;                                                                                                                                                                                                      \
+            static countT idMeFail ;                                                                                                                                                                                                    \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk ) ;                                                                                                                                   \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin1S&)tin0P).bosFail , ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk , #expP ) ;                                                                               \
+        }                                                                                                                                                                                                                               \
+        if( ((tin1S&)tin0P).bosFail )                                                                                                                                                                                                   \
+        {                                                                                                                                                                                                                               \
+            if( ((tin1S&)tin0P).brcQuery )                                                                                                                                                                                              \
+            {                                                                                                                                                                                                                           \
+                ((tin1S&)tin0P).brcLath = ((tin1S&)tin0P).brcQuery ;                                                                                                                                                                    \
+                ((tin1S&)tin0P).idLine_brcLath = ifcLINE ;                                                                                                                                                                              \
+                ((tin1S&)tin0P).idiFile_brcLath = DDNUMB ;                                                                                                                                                                              \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin1S&)tin0P).brcLath , " " , ((tin1S&)tin0P).idLine_brcLath , " " , ((tin1S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/       \
+            }                                                                                                                                                                                                                           \
+        }                                                                                                                                                                                                                               \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                                                                                              \
+        ((tin1S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                                                                                           \
     }
 
-#define BOSL(whatP,typeP,expP)                                                                                                                          \
-                                                                                                                                                        \
-    {                                                                                                                                                   \
-        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
-        whatP                                                                                                                                           \
-        errno = 0 ;                                                                                                                                     \
-        countT _brcRawExp = (countT)(expP) ;                                                                                                            \
-        typeP ;                                                                                                                                         \
-        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        if( pg1.pHome )                                                                                                                                 \
-        {                                                                                                                                               \
-            static countT idMeOk ;                                                                                                                      \
-            static countT idMeFail ;                                                                                                                    \
-            countT tally = pg1.pHome->tallyHo.tallyF( ((tin1S&)tin0P).bosFail || errno ? idMeFail : idMeOk ) ;                                                     \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin1S&)tin0P).bosFail , ((tin1S&)tin0P).bosFail || errno ? idMeFail : idMeOk , #expP ) ;            \
-        }                                                                                                                                               \
-        if( ((tin1S&)tin0P).bosFail || errno )                                                                                                                     \
-        {                                                                                                                                               \
-            ((tin1S&)tin0P).brcQuery = errno ;                                                                                                                     \
-            errno = 0 ;                                                                                                                                 \
-            if( ((tin1S&)tin0P).brcQuery )                                                                                                                         \
-            {                                                                                                                                           \
-                ((tin1S&)tin0P).brcLath = ((tin1S&)tin0P).brcQuery ;                                                                                                          \
-                ((tin1S&)tin0P).idLine_brcLath = ifcLINE ;                                                                                                         \
-                ((tin1S&)tin0P).idiFile_brcLath = DDNUMB ;                                                                                                         \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSL   [brcLath,idLine,idiFile]: " , ((tin1S&)tin0P).brcLath , " " , ((tin1S&)tin0P).idLine_brcLath , " " , ((tin1S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/ \
-            }                                                                                                                                           \
-        }                                                                                                                                               \
-        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tin1S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                      \
+#define BOSL(whatP,typeP,expP)                                                                                                                                                                                                          \
+                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                   \
+        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                                                                                       \
+        whatP                                                                                                                                                                                                                           \
+        errno = 0 ;                                                                                                                                                                                                                     \
+        countT _brcRawExp = (countT)(expP) ;                                                                                                                                                                                            \
+        typeP ;                                                                                                                                                                                                                         \
+        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                                                                                                 \
+        if( pg1.pHome )                                                                                                                                                                                                                 \
+        {                                                                                                                                                                                                                               \
+            static countT idMeOk ;                                                                                                                                                                                                      \
+            static countT idMeFail ;                                                                                                                                                                                                    \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tin1S&)tin0P).bosFail || errno ? idMeFail : idMeOk ) ;                                                                                                                          \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin1S&)tin0P).bosFail , ((tin1S&)tin0P).bosFail || errno ? idMeFail : idMeOk , #expP ) ;                                                                      \
+        }                                                                                                                                                                                                                               \
+        if( ((tin1S&)tin0P).bosFail || errno )                                                                                                                                                                                          \
+        {                                                                                                                                                                                                                               \
+            ((tin1S&)tin0P).brcQuery = errno ;                                                                                                                                                                                          \
+            errno = 0 ;                                                                                                                                                                                                                 \
+            if( ((tin1S&)tin0P).brcQuery )                                                                                                                                                                                              \
+            {                                                                                                                                                                                                                           \
+                ((tin1S&)tin0P).brcLath = ((tin1S&)tin0P).brcQuery ;                                                                                                                                                                    \
+                ((tin1S&)tin0P).idLine_brcLath = ifcLINE ;                                                                                                                                                                              \
+                ((tin1S&)tin0P).idiFile_brcLath = DDNUMB ;                                                                                                                                                                              \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSL   [brcLath,idLine,idiFile]: " , ((tin1S&)tin0P).brcLath , " " , ((tin1S&)tin0P).idLine_brcLath , " " , ((tin1S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/       \
+            }                                                                                                                                                                                                                           \
+        }                                                                                                                                                                                                                               \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                                                                                              \
+        ((tin1S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                                                                                           \
     }
 
-#define BOSfICKLE(whatP,typeP,expP,expGetErrorP)                                                                                                        \
-                                                                                                                                                        \
-    {                                                                                                                                                   \
-        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
-        whatP                                                                                                                                           \
-        countT _brcRawExp = (countT)(expP) ;                                                                                                            \
-        typeP ;                                                                                                                                         \
-        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        if( pg1.pHome )                                                                                                                                 \
-        {                                                                                                                                               \
-            static countT idMeOk ;                                                                                                                      \
-            static countT idMeFail ;                                                                                                                    \
-            countT tally = pg1.pHome->tallyHo.tallyF( ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk ) ;                                                              \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin1S&)tin0P).bosFail , ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
-        }                                                                                                                                               \
-        if( ((tin1S&)tin0P).bosFail )                                                                                                                              \
-        {                                                                                                                                               \
-            ((tin1S&)tin0P).brcQuery = (expGetErrorP) ;                                                                                                            \
-            if( ((tin1S&)tin0P).brcQuery == NO_ERROR ) ((tin1S&)tin0P).bosFail = ((tin1S&)tin0P).brcQuery = 0 ;                                                                          \
-            else if( ((tin1S&)tin0P).brcQuery )                                                                                                                    \
-            {                                                                                                                                           \
-                ((tin1S&)tin0P).brcLath = ((tin1S&)tin0P).brcQuery ;                                                                                                          \
-                ((tin1S&)tin0P).idLine_brcLath = ifcLINE ;                                                                                                         \
-                ((tin1S&)tin0P).idiFile_brcLath = DDNUMB ;                                                                                                         \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin1S&)tin0P).brcLath , " " , ((tin1S&)tin0P).idLine_brcLath , " " , ((tin1S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/ \
-            }                                                                                                                                           \
-        }                                                                                                                                               \
-        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tin1S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                      \
+#define BOSfICKLE(whatP,typeP,expP,expGetErrorP)                                                                                                                                                                                        \
+                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                   \
+        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                                                                                       \
+        whatP                                                                                                                                                                                                                           \
+        countT _brcRawExp = (countT)(expP) ;                                                                                                                                                                                            \
+        typeP ;                                                                                                                                                                                                                         \
+        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                                                                                                 \
+        if( pg1.pHome )                                                                                                                                                                                                                 \
+        {                                                                                                                                                                                                                               \
+            static countT idMeOk ;                                                                                                                                                                                                      \
+            static countT idMeFail ;                                                                                                                                                                                                    \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk ) ;                                                                                                                                   \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin1S&)tin0P).bosFail , ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk , #expP ) ;                                                                               \
+        }                                                                                                                                                                                                                               \
+        if( ((tin1S&)tin0P).bosFail )                                                                                                                                                                                                   \
+        {                                                                                                                                                                                                                               \
+            ((tin1S&)tin0P).brcQuery = (expGetErrorP) ;                                                                                                                                                                                 \
+            if( ((tin1S&)tin0P).brcQuery == NO_ERROR ) ((tin1S&)tin0P).bosFail = ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                         \
+            else if( ((tin1S&)tin0P).brcQuery )                                                                                                                                                                                         \
+            {                                                                                                                                                                                                                           \
+                ((tin1S&)tin0P).brcLath = ((tin1S&)tin0P).brcQuery ;                                                                                                                                                                    \
+                ((tin1S&)tin0P).idLine_brcLath = ifcLINE ;                                                                                                                                                                              \
+                ((tin1S&)tin0P).idiFile_brcLath = DDNUMB ;                                                                                                                                                                              \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOS0   [brcLath,idLine,idiFile]: " , ((tin1S&)tin0P).brcLath , " " , ((tin1S&)tin0P).idLine_brcLath , " " , ((tin1S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/       \
+            }                                                                                                                                                                                                                           \
+        }                                                                                                                                                                                                                               \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                                                                                              \
+        ((tin1S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                                                                                           \
     }
 
-#define BOSrAW(whatP,typeP,expP)                                                                                                                        \
-                                                                                                                                                        \
-    {                                                                                                                                                   \
-        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
-        whatP                                                                                                                                           \
-        countT _brcRawExp = (countT)(expP) ;                                                                                                            \
-        typeP ;                                                                                                                                         \
-        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        if( pg1.pHome )                                                                                                                                 \
-        {                                                                                                                                               \
-            static countT idMeOk ;                                                                                                                      \
-            static countT idMeFail ;                                                                                                                    \
-            countT tally = pg1.pHome->tallyHo.tallyF( ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk ) ;                                                              \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin1S&)tin0P).bosFail , ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk , #expP ) ;                     \
-        }                                                                                                                                               \
-        if( ((tin1S&)tin0P).bosFail )                                                                                                                              \
-        {                                                                                                                                               \
-            ((tin1S&)tin0P).brcQuery = ((tin1S&)tin0P).brcRaw ;                                                                                                               \
-            if( ((tin1S&)tin0P).brcQuery )                                                                                                                         \
-            {                                                                                                                                           \
-                ((tin1S&)tin0P).brcLath = ((tin1S&)tin0P).brcQuery ;                                                                                                          \
-                ((tin1S&)tin0P).idLine_brcLath = ifcLINE ;                                                                                                         \
-                ((tin1S&)tin0P).idiFile_brcLath = DDNUMB ;                                                                                                         \
-                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSrAW [brcLath,idLine,idiFile]: " , ((tin1S&)tin0P).brcLath , " " , ((tin1S&)tin0P).idLine_brcLath , " " , ((tin1S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/ \
-            }                                                                                                                                           \
-        }                                                                                                                                               \
-        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tin1S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                      \
+#define BOSrAW(whatP,typeP,expP)                                                                                                                                                                                                        \
+                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                   \
+        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                                                                                       \
+        whatP                                                                                                                                                                                                                           \
+        countT _brcRawExp = (countT)(expP) ;                                                                                                                                                                                            \
+        typeP ;                                                                                                                                                                                                                         \
+        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                                                                                                 \
+        if( pg1.pHome )                                                                                                                                                                                                                 \
+        {                                                                                                                                                                                                                               \
+            static countT idMeOk ;                                                                                                                                                                                                      \
+            static countT idMeFail ;                                                                                                                                                                                                    \
+            countT tally = pg1.pHome->tallyHo.tallyF( ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk ) ;                                                                                                                                   \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , ((tin1S&)tin0P).bosFail , ((tin1S&)tin0P).bosFail ? idMeFail : idMeOk , #expP ) ;                                                                               \
+        }                                                                                                                                                                                                                               \
+        if( ((tin1S&)tin0P).bosFail )                                                                                                                                                                                                   \
+        {                                                                                                                                                                                                                               \
+            ((tin1S&)tin0P).brcQuery = ((tin1S&)tin0P).brcRaw ;                                                                                                                                                                         \
+            if( ((tin1S&)tin0P).brcQuery )                                                                                                                                                                                              \
+            {                                                                                                                                                                                                                           \
+                ((tin1S&)tin0P).brcLath = ((tin1S&)tin0P).brcQuery ;                                                                                                                                                                    \
+                ((tin1S&)tin0P).idLine_brcLath = ifcLINE ;                                                                                                                                                                              \
+                ((tin1S&)tin0P).idiFile_brcLath = DDNUMB ;                                                                                                                                                                              \
+                /*if( F(POOP.flagsF()) & flPOOP_SMELLY ) { LOGrAW7( "BOSrAW [brcLath,idLine,idiFile]: " , ((tin1S&)tin0P).brcLath , " " , ((tin1S&)tin0P).idLine_brcLath , " " , ((tin1S&)tin0P).idiFile_brcLath , "\r\n" ) ; }*/       \
+            }                                                                                                                                                                                                                           \
+        }                                                                                                                                                                                                                               \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                                                                                              \
+        ((tin1S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                                                                                           \
     }
 
 //A:ASSUME: THE CALLER HAS CONSTRUCTED countT _brcRaw ON THE THREAD'S STACK AS A LOCAL VARIABLE
 
-#define BOSnOtIN(expP)                                                                                                                                  \
-                                                                                                                                                        \
-    {                                                                                                                                                   \
-        _brcRaw = (countT)(expP) ;                                                                                                                      \
-        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        if( pg1.pHome )                                                                                                                                 \
-        {                                                                                                                                               \
-            static countT idMe ;                                                                                                                        \
-            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
-        }                                                                                                                                               \
+#define BOSnOtIN(expP)                                                                                                                                                                                                                  \
+                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                   \
+        _brcRaw = (countT)(expP) ;                                                                                                                                                                                                      \
+        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                                                                                                 \
+        if( pg1.pHome )                                                                                                                                                                                                                 \
+        {                                                                                                                                                                                                                               \
+            static countT idMe ;                                                                                                                                                                                                        \
+            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                                                                                                          \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                                                                                                            \
+        }                                                                                                                                                                                                                               \
     }
 
 //A:ASSUME: THE CALLER HAS CONSTRUCTED measure04T _brcm04Raw ON THE THREAD'S STACK AS A LOCAL VARIABLE
 
-#define BOSmEASURE04nOtIN(expP)                                                                                                                         \
-                                                                                                                                                        \
-    {                                                                                                                                                   \
-        _brcm04Raw = (measure04T)(expP) ;                                                                                                               \
-        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        if( pg1.pHome )                                                                                                                                 \
-        {                                                                                                                                               \
-            static countT idMe ;                                                                                                                        \
-            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
-        }                                                                                                                                               \
+#define BOSmEASURE04nOtIN(expP)                                                                                                                                                                                                         \
+                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                   \
+        _brcm04Raw = (measure04T)(expP) ;                                                                                                                                                                                               \
+        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                                                                                                 \
+        if( pg1.pHome )                                                                                                                                                                                                                 \
+        {                                                                                                                                                                                                                               \
+            static countT idMe ;                                                                                                                                                                                                        \
+            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                                                                                                          \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                                                                                                            \
+        }                                                                                                                                                                                                                               \
     }
 
-#define BOSdOnOTtEST(whatP,expP)                                                                                                                        \
-                                                                                                                                                        \
-    {                                                                                                                                                   \
-        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
-        whatP                                                                                                                                           \
-        countT _brcRawExp = (countT)(expP) ;                                                                                                            \
-        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        if( pg1.pHome )                                                                                                                                 \
-        {                                                                                                                                               \
-            static countT idMe ;                                                                                                                        \
-            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
-        }                                                                                                                                               \
-        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tin1S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                      \
+#define BOSdOnOTtEST(whatP,expP)                                                                                                                                                                                                        \
+                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                   \
+        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                                                                                       \
+        whatP                                                                                                                                                                                                                           \
+        countT _brcRawExp = (countT)(expP) ;                                                                                                                                                                                            \
+        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                                                                                                 \
+        if( pg1.pHome )                                                                                                                                                                                                                 \
+        {                                                                                                                                                                                                                               \
+            static countT idMe ;                                                                                                                                                                                                        \
+            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                                                                                                          \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                                                                                                            \
+        }                                                                                                                                                                                                                               \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                                                                                              \
+        ((tin1S&)tin0P).brcRaw = _brcRawExp ;                                                                                                                                                                                           \
     }
 
-#define BOSmEASURE04(whatP,expP)                                                                                                                        \
-                                                                                                                                                        \
-    {                                                                                                                                                   \
-        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
-        whatP                                                                                                                                           \
-        measure04T _brcm04RawExp = (measure04T)(expP) ;                                                                                                 \
-        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        if( pg1.pHome )                                                                                                                                 \
-        {                                                                                                                                               \
-            static countT idMe ;                                                                                                                        \
-            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
-        }                                                                                                                                               \
-        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
-        ((tin12S&)tin0P).brcm04Raw = _brcm04RawExp ;                                                                                                                \
+#define BOSmEASURE04(whatP,expP)                                                                                                                                                                                                        \
+                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                   \
+        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                                                                                       \
+        whatP                                                                                                                                                                                                                           \
+        measure04T _brcm04RawExp = (measure04T)(expP) ;                                                                                                                                                                                 \
+        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                                                                                                 \
+        if( pg1.pHome )                                                                                                                                                                                                                 \
+        {                                                                                                                                                                                                                               \
+            static countT idMe ;                                                                                                                                                                                                        \
+            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                                                                                                          \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                                                                                                            \
+        }                                                                                                                                                                                                                               \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                                                                                              \
+        ((tin12S&)tin0P).brcm04Raw = _brcm04RawExp ;                                                                                                                                                                                    \
     }
 
-#define BOSnOvALUE(whatP,expP)                                                                                                                          \
-                                                                                                                                                        \
-    {                                                                                                                                                   \
-        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                             \
-        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                  \
-        whatP                                                                                                                                           \
-        { expP ; }                                                                                                                                      \
-        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        if( pg1.pHome )                                                                                                                                 \
-        {                                                                                                                                               \
-            static countT idMe ;                                                                                                                        \
-            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
-        }                                                                                                                                               \
-        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                         \
+#define BOSnOvALUE(whatP,expP)                                                                                                                                                                                                          \
+                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                   \
+        ((tin1S&)tin0P).brcQuery = 0 ;                                                                                                                                                                                                  \
+        countT _idWhatSaveBos = ((tin123S&)tin0P).where.idWhat1 ;                                                                                                                                                                       \
+        whatP                                                                                                                                                                                                                           \
+        { expP ; }                                                                                                                                                                                                                      \
+        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                                                                                                 \
+        if( pg1.pHome )                                                                                                                                                                                                                 \
+        {                                                                                                                                                                                                                               \
+            static countT idMe ;                                                                                                                                                                                                        \
+            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                                                                                                          \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                                                                                                            \
+        }                                                                                                                                                                                                                               \
+        ((tin123S&)tin0P).where.idWhat1 = _idWhatSaveBos ;                                                                                                                                                                              \
     }
 
-#define BOSnOvALUEnOtIN(expP)                                                                                                                           \
-                                                                                                                                                        \
-    {                                                                                                                                                   \
-        { expP ; }                                                                                                                                      \
-        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                 \
-        if( pg1.pHome )                                                                                                                                 \
-        {                                                                                                                                               \
-            static countT idMe ;                                                                                                                        \
-            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                          \
-            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                            \
-        }                                                                                                                                               \
+#define BOSnOvALUEnOtIN(expP)                                                                                                                                                                                                           \
+                                                                                                                                                                                                                                        \
+    {                                                                                                                                                                                                                                   \
+        { expP ; }                                                                                                                                                                                                                      \
+        processGlobal1S& pg1 = processGlobal1S::_processGlobal1I_IF() ;                                                                                                                                                                 \
+        if( pg1.pHome )                                                                                                                                                                                                                 \
+        {                                                                                                                                                                                                                               \
+            static countT idMe ;                                                                                                                                                                                                        \
+            countT tally = pg1.pHome->tallyHo.tallyF( idMe ) ;                                                                                                                                                                          \
+            if( !( tally % CbOStALLYpERlOG ) ) logTallyIF( tally , LF , 0 , idMe , #expP ) ;                                                                                                                                            \
+        }                                                                                                                                                                                                                               \
     }
 
 
@@ -47334,6 +47248,7 @@ parameters
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200521.ifcidmodesockets END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200522.idcomputer BEGIN
 
+
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -53939,64 +53854,3 @@ this list corresponds exactly (offsets) to the error codes defined in winerr.h
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b8.TRACEcALLnEST END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*flRESTARTrEPORT*//*1*/
-
-/*3*/
-#define flRESTARTrEPORT_TRACE   0xe0000117
-#define flRESTARTrEPORT_SNAP    0xe0000217
-/*3*/
-#define flRESTARTrEPORT_null    0xe0000017
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ba.RESTARTrEPORT BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-*/
-/**/
-/*1*//*RESTARTrEPORT*//*1*/
-
-
-#define RESTARTrEPORT(flagsP)                                                   \
-                                                                                \
-    tellInfoSysExceptionS _restartInfo ;                                        \
-    countT _pcRestartArg[] = { (flagsP) , (countT)&_restartInfo } ;             \
-    RESTARTiFqUERY( bAcceptEventReportF , _pcRestartArg )
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ba.RESTARTrEPORT END

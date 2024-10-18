@@ -1927,11 +1927,11 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "traceMemoryGrainRptF_o" ) ;
+    TN( tNameSoixlOld , "traceMemoryGrainRptF_o3" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)traceMemoryGrainRptF_o_GF ;
+    *_pSwSoixlOldApi = (countT)traceMemoryGrainRptF_o3_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

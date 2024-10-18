@@ -239,7 +239,7 @@
     "    . cioSetArgF_o3       . ?? ")+T(postName)+T("\r\n"
     "    . traceF_o4@73       . ?? ")+T(postName)+T("\r\n"
     "    . tracePoolTalliesF_o       . ?? ")+T(postName)+T("\r\n"
-    "    . traceMemoryGrainRptF_o       . ?? ")+T(postName)+T("\r\n"
+    "    . traceMemoryGrainRptF_o3       . ?? ")+T(postName)+T("\r\n"
     "    . hushWritePrivateKeyToFileF_o4@b       . ?? ")+T(postName)+T("\r\n"
     "    . hushWritePublicKeyToFileF_o4@b       . ?? ")+T(postName)+T("\r\n"
     "    . hushGetPublicKeyF_o1@3b       . ?? ")+T(postName)+T("\r\n"
