@@ -3881,22 +3881,27 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 
         int bOk = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw" , postRaw ) ;
 
+        #define FILEpILEpREFIX char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\"
+
         if( bOk )
         {
-                                                { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd ,          " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\"                                                                                                                                                                                      ) ; strcat( postCmd , postLike   ) ; system( postCmd ) ; }
+                                                { char postCmd[ 0x200 ] = "echo #undef IPDOSmODULE >> \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; system( postCmd ) ; }
 
-            if( bThird )                        { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.01000002.cnotcppheader" )                                  ; system( postCmd ) ; }
+            if(            !bCNotCpp          ) { FILEpILEpREFIX "1snip.01000003.MODULEcODEtRAILER"                        )                                ; system( postCmd ) ; }
+                                                { FILEpILEpREFIX                                                           ) ; strcat( postCmd , postLike ) ; system( postCmd ) ; }
+            if(            !bCNotCpp          ) { FILEpILEpREFIX "1snip.01000004.MODULEcODEhEADER"                         )                                ; system( postCmd ) ; }
 
-            if( bThird )                        { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.112005e6.ifcIDtHREADpRIORITYbASEoSwINDOWS" )               ; system( postCmd ) ; }
+                                                { char postCmd[ 0x200 ] = "echo #define IPDOSmODULE " ; strcat( postCmd , postGroupP ) ; strcat( postCmd , " >> \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ) ; strcat( postCmd , postRaw ) ; system( postCmd ) ; }
 
-            if( !bCNotCpp )
-            {
-                                                { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , bThird ? " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000003.includeGenMake.base.show.third" : " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000002.includeGenMake.base.hide.third" )                                  ; system( postCmd ) ; }
-                if( bThird )                    { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd ,          " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000006.ifcENABLEtHIRDpARTIES"                                                                                                                                                  )                                  ; system( postCmd ) ; }
-            }
-
-          //if( !strcmp( postLike , "21000" ) ) { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd ,          " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000007.ifcENABLEtHIRDpARTIESmULTIPLEmONITORfAKE"                                                                                                                               )                                  ; system( postCmd ) ; }
+            if(  bThird                       ) { FILEpILEpREFIX "1snip.01000002.cnotcppheader"                            )                                ; system( postCmd ) ; }
+            if(  bThird                       ) { FILEpILEpREFIX "1snip.112005e6.ifcIDtHREADpRIORITYbASEoSwINDOWS"         )                                ; system( postCmd ) ; }
+            if(  bThird && !bCNotCpp          ) { FILEpILEpREFIX "1snip.1a000003.includeGenMake.base.show.third"           )                                ; system( postCmd ) ; }
+            if( !bThird && !bCNotCpp          ) { FILEpILEpREFIX "1snip.1a000002.includeGenMake.base.hide.third"           )                                ; system( postCmd ) ; }
+            if(  bThird && !bCNotCpp          ) { FILEpILEpREFIX "1snip.1a000006.ifcENABLEtHIRDpARTIES"                    )                                ; system( postCmd ) ; }
+          //if( !strcmp( postLike , "21000" ) ) { FILEpILEpREFIX "1snip.1a000007.ifcENABLEtHIRDpARTIESmULTIPLEmONITORfAKE" )                                ; system( postCmd ) ; }
         }
+
+        #undef FILEpILEpREFIX
 
         if( bOk )
         {
