@@ -2569,8 +2569,10 @@ void elf_obey_C::liveF( void )
                 bOk &= ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\4report" ) ;
                 bOk &= ether.deleteAllF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\" , "1snip.0060001.genModuleCodeCalls.h" ) ;
                 bOk &= ether.deleteAllF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\" , "1snip.0060001.genModuleCodeCallProtos.h" ) ;
+                bOk &= ether.deleteAllF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\" , "1snip.0050011.gen_CmODULESbASE.h" ) ;
     
-            int cGroupsPushed = 0 ;
+            int cGroups            = 0 ;
+            int cGroupsPushedStale = 0 ;
             if( bOk )
             {
                 FILETIME maxFtSnip = maxFileTimeF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.*" ) ;
@@ -2603,8 +2605,9 @@ void elf_obey_C::liveF( void )
         
                             if( bNewGroup )
                             {
-                                //if( !strcmp( postGroupLag , "33115" ) || !strcmp( postGroupLag , "33116" ) ) cGroupsPushed += pushGroupIfF( postGroupLag , ftMax , maxFtSnip ) ;
-                                cGroupsPushed += pushGroupIfF( postGroupLag , ftMax , maxFtSnip ) ;
+                                //if( !strcmp( postGroupLag , "33115" ) || !strcmp( postGroupLag , "33116" ) ) cGroupsPushedStale += pushGroupIfF( postGroupLag , ftMax , maxFtSnip ) ;
+                                cGroups ++ ;
+                                cGroupsPushedStale += pushGroupIfF( postGroupLag , ftMax , maxFtSnip ) ;
                                 strcpy( postGroupLag , postGroup ) ;
                                 ftMax.dwHighDateTime = info.ftLastWriteTime.dwHighDateTime ;
                                 ftMax.dwLowDateTime  = info.ftLastWriteTime.dwLowDateTime  ;
@@ -2617,26 +2620,29 @@ void elf_obey_C::liveF( void )
         
                 }
         
-                cGroupsPushed += pushGroupIfF( postGroupLag , ftMax , maxFtSnip ) ;
+                cGroups ++ ;
+                cGroupsPushedStale += pushGroupIfF( postGroupLag , ftMax , maxFtSnip ) ;
             }
+
+            { char post9[ 0x9 ] ; itoa( cGroups , post9 , 0x10 ) ; char postCmd[ 0x200 ] = "echo #define CmODULESbASE 0x" ; strcat( postCmd , post9 ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0050011.gen_CmODULESbASE.h" ) ; system( postCmd ) ; }
     
-            if( cGroupsPushed )
+            if( cGroupsPushedStale )
             {
                 int cToDo = ether.cProcessorsF() * 1 ; //WAS 2, BUT TERMINATING PROCESSES ACCUMULATED
-                if( cToDo > cGroupsPushed ) cToDo = cGroupsPushed ;
+                if( cToDo > cGroupsPushedStale ) cToDo = cGroupsPushedStale ;
 
                 //cToDo = 1 ; //COMMENT THIS OUT IN PRODUCTION; ENABLE THIS LINE TO THROTTLE CPU CONSUMPTION
     
                 sayF( "!center [3compile]:  Building all object modules for the base dll." ) ;
                 sayF( "!paragraph" ) ;
     
-                sayF( cGroupsPushed , flSAY_START ) ;
+                sayF( cGroupsPushedStale , flSAY_START ) ;
                 sayF( " object modules are stale.  " , flSAY_MIDDLE ) ;
                 sayF( cToDo , flSAY_MIDDLE ) ;
                 sayF( cToDo == 1 ? " elf will get to work right away!" : " elves will get to work right away!" , flSAY_MIDDLE ) ;
                 sayF( "!paragraph" , flSAY_END ) ;
 
-                int bPause = cGroupsPushed > 0x100 ;    // IF FEW PUSHED THEN I WILL PRESUME THAT THE PRECOMPILED HEADERS HAVE ALREADY BEEN BUILT
+                int bPause = cGroupsPushedStale > 0x100 ;    // IF FEW PUSHED THEN I WILL PRESUME THAT THE PRECOMPILED HEADERS HAVE ALREADY BEEN BUILT
         
                 while( cToDo -- ) new elf_obey_C( bPause ? "!worker_3compile_pause" : "!worker_3compile_nopause" , idMe ) ;
             }
@@ -3197,6 +3203,7 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.adamGlobal1S"                                ,
                     "1snip.15*.processGlobal3S"                             ,
                     "1snip.15*.processGlobal2S"                             ,
+                    "1snip.15*.addressRangeS"                               ,
                     "1snip.15*.fireGroupS"                                  ,
                     "1snip.15*.bookC"                                       ,
                     "1snip.15*.book0C"                                      ,
@@ -3695,19 +3702,18 @@ void elf_obey_C::liveF( void )
 
 int elf_obey_C::pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILETIME ftSnipP )
 {
-sayF( "\r\n" , flSAY_START   ) ;
-sayF( postGroupP , flSAY_MIDDLE ) ;
-sayF( " ++++" , flSAY_END   ) ;
-
     int bStale = 0 ;
     if( postGroupP[ 0 ] )
     {
+        sayF( "\r\nscanning " , flSAY_START   ) ;
+        sayF( postGroupP , flSAY_END ) ;
+
         if( strcmp( postGroupP , "30000" ) && strcmp( postGroupP , "31000" ) )
         {
             { char postCmd[ 0x200 ] = "echo moduleCodeHeader_"  ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF() ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCalls.h" ) ; system( postCmd ) ; }
             { char postCmd[ 0x200 ] = "echo moduleCodeTrailer_" ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF() ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCalls.h" ) ; system( postCmd ) ; }
 
-            { char postCmd[ 0x200 ] = "echo extern \"C\" voidT moduleCodeHeader_"  ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF( voidT ) ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCallProtos.h" ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "echo extern \"C\" voidT moduleCodeHeader_"   ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF( voidT ) ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCallProtos.h" ) ; system( postCmd ) ; }
             { char postCmd[ 0x200 ] = "echo extern \"C\" voidT moduleCodeTrailer_"  ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF( voidT ) ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCallProtos.h" ) ; system( postCmd ) ; }
         }
 
@@ -3738,9 +3744,6 @@ sayF( " ++++" , flSAY_END   ) ;
         }
     }
 
-sayF( "\r\n" , flSAY_START   ) ;
-sayF( postGroupP , flSAY_MIDDLE ) ;
-sayF( " ----" , flSAY_END   ) ;
     return bStale ;
 }
 

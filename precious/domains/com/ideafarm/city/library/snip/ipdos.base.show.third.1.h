@@ -421,6 +421,7 @@ class   /*ff*/listingOfSet_countTstrz_C/*ff*/                           ; /*ff*/
 //INCLUDE GENERATED SNIPPETS HERE
 
 #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\1snip.0050010.gen_CsOURCEfILES.h"
+#include "\ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\1snip.0050011.gen_CmODULESbASE.h"
 
 
 //

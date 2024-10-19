@@ -12,19 +12,20 @@
 
         THREADmODE3rESTORE
         }
+            traceF( tin0P , T("          ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------") , flTRACE_NOpREFIX ) ;
             }
                 }
-                    strMakeF( tin0P , LF , psttLine , 0 , TUCK + 2 ) ; ___( psttLine ) ;
+                    strMakeF( tin0P , LF , psttLine , TF3(at,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T("_ ") , TUCK + 2 ) ; ___( psttLine ) ;
+                    at += cbGrain * TUCK ;
                     delF( tin0P , psttLine ) ;
                     traceF( tin0P , psttLine , flTRACE_NOpREFIX ) ;
-                    strFuseF( tin0P , psttLine , tCRLF ) ;
                 {
                 if( !( ( offGrain + 1 ) % TUCK ) )
 
                 strFuseF( tin0P , psttLine , bUsed ? tAt : tDot ) ;
 
-                //boolT bUsed = processGlobal2I.pbMemoryBitsAll[ offByte ] & mask ;
-                  boolT bUsed = processGlobal2I.pbMemoryBitsCode[ offByte ] & mask ;
+                  boolT bUsed = processGlobal2I.pbMemoryBitsAll[ offByte ] & mask ;
+                //boolT bUsed = processGlobal2I.pbMemoryBitsCode[ offByte ] & mask ;
 
                 }
                     countT foo = 2 ;
@@ -37,15 +38,22 @@
             {
             for( countT offGrain = 0 ; offGrain < ( TOCK >> 1 ) ; offGrain ++ )
 
-            strMakeF( tin0P , LF , psttLine , 0 , TUCK + 2 ) ; ___( psttLine ) ;
+            strMakeF( tin0P , LF , psttLine , TF3(at,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T("_ ") , TUCK + 2 ) ; ___( psttLine ) ;
             ZE( strokeS* , psttLine ) ;
             TN( tCRLF , "\r\n" ) ;
             TN( tAt   , "@"    ) ;
             TN( tDot  , "."    ) ;
+            ZE( countT , at    ) ;
 
-            traceF( tin0P , T("Memory Grain Report:") , flTRACE_null ) ;
+            traceF( tin0P , T("          ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------") , flTRACE_NOpREFIX ) ;
+            traceF( tin0P , T("          123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0") , flTRACE_NOpREFIX ) ;
+            traceF( tin0P , T("                         1               2               3               4               5               6               7               8               9               a               b               c               d               e               f               0") , flTRACE_NOpREFIX ) ;
+            traceF( tin0P , T("                                                                                                                                                                                                                                                                         1") , flTRACE_NOpREFIX ) ;
+            traceF( tin0P , T("Memory Grain Report:") , flTRACE_NOpREFIX ) ;
         {
         THREADmODE3oN( flTHREADmODE3_POOLaLLOCATEfROMhEAP )
+
+        countT cbGrain = thirdC::os_cbAllocationGrain_IF() ;
 
     #if defined( SHOWmEMgRAINS )
 

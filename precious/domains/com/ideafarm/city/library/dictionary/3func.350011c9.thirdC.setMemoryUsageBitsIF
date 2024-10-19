@@ -12,17 +12,17 @@
             pbc += cbGrain ;
 
             }
-                //default                            : { BLAMMOiD( 0x75757575 )                                 ; break ; }
-                //case ifcIDtYPEaDDRESSuSAGE_FILE    : { processGlobal2I.pbMemoryBitsFile[    offByte ] |= mask ; break ; }
-                //case ifcIDtYPEaDDRESSuSAGE_SEX     : { processGlobal2I.pbMemoryBitsSex[     offByte ] |= mask ; break ; }
-                //case ifcIDtYPEaDDRESSuSAGE_SHARED  : { processGlobal2I.pbMemoryBitsShared[  offByte ] |= mask ; break ; }
-                //case ifcIDtYPEaDDRESSuSAGE_PRIVATE : { processGlobal2I.pbMemoryBitsPrivate[ offByte ] |= mask ; break ; }
-                //case ifcIDtYPEaDDRESSuSAGE_STACK   : { processGlobal2I.pbMemoryBitsStack[   offByte ] |= mask ; break ; }
-                //case ifcIDtYPEaDDRESSuSAGE_DATA    : { processGlobal2I.pbMemoryBitsData[    offByte ] |= mask ; break ; }
+                default                            : { BLAMMOiD( 0x75757575 )                                 ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_FILE    : { processGlobal2I.pbMemoryBitsFile[    offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_SEX     : { processGlobal2I.pbMemoryBitsSex[     offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_SHARED  : { processGlobal2I.pbMemoryBitsShared[  offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_PRIVATE : { processGlobal2I.pbMemoryBitsPrivate[ offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_STACK   : { processGlobal2I.pbMemoryBitsStack[   offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_DATA    : { processGlobal2I.pbMemoryBitsData[    offByte ] |= mask ; break ; }
                 case ifcIDtYPEaDDRESSuSAGE_CODE    : { processGlobal2I.pbMemoryBitsCode[    offByte ] |= mask ; break ; }
             {
             switch( idTypeP )
-                //                                       processGlobal2I.pbMemoryBitsAll[     offByte ] |= mask ;
+                                                       processGlobal2I.pbMemoryBitsAll[     offByte ] |= mask ;
 
             if( offByte >= sizeof processGlobal2I.pbMemoryBitsAll ) { BLAMMOiD( 0x24242424 ) ; }
 

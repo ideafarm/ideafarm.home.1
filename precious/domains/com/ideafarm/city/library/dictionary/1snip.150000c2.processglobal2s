@@ -44,6 +44,8 @@
     #if defined( ifcENABLEtHIRDpARTIES )
     //PUT PLATFORM DEPENDENT MEMBERS HERE SO THAT OFFSETS TO THE OTHER MEMBERS ARE INVARIANT
 
+    addressRangeS                   pAddressRangeCodeBase[ CmODULESbASE ] ;
+    countT                          cAddressRangeCodeBase ;
     byteT                           pbUtility[ TUCK * 5 ] ;                            // THIS MAY BE USED TEMPORARILY FOR ANY PURPOSE BUT ONLY ON MAIN THREAD (TO PREVENT COLLISIONS BY MULTIPLE THREADS) ; INITIALLY, IT EXISTS TO FACILITATE TEMPORARY CONSTRUCTION OF tlsAllocStackExp_8_C INSTANCES
     byteT                           pbMemoryBitsFile[    ( TOCK >> 1 ) / SB ] ;
     byteT                           pbMemoryBitsSex[     ( TOCK >> 1 ) / SB ] ;

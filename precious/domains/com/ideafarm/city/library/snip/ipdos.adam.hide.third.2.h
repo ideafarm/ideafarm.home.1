@@ -6196,7 +6196,7 @@ examples
                                                                                 \
     extern "C" voidT moduleCodeTrailer_##idModuleP##_GF( voidT )                \
     {                                                                           \
-        registerEipGF( 0x##idModuleP , (const byteT*)eipAM() , 1 ) ;            \
+        registerModuleEipGF( 0x##idModuleP , (const byteT*)eipAM() , 1 ) ;            \
     }
 
 //
@@ -6226,7 +6226,7 @@ examples
                                                                                 \
     extern "C" voidT moduleCodeHeader_##idModuleP##_GF( voidT )                 \
     {                                                                           \
-        registerEipGF( 0x##idModuleP , (const byteT*)eipAM() , 0 ) ;            \
+        registerModuleEipGF( 0x##idModuleP , (const byteT*)eipAM() , 0 ) ;            \
     }
 
 //
@@ -17220,7 +17220,7 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 */
 /**/
 
-/*1*/voidT _export registerEipGF( countT idModuleP , const byteT* pbEipP , boolT bLathP ) ;/*1*/
+/*1*/voidT _export registerModuleEipGF( countT idModuleP , const byteT* pbEipP , boolT bLathP ) ;/*1*/
 
 
 //
@@ -17231,6 +17231,9 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700023c.registerModuleEipGF END
+
+/*1*/voidT _export setAddressUsageBitsModuleEipRangeGF( voidT ) ;/*1*/
+
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tellInfoAppInOutFrameS : 1snip.15000188.tellinfoappinoutframes BEGIN
 
 
@@ -43174,6 +43177,32 @@ base class to make a derived class of objects easily contained by a stackC objec
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.fireGroupS : 1snip.15000114.firegroups END
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*/struct _export addressRangeS/*1*/
+{
+    countT       idRange ;
+    const byteT* pbWoth  ;
+    const byteT* pbLath  ;
+}
+;
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.processGlobal2S : 1snip.150000c2.processglobal2s BEGIN
 
 
@@ -43285,6 +43314,8 @@ base class to make a derived class of objects easily contained by a stackC objec
     byteT                           pbMemoryBitsSex[     ( TOCK >> 1 ) / SB ] ;
     byteT                           pbMemoryBitsFile[    ( TOCK >> 1 ) / SB ] ;
     byteT                           pbUtility[ TUCK * 5 ] ;                            // THIS MAY BE USED TEMPORARILY FOR ANY PURPOSE BUT ONLY ON MAIN THREAD (TO PREVENT COLLISIONS BY MULTIPLE THREADS) ; INITIALLY, IT EXISTS TO FACILITATE TEMPORARY CONSTRUCTION OF tlsAllocStackExp_8_C INSTANCES
+    countT                          cAddressRangeCodeBase ;
+    addressRangeS                   pAddressRangeCodeBase[ CmODULESbASE ] ;
 
     //PUT PLATFORM DEPENDENT MEMBERS HERE SO THAT OFFSETS TO THE OTHER MEMBERS ARE INVARIANT
     #if defined( ifcENABLEtHIRDpARTIES )

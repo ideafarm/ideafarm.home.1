@@ -61,6 +61,7 @@
     #pragma aux (cdecl) TLS_method                                 ;
 
     #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\1snip.0060001.genModuleCodeCallProtos.h"
+    #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\1snip.0050011.gen_CmODULESbASE.h"
 
 #else
 
