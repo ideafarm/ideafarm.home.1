@@ -522,7 +522,7 @@ class elf_obey_C : public elfC
     FILETIME        maxFileTimeF( const char* postLikeP ) ;
     int             idCopyF( char* postFileP , int& cDoneP ) ;
     char*           pbAtF( int& costDoneP , char* pbBigP , int cbBigP , char* postSmallP ) ;
-    int             pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILETIME ftSnipP ) ;
+    int             pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILETIME ftSnipP , char* postFileImage1P , char* postFileImage2P ) ;
     void            reorderF( char* postToP , char* postFromP , int costP ) ;
     void            translateF( const char* postGroupP , int bPauseP ) ;
 
@@ -2571,8 +2571,10 @@ void elf_obey_C::liveF( void )
                 bOk &= ether.deleteAllF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\" , "1snip.0060001.genModuleCodeCallProtos.h" ) ;
                 bOk &= ether.deleteAllF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\" , "1snip.0050011.gen_CmODULESbASE.h" ) ;
     
-            int cGroups            = 0 ;
-            int cGroupsPushedStale = 0 ;
+            int  cGroups            = 0 ;
+            int  cGroupsPushedStale = 0 ;
+            char postFileImage1[ 0x10000 ] ; postFileImage1[ 0 ] = 0 ;
+            char postFileImage2[ 0x10000 ] ; postFileImage2[ 0 ] = 0 ;
             if( bOk )
             {
                 FILETIME maxFtSnip = maxFileTimeF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.*" ) ;
@@ -2605,9 +2607,9 @@ void elf_obey_C::liveF( void )
         
                             if( bNewGroup )
                             {
-                                //if( !strcmp( postGroupLag , "33115" ) || !strcmp( postGroupLag , "33116" ) ) cGroupsPushedStale += pushGroupIfF( postGroupLag , ftMax , maxFtSnip ) ;
+                                //if( !strcmp( postGroupLag , "33115" ) || !strcmp( postGroupLag , "33116" ) ) cGroupsPushedStale += \pushGroupIfF( postGroupLag , ftMax , maxFtSnip , postFileImage1 , postFileImage2 ) ;
                                 cGroups ++ ;
-                                cGroupsPushedStale += pushGroupIfF( postGroupLag , ftMax , maxFtSnip ) ;
+                                cGroupsPushedStale += pushGroupIfF( postGroupLag , ftMax , maxFtSnip , postFileImage1 , postFileImage2 ) ;
                                 strcpy( postGroupLag , postGroup ) ;
                                 ftMax.dwHighDateTime = info.ftLastWriteTime.dwHighDateTime ;
                                 ftMax.dwLowDateTime  = info.ftLastWriteTime.dwLowDateTime  ;
@@ -2621,8 +2623,11 @@ void elf_obey_C::liveF( void )
                 }
         
                 cGroups ++ ;
-                cGroupsPushedStale += pushGroupIfF( postGroupLag , ftMax , maxFtSnip ) ;
+                cGroupsPushedStale += pushGroupIfF( postGroupLag , ftMax , maxFtSnip , postFileImage1 , postFileImage2 ) ;
             }
+
+            boxPutF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCalls.h"      , postFileImage1 , idMe ) ;
+            boxPutF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCallProtos.h" , postFileImage2 , idMe ) ;
 
             { char post9[ 0x9 ] ; itoa( cGroups , post9 , 0x10 ) ; char postCmd[ 0x200 ] = "echo #define CmODULESbASE 0x" ; strcat( postCmd , post9 ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0050011.gen_CmODULESbASE.h" ) ; system( postCmd ) ; }
     
@@ -3700,21 +3705,21 @@ void elf_obey_C::liveF( void )
     }
 }
 
-int elf_obey_C::pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILETIME ftSnipP )
+int elf_obey_C::pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILETIME ftSnipP , char* postFileImage1P , char* postFileImage2P )
 {
     int bStale = 0 ;
     if( postGroupP[ 0 ] )
     {
-        sayF( "\r\nscanning " , flSAY_START   ) ;
-        sayF( postGroupP , flSAY_END ) ;
+        //sayF( "\r\nscanning " , flSAY_START   ) ;
+        //sayF( postGroupP , flSAY_END ) ;
 
         if( strcmp( postGroupP , "30000" ) && strcmp( postGroupP , "31000" ) )
         {
-            { char postCmd[ 0x200 ] = "echo moduleCodeHeader_"  ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF() ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCalls.h" ) ; system( postCmd ) ; }
-            { char postCmd[ 0x200 ] = "echo moduleCodeTrailer_" ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF() ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCalls.h" ) ; system( postCmd ) ; }
+            strcat( postFileImage1P , "moduleCodeHeader_"  ) ; strcat( postFileImage1P , postGroupP ) ; strcat( postFileImage1P , "_GF() ;\r\n" ) ;
+            strcat( postFileImage1P , "moduleCodeTrailer_" ) ; strcat( postFileImage1P , postGroupP ) ; strcat( postFileImage1P , "_GF() ;\r\n" ) ;
 
-            { char postCmd[ 0x200 ] = "echo extern \"C\" voidT moduleCodeHeader_"   ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF( voidT ) ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCallProtos.h" ) ; system( postCmd ) ; }
-            { char postCmd[ 0x200 ] = "echo extern \"C\" voidT moduleCodeTrailer_"  ; strcat( postCmd , postGroupP ) ; strcat( postCmd , "_GF( voidT ) ;" ) ; strcat( postCmd , " >> \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.0060001.genModuleCodeCallProtos.h" ) ; system( postCmd ) ; }
+            strcat( postFileImage2P , "extern \"C\" voidT moduleCodeHeader_"  ) ; strcat( postFileImage2P , postGroupP ) ; strcat( postFileImage2P , "_GF( voidT ) ;\r\n" ) ;
+            strcat( postFileImage2P , "extern \"C\" voidT moduleCodeTrailer_" ) ; strcat( postFileImage2P , postGroupP ) ; strcat( postFileImage2P , "_GF( voidT ) ;\r\n" ) ;
         }
 
         char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\" ;
