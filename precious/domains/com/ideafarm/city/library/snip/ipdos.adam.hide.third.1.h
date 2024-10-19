@@ -417,12 +417,12 @@ class   /*ff*/listOfSet_listingVSP_C/*ff*/                              ; /*ff*/
 class   /*ff*/listingOfSet_countT_C/*ff*/                               ; /*ff*//**//*ff*/
 class   /*ff*/listingOfSet_blob_C/*ff*/                                 ; /*ff*//**//*ff*/
 class   /*ff*/listingOfSet_countTstrz_C/*ff*/                           ; /*ff*//**//*ff*/
+struct  /*ff*/addressRangeS/*ff*/                                       ; /*ff*//**//*ff*/
 
 //INCLUDE GENERATED SNIPPETS HERE
 
 #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\1snip.0050010.gen_CsOURCEfILES.h"
 #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\library\snip\1snip.0050011.gen_CmODULESbASE.h"
-
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -53855,3 +53855,64 @@ this list corresponds exactly (offsets) to the error codes defined in winerr.h
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b8.TRACEcALLnEST END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*flRESTARTrEPORT*//*1*/
+
+/*3*/
+#define flRESTARTrEPORT_TRACE   0xe0000117
+#define flRESTARTrEPORT_SNAP    0xe0000217
+/*3*/
+#define flRESTARTrEPORT_null    0xe0000017
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005b9.flRESTARTrEPORT END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ba.RESTARTrEPORT BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+/*1*//*RESTARTrEPORT*//*1*/
+
+
+#define RESTARTrEPORT(flagsP)                                                   \
+                                                                                \
+    tellInfoSysExceptionS _restartInfo ;                                        \
+    countT _pcRestartArg[] = { (flagsP) , (countT)&_restartInfo } ;             \
+    RESTARTiFqUERY( bAcceptEventReportF , _pcRestartArg )
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005ba.RESTARTrEPORT END

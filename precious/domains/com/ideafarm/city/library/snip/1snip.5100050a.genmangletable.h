@@ -66,6 +66,7 @@
 "diskWalkCBFT" , "diskWalkCBFT" ,
 "diskWalkCopyCBFT" , "diskWalkCopyCBFT" ,
 "diskWalkSearchCBFT" , "diskWalkSearchCBFT" ,
+"addressRangeS" , "addressRangeS" ,
 "listingOfSet_countTstrz_C" , "listingOfSet_countTstrz_C" ,
 "listingOfSet_blob_C" , "listingOfSet_blob_C" ,
 "listingOfSet_countT_C" , "listingOfSet_countT_C" ,
