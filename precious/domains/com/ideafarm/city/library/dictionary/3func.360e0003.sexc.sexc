@@ -266,6 +266,9 @@
 #if defined( NEVERdEFINED )
 //U:: DELETE THIS OLD CODE AFTER TESTING
 
+                        setAddressUsageBitsRangeGF( ifcIDtYPEaDDRESSuSAGE_SEX , (const byteT*)pbMeta , (const byteT*)pbMetaEnd - 1 ) ;
+                        pbMetaEnd = pbMeta + sizeof( napkinHeaderS ) + cbaMeta ;    //20241018@2010: ADDED W/O ANALYSIS
+
                         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                         // FORMAT pbMeta
                         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -448,6 +451,8 @@
                 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 // TRY TO ALLOCATE pbMeta FROM A SIBLING sexC (ANOTHER sexC, EXISTING OR NEWLY CREATED, OF *pPoolContainsMe
                 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                setAddressUsageBitsRangeGF( ifcIDtYPEaDDRESSuSAGE_SEX , (const byteT*)pbData , (const byteT*)pbDataEnd - 1 ) ;
 
                 pbDataEnd = !pbData ? 0 : pbData + ( ( cbDropSeparatorP + cbDropHeader + cbDropAdjustP ) + ( 1 << expCbDropP ) ) * ( 1 << expSlotsP ) ;
             {

@@ -538,7 +538,7 @@ it is illegal to refer to this symbol in the definition of an adam
         {                                                                                                                                                                           \
             tin0S& tin0P = pmp->tin0 ;                                                                                                                                              \
             _IO_                                                                                                                                                                    \
-            thirdC::setMemoryUsageBitsIF( (const byteT*)mainF , ifcIDtYPEaDDRESSuSAGE_CODE ) ;                                                                                      \
+            thirdC::setAddressUsageBitsIF( (const byteT*)mainF , ifcIDtYPEaDDRESSuSAGE_CODE ) ;                                                                                      \
             TELL( "MAINF/+" ) ;                                                                                                                                                     \
             thirdC::osTraceWrongNodeIF( tin0P , (byteT*)mainF , "mainF" ) ;                                                                                                         \
             etherC& ether = pmp->ether ;                                                                                                                                            \
@@ -51411,7 +51411,7 @@ examples
 
 /*
 normally this should be commented out because it slows execution
-enable it to set bits in processGlobal2S::pbMemoryBits*
+enable it to set bits in processGlobal2S::pbAddressBits*
 */
 /**/
 /*1*//*SHOWmEMgRAINS*//*1*/

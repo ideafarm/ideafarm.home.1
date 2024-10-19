@@ -3055,7 +3055,7 @@
 0x00000bef , "\0\0\0\0countT thirdC::osHireThenMonitorIF( tin0S& tin0P , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP )" ,
 0x00000bf0 , "\0\0\0\0flagsT thirdC::fileAttrIfFromOs2IF( tin0S& tin0P , flagsT osfP )" ,
 0x00000bf1 , "\0\0\0\0voidT thirdC::dosWriteStdOutAvoidStackIF( const osTextT* const postP )" ,
-0x00000bf2 , "\0\0\0\0voidT thirdC::setMemoryUsageBitsIF( const byteT* pbP , countT idTypeP )" ,
+0x00000bf2 , "\0\0\0\0voidT thirdC::setAddressUsageBitsIF( const byteT* pbP , countT idTypeP )" ,
 0x00000bf3 , "\0\0\0\0etherC& etherC::etThreadIF( tin0S& tin0P )" ,
 0x00000bf4 , "\0\0\0\0countT& etherC::os_cAllKidThreadsI_IF( tin0S& tin0P )" ,
 0x00000bf5 , "\0\0\0\0etherC& etherC::etPrimeIF( tin0S& tin0P )" ,

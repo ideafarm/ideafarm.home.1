@@ -3055,7 +3055,7 @@
 0x350011c6 , 0x00000bef ,   // 3func.350011c6.thirdc.osHireThenMonitorIF
 0x350011c7 , 0x00000bf0 ,   // 3func.350011c7.thirdc.fileattriffromos2if
 0x350011c8 , 0x00000bf1 ,   // 3func.350011c8.thirdc.dosWriteStdOutAvoidStackif
-0x350011c9 , 0x00000bf2 ,   // 3func.350011c9.thirdC.setMemoryUsageBitsIF
+0x350011c9 , 0x00000bf2 ,   // 3func.350011c9.thirdC.setAddressUsageBitsIF
 0x350020ba , 0x00000bf3 ,   // 3func.350020ba.etherc.etthreadif
 0x350020cb , 0x00000bf4 ,   // 3func.350020cb.etherc.os_cAllKidThreadsI_IF
 0x350020ed , 0x00000bf5 ,   // 3func.350020ed.etherc.etprimeif

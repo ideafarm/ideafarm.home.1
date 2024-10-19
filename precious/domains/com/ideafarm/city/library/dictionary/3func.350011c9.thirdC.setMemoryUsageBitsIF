@@ -13,18 +13,18 @@
 
             }
                 default                            : { BLAMMOiD( 0x75757575 )                                 ; break ; }
-                case ifcIDtYPEaDDRESSuSAGE_FILE    : { processGlobal2I.pbMemoryBitsFile[    offByte ] |= mask ; break ; }
-                case ifcIDtYPEaDDRESSuSAGE_SEX     : { processGlobal2I.pbMemoryBitsSex[     offByte ] |= mask ; break ; }
-                case ifcIDtYPEaDDRESSuSAGE_SHARED  : { processGlobal2I.pbMemoryBitsShared[  offByte ] |= mask ; break ; }
-                case ifcIDtYPEaDDRESSuSAGE_PRIVATE : { processGlobal2I.pbMemoryBitsPrivate[ offByte ] |= mask ; break ; }
-                case ifcIDtYPEaDDRESSuSAGE_STACK   : { processGlobal2I.pbMemoryBitsStack[   offByte ] |= mask ; break ; }
-                case ifcIDtYPEaDDRESSuSAGE_DATA    : { processGlobal2I.pbMemoryBitsData[    offByte ] |= mask ; break ; }
-                case ifcIDtYPEaDDRESSuSAGE_CODE    : { processGlobal2I.pbMemoryBitsCode[    offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_FILE    : { processGlobal2I.pbAddressBitsFile[    offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_SEX     : { processGlobal2I.pbAddressBitsSex[     offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_SHARED  : { processGlobal2I.pbAddressBitsShared[  offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_PRIVATE : { processGlobal2I.pbAddressBitsPrivate[ offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_STACK   : { processGlobal2I.pbAddressBitsStack[   offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_DATA    : { processGlobal2I.pbAddressBitsData[    offByte ] |= mask ; break ; }
+                case ifcIDtYPEaDDRESSuSAGE_CODE    : { processGlobal2I.pbAddressBitsCode[    offByte ] |= mask ; break ; }
             {
             switch( idTypeP )
-                                                       processGlobal2I.pbMemoryBitsAll[     offByte ] |= mask ;
+                                                       processGlobal2I.pbAddressBitsAll[     offByte ] |= mask ;
 
-            if( offByte >= sizeof processGlobal2I.pbMemoryBitsAll ) { BLAMMOiD( 0x24242424 ) ; }
+            if( offByte >= sizeof processGlobal2I.pbAddressBitsAll ) { BLAMMOiD( 0x24242424 ) ; }
 
             byteT  mask     = (byteT)( 1 << offBit ) ;
             countT offBit   = offGrain % SB ;
@@ -61,7 +61,7 @@
     VirtualQuery( (voidT*)pbP , &info1 , sizeof info1 ) ;
     MEMORY_BASIC_INFORMATION info1 ;
 {
-/*1*/voidT thirdC::setMemoryUsageBitsIF( const byteT* pbP , countT idTypeP )/*1*/
+/*1*/voidT thirdC::setAddressUsageBitsIF( const byteT* pbP , countT idTypeP )/*1*/
 
 
 /**/

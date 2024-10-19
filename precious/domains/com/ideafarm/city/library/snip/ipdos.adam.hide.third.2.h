@@ -17232,7 +17232,10 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.17*.* : 1snip.1700023c.registerModuleEipGF END
 
-/*1*/voidT _export setAddressUsageBitsModuleEipRangeGF( voidT ) ;/*1*/
+/*1*/voidT _export setAddressUsageBitsModuleEipRangesGF( voidT ) ;/*1*/
+
+/*1*/voidT _export setAddressUsageBitsRangeGF( countT idTypeP , const byteT* pbWothP , const byteT* pbLathP ) ;/*1*/
+
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tellInfoAppInOutFrameS : 1snip.15000188.tellinfoappinoutframes BEGIN
 
@@ -32576,8 +32579,8 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3500119e.thirdC.exeFromFileExtensionIF!||
  count04T idIdeaFarmKeysF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011b4.thirdc.idIdeaFarmKeysF!||
- static voidT setMemoryUsageBitsIF( const byteT* pbP , countT idTypeP ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011c9.thirdC.setMemoryUsageBitsIF!||
+ static voidT setAddressUsageBitsIF( const byteT* pbP , countT idTypeP ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011c9.thirdC.setAddressUsageBitsIF!||
 
 /**/
  FRIENDS_thirdC                                                                                                                                                                                                                                      \
@@ -43305,14 +43308,14 @@ base class to make a derived class of objects easily contained by a stackC objec
     countT                          idLineBlammoCt  ;
     countT                          idiFileBlammoCt ;
     countT                          idBlammo        ;
-    byteT                           pbMemoryBitsAll[     ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbMemoryBitsCode[    ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbMemoryBitsData[    ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbMemoryBitsStack[   ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbMemoryBitsPrivate[ ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbMemoryBitsShared[  ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbMemoryBitsSex[     ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbMemoryBitsFile[    ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbAddressBitsAll[     ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbAddressBitsCode[    ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbAddressBitsData[    ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbAddressBitsStack[   ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbAddressBitsPrivate[ ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbAddressBitsShared[  ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbAddressBitsSex[     ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbAddressBitsFile[    ( TOCK >> 1 ) / SB ] ;
     byteT                           pbUtility[ TUCK * 5 ] ;                            // THIS MAY BE USED TEMPORARILY FOR ANY PURPOSE BUT ONLY ON MAIN THREAD (TO PREVENT COLLISIONS BY MULTIPLE THREADS) ; INITIALLY, IT EXISTS TO FACILITATE TEMPORARY CONSTRUCTION OF tlsAllocStackExp_8_C INSTANCES
     countT                          cAddressRangeCodeBase ;
     addressRangeS                   pAddressRangeCodeBase[ CmODULESbASE ] ;

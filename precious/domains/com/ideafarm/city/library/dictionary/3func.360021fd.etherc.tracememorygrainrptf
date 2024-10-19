@@ -6,7 +6,6 @@
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
-
 }
     #endif
 
@@ -22,15 +21,29 @@
                 {
                 if( !( ( offGrain + 1 ) % TUCK ) )
 
-                strFuseF( tin0P , psttLine , bUsed ? tAt : tDot ) ;
-
-                  boolT bUsed = processGlobal2I.pbMemoryBitsAll[ offByte ] & mask ;
-                //boolT bUsed = processGlobal2I.pbMemoryBitsCode[ offByte ] & mask ;
-
                 }
-                    countT foo = 2 ;
+                    else                              { BLAMMOiD( 0x66663333 ) ; }
+                    else if( bUsedPrivate           ) strFuseF( tin0P , psttLine , tPrivate  ) ;
+                    else if( bUsedShared            ) strFuseF( tin0P , psttLine , tShared   ) ;
+                    else if( bUsedData              ) strFuseF( tin0P , psttLine , tData     ) ;
+                    else if( bUsedCode              ) strFuseF( tin0P , psttLine , tCode     ) ;
+                    else if( bUsedCode && bUsedData ) strFuseF( tin0P , psttLine , tCodePlus ) ;
+                    else if( bUsedStack             ) strFuseF( tin0P , psttLine , tStack    ) ;
+                    else if( bUsedSex               ) strFuseF( tin0P , psttLine , tSex      ) ;
+                         if( bUsedFile              ) strFuseF( tin0P , psttLine , tFile     ) ;
+
+                    boolT bUsedPrivate = processGlobal2I.pbAddressBitsPrivate[ offByte ] & mask ;
+                    boolT bUsedShared  = processGlobal2I.pbAddressBitsShared[  offByte ] & mask ;
+                    boolT bUsedData    = processGlobal2I.pbAddressBitsData[    offByte ] & mask ;
+                    boolT bUsedCode    = processGlobal2I.pbAddressBitsCode[    offByte ] & mask ;
+                    boolT bUsedStack   = processGlobal2I.pbAddressBitsStack[   offByte ] & mask ;
+                    boolT bUsedSex     = processGlobal2I.pbAddressBitsSex[     offByte ] & mask ;
+                    boolT bUsedFile    = processGlobal2I.pbAddressBitsFile[    offByte ] & mask ;
                 {
-                if( offByte > 8 )
+                else
+                if( !bUsedAll ) strFuseF( tin0P , psttLine , tDot ) ;
+
+                boolT bUsedAll         = processGlobal2I.pbAddressBitsAll[     offByte ] & mask ;
 
                 byteT  mask     = (byteT)( 1 << offBit ) ;
                 countT offBit   = offGrain % SB ;
@@ -40,10 +53,18 @@
 
             strMakeF( tin0P , LF , psttLine , TF3(at,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T("_ ") , TUCK + 2 ) ; ___( psttLine ) ;
             ZE( strokeS* , psttLine ) ;
-            TN( tCRLF , "\r\n" ) ;
-            TN( tAt   , "@"    ) ;
-            TN( tDot  , "."    ) ;
             ZE( countT , at    ) ;
+
+            TN( tFile     , "f" ) ;
+            TN( tSex      , "s" ) ;
+            TN( tShared   , "+" ) ;
+            TN( tPrivate  , "-" ) ;
+            TN( tStack    , "t" ) ;
+            TN( tData     , "d" ) ;
+            TN( tCodePlus , "C" ) ;
+            TN( tCode     , "c" ) ;
+
+            TN( tDot     , "." ) ;
 
             traceF( tin0P , T("          ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------") , flTRACE_NOpREFIX ) ;
             traceF( tin0P , T("          123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0") , flTRACE_NOpREFIX ) ;
