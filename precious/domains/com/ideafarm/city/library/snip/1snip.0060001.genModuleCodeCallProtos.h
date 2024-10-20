@@ -1,5 +1,3 @@
-extern "C" voidT moduleCodeHeader_21000_GF( voidT ) ;
-extern "C" voidT moduleCodeTrailer_21000_GF( voidT ) ;
 extern "C" voidT moduleCodeHeader_32000_GF( voidT ) ;
 extern "C" voidT moduleCodeTrailer_32000_GF( voidT ) ;
 extern "C" voidT moduleCodeHeader_33000_GF( voidT ) ;

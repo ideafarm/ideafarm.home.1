@@ -43215,7 +43215,6 @@ base class to make a derived class of objects easily contained by a stackC objec
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.addressRangeS : 1snip.150001ce.addressRangeS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.processGlobal2S : 1snip.150000c2.processglobal2s BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -43315,14 +43314,14 @@ base class to make a derived class of objects easily contained by a stackC objec
     countT                          idLineBlammoCt  ;
     countT                          idiFileBlammoCt ;
     countT                          idBlammo        ;
-    byteT                           pbAddressBitsAll[     ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsCode[    ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsData[    ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsStack[   ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsPrivate[ ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsShared[  ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsSex[     ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsFile[    ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbAddressBitsAll[     ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsCode[    ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsData[    ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsStack[   ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsPrivate[ ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsShared[  ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsSex[     ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsFile[    ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
     byteT                           pbUtility[ TUCK * 5 ] ;                            // THIS MAY BE USED TEMPORARILY FOR ANY PURPOSE BUT ONLY ON MAIN THREAD (TO PREVENT COLLISIONS BY MULTIPLE THREADS) ; INITIALLY, IT EXISTS TO FACILITATE TEMPORARY CONSTRUCTION OF tlsAllocStackExp_8_C INSTANCES
     countT                          cAddressRangeCodeBase ;
     addressRangeS                   pAddressRangeCodeBase[ CmODULESbASE ] ;

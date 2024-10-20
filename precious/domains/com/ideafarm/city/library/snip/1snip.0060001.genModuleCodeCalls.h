@@ -1,5 +1,3 @@
-moduleCodeHeader_21000_GF() ;
-moduleCodeTrailer_21000_GF() ;
 moduleCodeHeader_32000_GF() ;
 moduleCodeTrailer_32000_GF() ;
 moduleCodeHeader_33000_GF() ;

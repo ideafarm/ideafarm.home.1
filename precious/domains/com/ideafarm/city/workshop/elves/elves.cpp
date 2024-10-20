@@ -2647,7 +2647,7 @@ void elf_obey_C::liveF( void )
                 sayF( cToDo == 1 ? " elf will get to work right away!" : " elves will get to work right away!" , flSAY_MIDDLE ) ;
                 sayF( "!paragraph" , flSAY_END ) ;
 
-                int bPause = cGroupsPushedStale > 0x100 ;    // IF FEW PUSHED THEN I WILL PRESUME THAT THE PRECOMPILED HEADERS HAVE ALREADY BEEN BUILT
+                int bPause = cGroupsPushedStale > 0x10 ;    // IF FEW PUSHED THEN I WILL PRESUME THAT THE PRECOMPILED HEADERS HAVE ALREADY BEEN BUILT
         
                 while( cToDo -- ) new elf_obey_C( bPause ? "!worker_3compile_pause" : "!worker_3compile_nopause" , idMe ) ;
             }
@@ -3394,7 +3394,7 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.topC"                                        ,
                     "1snip.15*.cleanC"                                      ,
                     "1snip.15*.tinArgS"                                     ,
-                    "1snip.15*.monitorS"                                    ,
+                    "1snip.15*.glassS"                                      ,
                     "1snip.15*.whereS"                                      ,
                     "1snip.15*.grabNotesS"                                  ,
                     "1snip.15*.ag1_grabNotesS_C"                            ,
@@ -3713,7 +3713,7 @@ int elf_obey_C::pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILE
         //sayF( "\r\nscanning " , flSAY_START   ) ;
         //sayF( postGroupP , flSAY_END ) ;
 
-        if( strcmp( postGroupP , "30000" ) && strcmp( postGroupP , "31000" ) )
+        if( strcmp( postGroupP , "21000" ) && strcmp( postGroupP , "30000" ) && strcmp( postGroupP , "31000" ) )
         {
             strcat( postFileImage1P , "moduleCodeHeader_"  ) ; strcat( postFileImage1P , postGroupP ) ; strcat( postFileImage1P , "_GF() ;\r\n" ) ;
             strcat( postFileImage1P , "moduleCodeTrailer_" ) ; strcat( postFileImage1P , postGroupP ) ; strcat( postFileImage1P , "_GF() ;\r\n" ) ;
@@ -3818,8 +3818,12 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
         if( !setIfZeroAM( bPrecompiling , 1 ) ) bPrecompile = 1 ;
         else if( bPauseP )
         {
-            int cDo = 0x40 ;
-            while( cDo -- && ( !bHeaderMadeHideThird || !bHeaderMadeShowThird ) ) { Sleep( 0x100 ) ; }
+            int cDo = - 1 ;
+            while( cDo -- && ( !bHeaderMadeHideThird || !bHeaderMadeShowThird ) )
+            {
+                sayF( "pausing because another elf is making the precompiled headers" ) ;
+                Sleep( 0x100 ) ;
+            }
         }
 
         // 123456789abcdef
@@ -3829,7 +3833,8 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 
         int bTryCatch = 0 ; //C++ EXCEPTION HANDLING IS NOT USED IN IPDOS BECAUSE C++ EXCEPTION HANDLING SUCKS ; ITS FUNCTIONALITY IS SIMILAR TO THE IMPOTENCE / BACKOFF MODEL USED BY IPDOS
 
-        int bCNotCpp = !strcmp( postGroupP , "30000" ) ;
+        int bCNotCpp  =             !strcmp( postGroupP , "30000" ) ;
+        int bHeadTail = !bCNotCpp && strcmp( postGroupP , "21000" ) ;
 
         int bThird =
 
@@ -3911,20 +3916,20 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 
         if( bOk )
         {
-                                                { char postCmd[ 0x200 ] = "echo #undef IPDOSmODULE >> \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; system( postCmd ) ; }
+                                                    { char postCmd[ 0x200 ] = "echo #undef IPDOSmODULE >> \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; system( postCmd ) ; }
 
-            if(            !bCNotCpp          ) { FILEpILEpREFIX "1snip.01000003.MODULEcODEtRAILER"                        )                                ; system( postCmd ) ; }
-                                                { FILEpILEpREFIX                                                           ) ; strcat( postCmd , postLike ) ; system( postCmd ) ; }
-            if(            !bCNotCpp          ) { FILEpILEpREFIX "1snip.01000004.MODULEcODEhEADER"                         )                                ; system( postCmd ) ; }
+            if(                         bHeadTail ) { FILEpILEpREFIX "1snip.01000003.MODULEcODEtRAILER"                        )                                ; system( postCmd ) ; }
+                                                    { FILEpILEpREFIX                                                           ) ; strcat( postCmd , postLike ) ; system( postCmd ) ; }
+            if(                         bHeadTail ) { FILEpILEpREFIX "1snip.01000004.MODULEcODEhEADER"                         )                                ; system( postCmd ) ; }
 
-                                                { char postCmd[ 0x200 ] = "echo #define IPDOSmODULE " ; strcat( postCmd , postGroupP ) ; strcat( postCmd , " >> \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ) ; strcat( postCmd , postRaw ) ; system( postCmd ) ; }
+                                                    { char postCmd[ 0x200 ] = "echo #define IPDOSmODULE " ; strcat( postCmd , postGroupP ) ; strcat( postCmd , " >> \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ) ; strcat( postCmd , postRaw ) ; system( postCmd ) ; }
 
-            if(  bThird                       ) { FILEpILEpREFIX "1snip.01000002.cnotcppheader"                            )                                ; system( postCmd ) ; }
-            if(  bThird                       ) { FILEpILEpREFIX "1snip.112005e6.ifcIDtHREADpRIORITYbASEoSwINDOWS"         )                                ; system( postCmd ) ; }
-            if(  bThird && !bCNotCpp          ) { FILEpILEpREFIX "1snip.1a000003.includeGenMake.base.show.third"           )                                ; system( postCmd ) ; }
-            if( !bThird && !bCNotCpp          ) { FILEpILEpREFIX "1snip.1a000002.includeGenMake.base.hide.third"           )                                ; system( postCmd ) ; }
-            if(  bThird && !bCNotCpp          ) { FILEpILEpREFIX "1snip.1a000006.ifcENABLEtHIRDpARTIES"                    )                                ; system( postCmd ) ; }
-          //if( !strcmp( postLike , "21000" ) ) { FILEpILEpREFIX "1snip.1a000007.ifcENABLEtHIRDpARTIESmULTIPLEmONITORfAKE" )                                ; system( postCmd ) ; }
+            if(  bThird                           ) { FILEpILEpREFIX "1snip.01000002.cnotcppheader"                            )                                ; system( postCmd ) ; }
+            if(  bThird                           ) { FILEpILEpREFIX "1snip.112005e6.ifcIDtHREADpRIORITYbASEoSwINDOWS"         )                                ; system( postCmd ) ; }
+            if(  bThird && !bCNotCpp              ) { FILEpILEpREFIX "1snip.1a000003.includeGenMake.base.show.third"           )                                ; system( postCmd ) ; }
+            if( !bThird && !bCNotCpp              ) { FILEpILEpREFIX "1snip.1a000002.includeGenMake.base.hide.third"           )                                ; system( postCmd ) ; }
+            if(  bThird && !bCNotCpp              ) { FILEpILEpREFIX "1snip.1a000006.ifcENABLEtHIRDpARTIES"                    )                                ; system( postCmd ) ; }
+          //if( !strcmp( postLike , "21000" )     ) { FILEpILEpREFIX "1snip.1a000007.ifcENABLEtHIRDpARTIESmULTIPLEmONITORfAKE" )                                ; system( postCmd ) ; }
         }
 
         #undef FILEpILEpREFIX
@@ -3985,7 +3990,7 @@ void elf_obey_C::translateF( const char* postGroupP , int bPauseP )
     sayF( postSay , flSAY_DADiSgROUP | flSAY_END ) ;
 
     if( !strcmp( postGroupP , "31000" ) ) assembleF( postGroupP ) ;
-    else                                  compileF( postGroupP , bPauseP ) ;
+    else                                  compileF(  postGroupP , bPauseP ) ;
 }
 
 void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* postSuffixP )

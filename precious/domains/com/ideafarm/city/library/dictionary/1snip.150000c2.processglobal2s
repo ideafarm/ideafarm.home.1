@@ -47,14 +47,14 @@
     addressRangeS                   pAddressRangeCodeBase[ CmODULESbASE ] ;
     countT                          cAddressRangeCodeBase ;
     byteT                           pbUtility[ TUCK * 5 ] ;                            // THIS MAY BE USED TEMPORARILY FOR ANY PURPOSE BUT ONLY ON MAIN THREAD (TO PREVENT COLLISIONS BY MULTIPLE THREADS) ; INITIALLY, IT EXISTS TO FACILITATE TEMPORARY CONSTRUCTION OF tlsAllocStackExp_8_C INSTANCES
-    byteT                           pbAddressBitsFile[    ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsSex[     ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsShared[  ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsPrivate[ ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsStack[   ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsData[    ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsCode[    ( TOCK >> 1 ) / SB ] ;
-    byteT                           pbAddressBitsAll[     ( TOCK >> 1 ) / SB ] ;
+    byteT                           pbAddressBitsFile[    ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsSex[     ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsShared[  ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsPrivate[ ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsStack[   ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsData[    ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsCode[    ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
+    byteT                           pbAddressBitsAll[     ( ( TOCK >> 1 ) / SB ) << EXPmAGNIFYgRAIN ] ;
     countT                          idBlammo        ;
     countT                          idiFileBlammoCt ;
     countT                          idLineBlammoCt  ;

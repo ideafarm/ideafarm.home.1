@@ -9,10 +9,10 @@
 }
     }
         }
-            pbc += cbGrain ;
+            pbc += cbPiece ;
 
             }
-                default                            : { BLAMMOiD( 0x75757575 )                                 ; break ; }
+                default                            : { BLAMMOiD( 0x75757575 )                                  ; break ; }
                 case ifcIDtYPEaDDRESSuSAGE_FILE    : { processGlobal2I.pbAddressBitsFile[    offByte ] |= mask ; break ; }
                 case ifcIDtYPEaDDRESSuSAGE_SEX     : { processGlobal2I.pbAddressBitsSex[     offByte ] |= mask ; break ; }
                 case ifcIDtYPEaDDRESSuSAGE_SHARED  : { processGlobal2I.pbAddressBitsShared[  offByte ] |= mask ; break ; }
@@ -27,14 +27,20 @@
             if( offByte >= sizeof processGlobal2I.pbAddressBitsAll ) { BLAMMOiD( 0x24242424 ) ; }
 
             byteT  mask     = (byteT)( 1 << offBit ) ;
-            countT offBit   = offGrain % SB ;
-            countT offByte  = offGrain / SB ;
-            countT offGrain = (countT)pbc / cbGrain ;
+            countT offBit   = offPiece % SB ;
+            countT offByte  = offPiece / SB ;
+            countT offPiece = (countT)pbc / cbPiece ;
         {
         while( pbc < pbEnd )
         const byteT* pbc = pbStart ;
 
-        countT cbGrain = thirdC::os_cbAllocationGrain_IF() ;
+        }
+            }
+                countT foo = 2 ;
+            {
+            if( idTypeP == ifcIDtYPEaDDRESSuSAGE_DATA )
+        {
+        if( 0x00700000 <= (countT)pbP && (countT)pbP < 0x01900000 )
     {
     if( bOk )
 
@@ -45,7 +51,7 @@
             const byteT* pbrEnd   = (const byteT*)infor.BaseAddress + infor.RegionSize ;
             const byteT* pbrStart = (const byteT*)infor.BaseAddress                    ;
 
-            if( pbStart != (const byteT*)infor.AllocationBase ) { BLAMMO ; }
+            if( idTypeP == ifcIDtYPEaDDRESSuSAGE_STACK && pbStart != (const byteT*)infor.AllocationBase ) { BLAMMO ; }
 
             VirtualQuery( (voidT*)pbc , &infor , sizeof infor ) ;
             MEMORY_BASIC_INFORMATION infor ;
@@ -55,11 +61,21 @@
     {
     boolT bOk = 1 ;
 
-    const byteT* pbEnd   = (const byteT*)info1.BaseAddress    + info1.RegionSize ;              //A:ASSUME: pbP LIES WITHIN THE LATH RANGE OF THE ALLOCATION (IF NOT TRUE, THEN I DO NOT SET BITS FOR THE GRAINS THAT CONTAIN HIGHER RANGES)
-    const byteT* pbStart = (const byteT*)info1.AllocationBase                    ;
+    ;
+        : pbStart + cbGrain                                                                     //A:ASSUME: FOR ANY OTHER KIND OF ADDRESS USAGE, ASSUME ONLY THAT THE SAME USAGE APPLIES FOR THE ENTIRE STARTING ALLOCATION GRAIN
+        ? (const byteT*)info1.BaseAddress    + info1.RegionSize                                 //A:ASSUME: FOR A THREAD STACK, pbP LIES WITHIN THE LATH RANGE OF THE ALLOCATION (IF NOT TRUE, THEN I DO NOT SET BITS FOR THE GRAINS THAT CONTAIN HIGHER RANGES)
+    const byteT* pbEnd = idTypeP == ifcIDtYPEaDDRESSuSAGE_STACK
+
+    ;                                                                                           //FOR EXAMPLE, THE LOADER WILL CREATE AN ALLOCATION FOR CODE THAT ALSO CONTAINS GLOBAL STATIC DATA
+        : (const byteT*)info1.BaseAddress                                                       //FOR ANY OTHER KIND OF USAGE, MAKE NO ASSUMPTIONS ABOUT WHAT IS BETWEEN AllocationBase AND BaseAddress
+        ? (const byteT*)info1.AllocationBase                                                    //A:ASSUME: FOR A THREAD STACK, THE ENTIRE ALLOCATION IS USED AS THE STACK, INCLUDING LOW ADDRESSES RESERVED AND WO OR MORE GUARD PAGES
+    const byteT* pbStart = idTypeP == ifcIDtYPEaDDRESSuSAGE_STACK
 
     VirtualQuery( (voidT*)pbP , &info1 , sizeof info1 ) ;
     MEMORY_BASIC_INFORMATION info1 ;
+
+    countT cbPiece = cbGrain >> EXPmAGNIFYgRAIN ;
+    countT cbGrain = thirdC::os_cbAllocationGrain_IF() ;
 {
 /*1*/voidT thirdC::setAddressUsageBitsIF( const byteT* pbP , countT idTypeP )/*1*/
 
