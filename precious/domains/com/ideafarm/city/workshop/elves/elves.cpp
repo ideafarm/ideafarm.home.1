@@ -508,7 +508,7 @@ class elf_obey_C : public elfC
     static int      cInstances ;
     static int      cCompiled ;
 
-    static lifoC*   pRootPostGroup ;
+    static fifoC*   pRootPostGroup ;
     char*           postCmd ;
 
     void            assembleF( const char* postGroupP ) ;
@@ -823,7 +823,7 @@ tokensC elf_eat_C::tokensUser( ppostTokensUser , sizeof ppostTokensUser / sizeof
 
 int    elf_obey_C::cInstances ;
 int    elf_obey_C::cCompiled ;
-lifoC* elf_obey_C::pRootPostGroup ;
+fifoC* elf_obey_C::pRootPostGroup ;
 
 
 // ********************************************************************************************************************************************************************
@@ -3657,7 +3657,7 @@ void elf_obey_C::liveF( void )
         }
         else if( !strcmp( postCmd , "!worker_3compile_pause" ) || !strcmp( postCmd , "!worker_3compile_nopause" ) )
         {
-            while( !etherC::smellF() && lifoPostC::countIF( pRootPostGroup ) )
+            while( !etherC::smellF() && fifoPostC::countIF( pRootPostGroup ) )
             {
                 char* postGroup = 0 ;
                 {
@@ -3667,7 +3667,7 @@ void elf_obey_C::liveF( void )
         
                     if( pRootPostGroup )
                     {
-                        lifoPostC* pPeek = (lifoPostC*)pRootPostGroup ;
+                        fifoPostC* pPeek = (fifoPostC*)pRootPostGroup ;
                         int costa = 1 + strlen( *pPeek ) ;
                         postGroup = newF( costa ) ;
                         strcpy( postGroup , *pPeek ) ;
@@ -3744,7 +3744,7 @@ int elf_obey_C::pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILE
         if( bStale )
         {
             batLifoPostGroup.grabF() ;
-            new lifoPostC( pRootPostGroup , postGroupP ) ;
+            new fifoPostC( pRootPostGroup , postGroupP ) ;
             batLifoPostGroup.ungrabF() ;
         }
     }
@@ -3821,7 +3821,7 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
             int cDo = - 1 ;
             while( cDo -- && ( !bHeaderMadeHideThird || !bHeaderMadeShowThird ) )
             {
-                sayF( "pausing because another elf is making the precompiled headers" ) ;
+                //sayF( "pausing because another elf is making the precompiled headers" ) ;
                 Sleep( 0x100 ) ;
             }
         }
