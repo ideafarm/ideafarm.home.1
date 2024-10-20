@@ -6176,6 +6176,36 @@ examples
 //
  
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200618.MODULEcODEhEADERfUNCTION END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200619.EXPmAGNIFYgRAIN BEGIN
+
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+/*
+*/
+/**/
+
+/*1*//*EXPmAGNIFYgRAIN*//*1*/
+
+// 0: REPORT ADDRESS USAGE BY ALLOCATION GRAIN
+// 4: REPORT ADDRESS USAGE BY PAGE
+
+  #define EXPmAGNIFYgRAIN 0
+//#define EXPmAGNIFYgRAIN 4
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200619.EXPmAGNIFYgRAIN END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.thirdParties : 1snip.15000014.thirdparties BEGIN
 
 
@@ -29172,7 +29202,7 @@ it is used by classes such as batonC and signC to store functionality added by t
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.whereS : 1snip.15000136.wheres END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.monitorS : 1snip.15000113.monitors BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.glassS : 1snip.15000113.glassS BEGIN
 
 
 //
@@ -29210,7 +29240,7 @@ it is used by classes such as batonC and signC to store functionality added by t
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.monitorS : 1snip.15000113.monitors END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.glassS : 1snip.15000113.glassS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.tinArgS : 1snip.1500011e.tinargs BEGIN
 
 
@@ -43214,6 +43244,7 @@ base class to make a derived class of objects easily contained by a stackC objec
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.addressRangeS : 1snip.150001ce.addressRangeS END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.processGlobal2S : 1snip.150000c2.processglobal2s BEGIN
+
 
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
