@@ -6148,8 +6148,8 @@
                 flagsT flagsReport  = flETHERsOILrEPORT_null ;
                 flagsT flagsPutFile = flBRANCHspUTfILEf_null ;
                 flagsT flagsLoad    = flBRANCHslOADf_null ;
-                soulC soulBody( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.body" ) ; // IF LINT THEN RETAINS WHITE SPACE AND MIGHT HAVE ERROR FLAG MARKS ; IF REPORT THEN OMITS WHITE SPACE OTHER THAN INDENT BLANKS
-                soulC soulValue( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.value" ) ; // USED TO ELIMINATE 02 BIT ADDRESS SPACE CAPACITY CONSTRAINT FOR HUGE VALUE STRINGS
+                soulC soulBody( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.body" , CBjOTbOOKdEFAULT << 1 ) ; // IF LINT THEN RETAINS WHITE SPACE AND MIGHT HAVE ERROR FLAG MARKS ; IF REPORT THEN OMITS WHITE SPACE OTHER THAN INDENT BLANKS
+                soulC soulValue( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.value" , CBjOTbOOKdEFAULT << 1 ) ; // USED TO ELIMINATE 02 BIT ADDRESS SPACE CAPACITY CONSTRAINT FOR HUGE VALUE STRINGS
                 stackC stFileType(   tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE  , ifcSTACKtYPE_PTR_strokeS ) ; // FORMAT EXAMPLE: mp3
                 stackC stTimeMinMax( tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY | flSTACKc_BLOB , 2 * sizeof( strokeS* ) ) ; // FORMAT EXAMPLE: 20130711@1401 20130711@1401
                 countT idKtrMode = ifcIDmODEpUTfILE_OTHER ;
@@ -6268,7 +6268,7 @@
             //traceF( tin0P , T("etherSoilF / setting up to handle ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" words") ) ;
 
             countT cWords = strWordsF( tin0P , soulWords , soulInP , sttq , tMarks , F(flagsP) & flETHERsOILf_CONSUMEiNPUT ? flSTRwORDS_DELIMITERS|flSTRwORDS_SPLITaTmARK|flSTRwORDS_CONSUMEiNPUT : flSTRwORDS_DELIMITERS|flSTRwORDS_SPLITaTmARK ) ;
-            soulC soulWords( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.words" ) ;
+            soulC soulWords( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.words" , CBjOTbOOKdEFAULT << 1 ) ;              // 20241020@1700: CBjOTbOOKdEFAULT << 0 OVERFLOWED % 01 PERTUCK WITH web.root.ideafarm.soil
 
             //traceF( tin0P , T("etherSoilF / loading soulWords") ) ;
 
