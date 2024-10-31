@@ -348,7 +348,7 @@
                 {
                 if( cStale ) while( sStaleFileNameCbUsed )
 
-                etRock.traceF( tin0P , T("cloudC: 7: *********************** sorting ")+TF3(cStale,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T(" file names listed in sStaleFileNameCbUsed by file size ***********************") ) ;
+                etRock.traceF( tin0P , T("cloudC: 7: ===================================================================================================================================================================== sorting ")+TF3(cStale,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+T(" file names listed in sStaleFileNameCbUsed by file size =======================") ) ;
 
                 const countT cStale = (countT)sStaleFileNameCbUsed >> 1 ;
 
@@ -389,7 +389,7 @@
                     &sStaleFileNameCbUsed_10 ,
                     &sStaleFileNameCbUsed_00 ,
                 {
-                soulC* ppsFreshen[] =
+                soulC= ppsFreshen[] =
 
                 soulC sStaleFileNameCbUsed_02( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.file.names.to.freshen.02" ) ;
                 soulC sStaleFileNameCbUsed_f1( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.file.names.to.freshen.f1" ) ;
@@ -425,8 +425,8 @@
                 soulC sStaleFileNameCbUsed_10( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.file.names.to.freshen.10" ) ;
                 soulC sStaleFileNameCbUsed_00( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.file.names.to.freshen.00" ) ;
 
-                // FILES OF SIZE <= 2**1 WILL BE REGISTERED INTO THE 10 ELEMENT, ETC.
-                // FILES OF SIZE <= 2**0 WILL BE REGISTERED INTO THE 00 ELEMENT
+                // FILES OF SIZE <= 2==1 WILL BE REGISTERED INTO THE 10 ELEMENT, ETC.
+                // FILES OF SIZE <= 2==0 WILL BE REGISTERED INTO THE 00 ELEMENT
                 // THIS COVERS THE RANGE OF POSSIBLE FILE SIZES, SINCE Rackspace.com FILES ARE LIMITED TO 4 GB
                 // EACH IS ASSOCIATED WITH A POWER OF 2, FROM 0 TO f1
                 // THESE WILL BE USED TO OO POWER SORT THE FILES BY SIZE
@@ -467,10 +467,10 @@
         countT pcArg[] = { 0 , (countT)this , (countT)postBufferM , (countT)postBufferC , costBuffers , (countT)&kvFileMetaByNameRemote , (countT)&kvFileMetaByNameLocal , (countT)pCloudUpdateCBFP , (countT)pcArgUpdateP , (countT)pCloudNixCBFP , (countT)pcArgNixP , (countT)psttCloudContainerP , (countT)psttLocalContainerMapped , idDoIfDiffer , (countT)&sStaleFileNameCbUsed , (countT)&sDoomedFileNames } ;
                         // 0   1              2                     3                     4             5                                 6                                7                          8                      9                       a                   b                             c                             d              e                              f
 
-        // pcArg[ 0 ] IS RESERVED FOR USE BY keyValuePairsC::walkF, WHICH WILL PUT A jotC* INTO IT SO THAT MY WALK CBF'S CAN ACCESS THE jotC THAT CONTAINS THE METADATA
+        // pcArg[ 0 ] IS RESERVED FOR USE BY keyValuePairsC::walkF, WHICH WILL PUT A jotC= INTO IT SO THAT MY WALK CBF'S CAN ACCESS THE jotC THAT CONTAINS THE METADATA
 
-        keyValuePairsC& kvFileMetaByNameLocal = *(keyValuePairsC*)pb_kvFileMetaByNameLocal ;
-        keyValuePairsC& kvFileMetaByNameRemote = *(keyValuePairsC*)pb_kvFileMetaByNameRemote ;
+        keyValuePairsC& kvFileMetaByNameLocal = =(keyValuePairsC=)pb_kvFileMetaByNameLocal ;
+        keyValuePairsC& kvFileMetaByNameRemote = =(keyValuePairsC=)pb_kvFileMetaByNameRemote ;
 
         soulC sStaleFileNameCbUsed( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.file.names.to.freshen" ) ;
         stackC stKidsDone( tin0P , ether , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWzE , ifcSTACKtYPE_countT ) ;
@@ -482,8 +482,8 @@
         ether.newF( tin0P , LF , postBufferC , costBuffers ) ; ___( postBufferC ) ;
         ether.newF( tin0P , LF , postBufferM , costBuffers ) ; ___( postBufferM ) ;
         const countT   costBuffers = TOCK ;                          //TOCK IS USED JUST TO ELIMINATE SUPPORT ISSUES FOR FOOLS WHO USE HUGELY LONG FILE NAMES
-        ZE( osTextT* , postBufferC ) ; // 'C': "copy"
-        ZE( osTextT* , postBufferM ) ; // 'M': "master"
+        ZE( osTextT= , postBufferC ) ; // 'C': "copy"
+        ZE( osTextT= , postBufferM ) ; // 'M': "master"
 
         }
             }
@@ -513,7 +513,7 @@
             //    etRock.traceF( tin0P , T("cloudC: fixing bad file names, if any, in ")+T(psttLocalContainerMapped) ) ;
             //{
             //else
-            //20170413@1404: THIS IS OBSOLETE NOW THAT FILESETS ARE USED FOR ARCHIVAL ("!ideafarm.8.2.00000000.00000001.*")
+            //20170413@1404: THIS IS OBSOLETE NOW THAT FILESETS ARE USED FOR ARCHIVAL ("!ideafarm.8.2.00000000.00000001.=")
 
             }
                 etRock.traceF( tin0P , T("cloudC: renamed  all files to hash in ")+T(psttLocalContainerMapped) ) ;
@@ -523,7 +523,7 @@
             else if( F(flagsCt) & flCLOUDc_RENAMEtOhASH )
             if( bPull ) etRock.traceF( tin0P , T("cloudC: warning: i am not checking for bad file names since i am pulling (into ")+T(psttLocalContainerMapped)+T(" ) ; when pulling, i assume that the names in the cloud are as desired, even if they are invalid for a subsequent push") ) ;
 
-            keyValuePairsC& kvFileMetaByNameLocal = *(keyValuePairsC*)pb_kvFileMetaByNameLocal ;
+            keyValuePairsC& kvFileMetaByNameLocal = =(keyValuePairsC=)pb_kvFileMetaByNameLocal ;
             flagsState |= flCLOUDsTATE_CTkVlOCAL ;
             new( 0 , tin0P , pb_kvFileMetaByNameLocal , sizeof pb_kvFileMetaByNameLocal ) keyValuePairsC( tin0P , T("kv.cloud.file.meta.by.name.")+T(psttNameP)+T(".local") , flKEYvALUEpAIRSc_WRITE | flKEYvALUEpAIRSc_PURGEoNcT | flKEYvALUEpAIRSc_PURGEoNdT , 0 , EXPnODESpERnAPKIN ) ;
         {
@@ -570,7 +570,7 @@
             {
             while( !bQuit )
 
-            keyValuePairsC& kvFileMetaByNameRemote = *(keyValuePairsC*)pb_kvFileMetaByNameRemote ;
+            keyValuePairsC& kvFileMetaByNameRemote = =(keyValuePairsC=)pb_kvFileMetaByNameRemote ;
             flagsState |= flCLOUDsTATE_CTkVrEMOTE ;
             new( 0 , tin0P , pb_kvFileMetaByNameRemote , sizeof pb_kvFileMetaByNameRemote ) keyValuePairsC( tin0P , T("kv.cloud.file.meta.by.name.")+T(psttNameP)+T(".cloud") , flKEYvALUEpAIRSc_WRITE | flKEYvALUEpAIRSc_PURGEoNcT | flKEYvALUEpAIRSc_PURGEoNdT , 0 , EXPnODESpERnAPKIN ) ;
         {
@@ -590,7 +590,7 @@
             etRock.traceF( tin0P , T("cloudC: b: open remote FAILED") ) ;
         {
         else if( !bRetry )
-        if( !POOP ) /*etRock.traceF( tin0P , T("cloudC: b: open remote aok") )*/ ;
+        if( !POOP ) /=etRock.traceF( tin0P , T("cloudC: b: open remote aok") )=/ ;
 
         openF( tin0P , idCloud , tBuilding , tUser , tPassword ) ;
     {
@@ -601,7 +601,7 @@
     if( psttPourLocalAfterContainerP && psttPourLocalAfterContainerP->idAdam ) etRock.traceF( tin0P , T("cloudC: afterward, will pour local container    ")+T(psttLocalContainerP)+T("    to:    ")+T(psttPourLocalAfterContainerP) ) ;
 
     if( psttLocalContainerP ) { ether.diskMapFileNameF( tin0P , psttLocalContainerMapped , psttLocalContainerP ) ; ___( psttLocalContainerMapped ) ; }
-    ZE( strokeS* , psttLocalContainerMapped ) ;
+    ZE( strokeS= , psttLocalContainerMapped ) ;
 
     const boolT  bRetry = &ether == ((tin1S&)tin0P).pEtScratch ;
     const boolT& bQuit = etPrime ;
@@ -625,7 +625,7 @@
     {
     IFbEcAREFUL
 
-    const countT* pIdSubType = &(const countT&)poop ; //U::TO FIND A BUG
+    const countT= pIdSubType = &(const countT&)poop ; //U::TO FIND A BUG
 
     SCOOP
 {
@@ -648,7 +648,7 @@ tBuilding(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , psttBuildi
 idCloud( idCloudP ) ,
 poop( (poopC&)(const poopC&)ether ) ,
 ether( tin0P , TAG( TAGiDnULL ) , flTHIRDmODE_IMPOTENCEeXPECTED ) ,
-/*1*/cloudC::cloudC( tin0S& tin0P , const strokeS* const psttNameP , const countT idDoIfDifferP , const flagsT flagsP , const countT idCloudP , const strokeS* const psttBuildingP , const strokeS* const psttUserP , const strokeS* const psttPasswordP , const strokeS* const psttCloudContainerP , const strokeS* const psttLocalContainerP , const strokeS* const psttLikeP , const countT cbMinP , const countT cbMaxP , const countT cTriesWhenDeletingLocalP , cloudUpdateCBFT pCloudUpdateCBFP , countT* const pcArgUpdateP , cloudNixCBFT pCloudNixCBFP , countT* const pcArgNixP , const strokeS* const psttPourLocalAfterContainerP , const strokeS* const psttAdamHireAfterP ) :/*1*/
+/=1=/cloudC::cloudC( tin0S& tin0P , const strokeS= const psttNameP , const countT idDoIfDifferP , const flagsT flagsP , const countT idCloudP , const strokeS= const psttBuildingP , const strokeS= const psttUserP , const strokeS= const psttPasswordP , const strokeS= const psttCloudContainerP , const strokeS= const psttLocalContainerP , const strokeS= const psttLikeP , const countT cbMinP , const countT cbMaxP , const countT cTriesWhenDeletingLocalP , cloudUpdateCBFT pCloudUpdateCBFP , countT= const pcArgUpdateP , cloudNixCBFT pCloudNixCBFP , countT= const pcArgNixP , const strokeS= const psttPourLocalAfterContainerP , const strokeS= const psttAdamHireAfterP ) :/=1=/
 
 #define CtOKENSfRESHENfILE 2
 //SHOULD BE 2 IN PRODUCTION
@@ -659,15 +659,15 @@ etThread.traceF( tin0P , T("freshen thread exiting") ) ;
     inc02AM( cTokensFreeP ) ;
 
     }
-        etRock.traceF( tin0P , T("[poopCloud]: ")+TF3((countT)poopCloud,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE,8)+T(" ; !uploading / called  pushFileF [expCbUsed,cbUsedHigh,name]: ")+TF4(offsP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(" , ")+T(" \"")+tShort+T("\"") /*, flTRACE_NOpREFIX*/ ) ;
+        etRock.traceF( tin0P , T("[poopCloud]: ")+TF3((countT)poopCloud,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE,8)+T(" ; !uploading / called  pushFileF [expCbUsed,cbUsedHigh,name]: ")+TF4(offsP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(" , ")+T(" \"")+tShort+T("\"") /=, flTRACE_NOpREFIX=/ ) ;
         cloudP.pushFileF( tin0P , batConnectP , psttzCloudContainerP , tShort , psttzLocalContainerP ) ;
-        etRock.traceF( tin0P , T("[poopCloud]: ")+TF3((countT)poopCloud,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE,8)+T(" ; !uploading / calling pushFileF [expCbUsed,cbUsedHigh,name]: ")+TF4(offsP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(" , ")+T(" \"")+tShort+T("\"") /*, flTRACE_NOpREFIX*/ ) ;
+        etRock.traceF( tin0P , T("[poopCloud]: ")+TF3((countT)poopCloud,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE,8)+T(" ; !uploading / calling pushFileF [expCbUsed,cbUsedHigh,name]: ")+TF4(offsP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,0,0xa)+T(" , ")+T(" \"")+tShort+T("\"") /=, flTRACE_NOpREFIX=/ ) ;
     {
     else
     }
         }
             etRock.traceF( tin0P , T("[poopCloud]: ")+TF3((countT)poopCloud,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE,8)+T(" ; !downloading / made   ghost \"")+tShort+T("\"") ) ;
-            { fileC fg( tin0P , (strokeS*)( T(psttzLocalContainerP)+tShort ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTrEGISTER /*flOPENdETAILS_null*/ , ifcOPENhOW_nCeR ) ; }
+            { fileC fg( tin0P , (strokeS=)( T(psttzLocalContainerP)+tShort ) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_DOnOTvALIDATE | flOPENdETAILS_DOnOTrEGISTER /=flOPENdETAILS_null=/ , ifcOPENhOW_nCeR ) ; }
             etRock.traceF( tin0P , T("[poopCloud]: ")+TF3((countT)poopCloud,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FILLzE,8)+T(" ; !downloading / making ghost \"")+tShort+T("\"") ) ;
         {
         else
@@ -690,14 +690,14 @@ etThread.traceF( tin0P , T("freshen thread exiting") ) ;
 
     poopC& poopCloud = cloudP ;
 
-    soulC&   sRenameP             =  *(soulC*)pTaskP->c8 ;
+    soulC&   sRenameP             =  =(soulC=)pTaskP->c8 ;
     countT   offsP                =           pTaskP->c7 ;
-    batonC&  batConnectP          = *(batonC*)pTaskP->c6 ;
-    strokeS* psttShortP           = (strokeS*)pTaskP->c5 ;
-    strokeS* psttzLocalContainerP = (strokeS*)pTaskP->c4 ;
-    strokeS* psttzCloudContainerP = (strokeS*)pTaskP->c3 ;
-    countT&  cTokensFreeP         = *(countT*)pTaskP->c2 ;
-    cloudC&  cloudP               = *(cloudC*)pTaskP->c1 ;
+    batonC&  batConnectP          = =(batonC=)pTaskP->c6 ;
+    strokeS= psttShortP           = (strokeS=)pTaskP->c5 ;
+    strokeS= psttzLocalContainerP = (strokeS=)pTaskP->c4 ;
+    strokeS= psttzCloudContainerP = (strokeS=)pTaskP->c3 ;
+    countT&  cTokensFreeP         = =(countT=)pTaskP->c2 ;
+    cloudC&  cloudP               = =(cloudC=)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c8 )
 TASK( tmFreshenFileF )
@@ -721,7 +721,7 @@ TASK( tmFreshenFileF )
             while( cHashers )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-            // ***********************************************************************************************    WAIT FOR HASH THREADS TO DIE    ***************************************************************
+            // ===============================================================================================    WAIT FOR HASH THREADS TO DIE    ===============================================================
 
             if( bFail ) continue ;
 
@@ -752,7 +752,7 @@ TASK( tmFreshenFileF )
                                         //   {
                                         //    if( pcArg )
                                         //    etherP.newF( tin0P , LF , pcArg , 9 ) ; ___( pcArg ) ;
-                                        //    ZE( countT* , pcArg ) ;
+                                        //    ZE( countT= , pcArg ) ;
                                         //{
                                         //else
                                         }
@@ -785,13 +785,13 @@ TASK( tmFreshenFileF )
                                     if( pInfo && !pInfo->psttIfoName ) { etScratch.strMakeF( tin0P , LF , pInfo->psttIfoName , tLong ) ; ___( pInfo->psttIfoName ) ; }
 
                                     etScratch.diskFileQueryF( tin0P , pInfo , myFile ) ; ___( pInfo ) ;
-                                    fileC myFile( tin0P , (const strokeS*)tLong , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
+                                    fileC myFile( tin0P , (const strokeS=)tLong , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
                                 {
                                 while( !bQuitP && !etPrime && !etherP && !POOP )
 
-                                TN( tLong , (const strokeS*)( T(psttLocalContainerP)+T(postShort) ) ) ;
+                                TN( tLong , (const strokeS=)( T(psttLocalContainerP)+T(postShort) ) ) ;
                             {
-                            ZE( infoFileS* , pInfo ) ;
+                            ZE( infoFileS= , pInfo ) ;
                         {
                         else
                         }
@@ -806,7 +806,7 @@ TASK( tmFreshenFileF )
                     cRemaining -- ;
                     if( !( cRemaining % ( TUCK << 2 ) ) ) etRock.traceF( tin0P , T("[cRemaining]: ")+TF2(cRemaining,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                    const osTextT* postShort = pageShort ;
+                    const osTextT= postShort = pageShort ;
                     pageC pageShort = jotShort ;
                 {
                 while( !bQuitP && !etPrime && !etherP && !POOP && !bFail && cRemaining )
@@ -819,7 +819,7 @@ TASK( tmFreshenFileF )
             ZE( countT , cFileOrDirDone ) ;
             ZE( countT , cHashers ) ;
 
-            // ***********************************************************************************************    WRITE HASH FOR EACH FILE TO KV    ***************************************************************
+            // ===============================================================================================    WRITE HASH FOR EACH FILE TO KV    ===============================================================
 
             }
                 if( bFail ) continue ;
@@ -836,8 +836,8 @@ TASK( tmFreshenFileF )
                         else if( thirdC::c_strcmpIF( tin0P , post1 , post2 ) )
                              if( !post1 || !post2 ) { BLAMMO ; } // SHOULD BE IMPOSSIBLE ;
 
-                        const osTextT* post2 = page2 ;
-                        const osTextT* post1 = page1 ;
+                        const osTextT= post2 = page2 ;
+                        const osTextT= post1 = page1 ;
                         pageC page2 = jot2 ;
                         pageC page1 = jot1 ;
 
@@ -853,7 +853,7 @@ TASK( tmFreshenFileF )
                 {
                 for( countT offPass = 0 ; offPass <= 1 && !bFail ; offPass ++ )
 
-                // ***********************************************************************************************    VERIFY THAT EACH JOT PAIR IS IDENTICAL    ***************************************************************
+                // ===============================================================================================    VERIFY THAT EACH JOT PAIR IS IDENTICAL    ===============================================================
 
                 if( jotDir1.cElementsF() != jotDir2.cElementsF() || jotFile1.cElementsF() != jotFile2.cElementsF() ) continue ;
                 etRock.traceF( tin0P , T("verifying that both lists have the same number of file names") ) ;
@@ -912,8 +912,8 @@ TASK( tmFreshenFileF )
                             {
                             if( etherP.strCompareF( tin0P , psttnu , psttLocalContainerP ) ) //SHOULD BE IMPOSSIBLE
                             etherP.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
-                            ZE( strokeS* , psttShort ) ;
-                            ZE( strokeS* , psttnu ) ;
+                            ZE( strokeS= , psttShort ) ;
+                            ZE( strokeS= , psttnu ) ;
                         {
                         TN( tShort , "" ) ;
 
@@ -941,7 +941,7 @@ TASK( tmFreshenFileF )
                     if( !etScratch.diskIdF( tin0P , tDisk ) || POOP )
 
                     etScratch.diskFindFileOrDirF( tin0P , pInfo , hFind , fnLike.pathF() , &pat ) ; //20160814@1946: SILENTLY FAILED.  HOW: DISCONNECT USB CABLE FROM EXTERNAL DRIVE. NO IMPOTENCE; CONJ: JUST RETURNS NULL pInfo OR pInfo->psttIfoName
-                    ZE( infoFileS* , pInfo ) ;
+                    ZE( infoFileS= , pInfo ) ;
 
                     }
                         break ;
@@ -968,7 +968,7 @@ TASK( tmFreshenFileF )
             for( countT offPass = 0 ; offPass <= !!bVerify && !bFail ; offPass ++ )
             ZE( countT , cFiles ) ;
 
-            // ***********************************************************************************************    LOAD jotDir jotFile (list of directory names, list of file names)   ***************************************************************
+            // ===============================================================================================    LOAD jotDir jotFile (list of directory names, list of file names)   ===============================================================
 
             ZE( boolT , bFail ) ;
 
@@ -980,7 +980,7 @@ TASK( tmFreshenFileF )
             jotC jotDir1(  tin0P , T("walklocal.dir.1." )+T(psttu) , flJOTc_DELETE | flJOTc_WRITE ) ;
 
             etherP.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
-            ZE( strokeS* , psttu ) ;
+            ZE( strokeS= , psttu ) ;
         {
         while( !etPrime && !etherP && !bQuitP )  // RETRIES UNTIL SUCCESSFULLY PROCESSES ALL FILES
         etRock.traceF( tin0P , T("cloudC when calculating the md5 hash of each local file, i will use up to this many threads [cHashersMax]: ")+TF2(cHashersMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -989,7 +989,7 @@ TASK( tmFreshenFileF )
         TN( tDotDotSlash , "../" ) ;
         TN( tDotSlash , "./" ) ;
         TN( tSlash , "/" ) ;
-        TN( tLike  , ""  ) ; tLike = T(psttLocalContainerP)+T("*") ;
+        TN( tLike  , ""  ) ; tLike = T(psttLocalContainerP)+T("=") ;
 
         }
             etRock.traceF( tin0P , T("[tDisk]: ")+tDisk ) ;
@@ -1001,43 +1001,43 @@ TASK( tmFreshenFileF )
                 countT idl = 5 ;
                 countT idf = 1 ;
                 etherP.diskMapFileNameF( tin0P , psttm , psttLocalContainerP ) ; ___( psttm ) ; //THIS SHOULD BE REDUNDANT SINCE cloudC CODE SHOULD ALWAYS BE GIVEN MAPPED FILE NAMES
-                ZE( strokeS* , psttm ) ;
+                ZE( strokeS= , psttm ) ;
             {
-            ZE( strokeS* , psttDisk ) ;
+            ZE( strokeS= , psttDisk ) ;
         {
         TN( tDisk , "" ) ;
 
         //etRock.traceF( tin0P , T("[pIdPoop]: ")+TF3((countT)pIdPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) ) ;
-        //const countT* pIdPoop = &(const countT&)poopScratch ;
+        //const countT= pIdPoop = &(const countT&)poopScratch ;
         //const poopC& poopScratch = etScratch ;
 
         etherC& etPrime   = etherC::etPrimeIF( tin0P ) ;
-        etherC& etScratch = *((tin1S&)tin0P).pEtScratch ;
+        etherC& etScratch = =((tin1S&)tin0P).pEtScratch ;
 
         SCOOPS
     {
     IFsCRATCH
 
-    etRock.traceF( tin0P , T("cloudC: 7 loading kvP from ")+T(psttLocalContainerP) ) ;
+    etRock.traceF( tin0P , T("cloudC: 7 ========================================================================================================================================= loading kvP from ")+T(psttLocalContainerP) ) ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
-voidT walkLocalToLoadKvF( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , keyValuePairsC& kvP , const strokeS* const psttLocalContainerP , const strokeS* const psttLocalContainerRootP , const strokeS* const psttLikeP , const countT cbMinP , const countT cbMaxP , const flagsT flagsCtP )
+voidT walkLocalToLoadKvF( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , keyValuePairsC& kvP , const strokeS= const psttLocalContainerP , const strokeS= const psttLocalContainerRootP , const strokeS= const psttLikeP , const countT cbMinP , const countT cbMaxP , const flagsT flagsCtP )
 
 }
     return 0 ;
 
     }
         }
-            sDoomedFileNamesP << (strokeS*)T(postBufferCP) ;
+            sDoomedFileNamesP << (strokeS=)T(postBufferCP) ;
         {
-        if( !pCloudNixCBFP || (*pCloudNixCBFP)( tin0P , *((tin1S&)tin0P).pEther , cloudP , T(postBufferCP) , pcArgNixP ) )
+        if( !pCloudNixCBFP || (=pCloudNixCBFP)( tin0P , =((tin1S&)tin0P).pEther , cloudP , T(postBufferCP) , pcArgNixP ) )
     {
     if( !POOP && bNix )
 
     }
         }
-            if( pMetaLocal && pMetaRemote && *pMetaLocal == *pMetaRemote ) bNix = !bNix ;
+            if( pMetaLocal && pMetaRemote && =pMetaLocal == =pMetaRemote ) bNix = !bNix ;
         {
         else
         }
@@ -1045,11 +1045,11 @@ voidT walkLocalToLoadKvF( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , 
         {
         if( bNixIfNotExist )
 
-        const metaS* pMetaRemote    = (const metaS*)(const byteT*)pageMetaRemote ;
-        const metaS* pMetaLocal     = (const metaS*)(const byteT*)pageMetaLocal  ;
+        const metaS= pMetaRemote    = (const metaS=)(const byteT=)pageMetaRemote ;
+        const metaS= pMetaLocal     = (const metaS=)(const byteT=)pageMetaLocal  ;
 
-        pageC        pageMetaRemote = kvFileMetaByNameRemoteP( tin0P , postBufferMP , 0 , thirdC::c_strlenIF( tin0P , postBufferMP ) * SB ) ;
-        pageC        pageMetaLocal  = kvFileMetaByNameLocalP(  tin0P , postBufferMP , 0 , thirdC::c_strlenIF( tin0P , postBufferMP ) * SB ) ;
+        pageC        pageMetaRemote = kvFileMetaByNameRemoteP( tin0P , postBufferMP , 0 , thirdC::c_strlenIF( tin0P , postBufferMP ) = SB ) ;
+        pageC        pageMetaLocal  = kvFileMetaByNameLocalP(  tin0P , postBufferMP , 0 , thirdC::c_strlenIF( tin0P , postBufferMP ) = SB ) ;
     {
     boolT bNix = bNixIfNotExist ;
 
@@ -1079,30 +1079,30 @@ voidT walkLocalToLoadKvF( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , 
 
     thirdC::c_strcpyIF( tin0P , postBufferCP , postBufferMP ) ;
 
-    const metaS&         metaCloud               = *(const metaS*)(const byteT*)pageMetaCloud ;
+    const metaS&         metaCloud               = =(const metaS=)(const byteT=)pageMetaCloud ;
     pageC                pageMetaCloud           = jotMetaCloudP[ cArg1P ] ;
 
-    soulC&               sDoomedFileNamesP       =            *(soulC*)(&cArg2P)[ 0xf ] ;
-    soulC&               sStaleFileNameCbUsedP   =            *(soulC*)(&cArg2P)[ 0xe ] ;
+    soulC&               sDoomedFileNamesP       =            =(soulC=)(&cArg2P)[ 0xf ] ;
+    soulC&               sStaleFileNameCbUsedP   =            =(soulC=)(&cArg2P)[ 0xe ] ;
     const countT         idDoIfDifferP           =                     (&cArg2P)[ 0xd ] ;
-    const strokeS* const psttLocalContainerP     =     (const strokeS*)(&cArg2P)[ 0xc ] ;
-    const strokeS* const psttCloudContainerP     =     (const strokeS*)(&cArg2P)[ 0xb ] ;
-    countT*              pcArgNixP               =            (countT*)(&cArg2P)[ 0xa ] ;
+    const strokeS= const psttLocalContainerP     =     (const strokeS=)(&cArg2P)[ 0xc ] ;
+    const strokeS= const psttCloudContainerP     =     (const strokeS=)(&cArg2P)[ 0xb ] ;
+    countT=              pcArgNixP               =            (countT=)(&cArg2P)[ 0xa ] ;
     cloudNixCBFT         pCloudNixCBFP           = (cloudNixCBFT)(&cArg2P)[ 0x9 ] ;
-    countT*              pcArgUpdateP            =            (countT*)(&cArg2P)[ 0x8 ] ;
+    countT=              pcArgUpdateP            =            (countT=)(&cArg2P)[ 0x8 ] ;
     cloudUpdateCBFT      pCloudUpdateCBFP        =    (cloudUpdateCBFT)(&cArg2P)[ 0x7 ] ;
-    keyValuePairsC&      kvFileMetaByNameLocalP  =   *(keyValuePairsC*)(&cArg2P)[ 0x6 ] ;
-    keyValuePairsC&      kvFileMetaByNameRemoteP =   *(keyValuePairsC*)(&cArg2P)[ 0x5 ] ;
+    keyValuePairsC&      kvFileMetaByNameLocalP  =   =(keyValuePairsC=)(&cArg2P)[ 0x6 ] ;
+    keyValuePairsC&      kvFileMetaByNameRemoteP =   =(keyValuePairsC=)(&cArg2P)[ 0x5 ] ;
     const countT         costBuffersP            =                     (&cArg2P)[ 0x4 ] ;
-          osTextT*       postBufferCP            =           (osTextT*)(&cArg2P)[ 0x3 ] ;
-    const osTextT*       postBufferMP            =     (const osTextT*)(&cArg2P)[ 0x2 ] ;
+          osTextT=       postBufferCP            =           (osTextT=)(&cArg2P)[ 0x3 ] ;
+    const osTextT=       postBufferMP            =     (const osTextT=)(&cArg2P)[ 0x2 ] ;
 
     if( POOP ) return 0 ;
     __Z( cArg1P ) ;
 
     SCOOPO( cloudP )
-    cloudC&              cloudP                  =           *(cloudC*)(&cArg2P)[ 0x1 ] ;
-    jotC&                jotMetaCloudP           =             *(jotC*)(&cArg2P)[ 0x0 ] ;
+    cloudC&              cloudP                  =           =(cloudC=)(&cArg2P)[ 0x1 ] ;
+    jotC&                jotMetaCloudP           =             =(jotC=)(&cArg2P)[ 0x0 ] ;
 {
 countT walkRemoteToNixCBF( tin0S& tin0P , countT& cArg1P , countT& cArg2P )
 
@@ -1111,15 +1111,15 @@ countT walkRemoteToNixCBF( tin0S& tin0P , countT& cArg1P , countT& cArg2P )
 
     }
         }
-            sDoomedFileNamesP << (strokeS*)T(postBufferCP) ;
+            sDoomedFileNamesP << (strokeS=)T(postBufferCP) ;
         {
-        if( !pCloudNixCBFP || (*pCloudNixCBFP)( tin0P , *((tin1S&)tin0P).pEther , cloudP , T(postBufferCP) , pcArgNixP ) )
+        if( !pCloudNixCBFP || (=pCloudNixCBFP)( tin0P , =((tin1S&)tin0P).pEther , cloudP , T(postBufferCP) , pcArgNixP ) )
     {
     if( !POOP && bNix )
 
     }
         }
-            if( pMetaRemote && pMetaLocal && *pMetaLocal == *pMetaRemote ) bNix = !bNix ;
+            if( pMetaRemote && pMetaLocal && =pMetaLocal == =pMetaRemote ) bNix = !bNix ;
         {
         else
         }
@@ -1127,11 +1127,11 @@ countT walkRemoteToNixCBF( tin0S& tin0P , countT& cArg1P , countT& cArg2P )
         {
         if( bNixIfNotExist )
 
-        const metaS* pMetaRemote    = (const metaS*)(const byteT*)pageMetaRemote ;
-        const metaS* pMetaLocal     = (const metaS*)(const byteT*)pageMetaLocal  ;
+        const metaS= pMetaRemote    = (const metaS=)(const byteT=)pageMetaRemote ;
+        const metaS= pMetaLocal     = (const metaS=)(const byteT=)pageMetaLocal  ;
 
-        pageC        pageMetaRemote = kvFileMetaByNameRemoteP( tin0P , postBufferMP , 0 , thirdC::c_strlenIF( tin0P , postBufferMP ) * SB ) ;
-        pageC        pageMetaLocal  = kvFileMetaByNameLocalP(  tin0P , postBufferMP , 0 , thirdC::c_strlenIF( tin0P , postBufferMP ) * SB ) ;
+        pageC        pageMetaRemote = kvFileMetaByNameRemoteP( tin0P , postBufferMP , 0 , thirdC::c_strlenIF( tin0P , postBufferMP ) = SB ) ;
+        pageC        pageMetaLocal  = kvFileMetaByNameLocalP(  tin0P , postBufferMP , 0 , thirdC::c_strlenIF( tin0P , postBufferMP ) = SB ) ;
     {
     boolT bNix = bNixIfNotExist ;
 
@@ -1161,30 +1161,30 @@ countT walkRemoteToNixCBF( tin0S& tin0P , countT& cArg1P , countT& cArg2P )
 
     thirdC::c_strcpyIF( tin0P , postBufferCP , postBufferMP ) ;
 
-    const metaS&         metaCloud               = *(const metaS*)(const byteT*)pageMetaCloud ;
+    const metaS&         metaCloud               = =(const metaS=)(const byteT=)pageMetaCloud ;
     pageC                pageMetaCloud           = jotMetaCloudP[ cArg1P ] ;
 
-    soulC&               sDoomedFileNamesP       =            *(soulC*)(&cArg2P)[ 0xf ] ;
-    soulC&               sStaleFileNameCbUsedP   =            *(soulC*)(&cArg2P)[ 0xe ] ;
+    soulC&               sDoomedFileNamesP       =            =(soulC=)(&cArg2P)[ 0xf ] ;
+    soulC&               sStaleFileNameCbUsedP   =            =(soulC=)(&cArg2P)[ 0xe ] ;
     const countT         idDoIfDifferP           =                     (&cArg2P)[ 0xd ] ;
-    const strokeS* const psttLocalContainerP     =     (const strokeS*)(&cArg2P)[ 0xc ] ;
-    const strokeS* const psttCloudContainerP     =     (const strokeS*)(&cArg2P)[ 0xb ] ;
-    countT*              pcArgNixP               =            (countT*)(&cArg2P)[ 0xa ] ;
+    const strokeS= const psttLocalContainerP     =     (const strokeS=)(&cArg2P)[ 0xc ] ;
+    const strokeS= const psttCloudContainerP     =     (const strokeS=)(&cArg2P)[ 0xb ] ;
+    countT=              pcArgNixP               =            (countT=)(&cArg2P)[ 0xa ] ;
     cloudNixCBFT         pCloudNixCBFP           =       (cloudNixCBFT)(&cArg2P)[ 0x9 ] ;
-    countT*              pcArgUpdateP            =            (countT*)(&cArg2P)[ 0x8 ] ;
+    countT=              pcArgUpdateP            =            (countT=)(&cArg2P)[ 0x8 ] ;
     cloudUpdateCBFT      pCloudUpdateCBFP        =    (cloudUpdateCBFT)(&cArg2P)[ 0x7 ] ;
-    keyValuePairsC&      kvFileMetaByNameLocalP  =   *(keyValuePairsC*)(&cArg2P)[ 0x6 ] ;
-    keyValuePairsC&      kvFileMetaByNameRemoteP =   *(keyValuePairsC*)(&cArg2P)[ 0x5 ] ;
+    keyValuePairsC&      kvFileMetaByNameLocalP  =   =(keyValuePairsC=)(&cArg2P)[ 0x6 ] ;
+    keyValuePairsC&      kvFileMetaByNameRemoteP =   =(keyValuePairsC=)(&cArg2P)[ 0x5 ] ;
     const countT         costBuffersP            =                     (&cArg2P)[ 0x4 ] ;
-          osTextT*       postBufferCP            =           (osTextT*)(&cArg2P)[ 0x3 ] ;
-    const osTextT*       postBufferMP            =     (const osTextT*)(&cArg2P)[ 0x2 ] ;
+          osTextT=       postBufferCP            =           (osTextT=)(&cArg2P)[ 0x3 ] ;
+    const osTextT=       postBufferMP            =     (const osTextT=)(&cArg2P)[ 0x2 ] ;
 
     if( POOP ) return 0 ;
     __Z( cArg1P ) ;
 
     SCOOPO( cloudP )
-    cloudC&              cloudP                  =           *(cloudC*)(&cArg2P)[ 0x1 ] ;
-    jotC&                jotMetaCloudP           =             *(jotC*)(&cArg2P)[ 0x0 ] ;
+    cloudC&              cloudP                  =           =(cloudC=)(&cArg2P)[ 0x1 ] ;
+    jotC&                jotMetaCloudP           =             =(jotC=)(&cArg2P)[ 0x0 ] ;
 {
 countT walkLocalToNixCBF( tin0S& tin0P , countT& cArg1P , countT& cArg2P )
 
@@ -1194,17 +1194,17 @@ countT walkLocalToNixCBF( tin0S& tin0P , countT& cArg1P , countT& cArg2P )
     }
         }
             sStaleFileNameCbUsedP << metaWalk.cbUsed ;
-            sStaleFileNameCbUsedP << (strokeS*)tShort ;
+            sStaleFileNameCbUsedP << (strokeS=)tShort ;
 
             //etCloud.traceF( tin0P , T("stale:  ")+tShort ) ;
         {
-        if( !pCloudUpdateCBFP || (*pCloudUpdateCBFP)( tin0P , *((tin1S&)tin0P).pEther , cloudP , tShort , pcArgUpdateP ) )
+        if( !pCloudUpdateCBFP || (=pCloudUpdateCBFP)( tin0P , =((tin1S&)tin0P).pEther , cloudP , tShort , pcArgUpdateP ) )
     {
     if( !POOP && bDo )
     
     }
         }
-            if( pMetaTo && *pMetaTo == metaWalk ) bDo = 0 ;
+            if( pMetaTo && =pMetaTo == metaWalk ) bDo = 0 ;
         {
         else
         }
@@ -1212,8 +1212,8 @@ countT walkLocalToNixCBF( tin0S& tin0P , countT& cArg1P , countT& cArg2P )
         {
         if( bGhost && bGhostF( tin0P , tShort ) )
 
-        const metaS* pMetaTo    = (const metaS*)(const byteT*)pageMetaTo ;
-        pageC        pageMetaTo = ( bPull ? kvFileMetaByNameLocalP : kvFileMetaByNameRemoteP )( tin0P , postBufferMP , 0 , thirdC::c_strlenIF( tin0P , postBufferMP ) * SB ) ;
+        const metaS= pMetaTo    = (const metaS=)(const byteT=)pageMetaTo ;
+        pageC        pageMetaTo = ( bPull ? kvFileMetaByNameLocalP : kvFileMetaByNameRemoteP )( tin0P , postBufferMP , 0 , thirdC::c_strlenIF( tin0P , postBufferMP ) = SB ) ;
     {
     boolT bDo = 1 ;
 
@@ -1231,21 +1231,21 @@ countT walkLocalToNixCBF( tin0S& tin0P , countT& cArg1P , countT& cArg2P )
 
     etherC& etCloud = cloudP ;
 
-    const metaS&         metaWalk               = *(const metaS*)(const byteT*)pageMetaWalk ;
+    const metaS&         metaWalk               = =(const metaS=)(const byteT=)pageMetaWalk ;
     pageC                pageMetaWalk           = jotMetaWalkP[ cArg1P ] ;
 
-    soulC&               sStaleFileNameCbUsedP   =            *(soulC*)(&cArg2P)[ 0xe ] ;
-    const strokeS* const psttLocalContainerP     =     (const strokeS*)(&cArg2P)[ 0xc ] ;
-    const strokeS* const psttCloudContainerP     =     (const strokeS*)(&cArg2P)[ 0xb ] ;
-    countT*              pcArgNixP               =            (countT*)(&cArg2P)[ 0xa ] ;
+    soulC&               sStaleFileNameCbUsedP   =            =(soulC=)(&cArg2P)[ 0xe ] ;
+    const strokeS= const psttLocalContainerP     =     (const strokeS=)(&cArg2P)[ 0xc ] ;
+    const strokeS= const psttCloudContainerP     =     (const strokeS=)(&cArg2P)[ 0xb ] ;
+    countT=              pcArgNixP               =            (countT=)(&cArg2P)[ 0xa ] ;
     cloudNixCBFT         pCloudNixCBFP           =       (cloudNixCBFT)(&cArg2P)[ 0x9 ] ;
-    countT*              pcArgUpdateP            =            (countT*)(&cArg2P)[ 0x8 ] ;
+    countT=              pcArgUpdateP            =            (countT=)(&cArg2P)[ 0x8 ] ;
     cloudUpdateCBFT      pCloudUpdateCBFP        =    (cloudUpdateCBFT)(&cArg2P)[ 0x7 ] ;
-    keyValuePairsC&      kvFileMetaByNameLocalP  =   *(keyValuePairsC*)(&cArg2P)[ 0x6 ] ;
-    keyValuePairsC&      kvFileMetaByNameRemoteP =   *(keyValuePairsC*)(&cArg2P)[ 0x5 ] ;
+    keyValuePairsC&      kvFileMetaByNameLocalP  =   =(keyValuePairsC=)(&cArg2P)[ 0x6 ] ;
+    keyValuePairsC&      kvFileMetaByNameRemoteP =   =(keyValuePairsC=)(&cArg2P)[ 0x5 ] ;
     const countT         costBuffersP            =                     (&cArg2P)[ 0x4 ] ;
-          osTextT*       postBufferCP            =           (osTextT*)(&cArg2P)[ 0x3 ] ;
-    const osTextT*       postBufferMP            =     (const osTextT*)(&cArg2P)[ 0x2 ] ;
+          osTextT=       postBufferCP            =           (osTextT=)(&cArg2P)[ 0x3 ] ;
+    const osTextT=       postBufferMP            =     (const osTextT=)(&cArg2P)[ 0x2 ] ;
 
     if( POOP ) return 0 ;
     __Z( cArg1P ) ;
@@ -1254,8 +1254,8 @@ countT walkLocalToNixCBF( tin0S& tin0P , countT& cArg1P , countT& cArg2P )
     const boolT bPull  = F(cloudP.flagsCtF()) & flCLOUDc_REMOTEiSmASTER ;
 
     SCOOPO( cloudP )
-    cloudC&              cloudP                  =           *(cloudC*)(&cArg2P)[ 0x1 ] ;
-    jotC&                jotMetaWalkP            =             *(jotC*)(&cArg2P)[ 0x0 ] ;
+    cloudC&              cloudP                  =           =(cloudC=)(&cArg2P)[ 0x1 ] ;
+    jotC&                jotMetaWalkP            =             =(jotC=)(&cArg2P)[ 0x0 ] ;
 {
 countT walkToFreshenCBF( tin0S& tin0P , countT& cArg1P , countT& cArg2P )
 
@@ -1265,17 +1265,17 @@ DONE( tmHasherF )
     DEL( pInfoP ) ;
     hasherF( tin0P , etherP , bQuitP , cFailP , cHashersP , pInfoP , psttLocalContainerRootP , psttLocalContainerP , kvP , cFileOrDirDoneP ) ;
 
-    countT&              cFileOrDirDoneP         =         *(countT*)pcArgP[ 8 ] ;
-    keyValuePairsC&      kvP                     = *(keyValuePairsC*)pcArgP[ 7 ] ;
-    const strokeS* const psttLocalContainerP     =   (const strokeS*)pcArgP[ 6 ] ;
-    const strokeS* const psttLocalContainerRootP =   (const strokeS*)pcArgP[ 5 ] ;
-    const infoFileS*     pInfoP                  =       (infoFileS*)pcArgP[ 4 ] ;
-    countT&              cHashersP               =         *(countT*)pcArgP[ 3 ] ;
-    countT&              cFailP                  =         *(countT*)pcArgP[ 2 ] ;
-    const boolT&         bQuitP                  =          *(boolT*)pcArgP[ 1 ] ;
-    etherC&              etherP                  =         *(etherC*)pcArgP[ 0 ] ;
+    countT&              cFileOrDirDoneP         =         =(countT=)pcArgP[ 8 ] ;
+    keyValuePairsC&      kvP                     = =(keyValuePairsC=)pcArgP[ 7 ] ;
+    const strokeS= const psttLocalContainerP     =   (const strokeS=)pcArgP[ 6 ] ;
+    const strokeS= const psttLocalContainerRootP =   (const strokeS=)pcArgP[ 5 ] ;
+    const infoFileS=     pInfoP                  =       (infoFileS=)pcArgP[ 4 ] ;
+    countT&              cHashersP               =         =(countT=)pcArgP[ 3 ] ;
+    countT&              cFailP                  =         =(countT=)pcArgP[ 2 ] ;
+    const boolT&         bQuitP                  =          =(boolT=)pcArgP[ 1 ] ;
+    etherC&              etherP                  =         =(etherC=)pcArgP[ 0 ] ;
 
-    countT* pcArgP = (countT*)pTaskP->c1 ;
+    countT= pcArgP = (countT=)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
 TASK( tmHasherF )
@@ -1292,7 +1292,7 @@ TASK( tmHasherF )
                 }
                     break ;
                     inc02AM( cFileOrDirDoneP ) ;
-                    kvP.newF( tin0P , LF , postShort , 0 , costShort * SB , (byteT*)&meta , sizeof meta ) ;
+                    kvP.newF( tin0P , LF , postShort , 0 , costShort = SB , (byteT=)&meta , sizeof meta ) ;
 
                     etherP.traceF( tin0P , T("localFile : ")+tPseudoPath+tShort , flTRACE_null , ifcIDtRACEdIVERT_8 ) ; //U:: SUPPRESS THIS UNLESS FLAG IS SET BY THE CONSTRUCTOR CALLER
                 {
@@ -1302,7 +1302,7 @@ TASK( tmHasherF )
                 }
                     etherP.delF( tin0P , pbBuffer ) ;
 
-                    hasher.queryF( tin0P , (byteT*)meta.pcHashMd5 , sizeof meta.pcHashMd5 ) ;
+                    hasher.queryF( tin0P , (byteT=)meta.pcHashMd5 , sizeof meta.pcHashMd5 ) ;
 
                     }
                         continue ;
@@ -1341,7 +1341,7 @@ TASK( tmHasherF )
 
                     __Z( pbBuffer ) ;
                     etherP.newF( tin0P , LF , pbBuffer , cbChunk ) ; ___( pbBuffer ) ;
-                    ZE( byteT* , pbBuffer ) ;
+                    ZE( byteT= , pbBuffer ) ;
 
                     ;
                         : TOCK
@@ -1370,11 +1370,11 @@ TASK( tmHasherF )
         }
             inc02AM( cFileOrDirDoneP ) ;
         {
-        if( kvP.queryF( tin0P , postShort , 0 , costShort * SB ) )
+        if( kvP.queryF( tin0P , postShort , 0 , costShort = SB ) )
 
         for( countT offr = 0 ; offr < costShort ; offr ++ ) postShort[ offr ] = reverseBitsF( postShort[ offr ] ) ;
         countT costShort = etherP.strMakeF( tin0P , LF , postShort , tPseudoPath+tShort ) ; ___( postShort ) ;
-        ZE( osTextT* , postShort ) ;
+        ZE( osTextT= , postShort ) ;
                     
         }
             }
@@ -1383,7 +1383,7 @@ TASK( tmHasherF )
                 etherP.strSubstringF( tin0P , psttpp , idf , idl , psttLocalContainerP ) ; ___( psttpp ) ;
                 ZE( countT , idl ) ;
                 countT idf = psttLocalContainerRootP->idAdam + 1 ;
-                ZE( strokeS* , psttpp ) ;
+                ZE( strokeS= , psttpp ) ;
             {
             if( !POOP && psttLocalContainerRootP->idAdam != psttLocalContainerP->idAdam )
 
@@ -1396,8 +1396,8 @@ TASK( tmHasherF )
             tShort = T(psttShort) ;
             etherP.delF( tin0P , psttnu ) ;
             etherP.strBisectF( tin0P , psttnu , psttShort , pInfoP->psttIfoName , tSlash , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
-            ZE( strokeS* , psttShort ) ;
-            ZE( strokeS* , psttnu ) ;
+            ZE( strokeS= , psttShort ) ;
+            ZE( strokeS= , psttnu ) ;
         {
         TN( tShort , "" ) ;
 
@@ -1406,13 +1406,13 @@ TASK( tmHasherF )
         //etRock.traceF( tin0P , T("hasherF [idIn]: ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         etherC& etPrime   = etherC::etPrimeIF( tin0P ) ;
         etherC& etRock    = etherC::etRockIF( tin0P ) ;
-        etherC& etScratch = *((tin1S&)tin0P).pEtScratch ;
+        etherC& etScratch = =((tin1S&)tin0P).pEtScratch ;
 
         SCOOPS
     {
     IFsCRATCH
 {
-voidT hasherF( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , countT& bFailP , countT& cHashersP , const infoFileS* pInfoP , const strokeS* const psttLocalContainerRootP , const strokeS* const psttLocalContainerP , keyValuePairsC& kvP , countT& cFileOrDirDoneP )
+voidT hasherF( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , countT& bFailP , countT& cHashersP , const infoFileS= pInfoP , const strokeS= const psttLocalContainerRootP , const strokeS= const psttLocalContainerP , keyValuePairsC& kvP , countT& cFileOrDirDoneP )
 
 }
     ;
@@ -1425,7 +1425,7 @@ voidT hasherF( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , countT& bFa
 
     return
 {
-boolT bGhostF( tin0S& tin0P , const osTextT* const postShortP )
+boolT bGhostF( tin0S& tin0P , const osTextT= const postShortP )
 
 const osTextT postLook4[] = ".!.narrative."    ;
 const osTextT postLook3[] = ".!.day.title.ttt" ;
@@ -1436,11 +1436,11 @@ const osTextT postLook1[] = ".!.transcript."   ;
 #define EXPnODESpERnAPKIN  0x15
 //20240206@2306: 0x15 <- 0x18 napkinC CT'OR FAILED ASUS LAPTOP-GRAY
 
-/**/
-*/
+/==/
+=/
  each recursion consumes 4 slots in the jot registry
 the depth of local directory nesting that i can accommodate is limited by CsLOTSjOTrEGISTRY
-/*
+/=
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
