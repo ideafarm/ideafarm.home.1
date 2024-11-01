@@ -41746,7 +41746,8 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
     textC                   tBodyProlog_e0 ;
     textC                   tBodyProlog_f0Black ;
     textC                   tBodyProlog_f0White ;
-    textC                   tBodyProlog_01 ;
+    textC                   tBodyProlog_01Black ;
+    textC                   tBodyProlog_01White ;
     textC                   tBodyProlog_11 ;
     textC                   tBodyProlog_21 ;
     textC                   tBodyProlog_31 ;
@@ -41763,7 +41764,8 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
     textC                   tBodyProlog_e1 ;
     textC                   tBodyProlog_f1 ;
     textC                   tBodyProlog_002 ;
-    textC                   tBodyProlog_003 ;
+    textC                   tBodyProlog_003Black ;
+    textC                   tBodyProlog_003White ;
 
     textC                   thNull ;
     textC                   thDotDotSlash ;

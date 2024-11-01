@@ -202,8 +202,8 @@
                             etherP.delF( tin0P , psttUrlBodyTrunc ) ;
                             etherP.delF( tin0P , psttUrlFileShort ) ;
                             }
-                                etherP.strFuseF( tin0P , psttOutWhite , pP.tBodyProlog_003 , &sOutWhite ) ;
-                                etherP.strFuseF( tin0P , psttOutBlack , pP.tBodyProlog_003 , &sOutBlack ) ;
+                                etherP.strFuseF( tin0P , psttOutWhite , pP.tBodyProlog_003White , &sOutWhite ) ;
+                                etherP.strFuseF( tin0P , psttOutBlack , pP.tBodyProlog_003Black , &sOutBlack ) ;
 
                                 etherP.strFuseF( tin0P , psttOutWhite , thBranchTerminator  , &sOutWhite ) ;
                                 etherP.strFuseF( tin0P , psttOutBlack , thBranchTerminator  , &sOutBlack ) ;
@@ -260,8 +260,8 @@
                                 etherP.strFuseF( tin0P , psttOutWhite , pP.tBodyProlog_11 , &sOutWhite ) ;
                                 etherP.strFuseF( tin0P , psttOutBlack , pP.tBodyProlog_11 , &sOutBlack ) ;
 
-                                etherP.strFuseF( tin0P , psttOutWhite , pP.tBodyProlog_01 , &sOutWhite ) ;
-                                etherP.strFuseF( tin0P , psttOutBlack , pP.tBodyProlog_01 , &sOutBlack ) ;
+                                etherP.strFuseF( tin0P , psttOutWhite , pP.tBodyProlog_01White , &sOutWhite ) ;
+                                etherP.strFuseF( tin0P , psttOutBlack , pP.tBodyProlog_01Black , &sOutBlack ) ;
 
                                 etherP.strFuseF( tin0P , psttOutWhite , pP.tBodyProlog_f0White , &sOutWhite ) ;
                                 etherP.strFuseF( tin0P , psttOutBlack , pP.tBodyProlog_f0Black , &sOutBlack ) ;
@@ -446,7 +446,7 @@
                                     + psttUrlBodyTrunc->idAdam
                                     + psttUrlFileShort->idAdam
 
-                                    + pP.tBodyProlog_003.csF( tin0P )
+                                    + ( pP.tBodyProlog_003Black.csF( tin0P ) >= pP.tBodyProlog_003White.csF( tin0P ) ? pP.tBodyProlog_003Black.csF( tin0P ) : pP.tBodyProlog_003White.csF( tin0P ) )
                                     + pP.tBodyProlog_002.csF( tin0P )
                                     + pP.tBodyProlog_f1.csF( tin0P )
                                     + pP.tBodyProlog_e1.csF( tin0P )
@@ -463,7 +463,7 @@
                                     + pP.tBodyProlog_31.csF( tin0P )
                                     + pP.tBodyProlog_21.csF( tin0P )
                                     + pP.tBodyProlog_11.csF( tin0P )
-                                    + pP.tBodyProlog_01.csF( tin0P )
+                                    + ( pP.tBodyProlog_01Black.csF( tin0P ) >= pP.tBodyProlog_01White.csF( tin0P ) ? pP.tBodyProlog_01Black.csF( tin0P ) : pP.tBodyProlog_01White.csF( tin0P ) )
                                     + ( pP.tBodyProlog_f0Black.csF( tin0P ) >= pP.tBodyProlog_f0White.csF( tin0P ) ? pP.tBodyProlog_f0Black.csF( tin0P ) : pP.tBodyProlog_f0White.csF( tin0P ) )
                                     + pP.tBodyProlog_e0.csF( tin0P )
                                     + ( pP.tBodyProlog_d0Black.csF( tin0P ) >= pP.tBodyProlog_d0White.csF( tin0P ) ? pP.tBodyProlog_d0Black.csF( tin0P ) : pP.tBodyProlog_d0White.csF( tin0P ) )

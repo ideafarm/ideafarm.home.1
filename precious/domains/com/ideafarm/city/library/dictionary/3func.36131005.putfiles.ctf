@@ -99,7 +99,7 @@
 
             //"    <span style=\"color:#222\" onmouseout=\"sayMessageF( 0 , 16000 )\" onmouseover=\"sayMessageF( 'Hints, beneficial thought steering, and other messages are displayed here.' , 0 )\"><i><span id=\"message2\">&thinsp;</span></i></span>\r\n"
             //"    <p>\r\n"
-            //"    <hr>\r\n"
+            //"    <hr style=\"width:100%; color:black; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n"
             //"    <p>\r\n"
             ""
         :
@@ -113,7 +113,7 @@
 
             //"    <span style=\"color:lightblue\" onmouseout=\"sayMessageF( 0 , 16000 )\" onmouseover=\"sayMessageF( 'Hints, beneficial thought steering, and other messages are displayed here.' , 0 )\"><i><span id=\"message2\">&thinsp;</span></i></span>\r\n"
             //"    <p>\r\n"
-            //"    <hr>\r\n"
+            //"    <hr style=\"width:100%; color:#ff6; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n"
             //"    <p>\r\n"
             //"\r\n"
             ""
@@ -126,9 +126,15 @@
 
     ) ;
 
-        "    <p>\r\n    <hr>\r\n    <p>\r\n"
+        "    <p>\r\n    <hr style=\"width:100%; color:#black; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n    <p>\r\n"
 
-    tBodyProlog_003 = T(
+    tBodyProlog_003White = T(
+
+    ) ;
+
+        "    <p>\r\n    <hr style=\"width:100%; color:#ff6; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n    <p>\r\n"
+
+    tBodyProlog_003Black = T(
 
     ) ;
 
@@ -228,17 +234,31 @@
 
     ) ;
 
-            "<hr>\r\n"
+            "<hr style=\"width:100%; color:#black; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n"
             "<p>\r\n"
             "    </table>\r\n"
             "        </tr>\r\n"
             "            </td>\r\n"
         :
-            "    <p>\r\n    <hr>\r\n    <p>\r\n"           //20221107@1345: ADDED W/O ANALYSIS: "    <p>\r\n    <hr>\r\n    <p>\r\n" ; THE TRAILING <p> IS NEEDED ONLY IF THE PAGE DOES NOT BEGIN WITH A "NEW PARA" BRANCH; ELSE IT WILL CAUSE DUPLICATE <p> TO BE EMITTED.  FIREFOX IGNORES THE OO'TH <p> ; IF NECESSARY, LOGIC CAN BE ADDED TO EMIT THE <p> ONLY IF A <p> IS NOT ABOUT TO BE EMITTED BY A "NEW PARA" BRANCH
+            "    <p>\r\n    <hr style=\"width:100%; color:black; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n    <p>\r\n"           //20221107@1345: ADDED W/O ANALYSIS: "    <p>\r\n    <hr style=\"width:100%; color:#black; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n    <p>\r\n" ; THE TRAILING <p> IS NEEDED ONLY IF THE PAGE DOES NOT BEGIN WITH A "NEW PARA" BRANCH; ELSE IT WILL CAUSE DUPLICATE <p> TO BE EMITTED.  FIREFOX IGNORES THE OO'TH <p> ; IF NECESSARY, LOGIC CAN BE ADDED TO EMIT THE <p> ONLY IF A <p> IS NOT ABOUT TO BE EMITTED BY A "NEW PARA" BRANCH
         ?
         idModeP == ifcIDmODEpUTfILE_ROOT || idModeP == ifcIDmODEpUTfILE_ABOUT
 
-    tBodyProlog_01 = T(
+    tBodyProlog_01White = T(
+
+    ) ;
+
+            "<hr style=\"width:100%; color:#ff6; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n"
+            "<p>\r\n"
+            "    </table>\r\n"
+            "        </tr>\r\n"
+            "            </td>\r\n"
+        :
+            "    <p>\r\n    <hr style=\"width:100%; color:#ff6; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n    <p>\r\n"           //20221107@1345: ADDED W/O ANALYSIS: "    <p>\r\n    <hr style=\"width:100%; color:#ff6; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n    <p>\r\n" ; THE TRAILING <p> IS NEEDED ONLY IF THE PAGE DOES NOT BEGIN WITH A "NEW PARA" BRANCH; ELSE IT WILL CAUSE DUPLICATE <p> TO BE EMITTED.  FIREFOX IGNORES THE OO'TH <p> ; IF NECESSARY, LOGIC CAN BE ADDED TO EMIT THE <p> ONLY IF A <p> IS NOT ABOUT TO BE EMITTED BY A "NEW PARA" BRANCH
+        ?
+        idModeP == ifcIDmODEpUTfILE_ROOT || idModeP == ifcIDmODEpUTfILE_ABOUT
+
+    tBodyProlog_01Black = T(
 
     ) ;
 
@@ -423,13 +443,13 @@
 
             )
                     : T("                                    <span><a href=\"http://reports.")+tDomain+T("/access/")
-                    ? T("<a href=\"http://root.")+tDomain+T("/index.white.html\">root</a>\r\n    ")                                    //20221107@1336: "    <p>\r\n    <hr>\r\n" REMOVED W/O ANALYSIS
-                    //? T("<a href=\"https://dc4887e7f1367376da22-75c63f2b54dd5029f3484f050cc6ab7e.ssl.cf5.rackcdn.com/index.white.html\">root</a>\r\n    <p>\r\n    <hr>\r\n    ")
+                    ? T("<a href=\"http://root.")+tDomain+T("/index.white.html\">root</a>\r\n    ")                                    //20221107@1336: "    <p>\r\n    <hr style=\"width:100%; color:black; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n" REMOVED W/O ANALYSIS
+                    //? T("<a href=\"https://dc4887e7f1367376da22-75c63f2b54dd5029f3484f050cc6ab7e.ssl.cf5.rackcdn.com/index.white.html\">root</a>\r\n    <p>\r\n    <hr style=\"width:100%; color:black; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n    ")
                 idModeP == ifcIDmODEpUTfILE_ABOUT
             (
             :
-            ? T("<a href=\"http://about.")+tDomain+T("/index.white.html\">about</a>\r\n    ")                                    //20221107@1336: "    <p>\r\n    <hr>\r\n" REMOVED W/O ANALYSIS
-            //? T("<a href=\"https://78ee3beee59967122432-83c44f998d6143e2566c1d222f92873b.ssl.cf5.rackcdn.com/index.white.html\">about</a>\r\n    <p>\r\n    <hr>\r\n    ")
+            ? T("<a href=\"http://about.")+tDomain+T("/index.white.html\">about</a>\r\n    ")                                    //20221107@1336: "    <p>\r\n    <hr style=\"width:100%; color:black; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n" REMOVED W/O ANALYSIS
+            //? T("<a href=\"https://78ee3beee59967122432-83c44f998d6143e2566c1d222f92873b.ssl.cf5.rackcdn.com/index.white.html\">about</a>\r\n    <p>\r\n    <hr style=\"width:100%; color:black; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n    ")
         idModeP == ifcIDmODEpUTfILE_ROOT
 
     tBodyProlog_70White = T("\" onmouseout=\"sayMessageF( 0 , 16000 )\" onmouseover=\"sayMessageF( 'Click to change the color scheme to yellow on black (for viewing).' , 0 )\">black</a>\r\n    ")+(
@@ -438,13 +458,13 @@
 
             )
                     : T("                                    <span><a href=\"http://reports.")+tDomain+T("/access/")
-                    ? T("<a href=\"http://root.")+tDomain+T("/index.html\">root</a>\r\n    ")                                    //20221107@1336: "    <p>\r\n    <hr>\r\n" REMOVED W/O ANALYSIS
-                    //? T("<a href=\"https://dc4887e7f1367376da22-75c63f2b54dd5029f3484f050cc6ab7e.ssl.cf5.rackcdn.com/index.html\">root</a>\r\n    <p>\r\n    <hr>\r\n    "
+                    ? T("<a href=\"http://root.")+tDomain+T("/index.html\">root</a>\r\n    ")                                    //20221107@1336: "    <p>\r\n    <hr style=\"width:100%; color:#ff6; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n" REMOVED W/O ANALYSIS
+                    //? T("<a href=\"https://dc4887e7f1367376da22-75c63f2b54dd5029f3484f050cc6ab7e.ssl.cf5.rackcdn.com/index.html\">root</a>\r\n    <p>\r\n    <hr style=\"width:100%; color:#ff6; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n    "
                 idModeP == ifcIDmODEpUTfILE_ABOUT
             (
             : 
-            ? T("<a href=\"http://about.")+tDomain+T("/index.html\">about</a>\r\n    ")                                    //20221107@1336: "    <p>\r\n    <hr>\r\n" REMOVED W/O ANALYSIS
-            //? T"<a href=\"https://78ee3beee59967122432-83c44f998d6143e2566c1d222f92873b.ssl.cf5.rackcdn.com/index.html\">about</a>\r\n    <p>\r\n    <hr>\r\n    ")
+            ? T("<a href=\"http://about.")+tDomain+T("/index.html\">about</a>\r\n    ")                                    //20221107@1336: "    <p>\r\n    <hr style=\"width:100%; color:#ff6; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n" REMOVED W/O ANALYSIS
+            //? T"<a href=\"https://78ee3beee59967122432-83c44f998d6143e2566c1d222f92873b.ssl.cf5.rackcdn.com/index.html\">about</a>\r\n    <p>\r\n    <hr style=\"width:100%; color:#ff6; display:block; margin-top:0.5em; margin-bottom:0.5em; margin-left:auto; margin-right:auto; border-style:groove; border-width:6px;\">\r\n    ")
         idModeP == ifcIDmODEpUTfILE_ROOT
 
     tBodyProlog_70Black = T("\" onmouseout=\"sayMessageF( 0 , 16000 )\" onmouseover=\"sayMessageF( 'Click to change the color scheme to black on white (for printing).' , 0 )\">white</a>\r\n    ")+(
