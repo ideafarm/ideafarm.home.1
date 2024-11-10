@@ -26,14 +26,14 @@ set /a repeatxx=0
 set /a repeatxx="repeatxx+1"
 d:
 cd \ideafarm.home.101\devices
-rem for /d %%d in (*) do call spinm %1 %%d
-    for /d %%d in (*) do start "%%d" spinm %1 %%d
+    for /d %%d in (*) do call spinm %1 %%d
+rem for /d %%d in (*) do start "%%d" spinm %1 %%d
 
 echo %spincount% devices were spun
 if     %1z == rz shutdown /r /t 0
 if     %1z == sz shutdown /s /t 0
 if not %1z == rz if not %1z == sz if %repeatxx% == %1 goto :FINnOeXIT
-rem goto :REPEAT
+goto :REPEAT
 
 
 

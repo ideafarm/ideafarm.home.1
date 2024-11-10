@@ -128,7 +128,7 @@
 0x11200080 , 0x00000080 ,   // 1snip.11200080.csaverageparameterlengthmax
 0x11200081 , 0x00000081 ,   // 1snip.11200081.csnodenamemax
 0x11200082 , 0x00000082 ,   // 1snip.11200082.ifcflagin
-0x11200083 , 0x00000083 ,   // 1snip.11200083._IO_
+0x11200083 , 0x00000083 ,   // 1snip.11200083._io_
 0x11200084 , 0x00000084 ,   // 1snip.11200084.posthtmlbodypart1
 0x11200085 , 0x00000085 ,   // 1snip.11200085.cboxpourmax
 0x11200086 , 0x00000086 ,   // 1snip.11200086.idcmddataanus
@@ -2418,7 +2418,7 @@
 0x1c00000c , 0x00000972 ,   // 1snip.1c00000c.decv02am
 0x1c00000d , 0x00000973 ,   // 1snip.1c00000d.getregsam
 0x1c00000e , 0x00000974 ,   // 1snip.1c00000e.putregsam
-0x1c00000f , 0x00000975 ,   // 1snip.1c00000f.espAM
+0x1c00000f , 0x00000975 ,   // 1snip.1c00000f.espam
 0x1c000010 , 0x00000976 ,   // 1snip.1c000010.btsam
 0x1c000011 , 0x00000977 ,   // 1snip.1c000011.btram
 0x1c000012 , 0x00000978 ,   // 1snip.1c000012.btcam
