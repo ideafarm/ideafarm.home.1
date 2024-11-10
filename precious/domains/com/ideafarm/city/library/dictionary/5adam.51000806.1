@@ -354,8 +354,8 @@ DONE( tmWorkF )
                             //TN( tYearPattern , "2010/" ) ;
                             //TN( tYearPattern , "2009/" ) ;
                             //TN( tYearPattern , "2008/" ) ;
-                            //TN( tYearPattern , "1999/" ) ;
-                              TN( tYearPattern , "1234/" ) ;
+                              TN( tYearPattern , "1999/" ) ;
+                            //TN( tYearPattern , "1234/" ) ;
                         #if defined( IFCtESTING )
                         _IO_
                     {
@@ -500,7 +500,7 @@ DONE( tmWorkF )
         cDo = cToHireCompare ;
 
         }
-            etThread.osThreadF( TaRG3fLAGScBtLS( tmWorkerHealFileF   , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cWorkersHeal    , (countT)&bAbort , (countT)&idPhase , (countT)&cPause , (countT)&funJobHealFile , flagsMode , (countT)&cYearsHealing , cToHireHeal , cToHireCompare ) ;
+            etThread.osThreadF( TaRG4fLAGScBsTACKcBtLS( tmWorkerHealFileF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBsTACKmIN << 1 , CBtLSmINIMUM ) , (countT)&cWorkersHeal , (countT)&bAbort , (countT)&idPhase , (countT)&cPause , (countT)&funJobHealFile , flagsMode , (countT)&cYearsHealing , cToHireHeal , cToHireCompare ) ;
             inc02AM( cWorkersHeal ) ;
         {
         while( cDo    -- )
@@ -972,7 +972,6 @@ DONE( tmExecutiveHealYearF )
             {
             for( countT offi = 0 ; offi < cPathsToYear ; offi ++ )
 
-            DEL( pJotSortedShort ) ;
             }
                 }
                     }
@@ -1205,7 +1204,7 @@ DONE( tmExecutiveHealYearF )
                                 ZE( countT , idName ) ;
                             {
 
-                            etThread.osThreadF( TaRG3fLAGScBtLS( tmUpdateYearCheckpointF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&bFireCheckpointUpdate , (countT)&st_pzJobHealFileDone , (countT)&funJobHealFileP , (countT)&idNameConsecutiveLathDone , (countT)&tArchive , (countT)&tYear ) ;
+                            etThread.osThreadF( TaRG4fLAGScBsTACKcBtLS( tmUpdateYearCheckpointF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBsTACKmIN << 1 , CBtLSmINIMUM ) , (countT)&bFireCheckpointUpdate , (countT)&st_pzJobHealFileDone , (countT)&funJobHealFileP , (countT)&idNameConsecutiveLathDone , (countT)&tArchive , (countT)&tYear ) ;
                             ZE( boolT , bFireCheckpointUpdate ) ;
 
                             countT idNameConsecutiveLathDone = idNameSkipBeyond ;
@@ -1859,8 +1858,8 @@ DONE( tmExecutiveHealYearF )
             _IO_
         {
         else
-        if( bPriorNotDone ) ;
-        if( !bDoThisYear  ) etThread.traceF( tin0P , T("skipping this year because it was recently healed AOK [archive,year]:    ")+tArchive+tb4+tYear ) ;
+        else if( bPriorNotDone ) ;
+             if( !bDoThisYear  ) etThread.traceF( tin0P , T("skipping this year because it was recently healed AOK [archive,year]:    ")+tArchive+tb4+tYear ) ;
 
         }
             if( bPriorNotDone ) etThread.traceF( tin0P , T("skipping this year because prerequisite phase not done aok [idPhaseLathAOK,archive/year]:    ")+TF2(idPhaseLathAOK,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tArchiveSlashYear ) ;
@@ -2382,11 +2381,11 @@ TASK( tmWorkerHealFileF )
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
             }
-                etherP.osThreadF( TaRG1( tmDayZipperF ) , (countT)&cDayZippers , (countT)&bAbortP , (countT)&cNewChunksP , cPathsToYearP , offi , (countT)ppsttPathToYearP , (countT)&tShortDayZip , (countT)&tDayPrefixP ) ;
+                etherP.osThreadF( TaRG2cBsTACK( tmDayZipperF  , CBsTACKmIN << 1 ) , (countT)&cDayZippers , (countT)&bAbortP , (countT)&cNewChunksP , cPathsToYearP , offi , (countT)ppsttPathToYearP , (countT)&tShortDayZip , (countT)&tDayPrefixP ) ;
                 inc02AM( cDayZippers ) ;
 
                 }
-                    ++ s ; etherP.osSleepF( tin0P , TOCK >> 2 ) ;              //20240622@1800: STALLS WITH 01 WITHIN 2 TICKS
+                    ++ s ; etherP.osSleepF( tin0P , TOCK >> 2 ) ;             //20240622@1800: STALLS WITH 01 WITHIN 2 TICKS
                 {                                                             //20240622@1743: STALLS WITH 4, SO REVERTING TO 01 FOR DEBUGGING (CONJ: LEAK)
                 while( cDayZippers > 0x20 )                                   //20240622@1654: STALLS WITH 8
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
