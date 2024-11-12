@@ -974,6 +974,12 @@ DONE( tmExecutiveHealYearF )
 
             }
                 }
+                    DEL( pJotSortedShort ) ;
+                    pJotSortedShort->flagsCtRefF() |= flJOTc_PATCHbOOKSfLAGStOpURGEoNdT ;       // ZAP THE FILE TO ENSURE THAT THE NEXT PHASE BUILDS A NEW NAME LIST (NEEDED FOR EXAMPLE IF I JUST CHUNKED FILES
+                {
+                if(  pJotSortedShort )                                                          // WILL BE 0 FOR !bAbortP && IDpHASE_HEAL
+
+                }
                     }
                         }
                             break ;
@@ -1005,8 +1011,8 @@ DONE( tmExecutiveHealYearF )
                             ZE( countT  , time1N ) ;
 
                             DEL( pJotSortedShort ) ;
+                            if(  pJotSortedShort && !( F(flagsModeP) & flHEALmODE_KEEPnAMES ) ) pJotSortedShort->flagsCtRefF() |= flJOTc_PATCHbOOKSfLAGStOpURGEoNdT ;           // CLOSE BUT RETAIN THE FILE IF flHEALmODE_KEEPnAMES
 
-                            if( pJotSortedShort && !( F(flagsModeP) & flHEALmODE_KEEPnAMES ) ) pJotSortedShort->flagsCtRefF() |= flJOTc_PATCHbOOKSfLAGStOpURGEoNdT ;
                             _IO_
                         {
                         case IDpHASE_HEAL :
