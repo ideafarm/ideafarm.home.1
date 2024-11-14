@@ -266,13 +266,36 @@
                 _IO_
             {
             if( osTid == osTidMe && !( F(flags) & flGRABc_DISABLErECURSION ) )
-        
-            if( !osTidMe ) { BLAMMO ; }
-            const countT osTidMe = ((tin1S&)tin0P).osTid ;
-        
-            if( F(((tin1S&)tin0P).pag1->_thirdC_.flagsModeAdam1) & flADAMmODE1_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS ) { BLAMMO ; }
-            if( F(((tin1S&)tin0P).flagsThreadMode1     ) &   flTHREADmODE1_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS ) { BLAMMO ; }
-            if( F(flags) & flGRABc_DISABLED ) { BLAMMO ; }
+
+            }
+                }
+                    BLAMMOiD( 0x47744774 ) ;
+                    _IO_
+                {
+                if( !osTidMe )
+                osTidMe = ((tin1S&)tin0P).osTid ;
+
+                }
+                    BLAMMOiD( 0x37733773 ) ;
+                    _IO_
+                {        
+                if( F(((tin1S&)tin0P).pag1->_thirdC_.flagsModeAdam1) & flADAMmODE1_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS )
+
+                }
+                    BLAMMOiD( 0x27722772 ) ;
+                    _IO_
+                {        
+                if( F(((tin1S&)tin0P).flagsThreadMode1 ) & flTHREADmODE1_DISALLOWgRABoFiNTERPROCESSgRABs && F(flags) & flGRABc_INTERpROCESS )
+
+                }
+                    BLAMMOiD( 0x17711771 ) ;
+                    _IO_
+                {        
+                if( F(flags) & flGRABc_DISABLED )
+
+                _IO_
+            {
+            ZE( countT , osTidMe ) ;
     
             _IO_
             if( bDebugTrace ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("U:: grabC::grabF / i") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_3 ) ; //U:: TO FIND A BUG
