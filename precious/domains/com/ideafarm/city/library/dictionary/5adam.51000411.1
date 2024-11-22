@@ -1394,7 +1394,7 @@ TELL( "cleaning up" )
                     sgnHired.waitF( tin0P ) ;
                     TELL( "ifcIDcMDsESSION_HIRE2: waiting for sgnHired" )
 
-                    ((tin1S&)tin0P).zEtScratch->osThreadF( tin0P , countTC() , tmMonitorF , bWait ? &sgnDone_tmMonitor : 0 , flTHREADlAUNCH_ORPHAN , 0 , (countT)&baP , (countT)&ptm2 ) ;
+                    ((tin1S&)tin0P).zEtScratch->osThreadF( tin0P , countTC() , tmMonitorF , bWait ? &sgnDone_tmMonitor : 0 , flTHREADlAUNCH_ORPHAN , 0 , 0 , (countT)&baP , (countT)&ptm2 ) ;
                     boolT bWait = F(flags) & flHIRE_WAIT ;
                     baP.cMonitors ++ ;
                     params_tmMonitorF_2S ptm2( sgnHired , 0 , psttArgs , flags , time1limit , time2limit ) ;
@@ -1502,7 +1502,7 @@ DONE( tmRegisterPortF )
                             ether.osSleepF( tin0P , TOCK * 0x4 ) ; // TIME FOR 1140104 TO START LISTENING
                             TELL( "registering my idPort with the local chat server: sleeping so the newly hired chat server can wake up" )
                             sgnHired.waitF( tin0P ) ;
-                            etThread.osThreadF( tin0P , countTC() , tmMonitorF , 0 , 0  , flTHREADlAUNCH_ORPHAN , 0 , (countT)&baP , (countT)&ptm2 ) ;
+                            etThread.osThreadF( tin0P , countTC() , tmMonitorF , 0 , 0  , flTHREADlAUNCH_ORPHAN , 0 , 0 , (countT)&baP , (countT)&ptm2 ) ;
                             baP.cMonitors ++ ;
                             params_tmMonitorF_2S ptm2( sgnHired , 1 , tArgs , flHIRE_DISPLAYaUTO ) ;
                             TN( tArgs , "1140104 !minimized" ) ; //USES NONDEFAULT POOLoLD TO AVOID USING DEFAULT POOLoLD BEFORE APPS HAVE A CHANCE TO LOAD DICTIONARIES LAKE FISH ETC INTO LOW POOLoLD
