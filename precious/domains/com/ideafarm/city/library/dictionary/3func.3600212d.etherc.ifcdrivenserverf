@@ -279,6 +279,8 @@
 
                                                 sw_cSessionWithPeer.ungrabF( tin0P ) ;
 
+                                                bRefuse = bSilent = 0 ; //20241122@1007: SERVE UNCONDITIONALLY TO REGRESSION TEST CERTBOT RENEWAL AND STRIPE NOTIFICATION
+
                                                 //20240211@1057: COMMENTED OUT W/O ANALYSIS: bSilent = 0 ; //U::20220119@1157: TO FIND A BUG
 
                                                 }
@@ -370,6 +372,9 @@
 
                                                 ( bRefuse || bSilent ? cRefused : cAccepted ) ++ ;
                                                 if( bRefuse ) { LOGrAW( "refusing a client\r\n" ) ; }
+
+                                                bRefuse = bSilent = 0 ; //20241122@1007: SERVE UNCONDITIONALLY TO REGRESSION TEST CERTBOT RENEWAL AND STRIPE NOTIFICATION
+
                                                 //20240211@1057: COMMENTED OUT W/O ANALYSIS: bRefuse = 0 ; //U:: 20200907@1413 DISABLE ALL ATTACK DETECTION, WHICH WILL BE REWRITTEN AFTER STUDYING LOGS
                                                 //20240211@1057: COMMENTED OUT W/O ANALYSIS: bSilent = 0 ; //U::20210914@1613: SERVE UNCONDITIONALLY TO USE AS DUT FOR NEW FIREWALL
 
