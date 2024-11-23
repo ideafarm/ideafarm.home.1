@@ -282,7 +282,7 @@ DONE( tmWorkF )
                                                     }
                                                         break ;
                                                         etThread.delF( tin0P , psttBccLine ) ;
-                                                        etThread.traceF( tin0P , T("credentials rejected") ) ;
+                                                        etThread.traceF( tin0P , T("credentials (password) rejected") ) ;
                                                         flagsFail |= flFAIL_STARTtlsrEJECTED ;
                                                         POOPR
                                                     {
@@ -295,7 +295,7 @@ DONE( tmWorkF )
                                                     }
                                                         break ;
                                                         etThread.delF( tin0P , psttBccLine ) ;
-                                                        etThread.traceF( tin0P , T("credentials rejected") ) ;
+                                                        etThread.traceF( tin0P , T("credentials (user) rejected") ) ;
                                                         flagsFail |= flFAIL_STARTtlsrEJECTED ;
                                                         POOPR
                                                     {
@@ -326,7 +326,7 @@ DONE( tmWorkF )
 //tSay = T("auth login\r\n")+tUser+T("\r\n")+tPassword+T("\r\n") ;
 //U::TO FIND A BUG
 
-#endif
+//#endif
                                                 }
 //#endif
                                                     }
@@ -357,13 +357,14 @@ DONE( tmWorkF )
                                                     tSay = T("starttls\r\n") ;
                                                 {
                                                 if( bTls )
-#if defined( NEVERdEFINED )
+//#if defined( NEVERdEFINED )
 
+//U::20241123@0626: MORE EXPERIMENTING TO GET A DIFFERENT SERVER TO WORK
 //U::20240209@1700: CLEAN THIS CODE UP; CONSIDER REMOVING SUPPORT FOR STARTTLS AND JUST REQUIRING ALL SMTP PEERS TO SUPPORT TLS CONNECTIONS
 //U::20240209@1700: THIS MESS IS BECAUSE MAILGUN APPEARS TO NO LONGER SUPPORT STARTTLS ; THIS CODE WORKS WITH MAILGUN IF, AND ONLY IF, PORT 1d1 (465_9) IS SPECIFIED WITHIN THE soulC OBJECT ; EXAMPLE: etThread.boxPutF( tin0P , T("smtp.mailgun.org[admin]/1d1/smtp/fooey@admin.ideafarm.com/wo@ideafarm.com") , T("Subject: parameter 1\r\n\r\nparameter 2") ) ;
 
 
-#endif
+//#endif
                                                 }
                                                     break ;
                                                     etThread.delF( tin0P , psttBccLine ) ;
@@ -387,7 +388,7 @@ DONE( tmWorkF )
                                                 //sockc.verifyReplyF( tin0P , 502 ) ;
                                                 //sockc.writeF( tin0P , (osTextT*)tSay ) ;
                                                 //etThread.traceF( tin0P , T("[tSay]: ")+tSay ) ;
-#if defined( NEVERdEFINED )
+//#if defined( NEVERdEFINED )
                                                 TN( tSay , "" ) ; tSay = ( tHelloVerb+T(" ")+tHelloMyName+T("\r\n") ) ;
 
                                                 }
@@ -603,7 +604,7 @@ DONE( tmWorkF )
                                                 TN( tProtocol , "" ) ;
                                                 nicNameC hidServer ;
 
-                                                socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL /*| flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE*/ , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+                                                socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL | flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
 
                                                 countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
                                                 countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
