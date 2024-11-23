@@ -1273,9 +1273,14 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
 
                 etThread.boxPutF( tin0P , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nPayment for home activation received from [email]:    ")+tValueEmail+T("\r\n") ) ;
             {
-            if( bHome )
+            else if( bHome )
+            }
+                etThread.boxPutF( tin0P , T("smtp.mailgun.org[admin]/1d1/smtp/factories@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from IDEAFARM.COM\r\n\r\nPayment for student registration received for [email]:    ")+tValueEmail+T("\r\n") ) ;
+            {
+            if( bStudent )
 
-            boolT bHome = !etThread.strCompareF( tin0P , tValueAmount , T("100") ) ;     //U:: 20240215@2015: THIS IS A WORKAROUND ; AWAITING ADVICE FROM STRIPE REGARDING HOW TO IDENTIFY THE PRODUCT PURCHASED
+            boolT bStudent = !etThread.strCompareF( tin0P , tValueAmount , T("1600") ) ;     //U:: CRAFTWORK KLUDGE
+            boolT bHome    = !etThread.strCompareF( tin0P , tValueAmount , T( "100") ) ;     //U:: 20240215@2015: THIS IS A WORKAROUND ; AWAITING ADVICE FROM STRIPE REGARDING HOW TO IDENTIFY THE PRODUCT PURCHASED
         {
         )
             && !etThread.strCompareF( tin0P , tValueStatus , T("succeeded") )
