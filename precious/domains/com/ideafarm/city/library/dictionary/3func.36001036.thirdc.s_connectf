@@ -52,7 +52,7 @@
                 ++ s ;
 
                 #endif
-                    if( ((tin1S&)tin0P).brcLath == WSAENOTSOCK ) break ; //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP
+                    if( ((tin1S&)tin0P).brcLath == WSAENOTSOCK - WSABASEERR ) break ; //THIS WILL HAPPEN IF thirdC::s_cancelF IS CALLED ON handleP          20241123@2154: W/O ANALYSIS, ADDED "- WSABASEERR"
                 #elif defined( __NT__ )
                     //U:
                 #if defined( __OS2__ )
@@ -127,9 +127,6 @@
             //20141124@1644: WEIRD BEHAVIOR: THE ((tin1S&)tin0P).bosFail = !!_brcRawExp ; LINE WAS OBSERVED IN WDW TO SET handleP.osh TO -1 (THE VALUE OF _brcRawExp)
 
             BOSS( WHATsir , BOSfAIL , connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info ) )
-
-
-
 
             //}
             //    ((tin1S&)tin0P).pEther->traceF( tin0P , T("s_connectF / connecting to port 05") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;

@@ -16,7 +16,9 @@
     {
     _except( EXCEPTION_EXECUTE_HANDLER )
     }
+        //printf( "\r\nc_openSslTls_readIF / called SSL_read [cbRead]:    %x\r\n" , cbRead ) ;
         cbRead =   SSL_read( pSslP , pbP , cbP ) ;
+        //puts( "\r\nc_openSslTls_readIF / calling SSL_read\r\n" ) ;
 
         //{ unsigned* pcBlammo = 0 ; *pcBlammo = 0x246 ; } //TO FIND A BUG **** REMOVE IN PRODUCTION ****
 
