@@ -1077,7 +1077,7 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
     }
         }
             etThread.traceF( tin0P , T("!exception / could not parse stripe notice [postBodyP]:\r\n")+T(postBodyP) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-            etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/postmaster@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nCould not parse. [tBody]:\r\n")+T(postBodyP)+T("\r\n") ) ;
+            etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/postmaster@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from IDEAFARM.COM\r\n\r\nCould not parse. [tBody]:\r\n")+T(postBodyP)+T("\r\n") ) ;
         {
         else
         }
@@ -1275,32 +1275,25 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
                 etThread.boxPutF( tin0P , T("smtp.mailgun.org[admin]/1d1/smtp/postmaster@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from Stripe\r\n\r\nPayment for home activation received from [email]:    ")+tValueEmail+T("\r\n") ) ;
             {
             else if( bHome )
-#if defined( NEVERdEFINED )
             }
                 etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from IDEAFARM.COM\r\n\r\nPayment for student registration received for [email]:    ")+tValueEmail+T("\r\n") ) ;
             {
             if( bStudent )
+#if defined( NEVERdEFINED )
 
-            boolT bStudent = !etThread.strCompareF( tin0P , tValueAmount , T("1600") ) ;     //U:: CRAFTWORK KLUDGE
-            boolT bHome    = !etThread.strCompareF( tin0P , tValueAmount , T( "100") ) ;     //U:: 20240215@2015: THIS IS A WORKAROUND ; AWAITING ADVICE FROM STRIPE REGARDING HOW TO IDENTIFY THE PRODUCT PURCHASED
+            //etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from IDEAFARM.COM\r\n\r\nPayment for student registration received for [email]:    ")+tValueEmail+T("\r\n") ) ;
+
+            etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/postmaster@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from IDEAFARM.COM\r\n\r\nReceived [tBody]:\r\n")+T(postBodyP)+T("\r\n") ) ;
+
+            etThread.delF( tinP , psttFile ) ;
+            etThread.boxPutGenerationF( tin0P , psttFile , T("///ideafarm/tmp/hook/body.from.stripe") , costBodyP + TUCK , postBodyP , costBodyP , 0 , flOPENdETAILS_null ) ; ___( psttFile ) ;
+            ZE( strokeS* , psttFile ) ;
+
+            countT costBodyP = thirdC::c_strlenIF( tinP , postBodyP ) ;
         {
         )
-            && !etThread.strCompareF( tin0P , tValueStatus , T("succeeded") )
-            && !etThread.strCompareF( tin0P , tValueObject , T("charge") )
-            && !etThread.strCompareF( tin0P , tValuePaid , T("true") )
-            && !etThread.strCompareF( tin0P , tValueCaptured , T("true") )
             && !etThread.strCompareF( tin0P , tValueLiveMode1 , T("false") )                    //U:: "true" IN PRODUCTION
-            && !etThread.strCompareF( tin0P , tValueDescriptor , T("IDEAFARM.COM") )
-            )
-                !etThread.strCompareF( tin0P , tValueAmount , T("1600") )
-                ||
-                !etThread.strCompareF( tin0P , tValueAmount , T("200") )
-                ||
-                !etThread.strCompareF( tin0P , tValueAmount , T("100") )
-            (
-            &&
-            && !etThread.strCompareF( tin0P , tValueAmount , tValueAmountCaptured )
-            && !etThread.strCompareF( tin0P , tValueType , T("charge.succeeded") )
+            && !etThread.strCompareF( tin0P , tValueType , T("checkout.session.completed") )
                !etThread.strCompareF( tin0P , tValueVersion , T("2023-10-16") )
         (
         if
