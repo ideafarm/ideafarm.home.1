@@ -1341,9 +1341,9 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
 
             ) ;
 
-                "    [age]:              ")+tValueAge+T("\r\n\r\n"
-                "    [usernameemail]:    ")+tValueMatrixUsername+T("\r\n"
-                "    [email]:            ")+tValueEmail+T("\r\n"
+                "    [age]:         ")+tValueAge+T("\r\n\r\n"
+                "    [username]:    ")+tValueMatrixUsername+T("\r\n"
+                "    [email]:       ")+tValueEmail+T("\r\n"
                 "Payment received for\r\n\r\n"
                 "Thank you for your order.\r\n\r\n"
                 "Subject: Notification from IDEAFARM.COM\r\n\r\n"
@@ -1909,38 +1909,37 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
                 nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
                 nicNameC nnServer ;
             
+                ) ;
+                
+                    "}\r\n"
+                    "    \"password\": \"")+tPassword+T("\"\r\n"
+                    "    },\r\n"
+                    "        \"user\": \"ideafarm\"\r\n"
+                    "        \"type\": \"m.id.user\",\r\n"
+                    "    {\r\n"
+                    "    \"identifier\":\r\n"
+                    "    \"type\": \"m.login.password\",\r\n"
+                    "{\r\n"
+                
+                TN( tBody , "" ) ; tBody = T(
+                
+                }
+                    etThread.delF( tin0P , psttPassword ) ;
+                    tPassword = T(psttPassword) ;
+                    etThread.traceF( tin0P , T("[password]:    ")+T(psttPassword) ) ;
+                    if( psttPassword && psttPassword->idAdam ) tPassword = T(psttPassword) ;
+                    ZE( strokeS* , psttPassword ) ; etThread.querySettingF( tin0P , psttPassword , T("!ipdos.matrix.password.ideafarm")  ) ; ___( psttPassword ) ;
+                {
+                TN( tPassword , "" ) ;
+
                 SCOOPS
             {
             IFsCRATCH                                                           // LOGIN
             boolT bFail0 = 1 ;
+
             TN( tValueDeviceId       , "" ) ;
             TN( tValueAccessToken , "" ) ;
-            
             TN( tServer , "matrix.communick.com" ) ;
-            
-            ) ;
-            
-                "}\r\n"
-                "    \"password\": \"")+tPassword+T("\"\r\n"
-                "    },\r\n"
-                "        \"user\": \"ideafarm\"\r\n"
-                "        \"type\": \"m.id.user\",\r\n"
-                "    {\r\n"
-                "    \"identifier\":\r\n"
-                "    \"type\": \"m.login.password\",\r\n"
-                "{\r\n"
-            
-            TN( tBody , "" ) ; tBody = T(
-            
-            }
-                etThread.delF( tin0P , psttPassword ) ;
-                tPassword = T(psttPassword) ;
-                etThread.traceF( tin0P , T("[password]:    ")+T(psttPassword) ) ;
-                if( psttPassword && psttPassword->idAdam ) tPassword = T(psttPassword) ;
-                ZE( strokeS* , psttPassword ) ; etThread.querySettingF( tin0P , psttPassword , T("!ipdos.matrix.password.ideafarm")  ) ; ___( psttPassword ) ;
-            {
-            TN( tPassword , "" ) ;
-
             sCountT age = etThread.strDigitsToSCountF( tin0P , tValueAge , 0xa , 1 ) ;
         {
         )
