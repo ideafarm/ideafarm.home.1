@@ -1340,17 +1340,20 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             {
             if( bFail1 || bFail2 || bFail3 )
 
-            ) + tInvitationsSubmitted +T("\r\n") ;
-
-                "Invitations submitted to the [matrix] system:\r\n\r\n"
+            ) ;
+                +tInvitationsSubmitted +T("\r\n"
+                "Invitations submitted to the [matrix] system:\r\n\r\n")
                 "    [age]:         ")+tValueAge+T("\r\n\r\n"
                 "    [username]:    ")+tValueMatrixUsername+T("\r\n"
                 "    [email]:       ")+tValueEmail+T("\r\n"
-                "Payment received for\r\n\r\n"
-                "Thank you for your order.\r\n\r\n"
-                "Subject: Notification from IDEAFARM.COM\r\n\r\n"
+                +T("Payment received for:\r\n\r\n"
+                "Subject: Notification from IDEAFARM.COM\r\n\r\nThank you for ")+tForWhat
 
             TN( tThankYou , "" ) ; tThankYou = T(
+
+            else           tForWhat = T("paying your entry fee for self-monitored chat.\r\n\r\n") ;
+            if( bStudent ) tForWhat = T("registering as a student on IDEAFARM.COM.\r\n\r\n") ;
+            TN( tForWhat , "" ) ;
 
             etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/postmaster@admin.ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Notification from IDEAFARM.COM\r\n\r\nReceived [tBody]:\r\n")+T(postBodyP)+T("\r\n") ) ; //U::GLASS: COMMENT OUT IN PRODUCTION
 
@@ -1578,10 +1581,11 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
                 IFsCRATCH                                                           // INVITE TO ROOM: CLASSROOM
             {
             else if( !bFail0 )
-            if( age < 13 ) bFail3 = 0 ;
+            if( age < 13 || !bStudent ) bFail3 = 0 ;
             boolT bFail3 = 1 ;
             TN( tValueError3     , "" ) ;
             TN( tValueErrorCode3 , "" ) ;
+            boolT bStudent = !!tValueIdSubscription.csF( tin0P ) ;
             
             }            
                 }
