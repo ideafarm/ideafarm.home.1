@@ -1287,10 +1287,31 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
                 ) ;
 
                     "Be sure to use the same email address so that we can detect duplicate charges and reverse them."
-                    "If you entered your [matrix] username incorrectly, you can submit a new, corrected order.\r\n"
-                    "\r\n\r\nWe have been notified and will contact you via email during business hours.\r\n"
+                    "says that it is and submit a new, corrected, order, if necessary.\r\n\r\n"
+                    "If you do not receive invite(s) within 15 minutes, verify that "" is exactly what your [matrix]\r\n"
+                    "the [matrix] system does not verify that the [matrix] username that you entered exists.\r\n"
+                    "This automated system did not detect any failure to create your invite(s).  However,\r\n"
 
                 tThankYou += T(
+            {
+            else
+            }
+                ) ;
+
+                    "Be sure to use the same email address so that we can detect duplicate charges and reverse them."
+                    "If you entered your [matrix] username incorrectly, you can submit a new, corrected order.\r\n"
+                    "\r\nWe have been notified and will contact you via email during business hours.\r\n"
+
+                tThankYou += T(
+
+                }
+                    ) ;
+
+                        "    [classroom]:               ")+tValueError3+T("\r\n"
+
+                    tThankYou += T(
+                {
+                if( bFail3 )
 
                 }
                     ) ;
@@ -1316,12 +1337,12 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
 
                 tThankYou += T(
             {
-            if( bFail1 || bFail2 )
+            if( bFail1 || bFail2 || bFail3 )
 
             ) ;
 
                 "    [age]:              ")+tValueAge+T("\r\n\r\n"
-                "    [usernameemail]:    ")+tValueMatrixUsername+T("\r\n\r\n"
+                "    [usernameemail]:    ")+tValueMatrixUsername+T("\r\n"
                 "    [email]:            ")+tValueEmail+T("\r\n"
                 "Payment received for\r\n\r\n"
                 "Thank you for your order.\r\n\r\n"
@@ -1449,6 +1470,116 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             }            
                 }
                     }
+                        bFail3 = 1 ;
+                        etThread.traceF( tin0P , T("socket is impotent") ) ;
+                        POOPRqUIET
+                    {
+                    if( POOP )
+                
+                    }
+                        if( !tValueErrorCode3.csF( tin0P ) ) bFail3 = 0 ;
+                        DEL( pSwPathValue ) ;
+                        }
+                            }
+                                etThread.delF( tin0P , psttValue ) ;
+
+                                }
+                                    }
+                                        etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                        *pptValue[ offe ] = T(psttValue) ;
+                                    {
+                                    if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                {
+                                for( countT offe = 0 ; offe < cPaths ; offe ++ )
+
+                                if( cPaths - cValues ) { BLAMMO ; }
+                                countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+
+                                strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+
+                                _IO_
+                            {
+                            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                            countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                        {
+                        if( !POOP )
+
+                        //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
+                        ;
+                        }
+                            &tPathError     ,
+                            &tPathErrorCode ,
+                        {
+                        textC* pptPath[] =
+
+                        TN( tPathError     , "\"error\"/"   ) ;
+                        TN( tPathErrorCode , "\"errcode\"/" ) ;
+
+                        ;
+                        }
+                            &tValueError3     ,
+                            &tValueErrorCode3 ,
+                        {
+                        textC* pptValue[] =
+
+                        __Z( pSwPathValue ) ;
+                        etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                        ZE( switchC* , pSwPathValue ) ;
+                        ZE( strokeS* , psttPath     ) ;
+                    {
+
+                    etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    etThread.traceF( tin0P , T("json response:") ) ;
+
+                    }
+                        }
+                            else if( costj ) break ;
+                                 if( cNest ) costj ++ ;
+                
+                            else if( postj[ costj ] == '}' ) cNest -- ;
+                                 if( postj[ costj ] == '{' ) cNest ++ ;
+                
+                            if( !cbIn ) break ;
+                            countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
+                        {
+                        for(;;)
+                        ZE( countT , cNest ) ;
+                    {
+                    ZE( countT , costj ) ;
+                    osTextT postj[ TUCK << 1 ] ;
+                
+                    sockc.writeF( tin0P , (osTextT*)tSay ) ;
+                    etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    etThread.traceF( tin0P , T("request:") ) ;
+
+                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!asfLvjanrxfXkEVNHg:communick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+                
+                    sockc.connectF( tin0P , 443 , nnServer ) ;
+                    socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+                
+                    countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
+                    countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
+                    countT timeAllowedConnected = TICK >> 2 ;
+                
+                    nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+                    nicNameC nnServer ;
+                
+                    SCOOPS
+                {
+                IFsCRATCH                                                           // INVITE TO ROOM: CLASSROOM
+            {
+            else if( !bFail0 )
+            if( age < 13 ) bFail3 = 0 ;
+            boolT bFail3 = 1 ;
+            TN( tValueError3     , "" ) ;
+            TN( tValueErrorCode3 , "" ) ;
+            
+            }            
+                }
+                    }
                         bFail2 = 1 ;
                         etThread.traceF( tin0P , T("socket is impotent") ) ;
                         POOPRqUIET
@@ -1550,7 +1681,7 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
                 {
                 IFsCRATCH                                                           // INVITE TO SPACE: COURTSHIP WORKSHOPS
             {
-            else if( !bFail1 )
+            else if( !bFail0 )
             if( age < 13 || age > 29 ) bFail2 = 0 ;
             boolT bFail2 = 1 ;
             TN( tValueError2     , "" ) ;
@@ -1813,7 +1944,7 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             sCountT age = etThread.strDigitsToSCountF( tin0P , tValueAge , 0xa , 1 ) ;
         {
         )
-          //&& !etThread.strCompareF( tin0P , tValueLive       , T("false"                     ) )                    //U:: "true" IN PRODUCTION
+          //&& !etThread.strCompareF( tin0P , tValueLive       , T("false"                     ) )
             && !etThread.strCompareF( tin0P , tValueNoticeType , T("checkout.session.completed") )
                !etThread.strCompareF( tin0P , tValueApiVersion , T("2023-10-16"                ) )
         (
