@@ -1286,9 +1286,10 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             }
                 ) ;
 
-                    "Be sure to use the same email address so that we can detect duplicate charges and reverse them."
-                    "says that it is and submit a new, corrected, order, if necessary.\r\n\r\n"
-                    "If you do not receive invite(s) within 15 minutes, verify that "" is exactly what your [matrix]\r\n"
+                    "Be sure to use the same email address so that we can detect duplicate charges and reverse them.\r\n\r\n"
+                    "corrected, order.\r\n\r\n"
+                    "displays exactly ")+tValueMatrixUsername+T(" for your userid.  If not, you can submit a new,\r\n"
+                    "If you do not receive invite(s) within 15 minutes, verify that your [matrix] client\r\n"
                     "the [matrix] system does not verify that the [matrix] username that you entered exists.\r\n"
                     "This automated system did not detect any failure to create your invite(s).  However,\r\n"
 
@@ -1298,7 +1299,7 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             }
                 ) ;
 
-                    "Be sure to use the same email address so that we can detect duplicate charges and reverse them."
+                    "Be sure to use the same email address so that we can detect duplicate charges and reverse them.\r\n\r\n"
                     "If you entered your [matrix] username incorrectly, you can submit a new, corrected order.\r\n"
                     "\r\nWe have been notified and will contact you via email during business hours.\r\n"
 
@@ -1339,8 +1340,9 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             {
             if( bFail1 || bFail2 || bFail3 )
 
-            ) ;
+            ) + tInvitationsSubmitted +T("\r\n") ;
 
+                "Invitations submitted to the [matrix] system:\r\n\r\n"
                 "    [age]:         ")+tValueAge+T("\r\n\r\n"
                 "    [username]:    ")+tValueMatrixUsername+T("\r\n"
                 "    [email]:       ")+tValueEmail+T("\r\n"
@@ -1467,8 +1469,12 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             {
             IFsCRATCH                                                           // LOGOUT
 
+            if( !tInvitationsSubmitted.csF( tin0P ) ) tInvitationsSubmitted = T("    none\r\n") ;
+
             }            
                 }
+                    if( !bFail3 ) tInvitationsSubmitted += T("    Wo'O's Table (Classroom)\r\n") ;
+
                     }
                         bFail3 = 1 ;
                         etThread.traceF( tin0P , T("socket is impotent") ) ;
@@ -1579,6 +1585,8 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             
             }            
                 }
+                    if( !bFail2 ) tInvitationsSubmitted += T("    Bait N' Switch Courtship Workshops\r\n") ;
+
                     }
                         bFail2 = 1 ;
                         etThread.traceF( tin0P , T("socket is impotent") ) ;
@@ -1689,6 +1697,8 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             
             }
                 }
+                    if( !bFail1 ) tInvitationsSubmitted += T("    Wo'O's Table (Parlor)\r\n") ;
+
                     }
                         bFail1 = 1 ;
                         etThread.traceF( tin0P , T("socket is impotent") ) ;
@@ -1937,6 +1947,7 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             IFsCRATCH                                                           // LOGIN
             boolT bFail0 = 1 ;
 
+            TN( tInvitationsSubmitted , "" ) ;
             TN( tValueDeviceId       , "" ) ;
             TN( tValueAccessToken , "" ) ;
             TN( tServer , "matrix.communick.com" ) ;
