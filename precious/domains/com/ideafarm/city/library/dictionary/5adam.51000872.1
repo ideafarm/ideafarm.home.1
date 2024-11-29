@@ -166,22 +166,27 @@ IFsCRATCH
         {
         if( !POOP )
 
+        //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
         ;
         }
-            &tPathDeviceId     ,
-            &tPathAccessToken  ,
+            &tPathError     ,
+            &tPathErrorCode ,
         {
         textC* pptPath[] =
 
-        TN( tPathDeviceId    , "\"device_id\"/"    ) ;
-        TN( tPathAccessToken , "\"access_token\"/" ) ;
+        TN( tPathError     , "\"error\"/"   ) ;
+        TN( tPathErrorCode , "\"errcode\"/" ) ;
 
         ;
         }
-            &tValueDeviceId      ,
-            &tValueAccessToken ,
+            &tValueError     ,
+            &tValueErrorCode ,
         {
         textC* pptValue[] =
+
+        TN( tValueError     , "\"error\"/"   ) ;
+        TN( tValueErrorCode , "\"errcode\"/" ) ;
 
         __Z( pSwPathValue ) ;
         etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
@@ -213,7 +218,11 @@ IFsCRATCH
     etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
     etThread.traceF( tin0P , T("request:") ) ;
 
-    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!HnpEnmhcgIKCfCxeKH%3Acommunick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+    ///*COURTSHIP SPACE*/   TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!vToQLBLEntzHVKLSgG:communick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+
+    /*PARLOR*/   TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!hYyziZVwPkfPSsKSsW:communick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+
+    //TEST ROOM: TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!HnpEnmhcgIKCfCxeKH%3Acommunick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
 
     countT costBodyInvite = tBodyInvite.csF( tin0P ) ;
 
@@ -232,17 +241,19 @@ IFsCRATCH
 
     ) ;
 
-        "}\r\n"
-        "    \"address\": \"test.2037@ideafarm.com\"\r\n"
-        "    \"medium\": \"email\",\r\n"
-        "    \"id_server\": \"")/*+tServer*/+T("matrix.org")+T("\",\r\n"
-        "    \"id_access_token\": \"")+tValueAccessToken+T("\",\r\n"
+    //    "}\r\n"
+    //    "    \"address\": \"test.2037@ideafarm.com\"\r\n"
+    //    "    \"medium\": \"email\",\r\n"
+    //    "    \"id_server\": \"")/*+tServer*/+T("matrix.org")+T("\",\r\n"
+    //    "    \"id_access_token\": \"")+tValueAccessToken+T("\",\r\n"
     //    "    \"user_id\": \"@ideafarm:communick.com\",\r\n"
     //    "    \"user_id\": \"@ideafarm:matrix.org\"\r\n"
-        "{\r\n"
+    //    "{\r\n"
 
-    //      "{\"user_id\": \"@ideafarm:matrix.org\"}\r\n"
-    //      "{\"foo\": \"goo\"}\r\n"
+          "{\"user_id\": \"@ideafarm38567392534901543notauser:matrix.org\"}\r\n" //INTENTIONAL USER NOT EXIST
+        //"{\"user_id\": \"@ideafarmnotauser:matrix.org\"}\r\n" //INTENTIONAL USER NOT EXIST
+        //"{\"user_id\": \"@ideafarm:ideafarm.com\"}\r\n"       //INTENTIONAL SERVER NOT EXIST
+        //"{\"user_id\": \"@ideafarm:matrix.org\"}\r\n"
 
     TN( tBodyInvite , "" ) ; tBodyInvite = T(
 
@@ -340,10 +351,9 @@ IFsCRATCH
     etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
     etThread.traceF( tin0P , T("request:") ) ;
 
-    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/login HTTP/1.1\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+T(postBody) ;
+    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/login HTTP/1.1\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
 
     countT costBody = tBody.csF( tin0P ) ;
-    TN( tBody , postBody ) ;
 
     //sockc.connectF( tin0P , 80 , nnServer ) ;
     //socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
@@ -364,51 +374,12 @@ IFsCRATCH
 TN( tValueDeviceId       , "" ) ;
 TN( tValueAccessToken , "" ) ;
 
-//TN( tServer , "matrix-client.matrix.org" ) ;
-  TN( tServer , "matrix.communick.com" ) ;
-//TN( tServer , "127.1.1.1" ) ;
+TN( tServer , "matrix.communick.com" ) ;
 
-TODO
-
-//    
-//    {"user_id":"@ideafarm:communick.com","access_token":"doodoo","home_server":"communick.com","device_id":"poopie","well_known":{"m.homeserver":{"base_url":"https://matrix.communick.com/"},"m.identity_server":{"base_url":"https://matrix.org"}}}
-//    11a
-//    
-//    Transfer-Encoding: chunked
-//    Server: Synapse/1.115.0
-//    Date: Mon, 25 Nov 2024 03:36:52 GMT
-//    Content-Type: application/json
-//    Cache-Control: no-cache, no-store, must-revalidate
-//    Access-Control-Expose-Headers: Synapse-Trace-Id, Server
-//    Access-Control-Allow-Origin: *
-//    Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-//    Access-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization, Date
-//    HTTP/1.1 200 OK
-//    000b478e.268e9b87 ! 00000000.0000b2d7 @ 00000000.00000095 # 1        $ 1        % tm1F                             | response:
-//    
-//    }
-//        "password": "yeah"
-//        },
-//            "user": "me"
-//            "type": "m.id.user",
-//        {
-//        "identifier":
-//        "type": "m.login.password",
-//    {
-//    
-//    Content-Length: 186
-//    Content-Type: application/json
-//    Host: matrix.communick.com
-//    POST /_matrix/client/v3/login HTTP/1.1
-//    000b478e.268e9af2 ! 00000000.0000b242 @ 00000000.00005032 # 1        $ 1        % tm1F                             | request:
-//    
-// SUCCESSFUL LOGIN
-
-;
+) ;
 
     "}\r\n"
-//MATRIX:       "    \"password\": \"\"\r\n"
-//COMMUNICK:    "    \"password\": \"\"\r\n"
+    "    \"password\": \"")+tPassword+T("\"\r\n"
     "    },\r\n"
     "        \"user\": \"ideafarm\"\r\n"
     "        \"type\": \"m.id.user\",\r\n"
@@ -417,7 +388,18 @@ TODO
     "    \"type\": \"m.login.password\",\r\n"
     "{\r\n"
 
-osTextT* postBody =
+TN( tBody , "" ) ; tBody = T(
+
+}
+    etThread.delF( tin0P , psttPassword ) ;
+    tPassword = T(psttPassword) ;
+    etThread.traceF( tin0P , T("[password]:    ")+T(psttPassword) ) ;
+    if( psttPassword && psttPassword->idAdam ) tPassword = T(psttPassword) ;
+    ZE( strokeS* , psttPassword ) ; etThread.querySettingF( tin0P , psttPassword , T("!ipdos.matrix.password.ideafarm")  ) ; ___( psttPassword ) ;
+{
+TN( tPassword , "" ) ;
+
+TODO
 
 /*1*/WAKEsHOWtEXT( "doodle.matrix.internal.server.error.invite.email" )/*1*/
 /**/
