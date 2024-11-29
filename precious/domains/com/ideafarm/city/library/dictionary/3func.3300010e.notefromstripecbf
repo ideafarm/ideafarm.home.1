@@ -1292,111 +1292,112 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             countT costBodyP = thirdC::c_strlenIF( tin0P , postBodyP ) ;
         {
         )
-            && !etThread.strCompareF( tin0P , tValueLiveMode1 , T("false") )                    //U:: "true" IN PRODUCTION
-            && !etThread.strCompareF( tin0P , tValueType , T("checkout.session.completed") )
-               !etThread.strCompareF( tin0P , tValueVersion , T("2023-10-16") )
+            && !etThread.strCompareF( tin0P , tValueLive       , T("false"                     ) )                    //U:: "true" IN PRODUCTION
+            && !etThread.strCompareF( tin0P , tValueNoticeType , T("checkout.session.completed") )
+               !etThread.strCompareF( tin0P , tValueApiVersion , T("2023-10-16"                ) )
         (
         if
         
-        DEL( pSwPathValue ) ;
-        
         }
+            DEL( pSwPathValue ) ;
+            
             }
-                etThread.delF( tin0P , psttValue ) ;
-        
                 }
+                    etThread.delF( tin0P , psttValue ) ;
+            
                     }
-                        etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                        *pptValue[ offe ] = T(psttValue) ;
+                        }
+                            etThread.traceF( tin0P , T("********    ") + *pptKey[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            *pptValue[ offe ] = T(psttValue) ;
+                        {
+                        if( !etThread.strCompareF( tin0P , psttPath , *pptKey[ offe ] ) )
                     {
-                    if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                    for( countT offe = 0 ; offe < cKeys ; offe ++ )
+            
+                    if( cKeys - cValues ) { BLAMMO ; }
+                    countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                    countT cKeys  = sizeof pptKey  / sizeof pptKey[  0 ] ;
+            
+                    //etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            
+                    strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                    psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+            
+                    _IO_
                 {
-                for( countT offe = 0 ; offe < cPaths ; offe ++ )
-        
-                if( cPaths - cValues ) { BLAMMO ; }
-                countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-        
-                etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        
-                strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-        
-                _IO_
+                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
             {
-            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-            countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+            if( !POOP )
+        
+            ;
+            }
+                &tKeyLive           ,
+                &tKeyAmountDiscount ,
+                &tKeyIdSubscription ,
+                &tKeyMode           ,
+                &tKeyName           ,
+                &tKeyEmail          ,
+                &tKeyPostalCode     ,
+                &tKeyCountry        ,
+                &tKeyMatrixUsername ,
+                &tKeyAge            ,
+                &tKeyAmountTotal    ,
+                &tKeyAmountSubtotal ,
+                &tKeyApiVersion     ,
+                &tKeyNoticeType     ,
+            {
+            textC* pptKey[] =
+            
+            TN( tKeyLive           , "\"livemode\"/"                                                              ) ;
+            TN( tKeyAmountDiscount , "\"data\"/\"object\"/\"total_details\"/\"amount_discount\"/"                 ) ;
+            TN( tKeyIdSubscription , "\"data\"/\"object\"/\"subscription\"/"                                      ) ;
+            TN( tKeyMode           , "\"data\"/\"object\"/\"mode\"/"                                              ) ;
+            TN( tKeyName           , "\"data\"/\"object\"/\"customer_details\"/\"name\"/"                         ) ;
+            TN( tKeyEmail          , "\"data\"/\"object\"/\"customer_details\"/\"email\"/"                        ) ;
+            TN( tKeyPostalCode     , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"postal_code\"/"      ) ;
+            TN( tKeyCountry        , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"country\"/"          ) ;
+            TN( tKeyMatrixUsername , "\"data\"/\"object\"/\"custom_fields\"/item.00000002/\"text\"/\"value\"/"    ) ;
+            TN( tKeyAge            , "\"data\"/\"object\"/\"custom_fields\"/item.00000001/\"numeric\"/\"value\"/" ) ;
+            TN( tKeyAmountTotal    , "\"data\"/\"object\"/\"amount_total\"/"                                      ) ;
+            TN( tKeyAmountSubtotal , "\"data\"/\"object\"/\"amount_subtotal\"/"                                   ) ;
+            TN( tKeyApiVersion     , "\"api_version\"/"                                                           ) ;
+            TN( tKeyNoticeType     , "\"type\"/" ) ;
+
+            ;
+            }
+                &tValueLive           ,
+                &tValueAmountDiscount ,
+                &tValueIdSubscription ,
+                &tValueMode           ,
+                &tValueName           ,
+                &tValueEmail          ,
+                &tValuePostalCode     ,
+                &tValueCountry        ,
+                &tValueMatrixUsername ,
+                &tValueAge            ,
+                &tValueAmountTotal    ,
+                &tValueAmountSubtotal ,
+                &tValueApiVersion     ,
+                &tValueNoticeType     ,
+            {
+            textC* pptValue[] =
         {
-        if( !POOP )
-        
-        ;
-        }
-            &tPathType           ,
-            &tPathLiveMode2      ,
-            &tPathStatus         ,
-            &tPathReceiptUrl     ,
-            &tPathPaid           ,
-            &tPathObject         ,
-            &tPathLiveMode1      ,
-            &tPathCurrency       ,
-            &tPathCaptured       ,
-            &tPathDescriptor     ,
-            &tPathEmail          ,
-            &tPathAmountCaptured ,
-            &tPathAmount         ,
-            &tPathVersion        ,
-        {
-        textC* pptPath[] =
-        
-        TN( tPathType           , "\"type\"/"                                                ) ;
-        TN( tPathLiveMode2      , "\"livemode\"/"                                            ) ;
-        TN( tPathStatus         , "\"data\"/\"object\"/\"status\"/"                          ) ;
-        TN( tPathReceiptUrl     , "\"data\"/\"object\"/\"receipt_url\"/"                     ) ;
-        TN( tPathPaid           , "\"data\"/\"object\"/\"paid\"/"                            ) ;
-        TN( tPathObject         , "\"data\"/\"object\"/\"object\"/"                          ) ;
-        TN( tPathLiveMode1      , "\"data\"/\"object\"/\"livemode\"/"                        ) ;
-        TN( tPathCurrency       , "\"data\"/\"object\"/\"currency\"/"                        ) ;
-        TN( tPathCaptured       , "\"data\"/\"object\"/\"captured\"/"                        ) ;
-        TN( tPathDescriptor     , "\"data\"/\"object\"/\"calculated_statement_descriptor\"/" ) ;
-        TN( tPathEmail          , "\"data\"/\"object\"/\"billing_details\"/\"email\"/"       ) ;
-        TN( tPathAmountCaptured , "\"data\"/\"object\"/\"amount_captured\"/"                 ) ;
-        TN( tPathAmount         , "\"data\"/\"object\"/\"amount\"/"                          ) ;
-        TN( tPathVersion        , "\"api_version\"/"                                         ) ;
-        
-        ;
-        }
-            &tValueType           ,
-            &tValueLiveMode2      ,
-            &tValueStatus         ,
-            &tValueReceiptUrl     ,
-            &tValuePaid           ,
-            &tValueObject         ,
-            &tValueLiveMode1      ,
-            &tValueCurrency       ,
-            &tValueCaptured       ,
-            &tValueDescriptor     ,
-            &tValueEmail          ,
-            &tValueAmountCaptured ,
-            &tValueAmount         ,
-            &tValueVersion        ,
-        {
-        textC* pptValue[] =
-        
-        TN( tValueType           , "" ) ;
-        TN( tValueLiveMode2      , "" ) ;
-        TN( tValueStatus         , "" ) ;
-        TN( tValueReceiptUrl     , "" ) ;
-        TN( tValuePaid           , "" ) ;
-        TN( tValueObject         , "" ) ;
-        TN( tValueLiveMode1      , "" ) ;
-        TN( tValueCurrency       , "" ) ;
-        TN( tValueCaptured       , "" ) ;
-        TN( tValueDescriptor     , "" ) ;
+        TN( tValueLive           , "" ) ;
+        TN( tValueAmountDiscount , "" ) ;
+        TN( tValueIdSubscription , "" ) ;
+        TN( tValueMode           , "" ) ;
+        TN( tValueName           , "" ) ;
         TN( tValueEmail          , "" ) ;
-        TN( tValueAmountCaptured , "" ) ;
-        TN( tValueAmount         , "" ) ;
-        TN( tValueVersion        , "" ) ;
+        TN( tValuePostalCode     , "" ) ;
+        TN( tValueCountry        , "" ) ;
+        TN( tValueMatrixUsername , "" ) ;
+        TN( tValueAge            , "" ) ;
+        TN( tValueAmountTotal    , "" ) ;
+        TN( tValueAmountSubtotal , "" ) ;
+        TN( tValueApiVersion     , "" ) ;
+        TN( tValueNoticeType     , "" ) ;
         
         __Z( pSwPathValue ) ;
         etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postBodyP , flSTACKc_null ) ;
@@ -1429,4 +1430,3 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
-
