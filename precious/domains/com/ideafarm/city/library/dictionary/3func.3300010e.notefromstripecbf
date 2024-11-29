@@ -1299,6 +1299,16 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             }
                 ) ;
 
+                    "Please verify that we have your correct email address, and contact us at admin@ideafarm.com if we do not.\r\n\r\n"
+                    "We will help you obtain a username and get you set up to use the [matrix] system.\r\n"
+                    "This automated system could not submit invitations because you did not provide a [matrix] username.\r\n"
+
+                tThankYou += T(
+            {
+            else if( !tValueMatrixUsername.csF( tin0P ) )
+            }
+                ) ;
+
                     "Be sure to use the same email address so that we can detect duplicate charges and reverse them.\r\n\r\n"
                     "If you entered your [matrix] username incorrectly, you can submit a new, corrected order.\r\n"
                     "\r\nWe have been notified and will contact you via email during business hours.\r\n"
@@ -1343,9 +1353,10 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
             ) ;
                 +tInvitationsSubmitted +T("\r\n"
                 "Invitations submitted to the [matrix] system:\r\n\r\n")
-                "    [age]:         ")+tValueAge+T("\r\n\r\n"
-                "    [username]:    ")+tValueMatrixUsername+T("\r\n"
-                "    [email]:       ")+tValueEmail+T("\r\n"
+                "    [age (parsed)]: ")+TF4(age,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n"
+                "    [age (raw)]:    ")+tValueAge+T("\r\n\r\n"
+                "    [username]:     ")+tValueMatrixUsername+T("\r\n"
+                "    [email]:        ")+tValueEmail+T("\r\n"
                 +T("Payment received for:\r\n\r\n"
                 "Subject: Notification from IDEAFARM.COM\r\n\r\nThank you for ")+tForWhat
 
@@ -1365,133 +1376,22 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
 
             }
                 }
-                    etThread.traceF( tin0P , T("socket is impotent") ) ;
-                    POOPRqUIET
-                {
-                if( POOP )
-            
-                etThread.traceF( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
-                TN( tb4 , "    " ) ;
-            
-                }
-                    DEL( pSwPathValue ) ;
-            
                     }
-                        }
-                            etThread.delF( tin0P , psttValue ) ;
-            
-                            }
-                                }
-                                    etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                    *pptValue[ offe ] = T(psttValue) ;
-                                {
-                                if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
-                            {
-                            for( countT offe = 0 ; offe < cPaths ; offe ++ )
-            
-                            if( cPaths - cValues ) { BLAMMO ; }
-                            countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                            countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-            
-                            etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                            etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-            
-                            strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                            psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-            
-                            _IO_
-                        {
-                        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                        countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
-                    {
-                    if( !POOP )
-            
-                    ;
-                    }
-                        &tPathDeviceId     ,
-                        &tPathAccessToken  ,
-                    {
-                    textC* pptPath[] =
-            
-                    TN( tPathDeviceId    , "\"device_id\"/"    ) ;
-                    TN( tPathAccessToken , "\"access_token\"/" ) ;
-            
-                    ;
-                    }
-                        &tValueDeviceId      ,
-                        &tValueAccessToken ,
-                    {
-                    textC* pptValue[] =
-            
-                    __Z( pSwPathValue ) ;
-                    etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
-                    ZE( switchC* , pSwPathValue ) ;
-                    ZE( strokeS* , psttPath     ) ;
-                {
-            
-                etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                etThread.traceF( tin0P , T("json response:") ) ;
-            
-                }
-                    }
-                        else if( costj ) break ;
-                             if( cNest ) costj ++ ;
-            
-                        else if( postj[ costj ] == '}' ) cNest -- ;
-                             if( postj[ costj ] == '{' ) cNest ++ ;
-            
-                        if( !cbIn ) break ;
-                        countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
-                    {
-                    for(;;)
-                    ZE( countT , cNest ) ;
-                {
-                ZE( countT , costj ) ;
-                osTextT postj[ TUCK << 1 ] ;
-            
-                sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                etThread.traceF( tin0P , T("request:") ) ;
-            
-                TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
-            
-                //sockc.connectF( tin0P , 80 , nnServer ) ;
-                //socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
-            
-                sockc.connectF( tin0P , 443 , nnServer ) ;
-                socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
-            
-                countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
-                countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
-                countT timeAllowedConnected = TICK >> 2 ;
-            
-                nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
-                nicNameC nnServer ;
-            
-                SCOOPS
-            {
-            IFsCRATCH                                                           // LOGOUT
-
-            if( !tInvitationsSubmitted.csF( tin0P ) ) tInvitationsSubmitted = T("    none\r\n") ;
-
-            }            
-                }
-                    if( !bFail3 ) tInvitationsSubmitted += T("    Wo'O's Table (Classroom)\r\n") ;
-
-                    }
-                        bFail3 = 1 ;
                         etThread.traceF( tin0P , T("socket is impotent") ) ;
                         POOPRqUIET
                     {
                     if( POOP )
                 
+                    etThread.traceF( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
+                    TN( tb4 , "    " ) ;
+                
                     }
-                        if( !tValueErrorCode3.csF( tin0P ) ) bFail3 = 0 ;
                         DEL( pSwPathValue ) ;
+                
                         }
                             }
                                 etThread.delF( tin0P , psttValue ) ;
-
+                
                                 }
                                     }
                                         etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -1500,49 +1400,50 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
                                     if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
                                 {
                                 for( countT offe = 0 ; offe < cPaths ; offe ++ )
-
+                
                                 if( cPaths - cValues ) { BLAMMO ; }
                                 countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
                                 countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-
+                
+                                etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                
                                 strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                                 psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-
+                
                                 _IO_
                             {
                             for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                             countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
                         {
                         if( !POOP )
-
-                        //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
-
+                
                         ;
                         }
-                            &tPathError     ,
-                            &tPathErrorCode ,
+                            &tPathDeviceId     ,
+                            &tPathAccessToken  ,
                         {
                         textC* pptPath[] =
-
-                        TN( tPathError     , "\"error\"/"   ) ;
-                        TN( tPathErrorCode , "\"errcode\"/" ) ;
-
+                
+                        TN( tPathDeviceId    , "\"device_id\"/"    ) ;
+                        TN( tPathAccessToken , "\"access_token\"/" ) ;
+                
                         ;
                         }
-                            &tValueError3     ,
-                            &tValueErrorCode3 ,
+                            &tValueDeviceId      ,
+                            &tValueAccessToken ,
                         {
                         textC* pptValue[] =
-
+                
                         __Z( pSwPathValue ) ;
                         etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
                         ZE( switchC* , pSwPathValue ) ;
                         ZE( strokeS* , psttPath     ) ;
                     {
-
+                
                     etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     etThread.traceF( tin0P , T("json response:") ) ;
-
+                
                     }
                         }
                             else if( costj ) break ;
@@ -1563,8 +1464,11 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
                     sockc.writeF( tin0P , (osTextT*)tSay ) ;
                     etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     etThread.traceF( tin0P , T("request:") ) ;
-
-                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!asfLvjanrxfXkEVNHg:communick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+                
+                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+                
+                    //sockc.connectF( tin0P , 80 , nnServer ) ;
+                    //socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
                 
                     sockc.connectF( tin0P , 443 , nnServer ) ;
                     socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
@@ -1578,383 +1482,495 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
                 
                     SCOOPS
                 {
-                IFsCRATCH                                                           // INVITE TO ROOM: CLASSROOM
+                IFsCRATCH                                                           // LOGOUT
+
+                if( !tInvitationsSubmitted.csF( tin0P ) ) tInvitationsSubmitted = T("    none\r\n") ;
+
+                }            
+                    }
+                        if( !bFail3 ) tInvitationsSubmitted += T("    Wo'O's Table (Classroom)\r\n") ;
+
+                        }
+                            bFail3 = 1 ;
+                            etThread.traceF( tin0P , T("socket is impotent") ) ;
+                            POOPRqUIET
+                        {
+                        if( POOP )
+                    
+                        }
+                            if( !tValueErrorCode3.csF( tin0P ) ) bFail3 = 0 ;
+                            DEL( pSwPathValue ) ;
+                            }
+                                }
+                                    etThread.delF( tin0P , psttValue ) ;
+
+                                    }
+                                        }
+                                            etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                            *pptValue[ offe ] = T(psttValue) ;
+                                        {
+                                        if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                    {
+                                    for( countT offe = 0 ; offe < cPaths ; offe ++ )
+
+                                    if( cPaths - cValues ) { BLAMMO ; }
+                                    countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                    countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+
+                                    strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                    psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+
+                                    _IO_
+                                {
+                                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                            {
+                            if( !POOP )
+
+                            //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
+                            ;
+                            }
+                                &tPathError     ,
+                                &tPathErrorCode ,
+                            {
+                            textC* pptPath[] =
+
+                            TN( tPathError     , "\"error\"/"   ) ;
+                            TN( tPathErrorCode , "\"errcode\"/" ) ;
+
+                            ;
+                            }
+                                &tValueError3     ,
+                                &tValueErrorCode3 ,
+                            {
+                            textC* pptValue[] =
+
+                            __Z( pSwPathValue ) ;
+                            etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                            ZE( switchC* , pSwPathValue ) ;
+                            ZE( strokeS* , psttPath     ) ;
+                        {
+
+                        etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etThread.traceF( tin0P , T("json response:") ) ;
+
+                        }
+                            }
+                                else if( costj ) break ;
+                                     if( cNest ) costj ++ ;
+                    
+                                else if( postj[ costj ] == '}' ) cNest -- ;
+                                     if( postj[ costj ] == '{' ) cNest ++ ;
+                    
+                                if( !cbIn ) break ;
+                                countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
+                            {
+                            for(;;)
+                            ZE( countT , cNest ) ;
+                        {
+                        ZE( countT , costj ) ;
+                        osTextT postj[ TUCK << 1 ] ;
+                    
+                        sockc.writeF( tin0P , (osTextT*)tSay ) ;
+                        etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etThread.traceF( tin0P , T("request:") ) ;
+
+                        TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!asfLvjanrxfXkEVNHg:communick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+                    
+                        sockc.connectF( tin0P , 443 , nnServer ) ;
+                        socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+                    
+                        countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
+                        countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
+                        countT timeAllowedConnected = TICK >> 2 ;
+                    
+                        nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+                        nicNameC nnServer ;
+                    
+                        SCOOPS
+                    {
+                    IFsCRATCH                                                           // INVITE TO ROOM: CLASSROOM
+                {
+                else if( !bFail0 )
+                if( age < 13 || !bStudent ) bFail3 = 0 ;
+                bStudent = !!tValueIdSubscription.csF( tin0P ) ;
+                
+                }            
+                    }
+                        if( !bFail2 ) tInvitationsSubmitted += T("    Bait N' Switch Courtship Workshops\r\n") ;
+
+                        }
+                            bFail2 = 1 ;
+                            etThread.traceF( tin0P , T("socket is impotent") ) ;
+                            POOPRqUIET
+                        {
+                        if( POOP )
+                    
+                        }
+                            if( !tValueErrorCode2.csF( tin0P ) ) bFail2 = 0 ;
+                            DEL( pSwPathValue ) ;
+                            }
+                                }
+                                    etThread.delF( tin0P , psttValue ) ;
+
+                                    }
+                                        }
+                                            etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                            *pptValue[ offe ] = T(psttValue) ;
+                                        {
+                                        if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                    {
+                                    for( countT offe = 0 ; offe < cPaths ; offe ++ )
+
+                                    if( cPaths - cValues ) { BLAMMO ; }
+                                    countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                    countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+
+                                    strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                    psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+
+                                    _IO_
+                                {
+                                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                            {
+                            if( !POOP )
+
+                            //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
+                            ;
+                            }
+                                &tPathError     ,
+                                &tPathErrorCode ,
+                            {
+                            textC* pptPath[] =
+
+                            TN( tPathError     , "\"error\"/"   ) ;
+                            TN( tPathErrorCode , "\"errcode\"/" ) ;
+
+                            ;
+                            }
+                                &tValueError2     ,
+                                &tValueErrorCode2 ,
+                            {
+                            textC* pptValue[] =
+
+                            __Z( pSwPathValue ) ;
+                            etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                            ZE( switchC* , pSwPathValue ) ;
+                            ZE( strokeS* , psttPath     ) ;
+                        {
+
+                        etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etThread.traceF( tin0P , T("json response:") ) ;
+
+                        }
+                            }
+                                else if( costj ) break ;
+                                     if( cNest ) costj ++ ;
+                    
+                                else if( postj[ costj ] == '}' ) cNest -- ;
+                                     if( postj[ costj ] == '{' ) cNest ++ ;
+                    
+                                if( !cbIn ) break ;
+                                countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
+                            {
+                            for(;;)
+                            ZE( countT , cNest ) ;
+                        {
+                        ZE( countT , costj ) ;
+                        osTextT postj[ TUCK << 1 ] ;
+                    
+                        sockc.writeF( tin0P , (osTextT*)tSay ) ;
+                        etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etThread.traceF( tin0P , T("request:") ) ;
+                    
+                        TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!vToQLBLEntzHVKLSgG:communick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+                    
+                        sockc.connectF( tin0P , 443 , nnServer ) ;
+                        socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+                    
+                        countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
+                        countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
+                        countT timeAllowedConnected = TICK >> 2 ;
+                    
+                        nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+                        nicNameC nnServer ;
+                    
+                        SCOOPS
+                    {
+                    IFsCRATCH                                                           // INVITE TO SPACE: COURTSHIP WORKSHOPS
+                {
+                else if( !bFail0 )
+                if( age < 13 || age > 29 ) bFail2 = 0 ;
+                
+                }
+                    }
+                        if( !bFail1 ) tInvitationsSubmitted += T("    Wo'O's Table (Parlor)\r\n") ;
+
+                        }
+                            bFail1 = 1 ;
+                            etThread.traceF( tin0P , T("socket is impotent") ) ;
+                            POOPRqUIET
+                        {
+                        if( POOP )
+                    
+                        }
+                            if( !tValueErrorCode1.csF( tin0P ) ) bFail1 = 0 ;
+                            DEL( pSwPathValue ) ;
+                            }
+                                }
+                                    etThread.delF( tin0P , psttValue ) ;
+
+                                    }
+                                        }
+                                            etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                            *pptValue[ offe ] = T(psttValue) ;
+                                        {
+                                        if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                    {
+                                    for( countT offe = 0 ; offe < cPaths ; offe ++ )
+
+                                    if( cPaths - cValues ) { BLAMMO ; }
+                                    countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                    countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+
+                                    strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                    psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+
+                                    _IO_
+                                {
+                                for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                                countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                            {
+                            if( !POOP )
+
+                            //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
+                            ;
+                            }
+                                &tPathError     ,
+                                &tPathErrorCode ,
+                            {
+                            textC* pptPath[] =
+
+                            TN( tPathError     , "\"error\"/"   ) ;
+                            TN( tPathErrorCode , "\"errcode\"/" ) ;
+
+                            ;
+                            }
+                                &tValueError1     ,
+                                &tValueErrorCode1 ,
+                            {
+                            textC* pptValue[] =
+
+                            __Z( pSwPathValue ) ;
+                            etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                            ZE( switchC* , pSwPathValue ) ;
+                            ZE( strokeS* , psttPath     ) ;
+                        {
+
+                        etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etThread.traceF( tin0P , T("json response:") ) ;
+
+                        }
+                            }
+                                else if( costj ) break ;
+                                     if( cNest ) costj ++ ;
+                    
+                                else if( postj[ costj ] == '}' ) cNest -- ;
+                                     if( postj[ costj ] == '{' ) cNest ++ ;
+                    
+                                if( !cbIn ) break ;
+                                countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
+                            {
+                            for(;;)
+                            ZE( countT , cNest ) ;
+                        {
+                        ZE( countT , costj ) ;
+                        osTextT postj[ TUCK << 1 ] ;
+                    
+                        sockc.writeF( tin0P , (osTextT*)tSay ) ;
+                        etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etThread.traceF( tin0P , T("request:") ) ;
+                    
+                        TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!hYyziZVwPkfPSsKSsW:communick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
+                    
+                        sockc.connectF( tin0P , 443 , nnServer ) ;
+                        socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+                    
+                        countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
+                        countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
+                        countT timeAllowedConnected = TICK >> 2 ;
+                    
+                        nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+                        nicNameC nnServer ;
+                    
+                        SCOOPS
+                    {
+                    IFsCRATCH                                                           // INVITE TO ROOM: PARLOR
+                {
+                else if( !bFail0 )
+                if( age < 13 ) bFail1 = 0 ;
+                
+                countT costBodyInvite = tBodyInvite.csF( tin0P ) ;
+                TN( tBodyInvite , "" ) ; tBodyInvite = T("{\"user_id\": \"")+tValueMatrixUsername+T("\"}\r\n") ;
+                
+                }
+                    if( tValueAccessToken.csF( tin0P ) ) bFail0 = 0 ;
+
+                    }
+                        etThread.traceF( tin0P , T("socket is impotent") ) ;
+                        POOPRqUIET
+                    {
+                    if( POOP )
+                
+                    etThread.traceF( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
+                    TN( tb4 , "    " ) ;
+                
+                    }
+                        DEL( pSwPathValue ) ;
+                        
+                        }
+                            }
+                                etThread.delF( tin0P , psttValue ) ;
+                        
+                                }
+                                    }
+                                        etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                        *pptValue[ offe ] = T(psttValue) ;
+                                    {
+                                    if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                {
+                                for( countT offe = 0 ; offe < cPaths ; offe ++ )
+                        
+                                if( cPaths - cValues ) { BLAMMO ; }
+                                countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                                countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+                        
+                                etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        
+                                strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                                psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+                        
+                                _IO_
+                            {
+                            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                            countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                        {
+                        if( !POOP )
+                        
+                        ;
+                        }
+                            &tPathDeviceId     ,
+                            &tPathAccessToken  ,
+                        {
+                        textC* pptPath[] =
+                        
+                        TN( tPathDeviceId    , "\"device_id\"/"    ) ;
+                        TN( tPathAccessToken , "\"access_token\"/" ) ;
+                        
+                        ;
+                        }
+                            &tValueDeviceId      ,
+                            &tValueAccessToken ,
+                        {
+                        textC* pptValue[] =
+                        
+                        __Z( pSwPathValue ) ;
+                        etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                        ZE( switchC* , pSwPathValue ) ;
+                        ZE( strokeS* , psttPath     ) ;
+                    {
+                
+                    etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    etThread.traceF( tin0P , T("json response:") ) ;
+                
+                    }
+                        }
+                            else if( costj ) break ;
+                                 if( cNest ) costj ++ ;
+                
+                            else if( postj[ costj ] == '}' ) cNest -- ;
+                                 if( postj[ costj ] == '{' ) cNest ++ ;
+                
+                            if( !cbIn ) break ;
+                            countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
+                        {
+                        for(;;)
+                        ZE( countT , cNest ) ;
+                    {
+                    ZE( countT , costj ) ;
+                    osTextT postj[ TUCK << 1 ] ;
+                
+                    sockc.writeF( tin0P , (osTextT*)tSay ) ;
+                    etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    etThread.traceF( tin0P , T("request:") ) ;
+                
+                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/login HTTP/1.1\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
+                
+                    countT costBody = tBody.csF( tin0P ) ;
+                
+                    //sockc.connectF( tin0P , 80 , nnServer ) ;
+                    //socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+                
+                    sockc.connectF( tin0P , 443 , nnServer ) ;
+                    socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+                
+                    countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
+                    countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
+                    countT timeAllowedConnected = TICK >> 2 ;
+                
+                    nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+                    nicNameC nnServer ;
+                
+                    ) ;
+                    
+                        "}\r\n"
+                        "    \"password\": \"")+tPassword+T("\"\r\n"
+                        "    },\r\n"
+                        "        \"user\": \"ideafarm\"\r\n"
+                        "        \"type\": \"m.id.user\",\r\n"
+                        "    {\r\n"
+                        "    \"identifier\":\r\n"
+                        "    \"type\": \"m.login.password\",\r\n"
+                        "{\r\n"
+                    
+                    TN( tBody , "" ) ; tBody = T(
+                    
+                    }
+                        etThread.delF( tin0P , psttPassword ) ;
+                        tPassword = T(psttPassword) ;
+                        etThread.traceF( tin0P , T("[password]:    ")+T(psttPassword) ) ;
+                        if( psttPassword && psttPassword->idAdam ) tPassword = T(psttPassword) ;
+                        ZE( strokeS* , psttPassword ) ; etThread.querySettingF( tin0P , psttPassword , T("!ipdos.password.matrix.communick.com.ideafarm")  ) ; ___( psttPassword ) ;
+                    {
+                    TN( tPassword , "" ) ;
+
+                    SCOOPS
+                {
+                IFsCRATCH                                                           // LOGIN
+
+                TN( tValueDeviceId       , "" ) ;
+                TN( tValueAccessToken , "" ) ;
+                TN( tServer , "matrix.communick.com" ) ;
             {
-            else if( !bFail0 )
-            if( age < 13 || !bStudent ) bFail3 = 0 ;
-            boolT bFail3 = 1 ;
+            if( age && tValueMatrixUsername.csF( tin0P ) )
             TN( tValueError3     , "" ) ;
             TN( tValueErrorCode3 , "" ) ;
-            boolT bStudent = !!tValueIdSubscription.csF( tin0P ) ;
-            
-            }            
-                }
-                    if( !bFail2 ) tInvitationsSubmitted += T("    Bait N' Switch Courtship Workshops\r\n") ;
-
-                    }
-                        bFail2 = 1 ;
-                        etThread.traceF( tin0P , T("socket is impotent") ) ;
-                        POOPRqUIET
-                    {
-                    if( POOP )
-                
-                    }
-                        if( !tValueErrorCode2.csF( tin0P ) ) bFail2 = 0 ;
-                        DEL( pSwPathValue ) ;
-                        }
-                            }
-                                etThread.delF( tin0P , psttValue ) ;
-
-                                }
-                                    }
-                                        etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                        *pptValue[ offe ] = T(psttValue) ;
-                                    {
-                                    if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
-                                {
-                                for( countT offe = 0 ; offe < cPaths ; offe ++ )
-
-                                if( cPaths - cValues ) { BLAMMO ; }
-                                countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                                countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-
-                                strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                                psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-
-                                _IO_
-                            {
-                            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                            countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
-                        {
-                        if( !POOP )
-
-                        //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
-
-                        ;
-                        }
-                            &tPathError     ,
-                            &tPathErrorCode ,
-                        {
-                        textC* pptPath[] =
-
-                        TN( tPathError     , "\"error\"/"   ) ;
-                        TN( tPathErrorCode , "\"errcode\"/" ) ;
-
-                        ;
-                        }
-                            &tValueError2     ,
-                            &tValueErrorCode2 ,
-                        {
-                        textC* pptValue[] =
-
-                        __Z( pSwPathValue ) ;
-                        etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
-                        ZE( switchC* , pSwPathValue ) ;
-                        ZE( strokeS* , psttPath     ) ;
-                    {
-
-                    etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    etThread.traceF( tin0P , T("json response:") ) ;
-
-                    }
-                        }
-                            else if( costj ) break ;
-                                 if( cNest ) costj ++ ;
-                
-                            else if( postj[ costj ] == '}' ) cNest -- ;
-                                 if( postj[ costj ] == '{' ) cNest ++ ;
-                
-                            if( !cbIn ) break ;
-                            countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
-                        {
-                        for(;;)
-                        ZE( countT , cNest ) ;
-                    {
-                    ZE( countT , costj ) ;
-                    osTextT postj[ TUCK << 1 ] ;
-                
-                    sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                    etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    etThread.traceF( tin0P , T("request:") ) ;
-                
-                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!vToQLBLEntzHVKLSgG:communick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
-                
-                    sockc.connectF( tin0P , 443 , nnServer ) ;
-                    socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
-                
-                    countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
-                    countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
-                    countT timeAllowedConnected = TICK >> 2 ;
-                
-                    nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
-                    nicNameC nnServer ;
-                
-                    SCOOPS
-                {
-                IFsCRATCH                                                           // INVITE TO SPACE: COURTSHIP WORKSHOPS
-            {
-            else if( !bFail0 )
-            if( age < 13 || age > 29 ) bFail2 = 0 ;
-            boolT bFail2 = 1 ;
             TN( tValueError2     , "" ) ;
             TN( tValueErrorCode2 , "" ) ;
-            
-            }
-                }
-                    if( !bFail1 ) tInvitationsSubmitted += T("    Wo'O's Table (Parlor)\r\n") ;
-
-                    }
-                        bFail1 = 1 ;
-                        etThread.traceF( tin0P , T("socket is impotent") ) ;
-                        POOPRqUIET
-                    {
-                    if( POOP )
-                
-                    }
-                        if( !tValueErrorCode1.csF( tin0P ) ) bFail1 = 0 ;
-                        DEL( pSwPathValue ) ;
-                        }
-                            }
-                                etThread.delF( tin0P , psttValue ) ;
-
-                                }
-                                    }
-                                        etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                        *pptValue[ offe ] = T(psttValue) ;
-                                    {
-                                    if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
-                                {
-                                for( countT offe = 0 ; offe < cPaths ; offe ++ )
-
-                                if( cPaths - cValues ) { BLAMMO ; }
-                                countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                                countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-
-                                strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                                psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-
-                                _IO_
-                            {
-                            for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                            countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
-                        {
-                        if( !POOP )
-
-                        //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
-
-                        ;
-                        }
-                            &tPathError     ,
-                            &tPathErrorCode ,
-                        {
-                        textC* pptPath[] =
-
-                        TN( tPathError     , "\"error\"/"   ) ;
-                        TN( tPathErrorCode , "\"errcode\"/" ) ;
-
-                        ;
-                        }
-                            &tValueError1     ,
-                            &tValueErrorCode1 ,
-                        {
-                        textC* pptValue[] =
-
-                        __Z( pSwPathValue ) ;
-                        etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
-                        ZE( switchC* , pSwPathValue ) ;
-                        ZE( strokeS* , psttPath     ) ;
-                    {
-
-                    etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    etThread.traceF( tin0P , T("json response:") ) ;
-
-                    }
-                        }
-                            else if( costj ) break ;
-                                 if( cNest ) costj ++ ;
-                
-                            else if( postj[ costj ] == '}' ) cNest -- ;
-                                 if( postj[ costj ] == '{' ) cNest ++ ;
-                
-                            if( !cbIn ) break ;
-                            countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
-                        {
-                        for(;;)
-                        ZE( countT , cNest ) ;
-                    {
-                    ZE( countT , costj ) ;
-                    osTextT postj[ TUCK << 1 ] ;
-                
-                    sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                    etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    etThread.traceF( tin0P , T("request:") ) ;
-                
-                    TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/rooms/!hYyziZVwPkfPSsKSsW:communick.com/invite HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBodyInvite,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBodyInvite ;
-                
-                    sockc.connectF( tin0P , 443 , nnServer ) ;
-                    socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
-                
-                    countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
-                    countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
-                    countT timeAllowedConnected = TICK >> 2 ;
-                
-                    nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
-                    nicNameC nnServer ;
-                
-                    SCOOPS
-                {
-                IFsCRATCH                                                           // INVITE TO ROOM: PARLOR
-            {
-            else if( !bFail0 )
-            if( age < 13 ) bFail1 = 0 ;
-            boolT bFail1 = 1 ;
             TN( tValueError1     , "" ) ;
             TN( tValueErrorCode1 , "" ) ;
-            
-            countT costBodyInvite = tBodyInvite.csF( tin0P ) ;
-            TN( tBodyInvite , "" ) ; tBodyInvite = T("{\"user_id\": \"")+tValueMatrixUsername+T("\"}\r\n") ;
-            
-            }
-                if( tValueAccessToken.csF( tin0P ) ) bFail0 = 0 ;
-
-                }
-                    etThread.traceF( tin0P , T("socket is impotent") ) ;
-                    POOPRqUIET
-                {
-                if( POOP )
-            
-                etThread.traceF( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
-                TN( tb4 , "    " ) ;
-            
-                }
-                    DEL( pSwPathValue ) ;
-                    
-                    }
-                        }
-                            etThread.delF( tin0P , psttValue ) ;
-                    
-                            }
-                                }
-                                    etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                                    *pptValue[ offe ] = T(psttValue) ;
-                                {
-                                if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
-                            {
-                            for( countT offe = 0 ; offe < cPaths ; offe ++ )
-                    
-                            if( cPaths - cValues ) { BLAMMO ; }
-                            countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                            countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
-                    
-                            etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                            etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    
-                            strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                            psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
-                    
-                            _IO_
-                        {
-                        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
-                        countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
-                    {
-                    if( !POOP )
-                    
-                    ;
-                    }
-                        &tPathDeviceId     ,
-                        &tPathAccessToken  ,
-                    {
-                    textC* pptPath[] =
-                    
-                    TN( tPathDeviceId    , "\"device_id\"/"    ) ;
-                    TN( tPathAccessToken , "\"access_token\"/" ) ;
-                    
-                    ;
-                    }
-                        &tValueDeviceId      ,
-                        &tValueAccessToken ,
-                    {
-                    textC* pptValue[] =
-                    
-                    __Z( pSwPathValue ) ;
-                    etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
-                    ZE( switchC* , pSwPathValue ) ;
-                    ZE( strokeS* , psttPath     ) ;
-                {
-            
-                etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                etThread.traceF( tin0P , T("json response:") ) ;
-            
-                }
-                    }
-                        else if( costj ) break ;
-                             if( cNest ) costj ++ ;
-            
-                        else if( postj[ costj ] == '}' ) cNest -- ;
-                             if( postj[ costj ] == '{' ) cNest ++ ;
-            
-                        if( !cbIn ) break ;
-                        countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
-                    {
-                    for(;;)
-                    ZE( countT , cNest ) ;
-                {
-                ZE( countT , costj ) ;
-                osTextT postj[ TUCK << 1 ] ;
-            
-                sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                etThread.traceF( tin0P , T("request:") ) ;
-            
-                TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/login HTTP/1.1\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
-            
-                countT costBody = tBody.csF( tin0P ) ;
-            
-                //sockc.connectF( tin0P , 80 , nnServer ) ;
-                //socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_null , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
-            
-                sockc.connectF( tin0P , 443 , nnServer ) ;
-                socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
-            
-                countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
-                countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
-                countT timeAllowedConnected = TICK >> 2 ;
-            
-                nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
-                nicNameC nnServer ;
-            
-                ) ;
-                
-                    "}\r\n"
-                    "    \"password\": \"")+tPassword+T("\"\r\n"
-                    "    },\r\n"
-                    "        \"user\": \"ideafarm\"\r\n"
-                    "        \"type\": \"m.id.user\",\r\n"
-                    "    {\r\n"
-                    "    \"identifier\":\r\n"
-                    "    \"type\": \"m.login.password\",\r\n"
-                    "{\r\n"
-                
-                TN( tBody , "" ) ; tBody = T(
-                
-                }
-                    etThread.delF( tin0P , psttPassword ) ;
-                    tPassword = T(psttPassword) ;
-                    etThread.traceF( tin0P , T("[password]:    ")+T(psttPassword) ) ;
-                    if( psttPassword && psttPassword->idAdam ) tPassword = T(psttPassword) ;
-                    ZE( strokeS* , psttPassword ) ; etThread.querySettingF( tin0P , psttPassword , T("!ipdos.matrix.password.ideafarm")  ) ; ___( psttPassword ) ;
-                {
-                TN( tPassword , "" ) ;
-
-                SCOOPS
-            {
-            IFsCRATCH                                                           // LOGIN
+            boolT bFail3 = 1 ;
+            boolT bFail2 = 1 ;
+            boolT bFail1 = 1 ;
             boolT bFail0 = 1 ;
-
             TN( tInvitationsSubmitted , "" ) ;
-            TN( tValueDeviceId       , "" ) ;
-            TN( tValueAccessToken , "" ) ;
-            TN( tServer , "matrix.communick.com" ) ;
+            ZE( boolT , bStudent ) ;
+
             sCountT age = etThread.strDigitsToSCountF( tin0P , tValueAge , 0xa , 1 ) ;
         {
         )
@@ -1974,7 +1990,11 @@ THIS CODEmINE CONTAINS CODE FOR ANONYMOUS IDS FOR HOMES AND WIGHTS ; THIS CODE W
                     }
                         }
                             etThread.traceF( tin0P , T("********    ") + *pptKey[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                            *pptValue[ offe ] = T(psttValue) ;
+
+                            etThread.delF( tin0P , psttt ) ;
+                            *pptValue[ offe ] = T(psttt) ;
+                            etThread.strTrimF( tin0P , psttt , psttValue , 0 , 0 , strokeS() ) ; ___( psttt ) ;
+                            ZE( strokeS* , psttt ) ;
                         {
                         if( !etThread.strCompareF( tin0P , psttPath , *pptKey[ offe ] ) )
                     {
