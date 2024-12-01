@@ -146,6 +146,7 @@
                             if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / 6") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                           //traceF( tin0P , T("U:: etherDoHttpJobF / 6") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
+                            DEL( pRefReply ) ;
                             }
                                 (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swKV , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueryKV , psttAgent , postBody ) ;
                                 _IO_
@@ -222,7 +223,6 @@
                                 if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / b") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                               //traceF( tin0P , T("U:: etherDoHttpJobF / b") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
-                                DEL( pRefReply ) ;
                                 bOsFire = F(REPLY.flagsHttpReply) & flHTTPrEPLY_OSfIRE ;
                                 if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / c") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                               //traceF( tin0P , T("U:: etherDoHttpJobF / c") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
