@@ -42522,7 +42522,7 @@ the only function of this object is to edit tin123S::grabPseudo so that the moni
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.httpServerC.ct3F!||
     voidT ct4F( tin0S& tin0P ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.httpServerC.ct4F!||
-    voidT storeReplyF( tin0S& tin0P , const countT idFormP , const strokeS* const psttUrlP , httpReplyRefC** ppRefOverrideP , const countT idSnipHttpPrefixP = 0 , const strokeS* const psttsTitleP = 0 , const strokeS* const psttsDescriptionP = 0 , const strokeS* const psttsMetaDescriptionP = 0 , const strokeS* const psttsSloganP = 0 , const strokeS* const psttsPageHelpP = 0 , const strokeS* const psttsKeywordsP = 0 , /*httpDynamicReplyBodyCBFT*/voidT* pCBFP = 0 , const strokeS* const psttP = 0 , const byteT* const pbP = 0 , const countT cbP = 0 , const countT idSnipHttpLocationP = 0 ) ;
+    voidT storeReplyF( tin0S& tin0P , const countT idFormP , const strokeS* const psttUrlP , httpReplyRefC** ppRefOverrideP , const countT idSnipHttpPrefixP = 0 , const strokeS* const psttsTitleP = 0 , const strokeS* const psttsDescriptionP = 0 , const strokeS* const psttsMetaDescriptionP = 0 , const strokeS* const psttsSloganP = 0 , const strokeS* const psttsPageHelpP = 0 , const strokeS* const psttsKeywordsP = 0 , /*httpDynamicReplyBodyCBFT*/voidT* pCBFP = 0 , const strokeS* const psttP = 0 , const byteT* const pbP = 0 , const countT cbP = 0 , const countT idSnipHttpLocationP = 0 , const flagsT flagsP = flHTTPrEPLY_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34008.httpServerC.storeReplyF!||
     voidT storeSnipF( tin0S& tin0P , const countT idSnipP , const strokeS* const psttP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400d.httpServerC.storeSnipF!||
@@ -42774,7 +42774,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.httpReplyS.NEWdELcLASSb!||
     ~httpReplyS( voidT ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.1d8000.httpReplyS.dt_httpReplyS!||
-    httpReplyS( httpReplyRefC** ppRefOverrideP , const countT idFormP , pbRefC*& prPostBodyP , voidT* pCBFP , const countT idSnipHttpPrefixP , pbRefC*& prPostUrlP , pbRefC*& prPostTitleP , pbRefC*& prPostDescriptionP , pbRefC*& prPostMetaDescriptionP , pbRefC*& prPostSloganP , pbRefC*& prPostPageHelpP , pbRefC*& prPostKeywordsP , const countT idSnipHttpLocationP = 0 ) ;
+    httpReplyS( httpReplyRefC** ppRefOverrideP , const countT idFormP , pbRefC*& prPostBodyP , voidT* pCBFP , const countT idSnipHttpPrefixP , pbRefC*& prPostUrlP , pbRefC*& prPostTitleP , pbRefC*& prPostDescriptionP , pbRefC*& prPostMetaDescriptionP , pbRefC*& prPostSloganP , pbRefC*& prPostPageHelpP , pbRefC*& prPostKeywordsP , const countT idSnipHttpLocationP = 0 , const flagsT flagsP = flHTTPrEPLY_null ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.httpReplyS.httpReplyS!||
     httpReplyRefC overrideF( tin0S& tin0P ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.httpReplyS.overrideF!||
@@ -45991,6 +45991,7 @@ parameters
     pbRefC**                   pprPostBody ;
     httpDynamicReplyBodyCBFT    pCBF ;
     countT                      idSnipHttpLocation ;
+    flagsT                      flags ;
 }
 ;
 

@@ -48212,6 +48212,7 @@ use this rather than _ to avoid the overhead of _
 /*3*/
 #define flHTTPrEPLY_OSfIRE                  0xe0000106
 #define flHTTPrEPLY_NOrEPLYcLOSEcONNECTION  0xe0000206
+#define flHTTPrEPLY_QUICKrEPLY              0xe0000406
 /*3*/
 #define flHTTPrEPLY_null    0xe0000006
 

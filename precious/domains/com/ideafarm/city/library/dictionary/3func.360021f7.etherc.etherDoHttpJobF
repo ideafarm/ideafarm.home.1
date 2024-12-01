@@ -146,6 +146,14 @@
                             if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / 6") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                           //traceF( tin0P , T("U:: etherDoHttpJobF / 6") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
+                            }
+                                (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swKV , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueryKV , psttAgent , postBody ) ;
+                                _IO_
+                            {
+                            if( bQuickReply && REPLY.pCBF )
+
+                            if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / 6.1") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+
                             else delF( tin0P , postsReply ) ;
                             }
                                 pzCache->purgeF( tin0P , TUCK ) ; //THIS IS SUPPOSED TO RETAIN THE MOST RECENTLY PUSHED ITEMS (U:: INSPECT TRACE TO VERIFY)
@@ -690,9 +698,12 @@
                                                 ZE( boolT , bAllowBigHead ) ;
 
                                                 }
-                                                    (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBodyDynamic , psttKVReport , swKV , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueryKV , psttAgent , postBody ) ;
-                                                    TELL( T(psttName) ) ;
-                                                    _IO_
+                                                    }
+                                                        (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBodyDynamic , psttKVReport , swKV , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueryKV , psttAgent , postBody ) ;
+                                                        TELL( T(psttName) ) ;
+                                                        _IO_
+                                                    {
+                                                    if( !bQuickReply )
                                                 {
                                                 if( REPLY.pCBF )
                                                 //DONE EARLY TO GIVE CBF AN EARLY CHANCE TO CHANGE STATE IN WAYS THAT WILL AFFECT BUILDING OF HEADER
@@ -766,7 +777,7 @@
                                                     (*REPLY.pCBF)( tin0P , *this , bQuitP , meP , cArgAppP , REPLY , *pStkBody , psttKVReport , swKV , psttLeverKV , jobP.sessions , jobP.nnPeer , psttName , psttQueryKV , psttAgent , postBody ) ;
                                                     _IO_
                                                 {
-                                                if( REPLY.pCBF )
+                                                if( !bQuickReply && REPLY.pCBF )
 
                                                 PUSHrEPLY( prPostBody ) ;
                                                 PUSHsNIP( meP , ifcIDsNIPpREDEFINED_HEAD4         ) ;
@@ -894,7 +905,7 @@
                                                     //traceF( tin0P , T("U:: etherDoHttpJobF / calling REPLY.pCBF") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                                                     _IO_
                                                 {
-                                                if( REPLY.pCBF )
+                                                if( !bQuickReply && REPLY.pCBF )
 
                                                 PUSHrEPLY( prPostBody ) ;
 
@@ -963,23 +974,6 @@
                                 countT idHeadFlavor = idHeadFlavorOverride
 
                                 //bDebugLog = REPLY.idSnipHttpPrefix == ifcIDsNIPpREDEFINED_HTTPfAILmOVEDtEMP ; //U::
-
-                                if( !pRefReply ) { BLAMMO ; }
-
-                                TESTsCRATCH //U::TO FIND A BUG
-                                }
-                                    meP.getReplyF( tin0P , pRefReply , T("!nf") ) ; ___( pRefReply ) ;
-                                    _IO_
-                                {
-                                if( !pRefReply )
-
-                                TESTsCRATCH //U::TO FIND A BUG
-                                }
-                                    meP.getReplyF( tin0P , pRefReply , psttName ) ; ___( pRefReply ) ;
-                                    _IO_
-                                {
-                                ZE( httpReplyRefC* , pRefReply ) ;
-                                TESTsCRATCH //U::TO FIND A BUG
                             {
                             ZE( osTextT* , postsReply ) ;
                             ZE( boolT , bDebugLog ) ;
@@ -987,6 +981,26 @@
                             TESTsCRATCH //U::TO FIND A BUG
                             if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / o") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                           //traceF( tin0P , T("U:: etherDoHttpJobF / o") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
+
+                            traceF( tin0P , T( bQuickReply ? "etherDoHttpJobF / bQuickReply is set" : "etherDoHttpJobF / bQuickReply is NOT set" ) ) ;
+                            const boolT bQuickReply = F(REPLY.flagsHttpReply) & flHTTPrEPLY_QUICKrEPLY ; //********************************************************************************************************************************************************************************
+
+                            if( !pRefReply ) { BLAMMO ; }
+
+                            TESTsCRATCH //U::TO FIND A BUG
+                            }
+                                meP.getReplyF( tin0P , pRefReply , T("!nf") ) ; ___( pRefReply ) ;
+                                _IO_
+                            {
+                            if( !pRefReply )
+
+                            TESTsCRATCH //U::TO FIND A BUG
+                            }
+                                meP.getReplyF( tin0P , pRefReply , psttName ) ; ___( pRefReply ) ;
+                                _IO_
+                            {
+                            TESTsCRATCH //U::TO FIND A BUG
+                            ZE( httpReplyRefC* , pRefReply ) ;
                         {
                         else
                         }
