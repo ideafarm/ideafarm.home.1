@@ -1,0 +1,207 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+REST
+
+sgnDone_tmWorkF.waitF( tin0P ) ;
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
+
+TODO
+
+DONE( tmWorkF )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK << 4 ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+        while( !ether && ~hFind && !POOP ) ;
+        }
+            DEL( pInfo ) ;
+            }
+                }
+                    etThread.traceF( tin0P , (!F(flagsFail)?T("aok"):T("flagsFail:")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)) ) ;
+
+                    }
+                        }
+                            flagsFail |= flFAIL_COULDnOTmOVEfILE ;
+                            POOPR
+                        {
+                        if( POOP )
+                        ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tWhere+tShort , tIfoName ) ;
+
+                        SCOOPS
+                    {
+                    IFsCRATCH
+
+                    ;
+                            : tFolderDone
+                            ? tFolderToRetry
+                        : F(flagsFail)
+                        ? tFolderAbandoned
+                    TN( tWhere , "" ) ; tWhere = bFailPermanent
+
+                    etThread.traceF( tin0P , T("moving the file") ) ;
+
+                    etThread.traceF( tin0P , T("cleaning up 3") ) ;
+
+                    }
+                        etThread.traceF( tin0P , T("unknown error") ) ;
+                        flagsFail |= flFAIL_UNKNOWNeRROR ;
+                        POOPR
+                    {
+                    if( POOP )
+                    etThread.traceF( tin0P , T("cleaning up 2") ) ;
+
+                    }
+                        // ********************************************** THE WORK IS DONE HERE ***************************************
+
+                        //sIn >> psttHost ; ___( psttHost ) ;
+                        ZE( strokeS* , psttHost ) ;
+                    {
+                    if( !( F(flagsFail) & flFAIL_COULDnOTgETsHADOW ) )
+                    ZE( boolT , bFailPermanent ) ;
+
+                    }
+                        }
+                            etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | could not get shadow of ")+T((strokeS*)tIfoName)+T(": ") ) ;
+                            flagsFail |= flFAIL_COULDnOTgETsHADOW ;
+                            POOPR ;
+                        {
+                        if( POOP )
+                        ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , sIn , tIfoName ) ;
+                        SCOOPS
+                    {
+                    IFsCRATCH
+                    soulC sIn( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                    IFsCRATCH{}
+
+                    ZE( flagsT , flagsFail ) ;
+                    etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | receiving ")+T((strokeS*)tIfoName)+T(": ") ) ;
+
+                    etThread.traceF( tin0P , tShort ) ;
+
+                    }
+                        etThread.delF( tin0P , psttShort ) ;
+                        tShort = T(psttShort) ;
+                        etThread.delF( tin0P , psttnu ) ;
+                        etThread.strBisectF( tin0P , psttnu , psttShort , tIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                        ZE( strokeS* , psttShort ) ;
+                        ZE( strokeS* , psttnu ) ;
+                    {
+                    TN( tShort , "" ) ;
+
+                    TN( tIfoName , pInfo->psttIfoName ) ;
+                {
+                if( !bDir )
+
+                const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
+            {
+            else
+            }
+                break ;
+                DEL( pInfo ) ;
+            {
+            if( !pInfo || !pInfo->psttIfoName )
+
+            etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tFolderIncoming ) ;
+            ZE( infoFileS* , pInfo ) ;
+        {
+        do
+        handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+
+        }
+            while( !ether && ~hFind && !POOP ) ;
+            }
+                DEL( pInfo ) ;
+                }
+                    }
+                        etThread.traceF( tin0P , tShort ) ;
+                        etThread.diskMoveFileOrDirF( tin0P , tFolderIncoming+tShort , pInfo->psttIfoName ) ;
+
+                        }
+                            etThread.delF( tin0P , psttShort ) ;
+                            tShort = T(psttShort) ;
+                            etThread.delF( tin0P , psttnu ) ;
+                            etThread.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                            ZE( strokeS* , psttShort ) ;
+                            ZE( strokeS* , psttnu ) ;
+                        {
+                        TN( tShort , "" ) ;
+                    {
+                    if( !bDir )
+
+                    const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
+                {
+                else
+                }
+                    break ;
+                    DEL( pInfo ) ;
+                {
+                if( !pInfo || !pInfo->psttIfoName )
+
+                etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tFolderToRetry ) ;
+                ZE( infoFileS* , pInfo ) ;
+            {
+            do
+            handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+
+            timeL2 = timeN2 ;
+            timeL1 = timeN1 ;
+        {
+        if( timeE2 || timeE1 > TICK )
+
+        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeL1 , timeL2 ) ;
+        sCountT timeE2 = timeN2 ;
+        countT  timeE1 = timeN1 ;
+
+        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+        ZE( sCountT , timeN2 ) ;
+        ZE( countT  , timeN1 ) ;
+    {
+    while( !ether && !etThread )
+    ZE( sCountT , timeL2 ) ;
+    ZE( countT  , timeL1 ) ;
+    TN( tSlash , "/" ) ;
+
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderAbandoned ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderToRetry   ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderDone      ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderIncoming  ) ;
+
+    TN( tFolderAbandoned , "" ) ; tFolderAbandoned = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.notsentabandoned/") ;
+    TN( tFolderToRetry   , "" ) ; tFolderToRetry   = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.notsent/"         ) ;
+    TN( tFolderDone      , "" ) ; tFolderDone      = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.sent/"            ) ;
+    TN( tFolderIncoming  , "" ) ; tFolderIncoming  = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.to.send/"         ) ;
+
+
+        etThread.boxPutUniqueF( tin0P , psttFile , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.incoming/soul.order.version.1") , WS( sOut ) ) ;
+
+{
+if( pTaskP )
+TASK( tmWorkF )
+
+#define flFAIL_COULDnOTmOVEfILE                 0xe00004ff
+#define flFAIL_COULDnOTgETsHADOW                0xe00002ff
+#define flFAIL_UNKNOWNeRROR                     0xe00001ff
+
+/*1*/WAKEhIDE( "revision.of.ifcIDaDAM_EATiNCOMINGoRDERS" )/*1*/
+
+/**/
+*/
+/*
+
+// NEW APPLICATION (NO PRIOR REVISIONS)
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
