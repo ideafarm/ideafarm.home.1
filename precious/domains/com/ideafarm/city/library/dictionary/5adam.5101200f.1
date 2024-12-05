@@ -59,8 +59,6 @@ DONE( tmWorkF )
                     etThread.traceF( tin0P , T("cleaning up 2") ) ;
 
                     }
-flagsFail |= flFAIL_UNKNOWNeRROR ; //U:: TO TEST; REMOVE IN PROD
-
                         etThread.delF( tin0P , psttValueLive            ) ;
                         etThread.delF( tin0P , psttValueAmountDiscount  ) ;
                         etThread.delF( tin0P , psttValueIdSubscription  ) ;
@@ -211,10 +209,10 @@ flagsFail |= flFAIL_UNKNOWNeRROR ; //U:: TO TEST; REMOVE IN PROD
     etThread.diskMakeDirIfNeededF( tin0P , tFolderDone      ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tFolderIncoming  ) ;
 
-    TN( tFolderAbandoned , "" ) ; tFolderAbandoned = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.abandoned/") ;
-    TN( tFolderToRetry   , "" ) ; tFolderToRetry   = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.to.retry/" ) ;
-    TN( tFolderDone      , "" ) ; tFolderDone      = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.done/"     ) ;
-    TN( tFolderIncoming  , "" ) ; tFolderIncoming  = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.incoming/" ) ;
+    TN( tFolderAbandoned , "" ) ; tFolderAbandoned = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.3.abandoned/") ;
+    TN( tFolderToRetry   , "" ) ; tFolderToRetry   = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.2.to.retry/" ) ;
+    TN( tFolderDone      , "" ) ; tFolderDone      = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.4.done/"     ) ;
+    TN( tFolderIncoming  , "" ) ; tFolderIncoming  = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.1.incoming/" ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
