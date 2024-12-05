@@ -31,7 +31,7 @@
 
     }
         etThread.delF( tin0P , psttFile ) ;
-        etThread.boxPutUniqueF( tin0P , psttFile , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.incoming/soul.order.version.1") , WS( sOut ) ) ;
+        etThread.boxPutUniqueF( tin0P , psttFile , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.incoming/soul.order") , WS( sOut ) ) ;
         ZE( strokeS* , psttFile ) ;
 
         }
@@ -49,8 +49,13 @@
             sOut << (strokeS*)tValueAmountSubtotal ;
             sOut << (strokeS*)tValueApiVersion     ;
             sOut << (strokeS*)tValueNoticeType     ;
+            sOut << (strokeS*)tVersion             ;
+            sOut << (strokeS*)tType                ;
         {
         soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+
+        TN( tVersion , "1" ) ;
+        TN( tType    , "order" ) ;
     {
 
     }

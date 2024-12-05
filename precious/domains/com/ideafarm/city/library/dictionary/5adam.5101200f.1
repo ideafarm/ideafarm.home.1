@@ -60,7 +60,6 @@ DONE( tmWorkF )
 
                     }
                         // ********************************************** THE WORK IS DONE HERE ***************************************
-
                         //sIn >> psttHost ; ___( psttHost ) ;
                         ZE( strokeS* , psttHost ) ;
                     {
@@ -174,14 +173,10 @@ DONE( tmWorkF )
     etThread.diskMakeDirIfNeededF( tin0P , tFolderDone      ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tFolderIncoming  ) ;
 
-    TN( tFolderAbandoned , "" ) ; tFolderAbandoned = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.notsentabandoned/") ;
-    TN( tFolderToRetry   , "" ) ; tFolderToRetry   = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.notsent/"         ) ;
-    TN( tFolderDone      , "" ) ; tFolderDone      = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.sent/"            ) ;
-    TN( tFolderIncoming  , "" ) ; tFolderIncoming  = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.to.send/"         ) ;
-
-
-        etThread.boxPutUniqueF( tin0P , psttFile , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.incoming/soul.order.version.1") , WS( sOut ) ) ;
-
+    TN( tFolderAbandoned , "" ) ; tFolderAbandoned = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.abandoned/") ;
+    TN( tFolderToRetry   , "" ) ; tFolderToRetry   = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.to.retry/" ) ;
+    TN( tFolderDone      , "" ) ; tFolderDone      = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.done/"     ) ;
+    TN( tFolderIncoming  , "" ) ; tFolderIncoming  = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.incoming/" ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
