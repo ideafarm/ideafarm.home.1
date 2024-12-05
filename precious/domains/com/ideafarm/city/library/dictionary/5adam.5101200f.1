@@ -59,9 +59,45 @@ DONE( tmWorkF )
                     etThread.traceF( tin0P , T("cleaning up 2") ) ;
 
                     }
-                        // ********************************************** THE WORK IS DONE HERE ***************************************
-                        //sIn >> psttHost ; ___( psttHost ) ;
-                        ZE( strokeS* , psttHost ) ;
+                        etThread.delF( tin0P , psttValueLive            ) ;
+                        etThread.delF( tin0P , psttValueAmountDiscount  ) ;
+                        etThread.delF( tin0P , psttValueIdSubscription  ) ;
+                        etThread.delF( tin0P , psttValueMode            ) ;
+                        etThread.delF( tin0P , psttValueName            ) ;
+                        etThread.delF( tin0P , psttValueEmail           ) ;
+                        etThread.delF( tin0P , psttValuePostalCode      ) ;
+                        etThread.delF( tin0P , psttValueCountry         ) ;
+                        etThread.delF( tin0P , psttValueMatrixUsername  ) ;
+                        etThread.delF( tin0P , psttValueAge             ) ;
+                        etThread.delF( tin0P , psttValueAmountTotal     ) ;
+                        etThread.delF( tin0P , psttValueAmountSubtotal  ) ;
+                        etThread.delF( tin0P , psttValueApiVersion      ) ;
+                        etThread.delF( tin0P , psttValueNoticeType      ) ;
+                        etThread.delF( tin0P , psttVersion              ) ;
+                        etThread.delF( tin0P , psttType                 ) ;
+                        }
+                            etThread.traceF( tin0P , T("got wo!") ) ;
+                        {
+                        if( !etThread.strCompareF( tin0P , psttType , tCorrectType ) && !etThread.strCompareF( tin0P , psttVersion , tCorrectVersion ) )
+                        TN( tCorrectVersion , "1" ) ;
+                        TN( tCorrectType    , "order" ) ;
+
+                        ZE( strokeS* , psttValueLive            ) ; sIn >> psttValueLive            ; ___( psttValueLive            ) ;
+                        ZE( strokeS* , psttValueAmountDiscount  ) ; sIn >> psttValueAmountDiscount  ; ___( psttValueAmountDiscount  ) ;
+                        ZE( strokeS* , psttValueIdSubscription  ) ; sIn >> psttValueIdSubscription  ; ___( psttValueIdSubscription  ) ;
+                        ZE( strokeS* , psttValueMode            ) ; sIn >> psttValueMode            ; ___( psttValueMode            ) ;
+                        ZE( strokeS* , psttValueName            ) ; sIn >> psttValueName            ; ___( psttValueName            ) ;
+                        ZE( strokeS* , psttValueEmail           ) ; sIn >> psttValueEmail           ; ___( psttValueEmail           ) ;
+                        ZE( strokeS* , psttValuePostalCode      ) ; sIn >> psttValuePostalCode      ; ___( psttValuePostalCode      ) ;
+                        ZE( strokeS* , psttValueCountry         ) ; sIn >> psttValueCountry         ; ___( psttValueCountry         ) ;
+                        ZE( strokeS* , psttValueMatrixUsername  ) ; sIn >> psttValueMatrixUsername  ; ___( psttValueMatrixUsername  ) ;
+                        ZE( strokeS* , psttValueAge             ) ; sIn >> psttValueAge             ; ___( psttValueAge             ) ;
+                        ZE( strokeS* , psttValueAmountTotal     ) ; sIn >> psttValueAmountTotal     ; ___( psttValueAmountTotal     ) ;
+                        ZE( strokeS* , psttValueAmountSubtotal  ) ; sIn >> psttValueAmountSubtotal  ; ___( psttValueAmountSubtotal  ) ;
+                        ZE( strokeS* , psttValueApiVersion      ) ; sIn >> psttValueApiVersion      ; ___( psttValueApiVersion      ) ;
+                        ZE( strokeS* , psttValueNoticeType      ) ; sIn >> psttValueNoticeType      ; ___( psttValueNoticeType      ) ;
+                        ZE( strokeS* , psttVersion              ) ; sIn >> psttVersion              ; ___( psttVersion              ) ;
+                        ZE( strokeS* , psttType                 ) ; sIn >> psttType                 ; ___( psttType                 ) ;
                     {
                     if( !( F(flagsFail) & flFAIL_COULDnOTgETsHADOW ) )
                     ZE( boolT , bFailPermanent ) ;
