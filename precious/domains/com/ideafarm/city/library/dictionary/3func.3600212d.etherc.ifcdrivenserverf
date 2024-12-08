@@ -279,10 +279,6 @@
 
                                                 sw_cSessionWithPeer.ungrabF( tin0P ) ;
 
-                                                bRefuse = bSilent = 0 ; //20241122@1007: SERVE UNCONDITIONALLY TO REGRESSION TEST CERTBOT RENEWAL AND STRIPE NOTIFICATION
-
-                                                //20240211@1057: COMMENTED OUT W/O ANALYSIS: bSilent = 0 ; //U::20220119@1157: TO FIND A BUG
-
                                                 }
                                                     }
                                                         //stBadPeer.sinkF( tin0P , countTC() , nnPeer , flSTACKsINK_UNIQUE ) ;
@@ -370,13 +366,8 @@
                                                 TELL( "server: detecting dos attack client" )
                                                 //U::EXCLUDE ZOMBIE SESSIONS FROM THE COUNT, SO HTTP CLIENT CAN INITIATE AN ARBITRARILY LONG BURST OF SESSIONS TO GET E.G. ALL IMAGES FOR A PAGE
 
-                                                ( bRefuse || bSilent ? cRefused : cAccepted ) ++ ;
-                                                if( bRefuse ) { LOGrAW( "refusing a client\r\n" ) ; }
-
-                                                bRefuse = bSilent = 0 ; //20241122@1007: SERVE UNCONDITIONALLY TO REGRESSION TEST CERTBOT RENEWAL AND STRIPE NOTIFICATION
-
-                                                //20240211@1057: COMMENTED OUT W/O ANALYSIS: bRefuse = 0 ; //U:: 20200907@1413 DISABLE ALL ATTACK DETECTION, WHICH WILL BE REWRITTEN AFTER STUDYING LOGS
-                                                //20240211@1057: COMMENTED OUT W/O ANALYSIS: bSilent = 0 ; //U::20210914@1613: SERVE UNCONDITIONALLY TO USE AS DUT FOR NEW FIREWALL
+                                                ( bRefuseTooManyOrBlackListed || bSilent ? cRefused : cAccepted ) ++ ;
+                                                //if( bRefuseTooManyOrBlackListed ) { LOGrAW( "refusing a client\r\n" ) ; }
 
 #endif
                                                 }
@@ -451,7 +442,6 @@
 
                                                             etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / this peer is on the silence list") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
-                                                            bSilent = 0 ; //U::20210914@1613: SERVE UNCONDITIONALLY TO USE AS DUT FOR NEW FIREWALL
                                                             bSilent = 1 ;
                                                         {
                                                         if( nnPeer == pnnSilent[ off ] )
@@ -462,7 +452,7 @@
                                                 if( !bHeIsMe && !bSilent )
                                                 boolT bSilent = bHeIsSpoofingMe || !bPeerAllowed ;
 
-                                                //if( 0x401043a == processGlobal1I.idAdamRoot ) ifcSayIF( T("acceptF returned (1); nnPeer: ")+T(nnPeer)+T("; bRefuse: ")+TF1(bRefuse) , flSAY_APPEND | flSAY_LOG ) ;
+                                                //if( 0x401043a == processGlobal1I.idAdamRoot ) ifcSayIF( T("acceptF returned (1); nnPeer: ")+T(nnPeer)+T("; bRefuseTooManyOrBlackListed: ")+TF1(bRefuseTooManyOrBlackListed) , flSAY_APPEND | flSAY_LOG ) ;
                                                 TELL( "server: a client has connected" )
                                                 //etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / a client has connected") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
                                                 //if( bHeIsWatchDeadman1 ) etRock.traceF( tin0P , T("ifcDrivenServerF / a client has connected") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
@@ -553,7 +543,7 @@
                                                     osTimeNowF( tin0P , timeAccepted1 , timeAccepted2 ) ;
                                                     etRock.traceF( tin0P , T("ifcDrivenServerF / called  acceptF [idSubType]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
                                                     const countT idSubTypeSave = POOP ;
-                                                    psoListen->acceptF( tin0P , pso , idpPeer , nnPeer , bRefuse ) ; ___( pso ) ; //IF ALL SESSIONS END WHILE BLOCKED HERE, WILL STILL REFUSE WO SESSION; THIS CAN BE FIXED BY FRESHING bRefuse AT END OF EACH SESSION THREAD IN DONEtMsERVER
+                                                    psoListen->acceptF( tin0P , pso , idpPeer , nnPeer , bRefuseTooManyOrBlackListed ) ; ___( pso ) ; //IF ALL SESSIONS END WHILE BLOCKED HERE, WILL STILL REFUSE WO SESSION; THIS CAN BE FIXED BY FRESHING bRefuseTooManyOrBlackListed AT END OF EACH SESSION THREAD IN DONEtMsERVER
                                                     etRock.traceF( tin0P , T("ifcDrivenServerF / calling acceptF") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
                                                     SCOOPS
                                                 {
@@ -588,9 +578,8 @@
                                                     ZE( sCountT , timeN2 ) ;
                                                     ZE( countT  , timeN1 ) ;
                                                 {
-                                                if( bRefuse )
-                                                bRefuse = 0 ; //U:: 20200907@1413 DISABLE ALL ATTACK DETECTION, WHICH WILL BE REWRITTEN AFTER STUDYING LOGS
-                                                boolT bRefuse = info2P.cSessionMax <= cSession ;
+                                                if( bRefuseTooManyOrBlackListed )
+                                                boolT bRefuseTooManyOrBlackListed = info2P.cSessionMax <= cSession ;
                                                 //etRock.traceF( tin0P , T("ifcDrivenServerF / inspecting [cSession]:    ")+TF2(cSession,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                 TELL( "server: beginning loop" )
                                             {
