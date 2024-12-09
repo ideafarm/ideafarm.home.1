@@ -273,8 +273,11 @@ voidT strParseJson_pairF( tin0S& tin0P , etherC& etherP , switchC*& pSwPathValue
         }
             break ;
             etherP.delF( tin0P , psttList ) ;
-            strParseJson_listF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttList , psttQuoteP ) ;
-            etherP.strSubstringF( tin0P , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+            }
+                strParseJson_listF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttList , psttQuoteP ) ;
+                etherP.strSubstringF( tin0P , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+            {
+            if( idf <= idl )
             countT idl = psttP->idAdam - 1 ;
             countT idf = 2 ;
             ZE( strokeS* , psttList ) ;
@@ -332,12 +335,13 @@ voidT strParseJson_valueF( tin0S& tin0P , etherC& etherP , switchC*& pSwPathValu
 voidT strParseJson_keyF( tin0S& tin0P , etherC& etherP , stackC& stPathP , const strokeS* const psttP , const strokeS* const psttQuoteP )
 
 }
+    etherP.delF( tin0P , psttTrimmed ) ;
     }
         }
             etherP.delF( tin0P , psttItem ) ;
             strParseJson_itemF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttItem , psttQuoteP , idItemLath ) ;
             etherP.strTrimF( tin0P , psttItem ) ; ___( psttItem ) ;
-            etherP.strSubstringF( tin0P , psttItem , idsItemWoth , idsItemLath , psttP ) ; ___( psttItem ) ;
+            etherP.strSubstringF( tin0P , psttItem , idsItemWoth , idsItemLath , psttTrimmed ) ; ___( psttItem ) ;
             ZE( countT , idsItemLath ) ;
             ZE( strokeS* , psttItem ) ;
         {
@@ -357,7 +361,7 @@ voidT strParseJson_keyF( tin0S& tin0P , etherC& etherP , stackC& stPathP , const
                         etherP.delF( tin0P , psttItem ) ;
                         strParseJson_itemF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttItem , psttQuoteP , idItemLath ) ;
                         etherP.strTrimF( tin0P , psttItem ) ; ___( psttItem ) ;
-                        etherP.strSubstringF( tin0P , psttItem , idsItemWoth , idsItemLath , psttP ) ; ___( psttItem ) ;
+                        etherP.strSubstringF( tin0P , psttItem , idsItemWoth , idsItemLath , psttTrimmed ) ; ___( psttItem ) ;
                         ZE( strokeS* , psttItem ) ;
 
                         countT idsItemLath = ids - 1 ;
@@ -377,7 +381,7 @@ voidT strParseJson_keyF( tin0S& tin0P , etherC& etherP , stackC& stPathP , const
             if( bIgnore ) continue ;
             if( ostc == '"' ) bIgnore = !bIgnore ;
 
-            countT ostc = psttP[ CSpREFIX - 1 + ids ].idAdam ;
+            countT ostc = psttTrimmed[ CSpREFIX - 1 + ids ].idAdam ;
         {
         for( countT ids = idsListWoth ; ids <= idsListLath ; ids ++ )
         ZE( countT , idItemLath ) ;
@@ -387,10 +391,13 @@ voidT strParseJson_keyF( tin0S& tin0P , etherC& etherP , stackC& stPathP , const
         countT idsItemWoth = idsListWoth ;
         ZE( countT , idLevel ) ;
 
-        const countT idsListLath = psttP->idAdam ;
+        const countT idsListLath = psttTrimmed->idAdam ;
         const countT idsListWoth = 1 ;
     {
-    if( psttP->idAdam > 2 )
+    if( psttTrimmed->idAdam > 2 )
+
+    etherP.strTrimF( tin0P , psttTrimmed , psttP ) ; ___( psttTrimmed ) ;
+    ZE( strokeS* , psttTrimmed ) ;
 
     //etherP.traceF( tin0P , T("strParseJson_listF [path,list]:    ")+T(psttPathP)+T("    ")+T(psttP) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
@@ -423,8 +430,11 @@ voidT strParseJson_listF( tin0S& tin0P , etherC& etherP , switchC*& pSwPathValue
             }
                 break ;
                 etherP.delF( tin0P , psttList ) ;
-                strParseJson_listF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttList , psttQuoteP ) ;
-                etherP.strSubstringF( tin0P , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+                }
+                    strParseJson_listF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttList , psttQuoteP ) ;
+                    etherP.strSubstringF( tin0P , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+                {
+                if( idf <= idl )
                 countT idl = psttP->idAdam - 1 ;
                 countT idf = 2 ;
                 ZE( strokeS* , psttList ) ;
