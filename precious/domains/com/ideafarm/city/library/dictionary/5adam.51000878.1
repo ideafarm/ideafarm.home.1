@@ -77,7 +77,9 @@ DONE( tmWorkF )
                         etThread.delF( tin0P , psttType                 ) ;
                         }
                             }
+                                etThread.traceF( tin0P , T("debug / 0") ) ;
                                 etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com/")+T(psttValueEmail)+T("") , tThankYou ) ;
+                                etThread.traceF( tin0P , T("debug / 1") ) ;
 
                                 }
                                     ) ;
@@ -145,6 +147,8 @@ DONE( tmWorkF )
                                 else           tForWhat = T("paying your entry fee for self-monitored chat.\r\n\r\n") ;
                                 if( bStudent ) tForWhat = T("registering as a student on IDEAFARM.COM.\r\n\r\n") ;
                                 TN( tForWhat , "" ) ;
+                                etThread.traceF( tin0P , T("debug / 2") ) ;
+
                                 }
                                     }
                                         }
@@ -257,6 +261,7 @@ DONE( tmWorkF )
                                         IFsCRATCH                                                           // LOGOUT
 
                                         if( !tInvitationsSubmitted.csF( tin0P ) ) tInvitationsSubmitted = T("    none\r\n") ;
+                                        etThread.traceF( tin0P , T("debug / 3") ) ;
 
                                         }            
                                             }
@@ -373,6 +378,7 @@ DONE( tmWorkF )
                                         if( age < 16 || !bStudent ) bFail3 = 0 ;
                                         bStudent = !!etThread.strCompareF( tin0P , psttValueIdSubscription , T("null") ) ;
                                         TN( tNameSpaceAcademic , "Students and Faculty Only (ICIS)" ) ;    // INVITE TO SPACE
+                                        etThread.traceF( tin0P , T("debug / 4") ) ;
                                         
                                         }            
                                             }
@@ -487,6 +493,7 @@ DONE( tmWorkF )
                                         {
                                         else if( !bFail0 )
                                         if( age < 13 || age > 29 ) bFail2 = 0 ;
+                                        etThread.traceF( tin0P , T("debug / 5") ) ;
                                         
                                         }
                                             }
@@ -601,6 +608,7 @@ DONE( tmWorkF )
                                         {
                                         else if( !bFail0 )
                                         if( age < 13 ) bFail1 = 0 ;
+                                        etThread.traceF( tin0P , T("debug / 6") ) ;
 
                                         }
                                             if( psttValueAccessToken.csF( tin0P ) ) bFail0 = 0 ;
@@ -745,6 +753,7 @@ DONE( tmWorkF )
                                         TN( psttValueAccessToken , ""                     ) ;
                                         TN( tServer              , "ideafarm.com"         ) ;
                                       //TN( tServer              , "matrix.communick.com" ) ;
+                                        etThread.traceF( tin0P , T("debug / 7") ) ;
 
                                         }
                                             }
@@ -956,6 +965,7 @@ DONE( tmWorkF )
                                             SCOOPS
                                         {
                                         IFsCRATCH
+                                        etThread.traceF( tin0P , T("debug / 8") ) ;
 
                                         }
                                             }
