@@ -1,6 +1,4 @@
 
-#define ifcIDaDAM_EATiNCOMINGoRDERS                                    0x51000878
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -5182,7 +5180,7 @@ in the "IN_NORMAL" macros, it is redefined so that the _ macro sets the high ord
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200082.ifcflagin END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._io_ BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._IO_ BEGIN
 
 
 //
@@ -5267,7 +5265,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._io_ END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._IO_ END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200084.posthtmlbodypart1 BEGIN
 
 
@@ -11869,6 +11867,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TOOLmIGRATEaRCHIVEfORMAT9tOfORMATa                   0x5100081c
 #define ifcIDaDAM_GLASS1                                               0x5100083a
 #define ifcIDaDAM_HIREwITHOUTdEBUGGING                                 0x5100083b
+#define ifcIDaDAM_EATiNCOMINGoRDERS                                    0x51000878
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003

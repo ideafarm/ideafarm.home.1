@@ -21959,7 +21959,7 @@ arguments
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000e.putregsam END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000f.espam BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000f.espAM BEGIN
 
 
 //
@@ -21990,7 +21990,7 @@ arguments
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000f.espam END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c00000f.espAM END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.1c* : 1snip.1c000010.btsam BEGIN
 
 
@@ -45978,10 +45978,10 @@ parameters
 
 /*1*/struct _export storeReplyPrivateF_argS/*1*/
 {
-    countT                      idForm ;
-    const strokeS*              psttUrl ;
-    httpReplyRefC**           ppRefOverride ;
-    countT                      idSnipHttpPrefix ;
+    countT                     idForm ;
+    const strokeS*             psttUrl ;
+    httpReplyRefC**            ppRefOverride ;
+    countT                     idSnipHttpPrefix ;
     pbRefC**                   pprPostTitle ;
     pbRefC**                   pprPostDescription ;
     pbRefC**                   pprPostMetaDescription ;
@@ -45989,9 +45989,9 @@ parameters
     pbRefC**                   pprPostPageHelp ;
     pbRefC**                   pprPostKeywords ;
     pbRefC**                   pprPostBody ;
-    httpDynamicReplyBodyCBFT    pCBF ;
-    countT                      idSnipHttpLocation ;
-    flagsT                      flags ;
+    httpDynamicReplyBodyCBFT   pCBF ;
+    countT                     idSnipHttpLocation ;
+    flagsT                     flags ;
 }
 ;
 
