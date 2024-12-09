@@ -903,6 +903,18 @@ DONE( tmWorkF )
 
                                             etThread.traceF( tin0P , T("[mac]:    ")+tMac ) ;
                                             }
+                                                }
+                                                    }
+                                                        etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | could not zap raw: ")+tFileRaw ) ;
+                                                        flagsFail |= flFAIL_COULDnOTzAPrAW ;
+                                                        POOPR ;
+                                                    {
+                                                    if( POOP )
+                                                    ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFileRaw ) ;
+                                                    SCOOPS
+                                                {
+                                                IFsCRATCH
+
                                                 etThread.delF( tin0P , postim ) ;
                                                 }
                                                     }
@@ -913,11 +925,21 @@ DONE( tmWorkF )
                                                     postim[ costim - 2 ] = 0 ;    //REMOVE TRAILING UNIX LINEFEED
                                                 {
                                                 if( postim && costim )
-                                                etThread.boxGetF( tin0P , postim , costim , tFileResult ) ; ___( postim ) ;
+
+                                                }
+                                                    }
+                                                        etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | could not get  ")+tFileResult ) ;
+                                                        flagsFail |= flFAIL_COULDnOTgEThMAC ;
+                                                        POOPR ;
+                                                    {
+                                                    if( POOP )
+                                                    ((tin1S&)tin0P).pEtScratch->boxGetF( tin0P , postim , costim , tFileResult ) ; ___( postim ) ;
+                                                    SCOOPS
+                                                {
+                                                IFsCRATCH
                                                 ZE( countT   , costim ) ;
                                                 ZE( osTextT* , postim ) ;
 
-                                                etThread.boxZapF( tin0P , tFileRaw ) ;
                                                 countT rc = thirdC::c_systemIF( tin0P , postCmd ) ;
 
                                                 thirdC::c_strcatIF( tin0P , postCmd , osfnResult ) ;
@@ -929,7 +951,17 @@ DONE( tmWorkF )
                                                 postCmd[ 0 ] = 0 ;
                                                 osTextT postCmd[ TUCK << 1 ] ;
 
-                                                etThread.boxPutF( tin0P , tFileRaw , postRaw , costRaw ) ;
+                                                }
+                                                    }
+                                                        etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | could not put ")+tFileRaw ) ;
+                                                        flagsFail |= flFAIL_COULDnOTpUTrAW ;
+                                                        POOPR ;
+                                                    {
+                                                    if( POOP )
+                                                    ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tFileRaw , postRaw , costRaw ) ;
+                                                    SCOOPS
+                                                {
+                                                IFsCRATCH
 
                                                 osFileNameC osfnResult( tin0P , etThread , tFileResult ) ;
                                                 osFileNameC osfnRaw(    tin0P , etThread , tFileRaw    ) ;
@@ -1346,6 +1378,9 @@ DONE( tmWorkF )
 if( pTaskP )
 TASK( tmWorkF )
 
+#define flFAIL_COULDnOTzAPrAW                   0xe00040ff
+#define flFAIL_COULDnOTgEThMAC                  0xe00020ff
+#define flFAIL_COULDnOTpUTrAW                   0xe00010ff
 #define flFAIL_COULDnOTgETsHAREDsECRET          0xe00008ff
 #define flFAIL_DOlATER                          0xe00004ff
 #define flFAIL_COULDnOTmOVEfILE                 0xe00004ff
