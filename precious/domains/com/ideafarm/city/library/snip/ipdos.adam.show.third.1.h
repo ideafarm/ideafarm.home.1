@@ -1,5 +1,5 @@
 
-#define ifcIDaDAM_EATiNCOMINGoRDERS                                    0x51000877
+#define ifcIDaDAM_EATiNCOMINGoRDERS                                    0x51000878
 
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
@@ -48328,6 +48328,7 @@ use this rather than _ to avoid the overhead of _
 #define flHOMEsaDAMS_ROOThEAL                  0xe0000408
 #define flHOMEsaDAMS_ROOTbANG                  0xe0000808
 #define flHOMEsaDAMS_RDPoPENhOUSE              0xe0001008
+#define flHOMEsaDAMS_EATiNCOMINGoRDERS         0xe0002008
 /*3*/
 #define flHOMEsaDAMS_null    0xe0000008
 
