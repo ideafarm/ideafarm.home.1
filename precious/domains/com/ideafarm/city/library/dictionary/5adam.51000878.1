@@ -917,7 +917,8 @@ DONE( tmWorkF )
                                                 ZE( countT   , costim ) ;
                                                 ZE( osTextT* , postim ) ;
 
-                                                countT rc = thirdC::c_systemIF( tin0P , postCmd ) ;         // "HMAC-SHA1(d:\tmp\raw.ttt)= 7665adce3fb57df2eda381c345558242f08996a0"
+                                                etThread.boxZapF( tin0P , tFileRaw ) ;
+                                                countT rc = thirdC::c_systemIF( tin0P , postCmd ) ;
 
                                                 thirdC::c_strcatIF( tin0P , postCmd , osfnResult ) ;
                                                 thirdC::c_strcatIF( tin0P , postCmd , " > " ) ;
@@ -933,8 +934,8 @@ DONE( tmWorkF )
                                                 osFileNameC osfnResult( tin0P , etThread , tFileResult ) ;
                                                 osFileNameC osfnRaw(    tin0P , etThread , tFileRaw    ) ;
 
-                                                TN( tFileResult , "///d/tmp/result.ttt" ) ;
-                                                TN( tFileRaw    , "///d/tmp/raw.ttt"    ) ;
+                                                TN( tFileResult , "" ) ; tFileResult =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/2.result.ttt") ;
+                                                TN( tFileRaw    , "" ) ; tFileRaw    =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/1.raw.ttt") ;
 
                                                 countT costRaw = postc - postRaw ;
 
