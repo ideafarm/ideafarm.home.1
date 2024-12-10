@@ -109,7 +109,7 @@ MYpREFIX int             _export __watcall c_threadTry1Outer1F(   unsigned bMain
 MYpREFIX int             _export __watcall threadTry2Inner123F(   unsigned bMainP , unsigned c1P , unsigned c2P , unsigned c3P ) ;
 MYpREFIX int             _export __watcall threadTry2Inner12F(    unsigned bMainP , unsigned c1P , unsigned c2P , unsigned c3P ) ;
 MYpREFIX int             _export __watcall threadTry2Inner1F(     unsigned bMainP , unsigned c1P , unsigned c2P , unsigned c3P ) ;
-MYpREFIX void            _export __watcall c_foreignTimeFromUnixTimeIF( unsigned* pEcP , unsigned* pIsDaylightSavingsTimeP , unsigned* pYDayP , unsigned* pWDayP , unsigned* pYearP , unsigned* pMonthP , unsigned* pMDayP , unsigned* pHourP , unsigned* pMinuteP , unsigned* pSecondP , const unsigned secondsIntoUnixEpochP ) ;
+MYpREFIX void            _export __watcall c_oldTimeFromUnixTimeIF( unsigned* pEcP , unsigned* pIsDaylightSavingsTimeP , unsigned* pYDayP , unsigned* pWDayP , unsigned* pYearP , unsigned* pMonthP , unsigned* pMDayP , unsigned* pHourP , unsigned* pMinuteP , unsigned* pSecondP , const unsigned secondsIntoUnixEpochP ) ;
 
 #if defined( __cplusplus )
     unsigned _export _stdcall  rootExceptionFilterF( void* pvOsInfoP ) ;

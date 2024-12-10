@@ -6233,10 +6233,11 @@ it is illegal to refer to this symbol in the definition of an adam
     #include <math.h>
     #include <process.h>
     #include <stdlib.h>
+
     #define __STDC_WANT_LIB_EXT1__ 1
     #include <time.h>
 
-    //U::20241209@1935: YIPPEE KAY-YO! snip\ipdos.base.show.third.2.h  (DEBUGGING THE BUILD) ; REMOVE THIS LINE AFTER ALL IS WORKING WITH <time.h>
+    //U::20241209@1935: YIPPEE KAY-YO! from dictionary  (DEBUGGING THE BUILD) ; REMOVE THIS LINE AFTER ALL IS WORKING WITH <time.h>
 
     #ifdef __OS2__
 
@@ -32217,7 +32218,7 @@ private :
  static voidT osTraceWrongNodeIF( tin0S& tin0P , byteT* pbP , const osTextT* const postComment1P , const osTextT* const postComment2P = 0 ) ;  //WO COMMENT IS REQUIRED; IF OO THEN WILL BE CONCATENATED
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600119d.thirdc.ostracewrongnodeif!||
  static countT osHireThenMonitorIF( tin0S& tin0P , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP ) ;
- static voidT osForeignTimeFromUnixTimeIF( tin0S& tin0P , boolT& isDaylightSavingsTimeP , countT& yDayP , countT& wDayP , countT& yearP , countT& monthP , countT& mDayP , countT& hourP , countT& minuteP , countT& secondP , const countT secondsIntoUnixEpochP ) ;
+ static voidT osOldTimeFromUnixTimeIF( tin0S& tin0P , boolT& isDaylightSavingsTimeP , countT& yDayP , countT& wDayP , countT& yearP , countT& monthP , countT& mDayP , countT& hourP , countT& minuteP , countT& secondP , const countT secondsIntoUnixEpochP ) ;
 
 /* commands: math */
 
@@ -35852,6 +35853,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021da.etherC.strFromJsonF!||
  voidT strFromIdJotF( tin0S& tin0P , strokeS*& psttP , const countT idJotP , const countT cbJotStringDecodePrefixP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021e4.etherc.strFromIdJotF!||
+ voidT strFromOldTimeF( tin0S& tin0P , strokeS*& psttP , countT mmP , countT hhP , countT dP , countT mP , countT yP , countT dowP ) ;
  voidT strFuseF( tin0S& tin0P , strokeS*& psttOutP , const strokeS* const psttInP , soulC* pSoulP = 0 , grabC* pGrabP = 0 , const strokeS sttEscapeP = strokeS() , const strokeS* psttDelimiterPairsP = 0 , const countT csttMaxDelimiterP = 0x10 , const countT csttExtraP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404f.etherC.strFuseF!||
  voidT strFuseF( tin0S& tin0P , strokeS*& psttOutP , const strokeS sttInP , const countT csttExtraP = 0 , const boolT fLeadingP = 0 ) ;

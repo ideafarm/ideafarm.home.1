@@ -385,6 +385,8 @@ voidT strFromJsonF_o4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const 
 
 voidT strFromIdJotF_o4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
+voidT strFromOldTimeF_o4P333333_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
 voidT strFuseSeparateF_o4P4P33hPgrabCP3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT strKTTrimF_o4P4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;

@@ -243,6 +243,54 @@ voidT strFromIdJotF_o4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
     etherP.delF( tin0P , psttP ) ;
 }
 
+voidT strFromOldTimeF_o4P333333_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , mmP ) ;
+    if( !POOP ) { slP >> mmP ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , hhP ) ;
+    if( !POOP ) { slP >> hhP ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , dP ) ;
+    if( !POOP ) { slP >> dP ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , mP ) ;
+    if( !POOP ) { slP >> mP ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , yP ) ;
+    if( !POOP ) { slP >> yP ; idArgNext ++ ; }
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , dowP ) ;
+    if( !POOP ) { slP >> dowP ; idArgNext ++ ; }
+    if( !POOP ) etherP.strFromOldTimeF( tin0P , psttP , mmP , hhP , dP , mP , yP , dowP ) ;
+
+    if( !POOP ) slP << psttP ;
+    etherP.delF( tin0P , psttP ) ;
+}
+
 voidT strFuseSeparateF_o4P4P33hPgrabCP3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;

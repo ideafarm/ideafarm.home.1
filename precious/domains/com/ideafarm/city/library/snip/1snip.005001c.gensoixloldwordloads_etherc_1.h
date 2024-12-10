@@ -1543,6 +1543,14 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
+    TN( tNameSoixlOld , "strFromOldTimeF_o4@333333" ) ;
+    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    _psttLeverSoixlOldApi = tNameSoixlOld ;
+    if( *_pSwSoixlOldApi ) { BLAMMO ; }
+    *_pSwSoixlOldApi = (countT)strFromOldTimeF_o4P333333_GF ;
+    _pSwSoixlOldApi->ungrabF( tin0P ) ;
+}
+{
     TN( tNameSoixlOld , "strFuseSeparateF_o4@4@33h@grabC@3" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
