@@ -34,6 +34,10 @@
 #define ifcIDeXCEPTIONoPENsSL_getPublicKeyBase64IF          0x80000014
 #define ifcIDeXCEPTIONoPENsSL_getPrivateKeyBase64IF         0x80000015
 
+//THIS MUST BE DONE BEFORE THE openssl INCLUDES SO THAT THIS DEF OF __STDC_WANT_LIB_EXT1__ IS EFFECTIVE
+#define __STDC_WANT_LIB_EXT1__ 1
+#include <time.h>
+
 #if defined( __cplusplus )
 
     #define MYpREFIX extern "C"
@@ -78,6 +82,7 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 
+
 // WRAPPERS FOR THE OPENSSL UPLINK FUNCTIONS (NEEDED BECAUSE OPENSSL'S FILE I/O CODE (E.G. PEM FILE READING/WRITING) WANTS TO CALL WATCOM'S clib FUNCTIONS USING cdecl, BUT WATCOM'S clib IS COMPILED USING watcall
 MYpREFIX int             _export __cdecl   c__close_cdecl_IF(       int handle                                                  ) ;
 MYpREFIX off_t           _export __cdecl   c__lseek_cdecl_IF(       int handle , off_t offset , int origin                      ) ;
@@ -104,6 +109,7 @@ MYpREFIX int             _export __watcall c_threadTry1Outer1F(   unsigned bMain
 MYpREFIX int             _export __watcall threadTry2Inner123F(   unsigned bMainP , unsigned c1P , unsigned c2P , unsigned c3P ) ;
 MYpREFIX int             _export __watcall threadTry2Inner12F(    unsigned bMainP , unsigned c1P , unsigned c2P , unsigned c3P ) ;
 MYpREFIX int             _export __watcall threadTry2Inner1F(     unsigned bMainP , unsigned c1P , unsigned c2P , unsigned c3P ) ;
+MYpREFIX void            _export __watcall c_foreignTimeFromUnixTimeIF( unsigned* pEcP , unsigned* pIsDaylightSavingsTimeP , unsigned* pYDayP , unsigned* pWDayP , unsigned* pYearP , unsigned* pMonthP , unsigned* pMDayP , unsigned* pHourP , unsigned* pMinuteP , unsigned* pSecondP , const unsigned secondsIntoUnixEpochP ) ;
 
 #if defined( __cplusplus )
     unsigned _export _stdcall  rootExceptionFilterF( void* pvOsInfoP ) ;

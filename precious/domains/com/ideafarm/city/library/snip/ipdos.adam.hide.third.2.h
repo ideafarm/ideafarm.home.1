@@ -6233,7 +6233,10 @@ it is illegal to refer to this symbol in the definition of an adam
     #include <math.h>
     #include <process.h>
     #include <stdlib.h>
+    #define __STDC_WANT_LIB_EXT1__ 1
     #include <time.h>
+
+    //U::20241209@1935: YIPPEE KAY-YO! snip\ipdos.adam.hide.third.2.h  (DEBUGGING THE BUILD) ; REMOVE THIS LINE AFTER ALL IS WORKING WITH <time.h>
 
     #ifdef __OS2__
 
@@ -32214,6 +32217,7 @@ private :
  static voidT osTraceWrongNodeIF( tin0S& tin0P , byteT* pbP , const osTextT* const postComment1P , const osTextT* const postComment2P = 0 ) ;  //WO COMMENT IS REQUIRED; IF OO THEN WILL BE CONCATENATED
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3600119d.thirdc.ostracewrongnodeif!||
  static countT osHireThenMonitorIF( tin0S& tin0P , countT idAdamP , const strokeS* const psttCommentP , const strokeS* const psttArgsP ) ;
+ static voidT osForeignTimeFromUnixTimeIF( tin0S& tin0P , boolT& isDaylightSavingsTimeP , countT& yDayP , countT& wDayP , countT& yearP , countT& monthP , countT& mDayP , countT& hourP , countT& minuteP , countT& secondP , const countT secondsIntoUnixEpochP ) ;
 
 /* commands: math */
 

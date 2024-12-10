@@ -1,0 +1,63 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+}
+    *pSecondP                = foreignTime.tm_sec   ;
+    *pMinuteP                = foreignTime.tm_min   ;
+    *pHourP                  = foreignTime.tm_hour  ;
+    *pMDayP                  = foreignTime.tm_mday  ;
+    *pMonthP                 = foreignTime.tm_mon   ;
+    *pYearP                  = foreignTime.tm_year  + 1900 ; //U::ADD ADJUSTMENTS AS NEEDED TO THE OTHER OUTPUT VALUES SO THAT THEY CONFORM TO THE BEHAVIOR OF osTimeToOldTimeF( tin0S& tin0P , countT& msP , countT& ssP , countT& mmP , countT& hhP , countT& dP , countT& mP , sCountT& yP , countT& dowP , const countT time1P , const sCountT time2P = 0 , const flagsT flagsP = flOStIMEtOoLDtIME_null ) ;
+    *pWDayP                  = foreignTime.tm_wday  ;
+    *pYDayP                  = foreignTime.tm_yday  ;
+    *pIsDaylightSavingsTimeP = foreignTime.tm_isdst ;
+
+    printf( "Date and time: %s\n" , asctime( &foreignTime ) ) ;     //U:: REMOVE IN PRODUCTION
+
+    localtime_s( &epoch_time , &foreignTime ) ;
+
+    if( *pEcP) return ;
+    if( *pSecondP                ) *pEcP|= 0x01000000 ;
+    if( *pMinuteP                ) *pEcP|= 0x00800000 ;
+    if( *pHourP                  ) *pEcP|= 0x00400000 ;
+    if( *pMDayP                  ) *pEcP|= 0x00200000 ;
+    if( *pMonthP                 ) *pEcP|= 0x00100000 ;
+    if( *pYearP                  ) *pEcP|= 0x00080000 ;
+    if( *pWDayP                  ) *pEcP|= 0x00040000 ;
+    if( *pYDayP                  ) *pEcP|= 0x00020000 ;
+    if( *pIsDaylightSavingsTimeP ) *pEcP|= 0x00010000 ;
+    if( *pEcP) return ;
+    if( !pSecondP                ) *pEcP|= 0x00000100 ;
+    if( !pMinuteP                ) *pEcP|= 0x00000080 ;
+    if( !pHourP                  ) *pEcP|= 0x00000040 ;
+    if( !pMDayP                  ) *pEcP|= 0x00000020 ;
+    if( !pMonthP                 ) *pEcP|= 0x00000010 ;
+    if( !pYearP                  ) *pEcP|= 0x00000008 ;
+    if( !pWDayP                  ) *pEcP|= 0x00000004 ;
+    if( !pYDayP                  ) *pEcP|= 0x00000002 ;
+    if( !pIsDaylightSavingsTimeP ) *pEcP|= 0x00000001 ;
+    if( *pEcP) return ;
+    if( !pEcP) return ;
+
+    struct tm foreignTime ;
+    time_t    epoch_time = secondsIntoUnixEpochP ;
+{
+/*1*/void _export __watcall c_foreignTimeFromUnixTimeIF( unsigned* pEcP , unsigned* pIsDaylightSavingsTimeP , unsigned* pYDayP , unsigned* pWDayP , unsigned* pYearP , unsigned* pMonthP , unsigned* pMDayP , unsigned* pHourP , unsigned* pMinuteP , unsigned* pSecondP , const unsigned secondsIntoUnixEpochP )/*1*/
+
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

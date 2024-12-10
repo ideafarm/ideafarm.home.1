@@ -3,8 +3,22 @@
 #include <string.h>
 #include <stdio.h>
 
+#define __STDC_WANT_LIB_EXT1__ 1
+
+#include <time.h>
+
 int main( void )
 {
+
+    time_t epoch_time = 1733793157; // Example epoch time 
+    struct tm foreignTime ;
+
+    localtime_s( &epoch_time , &foreignTime ) ;
+
+    printf("Date and time: %s\n", asctime( &foreignTime ) ) ;
+
+#if defined( NEVERdEFINED )
+
     STARTUPINFO         info1 ;
     PROCESS_INFORMATION info2 ;
     DEBUG_EVENT         info3 ;
@@ -56,6 +70,8 @@ int main( void )
             if( rc ) rc = 0 ;
         }
     }
+
+#endif
 
     return 0 ;
 }

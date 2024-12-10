@@ -10,6 +10,8 @@
 }
     return rc ;
 
+#endif
+
     printf( "\r\nInput:     %s\r\nEncrypted: %s\r\nDecrypted: %s\r\n" , pbIn , pbOut1 , pbOut2 ) ;
 
     }
@@ -49,6 +51,15 @@
     EVP_PKEY* pKeyPrivate = 0 ;
     EVP_PKEY* pKeyPairP = (EVP_PKEY*)pP ;
     unsigned char* ppbInnerKey[ 1 ] ;
+
+#if defined( NEVERdEFEINED )
+
+
+    localtime_s( &epoch_time , &foreignTime ) ;
+    struct tm foreignTime ;
+
+    time_t epoch_time = 0xffffffff ;
+
     unsigned rc = 0 ;
 {
 /*1*/unsigned _export __watcall c_debugIF( unsigned pP )/*1*/

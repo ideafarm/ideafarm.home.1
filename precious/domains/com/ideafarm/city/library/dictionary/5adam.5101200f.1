@@ -16,8 +16,8 @@ TODO
 
 DONE( tmWorkF )
 }
-    etherC::loafIF( tin0P ) ;
-    etThread.traceF( tin0P , T("ok") ) ;
+    //etherC::loafIF( tin0P ) ;
+    //etThread.traceF( tin0P , T("ok") ) ;
 
     }
         }
@@ -26,7 +26,7 @@ DONE( tmWorkF )
         {
         if( POOP )
     
-        etThread.traceF( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
+        //etThread.traceF( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
     
         }
             DEL( pSwPathValue ) ;
@@ -34,7 +34,7 @@ DONE( tmWorkF )
                 }
                     etThread.delF( tin0P , psttValue ) ;
 
-                    etThread.traceF( tin0P , T("********    ") + T(psttPath) + T("   :    ") + T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etThread.traceF( tin0P , T("********    ") + T(psttPath) + T("   :    ") + T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
                     strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                     psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -52,8 +52,8 @@ DONE( tmWorkF )
             ZE( strokeS* , psttPath     ) ;
         {
 
-        etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        etThread.traceF( tin0P , T("json response:") ) ;
+        //etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        //etThread.traceF( tin0P , T("json response:") ) ;
     
         }
             }
@@ -74,8 +74,8 @@ DONE( tmWorkF )
         osTextT postj[ TUCK << 1 ] ;
     
         sockc.writeF( tin0P , (osTextT*)tSay ) ;
-        etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        etThread.traceF( tin0P , T("request:") ) ;
+        //etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        //etThread.traceF( tin0P , T("request:") ) ;
     
         TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/logout/all HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(0,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
     
@@ -246,22 +246,54 @@ DONE( tmWorkF )
                 
                         }
                             }
-                                etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                }
+                                    if( secondP ) ;
+                                    thirdC::osForeignTimeFromUnixTimeIF( tin0P , isDaylightSavingsTimeP , yDayP , wDayP , yearP , monthP , mDayP , hourP , minuteP , secondP , secondsIntoUnixEpochP ) ;
+                                    ZE( boolT  , isDaylightSavingsTimeP ) ;
+                                    ZE( countT , yDayP ) ;
+                                    ZE( countT , wDayP ) ;
+                                    ZE( countT , yearP ) ;
+                                    ZE( countT , monthP ) ;
+                                    ZE( countT , mDayP ) ;
+                                    ZE( countT , hourP ) ;
+                                    ZE( countT , minuteP ) ;
+                                    ZE( countT , secondP ) ;
+
+                                    countT secondsIntoUnixEpochP = etThread.strDigitsToSCountF( tin0P , *pptValue[ offe ] , 0xa , 1 ) ;
+                                {
+                                if( offe == 4 )
+
+                                etThread.traceF( tin0P , T("********    ") + T(psttPath) + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                 *pptValue[ offe ] = T(pstpsttValue) ;
                             {
-                            if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                            )
+                                )
+                                    etThread.strIdF(  tin0P , *pptPathZ[ offe ] , psttPath ) + pptPathZ[ offe ]->csF( tin0P ) - 1 == psttPath->idAdam
+                                    &&
+                                    etThread.strIdF(  tin0P , *pptPathA[ offe ] , psttPath ) == 1
+                                (
+                                ||
+                                )
+                                    !etThread.strCompareF( tin0P , *pptPathA[ offe ] , psttPath )
+                                    &&
+                                    !pptPathZ[ offe ]->csF( tin0P )
+                                (
+                            (
+                            if
                         {
-                        for( countT offe = 0 ; offe < cPaths ; offe ++ )
+                        for( countT offe = 0 ; offe < cValues ; offe ++ )
                 
-                        if( cPaths - cValues ) { BLAMMO ; }
+                        if( cPathsZ - cValues ) { BLAMMO ; }
+                        if( cPathsA - cValues ) { BLAMMO ; }
                         countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
-                        countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+                        countT cPathsZ  = sizeof pptPathZ  / sizeof pptPathZ[  0 ] ;
+                        countT cPathsA  = sizeof pptPathA  / sizeof pptPathA[  0 ] ;
                 
                         //etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(pstpsttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                         //etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                 
                         strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+                        psttPath               = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
                 
                         _IO_
                     {
@@ -272,18 +304,40 @@ DONE( tmWorkF )
                 
                 ;
                 }
-                    &tPathEnd       ,
-                    &tPathStart     ,
-                    &tPathNextBatch ,
+                    &tPathZTime      ,
+                    &tPathZMessage   ,
+                    &tPathZEnd       ,
+                    &tPathZStart     ,
+                    &tPathZNextBatch ,
                 {
-                textC* pptPath[] =
+                textC* pptPathZ[] =
+
+                ;
+                }
+                    &tPathATime      ,
+                    &tPathAMessage   ,
+                    &tPathAEnd       ,
+                    &tPathAStart     ,
+                    &tPathANextBatch ,
+                {
+                textC* pptPathA[] =
+
+                TN( tPathZTime      , "/\"origin_server_ts\"/"                                                                ) ;
+                TN( tPathZMessage   , "/\"content\"/\"body\"/"                                                                ) ;
+                TN( tPathZEnd       , ""                                                                                      ) ;
+                TN( tPathZStart     , ""                                                                                      ) ;
+                TN( tPathZNextBatch , ""                                                                                      ) ;
                 
-                TN( tPathEnd       , "\"end\"/"    ) ;
-                TN( tPathStart     , "\"start\"/" ) ;
-                TN( tPathNextBatch , "\"next_batch\"/" ) ;
+                TN( tPathATime      , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item." ) ;
+                TN( tPathAMessage   , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item." ) ;
+                TN( tPathAEnd       , "\"end\"/"                                                                              ) ;
+                TN( tPathAStart     , "\"start\"/"                                                                            ) ;
+                TN( tPathANextBatch , "\"next_batch\"/"                                                                       ) ;
                 
                 ;
                 }
+                    &tValueTime      ,
+                    &tValueMessage   ,
                     &tValueEnd       ,
                     &tValueStart     ,
                     &tValueNextBatch ,
@@ -297,7 +351,7 @@ DONE( tmWorkF )
                         POOPR
                     {
                     else
-                    if( !POOP ) etThread.traceF( tin0P , T("response to sync request was parsed AOK") ) ;
+                    if( !POOP ) ; // etThread.traceF( tin0P , T("response to sync request was parsed AOK") ) ;
 
                     __Z( pSwPathValue ) ;
 
@@ -310,10 +364,13 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttPath     ) ;
             {
 
-            etThread.boxPutF( tin0P , T("///d/tmp/foo.json") , postj , costj ) ;
+            etThread.delF( tin0P , psttg ) ;
+            //etThread.traceF( tin0P , T("[json file]:    ")+T(psttg) ) ;
+            etThread.boxPutGenerationF( tin0P , psttg , T("///d/tmp/json.foo") , TOCK , postj , costj ) ; ___( psttg ) ;
+            ZE( strokeS* , psttg ) ;
 
-            etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-            etThread.traceF( tin0P , T("json response [costj]:    ")+TF2(costj,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE) ) ;
+            //etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            //etThread.traceF( tin0P , T("json response [costj]:    ")+TF2(costj,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE) ) ;
 
             }
                 }
@@ -338,8 +395,8 @@ DONE( tmWorkF )
             ZE( countT , costj ) ;
 
             sockc.writeF( tin0P , (osTextT*)tSay ) ;
-            etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-            etThread.traceF( tin0P , T("request:") ) ;
+            //etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            //etThread.traceF( tin0P , T("request:") ) ;
 
             thirdC::c_memsetIF( tin0P , postj , costaj ) ;
             etThread.newF( tin0P , LF , postj , costaj ) ; ___( postj ) ;
@@ -354,7 +411,7 @@ DONE( tmWorkF )
                 "&since=")+tValueNextBatch+T(
 
             if( tValueNextBatch.csF( tin0P ) ) tQuery += T(
-            TN( tQuery , "?timeout=1000" ) ;
+            TN( tQuery , "?timeout=4000" ) ;
         
             sockc.connectF( tin0P , 443 , nnServer ) ;
             socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
@@ -370,8 +427,9 @@ DONE( tmWorkF )
         {
         IFsCRATCH
     {
-    while( !ether && !POOP && cDo && cDo -- )
-    countT cDo = 2 ;
+    while( !ether && !POOP )
+    TN( tValueTime      , "" ) ;
+    TN( tValueMessage   , "" ) ;
     TN( tValueNextBatch , "" ) ;
     TN( tValueEnd       , "" ) ;
     TN( tValueStart     , "" ) ;
@@ -383,7 +441,7 @@ DONE( tmWorkF )
         {
         if( POOP )
     
-        etThread.traceF( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
+        //etThread.traceF( tin0P , T("[accessToken,deviceId]:    ")+tValueAccessToken+tb4+tValueDeviceId ) ;
     
         }
             DEL( pSwPathValue ) ;
@@ -394,7 +452,7 @@ DONE( tmWorkF )
             
                     }
                         }
-                            etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            //etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                             *pptValue[ offe ] = T(pstpsttValue) ;
                         {
                         if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
@@ -405,8 +463,8 @@ DONE( tmWorkF )
                     countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
                     countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
             
-                    etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(pstpsttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(pstpsttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
             
                     strokeS*& pstpsttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                     psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -441,8 +499,8 @@ DONE( tmWorkF )
             ZE( strokeS* , psttPath     ) ;
         {
 
-        etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        etThread.traceF( tin0P , T("json response:") ) ;
+        //etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        //etThread.traceF( tin0P , T("json response:") ) ;
     
         }
             }
@@ -463,8 +521,8 @@ DONE( tmWorkF )
         osTextT postj[ TUCK << 1 ] ;
     
         sockc.writeF( tin0P , (osTextT*)tSay ) ;
-        etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-        etThread.traceF( tin0P , T("request:") ) ;
+        //etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+        //etThread.traceF( tin0P , T("request:") ) ;
     
         TN( tSay , "" ) ; tSay = T("POST /_matrix/client/v3/login HTTP/1.1\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
     
@@ -501,7 +559,7 @@ DONE( tmWorkF )
         }
             etThread.delF( tin0P , psttApiPassword ) ;
             tApiPassword = T(psttApiPassword) ;
-            etThread.traceF( tin0P , T("[password]:    ")+T(psttApiPassword) ) ;
+            //etThread.traceF( tin0P , T("[password]:    ")+T(psttApiPassword) ) ;
             if( psttApiPassword && psttApiPassword->idAdam ) tApiPassword = T(psttApiPassword) ;
 
             //ZE( strokeS* , psttApiPassword ) ; etThread.querySettingF( tin0P , psttApiPassword , T("!ipdos.password.matrix.ideafarm.com.a.1"          ) ) ; ___( psttApiPassword ) ;
