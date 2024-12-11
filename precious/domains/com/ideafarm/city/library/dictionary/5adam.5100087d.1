@@ -149,6 +149,14 @@ DONE( tmWorkF )
                     countT cFlavorsMessage = swMessage.cFlavorsF( tin0P ) ;
 
                     }
+                        etThread.delF( tin0P , psttd ) ;
+                        strokeS*& psttd = (strokeS*&)(countT&)swSender ;
+                        psttzlPrefix = (strokeS*)swSender.leverF( tin0P , idfm ) ;
+                    {
+                    for( countT idfm = 1 ; idfm <= cFlavorsSender ; idfm ++ )
+                    countT cFlavorsSender = swSender.cFlavorsF( tin0P ) ;
+
+                    }
                         etThread.delF( tin0P , psttValue ) ;
                         }
                             }
@@ -161,7 +169,7 @@ DONE( tmWorkF )
                                     }
                                         while( ~hWalk ) ;
                                         }
-                                            etThread.strFuseF( tin0P , psttSoil , tbIndentDetail+T(psttm)+T("\r\n\r\n") ) ;
+                                            etThread.strFuseF( tin0P , psttSoil , tbIndentDetail+T(psttm)+T("\r\n") ) ;
                                             strokeS* psttm = (strokeS*)stMessages.downF( tin0P , hWalk ) ;
                                         {
                                         do
@@ -190,7 +198,7 @@ DONE( tmWorkF )
                                     ZE( strokeS* , pstte ) ;
 
                                     etThread.traceF( tin0P , T("[post]:    ")+tEntry ) ;
-                                    TN( tEntry , "" ) ; tEntry = tMessage+T("\r\n")+tbIndentTopic+tTime+tColonCRLF ;
+                                    TN( tEntry , "" ) ; tEntry = tMessage+T("\r\n")+tbIndentTopic+tTime+tbOpen+tSender+tCloseColonCRLF ;
 
                                     tTime = tDayOfWeek+tCommaBlank+tMonth+tb+TF4(++mDay,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+tCommaBlank+TF4(++year,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T(" at ")+TF4(hour,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE|flFORMAT_FILLzE,2,0xa)+tColon+TF4(minute,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE|flFORMAT_FILLzE,2,0xa) ;
 
@@ -221,7 +229,7 @@ DONE( tmWorkF )
                                         case 0 : { tDayOfWeek = T("Sunday"   ) ; break ; }
                                     {
                                     switch( wDay )
-                                    TN( tDayOfWeek , "" ) ;
+                                    TN( tDayOfWeek , "" ) ;                                     //U:: USE etherC API FOR THIS
 
                                     thirdC::osOldTimeFromUnixTimeIF( tin0P , isDaylightSavingsTime , yDay , wDay , year , month , mDay , hour , minute , second , secondsIntoEpoch ) ;
                                     ZE( boolT  , isDaylightSavingsTime ) ;
@@ -234,7 +242,7 @@ DONE( tmWorkF )
                                     ZE( countT , minute                ) ;
                                     ZE( countT , second                ) ;
                                 {
-                                if( secondsIntoEpoch != - 1 )
+                                if( secondsIntoEpoch != - 1 && tSender.csF( tin0P ) )
                                 TN( tTime , "" ) ;
                                 
                                 }
@@ -245,6 +253,7 @@ DONE( tmWorkF )
                                 countT secondsIntoEpoch = - 1 ;
 
                                 TN( tMessage , (strokeS*&)(countT&)swMessage ) ;
+                                TN( tSender  , (strokeS*&)(countT&)swSender  ) ;
                             {
                             if( !etThread.strCompareF( tin0P , psttzlPrefix , tPrefix ) )
 
@@ -262,6 +271,14 @@ DONE( tmWorkF )
                                         etThread.strMakeF( tin0P , LF , psttMessage , (strokeS*)*pptValue[ offe ] ) ; ___( psttMessage ) ;
                                         etThread.delF( tin0P , psttMessage ) ;
                                         strokeS*& psttMessage = (strokeS*&)(countT&)swMessage ;
+                                    {
+                                    case 5 :
+                                    }
+                                        break ;
+
+                                        etThread.strMakeF( tin0P , LF , psttSender , (strokeS*)*pptValue[ offe ] ) ; ___( psttSender ) ;
+                                        etThread.delF( tin0P , psttSender ) ;
+                                        strokeS*& psttSender = (strokeS*&)(countT&)swSender ;
                                     {
                                     case 4 :
                                     }
@@ -337,6 +354,7 @@ DONE( tmWorkF )
                     countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
 
                     switchC swMessage( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzlPrefix ) ;
+                    switchC swSender(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzlPrefix ) ;
                     switchC swTime(    tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttzlPrefix ) ;
                     ZE( strokeS* , psttzlPrefix ) ;
                 {
@@ -344,39 +362,49 @@ DONE( tmWorkF )
                 
                 ;
                 }
-                    &tPathZMessage   ,
-                    &tPathZTime      ,
-                    &tPathZEnd       ,
-                    &tPathZStart     ,
-                    &tPathZNextBatch ,
+                    &tPathZRoomTopic  ,
+                    &tPathZMessage    ,
+                    &tPathZSender     ,
+                    &tPathZTime       ,
+                    &tPathZEnd        ,
+                    &tPathZStart      ,
+                    &tPathZNextBatch  ,
                 {
                 textC* pptPathZ[] =
 
                 ;
                 }
-                    &tPathAMessage   ,
-                    &tPathATime      ,
-                    &tPathAEnd       ,
-                    &tPathAStart     ,
-                    &tPathANextBatch ,
+                    &tPathARoomTopic  ,
+                    &tPathAMessage    ,
+                    &tPathASender     ,
+                    &tPathATime       ,
+                    &tPathAEnd        ,
+                    &tPathAStart      ,
+                    &tPathANextBatch  ,
                 {
                 textC* pptPathA[] =
 
-                TN( tPathZMessage   , "/\"content\"/\"body\"/"                                                                ) ;
-                TN( tPathZTime      , "/\"origin_server_ts\"/"                                                                ) ;
-                TN( tPathZEnd       , ""                                                                                      ) ;
-                TN( tPathZStart     , ""                                                                                      ) ;
-                TN( tPathZNextBatch , ""                                                                                      ) ;
-                
-                TN( tPathAMessage   , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item." ) ;
-                TN( tPathATime      , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item." ) ;
-                TN( tPathAEnd       , "\"end\"/"                                                                              ) ;
-                TN( tPathAStart     , "\"start\"/"                                                                            ) ;
-                TN( tPathANextBatch , "\"next_batch\"/"                                                                       ) ;
+                TN( tPathZRoomTopic , ""                                                                                                                     ) ;                
+                TN( tPathZMessage   , "/\"content\"/\"body\"/"                                                                                               ) ;
+                TN( tPathZSender    , "/\"sender\"/"                                                                                                         ) ;
+                TN( tPathZTime      , "/\"origin_server_ts\"/"                                                                                               ) ;
+                TN( tPathZEnd       , ""                                                                                                                     ) ;
+                TN( tPathZStart     , ""                                                                                                                     ) ;
+                TN( tPathZNextBatch , ""                                                                                                                     ) ;
+
+                TN( tPathARoomTopic , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item.00000002/\"content\"/\"topic\"/" ) ;                
+                TN( tPathAMessage   , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item."                                ) ;
+                TN( tPathASender    , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item."                                ) ;
+                TN( tPathATime      , "\"rooms\"/\"join\"/\"!mdggPdOnBbNwmpeHnH:ideafarm.com\"/\"timeline\"/\"events\"/item."                                ) ;
+                TN( tPathAEnd       , "\"end\"/"                                                                                                             ) ;
+                TN( tPathAStart     , "\"start\"/"                                                                                                           ) ;
+                TN( tPathANextBatch , "\"next_batch\"/"                                                                                                      ) ;
                 
                 ;
                 }
+                    &tValueRoomTopic ,
                     &tValueMessage   ,
+                    &tValueSender    ,
                     &tValueTime      ,
                     &tValueEnd       ,
                     &tValueStart     ,
@@ -468,7 +496,9 @@ DONE( tmWorkF )
         IFsCRATCH
     {
     while( !ether && !POOP )
+    TN( tValueRoomTopic , "" ) ;
     TN( tValueMessage   , "" ) ;
+    TN( tValueSender    , "" ) ;
     TN( tValueTime      , "" ) ;
     TN( tValueNextBatch , "" ) ;
     TN( tValueEnd       , "" ) ;
@@ -480,13 +510,11 @@ DONE( tmWorkF )
         "    }\r\n"
         "\r\n"
         "        \\rStudent Evaluations of ICIS IdeaFarm (tm) College of Imagination Science\r\n"
-        "\r\n"
 
     const osTextT* const postFoot =
 
     ;
 
-        "\r\n"
         "\r\n"
         "    {body:\r\n"
         "\r\n"
@@ -647,9 +675,10 @@ DONE( tmWorkF )
         SCOOPS
     {
     IFsCRATCH                                                           // LOGIN
+    TN( tbOpen            , " ("                   ) ;
+    TN( tCloseColonCRLF   , "):\r\n"               ) ;
     TN( tbIndentDetail    , "          \\r"        ) ;
     TN( tbIndentTopic     , "         \\r"         ) ;
-    TN( tColonCRLF        , ":\r\n"                ) ;
     TN( tColon            , ":"                    ) ;
     TN( tCommaBlank       , ", "                   ) ;
     TN( tb4               , "    "                 ) ;
@@ -664,7 +693,7 @@ TASK( tmWorkF )
 
 // OBSOLETES: 5adam.5100087b.1
 
-/*1*/WAKEhIDE( "rev.2.of.doodle.pull.room.messages" )/*1*/
+/*1*/WAKEhIDE( "ifcIDaDAM_ICISbOT" )/*1*/
 
 /**/
 */
