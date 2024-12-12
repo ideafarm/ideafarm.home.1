@@ -762,11 +762,13 @@ DONE( tmWorkF )
                                         etThread.traceF( tin0P , T("debug / 7") ) ;
 
                                         }
+                                            etThread.traceF( tin0P , T("debug / 7.1") ) ;
                                             }
                                                 etThread.traceF( tin0P , T("socket is impotent") ) ;
                                                 POOPRqUIET
                                             {
                                             if( POOP )
+                                            etThread.traceF( tin0P , T("debug / 7.2") ) ;
 
                                             etThread.traceF( tin0P , T("[nonce]:    ")+tValueNonce ) ;
                                             TN( tb4 , "    " ) ;
@@ -844,6 +846,7 @@ DONE( tmWorkF )
                                                 _IO_
                                             {
                                             TN( tValueNonce     , "" ) ;
+                                            etThread.traceF( tin0P , T("debug / 7.3") ) ;
 
                                             etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                             etThread.traceF( tin0P , T("json response:") ) ;
@@ -880,17 +883,21 @@ DONE( tmWorkF )
                                             {
                                             ZE( countT , costj ) ;
                                             osTextT postj[ TUCK << 1 ] ;
+                                            etThread.traceF( tin0P , T("debug / 7.4") ) ;
 
                                             sockc.writeF( tin0P , (osTextT*)tSay ) ;
                                             etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                             etThread.traceF( tin0P , T("request:") ) ;
+                                            etThread.traceF( tin0P , T("debug / 7.5") ) ;
 
                                             TN( tSay , "" ) ; tSay = T("POST /_synapse/admin/v1/register HTTP/1.1")/*+T("\r\nAuthorization: Bearer ")+tValueSharedSecret*/+T("\r\nHost: ")+tServer+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
 
                                             countT costBody = tBody.csF( tin0P ) ;
 
+                                            etThread.traceF( tin0P , T("debug / 7.6") ) ;
                                             sockc.connectF( tin0P , 443 , nnServer ) ;
                                             socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+                                            etThread.traceF( tin0P , T("debug / 7.7") ) ;
 
                                             countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
                                             countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
@@ -899,6 +906,7 @@ DONE( tmWorkF )
                                             nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
                                             nicNameC nnServer ;
 
+                                            etThread.traceF( tin0P , T("debug / 7.8") ) ;
                                             ) ;
 
                                                 "}\r\n"
@@ -912,6 +920,7 @@ DONE( tmWorkF )
 
                                             etThread.traceF( tin0P , T("[mac]:    ")+tMac ) ;
                                             }
+                                                etThread.traceF( tin0P , T("debug / 7.9") ) ;
                                                 }
                                                     }
                                                         etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | could not zap raw: ")+tFileRaw ) ;
@@ -924,6 +933,7 @@ DONE( tmWorkF )
                                                     _IO_
                                                 {
                                                 IFsCRATCH
+                                                etThread.traceF( tin0P , T("debug / 7.a") ) ;
 
                                                 etThread.delF( tin0P , postim ) ;
                                                 }
@@ -936,6 +946,7 @@ DONE( tmWorkF )
                                                     _IO_
                                                 {
                                                 if( postim && costim )
+                                                etThread.traceF( tin0P , T("debug / 7.b") ) ;
 
                                                 }
                                                     }
@@ -951,6 +962,7 @@ DONE( tmWorkF )
                                                 IFsCRATCH
                                                 ZE( countT   , costim ) ;
                                                 ZE( osTextT* , postim ) ;
+                                                etThread.traceF( tin0P , T("debug / 7.c") ) ;
 
                                                 countT rc = thirdC::c_systemIF( tin0P , postCmd ) ;
 
@@ -962,6 +974,7 @@ DONE( tmWorkF )
                                                 thirdC::c_strcpyIF( tin0P , postCmd , "openssl sha1 -hmac " ) ;
                                                 postCmd[ 0 ] = 0 ;
                                                 osTextT postCmd[ TUCK << 1 ] ;
+                                                etThread.traceF( tin0P , T("debug / 7.d") ) ;
 
                                                 }
                                                     }
@@ -975,6 +988,7 @@ DONE( tmWorkF )
                                                     _IO_
                                                 {
                                                 IFsCRATCH
+                                                etThread.traceF( tin0P , T("debug / 7.e") ) ;
 
                                                 osFileNameC osfnResult( tin0P , etThread , tFileResultM ) ;
                                                 osFileNameC osfnRaw(    tin0P , etThread , tFileRawM    ) ;
@@ -994,6 +1008,7 @@ DONE( tmWorkF )
                                                 {
                                                 TN( tFileRawM , "" ) ;
                                                 TN( tFileRaw  , "" ) ; tFileRaw = T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/1.raw.ttt") ;
+                                                etThread.traceF( tin0P , T("debug / 7.f") ) ;
 
                                                 countT costRaw = postc - postRaw ;
 
@@ -1016,11 +1031,13 @@ DONE( tmWorkF )
                                                 osTextT* postc = postRaw ;
                                                 thirdC::c_memsetIF( tin0P , postRaw , sizeof postRaw , 0 ) ;
                                                 osTextT postRaw[ TUCK ] ;
+                                                etThread.traceF( tin0P , T("debug / 7.g") ) ;
                                                 _IO_
                                             {
                                             TN( tMac , "" ) ;
 
                                             TN( tNote , "notadmin"  ) ;
+                                            etThread.traceF( tin0P , T("debug / 7.h") ) ;
 
                                             _IO_
                                         {
