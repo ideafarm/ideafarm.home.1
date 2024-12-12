@@ -496,6 +496,7 @@ DONE( tmWorkF )
         {
         IFsCRATCH
 
+#endif
         }
             }
                 }
@@ -510,6 +511,8 @@ DONE( tmWorkF )
             IFsCRATCH
         {
         if( timeE2 || timeE1 > ( TICK << 2 ) )      //A:ASSUME: PISS CAN PROCESS THE SOIL FILE WELL WITHIN THIS TIME (EVEN IF SERVER IS HEAVILY LOADED)
+#if defined( NEVERdEFINED )
+//U:: 20241212@1518: THIS CAUSES PISS TO BLAMMO (etScratch IS IMPOTENT IDbLAMMO 0x33333333)
 
         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeU1 , timeU2 ) ;
         sCountT timeE2 = timeN2 ;
