@@ -976,11 +976,24 @@ DONE( tmWorkF )
                                                 {
                                                 IFsCRATCH
 
-                                                osFileNameC osfnResult( tin0P , etThread , tFileResult ) ;
-                                                osFileNameC osfnRaw(    tin0P , etThread , tFileRaw    ) ;
+                                                osFileNameC osfnResult( tin0P , etThread , tFileResultM ) ;
+                                                osFileNameC osfnRaw(    tin0P , etThread , tFileRawM    ) ;
 
+                                                }
+                                                    tFileResultM = T(psttm) ;
+                                                    etThread.diskMapFileNameF( tin0P , psttm , tFileResult ) ; ___( psttm ) ;
+                                                    ZE( strokeS* , psttm ) ;
+                                                {
+                                                TN( tFileResultM , "" ) ;
                                                 TN( tFileResult , "" ) ; tFileResult =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/2.result.ttt") ;
-                                                TN( tFileRaw    , "" ) ; tFileRaw    =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/1.raw.ttt") ;
+
+                                                }
+                                                    tFileRawM = T(psttm) ;
+                                                    etThread.diskMapFileNameF( tin0P , psttm , tFileRaw ) ; ___( psttm ) ;
+                                                    ZE( strokeS* , psttm ) ;
+                                                {
+                                                TN( tFileRawM , "" ) ;
+                                                TN( tFileRaw  , "" ) ; tFileRaw = T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/1.raw.ttt") ;
 
                                                 countT costRaw = postc - postRaw ;
 
@@ -1009,10 +1022,8 @@ DONE( tmWorkF )
 
                                             TN( tNote , "notadmin"  ) ;
 
-                                            SCOOPS
                                             _IO_
                                         {
-                                        IFsCRATCH
                                         etThread.traceF( tin0P , T("debug / 8") ) ;
 
                                         }
