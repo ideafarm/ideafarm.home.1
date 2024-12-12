@@ -162,7 +162,8 @@ DONE( tmWorkF )
                             }
                                 }
                                     etThread.delF( tin0P , psttSoil ) ;
-                                    etThread.boxPutF( tin0P , T("///ideafarm/tmp/student.evaluations.soil") , tEvals , tEvals.csF( tin0P ) ) ;
+
+                                    etThread.boxPutF( tin0P , tSoilFilePathFrom+tSoilFileShort , tEvals , tEvals.csF( tin0P ) ) ;
                                     TN( tEvals , psttSoil ) ;
 
                                     etThread.strFuseF( tin0P , psttSoil , T(postFoot) ) ;
@@ -494,8 +495,37 @@ DONE( tmWorkF )
             SCOOPS
         {
         IFsCRATCH
+
+        }
+            }
+                }
+                    etThread.traceF( tin0P , T("!exception / could not move the student evaluations soil file to publish it") ) ;
+                    POOPRqUIET
+                {
+                if( POOP )
+                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSoilFilePathTo+tSoilFileShort , tSoilFilePathFrom+tSoilFileShort , 1 ) ;
+
+                SCOOPS
+            {
+            IFsCRATCH
+        {
+        if( timeE2 || timeE1 > ( TICK << 2 ) )      //A:ASSUME: PISS CAN PROCESS THE SOIL FILE WELL WITHIN THIS TIME (EVEN IF SERVER IS HEAVILY LOADED)
+
+        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeU1 , timeU2 ) ;
+        sCountT timeE2 = timeN2 ;
+        countT  timeE1 = timeN1 ;
+
+        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+        ZE( sCountT , timeN2 ) ;
+        ZE( countT  , timeN1 ) ;
     {
     while( !ether && !POOP )
+
+    TN( tSoilFilePathTo   , "///ideafarm/IdeaFarm (tm)/SYSTEM/1.2. SOIL (tm) Text Files Being Eaten/" ) ;
+    TN( tSoilFilePathFrom , "///ideafarm/tmp/" ) ;
+    TN( tSoilFileShort , "bot.kt.student.evaluations.soil" ) ;
+    ZE( sCountT , timeU2 ) ;
+    ZE( countT  , timeU1 ) ;        //TIME THAT LATH PUBLICATION OCCURRED
     TN( tValueRoomTopic , "" ) ;
     TN( tValueMessage   , "" ) ;
     TN( tValueSender    , "" ) ;
