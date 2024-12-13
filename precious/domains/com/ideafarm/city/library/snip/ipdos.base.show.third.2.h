@@ -27278,7 +27278,7 @@ examples
 /* commands: advanced */
  countT menuF( tin0S& tin0P , soulC& soulP , grabC* pGrabP = 0 , const countT cMaxP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3400e.boxC.menuF!||
- voidT putGenerationF( tin0S& tin0P , strokeS*& psttGeneratedNameP , const countT csttEstimateP , const byteT* const pbP , const countT cbP = 0 ) ;
+ voidT putGenerationF( tin0S& tin0P , strokeS*& psttGeneratedNameP , const countT csttEstimateP , const byteT* const pbP , const countT cbP = 0 , const strokeS* const psttSuffixP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.boxC.putGenerationF!||
  voidT timeF( tin0S& tin0P , countT& time1P , sCountT& time2P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.boxC.timeF!||
@@ -35220,7 +35220,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34069.etherC.boxPutF!||
  voidT boxPutF( tin0S& tin0P , const strokeS* const psttP , soulC& soulP , countT cOpenTriesP = 0 , countT time1P = 0 , const sCountT time2P = 0 , const flagsT flagsOpenDetailsP = flOPENdETAILS_null ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34122.etherC.boxPutF!||
- voidT boxPutGenerationF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttLikeP , const countT csttEstimateP , const byteT* const pbP , const countT cbP = 0 , countT cOpenTriesP = 0 , const flagsT flagsOpenDetailsP = flOPENdETAILS_null ) ;
+ voidT boxPutGenerationF( tin0S& tin0P , strokeS*& psttP , const strokeS* const psttLikeP , const countT csttEstimateP , const byteT* const pbP , const countT cbP = 0 , countT cOpenTriesP = 0 , const flagsT flagsOpenDetailsP = flOPENdETAILS_null , const strokeS* const psttSuffixP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34088.etherC.boxPutGenerationF!||
  voidT boxPutHtmlF( tin0S& tin0P , const boolT bOneFileP , const strokeS* const psttLikeLocalP , const strokeS* const psttLikeP , const strokeS* const psttTitleP , const strokeS* const psttOldCopyrightP , const strokeS* const psttKnowledgeTreeP , countT cOpenTriesP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340a2.etherC.boxPutHtmlF!||

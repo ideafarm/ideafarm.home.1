@@ -11,7 +11,7 @@
     else __1
     }
         ether.boxPutF( tin0P , psttGeneratedNameP , pbP , cbw ) ;
-        ether.strMakeF( tin0P , LF , psttGeneratedNameP , T("///")+T(psttName)+T(".")+TF3(++idMax,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8) ) ; ___( psttGeneratedNameP ) ;
+        ether.strMakeF( tin0P , LF , psttGeneratedNameP , T("///")+T(psttName)+T(".")+TF3(++idMax,flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T(psttSuffixP) ) ; ___( psttGeneratedNameP ) ;
         ether.boxMenuIdRangeF( tin0P , idMin , idMax , T("///")+T(psttName)+T(".*") , csttEstimateP ) ;
         ZE( countT , idMax ) ;
         ZE( countT , idMin ) ;
@@ -99,7 +99,7 @@
     IFbEcAREFUL
     SCOOP
 {
-/*1*/voidT boxC::putGenerationF( tin0S& tin0P , strokeS*& psttGeneratedNameP , const countT csttEstimateP , const byteT* const pbP , const countT cbP )/*1*/
+/*1*/voidT boxC::putGenerationF( tin0S& tin0P , strokeS*& psttGeneratedNameP , const countT csttEstimateP , const byteT* const pbP , const countT cbP , const strokeS* const psttSuffixP )/*1*/
 /**/
 */
  cbP

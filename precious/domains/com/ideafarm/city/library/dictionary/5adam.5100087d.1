@@ -161,9 +161,13 @@ DONE( tmWorkF )
                         }
                             }
                                 }
-                                    etThread.delF( tin0P , psttSoil ) ;
+                                    etThread.traceF( tin0P , T("[publication update]:    ")+tLatestPublication ) ;
+                                    etThread.delF( tin0P , psttGen ) ;
+                                    tLatestPublication = T(psttGen) ;
+                                    etThread.boxPutGenerationF( tin0P , psttGen , tSoilFilePathFrom+tSoilFileShort , TOCK , tEvals , tEvals.csF( tin0P ) , 0 , flOPENdETAILS_null , T(".soil") ) ; ___( psttGen ) ;
+                                    TN( strokeS* , psttGen ) ;
 
-                                    etThread.boxPutF( tin0P , tSoilFilePathFrom+tSoilFileShort , tEvals , tEvals.csF( tin0P ) ) ;
+                                    etThread.delF( tin0P , psttSoil ) ;
                                     TN( tEvals , psttSoil ) ;
 
                                     etThread.strFuseF( tin0P , psttSoil , T(postFoot) ) ;
@@ -496,23 +500,34 @@ DONE( tmWorkF )
         {
         IFsCRATCHoK
 
-#endif
         }
             }
                 }
-                    etThread.traceF( tin0P , T("!exception / could not move the student evaluations soil file to publish it") ) ;
+                    etThread.traceF( tin0P , T("!exception / could not move the student evaluations soil file to publish it to [tShort]:    ")+tShort ) ;
                     POOPRqUIET
                 {
                 if( POOP )
-                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSoilFilePathTo+tSoilFileShort , tSoilFilePathFrom+tSoilFileShort , 1 ) ;
+                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tTo , tFrom , 1 ) ;
 
                 SCOOPS
             {
             IFsCRATCHoK
+
+            TN( tFrom , "" ) ; tFrom = tSoilFilePathFrom + tShort ;
+            TN( tTo   , "" ) ; tTo   = tSoilFilePathTo   + tShort ;
+
+            }
+                etThread.delF( tin0P , psttShort ) ;
+                etThread.delF( tin0P , psttPath ) ;
+                tShort = T(psttShort) ;
+                etThread.strBisectF( tin0P , psttPath , psttShort , tLatestPublication , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+                ZE( strokeS* , psttShort ) ;
+                ZE( strokeS* , psttPath ) ;
+            {
+            if( tLatestPublication.csF( tin0P ) )
+            TN( tShort , "" ) ;
         {
         if( timeE2 || timeE1 > ( TICK << 2 ) )      //A:ASSUME: PISS CAN PROCESS THE SOIL FILE WELL WITHIN THIS TIME (EVEN IF SERVER IS HEAVILY LOADED)
-#if defined( NEVERdEFINED )
-//U:: 20241212@1518: THIS CAUSES PISS TO BLAMMO (etScratch IS IMPOTENT IDbLAMMO 0x33333333)
 
         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeU1 , timeU2 ) ;
         sCountT timeE2 = timeN2 ;
@@ -523,7 +538,7 @@ DONE( tmWorkF )
         ZE( countT  , timeN1 ) ;
     {
     while( !ether && !POOP )
-
+    TN( tLatestPublication , "" ) ;
     TN( tSoilFilePathTo   , "///ideafarm/IdeaFarm (tm)/SYSTEM/1.1. Drop a Copy of SOIL (tm) Text Files Here/" ) ;
     TN( tSoilFilePathFrom , "///ideafarm/tmp/" ) ;
     TN( tSoilFileShort , "bot.kt.student.evaluations.soil" ) ;
