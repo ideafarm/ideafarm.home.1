@@ -506,8 +506,8 @@ DONE( tmWorkF )
                     etThread.traceF( tin0P , T("!exception / could not move the student evaluations soil file to publish it to [tShort]:    ")+tShort ) ;
                     POOPRqUIET
                 {
-                if( POOP )
-                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tTo , tFrom , 1 ) ;
+                if( POOP )                                                                      //U:: PURGE THESE FILES PERIODICALLY (E.G. DAILY), BOTH IN THE FROM PATH AND IN THE EVENTUAL DONE PATH (WHERE PISS PUTS THEM AFTER OBEYING THEM)
+                ((tin1S&)tin0P).pEtScratch->diskCopyFileF( tin0P , tTo , tFrom , 1 ) ;          //COPIED, NOT MOVED, SO THE GENERATIONS INCREMENT
 
                 SCOOPS
             {
