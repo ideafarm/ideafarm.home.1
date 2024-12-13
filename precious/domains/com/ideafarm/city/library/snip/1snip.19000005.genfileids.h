@@ -603,7 +603,7 @@
 0x1120027d , 0x0000025b ,   // 1snip.1120027d.firemyself
 0x1120027e , 0x0000025c ,   // 1snip.1120027e.breaktext
 0x1120027f , 0x0000025d ,   // 1snip.1120027f.scoops
-0x11200280 , 0x0000025e ,   // 1snip.11200280.ifscratch
+0x11200280 , 0x0000025e ,   // 1snip.11200280.IFsCRATCHoK
 0x11200281 , 0x0000025f ,   // 1snip.11200281.poopies
 0x11200282 , 0x00000260 ,   // 1snip.11200282.scoopsnew
 0x11200283 , 0x00000261 ,   // 1snip.11200283.scoopsdel

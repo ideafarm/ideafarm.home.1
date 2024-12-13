@@ -1,6 +1,4 @@
 
-#define ifcIDaDAM_ICISbOT                                              0x5100087d
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -11870,6 +11868,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_GLASS1                                               0x5100083a
 #define ifcIDaDAM_HIREwITHOUTdEBUGGING                                 0x5100083b
 #define ifcIDaDAM_EATiNCOMINGoRDERS                                    0x51000878
+#define ifcIDaDAM_ICISbOT                                              0x5100087d
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
@@ -23621,7 +23620,7 @@ examples
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120027f.scoops END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200280.ifscratch BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200280.IFsCRATCHoK BEGIN
 
 
 //
@@ -23639,22 +23638,22 @@ examples
 //20201012@1237: POOPRqUIET -> BLAMMO, BECAUSE THIS IS AWLAYS A CODING ERROR (NONCONFORMANT CODE)
 //CODE THAT USES *((tin1S&)tin0P).pEtScratch IS REQUIRED TO ALWAYS CHECK FOR IMPOTENCE AND CALL POOPR OR POOPRqUIET
 
-#define IFsCRATCHoK                                                                                       \
-                                                                                                        \
-        if( ((tin1S&)tin0P).pEtScratch )                                                                           \
-        {                                                                                               \
-            SCOOPS                                                                                      \
-            if( POOP )                                                                                  \
-            {                                                                                           \
+#define IFsCRATCHoK                                                                                                                                                                  \
+                                                                                                                                                                                   \
+        if( ((tin1S&)tin0P).pEtScratch )                                                                                                                                           \
+        {                                                                                                                                                                          \
+            SCOOPS                                                                                                                                                                 \
+            if( POOP )                                                                                                                                                             \
+            {                                                                                                                                                                      \
                 CONoUT5( "IFsCRATCHoK: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
-                CONoUTcALLnEST( "IFsCRATCHoK: scratch impotence on entry" ) ;                                \
+                CONoUTcALLnEST( "IFsCRATCHoK: scratch impotence on entry" ) ;                                                                                                        \
                 LOGrAW5( "IFsCRATCHoK: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
-                LOGcALLnEST( "IFsCRATCHoK: scratch impotence on entry" ) ;                                \
-                BLAMMOiD( POOP.idiFileGruntF() ) ;                                                      \
-            }                                                                                           \
-        }                                                                                               \
-                                                                                                        \
-        if( !((tin1S&)tin0P).pEtScratch ) __1                                                                      \
+                LOGcALLnEST( "IFsCRATCHoK: scratch impotence on entry" ) ;                                                                                                           \
+                BLAMMOiD( POOP.idiFileGruntF() ) ;                                                                                                                                 \
+            }                                                                                                                                                                      \
+        }                                                                                                                                                                          \
+                                                                                                                                                                                   \
+        if( !((tin1S&)tin0P).pEtScratch ) __1                                                                                                                                      \
         else
 
 
@@ -23665,7 +23664,7 @@ examples
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200280.ifscratch END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200280.IFsCRATCHoK END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200281.poopies BEGIN
 
 

@@ -45,7 +45,7 @@ voidT boxPourF_o4P4P4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const 
 
 voidT boxPourF_o4P4P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT boxPutGenerationF_o4P4P31P337_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT boxPutGenerationF_o4P4P31P3374P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT boxPutHtmlF_o64P4P4P4P4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

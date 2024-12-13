@@ -21,7 +21,7 @@
     "    . boxMailGetF_o4@4@3       . ?? ")+T(postName)+T("\r\n"
     "    . boxPourF_o4@4@4@33       . ?? ")+T(postName)+T("\r\n"
     "    . boxPourF_o4@4@33       . ?? ")+T(postName)+T("\r\n"
-    "    . boxPutGenerationF_o4@4@31@337       . ?? ")+T(postName)+T("\r\n"
+    "    . boxPutGenerationF_o4@4@31@3374@       . ?? ")+T(postName)+T("\r\n"
     "    . boxPutHtmlF_o64@4@4@4@4@3       . ?? ")+T(postName)+T("\r\n"
     "    . boxPutHtmlFromKnowledgeTreeBaseF_o64@4@4@4@4@33       . ?? ")+T(postName)+T("\r\n"
     "    . boxPutUniqueF_o4@4@1@337       . ?? ")+T(postName)+T("\r\n"

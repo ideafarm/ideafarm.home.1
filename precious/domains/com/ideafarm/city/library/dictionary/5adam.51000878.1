@@ -955,7 +955,7 @@ DONE( tmWorkF )
                                                         POOPR ;
                                                     {
                                                     if( POOP )
-                                                    ((tin1S&)tin0P).pEtScratch->boxGetF( tin0P , postim , costim , tFileResult , 1 ) ; ___( postim ) ;
+                                                    ((tin1S&)tin0P).pEtScratch->boxGetF( tin0P , postim , costim , tFileResult ) ; ___( postim ) ;
                                                     SCOOPS
                                                     _IO_
                                                 {
@@ -999,7 +999,7 @@ DONE( tmWorkF )
                                                     ZE( strokeS* , psttm ) ;
                                                 {
                                                 TN( tFileResultM , "" ) ;
-                                                TN( tFileResult , "" ) ; tFileResult =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/2.result.ttt") ;
+                                                TN( tFileResult , "" ) ; tFileResult =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/2.result.")+TF2(++idUniquifier,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".ttt") ;
 
                                                 }
                                                     tFileRawM = T(psttm) ;
@@ -1007,7 +1007,7 @@ DONE( tmWorkF )
                                                     ZE( strokeS* , psttm ) ;
                                                 {
                                                 TN( tFileRawM , "" ) ;
-                                                TN( tFileRaw  , "" ) ; tFileRaw = T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/1.raw.ttt") ;
+                                                TN( tFileRaw  , "" ) ; tFileRaw = T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/1.raw.")+TF2(++idUniquifier,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".ttt") ;
                                                 etThread.traceF( tin0P , T("debug / 7.f") ) ;
 
                                                 countT costRaw = postc - postRaw ;
@@ -1411,6 +1411,7 @@ DONE( tmWorkF )
         _IO_
     {
     while( !ether && !etThread )
+    ZE( countT  , idUniquifier ) ;
     ZE( sCountT , timeL2 ) ;
     ZE( countT  , timeL1 ) ;
     TN( tSlash , "/" ) ;
