@@ -9020,7 +9020,7 @@ pso not 0 is guaranteed for code between me and DONEdRIVENsERVER
                                                                                                                                                 \
             ZE( countT , idPortMeP ) ;                                                                                                          \
             nicNameC nnMeP ;                                                                                                                    \
-            IFsCRATCH                                                                                                                           \
+            IFsCRATCHoK                                                                                                                           \
             {                                                                                                                                   \
                 SCOOPS                                                                                                                          \
                 psoP->myNameF( tin0P , idPortMeP , nnMeP ) ;                                                                                    \
@@ -9138,7 +9138,7 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
                                                                                                                                                 \
     TASKdRIVENsERVER( taskFP )                                                                                                                  \
                                                                                                                                                 \
-    IFsCRATCH                                                                                                                                   \
+    IFsCRATCHoK                                                                                                                                   \
     {                                                                                                                                           \
         ZE( boolT , bFail ) ;                                                                                                                   \
         {                                                                                                                                       \
@@ -23634,22 +23634,22 @@ examples
 /*
 */
 /**/
-/*1*//*IFsCRATCH*//*1*/
+/*1*//*IFsCRATCHoK*//*1*/
 
 //20201012@1237: POOPRqUIET -> BLAMMO, BECAUSE THIS IS AWLAYS A CODING ERROR (NONCONFORMANT CODE)
 //CODE THAT USES *((tin1S&)tin0P).pEtScratch IS REQUIRED TO ALWAYS CHECK FOR IMPOTENCE AND CALL POOPR OR POOPRqUIET
 
-#define IFsCRATCH                                                                                       \
+#define IFsCRATCHoK                                                                                       \
                                                                                                         \
         if( ((tin1S&)tin0P).pEtScratch )                                                                           \
         {                                                                                               \
             SCOOPS                                                                                      \
             if( POOP )                                                                                  \
             {                                                                                           \
-                CONoUT5( "IFsCRATCH: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
-                CONoUTcALLnEST( "IFsCRATCH: scratch impotence on entry" ) ;                                \
-                LOGrAW5( "IFsCRATCH: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
-                LOGcALLnEST( "IFsCRATCH: scratch impotence on entry" ) ;                                \
+                CONoUT5( "IFsCRATCHoK: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
+                CONoUTcALLnEST( "IFsCRATCHoK: scratch impotence on entry" ) ;                                \
+                LOGrAW5( "IFsCRATCHoK: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
+                LOGcALLnEST( "IFsCRATCHoK: scratch impotence on entry" ) ;                                \
                 BLAMMOiD( POOP.idiFileGruntF() ) ;                                                      \
             }                                                                                           \
         }                                                                                               \
@@ -32630,7 +32630,7 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
         /*CONoUTrAW7( "WAITuNTILaLMOSTaLONE(" , cKidsOrphansAllowP , ")/" , ((tin1S&)tin0P).pag1->idAdam , "/bService:" , bService , "\r\n" ) ; */             \
         countT& cAllKidThreadsI    = thirdC::os_cAllKidThreadsI_IF( tin0P ) ;                                                                                \
         countT& cAllOrphanThreadsI = thirdC::os_cAllOrphanThreadsI_IF( tin0P ) ;                                                                             \
-        IFsCRATCH                                                                                                                                           \
+        IFsCRATCHoK                                                                                                                                           \
         {                                                                                                                                                   \
             SCOOPS                                                                                                                                          \
             sleepC s( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                           \
@@ -49920,7 +49920,7 @@ use this rather than _ to avoid the overhead of _
     {                                                                                                                               \
         FORsTRINGSiN1( _pstt1u )                                                                                                    \
         {                                                                                                                           \
-            IFsCRATCH                                                                                                               \
+            IFsCRATCHoK                                                                                                               \
             {                                                                                                                       \
                 scoopC* _pScoop = this != ((tin1S&)tin0P).pEtScratch ? 0 : new( 0 , tin0P , LF ) scoopC( tin0P , LF ) ; ___( _pScoop ) ;         \
                                                                                                                                     \
@@ -52065,7 +52065,7 @@ values at and above 00ff are used by spouseC to encode literal byte values
         boolT bFail = 1 ;                                                                                   \
         boolT bNeverQuit = !(cTimesP) ;                                                                     \
         countT cTimes = (cTimesP) ;                                                                         \
-        IFsCRATCH                                                                                           \
+        IFsCRATCHoK                                                                                           \
         {                                                                                                   \
             SCOOPS                                                                                          \
             while( !ether && !POOP && ( bNeverQuit || cTimes -- ) )                                         \
@@ -52120,7 +52120,7 @@ values at and above 00ff are used by spouseC to encode literal byte values
         boolT bFail = 1 ;                                                                                   \
         boolT bNeverQuit = !(cTimesP) ;                                                                     \
         countT cTimes = (cTimesP) ;                                                                         \
-        IFsCRATCH                                                                                           \
+        IFsCRATCHoK                                                                                           \
         {                                                                                                   \
             SCOOPS                                                                                          \
             while( !ether && !POOP && ( bNeverQuit || cTimes -- ) )                                         \

@@ -21,17 +21,16 @@ DONE( tmWorkF )
     }
         }
             }
-
-                }
-                    else            ether.traceF( tin0P , T("sandbox so not hiring SNAPwORDS") ) ;
-                    if( !bSandbox ) ether.ifcHireF( tin0P , T("PISS") , ifcIDaDAM_SNAPwORDS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
+                else            ether.traceF( tin0P , T("sandbox so not hiring SNAPwORDS") ) ;
+                if( !bSandbox ) ether.ifcHireF( tin0P , T("PISS") , ifcIDaDAM_SNAPwORDS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
 //bSandbox = 0 ;
-                    boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
-                    bWoth = 0 ;
-                    _IO_
-                {                           //20240809@1306: COULD NOT DESTROY soulAsciiIn on tmObeySoilF ; CONJ: BUNDLE CONTINUED TO HIRE OTHER ADAMS, WO OR MORE OF WHICH OPENED A BACKING booksC FILE WITH THE SAME NAME
-                if( bWoth )                 //A:ASSUME: ALL SOIL FILES PRESENT WHEN I STARTED HAVE BEEN COMPLETELY OBEYED, SO THAT ANY CHANGES TO SETTINGS HAVE BEEN COMPLETELY DONE
+                boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
+                bWoth = 0 ;
+                _IO_
+            {                           //20240809@1306: COULD NOT DESTROY soulAsciiIn on tmObeySoilF ; CONJ: BUNDLE CONTINUED TO HIRE OTHER ADAMS, WO OR MORE OF WHICH OPENED A BACKING booksC FILE WITH THE SAME NAME
+            if( bWoth )                 //A:ASSUME: ALL SOIL FILES PRESENT WHEN I STARTED HAVE BEEN COMPLETELY OBEYED, SO THAT ANY CHANGES TO SETTINGS HAVE BEEN COMPLETELY DONE
 
+            }
                 while( cFail ) ;
                 }
                     if( cFail ) { ++ s ; ether.osSleepF( tin0P , TOCK ) ; }
@@ -81,7 +80,7 @@ DONE( tmWorkF )
                                     }
                                         }
                                             etThread.traceF( tin0P , T("could not input ")+tFileBeingEaten+T(" ; will nap, then retry") ) ;
-                                            cFail ++ ;                                                                                  // INCREMENT cFail
+                                            cFail ++ ;
                                             POOPRqUIET
                                         {
                                         if( POOP )
@@ -95,8 +94,18 @@ DONE( tmWorkF )
                                 {
 
                                 }
-                                    if( POOP ) POOPR
-                                    ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tFileBeingEaten , psttc1 , 1 ) ;
+                                    }
+                                        }
+                                            continue ;
+                                            etThread.traceF( tin0P , T("!exception / could not move to ")+tFileBeingEaten+T(" from ")+T(psttc1) ) ;
+                                            cFail ++ ;
+                                            POOPRqUIET
+                                        {
+                                        if( POOP )
+                                        ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tFileBeingEaten , psttc1 , 1 ) ;
+                                        SCOOPS
+                                    {
+                                    IFsCRATCHoK
 
                                     etThread.delF( tin0P , psttShort ) ;
                                     etThread.delF( tin0P , psttPath ) ;
