@@ -948,20 +948,34 @@ DONE( tmWorkF )
                                                 if( postim && costim )
                                                 etThread.traceF( tin0P , T("debug / 7.b") ) ;
 
+                                                etThread.traceF( tin0P , T("retrieved result from file [file]:    ")+tFileResultM ) ;
+
+                                                if( ether ) break ;
+
                                                 }
                                                     }
-                                                        etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | could not get  ")+tFileResult ) ;
-                                                        flagsFail |= flFAIL_COULDnOTgEThMAC ;
-                                                        POOPR ;
+                                                        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+                                                        }
+                                                            }
+                                                                etThread.traceF( tin0P , TT(timeN1,timeN2)+T("!exception / could not get result [rc,file]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFileResult ) ;
+                                                                flagsFail |= flFAIL_COULDnOTgEThMAC ;
+                                                                POOPR ;
+                                                                countT rc = POOP ;
+                                                            {
+                                                            else
+                                                            if( !POOP ) break ;
+                                                            ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , postim , costim , tFileResultM , 1 ) ; ___( postim ) ;
+                                                            SCOOPS
+                                                            _IO_
+                                                        {
                                                     {
-                                                    if( POOP )
-                                                    ((tin1S&)tin0P).pEtScratch->boxGetF( tin0P , postim , costim , tFileResultM ) ; ___( postim ) ;
-                                                    SCOOPS
-                                                    _IO_
+                                                    while( !ether )
+                                                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                                                 {
                                                 IFsCRATCHoK
                                                 ZE( countT   , costim ) ;
                                                 ZE( osTextT* , postim ) ;
+                                                etThread.traceF( tin0P , T("retrieving result from file [file]:    ")+tFileResultM ) ;
                                                 etThread.traceF( tin0P , T("debug / 7.c [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                                 countT rc = thirdC::c_systemIF( tin0P , postCmd ) ;
