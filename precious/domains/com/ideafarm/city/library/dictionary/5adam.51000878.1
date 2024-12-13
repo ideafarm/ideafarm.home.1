@@ -955,16 +955,18 @@ DONE( tmWorkF )
                                                         POOPR ;
                                                     {
                                                     if( POOP )
-                                                    ((tin1S&)tin0P).pEtScratch->boxGetF( tin0P , postim , costim , tFileResult ) ; ___( postim ) ;
+                                                    ((tin1S&)tin0P).pEtScratch->boxGetF( tin0P , postim , costim , tFileResultM ) ; ___( postim ) ;
                                                     SCOOPS
                                                     _IO_
                                                 {
                                                 IFsCRATCHoK
                                                 ZE( countT   , costim ) ;
                                                 ZE( osTextT* , postim ) ;
-                                                etThread.traceF( tin0P , T("debug / 7.c") ) ;
+                                                etThread.traceF( tin0P , T("debug / 7.c [rc]:    ")+TF2(rc,flFORMAT_NOBIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                                 countT rc = thirdC::c_systemIF( tin0P , postCmd ) ;
+
+                                                etThread.traceF( tinP , T("[cmd]:    ")+T(postCmd) ) ;
 
                                                 thirdC::c_strcatIF( tin0P , postCmd , osfnResult ) ;
                                                 thirdC::c_strcatIF( tin0P , postCmd , " > " ) ;
@@ -983,7 +985,7 @@ DONE( tmWorkF )
                                                         POOPR ;
                                                     {
                                                     if( POOP )
-                                                    ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tFileRaw , postRaw , costRaw ) ;
+                                                    ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tFileRawM , postRaw , costRaw ) ;
                                                     SCOOPS
                                                     _IO_
                                                 {
