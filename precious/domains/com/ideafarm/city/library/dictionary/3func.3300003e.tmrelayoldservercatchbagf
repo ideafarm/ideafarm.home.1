@@ -89,7 +89,7 @@ DONE( tmRelayOldServerCatchBagF )
                         //P: SERVER NORMALLY REPLIES TO EACH COMMAND BY WRITING AN sOk
                         SCOOPS
                     {
-                    IFsCRATCH
+                    IFsCRATCHoK
                     //etThread.traceF( tin0P , T("writing sOk") ) ;
                     TELL( "writing ok" )
                     //CONoUTrAW3( "tmCatchBagF " , idCatch , ": 1 writing ok\r\n" ) ; //U::
@@ -420,7 +420,7 @@ DONE( tmRelayOldServerCatchBagF )
                 psoP->readF( tin0P , sBag ) ;
                 SCOOPS
             {
-            IFsCRATCH
+            IFsCRATCHoK
             //etThread.traceF( tin0P , T("reading a bag") ) ;
 
             //CONoUTrAW3( "tmCatchBagF " , idCatch , ": 0 waiting for a bag to arrive\r\n" ) ; //U::
@@ -431,7 +431,7 @@ DONE( tmRelayOldServerCatchBagF )
             soulC sBag( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
             ZE( boolT , bFail ) ;
         {
-        IFsCRATCH
+        IFsCRATCHoK
     {
     while( !etThread && !ether && !bQuitP && psoP )
     ZE( countT , cBagsCaught ) ;
@@ -451,7 +451,7 @@ DONE( tmRelayOldServerCatchBagF )
     }
         psoP->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;
     {
-    IFsCRATCH
+    IFsCRATCHoK
 
     countT&  cLooksForNewPingP =  *(countT*)pTaskP->c7 ;
     stackC&  stIdptPopClientP  =  *(stackC*)pTaskP->c6 ;

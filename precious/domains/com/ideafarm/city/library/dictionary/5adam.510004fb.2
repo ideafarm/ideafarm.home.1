@@ -450,7 +450,7 @@ DONE( tmHireF )
 
         SCOOPS
     {
-    IFsCRATCH
+    IFsCRATCHoK
     ZE( countT , cHired ) ;
 
     }
@@ -517,7 +517,7 @@ DONE( tmChatterF )
         ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChatterOn , 1 ) ;
         SCOOPS
     {
-    IFsCRATCH
+    IFsCRATCHoK
 
     }
         ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
@@ -532,7 +532,7 @@ DONE( tmChatterF )
                 ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFileChattering , 1 ) ;
                 SCOOPS
             {
-            IFsCRATCH
+            IFsCRATCHoK
             bChattering = 0 ;
         {
         else
@@ -581,7 +581,7 @@ DONE( tmChatterF )
 
             SCOOPS
         {
-        IFsCRATCH
+        IFsCRATCHoK
     {
     //PERSONALITY: I ALWAYS DELETE THE ON CHATTER FILE TO MINIMIZE POWER AND SSD UTILIZATION ; TO GET MINUTE REPORTS, THE OPERATOR MUST MOVE THE CHATTER FILE TO THE "ON" FOLDER EACH TIME I AM HIRED
 
@@ -2063,7 +2063,7 @@ DONE( tmReportF )
                                                                                     PUSE.newF( tin0P , LF , pbCopy2 , cbaDebug ) ; ___( pbCopy2 ) ;
                                                                                     SCOOPS
                                                                                 {
-                                                                                IFsCRATCH
+                                                                                IFsCRATCHoK
                                                                                 ZE( boolT , bFail ) ;
                                                                                 //etThread.traceF( tin0P , T("requesting pool drop [cbaDebug]:    ")+TF2(cbaDebug,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                                                 countT cbaDebug = sizeof( processGlobal1S ) ;
@@ -3094,7 +3094,7 @@ DONE( tmcMonitorServerF )
         psoP->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;
         SCOOPS
     {
-    IFsCRATCH
+    IFsCRATCHoK
 
     ((tin12S&)tin0P).c4Tell.c1 = cLeverIdMemoryP ;
 

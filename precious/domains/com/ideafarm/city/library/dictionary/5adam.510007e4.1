@@ -645,7 +645,7 @@ DONE( tmExecutiveHealYearF )
                                             RETRY( 8 , ( ppbwInner[ offi ] = 0 , pcbwInner[ offi ] = 0 , pfwsInner[ offi ].getF( tin0P , ppbwInner[ offi ] , pcbwInner[ offi ] ) ) ) ;
                                             SCOOPS
                                         {
-                                        IFsCRATCH
+                                        IFsCRATCHoK
                                     {
                                     for( countT offi = 0 ; offi < cInnerImagesToInspect ; offi ++ )
 
@@ -660,7 +660,7 @@ DONE( tmExecutiveHealYearF )
                                         RETRY( 8 , ( pbwOuter = 0 , cbwOuter = 0 , fwsOuter.getF( tin0P , pbwOuter , cbwOuter ) ) )
                                         SCOOPS
                                     {
-                                    IFsCRATCH
+                                    IFsCRATCHoK
                                     ZE( countT , cbwOuter ) ;
                                     ZE( byteT* , pbwOuter ) ;
 
@@ -1093,7 +1093,7 @@ DONE( tmCopyFileF )
                     RETRY( 8 , ( psttRejected = 0 , ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirUniqueF( tin0P , psttRejected , psttToP , psttLongInRejects ) ) ) ; ___( psttRejected ) ;
                     SCOOPS
                 {
-                IFsCRATCH
+                IFsCRATCHoK
                 ZE( strokeS* , psttRejected ) ;
 
                 etThread.strReplaceF( tin0P , psttLongInRejects , psttToP , tPatArchives , tPatRejects ) ; ___( psttLongInRejects ) ;
@@ -1130,7 +1130,7 @@ DONE( tmCopyFileF )
 
         SCOOPS
     {
-    IFsCRATCH
+    IFsCRATCHoK
 
     TN( tPatRejects  , "/ipdos.archives.rejects/" ) ;
     TN( tPatArchives , "/ipdos.archives/" ) ;
@@ -1160,7 +1160,7 @@ DONE( tmMoveFileToUniqueF )
         RETRY( 8 , ( psttUnique = 0 , ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirUniqueF( tin0P , psttUnique , psttFromP , psttToP ) ) ) ; ___( psttUnique ) ;
         SCOOPS
     {
-    IFsCRATCH
+    IFsCRATCHoK
     ZE( strokeS* , psttUnique ) ;
 
     boolT&   bAbortP   =  *(boolT*)pTaskP->c3 ;
@@ -1241,7 +1241,7 @@ DONE( tmCollectFileMetaF )
                                 RETRYsCR( 8 , diskFileQueryF( tin0P , pInfoFile , fi ) ) ; ___( pInfoFile ) ;
                                 SCOOPS
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
                             fileC fi( tin0P , (strokeS*)tLong , ifcOPENaCCESS_R ) ;
                             ZE( infoFileS* , pInfoFile ) ;
 
@@ -1443,7 +1443,7 @@ DONE( tmCollectFileMetaF )
                         RETRYsCR( 8 , diskFindFileOrDirF( tin0P , pInfoFile , hFindFile , tPathToYearP ) )
                         SCOOPS
                     {
-                    IFsCRATCH
+                    IFsCRATCHoK
                     ZE( infoFileS* , pInfoFile ) ;
 
                     }
@@ -1496,7 +1496,7 @@ DONE( tmCollectFileMetaF )
                 RETRYsCR( 8 , diskInfoF( tin0P , pInfoDisk , psttDisk ) ) ; ___( pInfoDisk ) ;
                 SCOOPS
             {
-            IFsCRATCH
+            IFsCRATCHoK
             ZE( infoDiskS* , pInfoDisk ) ;
 
             etThread.strSubstringF( tin0P , psttDisk , idf , idl , tPathToYearP ) ; ___( psttDisk ) ;

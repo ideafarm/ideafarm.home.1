@@ -133,7 +133,7 @@ DONE( tmAcceptF )
             sockListen.etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;
             SCOOPS
         {
-        IFsCRATCH
+        IFsCRATCHoK
         ZE( countT , idPortBound ) ;
         TN( tb4 , "    " ) ;
 
@@ -248,7 +248,7 @@ DONE( tmWorkerF )
 
             SCOOPS
         {
-        IFsCRATCH
+        IFsCRATCHoK
     {
     while( !bQuitP && !bBye )
     ZE( boolT , bBye ) ;
@@ -483,7 +483,7 @@ DONE( tmRefreshListF )
                                 //etThread.traceF( tin0P , T("writing ifcIDcMDnODE_PING") ) ;
                                 SCOOPS
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
 
                             soulo << finger ;   // idCmd
                             finger = ifcIDcMDnODE_PING ;
@@ -509,7 +509,7 @@ DONE( tmRefreshListF )
                             sockScan.etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;
                             SCOOPS
                         {
-                        IFsCRATCH
+                        IFsCRATCHoK
                         ZE( boolT , bFail ) ;
 
                         socketC sockScan( tin0P , etThread , TAG( TAGiDnULL ) ) ;

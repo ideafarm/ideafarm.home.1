@@ -248,7 +248,7 @@ DONE( tmWatchF )
                 TN( tb4 , "    " ) ;
                 _IO_
             {
-            IFsCRATCH
+            IFsCRATCHoK
             TELL( "releasing threads blocked catching socket datagrams" ) ;
                 
             stAcceptors.ungrabF( tin0P ) ;
@@ -263,7 +263,7 @@ DONE( tmWatchF )
                             socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                             SCOOPS
                         {
-                        IFsCRATCH
+                        IFsCRATCHoK
                         THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) //LEGACYwORKAROUND
                     {
                     if( pso ) 
@@ -472,7 +472,7 @@ DONE( tmWatchF )
             SCOOPS
             _IO_
         {
-        IFsCRATCH
+        IFsCRATCHoK
         ZE( boolT , bFireSelf ) ;
 
         }

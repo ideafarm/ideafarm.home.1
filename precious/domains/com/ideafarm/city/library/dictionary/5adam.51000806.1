@@ -181,7 +181,7 @@ DONE( tmWorkF )
                                                 SCOOPS
                                                 _IO_
                                             {
-                                            IFsCRATCH
+                                            IFsCRATCHoK
                                             inc02AM( cExecutiveHealYear ) ;
 
                                             etThread.strMakeF( tin0P , LF , psttYear , psttzYear ) ; ___( psttYear ) ;
@@ -305,7 +305,7 @@ DONE( tmWorkF )
                                             SCOOPS
                                             _IO_
                                         {
-                                        IFsCRATCH
+                                        IFsCRATCHoK
                                         patternC pat( tin0P , etThread , tYearPattern , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                                         ZE( strokeS* , pstt1PathToYear ) ;
 
@@ -882,7 +882,7 @@ DONE( tmObeyPauseSemaphoreFileF )
             ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFilePause , 1 ) ;
             SCOOPS
         {
-        IFsCRATCH
+        IFsCRATCHoK
         etThread.traceF( tin0P , T("deleting the pause semaphore file and decremented cPauseP [was]:    ")+TF2(was,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         countT was = decv02AM( cPauseP ) ;
     {
@@ -899,7 +899,7 @@ DONE( tmObeyPauseSemaphoreFileF )
                 ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFilePaused , 1 ) ;
                 SCOOPS
             {
-            IFsCRATCH
+            IFsCRATCHoK
         {
         else if( !bFileExists && bFileExistsLag )
         }
@@ -940,7 +940,7 @@ DONE( tmObeyPauseSemaphoreFileF )
 
         SCOOPS
     {
-    IFsCRATCH
+    IFsCRATCHoK
 
     etThread.diskMakeDirIfNeededF( tin0P , tFilePause ) ;
     TN( tFilePaused , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/control/paused" ) ;
@@ -996,7 +996,7 @@ DONE( tmExecutiveHealYearF )
                                 ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tLong , 1 ) ;
                                 SCOOPS
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
                             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                             grabLathFileHealedFilesP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                             //etThread.traceF( tin0P , T("deleting [file]:    ")+tLong ) ;
@@ -1299,7 +1299,7 @@ DONE( tmExecutiveHealYearF )
                                     ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tLongSortedBySize , 1 ) ;
                                     SCOOPS
                                 {
-                                IFsCRATCH
+                                IFsCRATCHoK
                                 THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
                                 ccArraySortedBySize = 0 ;
@@ -1558,7 +1558,7 @@ DONE( tmExecutiveHealYearF )
 
                                             SCOOPS
                                         {
-                                        IFsCRATCH
+                                        IFsCRATCHoK
 
                                         //}
                                         //    continue ;
@@ -1634,7 +1634,7 @@ DONE( tmExecutiveHealYearF )
                             ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tLongSortedBySize , 1 ) ;
                             SCOOPS
                         {
-                        IFsCRATCH
+                        IFsCRATCHoK
                         THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
                         _IO_
@@ -1666,7 +1666,7 @@ DONE( tmExecutiveHealYearF )
                                 ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tLongBoxSee , 1 ) ;
                                 SCOOPS
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
                             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
                             bMatch = 1 ;
@@ -1734,7 +1734,7 @@ DONE( tmExecutiveHealYearF )
                                 ((tin1S&)tin0P).pEtScratch->diskInfoF( tin0P , pInfoDisk , psttDisk , 1 ) ; ___( pInfoDisk ) ;
                                 SCOOPS
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
                             ZE( infoDiskS* , pInfoDisk ) ;
 
                             etThread.strSubstringF( tin0P , psttDisk , idf , idl , ppsttPathToYear[ offh ] ) ; ___( psttDisk ) ;
@@ -1819,7 +1819,7 @@ DONE( tmExecutiveHealYearF )
                         ZE( osTextT* , posti ) ;
                         SCOOPS
                     {
-                    IFsCRATCH
+                    IFsCRATCHoK
                     TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/status.")+tArchive+tDot+tYear+T(".lath.idName.completed.ttt") ;
                 {
                 if( !bAbortP )
@@ -1938,7 +1938,7 @@ DONE( tmExecutiveHealYearF )
             SCOOPS
             _IO_
         {
-        IFsCRATCH
+        IFsCRATCHoK
         boolT bDoThisYear = 1 ;
 
         etThread.delF( tin0P , psttYearP ) ;
@@ -2236,7 +2236,7 @@ DONE( tmWorkerFileInfoF )
                 SCOOPS
                 _IO_
             {
-            IFsCRATCH
+            IFsCRATCHoK
             boolT bOk = 1 ;
             _IO_
         {
@@ -2437,7 +2437,7 @@ voidT chunkDayIfF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , countT& cNew
                     ((tin1S&)tin0P).pEtScratch->diskUnzipF( tin0P , tShortDayChunk , flUNZIP_null , tShortFset+T(".fooey") , 0 , 0 , T("-embedded=no") , 0 , 0 ) ;
                     SCOOPS
                 {
-                IFsCRATCH
+                IFsCRATCHoK
                 // TRY TO EXTRACT A CHUNKED VERSION OF THIS FILE
 
                 hoverC hover( tin0P , etherP , tPathYear ) ;
@@ -2643,7 +2643,7 @@ TASK( tmDayZipperF )
                 ((tin1S&)tin0P).pEtScratch->diskFindFileOrDirF( tin0P , pstt1PathToYear , tPathToArchive , &pat ) ; ___( pstt1PathToYear ) ;
                 SCOOPS
             {
-            IFsCRATCH
+            IFsCRATCHoK
             patternC pat( tin0P , etherP , T(psttYearP)+T("/") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
             ZE( strokeS* , pstt1PathToYear ) ;
 
@@ -2809,7 +2809,7 @@ countT listPathsToYearF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , stroke
                 SCOOPS
                 _IO_
             {
-            IFsCRATCH
+            IFsCRATCHoK
             ZE( strokeS* , pstt1Archives1 ) ;
             _IO_
         {
@@ -2870,7 +2870,7 @@ countT listPathsToYearF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , stroke
                                 SCOOPS
                                 _IO_
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
                             ZE( strokeS* , pstt1Archives2 ) ;
 
                             //etherP.traceF( tin0P , T("[archives found on pseudoVolume]:    ")+T(psttc1) ) ;
@@ -2894,7 +2894,7 @@ countT listPathsToYearF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , stroke
                         ((tin1S&)tin0P).pEtScratch->diskFindFileOrDirF( tin0P , pstt1Archives , psttc1 , &pat ) ; ___( pstt1Archives ) ;
                         SCOOPS
                     {
-                    IFsCRATCH
+                    IFsCRATCHoK
                     patternC pat( tin0P , etherP , T("ideafarm.archives/") , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
                     ZE( strokeS* , pstt1Archives ) ;
 
@@ -2924,7 +2924,7 @@ countT listPathsToYearF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , stroke
                 SCOOPS
                 _IO_
             {
-            IFsCRATCH
+            IFsCRATCHoK
             ZE( strokeS* , pstt1PseudoVolumes ) ;
             _IO_
         {
@@ -3006,7 +3006,7 @@ countT loadArchivePathsF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , switc
                 SCOOPS
                 _IO_
             {                   // PS:PERSONALITY: RESET ALL ATTRIBUTE FLAGS THAT THE BASE O.S. ALLOWS APPLICATION CODE TO MODIFY
-            IFsCRATCH           // RESET ALL VOLATILE FILE ATTRIBUTE FLAGS TO PREVENT DIFFERENCES IN THESE FLAGS ACROSS DEVICES FROM RESULTING IN DIFFERENCES IN THE CHUNK FILE ACROSS DEVICES
+            IFsCRATCHoK           // RESET ALL VOLATILE FILE ATTRIBUTE FLAGS TO PREVENT DIFFERENCES IN THESE FLAGS ACROSS DEVICES FROM RESULTING IN DIFFERENCES IN THE CHUNK FILE ACROSS DEVICES
             //CS:CODEsYNC: 51000806 51000806
 
             }
@@ -3037,7 +3037,7 @@ countT loadArchivePathsF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , switc
                 SCOOPS
                 _IO_
             {
-            IFsCRATCH           // EVEN IF bAbortP, I TRY TO SET THE TIMESTAMPS OF THE DAY CHUNK ZIP FILE TO PREVENT A MISTIMED ARCHIVE FILE FROM EXISTING
+            IFsCRATCHoK           // EVEN IF bAbortP, I TRY TO SET THE TIMESTAMPS OF THE DAY CHUNK ZIP FILE TO PREVENT A MISTIMED ARCHIVE FILE FROM EXISTING
             TN( tLongChunk , "" ) ; tLongChunk = tPathYear+tShortDayZipP ;
 
             }
@@ -3072,7 +3072,7 @@ countT loadArchivePathsF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , switc
                     SCOOPS
                     _IO_
                 {
-                IFsCRATCH
+                IFsCRATCHoK
             {
             else
             }
@@ -3160,7 +3160,7 @@ countT loadArchivePathsF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , switc
                                 SCOOPS
                                 _IO_
                             {                   // PS:PERSONALITY: RESET ALL ATTRIBUTE FLAGS THAT THE BASE O.S. ALLOWS APPLICATION CODE TO MODIFY
-                            IFsCRATCH           // RESET ALL VOLATILE FILE ATTRIBUTE FLAGS TO PREVENT DIFFERENCES IN THESE FLAGS ACROSS DEVICES FROM RESULTING IN DIFFERENCES IN THE CHUNK FILE ACROSS DEVICES
+                            IFsCRATCHoK           // RESET ALL VOLATILE FILE ATTRIBUTE FLAGS TO PREVENT DIFFERENCES IN THESE FLAGS ACROSS DEVICES FROM RESULTING IN DIFFERENCES IN THE CHUNK FILE ACROSS DEVICES
                             //CS:CODEsYNC: 51000806 51000806
 
                             }
@@ -3191,7 +3191,7 @@ countT loadArchivePathsF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , switc
                                 SCOOPS
                                 _IO_
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
                             TN( tLongAt , pInfoFile->psttIfoName ) ;
                             //etherP.traceF( tin0P , T("zipDayF pass 2 [tShort]:    ")+tShort ) ;
                         {
@@ -3232,7 +3232,7 @@ countT loadArchivePathsF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , switc
                                         SCOOPS
                                         _IO_
                                     {
-                                    IFsCRATCH
+                                    IFsCRATCHoK
                                 {
                                 timeS timeWritten = timeS() ;
                             {
@@ -3278,7 +3278,7 @@ countT loadArchivePathsF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , switc
                         SCOOPS
                         _IO_
                     {
-                    IFsCRATCH
+                    IFsCRATCHoK
 
                     //etherP.traceF( tin0P , T("like:    ")+tLike ) ;
                     osFileNameC osfnLike( tin0P , etherP , tLike ) ;
@@ -3484,7 +3484,7 @@ countT _export subtractHealFileJobF( tin0S& tin0P , countT& pEther , countT& c1P
                                                                         SCOOPS
                                                                         _IO_
                                                                     {
-                                                                    IFsCRATCH
+                                                                    IFsCRATCHoK
                                                                     _IO_
                                                                 {
                                                                 while( !etPrime )
@@ -3528,7 +3528,7 @@ countT _export subtractHealFileJobF( tin0S& tin0P , countT& pEther , countT& c1P
                                                                     _IO_
                                                                     SCOOPS
                                                                 {
-                                                                IFsCRATCH
+                                                                IFsCRATCHoK
                                                                 _IO_
                                                             {
                                                             if( !( F(flagsModeP) & flHEALmODE_NOmOVEoRrEPLACE ) )
@@ -3577,7 +3577,7 @@ countT _export subtractHealFileJobF( tin0S& tin0P , countT& pEther , countT& c1P
                                                                             ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , psttLongInRejects , psttTo , 1 ) ;
                                                                             SCOOPS
                                                                         {
-                                                                        IFsCRATCH
+                                                                        IFsCRATCHoK
                                                                         _IO_
                                                                     {
                                                                     while( !etPrime )
@@ -3612,7 +3612,7 @@ countT _export subtractHealFileJobF( tin0S& tin0P , countT& pEther , countT& c1P
                                                             _IO_
                                                             SCOOPS
                                                         {
-                                                        IFsCRATCH
+                                                        IFsCRATCHoK
                                                         ZE( boolT , bExists ) ;
 
                                                         // *********************************************************************************************************************************************************************************************************
@@ -3791,7 +3791,7 @@ countT _export subtractHealFileJobF( tin0S& tin0P , countT& pEther , countT& c1P
                                                                     SCOOPS
                                                                     _IO_
                                                                 {
-                                                                IFsCRATCH
+                                                                IFsCRATCHoK
                                                                 _IO_
                                                             {
                                                             while( !etPrime )
@@ -4394,7 +4394,7 @@ countT _export subtractHealFileJobF( tin0S& tin0P , countT& pEther , countT& c1P
                                                     _IO_
                                                     SCOOPS
                                                 {
-                                                IFsCRATCH
+                                                IFsCRATCHoK
                                             {
                                             if( !( F(flagsModeP) & flHEALmODE_NOiMAGEcOMPARE ) )
 
@@ -4460,7 +4460,7 @@ countT _export subtractHealFileJobF( tin0S& tin0P , countT& pEther , countT& c1P
                                                 _IO_
                                                 SCOOPS
                                             {
-                                            IFsCRATCH
+                                            IFsCRATCHoK
                                         {
                                         if( !( F(flagsModeP) & flHEALmODE_NOiMAGEcOMPARE ) )
                                         ZE( countT , cbwOuter ) ;
@@ -4551,7 +4551,7 @@ countT _export subtractHealFileJobF( tin0S& tin0P , countT& pEther , countT& c1P
                                     // *********************************************************************************************************************************************************************************************************
                                     _IO_
                                 {
-                                IFsCRATCH
+                                IFsCRATCHoK
                                 //if( bChatterP ) pP.ether.traceF( tin0P , T("healing / a2") ) ;
 
                                 }
@@ -4579,7 +4579,7 @@ countT _export subtractHealFileJobF( tin0S& tin0P , countT& pEther , countT& c1P
                                                 _IO_
                                                 SCOOPS
                                             {
-                                            IFsCRATCH
+                                            IFsCRATCHoK
 
                                             // //pP.ether.traceF( tin0P , pP.tIndent3+T("[cInnerImagesToInspect,idInner,tLongInner]:    ")+TF2(cInnerImagesToInspect,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offi+1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttLongInner) ) ;
                                             stLongInner >> psttLongInner ;
@@ -5127,7 +5127,7 @@ voidT healShortNameF( tin0S& tin0P , etherC& etPrimeP , paramHealFileS& pP , tex
     
         SCOOPS
     {
-    IFsCRATCH
+    IFsCRATCHoK
     ZE( sCountT , sgn ) ;
     //etherP.traceF( tin0P , tIndent3P+tLongInnerP ) ;
     //etherP.traceF( tin0P , tIndent3P+tLongOuterP ) ;

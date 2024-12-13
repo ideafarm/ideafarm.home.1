@@ -182,7 +182,7 @@
                                 psoP->writeF( tin0P , POSTS( postsReply ) , COSTS( postsReply ) ) ;
                                 SCOOPS
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
                             TELL( "writing reply 2" ) ;
 
                             //traceF( tin0P , T(POSTS(postsReply)) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
@@ -717,7 +717,7 @@
                                                     psoP->myNameF( tin0P , idPortMe , nnMe ) ;
                                                     SCOOPS
                                                 {
-                                                IFsCRATCH
+                                                IFsCRATCHoK
                                                 nicNameC nnMe ;
                                                 ZE( countT , idPortMe ) ;
                                                 TELL( "ifcIDfORMhTTPrEPLY_BIGhEAD/getting nnMe" ) ;
@@ -855,7 +855,7 @@
                                                     psoP->myNameF( tin0P , idPortMe , nnMe ) ;
                                                     SCOOPS
                                                 {
-                                                IFsCRATCH
+                                                IFsCRATCHoK
                                                 nicNameC nnMe ;
                                                 ZE( countT , idPortMe ) ;
                                                 TELL( "ifcIDfORMhTTPrEPLY_FULLcUSTOM/getting nnMe" ) ;
@@ -920,7 +920,7 @@
                                                     psoP->myNameF( tin0P , idPortMe , nnMe ) ;
                                                     SCOOPS
                                                 {
-                                                IFsCRATCH
+                                                IFsCRATCHoK
                                                 nicNameC nnMe ;
                                                 ZE( countT , idPortMe ) ;
 
@@ -1179,7 +1179,7 @@
                                         psoP->writeF( tin0P , pbw , cbw ) ;
                                         SCOOPS
                                     {
-                                    IFsCRATCH
+                                    IFsCRATCHoK
 
                                     //traceF( tin0P , TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    writing file window [cbw]:    ")+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                                 {
@@ -1206,7 +1206,7 @@
                                 psoP->writeF( tin0P , (osTextT*)tReply , tReply.csF( tin0P ) ) ;
                                 SCOOPS
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
 
                             TN( tReply , "" ) ; tReply = T("HTTP/1.1 200 OK\r\nServer: IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System (tm)\r\nContent-Type: ")+tContentType+T("\r\nContent-Length: ")+TF4(cbBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
 
@@ -1245,7 +1245,7 @@
                                 psoP->writeF( tin0P , (osTextT*)tReply , tReply.csF( tin0P ) ) ;
                                 SCOOPS
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
 
                             TN( tReply , "" ) ; tReply = T("HTTP/1.1 404 Not Found\r\nServer: IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System (tm)\r\nContent-Type: text")+T("\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ;
 
@@ -1274,7 +1274,7 @@
                                 _IO_
                                 SCOOPS
                             {
-                            IFsCRATCH
+                            IFsCRATCHoK
                             //traceF( tin0P , TF3(meP.idPortF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,9)+T(jobP.nnPeer)+T("    attempting to open file:    ")+*pptFileIn[offf] , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                         {
                         for( countT offf = 0 ; offf < sizeof pptFileIn / sizeof pptFileIn[ 0 ] ; offf ++ )
@@ -1315,7 +1315,7 @@
                             psoP->writeF( tin0P , (osTextT*)tReply , tReply.csF( tin0P ) ) ;
                             SCOOPS
                         {
-                        IFsCRATCH
+                        IFsCRATCHoK
 
                         TN( tReply , "" ) ; tReply = T("HTTP/1.1 200 OK\r\nServer: IPDOS (tm) IdeaFarm (tm) Piggyback Distributed Operating System (tm)\r\nContent-Type: text/plain\r\nContent-Length: ")+TF4(cbIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
 
@@ -1330,7 +1330,7 @@
                             traceF( tin0P , T("calling boxGetShadowF for challenge [tFileIn]:    ")+tFileIn ) ;
                             SCOOPS
                         {
-                        IFsCRATCH
+                        IFsCRATCHoK
                         ZE( countT , cbIn ) ;
                         ZE( byteT* , pbIn ) ;
                         if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / z") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
@@ -1385,7 +1385,7 @@
                             psoP->writeF( tin0P , (osTextT*)tReply , tReply.csF( tin0P ) ) ;
                             SCOOPS
                         {
-                        IFsCRATCH
+                        IFsCRATCHoK
                         if( bDeadman1 ) traceF( tin0P , T("U:: etherDoHttpJobF / C") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                       //traceF( tin0P , T("U:: etherDoHttpJobF / C") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
 
@@ -1426,7 +1426,7 @@
                         psoP->writeF( tin0P , pbzBlob , cbzBlob ) ;
                         SCOOPS
                     {
-                    IFsCRATCH
+                    IFsCRATCHoK
                     TELL( "writing reply 1" ) ;
 
                     pzCache->ungrabF( tin0P ) ;
@@ -1560,7 +1560,7 @@
                     //        ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tListBlock , tSay , tSay.csF( tin0P ) ) ;
                     //        SCOOPS
                     //    {
-                    //    IFsCRATCH
+                    //    IFsCRATCHoK
                     //
                     //    TN( tSay , "blocked because readRequestF failed, which is attacker behavior" ) ;
                     //{
