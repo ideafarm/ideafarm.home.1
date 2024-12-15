@@ -44,9 +44,11 @@
                                     thirdC::c_strncpyIF( tin0P , processGlobal2I._thirdC_pSharedMemInfo[ offr ].postName , ostoOsName , sizeof processGlobal2I._thirdC_pSharedMemInfo[ offr ].postName ) ;
                                 {
                                 if( !*processGlobal2I._thirdC_pSharedMemInfo[ offr ].postName )
+                                _IO_
                             {
                             for( offr = 0 ; offr < CsHAREDmEMiNFO ; offr ++ )
                             ZE( countT , offr ) ;
+                            _IO_
                         {
                         //DUPLICATED CODE: 1020068 1020061 1020132
 
@@ -63,12 +65,14 @@
                         //CAN WRITE TO LOG SINCE NO EXCEPTION HANDLER WILL BE REGISTERED
 
                         //if( ((tin1S&)tin0P).pc Utility[ 0 ] )
+                        _IO_
                     {
                     else
                     }
                         osh = 0 ;
                         BOSpOOP
                         BOS( WHATgbo , BOSoK , CloseHandle( osh ) )
+                        _IO_
                     {
                     if( POOP )
     
@@ -86,6 +90,7 @@
 
                     voidT* pv = (voidT*)((tin1S&)tin0P).brcRaw ;
                     countT save = ((tin1S&)tin0P).brcRaw ;
+                    _IO_
                 {
                 else
                 }
@@ -96,6 +101,7 @@
                     osh = 0 ;
                     BOSpOOP
                     BOS( WHATgbo , BOSoK , CloseHandle( osh ) )
+                    _IO_
                 {
                 if( POOP )
                 BOSpOOP
@@ -134,6 +140,7 @@
                 //{
                 //if( c_strstrIF( tin0P , ostoOsName , "napSlab" ) )
                 //COMMENTED OUT BECAUSE WILL CLUTTER LOG FILE BECAUSE AN EXCEPTION HANDLER IS NOT YET REGISTERED
+                _IO_
             {
             if( !POOP )
 
@@ -142,6 +149,7 @@
                 osh = 0 ;
                 BOSpOOP
                 BOS( WHATgbo , BOSoK , CloseHandle( osh ) )
+                _IO_
             {
             if( bExisted )
 
@@ -159,6 +167,7 @@
             flagsT osFlagsOpen = F(flagsP) & flOPENsHAREDmEMORY_READoNLY
 
             SECURITYaTTRIBUTE_saUNRESTRICTED( 0 ) ;
+            _IO_
         {
         if( !POOP )
 
@@ -168,6 +177,7 @@
             thirdC::dosQueryFileInfoIF( tin0P , pInfo , *phFileP ) ;
             infoFileS* pInfo = &info ;
             infoFileS info( tin0P ) ;
+            _IO_
         {                      //ADDED BECAUSE bookC CONTAINED AN UNDETECTED BUG INVOLVING AN EXISTING FILE MAPPED TO A SMALL NAPKIN, WITH APPLICATION CODE RELYING UPON THE LENGTH AS DECLARED WITHIN A HEADER WITHIN THE FILE, CAUSING AN A.V. EXCEPTION DUE TO THE ERRONEOUSLY SMALL NAPKIN
         if( phFileP && !POOP ) //20140410@0950: ADDED THIS VALIDATION OF FILE SIZE ; WILL NEED TO MAKE THIS VALIDATION OPTIONAL IF EVER WANT TO MEMORY MAP ONLY A PORTION OF A FILE
 
@@ -184,6 +194,7 @@
                 if( !c_strcmpIF( tin0P , processGlobal2I._thirdC_pSharedMemInfo[ offr ].postName , ostoOsName ) )
             {
             for( countT offr = 0 ; offr < CsHAREDmEMiNFO ; offr ++ )
+            _IO_
         {
 
         if( !( F(flagsP) & flOPENsHAREDmEMORY_DOnOTsERIALIZE ) && F(processGlobal2I.flCt) & flCTdTg_tinMainInPool && !( F(processGlobal2I.flDt) & flCTdTg_tinMainInPool ) ) processGlobal4I.grabMemorySpace.grabF( tin0P , TAG( TAGiDnULL ) ) ;
