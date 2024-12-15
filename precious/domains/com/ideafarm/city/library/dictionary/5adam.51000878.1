@@ -923,6 +923,19 @@ DONE( tmWorkF )
                                                 etThread.traceF( tin0P , T("debug / 7.9") ) ;
                                                 }
                                                     }
+                                                        etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | could not zap result: ")+tFileResult ) ;
+                                                        flagsFail |= flFAIL_COULDnOTzAPrAW ;
+                                                        POOPR ;
+                                                    {
+                                                    if( POOP )
+                                                    ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFileResult , 1 ) ;
+                                                    SCOOPS
+                                                    _IO_
+                                                {
+                                                IFsCRATCHoK
+
+                                                }
+                                                    }
                                                         etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | could not zap raw: ")+tFileRaw ) ;
                                                         flagsFail |= flFAIL_COULDnOTzAPrAW ;
                                                         POOPR ;
@@ -1010,21 +1023,26 @@ DONE( tmWorkF )
                                                 osFileNameC osfnRaw(    tin0P , etThread , tFileRawM    ) ;
 
                                                 }
+                                                    etThread.delF( tinP , psttm ) ;
                                                     tFileResultM = T(psttm) ;
                                                     etThread.diskMapFileNameF( tin0P , psttm , tFileResult ) ; ___( psttm ) ;
                                                     ZE( strokeS* , psttm ) ;
-                                                {
-                                                TN( tFileResultM , "" ) ;
-                                                TN( tFileResult , "" ) ; tFileResult =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/2.result.")+TF2(++idUniquifier,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".ttt") ;
 
-                                                }
+                                                    etThread.delF( tinP , psttm ) ;
                                                     tFileRawM = T(psttm) ;
-                                                    etThread.diskMapFileNameF( tin0P , psttm , tFileRaw ) ; ___( psttm ) ;
+                                                    etThread.diskMapFileNameF( tin0P , psttm , tFileRaw    ) ; ___( psttm ) ;
                                                     ZE( strokeS* , psttm ) ;
                                                 {
+                                                TN( tFileResultM , "" ) ;
                                                 TN( tFileRawM , "" ) ;
-                                                TN( tFileRaw  , "" ) ; tFileRaw = T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/1.raw.")+TF2(++idUniquifier,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(".ttt") ;
+
+                                                etThread.delF( tin0P , psttu ) ;
+                                                TN( tFileResult , "" ) ; tFileResult =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/")+T(psttu)+T(".2.result")+T(".ttt") ;
+                                                TN( tFileRaw    , "" ) ; tFileRaw    =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/")+T(psttu)+T(".1.raw"   )+T(".ttt") ;
                                                 etThread.traceF( tin0P , T("debug / 7.f") ) ;
+
+                                                etThread.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
+                                                ZE( strokeS* , psttu ) ;
 
                                                 countT costRaw = postc - postRaw ;
 
