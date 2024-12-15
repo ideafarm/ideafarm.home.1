@@ -18497,6 +18497,7 @@ instructions for editing a class aC to use upDnC
 
     public :
 
+    voidT testF( tin0S& tin0P , const countT idLineP , const countT idiFileP ) ;
     boolT isRegisteredF( tin0S& tin0P ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.baseGrabC.isRegisteredF!||
     static countT idGrabLayerMaxIF( tin0S& tin0P ) ;
