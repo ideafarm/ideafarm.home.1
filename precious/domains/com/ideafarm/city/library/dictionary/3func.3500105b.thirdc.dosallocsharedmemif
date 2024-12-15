@@ -199,17 +199,20 @@
 
         if( !( F(flagsP) & flOPENsHAREDmEMORY_DOnOTsERIALIZE ) && F(processGlobal2I.flCt) & flCTdTg_tinMainInPool && !( F(processGlobal2I.flDt) & flCTdTg_tinMainInPool ) ) processGlobal4I.grabMemorySpace.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-        c_zReplaceIF( tin0P , (osTextT*)(const osTextT*)ostoOsName , '/' , '.' ) ;
-        OStEXTA(  ostoOsName  , postP ) ;
-        OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace , '0' ) ; }
-        if( F(flagsP) & flOPENsHAREDmEMORY_ALLmEMORYsPACES )  { OStEXTAK( ostoOsName  , "_" ) ; }
-        OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && ((tin1S&)tin0P).pag1->_thirdC_.idHomeOverride ? ((tin1S&)tin0P).pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
-        if( F(flagsP) & flOPENsHAREDmEMORY_ALLhOMES         ) { OStEXTAK( ostoOsName  , "_" ) ; }
-        OStEXTAK( ostoOsName  , "." ) ;
-        else                                                  { OStEXTA(  ostoOsName , thirdC::postUserNameIF() ) ; }
-        if( F(flagsP) & flOPENsHAREDmEMORY_ALLuSERS         ) { OStEXTAK( ostoOsName  , "_" ) ; }
+        }
+            c_zReplaceIF( tin0P , (osTextT*)(const osTextT*)ostoOsName , '/' , '.' ) ;
+            OStEXTA(  ostoOsName  , postP ) ;
+            OStEXTAK( ostoOsName  , "." ) ;
+            else                                                  { OStEXTCF( ostoOsName , idMemorySpaceP ? idMemorySpaceP : ((tin1S&)tin0P).pag1->idMemorySpace , '0' ) ; }
+            if( F(flagsP) & flOPENsHAREDmEMORY_ALLmEMORYsPACES )  { OStEXTAK( ostoOsName  , "_" ) ; }
+            OStEXTAK( ostoOsName  , "." ) ;
+            else                                                  { OStEXTCF( ostoOsName , processGlobal1I.idAdamRoot == ifcIDaDAM_TOOLnAPwORDvIEWER && ((tin1S&)tin0P).pag1->_thirdC_.idHomeOverride ? ((tin1S&)tin0P).pag1->_thirdC_.idHomeOverride : processGlobal2I.idHome , '0' ) ; }
+            if( F(flagsP) & flOPENsHAREDmEMORY_ALLhOMES         ) { OStEXTAK( ostoOsName  , "_" ) ; }
+            OStEXTAK( ostoOsName  , "." ) ;
+            else                                                  { OStEXTA(  ostoOsName , thirdC::postUserNameIF() ) ; }
+            if( F(flagsP) & flOPENsHAREDmEMORY_ALLuSERS         ) { OStEXTAK( ostoOsName  , "_" ) ; }
+            _IO_
+        {
         OStEXTA(  ostoOsName  , postPrefix ) ;
         OStEXT(   ostoOsName , COSTnAPKINnAMEmAX + 1 )
         //CODEsYNC: DUPLICATE CODE 1020061 1020068
