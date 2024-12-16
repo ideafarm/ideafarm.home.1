@@ -164,8 +164,14 @@ DONE( tmWorkF )
                                     etThread.traceF( tin0P , T("[publication update]:    ")+tLatestPublication ) ;
                                     etThread.delF( tin0P , psttGen ) ;
                                     tLatestPublication = T(psttGen) ;
-                                    etThread.boxPutGenerationF( tin0P , psttGen , tSoilFilePathFrom+tSoilFileShort , TOCK , tEvals , tEvals.csF( tin0P ) , 0 , flOPENdETAILS_null , T(".soil") ) ; ___( psttGen ) ;
+                                    etThread.boxPutGenerationF( tin0P , psttGen , tSoilFilePathFrom+tShort , TOCK , tEvals , tEvals.csF( tin0P ) , 0 , flOPENdETAILS_null , T(".soil") ) ; ___( psttGen ) ; //Generation IS AND EXTRA EFFORT TO MAKE SURE THAT THE FILE NAME IS UNIQUE ; PROBABLY IMPOSSIBLE FOR strUniqueF TO RETURN THE SAME VALUE ON OO CALLS
                                     ZE( strokeS* , psttGen ) ;
+
+                                    etThread.delF( tin0P , psttu ) ;
+                                    TN( tShort , "" ) ; tShort  =  tSoilFileShortPrefix+T(psttu) ;
+
+                                    etThread.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
+                                    ZE( strokeS* , psttu ) ;
 
                                     etThread.delF( tin0P , psttSoil ) ;
                                     TN( tEvals , psttSoil ) ;
@@ -541,7 +547,7 @@ DONE( tmWorkF )
     TN( tLatestPublication , "" ) ;
     TN( tSoilFilePathTo   , "///ideafarm/IdeaFarm (tm)/SYSTEM/1.1. Drop a Copy of SOIL (tm) Text Files Here/" ) ;
     TN( tSoilFilePathFrom , "///ideafarm/tmp/" ) ;
-    TN( tSoilFileShort , "bot.kt.student.evaluations.soil" ) ;
+    TN( tSoilFileShortPrefix , "bot.kt.student.evaluations." ) ;
     ZE( sCountT , timeU2 ) ;
     ZE( countT  , timeU1 ) ;        //TIME THAT LATH PUBLICATION OCCURRED
     TN( tValueRoomTopic , "" ) ;
