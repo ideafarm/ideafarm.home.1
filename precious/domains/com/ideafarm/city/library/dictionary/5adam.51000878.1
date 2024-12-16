@@ -991,20 +991,22 @@ DONE( tmWorkF )
                                                 etThread.traceF( tin0P , T("retrieving result from file [file]:    ")+tFileResultM ) ;
                                                 etThread.traceF( tin0P , T("debug / 7.c [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                                                thirdC::c_systemIF( tin0P , "dir > d:\\tmp\\foo.on.you.ttt" ) ;
+thirdC::c_systemIF( tin0P , "dir > d:\\tmp\\foo.on.you.ttt" ) ;     //U: REMOVE IN PRODUCTION
 
-                                                countT rc = thirdC::c_systemIF( tin0P , postCmd ) ;
+                                                //countT rc = thirdC::c_systemIF( tin0P , postCmd ) ;
 
-                                                etThread.traceF( tin0P , T("[cmd]:    ")+T(postCmd) ) ;
+                                                }
+                                                    etThread.osProcessF( tin0P , osTid , osPid , rc , idDeathType , tExe , tArg , flPROCESShIRE_null , 0 , 0 , 0 ) ;
+                                                    ZE( countT , idDeathType ) ;
+                                                    ZE( countT , osPid ) ;
+                                                    ZE( countT , osTid ) ;
 
-                                                thirdC::c_strcatIF( tin0P , postCmd , osfnResult ) ;
-                                                thirdC::c_strcatIF( tin0P , postCmd , " > " ) ;
-                                                thirdC::c_strcatIF( tin0P , postCmd , osfnRaw ) ;
-                                                thirdC::c_strcatIF( tin0P , postCmd , " " ) ;
-                                                thirdC::c_strcatIF( tin0P , postCmd , tValueSharedSecret ) ;
-                                                thirdC::c_strcpyIF( tin0P , postCmd , "openssl sha1 -hmac " ) ;
-                                                postCmd[ 0 ] = 0 ;
-                                                osTextT postCmd[ TUCK << 1 ] ;
+                                                    etThread.traceF( tin0P , T("[tArg]:    ")+tArg ) ;
+                                                    TN( tArg , "" ) ; tArg = T("/c openssl sha1 -hmac ")+tValueSharedSecret+T(" ")+T(osfnRaw)+T(" > ")+T(osfnResult) ) ;
+                                                    TN( tExe , "cmd.exe" ) ;
+                                                {
+                                                ZE( countT , rc ) ;
+
                                                 etThread.traceF( tin0P , T("debug / 7.d") ) ;
 
                                                 }
