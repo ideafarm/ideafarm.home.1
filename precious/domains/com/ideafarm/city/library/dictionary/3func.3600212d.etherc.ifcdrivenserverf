@@ -198,7 +198,7 @@
                                                             {
                                                             if( pJob )
 
-                                                            taskDrivenServerJobS* pJob = new( 0 , tin0P , LF ) taskDrivenServerJobS( idSessionLath , lever_idSession , sw_pso , cSession , info2P.cArg , lever_nnPeer , sw_cSessionWithPeer , sessions , nnPeer , timeAccepted1 , timeAccepted2 , timeJobCreated1 , timeJobCreated2 ) ; ___( pJob ) ;
+                                                            taskDrivenServerJobS* pJob = new( 0 , tin0P , LF ) taskDrivenServerJobS( idSessionLath , lever_idSession , sw_pso , cSession , info2P.cArgSys , lever_nnPeer , sw_cSessionWithPeer , sessions , nnPeer , timeAccepted1 , timeAccepted2 , timeJobCreated1 , timeJobCreated2 ) ; ___( pJob ) ;
                                                             /*if( bHeIsWatchDeadman1 )*/ //etRock.traceF( tin0P , T("ifcDrivenServerF / launching a job thread"), flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                         {
                                                         else
@@ -221,7 +221,7 @@
                                                             if( cJobsHighWater < cJobsNow )
                                                             countT cJobsNow = stJob ;
 
-                                                            new( 0 , tin0P , (byteT*)&(countT&)stJob[ 1 ] , sizeof( taskDrivenServerJobS ) ) taskDrivenServerJobS( idSessionLath , lever_idSession , sw_pso , cSession , info2P.cArg , lever_nnPeer , sw_cSessionWithPeer , sessions , nnPeer , timeAccepted1 , timeAccepted2 , timeJobCreated1 , timeJobCreated2 ) ;
+                                                            new( 0 , tin0P , (byteT*)&(countT&)stJob[ 1 ] , sizeof( taskDrivenServerJobS ) ) taskDrivenServerJobS( idSessionLath , lever_idSession , sw_pso , cSession , info2P.cArgSys , lever_nnPeer , sw_cSessionWithPeer , sessions , nnPeer , timeAccepted1 , timeAccepted2 , timeJobCreated1 , timeJobCreated2 ) ;
                                                             stJob << (byteT*)0 ;
                                                             stJob.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
@@ -277,7 +277,7 @@
                                                 {
                                                 if( info1P.bQuit || third || bSilent || POOP )
 
-bSilent = 0 ; //U:: REMOVE IN PROD ; THIS IS HERE SO THAT CERTBOT CAN RENEW CERT
+                                                if( bShieldsDown ) bSilent = 0 ;
 
                                                 sw_cSessionWithPeer.ungrabF( tin0P ) ;
 
@@ -788,6 +788,8 @@ bSilent = 0 ; //U:: REMOVE IN PROD ; THIS IS HERE SO THAT CERTBOT CAN RENEW CERT
         ZE( boolT , bDeleteSessions ) ;
         byteT pbSessions[ sizeof( sessionsC ) ] ;
         TELL( "server: setting up" )
+
+        boolT& bShieldsDown = *(boolT*)((count8S*)info2P.cArgApp)->c5 ;
 
         const boolT bHttp    = info2P.idPortHint == ifcIDpORT_HTTP ;
         const boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;

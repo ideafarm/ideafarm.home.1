@@ -47,7 +47,7 @@ DONE( tmWorkF )
         httpServerC_arg1S arg1U( TAG( TAGiDnULL ) , etThread , cArgApp , ifcIDpORT_HTTP  , flSOCKETc_null            , T("World Wide Web") ) ;
 
         countT cArgApp = (countT)&c8p ;
-        count8S c8p( /*(countT)&pusePeanut*/0 , (countT)&booksSurvey , (countT)&cLeverPassword , (countT)&swsUnconfirmedPeerDeleteEmailZipCountryByPassword ) ;
+        count8S c8p( /*(countT)&pusePeanut*/0 , (countT)&booksSurvey , (countT)&cLeverPassword , (countT)&swsUnconfirmedPeerDeleteEmailZipCountryByPassword , (countT)&bShieldsDown ) ;
 
         switchStackC swsUnconfirmedPeerDeleteEmailZipCountryByPassword( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , cLeverPassword , flSTACKc_null , ifcSTACKtYPE_PTR_strokeS , ifcIDgRABlAYER_7BASEmISC1 ) ;
         ZE( countT , cLeverPassword ) ;
@@ -65,12 +65,13 @@ DONE( tmWorkF )
 
     nicNamesAllowedStripeWebHookNotificationsC nnAllowed( tin0P , etThread , ether ) ;
 
+    etThread.osThreadF( TaRG1( tmShieldsDownF ) , (countT)&bShieldsDown ) ;
+    ZE( boolT , bShieldsDown ) ;
+
     //etThread.osThreadF( TaRG1( tmPopOpenPortF ) ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
-
-#endif
 
 DONE( tmShieldsDownF )
 }
@@ -78,15 +79,16 @@ DONE( tmShieldsDownF )
     etThread.delF( tin0P , psttmDropArchive ) ;
     }
         }
-            etThread.traceF( tin0P , T("tmRenameF / [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            etThread.diskWalkRenameForArchivalF( tin0P , cDirs , cFiles , ether , psttzTo , psttmDropArchive , myCBF , pcArg ) ;
-            etThread.traceF( tin0P , T("tmRenameF / [&etThread]:    ")+TF3((countT)&etThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
-            countT pcArg[] = { (countT)&etThread } ;
-            ZE( countT , cFiles ) ;
-            ZE( countT , cDirs ) ;
-    
-            strokeS* psttzTo = tTo ;
-            TN( tTo , "///ideafarm/IdeaFarm " "(tm)/" ) ; tTo += tUser+T("/2.2. Filesets Awaiting Flushing To An Archive/") ;
+            }
+                etThread.diskFileOrDirDeleteF( tin0P , tLongUp , flFILEoRdIRdELETE_null , 0 ) ;
+                bShieldsDownP = 0 ;
+            {
+            else if( etThread.diskFileExistsF( tin0P , tLongUp ) )
+            }
+                etThread.diskFileOrDirDeleteF( tin0P , tLongDown , flFILEoRdIRdELETE_null , 0 ) ;
+                bShieldsDownP = 1 ;
+            {
+            if( etThread.diskFileExistsF( tin0P , tLongDown ) )
 
             if( bWoth ) bWoth = 0 ;
             _IO_
@@ -99,13 +101,18 @@ DONE( tmShieldsDownF )
     boolT bWoth = 1 ;
     THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
-    etThread.etherC::diskMakeDirIfNeededF( tin0P , tPath ) ;
-    TN( tPath , "" ) ; tPath = T("///ideafarm/tmp/")+TF3(processGlobal1S::_processGlobal1I_IF().idAdamRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T("/") ;
+    TN( tLongUp   , "" ) ; tLongUp   = tPath + T("shields.up.txt") ;
+    TN( tLongDown , "" ) ; tLongDown = tPath + T("shields.down.txt") ;
 
-    boolT bShieldsDown = *(boolT*)pTaskP->c1 ;
+    etThread.etherC::diskMakeDirIfNeededF( tin0P , tPath ) ;
+    TN( tPath , "" ) ; tPath = T("///ideafarm/tmp/")+TF3(processGlobal1S::_processGlobal1I_IF().idAdamRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T("/") ; // d:\ideafarm.home.101\tmp\5100057b\shields.down.txt
+
+    boolT& bShieldsDownP = *(boolT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 )
 TASK( tmShieldsDownF )
+
+#endif
 
 DONE( tmPopOpenPortF )
 }
