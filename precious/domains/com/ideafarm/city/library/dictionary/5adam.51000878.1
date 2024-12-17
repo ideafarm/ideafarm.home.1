@@ -991,8 +991,6 @@ DONE( tmWorkF )
                                                 etThread.traceF( tin0P , T("retrieving result from file [file]:    ")+tFileResultM ) ;
                                                 etThread.traceF( tin0P , T("debug / 7.c [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-thirdC::c_systemIF( tin0P , "dir > d:\\tmp\\foo.on.you.ttt" ) ;     //U: REMOVE IN PRODUCTION
-
                                                 //countT rc = thirdC::c_systemIF( tin0P , postCmd ) ;
 
                                                 }
@@ -1040,8 +1038,8 @@ thirdC::c_systemIF( tin0P , "dir > d:\\tmp\\foo.on.you.ttt" ) ;     //U: REMOVE 
                                                 TN( tFileRawM , "" ) ;
 
                                                 etThread.delF( tin0P , psttu ) ;
-                                                TN( tFileResult , "" ) ; tFileResult =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/")+T(psttu)+T(".2.result")+T(".ttt") ;
-                                                TN( tFileRaw    , "" ) ; tFileRaw    =  T("///ideafarm/tmp/")+TF3(DDNUMB,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("/")+T(psttu)+T(".1.raw"   )+T(".ttt") ;
+                                                TN( tFileResult , "" ) ; tFileResult =  T("///ideafarm/tmp/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/")+T(psttu)+T(".2.result")+T(".ttt") ;
+                                                TN( tFileRaw    , "" ) ; tFileRaw    =  T("///ideafarm/tmp/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/")+T(psttu)+T(".1.raw"   )+T(".ttt") ;
                                                 etThread.traceF( tin0P , T("debug / 7.f") ) ;
 
                                                 etThread.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
