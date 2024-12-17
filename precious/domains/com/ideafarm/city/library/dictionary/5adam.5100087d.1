@@ -161,14 +161,10 @@ DONE( tmWorkF )
                         }
                             }
                                 }
-                                    etThread.traceF( tin0P , T("[publication update]:    ")+tLatestPublication ) ;
-                                    etThread.delF( tin0P , psttGen ) ;
-                                    tLatestPublication = T(psttGen) ;
-                                    etThread.boxPutGenerationF( tin0P , psttGen , tSoilFilePathFrom+tShort , TOCK , tEvals , tEvals.csF( tin0P ) , 0 , flOPENdETAILS_null , T(".soil") ) ; ___( psttGen ) ; //Generation IS AND EXTRA EFFORT TO MAKE SURE THAT THE FILE NAME IS UNIQUE ; PROBABLY IMPOSSIBLE FOR strUniqueF TO RETURN THE SAME VALUE ON OO CALLS
-                                    ZE( strokeS* , psttGen ) ;
+                                    etThread.boxPutF( tin0P , tSoilFilePathFrom+tShort , tEvals , tEvals.csF( tin0P ) ) ;
 
                                     etThread.delF( tin0P , psttu ) ;
-                                    TN( tShort , "" ) ; tShort  =  tSoilFileShortPrefix+T(psttu) ;
+                                    TN( tShort , "" ) ; tShort  =  tSoilFileShortPrefix+T(psttu)+T(".soil") ;
 
                                     etThread.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
                                     ZE( strokeS* , psttu ) ;
@@ -443,10 +439,10 @@ DONE( tmWorkF )
                 ZE( strokeS* , psttPath     ) ;
             {
 
-            etThread.delF( tin0P , psttg ) ;
-            //etThread.trace F( tin0P , T("[json file]:    ")+T(psttg) ) ;
-            etThread.boxPutGenerationF( tin0P , psttg , T("///d/tmp/json.foo") , TOCK , postj , costj ) ; ___( psttg ) ;
-            ZE( strokeS* , psttg ) ;
+            //etThread.delF( tin0P , psttg ) ;
+            //etThread.traceF( tin0P , T("[json file]:    ")+T(psttg) ) ;
+            //etThread.boxPutGenerationF( tin0P , psttg , T("///d/tmp/json.foo") , TOCK , postj , costj ) ; ___( psttg ) ;
+            //ZE( strokeS* , psttg ) ;
 
             //etThread.trace F( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
             //etThread.trace F( tin0P , T("json response [costj]:    ")+TF2(costj,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE) ) ;
@@ -484,6 +480,8 @@ DONE( tmWorkF )
         
             TN( tSay , "" ) ; tSay = T("GET /_matrix/client/v3/sync")+tQuery+T(" HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer/*+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)*/+T("\r\n\r\n")/*+tBody*/ ;
 
+            //etThread.traceF( tin0P , T("requesting sync (update)") ) ;
+
             ) ;
 
                 ""
@@ -509,31 +507,74 @@ DONE( tmWorkF )
         }
             }
                 }
-                    etThread.traceF( tin0P , T("!exception / could not move the student evaluations soil file to publish it to [tShort]:    ")+tShort ) ;
-                    POOPRqUIET
+                    }
+                        }
+                            etThread.traceF( tin0P , T("!exception / could not move the student evaluations soil file to publish it to [tShort]:    ")+tShort ) ;
+                            POOPRqUIET
+                        {
+                        else
+                        if( !POOP ) ; // etThread.traceF( tin0P , T("moved the student evaluations soil file to publish it to [tTo,tFrom]:    ")+tTo+tb4+tFrom ) ;
+                        ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tTo , tFrom , 1 ) ;
+                        SCOOPS
+                    {
+                    IFsCRATCHoK
+
+                    TN( tFrom , "" ) ; tFrom = tSoilFilePathFrom + tShort ;
+                    TN( tTo   , "" ) ; tTo   = tSoilFilePathTo   + tShort ;
+
+                    etThread.delF( tin0P , psttShort ) ;
+                    etThread.delF( tin0P , psttPath ) ;
+                    TN( tShort , psttShort ) ;
+                    etThread.strBisectF( tin0P , psttPath , psttShort , tYoungest , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+                    ZE( strokeS* , psttShort ) ;
+                    ZE( strokeS* , psttPath ) ;                                                                                     // PUBLISH THE YOUNGEST FILE BY MOVING IT INTO PISS'S MOUTH
                 {
-                if( POOP )                                                                      //U:: PURGE THESE FILES PERIODICALLY (E.G. DAILY), BOTH IN THE FROM PATH AND IN THE EVENTUAL DONE PATH (WHERE PISS PUTS THEM AFTER OBEYING THEM)
-                ((tin1S&)tin0P).pEtScratch->diskCopyFileF( tin0P , tTo , tFrom , 1 ) ;          //COPIED, NOT MOVED, SO THE GENERATIONS INCREMENT
+                else
+                if( cLogsJammed ) etThread.traceF( tin0P , T("not publishing because PISS isn't ready [cLogsJammed]:    ")+TF2(cLogsJammed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                SCOOPS
-            {
-            IFsCRATCHoK
+                }
+                    }
+                        ++ cLogsJammed ;
+                    {
+                    FORsTRINGSiN2( pstt1f )
+                    etThread.diskFindFileOrDirF( tin0P , pstt1f , tSoilFilePathCheck ) ; ___( pstt1f ) ;
 
-            TN( tFrom , "" ) ; tFrom = tSoilFilePathFrom + tShort ;
-            TN( tTo   , "" ) ; tTo   = tSoilFilePathTo   + tShort ;
+                    etThread.delF( tin0P , pstt1f ) ;
+                    }
+                        ++ cLogsJammed ;
+                    {
+                    FORsTRINGSiN1( pstt1f )
+                    etThread.diskFindFileOrDirF( tin0P , pstt1f , tSoilFilePathTo ) ; ___( pstt1f ) ;
+                    ZE( strokeS* , pstt1f ) ;
+                {                                                                                                                   // VERIFY THAT PISS IS READY TO RECEIVE A NEW SOIL FILE
+                ZE( countT , cLogsJammed ) ;
+
+                etThread.delF( tin0P , pstt1f ) ;
+                }
+                    if( etThread.strCompareF( tin0P , psttc1 , tYoungest ) ) etThread.diskFileOrDirDeleteF( tin0P , psttc1 ) ;
+                {
+                FORsTRINGSiN1( pstt1f )
+                etThread.diskFindFileOrDirF( tin0P , pstt1f , tSoilFilePathFrom ) ; ___( pstt1f ) ;
+                ZE( strokeS* , pstt1f ) ;
+            {                                                                                                                       // ZAP OLDER FILES THAT SURVIVED DUE TO BEING PRESENTED OUT OF ORDER
+            if( tYoungest.csF( tin0P ) )
 
             }
-                etThread.delF( tin0P , psttShort ) ;
-                etThread.delF( tin0P , psttPath ) ;
-                tShort = T(psttShort) ;
-                etThread.strBisectF( tin0P , psttPath , psttShort , tLatestPublication , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
-                ZE( strokeS* , psttShort ) ;
-                ZE( strokeS* , psttPath ) ;
-            {
-            if( tLatestPublication.csF( tin0P ) )
-            TN( tShort , "" ) ;
+                etThread.delF( tin0P , pstt1f ) ;
+                }
+                    }
+                        tYoungest = T(psttc1) ;
+                        if( tYoungest.csF( tin0P ) ) etThread.diskFileOrDirDeleteF( tin0P , tYoungest ) ;
+                    {
+                    if( !tYoungest.csF( tin0P ) || 0 < etThread.strCompareF( tin0P , psttc1 , tYoungest ) )
+                {
+                FORsTRINGSiN1( pstt1f )
+                etThread.diskFindFileOrDirF( tin0P , pstt1f , tSoilFilePathFrom ) ; ___( pstt1f ) ;
+                ZE( strokeS* , pstt1f ) ;
+            {                                                                                                                       // ZAP EACH FILE THAT IS OLDER THAN A FILE ALREADY SEEN ; THIS ONLY ZAPS ALL OF THE OLDER FILES IF THE BASE O.S. PRESENTS THE NAMES IN SORTED ORDER, WHICH IT DOES NOT GUARANTEE TO DO (NTFS)
+            TN( tYoungest , "" ) ; // DELETE ALL BUT THE YOUNGEST bot.kt.student.evaluations.*
         {
-        if( timeE2 || timeE1 > ( TICK << 2 ) )      //A:ASSUME: PISS CAN PROCESS THE SOIL FILE WELL WITHIN THIS TIME (EVEN IF SERVER IS HEAVILY LOADED)
+        if( timeE2 || timeE1 > ( TICK << 2 ) )                                                                                      // LIMIT PUBLICATION SO THAT PISS (AND THE CPU) IS IDLE AND AVAILABLE FOR OTHER WORK
 
         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeU1 , timeU2 ) ;
         sCountT timeE2 = timeN2 ;
@@ -544,9 +585,9 @@ DONE( tmWorkF )
         ZE( countT  , timeN1 ) ;
     {
     while( !ether && !POOP )
-    TN( tLatestPublication , "" ) ;
-    TN( tSoilFilePathTo   , "///ideafarm/IdeaFarm (tm)/SYSTEM/1.1. Drop a Copy of SOIL (tm) Text Files Here/" ) ;
-    TN( tSoilFilePathFrom , "///ideafarm/tmp/" ) ;
+    TN( tSoilFilePathCheck   , "///d/ideafarm.home.101/IdeaFarm (tm)/SYSTEM/1.2. SOIL (tm) Text Files Being Eaten/" ) ;
+    TN( tSoilFilePathTo      , "///d/ideafarm.home.101/IdeaFarm (tm)/SYSTEM/1.1. Drop a Copy of SOIL (tm) Text Files Here/" ) ;
+    TN( tSoilFilePathFrom    , "" ) ; tSoilFilePathFrom = T("///ideafarm/tmp/") + TfORsTRING( processGlobal1S::_processGlobal1I_IF().idAdamRoot ) + T("/") ;
     TN( tSoilFileShortPrefix , "bot.kt.student.evaluations." ) ;
     ZE( sCountT , timeU2 ) ;
     ZE( countT  , timeU1 ) ;        //TIME THAT LATH PUBLICATION OCCURRED
