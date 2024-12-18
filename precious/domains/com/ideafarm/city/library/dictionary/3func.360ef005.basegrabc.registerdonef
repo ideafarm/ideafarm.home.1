@@ -15,6 +15,9 @@
             }
                 }
                     break ;
+
+                    if( ((tin123S&)tin0P).idGrabLayerGrabbedMax < idGrabLayer ) ((tin123S&)tin0P).idGrabLayerGrabbedMax = idGrabLayer ; //O: OPTIMIZATION SO THAT APP CODE CAN QUICKLY SEE WHETHER A GRAB AT A SPECIFIC LAYER WILL FAIL FOR BEING NONMONOTONIC
+
                     ((tin123S&)tin0P).pPanLifiRecurseGrabbedLevel[ off + 4 ] = idGrabLayer ;
                     ((tin123S&)tin0P).pPanLifiRecurseGrabbedLevel[ off + 3 ] = 0 ;
                     ((tin123S&)tin0P).pPanLifiRecurseGrabbedLevel[ off + 2 ] = idiFileP ;

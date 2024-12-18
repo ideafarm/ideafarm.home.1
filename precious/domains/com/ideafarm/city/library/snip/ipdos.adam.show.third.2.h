@@ -29747,6 +29747,7 @@ struct bookMarkOldS
     countT          pcGrabitOsTid[                     CmAXgRABITrECURSEiNtINs  ] ;
     countT          pcGrabitRecurse[                   CmAXgRABITrECURSEiNtINs  ] ;
     bookMarkS       pBookMark[                         CbOOKmARK                ] ;         // USED BY pageC TO REGISTER A PENDING SMART POINTER ; INCREASE THE NUMBER
+    countT          idGrabLayerGrabbedMax                                         ;
     zapC            zap_pPanLifiRecurseGrabbedLevel_ ;
     ranUniC         ranUni ;
     tinArgS         ta ;
