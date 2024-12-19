@@ -2224,8 +2224,8 @@ DONE( tmReportF )
                                 TN( tc4 , "" ) ; tc4 = T("[")+T((countT*)((tin123S&)tin0Copy).c4Tell)+T("]") ;
                                 //etRock.traceF( tin0P , T("tmReportF a/ e") ) ; //U:: TO FIND A BUG
                                 _IO_
-                            {
-                            if( /*!head.cStepsNew &&*/ !( F(((tin123S&)tin0Copy).flagsThreadMode2) & flTHREADmODE2_MONITORdOnOTrEPORToNmE ) && !bQuitEatingP )
+                            {                                                                                                                                                        //U:: SUPPORT OPTIONAL ENABLING OF ALL THREAD CHATTER
+                            if( bEventOnThisThread && /*!head.cStepsNew &&*/ !( F(((tin123S&)tin0Copy).flagsThreadMode2) & flTHREADmODE2_MONITORdOnOTrEPORToNmE ) && !bQuitEatingP ) //20241218@1645: TO REDUCE CPU AND WALL CLOCK CONSUMPTION, REPORT DETAIL IFF (IF AND ONLY IFF) bEventOnThisThread 
 
                             }
                                 CONoUTrAW( os ) ;
@@ -2237,6 +2237,8 @@ DONE( tmReportF )
                                 OStEXT(  os , TUCK ) ;
                             {
                             if( F(((tin123S&)tin0Copy).flagsThreadMode2) & flTHREADmODE2_MONITORdOnOTrEPORToNmE )
+
+                            const boolT bEventOnThisThread = osPidEventP == ((tin123S&)tin0Copy).osPid && osTidEventP == ((tin123S&)tin0Copy).osTid ;
 
                             //etRock.traceF( tin0P , T("reporting on tin123S [idThread,postThreadName]:    ")+TF2(((tin123S&)tin0Copy).glass.idThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(((tin123S&)tin0Copy).postThreadName) ) ;
                 
