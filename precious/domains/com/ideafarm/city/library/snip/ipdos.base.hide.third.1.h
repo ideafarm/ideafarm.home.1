@@ -23649,7 +23649,7 @@ examples
                 CONoUTcALLnEST( "IFsCRATCHoK: scratch impotence on entry" ) ;                                                                                                        \
                 LOGrAW5( "IFsCRATCHoK: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
                 LOGcALLnEST( "IFsCRATCHoK: scratch impotence on entry" ) ;                                                                                                           \
-                BLAMMOiD( ( POOP.idiFileGruntF() & 0xfffff000 ) | POOP.idLineGrunt & 0x00000fff ) ;                                                                                  \
+                BLAMMOiD( ( POOP.idiFileGruntF() & 0xfffff000 ) | POOP.idLineGruntF() & 0x00000fff ) ;                                                                               \
             }                                                                                                                                                                      \
         }                                                                                                                                                                          \
                                                                                                                                                                                    \
