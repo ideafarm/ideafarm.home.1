@@ -326,7 +326,7 @@ DONE( tmWorkF )
 
                                     // "rooms"/"join"/"!mdggPdOnBbNwmpeHnH:ideafarm.com"/"timeline"/"events"/item.0000000a/"content"/"body"/
 
-                                    //etThread.trace F( tin0P , T("********    ") + T(psttPath) + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                    etThread.traceF( tin0P , T("********    ") + T(psttPath) + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                     *pptValue[ offe ] = T(psttValue) ;
                                 {
                                 )
@@ -353,8 +353,8 @@ DONE( tmWorkF )
                             countT cPathsZ  = sizeof pptPathZ  / sizeof pptPathZ[  0 ] ;
                             countT cPathsA  = sizeof pptPathA  / sizeof pptPathA[  0 ] ;
                     
-                            //etThread.trace F( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                            //etThread.trace F( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     
                             strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                             psttPath            = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -443,13 +443,13 @@ DONE( tmWorkF )
                     ZE( strokeS* , psttPath     ) ;
                 {
 
-                //etThread.delF( tin0P , psttg ) ;
-                //etThread.traceF( tin0P , T("[json file]:    ")+T(psttg) ) ;
-                //etThread.boxPutGenerationF( tin0P , psttg , T("///d/tmp/json.foo") , TOCK , postj , costj ) ; ___( psttg ) ;
-                //ZE( strokeS* , psttg ) ;
+                etThread.delF( tin0P , psttg ) ;
+                etThread.traceF( tin0P , T("[json file]:    ")+T(psttg) ) ;
+                etThread.boxPutGenerationF( tin0P , psttg , T("///ideafarm/tmp/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/json/json.sync") , TOCK , postj , costj , 0 , flOPENdETAILS_null , /*T(".json")*/0 ) ; ___( psttg ) ;
+                ZE( strokeS* , psttg ) ;
 
-                //etThread.trace F( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                //etThread.trace F( tin0P , T("json response [costj]:    ")+TF2(costj,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE) ) ;
+                etThread.traceF( tin0P , T(postj) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                etThread.traceF( tin0P , T("json response [costj]:    ")+TF2(costj,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE) ) ;
 
                 }
                     }
@@ -474,8 +474,8 @@ DONE( tmWorkF )
                 ZE( countT , costj ) ;
 
                 sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                //etThread.trace F( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                //etThread.trace F( tin0P , T("request:") ) ;
+                etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                etThread.traceF( tin0P , T("request:") ) ;
 
                 thirdC::c_memsetIF( tin0P , postj , costaj ) ;
                 etThread.newF( tin0P , LF , postj , costaj ) ; ___( postj ) ;
@@ -484,7 +484,7 @@ DONE( tmWorkF )
             
                 TN( tSay , "" ) ; tSay = T("GET /_matrix/client/v3/sync")+tQuery+T(" HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer/*+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)*/+T("\r\n\r\n")/*+tBody*/ ;
 
-                //etThread.traceF( tin0P , T("requesting sync (update)") ) ;
+                etThread.traceF( tin0P , T("requesting sync (update)") ) ;
             {
             if( !POOP )
 
@@ -591,9 +591,9 @@ DONE( tmWorkF )
         ZE( countT  , timeN1 ) ;
     {
     while( !ether && !POOP )
-    TN( tSoilFilePathCheck   , "///d/ideafarm.home.101/IdeaFarm (tm)/SYSTEM/1.2. SOIL (tm) Text Files Being Eaten/" ) ;
-    TN( tSoilFilePathTo      , "///d/ideafarm.home.101/IdeaFarm (tm)/SYSTEM/1.1. Drop a Copy of SOIL (tm) Text Files Here/" ) ;
-    TN( tSoilFilePathFrom    , "" ) ; tSoilFilePathFrom = T("///ideafarm/tmp/") + TfORsTRING( processGlobal1S::_processGlobal1I_IF().idAdamRoot ) + T("/") ;
+    TN( tSoilFilePathCheck   , "" ) ; tSoilFilePathCheck = T("///ideafarm/IdeaFarm (tm)/")+tUser+T("/1.2. SOIL (tm) Text Files Being Eaten/" ) ;
+    TN( tSoilFilePathTo      , "" ) ; tSoilFilePathTo    = T("///ideafarm/IdeaFarm (tm)/")+tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/" ) ;
+    TN( tSoilFilePathFrom    , "" ) ; tSoilFilePathFrom  = T("///ideafarm/tmp/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/soil/") ;
     TN( tSoilFileShortPrefix , "bot.kt.student.evaluations." ) ;
     ZE( sCountT , timeU2 ) ;
     ZE( countT  , timeU1 ) ;        //TIME THAT LATH PUBLICATION OCCURRED
@@ -604,6 +604,7 @@ DONE( tmWorkF )
     TN( tValueNextBatch , "" ) ;
     TN( tValueEnd       , "" ) ;
     TN( tValueStart     , "" ) ;
+    TN( tUser , thirdC::postUserNameIF() ) ;
 
     ;
 
