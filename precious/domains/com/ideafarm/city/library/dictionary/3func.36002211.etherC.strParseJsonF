@@ -289,7 +289,11 @@ voidT strParseJson_pairF( tin0S& tin0P , etherC& etherP , switchC*& pSwPathValue
     if( psttP->idAdam ) switch( psttP[ CSpREFIX ].idAdam )
 
     }
-        etherP.strMakeF( tin0P , LF , psttFlavor , psttP ) ; ___( psttFlavor ) ;
+        etherP.delF( tin0P , psttRaw ) ;
+        etherP.strFromJsonF( tin0P , psttFlavor , psttRaw ) ;
+        etherP.strMakeF( tin0P , LF , psttRaw , psttP ) ; ___( psttRaw ) ;
+        ZE( strokeS* , psttRaw ) ;
+
         etherP.delF( tin0P , psttFlavor ) ;                                          //PS:PERSONALITY: IF MULTIPLE VALUES ARE ENCOUNTERED FOR A PATH, I WILL RETAIN THE LATH VALUE ENCOUNTERED
         strokeS*& psttFlavor = *(strokeS**)&(countT&)*pSwPathValueP ;
     {
