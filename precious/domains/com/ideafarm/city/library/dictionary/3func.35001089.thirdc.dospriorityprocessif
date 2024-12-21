@@ -18,22 +18,22 @@
                 __1
             {
             default :
-            //}
-            //    break ;
-            //    BOSpOOP
-            //    BOS( WHATgbo , BOSoK , SetPriorityClass( oshMe , REALTIME_PRIORITY_CLASS ) )
-            //    HANDLE oshMe = (HANDLE)((tin1S&)tin0P).brcRaw ;
-            //    BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
-            //{
-            //case ifcTHREADpRIORITY_SPINLOCK   :
-            //}
-            //    break ;
-            //    BOSpOOP
-            //    BOS( WHATgbo , BOSoK , SetPriorityClass( oshMe() , HIGH_PRIORITY_CLASS ) )
-            //    HANDLE oshMe = (HANDLE)((tin1S&)tin0P).brcRaw ;
-            //    BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
-            //{
-            //case ifcTHREADpRIORITY_RUSH   :
+            }
+                break ;
+                BOSpOOP
+                BOS( WHATgbo , BOSoK , SetPriorityClass( oshMe , REALTIME_PRIORITY_CLASS ) )
+                HANDLE oshMe = (HANDLE)((tin1S&)tin0P).brcRaw ;
+                BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
+            {
+            case ifcTHREADpRIORITY_SPINLOCK   :
+            }
+                break ;
+                BOSpOOP
+                BOS( WHATgbo , BOSoK , SetPriorityClass( oshMe() , HIGH_PRIORITY_CLASS ) )
+                HANDLE oshMe = (HANDLE)((tin1S&)tin0P).brcRaw ;
+                BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
+            {
+            case ifcTHREADpRIORITY_RUSH   :
             }
                 break ;
                 BOSpOOP
@@ -42,21 +42,23 @@
                 BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
             {
             case ifcTHREADpRIORITY_NORMAL :
-            //}
-            //    break ;
-            //    BOSpOOP
-            //    BOS( WHATgbo , BOSoK , SetPriorityClass( oshMe , IDLE_PRIORITY_CLASS ) )
-            //    HANDLE oshMe = (HANDLE)((tin1S&)tin0P).brcRaw ;
-            //    BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
-
-            //{
-            //case ifcTHREADpRIORITY_LAZIEST   :
+            }
+                break ;
+                BOSpOOP
+                BOS( WHATgbo , BOSoK , SetPriorityClass( oshMe , IDLE_PRIORITY_CLASS ) )
+                HANDLE oshMe = (HANDLE)((tin1S&)tin0P).brcRaw ;
+                BOSdOnOTtEST( WHATgbo , GetCurrentProcess() )
+            {
+            case ifcTHREADpRIORITY_LAZIEST   :
         {
         switch( idP )
 
-        if( idP == ifcTHREADpRIORITY_SPINLOCK    ) { BLAMMO ; } //U::
-        if( idP == ifcTHREADpRIORITY_RUSH    ) { BLAMMO ; } //U::
-        if( idP == ifcTHREADpRIORITY_LAZIEST ) { BLAMMO ; } //U::
+        //if( idP == ifcTHREADpRIORITY_SPINLOCK ) { BLAMMO ; } //U::
+        //if( idP == ifcTHREADpRIORITY_RUSH     ) { BLAMMO ; } //U::
+        //if( idP == ifcTHREADpRIORITY_LAZIEST  ) { BLAMMO ; } //U::
+
+        //20241220@2038: idP != ifcTHREADpRIORITY_NORMAL WAS DISABLED, MARKED AS "//U::", BUT I CANNOT REMEMBER THE REASON, SO AM FULLY ENABLING THIS FUNCTION
+        //20241220@2038: NO CODE IN THE ENTIRE dictionary FOLDER CALLS ME
 
     #elif defined( __NT__ )
         if( idP ) ;
