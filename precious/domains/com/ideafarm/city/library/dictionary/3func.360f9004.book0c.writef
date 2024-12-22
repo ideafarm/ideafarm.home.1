@@ -167,12 +167,14 @@
         __( pb1P && !( F(flagsP) & flBOOK0cwRITE_ALLOWoDDlENGTH ) && ( cb1P + cb2P ) % sizeof( countT ) ) ;
         if( POOP ) return 0 ;
         __( flagsResultP ) ;
-        __NZ( !pb2P && cb2P ) ;
-        __NZ( !pb1P && pb2P ) ;
         __NZ( !pb1P &&    F(flagsP) & flBOOK0cwRITE_SETrEMAINING   &&  cb1P >= TUCK ) ;
         //__NZ( !pb1P && !( F(flagsP) & flBOOK0cwRITE_SETrEMAINING ) && !cb1P         ) ;       //20231114@1146: ALLOW
         __NZ(  pb1P &&    F(flagsP) & flBOOK0cwRITE_SETrEMAINING                    ) ;
         if( POOP ) return 0 ;
+        __NZ( !pb2P &&  cb2P ) ;
+        __NZ( !pb1P &&  pb2P ) ;
+        __NZ(  pb2P && !cb2P ) ;             //20241222@1051: ADDED W/O ANALYSIS
+        __NZ(  pb1P && !cb1P ) ;             //20241222@1051: ADDED W/O ANALYSIS
         FV( flBOOK0cwRITE , flagsP ) ;
         if( POOP ) return 0 ;
     {
@@ -214,8 +216,8 @@
   if !pb1P then specifies the fill value
   if !pb1P then can be 0 and must be < TUCK
  cb1P
- every byte of the remainder of the book will be set to (byteT)cb1P  
    else cb1P bytes are "written" by reserving them without writing anything to them
+    every byte of the remainder of the book will be set to (byteT)cb1P  
    if flBOOK0cwRITE_SETrEMAINING then all remaining bytes are set to (byteT)c1P
   if 0 then my behavior depends upon whether flBOOK0cwRITE_SETrEMAINING is set
   normally is not 0
