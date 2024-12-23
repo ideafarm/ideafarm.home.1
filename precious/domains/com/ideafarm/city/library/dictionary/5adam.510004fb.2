@@ -1351,21 +1351,75 @@ TELL( "cleaning up 0" )
                         {
                         else
                         }
-                            cbi = head.cbBooked + sizeof( countT ) ;
-
                             }
-                                __1
+                                if( bBreakOuter ) break ;
+
+                                if( bHeaderFound ) cbi = cbBookedUse + sizeof( countT ) ;
+
+                                cPosTest = 0 ;
+                                }
+                                    }
+                                        if( bHeaderFound ) break ;
+
+                                        }
+                                            case 4 : { bHeaderFound = 1                                                    ; break ; }
+                                            case 3 : {                   cPosTest = getNegAM( FINGERnEG_BOOK0cwRITEhEAD2 ) ; break ; }
+                                            case 2 : { cBytesEaten = 0 ; cPosTest = - 1                                    ; break ; }  // "- 1" IS ARBITRARY SINCE cPosTest WILL NOT BE USED FOR THIS MEMBER
+                                            case 1 : {                   cPosTest = ifcIDfORMAT_BOOK0hEAD                  ; break ; }
+                                        {
+                                        switch( ++ cElementsVerified )
+                                    {
+                                    if( ++ cMatchedBytes == sizeof cPosTest )                                                           // IF A COMPLETE HEAD MEMBER HAS BEEN VERIFIED THEN SET cPosTest TO THE EXPECTED VALUE OF THE NEXT MEMBER
+
+                                    }
+                                        continue ;
+                                        cPosTest = getNegAM( FINGERnEG_BOOK0cwRITEhEAD1 ) ;
+                                        cbBookedUse = cMatchedBytes = cElementsVerified = 0 ;
+                                    {
+                                    else if( *pbi != ((byteT*)&cPosTest)[ cMatchedBytes ] )                                            // THE BYTE VALUE JUST READ WAS UNEXPECTED, SO NOW SCAN FOR THE BEGINNING OF A HEAD
+                                         if( cElementsVerified == 2                        ) cbBookedUse |= *pbi << cBytesEaten ++ ;    // AM ACCUMULATING cbBookedUse SO JUST DO THAT
+
+                                    }
+                                        break ;
+                                        bBreakOuter = 1 ;
+                                        hRead = hReadSave ;
+                                        cbi = cbiSave ;
+                                    {
+                                    if( !pbi )                                                                                          // IF NO MORE INPUT IS AVAILABLE THEN SCAN IS FINISHED WITHOUT FINDING A HEAD
+
+                                    bDelete = bksTelemetrySys.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
+                                    cbi = 1 ;
+
+                                    else          pbi = 0 ;
+                                    if( bDelete ) PUSE( tin0P , *(byteT**)&pbi ) ;
+                                {
+                                while( !bQuitEatingP && !POOP && !bHeaderFound )                                                        // SCAN AHEAD UNTIL FIND A GOOD HEAD
+                                ZE( countT , cBytesEaten ) ;
+                                ZE( countT , cElementsVerified ) ;
+                                ZE( countT , cMatchedBytes ) ;
+                                countT cPosTest = getNegAM( FINGERnEG_BOOK0cwRITEhEAD1 ) ;                                              // MUST BE SMUDGED AFTER USE
+                                ZE( boolT , bBreakOuter ) ;
+                                ZE( boolT  , bHeaderFound ) ;
+                                ZE( countT , cbBookedUse ) ;
+
+                                //  }
+                                //      countT  finger2  ;
+                                //      countT  cbBooked ;
+                                //      countT  idFormat ;
+                                //      countT  finger1  ;
+                                //  {
+                                //  struct telemetryBookHeadS
+                                //  STRUCTURE MEMBERS TO BE VERIFIED
 
                                 etThread.delF( tin0P , psttd ) ;
-                                LOGrAW( T("dump of head:\r\n" DASH79 "\r\n")+T(psttd)+T("\r\n" DASH79 "\r\n") ) ;
+                                etThread.traceF( tin0P , T("tmEatTelemetrySysF bad header [bBad1,bBad2,bBad3,bBad4,dump]:    ")+TF2(bBad1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bBad2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bBad3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bBad4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttd) ) ;
                                 etThread.strDumpIF( tin0P , psttd , (byteT*)&head , sizeof head ) ; ___( psttd ) ;
                                 ZE( strokeS* , psttd ) ;
-
-                                LOGrAW9( "tmEatTelemetrySysF bad header [bBad1,bBad2,bBad3,bBad4]: " , bBad1 , "    " , bBad2 , "    " , bBad3 , "    " , bBad4 , "\r\n" ) ;        // <-----------------------------------------------------------------------------------------------------------------------------
                             {
-                            if( bBad1 || bBad2 || bBad3 || bBad4 )
+                            else
+                            if( !bBad1 && !bBad2 && !bBad3 && !bBad4 ) cbi = head.cbBooked + sizeof( countT ) ;
         
-                            boolT bBad4 = !head.cbBooked ;
+                            boolT bBad4 = !head.cbBooked ;                                                  //20241222@1117: book0C::writeF EDITED TO RETURN IMPOTENT IF !cb1P, SO bBad4 SHOULD NOW BE IMPOSSIBLE
                             boolT bBad3 = head.idFormat - ifcIDfORMAT_BOOK0hEAD ;
                             boolT bBad2 = getNegAM( head.finger2 ) - FINGERnEG_BOOK0cwRITEhEAD2 ;
                             boolT bBad1 = getNegAM( head.finger1 ) - FINGERnEG_BOOK0cwRITEhEAD1 ;
@@ -1391,17 +1445,11 @@ TELL( "cleaning up 0" )
                         //etRock.traceF( tin0P , T("read returned null") ) ;
                     {
                     if( !pbi )
-                    TELL( "waiting to read a new telemetry item / U:: 0" )
     
                     //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 7") ) ;
-                    //((tin1S&)tin0P).pc Utility[ 0 ] -- ; //U::TO FIND A BUG
-                    TELL( "waiting to read a new telemetry item / U:: 1" )
                     boolT bDelete = bksTelemetrySys.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
                     //etRock.traceF( tin0P , T("eating telemetry at [idDebug,off,idBook]:    ")+TF2(idDebug,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(ch.c1,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(ch.c2,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
-                    TELL( "waiting to read a new telemetry item / U:: 2" )
                     HANDLEaPPnOTEScOUNTcLASS ch = hRead ;
-                    TELL( "waiting to read a new telemetry item / U:: 3" )
-                    //((tin1S&)tin0P).pc Utility[ 0 ] ++ ; //U::TO FIND A BUG
                     //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 8") ) ;
                     TELL( "waiting to read a new telemetry item" )
 

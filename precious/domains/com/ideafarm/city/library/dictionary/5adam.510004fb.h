@@ -51,10 +51,10 @@ struct tinEntryS
 
 ;
 }
-    countT  finger2 ;
+    countT  finger2  ;
     countT  cbBooked ;
     countT  idFormat ;
-    countT  finger1 ;
+    countT  finger1  ;
 {
 struct telemetryBookHeadS
 
