@@ -41,7 +41,10 @@
         if( pcOffWroteP ) *pcOffWroteP = pbc - pbBody ;
 
         if( F(flagsP) & flBOOK0cwRITE_HEADfINGER2     )     { putNegAM( *(countT*)pbc , FINGERnEG_BOOK0cwRITEhEAD2 )      ; pbc += sizeof( countT ) ; }
-        //TO TEST GLASS2'S ABILITY TO HANDLE CORRUPT HEADERS: if( F(flagsP) & flBOOK0cwRITE_HEADfINGER2     )     { static countT idInLath ; countT idIn = 1 + incv02AM( idInLath ) ; if( idIn % 0x40 ) putNegAM( *(countT*)pbc , FINGERnEG_BOOK0cwRITEhEAD2 ) ; else putNegAM( *(countT*)pbc , FINGERnEG_STATEc ) ;  pbc += sizeof( countT ) ; } //U:: INTENTIONAL BUG TO TEST SCANNING FOR GOOD HEADER
+
+        //if( F(flagsP) & flBOOK0cwRITE_HEADfINGER2     )     { static countT idInLath ; countT idIn = 1 + incv02AM( idInLath ) ; if( idIn % 0x8 ) putNegAM( *(countT*)pbc , FINGERnEG_BOOK0cwRITEhEAD2 ) ; else putNegAM( *(countT*)pbc , FINGERnEG_STATEc ) ;  pbc += sizeof( countT ) ; } //U:: INTENTIONAL BUG TO TEST SCANNING FOR GOOD HEADER
+        //if( F(flagsP) & flBOOK0cwRITE_HEADfINGER2     )     { static countT idInLath ; countT idIn = 1 + incv02AM( idInLath ) ; if( idIn != 2 ) { CONoUTrAW( "." ) ; putNegAM( *(countT*)pbc , FINGERnEG_BOOK0cwRITEhEAD2 ) ; } else { CONoUTrAW( "@" ) ; putNegAM( *(countT*)pbc , FINGERnEG_STATEc ) ; }  pbc += sizeof( countT ) ; } //U:: INTENTIONAL BUG TO TEST SCANNING FOR GOOD HEADER
+        //TO TEST GLASS2'S ABILITY TO HANDLE CORRUPT HEADERS: 
 
         if( F(flagsP) & flBOOK0cwRITE_HEADcBdATA      )     { *(countT*)pbc = cb1P                                        ; pbc += sizeof( countT ) ; }
         if( F(flagsP) & flBOOK0cwRITE_HEADiDfORMAT    )     { *(countT*)pbc = ifcIDfORMAT_BOOK0hEAD                       ; pbc += sizeof( countT ) ; }

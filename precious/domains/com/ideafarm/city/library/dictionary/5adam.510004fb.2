@@ -348,7 +348,10 @@ DONE( tmHireF )
 
             //IT IS ILLEGAL TO NOT HIRE AN ADAM
 
-            /*PROD*/ /*if( idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 || idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0sERVER )*/ etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_MEMBRANEgLASS , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+//            /*PROD*/ /*if( idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 || idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0sERVER )*/ etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_MEMBRANEgLASS , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+
+
+etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_EATiNCOMINGoRDERS , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
             //etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_HEALaRCHIVES , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
@@ -425,7 +428,7 @@ DONE( tmHireF )
             // 
             // THIS IS THE OLD PRODUCT, WITH FULL RELAY CAPABILITY INCLUDING CIO SUPPORT FOR CONSOLE IO
 
-            const flagsT flagsUse = flHIRE_DISPLAYaUTO | flHIRE_MONITORtHIS /*U::ENABLE IN PROD; TO FIND A BUG I DISABLE THIS: | flHIRE_MONITORkIDS*/ ;              //THIS WILL PREVENT THE LAUNCH OF 64-BIT KIDS SUCH AS pkzipc.exe
+            const flagsT flagsUse = flHIRE_DISPLAYaUTO | flHIRE_MONITORtHIS | flHIRE_MONITORkIDS ;              //THIS WILL PREVENT THE LAUNCH OF 64-BIT KIDS SUCH AS pkzipc.exe
         {
         else
         }
@@ -1359,7 +1362,12 @@ TELL( "cleaning up 0" )
                                 cPosTest = 0 ;
                                 }
                                     }
-                                        if( bHeaderFound ) break ;
+                                        }
+                                            break ;
+                                            etThread.traceF( tin0P , T("tmEatTelemetrySysF good header found after ignoring ")+TF2(cIgnored,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" bytes") ) ;
+                                            cIgnored -= sizeof head ;
+                                        {
+                                        if( bHeaderFound )
 
                                         }
                                             case 4 : { bHeaderFound = 1                                                    ; break ; }
@@ -1368,6 +1376,7 @@ TELL( "cleaning up 0" )
                                             case 1 : {                   cPosTest = ifcIDfORMAT_BOOK0hEAD                  ; break ; }
                                         {
                                         switch( ++ cElementsVerified )
+                                        cMatchedBytes = 0 ;
                                     {
                                     if( ++ cMatchedBytes == sizeof cPosTest )                                                           // IF A COMPLETE HEAD MEMBER HAS BEEN VERIFIED THEN SET cPosTest TO THE EXPECTED VALUE OF THE NEXT MEMBER
 
@@ -1376,8 +1385,10 @@ TELL( "cleaning up 0" )
                                         cPosTest = getNegAM( FINGERnEG_BOOK0cwRITEhEAD1 ) ;
                                         cbBookedUse = cMatchedBytes = cElementsVerified = 0 ;
                                     {
-                                    else if( *pbi != ((byteT*)&cPosTest)[ cMatchedBytes ] )                                            // THE BYTE VALUE JUST READ WAS UNEXPECTED, SO NOW SCAN FOR THE BEGINNING OF A HEAD
-                                         if( cElementsVerified == 2                        ) cbBookedUse |= *pbi << cBytesEaten ++ ;    // AM ACCUMULATING cbBookedUse SO JUST DO THAT
+                                    else if( *pbi != ((byteT*)&cPosTest)[ cMatchedBytes ] )                                             // ELSE IF THE BYTE VALUE JUST READ WAS UNEXPECTED, SCAN FOR THE BEGINNING OF A HEAD
+                                         if( cElementsVerified == 2                        ) cbBookedUse |= *pbi << SB * cBytesEaten ++ ;    // IF AM ACCUMULATING cbBookedUse THEN JUST DO THAT
+
+                                    cIgnored ++ ;       // TENTATIVE ; WHEN I FIND A HEAD I WILL REDUCE THIS
 
                                     }
                                         break ;
@@ -1394,6 +1405,7 @@ TELL( "cleaning up 0" )
                                     if( bDelete ) PUSE( tin0P , *(byteT**)&pbi ) ;
                                 {
                                 while( !bQuitEatingP && !POOP && !bHeaderFound )                                                        // SCAN AHEAD UNTIL FIND A GOOD HEAD
+                                countT cIgnored = sizeof head ;
                                 ZE( countT , cBytesEaten ) ;
                                 ZE( countT , cElementsVerified ) ;
                                 ZE( countT , cMatchedBytes ) ;
@@ -1417,7 +1429,11 @@ TELL( "cleaning up 0" )
                                 ZE( strokeS* , psttd ) ;
                             {
                             else
-                            if( !bBad1 && !bBad2 && !bBad3 && !bBad4 ) cbi = head.cbBooked + sizeof( countT ) ;
+                            }
+                                cbi = head.cbBooked + sizeof( countT ) ;
+                                //etThread.traceF( tin0P , T("tmEatTelemetrySysF good header") ) ;
+                            {
+                            if( !bBad1 && !bBad2 && !bBad3 && !bBad4 )
         
                             boolT bBad4 = !head.cbBooked ;                                                  //20241222@1117: book0C::writeF EDITED TO RETURN IMPOTENT IF !cb1P, SO bBad4 SHOULD NOW BE IMPOSSIBLE
                             boolT bBad3 = head.idFormat - ifcIDfORMAT_BOOK0hEAD ;
@@ -1426,13 +1442,13 @@ TELL( "cleaning up 0" )
 
                             if( bQuitEatingP ) break ;
                             while( !head.finger2 && !bQuitEatingP ) { ++ s ; thirdC::dosSleepWinkIF( tin0P ) ; }
+
                             telemetryBookHeadS& head = *(telemetryBookHeadS*)pbi ;
                             TELL( "parsing head" )
                             //etRock.traceF( tin0P , T("read returned head") ) ;
                         {
                         if( bBookHead )
         
-                        __( cbi - cbiSave ) ; //SHOULD ALWAYS GET THE ENTIRE SHEBANG
                         //etRock.traceF( tin0P , T("tmEatTelemetrySysF: readF returned telemetry") ) ; //U:: TO FIND A BUG
                         TELL( "readF returned telemetry" )
                     {
@@ -1441,10 +1457,10 @@ TELL( "cleaning up 0" )
                         break ;
                         hRead = hReadSave ;
                         cbi = cbiSave ;
-                        TELL( "readF returned null" )
-                        //etRock.traceF( tin0P , T("read returned null") ) ;
+                        TELL(                      "readF returned null or fewer bytes than requested"  )
+                        //etRock.traceF( tin0P , T("readF returned null or fewer bytes than requested") ) ;
                     {
-                    if( !pbi )
+                    if( !pbi || cbi != cbiSave )                                         // SHOULD ALWAYS GET THE ENTIRE SHEBANG ; (20241223@1054: cbi TEST MOVED TO HERE FROM THE "else" BLOCK, WHERE IT WAS CODED TO TRIGGER IMPOTENCE)
     
                     //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 7") ) ;
                     boolT bDelete = bksTelemetrySys.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
@@ -1452,11 +1468,6 @@ TELL( "cleaning up 0" )
                     HANDLEaPPnOTEScOUNTcLASS ch = hRead ;
                     //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 8") ) ;
                     TELL( "waiting to read a new telemetry item" )
-
-                    }
-                        countT foo = 2 ;
-                    {
-                    if( ++ idDebug == 0x90 )
 
                     handleC hReadSave = hRead ;
                     countT cbiSave = cbi ;
