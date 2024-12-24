@@ -10,18 +10,15 @@
 REST
 
 etherC::loafIF( tin0P ) ;
-etThread.traceF( tin0P , T("ok [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-etThread.osProcessF( tin0P , osTid , osPid , rc , idDeathType , tExe , tArg , flPROCESShIRE_null , 0 , 0 , 0 ) ;
-ZE( countT , idDeathType ) ;
-ZE( countT , rc    ) ;
-ZE( countT , osPid ) ;
-ZE( countT , osTid ) ;
+etThread.delF( tin0P , psttHash ) ;
+etThread.traceF( tin0P , T("[hmac]:    ")+T(psttHash) ) ;
+etThread.openSslHmacF( tin0P , psttHash , "abcd" , 4 , "efgh" , 4 ) ; ___( psttHash ) ;
+ZE( strokeS* , psttHash ) ;
 
-TN( tArg , "/c openssl sha1 -hmac 4wUYzjZJ5QeeSGdiKIc0S8Id4FF4FbmAomMyVzHBvNzYnuY2 d:\\ideafarm.home.1\\tmp\\87800015\\1.raw.ttt > d:\\ideafarm.home.1\\tmp\\87800015\\2.result.ttt" ) ;
-TN( tExe , "cmd.exe" ) ;
+static adamGlobal1S*& pag1 = ((tin123S&)tin0P).pag1 ;
 
-//countT rc = system( "openssl sha1 -hmac 4wUYzjZJ5QeeSGdiKIc0S8Id4FF4FbmAomMyVzHBvNzYnuY2 d:\\ideafarm.home.1\\tmp\\87800015\\1.raw.ttt > d:\\ideafarm.home.1\\tmp\\87800015\\2.result.ttt" ) ;
+static tin123S& tin123P = (tin123S&)tin0P ;
 
 TODO
 

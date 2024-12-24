@@ -297,6 +297,8 @@ voidT openSslTls_peekF_o1P3b_GF( tin0S& tin0P , etherC& etherP , soulC& slP , co
 
 voidT openSslTls_waveByeF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
+voidT openSslHmacF_o4P2P32P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+
 voidT sockBindF_ob3d3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT sockCancelF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;

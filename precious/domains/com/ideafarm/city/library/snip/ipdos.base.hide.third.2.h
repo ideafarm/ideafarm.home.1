@@ -6317,6 +6317,7 @@ it is illegal to refer to this symbol in the definition of an adam
         #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\include\openssl\ssl.h"
         #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\include\openssl\err.h"
         #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\include\openssl\rsa.h"
+        #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\include\openssl\hmac.h"
 
         // *****************************************************************************************************************************************
         // *****************************************************************************************************************************************
@@ -32287,6 +32288,8 @@ private :
   static voidT openSslTls_waveByeIF( tin0S& tin0P , const handleC& hWrapperP ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011a8.thirdc.openssl_shutdownif!||
 
+  static osTextT* openSslHmac_hmacIF( tin0S& tin0P , const osTextT* postSecretP , countT costSecretP , const osTextT* postRawP , countT costRawP , osTextT* postScratchP , countT* pCostScratchP ) ;
+
 /* commands: sockets */
 
  /* birth , death */
@@ -35662,6 +35665,8 @@ examples
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021f4.etherc.openssl_peekf!||
   voidT openSslTls_waveByeF( tin0S& tin0P , const handleC& hWrapperP ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021de.etherc.openssl_shutdownf!||
+
+  voidT openSslHmacF( tin0S& tin0P , strokeS*& psttP , const osTextT* postSecretP , countT costSecretP , const osTextT* postRawP , countT costRawP ) ;
 
 /* commands: sockets */
 
@@ -48971,6 +48976,9 @@ i am nonconformant in that all of my member function definitions are in a single
             case ifcIDeXCEPTIONoPENsSL_wrapperFreeIF         : { flagsOpenSslFails |= flSOCKETcoPENsSLfAILS_wrapperFreeIF                ; break ; }
             case ifcIDeXCEPTIONoPENsSL_errorCodeIF           : { flagsOpenSslFails |= flSOCKETcoPENsSLfAILS_errorCodeIF                  ; break ; }
             case ifcIDeXCEPTIONoPENsSL_keyPairIF             : { flagsOpenSslFails |= flSOCKETcoPENsSLfAILS_keyPairIF                    ; break ; }
+            case ifcIDeXCEPTIONoPENsSL_hmacIF_1              : { flagsOpenSslFails |= flSOCKETcoPENsSLfAILS_hmacIF_1                     ; break ; }
+            case ifcIDeXCEPTIONoPENsSL_hmacIF_2              : { flagsOpenSslFails |= flSOCKETcoPENsSLfAILS_hmacIF_2                     ; break ; }
+            case ifcIDeXCEPTIONoPENsSL_hmacIF_3              : { flagsOpenSslFails |= flSOCKETcoPENsSLfAILS_hmacIF_3                     ; break ; }
         }
     }
     inline armSslC( tin0S& tin0P , flagsT& flagsOpenSslFailsP ) :

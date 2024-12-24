@@ -23639,21 +23639,21 @@ examples
 //CODE THAT USES *((tin1S&)tin0P).pEtScratch IS REQUIRED TO ALWAYS CHECK FOR IMPOTENCE AND CALL POOPR OR POOPRqUIET
 
 #define IFsCRATCHoK                                                                                                                                                                  \
-                                                                                                                                                                                   \
-        if( ((tin1S&)tin0P).pEtScratch )                                                                                                                                           \
-        {                                                                                                                                                                          \
-            SCOOPS                                                                                                                                                                 \
-            if( POOP )                                                                                                                                                             \
-            {                                                                                                                                                                      \
+                                                                                                                                                                                     \
+        if( ((tin1S&)tin0P).pEtScratch )                                                                                                                                             \
+        {                                                                                                                                                                            \
+            SCOOPS                                                                                                                                                                   \
+            if( POOP )                                                                                                                                                               \
+            {                                                                                                                                                                        \
                 CONoUT5( "IFsCRATCHoK: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
                 CONoUTcALLnEST( "IFsCRATCHoK: scratch impotence on entry" ) ;                                                                                                        \
                 LOGrAW5( "IFsCRATCHoK: fatal coding error: scratch impotence was not reset [idiFile,idLine]:    " , POOP.idiFileGruntF() , "    " , POOP.idLineGruntF() , "\r\n" ) ; \
                 LOGcALLnEST( "IFsCRATCHoK: scratch impotence on entry" ) ;                                                                                                           \
                 BLAMMOiD( ( POOP.idiFileGruntF() & 0xfffff000 ) | POOP.idLineGruntF() & 0x00000fff ) ;                                                                               \
-            }                                                                                                                                                                      \
-        }                                                                                                                                                                          \
-                                                                                                                                                                                   \
-        if( !((tin1S&)tin0P).pEtScratch ) __1                                                                                                                                      \
+            }                                                                                                                                                                        \
+        }                                                                                                                                                                            \
+                                                                                                                                                                                     \
+        if( !((tin1S&)tin0P).pEtScratch ) __1                                                                                                                                        \
         else
 
 
@@ -51801,6 +51801,9 @@ values at and above 00ff are used by spouseC to encode literal byte values
 #define ifcIDeXCEPTIONoPENsSL_decryptIF                     0x80000013
 #define ifcIDeXCEPTIONoPENsSL_getPublicKeyBase64IF          0x80000014
 #define ifcIDeXCEPTIONoPENsSL_getPrivateKeyBase64IF         0x80000015
+#define ifcIDeXCEPTIONoPENsSL_hmacIF_1                      0x80000016
+#define ifcIDeXCEPTIONoPENsSL_hmacIF_2                      0x80000017
+#define ifcIDeXCEPTIONoPENsSL_hmacIF_3                      0x80000018
 /*3*/                                                               
 
 
@@ -51869,6 +51872,9 @@ values at and above 00ff are used by spouseC to encode literal byte values
 #define flSOCKETcoPENsSLfAILS_wrapperFreeIF                0xe0040013
 #define flSOCKETcoPENsSLfAILS_errorCodeIF                  0xe0080013
 #define flSOCKETcoPENsSLfAILS_keyPairIF                    0xe0100013
+#define flSOCKETcoPENsSLfAILS_hmacIF_1                     0xe0200013
+#define flSOCKETcoPENsSLfAILS_hmacIF_2                     0xe0400013
+#define flSOCKETcoPENsSLfAILS_hmacIF_3                     0xe0800013
 /*3*/
 #define flSOCKETcoPENsSLfAILS_null    0xe0000013
 

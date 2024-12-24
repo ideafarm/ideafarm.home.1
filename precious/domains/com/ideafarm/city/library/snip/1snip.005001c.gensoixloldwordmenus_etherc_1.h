@@ -147,6 +147,7 @@
     "    . openSslTls_readF_o1@3b       . ?? ")+T(postName)+T("\r\n"
     "    . openSslTls_peekF_o1@3b       . ?? ")+T(postName)+T("\r\n"
     "    . openSslTls_waveByeF_ob       . ?? ")+T(postName)+T("\r\n"
+    "    . openSslHmacF_o4@2@32@3       . ?? ")+T(postName)+T("\r\n"
     "    . sockBindF_ob3d3       . ?? ")+T(postName)+T("\r\n"
     "    . sockCancelF_ob       . ?? ")+T(postName)+T("\r\n"
     "    . sockOptionBroadcastF_ob6       . ?? ")+T(postName)+T("\r\n"
