@@ -48,19 +48,15 @@
         if( pbP && F(flagsP) & flBOOKScrEAD_INCREMENTrEFERENCEcOUNTiF && !bCallerMustDelete )    //20181210@1318: ADDED "&& !bCallerMustDelete" BECAUSE I AM RETURNING A pbP THAT POINTS TO A poolC DROP RATHER THAN INTO A bookC INSTANCE
 
         }
-            (*((tin1S&)tin0P).pEther)( tin0P , pStkSnip ) ;  //20181210@1316: ADDED WITHOUT ANALYSIS
-
             }
                 PUSE( tin0P , pbw ) ;
-                *pStkSnip >> pbw ;
+                stSnip >> pbw ;
                 ZE( byteT* , pbw ) ;
             {
-            while( *pStkSnip )
+            while( stSnip )
         {
         else
         }
-            (*((tin1S&)tin0P).pEther)( tin0P , pStkSnip ) ;
-
             }
                 *pbo = 0 ;
                 if( pbzSnip && cbzSnip ) { thirdC::c_memcpyIF( tin0P , pbo , pbzSnip , cbzSnip ) ; pbo += cbzSnip ; }
@@ -68,10 +64,10 @@
                 }
                     PUSE( tin0P , pbw ) ;
                     thirdC::c_memcpyIF( tin0P , pbo , pbw + sizeof( countT ) , *(countT*)pbw ) ; pbo += *(countT*)pbw ;
-                    *pStkSnip >> pbw ;
+                    stSnip >> pbw ;
                     ZE( byteT* , pbw ) ;
                 {
-                while( *pStkSnip )
+                while( stSnip )
                 byteT* pbo = (byteT*)pbP ;
             {
             if( !POOP )
@@ -84,7 +80,7 @@
             while( ~hWalk ) ;
             }
                 cbaAll += *(countT*)pbw ;
-                byteT* pbw = (byteT*)pStkSnip->downF( tin0P , hWalk ) ;
+                byteT* pbw = (byteT*)stSnip.downF( tin0P , hWalk ) ;
             {
             do
             countT cbaAll = cbzSnip ;
@@ -100,7 +96,7 @@
         {
         else if( !bCallerMustDelete )
         if( POOP ) ;
-        bCallerMustDelete = !!pStkSnip ;
+        bCallerMustDelete = stSnip ;
 
         }
             if( bNullRead ) break ;
@@ -130,7 +126,7 @@
 
                         }
                             }
-                                *pStkSnip << pbw ; pbw = 0 ;
+                                stSnip << pbw ; pbw = 0 ;
                                 thirdC::c_memcpyIF( tin0P , pbw + sizeof( countT ) , pbzSnip , cbzSnip ) ;
                                 *(countT*)pbw = cbzSnip ;
                             {
@@ -142,8 +138,7 @@
                         {
                         if( !POOP )
 
-                        __Z( pStkSnip ) ;
-                        if( !pStkSnip ) (*((tin1S&)tin0P).pEther)( tin0P , pStkSnip , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_ALLOWmULTIPLEuNSERIALIZED | flSTACKc_XRAY , ifcSTACKtYPE_PTR_byteT ) ; ___( pStkSnip ) ;
+                        if( !bStackUsed ) bStackUsed = 1 ;
                         __Z( cbzSnip ) ;
                     {
                     if( pbzSnip )
@@ -361,7 +356,8 @@
         {                                                                                                                                       //20140508@1952: LOOP NOW ALSO IS USED TO BLOCK IF I WANT TO CHANGE BOOKS AND THE CURRENT BOOK HAS A PENDING SMART POINTER
         while( ( cbToDo || bNullRead ) && ~handleP )                                                                                            // THE ONLY PURPOSE OF LOOPING IS TO OBTAIN A BLOB SPANNED OVER MULTIPLE BOOKS; WILL BREAK OUT OF LOOP IF F(flagsP) & flBOOKScrEAD_CURRENTbOOKoNLY
         ZE( boolT , bBecameMaster ) ;
-        ZE( stackC* , pStkSnip ) ; //AFTER LOOP, WILL CONTAIN PRIOR SNIPS RETRIEVED, IF ANY
+        ZE( boolT , bStackUsed ) ;
+        stackC stSnip( tin0P , *((tin1S&)tin0P).pEther , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY , ifcSTACKtYPE_PTR_byteT ) ;
         ZE( countT , cbzSnip ) ;
         ZE( const byteT* , pbzSnip ) ; //AFTER LOOP, WILL CONTAIN THE LATH SNIP RETRIEVED
         countT cbToDo = cbP ;
