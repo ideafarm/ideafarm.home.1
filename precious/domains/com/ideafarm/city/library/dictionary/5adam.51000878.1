@@ -131,7 +131,7 @@ DONE( tmWorkF )
                                         "You have been invited to join the following spaces and rooms at The IdeaFarm (tm) College of Imagination Science:\r\n\r\n")
                                         "    [backup codes]:  ")+T("        (You will receive these during your first login, but hopefully will never need them.)\r\n\r\n"
                                         "    [secret phrase]: ")+T("        (You will make this up during your first login and enter it each time you log in.)\r\n"
-                                        "The following credentials are optional but recommended:\r\n\r\n"
+                                        "Your account will also be secured by the following credentials:\r\n\r\n"
                                         "    [password]:      ")+tNewPassword+T("        (Be sure to change this right away!)\r\n\r\n"
                                         "    [username]:      ")+tNewUserName+T("\r\n"
                                         "Here are your credentials.  You can use them immediately to log in:\r\n\r\n"
@@ -1130,7 +1130,7 @@ DONE( tmWorkF )
                                     }
                                         }
                                             tBodyInvite = T("{\"user_id\": \"")+tNewUserName+T("\"}\r\n") ;
-                                            tNewUserName      = T("@")+tNewUserNameShort+T(":ideafarm.com") ;
+                                            tNewUserName      = /*T("@")+*/tNewUserNameShort/*+T(":ideafarm.com")*/ ;       // GIVE ONLY THE SHORT USERNAME BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
                                             tNewUserNameShort =  T("a.")+TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ;       // [0-9,a-z]
                                             countT idNewUser = 1 + incv02AM( idNewUserLath ) ;
 
