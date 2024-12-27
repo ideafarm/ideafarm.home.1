@@ -1207,11 +1207,11 @@ DONE( tmWorkF )
                             {
                             )
                                 || age < 13
-                              //|| etThread.strCompareF( tin0P , psttValueLive             , tFalse             )      //THIS LINE WOULD CAUSE LIVE TRANSACTIONS TO BE POSTPONED
-                                || etThread.strCompareF( tin0P , psttValueStripeNoticeType , tCorrectNoticeType )
-                                || etThread.strCompareF( tin0P , psttValueApiVersion       , tCorrectApiVersion )
-                                || etThread.strCompareF( tin0P , psttVersion               , tCorrectVersion    )
-                                   etThread.strCompareF( tin0P , psttOrderType             , tCorrectOrderType  )
+                              //|| etThread.strCompareF( tin0P , psttValueLive             , tFalse                   )      //THIS LINE WOULD CAUSE LIVE TRANSACTIONS TO BE POSTPONED
+                                || etThread.strCompareF( tin0P , psttValueStripeNoticeType , tCorrectStripeNoticeType )
+                                || etThread.strCompareF( tin0P , psttValueApiVersion       , tCorrectApiVersion       )
+                                || etThread.strCompareF( tin0P , psttVersion               , tCorrectVersion          )
+                                   etThread.strCompareF( tin0P , psttOrderType             , tCorrectOrderType        )
                             (
                             if
                             const sCountT age = etThread.strDigitsToSCountF( tin0P , psttValueAge , 0xa , 1 ) ;
@@ -1360,17 +1360,17 @@ DONE( tmWorkF )
     etThread.diskMakeDirIfNeededF( tin0P , tFolderDone      ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tFolderIncoming  ) ;
 
-    TN( tn                 , ""                           ) ;
-    TN( tb4                , "    "                       ) ;
-    TN( tcrlf              , "\r\n"                       ) ;
-    TN( tCorrectNoticeType , "checkout.session.completed" ) ;
-    TN( tCorrectApiVersion , "2023-10-16"                 ) ;
-    TN( tFalse             , "false"                      ) ;
-    TN( tTrue              , "true"                       ) ;
-    TN( tFolderAbandoned   , ""                           ) ; tFolderAbandoned = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.3.abandoned/") ;
-    TN( tFolderToRetry     , ""                           ) ; tFolderToRetry   = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.2.to.retry/" ) ;
-    TN( tFolderDone        , ""                           ) ; tFolderDone      = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.4.done/"     ) ;
-    TN( tFolderIncoming    , ""                           ) ; tFolderIncoming  = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.1.incoming/" ) ;
+    TN( tn                       , ""                              ) ;
+    TN( tb4                      , "    "                          ) ;
+    TN( tcrlf                    , "\r\n"                          ) ;
+    TN( tCorrectStripeNoticeType , "customer.subscription.created" ) ;
+    TN( tCorrectApiVersion       , "2023-10-16"                    ) ;
+    TN( tFalse                   , "false"                         ) ;
+    TN( tTrue                    , "true"                          ) ;
+    TN( tFolderAbandoned         , ""                              ) ; tFolderAbandoned = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.3.abandoned/") ;
+    TN( tFolderToRetry           , ""                              ) ; tFolderToRetry   = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.2.to.retry/" ) ;
+    TN( tFolderDone              , ""                              ) ; tFolderDone      = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.4.done/"     ) ;
+    TN( tFolderIncoming          , ""                              ) ; tFolderIncoming  = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.1.incoming/" ) ;
     _IO_
 {
 if( pTaskP )
