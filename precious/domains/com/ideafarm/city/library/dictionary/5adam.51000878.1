@@ -60,22 +60,22 @@ DONE( tmWorkF )
 
                     }
                         }
-                            etThread.delF( tin0P , psttValueLive            ) ;
-                            etThread.delF( tin0P , psttValueAmountDiscount  ) ;
-                            etThread.delF( tin0P , psttValueIdSubscription  ) ;
-                            etThread.delF( tin0P , psttValueMode            ) ;
-                            etThread.delF( tin0P , psttValueName            ) ;
-                            etThread.delF( tin0P , psttValueEmail           ) ;
-                            etThread.delF( tin0P , psttValuePostalCode      ) ;
-                            etThread.delF( tin0P , psttValueCountry         ) ;
-                            etThread.delF( tin0P , psttValueHawker          ) ;
-                            etThread.delF( tin0P , psttValueAge             ) ;
-                            etThread.delF( tin0P , psttValueAmountTotal     ) ;
-                            etThread.delF( tin0P , psttValueAmountSubtotal  ) ;
-                            etThread.delF( tin0P , psttValueApiVersion      ) ;
-                            etThread.delF( tin0P , psttValueNoticeType      ) ;
-                            etThread.delF( tin0P , psttVersion              ) ;
-                            etThread.delF( tin0P , psttType                 ) ;
+                            etThread.delF( tin0P , psttValueLive             ) ;
+                            etThread.delF( tin0P , psttValueAmountDiscount   ) ;
+                            etThread.delF( tin0P , psttValueIdSubscription   ) ;
+                            etThread.delF( tin0P , psttValueMode             ) ;
+                            etThread.delF( tin0P , psttValueName             ) ;
+                            etThread.delF( tin0P , psttValueEmail            ) ;
+                            etThread.delF( tin0P , psttValuePostalCode       ) ;
+                            etThread.delF( tin0P , psttValueCountry          ) ;
+                            etThread.delF( tin0P , psttValueHawker           ) ;
+                            etThread.delF( tin0P , psttValueAge              ) ;
+                            etThread.delF( tin0P , psttValueAmountTotal      ) ;
+                            etThread.delF( tin0P , psttValueAmountSubtotal   ) ;
+                            etThread.delF( tin0P , psttValueApiVersion       ) ;
+                            etThread.delF( tin0P , psttValueStripeNoticeType ) ;
+                            etThread.delF( tin0P , psttVersion               ) ;
+                            etThread.delF( tin0P , psttOrderType             ) ;
                             }
                                 }
                                     etThread.traceF( tin0P , T("debug / 0") ) ;
@@ -1169,15 +1169,15 @@ DONE( tmWorkF )
                                 {
                                 while( !ether && !POOP && !bRegistered )     //WILL continue UNTIL SUCCESSFULLY REGISTER A NEW USERNAME ; THIS CAUSES idNewUser TO INCREMENT UNTIL IT IS A VALUE THAT HAS NOT BEEN REGISTERED
                                 ZE( boolT , bRegistered ) ;
-                                TN( tNewPassword , "" ) ;
-                                TN( tNewUserName , "" ) ;
-                                TN( tNewUserNameShort , "" ) ;
-                                TN( tValueError3         , ""                     ) ;
-                                TN( tValueErrorCode3     , ""                     ) ;
-                                TN( tValueError2         , ""                     ) ;
-                                TN( tValueErrorCode2     , ""                     ) ;
-                                TN( tValueError1         , ""                     ) ;
-                                TN( tValueErrorCode1     , ""                     ) ;
+                                TN( tNewPassword         , "" ) ;
+                                TN( tNewUserName         , "" ) ;
+                                TN( tNewUserNameShort    , "" ) ;
+                                TN( tValueError3         , "" ) ;
+                                TN( tValueErrorCode3     , "" ) ;
+                                TN( tValueError2         , "" ) ;
+                                TN( tValueErrorCode2     , "" ) ;
+                                TN( tValueError1         , "" ) ;
+                                TN( tValueErrorCode1     , "" ) ;
                                 boolT bFail3 = 1 ;
                                 boolT bFail2 = 1 ;
                                 boolT bFail1 = 1 ;
@@ -1192,16 +1192,16 @@ DONE( tmWorkF )
                             {
                             )
                                 || age < 13
-                              //|| etThread.strCompareF( tin0P , psttValueLive       , tFalse                          )      //THIS LINE WOULD CAUSE LIVE TRANSACTIONS TO BE POSTPONED
-                                || etThread.strCompareF( tin0P , psttValueNoticeType , tCorrectNoticeType              )
-                                || etThread.strCompareF( tin0P , psttValueApiVersion , tCorrectApiVersion              )
-                                || etThread.strCompareF( tin0P , psttVersion         , tCorrectVersion                 )
-                                   etThread.strCompareF( tin0P , psttType            , tCorrectType                    )
+                              //|| etThread.strCompareF( tin0P , psttValueLive             , tFalse             )      //THIS LINE WOULD CAUSE LIVE TRANSACTIONS TO BE POSTPONED
+                                || etThread.strCompareF( tin0P , psttValueStripeNoticeType , tCorrectNoticeType )
+                                || etThread.strCompareF( tin0P , psttValueApiVersion       , tCorrectApiVersion )
+                                || etThread.strCompareF( tin0P , psttVersion               , tCorrectVersion    )
+                                   etThread.strCompareF( tin0P , psttOrderType             , tCorrectOrderType  )
                             (
                             if
                             const sCountT age = etThread.strDigitsToSCountF( tin0P , psttValueAge , 0xa , 1 ) ;
                             TN( tCorrectVersion , "1" ) ;
-                            TN( tCorrectType    , "subscription.creation" ) ;
+                            TN( tCorrectOrderType    , "subscription.creation" ) ;
 
                             ZE( strokeS* , psttValueAmountDiscount   ) ; sIn >> psttValueAmountDiscount   ; ___( psttValueAmountDiscount   ) ; etThread.traceF( tin0P , T("[ValueAmountDiscount   ]:    ")+T(psttValueAmountDiscount   ) ) ;
                             ZE( strokeS* , psttValueIdSubscription   ) ; sIn >> psttValueIdSubscription   ; ___( psttValueIdSubscription   ) ; etThread.traceF( tin0P , T("[ValueIdSubscription   ]:    ")+T(psttValueIdSubscription   ) ) ;
