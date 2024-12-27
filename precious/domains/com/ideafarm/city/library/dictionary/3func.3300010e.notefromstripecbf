@@ -31,13 +31,14 @@
 
     }
         etThread.delF( tin0P , psttFile ) ;
-        etThread.boxPutUniqueF( tin0P , psttFile , tFileOrder , WS( sOut ) ) ;
+        etThread.boxPutUniqueF( tin0P , psttFile , tLong , WS( sOut ) ) ;
         ZE( strokeS* , psttFile ) ;
 
-        ) ;
-            : "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.1.incoming/soul.subscription.creation.live"
-            ? "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.1.incoming/soul.subscription.creation.test"
-        TN( tFileOrder , "" ) ; tFileOrder = T( !etThread.strCompareF( tin0P , tValueLive , T("false") )
+        TN( tLong , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.1.incoming/" ) ; tFileOrder += tShort ;
+
+        TN( tShort , "soil." ) ; tShort += T(bLive?"soul.event.live.":"soul.event.test.")+tValueStripeNoticeType ;
+
+        boolT bLive = !etThread.strCompareF( tin0P , tValueLive , T("true") ) ;
 
         }
             sOut << (strokeS*)tValueAmountDiscount   ;
@@ -57,12 +58,12 @@
             sOut << (strokeS*)tValueLive             ;
 
             sOut << (strokeS*)tVersion               ;
-            sOut << (strokeS*)tOrderType             ;
+            sOut << (strokeS*)tEvent                 ;
         {
         soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 
         TN( tVersion   , "1" ) ;
-        TN( tOrderType , "subscription.creation" ) ;
+        TN( tEvent , "stripe.notice" ) ;
     {
 
     }
@@ -74,7 +75,7 @@
         
                 }
                     }
-                        etThread.traceF( tin0P , T("********    ") + *pptKey[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        etThread.traceF( tin0P , T("********    ") + *pptKey[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_f ) ;
 
                         etThread.delF( tin0P , psttt ) ;
                         *pptValue[ offe ] = T(psttt) ;
