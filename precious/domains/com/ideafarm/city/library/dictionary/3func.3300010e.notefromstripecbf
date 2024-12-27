@@ -35,8 +35,8 @@
         ZE( strokeS* , psttFile ) ;
 
         ) ;
-            : "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.1.incoming/soul.order.live"
-            ? "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.1.incoming/soul.order.test"
+            : "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.1.incoming/soul.subscription.creation.live"
+            ? "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/orders.1.incoming/soul.subscription.creation.test"
         TN( tFileOrder , "" ) ; tFileOrder = T( !etThread.strCompareF( tin0P , tValueLive , T("false") )
 
         }
@@ -53,6 +53,7 @@
             sOut << (strokeS*)tValueAmountTotal    ;
             sOut << (strokeS*)tValueAmountSubtotal ;
             sOut << (strokeS*)tValueApiVersion     ;
+            sOut << (strokeS*)tValueIdProduct      ;
             sOut << (strokeS*)tValueNoticeType     ;
             sOut << (strokeS*)tVersion             ;
             sOut << (strokeS*)tType                ;
@@ -60,7 +61,7 @@
         soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 
         TN( tVersion , "1" ) ;
-        TN( tType    , "order" ) ;
+        TN( tType    , "subscription.creation" ) ;
     {
 
     }
@@ -87,8 +88,8 @@
                 countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
                 countT cKeys  = sizeof pptKey  / sizeof pptKey[  0 ] ;
         
-                //etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                //etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_f ) ;
+                etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_f ) ;
         
                 strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                 psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -102,7 +103,6 @@
     
         ;
         }
-            &tKeyLive           ,
             &tKeyAmountDiscount ,
             &tKeyIdSubscription ,
             &tKeyMode           ,
@@ -115,11 +115,12 @@
             &tKeyAmountTotal    ,
             &tKeyAmountSubtotal ,
             &tKeyApiVersion     ,
+            &tKeyIdProduct      ,
             &tKeyNoticeType     ,
+            &tKeyLive           ,
         {
         textC* pptKey[] =
         
-        TN( tKeyLive           , "\"livemode\"/"                                                              ) ;
         TN( tKeyAmountDiscount , "\"data\"/\"object\"/\"total_details\"/\"amount_discount\"/"                 ) ;
         TN( tKeyIdSubscription , "\"data\"/\"object\"/\"subscription\"/"                                      ) ;
         TN( tKeyMode           , "\"data\"/\"object\"/\"mode\"/"                                              ) ;
@@ -132,11 +133,20 @@
         TN( tKeyAmountTotal    , "\"data\"/\"object\"/\"amount_total\"/"                                      ) ;
         TN( tKeyAmountSubtotal , "\"data\"/\"object\"/\"amount_subtotal\"/"                                   ) ;
         TN( tKeyApiVersion     , "\"api_version\"/"                                                           ) ;
-        TN( tKeyNoticeType     , "\"type\"/" ) ;
+        TN( tKeyIdProduct      , "\"data\"/\"object\"/\"plan\"/\"product\"/"                                  ) ;
+        TN( tKeyNoticeType     , "\"type\"/"                                                                  ) ;
+        TN( tKeyLive           , "\"livemode\"/"                                                              ) ;
+
+        // 
+        // 
+        // 
+        // "data" / "object" / "plan" / "product" / : "prod_RJ1XOIUO9htwyX"
+        // "type" / : "customer.subscription.created"
+        //
+        // FOR THE STUDENT REGISTRATION SUBSCRIPTION
 
         ;
         }
-            &tValueLive           ,
             &tValueAmountDiscount ,
             &tValueIdSubscription ,
             &tValueMode           ,
@@ -149,11 +159,12 @@
             &tValueAmountTotal    ,
             &tValueAmountSubtotal ,
             &tValueApiVersion     ,
+            &tValueIdProduct      ,
             &tValueNoticeType     ,
+            &tValueLive           ,
         {
         textC* pptValue[] =
     {
-    TN( tValueLive           , "" ) ;
     TN( tValueAmountDiscount , "" ) ;
     TN( tValueIdSubscription , "" ) ;
     TN( tValueMode           , "" ) ;
@@ -166,7 +177,9 @@
     TN( tValueAmountTotal    , "" ) ;
     TN( tValueAmountSubtotal , "" ) ;
     TN( tValueApiVersion     , "" ) ;
+    TN( tValueIdProduct      , "" ) ;
     TN( tValueNoticeType     , "" ) ;
+    TN( tValueLive           , "" ) ;
     
     __Z( pSwPathValue ) ;
     etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postBodyP , flSTACKc_null ) ;
