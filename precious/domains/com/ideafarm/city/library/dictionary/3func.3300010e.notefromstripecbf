@@ -40,29 +40,29 @@
         TN( tFileOrder , "" ) ; tFileOrder = T( !etThread.strCompareF( tin0P , tValueLive , T("false") )
 
         }
-            sOut << (strokeS*)tValueLive           ;
-            sOut << (strokeS*)tValueAmountDiscount ;
-            sOut << (strokeS*)tValueIdSubscription ;
-            sOut << (strokeS*)tValueMode           ;
-            sOut << (strokeS*)tValueName           ;
-            sOut << (strokeS*)tValueEmail          ;
-            sOut << (strokeS*)tValuePostalCode     ;
-            sOut << (strokeS*)tValueCountry        ;
-            sOut << (strokeS*)tValueHawker         ;
-            sOut << (strokeS*)tValueAge            ;
-            sOut << (strokeS*)tValueAmountTotal    ;
-            sOut << (strokeS*)tValueAmountSubtotal ;
-            sOut << (strokeS*)tValueApiVersion     ;
-            sOut << (strokeS*)tValueIdProduct      ;
-            sOut << (strokeS*)tValueNoticeType     ;
-            sOut << (strokeS*)tVersion             ;
-            sOut << (strokeS*)tValueIdProduct      ;
-            sOut << (strokeS*)tType                ;
+            sOut << (strokeS*)tValueAmountDiscount   ;
+            sOut << (strokeS*)tValueIdSubscription   ;
+            sOut << (strokeS*)tValueMode             ;
+            sOut << (strokeS*)tValueName             ;
+            sOut << (strokeS*)tValueEmail            ;
+            sOut << (strokeS*)tValuePostalCode       ;
+            sOut << (strokeS*)tValueCountry          ;
+            sOut << (strokeS*)tValueHawker           ;
+            sOut << (strokeS*)tValueAge              ;
+            sOut << (strokeS*)tValueAmountTotal      ;
+            sOut << (strokeS*)tValueAmountSubtotal   ;
+            sOut << (strokeS*)tValueApiVersion       ;
+            sOut << (strokeS*)tValueIdProduct        ;
+            sOut << (strokeS*)tValueStripeNoticeType ;
+            sOut << (strokeS*)tValueLive             ;
+
+            sOut << (strokeS*)tVersion               ;
+            sOut << (strokeS*)tOrderType             ;
         {
         soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 
-        TN( tVersion , "1" ) ;
-        TN( tType    , "subscription.creation" ) ;
+        TN( tVersion   , "1" ) ;
+        TN( tOrderType , "subscription.creation" ) ;
     {
 
     }
@@ -104,39 +104,39 @@
     
         ;
         }
-            &tKeyAmountDiscount ,
-            &tKeyIdSubscription ,
-            &tKeyMode           ,
-            &tKeyName           ,
-            &tKeyEmail          ,
-            &tKeyPostalCode     ,
-            &tKeyCountry        ,
-            &tKeyHawker         ,
-            &tKeyAge            ,
-            &tKeyAmountTotal    ,
-            &tKeyAmountSubtotal ,
-            &tKeyApiVersion     ,
-            &tKeyIdProduct      ,
-            &tKeyNoticeType     ,
-            &tKeyLive           ,
+            &tKeyAmountDiscount   ,
+            &tKeyIdSubscription   ,
+            &tKeyMode             ,
+            &tKeyName             ,
+            &tKeyEmail            ,
+            &tKeyPostalCode       ,
+            &tKeyCountry          ,
+            &tKeyHawker           ,
+            &tKeyAge              ,
+            &tKeyAmountTotal      ,
+            &tKeyAmountSubtotal   ,
+            &tKeyApiVersion       ,
+            &tKeyIdProduct        ,
+            &tKeyStripeNoticeType ,
+            &tKeyLive             ,
         {
         textC* pptKey[] =
         
-        TN( tKeyAmountDiscount , "\"data\"/\"object\"/\"total_details\"/\"amount_discount\"/"                 ) ;
-        TN( tKeyIdSubscription , "\"data\"/\"object\"/\"subscription\"/"                                      ) ;
-        TN( tKeyMode           , "\"data\"/\"object\"/\"mode\"/"                                              ) ;
-        TN( tKeyName           , "\"data\"/\"object\"/\"customer_details\"/\"name\"/"                         ) ;
-        TN( tKeyEmail          , "\"data\"/\"object\"/\"customer_details\"/\"email\"/"                        ) ;
-        TN( tKeyPostalCode     , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"postal_code\"/"      ) ;
-        TN( tKeyCountry        , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"country\"/"          ) ;
-        TN( tKeyHawker         , "\"data\"/\"object\"/\"custom_fields\"/item.00000002/\"text\"/\"value\"/"    ) ;
-        TN( tKeyAge            , "\"data\"/\"object\"/\"custom_fields\"/item.00000001/\"numeric\"/\"value\"/" ) ;
-        TN( tKeyAmountTotal    , "\"data\"/\"object\"/\"amount_total\"/"                                      ) ;
-        TN( tKeyAmountSubtotal , "\"data\"/\"object\"/\"amount_subtotal\"/"                                   ) ;
-        TN( tKeyApiVersion     , "\"api_version\"/"                                                           ) ;
-        TN( tKeyIdProduct      , "\"data\"/\"object\"/\"plan\"/\"product\"/"                                  ) ;
-        TN( tKeyNoticeType     , "\"type\"/"                                                                  ) ;
-        TN( tKeyLive           , "\"livemode\"/"                                                              ) ;
+        TN( tKeyAmountDiscount   , "\"data\"/\"object\"/\"total_details\"/\"amount_discount\"/"                 ) ;
+        TN( tKeyIdSubscription   , "\"data\"/\"object\"/\"subscription\"/"                                      ) ;
+        TN( tKeyMode             , "\"data\"/\"object\"/\"mode\"/"                                              ) ;
+        TN( tKeyName             , "\"data\"/\"object\"/\"customer_details\"/\"name\"/"                         ) ;
+        TN( tKeyEmail            , "\"data\"/\"object\"/\"customer_details\"/\"email\"/"                        ) ;
+        TN( tKeyPostalCode       , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"postal_code\"/"      ) ;
+        TN( tKeyCountry          , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"country\"/"          ) ;
+        TN( tKeyHawker           , "\"data\"/\"object\"/\"custom_fields\"/item.00000002/\"text\"/\"value\"/"    ) ;
+        TN( tKeyAge              , "\"data\"/\"object\"/\"custom_fields\"/item.00000001/\"numeric\"/\"value\"/" ) ;
+        TN( tKeyAmountTotal      , "\"data\"/\"object\"/\"amount_total\"/"                                      ) ;
+        TN( tKeyAmountSubtotal   , "\"data\"/\"object\"/\"amount_subtotal\"/"                                   ) ;
+        TN( tKeyApiVersion       , "\"api_version\"/"                                                           ) ;
+        TN( tKeyIdProduct        , "\"data\"/\"object\"/\"plan\"/\"product\"/"                                  ) ;
+        TN( tKeyStripeNoticeType , "\"type\"/"                                                                  ) ;
+        TN( tKeyLive             , "\"livemode\"/"                                                              ) ;
 
         // 
         // 
@@ -148,39 +148,39 @@
 
         ;
         }
-            &tValueAmountDiscount ,
-            &tValueIdSubscription ,
-            &tValueMode           ,
-            &tValueName           ,
-            &tValueEmail          ,
-            &tValuePostalCode     ,
-            &tValueCountry        ,
-            &tValueHawker         ,
-            &tValueAge            ,
-            &tValueAmountTotal    ,
-            &tValueAmountSubtotal ,
-            &tValueApiVersion     ,
-            &tValueIdProduct      ,
-            &tValueNoticeType     ,
-            &tValueLive           ,
+            &tValueAmountDiscount   ,
+            &tValueIdSubscription   ,
+            &tValueMode             ,
+            &tValueName             ,
+            &tValueEmail            ,
+            &tValuePostalCode       ,
+            &tValueCountry          ,
+            &tValueHawker           ,
+            &tValueAge              ,
+            &tValueAmountTotal      ,
+            &tValueAmountSubtotal   ,
+            &tValueApiVersion       ,
+            &tValueIdProduct        ,
+            &tValueStripeNoticeType ,
+            &tValueLive             ,
         {
         textC* pptValue[] =
     {
-    TN( tValueAmountDiscount , "" ) ;
-    TN( tValueIdSubscription , "" ) ;
-    TN( tValueMode           , "" ) ;
-    TN( tValueName           , "" ) ;
-    TN( tValueEmail          , "" ) ;
-    TN( tValuePostalCode     , "" ) ;
-    TN( tValueCountry        , "" ) ;
-    TN( tValueHawker         , "" ) ;
-    TN( tValueAge            , "" ) ;
-    TN( tValueAmountTotal    , "" ) ;
-    TN( tValueAmountSubtotal , "" ) ;
-    TN( tValueApiVersion     , "" ) ;
-    TN( tValueIdProduct      , "" ) ;
-    TN( tValueNoticeType     , "" ) ;
-    TN( tValueLive           , "" ) ;
+    TN( tValueAmountDiscount   , "" ) ;
+    TN( tValueIdSubscription   , "" ) ;
+    TN( tValueMode             , "" ) ;
+    TN( tValueName             , "" ) ;
+    TN( tValueEmail            , "" ) ;
+    TN( tValuePostalCode       , "" ) ;
+    TN( tValueCountry          , "" ) ;
+    TN( tValueHawker           , "" ) ;
+    TN( tValueAge              , "" ) ;
+    TN( tValueAmountTotal      , "" ) ;
+    TN( tValueAmountSubtotal   , "" ) ;
+    TN( tValueApiVersion       , "" ) ;
+    TN( tValueIdProduct        , "" ) ;
+    TN( tValueStripeNoticeType , "" ) ;
+    TN( tValueLive             , "" ) ;
     
     __Z( pSwPathValue ) ;
     etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postBodyP , flSTACKc_null ) ;
