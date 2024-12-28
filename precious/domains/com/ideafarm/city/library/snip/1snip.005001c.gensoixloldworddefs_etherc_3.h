@@ -2402,6 +2402,7 @@ voidT openSslHmacF_o4P2P32P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , co
    SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
     ZE( countT , costRawP ) ;
     if( !POOP ) { slP >> costRawP ; idArgNext ++ ; }
+    if( !POOP ) etherP.openSslHmacF( tin0P , psttP , postSecretP , costSecretP , postRawP , costRawP ) ;
     etherP.delF( tin0P , postRawP ) ;
     etherP.delF( tin0P , postSecretP ) ;
 
