@@ -16,6 +16,7 @@
         {
         _except( EXCEPTION_EXECUTE_HANDLER )
         }
+            postHash[ *pCostScratchP ] = 0 ;
             postHash = (char*)HMAC( EVP_sha1() , postSecretP , costSecretP , postRawP , costRawP , postScratchP , pCostScratchP ) ;
         {
         _try

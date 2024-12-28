@@ -221,7 +221,7 @@ DONE( tmWorkF )
                                             
                                                         else if( postj[ costj ] == '}' ) cNest -- ;
                                                              if( postj[ costj ] == '{' ) cNest ++ ;
-                                            
+
                                                         if( !cbIn ) break ;
                                                         countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
                                                     {
@@ -340,6 +340,8 @@ DONE( tmWorkF )
                                                             else if( postj[ costj ] == '}' ) cNest -- ;
                                                                  if( postj[ costj ] == '{' ) cNest ++ ;
                                                 
+                                                            putchar( postj[ costj ] ) ;
+
                                                             if( !cbIn ) break ;
                                                             countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
                                                         {
@@ -457,6 +459,8 @@ DONE( tmWorkF )
                                                             else if( postj[ costj ] == '}' ) cNest -- ;
                                                                  if( postj[ costj ] == '{' ) cNest ++ ;
                                                 
+                                                            putchar( postj[ costj ] ) ;
+
                                                             if( !cbIn ) break ;
                                                             countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
                                                         {
@@ -573,6 +577,8 @@ DONE( tmWorkF )
                                                             else if( postj[ costj ] == '}' ) cNest -- ;
                                                                  if( postj[ costj ] == '{' ) cNest ++ ;
                                                 
+                                                            putchar( postj[ costj ] ) ;
+
                                                             if( !cbIn ) break ;
                                                             countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
                                                         {
@@ -687,6 +693,8 @@ DONE( tmWorkF )
                                                         else if( postj[ costj ] == '}' ) cNest -- ;
                                                              if( postj[ costj ] == '{' ) cNest ++ ;
                                             
+                                                        putchar( postj[ costj ] ) ;
+
                                                         if( !cbIn ) break ;
                                                         countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
                                                     {
@@ -865,14 +873,18 @@ DONE( tmWorkF )
 
                                                         if( !costj && !cNest ) posth[ costh ++ ] = postj[ costj ] ;
 
+                                                        //etThread.traceF( tin0P , TF3(++idReadLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN,8)+T("    ")+T(post2) ) ;
+                                                        //osTextT post2[] = { postj[ costj ] , 0 } ;
+                                            
                                                         if( !cbIn ) break ;
                                                         countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
                                                     {
                                                     for(;;)
                                                     ZE( countT , cNest ) ;
+                                                    ZE( countT , idReadLath ) ;
 
                                                     ZE( countT , costh ) ;
-                                                    osTextT posth[ TUCK << 0 ] ;
+                                                    osTextT posth[ TUCK << 1 ] ;
                                                     _IO_
                                                 {
                                                 ZE( countT , costj ) ;
@@ -1038,6 +1050,8 @@ DONE( tmWorkF )
 
                                                         else if( postj[ costj ] == '}' ) cNest -- ;
                                                              if( postj[ costj ] == '{' ) cNest ++ ;
+
+                                                        putchar( postj[ costj ] ) ;
 
                                                         if( !cbIn ) break ;
                                                         countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
@@ -1325,18 +1339,19 @@ DONE( tmWorkF )
         ZE( countT  , timeN1 ) ;
 
         }
-            while( !ether && ~hFindOuter && !POOP ) ;
+            while( !ether && ~hFindOuter && !POOP && !cNewEvents ) ;
             }
                 DEL( pInfoOuter ) ;
                 }
                     }
                         }
-                            while( !ether && ~hFindInner && !POOP ) ;
+                            while( !ether && ~hFindInner && !POOP && !cNewEvents ) ;
                             }
-                                DEL( pInfoOuter ) ;
+                                DEL( pInfoInner ) ;
                                 }
                                     }
                                         }
+                                            cNewEvents ++ ;
                                             etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortInner , tFolderRawIncoming+tShortInner ) ;
                                             etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortOuter , tFolderRawIncoming+tShortOuter ) ;
 
@@ -1714,6 +1729,7 @@ DONE( tmWorkF )
             {
             do
             handleC hFindOuter( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            ZE( countT , cNewEvents ) ;
 
             _IO_
         {
