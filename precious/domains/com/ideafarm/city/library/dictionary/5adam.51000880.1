@@ -1244,7 +1244,7 @@ DONE( tmWorkF )
                             POOPR ;
                         {
                         if( POOP )
-                        ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , sIn , tIfoName ) ;
+                        ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , sIn , tIfoName , 1 ) ;
                         SCOOPS
                     {
                     IFsCRATCHoK
@@ -1526,7 +1526,17 @@ DONE( tmWorkF )
                                                                     etThread.delF( tin0P , postRaw ) ;
                                                                     __Z( pSwPathValue ) ;
                                                                     etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postRaw , flSTACKc_null ) ;
-                                                                    etThread.boxGetShadowF( tin0P , postRaw , costRaw , pInfoInner->psttIfoName ) ; ___( postRaw ) ;
+                                                                    }
+                                                                        }
+                                                                            continue ;
+                                                                            etThread.traceF( tin0P , T(" skipping file name that no longer exists [long]")+T(pInfoInner->psttIfoName) ) ;
+                                                                            POOPR ;
+                                                                        {
+                                                                        if( POOP )
+                                                                        ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , postRaw , costRaw , pInfoInner->psttIfoName , 1 ) ; ___( postRaw ) ;
+                                                                        SCOOPS
+                                                                    {
+                                                                    IFsCRATCHoK
                                                                     ZE( countT   , costRaw ) ;
                                                                     ZE( osTextT* , postRaw ) ;
                                                                 {
@@ -1705,7 +1715,18 @@ DONE( tmWorkF )
                                                 etThread.delF( tin0P , postRaw ) ;
                                                 __Z( pSwPathValue ) ;
                                                 etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postRaw , flSTACKc_null ) ;
-                                                etThread.boxGetShadowF( tin0P , postRaw , costRaw , pInfoMiddle->psttIfoName ) ; ___( postRaw ) ;
+                                                }
+                                                    }
+                                                        continue ;
+                                                        etThread.traceF( tin0P , T(" skipping file name that no longer exists [long]")+T(pInfoMiddle->psttIfoName) ) ;
+                                                        POOPR ;
+                                                    {
+                                                    if( POOP )
+                                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , postRaw , costRaw , pInfoMiddle->psttIfoName , 1 ) ; ___( postRaw ) ;
+                                                    SCOOPS
+                                                {
+                                                IFsCRATCHoK
+                                                
                                                 ZE( countT   , costRaw ) ;
                                                 ZE( osTextT* , postRaw ) ;
                                             {
@@ -1876,7 +1897,18 @@ DONE( tmWorkF )
                                 etThread.delF( tin0P , postRaw ) ;
                                 __Z( pSwPathValue ) ;
                                 etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postRaw , flSTACKc_null ) ;
-                                etThread.boxGetShadowF( tin0P , postRaw , costRaw , pInfoOuter->psttIfoName ) ; ___( postRaw ) ;
+
+                                }
+                                    }
+                                        continue ;
+                                        etThread.traceF( tin0P , T(" skipping file name that no longer exists [long]")+T(pInfoOuter->psttIfoName) ) ;
+                                        POOPR ;
+                                    {
+                                    if( POOP )
+                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , postRaw , costRaw , pInfoOuter->psttIfoName , 1 ) ; ___( postRaw ) ;
+                                    SCOOPS
+                                {
+                                IFsCRATCHoK
                                 ZE( countT   , costRaw ) ;
                                 ZE( osTextT* , postRaw ) ;
                             {
