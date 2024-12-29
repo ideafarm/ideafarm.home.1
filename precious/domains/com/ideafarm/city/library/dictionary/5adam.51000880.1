@@ -1412,7 +1412,8 @@ DONE( tmWorkF )
                                                                 !etThread.strCompareF( tin0P , tValueInnerStripeNoticeType , tValueWantedInnerStripeNoticeType )
                                                             (
                                                             if
-                                                            etThread.traceF( tin0P , T("inner [tValueInnerStripeNoticeType]:    ")+tValueInnerStripeNoticeType ) ;
+                                                            if( !etThread.strCompareF( tin0P , tValueInnerStripeNoticeType , tValueWantedInnerStripeNoticeType ) ) etThread.traceF( tin0P , T("    [tValueInnerLatestInvoice]:    ")+tValueInnerLatestInvoice ) ;
+                                                            etThread.traceF( tin0P , T("        inner [tValueInnerStripeNoticeType]:    ")+tValueInnerStripeNoticeType ) ;
 
                                                             }
                                                                 DEL( pSwPathValue ) ;
@@ -1593,7 +1594,8 @@ DONE( tmWorkF )
                                             !etThread.strCompareF( tin0P , tValueMiddleStripeNoticeType , tValueWantedMiddleStripeNoticeType )
                                         (
                                         if
-                                        etThread.traceF( tin0P , T("middle [tValueMiddleStripeNoticeType]:    ")+tValueMiddleStripeNoticeType ) ;
+                                        etThread.traceF( tin0P , T("    middle [tValueMiddleStripeNoticeType]:    ")+tValueMiddleStripeNoticeType ) ;
+                                        if( !etThread.strCompareF( tin0P , tValueMiddleStripeNoticeType , tValueWantedMiddleStripeNoticeType ) ) etThread.traceF( tin0P , T("    [tValueMiddleInvoice]:    ")+tValueMiddleInvoice ) ;
 
                                         }
                                             DEL( pSwPathValue ) ;
@@ -1755,6 +1757,7 @@ DONE( tmWorkF )
                             {
                             do
                             handleC hFindMiddle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+                            etThread.traceF( tin0P , T("looking for [tValueOuterLatestInvoice]:    ")+tValueOuterLatestInvoice ) ;
 
                             _IO_
                         {

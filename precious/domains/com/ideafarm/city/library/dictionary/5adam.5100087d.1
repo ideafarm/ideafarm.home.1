@@ -478,8 +478,8 @@ DONE( tmWorkF )
                 ZE( countT , costj ) ;
 
                 sockc.writeF( tin0P , (osTextT*)tSay ) ;
-                etThread.traceF( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                etThread.traceF( tin0P , T("request:") ) ;
+                //etThread.trace F( tin0P , tSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                //etThread.trace F( tin0P , T("request:") ) ;
 
                 thirdC::c_memsetIF( tin0P , postj , costaj ) ;
                 etThread.newF( tin0P , LF , postj , costaj ) ; ___( postj ) ;
@@ -488,7 +488,7 @@ DONE( tmWorkF )
             
                 TN( tSay , "" ) ; tSay = T("GET /_matrix/client/v3/sync")+tQuery+T(" HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer/*+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)*/+T("\r\n\r\n")/*+tBody*/ ;
 
-                etThread.traceF( tin0P , T("requesting sync (update)") ) ;
+                //etThread.trace F( tin0P , T("requesting sync (update)") ) ;
             {
             if( !POOP )
 
