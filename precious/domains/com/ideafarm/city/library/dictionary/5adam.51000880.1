@@ -1353,9 +1353,9 @@ DONE( tmWorkF )
                                         }
                                             }
                                                 cNewEvents ++ ;
-                                                if( tShortInner.csF( tin0P ) ) etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortInner  , tFolderRawIncoming+tShortInner  ) ;
-                                                                               etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortMiddle , tFolderRawIncoming+tShortMiddle ) ;
-                                                                               etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortOuter  , tFolderRawIncoming+tShortOuter  ) ;
+                                                if( tShortInnerMove.csF( tin0P ) ) etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortInnerMove , tFolderRawIncoming+tShortInnerMove ) ;
+                                                                                   etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortMiddle    , tFolderRawIncoming+tShortMiddle    ) ;
+                                                                                   etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortOuter     , tFolderRawIncoming+tShortOuter     ) ;
 
                                                 etThread.delF( tin0P , psttFile ) ;
                                                 etThread.boxPutUniqueF( tin0P , psttFile , tFolderEventIncoming+tShortEvent , WS( sOut ) ) ;
@@ -1404,6 +1404,7 @@ DONE( tmWorkF )
                                                     }
                                                         }
                                                             }
+                                                                if( bActive ) tShortInnerMove = tShortInner ;
                                                                 bActive = !etThread.strCompareF( tin0P , tValueInnerStatus , T("active") ) ;
                                                             {
                                                             )
@@ -1572,6 +1573,7 @@ DONE( tmWorkF )
                                                                 ZE( strokeS* , psttShortInner ) ;
                                                                 ZE( strokeS* , psttnu ) ;
                                                             {
+                                                            TN( tShortInner , "" ) ;
                                                         {
                                                         if( !bDir )
 
@@ -1596,7 +1598,7 @@ DONE( tmWorkF )
                                                 _IO_
                                             {
                                             if( !bActive )
-                                            TN( tShortInner , "" ) ;
+                                            TN( tShortInnerMove , "" ) ;
                                             boolT bActive = !etThread.strCompareF( tin0P , tValueOuterStatus , T("active") ) ;
                                         {
                                         )
