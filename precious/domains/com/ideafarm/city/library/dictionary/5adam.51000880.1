@@ -1351,11 +1351,11 @@ DONE( tmWorkF )
                                 }
                                     }
                                         }
-                                            }
+                                            }                                                                                                                                                   //U:: USE THE IDEMPOTENT FIELD IN STRIPE NOTICES TO PREVENT DUPLICATION OF PROCESSING
                                                 cNewEvents ++ ;
-                                                if( tShortInnerMove.csF( tin0P ) ) etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortInnerMove , tFolderRawIncoming+tShortInnerMove ) ;
-                                                                                   etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortMiddle    , tFolderRawIncoming+tShortMiddle    ) ;
-                                                                                   etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortOuter     , tFolderRawIncoming+tShortOuter     ) ;
+                                                if( tShortInnerMove.csF( tin0P ) ) etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortInnerMove , tFolderRawIncoming+tShortInnerMove ) ; // "
+                                                                                   etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortMiddle    , tFolderRawIncoming+tShortMiddle    ) ; // "
+                                                                                   etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortOuter     , tFolderRawIncoming+tShortOuter     ) ; //INTENTIONAL BLOCK FOREVER UNTIL SUCCEED (TO PREVENT PROCESSING THESE NOTICES MULTIPLE TIMES)
 
                                                 etThread.delF( tin0P , psttFile ) ;
                                                 etThread.boxPutUniqueF( tin0P , psttFile , tFolderEventIncoming+tShortEvent , WS( sOut ) ) ;
