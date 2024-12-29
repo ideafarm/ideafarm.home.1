@@ -724,16 +724,14 @@
                                 ZE( countT , tid ) ;
                                 inc02AM( cWorker ) ;
                             {
-                            while( cDo -- )
-                            etRock.traceF( tin0P , T("ifcDrivenServerF / launching workers [cWorkers]:    ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                            while( scDo -- )
+                            etRock.traceF( tin0P , T("ifcDrivenServerF / launching workers [cWorkers]:    ")+TF2(scDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
-                            //cDo = 1 ; //REMOVE IN PRODUCTION ; GLASS FOR CRAFTING HOOK
+                            if( scDo > 0x10 ) scDo = 0x10 ; //U::20240205@1335: WORKAROUND TO AVOID MEMORY EXHAUSTION WHEN EXIST 02 PROCESSORS ; STUDY WHY "SHOWPONY" IS NEEDED (WHAT DOES IT DO?:); STUDY: USING MINIMAL THREAD STACK HERE SO CAN LAUNCH MORE
 
-                            if( cDo > 0x10 ) cDo = 0x10 ; //U::20240205@1335: WORKAROUND TO AVOID MEMORY EXHAUSTION WHEN EXIST 02 PROCESSORS ; STUDY WHY "SHOWPONY" IS NEEDED (WHAT DOES IT DO?:); STUDY: USING MINIMAL THREAD STACK HERE SO CAN LAUNCH MORE
+                            if( scDo < 0 ) scDo = ( - scDo ) * thirdC::osProcessorsIF( tin0P ) ;
 
-                            if( cDo == - 1 ) cDo = thirdC::osProcessorsIF( tin0P ) ; //U:: DISTINCT BEHAVIOR FOR -1 -2 -3 ...
-
-                            countT cDo = cWorkersSave ;
+                            sCountT scDo = (sCountT)cWorkersSave ;
                         {
                         if( cWorkersSave )
 
