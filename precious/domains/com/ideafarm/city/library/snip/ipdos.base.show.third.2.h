@@ -14982,6 +14982,8 @@ TASKpART0PROTO( tmcHttpServerWorkerF ) ;
 
 /*1*/TASKpART0PROTO( tmStripeWebHookIpListF ) ;/*1*/
 
+/*1*/TASKpART0PROTO( tmConnectionAcceptorF ) ;/*1*/
+
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
