@@ -88,7 +88,7 @@
         pzInfo = (sockaddr_in6*)from.pbSockAddrIn6 ;
         oshSocketAcceptedS& from = pP->pFifo[ pP->cFifoPulled % pP->cFifoCapacity ] ;                                                   //A:ASSUME: I AM THE ONLY THREAD PULLING FROM THE FIFO
         while( pP->cFifoPushed <= pP->cFifoPulled ) Sleep( 0 ) ;                                //U:: POTENTIAL TO HANG HERE DURING QUIT
-    {
+    {                                                                                           //U:: EDIT TO CORRECTLY HANDLE WHEN cPushed WRAPS
     if( pP )
     ZE( countT        , oshSocket ) ;
     ZE( sockaddr_in6* , pzInfo    ) ;

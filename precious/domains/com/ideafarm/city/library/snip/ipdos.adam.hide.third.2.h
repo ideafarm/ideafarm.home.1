@@ -30304,9 +30304,9 @@ private :
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3403f.thirdC.s_socketIF!||
 
  /* connection */
-  voidT s_acceptF( s_acceptF_parametersS& pP ) ;
   voidT s_acceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP = 0 , s_acceptF_parametersS* pP = 0 ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340b1.thirdC.s_acceptF!||
+  voidT s_acceptF( s_acceptF_parametersS& pP ) ;
   voidT s_connectF( tin0S& tin0P , handleC& handleP , const countT idPortP , const nicNameC nicNameP = nicNameC() , countT cTriesP = 0 , countT time1P = 0 , const sCountT time2P = 0 ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34036.thirdC.s_connectF!||
   static voidT s_connectIF( tin0S& tin0P , const boolT& bQuitP , handleC& handleP , const countT idPortP , const nicNameC nicNameP = nicNameC() , countT cTriesP = 0 ) ;
@@ -48136,34 +48136,31 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSet_countT_C : 1snip.1500012b.listOfSet_countT_C END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.oshSocketAcceptedS : 1snip.150001cf.oshSocketAcceptedS BEGIN
 
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
 
+/*
+*/
+/**/
 
-struct oshSocketAcceptedS
+/*1*/struct oshSocketAcceptedS/*1*/         // IT IS ILLEGAL TO REFER TO THIS STRUCT ANYWHERE EXCEPT IN AN thirdC::s_acceptF OVERLOAD
 {
     countT oshSocket             ;
-    byteT  pbSockAddrIn6[ 0x1c ] ;
+    byteT  pbSockAddrIn6[ 0x1c ] ;          // CODE THAT SETS THIS MUST VERIFY THAT THIS IS THE CORRECT SIZE
 }
 ;
 
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
 
-/*1*/struct s_acceptF_parametersS/*1*/
-{
-    tin0S&                    tin0 ;
-    countT&                   cFifoPushed ;
-    oshSocketAcceptedS* const pFifo ;
-    const countT              cFifoCapacity ;
-    countT&                   cFifoPulled ;
-    const handleC&            handle ;
-
-    inline s_acceptF_parametersS( tin0S& tin0P , countT& cFifoPushedP , oshSocketAcceptedS* const pFifoP , const countT cFifoCapacityP , countT& cFifoPulledP , const handleC& handleP ) :
-    tin0(          tin0P          ) ,
-    cFifoPushed(   cFifoPushedP   ) ,
-    pFifo(         pFifoP         ) ,
-    cFifoCapacity( cFifoCapacityP ) ,
-    cFifoPulled(   cFifoPulledP   ) ,
-    handle(        handleP        )
-    {}
-}
-;
-
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.oshSocketAcceptedS : 1snip.150001cf.oshSocketAcceptedS END
