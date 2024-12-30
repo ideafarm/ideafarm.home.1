@@ -30304,7 +30304,8 @@ private :
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3403f.thirdC.s_socketIF!||
 
  /* connection */
-  voidT s_acceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP = 0 ) ;
+  voidT s_acceptF( s_acceptF_parametersS& pP ) ;
+  voidT s_acceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP = 0 , s_acceptF_parametersS* pP = 0 ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340b1.thirdC.s_acceptF!||
   voidT s_connectF( tin0S& tin0P , handleC& handleP , const countT idPortP , const nicNameC nicNameP = nicNameC() , countT cTriesP = 0 , countT time1P = 0 , const sCountT time2P = 0 ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34036.thirdC.s_connectF!||
@@ -48135,3 +48136,34 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.listOfSet_countT_C : 1snip.1500012b.listOfSet_countT_C END
+
+
+
+struct oshSocketAcceptedS
+{
+    countT oshSocket             ;
+    byteT  pbSockAddrIn6[ 0x1c ] ;
+}
+;
+
+
+/*1*/struct s_acceptF_parametersS/*1*/
+{
+    tin0S&                    tin0 ;
+    countT&                   cFifoPushed ;
+    oshSocketAcceptedS* const pFifo ;
+    const countT              cFifoCapacity ;
+    countT&                   cFifoPulled ;
+    const handleC&            handle ;
+
+    inline s_acceptF_parametersS( tin0S& tin0P , countT& cFifoPushedP , oshSocketAcceptedS* const pFifoP , const countT cFifoCapacityP , countT& cFifoPulledP , const handleC& handleP ) :
+    tin0(          tin0P          ) ,
+    cFifoPushed(   cFifoPushedP   ) ,
+    pFifo(         pFifoP         ) ,
+    cFifoCapacity( cFifoCapacityP ) ,
+    cFifoPulled(   cFifoPulledP   ) ,
+    handle(        handleP        )
+    {}
+}
+;
+

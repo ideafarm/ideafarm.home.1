@@ -418,6 +418,8 @@ class   /*ff*/listingOfSet_countT_C/*ff*/                               ; /*ff*/
 class   /*ff*/listingOfSet_blob_C/*ff*/                                 ; /*ff*//**//*ff*/
 class   /*ff*/listingOfSet_countTstrz_C/*ff*/                           ; /*ff*//**//*ff*/
 struct  /*ff*/addressRangeS/*ff*/                                       ; /*ff*//**//*ff*/
+struct  /*ff*/oshSocketAcceptedS/*ff*/                                  ; /*ff*//**//*ff*/
+struct  /*ff*/s_acceptF_parametersS/*ff*/                               ; /*ff*//**//*ff*/
 
 //INCLUDE GENERATED SNIPPETS HERE
 

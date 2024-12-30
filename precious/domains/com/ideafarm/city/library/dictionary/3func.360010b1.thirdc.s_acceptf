@@ -25,12 +25,11 @@
             {
             for( countT offi = 0 ; offi < 4 ; offi ++ )
             countT* pcTo   = (countT*)(const countT*)nicNameP ;
-            countT* pcFrom = (countT*)info.sin6_addr.u.Byte ;
+            countT* pcFrom = (countT*)pzInfo->sin6_addr.u.Byte ;
 
             idPortP = ((tin1S&)tin0P).brcRaw ;
-            BOSdOnOTtEST( WHATgbo , ntohs( info.sin6_port ) )
-            __( cbInfo - sizeof info ) ;
-            __( info.sin6_family - AF_INET6 ) ;
+            BOSdOnOTtEST( WHATgbo , ntohs( pzInfo->sin6_port ) )
+            __( pzInfo->sin6_family - AF_INET6 ) ;
         {
         else
         }
@@ -51,26 +50,14 @@
         hClientP.resetF() ;
         countT c_pWrapper = hClientP.cNoteF() ;
         openSslTls_getWrapperIF( tin0P , hClientP , *phContextP ) ;
-        countT oshSocket = brcRawSave ;
     {
     else
-    if( !phContextP ) hClientP.osF( ifcIDtYPEhANDLE_SOCKET , brcRawSave ) ;
+    if( !phContextP ) hClientP.osF( ifcIDtYPEhANDLE_SOCKET , oshSocket ) ;
     //CS:CODEsYNC: PSEUDODUPLICATE 3600103f 360010b1
 
     etRock.traceF( tin0P , T("s_acceptF / called  accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
     INCoShANDLES
-    countT brcRawSave = ((tin1S&)tin0P).brcRaw ;
-
-    }
-        //LOGrAW5( "" , oshSocket , "    " , ((tin1S&)tin0P).pag1->idAdam , " ++++ accept\r\n" ) ;
-        countT oshSocket = ((tin1S&)tin0P).brcRaw ;
-    {
-    BOSpOOP
-    BOSS( WHATsia , BOSsOCKETcODE , accept( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , &cbInfo ) )
-    sCountT cbInfo = sizeof info ;
-    c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;
-    sockaddr_in6 info ;
 
     etRock.traceF( tin0P , T("s_acceptF / calling accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
@@ -78,30 +65,82 @@
     countT idAccept = ((tin1S&)tin0P).glass.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
     static countT idAcceptLath ;
 
+    }
+        if( !POOP ) oshSocket = ((tin1S&)tin0P).brcRaw ;
+
+        __( cbInfo - sizeof info ) ;
+
+        //}
+        //    LOGrAW5( "" , oshSocket , "    " , ((tin1S&)tin0P).pag1->idAdam , " ++++ accept\r\n" ) ;
+        //    countT oshSocket = ((tin1S&)tin0P).brcRaw ;
+        //{
+        BOSpOOP
+        BOSS( WHATsia , BOSsOCKETcODE , accept( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , &cbInfo ) )
+
+        sCountT cbInfo = sizeof info ;
+        c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;
+        pzInfo = &info ;
+    {
+    else
+    }
+        pP->cFifoPulled ++ ;
+        oshSocket = from.oshSocket ;
+        pzInfo = (sockaddr_in6*)from.pbSockAddrIn6 ;
+        oshSocketAcceptedS& from = pP->pFifo[ pP->cFifoPulled % pP->cFifoCapacity ] ;                                                   //A:ASSUME: I AM THE ONLY THREAD PULLING FROM THE FIFO
+        while( pP->cFifoPushed <= pP->cFifoPulled ) Sleep( 0 ) ;                                //U:: POTENTIAL TO HANG HERE DURING QUIT
+    {
+    if( pP )
+    ZE( countT        , oshSocket ) ;
+    ZE( sockaddr_in6* , pzInfo    ) ;
+
     _IO_
 
     //POPUPcOUNT( "acceptF2 called within: " , processGlobal1I.idAdamRoot ) ; //U::
 
     }
+        }
+            if( sizeof info != cbTarget ) { BLAMMOiD( 0xeeeeeeee ) ; }
+            static countT cbTarget = sizeof( nu.pbSockAddrIn6 ) ;
+            static oshSocketAcceptedS nu ;
+        {
+        if( !( idInLath ++ ) )
+        static countT idInLath ;
+    {
+
+    sockaddr_in6 info ;                                                                                                                 // USED IFF !pP
+
+    }
         if( POOP ) return ;
         IFsIMULATEoFFLINEpOOP
-        __Z( handleP ) ;
+        }
+            __Z( handleP ) ;
+        {
+        if( !pP )
         if( POOP ) return ;
     {
     IFbEcAREFUL    
     SCOOP
 {
-/*1*/voidT thirdC::s_acceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP )/*1*/
+/*1*/voidT thirdC::s_acceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP , s_acceptF_parametersS* pP )/*1*/
 
 /**/
 */
+  this is an optimization so that a dedicated thread can timely accept bursts of client connections
+  if not 0 then another thread calls accept() and i just pull the information from a fifo circular array cache of oshSocketAcceptedS
+  if 0 then i do all of the work of accepting a new connection
+  can be 0
+ pP
+ phContextP
   if not 0 when i have accepted a connection then i close the connection and return 0
   normally should be 0
   can be 0
  bRefuseP
-arguments
-\<A HREF=\"5.10200d7.1.0.html\"\>definition\</A\>
-\<A HREF=\"6.$s_acceptF.0.html\"\>instances\</A\>
+ handleP
+ nicNameP
+ idPortP
+ hClientP
+ tin0P
+parameters
 /*
 
 //
