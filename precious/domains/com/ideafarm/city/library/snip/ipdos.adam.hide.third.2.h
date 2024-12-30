@@ -33682,7 +33682,7 @@ examples
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.341a8.etherC.chokeAttackerF!||
 
  /* connection */
-  voidT sockAcceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP = 0 ) ;
+  voidT sockAcceptF( tin0S& tin0P , handleC& hClientP , countT& idPortP , nicNameC& nicNameP , const handleC& handleP , boolT& bRefuseP , const handleC* const phContextP = 0 , s_acceptF_parametersS* pP = 0 ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34119.etherC.sockAcceptF!||
   voidT sockConnectF( tin0S& tin0P , handleC& handleP , const countT idPortP , const nicNameC nicNameP = nicNameC() , countT cTriesP = 0 , const countT time1P = 0 , const sCountT time2P = 0 ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3403f.etherC.sockConnectF!||
@@ -34718,7 +34718,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34028.socketC.etherF!||
 
 /* commands: connecting */
- voidT acceptF( tin0S& tin0P , socketC*& pSocketP , countT& idPortP , nicNameC& nicNameP , boolT& bRefuseP ) ;
+ voidT acceptF( tin0S& tin0P , socketC*& pSocketP , countT& idPortP , nicNameC& nicNameP , boolT& bRefuseP , s_acceptF_parametersS* pP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401f.socketC.acceptF!||
  countT bindF( tin0S& tin0P , const countT idPortP = 0 , const nicNameC nicNameP = nicNameC() , const countT cTriesP = 0 , const boolT bInUseOkP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.socketC.bindF!||
