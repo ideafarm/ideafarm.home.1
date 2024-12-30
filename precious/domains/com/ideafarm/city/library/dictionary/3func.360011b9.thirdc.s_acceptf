@@ -26,10 +26,8 @@
     oshSocketAcceptedS& to = pP.pFifo[ pP.cFifoPushed % pP.cFifoCapacity ] ;                                                  //A:ASSUME: I AM THE ONLY THREAD PUSHING TO THE FIFO, I.E. THE ONLY THREAD CALLING accept()
 
     while( pP.cFifoPushed - pP.cFifoPulled >= pP.cFifoCapacity ) Sleep( 0 ) ;           //U:: EDIT TO HANDLE WHEN cFifoPushed WRAPS TO LOW VALUES
-
-    tin0S& tin0P = pP.tin0 ;                                                                                                  // NO ADMINISTRATIVE OVERHEAD, FOR SPEED
 {
-/*1*/voidT thirdC::s_acceptF( s_acceptF_parametersS& pP )/*1*/
+/*1*/voidT thirdC::s_acceptF( tin0S& tin0P , s_acceptF_parametersS& pP )/*1*/
 
 /**/
 */

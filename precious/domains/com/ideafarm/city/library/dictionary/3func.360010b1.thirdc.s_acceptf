@@ -55,15 +55,15 @@
     if( !phContextP ) hClientP.osF( ifcIDtYPEhANDLE_SOCKET , oshSocket ) ;
     //CS:CODEsYNC: PSEUDODUPLICATE 3600103f 360010b1
 
-    etRock.traceF( tin0P , T("s_acceptF / called  accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+    //etRock.traceF( tin0P , T("s_acceptF / called  accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
     INCoShANDLES
 
-    etRock.traceF( tin0P , T("s_acceptF / calling accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+    //etRock.traceF( tin0P , T("s_acceptF / calling accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
-    countT idAccept = ((tin1S&)tin0P).glass.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
-    static countT idAcceptLath ;
+    //countT idAccept = ((tin1S&)tin0P).glass.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
+    //static countT idAcceptLath ;
 
     }
         if( !POOP ) oshSocket = ((tin1S&)tin0P).brcRaw ;
@@ -84,7 +84,8 @@
     else
     }
         pP->cFifoPulled ++ ;
-        oshSocket = from.oshSocket ;
+                    from.oshSocket = 0 ;
+        oshSocket = from.oshSocket     ;
         pzInfo = (sockaddr_in6*)from.pbSockAddrIn6 ;
         oshSocketAcceptedS& from = pP->pFifo[ pP->cFifoPulled % pP->cFifoCapacity ] ;                                                   //A:ASSUME: I AM THE ONLY THREAD PULLING FROM THE FIFO
         while( pP->cFifoPushed <= pP->cFifoPulled ) Sleep( 0 ) ;                                //U:: POTENTIAL TO HANG HERE DURING QUIT
