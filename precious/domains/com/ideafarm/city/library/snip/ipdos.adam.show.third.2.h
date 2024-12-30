@@ -48164,3 +48164,25 @@ i am nonconformant in that all of my member function definitions are in a single
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.oshSocketAcceptedS : 1snip.150001cf.oshSocketAcceptedS END
+
+
+/*1*/struct s_acceptF_parametersS/*1*/
+{
+    tin0S&                    tin0 ;
+    countT&                   cFifoPushed ;
+    oshSocketAcceptedS* const pFifo ;
+    const countT              cFifoCapacity ;
+    countT&                   cFifoPulled ;
+    const handleC&            handle ;
+
+    inline s_acceptF_parametersS( tin0S& tin0P , countT& cFifoPushedP , oshSocketAcceptedS* const pFifoP , const countT cFifoCapacityP , countT& cFifoPulledP , const handleC& handleP ) :
+    tin0(          tin0P          ) ,
+    cFifoPushed(   cFifoPushedP   ) ,
+    pFifo(         pFifoP         ) ,
+    cFifoCapacity( cFifoCapacityP ) ,
+    cFifoPulled(   cFifoPulledP   ) ,
+    handle(        handleP        )
+    {}
+}
+;
+

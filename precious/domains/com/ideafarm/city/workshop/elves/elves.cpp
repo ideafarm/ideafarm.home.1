@@ -3066,6 +3066,7 @@ void elf_obey_C::liveF( void )
                 //THIS LIST IS IN REVERSE ORDER OF WHAT WILL APPEAR IN ipdos.h
                 char* ppostFrom[] =
                 {
+                    "1snip.15*.s_acceptF_parametersS"                       ,
                     "1snip.15*.oshSocketAcceptedS"                          ,
                     "1snip.15*.listOfSet_countT_C"                          ,
                     "1snip.15*.listOfSet_countTstrz_C"                      ,
