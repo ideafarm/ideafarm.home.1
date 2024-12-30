@@ -559,7 +559,12 @@
 
                                                     //CONoUTrAW( "." ) ; //U:: TO FIND A BUG
                                                     osTimeNowF( tin0P , timeAccepted1 , timeAccepted2 ) ;
-                                                    etRock.traceF( tin0P , T("ifcDrivenServerF / called  acceptF [idSubType,cFifoPushed-cFifoPulled]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                    etRock.traceF( tin0P , T("ifcDrivenServerF / called  acceptF [idSubType,cQueued,cQueuedMax]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                    }
+                                                        etRock.traceF( tin0P , T("ifcDrivenServerF / queue is growing [cQueuedMax]:    ")+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                        cQueuedMax = cFifoPushed-cFifoPulled ;
+                                                    {
+                                                    if( cQueuedMax < cFifoPushed-cFifoPulled )
                                                     const countT idSubTypeSave = POOP ;
                                                     psoListen->acceptF( tin0P , pso , idpPeer , nnPeer , bRefuseTooManyOrBlackListed , &pp ) ; ___( pso ) ; //IF ALL SESSIONS END WHILE BLOCKED HERE, WILL STILL REFUSE WO SESSION; THIS CAN BE FIXED BY FRESHING bRefuseTooManyOrBlackListed AT END OF EACH SESSION THREAD IN DONEtMsERVER
                                                     etRock.traceF( tin0P , T("ifcDrivenServerF / calling acceptF") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
@@ -616,6 +621,7 @@
                                             ZE( oshSocketAcceptedS* , pFifo       ) ;
                                             ZE( countT              , cFifoPulled ) ;
                                             ZE( countT              , cFifoPushed ) ;
+                                            ZE( countT              , cQueuedMax  ) ;
                                         {
                                         if( psoListen )
 
