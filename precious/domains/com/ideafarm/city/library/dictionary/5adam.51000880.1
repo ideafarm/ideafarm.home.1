@@ -804,13 +804,18 @@ DONE( tmWorkF )
                                                         ZE( sCountT , timeN2 ) ;
                                                         ZE( countT  , timeN1 ) ;
 
-                                                                               //U::VERIFY THAT REGISTRATION SUCCEEDED
-                                                        bRegistered = 1 ;      //I ASSUME THAT REGISTRATION SUCCEEDED ;
+                                                        bRegistered = 1 ;
                                                     {
                                                     else
                                                     }
                                                         continue ;
-                                                        etThread.traceF( tin0P , T("!exception / this username is already registered ; will try the next value") ) ;
+                                                        bRetrySameUsername = 1 ;
+                                                        etThread.traceF( tin0P , T("!exception / other error ; will retry the same value [errorCode,error]:    ")+tValueError+tb4+tValueError ) ;
+                                                    {
+                                                    else if( tValueErrorCode.csF( tin0P ) || tValueError.csF( tin0P ) )
+                                                    }
+                                                        continue ;
+                                                        etThread.traceF( tin0P , T("!exception / this username is already registered ; will try the next value [errorCode,error]:    ")+tValueError+tb4+tValueError ) ;
                                                     {
                                                     if( !etThread.strCompareF( tin0P , tValueErrorCode , T("M_USER_IN_USE") ) )
 
@@ -1151,7 +1156,7 @@ DONE( tmWorkF )
                                             tBodyInvite = T("{\"user_id\": \"")+tNewUserNameLong+T("\"}\r\n") ;
                                             tNewUserNameLong  = T("@")+tNewUserNameShort+T(":ideafarm.com") ;       // GIVE ONLY THE SHORT USERNAME IN THE EMAILS BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
                                             tNewUserNameShort =  T("test.")+TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x3e) ;
-                                            countT idNewUser = 1 + incv02AM( idNewUserLath ) ;
+                                            countT idNewUser = bRetrySameUsername ? idNewUserLath : 1 + incv02AM( idNewUserLath ) ;
 
                                             if( bZe ) idNewUserLath = 0 ;
                                             countT& idNewUserLath = *(countT*)pbi ;
@@ -1207,6 +1212,7 @@ DONE( tmWorkF )
                                     _IO_
                                 {
                                 while( !ether && !POOP && !bRegistered )     //WILL continue UNTIL SUCCESSFULLY REGISTER A NEW USERNAME ; THIS CAUSES idNewUser TO INCREMENT UNTIL IT IS A VALUE THAT HAS NOT BEEN REGISTERED
+                                ZE( boolT , bRetrySameUsername ) ;
                                 ZE( boolT , bRegistered ) ;
                                 TN( tNewPassword         , "" ) ;
                                 TN( tNewUserNameLong     , "" ) ;
