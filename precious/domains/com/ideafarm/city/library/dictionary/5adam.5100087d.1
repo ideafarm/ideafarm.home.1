@@ -133,7 +133,7 @@ DONE( tmWorkF )
     IFsCRATCHoK                                                           // LOGOUT
 
     }
-        ++ s ; ether.osSleepF( tin0P , TOCK << 4 ) ;
+        ++ s ; ether.osSleepF( tin0P , TICK >> 4 ) ;
 
         }
             }
@@ -587,8 +587,7 @@ DONE( tmWorkF )
             timeU2 = timeN2 ;
             timeU1 = timeN1 ;
         {
-        //U:: PROD: if( timeE2 || timeE1 > ( TICK << 2 ) )                                                                                      // LIMIT PUBLICATION SO THAT PISS (AND THE CPU) IS IDLE AND AVAILABLE FOR OTHER WORK
-                    if( timeE2 || timeE1 > ( TICK << 8 ) )                                                                                      //U:: THIS IS FOR DEBUGGING ONLY ; LIMIT PUBLICATION A LOT SO TRACE IS UNCLUTTERED FOR DEBUGGING AND CPU IS MORE IDLE
+        if( timeE2 || timeE1 > ( TICK << 2 ) )                                                                                      // LIMIT PUBLICATION SO THAT PISS (AND THE CPU) IS IDLE AND AVAILABLE FOR OTHER WORK
 
         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeU1 , timeU2 ) ;
         sCountT timeE2 = timeN2 ;
