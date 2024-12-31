@@ -134,7 +134,7 @@ DONE( tmWorkF )
 
     }
         ++ s ; ether.osSleepF( tin0P , TICK >> 0 ) ;
-        etThread.trace F( tin0P , T("napping for a tick") ) ;
+        etThread.traceF( tin0P , T("napping for a tick") ) ;
 
         }
             }
@@ -489,7 +489,7 @@ DONE( tmWorkF )
             
                 TN( tSay , "" ) ; tSay = T("GET /_matrix/client/v3/sync")+tQuery+T(" HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer/*+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)*/+T("\r\n\r\n")/*+tBody*/ ;
 
-                etThread.trace F( tin0P , T("requesting sync (update)") ) ;
+                etThread.traceF( tin0P , T("requesting sync (update)") ) ;
             {
             if( !POOP )
 
