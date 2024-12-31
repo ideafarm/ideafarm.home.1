@@ -938,7 +938,7 @@ TASK( tmFreshenFileF )
                         DEL( pInfo ) ;
                         POOPR
                     {
-                    if( !etScratch.diskIdF( tin0P , tDisk ) || POOP )
+                    if( /*!etScratch.diskIdF( tin0P , tDisk ) ||*/ POOP )
 
                     etScratch.diskFindFileOrDirF( tin0P , pInfo , hFind , fnLike.pathF() , &pat ) ; //20160814@1946: SILENTLY FAILED.  HOW: DISCONNECT USB CABLE FROM EXTERNAL DRIVE. NO IMPOTENCE; CONJ: JUST RETURNS NULL pInfo OR pInfo->psttIfoName
                     ZE( infoFileS* , pInfo ) ;
@@ -951,7 +951,7 @@ TASK( tmFreshenFileF )
                         bFail ++ ;
                         POOPR
                     {
-                    if( !etScratch.diskIdF( tin0P , tDisk ) || POOP )
+                    if( /*!etScratch.diskIdF( tin0P , tDisk ) ||*/ POOP )                                   //20241230@2000: diskIdF() returns 0 for a Vultr File System (virtio-win) mounted to a Vultr server
                 {
                 do
                 handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
