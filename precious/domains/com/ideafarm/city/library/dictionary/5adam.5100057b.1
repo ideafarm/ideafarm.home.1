@@ -106,7 +106,9 @@ DONE( tmShieldsDownF )
     TN( tLongDown , "" ) ; tLongDown = tPath + T("shields.down.txt") ;
 
     etThread.etherC::diskMakeDirIfNeededF( tin0P , tPath ) ;
-    TN( tPath , "" ) ; tPath = T("///ideafarm/tmp/")+TF3(processGlobal1S::_processGlobal1I_IF().idAdamRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T("/") ; // d:\ideafarm.home.101\tmp\5100057b\shields.down.txt
+    //TN( tPath , "" ) ; tPath = T("///ideafarm/tmp/")         +TF3(processGlobal1S::_processGlobal1I_IF().idAdamRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T("/") ; // d:\ideafarm.home.101\tmp\5100057b\shields.down.txt
+      TN( tPath , "" ) ; tPath = T("///ideafarm.home.101/tmp/")+TF3(processGlobal1S::_processGlobal1I_IF().idAdamRoot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T("/") ; // d:\ideafarm.home.101\tmp\5100057b\shields.down.txt
+    //THE HOME IS HARDCODED SO THAT IT IS EASIER TO DEBUG CERTBOT BAT FILE WHEN RUNNING ME AT COMMAND PROMPT OR IN ELVES
 
     boolT& bShieldsDownP = *(boolT*)pTaskP->c1 ;
 {
