@@ -133,7 +133,8 @@ DONE( tmWorkF )
     IFsCRATCHoK                                                           // LOGOUT
 
     }
-        ++ s ; ether.osSleepF( tin0P , TICK >> 4 ) ;
+        ++ s ; ether.osSleepF( tin0P , TICK >> 0 ) ;
+        etThread.trace F( tin0P , T("napping for a tick") ) ;
 
         }
             }
@@ -488,7 +489,7 @@ DONE( tmWorkF )
             
                 TN( tSay , "" ) ; tSay = T("GET /_matrix/client/v3/sync")+tQuery+T(" HTTP/1.1")+T("\r\nAuthorization: Bearer ")+tValueAccessToken+T("\r\nHost: ")+tServer/*+T("\r\nContent-Type: application/json\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)*/+T("\r\n\r\n")/*+tBody*/ ;
 
-                //etThread.trace F( tin0P , T("requesting sync (update)") ) ;
+                etThread.trace F( tin0P , T("requesting sync (update)") ) ;
             {
             if( !POOP )
 
@@ -586,6 +587,7 @@ DONE( tmWorkF )
 
             timeU2 = timeN2 ;
             timeU1 = timeN1 ;
+            etThread.traceF( tin0P , T("publish the youngest evaluation soil file [timeE]:    ")+TT(timeE1,timeE2) ) ;
         {
         if( timeE2 || timeE1 > ( TICK << 2 ) )                                                                                      // LIMIT PUBLICATION SO THAT PISS (AND THE CPU) IS IDLE AND AVAILABLE FOR OTHER WORK
 
@@ -593,6 +595,7 @@ DONE( tmWorkF )
         sCountT timeE2 = timeN2 ;
         countT  timeE1 = timeN1 ;
 
+        etThread.traceF( tin0P , T("awakening [timeN]:    ")+TT(timeN1,timeN2) ) ;
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
