@@ -1357,12 +1357,12 @@ DONE( tmWorkF )
                     ZE( infoFileS* , pInfo ) ;
                 {
                 do
-                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;                                                                      // MOVE ALL LEFTOVERS TO TRYLATER
+                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;                                                                      // MOVE ALL LEFTOVERS TO RAWRETRYLATER
 
                 _IO_
             {
             if( cNewIncoming )                                                                                                                              // IF EXIST LEFTOVERS
-            cNewIncoming = etThread.diskFileExistsF( tin0P , tFolderRawIncoming+tStar ) ;                                                                   // IF EXIST NEWLY INCOMING RAW NOTICES
+            cNewIncoming = etThread.diskFileExistsF( tin0P , tFolderRawIncoming+tStar ) ;
 
             while( !ether && ~hFindOuter && !POOP && !cNewEvents ) ;
             }
@@ -2003,7 +2003,7 @@ DONE( tmWorkF )
                     }
                         }
                             etThread.traceF( tin0P , tShort ) ;
-                            etThread.diskMoveFileOrDirF( tin0P , tFolderEventIncoming+tShort , pInfo->psttIfoName ) ;
+                            etThread.diskMoveFileOrDirF( tin0P , tFolderRawIncoming+tShort , pInfo->psttIfoName ) ;
 
                             }
                                 etThread.delF( tin0P , psttShort ) ;
@@ -2034,9 +2034,10 @@ DONE( tmWorkF )
 
                 _IO_
             {
+            if( cRetryLater )
 
-            etThread.traceF( tin0P , T("raw notices / perhaps moving tryLater to incoming [cNewIncoming,cTryLater]:    ")+TF2(cNewIncoming,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cTryLater,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            countT cTryLater = etThread.diskFileExistsF( tin0P , tFolderRawRetryLater+tStar ) ;
+            etThread.traceF( tin0P , T("raw notices / perhaps moving tryLater to incoming [cNewIncoming,cRetryLater]:    ")+TF2(cNewIncoming,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cRetryLater,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            countT cRetryLater = etThread.diskFileExistsF( tin0P , tFolderRawRetryLater+tStar ) ;
 
             _IO_
         {
@@ -2052,8 +2053,8 @@ DONE( tmWorkF )
 
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventRetryLater ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tFolderEventDone       ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventRetryLater ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tFolderEventIncoming   ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tFolderRawDone         ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tFolderRawRetryLater   ) ;
