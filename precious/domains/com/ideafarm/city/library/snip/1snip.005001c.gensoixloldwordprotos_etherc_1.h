@@ -323,7 +323,7 @@ voidT sockF_ob6bP_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS
 
 voidT chokeAttackerF_ob33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT sockAcceptF_ob3db6bP_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT sockAcceptF_ob3db6bPs_acceptF_parametersSP_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT sockListenF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

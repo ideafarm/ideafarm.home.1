@@ -1295,11 +1295,11 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "sockAcceptF_ob3db6b@" ) ;
+    TN( tNameSoixlOld , "sockAcceptF_ob3db6b@s_acceptF_parametersS@" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)sockAcceptF_ob3db6bP_GF ;
+    *_pSwSoixlOldApi = (countT)sockAcceptF_ob3db6bPs_acceptF_parametersSP_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

@@ -160,7 +160,7 @@
     "    . socksShutdownF_o       . ?? ")+T(postName)+T("\r\n"
     "    . sockF_ob6b@       . ?? ")+T(postName)+T("\r\n"
     "    . chokeAttackerF_ob33       . ?? ")+T(postName)+T("\r\n"
-    "    . sockAcceptF_ob3db6b@       . ?? ")+T(postName)+T("\r\n"
+    "    . sockAcceptF_ob3db6b@s_acceptF_parametersS@       . ?? ")+T(postName)+T("\r\n"
     "    . sockListenF_ob       . ?? ")+T(postName)+T("\r\n"
     "    . sockMyNameF_o3db       . ?? ")+T(postName)+T("\r\n"
     "    . sockPeerNameF_o3db       . ?? ")+T(postName)+T("\r\n"

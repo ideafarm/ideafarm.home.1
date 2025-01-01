@@ -223,7 +223,7 @@ voidT chokeAttackerF_ob33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const
     if( !POOP ) etherP.chokeAttackerF( tin0P , handleP , cbRequestReadP , cbRequestWriteP ) ;
 }
 
-voidT sockAcceptF_ob3db6bP_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT sockAcceptF_ob3db6bPs_acceptF_parametersSP_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -279,8 +279,8 @@ voidT sockAcceptF_ob3db6bP_GF( tin0S& tin0P , etherC& etherP , soulC& slP , cons
             }
         }
     }
-    if( !POOP ) etherP.sockAcceptF( tin0P , hClientP , idPortP , nicNameP , handleP , bRefuseP , phContextP ) ;
-    DEL( phContextP ) ;
+
+    ZE( s_acceptF_parametersS* , pP ) ;
 }
 
 voidT sockListenF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
