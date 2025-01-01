@@ -41,7 +41,7 @@ DONE( tmWorkF )
 
                     ;
                             : tFolderEventDone
-                            ? tFolderEventToRetry
+                            ? tFolderEventRetryLater
                         : F(flagsFail)
                         ? tFolderEventAbandoned
                     TN( tWhere , "" ) ; tWhere = bFailPermanent
@@ -1276,7 +1276,7 @@ DONE( tmWorkF )
 
                     }
                         }
-                            etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | could not get shadow of ")+T((strokeS*)tIfoName)+T(": ") ) ;
+                            etThread.traceF( tin0P , T("could not get shadow of ")+T((strokeS*)tIfoName)+T(": ") ) ;
                             flagsFail |= flFAIL_COULDnOTgETsHADOW ;
                             POOPR ;
                         {
@@ -1289,7 +1289,7 @@ DONE( tmWorkF )
                     IFsCRATCHoK{}
 
                     ZE( flagsT , flagsFail ) ;
-                    etThread.traceF( tin0P , TT(timeN1,timeN2)+T(" | receiving ")+T((strokeS*)tIfoName)+T(": ") ) ;
+                    etThread.traceF( tin0P , T("receiving ")+T((strokeS*)tIfoName)+T(": ") ) ;
 
                     etThread.traceF( tin0P , tShort ) ;
 
@@ -1326,56 +1326,46 @@ DONE( tmWorkF )
         handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
         }
-            while( !ether && ~hFind && !POOP ) ;
             }
-                DEL( pInfo ) ;
+                while( !ether && ~hFind && !POOP ) ;
                 }
-                    }
-                        etThread.traceF( tin0P , tShort ) ;
-                        etThread.diskMoveFileOrDirF( tin0P , tFolderEventIncoming+tShort , pInfo->psttIfoName ) ;
-
-                        }
-                            etThread.delF( tin0P , psttShort ) ;
-                            tShort = T(psttShort) ;
-                            etThread.delF( tin0P , psttnu ) ;
-                            etThread.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
-                            ZE( strokeS* , psttShort ) ;
-                            ZE( strokeS* , psttnu ) ;
-                        {
-                        TN( tShort , "" ) ;
-                    {
-                    if( !bDir )
-
-                    const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
-                {
-                else
-                }
-                    break ;
                     DEL( pInfo ) ;
+                    }
+                        }
+                            etThread.traceF( tin0P , tShort ) ;
+                            etThread.diskMoveFileOrDirF( tin0P , tFolderEventRetryLater+tShort , pInfo->psttIfoName ) ;
+
+                            }
+                                etThread.delF( tin0P , psttShort ) ;
+                                tShort = T(psttShort) ;
+                                etThread.delF( tin0P , psttnu ) ;
+                                etThread.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                ZE( strokeS* , psttShort ) ;
+                                ZE( strokeS* , psttnu ) ;
+                            {
+                            TN( tShort , "" ) ;
+                        {
+                        if( !bDir )
+
+                        const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
+                    {
+                    else
+                    }
+                        break ;
+                        DEL( pInfo ) ;
+                    {
+                    if( !pInfo || !pInfo->psttIfoName )
+
+                    etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tFolderEventIncoming ) ;
+                    ZE( infoFileS* , pInfo ) ;
                 {
-                if( !pInfo || !pInfo->psttIfoName )
+                do
+                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;                                                                          // MOVE ALL LEFTOVERS TO TRYLATER
 
-                etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tFolderEventToRetry ) ;
-                ZE( infoFileS* , pInfo ) ;
+                _IO_
             {
-            do
-            handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+            if( etThread.diskFileExistsF( tin0P , tFolderRawIncoming+tStar ) )                                                                                  // IF EXIST LEFTOVERS
 
-            timeL2 = timeN2 ;
-            timeL1 = timeN1 ;
-            _IO_
-        {
-        if( timeE2 || timeE1 > TICK >> 0 )
-
-        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeL1 , timeL2 ) ;
-        sCountT timeE2 = timeN2 ;
-        countT  timeE1 = timeN1 ;
-
-        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
-        ZE( sCountT , timeN2 ) ;
-        ZE( countT  , timeN1 ) ;
-
-        }
             while( !ether && ~hFindOuter && !POOP && !cNewEvents ) ;
             }
                 DEL( pInfoOuter ) ;
@@ -2006,25 +1996,64 @@ DONE( tmWorkF )
             handleC hFindOuter( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
             ZE( countT , cNewEvents ) ;
 
+            }
+                while( !ether && ~hFind && !POOP ) ;
+                }
+                    DEL( pInfo ) ;
+                    }
+                        }
+                            etThread.traceF( tin0P , tShort ) ;
+                            etThread.diskMoveFileOrDirF( tin0P , tFolderEventIncoming+tShort , pInfo->psttIfoName ) ;
+
+                            }
+                                etThread.delF( tin0P , psttShort ) ;
+                                tShort = T(psttShort) ;
+                                etThread.delF( tin0P , psttnu ) ;
+                                etThread.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                ZE( strokeS* , psttShort ) ;
+                                ZE( strokeS* , psttnu ) ;
+                            {
+                            TN( tShort , "" ) ;
+                        {
+                        if( !bDir )
+
+                        const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
+                    {
+                    else
+                    }
+                        break ;
+                        DEL( pInfo ) ;
+                    {
+                    if( !pInfo || !pInfo->psttIfoName )
+
+                    etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tFolderEventRetryLater ) ;
+                    ZE( infoFileS* , pInfo ) ;
+                {
+                do
+                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;                                                                         // MOVE ALL TRYLATER TO INCOMING
+
+                _IO_
+            {
+
             _IO_
         {
+        if( etThread.diskFileExistsF( tin0P , tFolderRawIncoming+tStar ) )                                                                                      // IF EXIST NEWLY INCOMING RAW NOTICES
 
         _IO_
     {
     while( !ether && !etThread )
     ZE( countT  , idUniquifier ) ;
-    ZE( sCountT , timeL2 ) ;
-    ZE( countT  , timeL1 ) ;
+    TN( tStar  , "*" ) ;
     TN( tSlash , "/" ) ;
 
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventAbandoned ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventToRetry   ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventDone      ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventIncoming  ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderRawDone        ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderRawIncoming    ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventAbandoned  ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventRetryLater ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventDone       ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventIncoming   ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderRawDone         ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFolderRawIncoming     ) ;
 
     TN( tValueWantedInnerStripeNoticeType  , "customer.subscription.updated" ) ;
     TN( tValueWantedMiddleStripeNoticeType , "checkout.session.completed"    ) ;
@@ -2039,7 +2068,7 @@ DONE( tmWorkF )
     TN( tTrue                    , "true"                          ) ;
     TN( tFolderEventDone         , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/events.4.done/"          ) ;
     TN( tFolderEventAbandoned    , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/events.3.abandoned/"     ) ;
-    TN( tFolderEventToRetry      , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/events.2.to.retry/"      ) ;
+    TN( tFolderEventRetryLater   , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/events.2.retry.later/"   ) ;
     TN( tFolderEventIncoming     , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/events.1.incoming/"      ) ;
     TN( tFolderRawDone           , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/raw.notices.2.done/"     ) ;
     TN( tFolderRawIncoming       , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/raw.notices.1.incoming/" ) ;
