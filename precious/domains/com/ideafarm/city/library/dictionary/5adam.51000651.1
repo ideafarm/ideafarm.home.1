@@ -79,7 +79,7 @@ DONE( tmWorkF )
                                 }
                                     }
                                         }
-                                            etThread.traceF( tin0P , T("could not input ")+tFileBeingEaten+T(" ; will nap, then retry") ) ;
+                                            //etThread.trace F( tin0P , T("could not input ")+tFileBeingEaten+T(" ; will nap, then retry") ) ;
                                             cFail ++ ;
                                             POOPRqUIET
                                         {
@@ -97,7 +97,7 @@ DONE( tmWorkF )
                                     }
                                         }
                                             continue ;
-                                            etThread.traceF( tin0P , T("!exception / could not move to ")+tFileBeingEaten+T(" from ")+T(psttc1) ) ;
+                                            //etThread.trace F( tin0P , T("!exception / could not move to ")+tFileBeingEaten+T(" from ")+T(psttc1) ) ;
                                             cFail ++ ;
                                             POOPRqUIET
                                         {
@@ -356,7 +356,7 @@ DONE( tmWorkF )
             }
                 }
                     etThread.boxZapF( tin0P , tLong ) ;
-                    etThread.traceF( tin0P , T("deleting ")+tLong ) ;
+                    //etThread.trace F( tin0P , T("deleting ")+tLong ) ;
                     TN( tLong , pInfo->psttIfoName ) ;
                 {
                 if( !bDir )
@@ -445,13 +445,13 @@ if( pTaskP )
 TASK( tmWorkF )
 
 //DONE( tmFixArcNamesF )
-//etThread.traceF( tin0P , T("archive: fixed  bad file names, if any") ) ;
+////etThread.trace F( tin0P , T("archive: fixed  bad file names, if any") ) ;
 //etThread.disk FixBadFileNamesF( tin0P , T("///ideafarm/IdeaFarm " "(tm)/")+T(thirdC::postUserNameIF())+T("/2.1. Drop Files Here To Archive Them/") ) ;
-//etThread.traceF( tin0P , T("archive: fixing bad file names, if any") ) ;
+////etThread.trace F( tin0P , T("archive: fixing bad file names, if any") ) ;
 //TASK( tmFixArcNamesF )
 
 DONE( tmObeySoilF )
-etThread.traceF( tin0P , T("thread exit") ) ;
+//etThread.trace F( tin0P , T("thread exit") ) ;
 }
     etThread.delF( tin0P , psttTmpKtCodeSoiiP ) ;
     }
@@ -468,7 +468,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
     grabObeyP.ungrabF( tin0P ) ;
     }
         etThread.delF( tin0P , psttFileNameP ) ;
-        etThread.traceF( tin0P , T("obeyed  [soil file]:    ")+T(psttFileNameP) ) ;
+        //etThread.trace F( tin0P , T("obeyed  [soil file]:    ")+T(psttFileNameP) ) ;
         etThread.delF( tin0P , postiP ) ;
         etThread.delF( tin0P , psttShort ) ;
         etThread.delF( tin0P , psttPath ) ;
@@ -497,7 +497,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
             {
             IFsCRATCHoK
 
-            etThread.traceF( tin0P , T("cleaning up") ) ;
+            //etThread.trace F( tin0P , T("cleaning up") ) ;
 
             }
                 }
@@ -520,17 +520,17 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                             _IO_
                         {
                         tTo = tPickSoil ;                                                                              // POINT TO BLOOD
-                        etThread.traceF( tin0P , T("writing pseudoduplicate file of input file from soulAsciiOut") ) ;
+                        //etThread.trace F( tin0P , T("writing pseudoduplicate file of input file from soulAsciiOut") ) ;
 
                         etThread.etherSoilF( tin0P , ether , soulAsciiOut , soulNativeLint , ifcIDmODEeTHERsOIL_ASCIIfROMnATIVE , 0 , flETHERsOILf_CONSUMEiNPUT , psttTmpKtCodeSoiiP , postiP , costiP ) ;
                         soulC soulAsciiOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.out" ) ; //THIS IMAGE SHOULD BE IDENTICAL TO THE LINT IMAGE IF NO MARKS, SO THIS STEP COULD BE ELIMINATED; WE DO IT THIS WAY BECAUSE, OTHER THAN SOME MORE CODE, IT IS COSTLESS AND CONFIDENCE OF CORRECTNESS IS HIGHER (LINT MARKUP CODE IS COMPLEX SO MIGHT CONTAIN BUGS)
-                        etThread.traceF( tin0P , T("loading soulAsciiOut") ) ;
+                        //etThread.trace F( tin0P , T("loading soulAsciiOut") ) ;
                         _IO_
                     {
                     if( soulNativeLint )
                     // TAKES A LOT OF TIME AND I DO NOT NEED IT, EXCEPT WHEN DEBUGGING SOIL REPLACEMENTS
 
-                    etThread.traceF( tin0P , T("where: unregistered thread") ) ;
+                    //etThread.trace F( tin0P , T("where: unregistered thread") ) ;
                     }
                         }
                             etThread.delF( tin0P , postr ) ;
@@ -547,7 +547,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                         while( soulr )
                         OPENfILEwRITE1( tPickSoil+tPrefix+tFile+tSuffix )
                 
-                        etThread.traceF( tin0P , T("loading soulReports / [cFields,tFile]: ")+TF2((countT)soulr,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    \"")+tFile+T("\"") ) ;
+                        //etThread.trace F( tin0P , T("loading soulReports / [cFields,tFile]: ")+TF2((countT)soulr,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    \"")+tFile+T("\"") ) ;
                         soulReports >> soulr ;
                         soulC soulr( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.report" ) ;
                 
@@ -555,7 +555,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                         tFile = T(psttf) ;
                         soulReports >> psttf ; ___( psttf ) ;
                         ZE( strokeS* , psttf ) ;
-                        etThread.traceF( tin0P , T("writing report file") ) ;
+                        //etThread.trace F( tin0P , T("writing report file") ) ;
                         _IO_
                     {
                     while( soulReports )
@@ -568,11 +568,11 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                     while( !ether && !POOP && etThread.etherSoilF( tin0P , ether , soulReports , soulNativeLint , ifcIDmODEeTHERsOIL_REPORT , 0 , flETHERsOILf_null/*flETHERsOILf_CONSUMEiNPUT*/ , psttTmpKtCodeSoiiP , postiP , costiP ) ) ; // WHILE IS TO OBEY bRepeat ; WILL REPEAT FOREVER UNTIL I AM FIRED
                     do     soulReports.removeAllF( tin0P ) ;
 
-                    etThread.traceF( tin0P , T("loading soulReports / calling etherSoilF") ) ;
+                    //etThread.trace F( tin0P , T("loading soulReports / calling etherSoilF") ) ;
                     //TO GET REPORTS, COMMENT OUT THE CONSUMEiNPUT FLAG
 
                     soulC soulReports( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.reports" , CBjOTbOOKwRAPPER( CBjOTbOOKdEFAULT , 1 ) ) ;
-                    etThread.traceF( tin0P , T("loading soulReports") ) ;
+                    //etThread.trace F( tin0P , T("loading soulReports") ) ;
                     _IO_
                 {
                 else
@@ -595,7 +595,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                         _IO_
                     {
                     tTo = T(psttzBounceP) ;                                                                               // POINT TO ANUS
-                    etThread.traceF( tin0P , T("abort: writing poop file") ) ;
+                    //etThread.trace F( tin0P , T("abort: writing poop file") ) ;
 
                     //}
                     //    etThread.delF( tin0P , psttp ) ;
@@ -608,7 +608,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
 
                     etThread.etherSoilF( tin0P , ether , soulAsciiLint , soulNativeLint , ifcIDmODEeTHERsOIL_ASCIIfROMnATIVE , 0 , flETHERsOILf_CONSUMEiNPUT , psttTmpKtCodeSoiiP , postiP , costiP ) ;
                     soulC soulAsciiLint( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.lint" ) ;
-                    etThread.traceF( tin0P , T("abort: loading soulAsciiLint") ) ;
+                    //etThread.trace F( tin0P , T("abort: loading soulAsciiLint") ) ;
                     DEL( ((tin1S&)tin0P).pBarryUtility ) ;
                     _IO_
                 {
@@ -616,11 +616,11 @@ etThread.traceF( tin0P , T("thread exit") ) ;
 
                 }
                     bAbort = !!etThread.etherSoilF( tin0P , ether , soulNativeLint , soulNativeIn , ifcIDmODEeTHERsOIL_LINT , 0 , flETHERsOILf_CONSUMEiNPUT , psttTmpKtCodeSoiiP , postiP , costiP ) ;
-                    etThread.traceF( tin0P , T("loading soulNativeLint and calculating bAbort") ) ;
+                    //etThread.trace F( tin0P , T("loading soulNativeLint and calculating bAbort") ) ;
 
                     }
                         etThread.etherSoilF( tin0P , ether , soulNativeIn , soulPrepared , ifcIDmODEeTHERsOIL_NATIVEfROMaSCII , 0 , flETHERsOILf_CONSUMEiNPUT , psttTmpKtCodeSoiiP , postiP , costiP ) ;
-                        etThread.traceF( tin0P , T("loading soulNativeIn") ) ;
+                        //etThread.trace F( tin0P , T("loading soulNativeIn") ) ;
 
                         //}
                         //    //LOGrAW( "\r\n---- PREPARED: (END) ----\r\n" ) ;
@@ -645,9 +645,9 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                         //{
                         //U::COMMENT OUT IN PRODUCTION
 
-                        etThread.traceF( tin0P , T("destroyed soulAsciiIn") ) ;
+                        //etThread.trace F( tin0P , T("destroyed soulAsciiIn") ) ;
                         }
-                            etThread.traceF( tin0P , T("destroying soulAsciiIn") ) ;
+                            //etThread.trace F( tin0P , T("destroying soulAsciiIn") ) ;
                             }
                                 }
                                     }
@@ -657,28 +657,28 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                                             soulPrepared >> psttp ; ___( psttp ) ;
                                             ZE( strokeS* , psttp ) ;
 
-                                            //if( !( cRemain % ( TUCK << 4 ) ) ) etThread.traceF( tin0P , T("[cRemain]: ")+TF2(cRemain,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                                            //if( !( cRemain % ( TUCK << 4 ) ) ) //etThread.trace F( tin0P , T("[cRemain]: ")+TF2(cRemain,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                                             countT cRemain = soulPrepared ;
                                             _IO_
                                         {
                                         while( soulPrepared )
-                                        etThread.traceF( tin0P , T("pouring for another pass [idPass,soulPrepared]: ")+TF2(idPass,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2((countT)soulPrepared,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                                        //etThread.trace F( tin0P , T("pouring for another pass [idPass,soulPrepared]: ")+TF2(idPass,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2((countT)soulPrepared,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                                         _IO_
                                     {
                                     else
                                     }
                                         break ;
-                                        etThread.traceF( tin0P , T("loaded soulPrepared for final pass [idPass]: ")+TF2(idPass,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                                        //etThread.trace F( tin0P , T("loaded soulPrepared for final pass [idPass]: ")+TF2(idPass,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                                         _IO_
                                     {
                                     if( !etThread.etherSoilF( tin0P , ether , soulPrepared , soulAsciiIn , ifcIDmODEeTHERsOIL_PREPAREsOURCE , 0 , idPass == 1 ? flETHERsOILf_CONSUMEiNPUT | flETHERsOILf_INSERTsOURCEbRANCHESiFkTR : flETHERsOILf_CONSUMEiNPUT , psttTmpKtCodeSoiiP , postiP , costiP ) )
-                                    etThread.traceF( tin0P , T("loading soulPrepared [idPass]: ")+TF2(idPass,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                                    //etThread.trace F( tin0P , T("loading soulPrepared [idPass]: ")+TF2(idPass,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                                     _IO_
                                 {
                                 for( countT idPass = 1 ; ; idPass ++ )
                                 _IO_
                             {
-                            etThread.traceF( tin0P , T("loading soulPrepared") ) ;
+                            //etThread.trace F( tin0P , T("loading soulPrepared") ) ;
 
                             }
                                 }
@@ -687,7 +687,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
 
                                     //}
                                     //    etThread.delF( tin0P , psttd ) ;
-                                    //    etThread.traceF( tin0P , psttd , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                    //    //etThread.trace F( tin0P , psttd , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                     //    etThread.strDumpStrokesIF( tin0P , psttd , pstti , T("YIPPEE!") ) ;
                                     //    ZE( strokeS* , psttd ) ;
                                     //{
@@ -700,7 +700,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                                     while( postzBite[ costBite - 1 ] == '\\' ) costBite -- ; // LATH MUST NOT BE ESCAPE CHAR
                                     countT costBite = cDo <= TOCK ? cDo : TOCK ;
 
-                                    etThread.traceF( tin0P , T("loading soulAsciiIn [cDo]: ")+TF2(cDo,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                                    //etThread.trace F( tin0P , T("loading soulAsciiIn [cDo]: ")+TF2(cDo,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
                                     _IO_
                                 {
                                 while( cDo )
@@ -715,7 +715,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
 
                                 //}
                                 //    etThread.delF( tin0P , psttd ) ;
-                                //    etThread.traceF( tin0P , psttd , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                //    //etThread.trace F( tin0P , psttd , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                                 //    etThread.strDumpStrokesIF( tin0P , psttd , pstti , T("loading soulAsciiIn:") ) ;
                                 //    ZE( strokeS* , psttd ) ;
                                 //{
@@ -727,7 +727,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                             if( costiP <= TOCK )
 
                             soulC soulAsciiIn( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.in" ) ;
-                            etThread.traceF( tin0P , T("loading soulAsciiIn") ) ;
+                            //etThread.trace F( tin0P , T("loading soulAsciiIn") ) ;
                             _IO_
                         {
                         soulC soulPrepared( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.prepared" ) ;
@@ -756,9 +756,9 @@ etThread.traceF( tin0P , T("thread exit") ) ;
         ZE( strokeS* , psttShort ) ;
         ZE( strokeS* , psttPath ) ;
 
-        etThread.traceF( tin0P , T("setting up / ct'ed barryC") ) ;
+        //etThread.trace F( tin0P , T("setting up / ct'ed barryC") ) ;
         //((tin1S&)tin0P).pBarryUtility = new( 0 , tin0P , LF ) barryC( tin0P ) ; ___( ((tin1S&)tin0P).pBarryUtility ) ;
-        etThread.traceF( tin0P , T("setting up / ct'ing barryC") ) ;
+        //etThread.trace F( tin0P , T("setting up / ct'ing barryC") ) ;
 
         //20171229@1256: COMMENTED barryC PREALLOCATION OUT BECAUSE IT CONSUMES 1/4 OF THE ADDRESS SPACE
         //20171202@0909: PROVISIONALLY ENABLING THIS, SO IT IS PROVISIONALLY ILLEGAL TO RUN MORE THAN WO tmObeySoilF THREAD PER HOME
@@ -768,7 +768,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
         //THIS IS JUST A PREALLOCATOR SO WILL FIND OUT EARLIER IF CANNOT GET THIS MEMORY
         //CANNOT DO THIS WHEN QUEUEING WORK FOR A JOB, BECAUSE HAVE MULTIPLE tmObeySoilF THREADS AND THIS USES TOO MUCH MEMORY
 
-        etThread.traceF( tin0P , T("obeying [soil file]:    ")+T(psttFileNameP) ) ;
+        //etThread.trace F( tin0P , T("obeying [soil file]:    ")+T(psttFileNameP) ) ;
     {
     grabObeyP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
@@ -884,9 +884,9 @@ DONE( tmRenameF )
     etThread.delF( tin0P , psttmDropArchive ) ;
     }
         }
-            etThread.traceF( tin0P , T("tmRenameF / [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //etThread.trace F( tin0P , T("tmRenameF / [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             etThread.diskWalkRenameForArchivalF( tin0P , cDirs , cFiles , ether , psttzTo , psttmDropArchive , myCBF , pcArg ) ;
-            etThread.traceF( tin0P , T("tmRenameF / [&etThread]:    ")+TF3((countT)&etThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+            //etThread.trace F( tin0P , T("tmRenameF / [&etThread]:    ")+TF3((countT)&etThread,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
             countT pcArg[] = { (countT)&etThread } ;
             ZE( countT , cFiles ) ;
             ZE( countT , cDirs ) ;
@@ -924,19 +924,19 @@ TASK( tmRenameF )
 }
     return bDoIt ;
     }
-        if( !bDoIt ) etherP.traceF( tin0P , T("myCBF / rejected [cWords,psttName]:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tIffn ) ;
+        if( !bDoIt ) ;//etherP.trace F( tin0P , T("myCBF / rejected [cWords,psttName]:    ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tIffn ) ;
         bDoIt = cWords == 7 ; // ACCEPT IFF THERE IS EXACTLY WO SUBFOLDER
 
         etherP.delF( tin0P , pstt1w ) ;
         //}
-        //    etherP.traceF( tin0P , T("myCBF / [word]:    ")+T(psttc1) ) ;
+        //    //etherP.trace F( tin0P , T("myCBF / [word]:    ")+T(psttc1) ) ;
         //{
         //FORsTRINGSiN1( pstt1w )
         countT cWords = etherP.strWordsF( tin0P , pstt1w , tIffn , sttq , T("/") ) ; ___( pstt1w ) ;
         strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
         ZE( strokeS* , pstt1w ) ;
 
-        etherP.traceF( tin0P , T("myCBF / [iffn]:    ")+tIffn ) ;
+        //etherP.trace F( tin0P , T("myCBF / [iffn]:    ")+tIffn ) ;
     {
     if( !bIgnore )
     ZE( boolT , bDoIt ) ;
