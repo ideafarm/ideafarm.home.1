@@ -332,10 +332,10 @@
                 boolT bWoth = 1 ;
                 etherP.etherWhereF( tin0P , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , cDo ) ;
 
-                //cDo = 1 ;                                          //20171218@1405: cDo = 1 TO FIND A BUG
+                //cDo = 1 ;                                          //20171218@1405: cDo = 1 TO FIND A BUG ; 20250101@1514
 
-                if( cDo > 4 ) cDo = 4 ; //20230615@1350: TO AVOID MEMORY EXHAUSTION; "4" IS ARBITRARY AND NOT BASED UPON EXPERIENCE
-                countT cDo = thirdC::osProcessorsIF( tin0P ) >> 1 ; //4->2 IN RESPONSE TO POOL EXHAUSTION 20170607@1650 ; 20171214@2204: << 2 -> >> 1 IN RESPONSE TO POOL EXHAUSTION; 20171229@1632: ">> 1" -> "" AFTER ELIMIMATING baryC PREALLOCATION
+                //20250101@1612 TO FIND THE MEMORY HOG: if( cDo > 4 ) cDo = 4 ; //20230615@1350: TO AVOID MEMORY EXHAUSTION; "4" IS ARBITRARY AND NOT BASED UPON EXPERIENCE
+                countT cDo = thirdC::osProcessorsIF( tin0P ) << 2 ; //4->2 IN RESPONSE TO POOL EXHAUSTION 20170607@1650 ; 20171214@2204: << 2 -> >> 1 IN RESPONSE TO POOL EXHAUSTION; 20171229@1632: ">> 1" -> "" AFTER ELIMIMATING baryC PREALLOCATION ; 20250101@1613: "<< 2"
                 //20230611@1219: "<< 1" -> ">> 1" IN RESP TO POOL EXHAUSTION
             {
             ZE( countT , cWorkers ) ;
@@ -443,13 +443,13 @@ THREADmODE3rESTORE
         }
             st_putFileJob_P.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-            //if( bWhereP ) etThread.traceF( tin0P , T("bWhere is set / called  putFileIF") ) ;
+            if( bWhereP ) etThread.traceF( tin0P , T("bWhere is set / called  putFileIF") ) ;
 
             etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_UNWATCH ) ;
 
             dec02AM( cPendingP ) ;
             branchS::putFileIF( tin0P , etThread , countTC() , cPendingP , st_putFileJob_P , pP , job.offLevel , job.jMe , job.jDad , job.jGrandDad , cLeverBranchP , swFileP , job.cNest , job.idEdition , psttzTimeStampP , psttzBanner1P , psttzBanner2P , psttzNameSpaceP ) ;
-            //if( bWhereP ) etThread.traceF( tin0P , T("bWhere is set / calling putFileIF") ) ;
+            if( bWhereP ) etThread.traceF( tin0P , T("bWhere is set / calling putFileIF") ) ;
 
             etThread.etherWhereF( tin0P , ifcIDaCTIONwHERE_WATCH ) ;
 
@@ -469,7 +469,7 @@ THREADmODE3rESTORE
 
     etThread.delF( tin0P , pcArgP ) ;
 
-    //if( bWhereP ) etThread.traceF( tin0P , T("bWhere is set") ) ;
+    if( bWhereP ) etThread.traceF( tin0P , T("bWhere is set") ) ;
 
     //20180119@1634: 0->1 WITHOUT ANALYSIS
     bWhereP = 1 ; //U::20140808@1625: DISABLED PENDING MIGRATION TO NEW BLOB FUNCTIONALITY FOR switchC ; ENABLE AFTER Where HAS BEEN MODIFIED TO CONFORM TO THE NEW FUNCTIONALITY (THE LEVER WILL BE A POINTER RATHER THAN A PLACE WHERE A VALUE IS WRITTEN)
