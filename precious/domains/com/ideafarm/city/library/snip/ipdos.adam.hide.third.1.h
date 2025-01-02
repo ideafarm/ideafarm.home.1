@@ -477,7 +477,7 @@ struct  /*ff*/s_acceptF_parametersS/*ff*/                               ; /*ff*/
 /**/
 /*1*//*ENABLEdROPnOTES*//*1*/
 
-#define ENABLEdROPnOTES
+//#define ENABLEdROPnOTES
 
 
 //
