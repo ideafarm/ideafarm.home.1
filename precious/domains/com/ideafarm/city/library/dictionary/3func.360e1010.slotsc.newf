@@ -123,6 +123,8 @@
                         break ;
                         inc02AM( pcTallyOut[ offs ] ) ;
 
+#endif
+
                         }
                             }
                                 putNegAM( pDropNote->finger , FINGERnEG_dropNoteSlotsHasAdjustedDropHeader ) ;
@@ -140,6 +142,9 @@
                         if( pDropNote ) putNegAM( pDropNote->finger , FINGERnEG_dropNoteSlotsIsAdjustingDropHeader ) ;
 
                         dropNoteS* pDropNote = ppSex[ offs ]->pDropNoteF( tin0P , pbo ) ;
+
+#if defined( ENABLEdROPnOTES )
+
                         _IO_
                     {
                     if( pbo )
