@@ -9,7 +9,7 @@
 
 }
     }
-        //etherP.trace F( tin0P , T("put""FileIF/ - edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+        etherP.traceF( tin0P , T("put""FileIF/ - edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
 
         }
             }
@@ -332,7 +332,7 @@
                 boolT bWoth = 1 ;
                 etherP.etherWhereF( tin0P , ifcIDaCTIONwHERE_SETUP , flETHERwHERE_null , cDo ) ;
 
-                //cDo = 1 ;                                          //20171218@1405: cDo = 1 TO FIND A BUG ; 20250101@1514
+                cDo = 1 ;                                          //20250101@1514: MUCH FASTER WITH ONLY 1 THREAD
 
                 //20250101@1612 TO FIND THE MEMORY HOG: if( cDo > 4 ) cDo = 4 ; //20230615@1350: TO AVOID MEMORY EXHAUSTION; "4" IS ARBITRARY AND NOT BASED UPON EXPERIENCE
                 countT cDo = thirdC::osProcessorsIF( tin0P ) << 2 ; //4->2 IN RESPONSE TO POOL EXHAUSTION 20170607@1650 ; 20171214@2204: << 2 -> >> 1 IN RESPONSE TO POOL EXHAUSTION; 20171229@1632: ">> 1" -> "" AFTER ELIMIMATING baryC PREALLOCATION ; 20250101@1613: "<< 2"
@@ -410,8 +410,8 @@
         {                                                                                   // WRITE THE INPUT FILE AS AN HTML FILE SO THAT IT CAN BE VIEWED IN A BROWSER
         if( postSourceP && costSourceP )
 
-        //etherP.trace F( tin0P , T("put""FileIF/ [psttFile]:    ")+T(pP.psttFile) ) ;
-        //etherP.trace F( tin0P , T("put""FileIF/ + edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+        etherP.traceF( tin0P , T("put""FileIF/ [psttFile]:    ")+T(pP.psttFile) ) ;
+        etherP.traceF( tin0P , T("put""FileIF/ + edition [idEdition]: ")+TF2(idEdition,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     {
     //for( countT idEdition = 1 ; idEdition <= 5 && !bQuitP ; idEdition ++ )
     for( countT idEdition = 3 ; idEdition <= 3 && !bQuitP ; idEdition ++ )
