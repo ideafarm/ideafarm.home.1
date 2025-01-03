@@ -29,6 +29,9 @@ DONE( tmWorkF )
 
                     }
                         }
+                            ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;                    //THIS ENSURES THAT I DON'T PEG CPU BY RETRYING ; I AM SPRINKLED OVER CODE WITHOUT ANALYSIS
+                            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
                             flagsFail |= flFAIL_COULDnOTmOVEfILE ;
                             POOPR
                         {
@@ -40,8 +43,8 @@ DONE( tmWorkF )
                     IFsCRATCHoK
 
                     ;
-                        : tFolderEventDone
-                        ? tFolderEventRetryLater
+                        : tSharedFolderEventDone
+                        ? tSharedFolderEventRetryLater
                     TN( tWhere , "" ) ; tWhere = F(flagsFail)
 
                     etThread.traceF( tin0P , T("moving the file") ) ;
@@ -49,6 +52,9 @@ DONE( tmWorkF )
                     etThread.traceF( tin0P , T("cleaning up 3") ) ;
 
                     }
+                        ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;                    //THIS ENSURES THAT I DON'T PEG CPU BY RETRYING ; I AM SPRINKLED OVER CODE WITHOUT ANALYSIS
+                        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
                         etThread.traceF( tin0P , T("unknown error") ) ;
                         flagsFail |= flFAIL_UNKNOWNeRROR ;
                         POOPR
@@ -1127,6 +1133,9 @@ DONE( tmWorkF )
                                         {
                                         else
                                         }
+                                            ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;                    //THIS ENSURES THAT I DON'T PEG CPU BY RETRYING ; I AM SPRINKLED OVER CODE WITHOUT ANALYSIS
+                                            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
                                             flagsFail |= flFAIL_COULDnOTgETsHAREDsECRET ;
                                             etThread.traceF( tin0P , T("could not retrieve shared secret") ) ;
                                         {
@@ -1229,7 +1238,13 @@ DONE( tmWorkF )
                             {
                             if( !flagsFail )
 
-                            if( !bStudent && !bVisitor ) flagsFail |= flFAIL_UNKNOWNpRODUCT ;
+                            }
+                                ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;                    //THIS ENSURES THAT I DON'T PEG CPU BY RETRYING ; I AM SPRINKLED OVER CODE WITHOUT ANALYSIS
+                                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+                                flagsFail |= flFAIL_UNKNOWNpRODUCT ;
+                            {
+                            if( !bStudent && !bVisitor )
 
                             ;
                                 !etThread.strCompareF( tin0P , psttValueIdProduct , T("prod_RTnJkcMaLDwaqK") )      // TEST
@@ -1245,7 +1260,12 @@ DONE( tmWorkF )
 
                             _IO_
                         {
-                        if( !flagsFail )
+                        else
+                        }
+                            ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;                    //THIS ENSURES THAT I DON'T PEG CPU BY RETRYING ; I AM SPRINKLED OVER CODE WITHOUT ANALYSIS
+                            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+                        {
+                        if( flagsFail )
 
                         if( age < 13                                                      ) flagsFail |= flFAIL_UNEXPECTEDaGEtOOyOUNG ;
                         if( etThread.strCompareF( tin0P , psttVersion , tCorrectVersion ) ) flagsFail |= flFAIL_UNEXPECTEDvERSION     ;
@@ -1273,6 +1293,9 @@ DONE( tmWorkF )
 
                     }
                         }
+                            ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;                    //THIS ENSURES THAT I DON'T PEG CPU BY RETRYING ; I AM SPRINKLED OVER CODE WITHOUT ANALYSIS
+                            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
                             etThread.traceF( tin0P , T("could not get shadow of ")+T((strokeS*)tIfoName)+T(": ") ) ;
                             flagsFail |= flFAIL_COULDnOTgETsHADOW ;
                             POOPR ;
@@ -1315,7 +1338,7 @@ DONE( tmWorkF )
             {
             if( !pInfo || !pInfo->psttIfoName )
 
-            etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tFolderEventIncoming ) ;
+            etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tSharedFolderEventIncoming ) ;
             ZE( infoFileS* , pInfo ) ;
             _IO_
         {
@@ -1323,47 +1346,6 @@ DONE( tmWorkF )
         handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
 
         }
-            }
-                while( !ether && ~hFind && !POOP ) ;
-                }
-                    DEL( pInfo ) ;
-                    }
-                        }
-                            etThread.traceF( tin0P , tShort ) ;
-                            etThread.diskMoveFileOrDirF( tin0P , tFolderRawRetryLater+tShort , pInfo->psttIfoName ) ;
-
-                            }
-                                etThread.delF( tin0P , psttShort ) ;
-                                tShort = T(psttShort) ;
-                                etThread.delF( tin0P , psttnu ) ;
-                                etThread.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
-                                ZE( strokeS* , psttShort ) ;
-                                ZE( strokeS* , psttnu ) ;
-                            {
-                            TN( tShort , "" ) ;
-                        {
-                        if( !bDir )
-
-                        const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
-                    {
-                    else
-                    }
-                        break ;
-                        DEL( pInfo ) ;
-                    {
-                    if( !pInfo || !pInfo->psttIfoName )
-
-                    etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tFolderRawIncoming ) ;
-                    ZE( infoFileS* , pInfo ) ;
-                {
-                do
-                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;                                                                      // MOVE ALL LEFTOVERS TO RAWRETRYLATER
-
-                _IO_
-            {
-            if( cNewIncoming )                                                                                                                              // IF EXIST LEFTOVERS
-            cNewIncoming = etThread.diskFileExistsF( tin0P , tFolderRawIncoming+tStar ) ;
-
             while( !ether && ~hFindOuter && !POOP && !cNewEvents ) ;
             }
                 DEL( pInfoOuter ) ;
@@ -1377,48 +1359,135 @@ DONE( tmWorkF )
                                     }
                                         }
                                             }                                                                                                                                                   //U:: USE THE IDEMPOTENT FIELD IN STRIPE NOTICES TO PREVENT DUPLICATION OF PROCESSING
-                                                cNewEvents ++ ;
-                                                if( tShortInnerMove.csF( tin0P ) ) etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortInnerMove , tFolderRawIncoming+tShortInnerMove ) ; // "
-                                                                                   etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortMiddle    , tFolderRawIncoming+tShortMiddle    ) ; // "
-                                                                                   etThread.diskMoveFileOrDirF( tin0P , tFolderRawDone+tShortOuter     , tFolderRawIncoming+tShortOuter     ) ; //INTENTIONAL BLOCK FOREVER UNTIL SUCCEED (TO PREVENT PROCESSING THESE NOTICES MULTIPLE TIMES)
+                                                etThread.traceF( tin0P , T("[cMoved]:    ")+TF2(cMoved,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                }
+                                                    }
+                                                        ++ s ; ether.osSleepF( tin0P , TOCK * napTocks ) ;
+                                                        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+                                                        etThread.traceF( tin0P , T("napping for a few tocks / [napTocks]:    ")+TF2(napTocks,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                        countT napTocks = (countT)ruPassword >> SB * 3 + 5 ;                    // [0,8] ; NAP FOR A RANDOM TIME TO GIVE OTHER SERVERS AN OPPORTUNITY TO GET THESE RAW INCOMING FILES
 
-                                                etThread.delF( tin0P , psttFile ) ;
-                                                etThread.boxPutUniqueF( tin0P , psttFile , tFolderEventIncoming+tShortEvent , WS( sOut ) ) ;
-                                                ZE( strokeS* , psttFile ) ;
+                                                        etThread.diskFileOrDirDeleteF( tin0P , tFolderMaybe ) ;
+                                                        }
+                                                            }
+                                                                }
+                                                                    continue ;
+                                                                    DEL( pInfoOuter ) ;
+                                                                    etThread.traceF( tin0P , T("could not move back to incoming from unique maybe [short]")+*pptShort[ offi ] ) ;
+                                                                    POOPR ;
+                                                                {
+                                                                else
+                                                                if( !POOP ) cMoved -- ;
+                                                                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSharedFolderRawIncoming+*pptShort[ offi ] , tFolderMaybe+*pptShort[ offi ] ) ;
+                                                                SCOOPS
+                                                            {
+                                                            IFsCRATCHoK
+                                                        {
+                                                        for( countT offi = 0 ; offi < sizeof pptShort / sizeof pptShort[ 0 ] ; offi ++ )
+                                                    {
+                                                    else
+                                                    }
+                                                        cNewEvents ++ ;
+                                                        etThread.diskFileOrDirDeleteF( tin0P , tFolderReady ) ;
+                                                        etThread.diskMoveFileOrDirF( tin0P , tSharedFolderRawDone+tShortInner  , tFolderReady+tShortInner  ) ;
+                                                        etThread.diskMoveFileOrDirF( tin0P , tSharedFolderRawDone+tShortMiddle , tFolderReady+tShortMiddle ) ;
+                                                        etThread.diskMoveFileOrDirF( tin0P , tSharedFolderRawDone+tShortOuter  , tFolderReady+tShortOuter  ) ;
 
-                                                TN( tShortEvent , "soil." ) ; tShortEvent += T(bLive?"soul.event.live.":"soul.event.test.")+tEvent ;
+                                                        etThread.delF( tin0P , psttFile ) ;
+                                                        etThread.boxPutUniqueF( tin0P , psttFile , tSharedFolderEventIncoming+tShortEvent , WS( sOut ) ) ;
+                                                        ZE( strokeS* , psttFile ) ;
 
-                                                boolT bLive = !etThread.strCompareF( tin0P , tValueOuterLive , T("true") ) ;
+                                                        TN( tShortEvent , "soil." ) ; tShortEvent += T(bLive?"soul.event.live.":"soul.event.test.")+tEvent ;
+
+                                                        boolT bLive = !etThread.strCompareF( tin0P , tValueOuterLive , T("true") ) ;
+
+                                                        }
+                                                            sOut << (strokeS*)tValueMiddleHawker         ;
+                                                            sOut << (strokeS*)tValueMiddleAge            ;
+                                                            sOut << (strokeS*)tValueMiddleName           ;
+                                                            sOut << (strokeS*)tValueMiddleEmail          ;
+                                                            sOut << (strokeS*)tValueMiddlePostalCode     ;
+                                                            sOut << (strokeS*)tValueMiddleCountry        ;
+                                                            sOut << (strokeS*)tValueMiddleIdSubscription ;
+                                                            sOut << (strokeS*)tValueOuterIdProduct      ;
+                                                            sOut << (strokeS*)tValueOuterLive           ;
+
+                                                            sOut << (strokeS*)tVersion                  ;
+                                                            sOut << (strokeS*)tEvent                    ;
+                                                        {
+                                                        soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+
+                                                        TN( tVersion   , "1" ) ;
+                                                        TN( tEvent , "ipdos.subscription.create" ) ;
+
+                                                        etThread.traceF( tin0P , T("    [tValueMiddleHawker        ]: ")+tValueMiddleHawker         ) ;
+                                                        etThread.traceF( tin0P , T("    [tValueMiddleAge           ]: ")+tValueMiddleAge            ) ;
+                                                        etThread.traceF( tin0P , T("    [tValueMiddleName          ]: ")+tValueMiddleName           ) ;
+                                                        etThread.traceF( tin0P , T("    [tValueMiddleEmail         ]: ")+tValueMiddleEmail          ) ;
+                                                        etThread.traceF( tin0P , T("    [tValueMiddlePostalCode    ]: ")+tValueMiddlePostalCode     ) ;
+                                                        etThread.traceF( tin0P , T("    [tValueMiddleCountry       ]: ")+tValueMiddleCountry        ) ;
+                                                        etThread.traceF( tin0P , T("    [tValueMiddleIdSubscription]: ")+tValueMiddleIdSubscription ) ;
+                                                        etThread.traceF( tin0P , T("    [tValueOuterIdProduct     ]: ")+tValueOuterIdProduct      ) ;
+                                                        etThread.traceF( tin0P , T("    [tValueOuterLive          ]: ")+tValueOuterLive           ) ;
+                                                        etThread.traceF( tin0P , T("found a matching inner:") ) ;
+                                                        // EAT THE READY SET
+
+                                                        }
+                                                            }
+                                                                }
+                                                                    continue ;
+                                                                    DEL( pInfoOuter ) ;
+                                                                    etThread.traceF( tin0P , T("could not rename the maybe folder to ready [tFolderReady,tFolderMaybe]:    ")+tFolderReady+tb4+tFolderMaybe ) ;
+                                                                    POOPR ;
+                                                                {
+                                                                else
+                                                                if( !POOP ) break ;
+                                                                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tFolderReady , tFolderMaybe , 1 ) ;
+                                                                SCOOPS
+                                                            {
+                                                            IFsCRATCHoK
+                                                        {
+                                                        for(;;)
+                                                    {
+                                                    if( cMoved == 3 )
+
+                                                    }
+                                                        }
+                                                            }
+                                                                continue ;
+                                                                DEL( pInfoOuter ) ;
+                                                                etThread.traceF( tin0P , T("could not move to unique maybe from incoming [short]")+*pptShort[ offi ] ) ;
+                                                                POOPR ;
+                                                            {
+                                                            else
+                                                            if( !POOP ) cMoved ++ ;
+                                                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tFolderMaybe+*pptShort[ offi ] , tSharedFolderRawIncoming+*pptShort[ offi ] , 1 ) ;
+                                                            SCOOPS
+                                                        {
+                                                        IFsCRATCHoK
+                                                    {
+                                                    for( countT offi = 0 ; offi < sizeof pptShort / sizeof pptShort[ 0 ] ; offi ++ )
+                                                    textC* pptShort[] = { &tShortOuter , &tShortMiddle , &tShortInner } ;
+                                                {
+                                                ZE( countT , cMoved ) ;
 
                                                 }
-                                                    sOut << (strokeS*)tValueMiddleHawker         ;
-                                                    sOut << (strokeS*)tValueMiddleAge            ;
-                                                    sOut << (strokeS*)tValueMiddleName           ;
-                                                    sOut << (strokeS*)tValueMiddleEmail          ;
-                                                    sOut << (strokeS*)tValueMiddlePostalCode     ;
-                                                    sOut << (strokeS*)tValueMiddleCountry        ;
-                                                    sOut << (strokeS*)tValueMiddleIdSubscription ;
-                                                    sOut << (strokeS*)tValueOuterIdProduct      ;
-                                                    sOut << (strokeS*)tValueOuterLive           ;
+                                                    etThread.delF( tin0P , psttu ) ;
+                                                    tFolderReady = tSharedFolderPrefix+T("set.ready.")+T(psttu)+T("/") ;
 
-                                                    sOut << (strokeS*)tVersion                  ;
-                                                    sOut << (strokeS*)tEvent                    ;
+                                                    while( !etThread.diskMakeDirIfNeededF( tin0P , tFolderMaybe ) ) ;                   // RETRY IF EXISTS ; EXISTS SHOULD BE IMPOSSIBLE, BUT THIS LOOP ENSURES THAT tFolderMaybe IS UNIQUE AND NEWLY MADE
+                                                    }
+                                                        tFolderMaybe = tSharedFolderPrefix+T("set.maybe.")+T(psttu)+T("/") ;
+                                                        etThread.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
+                                                        etThread.delF( tin0P , psttu ) ;
+                                                    {
+                                                    do
+                                                    ZE( strokeS* , psttu ) ;
                                                 {
-                                                soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+                                                TN( tFolderReady , "" ) ;
+                                                TN( tFolderMaybe , "" ) ;
 
-                                                TN( tVersion   , "1" ) ;
-                                                TN( tEvent , "ipdos.subscription.create" ) ;
-
-                                                etThread.traceF( tin0P , T("    [tValueMiddleHawker        ]: ")+tValueMiddleHawker         ) ;
-                                                etThread.traceF( tin0P , T("    [tValueMiddleAge           ]: ")+tValueMiddleAge            ) ;
-                                                etThread.traceF( tin0P , T("    [tValueMiddleName          ]: ")+tValueMiddleName           ) ;
-                                                etThread.traceF( tin0P , T("    [tValueMiddleEmail         ]: ")+tValueMiddleEmail          ) ;
-                                                etThread.traceF( tin0P , T("    [tValueMiddlePostalCode    ]: ")+tValueMiddlePostalCode     ) ;
-                                                etThread.traceF( tin0P , T("    [tValueMiddleCountry       ]: ")+tValueMiddleCountry        ) ;
-                                                etThread.traceF( tin0P , T("    [tValueMiddleIdSubscription]: ")+tValueMiddleIdSubscription ) ;
-                                                etThread.traceF( tin0P , T("    [tValueOuterIdProduct     ]: ")+tValueOuterIdProduct      ) ;
-                                                etThread.traceF( tin0P , T("    [tValueOuterLive          ]: ")+tValueOuterLive           ) ;
-                                                etThread.traceF( tin0P , T("found a matching inner:") ) ;
+                                                etThread.traceF( tin0P , T("attempting to move this set to a unique new folder for further processing") ) ;
                                             {
                                             if( bActive )
 
@@ -1429,7 +1498,7 @@ DONE( tmWorkF )
                                                     }
                                                         }
                                                             }
-                                                                if( bActive ) tShortInnerMove = tShortInner ;
+                                                                if( bActive ) tShortInner = tShortInnerMaybe ;
                                                                 bActive = !etThread.strCompareF( tin0P , tValueInnerStatus , T("active") ) ;
                                                             {
                                                             )
@@ -1588,17 +1657,17 @@ DONE( tmWorkF )
                                                             TN( tValueInnerStripeNoticeType , "" ) ;
                                                             TN( tValueInnerLive             , "" ) ;
 
-                                                            etThread.traceF( tin0P , T("        ------------------------------------------------------------------------------------------------------------------------------------------------------- ")+tShortInner ) ;
+                                                            etThread.traceF( tin0P , T("        ------------------------------------------------------------------------------------------------------------------------------------------------------- ")+tShortInnerMaybe ) ;
 
                                                             }
-                                                                etThread.delF( tin0P , psttShortInner ) ;
-                                                                tShortInner = T(psttShortInner) ;
+                                                                etThread.delF( tin0P , psttShortInnerMaybe ) ;
+                                                                tShortInnerMaybe = T(psttShortInnerMaybe) ;
                                                                 etThread.delF( tin0P , psttnu ) ;
-                                                                etThread.strBisectF( tin0P , psttnu , psttShortInner , pInfoInner->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShortInner ) ;
-                                                                ZE( strokeS* , psttShortInner ) ;
+                                                                etThread.strBisectF( tin0P , psttnu , psttShortInnerMaybe , pInfoInner->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShortInnerMaybe ) ;
+                                                                ZE( strokeS* , psttShortInnerMaybe ) ;
                                                                 ZE( strokeS* , psttnu ) ;
                                                             {
-                                                            TN( tShortInner , "" ) ;
+                                                            TN( tShortInnerMaybe , "" ) ;
                                                         {
                                                         if( !bDir )
 
@@ -1611,7 +1680,7 @@ DONE( tmWorkF )
                                                     {
                                                     if( !pInfoInner || !pInfoInner->psttIfoName )
 
-                                                    etThread.diskFindFileOrDirF( tin0P , pInfoInner , hFindInner , tFolderRawIncoming ) ;
+                                                    etThread.diskFindFileOrDirF( tin0P , pInfoInner , hFindInner , tSharedFolderRawIncoming ) ;
                                                     ZE( infoFileS* , pInfoInner ) ;
                                                 {
                                                 do
@@ -1623,7 +1692,7 @@ DONE( tmWorkF )
                                                 _IO_
                                             {
                                             if( !bActive )
-                                            TN( tShortInnerMove , "" ) ;
+                                            TN( tShortInner , "" ) ;
                                             boolT bActive = !etThread.strCompareF( tin0P , tValueOuterStatus , T("active") ) ;
                                         {
                                         )
@@ -1802,7 +1871,7 @@ DONE( tmWorkF )
                                 {
                                 if( !pInfoMiddle || !pInfoMiddle->psttIfoName )
 
-                                etThread.diskFindFileOrDirF( tin0P , pInfoMiddle , hFindMiddle , tFolderRawIncoming ) ;
+                                etThread.diskFindFileOrDirF( tin0P , pInfoMiddle , hFindMiddle , tSharedFolderRawIncoming ) ;
                                 ZE( infoFileS* , pInfoMiddle ) ;
                             {
                             do
@@ -1987,78 +2056,32 @@ DONE( tmWorkF )
                 {
                 if( !pInfoOuter || !pInfoOuter->psttIfoName )
 
-                etThread.diskFindFileOrDirF( tin0P , pInfoOuter , hFindOuter , tFolderRawIncoming ) ;
+                etThread.diskFindFileOrDirF( tin0P , pInfoOuter , hFindOuter , tSharedFolderRawIncoming ) ;
                 ZE( infoFileS* , pInfoOuter ) ;
             {
             do
             handleC hFindOuter( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
             etThread.traceF( tin0P , T("raw notices / [cNewIncoming]:    ")+TF2(cNewIncoming,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            cNewIncoming = etThread.diskFileExistsF( tin0P , tFolderRawIncoming+tStar ) ;                                                                    // IF EXIST NEWLY INCOMING RAW NOTICES
             ZE( countT , cNewEvents ) ;
-
-            }
-                while( !ether && ~hFind && !POOP ) ;
-                }
-                    DEL( pInfo ) ;
-                    }
-                        }
-                            etThread.traceF( tin0P , tShort ) ;
-                            etThread.diskMoveFileOrDirF( tin0P , tFolderRawIncoming+tShort , pInfo->psttIfoName ) ;
-
-                            }
-                                etThread.delF( tin0P , psttShort ) ;
-                                tShort = T(psttShort) ;
-                                etThread.delF( tin0P , psttnu ) ;
-                                etThread.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
-                                ZE( strokeS* , psttShort ) ;
-                                ZE( strokeS* , psttnu ) ;
-                            {
-                            TN( tShort , "" ) ;
-                        {
-                        if( !bDir )
-
-                        const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
-                    {
-                    else
-                    }
-                        break ;
-                        DEL( pInfo ) ;
-                    {
-                    if( !pInfo || !pInfo->psttIfoName )
-
-                    etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tFolderRawRetryLater ) ;
-                    ZE( infoFileS* , pInfo ) ;
-                {
-                do
-                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;                                                                          // MOVE ALL TRYLATER TO INCOMING
-
-                _IO_
-            {
-            if( cRetryLater )
-
-            etThread.traceF( tin0P , T("raw notices / perhaps moving tryLater to incoming [cNewIncoming,cRetryLater]:    ")+TF2(cNewIncoming,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cRetryLater,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-            countT cRetryLater = etThread.diskFileExistsF( tin0P , tFolderRawRetryLater+tStar ) ;
 
             _IO_
         {
         if( cNewIncoming )                                                                                                                                      // IF EXIST NEWLY INCOMING RAW NOTICES
-        countT cNewIncoming = etThread.diskFileExistsF( tin0P , tFolderRawIncoming+tStar ) ;                                                                    // IF EXIST NEWLY INCOMING RAW NOTICES
+        countT cNewIncoming = etThread.diskFileExistsF( tin0P , tSharedFolderRawIncoming+tStar ) ;                                                                    // IF EXIST NEWLY INCOMING RAW NOTICES
 
         _IO_
     {
     while( !ether && !etThread )
-    ZE( countT  , idUniquifier ) ;
     TN( tStar  , "*" ) ;
     TN( tSlash , "/" ) ;
 
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventDone       ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventRetryLater ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderEventIncoming   ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderRawDone         ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderRawRetryLater   ) ;
-    etThread.diskMakeDirIfNeededF( tin0P , tFolderRawIncoming     ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderEventDone       ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderEventRetryLater ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderEventIncoming   ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderRawDone         ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderRawIncoming     ) ;
 
     TN( tValueWantedInnerStripeNoticeType  , "customer.subscription.updated" ) ;
     TN( tValueWantedMiddleStripeNoticeType , "checkout.session.completed"    ) ;
@@ -2072,22 +2095,12 @@ DONE( tmWorkF )
     TN( tFalse                   , "false"                         ) ;
     TN( tTrue                    , "true"                          ) ;
 
-    }
-        tFolderEventDone       = tFolderPrefix+T("events.3.done/"             ) ;
-        tFolderEventRetryLater = tFolderPrefix+T("events.2.retry.later/"      ) ;
-        tFolderEventIncoming   = tFolderPrefix+T("events.1.incoming/"         ) ;
-        tFolderRawDone         = tFolderPrefix+T("raw.notices.3.done/"        ) ;
-        tFolderRawRetryLater   = tFolderPrefix+T("raw.notices.2.retry.later/" ) ;
-        tFolderRawIncoming     = tFolderPrefix+T("raw.notices.1.incoming/"    ) ;
-
-        TN( tFolderPrefix , "" ) ; tFolderPrefix = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
-    {
-    TN( tFolderEventDone         , "" ) ;
-    TN( tFolderEventRetryLater   , "" ) ;
-    TN( tFolderEventIncoming     , "" ) ;
-    TN( tFolderRawDone           , "" ) ;
-    TN( tFolderRawRetryLater     , "" ) ;
-    TN( tFolderRawIncoming       , "" ) ;
+    TN( tSharedFolderEventDone       , "" ) ; tSharedFolderEventDone       = tSharedFolderPrefix+T("events.3.done/"             ) ;
+    TN( tSharedFolderEventRetryLater , "" ) ; tSharedFolderEventRetryLater = tSharedFolderPrefix+T("events.2.retry.later/"      ) ;
+    TN( tSharedFolderEventIncoming   , "" ) ; tSharedFolderEventIncoming   = tSharedFolderPrefix+T("events.1.incoming/"         ) ;
+    TN( tSharedFolderRawDone         , "" ) ; tSharedFolderRawDone         = tSharedFolderPrefix+T("raw.notices.2.done/"        ) ;
+    TN( tSharedFolderRawIncoming     , "" ) ; tSharedFolderRawIncoming     = tSharedFolderPrefix+T("raw.notices.1.incoming/"    ) ;
+    TN( tSharedFolderPrefix          , "" ) ; tSharedFolderPrefix          = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
     _IO_
 {
