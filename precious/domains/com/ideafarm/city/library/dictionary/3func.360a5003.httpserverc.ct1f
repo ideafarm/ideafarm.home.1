@@ -9,6 +9,8 @@
     
 }
     }
+        ether.delF( tin0P , psttComputerName ) ;
+
         ) ;
 
             "  The listed person can view and edit the settings of this automatically created subaccount just as he can for any other subaccount.\r\n"
@@ -512,7 +514,7 @@
           //storeReplyF( tin0P , ifcIDfORMhTTPrEPLY_FULLcUSTOM , T("/") , 0 , ifcIDsNIPpREDEFINED_HTTPfAILmOVEDtEMP , T("string1")      , T("string2")                                                   , T("string3")                                        , T("string4")                           , T("string5help") , T("string6") , 0 , 0 , 0 , 0 , ifcIDsNIPpREDEFINED_REDIRECTlOCATIONrOOT ) ;
           storeReplyF( tin0P , ifcIDfORMhTTPrEPLY_RAW        , T("/") , 0 , ifcIDsNIPpREDEFINED_HTTPfAILmOVEDtEMP , T("string1")      , T("string2")                                                   , T("string3")                                        , T("string4")                           , T("string5help") , T("string6") , 0 , 0 , 0 , 0 , ifcIDsNIPpREDEFINED_REDIRECTlOCATIONrOOT ) ;
 
-        storeReplyF( tin0P , ifcIDfORMhTTPrEPLY_RAW        , T("/.well-known/acme-challenge/") , 0 , ifcIDsNIPpREDEFINED_HTTPfAILmOVEDtEMP , T("string1")      , T("string2")                                                   , T("string3")                                        , T("string4")                           , T("string5help") , T("string6") , 0 , 0 , 0 , 0 , ifcIDsNIPpREDEFINED_REDIRECTlOCATIONaCMEcHALLENGE ) ;
+        if( ether.strCompareF( tin0P , psttComputerName , T("factory1") ) storeReplyF( tin0P , ifcIDfORMhTTPrEPLY_RAW        , T("/.well-known/acme-challenge/") , 0 , ifcIDsNIPpREDEFINED_HTTPfAILmOVEDtEMP , T("string1")      , T("string2")                                                   , T("string3")                                        , T("string4")                           , T("string5help") , T("string6") , 0 , 0 , 0 , 0 , ifcIDsNIPpREDEFINED_REDIRECTlOCATIONaCMEcHALLENGE ) ;
 
         }
             storeReplyF( tin0P , ifcIDfORMhTTPrEPLY_BIGhEAD , T("/header/idea/danger.html") , 0 , ifcIDsNIPpREDEFINED_HTTPoKtEXThTML , T("Police Story") , T("<B>IdeaFarm</B> (tm) <B>Operations</B> is dangerous work!") , T("IdeaFarm " "(tm) Operations is dangerous work!") , T("Don't just smile.  Lift a finger!") , T("") , T("") , 0 , t1 ) ;
@@ -9007,7 +9009,10 @@
 
         storeSnipF( tin0P , ifcIDsNIPpREDEFINED_REDIRECTlOCATIONtALKbODY      , T("https://ideafarm.com/talk.body?secretisok=yes" ) ) ;
 
-        storeSnipF( tin0P , ifcIDsNIPpREDEFINED_REDIRECTlOCATIONaCMEcHALLENGE , T("http://factory1.ideafarm.com/.well-known/acme-challenge/" ) ) ;
+        if( ether.strCompareF( tin0P , psttComputerName , T("factory1") ) storeSnipF( tin0P , ifcIDsNIPpREDEFINED_REDIRECTlOCATIONaCMEcHALLENGE , T("http://factory1.ideafarm.com/.well-known/acme-challenge/" ) ) ;
+
+        ether.computerNameF( tin0P , psttComputerName ) ; ___( psttComputerName ) ;
+        ZE( strokeS* , psttComputerName ) ;
 
         storeSnipF( tin0P , ifcIDsNIPpREDEFINED_REDIRECTlOCATIONrOOT          , T("http://root.ideafarm.com/index.html" ) ) ;
         storeSnipF( tin0P , ifcIDsNIPpREDEFINED_REDIRECTlOCATIONfACTORY16     , T("https://factory16.ideafarm.com/home.16.html" ) ) ;

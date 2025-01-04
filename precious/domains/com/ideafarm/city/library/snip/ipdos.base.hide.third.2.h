@@ -33123,6 +33123,8 @@ examples
  voidT etherDoHttpJobF( tin0S& tin0P , taskDrivenServerJobS& jobP , socketC*& psoP , sessionC& sessionP , countT idPortMeP , nicNameC nnMeP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021f7.etherc.etherDoHttpJobF!||
 
+ voidT computerNameF( tin0S& tin0P , strokeS*& psttP ) ;
+
 /* commands: birth , death of objects of other classes */
  voidT poolDelF( tin0S& tin0P , voidT* const pvP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3402a.etherC.poolDelF!||
