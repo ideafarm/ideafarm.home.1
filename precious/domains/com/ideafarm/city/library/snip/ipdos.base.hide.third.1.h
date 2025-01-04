@@ -31467,15 +31467,16 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 #define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN6        0xdddd0b2b
 #define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN7        0xdddd0b2c
 #define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONcDN8        0xdddd0b2d
-#define ifcIDsNIPpREDEFINED_HEADrAW1bEFOREtITLE         0xdddd0b2e
-#define ifcIDsNIPpREDEFINED_HEADrAW2aFTERtITLE          0xdddd0b2f
-#define ifcIDsNIPpREDEFINED_HEADrAW3sCRIPTbEGIN         0xdddd0b30
-#define ifcIDsNIPpREDEFINED_HEADrAW4sCRIPTeND           0xdddd0b31
-#define ifcIDsNIPpREDEFINED_HEADrAW5hEADeND             0xdddd0b32
-#define ifcIDsNIPpREDEFINED_BODYrAWbEGIN                0xdddd0b33
+#define ifcIDsNIPpREDEFINED_REDIRECTlOCATIONaCMEcHALLENGE 0xdddd0b2e
+#define ifcIDsNIPpREDEFINED_HEADrAW1bEFOREtITLE           0xdddd0b2f
+#define ifcIDsNIPpREDEFINED_HEADrAW2aFTERtITLE            0xdddd0b30
+#define ifcIDsNIPpREDEFINED_HEADrAW3sCRIPTbEGIN           0xdddd0b31
+#define ifcIDsNIPpREDEFINED_HEADrAW4sCRIPTeND             0xdddd0b32
+#define ifcIDsNIPpREDEFINED_HEADrAW5hEADeND               0xdddd0b33
+#define ifcIDsNIPpREDEFINED_BODYrAWbEGIN                  0xdddd0b34
 /*3*/
 #define ifcIDsNIPpREDEFINED_min     0xdddd07d4
-#define ifcIDsNIPpREDEFINED_max     0xdddd0b33
+#define ifcIDsNIPpREDEFINED_max     0xdddd0b34
 
 
 //
