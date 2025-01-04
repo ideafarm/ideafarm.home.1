@@ -2172,6 +2172,87 @@ DONE( tmWorkF )
     TN( tSharedFolderRawIncoming     , "" ) ; tSharedFolderRawIncoming     = tSharedFolderPrefix+T("raw.notices.1.incoming/"    ) ;
     TN( tSharedFolderPrefix          , "" ) ; tSharedFolderPrefix          = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
+    //  
+    //          move the input file to ether "done" or "retry later" folder
+    //  
+    //              send "thank you" email
+    //  
+    //                  logout
+    //  
+    //                  if age >= 16 and student then invite to space
+    //  
+    //                  if age >= 13 and age <= 29 then invite to space
+    //  
+    //                  if age >= 13 then invite to space
+    //  
+    //                  login
+    //  
+    //                  register new username
+    //  
+    //                  obtain nonce
+    //  
+    //              try until fired
+    //  
+    //          if "create subscription" and age >= 13 and is either for student or visitor
+    //  
+    //          load the field values
+    //  
+    //      for each file (not dir) in unique "my events" folder
+    //  
+    //          try to move the file to a unique "my events" folder
+    //  
+    //      for each file (not dir) in tSharedFolderEventIncoming 
+    //  
+    //                                  nap a random time ([0,8] tocks)
+    //  
+    //                                  delete the "maybe" folder
+    //  
+    //                                  move the 3 files back to "raw incoming" folder
+    //  
+    //                              else
+    //  
+    //                                  delete the "ready" folder
+    //  
+    //                                  move the 3 files to "raw done" folder
+    //  
+    //                                  emit an event file
+    //  
+    //                                  rename "maybe" folder to "ready"
+    //  
+    //                              if moved 3 aok
+    //  
+    //                          try to move the 3 files to a new unique folder
+    //  
+    //                      if active
+    //  
+    //                                  update active
+    //  
+    //                              if wanted for inner and matching invoice
+    //  
+    //                          for each file (not dir) in tSharedFolderRawIncoming
+    //  
+    //                      if not active
+    //  
+    //                  if wanted for middle with matching invoice
+    //  
+    //              for each file (not dir) in tSharedFolderRawIncoming
+    //  
+    //          if wanted for outer
+    //  
+    //      for each file (not dir) in tSharedFolderRawIncoming
+    //  
+    // PSEUDOCODE (AS OF 20250103@1619)
+
+    // 20250103@1627: WOI: I SEE NO ERRORS IN THE ABOVE PSEUDOCODE THAT WOULD CONFLICT WITH ANY OF THESE OBJECTIVES ; (TIME AND TESTING WILL TELL)
+
+    // * IF A SERVER DIES WHILE PROCESSING INPUT, NO DATA WILL BE LOST AND AND ADMINISTRATOR CAN EASILY RECOVER BY MANUALLY MOVING FILES BACK TO AN INPUT FOLDER
+    // * INFINITELY SCALABLE
+    // * INPUT IS PROCESSED CORRECTLY
+    //
+    // OBJECTIVES
+    // THE DESIGN OBJECTIVE IS TO SUPPORT MULTIPLE SERVERS ALL RECEIVING WEBHOOK NOTICES SENT TO THE SAME DOMAIN NAME (CURRENTLY factory1.ideafarm.com)
+    // THIS CODE IS DESIGNED FOR INFINITE SCALABILITY
+
     _IO_
 {
 if( pTaskP )
