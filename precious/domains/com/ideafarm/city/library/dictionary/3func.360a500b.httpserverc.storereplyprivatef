@@ -8,7 +8,7 @@
 
 
 }
-    swReply.ungrabF( tin0P ) ;
+    pswUse->ungrabF( tin0P ) ;
 
     pzRef->testF( tin0P ) ; //U:: TO FIND A BUG
 
@@ -20,11 +20,20 @@
     {
     if( bExists )
 
-    httpReplyRefC* pzRef = (httpReplyRefC*)&(countT&)swReply ;
+    httpReplyRefC* pzRef = (httpReplyRefC*)&(countT&)*pswUse ;
     psttLeverUrlReply = (strokeS*)argP.psttUrl ;
-    const boolT bExists = !!swReply.idSlotOfLeverF( tin0P , (countT)argP.psttUrl ) ;
+    const boolT bExists = !!pswUse->idSlotOfLeverF( tin0P , (countT)argP.psttUrl ) ;
 
-    swReply.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    pswUse->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+    }
+        default : { BLAMMOiD( 0x24244242 ) ; }
+        case ifcIDsWITCHhTTPrEPLY_ANYWHERE : { pswUse = &swReplyWildAnywhere ; break ;  }
+        case ifcIDsWITCHhTTPrEPLY_PREFIX   : { pswUse = &swReplyWildPrefix   ; break ;  }
+        case ifcIDsWITCHhTTPrEPLY_EXACT    : { pswUse = &swReplyExact        ; break ;  }
+    {
+    switch( idSwitchP )
+    ZE( switchC* , pswUse ) ;
 
     httpReplyS* pReply = new( 0 , tin0P , LF ) httpReplyS( argP.ppRefOverride , argP.idForm , *argP.pprPostBody , argP.pCBF , argP.idSnipHttpPrefix , prPostUrl , *argP.pprPostTitle , *argP.pprPostDescription , *argP.pprPostMetaDescription , *argP.pprPostSlogan , *argP.pprPostPageHelp , *argP.pprPostKeywords , argP.idSnipHttpLocation , argP.flags ) ; ___( pReply ) ;
 
@@ -33,7 +42,7 @@
 
     _IO_
 {
-/*1*/voidT httpServerC::storeReplyPrivateF( tin0S& tin0P , storeReplyPrivateF_argS& argP )/*1*/
+/*1*/voidT httpServerC::storeReplyPrivateF( tin0S& tin0P , const countT idSwitchP , storeReplyPrivateF_argS& argP )/*1*/
 /**/
 */
 /*
