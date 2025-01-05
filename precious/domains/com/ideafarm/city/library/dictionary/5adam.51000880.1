@@ -1161,44 +1161,60 @@ DONE( tmWorkF )
                                         if( tNewUserNameLong.csF( tin0P ) )
 
                                         }
+                                            tBodyInvite = T("{\"user_id\": \"")+tNewUserNameLong+T("\"}\r\n") ;
+                                            tNewUserNameLong  = T("@")+tNewUserNameShort+T(":ideafarm.com") ;       // GIVE ONLY THE SHORT USERNAME IN THE EMAILS BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
+                                            tNewUserNameShort = T("a.")+TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ;       // [0-9,a-z]
+
                                             }
-                                                tBodyInvite = T("{\"user_id\": \"")+tNewUserNameLong+T("\"}\r\n") ;
-                                                tNewUserNameLong  = T("@")+tNewUserNameShort+T(":ideafarm.com") ;       // GIVE ONLY THE SHORT USERNAME IN THE EMAILS BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
-                                                tNewUserNameShort =  T("test.")+TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x3e) ;
-                                                countT idNewUser = bRetrySameUsername ? idNewUserLath : 1 + incv02AM( idNewUserLath ) ;
+                                                etThread.fileWriteF( tin0P , fileCount , (byteT*)&idNewUser , sizeof idNewUser ) ;
+                                                idNewUser = ++ idOld ;
 
-                                                if( bZe ) idNewUserLath = 0 ;
-                                                countT& idNewUserLath = *(countT*)pbi ;
+                                                }
+                                                    }
+                                                        etThread.traceF( tin0P , T("!exception / invalid file size for idNewUserLath, so using 0 [tName]:    ")+tName ) ;
+                                                        idOld = 0 ;
+                                                    {
+                                                    if( cbr - sizeof idOld )
+                                                    etThread.fileReadF( tin0P , (byteT*)&idOld , cbr , fileCount ) ;
+                                                    countT cbr = sizeof idOld ;
+                                                {
+                                                if( !bNewFile )
+                                                ZE( countT , idOld ) ;
+
+                                                fileC fileCount( tin0P , (strokeS*)tName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
+                                                boolT bNewFile = !etThread.diskFileExistsF( tin0P , tName ) ;
+                                                TN( tName , "///z/ideafarm.shared/precious/idNewTestUserLath" ) ;
                                             {
-                                            if( pbi && cbi == sizeof( countT ) )
-                                            fwsLath.getF( tin0P , pbi , cbi , sizeof( countT ) ) ;
-                                            ZE( countT , cbi ) ;
-                                            ZE( byteT* , pbi ) ;
-                                            fileWindowsC fwsLath( tin0P , etThread , tName , flFILEwINDOW_WRITE ) ;
-
-                                            boolT bZe = !etThread.diskFileExistsF( tin0P , tName ) ;
-                                            TN( tName , "///z/ideafarm.shared/precious/idNewTestUserLath" ) ;
+                                            ZE( countT , idNewUser ) ;
                                             _IO_
                                         {
                                         else                                                            // DISPENSE CREDENTIALS (TEST)
                                         }
+                                            tBodyInvite = T("{\"user_id\": \"")+tNewUserNameLong+T("\"}\r\n") ;
+                                            tNewUserNameLong  = T("@")+tNewUserNameShort+T(":ideafarm.com") ;       // GIVE ONLY THE SHORT USERNAME IN THE EMAILS BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
+                                            tNewUserNameShort = T("a.")+TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ;       // [0-9,a-z]
+
                                             }
-                                                tBodyInvite = T("{\"user_id\": \"")+tNewUserNameLong+T("\"}\r\n") ;
-                                                tNewUserNameLong  = T("@")+tNewUserNameShort+T(":ideafarm.com") ;       // GIVE ONLY THE SHORT USERNAME IN THE EMAILS BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
-                                                tNewUserNameShort = T("a.")+TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ;       // [0-9,a-z]
-                                                countT idNewUser = 1 + incv02AM( idNewUserLath ) ;
+                                                etThread.fileWriteF( tin0P , fileCount , (byteT*)&idNewUser , sizeof idNewUser ) ;
+                                                idNewUser = ++ idOld ;
 
-                                                if( bZe ) idNewUserLath = 0 ;
-                                                countT& idNewUserLath = *(countT*)pbi ;
+                                                }
+                                                    }
+                                                        etThread.traceF( tin0P , T("!exception / invalid file size for idNewUserLath, so using 0 [tName]:    ")+tName ) ;
+                                                        idOld = 0 ;
+                                                    {
+                                                    if( cbr - sizeof idOld )
+                                                    etThread.fileReadF( tin0P , (byteT*)&idOld , cbr , fileCount ) ;
+                                                    countT cbr = sizeof idOld ;
+                                                {
+                                                if( !bNewFile )
+                                                ZE( countT , idOld ) ;
+
+                                                fileC fileCount( tin0P , (strokeS*)tName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
+                                                boolT bNewFile = !etThread.diskFileExistsF( tin0P , tName ) ;
+                                                TN( tName , "///z/ideafarm.shared/precious/idNewLiveUserLath" ) ;
                                             {
-                                            if( pbi && cbi == sizeof( countT ) )
-                                            fwsLath.getF( tin0P , pbi , cbi , sizeof( countT ) ) ;
-                                            ZE( countT , cbi ) ;
-                                            ZE( byteT* , pbi ) ;
-                                            fileWindowsC fwsLath( tin0P , etThread , tName , flFILEwINDOW_WRITE ) ;
-
-                                            boolT bZe = !etThread.diskFileExistsF( tin0P , tName ) ;
-                                            TN( tName , "///z/ideafarm.shared/precious/idNewLiveUserLath" ) ;
+                                            ZE( countT , idNewUser ) ;
                                             _IO_
                                         {
                                         if( !etThread.strCompareF( tin0P , psttValueLive , tTrue ) )   // DISPENSE CREDENTIALS (LIVE)
