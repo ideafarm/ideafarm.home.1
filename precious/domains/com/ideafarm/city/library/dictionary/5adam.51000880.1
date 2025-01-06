@@ -816,12 +816,12 @@ DONE( tmWorkF )
                                                         }
                                                             continue ;
                                                             bRetrySameUsername = 1 ;
-                                                            etThread.traceF( tin0P , T("!exception / other error ; will retry the same value [errorCode,error]:    ")+tValueError+tb4+tValueError ) ;
+                                                            etThread.traceF( tin0P , T("!exception / other error ; will retry the same value [errorCode,error]:    ")+tValueErrorCode+tb4+tValueError ) ;
                                                         {
                                                         else if( tValueErrorCode.csF( tin0P ) || tValueError.csF( tin0P ) )
                                                         }
                                                             continue ;
-                                                            etThread.traceF( tin0P , T("!exception / this username is already registered ; will try the next value [errorCode,error]:    ")+tValueError+tb4+tValueError ) ;
+                                                            etThread.traceF( tin0P , T("!exception / this username is already registered ; will try the next value [errorCode,error]:    ")+tValueErrorCode+tb4+tValueError ) ;
                                                         {
                                                         if( !etThread.strCompareF( tin0P , tValueErrorCode , T("M_USER_IN_USE") ) )
 
@@ -1163,50 +1163,11 @@ DONE( tmWorkF )
                                         }
                                             tBodyInvite = T("{\"user_id\": \"")+tNewUserNameLong+T("\"}\r\n") ;
                                             tNewUserNameLong  = T("@")+tNewUserNameShort+T(":ideafarm.com") ;       // GIVE ONLY THE SHORT USERNAME IN THE EMAILS BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
-                                            tNewUserNameShort = T("a.")+TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ;       // [0-9,a-z]
+                                            tNewUserNameShort = T(bLive?"a.":"test.")+TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ;       // [0-9,a-z]
 
                                             }
                                                 etThread.fileWriteF( tin0P , fileCount , (byteT*)&idNewUser , sizeof idNewUser ) ;
-                                                idNewUser = bRetrySameUsername ? idOld : ++ idOld ;
-
-                                                }
-                                                    }
-                                                        etThread.traceF( tin0P , T("!exception / invalid file size for idNewUserLath, so using 0 [tName]:    ")+tName ) ;
-                                                        idOld = 0 ;
-                                                    {
-                                                    if( cbr - sizeof idOld )
-                                                    }
-                                                        }
-                                                            cbr = 0 ;       // PROBABLY REDUNDANT
-                                                            etThread.traceF( tin0P , T("!exception / countT file is not of the expected size [tName]")+tName ) ;
-                                                            POOPR ;
-                                                        {
-                                                        if( POOP )
-                                                        ((tin1S&)tin0P).pEtScratch->fileReadF( tin0P , (byteT*)&idOld , cbr , fileCount ) ;
-                                                        SCOOPS
-                                                    {
-                                                    IFsCRATCHoK
-                                                    countT cbr = sizeof idOld ;
-                                                {
-                                                if( !bNewFile )
-                                                ZE( countT , idOld ) ;
-
-                                                fileC fileCount( tin0P , (strokeS*)tName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
-                                                boolT bNewFile = !etThread.diskFileExistsF( tin0P , tName ) ;
-                                                TN( tName , "///z/ideafarm.shared/precious/idNewTestUserLath" ) ;
-                                            {
-                                            ZE( countT , idNewUser ) ;
-                                            _IO_
-                                        {
-                                        else                                                            // DISPENSE CREDENTIALS (TEST)
-                                        }
-                                            tBodyInvite = T("{\"user_id\": \"")+tNewUserNameLong+T("\"}\r\n") ;
-                                            tNewUserNameLong  = T("@")+tNewUserNameShort+T(":ideafarm.com") ;       // GIVE ONLY THE SHORT USERNAME IN THE EMAILS BECAUSE NONFEDERATED SO (1) LONG NAME ISN'T NEEDED AND (2) LONG NAME WILL PRODUCE AN ERROR MESSAGE THAT WILL CONFUSE EVEN THOUGH IT WILL THEN WORK
-                                            tNewUserNameShort = T("a.")+TF4(idNewUser,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ;       // [0-9,a-z]
-
-                                            }
-                                                etThread.fileWriteF( tin0P , fileCount , (byteT*)&idNewUser , sizeof idNewUser ) ;
-                                                idNewUser = bRetrySameUsername ? idOld : ++ idOld ;
+                                                idNewUser = bRetrySameUsername && idOld ? idOld : ++ idOld ;
 
                                                 }
                                                     }
@@ -1231,15 +1192,17 @@ DONE( tmWorkF )
                                                 if( !bNewFile )
                                                 ZE( countT , idOld ) ;
 
-                                                fileC fileCount( tin0P , (strokeS*)tName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
-                                                boolT bNewFile = !etThread.diskFileExistsF( tin0P , tName ) ;
-                                                TN( tName , "///z/ideafarm.shared/precious/idNewLiveUserLath" ) ;
+                                                const boolT bNewFile = ifcOPENrESULT_CREATED == fileCount.idOpenResultF( tin0P  ) ;
+                                                fileC fileCount( tin0P , (strokeS*)tName , ifcOPENaCCESS_WR , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ;
                                             {
                                             ZE( countT , idNewUser ) ;
+
+                                            TN( tName , bLive ? "///z/ideafarm.shared/precious/idNewLiveUserLath" : "///z/ideafarm.shared/precious/idNewTestUserLath" ) ;
+                                            const boolT bLive = !etThread.strCompareF( tin0P , psttValueLive , tTrue ) ;
                                             _IO_
                                         {
-                                        if( !etThread.strCompareF( tin0P , psttValueLive , tTrue ) )   // DISPENSE CREDENTIALS (LIVE)
                                         TN( tBodyInvite , "" ) ;
+                                        // DISPENSE CREDENTIALS (LIVE OR TEST)
 
                                         tNewPassword          = tn ;
                                         tNewUserNameLong      = tn ;
