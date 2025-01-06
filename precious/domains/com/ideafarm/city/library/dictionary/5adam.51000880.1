@@ -1175,7 +1175,17 @@ DONE( tmWorkF )
                                                         idOld = 0 ;
                                                     {
                                                     if( cbr - sizeof idOld )
-                                                    etThread.fileReadF( tin0P , (byteT*)&idOld , cbr , fileCount ) ;
+                                                    }
+                                                        }
+                                                            cbr = 0 ;       // PROBABLY REDUNDANT
+                                                            etThread.traceF( tin0P , T("!exception / countT file is not of the expected size [tName]")+tName ) ;
+                                                            POOPR ;
+                                                        {
+                                                        if( POOP )
+                                                        ((tin1S&)tin0P).pEtScratch->fileReadF( tin0P , (byteT*)&idOld , cbr , fileCount ) ;
+                                                        SCOOPS
+                                                    {
+                                                    IFsCRATCHoK
                                                     countT cbr = sizeof idOld ;
                                                 {
                                                 if( !bNewFile )
@@ -1204,7 +1214,18 @@ DONE( tmWorkF )
                                                         idOld = 0 ;
                                                     {
                                                     if( cbr - sizeof idOld )
-                                                    etThread.fileReadF( tin0P , (byteT*)&idOld , cbr , fileCount ) ;
+
+                                                    }
+                                                        }
+                                                            cbr = 0 ;       // PROBABLY REDUNDANT
+                                                            etThread.traceF( tin0P , T("!exception / countT file is not of the expected size [tName]")+tName ) ;
+                                                            POOPR ;
+                                                        {
+                                                        if( POOP )
+                                                        ((tin1S&)tin0P).pEtScratch->fileReadF( tin0P , (byteT*)&idOld , cbr , fileCount ) ;
+                                                        SCOOPS
+                                                    {
+                                                    IFsCRATCHoK
                                                     countT cbr = sizeof idOld ;
                                                 {
                                                 if( !bNewFile )
