@@ -1225,7 +1225,6 @@ DONE( tmWorkF )
                                     {
                                     while( !ether && !POOP && !bRegistered )     //WILL continue UNTIL SUCCESSFULLY REGISTER A NEW USERNAME ; THIS CAUSES idNewUser TO INCREMENT UNTIL IT IS A VALUE THAT HAS NOT BEEN REGISTERED
                                     ZE( boolT , bRetrySameUsername ) ;
-                                    ZE( boolT , bRegistered ) ;
                                     TN( tNewPassword         , "" ) ;
                                     TN( tNewUserNameLong     , "" ) ;
                                     TN( tNewUserNameShort    , "" ) ;
@@ -1295,6 +1294,7 @@ DONE( tmWorkF )
                             _IO_
                         {
                         if( !( F(flagsFail) & flFAIL_COULDnOTgETsHADOW ) )
+                        ZE( boolT , bRegistered ) ;
 
                         }
                             }
