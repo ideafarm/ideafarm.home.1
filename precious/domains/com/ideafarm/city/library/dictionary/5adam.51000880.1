@@ -65,16 +65,21 @@ DONE( tmWorkF )
                         etThread.traceF( tin0P , T("cleaning up 2") ) ;
 
                         }
-                            etThread.delF( tin0P , psttValueLive           ) ;
-                            etThread.delF( tin0P , psttValueIdSubscription ) ;
-                            etThread.delF( tin0P , psttValueName           ) ;
-                            etThread.delF( tin0P , psttValueEmail          ) ;
-                            etThread.delF( tin0P , psttValuePostalCode     ) ;
-                            etThread.delF( tin0P , psttValueCountry        ) ;
-                            etThread.delF( tin0P , psttValueHawker         ) ;
-                            etThread.delF( tin0P , psttValueAge            ) ;
-                            etThread.delF( tin0P , psttVersion             ) ;
-                            etThread.delF( tin0P , psttEvent               ) ;
+                            etThread.delF( tin0P , psttValueMiddleAmountDiscount     ) ;
+                            etThread.delF( tin0P , psttValueMiddleAmountSubtotal     ) ;
+                            etThread.delF( tin0P , psttValueMiddleAmountTotal        ) ;
+                            etThread.delF( tin0P , psttValueMiddleCurrencyConversion ) ;
+                            etThread.delF( tin0P , psttValueMiddleCurrency           ) ;
+                            etThread.delF( tin0P , psttValueLive                     ) ;
+                            etThread.delF( tin0P , psttValueIdSubscription           ) ;
+                            etThread.delF( tin0P , psttValueName                     ) ;
+                            etThread.delF( tin0P , psttValueEmail                    ) ;
+                            etThread.delF( tin0P , psttValuePostalCode               ) ;
+                            etThread.delF( tin0P , psttValueCountry                  ) ;
+                            etThread.delF( tin0P , psttValueHawker                   ) ;
+                            etThread.delF( tin0P , psttValueAge                      ) ;
+                            etThread.delF( tin0P , psttVersion                       ) ;
+                            etThread.delF( tin0P , psttEvent                         ) ;
                             }
                                 }
                                     }
@@ -1271,25 +1276,44 @@ DONE( tmWorkF )
                             {
                             if( flagsFail )
 
-                            if( age < 13                                                      ) flagsFail |= flFAIL_UNEXPECTEDaGEtOOyOUNG ;
-                            if( etThread.strCompareF( tin0P , psttVersion , tCorrectVersion ) ) flagsFail |= flFAIL_UNEXPECTEDvERSION     ;
-                            if( etThread.strCompareF( tin0P , psttEvent   , tCorrectEvent   ) ) flagsFail |= flFAIL_UNEXPECTEDeVENT       ;
+                            if( age < 13                                                                                                                         ) flagsFail |= flFAIL_UNEXPECTEDaGEtOOyOUNG ;
+                            if( etThread.strCompareF( tin0P , psttVersion , tCorrectVersion1 ) && etThread.strCompareF( tin0P , psttVersion , tCorrectVersion2 ) ) flagsFail |= flFAIL_UNEXPECTEDvERSION     ;
+                            if( etThread.strCompareF( tin0P , psttEvent   , tCorrectEvent    )                                                                   ) flagsFail |= flFAIL_UNEXPECTEDeVENT       ;
 
                             const sCountT age = etThread.strDigitsToSCountF( tin0P , psttValueAge , 0xa , 1 ) ;
-                            TN( tCorrectVersion , "1" ) ;
+
+                            }
+                                sIn >> psttValueMiddleAmountDiscount     ; ___( psttValueMiddleAmountDiscount     ) ; etThread.traceF( tin0P , T("[ValueMiddleAmountDiscount     ]:    ")+T(psttValueMiddleAmountDiscount     ) ) ;
+                                sIn >> psttValueMiddleAmountSubtotal     ; ___( psttValueMiddleAmountSubtotal     ) ; etThread.traceF( tin0P , T("[ValueMiddleAmountSubtotal     ]:    ")+T(psttValueMiddleAmountSubtotal     ) ) ;
+                                sIn >> psttValueMiddleAmountTotal        ; ___( psttValueMiddleAmountTotal        ) ; etThread.traceF( tin0P , T("[ValueMiddleAmountTotal        ]:    ")+T(psttValueMiddleAmountTotal        ) ) ;
+                                sIn >> psttValueMiddleCurrencyConversion ; ___( psttValueMiddleCurrencyConversion ) ; etThread.traceF( tin0P , T("[ValueMiddleCurrencyConversion ]:    ")+T(psttValueMiddleCurrencyConversion ) ) ;
+                                sIn >> psttValueMiddleCurrency           ; ___( psttValueMiddleCurrency           ) ; etThread.traceF( tin0P , T("[ValueMiddleCurrency           ]:    ")+T(psttValueMiddleCurrency           ) ) ;
+                            {
+                            if( !etThread.strCompareF( tin0P , psttVersion , tCorrectVersion2 ) )
+
+                            TN( tCorrectVersion2 , "2" ) ;
+                            TN( tCorrectVersion1 , "1" ) ;
                             TN( tCorrectEvent    , "ipdos.subscription.create" ) ;
 
-                            ZE( strokeS* , psttValueHawker         ) ; sIn >> psttValueHawker         ; ___( psttValueHawker         ) ; etThread.traceF( tin0P , T("[ValueHawker         ]:    ")+T(psttValueHawker         ) ) ;
-                            ZE( strokeS* , psttValueAge            ) ; sIn >> psttValueAge            ; ___( psttValueAge            ) ; etThread.traceF( tin0P , T("[ValueAge            ]:    ")+T(psttValueAge            ) ) ;
-                            ZE( strokeS* , psttValueName           ) ; sIn >> psttValueName           ; ___( psttValueName           ) ; etThread.traceF( tin0P , T("[ValueName           ]:    ")+T(psttValueName           ) ) ;
-                            ZE( strokeS* , psttValueEmail          ) ; sIn >> psttValueEmail          ; ___( psttValueEmail          ) ; etThread.traceF( tin0P , T("[ValueEmail          ]:    ")+T(psttValueEmail          ) ) ;
-                            ZE( strokeS* , psttValuePostalCode     ) ; sIn >> psttValuePostalCode     ; ___( psttValuePostalCode     ) ; etThread.traceF( tin0P , T("[ValuePostalCode     ]:    ")+T(psttValuePostalCode     ) ) ;
-                            ZE( strokeS* , psttValueCountry        ) ; sIn >> psttValueCountry        ; ___( psttValueCountry        ) ; etThread.traceF( tin0P , T("[ValueCountry        ]:    ")+T(psttValueCountry        ) ) ;
-                            ZE( strokeS* , psttValueIdSubscription ) ; sIn >> psttValueIdSubscription ; ___( psttValueIdSubscription ) ; etThread.traceF( tin0P , T("[ValueIdSubscription ]:    ")+T(psttValueIdSubscription ) ) ;
-                            ZE( strokeS* , psttValueIdProduct      ) ; sIn >> psttValueIdProduct      ; ___( psttValueIdProduct      ) ; etThread.traceF( tin0P , T("[ValueIdProduct      ]:    ")+T(psttValueIdProduct      ) ) ;
-                            ZE( strokeS* , psttValueLive           ) ; sIn >> psttValueLive           ; ___( psttValueLive           ) ; etThread.traceF( tin0P , T("[ValueLive           ]:    ")+T(psttValueLive           ) ) ;
-                            ZE( strokeS* , psttVersion             ) ; sIn >> psttVersion             ; ___( psttVersion             ) ; etThread.traceF( tin0P , T("[Version             ]:    ")+T(psttVersion             ) ) ;
-                            ZE( strokeS* , psttEvent               ) ; sIn >> psttEvent               ; ___( psttEvent               ) ; etThread.traceF( tin0P , T("[Event               ]:    ")+T(psttEvent               ) ) ;
+                            ZE( strokeS* , psttValueMiddleAmountDiscount     ) ;
+                            ZE( strokeS* , psttValueMiddleAmountSubtotal     ) ;
+                            ZE( strokeS* , psttValueMiddleAmountTotal        ) ;
+                            ZE( strokeS* , psttValueMiddleCurrencyConversion ) ;
+                            ZE( strokeS* , psttValueMiddleCurrency           ) ;
+                            // VERSION 2
+
+                            ZE( strokeS* , psttValueHawker                   ) ; sIn >> psttValueHawker                   ; ___( psttValueHawker                   ) ; etThread.traceF( tin0P , T("[ValueHawker                   ]:    ")+T(psttValueHawker                   ) ) ;
+                            ZE( strokeS* , psttValueAge                      ) ; sIn >> psttValueAge                      ; ___( psttValueAge                      ) ; etThread.traceF( tin0P , T("[ValueAge                      ]:    ")+T(psttValueAge                      ) ) ;
+                            ZE( strokeS* , psttValueName                     ) ; sIn >> psttValueName                     ; ___( psttValueName                     ) ; etThread.traceF( tin0P , T("[ValueName                     ]:    ")+T(psttValueName                     ) ) ;
+                            ZE( strokeS* , psttValueEmail                    ) ; sIn >> psttValueEmail                    ; ___( psttValueEmail                    ) ; etThread.traceF( tin0P , T("[ValueEmail                    ]:    ")+T(psttValueEmail                    ) ) ;
+                            ZE( strokeS* , psttValuePostalCode               ) ; sIn >> psttValuePostalCode               ; ___( psttValuePostalCode               ) ; etThread.traceF( tin0P , T("[ValuePostalCode               ]:    ")+T(psttValuePostalCode               ) ) ;
+                            ZE( strokeS* , psttValueCountry                  ) ; sIn >> psttValueCountry                  ; ___( psttValueCountry                  ) ; etThread.traceF( tin0P , T("[ValueCountry                  ]:    ")+T(psttValueCountry                  ) ) ;
+                            ZE( strokeS* , psttValueIdSubscription           ) ; sIn >> psttValueIdSubscription           ; ___( psttValueIdSubscription           ) ; etThread.traceF( tin0P , T("[ValueIdSubscription           ]:    ")+T(psttValueIdSubscription           ) ) ;
+                            ZE( strokeS* , psttValueIdProduct                ) ; sIn >> psttValueIdProduct                ; ___( psttValueIdProduct                ) ; etThread.traceF( tin0P , T("[ValueIdProduct                ]:    ")+T(psttValueIdProduct                ) ) ;
+                            ZE( strokeS* , psttValueLive                     ) ; sIn >> psttValueLive                     ; ___( psttValueLive                     ) ; etThread.traceF( tin0P , T("[ValueLive                     ]:    ")+T(psttValueLive                     ) ) ;
+                            ZE( strokeS* , psttVersion                       ) ; sIn >> psttVersion                       ; ___( psttVersion                       ) ; etThread.traceF( tin0P , T("[Version                       ]:    ")+T(psttVersion                       ) ) ;
+                            ZE( strokeS* , psttEvent                         ) ; sIn >> psttEvent                         ; ___( psttEvent                         ) ; etThread.traceF( tin0P , T("[Event                         ]:    ")+T(psttEvent                         ) ) ;
+                            // VERSION 1
 
                             _IO_
                         {
@@ -1475,22 +1499,30 @@ DONE( tmWorkF )
                                                         boolT bLive = !etThread.strCompareF( tin0P , tValueOuterLive , T("true") ) ;
 
                                                         }
-                                                            sOut << (strokeS*)tValueMiddleHawker         ;
-                                                            sOut << (strokeS*)tValueMiddleAge            ;
-                                                            sOut << (strokeS*)tValueMiddleName           ;
-                                                            sOut << (strokeS*)tValueMiddleEmail          ;
-                                                            sOut << (strokeS*)tValueMiddlePostalCode     ;
-                                                            sOut << (strokeS*)tValueMiddleCountry        ;
-                                                            sOut << (strokeS*)tValueMiddleIdSubscription ;
-                                                            sOut << (strokeS*)tValueOuterIdProduct      ;
-                                                            sOut << (strokeS*)tValueOuterLive           ;
+                                                            sOut << (strokeS*)tValueMiddleAmountDiscount     ;
+                                                            sOut << (strokeS*)tValueMiddleAmountSubtotal     ;
+                                                            sOut << (strokeS*)tValueMiddleAmountTotal        ;
+                                                            sOut << (strokeS*)tValueMiddleCurrencyConversion ;
+                                                            sOut << (strokeS*)tValueMiddleCurrency           ;
+                                                            // VERSION 2
 
-                                                            sOut << (strokeS*)tVersion                  ;
-                                                            sOut << (strokeS*)tEvent                    ;
+                                                            sOut << (strokeS*)tValueMiddleHawker             ;
+                                                            sOut << (strokeS*)tValueMiddleAge                ;
+                                                            sOut << (strokeS*)tValueMiddleName               ;
+                                                            sOut << (strokeS*)tValueMiddleEmail              ;
+                                                            sOut << (strokeS*)tValueMiddlePostalCode         ;
+                                                            sOut << (strokeS*)tValueMiddleCountry            ;
+                                                            sOut << (strokeS*)tValueMiddleIdSubscription     ;
+                                                            sOut << (strokeS*)tValueOuterIdProduct           ;
+                                                            sOut << (strokeS*)tValueOuterLive                ;
+                                                            // VERSION 1
+
+                                                            sOut << (strokeS*)tVersion                       ;
+                                                            sOut << (strokeS*)tEvent                         ;
                                                         {
                                                         soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 
-                                                        TN( tVersion   , "1" ) ;
+                                                        TN( tVersion   , "2" ) ;
                                                         TN( tEvent , "ipdos.subscription.create" ) ;
 
                                                         etThread.traceF( tin0P , T("    [tValueMiddleHawker        ]: ")+tValueMiddleHawker         ) ;
@@ -1816,41 +1848,46 @@ DONE( tmWorkF )
                                         
                                             ;
                                             }
-                                                &tKeyMiddleAmountDiscount   ,
-                                                &tKeyMiddleIdSubscription   ,
-                                                &tKeyMiddleMode             ,
-                                                &tKeyMiddleName             ,
-                                                &tKeyMiddleEmail            ,
-                                                &tKeyMiddlePostalCode       ,
-                                                &tKeyMiddleCountry          ,
-                                                &tKeyMiddleHawker           ,
-                                                &tKeyMiddleAge              ,
-                                                &tKeyMiddleAmountTotal      ,
-                                                &tKeyMiddleAmountSubtotal   ,
-                                                &tKeyMiddleApiVersion       ,
-                                                &tKeyMiddleIdProduct        ,
-                                                &tKeyMiddleInvoice          ,
-                                                &tKeyMiddleStripeNoticeType ,
-                                                &tKeyMiddleLive             ,
+                                                &tKeyMiddleCurrencyConversion ,
+                                                &tKeyMiddleCurrency           ,
+                                                &tKeyMiddleAmountDiscount     ,
+                                                &tKeyMiddleIdSubscription     ,
+                                                &tKeyMiddleMode               ,
+                                                &tKeyMiddleName               ,
+                                                &tKeyMiddleEmail              ,
+                                                &tKeyMiddlePostalCode         ,
+                                                &tKeyMiddleCountry            ,
+                                                &tKeyMiddleHawker             ,
+                                                &tKeyMiddleAge                ,
+                                                &tKeyMiddleAmountTotal        ,
+                                                &tKeyMiddleAmountSubtotal     ,
+                                                &tKeyMiddleApiVersion         ,
+                                                &tKeyMiddleIdProduct          ,
+                                                &tKeyMiddleInvoice            ,
+                                                &tKeyMiddleStripeNoticeType   ,
+                                                &tKeyMiddleLive               ,
                                             {
                                             textC* pptKeyMiddle[] =
-                                            
-                                            TN( tKeyMiddleAmountDiscount   , "\"data\"/\"object\"/\"total_details\"/\"amount_discount\"/"                 ) ;
-                                            TN( tKeyMiddleIdSubscription   , "\"data\"/\"object\"/\"subscription\"/"                                      ) ;
-                                            TN( tKeyMiddleMode             , "\"data\"/\"object\"/\"mode\"/"                                              ) ;
-                                            TN( tKeyMiddleName             , "\"data\"/\"object\"/\"customer_details\"/\"name\"/"                         ) ;
-                                            TN( tKeyMiddleEmail            , "\"data\"/\"object\"/\"customer_details\"/\"email\"/"                        ) ;
-                                            TN( tKeyMiddlePostalCode       , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"postal_code\"/"      ) ;
-                                            TN( tKeyMiddleCountry          , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"country\"/"          ) ;
-                                            TN( tKeyMiddleHawker           , "\"data\"/\"object\"/\"custom_fields\"/item.00000002/\"text\"/\"value\"/"    ) ;
-                                            TN( tKeyMiddleAge              , "\"data\"/\"object\"/\"custom_fields\"/item.00000001/\"numeric\"/\"value\"/" ) ;
-                                            TN( tKeyMiddleAmountTotal      , "\"data\"/\"object\"/\"amount_total\"/"                                      ) ;
-                                            TN( tKeyMiddleAmountSubtotal   , "\"data\"/\"object\"/\"amount_subtotal\"/"                                   ) ;
-                                            TN( tKeyMiddleApiVersion       , "\"api_version\"/"                                                           ) ;
-                                            TN( tKeyMiddleIdProduct        , "\"data\"/\"object\"/\"plan\"/\"product\"/"                                  ) ;
-                                            TN( tKeyMiddleInvoice          , "\"data\"/\"object\"/\"invoice\"/"                                           ) ;
-                                            TN( tKeyMiddleStripeNoticeType , "\"type\"/"                                                                  ) ;
-                                            TN( tKeyMiddleLive             , "\"livemode\"/"                                                              ) ;
+
+
+                                            TN( tKeyMiddleCurrencyConversion , "\"data\"/\"object\"/\"currency_conversion\"/"                               ) ;
+                                            TN( tKeyMiddleCurrency           , "\"data\"/\"object\"/\"currency\"/"                                          ) ;
+                                            TN( tKeyMiddleAmountDiscount     , "\"data\"/\"object\"/\"total_details\"/\"amount_discount\"/"                 ) ;
+                                            TN( tKeyMiddleIdSubscription     , "\"data\"/\"object\"/\"subscription\"/"                                      ) ;
+                                            TN( tKeyMiddleMode               , "\"data\"/\"object\"/\"mode\"/"                                              ) ;
+                                            TN( tKeyMiddleName               , "\"data\"/\"object\"/\"customer_details\"/\"name\"/"                         ) ;
+                                            TN( tKeyMiddleEmail              , "\"data\"/\"object\"/\"customer_details\"/\"email\"/"                        ) ;
+                                            TN( tKeyMiddlePostalCode         , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"postal_code\"/"      ) ;
+                                            TN( tKeyMiddleCountry            , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"country\"/"          ) ;
+                                            TN( tKeyMiddleHawker             , "\"data\"/\"object\"/\"custom_fields\"/item.00000002/\"text\"/\"value\"/"    ) ;
+                                            TN( tKeyMiddleAge                , "\"data\"/\"object\"/\"custom_fields\"/item.00000001/\"numeric\"/\"value\"/" ) ;
+                                            TN( tKeyMiddleAmountTotal        , "\"data\"/\"object\"/\"amount_total\"/"                                      ) ;
+                                            TN( tKeyMiddleAmountSubtotal     , "\"data\"/\"object\"/\"amount_subtotal\"/"                                   ) ;
+                                            TN( tKeyMiddleApiVersion         , "\"api_version\"/"                                                           ) ;
+                                            TN( tKeyMiddleIdProduct          , "\"data\"/\"object\"/\"plan\"/\"product\"/"                                  ) ;
+                                            TN( tKeyMiddleInvoice            , "\"data\"/\"object\"/\"invoice\"/"                                           ) ;
+                                            TN( tKeyMiddleStripeNoticeType   , "\"type\"/"                                                                  ) ;
+                                            TN( tKeyMiddleLive               , "\"livemode\"/"                                                              ) ;
 
                                             // 
                                             // 
@@ -1862,22 +1899,24 @@ DONE( tmWorkF )
 
                                             ;
                                             }
-                                                &tValueMiddleAmountDiscount   ,
-                                                &tValueMiddleIdSubscription   ,
-                                                &tValueMiddleMode             ,
-                                                &tValueMiddleName             ,
-                                                &tValueMiddleEmail            ,
-                                                &tValueMiddlePostalCode       ,
-                                                &tValueMiddleCountry          ,
-                                                &tValueMiddleHawker           ,
-                                                &tValueMiddleAge              ,
-                                                &tValueMiddleAmountTotal      ,
-                                                &tValueMiddleAmountSubtotal   ,
-                                                &tValueMiddleApiVersion       ,
-                                                &tValueMiddleIdProduct        ,
-                                                &tValueMiddleInvoice          ,
-                                                &tValueMiddleStripeNoticeType ,
-                                                &tValueMiddleLive             ,
+                                                &tValueMiddleCurrencyConversion ,
+                                                &tValueMiddleCurrency           ,
+                                                &tValueMiddleAmountDiscount     ,
+                                                &tValueMiddleIdSubscription     ,
+                                                &tValueMiddleMode               ,
+                                                &tValueMiddleName               ,
+                                                &tValueMiddleEmail              ,
+                                                &tValueMiddlePostalCode         ,
+                                                &tValueMiddleCountry            ,
+                                                &tValueMiddleHawker             ,
+                                                &tValueMiddleAge                ,
+                                                &tValueMiddleAmountTotal        ,
+                                                &tValueMiddleAmountSubtotal     ,
+                                                &tValueMiddleApiVersion         ,
+                                                &tValueMiddleIdProduct          ,
+                                                &tValueMiddleInvoice            ,
+                                                &tValueMiddleStripeNoticeType   ,
+                                                &tValueMiddleLive               ,
                                             {
                                             textC* pptValueMiddle[] =
                                         
@@ -1904,22 +1943,24 @@ DONE( tmWorkF )
                                             ZE( switchC* , pSwPathValue ) ;
                                             ZE( strokeS* , psttPath     ) ;
                                         {
-                                        TN( tValueMiddleAmountDiscount   , "" ) ;
-                                        TN( tValueMiddleIdSubscription   , "" ) ;
-                                        TN( tValueMiddleMode             , "" ) ;
-                                        TN( tValueMiddleName             , "" ) ;
-                                        TN( tValueMiddleEmail            , "" ) ;
-                                        TN( tValueMiddlePostalCode       , "" ) ;
-                                        TN( tValueMiddleCountry          , "" ) ;
-                                        TN( tValueMiddleHawker           , "" ) ;
-                                        TN( tValueMiddleAge              , "" ) ;
-                                        TN( tValueMiddleAmountTotal      , "" ) ;
-                                        TN( tValueMiddleAmountSubtotal   , "" ) ;
-                                        TN( tValueMiddleApiVersion       , "" ) ;
-                                        TN( tValueMiddleIdProduct        , "" ) ;
-                                        TN( tValueMiddleInvoice          , "" ) ;
-                                        TN( tValueMiddleStripeNoticeType , "" ) ;
-                                        TN( tValueMiddleLive             , "" ) ;
+                                        TN( tValueMiddleCurrencyConversion , "" ) ;
+                                        TN( tValueMiddleCurrency           , "" ) ;
+                                        TN( tValueMiddleAmountDiscount     , "" ) ;
+                                        TN( tValueMiddleIdSubscription     , "" ) ;
+                                        TN( tValueMiddleMode               , "" ) ;
+                                        TN( tValueMiddleName               , "" ) ;
+                                        TN( tValueMiddleEmail              , "" ) ;
+                                        TN( tValueMiddlePostalCode         , "" ) ;
+                                        TN( tValueMiddleCountry            , "" ) ;
+                                        TN( tValueMiddleHawker             , "" ) ;
+                                        TN( tValueMiddleAge                , "" ) ;
+                                        TN( tValueMiddleAmountTotal        , "" ) ;
+                                        TN( tValueMiddleAmountSubtotal     , "" ) ;
+                                        TN( tValueMiddleApiVersion         , "" ) ;
+                                        TN( tValueMiddleIdProduct          , "" ) ;
+                                        TN( tValueMiddleInvoice            , "" ) ;
+                                        TN( tValueMiddleStripeNoticeType   , "" ) ;
+                                        TN( tValueMiddleLive               , "" ) ;
 
                                         etThread.traceF( tin0P , T("    ------------------------------------------------------------------------------------------------------------------------------------------------------- ")+tShortMiddle ) ;
 
