@@ -17,7 +17,6 @@ TODO
 DONE( tmWorkF )
 }
     etherC::loafIF( tin0P ) ;
-    //etThread.traceF( tin0P , T("ok [idDisk]:    ")+TF3(idDisk,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
     etThread.traceF( tin0P , T("ok") ) ;
 
     }
@@ -110,13 +109,11 @@ DONE( tmWorkF )
             }
                 }
                     }
-                        //if( !cNest ) break ;
+                        if( !cNest ) break ;
                         costj ++ ;
 
                         else if( postj[ costj ] == '}' ) cNest -- ;
                              if( postj[ costj ] == '{' ) cNest ++ ;
-
-                        putchar( postj[ costj ] ) ;
 
                         if( !cbIn ) break ;
                         countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
@@ -179,10 +176,9 @@ DONE( tmWorkF )
 
                 "Accept: application/json\r\n"
                 "Content-Type: application/json\r\n"
-                "Authorization: Basic ")+tApiCredentials64Users+T("\r\n"
+                "Authorization: Basic ")+tApiCredentials64Root+T("\r\n"
                 "Host: ")+tServer+T("\r\n"
-                "GET /rest/v4/users HTTP/1.1\r\n"
-              //"GET /rest/v4/payments HTTP/1.1\r\n"
+                "GET /rest/v4/payments/")+tValueToken+T(" HTTP/1.1\r\n"
 
             TN( tSay , "" ) ; tSay = T(
 
@@ -196,45 +192,290 @@ DONE( tmWorkF )
         _IO_
     {
 
-    etThread.traceF( tin0P , T("[tHyperwalletProgramTokenSandboxUsers]:    ")+tHyperwalletProgramTokenSandboxUsers , flTRACE_NOpREFIX ) ;
+    }
+        }
+            }
+                etThread.traceF( tin0P , T("socket is impotent") ) ;
+                POOPRqUIET
+            {
+            if( POOP )
+
+            }
+                DEL( pSwPathValue ) ;
+
+                }
+                    }
+                        etThread.delF( tin0P , psttValue ) ;
+
+                        }
+                            }
+                                etThread.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                                *pptValue[ offe ] = T(psttValue) ;
+                            {
+                            if( !etThread.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                        {
+                        for( countT offe = 0 ; offe < cPaths ; offe ++ )
+
+                        if( cPaths - cValues ) { BLAMMO ; }
+                        countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                        countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+
+                        //etThread.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                        //etThread.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+
+                        strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+
+                        _IO_
+                    {
+                    for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                    countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                    _IO_
+                {
+                if( !POOP )
+
+                //EXAMPLE: {"errcode":"M_UNKNOWN","error":"Can't connect to server ideafarm.com"}
+
+                ;
+                }
+                    &tPathToken     ,
+                    &tPathError     ,
+                    &tPathErrorCode ,
+                {
+                textC* pptPath[] =
+
+                TN( tPathToken     , "\"token\"/"   ) ;
+                TN( tPathError     , "\"error\"/"   ) ;
+                TN( tPathErrorCode , "\"errcode\"/" ) ;
+
+                ;
+                }
+                    &tValueToken     ,
+                    &tValueError     ,
+                    &tValueErrorCode ,
+                {
+                textC* pptValue[] =
+
+                TN( tValueError     , "" ) ;
+                TN( tValueErrorCode , "" ) ;
+
+                __Z( pSwPathValue ) ;
+                }
+                    }
+                        etThread.traceF( tin0P , T("!exception / could not parse json") ) ;
+                        POOPRqUIET
+                    {
+                    if( POOP )
+                    ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , (osTextT*)postj , flSTACKc_null ) ;
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
+                ZE( switchC* , pSwPathValue ) ;
+                ZE( strokeS* , psttPath     ) ;
+                _IO_
+            {
+
+            etThread.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------") , flTRACE_NOpREFIX                    ) ;
+            etThread.traceF( tin0P , T(postj)                                                                                                               , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etThread.traceF( tin0P , T("-------------------------------------------------------------------------------------------------- response body:") , flTRACE_NOpREFIX                    ) ;
+            etThread.traceF( tin0P , T(posth)                                                                                                               , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etThread.traceF( tin0P , T("-------------------------------------------------------------------------------------------------- response head:") , flTRACE_NOpREFIX                    ) ;
+
+            }
+                }
+                    }
+                        if( !cNest ) break ;
+                        costj ++ ;
+
+                        else if( postj[ costj ] == '}' ) cNest -- ;
+                             if( postj[ costj ] == '{' ) cNest ++ ;
+
+                        if( !cbIn ) break ;
+                        countT cbIn = sockc.readF( tin0P , postj + costj , 1 ) ;
+                    {
+                    else
+                    }
+                        costh ++ ;
+
+                        bHead = 0 ;
+                        )
+                            )
+                                )
+                                    posth[ costh - 2 ] == '\n'
+                                    &&
+                                    posth[ costh - 1 ] == '\r'
+                                (
+                                ||
+                                posth[ costh - 1 ] == '\n'
+                            (
+                            &&
+                            posth[ costh ] == '\n'
+                            &&
+                            costh
+                        (
+                        if
+
+                        if( !cbIn ) break ;
+                        countT cbIn = sockc.readF( tin0P , posth + costh , 1 ) ;
+                    {
+                    if( bHead )
+                {
+                for(;;)
+                ZE( countT , cNest ) ;
+                _IO_
+            {
+            ZE( countT , costj ) ;
+            ZE( countT , costh ) ;
+            boolT bHead = 1 ;
+            thirdC::c_memsetIF( tin0P , postj , sizeof postj , 0 ) ;
+            thirdC::c_memsetIF( tin0P , posth , sizeof posth , 0 ) ;
+
+            sockc.writeF( tin0P , (osTextT*)tSay ) ;
+            sockc.connectF( tin0P , 443 , nnServer ) ;
+            socketC sockc( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , 0 , flSOCKETc_CRYPTfOREIGNsSL , 0 , &idleTimeAllowedRead , &idleTimeAllowedWrite , &timeAllowedConnected ) ;
+
+            countT idleTimeAllowedWrite = SOCKETtIMEOUTdEFAULTwAN ;
+            countT idleTimeAllowedRead  = SOCKETtIMEOUTdEFAULTwAN ;
+            countT timeAllowedConnected = TICK >> 2 ;
+
+            nnServer = socketC::nicNameIF( tin0P , *((tin1S&)tin0P).pEtScratch , tServer ) ;
+            nicNameC nnServer ;
+
+            tSay += T("\r\n")+tBody ;
+
+            etThread.traceF( tin0P , T("-----------------------------------------------------------------------------------------------------------------") , flTRACE_NOpREFIX                    ) ;
+            etThread.traceF( tin0P , tBody                                                                                                                  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etThread.traceF( tin0P , T("-------------------------------------------------------------------------------------------------- request  body:") , flTRACE_NOpREFIX                    ) ;
+            etThread.traceF( tin0P , tSay                                                                                                                   , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+            etThread.traceF( tin0P , T("-------------------------------------------------------------------------------------------------- request  head:") , flTRACE_NOpREFIX                    ) ;
+
+            tSay += T("Content-Length: ")+TF4(costBody,flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n") ;
+
+            ) ;
+
+                "Accept: application/json\r\n"
+                "Content-Type: application/json\r\n"
+                "Authorization: Basic ")+tApiCredentials64Root+T("\r\n"
+              //"Authorization: Basic ")+T("howNowBrownCow")+T("\r\n"
+            //B:"Authorization: Basic ")+tApiCredentials64Users+T("\r\n"
+            //B:"Authorization: Basic ")+tApiCredentials64Root+T("\r\n"
+                "Host: ")+tServer+T("\r\n"
+                "POST /rest/v4/payments HTTP/1.1\r\n"
+
+            TN( tSay , "" ) ; tSay = T(
+
+            countT costBody = tBody.csF( tin0P ) ;
+
+            ) ;
+
+                "}\r\n"
+                  "    \"clientPaymentId\": \"")+tTime+T("\"\r\n"
+                  "    \"purpose\": \"GP0002\",\r\n"
+                  "    \"amount\": \"11.40\",\r\n"
+                  "    \"currency\": \"USD\",\r\n"
+                  "    \"programToken\": \"")+tProgramRoot+T("\",\r\n"
+                  "    \"destinationToken\": \"")+tValueUserToken+T("\",\r\n"
+                "{\r\n"
+
+            TN( tBody , "" ) ; tBody = T(
+            TN( tServer , "uat-api.paylution.com" ) ;
+
+            SCOOPS
+            _IO_
+        {
+        IFsCRATCHoK
+        _IO_
+    {
+    TN( tValueToken     , "" ) ;
+
+    TN( tValueUserToken , "usr-" ) ;
+
+    // --------------------------------------------------------------------------------------------------------------------------------------------------
+
+    etThread.traceF( tin0P , T("[tProgramPortalVirtual]:    ")+tProgramPortalVirtual , flTRACE_NOpREFIX ) ;
     }
         etThread.delF( tin0P , psttw ) ;
-        tHyperwalletProgramTokenSandboxUsers = T(psttw) ;
-        if( psttw && psttw->idAdam ) tHyperwalletProgramTokenSandboxUsers = T(psttw) ;
+        tProgramPortalVirtual = T(psttw) ;
+        if( psttw && psttw->idAdam ) tProgramPortalVirtual = T(psttw) ;
 
-        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.hyperwallet.sandbox.program.token.users" ) ) ; ___( psttw ) ;
+        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.hyperwallet.sandbox.program.token.portal.virtual" ) ) ; ___( psttw ) ;
     {
-    TN( tHyperwalletProgramTokenSandboxUsers , "" ) ;
+    TN( tProgramPortalVirtual , "" ) ;
 
-    etThread.traceF( tin0P , T("[tHyperwalletProgramTokenSandboxFunding]:    ")+tHyperwalletProgramTokenSandboxFunding , flTRACE_NOpREFIX ) ;
+    etThread.traceF( tin0P , T("[tProgramPortalThrough]:    ")+tProgramPortalThrough , flTRACE_NOpREFIX ) ;
     }
         etThread.delF( tin0P , psttw ) ;
-        tHyperwalletProgramTokenSandboxFunding = T(psttw) ;
-        if( psttw && psttw->idAdam ) tHyperwalletProgramTokenSandboxFunding = T(psttw) ;
+        tProgramPortalThrough = T(psttw) ;
+        if( psttw && psttw->idAdam ) tProgramPortalThrough = T(psttw) ;
 
-        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.hyperwallet.sandbox.program.token.funding" ) ) ; ___( psttw ) ;
+        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.hyperwallet.sandbox.program.token.portal.through" ) ) ; ___( psttw ) ;
     {
-    TN( tHyperwalletProgramTokenSandboxFunding , "" ) ;
+    TN( tProgramPortalThrough , "" ) ;
 
-    etThread.traceF( tin0P , T("[tApiCredentials64Users]:    ")+tApiCredentials64Users , flTRACE_NOpREFIX ) ;
+    etThread.traceF( tin0P , T("[tProgramEmbeddedThrough]:    ")+tProgramEmbeddedThrough , flTRACE_NOpREFIX ) ;
     }
         etThread.delF( tin0P , psttw ) ;
-        tApiCredentials64Users = T(psttw) ;
-        if( psttw && psttw->idAdam ) tApiCredentials64Users = T(psttw) ;
+        tProgramEmbeddedThrough = T(psttw) ;
+        if( psttw && psttw->idAdam ) tProgramEmbeddedThrough = T(psttw) ;
 
-        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.credentials64.hyperwallet.sandbox.users" ) ) ; ___( psttw ) ;
+        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.hyperwallet.sandbox.program.token.embedded.through" ) ) ; ___( psttw ) ;
     {
-    TN( tApiCredentials64Users , "" ) ;
+    TN( tProgramEmbeddedThrough , "" ) ;
 
-    etThread.traceF( tin0P , T("[tApiCredentials64Funding]:    ")+tApiCredentials64Funding , flTRACE_NOpREFIX ) ;
+    etThread.traceF( tin0P , T("[tProgramRoot]:    ")+tProgramRoot , flTRACE_NOpREFIX ) ;
     }
         etThread.delF( tin0P , psttw ) ;
-        tApiCredentials64Funding = T(psttw) ;
-        if( psttw && psttw->idAdam ) tApiCredentials64Funding = T(psttw) ;
+        tProgramRoot = T(psttw) ;
+        if( psttw && psttw->idAdam ) tProgramRoot = T(psttw) ;
 
-        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.credentials64.hyperwallet.sandbox.funding" ) ) ; ___( psttw ) ;
+        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.hyperwallet.sandbox.program.token.root" ) ) ; ___( psttw ) ;
     {
-    TN( tApiCredentials64Funding , "" ) ;
+    TN( tProgramRoot , "" ) ;
+
+    // PROGRAM TOKEN -----------------------------------------------------------------------------------------------------------------------------------
+
+    etThread.traceF( tin0P , T("[tApiCredentials64PortalVirtual]:    ")+tApiCredentials64PortalVirtual , flTRACE_NOpREFIX ) ;
+    }
+        etThread.delF( tin0P , psttw ) ;
+        tApiCredentials64PortalVirtual = T(psttw) ;
+        if( psttw && psttw->idAdam ) tApiCredentials64PortalVirtual = T(psttw) ;
+
+        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.credentials64.hyperwallet.sandbox.portal.virtual" ) ) ; ___( psttw ) ;
+    {
+    TN( tApiCredentials64PortalVirtual , "" ) ;
+
+    etThread.traceF( tin0P , T("[tApiCredentials64PortalThrough]:    ")+tApiCredentials64PortalThrough , flTRACE_NOpREFIX ) ;
+    }
+        etThread.delF( tin0P , psttw ) ;
+        tApiCredentials64PortalThrough = T(psttw) ;
+        if( psttw && psttw->idAdam ) tApiCredentials64PortalThrough = T(psttw) ;
+
+        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.credentials64.hyperwallet.sandbox.portal.through" ) ) ; ___( psttw ) ;
+    {
+    TN( tApiCredentials64PortalThrough , "" ) ;
+
+    etThread.traceF( tin0P , T("[tApiCredentials64EmbeddedThrough]:    ")+tApiCredentials64EmbeddedThrough , flTRACE_NOpREFIX ) ;
+    }
+        etThread.delF( tin0P , psttw ) ;
+        tApiCredentials64EmbeddedThrough = T(psttw) ;
+        if( psttw && psttw->idAdam ) tApiCredentials64EmbeddedThrough = T(psttw) ;
+
+        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.credentials64.hyperwallet.sandbox.embedded.through" ) ) ; ___( psttw ) ;
+    {
+    TN( tApiCredentials64EmbeddedThrough , "" ) ;
+
+    etThread.traceF( tin0P , T("[tApiCredentials64Root]:    ")+tApiCredentials64Root , flTRACE_NOpREFIX ) ;
+    }
+        etThread.delF( tin0P , psttw ) ;
+        tApiCredentials64Root = T(psttw) ;
+        if( psttw && psttw->idAdam ) tApiCredentials64Root = T(psttw) ;
+
+        ZE( strokeS* , psttw ) ; etThread.querySettingF( tin0P , psttw , T("!ipdos.credentials64.hyperwallet.sandbox.root" ) ) ; ___( psttw ) ;
+    {
+    TN( tApiCredentials64Root , "" ) ;
+
+    // API CREDENTIALS -----------------------------------------------------------------------------------------------------------------------------------
 
     TN( tTime , "" ) ; tTime = TTF(timeN1,timeN2) ;
     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
