@@ -136,9 +136,9 @@
         const countT idWordLath = psttP->idAdam ;
         const countT idWordWoth = 1 ;
     {
-    if( psttP->idAdam > 2 )
+    if( !POOP && psttP->idAdam > 2 )
 
-    if( psttP[ CSpREFIX ].idAdam != '{' || psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) { BLAMMO ; }
+    __( psttP[ CSpREFIX ].idAdam != '{' || psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) ;
     //VERIFY THAT psttP BEGINS WITH '{' AND ENDS WITH '}'
 
     //
@@ -266,23 +266,26 @@ voidT strParseJson_pairF( tin0S& tin0P , etherC& etherP , switchC*& pSwPathValue
     }
         }
             break ;
-            strParseJson_wordF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttP , psttQuoteP ) ;
-            if( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) { BLAMMO ; }
+            if( !POOP ) strParseJson_wordF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttP , psttQuoteP ) ;
+            __( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) ;
         {
         case '{' :
         }
             break ;
-            etherP.delF( tin0P , psttList ) ;
             }
-                strParseJson_listF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttList , psttQuoteP ) ;
-                etherP.strSubstringF( tin0P , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+                etherP.delF( tin0P , psttList ) ;
+                }
+                    strParseJson_listF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttList , psttQuoteP ) ;
+                    etherP.strSubstringF( tin0P , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+                {
+                if( idf <= idl )
+                countT idl = psttP->idAdam - 1 ;
+                countT idf = 2 ;
+                ZE( strokeS* , psttList ) ;
             {
-            if( idf <= idl )
-            countT idl = psttP->idAdam - 1 ;
-            countT idf = 2 ;
-            ZE( strokeS* , psttList ) ;
+            if( !POOP )
 
-            if( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != ']' ) { BLAMMO ; }
+            __( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != ']' ) ;
         {
         case '[' :
     {
@@ -427,23 +430,26 @@ voidT strParseJson_listF( tin0S& tin0P , etherC& etherP , switchC*& pSwPathValue
         }
             }
                 break ;
-                strParseJson_wordF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttP , psttQuoteP ) ;
-                if( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) { BLAMMO ; }
+                if( !POOP ) strParseJson_wordF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttP , psttQuoteP ) ;
+                __( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != '}' ) ;
             {
             case '{' :
             }
                 break ;
-                etherP.delF( tin0P , psttList ) ;
                 }
-                    strParseJson_listF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttList , psttQuoteP ) ;
-                    etherP.strSubstringF( tin0P , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+                    etherP.delF( tin0P , psttList ) ;
+                    }
+                        strParseJson_listF( tin0P , etherP , pSwPathValueP , psttPathP , stPathP , psttList , psttQuoteP ) ;
+                        etherP.strSubstringF( tin0P , psttList , idf , idl , psttP ) ; ___( psttList ) ;
+                    {
+                    if( idf <= idl )
+                    countT idl = psttP->idAdam - 1 ;
+                    countT idf = 2 ;
+                    ZE( strokeS* , psttList ) ;
                 {
-                if( idf <= idl )
-                countT idl = psttP->idAdam - 1 ;
-                countT idf = 2 ;
-                ZE( strokeS* , psttList ) ;
+                if( !POOP )
 
-                if( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != ']' ) { BLAMMO ; }
+                __( psttP[ CSpREFIX - 1 + psttP->idAdam ].idAdam != ']' ) ;
             {
             case '[' :
         {
