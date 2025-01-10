@@ -757,7 +757,7 @@ TASK( tmFreshenFileF )
                                         //else
                                         }
                                             DEL( pInfo ) ;
-                                            hasherF( tin0P                         ,          etherP ,          bQuitP ,          bFail ,          cHashers ,         pInfo ,         psttLocalContainerRootP ,         psttLocalContainerP ,          kvP ,          cFileOrDirDone ) ;
+                                            hasherF( tin0P , etherP , bQuitP , bFail , cHashers , pInfo , psttLocalContainerRootP , psttLocalContainerP , kvP , cFileOrDirDone ) ;
                                         {
                                         //if( pInfo->cbUsed < TOCK << 4 )
                                         inc02AM( cHashers ) ;
@@ -771,7 +771,9 @@ TASK( tmFreshenFileF )
                                     else
                                     }
                                         break ;
-                                        bFail = 1 ;
+                                        hasherF( tin0P , etherP , bQuitP , bFail , cHashers , 0 , psttLocalContainerRootP , psttLocalContainerP , kvP , cFileOrDirDone , postShort ) ;      //20250110@1106: ADDED W/O ANALYSIS
+                                        DEL( pInfo ) ;                                                                                                                                      //20250110@1106: ADDED W/O ANALYSIS
+                                        //20250110@1101: IGNORE THIS FILE BECAUSE IT IS CURRENTLY OPEN IN ANOTHER PROCESS AND CANNOT BE READ: bFail = 1 ;
                                         etRock.traceF( tin0P , T("exception: could not get info for local file: ")+tLong ) ;
                                         POOPR
                                     {
@@ -982,7 +984,7 @@ TASK( tmFreshenFileF )
             etherP.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
             ZE( strokeS* , psttu ) ;
         {
-        while( !etPrime && !etherP && !bQuitP )  // RETRIES UNTIL SUCCESSFULLY PROCESSES ALL FILES
+        while( !etPrime && !etherP && !bQuitP )  // RETRIES UNTIL SUCCESSFULLY PROCESSES ALL FILES ; 20250110@1045: IF CAN'T READ A FILE, JUST MAKE UP FAKE INFO ; THE CURRENT CODE HAS BEEN OBSERVED TO PEG THE CPU IN AN INFINITE LOOP FOR A HOVER FILE THAT HAS ALREADY BEEN OBSOLETED BY PATCHING THE CORRESPONDING MASTER FILE BUT IS OPEN IN THE PROCESS TREE
         etRock.traceF( tin0P , T("cloudC when calculating the md5 hash of each local file, i will use up to this many threads [cHashersMax]: ")+TF2(cHashersMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         const boolT bVerify = !( F(flagsCtP) & flCLOUDc_DOnOTvERIFYlOCALlIST ) ;
         const countT cHashersMax = thirdC::osProcessorsIF( tin0P ) << 1 ;
@@ -1358,10 +1360,12 @@ TASK( tmHasherF )
                     if( POOP )
 
                     fileC fi( tin0P , pInfoP->psttIfoName , ifcOPENaCCESS_R , ifcOPENsHARE_R , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null , flFILEaTTR2_null , flFILEc_null , 1 ) ;
+
+                    meta.cbUsed = pInfoP->cbUsed ;
                 {
+                if( pInfoP )
                 //OBTAIN md5 HASH
 
-                meta.cbUsed = pInfoP->cbUsed ;
                 metaS meta( tin0P ) ;
             {
             while( !POOP && !etherP && !bQuitP && !bFailP && !etPrime )
@@ -1399,10 +1403,12 @@ TASK( tmHasherF )
             ZE( strokeS* , psttShort ) ;
             ZE( strokeS* , psttnu ) ;
         {
+        else
+        if( !pInfoP ) tShort = T(postShortP) ;
         TN( tShort , "" ) ;
 
         TN( tSlash , "/" ) ;
-        TN( tIfoName , pInfoP->psttIfoName ) ;
+        TN( tIfoName , "" ) ; if( pInfoP ) tIfoName = T(pInfoP->psttIfoName) ;
         //etRock.traceF( tin0P , T("hasherF [idIn]: ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         etherC& etPrime   = etherC::etPrimeIF( tin0P ) ;
         etherC& etRock    = etherC::etRockIF( tin0P ) ;
@@ -1411,8 +1417,10 @@ TASK( tmHasherF )
         SCOOPS
     {
     IFsCRATCHoK
+
+    //20250110@1116: IF !pInfoP THEN I AM BEING CALLED FOR A LOCAL FILE THAT IS IN USE SO CANNOT BE OPENED, SO I NEED TO JUST FAKE IT
 {
-voidT hasherF( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , countT& bFailP , countT& cHashersP , const infoFileS* pInfoP , const strokeS* const psttLocalContainerRootP , const strokeS* const psttLocalContainerP , keyValuePairsC& kvP , countT& cFileOrDirDoneP )
+voidT hasherF( tin0S& tin0P , etherC& etherP , const boolT& bQuitP , countT& bFailP , countT& cHashersP , const infoFileS* pInfoP , const strokeS* const psttLocalContainerRootP , const strokeS* const psttLocalContainerP , keyValuePairsC& kvP , countT& cFileOrDirDoneP , const osTextT* const postShortP = 0 )
 
 }
     ;
