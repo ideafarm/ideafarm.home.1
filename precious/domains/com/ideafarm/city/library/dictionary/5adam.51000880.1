@@ -1443,6 +1443,52 @@ DONE( tmWorkF )
         TN( tFolderMyEvents , "" ) ;
 
         }
+            while( !ether && ~hFind && !POOP ) ;
+            }
+                DEL( pInfo ) ;
+                }
+
+                    }
+                        }
+                            if( POOP ) POOPR ;
+                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSharedFolderRawRetryLater+tShort , tSharedFolderRawIncoming+tShort ) ;
+                            SCOOPS
+                        {
+                        IFsCRATCHoK
+
+                        }
+                            etThread.delF( tin0P , psttShort ) ;
+                            tShort = T(psttShort) ;
+                            etThread.delF( tin0P , psttnu ) ;
+                            etThread.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                            ZE( strokeS* , psttShort ) ;
+                            ZE( strokeS* , psttnu ) ;
+                        {
+                        TN( tShort , "" ) ;
+                    {
+                    if( !bDir )
+
+                    const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
+                {
+                else
+                }
+                    break ;
+                    DEL( pInfo ) ;
+                {
+                if( !pInfo || !pInfo->psttIfoName )
+
+                etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tSharedFolderRawIncoming ) ;
+                ZE( infoFileS* , pInfo ) ;
+            {
+            do
+            handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+
+            _IO_
+        {
+        if( cNewIncoming )
+        cNewIncoming = etThread.diskFileExistsF( tin0P , tSharedFolderRawIncoming+tStar ) ;                                                                     // MOVE LEFTOVERS TO RETRY LATER
+
+        }
             while( !ether && ~hFindOuter && !POOP && !cNewEvents ) ;
             }
                 DEL( pInfoOuter ) ;
@@ -2181,11 +2227,60 @@ DONE( tmWorkF )
             _IO_
         {
         if( cNewIncoming )                                                                                                                                      // IF EXIST NEWLY INCOMING RAW NOTICES
-        countT cNewIncoming = etThread.diskFileExistsF( tin0P , tSharedFolderRawIncoming+tStar ) ;                                                                    // IF EXIST NEWLY INCOMING RAW NOTICES
+        countT cNewIncoming = etThread.diskFileExistsF( tin0P , tSharedFolderRawIncoming+tStar ) ;
+
+        }
+            }
+                while( !ether && ~hFind && !POOP ) ;
+                }
+                    DEL( pInfo ) ;
+                    }
+                        }
+                            }
+                                if( POOP ) POOPR ;
+                                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSharedFolderRawIncoming+tShort , tSharedFolderRawRetryLater+tShort ) ;
+                                SCOOPS
+                            {
+                            IFsCRATCHoK
+
+                            }
+                                etThread.delF( tin0P , psttShort ) ;
+                                tShort = T(psttShort) ;
+                                etThread.delF( tin0P , psttnu ) ;
+                                etThread.strBisectF( tin0P , psttnu , psttShort , pInfo->psttIfoName , tSlash , - 1 - bDir , flSTRbISECT_APPENDdELIMITER ) ; ___( psttnu ) ; ___( psttShort ) ;
+                                ZE( strokeS* , psttShort ) ;
+                                ZE( strokeS* , psttnu ) ;
+                            {
+                            TN( tShort , "" ) ;
+                        {
+                        if( !bDir )
+
+                        const boolT bDir = pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' ;
+                    {
+                    else
+                    }
+                        break ;
+                        DEL( pInfo ) ;
+                    {
+                    if( !pInfo || !pInfo->psttIfoName )
+
+                    etThread.diskFindFileOrDirF( tin0P , pInfo , hFind , tSharedFolderRawRetryLater ) ;
+                    ZE( infoFileS* , pInfo ) ;
+                {
+                do
+                handleC hFind( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+
+                _IO_
+            {
+            if( cToRetry )
+            countT cToRetry = etThread.diskFileExistsF( tin0P , tSharedFolderRawRetryLater+tStar ) ;
+        {
+        if( !( ++ idCycle % 0x10 ) )                                                                                                                            // PERIODICALLY MOVE RETRY TO INCOMING
 
         _IO_
     {
     while( !ether && !etThread )
+    ZE( countT , idCycle ) ;
     TN( tStar  , "*" ) ;
     TN( tSlash , "/" ) ;
 
@@ -2195,6 +2290,7 @@ DONE( tmWorkF )
     etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderEventRetryLater ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderEventIncoming   ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderRawDone         ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderRawRetryLater   ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderRawIncoming     ) ;
 
     TN( tValueWantedInnerStripeNoticeType  , "customer.subscription.updated" ) ;
@@ -2212,7 +2308,8 @@ DONE( tmWorkF )
     TN( tSharedFolderEventDone       , "" ) ; tSharedFolderEventDone       = tSharedFolderPrefix+T("events.3.done/"             ) ;
     TN( tSharedFolderEventRetryLater , "" ) ; tSharedFolderEventRetryLater = tSharedFolderPrefix+T("events.2.retry.later/"      ) ;
     TN( tSharedFolderEventIncoming   , "" ) ; tSharedFolderEventIncoming   = tSharedFolderPrefix+T("events.1.incoming/"         ) ;
-    TN( tSharedFolderRawDone         , "" ) ; tSharedFolderRawDone         = tSharedFolderPrefix+T("raw.notices.2.done/"        ) ;
+    TN( tSharedFolderRawDone         , "" ) ; tSharedFolderRawDone         = tSharedFolderPrefix+T("raw.notices.3.done/"        ) ;
+    TN( tSharedFolderRawRetryLater   , "" ) ; tSharedFolderRawRetryLater   = tSharedFolderPrefix+T("raw.notices.2.retry.later/" ) ;
     TN( tSharedFolderRawIncoming     , "" ) ; tSharedFolderRawIncoming     = tSharedFolderPrefix+T("raw.notices.1.incoming/"    ) ;
     TN( tSharedFolderPrefix          , "" ) ; tSharedFolderPrefix          = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
@@ -2246,6 +2343,8 @@ DONE( tmWorkF )
     //          try to move the file to a unique "my events" folder
     //  
     //      for each file (not dir) in tSharedFolderEventIncoming 
+    //
+    //      move leftovers in "incoming" to "try later"
     //  
     //                                  nap a random time ([0,8] tocks)
     //  
