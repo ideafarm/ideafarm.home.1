@@ -1510,7 +1510,19 @@ DONE( tmWorkF )
                                                         etThread.traceF( tin0P , T("napping for a few tocks / [napTocks]:    ")+TF2(napTocks,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                         countT napTocks = (countT)ruPassword >> SB * 3 + 5 ;                    // [0,8] ; NAP FOR A RANDOM TIME TO GIVE OTHER SERVERS AN OPPORTUNITY TO GET THESE RAW INCOMING FILES
 
-                                                        etThread.diskFileOrDirDeleteF( tin0P , tFolderMaybe ) ;
+                                                        }
+                                                            }
+                                                                continue ;
+                                                                etThread.traceF( tin0P , T("could not delete maybe folder [rc,tFolderMaybe]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tFolderMaybe ) ;
+                                                                POOPR ;
+                                                                countT rc = POOP ;
+                                                            {
+                                                            if( POOP )
+                                                            ((tin1S&)tin0P).pEtScratch->diskFileOrDirDeleteF( tin0P , tFolderMaybe , flFILEoRdIRdELETE_null , 1 ) ;
+                                                            SCOOPS
+                                                        {
+                                                        IFsCRATCHoK
+
                                                         }
                                                             }
                                                                 }
