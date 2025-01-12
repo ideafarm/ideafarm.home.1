@@ -38,7 +38,7 @@ DONE( tmWorkF )
                                 POOPR
                             {
                             if( POOP )
-                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tWhere+tShort , tIfoName ) ;
+                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tWhere+tShort , tIfoName , 1 ) ;
 
                             SCOOPS
                         {
@@ -1451,7 +1451,7 @@ DONE( tmWorkF )
                     }
                         }
                             if( POOP ) POOPR ;
-                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSharedFolderRawRetryLater+tShort , tSharedFolderRawIncoming+tShort ) ;
+                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSharedFolderRawRetryLater+tShort , tSharedFolderRawIncoming+tShort , 1 ) ;
                             SCOOPS
                         {
                         IFsCRATCHoK
@@ -1533,7 +1533,7 @@ DONE( tmWorkF )
                                                                 {
                                                                 else
                                                                 if( !POOP ) cMoved -- ;
-                                                                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSharedFolderRawIncoming+*pptShort[ offi ] , tFolderMaybe+*pptShort[ offi ] ) ;
+                                                                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSharedFolderRawIncoming+*pptShort[ offi ] , tFolderMaybe+*pptShort[ offi ] , 1 ) ;
                                                                 SCOOPS
                                                             {
                                                             IFsCRATCHoK
@@ -1619,7 +1619,7 @@ DONE( tmWorkF )
                                                             }
                                                                 continue ;
                                                                 DEL( pInfoOuter ) ;
-                                                                etThread.traceF( tin0P , T("could not move to unique maybe from incoming [short]")+*pptShort[ offi ] ) ;
+                                                                etThread.traceF( tin0P , T("could not move to unique maybe from incoming [short]:    ")+*pptShort[ offi ] ) ;
                                                                 POOPR ;
                                                             {
                                                             else
@@ -2574,7 +2574,7 @@ DONE( tmWorkF )
                         }
                             }
                                 if( POOP ) POOPR ;
-                                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSharedFolderRawIncoming+tShort , tSharedFolderRawRetryLater+tShort ) ;
+                                ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tSharedFolderRawIncoming+tShort , tSharedFolderRawRetryLater+tShort , 1 ) ;
                                 SCOOPS
                             {
                             IFsCRATCHoK
@@ -2725,6 +2725,10 @@ DONE( tmWorkF )
     //          if wanted for outer
     //  
     //      for each file (not dir) in tSharedFolderRawIncoming
+    //  
+    //              move to tSharedFolderRawSubRenewed
+    //  
+    //          if subscription renewed
     //  
     //              move to tSharedFolderRawSubDeleted
     //  
