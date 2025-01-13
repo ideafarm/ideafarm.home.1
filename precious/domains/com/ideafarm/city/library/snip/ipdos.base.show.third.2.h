@@ -5493,6 +5493,8 @@ a count8S object contains 8 countT values
     slabS*                          pSlab ;                     // ELSE           USE pSlab->trueRandom
     homeS*                          pHome ;
     countT                          cOsHandles ;
+    countT                          idDesireProcessSetBySelfPending ;
+    countT                          idDesireProcessSetBySelf ;
 
     const countT                    cProcessors    ;    
     const countT                    maskProcessors ;
@@ -27589,7 +27591,6 @@ struct bookMarkOldS
     byteT* const            pbTls ;                             //MUST BE BEFORE grabC OBJECTS AND OTHERS WHOSE CONSTRUCTORS CALL TAG OR TAGoR MACROS; THIS STORAGE IS NOT INITIALIZED
     const countT            cbTls ;                             //MUST BE BEFORE grabC OBJECTS AND OTHERS WHOSE CONSTRUCTORS CALL TAG OR TAGoR MACROS
     countT                  idDesireSetBySelf ;                 //MUST BE EARLY BECAUSE dosPriorityIF CAN BE (WHEN DEBUGGING) CALLED IN inOutFrameC CT/DT, AND BEFORE ANY SUCH CALLS idDesireSetBySelf MUST BE INITIALIZED
-    countT                  idDesireSetBySelfProcess ;
 
     public :
 

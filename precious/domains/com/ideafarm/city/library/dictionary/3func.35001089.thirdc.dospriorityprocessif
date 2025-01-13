@@ -10,7 +10,9 @@
 }
     return idDesireOld ;
 
-    ((tin1S&)tin0P).idDesireSetBySelfProcess = idP ;
+                                               processGlobal1I.idDesireProcessSetBySelfPending = 0 ;
+    processGlobal1I.idDesireProcessSetBySelf = processGlobal1I.idDesireProcessSetBySelfPending     ;
+
     #endif
         }
             }
@@ -64,6 +66,7 @@
         if( idP ) ;
     #if defined( __OS2__ )
 
+    processGlobal1I.idDesireProcessSetBySelfPending = idP ;
     const countT idDesireOld = dosPriorityProcessIF( tin0P ) ;
 
     if( F(((tin1S&)tin0P).flagsThreadMode2) & flTHREADmODE2_LOCKdESIRE ) { BLAMMO ; }
