@@ -18,7 +18,7 @@ TELL( "cleaned up" ) ;
         etThread.ifcDrivenServerF( tin0P , i1 , i2 ) ;
         TELL( "calling ifcDrivenServerF" ) ;
 
-        countT idDesireOld = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
+        countT idDesireOld = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
 
         i1.time1idleTimeoutWrite = i1.time1idleTimeoutRead = SOCKETtIMEOUTdEFAULTwANiMPATIENT ; //RAW COMMAND SERVERS MUST REPLACE THIS WITH A LARGER VALUE; THIS VALUE ASSUMES WEB BROWSER ONLY NEEDS TO BURST ALL IMAGES FOR A PAGE AND WILL DO SO IMMEDIATELY
         //20210719@1109: USE "IMPATIENT" TO REDUCE ATTACK SURFACE (CLIENT INTENTIONALLY SENDING INCOMPLETE REQUEST TO TIE UP SERVER'S WORKER THREAD)
@@ -28,7 +28,7 @@ TELL( "cleaned up" ) ;
 
         serverInfo2S i2( idPortP , flagsSocketP , psttName , 0 , cArgSys , cArgAppP , 0 , - 8 , /*1U::bState SET TO ZE PROVISIONALLY SO DOOR AND PANIC DOOR CAN BE SERVED BY SAME PROCESS TO MAKE DEVELOPMENT OF THE INTERFACES EASIER; SET TO 1 WHEN THESE DOORS ARE SERVED BY SEPARATE PROCESSES, AS CALLED FOR IN THE DESIGN*/0 , 0 , 0 , 0 , 0 , 0 , &meP.sessions , pnnAllowedStripeP ) ;
 
-        serverInfo1S i1( 0 , 0 , bHandedOff , sgnIdPortReplaced , /*tmcHttpServerWoJobF*/ tmcHttpServerWorkerF , countTC() , bQuitP , time1idleTimeoutRead , time1idleTimeoutWrite ) ;
+        serverInfo1S i1( 0 , 0 , bHandedOff , sgnIdPortReplaced , /*tmcHttpServerWoJobOldF*/ tmcHttpServerWorkerF , countTC() , bQuitP , time1idleTimeoutRead , time1idleTimeoutWrite ) ;
         signC sgnIdPortReplaced( tin0P , TAG( TAGiDnULL ) ) ;
         ZE( boolT , bHandedOff ) ;
         TELL( "constructing serverInfoS parameters" ) ;

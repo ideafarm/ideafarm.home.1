@@ -11,6 +11,7 @@ DONE( tmcHttpServerWorkerF )
 
 }
     dec02AM( cWorkerP ) ;
+    etThread.osThreadSwitchingDesireF( tin0P , idDesireOld ) ;
 
     }
         }
@@ -153,6 +154,8 @@ DONE( tmcHttpServerWorkerF )
         etThread.traceF( tin0P , T("waiting for a push to stJobP"), flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
     {
     while( !bQuitP )
+
+    const countT idDesireOld = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
 
     countT& cWorkerP = *(countT*)pTaskP->c3 ;
     stackC& stJobP   = *(stackC*)pTaskP->c2 ;
