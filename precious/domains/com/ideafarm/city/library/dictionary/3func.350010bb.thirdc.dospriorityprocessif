@@ -10,14 +10,14 @@
 }
     return idDesireProcess ;
 
-    __( ((tin1S&)tin0P).idDesireSetBySelfProcess && idDesireProcess - ((tin1S&)tin0P).idDesireSetBySelfProcess ) ;
+    //U:: THIS NEEDS TO BE STORED IN A PROCESS GLOBAL, NOT IN tin: __( ((tin1S&)tin0P).idDesireSetBySelfProcess && idDesireProcess - ((tin1S&)tin0P).idDesireSetBySelfProcess ) ;
 
     #endif
     
         }
             default :                      __1
-            case REALTIME_PRIORITY_CLASS : { idDesireProcess = ifcTHREADpRIORITY_SPINLOCK ; break ; }
-            case HIGH_PRIORITY_CLASS     : { idDesireProcess = ifcTHREADpRIORITY_RUSH     ; break ; }
+            case REALTIME_PRIORITY_CLASS : { idDesireProcess = ifcTHREADpRIORITY_RUDE     ; break ; }
+            case HIGH_PRIORITY_CLASS     : { idDesireProcess = ifcTHREADpRIORITY_PUSHY    ; break ; }
             case NORMAL_PRIORITY_CLASS   : { idDesireProcess = ifcTHREADpRIORITY_NORMAL   ; break ; }
             case IDLE_PRIORITY_CLASS     : { idDesireProcess = ifcTHREADpRIORITY_LAZIEST  ; break ; }
         {
