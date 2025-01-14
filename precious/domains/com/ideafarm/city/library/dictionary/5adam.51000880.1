@@ -45,9 +45,11 @@ DONE( tmWorkF )
                         IFsCRATCHoK
 
                         ;
-                            : tSharedFolderEventDone
-                            ? tSharedFolderEventRetryLater
-                        TN( tWhere , "" ) ; tWhere = F(flagsFail) || !bRegistered
+                                : tSharedFolderEventDone
+                                ? tSharedFolderEventRetryLater
+                            : F(flagsFail) || !bRegistered
+                            ? tSharedFolderEventGorilla01
+                        TN( tWhere , "" ) ; tWhere = bGorilla01
 
                         etThread.traceF( tin0P , T("moving the file") ) ;
 
