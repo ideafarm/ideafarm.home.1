@@ -48254,6 +48254,7 @@ use this rather than _ to avoid the overhead of _
 
 /*3*/
 #define flBOXcgETf_HTTPpOST                 0xe0000107
+#define flBOXcgETf_HTTPdOnOTpREPENDhEADER   0xe0000207
 /*3*/
 #define flBOXcgETf_null    0xe0000007
 

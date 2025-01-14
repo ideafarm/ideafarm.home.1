@@ -655,17 +655,21 @@
                         etherC::etRockIF( tin0P ).traceF( tin0P , tRequest , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
                         pSControl->writeF( tin0P , (osTextT*)tRequest ) ;
 
-                        if( postBodyP ) tRequest += T(postBodyP) ;
-
-                        tRequest += T("\r\n\r\n") ;
-
                         }
-                            if( costBodyP  ) tRequest += T("\r\nContent-Length: ")+TF4(costBodyP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) ;
-                            if( !costBodyP ) costBodyP = thirdC::c_strlenIF( tin0P , postBodyP ) ;
-                        {
-                        if( postBodyP )
+                            if( postBodyP ) tRequest += T(postBodyP) ;
 
-                        TN( tRequest , "" ) ; tRequest = T(F(flagsP)&flBOXcgETf_HTTPpOST?"POST /":"GET /")+T(psttName)+T(" HTTP/1.1\r\nHost: ")+T(psttHost)+T("\r\nConnection: close") ;
+                            tRequest += T("\r\n\r\n") ;
+
+                            }
+                                if( costBodyP  ) tRequest += T("\r\nContent-Length: ")+TF4(costBodyP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa) ;
+                                if( !costBodyP ) costBodyP = thirdC::c_strlenIF( tin0P , postBodyP ) ;
+                            {
+                            if( postBodyP )
+                            tRequest = T(F(flagsP)&flBOXcgETf_HTTPpOST?"POST /":"GET /")+T(psttName)+T(" HTTP/1.1\r\nHost: ")+T(psttHost)+T("\r\nConnection: close") ;
+                        {
+                        else
+                        if( F(flagsP) & flBOXcgETf_HTTPdOnOTpREPENDhEADER ) tRequest = T(postBodyP) ;
+                        TN( tRequest , "" ) ;
                     {
 
                     pSControl->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;

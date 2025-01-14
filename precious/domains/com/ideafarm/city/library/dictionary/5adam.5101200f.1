@@ -9,7 +9,7 @@
 REST
 
 sgnDone_tmWorkF.waitF( tin0P ) ;
-etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;
 signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
@@ -24,6 +24,47 @@ DONE( tmWorkF )
     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     ZE( sCountT , timeN2 ) ;
     ZE( countT  , timeN1 ) ;
+
+    if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , posti , costi ) ; etThread.delF( tin0P , posti ) ;
+    etThread.boxGetShadowF( tin0P , posti , costi , T("webhooks.ideafarm.com//http/nu") , 1 , 0 , 0 , flOPENdETAILS_null , flBOXcgETf_HTTPdOnOTpREPENDhEADER , tRequestAll3 , tRequestAll3.csF( tin0P ) ) ; ___( posti ) ;
+
+    if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo2.ttt") , posti , costi ) ; etThread.delF( tin0P , posti ) ;
+    etThread.boxGetShadowF( tin0P , posti , costi , T("webhooks.ideafarm.com//http/nu") , 1 , 0 , 0 , flOPENdETAILS_null , flBOXcgETf_HTTPdOnOTpREPENDhEADER , tRequestAll2 , tRequestAll2.csF( tin0P ) ) ; ___( posti ) ;
+
+    if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , posti , costi ) ; etThread.delF( tin0P , posti ) ;
+    etThread.boxGetShadowF( tin0P , posti , costi , T("webhooks.ideafarm.com//http/nu") , 1 , 0 , 0 , flOPENdETAILS_null , flBOXcgETf_HTTPdOnOTpREPENDhEADER , tRequestAll1 , tRequestAll1.csF( tin0P ) ) ; ___( posti ) ;
+
+    ZE( countT   , costi ) ;
+    ZE( osTextT* , posti ) ;
+
+    }
+        etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , tRequestAll3 , tRequestAll3.csF( tin0P ) ) ;
+        etThread.boxPutF( tin0P , T("///d/tmp/foo2.ttt") , tRequestAll2 , tRequestAll2.csF( tin0P ) ) ;
+        etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , tRequestAll1 , tRequestAll1.csF( tin0P ) ) ;
+
+        tRequestAll3 = tHead+tContentLength3+T(postRaw3) ;
+        tRequestAll2 = tHead+tContentLength2+T(postRaw2) ;
+        tRequestAll1 = tHead+tContentLength1+T(postRaw1) ;
+
+        TN( tHead , postHead ) ;
+
+        }
+            tContentLength3 = T("Content-Length: ")+TF4(costRaw3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+            tContentLength2 = T("Content-Length: ")+TF4(costRaw2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+            tContentLength1 = T("Content-Length: ")+TF4(costRaw1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+            //"Content-Length: 5718\r\n"
+
+            const countT costRaw3 = sizeof postRaw3 - 1 ;
+            const countT costRaw2 = sizeof postRaw2 - 1 ;
+            const countT costRaw1 = sizeof postRaw1 - 1 ;
+        {
+        TN( tContentLength3 , "" ) ; 
+        TN( tContentLength2 , "" ) ; 
+        TN( tContentLength1 , "" ) ; 
+    {
+    TN( tRequestAll3 , "" ) ;
+    TN( tRequestAll2 , "" ) ;
+    TN( tRequestAll1 , "" ) ;
 
     _IO_
 {
@@ -606,6 +647,19 @@ osTextT postRaw2[] = {
     "{\r\n"
 
 osTextT postRaw1[] = {
+
+} ;
+
+    "Host: webhooks.ideafarm.com\r\n"
+    "Connection: close\r\n"
+    "Stripe-Signature: t=1736809627,v1=b15a66f137ec949edca5d0abd4f3e750358eefa30ee6c5d119523f8caf81413e,v0=a43eaea4e1eb354ecc6b64a3620ffc75e3c57b49240fc0d7dfbb4be480c1cf7d\r\n"
+    "Accept: */*; q=0.5, application/xml\r\n"
+    "User-Agent: Stripe/1.0 (+https://stripe.com/docs/webhooks)\r\n"
+    "Cache-Control: no-cache\r\n"
+    "Content-Type: application/json; charset=utf-8\r\n"
+    "POST /nobot/notify/stripe.20240206@1123 HTTP/1.1\r\n"
+
+osTextT postHead[] = {
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
