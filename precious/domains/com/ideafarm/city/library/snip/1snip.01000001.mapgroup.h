@@ -132,7 +132,7 @@
     ((countT)0x36044) , "nicnamesc" ,
     ((countT)0x36045) , "newsknows" ,
     ((countT)0x36046) , "tintallys" ,
-    ((countT)0x36047) , "monitorreplys" ,
+    ((countT)0x36047) , "monitorReplyOldS" ,
     ((countT)0x36048) , "strokemodes" ,
     ((countT)0x36049) , "cryc" ,
     ((countT)0x3604a) , "bufferc" ,

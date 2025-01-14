@@ -1,4 +1,22 @@
 
+voidT diskGetHoverF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+    if( !POOP ) etherP.diskGetHoverF( tin0P , psttP ) ;
+
+    if( !POOP ) slP << psttP ;
+    etherP.delF( tin0P , psttP ) ;
+}
+
 voidT diskHoverF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -2278,27 +2296,4 @@ voidT osDriverF_o3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const stroke
     ZE( countT , idAdamP ) ;
     if( !POOP ) { slP >> idAdamP ; idArgNext ++ ; }
     if( !POOP ) etherP.osDriverF( tin0P , idAdamP ) ;
-}
-
-voidT osDriverNameFromMasterF_o4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttP ) ;
-    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-
-   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-    ZE( countT , idAdamP ) ;
-    if( !POOP ) { slP >> idAdamP ; idArgNext ++ ; }
-    if( !POOP ) etherP.osDriverNameFromMasterF( tin0P , psttP , idAdamP ) ;
-
-    if( !POOP ) slP << psttP ;
-    etherP.delF( tin0P , psttP ) ;
 }

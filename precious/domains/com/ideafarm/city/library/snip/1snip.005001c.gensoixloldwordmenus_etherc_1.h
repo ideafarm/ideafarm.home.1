@@ -8,6 +8,7 @@
     "    . ether_psttEarlyFolder_F_o       . ?? ")+T(postName)+T("\r\n"
     "    . ether_idCitizenHirerI_F_o       . ?? ")+T(postName)+T("\r\n"
     "    . etherWhereF_o373       . ?? ")+T(postName)+T("\r\n"
+    "    . computerNameF_o4@       . ?? ")+T(postName)+T("\r\n"
     "    . poolNewF_o331@3       . ?? ")+T(postName)+T("\r\n"
     "    . delF_o1@       . ?? ")+T(postName)+T("\r\n"
     "    . delF_o4@       . ?? ")+T(postName)+T("\r\n"

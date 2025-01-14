@@ -1,9 +1,4 @@
 
-
-#define ifcIDsWITCHhTTPrEPLY_ANYWHERE        3
-#define ifcIDsWITCHhTTPrEPLY_PREFIX          2
-#define ifcIDsWITCHhTTPrEPLY_EXACT           1
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -481,6 +476,9 @@ struct  /*ff*/s_acceptF_parametersS/*ff*/                               ; /*ff*/
 */
 /**/
 /*1*//*ENABLEdROPnOTES*//*1*/
+
+//20250101@2141: DISABLED DROP NOTES AS A SPEED OPTIMIZATION AFTER SEEING THAT DROPNOTE ACTIVITY IS AT THE TOP OF THE etherWhereF REPORT FOR putFileIF
+//20250101@2248: ENABLED BECAUSE WON'T RUN
 
 //#define ENABLEdROPnOTES
 
@@ -9201,7 +9199,7 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d4.taskdrivenservernewsocket END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d5.ifcideventmonitored BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d5.ifcIDeVENTmONITORED BEGIN
 
 
 //
@@ -9241,8 +9239,8 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d5.ifcideventmonitored END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d6.ifcideventexceptionmonitored BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d5.ifcIDeVENTmONITORED END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d6.ifcIDeVENTeXCEPTIONmONITORED BEGIN
 
 
 //
@@ -9305,8 +9303,8 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d6.ifcideventexceptionmonitored END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d7.ifcidcmdeventmonitored BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d6.ifcIDeVENTeXCEPTIONmONITORED END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d7.ifcIDcMDmoNITOR BEGIN
 
 
 //
@@ -9338,7 +9336,7 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d7.ifcidcmdeventmonitored END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d7.ifcIDcMDmoNITOR END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d8.flforestfire BEGIN
 
 
@@ -13413,7 +13411,7 @@ TELL4INIT must be called before me
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120014c.flprocesshire END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120014d.flmonitorquery BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120014d.flMONITORqUERYoLD BEGIN
 
 
 //
@@ -13449,7 +13447,7 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120014d.flmonitorquery END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120014d.flMONITORqUERYoLD END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120014e.flgrunt BEGIN
 
 
@@ -14352,7 +14350,7 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200164.flgrabnotes END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200165.ifcidtellmonitorwhat BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200165.ifcIDtELLgLASS2wHAT BEGIN
 
 
 //
@@ -14382,7 +14380,7 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200165.ifcidtellmonitorwhat END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200165.ifcIDtELLgLASS2wHAT END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200166.grabnotestidslots BEGIN
 
 
@@ -14972,7 +14970,7 @@ arguments
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200174.tellsysc3 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200175.posthandoffmonitor BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200175.postIFChANDOFFoLDgLASS2 BEGIN
 
 
 //
@@ -15000,36 +14998,7 @@ arguments
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200175.posthandoffmonitor END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200176.postifchandoffmonitor BEGIN
-
-
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-// Respecting the rights of other people is an important part of empowering one another.
-//
-
-/*
-\<A HREF=\"5.0010214.1.0.html\"\>definition\</A\>
-*/
-/**/
-
-/*1*//*postIFChANDOFFoLDgLASS2*//*1*/
-
-//ASSUME: ifcIDaDAM_2GLASS2 is 1050104
-#define postIFChANDOFFoLDgLASS2 postIFChANDOFFoLDpREFIX "1050104"
-
-
-//
-// Respecting the rights of other people is an important part of empowering one another.
-// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
-//
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
-//
-
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200176.postifchandoffmonitor END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200175.postIFChANDOFFoLDgLASS2 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200177.quito BEGIN
 
 
@@ -19197,7 +19166,7 @@ after i return, that countT object will contain 1
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f7.uscore127 END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f8.ifcidcmdmonitor BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f8.ifcIDcMDgLASS2 BEGIN
 
 
 //
@@ -19216,8 +19185,8 @@ after i return, that countT object will contain 1
 #define ifcIDcMDgLASS2_POOLoLDnAMES               0xdddd06b7
 #define ifcIDcMDgLASS2_POOLoLDhEADER              0xdddd06b8
 #define ifcIDcMDgLASS2_POOLoLDwALK1               0xdddd06b9
-#define ifcIDcMDgLASS2_SAYtALLIES              0xdddd06ba
-#define ifcIDcMDgLASS2_IMAGE                   0xdddd06bb
+#define ifcIDcMDgLASS2_SAYtALLIES                 0xdddd06ba
+#define ifcIDcMDgLASS2_IMAGE                      0xdddd06bb
 #define ifcIDcMDgLASS2_tin123S                    0xdddd06bc
 /*3*/
 #define ifcIDcMDgLASS2_min     0xdddd06b7
@@ -19231,8 +19200,8 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f8.ifcidcmdmonitor END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f9.ifcidreplymonitor BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f8.ifcIDcMDgLASS2 END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f9.ifcIDrEPLYgLASS2 BEGIN
 
 
 //
@@ -19251,8 +19220,8 @@ after i return, that countT object will contain 1
 #define ifcIDrEPLYgLASS2_POOLoLDnAMES             0xdddd06bd
 #define ifcIDrEPLYgLASS2_POOLoLDhEADER            0xdddd06be
 #define ifcIDrEPLYgLASS2_POOLoLDwALK1             0xdddd06bf
-#define ifcIDrEPLYgLASS2_SAYtALLIES            0xdddd06c0
-#define ifcIDrEPLYgLASS2_IMAGE                 0xdddd06c1
+#define ifcIDrEPLYgLASS2_SAYtALLIES               0xdddd06c0
+#define ifcIDrEPLYgLASS2_IMAGE                    0xdddd06c1
 #define ifcIDrEPLYgLASS2_tin123S                  0xdddd06c2
 /*3*/
 #define ifcIDrEPLYgLASS2_min     0xdddd06bd
@@ -19266,7 +19235,7 @@ after i return, that countT object will contain 1
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f9.ifcidreplymonitor END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001f9.ifcIDrEPLYgLASS2 END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112001fa.flTHREADmODE2 BEGIN
 
 
@@ -32442,11 +32411,11 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 /*1*//*ifcIDsUBtYPEpOOP_*//*1*/
 
 /*3*/
-#define ifcIDsUBtYPEpOOP_FIREDbYmONITOR      0xdddd0b34
-#define ifcIDsUBtYPEpOOP_FIREDbYsELF         0xdddd0b35
+#define ifcIDsUBtYPEpOOP_FIREDbYmONITOR      0xdddd0b36
+#define ifcIDsUBtYPEpOOP_FIREDbYsELF         0xdddd0b37
 /*3*/
-#define ifcIDsUBtYPEpOOP_min     0xdddd0b34
-#define ifcIDsUBtYPEpOOP_max     0xdddd0b35
+#define ifcIDsUBtYPEpOOP_min     0xdddd0b36
+#define ifcIDsUBtYPEpOOP_max     0xdddd0b37
 
 
 //
@@ -32566,14 +32535,14 @@ plateC& fooC::operator +=( plateC& plateP )                                     
 //THESE MUST BE IN THREAD PHASE ORDER, I.E. LATER PHASES MUST HAVE HIGHER id VALUES
 
 /*3*/
-#define ifcIDpHASEpROCESS_PROLOGcONSTRUCTINGgLOBALS     0xdddd0b36
-#define ifcIDpHASEpROCESS_PROLOGaLLgLOBALScONSTRUCTED   0xdddd0b37
-#define ifcIDpHASEpROCESS_WORKINGwINDOWtINgONE          0xdddd0b38
-#define ifcIDpHASEpROCESS_EPILOGdESTROYINGgLOBALS       0xdddd0b39
-#define ifcIDpHASEpROCESS_EPILOGaLLgLOBALSdESTROYED     0xdddd0b3a
+#define ifcIDpHASEpROCESS_PROLOGcONSTRUCTINGgLOBALS     0xdddd0b38
+#define ifcIDpHASEpROCESS_PROLOGaLLgLOBALScONSTRUCTED   0xdddd0b39
+#define ifcIDpHASEpROCESS_WORKINGwINDOWtINgONE          0xdddd0b3a
+#define ifcIDpHASEpROCESS_EPILOGdESTROYINGgLOBALS       0xdddd0b3b
+#define ifcIDpHASEpROCESS_EPILOGaLLgLOBALSdESTROYED     0xdddd0b3c
 /*3*/
-#define ifcIDpHASEpROCESS_min     0xdddd0b36
-#define ifcIDpHASEpROCESS_max     0xdddd0b3a
+#define ifcIDpHASEpROCESS_min     0xdddd0b38
+#define ifcIDpHASEpROCESS_max     0xdddd0b3c
 
 
 //
@@ -33163,14 +33132,14 @@ if i am called before i have been fired (ether is impotent) then cKidsOrphansAll
 /*1*//*ifcIDfORMhTTPrEPLY*//*1*/
 
 /*3*/
-#define ifcIDfORMhTTPrEPLY_DEBUG               0xdddd0b3b
-#define ifcIDfORMhTTPrEPLY_RAW                 0xdddd0b3c
-#define ifcIDfORMhTTPrEPLY_FULLcUSTOM          0xdddd0b3d
-#define ifcIDfORMhTTPrEPLY_BIGhEAD             0xdddd0b3e
-#define ifcIDfORMhTTPrEPLY_PINhEAD             0xdddd0b3f
+#define ifcIDfORMhTTPrEPLY_DEBUG               0xdddd0b3d
+#define ifcIDfORMhTTPrEPLY_RAW                 0xdddd0b3e
+#define ifcIDfORMhTTPrEPLY_FULLcUSTOM          0xdddd0b3f
+#define ifcIDfORMhTTPrEPLY_BIGhEAD             0xdddd0b40
+#define ifcIDfORMhTTPrEPLY_PINhEAD             0xdddd0b41
 /*3*/
-#define ifcIDfORMhTTPrEPLY_min     0xdddd0b3b
-#define ifcIDfORMhTTPrEPLY_max     0xdddd0b3f
+#define ifcIDfORMhTTPrEPLY_min     0xdddd0b3d
+#define ifcIDfORMhTTPrEPLY_max     0xdddd0b41
 
 
 //
@@ -33572,12 +33541,12 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*ifcIDtYPEtHREAD*//*1*/
 
 /*3*/
-#define ifcIDtYPEtHREAD_GLASS2            0xdddd0b40
-#define ifcIDtYPEtHREAD_SHOWpONY          0xdddd0b41
-#define ifcIDtYPEtHREAD_WORKhORSE         0xdddd0b42
+#define ifcIDtYPEtHREAD_GLASS2            0xdddd0b42
+#define ifcIDtYPEtHREAD_SHOWpONY          0xdddd0b43
+#define ifcIDtYPEtHREAD_WORKhORSE         0xdddd0b44
 /*3*/
-#define ifcIDtYPEtHREAD_min     0xdddd0b40
-#define ifcIDtYPEtHREAD_max     0xdddd0b42
+#define ifcIDtYPEtHREAD_min     0xdddd0b42
+#define ifcIDtYPEtHREAD_max     0xdddd0b44
 
 
 //
@@ -34172,7 +34141,7 @@ it is illegal to refer to this symbol in the definition of an adam
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038b.ifcemail END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038c.floldleakmonitor BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038c.flOLDlEAKmONITOR BEGIN
 
 
 //
@@ -34200,7 +34169,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038c.floldleakmonitor END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038c.flOLDlEAKmONITOR END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038d.flbatonct BEGIN
 
 
@@ -34246,14 +34215,14 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*ifcIDtYPEsTROKEcLEAN*//*1*/
 
 /*3*/
-#define ifcIDtYPEsTROKEcLEAN_PRINTABLES                     0xdddd0b43
-#define ifcIDtYPEsTROKEcLEAN_CnAMES                         0xdddd0b44
-#define ifcIDtYPEsTROKEcLEAN_CnAMESoRaT                     0xdddd0b45
-#define ifcIDtYPEsTROKEcLEAN_CnAMESoRbLANK                  0xdddd0b46
-#define ifcIDtYPEsTROKEcLEAN_CnAMESoRbLANKoRpUNCTUATION     0xdddd0b47
+#define ifcIDtYPEsTROKEcLEAN_PRINTABLES                     0xdddd0b45
+#define ifcIDtYPEsTROKEcLEAN_CnAMES                         0xdddd0b46
+#define ifcIDtYPEsTROKEcLEAN_CnAMESoRaT                     0xdddd0b47
+#define ifcIDtYPEsTROKEcLEAN_CnAMESoRbLANK                  0xdddd0b48
+#define ifcIDtYPEsTROKEcLEAN_CnAMESoRbLANKoRpUNCTUATION     0xdddd0b49
 /*3*/
-#define ifcIDtYPEsTROKEcLEAN_min     0xdddd0b43
-#define ifcIDtYPEsTROKEcLEAN_max     0xdddd0b47
+#define ifcIDtYPEsTROKEcLEAN_min     0xdddd0b45
+#define ifcIDtYPEsTROKEcLEAN_max     0xdddd0b49
 
 
 //
@@ -34341,15 +34310,15 @@ it is illegal to refer to this symbol in the definition of an adam
 /*1*//*ifcIDpOOL*//*1*/
 
 /*3*/
-#define ifcIDpOOL_NONE                 0xdddd0b48
-#define ifcIDpOOL_ADAMtEMP             0xdddd0b49
-#define ifcIDpOOL_HOMEtEMP             0xdddd0b4a
-#define ifcIDpOOL_SCRATCH              0xdddd0b4b
-#define ifcIDpOOL_ADAMpERM             0xdddd0b4c
-#define ifcIDpOOL_HOMEpERM             0xdddd0b4d
+#define ifcIDpOOL_NONE                 0xdddd0b4a
+#define ifcIDpOOL_ADAMtEMP             0xdddd0b4b
+#define ifcIDpOOL_HOMEtEMP             0xdddd0b4c
+#define ifcIDpOOL_SCRATCH              0xdddd0b4d
+#define ifcIDpOOL_ADAMpERM             0xdddd0b4e
+#define ifcIDpOOL_HOMEpERM             0xdddd0b4f
 /*3*/
-#define ifcIDpOOL_min     0xdddd0b48
-#define ifcIDpOOL_max     0xdddd0b4d
+#define ifcIDpOOL_min     0xdddd0b4a
+#define ifcIDpOOL_max     0xdddd0b4f
 
 
 //
@@ -34746,12 +34715,12 @@ coding standard
 /*1*//*ifcIDhOWlIST*//*1*/
 
 /*3*/
-#define ifcIDhOWlIST_SINK             0xdddd0b4e
-#define ifcIDhOWlIST_LIFO             0xdddd0b4f
-#define ifcIDhOWlIST_FIFO             0xdddd0b50
+#define ifcIDhOWlIST_SINK             0xdddd0b50
+#define ifcIDhOWlIST_LIFO             0xdddd0b51
+#define ifcIDhOWlIST_FIFO             0xdddd0b52
 /*3*/
-#define ifcIDhOWlIST_min     0xdddd0b4e
-#define ifcIDhOWlIST_max     0xdddd0b50
+#define ifcIDhOWlIST_min     0xdddd0b50
+#define ifcIDhOWlIST_max     0xdddd0b52
 
 
 //
@@ -35057,14 +35026,14 @@ bit masks
 /*1*//*ifcIDtYPEaPTaTTACH*//*1*/
 
 /*3*/
-#define ifcIDtYPElISTING_LIST                             0xdddd0b51
-#define ifcIDtYPElISTING_COUNTt                           0xdddd0b52
-#define ifcIDtYPElISTING_OStEXTsTRz                       0xdddd0b53
-#define ifcIDtYPElISTING_LISTcOUNTt                       0xdddd0b54
-#define ifcIDtYPElISTING_LISToStEXTsTRz                   0xdddd0b55
+#define ifcIDtYPElISTING_LIST                             0xdddd0b53
+#define ifcIDtYPElISTING_COUNTt                           0xdddd0b54
+#define ifcIDtYPElISTING_OStEXTsTRz                       0xdddd0b55
+#define ifcIDtYPElISTING_LISTcOUNTt                       0xdddd0b56
+#define ifcIDtYPElISTING_LISToStEXTsTRz                   0xdddd0b57
 /*3*/
-#define ifcIDtYPElISTING_min     0xdddd0b51
-#define ifcIDtYPElISTING_max     0xdddd0b55
+#define ifcIDtYPElISTING_min     0xdddd0b53
+#define ifcIDtYPElISTING_max     0xdddd0b57
 
 
 //
@@ -35091,11 +35060,11 @@ bit masks
 /*1*//*ifcIDcMDsERIALnUMBERdISPENSER*//*1*/
 
 /*3*/
-#define ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEsTROKEsTRING   0xdddd0b56
-#define ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEcOUNTsTRING    0xdddd0b57
+#define ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEsTROKEsTRING   0xdddd0b58
+#define ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEcOUNTsTRING    0xdddd0b59
 /*3*/
-#define ifcIDcMDsERIALnUMBERdISPENSER_min     0xdddd0b56
-#define ifcIDcMDsERIALnUMBERdISPENSER_max     0xdddd0b57
+#define ifcIDcMDsERIALnUMBERdISPENSER_min     0xdddd0b58
+#define ifcIDcMDsERIALnUMBERdISPENSER_max     0xdddd0b59
 
 
 //
@@ -35122,11 +35091,11 @@ bit masks
 /*1*//*ifcIDcMDlISTsERVEReMAILiDaCCOUNT*//*1*/
 
 /*3*/
-#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL    0xdddd0b58
-#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKeMAILfROMiDaCCOUNT    0xdddd0b59
+#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL    0xdddd0b5a
+#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKeMAILfROMiDaCCOUNT    0xdddd0b5b
 /*3*/
-#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_min     0xdddd0b58
-#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_max     0xdddd0b59
+#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_min     0xdddd0b5a
+#define ifcIDcMDlISTsERVEReMAILiDaCCOUNT_max     0xdddd0b5b
 
 
 //
@@ -35251,12 +35220,12 @@ bit masks
 //CS:CODEsYNC: 00104c9 1050104.2
 
 /*3*/
-#define ifcIDtYPEdERIVEDbASEgRABc_grabC                             0xdddd0b5a
-#define ifcIDtYPEdERIVEDbASEgRABc_grabitC                           0xdddd0b5b
-#define ifcIDtYPEdERIVEDbASEgRABc_grabotC                           0xdddd0b5c
+#define ifcIDtYPEdERIVEDbASEgRABc_grabC                             0xdddd0b5c
+#define ifcIDtYPEdERIVEDbASEgRABc_grabitC                           0xdddd0b5d
+#define ifcIDtYPEdERIVEDbASEgRABc_grabotC                           0xdddd0b5e
 /*3*/
-#define ifcIDtYPEdERIVEDbASEgRABc_min     0xdddd0b5a
-#define ifcIDtYPEdERIVEDbASEgRABc_max     0xdddd0b5c
+#define ifcIDtYPEdERIVEDbASEgRABc_min     0xdddd0b5c
+#define ifcIDtYPEdERIVEDbASEgRABc_max     0xdddd0b5e
 
 
 //
@@ -35433,20 +35402,20 @@ bit masks
 /*1*//*ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION*//*1*/
 
 /*3*/
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETaCCOUNTdESCRIPTION                0xdddd0b5d
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_QUERYaCCOUNTdESCRIPTION              0xdddd0b5e
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_DELETEaCCOUNTdESCRIPTION             0xdddd0b5f
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_TESTiDaCCOUNT                        0xdddd0b60
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_ENUMERATEiDaCCOUNT                   0xdddd0b61
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETsUBACCOUNTdESCRIPTION             0xdddd0b62
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_QUERYsUBACCOUNTdESCRIPTION           0xdddd0b63
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_DELETEsUBACCOUNTdESCRIPTION          0xdddd0b64
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_TESTiDsUB                            0xdddd0b65
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_ENUMERATEiDsUB                       0xdddd0b66
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_CONFIRMoWNERaLLsUBACCOUNTS           0xdddd0b67
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETaCCOUNTdESCRIPTION                0xdddd0b5f
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_QUERYaCCOUNTdESCRIPTION              0xdddd0b60
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_DELETEaCCOUNTdESCRIPTION             0xdddd0b61
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_TESTiDaCCOUNT                        0xdddd0b62
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_ENUMERATEiDaCCOUNT                   0xdddd0b63
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_SETsUBACCOUNTdESCRIPTION             0xdddd0b64
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_QUERYsUBACCOUNTdESCRIPTION           0xdddd0b65
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_DELETEsUBACCOUNTdESCRIPTION          0xdddd0b66
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_TESTiDsUB                            0xdddd0b67
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_ENUMERATEiDsUB                       0xdddd0b68
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_CONFIRMoWNERaLLsUBACCOUNTS           0xdddd0b69
 /*3*/
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_min     0xdddd0b5d
-#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_max     0xdddd0b67
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_min     0xdddd0b5f
+#define ifcIDcMDlISTsERVERiDaCCOUNTdESCRIPTION_max     0xdddd0b69
 
 
 //
@@ -36183,11 +36152,11 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*1*//*ifcIDhEADfLAVOR*//*1*/
 
 /*3*/
-#define ifcIDhEADfLAVOR_VERBOSE                            0xdddd0b68
-#define ifcIDhEADfLAVOR_TERSE                              0xdddd0b69
+#define ifcIDhEADfLAVOR_VERBOSE                            0xdddd0b6a
+#define ifcIDhEADfLAVOR_TERSE                              0xdddd0b6b
 /*3*/
-#define ifcIDhEADfLAVOR_min     0xdddd0b68
-#define ifcIDhEADfLAVOR_max     0xdddd0b69
+#define ifcIDhEADfLAVOR_min     0xdddd0b6a
+#define ifcIDhEADfLAVOR_max     0xdddd0b6b
 
 
 //
@@ -36294,15 +36263,15 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*1*//*ifcIDmODEtEST*//*1*/
 
 /*3*/
-#define ifcIDmODEtEST_EQ                            0xdddd0b6a
-#define ifcIDmODEtEST_NE                            0xdddd0b6b
-#define ifcIDmODEtEST_LT                            0xdddd0b6c
-#define ifcIDmODEtEST_LE                            0xdddd0b6d
-#define ifcIDmODEtEST_GE                            0xdddd0b6e
-#define ifcIDmODEtEST_GT                            0xdddd0b6f
+#define ifcIDmODEtEST_EQ                            0xdddd0b6c
+#define ifcIDmODEtEST_NE                            0xdddd0b6d
+#define ifcIDmODEtEST_LT                            0xdddd0b6e
+#define ifcIDmODEtEST_LE                            0xdddd0b6f
+#define ifcIDmODEtEST_GE                            0xdddd0b70
+#define ifcIDmODEtEST_GT                            0xdddd0b71
 /*3*/
-#define ifcIDmODEtEST_min     0xdddd0b6a
-#define ifcIDmODEtEST_max     0xdddd0b6f
+#define ifcIDmODEtEST_min     0xdddd0b6c
+#define ifcIDmODEtEST_max     0xdddd0b71
 
 
 //
@@ -36575,12 +36544,12 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*1*//*ifcIDcMDlISTsERVERmONEYbUCKETS*//*1*/
 
 /*3*/
-#define ifcIDcMDlISTsERVERmONEYbUCKETS_PUT                0xdddd0b70
-#define ifcIDcMDlISTsERVERmONEYbUCKETS_GETtOTAL           0xdddd0b71
-#define ifcIDcMDlISTsERVERmONEYbUCKETS_GETdETAIL          0xdddd0b72
+#define ifcIDcMDlISTsERVERmONEYbUCKETS_PUT                0xdddd0b72
+#define ifcIDcMDlISTsERVERmONEYbUCKETS_GETtOTAL           0xdddd0b73
+#define ifcIDcMDlISTsERVERmONEYbUCKETS_GETdETAIL          0xdddd0b74
 /*3*/
-#define ifcIDcMDlISTsERVERmONEYbUCKETS_min     0xdddd0b70
-#define ifcIDcMDlISTsERVERmONEYbUCKETS_max     0xdddd0b72
+#define ifcIDcMDlISTsERVERmONEYbUCKETS_min     0xdddd0b72
+#define ifcIDcMDlISTsERVERmONEYbUCKETS_max     0xdddd0b74
 
 
 //
@@ -36858,12 +36827,12 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*1*//*ifcIDmODEaPTsINK*//*1*/
 
 /*3*/
-#define ifcIDmODEaPTsINK_NORMAL                  0xdddd0b73
-#define ifcIDmODEaPTsINK_LEADsHOES               0xdddd0b74
-#define ifcIDmODEaPTsINK_AIRvEST                 0xdddd0b75
+#define ifcIDmODEaPTsINK_NORMAL                  0xdddd0b75
+#define ifcIDmODEaPTsINK_LEADsHOES               0xdddd0b76
+#define ifcIDmODEaPTsINK_AIRvEST                 0xdddd0b77
 /*3*/
-#define ifcIDmODEaPTsINK_min     0xdddd0b73
-#define ifcIDmODEaPTsINK_max     0xdddd0b75
+#define ifcIDmODEaPTsINK_min     0xdddd0b75
+#define ifcIDmODEaPTsINK_max     0xdddd0b77
 
 
 //
@@ -37402,12 +37371,12 @@ obsoleted by coding style standard: use osTextT strings for name elements so tha
 /*1*//*ifcIDdO*//*1*/
 
 /*3*/
-#define ifcIDdO_REGISTERrOOTaDAMhEART                  0xdddd0b76
-#define ifcIDdO_SETUPsOCKETS                           0xdddd0b77
-#define ifcIDdO_ALLOCATEaPPtELEMETRYpENDINGbUFFER      0xdddd0b78
+#define ifcIDdO_REGISTERrOOTaDAMhEART                  0xdddd0b78
+#define ifcIDdO_SETUPsOCKETS                           0xdddd0b79
+#define ifcIDdO_ALLOCATEaPPtELEMETRYpENDINGbUFFER      0xdddd0b7a
 /*3*/
-#define ifcIDdO_min     0xdddd0b76
-#define ifcIDdO_max     0xdddd0b78
+#define ifcIDdO_min     0xdddd0b78
+#define ifcIDdO_max     0xdddd0b7a
 
 
 //
@@ -39484,39 +39453,39 @@ obsolete: ordering begins with "outer" (low) and ends with "inner" (high)
 /*1*//*ifcIDgRABlAYER*//*1*/
 
 /*3*/
-#define ifcIDgRABlAYER_1SKIN                        0xdddd0b79
-#define ifcIDgRABlAYER_2OUTER                       0xdddd0b7a
-#define ifcIDgRABlAYER_3MIDDLE                      0xdddd0b7b
-#define ifcIDgRABlAYER_4INNER                       0xdddd0b7c
-#define ifcIDgRABlAYER_5BONE                        0xdddd0b7d
-#define ifcIDgRABlAYER_6BONE                        0xdddd0b7e
-#define ifcIDgRABlAYER_7BASEmISC1                   0xdddd0b7f
-#define ifcIDgRABlAYER_7BASEmISC2                   0xdddd0b80
-#define ifcIDgRABlAYER_7BASEmISC3                   0xdddd0b81
-#define ifcIDgRABlAYER_7BASEmISC4                   0xdddd0b82
-#define ifcIDgRABlAYER_8POOL1cT                     0xdddd0b83
-#define ifcIDgRABlAYER_8POOL2cT                     0xdddd0b84
-#define ifcIDgRABlAYER_8POOL3dT                     0xdddd0b85
-#define ifcIDgRABlAYER_8POOL4dT                     0xdddd0b86
-#define ifcIDgRABlAYER_8POOL5nEW                    0xdddd0b87
-#define ifcIDgRABlAYER_9POOLlAYER1                  0xdddd0b88
-#define ifcIDgRABlAYER_9POOLlAYER2                  0xdddd0b89
-#define ifcIDgRABlAYER_9POOLlAYER3                  0xdddd0b8a
-#define ifcIDgRABlAYER_aBASEmISC1                   0xdddd0b8b
-#define ifcIDgRABlAYER_aBASEmISC2                   0xdddd0b8c
-#define ifcIDgRABlAYER_aBASEmISC3                   0xdddd0b8d
-#define ifcIDgRABlAYER_aBASEmISC4                   0xdddd0b8e
-#define ifcIDgRABlAYER_OSmAKE                       0xdddd0b8f
-#define ifcIDgRABlAYER_bBOOKSc                      0xdddd0b90
-#define ifcIDgRABlAYER_cBcLOCKS                     0xdddd0b91
-#define ifcIDgRABlAYER_dSWfILEoPEN                  0xdddd0b92
-#define ifcIDgRABlAYER_eGRABmEMORYsPACEc            0xdddd0b93
-#define ifcIDgRABlAYER_fLINKEDc                     0xdddd0b94
-#define ifcIDgRABlAYER_gHEAP                        0xdddd0b95
-#define ifcIDgRABlAYER_iLEAF                        0xdddd0b96
+#define ifcIDgRABlAYER_1SKIN                        0xdddd0b7b
+#define ifcIDgRABlAYER_2OUTER                       0xdddd0b7c
+#define ifcIDgRABlAYER_3MIDDLE                      0xdddd0b7d
+#define ifcIDgRABlAYER_4INNER                       0xdddd0b7e
+#define ifcIDgRABlAYER_5BONE                        0xdddd0b7f
+#define ifcIDgRABlAYER_6BONE                        0xdddd0b80
+#define ifcIDgRABlAYER_7BASEmISC1                   0xdddd0b81
+#define ifcIDgRABlAYER_7BASEmISC2                   0xdddd0b82
+#define ifcIDgRABlAYER_7BASEmISC3                   0xdddd0b83
+#define ifcIDgRABlAYER_7BASEmISC4                   0xdddd0b84
+#define ifcIDgRABlAYER_8POOL1cT                     0xdddd0b85
+#define ifcIDgRABlAYER_8POOL2cT                     0xdddd0b86
+#define ifcIDgRABlAYER_8POOL3dT                     0xdddd0b87
+#define ifcIDgRABlAYER_8POOL4dT                     0xdddd0b88
+#define ifcIDgRABlAYER_8POOL5nEW                    0xdddd0b89
+#define ifcIDgRABlAYER_9POOLlAYER1                  0xdddd0b8a
+#define ifcIDgRABlAYER_9POOLlAYER2                  0xdddd0b8b
+#define ifcIDgRABlAYER_9POOLlAYER3                  0xdddd0b8c
+#define ifcIDgRABlAYER_aBASEmISC1                   0xdddd0b8d
+#define ifcIDgRABlAYER_aBASEmISC2                   0xdddd0b8e
+#define ifcIDgRABlAYER_aBASEmISC3                   0xdddd0b8f
+#define ifcIDgRABlAYER_aBASEmISC4                   0xdddd0b90
+#define ifcIDgRABlAYER_OSmAKE                       0xdddd0b91
+#define ifcIDgRABlAYER_bBOOKSc                      0xdddd0b92
+#define ifcIDgRABlAYER_cBcLOCKS                     0xdddd0b93
+#define ifcIDgRABlAYER_dSWfILEoPEN                  0xdddd0b94
+#define ifcIDgRABlAYER_eGRABmEMORYsPACEc            0xdddd0b95
+#define ifcIDgRABlAYER_fLINKEDc                     0xdddd0b96
+#define ifcIDgRABlAYER_gHEAP                        0xdddd0b97
+#define ifcIDgRABlAYER_iLEAF                        0xdddd0b98
 /*3*/
-#define ifcIDgRABlAYER_min     0xdddd0b79
-#define ifcIDgRABlAYER_max     0xdddd0b96
+#define ifcIDgRABlAYER_min     0xdddd0b7b
+#define ifcIDgRABlAYER_max     0xdddd0b98
 
 
 //
@@ -40618,12 +40587,12 @@ optimized for speed
 //CS:CODEsYNC: 00104c9 1050104.2
 
 /*3*/
-#define ifcIDeVENTdEVICEc_TICK                              0xdddd0b97
-#define ifcIDeVENTdEVICEc_RESIZED                           0xdddd0b98
-#define ifcIDeVENTdEVICEc_RECONFIGURED                      0xdddd0b99
+#define ifcIDeVENTdEVICEc_TICK                              0xdddd0b99
+#define ifcIDeVENTdEVICEc_RESIZED                           0xdddd0b9a
+#define ifcIDeVENTdEVICEc_RECONFIGURED                      0xdddd0b9b
 /*3*/
-#define ifcIDeVENTdEVICEc_min     0xdddd0b97
-#define ifcIDeVENTdEVICEc_max     0xdddd0b99
+#define ifcIDeVENTdEVICEc_min     0xdddd0b99
+#define ifcIDeVENTdEVICEc_max     0xdddd0b9b
 
 
 //
@@ -40921,11 +40890,11 @@ optimized for speed
 /*1*//*ifcIDtYPEgOSSIP*//*1*/
 
 /*3*/
-#define ifcIDtYPEgOSSIP_SYSTEM                      0xdddd0b9a
-#define ifcIDtYPEgOSSIP_APPLICATION                 0xdddd0b9b
+#define ifcIDtYPEgOSSIP_SYSTEM                      0xdddd0b9c
+#define ifcIDtYPEgOSSIP_APPLICATION                 0xdddd0b9d
 /*3*/
-#define ifcIDtYPEgOSSIP_min     0xdddd0b9a
-#define ifcIDtYPEgOSSIP_max     0xdddd0b9b
+#define ifcIDtYPEgOSSIP_min     0xdddd0b9c
+#define ifcIDtYPEgOSSIP_max     0xdddd0b9d
 
 
 //
@@ -40952,10 +40921,10 @@ optimized for speed
 /*1*//*ifcIDmSGgOSSIP*//*1*/
 
 /*3*/
-#define ifcIDmSGgOSSIP_BITMAPiSvIRGIN                          0xdddd0b9c
+#define ifcIDmSGgOSSIP_BITMAPiSvIRGIN                          0xdddd0b9e
 /*3*/
-#define ifcIDmSGgOSSIP_min     0xdddd0b9c
-#define ifcIDmSGgOSSIP_max     0xdddd0b9c
+#define ifcIDmSGgOSSIP_min     0xdddd0b9e
+#define ifcIDmSGgOSSIP_max     0xdddd0b9e
 
 
 //
@@ -41307,18 +41276,18 @@ optimized for speed
 /*1*//*ifcIDmODEeTHERsOIL*//*1*/
 
 /*3*/
-#define ifcIDmODEeTHERsOIL_PREPAREsOURCE                    0xdddd0b9d
-#define ifcIDmODEeTHERsOIL_NATIVEfROMaSCII                  0xdddd0b9e
-#define ifcIDmODEeTHERsOIL_ASCIIfROMnATIVE                  0xdddd0b9f
-#define ifcIDmODEeTHERsOIL_LINT                             0xdddd0ba0
-#define ifcIDmODEeTHERsOIL_TRIM                             0xdddd0ba1
-#define ifcIDmODEeTHERsOIL_REPORT                           0xdddd0ba2
-#define ifcIDmODEeTHERsOIL_QUERYvALUES                      0xdddd0ba3
-#define ifcIDmODEeTHERsOIL_DO                               0xdddd0ba4
-#define ifcIDmODEeTHERsOIL_DOdEBUG                          0xdddd0ba5
+#define ifcIDmODEeTHERsOIL_PREPAREsOURCE                    0xdddd0b9f
+#define ifcIDmODEeTHERsOIL_NATIVEfROMaSCII                  0xdddd0ba0
+#define ifcIDmODEeTHERsOIL_ASCIIfROMnATIVE                  0xdddd0ba1
+#define ifcIDmODEeTHERsOIL_LINT                             0xdddd0ba2
+#define ifcIDmODEeTHERsOIL_TRIM                             0xdddd0ba3
+#define ifcIDmODEeTHERsOIL_REPORT                           0xdddd0ba4
+#define ifcIDmODEeTHERsOIL_QUERYvALUES                      0xdddd0ba5
+#define ifcIDmODEeTHERsOIL_DO                               0xdddd0ba6
+#define ifcIDmODEeTHERsOIL_DOdEBUG                          0xdddd0ba7
 /*3*/
-#define ifcIDmODEeTHERsOIL_min     0xdddd0b9d
-#define ifcIDmODEeTHERsOIL_max     0xdddd0ba5
+#define ifcIDmODEeTHERsOIL_min     0xdddd0b9f
+#define ifcIDmODEeTHERsOIL_max     0xdddd0ba7
 
 
 //
@@ -41532,13 +41501,13 @@ parameters
 /*1*//*ifcIDeVENTvsp*//*1*/
 
 /*3*/
-#define ifcIDeVENTvsp_CT                    0xdddd0ba6
-#define ifcIDeVENTvsp_WrEFcT                0xdddd0ba7
-#define ifcIDeVENTvsp_WrEFdT                0xdddd0ba8
-#define ifcIDeVENTvsp_DT                    0xdddd0ba9
+#define ifcIDeVENTvsp_CT                    0xdddd0ba8
+#define ifcIDeVENTvsp_WrEFcT                0xdddd0ba9
+#define ifcIDeVENTvsp_WrEFdT                0xdddd0baa
+#define ifcIDeVENTvsp_DT                    0xdddd0bab
 /*3*/
-#define ifcIDeVENTvsp_min     0xdddd0ba6
-#define ifcIDeVENTvsp_max     0xdddd0ba9
+#define ifcIDeVENTvsp_min     0xdddd0ba8
+#define ifcIDeVENTvsp_max     0xdddd0bab
 
 
 //
@@ -42251,11 +42220,11 @@ use me only for pointers
 /*1*//*ifcIDtYPEbRANCHs*//*1*/
 
 /*3*/
-#define ifcIDtYPEbRANCHs_branchSptr          0xdddd0baa
-#define ifcIDtYPEbRANCHs_strokeSstr          0xdddd0bab
+#define ifcIDtYPEbRANCHs_branchSptr          0xdddd0bac
+#define ifcIDtYPEbRANCHs_strokeSstr          0xdddd0bad
 /*3*/
-#define ifcIDtYPEbRANCHs_min     0xdddd0baa
-#define ifcIDtYPEbRANCHs_max     0xdddd0bab
+#define ifcIDtYPEbRANCHs_min     0xdddd0bac
+#define ifcIDtYPEbRANCHs_max     0xdddd0bad
 
 
 //
@@ -44875,10 +44844,10 @@ arguments
 /*1*//*ifcIDfORMAT*//*1*/
 
 /*3*/
-#define ifcIDfORMAT_BOOK0hEAD           0xdddd0bac
+#define ifcIDfORMAT_BOOK0hEAD           0xdddd0bae
 /*3*/
-#define ifcIDfORMAT_min     0xdddd0bac
-#define ifcIDfORMAT_max     0xdddd0bac
+#define ifcIDfORMAT_min     0xdddd0bae
+#define ifcIDfORMAT_max     0xdddd0bae
 
 
 //
@@ -45699,73 +45668,73 @@ else the reference to it that is kept within the jotC instance will become a zom
 //SYNC ERRORS CAN CAUSE ARRAY INDEX OUT OF BOUNDS
 
 /*3*/
-#define JrEQUEST_1                           0xdddd0bad
-#define JrEQUEST_2                           0xdddd0bae
-#define JrEQUEST_3                           0xdddd0baf
-#define JrEQUEST_4                           0xdddd0bb0
-#define JrEQUEST_5                           0xdddd0bb1
-#define JrEQUEST_6                           0xdddd0bb2
-#define JrEQUEST_7                           0xdddd0bb3
-#define JrEQUEST_8                           0xdddd0bb4
-#define JrEQUEST_9                           0xdddd0bb5
-#define JrEQUEST_a                           0xdddd0bb6
-#define JrEQUEST_b                           0xdddd0bb7
-#define JrEQUEST_c                           0xdddd0bb8
-#define JrEQUEST_d                           0xdddd0bb9
-#define JrEQUEST_e                           0xdddd0bba
-#define JrEQUEST_f                           0xdddd0bbb
-#define JrEQUEST_01                          0xdddd0bbc
-#define JrEQUEST_11                          0xdddd0bbd
-#define JrEQUEST_21                          0xdddd0bbe
-#define JrEQUEST_31                          0xdddd0bbf
-#define JrEQUEST_41                          0xdddd0bc0
-#define JrEQUEST_51                          0xdddd0bc1
-#define JrEQUEST_61                          0xdddd0bc2
-#define JrEQUEST_71                          0xdddd0bc3
-#define JrEQUEST_81                          0xdddd0bc4
-#define JrEQUEST_91                          0xdddd0bc5
-#define JrEQUEST_a1                          0xdddd0bc6
-#define JrEQUEST_b1                          0xdddd0bc7
-#define JrEQUEST_c1                          0xdddd0bc8
-#define JrEQUEST_d1                          0xdddd0bc9
-#define JrEQUEST_e1                          0xdddd0bca
-#define JrEQUEST_f1                          0xdddd0bcb
-#define JrEQUEST_02                          0xdddd0bcc
-#define JrEQUEST_12                          0xdddd0bcd
-#define JrEQUEST_22                          0xdddd0bce
-#define JrEQUEST_32                          0xdddd0bcf
-#define JrEQUEST_42                          0xdddd0bd0
-#define JrEQUEST_52                          0xdddd0bd1
-#define JrEQUEST_62                          0xdddd0bd2
-#define JrEQUEST_72                          0xdddd0bd3
-#define JrEQUEST_82                          0xdddd0bd4
-#define JrEQUEST_92                          0xdddd0bd5
-#define JrEQUEST_a2                          0xdddd0bd6
-#define JrEQUEST_b2                          0xdddd0bd7
-#define JrEQUEST_c2                          0xdddd0bd8
-#define JrEQUEST_d2                          0xdddd0bd9
-#define JrEQUEST_e2                          0xdddd0bda
-#define JrEQUEST_f2                          0xdddd0bdb
-#define JrEQUEST_03                          0xdddd0bdc
-#define JrEQUEST_13                          0xdddd0bdd
-#define JrEQUEST_23                          0xdddd0bde
-#define JrEQUEST_33                          0xdddd0bdf
-#define JrEQUEST_43                          0xdddd0be0
-#define JrEQUEST_53                          0xdddd0be1
-#define JrEQUEST_63                          0xdddd0be2
-#define JrEQUEST_73                          0xdddd0be3
-#define JrEQUEST_83                          0xdddd0be4
-#define JrEQUEST_93                          0xdddd0be5
-#define JrEQUEST_a3                          0xdddd0be6
-#define JrEQUEST_b3                          0xdddd0be7
-#define JrEQUEST_c3                          0xdddd0be8
-#define JrEQUEST_d3                          0xdddd0be9
-#define JrEQUEST_e3                          0xdddd0bea
-#define JrEQUEST_f3                          0xdddd0beb
-#define JrEQUEST_04                          0xdddd0bec
+#define JrEQUEST_1                           0xdddd0baf
+#define JrEQUEST_2                           0xdddd0bb0
+#define JrEQUEST_3                           0xdddd0bb1
+#define JrEQUEST_4                           0xdddd0bb2
+#define JrEQUEST_5                           0xdddd0bb3
+#define JrEQUEST_6                           0xdddd0bb4
+#define JrEQUEST_7                           0xdddd0bb5
+#define JrEQUEST_8                           0xdddd0bb6
+#define JrEQUEST_9                           0xdddd0bb7
+#define JrEQUEST_a                           0xdddd0bb8
+#define JrEQUEST_b                           0xdddd0bb9
+#define JrEQUEST_c                           0xdddd0bba
+#define JrEQUEST_d                           0xdddd0bbb
+#define JrEQUEST_e                           0xdddd0bbc
+#define JrEQUEST_f                           0xdddd0bbd
+#define JrEQUEST_01                          0xdddd0bbe
+#define JrEQUEST_11                          0xdddd0bbf
+#define JrEQUEST_21                          0xdddd0bc0
+#define JrEQUEST_31                          0xdddd0bc1
+#define JrEQUEST_41                          0xdddd0bc2
+#define JrEQUEST_51                          0xdddd0bc3
+#define JrEQUEST_61                          0xdddd0bc4
+#define JrEQUEST_71                          0xdddd0bc5
+#define JrEQUEST_81                          0xdddd0bc6
+#define JrEQUEST_91                          0xdddd0bc7
+#define JrEQUEST_a1                          0xdddd0bc8
+#define JrEQUEST_b1                          0xdddd0bc9
+#define JrEQUEST_c1                          0xdddd0bca
+#define JrEQUEST_d1                          0xdddd0bcb
+#define JrEQUEST_e1                          0xdddd0bcc
+#define JrEQUEST_f1                          0xdddd0bcd
+#define JrEQUEST_02                          0xdddd0bce
+#define JrEQUEST_12                          0xdddd0bcf
+#define JrEQUEST_22                          0xdddd0bd0
+#define JrEQUEST_32                          0xdddd0bd1
+#define JrEQUEST_42                          0xdddd0bd2
+#define JrEQUEST_52                          0xdddd0bd3
+#define JrEQUEST_62                          0xdddd0bd4
+#define JrEQUEST_72                          0xdddd0bd5
+#define JrEQUEST_82                          0xdddd0bd6
+#define JrEQUEST_92                          0xdddd0bd7
+#define JrEQUEST_a2                          0xdddd0bd8
+#define JrEQUEST_b2                          0xdddd0bd9
+#define JrEQUEST_c2                          0xdddd0bda
+#define JrEQUEST_d2                          0xdddd0bdb
+#define JrEQUEST_e2                          0xdddd0bdc
+#define JrEQUEST_f2                          0xdddd0bdd
+#define JrEQUEST_03                          0xdddd0bde
+#define JrEQUEST_13                          0xdddd0bdf
+#define JrEQUEST_23                          0xdddd0be0
+#define JrEQUEST_33                          0xdddd0be1
+#define JrEQUEST_43                          0xdddd0be2
+#define JrEQUEST_53                          0xdddd0be3
+#define JrEQUEST_63                          0xdddd0be4
+#define JrEQUEST_73                          0xdddd0be5
+#define JrEQUEST_83                          0xdddd0be6
+#define JrEQUEST_93                          0xdddd0be7
+#define JrEQUEST_a3                          0xdddd0be8
+#define JrEQUEST_b3                          0xdddd0be9
+#define JrEQUEST_c3                          0xdddd0bea
+#define JrEQUEST_d3                          0xdddd0beb
+#define JrEQUEST_e3                          0xdddd0bec
+#define JrEQUEST_f3                          0xdddd0bed
+#define JrEQUEST_04                          0xdddd0bee
 /*3*/
-#define JrEQUEST_min     0xdddd0bad
-#define JrEQUEST_max     0xdddd0bec
+#define JrEQUEST_min     0xdddd0baf
+#define JrEQUEST_max     0xdddd0bee
 
 
 //
@@ -45964,11 +45933,11 @@ a jPointer is also considered null if it contains one of the special values [JrE
 /*1*//*ifcIDsEXclATHnEWdEL*//*1*/
 
 /*3*/
-#define ifcIDsEXclATHnEWdEL_NEW           0xdddd0bed
-#define ifcIDsEXclATHnEWdEL_DEL           0xdddd0bee
+#define ifcIDsEXclATHnEWdEL_NEW           0xdddd0bef
+#define ifcIDsEXclATHnEWdEL_DEL           0xdddd0bf0
 /*3*/
-#define ifcIDsEXclATHnEWdEL_min     0xdddd0bed
-#define ifcIDsEXclATHnEWdEL_max     0xdddd0bee
+#define ifcIDsEXclATHnEWdEL_min     0xdddd0bef
+#define ifcIDsEXclATHnEWdEL_max     0xdddd0bf0
 
 
 //
@@ -46087,10 +46056,10 @@ a jPointer is also considered null if it contains one of the special values [JrE
 /*1*//*ifcIDsEXaRRAY*//*1*/
 
 /*3*/
-#define ifcIDsEXaRRAY_BEINGcONSTRUCTED           0xdddd0bef
+#define ifcIDsEXaRRAY_BEINGcONSTRUCTED           0xdddd0bf1
 /*3*/
-#define ifcIDsEXaRRAY_min     0xdddd0bef
-#define ifcIDsEXaRRAY_max     0xdddd0bef
+#define ifcIDsEXaRRAY_min     0xdddd0bf1
+#define ifcIDsEXaRRAY_max     0xdddd0bf1
 
 
 //
@@ -46532,22 +46501,22 @@ i do not verify that the naked idJot value is valid
 /*1*//*ifcIDmODEpUTfILE*//*1*/
 
 /*3*/
-#define ifcIDmODEpUTfILE_ROOT         0xdddd0bf0
-#define ifcIDmODEpUTfILE_ABOUT        0xdddd0bf1
-#define ifcIDmODEpUTfILE_PAID         0xdddd0bf2
-#define ifcIDmODEpUTfILE_TUTORIALS    0xdddd0bf3
-#define ifcIDmODEpUTfILE_HOOKS        0xdddd0bf4
-#define ifcIDmODEpUTfILE_ESSAYS       0xdddd0bf5
-#define ifcIDmODEpUTfILE_ARCHIVE      0xdddd0bf6
-#define ifcIDmODEpUTfILE_WO           0xdddd0bf7
-#define ifcIDmODEpUTfILE_NEWS         0xdddd0bf8
-#define ifcIDmODEpUTfILE_BUNDLE       0xdddd0bf9
-#define ifcIDmODEpUTfILE_PAY          0xdddd0bfa
-#define ifcIDmODEpUTfILE_IPDOS        0xdddd0bfb
-#define ifcIDmODEpUTfILE_OTHER        0xdddd0bfc
+#define ifcIDmODEpUTfILE_ROOT         0xdddd0bf2
+#define ifcIDmODEpUTfILE_ABOUT        0xdddd0bf3
+#define ifcIDmODEpUTfILE_PAID         0xdddd0bf4
+#define ifcIDmODEpUTfILE_TUTORIALS    0xdddd0bf5
+#define ifcIDmODEpUTfILE_HOOKS        0xdddd0bf6
+#define ifcIDmODEpUTfILE_ESSAYS       0xdddd0bf7
+#define ifcIDmODEpUTfILE_ARCHIVE      0xdddd0bf8
+#define ifcIDmODEpUTfILE_WO           0xdddd0bf9
+#define ifcIDmODEpUTfILE_NEWS         0xdddd0bfa
+#define ifcIDmODEpUTfILE_BUNDLE       0xdddd0bfb
+#define ifcIDmODEpUTfILE_PAY          0xdddd0bfc
+#define ifcIDmODEpUTfILE_IPDOS        0xdddd0bfd
+#define ifcIDmODEpUTfILE_OTHER        0xdddd0bfe
 /*3*/
-#define ifcIDmODEpUTfILE_min     0xdddd0bf0
-#define ifcIDmODEpUTfILE_max     0xdddd0bfc
+#define ifcIDmODEpUTfILE_min     0xdddd0bf2
+#define ifcIDmODEpUTfILE_max     0xdddd0bfe
 
 
 //
@@ -46712,11 +46681,11 @@ parameters
 /*1*//*ifcIDcLOUD*//*1*/
 
 /*3*/
-#define ifcIDcLOUD_RACKSPACE           0xdddd0bfd
-#define ifcIDcLOUD_GOOGLE              0xdddd0bfe
+#define ifcIDcLOUD_RACKSPACE           0xdddd0bff
+#define ifcIDcLOUD_GOOGLE              0xdddd0c00
 /*3*/
-#define ifcIDcLOUD_min     0xdddd0bfd
-#define ifcIDcLOUD_max     0xdddd0bfe
+#define ifcIDcLOUD_min     0xdddd0bff
+#define ifcIDcLOUD_max     0xdddd0c00
 
 
 //
@@ -47130,12 +47099,12 @@ parameters
 /*1*//*ifcIDdOcLOUDiFdIFFER*//*1*/
 
 /*3*/
-#define ifcIDdOcLOUDiFdIFFER_NOTHING    0xdddd0bff
-#define ifcIDdOcLOUDiFdIFFER_REPORT     0xdddd0c00
-#define ifcIDdOcLOUDiFdIFFER_REPLACE    0xdddd0c01
+#define ifcIDdOcLOUDiFdIFFER_NOTHING    0xdddd0c01
+#define ifcIDdOcLOUDiFdIFFER_REPORT     0xdddd0c02
+#define ifcIDdOcLOUDiFdIFFER_REPLACE    0xdddd0c03
 /*3*/
-#define ifcIDdOcLOUDiFdIFFER_min     0xdddd0bff
-#define ifcIDdOcLOUDiFdIFFER_max     0xdddd0c01
+#define ifcIDdOcLOUDiFdIFFER_min     0xdddd0c01
+#define ifcIDdOcLOUDiFdIFFER_max     0xdddd0c03
 
 
 //
@@ -47244,11 +47213,11 @@ parameters
 /*1*//*ifcIDmODEsOCKETS*//*1*/
 
 /*3*/
-#define ifcIDmODEsOCKETS_NOTeNCRYPTED  0xdddd0c02
-#define ifcIDmODEsOCKETS_ENCRYPTED     0xdddd0c03
+#define ifcIDmODEsOCKETS_NOTeNCRYPTED  0xdddd0c04
+#define ifcIDmODEsOCKETS_ENCRYPTED     0xdddd0c05
 /*3*/
-#define ifcIDmODEsOCKETS_min     0xdddd0c02
-#define ifcIDmODEsOCKETS_max     0xdddd0c03
+#define ifcIDmODEsOCKETS_min     0xdddd0c04
+#define ifcIDmODEsOCKETS_max     0xdddd0c05
 
 
 //
@@ -47871,41 +47840,41 @@ use this rather than _ to avoid the overhead of _
 //CS:CODEsYNC: WO CONSTANT IS NEEDED FOR EACH BIT IN A countT OBJECT (WHICH IS CURRENTLY OF SIZE count02T)
 
 /*3*/
-#define ifcIDgRABITbIT_00     0xdddd0c04
-#define ifcIDgRABITbIT_10     0xdddd0c05
-#define ifcIDgRABITbIT_20     0xdddd0c06
-#define ifcIDgRABITbIT_30     0xdddd0c07
-#define ifcIDgRABITbIT_40     0xdddd0c08
-#define ifcIDgRABITbIT_50     0xdddd0c09
-#define ifcIDgRABITbIT_60     0xdddd0c0a
-#define ifcIDgRABITbIT_70     0xdddd0c0b
-#define ifcIDgRABITbIT_80     0xdddd0c0c
-#define ifcIDgRABITbIT_90     0xdddd0c0d
-#define ifcIDgRABITbIT_a0     0xdddd0c0e
-#define ifcIDgRABITbIT_b0     0xdddd0c0f
-#define ifcIDgRABITbIT_c0     0xdddd0c10
-#define ifcIDgRABITbIT_d0     0xdddd0c11
-#define ifcIDgRABITbIT_e0     0xdddd0c12
-#define ifcIDgRABITbIT_f0     0xdddd0c13
-#define ifcIDgRABITbIT_01     0xdddd0c14
-#define ifcIDgRABITbIT_11     0xdddd0c15
-#define ifcIDgRABITbIT_21     0xdddd0c16
-#define ifcIDgRABITbIT_31     0xdddd0c17
-#define ifcIDgRABITbIT_41     0xdddd0c18
-#define ifcIDgRABITbIT_51     0xdddd0c19
-#define ifcIDgRABITbIT_61     0xdddd0c1a
-#define ifcIDgRABITbIT_71     0xdddd0c1b
-#define ifcIDgRABITbIT_81     0xdddd0c1c
-#define ifcIDgRABITbIT_91     0xdddd0c1d
-#define ifcIDgRABITbIT_a1     0xdddd0c1e
-#define ifcIDgRABITbIT_b1     0xdddd0c1f
-#define ifcIDgRABITbIT_c1     0xdddd0c20
-#define ifcIDgRABITbIT_d1     0xdddd0c21
-#define ifcIDgRABITbIT_e1     0xdddd0c22
-#define ifcIDgRABITbIT_f1     0xdddd0c23
+#define ifcIDgRABITbIT_00     0xdddd0c06
+#define ifcIDgRABITbIT_10     0xdddd0c07
+#define ifcIDgRABITbIT_20     0xdddd0c08
+#define ifcIDgRABITbIT_30     0xdddd0c09
+#define ifcIDgRABITbIT_40     0xdddd0c0a
+#define ifcIDgRABITbIT_50     0xdddd0c0b
+#define ifcIDgRABITbIT_60     0xdddd0c0c
+#define ifcIDgRABITbIT_70     0xdddd0c0d
+#define ifcIDgRABITbIT_80     0xdddd0c0e
+#define ifcIDgRABITbIT_90     0xdddd0c0f
+#define ifcIDgRABITbIT_a0     0xdddd0c10
+#define ifcIDgRABITbIT_b0     0xdddd0c11
+#define ifcIDgRABITbIT_c0     0xdddd0c12
+#define ifcIDgRABITbIT_d0     0xdddd0c13
+#define ifcIDgRABITbIT_e0     0xdddd0c14
+#define ifcIDgRABITbIT_f0     0xdddd0c15
+#define ifcIDgRABITbIT_01     0xdddd0c16
+#define ifcIDgRABITbIT_11     0xdddd0c17
+#define ifcIDgRABITbIT_21     0xdddd0c18
+#define ifcIDgRABITbIT_31     0xdddd0c19
+#define ifcIDgRABITbIT_41     0xdddd0c1a
+#define ifcIDgRABITbIT_51     0xdddd0c1b
+#define ifcIDgRABITbIT_61     0xdddd0c1c
+#define ifcIDgRABITbIT_71     0xdddd0c1d
+#define ifcIDgRABITbIT_81     0xdddd0c1e
+#define ifcIDgRABITbIT_91     0xdddd0c1f
+#define ifcIDgRABITbIT_a1     0xdddd0c20
+#define ifcIDgRABITbIT_b1     0xdddd0c21
+#define ifcIDgRABITbIT_c1     0xdddd0c22
+#define ifcIDgRABITbIT_d1     0xdddd0c23
+#define ifcIDgRABITbIT_e1     0xdddd0c24
+#define ifcIDgRABITbIT_f1     0xdddd0c25
 /*3*/
-#define ifcIDgRABITbIT_min     0xdddd0c04
-#define ifcIDgRABITbIT_max     0xdddd0c23
+#define ifcIDgRABITbIT_min     0xdddd0c06
+#define ifcIDgRABITbIT_max     0xdddd0c25
 
 
 //
@@ -47932,12 +47901,12 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDeMAILrEGISTRATIONrEQUESTsTATUS*//*1*/
 
 /*3*/
-#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_BOTwRONGsCHEME              0xdddd0c24
-#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_BOTwRONGiMAGE               0xdddd0c25
-#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_HUMANnOpRIORpENDING         0xdddd0c26
+#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_BOTwRONGsCHEME              0xdddd0c26
+#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_BOTwRONGiMAGE               0xdddd0c27
+#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_HUMANnOpRIORpENDING         0xdddd0c28
 /*3*/
-#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_min     0xdddd0c24
-#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_max     0xdddd0c26
+#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_min     0xdddd0c26
+#define ifcIDeMAILrEGISTRATIONrEQUESTsTATUS_max     0xdddd0c28
 
 
 //
@@ -48254,8 +48223,8 @@ use this rather than _ to avoid the overhead of _
 /*1*//*flBOXcgETf*//*1*/
 
 /*3*/
-#define flBOXcgETf_HTTPpOST                 0xe0000107
-#define flBOXcgETf_HTTPdOnOTpREPENDhEADER   0xe0000207
+#define flBOXcgETf_HTTPdOnOTpREPENDhEADER   0xe0000107
+#define flBOXcgETf_HTTPpOST                 0xe0000207
 /*3*/
 #define flBOXcgETf_null    0xe0000007
 
@@ -48399,25 +48368,25 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDtRACEdIVERT*//*1*/
 
 /*3*/
-#define ifcIDtRACEdIVERT_1              0xdddd0c27
-#define ifcIDtRACEdIVERT_2              0xdddd0c28
-#define ifcIDtRACEdIVERT_3              0xdddd0c29
-#define ifcIDtRACEdIVERT_4              0xdddd0c2a
-#define ifcIDtRACEdIVERT_5              0xdddd0c2b
-#define ifcIDtRACEdIVERT_6              0xdddd0c2c
-#define ifcIDtRACEdIVERT_7              0xdddd0c2d
-#define ifcIDtRACEdIVERT_8              0xdddd0c2e
-#define ifcIDtRACEdIVERT_9              0xdddd0c2f
-#define ifcIDtRACEdIVERT_a              0xdddd0c30
-#define ifcIDtRACEdIVERT_b              0xdddd0c31
-#define ifcIDtRACEdIVERT_c              0xdddd0c32
-#define ifcIDtRACEdIVERT_d              0xdddd0c33
-#define ifcIDtRACEdIVERT_e              0xdddd0c34
-#define ifcIDtRACEdIVERT_f              0xdddd0c35
-#define ifcIDtRACEdIVERT_10             0xdddd0c36
+#define ifcIDtRACEdIVERT_1              0xdddd0c29
+#define ifcIDtRACEdIVERT_2              0xdddd0c2a
+#define ifcIDtRACEdIVERT_3              0xdddd0c2b
+#define ifcIDtRACEdIVERT_4              0xdddd0c2c
+#define ifcIDtRACEdIVERT_5              0xdddd0c2d
+#define ifcIDtRACEdIVERT_6              0xdddd0c2e
+#define ifcIDtRACEdIVERT_7              0xdddd0c2f
+#define ifcIDtRACEdIVERT_8              0xdddd0c30
+#define ifcIDtRACEdIVERT_9              0xdddd0c31
+#define ifcIDtRACEdIVERT_a              0xdddd0c32
+#define ifcIDtRACEdIVERT_b              0xdddd0c33
+#define ifcIDtRACEdIVERT_c              0xdddd0c34
+#define ifcIDtRACEdIVERT_d              0xdddd0c35
+#define ifcIDtRACEdIVERT_e              0xdddd0c36
+#define ifcIDtRACEdIVERT_f              0xdddd0c37
+#define ifcIDtRACEdIVERT_10             0xdddd0c38
 /*3*/
-#define ifcIDtRACEdIVERT_min     0xdddd0c27
-#define ifcIDtRACEdIVERT_max     0xdddd0c36
+#define ifcIDtRACEdIVERT_min     0xdddd0c29
+#define ifcIDtRACEdIVERT_max     0xdddd0c38
 
 
 //
@@ -48536,11 +48505,11 @@ use this rather than _ to avoid the overhead of _
 /**/
 
 /*3*/
-#define ifcIDcMDcLOAK_QUERYfOLDERcONTENTS               0xdddd0c37
-#define ifcIDcMDcLOAK_QUERYaLLlOCKEDfOLDERScONTENTS     0xdddd0c38
+#define ifcIDcMDcLOAK_QUERYfOLDERcONTENTS               0xdddd0c39
+#define ifcIDcMDcLOAK_QUERYaLLlOCKEDfOLDERScONTENTS     0xdddd0c3a
 /*3*/
-#define ifcIDcMDcLOAK_min     0xdddd0c37
-#define ifcIDcMDcLOAK_max     0xdddd0c38
+#define ifcIDcMDcLOAK_min     0xdddd0c39
+#define ifcIDcMDcLOAK_max     0xdddd0c3a
 
 
 //
@@ -48567,11 +48536,11 @@ use this rather than _ to avoid the overhead of _
 /**/
 
 /*3*/
-#define ifcIDrEPLYcLOAK_FOLDERcONTENTS            0xdddd0c39
-#define ifcIDrEPLYcLOAK_ALLlOCKEDfOLDERScONTENTS  0xdddd0c3a
+#define ifcIDrEPLYcLOAK_FOLDERcONTENTS            0xdddd0c3b
+#define ifcIDrEPLYcLOAK_ALLlOCKEDfOLDERScONTENTS  0xdddd0c3c
 /*3*/
-#define ifcIDrEPLYcLOAK_min     0xdddd0c39
-#define ifcIDrEPLYcLOAK_max     0xdddd0c3a
+#define ifcIDrEPLYcLOAK_min     0xdddd0c3b
+#define ifcIDrEPLYcLOAK_max     0xdddd0c3c
 
 
 //
@@ -48663,14 +48632,14 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDtYPEpATTERN*//*1*/
 
 /*3*/
-#define ifcIDtYPEpATTERN_LITERAL                         0xdddd0c3b
-#define ifcIDtYPEpATTERN_NATIVE                          0xdddd0c3c
-#define ifcIDtYPEpATTERN_FOREIGNwILDCARDmICROSOFT        0xdddd0c3d
-#define ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT           0xdddd0c3e
-#define ifcIDtYPEpATTERN_FOREIGNuNIXrEGULAReXPRESSION    0xdddd0c3f
+#define ifcIDtYPEpATTERN_LITERAL                         0xdddd0c3d
+#define ifcIDtYPEpATTERN_NATIVE                          0xdddd0c3e
+#define ifcIDtYPEpATTERN_FOREIGNwILDCARDmICROSOFT        0xdddd0c3f
+#define ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT           0xdddd0c40
+#define ifcIDtYPEpATTERN_FOREIGNuNIXrEGULAReXPRESSION    0xdddd0c41
 /*3*/
-#define ifcIDtYPEpATTERN_min     0xdddd0c3b
-#define ifcIDtYPEpATTERN_max     0xdddd0c3f
+#define ifcIDtYPEpATTERN_min     0xdddd0c3d
+#define ifcIDtYPEpATTERN_max     0xdddd0c41
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -48816,11 +48785,11 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDtYPEcLOAKcONNECTION*//*1*/
 
 /*3*/
-#define ifcIDtYPEcLOAKcONNECTION_SIMPLE                          0xdddd0c40
-#define ifcIDtYPEcLOAKcONNECTION_SOULFUL                         0xdddd0c41
+#define ifcIDtYPEcLOAKcONNECTION_SIMPLE                          0xdddd0c42
+#define ifcIDtYPEcLOAKcONNECTION_SOULFUL                         0xdddd0c43
 /*3*/
-#define ifcIDtYPEcLOAKcONNECTION_min     0xdddd0c40
-#define ifcIDtYPEcLOAKcONNECTION_max     0xdddd0c41
+#define ifcIDtYPEcLOAKcONNECTION_min     0xdddd0c42
+#define ifcIDtYPEcLOAKcONNECTION_max     0xdddd0c43
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -48847,11 +48816,11 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDtYPEtINaRGiNuSE*//*1*/
 
 /*3*/
-#define ifcIDtYPEtINaRGiNuSE_LIST                          0xdddd0c42
-#define ifcIDtYPEtINaRGiNuSE_PATTERN                       0xdddd0c43
+#define ifcIDtYPEtINaRGiNuSE_LIST                          0xdddd0c44
+#define ifcIDtYPEtINaRGiNuSE_PATTERN                       0xdddd0c45
 /*3*/
-#define ifcIDtYPEtINaRGiNuSE_min     0xdddd0c42
-#define ifcIDtYPEtINaRGiNuSE_max     0xdddd0c43
+#define ifcIDtYPEtINaRGiNuSE_min     0xdddd0c44
+#define ifcIDtYPEtINaRGiNuSE_max     0xdddd0c45
 
 //
 // Respecting the rights of other people is an important part of empowering one another.
@@ -50323,13 +50292,13 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDtYPEtELLaPP*//*1*/
 
 /*3*/
-#define ifcIDtYPEtELLaPP_NOOP                                           0xdddd0c44
-#define ifcIDtYPEtELLaPP_INoUT                                          0xdddd0c45
-#define ifcIDtYPEtELLaPP_INoUTaRRAY                                     0xdddd0c46
-#define ifcIDtYPEtELLaPP_INoUTtINdT                                     0xdddd0c47
+#define ifcIDtYPEtELLaPP_NOOP                                           0xdddd0c46
+#define ifcIDtYPEtELLaPP_INoUT                                          0xdddd0c47
+#define ifcIDtYPEtELLaPP_INoUTaRRAY                                     0xdddd0c48
+#define ifcIDtYPEtELLaPP_INoUTtINdT                                     0xdddd0c49
 /*3*/
-#define ifcIDtYPEtELLaPP_min     0xdddd0c44
-#define ifcIDtYPEtELLaPP_max     0xdddd0c47                                                               
+#define ifcIDtYPEtELLaPP_min     0xdddd0c46
+#define ifcIDtYPEtELLaPP_max     0xdddd0c49                                                               
 
 
 //
@@ -50356,11 +50325,11 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDbOOKStELL*//*1*/
 
 /*3*/
-#define ifcIDbOOKStELL_SYS                                           0xdddd0c48
-#define ifcIDbOOKStELL_APP                                           0xdddd0c49
+#define ifcIDbOOKStELL_SYS                                           0xdddd0c4a
+#define ifcIDbOOKStELL_APP                                           0xdddd0c4b
 /*3*/
-#define ifcIDbOOKStELL_min     0xdddd0c48
-#define ifcIDbOOKStELL_max     0xdddd0c49                                                               
+#define ifcIDbOOKStELL_min     0xdddd0c4a
+#define ifcIDbOOKStELL_max     0xdddd0c4b                                                               
 
 
 //
@@ -51509,17 +51478,17 @@ values at and above 00ff are used by spouseC to encode literal byte values
 /*1*//*ifcIDcMDuDPfILEgRAM*//*1*/
 
 /*3*/
-#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c4a
-#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c4b
-#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c4c
-#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c4d
-#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c4e
-#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c4f
-#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c50
-#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c51
+#define ifcIDcMDuDPfILEgRAM_BYE                 0xdddd0c4c
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYnICnAME     0xdddd0c4d
+#define ifcIDcMDuDPfILEgRAM_USEtHISnICnAME      0xdddd0c4e
+#define ifcIDcMDuDPfILEgRAM_WHATiSmYsECRET      0xdddd0c4f
+#define ifcIDcMDuDPfILEgRAM_USEtHISsECRET       0xdddd0c50
+#define ifcIDcMDuDPfILEgRAM_PUTfILEwINDOW       0xdddd0c51
+#define ifcIDcMDuDPfILEgRAM_PUThASHoFcONTENT    0xdddd0c52
+#define ifcIDcMDuDPfILEgRAM_PUTbASEosfILEnAME   0xdddd0c53
 /*3*/
-#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c4a
-#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c51                                                               
+#define ifcIDcMDuDPfILEgRAM_min     0xdddd0c4c
+#define ifcIDcMDuDPfILEgRAM_max     0xdddd0c53                                                               
 
 
 //
@@ -51826,7 +51795,7 @@ values at and above 00ff are used by spouseC to encode literal byte values
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a8.ifcIDeXCEPTIONoPENsSL END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a9.postCERTBOTfACTORYoLD BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a9.postCERTBOTfACTORY BEGIN
 
 
 
@@ -51853,7 +51822,7 @@ values at and above 00ff are used by spouseC to encode literal byte values
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a9.postCERTBOTfACTORYoLD END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005a9.postCERTBOTfACTORY END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112005aa.flsocketcopensslfails BEGIN
 
 
@@ -52277,1479 +52246,1479 @@ this list corresponds exactly (offsets) to the error codes defined in winerr.h
 /*1*//*ifcIDiMPOTENCEbASEeRRORcODE*//*1*/
 
 /*3*/
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfUNCTION                                                         0xdddd0c52
-#define ifcIDiMPOTENCEbASEeRRORcODE_FILEnOTfOUND                                                            0xdddd0c53
-#define ifcIDiMPOTENCEbASEeRRORcODE_PATHnOTfOUND                                                            0xdddd0c54
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYoPENfILES                                                        0xdddd0c55
-#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdENIED                                                            0xdddd0c56
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhANDLE                                                           0xdddd0c57
-#define ifcIDiMPOTENCEbASEeRRORcODE_ARENAtRASHED                                                            0xdddd0c58
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHmEMORY                                                         0xdddd0c59
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDbLOCK                                                            0xdddd0c5a
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADeNVIRONMENT                                                          0xdddd0c5b
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADfORMAT                                                               0xdddd0c5c
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCCESS                                                           0xdddd0c5d
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdATA                                                             0xdddd0c5e
-#define ifcIDiMPOTENCEbASEeRRORcODE_OUTOFMEMORY                                                             0xdddd0c5f
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdRIVE                                                            0xdddd0c60
-#define ifcIDiMPOTENCEbASEeRRORcODE_CURRENTdIRECTORY                                                        0xdddd0c61
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsAMEdEVICE                                                           0xdddd0c62
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREfILES                                                             0xdddd0c63
-#define ifcIDiMPOTENCEbASEeRRORcODE_WRITEpROTECT                                                            0xdddd0c64
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADuNIT                                                                 0xdddd0c65
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTrEADY                                                                0xdddd0c66
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADcOMMAND                                                              0xdddd0c67
-#define ifcIDiMPOTENCEbASEeRRORcODE_CRC                                                                     0xdddd0c68
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADlENGTH                                                               0xdddd0c69
-#define ifcIDiMPOTENCEbASEeRRORcODE_SEEK                                                                    0xdddd0c6a
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTdOSdISK                                                              0xdddd0c6b
-#define ifcIDiMPOTENCEbASEeRRORcODE_SECTORnOTfOUND                                                          0xdddd0c6c
-#define ifcIDiMPOTENCEbASEeRRORcODE_OUToFpAPER                                                              0xdddd0c6d
-#define ifcIDiMPOTENCEbASEeRRORcODE_WRITEfAULT                                                              0xdddd0c6e
-#define ifcIDiMPOTENCEbASEeRRORcODE_READfAULT                                                               0xdddd0c6f
-#define ifcIDiMPOTENCEbASEeRRORcODE_GENfAILURE                                                              0xdddd0c70
-#define ifcIDiMPOTENCEbASEeRRORcODE_SHARINGvIOLATION                                                        0xdddd0c71
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOCKvIOLATION                                                           0xdddd0c72
-#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGdISK                                                               0xdddd0c73
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0001                                                           0xdddd0c74
-#define ifcIDiMPOTENCEbASEeRRORcODE_SHARINGbUFFEReXCEEDED                                                   0xdddd0c75
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0002                                                           0xdddd0c76
-#define ifcIDiMPOTENCEbASEeRRORcODE_HANDLEeOF                                                               0xdddd0c77
-#define ifcIDiMPOTENCEbASEeRRORcODE_HANDLEdISKfULL                                                          0xdddd0c78
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0003                                                           0xdddd0c79
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0004                                                           0xdddd0c7a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0005                                                           0xdddd0c7b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0006                                                           0xdddd0c7c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0007                                                           0xdddd0c7d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0008                                                           0xdddd0c7e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0009                                                           0xdddd0c7f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0010                                                           0xdddd0c80
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0011                                                           0xdddd0c81
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0012                                                           0xdddd0c82
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsUPPORTED                                                            0xdddd0c83
-#define ifcIDiMPOTENCEbASEeRRORcODE_REMnOTlIST                                                              0xdddd0c84
-#define ifcIDiMPOTENCEbASEeRRORcODE_DUPnAME                                                                 0xdddd0c85
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADnETPATH                                                              0xdddd0c86
-#define ifcIDiMPOTENCEbASEeRRORcODE_NETWORKbUSY                                                             0xdddd0c87
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEVnOTeXIST                                                             0xdddd0c88
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYcMDS                                                             0xdddd0c89
-#define ifcIDiMPOTENCEbASEeRRORcODE_ADAPhDWeRR                                                              0xdddd0c8a
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADnETrESP                                                              0xdddd0c8b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPnETeRR                                                             0xdddd0c8c
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADrEMaDAP                                                              0xdddd0c8d
-#define ifcIDiMPOTENCEbASEeRRORcODE_PRINTQfULL                                                              0xdddd0c8e
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsPOOLsPACE                                                            0xdddd0c8f
-#define ifcIDiMPOTENCEbASEeRRORcODE_PRINTcANCELLED                                                          0xdddd0c90
-#define ifcIDiMPOTENCEbASEeRRORcODE_NETNAMEdELETED                                                          0xdddd0c91
-#define ifcIDiMPOTENCEbASEeRRORcODE_NETWORKaCCESSdENIED                                                     0xdddd0c92
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADdEVtYPE                                                              0xdddd0c93
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADnETnAME                                                              0xdddd0c94
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYnAMES                                                            0xdddd0c95
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsESS                                                             0xdddd0c96
-#define ifcIDiMPOTENCEbASEeRRORcODE_SHARINGpAUSED                                                           0xdddd0c97
-#define ifcIDiMPOTENCEbASEeRRORcODE_REQnOTaCCEP                                                             0xdddd0c98
-#define ifcIDiMPOTENCEbASEeRRORcODE_REDIRpAUSED                                                             0xdddd0c99
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0013                                                           0xdddd0c9a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0014                                                           0xdddd0c9b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0015                                                           0xdddd0c9c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0016                                                           0xdddd0c9d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0017                                                           0xdddd0c9e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0018                                                           0xdddd0c9f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0019                                                           0xdddd0ca0
-#define ifcIDiMPOTENCEbASEeRRORcODE_FILEeXISTS                                                              0xdddd0ca1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0020                                                           0xdddd0ca2
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTmAKE                                                              0xdddd0ca3
-#define ifcIDiMPOTENCEbASEeRRORcODE_FAILi24                                                                 0xdddd0ca4
-#define ifcIDiMPOTENCEbASEeRRORcODE_OUToFsTRUCTURES                                                         0xdddd0ca5
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYaSSIGNED                                                         0xdddd0ca6
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpASSWORD                                                         0xdddd0ca7
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpARAMETER                                                        0xdddd0ca8
-#define ifcIDiMPOTENCEbASEeRRORcODE_NETwRITEfAULT                                                           0xdddd0ca9
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOpROCsLOTS                                                             0xdddd0caa
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0021                                                           0xdddd0cab
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0022                                                           0xdddd0cac
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0023                                                           0xdddd0cad
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0024                                                           0xdddd0cae
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0025                                                           0xdddd0caf
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0026                                                           0xdddd0cb0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0027                                                           0xdddd0cb1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0028                                                           0xdddd0cb2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0029                                                           0xdddd0cb3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0030                                                           0xdddd0cb4
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsEMAPHORES                                                       0xdddd0cb5
-#define ifcIDiMPOTENCEbASEeRRORcODE_EXCLsEMaLREADYoWNED                                                     0xdddd0cb6
-#define ifcIDiMPOTENCEbASEeRRORcODE_SEMiSsET                                                                0xdddd0cb7
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsEMrEQUESTS                                                      0xdddd0cb8
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaTiNTERRUPTtIME                                                  0xdddd0cb9
-#define ifcIDiMPOTENCEbASEeRRORcODE_SEMoWNERdIED                                                            0xdddd0cba
-#define ifcIDiMPOTENCEbASEeRRORcODE_SEMuSERlIMIT                                                            0xdddd0cbb
-#define ifcIDiMPOTENCEbASEeRRORcODE_DISKcHANGE                                                              0xdddd0cbc
-#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVElOCKED                                                             0xdddd0cbd
-#define ifcIDiMPOTENCEbASEeRRORcODE_BROKENpIPE                                                              0xdddd0cbe
-#define ifcIDiMPOTENCEbASEeRRORcODE_OPENfAILED                                                              0xdddd0cbf
-#define ifcIDiMPOTENCEbASEeRRORcODE_BUFFERoVERFLOW                                                          0xdddd0cc0
-#define ifcIDiMPOTENCEbASEeRRORcODE_DISKfULL                                                                0xdddd0cc1
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREsEARCHhANDLES                                                     0xdddd0cc2
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDtARGEThANDLE                                                     0xdddd0cc3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0031                                                           0xdddd0cc4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0032                                                           0xdddd0cc5
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcATEGORY                                                         0xdddd0cc6
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDvERIFYsWITCH                                                     0xdddd0cc7
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADdRIVERlEVEL                                                          0xdddd0cc8
-#define ifcIDiMPOTENCEbASEeRRORcODE_CALLnOTiMPLEMENTED                                                      0xdddd0cc9
-#define ifcIDiMPOTENCEbASEeRRORcODE_SEMtIMEOUT                                                              0xdddd0cca
-#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTbUFFER                                                      0xdddd0ccb
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDnAME                                                             0xdddd0ccc
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlEVEL                                                            0xdddd0ccd
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOvOLUMElABEL                                                           0xdddd0cce
-#define ifcIDiMPOTENCEbASEeRRORcODE_MODnOTfOUND                                                             0xdddd0ccf
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROCnOTfOUND                                                            0xdddd0cd0
-#define ifcIDiMPOTENCEbASEeRRORcODE_WAITnOcHILDREN                                                          0xdddd0cd1
-#define ifcIDiMPOTENCEbASEeRRORcODE_CHILDnOTcOMPLETE                                                        0xdddd0cd2
-#define ifcIDiMPOTENCEbASEeRRORcODE_DIRECTaCCESShANDLE                                                      0xdddd0cd3
-#define ifcIDiMPOTENCEbASEeRRORcODE_NEGATIVEsEEK                                                            0xdddd0cd4
-#define ifcIDiMPOTENCEbASEeRRORcODE_SEEKoNdEVICE                                                            0xdddd0cd5
-#define ifcIDiMPOTENCEbASEeRRORcODE_ISjOINtARGET                                                            0xdddd0cd6
-#define ifcIDiMPOTENCEbASEeRRORcODE_ISjOINED                                                                0xdddd0cd7
-#define ifcIDiMPOTENCEbASEeRRORcODE_ISsUBSTED                                                               0xdddd0cd8
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTjOINED                                                               0xdddd0cd9
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsUBSTED                                                              0xdddd0cda
-#define ifcIDiMPOTENCEbASEeRRORcODE_JOINtOjOIN                                                              0xdddd0cdb
-#define ifcIDiMPOTENCEbASEeRRORcODE_SUBSTtOsUBST                                                            0xdddd0cdc
-#define ifcIDiMPOTENCEbASEeRRORcODE_JOINtOsUBST                                                             0xdddd0cdd
-#define ifcIDiMPOTENCEbASEeRRORcODE_SUBSTtOjOIN                                                             0xdddd0cde
-#define ifcIDiMPOTENCEbASEeRRORcODE_BUSYdRIVE                                                               0xdddd0cdf
-#define ifcIDiMPOTENCEbASEeRRORcODE_SAMEdRIVE                                                               0xdddd0ce0
-#define ifcIDiMPOTENCEbASEeRRORcODE_DIRnOTrOOT                                                              0xdddd0ce1
-#define ifcIDiMPOTENCEbASEeRRORcODE_DIRnOTeMPTY                                                             0xdddd0ce2
-#define ifcIDiMPOTENCEbASEeRRORcODE_ISsUBSTpATH                                                             0xdddd0ce3
-#define ifcIDiMPOTENCEbASEeRRORcODE_ISjOINpATH                                                              0xdddd0ce4
-#define ifcIDiMPOTENCEbASEeRRORcODE_PATHbUSY                                                                0xdddd0ce5
-#define ifcIDiMPOTENCEbASEeRRORcODE_ISsUBSTtARGET                                                           0xdddd0ce6
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMtRACE                                                             0xdddd0ce7
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeVENTcOUNT                                                       0xdddd0ce8
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYmUXWAITERS                                                       0xdddd0ce9
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlISTfORMAT                                                       0xdddd0cea
-#define ifcIDiMPOTENCEbASEeRRORcODE_LABELtOOlONG                                                            0xdddd0ceb
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYtCBS                                                             0xdddd0cec
-#define ifcIDiMPOTENCEbASEeRRORcODE_SIGNALrEFUSED                                                           0xdddd0ced
-#define ifcIDiMPOTENCEbASEeRRORcODE_DISCARDED                                                               0xdddd0cee
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTlOCKED                                                               0xdddd0cef
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADtHREADIDaDDR                                                         0xdddd0cf0
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADaRGUMENTS                                                            0xdddd0cf1
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADpATHNAME                                                             0xdddd0cf2
-#define ifcIDiMPOTENCEbASEeRRORcODE_SIGNALpENDING                                                           0xdddd0cf3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0033                                                           0xdddd0cf4
-#define ifcIDiMPOTENCEbASEeRRORcODE_MAXtHRDSrEACHED                                                         0xdddd0cf5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0034                                                           0xdddd0cf6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0035                                                           0xdddd0cf7
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOCKfAILED                                                              0xdddd0cf8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0036                                                           0xdddd0cf9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0037                                                           0xdddd0cfa
-#define ifcIDiMPOTENCEbASEeRRORcODE_BUSY                                                                    0xdddd0cfb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0038                                                           0xdddd0cfc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0039                                                           0xdddd0cfd
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANCELvIOLATION                                                         0xdddd0cfe
-#define ifcIDiMPOTENCEbASEeRRORcODE_ATOMIClOCKSnOTsUPPORTED                                                 0xdddd0cff
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0040                                                           0xdddd0d00
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0041                                                           0xdddd0d01
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0042                                                           0xdddd0d02
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0043                                                           0xdddd0d03
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0044                                                           0xdddd0d04
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsEGMENTnUMBER                                                    0xdddd0d05
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0045                                                           0xdddd0d06
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDoRDINAL                                                          0xdddd0d07
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYeXISTS                                                           0xdddd0d08
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0046                                                           0xdddd0d09
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0047                                                           0xdddd0d0a
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfLAGnUMBER                                                       0xdddd0d0b
-#define ifcIDiMPOTENCEbASEeRRORcODE_SEMnOTfOUND                                                             0xdddd0d0c
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsTARTINGcODESEG                                                  0xdddd0d0d
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsTACKSEG                                                         0xdddd0d0e
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmODULETYPE                                                       0xdddd0d0f
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeXEsIGNATURE                                                     0xdddd0d10
-#define ifcIDiMPOTENCEbASEeRRORcODE_EXEmARKEDiNVALID                                                        0xdddd0d11
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADeXEfORMAT                                                            0xdddd0d12
-#define ifcIDiMPOTENCEbASEeRRORcODE_ITERATEDdATAeXCEEDS_64k                                                 0xdddd0d13
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmINALLOCSIZE                                                     0xdddd0d14
-#define ifcIDiMPOTENCEbASEeRRORcODE_DYNLINKfROMiNVALIDrING                                                  0xdddd0d15
-#define ifcIDiMPOTENCEbASEeRRORcODE_IOPLnOTeNABLED                                                          0xdddd0d16
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsEGDPL                                                           0xdddd0d17
-#define ifcIDiMPOTENCEbASEeRRORcODE_AUTODATASEGeXCEEDS_64k                                                  0xdddd0d18
-#define ifcIDiMPOTENCEbASEeRRORcODE_RING2SEGmUSTbEmOVABLE                                                   0xdddd0d19
-#define ifcIDiMPOTENCEbASEeRRORcODE_RELOCcHAINxEEDSsEGLIM                                                   0xdddd0d1a
-#define ifcIDiMPOTENCEbASEeRRORcODE_INFLOOPiNrELOCcHAIN                                                     0xdddd0d1b
-#define ifcIDiMPOTENCEbASEeRRORcODE_ENVVARnOTfOUND                                                          0xdddd0d1c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0048                                                           0xdddd0d1d
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsIGNALsENT                                                            0xdddd0d1e
-#define ifcIDiMPOTENCEbASEeRRORcODE_FILENAMEeXCEDrANGE                                                      0xdddd0d1f
-#define ifcIDiMPOTENCEbASEeRRORcODE_RING2sTACKiNuSE                                                         0xdddd0d20
-#define ifcIDiMPOTENCEbASEeRRORcODE_METAeXPANSIONtOOlONG                                                    0xdddd0d21
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsIGNALnUMBER                                                     0xdddd0d22
-#define ifcIDiMPOTENCEbASEeRRORcODE_THREAD_1iNACTIVE                                                        0xdddd0d23
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0049                                                           0xdddd0d24
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOCKED                                                                  0xdddd0d25
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0050                                                           0xdddd0d26
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYmODULES                                                          0xdddd0d27
-#define ifcIDiMPOTENCEbASEeRRORcODE_NESTINGnOTaLLOWED                                                       0xdddd0d28
-#define ifcIDiMPOTENCEbASEeRRORcODE_EXEmACHINEtYPEmISMATCH                                                  0xdddd0d29
-#define ifcIDiMPOTENCEbASEeRRORcODE_EXEcANNOTmODIFYsIGNEDbINARY                                             0xdddd0d2a
-#define ifcIDiMPOTENCEbASEeRRORcODE_EXEcANNOTmODIFYsTRONGsIGNEDbINARY                                       0xdddd0d2b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0051                                                           0xdddd0d2c
-#define ifcIDiMPOTENCEbASEeRRORcODE_FILEcHECKEDoUT                                                          0xdddd0d2d
-#define ifcIDiMPOTENCEbASEeRRORcODE_CHECKOUTrEQUIRED                                                        0xdddd0d2e
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADfILEtYPE                                                             0xdddd0d2f
-#define ifcIDiMPOTENCEbASEeRRORcODE_FILEtOOlARGE                                                            0xdddd0d30
-#define ifcIDiMPOTENCEbASEeRRORcODE_FORMSaUTHrEQUIRED                                                       0xdddd0d31
-#define ifcIDiMPOTENCEbASEeRRORcODE_VIRUSiNFECTED                                                           0xdddd0d32
-#define ifcIDiMPOTENCEbASEeRRORcODE_VIRUSdELETED                                                            0xdddd0d33
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0052                                                           0xdddd0d34
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0053                                                           0xdddd0d35
-#define ifcIDiMPOTENCEbASEeRRORcODE_PIPElOCAL                                                               0xdddd0d36
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADpIPE                                                                 0xdddd0d37
-#define ifcIDiMPOTENCEbASEeRRORcODE_PIPEbUSY                                                                0xdddd0d38
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOdATA                                                                  0xdddd0d39
-#define ifcIDiMPOTENCEbASEeRRORcODE_PIPEnOTcONNECTED                                                        0xdddd0d3a
-#define ifcIDiMPOTENCEbASEeRRORcODE_MOREdATA                                                                0xdddd0d3b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0054                                                           0xdddd0d3c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0055                                                           0xdddd0d3d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0056                                                           0xdddd0d3e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0057                                                           0xdddd0d3f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0058                                                           0xdddd0d40
-#define ifcIDiMPOTENCEbASEeRRORcODE_VCdISCONNECTED                                                          0xdddd0d41
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0059                                                           0xdddd0d42
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0060                                                           0xdddd0d43
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0061                                                           0xdddd0d44
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0062                                                           0xdddd0d45
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0063                                                           0xdddd0d46
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0064                                                           0xdddd0d47
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0065                                                           0xdddd0d48
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0066                                                           0xdddd0d49
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0067                                                           0xdddd0d4a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0068                                                           0xdddd0d4b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0069                                                           0xdddd0d4c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0070                                                           0xdddd0d4d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0071                                                           0xdddd0d4e
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeAnAME                                                           0xdddd0d4f
-#define ifcIDiMPOTENCEbASEeRRORcODE_EAlISTiNCONSISTENT                                                      0xdddd0d50
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0072                                                           0xdddd0d51
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0073                                                           0xdddd0d52
-#define WAITtIMEOUT                                                                                         0xdddd0d53
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREiTEMS                                                             0xdddd0d54
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0074                                                           0xdddd0d55
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0075                                                           0xdddd0d56
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0076                                                           0xdddd0d57
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0077                                                           0xdddd0d58
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0078                                                           0xdddd0d59
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0079                                                           0xdddd0d5a
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTcOPY                                                              0xdddd0d5b
-#define ifcIDiMPOTENCEbASEeRRORcODE_DIRECTORY                                                               0xdddd0d5c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0080                                                           0xdddd0d5d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0081                                                           0xdddd0d5e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0082                                                           0xdddd0d5f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0083                                                           0xdddd0d60
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0084                                                           0xdddd0d61
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0085                                                           0xdddd0d62
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0086                                                           0xdddd0d63
-#define ifcIDiMPOTENCEbASEeRRORcODE_EASdIDNTfIT                                                             0xdddd0d64
-#define ifcIDiMPOTENCEbASEeRRORcODE_EAfILEcORRUPT                                                           0xdddd0d65
-#define ifcIDiMPOTENCEbASEeRRORcODE_EAtABLEfULL                                                             0xdddd0d66
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeAhANDLE                                                         0xdddd0d67
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0087                                                           0xdddd0d68
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0088                                                           0xdddd0d69
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0089                                                           0xdddd0d6a
-#define ifcIDiMPOTENCEbASEeRRORcODE_EASnOTsUPPORTED                                                         0xdddd0d6b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0090                                                           0xdddd0d6c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0091                                                           0xdddd0d6d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0092                                                           0xdddd0d6e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0093                                                           0xdddd0d6f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0094                                                           0xdddd0d70
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOToWNER                                                                0xdddd0d71
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0095                                                           0xdddd0d72
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0096                                                           0xdddd0d73
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0097                                                           0xdddd0d74
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0098                                                           0xdddd0d75
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0099                                                           0xdddd0d76
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0100                                                           0xdddd0d77
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0101                                                           0xdddd0d78
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0102                                                           0xdddd0d79
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0103                                                           0xdddd0d7a
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYpOSTS                                                            0xdddd0d7b
-#define ifcIDiMPOTENCEbASEeRRORcODE_PARTIALcOPY                                                             0xdddd0d7c
-#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKnOTgRANTED                                                        0xdddd0d7d
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDoPLOCKpROTOCOL                                                   0xdddd0d7e
-#define ifcIDiMPOTENCEbASEeRRORcODE_DISKtOOfRAGMENTED                                                       0xdddd0d7f
-#define ifcIDiMPOTENCEbASEeRRORcODE_DELETEpENDING                                                           0xdddd0d80
-#define ifcIDiMPOTENCEbASEeRRORcODE_INCOMPATIBLEwITHgLOBALsHORTnAMErEGISTRYsETTING                          0xdddd0d81
-#define ifcIDiMPOTENCEbASEeRRORcODE_SHORTnAMESnOTeNABLEDoNvOLUME                                            0xdddd0d82
-#define ifcIDiMPOTENCEbASEeRRORcODE_SECURITYsTREAMiSiNCONSISTENT                                            0xdddd0d83
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlOCKrANGE                                                        0xdddd0d84
-#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEsUBSYSTEMnOTpRESENT                                                0xdddd0d85
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTIFICATIONgUIDaLREADYdEFINED                                          0xdddd0d86
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0104                                                           0xdddd0d87
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0105                                                           0xdddd0d88
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0106                                                           0xdddd0d89
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0107                                                           0xdddd0d8a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0108                                                           0xdddd0d8b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0109                                                           0xdddd0d8c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0110                                                           0xdddd0d8d
-#define ifcIDiMPOTENCEbASEeRRORcODE_MRmIDnOTfOUND                                                           0xdddd0d8e
-#define ifcIDiMPOTENCEbASEeRRORcODE_SCOPEnOTfOUND                                                           0xdddd0d8f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0111                                                           0xdddd0d90
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0112                                                           0xdddd0d91
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0113                                                           0xdddd0d92
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0114                                                           0xdddd0d93
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0115                                                           0xdddd0d94
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0116                                                           0xdddd0d95
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0117                                                           0xdddd0d96
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0118                                                           0xdddd0d97
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0119                                                           0xdddd0d98
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0120                                                           0xdddd0d99
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0121                                                           0xdddd0d9a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0122                                                           0xdddd0d9b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0123                                                           0xdddd0d9c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0124                                                           0xdddd0d9d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0125                                                           0xdddd0d9e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0126                                                           0xdddd0d9f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0127                                                           0xdddd0da0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0128                                                           0xdddd0da1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0129                                                           0xdddd0da2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0130                                                           0xdddd0da3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0131                                                           0xdddd0da4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0132                                                           0xdddd0da5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0133                                                           0xdddd0da6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0134                                                           0xdddd0da7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0135                                                           0xdddd0da8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0136                                                           0xdddd0da9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0137                                                           0xdddd0daa
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0138                                                           0xdddd0dab
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0139                                                           0xdddd0dac
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0140                                                           0xdddd0dad
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0141                                                           0xdddd0dae
-#define ifcIDiMPOTENCEbASEeRRORcODE_FAILnOACTIONrEBOOT                                                      0xdddd0daf
-#define ifcIDiMPOTENCEbASEeRRORcODE_FAILsHUTDOWN                                                            0xdddd0db0
-#define ifcIDiMPOTENCEbASEeRRORcODE_FAILrESTART                                                             0xdddd0db1
-#define ifcIDiMPOTENCEbASEeRRORcODE_MAXsESSIONSrEACHED                                                      0xdddd0db2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0142                                                           0xdddd0db3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0143                                                           0xdddd0db4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0144                                                           0xdddd0db5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0145                                                           0xdddd0db6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0146                                                           0xdddd0db7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0147                                                           0xdddd0db8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0148                                                           0xdddd0db9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0149                                                           0xdddd0dba
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0150                                                           0xdddd0dbb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0151                                                           0xdddd0dbc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0152                                                           0xdddd0dbd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0153                                                           0xdddd0dbe
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0154                                                           0xdddd0dbf
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0155                                                           0xdddd0dc0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0156                                                           0xdddd0dc1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0157                                                           0xdddd0dc2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0158                                                           0xdddd0dc3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0159                                                           0xdddd0dc4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0160                                                           0xdddd0dc5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0161                                                           0xdddd0dc6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0162                                                           0xdddd0dc7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0163                                                           0xdddd0dc8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0164                                                           0xdddd0dc9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0165                                                           0xdddd0dca
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0166                                                           0xdddd0dcb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0167                                                           0xdddd0dcc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0168                                                           0xdddd0dcd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0169                                                           0xdddd0dce
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0170                                                           0xdddd0dcf
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0171                                                           0xdddd0dd0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0172                                                           0xdddd0dd1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0173                                                           0xdddd0dd2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0174                                                           0xdddd0dd3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0175                                                           0xdddd0dd4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0176                                                           0xdddd0dd5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0177                                                           0xdddd0dd6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0178                                                           0xdddd0dd7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0179                                                           0xdddd0dd8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0180                                                           0xdddd0dd9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0181                                                           0xdddd0dda
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0182                                                           0xdddd0ddb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0183                                                           0xdddd0ddc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0184                                                           0xdddd0ddd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0185                                                           0xdddd0dde
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0186                                                           0xdddd0ddf
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0187                                                           0xdddd0de0
-#define ifcIDiMPOTENCEbASEeRRORcODE_THREADmODEaLREADYbACKGROUND                                             0xdddd0de1
-#define ifcIDiMPOTENCEbASEeRRORcODE_THREADmODEnOTbACKGROUND                                                 0xdddd0de2
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSmODEaLREADYbACKGROUND                                            0xdddd0de3
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSmODEnOTbACKGROUND                                                0xdddd0de4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0188                                                           0xdddd0de5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0189                                                           0xdddd0de6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0190                                                           0xdddd0de7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0191                                                           0xdddd0de8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0192                                                           0xdddd0de9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0193                                                           0xdddd0dea
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0194                                                           0xdddd0deb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0195                                                           0xdddd0dec
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0196                                                           0xdddd0ded
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0197                                                           0xdddd0dee
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0198                                                           0xdddd0def
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0199                                                           0xdddd0df0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0200                                                           0xdddd0df1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0201                                                           0xdddd0df2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0202                                                           0xdddd0df3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0203                                                           0xdddd0df4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0204                                                           0xdddd0df5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0205                                                           0xdddd0df6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0206                                                           0xdddd0df7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0207                                                           0xdddd0df8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0208                                                           0xdddd0df9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0209                                                           0xdddd0dfa
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0210                                                           0xdddd0dfb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0211                                                           0xdddd0dfc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0212                                                           0xdddd0dfd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0213                                                           0xdddd0dfe
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0214                                                           0xdddd0dff
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0215                                                           0xdddd0e00
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0216                                                           0xdddd0e01
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0217                                                           0xdddd0e02
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0218                                                           0xdddd0e03
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0219                                                           0xdddd0e04
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0220                                                           0xdddd0e05
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0221                                                           0xdddd0e06
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0222                                                           0xdddd0e07
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0223                                                           0xdddd0e08
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0224                                                           0xdddd0e09
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0225                                                           0xdddd0e0a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0226                                                           0xdddd0e0b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0227                                                           0xdddd0e0c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0228                                                           0xdddd0e0d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0229                                                           0xdddd0e0e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0230                                                           0xdddd0e0f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0231                                                           0xdddd0e10
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0232                                                           0xdddd0e11
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0233                                                           0xdddd0e12
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0234                                                           0xdddd0e13
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0235                                                           0xdddd0e14
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0236                                                           0xdddd0e15
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0237                                                           0xdddd0e16
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0238                                                           0xdddd0e17
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0239                                                           0xdddd0e18
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0240                                                           0xdddd0e19
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0241                                                           0xdddd0e1a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0242                                                           0xdddd0e1b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0243                                                           0xdddd0e1c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0244                                                           0xdddd0e1d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0245                                                           0xdddd0e1e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0246                                                           0xdddd0e1f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0247                                                           0xdddd0e20
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0248                                                           0xdddd0e21
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0249                                                           0xdddd0e22
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0250                                                           0xdddd0e23
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0251                                                           0xdddd0e24
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0252                                                           0xdddd0e25
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0253                                                           0xdddd0e26
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0254                                                           0xdddd0e27
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0255                                                           0xdddd0e28
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0256                                                           0xdddd0e29
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0257                                                           0xdddd0e2a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0258                                                           0xdddd0e2b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0259                                                           0xdddd0e2c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0260                                                           0xdddd0e2d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0261                                                           0xdddd0e2e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0262                                                           0xdddd0e2f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0263                                                           0xdddd0e30
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0264                                                           0xdddd0e31
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0265                                                           0xdddd0e32
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0266                                                           0xdddd0e33
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0267                                                           0xdddd0e34
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0268                                                           0xdddd0e35
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0269                                                           0xdddd0e36
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0270                                                           0xdddd0e37
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaDDRESS                                                          0xdddd0e38
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0271                                                           0xdddd0e39
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0272                                                           0xdddd0e3a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0273                                                           0xdddd0e3b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0274                                                           0xdddd0e3c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0275                                                           0xdddd0e3d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0276                                                           0xdddd0e3e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0277                                                           0xdddd0e3f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0278                                                           0xdddd0e40
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0279                                                           0xdddd0e41
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0280                                                           0xdddd0e42
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0281                                                           0xdddd0e43
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0282                                                           0xdddd0e44
-#define ifcIDiMPOTENCEbASEeRRORcODE_USERpROFILElOAD                                                         0xdddd0e45
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0283                                                           0xdddd0e46
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0284                                                           0xdddd0e47
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0285                                                           0xdddd0e48
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0286                                                           0xdddd0e49
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0287                                                           0xdddd0e4a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0288                                                           0xdddd0e4b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0289                                                           0xdddd0e4c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0290                                                           0xdddd0e4d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0291                                                           0xdddd0e4e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0292                                                           0xdddd0e4f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0293                                                           0xdddd0e50
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0294                                                           0xdddd0e51
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0295                                                           0xdddd0e52
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0296                                                           0xdddd0e53
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0297                                                           0xdddd0e54
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0298                                                           0xdddd0e55
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0299                                                           0xdddd0e56
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0300                                                           0xdddd0e57
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0301                                                           0xdddd0e58
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0302                                                           0xdddd0e59
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0303                                                           0xdddd0e5a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0304                                                           0xdddd0e5b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0305                                                           0xdddd0e5c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0306                                                           0xdddd0e5d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0307                                                           0xdddd0e5e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0308                                                           0xdddd0e5f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0309                                                           0xdddd0e60
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0310                                                           0xdddd0e61
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0311                                                           0xdddd0e62
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0312                                                           0xdddd0e63
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0313                                                           0xdddd0e64
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0314                                                           0xdddd0e65
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0315                                                           0xdddd0e66
-#define ifcIDiMPOTENCEbASEeRRORcODE_ARITHMETICoVERFLOW                                                      0xdddd0e67
-#define ifcIDiMPOTENCEbASEeRRORcODE_PIPEcONNECTED                                                           0xdddd0e68
-#define ifcIDiMPOTENCEbASEeRRORcODE_PIPElISTENING                                                           0xdddd0e69
-#define ifcIDiMPOTENCEbASEeRRORcODE_VERIFIERsTOP                                                            0xdddd0e6a
-#define ifcIDiMPOTENCEbASEeRRORcODE_ABIOSeRROR                                                              0xdddd0e6b
-#define ifcIDiMPOTENCEbASEeRRORcODE_WX86wARNING                                                             0xdddd0e6c
-#define ifcIDiMPOTENCEbASEeRRORcODE_WX86eRROR                                                               0xdddd0e6d
-#define ifcIDiMPOTENCEbASEeRRORcODE_TIMERnOTcREATED                                                         0xdddd0e6e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNWIND                                                                  0xdddd0e6f
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADsTACK                                                                0xdddd0e70
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDuNWINDtARGET                                                     0xdddd0e71
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpORTaTTRIBUTES                                                   0xdddd0e72
-#define ifcIDiMPOTENCEbASEeRRORcODE_PORTmESSAGEtOOlONG                                                      0xdddd0e73
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDqUOTAlOWER                                                       0xdddd0e74
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEaLREADYaTTACHED                                                   0xdddd0e75
-#define ifcIDiMPOTENCEbASEeRRORcODE_INSTRUCTIONmISALIGNMENT                                                 0xdddd0e76
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROFILINGnOTsTARTED                                                     0xdddd0e77
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROFILINGnOTsTOPPED                                                     0xdddd0e78
-#define ifcIDiMPOTENCEbASEeRRORcODE_COULDnOTiNTERPRET                                                       0xdddd0e79
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROFILINGaTlIMIT                                                        0xdddd0e7a
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANTwAIT                                                                0xdddd0e7b
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANTtERMINATEsELF                                                       0xdddd0e7c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPECTEDmMcREATEeRROR                                                 0xdddd0e7d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPECTEDmMmAPeRROR                                                    0xdddd0e7e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPECTEDmMeXTENDeRROR                                                 0xdddd0e7f
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADfUNCTIONtABLE                                                        0xdddd0e80
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOgUIDtRANSLATION                                                       0xdddd0e81
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlDTsIZE                                                          0xdddd0e82
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlDToFFSET                                                        0xdddd0e83
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0316                                                           0xdddd0e84
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlDTdESCRIPTOR                                                    0xdddd0e85
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYtHREADS                                                          0xdddd0e86
-#define ifcIDiMPOTENCEbASEeRRORcODE_THREADnOTiNpROGRESS                                                     0xdddd0e87
-#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEFILEqUOTAeXCEEDED                                                   0xdddd0e88
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONsERVERcONFLICT                                                     0xdddd0e89
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYNCHRONIZATIONrEQUIRED                                                 0xdddd0e8a
-#define ifcIDiMPOTENCEbASEeRRORcODE_NEToPENfAILED                                                           0xdddd0e8b
-#define ifcIDiMPOTENCEbASEeRRORcODE_IOpRIVILEGEfAILED                                                       0xdddd0e8c
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONTROLceXIT                                                            0xdddd0e8d
-#define ifcIDiMPOTENCEbASEeRRORcODE_MISSINGsYSTEMFILE                                                       0xdddd0e8e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNHANDLEDeXCEPTION                                                      0xdddd0e8f
-#define ifcIDiMPOTENCEbASEeRRORcODE_APPiNITfAILURE                                                          0xdddd0e90
-#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEFILEcREATEfAILED                                                    0xdddd0e91
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiMAGEhASH                                                        0xdddd0e92
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOpAGEFILE                                                              0xdddd0e93
-#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALfLOATcONTEXT                                                     0xdddd0e94
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOeVENTpAIR                                                             0xdddd0e95
-#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINcTRLRcONFIGeRROR                                                  0xdddd0e96
-#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALcHARACTER                                                        0xdddd0e97
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0317cHARACTER                                                  0xdddd0e98
-#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYvOLUME                                                            0xdddd0e99
-#define ifcIDiMPOTENCEbASEeRRORcODE_BIOSfAILEDtOcONNECTiNTERRUPT                                            0xdddd0e9a
-#define ifcIDiMPOTENCEbASEeRRORcODE_BACKUPcONTROLLER                                                        0xdddd0e9b
-#define ifcIDiMPOTENCEbASEeRRORcODE_MUTANTlIMITeXCEEDED                                                     0xdddd0e9c
-#define ifcIDiMPOTENCEbASEeRRORcODE_FSdRIVERrEQUIRED                                                        0xdddd0e9d
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTlOADrEGISTRYfILE                                                  0xdddd0e9e
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEBUGaTTACHfAILED                                                       0xdddd0e9f
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMpROCESStERMINATED                                                 0xdddd0ea0
-#define ifcIDiMPOTENCEbASEeRRORcODE_DATAnOTaCCEPTED                                                         0xdddd0ea1
-#define ifcIDiMPOTENCEbASEeRRORcODE_VDMhARDeRROR                                                            0xdddd0ea2
-#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERcANCELtIMEOUT                                                     0xdddd0ea3
-#define ifcIDiMPOTENCEbASEeRRORcODE_REPLYmESSAGEmISMATCH                                                    0xdddd0ea4
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATA                                                     0xdddd0ea5
-#define ifcIDiMPOTENCEbASEeRRORcODE_CLIENTsERVERpARAMETERSiNVALID                                           0xdddd0ea6
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTtINYsTREAM                                                           0xdddd0ea7
-#define ifcIDiMPOTENCEbASEeRRORcODE_STACKoVERFLOWrEAD                                                       0xdddd0ea8
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONVERTtOlARGE                                                          0xdddd0ea9
-#define ifcIDiMPOTENCEbASEeRRORcODE_FOUNDoUToFsCOPE                                                         0xdddd0eaa
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALLOCATEbUCKET                                                          0xdddd0eab
-#define ifcIDiMPOTENCEbASEeRRORcODE_MARSHALLoVERFLOW                                                        0xdddd0eac
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDvARIANT                                                          0xdddd0ead
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADcOMPRESSIONbUFFER                                                    0xdddd0eae
-#define ifcIDiMPOTENCEbASEeRRORcODE_AUDITfAILED                                                             0xdddd0eaf
-#define ifcIDiMPOTENCEbASEeRRORcODE_TIMERrESOLUTIONnOTsET                                                   0xdddd0eb0
-#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTlOGONiNFO                                                   0xdddd0eb1
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADdLLeNTRYPOINT                                                        0xdddd0eb2
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADsERVICEeNTRYPOINT                                                    0xdddd0eb3
-#define ifcIDiMPOTENCEbASEeRRORcODE_IPaDDRESScONFLICT1                                                      0xdddd0eb4
-#define ifcIDiMPOTENCEbASEeRRORcODE_IPaDDRESScONFLICT2                                                      0xdddd0eb5
-#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYqUOTAlIMIT                                                      0xdddd0eb6
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOcALLBACKaCTIVE                                                        0xdddd0eb7
-#define ifcIDiMPOTENCEbASEeRRORcODE_PWDtOOsHORT                                                             0xdddd0eb8
-#define ifcIDiMPOTENCEbASEeRRORcODE_PWDtOOrECENT                                                            0xdddd0eb9
-#define ifcIDiMPOTENCEbASEeRRORcODE_PWDhISTORYcONFLICT                                                      0xdddd0eba
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNSUPPORTEDcOMPRESSION                                                  0xdddd0ebb
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhWpROFILE                                                        0xdddd0ebc
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpLUGPLAYdEVICEpATH                                               0xdddd0ebd
-#define ifcIDiMPOTENCEbASEeRRORcODE_QUOTAlISTiNCONSISTENT                                                   0xdddd0ebe
-#define ifcIDiMPOTENCEbASEeRRORcODE_EVALUATIONeXPIRATION                                                    0xdddd0ebf
-#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALdLLrELOCATION                                                    0xdddd0ec0
-#define ifcIDiMPOTENCEbASEeRRORcODE_DLLiNITfAILEDlOGOFF                                                     0xdddd0ec1
-#define ifcIDiMPOTENCEbASEeRRORcODE_VALIDATEcONTINUE                                                        0xdddd0ec2
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREmATCHES                                                           0xdddd0ec3
-#define ifcIDiMPOTENCEbASEeRRORcODE_RANGElISTcONFLICT                                                       0xdddd0ec4
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERsIDmISMATCH                                                       0xdddd0ec5
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANTeNABLEdENYoNLY                                                      0xdddd0ec6
-#define ifcIDiMPOTENCEbASEeRRORcODE_FLOATmULTIPLEfAULTS                                                     0xdddd0ec7
-#define ifcIDiMPOTENCEbASEeRRORcODE_FLOATmULTIPLEtRAPS                                                      0xdddd0ec8
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOINTERFACE                                                             0xdddd0ec9
-#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERfAILEDsLEEP                                                       0xdddd0eca
-#define ifcIDiMPOTENCEbASEeRRORcODE_CORRUPTsYSTEMfILE                                                       0xdddd0ecb
-#define ifcIDiMPOTENCEbASEeRRORcODE_COMMITMENTmINIMUM                                                       0xdddd0ecc
-#define ifcIDiMPOTENCEbASEeRRORcODE_PNPrESTARTeNUMERATION                                                   0xdddd0ecd
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMiMAGEbADsIGNATURE                                                 0xdddd0ece
-#define ifcIDiMPOTENCEbASEeRRORcODE_PNPrEBOOTrEQUIRED                                                       0xdddd0ecf
-#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTpOWER                                                       0xdddd0ed0
-#define ifcIDiMPOTENCEbASEeRRORcODE_MULTIPLEfAULTvIOLATION                                                  0xdddd0ed1
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMsHUTDOWN                                                          0xdddd0ed2
-#define ifcIDiMPOTENCEbASEeRRORcODE_PORTnOTsET                                                              0xdddd0ed3
-#define ifcIDiMPOTENCEbASEeRRORcODE_DSvERSIONcHECKfAILURE                                                   0xdddd0ed4
-#define ifcIDiMPOTENCEbASEeRRORcODE_RANGEnOTfOUND                                                           0xdddd0ed5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0318                                                           0xdddd0ed6
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsAFEmODEdRIVER                                                       0xdddd0ed7
-#define ifcIDiMPOTENCEbASEeRRORcODE_FAILEDdRIVEReNTRY                                                       0xdddd0ed8
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEeNUMERATIONeRROR                                                  0xdddd0ed9
-#define ifcIDiMPOTENCEbASEeRRORcODE_MOUNTpOINTnOTrESOLVED                                                   0xdddd0eda
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdEVICEoBJECTpARAMETER                                            0xdddd0edb
-#define ifcIDiMPOTENCEbASEeRRORcODE_MCAoCCURRED                                                             0xdddd0edc
-#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERdATABASEeRROR                                                     0xdddd0edd
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMhIVEtOOlARGE                                                      0xdddd0ede
-#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERfAILEDpRIORuNLOAD                                                 0xdddd0edf
-#define ifcIDiMPOTENCEbASEeRRORcODE_VOLSNAPpREPAREhIBERNATE                                                 0xdddd0ee0
-#define ifcIDiMPOTENCEbASEeRRORcODE_HIBERNATIONfAILURE                                                      0xdddd0ee1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0319                                                           0xdddd0ee2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0320                                                           0xdddd0ee3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0321                                                           0xdddd0ee4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0322                                                           0xdddd0ee5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0323                                                           0xdddd0ee6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0324                                                           0xdddd0ee7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0325                                                           0xdddd0ee8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0326                                                           0xdddd0ee9
-#define ifcIDiMPOTENCEbASEeRRORcODE_FILEsYSTEMlIMITATION                                                    0xdddd0eea
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0327                                                           0xdddd0eeb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0328                                                           0xdddd0eec
-#define ifcIDiMPOTENCEbASEeRRORcODE_ASSERTIONfAILURE                                                        0xdddd0eed
-#define ifcIDiMPOTENCEbASEeRRORcODE_ACPIeRROR                                                               0xdddd0eee
-#define ifcIDiMPOTENCEbASEeRRORcODE_WOWaSSERTION                                                            0xdddd0eef
-#define ifcIDiMPOTENCEbASEeRRORcODE_PNPbADmPStABLE                                                          0xdddd0ef0
-#define ifcIDiMPOTENCEbASEeRRORcODE_PNPtRANSLATIONfAILED                                                    0xdddd0ef1
-#define ifcIDiMPOTENCEbASEeRRORcODE_PNPiRQtRANSLATIONfAILED                                                 0xdddd0ef2
-#define ifcIDiMPOTENCEbASEeRRORcODE_PNPiNVALIDiD                                                            0xdddd0ef3
-#define ifcIDiMPOTENCEbASEeRRORcODE_WAKEsYSTEMdEBUGGER                                                      0xdddd0ef4
-#define ifcIDiMPOTENCEbASEeRRORcODE_HANDLEScLOSED                                                           0xdddd0ef5
-#define ifcIDiMPOTENCEbASEeRRORcODE_EXTRANEOUSiNFORMATION                                                   0xdddd0ef6
-#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTcOMMITnECESSARY                                                    0xdddd0ef7
-#define ifcIDiMPOTENCEbASEeRRORcODE_MEDIAcHECK                                                              0xdddd0ef8
-#define ifcIDiMPOTENCEbASEeRRORcODE_GUIDsUBSTITUTIONmADE                                                    0xdddd0ef9
-#define ifcIDiMPOTENCEbASEeRRORcODE_STOPPEDoNsYMLINK                                                        0xdddd0efa
-#define ifcIDiMPOTENCEbASEeRRORcODE_LONGJUMP                                                                0xdddd0efb
-#define ifcIDiMPOTENCEbASEeRRORcODE_PLUGPLAYqUERYvETOED                                                     0xdddd0efc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNWINDcONSOLIDATE                                                       0xdddd0efd
-#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYhIVErECOVERED                                                   0xdddd0efe
-#define ifcIDiMPOTENCEbASEeRRORcODE_DLLmIGHTbEiNSECURE                                                      0xdddd0eff
-#define ifcIDiMPOTENCEbASEeRRORcODE_DLLmIGHTbEiNCOMPATIBLE                                                  0xdddd0f00
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGeXCEPTIONnOThANDLED                                                  0xdddd0f01
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGrEPLYlATER                                                           0xdddd0f02
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGuNABLEtOpROVIDEhANDLE                                                0xdddd0f03
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGtERMINATEtHREAD                                                      0xdddd0f04
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGtERMINATEpROCESS                                                     0xdddd0f05
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcONTROLc                                                             0xdddd0f06
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGpRINTEXCEPTIONc                                                      0xdddd0f07
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGrIPEXCEPTION                                                         0xdddd0f08
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcONTROLbREAK                                                         0xdddd0f09
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcOMMANDeXCEPTION                                                     0xdddd0f0a
-#define ifcIDiMPOTENCEbASEeRRORcODE_OBJECTnAMEeXISTS                                                        0xdddd0f0b
-#define ifcIDiMPOTENCEbASEeRRORcODE_THREADwASsUSPENDED                                                      0xdddd0f0c
-#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEnOTaTbASE                                                          0xdddd0f0d
-#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTsTATEcREATED                                                       0xdddd0f0e
-#define ifcIDiMPOTENCEbASEeRRORcODE_SEGMENTnOTIFICATION                                                     0xdddd0f0f
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADcURRENTdIRECTORY                                                     0xdddd0f10
-#define ifcIDiMPOTENCEbASEeRRORcODE_FTrEADrECOVERYfROMbACKUP                                                0xdddd0f11
-#define ifcIDiMPOTENCEbASEeRRORcODE_FTwRITErECOVERY                                                         0xdddd0f12
-#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEmACHINEtYPEmISMATCH                                                0xdddd0f13
-#define ifcIDiMPOTENCEbASEeRRORcODE_RECEIVEpARTIAL                                                          0xdddd0f14
-#define ifcIDiMPOTENCEbASEeRRORcODE_RECEIVEeXPEDITED                                                        0xdddd0f15
-#define ifcIDiMPOTENCEbASEeRRORcODE_RECEIVEpARTIALeXPEDITED                                                 0xdddd0f16
-#define ifcIDiMPOTENCEbASEeRRORcODE_EVENTdONE                                                               0xdddd0f17
-#define ifcIDiMPOTENCEbASEeRRORcODE_EVENTpENDING                                                            0xdddd0f18
-#define ifcIDiMPOTENCEbASEeRRORcODE_CHECKINGfILEsYSTEM                                                      0xdddd0f19
-#define ifcIDiMPOTENCEbASEeRRORcODE_FATALaPPeXIT                                                            0xdddd0f1a
-#define ifcIDiMPOTENCEbASEeRRORcODE_PREDEFINEDhANDLE                                                        0xdddd0f1b
-#define ifcIDiMPOTENCEbASEeRRORcODE_WASuNLOCKED                                                             0xdddd0f1c
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTIFICATION                                                     0xdddd0f1d
-#define ifcIDiMPOTENCEbASEeRRORcODE_WASlOCKED                                                               0xdddd0f1e
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOGhARDeRROR                                                            0xdddd0f1f
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYwIN32                                                            0xdddd0f20
-#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEmACHINEtYPEmISMATCHeXE                                             0xdddd0f21
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOyIELDpERFORMED                                                        0xdddd0f22
-#define ifcIDiMPOTENCEbASEeRRORcODE_TIMERrESUMEiGNORED                                                      0xdddd0f23
-#define ifcIDiMPOTENCEbASEeRRORcODE_ARBITRATIONuNHANDLED                                                    0xdddd0f24
-#define ifcIDiMPOTENCEbASEeRRORcODE_CARDBUSnOTsUPPORTED                                                     0xdddd0f25
-#define ifcIDiMPOTENCEbASEeRRORcODE_MPpROCESSORmISMATCH                                                     0xdddd0f26
-#define ifcIDiMPOTENCEbASEeRRORcODE_HIBERNATED                                                              0xdddd0f27
-#define ifcIDiMPOTENCEbASEeRRORcODE_RESUMEhIBERNATION                                                       0xdddd0f28
-#define ifcIDiMPOTENCEbASEeRRORcODE_FIRMWAREuPDATED                                                         0xdddd0f29
-#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERSlEAKINGlOCKEDpAGES                                               0xdddd0f2a
-#define ifcIDiMPOTENCEbASEeRRORcODE_WAKEsYSTEM                                                              0xdddd0f2b
-#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_1                                                                  0xdddd0f2c
-#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_2                                                                  0xdddd0f2d
-#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_3                                                                  0xdddd0f2e
-#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_63                                                                 0xdddd0f2f
-#define ifcIDiMPOTENCEbASEeRRORcODE_ABANDONEDwAIT_0                                                         0xdddd0f30
-#define ifcIDiMPOTENCEbASEeRRORcODE_ABANDONEDwAIT_63                                                        0xdddd0f31
-#define ifcIDiMPOTENCEbASEeRRORcODE_USERaPC                                                                 0xdddd0f32
-#define ifcIDiMPOTENCEbASEeRRORcODE_KERNELaPC                                                               0xdddd0f33
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALERTED                                                                 0xdddd0f34
-#define ifcIDiMPOTENCEbASEeRRORcODE_ELEVATIONrEQUIRED                                                       0xdddd0f35
-#define ifcIDiMPOTENCEbASEeRRORcODE_REPARSE                                                                 0xdddd0f36
-#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKbREAKiNpROGRESS                                                   0xdddd0f37
-#define ifcIDiMPOTENCEbASEeRRORcODE_VOLUMEmOUNTED                                                           0xdddd0f38
-#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTcOMMITTED                                                          0xdddd0f39
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTIFYcLEANUP                                                           0xdddd0f3a
-#define ifcIDiMPOTENCEbASEeRRORcODE_PRIMARYtRANSPORTcONNECTfAILED                                           0xdddd0f3b
-#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTtRANSITION                                                     0xdddd0f3c
-#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTdEMANDzERO                                                     0xdddd0f3d
-#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTcOPYoNwRITE                                                    0xdddd0f3e
-#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTgUARDpAGE                                                      0xdddd0f3f
-#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTpAGINGfILE                                                     0xdddd0f40
-#define ifcIDiMPOTENCEbASEeRRORcODE_CACHEpAGElOCKED                                                         0xdddd0f41
-#define ifcIDiMPOTENCEbASEeRRORcODE_CRASHdUMP                                                               0xdddd0f42
-#define ifcIDiMPOTENCEbASEeRRORcODE_BUFFERaLLzEROS                                                          0xdddd0f43
-#define ifcIDiMPOTENCEbASEeRRORcODE_REPARSEoBJECT                                                           0xdddd0f44
-#define ifcIDiMPOTENCEbASEeRRORcODE_RESOURCErEQUIREMENTScHANGED                                             0xdddd0f45
-#define ifcIDiMPOTENCEbASEeRRORcODE_TRANSLATIONcOMPLETE                                                     0xdddd0f46
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTHINGtOtERMIANTE                                                      0xdddd0f47
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSnOTiNjOB                                                         0xdddd0f48
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSiNjOB                                                            0xdddd0f49
-#define ifcIDiMPOTENCEbASEeRRORcODE_VOLSNAPhIBERNATErEADY                                                   0xdddd0f4a
-#define ifcIDiMPOTENCEbASEeRRORcODE_FSFILTERoPcOMPLETEDsUCCESSFULLY                                         0xdddd0f4b
-#define ifcIDiMPOTENCEbASEeRRORcODE_INTERRUPTvECTORaLREADYcONNECTED                                         0xdddd0f4c
-#define ifcIDiMPOTENCEbASEeRRORcODE_INTERRUPTsTILLcONNECTED                                                 0xdddd0f4d
-#define ifcIDiMPOTENCEbASEeRRORcODE_WAITfORoPLOCK                                                           0xdddd0f4e
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGeXCEPTIONhANDLED                                                     0xdddd0f4f
-#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcONTINUE                                                             0xdddd0f50
-#define ifcIDiMPOTENCEbASEeRRORcODE_CALLBACKpOPsTACK                                                        0xdddd0f51
-#define ifcIDiMPOTENCEbASEeRRORcODE_COMPRESSIONdISABLED                                                     0xdddd0f52
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANTFETCHBACKWARDS                                                      0xdddd0f53
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANTSCROLLBACKWARDS                                                     0xdddd0f54
-#define ifcIDiMPOTENCEbASEeRRORcODE_ROWSNOTRELEASED                                                         0xdddd0f55
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADaCCESSORfLAGS                                                        0xdddd0f56
-#define ifcIDiMPOTENCEbASEeRRORcODE_ERRORSeNCOUNTERED                                                       0xdddd0f57
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTcAPABLE                                                              0xdddd0f58
-#define ifcIDiMPOTENCEbASEeRRORcODE_REQUESToUToFsEQUENCE                                                    0xdddd0f59
-#define ifcIDiMPOTENCEbASEeRRORcODE_VERSIONpARSEeRROR                                                       0xdddd0f5a
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADSTARTPOSITION                                                        0xdddd0f5b
-#define ifcIDiMPOTENCEbASEeRRORcODE_MEMORYhARDWARE                                                          0xdddd0f5c
-#define ifcIDiMPOTENCEbASEeRRORcODE_DISKrEPAIRdISABLED                                                      0xdddd0f5d
-#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTrESOURCEfORsPECIFIEDsHAREDsECTIONsIZE                       0xdddd0f5e
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMpOWERSTATEtRANSITION                                              0xdddd0f5f
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMpOWERSTATEcOMPLEXtRANSITION                                       0xdddd0f60
-#define ifcIDiMPOTENCEbASEeRRORcODE_MCAeXCEPTION                                                            0xdddd0f61
-#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSaUDITbYpOLICY                                                     0xdddd0f62
-#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDnOsAFERuIbYpOLICY                                         0xdddd0f63
-#define ifcIDiMPOTENCEbASEeRRORcODE_ABANDONhIBERFILE                                                        0xdddd0f64
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATAnETWORKdISCONNECTED                                  0xdddd0f65
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATAnETWORKsERVEReRROR                                   0xdddd0f66
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATAlOCALdISKeRROR                                       0xdddd0f67
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADmCFGtABLE                                                            0xdddd0f68
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0329                                                           0xdddd0f69
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0330                                                           0xdddd0f6a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0331                                                           0xdddd0f6b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0332                                                           0xdddd0f6c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0333                                                           0xdddd0f6d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0334                                                           0xdddd0f6e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0335                                                           0xdddd0f6f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0336                                                           0xdddd0f70
-#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKsWITCHEDtOnEWhANDLE                                               0xdddd0f71
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTgRANTrEQUESTEDoPLOCK                                              0xdddd0f72
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTbREAKoPLOCK                                                       0xdddd0f73
-#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKhANDLEcLOSED                                                      0xdddd0f74
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOaCEcONDITION                                                          0xdddd0f75
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCEcONDITION                                                     0xdddd0f76
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0337                                                           0xdddd0f77
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0338                                                           0xdddd0f78
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0339                                                           0xdddd0f79
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0340                                                           0xdddd0f7a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0341                                                           0xdddd0f7b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0342                                                           0xdddd0f7c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0343                                                           0xdddd0f7d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0344                                                           0xdddd0f7e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0345                                                           0xdddd0f7f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0346                                                           0xdddd0f80
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0347                                                           0xdddd0f81
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0348                                                           0xdddd0f82
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0349                                                           0xdddd0f83
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0350                                                           0xdddd0f84
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0351                                                           0xdddd0f85
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0352                                                           0xdddd0f86
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0353                                                           0xdddd0f87
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0354                                                           0xdddd0f88
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0355                                                           0xdddd0f89
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0356                                                           0xdddd0f8a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0357                                                           0xdddd0f8b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0358                                                           0xdddd0f8c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0359                                                           0xdddd0f8d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0360                                                           0xdddd0f8e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0361                                                           0xdddd0f8f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0362                                                           0xdddd0f90
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0363                                                           0xdddd0f91
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0364                                                           0xdddd0f92
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0365                                                           0xdddd0f93
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0366                                                           0xdddd0f94
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0367                                                           0xdddd0f95
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0368                                                           0xdddd0f96
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0369                                                           0xdddd0f97
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0370                                                           0xdddd0f98
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0371                                                           0xdddd0f99
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0372                                                           0xdddd0f9a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0373                                                           0xdddd0f9b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0374                                                           0xdddd0f9c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0375                                                           0xdddd0f9d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0376                                                           0xdddd0f9e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0377                                                           0xdddd0f9f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0378                                                           0xdddd0fa0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0379                                                           0xdddd0fa1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0380                                                           0xdddd0fa2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0381                                                           0xdddd0fa3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0382                                                           0xdddd0fa4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0383                                                           0xdddd0fa5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0384                                                           0xdddd0fa6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0385                                                           0xdddd0fa7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0386                                                           0xdddd0fa8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0387                                                           0xdddd0fa9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0388                                                           0xdddd0faa
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0389                                                           0xdddd0fab
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0390                                                           0xdddd0fac
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0391                                                           0xdddd0fad
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0392                                                           0xdddd0fae
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0393                                                           0xdddd0faf
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0394                                                           0xdddd0fb0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0395                                                           0xdddd0fb1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0396                                                           0xdddd0fb2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0397                                                           0xdddd0fb3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0398                                                           0xdddd0fb4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0399                                                           0xdddd0fb5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0400                                                           0xdddd0fb6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0401                                                           0xdddd0fb7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0402                                                           0xdddd0fb8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0403                                                           0xdddd0fb9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0404                                                           0xdddd0fba
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0405                                                           0xdddd0fbb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0406                                                           0xdddd0fbc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0407                                                           0xdddd0fbd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0408                                                           0xdddd0fbe
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0409                                                           0xdddd0fbf
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0410                                                           0xdddd0fc0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0411                                                           0xdddd0fc1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0412                                                           0xdddd0fc2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0413                                                           0xdddd0fc3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0414                                                           0xdddd0fc4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0415                                                           0xdddd0fc5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0416                                                           0xdddd0fc6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0417                                                           0xdddd0fc7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0418                                                           0xdddd0fc8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0419                                                           0xdddd0fc9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0420                                                           0xdddd0fca
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0421                                                           0xdddd0fcb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0422                                                           0xdddd0fcc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0423                                                           0xdddd0fcd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0424                                                           0xdddd0fce
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0425                                                           0xdddd0fcf
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0426                                                           0xdddd0fd0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0427                                                           0xdddd0fd1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0428                                                           0xdddd0fd2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0429                                                           0xdddd0fd3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0430                                                           0xdddd0fd4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0431                                                           0xdddd0fd5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0432                                                           0xdddd0fd6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0433                                                           0xdddd0fd7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0434                                                           0xdddd0fd8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0435                                                           0xdddd0fd9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0436                                                           0xdddd0fda
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0437                                                           0xdddd0fdb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0438                                                           0xdddd0fdc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0439                                                           0xdddd0fdd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0440                                                           0xdddd0fde
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0441                                                           0xdddd0fdf
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0442                                                           0xdddd0fe0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0443                                                           0xdddd0fe1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0444                                                           0xdddd0fe2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0445                                                           0xdddd0fe3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0446                                                           0xdddd0fe4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0447                                                           0xdddd0fe5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0448                                                           0xdddd0fe6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0449                                                           0xdddd0fe7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0450                                                           0xdddd0fe8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0451                                                           0xdddd0fe9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0452                                                           0xdddd0fea
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0453                                                           0xdddd0feb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0454                                                           0xdddd0fec
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0455                                                           0xdddd0fed
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0456                                                           0xdddd0fee
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0457                                                           0xdddd0fef
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0458                                                           0xdddd0ff0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0459                                                           0xdddd0ff1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0460                                                           0xdddd0ff2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0461                                                           0xdddd0ff3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0462                                                           0xdddd0ff4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0463                                                           0xdddd0ff5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0464                                                           0xdddd0ff6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0465                                                           0xdddd0ff7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0466                                                           0xdddd0ff8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0467                                                           0xdddd0ff9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0468                                                           0xdddd0ffa
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0469                                                           0xdddd0ffb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0470                                                           0xdddd0ffc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0471                                                           0xdddd0ffd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0472                                                           0xdddd0ffe
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0473                                                           0xdddd0fff
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0474                                                           0xdddd1000
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0475                                                           0xdddd1001
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0476                                                           0xdddd1002
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0477                                                           0xdddd1003
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0478                                                           0xdddd1004
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0479                                                           0xdddd1005
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0480                                                           0xdddd1006
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0481                                                           0xdddd1007
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0482                                                           0xdddd1008
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0483                                                           0xdddd1009
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0484                                                           0xdddd100a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0485                                                           0xdddd100b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0486                                                           0xdddd100c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0487                                                           0xdddd100d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0488                                                           0xdddd100e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0489                                                           0xdddd100f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0490                                                           0xdddd1010
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0491                                                           0xdddd1011
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0492                                                           0xdddd1012
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0493                                                           0xdddd1013
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0494                                                           0xdddd1014
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0495                                                           0xdddd1015
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0496                                                           0xdddd1016
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0497                                                           0xdddd1017
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0498                                                           0xdddd1018
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0499                                                           0xdddd1019
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0500                                                           0xdddd101a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0501                                                           0xdddd101b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0502                                                           0xdddd101c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0503                                                           0xdddd101d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0504                                                           0xdddd101e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0505                                                           0xdddd101f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0506                                                           0xdddd1020
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0507                                                           0xdddd1021
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0508                                                           0xdddd1022
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0509                                                           0xdddd1023
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0510                                                           0xdddd1024
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0511                                                           0xdddd1025
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0512                                                           0xdddd1026
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0513                                                           0xdddd1027
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0514                                                           0xdddd1028
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0515                                                           0xdddd1029
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0516                                                           0xdddd102a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0517                                                           0xdddd102b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0518                                                           0xdddd102c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0519                                                           0xdddd102d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0520                                                           0xdddd102e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0521                                                           0xdddd102f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0522                                                           0xdddd1030
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0523                                                           0xdddd1031
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0524                                                           0xdddd1032
-#define ifcIDiMPOTENCEbASEeRRORcODE_EAaCCESSdENIED                                                          0xdddd1033
-#define ifcIDiMPOTENCEbASEeRRORcODE_OPERATIONaBORTED                                                        0xdddd1034
-#define ifcIDiMPOTENCEbASEeRRORcODE_IOiNCOMPLETE                                                            0xdddd1035
-#define ifcIDiMPOTENCEbASEeRRORcODE_IOpENDING                                                               0xdddd1036
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOACCESS                                                                0xdddd1037
-#define ifcIDiMPOTENCEbASEeRRORcODE_SWAPERROR                                                               0xdddd1038
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0525                                                           0xdddd1039
-#define ifcIDiMPOTENCEbASEeRRORcODE_STACKoVERFLOW                                                           0xdddd103a
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmESSAGE                                                          0xdddd103b
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANnOTcOMPLETE                                                          0xdddd103c
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfLAGS                                                            0xdddd103d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNRECOGNIZEDvOLUME                                                      0xdddd103e
-#define ifcIDiMPOTENCEbASEeRRORcODE_FILEiNVALID                                                             0xdddd103f
-#define ifcIDiMPOTENCEbASEeRRORcODE_FULLSCREENmODE                                                          0xdddd1040
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOtOKEN                                                                 0xdddd1041
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADDB                                                                   0xdddd1042
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADKEY                                                                  0xdddd1043
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANTOPEN                                                                0xdddd1044
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANTREAD                                                                0xdddd1045
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANTWRITE                                                               0xdddd1046
-#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYrECOVERED                                                       0xdddd1047
-#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYcORRUPT                                                         0xdddd1048
-#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYiOfAILED                                                        0xdddd1049
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTrEGISTRYfILE                                                         0xdddd104a
-#define ifcIDiMPOTENCEbASEeRRORcODE_KEYdELETED                                                              0xdddd104b
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOlOGsPACE                                                              0xdddd104c
-#define ifcIDiMPOTENCEbASEeRRORcODE_KEYhAScHILDREN                                                          0xdddd104d
-#define ifcIDiMPOTENCEbASEeRRORcODE_CHILDmUSTbEvOLATILE                                                     0xdddd104e
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTIFYeNUMdIR                                                           0xdddd104f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0526                                                           0xdddd1050
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0527                                                           0xdddd1051
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0528                                                           0xdddd1052
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0529                                                           0xdddd1053
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0530                                                           0xdddd1054
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0531                                                           0xdddd1055
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0532                                                           0xdddd1056
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0533                                                           0xdddd1057
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0534                                                           0xdddd1058
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0535                                                           0xdddd1059
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0536                                                           0xdddd105a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0537                                                           0xdddd105b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0538                                                           0xdddd105c
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0539                                                           0xdddd105d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0540                                                           0xdddd105e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0541                                                           0xdddd105f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0542                                                           0xdddd1060
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0543                                                           0xdddd1061
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0544                                                           0xdddd1062
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0545                                                           0xdddd1063
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0546                                                           0xdddd1064
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0547                                                           0xdddd1065
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0548                                                           0xdddd1066
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0549                                                           0xdddd1067
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0550                                                           0xdddd1068
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0551                                                           0xdddd1069
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0552                                                           0xdddd106a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0553                                                           0xdddd106b
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEPENDENTsERVICESrUNNING                                                0xdddd106c
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICEcONTROL                                                   0xdddd106d
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICErEQUESTtIMEOUT                                                   0xdddd106e
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOtHREAD                                                         0xdddd106f
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdATABASElOCKED                                                   0xdddd1070
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEaLREADYrUNNING                                                   0xdddd1071
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICEaCCOUNT                                                   0xdddd1072
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdISABLED                                                         0xdddd1073
-#define ifcIDiMPOTENCEbASEeRRORcODE_CIRCULARdEPENDENCY                                                      0xdddd1074
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdOESnOTeXIST                                                     0xdddd1075
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEcANNOTaCCEPTcTRL                                                 0xdddd1076
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTaCTIVE                                                        0xdddd1077
-#define ifcIDiMPOTENCEbASEeRRORcODE_FAILEDsERVICEcONTROLLERcONNECT                                          0xdddd1078
-#define ifcIDiMPOTENCEbASEeRRORcODE_EXCEPTIONiNsERVICE                                                      0xdddd1079
-#define ifcIDiMPOTENCEbASEeRRORcODE_DATABASEdOESnOTeXIST                                                    0xdddd107a
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEsPECIFICeRROR                                                    0xdddd107b
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSaBORTED                                                          0xdddd107c
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdEPENDENCYfAIL                                                   0xdddd107d
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICElOGONfAILED                                                      0xdddd107e
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEsTARThANG                                                        0xdddd107f
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICElOCK                                                      0xdddd1080
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEmARKEDfORdELETE                                                  0xdddd1081
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEeXISTS                                                           0xdddd1082
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYrUNNINGlKG                                                       0xdddd1083
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdEPENDENCYdELETED                                                0xdddd1084
-#define ifcIDiMPOTENCEbASEeRRORcODE_BOOTaLREADYaCCEPTED                                                     0xdddd1085
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnEVERsTARTED                                                     0xdddd1086
-#define ifcIDiMPOTENCEbASEeRRORcODE_DUPLICATEsERVICEnAME                                                    0xdddd1087
-#define ifcIDiMPOTENCEbASEeRRORcODE_DIFFERENTsERVICEaCCOUNT                                                 0xdddd1088
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTdETECTdRIVERfAILURE                                               0xdddd1089
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTdETECTpROCESSaBORT                                                0xdddd108a
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOrECOVERYpROGRAM                                                       0xdddd108b
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTiNeXE                                                         0xdddd108c
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsAFEBOOTsERVICE                                                      0xdddd108d
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0554                                                           0xdddd108e
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0555                                                           0xdddd108f
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0556                                                           0xdddd1090
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0557                                                           0xdddd1091
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0558                                                           0xdddd1092
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0559                                                           0xdddd1093
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0560                                                           0xdddd1094
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0561                                                           0xdddd1095
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0562                                                           0xdddd1096
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0563                                                           0xdddd1097
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0564                                                           0xdddd1098
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0565                                                           0xdddd1099
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0566                                                           0xdddd109a
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0567                                                           0xdddd109b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0568                                                           0xdddd109c
-#define ifcIDiMPOTENCEbASEeRRORcODE_ENDoFmEDIA                                                              0xdddd109d
-#define ifcIDiMPOTENCEbASEeRRORcODE_FILEMARKdETECTED                                                        0xdddd109e
-#define ifcIDiMPOTENCEbASEeRRORcODE_BEGINNINGoFmEDIA                                                        0xdddd109f
-#define ifcIDiMPOTENCEbASEeRRORcODE_SETMARKdETECTED                                                         0xdddd10a0
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOdATAdETECTED                                                          0xdddd10a1
-#define ifcIDiMPOTENCEbASEeRRORcODE_PARTITIONfAILURE                                                        0xdddd10a2
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDbLOCKlENGTH                                                      0xdddd10a3
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEnOTpARTITIONED                                                    0xdddd10a4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOlOCKmEDIA                                                       0xdddd10a5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOuNLOADmEDIA                                                     0xdddd10a6
-#define ifcIDiMPOTENCEbASEeRRORcODE_MEDIAcHANGED                                                            0xdddd10a7
-#define ifcIDiMPOTENCEbASEeRRORcODE_BUSrESET                                                                0xdddd10a8
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOmEDIAiNdRIVE                                                          0xdddd10a9
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOuNICODEtRANSLATION                                                    0xdddd10aa
-#define ifcIDiMPOTENCEbASEeRRORcODE_DLLiNITfAILED                                                           0xdddd10ab
-#define ifcIDiMPOTENCEbASEeRRORcODE_SHUTDOWNiNpROGRESS                                                      0xdddd10ac
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsHUTDOWNiNpROGRESS                                                    0xdddd10ad
-#define ifcIDiMPOTENCEbASEeRRORcODE_IOdEVICE                                                                0xdddd10ae
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERIALnOdEVICE                                                          0xdddd10af
-#define ifcIDiMPOTENCEbASEeRRORcODE_IRQbUSY                                                                 0xdddd10b0
-#define ifcIDiMPOTENCEbASEeRRORcODE_MOREwRITES                                                              0xdddd10b1
-#define ifcIDiMPOTENCEbASEeRRORcODE_COUNTERtIMEOUT                                                          0xdddd10b2
-#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYiDmARKnOTfOUND                                                    0xdddd10b3
-#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYwRONGcYLINDER                                                     0xdddd10b4
-#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYuNKNOWNeRROR                                                      0xdddd10b5
-#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYbADrEGISTERS                                                      0xdddd10b6
-#define ifcIDiMPOTENCEbASEeRRORcODE_DISKrECALIBRATEfAILED                                                   0xdddd10b7
-#define ifcIDiMPOTENCEbASEeRRORcODE_DISKoPERATIONfAILED                                                     0xdddd10b8
-#define ifcIDiMPOTENCEbASEeRRORcODE_DISKrESETfAILED                                                         0xdddd10b9
-#define ifcIDiMPOTENCEbASEeRRORcODE_EOMoVERFLOW                                                             0xdddd10ba
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHsERVERmEMORY                                                   0xdddd10bb
-#define ifcIDiMPOTENCEbASEeRRORcODE_POSSIBLEdEADLOCK                                                        0xdddd10bc
-#define ifcIDiMPOTENCEbASEeRRORcODE_MAPPEDaLIGNMENT                                                         0xdddd10bd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0569                                                           0xdddd10be
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0570                                                           0xdddd10bf
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0571                                                           0xdddd10c0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0572                                                           0xdddd10c1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0573                                                           0xdddd10c2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0574                                                           0xdddd10c3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0575                                                           0xdddd10c4
-#define ifcIDiMPOTENCEbASEeRRORcODE_SETpOWERsTATEvETOED                                                     0xdddd10c5
-#define ifcIDiMPOTENCEbASEeRRORcODE_SETpOWERsTATEfAILED                                                     0xdddd10c6
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYlINKS                                                            0xdddd10c7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0576                                                           0xdddd10c8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0577                                                           0xdddd10c9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0578                                                           0xdddd10ca
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0579                                                           0xdddd10cb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0580                                                           0xdddd10cc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0581                                                           0xdddd10cd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0582                                                           0xdddd10ce
-#define ifcIDiMPOTENCEbASEeRRORcODE_OLDwINvERSION                                                           0xdddd10cf
-#define ifcIDiMPOTENCEbASEeRRORcODE_APPwRONGoS                                                              0xdddd10d0
-#define ifcIDiMPOTENCEbASEeRRORcODE_SINGLEiNSTANCEaPP                                                       0xdddd10d1
-#define ifcIDiMPOTENCEbASEeRRORcODE_RMODEaPP                                                                0xdddd10d2
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdLL                                                              0xdddd10d3
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOaSSOCIATION                                                           0xdddd10d4
-#define ifcIDiMPOTENCEbASEeRRORcODE_DDEfAIL                                                                 0xdddd10d5
-#define ifcIDiMPOTENCEbASEeRRORcODE_DLLnOTfOUND                                                             0xdddd10d6
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREuSERhANDLES                                                       0xdddd10d7
-#define ifcIDiMPOTENCEbASEeRRORcODE_MESSAGEsYNCoNLY                                                         0xdddd10d8
-#define ifcIDiMPOTENCEbASEeRRORcODE_SOURCEeLEMENTeMPTY                                                      0xdddd10d9
-#define ifcIDiMPOTENCEbASEeRRORcODE_DESTINATIONeLEMENTfULL                                                  0xdddd10da
-#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALeLEMENTaDDRESS                                                   0xdddd10db
-#define ifcIDiMPOTENCEbASEeRRORcODE_MAGAZINEnOTpRESENT                                                      0xdddd10dc
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICErEINITIALIZATIONnEEDED                                            0xdddd10dd
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICErEQUIREScLEANING                                                  0xdddd10de
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEdOORoPEN                                                          0xdddd10df
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEnOTcONNECTED                                                      0xdddd10e0
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTfOUND                                                                0xdddd10e1
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOmATCH                                                                 0xdddd10e2
-#define ifcIDiMPOTENCEbASEeRRORcODE_SETnOTfOUND                                                             0xdddd10e3
-#define ifcIDiMPOTENCEbASEeRRORcODE_POINTnOTfOUND                                                           0xdddd10e4
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOtRACKINGsERVICE                                                       0xdddd10e5
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOvOLUMEiD                                                              0xdddd10e6
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0583                                                           0xdddd10e7
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOrEMOVErEPLACED                                                  0xdddd10e8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOmOVErEPLACEMENT                                                 0xdddd10e9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOmOVErEPLACEMENT_2                                               0xdddd10ea
-#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALdELETEiNpROGRESS                                                 0xdddd10eb
-#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALnOTaCTIVE                                                        0xdddd10ec
-#define ifcIDiMPOTENCEbASEeRRORcODE_POTENTIALfILEfOUND                                                      0xdddd10ed
-#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALeNTRYdELETED                                                     0xdddd10ee
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0584                                                           0xdddd10ef
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0585                                                           0xdddd10f0
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0586                                                           0xdddd10f1
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0587                                                           0xdddd10f2
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0588                                                           0xdddd10f3
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0589                                                           0xdddd10f4
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0590                                                           0xdddd10f5
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0591                                                           0xdddd10f6
-#define ifcIDiMPOTENCEbASEeRRORcODE_SHUTDOWNiSsCHEDULED                                                     0xdddd10f7
-#define ifcIDiMPOTENCEbASEeRRORcODE_SHUTDOWNuSERSlOGGEDoN                                                   0xdddd10f8
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0592                                                           0xdddd10f9
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0593                                                           0xdddd10fa
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0594                                                           0xdddd10fb
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0595                                                           0xdddd10fc
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0596                                                           0xdddd10fd
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0597                                                           0xdddd10fe
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0598                                                           0xdddd10ff
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0599                                                           0xdddd1100
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADdEVICE                                                               0xdddd1101
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONuNAVAIL                                                       0xdddd1102
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEaLREADYrEMEMBERED                                                 0xdddd1103
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOnEToRbADpATH                                                          0xdddd1104
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADpROVIDER                                                             0xdddd1105
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOToPENpROFILE                                                       0xdddd1106
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADpROFILE                                                              0xdddd1107
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTcONTAINER                                                            0xdddd1108
-#define ifcIDiMPOTENCEbASEeRRORcODE_EXTENDEDeRROR                                                           0xdddd1109
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDgROUPNAME                                                        0xdddd110a
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcOMPUTERNAME                                                     0xdddd110b
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeVENTNAME                                                        0xdddd110c
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdOMAINNAME                                                       0xdddd110d
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICENAME                                                      0xdddd110e
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDnETNAME                                                          0xdddd110f
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsHARENAME                                                        0xdddd1110
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpASSWORDNAME                                                     0xdddd1111
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmESSAGENAME                                                      0xdddd1112
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmESSAGEDEST                                                      0xdddd1113
-#define ifcIDiMPOTENCEbASEeRRORcODE_SESSIONcREDENTIALcONFLICT                                               0xdddd1114
-#define ifcIDiMPOTENCEbASEeRRORcODE_REMOTEsESSIONlIMITeXCEEDED                                              0xdddd1115
-#define ifcIDiMPOTENCEbASEeRRORcODE_DUPdOMAINNAME                                                           0xdddd1116
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOnETWORK                                                               0xdddd1117
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANCELLED                                                               0xdddd1118
-#define ifcIDiMPOTENCEbASEeRRORcODE_USERmAPPEDfILE                                                          0xdddd1119
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONrEFUSED                                                       0xdddd111a
-#define ifcIDiMPOTENCEbASEeRRORcODE_GRACEFULdISCONNECT                                                      0xdddd111b
-#define ifcIDiMPOTENCEbASEeRRORcODE_ADDRESSaLREADYaSSOCIATED                                                0xdddd111c
-#define ifcIDiMPOTENCEbASEeRRORcODE_ADDRESSnOTaSSOCIATED                                                    0xdddd111d
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONiNVALID                                                       0xdddd111e
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONaCTIVE                                                        0xdddd111f
-#define ifcIDiMPOTENCEbASEeRRORcODE_NETWORKuNREACHABLE                                                      0xdddd1120
-#define ifcIDiMPOTENCEbASEeRRORcODE_HOSTuNREACHABLE                                                         0xdddd1121
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROTOCOLuNREACHABLE                                                     0xdddd1122
-#define ifcIDiMPOTENCEbASEeRRORcODE_PORTuNREACHABLE                                                         0xdddd1123
-#define ifcIDiMPOTENCEbASEeRRORcODE_REQUESTaBORTED                                                          0xdddd1124
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONaBORTED                                                       0xdddd1125
-#define ifcIDiMPOTENCEbASEeRRORcODE_RETRY                                                                   0xdddd1126
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONcOUNTlIMIT                                                    0xdddd1127
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOGINtIMErESTRICTION                                                    0xdddd1128
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOGINwKSTArESTRICTION                                                   0xdddd1129
-#define ifcIDiMPOTENCEbASEeRRORcODE_INCORRECTaDDRESS                                                        0xdddd112a
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYrEGISTERED                                                       0xdddd112b
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTfOUND                                                         0xdddd112c
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTaUTHENTICATED                                                        0xdddd112d
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTlOGGEDoN                                                             0xdddd112e
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONTINUE                                                                0xdddd112f
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYiNITIALIZED                                                      0xdddd1130
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREdEVICES                                                           0xdddd1131
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHsITE                                                              0xdddd1132
-#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINcONTROLLEReXISTS                                                  0xdddd1133
-#define ifcIDiMPOTENCEbASEeRRORcODE_ONLYiFcONNECTED                                                         0xdddd1134
-#define ifcIDiMPOTENCEbASEeRRORcODE_OVERRIDEnOCHANGES                                                       0xdddd1135
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADuSERpROFILE                                                          0xdddd1136
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsUPPORTEDoNsBS                                                       0xdddd1137
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERsHUTDOWNiNpROGRESS                                                0xdddd1138
-#define ifcIDiMPOTENCEbASEeRRORcODE_HOSTdOWN                                                                0xdddd1139
-#define ifcIDiMPOTENCEbASEeRRORcODE_NONaCCOUNTsID                                                           0xdddd113a
-#define ifcIDiMPOTENCEbASEeRRORcODE_NONdOMAINsID                                                            0xdddd113b
-#define ifcIDiMPOTENCEbASEeRRORcODE_APPHELPbLOCK                                                            0xdddd113c
-#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDbYpOLICY                                                  0xdddd113d
-#define ifcIDiMPOTENCEbASEeRRORcODE_REGnATcONSUMPTION                                                       0xdddd113e
-#define ifcIDiMPOTENCEbASEeRRORcODE_CSCSHAREoFFLINE                                                         0xdddd113f
-#define ifcIDiMPOTENCEbASEeRRORcODE_PKINITfAILURE                                                           0xdddd1140
-#define ifcIDiMPOTENCEbASEeRRORcODE_SMARTCARDsUBSYSTEMfAILURE                                               0xdddd1141
-#define ifcIDiMPOTENCEbASEeRRORcODE_DOWNGRADEdETECTED                                                       0xdddd1142
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0600                                                           0xdddd1143
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0601                                                           0xdddd1144
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0602                                                           0xdddd1145
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0603                                                           0xdddd1146
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0604                                                           0xdddd1147
-#define ifcIDiMPOTENCEbASEeRRORcODE_MACHINElOCKED                                                           0xdddd1148
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0605                                                           0xdddd1149
-#define ifcIDiMPOTENCEbASEeRRORcODE_CALLBACKsUPPLIEDiNVALIDdATA                                             0xdddd114a
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYNCfOREGROUNDrEFRESHrEQUIRED                                           0xdddd114b
-#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERbLOCKED                                                           0xdddd114c
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiMPORToFnONdLL                                                   0xdddd114d
-#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDwEBBLADE                                                  0xdddd114e
-#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDwEBBLADEtAMPER                                            0xdddd114f
-#define ifcIDiMPOTENCEbASEeRRORcODE_RECOVERYfAILURE                                                         0xdddd1150
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYfIBER                                                            0xdddd1151
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYtHREAD                                                           0xdddd1152
-#define ifcIDiMPOTENCEbASEeRRORcODE_STACKbUFFERoVERRUN                                                      0xdddd1153
-#define ifcIDiMPOTENCEbASEeRRORcODE_PARAMETERqUOTAeXCEEDED                                                  0xdddd1154
-#define ifcIDiMPOTENCEbASEeRRORcODE_DEBUGGERiNACTIVE                                                        0xdddd1155
-#define ifcIDiMPOTENCEbASEeRRORcODE_DELAYlOADfAILED                                                         0xdddd1156
-#define ifcIDiMPOTENCEbASEeRRORcODE_VDMdISALLOWED                                                           0xdddd1157
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNIDENTIFIEDeRROR                                                       0xdddd1158
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcRUNTIMEpARAMETER                                                0xdddd1159
-#define ifcIDiMPOTENCEbASEeRRORcODE_BEYONDvDL                                                               0xdddd115a
-#define ifcIDiMPOTENCEbASEeRRORcODE_INCOMPATIBLEsERVICEsIDtYPE                                              0xdddd115b
-#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERpROCESStERMINATED                                                 0xdddd115c
-#define ifcIDiMPOTENCEbASEeRRORcODE_IMPLEMENTATIONlIMIT                                                     0xdddd115d
-#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSiSpROTECTED                                                      0xdddd115e
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTIFYcLIENTlAGGING                                              0xdddd115f
-#define ifcIDiMPOTENCEbASEeRRORcODE_DISKqUOTAeXCEEDED                                                       0xdddd1160
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONTENTbLOCKED                                                          0xdddd1161
-#define ifcIDiMPOTENCEbASEeRRORcODE_INCOMPATIBLEsERVICEpRIVILEGE                                            0xdddd1162
-#define ifcIDiMPOTENCEbASEeRRORcODE_APPhANG                                                                 0xdddd1163
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlABEL                                                            0xdddd1164
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTaLLaSSIGNED                                                          0xdddd1165
-#define ifcIDiMPOTENCEbASEeRRORcODE_SOMEnOTmAPPED                                                           0xdddd1166
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOqUOTASfORaCCOUNT                                                      0xdddd1167
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOCALuSERsESSIONkEY                                                     0xdddd1168
-#define ifcIDiMPOTENCEbASEeRRORcODE_NULLlMpASSWORD                                                          0xdddd1169
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNKNOWNrEVISION                                                         0xdddd116a
-#define ifcIDiMPOTENCEbASEeRRORcODE_REVISIONmISMATCH                                                        0xdddd116b
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDoWNER                                                            0xdddd116c
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpRIMARYgROUP                                                     0xdddd116d
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOiMPERSONATIONtOKEN                                                    0xdddd116e
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANTdISABLEmANDATORY                                                    0xdddd116f
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOlOGONsERVERS                                                          0xdddd1170
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHlOGONsESSION                                                      0xdddd1171
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHpRIVILEGE                                                         0xdddd1172
-#define ifcIDiMPOTENCEbASEeRRORcODE_PRIVILEGEnOThELD                                                        0xdddd1173
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCCOUNTnAME                                                      0xdddd1174
-#define ifcIDiMPOTENCEbASEeRRORcODE_USEReXISTS                                                              0xdddd1175
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHuSER                                                              0xdddd1176
-#define ifcIDiMPOTENCEbASEeRRORcODE_GROUPeXISTS                                                             0xdddd1177
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHgROUP                                                             0xdddd1178
-#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERiNgROUP                                                           0xdddd1179
-#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERnOTiNgROUP                                                        0xdddd117a
-#define ifcIDiMPOTENCEbASEeRRORcODE_LASTaDMIN                                                               0xdddd117b
-#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGpASSWORD                                                           0xdddd117c
-#define ifcIDiMPOTENCEbASEeRRORcODE_ILLfORMEDpASSWORD                                                       0xdddd117d
-#define ifcIDiMPOTENCEbASEeRRORcODE_PASSWORDrESTRICTION                                                     0xdddd117e
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONfAILURE                                                            0xdddd117f
-#define ifcIDiMPOTENCEbASEeRRORcODE_ACCOUNTrESTRICTION                                                      0xdddd1180
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlOGONhOURS                                                       0xdddd1181
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDwORKSTATION                                                      0xdddd1182
-#define ifcIDiMPOTENCEbASEeRRORcODE_PASSWORDeXPIRED                                                         0xdddd1183
-#define ifcIDiMPOTENCEbASEeRRORcODE_ACCOUNTdISABLED                                                         0xdddd1184
-#define ifcIDiMPOTENCEbASEeRRORcODE_NONEmAPPED                                                              0xdddd1185
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYlUIDSrEQUESTED                                                   0xdddd1186
-#define ifcIDiMPOTENCEbASEeRRORcODE_LUIDSeXHAUSTED                                                          0xdddd1187
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsUBaUTHORITY                                                     0xdddd1188
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCL                                                              0xdddd1189
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsID                                                              0xdddd118a
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsECURITYdESCR                                                    0xdddd118b
-#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0606                                                           0xdddd118c
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADiNHERITANCEaCL                                                       0xdddd118d
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERdISABLED                                                          0xdddd118e
-#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERnOTdISABLED                                                       0xdddd118f
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiDaUTHORITY                                                      0xdddd1190
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALLOTTEDsPACEeXCEEDED                                                   0xdddd1191
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDgROUPaTTRIBUTES                                                  0xdddd1192
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADiMPERSONATIONlEVEL                                                   0xdddd1193
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANToPENaNONYMOUS                                                       0xdddd1194
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADvALIDATIONcLASS                                                      0xdddd1195
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADtOKENtYPE                                                            0xdddd1196
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsECURITYoNoBJECT                                                      0xdddd1197
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANTaCCESSdOMAINiNFO                                                    0xdddd1198
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVERsTATE                                                      0xdddd1199
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdOMAINsTATE                                                      0xdddd119a
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdOMAINrOLE                                                       0xdddd119b
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHdOMAIN                                                            0xdddd119c
-#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINeXISTS                                                            0xdddd119d
-#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINlIMITeXCEEDED                                                     0xdddd119e
-#define ifcIDiMPOTENCEbASEeRRORcODE_INTERNALdBcORRUPTION                                                    0xdddd119f
-#define ifcIDiMPOTENCEbASEeRRORcODE_INTERNALeRROR                                                           0xdddd11a0
-#define ifcIDiMPOTENCEbASEeRRORcODE_GENERICnOTmAPPED                                                        0xdddd11a1
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADdESCRIPTORfORMAT                                                     0xdddd11a2
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTlOGONpROCESS                                                         0xdddd11a3
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONsESSIONeXISTS                                                      0xdddd11a4
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHpACKAGE                                                           0xdddd11a5
-#define ifcIDiMPOTENCEbASEeRRORcODE_BADlOGONsESSIONsTATE                                                    0xdddd11a6
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONsESSIONcOLLISION                                                   0xdddd11a7
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlOGONtYPE                                                        0xdddd11a8
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTiMPERSONATE                                                       0xdddd11a9
-#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTiNVALIDsTATE                                                       0xdddd11aa
-#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTcOMMITfAILURE                                                      0xdddd11ab
-#define ifcIDiMPOTENCEbASEeRRORcODE_SPECIALaCCOUNT                                                          0xdddd11ac
-#define ifcIDiMPOTENCEbASEeRRORcODE_SPECIALgROUP                                                            0xdddd11ad
-#define ifcIDiMPOTENCEbASEeRRORcODE_SPECIALuSER                                                             0xdddd11ae
-#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERSpRIMARYgROUP                                                     0xdddd11af
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOKENaLREADYiNuSE                                                       0xdddd11b0
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHaLIAS                                                             0xdddd11b1
-#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERnOTiNaLIAS                                                        0xdddd11b2
-#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERiNaLIAS                                                           0xdddd11b3
-#define ifcIDiMPOTENCEbASEeRRORcODE_ALIASeXISTS                                                             0xdddd11b4
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONnOTgRANTED                                                         0xdddd11b5
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsECRETS                                                          0xdddd11b6
-#define ifcIDiMPOTENCEbASEeRRORcODE_SECRETtOOlONG                                                           0xdddd11b7
-#define ifcIDiMPOTENCEbASEeRRORcODE_INTERNALdBeRROR                                                         0xdddd11b8
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYcONTEXTiDS                                                       0xdddd11b9
-#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONtYPEnOTgRANTED                                                     0xdddd11ba
-#define ifcIDiMPOTENCEbASEeRRORcODE_NTcROSSeNCRYPTIONrEQUIRED                                               0xdddd11bb
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHmEMBER                                                            0xdddd11bc
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmEMBER                                                           0xdddd11bd
-#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsIDS                                                             0xdddd11be
-#define ifcIDiMPOTENCEbASEeRRORcODE_LMcROSSeNCRYPTIONrEQUIRED                                               0xdddd11bf
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOiNHERITANCE                                                           0xdddd11c0
-#define ifcIDiMPOTENCEbASEeRRORcODE_FILEcORRUPT                                                             0xdddd11c1
-#define ifcIDiMPOTENCEbASEeRRORcODE_DISKcORRUPT                                                             0xdddd11c2
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOuSERsESSIONkEY                                                        0xdddd11c3
-#define ifcIDiMPOTENCEbASEeRRORcODE_LICENSEqUOTAeXCEEDED                                                    0xdddd11c4
-#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGtARGETnAME                                                         0xdddd11c5
-#define ifcIDiMPOTENCEbASEeRRORcODE_MUTUALaUTHfAILED                                                        0xdddd11c6
-#define ifcIDiMPOTENCEbASEeRRORcODE_TIMEsKEW                                                                0xdddd11c7
-#define ifcIDiMPOTENCEbASEeRRORcODE_CURRENTdOMAINnOTaLLOWED                                                 0xdddd11c8
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDwINDOWhANDLE                                                     0xdddd11c9
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmENUhANDLE                                                       0xdddd11ca
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcURSORhANDLE                                                     0xdddd11cb
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCCELhANDLE                                                      0xdddd11cc
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhOOKhANDLE                                                       0xdddd11cd
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdWPhANDLE                                                        0xdddd11ce
-#define ifcIDiMPOTENCEbASEeRRORcODE_TLWwITHwSCHILD                                                          0xdddd11cf
-#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTfINDwNDcLASS                                                      0xdddd11d0
-#define ifcIDiMPOTENCEbASEeRRORcODE_WINDOWoFoTHERtHREAD                                                     0xdddd11d1
-#define ifcIDiMPOTENCEbASEeRRORcODE_HOTKEYaLREADYrEGISTERED                                                 0xdddd11d2
-#define ifcIDiMPOTENCEbASEeRRORcODE_CLASSaLREADYeXISTS                                                      0xdddd11d3
-#define ifcIDiMPOTENCEbASEeRRORcODE_CLASSdOESnOTeXIST                                                       0xdddd11d4
-#define ifcIDiMPOTENCEbASEeRRORcODE_CLASShASwINDOWS                                                         0xdddd11d5
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiNDEX                                                            0xdddd11d6
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiCONhANDLE                                                       0xdddd11d7
-#define ifcIDiMPOTENCEbASEeRRORcODE_PRIVATEdIALOGiNDEX                                                      0xdddd11d8
-#define ifcIDiMPOTENCEbASEeRRORcODE_LISTBOXiDnOTfOUND                                                       0xdddd11d9
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOwILDCARDcHARACTERS                                                    0xdddd11da
-#define ifcIDiMPOTENCEbASEeRRORcODE_CLIPBOARDnOToPEN                                                        0xdddd11db
-#define ifcIDiMPOTENCEbASEeRRORcODE_HOTKEYnOTrEGISTERED                                                     0xdddd11dc
-#define ifcIDiMPOTENCEbASEeRRORcODE_WINDOWnOTdIALOG                                                         0xdddd11dd
-#define ifcIDiMPOTENCEbASEeRRORcODE_CONTROLiDnOTfOUND                                                       0xdddd11de
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcOMBOBOXmESSAGE                                                  0xdddd11df
-#define ifcIDiMPOTENCEbASEeRRORcODE_WINDOWnOTcOMBOBOX                                                       0xdddd11e0
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeDIThEIGHT                                                       0xdddd11e1
-#define ifcIDiMPOTENCEbASEeRRORcODE_DCnOTfOUND                                                              0xdddd11e2
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhOOKfILTER                                                       0xdddd11e3
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfILTERpROC                                                       0xdddd11e4
-#define ifcIDiMPOTENCEbASEeRRORcODE_HOOKnEEDShMOD                                                           0xdddd11e5
-#define ifcIDiMPOTENCEbASEeRRORcODE_GLOBALoNLYhOOK                                                          0xdddd11e6
-#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALhOOKsET                                                          0xdddd11e7
-#define ifcIDiMPOTENCEbASEeRRORcODE_HOOKnOTiNSTALLED                                                        0xdddd11e8
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlBmESSAGE                                                        0xdddd11e9
-#define ifcIDiMPOTENCEbASEeRRORcODE_SETCOUNToNbADlB                                                         0xdddd11ea
-#define ifcIDiMPOTENCEbASEeRRORcODE_LBwITHOUTtABSTOPS                                                       0xdddd11eb
-#define ifcIDiMPOTENCEbASEeRRORcODE_DESTROYoBJECToFoTHERtHREAD                                              0xdddd11ec
-#define ifcIDiMPOTENCEbASEeRRORcODE_CHILDwINDOWmENU                                                         0xdddd11ed
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsYSTEMmENU                                                            0xdddd11ee
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmSGBOXsTYLE                                                      0xdddd11ef
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsPIvALUE                                                         0xdddd11f0
-#define ifcIDiMPOTENCEbASEeRRORcODE_SCREENaLREADYlOCKED                                                     0xdddd11f1
-#define ifcIDiMPOTENCEbASEeRRORcODE_HWNDShAVEdIFFpARENT                                                     0xdddd11f2
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOTcHILDwINDOW                                                          0xdddd11f3
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDgWcOMMAND                                                        0xdddd11f4
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDtHREADiD                                                         0xdddd11f5
-#define ifcIDiMPOTENCEbASEeRRORcODE_NONmDICHILDwINDOW                                                       0xdddd11f6
-#define ifcIDiMPOTENCEbASEeRRORcODE_POPUPaLREADYaCTIVE                                                      0xdddd11f7
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsCROLLBARS                                                            0xdddd11f8
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsCROLLBARrANGE                                                   0xdddd11f9
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsHOWWINcOMMAND                                                   0xdddd11fa
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOsYSTEMrESOURCES                                                       0xdddd11fb
-#define ifcIDiMPOTENCEbASEeRRORcODE_NONPAGEDsYSTEMrESOURCES                                                 0xdddd11fc
-#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEDsYSTEMrESOURCES                                                    0xdddd11fd
-#define ifcIDiMPOTENCEbASEeRRORcODE_WORKINGsETqUOTA                                                         0xdddd11fe
-#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEFILEqUOTA                                                           0xdddd11ff
-#define ifcIDiMPOTENCEbASEeRRORcODE_COMMITMENTlIMIT                                                         0xdddd1200
-#define ifcIDiMPOTENCEbASEeRRORcODE_MENUiTEMnOTfOUND                                                        0xdddd1201
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDkEYBOARDhANDLE                                                   0xdddd1202
-#define ifcIDiMPOTENCEbASEeRRORcODE_HOOKtYPEnOTaLLOWED                                                      0xdddd1203
-#define ifcIDiMPOTENCEbASEeRRORcODE_REQUIRESiNTERACTIVEwINDOWSTATION                                        0xdddd1204
-#define ifcIDiMPOTENCEbASEeRRORcODE_TIMEOUT                                                                 0xdddd1205
-#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmONITORhANDLE                                                    0xdddd1206
-#define ifcIDiMPOTENCEbASEeRRORcODE_INCORRECTsIZE                                                           0xdddd1207
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYMLINKcLASSdISABLED                                                    0xdddd1208
-#define ifcIDiMPOTENCEbASEeRRORcODE_SYMLINKnOTsUPPORTED                                                     0xdddd1209
-#define ifcIDiMPOTENCEbASEeRRORcODE_XMLpARSEeRROR                                                           0xdddd120a
-#define ifcIDiMPOTENCEbASEeRRORcODE_XMLdSIGeRROR                                                            0xdddd120b
-#define ifcIDiMPOTENCEbASEeRRORcODE_RESTARTaPPLICATION                                                      0xdddd120c
-#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGcOMPARTMENT                                                        0xdddd120d
-#define ifcIDiMPOTENCEbASEeRRORcODE_AUTHIPfAILURE                                                           0xdddd120e
-#define ifcIDiMPOTENCEbASEeRRORcODE_NOnVRAMrESOURCES                                                        0xdddd120f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfUNCTION                                                         0xdddd0c54
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEnOTfOUND                                                            0xdddd0c55
+#define ifcIDiMPOTENCEbASEeRRORcODE_PATHnOTfOUND                                                            0xdddd0c56
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYoPENfILES                                                        0xdddd0c57
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdENIED                                                            0xdddd0c58
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhANDLE                                                           0xdddd0c59
+#define ifcIDiMPOTENCEbASEeRRORcODE_ARENAtRASHED                                                            0xdddd0c5a
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHmEMORY                                                         0xdddd0c5b
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDbLOCK                                                            0xdddd0c5c
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADeNVIRONMENT                                                          0xdddd0c5d
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADfORMAT                                                               0xdddd0c5e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCCESS                                                           0xdddd0c5f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdATA                                                             0xdddd0c60
+#define ifcIDiMPOTENCEbASEeRRORcODE_OUTOFMEMORY                                                             0xdddd0c61
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdRIVE                                                            0xdddd0c62
+#define ifcIDiMPOTENCEbASEeRRORcODE_CURRENTdIRECTORY                                                        0xdddd0c63
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsAMEdEVICE                                                           0xdddd0c64
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREfILES                                                             0xdddd0c65
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRITEpROTECT                                                            0xdddd0c66
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADuNIT                                                                 0xdddd0c67
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTrEADY                                                                0xdddd0c68
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADcOMMAND                                                              0xdddd0c69
+#define ifcIDiMPOTENCEbASEeRRORcODE_CRC                                                                     0xdddd0c6a
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADlENGTH                                                               0xdddd0c6b
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEEK                                                                    0xdddd0c6c
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTdOSdISK                                                              0xdddd0c6d
+#define ifcIDiMPOTENCEbASEeRRORcODE_SECTORnOTfOUND                                                          0xdddd0c6e
+#define ifcIDiMPOTENCEbASEeRRORcODE_OUToFpAPER                                                              0xdddd0c6f
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRITEfAULT                                                              0xdddd0c70
+#define ifcIDiMPOTENCEbASEeRRORcODE_READfAULT                                                               0xdddd0c71
+#define ifcIDiMPOTENCEbASEeRRORcODE_GENfAILURE                                                              0xdddd0c72
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHARINGvIOLATION                                                        0xdddd0c73
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOCKvIOLATION                                                           0xdddd0c74
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGdISK                                                               0xdddd0c75
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0001                                                           0xdddd0c76
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHARINGbUFFEReXCEEDED                                                   0xdddd0c77
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0002                                                           0xdddd0c78
+#define ifcIDiMPOTENCEbASEeRRORcODE_HANDLEeOF                                                               0xdddd0c79
+#define ifcIDiMPOTENCEbASEeRRORcODE_HANDLEdISKfULL                                                          0xdddd0c7a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0003                                                           0xdddd0c7b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0004                                                           0xdddd0c7c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0005                                                           0xdddd0c7d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0006                                                           0xdddd0c7e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0007                                                           0xdddd0c7f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0008                                                           0xdddd0c80
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0009                                                           0xdddd0c81
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0010                                                           0xdddd0c82
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0011                                                           0xdddd0c83
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0012                                                           0xdddd0c84
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsUPPORTED                                                            0xdddd0c85
+#define ifcIDiMPOTENCEbASEeRRORcODE_REMnOTlIST                                                              0xdddd0c86
+#define ifcIDiMPOTENCEbASEeRRORcODE_DUPnAME                                                                 0xdddd0c87
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADnETPATH                                                              0xdddd0c88
+#define ifcIDiMPOTENCEbASEeRRORcODE_NETWORKbUSY                                                             0xdddd0c89
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVnOTeXIST                                                             0xdddd0c8a
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYcMDS                                                             0xdddd0c8b
+#define ifcIDiMPOTENCEbASEeRRORcODE_ADAPhDWeRR                                                              0xdddd0c8c
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADnETrESP                                                              0xdddd0c8d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPnETeRR                                                             0xdddd0c8e
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADrEMaDAP                                                              0xdddd0c8f
+#define ifcIDiMPOTENCEbASEeRRORcODE_PRINTQfULL                                                              0xdddd0c90
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsPOOLsPACE                                                            0xdddd0c91
+#define ifcIDiMPOTENCEbASEeRRORcODE_PRINTcANCELLED                                                          0xdddd0c92
+#define ifcIDiMPOTENCEbASEeRRORcODE_NETNAMEdELETED                                                          0xdddd0c93
+#define ifcIDiMPOTENCEbASEeRRORcODE_NETWORKaCCESSdENIED                                                     0xdddd0c94
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADdEVtYPE                                                              0xdddd0c95
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADnETnAME                                                              0xdddd0c96
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYnAMES                                                            0xdddd0c97
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsESS                                                             0xdddd0c98
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHARINGpAUSED                                                           0xdddd0c99
+#define ifcIDiMPOTENCEbASEeRRORcODE_REQnOTaCCEP                                                             0xdddd0c9a
+#define ifcIDiMPOTENCEbASEeRRORcODE_REDIRpAUSED                                                             0xdddd0c9b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0013                                                           0xdddd0c9c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0014                                                           0xdddd0c9d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0015                                                           0xdddd0c9e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0016                                                           0xdddd0c9f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0017                                                           0xdddd0ca0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0018                                                           0xdddd0ca1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0019                                                           0xdddd0ca2
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEeXISTS                                                              0xdddd0ca3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0020                                                           0xdddd0ca4
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTmAKE                                                              0xdddd0ca5
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILi24                                                                 0xdddd0ca6
+#define ifcIDiMPOTENCEbASEeRRORcODE_OUToFsTRUCTURES                                                         0xdddd0ca7
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYaSSIGNED                                                         0xdddd0ca8
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpASSWORD                                                         0xdddd0ca9
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpARAMETER                                                        0xdddd0caa
+#define ifcIDiMPOTENCEbASEeRRORcODE_NETwRITEfAULT                                                           0xdddd0cab
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOpROCsLOTS                                                             0xdddd0cac
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0021                                                           0xdddd0cad
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0022                                                           0xdddd0cae
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0023                                                           0xdddd0caf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0024                                                           0xdddd0cb0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0025                                                           0xdddd0cb1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0026                                                           0xdddd0cb2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0027                                                           0xdddd0cb3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0028                                                           0xdddd0cb4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0029                                                           0xdddd0cb5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0030                                                           0xdddd0cb6
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsEMAPHORES                                                       0xdddd0cb7
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXCLsEMaLREADYoWNED                                                     0xdddd0cb8
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEMiSsET                                                                0xdddd0cb9
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsEMrEQUESTS                                                      0xdddd0cba
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaTiNTERRUPTtIME                                                  0xdddd0cbb
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEMoWNERdIED                                                            0xdddd0cbc
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEMuSERlIMIT                                                            0xdddd0cbd
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKcHANGE                                                              0xdddd0cbe
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVElOCKED                                                             0xdddd0cbf
+#define ifcIDiMPOTENCEbASEeRRORcODE_BROKENpIPE                                                              0xdddd0cc0
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPENfAILED                                                              0xdddd0cc1
+#define ifcIDiMPOTENCEbASEeRRORcODE_BUFFERoVERFLOW                                                          0xdddd0cc2
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKfULL                                                                0xdddd0cc3
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREsEARCHhANDLES                                                     0xdddd0cc4
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDtARGEThANDLE                                                     0xdddd0cc5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0031                                                           0xdddd0cc6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0032                                                           0xdddd0cc7
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcATEGORY                                                         0xdddd0cc8
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDvERIFYsWITCH                                                     0xdddd0cc9
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADdRIVERlEVEL                                                          0xdddd0cca
+#define ifcIDiMPOTENCEbASEeRRORcODE_CALLnOTiMPLEMENTED                                                      0xdddd0ccb
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEMtIMEOUT                                                              0xdddd0ccc
+#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTbUFFER                                                      0xdddd0ccd
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDnAME                                                             0xdddd0cce
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlEVEL                                                            0xdddd0ccf
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOvOLUMElABEL                                                           0xdddd0cd0
+#define ifcIDiMPOTENCEbASEeRRORcODE_MODnOTfOUND                                                             0xdddd0cd1
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCnOTfOUND                                                            0xdddd0cd2
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAITnOcHILDREN                                                          0xdddd0cd3
+#define ifcIDiMPOTENCEbASEeRRORcODE_CHILDnOTcOMPLETE                                                        0xdddd0cd4
+#define ifcIDiMPOTENCEbASEeRRORcODE_DIRECTaCCESShANDLE                                                      0xdddd0cd5
+#define ifcIDiMPOTENCEbASEeRRORcODE_NEGATIVEsEEK                                                            0xdddd0cd6
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEEKoNdEVICE                                                            0xdddd0cd7
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISjOINtARGET                                                            0xdddd0cd8
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISjOINED                                                                0xdddd0cd9
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISsUBSTED                                                               0xdddd0cda
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTjOINED                                                               0xdddd0cdb
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsUBSTED                                                              0xdddd0cdc
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOINtOjOIN                                                              0xdddd0cdd
+#define ifcIDiMPOTENCEbASEeRRORcODE_SUBSTtOsUBST                                                            0xdddd0cde
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOINtOsUBST                                                             0xdddd0cdf
+#define ifcIDiMPOTENCEbASEeRRORcODE_SUBSTtOjOIN                                                             0xdddd0ce0
+#define ifcIDiMPOTENCEbASEeRRORcODE_BUSYdRIVE                                                               0xdddd0ce1
+#define ifcIDiMPOTENCEbASEeRRORcODE_SAMEdRIVE                                                               0xdddd0ce2
+#define ifcIDiMPOTENCEbASEeRRORcODE_DIRnOTrOOT                                                              0xdddd0ce3
+#define ifcIDiMPOTENCEbASEeRRORcODE_DIRnOTeMPTY                                                             0xdddd0ce4
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISsUBSTpATH                                                             0xdddd0ce5
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISjOINpATH                                                              0xdddd0ce6
+#define ifcIDiMPOTENCEbASEeRRORcODE_PATHbUSY                                                                0xdddd0ce7
+#define ifcIDiMPOTENCEbASEeRRORcODE_ISsUBSTtARGET                                                           0xdddd0ce8
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMtRACE                                                             0xdddd0ce9
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeVENTcOUNT                                                       0xdddd0cea
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYmUXWAITERS                                                       0xdddd0ceb
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlISTfORMAT                                                       0xdddd0cec
+#define ifcIDiMPOTENCEbASEeRRORcODE_LABELtOOlONG                                                            0xdddd0ced
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYtCBS                                                             0xdddd0cee
+#define ifcIDiMPOTENCEbASEeRRORcODE_SIGNALrEFUSED                                                           0xdddd0cef
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISCARDED                                                               0xdddd0cf0
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTlOCKED                                                               0xdddd0cf1
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADtHREADIDaDDR                                                         0xdddd0cf2
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADaRGUMENTS                                                            0xdddd0cf3
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADpATHNAME                                                             0xdddd0cf4
+#define ifcIDiMPOTENCEbASEeRRORcODE_SIGNALpENDING                                                           0xdddd0cf5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0033                                                           0xdddd0cf6
+#define ifcIDiMPOTENCEbASEeRRORcODE_MAXtHRDSrEACHED                                                         0xdddd0cf7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0034                                                           0xdddd0cf8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0035                                                           0xdddd0cf9
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOCKfAILED                                                              0xdddd0cfa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0036                                                           0xdddd0cfb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0037                                                           0xdddd0cfc
+#define ifcIDiMPOTENCEbASEeRRORcODE_BUSY                                                                    0xdddd0cfd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0038                                                           0xdddd0cfe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0039                                                           0xdddd0cff
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANCELvIOLATION                                                         0xdddd0d00
+#define ifcIDiMPOTENCEbASEeRRORcODE_ATOMIClOCKSnOTsUPPORTED                                                 0xdddd0d01
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0040                                                           0xdddd0d02
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0041                                                           0xdddd0d03
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0042                                                           0xdddd0d04
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0043                                                           0xdddd0d05
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0044                                                           0xdddd0d06
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsEGMENTnUMBER                                                    0xdddd0d07
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0045                                                           0xdddd0d08
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDoRDINAL                                                          0xdddd0d09
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYeXISTS                                                           0xdddd0d0a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0046                                                           0xdddd0d0b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0047                                                           0xdddd0d0c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfLAGnUMBER                                                       0xdddd0d0d
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEMnOTfOUND                                                             0xdddd0d0e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsTARTINGcODESEG                                                  0xdddd0d0f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsTACKSEG                                                         0xdddd0d10
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmODULETYPE                                                       0xdddd0d11
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeXEsIGNATURE                                                     0xdddd0d12
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXEmARKEDiNVALID                                                        0xdddd0d13
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADeXEfORMAT                                                            0xdddd0d14
+#define ifcIDiMPOTENCEbASEeRRORcODE_ITERATEDdATAeXCEEDS_64k                                                 0xdddd0d15
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmINALLOCSIZE                                                     0xdddd0d16
+#define ifcIDiMPOTENCEbASEeRRORcODE_DYNLINKfROMiNVALIDrING                                                  0xdddd0d17
+#define ifcIDiMPOTENCEbASEeRRORcODE_IOPLnOTeNABLED                                                          0xdddd0d18
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsEGDPL                                                           0xdddd0d19
+#define ifcIDiMPOTENCEbASEeRRORcODE_AUTODATASEGeXCEEDS_64k                                                  0xdddd0d1a
+#define ifcIDiMPOTENCEbASEeRRORcODE_RING2SEGmUSTbEmOVABLE                                                   0xdddd0d1b
+#define ifcIDiMPOTENCEbASEeRRORcODE_RELOCcHAINxEEDSsEGLIM                                                   0xdddd0d1c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INFLOOPiNrELOCcHAIN                                                     0xdddd0d1d
+#define ifcIDiMPOTENCEbASEeRRORcODE_ENVVARnOTfOUND                                                          0xdddd0d1e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0048                                                           0xdddd0d1f
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsIGNALsENT                                                            0xdddd0d20
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILENAMEeXCEDrANGE                                                      0xdddd0d21
+#define ifcIDiMPOTENCEbASEeRRORcODE_RING2sTACKiNuSE                                                         0xdddd0d22
+#define ifcIDiMPOTENCEbASEeRRORcODE_METAeXPANSIONtOOlONG                                                    0xdddd0d23
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsIGNALnUMBER                                                     0xdddd0d24
+#define ifcIDiMPOTENCEbASEeRRORcODE_THREAD_1iNACTIVE                                                        0xdddd0d25
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0049                                                           0xdddd0d26
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOCKED                                                                  0xdddd0d27
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0050                                                           0xdddd0d28
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYmODULES                                                          0xdddd0d29
+#define ifcIDiMPOTENCEbASEeRRORcODE_NESTINGnOTaLLOWED                                                       0xdddd0d2a
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXEmACHINEtYPEmISMATCH                                                  0xdddd0d2b
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXEcANNOTmODIFYsIGNEDbINARY                                             0xdddd0d2c
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXEcANNOTmODIFYsTRONGsIGNEDbINARY                                       0xdddd0d2d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0051                                                           0xdddd0d2e
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEcHECKEDoUT                                                          0xdddd0d2f
+#define ifcIDiMPOTENCEbASEeRRORcODE_CHECKOUTrEQUIRED                                                        0xdddd0d30
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADfILEtYPE                                                             0xdddd0d31
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEtOOlARGE                                                            0xdddd0d32
+#define ifcIDiMPOTENCEbASEeRRORcODE_FORMSaUTHrEQUIRED                                                       0xdddd0d33
+#define ifcIDiMPOTENCEbASEeRRORcODE_VIRUSiNFECTED                                                           0xdddd0d34
+#define ifcIDiMPOTENCEbASEeRRORcODE_VIRUSdELETED                                                            0xdddd0d35
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0052                                                           0xdddd0d36
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0053                                                           0xdddd0d37
+#define ifcIDiMPOTENCEbASEeRRORcODE_PIPElOCAL                                                               0xdddd0d38
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADpIPE                                                                 0xdddd0d39
+#define ifcIDiMPOTENCEbASEeRRORcODE_PIPEbUSY                                                                0xdddd0d3a
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOdATA                                                                  0xdddd0d3b
+#define ifcIDiMPOTENCEbASEeRRORcODE_PIPEnOTcONNECTED                                                        0xdddd0d3c
+#define ifcIDiMPOTENCEbASEeRRORcODE_MOREdATA                                                                0xdddd0d3d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0054                                                           0xdddd0d3e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0055                                                           0xdddd0d3f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0056                                                           0xdddd0d40
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0057                                                           0xdddd0d41
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0058                                                           0xdddd0d42
+#define ifcIDiMPOTENCEbASEeRRORcODE_VCdISCONNECTED                                                          0xdddd0d43
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0059                                                           0xdddd0d44
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0060                                                           0xdddd0d45
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0061                                                           0xdddd0d46
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0062                                                           0xdddd0d47
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0063                                                           0xdddd0d48
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0064                                                           0xdddd0d49
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0065                                                           0xdddd0d4a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0066                                                           0xdddd0d4b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0067                                                           0xdddd0d4c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0068                                                           0xdddd0d4d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0069                                                           0xdddd0d4e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0070                                                           0xdddd0d4f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0071                                                           0xdddd0d50
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeAnAME                                                           0xdddd0d51
+#define ifcIDiMPOTENCEbASEeRRORcODE_EAlISTiNCONSISTENT                                                      0xdddd0d52
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0072                                                           0xdddd0d53
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0073                                                           0xdddd0d54
+#define WAITtIMEOUT                                                                                         0xdddd0d55
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREiTEMS                                                             0xdddd0d56
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0074                                                           0xdddd0d57
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0075                                                           0xdddd0d58
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0076                                                           0xdddd0d59
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0077                                                           0xdddd0d5a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0078                                                           0xdddd0d5b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0079                                                           0xdddd0d5c
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTcOPY                                                              0xdddd0d5d
+#define ifcIDiMPOTENCEbASEeRRORcODE_DIRECTORY                                                               0xdddd0d5e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0080                                                           0xdddd0d5f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0081                                                           0xdddd0d60
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0082                                                           0xdddd0d61
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0083                                                           0xdddd0d62
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0084                                                           0xdddd0d63
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0085                                                           0xdddd0d64
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0086                                                           0xdddd0d65
+#define ifcIDiMPOTENCEbASEeRRORcODE_EASdIDNTfIT                                                             0xdddd0d66
+#define ifcIDiMPOTENCEbASEeRRORcODE_EAfILEcORRUPT                                                           0xdddd0d67
+#define ifcIDiMPOTENCEbASEeRRORcODE_EAtABLEfULL                                                             0xdddd0d68
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeAhANDLE                                                         0xdddd0d69
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0087                                                           0xdddd0d6a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0088                                                           0xdddd0d6b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0089                                                           0xdddd0d6c
+#define ifcIDiMPOTENCEbASEeRRORcODE_EASnOTsUPPORTED                                                         0xdddd0d6d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0090                                                           0xdddd0d6e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0091                                                           0xdddd0d6f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0092                                                           0xdddd0d70
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0093                                                           0xdddd0d71
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0094                                                           0xdddd0d72
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOToWNER                                                                0xdddd0d73
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0095                                                           0xdddd0d74
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0096                                                           0xdddd0d75
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0097                                                           0xdddd0d76
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0098                                                           0xdddd0d77
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0099                                                           0xdddd0d78
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0100                                                           0xdddd0d79
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0101                                                           0xdddd0d7a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0102                                                           0xdddd0d7b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0103                                                           0xdddd0d7c
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYpOSTS                                                            0xdddd0d7d
+#define ifcIDiMPOTENCEbASEeRRORcODE_PARTIALcOPY                                                             0xdddd0d7e
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKnOTgRANTED                                                        0xdddd0d7f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDoPLOCKpROTOCOL                                                   0xdddd0d80
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKtOOfRAGMENTED                                                       0xdddd0d81
+#define ifcIDiMPOTENCEbASEeRRORcODE_DELETEpENDING                                                           0xdddd0d82
+#define ifcIDiMPOTENCEbASEeRRORcODE_INCOMPATIBLEwITHgLOBALsHORTnAMErEGISTRYsETTING                          0xdddd0d83
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHORTnAMESnOTeNABLEDoNvOLUME                                            0xdddd0d84
+#define ifcIDiMPOTENCEbASEeRRORcODE_SECURITYsTREAMiSiNCONSISTENT                                            0xdddd0d85
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlOCKrANGE                                                        0xdddd0d86
+#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEsUBSYSTEMnOTpRESENT                                                0xdddd0d87
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTIFICATIONgUIDaLREADYdEFINED                                          0xdddd0d88
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0104                                                           0xdddd0d89
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0105                                                           0xdddd0d8a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0106                                                           0xdddd0d8b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0107                                                           0xdddd0d8c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0108                                                           0xdddd0d8d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0109                                                           0xdddd0d8e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0110                                                           0xdddd0d8f
+#define ifcIDiMPOTENCEbASEeRRORcODE_MRmIDnOTfOUND                                                           0xdddd0d90
+#define ifcIDiMPOTENCEbASEeRRORcODE_SCOPEnOTfOUND                                                           0xdddd0d91
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0111                                                           0xdddd0d92
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0112                                                           0xdddd0d93
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0113                                                           0xdddd0d94
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0114                                                           0xdddd0d95
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0115                                                           0xdddd0d96
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0116                                                           0xdddd0d97
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0117                                                           0xdddd0d98
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0118                                                           0xdddd0d99
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0119                                                           0xdddd0d9a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0120                                                           0xdddd0d9b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0121                                                           0xdddd0d9c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0122                                                           0xdddd0d9d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0123                                                           0xdddd0d9e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0124                                                           0xdddd0d9f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0125                                                           0xdddd0da0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0126                                                           0xdddd0da1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0127                                                           0xdddd0da2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0128                                                           0xdddd0da3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0129                                                           0xdddd0da4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0130                                                           0xdddd0da5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0131                                                           0xdddd0da6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0132                                                           0xdddd0da7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0133                                                           0xdddd0da8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0134                                                           0xdddd0da9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0135                                                           0xdddd0daa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0136                                                           0xdddd0dab
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0137                                                           0xdddd0dac
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0138                                                           0xdddd0dad
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0139                                                           0xdddd0dae
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0140                                                           0xdddd0daf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0141                                                           0xdddd0db0
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILnOACTIONrEBOOT                                                      0xdddd0db1
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILsHUTDOWN                                                            0xdddd0db2
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILrESTART                                                             0xdddd0db3
+#define ifcIDiMPOTENCEbASEeRRORcODE_MAXsESSIONSrEACHED                                                      0xdddd0db4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0142                                                           0xdddd0db5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0143                                                           0xdddd0db6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0144                                                           0xdddd0db7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0145                                                           0xdddd0db8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0146                                                           0xdddd0db9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0147                                                           0xdddd0dba
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0148                                                           0xdddd0dbb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0149                                                           0xdddd0dbc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0150                                                           0xdddd0dbd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0151                                                           0xdddd0dbe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0152                                                           0xdddd0dbf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0153                                                           0xdddd0dc0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0154                                                           0xdddd0dc1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0155                                                           0xdddd0dc2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0156                                                           0xdddd0dc3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0157                                                           0xdddd0dc4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0158                                                           0xdddd0dc5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0159                                                           0xdddd0dc6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0160                                                           0xdddd0dc7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0161                                                           0xdddd0dc8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0162                                                           0xdddd0dc9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0163                                                           0xdddd0dca
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0164                                                           0xdddd0dcb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0165                                                           0xdddd0dcc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0166                                                           0xdddd0dcd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0167                                                           0xdddd0dce
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0168                                                           0xdddd0dcf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0169                                                           0xdddd0dd0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0170                                                           0xdddd0dd1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0171                                                           0xdddd0dd2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0172                                                           0xdddd0dd3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0173                                                           0xdddd0dd4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0174                                                           0xdddd0dd5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0175                                                           0xdddd0dd6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0176                                                           0xdddd0dd7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0177                                                           0xdddd0dd8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0178                                                           0xdddd0dd9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0179                                                           0xdddd0dda
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0180                                                           0xdddd0ddb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0181                                                           0xdddd0ddc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0182                                                           0xdddd0ddd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0183                                                           0xdddd0dde
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0184                                                           0xdddd0ddf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0185                                                           0xdddd0de0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0186                                                           0xdddd0de1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0187                                                           0xdddd0de2
+#define ifcIDiMPOTENCEbASEeRRORcODE_THREADmODEaLREADYbACKGROUND                                             0xdddd0de3
+#define ifcIDiMPOTENCEbASEeRRORcODE_THREADmODEnOTbACKGROUND                                                 0xdddd0de4
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSmODEaLREADYbACKGROUND                                            0xdddd0de5
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSmODEnOTbACKGROUND                                                0xdddd0de6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0188                                                           0xdddd0de7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0189                                                           0xdddd0de8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0190                                                           0xdddd0de9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0191                                                           0xdddd0dea
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0192                                                           0xdddd0deb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0193                                                           0xdddd0dec
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0194                                                           0xdddd0ded
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0195                                                           0xdddd0dee
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0196                                                           0xdddd0def
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0197                                                           0xdddd0df0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0198                                                           0xdddd0df1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0199                                                           0xdddd0df2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0200                                                           0xdddd0df3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0201                                                           0xdddd0df4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0202                                                           0xdddd0df5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0203                                                           0xdddd0df6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0204                                                           0xdddd0df7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0205                                                           0xdddd0df8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0206                                                           0xdddd0df9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0207                                                           0xdddd0dfa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0208                                                           0xdddd0dfb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0209                                                           0xdddd0dfc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0210                                                           0xdddd0dfd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0211                                                           0xdddd0dfe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0212                                                           0xdddd0dff
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0213                                                           0xdddd0e00
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0214                                                           0xdddd0e01
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0215                                                           0xdddd0e02
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0216                                                           0xdddd0e03
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0217                                                           0xdddd0e04
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0218                                                           0xdddd0e05
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0219                                                           0xdddd0e06
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0220                                                           0xdddd0e07
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0221                                                           0xdddd0e08
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0222                                                           0xdddd0e09
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0223                                                           0xdddd0e0a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0224                                                           0xdddd0e0b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0225                                                           0xdddd0e0c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0226                                                           0xdddd0e0d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0227                                                           0xdddd0e0e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0228                                                           0xdddd0e0f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0229                                                           0xdddd0e10
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0230                                                           0xdddd0e11
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0231                                                           0xdddd0e12
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0232                                                           0xdddd0e13
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0233                                                           0xdddd0e14
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0234                                                           0xdddd0e15
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0235                                                           0xdddd0e16
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0236                                                           0xdddd0e17
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0237                                                           0xdddd0e18
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0238                                                           0xdddd0e19
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0239                                                           0xdddd0e1a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0240                                                           0xdddd0e1b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0241                                                           0xdddd0e1c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0242                                                           0xdddd0e1d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0243                                                           0xdddd0e1e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0244                                                           0xdddd0e1f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0245                                                           0xdddd0e20
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0246                                                           0xdddd0e21
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0247                                                           0xdddd0e22
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0248                                                           0xdddd0e23
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0249                                                           0xdddd0e24
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0250                                                           0xdddd0e25
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0251                                                           0xdddd0e26
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0252                                                           0xdddd0e27
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0253                                                           0xdddd0e28
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0254                                                           0xdddd0e29
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0255                                                           0xdddd0e2a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0256                                                           0xdddd0e2b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0257                                                           0xdddd0e2c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0258                                                           0xdddd0e2d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0259                                                           0xdddd0e2e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0260                                                           0xdddd0e2f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0261                                                           0xdddd0e30
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0262                                                           0xdddd0e31
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0263                                                           0xdddd0e32
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0264                                                           0xdddd0e33
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0265                                                           0xdddd0e34
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0266                                                           0xdddd0e35
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0267                                                           0xdddd0e36
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0268                                                           0xdddd0e37
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0269                                                           0xdddd0e38
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0270                                                           0xdddd0e39
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaDDRESS                                                          0xdddd0e3a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0271                                                           0xdddd0e3b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0272                                                           0xdddd0e3c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0273                                                           0xdddd0e3d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0274                                                           0xdddd0e3e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0275                                                           0xdddd0e3f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0276                                                           0xdddd0e40
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0277                                                           0xdddd0e41
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0278                                                           0xdddd0e42
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0279                                                           0xdddd0e43
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0280                                                           0xdddd0e44
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0281                                                           0xdddd0e45
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0282                                                           0xdddd0e46
+#define ifcIDiMPOTENCEbASEeRRORcODE_USERpROFILElOAD                                                         0xdddd0e47
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0283                                                           0xdddd0e48
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0284                                                           0xdddd0e49
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0285                                                           0xdddd0e4a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0286                                                           0xdddd0e4b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0287                                                           0xdddd0e4c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0288                                                           0xdddd0e4d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0289                                                           0xdddd0e4e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0290                                                           0xdddd0e4f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0291                                                           0xdddd0e50
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0292                                                           0xdddd0e51
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0293                                                           0xdddd0e52
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0294                                                           0xdddd0e53
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0295                                                           0xdddd0e54
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0296                                                           0xdddd0e55
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0297                                                           0xdddd0e56
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0298                                                           0xdddd0e57
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0299                                                           0xdddd0e58
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0300                                                           0xdddd0e59
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0301                                                           0xdddd0e5a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0302                                                           0xdddd0e5b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0303                                                           0xdddd0e5c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0304                                                           0xdddd0e5d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0305                                                           0xdddd0e5e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0306                                                           0xdddd0e5f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0307                                                           0xdddd0e60
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0308                                                           0xdddd0e61
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0309                                                           0xdddd0e62
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0310                                                           0xdddd0e63
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0311                                                           0xdddd0e64
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0312                                                           0xdddd0e65
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0313                                                           0xdddd0e66
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0314                                                           0xdddd0e67
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0315                                                           0xdddd0e68
+#define ifcIDiMPOTENCEbASEeRRORcODE_ARITHMETICoVERFLOW                                                      0xdddd0e69
+#define ifcIDiMPOTENCEbASEeRRORcODE_PIPEcONNECTED                                                           0xdddd0e6a
+#define ifcIDiMPOTENCEbASEeRRORcODE_PIPElISTENING                                                           0xdddd0e6b
+#define ifcIDiMPOTENCEbASEeRRORcODE_VERIFIERsTOP                                                            0xdddd0e6c
+#define ifcIDiMPOTENCEbASEeRRORcODE_ABIOSeRROR                                                              0xdddd0e6d
+#define ifcIDiMPOTENCEbASEeRRORcODE_WX86wARNING                                                             0xdddd0e6e
+#define ifcIDiMPOTENCEbASEeRRORcODE_WX86eRROR                                                               0xdddd0e6f
+#define ifcIDiMPOTENCEbASEeRRORcODE_TIMERnOTcREATED                                                         0xdddd0e70
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNWIND                                                                  0xdddd0e71
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADsTACK                                                                0xdddd0e72
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDuNWINDtARGET                                                     0xdddd0e73
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpORTaTTRIBUTES                                                   0xdddd0e74
+#define ifcIDiMPOTENCEbASEeRRORcODE_PORTmESSAGEtOOlONG                                                      0xdddd0e75
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDqUOTAlOWER                                                       0xdddd0e76
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEaLREADYaTTACHED                                                   0xdddd0e77
+#define ifcIDiMPOTENCEbASEeRRORcODE_INSTRUCTIONmISALIGNMENT                                                 0xdddd0e78
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROFILINGnOTsTARTED                                                     0xdddd0e79
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROFILINGnOTsTOPPED                                                     0xdddd0e7a
+#define ifcIDiMPOTENCEbASEeRRORcODE_COULDnOTiNTERPRET                                                       0xdddd0e7b
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROFILINGaTlIMIT                                                        0xdddd0e7c
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTwAIT                                                                0xdddd0e7d
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTtERMINATEsELF                                                       0xdddd0e7e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPECTEDmMcREATEeRROR                                                 0xdddd0e7f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPECTEDmMmAPeRROR                                                    0xdddd0e80
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNEXPECTEDmMeXTENDeRROR                                                 0xdddd0e81
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADfUNCTIONtABLE                                                        0xdddd0e82
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOgUIDtRANSLATION                                                       0xdddd0e83
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlDTsIZE                                                          0xdddd0e84
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlDToFFSET                                                        0xdddd0e85
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0316                                                           0xdddd0e86
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlDTdESCRIPTOR                                                    0xdddd0e87
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYtHREADS                                                          0xdddd0e88
+#define ifcIDiMPOTENCEbASEeRRORcODE_THREADnOTiNpROGRESS                                                     0xdddd0e89
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEFILEqUOTAeXCEEDED                                                   0xdddd0e8a
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONsERVERcONFLICT                                                     0xdddd0e8b
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYNCHRONIZATIONrEQUIRED                                                 0xdddd0e8c
+#define ifcIDiMPOTENCEbASEeRRORcODE_NEToPENfAILED                                                           0xdddd0e8d
+#define ifcIDiMPOTENCEbASEeRRORcODE_IOpRIVILEGEfAILED                                                       0xdddd0e8e
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONTROLceXIT                                                            0xdddd0e8f
+#define ifcIDiMPOTENCEbASEeRRORcODE_MISSINGsYSTEMFILE                                                       0xdddd0e90
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNHANDLEDeXCEPTION                                                      0xdddd0e91
+#define ifcIDiMPOTENCEbASEeRRORcODE_APPiNITfAILURE                                                          0xdddd0e92
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEFILEcREATEfAILED                                                    0xdddd0e93
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiMAGEhASH                                                        0xdddd0e94
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOpAGEFILE                                                              0xdddd0e95
+#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALfLOATcONTEXT                                                     0xdddd0e96
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOeVENTpAIR                                                             0xdddd0e97
+#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINcTRLRcONFIGeRROR                                                  0xdddd0e98
+#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALcHARACTER                                                        0xdddd0e99
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0317cHARACTER                                                  0xdddd0e9a
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYvOLUME                                                            0xdddd0e9b
+#define ifcIDiMPOTENCEbASEeRRORcODE_BIOSfAILEDtOcONNECTiNTERRUPT                                            0xdddd0e9c
+#define ifcIDiMPOTENCEbASEeRRORcODE_BACKUPcONTROLLER                                                        0xdddd0e9d
+#define ifcIDiMPOTENCEbASEeRRORcODE_MUTANTlIMITeXCEEDED                                                     0xdddd0e9e
+#define ifcIDiMPOTENCEbASEeRRORcODE_FSdRIVERrEQUIRED                                                        0xdddd0e9f
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTlOADrEGISTRYfILE                                                  0xdddd0ea0
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEBUGaTTACHfAILED                                                       0xdddd0ea1
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMpROCESStERMINATED                                                 0xdddd0ea2
+#define ifcIDiMPOTENCEbASEeRRORcODE_DATAnOTaCCEPTED                                                         0xdddd0ea3
+#define ifcIDiMPOTENCEbASEeRRORcODE_VDMhARDeRROR                                                            0xdddd0ea4
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERcANCELtIMEOUT                                                     0xdddd0ea5
+#define ifcIDiMPOTENCEbASEeRRORcODE_REPLYmESSAGEmISMATCH                                                    0xdddd0ea6
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATA                                                     0xdddd0ea7
+#define ifcIDiMPOTENCEbASEeRRORcODE_CLIENTsERVERpARAMETERSiNVALID                                           0xdddd0ea8
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTtINYsTREAM                                                           0xdddd0ea9
+#define ifcIDiMPOTENCEbASEeRRORcODE_STACKoVERFLOWrEAD                                                       0xdddd0eaa
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONVERTtOlARGE                                                          0xdddd0eab
+#define ifcIDiMPOTENCEbASEeRRORcODE_FOUNDoUToFsCOPE                                                         0xdddd0eac
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALLOCATEbUCKET                                                          0xdddd0ead
+#define ifcIDiMPOTENCEbASEeRRORcODE_MARSHALLoVERFLOW                                                        0xdddd0eae
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDvARIANT                                                          0xdddd0eaf
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADcOMPRESSIONbUFFER                                                    0xdddd0eb0
+#define ifcIDiMPOTENCEbASEeRRORcODE_AUDITfAILED                                                             0xdddd0eb1
+#define ifcIDiMPOTENCEbASEeRRORcODE_TIMERrESOLUTIONnOTsET                                                   0xdddd0eb2
+#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTlOGONiNFO                                                   0xdddd0eb3
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADdLLeNTRYPOINT                                                        0xdddd0eb4
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADsERVICEeNTRYPOINT                                                    0xdddd0eb5
+#define ifcIDiMPOTENCEbASEeRRORcODE_IPaDDRESScONFLICT1                                                      0xdddd0eb6
+#define ifcIDiMPOTENCEbASEeRRORcODE_IPaDDRESScONFLICT2                                                      0xdddd0eb7
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYqUOTAlIMIT                                                      0xdddd0eb8
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOcALLBACKaCTIVE                                                        0xdddd0eb9
+#define ifcIDiMPOTENCEbASEeRRORcODE_PWDtOOsHORT                                                             0xdddd0eba
+#define ifcIDiMPOTENCEbASEeRRORcODE_PWDtOOrECENT                                                            0xdddd0ebb
+#define ifcIDiMPOTENCEbASEeRRORcODE_PWDhISTORYcONFLICT                                                      0xdddd0ebc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNSUPPORTEDcOMPRESSION                                                  0xdddd0ebd
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhWpROFILE                                                        0xdddd0ebe
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpLUGPLAYdEVICEpATH                                               0xdddd0ebf
+#define ifcIDiMPOTENCEbASEeRRORcODE_QUOTAlISTiNCONSISTENT                                                   0xdddd0ec0
+#define ifcIDiMPOTENCEbASEeRRORcODE_EVALUATIONeXPIRATION                                                    0xdddd0ec1
+#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALdLLrELOCATION                                                    0xdddd0ec2
+#define ifcIDiMPOTENCEbASEeRRORcODE_DLLiNITfAILEDlOGOFF                                                     0xdddd0ec3
+#define ifcIDiMPOTENCEbASEeRRORcODE_VALIDATEcONTINUE                                                        0xdddd0ec4
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREmATCHES                                                           0xdddd0ec5
+#define ifcIDiMPOTENCEbASEeRRORcODE_RANGElISTcONFLICT                                                       0xdddd0ec6
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERsIDmISMATCH                                                       0xdddd0ec7
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTeNABLEdENYoNLY                                                      0xdddd0ec8
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOATmULTIPLEfAULTS                                                     0xdddd0ec9
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOATmULTIPLEtRAPS                                                      0xdddd0eca
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOINTERFACE                                                             0xdddd0ecb
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERfAILEDsLEEP                                                       0xdddd0ecc
+#define ifcIDiMPOTENCEbASEeRRORcODE_CORRUPTsYSTEMfILE                                                       0xdddd0ecd
+#define ifcIDiMPOTENCEbASEeRRORcODE_COMMITMENTmINIMUM                                                       0xdddd0ece
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPrESTARTeNUMERATION                                                   0xdddd0ecf
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMiMAGEbADsIGNATURE                                                 0xdddd0ed0
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPrEBOOTrEQUIRED                                                       0xdddd0ed1
+#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTpOWER                                                       0xdddd0ed2
+#define ifcIDiMPOTENCEbASEeRRORcODE_MULTIPLEfAULTvIOLATION                                                  0xdddd0ed3
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMsHUTDOWN                                                          0xdddd0ed4
+#define ifcIDiMPOTENCEbASEeRRORcODE_PORTnOTsET                                                              0xdddd0ed5
+#define ifcIDiMPOTENCEbASEeRRORcODE_DSvERSIONcHECKfAILURE                                                   0xdddd0ed6
+#define ifcIDiMPOTENCEbASEeRRORcODE_RANGEnOTfOUND                                                           0xdddd0ed7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0318                                                           0xdddd0ed8
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsAFEmODEdRIVER                                                       0xdddd0ed9
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILEDdRIVEReNTRY                                                       0xdddd0eda
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEeNUMERATIONeRROR                                                  0xdddd0edb
+#define ifcIDiMPOTENCEbASEeRRORcODE_MOUNTpOINTnOTrESOLVED                                                   0xdddd0edc
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdEVICEoBJECTpARAMETER                                            0xdddd0edd
+#define ifcIDiMPOTENCEbASEeRRORcODE_MCAoCCURRED                                                             0xdddd0ede
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERdATABASEeRROR                                                     0xdddd0edf
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMhIVEtOOlARGE                                                      0xdddd0ee0
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERfAILEDpRIORuNLOAD                                                 0xdddd0ee1
+#define ifcIDiMPOTENCEbASEeRRORcODE_VOLSNAPpREPAREhIBERNATE                                                 0xdddd0ee2
+#define ifcIDiMPOTENCEbASEeRRORcODE_HIBERNATIONfAILURE                                                      0xdddd0ee3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0319                                                           0xdddd0ee4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0320                                                           0xdddd0ee5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0321                                                           0xdddd0ee6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0322                                                           0xdddd0ee7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0323                                                           0xdddd0ee8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0324                                                           0xdddd0ee9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0325                                                           0xdddd0eea
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0326                                                           0xdddd0eeb
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEsYSTEMlIMITATION                                                    0xdddd0eec
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0327                                                           0xdddd0eed
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0328                                                           0xdddd0eee
+#define ifcIDiMPOTENCEbASEeRRORcODE_ASSERTIONfAILURE                                                        0xdddd0eef
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACPIeRROR                                                               0xdddd0ef0
+#define ifcIDiMPOTENCEbASEeRRORcODE_WOWaSSERTION                                                            0xdddd0ef1
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPbADmPStABLE                                                          0xdddd0ef2
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPtRANSLATIONfAILED                                                    0xdddd0ef3
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPiRQtRANSLATIONfAILED                                                 0xdddd0ef4
+#define ifcIDiMPOTENCEbASEeRRORcODE_PNPiNVALIDiD                                                            0xdddd0ef5
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAKEsYSTEMdEBUGGER                                                      0xdddd0ef6
+#define ifcIDiMPOTENCEbASEeRRORcODE_HANDLEScLOSED                                                           0xdddd0ef7
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXTRANEOUSiNFORMATION                                                   0xdddd0ef8
+#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTcOMMITnECESSARY                                                    0xdddd0ef9
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEDIAcHECK                                                              0xdddd0efa
+#define ifcIDiMPOTENCEbASEeRRORcODE_GUIDsUBSTITUTIONmADE                                                    0xdddd0efb
+#define ifcIDiMPOTENCEbASEeRRORcODE_STOPPEDoNsYMLINK                                                        0xdddd0efc
+#define ifcIDiMPOTENCEbASEeRRORcODE_LONGJUMP                                                                0xdddd0efd
+#define ifcIDiMPOTENCEbASEeRRORcODE_PLUGPLAYqUERYvETOED                                                     0xdddd0efe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNWINDcONSOLIDATE                                                       0xdddd0eff
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYhIVErECOVERED                                                   0xdddd0f00
+#define ifcIDiMPOTENCEbASEeRRORcODE_DLLmIGHTbEiNSECURE                                                      0xdddd0f01
+#define ifcIDiMPOTENCEbASEeRRORcODE_DLLmIGHTbEiNCOMPATIBLE                                                  0xdddd0f02
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGeXCEPTIONnOThANDLED                                                  0xdddd0f03
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGrEPLYlATER                                                           0xdddd0f04
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGuNABLEtOpROVIDEhANDLE                                                0xdddd0f05
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGtERMINATEtHREAD                                                      0xdddd0f06
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGtERMINATEpROCESS                                                     0xdddd0f07
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcONTROLc                                                             0xdddd0f08
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGpRINTEXCEPTIONc                                                      0xdddd0f09
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGrIPEXCEPTION                                                         0xdddd0f0a
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcONTROLbREAK                                                         0xdddd0f0b
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcOMMANDeXCEPTION                                                     0xdddd0f0c
+#define ifcIDiMPOTENCEbASEeRRORcODE_OBJECTnAMEeXISTS                                                        0xdddd0f0d
+#define ifcIDiMPOTENCEbASEeRRORcODE_THREADwASsUSPENDED                                                      0xdddd0f0e
+#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEnOTaTbASE                                                          0xdddd0f0f
+#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTsTATEcREATED                                                       0xdddd0f10
+#define ifcIDiMPOTENCEbASEeRRORcODE_SEGMENTnOTIFICATION                                                     0xdddd0f11
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADcURRENTdIRECTORY                                                     0xdddd0f12
+#define ifcIDiMPOTENCEbASEeRRORcODE_FTrEADrECOVERYfROMbACKUP                                                0xdddd0f13
+#define ifcIDiMPOTENCEbASEeRRORcODE_FTwRITErECOVERY                                                         0xdddd0f14
+#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEmACHINEtYPEmISMATCH                                                0xdddd0f15
+#define ifcIDiMPOTENCEbASEeRRORcODE_RECEIVEpARTIAL                                                          0xdddd0f16
+#define ifcIDiMPOTENCEbASEeRRORcODE_RECEIVEeXPEDITED                                                        0xdddd0f17
+#define ifcIDiMPOTENCEbASEeRRORcODE_RECEIVEpARTIALeXPEDITED                                                 0xdddd0f18
+#define ifcIDiMPOTENCEbASEeRRORcODE_EVENTdONE                                                               0xdddd0f19
+#define ifcIDiMPOTENCEbASEeRRORcODE_EVENTpENDING                                                            0xdddd0f1a
+#define ifcIDiMPOTENCEbASEeRRORcODE_CHECKINGfILEsYSTEM                                                      0xdddd0f1b
+#define ifcIDiMPOTENCEbASEeRRORcODE_FATALaPPeXIT                                                            0xdddd0f1c
+#define ifcIDiMPOTENCEbASEeRRORcODE_PREDEFINEDhANDLE                                                        0xdddd0f1d
+#define ifcIDiMPOTENCEbASEeRRORcODE_WASuNLOCKED                                                             0xdddd0f1e
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTIFICATION                                                     0xdddd0f1f
+#define ifcIDiMPOTENCEbASEeRRORcODE_WASlOCKED                                                               0xdddd0f20
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGhARDeRROR                                                            0xdddd0f21
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYwIN32                                                            0xdddd0f22
+#define ifcIDiMPOTENCEbASEeRRORcODE_IMAGEmACHINEtYPEmISMATCHeXE                                             0xdddd0f23
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOyIELDpERFORMED                                                        0xdddd0f24
+#define ifcIDiMPOTENCEbASEeRRORcODE_TIMERrESUMEiGNORED                                                      0xdddd0f25
+#define ifcIDiMPOTENCEbASEeRRORcODE_ARBITRATIONuNHANDLED                                                    0xdddd0f26
+#define ifcIDiMPOTENCEbASEeRRORcODE_CARDBUSnOTsUPPORTED                                                     0xdddd0f27
+#define ifcIDiMPOTENCEbASEeRRORcODE_MPpROCESSORmISMATCH                                                     0xdddd0f28
+#define ifcIDiMPOTENCEbASEeRRORcODE_HIBERNATED                                                              0xdddd0f29
+#define ifcIDiMPOTENCEbASEeRRORcODE_RESUMEhIBERNATION                                                       0xdddd0f2a
+#define ifcIDiMPOTENCEbASEeRRORcODE_FIRMWAREuPDATED                                                         0xdddd0f2b
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERSlEAKINGlOCKEDpAGES                                               0xdddd0f2c
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAKEsYSTEM                                                              0xdddd0f2d
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_1                                                                  0xdddd0f2e
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_2                                                                  0xdddd0f2f
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_3                                                                  0xdddd0f30
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAIT_63                                                                 0xdddd0f31
+#define ifcIDiMPOTENCEbASEeRRORcODE_ABANDONEDwAIT_0                                                         0xdddd0f32
+#define ifcIDiMPOTENCEbASEeRRORcODE_ABANDONEDwAIT_63                                                        0xdddd0f33
+#define ifcIDiMPOTENCEbASEeRRORcODE_USERaPC                                                                 0xdddd0f34
+#define ifcIDiMPOTENCEbASEeRRORcODE_KERNELaPC                                                               0xdddd0f35
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALERTED                                                                 0xdddd0f36
+#define ifcIDiMPOTENCEbASEeRRORcODE_ELEVATIONrEQUIRED                                                       0xdddd0f37
+#define ifcIDiMPOTENCEbASEeRRORcODE_REPARSE                                                                 0xdddd0f38
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKbREAKiNpROGRESS                                                   0xdddd0f39
+#define ifcIDiMPOTENCEbASEeRRORcODE_VOLUMEmOUNTED                                                           0xdddd0f3a
+#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTcOMMITTED                                                          0xdddd0f3b
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTIFYcLEANUP                                                           0xdddd0f3c
+#define ifcIDiMPOTENCEbASEeRRORcODE_PRIMARYtRANSPORTcONNECTfAILED                                           0xdddd0f3d
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTtRANSITION                                                     0xdddd0f3e
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTdEMANDzERO                                                     0xdddd0f3f
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTcOPYoNwRITE                                                    0xdddd0f40
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTgUARDpAGE                                                      0xdddd0f41
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEfAULTpAGINGfILE                                                     0xdddd0f42
+#define ifcIDiMPOTENCEbASEeRRORcODE_CACHEpAGElOCKED                                                         0xdddd0f43
+#define ifcIDiMPOTENCEbASEeRRORcODE_CRASHdUMP                                                               0xdddd0f44
+#define ifcIDiMPOTENCEbASEeRRORcODE_BUFFERaLLzEROS                                                          0xdddd0f45
+#define ifcIDiMPOTENCEbASEeRRORcODE_REPARSEoBJECT                                                           0xdddd0f46
+#define ifcIDiMPOTENCEbASEeRRORcODE_RESOURCErEQUIREMENTScHANGED                                             0xdddd0f47
+#define ifcIDiMPOTENCEbASEeRRORcODE_TRANSLATIONcOMPLETE                                                     0xdddd0f48
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTHINGtOtERMIANTE                                                      0xdddd0f49
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSnOTiNjOB                                                         0xdddd0f4a
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSiNjOB                                                            0xdddd0f4b
+#define ifcIDiMPOTENCEbASEeRRORcODE_VOLSNAPhIBERNATErEADY                                                   0xdddd0f4c
+#define ifcIDiMPOTENCEbASEeRRORcODE_FSFILTERoPcOMPLETEDsUCCESSFULLY                                         0xdddd0f4d
+#define ifcIDiMPOTENCEbASEeRRORcODE_INTERRUPTvECTORaLREADYcONNECTED                                         0xdddd0f4e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INTERRUPTsTILLcONNECTED                                                 0xdddd0f4f
+#define ifcIDiMPOTENCEbASEeRRORcODE_WAITfORoPLOCK                                                           0xdddd0f50
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGeXCEPTIONhANDLED                                                     0xdddd0f51
+#define ifcIDiMPOTENCEbASEeRRORcODE_DBGcONTINUE                                                             0xdddd0f52
+#define ifcIDiMPOTENCEbASEeRRORcODE_CALLBACKpOPsTACK                                                        0xdddd0f53
+#define ifcIDiMPOTENCEbASEeRRORcODE_COMPRESSIONdISABLED                                                     0xdddd0f54
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTFETCHBACKWARDS                                                      0xdddd0f55
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTSCROLLBACKWARDS                                                     0xdddd0f56
+#define ifcIDiMPOTENCEbASEeRRORcODE_ROWSNOTRELEASED                                                         0xdddd0f57
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADaCCESSORfLAGS                                                        0xdddd0f58
+#define ifcIDiMPOTENCEbASEeRRORcODE_ERRORSeNCOUNTERED                                                       0xdddd0f59
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTcAPABLE                                                              0xdddd0f5a
+#define ifcIDiMPOTENCEbASEeRRORcODE_REQUESToUToFsEQUENCE                                                    0xdddd0f5b
+#define ifcIDiMPOTENCEbASEeRRORcODE_VERSIONpARSEeRROR                                                       0xdddd0f5c
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADSTARTPOSITION                                                        0xdddd0f5d
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMORYhARDWARE                                                          0xdddd0f5e
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKrEPAIRdISABLED                                                      0xdddd0f5f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INSUFFICIENTrESOURCEfORsPECIFIEDsHAREDsECTIONsIZE                       0xdddd0f60
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMpOWERSTATEtRANSITION                                              0xdddd0f61
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYSTEMpOWERSTATEcOMPLEXtRANSITION                                       0xdddd0f62
+#define ifcIDiMPOTENCEbASEeRRORcODE_MCAeXCEPTION                                                            0xdddd0f63
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSaUDITbYpOLICY                                                     0xdddd0f64
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDnOsAFERuIbYpOLICY                                         0xdddd0f65
+#define ifcIDiMPOTENCEbASEeRRORcODE_ABANDONhIBERFILE                                                        0xdddd0f66
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATAnETWORKdISCONNECTED                                  0xdddd0f67
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATAnETWORKsERVEReRROR                                   0xdddd0f68
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOSTwRITEBEHINDdATAlOCALdISKeRROR                                       0xdddd0f69
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADmCFGtABLE                                                            0xdddd0f6a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0329                                                           0xdddd0f6b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0330                                                           0xdddd0f6c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0331                                                           0xdddd0f6d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0332                                                           0xdddd0f6e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0333                                                           0xdddd0f6f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0334                                                           0xdddd0f70
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0335                                                           0xdddd0f71
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0336                                                           0xdddd0f72
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKsWITCHEDtOnEWhANDLE                                               0xdddd0f73
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTgRANTrEQUESTEDoPLOCK                                              0xdddd0f74
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTbREAKoPLOCK                                                       0xdddd0f75
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPLOCKhANDLEcLOSED                                                      0xdddd0f76
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOaCEcONDITION                                                          0xdddd0f77
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCEcONDITION                                                     0xdddd0f78
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0337                                                           0xdddd0f79
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0338                                                           0xdddd0f7a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0339                                                           0xdddd0f7b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0340                                                           0xdddd0f7c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0341                                                           0xdddd0f7d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0342                                                           0xdddd0f7e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0343                                                           0xdddd0f7f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0344                                                           0xdddd0f80
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0345                                                           0xdddd0f81
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0346                                                           0xdddd0f82
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0347                                                           0xdddd0f83
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0348                                                           0xdddd0f84
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0349                                                           0xdddd0f85
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0350                                                           0xdddd0f86
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0351                                                           0xdddd0f87
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0352                                                           0xdddd0f88
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0353                                                           0xdddd0f89
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0354                                                           0xdddd0f8a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0355                                                           0xdddd0f8b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0356                                                           0xdddd0f8c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0357                                                           0xdddd0f8d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0358                                                           0xdddd0f8e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0359                                                           0xdddd0f8f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0360                                                           0xdddd0f90
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0361                                                           0xdddd0f91
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0362                                                           0xdddd0f92
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0363                                                           0xdddd0f93
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0364                                                           0xdddd0f94
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0365                                                           0xdddd0f95
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0366                                                           0xdddd0f96
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0367                                                           0xdddd0f97
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0368                                                           0xdddd0f98
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0369                                                           0xdddd0f99
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0370                                                           0xdddd0f9a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0371                                                           0xdddd0f9b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0372                                                           0xdddd0f9c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0373                                                           0xdddd0f9d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0374                                                           0xdddd0f9e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0375                                                           0xdddd0f9f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0376                                                           0xdddd0fa0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0377                                                           0xdddd0fa1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0378                                                           0xdddd0fa2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0379                                                           0xdddd0fa3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0380                                                           0xdddd0fa4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0381                                                           0xdddd0fa5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0382                                                           0xdddd0fa6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0383                                                           0xdddd0fa7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0384                                                           0xdddd0fa8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0385                                                           0xdddd0fa9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0386                                                           0xdddd0faa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0387                                                           0xdddd0fab
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0388                                                           0xdddd0fac
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0389                                                           0xdddd0fad
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0390                                                           0xdddd0fae
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0391                                                           0xdddd0faf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0392                                                           0xdddd0fb0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0393                                                           0xdddd0fb1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0394                                                           0xdddd0fb2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0395                                                           0xdddd0fb3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0396                                                           0xdddd0fb4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0397                                                           0xdddd0fb5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0398                                                           0xdddd0fb6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0399                                                           0xdddd0fb7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0400                                                           0xdddd0fb8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0401                                                           0xdddd0fb9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0402                                                           0xdddd0fba
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0403                                                           0xdddd0fbb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0404                                                           0xdddd0fbc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0405                                                           0xdddd0fbd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0406                                                           0xdddd0fbe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0407                                                           0xdddd0fbf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0408                                                           0xdddd0fc0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0409                                                           0xdddd0fc1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0410                                                           0xdddd0fc2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0411                                                           0xdddd0fc3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0412                                                           0xdddd0fc4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0413                                                           0xdddd0fc5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0414                                                           0xdddd0fc6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0415                                                           0xdddd0fc7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0416                                                           0xdddd0fc8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0417                                                           0xdddd0fc9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0418                                                           0xdddd0fca
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0419                                                           0xdddd0fcb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0420                                                           0xdddd0fcc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0421                                                           0xdddd0fcd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0422                                                           0xdddd0fce
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0423                                                           0xdddd0fcf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0424                                                           0xdddd0fd0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0425                                                           0xdddd0fd1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0426                                                           0xdddd0fd2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0427                                                           0xdddd0fd3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0428                                                           0xdddd0fd4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0429                                                           0xdddd0fd5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0430                                                           0xdddd0fd6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0431                                                           0xdddd0fd7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0432                                                           0xdddd0fd8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0433                                                           0xdddd0fd9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0434                                                           0xdddd0fda
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0435                                                           0xdddd0fdb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0436                                                           0xdddd0fdc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0437                                                           0xdddd0fdd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0438                                                           0xdddd0fde
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0439                                                           0xdddd0fdf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0440                                                           0xdddd0fe0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0441                                                           0xdddd0fe1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0442                                                           0xdddd0fe2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0443                                                           0xdddd0fe3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0444                                                           0xdddd0fe4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0445                                                           0xdddd0fe5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0446                                                           0xdddd0fe6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0447                                                           0xdddd0fe7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0448                                                           0xdddd0fe8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0449                                                           0xdddd0fe9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0450                                                           0xdddd0fea
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0451                                                           0xdddd0feb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0452                                                           0xdddd0fec
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0453                                                           0xdddd0fed
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0454                                                           0xdddd0fee
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0455                                                           0xdddd0fef
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0456                                                           0xdddd0ff0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0457                                                           0xdddd0ff1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0458                                                           0xdddd0ff2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0459                                                           0xdddd0ff3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0460                                                           0xdddd0ff4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0461                                                           0xdddd0ff5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0462                                                           0xdddd0ff6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0463                                                           0xdddd0ff7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0464                                                           0xdddd0ff8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0465                                                           0xdddd0ff9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0466                                                           0xdddd0ffa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0467                                                           0xdddd0ffb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0468                                                           0xdddd0ffc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0469                                                           0xdddd0ffd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0470                                                           0xdddd0ffe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0471                                                           0xdddd0fff
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0472                                                           0xdddd1000
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0473                                                           0xdddd1001
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0474                                                           0xdddd1002
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0475                                                           0xdddd1003
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0476                                                           0xdddd1004
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0477                                                           0xdddd1005
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0478                                                           0xdddd1006
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0479                                                           0xdddd1007
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0480                                                           0xdddd1008
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0481                                                           0xdddd1009
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0482                                                           0xdddd100a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0483                                                           0xdddd100b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0484                                                           0xdddd100c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0485                                                           0xdddd100d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0486                                                           0xdddd100e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0487                                                           0xdddd100f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0488                                                           0xdddd1010
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0489                                                           0xdddd1011
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0490                                                           0xdddd1012
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0491                                                           0xdddd1013
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0492                                                           0xdddd1014
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0493                                                           0xdddd1015
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0494                                                           0xdddd1016
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0495                                                           0xdddd1017
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0496                                                           0xdddd1018
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0497                                                           0xdddd1019
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0498                                                           0xdddd101a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0499                                                           0xdddd101b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0500                                                           0xdddd101c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0501                                                           0xdddd101d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0502                                                           0xdddd101e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0503                                                           0xdddd101f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0504                                                           0xdddd1020
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0505                                                           0xdddd1021
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0506                                                           0xdddd1022
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0507                                                           0xdddd1023
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0508                                                           0xdddd1024
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0509                                                           0xdddd1025
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0510                                                           0xdddd1026
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0511                                                           0xdddd1027
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0512                                                           0xdddd1028
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0513                                                           0xdddd1029
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0514                                                           0xdddd102a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0515                                                           0xdddd102b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0516                                                           0xdddd102c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0517                                                           0xdddd102d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0518                                                           0xdddd102e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0519                                                           0xdddd102f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0520                                                           0xdddd1030
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0521                                                           0xdddd1031
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0522                                                           0xdddd1032
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0523                                                           0xdddd1033
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0524                                                           0xdddd1034
+#define ifcIDiMPOTENCEbASEeRRORcODE_EAaCCESSdENIED                                                          0xdddd1035
+#define ifcIDiMPOTENCEbASEeRRORcODE_OPERATIONaBORTED                                                        0xdddd1036
+#define ifcIDiMPOTENCEbASEeRRORcODE_IOiNCOMPLETE                                                            0xdddd1037
+#define ifcIDiMPOTENCEbASEeRRORcODE_IOpENDING                                                               0xdddd1038
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOACCESS                                                                0xdddd1039
+#define ifcIDiMPOTENCEbASEeRRORcODE_SWAPERROR                                                               0xdddd103a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0525                                                           0xdddd103b
+#define ifcIDiMPOTENCEbASEeRRORcODE_STACKoVERFLOW                                                           0xdddd103c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmESSAGE                                                          0xdddd103d
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANnOTcOMPLETE                                                          0xdddd103e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfLAGS                                                            0xdddd103f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNRECOGNIZEDvOLUME                                                      0xdddd1040
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEiNVALID                                                             0xdddd1041
+#define ifcIDiMPOTENCEbASEeRRORcODE_FULLSCREENmODE                                                          0xdddd1042
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOtOKEN                                                                 0xdddd1043
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADDB                                                                   0xdddd1044
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADKEY                                                                  0xdddd1045
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTOPEN                                                                0xdddd1046
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTREAD                                                                0xdddd1047
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTWRITE                                                               0xdddd1048
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYrECOVERED                                                       0xdddd1049
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYcORRUPT                                                         0xdddd104a
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGISTRYiOfAILED                                                        0xdddd104b
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTrEGISTRYfILE                                                         0xdddd104c
+#define ifcIDiMPOTENCEbASEeRRORcODE_KEYdELETED                                                              0xdddd104d
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOlOGsPACE                                                              0xdddd104e
+#define ifcIDiMPOTENCEbASEeRRORcODE_KEYhAScHILDREN                                                          0xdddd104f
+#define ifcIDiMPOTENCEbASEeRRORcODE_CHILDmUSTbEvOLATILE                                                     0xdddd1050
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTIFYeNUMdIR                                                           0xdddd1051
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0526                                                           0xdddd1052
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0527                                                           0xdddd1053
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0528                                                           0xdddd1054
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0529                                                           0xdddd1055
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0530                                                           0xdddd1056
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0531                                                           0xdddd1057
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0532                                                           0xdddd1058
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0533                                                           0xdddd1059
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0534                                                           0xdddd105a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0535                                                           0xdddd105b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0536                                                           0xdddd105c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0537                                                           0xdddd105d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0538                                                           0xdddd105e
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0539                                                           0xdddd105f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0540                                                           0xdddd1060
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0541                                                           0xdddd1061
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0542                                                           0xdddd1062
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0543                                                           0xdddd1063
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0544                                                           0xdddd1064
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0545                                                           0xdddd1065
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0546                                                           0xdddd1066
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0547                                                           0xdddd1067
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0548                                                           0xdddd1068
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0549                                                           0xdddd1069
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0550                                                           0xdddd106a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0551                                                           0xdddd106b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0552                                                           0xdddd106c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0553                                                           0xdddd106d
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEPENDENTsERVICESrUNNING                                                0xdddd106e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICEcONTROL                                                   0xdddd106f
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICErEQUESTtIMEOUT                                                   0xdddd1070
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOtHREAD                                                         0xdddd1071
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdATABASElOCKED                                                   0xdddd1072
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEaLREADYrUNNING                                                   0xdddd1073
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICEaCCOUNT                                                   0xdddd1074
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdISABLED                                                         0xdddd1075
+#define ifcIDiMPOTENCEbASEeRRORcODE_CIRCULARdEPENDENCY                                                      0xdddd1076
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdOESnOTeXIST                                                     0xdddd1077
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEcANNOTaCCEPTcTRL                                                 0xdddd1078
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTaCTIVE                                                        0xdddd1079
+#define ifcIDiMPOTENCEbASEeRRORcODE_FAILEDsERVICEcONTROLLERcONNECT                                          0xdddd107a
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXCEPTIONiNsERVICE                                                      0xdddd107b
+#define ifcIDiMPOTENCEbASEeRRORcODE_DATABASEdOESnOTeXIST                                                    0xdddd107c
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEsPECIFICeRROR                                                    0xdddd107d
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSaBORTED                                                          0xdddd107e
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdEPENDENCYfAIL                                                   0xdddd107f
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICElOGONfAILED                                                      0xdddd1080
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEsTARThANG                                                        0xdddd1081
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICElOCK                                                      0xdddd1082
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEmARKEDfORdELETE                                                  0xdddd1083
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEeXISTS                                                           0xdddd1084
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYrUNNINGlKG                                                       0xdddd1085
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEdEPENDENCYdELETED                                                0xdddd1086
+#define ifcIDiMPOTENCEbASEeRRORcODE_BOOTaLREADYaCCEPTED                                                     0xdddd1087
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnEVERsTARTED                                                     0xdddd1088
+#define ifcIDiMPOTENCEbASEeRRORcODE_DUPLICATEsERVICEnAME                                                    0xdddd1089
+#define ifcIDiMPOTENCEbASEeRRORcODE_DIFFERENTsERVICEaCCOUNT                                                 0xdddd108a
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTdETECTdRIVERfAILURE                                               0xdddd108b
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTdETECTpROCESSaBORT                                                0xdddd108c
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOrECOVERYpROGRAM                                                       0xdddd108d
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTiNeXE                                                         0xdddd108e
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsAFEBOOTsERVICE                                                      0xdddd108f
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0554                                                           0xdddd1090
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0555                                                           0xdddd1091
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0556                                                           0xdddd1092
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0557                                                           0xdddd1093
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0558                                                           0xdddd1094
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0559                                                           0xdddd1095
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0560                                                           0xdddd1096
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0561                                                           0xdddd1097
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0562                                                           0xdddd1098
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0563                                                           0xdddd1099
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0564                                                           0xdddd109a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0565                                                           0xdddd109b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0566                                                           0xdddd109c
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0567                                                           0xdddd109d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0568                                                           0xdddd109e
+#define ifcIDiMPOTENCEbASEeRRORcODE_ENDoFmEDIA                                                              0xdddd109f
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEMARKdETECTED                                                        0xdddd10a0
+#define ifcIDiMPOTENCEbASEeRRORcODE_BEGINNINGoFmEDIA                                                        0xdddd10a1
+#define ifcIDiMPOTENCEbASEeRRORcODE_SETMARKdETECTED                                                         0xdddd10a2
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOdATAdETECTED                                                          0xdddd10a3
+#define ifcIDiMPOTENCEbASEeRRORcODE_PARTITIONfAILURE                                                        0xdddd10a4
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDbLOCKlENGTH                                                      0xdddd10a5
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEnOTpARTITIONED                                                    0xdddd10a6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOlOCKmEDIA                                                       0xdddd10a7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOuNLOADmEDIA                                                     0xdddd10a8
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEDIAcHANGED                                                            0xdddd10a9
+#define ifcIDiMPOTENCEbASEeRRORcODE_BUSrESET                                                                0xdddd10aa
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmEDIAiNdRIVE                                                          0xdddd10ab
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOuNICODEtRANSLATION                                                    0xdddd10ac
+#define ifcIDiMPOTENCEbASEeRRORcODE_DLLiNITfAILED                                                           0xdddd10ad
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHUTDOWNiNpROGRESS                                                      0xdddd10ae
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsHUTDOWNiNpROGRESS                                                    0xdddd10af
+#define ifcIDiMPOTENCEbASEeRRORcODE_IOdEVICE                                                                0xdddd10b0
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERIALnOdEVICE                                                          0xdddd10b1
+#define ifcIDiMPOTENCEbASEeRRORcODE_IRQbUSY                                                                 0xdddd10b2
+#define ifcIDiMPOTENCEbASEeRRORcODE_MOREwRITES                                                              0xdddd10b3
+#define ifcIDiMPOTENCEbASEeRRORcODE_COUNTERtIMEOUT                                                          0xdddd10b4
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYiDmARKnOTfOUND                                                    0xdddd10b5
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYwRONGcYLINDER                                                     0xdddd10b6
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYuNKNOWNeRROR                                                      0xdddd10b7
+#define ifcIDiMPOTENCEbASEeRRORcODE_FLOPPYbADrEGISTERS                                                      0xdddd10b8
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKrECALIBRATEfAILED                                                   0xdddd10b9
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKoPERATIONfAILED                                                     0xdddd10ba
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKrESETfAILED                                                         0xdddd10bb
+#define ifcIDiMPOTENCEbASEeRRORcODE_EOMoVERFLOW                                                             0xdddd10bc
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTeNOUGHsERVERmEMORY                                                   0xdddd10bd
+#define ifcIDiMPOTENCEbASEeRRORcODE_POSSIBLEdEADLOCK                                                        0xdddd10be
+#define ifcIDiMPOTENCEbASEeRRORcODE_MAPPEDaLIGNMENT                                                         0xdddd10bf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0569                                                           0xdddd10c0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0570                                                           0xdddd10c1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0571                                                           0xdddd10c2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0572                                                           0xdddd10c3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0573                                                           0xdddd10c4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0574                                                           0xdddd10c5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0575                                                           0xdddd10c6
+#define ifcIDiMPOTENCEbASEeRRORcODE_SETpOWERsTATEvETOED                                                     0xdddd10c7
+#define ifcIDiMPOTENCEbASEeRRORcODE_SETpOWERsTATEfAILED                                                     0xdddd10c8
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYlINKS                                                            0xdddd10c9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0576                                                           0xdddd10ca
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0577                                                           0xdddd10cb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0578                                                           0xdddd10cc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0579                                                           0xdddd10cd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0580                                                           0xdddd10ce
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0581                                                           0xdddd10cf
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0582                                                           0xdddd10d0
+#define ifcIDiMPOTENCEbASEeRRORcODE_OLDwINvERSION                                                           0xdddd10d1
+#define ifcIDiMPOTENCEbASEeRRORcODE_APPwRONGoS                                                              0xdddd10d2
+#define ifcIDiMPOTENCEbASEeRRORcODE_SINGLEiNSTANCEaPP                                                       0xdddd10d3
+#define ifcIDiMPOTENCEbASEeRRORcODE_RMODEaPP                                                                0xdddd10d4
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdLL                                                              0xdddd10d5
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOaSSOCIATION                                                           0xdddd10d6
+#define ifcIDiMPOTENCEbASEeRRORcODE_DDEfAIL                                                                 0xdddd10d7
+#define ifcIDiMPOTENCEbASEeRRORcODE_DLLnOTfOUND                                                             0xdddd10d8
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREuSERhANDLES                                                       0xdddd10d9
+#define ifcIDiMPOTENCEbASEeRRORcODE_MESSAGEsYNCoNLY                                                         0xdddd10da
+#define ifcIDiMPOTENCEbASEeRRORcODE_SOURCEeLEMENTeMPTY                                                      0xdddd10db
+#define ifcIDiMPOTENCEbASEeRRORcODE_DESTINATIONeLEMENTfULL                                                  0xdddd10dc
+#define ifcIDiMPOTENCEbASEeRRORcODE_ILLEGALeLEMENTaDDRESS                                                   0xdddd10dd
+#define ifcIDiMPOTENCEbASEeRRORcODE_MAGAZINEnOTpRESENT                                                      0xdddd10de
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICErEINITIALIZATIONnEEDED                                            0xdddd10df
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICErEQUIREScLEANING                                                  0xdddd10e0
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEdOORoPEN                                                          0xdddd10e1
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEnOTcONNECTED                                                      0xdddd10e2
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTfOUND                                                                0xdddd10e3
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmATCH                                                                 0xdddd10e4
+#define ifcIDiMPOTENCEbASEeRRORcODE_SETnOTfOUND                                                             0xdddd10e5
+#define ifcIDiMPOTENCEbASEeRRORcODE_POINTnOTfOUND                                                           0xdddd10e6
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOtRACKINGsERVICE                                                       0xdddd10e7
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOvOLUMEiD                                                              0xdddd10e8
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0583                                                           0xdddd10e9
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOrEMOVErEPLACED                                                  0xdddd10ea
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOmOVErEPLACEMENT                                                 0xdddd10eb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNABLEtOmOVErEPLACEMENT_2                                               0xdddd10ec
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALdELETEiNpROGRESS                                                 0xdddd10ed
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALnOTaCTIVE                                                        0xdddd10ee
+#define ifcIDiMPOTENCEbASEeRRORcODE_POTENTIALfILEfOUND                                                      0xdddd10ef
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALeNTRYdELETED                                                     0xdddd10f0
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0584                                                           0xdddd10f1
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0585                                                           0xdddd10f2
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0586                                                           0xdddd10f3
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0587                                                           0xdddd10f4
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0588                                                           0xdddd10f5
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0589                                                           0xdddd10f6
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0590                                                           0xdddd10f7
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0591                                                           0xdddd10f8
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHUTDOWNiSsCHEDULED                                                     0xdddd10f9
+#define ifcIDiMPOTENCEbASEeRRORcODE_SHUTDOWNuSERSlOGGEDoN                                                   0xdddd10fa
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0592                                                           0xdddd10fb
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0593                                                           0xdddd10fc
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0594                                                           0xdddd10fd
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0595                                                           0xdddd10fe
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0596                                                           0xdddd10ff
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0597                                                           0xdddd1100
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0598                                                           0xdddd1101
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0599                                                           0xdddd1102
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADdEVICE                                                               0xdddd1103
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONuNAVAIL                                                       0xdddd1104
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEVICEaLREADYrEMEMBERED                                                 0xdddd1105
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOnEToRbADpATH                                                          0xdddd1106
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADpROVIDER                                                             0xdddd1107
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOToPENpROFILE                                                       0xdddd1108
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADpROFILE                                                              0xdddd1109
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTcONTAINER                                                            0xdddd110a
+#define ifcIDiMPOTENCEbASEeRRORcODE_EXTENDEDeRROR                                                           0xdddd110b
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDgROUPNAME                                                        0xdddd110c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcOMPUTERNAME                                                     0xdddd110d
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeVENTNAME                                                        0xdddd110e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdOMAINNAME                                                       0xdddd110f
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVICENAME                                                      0xdddd1110
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDnETNAME                                                          0xdddd1111
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsHARENAME                                                        0xdddd1112
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpASSWORDNAME                                                     0xdddd1113
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmESSAGENAME                                                      0xdddd1114
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmESSAGEDEST                                                      0xdddd1115
+#define ifcIDiMPOTENCEbASEeRRORcODE_SESSIONcREDENTIALcONFLICT                                               0xdddd1116
+#define ifcIDiMPOTENCEbASEeRRORcODE_REMOTEsESSIONlIMITeXCEEDED                                              0xdddd1117
+#define ifcIDiMPOTENCEbASEeRRORcODE_DUPdOMAINNAME                                                           0xdddd1118
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOnETWORK                                                               0xdddd1119
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANCELLED                                                               0xdddd111a
+#define ifcIDiMPOTENCEbASEeRRORcODE_USERmAPPEDfILE                                                          0xdddd111b
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONrEFUSED                                                       0xdddd111c
+#define ifcIDiMPOTENCEbASEeRRORcODE_GRACEFULdISCONNECT                                                      0xdddd111d
+#define ifcIDiMPOTENCEbASEeRRORcODE_ADDRESSaLREADYaSSOCIATED                                                0xdddd111e
+#define ifcIDiMPOTENCEbASEeRRORcODE_ADDRESSnOTaSSOCIATED                                                    0xdddd111f
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONiNVALID                                                       0xdddd1120
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONaCTIVE                                                        0xdddd1121
+#define ifcIDiMPOTENCEbASEeRRORcODE_NETWORKuNREACHABLE                                                      0xdddd1122
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOSTuNREACHABLE                                                         0xdddd1123
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROTOCOLuNREACHABLE                                                     0xdddd1124
+#define ifcIDiMPOTENCEbASEeRRORcODE_PORTuNREACHABLE                                                         0xdddd1125
+#define ifcIDiMPOTENCEbASEeRRORcODE_REQUESTaBORTED                                                          0xdddd1126
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONaBORTED                                                       0xdddd1127
+#define ifcIDiMPOTENCEbASEeRRORcODE_RETRY                                                                   0xdddd1128
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONNECTIONcOUNTlIMIT                                                    0xdddd1129
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGINtIMErESTRICTION                                                    0xdddd112a
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGINwKSTArESTRICTION                                                   0xdddd112b
+#define ifcIDiMPOTENCEbASEeRRORcODE_INCORRECTaDDRESS                                                        0xdddd112c
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYrEGISTERED                                                       0xdddd112d
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTfOUND                                                         0xdddd112e
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTaUTHENTICATED                                                        0xdddd112f
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTlOGGEDoN                                                             0xdddd1130
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONTINUE                                                                0xdddd1131
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYiNITIALIZED                                                      0xdddd1132
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOmOREdEVICES                                                           0xdddd1133
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHsITE                                                              0xdddd1134
+#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINcONTROLLEReXISTS                                                  0xdddd1135
+#define ifcIDiMPOTENCEbASEeRRORcODE_ONLYiFcONNECTED                                                         0xdddd1136
+#define ifcIDiMPOTENCEbASEeRRORcODE_OVERRIDEnOCHANGES                                                       0xdddd1137
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADuSERpROFILE                                                          0xdddd1138
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTsUPPORTEDoNsBS                                                       0xdddd1139
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERsHUTDOWNiNpROGRESS                                                0xdddd113a
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOSTdOWN                                                                0xdddd113b
+#define ifcIDiMPOTENCEbASEeRRORcODE_NONaCCOUNTsID                                                           0xdddd113c
+#define ifcIDiMPOTENCEbASEeRRORcODE_NONdOMAINsID                                                            0xdddd113d
+#define ifcIDiMPOTENCEbASEeRRORcODE_APPHELPbLOCK                                                            0xdddd113e
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDbYpOLICY                                                  0xdddd113f
+#define ifcIDiMPOTENCEbASEeRRORcODE_REGnATcONSUMPTION                                                       0xdddd1140
+#define ifcIDiMPOTENCEbASEeRRORcODE_CSCSHAREoFFLINE                                                         0xdddd1141
+#define ifcIDiMPOTENCEbASEeRRORcODE_PKINITfAILURE                                                           0xdddd1142
+#define ifcIDiMPOTENCEbASEeRRORcODE_SMARTCARDsUBSYSTEMfAILURE                                               0xdddd1143
+#define ifcIDiMPOTENCEbASEeRRORcODE_DOWNGRADEdETECTED                                                       0xdddd1144
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0600                                                           0xdddd1145
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0601                                                           0xdddd1146
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0602                                                           0xdddd1147
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0603                                                           0xdddd1148
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0604                                                           0xdddd1149
+#define ifcIDiMPOTENCEbASEeRRORcODE_MACHINElOCKED                                                           0xdddd114a
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0605                                                           0xdddd114b
+#define ifcIDiMPOTENCEbASEeRRORcODE_CALLBACKsUPPLIEDiNVALIDdATA                                             0xdddd114c
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYNCfOREGROUNDrEFRESHrEQUIRED                                           0xdddd114d
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERbLOCKED                                                           0xdddd114e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiMPORToFnONdLL                                                   0xdddd114f
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDwEBBLADE                                                  0xdddd1150
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCESSdISABLEDwEBBLADEtAMPER                                            0xdddd1151
+#define ifcIDiMPOTENCEbASEeRRORcODE_RECOVERYfAILURE                                                         0xdddd1152
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYfIBER                                                            0xdddd1153
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALREADYtHREAD                                                           0xdddd1154
+#define ifcIDiMPOTENCEbASEeRRORcODE_STACKbUFFERoVERRUN                                                      0xdddd1155
+#define ifcIDiMPOTENCEbASEeRRORcODE_PARAMETERqUOTAeXCEEDED                                                  0xdddd1156
+#define ifcIDiMPOTENCEbASEeRRORcODE_DEBUGGERiNACTIVE                                                        0xdddd1157
+#define ifcIDiMPOTENCEbASEeRRORcODE_DELAYlOADfAILED                                                         0xdddd1158
+#define ifcIDiMPOTENCEbASEeRRORcODE_VDMdISALLOWED                                                           0xdddd1159
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNIDENTIFIEDeRROR                                                       0xdddd115a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcRUNTIMEpARAMETER                                                0xdddd115b
+#define ifcIDiMPOTENCEbASEeRRORcODE_BEYONDvDL                                                               0xdddd115c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INCOMPATIBLEsERVICEsIDtYPE                                              0xdddd115d
+#define ifcIDiMPOTENCEbASEeRRORcODE_DRIVERpROCESStERMINATED                                                 0xdddd115e
+#define ifcIDiMPOTENCEbASEeRRORcODE_IMPLEMENTATIONlIMIT                                                     0xdddd115f
+#define ifcIDiMPOTENCEbASEeRRORcODE_PROCESSiSpROTECTED                                                      0xdddd1160
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVICEnOTIFYcLIENTlAGGING                                              0xdddd1161
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKqUOTAeXCEEDED                                                       0xdddd1162
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONTENTbLOCKED                                                          0xdddd1163
+#define ifcIDiMPOTENCEbASEeRRORcODE_INCOMPATIBLEsERVICEpRIVILEGE                                            0xdddd1164
+#define ifcIDiMPOTENCEbASEeRRORcODE_APPhANG                                                                 0xdddd1165
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlABEL                                                            0xdddd1166
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTaLLaSSIGNED                                                          0xdddd1167
+#define ifcIDiMPOTENCEbASEeRRORcODE_SOMEnOTmAPPED                                                           0xdddd1168
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOqUOTASfORaCCOUNT                                                      0xdddd1169
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOCALuSERsESSIONkEY                                                     0xdddd116a
+#define ifcIDiMPOTENCEbASEeRRORcODE_NULLlMpASSWORD                                                          0xdddd116b
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNKNOWNrEVISION                                                         0xdddd116c
+#define ifcIDiMPOTENCEbASEeRRORcODE_REVISIONmISMATCH                                                        0xdddd116d
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDoWNER                                                            0xdddd116e
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDpRIMARYgROUP                                                     0xdddd116f
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOiMPERSONATIONtOKEN                                                    0xdddd1170
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTdISABLEmANDATORY                                                    0xdddd1171
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOlOGONsERVERS                                                          0xdddd1172
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHlOGONsESSION                                                      0xdddd1173
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHpRIVILEGE                                                         0xdddd1174
+#define ifcIDiMPOTENCEbASEeRRORcODE_PRIVILEGEnOThELD                                                        0xdddd1175
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCCOUNTnAME                                                      0xdddd1176
+#define ifcIDiMPOTENCEbASEeRRORcODE_USEReXISTS                                                              0xdddd1177
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHuSER                                                              0xdddd1178
+#define ifcIDiMPOTENCEbASEeRRORcODE_GROUPeXISTS                                                             0xdddd1179
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHgROUP                                                             0xdddd117a
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERiNgROUP                                                           0xdddd117b
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERnOTiNgROUP                                                        0xdddd117c
+#define ifcIDiMPOTENCEbASEeRRORcODE_LASTaDMIN                                                               0xdddd117d
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGpASSWORD                                                           0xdddd117e
+#define ifcIDiMPOTENCEbASEeRRORcODE_ILLfORMEDpASSWORD                                                       0xdddd117f
+#define ifcIDiMPOTENCEbASEeRRORcODE_PASSWORDrESTRICTION                                                     0xdddd1180
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONfAILURE                                                            0xdddd1181
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCOUNTrESTRICTION                                                      0xdddd1182
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlOGONhOURS                                                       0xdddd1183
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDwORKSTATION                                                      0xdddd1184
+#define ifcIDiMPOTENCEbASEeRRORcODE_PASSWORDeXPIRED                                                         0xdddd1185
+#define ifcIDiMPOTENCEbASEeRRORcODE_ACCOUNTdISABLED                                                         0xdddd1186
+#define ifcIDiMPOTENCEbASEeRRORcODE_NONEmAPPED                                                              0xdddd1187
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYlUIDSrEQUESTED                                                   0xdddd1188
+#define ifcIDiMPOTENCEbASEeRRORcODE_LUIDSeXHAUSTED                                                          0xdddd1189
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsUBaUTHORITY                                                     0xdddd118a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCL                                                              0xdddd118b
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsID                                                              0xdddd118c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsECURITYdESCR                                                    0xdddd118d
+#define ifcIDiMPOTENCEbASEeRRORcODE_UNDEFINED0606                                                           0xdddd118e
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADiNHERITANCEaCL                                                       0xdddd118f
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERdISABLED                                                          0xdddd1190
+#define ifcIDiMPOTENCEbASEeRRORcODE_SERVERnOTdISABLED                                                       0xdddd1191
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiDaUTHORITY                                                      0xdddd1192
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALLOTTEDsPACEeXCEEDED                                                   0xdddd1193
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDgROUPaTTRIBUTES                                                  0xdddd1194
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADiMPERSONATIONlEVEL                                                   0xdddd1195
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANToPENaNONYMOUS                                                       0xdddd1196
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADvALIDATIONcLASS                                                      0xdddd1197
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADtOKENtYPE                                                            0xdddd1198
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsECURITYoNoBJECT                                                      0xdddd1199
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANTaCCESSdOMAINiNFO                                                    0xdddd119a
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsERVERsTATE                                                      0xdddd119b
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdOMAINsTATE                                                      0xdddd119c
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdOMAINrOLE                                                       0xdddd119d
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHdOMAIN                                                            0xdddd119e
+#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINeXISTS                                                            0xdddd119f
+#define ifcIDiMPOTENCEbASEeRRORcODE_DOMAINlIMITeXCEEDED                                                     0xdddd11a0
+#define ifcIDiMPOTENCEbASEeRRORcODE_INTERNALdBcORRUPTION                                                    0xdddd11a1
+#define ifcIDiMPOTENCEbASEeRRORcODE_INTERNALeRROR                                                           0xdddd11a2
+#define ifcIDiMPOTENCEbASEeRRORcODE_GENERICnOTmAPPED                                                        0xdddd11a3
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADdESCRIPTORfORMAT                                                     0xdddd11a4
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTlOGONpROCESS                                                         0xdddd11a5
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONsESSIONeXISTS                                                      0xdddd11a6
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHpACKAGE                                                           0xdddd11a7
+#define ifcIDiMPOTENCEbASEeRRORcODE_BADlOGONsESSIONsTATE                                                    0xdddd11a8
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONsESSIONcOLLISION                                                   0xdddd11a9
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlOGONtYPE                                                        0xdddd11aa
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTiMPERSONATE                                                       0xdddd11ab
+#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTiNVALIDsTATE                                                       0xdddd11ac
+#define ifcIDiMPOTENCEbASEeRRORcODE_RXACTcOMMITfAILURE                                                      0xdddd11ad
+#define ifcIDiMPOTENCEbASEeRRORcODE_SPECIALaCCOUNT                                                          0xdddd11ae
+#define ifcIDiMPOTENCEbASEeRRORcODE_SPECIALgROUP                                                            0xdddd11af
+#define ifcIDiMPOTENCEbASEeRRORcODE_SPECIALuSER                                                             0xdddd11b0
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERSpRIMARYgROUP                                                     0xdddd11b1
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOKENaLREADYiNuSE                                                       0xdddd11b2
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHaLIAS                                                             0xdddd11b3
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERnOTiNaLIAS                                                        0xdddd11b4
+#define ifcIDiMPOTENCEbASEeRRORcODE_MEMBERiNaLIAS                                                           0xdddd11b5
+#define ifcIDiMPOTENCEbASEeRRORcODE_ALIASeXISTS                                                             0xdddd11b6
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONnOTgRANTED                                                         0xdddd11b7
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsECRETS                                                          0xdddd11b8
+#define ifcIDiMPOTENCEbASEeRRORcODE_SECRETtOOlONG                                                           0xdddd11b9
+#define ifcIDiMPOTENCEbASEeRRORcODE_INTERNALdBeRROR                                                         0xdddd11ba
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYcONTEXTiDS                                                       0xdddd11bb
+#define ifcIDiMPOTENCEbASEeRRORcODE_LOGONtYPEnOTgRANTED                                                     0xdddd11bc
+#define ifcIDiMPOTENCEbASEeRRORcODE_NTcROSSeNCRYPTIONrEQUIRED                                               0xdddd11bd
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsUCHmEMBER                                                            0xdddd11be
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmEMBER                                                           0xdddd11bf
+#define ifcIDiMPOTENCEbASEeRRORcODE_TOOmANYsIDS                                                             0xdddd11c0
+#define ifcIDiMPOTENCEbASEeRRORcODE_LMcROSSeNCRYPTIONrEQUIRED                                               0xdddd11c1
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOiNHERITANCE                                                           0xdddd11c2
+#define ifcIDiMPOTENCEbASEeRRORcODE_FILEcORRUPT                                                             0xdddd11c3
+#define ifcIDiMPOTENCEbASEeRRORcODE_DISKcORRUPT                                                             0xdddd11c4
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOuSERsESSIONkEY                                                        0xdddd11c5
+#define ifcIDiMPOTENCEbASEeRRORcODE_LICENSEqUOTAeXCEEDED                                                    0xdddd11c6
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGtARGETnAME                                                         0xdddd11c7
+#define ifcIDiMPOTENCEbASEeRRORcODE_MUTUALaUTHfAILED                                                        0xdddd11c8
+#define ifcIDiMPOTENCEbASEeRRORcODE_TIMEsKEW                                                                0xdddd11c9
+#define ifcIDiMPOTENCEbASEeRRORcODE_CURRENTdOMAINnOTaLLOWED                                                 0xdddd11ca
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDwINDOWhANDLE                                                     0xdddd11cb
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmENUhANDLE                                                       0xdddd11cc
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcURSORhANDLE                                                     0xdddd11cd
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDaCCELhANDLE                                                      0xdddd11ce
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhOOKhANDLE                                                       0xdddd11cf
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDdWPhANDLE                                                        0xdddd11d0
+#define ifcIDiMPOTENCEbASEeRRORcODE_TLWwITHwSCHILD                                                          0xdddd11d1
+#define ifcIDiMPOTENCEbASEeRRORcODE_CANNOTfINDwNDcLASS                                                      0xdddd11d2
+#define ifcIDiMPOTENCEbASEeRRORcODE_WINDOWoFoTHERtHREAD                                                     0xdddd11d3
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOTKEYaLREADYrEGISTERED                                                 0xdddd11d4
+#define ifcIDiMPOTENCEbASEeRRORcODE_CLASSaLREADYeXISTS                                                      0xdddd11d5
+#define ifcIDiMPOTENCEbASEeRRORcODE_CLASSdOESnOTeXIST                                                       0xdddd11d6
+#define ifcIDiMPOTENCEbASEeRRORcODE_CLASShASwINDOWS                                                         0xdddd11d7
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiNDEX                                                            0xdddd11d8
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDiCONhANDLE                                                       0xdddd11d9
+#define ifcIDiMPOTENCEbASEeRRORcODE_PRIVATEdIALOGiNDEX                                                      0xdddd11da
+#define ifcIDiMPOTENCEbASEeRRORcODE_LISTBOXiDnOTfOUND                                                       0xdddd11db
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOwILDCARDcHARACTERS                                                    0xdddd11dc
+#define ifcIDiMPOTENCEbASEeRRORcODE_CLIPBOARDnOToPEN                                                        0xdddd11dd
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOTKEYnOTrEGISTERED                                                     0xdddd11de
+#define ifcIDiMPOTENCEbASEeRRORcODE_WINDOWnOTdIALOG                                                         0xdddd11df
+#define ifcIDiMPOTENCEbASEeRRORcODE_CONTROLiDnOTfOUND                                                       0xdddd11e0
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDcOMBOBOXmESSAGE                                                  0xdddd11e1
+#define ifcIDiMPOTENCEbASEeRRORcODE_WINDOWnOTcOMBOBOX                                                       0xdddd11e2
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDeDIThEIGHT                                                       0xdddd11e3
+#define ifcIDiMPOTENCEbASEeRRORcODE_DCnOTfOUND                                                              0xdddd11e4
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDhOOKfILTER                                                       0xdddd11e5
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDfILTERpROC                                                       0xdddd11e6
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOOKnEEDShMOD                                                           0xdddd11e7
+#define ifcIDiMPOTENCEbASEeRRORcODE_GLOBALoNLYhOOK                                                          0xdddd11e8
+#define ifcIDiMPOTENCEbASEeRRORcODE_JOURNALhOOKsET                                                          0xdddd11e9
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOOKnOTiNSTALLED                                                        0xdddd11ea
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDlBmESSAGE                                                        0xdddd11eb
+#define ifcIDiMPOTENCEbASEeRRORcODE_SETCOUNToNbADlB                                                         0xdddd11ec
+#define ifcIDiMPOTENCEbASEeRRORcODE_LBwITHOUTtABSTOPS                                                       0xdddd11ed
+#define ifcIDiMPOTENCEbASEeRRORcODE_DESTROYoBJECToFoTHERtHREAD                                              0xdddd11ee
+#define ifcIDiMPOTENCEbASEeRRORcODE_CHILDwINDOWmENU                                                         0xdddd11ef
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsYSTEMmENU                                                            0xdddd11f0
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmSGBOXsTYLE                                                      0xdddd11f1
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsPIvALUE                                                         0xdddd11f2
+#define ifcIDiMPOTENCEbASEeRRORcODE_SCREENaLREADYlOCKED                                                     0xdddd11f3
+#define ifcIDiMPOTENCEbASEeRRORcODE_HWNDShAVEdIFFpARENT                                                     0xdddd11f4
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOTcHILDwINDOW                                                          0xdddd11f5
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDgWcOMMAND                                                        0xdddd11f6
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDtHREADiD                                                         0xdddd11f7
+#define ifcIDiMPOTENCEbASEeRRORcODE_NONmDICHILDwINDOW                                                       0xdddd11f8
+#define ifcIDiMPOTENCEbASEeRRORcODE_POPUPaLREADYaCTIVE                                                      0xdddd11f9
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsCROLLBARS                                                            0xdddd11fa
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsCROLLBARrANGE                                                   0xdddd11fb
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDsHOWWINcOMMAND                                                   0xdddd11fc
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOsYSTEMrESOURCES                                                       0xdddd11fd
+#define ifcIDiMPOTENCEbASEeRRORcODE_NONPAGEDsYSTEMrESOURCES                                                 0xdddd11fe
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEDsYSTEMrESOURCES                                                    0xdddd11ff
+#define ifcIDiMPOTENCEbASEeRRORcODE_WORKINGsETqUOTA                                                         0xdddd1200
+#define ifcIDiMPOTENCEbASEeRRORcODE_PAGEFILEqUOTA                                                           0xdddd1201
+#define ifcIDiMPOTENCEbASEeRRORcODE_COMMITMENTlIMIT                                                         0xdddd1202
+#define ifcIDiMPOTENCEbASEeRRORcODE_MENUiTEMnOTfOUND                                                        0xdddd1203
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDkEYBOARDhANDLE                                                   0xdddd1204
+#define ifcIDiMPOTENCEbASEeRRORcODE_HOOKtYPEnOTaLLOWED                                                      0xdddd1205
+#define ifcIDiMPOTENCEbASEeRRORcODE_REQUIRESiNTERACTIVEwINDOWSTATION                                        0xdddd1206
+#define ifcIDiMPOTENCEbASEeRRORcODE_TIMEOUT                                                                 0xdddd1207
+#define ifcIDiMPOTENCEbASEeRRORcODE_INVALIDmONITORhANDLE                                                    0xdddd1208
+#define ifcIDiMPOTENCEbASEeRRORcODE_INCORRECTsIZE                                                           0xdddd1209
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYMLINKcLASSdISABLED                                                    0xdddd120a
+#define ifcIDiMPOTENCEbASEeRRORcODE_SYMLINKnOTsUPPORTED                                                     0xdddd120b
+#define ifcIDiMPOTENCEbASEeRRORcODE_XMLpARSEeRROR                                                           0xdddd120c
+#define ifcIDiMPOTENCEbASEeRRORcODE_XMLdSIGeRROR                                                            0xdddd120d
+#define ifcIDiMPOTENCEbASEeRRORcODE_RESTARTaPPLICATION                                                      0xdddd120e
+#define ifcIDiMPOTENCEbASEeRRORcODE_WRONGcOMPARTMENT                                                        0xdddd120f
+#define ifcIDiMPOTENCEbASEeRRORcODE_AUTHIPfAILURE                                                           0xdddd1210
+#define ifcIDiMPOTENCEbASEeRRORcODE_NOnVRAMrESOURCES                                                        0xdddd1211
 /*3*/
-#define ifcIDiMPOTENCEbASEeRRORcODE_min     0xdddd0c52
-#define ifcIDiMPOTENCEbASEeRRORcODE_max     0xdddd120f                                                               
+#define ifcIDiMPOTENCEbASEeRRORcODE_min     0xdddd0c54
+#define ifcIDiMPOTENCEbASEeRRORcODE_max     0xdddd1211                                                               
 
 
 //
