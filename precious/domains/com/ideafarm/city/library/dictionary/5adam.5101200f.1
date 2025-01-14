@@ -25,6 +25,11 @@ DONE( tmWorkF )
     //ZE( countT  , timeN1 ) ;
 
     }
+        ++ s ; ether.osSleepF( tin0P , TOCK << 4 ) ;
+        //B:++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
+        //B:++ s ; ether.osSleepF( tin0P , TOCK << 0 ) ;
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
         if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , posti , costi ) ; etThread.delF( tin0P , posti ) ;
         }
             }
@@ -60,6 +65,7 @@ DONE( tmWorkF )
             SCOOPS
         {
         IFsCRATCHoK
+        etThread.traceF( tin0P , T("stomp!") ) ;
 
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
@@ -99,7 +105,7 @@ DONE( tmWorkF )
         const countT costInvoice = tInvoice.csF( tin0P ) ;
         TN( tInvoice , "" ) ; tInvoice = TF2(++idInvoiceLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
     {
-    //while( !ether )
+    while( !ether )
     ZE( countT , idInvoiceLath ) ;
 
     _IO_
