@@ -19,18 +19,31 @@ DONE( tmWorkF )
     etherC::loafIF( tin0P ) ;
     etThread.traceF( tin0P , T("ok") ) ;
 
+    while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) ) ;
+    countT cDo = TUCK >> 3 ;
+
+    _IO_
+{
+if( pTaskP )
+TASK( tmWorkF )
+
+DONE( tmGorillaF )
+}
+    etherC::loafIF( tin0P ) ;
+    etThread.traceF( tin0P , T("ok") ) ;
+
     //TN( tTime , "" ) ; tTime = TTF(timeN1,timeN2) ;
     //etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
     //ZE( sCountT , timeN2 ) ;
     //ZE( countT  , timeN1 ) ;
 
     }
-        ++ s ; ether.osSleepF( tin0P , TOCK << 4 ) ;
+        //++ s ; ether.osSleepF( tin0P , TOCK >> 4 ) ;
         //B:++ s ; ether.osSleepF( tin0P , TOCK << 3 ) ;
         //B:++ s ; ether.osSleepF( tin0P , TOCK << 0 ) ;
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-        if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , posti , costi ) ; etThread.delF( tin0P , posti ) ;
+        /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
         }
             }
                 etThread.traceF( tin0P , T("!exception / boxGetShadowF failed") ) ;
@@ -42,7 +55,7 @@ DONE( tmWorkF )
         {
         IFsCRATCHoK
 
-        if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo2.ttt") , posti , costi ) ; etThread.delF( tin0P , posti ) ;
+        /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo2.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
         }
             }
                 etThread.traceF( tin0P , T("!exception / boxGetShadowF failed") ) ;
@@ -54,7 +67,7 @@ DONE( tmWorkF )
         {
         IFsCRATCHoK
 
-        if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , posti , costi ) ; etThread.delF( tin0P , posti ) ;
+        /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
         }
             }
                 etThread.traceF( tin0P , T("!exception / boxGetShadowF failed") ) ;
@@ -71,9 +84,9 @@ DONE( tmWorkF )
         ZE( osTextT* , posti ) ;
 
         }
-            etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , tRequestAll3 , tRequestAll3.csF( tin0P ) ) ;
-            etThread.boxPutF( tin0P , T("///d/tmp/foo2.ttt") , tRequestAll2 , tRequestAll2.csF( tin0P ) ) ;
-            etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , tRequestAll1 , tRequestAll1.csF( tin0P ) ) ;
+            //etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , tRequestAll3 , tRequestAll3.csF( tin0P ) ) ;
+            //etThread.boxPutF( tin0P , T("///d/tmp/foo2.ttt") , tRequestAll2 , tRequestAll2.csF( tin0P ) ) ;
+            //etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , tRequestAll1 , tRequestAll1.csF( tin0P ) ) ;
 
             tRequestAll3 = tHead+tContentLength3+T(postRaw3Part1)+tInvoice+T(postRaw3Part2) ;
             tRequestAll2 = tHead+tContentLength2+T(postRaw2Part1)+tInvoice+T(postRaw2Part2) ;
@@ -103,15 +116,16 @@ DONE( tmWorkF )
         TN( tRequestAll1 , "" ) ;
 
         const countT costInvoice = tInvoice.csF( tin0P ) ;
-        TN( tInvoice , "" ) ; tInvoice = TF2(++idInvoiceLath,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+        TN( tInvoice , "" ) ; tInvoice = TF2(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
     {
     while( !ether )
-    ZE( countT , idInvoiceLath ) ;
 
     _IO_
 {
 if( pTaskP )
-TASK( tmWorkF )
+TASK( tmGorillaF )
+
+countT idInvoiceLath ;
 
 /*1*/WAKEsHOWtEXT( "gorilla.http.impersonate.stripe" )/*1*/
 /**/
