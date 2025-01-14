@@ -711,11 +711,11 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "ifcMonitorQueryOldF_o1@33" ) ;
+    TN( tNameSoixlOld , "ifcGlass2QueryOldF_o1@33" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)ifcMonitorQueryOldF_o1P33_GF ;
+    *_pSwSoixlOldApi = (countT)ifcGlass2QueryOldF_o1P33_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

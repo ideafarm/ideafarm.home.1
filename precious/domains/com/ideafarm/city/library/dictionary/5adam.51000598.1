@@ -99,7 +99,7 @@ ether.loafIF( tin0P ) ;
                     sIn2 >> bOk ;
                     ZE( countT , bOk ) ;
     
-                    __( idReply - ifcIDrEPLYmONITOR_IMAGE ) ;
+                    __( idReply - ifcIDrEPLYgLASS2_IMAGE ) ;
                     sIn2 >> idReply ;
                     ZE( countT , idReply ) ;
                     
@@ -110,7 +110,7 @@ ether.loafIF( tin0P ) ;
                     sOut2 << sizeof( tin123S ) ;
                     sOut2 << ip ;
                     sOut2 << osPid ;
-                    sOut2 << (countT)ifcIDcMDmONITOR_IMAGE ;
+                    sOut2 << (countT)ifcIDcMDgLASS2_IMAGE ;
                     soulC sOut2( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 if( !bIda )
@@ -139,7 +139,7 @@ ether.loafIF( tin0P ) ;
     {
     while( sIn )
     
-    __( idReply - ifcIDrEPLYmONITOR_tin123S ) ;
+    __( idReply - ifcIDrEPLYgLASS2_tin123S ) ;
     sIn >> idReply ;
     ZE( countT , idReply ) ;
     
@@ -147,7 +147,7 @@ ether.loafIF( tin0P ) ;
     soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
     
     sockm.writeF( tin0P , sOut ) ;
-    sOut << (countT)ifcIDcMDmONITOR_tin123S ;
+    sOut << (countT)ifcIDcMDgLASS2_tin123S ;
     soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 
     etThread.strMakeF( tin0P , LF , psttr , T("\fIPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System\r\nPerformance Monitor\r\ncycle: ")+TF2(++idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr , TOCK ) ; ___( psttr ) ;
@@ -179,7 +179,7 @@ TODO
     sIn3 >> bOk ;
     ZE( countT , bOk ) ;
                     
-    __( idReply - ifcIDrEPLYmONITOR_IMAGE ) ;
+    __( idReply - ifcIDrEPLYgLASS2_IMAGE ) ;
     sIn3 >> idReply ;
     ZE( countT , idReply ) ;
                                     
@@ -190,7 +190,7 @@ TODO
     sOut3 << sizeof( grabS ) ;
     sOut3 << (countT)pForeignGrabP ;
     sOut3 << osPidP ;
-    sOut3 << (countT)ifcIDcMDmONITOR_IMAGE ;
+    sOut3 << (countT)ifcIDcMDgLASS2_IMAGE ;
     soulC sOut3( tin0P , TAG( TAGiDnULL ) ) ;
 {
 voidT image_grabS_F( tin0S& tin0P , etherC& etherP , byteT*& pbGrabP , socketC& sockP , grabS* pForeignGrabP , countT osPidP )

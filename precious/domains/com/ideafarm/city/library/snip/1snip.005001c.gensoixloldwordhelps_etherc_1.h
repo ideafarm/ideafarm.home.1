@@ -3893,16 +3893,16 @@
         "IdeaFarm (tm) SOIL (tm) - Sentient Object Interface Language\r\n"
         "\r\n"
         "Class: etherC\r\n"
-        "Author: \"ifcMonitorQueryOldF_o1@33\"\r\n"
+        "Author: \"ifcGlass2QueryOldF_o1@33\"\r\n"
         "\r\n"
-        "Subject: Command word \"ifcMonitorQueryOldF_o1@33\"\r\n"
+        "Subject: Command word \"ifcGlass2QueryOldF_o1@33\"\r\n"
         "\r\n"
         "\r\n"
         "Instructions:  Read this file.  It contains simple example code.  To\r\n"
         "manifest that code, drop this file into the Depository.  IOW, this file\r\n"
         "is also an executable SOIL (tm) program.\r\n"
         "\r\n"
-        "Each manifestation of \"ifcMonitorQueryOldF_o1@33\" uses the current stack in this way:\r\n"
+        "Each manifestation of \"ifcGlass2QueryOldF_o1@33\" uses the current stack in this way:\r\n"
         "\r\n"
         "    Pop  3:    countT           idP\r\n"
         "    Pop  2:    countT           cbP\r\n"
@@ -3914,13 +3914,13 @@
         "the Depository:\r\n"
         "\r\n"
         "    . on space\r\n"
-        "    . \"Simple example code for \\\"ifcMonitorQueryOldF_o1@33\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
+        "    . \"Simple example code for \\\"ifcGlass2QueryOldF_o1@33\\\" is not yet available.  Example code will eventually be presented for every word; this is a universal feature of all IdeaFarm (tm) software products and is enforced by the internal IdeaFarm (tm) development environment.\" POPUP\r\n"
         "    . off space\r\n"
 
     ;
 
     TN( tDoc , postDoc ) ;
-    TN( tNameSoixlOld , "ifcMonitorQueryOldF_o1@33" ) ;
+    TN( tNameSoixlOld , "ifcGlass2QueryOldF_o1@33" ) ;
    _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
    _psttLeverSoixlOldApi = tNameSoixlOld ;
    if( *_pSwSoixlOldApiDoc ) { BLAMMO ; }

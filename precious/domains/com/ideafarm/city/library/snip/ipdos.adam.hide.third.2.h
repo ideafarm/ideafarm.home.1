@@ -1929,7 +1929,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLgLASS2     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLgLASS2     ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).where.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
@@ -2307,7 +2307,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLgLASS2     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLgLASS2     ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).where.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
@@ -2985,7 +2985,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLgLASS2     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLgLASS2     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
@@ -3129,7 +3129,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLgLASS2     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLgLASS2     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
@@ -3273,7 +3273,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLgLASS2     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLgLASS2     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
@@ -3417,7 +3417,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLgLASS2     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLgLASS2     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
@@ -3561,7 +3561,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLgLASS2     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLgLASS2     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK12pART0:  newing etThread" )                                                                                                                                                                                                                                             \
@@ -3705,7 +3705,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLgLASS2     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLgLASS2     ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK1pART0:   newing etThread" )                                                                                                                                                                                                                                             \
@@ -29916,8 +29916,8 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011a9.thirdc.dosfilewindowif!||
  static voidT flushViewOfFileIF( tin0S& tin0P , const byteT* const pbP , const countT cbP = 0 , const flagsT flagsP = flFLUSHvIEWoFfILE_null , const handleC* const phFileP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34189.thirdC.flushViewOfFileIF!||
- static voidT dosTellMonitorIF( tin0S& tin0P , const tellC& tellP , const countT idBooksP = ifcIDbOOKStELL_APP ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340e3.thirdC.dosTellMonitorIF!||
+ static voidT dosTellGlass2IF( tin0S& tin0P , const tellC& tellP , const countT idBooksP = ifcIDbOOKStELL_APP ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340e3.thirdC.dosTellGlass2IF!||
  static boolT dosOpenEventSem2IF( tin0S& tin0P , handleC& handleP , const osTextT* const postP = 0 , const boolT fGivenP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34048.thirdC.dosOpenEventSem2IF!||
  static voidT dosFileDeleteIfCorruptIF( tin0S& tin0P , const osTextT* const postP ) ;
@@ -30596,8 +30596,8 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340ed.thirdC.strCompareF!||
  boolT strFEndF( tin0S& tin0P , const countT* const pcP , const countT cnP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340ec.thirdC.strFEndF!||
- static voidT thirdWriteToMonitorIF( tin0S& tin0P , const byteT* const pbP , countT cbP ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.1020164.thirdC.thirdWriteToMonitorIF!||
+ static voidT thirdWriteToGlass2IF( tin0S& tin0P , const byteT* const pbP , countT cbP ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.1020164.thirdC.thirdWriteToGlass2IF!||
  static voidT thirdWriteToCyrcleOldIF( tin0S& tin0P , napkinC& napkinP , const byteT* const pbP , countT cbP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34129.thirdC.thirdWriteToCyrcleOldIF!||
  static count04T fileReadIF( tin0S& tin0P , byteT* const pbP , countT& cbP , const osTextT* const postNameP ) ;
@@ -33488,8 +33488,8 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3414d.etherC.ifcIsSpammerF!||
  boolT ifcIsSpammerF( tin0S& tin0P , const nicNameC& nicNameP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3414e.etherC.ifcIsSpammerF!||
- voidT ifcMonitorQueryOldF( tin0S& tin0P , byteT*& pbP , countT& cbP , const countT idP ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3415a.etherC.ifcMonitorQueryOldF!||
+ voidT ifcGlass2QueryOldF( tin0S& tin0P , byteT*& pbP , countT& cbP , const countT idP ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3415a.etherC.ifcGlass2QueryOldF!||
  voidT ifcRenderingHandlerF( tin0S& tin0P , const ifcRenderingHandlerFT pIfcRenderingHandlerFIP = 0 , const countT infoP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3415f.etherC.ifcRenderingHandlerF!||
  static voidT ifcSayIF( const osTextT* const postBodyP , const flagsT flagsP = flSAY_null , const osTextT* const postNameP = 0 ) ;
@@ -41337,13 +41337,13 @@ base class to make a derived class of objects easily contained by a stackC objec
     sharedMemInfoS                  _thirdC_pSharedMemInfo[ CsHAREDmEMiNFO ] ;
     etherC*                         pEtThreadServiceEventHandler ;
     tin0S*                           pTin0DadService ;
-    byteT                           pb_bNapkinCt[         CBzOMBIEbATONc ] ;
+    //byteT                           pb_bNapkinCt[         CBzOMBIEbATONc ] ;
     byteT                           pb_bMemorySpace[      CBzOMBIEbATONc ] ;
-    byteT                           pb_bLog[              CBzOMBIEbATONc ] ;
-    byteT                           pb_bOsCall[           CBzOMBIEbATONc ] ;
-    byteT                           pb_bOsCallIMonitor[   CBzOMBIEbATONc ] ;
-    byteT                           pb_bOsCallISharedMem[ CBzOMBIEbATONc ] ;
-    byteT                           pb_bPoolRpt[          CBzOMBIEbATONc ] ;
+    //byteT                           pb_bLog[              CBzOMBIEbATONc ] ;
+    //byteT                           pb_bOsCall[           CBzOMBIEbATONc ] ;
+    //byteT                           pb_bOsCallIMonitor[   CBzOMBIEbATONc ] ;
+    //byteT                           pb_bOsCallISharedMem[ CBzOMBIEbATONc ] ;
+    //byteT                           pb_bPoolRpt[          CBzOMBIEbATONc ] ;
     //byteT                           pbTlsMain[  sizeof( tlsHeaderS ) + CB tLSmAIN ] ;
     countT                          pcDebug[ TUCK << 1 ] ; //NOT USED IN PRODUCTION ; AVAILABLE FOR DEBUGGING
     osTextT                         postDllsLoaded[ TOCK ] ;
@@ -41522,7 +41522,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     byteT                       pbzpap[ sizeof( poolC ) ] ;
     byteT                       pbzphp[ sizeof( poolC ) ] ;
 
-    processGlobal2S* const       pProcessGlobal1 ; //THESE ARE HERE FOR SPEED AND ALSO FOR THE CONVENIENCE OF THE MONITOR
+    processGlobal2S* const       pProcessGlobal1 ; //THESE ARE HERE FOR SPEED AND ALSO FOR THE CONVENIENCE OF GLASS2
     processGlobal3S* const       pProcessGlobal2 ;
     processGlobal4S* const       pProcessGlobal3 ;
     processGlobal5S* const       pProcessGlobal4 ;

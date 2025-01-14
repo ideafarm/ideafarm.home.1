@@ -87,7 +87,7 @@
     "    . ifcPutHostLogEntryF_o4@       . ?? ")+T(postName)+T("\r\n"
     "    . ifcIsSpammerF_o4@d       . ?? ")+T(postName)+T("\r\n"
     "    . ifcIsSpammerF_od       . ?? ")+T(postName)+T("\r\n"
-    "    . ifcMonitorQueryOldF_o1@33       . ?? ")+T(postName)+T("\r\n"
+    "    . ifcGlass2QueryOldF_o1@33       . ?? ")+T(postName)+T("\r\n"
     "    . ifcQueryHandlesF_o4@3d       . ?? ")+T(postName)+T("\r\n"
     "    . ifcGetNextSerialNumberF_o2@       . ?? ")+T(postName)+T("\r\n"
     "    . ifcIdCopyF_o33       . ?? ")+T(postName)+T("\r\n"

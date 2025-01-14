@@ -3262,7 +3262,7 @@ void elf_obey_C::liveF( void )
                     "1snip.15*.nicNamesAllowedStripeWebHookNotificationsC"  ,
                     "1snip.15*.sleepC"                                      ,
                     "1snip.15*.monQueryReplyS"                              ,
-                    "1snip.15*.monitorReplyS"                               ,
+                    "1snip.15*.monitorReplyOldS"                            ,
                     "1snip.15*.dnsResourceMiddleS"                          ,
                     "1snip.15*.dnsMsgHeaderS"                               ,
                     "1snip.15*.masterC"                                     ,

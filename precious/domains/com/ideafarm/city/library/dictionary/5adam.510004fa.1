@@ -62,7 +62,7 @@ TELL( "entering REST" )
         sgnDone_tmCircleLogF.waitF( tin0P ) ;
         CONoUTrAW( "shutdown/b\r\n" ) ; //U::
         bMonitorEnded = 1 ;
-        //((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR ; //U::FIGURE OUT A WAY TO AVOID SUPPRESSING TELLS; CONJ: SET A CALLBACK FUNCTION THAT CAN UNGRAB THE NAPKIN SO THAT THE EXCEPTION HANDLER CAN EMIT A NOTE
+        //((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLgLASS2 ; //U::FIGURE OUT A WAY TO AVOID SUPPRESSING TELLS; CONJ: SET A CALLBACK FUNCTION THAT CAN UNGRAB THE NAPKIN SO THAT THE EXCEPTION HANDLER CAN EMIT A NOTE
         //U::CONJ: THE GRABBING OF THE CIRCLE NAPKIN IS NOT NECESSARY
     
         etThread.boxPutF( tin0P , tActive , "" , 1 ) ; //U::KLUGE NEEDED CAUSE PACKAGE IS DENIED ACCESS TO napHomeJot
@@ -299,7 +299,7 @@ TELL( "i'm outa here" )
         countT cToDo = TUCK * 0x10 ;
         //etThread.strokeF( tin0P , T("\r\nwrote where report ")+TF1(idReport)+T("\r\n") ) ;
 
-        //((tin1S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWtELLmONITOR) ) ;
+        //((tin1S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_DISALLOWtELLgLASS2) ) ;
             
         }
             etThread.delF( tin0P , psttFileName ) ;
@@ -445,7 +445,7 @@ TELL( "i'm outa here" )
                     {
                     TN( tLifiName , "unknown" ) ;
             
-                    //((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
+                    //((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLgLASS2 ;
                     pwtg->bNewWhereRpt = 0 ;
                 {
                 if( pwtg->bNewWhereRpt /*U:: && ( !stTinWhereP || idCycle % 0x10 == 1 ) */ ) //ONLY EVERY TICK IF AM WATCHING WHERE WO OR MORE THREADS ARE
@@ -847,7 +847,7 @@ TASK( tmWhereRptF )
                 if( !bAdam && !bClass )
                 TN( tLifiName , "unknown" ) ;
         
-                //((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLmONITOR ;
+                //((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_DISALLOWtELLgLASS2 ;
                 pwtf->bNewWhereRpt = 0 ;
             {
             if( pwtf->bNewWhereRpt /*U:: && ( !stTinWhereP || idCycle % 0x10 == 1 ) */ ) //ONLY EVERY TICK IF AM WATCHING WHERE WO OR MORE THREADS ARE
@@ -2153,7 +2153,7 @@ TELL( "i am outa here" )
             TELL( "getting the time" )
 
             ////***********************************************************************************************************************
-            //THREADmODE1oN( flTHREADmODE1_USEaSYNCHtELLmONITOR )
+            //THREADmODE1oN( flTHREADmODE1_USEaSYNCHtELLgLASS2 )
             //bGrabbedConditionalGrab = 1 ;
             //}
             //    while( setIfZeAM( conditionalGrab , 1 ) ) { ++ s ; thirdC::dosSleepIF( tin0P , TUCK * 0x40 ) ; }

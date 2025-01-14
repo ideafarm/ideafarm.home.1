@@ -3741,7 +3741,7 @@
 0x00000e9d , "\0\0\0\0voidT etherC::strClockF( tin0S& tin0P , strokeS*& psttP , countT cP , const countT idColP , const countT idRowP , const countT cColP , const countT cRowP , const countT idStyleP , const countT idFirstP , const countT idLastP , const strokeS* const psttNoteP )" ,
 0x00000e9e , "\0\0\0\0countT etherC::strKTTrimF( tin0S& tin0P , strokeS*& psttNewP , const strokeS* const psttOldP , const countT cKeepP , const countT csttExtraP )" ,
 0x00000e9f , "\0\0\0\0voidT etherC::homeOsDriverNameF( tin0S& tin0P , strokeS*& psttP )" ,
-0x00000ea0 , "\0\0\0\0voidT etherC::ifcMonitorQueryOldF( tin0S& tin0P , byteT*& pbP , countT& cbP , const countT idP )" ,
+0x00000ea0 , "\0\0\0\0voidT etherC::ifcGlass2QueryOldF( tin0S& tin0P , byteT*& pbP , countT& cbP , const countT idP )" ,
 0x00000ea1 , "\0\0\0\0voidT etherC::strKtHereAddressF( tin0S& tin0P , countT*& pczP , const strokeS* const psttP )" ,
 0x00000ea2 , "\0\0\0\0voidT etherC::strKtHereAddressF( tin0S& tin0P , strokeS* const psttP , const countT* const pczP )" ,
 0x00000ea3 , "\0\0\0\0voidT etherC::strGraphF( tin0S& tin0P , strokeS*& psttP , countT& leverP , batonC& bLeverP , switchStackC& swsXP , switchStackC& swsYP , switchC& swColorP , switchC& swMarkerP , const countT cColP , const countT cRowP , const countT idStyleP , const flagsT flagsP , const strokeS* const psttNoteP , const countT* pczLeverIncludeP , const countT* pczLeverExcludeP )" ,

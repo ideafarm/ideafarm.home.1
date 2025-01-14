@@ -2144,7 +2144,7 @@ countT hanNewDllF( tin0S& tin0P , bookWoS& bwP , ifcMonitorEventS& infoP )
                     else
                     if( bwP.pTinEvent->monitor.cImpotenceSeenDuringFallthrough < 0x100 ) bwP.pTinEvent->monitor.cImpotenceSeenDuringFallthrough ++ ;
                 {
-                if( bwP.pTinEvent->idStep <= bwP.pTinEvent->monitor.idStepLastSawImpotence + 2 ) //ASSUME: DosTellMonitorF APPLIES idStep += 2
+                if( bwP.pTinEvent->idStep <= bwP.pTinEvent->monitor.idStepLastSawImpotence + 2 ) //ASSUME: DosTellGlass2F APPLIES idStep += 2
             {
             if( bwP.pTinEvent && !bwP.bCopy )
         {
@@ -2839,7 +2839,7 @@ countT hanNewDllF( tin0S& tin0P , bookWoS& bwP , ifcMonitorEventS& infoP )
         //THIS CODE IS WRITTEN TO MAKE grabOldS WORK AS SPEEDY AS POSSIBLE
         //ALMOST ALL OF MY WORK INVOLVES grabOldS CONSTRUCTION, DESTRUCTION, ATTACHMENT, DETACHMENT
 
-        //U: MIGRATE ALL dosTellMonitorIF EMISSIONS FROM TEXT TO BINARY DATA (FOR SPEED)
+        //U: MIGRATE ALL dosTellGlass2IF EMISSIONS FROM TEXT TO BINARY DATA (FOR SPEED)
     {
     if( !bText )
     etherC::etTextIF( tin0P ).winSetTitleF( tin0P , T("hanSayF/4") ) ; //U::

@@ -2043,7 +2043,7 @@ it is illegal to refer to this symbol in the definition of an adam
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_QUIETiMPOTENCE          )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_QUIETiMPOTENCE          ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_YELL                    )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_YELL                    ;                                                                                                      \
-            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLmONITOR     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLmONITOR     ;                                                                                                      \
+            if( pTaskP && F( pTaskP->flagsThreadMode1Dad ) & flTHREADmODE1_SUPPRESStELLgLASS2     )         ((tin1S&)tin0P).flagsThreadMode1 |= flTHREADmODE1_SUPPRESStELLgLASS2     ;                                                                                                      \
             if( pTaskP && F( pTaskP->flagsThreadModeWhereDad ) & flTHREADmODEwHERE_NOwHERE                 ) ((tin123S&)tin0P).where.flagsThreadModeWhere |= flTHREADmODEwHERE_NOwHERE                 ;                                                                                                      \
                                                                                                                                                                                                                                                                                                 \
             TELL( "TASK123pART0: newing etThread" )                                                                                                                                                                                                                                             \
@@ -5689,11 +5689,11 @@ code that supports the following flags is commented out for added speed but can 
 #define flTHREADmODE1_DISALLOWgRAB                              0xe002000f
 #define flTHREADmODE1_DISALLOWmULTIPLEgRAB                      0xe004000f
 #define flTHREADmODE1_DISALLOWgRABoFiNTERPROCESSgRABs           0xe008000f
-#define flTHREADmODE1_DISALLOWtELLmONITOR                       0xe010000f
+#define flTHREADmODE1_DISALLOWtELLgLASS2                       0xe010000f
 #define flTHREADmODE1_SUPPRESSgRAB                              0xe020000f
 #define flTHREADmODE1_DRIVERaDAM                                0xe040000f
-#define flTHREADmODE1_SUPPRESStELLmONITOR                       0xe080000f
-#define flTHREADmODE1_USEaSYNCHtELLmONITOR                      0xe100000f
+#define flTHREADmODE1_SUPPRESStELLgLASS2                       0xe080000f
+#define flTHREADmODE1_USEaSYNCHtELLgLASS2                      0xe100000f
 #define flTHREADmODE1_ALLOWsTOPwHILEgRABBING                    0xe200000f
 #define flTHREADmODE1_ALLOWeMITwORD                             0xe400000f
 #define flTHREADmODE1_ALLOWmULTItHREADEDhOVER                   0xe800000f
@@ -14365,13 +14365,13 @@ flMONITORqUERYoLD_REPLYtRUNCATED: monitorReplyOldS::code contains the cb needed 
 \<A HREF=\"5.00101f8.1.0.html\"\>definition\</A\>
 */
 /**/
-/*1*//*ifcIDtELLmONITORwHAT*//*1*/
+/*1*//*ifcIDtELLgLASS2wHAT*//*1*/
 
 /*3*/
-#define ifcIDtELLmONITORwHAT_nu           0xdddd04ee
+#define ifcIDtELLgLASS2wHAT_nu           0xdddd04ee
 /*3*/
-#define ifcIDtELLmONITORwHAT_min     0xdddd04ee
-#define ifcIDtELLmONITORwHAT_max     0xdddd04ee
+#define ifcIDtELLgLASS2wHAT_min     0xdddd04ee
+#define ifcIDtELLgLASS2wHAT_max     0xdddd04ee
 
 
 //
@@ -14719,7 +14719,7 @@ arguments
             byteT pbZombie[ sizeof posty + sizeof( tellS ) ] ;                                                    \
             tellC tell( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEtELLsYS_YELL , posty , sizeof posty , pbZombie , sizeof pbZombie ) ; \
                                                                                                                         \
-            thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                              \
+            thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                              \
         }
 
 #else
@@ -14732,7 +14732,7 @@ arguments
             byteT pbZombie[ sizeof( tellS ) + sizeof posta ] ;                                                            \
             tellC tell( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEtELLsYS_YELL , posta , sizeof posta , pbZombie , sizeof pbZombie ) ;     \
                                                                                                                                 \
-            thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                                      \
+            thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                                      \
         }
 
 #endif
@@ -14925,7 +14925,7 @@ arguments
     {                                                                                                               \
         byteT pbZombie[ sizeof( tellS ) ] ;                                                                         \
         tellC tell( tin0P , TAG( TAGiDnULL ) , idTypeP , 0 , 0 , pbZombie , sizeof pbZombie ) ;                      \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                              \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                              \
     }
 
 
@@ -14959,7 +14959,7 @@ arguments
     {                                                                                                                   \
         byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                       \
         tellC tell( tin0P , TAG( TAGiDnULL ) , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie ) ;                      \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                                  \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                                  \
     }
 
 
@@ -14986,10 +14986,10 @@ arguments
 */
 /**/
 
-/*1*//*postIFChANDOFFoLDmONITOR*//*1*/
+/*1*//*postIFChANDOFFoLDgLASS2*//*1*/
 
 //ASSUME: ifcIDaDAM_2GLASS2 is 1050104
-#define postIFChANDOFFoLDmONITOR postIFChANDOFFoLDpREFIX "1050104"
+#define postIFChANDOFFoLDgLASS2 postIFChANDOFFoLDpREFIX "1050104"
 
 
 //
@@ -15015,10 +15015,10 @@ arguments
 */
 /**/
 
-/*1*//*postIFChANDOFFoLDmONITOR*//*1*/
+/*1*//*postIFChANDOFFoLDgLASS2*//*1*/
 
 //ASSUME: ifcIDaDAM_2GLASS2 is 1050104
-#define postIFChANDOFFoLDmONITOR postIFChANDOFFoLDpREFIX "1050104"
+#define postIFChANDOFFoLDgLASS2 postIFChANDOFFoLDpREFIX "1050104"
 
 
 //
@@ -16658,7 +16658,7 @@ after i return, that countT object will contain 1
     {                                                                                                               \
         byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                   \
         tellC tell( tin0P , TAG( TAGiDnULL ) , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie , 1 ) ;              \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                              \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                              \
     }
 
 
@@ -16850,7 +16850,7 @@ after i return, that countT object will contain 1
     {                                                                                                               \
         byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                   \
         tellC tell( tin0P , TAG( TAGiDnULL ) , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie , 0 , ebpP ) ;       \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                              \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                              \
     }
 
 
@@ -18885,7 +18885,7 @@ most application code should use TLNA rather than TELLsYSlIFInAME
     {                                                                                                                   \
         byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                       \
         tellC tell( tin0P , idLineP , idiFileP , 0 , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie ) ;                \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                                  \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                                  \
     }
 
 
@@ -18923,7 +18923,7 @@ after i return, that countT object will contain 1
     {                                                                                                               \
         byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                   \
         tellC tell( tin0P , idLineP , idiFileP , 0 , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie , 1 ) ;        \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                              \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                              \
     }
 
 
@@ -19208,19 +19208,19 @@ after i return, that countT object will contain 1
 
 /*
 */
-/*1*//*ifcIDcMDmONITOR*//*1*/
+/*1*//*ifcIDcMDgLASS2*//*1*/
 /**/
 
 /*3*/
-#define ifcIDcMDmONITOR_POOLoLDnAMES               0xdddd06b7
-#define ifcIDcMDmONITOR_POOLoLDhEADER              0xdddd06b8
-#define ifcIDcMDmONITOR_POOLoLDwALK1               0xdddd06b9
-#define ifcIDcMDmONITOR_SAYtALLIES              0xdddd06ba
-#define ifcIDcMDmONITOR_IMAGE                   0xdddd06bb
-#define ifcIDcMDmONITOR_tin123S                    0xdddd06bc
+#define ifcIDcMDgLASS2_POOLoLDnAMES               0xdddd06b7
+#define ifcIDcMDgLASS2_POOLoLDhEADER              0xdddd06b8
+#define ifcIDcMDgLASS2_POOLoLDwALK1               0xdddd06b9
+#define ifcIDcMDgLASS2_SAYtALLIES              0xdddd06ba
+#define ifcIDcMDgLASS2_IMAGE                   0xdddd06bb
+#define ifcIDcMDgLASS2_tin123S                    0xdddd06bc
 /*3*/
-#define ifcIDcMDmONITOR_min     0xdddd06b7
-#define ifcIDcMDmONITOR_max     0xdddd06bc
+#define ifcIDcMDgLASS2_min     0xdddd06b7
+#define ifcIDcMDgLASS2_max     0xdddd06bc
 
 
 //
@@ -19243,19 +19243,19 @@ after i return, that countT object will contain 1
 
 /*
 */
-/*1*//*ifcIDrEPLYmONITOR*//*1*/
+/*1*//*ifcIDrEPLYgLASS2*//*1*/
 /**/
 
 /*3*/
-#define ifcIDrEPLYmONITOR_POOLoLDnAMES             0xdddd06bd
-#define ifcIDrEPLYmONITOR_POOLoLDhEADER            0xdddd06be
-#define ifcIDrEPLYmONITOR_POOLoLDwALK1             0xdddd06bf
-#define ifcIDrEPLYmONITOR_SAYtALLIES            0xdddd06c0
-#define ifcIDrEPLYmONITOR_IMAGE                 0xdddd06c1
-#define ifcIDrEPLYmONITOR_tin123S                  0xdddd06c2
+#define ifcIDrEPLYgLASS2_POOLoLDnAMES             0xdddd06bd
+#define ifcIDrEPLYgLASS2_POOLoLDhEADER            0xdddd06be
+#define ifcIDrEPLYgLASS2_POOLoLDwALK1             0xdddd06bf
+#define ifcIDrEPLYgLASS2_SAYtALLIES            0xdddd06c0
+#define ifcIDrEPLYgLASS2_IMAGE                 0xdddd06c1
+#define ifcIDrEPLYgLASS2_tin123S                  0xdddd06c2
 /*3*/
-#define ifcIDrEPLYmONITOR_min     0xdddd06bd
-#define ifcIDrEPLYmONITOR_max     0xdddd06c2
+#define ifcIDrEPLYgLASS2_min     0xdddd06bd
+#define ifcIDrEPLYgLASS2_max     0xdddd06c2
 
 
 //
@@ -44270,7 +44270,7 @@ arguments
             byteT pbZombie[ sizeof( tellS ) + sizeof posta ] ;                                                                                  \
             tellC tell( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEtELLsYS_SNAPsHOT , posta , sizeof posta , pbZombie , sizeof pbZombie ) ;             \
                                                                                                                                                 \
-            thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                                                      \
+            thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_SYS ) ;                                                                      \
         }
 
 
@@ -50392,7 +50392,7 @@ use this rather than _ to avoid the overhead of _
     {                                                                                                               \
         byteT pbZombie[ sizeof( tellS ) ] ;                                                                         \
         tellC tell( tin0P , TAG( TAGiDnULL ) , idTypeP , 0 , 0 , pbZombie , sizeof pbZombie ) ;                      \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                              \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                              \
     }
 
 
@@ -50426,7 +50426,7 @@ use this rather than _ to avoid the overhead of _
     {                                                                                                                   \
         byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                       \
         tellC tell( tin0P , TAG( TAGiDnULL ) , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie ) ;                      \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                                  \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                                  \
     }
 
 
@@ -50464,7 +50464,7 @@ after i return, that countT object will contain 1
     {                                                                                                               \
         byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                   \
         tellC tell( tin0P , TAG( TAGiDnULL ) , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie , 1 ) ;              \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                              \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                              \
     }
 
 
@@ -50498,7 +50498,7 @@ after i return, that countT object will contain 1
     {                                                                                                               \
         byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                   \
         tellC tell( tin0P , TAG( TAGiDnULL ) , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie , 0 , ebpP ) ;       \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                              \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                              \
     }
 
 
@@ -50574,7 +50574,7 @@ after i return, that countT object will contain 1
     {                                                                                                                   \
         byteT pbZombie[ sizeof( tellS ) + (cbP) ] ;                                                                     \
         tellC tell( tin0P , (idLineP) , (idiFileP) , 0 , (idTypeP) , (pbP) , (cbP) , pbZombie , sizeof pbZombie ) ;      \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                                  \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                                  \
     }
 
 
@@ -50612,7 +50612,7 @@ after i return, that countT object will contain 1
     {                                                                                                               \
         byteT pbZombie[ sizeof( tellS ) + cbP ] ;                                                                   \
         tellC tell( tin0P , idLineP , idiFileP , 0 , idTypeP , pbP , cbP , pbZombie , sizeof pbZombie , 1 ) ;        \
-        thirdC::dosTellMonitorIF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                              \
+        thirdC::dosTellGlass2IF( tin0P , tell , ifcIDbOOKStELL_APP ) ;                                              \
     }
 
 

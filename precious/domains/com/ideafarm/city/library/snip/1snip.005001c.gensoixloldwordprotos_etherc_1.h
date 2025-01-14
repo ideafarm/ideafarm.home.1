@@ -177,7 +177,7 @@ voidT ifcIsSpammerF_o4Pd_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const 
 
 voidT ifcIsSpammerF_od_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT ifcMonitorQueryOldF_o1P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT ifcGlass2QueryOldF_o1P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT ifcQueryHandlesF_o4P3d_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

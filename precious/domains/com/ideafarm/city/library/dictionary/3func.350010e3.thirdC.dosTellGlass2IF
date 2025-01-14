@@ -9,7 +9,7 @@
 
 }
     //}
-    //    if( F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_SUPPRESStELLmONITOR ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the thread") ) ;
+    //    if( F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_SUPPRESStELLgLASS2 ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the thread") ) ;
     //    if( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_SUPPRESStELLS           ) POPUP( TF1(processGlobal1I.idAdamRoot)+T(": tell is suppressed for the process") ) ;
     //    _bWoth = 0 ;
     //{
@@ -45,8 +45,8 @@
 
 #endif
                     }
-                        if(  bWroteLath ) { CONoUTrAW( "dosTellMonitorIF aaaaaghhh! (app earlylate book bWroteLath)\r\n" ) ; BLAMMO ; }
-                        if( !bWroteAll  ) { CONoUTrAW( "dosTellMonitorIF aaaaaghhh! (app earlylate book !bWroteAll)\r\n" ) ; BLAMMO ; }
+                        if(  bWroteLath ) { CONoUTrAW( "dosTellGlass2IF aaaaaghhh! (app earlylate book bWroteLath)\r\n" ) ; BLAMMO ; }
+                        if( !bWroteAll  ) { CONoUTrAW( "dosTellGlass2IF aaaaaghhh! (app earlylate book !bWroteAll)\r\n" ) ; BLAMMO ; }
                         boolT bWroteAll  =  !( F(flagsResult) & flBOOK0cwRITErESULT_COULDnOTwRITEaLL ) ;
                         boolT bWroteLath = !!( F(flagsResult) & flBOOK0cwRITErESULT_WROTElATHbYTE    ) ;
 
@@ -69,8 +69,8 @@
                     break ;
 
                     }
-                        if(  bWroteLath ) { CONoUTrAW( "dosTellMonitorIF aaaaaghhh! (sys earlylate book bWroteLath)\r\n" ) ; BLAMMO ; }
-                        if( !bWroteAll  ) { CONoUTrAW( "dosTellMonitorIF aaaaaghhh! (sys earlylate book !bWroteAll)\r\n" ) ; BLAMMO ; }
+                        if(  bWroteLath ) { CONoUTrAW( "dosTellGlass2IF aaaaaghhh! (sys earlylate book bWroteLath)\r\n" ) ; BLAMMO ; }
+                        if( !bWroteAll  ) { CONoUTrAW( "dosTellGlass2IF aaaaaghhh! (sys earlylate book !bWroteAll)\r\n" ) ; BLAMMO ; }
                         boolT bWroteAll  =  !( F(flagsResult) & flBOOK0cwRITErESULT_COULDnOTwRITEaLL ) ;
                         boolT bWroteLath = !!( F(flagsResult) & flBOOK0cwRITErESULT_WROTElATHbYTE    ) ;
 
@@ -114,7 +114,7 @@
             //U:: COMMENT OUT IN PRODUCTION ; ENABLED TO STUDY DEADLOCK IN GRAPHICS TEST ADAM
             //U:: 20141206@2020: COMMENTED OUT BECAUSE SAW TELEMETRY OVERFLOW THE SCRATCH BUFFER ; ALSO, CLOUD ADMINISTRATION GENERATES LOTS OF TELEMETRY, WHICH WOULD FILL AVAILABLE HARD DRIVE SPACE
 
-            //CONoUTrAW3( "\r\nDosTellMonitorIF: calling bksTelemetrySys.writeF [idIn]: " , incv02AM( idInLath ) , "" ) ;
+            //CONoUTrAW3( "\r\nDosTellGlass2IF: calling bksTelemetrySys.writeF [idIn]: " , incv02AM( idInLath ) , "" ) ;
             //static countT idInLath ;
             /* ENABLE WHEN CONFIDENT THAT THIS WORKS RELIABLY OR WHEN NEED IT FOR DEBUGGING: */
 
@@ -136,10 +136,10 @@
             //static countT cbMax ;
 
             //U:: }
-            //U::     ++ s ; thirdC::thirdWriteToMonitorIF( tin0P , tellP , tellP ) ;
+            //U::     ++ s ; thirdC::thirdWriteToGlass2IF( tin0P , tellP , tellP ) ;
             //U::     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             //U:: {
-            //U:: COMMENTED OUT TO FIND A BUG: CONJ: SERVER WILL BE STABLE IF NOTHING IS WRITTEN TO THE MONITOR
+            //U:: COMMENTED OUT TO FIND A BUG: CONJ: SERVER WILL BE STABLE IF NOTHING IS WRITTEN TO GLASS2
 
             THREADmODE2oN( flTHREADmODE2_DISALLOWpUSE )
             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
@@ -166,15 +166,15 @@
         IFbEcAREFUL
     {
     )
-        !( F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_SUPPRESStELLmONITOR )
+        !( F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_SUPPRESStELLgLASS2 )
         &&
         !( F(processGlobal2I._thirdC_flagsModeProcess1) & flMODEpROCESS1_SUPPRESStELLS )
     (
     if
 
-    if( F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_DISALLOWtELLmONITOR ) { BLAMMO ; }
+    if( F(((tin1S&)tin0P).flagsThreadMode1) & flTHREADmODE1_DISALLOWtELLgLASS2 ) { BLAMMO ; }
 {
-/*1*/voidT thirdC::dosTellMonitorIF( tin0S& tin0P , const tellC& tellP , const countT idBooksP )/*1*/
+/*1*/voidT thirdC::dosTellGlass2IF( tin0S& tin0P , const tellC& tellP , const countT idBooksP )/*1*/
 
 //boolT _bWoth = 1 ; //U::
 
@@ -185,7 +185,7 @@ use TELLsYSc1 or TELLsYSc3
 i work unconditionally (even if impotence has occured on this thread)
 it is illegal to refer to this symbol in the definition of an adam
 \<A HREF=\"5.102010a.1.0.html\"\>definition\</A\>
-\<A HREF=\"6.$dosTellMonitorIF.0.html\"\>instances\</A\>
+\<A HREF=\"6.$dosTellGlass2IF.0.html\"\>instances\</A\>
 /*
 
 //

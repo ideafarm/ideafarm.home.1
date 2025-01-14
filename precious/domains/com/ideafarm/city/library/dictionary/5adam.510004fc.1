@@ -27,7 +27,7 @@ REST
                 {
                 if( sIn2 )
             {
-            if( idReply == ifcIDrEPLYmONITOR_POOLoLDhEADER )
+            if( idReply == ifcIDrEPLYgLASS2_POOLoLDhEADER )
             sIn2 >> idReply ;
             ZE( countT , idReply ) ;
             sock.readF( tin0P , sIn2 ) ;
@@ -37,7 +37,7 @@ REST
             sock.writeF( tin0P , sOut ) ;
             sOut << psttName ;
             sOut << idMemorySpace ;
-            sOut << (countT)ifcIDcMDmONITOR_POOLoLDhEADER ;
+            sOut << (countT)ifcIDcMDgLASS2_POOLoLDhEADER ;
             etThread.strokeF( tin0P , T("for memory space ")+TF1(idMemorySpace)+T(", received name: \"")+T(psttName)+T("\"\r\n") ) ;
             sIn >> psttName ; ___( psttName ) ;
             ZE( strokeS* , psttName ) ;
@@ -52,7 +52,7 @@ REST
     sIn >> cSpaces ;
     ZE( countT , cSpaces ) ;
 {
-if( idReply == ifcIDrEPLYmONITOR_POOLoLDnAMES )
+if( idReply == ifcIDrEPLYgLASS2_POOLoLDnAMES )
 sIn >> idReply ;
 ZE( countT , idReply ) ;
 
@@ -61,7 +61,7 @@ soulC sIn2( tin0P , TAG( TAGiDnULL ) ) ;
 soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
 sOut.removeAllF( tin0P ) ;
 sock.writeF( tin0P , sOut ) ;
-soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDmONITOR_POOLoLDnAMES ) ;
+soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDgLASS2_POOLoLDnAMES ) ;
 sock.connectF( tin0P , ifcIDpORT_DOOR ) ;
 socketC sock( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 

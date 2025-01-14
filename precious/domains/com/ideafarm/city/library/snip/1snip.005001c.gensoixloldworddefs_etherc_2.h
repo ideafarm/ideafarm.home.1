@@ -1775,7 +1775,7 @@ voidT ifcIsSpammerF_od_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const st
     slP << noName ;
 }
 
-voidT ifcMonitorQueryOldF_o1P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT ifcGlass2QueryOldF_o1P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -1797,7 +1797,7 @@ voidT ifcMonitorQueryOldF_o1P33_GF( tin0S& tin0P , etherC& etherP , soulC& slP ,
    SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
     ZE( countT , idP ) ;
     if( !POOP ) { slP >> idP ; idArgNext ++ ; }
-    if( !POOP ) etherP.ifcMonitorQueryOldF( tin0P , pbP , cbP , idP ) ;
+    if( !POOP ) etherP.ifcGlass2QueryOldF( tin0P , pbP , cbP , idP ) ;
 
     if( !POOP ) slP << pbP ;
     etherP.delF( tin0P , pbP ) ;
