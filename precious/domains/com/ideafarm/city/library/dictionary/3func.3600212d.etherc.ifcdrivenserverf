@@ -227,11 +227,11 @@
                                                             //new( 0 , tin0P , pbTop , sizeof( taskDrivenServerJobS ) ) taskDrivenServerJobS( idSessionLath , pso , lever_idSession , sw_pso , cSession , info2P.cArg , lever_nnPeer , sw_cSessionWithPeer , sessions , nnPeer ) ;
                                                             //byteT* pbTop = (byteT*)&(countT&)stJob[ 1 ] ;
 
-                                                            etRock.traceF( tin0P , T("ifcDrivenServerF pushed a job [cJobsHighWater,cPlates]:    ")+TF2(cJobsHighWater,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                            //etRock.traceF( tin0P , T("ifcDrivenServerF pushed a job [cJobsHighWater,cPlates]:    ")+TF2(cJobsHighWater,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stJob,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                             //taskDrivenServerJobS jobCopy = *(taskDrivenServerJobS*)&(countT&)stJob[ 1 ] ; //U:: TO FIND A BUG
 
                                                             }
-                                                                etRock.traceF( tin0P , T("ifcDrivenServerF / backlog is rising [cJobsHighWater]:    ")+TF2(cJobsHighWater,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                                //etRock.traceF( tin0P , T("ifcDrivenServerF / backlog is rising [cJobsHighWater]:    ")+TF2(cJobsHighWater,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                                 cJobsHighWater = cJobsNow ;
                                                             {
                                                             if( cJobsHighWater < cJobsNow )
@@ -289,7 +289,7 @@
                                                     //etRock.trace F( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting accepted socket without serving it (bQuit | third | bSilent | POOP)") , flTRACE_HOMEeCHO , ifcIDtRACEdIVERT_2 ) ;
                                                     //CS:CODEsYNC: 360021f7 3600212d
 
-                                                    etRock.traceF( tin0P , T("ifcDrivenServerF / deleting accepted socket without serving it"), flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                    //etRock.traceF( tin0P , T("ifcDrivenServerF / deleting accepted socket without serving it"), flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                 {
                                                 if( info1P.bQuit || third || bSilent || POOP )
 
@@ -559,15 +559,15 @@
 
                                                     //CONoUTrAW( "." ) ; //U:: TO FIND A BUG
                                                     osTimeNowF( tin0P , timeAccepted1 , timeAccepted2 ) ;
-                                                    etRock.traceF( tin0P , T("ifcDrivenServerF / called  acceptF [idSubType,cQueued,cQueuedMax]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                    //etRock.traceF( tin0P , T("ifcDrivenServerF / called  acceptF [idSubType,cQueued,cQueuedMax]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
                                                     }
-                                                        etRock.traceF( tin0P , T("ifcDrivenServerF / queue is growing [cQueuedMax]:    ")+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                        //etRock.traceF( tin0P , T("ifcDrivenServerF / queue is growing [cQueuedMax]:    ")+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
                                                         cQueuedMax = cFifoPushed-cFifoPulled ;
                                                     {
                                                     if( cQueuedMax < cFifoPushed-cFifoPulled )
                                                     const countT idSubTypeSave = POOP ;
                                                     psoListen->acceptF( tin0P , pso , idpPeer , nnPeer , bRefuseTooManyOrBlackListed , &pp ) ; ___( pso ) ; //IF ALL SESSIONS END WHILE BLOCKED HERE, WILL STILL REFUSE WO SESSION; THIS CAN BE FIXED BY FRESHING bRefuseTooManyOrBlackListed AT END OF EACH SESSION THREAD IN DONEtMsERVER
-                                                    etRock.traceF( tin0P , T("ifcDrivenServerF / calling acceptF") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                    //etRock.traceF( tin0P , T("ifcDrivenServerF / calling acceptF") , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
                                                     SCOOPS
                                                 {
                                                 IFsCRATCHoK
@@ -638,7 +638,7 @@
                                             {
                                             else
                                             }
-                                                etRock.traceF( tin0P , T("ifcDrivenServerF / listener socket has been bound [idPort]:    ")+TF2(info1P.idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                //etRock.traceF( tin0P , T("ifcDrivenServerF / listener socket has been bound [idPort]:    ")+TF2(info1P.idPort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                             {
                                             if( !POOP )
 
@@ -762,7 +762,9 @@
                                 inc02AM( cWorker ) ;
                             {
                             while( scDo -- )
-                            etRock.traceF( tin0P , T("ifcDrivenServerF / launching workers [cWorkers]:    ")+TF2(scDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                            //etRock.traceF( tin0P , T("ifcDrivenServerF / launching workers [cWorkers]:    ")+TF2(scDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+
+scDo = 1 ; //U::
 
                             if( scDo > 0x10 ) scDo = 0x10 ; //U::20240205@1335: WORKAROUND TO AVOID MEMORY EXHAUSTION WHEN EXIST 02 PROCESSORS ; STUDY WHY "SHOWPONY" IS NEEDED (WHAT DOES IT DO?:); STUDY: USING MINIMAL THREAD STACK HERE SO CAN LAUNCH MORE
 
