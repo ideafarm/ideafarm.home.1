@@ -338,9 +338,13 @@ voidT sockAcceptF_ob3db6bPs_acceptF_parametersSP_GF( tin0S& tin0P , etherC& ethe
             else
             {
                 SOIXLoLDtESTtYPE( 0x0 , etherC )
+                //if( !POOP ) { slP >> pP ; idArgNext ++ ; }
             }
         }
     }
+    if( !POOP ) etherP.sockAcceptF( tin0P , hClientP , idPortP , nicNameP , handleP , bRefuseP , phContextP , pP ) ;
+    //etherP.delF( tin0P , pP ) ;
+    DEL( phContextP ) ;
 }
 
 voidT sockListenF_ob_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
