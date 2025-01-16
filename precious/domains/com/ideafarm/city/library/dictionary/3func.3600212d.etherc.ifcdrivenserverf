@@ -524,9 +524,11 @@ static countT idInLath ;
 
                                                 boolT bLoopback = nnPeer.isLoopbackOldDoNotUseF() ;
 
-                                                bPeerAllowed = nnPeer == nnTest || !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer ;
+                                                bPeerAllowed = nnPeer == nnTest1 || nnTest2 || !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer ;
 
-                                                nicNameC nnTest = socketC::nicNameIF( tin0P , *this , T("50.216.215.70") ) ; ; //LAPTOP-GRAY-1
+                                                nicNameC nnTest2 = socketC::nicNameIF( tin0P , *this , T("factory3.ideafarm.com") ) ;
+                                                nicNameC nnTest1 = socketC::nicNameIF( tin0P , *this , T("factory2.ideafarm.com") ) ;
+                                              //nicNameC nnTest  = socketC::nicNameIF( tin0P , *this , T("50.216.215.70") ) ; ; //LAPTOP-GRAY-1
 
                                                 }
                                                     if( POOP ) POOPR
