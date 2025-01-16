@@ -20,7 +20,7 @@ DONE( tmWorkF )
     etThread.traceF( tin0P , T("ok") ) ;
 
     while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) ) ;
-cDo = 2 ;
+//cDo = 8 ;
     countT cDo = TUCK >> 3 ;
 
     _IO_
@@ -72,7 +72,7 @@ DONE( tmGorillaF )
 
         /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
 
-        etThread.traceF( tin0P , TT(timeE1,timeE2) ) ;
+        etThread.traceF( tin0P , TTF(timeE1,timeE2) ) ;
         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeN1 , timeN2 ) ;
         etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
         ZE( sCountT , timeE2 ) ;
@@ -97,43 +97,41 @@ DONE( tmGorillaF )
 
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
-
-        }
-            //etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , tRequestAll3 , tRequestAll3.csF( tin0P ) ) ;
-            //etThread.boxPutF( tin0P , T("///d/tmp/foo2.ttt") , tRequestAll2 , tRequestAll2.csF( tin0P ) ) ;
-            //etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , tRequestAll1 , tRequestAll1.csF( tin0P ) ) ;
-
-            tRequestAll3 = tHead+tContentLength3+T(postRaw3Part1)+tInvoice+T(postRaw3Part2) ;
-            tRequestAll2 = tHead+tContentLength2+T(postRaw2Part1)+tInvoice+T(postRaw2Part2) ;
-            tRequestAll1 = tHead+tContentLength1+T(postRaw1Part1)+tInvoice+T(postRaw1Part2) ;
-
-            TN( tHead , postHead ) ;
-
-            }
-                tContentLength3 = T("Content-Length: ")+TF4(costRaw3Part1+costInvoice+costRaw3Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
-                tContentLength2 = T("Content-Length: ")+TF4(costRaw2Part1+costInvoice+costRaw2Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
-                tContentLength1 = T("Content-Length: ")+TF4(costRaw1Part1+costInvoice+costRaw1Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
-                //"Content-Length: 5718\r\n"
-
-                const countT costRaw3Part2 = sizeof postRaw3Part2 - 1 ;
-                const countT costRaw3Part1 = sizeof postRaw3Part1 - 1 ;
-                const countT costRaw2Part2 = sizeof postRaw2Part2 - 1 ;
-                const countT costRaw2Part1 = sizeof postRaw2Part1 - 1 ;
-                const countT costRaw1Part2 = sizeof postRaw1Part2 - 1 ;
-                const countT costRaw1Part1 = sizeof postRaw1Part1 - 1 ;
-            {
-            TN( tContentLength3 , "" ) ; 
-            TN( tContentLength2 , "" ) ; 
-            TN( tContentLength1 , "" ) ; 
-        {
-        TN( tRequestAll3 , "" ) ;
-        TN( tRequestAll2 , "" ) ;
-        TN( tRequestAll1 , "" ) ;
-
-        const countT costInvoice = tInvoice.csF( tin0P ) ;
-        TN( tInvoice , "" ) ; tInvoice = TF2(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
     {
     while( !ether )
+
+    }
+        tRequestAll3 = tHead+tContentLength3+T(postRaw3Part1)+tInvoice+T(postRaw3Part2) ;
+        tRequestAll2 = tHead+tContentLength2+T(postRaw2Part1)+tInvoice+T(postRaw2Part2) ;
+        tRequestAll1 = tHead+tContentLength1+T(postRaw1Part1)+tInvoice+T(postRaw1Part2) ;
+
+        TN( tHead , postHead ) ;
+
+        }
+            tContentLength3 = T("Content-Length: ")+TF4(costRaw3Part1+costInvoice+costRaw3Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+            tContentLength2 = T("Content-Length: ")+TF4(costRaw2Part1+costInvoice+costRaw2Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+            tContentLength1 = T("Content-Length: ")+TF4(costRaw1Part1+costInvoice+costRaw1Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+            //"Content-Length: 5718\r\n"
+
+            const countT costRaw3Part2 = sizeof postRaw3Part2 - 1 ;
+            const countT costRaw3Part1 = sizeof postRaw3Part1 - 1 ;
+            const countT costRaw2Part2 = sizeof postRaw2Part2 - 1 ;
+            const countT costRaw2Part1 = sizeof postRaw2Part1 - 1 ;
+            const countT costRaw1Part2 = sizeof postRaw1Part2 - 1 ;
+            const countT costRaw1Part1 = sizeof postRaw1Part1 - 1 ;
+        {
+        TN( tContentLength3 , "" ) ; 
+        TN( tContentLength2 , "" ) ; 
+        TN( tContentLength1 , "" ) ; 
+    {
+    TN( tRequestAll3 , "" ) ;
+    TN( tRequestAll2 , "" ) ;
+    TN( tRequestAll1 , "" ) ;
+
+    const countT costInvoice = tInvoice.csF( tin0P ) ;
+    TN( tInvoice , "" ) ; tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
+
+    //U:: OPTIMIZE BY USING AN osTextT IMAGE AND PATCHING  EACH INVOICE NUMBER INTO IT
 
 Sleep( 1000 * 10 ) ;
 
