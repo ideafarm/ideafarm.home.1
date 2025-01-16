@@ -11875,6 +11875,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_HIREwITHOUTdEBUGGING                                 0x5100083b
 #define ifcIDaDAM_EATiNCOMINGoRDERS                                    0x51000880
 #define ifcIDaDAM_ICISbOT                                              0x5100087d
+#define ifcIDaDAM_GORILLAwEBHOOKS                                      0x51000889
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
