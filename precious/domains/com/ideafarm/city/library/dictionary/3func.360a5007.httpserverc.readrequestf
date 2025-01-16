@@ -313,13 +313,14 @@
         }
             //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
             }
-                }
-                    break ;
-                    ether.traceF( tin0P , T("readRequestF / woth mouthful did not contain a complete request") ) ;
-                    bFailP = 1 ;    //P:PERSONALITY: TO PREVENT STALL ATTACK, I REQUIRE THAT THE WOTH MOUTHFUL CONTAIN A COMPLETE REQUEST
-                {
-                if( !bEnd && !( -- cMouthfulsAllowed ) )
+                //}
+                //    break ;
+                //    ether.traceF( tin0P , T("readRequestF / woth mouthful did not contain a complete request") ) ;
+                //    bFailP = 1 ;    //P:PERSONALITY: TO PREVENT STALL ATTACK, I REQUIRE THAT THE WOTH MOUTHFUL CONTAIN A COMPLETE REQUEST
+                //{
+                //if( !bEnd && !( -- cMouthfulsAllowed ) )
                 //BROWSERS TRIGGER THIS (FIREFOX EDGE SAMSUNG)
+                //20250115@2035: DISABLE THIS DEFENSE TO PREVENT FAILURE WHEN PEER IS POORLY BEHAVED BUT NOT MALICIOUS
 
                 }
                     //CONoUTrAW( postcWas ) ;
@@ -341,8 +342,7 @@
 
                     osTextT* poste = thirdC::c_strstrIF( tin0P , postc , "\r\n\r\n" ) ;
                 {
-                else
-                if( !delta ) break ;
+                if( delta )
 
                 }
                     }

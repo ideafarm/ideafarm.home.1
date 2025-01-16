@@ -653,7 +653,14 @@
                         if( POOP )
 
                         //etherC::etRockIF( tin0P ).traceF( tin0P , tRequest , flTRACE_KEEPcRlF | flTRACE_NOpREFIX ) ;
-                        pSControl->writeF( tin0P , (osTextT*)tRequest ) ;
+                        pSControl->writeF( tin0P , postRequest , costRequest ) ;
+
+                        ether.delF( tin0P , psttnu ) ;
+                        ether.boxPutUniqueF( tin0P , psttnu , T("///ideafarm/tmp/getF/request") , postRequest , costRequest , 0 , flOPENdETAILS_null ) ; ___( psttnu ) ;
+                        ZE( strokeS* , psttnu ) ;
+
+                        const countT   costRequest = tRequest.csF( tin0P ) ;
+                        const osTextT* postRequest = tRequest ;
 
                         }
                             if( postBodyP ) tRequest += T(postBodyP) ;

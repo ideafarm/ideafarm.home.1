@@ -20,7 +20,7 @@ DONE( tmWorkF )
     etThread.traceF( tin0P , T("ok") ) ;
 
     while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) ) ;
-cDo = 1 ;
+cDo = 2 ;
     countT cDo = TUCK >> 3 ;
 
     _IO_
@@ -71,6 +71,13 @@ DONE( tmGorillaF )
 #if defined( NEVERdEFINED )
 
         /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
+
+        etThread.traceF( tin0P , TT(timeE1,timeE2) ) ;
+        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeN1 , timeN2 ) ;
+        etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
+        ZE( sCountT , timeE2 ) ;
+        ZE( countT  , timeE1 ) ;
+        
         }
             }
                 etThread.traceF( tin0P , T("!exception / boxGetShadowF failed") ) ;
@@ -81,7 +88,12 @@ DONE( tmGorillaF )
             SCOOPS
         {
         IFsCRATCHoK
-        etThread.traceF( tin0P , T("stomp!") ) ;
+
+        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+        ZE( sCountT , timeN2 ) ;
+        ZE( countT  , timeN1 ) ;
+        
+        //etThread.traceF( tin0P , T("stomp!") ) ;
 
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
