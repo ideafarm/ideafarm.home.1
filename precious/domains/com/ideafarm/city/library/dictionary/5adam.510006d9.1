@@ -317,7 +317,8 @@ DONE( tmWorkF )
             if( bExeDllPublisher                               ) tReasons += T("\"this home publishes exedll.1\"") ;
             TN( tReasons , "" ) ;
         {
-        if( bSuppressAutoUpdate || ( !bForceAutoUpdate && ( bExeDllPublisher || idComputer == idComputerCraftworkMaster ) ) ) // DISABLE AUTO UPDATE IF DEVELOPMENT MACHINE
+        if( bSuppressAutoUpdate || ( !bForceAutoUpdate && ( bExeDllPublisher /*U::|| idComputer == idComputerCraftworkMaster*/ ) ) ) // DISABLE AUTO UPDATE IF DEVELOPMENT MACHINE
+//U:: ENABLE IN PRODUCTION
 
         countT idComputerCraftworkMaster = IDcOMPUTER_IPDOSmASTERcRAFTWORK ;
 
