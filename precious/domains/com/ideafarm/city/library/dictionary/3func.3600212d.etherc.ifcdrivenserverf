@@ -491,13 +491,6 @@
                                                 {
                                                 if( bHeIsSpoofingMe )
 
-}
-    countT foo = 2 ;
-{
-if( idIn > 0x20 )
-countT idIn = 1 + incv02AM( idInLath ) ;
-static countT idInLath ;
-
                                                 else                           etRock.traceF( tin0P , T("ifcDrivenServerF / accepted from a host other than me [idAccept,nnPeer]:    "                                                    )+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnPeer)                                                                                                                                                                                                        , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                 else if(  bLoopback          ) etRock.traceF( tin0P , T("ifcDrivenServerF / accepted from loopback [idAccept]:    "                                                                       )+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)                                                                                                                                                                                                                      , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                 else if(  bHeIsMe            ) etRock.traceF( tin0P , T("ifcDrivenServerF / accepted from me host [idAccept]:    "                                                                        )+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)                                                                                                                                                                                                                      , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
@@ -524,12 +517,12 @@ static countT idInLath ;
 
                                                 boolT bLoopback = nnPeer.isLoopbackOldDoNotUseF() ;
 
-                                                bPeerAllowed = nnPeer == nnTest1 || nnTest2 || !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer ;
+                                                bPeerAllowed = nnPeer == nnTest1 || nnPeer == nnTest2 || nnPeer == nnTest3 || nnPeer == nnTest4 || !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer ;
 
-                                                nicNameC nnTest2 = socketC::nicNameIF( tin0P , *this , T("10.0.0.3") ) ;
-                                                nicNameC nnTest1 = socketC::nicNameIF( tin0P , *this , T("10.0.0.2") ) ;
-                                              //nicNameC nnTest2 = socketC::nicNameIF( tin0P , *this , T("factory3.ideafarm.com") ) ;
-                                              //nicNameC nnTest1 = socketC::nicNameIF( tin0P , *this , T("factory2.ideafarm.com") ) ;
+                                                nicNameC nnTest4 = socketC::nicNameIF( tin0P , *this , T("10.0.0.3") ) ;
+                                                nicNameC nnTest3 = socketC::nicNameIF( tin0P , *this , T("10.0.0.2") ) ;
+                                                nicNameC nnTest2 = socketC::nicNameIF( tin0P , *this , T("factory3.ideafarm.com") ) ;
+                                                nicNameC nnTest1 = socketC::nicNameIF( tin0P , *this , T("factory2.ideafarm.com") ) ;
                                               //nicNameC nnTest  = socketC::nicNameIF( tin0P , *this , T("50.216.215.70") ) ; ; //LAPTOP-GRAY-1
 
                                                 }
