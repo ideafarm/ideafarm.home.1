@@ -517,13 +517,7 @@
 
                                                 boolT bLoopback = nnPeer.isLoopbackOldDoNotUseF() ;
 
-                                                bPeerAllowed = nnPeer == nnTest1 || nnPeer == nnTest2 || nnPeer == nnTest3 || nnPeer == nnTest4 || !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer ;
-
-                                                nicNameC nnTest4 = socketC::nicNameIF( tin0P , *this , T("10.0.0.3") ) ;
-                                                nicNameC nnTest3 = socketC::nicNameIF( tin0P , *this , T("10.0.0.2") ) ;
-                                                nicNameC nnTest2 = socketC::nicNameIF( tin0P , *this , T("factory3.ideafarm.com") ) ;
-                                                nicNameC nnTest1 = socketC::nicNameIF( tin0P , *this , T("factory2.ideafarm.com") ) ;
-                                              //nicNameC nnTest  = socketC::nicNameIF( tin0P , *this , T("50.216.215.70") ) ; ; //LAPTOP-GRAY-1
+                                                bPeerAllowed = nnPeer == nnGorillaOk1 || nnPeer == nnGorillaOk2 || nnPeer == nnGorillaOk3 || nnPeer == nnGorillaOk4 || !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer ;
 
                                                 }
                                                     if( POOP ) POOPR
@@ -839,6 +833,12 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
         ZE( boolT , bDeleteSessions ) ;
         byteT pbSessions[ sizeof( sessionsC ) ] ;
         TELL( "server: setting up" )
+
+        nicNameC nnGorillaOk4 = socketC::nicNameIF( tin0P , *this , T("10.0.0.3") ) ;
+        nicNameC nnGorillaOk3 = socketC::nicNameIF( tin0P , *this , T("10.0.0.2") ) ;
+        nicNameC nnGorillaOk2 = socketC::nicNameIF( tin0P , *this , T("factory3.ideafarm.com") ) ;
+        nicNameC nnGorillaOk1 = socketC::nicNameIF( tin0P , *this , T("factory2.ideafarm.com") ) ;
+      //nicNameC nnGorillaOk  = socketC::nicNameIF( tin0P , *this , T("50.216.215.70") ) ; ; //LAPTOP-GRAY-1
 
         boolT& bShieldsDown = *(boolT*)((count8S*)info2P.cArgApp)->c5 ;
 
