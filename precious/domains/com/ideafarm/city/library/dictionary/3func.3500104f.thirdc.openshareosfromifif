@@ -10,11 +10,11 @@
 }
     return osc ;
     #endif
-        else if( ifcP == ifcOPENsHARE_R  ) osc = FILE_SHARE_READ ;
+        else if( ifcP == ifcOPENsHARE_R  ) osc =                    FILE_SHARE_READ ;
         else if( ifcP == ifcOPENsHARE_WR ) osc = FILE_SHARE_WRITE | FILE_SHARE_READ ;
-             if( ifcP == ifcOPENsHARE_W  ) osc = FILE_SHARE_WRITE ;
+             if( ifcP == ifcOPENsHARE_W  ) osc = FILE_SHARE_WRITE                   ;
     #elif defined( __NT__ )
-        else                              osc = OPEN_SHARE_DENYREADWRITE ;
+        else                               osc = OPEN_SHARE_DENYREADWRITE ;
         else if( ifcP == ifcOPENsHARE_R  ) osc = OPEN_SHARE_DENYWRITE ;
         else if( ifcP == ifcOPENsHARE_WR ) osc = OPEN_SHARE_DENYNONE ;
              if( ifcP == ifcOPENsHARE_W  ) osc = OPEN_SHARE_DENYREAD ;
