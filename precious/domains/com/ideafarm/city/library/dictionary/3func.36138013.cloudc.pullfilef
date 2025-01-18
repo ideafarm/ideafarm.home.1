@@ -35,8 +35,26 @@
                 break ;
 
                 }
-                    ether.diskMoveFileOrDirF(   tin0P , psttFileP , tFileTmp ) ; //IT WOULD BE NICE TO BE ABLE TO DO THIS ATOMICALLY
-                    ether.diskFileOrDirDeleteF( tin0P , psttFileP ) ;            //IT WOULD BE NICE TO BE ABLE TO DO THIS ATOMICALLY
+                    }
+                        }
+                            }
+                                ether.traceF( tin0P , T("!exception / could not move file [to,from]:    ")+tFile+T("    ")+tFileTmp ) ;
+                                POOPR
+                            {
+                            if( POOP )
+                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tFile , tFileTmp ) ; //IT WOULD BE NICE TO BE ABLE TO DO THIS ATOMICALLY
+                        {
+                        else
+                        }
+                            ether.traceF( tin0P , T("!exception / could not delete [file]:    ")+tFile ) ;
+                            POOPR
+                        {
+                        if( POOP )
+                        ((tin1S&)tin0P).pEtScratch->diskFileOrDirDeleteF( tin0P , tFile ) ;            //IT WOULD BE NICE TO BE ABLE TO DO THIS ATOMICALLY
+                        SCOOPS
+                    {
+                    IFsCRATCHoK
+                    TN( tFile , psttFileP ) ;
                 {
                 else
                 }
