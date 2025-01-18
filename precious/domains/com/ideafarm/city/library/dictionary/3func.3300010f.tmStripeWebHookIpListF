@@ -23,6 +23,7 @@ DONE( tmStripeWebHookIpListF )
 
             }
                 grab_pnnAllowP.ungrabF( tin0P ) ;                
+                etThread.traceF( tin0P , T("updated  whitelist") ) ;
                 }
                     etThread.delF( tin0P , psttValue ) ;
 
@@ -56,14 +57,23 @@ DONE( tmStripeWebHookIpListF )
                 etThread.newF( tin0P , LF , pnnAllowP , cFlavors ) ; ___( pnnAllowP ) ;      //LARGER THAN NECESSARY BECAUSE SOME FLAVORS ARE NOT IP ADDRESSES
                 etThread.delF( tin0P , pnnAllowP ) ;
                 cnnAllowP = 0 ;
+                etThread.traceF( tin0P , T("updating whitelist") ) ;
                 grab_pnnAllowP.grabF( tin0P , TAG( TAGiDnULL ) ) ;                
 
                 countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
             {
-            if( !POOP )
+            if( pSwPathValue || !POOP )
 
-            __Z( pSwPathValue ) ;
-            etThread.strParseJsonF( tin0P , pSwPathValue , psttPath , postIn , flSTACKc_null ) ;
+            }
+                }
+                    etThread.traceF( tin0P , T("!exception / could not parse json reply") ) ;
+                    POOPR
+                {
+                if( POOP )
+                (tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttPath , postIn , flSTACKc_null ) ; ___( pSwPathValue ) ;
+                SCOOPS
+            {
+            IFsCRATCHoK
             ZE( switchC* , pSwPathValue ) ;
             ZE( strokeS* , psttPath     ) ;
 
