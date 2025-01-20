@@ -109,9 +109,9 @@ DONE( tmGorillaF )
         TN( tHead , postHead ) ;
 
         }
-            tContentLength3 = T("Content-Length: ")+TF4(costRaw3Part1+costInvoice+costRaw3Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
-            tContentLength2 = T("Content-Length: ")+TF4(costRaw2Part1+costInvoice+costRaw2Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
-            tContentLength1 = T("Content-Length: ")+TF4(costRaw1Part1+costInvoice+costRaw1Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+            tContentLength3 = T("Content-Length: ")+TF4(costRaw3Part1+costInvoiceRequired+costRaw3Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+            tContentLength2 = T("Content-Length: ")+TF4(costRaw2Part1+costInvoiceRequired+costRaw2Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+            tContentLength1 = T("Content-Length: ")+TF4(costRaw1Part1+costInvoiceRequired+costRaw1Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
             //"Content-Length: 5718\r\n"
 
             const countT costRaw3Part2 = sizeof postRaw3Part2 - 1 ;
@@ -129,8 +129,7 @@ DONE( tmGorillaF )
     TN( tRequestAll2 , "" ) ;
     TN( tRequestAll1 , "" ) ;
 
-    const countT costInvoice = tInvoice.csF( tin0P ) ;
-    const costInvoiceRequired = tInvoice.csF( tin0P ) ;
+    const countT costInvoiceRequired = tInvoice.csF( tin0P ) ;
     TN( tInvoice , "" ) ; tInvoice = TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;   //A:ASSUME: UPDATES TO tInvoice DO NOT CHANGE ITS LENGTH
 
     //U:: OPTIMIZE BY USING AN osTextT IMAGE AND PATCHING  EACH INVOICE NUMBER INTO IT
