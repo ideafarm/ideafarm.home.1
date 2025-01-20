@@ -95,6 +95,9 @@ DONE( tmGorillaF )
 
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
+
+        if( tInvoice.csF( tin0P ) - costInvoiceRequired ) { BLAMMOiD( 0x12344321 ) ; }
+        tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
     {
     while( !ether )
 
@@ -127,7 +130,8 @@ DONE( tmGorillaF )
     TN( tRequestAll1 , "" ) ;
 
     const countT costInvoice = tInvoice.csF( tin0P ) ;
-    TN( tInvoice , "" ) ; tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
+    const costInvoiceRequired = tInvoice.csF( tin0P ) ;
+    TN( tInvoice , "" ) ; tInvoice = TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;   //A:ASSUME: UPDATES TO tInvoice DO NOT CHANGE ITS LENGTH
 
     //U:: OPTIMIZE BY USING AN osTextT IMAGE AND PATCHING  EACH INVOICE NUMBER INTO IT
 
