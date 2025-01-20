@@ -96,43 +96,43 @@ DONE( tmGorillaF )
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
 
+        TN( tRequestAll3 , "" ) ; tRequestAll3 = tHead+tContentLength3+tRaw3Part1+tInvoice+tRaw3Part2 ;
+        TN( tRequestAll2 , "" ) ; tRequestAll2 = tHead+tContentLength2+tRaw2Part1+tInvoice+tRaw2Part2 ;
+        TN( tRequestAll1 , "" ) ; tRequestAll1 = tHead+tContentLength1+tRaw1Part1+tInvoice+tRaw1Part2 ;     //U::O: THIS COULD BE DONE FASTER BY PATCHING THE INVOICE STRING INTO A FIXED osTextT STRING AND BY AVOIDING THE USE OF strokeS AND textC
+
         if( tInvoice.csF( tin0P ) - costInvoiceRequired ) { BLAMMOiD( 0x12344321 ) ; }
         tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
     {
     while( !ether )
 
     }
-        tRequestAll3 = tHead+tContentLength3+T(postRaw3Part1)+tInvoice+T(postRaw3Part2) ;
-        tRequestAll2 = tHead+tContentLength2+T(postRaw2Part1)+tInvoice+T(postRaw2Part2) ;
-        tRequestAll1 = tHead+tContentLength1+T(postRaw1Part1)+tInvoice+T(postRaw1Part2) ;
+        tContentLength3 = T("Content-Length: ")+TF4(costRaw3Part1+costInvoiceRequired+costRaw3Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+        tContentLength2 = T("Content-Length: ")+TF4(costRaw2Part1+costInvoiceRequired+costRaw2Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+        tContentLength1 = T("Content-Length: ")+TF4(costRaw1Part1+costInvoiceRequired+costRaw1Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
+        //"Content-Length: 5718\r\n"
 
-        TN( tHead , postHead ) ;
-
-        }
-            tContentLength3 = T("Content-Length: ")+TF4(costRaw3Part1+costInvoiceRequired+costRaw3Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
-            tContentLength2 = T("Content-Length: ")+TF4(costRaw2Part1+costInvoiceRequired+costRaw2Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
-            tContentLength1 = T("Content-Length: ")+TF4(costRaw1Part1+costInvoiceRequired+costRaw1Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
-            //"Content-Length: 5718\r\n"
-
-            const countT costRaw3Part2 = sizeof postRaw3Part2 - 1 ;
-            const countT costRaw3Part1 = sizeof postRaw3Part1 - 1 ;
-            const countT costRaw2Part2 = sizeof postRaw2Part2 - 1 ;
-            const countT costRaw2Part1 = sizeof postRaw2Part1 - 1 ;
-            const countT costRaw1Part2 = sizeof postRaw1Part2 - 1 ;
-            const countT costRaw1Part1 = sizeof postRaw1Part1 - 1 ;
-        {
-        TN( tContentLength3 , "" ) ; 
-        TN( tContentLength2 , "" ) ; 
-        TN( tContentLength1 , "" ) ; 
+        const countT costRaw3Part2 = sizeof postRaw3Part2 - 1 ;
+        const countT costRaw3Part1 = sizeof postRaw3Part1 - 1 ;
+        const countT costRaw2Part2 = sizeof postRaw2Part2 - 1 ;
+        const countT costRaw2Part1 = sizeof postRaw2Part1 - 1 ;
+        const countT costRaw1Part2 = sizeof postRaw1Part2 - 1 ;
+        const countT costRaw1Part1 = sizeof postRaw1Part1 - 1 ;
     {
-    TN( tRequestAll3 , "" ) ;
-    TN( tRequestAll2 , "" ) ;
-    TN( tRequestAll1 , "" ) ;
+    TN( tContentLength3 , "" ) ; 
+    TN( tContentLength2 , "" ) ; 
+    TN( tContentLength1 , "" ) ; 
+
+    TN( tRaw3Part2 , postRaw3Part2 ) ;
+    TN( tRaw3Part1 , postRaw3Part1 ) ;
+    TN( tRaw2Part2 , postRaw2Part2 ) ;
+    TN( tRaw2Part1 , postRaw2Part1 ) ;
+    TN( tRaw1Part2 , postRaw1Part2 ) ;
+    TN( tRaw1Part1 , postRaw1Part1 ) ;
+
+    TN( tHead , postHead ) ;
 
     const countT costInvoiceRequired = tInvoice.csF( tin0P ) ;
     TN( tInvoice , "" ) ; tInvoice = TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;   //A:ASSUME: UPDATES TO tInvoice DO NOT CHANGE ITS LENGTH
-
-    //U:: OPTIMIZE BY USING AN osTextT IMAGE AND PATCHING  EACH INVOICE NUMBER INTO IT
 
 //Sleep( 1000 * 10 ) ;
 
