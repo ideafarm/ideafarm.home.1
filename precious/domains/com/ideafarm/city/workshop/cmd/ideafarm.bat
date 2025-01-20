@@ -7,7 +7,11 @@ rem // This proprietary software was crafted at great expense and with great har
 rem // Respecting the rights of other people is an important part of empowering one another.
 rem //
 
-rem param 1: if "ss" then "skip drive search"
+rem param 1: if "path" then "just set the path"
+rem param 1: if "ss"   then "skip drive search"
+
+if %1z == pathz echo just setting path
+if %1z == pathz goto :SETpATH
 
 set idrive=%~d0%
 echo IdeaFarm (tm) drive is: %idrive%
@@ -74,7 +78,7 @@ rem %iworkshop%\visualstudio\VC_redist.x64.exe
 :AFTERvc
 
 if %1z == ssz echo skipping drive search
-if %1z == ssz goto :SKIPdRIVEsEARCH
+if %1z == ssz goto :SETpATH
 
 echo .
 echo I am about to look for IdeaFarm (tm) home folders on all drives...
@@ -172,7 +176,7 @@ echo (To fix that problem, just move all ideafarm.home.* folders to the same loc
 echo .
 pause
 
-:SKIPdRIVEsEARCH
+:SETpATH
 
 set path=%path%;c:\rimstar
 set path=%path%;%idrive%\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master;%iworkshop%\openssl\bin
@@ -188,6 +192,8 @@ rem THE OPENSSL INCLUDE PATHS MUST BE ADDED TO SYSTEM ENVIRONMENT IF NEEDED FOR 
 
 set path=%iworkshop%\WinHelp;%path%;%iworkshop%\cmd;%iworkshop%\watcom\BINNT;%iworkshop%\infozip\unzip.exe;%iworkshop%\infozip\zip.exe;%iworkshop%\openssl\dll;%iworkshop%\zlib\unzipped.zlib123dll\dll32
 
+if %1z == pathz goto :FIN
+
 rem THE NEXT LINE IS COMMENTED OUT FOR RELIABILITY (TO FORCE BUILD).  FOR SPEED, ENABLE THE NEXT LINE
 rem if exist %idrive%\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\exe\ideafarm.elves.ipdos goto :BUILD
 
@@ -197,3 +203,5 @@ call m
 
 :BUILD
 call e
+
+:FIN

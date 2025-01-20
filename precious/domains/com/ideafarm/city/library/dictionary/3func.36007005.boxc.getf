@@ -417,12 +417,23 @@
                                             }
                                                 else costToDo -= costGot ;
                                                 }
-                                                    bFail = 1 ;
-                                                    ether.delF( tin0P , pbP ) ;
-                                                    ether.traceF( tin0P , T("getF: could not read socket 175 [costToDo]:    ")+TF2(costToDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                                    POOPR
+                                                    }
+                                                        ether.delF( tin0P , pbP ) ;
+                                                        ether.traceF( tin0P , T("getF: could not read socket 175 [costToDo]:    ")+TF2(costToDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                        bFail = 1 ;
+                                                        POOPR
+                                                    {
+                                                    else
+                                                    }
+                                                        break ;
+                                                        cbP = costGotBodyAll ;
+                                                        costToDo -= costGot ;
+                                                        POOPRqUIET
+                                                    {
+                                                    if( bStillHungryIsOk )
                                                 {
                                                 if( POOP )
+                                                costGotBodyAll += costGot ;
                                                 countT costGot = pSControl->readF( tin0P , postc , costToDo ) ;
                                                 SCOOPS
                                             {
@@ -431,8 +442,10 @@
                                         while( costToDo )
                                         countT costToDo = costBody - costzBodySome ;
 
+                                        countT costGotBodyAll = costzBodySome ;
                                         if( costzBodySome ) { ether.memCopyF( tin0P , postc , postzBodySome , costzBodySome ) ; postc += costzBodySome ; }
                                         osTextT* postc = pbP ;
+
                                     {
                                     if( !bChunked )
                                 {
@@ -441,6 +454,9 @@
                             if( pbP )
                             ether.newF( tin0P , LF , pbP , costBody + 1 ) ; ___( pbP ) ;
                             cbP = costBody ;
+
+                            if( !costBody ) costBody = TOCK ;                   //20250119@1528: ADDED W/O ANALYSIS TO COPE WITH JSON REPLY THAT DOES NOT HAVE A Content-Length HEADER
+                            const boolT bStillHungryIsOk = !costBody ;          //20250119@1528: ADDED W/O ANALYSIS TO COPE WITH JSON REPLY THAT DOES NOT HAVE A Content-Length HEADER
 
                             _IO_
                         {
