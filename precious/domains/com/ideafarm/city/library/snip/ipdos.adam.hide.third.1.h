@@ -46655,6 +46655,8 @@ parameters
 
 /*3*/
 #define flSTRdUMP_FOREIGN                0xe00001fc
+#define flSTRdUMP_5bITS                  0xe00002fc
+#define flSTRdUMP_6bITS                  0xe00004fc
 /*3*/
 #define flSTRdUMP_null    0xe00000fc
 
