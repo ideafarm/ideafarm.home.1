@@ -41221,6 +41221,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.bookC.bFileExistsIF!||
     static voidT ctFileNameIF( tin0S& tin0P , textC& tP , const osTextT* const postShortP , const osTextT* const postPathP , const countT idStateSpaceP , countT idMemorySpaceP , const flagsT flagsP ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.bookC.ctFileNameIF!||
+    voidT flushF( tin0S& tin0P ) ;
 
     inline flagsT  flagsCtF(    voidT ) { return flagsCt ; }
     inline operator const handleC&( voidT ) const { return *((fileC*)pbFile) ; }
@@ -41710,6 +41711,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb00d.booksC.cbEachBookF!||
     voidT setF( tin0S& tin0P , const byteT bFillP = 0 ) ;
     //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360fb011.booksc.setf!||
+    voidT flushF( tin0S& tin0P ) ;
 
     inline operator const poopC&(  voidT )       { return poop ; }
     inline flagsT&        fileFlagsRefF(  voidT )       { return BOOKnOW.fileFlagsRefF() ; }

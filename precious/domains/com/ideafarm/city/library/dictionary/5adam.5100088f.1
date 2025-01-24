@@ -18,18 +18,21 @@ etThread.traceF( tin0P , T("ok") ) ;
         if( bDelete ) etThread.delF( tin0P , *(byteT**)&pbi ) ;
         }
             bHead = 1 ;
-            cbi = sizeof( count3S ) ;
+            cbi = sizeof( count4S ) ;
             pbi = 0 ;
 
-            writeSoulFileF( tin0P , etThread , (osTextT*)pbi , cbi - 1 , pptFileName ) ;
+            }
+                writeSoulFileF( tin0P , etThread , (osTextT*)pbi , cbi - 1 , pptFileName ) ;
 
-            //etThread.delF( tin0P , psttnu ) ;
-            //etThread.traceF( tin0P , TF3(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttnu) ) ;
-            //etThread.boxPutUniqueF( tin0P , psttnu , tLike , pbi , cbi - 1 ) ; ___( psttnu ) ;
-            //ZE( strokeS* , psttnu ) ;
-            //DISABLE IN PRODUCTION
+                //etThread.delF( tin0P , psttnu ) ;
+                //etThread.traceF( tin0P , TF3(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttnu) ) ;
+                //etThread.boxPutUniqueF( tin0P , psttnu , tLike , pbi , cbi - 1 ) ; ___( psttnu ) ;
+                //ZE( strokeS* , psttnu ) ;
+                //DISABLE IN PRODUCTION
 
-            ++ cDone ;
+                ++ cDone ;
+            {
+            if( F(flagsNoticeLath) & fliWEBhOOKnOTICE_NEW )
 
             //*********************************************************************************************************************************************************
             //********                                     ************************************************************************************************************
@@ -47,24 +50,31 @@ etThread.traceF( tin0P , T("ok") ) ;
             {
             else
             }
-                bHead = 0 ;
-                cbi = c3h.c3 ;
+                bHead           = 0      ;
+                cbi             = c4h.c3 ;
+
+                }
+                    bksWebHookNotices.flushF( tin0P ) ;
+                    c4h.c4 = fliWEBhOOKnOTICE_null ;                        //U:: PERHAPS EDIT CODE TO NOT DO THIS UNTIL AFTER writeSoulFileF HAS RETURNED ; THIS WILL COMPLICATE THE CODE BUT AVOID THE SCENARIO IN WHICH I DIE BEFORE ACTUALLY WRITING THE soulC FILE
+                {
+                if( F(flagsNoticeLath) & fliWEBhOOKnOTICE_NEW )
+                flagsNoticeLath = c4h.c4 ;
             {
             if( !flagsFail )
             pbi = 0 ;
 
             }
-                if( !c3h.c3                                       ) { flagsFail |= 0x00000108 ; }
-                if( c3h.c2 - 1                                    ) { flagsFail |= 0x00000104 ; }
-                if( getNegAM( c3h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000102 ; }
+                if( !c4h.c3                                       ) { flagsFail |= 0x00000108 ; }
+                if( c4h.c2 - 1                                    ) { flagsFail |= 0x00000104 ; }
+                if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000102 ; }
 
-                // putNegAM( c3s.c1 , FINGERnEG_WEBhOOKnOTICES ) ;
-                // count3S c3s( 0 , 1 , costaBody ) ;
+                // putNegAM( c4s.c1 , FINGERnEG_WEBhOOKnOTICES ) ;
+                // count4S c4s( 0 , 1 , costaBody ) ;
             {
             if( !flagsFail )
-            count3S& c3h = *(count3S*)pbi ;
+            count4S& c4h = *(count4S*)pbi ;
 
-            if( cbi - sizeof( count3S )                           ) { flagsFail |= 0x00000101 ; }
+            if( cbi - sizeof( count4S )                           ) { flagsFail |= 0x00000101 ; }
             ZE( flagsT , flagsFail ) ;
 
             //*********************************************************************************************************************************************************
@@ -84,27 +94,28 @@ etThread.traceF( tin0P , T("ok") ) ;
             else
             }
                 bHead = 0 ;
-                cbi = c3h.c3 ;
+                cbi = c4h.c3 ;
                 //etThread.traceF( tin0P , T("header found!") ) ;
             {
             if( !flagsFail )
             pbi = 0 ;
 
             }
-                if( !c3h.c3                                       ) { flagsFail |= 0x00000010 ; }
-                if( c3h.c2 - 1                                    ) { flagsFail |= 0x00000008 ; }
-                if( getNegAM( c3h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000004 ; }
+                if( !c4h.c4                                       ) { flagsFail |= 0x00000020 ; }
+                if( !c4h.c3                                       ) { flagsFail |= 0x00000010 ; }
+                if( c4h.c2 - 1                                    ) { flagsFail |= 0x00000008 ; }
+                if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000004 ; }
 
-                // putNegAM( c3s.c1 , FINGERnEG_WEBhOOKnOTICES ) ;
-                // count3S c3s( 0 , 1 , costaBody ) ;
+                // putNegAM( c4s.c1 , FINGERnEG_WEBhOOKnOTICES ) ;
+                // count4S c4s( 0 , 1 , costaBody ) ;
             {
             if( !flagsFail )
 
-                            pc3HeadMaybe = 0 ;
-            count3S& c3h = *pc3HeadMaybe ;
+                            pc4HeadMaybe = 0 ;
+            count4S& c4h = *pc4HeadMaybe ;
 
-            if( pbi - (byteT*)pc3HeadMaybe - 1                    ) { flagsFail |= 0x00000002 ; }       //IF WHAT I GOT IS NOT IMMEDIATELY AFTER THE FINGERPRINT (SHOULD BE IMPOSSIBLE)
-            if( cbi - sizeof( count3S )    + 1                    ) { flagsFail |= 0x00000001 ; }       //IF DIDN'T GET THE REST OF THE HEAD
+            if( pbi - (byteT*)pc4HeadMaybe - 1                    ) { flagsFail |= 0x00000002 ; }       //IF WHAT I GOT IS NOT IMMEDIATELY AFTER THE FINGERPRINT (SHOULD BE IMPOSSIBLE)
+            if( cbi - sizeof( count4S )    + 1                    ) { flagsFail |= 0x00000001 ; }       //IF DIDN'T GET THE REST OF THE HEAD
             ZE( flagsT , flagsFail ) ;
 
             //*********************************************************************************************************************************************************
@@ -114,16 +125,16 @@ etThread.traceF( tin0P , T("ok") ) ;
             //*********************************************************************************************************************************************************
             etThread.traceF( tin0P , T("searching for head after fingerprint") ) ;
         {
-        else if( pc3HeadMaybe )
+        else if( pc4HeadMaybe )
         }
             pbi = 0 ;
             }
-                cbi = sizeof( count3S ) - 1 ;
-                pc3HeadMaybe = (count3S*)pbi ;
+                cbi = sizeof( count4S ) - 1 ;
+                pc4HeadMaybe = (count4S*)pbi ;
                 bSearchForHead = 0 ;
             {
-            if( getNegAM( c3h.c1 ) == FINGERnEG_WEBhOOKnOTICES )                                        //A:ASSUME: booksC PROVIDES HEADROOM SO THAT A countT OBJECT CAN ALWAYS BE READ, EVEN AT THE END OF A bookC INSTANCE
-            count3S& c3h = *(count3S*)pbi ;
+            if( getNegAM( c4h.c1 ) == FINGERnEG_WEBhOOKnOTICES )                                        //A:ASSUME: booksC PROVIDES HEADROOM SO THAT A countT OBJECT CAN ALWAYS BE READ, EVEN AT THE END OF A bookC INSTANCE
+            count4S& c4h = *(count4S*)pbi ;
 
             //*********************************************************************************************************************************************************
             //********                       **************************************************************************************************************************
@@ -153,7 +164,8 @@ etThread.traceF( tin0P , T("ok") ) ;
         const countT idPoop = (const poopC&)bksWebHookNotices ;
     {
     while( !ether )
-    ZE( countT , cDone ) ;
+    ZE( flagsT , flagsNoticeLath ) ;
+    ZE( countT , cDone           ) ;
 
     textC* pptFileName[] = { &tSharedFolderPrefix , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated } ;
 
@@ -165,7 +177,7 @@ etThread.traceF( tin0P , T("ok") ) ;
     //etThread.traceF( tin0P , T("reading begun") ) ;
     TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-    ZE( count3S* , pc3HeadMaybe   ) ;
+    ZE( count4S* , pc4HeadMaybe   ) ;
     ZE( boolT    , bSearchForHead ) ;
     boolT bHead = 1 ;
     handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
