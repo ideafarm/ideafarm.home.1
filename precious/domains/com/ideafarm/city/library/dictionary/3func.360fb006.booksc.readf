@@ -107,16 +107,19 @@
                     if( cbzSnip && !( F(flagsP) & flBOOKScrEAD_CURRENTbOOKoNLY ) ) cbToDo -= cbzSnip ;
 
                     }
-                        pBook->writeF( tin0P , flResult , (byteT*)&c2AppNote , cb1 , 0 , countTC() , flBOOK0cwRITE_ALLoRnONE | flBOOK0cwRITE_PURGEiFfULL ) ;
-                        countT cb1 = sizeof c2AppNote ;
-                        ZE( flagsT , flResult ) ;
-                        bookC* pBook = (bookC*)phCursorP->osF( ifcIDtYPEhANDLE_BOOKSrEADcURSOR ) ;
-                    {
-                    if( pbzSnip && phCursorP && ~*phCursorP )          //PSEUDOdUPLICATEcODE: 360fb006 360fb006
-                    //IF READ SUCCEEDED THEN ADVANCE PERSISTENT CURSOR *phCursorP
+                        }
+                            pBook->writeF( tin0P , flResult , (byteT*)&c2AppNote , cb1 , 0 , countTC() , flBOOK0cwRITE_ALLoRnONE | flBOOK0cwRITE_PURGEiFfULL ) ;
+                            countT cb1 = sizeof c2AppNote ;
+                            ZE( flagsT , flResult ) ;
+                            bookC* pBook = (bookC*)phCursorP->osF( ifcIDtYPEhANDLE_BOOKSrEADcURSOR ) ;
+                        {
+                        if( pbzSnip && phCursorP && ~*phCursorP )          //PSEUDOdUPLICATEcODE: 360fb006 360fb006
+                        //IF READ SUCCEEDED THEN ADVANCE PERSISTENT CURSOR *phCursorP
 
-                    BOOKnOW.readF( tin0P , pbzSnip , cbzSnip , c2AppNote.c1 ) ;
-                    cbzSnip = cbToDo ;
+                        BOOKnOW.readF( tin0P , pbzSnip , cbzSnip , c2AppNote.c1 ) ;
+                        cbzSnip = cbToDo ;
+                    {
+                    if( cbToDo || bNullRead )
 
                     __NZ( cbzSnip ) ;
                     __NZ( pbzSnip ) ;
@@ -140,6 +143,8 @@
 
                         if( !bStackUsed ) bStackUsed = 1 ;
                         __Z( cbzSnip ) ;
+
+                        if( (tin1S&)tin0P).pEther ) (tin1S&)tin0P).pEther->traceF( tin0P , T("booksC::readF / prior snip [pbzSnip,cbzSnip]:    ")+TF2((countT)pbzSnip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbzSnip,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     if( pbzSnip )
                     // MOVE A PRIOR SNIP OUT OF THE WAY
