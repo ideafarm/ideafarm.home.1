@@ -167,12 +167,13 @@ etThread.traceF( tin0P , T("ok") ) ;
     ZE( flagsT , flagsNoticeLath ) ;
     ZE( countT , cDone           ) ;
 
-    textC* pptFileName[] = { &tSharedFolderPrefix , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated } ;
+    textC* pptFileName[] = { &tSharedFolderPrefixLive , &tSharedFolderPrefixTest , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated } ;
 
     TN( tSharedFileEventSubCreatedUpdated , "sub.updated"        ".soulC" ) ;
     TN( tSharedFileEventCheckoutCompleted , "checkout.completed" ".soulC" ) ;
     TN( tSharedFileEventSubCreated        , "sub.created"        ".soulC" ) ;
-    TN( tSharedFolderPrefix               , "" ) ; tSharedFolderPrefix = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderPrefixTest           , "" ) ; tSharedFolderPrefixTest = T("///z/ideafarm.shared/test/"    )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderPrefixLive           , "" ) ; tSharedFolderPrefixLive = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
     //etThread.traceF( tin0P , T("reading begun") ) ;
     TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
@@ -210,7 +211,8 @@ TODO
                 etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
                 //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tLiveSlash+T("sub.created/")+tdInvoice+tSlashLiveDot+tSharedFileEventCheckoutCompletedP ;
+                TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+tdInvoice+tSlashLiveDot+tSharedFileEventCheckoutCompletedP ;
+                textC& tSharedFolderUse = bLive ? tSharedFolderPrefixLiveP : tSharedFolderPrefixTestP ;
                 TN( tSlashLiveDot , bLive ? "/live." : "/test." ) ;
                 TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                 boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
@@ -394,7 +396,8 @@ TODO
                 etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
                 //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tLiveSlash+T("sub.created/")+tdInvoice+tSlashLiveDot+tSharedFileEventSubCreatedP ;
+                TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+tdInvoice+tSlashLiveDot+tSharedFileEventSubCreatedP ;
+                textC& tSharedFolderUse = bLive ? tSharedFolderPrefixLiveP : tSharedFolderPrefixTestP ;
                 TN( tSlashLiveDot , bLive ? "/live." : "/test." ) ;
                 TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                 boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
@@ -574,7 +577,8 @@ TODO
                     etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
                     //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tLiveSlash+T("sub.created/")+tdInvoice+tSlashLiveDot+tSharedFileEventSubCreatedUpdatedP ;
+                    TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+tdInvoice+tSlashLiveDot+tSharedFileEventSubCreatedUpdatedP ;
+                    textC& tSharedFolderUse = bLive ? tSharedFolderPrefixLiveP : tSharedFolderPrefixTestP ;
                     TN( tSlashLiveDot , bLive ? "/live." : "/test." ) ;
                     TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                     boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
@@ -757,7 +761,7 @@ TODO
             else                                                                                                                                                    // ELSE WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
             }
                 etherP.delF( tin0P , psttnu ) ;
-                etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubRenewed+T("sub.renewed.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // THEN WRITE JSON NOTICE OF SUB RENEWED TO FILE FOR MANUAL PROCESSING
+                etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubRenewedLive+T("sub.renewed.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // THEN WRITE JSON NOTICE OF SUB RENEWED TO FILE FOR MANUAL PROCESSING
                 ZE( strokeS* , psttnu ) ;
                 //etherP.traceF( tin0P , T("writeSoulFileF / sub updated (renewal)") ) ;
                 _IO_
@@ -778,7 +782,7 @@ TODO
         else if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeSubUpdated ) )                                                 // ELSE IF NOTICE TYPE IS "SUB UPDATED"
         }
             etherP.delF( tin0P , psttnu ) ;
-            etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubDeleted+T("sub.deleted.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // WRITE JSON NOTICE OF SUB DELETED TO FILE FOR MANUAL PROCESSING
+            etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubDeletedLive+T("sub.deleted.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // WRITE JSON NOTICE OF SUB DELETED TO FILE FOR MANUAL PROCESSING
             ZE( strokeS* , psttnu ) ;
             //etherP.traceF( tin0P , T("writeSoulFileF / sub deleted") ) ;
             _IO_
@@ -791,9 +795,12 @@ TODO
         {
         if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeSubDeleted ) )                                                      // IF NOTICE TYPE IS "SUB DELETED"
 
-        TN( tSharedFolderNoticeSubRenewed , "" ) ; tSharedFolderNoticeSubRenewed = tSharedFolderPrefix+T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
-        TN( tSharedFolderNoticeSubDeleted , "" ) ; tSharedFolderNoticeSubDeleted = tSharedFolderPrefix+T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
-        TN( tSharedFolderPrefix           , "" ) ; tSharedFolderPrefix           = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+        TN( tSharedFolderNoticeSubRenewedTest , "" ) ; tSharedFolderNoticeSubRenewedTest = tSharedFolderPrefixTest+T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
+        TN( tSharedFolderNoticeSubRenewedLive , "" ) ; tSharedFolderNoticeSubRenewedLive = tSharedFolderPrefixLive+T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
+        TN( tSharedFolderNoticeSubDeletedTest , "" ) ; tSharedFolderNoticeSubDeletedTest = tSharedFolderPrefixTest+T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
+        TN( tSharedFolderNoticeSubDeletedLive , "" ) ; tSharedFolderNoticeSubDeletedLive = tSharedFolderPrefixLive+T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
+        TN( tSharedFolderPrefixTest           , "" ) ; tSharedFolderPrefixTest           = T("///z/ideafarm.shared/test/"    )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+        TN( tSharedFolderPrefixLive           , "" ) ; tSharedFolderPrefixLive           = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
         TN( tValueStripeNoticeTypeCheckoutCompleted , "checkout.session.completed"    ) ;
         TN( tValueStripeNoticeTypeSubCreated        , "customer.subscription.created" ) ;
@@ -895,10 +902,11 @@ TODO
 
     //etherP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
 
-    textC& tSharedFileEventSubCreatedUpdatedP = *pptFileNameP[ 3 ] ;
-    textC& tSharedFileEventCheckoutCompletedP = *pptFileNameP[ 2 ] ;
-    textC& tSharedFileEventSubCreatedP        = *pptFileNameP[ 1 ] ;
-    textC& tSharedFolderPrefixP               = *pptFileNameP[ 0 ] ;
+    textC& tSharedFileEventSubCreatedUpdatedP = *pptFileNameP[ 4 ] ;
+    textC& tSharedFileEventCheckoutCompletedP = *pptFileNameP[ 3 ] ;
+    textC& tSharedFileEventSubCreatedP        = *pptFileNameP[ 2 ] ;
+    textC& tSharedFolderPrefixTestP           = *pptFileNameP[ 1 ] ;
+    textC& tSharedFolderPrefixLiveP           = *pptFileNameP[ 0 ] ;
 {
 voidT writeSoulFileF( tin0S& tin0P , etherC& etherP , osTextT* const postP , countT costP , textC** pptFileNameP )
 
