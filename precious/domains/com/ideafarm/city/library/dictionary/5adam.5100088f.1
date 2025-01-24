@@ -21,6 +21,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             cbi = sizeof( count3S ) ;
             pbi = 0 ;
 
+            etThread.traceF( tin0P , T("[cDone]:    ")+TF2(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             writeSoulFileF( tin0P , etThread , (osTextT*)pbi , cbi - 1 , pptFileName ) ;
 
             //etThread.delF( tin0P , psttnu ) ;
@@ -140,10 +141,18 @@ etThread.traceF( tin0P , T("ok") ) ;
             etThread.traceF( tin0P , T("napping (snore)") ) ;
         {
         if( !pbi || !cbi )
+
+        }
+            etThread.traceF( tin0P , T("bksWebHookNotices is impotent [idSubType]:    ")+TF2(*pPooDebug,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        {
+        if( *pPooDebug )
+
         boolT bDelete = bksWebHookNotices.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_null ) ;
     {
     while( !ether )
     ZE( countT , cDone ) ;
+
+static const poopC* pPooDebug = &(const poopC&)bksWebHookNotices ; //U::
 
     textC* pptFileName[] = { &tSharedFolderPrefix , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated } ;
 
@@ -875,7 +884,7 @@ TODO
 {
 voidT writeSoulFileF( tin0S& tin0P , etherC& etherP , osTextT* const postP , countT costP , textC** pptFileNameP )
 
-/*1*/WAKEhIDE( "ifcIDaDAM_WEBhOOKnOTICEfILER" )/*1*/
+/*1*/WAKEdEBUGsHOWtEXT( "ifcIDaDAM_WEBhOOKnOTICEfILER" )/*1*/
 /**/
 */
 
