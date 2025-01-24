@@ -13,7 +13,7 @@
             offP += cbP ;
             pbP = pbBody + offP ;
         {
-        if( cbP )                               //20250123@2222: ADDED W/O ANALYSIS TO FIX BUG OF OBSERVED cbuSnip IN booksC::readF, SO THAT I CANNOT EVER RETURN A NONZE pbP WITH A NULL cbP
+        if( cbP || bAllowNullLength )                               //20250123@2222: ADDED W/O ANALYSIS TO FIX BUG OF OBSERVED cbuSnip IN booksC::readF, SO THAT I CANNOT EVER RETURN A NONZE pbP WITH A NULL cbP
     
         if( cbP > cbMax ) cbP = cbMax ;
 
@@ -26,6 +26,7 @@
     {
     if( cbuSnap <= offP )
 
+    const boolT  bAllowNullLength = !cbP ;
     const countT cbuSnap = pHead->cbUsed - pHead->cbFill ;
 
     _IO_
