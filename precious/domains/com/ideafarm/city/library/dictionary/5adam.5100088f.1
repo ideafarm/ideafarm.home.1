@@ -36,14 +36,14 @@ etThread.traceF( tin0P , T("ok") ) ;
             //********  EAT JSON BODY TO WRITE soulC FILE  ************************************************************************************************************
             //********                                     ************************************************************************************************************
             //*********************************************************************************************************************************************************
-            etThread.traceF( tin0P , T("eat body") ) ;
+            //etThread.traceF( tin0P , T("eat body") ) ;
         {
         else
         }
             }
                 cbi = 1 ;
                 bSearchForHead = 1 ;
-                etThread.traceF( tin0P , T("bad header, so will search for the next header [flagsFail]:    ")+TF3(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                etThread.traceF( tin0P , T("!exception / bad header, so will search for the next header [flagsFail]:    ")+TF3(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
             {
             else
             }
@@ -72,20 +72,20 @@ etThread.traceF( tin0P , T("ok") ) ;
             //********  EAT HEAD  *************************************************************************************************************************************
             //********            *************************************************************************************************************************************
             //*********************************************************************************************************************************************************
-            etThread.traceF( tin0P , T("eat head") ) ;
+            //etThread.traceF( tin0P , T("eat head") ) ;
         {
         else if( bHead )
         }
             }
                 cbi = 1 ;
                 bSearchForHead = 1 ;
-                etThread.traceF( tin0P , T("not a header, so will continue searching [flagsFail]:    ")+TF3(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                etThread.traceF( tin0P , T("!exception / not a header, so will continue searching [flagsFail]:    ")+TF3(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
             {
             else
             }
                 bHead = 0 ;
                 cbi = c3h.c3 ;
-                etThread.traceF( tin0P , T("header found!") ) ;
+                //etThread.traceF( tin0P , T("header found!") ) ;
             {
             if( !flagsFail )
             pbi = 0 ;
@@ -137,11 +137,11 @@ etThread.traceF( tin0P , T("ok") ) ;
         }
             continue ;
             ++ s ; ether.osSleepF( tin0P , TOCK ) ;
-            etThread.traceF( tin0P , T("napping (snore)") ) ;
+            //etThread.traceF( tin0P , T("napping (snore)") ) ;
         {
         if( !pbi || !cbi )
 
-        etThread.traceF( tin0P , T("bksWebHookNotices.readF returned [pbi,cbi]:    ")+TF2((countT)pbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tin0P , T("bksWebHookNotices.readF returned [pbi,cbi]:    ")+TF2((countT)pbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         boolT bDelete = bksWebHookNotices.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_null ) ;
 
@@ -162,7 +162,7 @@ etThread.traceF( tin0P , T("ok") ) ;
     TN( tSharedFileEventSubCreated        , "sub.created"        ".soulC" ) ;
     TN( tSharedFolderPrefix               , "" ) ; tSharedFolderPrefix = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/sub.created/") ;
 
-    etThread.traceF( tin0P , T("reading begun") ) ;
+    //etThread.traceF( tin0P , T("reading begun") ) ;
     TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( count3S* , pc3HeadMaybe   ) ;
@@ -188,7 +188,7 @@ etThread.traceF( tin0P , T("ok") ) ;
 TODO
 
 }
-    etherP.traceF( tin0P , T("writeSoulFileF / ---- ") ) ;
+    //etherP.traceF( tin0P , T("writeSoulFileF / ---- ") ) ;
 
     }
         DEL( pSwPathValue ) ;
@@ -197,7 +197,7 @@ TODO
             }
                 etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
-                etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                 TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tdInvoice+T(bLive?"/live.":"/test.")+tSharedFileEventCheckoutCompletedP ;
 
                 boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
@@ -241,7 +241,7 @@ TODO
             {
             TN( tdInvoice , "" ) ;
 
-            etherP.traceF( tin0P , T("[Invoice]:    ")+tValueInvoice ) ;
+            //etherP.traceF( tin0P , T("[Invoice]:    ")+tValueInvoice ) ;
             }
                 }
                     }
@@ -366,7 +366,7 @@ TODO
             TN( tValueInvoice            , "" ) ;
             TN( tValueStripeNoticeType   , "" ) ;
             TN( tValueLive               , "" ) ;
-            etherP.traceF( tin0P , T("writeSoulFileF / checkout completed") ) ;
+            //etherP.traceF( tin0P , T("writeSoulFileF / checkout completed") ) ;
             _IO_                                                                                                                                                // WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
 
             //*********************************************************************************************************************************************************
@@ -380,7 +380,7 @@ TODO
             }
                 etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
-                etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                 TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tdInvoice+T(bLive?"/live.":"/test.")+tSharedFileEventSubCreatedP ;
 
                 boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
@@ -423,7 +423,7 @@ TODO
             {
             TN( tdInvoice , "" ) ;
 
-            etherP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
+            //etherP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
             }
                 }
                     }
@@ -544,7 +544,7 @@ TODO
             TN( tValueLatestInvoice    , "" ) ;
             TN( tValueStripeNoticeType , "" ) ;
             TN( tValueLive             , "" ) ;
-            etherP.traceF( tin0P , T("writeSoulFileF / sub created") ) ;
+            //etherP.traceF( tin0P , T("writeSoulFileF / sub created") ) ;
             _IO_                                                                                                                                                // WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
 
             //*********************************************************************************************************************************************************
@@ -559,7 +559,7 @@ TODO
                 }
                     etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
-                    etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tdInvoice+T(bLive?"/live.":"/test.")+tSharedFileEventSubCreatedUpdatedP ;
 
                     boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
@@ -602,7 +602,7 @@ TODO
                 {
                 TN( tdInvoice , "" ) ;
 
-                etherP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
+                //etherP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
                 }
                     }
                         }
@@ -730,7 +730,7 @@ TODO
                 TN( tValueLatestInvoice    , "" ) ;
                 TN( tValueStripeNoticeType , "" ) ;
                 TN( tValueLive             , "" ) ;
-                etherP.traceF( tin0P , T("writeSoulFileF / sub updated (sub created))") ) ;
+                //etherP.traceF( tin0P , T("writeSoulFileF / sub updated (sub created))") ) ;
                 _IO_
 
                 //*********************************************************************************************************************************************************
@@ -744,7 +744,7 @@ TODO
                 etherP.delF( tin0P , psttnu ) ;
                 etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubRenewed+T("sub.renewed.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // THEN WRITE JSON NOTICE OF SUB RENEWED TO FILE FOR MANUAL PROCESSING
                 ZE( strokeS* , psttnu ) ;
-                etherP.traceF( tin0P , T("writeSoulFileF / sub updated (renewal)") ) ;
+                //etherP.traceF( tin0P , T("writeSoulFileF / sub updated (renewal)") ) ;
                 _IO_
 
                 //*********************************************************************************************************************************************************
@@ -765,7 +765,7 @@ TODO
             etherP.delF( tin0P , psttnu ) ;
             etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubDeleted+T("sub.deleted.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // WRITE JSON NOTICE OF SUB DELETED TO FILE FOR MANUAL PROCESSING
             ZE( strokeS* , psttnu ) ;
-            etherP.traceF( tin0P , T("writeSoulFileF / sub deleted") ) ;
+            //etherP.traceF( tin0P , T("writeSoulFileF / sub deleted") ) ;
             _IO_
 
             //*********************************************************************************************************************************************************
@@ -878,7 +878,7 @@ TODO
     {
     if( postP )
 
-    etherP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
+    //etherP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
 
     textC& tSharedFileEventSubCreatedUpdatedP = *pptFileNameP[ 3 ] ;
     textC& tSharedFileEventCheckoutCompletedP = *pptFileNameP[ 2 ] ;
