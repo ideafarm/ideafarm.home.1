@@ -11873,10 +11873,11 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_TOOLmIGRATEaRCHIVEfORMAT9tOfORMATa                   0x5100081c
 #define ifcIDaDAM_GLASS1                                               0x5100083a
 #define ifcIDaDAM_HIREwITHOUTdEBUGGING                                 0x5100083b
-#define ifcIDaDAM_EATiNCOMINGoRDERS                                    0x51000880
+#define ifcIDaDAM_EATiNCOMINGoRDERSoLD                                 0x51000880
 #define ifcIDaDAM_ICISbOT                                              0x5100087d
 #define ifcIDaDAM_GORILLAwEBHOOKS                                      0x51000889
 #define ifcIDaDAM_RDPiNTRUSIONdETECTOR                                 0x5100088d
+#define ifcIDaDAM_WEBhOOKnOTICEfILER                                   0x5100088f
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
@@ -48312,7 +48313,7 @@ use this rather than _ to avoid the overhead of _
 #define flHOMEsaDAMS_ROOThEAL                  0xe0000408
 #define flHOMEsaDAMS_ROOTbANG                  0xe0000808
 #define flHOMEsaDAMS_RDPoPENhOUSE              0xe0001008
-#define flHOMEsaDAMS_EATiNCOMINGoRDERS         0xe0002008
+#define flHOMEsaDAMS_FILEwEBHOOKnOTICES        0xe0002008
 #define flHOMEsaDAMS_ICISbOT                   0xe0004008
 /*3*/
 #define flHOMEsaDAMS_null    0xe0000008
