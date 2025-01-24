@@ -58,23 +58,27 @@
         else
         }
             }
-                *pbo = 0 ;
-                if( pbzSnip && cbzSnip ) { thirdC::c_memcpyIF( tin0P , pbo , pbzSnip , cbzSnip ) ; pbo += cbzSnip ; }
-
                 }
-                    PUSE( tin0P , pbw ) ;
-                    thirdC::c_memcpyIF( tin0P , pbo , pbw + sizeof( countT ) , *(countT*)pbw ) ; pbo += *(countT*)pbw ;
-                    stSnip >> pbw ;
-                    ZE( byteT* , pbw ) ;
-                {
-                while( stSnip )
-                byteT* pbo = (byteT*)pbP ;
-            {
-            if( !POOP )
+                    *pbo = 0 ;
+                    if( pbzSnip && cbzSnip ) { thirdC::c_memcpyIF( tin0P , pbo , pbzSnip , cbzSnip ) ; pbo += cbzSnip ; }
 
-            cbP = cbaAll ; //20131204@1219: ADDED WITHOUT ANALYSIS
-            __Z( pbP ) ;
-            PUSE.newF( tin0P , LF , *(byteT**)&pbP , cbaAll + 1 ) ; ___( pbP ) ;
+                    }
+                        PUSE( tin0P , pbw ) ;
+                        thirdC::c_memcpyIF( tin0P , pbo , pbw + sizeof( countT ) , *(countT*)pbw ) ; pbo += *(countT*)pbw ;
+                        stSnip >> pbw ;
+                        ZE( byteT* , pbw ) ;
+                    {
+                    while( stSnip )
+                    byteT* pbo = (byteT*)pbP ;
+                {
+                if( !POOP )
+
+                cbP = cbaAll ; //20131204@1219: ADDED WITHOUT ANALYSIS
+                __Z( pbP ) ;
+                PUSE.newF( tin0P , LF , *(byteT**)&pbP , cbaAll + 1 ) ; ___( pbP ) ;
+            {
+            if( cbaAll )
+
             __NZ( pbP ) ;
 
             while( ~hWalk ) ;
@@ -89,10 +93,13 @@
 
             __NZ( F(flagsP) & flBOOKScrEAD_CURRENTbOOKoNLY ) ;
         {
-        else if( !bQuit )
+        else if( !bQuit )                                                       //U:: 20250124@1120: CONJ: !!bCallerMustDelete IS IMPOSSIBLE IF bNullRead
         }
-            cbP = cbzSnip ;
-            pbP = pbzSnip ;
+            }
+                cbP = cbzSnip ;
+                pbP = pbzSnip ;
+            {
+            if( cbzSnip || bNullRead )
         {
         else if( !bCallerMustDelete )
         if( POOP ) ;
@@ -429,7 +436,7 @@
     const boolT& bQuit = pbQuitP ? *pbQuitP : bnu ;
     ZE( boolT , bnu ) ;
 
-    boolT bNullRead = !cbP ; //20231114@1246: SUPPORT "NULL READ", WHICH SETS pbP BUT DOES NOT ADVANCE THE OFFSET
+    const boolT bNullRead = !cbP ; //20231114@1246: SUPPORT "NULL READ", WHICH SETS pbP BUT DOES NOT ADVANCE THE OFFSET
 
     _IO_
 
