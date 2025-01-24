@@ -172,7 +172,7 @@ etThread.traceF( tin0P , T("ok") ) ;
     TN( tSharedFileEventSubCreatedUpdated , "sub.updated"        ".soulC" ) ;
     TN( tSharedFileEventCheckoutCompleted , "checkout.completed" ".soulC" ) ;
     TN( tSharedFileEventSubCreated        , "sub.created"        ".soulC" ) ;
-    TN( tSharedFolderPrefix               , "" ) ; tSharedFolderPrefix = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/sub.created/") ;
+    TN( tSharedFolderPrefix               , "" ) ; tSharedFolderPrefix = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
     //etThread.traceF( tin0P , T("reading begun") ) ;
     TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
@@ -210,8 +210,9 @@ TODO
                 etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
                 //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tdInvoice+T(bLive?"/live.":"/test.")+tSharedFileEventCheckoutCompletedP ;
-
+                TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tLiveSlash+T("sub.created/")+tdInvoice+tSlashLiveDot+tSharedFileEventCheckoutCompletedP ;
+                TN( tSlashLiveDot , bLive ? "/live." : "/test." ) ;
+                TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                 boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
 
                 }
@@ -393,8 +394,9 @@ TODO
                 etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
                 //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tdInvoice+T(bLive?"/live.":"/test.")+tSharedFileEventSubCreatedP ;
-
+                TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tLiveSlash+T("sub.created/")+tdInvoice+tSlashLiveDot+tSharedFileEventSubCreatedP ;
+                TN( tSlashLiveDot , bLive ? "/live." : "/test." ) ;
+                TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                 boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
 
                 }
@@ -572,8 +574,9 @@ TODO
                     etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
                     //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tdInvoice+T(bLive?"/live.":"/test.")+tSharedFileEventSubCreatedUpdatedP ;
-
+                    TN( tLong , "" ) ; tLong = tSharedFolderPrefixP+tLiveSlash+T("sub.created/")+tdInvoice+tSlashLiveDot+tSharedFileEventSubCreatedUpdatedP ;
+                    TN( tSlashLiveDot , bLive ? "/live." : "/test." ) ;
+                    TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                     boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
 
                     }
