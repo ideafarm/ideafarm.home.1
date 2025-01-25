@@ -66,7 +66,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             }
                 if( !c4h.c3                                       ) { flagsFail |= 0x00000108 ; }
                 if( c4h.c2 - 1                                    ) { flagsFail |= 0x00000104 ; }
-                if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000102 ; }
+                if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000102 ; etThread.traceF( tin0P , T("!exception [flagsFail,finger]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(getNegAM(c4h.c1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
 
                 // putNegAM( c4s.c1 , FINGERnEG_WEBhOOKnOTICES ) ;
                 // count4S c4s( 0 , 1 , costaBody ) ;
@@ -74,7 +74,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             if( !flagsFail )
             count4S& c4h = *(count4S*)pbi ;
 
-            if( cbi - sizeof( count4S )                           ) { flagsFail |= 0x00000101 ; }
+            if( cbi - sizeof( count4S )                           ) { flagsFail |= 0x00000101 ; etThread.traceF( tin0P , T("!exception [flagsFail,cbi]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
             ZE( flagsT , flagsFail ) ;
 
             //*********************************************************************************************************************************************************
@@ -104,7 +104,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                 if( !c4h.c4                                       ) { flagsFail |= 0x00000020 ; }
                 if( !c4h.c3                                       ) { flagsFail |= 0x00000010 ; }
                 if( c4h.c2 - 1                                    ) { flagsFail |= 0x00000008 ; }
-                if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000004 ; }
+                if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000004 ; etThread.traceF( tin0P , T("!exception [flagsFail,finger]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(getNegAM(c4h.c1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
 
                 // putNegAM( c4s.c1 , FINGERnEG_WEBhOOKnOTICES ) ;
                 // count4S c4s( 0 , 1 , costaBody ) ;
@@ -114,8 +114,8 @@ etThread.traceF( tin0P , T("ok") ) ;
                             pc4HeadMaybe = 0 ;
             count4S& c4h = *pc4HeadMaybe ;
 
-            if( pbi - (byteT*)pc4HeadMaybe - 1                    ) { flagsFail |= 0x00000002 ; }       //IF WHAT I GOT IS NOT IMMEDIATELY AFTER THE FINGERPRINT (SHOULD BE IMPOSSIBLE)
-            if( cbi - sizeof( count4S )    + 1                    ) { flagsFail |= 0x00000001 ; }       //IF DIDN'T GET THE REST OF THE HEAD
+            if( pbi - (byteT*)pc4HeadMaybe - 1                    ) { flagsFail |= 0x00000002 ; etThread.traceF( tin0P , T("!exception [flagsFail,pbi-(byteT*)pc4HeadMaybe-1]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbi-(byteT*)pc4HeadMaybe-1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }       //IF WHAT I GOT IS NOT IMMEDIATELY AFTER THE FINGERPRINT (SHOULD BE IMPOSSIBLE)
+            if( cbi - sizeof( count4S )    + 1                    ) { flagsFail |= 0x00000001 ; etThread.traceF( tin0P , T("!exception [flagsFail,cbi]:    "                       )+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi                       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }       //IF DIDN'T GET THE REST OF THE HEAD
             ZE( flagsT , flagsFail ) ;
 
             //*********************************************************************************************************************************************************
@@ -172,8 +172,8 @@ etThread.traceF( tin0P , T("ok") ) ;
     TN( tSharedFileEventSubCreatedUpdated , "sub.updated"        ".soulC" ) ;
     TN( tSharedFileEventCheckoutCompleted , "checkout.completed" ".soulC" ) ;
     TN( tSharedFileEventSubCreated        , "sub.created"        ".soulC" ) ;
-    TN( tSharedFolderPrefixTest           , "" ) ; tSharedFolderPrefixTest = T("///z/ideafarm.shared/test/"    )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
-    TN( tSharedFolderPrefixLive           , "" ) ; tSharedFolderPrefixLive = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderPrefixTest           , ""                            ) ; tSharedFolderPrefixTest = T("///z/ideafarm.shared/test/"    )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderPrefixLive           , ""                            ) ; tSharedFolderPrefixLive = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
     //etThread.traceF( tin0P , T("reading begun") ) ;
     TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
