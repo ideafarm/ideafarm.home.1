@@ -147,16 +147,18 @@ etThread.traceF( tin0P , T("ok") ) ;
 
         }
             continue ;
+            cbi = cbiSave ;
             ++ s ; ether.osSleepF( tin0P , TOCK ) ;
             //etThread.traceF( tin0P , T("napping (snore)") ) ;
         {
         if( !pbi || !cbi )
 
-        etThread.traceF( tin0P , T("bksWebHookNotices.readF returned [pbi,cbi]:    ")+TF2((countT)pbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etThread.traceF( tin0P , T("bksWebHookNotices.readF returned [pbi,cbi]:    ")+TF2((countT)pbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-        ((tin123S&)tin0P).pcUtility[ 0 ] -- ;
+        //((tin123S&)tin0P).pcUtility[ 0 ] -- ;
         boolT bDelete = bksWebHookNotices.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_null ) ;
-        ((tin123S&)tin0P).pcUtility[ 0 ] ++ ;
+        //((tin123S&)tin0P).pcUtility[ 0 ] ++ ;
+        const countT cbiSave = cbi ;
 
         }
             BLAMMOiD( 0x11111111 ) ;
