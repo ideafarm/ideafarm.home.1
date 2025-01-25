@@ -39,7 +39,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             //********  EAT JSON BODY TO WRITE soulC FILE  ************************************************************************************************************
             //********                                     ************************************************************************************************************
             //*********************************************************************************************************************************************************
-            //etThread.traceF( tin0P , T("eat body") ) ;
+            etThread.traceF( tin0P , T("eat body") ) ;
         {
         else
         }
@@ -82,7 +82,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             //********  EAT HEAD  *************************************************************************************************************************************
             //********            *************************************************************************************************************************************
             //*********************************************************************************************************************************************************
-            //etThread.traceF( tin0P , T("eat head") ) ;
+            etThread.traceF( tin0P , T("eat head") ) ;
         {
         else if( bHead )
         }
@@ -95,7 +95,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             }
                 bHead = 0 ;
                 cbi = c4h.c3 ;
-                //etThread.traceF( tin0P , T("header found!") ) ;
+                etThread.traceF( tin0P , T("header found!") ) ;
             {
             if( !flagsFail )
             pbi = 0 ;
@@ -152,7 +152,7 @@ etThread.traceF( tin0P , T("ok") ) ;
         {
         if( !pbi || !cbi )
 
-        //etThread.traceF( tin0P , T("bksWebHookNotices.readF returned [pbi,cbi]:    ")+TF2((countT)pbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        etThread.traceF( tin0P , T("bksWebHookNotices.readF returned [pbi,cbi]:    ")+TF2((countT)pbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         boolT bDelete = bksWebHookNotices.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_null ) ;
 
@@ -175,7 +175,7 @@ etThread.traceF( tin0P , T("ok") ) ;
     TN( tSharedFolderPrefixTest           , ""                            ) ; tSharedFolderPrefixTest = T("///z/ideafarm.shared/test/"    )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
     TN( tSharedFolderPrefixLive           , ""                            ) ; tSharedFolderPrefixLive = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
-    //etThread.traceF( tin0P , T("reading begun") ) ;
+    etThread.traceF( tin0P , T("reading begun") ) ;
     TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( count4S* , pc4HeadMaybe   ) ;
