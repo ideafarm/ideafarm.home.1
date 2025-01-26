@@ -22,7 +22,8 @@ etThread.traceF( tin0P , T("ok") ) ;
             pbi = 0 ;
 
             }
-                ++ s ; ether.osSleepF( tin0P , TICK >> 2 ) ;    // PACE MYSELF SO THAT THE HTTP SERVER PROCESS GETS MORE OF THE CPU (EXPERIMENT TO SEE WHETHER THIS IMPROVES HTTPS RESPONSE TIME)
+                //++ s ; ether.osSleepF( tin0P , TICK >> 2 ) ;    // PACE MYSELF SO THAT THE HTTP SERVER PROCESS GETS MORE OF THE CPU (EXPERIMENT TO SEE WHETHER THIS IMPROVES HTTPS RESPONSE TIME)
+                //THIS NAPPING IS DISABLED BECAUSE THE BOTTLENECK IS WITH ME; I CAN ONLY HANDLE ABOUT WO NOTICE PER TOCK, AND AT THAT RATE, IT IS EASY FOR THE HTTPS SERVER TO KEEP UP
 
                 writeSoulFileF( tin0P , etThread , (osTextT*)pbi , cbi - 1 , pptFileName ) ;
 
