@@ -517,7 +517,18 @@
 
                                                 boolT bLoopback = nnPeer.isLoopbackOldDoNotUseF() ;
 
-                                                bPeerAllowed = nnPeer == nnGorillaOk1 || nnPeer == nnGorillaOk2 || nnPeer == nnGorillaOk3 || nnPeer == nnGorillaOk4 || !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer ;
+                                                ) ;
+                                                    || nnPeer == nnGorillaOk8
+                                                    || nnPeer == nnGorillaOk7
+                                                    || nnPeer == nnGorillaOk6
+                                                    || nnPeer == nnGorillaOk5
+                                                    || nnPeer == nnGorillaOk4
+                                                    || nnPeer == nnGorillaOk3
+                                                    || nnPeer == nnGorillaOk2
+                                                    || nnPeer == nnGorillaOk1
+                                                    !info2P.pnnAllowedStripe ? 1 : *info2P.pnnAllowedStripe & nnPeer
+                                                (
+                                                bPeerAllowed =
 
                                                 }
                                                     if( POOP ) POOPR
@@ -834,10 +845,14 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
         byteT pbSessions[ sizeof( sessionsC ) ] ;
         TELL( "server: setting up" )
 
-        nicNameC nnGorillaOk4 = socketC::nicNameIF( tin0P , *this , T("10.0.0.3") ) ;
-        nicNameC nnGorillaOk3 = socketC::nicNameIF( tin0P , *this , T("10.0.0.2") ) ;
-        nicNameC nnGorillaOk2 = socketC::nicNameIF( tin0P , *this , T("factory3.ideafarm.com") ) ;
-        nicNameC nnGorillaOk1 = socketC::nicNameIF( tin0P , *this , T("factory2.ideafarm.com") ) ;
+        nicNameC nnGorillaOk8 = socketC::nicNameIF( tin0P , *this , T("10.0.2.8") ) ;
+        nicNameC nnGorillaOk7 = socketC::nicNameIF( tin0P , *this , T("10.0.2.7") ) ;
+        nicNameC nnGorillaOk6 = socketC::nicNameIF( tin0P , *this , T("10.0.2.6") ) ;
+        nicNameC nnGorillaOk5 = socketC::nicNameIF( tin0P , *this , T("10.0.2.5") ) ;
+        nicNameC nnGorillaOk4 = socketC::nicNameIF( tin0P , *this , T("10.0.2.4") ) ;
+        nicNameC nnGorillaOk3 = socketC::nicNameIF( tin0P , *this , T("10.0.2.3") ) ;
+        nicNameC nnGorillaOk2 = socketC::nicNameIF( tin0P , *this , T("10.0.2.2") ) ;
+        nicNameC nnGorillaOk1 = socketC::nicNameIF( tin0P , *this , T("10.0.2.1") ) ;
       //nicNameC nnGorillaOk  = socketC::nicNameIF( tin0P , *this , T("50.216.215.70") ) ; ; //LAPTOP-GRAY-1
 
         boolT& bShieldsDown = *(boolT*)((count8S*)info2P.cArgApp)->c5 ;
