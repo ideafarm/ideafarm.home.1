@@ -10,7 +10,7 @@
 REST
 
 sgnDone_tmWorkF.waitF( tin0P ) ;
-etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK ) ) ;     //U::O: REPLACE "TICK" WITH MINIMUM cbStackP VALUE THAT WORKS RELIABLY
+etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmWorkF , sgnDone_tmWorkF , TICK << 1 ) ) ;    //U:: 20250126@0919: "<< 1" TO FIX STACK OVERFLOW ; WHY DO I NEED SO MUCH? ; SEE BOOKmARK "BLOWS STACK HERE"
 signC sgnDone_tmWorkF( tin0P , TAG( TAGiDnULL ) ) ;
 
 TODO
@@ -930,7 +930,7 @@ TASK( tmWorkF )
     ether.traceF( tin0P , T("Breathe.  Push.  Breathe.  Push.  Making ")+tAdam+te ) ;
 
     if( !tAdam.csF( tin0P ) ) tAdam = TF2(idAdamP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ;
-    TN( tAdam , "" )       ; tAdam = T(mapAdam(idAdamP)) ;
+    TN( tAdam , "" )       ; tAdam = T(mapAdam(idAdamP)) ;                                          //U:: BLOWS STACK HERE
 
     mapCTC& mapAdam = processGlobal4S::_processGlobal4I_IF().mapAdam ;
     TN( te    , " ..."   ) ;
