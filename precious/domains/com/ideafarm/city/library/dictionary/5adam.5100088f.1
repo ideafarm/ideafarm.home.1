@@ -22,6 +22,8 @@ etThread.traceF( tin0P , T("ok") ) ;
             pbi = 0 ;
 
             }
+                ++ s ; ether.osSleepF( tin0P , TICK >> 2 ) ;    // PACE MYSELF SO THAT THE HTTP SERVER PROCESS GETS MORE OF THE CPU (EXPERIMENT TO SEE WHETHER THIS IMPROVES HTTPS RESPONSE TIME)
+
                 writeSoulFileF( tin0P , etThread , (osTextT*)pbi , cbi - 1 , pptFileName ) ;
 
                 //etThread.delF( tin0P , psttnu ) ;
@@ -200,7 +202,8 @@ etThread.traceF( tin0P , T("ok") ) ;
 //********                                     ************************************************************************************************************
 //*********************************************************************************************************************************************************
 
-thirdC::dosPriorityProcessIF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 
 TODO
 
