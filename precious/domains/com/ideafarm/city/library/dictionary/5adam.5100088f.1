@@ -394,7 +394,7 @@ TODO
             TN( tValueInvoice            , "" ) ;
             TN( tValueStripeNoticeType   , "" ) ;
             TN( tValueLive               , "" ) ;
-            //etherP.traceF( tin0P , T("writeSoulFileF / checkout completed") ) ;
+            etherP.traceF( tin0P , T("writeSoulFileF / checkout completed") ) ;
             _IO_                                                                                                                                                // WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
 
             //*********************************************************************************************************************************************************
@@ -579,7 +579,7 @@ TODO
             TN( tValueLatestInvoice    , "" ) ;
             TN( tValueStripeNoticeType , "" ) ;
             TN( tValueLive             , "" ) ;
-            //etherP.traceF( tin0P , T("writeSoulFileF / sub created") ) ;
+            etherP.traceF( tin0P , T("writeSoulFileF / sub created") ) ;
             _IO_                                                                                                                                                // WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
 
             //*********************************************************************************************************************************************************
@@ -631,12 +631,12 @@ TODO
                 {
 
                 }
-                    etherP.traceF( tin0P , T("[hashInvoice,modulo]:    ")+TF4(hashInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+tb4P+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20) ) ;
+                    //etherP.traceF( tin0P , T("[hashInvoice,modulo]:    ")+TF4(hashInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+tb4P+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20) ) ;
 
                     hashInvoice = hashF( tdInvoice , tdInvoice.csF( tin0P ) , 0 ) ;
 
                     etherP.delF( tin0P , psttdInvoice ) ;
-                    etherP.traceF( tin0P , T("[dInvoice]:     ")+tdInvoice ) ;
+                    //etherP.traceF( tin0P , T("[dInvoice]:     ")+tdInvoice ) ;
                     tdInvoice = T(psttdInvoice) ;
                     etherP.strDumpIF( tin0P , psttdInvoice , tValueLatestInvoice , tValueLatestInvoice.csF( tin0P ) , flSTRdUMP_5bITS ) ; ___( psttdInvoice ) ;
                     ZE( strokeS* , psttdInvoice ) ;
@@ -772,7 +772,7 @@ TODO
                 TN( tValueLatestInvoice    , "" ) ;
                 TN( tValueStripeNoticeType , "" ) ;
                 TN( tValueLive             , "" ) ;
-                //etherP.traceF( tin0P , T("writeSoulFileF / sub updated (sub created))") ) ;
+                etherP.traceF( tin0P , T("writeSoulFileF / sub updated (sub created))") ) ;
                 _IO_
 
                 //*********************************************************************************************************************************************************
