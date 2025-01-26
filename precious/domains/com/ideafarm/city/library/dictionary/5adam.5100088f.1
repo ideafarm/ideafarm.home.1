@@ -174,7 +174,7 @@ etThread.traceF( tin0P , T("ok") ) ;
     ZE( flagsT , flagsNoticeLath ) ;
     ZE( countT , cDone           ) ;
 
-    textC* pptFileName[] = { &tSharedFolderPrefixLive , &tSharedFolderPrefixTest , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated } ;
+    textC* pptFileName[] = { &tSharedFolderPrefixLive , &tSharedFolderPrefixTest , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated , &tb4 } ;
 
     TN( tSharedFileEventSubCreatedUpdated , "sub.updated"        ".soulC" ) ;
     TN( tSharedFileEventCheckoutCompleted , "checkout.completed" ".soulC" ) ;
@@ -256,14 +256,14 @@ TODO
             {
 
             }
-                etherP.traceF( tin0P , T("[idInvoice,modulo]:    ")+TF4(idInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24)+tb4+TF4(idInvoice%0x24,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ) ;
+                etherP.traceF( tin0P , T("[idInvoice,modulo]:    ")+TF4(idInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24)+tb4P+TF4(idInvoice%0x24,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ) ;
 
                 idInvoice = etherP.strDigitsToSCountF( tin0P , tdInvoice , 0x24 ) ;
 
                 etherP.delF( tin0P , psttdInvoice ) ;
                 etherP.traceF( tin0P , T("[dInvoice]:     ")+tdInvoice ) ;
                 tdInvoice = T(psttdInvoice) ;
-                etherP.strDumpIF( tin0P , psttdInvoice , tValueLatestInvoice , tValueLatestInvoice.csF( tin0P ) , flSTRdUMP_5bITS ) ; ___( psttdInvoice ) ;
+                etherP.strDumpIF( tin0P , psttdInvoice , tValueInvoice , tValueInvoice.csF( tin0P ) , flSTRdUMP_5bITS ) ; ___( psttdInvoice ) ;
                 ZE( strokeS* , psttdInvoice ) ;
             {
             ZE( countT    , idInvoice ) ;
@@ -445,7 +445,7 @@ TODO
             {
 
             }
-                etherP.traceF( tin0P , T("[idInvoice,modulo]:    ")+TF4(idInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24)+tb4+TF4(idInvoice%0x24,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ) ;
+                etherP.traceF( tin0P , T("[idInvoice,modulo]:    ")+TF4(idInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24)+tb4P+TF4(idInvoice%0x24,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ) ;
 
                 idInvoice = etherP.strDigitsToSCountF( tin0P , tdInvoice , 0x24 ) ;
 
@@ -631,7 +631,7 @@ TODO
                 {
 
                 }
-                    etherP.traceF( tin0P , T("[idInvoice,modulo]:    ")+TF4(idInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24)+tb4+TF4(idInvoice%0x24,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ) ;
+                    etherP.traceF( tin0P , T("[idInvoice,modulo]:    ")+TF4(idInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24)+tb4P+TF4(idInvoice%0x24,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x24) ) ;
 
                     idInvoice = etherP.strDigitsToSCountF( tin0P , tdInvoice , 0x24 ) ;
 
@@ -925,6 +925,7 @@ TODO
 
     //etherP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
 
+    textC& tb4P                               = *pptFileNameP[ 5 ] ;
     textC& tSharedFileEventSubCreatedUpdatedP = *pptFileNameP[ 4 ] ;
     textC& tSharedFileEventCheckoutCompletedP = *pptFileNameP[ 3 ] ;
     textC& tSharedFileEventSubCreatedP        = *pptFileNameP[ 2 ] ;
