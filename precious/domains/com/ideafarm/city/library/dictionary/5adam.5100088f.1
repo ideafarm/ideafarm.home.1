@@ -585,7 +585,7 @@ TODO
                     etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
                     //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+tdInvoice+tSlashLiveDot+tSharedFileEventSubCreatedUpdatedP ;
+                    TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(idInvoice%0x24,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0,0x24)+tSlash+tdInvoice+tSlashLiveDot+tSharedFileEventSubCreatedUpdatedP ;
                     textC& tSharedFolderUse = bLive ? tSharedFolderPrefixLiveP : tSharedFolderPrefixTestP ;
                     TN( tSlashLiveDot , bLive ? "/live." : "/test." ) ;
                     TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
@@ -621,12 +621,15 @@ TODO
                 {
 
                 }
+                    idInvoice = etherP.strDigitsToSCountF( tin0P , tdInvoice , 0x24 ) ;
+
                     etherP.delF( tin0P , psttdInvoice ) ;
                     //etherP.traceF( tin0P , T("[dInvoice]:    ")+tdInvoice ) ;
                     tdInvoice = T(psttdInvoice) ;
                     etherP.strDumpIF( tin0P , psttdInvoice , tValueLatestInvoice , tValueLatestInvoice.csF( tin0P ) , flSTRdUMP_5bITS ) ; ___( psttdInvoice ) ;
                     ZE( strokeS* , psttdInvoice ) ;
                 {
+                ZE( countT    , idInvoice ) ;
                 TN( tdInvoice , "" ) ;
 
                 //etherP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
