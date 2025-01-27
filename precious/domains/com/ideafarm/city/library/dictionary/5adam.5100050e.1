@@ -102,6 +102,9 @@ DONE( tmWorkF )
         homeS& home = homeS::homeIF() ;
     {
     //20211023@1116: COMPLETELY DISABLE THIS ADAM PENDING REWRITE (PLAN IS TO MIGRATE ALL FUNCTIONALITY TO IPDOS UDP FILES) (THE REGISTRY HAS A SECURITY VULNERABILITY SO CANNOT BE USED)
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )

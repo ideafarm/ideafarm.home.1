@@ -75,6 +75,9 @@ DONE( tmWorkF )
 
     etThread.traceF( tin0P , T("[cProcessors]:    ")+TF2(cProcessors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     const countT cProcessors = thirdC::osProcessorsIF( tin0P ) ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )

@@ -43,6 +43,9 @@ DONE( tmWorkF )
     conGF( "\r\n" ) ;
     conGF( ((tin1S&)tin0P).pag1->idMemorySpace ) ;
     conGF( "[idMemorySpace]: " ) ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )

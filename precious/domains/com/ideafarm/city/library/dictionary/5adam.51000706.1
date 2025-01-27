@@ -63,6 +63,9 @@ DONE( tmWorkF )
     while( !ether && !POOP )
 
     ether.ifcHireF( tin0P , T("SNAPwORDS") , ifcIDaDAM_TIME , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )

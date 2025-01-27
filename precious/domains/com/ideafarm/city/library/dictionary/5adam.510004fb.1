@@ -332,7 +332,8 @@ DONE( tmWorkF )
     TN( tHeyConsole , "!console" ) ;
     ZE( boolT , bConsoleP ) ;
 
-    thirdC::dosPriorityProcessIF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )

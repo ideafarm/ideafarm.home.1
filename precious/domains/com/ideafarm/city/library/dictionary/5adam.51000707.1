@@ -113,6 +113,9 @@ DONE( tmWorkF )
     if( !bSandbox ) ether.ifcHireF( tin0P , T("ifcIDaDAM_TIME") , ifcIDaDAM_ROOTmAILoUT , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING 
     bSandbox = 0 ;
     boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
