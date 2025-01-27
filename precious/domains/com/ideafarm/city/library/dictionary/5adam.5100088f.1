@@ -179,8 +179,8 @@ etThread.traceF( tin0P , T("ok") ) ;
     TN( tSharedFileEventSubCreatedUpdated , "sub.updated"        ".soulC" ) ;
     TN( tSharedFileEventCheckoutCompleted , "checkout.completed" ".soulC" ) ;
     TN( tSharedFileEventSubCreated        , "sub.created"        ".soulC" ) ;
-    TN( tSharedFolderPrefixSandbox           , ""                            ) ; tSharedFolderPrefixSandbox = T("///z/ideafarm.shared/test/"    )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
-    TN( tSharedFolderPrefixPrecious           , ""                            ) ; tSharedFolderPrefixPrecious = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderPrefixSandbox        , ""                            ) ; tSharedFolderPrefixSandbox  = T("///z/ideafarm.shared/sandbox/" )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderPrefixPrecious       , ""                            ) ; tSharedFolderPrefixPrecious = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
     etThread.traceF( tin0P , T("reading begun") ) ;
     TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
@@ -818,12 +818,10 @@ TODO
         {
         if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeSubDeleted ) )                                                      // IF NOTICE TYPE IS "SUB DELETED"
 
-        TN( tSharedFolderNoticeSubRenewedTest , "" ) ; tSharedFolderNoticeSubRenewedTest = tSharedFolderPrefixSandbox +T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
-        TN( tSharedFolderNoticeSubRenewedLive , "" ) ; tSharedFolderNoticeSubRenewedLive = tSharedFolderPrefixPrecious+T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
-        TN( tSharedFolderNoticeSubDeletedTest , "" ) ; tSharedFolderNoticeSubDeletedTest = tSharedFolderPrefixSandbox +T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
-        TN( tSharedFolderNoticeSubDeletedLive , "" ) ; tSharedFolderNoticeSubDeletedLive = tSharedFolderPrefixPrecious+T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
-        TN( tSharedFolderPrefixSandbox        , "" ) ; tSharedFolderPrefixSandbox        = T("///z/ideafarm.shared/sandbox/" )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
-        TN( tSharedFolderPrefixPrecious       , "" ) ; tSharedFolderPrefixPrecious       = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+        TN( tSharedFolderNoticeSubRenewedTest , "" ) ; tSharedFolderNoticeSubRenewedTest = tSharedFolderPrefixSandboxP +T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
+        TN( tSharedFolderNoticeSubRenewedLive , "" ) ; tSharedFolderNoticeSubRenewedLive = tSharedFolderPrefixPreciousP+T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
+        TN( tSharedFolderNoticeSubDeletedTest , "" ) ; tSharedFolderNoticeSubDeletedTest = tSharedFolderPrefixSandboxP +T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
+        TN( tSharedFolderNoticeSubDeletedLive , "" ) ; tSharedFolderNoticeSubDeletedLive = tSharedFolderPrefixPreciousP+T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
 
         TN( tValueStripeNoticeTypeCheckoutCompleted , "checkout.session.completed"    ) ;
         TN( tValueStripeNoticeTypeSubCreated        , "customer.subscription.created" ) ;
