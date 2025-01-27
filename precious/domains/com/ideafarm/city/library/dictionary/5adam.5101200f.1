@@ -1753,7 +1753,7 @@ break ;
 
                                         }
                                             etThread.delF( tin0P , psttFile ) ;
-                                            etThread.boxPutUniqueF( tin0P , psttFile , ( bLive ? tFolderEventsLive : tFolderEventsTest ) + T("event.@1@.soulC") , WS( sOut ) ) ;
+                                            etThread.boxPutUniqueF( tin0P , psttFile , ( bLive ? tFolderEventsIncomingPrecious : tFolderEventsIncomingSandbox ) + T("event.@1@.soulC") , WS( sOut ) ) ;
                                             ZE( strokeS* , psttFile ) ;
 
                                             TN( tShortEvent , "" ) ; tShortEvent = T(bLive?"soul.event.live.":"soul.event.test.")+tEvent ;
@@ -1952,10 +1952,6 @@ break ;
                                             {
                                             IFsCRATCHoK
 
-                                            soulC sInUpdated( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
-                                            soulC sInCreated( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
-                                            soulC sInPaid(    tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
-
                                             TN( tLongUpdated , "" ) ; tLongUpdated = tLongInvoiceMine+tShortWantUpdated ;
                                             TN( tLongCreated , "" ) ; tLongCreated = tLongInvoiceMine+tShortWantCreated ;
                                             TN( tLongPaid    , "" ) ; tLongPaid    = tLongInvoiceMine+tShortWantPaid    ;
@@ -1970,6 +1966,9 @@ break ;
                                         SCOOPS
                                     {
                                     IFsCRATCHoK
+                                    soulC sInUpdated( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                                    soulC sInCreated( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                                    soulC sInPaid(    tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                                     ZE( countT , cFail ) ;
                                 {
                                 if( bReady )
@@ -2062,11 +2061,11 @@ break ;
     patternC patInvoice( tin0P , etThread , tPatternInvoice , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tPatternInvoice , "new.*" ) ;
 
-    TN( tRoot , "///z/ideafarm.shared/test/5100088f/test/sub.created/" ) ;
+    TN( tRoot , "///z/ideafarm.shared/sandbox/5100088f/test/sub.created/" ) ;
     TN( tSlash , "/" ) ;
 
-    TN( tFolderEventsLive , "///z/ideafarm.shared/live/5100088f/events/" ) ;
-    TN( tFolderEventsTest , "///z/ideafarm.shared/test/5100088f/events/" ) ;
+    TN( tFolderEventsIncomingPrecious , "///z/ideafarm.shared/precious/5100088f/events.incoming/" ) ;
+    TN( tFolderEventsIncomingSandbox , "///z/ideafarm.shared/sandbox/5100088f/events.incoming/" ) ;
 
     _IO_
 {
