@@ -174,13 +174,13 @@ etThread.traceF( tin0P , T("ok") ) ;
     ZE( flagsT , flagsNoticeLath ) ;
     ZE( countT , cDone           ) ;
 
-    textC* pptFileName[] = { &tSharedFolderPrefixLive , &tSharedFolderPrefixTest , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated , &tb4 , &tSlash } ;
+    textC* pptFileName[] = { &tSharedFolderPrefixPrecious , &tSharedFolderPrefixSandbox , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated , &tb4 , &tSlash } ;
 
     TN( tSharedFileEventSubCreatedUpdated , "sub.updated"        ".soulC" ) ;
     TN( tSharedFileEventCheckoutCompleted , "checkout.completed" ".soulC" ) ;
     TN( tSharedFileEventSubCreated        , "sub.created"        ".soulC" ) ;
-    TN( tSharedFolderPrefixTest           , ""                            ) ; tSharedFolderPrefixTest = T("///z/ideafarm.shared/test/"    )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
-    TN( tSharedFolderPrefixLive           , ""                            ) ; tSharedFolderPrefixLive = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderPrefixSandbox           , ""                            ) ; tSharedFolderPrefixSandbox = T("///z/ideafarm.shared/test/"    )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderPrefixPrecious           , ""                            ) ; tSharedFolderPrefixPrecious = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
     etThread.traceF( tin0P , T("reading begun") ) ;
     TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
@@ -222,7 +222,7 @@ TODO
                 //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                 TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventCheckoutCompletedP ;
 
-                textC& tSharedFolderUse = bLive ? tSharedFolderPrefixLiveP : tSharedFolderPrefixTestP ;
+                textC& tSharedFolderUse = bLive ? tSharedFolderPrefixPreciousP : tSharedFolderPrefixSandboxP ;
                 TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                 boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
 
@@ -412,7 +412,7 @@ TODO
                 //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                 TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubCreatedP ;
 
-                textC& tSharedFolderUse = bLive ? tSharedFolderPrefixLiveP : tSharedFolderPrefixTestP ;
+                textC& tSharedFolderUse = bLive ? tSharedFolderPrefixPreciousP : tSharedFolderPrefixSandboxP ;
                 TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                 boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
 
@@ -597,7 +597,7 @@ TODO
 
                     //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubCreatedUpdatedP ;
-                    textC& tSharedFolderUse = bLive ? tSharedFolderPrefixLiveP : tSharedFolderPrefixTestP ;
+                    textC& tSharedFolderUse = bLive ? tSharedFolderPrefixPreciousP : tSharedFolderPrefixSandboxP ;
                     TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                     boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
 
@@ -818,12 +818,12 @@ TODO
         {
         if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeSubDeleted ) )                                                      // IF NOTICE TYPE IS "SUB DELETED"
 
-        TN( tSharedFolderNoticeSubRenewedTest , "" ) ; tSharedFolderNoticeSubRenewedTest = tSharedFolderPrefixTest+T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
-        TN( tSharedFolderNoticeSubRenewedLive , "" ) ; tSharedFolderNoticeSubRenewedLive = tSharedFolderPrefixLive+T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
-        TN( tSharedFolderNoticeSubDeletedTest , "" ) ; tSharedFolderNoticeSubDeletedTest = tSharedFolderPrefixTest+T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
-        TN( tSharedFolderNoticeSubDeletedLive , "" ) ; tSharedFolderNoticeSubDeletedLive = tSharedFolderPrefixLive+T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
-        TN( tSharedFolderPrefixTest           , "" ) ; tSharedFolderPrefixTest           = T("///z/ideafarm.shared/test/"    )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
-        TN( tSharedFolderPrefixLive           , "" ) ; tSharedFolderPrefixLive           = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+        TN( tSharedFolderNoticeSubRenewedTest , "" ) ; tSharedFolderNoticeSubRenewedTest = tSharedFolderPrefixSandbox +T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
+        TN( tSharedFolderNoticeSubRenewedLive , "" ) ; tSharedFolderNoticeSubRenewedLive = tSharedFolderPrefixPrecious+T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
+        TN( tSharedFolderNoticeSubDeletedTest , "" ) ; tSharedFolderNoticeSubDeletedTest = tSharedFolderPrefixSandbox +T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
+        TN( tSharedFolderNoticeSubDeletedLive , "" ) ; tSharedFolderNoticeSubDeletedLive = tSharedFolderPrefixPrecious+T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
+        TN( tSharedFolderPrefixSandbox        , "" ) ; tSharedFolderPrefixSandbox        = T("///z/ideafarm.shared/test/"    )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+        TN( tSharedFolderPrefixPrecious       , "" ) ; tSharedFolderPrefixPrecious       = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
         TN( tValueStripeNoticeTypeCheckoutCompleted , "checkout.session.completed"    ) ;
         TN( tValueStripeNoticeTypeSubCreated        , "customer.subscription.created" ) ;
@@ -930,8 +930,8 @@ TODO
     textC& tSharedFileEventSubCreatedUpdatedP = *pptFileNameP[ 4 ] ;
     textC& tSharedFileEventCheckoutCompletedP = *pptFileNameP[ 3 ] ;
     textC& tSharedFileEventSubCreatedP        = *pptFileNameP[ 2 ] ;
-    textC& tSharedFolderPrefixTestP           = *pptFileNameP[ 1 ] ;
-    textC& tSharedFolderPrefixLiveP           = *pptFileNameP[ 0 ] ;
+    textC& tSharedFolderPrefixSandboxP        = *pptFileNameP[ 1 ] ;
+    textC& tSharedFolderPrefixPreciousP       = *pptFileNameP[ 0 ] ;
 {
 voidT writeSoulFileF( tin0S& tin0P , etherC& etherP , osTextT* const postP , countT costP , textC** pptFileNameP )
 
