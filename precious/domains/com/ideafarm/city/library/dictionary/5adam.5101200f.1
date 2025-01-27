@@ -1687,233 +1687,235 @@ break ;
                         }
                             }
                                 }
+                                    etThread.diskFileOrDirDeleteF( tin0P , tLongInvoiceMine , flFILEoRdIRdELETE_RECURSE ) ;
+
+                                    }
+                                        etThread.delF( tin0P , psttUpdatedAmountDiscount   ) ;
+                                        etThread.delF( tin0P , psttUpdatedIdSubscription   ) ;
+                                        etThread.delF( tin0P , psttUpdatedMode             ) ;
+                                        etThread.delF( tin0P , psttUpdatedName             ) ;
+                                        etThread.delF( tin0P , psttUpdatedEmail            ) ;
+                                        etThread.delF( tin0P , psttUpdatedPostalCode       ) ;
+                                        etThread.delF( tin0P , psttUpdatedCountry          ) ;
+                                        etThread.delF( tin0P , psttUpdatedHawker           ) ;
+                                        etThread.delF( tin0P , psttUpdatedAge              ) ;
+                                        etThread.delF( tin0P , psttUpdatedAmountTotal      ) ;
+                                        etThread.delF( tin0P , psttUpdatedAmountSubtotal   ) ;
+                                        etThread.delF( tin0P , psttUpdatedApiVersion       ) ;
+                                        etThread.delF( tin0P , psttUpdatedIdProduct        ) ;
+                                        etThread.delF( tin0P , psttUpdatedStatus           ) ;
+                                        etThread.delF( tin0P , psttUpdatedLatestInvoice    ) ;
+                                        etThread.delF( tin0P , psttUpdatedStripeNoticeType ) ;
+                                        etThread.delF( tin0P , psttUpdatedLive             ) ;
+                                        etThread.delF( tin0P , psttUpdatedVersion               ) ;
+                                        etThread.delF( tin0P , psttUpdatedEvent                 ) ;
+
+                                        etThread.delF( tin0P , psttCreatedAmountDiscount   ) ;
+                                        etThread.delF( tin0P , psttCreatedIdSubscription   ) ;
+                                        etThread.delF( tin0P , psttCreatedMode             ) ;
+                                        etThread.delF( tin0P , psttCreatedName             ) ;
+                                        etThread.delF( tin0P , psttCreatedEmail            ) ;
+                                        etThread.delF( tin0P , psttCreatedPostalCode       ) ;
+                                        etThread.delF( tin0P , psttCreatedCountry          ) ;
+                                        etThread.delF( tin0P , psttCreatedHawker           ) ;
+                                        etThread.delF( tin0P , psttCreatedAge              ) ;
+                                        etThread.delF( tin0P , psttCreatedAmountTotal      ) ;
+                                        etThread.delF( tin0P , psttCreatedAmountSubtotal   ) ;
+                                        etThread.delF( tin0P , psttCreatedApiVersion       ) ;
+                                        etThread.delF( tin0P , psttCreatedIdProduct        ) ;
+                                        etThread.delF( tin0P , psttCreatedStatus           ) ;
+                                        etThread.delF( tin0P , psttCreatedLatestInvoice    ) ;
+                                        etThread.delF( tin0P , psttCreatedStripeNoticeType ) ;
+                                        etThread.delF( tin0P , psttCreatedLive             ) ;
+                                        etThread.delF( tin0P , psttCreatedVersion               ) ;
+                                        etThread.delF( tin0P , psttCreatedEvent                 ) ;
+
+                                        etThread.delF( tin0P , psttPaidCurrencyConversion ) ;
+                                        etThread.delF( tin0P , psttPaidCurrency           ) ;
+                                        etThread.delF( tin0P , psttPaidAmountDiscount     ) ;
+                                        etThread.delF( tin0P , psttPaidIdSubscription     ) ;
+                                        etThread.delF( tin0P , psttPaidMode               ) ;
+                                        etThread.delF( tin0P , psttPaidName               ) ;
+                                        etThread.delF( tin0P , psttPaidEmail              ) ;
+                                        etThread.delF( tin0P , psttPaidPostalCode         ) ;
+                                        etThread.delF( tin0P , psttPaidCountry            ) ;
+                                        etThread.delF( tin0P , psttPaidHawker             ) ;
+                                        etThread.delF( tin0P , psttPaidAge                ) ;
+                                        etThread.delF( tin0P , psttPaidAmountTotal        ) ;
+                                        etThread.delF( tin0P , psttPaidAmountSubtotal     ) ;
+                                        etThread.delF( tin0P , psttPaidApiVersion         ) ;
+                                        etThread.delF( tin0P , psttPaidIdProduct          ) ;
+                                        etThread.delF( tin0P , psttPaidInvoice            ) ;
+                                        etThread.delF( tin0P , psttPaidStripeNoticeType   ) ;
+                                        etThread.delF( tin0P , psttPaidLive               ) ;
+                                        etThread.delF( tin0P , psttPaidVersion                 ) ;
+                                        etThread.delF( tin0P , psttPaidEvent                   ) ;
+
+                                        }
+                                            etThread.delF( tin0P , psttFile ) ;
+                                            etThread.boxPutUniqueF( tin0P , psttFile , ( bLive ? tFolderEventsLive : tFolderEventsTest ) + T("event.@1@.soulC") , WS( sOut ) ) ;
+                                            ZE( strokeS* , psttFile ) ;
+
+                                            TN( tShortEvent , "" ) ; tShortEvent = T(bLive?"soul.event.live.":"soul.event.test.")+tEvent ;
+
+                                            boolT bLive = !etThread.strCompareF( tin0P , psttCreatedLive , T("true") ) ;
+
+                                            }
+                                                sOut << psttPaidAmountDiscount     ;
+                                                sOut << psttPaidAmountSubtotal     ;
+                                                sOut << psttPaidAmountTotal        ;
+                                                sOut << psttPaidCurrencyConversion ;
+                                                sOut << psttPaidCurrency           ;
+                                                // VERSION 2
+
+                                                sOut << psttPaidHawker             ;
+                                                sOut << psttPaidAge                ;
+                                                sOut << psttPaidName               ;
+                                                sOut << psttPaidEmail              ;
+                                                sOut << psttPaidPostalCode         ;
+                                                sOut << psttPaidCountry            ;
+                                                sOut << psttPaidIdSubscription     ;
+                                                sOut << psttCreatedIdProduct       ;
+                                                sOut << psttCreatedLive            ;
+                                                // VERSION 1
+
+                                                sOut << (strokeS*)tVersion         ;
+                                                sOut << (strokeS*)tEvent           ;
+                                            {
+                                            soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+
+                                            TN( tVersion   , "2" ) ;
+                                            TN( tEvent , "ipdos.subscription.create" ) ;
+                                        {
+
+                                        sInUpdated >> psttUpdatedAmountDiscount   ; ___( psttUpdatedAmountDiscount   ) ;
+                                        sInUpdated >> psttUpdatedIdSubscription   ; ___( psttUpdatedIdSubscription   ) ;
+                                        sInUpdated >> psttUpdatedMode             ; ___( psttUpdatedMode             ) ;
+                                        sInUpdated >> psttUpdatedName             ; ___( psttUpdatedName             ) ;
+                                        sInUpdated >> psttUpdatedEmail            ; ___( psttUpdatedEmail            ) ;
+                                        sInUpdated >> psttUpdatedPostalCode       ; ___( psttUpdatedPostalCode       ) ;
+                                        sInUpdated >> psttUpdatedCountry          ; ___( psttUpdatedCountry          ) ;
+                                        sInUpdated >> psttUpdatedHawker           ; ___( psttUpdatedHawker           ) ;
+                                        sInUpdated >> psttUpdatedAge              ; ___( psttUpdatedAge              ) ;
+                                        sInUpdated >> psttUpdatedAmountTotal      ; ___( psttUpdatedAmountTotal      ) ;
+                                        sInUpdated >> psttUpdatedAmountSubtotal   ; ___( psttUpdatedAmountSubtotal   ) ;
+                                        sInUpdated >> psttUpdatedApiVersion       ; ___( psttUpdatedApiVersion       ) ;
+                                        sInUpdated >> psttUpdatedIdProduct        ; ___( psttUpdatedIdProduct        ) ;
+                                        sInUpdated >> psttUpdatedStatus           ; ___( psttUpdatedStatus           ) ;
+                                        sInUpdated >> psttUpdatedLatestInvoice    ; ___( psttUpdatedLatestInvoice    ) ;
+                                        sInUpdated >> psttUpdatedStripeNoticeType ; ___( psttUpdatedStripeNoticeType ) ;
+                                        sInUpdated >> psttUpdatedLive             ; ___( psttUpdatedLive             ) ;
+                                        sInUpdated >> psttUpdatedVersion               ; ___( psttUpdatedVersion               ) ;
+                                        sInUpdated >> psttUpdatedEvent                 ; ___( psttUpdatedEvent                 ) ;
+
+                                        sInCreated >> psttCreatedAmountDiscount   ; ___( psttCreatedAmountDiscount   ) ;
+                                        sInCreated >> psttCreatedIdSubscription   ; ___( psttCreatedIdSubscription   ) ;
+                                        sInCreated >> psttCreatedMode             ; ___( psttCreatedMode             ) ;
+                                        sInCreated >> psttCreatedName             ; ___( psttCreatedName             ) ;
+                                        sInCreated >> psttCreatedEmail            ; ___( psttCreatedEmail            ) ;
+                                        sInCreated >> psttCreatedPostalCode       ; ___( psttCreatedPostalCode       ) ;
+                                        sInCreated >> psttCreatedCountry          ; ___( psttCreatedCountry          ) ;
+                                        sInCreated >> psttCreatedHawker           ; ___( psttCreatedHawker           ) ;
+                                        sInCreated >> psttCreatedAge              ; ___( psttCreatedAge              ) ;
+                                        sInCreated >> psttCreatedAmountTotal      ; ___( psttCreatedAmountTotal      ) ;
+                                        sInCreated >> psttCreatedAmountSubtotal   ; ___( psttCreatedAmountSubtotal   ) ;
+                                        sInCreated >> psttCreatedApiVersion       ; ___( psttCreatedApiVersion       ) ;
+                                        sInCreated >> psttCreatedIdProduct        ; ___( psttCreatedIdProduct        ) ;
+                                        sInCreated >> psttCreatedStatus           ; ___( psttCreatedStatus           ) ;
+                                        sInCreated >> psttCreatedLatestInvoice    ; ___( psttCreatedLatestInvoice    ) ;
+                                        sInCreated >> psttCreatedStripeNoticeType ; ___( psttCreatedStripeNoticeType ) ;
+                                        sInCreated >> psttCreatedLive             ; ___( psttCreatedLive             ) ;
+                                        sInCreated >> psttCreatedVersion               ; ___( psttCreatedVersion               ) ;
+                                        sInCreated >> psttCreatedEvent                 ; ___( psttCreatedEvent                 ) ;
+
+                                        sInPaid >> psttPaidCurrencyConversion ; ___( psttPaidCurrencyConversion ) ;
+                                        sInPaid >> psttPaidCurrency           ; ___( psttPaidCurrency           ) ;
+                                        sInPaid >> psttPaidAmountDiscount     ; ___( psttPaidAmountDiscount     ) ;
+                                        sInPaid >> psttPaidIdSubscription     ; ___( psttPaidIdSubscription     ) ;
+                                        sInPaid >> psttPaidMode               ; ___( psttPaidMode               ) ;
+                                        sInPaid >> psttPaidName               ; ___( psttPaidName               ) ;
+                                        sInPaid >> psttPaidEmail              ; ___( psttPaidEmail              ) ;
+                                        sInPaid >> psttPaidPostalCode         ; ___( psttPaidPostalCode         ) ;
+                                        sInPaid >> psttPaidCountry            ; ___( psttPaidCountry            ) ;
+                                        sInPaid >> psttPaidHawker             ; ___( psttPaidHawker             ) ;
+                                        sInPaid >> psttPaidAge                ; ___( psttPaidAge                ) ;
+                                        sInPaid >> psttPaidAmountTotal        ; ___( psttPaidAmountTotal        ) ;
+                                        sInPaid >> psttPaidAmountSubtotal     ; ___( psttPaidAmountSubtotal     ) ;
+                                        sInPaid >> psttPaidApiVersion         ; ___( psttPaidApiVersion         ) ;
+                                        sInPaid >> psttPaidIdProduct          ; ___( psttPaidIdProduct          ) ;
+                                        sInPaid >> psttPaidInvoice            ; ___( psttPaidInvoice            ) ;
+                                        sInPaid >> psttPaidStripeNoticeType   ; ___( psttPaidStripeNoticeType   ) ;
+                                        sInPaid >> psttPaidLive               ; ___( psttPaidLive               ) ;
+                                        sInPaid >> psttPaidVersion                 ; ___( psttPaidVersion                 ) ;
+                                        sInPaid >> psttPaidEvent                   ; ___( psttPaidEvent                   ) ;
+
+                                        ZE( strokeS* , psttUpdatedAmountDiscount    ) ;
+                                        ZE( strokeS* , psttUpdatedIdSubscription    ) ;
+                                        ZE( strokeS* , psttUpdatedMode              ) ;
+                                        ZE( strokeS* , psttUpdatedName              ) ;
+                                        ZE( strokeS* , psttUpdatedEmail             ) ;
+                                        ZE( strokeS* , psttUpdatedPostalCode        ) ;
+                                        ZE( strokeS* , psttUpdatedCountry           ) ;
+                                        ZE( strokeS* , psttUpdatedHawker            ) ;
+                                        ZE( strokeS* , psttUpdatedAge               ) ;
+                                        ZE( strokeS* , psttUpdatedAmountTotal       ) ;
+                                        ZE( strokeS* , psttUpdatedAmountSubtotal    ) ;
+                                        ZE( strokeS* , psttUpdatedApiVersion        ) ;
+                                        ZE( strokeS* , psttUpdatedIdProduct         ) ;
+                                        ZE( strokeS* , psttUpdatedStatus            ) ;
+                                        ZE( strokeS* , psttUpdatedLatestInvoice     ) ;
+                                        ZE( strokeS* , psttUpdatedStripeNoticeType  ) ;
+                                        ZE( strokeS* , psttUpdatedLive              ) ;
+                                        ZE( strokeS* , psttUpdatedVersion                ) ;
+                                        ZE( strokeS* , psttUpdatedEvent                  ) ;
+
+                                        ZE( strokeS* , psttCreatedAmountDiscount   ) ;
+                                        ZE( strokeS* , psttCreatedIdSubscription   ) ;
+                                        ZE( strokeS* , psttCreatedMode             ) ;
+                                        ZE( strokeS* , psttCreatedName             ) ;
+                                        ZE( strokeS* , psttCreatedEmail            ) ;
+                                        ZE( strokeS* , psttCreatedPostalCode       ) ;
+                                        ZE( strokeS* , psttCreatedCountry          ) ;
+                                        ZE( strokeS* , psttCreatedHawker           ) ;
+                                        ZE( strokeS* , psttCreatedAge              ) ;
+                                        ZE( strokeS* , psttCreatedAmountTotal      ) ;
+                                        ZE( strokeS* , psttCreatedAmountSubtotal   ) ;
+                                        ZE( strokeS* , psttCreatedApiVersion       ) ;
+                                        ZE( strokeS* , psttCreatedIdProduct        ) ;
+                                        ZE( strokeS* , psttCreatedStatus           ) ;
+                                        ZE( strokeS* , psttCreatedLatestInvoice    ) ;
+                                        ZE( strokeS* , psttCreatedStripeNoticeType ) ;
+                                        ZE( strokeS* , psttCreatedLive             ) ;
+                                        ZE( strokeS* , psttCreatedVersion               ) ;
+                                        ZE( strokeS* , psttCreatedEvent                 ) ;
+
+                                        ZE( strokeS* , psttPaidCurrencyConversion ) ;
+                                        ZE( strokeS* , psttPaidCurrency           ) ;
+                                        ZE( strokeS* , psttPaidAmountDiscount     ) ;
+                                        ZE( strokeS* , psttPaidIdSubscription     ) ;
+                                        ZE( strokeS* , psttPaidMode               ) ;
+                                        ZE( strokeS* , psttPaidName               ) ;
+                                        ZE( strokeS* , psttPaidEmail              ) ;
+                                        ZE( strokeS* , psttPaidPostalCode         ) ;
+                                        ZE( strokeS* , psttPaidCountry            ) ;
+                                        ZE( strokeS* , psttPaidHawker             ) ;
+                                        ZE( strokeS* , psttPaidAge                ) ;
+                                        ZE( strokeS* , psttPaidAmountTotal        ) ;
+                                        ZE( strokeS* , psttPaidAmountSubtotal     ) ;
+                                        ZE( strokeS* , psttPaidApiVersion         ) ;
+                                        ZE( strokeS* , psttPaidIdProduct          ) ;
+                                        ZE( strokeS* , psttPaidInvoice            ) ;
+                                        ZE( strokeS* , psttPaidStripeNoticeType   ) ;
+                                        ZE( strokeS* , psttPaidLive               ) ;
+                                        ZE( strokeS* , psttPaidVersion                 ) ;
+                                        ZE( strokeS* , psttPaidEvent                   ) ;
+
+                                        etThread.traceF( tin0P , T("doing the deed with ")+tLongInvoiceMine ) ;
+                                    {
+                                    if( !cFail )
+
                                     }
                                         }
-                                            }
-                                                etThread.delF( tin0P , psttUpdatedAmountDiscount   ) ;
-                                                etThread.delF( tin0P , psttUpdatedIdSubscription   ) ;
-                                                etThread.delF( tin0P , psttUpdatedMode             ) ;
-                                                etThread.delF( tin0P , psttUpdatedName             ) ;
-                                                etThread.delF( tin0P , psttUpdatedEmail            ) ;
-                                                etThread.delF( tin0P , psttUpdatedPostalCode       ) ;
-                                                etThread.delF( tin0P , psttUpdatedCountry          ) ;
-                                                etThread.delF( tin0P , psttUpdatedHawker           ) ;
-                                                etThread.delF( tin0P , psttUpdatedAge              ) ;
-                                                etThread.delF( tin0P , psttUpdatedAmountTotal      ) ;
-                                                etThread.delF( tin0P , psttUpdatedAmountSubtotal   ) ;
-                                                etThread.delF( tin0P , psttUpdatedApiVersion       ) ;
-                                                etThread.delF( tin0P , psttUpdatedIdProduct        ) ;
-                                                etThread.delF( tin0P , psttUpdatedStatus           ) ;
-                                                etThread.delF( tin0P , psttUpdatedLatestInvoice    ) ;
-                                                etThread.delF( tin0P , psttUpdatedStripeNoticeType ) ;
-                                                etThread.delF( tin0P , psttUpdatedLive             ) ;
-                                                etThread.delF( tin0P , psttUpdatedVersion               ) ;
-                                                etThread.delF( tin0P , psttUpdatedEvent                 ) ;
-
-                                                etThread.delF( tin0P , psttCreatedAmountDiscount   ) ;
-                                                etThread.delF( tin0P , psttCreatedIdSubscription   ) ;
-                                                etThread.delF( tin0P , psttCreatedMode             ) ;
-                                                etThread.delF( tin0P , psttCreatedName             ) ;
-                                                etThread.delF( tin0P , psttCreatedEmail            ) ;
-                                                etThread.delF( tin0P , psttCreatedPostalCode       ) ;
-                                                etThread.delF( tin0P , psttCreatedCountry          ) ;
-                                                etThread.delF( tin0P , psttCreatedHawker           ) ;
-                                                etThread.delF( tin0P , psttCreatedAge              ) ;
-                                                etThread.delF( tin0P , psttCreatedAmountTotal      ) ;
-                                                etThread.delF( tin0P , psttCreatedAmountSubtotal   ) ;
-                                                etThread.delF( tin0P , psttCreatedApiVersion       ) ;
-                                                etThread.delF( tin0P , psttCreatedIdProduct        ) ;
-                                                etThread.delF( tin0P , psttCreatedStatus           ) ;
-                                                etThread.delF( tin0P , psttCreatedLatestInvoice    ) ;
-                                                etThread.delF( tin0P , psttCreatedStripeNoticeType ) ;
-                                                etThread.delF( tin0P , psttCreatedLive             ) ;
-                                                etThread.delF( tin0P , psttCreatedVersion               ) ;
-                                                etThread.delF( tin0P , psttCreatedEvent                 ) ;
-
-                                                etThread.delF( tin0P , psttPaidCurrencyConversion ) ;
-                                                etThread.delF( tin0P , psttPaidCurrency           ) ;
-                                                etThread.delF( tin0P , psttPaidAmountDiscount     ) ;
-                                                etThread.delF( tin0P , psttPaidIdSubscription     ) ;
-                                                etThread.delF( tin0P , psttPaidMode               ) ;
-                                                etThread.delF( tin0P , psttPaidName               ) ;
-                                                etThread.delF( tin0P , psttPaidEmail              ) ;
-                                                etThread.delF( tin0P , psttPaidPostalCode         ) ;
-                                                etThread.delF( tin0P , psttPaidCountry            ) ;
-                                                etThread.delF( tin0P , psttPaidHawker             ) ;
-                                                etThread.delF( tin0P , psttPaidAge                ) ;
-                                                etThread.delF( tin0P , psttPaidAmountTotal        ) ;
-                                                etThread.delF( tin0P , psttPaidAmountSubtotal     ) ;
-                                                etThread.delF( tin0P , psttPaidApiVersion         ) ;
-                                                etThread.delF( tin0P , psttPaidIdProduct          ) ;
-                                                etThread.delF( tin0P , psttPaidInvoice            ) ;
-                                                etThread.delF( tin0P , psttPaidStripeNoticeType   ) ;
-                                                etThread.delF( tin0P , psttPaidLive               ) ;
-                                                etThread.delF( tin0P , psttPaidVersion                 ) ;
-                                                etThread.delF( tin0P , psttPaidEvent                   ) ;
-
-                                                }
-                                                    etThread.delF( tin0P , psttFile ) ;
-                                                    etThread.boxPutUniqueF( tin0P , psttFile , ( bLive ? tFolderEventsLive : tFolderEventsTest ) + T("event.@1@.soulC") , WS( sOut ) ) ;
-                                                    ZE( strokeS* , psttFile ) ;
-
-                                                    TN( tShortEvent , "" ) ; tShortEvent = T(bLive?"soul.event.live.":"soul.event.test.")+tEvent ;
-
-                                                    boolT bLive = !etThread.strCompareF( tin0P , psttCreatedLive , T("true") ) ;
-
-                                                    }
-                                                        sOut << psttPaidAmountDiscount     ;
-                                                        sOut << psttPaidAmountSubtotal     ;
-                                                        sOut << psttPaidAmountTotal        ;
-                                                        sOut << psttPaidCurrencyConversion ;
-                                                        sOut << psttPaidCurrency           ;
-                                                        // VERSION 2
-
-                                                        sOut << psttPaidHawker             ;
-                                                        sOut << psttPaidAge                ;
-                                                        sOut << psttPaidName               ;
-                                                        sOut << psttPaidEmail              ;
-                                                        sOut << psttPaidPostalCode         ;
-                                                        sOut << psttPaidCountry            ;
-                                                        sOut << psttPaidIdSubscription     ;
-                                                        sOut << psttCreatedIdProduct       ;
-                                                        sOut << psttCreatedLive            ;
-                                                        // VERSION 1
-
-                                                        sOut << (strokeS*)tVersion         ;
-                                                        sOut << (strokeS*)tEvent           ;
-                                                    {
-                                                    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
-
-                                                    TN( tVersion   , "2" ) ;
-                                                    TN( tEvent , "ipdos.subscription.create" ) ;
-                                                {
-
-                                                sInUpdated >> psttUpdatedAmountDiscount   ; ___( psttUpdatedAmountDiscount   ) ;
-                                                sInUpdated >> psttUpdatedIdSubscription   ; ___( psttUpdatedIdSubscription   ) ;
-                                                sInUpdated >> psttUpdatedMode             ; ___( psttUpdatedMode             ) ;
-                                                sInUpdated >> psttUpdatedName             ; ___( psttUpdatedName             ) ;
-                                                sInUpdated >> psttUpdatedEmail            ; ___( psttUpdatedEmail            ) ;
-                                                sInUpdated >> psttUpdatedPostalCode       ; ___( psttUpdatedPostalCode       ) ;
-                                                sInUpdated >> psttUpdatedCountry          ; ___( psttUpdatedCountry          ) ;
-                                                sInUpdated >> psttUpdatedHawker           ; ___( psttUpdatedHawker           ) ;
-                                                sInUpdated >> psttUpdatedAge              ; ___( psttUpdatedAge              ) ;
-                                                sInUpdated >> psttUpdatedAmountTotal      ; ___( psttUpdatedAmountTotal      ) ;
-                                                sInUpdated >> psttUpdatedAmountSubtotal   ; ___( psttUpdatedAmountSubtotal   ) ;
-                                                sInUpdated >> psttUpdatedApiVersion       ; ___( psttUpdatedApiVersion       ) ;
-                                                sInUpdated >> psttUpdatedIdProduct        ; ___( psttUpdatedIdProduct        ) ;
-                                                sInUpdated >> psttUpdatedStatus           ; ___( psttUpdatedStatus           ) ;
-                                                sInUpdated >> psttUpdatedLatestInvoice    ; ___( psttUpdatedLatestInvoice    ) ;
-                                                sInUpdated >> psttUpdatedStripeNoticeType ; ___( psttUpdatedStripeNoticeType ) ;
-                                                sInUpdated >> psttUpdatedLive             ; ___( psttUpdatedLive             ) ;
-                                                sInUpdated >> psttUpdatedVersion               ; ___( psttUpdatedVersion               ) ;
-                                                sInUpdated >> psttUpdatedEvent                 ; ___( psttUpdatedEvent                 ) ;
-
-                                                sInCreated >> psttCreatedAmountDiscount   ; ___( psttCreatedAmountDiscount   ) ;
-                                                sInCreated >> psttCreatedIdSubscription   ; ___( psttCreatedIdSubscription   ) ;
-                                                sInCreated >> psttCreatedMode             ; ___( psttCreatedMode             ) ;
-                                                sInCreated >> psttCreatedName             ; ___( psttCreatedName             ) ;
-                                                sInCreated >> psttCreatedEmail            ; ___( psttCreatedEmail            ) ;
-                                                sInCreated >> psttCreatedPostalCode       ; ___( psttCreatedPostalCode       ) ;
-                                                sInCreated >> psttCreatedCountry          ; ___( psttCreatedCountry          ) ;
-                                                sInCreated >> psttCreatedHawker           ; ___( psttCreatedHawker           ) ;
-                                                sInCreated >> psttCreatedAge              ; ___( psttCreatedAge              ) ;
-                                                sInCreated >> psttCreatedAmountTotal      ; ___( psttCreatedAmountTotal      ) ;
-                                                sInCreated >> psttCreatedAmountSubtotal   ; ___( psttCreatedAmountSubtotal   ) ;
-                                                sInCreated >> psttCreatedApiVersion       ; ___( psttCreatedApiVersion       ) ;
-                                                sInCreated >> psttCreatedIdProduct        ; ___( psttCreatedIdProduct        ) ;
-                                                sInCreated >> psttCreatedStatus           ; ___( psttCreatedStatus           ) ;
-                                                sInCreated >> psttCreatedLatestInvoice    ; ___( psttCreatedLatestInvoice    ) ;
-                                                sInCreated >> psttCreatedStripeNoticeType ; ___( psttCreatedStripeNoticeType ) ;
-                                                sInCreated >> psttCreatedLive             ; ___( psttCreatedLive             ) ;
-                                                sInCreated >> psttCreatedVersion               ; ___( psttCreatedVersion               ) ;
-                                                sInCreated >> psttCreatedEvent                 ; ___( psttCreatedEvent                 ) ;
-
-                                                sInPaid >> psttPaidCurrencyConversion ; ___( psttPaidCurrencyConversion ) ;
-                                                sInPaid >> psttPaidCurrency           ; ___( psttPaidCurrency           ) ;
-                                                sInPaid >> psttPaidAmountDiscount     ; ___( psttPaidAmountDiscount     ) ;
-                                                sInPaid >> psttPaidIdSubscription     ; ___( psttPaidIdSubscription     ) ;
-                                                sInPaid >> psttPaidMode               ; ___( psttPaidMode               ) ;
-                                                sInPaid >> psttPaidName               ; ___( psttPaidName               ) ;
-                                                sInPaid >> psttPaidEmail              ; ___( psttPaidEmail              ) ;
-                                                sInPaid >> psttPaidPostalCode         ; ___( psttPaidPostalCode         ) ;
-                                                sInPaid >> psttPaidCountry            ; ___( psttPaidCountry            ) ;
-                                                sInPaid >> psttPaidHawker             ; ___( psttPaidHawker             ) ;
-                                                sInPaid >> psttPaidAge                ; ___( psttPaidAge                ) ;
-                                                sInPaid >> psttPaidAmountTotal        ; ___( psttPaidAmountTotal        ) ;
-                                                sInPaid >> psttPaidAmountSubtotal     ; ___( psttPaidAmountSubtotal     ) ;
-                                                sInPaid >> psttPaidApiVersion         ; ___( psttPaidApiVersion         ) ;
-                                                sInPaid >> psttPaidIdProduct          ; ___( psttPaidIdProduct          ) ;
-                                                sInPaid >> psttPaidInvoice            ; ___( psttPaidInvoice            ) ;
-                                                sInPaid >> psttPaidStripeNoticeType   ; ___( psttPaidStripeNoticeType   ) ;
-                                                sInPaid >> psttPaidLive               ; ___( psttPaidLive               ) ;
-                                                sInPaid >> psttPaidVersion                 ; ___( psttPaidVersion                 ) ;
-                                                sInPaid >> psttPaidEvent                   ; ___( psttPaidEvent                   ) ;
-
-                                                ZE( strokeS* , psttUpdatedAmountDiscount    ) ;
-                                                ZE( strokeS* , psttUpdatedIdSubscription    ) ;
-                                                ZE( strokeS* , psttUpdatedMode              ) ;
-                                                ZE( strokeS* , psttUpdatedName              ) ;
-                                                ZE( strokeS* , psttUpdatedEmail             ) ;
-                                                ZE( strokeS* , psttUpdatedPostalCode        ) ;
-                                                ZE( strokeS* , psttUpdatedCountry           ) ;
-                                                ZE( strokeS* , psttUpdatedHawker            ) ;
-                                                ZE( strokeS* , psttUpdatedAge               ) ;
-                                                ZE( strokeS* , psttUpdatedAmountTotal       ) ;
-                                                ZE( strokeS* , psttUpdatedAmountSubtotal    ) ;
-                                                ZE( strokeS* , psttUpdatedApiVersion        ) ;
-                                                ZE( strokeS* , psttUpdatedIdProduct         ) ;
-                                                ZE( strokeS* , psttUpdatedStatus            ) ;
-                                                ZE( strokeS* , psttUpdatedLatestInvoice     ) ;
-                                                ZE( strokeS* , psttUpdatedStripeNoticeType  ) ;
-                                                ZE( strokeS* , psttUpdatedLive              ) ;
-                                                ZE( strokeS* , psttUpdatedVersion                ) ;
-                                                ZE( strokeS* , psttUpdatedEvent                  ) ;
-
-                                                ZE( strokeS* , psttCreatedAmountDiscount   ) ;
-                                                ZE( strokeS* , psttCreatedIdSubscription   ) ;
-                                                ZE( strokeS* , psttCreatedMode             ) ;
-                                                ZE( strokeS* , psttCreatedName             ) ;
-                                                ZE( strokeS* , psttCreatedEmail            ) ;
-                                                ZE( strokeS* , psttCreatedPostalCode       ) ;
-                                                ZE( strokeS* , psttCreatedCountry          ) ;
-                                                ZE( strokeS* , psttCreatedHawker           ) ;
-                                                ZE( strokeS* , psttCreatedAge              ) ;
-                                                ZE( strokeS* , psttCreatedAmountTotal      ) ;
-                                                ZE( strokeS* , psttCreatedAmountSubtotal   ) ;
-                                                ZE( strokeS* , psttCreatedApiVersion       ) ;
-                                                ZE( strokeS* , psttCreatedIdProduct        ) ;
-                                                ZE( strokeS* , psttCreatedStatus           ) ;
-                                                ZE( strokeS* , psttCreatedLatestInvoice    ) ;
-                                                ZE( strokeS* , psttCreatedStripeNoticeType ) ;
-                                                ZE( strokeS* , psttCreatedLive             ) ;
-                                                ZE( strokeS* , psttCreatedVersion               ) ;
-                                                ZE( strokeS* , psttCreatedEvent                 ) ;
-
-                                                ZE( strokeS* , psttPaidCurrencyConversion ) ;
-                                                ZE( strokeS* , psttPaidCurrency           ) ;
-                                                ZE( strokeS* , psttPaidAmountDiscount     ) ;
-                                                ZE( strokeS* , psttPaidIdSubscription     ) ;
-                                                ZE( strokeS* , psttPaidMode               ) ;
-                                                ZE( strokeS* , psttPaidName               ) ;
-                                                ZE( strokeS* , psttPaidEmail              ) ;
-                                                ZE( strokeS* , psttPaidPostalCode         ) ;
-                                                ZE( strokeS* , psttPaidCountry            ) ;
-                                                ZE( strokeS* , psttPaidHawker             ) ;
-                                                ZE( strokeS* , psttPaidAge                ) ;
-                                                ZE( strokeS* , psttPaidAmountTotal        ) ;
-                                                ZE( strokeS* , psttPaidAmountSubtotal     ) ;
-                                                ZE( strokeS* , psttPaidApiVersion         ) ;
-                                                ZE( strokeS* , psttPaidIdProduct          ) ;
-                                                ZE( strokeS* , psttPaidInvoice            ) ;
-                                                ZE( strokeS* , psttPaidStripeNoticeType   ) ;
-                                                ZE( strokeS* , psttPaidLive               ) ;
-                                                ZE( strokeS* , psttPaidVersion                 ) ;
-                                                ZE( strokeS* , psttPaidEvent                   ) ;
-
-                                                etThread.traceF( tin0P , T("doing the deed with ")+tLongInvoiceMine ) ;
-                                            {
-                                            if( !cFail )
-
                                             }
                                                 }
                                                     etThread.traceF( tin0P , T("could not get shadow [tLong]:    ")+tLongUpdated ) ;
@@ -1950,7 +1952,6 @@ break ;
                                             {
                                             IFsCRATCHoK
 
-                                            ZE( countT , cFail ) ;
                                             soulC sInUpdated( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                                             soulC sInCreated( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                                             soulC sInPaid(    tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
@@ -1969,6 +1970,7 @@ break ;
                                         SCOOPS
                                     {
                                     IFsCRATCHoK
+                                    ZE( countT , cFail ) ;
                                 {
                                 if( bReady )
 
