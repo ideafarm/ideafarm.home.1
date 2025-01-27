@@ -174,7 +174,7 @@ etThread.traceF( tin0P , T("ok") ) ;
     ZE( flagsT , flagsNoticeLath ) ;
     ZE( countT , cDone           ) ;
 
-    textC* pptFileName[] = { &tSharedFolderPrefixLive , &tSharedFolderPrefixTest , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated , &tb4 } ;
+    textC* pptFileName[] = { &tSharedFolderPrefixLive , &tSharedFolderPrefixTest , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated , &tb4 , &tSlash } ;
 
     TN( tSharedFileEventSubCreatedUpdated , "sub.updated"        ".soulC" ) ;
     TN( tSharedFileEventCheckoutCompleted , "checkout.completed" ".soulC" ) ;
@@ -194,7 +194,8 @@ etThread.traceF( tin0P , T("ok") ) ;
     countT             cbi = sizeof( count4S ) ;
     ZE( const byteT* , pbi ) ;
 
-    TN( tb4 , "    " ) ;
+    TN( tSlash , "/"    ) ;
+    TN( tb4    , "    " ) ;
 {
 
 //*********************************************************************************************************************************************************
@@ -219,10 +220,9 @@ TODO
                 etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
                 //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashLiveDot+tSharedFileEventCheckoutCompletedP ;
+                TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventCheckoutCompletedP ;
 
                 textC& tSharedFolderUse = bLive ? tSharedFolderPrefixLiveP : tSharedFolderPrefixTestP ;
-                TN( tSlashLiveDot , bLive ? "/live." : "/test." ) ;
                 TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                 boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
 
@@ -410,10 +410,9 @@ TODO
                 etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
                 //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashLiveDot+tSharedFileEventSubCreatedP ;
+                TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubCreatedP ;
 
                 textC& tSharedFolderUse = bLive ? tSharedFolderPrefixLiveP : tSharedFolderPrefixTestP ;
-                TN( tSlashLiveDot , bLive ? "/live." : "/test." ) ;
                 TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                 boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
 
@@ -597,9 +596,8 @@ TODO
                     etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
                     //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashLiveDot+tSharedFileEventSubCreatedUpdatedP ;
+                    TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubCreatedUpdatedP ;
                     textC& tSharedFolderUse = bLive ? tSharedFolderPrefixLiveP : tSharedFolderPrefixTestP ;
-                    TN( tSlashLiveDot , bLive ? "/live." : "/test." ) ;
                     TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
                     boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
 
@@ -927,6 +925,7 @@ TODO
 
     //etherP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
 
+    textC& tSlashP                            = *pptFileNameP[ 6 ] ;
     textC& tb4P                               = *pptFileNameP[ 5 ] ;
     textC& tSharedFileEventSubCreatedUpdatedP = *pptFileNameP[ 4 ] ;
     textC& tSharedFileEventCheckoutCompletedP = *pptFileNameP[ 3 ] ;
