@@ -9,9 +9,9 @@
                             
 REST
 
-etThread.traceF( tin0P , T("bye") ) ;
+etRock.traceF( tin0P , T("bye") ) ;
 etherC::loafIF( tin0P ) ;
-etThread.traceF( tin0P , T("ok") ) ;
+etRock.traceF( tin0P , T("ok") ) ;
 
 }
     }
@@ -25,10 +25,10 @@ etThread.traceF( tin0P , T("ok") ) ;
                 //++ s ; ether.osSleepF( tin0P , TICK >> 2 ) ;    // PACE MYSELF SO THAT THE HTTP SERVER PROCESS GETS MORE OF THE CPU (EXPERIMENT TO SEE WHETHER THIS IMPROVES HTTPS RESPONSE TIME)
                 //THIS NAPPING IS DISABLED BECAUSE THE BOTTLENECK IS WITH ME; I CAN ONLY HANDLE ABOUT WO NOTICE PER TOCK, AND AT THAT RATE, IT IS EASY FOR THE HTTPS SERVER TO KEEP UP
 
-                writeSoulFileF( tin0P , etThread , (osTextT*)pbi , cbi - 1 , pptFileName ) ;
+                writeSoulFileF( tin0P , etThread , etRock , (osTextT*)pbi , cbi - 1 , pptFileName ) ;
 
                 //etThread.delF( tin0P , psttnu ) ;
-                //etThread.traceF( tin0P , T("[cDone]:    ")+TF3(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttnu) ) ;
+                //etRock.traceF( tin0P , T("[cDone]:    ")+TF3(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttnu) ) ;
                 //etThread.boxPutUniqueF( tin0P , psttnu , tLike , pbi , cbi - 1 ) ; ___( psttnu ) ;
                 //ZE( strokeS* , psttnu ) ;
                 //DISABLE IN PRODUCTION
@@ -42,14 +42,14 @@ etThread.traceF( tin0P , T("ok") ) ;
             //********  EAT JSON BODY TO WRITE soulC FILE  ************************************************************************************************************
             //********                                     ************************************************************************************************************
             //*********************************************************************************************************************************************************
-            etThread.traceF( tin0P , T("eat body") ) ;
+            etRock.traceF( tin0P , T("eat body") ) ;
         {
         else
         }
             }
                 cbi = 1 ;
                 bSearchForHead = 1 ;
-                etThread.traceF( tin0P , T("!exception / bad header, so will search for the next header [flagsFail]:    ")+TF3(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                etRock.traceF( tin0P , T("!exception / bad header, so will search for the next header [flagsFail]:    ")+TF3(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
             {
             else
             }
@@ -69,7 +69,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             }
                 if( !c4h.c3                                       ) { flagsFail |= 0x00000108 ; }
                 if( c4h.c2 - 1                                    ) { flagsFail |= 0x00000104 ; }
-                if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000102 ; etThread.traceF( tin0P , T("!exception [flagsFail,finger]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(getNegAM(c4h.c1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
+                if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000102 ; etRock.traceF( tin0P , T("!exception [flagsFail,finger]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(getNegAM(c4h.c1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
 
                 // putNegAM( c4s.c1 , FINGERnEG_WEBhOOKnOTICES ) ;
                 // count4S c4s( 0 , 1 , costaBody ) ;
@@ -77,7 +77,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             if( !flagsFail )
             count4S& c4h = *(count4S*)pbi ;
 
-            if( cbi - sizeof( count4S )                           ) { flagsFail |= 0x00000101 ; etThread.traceF( tin0P , T("!exception [flagsFail,cbi]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
+            if( cbi - sizeof( count4S )                           ) { flagsFail |= 0x00000101 ; etRock.traceF( tin0P , T("!exception [flagsFail,cbi]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
             ZE( flagsT , flagsFail ) ;
 
             //*********************************************************************************************************************************************************
@@ -85,20 +85,20 @@ etThread.traceF( tin0P , T("ok") ) ;
             //********  EAT HEAD  *************************************************************************************************************************************
             //********            *************************************************************************************************************************************
             //*********************************************************************************************************************************************************
-            etThread.traceF( tin0P , T("eat head") ) ;
+            etRock.traceF( tin0P , T("eat head") ) ;
         {
         else if( bHead )
         }
             }
                 cbi = 1 ;
                 bSearchForHead = 1 ;
-                etThread.traceF( tin0P , T("!exception / not a header, so will continue searching [flagsFail]:    ")+TF3(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
+                etRock.traceF( tin0P , T("!exception / not a header, so will continue searching [flagsFail]:    ")+TF3(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
             {
             else
             }
                 bHead = 0 ;
                 cbi = c4h.c3 ;
-                etThread.traceF( tin0P , T("header found!") ) ;
+                etRock.traceF( tin0P , T("header found!") ) ;
             {
             if( !flagsFail )
             pbi = 0 ;
@@ -107,7 +107,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                 if( !c4h.c4                                       ) { flagsFail |= 0x00000020 ; }
                 if( !c4h.c3                                       ) { flagsFail |= 0x00000010 ; }
                 if( c4h.c2 - 1                                    ) { flagsFail |= 0x00000008 ; }
-                if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000004 ; etThread.traceF( tin0P , T("!exception [flagsFail,finger]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(getNegAM(c4h.c1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
+                if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000004 ; etRock.traceF( tin0P , T("!exception [flagsFail,finger]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(getNegAM(c4h.c1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
 
                 // putNegAM( c4s.c1 , FINGERnEG_WEBhOOKnOTICES ) ;
                 // count4S c4s( 0 , 1 , costaBody ) ;
@@ -117,8 +117,8 @@ etThread.traceF( tin0P , T("ok") ) ;
                             pc4HeadMaybe = 0 ;
             count4S& c4h = *pc4HeadMaybe ;
 
-            if( pbi - (byteT*)pc4HeadMaybe - 1                    ) { flagsFail |= 0x00000002 ; etThread.traceF( tin0P , T("!exception [flagsFail,pbi-(byteT*)pc4HeadMaybe-1]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbi-(byteT*)pc4HeadMaybe-1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }       //IF WHAT I GOT IS NOT IMMEDIATELY AFTER THE FINGERPRINT (SHOULD BE IMPOSSIBLE)
-            if( cbi - sizeof( count4S )    + 1                    ) { flagsFail |= 0x00000001 ; etThread.traceF( tin0P , T("!exception [flagsFail,cbi]:    "                       )+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi                       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }       //IF DIDN'T GET THE REST OF THE HEAD
+            if( pbi - (byteT*)pc4HeadMaybe - 1                    ) { flagsFail |= 0x00000002 ; etRock.traceF( tin0P , T("!exception [flagsFail,pbi-(byteT*)pc4HeadMaybe-1]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbi-(byteT*)pc4HeadMaybe-1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }       //IF WHAT I GOT IS NOT IMMEDIATELY AFTER THE FINGERPRINT (SHOULD BE IMPOSSIBLE)
+            if( cbi - sizeof( count4S )    + 1                    ) { flagsFail |= 0x00000001 ; etRock.traceF( tin0P , T("!exception [flagsFail,cbi]:    "                       )+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi                       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }       //IF DIDN'T GET THE REST OF THE HEAD
             ZE( flagsT , flagsFail ) ;
 
             //*********************************************************************************************************************************************************
@@ -126,7 +126,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             //********  INSPECT BYTES AFTER FINGERPRINT  **************************************************************************************************************
             //********                                   **************************************************************************************************************
             //*********************************************************************************************************************************************************
-            etThread.traceF( tin0P , T("searching for head after fingerprint") ) ;
+            etRock.traceF( tin0P , T("searching for head after fingerprint") ) ;
         {
         else if( pc4HeadMaybe )
         }
@@ -144,7 +144,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             //********  INSPECT FINGERPRINT  **************************************************************************************************************************
             //********                       **************************************************************************************************************************
             //*********************************************************************************************************************************************************
-            etThread.traceF( tin0P , T("searching for head fingerprint") ) ;
+            etRock.traceF( tin0P , T("searching for head fingerprint") ) ;
         {
         if( bSearchForHead )
 
@@ -152,11 +152,11 @@ etThread.traceF( tin0P , T("ok") ) ;
             continue ;
             cbi = cbiSave ;
             ++ s ; ether.osSleepF( tin0P , TOCK ) ;
-            etThread.traceF( tin0P , T("napping") ) ;
+            etRock.traceF( tin0P , T("napping") ) ;
         {
         if( !pbi || !cbi )
 
-        //etThread.traceF( tin0P , T("bksWebHookNotices.readF returned [pbi,cbi]:    ")+TF2((countT)pbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tin0P , T("bksWebHookNotices.readF returned [pbi,cbi]:    ")+TF2((countT)pbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         //((tin123S&)tin0P).pcUtility[ 0 ] -- ;
         boolT bDelete = bksWebHookNotices.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_null ) ;
@@ -165,7 +165,7 @@ etThread.traceF( tin0P , T("ok") ) ;
 
         }
             BLAMMOiD( 0x11111111 ) ;
-            etThread.traceF( tin0P , T("bksWebHookNotices is impotent [idPoop]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            etRock.traceF( tin0P , T("bksWebHookNotices is impotent [idPoop]:    ")+TF2(idPoop,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         {
         if( idPoop )
         const countT idPoop = (const poopC&)bksWebHookNotices ;
@@ -182,7 +182,7 @@ etThread.traceF( tin0P , T("ok") ) ;
     TN( tSharedFolderPrefixSandbox        , ""                            ) ; tSharedFolderPrefixSandbox  = T("///z/ideafarm.shared/sandbox/" )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
     TN( tSharedFolderPrefixPrecious       , ""                            ) ; tSharedFolderPrefixPrecious = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
-    etThread.traceF( tin0P , T("reading begun") ) ;
+    etRock.traceF( tin0P , T("reading begun") ) ;
     TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     ZE( count4S* , pc4HeadMaybe   ) ;
@@ -193,6 +193,8 @@ etThread.traceF( tin0P , T("ok") ) ;
 
     countT             cbi = sizeof( count4S ) ;
     ZE( const byteT* , pbi ) ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     TN( tSlash , "/"    ) ;
     TN( tb4    , "    " ) ;
@@ -210,7 +212,7 @@ thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
 TODO
 
 }
-    etherP.traceF( tin0P , T("writeSoulFileF / ---- ") ) ;
+    etRockP.traceF( tin0P , T("writeSoulFileF / ---- ") ) ;
 
     }
         DEL( pSwPathValue ) ;
@@ -219,7 +221,7 @@ TODO
             }
                 etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
-                //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                //etRockP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                 TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventCheckoutCompletedP ;
 
                 textC& tSharedFolderUse = bLive ? tSharedFolderPrefixPreciousP : tSharedFolderPrefixSandboxP ;
@@ -257,12 +259,12 @@ TODO
             {
 
             }
-                //etherP.traceF( tin0P , T("[hashInvoice,modulo]:    ")+TF4(hashInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+tb4P+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20) ) ;
+                //etRockP.traceF( tin0P , T("[hashInvoice,modulo]:    ")+TF4(hashInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+tb4P+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20) ) ;
 
                 hashInvoice = hashF( tdInvoice , tdInvoice.csF( tin0P ) , 0 ) ;
 
                 etherP.delF( tin0P , psttdInvoice ) ;
-                //etherP.traceF( tin0P , T("[dInvoice]:     ")+tdInvoice ) ;
+                //etRockP.traceF( tin0P , T("[dInvoice]:     ")+tdInvoice ) ;
                 tdInvoice = T(psttdInvoice) ;
                 etherP.strDumpIF( tin0P , psttdInvoice , tValueInvoice , tValueInvoice.csF( tin0P ) , flSTRdUMP_5bITS ) ; ___( psttdInvoice ) ;
                 ZE( strokeS* , psttdInvoice ) ;
@@ -270,7 +272,7 @@ TODO
             ZE( countT    , hashInvoice ) ;
             TN( tdInvoice , "" ) ;
 
-            //etherP.traceF( tin0P , T("[Invoice]:    ")+tValueInvoice ) ;
+            //etRockP.traceF( tin0P , T("[Invoice]:    ")+tValueInvoice ) ;
             }
                 }
                     }
@@ -278,7 +280,7 @@ TODO
                 
                         }
                             }
-                                //etherP.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_f ) ;
+                                //etRockP.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_f ) ;
 
                                 etherP.delF( tin0P , psttt ) ;
                                 *pptValue[ offe ] = T(psttt) ;
@@ -395,7 +397,7 @@ TODO
             TN( tValueInvoice            , "" ) ;
             TN( tValueStripeNoticeType   , "" ) ;
             TN( tValueLive               , "" ) ;
-            etherP.traceF( tin0P , T("writeSoulFileF / checkout completed") ) ;
+            etRockP.traceF( tin0P , T("writeSoulFileF / checkout completed") ) ;
             _IO_                                                                                                                                                // WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
 
             //*********************************************************************************************************************************************************
@@ -409,7 +411,7 @@ TODO
             }
                 etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
-                //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                //etRockP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                 TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubCreatedP ;
 
                 textC& tSharedFolderUse = bLive ? tSharedFolderPrefixPreciousP : tSharedFolderPrefixSandboxP ;
@@ -446,12 +448,12 @@ TODO
             {
 
             }
-                //etherP.traceF( tin0P , T("[hashInvoice,modulo]:    ")+TF4(hashInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+tb4P+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20) ) ;
+                //etRockP.traceF( tin0P , T("[hashInvoice,modulo]:    ")+TF4(hashInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+tb4P+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20) ) ;
 
                 hashInvoice = hashF( tdInvoice , tdInvoice.csF( tin0P ) , 0 ) ;
 
                 etherP.delF( tin0P , psttdInvoice ) ;
-                //etherP.traceF( tin0P , T("[dInvoice]:     ")+tdInvoice ) ;
+                //etRockP.traceF( tin0P , T("[dInvoice]:     ")+tdInvoice ) ;
                 tdInvoice = T(psttdInvoice) ;
                 etherP.strDumpIF( tin0P , psttdInvoice , tValueLatestInvoice , tValueLatestInvoice.csF( tin0P ) , flSTRdUMP_5bITS ) ; ___( psttdInvoice ) ;
                 ZE( strokeS* , psttdInvoice ) ;
@@ -459,7 +461,7 @@ TODO
             ZE( countT    , hashInvoice ) ;
             TN( tdInvoice , "" ) ;
 
-            //etherP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
+            //etRockP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
             }
                 }
                     }
@@ -467,7 +469,7 @@ TODO
                 
                         }
                             }
-                                //etherP.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_f ) ;
+                                //etRockP.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_f ) ;
 
                                 etherP.delF( tin0P , psttt ) ;
                                 *pptValue[ offe ] = T(psttt) ;
@@ -580,7 +582,7 @@ TODO
             TN( tValueLatestInvoice    , "" ) ;
             TN( tValueStripeNoticeType , "" ) ;
             TN( tValueLive             , "" ) ;
-            etherP.traceF( tin0P , T("writeSoulFileF / sub created") ) ;
+            etRockP.traceF( tin0P , T("writeSoulFileF / sub created") ) ;
             _IO_                                                                                                                                                // WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
 
             //*********************************************************************************************************************************************************
@@ -595,7 +597,7 @@ TODO
                 }
                     etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
 
-                    //etherP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etRockP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubCreatedUpdatedP ;
                     textC& tSharedFolderUse = bLive ? tSharedFolderPrefixPreciousP : tSharedFolderPrefixSandboxP ;
                     TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
@@ -631,12 +633,12 @@ TODO
                 {
 
                 }
-                    //etherP.traceF( tin0P , T("[hashInvoice,modulo]:    ")+TF4(hashInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+tb4P+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20) ) ;
+                    //etRockP.traceF( tin0P , T("[hashInvoice,modulo]:    ")+TF4(hashInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+tb4P+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20) ) ;
 
                     hashInvoice = hashF( tdInvoice , tdInvoice.csF( tin0P ) , 0 ) ;
 
                     etherP.delF( tin0P , psttdInvoice ) ;
-                    //etherP.traceF( tin0P , T("[dInvoice]:     ")+tdInvoice ) ;
+                    //etRockP.traceF( tin0P , T("[dInvoice]:     ")+tdInvoice ) ;
                     tdInvoice = T(psttdInvoice) ;
                     etherP.strDumpIF( tin0P , psttdInvoice , tValueLatestInvoice , tValueLatestInvoice.csF( tin0P ) , flSTRdUMP_5bITS ) ; ___( psttdInvoice ) ;
                     ZE( strokeS* , psttdInvoice ) ;
@@ -644,7 +646,7 @@ TODO
                 ZE( countT    , hashInvoice ) ;
                 TN( tdInvoice , "" ) ;
 
-                //etherP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
+                //etRockP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
                 }
                     }
                         }
@@ -652,7 +654,7 @@ TODO
                     
                             }
                                 }
-                                    //etherP.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_f ) ;
+                                    //etRockP.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_f ) ;
 
                                     etherP.delF( tin0P , psttt ) ;
                                     *pptValue[ offe ] = T(psttt) ;
@@ -772,7 +774,7 @@ TODO
                 TN( tValueLatestInvoice    , "" ) ;
                 TN( tValueStripeNoticeType , "" ) ;
                 TN( tValueLive             , "" ) ;
-                etherP.traceF( tin0P , T("writeSoulFileF / sub updated (sub created))") ) ;
+                etRockP.traceF( tin0P , T("writeSoulFileF / sub updated (sub created))") ) ;
                 _IO_
 
                 //*********************************************************************************************************************************************************
@@ -786,7 +788,7 @@ TODO
                 etherP.delF( tin0P , psttnu ) ;
                 etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubRenewedLive+T("sub.renewed.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // THEN WRITE JSON NOTICE OF SUB RENEWED TO FILE FOR MANUAL PROCESSING
                 ZE( strokeS* , psttnu ) ;
-                etherP.traceF( tin0P , T("writeSoulFileF / sub updated (renewal)") ) ;
+                etRockP.traceF( tin0P , T("writeSoulFileF / sub updated (renewal)") ) ;
                 _IO_
 
                 //*********************************************************************************************************************************************************
@@ -807,7 +809,7 @@ TODO
             etherP.delF( tin0P , psttnu ) ;
             etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubDeletedLive+T("sub.deleted.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // WRITE JSON NOTICE OF SUB DELETED TO FILE FOR MANUAL PROCESSING
             ZE( strokeS* , psttnu ) ;
-            etherP.traceF( tin0P , T("writeSoulFileF / sub deleted") ) ;
+            etRockP.traceF( tin0P , T("writeSoulFileF / sub deleted") ) ;
             _IO_
 
             //*********************************************************************************************************************************************************
@@ -841,7 +843,7 @@ TODO
 
                     }
                         }
-                            //etherP.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                            //etRockP.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                             *pptValue[ offe ] = T(psttValue) ;
                         {
                         if( !etherP.strCompareF( tin0P , psttzPath , *pptPath[ offe ] ) )
@@ -852,8 +854,8 @@ TODO
                     countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
                     countT cPaths  = sizeof pptPath  / sizeof pptPath[  0 ] ;
 
-                    //etherP.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
-                    //etherP.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttzPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etRockP.traceF( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    //etRockP.traceF( tin0P , T("-------------------------- [path]:            ")+T(psttzPath)  , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
                     strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
                     psttzPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
@@ -899,7 +901,7 @@ TODO
         __Z( pSwPathValue ) ;
         }
             }
-                etherP.traceF( tin0P , T("!exception / could not parse json") ) ;
+                etRockP.traceF( tin0P , T("!exception / could not parse json") ) ;
                 POOPRqUIET
             {
             if( POOP )
@@ -921,7 +923,7 @@ TODO
     {
     if( postP )
 
-    etherP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
+    etRockP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
 
     textC& tSlashP                            = *pptFileNameP[ 6 ] ;
     textC& tb4P                               = *pptFileNameP[ 5 ] ;
@@ -931,7 +933,7 @@ TODO
     textC& tSharedFolderPrefixSandboxP        = *pptFileNameP[ 1 ] ;
     textC& tSharedFolderPrefixPreciousP       = *pptFileNameP[ 0 ] ;
 {
-voidT writeSoulFileF( tin0S& tin0P , etherC& etherP , osTextT* const postP , countT costP , textC** pptFileNameP )
+voidT writeSoulFileF( tin0S& tin0P , etherC& etherP , etherC& etRockP , osTextT* const postP , countT costP , textC** pptFileNameP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_WEBhOOKnOTICEfILER" )/*1*/
 /**/
