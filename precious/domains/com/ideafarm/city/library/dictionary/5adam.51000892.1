@@ -1675,7 +1675,8 @@ etherC::loafIF( tin0P ) ;
 
 
     }
-break ;
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+
         while( !ether && ~hFindModulo && !POOP ) ;
         }
             DEL( pInfo ) ;
@@ -2053,6 +2054,7 @@ break ;
         handleC hFindModulo( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
     {
     while( !ether )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     TN( tShortWantUpdated , "sub.updated.soulC"        ) ;
     TN( tShortWantCreated , "sub.created.soulC"        ) ;
@@ -2066,6 +2068,9 @@ break ;
 
     TN( tFolderEventsIncomingPrecious , "///z/ideafarm.shared/precious/5100088f/events.incoming/" ) ;
     TN( tFolderEventsIncomingSandbox , "///z/ideafarm.shared/sandbox/5100088f/events.incoming/" ) ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
 
     _IO_
 {
