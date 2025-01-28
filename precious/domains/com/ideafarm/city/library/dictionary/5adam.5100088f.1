@@ -28,7 +28,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                 writeSoulFileF( tin0P , etThread , (osTextT*)pbi , cbi - 1 , pptFileName ) ;
 
                 //etThread.delF( tin0P , psttnu ) ;
-                //etThread.traceF( tin0P , TF3(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttnu) ) ;
+                etThread.traceF( tin0P , T("[cDone]:    ")+TF3(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttnu) ) ;
                 //etThread.boxPutUniqueF( tin0P , psttnu , tLike , pbi , cbi - 1 ) ; ___( psttnu ) ;
                 //ZE( strokeS* , psttnu ) ;
                 //DISABLE IN PRODUCTION
@@ -42,7 +42,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             //********  EAT JSON BODY TO WRITE soulC FILE  ************************************************************************************************************
             //********                                     ************************************************************************************************************
             //*********************************************************************************************************************************************************
-            //etThread.traceF( tin0P , T("eat body") ) ;
+            etThread.traceF( tin0P , T("eat body") ) ;
         {
         else
         }
@@ -85,7 +85,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             //********  EAT HEAD  *************************************************************************************************************************************
             //********            *************************************************************************************************************************************
             //*********************************************************************************************************************************************************
-            //etThread.traceF( tin0P , T("eat head") ) ;
+            etThread.traceF( tin0P , T("eat head") ) ;
         {
         else if( bHead )
         }
@@ -152,7 +152,7 @@ etThread.traceF( tin0P , T("ok") ) ;
             continue ;
             cbi = cbiSave ;
             ++ s ; ether.osSleepF( tin0P , TOCK ) ;
-            //etThread.traceF( tin0P , T("napping") ) ;
+            etThread.traceF( tin0P , T("napping") ) ;
         {
         if( !pbi || !cbi )
 
@@ -210,7 +210,7 @@ thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 TODO
 
 }
-    //etherP.traceF( tin0P , T("writeSoulFileF / ---- ") ) ;
+    etherP.traceF( tin0P , T("writeSoulFileF / ---- ") ) ;
 
     }
         DEL( pSwPathValue ) ;
@@ -786,7 +786,7 @@ TODO
                 etherP.delF( tin0P , psttnu ) ;
                 etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubRenewedLive+T("sub.renewed.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // THEN WRITE JSON NOTICE OF SUB RENEWED TO FILE FOR MANUAL PROCESSING
                 ZE( strokeS* , psttnu ) ;
-                //etherP.traceF( tin0P , T("writeSoulFileF / sub updated (renewal)") ) ;
+                etherP.traceF( tin0P , T("writeSoulFileF / sub updated (renewal)") ) ;
                 _IO_
 
                 //*********************************************************************************************************************************************************
@@ -807,7 +807,7 @@ TODO
             etherP.delF( tin0P , psttnu ) ;
             etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubDeletedLive+T("sub.deleted.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // WRITE JSON NOTICE OF SUB DELETED TO FILE FOR MANUAL PROCESSING
             ZE( strokeS* , psttnu ) ;
-            //etherP.traceF( tin0P , T("writeSoulFileF / sub deleted") ) ;
+            etherP.traceF( tin0P , T("writeSoulFileF / sub deleted") ) ;
             _IO_
 
             //*********************************************************************************************************************************************************
@@ -921,7 +921,7 @@ TODO
     {
     if( postP )
 
-    //etherP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
+    etherP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
 
     textC& tSlashP                            = *pptFileNameP[ 6 ] ;
     textC& tb4P                               = *pptFileNameP[ 5 ] ;
