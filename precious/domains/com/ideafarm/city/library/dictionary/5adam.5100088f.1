@@ -174,13 +174,15 @@ etRock.traceF( tin0P , T("ok") ) ;
     ZE( flagsT , flagsNoticeLath ) ;
     ZE( countT , cDone           ) ;
 
-    textC* pptFileName[] = { &tSharedFolderPrefixPrecious , &tSharedFolderPrefixSandbox , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated , &tb4 , &tSlash } ;
+    textC* pptFileName[] = { &tSharedFolderPrefixPrecious , &tSharedFolderPrefixSandbox , &tSharedFolderNoticeParsingFailed , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubCreatedUpdated , &tb4 , &tSlash } ;
 
     TN( tSharedFileEventSubCreatedUpdated , "sub.updated"        ".soulC" ) ;
     TN( tSharedFileEventCheckoutCompleted , "checkout.completed" ".soulC" ) ;
     TN( tSharedFileEventSubCreated        , "sub.created"        ".soulC" ) ;
-    TN( tSharedFolderPrefixSandbox        , ""                            ) ; tSharedFolderPrefixSandbox  = T("///z/ideafarm.shared/sandbox/" )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
-    TN( tSharedFolderPrefixPrecious       , ""                            ) ; tSharedFolderPrefixPrecious = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+
+    TN( tSharedFolderNoticeParsingFailed  , "" ) ; tSharedFolderNoticeParsingFailed = tSharedFolderPrefixPrecious +T("json.notices.1.could.not.parse/") ;
+    TN( tSharedFolderPrefixSandbox        , "" ) ; tSharedFolderPrefixSandbox       = T("///z/ideafarm.shared/sandbox/" )+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderPrefixPrecious       , "" ) ; tSharedFolderPrefixPrecious      = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
     etRock.traceF( tin0P , T("reading begun") ) ;
     TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
@@ -290,7 +292,7 @@ TODO
                                 etherP.strTrimF( tin0P , psttt , psttValue , 0 , 0 , strokeS() ) ; ___( psttt ) ;
                                 ZE( strokeS* , psttt ) ;
                             {
-                            if( !etherP.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                            if( !etherP.strCompareF( tin0P , psttzPath , *pptPath[ offe ] ) )
                         {
                         for( countT offe = 0 ; offe < cKeys ; offe ++ )
                 
@@ -299,10 +301,10 @@ TODO
                         countT cKeys  = sizeof pptPath  / sizeof pptPath[  0 ] ;
                 
                         //etherP.trace F( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_d*/ ) ;
-                        //etherP.trace F( tin0P , T("-------------------------- [path]:            ")+T(psttPath)       , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_d*/ ) ;
+                        //etherP.trace F( tin0P , T("-------------------------- [path]:            ")+T(psttzPath)       , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_d*/ ) ;
                 
                         strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+                        psttzPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
                 
                         _IO_
                     {
@@ -378,11 +380,6 @@ TODO
                     &tValueLive               ,
                 {
                 textC* pptValue[] =
-            
-                __Z( pSwPathValue ) ;
-                etherP.strParseJsonF( tin0P , pSwPathValue , psttPath , postP , flSTACKc_null ) ;
-                ZE( switchC* , pSwPathValue ) ;
-                ZE( strokeS* , psttPath     ) ;
             {
             TN( tValueCurrencyConversion , "" ) ;
             TN( tValueCurrency           , "" ) ;
@@ -485,7 +482,7 @@ TODO
                                 etherP.strTrimF( tin0P , psttt , psttValue , 0 , 0 , strokeS() ) ; ___( psttt ) ;
                                 ZE( strokeS* , psttt ) ;
                             {
-                            if( !etherP.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                            if( !etherP.strCompareF( tin0P , psttzPath , *pptPath[ offe ] ) )
                         {
                         for( countT offe = 0 ; offe < cKeys ; offe ++ )
                 
@@ -494,10 +491,10 @@ TODO
                         countT cKeys  = sizeof pptPath  / sizeof pptPath[  0 ] ;
                 
                         //etherP.trace F( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_e*/ ) ;
-                        //etherP.trace F( tin0P , T("-------------------------- [path]:            ")+T(psttPath)       , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_e*/ ) ;
+                        //etherP.trace F( tin0P , T("-------------------------- [path]:            ")+T(psttzPath)       , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_e*/ ) ;
                 
                         strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                        psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+                        psttzPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
                 
                         _IO_
                     {
@@ -570,11 +567,6 @@ TODO
                     &tValueLive             ,
                 {
                 textC* pptValue[] =
-            
-                __Z( pSwPathValue ) ;
-                etherP.strParseJsonF( tin0P , pSwPathValue , psttPath , postP , flSTACKc_null ) ;
-                ZE( switchC* , pSwPathValue ) ;
-                ZE( strokeS* , psttPath     ) ;
             {
             TN( tValueAmountDiscount   , "" ) ;
             TN( tValueIdSubscription   , "" ) ;
@@ -678,7 +670,7 @@ TODO
                                     etherP.strTrimF( tin0P , psttt , psttValue , 0 , 0 , strokeS() ) ; ___( psttt ) ;
                                     ZE( strokeS* , psttt ) ;
                                 {
-                                if( !etherP.strCompareF( tin0P , psttPath , *pptPath[ offe ] ) )
+                                if( !etherP.strCompareF( tin0P , psttzPath , *pptPath[ offe ] ) )
                             {
                             for( countT offe = 0 ; offe < cKeys ; offe ++ )
                     
@@ -687,10 +679,10 @@ TODO
                             countT cKeys  = sizeof pptPath  / sizeof pptPath[  0 ] ;
                     
                             //etherP.trace F( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_d*/ ) ;
-                            //etherP.trace F( tin0P , T("-------------------------- [path]:            ")+T(psttPath)       , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_d*/ ) ;
+                            //etherP.trace F( tin0P , T("-------------------------- [path]:            ")+T(psttzPath)       , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_d*/ ) ;
                     
                             strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
-                            psttPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+                            psttzPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
                     
                             _IO_
                         {
@@ -770,11 +762,6 @@ TODO
                         &tValueLive             ,
                     {
                     textC* pptValue[] =
-                
-                    __Z( pSwPathValue ) ;
-                    etherP.strParseJsonF( tin0P , pSwPathValue , psttPath , postP , flSTACKc_null ) ;
-                    ZE( switchC* , pSwPathValue ) ;
-                    ZE( strokeS* , psttPath     ) ;
                 {
                 TN( tValueAmountDiscount   , "" ) ;
                 TN( tValueIdSubscription   , "" ) ;
@@ -845,10 +832,10 @@ TODO
         {
         if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeSubDeleted ) )                                                      // IF NOTICE TYPE IS "SUB DELETED"
 
-        TN( tSharedFolderNoticeSubRenewedTest , "" ) ; tSharedFolderNoticeSubRenewedTest = tSharedFolderPrefixSandboxP +T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
-        TN( tSharedFolderNoticeSubRenewedLive , "" ) ; tSharedFolderNoticeSubRenewedLive = tSharedFolderPrefixPreciousP+T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
-        TN( tSharedFolderNoticeSubDeletedTest , "" ) ; tSharedFolderNoticeSubDeletedTest = tSharedFolderPrefixSandboxP +T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
-        TN( tSharedFolderNoticeSubDeletedLive , "" ) ; tSharedFolderNoticeSubDeletedLive = tSharedFolderPrefixPreciousP+T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
+        TN( tSharedFolderNoticeSubRenewedTest    , "" ) ; tSharedFolderNoticeSubRenewedTest    = tSharedFolderPrefixSandboxP  +T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
+        TN( tSharedFolderNoticeSubRenewedLive    , "" ) ; tSharedFolderNoticeSubRenewedLive    = tSharedFolderPrefixPreciousP +T("json.notice.1.")+tValueStripeNoticeTypeSubUpdated+T("/") ;
+        TN( tSharedFolderNoticeSubDeletedTest    , "" ) ; tSharedFolderNoticeSubDeletedTest    = tSharedFolderPrefixSandboxP  +T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
+        TN( tSharedFolderNoticeSubDeletedLive    , "" ) ; tSharedFolderNoticeSubDeletedLive    = tSharedFolderPrefixPreciousP +T("json.notice.1.")+tValueStripeNoticeTypeSubDeleted+T("/") ;
 
         TN( tValueStripeNoticeTypeCheckoutCompleted , "checkout.session.completed"    ) ;
         TN( tValueStripeNoticeTypeSubCreated        , "customer.subscription.created" ) ;
@@ -930,6 +917,10 @@ TODO
         __Z( pSwPathValue ) ;
         }
             }
+                etherP.delF( tin0P , psttnu ) ;
+                etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeParsingFailedP+T("could.not.parse.@1@.json") , postP , costP ) ; ___( psttnu ) ;
+                ZE( strokeS* , psttnu ) ;
+
                 etRockP.traceF( tin0P , T("!exception / could not parse json") ) ;
                 POOPRqUIET
             {
@@ -956,11 +947,12 @@ TODO
 
     etRockP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
 
-    textC& tSlashP                            = *pptFileNameP[ 6 ] ;
-    textC& tb4P                               = *pptFileNameP[ 5 ] ;
-    textC& tSharedFileEventSubCreatedUpdatedP = *pptFileNameP[ 4 ] ;
-    textC& tSharedFileEventCheckoutCompletedP = *pptFileNameP[ 3 ] ;
-    textC& tSharedFileEventSubCreatedP        = *pptFileNameP[ 2 ] ;
+    textC& tSlashP                            = *pptFileNameP[ 7 ] ;
+    textC& tb4P                               = *pptFileNameP[ 6 ] ;
+    textC& tSharedFileEventSubCreatedUpdatedP = *pptFileNameP[ 5 ] ;
+    textC& tSharedFileEventCheckoutCompletedP = *pptFileNameP[ 4 ] ;
+    textC& tSharedFileEventSubCreatedP        = *pptFileNameP[ 3 ] ;
+    textC& tSharedFolderNoticeParsingFailedP  = *pptFileNameP[ 2 ] ;
     textC& tSharedFolderPrefixSandboxP        = *pptFileNameP[ 1 ] ;
     textC& tSharedFolderPrefixPreciousP       = *pptFileNameP[ 0 ] ;
 {
