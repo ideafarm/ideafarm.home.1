@@ -213,6 +213,7 @@ TODO
 
 }
     etRockP.traceF( tin0P , T("writeSoulFileF / ---- ") ) ;
+    etRockP.traceF( tin0P , T("writeSoulFileF / 0") ) ;
 
     }
         DEL( pSwPathValue ) ;
@@ -272,6 +273,8 @@ TODO
             ZE( countT    , hashInvoice ) ;
             TN( tdInvoice , "" ) ;
 
+            etRockP.traceF( tin0P , T("writeSoulFileF / 1") ) ;
+
             //etRockP.traceF( tin0P , T("[Invoice]:    ")+tValueInvoice ) ;
             }
                 }
@@ -308,6 +311,8 @@ TODO
                 {
                 if( !POOP )
             
+                etRockP.traceF( tin0P , T("writeSoulFileF / 2") ) ;
+
                 ;
                 }
                     &tPathCurrencyConversion ,
@@ -405,6 +410,8 @@ TODO
             //********  CHECKOUT COMPLETED  ***************************************************************************************************************************
             //********                      ***************************************************************************************************************************
             //*********************************************************************************************************************************************************
+
+            etRockP.traceF( tin0P , T("writeSoulFileF / 3") ) ;
         {
         else if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeCheckoutCompleted ) )                                          // ELSE IF NOTICE TYPE IS "CHECKOUT COMPLETED"
         }
@@ -461,6 +468,8 @@ TODO
             ZE( countT    , hashInvoice ) ;
             TN( tdInvoice , "" ) ;
 
+            etRockP.traceF( tin0P , T("writeSoulFileF / 4") ) ;
+
             //etRockP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
             }
                 }
@@ -497,6 +506,8 @@ TODO
                 {
                 if( !POOP )
             
+                etRockP.traceF( tin0P , T("writeSoulFileF / 5") ) ;
+
                 ;
                 }
                     &tPathAmountDiscount   ,
@@ -590,6 +601,8 @@ TODO
             //********  NEW SUBSCRIPTION CREATED  *********************************************************************************************************************
             //********                            *********************************************************************************************************************
             //*********************************************************************************************************************************************************
+
+            etRockP.traceF( tin0P , T("writeSoulFileF / 6") ) ;
         {
         else if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeSubCreated ) )                                                 // ELSE IF NOTICE TYPE IS "SUB CREATED"
         }
@@ -632,6 +645,8 @@ TODO
                     TN( tEvent , "stripe.subscription.new.updated" ) ;
                 {
 
+                etRockP.traceF( tin0P , T("writeSoulFileF / 7") ) ;
+
                 }
                     //etRockP.traceF( tin0P , T("[hashInvoice,modulo]:    ")+TF4(hashInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+tb4P+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20) ) ;
 
@@ -645,6 +660,8 @@ TODO
                 {
                 ZE( countT    , hashInvoice ) ;
                 TN( tdInvoice , "" ) ;
+
+                etRockP.traceF( tin0P , T("writeSoulFileF / 8") ) ;
 
                 //etRockP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
                 }
@@ -682,6 +699,8 @@ TODO
                     {
                     if( !POOP )
                 
+                    etRockP.traceF( tin0P , T("writeSoulFileF / 9") ) ;
+
                     ;
                     }
                         &tPathAmountDiscount   ,
@@ -782,6 +801,8 @@ TODO
                 //********  NEW SUBSCRIPTION UPDATED  *********************************************************************************************************************
                 //********                            *********************************************************************************************************************
                 //*********************************************************************************************************************************************************
+
+                etRockP.traceF( tin0P , T("writeSoulFileF / a") ) ;
             {
             else                                                                                                                                                    // ELSE WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
             }
@@ -796,6 +817,8 @@ TODO
                 //********  SUBSCRIPTION RENEWED  *************************************************************************************************************************
                 //********                        *************************************************************************************************************************
                 //*********************************************************************************************************************************************************
+
+                etRockP.traceF( tin0P , T("writeSoulFileF / b") ) ;
             {
             )
                 !etherP.strCompareF( tin0P , tValueRequestId , T("null") )
@@ -817,6 +840,8 @@ TODO
             //********  SUBSCRIPTION DELETED  *************************************************************************************************************************
             //********                        *************************************************************************************************************************
             //*********************************************************************************************************************************************************
+
+            etRockP.traceF( tin0P , T("writeSoulFileF / c") ) ;
         {
         if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeSubDeleted ) )                                                      // IF NOTICE TYPE IS "SUB DELETED"
 
@@ -829,6 +854,8 @@ TODO
         TN( tValueStripeNoticeTypeSubCreated        , "customer.subscription.created" ) ;
         TN( tValueStripeNoticeTypeSubUpdated        , "customer.subscription.updated" ) ;
         TN( tValueStripeNoticeTypeSubDeleted        , "customer.subscription.deleted" ) ;
+
+        etRockP.traceF( tin0P , T("writeSoulFileF / d") ) ;
 
         //*********************************************************************************************************************************************************
         //********                                    *************************************************************************************************************
@@ -892,6 +919,8 @@ TODO
         TN( tValueStatus           , "" ) ;
         TN( tValueStripeNoticeType , "" ) ;
 
+        etRockP.traceF( tin0P , T("writeSoulFileF / e") ) ;
+
         //*********************************************************************************************************************************************************
         //********                                    *************************************************************************************************************
         //********  GET THE STRIPE EVENT NOTICE TYPE  *************************************************************************************************************
@@ -918,6 +947,8 @@ TODO
         //********  GET ALL PATH : VALUE PAIRS FROM JSON INPUT  ***************************************************************************************************
         //********                                              ***************************************************************************************************
         //*********************************************************************************************************************************************************
+
+        etRockP.traceF( tin0P , T("writeSoulFileF / f") ) ;
 
         _IO_
     {
