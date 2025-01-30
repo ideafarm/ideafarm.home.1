@@ -1,6 +1,4 @@
 
-#define ifcIDaDAM_ADMINISTRATOR                                        0x51000892
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -11880,6 +11878,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_GORILLAwEBHOOKS                                      0x51000889
 #define ifcIDaDAM_RDPiNTRUSIONdETECTOR                                 0x5100088d
 #define ifcIDaDAM_WEBhOOKnOTICEfILER                                   0x5100088f
+#define ifcIDaDAM_ADMINISTRATOR                                        0x51000892
 #define ifcIDaDAM_STARTER1                                             0x51001001
 #define ifcIDaDAM_STARTER2                                             0x51001002
 #define ifcIDaDAM_STARTER3                                             0x51001003
