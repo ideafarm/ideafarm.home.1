@@ -71,7 +71,10 @@
         if( POOP ) return 0 ;
         __( !postDirP[ 2 ] ) ;
         if( POOP ) return 0 ;
-        __( postDirP[ 1 ] - ':' ) ;
+        }
+            __( postLikeP[ 1 ] - ':' ) ;
+        {
+        if( postLikeP[ 1 ] != '\\' )            //20190826@0902: ACCOMMODATE NETBIOS FILE NAMES OF THE FORM "\\netbiosname\disk\path\short"
         if( POOP ) return 0 ;
         __( !postDirP[ 0 ] ) ;
         if( POOP ) return 0 ;
