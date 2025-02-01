@@ -177,7 +177,7 @@ DONE( tmWorkF )
                                                 {
                                                 if( POOP )
                                                 //U::((tin1S&)tin0P).pEtScratch->osThreadF( TaRG3fLAGScBtLS( tmExecutiveHealYearF , flTHREADlAUNCH_NOiNoUTfRAMEsUPPORT , CBtLSmINIMUM ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzlArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzlArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&swIdPhaseDoneAOKLath , (countT)&cPathsToYearHealing , idPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk , (countT)&cNewChunks ) ;
-                                                     ((tin1S&)tin0P).pEtScratch->osThreadF( TaRG2cBsTACK(    tmExecutiveHealYearF , CBsTACKmIN << 1                                   ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzlArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzlArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&swIdPhaseDoneAOKLath , (countT)&cPathsToYearHealing , idPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk , (countT)&cNewChunks ) ;
+                                                     ((tin1S&)tin0P).pEtScratch->osThreadF( TaRG2cBsTACK(    tmExecutiveHealYearF , CBsTACKmIN << 2                                   ) , (countT)&cPause , (countT)&funJobHealFile , (countT)&stJobCompare , (countT)&funJobFileInfo , (countT)&cYearsHealing , flagsMode , (countT)&cExecutiveHealYear , (countT)&cExecutiveHealYearPaused , (countT)&tUnique , (countT)psttYear , (countT)&psttzlArchive , (countT)&swsPathToArchivesByArchiveName , (countT)&bAbort , (countT)&psttzlArchiveSlashYear , (countT)&swJotSortedShortByArchiveYear , (countT)&swIdPhaseDoneAOKLath , (countT)&cPathsToYearHealing , idPhase , (countT)&grabLathFileHealedFiles , (countT)&grabDisk , (countT)&cNewChunks ) ;
                                                 SCOOPS
                                                 _IO_
                                             {
@@ -1452,12 +1452,17 @@ DONE( tmExecutiveHealYearF )
                                 //if( tShortToTest.csF( tin0P ) ) break ;
 
                                 }
-                                    if( !( ++ cNames % ( TUCK << 0 ) ) ) etThread.traceF( tin0P , T("wrote to unsorted [archive,year,idName,idJot,tShort]:    ")+tArchive+tb4+tYear+tb4+TF2(cNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
-                                    countT idJot = jotShortFileNames.writeF( tin0P , (byteT*)&c4CbUsed , sizeof c4CbUsed , tShort , tShort.csF( tin0P ) + 1 ) ;
+                                    }
+                                        if( !( ++ cNames % ( TUCK << 0 ) ) ) etThread.traceF( tin0P , T("wrote to unsorted [archive,year,idName,idJot,tShort]:    ")+tArchive+tb4+tYear+tb4+TF2(cNames,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tShort ) ;
+                                        countT idJot = jotShortFileNames.writeF( tin0P , (byteT*)&c4CbUsed , sizeof c4CbUsed , tShort , tShort.csF( tin0P ) + 1 ) ;
+                                    {
+                                    if( !bIgnore )
+
                                     etThread.delF( tin0P , ppsttShort[ offhMin ] ) ;
-                                    etThread.traceF( tin0P , T("jotting [c4cbUsed,tShort]:    ")+TT(pczCbUsed[0],pczCbUsed[1])+tb4+tShort ) ;
+                                    etThread.traceF( tin0P , T(bIgnore?"ignoring [c4cbUsed,tShort]:    ":"jotting [c4cbUsed,tShort]:    ")+TT(pczCbUsed[0],pczCbUsed[1])+tb4+tShort ) ;
                                     countT* pczCbUsed = (countT*)&c4CbUsed ;
 
+                                    const boolT bIgnore = 1 != etThread.strIdF( tin0P , T("!ideafarm.") , tShort ) ;        //20250201@1351: ADDED SO IGNORE FILES LIKE Thumbs.db
                                     TN( tShort , ppsttShort[ offhMin ] ) ;
                                     count04T c4CbUsed = pc4CbUsed[ offhMin ] ;
                                 {
