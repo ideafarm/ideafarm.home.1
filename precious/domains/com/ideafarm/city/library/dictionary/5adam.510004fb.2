@@ -1671,7 +1671,7 @@ TASK( tmVultureF )
 
 DONE( tmReportF )
 }
-    //etRock.traceF( tin0P , T("tmReportF 0/ ") ) ; //U:: TO FIND A BUG
+    //etRock.traceF( tin0P , T("0/ ") ) ; //U:: TO FIND A BUG
     }
 //#endif
         }
@@ -1680,7 +1680,7 @@ DONE( tmReportF )
             }
                 }
                     }
-                        //etRock.traceF( tin0P , T("tmReportF 1/ ") ) ; //U:: TO FIND A BUG
+                        //etRock.traceF( tin0P , T("1/ ") ) ; //U:: TO FIND A BUG
                         //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  0\r\n" ) ;
                         //CONoUTrAW5( "tmReportF idMemorySpace:" , idMemorySpaceP , " idMinute:" , idMinute , " written\r\n" ) ;
 
@@ -1689,7 +1689,7 @@ DONE( tmReportF )
                             //bkReport.writeF( tin0P , pbBookOut , cbBookOut , 0 , 0 , flBOOKScwRITE_HEADfINGER1 | flBOOKScwRITE_HEADiDfORMAT | flBOOKScwRITE_HEADcBdATA | flBOOKScwRITE_HEADfINGER2 | flBOOKScwRITE_TAILfINGER | flBOOKScwRITE_ALLOWoDDlENGTH ) ;
 
                             //LOGrAW3( "report written to disk []: " , idMemorySpaceP , "\r\n" ) ;
-                            //etRock.traceF( tin0P , T("tmReportF 2/ ") ) ; //U:: TO FIND A BUG
+                            //etRock.traceF( tin0P , T("2/ ") ) ; //U:: TO FIND A BUG
                             _IO_
                         {
                         if( !bQuitEatingP )
@@ -1731,7 +1731,7 @@ DONE( tmReportF )
                             //CONoUTrAW( tFile ) ;
                             //CONoUTrAW5( "tmReportF idMemorySpace:" , idMemorySpaceP , " idMinute:" , idMinute , " writing file \"" ) ;
                             //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  1\r\n" ) ;
-                            //etRock.traceF( tin0P , T("tmReportF 3/ ") ) ; //U:: TO FIND A BUG
+                            //etRock.traceF( tin0P , T("3/ ") ) ; //U:: TO FIND A BUG
 
                             }
                                 if( !fliPendingSnapShotRequestP ) *postSnapShotRequestP = 0 ;   //A:ASSUME: FLAGS ARE SET BEFORE SETTING STRING
@@ -1745,14 +1745,14 @@ DONE( tmReportF )
                                 _IO_
                             {
                             if( bSnapShot )
-                            //etRock.traceF( tin0P , T("tmReportF 4/ ") ) ; //U:: TO FIND A BUG
+                            //etRock.traceF( tin0P , T("4/ ") ) ; //U:: TO FIND A BUG
 
                             tFile += T(".rpt.idMemorySpace.")+TF3(idMemorySpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,3)+tDot+TF2(idMinute,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE)+T(".txt") ;
                             if( bEvent ) tFile += T(".event") ;
                             else                                                              tFile += T("minute") ;
                             if( bSnapShot || F(home.flagsUtility) & flHOMEsuTILITY_SNAPsHOT ) tFile += T(postSnapShotRequestP&&*postSnapShotRequestP?postSnapShotRequestP:"snapshot") ;  //U:: BUG: RACE: THIS CODE RACES WITH REQUESTOR SETTING STRING
                             tFile = T("///ideafarm/ephemeral/reports/")+tUser+tSlash+TF3(idRpt,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+tDot+textC(ifcIDtEXTgEN_TIMEnOWfOREIGN,tin0P,TAG(TAGiDnULL))+tDot ;
-                            //etRock.traceF( tin0P , T("tmReportF 5/ ") ) ; //U:: TO FIND A BUG
+                            //etRock.traceF( tin0P , T("5/ ") ) ; //U:: TO FIND A BUG
 
                             // BUG: RACE: WO WAY TO ELIMINATE THE RACE IS TO NAP HERE (IFF bSnapShot) UNTIL STRING IS NOT NULL ; THIS CHANGE WOULD REQUIRE ALL REQUESTERS TO SET THE STRING
 
@@ -1766,7 +1766,7 @@ DONE( tmReportF )
 
                             //20121126@1750: I VAGUELY RECALL THAT I FOUND THIS BUG; HAVEN'T SEEN IT LATELY
                             //U::BUG: boxPutF OCCASIONALLY FAILS: diskMakeDirF/lath prior slash is at position less than 4: "///d/"
-                            //etRock.traceF( tin0P , T("tmReportF 6/ ") ) ; //U:: TO FIND A BUG
+                            //etRock.traceF( tin0P , T("6/ ") ) ; //U:: TO FIND A BUG
                         {
                         if( !bQuitEatingP )
                         TN( tFile , "" ) ;
@@ -1788,7 +1788,7 @@ DONE( tmReportF )
                         //etRock.traceF( tin0P , T("report Title  [idMemorySpaceP,cFields]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)sRptTitle ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                         soulC sReports(   tin0P , TAG( TAGiDnULL ) , flSOUL_null , ostoFileReports , TICK ) ; //20200920@1726: INCREASED FROM ( TOCK << 4 )
-                        //etRock.traceF( tin0P , T("tmReportF 7/ ") ) ; //U:: TO FIND A BUG
+                        //etRock.traceF( tin0P , T("7/ ") ) ; //U:: TO FIND A BUG
 
                         OStEXTC(  ostoFileReports  , idMemorySpaceP , 0 ) ;
                         OStEXTAK( ostoFileReports  , ".soul.reports." ) ;
@@ -1833,7 +1833,7 @@ DONE( tmReportF )
 
                     TN( tcr  , "\r\n" ) ;
                     //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  2\r\n" ) ;
-                    //etRock.traceF( tin0P , T("tmReportF 8/ ") ) ; //U:: TO FIND A BUG
+                    //etRock.traceF( tin0P , T("8/ ") ) ; //U:: TO FIND A BUG
 
                     stPeriodDataP.ungrabF( tin0P ) ;
                     }
@@ -1887,13 +1887,13 @@ DONE( tmReportF )
 
                     stPeriodDataP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  4\r\n" ) ;
-                    //etRock.traceF( tin0P , T("tmReportF 9/ ") ) ; //U:: TO FIND A BUG
+                    //etRock.traceF( tin0P , T("9/ ") ) ; //U:: TO FIND A BUG
                     _IO_
                 {
                 if( !bQuitEatingP )
 
                 swTinCopy.freeAllF( tin0P ) ;
-                //etRock.traceF( tin0P , T("tmReportF a/ 0") ) ; //U:: TO FIND A BUG
+                //etRock.traceF( tin0P , T("a/ 0") ) ; //U:: TO FIND A BUG
                 }
                     PUSE( tin0P , pbBookOut ) ;
                     }
@@ -1904,7 +1904,7 @@ DONE( tmReportF )
                         {
                         if( pbBookOut + cbBookOut - pbc )
 
-                        //etRock.traceF( tin0P , T("tmReportF a/ 1") ) ; //U:: TO FIND A BUG
+                        //etRock.traceF( tin0P , T("a/ 1") ) ; //U:: TO FIND A BUG
                         }
                             }
                                 sRptTin << (strokeS*)( T("\r\n") ) ;
@@ -1972,7 +1972,7 @@ DONE( tmReportF )
                                 {
                                 //CS:CODEsYNC: PSEUDOdUPLICATE: 35001155 510004fb.2
 
-                                //etRock.traceF( tin0P , T("tmReportF a/ 2") ) ; //U:: TO FIND A BUG
+                                //etRock.traceF( tin0P , T("a/ 2") ) ; //U:: TO FIND A BUG
                                 sRptTin << (strokeS*)( T("\r\n") ) ;
                                 }
                                     sRptTin << (strokeS*)( T(ostoRpt) ) ;
@@ -2002,7 +2002,7 @@ DONE( tmReportF )
                                 if( (sCountT)idnf < 1 ) idnf = 1 ;
                                 countT idnf = ((tin123S&)tin0Copy).where.cInNest - OFFsLOTtINnESTmAX ;
                                 if( bDash ) sRptTin << (strokeS*)( T(DASH256 "\r\n") ) ;
-                                //etRock.traceF( tin0P , T("tmReportF a/ 3") ) ; //U:: TO FIND A BUG
+                                //etRock.traceF( tin0P , T("a/ 3") ) ; //U:: TO FIND A BUG
                     
                                 }
                                     PUSE( tin0P , pbCopy ) ;
@@ -2018,7 +2018,7 @@ DONE( tmReportF )
                                                 default :
                                                 }
                                                     break ;
-                                                    //etRock.traceF( tin0P , T("tmReportF a/ 4") ) ; //U:: TO FIND A BUG
+                                                    //etRock.traceF( tin0P , T("a/ 4") ) ; //U:: TO FIND A BUG
                                                     PUSE( tin0P , pbCopy ) ;
                                                     }
                                                         }
@@ -2037,13 +2037,13 @@ DONE( tmReportF )
                                                     if( pbCopy )
                                                     PUSE.newF( tin0P , LF , pbCopy , sizeof( grabotC ) ) ; ___( pbCopy ) ;
                                                     ZE( byteT* , pbCopy ) ;
-                                                    //etRock.traceF( tin0P , T("tmReportF a/ 5") ) ; //U:: TO FIND A BUG
+                                                    //etRock.traceF( tin0P , T("a/ 5") ) ; //U:: TO FIND A BUG
                                                     _IO_
                                                 {
                                                 case ifcIDtYPEdERIVEDbASEgRABc_grabotC :
                                                 }
                                                     break ;
-                                                    //etRock.traceF( tin0P , T("tmReportF a/ 6") ) ; //U:: TO FIND A BUG
+                                                    //etRock.traceF( tin0P , T("a/ 6") ) ; //U:: TO FIND A BUG
                                                     PUSE( tin0P , pbCopy ) ;
                                                     }
                                                         }
@@ -2062,43 +2062,43 @@ DONE( tmReportF )
                                                     if( pbCopy )
                                                     PUSE.newF( tin0P , LF , pbCopy , sizeof( grabitC ) ) ; ___( pbCopy ) ;
                                                     ZE( byteT* , pbCopy ) ;
-                                                    //etRock.traceF( tin0P , T("tmReportF a/ 7") ) ; //U:: TO FIND A BUG
+                                                    //etRock.traceF( tin0P , T("a/ 7") ) ; //U:: TO FIND A BUG
                                                     _IO_
                                                 {
                                                 case ifcIDtYPEdERIVEDbASEgRABc_grabitC :
                                                 }
                                                     break ;
-                                                    //etRock.traceF( tin0P , T("tmReportF a/ 8") ) ; //U:: TO FIND A BUG
+                                                    //etRock.traceF( tin0P , T("a/ 8") ) ; //U:: TO FIND A BUG
                                                     PUSE( tin0P , pbCopy ) ;
-                                                    //etRock.traceF( tin0P , T("tmReportF a/ 9 / 0") ) ; //U:: TO FIND A BUG
+                                                    //etRock.traceF( tin0P , T("a/ 9 / 0") ) ; //U:: TO FIND A BUG
                                                     }
-                                                        //etRock.traceF( tin0P , T("tmReportF a/ 9 / 1") ) ; //U:: TO FIND A BUG
+                                                        //etRock.traceF( tin0P , T("a/ 9 / 1") ) ; //U:: TO FIND A BUG
                                                         }
-                                                            //etRock.traceF( tin0P , T("tmReportF a/ 9 / 2") ) ; //U:: TO FIND A BUG
+                                                            //etRock.traceF( tin0P , T("a/ 9 / 2") ) ; //U:: TO FIND A BUG
                                                             }
-                                                                //etRock.traceF( tin0P , T("tmReportF a/ 9 / 3") ) ; //U:: TO FIND A BUG
+                                                                //etRock.traceF( tin0P , T("a/ 9 / 3") ) ; //U:: TO FIND A BUG
                                                                 }
-                                                                    //etRock.traceF( tin0P , T("tmReportF a/ 9 / 4") ) ; //U:: TO FIND A BUG
+                                                                    //etRock.traceF( tin0P , T("a/ 9 / 4") ) ; //U:: TO FIND A BUG
                                                                     sRptTin << (strokeS*)( T("this is grabbed by a thread that is gone [osTid]: ")+TF1(grab.osTidF())+T("\r\n") ) ;
-                                                                    //etRock.traceF( tin0P , T("tmReportF a/ 9 / 5") ) ; //U:: TO FIND A BUG
+                                                                    //etRock.traceF( tin0P , T("a/ 9 / 5") ) ; //U:: TO FIND A BUG
                                                                 {
                                                                 else
                                                                 }
-                                                                    //etRock.traceF( tin0P , T("tmReportF a/ 9 / 6") ) ; //U:: TO FIND A BUG
+                                                                    //etRock.traceF( tin0P , T("a/ 9 / 6") ) ; //U:: TO FIND A BUG
                                                                     sRptTin << (strokeS*)( T("this is grabbed by osTid:")+TF1(grab.osTidF())+T(" idAdamRoot:")+TF1(idAdamRoot)+T(" idAdam:")+TF1(idAdam)+T(" idThread:")+TF1(((tin123S&)tin0Copy).glass.idThread)+T(" postThreadName:\"")+TF1(((tin123S&)tin0Copy).postThreadName)+T("\"\r\n") ) ;
-                                                                    //etRock.traceF( tin0P , T("tmReportF a/ 9 / 7") ) ; //U:: TO FIND A BUG
+                                                                    //etRock.traceF( tin0P , T("a/ 9 / 7") ) ; //U:: TO FIND A BUG
 
                                                                     }
-                                                                        //etRock.traceF( tin0P , T("tmReportF a/ 9 / 8") ) ; //U:: TO FIND A BUG
+                                                                        //etRock.traceF( tin0P , T("a/ 9 / 8") ) ; //U:: TO FIND A BUG
                                                                         PUSE( tin0P , pbCopy1 ) ;
-                                                                        //etRock.traceF( tin0P , T("tmReportF a/ 9 / 9") ) ; //U:: TO FIND A BUG
+                                                                        //etRock.traceF( tin0P , T("a/ 9 / 9") ) ; //U:: TO FIND A BUG
                                                                         }
-                                                                            //etRock.traceF( tin0P , T("tmReportF a/ 9 / a") ) ; //U:: TO FIND A BUG
+                                                                            //etRock.traceF( tin0P , T("a/ 9 / a") ) ; //U:: TO FIND A BUG
                                                                             }
-                                                                                //etRock.traceF( tin0P , T("tmReportF a/ 9 / b") ) ; //U:: TO FIND A BUG
+                                                                                //etRock.traceF( tin0P , T("a/ 9 / b") ) ; //U:: TO FIND A BUG
                                                                                 PUSE( tin0P , pbCopy2 ) ;
                                                                                 }
-                                                                                    //etRock.traceF( tin0P , T("tmReportF a/ 9 / c") ) ; //U:: TO FIND A BUG
+                                                                                    //etRock.traceF( tin0P , T("a/ 9 / c") ) ; //U:: TO FIND A BUG
                                                                                     }
                                                                                         idAdamRoot = pg1.idAdamRoot ;
                                                                                         processGlobal1S& pg1 = *(processGlobal1S*)pbCopy2 ;
@@ -2109,12 +2109,12 @@ DONE( tmReportF )
                                                                                         _IO_
                                                                                     {
                                                                                     ZE( boolT , bOk ) ;
-                                                                                    //etRock.traceF( tin0P , T("tmReportF a/ 9 / d") ) ; //U:: TO FIND A BUG
+                                                                                    //etRock.traceF( tin0P , T("a/ 9 / d") ) ; //U:: TO FIND A BUG
                                                                                     //etThread.traceF( tin0P , T("using pool drop") ) ;
                                                                                     _IO_
                                                                                 {
                                                                                 if( pbCopy2 )
-                                                                                //etRock.traceF( tin0P , T("tmReportF a/ 9 / e") ) ; //U:: TO FIND A BUG
+                                                                                //etRock.traceF( tin0P , T("a/ 9 / e") ) ; //U:: TO FIND A BUG
 
                                                                                 __( bFail ) ;
                                                                                 }
@@ -2137,7 +2137,7 @@ DONE( tmReportF )
                         
                                                                                 idAdam = ag1.idAdam ;
                                                                                 adamGlobal1S& ag1 = *(adamGlobal1S*)pbCopy1 ;
-                                                                                //etRock.traceF( tin0P , T("tmReportF a/ 9 / f") ) ; //U:: TO FIND A BUG
+                                                                                //etRock.traceF( tin0P , T("a/ 9 / f") ) ; //U:: TO FIND A BUG
                                                                                 _IO_
                                                                             {
                                                                             if( bOk )
@@ -2146,14 +2146,14 @@ DONE( tmReportF )
                                                                                 _IO_
                                                                             {
                                                                             ZE( boolT , bOk ) ;
-                                                                            //etRock.traceF( tin0P , T("tmReportF a/ 9 / g") ) ; //U:: TO FIND A BUG
+                                                                            //etRock.traceF( tin0P , T("a/ 9 / g") ) ; //U:: TO FIND A BUG
                                                                             _IO_
                                                                         {
                                                                         if( pbCopy1 )
-                                                                        //etRock.traceF( tin0P , T("tmReportF a/ 9 / h") ) ; //U:: TO FIND A BUG
+                                                                        //etRock.traceF( tin0P , T("a/ 9 / h") ) ; //U:: TO FIND A BUG
                                                                         PUSE.newF( tin0P , LF , pbCopy1 , sizeof( adamGlobal1S ) ) ; ___( pbCopy1 ) ;
                                                                         ZE( byteT* , pbCopy1 ) ;
-                                                                        //etRock.traceF( tin0P , T("tmReportF a/ 9 / i") ) ; //U:: TO FIND A BUG
+                                                                        //etRock.traceF( tin0P , T("a/ 9 / i") ) ; //U:: TO FIND A BUG
                                                                         _IO_
                                                                     {
                                                                     ZE( countT , idAdam ) ;
@@ -2163,17 +2163,17 @@ DONE( tmReportF )
                                                                     copyHeadS& head     = *(copyHeadS*)pbFrom ;
                                                                     byteT* pbFrom = (byteT*)&(countT&)swTinCopy ;
                                                                     cLeverOsTid = grab.osTidF() ;
-                                                                    //etRock.traceF( tin0P , T("tmReportF a/ 9 / j") ) ; //U:: TO FIND A BUG
+                                                                    //etRock.traceF( tin0P , T("a/ 9 / j") ) ; //U:: TO FIND A BUG
                                                                     _IO_
                                                                 {
                                                                 if( swTinCopy.idSlotOfLeverF( tin0P , grab.osTidF() ) )
-                                                                //etRock.traceF( tin0P , T("tmReportF a/ 9 / k") ) ; //U:: TO FIND A BUG
+                                                                //etRock.traceF( tin0P , T("a/ 9 / k") ) ; //U:: TO FIND A BUG
                                                                 _IO_
                                                             {
                                                             if( grab.cGrabbedF() )
                     
                                                             grabC& grab = *(grabC*)pbCopy ;
-                                                            //etRock.traceF( tin0P , T("tmReportF a/ 9 / l") ) ; //U:: TO FIND A BUG
+                                                            //etRock.traceF( tin0P , T("a/ 9 / l") ) ; //U:: TO FIND A BUG
                                                             _IO_
                                                         {
                                                         if( bOk )
@@ -2182,14 +2182,14 @@ DONE( tmReportF )
                                                             _IO_
                                                         {
                                                         ZE( boolT , bOk ) ;
-                                                        //etRock.traceF( tin0P , T("tmReportF a/ 9 / m") ) ; //U:: TO FIND A BUG
+                                                        //etRock.traceF( tin0P , T("a/ 9 / m") ) ; //U:: TO FIND A BUG
                                                         _IO_
                                                     {
                                                     if( pbCopy )
-                                                    //etRock.traceF( tin0P , T("tmReportF a/ 9 / n") ) ; //U:: TO FIND A BUG
+                                                    //etRock.traceF( tin0P , T("a/ 9 / n") ) ; //U:: TO FIND A BUG
                                                     PUSE.newF( tin0P , LF , pbCopy , sizeof( grabC ) ) ; ___( pbCopy ) ;
                                                     ZE( byteT* , pbCopy ) ;
-                                                    //etRock.traceF( tin0P , T("tmReportF a/ 9 / o") ) ; //U:: TO FIND A BUG
+                                                    //etRock.traceF( tin0P , T("a/ 9 / o") ) ; //U:: TO FIND A BUG
                                                     _IO_
                                                 {
                                                 case ifcIDtYPEdERIVEDbASEgRABc_grabC :
@@ -2198,7 +2198,7 @@ DONE( tmReportF )
                                             _IO_
                                         {
                                         if( pbg && !bQuitEatingP )
-                                        //etRock.traceF( tin0P , T("tmReportF a/ a") ) ; //U:: TO FIND A BUG
+                                        //etRock.traceF( tin0P , T("a/ a") ) ; //U:: TO FIND A BUG
             
                                         }
                                             if( !bOk || getNegAM( recheck ) != FINGERnEG_GRABc ) pbg = 0 ;
@@ -2219,7 +2219,7 @@ DONE( tmReportF )
                                         ZE( boolT , bOk ) ;
             
                                         baseGrabC* pbg = (baseGrabC*)pbCopy ;
-                                        //etRock.traceF( tin0P , T("tmReportF a/ b") ) ; //U:: TO FIND A BUG
+                                        //etRock.traceF( tin0P , T("a/ b") ) ; //U:: TO FIND A BUG
                                         _IO_
                                     {
                                     if( pbCopy && !bQuitEatingP )
@@ -2229,11 +2229,11 @@ DONE( tmReportF )
                                     bDash |= reportGrabF( tin0P , sRptTin , T("grabbing:") , pcPanLifi ) ;
                                     //countT pcPanLifi[] = { 0 , ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 1 ] , ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 2 ] } ; // THE PAN IS NOT USED BECAUSE HERE IT IS ALWAYS baseGrabC*, UNLIKE WHAT IS DONE IN THE GRABBED ARRAY
                                     countT pcPanLifi[] = { ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 0 ] , ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 1 ] , ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 2 ] } ;
-                                    //etRock.traceF( tin0P , T("tmReportF a/ c") ) ; //U:: TO FIND A BUG
+                                    //etRock.traceF( tin0P , T("a/ c") ) ; //U:: TO FIND A BUG
                                     _IO_
                                 {
                                 if( ((tin123S&)tin0Copy).glass.pPanLifiGrabbing[ 0 ] && !bQuitEatingP )
-                                //etRock.traceF( tin0P , T("tmReportF a/ d") ) ; //U:: TO FIND A BUG
+                                //etRock.traceF( tin0P , T("a/ d") ) ; //U:: TO FIND A BUG
             
                                 }
                                     }
@@ -2287,10 +2287,11 @@ DONE( tmReportF )
                                 thirdC::c_memcpyIF( tin0P , pbc , (byteT*)&((tin123S&)tin0Copy).glass , sizeof( glassS ) ) ; pbc += sizeof( glassS ) ; /*B*/
                                 costaVarying += 1 + tc4.csF( tin0P ) ;
                                 TN( tc4 , "" ) ; tc4 = T("[")+T((countT*)((tin123S&)tin0Copy).c4Tell)+T("]") ;
-                                //etRock.traceF( tin0P , T("tmReportF a/ e") ) ; //U:: TO FIND A BUG
+                                //etRock.traceF( tin0P , T("a/ e") ) ; //U:: TO FIND A BUG
                                 _IO_
-                            {                                                                                                                                                        //U:: SUPPORT OPTIONAL ENABLING OF ALL THREAD CHATTER
-                            if( bEventOnThisThread && /*!head.cStepsNew &&*/ !( F(((tin123S&)tin0Copy).flagsThreadMode2) & flTHREADmODE2_MONITORdOnOTrEPORToNmE ) && !bQuitEatingP ) //20241218@1645: TO REDUCE CPU AND WALL CLOCK CONSUMPTION, REPORT DETAIL IFF (IF AND ONLY IFF) bEventOnThisThread 
+                            {                                                                                                                                                           //U:: SUPPORT OPTIONAL ENABLING OF ALL THREAD CHATTER
+                            if( !( F(((tin123S&)tin0Copy).flagsThreadMode2) & flTHREADmODE2_MONITORdOnOTrEPORToNmE ) && !bQuitEatingP )                                                 //20250202@1019: FULLY ENABLE THREAD REPORTING, FOR TUNING
+                            //if( bEventOnThisThread && /*!head.cStepsNew &&*/ !( F(((tin123S&)tin0Copy).flagsThreadMode2) & flTHREADmODE2_MONITORdOnOTrEPORToNmE ) && !bQuitEatingP )  //20241218@1645: TO REDUCE CPU AND WALL CLOCK CONSUMPTION, REPORT DETAIL IFF (IF AND ONLY IFF) bEventOnThisThread 
 
                             }
                                 CONoUTrAW( os ) ;
@@ -2311,7 +2312,7 @@ DONE( tmReportF )
                             copyHeadS& head     = *(copyHeadS*)pbFrom ;
                             byteT* pbFrom = (byteT*)&(countT&)swTinCopy ;
                             cLeverOsTid = swTinCopy.leverF( tin0P , idf ) ;
-                            //etRock.traceF( tin0P , T("tmReportF a/ f") ) ; //U:: TO FIND A BUG
+                            //etRock.traceF( tin0P , T("a/ f") ) ; //U:: TO FIND A BUG
                             _IO_
                         {
                         for( countT idf = 1 ; idf <= cFlavors && !bQuitEatingP ; idf ++ )
@@ -2322,7 +2323,7 @@ DONE( tmReportF )
                         *(countT*)pbc =  timeR1                                                                                                                             ; pbc += sizeof( countT ) ;     /*A*/
                         *(countT*)pbc = 1  /*IDfORMAT*/                                                                                                                     ; pbc += sizeof( countT ) ;     /*A*/
                         putNegAM( *(countT*)pbc , FINGERnEG_BKmONITOR )                                                                                                     ; pbc += sizeof( countT ) ;     /*A*/
-                        //etRock.traceF( tin0P , T("tmReportF a/ g") ) ; //U:: TO FIND A BUG
+                        //etRock.traceF( tin0P , T("a/ g") ) ; //U:: TO FIND A BUG
                         _IO_
                     {
                     if( pbc && !bQuitEatingP )
@@ -2330,7 +2331,7 @@ DONE( tmReportF )
                     byteT* pbc = pbBookOut ;
                     PUSE.newF( tin0P , LF , pbBookOut , cbBookOut ) ; ___( pbBookOut ) ;
                     ZE( byteT* , pbBookOut ) ;
-                    //etRock.traceF( tin0P , T("tmReportF a/ h") ) ; //U:: TO FIND A BUG
+                    //etRock.traceF( tin0P , T("a/ h") ) ; //U:: TO FIND A BUG
 
                     }
                         countT foo = 2 ;
@@ -2344,7 +2345,7 @@ DONE( tmReportF )
                         4 * sizeof( countT )                    /*A*/
 
                     cbBookOut =
-                    //etRock.traceF( tin0P , T("tmReportF a/ i") ) ; //U:: TO FIND A BUG
+                    //etRock.traceF( tin0P , T("a/ i") ) ; //U:: TO FIND A BUG
 
                     }
                         }
@@ -2377,7 +2378,7 @@ DONE( tmReportF )
                     //etThread.traceF( tin0P , T("swTinCopy [idMemorySpaceP,cFlavors]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cFlavors,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT cFlavors = swTinCopy.cFlavorsF( tin0P ) ;
                     ZE( countT , costaVarying ) ;
-                    //etRock.traceF( tin0P , T("tmReportF a/ j") ) ; //U:: TO FIND A BUG
+                    //etRock.traceF( tin0P , T("a/ j") ) ; //U:: TO FIND A BUG
                     _IO_
                 {
                 if( !bQuitEatingP )
@@ -2385,7 +2386,7 @@ DONE( tmReportF )
                 ZE( byteT* , pbBookOut ) ;
                 ZE( boolT , bEvent ) ;
                 //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  5\r\n" ) ;
-                //etRock.traceF( tin0P , T("tmReportF a/ k") ) ; //U:: TO FIND A BUG
+                //etRock.traceF( tin0P , T("a/ k") ) ; //U:: TO FIND A BUG
 
                 memorySpaceP.grab.ungrabF( tin0P ) ;
 
@@ -2514,7 +2515,7 @@ DONE( tmReportF )
                 {
                 if( !bQuitEatingP )
                 //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  6\r\n" ) ;
-                //etRock.traceF( tin0P , T("tmReportF b/ ") ) ; //U:: TO FIND A BUG
+                //etRock.traceF( tin0P , T("b/ ") ) ; //U:: TO FIND A BUG
 
                 }
                     }
@@ -2559,7 +2560,7 @@ DONE( tmReportF )
                 {
                 if( !bQuitEatingP )
                 //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  7\r\n" ) ;
-                //etRock.traceF( tin0P , T("tmReportF c/ ") ) ; //U:: TO FIND A BUG
+                //etRock.traceF( tin0P , T("c/ ") ) ; //U:: TO FIND A BUG
 
                 }
                     }
@@ -2673,7 +2674,7 @@ DONE( tmReportF )
                 {
                 if( !bQuitEatingP )
                 //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  8\r\n" ) ;
-                //etRock.traceF( tin0P , T("tmReportF d/ ") ) ; //U:: TO FIND A BUG
+                //etRock.traceF( tin0P , T("d/ ") ) ; //U:: TO FIND A BUG
 
                 memorySpaceP.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             
@@ -2826,12 +2827,12 @@ DONE( tmReportF )
 
         //LOGrAW3( "tmReportF 1 [flHOMEsuTILITY_SNAPsHOT]: " , F(home.flagsUtility) & flHOMEsuTILITY_SNAPsHOT , "\r\n" ) ;
         //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  a\r\n" ) ;
-        //etRock.traceF( tin0P , T("tmReportF e/ [idMemorySpaceP]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etRock.traceF( tin0P , T("e/ [idMemorySpaceP]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         _IO_
     {
     while( !bQuitEatingP )
     THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING ) //bCompileReportP ADDED 20180108@1021
-    //etRock.traceF( tin0P , T("tmReportF f/ ") ) ; //U:: TO FIND A BUG
+    //etRock.traceF( tin0P , T("f/ ") ) ; //U:: TO FIND A BUG
     ZE( countT , idFoTock ) ; // THIS IS USED ONLY IF flHOMEsuTILITY_SNAPsHOT
     countT idMinute = idMinuteZeP ;
     ZE( countT , idCycle ) ;
@@ -2859,13 +2860,13 @@ DONE( tmReportF )
 
     homeS& home = homeS::homeIF() ;
     //CONoUTrAW3( "tmReportF " , idMemorySpaceP , ":  b\r\n" ) ;
-    //etRock.traceF( tin0P , T("tmReportF g/ ") ) ; //U:: TO FIND A BUG
+    //etRock.traceF( tin0P , T("g/ ") ) ; //U:: TO FIND A BUG
 
-    //etRock.traceF( tin0P , T("tmReportF h/ ") ) ; //U:: TO FIND A BUG
+    //etRock.traceF( tin0P , T("h/ ") ) ; //U:: TO FIND A BUG
     etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     //}
-    //    etRock.traceF( tin0P , T("tmReportF / i just called TRACEmYtHREAD") ) ; //U:: TO FIND A BUG
+    //    etRock.traceF( tin0P , T("/ i just called TRACEmYtHREAD") ) ; //U:: TO FIND A BUG
     //    TRACEmYtHREAD ;
     //{
     //if( idMemorySpaceP == 2 )
