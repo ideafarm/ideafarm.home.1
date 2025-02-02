@@ -19041,7 +19041,7 @@ after i return, that countT object will contain 1
 // 001                APPLICATIONS CODE                                : ALL FUNCTIONALITY GOES HERE UNLESS IT MUST GO ELSEWHERE
 // 101-fff            RESERVED FOR FUTURE APPLICATION USE
 
-#define ifcIDmEMORYsPACE_min          0x001
+#define ifcIDmEMORYsPACE_min          0x002
 #define ifcIDmEMORYsPACE_UNIVERSE     0x001
 #define ifcIDmEMORYsPACE_CLOAK        0x002
 #define ifcIDmEMORYsPACE_GLASS1       0x003
