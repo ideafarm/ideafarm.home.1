@@ -41360,8 +41360,6 @@ base class to make a derived class of objects easily contained by a stackC objec
     static osTextT                  postIdNumaNode[ 0x9 ] ; //A: ASSUME: sizeof( countT ) == 4
     static osTextT                  postIdAdamRoot[ 0x9 ] ; //A: ASSUME: sizeof( countT ) == 4
     static osTextT                  postIdHome[ 0x9 ] ; //A: ASSUME: sizeof( countT ) == 4
-    static osTextT                  postIdDesireProcess[ 0x9 ] ; //A: ASSUME: sizeof( countT ) == 4
-    static osTextT                  postIdDesireThread[ 0x9 ] ; //A: ASSUME: sizeof( countT ) == 4
     static byteT                    pbnuTuck[ TUCK ] ;
 
     //ALPHABETICAL (TYPE INSTANCES ONLY; NO CLASS INSTANCES)
@@ -41393,8 +41391,6 @@ base class to make a derived class of objects easily contained by a stackC objec
     flagsT                          flDt        ;
     countT                          idExceptionEvent ;
     const countT                    idHome      ;
-    const countT                    idDesireProcess ;
-    const countT                    idDesireThread ;
     const countT                    idNumaNode  ;
     countT                          idProcessOld ;
     countT                          idPhaseProcess ;
@@ -41824,6 +41820,7 @@ base class to make a derived class of objects easily contained by a stackC objec
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.doC : 1snip.15000115.doc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.processGlobal4S : 1snip.150000e2.processglobal4s BEGIN
 
+
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -41910,11 +41907,6 @@ base class to make a derived class of objects easily contained by a stackC objec
     cryC                                     cry306 ;
     sCountFromPostC         /*P3*/ /*CT:50*/ scfp_idAdam ;
     cryC                                     cry307 ;
-    parameterC              /*P3*/ /*CT:20*/ pPostIdDesireProcess ;
-    sCountFromPostC         /*P3*/ /*CT:30*/ scfp_idDesireProcess ;
-    parameterC              /*P3*/ /*CT:20*/ pPostIdDesireThread ;
-    sCountFromPostC         /*P3*/ /*CT:30*/ scfp_idDesireThread ;
-    doC                                      do1 ;
     testWaterC              /*P3*/ /*CT:60*/ testWater ;
     cryC                                     cry308 ;
     gloSecurityGC           /*P3*/ /*CT:70*/ gloSecurity ;
@@ -41923,7 +41915,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     heapC                                    heap ;                     // SIMPLE HEAP USED WHEN poolC CANNOT BE USED (E.G. TO AVOID NONMONOTONIC GRABBING)
     bookC                                    bkTelemetrySysEarlyLate ;
     bookC                                    bkTelemetryAppEarlyLate ;
-    doC                                      do2 ;
+    doC                                      do1 ;
     cryC                                     cry30a ;
     linkedC                                  _handleC_linked_sm ;
     cryC                                     cry30b ;
@@ -41934,11 +41926,11 @@ base class to make a derived class of objects easily contained by a stackC objec
     cryC                                     cry30e ;
     napkinC                 /*P3*/ /*CT:71*/ napHome ;
     cryC                                     cry30f ;
-    doC                                      do3 ;
+    doC                                      do2 ;
     cryC                                     cry130f ;
     napkinC                 /*P3*/ /*CT:a1*/ _grabC_napGrabWant ; //CODEsYNC: 0a00001 0a00001 0a00001 0a00001
     cryC                                     cry230f ;
-    doC                                      do4 ;
+    doC                                      do3 ;
     cryC                                     cry330f ;
     booksC                                   bksTelemetrySys ;
     cryC                                     cry430f ;
