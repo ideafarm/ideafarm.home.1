@@ -1,0 +1,368 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tin0P ) ;
+
+etThread.traceF( tin0P , T("ok") ) ;
+
+}
+    break ; //U:: TO FIND A BUG
+
+    cReceivedFileWindows = 0 ;
+    etThread.traceF( tin0P , T("received [cReceivedFileWindows]:    ")+TF2(cReceivedFileWindows,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+    ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
+
+    etThread.traceF( tin0P , T("sent [cGram,time,timePerPacket]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TT(timeE1,timeE2)+tb4+TF2(timePerPacket,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4 ) ;
+
+    countT timePerPacket = timeE1 / idGram ;
+
+    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;
+    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
+    ZE( sCountT , timeE2 ) ;
+    ZE( countT  , timeE1 ) ;
+
+    }
+        }
+            }
+                }
+                    //Sleep( 100 ) ;            // TO SLOW ME DOWN
+
+                    cbDone += cbNow ;
+                    pbc    += cbNow ;
+
+                    cRemainFileThrower -- ;
+                    cThrown ++ ;
+
+                    sThrow.writeF( tin0P , idPortCatch , nicNameC() , pbGram , sizeof( gramHeadFileWindowS ) + cbNow ) ;
+                    //CONoUTrAW( "!" ) ;
+                    etThread.memCopyF( tin0P , pbPayload , pbc , cbNow ) ;
+                    head.secret = secretToUse ;
+                    head.len    = cbNow  ;
+                    head.off    = cbDone ;
+                    head.idCmd  = ifcIDcMDgRAM_PUTfILEwINDOW ;
+
+
+                    }
+                       // etThread.traceF( tin0P , T("throwing [idGram]:    ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    {
+                    //if( idGram == 0x10 )
+
+                    idGram ++ ;
+
+                    cbDo -= cbNow ;
+
+                    ;
+                        : CBpAYLOAD
+                        ? cbDo
+                    countT cbNow = cbDo < CBpAYLOAD
+
+                    }
+                        Sleep( 100 ) ;
+
+                        sThrow.writeF( tin0P , idPortCatch , nicNameC() , (byteT*)&gram , sizeof gram ) ;
+                        gram.idCmd = ifcIDcMDgRAM_DISPENSEsECRET ;
+                        gramHeadSecretS gram ;
+                    {
+                    while( !secretToUse || !cRemainFileThrower )
+                {
+                while( cbDo )
+                countT cbDo = cbw ;
+                byteT* pbc = pbw ;
+
+                //etThread.boxPutF( tin0P , tFileIn+T(".window.")+tIdWindow , pbw , cbw ) ;
+                //etThread.traceF( tin0P , T("[tIdWindow,cb]:    ")+tIdWindow+tb4+TF2(cbw,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                TN( tIdWindow , "" ) ; tIdWindow = TF3(++idWindow,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
+            {
+            else
+            if( !pbw || !cbw ) break ;
+
+            fwsIn.getF( tin0P , pbw , cbw ) ;
+            ZE( countT , cbw ) ;
+            ZE( byteT* , pbw ) ;
+        {
+        while( !ether )
+        etThread.traceF( tin0P , T("sending begun") ) ;
+        ZE( count04T , cbDone ) ;
+        byteT*     pbPayload = pbGram + sizeof( gramHeadFileWindowS ) ;
+        gramHeadFileWindowS& head      = *(gramHeadFileWindowS*)pbGram ;
+        byteT      pbGram[ sizeof( gramHeadFileWindowS ) + CBpAYLOAD ] ;
+        ZE( countT , idWindow ) ;
+
+        fileWindowsC fwsIn( tin0P , etThread , tFileIn ) ;
+
+        sThrow.bindF( tin0P ) ;
+        socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+    {
+    ZE( countT , idGram ) ;
+
+    etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
+    ZE( sCountT , timeA2 ) ;
+    ZE( countT  , timeA1 ) ;
+{
+while( !ether )
+TN( tFileIn     , "///d/tmp/foo.ttt" ) ;
+
+etThread.osThreadF( TaRG1( tmObeyF ) , (countT)&secretToUse , (countT)&cRemainFileThrower ) ;
+
+}
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+{
+while( !idPortCatch )
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+TN( tb4 , "    " ) ;
+
+etThread.osThreadF( TaRG1( tmCatchF ) ) ;
+ZE( countT , cRemainFileThrower ) ;
+ZE( countT , secretToUse ) ;
+
+TODO
+
+DONE( tmCatchF )
+}
+    sCatch.readF( tin0P , (const countT&)ether , pbFastBuffer , sizeof pbFastBuffer ) ;
+
+    idPortCatch = sCatch.bindF( tin0P ) ;
+    socketC sCatch( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+{
+if( pTaskP )
+TASK( tmCatchF )
+
+DONE( tmObeyF )
+}
+    }
+        Sleep( 0 ) ;
+
+        }
+            }
+                }
+                    break ;
+
+                    }
+                        //etThread.traceF( tin0P , T("backlog [thrown,processed,backlog]:    ")+TF2(cThrown,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cBacklog,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        //countT cBacklog = cThrown - cProcessed ;
+                        //cProcessed ++ ;
+
+                        }
+                            if( pbw && cbw == head.len ) etThread.memCopyF( tin0P , pbw , pbPayload , head.len ) ;
+
+                            fwsOut.getF( tin0P , pbw , cbw , head.len , head.off ) ;
+                            ZE( countT , cbw ) ;
+                            ZE( byteT* , pbw ) ;
+                        {
+
+                        // etThread.traceF( tin0P , T("received [cmd,off,len]:    ")+TF2(head.idCmd,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2((countT)head.off,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(head.len,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                        cReceivedFileWindows ++ ;
+
+                        byteT* pbPayload = pbData + sizeof( gramHeadFileWindowS ) ;
+                        etThread.traceF( tin0P , T("file window accepted") ) ;
+                    {
+                    else
+                    }
+                        etThread.traceF( tin0P , T("secret rejected") ) ;
+                    {
+                    if( !bOk )
+
+                    }
+                        }
+                            break ;
+                            pcRemain[ offi ] -- ;
+                            bOk = 1 ;
+                        {
+                        if( head.secret == pcUsableSecrets[ offi ] && pcRemain[ offi ] && pnnSecret[ offi ] == nnFrom )
+
+                        etThread.traceF( tin0P , T("testing secret [secret,secretOk,cRemain,nnFrom,nnOk]:    ")+TF2(head.secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pcUsableSecrets[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pcRemain[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(nnFrom)+tb4+T(pnnSecret[offi]) ) ;
+                    {
+                    for( countT offi = 0 ; offi < sizeof pcUsableSecrets / sizeof pcUsableSecrets[ 0 ] ; offi ++ )
+                    ZE( boolT , bOk ) ;
+
+                    gramHeadFileWindowS& head = *(gramHeadFileWindowS*)pbData ;
+                {
+                case ifcIDcMDgRAM_PUTfILEwINDOW :
+                }
+                    break ;
+
+                    cRemainFileThrowerP = head.cRemain ;
+                    secretToUseP = head.secret ;
+
+                    etThread.traceF( tin0P , T("received [secret]:    ")+TF2(head.secret,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                    gramHeadSecretS& head = *(gramHeadSecretS*)pbData ;
+                {
+                case ifcIDcMDgRAM_USEtHISsECRET :
+                }
+                    break ;
+
+                    sThrow.writeF( tin0P , idPortCatch /*idpFrom*/ , nnFrom , (byteT*)&gram , sizeof gram ) ;
+
+                    }
+                        pnnSecret[       offoSecret ++ % sizeof pnnSecret       / sizeof pnnSecret[       0 ] ]                = nnFrom    ;
+                        pcRemain[        offoSecret    % sizeof pcRemain        / sizeof pcRemain[        0 ] ] = gram.cRemain = TTLsECRET ;
+                        pcUsableSecrets[ offoSecret    % sizeof pcUsableSecrets / sizeof pcUsableSecrets[ 0 ] ] = gram.secret  = ru        ;
+                        ranUniC ru( tin0P , (measure04T)MAXcOUNTT + 1 , (countT)seed ) ;
+
+                        QueryThreadCycleTime( (HANDLE)(-2) ,  (ULONG64*)&seed ) ;
+                        count04T seed ;
+
+                        gram.idCmd = ifcIDcMDgRAM_USEtHISsECRET ;
+                    {
+                    gramHeadSecretS gram ;
+                {
+                case ifcIDcMDgRAM_DISPENSEsECRET :
+            {
+            switch( head.idCmd )
+            gramHeadS& head = *(gramHeadS*)pbData ;
+
+            }
+                if( !nnFrom ) nnFrom = NICnAMElOCAL ;
+
+                }
+                    pcOut[ 3 - offi ] = ((tin1S&)tin0P).brcRaw ;
+                    BOSdOnOTtEST( WHATgbo , ntohl( pcIn[ offi ] ) )
+                {
+                for( countT offi = 0 ; offi < 4 ; offi ++ )
+                countT* pcOut = (countT*)(const countT*)nnFrom ;
+                countT* pcIn  = (countT*)from.sin6_addr.u.Byte ;
+
+                idpFrom = ((tin1S&)tin0P).brcRaw ;
+                BOSdOnOTtEST( WHATgbo , ntohs( from.sin6_port ) )
+                __( from.sin6_family - AF_INET6 ) ;
+            {
+            nicNameC nnFrom ;
+            ZE( countT , idpFrom ) ;
+
+            }
+                idGramProcessedLath = idGram ;
+                inc02AM( cComplaintPending ) ;
+            {                
+            if( idGramProcessedLath != idGram )
+
+            sockaddr_in6& from   = *(sockaddr_in6*)pbc ; pbc += sizeof( sockaddr_in6 ) ;
+            byteT*        pbData = pbc                 ; pbc += cbData                 ;
+
+            pbc += 3 * sizeof( countT ) ;
+
+            countT& cbData = ((countT*)pbc)[ 2 ] ;
+            countT& rc     = ((countT*)pbc)[ 1 ] ;
+            countT& idGram = ((countT*)pbc)[ 0 ] ;
+
+            //
+            //  c+cbData sizeof( sockaddr_in6 )    from
+            //  c        cbData                    data
+            //  8        4                         cbData
+            //  4        4                         rc
+            //  0        4                         idGram (serial number)
+            //
+            //  offset   length                    description
+            //
+
+            idGramProcessedLath ++ ;
+
+            if( pbc + cbMin > pbe ) pbc = pbCircle ;
+        {
+        while( idGramProcessedLath != idGramLath )      // INTENDED TO HANDLE WRAP AOK
+    {
+    while( !ether )
+    ZE( countT , idGramProcessedLath ) ;
+    TN( tb4 , "    " ) ;
+    byteT* pbc = pbCircle ;
+    const byteT* const pbe = pbFastBuffer + sizeof pbFastBuffer ;
+    byteT* const pbCircle = pbFastBuffer + sizeof( countT ) ;
+    countT& idGramLath = *(countT*)pbFastBuffer ;
+    const countT cbMin = 0xc + ifcCBdATAGRAMmAX + sizeof( sockaddr_in6 ) ;
+    sThrow.bindF( tin0P ) ;
+    socketC sThrow( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
+
+    fileWindowsC fwsOut( tin0P , etThread , tFileOut , flFILEwINDOW_WRITE | flFILEwINDOW_DOnOTvALIDATE ) ;
+    etThread.boxPutF( tin0P , tFileOut , "X" , 1 ) ;
+    TN( tFileOut     , "///d/tmp/foo.received.fws.ttt" ) ;
+
+    etThread.osThreadF( TaRG1( tmComplainF ) ) ;
+
+    countT& cRemainFileThrowerP = *(countT*)pTaskP->c2 ;
+    countT& secretToUseP        = *(countT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 )
+TASK( tmObeyF )
+
+DONE( tmComplainF )
+}
+    }
+        Sleep( 100 ) ;
+
+        }
+            dec02AM( cComplaintPending ) ;
+            etThread.traceF( tin0P , t1+TF2(cComplaintPending,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cProcessed,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        {
+        while( cComplaintPending )
+    {
+    while( !ether )
+    TN( t1 , "buffer overrun (packets lost) [cComplaintsPending,cProcessed (approximate)]:    " ) ;
+    TN( tb4 , "    " ) ;
+{
+if( pTaskP )
+TASK( tmComplainF )
+
+;
+}
+    countT   secret ;
+    countT   len ;
+    count04T off ;
+{
+struct gramHeadFileWindowS : public gramHeadS
+
+;
+}
+    countT   cRemain ;
+    countT   secret ;
+{
+struct gramHeadSecretS : public gramHeadS
+
+;
+}
+    countT   idCmd ;
+{
+struct gramHeadS
+
+countT offoSecret ;
+nicNameC pnnSecret      [ CaCTIVEsECRETS ] ;
+countT   pcRemain       [ CaCTIVEsECRETS ] ;
+countT   pcUsableSecrets[ CaCTIVEsECRETS ] ;
+
+byteT  pbFastBuffer[ TOCK ] ;
+
+countT cComplaintPending ;
+countT cProcessed ;
+countT cThrown ;
+countT cReceivedFileWindows ;
+countT idPortCatch ;
+
+#define CaCTIVEsECRETS 8
+#define TTLsECRET 0x10
+
+#define ifcIDcMDgRAM_PUTfILEwINDOW       0x3
+#define ifcIDcMDgRAM_USEtHISsECRET       0x2
+#define ifcIDcMDgRAM_DISPENSEsECRET      0x1
+
+#define CBpAYLOAD ( ifcCBdATAGRAMmAX - sizeof( gramHeadFileWindowS ) )
+
+/*1*/WAKEsHOWtEXT( "doodle.udp.cdn.proof.of.concept.now.add.source.ip.validation" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//

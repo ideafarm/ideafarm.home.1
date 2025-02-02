@@ -1,0 +1,66 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
+
+THREADmODE4rESTORE
+}
+    etThread.traceF( tin0P , T("[pbOut2]:    ")+T(pbOut2) ) ;
+
+    thirdC::openSslCrypto_decryptIF( tin0P , pbOut2 , cbOut2 , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed                      , hKeyPrivate ) ;
+    thirdC::openSslCrypto_encryptIF( tin0P                   , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed , pbIn , sizeof pbIn , hKeyPublic  ) ;
+
+    thirdC::openSslCrypto_writePublicKeyToFileIF(  tin0P , "\\tmp\\scratch.adam.4.key.public.verify.pem"  , hKeyPublic  ) ;
+    thirdC::openSslCrypto_writePrivateKeyToFileIF( tin0P , "\\tmp\\scratch.adam.4.key.private.verify.pem" , hKeyPrivate ) ;
+
+    thirdC::openSslCrypto_readPublicKeyFromFileIF(  tin0P , hKeyPublic  , "\\tmp\\scratch.adam.4.key.public.pem"  ) ;
+    thirdC::openSslCrypto_readPrivateKeyFromFileIF( tin0P , hKeyPrivate , "\\tmp\\scratch.adam.4.key.private.pem" ) ;
+
+    thirdC::openSslCrypto_writePublicKeyToFileIF(  tin0P , "\\tmp\\scratch.adam.4.key.public.pem"         , hKeyPair    ) ;
+    thirdC::openSslCrypto_writePrivateKeyToFileIF( tin0P , "\\tmp\\scratch.adam.4.key.private.pem"        , hKeyPair    ) ;
+
+    etThread.traceF( tin0P , T("generated") ) ;
+    thirdC::openSslCrypto_keyPairIF( tin0P , hKeyPair , 0x400 ) ;
+    etThread.traceF( tin0P , T("generating...") ) ;
+
+    handleC hKeyPublic(  tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC  ) ;
+    handleC hKeyPrivate( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
+    handleC hKeyPair(    tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR    ) ;
+{
+THREADmODE4oN( flTHREADmODE4_ARMoPENsSL )
+
+TODO
+
+countT cbOut2 = sizeof pbOut2 ;
+countT cbOut1 = sizeof pbOut1 ;
+
+byteT  pbOut2[ TUCK ] ;
+byteT  pbOut1[ TUCK ] ;
+
+countT cbInnerKey = sizeof pbInnerKey ;
+byteT  pbInnerKey[ TUCK ] ;
+byteT  pbSeed[ CBhUSHsEEDaLLOCATION ] ;
+
+byteT  pbIn[] = "thank you, Jesus!" ;
+
+
+/*1*/WAKEsHOWtEXT( "example.simplest.openssl.encryption.decryption.using.thirdC" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//

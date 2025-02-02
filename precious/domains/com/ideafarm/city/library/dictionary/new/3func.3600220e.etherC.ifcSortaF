@@ -1,0 +1,164 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+}
+    }
+        if( pbc - pbe - cbElt ) { BLAMMO ; }
+        }
+            keyHiLath = keyHi ;
+            }
+                pbArrayLater = pbc ;
+                }
+                    ifcSortaF( tin0P , bQuitP , pbArrayLater , cbArrayLater , cbSuffixP + cbKeyNow , cbPrefixLater , cbKeyLater , flagsP ) ;
+                    //traceF( tin0P , T("calling ifcSortaF for subrange using remainder of key") ) ;
+                {
+                if( cbArrayLater >= cbElt2 )
+                countT cbArrayLater = pbc - pbArrayLater ;
+            {
+            )
+                )
+                    pbc == pbe                          // AT END (ALL ELEMENTS HAVE BEEN WALKED
+                    ||
+                    keyHi - keyHiLath                   // KEY HAS CHANGED
+                (
+                &&
+                pbc - pbArrayP                          // NOT THE WOTH ELEMENT
+            (
+            if
+            countT keyHi = pbc == pbe ? 0 : *(countT*)( pbc + cbPrefixNow ) ;
+        {
+        for( pbc = pbArrayP ; pbc <= pbe ; pbc += cbElt )
+        ZE( byteT* , pbc ) ;
+        byteT* pbArrayLater = pbArrayP ;
+        ZE( countT , keyHiLath ) ;
+        byteT* pbe = pbArrayP + cbArrayP ;
+        countT cbElt2 = cbElt << 1 ;
+        countT cbElt = cbPrefixP + cbKeyP + cbSuffixP ;
+
+        ifcSortaF( tin0P , bQuitP , pbArrayP , cbArrayP , cbSuffixP , cbPrefixNow , cbKeyNow , flagsP ) ;
+
+        //traceF( tin0P , T("calling ifcSortaF for highest countT of key") ) ;
+
+        countT cbPrefixLater = cbPrefixP              ;
+        countT cbPrefixNow   = cbPrefixP + cbKeyLater ;
+        countT cbKeyLater    = cbKeyP - cbKeyNow      ;
+        countT cbKeyNow      = sizeof( countT )       ;
+
+        //
+        //     CALL ifcSortaF FOR cbPrefix = 0 ; cbSuffix = 4 ; cbKey = 8
+        // FOR EACH SUBRANGE CONTAINING A PARTICULAR VALUE OF THE HIGH ORDER countT OF THE OVERALL KEY
+        // CALL ifcSortaF FOR cbPrefix = 8 ; cbSuffix = 0 ; cbKey = 4 ;
+        //
+        // THIS IS ACCOMPLISHED AS FOLLOWS
+        //
+        //         CALL ifcSortaF FOR cbPrefix = 0 ; cbSuffix = 8 ; cbKey = 4
+        //     FOR EACH SUBRANGE CONTAINING A PARTICULAR VALUE OF THE MIDDLE ORDER countT OF THE OVERALL KEY
+        //     CALL ifcSortaF FOR cbPrefix = 4 ; cbSuffix = 4 ; cbKey = 4
+        // FOR EACH SUBRANGE CONTAINING A PARTICULAR VALUE OF THE HIGH ORDER countT OF THE OVERALL KEY
+        // CALL ifcSortaF FOR cbPrefix = 8 ; cbSuffix = 0 ; cbKey = 4 ;
+        //
+        // EXAMPLE: cbPrefixP == 0 ; cbSuffixP = 0 ; cbKeyP = 0xc ;
+        //
+        // INTENDED RECIPE
+    {
+    else if( cbKeyP >= sizeof( countT ) * 2 )
+    }
+        if( F(flagsP) & flSORTAc_CHATTER ) traceF( tin0P , T("sorted  (final sort after multithreaded presort)") ) ;
+        if( F(flagsP) & flSORTAc_CHATTER ) sorta.traceRangeF( pbArrayP , cbArrayP , T("result") ) ;
+        sorta.sortF( tin0P ) ;
+        if( F(flagsP) & flSORTAc_CHATTER ) traceF( tin0P , T("sorting (final sort after multithreaded presort)") ) ;
+        sortaC sorta( tin0P , *this , bQuitP , pbArrayP , cbArrayP , cbSuffixP , cbPrefixP , cbKeyP , 1 , 0 , flagsP ) ;
+
+        }
+            }
+                }
+                    thirdC::dosSleepWinkIF( tin0P ) ;
+                {
+                while( cPending )
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+                }
+                    pbc += cbPerWorker ;
+                    osThreadF( TaRG1( tmWorkerSortaF ) , (countT)&cPending , (countT)&bQuitP , (countT)pbc , cbThis , cbSuffixP , cbPrefixP , cbKeyP , 1 , 0 , flagsP , ++ idWorkerLath ) ;
+                    inc02AM( cPending ) ;
+
+                    if( F(flagsP) & flSORTAc_CHATTER ) traceF( tin0P , T("ifcSortaF / hiring worker [ceAll,offe,ce]:    ")+TF2(ceAll,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(offe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(ce,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    countT ceAll  = cbArrayP / cbElt ;
+                    countT ce     = cbThis / cbElt ;
+                    countT offe   = ( pbc - pbArrayP ) / cbElt ;
+                    countT cbThis = cDo ? cbPerWorker : cbPerWorker + cbExtra ;
+
+                    //}
+                    //    thirdC::dosSleepIF( tin0P , TOCK << 2 ) ;
+                    //    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+                    //{
+                {
+                while( cDo -- )
+                TN( tb4 , "    " ) ;
+                ZE( countT , idWorkerLath ) ;
+                byteT* pbc = pbArrayP ;
+                ZE( countT , cPending ) ;
+                countT cDo = cProcessors ;
+
+                countT cbExtra        = cExtraElts     * cbElt ;
+                countT cbPerWorker    = cEltsPerWorker * cbElt ;
+
+                countT cExtraElts     = cElts - cEltsPerWorker * cWorkers ;
+                countT cEltsPerWorker = cElts / cWorkers ;
+                countT cWorkers = cProcessors ;
+            {
+            if( F(flagsP) & flSORTAc_CHATTER ) traceF( tin0P , T("ifcSortaF / hiring workers to presort subrange partitions of entire range") ) ;
+
+            }
+                }
+                    thirdC::dosSleepWinkIF( tin0P ) ;
+                {
+                while( cPending )
+                sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+                }
+                    osThreadF( TaRG1( tmWorkerSortaF ) , (countT)&cPending , (countT)&bQuitP , (countT)pbArrayP , cbArrayP , cbSuffixP , cbPrefixP , cbKeyP , modulo , remainder ++ , flagsP , ++ idWorkerLath ) ;
+                    inc02AM( cPending ) ;
+                {
+                while( cDo -- )
+                ZE( countT , idWorkerLath ) ;
+                ZE( countT , cPending ) ;
+                ZE( countT , remainder ) ;
+                countT cDo = modulo ;
+                countT modulo = cProcessors ;
+            {
+            if( F(flagsP) & flSORTAc_CHATTER ) traceF( tin0P , T("ifcSortaF / hiring workers to presort modulo slices on entire range") ) ;
+
+            const countT cProcessors = thirdC::osProcessorsIF( tin0P ) ;
+        {
+        if( !( F(flagsP) & flSORTAc_NOwORKERS ) && TOCK <= cElts )
+
+        countT cElts = cbArrayP / cbElt ;
+        countT cbElt = cbPrefixP + cbKeyP + cbSuffixP ;
+    {
+    if( cbKeyP == sizeof( countT ) )
+
+    //traceF( tin0P , T("ifcSortaF / + [cbPrefixP,cbKeyP,cbSuffixP]:    ")+TF2(cbPrefixP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbKeyP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(cbSuffixP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+    //if( F(flagsP) & flSORTAc_CHATTER && ( cbSuffixP != sizeof( countT ) || cbPrefixP != sizeof( countT ) || cbKeyP != sizeof( countT ) ) ) { BLAMMO ; }    //U::  CHATTER CODE ASSUMES HARDCODED VALUES
+{
+/*1*/voidT etherC::ifcSortaF( tin0S& tin0P , const boolT& bQuitP , byteT* const pbArrayP , const countT cbArrayP , const countT cbSuffixP , const countT cbPrefixP , const countT cbKeyP , const flagsT flagsP )/*1*/
+
+/**/
+
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

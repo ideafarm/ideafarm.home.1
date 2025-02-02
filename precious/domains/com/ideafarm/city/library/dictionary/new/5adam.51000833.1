@@ -1,0 +1,156 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tin0P ) ;
+
+etThread.delF( tin0P , pNicNameWhite ) ;
+etThread.traceF( tin0P , T("ok") ) ;
+sgnDone_tmUdpFilesEndpointThrowerF.waitF( tin0P ) ;
+
+etThread.traceF( tin0P , T("waiting for endpoints to end") ) ;
+bQuit = 1 ;
+
+}
+    break ; //REMOVE FOR BURN-IN TESTING
+
+    etThread.traceF( tin0P , T("process [mTocks]:    ")+TT(timeE1,timeE2)+tb4+TF2(mTocksE,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("throw   [mTocks]:    ")+TT(timeT1,timeT2)+tb4+TF2(mTocksT,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[mGBits]:            ")+TF2(mGBits,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("[cGram]:            ")+TF2(idGram,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+    measureT mGBits = (measureT)( cb04Thrown << 3 ) / ( TICK << 2 ) ;
+
+    measureT mTocksE = (measureT)timeE1 / TOCK ;
+    measureT mTocksT = (measureT)timeT1 / TOCK ;
+
+    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO PROCESS
+    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
+    ZE( sCountT , timeE2 ) ;
+    ZE( countT  , timeE1 ) ;
+
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    etThread.osTimeSubtractF( tin0P , timeT1 , timeT2 , timeA1 , timeA2 ) ;      // TIME TAKEN TO THROW
+    etThread.osTimeNowF( tin0P , timeT1 , timeT2 ) ;
+    ZE( sCountT , timeT2 ) ;
+    ZE( countT  , timeT1 ) ;
+
+    etThread.ifcUdpFileThrowFileF( tin0P , ether , idGram , secretToUse , cThrown , cb04Thrown , tTestFileToThrow ) ;
+    ZE( count04T , cb04Thrown  ) ;
+    ZE( countT   , cThrown     ) ;
+    ZE( countT   , idGram      ) ;
+
+    etThread.osTimeNowF( tin0P , timeA1 , timeA2 ) ;
+    ZE( sCountT , timeA2 ) ;
+    ZE( countT  , timeA1 ) ;
+{
+while( !ether )
+ZE( count04T , cb04Thrown ) ;
+ZE( countT , cThrown ) ;
+
+//etThread.boxPutF( tin0P , tTestFileToThrow , T("hello at ")+TT(timeN1,timeN2)+T("\r\n") ) ;
+etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+ZE( sCountT , timeN2 ) ;
+ZE( countT  , timeN1 ) ;
+
+TN( tTestFileCaught  , "///ideafarm/files.in/web.root/3/index.html" ) ;
+
+TN( tTestFileToThrow , "///ideafarm/files.out/web.root/3/index.html" ) ;
+
+//++ s ; ether.osSleepF( tin0P , TICK << 4 ) ;         //U:: TO FIND A BUG
+++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;         // LET WORKER THREADS GET SET UP
+
+etThread.traceF( tin0P , T("waited  for woth secret") ) ;
+}
+    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+    etThread.traceF( tin0P , T("waiting for a secret 1 [&secretToUse,secretToUse]:    ")+TF2((countT)&secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(secretToUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+{
+while( !secretToUse && !ether )
+etThread.traceF( tin0P , T("waiting for woth secret") ) ;
+
+CONoUTrAW( "\r\n" ) ;
+
+//}
+//    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+//{
+//while( ( !slab.id PortUdpFileCatcher || !psoEndpointThrower ) && !ether )
+sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+static slabS& slab = slabS::slabIF() ;
+
+etThread.osThreadF( TaRG2sGNdONE( tmUdpFilesEndpointThrowerF , sgnDone_tmUdpFilesEndpointThrowerF ) , (countT)&bQuit , (countT)&psoEndpointThrower , (countT)&grab_psoEndpointThrower , (countT)&pNicNameWhite , (countT)&cNicNameWhite , (countT)&grab_pNicNameWhite , (countT)&nicNameToUse , (countT)&secretToUse ) ;
+signC sgnDone_tmUdpFilesEndpointThrowerF(   tin0P , TAG( TAGiDnULL ) ) ;
+ZE( boolT , bQuit ) ;
+grabC grab_psoEndpointThrower(   tin0P , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
+ZE( socketC* , psoEndpointThrower ) ;
+static ZE( countT , secretToUse ) ;
+nicNameC nicNameToUse ;
+TN( tb4 , "    " ) ;
+
+//}
+//    if( !cNicNameWhite ) { BLAMMO ; }
+//    if( !pNicNameWhite ) { BLAMMO ; }
+//
+//    }
+//        etThread.traceF( tin0P , T("white:    ")+T(pNicNameWhite[offa]) ) ;
+//    {
+//    for( countT offa = 0 ; offa < cNicNameWhite ; offa ++ )
+//
+//    socketC::nicNameIF( tin0P , etThread , pNicNameWhite , cNicNameWhite , tListWhite ) ; ___( pNicNameWhite ) ;
+//
+//    tListWhite += T("factory9.ideafarm.com") ;
+//    tListWhite += T("factory8.ideafarm.com") ;
+//    tListWhite += T("factory7.ideafarm.com") ;
+//    tListWhite += T("factory6.ideafarm.com") ;
+//    tListWhite += T("factory5.ideafarm.com") ;
+//    tListWhite += T("factory4.ideafarm.com") ;
+//    tListWhite += T("factory3.ideafarm.com") ;
+//    tListWhite += T("factory2.ideafarm.com") ;
+//    tListWhite += T("factory1.ideafarm.com") ;
+//    tListWhite += T("127.0.0.1") ;
+//    TlIST( tListWhite ) ;
+//{
+ZE( countT    , cNicNameWhite ) ;
+ZE( nicNameC* , pNicNameWhite ) ;
+grabC grab_pNicNameWhite( tin0P , TAG( TAGiDnULL ) ) ;
+
+TODO
+
+DONE( tmUdpFilesEndpointThrowerF )
+}
+    etThread.ifcUdpFilesEndpointF( tin0P , bQuitP , idPortEndpointThrowerNU , TICK >> 0 , psoEndpointP , grab_psoEndpointP , pNicNameWhiteP , cNicNameWhiteP , grab_pNicNameWhiteP , pNicNameToUseP , pSecretToUseP ) ;
+    ZE( countT , idPortEndpointThrowerNU ) ;
+
+    countT*          pSecretToUseP         =           (countT*)pTaskP->c8 ;
+    nicNameC*        pNicNameToUseP        =         (nicNameC*)pTaskP->c7 ;
+    grabC&           grab_pNicNameWhiteP   =           *(grabC*)pTaskP->c6 ;
+    countT&          cNicNameWhiteP        =          *(countT*)pTaskP->c5 ;
+    const nicNameC*& pNicNameWhiteP        = *(const nicNameC**)pTaskP->c4 ;
+    grabC&           grab_psoEndpointP     =           *(grabC*)pTaskP->c3 ;
+    socketC*&        psoEndpointP          =        *(socketC**)pTaskP->c2 ;
+    boolT&           bQuitP                =           *(boolT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 )
+TASK( tmUdpFilesEndpointThrowerF )
+
+
+//BASELINE: 510007db
+
+/*1*/WAKEsHOWtEXT( "doodle udp file throw" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//

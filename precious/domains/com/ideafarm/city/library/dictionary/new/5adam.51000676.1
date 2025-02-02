@@ -1,0 +1,340 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+}
+    etThread.delF( tin0P , postr ) ;
+    etThread.boxPutF( tin0P , tOut , postr , costr ) ;
+
+    etThread.delF( tin0P , psttr ) ;
+    costr = etThread.strMakeF( tin0P , LF , postr , psttr ) ; ___( postr ) ;
+
+    etThread.strReplaceF( tin0P , psttr , 0 , T("]") , T("\\]") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ;        //    "]"    ->    "\\]"
+    etThread.strReplaceF( tin0P , psttr , 0 , T("[") , T("\\[") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ;        //    "["    ->    "\\["
+    //U::ALSO HANDLE INPUT CONTAINING "\\[" "\\]"
+
+    etThread.strReverseF( tin0P , psttr , 0 , T("\r\n") ) ; ___( psttr ) ;
+    etThread.delF( tin0P , postr ) ;
+    etThread.strMakeFromOsTextF( tin0P , psttr , postr , costr - 2 ) ; ___( psttr ) ; //OMITS THE TRAILING "\r\n"
+    ZE( strokeS* , psttr ) ;
+{
+if( postr )
+etThread.boxGetShadowF( tin0P , postr , costr , tRaw ) ; ___( postr ) ;
+ZE( countT   , costr ) ;
+ZE( osTextT* , postr ) ;
+
+}
+    ether.diskWalkF( tin0P , cDirs , cFiles , tFrom , ether , walkEmailCBF , pczArg ) ;
+    ZE( countT , cFiles ) ;
+    ZE( countT , cDirs ) ;
+
+    countT pczArg[] = { (countT)&hFile , 0/*idEmailLath*/ , (countT)&psttLeverUniquifyHash , (countT)&swUniquifyHash , 0 } ;
+
+    etThread.fileOpenF( tin0P , hFile , countTC() , tRaw , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeR ) ;
+    handleC hFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+
+    switchC swUniquifyHash( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , psttLeverUniquifyHash ) ;
+    ZE( strokeS* , psttLeverUniquifyHash ) ;
+{
+
+#endif
+
+    TN( tOut  , "///d/tmp/test/email.record.soii" ) ;
+    TN( tRaw  , "///d/tmp/test/email.record.soii.raw" ) ;
+    TN( tFrom , "///d/tmp/test/" ) ;
+
+#else
+
+    TN( tOut  , "///d/tmp/kt/email.record.soii" ) ;
+    TN( tRaw  , "///d/tmp/kt/email.record.soii.raw" ) ;
+    TN( tFrom , "///d/ideafarm.home.101/IdeaFarm (tm)/2.1. Drop Files Here To Archive Them/" ) ;
+
+#if defined( NEVERdEFINED )
+
+TODO
+
+}
+    return 1 ;
+
+    }
+        }
+            etThread.delF( tin0P , psttType ) ;
+            }
+                etThread.delF( tin0P , posti ) ;
+
+                }
+                    CONoUTrAW( "\r\n" ) ;
+                    CONoUTrAW( postShort ) ;
+
+                    etThread.delF( tin0P , psttIn ) ;
+                    }
+                        etThread.delF( tin0P , psttHead ) ;
+                        }
+                            etThread.delF( tin0P , psttBody ) ;
+                            }
+                                }
+                                    }
+                                        etThread.delF( tin0P , pstt1Lines ) ;
+                                        }
+                                            etThread.delF( tin0P , psttLine ) ;
+                                            if( psttLine && psttLine->idAdam ) etThread.fileWriteF( tin0P , hFileP , T(" \\r")+T(psttLine)+T("\r\n") ) ;
+                                            etThread.strTrimF( tin0P , psttLine , psttc1 ) ; ___( psttLine ) ;
+                                            ZE( strokeS* , psttLine ) ;
+                                        {
+                                        FORsTRINGSiN1( pstt1Lines )
+                                        etThread.strWordsF( tin0P , pstt1Lines , psttBody , sttq , T("\r\n") ) ; ___( pstt1Lines ) ;
+                                        strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                                        ZE( strokeS* , pstt1Lines ) ;
+    
+                                        etThread.strReplaceF( tin0P , psttBody , 0 , T("\r\n\r\n") , T("\r\n<p>\\m\\r\\n\r\n") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttBody ) ;
+                                        etThread.strReplaceF( tin0P , psttBody , 0 , T(">")        , T("&gt;")                 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttBody ) ;
+                                        etThread.strReplaceF( tin0P , psttBody , 0 , T("<")        , T("&lt;")                 , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttBody ) ;
+                                    {
+                                    else
+                                    if( !psttBody || !psttBody->idAdam ) etThread.fileWriteF( tin0P , hFileP , T(" \\r(This email had no text.)\r\n") ) ;
+    
+                                    etThread.fileWriteF( tin0P , hFileP , T(" <p>\\r\\m\\n\r\n") ) ;
+    
+                                    etThread.strReplaceF(  tin0P , psttBody , 0 , T("}") , T("\\}") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttBody ) ;
+                                    etThread.strReplaceF(  tin0P , psttBody , 0 , T("{") , T("\\{") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttBody ) ;
+                                {
+                                if( psttBody && psttBody->idAdam )
+
+                                etThread.delF( tin0P , psttSubject ) ;
+                                etThread.delF( tin0P , psttBcc     ) ;
+                                etThread.delF( tin0P , psttCc      ) ;
+                                etThread.delF( tin0P , psttTo      ) ;
+                                etThread.delF( tin0P , psttFrom    ) ;
+                                etThread.delF( tin0P , psttDate    ) ;
+
+                                if( psttBcc     && psttBcc->idAdam     ) etThread.fileWriteF( tin0P , hFileP , T(" <br>\\m\\rBcc" ":  ")+T(psttBcc)+T("\r\n") ) ;
+                                if( psttCc      && psttCc->idAdam      ) etThread.fileWriteF( tin0P , hFileP , T(" <br>\\m\\rCc" ":  ")+T(psttCc)+T("\r\n") ) ;
+                                if( psttTo      && psttTo->idAdam      ) etThread.fileWriteF( tin0P , hFileP , T(" <br>\\m\\rTo:  ")+T(psttTo)+T("\r\n") ) ;
+                                if( psttFrom    && psttFrom->idAdam    ) etThread.fileWriteF( tin0P , hFileP , T(" <br>\\m\\rFrom:  ")+T(psttFrom)+T("\r\n") ) ;
+                                if( psttDate    && psttDate->idAdam    ) etThread.fileWriteF( tin0P , hFileP , T(" <br>\\r")+T(psttDate)+T("\r\n") ) ;
+
+                                etThread.fileWriteF( tin0P , hFileP , "\\e\r\n" ) ;
+                                etThread.fileWriteF( tin0P , hFileP , postShort ) ;
+                                etThread.fileWriteF( tin0P , hFileP , " \\e" ) ;
+                                etThread.fileWriteF( tin0P , hFileP , T(":")+TF3(hashr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+TF3(hashu,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+T("_email:\\rE")+TF4(++idEmailLathP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T(":  ")+T(psttSubject)+T("\r\n") ) ;
+
+                                }
+                                    }
+                                        __Z( hashu ) ;
+                                        hashu = ::hashF( (byteT*)psttSubject , sizeof( strokeS ) * ( CSpREFIX + psttSubject->idAdam ) , 0 ) ;
+                                        psttSubject[ 1 ].idAdam += ++ idLath ;
+                                        countT& idLath = swUniquifyHashP ;
+                                        psttLeverUniquifyHashP = psttSubject ;
+
+                                        __Z( hashr ) ;
+                                        hashr = ::hashF( (byteT*)psttSubject , sizeof( strokeS ) * ( CSpREFIX + psttSubject->idAdam ) , 0 ) ;
+                                    {
+                                    if( !POOP )
+
+                                    __( psttSubject[ 1 ].idAdam ) ;
+                                {
+                                ZE( countT , hashu ) ;
+                                ZE( countT , hashr ) ;
+
+                                }
+                                    etThread.strMakeF( tin0P , LF , psttSubject , T("(No subject)") ) ; ___( psttSubject ) ;
+                                    etThread.delF( tin0P , psttSubject ) ;
+                                {
+                                if( !psttSubject || !psttSubject->idAdam )
+
+                                etThread.strTrimF( tin0P , psttSubject ) ; ___( psttSubject ) ;
+                                etThread.strTrimF( tin0P , psttBcc     ) ; ___( psttBcc     ) ;
+                                etThread.strTrimF( tin0P , psttCc      ) ; ___( psttCc      ) ;
+                                etThread.strTrimF( tin0P , psttTo      ) ; ___( psttTo      ) ;
+                                etThread.strTrimF( tin0P , psttFrom    ) ; ___( psttFrom    ) ;
+                                etThread.strTrimF( tin0P , psttDate    ) ; ___( psttDate    ) ;
+
+                                etThread.strReplaceF(  tin0P               , psttSubject , 0 , T(">") , T("&gt;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttSubject ) ;
+                                etThread.strReplaceF(  tin0P               , psttSubject , 0 , T("<") , T("&lt;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttSubject ) ;
+                                readableEmailAddressF( tin0P , etThread    , psttBcc     ) ;
+                                readableEmailAddressF( tin0P , etThread    , psttCc      ) ;
+                                readableEmailAddressF( tin0P , etThread    , psttTo      ) ;
+                                readableEmailAddressF( tin0P , etThread    , psttFrom    ) ;
+                                etThread.strReplaceF(  tin0P               , psttDate    , 0 , T(">") , T("&gt;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttDate ) ;
+                                etThread.strReplaceF(  tin0P               , psttDate    , 0 , T("<") , T("&lt;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttDate ) ;
+
+                                etThread.strSubstringMimeHeaderF( tin0P , psttSubject , psttHead , T("subject") ) ; ___( psttSubject ) ;
+                                etThread.strSubstringMimeHeaderF( tin0P , psttBcc     , psttHead , T("bcc")     ) ; ___( psttBcc     ) ;
+                                etThread.strSubstringMimeHeaderF( tin0P , psttCc      , psttHead , T("cc")      ) ; ___( psttCc      ) ;
+                                etThread.strSubstringMimeHeaderF( tin0P , psttTo      , psttHead , T("to")      ) ; ___( psttTo      ) ;
+                                etThread.strSubstringMimeHeaderF( tin0P , psttFrom    , psttHead , T("from")    ) ; ___( psttFrom    ) ;
+                                etThread.strSubstringMimeHeaderF( tin0P , psttDate    , psttHead , T("date")    ) ; ___( psttDate    ) ;
+                                ZE( strokeS* , psttSubject ) ;
+                                ZE( strokeS* , psttBcc     ) ;
+                                ZE( strokeS* , psttCc      ) ;
+                                ZE( strokeS* , psttTo      ) ;
+                                ZE( strokeS* , psttFrom    ) ;
+                                ZE( strokeS* , psttDate    ) ;
+
+                                etThread.strReplaceF(  tin0P , psttHead , 0 , T("}") , T("\\}") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttHead ) ;
+                                etThread.strReplaceF(  tin0P , psttHead , 0 , T("{") , T("\\{") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttHead ) ;
+                                //etThread.strokeF( tin0P , T("[psttHead]: \"")+T(psttHead)+T("\"\r\n") ) ;
+
+                                etThread.strokeF( tin0P , T(postShort)+T("\r\n") ) ;
+                            {
+                            if( bWant )
+
+                            }
+                                }
+                                    etThread.delF( tin0P , postBody ) ;
+                                    }
+                                        }
+                                            break ;
+                                            bWant = 0 ;
+                                        {
+                                        if( !thirdC::c_strcmpIF( tin0P , "body" , ppostFindNix[ offt ] ) && thirdC::c_strstrIF( tin0P , postBody , ppostFindNix[ offt + 1 ] ) )
+                                    {
+                                    for( countT offt = 0 ; offt < sizeof ppostFindNix / sizeof ppostFindNix[ 0 ] ; offt += 2 )
+    
+                                    etThread.strMakeF( tin0P , LF , postBody , psttBody ) ; ___( postBody ) ;
+                                    ZE( osTextT* , postBody ) ;
+                                {
+                                if( psttBody )
+
+                                etThread.strGetMimeBodyF( tin0P , psttBody , psttIn ) ; ___( psttBody ) ;
+                            {
+                            if( bWant )
+                            ZE( strokeS* , psttBody ) ;
+
+                            }
+                                etThread.delF( tin0P , postHead ) ;
+                                }
+                                    }
+                                        break ;
+                                        bWant = 1 ;
+                                    {
+                                    if( thirdC::c_strstrIF( tin0P , postHead , ppostFind[ offt ] ) )
+                                {
+                                for( countT offt = 0 ; offt < sizeof ppostFind / sizeof ppostFind[ 0 ] ; offt ++ )
+
+                                thirdC::c_strlwrIF( tin0P , postHead ) ;
+                                etThread.strMakeF( tin0P , LF , postHead , psttHead ) ; ___( postHead ) ;
+                                ZE( osTextT* , postHead ) ;
+                            {
+                            ZE( boolT , bWant ) ;
+                        {
+                        if( psttHead && psttHead->idAdam )
+                        etThread.strGetMimeHeaderF( tin0P , psttHead , psttIn ) ; ___( psttHead ) ;
+                        ZE( strokeS* , psttHead ) ;
+                    {
+                    if( psttIn->idAdam )
+                    etThread.strMakeFromOsTextF( tin0P , psttIn , posti , costi ) ; ___( psttIn ) ;
+                    ZE( strokeS* , psttIn ) ;
+
+                    if( costi > ( TOCK << 3 ) ) costi = TOCK << 3 ;
+                {
+                if( posti && costi )                
+
+                etThread.boxGetShadowF( tin0P , posti , costi , T( ifFileNameC( tin0P , etThread , postNameP ) ) ) ; ___( posti ) ;
+                ZE( countT   , costi ) ;
+                ZE( osTextT* , posti ) ;
+            {
+            if( !etThread.strCompareF( tin0P , psttType , T("eml") ) )
+            etThread.strConvertToLowerCaseF( tin0P , psttType ) ;
+            etThread.strMakeFromOsTextF( tin0P , psttType , postType ) ; ___( psttType ) ;
+            ZE( strokeS* , psttType ) ;
+        {
+        if( postType ++ )
+        osTextT* postType = thirdC::c_strrchrIF( tin0P , postNameP , '.' ) ;
+    {
+    if( postShort ++ )
+
+    osTextT* postShort = thirdC::c_strrchrIF( tin0P , postNameP , '\\' ) ;
+
+    switchC&  swUniquifyHashP        =  *(switchC*)pcArgP[ 3 ] ;
+    strokeS*& psttLeverUniquifyHashP = *(strokeS**)pcArgP[ 2 ] ;
+    countT&   idEmailLathP           =             pcArgP[ 1 ] ;
+    handleC&  hFileP                 =  *(handleC*)pcArgP[ 0 ] ;
+    etherC&   etThread               = *((tin1S&)tin0P).pEther ;
+{
+boolT walkEmailCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+
+}
+    }
+        etherP.strReplaceF( tin0P , psttP , 0 , T(">") , T("&gt;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttP ) ;
+        etherP.strReplaceF( tin0P , psttP , 0 , T("<") , T("&lt;") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttP ) ;
+    {
+    if( psttP && psttP->idAdam )
+
+    }
+        etherP.strReplaceF( tin0P , psttP , 0 , T("?=")         , T("") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttP ) ;
+        __( etherP.strIdF( tin0P , T("=?") , psttP ) ) ; //ENSURE THAT THIS GARBAGE IS REMOVED
+        etherP.strReplaceF( tin0P , psttP , 0 , T("=?UTF-8?Q?") , T("") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttP ) ;
+    {
+    if( psttP && psttP->idAdam )
+    // NOW ELIMINATE MONSTROSITIES LIKE THIS: "=?UTF-8?Q?Wo'O_Ideafarm?="
+
+    }
+        }
+            psttP = psttMaybe ;
+            etherP.delF( tin0P , psttP ) ;
+        {
+        else
+        if( !psttMaybe || !psttMaybe->idAdam ) etherP.delF( tin0P , psttMaybe ) ;
+
+        }
+            }
+                etherP.delF( tin0P , psttp ) ;
+                if( psttp && psttp->idAdam ) etherP.strFuseF( tin0P , psttMaybe , psttp ) ;
+                etherP.strSubstringF( tin0P , psttp , idf , sttq , stt2 , psttP ) ; ___( psttp ) ;
+            {
+            if( idf )
+
+            etherP.delF( tin0P , psttp ) ;
+            if( psttp && psttp->idAdam && !etherP.strIdF( tin0P , T("=?UTF-8?B?") , psttp ) ) etherP.strFuseF( tin0P , psttMaybe , psttp ) ; // SUPPRESS MONSTROSITIES LIKE THIS: "=?UTF-8?B?yo7HnXXJuW5xIMm5x53Gg2/JuQ==?= <roger.burney@gmail.com>"
+
+            etherP.strSubstringF( tin0P , psttp , idf , sttq , stt1 , psttP ) ; ___( psttp ) ;
+            ZE( strokeS* , psttp ) ;
+        {
+        while( idf )
+        countT idf = 1 ;
+
+        strokeS stt2( '>' ) ;
+        strokeS stt1( '<' ) ;
+        strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+
+
+        etherP.strMakeF( tin0P , LF , psttMaybe , 0 , psttP->idAdam ) ; ___( psttMaybe ) ;
+        ZE( strokeS* , psttMaybe ) ;
+    {
+    if( psttP && psttP->idAdam )
+{
+voidT readableEmailAddressF( tin0S& tin0P , etherC& etherP , strokeS*& psttP )
+
+;
+}
+    #include "\\ideafarm.work\\txt\\email.record.order.nix.h"
+{
+osTextT* ppostFindNix[] =
+
+;
+}
+    #include "\\ideafarm.work\\txt\\email.record.order.h"
+{
+osTextT* ppostFind[] =
+
+/*1*/WAKEsHOWtEXT( "tool.generate.soii.email.record" )/*1*/
+
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

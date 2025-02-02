@@ -1,0 +1,30 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+#define CtHREADSmAX ( 0x10ea )
+
+/*1*//*CtHREADSmAX*//*1*/
+
+/**/
+*/
+  oh, well ; i guess 4195_9 threads is enough
+  Windows 11 does not support 02 bit cpu's
+ conj: the limit would be much larger, i.e. about 3x, on an 02 bit machine
+ but this limit is mainly imposed by 04 bit Windows insisting on launching an 04 bit thread alongside each 02 bit application thread, with the latter requiring at least a tock << 1 stack and the former using a tock << 2 stack
+ the actual limit will increase slightly as other address space consumers (such as the booksC instances) are optimized
+ see adam 86c_ (example.other.1snip.11200603.CtHREADSmAX)
+as of 20240929@1534, this is the maximum number of threads that can be launched without exhausting address space
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

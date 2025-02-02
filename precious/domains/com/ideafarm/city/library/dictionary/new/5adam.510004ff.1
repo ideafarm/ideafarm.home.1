@@ -1,0 +1,91 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+}
+    }
+        else        { POPUP( T("Thank you for using IdeaFarm (tm) software.  All IdeaFarm " "(tm) items other than this utility")+(cSkipped?T(", and the ")+TF1(cSkipped)+T(" items that you told me to skip,"):T(""))+T(" have been removed.  Please click OK and then delete the IdeaFarm " "(tm) Removal Utility folder on your desktop.") ) ; }
+        if( cFail ) { POPUP( T("I could not delete some objects, either because they are being used or because I do not have permission.  Please reboot and try again, or delete them manually.") ) ; }
+    
+        etThread.delF( tin0P , psttFolderRemovalTool ) ;
+        etThread.delF( tin0P , pstt1m ) ;
+        }
+            }
+                etThread.osMessageBoxF( tin0P , T("I did NOT delete this:\r\n\r\n")+T(psttc1) , tTitle , flMESSAGEbOXbUTTON_OK , flMESSAGEbOXbUTTON_OK ) ;
+                cSkipped ++ ;
+            {
+            else
+            }
+                etThread.strokeF( tin0P , T("\r\n") ) ;
+                }
+                    }
+                        POPUP( T("I still could not delete \"")+T(psttc1)+T("\".  I am going on to the next file object.") ) ;
+                        cFail ++ ;
+                        etThread.strokeF( tin0P , T(" (cannot)") ) ;
+                        POOPR
+                    {
+                    if( POOP )
+                    ((tin1S&)tin0P).pEtScratch->diskFileOrDirDeleteF( tin0P , psttc1 , flFILEoRdIRdELETE_RECURSE , 1 ) ;
+                    etThread.strokeF( tin0P , T(" (2nd try)") ) ;
+                        
+                    POPUP( T("I could not delete \"")+T(psttc1)+T("\".  If you know why, please correct the problem before clicking OK.") ) ;
+                    POOPR
+                {
+                if( POOP )
+                ((tin1S&)tin0P).pEtScratch->diskFileOrDirDeleteF( tin0P , psttc1 , flFILEoRdIRdELETE_RECURSE , 1 ) ;
+
+                etThread.strokeF( tin0P , T(psttc1) ) ;
+            {
+            IFyES( T("May I delete this?\r\n\r\n")+T(psttc1) )
+                    
+            if( 1 == etThread.strIdF( tin0P , psttFolderRemovalTool , psttc1 ) ) continue ;
+        {
+        FORsTRINGSiN1( pstt1m )
+
+        etThread.diskMapFileNameF( tin0P , psttFolderRemovalTool , T(postFOLDERrEMOVALuTILITY) ) ; ___( psttFolderRemovalTool ) ;
+        ZE( strokeS* , psttFolderRemovalTool ) ;
+
+        }
+            etThread.delF( tin0P , psttd ) ;
+            etThread.strMakeF( tin0P , LF , pstt1m , psttd ) ; ___( pstt1m ) ;
+            strokeS* psttd = pstt1m ; pstt1m = 0 ;
+        {
+        etThread.diskFindFileOrDirOldF( tin0P , pstt1m , T("///desk/ideafarm (tm)*") , TOCK , 0x20 ) ; ___( pstt1m ) ;
+        etThread.diskFindFileOrDirOldF( tin0P , pstt1m , T("///d/ideafarm.*"       ) , TOCK , 0x20 ) ; ___( pstt1m ) ;
+        etThread.diskFindFileOrDirOldF( tin0P , pstt1m , T("///?/ideafarm.home.*"  ) , TOCK , 0x20 ) ; ___( pstt1m ) ;
+        ZE( strokeS* , pstt1m ) ;
+        ZE( countT , cSkipped ) ;
+        ZE( countT , cFail ) ;
+    {
+    IFoK( T("I have not done anything yet.  I will ask for your approval before deleting each item.  Click OK if you want me to continue.") )
+    
+    etThread.winSetTitleF( tin0P , tTitle ) ;
+    TN( tTitle , "IdeaFarm " "(tm) Removal Utility" ) ;
+    SCOOPS
+{
+IFsCRATCHoK
+
+TODO
+
+#define IFyES(psttP) if( ifcMESSAGEbOXrESULT_YES == etThread.osMessageBoxF( tin0P , psttP , tTitle , flMESSAGEbOXbUTTON_YES|flMESSAGEbOXbUTTON_NO , flMESSAGEbOXbUTTON_NO ) )
+#define IFoK(psttP)  if( ifcMESSAGEbOXrESULT_OK  == etThread.osMessageBoxF( tin0P , psttP , tTitle , flMESSAGEbOXbUTTON_OK|flMESSAGEbOXbUTTON_CANCEL , flMESSAGEbOXbUTTON_CANCEL ) )
+
+/*1*/WAKEhIDE( "ifcIDaDAM_UNINSTALLER.utility.uninstaller" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

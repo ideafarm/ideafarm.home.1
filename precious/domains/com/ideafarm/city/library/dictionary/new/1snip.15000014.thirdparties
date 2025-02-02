@@ -1,0 +1,182 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+#endif
+
+    #endif
+
+
+
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // ********                   **************************************************************************************************************
+        // ********  zlib (END)       **************************************************************************************************************
+        // ********                   **************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+
+        //----------------------------------------------------- END
+
+        extern "C" typedef int (__stdcall *zlib_inflateEndFT  )( z_streamp strm ) ;
+        extern "C" typedef int (__stdcall *zlib_inflateFT     )( z_streamp strm , int level ) ;
+        extern "C" typedef int (__stdcall *zlib_inflateInit2FT)( z_streamp strm , int  windowBits , const char *version , int stream_size ) ;
+        extern "C" typedef int (__stdcall *zlib_inflateInitFT )( z_streamp strm , const char *version , int stream_size ) ;
+        extern "C" typedef int (__stdcall *zlib_deflateEndFT  )( z_streamp strm ) ;
+        extern "C" typedef int (__stdcall *zlib_deflateFT     )( z_streamp strm , int level , const char *version , int stream_size ) ;
+        extern "C" typedef int (__stdcall *zlib_deflateInitFT )( z_streamp strm , int level , const char *version , int stream_size ) ;
+
+        //----------------------------------------------------- BEGIN
+
+        #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\zlib\unzipped.zlib123\zlib.h"
+
+        // - BUT IT'S A BIT OF A PAIN IN THE ASS (PITA) TO SET UP EACH API
+        // * WILL ENABLE AN IDEAFARM HOME TO HAVE "FEATURES" THAT CAN BE ENABLED OR DISABLED, AND YOU PAY ONLY FOR WHAT YOU USE (LOAD TIME, DISK SPACE)
+        // * APP CODE NEVER HAS TO DEAL WITH POINTERS TO FUNCTIONS BECAUSE THEY ARE ALL WRAPPED BY thirdC MEMBERS
+        // * DON'T NEED TO WORRY ABOUT HEADER/COMPIER INCOMPATIBILITIES
+        // THIS MIGHT BE A BETTER WAY TO BUILD THIRD PARTY FUNCTIONALITY INTO IPDOS (tm)
+        // LINKED DYNAMICALLY BECAUSE zlib HEADERS DON'T WORK WITH OpenWatcom COMPILER
+
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // ********                   **************************************************************************************************************
+        // ********  zlib (BEGIN)     **************************************************************************************************************
+        // ********                   **************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // ********                   **************************************************************************************************************
+        // ********  OpenSSL (END)    **************************************************************************************************************
+        // ********                   **************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+
+        #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\include\openssl\hmac.h"
+        #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\include\openssl\rsa.h"
+        #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\include\openssl\err.h"
+        #include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\openssl\include\openssl\ssl.h"
+
+        // - BUT IT'S A BIT OF A PAIN IN THE ASS (PITA) TO SET UP EACH API
+        // * WILL ENABLE AN IDEAFARM HOME TO HAVE "FEATURES" THAT CAN BE ENABLED OR DISABLED, AND YOU PAY ONLY FOR WHAT YOU USE (LOAD TIME, DISK SPACE)
+        // * APP CODE NEVER HAS TO DEAL WITH POINTERS TO FUNCTIONS BECAUSE THEY ARE ALL WRAPPED BY thirdC MEMBERS
+        // * DON'T NEED TO WORRY ABOUT HEADER/COMPIER INCOMPATIBILITIES
+        // THIS MIGHT BE A BETTER WAY TO BUILD THIRD PARTY FUNCTIONALITY INTO IPDOS (tm)
+        // LINKED DYNAMICALLY BECAUSE OpenSSL HEADERS DON'T WORK WITH OpenWatcom COMPILER
+
+        //U:: MIGRATE CODE TO REFER TO SYMBOLS DIRECTLY AND ELIMINATE  THE USE OF THE POINTERS THAT ARE SET IN processGlobal2S
+        //U::20230720@1518: OPENSSL HEADERS NOW WORK (PROBABLY ALWAYS WORKED FOR C MODULES DUE TO CDECL DEFAULT CALLING CONVENTION); NOW ALSO WORK FOR C++ CODE IF USE pragma aux (cdecl) FOR EACH SYMBOL
+
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // ********                   **************************************************************************************************************
+        // ********  OpenSSL (BEGIN)  **************************************************************************************************************
+        // ********                   **************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+        // *****************************************************************************************************************************************
+
+        extern "C" BOOL __stdcall K32QueryWorkingSetEx( HANDLE hProcess , PVOID pv , DWORD cb ) ;
+        extern "C" BOOL __stdcall    QueryWorkingSetEx( HANDLE hProcess , PVOID pv , DWORD cb ) ;
+
+        //#include "\ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\windows\ntstatus.h"
+        //COMMENTED OUT BECAUSE VALUES COLLIDE WITH VALUES IN WATCOM'S HEADERS
+
+        #include <userenv.h>
+        //#include <multimon.h>
+        #include <ntsecapi>
+        #include <shlwapi.h>
+        //#include <conio.h>
+        #include <psapi.h>
+        #include <powrprof.h>
+        #include <windows.h>
+        #include <winsock2.h>
+        #include <ws2tcpip.h>
+
+        #undef UNICODE
+
+        #define _WIN32_WINNT _WIN32_WINNT_WS08
+        //#define _WIN32_WINNT _WIN32_WINNT_WIN7
+
+        #undef  _WIN32_WINNT
+
+        #define NTDDI_VERSION NTDDI_WS08
+        //#define NTDDI_VERSION NTDDI_WIN7
+
+        #undef  NTDDI_VERSION
+
+        #define PSAPI_VERSION 1
+        #undef  PSAPI_VERSION
+
+    #elif defined( __NT__ )
+
+        #include <socket.h>
+        #include <un.h>
+        #include <in.h> 
+        #include <types.h>
+        #include <netdb.h>
+        #include <os2.h>
+        #define  INCL_DOSSESMGR
+        #define  INCL_DOSSEMAPHORES
+        #define  INCL_DOSPROCESS
+        #define  INCL_DOSNMPIPES
+        #define  INCL_DOSMODULEMGR
+        #define  INCL_DOSMISC
+        #define  INCL_DOSMEMMGR
+        #define  INCL_DOSFILEMGR
+        #define  INCL_DOSEXCEPTIONS
+        #define  INCL_DOSERRORS
+
+    #ifdef __OS2__
+
+    //U::20241209@1935: YIPPEE KAY-YO! from dictionary  (DEBUGGING THE BUILD) ; REMOVE THIS LINE AFTER ALL IS WORKING WITH <time.h>
+
+    #include <time.h>
+    #define __STDC_WANT_LIB_EXT1__ 1
+
+    #include <stdlib.h>
+    #include <process.h>
+    #include <math.h>
+    #include <malloc.h>
+    #include <stdio.h>
+    #include <conio.h>
+
+#if defined( ifcENABLEtHIRDpARTIES )
+
+//conio ADDED TO ALLOW USE OF getch; CONJ: REDUNDANT AND SHOULD NOT HAVE BEEN ADDED
+
+/*1*//*define and include statements for base operating system*//*1*/
+/**/
+*/
+it is illegal to refer to this symbol in the definition of an adam
+\<A HREF=\"5.15000014.1.0.html\"\>definition\</A\>
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

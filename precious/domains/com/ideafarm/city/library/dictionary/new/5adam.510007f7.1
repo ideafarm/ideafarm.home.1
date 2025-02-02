@@ -1,0 +1,67 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
+
+THREADmODE4rESTORE
+}
+    etThread.traceF( tin0P , T("[pbOut2]:    ")+T(pbOut2) ) ;
+
+    etThread.hushDecryptF( tin0P , pbOut2 , cbOut2 , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed                      , hKeyPrivate ) ;
+    etThread.hushEncryptF( tin0P                   , pbOut1 , cbOut1 , pbInnerKey , cbInnerKey , pbSeed , sizeof pbSeed , pbIn , sizeof pbIn , hKeyPublic  ) ;
+
+    etThread.hushWritePublicKeyToFileF(  tin0P , T("///d/tmp/scratch.adam.ether.key.public.verify.pem")  , hKeyPublic  ) ;
+    etThread.hushWritePrivateKeyToFileF( tin0P , T("///d/tmp/scratch.adam.ether.key.private.verify.pem") , hKeyPrivate ) ;
+
+    etThread.hushReadPublicKeyFromFileF(  tin0P , hKeyPublic  , T("///d/tmp/scratch.adam.ether.key.public.pem")  ) ;
+    etThread.hushReadPrivateKeyFromFileF( tin0P , hKeyPrivate , T("///d/tmp/scratch.adam.ether.key.private.pem") ) ;
+
+    etThread.hushWritePublicKeyToFileF(  tin0P , T("///d/tmp/scratch.adam.ether.key.public.pem")  , hKeyPair ) ;
+    etThread.hushWritePrivateKeyToFileF( tin0P , T("///d/tmp/scratch.adam.ether.key.private.pem") , hKeyPair ) ;
+
+    etThread.traceF( tin0P , T("generated") ) ;
+    etThread.hushMakeKeyPairF( tin0P , hKeyPair , 0x400 ) ;
+    thirdC::openSslCrypto_keyPairIF( tin0P , hKeyPair , 0x400 ) ;
+    etThread.traceF( tin0P , T("generating...") ) ;
+
+    handleC hKeyPublic(  tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpUBLIC  ) ;
+    handleC hKeyPrivate( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpRIVATE ) ;
+    handleC hKeyPair(    tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_OPENSSLkEYpAIR    ) ;
+{
+THREADmODE4oN( flTHREADmODE4_ARMoPENsSL )
+
+TODO
+
+countT cbOut2 = sizeof pbOut2 ;
+countT cbOut1 = sizeof pbOut1 ;
+
+byteT  pbOut2[ TUCK ] ;
+byteT  pbOut1[ TUCK ] ;
+
+countT cbInnerKey = sizeof pbInnerKey ;
+byteT  pbInnerKey[ TUCK ] ;
+byteT  pbSeed[ CBhUSHsEEDaLLOCATION ] ;
+
+byteT  pbIn[] = "thank you, Jesus!" ;
+
+
+/*1*/WAKEsHOWtEXT( "example.simplest.openssl.encryption.decryption.using.etherC" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//

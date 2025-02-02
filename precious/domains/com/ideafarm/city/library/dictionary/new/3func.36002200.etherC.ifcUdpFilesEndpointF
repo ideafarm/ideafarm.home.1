@@ -1,0 +1,146 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+}
+    //traceF( tin0P , T("ifcUdpFilesEndpointF / outahere") ) ;
+
+    }
+                                                                     delF( tin0P , *(countT**)&ppcHashSecrets         ) ;
+        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) delF( tin0P ,             ppcHashSecrets[ offn ] ) ;
+
+                                                                     delF( tin0P , *(countT**)&ppcSecrets             ) ;
+        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) delF( tin0P ,             ppcSecrets[ offn ]     ) ;
+    {
+    if( ppcSecrets )
+
+    delF( tin0P , pbFastBuffer ) ;
+
+    if( bLaunchedObey1 ) sgnDone_tmUdpFileObey1F.waitF( tin0P ) ;
+    if( bLaunchedClock ) sgnDone_tmUdpFileEpochClockF.waitF( tin0P ) ;
+                         sgnDone_tmUdpFileEndpointF.waitF( tin0P ) ;
+
+    //traceF( tin0P , T("maybelooped  to throw burst of BYE") ) ;
+    }
+        ++ s ; osSleepF( tin0P , TOCK >> 3 ) ;
+
+        grab_psoEndpointP.ungrabF( tin0P ) ;
+
+        }
+            break ;
+            grab_psoEndpointP.ungrabF( tin0P ) ;
+        {
+        else
+        }
+            psoEndpointP->writeF( tin0P , idPortBoundP , nnFactory1 , (byteT*)&gram , sizeof gram ) ;
+            //traceF( tin0P , T("throwing BYE [cDo]:    ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        {
+        if( psoEndpointP )
+
+        grab_psoEndpointP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+        gram.idCmd = ifcIDcMDuDPfILEgRAM_BYE ;
+        gram.cbThisGram = sizeof gram ;
+        udpFileGramHeadS gram ;
+    {
+    while( cDo -- )
+    countT cDo = 1 ; //U:: 8
+    nicNameC nnFactory1 = socketC::nicNameIF( tin0P , *this , T("factory1.ideafarm.com") ) ;
+    //traceF( tin0P , T("maybe looping to throw burst of BYE") ) ;
+
+    }
+        }
+            ++ s ; osSleepF( tin0P , TOCK >> 2 ) ;
+            //traceF( tin0P , T("napping, waiting for bQuitP") ) ;
+        {
+        while( !bQuitP )
+
+        }
+            osThreadF( TaRG1( tmUdpFileGetSecretF ) , (countT)&bQuitP , (countT)pNicNameToUseP , (countT)pSecretToUseP , (countT)&psoEndpointP , (countT)&grab_psoEndpointP ) ;
+
+            //}
+            //    ++ s ; osSleepF( tin0P , TOCK >> 2 ) ;
+            //    traceF( tin0P , T("waiting for catcher") ) ;
+            //{
+            //while( !slab.id PortUdpFileCatcher && !bQuitP )
+            //20240217@1632: COMMENTED OUT TO TEST THROWING TO factory1
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+            slabS& slab = slabS::slabIF() ;
+        {
+        if( pSecretToUseP )                 // IF I AM THROWER
+
+        osThreadF( TaRG2sGNdONE( tmUdpFileObey1F , sgnDone_tmUdpFileObey1F ) , (countT)&bQuitP , (countT)&psoEndpointP , (countT)&grab_psoEndpointP , (countT)pNicNameToUseP , (countT)pSecretToUseP , (countT)pcReceivedFileWindowsP , (countT)&cPoured , (countT)pbFastBuffer , cbFastBufferP , (countT)ppcSecrets , (countT)ppcHashSecrets , (countT)&offEpochFreshening , 0 , (countT)&pNicNameWhiteP , (countT)&cNicNameWhiteP , (countT)&grab_pNicNameWhiteP ) ;
+        bLaunchedObey1 = 1 ;
+
+        }
+            osThreadF( TaRG2sGNdONE( tmUdpFileEpochClockF , sgnDone_tmUdpFileEpochClockF ) , (countT)&bQuitP , (countT)ppcSecrets , (countT)ppcHashSecrets , (countT)&offEpochFreshening ) ;
+            bLaunchedClock = 1 ;
+        {
+        if( !pSecretToUseP )
+    {
+    if( !bQuitP )
+    ZE( boolT , bLaunchedObey1 ) ;
+    ZE( boolT , bLaunchedClock ) ;
+
+    }
+        ++ s ; osSleepF( tin0P , TOCK >> 2 ) ;
+    {
+    while( !idPortBoundP && !bQuitP )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    osThreadF( TaRG2sGNdONE( tmUdpFileEndpointF , sgnDone_tmUdpFileEndpointF ) , (countT)&bQuitP , (countT)pbFastBuffer , cbFastBufferP , (countT)&cPoured , (countT)&idPortBoundP , (countT)&psoEndpointP , (countT)&grab_psoEndpointP ) ;
+    ZE( countT , cPoured ) ;
+
+    signC sgnDone_tmUdpFileObey1F(      tin0P , TAG( TAGiDnULL ) ) ;
+    signC sgnDone_tmUdpFileEpochClockF( tin0P , TAG( TAGiDnULL ) ) ;
+    signC sgnDone_tmUdpFileEndpointF(   tin0P , TAG( TAGiDnULL ) ) ;
+
+    newF( tin0P , LF , pbFastBuffer , cbFastBufferP ) ; ___( pbFastBuffer ) ;
+    ZE( byteT* , pbFastBuffer ) ;
+
+    }
+        newF( tin0P , LF , *(countT**)&ppcHashSecrets , CuDPfILEePOCHsLOTS * CuDPfILEhASHsECRETS ) ; ___( ppcHashSecrets ) ;
+        newF( tin0P , LF , *(countT**)&ppcSecrets     , CuDPfILEePOCHsLOTS * CuDPfILEsECRETS     ) ; ___( ppcSecrets     ) ;
+
+        
+        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) { ppcHashSecrets[ offn ] = 0 ; newF( tin0P , LF , ppcHashSecrets[ offn ]     , CuDPfILEsECRETS     ) ; ___( ppcHashSecrets[ offn ] ) ; }
+                                                                                                    newF( tin0P , LF , *(countT**)&ppcHashSecrets , CuDPfILEePOCHsLOTS  ) ; ___( ppcHashSecrets         ) ;
+
+        for( countT offn = 0 ; offn < CuDPfILEePOCHsLOTS ; offn ++ ) {     ppcSecrets[ offn ] = 0 ; newF( tin0P , LF , ppcSecrets[ offn ]         , CuDPfILEsECRETS     ) ; ___( ppcSecrets[ offn ]     ) ; }
+                                                                                                    newF( tin0P , LF , *(countT**)&ppcSecrets     , CuDPfILEePOCHsLOTS  ) ; ___( ppcSecrets             ) ;
+    {
+    if( !pSecretToUseP )                 // IF I AM CATCHER
+    ZE( countT** , ppcHashSecrets ) ;
+    ZE( countT** , ppcSecrets ) ;
+    ZE( countT , offEpochFreshening ) ;
+
+    _IO_
+
+    }
+        if( POOP ) return ;                                     // THE OLDEST ROW IS NOT REFERENCED, AND RECEIVES FRESH RANDOM countT VALUES IMMEDIATELY BEFORE offEpochFreshening IS INCREMENTED
+        __( idPortBoundP ) ;                                    // HONORS    ppcSecrets[ offHonor                   % CuDPfILEePOCHsLOTS ][ ii ] WHERE offHonor IS IN [ offEpochFreshening - CuDPfILEePOCHhONORED , offEpochFreshening - 1 ]
+        if( POOP ) return ;                                     // DISPENSES ppcSecrets[ ( offEpochFreshening - 1 ) % CuDPfILEePOCHsLOTS ][ ii ] IF ifcUdpFileOffSecretForThisNnF RETURNS ii, CALCULATED BY HASHING THE IP ADDRESS
+    {
+    IFbEcAREFUL
+    SCOOP
+{
+/*1*/voidT etherC::ifcUdpFilesEndpointF( tin0S& tin0P , const boolT& bQuitP , countT& idPortBoundP , const countT cbFastBufferP , socketC*& psoEndpointP , grabC& grab_psoEndpointP , const nicNameC*& pNicNameWhiteP , countT& cNicNameWhiteP , grabC& grab_pNicNameWhiteP , nicNameC* pNicNameToUseP , countT* pSecretToUseP , countT* pcReceivedFileWindowsP )/*1*/
+
+/**/
+
+*/
+/*
+
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

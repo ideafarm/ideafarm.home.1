@@ -1,0 +1,163 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+etherC::loafIF( tin0P ) ;
+etThread.traceF( tin0P , T("ok") ) ;
+
+}
+    etThread.traceF( tin0P , T("mp3 [cBad,cGood]:    ")+TF2(cBad,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cGood,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.traceF( tin0P , T("walked  ")+tRoot+T(" [cDirs,cFiles]:    ")+TF2(cDirs,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFiles,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    etThread.diskWalkF( tin0P , cDirs , cFiles , tRoot , ether , flDISKwALK_null , workCBF , pcArgInner , 0 , 0 ) ;
+    ZE( countT , cFiles ) ;
+    ZE( countT , cDirs ) ;
+    etThread.traceF( tin0P , T("walking ")+tRoot ) ;
+
+    countT pcArgInner[] = { (countT)&etThread , (countT)&cBad , (countT)&cGood , (countT)&tb4 , (countT)&tMp3 , (countT)&tPdf } ;
+
+    ZE( countT , cGood ) ;
+    ZE( countT , cBad ) ;
+
+    TN( tPdf , "pdf" ) ;
+    TN( tMp3 , "mp3" ) ;
+    TN( tb4  , "    " ) ;
+
+    etThread.delF( tin0P   , psttDir ) ;
+    TN( tRoot , psttDir ) ;
+{
+else
+if( !psttDir ) etThread.traceF( tin0P , T("oops!") ) ;
+
+}
+    }
+        }
+            break ;
+            etThread.strMakeF( tin0P , LF , psttDir , psttc1 ) ; ___( psttDir ) ;
+            bArmed = 0 ;
+        {
+        else if( bArmed )
+        if( !etThread.strCompareF( tin0P , psttc1 , tArgKeyName ) ) bArmed = 1 ;
+        etThread.traceF( tin0P , T("param: ")+T(psttc1) ) ;
+    {
+    FORsTRINGSiN1( pstt1Param )
+    ZE( boolT , bArmed ) ;
+    strokeS*& pstt1Param = etThread.ether_pstt1_processParametersI_F( tin0P ) ;
+    TN( tArgKeyName , "!dir" ) ;
+{
+ZE( strokeS* , psttDir ) ;
+
+TODO
+
+
+}
+    return 0 ;
+
+    }
+        }
+            }
+                etherP.traceF( tin0P , T("test 1 corrupt:    ")+tName ) ;
+                cBadP ++ ;
+            {
+            else
+            if( bOk1 ) cGoodP ++ ;
+
+            ) ;
+                    : !etherP.memCompareF( tin0P , pbw , pbTag00To04 , sizeof pbTag00To04 )
+                    ? !etherP.memCompareF( tin0P , pbw , pbTag00To02 , sizeof pbTag00To02 )
+                bMp3
+            (
+            boolT bOk1 = pbw &&
+
+            fwsIn.getF( tin0P , pbw , cbw , bMp3 ? 3 : 5 ) ;
+            ZE( countT , cbw ) ;
+            ZE( byteT* , pbw ) ;
+            fileWindowsC fwsIn( tin0P , etherP , tName ) ;
+
+            //etherP.traceF( tin0P , tShort ) ;
+        {
+        if( /*bMp3 ||*/ bPdf )
+
+        boolT bPdf = !etherP.strCompareF( tin0P , tExt , tPdfP ) ;
+        boolT bMp3 = !etherP.strCompareF( tin0P , tExt , tMp3P ) ;
+
+        //etherP.traceF( tin0P , T("ext  :    ")+tExt ) ;
+
+        }
+            etherP.delF( tin0P , psttExt ) ;
+            etherP.delF( tin0P , psttShorter ) ;
+            tExt = T(psttExt) ;
+            etherP.strConvertToLowerCaseF( tin0P , psttExt ) ;
+
+            tShorter  = T(psttShorter) ;
+            etherP.strBisectF( tin0P , psttShorter , psttExt , tName , T(".") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttShorter ) ; ___( psttExt ) ;
+            ZE( strokeS* , psttExt ) ;
+            ZE( strokeS* , psttShorter ) ;
+        {
+        TN( tExt , "" ) ;
+        TN( tShorter  , "" ) ;
+
+        }
+            etherP.delF( tin0P , psttShort ) ;
+            etherP.delF( tin0P , psttPath ) ;
+            tShort = T(psttShort) ;
+            tPath  = T(psttPath) ;
+            etherP.strBisectF( tin0P , psttPath , psttShort , tName , T("/") , - 1 , flSTRbISECT_APPENDdELIMITER ) ; ___( psttPath ) ; ___( psttShort ) ;
+            ZE( strokeS* , psttShort ) ;
+            ZE( strokeS* , psttPath ) ;
+        {
+        TN( tShort , "" ) ;
+        TN( tPath  , "" ) ;
+                                                                            
+        //etherP.traceF( tin0P , T("file :    ")+tName ) ;
+
+        TN( tName , ifName ) ;
+        ifFileNameC ifName( tin0P , *((tin1S&)tin0P).pEther , postNameP ) ;
+    {
+    else
+    }
+        etherP.traceF( tin0P , T("directory:    ")+tName ) ;
+
+        TN( tName , ifName ) ;
+        ifFileNameC ifName( tin0P , etherP , postNameP ) ;
+    {
+    else if( postNameP[ thirdC::c_strlenIF( tin0P , postNameP ) - 1 ] == '\\' ) // IF DIRECTORY
+    }
+        etherP.traceF( tin0P , T("scan completed for a directory") ) ;
+    {
+    if( !postNameP )
+
+    textC&  tPdfP      =  *(textC*)pcArgP[ 5 ] ;
+    textC&  tMp3P      =  *(textC*)pcArgP[ 4 ] ;
+    textC&  tb4P       =  *(textC*)pcArgP[ 3 ] ;
+    countT& cGoodP     = *(countT*)pcArgP[ 2 ] ;
+    countT& cBadP      = *(countT*)pcArgP[ 1 ] ;
+    etherC& etherP     = *(etherC*)pcArgP[ 0 ] ;
+{
+boolT workCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQuitP , const osTextT* const postNameP , countT* const pcArgP , const countT* const pModuloDirsP , const countT* const pModuloFilesP )
+
+byteT pbTag00To04[] = { '%' , 'P' , 'D' , 'F' , '-' } ;
+byteT pbTag00To02[] = { 'I' , 'D' , '3' } ;
+
+// ALL ZE OVER 80-14F EXCEPT OFFSET E2 IS 0XFF AND OFFSET 14C IS 0X63
+
+
+
+/*1*/WAKEsHOWtEXT( "tool.scan.for.ransomware.encryption" )/*1*/
+/**/
+*/
+parameter: !dir: the directory to scan, in ipdos file name format
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//

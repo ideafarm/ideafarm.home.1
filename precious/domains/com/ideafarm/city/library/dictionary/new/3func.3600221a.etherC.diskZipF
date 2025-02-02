@@ -1,0 +1,154 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+}
+    delF( tin0P , postWildListExclude ) ;
+    delF( tin0P , postWildListInclude ) ;
+    delF( tin0P , postWildList        ) ;
+    third.diskZipF( tin0P , T(osfnTo) , postWildList , postWildListInclude , postWildListExclude , T(psttSpecsPKZipP) , T(psttSpecsInfoZipP) , idZipperP ) ;
+
+    }
+        }
+            }
+                            thirdC::c_strcatIF( tin0P , postWildListExclude , osfnWild ) ;
+                else        thirdC::c_strcatIF( tin0P , postWildListExclude , " "      ) ;
+                if( bWoth ) bWoth = 0 ;
+                traceF( tin0P , T(osfnWild) ) ;
+                osFileNameC osfnWild( tin0P , *this , T(psttc1) ) ;
+            {
+            FORsTRINGSiN1( pstt01WildListExcludeP )
+            boolT bWoth = 1 ;
+        {
+        else
+        }
+            thirdC::c_strcpyIF( tin0P , postWildListExclude , osfnWild ) ;
+            traceF( tin0P , T(osfnWild) ) ;
+            osFileNameC osfnWild( tin0P , *this , T(pstt01WildListExcludeP) ) ;
+        {
+        if( !bIsListWildExclude )
+
+        *postWildListExclude = 0 ;
+        newF( tin0P , LF , postWildListExclude , pstt01WildListExcludeP->idAdam + cWildExclude ) ; ___( postWildListExclude ) ;
+    {
+    if( pstt01WildListExcludeP )
+    ZE( osTextT* , postWildListExclude ) ;
+
+    }
+        }
+            }
+                            thirdC::c_strcatIF( tin0P , postWildListInclude , osfnWild ) ;
+                else        thirdC::c_strcatIF( tin0P , postWildListInclude , " "      ) ;
+                if( bWoth ) bWoth = 0 ;
+                traceF( tin0P , T(osfnWild) ) ;
+                osFileNameC osfnWild( tin0P , *this , T(psttc1) ) ;
+            {
+            FORsTRINGSiN1( pstt01WildListIncludeP )
+            boolT bWoth = 1 ;
+        {
+        else
+        }
+            thirdC::c_strcpyIF( tin0P , postWildListInclude , osfnWild ) ;
+            traceF( tin0P , T(osfnWild) ) ;
+            osFileNameC osfnWild( tin0P , *this , T(pstt01WildListIncludeP) ) ;
+        {
+        if( !bIsListWildInclude )
+
+        *postWildListInclude = 0 ;
+        newF( tin0P , LF , postWildListInclude , pstt01WildListIncludeP->idAdam + cWildInclude ) ; ___( postWildListInclude ) ;
+    {
+    if( pstt01WildListIncludeP )
+    ZE( osTextT* , postWildListInclude ) ;
+
+    }
+        }
+            }
+                            thirdC::c_strcatIF( tin0P , postWildList , osfnWild ) ;
+                else        thirdC::c_strcatIF( tin0P , postWildList , " "      ) ;
+                if( bWoth ) bWoth = 0 ;
+                traceF( tin0P , T(osfnWild) ) ;
+                osFileNameC osfnWild( tin0P , *this , T(psttc1) ) ;
+            {
+            FORsTRINGSiN1( pstt01WildListP )
+            boolT bWoth = 1 ;
+        {
+        else
+        }
+            thirdC::c_strcpyIF( tin0P , postWildList , osfnWild ) ;
+            traceF( tin0P , T(osfnWild) ) ;
+            osFileNameC osfnWild( tin0P , *this , T(pstt01WildListP) ) ;
+        {
+        if( !bIsListWild )
+
+        *postWildList = 0 ;
+        newF( tin0P , LF , postWildList , pstt01WildListP->idAdam + cWild ) ; ___( postWildList ) ;
+    {
+    ZE( osTextT* , postWildList ) ;
+
+    }
+        else                     cWildExclude = 1 ;
+        if( bIsListWildExclude ) { FORsTRINGSiN1( pstt01WildListExcludeP ) { cWildExclude ++ ; } }
+    {
+    if( pstt01WildListExcludeP )
+
+    }
+        else                     cWildInclude = 1 ;
+        if( bIsListWildInclude ) { FORsTRINGSiN1( pstt01WildListIncludeP ) { cWildInclude ++ ; } }
+    {
+    if( pstt01WildListIncludeP )
+
+    }
+        else                     cWild = 1 ;
+        if( bIsListWild        ) { FORsTRINGSiN1( pstt01WildListP        ) { cWild ++        ; } }
+    {
+    ZE( countT , cWildExclude ) ;
+    ZE( countT , cWildInclude ) ;
+    ZE( countT , cWild        ) ;
+
+    boolT bIsListWildExclude = pstt01WildListExcludeP && ISsTRINGoFsTRINGS( pstt01WildListExcludeP ) ;
+    boolT bIsListWildInclude = pstt01WildListIncludeP && ISsTRINGoFsTRINGS( pstt01WildListIncludeP ) ;
+    boolT bIsListWild        =                           ISsTRINGoFsTRINGS( pstt01WildListP        ) ;
+
+    traceF( tin0P , T(osfnTo) ) ;
+    osFileNameC osfnTo( tin0P , *this , T(psttToP) ) ;
+
+    }
+        if( POOP ) return ;
+        }
+            __( strIdF( tin0P , S1C(' ' ) , pstt01WildListExcludeP ) ) ;
+            __( strIdF( tin0P , S1C('\\') , pstt01WildListExcludeP ) ) ;
+        {
+        if( pstt01WildListExcludeP )
+        }
+            __( strIdF( tin0P , S1C(' ' ) , pstt01WildListIncludeP ) ) ;
+            __( strIdF( tin0P , S1C('\\') , pstt01WildListIncludeP ) ) ;
+        {
+        if( pstt01WildListIncludeP )
+        }
+            __( strIdF( tin0P , S1C(' ' ) , pstt01WildListP ) ) ;
+            __( strIdF( tin0P , S1C('\\') , pstt01WildListP ) ) ;
+        {
+        if( POOP ) return ;
+        __Z( pstt01WildListP ) ;
+        __Z( psttToP ) ;
+        if( POOP ) return ;
+    {
+    IFbEcAREFUL
+{
+/*1*/voidT etherC::diskZipF( tin0S& tin0P , const strokeS* const psttToP , const strokeS* const pstt01WildListP , const strokeS* const pstt01WildListIncludeP , const strokeS* const pstt01WildListExcludeP , const strokeS* const psttSpecsPKZipP , const strokeS* const psttSpecsInfoZipP , const countT idZipperP )/*1*/
+
+/**/
+
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//

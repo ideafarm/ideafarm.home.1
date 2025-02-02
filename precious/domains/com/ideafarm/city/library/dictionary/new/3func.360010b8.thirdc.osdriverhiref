@@ -1,0 +1,77 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+}
+    delF( tin0P , pc_ppostHow ) ;
+
+    DECoShANDLES
+    BOSpOOP
+    BOS( WHATgbo , BOSoK , CloseServiceHandle( hsm ) )
+    BOSpOOP
+    DECoShANDLES
+    BOS( WHATgbo , BOSoK , CloseServiceHandle( hsv ) )
+    BOSpOOP
+
+    if( ((tin1S&)tin0P).bosFail ) { LOGrAW3( "StartService returned " , ((tin1S&)tin0P).brcLath , "\r\n" ) ; }
+
+    BOS( WHATgbo , BOSoK , StartService( hsv , 0 , 0 ) ) //U: DEBUG: __( !StartService( hsv , 1 + cHowP , (const osTextT**)pc_ppostHow ) ) ;
+    INCoShANDLES
+    __Z( hsv ) ;
+    SC_HANDLE hsv = (SC_HANDLE)((tin1S&)tin0P).brcRaw ;
+    BOS( WHATgbo , BOSoK , OpenService( hsm , postNameP , SERVICE_ALL_ACCESS ) )
+    __Z( hsm ) ;
+    INCoShANDLES
+    SC_HANDLE hsm = (SC_HANDLE)((tin1S&)tin0P).brcRaw ;
+    BOS( WHATgbo , BOSoK , OpenSCManager( 0 , 0 , SC_MANAGER_ALL_ACCESS ) )
+
+    if( cHowP ) c_memcpyIF( tin0P , (byteT*)&pc_ppostHow[ 1 ] , (byteT*)&ppostHowP[ 0 ] , sizeof( countT ) * cHowP ) ;
+    pc_ppostHow[ 0 ] = (countT)postNameP ;
+    newF( tin0P , LF , pc_ppostHow , 1 + cHowP ) ; ___( pc_ppostHow ) ; //ASSUME: sizeof( countT ) == sizeof( osTextT* )
+    ZE( countT* , pc_ppostHow ) ;
+
+    _IO_
+
+    }
+        if( POOP ) return ;
+        costn = c_strlenIF( tin0P , postNameP ) ;
+        if( POOP ) return ;
+        __( cHowP && !ppostHowP ) ;
+        __( cHowP ) ; //U: DEBUG CASE WHERE THERE ARE PARAMETERS
+        __Z( postNameP ) ;
+        if( POOP ) return ;
+    {
+    IFbEcAREFUL    
+    SCOOP
+    ZE( countT , costn ) ;
+{
+/*1*/voidT thirdC::osDriverHireF( tin0S& tin0P , const osTextT* const postNameP , const countT cHowP , const osTextT** ppostHowP )/*1*/
+
+/**/
+*/
+ ppostHowP
+ cHowP
+ postNameP
+ tin0P
+arguments
+ argument[2] will be ppostHowP[ 1 ], etc.
+ argument[1] will be ppostHowP[ 0 ]
+ argument[0] will be postNameP
+the driver will receive 1+cHowP arguments
+U: support cHowP > 0 (arguments are not currently supported)
+\<A HREF=\"5.10200de.1.0.html\"\>definition\</A\>
+\<A HREF=\"6.$osDriverHireF.0.html\"\>instances\</A\>
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

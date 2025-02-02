@@ -1,0 +1,123 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+}
+    }
+        pcLagOffNext = &offNext ;
+
+        idGramLath ++ ;                                         // MUST NOT BE DONE UNTIL FORMATTING IS COMPLETE, INCLUDING SMUDGING *pcLagOffNext, SO THAT CALLER CAN USE BOTH idGram AND idGramLath TO KNOW WHETHER A GRAM IS READY FOR PROCESSING
+        if( pcLagOffNext ) *pcLagOffNext = pbcSave - pbP ;      // WILL ALWAYS BE 0 BEFORE I AM FULLY FORMATTED AND NEVER 0 AFTER I AM FULLY FORMATTED (WILL BE AT LEAST sizeof( countT ))
+
+        idGram = 1 + idGramLath ;
+
+        memcpy( pbc , &from , sizeof from ) ;  pbc += sizeof from ;
+
+        pbc += cbData ;
+        ;
+            : 0
+            ? ( cbData = 0 , WSAGetLastError() )            // ALL DATA RECEIVED IS DISCARDED ON ERROR, EVEN IF THE ERROR CODE IS WSAEMSGSIZE
+        rc = cbData == SOCKET_ERROR
+
+        }
+            continue ;
+            //((tin1S&)tin0P).pEther->traceF( tin0P , T("s_readF / rejecting [bFail1,bFail2]:    ")+TF2(bFail1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bFail1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            pbc = pbcSave ;
+        {
+        if( bFail1 || bFail2 )
+
+        boolT bFail2 = cbData < sizeof( countT ) ? 1 : cbData != cbGram ;        // I REQUIRE PACKETS TO BE LENGTH PREFIXED (WITH LENGTH THAT INCLUDES THE PREFIX) ; THIS TEST ALSO REJECTS NULL LENGTH PACKETS
+        boolT bFail1 = cbFrom != sizeof from ;
+
+        //((tin1S&)tin0P).pEther->traceF( tin0P , T("s_readF / recvfrom returned [cbData]:    ")+TF2(cbData,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        cbData = recvfrom( oshSock , pbc , ifcCBdATAGRAMmAX , 0 , (sockaddr*)&from , &cbFrom ) ;
+        //((tin1S&)tin0P).pEther->traceF( tin0P , T("s_readF / calling recvfrom") ) ;
+        sCountT cbFrom = sizeof from ;
+
+        idGram = offNext = 0 ;
+
+        pbc += 4 * sizeof( countT ) ;               // AIM AT cbGram (I REQUIRE PACKETS TO BEGIN WITH cbGram
+
+        countT& cbGram   = ((countT*)pbc)[ 4 ] ;
+        countT& cbData   = ((countT*)pbc)[ 3 ] ;
+        countT& rc       = ((countT*)pbc)[ 2 ] ;
+        countT& idGram   = ((countT*)pbc)[ 1 ] ;    // GUARANTEED TO BE 0 UNTIL THIS RECORD IS COMPLETELY FORMATTED
+        countT& offNext  = ((countT*)pbc)[ 0 ] ;    // GUARANTEED TO BE 0 UNTIL THE NEXT RECORD IS COMPLETELY FORMATTED ; CODE THAT PROCESSES THIS RECORD MUST WAIT FOR THIS FIELD TO BE NONZE BEFORE USING THIS FIELD
+        byteT*  pbcSave  = pbc                 ;
+
+        //((tin1S&)tin0P).pEther->traceF( tin0P , T("s_readF / record [pbc-pbP]:    ")+TF2(pbc-pbP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED ) ) ;
+
+        if( pbc + cbMin > pbe ) pbc = pbCircle ;
+
+        }
+            Sleep( 0 ) ;
+        {                                                               // TO SEE THIS, ASSUME ALL ARE STORED AS BYTE AND THAT idGramLath IS TUCK, cProcessedP IS 0f, AND cCapacity IS 01
+        while( !bQuitP && idGramLath - cProcessedP == cCapacity )       // SLEEP IFF PENDING EQUALS CAPACITY (THIS CODE WILL WORK EVEN WITH WRAPPING)
+    {
+    while( !bQuitP )
+    ZE( countT* , pcLagOffNext ) ;
+    TN( tb4 , "    " ) ; //U::DISABLE IN PRODUCTION
+
+    byteT*       pbc        = pbCircle                              ;
+    byteT*       pbCircle   = pbP + sizeof( countT )                ;
+    countT&      idGramLath = *(countT*)pbP                         ;
+    const byteT* const pbe  = pbP + cbP                             ;
+    const countT oshSock    = handleP.osF( ifcIDtYPEhANDLE_SOCKET ) ;
+    sockaddr_in6 from                                               ;
+
+    memset( pbP , 0 , cbP ) ;
+
+    _IO_
+
+    }
+        if( POOP ) return ;
+        __( cProcessedP ) ;
+        __Z( handleP ) ;
+        __( cbP < cbMin ) ;
+        __Z( cbP ) ;
+        __Z( pbP ) ;
+        if( POOP ) return ;
+    {
+    IFbEcAREFUL    
+
+    const countT cCapacity = cbP / cbMin - 1                                 ;      // WRITING OF RECORD N SMUDGES RECORD N-1 (offNext) SO IF THE BUFFER WILL HOLD N RECORDS, I MUST LIMIT MYSELF TO N-1 PENDING TO AVOID SMUDGING A PENDING
+    const countT cbMin     = 0xc + ifcCBdATAGRAMmAX + sizeof( sockaddr_in6 ) ;
+
+    SCOOP
+{
+/*1*/voidT thirdC::s_readF( tin0S& tin0P , const boolT& bQuitP , byteT* const pbP , const countT cbP , handleC& handleP , countT& cProcessedP )/*1*/
+
+
+/**/
+*/
+ handleP
+  must be at least 8 + ifcCBdATAGRAMmAX + sizeof( sockaddr_in6 )
+ cbP
+  must not be 0
+ pbP
+ tin0P
+parameters
+ for the layout of each triplet, see code comments
+ the "from" value is the raw sockaddr_in6 structure ; i do not parse it
+ the "rc" value is the raw socket error code
+ (each triplet is contiguous, i.e. not split at the end of the buffer)
+i write contiguous length prefixed [rc,data,from] triplets to the buffer, wrapping to offset 0 when i am near the end
+the caller is responsible for processing that buffer on another thread while i continue to read new datagrams
+the caller provides a circular buffer, and i just read datagrams into that buffer until i am told to quit
+ this restriction is intended to make it easy for another thread to monitor and process the buffer pbP
+a packet will be ignored if it does not begin with a length prefix that matches the actual number of bytes received
+i am designed for maximum speed
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

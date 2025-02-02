@@ -1,0 +1,52 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+//VISIBLE
+
+REST
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+
+etThread.osSleepF( tin0P , TOCK * 4 ) ;
+etThread.strokeF( tin0P , T("the file contained: \"")+T(posti100)+T("\"\r\nok\r\n") ) ;
+
+etThread.diskFileOrDirDeleteF( tin0P , T(FILEnAMEnEW) ) ;
+
+etThread.fileReadF( tin0P , posti100 , sizeof posti100 , handle , 1 ) ;
+etThread.memSetF( tin0P , posti100 , sizeof posti100 ) ;
+osTextT posti100[ 0x100 ] ;
+etThread.fileOpenF( tin0P , handle , idResult , T(FILEnAMEnEW) , ifcOPENaCCESS_R , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nFeO , 0 , 0 , 0 , 1 ) ;
+idResult = 0 ;
+
+etThread.diskMoveFileOrDirF( tin0P , T(FILEnAMEnEW) , T(FILEnAMEoLD) ) ;
+etThread.diskMakeDirIfNeededF( tin0P , T(FILEnAMEnEW) ) ;
+
+etThread.fileWriteF( tin0P , handle , "this text will go into the file" ) ;
+etThread.fileOpenF( tin0P , handle , idResult , T(FILEnAMEoLD) , ifcOPENaCCESS_W , 0 , flOPENdETAILS_FAIL , ifcOPENhOW_nCeR , 0 , 0 , 0 , 1 ) ;
+etThread.diskMakeDirIfNeededF( tin0P , T(FILEnAMEoLD) ) ;
+ZE( countT , idResult ) ;
+handleC handle( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
+
+TODO
+
+#define FILEnAMEnEW "///ideafarm/ephemeral/tmp/4210104.new/new.foo"
+#define FILEnAMEoLD "///ideafarm/ephemeral/tmp/4210104.old/old.foo"
+
+/*1*/WAKEhIDE( "example.simplest.func.1030013.etherC.diskMoveFileOrDirF" )/*1*/
+/**/
+*/
+\<A HREF=\"5.6210104.1.0.html\"\>definition\</A\>
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

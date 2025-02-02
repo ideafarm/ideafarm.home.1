@@ -1,0 +1,67 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+REST
+
+}
+    etThread.delF( tin0P , psttPeer ) ;
+    etThread.strokeF( tin0P , T("peer: ")+T("\r\n") ) ;
+    etThread.strFromIdPortNicNameF( tin0P , psttPeer , idpPeer , nnPeer ) ; ___( psttPeer ) ;
+    ZE( strokeS* , psttPeer ) ;
+    //U::THIS DOES NOT WORK
+    
+    DEL( pso ) ;
+    
+    etThread.delF( tin0P , postr ) ;
+    pso->writeF( tin0P , postr , costr ) ;
+    etThread.strokeF( tin0P , T("\r\n")+T(postr)+T("\r\n") ) ;
+    countT costr = etThread.strMakeF( tin0P , LF , postr , T("HTTP/1.1 200\r\nContent-Type: text/html\r\nContent-Length: ")+TF4(tBody.csF(tin0P),flFORMAT_NObASE,0,0xa)+T("\r\n\r\n")+tBody ) ; ___( postr ) ;
+    ZE( osTextT* , postr ) ;
+    TN( tBody , "<pre>test page served over t-mobile from Wo'O Ideafarm\r\n\r\nclient " ) ; tBody += TF1(++idClient) ;
+
+    etThread.delF( tin0P , posti ) ;
+    etThread.strokeF( tin0P , T("\r\n")+T(posti)+T("\r\n") ) ;
+    pso->readToNullLineF( tin0P , posti , 0x10000 ) ; ___( posti ) ;
+    ZE( osTextT* , posti ) ;
+    
+    etThread.strokeF( tin0P , T("peer ip: ")+T(nnPeer)+T("\r\n") ) ;
+    pso->peerNameF( tin0P , idpPeer , nnPeer ) ;
+    nicNameC nnPeer ;
+    ZE( countT , idpPeer ) ;
+    
+    etThread.strokeF( tin0P , T("a client connected\r\n") ) ;
+    sli.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ;
+    ZE( countT , idPortPeer ) ;
+    nicNameC nnPeer ;
+    ZE( socketC* , pso ) ;
+{
+while( !ether )
+ZE( countT , idClient ) ;
+
+etThread.strokeF( tin0P , T("listening on port ")+TF4(idp,flFORMAT_null,0,0xa)+T("\r\n") ) ;
+sli.listenF( tin0P ) ;
+countT idp = sli.bindF( tin0P , /*80*/1273 ) ;
+socketC sli( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+
+TODO
+
+// OBSOLETED BY 6bd AT 20141005@2145
+
+/*1*/WAKEhIDE( "tool.port.05.server.simple" )/*1*/
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

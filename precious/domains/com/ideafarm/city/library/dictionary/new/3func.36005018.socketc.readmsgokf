@@ -1,0 +1,117 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+}
+    dec02AM( cFunctionsPending ) ;
+    }
+    
+        ((tin1S&)tin0P).pag3->_socketC_.grab.ungrabF( tin0P ) ;
+        pOdometer->cbWrite += ((tin1S&)tin0P).odoSockCbWrite - _odoSockCbWriteOpen ;
+        pOdometer->cbRead  += ((tin1S&)tin0P).odoSockCbRead  - _odoSockCbReadOpen  ;
+        pOdometer = (sockOdometerS*)&(countT&)*((tin1S&)tin0P).pag3->_socketC_.pSwOdometer ;
+        ((tin1S&)tin0P).pag3->_socketC_.nnLever = nnPeer ;
+        ((tin1S&)tin0P).pag3->_socketC_.grab.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    
+        bRead.ungrabF( tin0P ) ; //THIS IS BALANCED BY THE BATON GRAB IN readMsgF
+    
+        THREADmODE1rESTORE
+
+        }
+            pEther->sockWriteF( tin0P , handle , (byteT*)&cbMsgInLast , sizeof cbMsgInLast ) ;
+            //etherC::etRockIF( tin0P ).traceF( tin0P , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+        {
+        else
+        }
+            pEther->openSslTls_writeF( tin0P , handle , (byteT*)&cbMsgInLast , sizeof cbMsgInLast ) ;
+            armSslC armMe( tin0P , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tin0P ).traceF( tin0P , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+        {
+        if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
+
+        }
+            pEther->sockWriteF( tin0P , handle , (byteT*)&idMsgInLast , sizeof idMsgInLast ) ;
+            //etherC::etRockIF( tin0P ).traceF( tin0P , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+        {
+        else
+        }
+            pEther->openSslTls_writeF( tin0P , handle , (byteT*)&idMsgInLast , sizeof idMsgInLast ) ;
+            armSslC armMe( tin0P , flagsOpenSslFails ) ;
+            //etherC::etRockIF( tin0P ).traceF( tin0P , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+        {
+        if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
+
+        }
+            }
+                pEther->sockWriteF( tin0P , handle , (byteT*)&idType , sizeof idType ) ;
+                //etherC::etRockIF( tin0P ).traceF( tin0P , T("flSOCKETc_CRYPTfOREIGNsSL is not set") ) ;
+            {
+            else
+            }
+                pEther->openSslTls_writeF( tin0P , handle , (byteT*)&idType , sizeof idType ) ;
+                armSslC armMe( tin0P , flagsOpenSslFails ) ;
+                //etherC::etRockIF( tin0P ).traceF( tin0P , T("flSOCKETc_CRYPTfOREIGNsSL is     set") ) ;
+            {
+            if( F(flags) & flSOCKETc_CRYPTfOREIGNsSL ) 
+            countT idType = 2 ;
+        {
+
+        THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
+    
+        const countT _odoSockCbWriteOpen = ((tin1S&)tin0P).odoSockCbWrite ;
+        const countT _odoSockCbReadOpen  = ((tin1S&)tin0P).odoSockCbRead  ;
+    
+        _IO_
+    
+        }
+            }
+                return ;
+                dec02AM( cFunctionsPending ) ;
+            {
+            if( *pEther )
+        {
+        IFbEcAREFUL    
+        SCOOPP
+    {
+    inc02AM( cFunctionsPending ) ;
+{
+/*1*/voidT socketC::readMsgOkF( tin0S& tin0P )/*1*/
+
+/**/
+*/
+ tin0P
+arguments
+call readMsgNokF if the data cannot be processed
+call readMsgOkF after the data received has been processed
+ this function releases the socketC object but does not grab it
+the caller -must- precede this call with a call to readMsgF
+  both ends of a connection should use writeMsgF, readMsgF, and readMsgOkF (or readMsgNack)
+ this protocol is subject to change
+   cbr must equal the cbP just sent
+   idMsgr must equal the idMsg just sent
+   2 indicates that this is an ack
+  then reads 2, idMsgr, cbr
+   idMsg is consecutive from 1 and is unique for each message going out from a socket
+   1 indicates that this is a message (rather than an ack)
+  writes 1, idMsg, cbP, pbP
+ the remote peer is assumed to have written a message using the following protocol
+sends an acknowledgement to the peer that processing was successful for the last message read using the IFC message protocol
+  \<A HREF=\"5.4930104.1.1.0.html\"\>4930104:  WAKEsHOW( "example.simplest.func.107001b.socketC.readMsgOkF" )\</A\>
+ simplest
+examples
+\<A HREF=\"5.107001b.1.0.html\"\>definition\</A\>
+\<A HREF=\"6.$readMsgOkF.0.html\"\>instances\</A\>
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+

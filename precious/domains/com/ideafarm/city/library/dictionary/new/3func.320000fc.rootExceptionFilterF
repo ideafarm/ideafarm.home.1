@@ -1,0 +1,508 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+#undef CsLOTSrESTART
+
+}
+    return rc ;
+
+    }
+        }
+            }
+                }
+                    }
+                        rc = rootExceptionFilterWorker2F( pvOsInfoP , ec ) ;
+                        thirdC::dosWriteStdOutAvoidStackIF( "\r\nnot enough stack space available to call rootExceptionFilterWorker1F\r\n" ) ;
+                    {
+                    else if( !bWorker1StackFrameAOK )
+                    if( !*prFloat ) rc = rootExceptionFilterWorker1F( pvOsInfoP , ec ) ;
+                {
+                else
+                }
+                    rc = rootExceptionFilterWorker2F( pvOsInfoP , ec ) ;
+                {
+                if( ec == EXCEPTION_STACK_OVERFLOW )
+
+                // ====================================================================================================================================================================================================
+                // ========                 ===========================================================================================================================================================================
+                // ========  RESTART POINT  ===========================================================================================================================================================================
+                // ========                 ===========================================================================================================================================================================
+                // ====================================================================================================================================================================================================
+                getRegsAM( prFloat->pcRegisters ) ;
+            {
+            if( prFloat )
+
+            }
+                }
+                    break ;
+                    prFloat = new( 0 , (byteT*)( (restartC*)pbzTop + offm ) , sizeof( restartC ) ) restartC( prFloat ) ;
+                {
+                if( !setIfZeAM( ((restartC*)pbzTop)[ offm ].osTid , osTidMe ) )
+            {
+            for( countT offm = 0 ; offm < CsLOTSrESTART ; offm ++ )
+        {
+        else
+        }
+            rc = EXCEPTION_CONTINUE_EXECUTION ;
+
+            #endif
+                osInfo.ContextRecord->SegCs  = prFloat->pcRegisters[ 0xf ] ;
+                osInfo.ContextRecord->SegSs  = prFloat->pcRegisters[ 0xe ] ;
+                osInfo.ContextRecord->SegGs  = prFloat->pcRegisters[ 0xd ] ;
+                osInfo.ContextRecord->SegFs  = prFloat->pcRegisters[ 0xc ] ;
+                osInfo.ContextRecord->SegEs  = prFloat->pcRegisters[ 0xb ] ;
+                osInfo.ContextRecord->SegDs  = prFloat->pcRegisters[ 0xa ] ;
+                osInfo.ContextRecord->EFlags = prFloat->pcRegisters[ 0x9 ] ;
+                osInfo.ContextRecord->Eip    = prFloat->pcRegisters[ 0x8 ] ;
+                osInfo.ContextRecord->Esp    = prFloat->pcRegisters[ 0x7 ] ;
+                osInfo.ContextRecord->Ebp    = prFloat->pcRegisters[ 0x6 ] ;
+                osInfo.ContextRecord->Edi    = prFloat->pcRegisters[ 0x5 ] ;
+                osInfo.ContextRecord->Esi    = prFloat->pcRegisters[ 0x4 ] ;
+                osInfo.ContextRecord->Edx    = prFloat->pcRegisters[ 0x3 ] ;
+                osInfo.ContextRecord->Ecx    = prFloat->pcRegisters[ 0x2 ] ;
+                osInfo.ContextRecord->Ebx    = prFloat->pcRegisters[ 0x1 ] ;
+                osInfo.ContextRecord->Eax    = prFloat->pcRegisters[ 0x0 ] ;
+            #if defined( __NT__ )
+    
+            if( !( F(prFloat->flags) & flRESTARTc_DOnOTtALLY ) ) prFloat->cRestarted ++ ;
+        {
+        if( prFloat ) //IF I HAVE ALREADY CREATED A restartC OBJECT FOR THIS THREAD THEN EXCEPTION MUST HAVE OCCURED WHILE I WAS EXECUTING
+
+        _EXCEPTION_POINTERS& osInfo = *(_EXCEPTION_POINTERS*)pvOsInfoP ;
+
+        }
+            if( !prFloat ) idInThread = 1 + incv02AM( idInThreadLath ) ;
+            static countT idInThreadLath ;
+        {
+        static ZE( countT , idInThread ) ;     // THE SERIAL NUMBER OF EACH THREAD THAT WAS NOT IN THE LOOKUP TABLE ; WILL BE 0 IF I FOUND MYSELF IN THAT TABLE
+
+        }
+            }
+                break ;
+                prFloat = (restartC*)pbzTop + offm ;
+            {
+            if( osTidMe == ((restartC*)pbzTop)[ offm ].osTid )
+        {
+        for( offm = 0 ; offm < CsLOTSrESTART ; offm ++ )
+        static countT offm ;
+        static ZE( restartC* , prFloat ) ; // "FLOAT": "THIS restartC INSTANCE FLOATS ABOVE THE TOP restartC INSTANCE IN THE RESTART STACK FOR THIS THREAD" ; IT IS USED TO DETECT AND RECOVER FROM EXCEPTIONS THAT OCCUR IN ME
+
+        static byteT pbzTop[ CsLOTSrESTART * sizeof( restartC ) ] ;
+
+        }
+            }
+                break ;
+
+                }
+                    thirdC::dosWriteStdOutAvoidStackIF( "\r\n" ) ;
+                    thirdC::dosWriteStdOutAvoidStackIF( postException ) ;
+                    thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    " ) ;
+                {
+                else
+                }
+                    thirdC::dosWriteStdOutAvoidStackIF( "\r\n" ) ;
+                    thirdC::dosWriteStdOutAvoidStackIF( postOsTid ) ;
+                    thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    unknown exception code:    " ) ;
+                    itoa( ec , postOsTid , 0x10 ) ;
+                {
+                if( !postException )
+
+                static const osTextT* const postException = processGlobal4S::_processGlobal4I_IF().mapExceptionType( ecUnsmudged ) ;
+
+                              ecUnsmudged |= 0xd0000000 ; //A:ASSUME: countT IS 02 BYTES
+                              ecUnsmudged &= 0x0fffffff ; //A:ASSUME: countT IS 02 BYTES
+                              ecUnsmudged  = ec         ;
+                static countT ecUnsmudged ;               //A:ASSUME: BASE O.S. SMUDGES ONLY THE HIGH NIBBLE
+            {
+            default                                 :
+            case EXCEPTION_STACK_OVERFLOW           : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_STACK_OVERFLOW\r\n"           ) ; break ; }
+            case EXCEPTION_SINGLE_STEP              : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_SINGLE_STEP\r\n"              ) ; break ; }
+            case EXCEPTION_PRIV_INSTRUCTION         : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_PRIV_INSTRUCTION\r\n"         ) ; break ; }
+            case EXCEPTION_NONCONTINUABLE_EXCEPTION : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_NONCONTINUABLE_EXCEPTION\r\n" ) ; break ; }
+            case EXCEPTION_INVALID_DISPOSITION      : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_INVALID_DISPOSITION\r\n"      ) ; break ; }
+            case EXCEPTION_INT_OVERFLOW             : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_INT_OVERFLOW\r\n"             ) ; break ; }
+            case EXCEPTION_INT_DIVIDE_BY_ZERO       : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_INT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
+            case EXCEPTION_IN_PAGE_ERROR            : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_IN_PAGE_ERROR\r\n"            ) ; break ; }
+            case EXCEPTION_ILLEGAL_INSTRUCTION      : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_ILLEGAL_INSTRUCTION\r\n"      ) ; break ; }
+            case EXCEPTION_FLT_UNDERFLOW            : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_UNDERFLOW\r\n"            ) ; break ; }
+            case EXCEPTION_FLT_STACK_CHECK          : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_STACK_CHECK\r\n"          ) ; break ; }
+            case EXCEPTION_FLT_OVERFLOW             : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_OVERFLOW\r\n"             ) ; break ; }
+            case EXCEPTION_FLT_INVALID_OPERATION    : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_INVALID_OPERATION\r\n"    ) ; break ; }
+            case EXCEPTION_FLT_INEXACT_RESULT       : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_INEXACT_RESULT\r\n"       ) ; break ; }
+            case EXCEPTION_FLT_DIVIDE_BY_ZERO       : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_DIVIDE_BY_ZERO\r\n"       ) ; break ; }
+            case EXCEPTION_FLT_DENORMAL_OPERAND     : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_FLT_DENORMAL_OPERAND\r\n"     ) ; break ; }
+            case EXCEPTION_DATATYPE_MISALIGNMENT    : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_DATATYPE_MISALIGNMENT\r\n"    ) ; break ; }
+            case EXCEPTION_BREAKPOINT               : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_BREAKPOINT\r\n"               ) ; break ; }
+            case EXCEPTION_ARRAY_BOUNDS_EXCEEDED    : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_ARRAY_BOUNDS_EXCEEDED\r\n"    ) ; break ; }
+            case EXCEPTION_ACCESS_VIOLATION         : { thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF [ ec ]:    EXCEPTION_ACCESS_VIOLATION\r\n"         ) ; break ; }
+        {
+        switch( ec )
+
+                      ec = pOsInfo->ExceptionRecord->ExceptionCode ;
+        static countT ec ;
+
+        thirdC::dosWriteStdOutAvoidStackIF( "_9\r\n" ) ;
+        thirdC::dosWriteStdOutAvoidStackIF( postOsTid ) ;
+        thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterF / offending thread [osTid]:    " ) ;
+
+        itoa( osTidMe , postOsTid , 0xa ) ;
+        static osTextT postOsTid[ SB * sizeof( sCountT ) + 1 ] ;
+
+                      osTidMe = GetCurrentThreadId() ;
+        static countT osTidMe ;
+
+                                    pOsInfo = (_EXCEPTION_POINTERS*)pvOsInfoP ;
+        static _EXCEPTION_POINTERS* pOsInfo ;
+    {
+    else
+    }
+        rc = - 1 ;
+        thirdC::dosWriteStdOutAvoidStackIF( "\r\nrootExceptionFilterF / !exception: !pvOsInfoP\r\n" ) ;
+    {
+    if( !pvOsInfoP )
+    static countT rc ;                                                                        // static IS USED TO MINIMIZE / ELIMINATE THE USE OF THE THREAD STACK
+{
+/*1*/unsigned _export _stdcall rootExceptionFilterF( voidT* pvOsInfoP )/*1*/
+
+}
+    return rc ;
+
+    CONoUTrAW( "rootExceptionFilterF/-\r\n" ) ;
+
+    }
+        thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSeXCEPTION ) ;
+        flagsResult |= flEXCEPTIONrESULT_EXITpROCESScALLED ;
+        thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterWorker1F / after reporting / calling dosExitProcessIF\r\n" ) ;
+
+        //Sleep( 10 * 1000 ) ; //TO FIND A BUG
+
+        //CONoUTrAW( "rootExceptionFilterF: calling ExitProcess\r\n" ) ;
+        //LOGrAW(    "rootExceptionFilterF: calling ExitProcess\r\n" ) ;
+    {
+    if( rc == EXCEPTION_CONTINUE_SEARCH )
+
+    }
+        //CONoUTrAW( "rootExceptionFilterF/2/-\r\n" ) ;
+        }
+            //CONoUTrAW( "rootExceptionFilterF/2/2/-\r\n" ) ;
+            DELnOtIN( prFloat ) ;_M
+            //CONoUTrAW( "rootExceptionFilterF/2/2/2\r\n" ) ;
+
+            }
+                }
+                    break ;
+
+                    //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/- normal\r\n" ) ;
+                    //etherC::ifcSayIF( processGlobal6I.tinBreak , "rootExceptionFilterF: normal report written\r\n" , flSAY_LOG | flSAY_APPEND ) ;
+
+                    }
+                        //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/2/-\r\n" ) ;
+                        ((tin123S*)pTinOffender)->pzTieLath = 0 ;
+                        //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/2/2\r\n" ) ;
+                        //CONoUTrAW3( "rootExceptionFilterF 2 [rc]: " , rc , "\r\n" ) ;
+                        rc = threadLocalStorageLocationF( 0 , 0 , 0 , (countT)&c8p ) ? EXCEPTION_CONTINUE_EXECUTION : EXCEPTION_CONTINUE_SEARCH ;_M
+                        //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/2/1\r\n" ) ;
+                        thirdC::c_memcpyIF( ((tin123S*)pTinOffender)->pzTieLath->pbTin , (byteT*)pTinOffender , sizeof ((tin123S*)pTinOffender)->pzTieLath->pbTin ) ;_M
+                        thirdC::c_memsetIF( (byteT*)((tin123S*)pTinOffender)->pzTieLath , sizeof *((tin123S*)pTinOffender)->pzTieLath ) ;_M
+    
+                        ((tin123S*)pTinOffender)->pzTieLath = &tellInfoSys ;_M
+                        tellInfoSysExceptionS tellInfoSys ;_M
+                        //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/2/+\r\n" ) ;
+                    {_M
+                    else
+                    }
+                        //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/1/-\r\n" ) ;
+                        rc = threadLocalStorageLocationF( 0 , 0 , 0 , (countT)&c8p ) ? EXCEPTION_CONTINUE_EXECUTION : EXCEPTION_CONTINUE_SEARCH ;_M
+                        //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/1/1\r\n" ) ;
+    
+                        thirdC::c_memcpyIF( ((tin123S*)pTinOffender)->pzTieLath->pbTin , (byteT*)pTinOffender , sizeof ((tin123S*)pTinOffender)->pzTieLath->pbTin ) ;_M
+                        thirdC::c_memsetIF( (byteT*)((tin123S*)pTinOffender)->pzTieLath , sizeof *((tin123S*)pTinOffender)->pzTieLath ) ;_M
+                        //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/1/+\r\n" ) ;
+                    {_M
+                    if( ((tin123S*)pTinOffender)->pzTieLath )
+                    count8S c8p( (countT)&osInfo , (countT)&idMile , ebpOffender , (countT)&prFloat , idExceptionEventMe ) ;
+
+                    //etherC::ifcSayIF( processGlobal6I.tinBreak , "rootExceptionFilterF: beginning to write my normal report\r\n" , flSAY_LOG | flSAY_APPEND ) ;
+                    //CONoUTrAW( "rootExceptionFilterF/2/2/1/3/+ normal\r\n" ) ;
+                {_M
+                case normalE :
+                }
+                    break ;
+
+                    //CONoUTrAW( "rootExceptionFilterF/2/2/1/2/- short\r\n" ) ;
+
+                    logGF( ostoBuf , postTmpFolder ) ;
+                    thirdC::c_strcatIF( postTmpFolder , "ideafarm.log.exception.rpt.short.txt" ) ;
+
+                    OStEXTAK( ostoBuf , "\r\n" ) ;_M
+                    }
+                        }
+                            break ;
+                            }
+                                OStEXTC( ostoBuf , osInfo.ExceptionRecord->ExceptionInformation[ off ] , 0 ) ; _M
+                                OStEXTAK( ostoBuf , "\r\nnote: " ) ;_M
+                            {_M
+                            for( countT off = 0 ; off < osInfo.ExceptionRecord->NumberParameters ; off ++ )
+                        {_M
+                        case ifcIDeVENTeXCEPTIONmONITORED_GRUNT & 0xefffffff : //WINDOWS CLEARS BIT 28 IN RaiseException(...)
+                        }
+                            break ;
+                            OStEXTC( ostoBuf , osInfo.ExceptionRecord->ExceptionInformation[ 1 ] , 0 ) ; _M
+                            OStEXTAK( ostoBuf , "\r\npvTarget: " ) ;_M
+                            OStEXTC( ostoBuf , !!osInfo.ExceptionRecord->ExceptionInformation[ 0 ] , 0 ) ; _M
+                            OStEXTAK( ostoBuf , "\r\nbWrite: " ) ;_M
+                        {_M
+                        case EXCEPTION_ACCESS_VIOLATION                          :
+                    {
+                    switch( osInfo.ExceptionRecord->ExceptionCode )
+                    OStEXTC( ostoBuf , osInfo.ExceptionRecord->ExceptionCode , 0 ) ; _M
+                    OStEXTAK( ostoBuf , "\r\nbase os exception code: " ) ;_M
+                    OStEXTC( ostoBuf , osInfo.ContextRecord->Eip , 0 ) ; _M
+                    OStEXTAK( ostoBuf , "\r\noffending code address: " ) ;_M
+                    OStEXTA( ostoBuf , processGlobal2I.postDllsLoaded ) ;_M
+                    OStEXTAK( ostoBuf , "\r\ndll load history: " ) ;_M
+                    OStEXTC( ostoBuf , processGlobal2I.cDllLoaded , 0 ) ;_M
+                    OStEXTAK( ostoBuf , "\r\ncDllLoaded: " ) ;_M
+                    OStEXTC( ostoBuf , rootAdamGlobal1I._thirdC_.cAllOrphanThreads , 0 ) ;_M
+                    OStEXTAK( ostoBuf , "\r\ncAllOrphanThreadsI (root adam): " ) ;_M
+                    OStEXTC( ostoBuf , rootAdamGlobal1I._thirdC_.cAllKidThreads , 0 ) ;_M
+                    OStEXTAK( ostoBuf , "\r\ncAllKidThreadsI (root adam): " ) ;_M
+                    }
+                        OStEXTC( ostoBuf , rootAdamGlobal1I._etherC_.pcUtility[ off ] , 0 ) ;_M
+                        OStEXTAK( ostoBuf , "]: " ) ;_M
+                        OStEXTC( ostoBuf , off , 0 ) ;_M
+                        OStEXTAK( ostoBuf , "\r\nroot adam: etherC::pcUtilityI[" ) ;_M
+                    {
+                    for( off = 0 ; off < CCuTILITY ; off ++ )
+                    }
+                        OStEXTC( ostoBuf , processGlobal2I.pcPhaseLow[ off ] , 0 ) ;_M
+                        OStEXTAK( ostoBuf , "]: " ) ;_M
+                        OStEXTC( ostoBuf , off , 0 ) ;_M
+                        OStEXTAK( ostoBuf , "\r\netherC::pcPhaseLowI[" ) ;_M
+                    {
+                    for( off = 1 ; off <= ClOWtHREADS ; off ++ )
+                    OStEXTC( ostoBuf , processGlobal2I.idHome , 0 ) ; _M
+                    OStEXTAK( ostoBuf , "\r\nprocessGlobal2I.idHome: " ) ;_M
+                    OStEXTCmIN( ostoBuf , processGlobal1I.idAdamRoot , 7 ) ; _M
+                    OStEXTAK( ostoBuf , "\r\nidAdamI: " ) ;_M
+                    }
+                        OStEXTC( ostoBuf , rootAdamGlobal1I.idPhaseAdam , 0 ) ;_M
+                    {_M
+                    else
+                    }
+                        OStEXTA( ostoBuf , postIdPhaseAdam ) ;_M
+                    {_M
+                    if( postIdPhaseAdam )
+                    const osTextT* postIdPhaseAdam = processGlobal4I.mapProcessPhase( rootAdamGlobal1I.idPhaseAdam ) ;
+                    OStEXTAK( ostoBuf , "\r\nidPhaseAdamI: " ) ;_M
+                    if( off > ClOWtHREADS ) { OStEXTAK( ostoBuf , "\r\n(not a low thread of the root adam)" ) ;_M }
+                    }
+                        break ;
+                        OStEXTAK( ostoBuf , "\"" ) ;_M
+                        OStEXTA( ostoBuf , processGlobal3I.pLowThread[ off ].postThreadName ) ;_M
+                        OStEXTAK( ostoBuf , "\r\npostThreadName: \"" ) ;_M
+                        OStEXTC( ostoBuf , off , 0 ) ;_M
+                        OStEXTAK( ostoBuf , "\r\nidThread: " ) ;_M
+
+                        if( osTid != processGlobal3I.pLowThread[ off ].osTid ) continue ;
+                    {_M
+                    for( off = 1 ; off <= ClOWtHREADS ; off ++ )
+                    ZE( countT , off ) ;
+                    #endif
+                        countT osTid = _brcRaw ;
+                        BOSnOtIN( GetCurrentThreadId() )
+                        ZE( countT , _brcRaw ) ;
+                    #if defined( __NT__ )
+
+                    OStEXTC(  ostoBuf , idMileLag , 0 ) ;_M
+                    OStEXTAK( ostoBuf , "idMile: " ) ;_M
+                    OStEXTAK( ostoBuf , "\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "routine encountered a problem.\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "\r\n\r\nThis is an abridged report because the nifty swifty exception reporting\r\n" ) ;_M
+                    OStEXTC(  ostoBuf , idExceptionEventMe , 0 ) ;_M
+                    OStEXTAK( ostoBuf , "\r\nidExceptionEvent: " ) ;_M
+                    OStEXTAK( ostoBuf , "Wo'O Ideafarm\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "http://ideafarm.com\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "IdeaFarm " "(tm) Piggyback Distributed Operating System\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "Subject: IPDOS (tm) Exception Event\r\n" ) ;_M
+                    OStEXT( ostoBuf , TUCK * 0x20 ) _M
+                    //CONoUTrAW( "rootExceptionFilterF/2/2/1/2/+ short\r\n" ) ;
+                {_M
+                case shortE :
+                }
+                    break ;
+
+                    //CONoUTrAW( "rootExceptionFilterF/2/2/1/1/- tiny\r\n" ) ;
+
+                    logGF( ostoBuf , postTmpFolder ) ;
+                    thirdC::c_strcatIF( postTmpFolder , "ideafarm.log.exception.rpt.tiny.txt" ) ;
+
+                    OStEXTAK( ostoBuf , "routine and the simple reporting routine encountered problems.\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "\r\n\r\nThis is a stub report because both the nifty swifty exception reporting\r\n" ) ;_M
+                    OStEXTC(  ostoBuf , idExceptionEventMe , 0 ) ;_M
+                    OStEXTAK( ostoBuf , "\r\nidExceptionEvent: " ) ;_M
+                    OStEXTAK( ostoBuf , "Wo'O Ideafarm\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "http://ideafarm.com\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "IdeaFarm " "(tm) Piggyback Distributed Operating System\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "\r\n" ) ;_M
+                    OStEXTAK( ostoBuf , "Subject: IPDOS (tm) Exception Event\r\n" ) ;_M
+                    OStEXT( ostoBuf , TUCK << 2 ) _M
+
+                    //CONoUTrAW( "rootExceptionFilterF/2/2/1/1/+ tiny\r\n" ) ;
+                {_M
+                case tinyE :
+            {
+            switch( eTypeReport )
+            //CONoUTrAW( "rootExceptionFilterF/2/2/1\r\n" ) ;
+
+            else                                                                                                                                       eTypeReport = normalE        ; // FULL INFORMATION
+            else if( /*idInThread == 1 ||*/ ( prFloat && *prFloat == 1 ) || !pTinOffender || getNegAM( ((tin123S*)pTinOffender)->fingerprint ) != FINGERnEG_TINs ) eTypeReport = shortE         ; // NO tin123S INFORMATION
+            else if( /*idInThread == 2 ||*/ ( prFloat && *prFloat == 2 )                                                                             ) eTypeReport = tinyE          ; // NO INFO ; JUST A SINGLE LINE OF TEXT TO INDICATE THAT THE SHORT REPORT COULD NOT BE WRITTEN
+                 if( /*idInThread >= 3 ||*/ ( prFloat && *prFloat >= 3 )                                                                             ) eTypeReport = nullE          ; // PREVENTS SPIN 
+
+            enum { normalE , shortE , tinyE , nullE } eTypeReport ;
+            //CONoUTrAW( "rootExceptionFilterF/2/2/0/4\r\n" ) ;
+
+            ;
+                : pTinFromEbx123AM( ebpOffender )                        //MUST NOT MODIFY *pTinOffender UNTIL IT HAS BEEN COPIED
+                ? 0
+            tin0S* pTinOffender = !prFloat || *prFloat || !ebpOffender
+            const countT ebpOffender = osInfo.ContextRecord ? osInfo.ContextRecord->Ebp : 0 ;_M
+            //CONoUTrAW( "rootExceptionFilterF/2/2/0/3\r\n" ) ;
+
+            const countT idExceptionEventMe = 1 + incv02AM( processGlobal2S::_processGlobal2I_IF().idExceptionEvent ) ;
+            const countT idMileLag          = idMile ;
+
+            if( prFloat ) getRegsAM( prFloat->pcRegisters ) ; /*Z*/ //MY RESTART POINT IS HERE, IMMEDIATELY AFTER THE RETURN OF getRegsAM
+            ZE( countT , idMile ) ;
+            //CONoUTrAW( "rootExceptionFilterF/2/2/0/2\r\n" ) ;
+
+            //CONoUTrAW( "rootExceptionFilterF/2/2/0/1\r\n" ) ;
+
+            // prFloat WILL NORMALLY BE NONZE BUT WILL BE ZE IF NO SLOT AVAILABLE
+            }
+                }
+                    break ;
+                    prFloat = new( 0 , (byteT*)( (restartC*)pbzTop + offm ) , sizeof( restartC ) ) restartC( prFloat ) ;
+                    //U::ASSUME: processGlobal6I.tinBreak IS NOT MODIFIED BY THIS CALL
+                    //CONoUTrAW5( "rootExceptionFilterF set [osTidMe,offm]: " , osTidMe , " " , offm , "\r\n" ) ;
+                {
+                if( !setIfZeAM( ((restartC*)pbzTop)[ offm ].osTid , osTidMe ) )
+            {
+            for( countT offm = 0 ; offm < CsLOTSrESTART ; offm ++ )
+            //CONoUTrAW( "rootExceptionFilterF/2/2/+\r\n" ) ;
+        {
+        else
+        }
+            //CONoUTrAW( "rootExceptionFilterF/2/1/-\r\n" ) ;
+            rc = EXCEPTION_CONTINUE_EXECUTION ;
+
+            #endif
+                osInfo.ContextRecord->SegCs  = prFloat->pcRegisters[ 0xf ] ;
+                osInfo.ContextRecord->SegSs  = prFloat->pcRegisters[ 0xe ] ;
+                osInfo.ContextRecord->SegGs  = prFloat->pcRegisters[ 0xd ] ;
+                osInfo.ContextRecord->SegFs  = prFloat->pcRegisters[ 0xc ] ;
+                osInfo.ContextRecord->SegEs  = prFloat->pcRegisters[ 0xb ] ;
+                osInfo.ContextRecord->SegDs  = prFloat->pcRegisters[ 0xa ] ;
+                osInfo.ContextRecord->EFlags = prFloat->pcRegisters[ 0x9 ] ;
+                osInfo.ContextRecord->Eip    = prFloat->pcRegisters[ 0x8 ] ;
+                osInfo.ContextRecord->Esp    = prFloat->pcRegisters[ 0x7 ] ;
+                osInfo.ContextRecord->Ebp    = prFloat->pcRegisters[ 0x6 ] ;
+                osInfo.ContextRecord->Edi    = prFloat->pcRegisters[ 0x5 ] ;
+                osInfo.ContextRecord->Esi    = prFloat->pcRegisters[ 0x4 ] ;
+                osInfo.ContextRecord->Edx    = prFloat->pcRegisters[ 0x3 ] ;
+                osInfo.ContextRecord->Ecx    = prFloat->pcRegisters[ 0x2 ] ;
+                osInfo.ContextRecord->Ebx    = prFloat->pcRegisters[ 0x1 ] ;
+                osInfo.ContextRecord->Eax    = prFloat->pcRegisters[ 0x0 ] ;
+            #if defined( __NT__ )
+    
+            if( !( F(prFloat->flags) & flRESTARTc_DOnOTtALLY ) ) prFloat->cRestarted ++ ;
+            //CONoUTrAW( "rootExceptionFilterF/2/1/+\r\n" ) ;
+        {
+        if( prFloat ) //IF I HAVE ALREADY CREATED A restartC OBJECT FOR THIS THREAD THEN EXCEPTION MUST HAVE OCCURED WHILE I WAS EXECUTING
+
+        #endif
+
+            //fileWriteGF( "d:\\tm p\\cinfo" , (byteT*)&processGlobal2I.cInfo , sizeof processGlobal2I.cInfo ) ;
+            //fileWriteGF( "d:\\tm p\\einfo" , (byteT*)&processGlobal2I.eInfo , sizeof processGlobal2I.eInfo ) ;
+
+            thirdC::c_memcpyIF( (byteT*)&processGlobal2I.cInfo , (byteT*)osInfo.ContextRecord   , sizeof processGlobal2I.cInfo ) ;
+            thirdC::c_memcpyIF( (byteT*)&processGlobal2I.eInfo , (byteT*)osInfo.ExceptionRecord , sizeof processGlobal2I.eInfo ) ;
+
+        #if defined( __NT__ )
+        //MAKE A COPY ; THE EXCEPTION HANDLING SUBYSTEM (me and thirdC::osExceptionHandlerWorkIF) DO NOT USE THE COPY ; IT IS JUST MADE FOR GLASS WALLS ; FOR EXAMPLE, AN ADAM USED TO DEBUG ME USES THE COPY TO CALL ME
+
+        _EXCEPTION_POINTERS& osInfo = *(_EXCEPTION_POINTERS*)pvOsInfoP ;
+
+        }
+            if( !prFloat ) idInThread = 1 + incv02AM( idInThreadLath ) ;
+            static countT idInThreadLath ;
+        {
+        ZE( countT , idInThread ) ;     // THE SERIAL NUMBER OF EACH THREAD THAT WAS NOT IN THE LOOKUP TABLE ; WILL BE 0 IF I FOUND MYSELF IN THAT TABLE
+
+        }
+            }
+                break ;
+                prFloat = (restartC*)pbzTop + offm ;
+            {
+            if( osTidMe == ((restartC*)pbzTop)[ offm ].osTid )
+            //CONoUTrAW5( "rootExceptionFilterF search [osTidMe,osTidRegistered]: " , osTidMe , " " , ((restartC*)pbzTop)[ offm ].osTid , "\r\n" ) ;
+        {
+        for( countT offm = 0 ; offm < CsLOTSrESTART ; offm ++ )
+        ZE( restartC* , prFloat ) ; // "FLOAT": "THIS restartC INSTANCE FLOATS ABOVE THE TOP restartC INSTANCE IN THE RESTART STACK FOR THIS THREAD" ; IT IS USED TO DETECT AND RECOVER FROM EXCEPTIONS THAT OCCUR IN ME
+
+        const countT osTidMe = _brcRaw ;
+        BOSnOtIN( GetCurrentThreadId() )
+        ZE( countT , _brcRaw ) ;
+        static byteT pbzTop[ CsLOTSrESTART * sizeof( restartC ) ] ;
+        //CONoUTrAW( "rootExceptionFilterF/2/+\r\n" ) ;
+    {
+
+    thirdC::c_strcatIF( postTmpFolder , "\\tmp\\" ) ;
+    thirdC::c_strcpyIF( postTmpFolder , homeS::homeIF().postHome ) ;
+    osTextT postTmpFolder[ TUCK << 1 ] ;
+
+    }
+        thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSiMPOTENT ) ;                   //EXCEPTION OCCURED DURING DLL TERMINATION ELICITED BY PRIOR CALL TO ExitProcess ; THIS CALL WILL KILL THE BEAST
+        thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterWorker1F / before reporting / calling dosExitProcessIF\r\n" ) ;
+    {
+    if( F(flagsResult) & flEXCEPTIONrESULT_EXITpROCESScALLED )
+
+                                                //20240327@2239:  ENABLED CALL TO dosExitProcessIF AT END OF ME SO THAT THE PRECEDING COMMENT IS NOW OBSOLETE ; THERE WILL BE NO SECOND CHANCE DEBUG EVENT
+    countT rc = EXCEPTION_CONTINUE_SEARCH ;     //20210716@1607:  CHANGED "EXCEPTION_EXECUTE_HANDLER" TO "EXCEPTION_CONTINUE_SEARCH" WITHOUT ANALYSIS SO THAT GLASS2 WILL RECEIVE OOTH CHANCE DEBUG EVENT NOTICE
+                  flagsResult = flEXCEPTIONrESULT_null ;
+    static flagsT flagsResult ;
+
+    CONoUTrAW( "rootExceptionFilterF/+\r\n" ) ;
+    bWorker1StackFrameAOK = 1 ;
+{
+countT rootExceptionFilterWorker1F( voidT* pvOsInfoP , countT ecP )
+
+}
+    return EXCEPTION_CONTINUE_SEARCH ;
+    thirdC::dosExitProcessIF( ifcEXITcODE_EXITpROCESSiMPOTENT ) ;
+    thirdC::dosWriteStdOutAvoidStackIF( "rootExceptionFilterWorker2F / calling dosExitProcessIF\r\n" ) ;
+{
+countT rootExceptionFilterWorker2F( voidT* pvOsInfoP , countT ecP )
+
+static boolT bWorker1StackFrameAOK ;
+
+#define CsLOTSrESTART 0x10
+
+/**/
+*/
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//

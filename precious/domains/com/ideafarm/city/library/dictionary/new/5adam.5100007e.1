@@ -1,0 +1,98 @@
+
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+// Respecting the rights of other people is an important part of empowering one another.
+//
+
+
+//VISIBLE
+
+REST
+etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
+
+etThread.delF( tin0P , psttnu ) ;
+etThread.faceHearF( tin0P , psttnu ) ;
+etThread.strokeF( tin0P , T("\r\npress the enter key") ) ;
+sDoneRude.waitF( tin0P ) ;
+sDoneRush.waitF( tin0P ) ;
+sDoneNormal.waitF( tin0P ) ;
+sDoneIdle.waitF( tin0P ) ;
+
+++ sGo ;
+etThread.strokeF( tin0P , T("    go!\r\n") ) ;
+etThread.osSleepF( tin0P , TOCK ) ;
+etThread.strokeF( tin0P , T("    get set!") ) ;
+etThread.osSleepF( tin0P , TOCK ) ;
+etThread.strokeF( tin0P , T("on your mark!") ) ;
+etThread.osSleepF( tin0P , TOCK ) ;
+etThread.delF( tin0P , psttnu ) ;
+etThread.faceHearF( tin0P , psttnu ) ;
+etThread.strokeF( tin0P , T("\r\npress the enter key to give the sign") ) ;
+ZE( strokeS* , psttnu ) ;
+etThread.osSleepF( tin0P , TOCK ) ;
+
+bFace.ungrabF( tin0P ) ;
+
+{ ZE( countT , tidnu ) ; etThread.osThreadF( tin0P , tidnu , tmF   , &sDoneRude   , flTHREADlAUNCH_null , 0 , 0 , 'R' , (countT)&sGo , (countT)&bFace ) ; }
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;
+
+{ ZE( countT , tidnu ) ; etThread.osThreadF( tin0P , tidnu , tmF   , &sDoneRush   , flTHREADlAUNCH_null , 0 , 0 , 'r' , (countT)&sGo , (countT)&bFace ) ; }
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUSH ) ;
+
+{ ZE( countT , tidnu ) ; etThread.osThreadF( tin0P , tidnu , tmF   , &sDoneNormal , flTHREADlAUNCH_null , 0 , 0 , 'n' , (countT)&sGo , (countT)&bFace ) ; }
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
+
+{ ZE( countT , tidnu ) ; etThread.osThreadF( tin0P , tidnu , tmF   , &sDoneIdle   , flTHREADlAUNCH_null , 0 , 0 , 'i' , (countT)&sGo , (countT)&bFace ) ; }
+//etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+
+bFace.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+signC  sGo( tin0P , TAG( TAGiDnULL ) ) ;
+batonC bFace( tin0P , TAG( TAGiDnULL ) ) ;
+
+signC sDoneRude( tin0P , TAG( TAGiDnULL ) ) ;
+signC sDoneRush( tin0P , TAG( TAGiDnULL ) ) ;
+signC sDoneNormal( tin0P , TAG( TAGiDnULL ) ) ;
+signC sDoneIdle( tin0P , TAG( TAGiDnULL ) ) ;
+
+TODO
+
+DONE( tmF )
+}
+    while( cTries -- ) etThread.strokeF( tin0P , sttd ) ;
+    countT cTries = 0x100 ;
+
+    psGo->waitF( tin0P ) ;
+    pbFace->ungrabF( tin0P ) ;
+    etThread.strokeF( tin0P , T(" thread is waiting for the sign\r\n") ) ;
+    }
+        default                      : { __1                   ; break ; }
+        case ifcTHREADpRIORITY_SPINLOCK   : { etThread.strokeF( tin0P , T("rude  ") ) ; break ; }
+        case ifcTHREADpRIORITY_RUSH   : { etThread.strokeF( tin0P , T("rush  ") ) ; break ; }
+        case ifcTHREADpRIORITY_NORMAL : { etThread.strokeF( tin0P , T("normal") ) ; break ; }
+        case ifcTHREADpRIORITY_LAZIEST   : { etThread.strokeF( tin0P , T("idle  ") ) ; break ; }
+    {
+    switch( //etThread.osThreadSwitchingDesireF( tin0P ) )
+    pbFace->grabF( tin0P , TAG( TAGiDnULL ) ) ;
+{
+if( psGo )
+batonC* pbFace = (batonC*)( pTaskP ? pTaskP->c3 : 0 ) ;
+signC*  psGo   =  (signC*)( pTaskP ? pTaskP->c2 : 0 ) ;
+strokeS sttd   =            pTaskP ? pTaskP->c1 : 0   ;
+TASK( tmF )
+
+/*1*/WAKEhIDE( "example.simplest.snip.001007f.ifcTHREADpRIORITY" )/*1*/
+/**/
+*/
+\<A HREF=\"5.e700104.1.0.html\"\>definition\</A\>
+/*
+
+//
+// Respecting the rights of other people is an important part of empowering one another.
+// This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
+//
+// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+//
+
