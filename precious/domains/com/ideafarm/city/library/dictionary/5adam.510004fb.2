@@ -1468,6 +1468,8 @@ case 0 :
                         etRock.traceF( tin0P , T("readF returned null or fewer bytes than requested") ) ;
                     {
                     if( !pbi || cbi != cbiSave )                                         // SHOULD ALWAYS GET THE ENTIRE SHEBANG ; (20241223@1054: cbi TEST MOVED TO HERE FROM THE "else" BLOCK, WHERE IT WAS CODED TO TRIGGER IMPOTENCE)
+
+                    if( stOsPidP > 0x20 || stOsPidZombieP > 0x20 ) etRock.traceF( tin0P , T("tmEatTelemetrySysF / resource leak [idMemorySpace,stOsPidP,osOsPidZombieP]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stOsPidP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(osPidZombieP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     
                     //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 7") ) ;
                     boolT bDelete = bksTelemetrySys.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
@@ -1553,6 +1555,7 @@ case 0 :
 
     //if( idMemorySpaceP == ifcIDmEMORYsPACE_GLASS2 ) etThread.osThreadF( TaRG1( tmYellF ) ) ;
 
+    etRock.traceF( tin0P , T("tmEatTelemetrySysF / ++ [idMemorySpace]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     //etRock.traceF( tin0P , T("tmEatTelemetrySysF / ++ [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin1S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     //CONoUTrAW3( "tmEatTelemetrySysF [idMemorySpaceP]: " , idMemorySpaceP , "\r\n" ) ;
