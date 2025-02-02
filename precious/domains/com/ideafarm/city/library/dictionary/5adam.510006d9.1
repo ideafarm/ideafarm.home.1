@@ -18,12 +18,14 @@ DONE( tmWorkF )
 }
     etherC::loafIF( tin0P ) ; // THIS IS TO PREVENT AN EARLY, INTENTIONAL QUIT FROM TRIGGERING GLASS2 EXCEPTION REPORTS
 
-    thirdC::osProcessIdPhaseAdamIF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
-
     etThread.osThreadSwitchingDesireF( tin0P , idDesireSave ) ;
+
+    thirdC::osProcessIdPhaseAdamIF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
     etThread.delF( tin0P , psttNapCommand ) ;
     }
+        etThread.osThreadSwitchingDesireF( tin0P , idDesireSave2 ) ;
+
         else etThread.traceF( tin0P , T("cloud administration suppressed because some required settings were not found") ) ;
         }
             }
@@ -208,6 +210,13 @@ DONE( tmWorkF )
 
         if( *cloudSpec.postId && !etThread.strCompareF( tin0P , T(cloudSpec.postId) , T("rackspace.com") ) ) idCloud = ifcIDcLOUD_RACKSPACE ;
         ZE( countT , idCloud ) ;
+
+        }
+            idDesireSave2 = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+            thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+        {
+        if( etThread.strCompareF( tin0P , T(cloudSpec.postRemote) , T("exedll.1") ) )
+        ZE( countT , idDesireSave2 ) ;
 
         cloudSpec.sayF( tin0P , etThread ) ;
 
@@ -438,12 +447,10 @@ DONE( tmWorkF )
 
     TN( tArgKeyName , "!name" ) ;
 
-    const countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIER ) ;
+    const countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_PUSHY ) ;
 
     thirdC::osProcessIdPhaseAdamIF( tin0P , ifcIDpHASEhANDOFFoLD_WORKING ) ;
-
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
-    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
@@ -603,7 +610,7 @@ boolT cloudUpdateLocalCBF( tin0S& tin0P , etherC& etherP , cloudC& cloudP , cons
 
 }
     etherP.delF( tin0P , psttSay ) ;
-    etherP.traceF( tin0P , psttSay , /*flTRACE_NOpREFIX |*/ flTRACE_KEEPcRlF ) ;
+    etherP.traceF( tin0P , psttSay , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
 
     etherP.strFuseF( tin0P , psttSay , T(" ; hireadamafter:"     ) ) ; etherP.strFuseF( tin0P , psttSay , T(postHireAdamAfter    ) ) ;
     etherP.strFuseF( tin0P , psttSay , T(" ; verifylocallist:"   ) ) ; etherP.strFuseF( tin0P , psttSay , T(postVerifyLocalList  ) ) ;
