@@ -882,7 +882,8 @@ TELL( "cleaning up 0" )
             //etRock.traceF( tin0P , T("tmEatTelemetrySysF / 6 [idMemorySpaceP,cKidThreads]: ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(((tin1S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             }
                 //CONoUTrAW( "." ) ;
-                ++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
+                  ++ s ; etThread.osSleepF( tin0P , TOCK << 4 ) ;
+                //++ s ; etThread.osSleepF( tin0P , TOCK >> 2 ) ;
                 TELL( "napping for a quarter tock" )
             
                 if( bQuitEatingP ) break ;
@@ -1356,7 +1357,7 @@ case 0 :
                             //CONoUTrAW5( "tmEatTelemetrySysF [idMemorySpace,idHamburger]: " , idMemorySpaceP , " " , idHamburger , "\r\n" ) ;
                             countT idHamburger = incv02AM( cHamburgersP ) ; // OPERATOR ++ CAN BE USED FOR SPEED IF ACCURACY IS NOT NEEDED; AS OF THIS WRITING ACCURACY IS NOT NEEDED
                             TELL( "got a hamburger" )
-                            //etRock.traceF( tin0P , T("read returned body") ) ;
+                            etRock.traceF( tin0P , T("read returned body") ) ;
                         {
                         else
                         }
@@ -1437,7 +1438,7 @@ case 0 :
                             else
                             }
                                 cbi = head.cbBooked + sizeof( countT ) ;
-                                //etThread.traceF( tin0P , T("tmEatTelemetrySysF good header") ) ;
+                                etThread.traceF( tin0P , T("tmEatTelemetrySysF good header") ) ;
                             {
                             if( !bBad1 && !bBad2 && !bBad3 && !bBad4 )
         
@@ -1451,11 +1452,11 @@ case 0 :
 
                             telemetryBookHeadS& head = *(telemetryBookHeadS*)pbi ;
                             TELL( "parsing head" )
-                            //etRock.traceF( tin0P , T("read returned head") ) ;
+                            etRock.traceF( tin0P , T("read returned head") ) ;
                         {
                         if( bBookHead )
         
-                        //etRock.traceF( tin0P , T("tmEatTelemetrySysF: readF returned telemetry") ) ; //U:: TO FIND A BUG
+                        etRock.traceF( tin0P , T("tmEatTelemetrySysF: readF returned telemetry") ) ; //U:: TO FIND A BUG
                         TELL( "readF returned telemetry" )
                     {
                     else
@@ -1464,7 +1465,7 @@ case 0 :
                         hRead = hReadSave ;
                         cbi = cbiSave ;
                         TELL(                      "readF returned null or fewer bytes than requested"  )
-                        //etRock.traceF( tin0P , T("readF returned null or fewer bytes than requested") ) ;
+                        etRock.traceF( tin0P , T("readF returned null or fewer bytes than requested") ) ;
                     {
                     if( !pbi || cbi != cbiSave )                                         // SHOULD ALWAYS GET THE ENTIRE SHEBANG ; (20241223@1054: cbi TEST MOVED TO HERE FROM THE "else" BLOCK, WHERE IT WAS CODED TO TRIGGER IMPOTENCE)
     
