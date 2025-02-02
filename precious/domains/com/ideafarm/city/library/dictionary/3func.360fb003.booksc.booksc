@@ -53,15 +53,19 @@
         else if( this == &processGlobal4I.bksTelemetryApp )
         }
             processGlobal4I.bkTelemetrySysEarlyLate.purgeF( tin0P ) ;
-            writeF( tin0P , pbi , cbi , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND , 0 ) ;
 
-            //}
-            //    etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
-            //
-            //    OStEXTC(  ostoSay , cbi , 0 ) ;
-            //    OStEXTAK( ostoSay , "booksC: pouring early system telemetry [cbi]:    " ) ;
-            //    OStEXT(   ostoSay , TUCK << 1 ) ;
-            //{
+            }
+                writeF( tin0P , pbi , cbi , 0 , 0 , flBOOKScwRITE_ALLoRnONE | flBOOKScwRITE_ELSEfILLtOeND , 0 ) ;
+
+                //}
+                //    etherC::etRockIF( tin0P ).traceF( tin0P , (const strokeS* const)(const osTextT* const)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;
+                //
+                //    OStEXTC(  ostoSay , cbi , 0 ) ;
+                //    OStEXTAK( ostoSay , "booksC: pouring early system telemetry [cbi]:    " ) ;
+                //    OStEXT(   ostoSay , TUCK << 1 ) ;
+                //{
+            {
+            if( pbi && cbi )                                                                                    //20250201@2239: THIS IS NOW NEEDED BECAUSE NULL WRITES ARE NOW SUPPORTED, SO DOING THIS WITH NULL INPUT WAS RESULTING IN BOOK 1 BEING FILLED
 
             processGlobal4I.bkTelemetrySysEarlyLate.readF( tin0P , pbi , cbi , offi ) ;
             ZE( countT , offi ) ;
