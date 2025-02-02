@@ -121,8 +121,6 @@
         if( !( F(flagsCt) & flBOOKSc_DOnOTuSEpUSE ) )
         //CONoUTrAW3( "[heap.cNew-cDel]:    " , processGlobal4S::_processGlobal4I_IF().heap.cNewF()-processGlobal4S::_processGlobal4I_IF().heap.cDelF() , "    \r\n" ) ;
 
-        thirdC::c_memsetIF( tin0P , pbNapReadCursor , sizeof pbNapReadCursor ) ; // WOTH COUNT: MUST BE 0 IFF CURSOR NAPKIN IS NOT CT    //A:ASSUME: napkinC IMAGE ALWAYS BEGINS WITH A NONZE countT VALUE
-
         }
             thirdC::c_memsetIF( tin0P , *(byteT**)&ppcpIdBook[ offb ] , cbaIdBook ) ;
         {
@@ -232,6 +230,9 @@
         if( POOP ) return ;
     {
     IFbEcAREFUL
+
+    thirdC::c_memsetIF( tin0P , pbNapReadCursor , sizeof pbNapReadCursor ) ; // WOTH COUNT: MUST BE 0 IFF CURSOR NAPKIN IS NOT CT    //A:ASSUME: napkinC IMAGE ALWAYS BEGINS WITH A NONZE countT VALUE ; THIS IS DONE EARLY BECAUSE IT MUST BE DONE FOR DT'OR
+
     SCOOP
 
     //CONJ: THE CYCLING ISSUE IS ONLY FOR CONSTRUCTION; WRITING IS ALREADY SERIALIZED SO SHOULD WORK OK.  THIS SUGGESTS THAT SERIALIZING CONSTRUCTION WITH WRITING MIGHT SUFFICE
