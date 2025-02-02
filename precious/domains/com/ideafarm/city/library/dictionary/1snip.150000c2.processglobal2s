@@ -102,6 +102,8 @@
     countT                          idPhaseProcess ;
     countT                          idProcessOld ;
     const countT                    idNumaNode  ;
+    const countT                    idDesireThread ;
+    const countT                    idDesireProcess ;
     const countT                    idHome      ;
     countT                          idExceptionEvent ;
     flagsT                          flDt        ;
@@ -133,6 +135,8 @@
     //ALPHABETICAL (TYPE INSTANCES ONLY; NO CLASS INSTANCES)
 
     static byteT                    pbnuTuck[ TUCK ] ;
+    static osTextT                  postIdDesireThread[ 0x9 ] ; //A: ASSUME: sizeof( countT ) == 4
+    static osTextT                  postIdDesireProcess[ 0x9 ] ; //A: ASSUME: sizeof( countT ) == 4
     static osTextT                  postIdHome[ 0x9 ] ; //A: ASSUME: sizeof( countT ) == 4
     static osTextT                  postIdAdamRoot[ 0x9 ] ; //A: ASSUME: sizeof( countT ) == 4
     static osTextT                  postIdNumaNode[ 0x9 ] ; //A: ASSUME: sizeof( countT ) == 4
