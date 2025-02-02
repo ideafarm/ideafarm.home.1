@@ -900,6 +900,11 @@ TELL( "cleaning up 0" )
     
                             }
                                 }
+}
+    break ;
+{
+case 0 :
+#endif
                                     }
                                         break ;
                                         }    
@@ -1255,6 +1260,8 @@ TELL( "cleaning up 0" )
                                         TELL( "SNAPsHOT" )
                                     {
                                     case ifcIDtYPEtELLsYS_SNAPsHOT :
+#if defined( NEVERdEFINED )
+//U::TO FIND A LEAK CPU I/O (PAGEFILE)
                                 {
                                 switch( told.idType )
 
@@ -1333,14 +1340,14 @@ TELL( "cleaning up 0" )
     
                             __( getNegAM( fingerTail ) - FINGERnEG_BOOK0cwRITEtAIL ) ;
                             if( bQuitEatingP ) break ;
-                            while( !fingerTail && !bQuitEatingP ) { ++ s ; thirdC::dosSleepWinkIF( tin0P ) ; }
+                            while( !fingerTail && !bQuitEatingP ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 2 ) ; }
                             countT& fingerTail = *(countT*)( pbi + sizeof( tellS ) + told.cbNote ) ;
         
                             __( getNegAM( told.finger2 ) - FINGERnEG_TELEMETRY2 ) ;
                             __( getNegAM( told.finger1 ) - FINGERnEG_TELEMETRY1 ) ;
                             TELL( "checking fingers" )
                             if( bQuitEatingP ) break ;
-                            while( !told.finger2 && !bQuitEatingP ) { ++ s ; thirdC::dosSleepWinkIF( tin0P ) ; }
+                            while( !told.finger2 && !bQuitEatingP ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 2 ) ; }
                             tellS& told = *(tellS*)pbi ;
                             TELL( "waiting for finger2 to be set in telemetry" )
         
@@ -1440,7 +1447,7 @@ TELL( "cleaning up 0" )
                             boolT bBad1 = getNegAM( head.finger1 ) - FINGERnEG_BOOK0cwRITEhEAD1 ;
 
                             if( bQuitEatingP ) break ;
-                            while( !head.finger2 && !bQuitEatingP ) { ++ s ; thirdC::dosSleepWinkIF( tin0P ) ; }
+                            while( !head.finger2 && !bQuitEatingP ) { ++ s ; thirdC::dosSleepWinkIF( tin0P , 2 ) ; }
 
                             telemetryBookHeadS& head = *(telemetryBookHeadS*)pbi ;
                             TELL( "parsing head" )
