@@ -332,8 +332,14 @@ DONE( tmWorkF )
     TN( tHeyConsole , "!console" ) ;
     ZE( boolT , bConsoleP ) ;
 
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
-    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+//    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+//    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+//U::PRODUCTION:
+
+etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
+thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_PUSHY ) ;
+//U::TO STUDY RESOURCE LEAKAGE AND SYSTEM OVERHEAD
+
 {
 if( pTaskP )
 TASK( tmWorkF )
