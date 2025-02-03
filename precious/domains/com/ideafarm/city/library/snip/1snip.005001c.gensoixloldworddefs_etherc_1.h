@@ -198,7 +198,7 @@ voidT etherWhereF_o373_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const st
     if( !POOP ) etherP.etherWhereF( tin0P , idActionP , flagsP , cThreadsMaxP ) ;
 }
 
-voidT computerNameF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+voidT computerLanNameF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
     ZE( byteT* , pbFieldNext ) ;
@@ -210,7 +210,7 @@ voidT computerNameF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const s
     SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
     ZE( strokeS* , psttP ) ;
     if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.computerNameF( tin0P , psttP ) ;
+    if( !POOP ) etherP.computerLanNameF( tin0P , psttP ) ;
 
     if( !POOP ) slP << psttP ;
     etherP.delF( tin0P , psttP ) ;

@@ -33189,6 +33189,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021f7.etherc.etherDoHttpJobF!||
 
  voidT socketsHostNameF( tin0S& tin0P , strokeS*& psttP ) ;
+ voidT computerLanNameF( tin0S& tin0P , strokeS*& psttP ) ;
 
 /* commands: birth , death of objects of other classes */
  voidT poolDelF( tin0S& tin0P , voidT* const pvP ) ;

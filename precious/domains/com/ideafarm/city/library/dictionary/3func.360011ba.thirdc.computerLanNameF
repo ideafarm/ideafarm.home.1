@@ -8,13 +8,15 @@
 
 
 }
-    if( !POOP ) c_strcpyIF( tin0P , postP , postBuffer ) ;
+    if( !POOP ) c_strncpyIF( tin0P , postP , postBuffer , costaName ) ;
 
     __Z( postP ) ;
-    newF( tin0P , LF , postP , c_strlenIF( tin0P , postBuffer ) + 1 ) ; ___( postP ) ;
+    newF( tin0P , LF , postP , costaName ) ; ___( postP ) ;
+    countT costaName = costName + 1 ;
 
     BOSpOOP
-    BOSS( WHATsir , BOSoK , GetComputerName( postBuffer , sizeof postBuffer ) )
+    BOSS( WHATsir , BOSoK , GetComputerName( postBuffer , costName ) )
+    countT costName = sizeof postBuffer ;
     osTextT postBuffer[ TUCK << 1 ] ;
 
     _IO_
