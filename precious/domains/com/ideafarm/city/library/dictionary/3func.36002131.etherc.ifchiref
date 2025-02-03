@@ -66,8 +66,8 @@
                 TN( tb , " " ) ;
                 TN( tPostscript , "" ) ; //NORMALLY NULL STRING; CONVENIENT FOR DEBUGGING
 
-                if( psttArgsP ) tArgsUse += tb+T(psttArgsP) ;
-                TN( tArgsUse , "" ) ; tArgsUse = tArgDesireProcess+tb+tArgDesireThread ;
+                if( psttArgsP ) tArgsUse += /*tb+*/T(psttArgsP) ;
+                TN( tArgsUse , "" ) ; //U:: USE THIS ONLY IF NOT "PUSHY"; THIS IS SUPPRESSED MAINLY BECAUSE THE LONG ARGUMENT LIST MESSES UP THE DISPLAY OF PROCESS EXPLORER:  tArgsUse = tArgDesireProcess+tb+tArgDesireThread ;
             
                 //if( idAdamP == ifcIDaDAM_SECRETsERVICE                 && processGlobal2I.idHome != 3 ) flProcessHire &= ~( F(flPROCESShIRE_VISIBLE) ) ;
                 //if( idAdamP == ifcIDaDAM_3BANG   && processGlobal2I.idHome != 2 && processGlobal2I.idHome != 3 ) flProcessHire &= ~( F(flPROCESShIRE_VISIBLE) ) ;
@@ -161,8 +161,9 @@
     ZE( countT , osPid       ) ;
     ZE( countT , osTid       ) ;
 
-    TN( tArgDesireThread  , "" ) ; tArgDesireThread  = T("!idDesireThread "  )+TF2(ifcTHREADpRIORITY_PUSHY,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
-    TN( tArgDesireProcess , "" ) ; tArgDesireProcess = T("!idDesireProcess " )+TF2(ifcTHREADpRIORITY_PUSHY,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
+    TN( tArgDesireThread  , "" ) ; tArgDesireThread  = T("!idDesireThread "  )+TF2(ifcTHREADpRIORITY_PUSHY,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ; //U:: ADD AN OPTIONAL PAIR OF PARAMETERS TO SPECIFY THE PROCESS AND (MAIN) THREAD DESIRE ; THESE ARGUMENTS ARE PASSED ONLY IF NOT "PUSHY", SINCE "PUSHY" IS THE DEFAULT SET IN CT'OR FOR processGlobal2S
+    TN( tArgDesireProcess , "" ) ; tArgDesireProcess = T("!idDesireProcess " )+TF2(ifcTHREADpRIORITY_PUSHY,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ; //U:: ADD AN OPTIONAL PAIR OF PARAMETERS TO SPECIFY THE PROCESS AND (MAIN) THREAD DESIRE ; THESE ARGUMENTS ARE PASSED ONLY IF NOT "PUSHY", SINCE "PUSHY" IS THE DEFAULT SET IN CT'OR FOR processGlobal2S
+
     TN( tb , " " ) ;
 
     //flagsP |= flHIRE_DEBUG ; //TO FIND A BUG
