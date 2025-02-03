@@ -3918,7 +3918,7 @@
 0x00000f4e , "\0\0\0\0stackC& etherC::ifcStkPoolNamesF( tin0S& tin0P )" ,
 0x00000f4f , "\0\0\0\0voidT etherC::strFromOldTimeF( tin0S& tin0P , strokeS*& psttP , countT mmP , countT hhP , countT dP , countT mP , countT yP , countT dowP )" ,
 0x00000f50 , "\0\0\0\0voidT etherC::openSslHmacF( tin0S& tin0P , strokeS*& psttP , const osTextT* postSecretP , countT costSecretP , const osTextT* postRawP , countT costRawP )" ,
-0x00000f51 , "\0\0\0\0voidT etherC::computerNameF( tin0S& tin0P , strokeS*& psttP )" ,
+0x00000f51 , "\0\0\0\0voidT etherC::computerLanNameF( tin0S& tin0P , strokeS*& psttP )" ,
 0x00000f52 , "\0\0\0\0infoDiskS::infoDiskS( tin0S& tin0P , thirdC& thirdP )" ,
 0x00000f53 , "\0\0\0\0infoDiskS::~infoDiskS( voidT )" ,
 0x00000f54 , "\0\0\0\0infoDiskS& infoDiskS::operator<<( infoDisk1S& infoDisk1P )" ,

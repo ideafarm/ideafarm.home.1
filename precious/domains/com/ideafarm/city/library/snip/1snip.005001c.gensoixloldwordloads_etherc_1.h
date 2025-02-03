@@ -79,11 +79,11 @@
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {
-    TN( tNameSoixlOld , "computerNameF_o4@" ) ;
+    TN( tNameSoixlOld , "computerLanNameF_o4@" ) ;
     _pSwSoixlOldApi->grabF( tin0P , TAG( TAGiDnULL ) ) ;
     _psttLeverSoixlOldApi = tNameSoixlOld ;
     if( *_pSwSoixlOldApi ) { BLAMMO ; }
-    *_pSwSoixlOldApi = (countT)computerNameF_o4P_GF ;
+    *_pSwSoixlOldApi = (countT)computerLanNameF_o4P_GF ;
     _pSwSoixlOldApi->ungrabF( tin0P ) ;
 }
 {

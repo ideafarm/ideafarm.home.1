@@ -19,7 +19,7 @@ voidT ether_idCitizenHirerI_F_o_GF( tin0S& tin0P , etherC& etherP , soulC& slP ,
 
 voidT etherWhereF_o373_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
-voidT computerNameF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
+voidT computerLanNameF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 
 voidT poolNewF_o331P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP ) ;
 

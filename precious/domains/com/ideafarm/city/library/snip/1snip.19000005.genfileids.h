@@ -3918,7 +3918,7 @@
 0x3600221c , 0x00000f4e ,   // 3func.3600221c.etherC.ifcStkPoolNamesF
 0x3600221d , 0x00000f4f ,   // 3func.3600221d.etherC.strFromOldTimeF
 0x3600221e , 0x00000f50 ,   // 3func.3600221e.etherC.openSslHmacF
-0x3600221f , 0x00000f51 ,   // 3func.3600221f.etherC.computerNameF
+0x3600221f , 0x00000f51 ,   // 3func.3600221f.etherC.computerLanNameF
 0x36003001 , 0x00000f52 ,   // 3func.36003001.infodisks.infodisks
 0x36003002 , 0x00000f53 ,   // 3func.36003002.infodisks.dt_infodisks
 0x36003003 , 0x00000f54 ,   // 3func.36003003.infodisks.operator_shiftleft
