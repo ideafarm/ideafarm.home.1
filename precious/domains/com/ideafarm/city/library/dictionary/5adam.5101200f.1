@@ -1683,6 +1683,17 @@ etherC::loafIF( tin0P ) ;
                 DEL( pInfo ) ;
                 }
                     }
+                        }
+                            }
+                                etRock.traceF( tin0P , T("collision / could not rename to "eating" [short]:    ")+tShort ) ;
+                                POOPRqUIET ;
+                            {
+                            if( POOP )
+                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tFolder+tEatingDot+tShort , tLong , 1 ) ;
+                            SCOOPS
+                        {
+                        IFsCRATCHoK
+
                         etThread.traceF( tin0P , T("processing [tShort]:    ")+tShort ) ;
                         }
                             etThread.delF( tin0P , psttShort ) ;
@@ -1709,12 +1720,14 @@ etherC::loafIF( tin0P ) ;
                 {
                 if( !pInfo || !pInfo->psttIfoName )
 
-                etThread.diskFindFileOrDirF( tin0P , pInfo , hFindEvent , *pptFolderEventsIncoming[ offf ] , &patMyEvents ) ;
+                etThread.diskFindFileOrDirF( tin0P , pInfo , hFindEvent , tFolder , &patMyEvents ) ;
                 ZE( infoFileS* , pInfo ) ;
                 _IO_
             {
             do
             handleC hFindEvent( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEfIND ) ;
+
+            textC& tFolder = *pptFolderEventsIncoming[ offf ] ;
         {
         for( countT offf = 0 ; offf < sizeof pptFolderEventsIncoming / sizeof pptFolderEventsIncoming[ 0 ] ; offf ++ )
     {
@@ -1737,7 +1750,8 @@ etherC::loafIF( tin0P ) ;
     {
     TN( tLanName , "" ) ;
 
-    TN( tSlash , "/" ) ;
+    TN( tEatingDot , "eating." ) ;
+    TN( tSlash     , "/"       ) ;
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
