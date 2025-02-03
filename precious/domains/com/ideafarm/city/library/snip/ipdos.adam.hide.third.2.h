@@ -30447,8 +30447,8 @@ private :
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34086.thirdC.s_postHostF!||
   voidT s_getHostByNameF( tin0S& tin0P , stackC& stP , const osTextT* const postP ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.340ce.thirdC.s_getHostByNameF!||
-  voidT s_getComputerNameF( tin0S& tin0P , osTextT*& postP ) ;
-  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011af.thirdc.s_getComputerNameF!||
+  voidT s_getHostNameF( tin0S& tin0P , osTextT*& postP ) ;
+  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011af.thirdc.s_getHostNameF!||
   killSocketS* s_registerTimeoutF( tin0S& tin0P , const handleC& handleP , const countT time1P , const sCountT time2P ) ;
   //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3415b.thirdC.s_registerTimeoutF!||
   boolT s_unregisterTimeoutF( tin0S& tin0P , const handleC& handleP ) ;
@@ -30697,6 +30697,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011b4.thirdc.idIdeaFarmKeysF!||
  static voidT setAddressUsageBitsIF( const byteT* pbP , countT idTypeP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011c9.thirdC.setAddressUsageBitsIF!||
+ voidT computerLanNameF( tin0S& tin0P , osTextT*& postP ) ;
 
 /**/
  FRIENDS_thirdC                                                                                                                                                                                                                                      \
@@ -33187,7 +33188,7 @@ examples
  voidT etherDoHttpJobF( tin0S& tin0P , taskDrivenServerJobS& jobP , socketC*& psoP , sessionC& sessionP , countT idPortMeP , nicNameC nnMeP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021f7.etherc.etherDoHttpJobF!||
 
- voidT computerNameF( tin0S& tin0P , strokeS*& psttP ) ;
+ voidT socketsHostNameF( tin0S& tin0P , strokeS*& psttP ) ;
 
 /* commands: birth , death of objects of other classes */
  voidT poolDelF( tin0S& tin0P , voidT* const pvP ) ;

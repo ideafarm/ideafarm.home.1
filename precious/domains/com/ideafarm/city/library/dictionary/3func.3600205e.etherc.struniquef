@@ -9,12 +9,14 @@
 
 }
     strMakeF( tin0P , LF , psttP , tAll ) ; // CALLER MUST TAG ___( psttP ) ;
+    delF( tin0P , psttLanName ) ;
     delF( tin0P , psttTime ) ;
     ;
 
         +tDot+TF3(tid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)
         +tDot+TF3(pid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)
         +tDot+TF3(cid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)
+        +tDot+T(psttLanName)
         T(psttTime)
 
     TN( tAll , "" ) ; tAll =
@@ -23,6 +25,9 @@
     countT tid = osThreadIdF( tin0P ) ;
     countT pid = osProcessIdF( tin0P ) ;
     countT cid = diskIdF( tin0P , T("///c") ) ;
+
+    third.computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
+    ZE( strokeS* , psttLanName ) ;
 
     }
         strMakeF( tin0P , LF , psttTime , TF3((countT)time2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)+T(".")+TF3(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ; ___( psttTime ) ;
