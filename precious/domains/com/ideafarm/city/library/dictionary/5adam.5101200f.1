@@ -1709,7 +1709,7 @@ etherC::loafIF( tin0P ) ;
                 {
                 if( !pInfo || !pInfo->psttIfoName )
 
-                etThread.diskFindFileOrDirF( tin0P , pInfo , hFindEvent , pptFolderEventsIncoming[ offf ] , &patMyEvents ) ;
+                etThread.diskFindFileOrDirF( tin0P , pInfo , hFindEvent , *pptFolderEventsIncoming[ offf ] , &patMyEvents ) ;
                 ZE( infoFileS* , pInfo ) ;
                 _IO_
             {
@@ -1736,6 +1736,8 @@ etherC::loafIF( tin0P ) ;
         ZE( strokeS* , psttLanName ) ;
     {
     TN( tLanName , "" ) ;
+
+    TN( tSlash , "/" ) ;
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
