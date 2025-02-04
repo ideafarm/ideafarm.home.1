@@ -1342,7 +1342,7 @@ DONE( tmWorkF )
                                         POOPR ;
                                     {
                                     if( POOP )
-                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , sIn , tLong , 1 ) ;
+                                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , sIn , tLongEating , 1 ) ;
                                     SCOOPS
                                 {
                                 IFsCRATCHoK
@@ -1350,7 +1350,7 @@ DONE( tmWorkF )
                                 IFsCRATCHoK{}
 
                                 ZE( flagsT , flagsFail ) ;
-                                etRock.traceF( tin0P , T("receiving ")+T((strokeS*)tLong)+T(": ") ) ;
+                                etRock.traceF( tin0P , T("receiving ")+T((strokeS*)tLongEating)+T(": ") ) ;
 
                                 etRock.traceF( tin0P , tShort ) ;
                             {
@@ -1360,10 +1360,11 @@ DONE( tmWorkF )
                                 POOPRqUIET ;
                             {
                             if( POOP )
-                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tFolder+tEatingDot+tShort , tLong , 1 ) ;
+                            ((tin1S&)tin0P).pEtScratch->diskMoveFileOrDirF( tin0P , tLongEating , tLong , 1 ) ;
                             SCOOPS
                         {
                         IFsCRATCHoK
+                        TN( tLongEating , "" ) ; tLongEating = tFolder+tEatingDot+tShort ;
 
                         etThread.traceF( tin0P , T("processing [tShort]:    ")+tShort ) ;
                         }
