@@ -91,7 +91,7 @@
         cMunch                                                                                                      // WO STROKE FOR EACH MUNCH
     ether.strMakeF( tin0P , LF , psttP , T("") ,
 
-static    countT rGroupPerLine = cGroupEnds / cLineEnds + ( !!( cGroupEnds % cLineEnds ) ) ;
+    countT rGroupPerLine = cGroupEnds / cLineEnds + ( !!( cGroupEnds % cLineEnds ) ) ;
 
     ;
 
@@ -101,28 +101,28 @@ static    countT rGroupPerLine = cGroupEnds / cLineEnds + ( !!( cGroupEnds % cLi
             ? 0
         : !mPerGrouprP
         ? 0
-static    countT cGrouprEnds       = !bReadableP
-static    countT cGroupEnds        = !mPerGroupP   ? 0 : cMunch / mPerGroupP  + !!( cMunch % mPerGroupP )  - cLineEnds ;
-static    countT cLineEnds         = !mPerLineP    ? 0 : cMunch / mPerLineP   + !!( cMunch % mPerLineP  ) ;
+    countT cGrouprEnds       = !bReadableP
+    countT cGroupEnds        = !mPerGroupP   ? 0 : cMunch / mPerGroupP  + !!( cMunch % mPerGroupP )  - cLineEnds ;
+    countT cLineEnds         = !mPerLineP    ? 0 : cMunch / mPerLineP   + !!( cMunch % mPerLineP  ) ;
 
-static    countT csttPad = csttFullLine - csttLathLine - 1 ;        // THE "- 1" IS BECAUSE THE READABLES ARE PREFIXED WITH A " "
+    countT csttPad = csttFullLine - csttLathLine - 1 ;        // THE "- 1" IS BECAUSE THE READABLES ARE PREFIXED WITH A " "
 
     }
         if( cFullGroupsLathLine ) csttLathLine += cFullGroupsLathLine - 1 ;
         countT cFullGroupsLathLine = cMunchLathLine / mPerGroupP ;
     {
     if( mPerGroupP )
-static    countT csttLathLine = cMunchLathLine ;
+    countT csttLathLine = cMunchLathLine ;
 
     }
         if( cFullGroupsPerLine ) csttFullLine += cFullGroupsPerLine - 1 ;
         countT cFullGroupsPerLine = mPerLineP / mPerGroupP ;
     {
     if( mPerGroupP )
-static    countT csttFullLine = mPerLineP ;
+    countT csttFullLine = mPerLineP ;
 
-static    countT cFullGroupsLathLine = !mPerGroupP ? 0 : cMunchLathLine / mPerGroupP ;
-static    countT cMunchLathLine      = !mPerLineP  ? 0 : cMunch         / mPerLineP  ;
+    countT cFullGroupsLathLine = !mPerGroupP ? 0 : cMunchLathLine / mPerGroupP ;
+    countT cMunchLathLine      = !mPerLineP  ? 0 : cMunch         / mPerLineP  ;
 
     if( !mPerLineP ) mPerLineP = cMunch ;
 
