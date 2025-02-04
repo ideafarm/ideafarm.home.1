@@ -14,6 +14,8 @@
     if( psttRead && csttFullLineBeforeReadables && cMunchCurrentLine )                                                          // IF I'M WRITING READABLES AND I'VE WRITTEN AT LEAST WO FULL LINE AND HAVE WRITTEN AT LEAST WO MUNCH TO THE LATH LINE
 
     }
+        if( aim ) aim = - aim ;
+
         }
             }
                 ether.strFuseF( tin0P , psttRead , tge ) ;
@@ -52,12 +54,13 @@
 
         countT oib       =       offbMunch % SB   ;      /* "oib" : "offset of bit in byte" */
         const byteT* pbc = pbP + offbMunch / SB   ;
-        countT offbMunch = offMunch * cBitsPerMunch ;
+        countT offbMunch = ( offMunch + aim ) * cBitsPerMunch ;
 
         cMunchCurrentLine ++ ;
         idm               ++ ;
     {
     for( countT offMunch = 0 ; offMunch < cMunch ; offMunch ++ )
+    sCountT aim = bForeign ? 1 : 0 ;                                      // IF bForeign THEN I NEVER WANT THE TARGETED MUNCH ; I ALWAYS WANT EITHER THE NEXT HIGHER OR NEXT LOWER NIBBLE
     ZE( countT , cMunchCurrentLine           ) ;
     ZE( countT , csttFullLineBeforeReadables ) ;
     ZE( countT , idm ) ;
@@ -69,10 +72,9 @@
         ? 0x40
     const countT radix = F(flagsP) & flSTRdUMP_6bITS
 
-    ;
-        : flFORMAT_UNSIGNED | flFORMAT_NObASE | flFORMAT_FILLzE | flFORMAT_NObIGITvALUES
-        ? flFORMAT_UNSIGNED | flFORMAT_NObASE | flFORMAT_FILLzE | flFORMAT_NObIGITvALUES | flFORMAT_FOREIGN
-    const flagsT flagsUse = F(flagsP) & flSTRdUMP_FOREIGN
+    const flagsT flagsUse = flFORMAT_UNSIGNED | flFORMAT_NObASE | flFORMAT_FILLzE | flFORMAT_NObIGITvALUES ;
+
+    const boolT bForeign = F(flagsP) & flSTRdUMP_FOREIGN ;
 
     TN( tp1 , " " ) ;
     TN( tp2 , "  " ) ;
