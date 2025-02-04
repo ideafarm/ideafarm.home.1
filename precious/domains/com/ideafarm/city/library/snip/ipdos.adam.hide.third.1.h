@@ -1,4 +1,6 @@
 
+#define ifcIDaDAM_WELCOMER                                             0x51000893
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -48318,6 +48320,7 @@ use this rather than _ to avoid the overhead of _
 #define flHOMEsaDAMS_FILEwEBHOOKnOTICES        0xe0002008
 #define flHOMEsaDAMS_ICISbOT                   0xe0004008
 #define flHOMEsaDAMS_ADMINISTRATOR             0xe0008008
+#define flHOMEsaDAMS_WELCOMER                  0xe0010008
 /*3*/
 #define flHOMEsaDAMS_null    0xe0000008
 
