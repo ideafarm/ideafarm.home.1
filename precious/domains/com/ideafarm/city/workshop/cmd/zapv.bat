@@ -151,14 +151,18 @@ pause
 dir          D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2012\!ideafarm.?.2.00000000.00000001.20140721@1758.20140721@1758.0c3d07545d637835c81483e3424e70e0.001.*
 
 :Vk
-if not exist D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2012\!ideafarm.?.2.00000000.00000001.20140721@1758.20170306@1910.0c3d07545d637835c81483e3424e70e0.001.* goto :V99
+if not exist D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2012\!ideafarm.?.2.00000000.00000001.20140721@1758.20170306@1910.0c3d07545d637835c81483e3424e70e0.001.* goto :Vl
 dir          D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2012\!ideafarm.?.2.00000000.00000001.20140721@1758.20170306@1910.0c3d07545d637835c81483e3424e70e0.001.*
 del          D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2012\!ideafarm.?.2.00000000.00000001.20140721@1758.20170306@1910.0c3d07545d637835c81483e3424e70e0.001.*
 pause
 dir          D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2012\!ideafarm.?.2.00000000.00000001.20140721@1758.20170306@1910.0c3d07545d637835c81483e3424e70e0.001.*
 
-
-
+:Vl
+if not exist D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2012\!ideafarm.9.2.00000000.00000001.20121122@0803.20121122@0803.1321f728daeaff939719ff5e7a0e6673.001.* goto :V99
+dir          D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2012\!ideafarm.9.2.00000000.00000001.20121122@0803.20121122@0803.1321f728daeaff939719ff5e7a0e6673.001.*
+del          D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2012\!ideafarm.9.2.00000000.00000001.20121122@0803.20121122@0803.1321f728daeaff939719ff5e7a0e6673.001.*
+pause
+dir          D:\ideafarm.home.101\devices\%1\ideafarm.archives\wo.ideafarm\2012\!ideafarm.9.2.00000000.00000001.20121122@0803.20121122@0803.1321f728daeaff939719ff5e7a0e6673.001.*
 
 
 
