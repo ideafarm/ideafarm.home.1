@@ -198,6 +198,24 @@ voidT etherWhereF_o373_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const st
     if( !POOP ) etherP.etherWhereF( tin0P , idActionP , flagsP , cThreadsMaxP ) ;
 }
 
+voidT socketsHostNameF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttP ) ;
+    if( !POOP ) { slP >> psttP ; ___( psttP ) ; idArgNext ++ ; }
+    if( !POOP ) etherP.socketsHostNameF( tin0P , psttP ) ;
+
+    if( !POOP ) slP << psttP ;
+    etherP.delF( tin0P , psttP ) ;
+}
+
 voidT computerLanNameF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -1840,22 +1858,4 @@ voidT diskChooseSiteF_o4P4P4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , c
     etherP.delF( tin0P , psttP ) ;
 
     slP << noName ;
-}
-
-voidT diskFindMostFreeSpaceF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
-    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
-    ZE( strokeS* , psttDiskP ) ;
-    if( !POOP ) { slP >> psttDiskP ; ___( psttDiskP ) ; idArgNext ++ ; }
-    if( !POOP ) etherP.diskFindMostFreeSpaceF( tin0P , psttDiskP ) ;
-
-    if( !POOP ) slP << psttDiskP ;
-    etherP.delF( tin0P , psttDiskP ) ;
 }

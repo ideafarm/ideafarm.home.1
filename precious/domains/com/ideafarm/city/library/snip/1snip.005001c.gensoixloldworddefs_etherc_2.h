@@ -1,4 +1,22 @@
 
+voidT diskFindMostFreeSpaceF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+    SOIXLoLDtESTeMPTY( 0xdddd8017 , etherC )
+    SOIXLoLDtESTtYPE( 0xdddd8017 , etherC )
+    ZE( strokeS* , psttDiskP ) ;
+    if( !POOP ) { slP >> psttDiskP ; ___( psttDiskP ) ; idArgNext ++ ; }
+    if( !POOP ) etherP.diskFindMostFreeSpaceF( tin0P , psttDiskP ) ;
+
+    if( !POOP ) slP << psttDiskP ;
+    etherP.delF( tin0P , psttDiskP ) ;
+}
+
 voidT diskGetHoverF_o4P_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -2281,19 +2299,4 @@ voidT osDoNothingLoopF_o33_GF( tin0S& tin0P , etherC& etherP , soulC& slP , cons
         }
     }
     if( !POOP ) etherP.osDoNothingLoopF( tin0P , cToDoP , msSleepP ) ;
-}
-
-voidT osDriverF_o3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-    ZE( countT , idAdamP ) ;
-    if( !POOP ) { slP >> idAdamP ; idArgNext ++ ; }
-    if( !POOP ) etherP.osDriverF( tin0P , idAdamP ) ;
 }

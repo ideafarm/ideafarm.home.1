@@ -1,4 +1,19 @@
 
+voidT osDriverF_o3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
+{
+    countT idArgNext = 1 ;
+    ZE( byteT* , pbFieldNext ) ;
+    ZE( countT , idTypeNext ) ;
+    ZE( flagsT , flagsNext ) ;
+    ZE( countT , cbFieldNext ) ;
+
+   SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
+   SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
+    ZE( countT , idAdamP ) ;
+    if( !POOP ) { slP >> idAdamP ; idArgNext ++ ; }
+    if( !POOP ) etherP.osDriverF( tin0P , idAdamP ) ;
+}
+
 voidT osDriverNameFromMasterF_o4P3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
 {
     countT idArgNext = 1 ;
@@ -2577,43 +2592,4 @@ voidT sockOptionBroadcastF_ob6_GF( tin0S& tin0P , etherC& etherP , soulC& slP , 
         }
     }
     if( !POOP ) etherP.sockOptionBroadcastF( tin0P , handleP , bAllowP ) ;
-}
-
-voidT sockOptionLingerF_ob3_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const strokeS* const _psttNameP )
-{
-    countT idArgNext = 1 ;
-    ZE( byteT* , pbFieldNext ) ;
-    ZE( countT , idTypeNext ) ;
-    ZE( flagsT , flagsNext ) ;
-    ZE( countT , cbFieldNext ) ;
-
-   SOIXLoLDtESTeMPTY( 0xdddd8014 , etherC )
-   SOIXLoLDtESTtYPE( 0xdddd8014 , etherC )
-    handleC handleP( /*GOOEY*/tin0P , TAG( TAGiDnULL ) ) ;
-    if( !POOP ) { handleP << slP ; idArgNext ++ ; }
-
-    ZE( countT , cSecondsP ) ;
-    {
-        strokeS sttColon( ':' ) ;
-        SOIXLoLDtESTeMPTY( 0xdddd8003 , etherC )
-        if( !POOP )
-        {
-           idTypeNext = flagsNext = cbFieldNext = 0 ;
-            pbFieldNext = slP.pbFieldF( tin0P , idTypeNext , flagsNext , cbFieldNext , 1 ) ;
-            strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
-            if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
-            {
-                cSecondsP = TOCK * 0x10 ;
-                psttNext = 0 ;
-                if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
-                etherP.delF( tin0P , psttNext ) ;
-            }
-            else
-            {
-                SOIXLoLDtESTtYPE( 0xdddd8003 , etherC )
-                if( !POOP ) { slP >> cSecondsP ; idArgNext ++ ; }
-            }
-        }
-    }
-    if( !POOP ) etherP.sockOptionLingerF( tin0P , handleP , cSecondsP ) ;
 }
