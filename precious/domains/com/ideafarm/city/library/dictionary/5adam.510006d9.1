@@ -18,7 +18,7 @@ DONE( tmWorkF )
 }
     etherC::loafIF( tin0P ) ; // THIS IS TO PREVENT AN EARLY, INTENTIONAL QUIT FROM TRIGGERING GLASS2 EXCEPTION REPORTS
 
-//U::    etThread.osThreadSwitchingDesireF( tin0P , idDesireSave ) ;
+    etThread.osThreadSwitchingDesireF( tin0P , idDesireSave ) ;
 
     thirdC::osProcessIdPhaseAdamIF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
@@ -447,8 +447,8 @@ DONE( tmWorkF )
 
     TN( tArgKeyName , "!name" ) ;
 
-//U::    const countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
-//U::    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_PUSHY ) ;
+    const countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_PUSHY ) ;
 
     thirdC::osProcessIdPhaseAdamIF( tin0P , ifcIDpHASEhANDOFFoLD_WORKING ) ;
 {
