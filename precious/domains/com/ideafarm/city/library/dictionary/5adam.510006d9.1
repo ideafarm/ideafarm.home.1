@@ -18,7 +18,7 @@ DONE( tmWorkF )
 }
     etherC::loafIF( tin0P ) ; // THIS IS TO PREVENT AN EARLY, INTENTIONAL QUIT FROM TRIGGERING GLASS2 EXCEPTION REPORTS
 
-    etThread.osThreadSwitchingDesireF( tin0P , idDesireSave ) ;
+//    etThread.osThreadSwitchingDesireF( tin0P , idDesireSave ) ;
 
     thirdC::osProcessIdPhaseAdamIF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
 
@@ -63,7 +63,7 @@ DONE( tmWorkF )
                             {
                             if( POOP )
 
-                            etThread.osThreadSwitchingDesireF( tin0P , idDesireSave ) ;
+                            etThread.osThreadSwitchingDesireF( tin0P , idDesireSave3 ) ;
                             cloudC cloudRax( tin0P , tName , idDoIfDiffer , flagsCloud , idCloud , T(cloudSpec.postBuilding) , T(cloudSpec.postUser) , T(cloudSpec.postPassword) , T(cloudSpec.postRemote) , T(cloudSpec.postLocal) , T(cloudSpec.postLike) , etThread.strDigitsToSCountF( tin0P , T(cloudSpec.postCbMin) ) , etThread.strDigitsToSCountF( tin0P , T(cloudSpec.postCbMax) ) , etThread.strDigitsToSCountF( tin0P , T(cloudSpec.postDelTries) ) , F(flagsCloud) & flCLOUDc_REMOTEiSmASTER ? cloudUpdateLocalCBF : cloudUpdateRemoteCBF , pcArgUpdate , F(flagsCloud) & flCLOUDc_REMOTEiSmASTER ? cloudNixLocalCBF : cloudNixRemoteCBF , pcArgNix , T(cloudSpec.postMoveLocalToAfter) , T(cloudSpec.postHireAdamAfter) ) ;
 
                             }
@@ -79,7 +79,7 @@ DONE( tmWorkF )
                         {
                         _IO_
                         etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZY ) ;
-                        countT idDesireSave = etThread.osThreadSwitchingDesireF( tin0P ) ;
+                        countT idDesireSave3 = etThread.osThreadSwitchingDesireF( tin0P ) ;
 
                         //etThread.traceF( tin0P , T("debug [flagsCloud]: ")+TF3(flagsCloud,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
                         if( !thirdC::c_strcmpIF( tin0P , cloudSpec.postVerifyLocalList , "no" ) ) flagsCloud |= flCLOUDc_DOnOTvERIFYlOCALlIST ;
