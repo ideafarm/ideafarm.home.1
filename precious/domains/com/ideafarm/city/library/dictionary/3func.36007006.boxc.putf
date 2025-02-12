@@ -140,12 +140,13 @@
     else if( psttHost->idAdam && !ether.strCompareF( tin0P , psttType , T("news") ) && pSControl )
     }
         ether.delF( tin0P , psttFile ) ;
+        ether.traceF( tin0P , T("boxC::putF [psttFile]:    ")+T(psttFile) ) ;
         ether.boxPutUniqueF( tin0P , psttFile , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.to.send/soul.email") , WS( sOut ) ) ;
         ZE( strokeS* , psttFile ) ;
 
         }
             ether.boxPutF( tin0P , tFileBody , pbP , cbP ) ;
-            //LOGrAW( T("boxC::putF: writing file \"")+tFileBody+T("\"\r\n") ) ;
+            ether.traceF( tin0P , T("boxC::putF [tFileBody]:    ")+tFileBody ) ;
             sOut << (strokeS*)tFileBody ;
             }
                 ether.delF( tin0P , psttu ) ;
@@ -156,7 +157,11 @@
             TN( tFileBody , "" ) ;
         {
         else
-        if( F(flagsP) & flBOXcpUTf_FILEnAME ) sOut << (strokeS*)pbP ; //CALLER MUST PASS IN A strokeS* DISGUISED AS byteT*
+        }
+            ether.traceF( tin0P , T("boxC::putF / flBOXcpUTf_FILEnAME specified; using as file name:    ")+T((strokeS*)pbP) ) ;
+            sOut << (strokeS*)pbP ; //CALLER MUST PASS IN A strokeS* DISGUISED AS byteT*
+        {
+        if( F(flagsP) & flBOXcpUTf_FILEnAME )
 
         }
             ether( tin0P , pStk_psttBc ) ;
