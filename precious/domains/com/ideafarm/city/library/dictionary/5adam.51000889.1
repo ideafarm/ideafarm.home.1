@@ -42,7 +42,8 @@ DONE( tmGorillaF )
         //G: ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;       // USED TO STUDY LEAKAGE (EASY LOAD SO CPU USAGE IS INITIALLY LOW ON wh1)
         //G: ++ s ; ether.osSleepF( tin0P , TOCK << 1 ) ;        // WH SERVER CAN KEEP UP WITH THIS RATE
 
-        ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;        // FASTER SINCE WEBHOOK CBF NOW DOES NOT WRITE MY BODY TO booksC
+        ++ s ; ether.osSleepF( tin0P , TOCK << 1 ) ;        // FASTER SINCE WEBHOOK CBF NOW DOES NOT WRITE MY BODY TO booksC
+        //B: TOO FAST: ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;        // FASTER SINCE WEBHOOK CBF NOW DOES NOT WRITE MY BODY TO booksC
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
         /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
