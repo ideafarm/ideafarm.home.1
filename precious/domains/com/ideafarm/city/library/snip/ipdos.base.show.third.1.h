@@ -39227,6 +39227,7 @@ args
 #define flTHREADmODE3_POOLaLLOCATEfROMhEAP                      0xe10000c8
 #define flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE                  0xe20000c8
 #define flTHREADmODE3_POOLdELtRYhARDERaNDtRACE                  0xe40000c8
+#define flTHREADmODE3_SUPPRESStHREADsTACKuSAGEiNSPECTION        0xe80000c8
 /*3*/
 #define flTHREADmODE3_null    0xe00000c8
 

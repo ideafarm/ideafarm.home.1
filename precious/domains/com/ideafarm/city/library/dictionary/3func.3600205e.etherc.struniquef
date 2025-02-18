@@ -16,7 +16,7 @@
         +tDot+TF3(tid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)
         +tDot+TF3(pid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)
         +tDot+TF3(cid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)
-        +tDot+T(psttLanName)
+        +tDot+TPS(psttLanName,0x10,S1C('$'))
         T(psttTime)
 
     TN( tAll , "" ) ; tAll =
@@ -26,6 +26,7 @@
     countT pid = osProcessIdF( tin0P ) ;
     countT cid = diskIdF( tin0P , T("///c") ) ;
 
+    if( psttLanName && psttLanName->idAdam > 0x10 ) psttLanName->idAdam = 0x10 ;
     computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
     ZE( strokeS* , psttLanName ) ;
 
