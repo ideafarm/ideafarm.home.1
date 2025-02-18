@@ -128,7 +128,7 @@
 0x11200080 , 0x00000080 ,   // 1snip.11200080.csaverageparameterlengthmax
 0x11200081 , 0x00000081 ,   // 1snip.11200081.csnodenamemax
 0x11200082 , 0x00000082 ,   // 1snip.11200082.ifcflagin
-0x11200083 , 0x00000083 ,   // 1snip.11200083._IO_
+0x11200083 , 0x00000083 ,   // 1snip.11200083._io_
 0x11200084 , 0x00000084 ,   // 1snip.11200084.posthtmlbodypart1
 0x11200085 , 0x00000085 ,   // 1snip.11200085.cboxpourmax
 0x11200086 , 0x00000086 ,   // 1snip.11200086.idcmddataanus
@@ -205,8 +205,8 @@
 0x112000d2 , 0x000000cd ,   // 1snip.112000d2.taskdrivenserver
 0x112000d3 , 0x000000ce ,   // 1snip.112000d3.donedrivenserver
 0x112000d4 , 0x000000cf ,   // 1snip.112000d4.taskdrivenservernewsocket
-0x112000d5 , 0x000000d0 ,   // 1snip.112000d5.ifcIDeVENTmONITORED
-0x112000d6 , 0x000000d1 ,   // 1snip.112000d6.ifcIDeVENTeXCEPTIONmONITORED
+0x112000d5 , 0x000000d0 ,   // 1snip.112000d5.ifcideventmonitored
+0x112000d6 , 0x000000d1 ,   // 1snip.112000d6.ifcideventexceptionmonitored
 0x112000d7 , 0x000000d2 ,   // 1snip.112000d7.ifcIDcMDmoNITOR
 0x112000d8 , 0x000000d3 ,   // 1snip.112000d8.flforestfire
 0x112000d9 , 0x000000d4 ,   // 1snip.112000d9.task0proto
@@ -862,7 +862,7 @@
 0x11200388 , 0x0000035e ,   // 1snip.11200388.flagscaller
 0x1120038a , 0x0000035f ,   // 1snip.1120038a.dropnotedoesnotwantme
 0x1120038b , 0x00000360 ,   // 1snip.1120038b.ifcemail
-0x1120038c , 0x00000361 ,   // 1snip.1120038c.flOLDlEAKmONITOR
+0x1120038c , 0x00000361 ,   // 1snip.1120038c.floldleakmonitor
 0x1120038d , 0x00000362 ,   // 1snip.1120038d.flbatonct
 0x1120038e , 0x00000363 ,   // 1snip.1120038e.ifcidtypestrokeclean
 0x1120038f , 0x00000364 ,   // 1snip.1120038f.ifcidtypeticket
@@ -2422,7 +2422,7 @@
 0x1c00000c , 0x00000976 ,   // 1snip.1c00000c.decv02am
 0x1c00000d , 0x00000977 ,   // 1snip.1c00000d.getregsam
 0x1c00000e , 0x00000978 ,   // 1snip.1c00000e.putregsam
-0x1c00000f , 0x00000979 ,   // 1snip.1c00000f.espAM
+0x1c00000f , 0x00000979 ,   // 1snip.1c00000f.espam
 0x1c000010 , 0x0000097a ,   // 1snip.1c000010.btsam
 0x1c000011 , 0x0000097b ,   // 1snip.1c000011.btram
 0x1c000012 , 0x0000097c ,   // 1snip.1c000012.btcam
@@ -3369,7 +3369,7 @@
 0x360010ec , 0x00000d29 ,   // 3func.360010ec.thirdc.strfendf
 0x360010ed , 0x00000d2a ,   // 3func.360010ed.thirdc.strcomparef
 0x360010ef , 0x00000d2b ,   // 3func.360010ef.thirdc.osthreadostidf
-0x360010f1 , 0x00000d2c ,   // 3func.360010f1.thirdC.dosContinueMonitoringF
+0x360010f1 , 0x00000d2c ,   // 3func.360010f1.thirdc.doscontinuemonitoringf
 0x360010f7 , 0x00000d2d ,   // 3func.360010f7.thirdc.dosgetcurrentdirf
 0x360010fa , 0x00000d2e ,   // 3func.360010fa.thirdc.c_strconcatenatef
 0x360010fc , 0x00000d2f ,   // 3func.360010fc.thirdc.dosreadthreadcontextf

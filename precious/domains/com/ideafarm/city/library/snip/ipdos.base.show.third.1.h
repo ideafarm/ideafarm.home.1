@@ -5185,7 +5185,7 @@ in the "IN_NORMAL" macros, it is redefined so that the _ macro sets the high ord
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200082.ifcflagin END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._IO_ BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._io_ BEGIN
 
 
 //
@@ -5270,7 +5270,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._IO_ END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200083._io_ END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200084.posthtmlbodypart1 BEGIN
 
 
@@ -5675,26 +5675,26 @@ code that supports the following flags is commented out for added speed but can 
 //CODEsYNC: 00100df 0010055
 
 /*3*/
-#define flTHREADmODE1_POOLoLDsECTION1                           0xe000010f
-#define flTHREADmODE1_SHOWpROGRESS                              0xe000020f
-#define flTHREADmODE1_IMPOTENCEpENDING                          0xe000040f
-#define flTHREADmODE1_UPDATEtIN                                 0xe000080f
-#define flTHREADmODE1_QUIETiMPOTENCE                            0xe000100f
-#define flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE                   0xe000200f
-#define flTHREADmODE1_DOnOTcALLmONITOReVENThANDLER              0xe000400f
-#define flTHREADmODE1_YELL                                      0xe000800f
-#define flTHREADmODE1_ALLOWuNMONITOREDsLEEP                     0xe001000f
-#define flTHREADmODE1_DISALLOWgRAB                              0xe002000f
-#define flTHREADmODE1_DISALLOWmULTIPLEgRAB                      0xe004000f
-#define flTHREADmODE1_DISALLOWgRABoFiNTERPROCESSgRABs           0xe008000f
-#define flTHREADmODE1_DISALLOWtELLgLASS2                       0xe010000f
-#define flTHREADmODE1_SUPPRESSgRAB                              0xe020000f
-#define flTHREADmODE1_DRIVERaDAM                                0xe040000f
-#define flTHREADmODE1_SUPPRESStELLgLASS2                       0xe080000f
-#define flTHREADmODE1_USEaSYNCHtELLgLASS2                      0xe100000f
-#define flTHREADmODE1_ALLOWsTOPwHILEgRABBING                    0xe200000f
-#define flTHREADmODE1_ALLOWeMITwORD                             0xe400000f
-#define flTHREADmODE1_ALLOWmULTItHREADEDhOVER                   0xe800000f
+#define flTHREADmODE1_POOLoLDsECTION1                                                   0xe000010f
+#define flTHREADmODE1_SHOWpROGRESS                                                      0xe000020f
+#define flTHREADmODE1_IMPOTENCEpENDING                                                  0xe000040f
+#define flTHREADmODE1_UPDATEtIN                                                         0xe000080f
+#define flTHREADmODE1_QUIETiMPOTENCE                                                    0xe000100f
+#define flTHREADmODE1_WATCHfORaSYNCHiMPOTENCE                                           0xe000200f
+#define flTHREADmODE1_DOnOTcALLmONITOReVENThANDLER                                      0xe000400f
+#define flTHREADmODE1_YELL                                                              0xe000800f
+#define flTHREADmODE1_ALLOWuNMONITOREDsLEEP                                             0xe001000f
+#define flTHREADmODE1_DISALLOWgRAB                                                      0xe002000f
+#define flTHREADmODE1_DISALLOWmULTIPLEgRAB                                              0xe004000f
+#define flTHREADmODE1_DISALLOWgRABoFiNTERPROCESSgRABs                                   0xe008000f
+#define flTHREADmODE1_DISALLOWtELLgLASS2                                                0xe010000f
+#define flTHREADmODE1_SUPPRESSgRAB                                                      0xe020000f
+#define flTHREADmODE1_DRIVERaDAM                                                        0xe040000f
+#define flTHREADmODE1_SUPPRESStELLgLASS2                                                0xe080000f
+#define flTHREADmODE1_USEaSYNCHtELLgLASS2                                               0xe100000f
+#define flTHREADmODE1_ALLOWsTOPwHILEgRABBING                                            0xe200000f
+#define flTHREADmODE1_ALLOWeMITwORD                                                     0xe400000f
+#define flTHREADmODE1_ALLOWmULTItHREADEDhOVER                                           0xe800000f
 /*3*/
 #define flTHREADmODE1_null    0xe000000f
 
@@ -9199,7 +9199,7 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d4.taskdrivenservernewsocket END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d5.ifcIDeVENTmONITORED BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d5.ifcideventmonitored BEGIN
 
 
 //
@@ -9239,8 +9239,8 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d5.ifcIDeVENTmONITORED END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d6.ifcIDeVENTeXCEPTIONmONITORED BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d5.ifcideventmonitored END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d6.ifcideventexceptionmonitored BEGIN
 
 
 //
@@ -9303,7 +9303,7 @@ if pso is 0 after i have executed, the code between me and DONEdRIVENsERVER will
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d6.ifcIDeVENTeXCEPTIONmONITORED END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d6.ifcideventexceptionmonitored END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.112000d7.ifcIDcMDmoNITOR BEGIN
 
 
@@ -19262,26 +19262,26 @@ after i return, that countT object will contain 1
 //CODEsYNC: 00100df 0010055
 
 /*3*/
-#define flTHREADmODE2_MARKnEWdROPSqUIETdURINGwALK               0xe000014a
-#define flTHREADmODE2_SOIXLoLDnOpOPUPoNeRROR                    0xe000024a
-#define flTHREADmODE2_INoUTcHATTER                              0xe000044a
-#define flTHREADmODE2_SECREThANDsHAKER                          0xe000084a
-#define flTHREADmODE2_CHATTERgRABwANTfREEZES                    0xe000104a
-#define flTHREADmODE2_POOLoLDtURBO                              0xe000204a
-#define flTHREADmODE2_MYoWNrECYCLER                             0xe000404a
-#define flTHREADmODE2_ADAMmAINtHREAD                            0xe000804a
-#define flTHREADmODE2_LOCKdESIRE                                0xe001004a
-#define flTHREADmODE2_SMELLY                                    0xe002004a
-#define flTHREADmODE2_DOnOTcaLLdELif                            0xe004004a
-#define flTHREADmODE2_UNLOCKpOOLiDENTITY                        0xe008004a
-#define flTHREADmODE2_ALLOWnEWdROPnOTiNaDAMtEMP                 0xe010004a
-#define flTHREADmODE2_DISALLOWpUSE                              0xe020004a
-#define flTHREADmODE2_MONITORdOnOTrEPORToNmE                    0xe040004a
-#define flTHREADmODE2_ALLOWcONSTRUCTIONoFlISTINGc               0xe080004a
-#define flTHREADmODE2_ALLOWdESTRUCTIONoFlISTINGc                0xe100004a
-#define flTHREADmODE2_TINaRGSpUSHED                             0xe200004a
-#define flTHREADmODE2_ALLOWdICTIONARYwHILEgRABBING              0xe400004a
-#define flTHREADmODE2_ALLOWvOLATILEdESIRE                       0xe800004a
+#define flTHREADmODE2_MARKnEWdROPSqUIETdURINGwALK                                       0xe000014a
+#define flTHREADmODE2_SOIXLoLDnOpOPUPoNeRROR                                            0xe000024a
+#define flTHREADmODE2_INoUTcHATTER                                                      0xe000044a
+#define flTHREADmODE2_SECREThANDsHAKER                                                  0xe000084a
+#define flTHREADmODE2_CHATTERgRABwANTfREEZES                                            0xe000104a
+#define flTHREADmODE2_POOLoLDtURBO                                                      0xe000204a
+#define flTHREADmODE2_MYoWNrECYCLER                                                     0xe000404a
+#define flTHREADmODE2_ADAMmAINtHREAD                                                    0xe000804a
+#define flTHREADmODE2_LOCKdESIRE                                                        0xe001004a
+#define flTHREADmODE2_SMELLY                                                            0xe002004a
+#define flTHREADmODE2_DOnOTcaLLdELif                                                    0xe004004a
+#define flTHREADmODE2_UNLOCKpOOLiDENTITY                                                0xe008004a
+#define flTHREADmODE2_ALLOWnEWdROPnOTiNaDAMtEMP                                         0xe010004a
+#define flTHREADmODE2_DISALLOWpUSE                                                      0xe020004a
+#define flTHREADmODE2_MONITORdOnOTrEPORToNmE                                            0xe040004a
+#define flTHREADmODE2_ALLOWcONSTRUCTIONoFlISTINGc                                       0xe080004a
+#define flTHREADmODE2_ALLOWdESTRUCTIONoFlISTINGc                                        0xe100004a
+#define flTHREADmODE2_TINaRGSpUSHED                                                     0xe200004a
+#define flTHREADmODE2_ALLOWdICTIONARYwHILEgRABBING                                      0xe400004a
+#define flTHREADmODE2_ALLOWvOLATILEdESIRE                                               0xe800004a
 /*3*/
 #define flTHREADmODE2_null    0xe000004a
 
@@ -34149,7 +34149,7 @@ it is illegal to refer to this symbol in the definition of an adam
 //
 
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038b.ifcemail END
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038c.flOLDlEAKmONITOR BEGIN
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038c.floldleakmonitor BEGIN
 
 
 //
@@ -34177,7 +34177,7 @@ it is illegal to refer to this symbol in the definition of an adam
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
-//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038c.flOLDlEAKmONITOR END
+//SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038c.floldleakmonitor END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.1120038d.flbatonct BEGIN
 
 
@@ -39208,26 +39208,26 @@ args
 //CODEsYNC: 00100df 0010055
 
 /*3*/
-#define flTHREADmODE3_GRABoNLYwO                                0xe00001c8
-#define flTHREADmODE3_IGNOREmE_tmWatchF_                        0xe00002c8
-#define flTHREADmODE3_EXCEPTIONcLEANUPdELETIONiNpROGRESS        0xe00004c8
-#define flTHREADmODE3_EXCEPTIONrEPORTINGiNpROGRESS              0xe00008c8
-#define flTHREADmODE3_ALLOWwRITEABLEpOINTERgET                  0xe00010c8
-#define flTHREADmODE3_INoUTfRAMErEGISTERcALLnEST                0xe00020c8
-#define flTHREADmODE3_NOsEXiNpOOL                               0xe00040c8
-#define flTHREADmODE3_DOnOTrEGISTERpAGEc                        0xe00080c8
-#define flTHREADmODE3_DEBUG1                                    0xe00100c8
-#define flTHREADmODE3_DEBUG2                                    0xe00200c8
-#define flTHREADmODE3_DEBUG3                                    0xe00400c8
-#define flTHREADmODE3_DEBUG4                                    0xe00800c8
-#define flTHREADmODE3_SIMULATEoFFLINE                           0xe01000c8
-#define flTHREADmODE3_SUPPRESStRACING                           0xe02000c8
-#define flTHREADmODE3_GO                                        0xe04000c8
-#define flTHREADmODE3_LOGsPINcALLnEST                           0xe08000c8
-#define flTHREADmODE3_POOLaLLOCATEfROMhEAP                      0xe10000c8
-#define flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE                  0xe20000c8
-#define flTHREADmODE3_POOLdELtRYhARDERaNDtRACE                  0xe40000c8
-#define flTHREADmODE3_SUPPRESStHREADsTACKuSAGEiNSPECTION        0xe80000c8
+#define flTHREADmODE3_GRABoNLYwO                                                        0xe00001c8
+#define flTHREADmODE3_IGNOREmE_tmWatchF_                                                0xe00002c8
+#define flTHREADmODE3_EXCEPTIONcLEANUPdELETIONiNpROGRESS                                0xe00004c8
+#define flTHREADmODE3_EXCEPTIONrEPORTINGiNpROGRESS                                      0xe00008c8
+#define flTHREADmODE3_ALLOWwRITEABLEpOINTERgET                                          0xe00010c8
+#define flTHREADmODE3_INoUTfRAMErEGISTERcALLnEST                                        0xe00020c8
+#define flTHREADmODE3_NOsEXiNpOOL                                                       0xe00040c8
+#define flTHREADmODE3_DOnOTrEGISTERpAGEc                                                0xe00080c8
+#define flTHREADmODE3_DEBUG1                                                            0xe00100c8
+#define flTHREADmODE3_DEBUG2                                                            0xe00200c8
+#define flTHREADmODE3_DEBUG3                                                            0xe00400c8
+#define flTHREADmODE3_DEBUG4                                                            0xe00800c8
+#define flTHREADmODE3_SIMULATEoFFLINE                                                   0xe01000c8
+#define flTHREADmODE3_SUPPRESStRACING                                                   0xe02000c8
+#define flTHREADmODE3_GO                                                                0xe04000c8
+#define flTHREADmODE3_LOGsPINcALLnEST                                                   0xe08000c8
+#define flTHREADmODE3_POOLaLLOCATEfROMhEAP                                              0xe10000c8
+#define flTHREADmODE3_ALLOWeXPLICITmEMORYsPACE                                          0xe20000c8
+#define flTHREADmODE3_POOLdELtRYhARDERaNDtRACE                                          0xe40000c8
+#define flTHREADmODE3_SUPPRESStHREADsTACKuSAGEiNSPECTION                                0xe80000c8
 /*3*/
 #define flTHREADmODE3_null    0xe00000c8
 
