@@ -295,14 +295,14 @@ void hireF( homeDiskS& infoP , int bServiceP = 0 )
     char postm[ 0x100 ] = "?:\\ideafarm.home." ;
     postm[ 0 ] = infoP.ostDisk ;
     strcat( postm , infoP.postIdHome ) ;
-    strcat( postm , "\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm." ) ;
+    strcat( postm , "\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm." ) ;
     strcat( postm , "41000002" ) ;
     strcat( postm , ".ipdos-wm" ) ;
 
     char posth[ 0x100 ] = "?:\\ideafarm.home." ;
     posth[ 0 ] = infoP.ostDisk ;
     strcat( posth , infoP.postIdHome ) ;
-    strcat( posth , "\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover" ) ;
+    strcat( posth , "\\ephemeral\\city\\park\\exedll\\1\\hover" ) ;
 
     unsigned cNumaNodes = cNumaNodesAvailableF() ;
     if( cNumaNodes > 0xff ) cNumaNodes = 0xff ;                 // THIS RESTRICTION MERELY SIMPLIFIES REVERSAL OF THE ORDER OF THE BIGITS IN ORDER TO EXPRESS THE !idNumaNode PARAMETER VALUE IN IFC ORDER
@@ -467,7 +467,7 @@ void findHomesF( const char* postIdHomeSoloP = 0 )
                         //VERIFY THAT THIS HOME HAS BEEN COMPLETELY UNZIPPED (I.E. THAT I AM NOT RACING WITH UNZIP.EXE)
                         char postZZZ[ 0x100 ] ;
                         strcpy( postZZZ , postHome ) ;
-                        strcat( postZZZ , "\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\z\\z_if.i.exist.then.this.home.is.completely.unzipped" ) ;
+                        strcat( postZZZ , "\\ephemeral\\city\\park\\exedll\\1\\z\\z_if.i.exist.then.this.home.is.completely.unzipped" ) ;
                 
                         WIN32_FIND_DATA info2 ;
                         HANDLE oshFind2 = FindFirstFile( postZZZ , &info2 ) ;
@@ -479,7 +479,7 @@ void findHomesF( const char* postIdHomeSoloP = 0 )
                             //LOOK FOR AN EXE FILE
                             char postExe[ 0x100 ] ;
                             strcpy( postExe , postHome ) ;
-                            strcat( postExe , "\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-wm" ) ;
+                            strcat( postExe , "\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-wm" ) ;
                     
                             WIN32_FIND_DATA info2 ;
                             HANDLE oshFind3 = FindFirstFile( postExe , &info2 ) ;
