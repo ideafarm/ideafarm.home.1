@@ -16,10 +16,13 @@
         ((tin1S&)tin0P).cYield = 0 ;
 
         }
-            else                                                         thirdC::osThreadYieldIF( tin0P , TAG( TAGiDnULL ) ) ;
-            if( idOld == setIfEqualsAM( idMaxWritten , idNew , idOld ) ) break ;
+            }
+                else                                                         thirdC::osThreadYieldIF( tin0P , TAG( TAGiDnULL ) ) ;
+                if( idOld == setIfEqualsAM( idMaxWritten , idNew , idOld ) ) break ;                                                    //20250218@1610: SPIN DUE TO idMaxWritten BEING 0x90000000 RATHER THAN EXPECTED 0x9000463
+            {
+            for(;;)
+            _IO_
         {
-        for(;;)
 
         ((tin1S&)tin0P).cYield = 0 ;
         ZE( countT , idCycle ) ;

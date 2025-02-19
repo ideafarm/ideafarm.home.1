@@ -1087,10 +1087,10 @@ DONE( tmWorkF )
     etThread.diskMakeDirIfNeededF( tin0P , tSent ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tToSend ) ;
 
-    TN( tNotSentAbandoned , "" ) ; tNotSentAbandoned = T("///ideafarm/ephemeral/1/ipdos/email.notsentabandoned/") ;
-    TN( tNotSent          , "" ) ; tNotSent          = T("///ideafarm/ephemeral/1/ipdos/email.notsent/") ;
-    TN( tSent             , "" ) ; tSent             = T("///ideafarm/ephemeral/1/ipdos/email.sent/") ;
-    TN( tToSend           , "" ) ; tToSend           = T("///ideafarm/ephemeral/1/ipdos/email.to.send/") ;
+    TN( tNotSentAbandoned , "" ) ; tNotSentAbandoned = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.notsentabandoned/") ;
+    TN( tNotSent          , "" ) ; tNotSent          = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.notsent/") ;
+    TN( tSent             , "" ) ; tSent             = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.sent/") ;
+    TN( tToSend           , "" ) ; tToSend           = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/email.to.send/") ;
 
     const countT idHomeDisk = etherC::ifc_idHomeIdisk_IF() ;
 
@@ -1377,6 +1377,7 @@ DONE( tmWorkF )
     if( !bSandbox )
     //etThread.trace F( tin0P , T("debug [bSandbox]:    ")+TF2(bSandbox,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
+    bSandbox = 0 ;
     boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 
 //    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
@@ -1773,7 +1774,7 @@ voidT queryEmailFromIdAccountF( tin0S& tin0P , strokeS*& psttP , const countT cP
 #define flFAIL_DURINGpARSING                        0xe00002ff
 #define flFAIL_COULDnOTgETsHADOW                    0xe00001ff
 
-/*1*/WAKEhIDE( "ifcIDaDAM_ROOTmAILoUT" )/*1*/
+/*1*/WAKEdEBUGhIDE( "ifcIDaDAM_ROOTmAILoUT" )/*1*/
 
 /**/
 */

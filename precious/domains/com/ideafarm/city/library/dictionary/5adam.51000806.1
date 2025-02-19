@@ -629,6 +629,7 @@ DONE( tmWorkF )
         ZE( countT , cPause                   ) ;
         ZE( boolT  , bAbort                   ) ;
 
+        bSandbox = 0 ;
         boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
 
         grabC grabDisk(                tin0P , TAG( TAGiDnULL ) , flGRABc_NOTjEALOUS ) ;
@@ -834,11 +835,11 @@ DONE( tmReportF )
 
     patternC pat2( tin0P , etThread , tPatternTraceFile           , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     patternC pat1( tin0P , etThread , tPatternLathIdNameCompleted , ifcIDtYPEpATTERN_LITERAL               ) ;
-    TN( tFileReport  , "///ideafarm/ephemeral/1/ipdos/archives/healing/state/rpt.minute.ttt" ) ;
-    TN( tStateFolder , "///ideafarm/ephemeral/1/ipdos/archives/healing/state/" ) ;
+    TN( tFileReport  , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/rpt.minute.ttt" ) ;
+    TN( tStateFolder , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/" ) ;
     TN( tDotHeyWritingDot , ".!writing." ) ;
 
-    TN( tTraceFolder , "" ) ; tTraceFolder = T("///ideafarm/ephemeral/1/ipdos/mSpaces/")+tUser+T("/00000100/sSpaces/ffffefff/") ;
+    TN( tTraceFolder , "" ) ; tTraceFolder = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")+tUser+T("/00000100/stateSpaces/ffffefff/") ;
 
     TN( tUser , thirdC::postUserNameIF() ) ;
 
@@ -943,8 +944,8 @@ DONE( tmObeyPauseSemaphoreFileF )
     IFsCRATCHoK
 
     etThread.diskMakeDirIfNeededF( tin0P , tFilePause ) ;
-    TN( tFilePaused , "///ideafarm/ephemeral/1/ipdos/archives/healing/control/paused" ) ;
-    TN( tFilePause  , "///ideafarm/ephemeral/1/ipdos/archives/healing/control/pause"  ) ;
+    TN( tFilePaused , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/control/paused" ) ;
+    TN( tFilePause  , "///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/control/pause"  ) ;
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     countT& cExecutiveHealYearPausedP = *(countT*)pTaskP->c4 ;
@@ -1000,10 +1001,10 @@ DONE( tmExecutiveHealYearF )
                             THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
                             grabLathFileHealedFilesP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                             //etThread.traceF( tin0P , T("deleting [file]:    ")+tLong ) ;
-                            tLong = T("///ideafarm/ephemeral/1/ipdos/archives/healing/state/status.")+tArchive+tDot+tYear+T(".lath.idName.completed.ttt") ;
+                            tLong = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/status.")+tArchive+tDot+tYear+T(".lath.idName.completed.ttt") ;
 
                             etThread.boxPutF( tin0P , tLong , tBody , tBody.csF( tin0P ) ) ;
-                            TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/1/ipdos/archives/healing/state/status.")+tArchive+tDot+tYear+T(".completed.ttt") ;
+                            TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/status.")+tArchive+tDot+tYear+T(".completed.ttt") ;
 
                             TN( tBody , "" ) ; tBody = TT(time1N,time2N) + T("\r\nIPDOS (tm) Archive Healer\r\nDelete this file to cause Healer to not wait to heal this year.\r\n") ;
                             etThread.osTimeNowF( tin0P , time1N , time2N ) ;
@@ -1688,8 +1689,8 @@ DONE( tmExecutiveHealYearF )
                     if( etThread.diskFileExistsF( tin0P , tLongBox ) )
                     ZE( boolT , bMatch ) ;
 
-                    TN( tLongBoxSee , "" ) ; tLongBoxSee = T("///ideafarm/ephemeral/1/ipdos/archives/healing/state/volumes.")+tArchive+tDot+tYear+T(".see.ttt") ;
-                    TN( tLongBox    , "" ) ; tLongBox    = T("///ideafarm/ephemeral/1/ipdos/archives/healing/state/volumes.")+tArchive+tDot+tYear+T(".ttt") ;
+                    TN( tLongBoxSee , "" ) ; tLongBoxSee = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/volumes.")+tArchive+tDot+tYear+T(".see.ttt") ;
+                    TN( tLongBox    , "" ) ; tLongBox    = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/volumes.")+tArchive+tDot+tYear+T(".ttt") ;
 
                     etThread.delF( tin0P , psttWorkList ) ;
                     TN( twl , psttWorkList ) ;
@@ -1794,7 +1795,7 @@ DONE( tmExecutiveHealYearF )
                 TN( tPathRejects  , "/ideafarm.archives.rejects/" ) ; tPathRejects += tUniqueP+tSlash ;
                 TN( tPathArchives , "/ideafarm.archives/"         ) ;
 
-                TN( tLongSortedBySize , "" ) ; tLongSortedBySize = T("///ideafarm/ephemeral/1/ipdos/archives/healing/state/sorted.by.size.")+tArchive+tDot+tYear+T(".ttt") ;
+                TN( tLongSortedBySize , "" ) ; tLongSortedBySize = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/sorted.by.size.")+tArchive+tDot+tYear+T(".ttt") ;
 
                 _IO_
             {
@@ -1825,7 +1826,7 @@ DONE( tmExecutiveHealYearF )
                         SCOOPS
                     {
                     IFsCRATCHoK
-                    TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/1/ipdos/archives/healing/state/status.")+tArchive+tDot+tYear+T(".lath.idName.completed.ttt") ;
+                    TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/status.")+tArchive+tDot+tYear+T(".lath.idName.completed.ttt") ;
                 {
                 if( !bAbortP )
             {
@@ -1851,7 +1852,7 @@ DONE( tmExecutiveHealYearF )
                 TN( tPart4a , "" ) ; tPart4a = T("index.booksC.*.bookC" ) ;
                 TN( tPart3  , "" ) ; tPart3  = T(".jotC." ) ;
                 TN( tPart2  , "" ) ; tPart2  = T("healarchive.sorted.short.filenames")+tDot+tArchive+tDot+tYear ;
-                TN( tPart1  , "" ) ; tPart1  = T("///ideafarm/ephemeral/1/ipdos/mSpaces/")+tUser+T("/")+TF3(ifcIDmEMORYsPACE_APPLICATION,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T("/sSpaces/")+TF3(ifcIDsTATEsPACE_MULTIPLEaDAMS,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tSlash ;
+                TN( tPart1  , "" ) ; tPart1  = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/memorySpaces/")+tUser+T("/")+TF3(ifcIDmEMORYsPACE_APPLICATION,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+T("/stateSpaces/")+TF3(ifcIDsTATEsPACE_MULTIPLEaDAMS,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+tSlash ;
 
                 TN( tUser , thirdC::postUserNameIF() ) ;
             {
@@ -1936,7 +1937,7 @@ DONE( tmExecutiveHealYearF )
             else
             if( POOP ) POOPRqUIET
             ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tLong , 1 ) ; ___( posti ) ;
-            TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/1/ipdos/archives/healing/state/status.")+tArchive+tDot+tYear+T(".completed.ttt") ;
+            TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/status.")+tArchive+tDot+tYear+T(".completed.ttt") ;
             ZE( countT   , costi ) ;
             ZE( osTextT* , posti ) ;
 
@@ -2016,7 +2017,7 @@ DONE( tmUpdateYearCheckpointF )
             etThread.boxPutF( tin0P , tLong , (byteT*)&idNameLathDoneInSequenceNew , sizeof idNameLathDoneInSequenceNew ) ;
             //THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
             //grabLathFileHealedFilesP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-            TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/1/ipdos/archives/healing/state/status.")+tArchiveP+tDot+tYearP+T(".lath.idName.completed.ttt") ;
+            TN( tLong , "" ) ; tLong = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/archives/healing/state/status.")+tArchiveP+tDot+tYearP+T(".lath.idName.completed.ttt") ;
 
             //etThread.traceF( tin0P , T("lath done [idNameLathDoneInSequenceNew]:    ")+TF2(idNameLathDoneInSequenceNew,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             _IO_

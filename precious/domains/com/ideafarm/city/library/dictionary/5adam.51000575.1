@@ -53,7 +53,7 @@ count8S c8p1 ;
 if( etThread.diskFileExistsF( tin0P , tFileIdRelay ) )
 ZE( countT , idRelayLath ) ;
 batonC bFileIdRelay( tin0P , TAG( TAGiDnULL ) ) ;
-TN( tFileIdRelay , "" ) ; tFileIdRelay = T("///ideafarm/ephemeral/1/ipdos/txt.email.incoming.idrelaylath.txt") ;
+TN( tFileIdRelay , "" ) ; tFileIdRelay = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/txt.email.incoming.idrelaylath.txt") ;
 
 }
     etThread.delF( tin0P , pbi ) ;
@@ -65,7 +65,7 @@ TN( tFileIdRelay , "" ) ; tFileIdRelay = T("///ideafarm/ephemeral/1/ipdos/txt.em
 if( etThread.diskFileExistsF( tin0P , tFileIdPenpal ) )
 ZE( countT , idPenpalLath ) ;
 batonC bFileIdPenpal( tin0P , TAG( TAGiDnULL ) ) ;
-TN( tFileIdPenpal , "" ) ; tFileIdPenpal = T("///ideafarm/ephemeral/1/ipdos/txt.email.incoming.idpenpallath.txt") ;
+TN( tFileIdPenpal , "" ) ; tFileIdPenpal = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/txt.email.incoming.idpenpallath.txt") ;
 
 batonC bPrepayCode( tin0P , TAG( TAGiDnULL ) ) ;
 ranUniC ru( MAXcOUNTT ) ;
@@ -211,7 +211,7 @@ DONEdRIVENsERVER( tmcSmtpF )
         
                                                     }
                                                         etThread.delF( tin0P , psttu ) ;
-                                                        tFileArchive = T("///ideafarm/ephemeral/1/ipdos/accounts/")+TF4(c3r.c3,flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+T("/subaccounts/")+TF4(c3r.c2,flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+T("/in/")+T("txt.email.")+T(psttu)+T(".txt") ;
+                                                        tFileArchive = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/accounts/")+TF4(c3r.c3,flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+T("/subaccounts/")+TF4(c3r.c2,flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+T("/in/")+T("txt.email.")+T(psttu)+T(".txt") ;
                                                         etThread.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
                                                         ZE( strokeS* , psttu ) ;
                                                     {
@@ -1960,7 +1960,7 @@ TASKdRIVENsERVER( tmcSmtpF )
         { _IO_ etThread.fileOpenF( tin0P , hFile , countTC() , tFileLog , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ; }
         handleC hFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
             
-        TN( tFileLog , "" ) ; tFileLog = T("///ideafarm/ephemeral/1/ipdos/accounts/")+TF4(idAccountSP,flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+T("/subaccounts/")+TF4(idSubAccountSP,flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+T("/txt.log.smtp.txt") ;
+        TN( tFileLog , "" ) ; tFileLog = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/accounts/")+TF4(idAccountSP,flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+T("/subaccounts/")+TF4(idSubAccountSP,flFORMAT_NObIGITvALUES|flFORMAT_NObASE,0,36)+T("/txt.log.smtp.txt") ;
     {
     if( idAccountSP && idSubAccountSP )
 
@@ -1971,7 +1971,7 @@ TASKdRIVENsERVER( tmcSmtpF )
         { _IO_ etThread.fileOpenF( tin0P , hFile , countTC() , tFileLog , ifcOPENaCCESS_W , 0 , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nCeO ) ; }
         handleC hFile( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILE ) ;
             
-        TN( tFileLog , "" ) ; tFileLog = T("///ideafarm/ephemeral/1/ipdos/txt.log.smtp.txt") ;
+        TN( tFileLog , "" ) ; tFileLog = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/ipdos/txt.log.smtp.txt") ;
     {
 
     TN( tEntry , "" ) ; tEntry = TT(timeN1,timeN2)+T("| ")+tP+T("\r\n") ;

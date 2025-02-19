@@ -40,14 +40,14 @@ REST
         ZE( countT , cIn ) ;
         TELL( "moving new job files into the stage 1 directory" ) ;
 
-        TN( tStage2  , "" ) ; tStage2 = T("///ideafarm/ephemeral/1/domains/com/ideafarm/")+T(DDNUMB)+T("/2/") ;
-        TN( tStage1  , "" ) ; tStage1 = T("///ideafarm/ephemeral/1/domains/com/ideafarm/")+T(DDNUMB)+T("/1/") ;
+        TN( tStage2  , "" ) ; tStage2 = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+T(DDNUMB)+T("/2/") ;
+        TN( tStage1  , "" ) ; tStage1 = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+T(DDNUMB)+T("/1/") ;
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT , timeN1 ) ;
     {
     while( !ether && !etThread )
-    TN( tIn , "" ) ; tIn = T("///ideafarm/ephemeral/1/domains/com/ideafarm/")+T(DDNUMB)+T("/in/" ) ;
+    TN( tIn , "" ) ; tIn = T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+T(DDNUMB)+T("/in/" ) ;
     strokeS sttr('-') ;
     TN( tStar    , "*" ) ;
 
@@ -73,7 +73,7 @@ if( pTaskP && pTaskP->c1 )
 TASK( tmSuperF )
 
 }
-    etThread.diskMoveFileOrDirF( tin0P , T("///ideafarm/ephemeral/1/domains/com/ideafarm/")+T(DDNUMB)+T("/done/")+TI(ifcIDtEXTgEN_UNIQUE) , psttFileP ) ;
+    etThread.diskMoveFileOrDirF( tin0P , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+T(DDNUMB)+T("/done/")+TI(ifcIDtEXTgEN_UNIQUE) , psttFileP ) ;
 
     etThread.ifcJobF( tin0P , stCourses , idAdam , sOrder , stOrders , TF1(DDNUMB)+T("/sentient.asynch.job.supervisor/doWoF") , 1 ) ;
     stOrders << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
@@ -130,7 +130,7 @@ STATE0
                     }
                         etThread.delF( tin0P , postBody ) ;
                         etThread.delF( tin0P , psttu ) ;
-                        etThread.boxPutUniqueF( tin0P , psttu , T("///ideafarm/ephemeral/1/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/ignored/in") , postBody , costBody ) ;
+                        etThread.boxPutUniqueF( tin0P , psttu , T("///ideafarm/ephemeral/backed.up.daily/domains/com/ideafarm/")+TF1(DDNUMB)+T("/in/ignored/in") , postBody , costBody ) ;
                         ZE( strokeS* , psttu ) ;
 
                         countT costBody = etThread.strMakeF( tin0P , LF , postBody , psttBody ) ; ___( postBody ) ;
