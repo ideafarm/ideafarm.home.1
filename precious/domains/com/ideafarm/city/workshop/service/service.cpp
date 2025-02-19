@@ -642,6 +642,10 @@ VOID WINAPI serviceMainF( DWORD cArgP , LPTSTR* ppostArgP )
                             {
                                 if( *pTblHomeDisk[ offo ].postIdHome && ( pTblHomeDisk[ offo ].postIdHome[ 0 ] != '1' || pTblHomeDisk[ offo ].postIdHome[ 1 ] ) )
                                 {
+                                    logTimeGF( "serviceMainF/loop/hiring home:    " ) ;
+                                    logGF( pTblHomeDisk[ offo ].postIdHome ) ;
+                                    logGF( "\r\n" ) ;
+
                                     hireF( pTblHomeDisk[ offo ] , 1 ) ;
                                     cHired ++ ;
                                     if( bWatch05 ) bWatch05 = 0 ;
@@ -652,6 +656,10 @@ VOID WINAPI serviceMainF( DWORD cArgP , LPTSTR* ppostArgP )
                             {
                                 if( *pTblHomeDisk[ offo ].postIdHome )
                                 {
+                                    logTimeGF( "serviceMainF/loop/hiring home:    " ) ;
+                                    logGF( pTblHomeDisk[ offo ].postIdHome ) ;
+                                    logGF( "\r\n" ) ;
+
                                     hireF( pTblHomeDisk[ offo ] , 1 ) ;
                                     cHired ++ ;
                                     break ;

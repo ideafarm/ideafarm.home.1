@@ -2819,7 +2819,6 @@ void elf_obey_C::liveF( void )
         
                 ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp" , "ideafarm.wix*" ) ;
 
-
                 Sleep( 1000 * 16 ) ;
             }
         }

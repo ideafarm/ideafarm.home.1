@@ -35,12 +35,12 @@ display memory /close 7330,0,2650,9999
 display register /close 2630,0,7100,1521
 display stack /close 8000,4995,2000,4995
 display thread /close 2980,2610,1705,4653
-display variable /close 0,477,3415,1107
+display variable /close 1215,1431,1680,1125
 display calls /open 65,4077,9850,5922
-display watch /open 7170,0,2830,9999
-display modules /open 8505,0,1450,9927
 display locals /open 5035,2538,4420,6354
-display source /open 75,0,7020,9999
+display modules /open 8505,0,1450,9927
+display source /open 75,0,5625,9828
+display watch /open 5765,0,4235,9999
 font all {-13 0 0 0 400 0 0 0 0 1 2 1 49 "Courier"}
 font assembly {-13 0 0 0 400 0 0 0 0 1 1 1 1 "Courier"}
 font break {-13 0 0 0 400 0 0 0 0 1 1 1 1 "Courier"}
@@ -121,6 +121,9 @@ set types {
   struct addressRangeS { 
    field pbWoth { pointer }
    field pbLath { pointer }
+  }
+  struct homeDiskS { 
+   field ostDisk { character }
   }
 }
 set macro source v {
