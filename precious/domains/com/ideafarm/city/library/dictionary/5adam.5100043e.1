@@ -46,19 +46,19 @@ REST
         bFace.ungrabF( tin0P ) ;
         etThread.strokeF( tin0P , T("\r")+TT(timeN1,timeN2) ) ;
         bFace.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-        TN( tStage2  , "" ) ; tStage2 = T("///ideafarm/ephemeral/domains/com/ideafarm/")+T(DDNUMB)+T("/2/") ;
-        TN( tStage1  , "" ) ; tStage1 = T("///ideafarm/ephemeral/domains/com/ideafarm/")+T(DDNUMB)+T("/1/") ;
+        TN( tStage2  , "" ) ; tStage2 = T("///ideafarm/ephemeral/")+T(DDNUMB)+T("/2/") ;
+        TN( tStage1  , "" ) ; tStage1 = T("///ideafarm/ephemeral/")+T(DDNUMB)+T("/1/") ;
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT , timeN1 ) ;
     {
     while( !ether && !etThread )
-    TN( tIn , "" ) ; tIn = T("///ideafarm/ephemeral/domains/com/ideafarm/")+T(DDNUMB)+T("/in/" ) ;
+    TN( tIn , "" ) ; tIn = T("///ideafarm/ephemeral/")+T(DDNUMB)+T("/in/" ) ;
     strokeS sttr('-') ;
     TN( tStar    , "*" ) ;
     ZE( countT , idFile ) ;
 
-    boxC boxDebug( tin0P , etThread , T("///ideafarm/ephemeral/domains/com/ideafarm/debug/")+TF1(DDNUMB) ) ; //U::WORKAROUND TO PREVENT LOCKUP
+    boxC boxDebug( tin0P , etThread , T("///ideafarm/ephemeral/debug/")+TF1(DDNUMB) ) ; //U::WORKAROUND TO PREVENT LOCKUP
     stateS state( tin0P , etThread ) ;
     TELL( "setting up" )
 {
@@ -96,7 +96,7 @@ TASK( tmSuperF )
 
     etThread.delF( tin0P , posti ) ;
     etThread.delF( tin0P , psttu ) ;
-    etThread.boxPutUniqueF( tin0P , psttu , T("///ideafarm/ephemeral/domains/com/ideafarm/")+T(DDNUMB)+T(bFail?"/tryLater":"/aok")+T("/item") , posti , costi ) ;
+    etThread.boxPutUniqueF( tin0P , psttu , T("///ideafarm/ephemeral/")+T(DDNUMB)+T(bFail?"/tryLater":"/aok")+T("/item") , posti , costi ) ;
     ZE( strokeS* , psttu ) ;
     TELL( "archiving a new job file to aok" )
 

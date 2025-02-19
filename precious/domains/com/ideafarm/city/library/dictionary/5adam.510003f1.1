@@ -169,7 +169,7 @@ voidT pushDataF( tin0S& tin0P , etherC& etThread , stackC& stDatumP , const byte
         }
             }
                 etThread.delF( tin0P , psttnu ) ;
-                etThread.boxPutUniqueF( tin0P , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/3f30104/impotences/impotence") , pbd , pHdr->cbd ) ;
+                etThread.boxPutUniqueF( tin0P , psttnu , T("///ideafarm/ephemeral/3f30104/impotences/impotence") , pbd , pHdr->cbd ) ;
                 ZE( strokeS* , psttnu ) ;
             {
             else if( F(pHdr->flags2) & flDATUM2_impotenceS )
@@ -452,7 +452,7 @@ DONE( tmRaceReportsF )
             //etThread.strokeF( tin0P , T("writing race files -\r\n") ) ;
 
             }
-                etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/3f30104/races/race.")+tRaceId , (byteT*)pci , sizeof( countT ) * cci ) ;
+                etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/3f30104/races/race.")+tRaceId , (byteT*)pci , sizeof( countT ) * cci ) ;
                 textC tRaceId = TF3(pcRaceId[0],flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T(".")+TF3(pcRaceId[1],flFORMAT_UNSIGNED|flFORMAT_FILLzE,7)+T(".")+TF5(pcRaceId+2,0,0,0,psttDot) ;
                 strokeS* psttDot = tDot ;
                 TN( tDot , "." ) ;
@@ -548,7 +548,7 @@ TASK( tmRaceReportsF )
     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
     countT cFlavors = swCarP.cFlavorsF( tin0P ) ;
     b_idcHirerP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    TN( tArchiveLike , "///ideafarm/ephemeral/domains/com/ideafarm/3f30104/carC/carC" ) ;
+    TN( tArchiveLike , "///ideafarm/ephemeral/3f30104/carC/carC" ) ;
 {
 voidT toArchiveF( tin0S& tin0P , etherC& etThread , batonC& b_idcHirerP , countT& idcHirerP , switchC& swCarP )
 

@@ -1,6 +1,6 @@
 @echo off
 %idrive%
-cd \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\exe
+cd \ideafarm.home.1\ephemeral\city\workshop\exe
 
 if %1z == dz wdw   ideafarm.elves.ipdos
 if %1z == dz goto :FIN

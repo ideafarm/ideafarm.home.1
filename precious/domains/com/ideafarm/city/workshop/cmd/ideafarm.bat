@@ -179,7 +179,7 @@ pause
 :SETpATH
 
 set path=%path%;c:\rimstar
-set path=%path%;%idrive%\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master;%iworkshop%\openssl\bin
+set path=%path%;%idrive%\ideafarm.home.1\ephemeral\city\park\exedll\1\master;%iworkshop%\openssl\bin
 
 rem COMMENT OUT THESE LINES IF YOU HAVE INSTALLED THE WiX Toolset:
 set path=%path%;%iworkshop%\wix\WiX Toolset v3.11\bin
@@ -195,7 +195,7 @@ set path=%iworkshop%\WinHelp;%path%;%iworkshop%\cmd;%iworkshop%\watcom\BINNT;%iw
 if %1z == pathz goto :FIN
 
 rem THE NEXT LINE IS COMMENTED OUT FOR RELIABILITY (TO FORCE BUILD).  FOR SPEED, ENABLE THE NEXT LINE
-rem if exist %idrive%\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\exe\ideafarm.elves.ipdos goto :BUILD
+rem if exist %idrive%\ideafarm.home.1\ephemeral\city\workshop\exe\ideafarm.elves.ipdos goto :BUILD
 
 call g el
 

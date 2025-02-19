@@ -5289,8 +5289,8 @@ it is illegal to refer to this symbol in the definition of an adam
 
 #if defined( NEVERdEFINED )
 
-    /*"-<A HREF=\"http://" WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/html/readmefirst.html\">readMeFirst!</A>- -<A HREF=\"http://" WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/html/ideafarm.html\">base</A>- <FORM METHOD=\"GET\"><INPUT NAME=\"defect\" size=\"40\"><INPUT TYPE=SUBMIT VALUE=\"!!!!\"></FORM><HR>\r\n"*/ \
-    /*"<CENTER><IMG SRC=\"http://" WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/image/gif/ad.00000001.00000000.image.gif\" align=center></CENTER><HR>"*/
+    /*"-<A HREF=\"http://" WWWiDEAFARMcOM "///ideafarm/ephemeral/gen/html/readmefirst.html\">readMeFirst!</A>- -<A HREF=\"http://" WWWiDEAFARMcOM "///ideafarm/ephemeral/gen/html/ideafarm.html\">base</A>- <FORM METHOD=\"GET\"><INPUT NAME=\"defect\" size=\"40\"><INPUT TYPE=SUBMIT VALUE=\"!!!!\"></FORM><HR>\r\n"*/ \
+    /*"<CENTER><IMG SRC=\"http://" WWWiDEAFARMcOM "///ideafarm/ephemeral/gen/image/gif/ad.00000001.00000000.image.gif\" align=center></CENTER><HR>"*/
 
 #endif
 
@@ -7084,7 +7084,7 @@ to use this, the object must be of a class that provides operator byteT* which r
 /**/
 
 /*1*//*FILEnAMEsOUL_masterOldC*//*1*/
-#define FILEnAMEsOUL_masterOldC ("///ideafarm/ephemeral/domains/com/ideafarm/masterOldC/soul")
+#define FILEnAMEsOUL_masterOldC ("///ideafarm/ephemeral/masterOldC/soul")
 
 
 //

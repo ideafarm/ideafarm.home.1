@@ -29,7 +29,7 @@ pause
 goto :FIN
 :NOTaDAM
 
-if %1z == ewz cd \ideafarm.home.%idHomeG%\ephemeral\domains\com\ideafarm\city\workshop
+if %1z == ewz cd \ideafarm.home.%idHomeG%\ephemeral\city\workshop
 if %1z == ewz goto :FIN
 if %1z == wixz i:
 if %1z == wixz cd \"Program Files"\MSBuild\Microsoft\WiX\v3.x
@@ -74,10 +74,10 @@ if %1z == caz  rw *abridg* all*
 if %1z == caz  goto :FIN
 if %1z == 1z if %idHomeG%z == ffffffz g:
 
-if exist \ideafarm.home.%idHomeG%\ephemeral\domains\com\ideafarm\city\park\exedll\1\hover goto :EXISTShOVER
-rem if %1z == 1z   md\ideafarm.home.%idHomeG%\ephemeral\domains\com\ideafarm\city\park\exedll\1\hover
+if exist \ideafarm.home.%idHomeG%\ephemeral\city\park\exedll\1\hover goto :EXISTShOVER
+rem if %1z == 1z   md\ideafarm.home.%idHomeG%\ephemeral\city\park\exedll\1\hover
 :EXISTShOVER
-if %1z == 1z   cd\ideafarm.home.%idHomeG%\ephemeral\domains\com\ideafarm\city\park\exedll\1\hover
+if %1z == 1z   cd\ideafarm.home.%idHomeG%\ephemeral\city\park\exedll\1\hover
 if %1z == 1z   goto :FIN
 
 if %1z == isz   cd\ideafarm.home.%idHomeG%\domains\com\ideafarm\city\settings
@@ -85,7 +85,7 @@ if %1z == isz   goto :FIN
 if %1z == ibz  cd\ideafarm.home.%idHomeG%\backed.up.daily
 if %1z == ibz  goto :FIN
 
-if %1z == mz   cd\ideafarm.home.%idHomeG%\ephemeral\domains\com\ideafarm\city\park\exedll\1\master
+if %1z == mz   cd\ideafarm.home.%idHomeG%\ephemeral\city\park\exedll\1\master
 if %1z == mz   goto :FIN
 
 if %1z == mhz   cd\ideafarm.home.%idHomeG%\domains\com\ideafarm\city\park\exedll\1\master.hide
@@ -168,7 +168,7 @@ if %1z == ooz  cd\ideafarm.work\bench\oo
 if %1z == ooz  goto :FIN
 if %1z == oz  cd\ideafarm.work\bench\obj
 if %1z == oz  goto :FIN
-if %1z == ez   cd \ideafarm.home.%idHomeG%\ephemeral\domains\com\ideafarm\city\workshop\exe
+if %1z == ez   cd \ideafarm.home.%idHomeG%\ephemeral\city\workshop\exe
 if %1z == ez   goto :FIN
 if %1z == e1z   cd\ideafarm.work\backed.up.never\gen\exe\released.i00001
 if %1z == e1z   goto :FIN

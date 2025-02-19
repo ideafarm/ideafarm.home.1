@@ -138,7 +138,7 @@ typedef struct _INPUT_RECORD_ALTEREDfORiPDOS {
 
 #define BLAMMO { int* pc = (int*)( 0x80000000 | __LINE__ ) ; *pc = 0xeeeeeeee ; }
 #define postB01 "                " 
-#define postFILEuSER "\\ideafarm.home.1\\ephemeral\\backed.up.daily\\domains\\com\\ideafarm\\ipdos\\elves.user"
+#define postFILEuSER "\\ideafarm.home.1\\ephemeral\\ipdos\\elves.user"
 #define TOUCH(argP) { int nu = (int)&argP ; }
 #define TS postB01 postB01
 #define postEVEN "bdfhjlnprtvxz"
@@ -961,7 +961,7 @@ const int* elf_eat_C::pcIdAdamIF( int flagsP )
             flagsAll & flELVES_LOWaDAMS
                 ? flagsP & flADAMlIST_DEFINED
                     ? "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\5adam.51000???.1"
-                    : "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.51000???.ipdos-wm"
+                    : "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.51000???.ipdos-wm"
                 : flagsP & flADAMlIST_DEFINED
                     ? !strcmp( postzUser , "anonymous" )
                         ? "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\5adam.51011???.1"
@@ -971,11 +971,11 @@ const int* elf_eat_C::pcIdAdamIF( int flagsP )
                                 ? "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\5adam.51013???.1"
                                 : ""
                     : !strcmp( postzUser , "anonymous" )
-                        ? "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.51011???.ipdos-wm"
+                        ? "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.51011???.ipdos-wm"
                         : !strcmp( postzUser , "ideafarm_wo" )
-                            ? "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.51012???.ipdos-wm"
+                            ? "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.51012???.ipdos-wm"
                             : !strcmp( postzUser , "turnbull_nicholas" )
-                                ? "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.51013???.ipdos-wm"
+                                ? "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.51013???.ipdos-wm"
                                 : ""
 
         ) ;
@@ -1975,7 +1975,7 @@ void elf_obey_C::liveF( void )
     }
     else if( !strcmp( postCmd , "test" ) )
     {
-        HANDLE oshFile = CreateFile( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\__TMP__.tmp" , GENERIC_WRITE , 0 , 0 , CREATE_ALWAYS , FILE_ATTRIBUTE_NORMAL , 0 ) ;
+        HANDLE oshFile = CreateFile( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\__TMP__.tmp" , GENERIC_WRITE , 0 , 0 , CREATE_ALWAYS , FILE_ATTRIBUTE_NORMAL , 0 ) ;
         if( oshFile )
         {
             sayF( "  [test]:  I have opened the __TMP__ file and will keep it open until all of the elves are told to go home." ) ;
@@ -2095,7 +2095,7 @@ void elf_obey_C::liveF( void )
         batMake.grabF() ;
         {
             int cDone = 0 ;
-            idCopyExe = idCopyF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-wm" , cDone ) ;
+            idCopyExe = idCopyF( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-wm" , cDone ) ;
             if( cDone ) { BLAMMO ; }
         }
 
@@ -2111,9 +2111,9 @@ void elf_obey_C::liveF( void )
                 strcat( postf , post9f ) ;
 
                 char postCmd[ 0x200 ] = "" ;
-                if( bNumaIsAvailableF() ) strcat( postCmd , "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
-                else                      strcat( postCmd , "start "              " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
-                //strcpy( postCmd ,                 "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
+                if( bNumaIsAvailableF() ) strcat( postCmd , "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
+                else                      strcat( postCmd , "start "              " /wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
+                //strcpy( postCmd ,                 "wdw \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
 
                 strcat( postCmd , postf ) ;
                 #if defined( TELL )
@@ -2155,7 +2155,7 @@ void elf_obey_C::liveF( void )
         int idCopyExe = 0 ;
         {
             int cDone = 0 ;
-            idCopyExe = idCopyF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-wm" , cDone ) ;
+            idCopyExe = idCopyF( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-wm" , cDone ) ;
             if( cDone ) { BLAMMO ; }
         }
 
@@ -2172,8 +2172,8 @@ void elf_obey_C::liveF( void )
             }
 
             char postCmd[ 0x200 ] = { "" } ;
-            if( bNumaIsAvailableF() ) strcat( postCmd , "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
-            else                      strcat( postCmd , "start "              " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
+            if( bNumaIsAvailableF() ) strcat( postCmd , "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
+            else                      strcat( postCmd , "start "              " /wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
             strcat( postCmd , postPadded ) ;
             strcat( postCmd , ".ipdos-we 510004fb !idAdamMonitor " ) ;
             strcat( postCmd , posta ) ;
@@ -2209,7 +2209,7 @@ void elf_obey_C::liveF( void )
                 idAdamMaxUsed |= 0x51000000 ;
             }
 
-            char postFile[ 0x100 ] = { "\\ideafarm.home.1\\ephemeral\\backed.up.daily\\domains\\com\\ideafarm\\ipdos\\idAdamLath." } ;
+            char postFile[ 0x100 ] = { "\\ideafarm.home.1\\ephemeral\\ipdos\\idAdamLath." } ;
             strcat( postFile , postUser ) ;
    
             int idAdam = boxDispenseIdF( postFile , idAdamMaxUsed + 1 , idMe ) ;
@@ -2269,8 +2269,8 @@ void elf_obey_C::liveF( void )
             idCopyExe = idCopyF
             (
                 postCmd == strstr( postCmd , "fancy" )
-                    ? "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000003.ipdos-wm"
-                    : "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-wm"
+                    ? "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000003.ipdos-wm"
+                    : "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-wm"
                 ,
                 cDone
             ) ;
@@ -2291,7 +2291,7 @@ void elf_obey_C::liveF( void )
                 char postCmd[ 0x200 ] = { "" } ;
                 if( bNumaIsAvailableF() ) strcat( postCmd , bDebug ? "wdw " : "start " postNUMAnODE " /wait " ) ;
                 else                      strcat( postCmd , bDebug ? "wdw " : "start "              " /wait " ) ;
-                strcat( postCmd , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
+                strcat( postCmd , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\ideafarm." ) ;
                 strcat( postCmd , postf ) ;
                 strcat( postCmd , ".ipdos-we " ) ;
                 strcat( postCmd , posta ) ;
@@ -2375,10 +2375,10 @@ void elf_obey_C::liveF( void )
 
         char* ppostMas[] =
         {
-            "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" ,
-            "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-wm" ,
-            "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000003.ipdos-wm" ,
-            "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.51000620.ipdos-wm"
+            "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" ,
+            "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-wm" ,
+            "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000003.ipdos-wm" ,
+            "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.51000620.ipdos-wm"
         } ;
 
         int cDo = 0 ;
@@ -2398,7 +2398,7 @@ void elf_obey_C::liveF( void )
                 while( cPad -- ) strcat( post9f , "0" ) ;
                 strcat( post9f , postValue ) ;
 
-                char postHover[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\ideafarm." ;
+                char postHover[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\ideafarm." ;
                 strcat( postHover , post9f ) ;
                 strcat( postHover , ".ipdos-w?" ) ;
 
@@ -2416,21 +2416,21 @@ void elf_obey_C::liveF( void )
             if( bNumaIsAvailableF() )
             {
                 #if defined( TELL )
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
-                      system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
+                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
+                      system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2" ) ;
                 #else
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
-                      system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
+                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
+                      system( "start " postNUMAnODE " /wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !idNumaNode 2 !noTells" ) ;
                 #endif
             }
             else
             {
                 #if defined( TELL )
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ) ;
-                      system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ) ;
+                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !debug" ) ;
+                      system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008" ) ;
                 #else
-                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells !debug" ) ;
-                      system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells" ) ;
+                    //system(                          "wdw \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells !debug" ) ;
+                      system( "start "               "/wait \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.41000002.ipdos-tm 51000620 !idHome 10000008 !noTells" ) ;
                 #endif
             }
         }
@@ -2462,11 +2462,11 @@ void elf_obey_C::liveF( void )
                 strcat( postSrc , ppostTool[ offt ] ) ;
                 strcat( postSrc , ".cpp" ) ;
     
-                char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\" ;
+                char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ;
                 strcat( postObj , ppostTool[ offt ] ) ;
                 strcat( postObj , ".obj" ) ;
     
-                char postExe[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm." ;
+                char postExe[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm." ;
                 strcat( postExe , ppostTool[ offt ] ) ;
                 strcat( postExe , ".ipdos" ) ;
     
@@ -2482,11 +2482,11 @@ void elf_obey_C::liveF( void )
 
                     strcat( postCmd , " " IPDOScOMPILEoPTIONS ) ;
 
-                    strcat( postCmd , " -fhq=\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\" ) ;
+                    strcat( postCmd , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
                     strcat( postCmd , ppostTool[ offt ] ) ;
                     strcat( postCmd , ".pch -fo=" ) ;
                     strcat( postCmd , postObj ) ;
-                    strcat( postCmd , " -fr=\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\" ) ;
+                    strcat( postCmd , " -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
                     strcat( postCmd , ppostTool[ offt ] ) ;
                     strcat( postCmd , ".err " ) ;
                     strcat( postCmd , postSrc ) ;
@@ -2551,22 +2551,22 @@ void elf_obey_C::liveF( void )
                 strcat( postLike , ppostTool[ offt ] ) ;
                 strcat( postLike , ".*" ) ;
     
-                ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp" , postLike ) ;
+                ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp" , postLike ) ;
             }
         }
         else if( !strcmp( postCmd , "2snips" ) )
         {
             //20150323@1258: ADDED THE FOLLOWING LINE AS PART OF ADDING SUPPORT FOR C MODULES SO CAN USE WINDOWS STRUCTURED EXCEPTION HANDLING ( _try _except _finally )
             // JUST STUCK IT HERE RATHER THAN THINK THROUGH THE MOST APPROPRIATE PLACE, WHICH WOULD PROBABLY BE TO DEFINE A NEW NUMBERED PHASE.  ("1tools" IS A NUMBERED PHASE.)
-            system( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.01000002.cnotcppheader > \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.01000002.cnotcppheader.h" ) ;
+            system( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.01000002.cnotcppheader > \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\1snip.01000002.cnotcppheader.h" ) ;
 
             new elf_obey_C( "!worker_2snips_ipdos.h"    , idMe ) ;
             new elf_obey_C( "!worker_2snips_otherSnips" , idMe ) ;
         }
         else if( !strcmp( postCmd , "3compile" ) )
         {
-            int bOk  = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw"    ) ;
-                bOk &= ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\4report" ) ;
+            int bOk  = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw"    ) ;
+                bOk &= ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report" ) ;
                 bOk &= ether.deleteAllF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\" , "1snip.0060001.genModuleCodeCalls.h" ) ;
                 bOk &= ether.deleteAllF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\" , "1snip.0060001.genModuleCodeCallProtos.h" ) ;
                 bOk &= ether.deleteAllF( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\snip\\" , "1snip.0050011.gen_CmODULESbASE.h" ) ;
@@ -2658,15 +2658,15 @@ void elf_obey_C::liveF( void )
             (
                 isStaleF
                 (
-                    "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" ,
-                    "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\2*.obj" ,
-                    "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\3*.obj"
+                    "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" ,
+                    "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\2*.obj" ,
+                    "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\3*.obj"
                 )
             )
             {
                 sayF( "[4link]:  Linking to build the base dll." ) ;
     
-                char postMas[]      = { "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" } ;
+                char postMas[]      = { "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wm" } ;
                 char postMasShort[] = {                                                                                      "ideafarm.81000001.ipdos-wm" } ;
     
                 char postCmd[ 0x800 ] = { "wlink" } ;
@@ -2675,8 +2675,8 @@ void elf_obey_C::liveF( void )
                 strcat( postCmd , postMas ) ;
                 strcat( postCmd ,
         
-                    " file \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\2*.obj"
-                    " file \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\3*.obj"
+                    " file \\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\2*.obj"
+                    " file \\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\3*.obj"
 
                     " library \\tmp\\20230722.2049.vsdll.lib"
 
@@ -2717,9 +2717,9 @@ void elf_obey_C::liveF( void )
 
                 // postCmd, FOLLOWED BY ALTERED FLAVOR TO BUILD A "THROWAWAY" BASE DLL:
                 //
-                //  [debug]:  wlink debug all name \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\ideafarm.81000001.ipdos-wm file \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\3object\2*.obj file \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\3object\3*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\shlwapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\PowrProf.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\wsock32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\Ws2_32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\advapi32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\psapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\User32.Lib system nt_dll op q op map=\tmp\base.map op mangle op de '!ifcExeDllDescBegin !cName 10000018 !idCopy 00000000 !contact (c) Wo Of Ideafarm http://ideafarm.com !ifcExeDllDescEnd' op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared segment 'CONST32' shared exp '_rTagF@0' exp '_eipF@4' >> \tmp\link1.err
+                //  [debug]:  wlink debug all name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-wm file \ideafarm.home.1\ephemeral\city\workshop\3object\2*.obj file \ideafarm.home.1\ephemeral\city\workshop\3object\3*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\shlwapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\PowrProf.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\wsock32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\Ws2_32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\advapi32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\psapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\User32.Lib system nt_dll op q op map=\tmp\base.map op mangle op de '!ifcExeDllDescBegin !cName 10000018 !idCopy 00000000 !contact (c) Wo Of Ideafarm http://ideafarm.com !ifcExeDllDescEnd' op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared segment 'CONST32' shared exp '_rTagF@0' exp '_eipF@4' >> \tmp\link1.err
                 //
-                //  [debug]:  wlink debug all name \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\ideafarm.81000001.ipdos-tm file \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\3object\2*.obj file \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\3object\3*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\shlwapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\PowrProf.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\wsock32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\Ws2_32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\advapi32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\psapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\User32.Lib system nt_dll op q op map=\tmp\base.map op mangle op de '!ifcExeDllDescBegin !cName 10000018 !idCopy 00000000 !contact (c) Wo Of Ideafarm http://ideafarm.com !ifcExeDllDescEnd' op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared segment 'CONST32' shared exp '_rTagF@0' exp '_eipF@4' >> \tmp\link2.err
+                //  [debug]:  wlink debug all name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-tm file \ideafarm.home.1\ephemeral\city\workshop\3object\2*.obj file \ideafarm.home.1\ephemeral\city\workshop\3object\3*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\shlwapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\PowrProf.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\wsock32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\Ws2_32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\winmm.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\advapi32.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\watcom\lib386\nt\psapi.lib library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\User32.Lib system nt_dll op q op map=\tmp\base.map op mangle op de '!ifcExeDllDescBegin !cName 10000018 !idCopy 00000000 !contact (c) Wo Of Ideafarm http://ideafarm.com !ifcExeDllDescEnd' op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared segment 'CONST32' shared exp '_rTagF@0' exp '_eipF@4' >> \tmp\link2.err
                 //
                 //                                                                                                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
                 //  2 changes:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           2
@@ -2727,7 +2727,7 @@ void elf_obey_C::liveF( void )
 
                 batWatcom.grabF() ;
     
-                ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master" , postMasShort ) ;
+                ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master" , postMasShort ) ;
 
                 //boxPutF( "\\tmp\\elves.debug.ttt" , postCmd , 0 ) ; //U:: TO FIND A BUG (20180908@1649)
 
@@ -2772,7 +2772,7 @@ void elf_obey_C::liveF( void )
     
                 if( !bFail )
                 {
-                    hoverC hover( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master" ) ;
+                    hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master" ) ;
                     system( "wlib -p=32 -q -n -b ideafarm.81000001.ipdos-wl +ideafarm.81000001.ipdos-wm" ) ;
                     system( "wlib -p=32 -q -n -b ideafarm.81000001.ipdos-tl +ideafarm.81000001.ipdos-tm" ) ;
                 }
@@ -2790,10 +2790,10 @@ void elf_obey_C::liveF( void )
         }
         else if( !strcmp( postCmd , "7package" ) )
         {
-            const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release\\3.ideafarm.msi" } ;
+            const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\release\\3.ideafarm.msi" } ;
             const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\installer\\ideafarm.wxs" } ;
             const char postFrom2[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\installer\\readme.txt" } ;
-            const char postFrom3[] = { "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.service.ipdos" } ;
+            const char postFrom3[] = { "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.service.ipdos" } ;
     
             if
             (
@@ -2808,16 +2808,16 @@ void elf_obey_C::liveF( void )
                 // msiexec /l \tmp\install.log.txt /i ideafarm.msi
                 //                                    ideafarm.msi
     
-                char postCmd[ 0x400 ] = { "candle -nologo -out \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\ideafarm.wixobj " } ;
+                char postCmd[ 0x400 ] = { "candle -nologo -out \\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\ideafarm.wixobj " } ;
                 strcat( postCmd , postFrom1 ) ;
                 system( postCmd ) ;
     
                 strcpy( postCmd , "light  -nologo -o " ) ;
                 strcat( postCmd , postTo1 ) ;
-                strcat( postCmd , " -pdbout \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\ideafarm.wixpdb \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\ideafarm.wixobj" ) ;
+                strcat( postCmd , " -pdbout \\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\ideafarm.wixpdb \\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\ideafarm.wixobj" ) ;
                 system( postCmd ) ;
         
-                ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp" , "ideafarm.wix*" ) ;
+                ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp" , "ideafarm.wix*" ) ;
 
 
                 Sleep( 1000 * 16 ) ;
@@ -2826,7 +2826,7 @@ void elf_obey_C::liveF( void )
         else if( !strcmp( postCmd , "8bundle" ) )
         {
             {
-                const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\z\\z_if.i.exist.then.this.home.is.completely.unzipped" } ;
+                const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\z\\z_if.i.exist.then.this.home.is.completely.unzipped" } ;
                 const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\8text.81000001.z_if.i.exist.then.this.home.is.completely.unzipped" } ;
         
                 if( isStaleF( postTo1 , postFrom1 ) )
@@ -2853,7 +2853,7 @@ void elf_obey_C::liveF( void )
                 // U:: ELIMINATE THE CODE THAT CHECKS THE RACKSPACE CLOUD CONTAINER FOR "PAID" REGISTRATION RECORDS; THAT CODE IS IN WO OF THE EARLY ADAMS IN BUNDLE
 
                 {
-                    const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release\\0.settings.ideafarm.install.soil" } ;
+                    const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\release\\0.settings.ideafarm.install.soil" } ;
                     const char postFrom1[] = { "\\ideafarm.work\\txt\\settings.ideafarm.install.soil" } ;
             
                     if( isStaleF( postTo1 , postFrom1 ) )
@@ -2871,7 +2871,7 @@ void elf_obey_C::liveF( void )
                 }
 
                 {
-                    const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release\\0.VC_redist.x64.exe" } ;
+                    const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\release\\0.VC_redist.x64.exe" } ;
                     const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\visualstudio\\VC_redist.x64.exe" } ;
             
                     if( isStaleF( postTo1 , postFrom1 ) )
@@ -2894,7 +2894,7 @@ void elf_obey_C::liveF( void )
                 // (THEY WERE REQUIRED BECAUSE THE OLD OPENSSL DLL BINARIES REQUIRED THEM.  THOSE HAVE NOW BEEN REFRESHED TO USE BINARIES BUILT FROM THE OPENSSL 3.0.7 RELEASE SOURCE CODE)
 
                 {
-                    const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release\\1.VC_redist.x86.exe" } ;
+                    const char postTo1[]   = { "\\ideafarm.home.1\\ephemeral\\release\\1.VC_redist.x86.exe" } ;
                     const char postFrom1[] = { "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\visualstudio\\VC_redist.x86.exe" } ;
             
                     if( isStaleF( postTo1 , postFrom1 ) )
@@ -2917,7 +2917,7 @@ void elf_obey_C::liveF( void )
 
                 //if( !( flagsAll & flELVES_DEBUGiNFO ) )
                 {
-                    system( "if exist \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release\\2.ideafarm.bundle.zip del \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release\\2.ideafarm.bundle.zip" ) ;
+                    system( "if exist \\ideafarm.home.1\\ephemeral\\release\\2.ideafarm.bundle.zip del \\ideafarm.home.1\\ephemeral\\release\\2.ideafarm.bundle.zip" ) ;
                     system( "if exist \\tmp\\bundle\\ideafarm.home.101\\* rd /s /q \\tmp\\bundle\\ideafarm.home.101" ) ;
                     makeFoldersCopyThirdPartyDllsF() ;
                     system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\handle                                   \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\workshop\\handle                                   /E /MT" ) ;
@@ -2927,17 +2927,17 @@ void elf_obey_C::liveF( void )
                     //U::O: IN THE PRECEEDING LINE, THE ENTIRE ZLIB DIRECTORY IS NOT NEEDED: \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib
                   //system( "robocopy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\blob                                      \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\library\\blob                                      /E /MT" ) ;
                     system( "    copy \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\7reso.71000002.favicon.ico    \\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\7reso.71000002.favicon.ico          " ) ;
-                    system( "robocopy \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1                                    \\tmp\\bundle\\ideafarm.home.101\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1                                    /E /MT" ) ;
+                    system( "robocopy \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1                                    \\tmp\\bundle\\ideafarm.home.101\\ephemeral\\city\\park\\exedll\\1                                    /E /MT" ) ;
 
                     //REMOVE bench.baseless IN PRODUCTION
-                    //system( "zip -9r  \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release\\ideafarm.bundle.zip \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\bench.baseless \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\handle \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\blob \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1" ) ;
+                    //system( "zip -9r  \\ideafarm.home.1\\ephemeral\\release\\ideafarm.bundle.zip \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\bench.baseless \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\handle \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\infozip \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\zlib \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\blob \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1" ) ;
 
                     {
                         hoverC hover( "\\tmp\\bundle" ) ;
                         system
                         (
                             "zip -9r"
-                            " \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release\\2.ideafarm.bundle.zip"
+                            " \\ideafarm.home.1\\ephemeral\\release\\2.ideafarm.bundle.zip"
                             " ideafarm.home.101"
                         ) ;
                     }
@@ -2947,7 +2947,7 @@ void elf_obey_C::liveF( void )
                         //SEE EARLIER COMMENT ABOUT IPDOS BEING DISTRIBUTED AS BARTERWARE SO THE HOME REGISTRATION AND PAYMENT VERIFICATION CODE, AND THIS SETTINGS FILE, IS NO LONGER NEEDED
 
                         //WRITE THE TEMPLATE CONFIGURATION FILE
-                        boxPutF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release\\0.settings.ideafarm.install.soil" ,
+                        boxPutF( "\\ideafarm.home.1\\ephemeral\\release\\0.settings.ideafarm.install.soil" ,
 
                             "\r\n"
                             "{settings:\r\n"
@@ -3058,8 +3058,8 @@ void elf_obey_C::liveF( void )
         }
         else if( !strcmp( postCmd , "!worker_2snips_ipdos.h" ) )
         {
-            char postDraft1[] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\ipdos.h.draft1" ;
-            char postDraft2[] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\ipdos.h.draft2" ;
+            char postDraft1[] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\ipdos.h.draft1" ;
+            char postDraft2[] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\ipdos.h.draft2" ;
     
             if( isStaleF( postDraft2 , "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.*" ) )
             {
@@ -3536,7 +3536,7 @@ void elf_obey_C::liveF( void )
                 } ;
 
                 {
-                    int bOk = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp" , "ipdos.h.draft1" ) ;
+                    int bOk = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp" , "ipdos.h.draft1" ) ;
 
                     static char postPath[] = "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\" ;
             
@@ -3563,11 +3563,11 @@ void elf_obey_C::liveF( void )
                     }
                 }
     
-                int bOk = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp" , "ipdos.h.draft2" ) ;
+                int bOk = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp" , "ipdos.h.draft2" ) ;
     
                 if( bOk )
                 {
-                    char postCmd[ 0x300 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.flip.ipdos < " ;
+                    char postCmd[ 0x300 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < " ;
                     strcat( postCmd , postDraft1 ) ;
                     strcat( postCmd , " > " ) ;
                     strcat( postCmd , postDraft2 ) ;
@@ -3632,7 +3632,7 @@ void elf_obey_C::liveF( void )
             int bWoth = 1 ;
             for( int offf = 0 ; offf < sizeof ppostFrom / sizeof ppostFrom[ 0 ] ; offf ++ )
             {
-                char postOut[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\snip\\" ;
+                char postOut[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\snip\\" ;
                 strcat( postOut , ppostFrom[ offf ] ) ;
                 strcat( postOut , ".h" ) ;
     
@@ -3648,7 +3648,7 @@ void elf_obey_C::liveF( void )
                     }
                     else sayF( "2" , flSAY_DADiSgROUP ) ;
     
-                    char postCmd[ 0x300 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.flip.ipdos < " ;
+                    char postCmd[ 0x300 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < " ;
                     strcat( postCmd , postDef ) ;
                     strcat( postCmd , " > " ) ;
                     strcat( postCmd , postOut ) ;
@@ -3724,7 +3724,7 @@ int elf_obey_C::pushGroupIfF( const char* postGroupP , FILETIME ftSourceP , FILE
             strcat( postFileImage2P , "extern \"C\" voidT moduleCodeTrailer_" ) ; strcat( postFileImage2P , postGroupP ) ; strcat( postFileImage2P , "_GF( voidT ) ;\r\n" ) ;
         }
 
-        char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\" ;
+        char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\" ;
         strcat( postObj , postGroupP ) ;
         strcat( postObj , ".obj" ) ;
 
@@ -3762,7 +3762,7 @@ void elf_obey_C::filepileF( const char* postToP , const char* postLikeP )
     //sayF( postLikeP ) ;
     //sayF( "\r\n" ) ;
 
-    char postCmd[ 0x300 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos " ;
+    char postCmd[ 0x300 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.filepile.ipdos " ;
     strcat( postCmd , postToP ) ;
     strcat( postCmd , " -q " ) ;
     strcat( postCmd , postLikeP ) ;
@@ -3787,27 +3787,27 @@ void elf_obey_C::assembleF( const char* postGroupP )
         strcpy( postRaw , postGroupP ) ;
         strcat( postRaw , ".raw" ) ;
 
-        int bOk = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw" , postRaw ) ;
+        int bOk = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw" , postRaw ) ;
 
         {    
             if( bOk )
             {
-                { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -a \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.18000002.END" ) ; system( postCmd ) ; }
-                { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -a \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\"                   ) ; strcat( postCmd , postLike )   ; system( postCmd ) ; }
-                { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -a \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.18000001.586" ) ;                                  system( postCmd ) ; }
+                { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -a \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.18000002.END" ) ; system( postCmd ) ; }
+                { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -a \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\"                   ) ; strcat( postCmd , postLike )   ; system( postCmd ) ; }
+                { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -a \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.18000001.586" ) ;                                  system( postCmd ) ; }
             }
         }
 
         if( bOk )
         {
-            char postSource[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\2source\\" ; strcat( postSource , postModule ) ; strcat( postSource , ".asm" ) ;
+            char postSource[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\2source\\" ; strcat( postSource , postModule ) ; strcat( postSource , ".asm" ) ;
 
-            { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\"   ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > "              ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\"   ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > "              ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
 
-            { char postCmd[ 0x200 ] = "wasm -5p -d1 -e -q -we -fo=\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\ -fr=\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "wasm -5p -d1 -e -q -we -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
             inc02AM( cCompiled ) ;
 
-            //system( "rw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\4report\\*" ) ;
+            //system( "rw \\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\*" ) ;
         }
     }
 }
@@ -3912,19 +3912,19 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
         strcpy( postRaw , postGroupP ) ;
         strcat( postRaw , ".raw" ) ;                // e.g.: "36135.raw"
 
-        int bOk = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw" , postRaw ) ;
+        int bOk = ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw" , postRaw ) ;
 
-        #define FILEpILEpREFIX char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\"
+        #define FILEpILEpREFIX char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\"
 
         if( bOk )
         {
-                                                    { char postCmd[ 0x200 ] = "echo #undef IPDOSmODULE >> \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; system( postCmd ) ; }
+                                                    { char postCmd[ 0x200 ] = "echo #undef IPDOSmODULE >> \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; system( postCmd ) ; }
 
             if(                         bHeadTail ) { FILEpILEpREFIX "1snip.01000003.MODULEcODEtRAILER"                                               )                                                                                                                           ; system( postCmd ) ; }
                                                     { FILEpILEpREFIX                                                                                  ) ; strcat( postCmd , postLike )                                                                                            ; system( postCmd ) ; }
             if(                         bHeadTail ) { FILEpILEpREFIX "1snip.01000004.MODULEcODEhEADER"                                                )                                                                                                                           ; system( postCmd ) ; }
 
-                                                    { char postCmd[ 0x200 ] = "echo #define IPDOSmODULE " ; strcat( postCmd , postGroupP ) ; strcat( postCmd , " >> \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ) ; strcat( postCmd , postRaw ) ; system( postCmd ) ; }
+                                                    { char postCmd[ 0x200 ] = "echo #define IPDOSmODULE " ; strcat( postCmd , postGroupP ) ; strcat( postCmd , " >> \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ) ; strcat( postCmd , postRaw ) ; system( postCmd ) ; }
 
             if(  bThird                           ) { FILEpILEpREFIX "1snip.01000002.cnotcppheader"                                                   )                                                                                                                           ; system( postCmd ) ; }
             if(  bThird                           ) { FILEpILEpREFIX "1snip.112005e6.ifcIDtHREADpRIORITYbASEoSwINDOWS"                                )                                                                                                                           ; system( postCmd ) ; }
@@ -3938,9 +3938,9 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 
         if( bOk )
         {
-            char postSource[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\2source\\" ; strcat( postSource , postModule ) ; strcat( postSource , ".cpp" ) ;
+            char postSource[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\2source\\" ; strcat( postSource , postModule ) ; strcat( postSource , ".cpp" ) ;
 
-            { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > "                                  ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > "                                  ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
 
             //DEBUG INFO IS ALWAYS INSERTED INTO OBJECT MODULES
             {
@@ -3954,11 +3954,11 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
 
                 if( !bCNotCpp )
                 {
-                                                       strcat( postCmd , " -fhq=\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\" ) ;
+                                                       strcat( postCmd , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
                                                        strcat( postCmd , bThird ? "base.show.third.pch" : "base.hide.third.pch" ) ;
                 }
                                                        strcat( postCmd , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
-                                                       strcat( postCmd , " -fo=\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\ -fr=\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\4report\\ " ) ;
+                                                       strcat( postCmd , " -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\ -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\ " ) ;
                                                        strcat( postCmd , postSource ) ;
                 //system( postCmd ) ;
                 hireF( idMe , postCmd ) ;
@@ -3968,8 +3968,8 @@ void elf_obey_C::compileF( const char* postGroupP , int bPauseP )
             if( !bThird && !bHeaderMadeHideThird ) bHeaderMadeHideThird = 1 ;
             if(  bThird && !bHeaderMadeShowThird ) bHeaderMadeShowThird = 1 ;
 
-            //system( "rw \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\build3\\4report\\*" ) ;
-            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw" , postRaw ) ;
+            //system( "rw \\ideafarm.home.1\\ephemeral\\city\\workshop\\build3\\4report\\*" ) ;
+            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw" , postRaw ) ;
 
             if( bPrecompile )
             {
@@ -4015,7 +4015,7 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
     char postDef[ 0x100 ] = "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\" ;
     strcat( postDef , postDefShort ) ;
 
-    char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\" ;
+    char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\" ;
     strcat( postObj , postIdiForeignP ) ;
     if( !bExe )
     {
@@ -4055,8 +4055,8 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
         sayF( post001 ) ;
 
         int bOk =
-            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw" , postRaw )
-            && ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\2source" , postSource )
+            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw" , postRaw )
+            && ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\2source" , postSource )
         ;
         
         if( bOk )
@@ -4067,49 +4067,49 @@ void elf_obey_C::compileF( char* postPrefixP , char* postIdiForeignP , char* pos
             if( oshFind != INVALID_HANDLE_VALUE )
             {
                 char postCmd[ 0x200 ] ;
-                strcpy( postCmd , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\" ) ;
+                strcpy( postCmd , "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\" ) ;
                 strcat( postCmd , info.cFileName ) ;
-                strcat( postCmd , " > \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\snip\\header" ) ;
+                strcat( postCmd , " > \\ideafarm.home.1\\ephemeral\\city\\workshop\\snip\\header" ) ;
                 system( postCmd ) ;
             
                 FindClose( oshFind ) ; oshFind = INVALID_HANDLE_VALUE ;
             }
 
-                                               { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\" ) ; strcat( postCmd , postDefShort                     ) ; system( postCmd ) ; }
-                                               { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.01000002.cnotcppheader" )                            ; system( postCmd ) ; }
-                                               { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000005.includeGenMake.adam.show.third"           ) ; system( postCmd ) ; }
-                                               { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000006.ifcENABLEtHIRDpARTIES"                    ) ; system( postCmd ) ; }
-            if( !strcmp( postSuffixP , "1" ) ) { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000004.ifcenablethirdpartiesmultiplemonitorfake.COMPILE_MULTIMON_STUBS" ) ; system( postCmd ) ; }
+                                               { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\" ) ; strcat( postCmd , postDefShort                     ) ; system( postCmd ) ; }
+                                               { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.01000002.cnotcppheader" )                            ; system( postCmd ) ; }
+                                               { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000005.includeGenMake.adam.show.third"           ) ; system( postCmd ) ; }
+                                               { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000006.ifcENABLEtHIRDpARTIES"                    ) ; system( postCmd ) ; }
+            if( !strcmp( postSuffixP , "1" ) ) { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.filepile.ipdos \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " -d \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\1snip.1a000004.ifcenablethirdpartiesmultiplemonitorfake.COMPILE_MULTIMON_STUBS" ) ; system( postCmd ) ; }
         }
     
         if( bOk )
         {
-            { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\2source\\" ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
+            { char postCmd[ 0x200 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe\\ideafarm.flip.ipdos < \\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw\\" ; strcat( postCmd , postRaw ) ; strcat( postCmd , " > \\ideafarm.home.1\\ephemeral\\city\\workshop\\2source\\" ) ; strcat( postCmd , postSource ) ; system( postCmd ) ; }
     
             char postCmd2[ 0x400 ] = "wpp386" ;
             strcat( postCmd2 , " " IPDOScOMPILEoPTIONS ) ;
             strcat( postCmd2 , " -dBiFCcLASS=0" ) ;
             /*if( flagsAll & flELVES_DEBUGiNFO )*/ strcat( postCmd2 , " -d2" ) ;  //DEBUG INFO IS ALWAYS INSERTED INTO OBJECT MODULES
             if( !bExe ) strcat( postCmd2 , " -bd" ) ;
-            strcat( postCmd2 , " -fhq=\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\adam.show.third.pch" ) ;
+            strcat( postCmd2 , " -fhq=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\adam.show.third.pch" ) ;
             strcat( postCmd2 , " -fo=" ) ;
             strcat( postCmd2 , postObj ) ;
             strcat( postCmd2 , " -i=\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\include" ) ; //U:: ELIMINATE HARDCODED "ideafarm.home.1"
-            strcat( postCmd2 , " -fr=\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\4report\\" ) ;
+            strcat( postCmd2 , " -fr=\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report\\" ) ;
             strcat( postCmd2 , postIdiForeignP ) ;
             if( !bExe )
             {
                 strcat( postCmd2 , "." ) ;
                 strcat( postCmd2 , postSuffixP ) ;
             }
-            strcat( postCmd2 , ".err \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\2source\\" ) ;
+            strcat( postCmd2 , ".err \\ideafarm.home.1\\ephemeral\\city\\workshop\\2source\\" ) ;
             strcat( postCmd2 , postSource ) ;
     
             //system( postCmd2 ) ;
             hireF( idMe , postCmd2 ) ;
             inc02AM( cCompiled ) ;
     
-            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw" , postRaw ) ;
+            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw" , postRaw ) ;
         }
     }
 }
@@ -4125,7 +4125,7 @@ void elf_obey_C::linkF( char* postIdiForeignP )
     {
         char postIdi[ 9 ] = { postIdiForeignP[ 7 ] , postIdiForeignP[ 6 ] , postIdiForeignP[ 5 ] , postIdiForeignP[ 4 ] , postIdiForeignP[ 3 ] , postIdiForeignP[ 2 ] , postIdiForeignP[ 1 ] , postIdiForeignP[ 0 ] , 0 } ;
 
-        char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object\\" ;
+        char postObj[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object\\" ;
         strcat( postObj , postIdiForeignP ) ;
         strcat( postObj , bExe ? ".obj" : ".*.obj" ) ;
 
@@ -4133,7 +4133,7 @@ void elf_obey_C::linkF( char* postIdiForeignP )
         strcat( postMasShort , postIdiForeignP ) ;
         strcat( postMasShort , ".ipdos-wm" ) ;
 
-        char postMas[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\" ;
+        char postMas[ 0x100 ] = "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\" ;
         strcat( postMas , postMasShort ) ;
 
         if( isStaleF( postMas , postObj ) )
@@ -4157,7 +4157,7 @@ void elf_obey_C::linkF( char* postIdiForeignP )
             strcat( postCmd ,
     
                 " library \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\microsoft\\msi.lib"
-                " library \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wl"
+                " library \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm.81000001.ipdos-wl"
                 " op heapsize=0x70000"
                 " op st=0x00020000"                     //THIS IS THE MIN SIZE THAT BASE OS WILL HONOR (NOT SILENTLY IGNORE)
                 " segment type code shared"
@@ -4183,7 +4183,7 @@ void elf_obey_C::linkF( char* postIdiForeignP )
             strcat( postCmd , " >> \\tmp\\link1.err" ) ;
 
             batWatcom.grabF() ;
-            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master" , postMasShort ) ;
+            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master" , postMasShort ) ;
             system( postCmd ) ; //MUST BE SERIALIZED SINCE wlink USES A TEMPORARY FILE THAT IT CREATES, AND WILL COLLIDE WITH ITSELF IN CREATING THIS FILE
 
             //if(  bCon || bAda )
@@ -4191,9 +4191,9 @@ void elf_obey_C::linkF( char* postIdiForeignP )
                 //sayF( "[debug3]:    " ) ;
                 //sayF( postCmd ) ;
 
-                // [debug3]:    wlink debug all system nt name \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\ideafarm.41000002.ipdos-wm file \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\3object\41000002.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\ideafarm.81000001.ipdos-wl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\41000002.map op mangle op de '!ifcExeDllDescBegin !cName 20000014 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link1.err
+                // [debug3]:    wlink debug all system nt name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.41000002.ipdos-wm file \ideafarm.home.1\ephemeral\city\workshop\3object\41000002.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-wl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\41000002.map op mangle op de '!ifcExeDllDescBegin !cName 20000014 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link1.err
 
-                // [debug3]:    wlink debug all system nt name \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\ideafarm.41000002.ipdos-tm file \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\3object\41000002.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\ideafarm.81000001.ipdos-tl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\41000002.tap op mangle op de '!ifcExeDllDescBegin !cName 20000014 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link2.err
+                // [debug3]:    wlink debug all system nt name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.41000002.ipdos-tm file \ideafarm.home.1\ephemeral\city\workshop\3object\41000002.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-tl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\41000002.tap op mangle op de '!ifcExeDllDescBegin !cName 20000014 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link2.err
 
                 // 4 changes:                                                                                                                                    |                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                     |                                                                                                                                                                                                                                 |
                 //                                                                                                                                               1                                                                                                                                                                                                                                                                                           2                                                                                                                                                                                                                     3                                                                                                                                                                                                                                 4
@@ -4201,9 +4201,9 @@ void elf_obey_C::linkF( char* postIdiForeignP )
 
 
 
-                // [debug3]:    wlink debug all system nt_dll name \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\ideafarm.51000620.ipdos-wm file \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\3object\51000620.*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\ideafarm.81000001.ipdos-wl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\51000620.map op mangle op de '!ifcExeDllDescBegin !cName 02600015 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link1.err
+                // [debug3]:    wlink debug all system nt_dll name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.51000620.ipdos-wm file \ideafarm.home.1\ephemeral\city\workshop\3object\51000620.*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-wl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\51000620.map op mangle op de '!ifcExeDllDescBegin !cName 02600015 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link1.err
 
-                // [debug3]:    wlink debug all system nt_dll name \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\ideafarm.51000620.ipdos-tm file \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\3object\51000620.*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\ideafarm.81000001.ipdos-tl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\51000620.tap op mangle op de '!ifcExeDllDescBegin !cName 02600015 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link2.err
+                // [debug3]:    wlink debug all system nt_dll name \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.51000620.ipdos-tm file \ideafarm.home.1\ephemeral\city\workshop\3object\51000620.*.obj library \ideafarm.home.1\precious\domains\com\ideafarm\city\workshop\microsoft\msi.lib library \ideafarm.home.1\ephemeral\city\park\exedll\1\master\ideafarm.81000001.ipdos-tl op heapsize=0x70000 op st=0x01000000 segment type code shared segment class 'CODE' shared segment 'BEGTEXT' shared segment '_TEXT' shared segment 'CONST' shared segment 'CONST2' shared op q op map=\tmp\51000620.tap op mangle op de '!ifcExeDllDescBegin !cName 02600015 !idCopy 00000000 !contact http://ideafarm.com IdeaFarm (tm) Piggyback Distributed Operating System (c) Wo Of Ideafarm all rights reserved !ifcExeDllDescEnd' >> \tmp\link2.err
 
                 // 4 changes:                                                                                                                                        |                                                                                                                                                                                                                                                                                             |                                                                                                                                                                                                                     |                                                                                                                                                                                                                                 |
                 //                                                                                                                                                   1                                                                                                                                                                                                                                                                                             2                                                                                                                                                                                                                     3                                                                                                                                                                                                                                 4
@@ -4246,18 +4246,18 @@ void elf_obey_C::linkF( char* postIdiForeignP )
             {
                 char postCmd2[ 0x100 ] = "wrc -q \\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary\\7reso.71000001.ipdos.rc" ;
     
-                strcat( postCmd2 , " \\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\ideafarm." ) ;
+                strcat( postCmd2 , " \\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\ideafarm." ) ;
                 strcat( postCmd2 , postIdiForeignP ) ;
                 strcat( postCmd2 , ".ipdos-wm" ) ;
     
-                strcat( postCmd2 , " -fo=\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp\\" ) ;
+                strcat( postCmd2 , " -fo=\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp\\" ) ;
                 strcat( postCmd2 , postIdiForeignP ) ;
                 strcat( postCmd2 , ".res" ) ;
     
                 system( postCmd2 ) ;
             }
     
-            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object" , postIdiForeignP ) ;
+            ether.deleteAllF( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object" , postIdiForeignP ) ;
         }
     }
 }
@@ -4409,7 +4409,7 @@ int elf_obey_C::idCopyF( char* postFileP , int& cDoneP )
         {
             if( !( cDoneP ++ ) ) sayF( "[6patch]:  Patching a newly assigned idCopy value into each master file that does not already contain wo." ) ;
 
-            idCopy = boxDispenseIdF( "\\ideafarm.home.1\\ephemeral\\backed.up.daily\\domains\\com\\ideafarm\\ipdos\\idCopyLath" , 0 , idMe ) ;
+            idCopy = boxDispenseIdF( "\\ideafarm.home.1\\ephemeral\\ipdos\\idCopyLath" , 0 , idMe ) ;
 
             if( !idCopy ) //SHOULD BE IMPOSSIBLE
             {
@@ -5306,7 +5306,7 @@ int boxDispenseIdF( char* postFileP , int idMinP , int idElfP )
         }
         else
         {
-            char postMatch[] = { "\\ideafarm.home.1\\ephemeral\\backed.up.daily\\domains\\com\\ideafarm\\ipdos\\idAdamLath." } ;
+            char postMatch[] = { "\\ideafarm.home.1\\ephemeral\\ipdos\\idAdamLath." } ;
 
             if( postFileP == strstr( postFileP , postMatch ) )
             {
@@ -5521,34 +5521,27 @@ void makeFoldersCopyThirdPartyDllsF( void )
 {
     CreateDirectory( "\\ideafarm.home.1" , 0 ) ;
     CreateDirectory( "\\ideafarm.home.1\\ephemeral" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\backed.up.daily" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\backed.up.daily\\domains" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\backed.up.daily\\domains\\com" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\backed.up.daily\\domains\\com\\ideafarm" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\backed.up.daily\\domains\\com\\ideafarm\\ipdos" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\z" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\exe" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\snip" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\tmp" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\1raw" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\2source" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\3object" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\workshop\\4report" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\ipdos" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\park" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\z" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\exe" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\snip" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\tmp" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\1raw" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\2source" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\3object" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\city\\workshop\\4report" , 0 ) ;
 
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\state" , 0 ) ;
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\state\\rimstar" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\state" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\state\\rimstar" , 0 ) ;
 
-    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\release" , 0 ) ;
+    CreateDirectory( "\\ideafarm.home.1\\ephemeral\\release" , 0 ) ;
 
     CreateDirectory( "\\ideafarm.home.1\\precious\\" , 0 ) ;
     CreateDirectory( "\\ideafarm.home.1\\precious\\domains\\" , 0 ) ;
@@ -5574,17 +5567,17 @@ void makeFoldersCopyThirdPartyDllsF( void )
     CreateDirectory( "\\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\library" , 0 ) ;
     CreateDirectory( "\\tmp\\bundle\\ideafarm.home.101\\precious\\domains\\com\\ideafarm\\city\\library\\dictionary" , 0 ) ;
 
-    int bOk = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libssl-3.dll"     , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\libssl-3.dll"     , 1 ) ;
-        bOk = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libssl-3.pdb"     , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\libssl-3.pdb"     , 1 ) ;
-        bOk = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libcrypto-3.dll"  , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\libcrypto-3.dll"  , 1 ) ;
-        bOk = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libcrypto-3.pdb"  , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\libcrypto-3.pdb"  , 1 ) ;
-    //  bOk = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\visualstudio\\vcruntime140.dll" , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover\\vcruntime140.dll" , 1 ) ;
+    int bOk = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libssl-3.dll"     , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\libssl-3.dll"     , 1 ) ;
+        bOk = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libssl-3.pdb"     , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\libssl-3.pdb"     , 1 ) ;
+        bOk = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libcrypto-3.dll"  , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\libcrypto-3.dll"  , 1 ) ;
+        bOk = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libcrypto-3.pdb"  , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\libcrypto-3.pdb"  , 1 ) ;
+    //  bOk = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\visualstudio\\vcruntime140.dll" , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover\\vcruntime140.dll" , 1 ) ;
 
-    bOk     = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libssl-3.dll"     , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\libssl-3.dll"     , 1 ) ;
-    bOk     = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libssl-3.pdb"     , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\libssl-3.pdb"     , 1 ) ;
-    bOk     = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libcrypto-3.dll"  , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\libcrypto-3.dll"  , 1 ) ;
-    bOk     = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libcrypto-3.pdb"  , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\libcrypto-3.pdb"  , 1 ) ;
-    //bOk     = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\visualstudio\\vcruntime140.dll" , "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\master\\vcruntime140.dll" , 1 ) ;
+    bOk     = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libssl-3.dll"     , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\libssl-3.dll"     , 1 ) ;
+    bOk     = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libssl-3.pdb"     , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\libssl-3.pdb"     , 1 ) ;
+    bOk     = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libcrypto-3.dll"  , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\libcrypto-3.dll"  , 1 ) ;
+    bOk     = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\openssl\\bin\\libcrypto-3.pdb"  , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\libcrypto-3.pdb"  , 1 ) ;
+    //bOk     = CopyFile( "\\ideafarm.home.1\\precious\\domains\\com\\ideafarm\\city\\workshop\\visualstudio\\vcruntime140.dll" , "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\master\\vcruntime140.dll" , 1 ) ;
 
     if( !bOk ) ;
 }
@@ -5718,7 +5711,7 @@ int main( int cArgP , char* ppostArgP[] , char* ppostEnvP[] )
     int bHighPriest = sourceCodeExistsF() ;
 
     makeFoldersCopyThirdPartyDllsF() ;
-    { hoverC hover( "\\ideafarm.home.1\\ephemeral\\domains\\com\\ideafarm\\city\\park\\exedll\\1\\hover" , flHOVER_PERSIST ) ; } // WHEN USING PRECOMPILED HEADERS, MUST ALWAYS BE HOVERING IN THE SAME CURRENT DIRECTORY
+    { hoverC hover( "\\ideafarm.home.1\\ephemeral\\city\\park\\exedll\\1\\hover" , flHOVER_PERSIST ) ; } // WHEN USING PRECOMPILED HEADERS, MUST ALWAYS BE HOVERING IN THE SAME CURRENT DIRECTORY
 
     char postCmdWoth[ 0x10 ] = { "" } ;
     if( !bHighPriest ) ether.userF( "anonymous" ) ;

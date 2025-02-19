@@ -3,8 +3,8 @@
 rem I FRESHEN HOME 2 (SO THAT IT CAN BE USED FOR MULTIHOME TESTING)
 
 if not exist %idrive%\ideafarm.home.1\*                                                          goto :FIN
-if not exist %idrive%\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\* goto :FIN
-if not exist %idrive%\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\hover\*  goto :FIN
+if not exist %idrive%\ideafarm.home.1\ephemeral\city\park\exedll\1\master\* goto :FIN
+if not exist %idrive%\ideafarm.home.1\ephemeral\city\park\exedll\1\hover\*  goto :FIN
 
 if     exist %idrive%\ideafarm.home.2\* goto :FRESH2
 
@@ -16,19 +16,19 @@ goto :FIN
 
 %idrive%
 
-if not exist %idrive%\ideafarm.home.2\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\* goto :FIN
-if not exist %idrive%\ideafarm.home.2\ephemeral\domains\com\ideafarm\city\park\exedll\1\hover\*  goto :FIN
+if not exist %idrive%\ideafarm.home.2\ephemeral\city\park\exedll\1\master\* goto :FIN
+if not exist %idrive%\ideafarm.home.2\ephemeral\city\park\exedll\1\hover\*  goto :FIN
 
-cd %idrive%\ideafarm.home.2\ephemeral\domains\com\ideafarm\city\park\exedll\1\master
+cd %idrive%\ideafarm.home.2\ephemeral\city\park\exedll\1\master
 if exist * del */q
-copy %idrive%\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\master\*
+copy %idrive%\ideafarm.home.1\ephemeral\city\park\exedll\1\master\*
 
-cd %idrive%\ideafarm.home.2\ephemeral\domains\com\ideafarm\city\park\exedll\1\hover
+cd %idrive%\ideafarm.home.2\ephemeral\city\park\exedll\1\hover
 if exist * del */q
-copy %idrive%\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\park\exedll\1\hover\*
+copy %idrive%\ideafarm.home.1\ephemeral\city\park\exedll\1\hover\*
 
-cd %idrive%\ideafarm.home.2\ephemeral\domains\com\ideafarm\city\workshop\2source
+cd %idrive%\ideafarm.home.2\ephemeral\city\workshop\2source
 if exist * del */q
-copy %idrive%\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\2source\*
+copy %idrive%\ideafarm.home.1\ephemeral\city\workshop\2source\*
 
 :FIN

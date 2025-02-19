@@ -142,7 +142,7 @@ DONEdRIVENsERVER( tmcF )
                                     soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
                                 {
                                 if( !etThread.diskFileExistsF( tin0P , tFile ) )
-                                tFile = T("///ideafarm/ephemeral/domains/com/ideafarm/prepaycode/") + tCode ;
+                                tFile = T("///ideafarm/ephemeral/prepaycode/") + tCode ;
                                 tCode = TF1( cCode ) ; //U::BUG: LOWEST SIG BYTE IS ALWAYS 0
                                 while( cTries -- || !cCode ) cCode = ru ;
                                 ZE( countT , cCode ) ;
@@ -201,7 +201,7 @@ DONEdRIVENsERVER( tmcF )
                                 etThread.osTimeNowF( tin0P , timeE.time1 , timeE.time2 ) ;
                             {
                             if( !etThread.diskFileExistsF( tin0P , tFile ) )
-                            tFile = T("///ideafarm/ephemeral/domains/com/ideafarm/prepaycode/") + tCode ;
+                            tFile = T("///ideafarm/ephemeral/prepaycode/") + tCode ;
                             tCode = TF1( cCode ) ; //U::BUG: LOWEST SIG BYTE IS ALWAYS 0
                             while( cTries -- || !cCode ) cCode = ru ;
                             ZE( countT , cCode ) ;
@@ -217,7 +217,7 @@ DONEdRIVENsERVER( tmcF )
                     }
                         }
                             etThread.boxPutF( tin0P , tFile , sJournal ) ;
-                            TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/account.event/" ) ; tFile += T(psttFromIn)+T("/")+TF3(timeN2,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF3(timeN1,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF1(((tin1S&)tin0P).osTid) ;
+                            TN( tFile , "///ideafarm/ephemeral/account.event/" ) ; tFile += T(psttFromIn)+T("/")+TF3(timeN2,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF3(timeN1,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF1(((tin1S&)tin0P).osTid) ;
                             TN( td , "." ) ;
                             etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                             ZE( sCountT , timeN2 ) ;
@@ -273,7 +273,7 @@ DONEdRIVENsERVER( tmcF )
                             etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
                             timeS timeN ;
                             tFile += T(psttFromIn) ;
-                            TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/resident.until/" ) ;
+                            TN( tFile , "///ideafarm/ephemeral/resident.until/" ) ;
 
                             sJournal << days ; // NUMBER OF DAYS PURCHASED
                             else __1
@@ -296,7 +296,7 @@ DONEdRIVENsERVER( tmcF )
                             ((tin1S&)tin0P).zEtScratch->boxPutF( tin0P , tFile , tp , tp.csF( tin0P ) ) ;
                             TN( tp , "" ) ; tp = T( psttFromName ) ;
                             tFile += T(psttFromIn) ;
-                            TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/humanname/" ) ;
+                            TN( tFile , "///ideafarm/ephemeral/humanname/" ) ;
                         {
 
                         }
@@ -324,20 +324,20 @@ DONEdRIVENsERVER( tmcF )
                             {
                             if( !((tin1S&)tin0P).zEtScratch->diskFileExistsF( tin0P , tFile ) )
                             tFile += T(psttFromIn) ;
-                            TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/passcode/" ) ;
+                            TN( tFile , "///ideafarm/ephemeral/passcode/" ) ;
                         {
                     {
                     else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: c.1.1\r\n") , psttBody ) || ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: d.1.1\r\n") , psttBody ) )
                     }
                         ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttnu ) ;
-                        ((tin1S&)tin0P).zEtScratch->boxPutUniqueF( tin0P , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttFromIn)+T(".$note.b.1.1") , oston , oston.costF() + 1 ) ;
+                        ((tin1S&)tin0P).zEtScratch->boxPutUniqueF( tin0P , psttnu , T("///ideafarm/ephemeral/payment/")+T(psttFromIn)+T(".$note.b.1.1") , oston , oston.costF() + 1 ) ;
                         ZE( strokeS* , psttnu ) ;
                         OStEXTV( oston , "b340104 detected an incoming payment notice for b.1.1" )
                     {
                     else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: b.1.1\r\n") , psttBody ) )
                     }
                         ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttnu ) ;
-                        ((tin1S&)tin0P).zEtScratch->boxPutUniqueF( tin0P , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttFromIn)+T(".$note.9.1.1") , oston , oston.costF() + 1 ) ;
+                        ((tin1S&)tin0P).zEtScratch->boxPutUniqueF( tin0P , psttnu , T("///ideafarm/ephemeral/payment/")+T(psttFromIn)+T(".$note.9.1.1") , oston , oston.costF() + 1 ) ;
                         ZE( strokeS* , psttnu ) ;
                         OStEXTV( oston , "b340104 detected an incoming payment notice for 9.1.1" )
                     {

@@ -21,7 +21,7 @@ etherC::ifcSayIF( T("final aok\r\n")+tc , flSAY_APPEND | flSAY_LOG ) ;
                 while( !ether && !etThread.diskFileExistsF( tin0P , tPackLoaded ) ) { ++ s ; ether.osSleepF( tin0P , TOCK * 0x10 ) ; }
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             {
-            TN( tPackLoaded  , "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack.loaded."  ) ; tPackLoaded  += TF1(etThread.diskIdF(tin0P,T("///c"))) ;
+            TN( tPackLoaded  , "///ideafarm/ephemeral/gen/lake/pack.loaded."  ) ; tPackLoaded  += TF1(etThread.diskIdF(tin0P,T("///c"))) ;
             etherC::ifcSayIF( TF1(DDNUMB)+T(" going to sleep until the pack that i just made has been loaded")+tc , flSAY_APPEND | flSAY_LOG ) ;
         {
         else
@@ -81,8 +81,8 @@ TODO
 
     etThread.delF( tin0P , pstt1m ) ;
     FORsTRINGSiN1( pstt1m ) etThread.diskFileOrDirDeleteF( tin0P , psttc1 ) ;
-    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack.loaded.*" ) ) ; ___( pstt1m ) ;
-    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack.noticed.*") ) ; ___( pstt1m ) ;
+    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/gen/lake/pack.loaded.*" ) ) ; ___( pstt1m ) ;
+    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/gen/lake/pack.noticed.*") ) ; ___( pstt1m ) ;
     ZE( strokeS* , pstt1m ) ;
 
     STEP( onePackF( tin0P , etThread ) ) ;
@@ -99,12 +99,12 @@ TODO
     //    tZip = T(psttZip) ;
     //    etThread.diskMapFileNameF( tin0P , psttZip , tZip ) ; ___( psttZip ) ;
     //    ZE( strokeS* , psttZip ) ;
-    //    TN( tZip , "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/readme.zip.new" ) ;
-    //    TN( tZipOld , "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/readme.zip" ) ;
+    //    TN( tZip , "///ideafarm/ephemeral/gen/lake/readme.zip.new" ) ;
+    //    TN( tZipOld , "///ideafarm/ephemeral/gen/lake/readme.zip" ) ;
     //    TN( tZipper , "///d/ideafarm.work/backed.up.never/software/zip/zip.exe" ) ;
-    //    hoverC hoverFiles( tin0P , etThread , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/files/") ) ;
+    //    hoverC hoverFiles( tin0P , etThread , T("///ideafarm/ephemeral/gen/lake/files/") ) ;
     //{
-    //etThread.diskMoveFileOrDirF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/files/readme.html") , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/files/1.1.0.html") ) ;
+    //etThread.diskMoveFileOrDirF( tin0P , T("///ideafarm/ephemeral/gen/lake/files/readme.html") , T("///ideafarm/ephemeral/gen/lake/files/1.1.0.html") ) ;
 
     ((tin1S&)tin0P).flagsThreadMode1 = flagsThreadMode1Save ;
 
@@ -137,7 +137,7 @@ TODO
 
     //}
     //    ether.delF( tin0P , pbFile ) ;
-    //    ether.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/files/2.2.0") , pbFile , cbFile ) ;
+    //    ether.boxPutF( tin0P , T("///ideafarm/ephemeral/gen/lake/files/2.2.0") , pbFile , cbFile ) ;
     //    ether.boxGetShadowF( tin0P , pbFile , cbFile , T("///d/ideafarm.work/backed.up.daily/images/jpeg/Dadflag.JPG") ) ; ___( pbFile ) ;
     //    ZE( countT , cbFile ) ;
     //    ZE( byteT* , pbFile ) ;
@@ -147,8 +147,8 @@ TODO
     //    }
     //        etThread.delF( tin0P , pstt1m ) ;
     //        FORsTRINGSiN1( pstt1m ) etThread.diskFileOrDirDeleteF( tin0P , psttc1 ) ;
-    //        cToDo += etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/files/*") , 0 , 0x100 ) ; ___( pstt1m ) ;
-    //        cToDo  = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/kt/*") , 0 , 0x100 ) ; ___( pstt1m ) ;
+    //        cToDo += etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/gen/lake/files/*") , 0 , 0x100 ) ; ___( pstt1m ) ;
+    //        cToDo  = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/gen/kt/*") , 0 , 0x100 ) ; ___( pstt1m ) ;
     //        ZE( strokeS* , pstt1m ) ;
     //    {
     //    do
@@ -293,8 +293,8 @@ voidT setupF( tin0S& tin0P , etherC& etThread , stackC& st1P , stackC& st2P , st
 }
     etThread.strMakeF( tin0P , LF , psttw , T("///ideafarm/precious/domains/com/ideafarm/city/library/base/")+T(psttOldClassP)+T(".base")   ) ; st4P << psttw ; psttw = 0 ;
     etThread.strMakeF( tin0P , LF , psttw , psttTitle                                                                           ) ; st3P << psttw ; psttw = 0 ;
-    etThread.strMakeF( tin0P , LF , psttw , T(WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/1.")+T(psttIdP)         ) ; st2P << psttw ; psttw = 0 ;
-    etThread.strMakeF( tin0P , LF , psttw , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/1.")+T(psttIdP)                  ) ; st1P << psttw ; psttw = 0 ;
+    etThread.strMakeF( tin0P , LF , psttw , T(WWWiDEAFARMcOM "///ideafarm/ephemeral/gen/lake/1.")+T(psttIdP)         ) ; st2P << psttw ; psttw = 0 ;
+    etThread.strMakeF( tin0P , LF , psttw , T("///ideafarm/ephemeral/gen/lake/packs/1.")+T(psttIdP)                  ) ; st1P << psttw ; psttw = 0 ;
 
     ZE( strokeS* , psttw ) ;
 
@@ -306,7 +306,7 @@ voidT htmlJobF( tin0S& tin0P , etherC& etThread , stackC& st1P , stackC& st2P , 
     }
         etThread.delF( tin0P , pba ) ;
         }
-            etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/pack") , pba , cba ) ;
+            etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/gen/lake/pack") , pba , cba ) ;
             etherC::ifcSayIF( T("writing combined pack")+tc , flSAY_APPEND | flSAY_LOG ) ;
 
             }
@@ -369,7 +369,7 @@ voidT htmlJobF( tin0S& tin0P , etherC& etThread , stackC& st1P , stackC& st2P , 
         {
         FORsTRINGSiN1( pstt1m )
 
-        cToDo = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/" "*") ) ; ___( pstt1m ) ;
+        cToDo = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/gen/lake/packs/" "*") ) ; ___( pstt1m ) ;
         ZE( strokeS* , pstt1m ) ;
     {
     stackC stPacks( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcSTACKtYPE_PTR_count2S ) ;
@@ -416,9 +416,9 @@ voidT onePackF( tin0S& tin0P , etherC& etThread )
     ZE( strokeS* , pstt1m ) ;
     TN( tLog , "///d/log.ifc.html" ) ;
     TN( tCopy , "(c) IdeaFarm " "(tm) City" ) ;
-    TN( tHtmlLocalf , "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/files/5." ) ;
-    TN( tHtmlLocalp , "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/5." ) ;
-    TN( tHtml , WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/5." ) ;
+    TN( tHtmlLocalf , "///ideafarm/ephemeral/gen/lake/files/5." ) ;
+    TN( tHtmlLocalp , "///ideafarm/ephemeral/gen/lake/packs/5." ) ;
+    TN( tHtml , WWWiDEAFARMcOM "///ideafarm/ephemeral/gen/lake/5." ) ;
     TN( tKt2 , ".kt" ) ;
     }
         etThread.delF( tin0P , psttm ) ;
@@ -426,7 +426,7 @@ voidT onePackF( tin0S& tin0P , etherC& etThread )
         etThread.diskMapFileNameF( tin0P , psttm , tKt ) ; // MAPPED WO TIME HERE, FOR SPEED
         ZE( strokeS* , psttm ) ;
     {
-    TN( tKt  , "///ideafarm/ephemeral/domains/com/ideafarm/gen/kt/visible." ) ;
+    TN( tKt  , "///ideafarm/ephemeral/gen/kt/visible." ) ;
     TN( tc , "\r\n" ) ;
 {
 voidT writeVisiblesHtmlF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
@@ -738,7 +738,7 @@ voidT testAutoF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
         etThread.diskMapFileNameF( tin0P , psttm , tKt ) ; // MAPPING THIS WO TOO, FOR SPEED
         ZE( strokeS* , psttm ) ;
     {
-    TN( tKt     , "///ideafarm/ephemeral/domains/com/ideafarm/gen/kt/visible." ) ;
+    TN( tKt     , "///ideafarm/ephemeral/gen/kt/visible." ) ;
     }
         etThread.delF( tin0P , psttm ) ;
         tDic = T(psttm) ;
@@ -761,13 +761,13 @@ voidT listVisibleDefinitionsF( tin0S& tin0P , etherC& etThread , const boolT bTe
     }
         etThread.delF( tin0P , psttf ) ;
 
-        //etThread.boxPutHtmlFromKnowledgeTreeBaseF( tin0P , 0 , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/files/6.$")+T(psttf) , T(WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/6.$")+T(psttf) , psttf , tCopy , tBase , 0x100000 ) ;
-        etThread.boxPutHtmlFromKnowledgeTreeBaseF( tin0P , 1 , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/6.$")+T(psttf) , T(WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/6.$")+T(psttf) , psttf , tCopy , tBase , 0x100000 ) ;
+        //etThread.boxPutHtmlFromKnowledgeTreeBaseF( tin0P , 0 , T("///ideafarm/ephemeral/gen/lake/files/6.$")+T(psttf) , T(WWWiDEAFARMcOM "///ideafarm/ephemeral/gen/lake/6.$")+T(psttf) , psttf , tCopy , tBase , 0x100000 ) ;
+        etThread.boxPutHtmlFromKnowledgeTreeBaseF( tin0P , 1 , T("///ideafarm/ephemeral/gen/lake/packs/6.$")+T(psttf) , T(WWWiDEAFARMcOM "///ideafarm/ephemeral/gen/lake/6.$")+T(psttf) , psttf , tCopy , tBase , 0x100000 ) ;
         TN( tCopy , "(c) IdeaFarm " "(tm) City" ) ;
 
         etThread.delF( tin0P , posti ) ;
         etThread.boxPutF( tin0P , tBase , posti , costi ) ;
-        textC tBase = T("///ideafarm/ephemeral/domains/com/ideafarm/gen/kt/instances.")+T(psttf)+T(".base") ;
+        textC tBase = T("///ideafarm/ephemeral/gen/kt/instances.")+T(psttf)+T(".base") ;
         etThread.delF( tin0P , psttImage ) ;
         else costi = etThread.strMakeF( tin0P , LF , posti , T("none") ) ; ___( posti ) ;
         }

@@ -22,9 +22,9 @@ etThread.osProcessIdPhaseAdamF( tin0P , ifcIDpHASEhANDOFFoLD_SHUTTINGdOWN ) ;
                     mainS main( tin0P , ether , etThread , T("cid ")+tCid+T(" level ")+T(psttLevel) ) ;
                     etThread.dllEntryF( tin0P , pMainF , hDll , T("mainF") ) ;
                     ZE( mainFT , pMainF ) ;
-                    etThread.dllOpenF( tin0P , hDll , T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/")+T(psttLevel)+T("/20401040.ipdos-wd") ) ;
+                    etThread.dllOpenF( tin0P , hDll , T("///ideafarm/ephemeral/city/park/")+T(psttLevel)+T("/20401040.ipdos-wd") ) ;
                     ZE( countT , hDll ) ;
-                    hoverC hoverLevel( tin0P , etThread , T("///ideafarm/ephemeral/domains/com/ideafarm/city/park/")+T(psttLevel)+T("/") ) ;
+                    hoverC hoverLevel( tin0P , etThread , T("///ideafarm/ephemeral/city/park/")+T(psttLevel)+T("/") ) ;
                 {
 
                 ((tin1S&)tin0P).flagsThreadMode1 &= ~( F(flTHREADmODE1_SHOWpROGRESS) ) ;
@@ -87,7 +87,7 @@ DONE( tmRiverAndPourF )
     }
         }
             etThread = 0 ;
-            cFound = etThread.boxPourF( tin0P , T("city.center.ideafarm.com") , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/new/") , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/out/") , 0x100000 , CbOXpOURmAX ) ;
+            cFound = etThread.boxPourF( tin0P , T("city.center.ideafarm.com") , T("///ideafarm/ephemeral/city/data/new/") , T("///ideafarm/ephemeral/city/data/out/") , 0x100000 , CbOXpOURmAX ) ;
         {
         if( !ether )
         if( !cFound ) etThread.osSleepF( tin0P , TOCK * 0x10 ) ;
@@ -118,7 +118,7 @@ TASK( tmRiverAndPourF )
 
     }
         etThread.delF( tin0P , postLevel ) ;
-        etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/city/settings/")+T(psttOldCidP)+T("/reliability") , postLevel ) ;
+        etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/city/settings/")+T(psttOldCidP)+T("/reliability") , postLevel ) ;
         etThread.strMakeF( tin0P , LF , postLevel , psttLevelP ) ; ___( postLevel ) ;
         ZE( osTextT* , postLevel ) ;
     {
@@ -148,7 +148,7 @@ boolT updateReliabilityLevelF( tin0S& tin0P , etherC& etThread , strokeS*& psttL
         //etThread.strokeF( tin0P , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT)+T("local time contains an error of        ") ) ;
         //etThread.strFromTimeF( tin0P , psttw , timeError.time1 , timeError.time2 ) ;
 
-        //etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/city/settings/")+T(psttOldCidP)+T("/time.error") , (byteT*)&timeError , sizeof timeError ) ;
+        //etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/city/settings/")+T(psttOldCidP)+T("/time.error") , (byteT*)&timeError , sizeof timeError ) ;
         }
             poolOld Side.timeError2 = timeError.time2 ;
             poolOld Side.timeError1 = timeError.time1 ;

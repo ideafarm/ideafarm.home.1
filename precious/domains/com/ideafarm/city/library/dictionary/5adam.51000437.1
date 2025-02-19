@@ -105,7 +105,7 @@ TELL( "preparing to accept chat clients" ) ;
     strokeS sDot( '.' ) ;
     *((tin1S&)tin0P).zEtScratch = 0 ;
 
-    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/events/*") ) ; ___( pstt1m ) ;
+    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/events/*") ) ; ___( pstt1m ) ;
     ZE( strokeS* , pstt1m ) ;
 {
 eventS::pBatClass = new( 0 , tin0P , LF ) batonC( tin0P , TAG( TAGiDnULL ) ) ;
@@ -667,7 +667,7 @@ DEL( pso ) ; //U::
                                                 ZE( byteT* , pbi ) ;
                                             {
                                             FORsTRINGSiN1( pstt1m )
-                                            etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/participants/participant.$.")+TF1(pe->idMe)+td+T("*") ) ; ___( pstt1m ) ;
+                                            etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/participants/participant.$.")+TF1(pe->idMe)+td+T("*") ) ; ___( pstt1m ) ;
                                             ZE( strokeS* , pstt1m ) ;
                                             countT pcTally[ 6 ] = { 0 , 0 , 0 , 0 , 0 , 0 } ;
                                         {
@@ -684,7 +684,7 @@ DEL( pso ) ; //U::
                                     }
                                         else                                        idInterest = *(countT*)pbi ;
                                         if( *((tin1S&)tin0P).zEtScratch || cbi != sizeof idInterest ) *((tin1S&)tin0P).zEtScratch = 0 ;
-                                        ((tin1S&)tin0P).zEtScratch->boxGetShadowF( tin0P , pbi , cbi , T("///ideafarm/ephemeral/domains/com/ideafarm/participants/participant.$.")+TF1(pe->idMe)+td+T(pSession->psttEmail) , 1 ) ;
+                                        ((tin1S&)tin0P).zEtScratch->boxGetShadowF( tin0P , pbi , cbi , T("///ideafarm/ephemeral/participants/participant.$.")+TF1(pe->idMe)+td+T(pSession->psttEmail) , 1 ) ;
                                         ZE( countT , cbi ) ;
                                         ZE( byteT* , pbi ) ;
                                     {
@@ -791,9 +791,9 @@ DEL( pso ) ; //U::
                         ((tin1S&)tin0P).zEtScratch->strWordF( tin0P , psttw , psttnu , sttq , S1C('.') , - 1 ) ; ___( psttw ) ;
                         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                         ZE( strokeS* , psttw ) ;
-                        ((tin1S&)tin0P).zEtScratch->boxPutGenerationF( tin0P , psttnu , T("///ideafarm/ephemeral/domains/com/ideafarm/events/event") , 0x10000 , WS( sOut ) ) ; ___( psttnu ) ;
+                        ((tin1S&)tin0P).zEtScratch->boxPutGenerationF( tin0P , psttnu , T("///ideafarm/ephemeral/events/event") , 0x10000 , WS( sOut ) ) ; ___( psttnu ) ;
                         ZE( strokeS* , psttnu ) ;
-                        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/events/" ) ; tFile += TF3(timeE2,flFORMAT_FOREIGN|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+td+TF3(timeE1,flFORMAT_FOREIGN|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+td+TF3(timeN2,flFORMAT_FOREIGN|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+td+TF3(timeN1,flFORMAT_FOREIGN|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+td+T(((tin1S&)tin0P).osTid) ;
+                        TN( tFile , "///ideafarm/ephemeral/events/" ) ; tFile += TF3(timeE2,flFORMAT_FOREIGN|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+td+TF3(timeE1,flFORMAT_FOREIGN|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+td+TF3(timeN2,flFORMAT_FOREIGN|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+td+TF3(timeN1,flFORMAT_FOREIGN|flFORMAT_UNSIGNED|flFORMAT_FILLzE,8)+td+T(((tin1S&)tin0P).osTid) ;
                         TN( td , "." ) ;
                         
                         ((tin1S&)tin0P).zEtScratch->osTimeNowF( tin0P , timeN1 , timeN2 ) ;
@@ -932,7 +932,7 @@ DEL( pso ) ; //U::
                 }
                     REPLYrEDIRECT( T("calendar.html") , T("**** Calendar ****") , T("</PRE>Your HTTP client is being redirected to remove your new data from the url.<PRE>") )
 
-                    if( pSession ) ((tin1S&)tin0P).zEtScratch->boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/participants/participant.$.")+TF1(idEvent)+td+T(pSession->psttEmail) , (byteT*)&idInterest , sizeof idInterest ) ;
+                    if( pSession ) ((tin1S&)tin0P).zEtScratch->boxPutF( tin0P , T("///ideafarm/ephemeral/participants/participant.$.")+TF1(idEvent)+td+T(pSession->psttEmail) , (byteT*)&idInterest , sizeof idInterest ) ;
                     TN( td , ".$." ) ;
                     countT idInterest = ((tin1S&)tin0P).zEtScratch->strDigitsToSCountF( tin0P , t_interest_Value ) ;
                     countT idEvent    = ((tin1S&)tin0P).zEtScratch->strDigitsToSCountF( tin0P , t_idevent_Value  ) ;
@@ -943,7 +943,7 @@ DEL( pso ) ; //U::
                     }
                         etThread.boxPutF( tin0P , tFile , tData , tData.csF( tin0P ) ) ;
                         TN( tData , "" ) ; tData = TF1(pSession->idTimeZone) ;
-                        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/timeZone/" ) ; tFile += T(pSession->psttEmail) ;
+                        TN( tFile , "///ideafarm/ephemeral/timeZone/" ) ; tFile += T(pSession->psttEmail) ;
 
                         pSession->idTimeZone = ((tin1S&)tin0P).zEtScratch->strDigitsToSCountF( tin0P , t_tz_Value ) ;
                     {
@@ -1083,7 +1083,7 @@ DEL( pso ) ; //U::
 
                     }
                         *((tin1S&)tin0P).zEtScratch = 0 ;
-                        ((tin1S&)tin0P).zEtScratch->boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/stickynotemode/")+T(pSession->psttEmail) , (byteT*)&pSession->idModeStickyNote , 1 , 1 ) ;
+                        ((tin1S&)tin0P).zEtScratch->boxPutF( tin0P , T("///ideafarm/ephemeral/stickynotemode/")+T(pSession->psttEmail) , (byteT*)&pSession->idModeStickyNote , 1 , 1 ) ;
                         if( ++ pSession->idModeStickyNote > 4 ) pSession->idModeStickyNote = 1 ;
                     {
                     if( pSession && !tblKeyValue.cRowsF( tin0P ) )
@@ -1116,8 +1116,8 @@ DEL( pso ) ; //U::
                 {
                 else
                 if( !etThread.diskFileExistsF( tin0P , tFile ) ) bNotFound = 1 ;
-                TN( tTally , "" ) ; tTally = T("///ideafarm/ephemeral/domains/com/ideafarm/tally/")+T(psttFile) ;
-                TN( tFile  , "" ) ; tFile  = T("///ideafarm/ephemeral/domains/com/ideafarm/file/")+T(psttFile) ;
+                TN( tTally , "" ) ; tTally = T("///ideafarm/ephemeral/tally/")+T(psttFile) ;
+                TN( tFile  , "" ) ; tFile  = T("///ideafarm/ephemeral/file/")+T(psttFile) ;
             {
             else if( idRequestType == ifcIDrEQtYPE_FILE )
             }
@@ -1186,7 +1186,7 @@ DEL( pso ) ; //U::
                     TN( tBar , "| " ) ;
                     etThread.strMakeF( tin0P , LF , psttBody , T("") , cEvents * 0x80 ) ; ___( psttBody ) ;
                     ZE( strokeS* , psttBody ) ;
-                    countT cEvents = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/account.event/")+T(pSession->psttEmail)+T("/*") , 0 , 0x1000 ) ; ___( pstt1m ) ;
+                    countT cEvents = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/account.event/")+T(pSession->psttEmail)+T("/*") , 0 , 0x1000 ) ; ___( pstt1m ) ;
                     ZE( strokeS* , pstt1m ) ;
 
                     TN( tHead , "" ) ; tHead = T(ppsttDOS[oDay])+T(" ")+T(ppsttSOQ[oStrong])+T(" ")+T(ppsttQOD[oQtr])+T("\r\n")+TT4(timeN1,timeN2,3,6)+T("\r\n\r\n") ;
@@ -1228,7 +1228,7 @@ DEL( pso ) ; //U::
                     {
                     FORsTRINGSiN1( pstt1m )
                     TN( tEmailWo , "/" ifcEMAIL_OLDfROM "" ) ;
-                    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/humanname/*") , 0 , 0x1000 ) ; ___( pstt1m ) ;
+                    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/humanname/*") , 0 , 0x1000 ) ; ___( pstt1m ) ;
                     ZE( strokeS* , pstt1m ) ;
 
                     tBody += T("citizens:\r\n\"Wo'O Ideafarm\" <" ifcEMAIL_OLDfROM ">\r\n \r\nother residents:\r\n") ;
@@ -1463,7 +1463,7 @@ DEL( pso ) ; //U::
                         {
                         if( etThread.diskFileExistsF( tin0P , tFile ) )
                         boolT bMod = 1 ;
-                        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/timeZone/" ) ; tFile += tEmailValue ;
+                        TN( tFile , "///ideafarm/ephemeral/timeZone/" ) ; tFile += tEmailValue ;
                     {
                     ZE( countT , idTimeZone ) ;
 
@@ -1477,7 +1477,7 @@ DEL( pso ) ; //U::
                             ZE( osTextT* , posti ) ;
                         {
                         if( etThread.diskFileExistsF( tin0P , tFile ) )
-                        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/stickynotemode/" ) ; tFile += tEmailValue ;
+                        TN( tFile , "///ideafarm/ephemeral/stickynotemode/" ) ; tFile += tEmailValue ;
                     {
                     ZE( countT , idModeStickyNote ) ;
 
@@ -1491,7 +1491,7 @@ DEL( pso ) ; //U::
                             ZE( osTextT* , posti ) ;
                         {
                         if( etThread.diskFileExistsF( tin0P , tFile ) )
-                        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/stickynote/" ) ; tFile += tEmailValue ;
+                        TN( tFile , "///ideafarm/ephemeral/stickynote/" ) ; tFile += tEmailValue ;
                     {
                     ZE( strokeS* , psttStickyNote ) ;
 
@@ -1505,7 +1505,7 @@ DEL( pso ) ; //U::
                             ZE( osTextT* , posti ) ;
                         {
                         if( etThread.diskFileExistsF( tin0P , tFile ) )
-                        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/humanname/" ) ; tFile += tEmailValue ;
+                        TN( tFile , "///ideafarm/ephemeral/humanname/" ) ; tFile += tEmailValue ;
                     {
                     ZE( strokeS* , psttHumanName ) ;
                 {
@@ -1539,7 +1539,7 @@ DEL( pso ) ; //U::
                     etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
                     timeS timeN ;
                     tFile += tEmailValue ;
-                    TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/resident.until/" ) ;
+                    TN( tFile , "///ideafarm/ephemeral/resident.until/" ) ;
                 {
                 if( bOk )
                 //etText.ifcSayF( tin0P , T("tmcF/etThread:")+TF1(etThread)+T("/etScratch:")+TF1(etScratch)+T("/A") , flSAY_APPEND | flSAY_LOG ) ;
@@ -1559,7 +1559,7 @@ DEL( pso ) ; //U::
 
                                         }
                                             etThread.boxPutF( tin0P , tFile , sJournal ) ;
-                                            TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/account.event/" ) ; tFile += tEmailValue+T("/")+TF3(timeN2,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF3(timeN1,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF1(((tin1S&)tin0P).osTid) ;
+                                            TN( tFile , "///ideafarm/ephemeral/account.event/" ) ; tFile += tEmailValue+T("/")+TF3(timeN2,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF3(timeN1,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF1(((tin1S&)tin0P).osTid) ;
                                             TN( td , "." ) ;
                                             etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                                             ZE( sCountT , timeN2 ) ;
@@ -1619,7 +1619,7 @@ DEL( pso ) ; //U::
                                         etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
                                         timeS timeN ;
                                         tFile += tEmailValue ;
-                                        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/resident.until/" ) ;
+                                        TN( tFile , "///ideafarm/ephemeral/resident.until/" ) ;
                                         sJournal << days ; // NUMBER OF DAYS PURCHASED
                                         sJournal << (countT)( bDog ? 4 : 5 ) ; //idType
                                         sJournal << (countT)1 ; //idFormat
@@ -1631,7 +1631,7 @@ DEL( pso ) ; //U::
                                         flagsAlert |= flALERT_PLEASEsEThUMANnAME ;
                                         ((tin1S&)tin0P).zEtScratch->boxPutF( tin0P , tFile , tEmailValue , tEmailValue.csF( tin0P ) ) ;
                                         tFile += tEmailValue ;
-                                        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/humanname/" ) ;
+                                        TN( tFile , "///ideafarm/ephemeral/humanname/" ) ;
                                     {
             
                                     }
@@ -1659,7 +1659,7 @@ DEL( pso ) ; //U::
                                         {
                                         if( !((tin1S&)tin0P).zEtScratch->diskFileExistsF( tin0P , tFile ) )
                                         tFile += tEmailValue ;
-                                        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/passcode/" ) ;
+                                        TN( tFile , "///ideafarm/ephemeral/passcode/" ) ;
                                     {
                                 {
                                 if( !etThread && !*((tin1S&)tin0P).zEtScratch )
@@ -1755,7 +1755,7 @@ DEL( pso ) ; //U::
                     FORsTRINGSiN1( pstt1m )
                     flagsAlert |= flALERT_PREPAYCODErEJECTED ; //WILL BE RESET IF ACCEPTED
                     TN( tEmailWo , "/" ifcEMAIL_OLDfROM "" ) ;
-                    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/prepaycode/")+tPrepaycodeValue , 0 , 1 ) ; ___( pstt1m ) ;
+                    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/prepaycode/")+tPrepaycodeValue , 0 , 1 ) ; ___( pstt1m ) ;
                     ZE( strokeS* , pstt1m ) ;
                 {
                 if( tPrepaycodeValue.csF( tin0P ) && !bPasscodeRejected )
@@ -1780,7 +1780,7 @@ DEL( pso ) ; //U::
                     ZE( byteT* , pbi ) ;
 
                     tFile += tEmailValue ;
-                    TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/passcode/" ) ;
+                    TN( tFile , "///ideafarm/ephemeral/passcode/" ) ;
                 {
                 ZE( boolT , bOk ) ;
                 //etText.ifcSayF( tin0P , T("tmcF/etThread:")+TF1(etThread)+T("/etScratch:")+TF1(etScratch)+T("/C") , flSAY_APPEND | flSAY_LOG ) ;
@@ -1980,7 +1980,7 @@ DEL( pso ) ; //U::
                         {
                         else
                         if( pSession->psttStickyNote && pSession->psttStickyNote->idAdam ) ((tin1S&)tin0P).zEtScratch->boxPutF( tin0P , tFile , T(pSession->psttStickyNote) , pSession->psttStickyNote->idAdam ) ;
-                        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/stickynote/" ) ; tFile += T(pSession->psttEmail) ;
+                        TN( tFile , "///ideafarm/ephemeral/stickynote/" ) ; tFile += T(pSession->psttEmail) ;
 
                         psttStickyNote = 0 ;
                         pSession->psttStickyNote = psttStickyNote ;
@@ -2672,7 +2672,7 @@ DONE( tmPeerNameF )
     {
     if( !etThread.diskFileExistsF( tin0P , tFile ) )
     bnnPeer.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/peers/" ) ; tFile += textC( tin0P , TAG( TAGiDnULL ) , *pnnPeer , flFORMAT_FOREIGN|flFORMAT_FILLzE , 8 ) ;
+    TN( tFile , "///ideafarm/ephemeral/peers/" ) ; tFile += textC( tin0P , TAG( TAGiDnULL ) , *pnnPeer , flFORMAT_FOREIGN|flFORMAT_FILLzE , 8 ) ;
 
     batonC&   bnnPeer =  *(batonC*)pTaskP->c2 ;
     nicNameC* pnnPeer = (nicNameC*)pTaskP->c1 ;
@@ -2693,7 +2693,7 @@ DONE( tmPayBirdDogsF )
             }
                 }
                     etThread.boxPutF( tin0P , tFile , sJournal ) ;
-                    TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/account.event/" ) ; tFile += T(psttEmail)+T("/")+TF3(timeN2,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF3(timeN1,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF1(((tin1S&)tin0P).osTid) ;
+                    TN( tFile , "///ideafarm/ephemeral/account.event/" ) ; tFile += T(psttEmail)+T("/")+TF3(timeN2,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF3(timeN1,flFORMAT_FILLzE|flFORMAT_FOREIGN,8)+td+TF1(((tin1S&)tin0P).osTid) ;
                     TN( td , "." ) ;
                     etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
                     ZE( sCountT , timeN2 ) ;
@@ -2726,7 +2726,7 @@ DONE( tmPayBirdDogsF )
         etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;
         timeS timeN ;
         tFile += T(psttEmail) ;
-        TN( tFile , "///ideafarm/ephemeral/domains/com/ideafarm/resident.until/" ) ;
+        TN( tFile , "///ideafarm/ephemeral/resident.until/" ) ;
 
         etThread.strSubstringF( tin0P , psttEmail , idf , sttq , tDelim , psttc1 ) ; ___( psttEmail ) ;
         etThread.delF( tin0P , psttEmail ) ;
@@ -2737,7 +2737,7 @@ DONE( tmPayBirdDogsF )
         ZE( strokeS* , psttEmail ) ;
     {
     FORsTRINGSiN1( pstt1m )
-    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/prepaycode.claim/")+T(psttPrepayCode)+T(".$.*") ) ; ___( pstt1m ) ;
+    etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/prepaycode.claim/")+T(psttPrepayCode)+T(".$.*") ) ; ___( pstt1m ) ;
     ZE( strokeS* , pstt1m ) ;
     //U:: WILL ONLY CREDIT THE WOTH 0001 DOGS
 
@@ -2918,11 +2918,11 @@ voidT eventS::grabF( tin0S& tin0P )
     ether.delF( tin0P , psttKTnote ) ;
     //CAN BE RETRIEVED USING URL="http://www.ideafarm.com/7.1.<idMe>.0.html"
     ether.boxPutHtmlFromKnowledgeTreeBaseF( tin0P , 1 , tShort , tLong , T("myTitle") , T("myCopyright") , psttf ) ;
-    TN( tLong  , WWWiDEAFARMcOM "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/7.1." ) ; tLong  += TF1(idMe) ;
-    TN( tShort ,                "///ideafarm/ephemeral/domains/com/ideafarm/gen/lake/packs/7.1." ) ; tShort += TF1(idMe) ;
-    TN( tPack , "///ideafarm/ephemeral/domains/com/ideafarm/tmp/pack/pack." ) ; tPack += TF1(((tin1S&)tin0P).osTid) ;
+    TN( tLong  , WWWiDEAFARMcOM "///ideafarm/ephemeral/gen/lake/packs/7.1." ) ; tLong  += TF1(idMe) ;
+    TN( tShort ,                "///ideafarm/ephemeral/gen/lake/packs/7.1." ) ; tShort += TF1(idMe) ;
+    TN( tPack , "///ideafarm/ephemeral/tmp/pack/pack." ) ; tPack += TF1(((tin1S&)tin0P).osTid) ;
     ether.delF( tin0P , postKT ) ;
-    ether.boxPutUniqueF( tin0P , psttf , T("///ideafarm/ephemeral/domains/com/ideafarm/tmp/base/base") , postKT , costKT ) ; ___( psttf ) ;
+    ether.boxPutUniqueF( tin0P , psttf , T("///ideafarm/ephemeral/tmp/base/base") , postKT , costKT ) ; ___( psttf ) ;
     ZE( strokeS* , psttf ) ;
 
     ether.delF( tin0P , psttKT ) ;

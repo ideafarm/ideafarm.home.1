@@ -3,7 +3,7 @@
 setlocal
 
 %idrive%
-set v1=\ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop
+set v1=\ideafarm.home.1\ephemeral\city\workshop
 
 if not exist %v1%\tmp md %v1%\tmp
 if not exist %v1%\exe md %v1%\exe

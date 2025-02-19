@@ -24,7 +24,7 @@ set include=%iworkshop%\watcom\H;%iworkshop%\watcom\H\NT;%iworkshop%\watcom\H\NT
 set path=%iworkshop%\WinHelp;%path%;%iworkshop%\watcom\BINNT;%iworkshop%\rimstar\rimstar;%iworkshop%\infozip\unzip.exe;%iworkshop%\infozip\zip.exe;%iworkshop%\openssl\dll
 
 %idrive%:
-if exist \ideafarm.home.1\ephemeral\domains\com\ideafarm\city\workshop\exe\ideafarm.elves.ipdos goto :BUILD
+if exist \ideafarm.home.1\ephemeral\city\workshop\exe\ideafarm.elves.ipdos goto :BUILD
 
 call g el
 call m

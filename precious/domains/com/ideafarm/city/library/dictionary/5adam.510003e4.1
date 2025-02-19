@@ -88,8 +88,8 @@ TODO
 
         writeAllSpeedPagesF( tin0P , etThread , sws_pcRaceClient , psttInP , idComputer , cSourceFiles ) ;
 
-        else           accumulateInfoF( tin0P , etThread , sws_pcRaceClient , idComputer , cSourceFiles , stLife , 0                                                           , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/")+T(psttInP) ) ;
-        if( psttOutP ) accumulateInfoF( tin0P , etThread , sws_pcRaceClient , idComputer , cSourceFiles , stLife , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/")+T(psttOutP) , T("///ideafarm/ephemeral/domains/com/ideafarm/city/data/")+T(psttInP) ) ;
+        else           accumulateInfoF( tin0P , etThread , sws_pcRaceClient , idComputer , cSourceFiles , stLife , 0                                                           , T("///ideafarm/ephemeral/city/data/")+T(psttInP) ) ;
+        if( psttOutP ) accumulateInfoF( tin0P , etThread , sws_pcRaceClient , idComputer , cSourceFiles , stLife , T("///ideafarm/ephemeral/city/data/")+T(psttOutP) , T("///ideafarm/ephemeral/city/data/")+T(psttInP) ) ;
 
         switchStackC sws_pcRaceClient( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , idComputer , flSTACKc_FIFO ) ;
         ZE( countT , idComputer ) ;
@@ -105,7 +105,7 @@ voidT rptGroupF( tin0S& tin0P , etherC& etThread , const strokeS* const psttOutP
             DEL( pli ) ;
 
             etThread.delF( tin0P , postReport ) ;
-            etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/html/report.lifeTime.")+TF1(pli->idAdam)+T(".html") , postReport ) ;
+            etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/gen/html/report.lifeTime.")+TF1(pli->idAdam)+T(".html") , postReport ) ;
             etThread.delF( tin0P , psttrLife ) ;
             etThread.strMakeF( tin0P , LF , postReport , psttrLife ) ; ___( postReport ) ;
             ZE( osTextT* , postReport ) ;
@@ -151,7 +151,7 @@ voidT rptLifeF( tin0S& tin0P , etherC& etThread , stackC& stLifeP )
     etThread.strokeF( tin0P , T("\r" BLANK79 "\r")+T(psttInShort)+T(" (accumulateInfoF: done)") ) ;
 
     etThread.delF( tin0P , postr ) ;
-    etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/html/report.rawData.")+T(psttInShort)+T(".html") , postr ) ;
+    etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/gen/html/report.rawData.")+T(psttInShort)+T(".html") , postr ) ;
     etThread.delF( tin0P , psttr ) ;
     etThread.strMakeF( tin0P , LF , postr , psttr ) ; ___( postr ) ;
     ZE( osTextT* , postr ) ;
@@ -573,7 +573,7 @@ voidT writeAllSpeedPagesF( tin0S& tin0P , etherC& etThread , switchStackC& sws_p
 }
     etThread.strokeF( tin0P , T("\r" BLANK79 "\r(rptListOfSpeedPagesF: done)") ) ;
     etThread.delF( tin0P , postr ) ;
-    etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/html/report.speed.menu.html") , postr ) ;
+    etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/gen/html/report.speed.menu.html") , postr ) ;
     etThread.delF( tin0P , psttr ) ;
     etThread.strMakeF( tin0P , LF , postr , psttr ) ; ___( postr ) ;
     ZE( osTextT* , postr ) ;
@@ -587,7 +587,7 @@ voidT writeAllSpeedPagesF( tin0S& tin0P , etherC& etThread , switchStackC& sws_p
     }
         }
             etThread.delF( tin0P , postrNode ) ;
-            etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/html/report.speed.")+tIdComputer+T(".html") , postrNode ) ;
+            etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/gen/html/report.speed.")+tIdComputer+T(".html") , postrNode ) ;
             etThread.delF( tin0P , psttrNode ) ;
             etThread.strMakeF( tin0P , LF , postrNode , psttrNode ) ; ___( postrNode ) ;
             ZE( osTextT* , postrNode ) ;
@@ -597,7 +597,7 @@ voidT writeAllSpeedPagesF( tin0S& tin0P , etherC& etThread , switchStackC& sws_p
             etThread.strFuseF( tin0P , psttrNode , tTitleNode ) ; ___( psttrNode ) ;
 
             }
-                etThread.strFuseF( tin0P , psttrNode , T("<A HREF=\"http://city.center.ideafarm.com///ideafarm/ephemeral/domains/com/ideafarm/gen/html/report.speed.")+tIdComputer+T(".")+tIdPoolClient+T(".html\">")+tIdPoolClient+T("</A>\r\n") ) ; ___( psttrNode ) ;
+                etThread.strFuseF( tin0P , psttrNode , T("<A HREF=\"http://city.center.ideafarm.com///ideafarm/ephemeral/gen/html/report.speed.")+tIdComputer+T(".")+tIdPoolClient+T(".html\">")+tIdPoolClient+T("</A>\r\n") ) ; ___( psttrNode ) ;
                 TN( tIdPoolClient , (strokeS*)TF3(idPoolClient,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
                 sws_idPoolClient >> idPoolClient ;
                 ZE( countT , idPoolClient ) ;
@@ -614,7 +614,7 @@ voidT writeAllSpeedPagesF( tin0S& tin0P , etherC& etThread , switchStackC& sws_p
             textC tTitleNode = T("<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\"><HEAD><TITLE>IdeaFarm " "(tm) City - speeds for node ")+tIdComputer+T("</TITLE></HEAD><BODY><PRE>\r\n") ;
         {
 
-        etThread.strFuseF( tin0P , psttr , T("<A HREF=\"http://city.center.ideafarm.com///ideafarm/ephemeral/domains/com/ideafarm/gen/html/report.speed.")+tIdComputer+T(".html\">")+tIdComputer+T("</A>\r\n") ) ; ___( psttr ) ;
+        etThread.strFuseF( tin0P , psttr , T("<A HREF=\"http://city.center.ideafarm.com///ideafarm/ephemeral/gen/html/report.speed.")+tIdComputer+T(".html\">")+tIdComputer+T("</A>\r\n") ) ; ___( psttr ) ;
 
         TN( tIdComputer , (strokeS*)TF3(idComputer,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8) ) ;
         idComputer = sws_idPoolClient.leverF( tin0P , idf ) ;
@@ -669,7 +669,7 @@ voidT writeAllSpeedPagesF( tin0S& tin0P , etherC& etThread , switchStackC& sws_p
     {
     ZE( strokeS* , psttr ) ;
 
-    countT cPages = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/html/report.speed.*") ) ; ___( pstt1m ) ;
+    countT cPages = etThread.boxMenuF( tin0P , soul1m , T("///ideafarm/ephemeral/gen/html/report.speed.*") ) ; ___( pstt1m ) ;
     ZE( strokeS* , pstt1m ) ;
     etThread.strokeF( tin0P , T("\r" BLANK79 "\r(rptListOfSpeedPagesF: list the files)") ) ;
 
@@ -687,7 +687,7 @@ voidT rptListOfSpeedPagesF( tin0S& tin0P , etherC& etThread )
     etThread.delF( tin0P , psttInShort ) ;
 
     etThread.delF( tin0P , postReport ) ;
-    etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/domains/com/ideafarm/gen/html/report.speed")+(idComputerP?T(".")+TF3(idComputerP,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8):T(""))+(idPoolClientP?T(".")+TF3(idPoolClientP,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8):T(""))+(psttInP?T(".")+T(psttInP):T(""))+T(".html") , postReport ) ;
+    etThread.boxPutF( tin0P , T("///ideafarm/ephemeral/gen/html/report.speed")+(idComputerP?T(".")+TF3(idComputerP,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8):T(""))+(idPoolClientP?T(".")+TF3(idPoolClientP,flFORMAT_UNSIGNED|flFORMAT_FILLzE,8):T(""))+(psttInP?T(".")+T(psttInP):T(""))+T(".html") , postReport ) ;
     etThread.delF( tin0P , psttrSpeed ) ;
     etThread.strMakeF( tin0P , LF , postReport , psttrSpeed ) ; ___( postReport ) ;
     ZE( osTextT* , postReport ) ;

@@ -61,7 +61,7 @@ STATE0
                             ((tin1S&)tin0P).zEtScratch->diskFileOrDirDeleteF( tin0P , psttc2 ) ;
                         {
                         FORsTRINGSiN2( pstt1f )
-                        ((tin1S&)tin0P).zEtScratch->diskFindFileOrDirOldF( tin0P , pstt1f , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttEmail)+T(".$note.b.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
+                        ((tin1S&)tin0P).zEtScratch->diskFindFileOrDirOldF( tin0P , pstt1f , T("///ideafarm/ephemeral/payment/")+T(psttEmail)+T(".$note.b.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
 
                         ((tin1S&)tin0P).zEtScratch->delF( tin0P , pstt1f ) ;
                         }
@@ -70,7 +70,7 @@ STATE0
                             ((tin1S&)tin0P).zEtScratch->diskFileOrDirDeleteF( tin0P , psttc1 ) ;
                         {
                         FORsTRINGSiN1( pstt1f )
-                        ((tin1S&)tin0P).zEtScratch->diskFindFileOrDirOldF( tin0P , pstt1f , T("///ideafarm/ephemeral/domains/com/ideafarm/payment/")+T(psttEmail)+T(".$note.9.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
+                        ((tin1S&)tin0P).zEtScratch->diskFindFileOrDirOldF( tin0P , pstt1f , T("///ideafarm/ephemeral/payment/")+T(psttEmail)+T(".$note.9.1.1.*") , 0 , 0x10 ) ; //THE MAX IS TO AVOID ATTACK; NO WO WOULD MAKE 01 PAYMENTS WITHOUT BINDING THEM TO A COMPUTER
                         ZE( strokeS* , pstt1f ) ;
                     {
                     ZE( countT , cBound ) ;
@@ -158,7 +158,7 @@ voidT jobHearOrderF( tin0S& tin0P , etherC& ether , etherC& etThread , const cou
         ZE( byteT* , pbe ) ;
     {
     if( ether.diskFileExistsF( tin0P , tFile ) )
-    TN( tFile , "" ) ; tFile = T("///ideafarm/ephemeral/domains/com/ideafarm/")+TF1(DDNUMB)+T("/timeExpire.")+TF1(idComputerP)+T(".")+TF1(idTypeP) ;
+    TN( tFile , "" ) ; tFile = T("///ideafarm/ephemeral/")+TF1(DDNUMB)+T("/timeExpire.")+TF1(idComputerP)+T(".")+TF1(idTypeP) ;
             
     timeS timeRemaining ;
 {
@@ -185,7 +185,7 @@ voidT queryTimeF( tin0S& tin0P , etherC& ether , countT& time1P , sCountT& time2
     ether.osTimeNowF( tin0P , timeExpires.time1 , timeExpires.time2 ) ;
     timeS timeExpires ;
     
-    TN( tFile , "" ) ; tFile = T("///ideafarm/ephemeral/domains/com/ideafarm/")+TF1(DDNUMB)+T("/timeExpire.")+TF1(idComputerP)+T(".")+TF1(idTypeP) ;
+    TN( tFile , "" ) ; tFile = T("///ideafarm/ephemeral/")+TF1(DDNUMB)+T("/timeExpire.")+TF1(idComputerP)+T(".")+TF1(idTypeP) ;
 {
 voidT addTimeF( tin0S& tin0P , etherC& ether , const countT idComputerP , const countT time1P , const sCountT time2P , const countT idTypeP )
 
