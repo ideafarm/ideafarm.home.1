@@ -33,7 +33,7 @@ DONE( tmWorkF )
                     }
                         ((tin1S&)tin0P).pEtScratch->delF( tin0P , pbr ) ;
 
-                        //while( cTries -- ) sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
+                        /*while( cTries -- )*/ sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
                         //KEEP THE REPLY SUPPRESSED UNTIL I FULLY UNDERSTAND HOW TO PREVENT ME FROM BEING USED MALICIOUSLY
                         //U::DISABLED TO PREVENT ME FROM BEING USED TO ATTACK SPOOFED REQUESTER
 
@@ -150,6 +150,7 @@ DONE( tmWorkF )
                                             else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn3Space    ) ) nnOut = nnRoot ;
                                             else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn2Space    ) ) nnOut = nnRoot ;
                                             else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn1Space    ) ) nnOut = nnRoot ;
+                                            else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHooks         ) ) nnOut = nnWebHook1 ;
 
                                             }
                                                 //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("looked up teacher's nicNameC value: ")+T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
@@ -246,6 +247,7 @@ DONE( tmWorkF )
 
                 TELL( "preparing to handle a query packet" ) ;
                 //CONoUTrAW( "request received\r\n" ) ;
+                etRock.traceF( tin0P , T("[nnPeer]:    ")+T(nnPeer) ) ;
                 sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
                 //CONoUTrAW( "ho hum\r\n" ) ;
                 TELL( "waiting for a query datagram" ) ;
@@ -255,6 +257,7 @@ DONE( tmWorkF )
                 ZE( byteT* , pbq ) ;
             {
             while( !POOP && !ether && !etThread && !*((tin1S&)tin0P).pEtScratch )
+            etherC& etRock = etherC::etRockIF( tin0P ) ;
 
             //nicNameC nnRoot2 = etThread.sockNicNameF( tin0P , T("69.0.244.16") ) ;
 
@@ -265,6 +268,10 @@ DONE( tmWorkF )
             //nicNameC nnRoot( 0x40ef0525 ) ;    // ifc5: 64.239.5.37
             //nicNameC nnRoot( 0xd8a2a931 ) ;    // ifc4: 216.162.169.49
             //nicNameC nnRoot( 0x0a010102 ) ;    // 10.1.1.2 //U:
+
+          //nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , T("wh1.ideafarm.com") ) ;
+          //nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , T("251.252.253.254") ) ;
+            nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , T("64.176.194.89") ) ;       //wh1.ideafarm.com
 
             nicNameC nnRelayPortCraft = nicNameC( ifcIDpORT_RELAYcRAFT ) ;
             nicNameC nnRelayPortTest  = nicNameC( ifcIDpORT_RELAYtEST ) ;
@@ -302,8 +309,9 @@ DONE( tmWorkF )
             TN( tWww   ,     "www.ideafarm.com" ) ;
             TN( tMail  ,    "mail.ideafarm.com" ) ;
             TN( tTest  ,    "test.ideafarm.com" ) ;
-            TN( tEmail ,       ifcEMAIL_DNS ) ;
-            TN( tRoot  ,         "ideafarm.com" ) ;
+            TN( tWebHooks , "webhooks.hidden.ideafarm.com" ) ;
+            TN( tEmail ,    ifcEMAIL_DNS ) ;
+            TN( tRoot  ,    "ideafarm.com" ) ;
 
             sockd.bindF( tin0P , ifcPORToLD2_DNS ) ;
             socketC sockd( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
