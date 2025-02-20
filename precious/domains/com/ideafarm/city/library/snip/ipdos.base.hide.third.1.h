@@ -12147,6 +12147,7 @@ these values are used in the foreign domain name system
 #define ifcIDtYPEdNSqUERY_AXFR                    0x00fc
 #define ifcIDtYPEdNSqUERY_MAILB                   0x00fd
 #define ifcIDtYPEdNSqUERY_ALL                     0x00ff
+#define ifcIDtYPEdNSqUERY_CAA                     0x0101
 /*3*/
 
 
