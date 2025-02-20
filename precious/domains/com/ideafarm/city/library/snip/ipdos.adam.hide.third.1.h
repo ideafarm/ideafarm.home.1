@@ -11831,7 +11831,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_SMUDGEsOIXLoLDdEFS                                   0x510005f4
 #define ifcIDaDAM_GORILLAlISTS                                         0x510005fc
 #define ifcIDaDAM_NULL                                                 0x51000613
-#define ifcIDaDAM_DNS                                                  0x51000614
+#define ifcIDaDAM_DNS                                                  0x51000895
 #define ifcIDaDAM_CONSOLE                                              0x510007ef
 #define ifcIDaDAM_ADAM                                                 0x51000620
 #define ifcIDaDAM_EVE                                                  0x51000621
@@ -48325,6 +48325,7 @@ use this rather than _ to avoid the overhead of _
 #define flHOMEsaDAMS_ICISbOT                   0xe0004008
 #define flHOMEsaDAMS_ADMINISTRATOR             0xe0008008
 #define flHOMEsaDAMS_WELCOMER                  0xe0010008
+#define flHOMEsaDAMS_DNS                       0xe0020008
 /*3*/
 #define flHOMEsaDAMS_null    0xe0000008
 
