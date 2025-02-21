@@ -252,16 +252,32 @@ DONE( tmWorkF )
                         TELL( "preparing to handle a query packet" ) ;
                         etRock.traceF( tin0P , tSayPrefix+T(nnPeer) ) ;
                     {
-                    //else
+                    else
                     if( !bAllowed ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayReject2 ) ;
 
                     ;
-
+    
                         || nnPeer == nnReserved2
                         || nnPeer == nnReserved1
-                        nnsWhite & nnPeer
+                        || nnsWhite & nnPeer
+                        bAllowedDomain
 
                     const boolT bAllowed =
+
+                    }
+                        ether.delF( tin0P , psttPeer ) ;
+                        }
+                            bAllowedDomain = idHit && idHit == 1 + psttPeer->idAdam - tAllowedDomain1.csF( tin0P ) ;
+                            countT idHit = etThread.strIdF( tin0P , tAllowedDomain1 , psttPeer , 1 ) ;
+
+                            etThread.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
+                        {
+                        else
+                        if( !psttPeer ) ether.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
+                        ether.sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
+                        ZE( strokeS* , psttPeer ) ;
+                    {
+                    ZE( boolT , bAllowedDomain ) ;
 
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
                     //CONoUTrAW( "ho hum\r\n" ) ;
@@ -365,6 +381,8 @@ DONE( tmWorkF )
         ZE( countT , idComputer ) ;
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
+
+        TN( tAllowedDomain1 , ".compute.amazonaws.com" ) ;
 
         nicNameC nnReserved2     = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
         nicNameC nnReserved1     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
