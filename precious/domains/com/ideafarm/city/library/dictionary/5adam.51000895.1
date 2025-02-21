@@ -252,18 +252,13 @@ DONE( tmWorkF )
                         TELL( "preparing to handle a query packet" ) ;
                         etRock.traceF( tin0P , tSayPrefix+T(nnPeer) ) ;
                     {
-                    else
-                    if( !bAllowed ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayReject2 ) ;
+                    //else
+                    if( !bAllowed ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayReject2 ) ;         //U::ENABLE AFTER ENSURING THAT I CAN RDP IN FROM RESERVED AND FROM LAPTOP
 
                     ;
 
                         || nnPeer == nnReserved
-                        || nnPeer == nnLaptopOffice5
-                        || nnPeer == nnLaptopOffice4
-                        || nnPeer == nnLaptopOffice3
-                        || nnPeer == nnLaptopOffice2
-                        || nnPeer == nnLaptopOffice1
-                        || nnPeer == nnLaptopOffice0
+                        || nnPeer == nnLaptopOffice
                         nnsWhite & nnPeer
 
                     const boolT bAllowed =
@@ -277,7 +272,8 @@ DONE( tmWorkF )
                     ZE( byteT* , pbq ) ;
                 {
                 while( !POOP && !ether && !etThread && !*((tin1S&)tin0P).pEtScratch )
-                TN( tSayReject2 , "    IGNORED (not on white list)" ) ;
+                //TN( tSayReject2 , "    IGNORED (not on white list)" ) ;
+                TN( tSayReject2 , "    WOULD BE IGNORED (not on white list)" ) ;
                 TN( tSayPrefix  , "[nnPeer]:    " ) ;
                 etherC& etRock = etherC::etRockIF( tin0P ) ;
 
@@ -370,14 +366,8 @@ DONE( tmWorkF )
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
 
-        nicNameC nnLaptopOffice5 = etThread.sockNicNameF( tin0P , T("74.125.181.146") ) ;
-        nicNameC nnLaptopOffice4 = etThread.sockNicNameF( tin0P , T("74.125.181.146") ) ;
-        nicNameC nnLaptopOffice3 = etThread.sockNicNameF( tin0P , T("172.253.9.212") ) ;
-        nicNameC nnLaptopOffice2 = etThread.sockNicNameF( tin0P , T("172.253.1.16") ) ;
-        nicNameC nnLaptopOffice1 = etThread.sockNicNameF( tin0P , T("156.154.38.143") ) ;
-
         nicNameC nnReserved     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
-        nicNameC nnLaptopOffice0 = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
+        nicNameC nnLaptopOffice = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
         nicNamesAllowedStripeWebHookNotificationsC nnsWhite( tin0P , etThread , ether , TICK << 4 ) ;      // "<< 4" IN PRODUCTION
 
         //CONoUTrAW( "main/5\r\n" ) ; //U::
