@@ -258,7 +258,10 @@ DONE( tmWorkF )
                     ;
 
                         || nnPeer == nnReserved
-                        || nnPeer == nnLaptopOffice
+                        || nnPeer == nnLaptopSil1PhoneHotspot6
+                        || nnPeer == nnLaptopSil1PhoneHotspot4
+                        || nnPeer == nnLaptopSil1OfficeHotspot
+                        || nnPeer == nnLaptopSil1OfficeWired
                         nnsWhite & nnPeer
 
                     const boolT bAllowed =
@@ -367,7 +370,12 @@ DONE( tmWorkF )
         nicNameC nnSingularity ;
 
         nicNameC nnReserved     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
-        nicNameC nnLaptopOffice = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
+
+        nicNameC nnLaptopSil1PhoneHotspot6 = etThread.sockNicNameF( tin0P , T("2600:387:15:5012::4") ) ;
+        nicNameC nnLaptopSil1PhoneHotspot4 = etThread.sockNicNameF( tin0P , T("72.159.157.28") ) ;
+        nicNameC nnLaptopSil1OfficeHotspot = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
+        nicNameC nnLaptopSil1OfficeWired   = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
+
         nicNamesAllowedStripeWebHookNotificationsC nnsWhite( tin0P , etThread , ether , TICK << 4 ) ;      // "<< 4" IN PRODUCTION
 
         //CONoUTrAW( "main/5\r\n" ) ; //U::
