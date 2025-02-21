@@ -253,8 +253,15 @@ DONE( tmWorkF )
                         etRock.traceF( tin0P , tSayPrefix+T(nnPeer) ) ;
                     {
                     else
-                    if( !bWhite ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayReject2 ) ;
-                    const boolT bWhite = nnsWhite & nnPeer ;
+                    if( !bAllowed ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayReject2 ) ;
+
+                    ;
+
+                        || nnPeer == nnReserved
+                        || nnPeer == nnLaptopOffice
+                        nnsWhite & nnPeer
+
+                    const boolT bAllowed =
 
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
                     //CONoUTrAW( "ho hum\r\n" ) ;
@@ -357,6 +364,9 @@ DONE( tmWorkF )
         ZE( countT , idComputer ) ;
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
+
+        nicNameC nnReserved     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
+        nicNameC nnLaptopOffice = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
         nicNamesAllowedStripeWebHookNotificationsC nnsWhite( tin0P , etThread , ether , TICK << 4 ) ;      // "<< 4" IN PRODUCTION
 
         //CONoUTrAW( "main/5\r\n" ) ; //U::
