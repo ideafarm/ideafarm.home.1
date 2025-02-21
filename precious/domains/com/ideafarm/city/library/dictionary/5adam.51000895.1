@@ -252,16 +252,13 @@ DONE( tmWorkF )
                         TELL( "preparing to handle a query packet" ) ;
                         etRock.traceF( tin0P , tSayPrefix+T(nnPeer) ) ;
                     {
-                    //else
-                    if( !bAllowed ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayReject2 ) ;         //U::ENABLE AFTER ENSURING THAT I CAN RDP IN FROM RESERVED AND FROM LAPTOP
+                    else
+                    if( !bAllowed ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayReject2 ) ;
 
                     ;
 
-                        || nnPeer == nnReserved
-                        || nnPeer == nnLaptopSil1PhoneHotspot6
-                        || nnPeer == nnLaptopSil1PhoneHotspot4
-                        || nnPeer == nnLaptopSil1OfficeHotspot
-                        || nnPeer == nnLaptopSil1OfficeWired
+                        || nnPeer == nnReserved2
+                        || nnPeer == nnReserved1
                         nnsWhite & nnPeer
 
                     const boolT bAllowed =
@@ -329,7 +326,7 @@ DONE( tmWorkF )
                 TN( tWww   ,     "www.ideafarm.com" ) ;
                 TN( tMail  ,    "mail.ideafarm.com" ) ;
                 TN( tTest  ,    "test.ideafarm.com" ) ;
-                TN( tGorilla1 , "g1.hidden.ideafarm.com" ) ;
+                TN( tGorilla1 , "go1.hidden.ideafarm.com" ) ;
                 TN( tWebHooks , "webhooks.hidden.ideafarm.com" ) ;
                 TN( tEmail ,    ifcEMAIL_DNS ) ;
                 TN( tRoot  ,    "ideafarm.com" ) ;
@@ -369,7 +366,8 @@ DONE( tmWorkF )
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
 
-        nicNameC nnReserved     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
+        nicNameC nnReserved2     = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
+        nicNameC nnReserved1     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
 
         nicNameC nnLaptopSil1PhoneHotspot6 = etThread.sockNicNameF( tin0P , T("2600:387:15:5012::4") ) ;
         nicNameC nnLaptopSil1PhoneHotspot4 = etThread.sockNicNameF( tin0P , T("72.159.157.28") ) ;
