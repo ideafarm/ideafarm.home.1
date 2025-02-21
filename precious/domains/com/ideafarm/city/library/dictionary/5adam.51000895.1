@@ -151,7 +151,8 @@ DONE( tmWorkF )
                                             else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn3Space    ) ) nnOut = nnRoot ;
                                             else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn2Space    ) ) nnOut = nnRoot ;
                                             else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn1Space    ) ) nnOut = nnRoot ;
-                                            else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHooks         ) ) nnOut = nnWebHook1 ;
+                                            else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tGorilla1    ) ) nnOut = nnGorilla1 ;
+                                            else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHooks    ) ) nnOut = nnWebHook1 ;
 
                                             }
                                                 //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("looked up teacher's nicNameC value: ")+T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
@@ -270,9 +271,13 @@ DONE( tmWorkF )
             //nicNameC nnRoot( 0xd8a2a931 ) ;    // ifc4: 216.162.169.49
             //nicNameC nnRoot( 0x0a010102 ) ;    // 10.1.1.2 //U:
 
+            nicNameC nnGorilla1       = etThread.sockNicNameF( tin0P , T("149.28.37.127") ) ;
+
           //nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , T("wh1.ideafarm.com") ) ;
           //nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , T("251.252.253.254") ) ;
-            nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , T("64.176.194.89") ) ;       //wh1.ideafarm.com
+
+            nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , T("207.246.94.152") ) ;       //wh1.ideafarm.com
+          //nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , T("64.176.194.89") ) ;       //wh1.ideafarm.com
 
             nicNameC nnRelayPortCraft = nicNameC( ifcIDpORT_RELAYcRAFT ) ;
             nicNameC nnRelayPortTest  = nicNameC( ifcIDpORT_RELAYtEST ) ;
@@ -310,6 +315,7 @@ DONE( tmWorkF )
             TN( tWww   ,     "www.ideafarm.com" ) ;
             TN( tMail  ,    "mail.ideafarm.com" ) ;
             TN( tTest  ,    "test.ideafarm.com" ) ;
+            TN( tGorilla1 , "g1.hidden.ideafarm.com" ) ;
             TN( tWebHooks , "webhooks.hidden.ideafarm.com" ) ;
             TN( tEmail ,    ifcEMAIL_DNS ) ;
             TN( tRoot  ,    "ideafarm.com" ) ;
