@@ -187,6 +187,7 @@ DONE( tmWorkF )
                                             *ps >> idType ;
                                             ZE( countT , idType ) ;
 
+                                            etThread.traceF( tin0P , T("[domain]:    \"")+T(psttw)+T("\"") ) ;
                                             ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
                                             *ps >> psttw ;
                                             ZE( strokeS* , psttw ) ;
@@ -253,7 +254,7 @@ DONE( tmWorkF )
                         TELL( "preparing to handle a query packet" ) ;
                         etRock.traceF( tin0P , tSayPrefix+T(nnPeer) ) ;
                     {
-                    else
+                    //else
                     if( !bAllowed ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayReject2 ) ;
 
                     ;
@@ -289,8 +290,8 @@ DONE( tmWorkF )
                     ZE( byteT* , pbq ) ;
                 {
                 while( !POOP && !ether && !etThread && !*((tin1S&)tin0P).pEtScratch )
-                TN( tSayReject2 , "    IGNORED (not on white list)" ) ;
-                //TN( tSayReject2 , "    WOULD BE IGNORED (not on white list)" ) ;
+                //TN( tSayReject2 , "    IGNORED (not on white list)" ) ;
+                TN( tSayReject2 , "    WOULD BE IGNORED (not on white list)" ) ;
                 TN( tSayPrefix  , "[nnPeer]:    " ) ;
                 etherC& etRock = etherC::etRockIF( tin0P ) ;
 
@@ -400,7 +401,21 @@ DONE( tmWorkF )
         TELL( "preparing for work" ) ;
     {
     else
-    if( !tIpWebHook1.csF( tin0P ) || !tIpGorilla1.csF( tin0P ) || !tDomainLeafWebHooks.csF( tin0P ) || !tDomainLeafWebHook1.csF( tin0P ) ) etThread.traceF( tin0P , T("a required setting is missing [tIpWebHook1,tIpGorilla1,tDomainLeafWebHooks,tDomainLeafWebHook1]:    \"")+tIpWebHook1+T("\"    \"")+tIpGorilla1+T("\"    \"")+tDomainLeafWebHooks+T("\"    \"")+tDomainLeafWebHook1+T("\"") ) ;
+    }
+        etThread.traceF( tin0P , T("a required setting is missing") ) ;
+    {
+    )
+        !tDomainLeafWebHook1.csF( tin0P )
+        ||
+        !tDomainLeafWebHooks.csF( tin0P )
+        ||
+        !tIpGorilla1.csF( tin0P )
+        ||
+        !tIpWebHook1.csF( tin0P )
+    (
+    if
+
+    etThread.traceF( tin0P , T("settings [tIpWebHook1,tIpGorilla1,tDomainLeafWebHooks,tDomainLeafWebHook1]:    \"")+tIpWebHook1+T("\"    \"")+tIpGorilla1+T("\"    \"")+tDomainLeafWebHooks+T("\"    \"")+tDomainLeafWebHook1+T("\"") ) ;
 
     }
         etThread.delF( tin0P , psttEat ) ;
