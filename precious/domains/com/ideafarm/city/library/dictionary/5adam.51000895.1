@@ -154,7 +154,8 @@ DONE( tmWorkF )
                                                     else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn2Space    ) ) nnOut = nnRoot ;
                                                     else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn1Space    ) ) nnOut = nnRoot ;
                                                     else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tGorilla1    ) ) nnOut = nnGorilla1 ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHooks    ) ) nnOut = nnWebHook1 ;
+                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
 
                                                     }
                                                         //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("looked up teacher's nicNameC value: ")+T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
@@ -304,7 +305,7 @@ DONE( tmWorkF )
                 //nicNameC nnRoot( 0x0a010102 ) ;    // 10.1.1.2 //U:
 
                 nicNameC nnGorilla1       = etThread.sockNicNameF( tin0P , tIpGorilla1 ) ;
-                nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , tIpWebhook1 ) ;
+                nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , tIpWebHook1 ) ;
 
                 nicNameC nnRelayPortCraft = nicNameC( ifcIDpORT_RELAYcRAFT ) ;
                 nicNameC nnRelayPortTest  = nicNameC( ifcIDpORT_RELAYtEST ) ;
@@ -343,7 +344,8 @@ DONE( tmWorkF )
                 TN( tMail  ,    "mail.ideafarm.com" ) ;
                 TN( tTest  ,    "test.ideafarm.com" ) ;
                 TN( tGorilla1 , "go1.hidden.ideafarm.com" ) ;
-                TN( tWebHooks , "webhooks.hidden.ideafarm.com" ) ;
+                TN( tWebHook1 , "" ) ; tWebHook1 = tDomainLeafWebHook1+T(".hidden.ideafarm.com") ;
+                TN( tWebHooks , "" ) ; tWebHooks = tDomainLeafWebHooks+T(".hidden.ideafarm.com") ;
                 TN( tEmail ,    ifcEMAIL_DNS ) ;
                 TN( tRoot  ,    "ideafarm.com" ) ;
 
@@ -398,7 +400,7 @@ DONE( tmWorkF )
         TELL( "preparing for work" ) ;
     {
     else
-    if( !tIpWebhook1.csF( tin0P ) || !tIpGorilla1.csF( tin0P ) ) etThread.traceF( tin0P , T("a required setting is missing [tIpWebhook1,tIpGorilla1]:    \"")+tIpWebhook1+T("\"    \"")+tIpGorilla1+T("\"") ) ;
+    if( !tIpWebHook1.csF( tin0P ) || !tIpGorilla1.csF( tin0P ) || !tDomainLeafWebHooks.csF( tin0P ) || !tDomainLeafWebHook1.csF( tin0P ) ) etThread.traceF( tin0P , T("a required setting is missing [tIpWebHook1,tIpGorilla1,tDomainLeafWebHooks,tDomainLeafWebHook1]:    \"")+tIpWebHook1+T("\"    \"")+tIpGorilla1+T("\"    \"")+tDomainLeafWebHooks+T("\"    \"")+tDomainLeafWebHook1+T("\"") ) ;
 
     }
         etThread.delF( tin0P , psttEat ) ;
@@ -409,10 +411,24 @@ DONE( tmWorkF )
 
     }
         etThread.delF( tin0P , psttEat ) ;
-        tIpWebhook1 = T(psttEat) ;
+        tIpWebHook1 = T(psttEat) ;
         ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh1")  ) ; ___( psttEat ) ;
     {
-    TN( tIpWebhook1 , "" ) ;
+    TN( tIpWebHook1 , "" ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tDomainLeafWebHook1 = T(psttEat) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.wh1")  ) ; ___( psttEat ) ;
+    {
+    TN( tDomainLeafWebHook1 , "" ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tDomainLeafWebHooks = T(psttEat) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.webhooks")  ) ; ___( psttEat ) ;
+    {
+    TN( tDomainLeafWebHooks , "" ) ;
 
     _IO_
 {
