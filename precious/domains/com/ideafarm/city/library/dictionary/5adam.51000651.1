@@ -411,22 +411,23 @@ DONE( tmWorkF )
             &t13Bounce         ,
             &t12EatingSoil     ,
             &t11DropSoil       ,
-            &tDeskUser         ,
-            &tDesk             ,
+            &tLongUserFolder   ,
+            &tLongTMFolder     ,
         {
         textC* pptDir[] =
         _IO_
     {
-    TN( t22FlushToArchive , "///ideafarm/IdeaFarm " "(tm)/" ) ; t22FlushToArchive += tUser+T("/2.2. Filesets Awaiting Flushing To An Archive/"      ) ;
-    TN( t21DropArchive    , "///ideafarm/IdeaFarm " "(tm)/" ) ; t21DropArchive    += tUser+T("/2.1. Drop Files Here To Archive Them/"               ) ;
-    TN( t14PickSoil       , "///ideafarm/IdeaFarm " "(tm)/" ) ; t14PickSoil       += tUser+T("/1.4. Pick Up Completed SOIL (tm) Text Files Here/"   ) ;
-    TN( t13Bounce         , "///ideafarm/IdeaFarm " "(tm)/" ) ; t13Bounce         += tUser+T("/1.3. Pick Up Rejected SOIL (tm) Text Files Here/"    ) ;
-    TN( t12EatingSoil     , "///ideafarm/IdeaFarm " "(tm)/" ) ; t12EatingSoil     += tUser+T("/1.2. SOIL (tm) Text Files Being Eaten/"              ) ;
-    TN( t11DropSoil       , "///ideafarm/IdeaFarm " "(tm)/" ) ; t11DropSoil       += tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/"      ) ;
-    TN( tDeskUser         , "///ideafarm/IdeaFarm " "(tm)/" ) ; tDeskUser += tUser+T("/") ;
-    TN( tDesk             , "///ideafarm/IdeaFarm " "(tm)/" ) ;
+    TN( t22FlushToArchive , ""                              ) ; t22FlushToArchive = tLongUserFolder+T("2.2. Filesets Awaiting Flushing To An Archive/"      ) ;
+    TN( t21DropArchive    , ""                              ) ; t21DropArchive    = tLongUserFolder+T("2.1. Drop Files Here To Archive Them/"               ) ;
+    TN( t14PickSoil       , ""                              ) ; t14PickSoil       = tLongUserFolder+T("1.4. Pick Up Completed SOIL (tm) Text Files Here/"   ) ;
+    TN( t13Bounce         , ""                              ) ; t13Bounce         = tLongUserFolder+T("1.3. Pick Up Rejected SOIL (tm) Text Files Here/"    ) ;
+    TN( t12EatingSoil     , ""                              ) ; t12EatingSoil     = tLongUserFolder+T("1.2. SOIL (tm) Text Files Being Eaten/"              ) ;
+    TN( t11DropSoil       , ""                              ) ; t11DropSoil       = tLongUserFolder+T("1.1. Drop a Copy of SOIL (tm) Text Files Here/"      ) ;
 
-    TN( tUser         , thirdC::postUserNameIF() ) ;
+    TN( tLongUserFolder   , ""                              ) ; tLongUserFolder   = tLongTMFolder+tUser+T("/") ;
+
+    TN( tLongTMFolder     , "///ideafarm/IdeaFarm " "(tm)/" ) ;
+    TN( tUser             , thirdC::postUserNameIF() ) ;
 
     }
         etThread.delF( tin0P , psttName ) ;
@@ -863,8 +864,10 @@ DONE( tmCleanF )
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
                 if( bWoth ) bWoth = 0 ;
+                if( !bWoth ) etThread.traceF( tin0P , T("waited  for a change [tDrop]:    ")+tDrop ) ;
             {
             if( etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tDrop , flWAITdIR_DIRnAME ) || bWoth )
+            if( !bWoth ) etThread.traceF( tin0P , T("waiting for a change [tDrop]:    ")+tDrop ) ;
         {
         while( !ether && !POOP )
         handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
