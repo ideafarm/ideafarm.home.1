@@ -118,10 +118,18 @@ DONE( tmWorkF )
                                                 }
                                                     break ;
 
-                                                    else        rec_A_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , nnOut ) ;
+                                                    }
+                                                        rec_A_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , nnOut ) ;
+                                                        etThread.traceF( tin0P , T("found a matching A record! [nnOut,domain]:    ")+T(nnOut)+tb4+T(psttw) ) ;
+                                                    {
+                                                    else
                                                     if( bNope ) ;//((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("NOPE: \"")+T(psttw)+T("\"\r\n") , flSAY_APPEND | flSAY_LOG ) ;
 
-                                                    else bNope = 1 ;
+                                                    }
+                                                        etThread.traceF( tin0P , T("no matching A record [domain]:    ")+T(psttw) ) ;
+                                                        bNope = 1 ;
+                                                    {
+                                                    else
                                                     else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tAllowVersion  ) ) nnOut = nnAllow ;
                                                     else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRefuseVersion ) ) nnOut = nnRefuse ;
                                                     else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tSingularity   ) ) nnOut = nnSingularity ; //MIGHT BE 0.  THIS MEANS THAT A SINGULARITY IS NOT REGISTERED
@@ -328,6 +336,7 @@ DONE( tmWorkF )
                 TN( tIfc5            ,    "ifc5.host.ideafarm.com" ) ;
                 TN( tIfc1            ,    "ifc1.host.ideafarm.com" ) ;
                 TN( te     , "\r\n" ) ;
+                TN( tb4    , "    " ) ;
                 TN( tb     , " " ) ;
                 TN( tBar   , "| " ) ;
                 TN( tLog   , "///d/ideafarm.log.port.53.dns" ) ;
