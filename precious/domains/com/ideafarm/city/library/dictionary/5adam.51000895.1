@@ -123,56 +123,63 @@ DONE( tmWorkF )
                                                         etThread.traceF( tin0P , T("found a matching A record! [nnOut,domain]:    ")+T(nnOut)+tb4+T(psttw) ) ;
                                                     {
                                                     else
-                                                    if( bNope ) ;//((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("NOPE: \"")+T(psttw)+T("\"\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                                                    if( bNope ) bSilent = 1 ;
 
                                                     }
                                                         etThread.traceF( tin0P , T("no matching A record [domain]:    ")+T(psttw) ) ;
                                                         bNope = 1 ;
                                                     {
                                                     else
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tAllowVersion  ) ) nnOut = nnAllow ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRefuseVersion ) ) nnOut = nnRefuse ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tSingularity   ) ) nnOut = nnSingularity ; //MIGHT BE 0.  THIS MEANS THAT A SINGULARITY IS NOT REGISTERED
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNs5           ) ) nnOut = nnRoot ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNs            ) ) nnOut = nnRoot ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tMail          ) ) nnOut = nnRoot ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tFtp           ) ) nnOut = nnRoot ;
-                                                    else if( ((tin1S&)tin0P).pEtScratch->strIdF(       tin0P , tHostOk , psttw        ) ) { nnOut = nnRoot /*ANY NONZE VALUE WILL DO*/ ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tFireOs        ) ) { nnOut = nnRoot ; bFireOs = 1 ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWww           ) ) nnOut = nnRoot ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot          ) ) nnOut = nnRoot ;
-                                                    }
-                                                        ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttDigits ) ;
-                                                        //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
-                                                        swNicName.ungrabF( tin0P ) ;
-                                                        nnOut = *(nicNameC*)&(countT&)swNicName ;
-                                                        idComputer = ((tin1S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttDigits ) ;
-                                                        swNicName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                                                        ((tin1S&)tin0P).pEtScratch->strWordF( tin0P , psttDigits , psttw , sttq , S1C('.') ) ; ___( psttDigits ) ; ;
-                                                        strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
-                                                        ZE( strokeS* , psttDigits ) ;
-                                                    {
-                                                    else if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , tQueryHostSuffix , psttw ) )
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tIfc5        ) ) nnOut = nnRoot ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tIfc1        ) ) nnOut = nnRoot ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tPort3Space  ) ) nnOut = nnRelayPortCraft ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tPort2Space  ) ) nnOut = nnRelayPortTest ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tPort1Space  ) ) nnOut = nnRelayPort ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn3Space    ) ) nnOut = nnRoot ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn2Space    ) ) nnOut = nnRoot ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn1Space    ) ) nnOut = nnRoot ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tGorilla1    ) ) nnOut = nnGorilla1 ;
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
 
-                                                    }
-                                                        //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("looked up teacher's nicNameC value: ")+T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
-                                                        swNicName.ungrabF( tin0P ) ;
-                                                        nnOut = *(nicNameC*)&(countT&)swNicName ;
-                                                        idComputer = 0x4c3b8d9f  ; // SERIAL OF DRIVE ///c ON IFC12 (LAPTOP)
-                                                        swNicName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                                                    {
-                                                    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tTeacher ) )
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tAllowVersion  ) ) nnOut = nnAllow ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRefuseVersion ) ) nnOut = nnRefuse ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tSingularity   ) ) nnOut = nnSingularity ; //MIGHT BE 0.  THIS MEANS THAT A SINGULARITY IS NOT REGISTERED
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNs5           ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNs            ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tMail          ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tFtp           ) ) nnOut = nnRoot ;
+                                                    //else if( ((tin1S&)tin0P).pEtScratch->strIdF(       tin0P , tHostOk , psttw        ) ) { nnOut = nnRoot /*ANY NONZE VALUE WILL DO*/ ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tFireOs        ) ) { nnOut = nnRoot ; bFireOs = 1 ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWww           ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot          ) ) nnOut = nnRoot ;
+                                                    //}
+                                                    //    ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttDigits ) ;
+                                                    //    //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                                                    //    swNicName.ungrabF( tin0P ) ;
+                                                    //    nnOut = *(nicNameC*)&(countT&)swNicName ;
+                                                    //    idComputer = ((tin1S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttDigits ) ;
+                                                    //    swNicName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                                                    //    ((tin1S&)tin0P).pEtScratch->strWordF( tin0P , psttDigits , psttw , sttq , S1C('.') ) ; ___( psttDigits ) ; ;
+                                                    //    strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
+                                                    //    ZE( strokeS* , psttDigits ) ;
+                                                    //{
+                                                    //else if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , tQueryHostSuffix , psttw ) )
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tIfc5        ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tIfc1        ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tPort3Space  ) ) nnOut = nnRelayPortCraft ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tPort2Space  ) ) nnOut = nnRelayPortTest ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tPort1Space  ) ) nnOut = nnRelayPort ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn3Space    ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn2Space    ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn1Space    ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tGorilla1    ) ) nnOut = nnGorilla1 ;
+                                                    //
+                                                    //P:PERSONALITY: I MUST KNOW ONLY UNGUESSABLE RANDOM SECRET DOMAIN NAMES SO THAT A PEER THAT DOES NOT KNOW WO OF THEM DOESN'T GET A REPLY
+                                                    //
+
+                                                    //U:: COMMENT OUT ALL OF THE CODE THAT IS ONLY NEEDED FOR THE FOLLOWING COMMENTED OUT LINES
+
+                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+
+                                                    //}
+                                                    //    //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("looked up teacher's nicNameC value: ")+T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                                                    //    swNicName.ungrabF( tin0P ) ;
+                                                    //    nnOut = *(nicNameC*)&(countT&)swNicName ;
+                                                    //    idComputer = 0x4c3b8d9f  ; // SERIAL OF DRIVE ///c ON IFC12 (LAPTOP)
+                                                    //    swNicName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                                                    //{
+                                                    //if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tTeacher ) )
                                                     ZE( boolT , bNope ) ;
 
                                                     //CONoUTrAW( T("A: \"")+T(psttw)+T("\"\r\n") ) ;
@@ -262,32 +269,32 @@ DONE( tmWorkF )
                         TELL( "preparing to handle a query packet" ) ;
                         etRock.traceF( tin0P , tSayPrefix+T(nnPeer) ) ;
                     {
-                    //else
-                    if( !bAllowed ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayReject2 ) ;
 
-                    ;
-    
-                        || nnPeer == nnReserved2
-                        || nnPeer == nnReserved1
-                        || nnsWhite & nnPeer
-                        bAllowedDomain
-
-                    const boolT bAllowed =
-
-                    }
-                        ether.delF( tin0P , psttPeer ) ;
-                        }
-                            bAllowedDomain = idHit && idHit == 1 + psttPeer->idAdam - tAllowedDomain1.csF( tin0P ) ;
-                            countT idHit = etThread.strIdF( tin0P , tAllowedDomain1 , psttPeer , 1 ) ;
-
-                            etThread.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
-                        {
-                        else
-                        if( !psttPeer ) ether.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
-                        ether.sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
-                        ZE( strokeS* , psttPeer ) ;
-                    {
-                    ZE( boolT , bAllowedDomain ) ;
+                    //if( !bKnown ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain ) ;
+                    //
+                    //;
+                    //
+                    //    || nnPeer == nnReserved2
+                    //    || nnPeer == nnReserved1
+                    //    || nnsStripe & nnPeer
+                    //    bKnownDomain
+                    //
+                    //const boolT bKnown =
+                    //
+                    //}
+                    //    ether.delF( tin0P , psttPeer ) ;
+                    //    }
+                    //        bKnownDomain = idHit && idHit == 1 + psttPeer->idAdam - tKnownDomain1.csF( tin0P ) ;
+                    //        countT idHit = etThread.strIdF( tin0P , tKnownDomain1 , psttPeer , 1 ) ;
+                    //
+                    //        etThread.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
+                    //    {
+                    //    else
+                    //    if( !psttPeer ) ether.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
+                    //    ether.sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
+                    //    ZE( strokeS* , psttPeer ) ;
+                    //{
+                    //ZE( boolT , bKnownDomain ) ;
 
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
                     //CONoUTrAW( "ho hum\r\n" ) ;
@@ -298,8 +305,7 @@ DONE( tmWorkF )
                     ZE( byteT* , pbq ) ;
                 {
                 while( !POOP && !ether && !etThread && !*((tin1S&)tin0P).pEtScratch )
-                //TN( tSayReject2 , "    IGNORED (not on white list)" ) ;
-                TN( tSayReject2 , "    WOULD BE IGNORED (not on white list)" ) ;
+                TN( tSayUnknownDomain , "    !exception / unknown peer domain" ) ;
                 TN( tSayPrefix  , "[nnPeer]:    " ) ;
                 etherC& etRock = etherC::etRockIF( tin0P ) ;
 
@@ -394,7 +400,7 @@ DONE( tmWorkF )
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
 
-        TN( tAllowedDomain1 , ".compute.amazonaws.com" ) ;
+        //TN( tKnownDomain1 , ".compute.amazonaws.com" ) ;
 
         nicNameC nnReserved2     = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
         nicNameC nnReserved1     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
@@ -404,7 +410,7 @@ DONE( tmWorkF )
         nicNameC nnLaptopSil1OfficeHotspot = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
         nicNameC nnLaptopSil1OfficeWired   = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
 
-        nicNamesAllowedStripeWebHookNotificationsC nnsWhite( tin0P , etThread , ether , TICK >> 0 ) ;
+        nicNamesAllowedStripeWebHookNotificationsC nnsStripe( tin0P , etThread , ether , TICK >> 0 ) ;
 
         //CONoUTrAW( "main/5\r\n" ) ; //U::
         TELL( "preparing for work" ) ;
@@ -605,6 +611,16 @@ voidT rec_MX_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReply
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
 {
 voidT rec_A_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
+
+
+//  
+// U:: USE A "SHIELDS DOWN" MECHANISM SO THAT THIS CAN BE SUPPRESSED DURING ACME CERTIFICATE RENEWAL AND OTHERWISE ENABLED
+// U: (FUTURE): I ALSO VALIDATE REQUESTS BY DOING A REVERSE DNS LOOKUP AND IGNORING REQUESTS IF THE DOMAIN IS UNEXPECTED
+//  
+//  THIS IS BOTH TO MITIGATE FLOOD ATTACKS AND TO CONCEAL THAT I AM A DNS NAME SERVER FROM PEERS WHO HAVE MY IP ADDRESS (E.G. FROM SCANNING THE IPv4 SPACE) BUT DO NOT KNOW (FROM A HIGHER LEVEL NAMESERVER) THAT I AM A NAMESERVER
+// IF THE LEAF IS UNKNOWN TO ME, I SILENTLY IGNORE THE REQUEST
+//  
+//P:PERSONALITY: I KEEP IP ADDRESSES CONFIDENTIAL, PRIMARILY BY TREATING THE REQUESTED DOMAIN NAME LEAF AS A PASSWORD
 
 // OBSOLETES 614_ (LIKE 614_ BUT USES WHITELIST NOT BLACKLIST)
 
