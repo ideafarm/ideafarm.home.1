@@ -866,7 +866,7 @@ DONE( tmCleanF )
                 if( bWoth ) bWoth = 0 ;
                 if( !bWoth ) etThread.traceF( tin0P , T("waited  for a change [tDrop]:    ")+tDrop ) ;
             {
-            if( etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tDrop , flWAITdIR_DIRnAME ) || bWoth )
+            if( etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tDrop , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) || bWoth )
             if( !bWoth ) etThread.traceF( tin0P , T("waiting for a change [tDrop]:    ")+tDrop ) ;
         {
         while( !ether && !POOP )
