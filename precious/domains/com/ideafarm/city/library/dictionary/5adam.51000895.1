@@ -72,49 +72,50 @@ DONE( tmWorkF )
                                                     //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": nOTsUPPORTED: ")+T(psttw)+T("\r\n") ) ;
                                                     TELL( "ifcIDeRRORdNS_QUERYnOTsUPPORTED" ) ;
                                                     //CONoUTrAW3( "type " , idType , " [not supported]\r\n" ) ;
+                                                    bSilent = 1 ;
                                                 {
                                                 default :
-                                                }
-                                                    break ;
-                                                    idError = ifcIDeRRORdNS_QUERYnOTsUPPORTED ;
-                                                    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": OPTION: ")+T(psttw)+T("\r\n") ) ;
-                                                    TELL( "ifcIDtYPEdNSqUERY_OPTION" ) ;
-                                                    //CONoUTrAW( "OPTION\r\n" ) ;
-                                                {
-                                                case ifcIDtYPEdNSqUERY_OPTION :
-                                                }
-                                                    break ;
-                                                    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) ) rec_SOA_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs1 , tEmail ) ;
-                                                    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": SOA: ")+T(psttw)+T("\r\n") ) ;
-                                                    TELL( "ifcIDtYPEdNSqUERY_SOA" ) ;
-                                                    //CONoUTrAW( "SOA\r\n" ) ;
-                                                {
-                                                case ifcIDtYPEdNSqUERY_SOA :
-                                                }
-                                                    break ;
-
-                                                    }
-                                                        rec_NS_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs2 ) ;
-                                                        rec_NS_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs1 ) ;
-                                                    {
-                                                    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) )
-                                                    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": NS: ")+T(psttw)+T("\r\n") ) ;
-                                                    TELL( "ifcIDtYPEdNSqUERY_NS" ) ;
-                                                    //CONoUTrAW( "NS\r\n" ) ;
-                                                {
-                                                case ifcIDtYPEdNSqUERY_NS :
-                                                }
-                                                    break ;
-                                                    }
-                                                        rec_A_F(  tin0P , stsReplies , ifcIDtYPEdNSrEPLY_NOTE   , tMail , nnRoot ) ;
-                                                        rec_MX_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tMail ) ;
-                                                    {
-                                                    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) )
-                                                    ((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": MX: ")+T(psttw)+T("\r\n") ) ;
-                                                    TELL( "ifcIDtYPEdNSqUERY_MX" ) ;
-                                                    //CONoUTrAW( "MX\r\n" ) ;
-                                                {
-                                                case ifcIDtYPEdNSqUERY_MX :
+                                                //}
+                                                //    break ;
+                                                //    idError = ifcIDeRRORdNS_QUERYnOTsUPPORTED ;
+                                                //    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": OPTION: ")+T(psttw)+T("\r\n") ) ;
+                                                //    TELL( "ifcIDtYPEdNSqUERY_OPTION" ) ;
+                                                //    //CONoUTrAW( "OPTION\r\n" ) ;
+                                                //{
+                                                //case ifcIDtYPEdNSqUERY_OPTION :
+                                                //}
+                                                //    break ;
+                                                //    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) ) rec_SOA_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs1 , tEmail ) ;
+                                                //    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": SOA: ")+T(psttw)+T("\r\n") ) ;
+                                                //    TELL( "ifcIDtYPEdNSqUERY_SOA" ) ;
+                                                //    //CONoUTrAW( "SOA\r\n" ) ;
+                                                //{
+                                                //case ifcIDtYPEdNSqUERY_SOA :
+                                                //}
+                                                //    break ;
+                                                //
+                                                //    }
+                                                //        rec_NS_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs2 ) ;
+                                                //        rec_NS_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs1 ) ;
+                                                //    {
+                                                //    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) )
+                                                //    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": NS: ")+T(psttw)+T("\r\n") ) ;
+                                                //    TELL( "ifcIDtYPEdNSqUERY_NS" ) ;
+                                                //    //CONoUTrAW( "NS\r\n" ) ;
+                                                //{
+                                                //case ifcIDtYPEdNSqUERY_NS :
+                                                //}
+                                                //    break ;
+                                                //    }
+                                                //        rec_A_F(  tin0P , stsReplies , ifcIDtYPEdNSrEPLY_NOTE   , tMail , nnRoot ) ;
+                                                //        rec_MX_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tMail ) ;
+                                                //    {
+                                                //    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) )
+                                                //    ((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": MX: ")+T(psttw)+T("\r\n") ) ;
+                                                //    TELL( "ifcIDtYPEdNSqUERY_MX" ) ;
+                                                //    //CONoUTrAW( "MX\r\n" ) ;
+                                                //{
+                                                //case ifcIDtYPEdNSqUERY_MX :
                                                 }
                                                     break ;
 
@@ -122,12 +123,11 @@ DONE( tmWorkF )
                                                         rec_A_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , nnOut ) ;
                                                         etThread.traceF( tin0P , T("found a matching A record! [nnOut,domain]:    ")+T(nnOut)+tb4+T(psttw) ) ;
                                                     {
-                                                    else
-                                                    if( bNope ) bSilent = 1 ;
+                                                    if( !bSilent )
 
                                                     }
                                                         etThread.traceF( tin0P , T("no matching A record [domain]:    ")+T(psttw) ) ;
-                                                        bNope = 1 ;
+                                                        bSilent = 1 ;
                                                     {
                                                     else
 
@@ -180,7 +180,6 @@ DONE( tmWorkF )
                                                     //    swNicName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                                                     //{
                                                     //if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tTeacher ) )
-                                                    ZE( boolT , bNope ) ;
 
                                                     //CONoUTrAW( T("A: \"")+T(psttw)+T("\"\r\n") ) ;
 
@@ -402,15 +401,15 @@ DONE( tmWorkF )
 
         //TN( tKnownDomain1 , ".compute.amazonaws.com" ) ;
 
-        nicNameC nnReserved2     = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
-        nicNameC nnReserved1     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
+        //nicNameC nnReserved2     = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
+        //nicNameC nnReserved1     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
 
-        nicNameC nnLaptopSil1PhoneHotspot6 = etThread.sockNicNameF( tin0P , T("2600:387:15:5012::4") ) ;
-        nicNameC nnLaptopSil1PhoneHotspot4 = etThread.sockNicNameF( tin0P , T("72.159.157.28") ) ;
-        nicNameC nnLaptopSil1OfficeHotspot = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
-        nicNameC nnLaptopSil1OfficeWired   = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
+        //nicNameC nnLaptopSil1PhoneHotspot6 = etThread.sockNicNameF( tin0P , T("2600:387:15:5012::4") ) ;
+        //nicNameC nnLaptopSil1PhoneHotspot4 = etThread.sockNicNameF( tin0P , T("72.159.157.28") ) ;
+        //nicNameC nnLaptopSil1OfficeHotspot = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
+        //nicNameC nnLaptopSil1OfficeWired   = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
 
-        nicNamesAllowedStripeWebHookNotificationsC nnsStripe( tin0P , etThread , ether , TICK >> 0 ) ;
+        //nicNamesAllowedStripeWebHookNotificationsC nnsStripe( tin0P , etThread , ether , TICK >> 0 ) ;
 
         //CONoUTrAW( "main/5\r\n" ) ; //U::
         TELL( "preparing for work" ) ;
