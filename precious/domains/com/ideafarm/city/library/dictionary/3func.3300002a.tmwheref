@@ -34,11 +34,13 @@ DONE( tmWhereF )
             stSorter04 >> pb_c4s ;
             byteT* pb_c4s = (byteT*)&c4s ;
             count4S c4s ;
+            _IO_
         {
         while( stSorter04 )
         OStEXTAK( ostoRpt , "\r\n| [ % , exits , idiFile , fileTitle ]\r\n|\r\n" ) ;
         OStEXTC04( ostoRpt , cExits , 0 ) ;
         OStEXTAK( ostoRpt , "| EXITS\r\n|\r\n| tally: " ) ;
+        _IO_
     {
 
     }
@@ -47,8 +49,10 @@ DONE( tmWhereF )
             cExits           +=   ((tin1S&)tin0P).pag1->pcExitsWhere[ off ] ;
             *(count04T*)&c4s  = - ((tin1S&)tin0P).pag1->pcExitsWhere[ off ] ;
             count4S c4s( 0 , 0 , 0 , off ) ;
+            _IO_
         {
         if( ((tin1S&)tin0P).pag1->pcExitsWhere[ off ] )
+        _IO_
     {
     for( countT off = 1 ; off < sizeof ((tin1S&)tin0P).pag1->pcExitsWhere / sizeof ((tin1S&)tin0P).pag1->pcExitsWhere[ 0 ] ; off ++ )
     ZE( count04T , cExits ) ;
@@ -82,6 +86,7 @@ DONE( tmWhereF )
             stSorter >> pb_c3s ;
             byteT* pb_c3s = (byteT*)&c3s ;
             count3S c3s ;
+            _IO_
         {
         while( stSorter )
         OStEXTAK( ostoRpt , "\r\n|\r\n| [ % , tally , idLine , (idLine_9) , idiFile , fileTitle ]\r\n|\r\n" ) ;
@@ -92,8 +97,10 @@ DONE( tmWhereF )
             OStEXTA( ostoRpt , tList ) ;
             OStEXTAK( ostoRpt , "FOCUS: CALLER OF " ) ;
             TN( tList , "" ) ; tList = T((countT*)c8idiFileFocus) ;
+            _IO_
         {
         if( cFoci )
+        _IO_
     {
 
     }
@@ -102,8 +109,10 @@ DONE( tmWhereF )
             totalTally -= c3s.c1 ;
             count3S c3s( - swTally , c2Lever.c1 , c2Lever.c2 ) ;
             etThread.memCopyF( tin0P , (byteT*)&c2Lever , (byteT*)swTally.leverF( tin0P , idf ) , sizeof c2Lever ) ;
+            _IO_
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+        _IO_
     {
     countT cFlavors = swTally.cFlavorsF( tin0P ) ;
     ZE( countT , totalTally ) ;
@@ -131,11 +140,13 @@ DONE( tmWhereF )
                 stSorter >> pb_c3s ;
                 byteT* pb_c3s = (byteT*)&c3s ;
                 count3S c3s ;
+                _IO_
             {
             while( stSorter )
             OStEXTAK( ostoRpt , "\r\n|\r\n| [ % , tally , postWhat ]\r\n|\r\n" ) ;
             OStEXTC( ostoRpt , totalTallyWhat , 0 ) ;
             OStEXTA( ostoRpt , cToDo ? "THREAD WHEREABOUTS REPORT\r\n|\r\n| WHAT 1 (PREDEFINED CATEGORIES)\r\n|\r\n| tally: " : "THREAD WHEREABOUTS REPORT\r\n|\r\n| WHAT 2 (AD HOC CATEGORIES)\r\n|\r\n| tally: " ) ;
+            _IO_
         {
     
         }
@@ -143,6 +154,7 @@ DONE( tmWhereF )
             totalTallyWhat -= c3s.c1 ;
             count3S c3s( - swTallyWhat12 , idWhat12 ) ;
             idWhat12 = swTallyWhat12.leverF( tin0P , idf ) ;
+            _IO_
         {
         for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
         countT cFlavors = swTallyWhat12.cFlavorsF( tin0P ) ;
@@ -150,6 +162,7 @@ DONE( tmWhereF )
 
         switchC& swTallyWhat12 = cToDo ? swTallyWhat1 : swTallyWhat2 ;
         countT&  idWhat12 = cToDo ? idWhat1 : idWhat2 ;
+        _IO_
     {
     while( cToDo -- )
     countT cToDo = 2 ;
@@ -178,6 +191,7 @@ DONE( tmWhereF )
 
                                     c2Lever.c2 = where.pLFnest[ ( ( ( where.cInNest - cFoci ) & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
                                     c2Lever.c1 = where.pLFnest[ ( ( ( where.cInNest - cFoci ) & OFFsLOTtINnESTmAX ) << 1 )     ] ;
+                                    _IO_
                                 {
                                 if( bDo )
 
@@ -185,10 +199,12 @@ DONE( tmWhereF )
                                         if( pczFocus[ offFocus ] != where.pLFnest[ ( ( ( where.cInNest - offFocus ) & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ) bDo = 0 ;
                                     for( countT offFocus = 0 ; bDo && offFocus < cFoci ; offFocus ++ )
                                     countT* pczFocus = c8idiFileFocus ;
+                                    _IO_
                                 {
                                 else
                                 if( cFoci >= where.cInNest ) bDo = 0 ;
                                 boolT bDo = 1 ;
+                                _IO_
                             {
                             else
                             }
@@ -201,10 +217,12 @@ DONE( tmWhereF )
 
                                 c2Lever.c2 = where.pLFnest[ ( ( where.cInNest & OFFsLOTtINnESTmAX ) << 1 ) + 1 ] ;
                                 c2Lever.c1 = where.pLFnest[ ( ( where.cInNest & OFFsLOTtINnESTmAX ) << 1 )     ] ;
+                                _IO_
                             {
                             if( !cFoci )
 
                             //++ ( (countT&)swTallyWhat1 ) ;
+                            _IO_
                         {
                         //if( idWhat1 <= ifcIDwHAT_GOaDAM )
                         //if( idWhat1 <= 0x100 ) //CAN USE TO INVESTIGATE FIND LOCATION WITHIN A CODE SNIPPET
@@ -214,6 +232,7 @@ DONE( tmWhereF )
 
                         ++ ( (countT&)swTallyWhat1 ) ;
                         idWhat1 = where.idWhat1 ;
+                        _IO_
                     {
                     if( F(where.flagsThreadModeWhere) & flTHREADmODEwHERE_WHEREiSwATCHING )
 
@@ -228,15 +247,19 @@ DONE( tmWhereF )
                     {
                     whereS& where = *(whereS*)pbWhere ;
                     byteT pbWhere[ sizeof( whereS ) ] ;                    
+                    _IO_
                 {
                 if( ppTin0WhereI[ off ] ) //U:: USE A grabC TO SERIALIZE SO DON'T GET BIT BY A DANGLING POINTER TO A DOOMED tin123S, OBJECT
+                _IO_
             {
             for( countT off = 0 ; off < cThreadsMaxWhereI ; off ++ )
             //etThread.traceF( tin0P , tSay1 ) ; //U:: COMMENT OUT IN PRODUCTION
             grabWhere.grabF( tin0P , TAG( TAGiDnULL ) ) ;
             //etThread.traceF( tin0P , tSay2 ) ; //U:: COMMENT OUT IN PRODUCTION
+            _IO_
         {
         if( cEnabledWhereI )
+        _IO_
     {
     while( !etThread && !bQuitWhereI && !ether ) //COMMENT OUT !ether IF WANT TO LOOK AT QUIT BEHAVIOR
     //TN( tSay0 , "where is looking 0 napping " ) ; //U:: COMMENT OUT IN PRODUCTION
@@ -262,6 +285,7 @@ DONE( tmWhereF )
     countT& cEnabledWhereI     = *(countT*)pTaskP->c3 ;
     signC&  sgnReady           =  *(signC*)pTaskP->c2 ;
     boolT&  bQuitWhereI        =  *(boolT*)pTaskP->c1 ;
+    _IO_
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 )
 etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_SPINLOCK ) ;

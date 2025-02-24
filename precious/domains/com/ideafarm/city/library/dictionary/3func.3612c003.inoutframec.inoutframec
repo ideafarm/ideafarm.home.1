@@ -308,23 +308,35 @@
                 }
                     THREADmODE3rESTORE
                     }
-                        ((etherC*)0)->traceF( tin0P , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;_
+                        //USES TOO MUCH THREAD STACK: ((etherC*)0)->traceF( tin0P , (strokeS*)(const osTextT*)ostoSay , flTRACE_PARAMETERiSoStEXT ) ;_
 
+                        CONoUTrAW( ostoSay ) ;
+
+                        OStEXTAK( ostoSay , "\r\n" ) ;_
                         OStEXTC(  ostoSay , perTuckAvailable , 0 ) ;_
                         OStEXTAK( ostoSay , "    " ) ;_
                         OStEXTC(  ostoSay , cbStack , '0' ) ;_
-                        OStEXTAK( ostoSay , "thread stack [cbStack,perTuckAvailable]:    " ) ;_
-                        OStEXT(   ostoSay , TUCK >> 2 ) ;_
+                        OStEXTAK( ostoSay , "_9    " ) ;_
+                        OStEXTC9( ostoSay , ((tin1S&)tin0P).osTid ) ;_
+                        OStEXTAK( ostoSay , "\r\nthread stack [osTid,cbStack,perTuckAvailable]:    " ) ;_
+                        OStEXT(   ostoSay , TUCK >> 1 ) ;_
                     {
                     THREADmODE3oN( flTHREADmODE3_SUPPRESStHREADsTACKuSAGEiNSPECTION )
                 {
-                if( perTuckAvailable < 0x10 )
+                if( perTuckAvailable < 0x20 )
+                //G:if( perTuckAvailable < 0x18 )
+                //B:TOO SHALLOW (WORKS, BUT PRACTICALLY NO WARNING): if( perTuckAvailable < 0x10 )
 
                 countT perTuckAvailable = ( cbAvailable << SB ) / cbStack ;
                 countT cbAvailable = ((tin1S&)tin0P).pbThreadStackLowest - ((tin1S&)tin0P).pbThreadStackStart ;
             {
             if( cbStack )
             countT cbStack = ((tin1S&)tin0P).pbThreadStackEnd - ((tin1S&)tin0P).pbThreadStackStart ;
+
+            //const byteT* pbLowest = ((tin1S&)tin0P).pbThreadStackLowest ;
+            //const byteT* pbStart  = ((tin1S&)tin0P).pbThreadStackStart  ;
+            //const byteT* pbEnd    = ((tin1S&)tin0P).pbThreadStackEnd    ;
+            //TO FIND A BUG
         {
         if( !( F(((tin1S&)tin0P).flagsThreadMode3) & flTHREADmODE3_SUPPRESStHREADsTACKuSAGEiNSPECTION ) )
 
