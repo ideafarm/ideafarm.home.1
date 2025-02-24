@@ -120,8 +120,16 @@ DONE( tmWorkF )
                                                     break ;
 
                                                     }
-                                                        rec_A_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , nnOut ) ;
-                                                        etThread.traceF( tin0P , T("found a matching A record! [nnOut,domain]:    ")+T(nnOut)+tb4+T(psttw) ) ;
+                                                        }
+                                                            rec_A_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , nnOut ) ;
+                                                            etThread.traceF( tin0P , T("found a matching A record! [nnOut,domain]:    ")+T(nnOut)+tb4+T(psttw) ) ;
+                                                        {
+                                                        else
+                                                        }
+                                                            etThread.traceF( tin0P , T("!exception / matching A record but unlisted and unexpected peer, so not responding [nnOut,domain]:    ")+T(nnOut)+tb4+T(psttw) ) ;
+                                                            bSilent = 1 ;
+                                                        {
+                                                        if( !bListedDomain )
                                                     {
                                                     if( !bSilent )
 
@@ -269,34 +277,27 @@ DONE( tmWorkF )
                         etRock.traceF( tin0P , tSayPrefix+T(nnPeer) ) ;
                     {
 
-                    //if( !bKnown ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain ) ;
-                    //
-                    //;
-                    //
-                    //    || nnPeer == nnReserved2
-                    //    || nnPeer == nnReserved1
-                    //    || nnsStripe & nnPeer
-                    //    bKnownDomain
-                    //
-                    //const boolT bKnown =
-                    //
-                    //}
-                    //    ether.delF( tin0P , psttPeer ) ;
-                    //    }
-                    //        bKnownDomain = idHit && idHit == 1 + psttPeer->idAdam - tKnownDomain1.csF( tin0P ) ;
-                    //        countT idHit = etThread.strIdF( tin0P , tKnownDomain1 , psttPeer , 1 ) ;
-                    //
-                    //        etThread.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
-                    //    {
-                    //    else
-                    //    if( !psttPeer ) ether.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
-                    //    ether.sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
-                    //    ZE( strokeS* , psttPeer ) ;
-                    //{
-                    //ZE( boolT , bKnownDomain ) ;
+                    if( !bPeerListedOrStripe ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain ) ;
 
+                    const boolT bPeerListedOrStripe = bListedDomain || nnsStripe & nnPeer ;
+
+                    }
+                        ether.delF( tin0P , psttPeer ) ;
+                        }
+                            bListedDomain = idHit && idHit == 1 + psttPeer->idAdam - tListedDomain1.csF( tin0P ) ;
+                            countT idHit = etThread.strIdF( tin0P , tListedDomain1 , psttPeer , 1 ) ;
+
+                            //etThread.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
+                        {
+                        else
+                        if( !psttPeer ) ether.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
+                        ether.sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
+                        ZE( strokeS* , psttPeer ) ;
+                    {
+                    ZE( boolT , bListedDomain ) ;
+
+                    TELL( "waited for a query datagram" ) ;
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
-                    //CONoUTrAW( "ho hum\r\n" ) ;
                     TELL( "waiting for a query datagram" ) ;
                     nicNameC nnPeer ;
                     ZE( countT , idp ) ;
@@ -398,7 +399,7 @@ DONE( tmWorkF )
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
 
-        //TN( tKnownDomain1 , ".compute.amazonaws.com" ) ;
+        TN( tListedDomain1 , ".compute.amazonaws.com" ) ;
 
         //nicNameC nnReserved2     = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
         //nicNameC nnReserved1     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
@@ -408,7 +409,7 @@ DONE( tmWorkF )
         //nicNameC nnLaptopSil1OfficeHotspot = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
         //nicNameC nnLaptopSil1OfficeWired   = etThread.sockNicNameF( tin0P , T("50.216.215.70") ) ;
 
-        //nicNamesAllowedStripeWebHookNotificationsC nnsStripe( tin0P , etThread , ether , TICK >> 0 ) ;
+        nicNamesAllowedStripeWebHookNotificationsC nnsStripe( tin0P , etThread , ether , TICK << 4 ) ;  //IT'S BEEN YEARS SINCE THESE HAVE CHANGED
 
         //CONoUTrAW( "main/5\r\n" ) ; //U::
         TELL( "preparing for work" ) ;
