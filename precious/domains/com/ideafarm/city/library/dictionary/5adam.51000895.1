@@ -318,7 +318,6 @@ DONE( tmWorkF )
                 //nicNameC nnRoot( 0xd8a2a931 ) ;    // ifc4: 216.162.169.49
                 //nicNameC nnRoot( 0x0a010102 ) ;    // 10.1.1.2 //U:
 
-                //nicNameC nnGorilla1       = etThread.sockNicNameF( tin0P , tIpGorilla1 ) ;
                 nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , tIpWebHook1 ) ;
 
                 //nicNameC nnRelayPortCraft = nicNameC( ifcIDpORT_RELAYcRAFT ) ;
@@ -423,21 +422,11 @@ DONE( tmWorkF )
         ||
         !tDomainLeafWebHooks.csF( tin0P )
         ||
-        !tIpGorilla1.csF( tin0P )
-        ||
         !tIpWebHook1.csF( tin0P )
     (
     if
 
-    etThread.traceF( tin0P , T("settings [tIpWebHook1,tIpGorilla1,tDomainLeafWebHooks,tDomainLeafWebHook1]:    \"")+tIpWebHook1+T("\"    \"")+tIpGorilla1+T("\"    \"")+tDomainLeafWebHooks+T("\"    \"")+tDomainLeafWebHook1+T("\"") ) ;
-
-    }
-        etThread.delF( tin0P , psttEat ) ;
-        tIpGorilla1 = T(psttEat) ;
-        etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.go1")  ) ; ___( psttEat ) ;
-    {
-    TN( tIpGorilla1 , "" ) ;
+    etThread.traceF( tin0P , T("settings [tIpWebHook1,tDomainLeafWebHooks,tDomainLeafWebHook1]:    \"")+tIpWebHook1+T("\"    \"")+tDomainLeafWebHooks+T("\"    \"")+tDomainLeafWebHook1+T("\"") ) ;
 
     }
         etThread.delF( tin0P , psttEat ) ;
