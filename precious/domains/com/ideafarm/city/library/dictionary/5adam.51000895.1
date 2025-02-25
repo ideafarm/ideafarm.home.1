@@ -50,6 +50,7 @@ DONE( tmWorkF )
                             {
                             else
                             }
+                                etRock.traceF( tin0P , T(nnPeer)+tSaySilentlyIgnoring+tb4+tDomainPeer ) ;
                                 CONoUTrAW( "silent\r\n" ) ;
                             {
                             if( bSilent )
@@ -288,8 +289,11 @@ DONE( tmWorkF )
                     }
                         ether.delF( tin0P , psttPeer ) ;
                         }
-                            bListedDomain = idHit && idHit == 1 + psttPeer->idAdam - tListedDomain1.csF( tin0P ) ;
-                            countT idHit = etThread.strIdF( tin0P , tListedDomain1 , psttPeer , 1 ) ;
+                            bListedDomain |= idHit2 && idHit2 == 1 + psttPeer->idAdam - tListedDomain2.csF( tin0P ) ;
+                            countT idHit2  = etThread.strIdF( tin0P , tListedDomain2 , psttPeer , 1 ) ;
+
+                            bListedDomain  = idHit1 && idHit1 == 1 + psttPeer->idAdam - tListedDomain1.csF( tin0P ) ;
+                            countT idHit1  = etThread.strIdF( tin0P , tListedDomain1 , psttPeer , 1 ) ;
 
                             //etThread.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
                             tDomainPeer = T(psttPeer) ;
@@ -311,6 +315,7 @@ DONE( tmWorkF )
                     ZE( byteT* , pbq ) ;
                 {
                 while( !POOP && !ether && !etThread && !*((tin1S&)tin0P).pEtScratch )
+                TN( tSaySilentlyIgnoring , "    !exception / silently ignoring    " ) ;
                 TN( tSayUnknownDomain , "    !exception / unknown peer domain" ) ;
                 TN( tSayPrefix  , "[nnPeer]:    " ) ;
                 etherC& etRock = etherC::etRockIF( tin0P ) ;
@@ -405,6 +410,7 @@ DONE( tmWorkF )
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
 
+        TN( tListedDomain2 , ".letsencrypt.org" ) ;
         TN( tListedDomain1 , ".compute.amazonaws.com" ) ;
 
         //nicNameC nnReserved2     = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
