@@ -60,13 +60,12 @@ DONE( tmWorkF )
                                         DEL( ps ) ;
                                         }
                                             TELL( "cleaning up after handling a single query" ) ;
-                                            ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                                             }
                                                 }
                                                     break ;
                                                     idError = ifcIDeRRORdNS_AOK ;                       //20250220@1114: REQUIRED BY RFC 1035 ACCORDING TO https://letsencrypt.org/docs/caa/
                                                     //idError = ifcIDeRRORdNS_QUERYnOTsUPPORTED ;
-                                                    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": nOTsUPPORTED: ")+T(psttw)+T("\r\n") ) ;
+                                                    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": nOTsUPPORTED: ")+tDomainNet+T("\r\n") ) ;
                                                     TELL( "ifcIDeRRORdNS_QUERYnOTsUPPORTED" ) ;
                                                     //CONoUTrAW3( "type " , idType , " [not supported]\r\n" ) ;
                                                     bSilent = 1 ;
@@ -76,15 +75,15 @@ DONE( tmWorkF )
                                                 //}
                                                 //    break ;
                                                 //    idError = ifcIDeRRORdNS_QUERYnOTsUPPORTED ;
-                                                //    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": OPTION: ")+T(psttw)+T("\r\n") ) ;
+                                                //    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": OPTION: ")+tDomainNet+T("\r\n") ) ;
                                                 //    TELL( "ifcIDtYPEdNSqUERY_OPTION" ) ;
                                                 //    //CONoUTrAW( "OPTION\r\n" ) ;
                                                 //{
                                                 //case ifcIDtYPEdNSqUERY_OPTION :
                                                 //}
                                                 //    break ;
-                                                //    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) ) rec_SOA_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs1 , tEmail ) ;
-                                                //    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": SOA: ")+T(psttw)+T("\r\n") ) ;
+                                                //    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tRoot ) ) rec_SOA_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , tNs1 , tEmail ) ;
+                                                //    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": SOA: ")+tDomainNet+T("\r\n") ) ;
                                                 //    TELL( "ifcIDtYPEdNSqUERY_SOA" ) ;
                                                 //    //CONoUTrAW( "SOA\r\n" ) ;
                                                 //{
@@ -93,11 +92,11 @@ DONE( tmWorkF )
                                                 //    break ;
                                                 //
                                                 //    }
-                                                //        rec_NS_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs2 ) ;
-                                                //        rec_NS_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tNs1 ) ;
+                                                //        rec_NS_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , tNs2 ) ;
+                                                //        rec_NS_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , tNs1 ) ;
                                                 //    {
-                                                //    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) )
-                                                //    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": NS: ")+T(psttw)+T("\r\n") ) ;
+                                                //    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tRoot ) )
+                                                //    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": NS: ")+tDomainNet+T("\r\n") ) ;
                                                 //    TELL( "ifcIDtYPEdNSqUERY_NS" ) ;
                                                 //    //CONoUTrAW( "NS\r\n" ) ;
                                                 //{
@@ -106,10 +105,10 @@ DONE( tmWorkF )
                                                 //    break ;
                                                 //    }
                                                 //        rec_A_F(  tin0P , stsReplies , ifcIDtYPEdNSrEPLY_NOTE   , tMail , nnRoot ) ;
-                                                //        rec_MX_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , tMail ) ;
+                                                //        rec_MX_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , tMail ) ;
                                                 //    {
-                                                //    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot ) )
-                                                //    ((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": MX: ")+T(psttw)+T("\r\n") ) ;
+                                                //    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tRoot ) )
+                                                //    ((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": MX: ")+tDomainNet+T("\r\n") ) ;
                                                 //    TELL( "ifcIDtYPEdNSqUERY_MX" ) ;
                                                 //    //CONoUTrAW( "MX\r\n" ) ;
                                                 //{
@@ -119,12 +118,12 @@ DONE( tmWorkF )
 
                                                     }
                                                         }
-                                                            rec_A_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , nnOut ) ;
-                                                            etThread.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+T(psttw)+tb4+tDomainPeer ) ;
+                                                            rec_A_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                            etThread.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                         {
                                                         else
                                                         }
-                                                            etThread.traceF( tin0P , T("!exception / matching A record, but setting bSilent because unlisted and unexpected peer [nnOut,domain,peer]:    ")+T(nnOut)+tb4+T(psttw)+tb4+tDomainPeer ) ;
+                                                            etThread.traceF( tin0P , T("!exception / matching A record, but setting bSilent because unlisted and unexpected peer [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                             bSilent = 1 ;
                                                         {
                                                         if( !bListedDomain )
@@ -132,22 +131,22 @@ DONE( tmWorkF )
                                                     if( !bSilent )
 
                                                     }
-                                                        etThread.traceF( tin0P , T("setting bSilent because no matching A record found [domain,peer]:    ")+T(psttw)+tb4+tDomainPeer ) ;
+                                                        etThread.traceF( tin0P , T("setting bSilent because no matching A record found [domain,peer]:    ")+tDomainNet+tb4+tDomainPeer ) ;
                                                         bSilent = 1 ;
                                                     {
                                                     else
 
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tAllowVersion  ) ) nnOut = nnAllow ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRefuseVersion ) ) nnOut = nnRefuse ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tSingularity   ) ) nnOut = nnSingularity ; //MIGHT BE 0.  THIS MEANS THAT A SINGULARITY IS NOT REGISTERED
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNs5           ) ) nnOut = nnRoot ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNs            ) ) nnOut = nnRoot ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tMail          ) ) nnOut = nnRoot ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tFtp           ) ) nnOut = nnRoot ;
-                                                    //else if( ((tin1S&)tin0P).pEtScratch->strIdF(       tin0P , tHostOk , psttw        ) ) { nnOut = nnRoot /*ANY NONZE VALUE WILL DO*/ ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tFireOs        ) ) { nnOut = nnRoot ; bFireOs = 1 ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWww           ) ) nnOut = nnRoot ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tRoot          ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tAllowVersion  ) ) nnOut = nnAllow ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tRefuseVersion ) ) nnOut = nnRefuse ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tSingularity   ) ) nnOut = nnSingularity ; //MIGHT BE 0.  THIS MEANS THAT A SINGULARITY IS NOT REGISTERED
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tNs5           ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tNs            ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tMail          ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tFtp           ) ) nnOut = nnRoot ;
+                                                    //else if( ((tin1S&)tin0P).pEtScratch->strIdF(       tin0P , tHostOk , tDomainNet        ) ) { nnOut = nnRoot /*ANY NONZE VALUE WILL DO*/ ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tFireOs        ) ) { nnOut = nnRoot ; bFireOs = 1 ; } //U: ASSUME: I AM LIVING ON THE HOST THAT IS TO BE FIRED
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWww           ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tRoot          ) ) nnOut = nnRoot ;
                                                     //}
                                                     //    ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttDigits ) ;
                                                     //    //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
@@ -155,28 +154,28 @@ DONE( tmWorkF )
                                                     //    nnOut = *(nicNameC*)&(countT&)swNicName ;
                                                     //    idComputer = ((tin1S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttDigits ) ;
                                                     //    swNicName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                                                    //    ((tin1S&)tin0P).pEtScratch->strWordF( tin0P , psttDigits , psttw , sttq , S1C('.') ) ; ___( psttDigits ) ; ;
+                                                    //    ((tin1S&)tin0P).pEtScratch->strWordF( tin0P , psttDigits , tDomainNet , sttq , S1C('.') ) ; ___( psttDigits ) ; ;
                                                     //    strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                                                     //    ZE( strokeS* , psttDigits ) ;
                                                     //{
-                                                    //else if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , tQueryHostSuffix , psttw ) )
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tIfc5        ) ) nnOut = nnRoot ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tIfc1        ) ) nnOut = nnRoot ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tPort3Space  ) ) nnOut = nnRelayPortCraft ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tPort2Space  ) ) nnOut = nnRelayPortTest ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tPort1Space  ) ) nnOut = nnRelayPort ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn3Space    ) ) nnOut = nnRoot ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn2Space    ) ) nnOut = nnRoot ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tNn1Space    ) ) nnOut = nnRoot ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tGorilla1    ) ) nnOut = nnGorilla1 ;
+                                                    //else if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , tQueryHostSuffix , tDomainNet ) )
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tIfc5        ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tIfc1        ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tPort3Space  ) ) nnOut = nnRelayPortCraft ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tPort2Space  ) ) nnOut = nnRelayPortTest ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tPort1Space  ) ) nnOut = nnRelayPort ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tNn3Space    ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tNn2Space    ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tNn1Space    ) ) nnOut = nnRoot ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tGorilla1    ) ) nnOut = nnGorilla1 ;
                                                     //
                                                     //P:PERSONALITY: I MUST KNOW ONLY UNGUESSABLE RANDOM SECRET DOMAIN NAMES SO THAT A PEER THAT DOES NOT KNOW WO OF THEM DOESN'T GET A REPLY
                                                     //
 
                                                     //U:: COMMENT OUT ALL OF THE CODE THAT IS ONLY NEEDED FOR THE FOLLOWING COMMENTED OUT LINES
 
-                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
-                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
 
                                                     //}
                                                     //    //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("looked up teacher's nicNameC value: ")+T("idComputer=")+TF1(idComputer)+T(" nnOut=")+T(nnOut)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
@@ -185,14 +184,14 @@ DONE( tmWorkF )
                                                     //    idComputer = 0x4c3b8d9f  ; // SERIAL OF DRIVE ///c ON IFC12 (LAPTOP)
                                                     //    swNicName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                                                     //{
-                                                    //if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , psttw , tTeacher ) )
+                                                    //if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tTeacher ) )
 
-                                                    //CONoUTrAW( T("A: \"")+T(psttw)+T("\"\r\n") ) ;
+                                                    //CONoUTrAW( T("A: \"")+tDomainNet+T("\"\r\n") ) ;
 
                                                     nicNameC nnOut ;
-                                                    //CONoUTrAW( TF1(idClient)+T(" ")+T(nnPeer)+T(" ")+T(psttPeer)+T(": A: \"")+T(psttw)+T("\"\r\n") ) ;
-                                                    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": A: \"")+T(psttw)+T("\"\r\n") ) ;
-                                                    //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , TF1(idClient)+T(" ")+T(nnPeer)+T(" ")+T(psttPeer)+T(": A: \"")+T(psttw)+T("\"\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                                                    //CONoUTrAW( TF1(idClient)+T(" ")+T(nnPeer)+T(" ")+T(psttPeer)+T(": A: \"")+tDomainNet+T("\"\r\n") ) ;
+                                                    //((tin1S&)tin0P).pEtScratch->strokeF( tin0P , TF1(idClient)+tb+T(nnPeer)+tBar+T(psttPeer)+T(": A: \"")+tDomainNet+T("\"\r\n") ) ;
+                                                    //((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , TF1(idClient)+T(" ")+T(nnPeer)+T(" ")+T(psttPeer)+T(": A: \"")+tDomainNet+T("\"\r\n") , flSAY_APPEND | flSAY_LOG ) ;
                                                     TELL( "ifcIDtYPEdNSqUERY_A" ) ;
                                                     //CONoUTrAW( "A\r\n" ) ;
                                                 {
@@ -212,6 +211,8 @@ DONE( tmWorkF )
                                             *ps >> idType ;
                                             ZE( countT , idType ) ;
 
+                                            etThread.delF( tin0P , psttw ) ;
+                                            TN( tDomainNet , psttw ) ;
                                             }
                                                 etThread.traceF( tin0P , T("[domainNet,peer]:      \"")+T(psttw)+T("\"    \"")+tDomainPeer+T("\"") ) ;
 
@@ -226,7 +227,8 @@ DONE( tmWorkF )
                                             {
                                             if( psttw )
 
-                                            etThread.traceF( tin0P , T("[domainGross,peer]:    \"")+T(psttw)+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                            etThread.traceF( tin0P , T("[domainGross,peer]:    \"")+tDomainGross+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                            TN( tDomainGross , psttw ) ;
                                             if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
                                             *ps >> psttw ;
                                             ZE( strokeS* , psttw ) ;
