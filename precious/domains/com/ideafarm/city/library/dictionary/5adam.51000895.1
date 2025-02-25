@@ -122,11 +122,11 @@ DONE( tmWorkF )
                                                     }
                                                         }
                                                             rec_A_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , psttw , nnOut ) ;
-                                                            etThread.traceF( tin0P , T("found a matching A record! [nnOut,domain]:    ")+T(nnOut)+tb4+T(psttw) ) ;
+                                                            etThread.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+T(psttw)+tb4+tDomainPeer ) ;
                                                         {
                                                         else
                                                         }
-                                                            etThread.traceF( tin0P , T("!exception / matching A record but unlisted and unexpected peer, so not responding [nnOut,domain]:    ")+T(nnOut)+tb4+T(psttw) ) ;
+                                                            etThread.traceF( tin0P , T("!exception / matching A record but unlisted and unexpected peer, so not responding [nnOut,domain,peer]:    ")+T(nnOut)+tb4+T(psttw)+tb4+tDomainPeer ) ;
                                                             bSilent = 1 ;
                                                         {
                                                         if( !bListedDomain )
@@ -134,7 +134,7 @@ DONE( tmWorkF )
                                                     if( !bSilent )
 
                                                     }
-                                                        etThread.traceF( tin0P , T("no matching A record [domain]:    ")+T(psttw) ) ;
+                                                        etThread.traceF( tin0P , T("no matching A record [domain,peer]:    ")+T(psttw)+tb4+tDomainPeer ) ;
                                                         bSilent = 1 ;
                                                     {
                                                     else
@@ -209,7 +209,7 @@ DONE( tmWorkF )
                                             *ps >> idType ;
                                             ZE( countT , idType ) ;
 
-                                            etThread.traceF( tin0P , T("[domain]:    \"")+T(psttw)+T("\"") ) ;
+                                            etThread.traceF( tin0P , T("[domain,peer]:    \"")+T(psttw)+T("\"")+tb4+tDomainPeer ) ;
                                             ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
                                             *ps >> psttw ;
                                             ZE( strokeS* , psttw ) ;
@@ -274,10 +274,10 @@ DONE( tmWorkF )
                         ZE( boolT , bSilent ) ;
 
                         TELL( "preparing to handle a query packet" ) ;
-                        etRock.traceF( tin0P , tSayPrefix+T(nnPeer) ) ;
+                        etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tb4+tDomainPeer ) ;
                     {
 
-                    if( !bPeerListedOrStripe ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain ) ;
+                    if( !bPeerListedOrStripe ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
 
                     const boolT bPeerListedOrStripe = bListedDomain || nnsStripe & nnPeer ;
 
@@ -288,6 +288,7 @@ DONE( tmWorkF )
                             countT idHit = etThread.strIdF( tin0P , tListedDomain1 , psttPeer , 1 ) ;
 
                             //etThread.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
+                            tDomainPeer = T(psttPeer) ;
                         {
                         else
                         if( !psttPeer ) ether.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
@@ -295,6 +296,7 @@ DONE( tmWorkF )
                         ZE( strokeS* , psttPeer ) ;
                     {
                     ZE( boolT , bListedDomain ) ;
+                    TN( tDomainPeer , "" ) ;
 
                     TELL( "waited for a query datagram" ) ;
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
