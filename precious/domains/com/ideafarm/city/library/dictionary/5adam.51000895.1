@@ -215,7 +215,7 @@ DONE( tmWorkF )
                                             ZE( countT , idType ) ;
 
                                             etThread.traceF( tin0P , T("[domain,peer]:    \"")+T(psttw)+T("\"")+tb4+tDomainPeer ) ;
-                                            ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
+                                            if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
                                             *ps >> psttw ;
                                             ZE( strokeS* , psttw ) ;
                                             TELL( "preparing to respond to a single query" ) ;
@@ -435,6 +435,8 @@ DONE( tmWorkF )
         ||
         !tDomainRootAllowed1.csF( tin0P )
         ||
+        !tIpWebHook1.csF( tin0P )
+        ||
         !tDomainLeafWebHook1.csF( tin0P )
         ||
         !tDomainLeafWebHooks.csF( tin0P )
@@ -448,7 +450,7 @@ DONE( tmWorkF )
     }
         etThread.delF( tin0P , psttEat ) ;
         tDomainRootAllowed2 = T(psttEat) ;
-        etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
         ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.2")  ) ; ___( psttEat ) ;
     {
     TN( tDomainRootAllowed2 , "" ) ;
@@ -456,7 +458,7 @@ DONE( tmWorkF )
     }
         etThread.delF( tin0P , psttEat ) ;
         tDomainRootAllowed1 = T(psttEat) ;
-        etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
         ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.1")  ) ; ___( psttEat ) ;
     {
     TN( tDomainRootAllowed1 , "" ) ;
@@ -464,7 +466,7 @@ DONE( tmWorkF )
     }
         etThread.delF( tin0P , psttEat ) ;
         tIpWebHook1 = T(psttEat) ;
-        etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
         ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh1")  ) ; ___( psttEat ) ;
     {
     TN( tIpWebHook1 , "" ) ;
@@ -472,7 +474,7 @@ DONE( tmWorkF )
     }
         etThread.delF( tin0P , psttEat ) ;
         tDomainLeafWebHook1 = T(psttEat) ;
-        etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
         ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.wh1")  ) ; ___( psttEat ) ;
     {
     TN( tDomainLeafWebHook1 , "" ) ;
@@ -480,7 +482,7 @@ DONE( tmWorkF )
     }
         etThread.delF( tin0P , psttEat ) ;
         tDomainLeafWebHooks = T(psttEat) ;
-        etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
         ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.webhooks")  ) ; ___( psttEat ) ;
     {
     TN( tDomainLeafWebHooks , "" ) ;
