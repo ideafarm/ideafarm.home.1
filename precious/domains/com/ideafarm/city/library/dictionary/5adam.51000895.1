@@ -410,8 +410,8 @@ DONE( tmWorkF )
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
 
-        TN( tListedDomain2 , "" ) ;
-        TN( tListedDomain1 , "" ) ;
+        TN( tListedDomain2 , (strokeS*)tDomainRootAllowed2 ) ;
+        TN( tListedDomain1 , (strokeS*)tDomainRootAllowed1 ) ;
 
         //nicNameC nnReserved2     = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
         //nicNameC nnReserved1     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
@@ -431,6 +431,10 @@ DONE( tmWorkF )
         etThread.traceF( tin0P , T("a required setting is missing") ) ;
     {
     )
+        !tDomainRootAllowed2.csF( tin0P )
+        ||
+        !tDomainRootAllowed1.csF( tin0P )
+        ||
         !tDomainLeafWebHook1.csF( tin0P )
         ||
         !tDomainLeafWebHooks.csF( tin0P )
@@ -439,7 +443,23 @@ DONE( tmWorkF )
     (
     if
 
-    etThread.traceF( tin0P , T("settings [tIpWebHook1,tDomainLeafWebHooks,tDomainLeafWebHook1]:    \"")+tIpWebHook1+T("\"    \"")+tDomainLeafWebHooks+T("\"    \"")+tDomainLeafWebHook1+T("\"") ) ;
+    etThread.traceF( tin0P , T("settings [tIpWebHook1,tDomainLeafWebHooks,tDomainLeafWebHook1]:    \"")+tIpWebHook1+T("\"    \"")+tDomainLeafWebHooks+T("\"    \"")+tDomainLeafWebHook1+T("\"    \"")+tDomainRootAllowed1+T("\"    \"")+tDomainRootAllowed2+T("\"") ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed2 = T(psttEat) ;
+        etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.2")  ) ; ___( psttEat ) ;
+    {
+    TN( tDomainRootAllowed2 , "" ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed1 = T(psttEat) ;
+        etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.1")  ) ; ___( psttEat ) ;
+    {
+    TN( tDomainRootAllowed1 , "" ) ;
 
     }
         etThread.delF( tin0P , psttEat ) ;
