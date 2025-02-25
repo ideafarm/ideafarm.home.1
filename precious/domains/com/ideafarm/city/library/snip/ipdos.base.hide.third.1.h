@@ -1,4 +1,6 @@
 
+#define ifcIDtYPEdNSqUERY_AAAA                    0x001c
+
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
