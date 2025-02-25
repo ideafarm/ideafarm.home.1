@@ -104,7 +104,7 @@ DONE( tmWorkF )
                                                 //}
                                                 //    break ;
                                                 //    }
-                                                //        rec_A_F(  tin0P , stsReplies , ifcIDtYPEdNSrEPLY_NOTE   , tMail , nnRoot ) ;
+                                                //        rec_A_F(  tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_NOTE   , tMail , nnRoot ) ;
                                                 //        rec_MX_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , tMail ) ;
                                                 //    {
                                                 //    if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tRoot ) )
@@ -118,7 +118,7 @@ DONE( tmWorkF )
 
                                                     }
                                                         }
-                                                            rec_A_F( tin0P , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                            rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
                                                             etThread.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                         {
                                                         else
@@ -664,11 +664,13 @@ voidT rec_MX_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReply
         *ps << (countT)1 ;
         *ps << (countT)ifcIDtYPEdNSqUERY_A ;
         *ps << psttP ;
+
+        etherP.traceF( tin0P , T("rec_A_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
 {
-voidT rec_A_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
+voidT rec_A_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
 
 
 //  
