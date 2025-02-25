@@ -49,11 +49,7 @@ DONE( tmWorkF )
                                 //CONoUTrAW( "emitting reply\r\n" ) ;
                             {
                             else
-                            }
-                                etRock.traceF( tin0P , T(nnPeer)+tSaySilentlyIgnoring+tb4+tDomainPeer ) ;
-                                CONoUTrAW( "silent\r\n" ) ;
-                            {
-                            if( bSilent )
+                            if( bSilent ) etRock.traceF( tin0P , T(nnPeer)+tSaySilentlyIgnoring+tb4+tDomainPeer ) ;
 
                             }
                                 ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttPeer ) ;
@@ -74,6 +70,7 @@ DONE( tmWorkF )
                                                     TELL( "ifcIDeRRORdNS_QUERYnOTsUPPORTED" ) ;
                                                     //CONoUTrAW3( "type " , idType , " [not supported]\r\n" ) ;
                                                     bSilent = 1 ;
+                                                    etThread.traceF( tin0P , T("!exception / setting bSilent because this is an unsupported request type") ) ;
                                                 {
                                                 default :
                                                 //}
@@ -127,7 +124,7 @@ DONE( tmWorkF )
                                                         {
                                                         else
                                                         }
-                                                            etThread.traceF( tin0P , T("!exception / matching A record but unlisted and unexpected peer, so not responding [nnOut,domain,peer]:    ")+T(nnOut)+tb4+T(psttw)+tb4+tDomainPeer ) ;
+                                                            etThread.traceF( tin0P , T("!exception / matching A record, but setting bSilent because unlisted and unexpected peer [nnOut,domain,peer]:    ")+T(nnOut)+tb4+T(psttw)+tb4+tDomainPeer ) ;
                                                             bSilent = 1 ;
                                                         {
                                                         if( !bListedDomain )
@@ -135,7 +132,7 @@ DONE( tmWorkF )
                                                     if( !bSilent )
 
                                                     }
-                                                        etThread.traceF( tin0P , T("no matching A record [domain,peer]:    ")+T(psttw)+tb4+tDomainPeer ) ;
+                                                        etThread.traceF( tin0P , T("setting bSilent because no matching A record found [domain,peer]:    ")+T(psttw)+tb4+tDomainPeer ) ;
                                                         bSilent = 1 ;
                                                     {
                                                     else
@@ -206,7 +203,7 @@ DONE( tmWorkF )
                                                 case ifcIDtYPEdNSqUERY_CAA :
                                             {
                                             else if( idClass == 1 ) switch( idType )
-                                            if( bSilent ) ;//((tin1S&)tin0P).pEtScratch->ifcSayF( tin0P , T("---- SILENT REFUSAL: ")+T(nnPeer)+T(" ")+T(psttPeer)+T(": A: ")+T(psttw)+T("\r\n") , flSAY_APPEND | flSAY_LOG ) ;
+                                            if( bSilent ) etThread.traceF( tin0P , T("bSilent is set for an unknown reason") ) ;
 
                                             *ps >> idClass ;
                                             ZE( countT , idClass ) ;
@@ -245,6 +242,7 @@ DONE( tmWorkF )
                                 else
                                 }
                                     bSilent = 1 ;
+                                    etThread.traceF( tin0P , T("setting bSilent because dnsParseF failed") ) ;
                                     POOPR ;
                                 {
                                 if( POOP )
