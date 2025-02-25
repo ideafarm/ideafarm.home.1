@@ -214,7 +214,20 @@ DONE( tmWorkF )
                                             *ps >> idType ;
                                             ZE( countT , idType ) ;
 
-                                            etThread.traceF( tin0P , T("[domain,peer]:    \"")+T(psttw)+T("\"")+tb4+tDomainPeer ) ;
+                                            }
+                                                etThread.traceF( tin0P , T("[domainNet,peer]:    \"")+T(psttw)+T("\"")+tb4+tDomainPeer ) ;
+
+                                                                       psttw = psttNet ;
+                                                etThread.delF( tin0P , psttw ) ;
+
+                                                etThread.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttw , 0 , 0 ) ;
+                                                strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                                                countT idf = 1 ;
+                                                ZE( strokeS* , psttNet ) ;
+                                            {
+                                            if( psttw )
+
+                                            etThread.traceF( tin0P , T("[domainGross,peer]:    \"")+T(psttw)+T("\"")+tb4+tDomainPeer ) ;
                                             if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
                                             *ps >> psttw ;
                                             ZE( strokeS* , psttw ) ;
@@ -370,8 +383,8 @@ DONE( tmWorkF )
                 //TN( tMail  ,    "mail.ideafarm.com" ) ;
                 //TN( tTest  ,    "test.ideafarm.com" ) ;
                 //TN( tGorilla1 , "go1.hidden.ideafarm.com" ) ;
-                TN( tWebHook1 , "" ) ; tWebHook1 = tDomainLeafWebHook1+T(".hidden.ideafarm.com") ;
-                TN( tWebHooks , "" ) ; tWebHooks = tDomainLeafWebHooks+T(".hidden.ideafarm.com") ;
+                TN( tWebHook1 , "" ) ; tWebHook1 = tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
+                TN( tWebHooks , "" ) ; tWebHooks = tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
                 //TN( tEmail ,    ifcEMAIL_DNS ) ;
                 //TN( tRoot  ,    "ideafarm.com" ) ;
 
@@ -437,15 +450,15 @@ DONE( tmWorkF )
         ||
         !tIpWebHook1.csF( tin0P )
         ||
-        !tDomainLeafWebHook1.csF( tin0P )
+        !tDomainLeafWebHook1Net.csF( tin0P )
         ||
-        !tDomainLeafWebHooks.csF( tin0P )
+        !tDomainLeafWebHooksNet.csF( tin0P )
         ||
         !tIpWebHook1.csF( tin0P )
     (
     if
 
-    etThread.traceF( tin0P , T("settings [tIpWebHook1,tDomainLeafWebHooks,tDomainLeafWebHook1,tDomainRootAllowed1,tDomainRootAllowed2]:    \"")+tIpWebHook1+T("\"    \"")+tDomainLeafWebHooks+T("\"    \"")+tDomainLeafWebHook1+T("\"    \"")+tDomainRootAllowed1+T("\"    \"")+tDomainRootAllowed2+T("\"") ) ;
+    etThread.traceF( tin0P , T("settings [tIpWebHook1,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net,tDomainRootAllowed1,tDomainRootAllowed2]:    \"")+tIpWebHook1+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net+T("\"    \"")+tDomainRootAllowed1+T("\"    \"")+tDomainRootAllowed2+T("\"") ) ;
 
     }
         etThread.delF( tin0P , psttEat ) ;
@@ -473,19 +486,39 @@ DONE( tmWorkF )
 
     }
         etThread.delF( tin0P , psttEat ) ;
-        tDomainLeafWebHook1 = T(psttEat) ;
-        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        }
+            etThread.delF( tin0P , psttNet ) ;
+            tDomainLeafWebHook1Net = T(psttNet) ;
+            etThread.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            countT idf = 1 ;
+            ZE( strokeS* , psttNet ) ;
+
+            etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        {
+        if( psttEat )
         ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.wh1")  ) ; ___( psttEat ) ;
     {
-    TN( tDomainLeafWebHook1 , "" ) ;
+    TN( tDomainLeafWebHook1Net , "" ) ;
 
     }
         etThread.delF( tin0P , psttEat ) ;
-        tDomainLeafWebHooks = T(psttEat) ;
-        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        }
+            etThread.delF( tin0P , psttNet ) ;
+            tDomainLeafWebHooksNet = T(psttNet) ;
+            etThread.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            countT idf = 1 ;
+            ZE( strokeS* , psttNet ) ;
+
+            etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        {
+        if( psttEat )
         ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.webhooks")  ) ; ___( psttEat ) ;
     {
-    TN( tDomainLeafWebHooks , "" ) ;
+    TN( tDomainLeafWebHooksNet , "" ) ;
+
+    TN( tDash , "-" ) ;
 
     _IO_
 {
