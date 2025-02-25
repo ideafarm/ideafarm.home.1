@@ -49,7 +49,7 @@ DONE( tmWorkF )
                                 //CONoUTrAW( "emitting reply\r\n" ) ;
                             {
                             else
-                            if( bSilent ) etRock.traceF( tin0P , T(nnPeer)+tSaySilentlyIgnoring+tb4+tDomainPeer ) ;
+                            if( bSilent && !bPeerListedOrStripe ) etRock.traceF( tin0P , T(nnPeer)+tSaySilentlyIgnoring+tb4+tDomainPeer ) ;
 
                             }
                                 ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttPeer ) ;
@@ -70,7 +70,7 @@ DONE( tmWorkF )
                                                     TELL( "ifcIDeRRORdNS_QUERYnOTsUPPORTED" ) ;
                                                     //CONoUTrAW3( "type " , idType , " [not supported]\r\n" ) ;
                                                     bSilent = 1 ;
-                                                    etThread.traceF( tin0P , T("!exception / setting bSilent because this is an unsupported request type") ) ;
+                                                    etThread.traceF( tin0P , T("!exception / setting bSilent because this is an unsupported request type [idType]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
                                                 default :
                                                 //}
