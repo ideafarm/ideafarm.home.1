@@ -30,21 +30,16 @@ DONE( tmWorkF )
                         }
                             if( bFireOs ) ((tin1S&)tin0P).pEtScratch->osFireF( tin0P ) ;
 
-                            //CONoUTrAW( "done\r\n" ) ;
                             TELL( "query packet handled" ) ;
                             }
                                 ((tin1S&)tin0P).pEtScratch->delF( tin0P , pbr ) ;
-
-                                /*while( cTries -- )*/ sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
-                                //KEEP THE REPLY SUPPRESSED UNTIL I FULLY UNDERSTAND HOW TO PREVENT ME FROM BEING USED MALICIOUSLY
-                                //U::DISABLED TO PREVENT ME FROM BEING USED TO ATTACK SPOOFED REQUESTER
-
-                                countT cTries = 8 ;
+                                sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
                                 TELL( "writing a reply" ) ;
 
                                 ((tin1S&)tin0P).pEtScratch->dnsReplyF( tin0P , pbr , cbr , pbq , stsReplies , 1 , idError ) ;
                                 ZE( countT , cbr ) ;
                                 ZE( byteT* , pbr ) ;
+                                etThread.traceF( tin0P , T("replying [idError]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 TELL( "composing a reply" ) ;
                                 //CONoUTrAW( "emitting reply\r\n" ) ;
                             {
