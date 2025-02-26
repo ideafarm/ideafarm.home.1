@@ -309,7 +309,7 @@ DONE( tmWorkF )
                             tDomainPeer = T(psttPeer) ;
                         {
                         else
-                        if( !psttPeer ) ether.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
+                        if( !psttPeer ) ;//ether.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
                         ether.sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
                         ZE( strokeS* , psttPeer ) ;
                     {
@@ -435,6 +435,9 @@ DONE( tmWorkF )
         TN( tListedDomain1 , (strokeS*)tDomainRootAllowed1 ) ;
 
         } ;
+            &nnAllowedStripe_2b ,
+            &nnAllowedStripe_2a ,
+            &nnAllowedStripe_29 ,
             &nnAllowedStripe_28 ,
             &nnAllowedStripe_27 ,
             &nnAllowedStripe_26 ,
@@ -478,39 +481,42 @@ DONE( tmWorkF )
         {
         nicNameC* pnnAllowed[] =
 
-        nicNameC nnAllowedStripe_28 = etThread.sockNicNameF( tin0P , T("44.242.180.165") ) ;
-        nicNameC nnAllowedStripe_27 = etThread.sockNicNameF( tin0P , T("44.242.180.123") ) ;
-        nicNameC nnAllowedStripe_26 = etThread.sockNicNameF( tin0P , T("44.242.179.92") ) ;
-        nicNameC nnAllowedStripe_25 = etThread.sockNicNameF( tin0P , T("44.242.179.63") ) ;
-        nicNameC nnAllowedStripe_24 = etThread.sockNicNameF( tin0P , T("44.242.179.48") ) ;
-        nicNameC nnAllowedStripe_23 = etThread.sockNicNameF( tin0P , T("44.242.179.102") ) ;
-        nicNameC nnAllowedStripe_22 = etThread.sockNicNameF( tin0P , T("44.242.177.38") ) ;
-        nicNameC nnAllowedStripe_21 = etThread.sockNicNameF( tin0P , T("35.80.48.209") ) ;
-        nicNameC nnAllowedStripe_20 = etThread.sockNicNameF( tin0P , T("34.223.47.204") ) ;
-        nicNameC nnAllowedStripe_1f = etThread.sockNicNameF( tin0P , T("34.223.46.51") ) ;
-        nicNameC nnAllowedStripe_1e = etThread.sockNicNameF( tin0P , T("34.223.46.110") ) ;
-        nicNameC nnAllowedStripe_1d = etThread.sockNicNameF( tin0P , T("34.223.45.181") ) ;
-        nicNameC nnAllowedStripe_1c = etThread.sockNicNameF( tin0P , T("34.223.45.175") ) ;
-        nicNameC nnAllowedStripe_1b = etThread.sockNicNameF( tin0P , T("34.223.37.241") ) ;
-        nicNameC nnAllowedStripe_1a = etThread.sockNicNameF( tin0P , T("34.223.112.29") ) ;
-        nicNameC nnAllowedStripe_19 = etThread.sockNicNameF( tin0P , T("34.218.119.80") ) ;
-        nicNameC nnAllowedStripe_18 = etThread.sockNicNameF( tin0P , T("34.218.119.120") ) ;
-        nicNameC nnAllowedStripe_17 = etThread.sockNicNameF( tin0P , T("34.216.226.194") ) ;
-        nicNameC nnAllowedStripe_16 = etThread.sockNicNameF( tin0P , T("3.19.147.71") ) ;
-        nicNameC nnAllowedStripe_15 = etThread.sockNicNameF( tin0P , T("3.19.147.64") ) ;
-        nicNameC nnAllowedStripe_14 = etThread.sockNicNameF( tin0P , T("3.19.147.5") ) ;
-        nicNameC nnAllowedStripe_13 = etThread.sockNicNameF( tin0P , T("3.19.147.31") ) ;
-        nicNameC nnAllowedStripe_12 = etThread.sockNicNameF( tin0P , T("3.19.147.210") ) ;
-        nicNameC nnAllowedStripe_11 = etThread.sockNicNameF( tin0P , T("3.19.147.208") ) ;
-        nicNameC nnAllowedStripe_10 = etThread.sockNicNameF( tin0P , T("3.19.147.166") ) ;
-        nicNameC nnAllowedStripe_0f = etThread.sockNicNameF( tin0P , T("3.19.147.152") ) ;
-        nicNameC nnAllowedStripe_0e = etThread.sockNicNameF( tin0P , T("3.18.132.41") ) ;
-        nicNameC nnAllowedStripe_0d = etThread.sockNicNameF( tin0P , T("3.18.132.37") ) ;
-        nicNameC nnAllowedStripe_0c = etThread.sockNicNameF( tin0P , T("3.18.132.35") ) ;
-        nicNameC nnAllowedStripe_0b = etThread.sockNicNameF( tin0P , T("3.18.132.27") ) ;
-        nicNameC nnAllowedStripe_0a = etThread.sockNicNameF( tin0P , T("3.142.4.130") ) ;
-        nicNameC nnAllowedStripe_09 = etThread.sockNicNameF( tin0P , T("3.141.252.139") ) ;
-        nicNameC nnAllowedStripe_08 = etThread.sockNicNameF( tin0P , T("3.140.136.146") ) ;
+        nicNameC nnAllowedStripe_2b = etThread.sockNicNameF( tin0P , T("44.242.180.165") ) ;
+        nicNameC nnAllowedStripe_2a = etThread.sockNicNameF( tin0P , T("44.242.180.123") ) ;
+        nicNameC nnAllowedStripe_29 = etThread.sockNicNameF( tin0P , T("44.242.179.92") ) ;
+        nicNameC nnAllowedStripe_28 = etThread.sockNicNameF( tin0P , T("44.242.179.63") ) ;
+        nicNameC nnAllowedStripe_27 = etThread.sockNicNameF( tin0P , T("44.242.179.48") ) ;
+        nicNameC nnAllowedStripe_26 = etThread.sockNicNameF( tin0P , T("44.242.179.102") ) ;
+        nicNameC nnAllowedStripe_25 = etThread.sockNicNameF( tin0P , T("44.242.177.78") ) ;
+        nicNameC nnAllowedStripe_24 = etThread.sockNicNameF( tin0P , T("44.242.177.38") ) ;
+        nicNameC nnAllowedStripe_23 = etThread.sockNicNameF( tin0P , T("35.80.48.209") ) ;
+        nicNameC nnAllowedStripe_22 = etThread.sockNicNameF( tin0P , T("34.223.47.204") ) ;
+        nicNameC nnAllowedStripe_21 = etThread.sockNicNameF( tin0P , T("34.223.46.51") ) ;
+        nicNameC nnAllowedStripe_20 = etThread.sockNicNameF( tin0P , T("34.223.46.110") ) ;
+        nicNameC nnAllowedStripe_1f = etThread.sockNicNameF( tin0P , T("34.223.45.181") ) ;
+        nicNameC nnAllowedStripe_1e = etThread.sockNicNameF( tin0P , T("34.223.45.175") ) ;
+        nicNameC nnAllowedStripe_1d = etThread.sockNicNameF( tin0P , T("34.223.45.164") ) ;
+        nicNameC nnAllowedStripe_1c = etThread.sockNicNameF( tin0P , T("34.223.37.241") ) ;
+        nicNameC nnAllowedStripe_1b = etThread.sockNicNameF( tin0P , T("34.223.112.29") ) ;
+        nicNameC nnAllowedStripe_1a = etThread.sockNicNameF( tin0P , T("34.218.119.80") ) ;
+        nicNameC nnAllowedStripe_19 = etThread.sockNicNameF( tin0P , T("34.218.119.120") ) ;
+        nicNameC nnAllowedStripe_18 = etThread.sockNicNameF( tin0P , T("34.216.226.194") ) ;
+        nicNameC nnAllowedStripe_17 = etThread.sockNicNameF( tin0P , T("3.19.147.71") ) ;
+        nicNameC nnAllowedStripe_16 = etThread.sockNicNameF( tin0P , T("3.19.147.64") ) ;
+        nicNameC nnAllowedStripe_15 = etThread.sockNicNameF( tin0P , T("3.19.147.5") ) ;
+        nicNameC nnAllowedStripe_14 = etThread.sockNicNameF( tin0P , T("3.19.147.31") ) ;
+        nicNameC nnAllowedStripe_13 = etThread.sockNicNameF( tin0P , T("3.19.147.210") ) ;
+        nicNameC nnAllowedStripe_12 = etThread.sockNicNameF( tin0P , T("3.19.147.208") ) ;
+        nicNameC nnAllowedStripe_11 = etThread.sockNicNameF( tin0P , T("3.19.147.166") ) ;
+        nicNameC nnAllowedStripe_10 = etThread.sockNicNameF( tin0P , T("3.19.147.152") ) ;
+        nicNameC nnAllowedStripe_0f = etThread.sockNicNameF( tin0P , T("3.18.132.41") ) ;
+        nicNameC nnAllowedStripe_0e = etThread.sockNicNameF( tin0P , T("3.18.132.37") ) ;
+        nicNameC nnAllowedStripe_0d = etThread.sockNicNameF( tin0P , T("3.18.132.35") ) ;
+        nicNameC nnAllowedStripe_0c = etThread.sockNicNameF( tin0P , T("3.18.132.27") ) ;
+        nicNameC nnAllowedStripe_0b = etThread.sockNicNameF( tin0P , T("3.142.4.130") ) ;
+        nicNameC nnAllowedStripe_0a = etThread.sockNicNameF( tin0P , T("3.141.252.139") ) ;
+        nicNameC nnAllowedStripe_09 = etThread.sockNicNameF( tin0P , T("3.140.136.146") ) ;
+        nicNameC nnAllowedStripe_08 = etThread.sockNicNameF( tin0P , T("3.140.136.135") ) ;
         nicNameC nnAllowedStripe_07 = etThread.sockNicNameF( tin0P , T("3.139.136.242") ) ;
         nicNameC nnAllowedStripe_06 = etThread.sockNicNameF( tin0P , T("3.139.136.145") ) ;
         nicNameC nnAllowedStripe_05 = etThread.sockNicNameF( tin0P , T("18.217.41.98") ) ;
