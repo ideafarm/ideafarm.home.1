@@ -294,7 +294,7 @@ DONE( tmWorkF )
 
                     if( !bPeerListedOrStripe ) etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
 
-                    const boolT bPeerListedOrStripe = bListedDomain || nnsStripe & nnPeer ;
+                    const boolT bPeerListedOrStripe = bStripeWebHookNotifier || bListedDomain || nnsStripe & nnPeer ;
 
                     }
                         ether.delF( tin0P , psttPeer ) ;
@@ -313,8 +313,19 @@ DONE( tmWorkF )
                         ether.sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
                         ZE( strokeS* , psttPeer ) ;
                     {
+                    if( !bStripeWebHookNotifier )
                     ZE( boolT , bListedDomain ) ;
                     TN( tDomainPeer , "" ) ;
+
+                    }
+                        }
+                            break ;
+                            bStripeWebHookNotifier = 1 ;
+                        {
+                        if( nnPeer == *pnnAllowed[ offn ] )
+                    {
+                    for( countT offn = 0 ; offn < sizeof pnnAllowed / sizeof pnnAllowed[ 0 ] ; offn ++ )
+                    ZE( boolT , bStripeWebHookNotifier ) ;
 
                     TELL( "waited for a query datagram" ) ;
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
@@ -422,6 +433,42 @@ DONE( tmWorkF )
 
         TN( tListedDomain2 , (strokeS*)tDomainRootAllowed2 ) ;
         TN( tListedDomain1 , (strokeS*)tDomainRootAllowed1 ) ;
+
+        } ;
+            &nnAllowedStripe0f
+            &nnAllowedStripe0e ,
+            &nnAllowedStripe0d ,
+            &nnAllowedStripe0c ,
+            &nnAllowedStripe0b ,
+            &nnAllowedStripe0a ,
+            &nnAllowedStripe09 ,
+            &nnAllowedStripe08 ,
+            &nnAllowedStripe07 ,
+            &nnAllowedStripe06 ,
+            &nnAllowedStripe05 ,
+            &nnAllowedStripe04 ,
+            &nnAllowedStripe03 ,
+            &nnAllowedStripe02 ,
+            &nnAllowedStripe01 ,
+        {
+        nicNameC* pnnAllowed[] =
+
+        nicNameC nnAllowedStripe0f = etThread.sockNicNameF( tin0P , T("18.188.9.80") ) ;
+        nicNameC nnAllowedStripe0e = etThread.sockNicNameF( tin0P , T("18.188.9.89") ) ;
+        nicNameC nnAllowedStripe0d = etThread.sockNicNameF( tin0P , T("18.217.41.68") ) ;
+        nicNameC nnAllowedStripe0c = etThread.sockNicNameF( tin0P , T("18.217.41.98") ) ;
+        nicNameC nnAllowedStripe0b = etThread.sockNicNameF( tin0P , T("3.139.136.242") ) ;
+        nicNameC nnAllowedStripe0a = etThread.sockNicNameF( tin0P , T("3.141.252.139") ) ;
+        nicNameC nnAllowedStripe09 = etThread.sockNicNameF( tin0P , T("3.142.4.130") ) ;
+        nicNameC nnAllowedStripe08 = etThread.sockNicNameF( tin0P , T("3.18.132.41") ) ;
+        nicNameC nnAllowedStripe07 = etThread.sockNicNameF( tin0P , T("3.19.147.152") ) ;
+        nicNameC nnAllowedStripe06 = etThread.sockNicNameF( tin0P , T("3.19.147.5") ) ;
+        nicNameC nnAllowedStripe05 = etThread.sockNicNameF( tin0P , T("3.19.147.64") ) ;
+        nicNameC nnAllowedStripe04 = etThread.sockNicNameF( tin0P , T("34.223.46.110") ) ;
+        nicNameC nnAllowedStripe03 = etThread.sockNicNameF( tin0P , T("44.242.179.48") ) ;
+        nicNameC nnAllowedStripe02 = etThread.sockNicNameF( tin0P , T("44.242.180.123") ) ;
+        nicNameC nnAllowedStripe01 = etThread.sockNicNameF( tin0P , T("44.242.180.165") ) ;
+        //20250225@1730: THESE VALUES WERE OBTAINED BY SETTING STRIPE TO USE AN EASILY RECOGNIZED INVALID URI LIKE piddle.hidden.ideafarm.com, TELLING STRIPE TO RESEND AN EVENT NOTICE, AND THEN OBSERVING ALL OF THE QUERIES THAT HIT THE HIDDEN DNS SERVER (ME)
 
         //nicNameC nnReserved2     = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
         //nicNameC nnReserved1     = etThread.sockNicNameF( tin0P , T("64.176.222.148") ) ;
