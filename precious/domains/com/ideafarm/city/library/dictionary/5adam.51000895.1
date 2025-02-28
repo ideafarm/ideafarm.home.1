@@ -39,7 +39,7 @@ DONE( tmWorkF )
                                 ((tin1S&)tin0P).pEtScratch->dnsReplyF( tin0P , pbr , cbr , pbq , stsReplies , 1 , idError ) ;
                                 ZE( countT , cbr ) ;
                                 ZE( byteT* , pbr ) ;
-                                //etRock.traceF( tin0P , T("replying [idError]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                /**/etRock.traceF( tin0P , T("replying [idError]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 TELL( "composing a reply" ) ;
                                 //CONoUTrAW( "emitting reply\r\n" ) ;
                             {
@@ -64,7 +64,7 @@ DONE( tmWorkF )
                                                     TELL( "ifcIDeRRORdNS_QUERYnOTsUPPORTED" ) ;
                                                     //CONoUTrAW3( "type " , idType , " [not supported]\r\n" ) ;
                                                     bSilent = 1 ;
-                                                    //etRock.traceF( tin0P , T("!exception / setting bSilent because this is an unsupported request type [idType]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                                    /**/etRock.traceF( tin0P , T("!exception / setting bSilent because this is an unsupported request type [idType]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
                                                 default :
                                                 //}
@@ -114,11 +114,11 @@ DONE( tmWorkF )
                                                     }
                                                         }
                                                             rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
-                                                            //etRock.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
+                                                            /**/etRock.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                         {
                                                         else
                                                         }
-                                                            //etRock.traceF( tin0P , T("!exception / matching A record, but setting bSilent because unlisted and unexpected peer [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
+                                                            /**/etRock.traceF( tin0P , T("!exception / matching A record, but setting bSilent because unlisted and unexpected peer [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                             bSilent = 1 ;
                                                         {
                                                         if( !bPeerListedOrStripe )
@@ -126,7 +126,7 @@ DONE( tmWorkF )
                                                     if( !bSilent )
 
                                                     }
-                                                        //etRock.traceF( tin0P , T("setting bSilent because no matching AAAA record found [domain,peer]:    ")+tDomainNet+tb4+tDomainPeer ) ;
+                                                        /**/etRock.traceF( tin0P , T("setting bSilent because no matching AAAA record found [domain,peer]:    ")+tDomainNet+tb4+tDomainPeer ) ;
                                                         bSilent = 1 ;
                                                     {
                                                     else
@@ -143,11 +143,11 @@ DONE( tmWorkF )
                                                     }
                                                         }
                                                             rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
-                                                            //etRock.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
+                                                            /**/etRock.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                         {
                                                         else
                                                         }
-                                                            //etRock.traceF( tin0P , T("!exception / matching A record, but setting bSilent because unlisted and unexpected peer [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
+                                                            /**/etRock.traceF( tin0P , T("!exception / matching A record, but setting bSilent because unlisted and unexpected peer [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                             bSilent = 1 ;
                                                         {
                                                         if( !bPeerListedOrStripe )
@@ -155,7 +155,7 @@ DONE( tmWorkF )
                                                     if( !bSilent )
 
                                                     }
-                                                        //etRock.traceF( tin0P , T("setting bSilent because no matching A record found [domain,peer]:    ")+tDomainNet+tb4+tDomainPeer ) ;
+                                                        /**/etRock.traceF( tin0P , T("setting bSilent because no matching A record found [domain,peer]:    ")+tDomainNet+tb4+tDomainPeer ) ;
                                                         bSilent = 1 ;
                                                     {
                                                     else
@@ -226,7 +226,7 @@ DONE( tmWorkF )
                                                 case ifcIDtYPEdNSqUERY_CAA :
                                             {
                                             else if( idClass == 1 ) switch( idType )
-                                            if( bSilent ) ;//etRock.traceF( tin0P , T("bSilent is set for an unknown reason") ) ;
+                                            if( bSilent ) /*;*/etRock.traceF( tin0P , T("bSilent is set for an unknown reason") ) ;
 
                                             *ps >> idClass ;
                                             ZE( countT , idClass ) ;
@@ -237,7 +237,7 @@ DONE( tmWorkF )
                                             etThread.delF( tin0P , psttw ) ;
                                             TN( tDomainNet , psttw ) ;
                                             }
-                                                //etRock.traceF( tin0P , T("[domainNet,peer]:      \"")+T(psttw)+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                                /**/etRock.traceF( tin0P , T("[domainNet,peer]:      \"")+T(psttw)+T("\"    \"")+tDomainPeer+T("\"") ) ;
 
                                                 etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
                                                 TN( tDomainNet , "" ) ; tDomainNet = T(psttNet)+T(".hidden.ideafarm.com") ;
@@ -250,7 +250,7 @@ DONE( tmWorkF )
                                             {
                                             if( psttw )
 
-                                            //etRock.traceF( tin0P , T("[domainGross,peer]:    \"")+tDomainGross+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                            /**/etRock.traceF( tin0P , T("[domainGross,peer]:    \"")+tDomainGross+T("\"    \"")+tDomainPeer+T("\"") ) ;
                                             TN( tDomainGross , psttw ) ;
                                             if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
                                             *ps >> psttw ;
@@ -268,7 +268,7 @@ DONE( tmWorkF )
                                 else
                                 }
                                     bSilent = 1 ;
-                                    //etRock.traceF( tin0P , T("setting bSilent because dnsParseF failed") ) ;
+                                    /**/etRock.traceF( tin0P , T("setting bSilent because dnsParseF failed") ) ;
                                     POOPR ;
                                 {
                                 if( POOP )
@@ -317,10 +317,10 @@ DONE( tmWorkF )
                         ZE( boolT , bSilent ) ;
 
                         TELL( "preparing to handle a query packet" ) ;
-                        //etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tb4+tDomainPeer ) ;
+                        /**/etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tb4+tDomainPeer ) ;
                     {
 
-                    if( !bPeerListedOrStripe ) ;//etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
+                    if( !bPeerListedOrStripe ) /*;*/etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
 
                     const boolT bPeerListedOrStripe = bStripeWebHookNotifier || bListedDomain || nnsStripe & nnPeer ;
 
@@ -360,11 +360,11 @@ DONE( tmWorkF )
                             {
                             for( countT offt = 0 ; offt < cListedDomains ; offt ++ )
 
-                            //etRock.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
+                            /**/etRock.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
                             tDomainPeer = T(psttPeer) ;
                         {
                         else
-                        if( !psttPeer ) ;//ether.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
+                        if( !psttPeer ) /*;*/etRock.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
                         ether.sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
                         ZE( strokeS* , psttPeer ) ;
                     {
@@ -726,16 +726,16 @@ DONE( tmWorkF )
     (
     if
 
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
 
-    //etRock.traceF( tin0P , T("settings [tIpWebHook1,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
 
     }
         etThread.delF( tin0P , psttEat ) ;
@@ -989,7 +989,7 @@ voidT rec_MX_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReply
         *ps << (countT)ifcIDtYPEdNSqUERY_AAAA ;
         *ps << psttP ;
 
-        //etherP.traceF( tin0P , T("rec_AAAA_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+        /**/etherP.traceF( tin0P , T("rec_AAAA_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
@@ -1010,7 +1010,7 @@ voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const co
         *ps << (countT)ifcIDtYPEdNSqUERY_A ;
         *ps << psttP ;
 
-        //etherP.traceF( tin0P , T("rec_A_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+        /**/etherP.traceF( tin0P , T("rec_A_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
