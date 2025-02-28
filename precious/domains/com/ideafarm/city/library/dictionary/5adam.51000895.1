@@ -330,9 +330,9 @@ DONE( tmWorkF )
                                 break ;
                                 bStripeWebHookNotifier = 1 ;
                             {
-                            if( nnPeer == *pnnAllowed[ offn ] )
+                            if( nnPeer == *ppnnAllowed[ offn ] )
                         {
-                        for( countT offn = 0 ; offn < sizeof pnnAllowed / sizeof pnnAllowed[ 0 ] ; offn ++ )
+                        for( countT offn = 0 ; offn < sizeof ppnnAllowed / sizeof ppnnAllowed[ 0 ] ; offn ++ )
                     {
                     if( !bListedDomain )
                     ZE( boolT , bStripeWebHookNotifier ) ;
@@ -348,7 +348,7 @@ DONE( tmWorkF )
                                 if( idHit && idHit == 1 + psttPeer->idAdam - pptListedDomain[ offt ]->csF( tin0P ) )
                                 countT idHit  = etThread.strIdF( tin0P , *pptListedDomain[ offt ] , psttPeer , 1 ) ;
                             {
-                            for( countT offt = 0 ; offt < sizeof pptListedDomain / sizeof pptListedDomain[ 0 ] ; offt ++ )
+                            for( countT offt = 0 ; offt < cListedDomains ; offt ++ )
 
                             //etRock.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
                             tDomainPeer = T(psttPeer) ;
@@ -464,6 +464,16 @@ DONE( tmWorkF )
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
 
+        }
+            }
+                else                                                                 break ;
+                if( etThread.strCompareF( tin0P , *pptListedDomain[ offt ] , tnu ) ) cListedDomains ++ ;
+            {
+            for( countT offt = 0 ; offt < sizeof pptListedDomain / sizeof pptListedDomain[ 0 ] ; offt ++ )
+            TN( tnu , ".not.used.ideafarm.com" ) ;
+        {
+        ZE( countT , cListedDomains ) ;                             //P:PERSONALITY: I IGNORE ALL ELEMENTS NOT BEFORE THE WO'TH ELEMENT THAT CONTAINS THE "NOT USED" VALUE ; THIS IS FOR SPEED
+
         } ;
             &tListedDomain8 ,
             &tListedDomain7 ,
@@ -534,7 +544,7 @@ DONE( tmWorkF )
             &nnAllowedStripe_02 ,
             &nnAllowedStripe_01 ,
         {
-        nicNameC* pnnAllowed[] =
+        nicNameC* ppnnAllowed[] =
 
         nicNameC nnAllowedStripe_2f = etThread.sockNicNameF( tin0P , T("44.242.180.165") ) ;
         nicNameC nnAllowedStripe_2e = etThread.sockNicNameF( tin0P , T("44.242.180.123") ) ;
