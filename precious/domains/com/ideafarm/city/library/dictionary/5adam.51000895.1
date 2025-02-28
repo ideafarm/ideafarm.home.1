@@ -330,9 +330,19 @@ DONE( tmWorkF )
                                 break ;
                                 bStripeWebHookNotifier = 1 ;
                             {
-                            if( nnPeer == *ppnnAllowed[ offn ] )
+                            if( maskedPeer == pcMaskSubnetAllowedStripe[ offm ] )
                         {
-                        for( countT offn = 0 ; offn < sizeof ppnnAllowed / sizeof ppnnAllowed[ 0 ] ; offn ++ )
+                        for( countT offm = 0 ; offm < sizeof pcMaskSubnetAllowedStripe / sizeof pcMaskSubnetAllowedStripe[ 0 ] ; offm ++ )
+                        countT maskedPeer = *(const count02T*)nnPeer & 0xffffff00 ;
+
+                        //}
+                        //    }
+                        //        break ;
+                        //        bStripeWebHookNotifier = 1 ;
+                        //    {
+                        //    if( nnPeer == *ppnnAllowed[ offn ] )
+                        //{
+                        //for( countT offn = 0 ; offn < sizeof ppnnAllowed / sizeof ppnnAllowed[ 0 ] ; offn ++ )
                     {
                     if( !bListedDomain )
                     ZE( boolT , bStripeWebHookNotifier ) ;
@@ -496,6 +506,31 @@ DONE( tmWorkF )
         TN( tListedDomain1 , (strokeS*)tDomainRootAllowed1 ) ;
 
         } ;
+            *pcSubnetAllowedStripe_3d & 0xffffff00 ,
+            *pcSubnetAllowedStripe_3b & 0xffffff00 ,
+            *pcSubnetAllowedStripe_37 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_34 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_32 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_2e & 0xffffff00 ,
+            *pcSubnetAllowedStripe_2c & 0xffffff00 ,
+            *pcSubnetAllowedStripe_29 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_25 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_22 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_21 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_1d & 0xffffff00 ,
+            *pcSubnetAllowedStripe_1c & 0xffffff00 ,
+            *pcSubnetAllowedStripe_19 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_18 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_10 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_0c & 0xffffff00 ,
+            *pcSubnetAllowedStripe_0b & 0xffffff00 ,
+            *pcSubnetAllowedStripe_0a & 0xffffff00 ,
+            *pcSubnetAllowedStripe_05 & 0xffffff00 ,
+            *pcSubnetAllowedStripe_02 & 0xffffff00 ,
+        {
+        const countT pcMaskSubnetAllowedStripe[] =
+
+        } ;
             &nnAllowedStripe_3d ,
             &nnAllowedStripe_3c ,
             &nnAllowedStripe_3b ,
@@ -559,6 +594,28 @@ DONE( tmWorkF )
             &nnAllowedStripe_01 ,
         {
         nicNameC* ppnnAllowed[] =
+
+        const count02T* const pcSubnetAllowedStripe_3d = nnAllowedStripe_3d ;
+        const count02T* const pcSubnetAllowedStripe_3b = nnAllowedStripe_3b ;
+        const count02T* const pcSubnetAllowedStripe_37 = nnAllowedStripe_37 ;
+        const count02T* const pcSubnetAllowedStripe_34 = nnAllowedStripe_34 ;
+        const count02T* const pcSubnetAllowedStripe_32 = nnAllowedStripe_32 ;
+        const count02T* const pcSubnetAllowedStripe_2e = nnAllowedStripe_2e ;
+        const count02T* const pcSubnetAllowedStripe_2c = nnAllowedStripe_2c ;
+        const count02T* const pcSubnetAllowedStripe_29 = nnAllowedStripe_29 ;
+        const count02T* const pcSubnetAllowedStripe_25 = nnAllowedStripe_25 ;
+        const count02T* const pcSubnetAllowedStripe_22 = nnAllowedStripe_22 ;
+        const count02T* const pcSubnetAllowedStripe_21 = nnAllowedStripe_21 ;
+        const count02T* const pcSubnetAllowedStripe_1d = nnAllowedStripe_1d ;
+        const count02T* const pcSubnetAllowedStripe_1c = nnAllowedStripe_1c ;
+        const count02T* const pcSubnetAllowedStripe_19 = nnAllowedStripe_19 ;
+        const count02T* const pcSubnetAllowedStripe_18 = nnAllowedStripe_18 ;
+        const count02T* const pcSubnetAllowedStripe_10 = nnAllowedStripe_10 ;
+        const count02T* const pcSubnetAllowedStripe_0c = nnAllowedStripe_0c ;
+        const count02T* const pcSubnetAllowedStripe_0b = nnAllowedStripe_0b ;
+        const count02T* const pcSubnetAllowedStripe_0a = nnAllowedStripe_0a ;
+        const count02T* const pcSubnetAllowedStripe_05 = nnAllowedStripe_05 ;
+        const count02T* const pcSubnetAllowedStripe_02 = nnAllowedStripe_02 ;
 
         nicNameC nnAllowedStripe_3d = etThread.sockNicNameF( tin0P , T("44.242.180.165") ) ;
         nicNameC nnAllowedStripe_3c = etThread.sockNicNameF( tin0P , T("44.242.180.123") ) ;
