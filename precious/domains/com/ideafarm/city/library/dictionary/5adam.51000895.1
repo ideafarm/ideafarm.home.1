@@ -340,11 +340,15 @@ DONE( tmWorkF )
                     }
                         ether.delF( tin0P , psttPeer ) ;
                         }
-                            bListedDomain |= idHit2 && idHit2 == 1 + psttPeer->idAdam - tListedDomain2.csF( tin0P ) ;
-                            countT idHit2  = etThread.strIdF( tin0P , tListedDomain2 , psttPeer , 1 ) ;
-
-                            bListedDomain  = idHit1 && idHit1 == 1 + psttPeer->idAdam - tListedDomain1.csF( tin0P ) ;
-                            countT idHit1  = etThread.strIdF( tin0P , tListedDomain1 , psttPeer , 1 ) ;
+                            }
+                                }
+                                    break ;
+                                    bListedDomain ++ ;
+                                {
+                                if( idHit && idHit == 1 + psttPeer->idAdam - pptListedDomain[ offt ]->csF( tin0P ) )
+                                countT idHit  = etThread.strIdF( tin0P , *pptListedDomain[ offt ] , psttPeer , 1 ) ;
+                            {
+                            for( countT offt = 0 ; offt < sizeof pptListedDomain / sizeof pptListedDomain[ 0 ] ; offt ++ )
 
                             /**/etRock.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
                             tDomainPeer = T(psttPeer) ;
@@ -460,6 +464,24 @@ DONE( tmWorkF )
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
 
+        } ;
+            &tListedDomain8 ,
+            &tListedDomain7 ,
+            &tListedDomain6 ,
+            &tListedDomain5 ,
+            &tListedDomain4 ,
+            &tListedDomain3 ,
+            &tListedDomain2 ,
+            &tListedDomain1 ,
+        {
+        textC* pptListedDomain[] =
+
+        TN( tListedDomain8 , (strokeS*)tDomainRootAllowed8 ) ;
+        TN( tListedDomain7 , (strokeS*)tDomainRootAllowed7 ) ;
+        TN( tListedDomain6 , (strokeS*)tDomainRootAllowed6 ) ;
+        TN( tListedDomain5 , (strokeS*)tDomainRootAllowed5 ) ;
+        TN( tListedDomain4 , (strokeS*)tDomainRootAllowed4 ) ;
+        TN( tListedDomain3 , (strokeS*)tDomainRootAllowed3 ) ;
         TN( tListedDomain2 , (strokeS*)tDomainRootAllowed2 ) ;
         TN( tListedDomain1 , (strokeS*)tDomainRootAllowed1 ) ;
 
@@ -581,6 +603,18 @@ DONE( tmWorkF )
         etRock.traceF( tin0P , T("a required setting is missing") ) ;
     {
     )
+        !tDomainRootAllowed8.csF( tin0P )
+        ||
+        !tDomainRootAllowed7.csF( tin0P )
+        ||
+        !tDomainRootAllowed6.csF( tin0P )
+        ||
+        !tDomainRootAllowed5.csF( tin0P )
+        ||
+        !tDomainRootAllowed4.csF( tin0P )
+        ||
+        !tDomainRootAllowed3.csF( tin0P )
+        ||
         !tDomainRootAllowed2.csF( tin0P )
         ||
         !tDomainRootAllowed1.csF( tin0P )
@@ -595,7 +629,64 @@ DONE( tmWorkF )
     (
     if
 
-    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net,tDomainRootAllowed1,tDomainRootAllowed2]:    \"")+tIpWebHook1+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net+T("\"    \"")+tDomainRootAllowed1+T("\"    \"")+tDomainRootAllowed2+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
+
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed8 = T(psttEat) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.8")  ) ; ___( psttEat ) ;
+    {
+    TN( tDomainRootAllowed8 , "" ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed7 = T(psttEat) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.7")  ) ; ___( psttEat ) ;
+    {
+    TN( tDomainRootAllowed7 , "" ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed6 = T(psttEat) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.6")  ) ; ___( psttEat ) ;
+    {
+    TN( tDomainRootAllowed6 , "" ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed5 = T(psttEat) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.5")  ) ; ___( psttEat ) ;
+    {
+    TN( tDomainRootAllowed5 , "" ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed4 = T(psttEat) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.4")  ) ; ___( psttEat ) ;
+    {
+    TN( tDomainRootAllowed4 , "" ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed3 = T(psttEat) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.3")  ) ; ___( psttEat ) ;
+    {
+    TN( tDomainRootAllowed3 , "" ) ;
 
     }
         etThread.delF( tin0P , psttEat ) ;
