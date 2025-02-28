@@ -129,6 +129,7 @@
                                 info1P.sgnIdPortReplaced.giveF( tin0P ) ;
                                 TELL( "server: cleaning up" )
 
+                                __NZ( bMissingSetting ) ;
                                 }
                                     }
                                         if( POOP ) POOPR
@@ -780,7 +781,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                                 else
                                                 }
                                                     break ;
-                                                    __1
+                                                    bMissingSetting = 1 ;
                                                     etRock.traceF( tin0P , T("!exception / missing setting [key]:    ")+tSettingKey ) ;
                                                     _IO_
                                                 {
@@ -803,6 +804,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                     _IO_
                                 {
                                 while( !info1P.bQuit )
+                                ZE( boolT , bMissingSetting ) ;
 
                                 ZE( countT , idAccept ) ;
                                 threadC th( tin0P , *this , TAG( TAGiDnULL ) , tmLoadSilentF , cArg_tmLoadSilent , flTHREADlAUNCH_SHOWpONY , CBsTACKmIN << 1 ) ;
