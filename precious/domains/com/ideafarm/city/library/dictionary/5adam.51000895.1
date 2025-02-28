@@ -113,6 +113,35 @@ DONE( tmWorkF )
 
                                                     }
                                                         }
+                                                            rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                            /**/etRock.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
+                                                        {
+                                                        else
+                                                        }
+                                                            /**/etRock.traceF( tin0P , T("!exception / matching A record, but setting bSilent because unlisted and unexpected peer [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
+                                                            bSilent = 1 ;
+                                                        {
+                                                        if( !bListedDomain )
+                                                    {
+                                                    if( !bSilent )
+
+                                                    }
+                                                        /**/etRock.traceF( tin0P , T("setting bSilent because no matching AAAA record found [domain,peer]:    ")+tDomainNet+tb4+tDomainPeer ) ;
+                                                        bSilent = 1 ;
+                                                    {
+                                                    else
+                                                    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+
+                                                    nicNameC nnOut ;
+                                                    TELL( "ifcIDtYPEdNSqUERY_AAAA" ) ;
+                                                {
+                                                case ifcIDtYPEdNSqUERY_AAAA :
+                                                }
+                                                    break ;
+
+                                                    }
+                                                        }
                                                             rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
                                                             /**/etRock.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                         {
@@ -195,7 +224,6 @@ DONE( tmWorkF )
                                                     break ;
                                                 {
                                                 case ifcIDtYPEdNSqUERY_CAA :
-                                                case ifcIDtYPEdNSqUERY_AAAA :
                                             {
                                             else if( idClass == 1 ) switch( idType )
                                             if( bSilent ) /*;*/etRock.traceF( tin0P , T("bSilent is set for an unknown reason") ) ;
@@ -758,6 +786,27 @@ voidT rec_NS_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReply
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
 {
 voidT rec_MX_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const strokeS* const psttDataP )
+
+}
+    }
+        stsRepliesP << ps ;
+
+        nicNameP >> *ps ;
+
+        *ps << (countT&)time2 ;
+        *ps << time1 ;
+        ZE( sCountT , time2 ) ;
+        ZE( countT  , time1 ) ;
+        *ps << (countT)1 ;
+        *ps << (countT)ifcIDtYPEdNSqUERY_AAAA ;
+        *ps << psttP ;
+
+        /**/etherP.traceF( tin0P , T("rec_AAAA_F [nn,name]:    ")+T(nicNameP)+T("    \"")+T(psttP)+T("\"") ) ;
+    {
+    if( ps )
+    soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+{
+voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
 
 }
     }
