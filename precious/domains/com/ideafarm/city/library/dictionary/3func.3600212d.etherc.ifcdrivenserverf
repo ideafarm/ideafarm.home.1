@@ -752,24 +752,18 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                             strMakeF( tin0P , LF , psttPemPrivateKey   , T("///c/certbot/live/")+tFullyQualifiedDomain+T("/privkey.pem")   ) ; ___( psttPemPrivateKey   ) ;
                                             strMakeF( tin0P , LF , psttPemCertificates , T("///c/certbot/live/")+tFullyQualifiedDomain+T("/fullchain.pem") ) ; ___( psttPemCertificates ) ;
 
-                                            //strMakeF( tin0P , LF , psttPemPrivateKey   , T("///c/certbot/live/wahhkygs7zmvqzfpazpcjd565zq78nax.hidden.ideafarm.com/privkey.pem")   ) ; ___( psttPemPrivateKey   ) ;
-                                            //strMakeF( tin0P , LF , psttPemCertificates , T("///c/certbot/live/wahhkygs7zmvqzfpazpcjd565zq78nax.hidden.ideafarm.com/fullchain.pem") ) ; ___( psttPemCertificates ) ;
+                                            etRock.traceF( tin0P , T("ifcDrivenServerF / [tFullyQualifiedDomain]:    ")+tFullyQualifiedDomain ) ;
 
-                                            //strMakeF( tin0P , LF , psttPemPrivateKey   , T("///c/certbot/live/webhooks.hidden.ideafarm.com/privkey.pem")   ) ; ___( psttPemPrivateKey   ) ;
-                                            //strMakeF( tin0P , LF , psttPemCertificates , T("///c/certbot/live/webhooks.hidden.ideafarm.com/fullchain.pem") ) ; ___( psttPemCertificates ) ;
+                                            }
+                                                tFullyQualifiedDomain = tDomainLeafWebHooks+T(".hidden.ideafarm.com") ;
 
-                                            //strMakeF( tin0P , LF , psttPemPrivateKey   , T("///c/certbot/live/webhooks.ideafarm.com/privkey.pem")   ) ; ___( psttPemPrivateKey   ) ;
-                                            //strMakeF( tin0P , LF , psttPemCertificates , T("///c/certbot/live/webhooks.ideafarm.com/fullchain.pem") ) ; ___( psttPemCertificates ) ;
-
-                                            //strMakeF( tin0P , LF , psttPemPrivateKey   , T("///c/certbot/live/factory1.ideafarm.com/privkey.pem")   ) ; ___( psttPemPrivateKey   ) ;
-                                            //strMakeF( tin0P , LF , psttPemCertificates , T("///c/certbot/live/factory1.ideafarm.com/fullchain.pem") ) ; ___( psttPemCertificates ) ;
-
-                                            //strMakeF( tin0P , LF , psttPemPrivateKey   , T("///c/certbot/live/ideafarm.com/privkey.pem")   ) ; ___( psttPemPrivateKey   ) ;
-                                            //strMakeF( tin0P , LF , psttPemCertificates , T("///c/certbot/live/ideafarm.com/fullchain.pem") ) ; ___( psttPemCertificates ) ;
-
-                                            // ACCESS WILL BE DENIED IF NOT RUN ELEVATED
-
-                                            TN( tFullyQualifiedDomain , "" ) ; tFullyQualifiedDomain = tDomainLeafWebHooks+T(".hidden.ideafarm.com") ;
+                                                //tFullyQualifiedDomain = T("wahhkygs7zmvqzfpazpcjd565zq78nax.hidden.ideafarm.com") ;
+                                                //tFullyQualifiedDomain = T("webhooks.hidden.ideafarm.com") ;
+                                                //tFullyQualifiedDomain = T("webhooks.ideafarm.com") ;
+                                                //tFullyQualifiedDomain = T("factory1.ideafarm.com") ;
+                                                //tFullyQualifiedDomain = T("ideafarm.com") ;
+                                            {
+                                            TN( tFullyQualifiedDomain , "" ) ; // ACCESS WILL BE DENIED IF NOT RUN ELEVATED
 
                                             }
                                                 delF( tin0P , psttEat ) ;
