@@ -728,7 +728,10 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                         }
                                             }
                                                 }
-                                                    etRock.traceF( tin0P , T("ifcDrivenServerF / could not ct listener socket")  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                    ++ s ; thirdC::dosSleepIF( tin0P , TOCK ) ; //THIS IS TO PREVENT ME FROM PEGGING CPU, ESPECIALLY WHEN I RUN AT HIGH DESIRE
+                                                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+                                                    
+                                                    etRock.traceF( tin0P , T("ifcDrivenServerF / could not ct listener socket ; napping")  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                     }
                                                         POOPRqUIET
                                                         DEL( psoListen ) ;
