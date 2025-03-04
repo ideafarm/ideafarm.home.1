@@ -43,8 +43,10 @@ DONE( tmWorkF )
                                 TELL( "composing a reply" ) ;
                                 //CONoUTrAW( "emitting reply\r\n" ) ;
                             {
+#endif
                             else
                             if( bSilent && !bPeerListedOrStripe ) /*;*/etRock.traceF( tin0P , T(nnPeer)+tSaySilentlyIgnoring+tb4+tDomainPeer ) ;
+#if defined( NEVERdEFINED )
 
                             }
                                 ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttPeer ) ;
@@ -116,12 +118,14 @@ DONE( tmWorkF )
                                                             rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
                                                             /**/etRock.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                         {
+#endif
                                                         else
                                                         }
                                                             /**/etRock.traceF( tin0P , T("!exception / matching A record, but setting bSilent because unlisted and unexpected peer [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                             bSilent = 1 ;
                                                         {
                                                         if( !bPeerListedOrStripe )
+#if defined( NEVERdEFINED )
                                                     {
                                                     if( !bSilent )
 
@@ -145,12 +149,14 @@ DONE( tmWorkF )
                                                             rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
                                                             /**/etRock.traceF( tin0P , T("found a matching A record! [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                         {
+#endif
                                                         else
                                                         }
                                                             /**/etRock.traceF( tin0P , T("!exception / matching A record, but setting bSilent because unlisted and unexpected peer [nnOut,domain,peer]:    ")+T(nnOut)+tb4+tDomainNet+tb4+tDomainPeer ) ;
                                                             bSilent = 1 ;
                                                         {
                                                         if( !bPeerListedOrStripe )
+#if defined( NEVERdEFINED )
                                                     {
                                                     if( !bSilent )
 
@@ -320,6 +326,8 @@ DONE( tmWorkF )
                         /**/etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tb4+tDomainPeer ) ;
                     {
 
+#endif
+
                     if( !bPeerListedOrStripe ) /*;*/etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
 
                     const boolT bPeerListedOrStripe = bStripeWebHookNotifier || bListedDomain || nnsStripe & nnPeer ;
@@ -369,6 +377,7 @@ DONE( tmWorkF )
                         ZE( strokeS* , psttPeer ) ;
                     {
                     ZE( boolT , bListedDomain ) ;
+#if defined( NEVERdEFINED )
                     TN( tDomainPeer , "" ) ;
 
                     TELL( "waited for a query datagram" ) ;
@@ -473,6 +482,8 @@ DONE( tmWorkF )
         ZE( countT , idComputer ) ;
         batonC bParams( tin0P , TAG( TAGiDnULL ) ) ;
         nicNameC nnSingularity ;
+
+#endif
 
         }
             }
@@ -701,6 +712,8 @@ DONE( tmWorkF )
 
         nicNamesAllowedStripeWebHookNotificationsC nnsStripe( tin0P , etThread , ether , TICK << 4 ) ;  //IT'S BEEN YEARS SINCE THESE HAVE CHANGED
 
+#if defined( NEVERdEFINED )
+
         //CONoUTrAW( "main/5\r\n" ) ; //U::
         TELL( "preparing for work" ) ;
     {
@@ -812,7 +825,8 @@ DONE( tmWorkF )
 
     }
         etThread.delF( tin0P , psttEat ) ;
-        tIpWebHook1 = T(psttEat) ;
+//        tIpWebHook1 = T(psttEat) ;
+tIpWebHook1 = T("5.6.7.8") ;
         if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
         ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh1")  ) ; ___( psttEat ) ;
     {
