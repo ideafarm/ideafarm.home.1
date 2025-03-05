@@ -18297,7 +18297,6 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.psttOldC : 1snip.15000041.psttoldc END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.nicNameC : 1snip.15000033.nicnamec BEGIN
 
-
 //
 // Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -18366,6 +18365,7 @@ it is illegal to refer to this symbol anywhere except in napkinC definitions
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34014.nicNameC.fieldF!||
  voidT adjustF( tin0S& tin0P ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34015.nicNameC.adjustF!||
+ nicNameC operator ()( sCountT cBitsSubnetP ) const ;
 
 /*inline*/
  inline countT ccF( voidT ) const { return pcId[ 3 ] ? 4 : pcId[ 2 ] ? 3 : pcId[ 1 ] ? 2 : 1 ; }
@@ -33937,7 +33937,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021da.etherC.strFromJsonF!||
  voidT strFromIdJotF( tin0S& tin0P , strokeS*& psttP , const countT idJotP , const countT cbJotStringDecodePrefixP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021e4.etherc.strFromIdJotF!||
- voidT strFromOldTimeF( tin0S& tin0P , strokeS*& psttP , countT mmP , countT hhP , countT dP , countT mP , countT yP , countT dowP ) ;
+ voidT strFromOldTimeF( tin0S& tin0P , strokeS*& psttP , countT mmP , countT hhP , countT dP , countT mP , countT yP , countT dowP , const boolT bLongP = 0 ) ;
  voidT strFuseF( tin0S& tin0P , strokeS*& psttOutP , const strokeS* const psttInP , soulC* pSoulP = 0 , grabC* pGrabP = 0 , const strokeS sttEscapeP = strokeS() , const strokeS* psttDelimiterPairsP = 0 , const countT csttMaxDelimiterP = 0x10 , const countT csttExtraP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3404f.etherC.strFuseF!||
  voidT strFuseF( tin0S& tin0P , strokeS*& psttOutP , const strokeS sttInP , const countT csttExtraP = 0 , const boolT fLeadingP = 0 ) ;

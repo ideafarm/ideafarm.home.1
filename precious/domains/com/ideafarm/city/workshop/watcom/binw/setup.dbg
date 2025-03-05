@@ -27,10 +27,12 @@ paint dialog active standout button bright white on cyan
 display all /close
 display status
 display toolbar /fixed 0
+display assembly /close 3735,0,6265,9999
 display break /close 0,1161,5135,3150
 display file /close 0,0,10000,9999
 display log /close 0,5931,2605,2106
 display memory /close 6790,1170,2750,8829
+display register /close 2630,0,7105,1512
 display stack /close 8000,4995,2000,4995
 display thread /close 2980,2610,1705,4653
 display variable /close 4250,2241,1665,1107
@@ -38,9 +40,7 @@ display locals /open 5035,2538,4420,6354
 display calls /open 4855,3123,5145,5922
 display modules /open 8505,0,1450,9927
 display source /open 75,0,5575,9657
-display watch /open 1340,0,8660,9999
-display register /open 2630,0,7105,1512
-display assembly /open 3735,0,6265,9999
+display watch /open 5690,0,4310,9999
 font all {-13 0 0 0 400 0 0 0 0 1 2 1 49 "Courier"}
 font assembly {-13 0 0 0 400 0 0 0 0 1 1 1 1 "Courier"}
 font break {-13 0 0 0 400 0 0 0 0 1 1 1 1 "Courier"}
@@ -594,18 +594,18 @@ set macro all SHIFT-F9 {
     }
     
 }
-set supportroutine {__wcpp_*}{IF@*}{RT@*}{__CHK}{__CHP}{__EDA}{__EDC}{__EDD}
-set supportroutine {__EDM}{__EDS}{__EPI}{__Far16Cdecl2}{__Far16Func2}{__Far16Pascal2}
-set supportroutine {__Far16ToFlat}{__FDA}{__FDC}{__FDD}{__FDFS}{__FDI4}
-set supportroutine {__FDI8}{__FDM}{__FDN}{__FDS}{__FDU4}{__FDU8}{__FlatToFar16}
-set supportroutine {__FSA}{__FSC}{__FSD}{__FSFD}{__FSI4}{__FSI8}{__FSM}
-set supportroutine {__FSN}{__FSS}{__FSU4}{__FSU8}{__GETDS}{__GRO}{__I4D}
-set supportroutine {__I4FD}{__I4FS}{__I4M}{__I8DQE}{__I8DQ}{__I8DRE}{__I8DR}
-set supportroutine {__I8D}{__I8FD}{__I8FS}{__I8M}{__PIA}{__PIS}{__PRO}
-set supportroutine {__PTC}{__PTS}{__RDFS}{__RDI4}{__RDU4}{__RSI4}{__RSU4}
-set supportroutine {__SCN1}{__SCN2}{__SCN4}{__STK}{__TNC}{__TNK}{__U4D}
-set supportroutine {__U4FD}{__U4FS}{__U4M}{__U8DQE}{__U8DQ}{__U8DRE}{__U8DR}
-set supportroutine {__U8D}{__U8FD}{__U8FS}{__U8M}
+set supportroutine {__U8M}{__U8FS}{__U8FD}{__U8D}{__U8DR}{__U8DRE}{__U8DQ}
+set supportroutine {__U8DQE}{__U4M}{__U4FS}{__U4FD}{__U4D}{__TNK}{__TNC}
+set supportroutine {__STK}{__SCN4}{__SCN2}{__SCN1}{__RSU4}{__RSI4}{__RDU4}
+set supportroutine {__RDI4}{__RDFS}{__PTS}{__PTC}{__PRO}{__PIS}{__PIA}
+set supportroutine {__I8M}{__I8FS}{__I8FD}{__I8D}{__I8DR}{__I8DRE}{__I8DQ}
+set supportroutine {__I8DQE}{__I4M}{__I4FS}{__I4FD}{__I4D}{__GRO}{__GETDS}
+set supportroutine {__FSU8}{__FSU4}{__FSS}{__FSN}{__FSM}{__FSI8}{__FSI4}
+set supportroutine {__FSFD}{__FSD}{__FSC}{__FSA}{__FlatToFar16}{__FDU8}
+set supportroutine {__FDU4}{__FDS}{__FDN}{__FDM}{__FDI8}{__FDI4}{__FDFS}
+set supportroutine {__FDD}{__FDC}{__FDA}{__Far16ToFlat}{__Far16Pascal2}
+set supportroutine {__Far16Func2}{__Far16Cdecl2}{__EPI}{__EDS}{__EDM}{__EDD}
+set supportroutine {__EDC}{__EDA}{__CHP}{__CHK}{RT@*}{IF@*}{__wcpp_*}
 set breakonwrite off
 set dontexpandhex off
 flip off

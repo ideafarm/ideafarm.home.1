@@ -122,10 +122,32 @@ DONE( tmWorkF )
 
                                 ++ idClient ;
 
-                                /**/etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayGranting+tDomainPeer ) ;
+                                /**/etRock.traceF(            tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(nnPeer)+tSayGranting+tDomainPeer ) ;
                             {
                             else
-                            if( bRefuse ) /*;*/etRock.traceF( tin0P , T(nnPeer)+tSayRefusing+tDomainPeer ) ;
+                            if( bRefuse ) /*;*/etRock.traceF( tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(nnPeer)+tSayRefusing+tDomainPeer ) ;
+
+                            }
+                                etThread.delF( tin0P , psttSay ) ;
+                                tTimeOld = T(psttSay) ;
+                                etThread.strFromOldTimeF( tin0P , psttSay , mm , hh , d , m , y , dow , 0 ) ; ___( psttSay ) ;
+                                ZE( strokeS* , psttSay ) ;
+                            {
+                            TN( tTimeOld , "" ) ;
+
+                            etThread.osTimeToOldTimeF( tin0P , ms , ss , mm , hh , d , m , y , dow , timeN1 , timeN2 , flOStIMEtOoLDtIME_null ) ;
+                            ZE(  countT , dow ) ;
+                            ZE( sCountT , y   ) ;
+                            ZE(  countT , m   ) ;
+                            ZE(  countT , d   ) ;
+                            ZE(  countT , hh  ) ;
+                            ZE(  countT , mm  ) ;
+                            ZE(  countT , ss  ) ;
+                            ZE(  countT , ms  ) ;
+
+                            etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+                            ZE( sCountT , timeN2 ) ;
+                            ZE( countT  , timeN1 ) ;
 
                             countT idError = ifcIDeRRORdNS_AOK ;
                         {
@@ -271,63 +293,41 @@ DONE( tmWorkF )
         {
         const countT pcMaskSubnetAllowedStripe[] =
 
-        const count02T* pcSubnetAllowedStripe_3f = nnAllowedStripe_3f ;
-        const count02T* pcSubnetAllowedStripe_3b = nnAllowedStripe_3b ;
-        const count02T* pcSubnetAllowedStripe_38 = nnAllowedStripe_38 ;
-        const count02T* pcSubnetAllowedStripe_36 = nnAllowedStripe_36 ;
-        const count02T* pcSubnetAllowedStripe_32 = nnAllowedStripe_32 ;
-        const count02T* pcSubnetAllowedStripe_30 = nnAllowedStripe_30 ;
-        const count02T* pcSubnetAllowedStripe_2d = nnAllowedStripe_2d ;
-        const count02T* pcSubnetAllowedStripe_29 = nnAllowedStripe_29 ;
-        const count02T* pcSubnetAllowedStripe_26 = nnAllowedStripe_26 ;
-        const count02T* pcSubnetAllowedStripe_25 = nnAllowedStripe_25 ;
-        const count02T* pcSubnetAllowedStripe_21 = nnAllowedStripe_21 ;
-        const count02T* pcSubnetAllowedStripe_20 = nnAllowedStripe_20 ;
-        const count02T* pcSubnetAllowedStripe_1d = nnAllowedStripe_1d ;
-        const count02T* pcSubnetAllowedStripe_1c = nnAllowedStripe_1c ;
-        const count02T* pcSubnetAllowedStripe_14 = nnAllowedStripe_14 ;
-        const count02T* pcSubnetAllowedStripe_10 = nnAllowedStripe_10 ;
-        const count02T* pcSubnetAllowedStripe_0f = nnAllowedStripe_0f ;
-        const count02T* pcSubnetAllowedStripe_0e = nnAllowedStripe_0e ;
-        const count02T* pcSubnetAllowedStripe_0b = nnAllowedStripe_0b ;
-        const count02T* pcSubnetAllowedStripe_07 = nnAllowedStripe_07 ;
-        const count02T* pcSubnetAllowedStripe_04 = nnAllowedStripe_04 ;
-        const count02T* pcSubnetAllowedStripe_02 = nnAllowedStripe_02 ;
-        const count02T* pcSubnetAllowedStripe_01 = nnAllowedStripe_01 ;
         //FROM PRECEDING LIST, TAKING UNIQUE /24 SUBNETS
 
-        nicNameC nnAllowedStripe_40 = etThread.sockNicNameF( tin0P , T("44.242.180.165") ) ;
-        nicNameC nnAllowedStripe_3f = etThread.sockNicNameF( tin0P , T("44.242.180.123") ) ;
-        nicNameC nnAllowedStripe_3e = etThread.sockNicNameF( tin0P , T("44.242.179.92") ) ;
-        nicNameC nnAllowedStripe_3d = etThread.sockNicNameF( tin0P , T("44.242.179.63") ) ;
-        nicNameC nnAllowedStripe_3c = etThread.sockNicNameF( tin0P , T("44.242.179.48") ) ;
-        nicNameC nnAllowedStripe_3b = etThread.sockNicNameF( tin0P , T("44.242.179.102") ) ;
-        nicNameC nnAllowedStripe_3a = etThread.sockNicNameF( tin0P , T("44.242.178.79") ) ;
-        nicNameC nnAllowedStripe_39 = etThread.sockNicNameF( tin0P , T("44.242.178.255") ) ;
-        nicNameC nnAllowedStripe_38 = etThread.sockNicNameF( tin0P , T("44.242.178.138") ) ;
-        nicNameC nnAllowedStripe_37 = etThread.sockNicNameF( tin0P , T("44.242.177.78") ) ;
-        nicNameC nnAllowedStripe_36 = etThread.sockNicNameF( tin0P , T("44.242.177.38") ) ;
-        nicNameC nnAllowedStripe_35 = etThread.sockNicNameF( tin0P , T("35.80.48.246") ) ;
-        nicNameC nnAllowedStripe_34 = etThread.sockNicNameF( tin0P , T("35.80.48.213") ) ;
-        nicNameC nnAllowedStripe_33 = etThread.sockNicNameF( tin0P , T("35.80.48.209") ) ;
-        nicNameC nnAllowedStripe_32 = etThread.sockNicNameF( tin0P , T("35.80.48.143") ) ;
-        nicNameC nnAllowedStripe_31 = etThread.sockNicNameF( tin0P , T("35.80.40.20") ) ;
-        nicNameC nnAllowedStripe_30 = etThread.sockNicNameF( tin0P , T("35.80.40.163") ) ;
-        nicNameC nnAllowedStripe_2f = etThread.sockNicNameF( tin0P , T("34.223.47.204") ) ;
-        nicNameC nnAllowedStripe_2e = etThread.sockNicNameF( tin0P , T("34.223.47.156") ) ;
-        nicNameC nnAllowedStripe_2d = etThread.sockNicNameF( tin0P , T("34.223.47.138") ) ;
-        nicNameC nnAllowedStripe_2c = etThread.sockNicNameF( tin0P , T("34.223.46.51") ) ;
-        nicNameC nnAllowedStripe_2b = etThread.sockNicNameF( tin0P , T("34.223.46.31") ) ;
-        nicNameC nnAllowedStripe_2a = etThread.sockNicNameF( tin0P , T("34.223.46.120") ) ;
-        nicNameC nnAllowedStripe_29 = etThread.sockNicNameF( tin0P , T("34.223.46.110") ) ;
-        nicNameC nnAllowedStripe_28 = etThread.sockNicNameF( tin0P , T("34.223.45.181") ) ;
-        nicNameC nnAllowedStripe_27 = etThread.sockNicNameF( tin0P , T("34.223.45.175") ) ;
-        nicNameC nnAllowedStripe_26 = etThread.sockNicNameF( tin0P , T("34.223.45.164") ) ;
-        nicNameC nnAllowedStripe_25 = etThread.sockNicNameF( tin0P , T("34.223.37.241") ) ;
-        nicNameC nnAllowedStripe_24 = etThread.sockNicNameF( tin0P , T("34.223.112.29") ) ;
-        nicNameC nnAllowedStripe_23 = etThread.sockNicNameF( tin0P , T("34.223.112.248") ) ;
-        nicNameC nnAllowedStripe_22 = etThread.sockNicNameF( tin0P , T("34.223.112.241") ) ;
-        nicNameC nnAllowedStripe_21 = etThread.sockNicNameF( tin0P , T("34.223.112.206") ) ;
+        nicNameC nnAllowedStripe_41 = etThread.sockNicNameF( tin0P , T("44.242.180.165") ) ;
+        nicNameC nnAllowedStripe_40 = etThread.sockNicNameF( tin0P , T("44.242.180.123") ) ;
+        nicNameC nnAllowedStripe_3f = etThread.sockNicNameF( tin0P , T("44.242.179.92") ) ;
+        nicNameC nnAllowedStripe_3e = etThread.sockNicNameF( tin0P , T("44.242.179.63") ) ;
+        nicNameC nnAllowedStripe_3d = etThread.sockNicNameF( tin0P , T("44.242.179.48") ) ;
+        nicNameC nnAllowedStripe_3c = etThread.sockNicNameF( tin0P , T("44.242.179.102") ) ;
+        nicNameC nnAllowedStripe_3b = etThread.sockNicNameF( tin0P , T("44.242.178.79") ) ;
+        nicNameC nnAllowedStripe_3a = etThread.sockNicNameF( tin0P , T("44.242.178.255") ) ;
+        nicNameC nnAllowedStripe_39 = etThread.sockNicNameF( tin0P , T("44.242.178.138") ) ;
+        nicNameC nnAllowedStripe_38 = etThread.sockNicNameF( tin0P , T("44.242.177.78") ) ;
+        nicNameC nnAllowedStripe_37 = etThread.sockNicNameF( tin0P , T("44.242.177.38") ) ;
+        nicNameC nnAllowedStripe_36 = etThread.sockNicNameF( tin0P , T("35.80.48.246") ) ;
+        nicNameC nnAllowedStripe_35 = etThread.sockNicNameF( tin0P , T("35.80.48.213") ) ;
+        nicNameC nnAllowedStripe_34 = etThread.sockNicNameF( tin0P , T("35.80.48.209") ) ;
+        nicNameC nnAllowedStripe_33 = etThread.sockNicNameF( tin0P , T("35.80.48.143") ) ;
+        nicNameC nnAllowedStripe_32 = etThread.sockNicNameF( tin0P , T("35.80.40.20") ) ;
+        nicNameC nnAllowedStripe_31 = etThread.sockNicNameF( tin0P , T("35.80.40.163") ) ;
+        nicNameC nnAllowedStripe_30 = etThread.sockNicNameF( tin0P , T("34.223.47.204") ) ;
+        nicNameC nnAllowedStripe_2f = etThread.sockNicNameF( tin0P , T("34.223.47.156") ) ;
+        nicNameC nnAllowedStripe_2e = etThread.sockNicNameF( tin0P , T("34.223.47.138") ) ;
+        nicNameC nnAllowedStripe_2d = etThread.sockNicNameF( tin0P , T("34.223.46.51") ) ;
+        nicNameC nnAllowedStripe_2c = etThread.sockNicNameF( tin0P , T("34.223.46.31") ) ;
+        nicNameC nnAllowedStripe_2b = etThread.sockNicNameF( tin0P , T("34.223.46.120") ) ;
+        nicNameC nnAllowedStripe_2a = etThread.sockNicNameF( tin0P , T("34.223.46.110") ) ;
+        nicNameC nnAllowedStripe_29 = etThread.sockNicNameF( tin0P , T("34.223.45.181") ) ;
+        nicNameC nnAllowedStripe_28 = etThread.sockNicNameF( tin0P , T("34.223.45.175") ) ;
+        nicNameC nnAllowedStripe_27 = etThread.sockNicNameF( tin0P , T("34.223.45.164") ) ;
+        nicNameC nnAllowedStripe_26 = etThread.sockNicNameF( tin0P , T("34.223.37.241") ) ;
+        nicNameC nnAllowedStripe_25 = etThread.sockNicNameF( tin0P , T("34.223.112.29") ) ;
+        nicNameC nnAllowedStripe_24 = etThread.sockNicNameF( tin0P , T("34.223.112.248") ) ;
+        nicNameC nnAllowedStripe_23 = etThread.sockNicNameF( tin0P , T("34.223.112.241") ) ;
+        nicNameC nnAllowedStripe_22 = etThread.sockNicNameF( tin0P , T("34.223.112.206") ) ;
+        nicNameC nnAllowedStripe_21 = etThread.sockNicNameF( tin0P , T("34.222.66.86") ) ;          //ADDED 20250304@2027 (NOT VERIFIED TO BE STRIPE)
         nicNameC nnAllowedStripe_20 = etThread.sockNicNameF( tin0P , T("34.221.183.247") ) ;
         nicNameC nnAllowedStripe_1f = etThread.sockNicNameF( tin0P , T("34.218.119.80") ) ;
         nicNameC nnAllowedStripe_1e = etThread.sockNicNameF( tin0P , T("34.218.119.132") ) ;

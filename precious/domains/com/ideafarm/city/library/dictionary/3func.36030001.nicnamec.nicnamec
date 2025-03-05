@@ -12,11 +12,11 @@
     pcId[ 2 ] = c3P ;
 
     ;
-            : 0xffff                                                                    // ELSE SPECIAL VALUE TO INDICATE "IPv4"
-            ? c2P                                                                       // THEN RAW
-        : !c1P || ( c2P || c3P || c4P )                     // ELSE IF NOT IPv4
+            : 0xffff                                                                        // ELSE SPECIAL VALUE TO INDICATE "IPv4"
+            ? c2P                                                                           // THEN RAW
+        : !c1P || ( c2P || c3P || c4P )                                                 // ELSE IF NOT IPv4
         ? 0                                                                             // THEN RAW
-    pcId[ 1 ] = c1P == 1 && !c2P && !c3P && !c4P            // IF IPv6 LOOPBACK "::1"
+    pcId[ 1 ] = c1P == 1 && !c2P && !c3P && !c4P                                    // IF IPv6 LOOPBACK "::1"
 
     pcId[ 0 ] = c1P ;
 {
