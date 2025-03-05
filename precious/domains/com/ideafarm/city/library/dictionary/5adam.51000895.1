@@ -18,8 +18,6 @@ DONE( tmWorkF )
 }
     }
         }
-            //U::sgnDone_tmLoadSilent.waitF( tin0P ) ;
-
             TELL( "cleaning up" ) ;
             }
                 *((tin1S&)tin0P).pEtScratch = 0 ; //U: WORKAROUND TO SEE WHETHER PREVENTS BLOCK IN bindF
@@ -43,10 +41,8 @@ DONE( tmWorkF )
                                 TELL( "composing a reply" ) ;
                                 //CONoUTrAW( "emitting reply\r\n" ) ;
                             {
-//#endif
                             else
                             if( bSilent && !bPeerListedOrStripe ) /*;*/etRock.traceF( tin0P , T(nnPeer)+tSaySilentlyIgnoring+tb4+tDomainPeer ) ;
-//#if defined( NEVERdEFINED )
 
                             }
                                 ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttPeer ) ;
@@ -455,11 +451,6 @@ DONE( tmWorkF )
             stackC stsRepliesNU( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
             ZE( countT , idClient ) ;
 
-            //ether.loafIF( tin0P ) ; //U::DISABLE ME UNTIL I AM ENHANCED TO IGNORE OBVIOUS DDOS CLIENTS THAT PEG MY CPU
-
-            //etThread.osThreadF( tin0P , countTC() , tmLoadSilentF , &sgnDone_tmLoadSilent , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&b_pnnSilent , (countT)&pnnSilent , (countT)&cnnSilent ) ;
-            //signC sgnDone_tmLoadSilent( tin0P , TAG( TAGiDnULL ) ) ;
-
             const nicNameC nnNopeRefuse1 = etThread.sockNicNameF( tin0P , T("1.2.3.4") ) ; // example.reply.with.refusal
             ZE( countT    , cnnSilent ) ;
             ZE( nicNameC* , pnnSilent ) ;
@@ -863,61 +854,6 @@ DONE( tmWorkF )
 if( pTaskP )
 TASK( tmWorkF )
 
-#endif
-
-DONE( tmLoadSilentF )
-}
-    b_pnnSilent.ungrabF( tin0P ) ;
-    cnnSilent = 0 ;
-    etThread.delF( tin0P , pnnSilent ) ;
-    b_pnnSilent.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-
-    }
-        ether.osSleepF( tin0P , TOCK * 0x10 ) ;
-
-        etThread.delF( tin0P , psttAll ) ;
-        }
-            etThread.delF( tin0P , pstt1Lines ) ;
-            b_pnnSilent.ungrabF( tin0P ) ;
-            }
-                etThread.delF( tin0P , psttnn ) ;
-                etThread.strokeF( tin0P , T("i will silently ignore: ")+T(pnnSilent[off-1])+T(" (\"")+T(psttnn)+T("\")\r\n") ) ;
-                pnnSilent[ off ++ ] = etThread.strDigitsToNicNameF( tin0P , psttnn ) ;
-                etThread.strWordF( tin0P , psttnn , psttc1 , sttq , S1C(';') ) ; ___( psttnn ) ;
-                ZE( strokeS* , psttnn ) ;
-                strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
-            {
-            FORsTRINGSiN1( pstt1Lines )
-            ZE( countT , off ) ;
-            etThread.newF( tin0P , LF , pnnSilent , cnnSilent ) ; ___( pnnSilent ) ;
-            cnnSilent = etThread.strWordsOldF( tin0P , pstt1Lines , psttAll , sttq , T("\r\n") ) ; ___( pstt1Lines ) ;
-            strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
-            ZE( strokeS* , pstt1Lines ) ;
-
-            cnnSilent = 0 ;
-            etThread.delF( tin0P , pnnSilent ) ;
-
-            b_pnnSilent.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-        {
-        if( psttAll )
-        bFile.ungrabF( tin0P ) ;
-        etThread.boxGetShadow::20141115@1937::MIGRATE:TO:USE:SETTINGS.BIT.TREE::SettingF( tin0P , psttAll , T("///d/ideafarm.")+TF1(etherC::ifc_idHomeI_IF())+T(".setting.keyValue.nnSilent") ) ; ___( psttAll ) ;
-        bFile.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-        batonC bFile( tin0P , TAG( TAGiDnULL ) , T("setting.keyValue.nnSilent") ) ;
-        ZE( strokeS* , psttAll ) ;
-    {
-    while( !etThread && !ether )
-
-    countT&    cnnSilent   =    *(countT*)pTaskP->c3 ;
-    nicNameC*& pnnSilent   = *(nicNameC**)pTaskP->c2 ;
-    batonC&    b_pnnSilent =    *(batonC*)pTaskP->c1 ;
-{
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
-TASK( tmLoadSilentF )
-//DUPLICATED CODE: 1030168 2540104
-
-#if defined( NEVERdEFINED )
-
 }
     }
         stsRepliesP << ps ;
@@ -1029,17 +965,14 @@ voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const co
 {
 voidT rec_A_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
 
-
 //  
 // U:: USE A "SHIELDS DOWN" MECHANISM SO THAT THIS CAN BE SUPPRESSED DURING ACME CERTIFICATE RENEWAL AND OTHERWISE ENABLED
 // U: (FUTURE): I ALSO VALIDATE REQUESTS BY DOING A REVERSE DNS LOOKUP AND IGNORING REQUESTS IF THE DOMAIN IS UNEXPECTED
 //  
-//  THIS IS BOTH TO MITIGATE FLOOD ATTACKS AND TO CONCEAL THAT I AM A DNS NAME SERVER FROM PEERS WHO HAVE MY IP ADDRESS (E.G. FROM SCANNING THE IPv4 SPACE) BUT DO NOT KNOW (FROM A HIGHER LEVEL NAMESERVER) THAT I AM A NAMESERVER
-// IF THE LEAF IS UNKNOWN TO ME, I SILENTLY IGNORE THE REQUEST
-//  
-//P:PERSONALITY: I KEEP IP ADDRESSES CONFIDENTIAL, PRIMARILY BY TREATING THE REQUESTED DOMAIN NAME LEAF AS A PASSWORD
+//P:PERSONALITY: I KEEP IP ADDRESSES CONFIDENTIAL, BY TREATING THE REQUESTED DOMAIN NAME LEAF AS A PASSWORD, AND BY APPLYING AN ALLOWLIST TO nnPeer
 
 // OBSOLETES 614_ (LIKE 614_ BUT USES WHITELIST NOT BLACKLIST)
+// OBSOLETED BY 899_
 
 /*1*/WAKEhIDE( "ifcIDaDAM_DNS" )/*1*/
 

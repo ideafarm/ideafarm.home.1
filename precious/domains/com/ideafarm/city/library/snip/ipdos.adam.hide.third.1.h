@@ -11833,7 +11833,7 @@ if ifcIDtYPEjOBcOURSE_NAMED is used then this value must be followed immediately
 #define ifcIDaDAM_SMUDGEsOIXLoLDdEFS                                   0x510005f4
 #define ifcIDaDAM_GORILLAlISTS                                         0x510005fc
 #define ifcIDaDAM_NULL                                                 0x51000613
-#define ifcIDaDAM_DNS                                                  0x51000895
+#define ifcIDaDAM_DNS                                                  0x51000899
 #define ifcIDaDAM_CONSOLE                                              0x510007ef
 #define ifcIDaDAM_ADAM                                                 0x51000620
 #define ifcIDaDAM_EVE                                                  0x51000621
