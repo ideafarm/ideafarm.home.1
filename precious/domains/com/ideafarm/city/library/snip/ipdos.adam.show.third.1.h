@@ -1,6 +1,4 @@
 
-#define ifcIDtYPEdNSqUERY_AAAA                    0x001c
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"
@@ -12165,6 +12163,8 @@ these values are used in the foreign domain name system
 //    
 //    TXT             16 text strings
 //    
+//    AAAA            28 IPv6
+//    
 //    
 //    Source: https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
 //    
@@ -12188,6 +12188,7 @@ these values are used in the foreign domain name system
 #define ifcIDtYPEdNSqUERY_MINFO                   0x000e
 #define ifcIDtYPEdNSqUERY_MX                      0x000f
 #define ifcIDtYPEdNSqUERY_TXT                     0x0010
+#define ifcIDtYPEdNSqUERY_AAAA                    0x001c
 #define ifcIDtYPEdNSqUERY_OPTION                  0x0029
 #define ifcIDtYPEdNSqUERY_AXFR                    0x00fc
 #define ifcIDtYPEdNSqUERY_MAILB                   0x00fd
@@ -39223,7 +39224,7 @@ args
     {                                                                                                   \
         osTextT postDec[ SB * sizeof( countT ) + 1 ] ;                                                  \
         postDec[ 0xa ] = 0 ;                                                                            \
-        thirdC::c_itoaIF( tin0P , postDec , sizeof postDec , (countT)(cP) , 0xa ) ;                      \
+        thirdC::c_itoaIF( tin0P , postDec , sizeof postDec , (countT)(cP) , 0xa ) ;                     \
         OStEXTA( postNameP , postDec ) ;                                                                \
     }
 
