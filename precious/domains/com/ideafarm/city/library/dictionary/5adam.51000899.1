@@ -66,8 +66,6 @@ DONE( tmWorkF )
 
                                                     if( ~nnOut ) rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
 
-nnOut = etThread.sockNicNameF( tin0P , T("4.3.2.1") ) ;
-
                                                     else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
                                                          if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
 
@@ -165,12 +163,12 @@ nnOut = etThread.sockNicNameF( tin0P , T("4.3.2.1") ) ;
                         {
                         if( pbq && cbq )
                     {
-                    //if( etThread.strIdF( tin0P , T(".letsencrypt.org") , tDomainPeer ) )    //U:: TO FIND A BUG (PROD: COMMENT OUT THIS if() CONDITION SO THAT THE BLOCK IS ALWAYS EXECUTED
+                    //if( etThread.strIdF( tin0P , T(".letsencrypt.org") , tDomainPeer ) )    //TO FIND A BUG (PROD: COMMENT OUT THIS if() CONDITION SO THAT THE BLOCK IS ALWAYS EXECUTED
 
                     }
                         }
-                            //etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
-//                            bRefuse = 1 ;
+                            /**/etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
+                            bRefuse = 1 ;
                         {
                         if( !bStripeWebHookNotifier && !bListedDomain )
 
