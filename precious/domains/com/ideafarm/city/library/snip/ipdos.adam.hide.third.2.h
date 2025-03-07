@@ -41868,6 +41868,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     static const mapCTS pMap71[] ;
     static const mapCTS pMap81[] ;
     static const mapCTS pMap91[] ;
+    static const mapCTS pMapa1[] ;
 
     private :
 
@@ -42026,6 +42027,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     mapCTC                                   mapIdGrabLayer     ;
     mapCTC                                   mapBosCodeWindows  ;
     mapCTC                                   mapIfcCode         ;
+    mapCTC                                   mapIdErrorDns      ;
     cryC                                     cry325 ;
 
     ~processGlobal4S( voidT ) ;
