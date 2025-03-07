@@ -41418,6 +41418,7 @@ base class to make a derived class of objects easily contained by a stackC objec
     //byteT                           pb_bPoolRpt[          CBzOMBIEbATONc ] ;
     //byteT                           pbTlsMain[  sizeof( tlsHeaderS ) + CB tLSmAIN ] ;
     countT                          pcDebug[ TUCK << 1 ] ; //NOT USED IN PRODUCTION ; AVAILABLE FOR DEBUGGING
+    countT*                         pcDebug2 ;             //NOT USED IN PRODUCTION ; AVAILABLE FOR DEBUGGING
     osTextT                         postDllsLoaded[ TOCK ] ;
     osTextT                         postPathHomeTmp[ TUCK ] ;
     countT                          osTidReportingException ;
