@@ -43,99 +43,102 @@ DONE( tmWorkF )
                             const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
 
                             }
+                                if( !stsReplies ) idError = ifcIDeRRORdNS_NAMEnOTdEFINED ;
+
                                 }
-                                    if( !stsReplies ) idError = ifcIDeRRORdNS_NAMEnOTdEFINED ;
-
+                                    DEL( ps ) ;
                                     }
-                                        DEL( ps ) ;
                                         }
+                                            //}
+                                            //    break ;
+                                            //
+                                            //    if( ~nnOut ) rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                            //
+                                            //    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                            //         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+                                            //
+                                            //    nicNameC nnOut ;
+                                            //{
+                                            //case ifcIDtYPEdNSqUERY_AAAA :
                                             }
-                                                //}
-                                                //    break ;
-                                                //
-                                                //    if( ~nnOut ) rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
-                                                //
-                                                //    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
-                                                //         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
-                                                //
-                                                //    nicNameC nnOut ;
-                                                //{
-                                                //case ifcIDtYPEdNSqUERY_AAAA :
+                                                break ;
+
+                                                if( ~nnOut ) rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+
                                                 }
-                                                    break ;
-
-                                                    if( ~nnOut ) rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
-
                                                     else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
                                                          if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
-
-                                                    nicNameC nnOut ;
                                                 {
-                                                case ifcIDtYPEdNSqUERY_A :
+                                                else
                                                 }
-                                                    break ;
+                                                         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook2 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
                                                 {
-                                                case ifcIDtYPEdNSqUERY_CAA :
+                                                if( bDivert )
+
+                                                nicNameC nnOut ;
                                             {
-                                            if( idClass == 1 ) switch( idType )
+                                            case ifcIDtYPEdNSqUERY_A :
+                                            }
+                                                break ;
+                                            {
+                                            case ifcIDtYPEdNSqUERY_CAA :
+                                        {
+                                        if( idClass == 1 ) switch( idType )
 
-                                            *ps >> idClass ;
-                                            ZE( countT , idClass ) ;
+                                        *ps >> idClass ;
+                                        ZE( countT , idClass ) ;
 
-                                            *ps >> idType ;
-                                            ZE( countT , idType ) ;
+                                        *ps >> idType ;
+                                        ZE( countT , idType ) ;
+
+                                        etThread.delF( tin0P , psttw ) ;
+                                        TN( tDomainNet , psttw ) ;
+                                        }
+                                            /**/etRock.traceF( tin0P , T("[domainNet,peer]:      \"")+T(psttw)+T("\"    \"")+tDomainPeer+T("\"") ) ;
+
+                                            etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
+                                            TN( tDomainNet , "" ) ; tDomainNet = T(psttNet)+T(".hidden.ideafarm.com") ;
 
                                             etThread.delF( tin0P , psttw ) ;
-                                            TN( tDomainNet , psttw ) ;
-                                            }
-                                                /**/etRock.traceF( tin0P , T("[domainNet,peer]:      \"")+T(psttw)+T("\"    \"")+tDomainPeer+T("\"") ) ;
-
-                                                etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
-                                                TN( tDomainNet , "" ) ; tDomainNet = T(psttNet)+T(".hidden.ideafarm.com") ;
-
-                                                etThread.delF( tin0P , psttw ) ;
-                                                etThread.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttw , 0 , 0 ) ;
-                                                strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-                                                countT idf = 1 ;
-                                                ZE( strokeS* , psttNet ) ;
-                                            {
-                                            if( psttw )
-
-                                            /**/etRock.traceF( tin0P , T("[domainGross,peer]:    \"")+tDomainGross+T("\"    \"")+tDomainPeer+T("\"") ) ;
-                                            TN( tDomainGross , psttw ) ;
-                                            if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
-                                            *ps >> psttw ;
-                                            ZE( strokeS* , psttw ) ;
+                                            etThread.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttw , 0 , 0 ) ;
+                                            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+                                            countT idf = 1 ;
+                                            ZE( strokeS* , psttNet ) ;
                                         {
-                                        if( ps )
-                                        stsQueries >> ps ;
-                                        ZE( soulC* , ps ) ;
+                                        if( psttw )
+
+                                        /**/etRock.traceF( tin0P , T("[domainGross,peer]:    \"")+tDomainGross+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                        TN( tDomainGross , psttw ) ;
+                                        if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
+                                        *ps >> psttw ;
+                                        ZE( strokeS* , psttw ) ;
                                     {
-                                    while( stsQueries )
+                                    if( ps )
+                                    stsQueries >> ps ;
+                                    ZE( soulC* , ps ) ;
                                 {
-                                else
-                                }
-                                    idError = ifcIDeRRORdNS_CANNOTpARSEqUERY ;
-                                    /**/etRock.traceF( tin0P , T("!exception / dnsParseF failed") ) ;
-                                    POOPRqUIET ;
-                                {
-                                if( POOP )
-
-                                }
-                                    ((tin1S&)tin0P).pEtScratch->delF( tin0P , pbNU ) ;
-                                    ((tin1S&)tin0P).pEtScratch->dnsParseF( tin0P , pbNU , countTC() , stsQueries , stsRepliesNU , pbq , cbq ) ;
-                                    ZE( byteT* , pbNU ) ;
-
-                                    stsRepliesNU.purgeF( tin0P ) ;
-                                    stsQueries.purgeF( tin0P ) ;
-                                {
-
-                                ++ idClient ;
-
-                                /**/etRock.traceF(            tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(nnPeer)+tSayGranting+tDomainPeer ) ;
+                                while( stsQueries )
                             {
                             else
-                            if( bRefuse ) /*;*/etRock.traceF( tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(nnPeer)+tSayRefusing+tDomainPeer ) ;
+                            }
+                                idError = ifcIDeRRORdNS_CANNOTpARSEqUERY ;
+                                /**/etRock.traceF( tin0P , T("!exception / dnsParseF failed") ) ;
+                                POOPRqUIET ;
+                            {
+                            if( POOP )
+
+                            }
+                                ((tin1S&)tin0P).pEtScratch->delF( tin0P , pbNU ) ;
+                                ((tin1S&)tin0P).pEtScratch->dnsParseF( tin0P , pbNU , countTC() , stsQueries , stsRepliesNU , pbq , cbq ) ;
+                                ZE( byteT* , pbNU ) ;
+
+                                stsRepliesNU.purgeF( tin0P ) ;
+                                stsQueries.purgeF( tin0P ) ;
+                            {
+
+                            ++ idClient ;
+
+                            /**/etRock.traceF( tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(nnPeer)+(bDivert?tSayDiverting:tSayGranting)+tDomainPeer ) ;
 
                             }
                                 etThread.delF( tin0P , psttSay ) ;
@@ -168,9 +171,9 @@ DONE( tmWorkF )
                     }
                         }
                             /**/etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
-                            bRefuse = 1 ;
+                            bDivert = 1 ;
                         {
-                        if( !bStripeWebHookNotifier && !bListedDomain )
+                        if( !bStripeWebHookNotifier && !bListedDomain )         //P:PERSONALITY: TRUSTED PEERS ARE DIRECTED TO wh1 ; UNTRUSTED PEERS ARE DIRECTED TO wh2
 
                         }
                             }
@@ -220,7 +223,7 @@ DONE( tmWorkF )
                         ZE( boolT , bListedDomain ) ;
                     {
                     TN( tDomainPeer , "" ) ;
-                    ZE( boolT , bRefuse ) ;
+                    ZE( boolT , bDivert ) ;
 
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
                     nicNameC nnPeer ;
@@ -229,11 +232,12 @@ DONE( tmWorkF )
                     ZE( byteT* , pbq ) ;
                 {
                 while( !POOP && !ether && !etThread && !*((tin1S&)tin0P).pEtScratch )
-                TN( tSayGranting , "    granting information    " ) ;
-                TN( tSayRefusing , "    refusing information    " ) ;
+                TN( tSayGranting  , "    granting information    " ) ;
+                TN( tSayDiverting , "    diverting information    " ) ;
                 TN( tSayUnknownDomain , "    !exception / unknown peer domain" ) ;
                 TN( tSayPrefix  , "[nnPeer]:    " ) ;
 
+                nicNameC nnWebHook2       = etThread.sockNicNameF( tin0P , tIpWebHook2 ) ;
                 nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , tIpWebHook1 ) ;
 
                 TN( tb4    , "    " ) ;
@@ -414,11 +418,11 @@ DONE( tmWorkF )
         ||
         !tDomainRootAllowed1.csF( tin0P )
         ||
-        !tIpWebHook1.csF( tin0P )
-        ||
         !tDomainLeafWebHook1Net.csF( tin0P )
         ||
         !tDomainLeafWebHooksNet.csF( tin0P )
+        ||
+        !tIpWebHook2.csF( tin0P )
         ||
         !tIpWebHook1.csF( tin0P )
     (
@@ -433,7 +437,7 @@ DONE( tmWorkF )
     /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
     /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
 
-    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
 
     }
         etThread.delF( tin0P , psttEat ) ;
@@ -498,6 +502,14 @@ DONE( tmWorkF )
         ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.1")  ) ; ___( psttEat ) ;
     {
     TN( tDomainRootAllowed1 , "" ) ;
+
+    }
+        etThread.delF( tin0P , psttEat ) ;
+        tIpWebHook2 = T(psttEat) ;
+        if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh2")  ) ; ___( psttEat ) ;
+    {
+    TN( tIpWebHook2 , "" ) ;
 
     }
         etThread.delF( tin0P , psttEat ) ;
