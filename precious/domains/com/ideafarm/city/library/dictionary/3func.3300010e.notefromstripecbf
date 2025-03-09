@@ -8,19 +8,25 @@
 
 }
     }
-        //etThread.traceF( tin0P , T("noteFromStripeCBF / wrote   to bksWebHookNoticesP") ) ;
-        bksWebHookNoticesP.writeF( tin0P , (byteT*)pcHeader , sizeof pcHeader , postBodyP , costaBody , flBOOKScwRITE_ALLOWoDDlENGTH , 0 ) ;
-        //etThread.traceF( tin0P , T("noteFromStripeCBF / writing to bksWebHookNoticesP") ) ;
+        }
+            bksWebHookNoticesP.writeF( tin0P , (byteT*)pcHeader , sizeof pcHeader , postBodyP , costaBody , flBOOKScwRITE_ALLOWoDDlENGTH , 0 ) ;
 
-        *(nicNameC*)&pcHeader[ 4 ] = nnPeerP ;
-        putNegAM( pcHeader[ 0 ] , FINGERnEG_WEBhOOKnOTICES ) ;
-        count02T pcHeader[] = { 0 , 1 , costaBody , fliWEBhOOKnOTICE_NEW , 0 , 0 , 0 , 0 } ;
+            *(nicNameC*)&pcHeader[ 4 ] = nnPeerP ;
+            putNegAM( pcHeader[ 0 ] , FINGERnEG_WEBhOOKnOTICES ) ;
+            count02T pcHeader[] = { 0 , 1 , costaBody , fliWEBhOOKnOTICE_NEW , 0 , 0 , 0 , 0 } ;
 
-        booksC& bksWebHookNoticesP = *(booksC*)((count8S*)cArgP)->c6 ;
+            booksC& bksWebHookNoticesP = *(booksC*)((count8S*)cArgP)->c6 ;
+            etThread.traceF( tin0P , T("noteFromStripeCBF / booking [nnPeer,costaBody]:    ")+T(nnPeerP)+T("    ")+TF2(costaBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        {
+        else
+        else if( thirdC::c_strstrIF( tin0P , postBodyP , "inv_gorilla_" ) ) etThread.traceF( tin0P , T("noteFromStripeCBF / claims to be gorilla [nnPeer,costaBody]:    ")+T(nnPeerP)+T("    ")+TF2(costaBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        else if( costaBody > ( TUCK << 4 )                                ) etThread.traceF( tin0P , T("noteFromStripeCBF / body is too large [nnPeer,costaBody]:    "   )+T(nnPeerP)+T("    ")+TF2(costaBody,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+             if( !costaBody                                               ) etThread.traceF( tin0P , T("noteFromStripeCBF / body is null length [nnPeer]:    "           )+T(nnPeerP)                                                                   ) ;
 
         const countT costaBody = 1 + thirdC::c_strlenIF( tin0P , postBodyP ) ;
     {
-    if( postBodyP && !thirdC::c_strstrIF( tin0P , postBodyP , "inv_gorilla_" ) )
+    else
+    if( !postBodyP ) etThread.traceF( tin0P , T("noteFromStripeCBF / no body [nnPeer]:    ")+T(nnPeerP) ) ;
 {
 /*1*/voidT noteFromStripeCBF( tin0S& tin0P , etherC& etThread , const boolT& bQuitP , httpServerC& meP , countT& cArgP , httpReplyS& replyP , stackC& stBodyP , const strokeS* const psttKVReportP , switchC& swKVP , strokeS*& psttLeverKVP , sessionsC& sessionsP , nicNameC& nnPeerP , const strokeS* const psttNameP , const strokeS* const psttQueryKVP , const strokeS* const psttPeerAgentP , osTextT*& postBodyP )/*1*/
 
