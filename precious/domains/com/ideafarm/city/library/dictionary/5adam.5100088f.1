@@ -25,7 +25,7 @@ DONE( tmWorkF )
             if( bDelete ) etThread.delF( tin0P , *(byteT**)&pbi ) ;
             }
                 bHead = 1 ;
-                cbi = sizeof( count4S ) ;
+                cbi = ( 8 * sizeof( count02T ) ) ;
                 pbi = 0 ;
 
                 }
@@ -61,30 +61,27 @@ DONE( tmWorkF )
                 else
                 }
                     bHead           = 0      ;
-                    cbi             = c4h.c3 ;
+                    cbi             = pcHeadYes[ 2 ] ;
 
                     }
                         bksWebHookNotices.flushF( tin0P ) ;
-                        c4h.c4 = fliWEBhOOKnOTICE_null ;                        //U:: PERHAPS EDIT CODE TO NOT DO THIS UNTIL AFTER writeSoulFileF HAS RETURNED ; THIS WILL COMPLICATE THE CODE BUT AVOID THE SCENARIO IN WHICH I DIE BEFORE ACTUALLY WRITING THE soulC FILE
+                        pcHeadYes[ 3 ] = fliWEBhOOKnOTICE_null ;                        //U:: PERHAPS EDIT CODE TO NOT DO THIS UNTIL AFTER writeSoulFileF HAS RETURNED ; THIS WILL COMPLICATE THE CODE BUT AVOID THE SCENARIO IN WHICH I DIE BEFORE ACTUALLY WRITING THE soulC FILE
                     {
                     if( F(flagsNoticeLath) & fliWEBhOOKnOTICE_NEW )
-                    flagsNoticeLath = c4h.c4 ;
+                    flagsNoticeLath = pcHeadYes[ 3 ] ;
                 {
                 if( !flagsFail )
                 pbi = 0 ;
 
                 }
-                    if( !c4h.c3                                       ) { flagsFail |= 0x00000108 ; }
-                    if( c4h.c2 - 1                                    ) { flagsFail |= 0x00000104 ; }
-                    if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000102 ; etRock.traceF( tin0P , T("!exception [flagsFail,finger]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(getNegAM(c4h.c1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
-
-                    // putNegAM( c4s.c1 , FINGERnEG_WEBhOOKnOTICES ) ;
-                    // count4S c4s( 0 , 1 , costaBody ) ;
+                    if( !pcHeadYes[ 2 ]                                       ) { flagsFail |= 0x00000108 ; }
+                    if( pcHeadYes[ 1 ] - 1                                    ) { flagsFail |= 0x00000104 ; }
+                    if( getNegAM( pcHeadYes[ 0 ] ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000102 ; etRock.traceF( tin0P , T("!exception [flagsFail,finger]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(getNegAM(pcHeadYes[0]),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
                 {
                 if( !flagsFail )
-                count4S& c4h = *(count4S*)pbi ;
+                count02T* pcHeadYes = (count02T*)pbi ;
 
-                if( cbi - sizeof( count4S )                           ) { flagsFail |= 0x00000101 ; etRock.traceF( tin0P , T("!exception [flagsFail,cbi]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
+                if( cbi - ( 8 * sizeof( count02T ) )                           ) { flagsFail |= 0x00000101 ; etRock.traceF( tin0P , T("!exception [flagsFail,cbi]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
                 ZE( flagsT , flagsFail ) ;
 
                 //*********************************************************************************************************************************************************
@@ -104,28 +101,25 @@ DONE( tmWorkF )
                 else
                 }
                     bHead = 0 ;
-                    cbi = c4h.c3 ;
+                    cbi = pcHeadYes[ 2 ] ;
                     etRock.traceF( tin0P , T("header found!") ) ;
                 {
                 if( !flagsFail )
                 pbi = 0 ;
 
                 }
-                    if( !c4h.c4                                       ) { flagsFail |= 0x00000020 ; }
-                    if( !c4h.c3                                       ) { flagsFail |= 0x00000010 ; }
-                    if( c4h.c2 - 1                                    ) { flagsFail |= 0x00000008 ; }
-                    if( getNegAM( c4h.c1 ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000004 ; etRock.traceF( tin0P , T("!exception [flagsFail,finger]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(getNegAM(c4h.c1),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
-
-                    // putNegAM( c4s.c1 , FINGERnEG_WEBhOOKnOTICES ) ;
-                    // count4S c4s( 0 , 1 , costaBody ) ;
+                    if( !pcHeadYes[ 3 ]                                       ) { flagsFail |= 0x00000020 ; }
+                    if( !pcHeadYes[ 2 ]                                       ) { flagsFail |= 0x00000010 ; }
+                    if( pcHeadYes[ 1 ] - 1                                    ) { flagsFail |= 0x00000008 ; }
+                    if( getNegAM( pcHeadYes[ 0 ] ) - FINGERnEG_WEBhOOKnOTICES ) { flagsFail |= 0x00000004 ; etRock.traceF( tin0P , T("!exception [flagsFail,finger]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(getNegAM(pcHeadYes[0]),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }
                 {
                 if( !flagsFail )
 
-                                pc4HeadMaybe = 0 ;
-                count4S& c4h = *pc4HeadMaybe ;
+                                      pcHeadMaybe = 0 ;
+                count02T* pcHeadYes = pcHeadMaybe     ;
 
-                if( pbi - (byteT*)pc4HeadMaybe - 1                    ) { flagsFail |= 0x00000002 ; etRock.traceF( tin0P , T("!exception [flagsFail,pbi-(byteT*)pc4HeadMaybe-1]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbi-(byteT*)pc4HeadMaybe-1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }       //IF WHAT I GOT IS NOT IMMEDIATELY AFTER THE FINGERPRINT (SHOULD BE IMPOSSIBLE)
-                if( cbi - sizeof( count4S )    + 1                    ) { flagsFail |= 0x00000001 ; etRock.traceF( tin0P , T("!exception [flagsFail,cbi]:    "                       )+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi                       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }       //IF DIDN'T GET THE REST OF THE HEAD
+                if( pbi - (byteT*)pcHeadMaybe    - 1                  ) { flagsFail |= 0x00000002 ; etRock.traceF( tin0P , T("!exception [flagsFail,pbi-(byteT*)pcHeadMaybe-1]:    ")+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pbi-(byteT*)pcHeadMaybe-1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }       //IF WHAT I GOT IS NOT IMMEDIATELY AFTER THE FINGERPRINT (SHOULD BE IMPOSSIBLE)
+                if( cbi - 8 * sizeof( count02T ) + 1                  ) { flagsFail |= 0x00000001 ; etRock.traceF( tin0P , T("!exception [flagsFail,cbi]:    "                      )+TF2(flagsFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cbi                       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; }       //IF DIDN'T GET THE REST OF THE HEAD
                 ZE( flagsT , flagsFail ) ;
 
                 //*********************************************************************************************************************************************************
@@ -135,16 +129,16 @@ DONE( tmWorkF )
                 //*********************************************************************************************************************************************************
                 etRock.traceF( tin0P , T("searching for head after fingerprint") ) ;
             {
-            else if( pc4HeadMaybe )
+            else if( pcHeadMaybe )
             }
                 pbi = 0 ;
                 }
-                    cbi = sizeof( count4S ) - 1 ;
-                    pc4HeadMaybe = (count4S*)pbi ;
+                    cbi = ( 8 * sizeof( count02T ) ) - 1 ;
+                    pcHeadMaybe = (count02T*)pbi ;
                     bSearchForHead = 0 ;
                 {
-                if( getNegAM( c4h.c1 ) == FINGERnEG_WEBhOOKnOTICES )                                        //A:ASSUME: booksC PROVIDES HEADROOM SO THAT A countT OBJECT CAN ALWAYS BE READ, EVEN AT THE END OF A bookC INSTANCE
-                count4S& c4h = *(count4S*)pbi ;
+                if( getNegAM( pcHeadIn[ 0 ] ) == FINGERnEG_WEBhOOKnOTICES )                                        //A:ASSUME: booksC PROVIDES HEADROOM SO THAT A countT OBJECT CAN ALWAYS BE READ, EVEN AT THE END OF A bookC INSTANCE
+                count02T* pcHeadIn = (count02T*)pbi ;
 
                 //*********************************************************************************************************************************************************
                 //********                       **************************************************************************************************************************
@@ -198,13 +192,21 @@ DONE( tmWorkF )
         etRock.traceF( tin0P , T("reading begun") ) ;
         TN( tLike , "///ideafarm/tmp/notice.@1@.txt" ) ;
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-        ZE( count4S* , pc4HeadMaybe   ) ;
-        ZE( boolT    , bSearchForHead ) ;
+        ZE( count02T* , pcHeadMaybe    ) ;
+        ZE( boolT     , bSearchForHead ) ;
         boolT bHead = 1 ;
         handleC hRead( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_BOOKS ) ;
         booksC bksWebHookNotices( tin0P , TAG( TAGiDnULL ) , "webhook.notices" , ifcIDsTATEsPACE_MULTIPLEaDAMS ) ;
 
-        countT             cbi = sizeof( count4S ) ;
+        //
+        //    bksWebHookNoticesP.writeF( tin0P , (byteT*)&c4s , sizeof c4s , postBodyP , costaBody , flBOOKScwRITE_ALLOWoDDlENGTH , 0 ) ;
+        //    *(nicNameC*)&pcHeader[ 4 ] = nnPeerP ;
+        //    putNegAM( pcHeader[ 0 ] , FINGERnEG_WEBhOOKnOTICES ) ;
+        //    count02T pcHeader[] = { 0 , 1 , costaBody , fliWEBhOOKnOTICE_NEW , 0 , 0 , 0 , 0 } ;
+        //
+        // THIS IS HOW THE ITEM IS BOOKED BY THE WEBHOOK NOTICE RECEIVER
+
+        countT             cbi = ( 8 * sizeof( count02T ) ) ;
         ZE( const byteT* , pbi ) ;
 
         etherC& etRock = etherC::etRockIF( tin0P ) ;
