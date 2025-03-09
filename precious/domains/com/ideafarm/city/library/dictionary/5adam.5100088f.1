@@ -216,11 +216,20 @@ DONE( tmWorkF )
     {
 
     }
-        TELL( "wrote kilroy was here file, to verify that i can write to a particular shared folder" ) ;
-        etThread.boxPutF( tin0P , T("////go1/d/ideafarm.shared/kilroy.was.here") , "abcd" , 4 ) ;       //THIS IS TO VERIFY WRITE ACCESS OVER THE NETWORK
-        TELL( "writing kilroy was here file, to verify that i can write to a particular shared folder" ) ;
-        _IO_
+        }
+            }
+                etThread.traceF( tin0P , T("!exception / could not write to ////go1/ ; will nap then retry") ) ;
+                POOPRqUIET
+            {
+            else
+            if( !POOP ) break ;
+            ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , T("////go1/d/ideafarm.shared/kilroy.was.here") , "abcd" , 4 , 1 ) ;       //THIS IS TO VERIFY WRITE ACCESS OVER THE NETWORK
+            _IO_
+        {
+        while( !ether )
+        SCOOPS
     {
+    IFsCRATCHoK
 
     //*********************************************************************************************************************************************************
     //********                                     ************************************************************************************************************
