@@ -47,14 +47,17 @@ DONE( tmGorillaF )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
         }
+            idNewSuccess = 0 ;
+
             }
-                cEmailsSent ++ ;
                 etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
 
                 ) ;
                     "\r\n"
-                    "    [timeE1]:   ")+TF2(timeE1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                    "    [cFail]:    ")+TF2(cFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                    "    [idNewSuccess]: ")+TF2(idNewSuccess,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                    "    [idNewFail]:    ")+TF2(idNewFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                    "    [timeE1]:       ")+TF2(timeE1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                    "    [cFail]:        ")+TF2(cFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                     "\r\n"
                     "I have detected an exception:\r\n"
                     "\r\n"
@@ -62,10 +65,14 @@ DONE( tmGorillaF )
 
                 TN( tSay , "" ) ; tSay = T(
             {
-            if( cEmailsSent < 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
+            if( ++ idNewFail <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
         {
         else
-        if( !( cFail || timeE1 > TOCK ) ) cEmailsSent = 0 ;             // RESET THE EMAIL BURST LIMIT WHEN A PASS SUCCEEDS
+        }
+            idNewSuccess ++ ;
+            idNewFail = 0 ;
+        {
+        if( !( cFail || timeE1 > TOCK ) )
 
         /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
         }
@@ -131,7 +138,8 @@ DONE( tmGorillaF )
         tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
     {
     while( !ether )
-    ZE( countT , cEmailsSent ) ;
+    ZE( countT , idNewFail    ) ;
+    ZE( countT , idNewSuccess ) ;
 
     }
         tContentLength3 = T("Content-Length: ")+TF4(costRaw3Part1+costInvoiceRequired+costRaw3Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
