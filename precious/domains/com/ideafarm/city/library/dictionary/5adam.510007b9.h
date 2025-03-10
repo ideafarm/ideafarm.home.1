@@ -1,6 +1,6 @@
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -18,12 +18,12 @@ TASKpART0PROTO( tmNodeOldChatRepliesF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -40,12 +40,12 @@ TASKpART0PROTO( tmNodeTeatAcceptorF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -62,12 +62,12 @@ TASKpART0PROTO( tmNodeServerCatchBagF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -84,12 +84,12 @@ TASKpART0PROTO( tmNodeServerWrapToAppF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -106,12 +106,12 @@ TASKpART0PROTO( tmNodeInitiatorF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -128,12 +128,12 @@ TASKpART0PROTO( tmNodeKillF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -150,12 +150,12 @@ TASKpART0PROTO( tmNodeTickleF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -172,12 +172,12 @@ TASKpART0PROTO( tmNodeTeatServerF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -194,12 +194,12 @@ TASKpART0PROTO( tmNodePopClientF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -216,12 +216,12 @@ TASKpART0PROTO( tmNodeBlowTeatF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -287,19 +287,19 @@ TASKpART0PROTO( tmNodeBlowTeatF ) ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
 //
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -314,7 +314,7 @@ extern grabC*       pGrabHandleAll ;
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -343,12 +343,12 @@ extern grabC*       pGrabHandleAll ;
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 // Respecting the rights of other people is an important part of empowering one another.
@@ -382,7 +382,7 @@ for each previous absentee
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
@@ -390,7 +390,7 @@ for each previous absentee
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
 
@@ -413,6 +413,6 @@ for each previous absentee
 // Respecting the rights of other people is an important part of empowering one another.
 // This proprietary software was crafted at great expense and with great hardship by one man.  It took 33 years.
 //
-// Copyright (c) 1992-2024 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
+// Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
 
