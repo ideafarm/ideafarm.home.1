@@ -72,8 +72,8 @@ DONE( tmWorkF )
 
     //etThread.osThreadF( TaRG1( tmPopOpenPortF ) ) ;
 
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
-    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_PUSHY ) ;
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ; //NOT PUSHY, BECAUSE THAT CREATES AN ATTACK SURFACE
 {
 if( pTaskP )
 TASK( tmWorkF )
