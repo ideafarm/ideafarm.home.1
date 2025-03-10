@@ -370,8 +370,7 @@ DONE( tmWorkF )
     TN( tDash , "-" ) ;
 
     sgnSettingsReady.waitF( tin0P ) ;
-    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&sgnSettingsReady , (countT)&mySettings ) ;
-    sgnSettingsReady.giveF( tin0P ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
 
     signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
     mySettingsS mySettings( tin0P ) ;
@@ -674,8 +673,8 @@ DONE( tmFreshSettingsF )
     {
     TN( tLongPath , "" ) ;
 
-    mySettingsS& mySettingsP       = *(mySettingsS*)pTaskP->c2 ;
-    signC&       sgnSettingsReadyP =       *(signC*)pTaskP->c1 ;
+    signC&       sgnSettingsReadyP =       *(signC*)pTaskP->c2 ;
+    mySettingsS& mySettingsP       = *(mySettingsS*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmFreshSettingsF )
