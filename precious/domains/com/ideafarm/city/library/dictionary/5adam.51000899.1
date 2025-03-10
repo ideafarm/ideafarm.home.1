@@ -237,12 +237,16 @@ DONE( tmWorkF )
                 TN( tSayUnknownDomain , "    !exception / unknown peer domain" ) ;
                 TN( tSayPrefix  , "[nnPeer]:    " ) ;
 
+                grabSettings.ungrabF( tin0P ) ;
+
                 nicNameC nnWebHook2       = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
                 nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook1 ) ;
 
                 TN( tb4    , "    " ) ;
                 TN( tWebHook1 , "" ) ; tWebHook1 = mySettings.tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
                 TN( tWebHooks , "" ) ; tWebHooks = mySettings.tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
+
+                grabSettings.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                 sockd.bindF( tin0P , ifcPORToLD2_DNS ) ;
                 socketC sockd( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
@@ -282,6 +286,7 @@ DONE( tmWorkF )
         {
         textC* pptListedDomain[] =
 
+        grabSettings.ungrabF( tin0P ) ;
         TN( tListedDomain8 , (strokeS*)mySettings.tDomainRootAllowed8 ) ;
         TN( tListedDomain7 , (strokeS*)mySettings.tDomainRootAllowed7 ) ;
         TN( tListedDomain6 , (strokeS*)mySettings.tDomainRootAllowed6 ) ;
@@ -290,6 +295,7 @@ DONE( tmWorkF )
         TN( tListedDomain3 , (strokeS*)mySettings.tDomainRootAllowed3 ) ;
         TN( tListedDomain2 , (strokeS*)mySettings.tDomainRootAllowed2 ) ;
         TN( tListedDomain1 , (strokeS*)mySettings.tDomainRootAllowed1 ) ;
+        grabSettings.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
         }
             etThread.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetAllowedStripe[offn]) ) ;
@@ -326,7 +332,9 @@ DONE( tmWorkF )
                 {
                 FORsTRINGSiN1( pstt1Nn )
 
+                grabSettings.ungrabF( tin0P ) ;
                 countT cNn = etThread.strWordsF( tin0P , pstt1Nn , mySettings.tNnTrusted  , sttq , T(" ,") ) ; ___( pstt1Nn ) ;
+                grabSettings.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                 ZE( strokeS* , pstt1Nn ) ;
             {
@@ -334,10 +342,13 @@ DONE( tmWorkF )
         {
         ZE( countT    , cnnSubnetAllowedStripe ) ;
         ZE( nicNameC* , pnnSubnetAllowedStripe ) ;
+
+        grabSettings.ungrabF( tin0P ) ;
     {
     else
     }
-        etRock.traceF( tin0P , T("a required setting is missing") ) ;
+        etRock.traceF( tin0P , T("a required setting is missing") ) ;           //P:PERSONALITY: THIS VERIFICATION IS ONLY DONE NOW ; IT IS NOT DONE WHEN SETTINGS ARE RELOADED BECAUSE THE FILE TIME HAS CHANGED, SO SETTINGS ERRORS THEN WILL JUST CAUSE ME TO FAIL
+        grabSettings.ungrabF( tin0P ) ;
     {
     )
         !mySettings.tDomainRootAllowed8.csF( tin0P )
@@ -365,14 +376,17 @@ DONE( tmWorkF )
         !mySettings.tIpWebHook1.csF( tin0P )
     (
     if
+    grabSettings.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
     TN( tDash , "-" ) ;
 
     etThread.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
-    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
 
+    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady , (countT)&grabSettings ) ;
+
+    grabC grabSettings(     tin0P , TAG( TAGiDnULL ) ) ;
     signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
     mySettingsS mySettings( tin0P ) ;
 
@@ -503,6 +517,8 @@ DONE( tmFreshSettingsF )
             if( bWoth )
 
             }
+                grabSettingsP.ungrabF( tin0P ) ;
+
                 /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+mySettingsP.tDomainRootAllowed8+T("\"") ) ;
                 /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+mySettingsP.tDomainRootAllowed7+T("\"") ) ;
                 /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+mySettingsP.tDomainRootAllowed6+T("\"") ) ;
@@ -623,8 +639,11 @@ DONE( tmFreshSettingsF )
                     if( psttEat )
                     ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.webhooks")  ) ; ___( psttEat ) ;
                 {
+                grabSettingsP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                timeWrittenLath = timeWritten ;
             {
-            if( timeWritten.time1 != timeWrittenLath.time1 || timeWritten.time2 != timeWrittenLath.time2 )
+            if( timeWrittenLath.time1 != timeWritten.time1 || timeWrittenLath.time2 != timeWritten.time2 )
 
             }
                 }
@@ -652,12 +671,12 @@ DONE( tmFreshSettingsF )
                 {
                 IFsCRATCHoK
             {
-            timeS timeWritten = timeS() ;
+            timeS timeWritten ;
         {
         if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tLongPath , flWAITdIR_ATTRIBUTE | flWAITdIR_SIZE | flWAITdIR_WRITE ) )
     {
     while( !ether && !POOP )
-    timeS timeWrittenLath = timeS() ;
+    timeS timeWrittenLath ;
     handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
     TN( tDash , "-" ) ;
     boolT bWoth = 1 ;
@@ -674,6 +693,7 @@ DONE( tmFreshSettingsF )
     {
     TN( tLongPath , "" ) ;
 
+    grabC&       grabSettingsP     =       *(signC*)pTaskP->c3 ;
     signC&       sgnSettingsReadyP =       *(signC*)pTaskP->c2 ;
     mySettingsS& mySettingsP       = *(mySettingsS*)pTaskP->c1 ;
 {
