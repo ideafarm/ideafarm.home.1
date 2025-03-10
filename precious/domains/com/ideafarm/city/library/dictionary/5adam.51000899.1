@@ -369,6 +369,7 @@ DONE( tmWorkF )
     etherC& etRock = etherC::etRockIF( tin0P ) ;
     TN( tDash , "-" ) ;
 
+    etThread.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
     etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
 
