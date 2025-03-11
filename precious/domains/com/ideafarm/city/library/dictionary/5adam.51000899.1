@@ -25,11 +25,14 @@ DONE( tmWorkF )
                     }
                         }
                             ((tin1S&)tin0P).pEtScratch->delF( tin0P , pbr ) ;
+                            /**/etRock.traceF( tin0P , T("replying / 0 [cbr]:    ")+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
+                            /**/etRock.traceF( tin0P , T("replying / 1 [cbr]:    ")+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                             ((tin1S&)tin0P).pEtScratch->dnsReplyF( tin0P , pbr , cbr , pbq , stsReplies , 1 , idError ) ;
                             ZE( countT , cbr ) ;
                             ZE( byteT* , pbr ) ;
+                            /**/etRock.traceF( tin0P , T("replying / 2") ) ;
 
                             else                          /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                             if( postError && *postError ) /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
@@ -233,7 +236,9 @@ DONE( tmWorkF )
 
                     mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
+                    /**/etRock.traceF( tin0P , T("waited for a packet [nnPeer,cbq]:    ")+T(nnPeer)+tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
+                    /**/etRock.traceF( tin0P , T("waiting for a packet") ) ;
                     nicNameC nnPeer ;
                     ZE( countT , idp ) ;
                     ZE( countT , cbq ) ;
@@ -252,6 +257,7 @@ DONE( tmWorkF )
                 *((tin1S&)tin0P).pEtScratch = 0 ;           //U:: 20250311@1150: EDIT THIS OLD CODE FOR CONFORMANCE TO CODE STANDARDS (WITH REGARD TO NOT USING LINES LIKE THIS FOR *pEtScratch)
             {
             while( !POOP && !ether && !etThread )
+            TN( tb4 , "    " ) ;
             stackC stsQueries(   tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
             stackC stsReplies(   tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
             stackC stsRepliesNU( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
