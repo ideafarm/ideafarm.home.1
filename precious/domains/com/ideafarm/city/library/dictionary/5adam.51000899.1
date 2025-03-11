@@ -222,12 +222,6 @@ DONE( tmWorkF )
                     TN( tDomainPeer , "" ) ;
                     ZE( boolT , bDivert ) ;
 
-                    sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
-                    nicNameC nnPeer ;
-                    ZE( countT , idp ) ;
-                    ZE( countT , cbq ) ;
-                    ZE( byteT* , pbq ) ;
-
                     mySettings.grabMe.ungrabF( tin0P ) ;
 
                     nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
@@ -238,6 +232,12 @@ DONE( tmWorkF )
                     TN( tWebHooks , "" ) ; tWebHooks = mySettings.tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
 
                     mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                    sockd.readF( tin0P , pbq , cbq , idp , nnPeer ) ; ___( pbq ) ;
+                    nicNameC nnPeer ;
+                    ZE( countT , idp ) ;
+                    ZE( countT , cbq ) ;
+                    ZE( byteT* , pbq ) ;
                 {
                 while( !POOP && !ether && !etThread && !*((tin1S&)tin0P).pEtScratch )
                 TN( tSayGranting  , "    granting information    " ) ;
