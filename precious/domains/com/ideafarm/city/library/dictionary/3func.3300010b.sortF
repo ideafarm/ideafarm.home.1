@@ -25,7 +25,7 @@
 
     }
         }
-            pJotOutP = new( 0 , tin0P , LF ) jotC(   tin0P , tName , (flagsJotP) | ( bFinal ? flJOTc_null : flJOTc_DELETE ) | flJOTc_WRITE | flJOTc_PURGEoNcT , cKeepInactive , cbDataPerBookP , cIndexEntriesBookP ) ;
+            pJotOutP = new( 0 , tin0P , LF ) jotC(   tin0P , tName , (flagsJotP) | ( bFinal ? flJOTc_null : flJOTc_DELETE ) | flJOTc_WRITE | flJOTc_PURGEoNcT , ifcIDsTATEsPACE_SINGLEaDAM( tin0P ) , cKeepInactive , cbDataPerBookP , cIndexEntriesBookP ) ;
             tName = T(psttPrefixP)+(bFinal?T(""):T(".")+TF3(++idJotSet,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8)) ;
             pJot1 = pJotOutP ; pJotOutP = 0 ;
             if( pJot1 != &jotInP ) DEL( pJot1 ) ;
@@ -58,7 +58,7 @@
     ZE( boolT , bFinal ) ;
     ZE( boolT , bFail ) ;
 
-    pJotOutP = new( 0 , tin0P , LF ) jotC(   tin0P , tName , (flagsJotP) | flJOTc_DELETE | flJOTc_WRITE | flJOTc_PURGEoNcT , cKeepInactive , cbDataPerBookP , cIndexEntriesBookP ) ;
+    pJotOutP = new( 0 , tin0P , LF ) jotC(   tin0P , tName , (flagsJotP) | flJOTc_DELETE | flJOTc_WRITE | flJOTc_PURGEoNcT , ifcIDsTATEsPACE_SINGLEaDAM( tin0P ) , cKeepInactive , cbDataPerBookP , cIndexEntriesBookP ) ;
     TN( tName , "" ) ; tName = T(psttPrefixP)+T(".")+TF3(++idJotSet,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
     ZE( countT , idJotSet ) ;
 

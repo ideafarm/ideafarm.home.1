@@ -1629,7 +1629,7 @@ DONE( tmExecutiveHealYearF )
                         etThread.newF( tin0P , LF , *(byteT**)&pphff      , cPathsToYear * sizeof( handleC*   ) ) ; ___( pphff      ) ;
                         ZE( handleC** , pphff ) ;
 
-                        jotC jotShortFileNames( tin0P , "short.file.names" , flJOTc_WRITE | flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_PURGEoNcT , 1 , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ) ;
+                        jotC jotShortFileNames( tin0P , "short.file.names" , flJOTc_WRITE | flJOTc_PRIVATE | flJOTc_DELETE | flJOTc_PURGEoNcT , ifcIDsTATEsPACE_MULTIPLEaDAMS , 1 , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ) ;
                         //etThread.traceF( tin0P , T("reading short names from volumes [archive,year]    ")+tArchive+tb4+tYear ) ;
 
                         ZE( boolT , bAbortLocal ) ;
@@ -1835,7 +1835,7 @@ DONE( tmExecutiveHealYearF )
             }
                 }
                     //etThread.traceF( tin0P , T("[pJotSortedShort]:    ")+TF3((countT)pJotSortedShort,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ) ;
-                    pJotSortedShort = new( 0 , tin0P , LF ) jotC( tin0P , tPart2 , flJOTc_DOnOTrEGISTER , 1 , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ) ;        //flJOTc_DOnOTrEGISTER BECAUSE WILL BE DELETED ON ANOTHER THREAD
+                    pJotSortedShort = new( 0 , tin0P , LF ) jotC( tin0P , tPart2 , flJOTc_DOnOTrEGISTER , ifcIDsTATEsPACE_MULTIPLEaDAMS , 1 , CBdATAbOOKsHORTfILEnAMES , CiNDEXeNTRIESpERbOOKsHORTfILEnAMES ) ;        //flJOTc_DOnOTrEGISTER BECAUSE WILL BE DELETED ON ANOTHER THREAD
                     //etThread.traceF( tin0P , T("reusing existing jot of sorted short file names [file]:    ")+tPart2 ) ;
                 {
                 else
