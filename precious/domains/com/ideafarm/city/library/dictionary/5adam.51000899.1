@@ -17,13 +17,6 @@ TODO
 DONE( tmWorkF )
 }
     }
-        etThread.delF( tin0P , pnnSubnetAllowedStripe ) ;
-        }
-            DELzOMBIE( pDoomed ) ;
-            nicNameC* pDoomed = pnnSubnetAllowedStripe + offn ;
-        {
-        for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
-
         }
             }
                 *((tin1S&)tin0P).pEtScratch = 0 ; //U: WORKAROUND TO SEE WHETHER PREVENTS BLOCK IN bindF
@@ -182,7 +175,7 @@ DONE( tmWorkF )
                                         break ;
                                         bStripeWebHookNotifier = 1 ;
                                     {
-                                    if( pnnSubnetAllowedStripe[ offn ] == nnPeer( 0x40 ) )
+                                    if( mySettings.pnnSubnetAllowedStripe[ offn ] == nnPeer( 0x40 ) )
                                 {
                                 else
                                 }
@@ -190,11 +183,11 @@ DONE( tmWorkF )
                                         break ;
                                         bStripeWebHookNotifier = 1 ;
                                     {
-                                    if( pnnSubnetAllowedStripe[ offn ] == nnPeer( 0x18 ) )
+                                    if( mySettings.pnnSubnetAllowedStripe[ offn ] == nnPeer( 0x18 ) )
                                 {
                                 if( nnPeer.isIPv4F() )
                             {
-                            for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
+                            for( countT offn = 0 ; offn < mySettings.cnnSubnetAllowedStripe ; offn ++ )
                         {
                         if( !bListedDomain )
                         ZE( boolT , bStripeWebHookNotifier ) ;
@@ -207,10 +200,10 @@ DONE( tmWorkF )
                                         break ;
                                         bListedDomain ++ ;
                                     {
-                                    if( idHit && idHit == 1 + psttPeer->idAdam - pptListedDomain[ offt ]->csF( tin0P ) )
-                                    countT idHit  = etThread.strIdF( tin0P , *pptListedDomain[ offt ] , psttPeer , 1 ) ;
+                                    if( idHit && idHit == 1 + psttPeer->idAdam - mySettings.pptListedDomain[ offt ]->csF( tin0P ) )
+                                    countT idHit  = etThread.strIdF( tin0P , *mySettings.pptListedDomain[ offt ] , psttPeer , 1 ) ;
                                 {
-                                for( countT offt = 0 ; offt < cListedDomains ; offt ++ )
+                                for( countT offt = 0 ; offt < mySettings.cListedDomain ; offt ++ )
 
                                 //etRock.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
                                 tDomainPeer = T(psttPeer) ;
@@ -237,16 +230,16 @@ DONE( tmWorkF )
                 TN( tSayUnknownDomain , "    !exception / unknown peer domain" ) ;
                 TN( tSayPrefix  , "[nnPeer]:    " ) ;
 
-                grabSettings.ungrabF( tin0P ) ;
+                mySettings.grabMe.ungrabF( tin0P ) ;
 
-                nicNameC nnWebHook2       = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
-                nicNameC nnWebHook1       = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook1 ) ;
+                nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
+                nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook1 ) ;
 
                 TN( tb4    , "    " ) ;
                 TN( tWebHook1 , "" ) ; tWebHook1 = mySettings.tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
                 TN( tWebHooks , "" ) ; tWebHooks = mySettings.tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
 
-                grabSettings.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
                 sockd.bindF( tin0P , ifcPORToLD2_DNS ) ;
                 socketC sockd( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM ) ;
@@ -264,121 +257,15 @@ DONE( tmWorkF )
         {
         IFsCRATCHoK
 
-        }
-            }
-                else                                                                 break ;
-                if( etThread.strCompareF( tin0P , *pptListedDomain[ offt ] , tnu ) ) cListedDomains ++ ;
-            {
-            for( countT offt = 0 ; offt < sizeof pptListedDomain / sizeof pptListedDomain[ 0 ] ; offt ++ )
-            TN( tnu , ".not.used.ideafarm.com" ) ;
-        {
-        ZE( countT , cListedDomains ) ;                             //P:PERSONALITY: I IGNORE ALL ELEMENTS NOT BEFORE THE WO'TH ELEMENT THAT CONTAINS THE "NOT USED" VALUE ; THIS IS FOR SPEED
-
-        } ;
-            &tListedDomain8 ,
-            &tListedDomain7 ,
-            &tListedDomain6 ,
-            &tListedDomain5 ,
-            &tListedDomain4 ,
-            &tListedDomain3 ,
-            &tListedDomain2 ,
-            &tListedDomain1 ,
-        {
-        textC* pptListedDomain[] =
-
-        grabSettings.ungrabF( tin0P ) ;
-        TN( tListedDomain8 , (strokeS*)mySettings.tDomainRootAllowed8 ) ;
-        TN( tListedDomain7 , (strokeS*)mySettings.tDomainRootAllowed7 ) ;
-        TN( tListedDomain6 , (strokeS*)mySettings.tDomainRootAllowed6 ) ;
-        TN( tListedDomain5 , (strokeS*)mySettings.tDomainRootAllowed5 ) ;
-        TN( tListedDomain4 , (strokeS*)mySettings.tDomainRootAllowed4 ) ;
-        TN( tListedDomain3 , (strokeS*)mySettings.tDomainRootAllowed3 ) ;
-        TN( tListedDomain2 , (strokeS*)mySettings.tDomainRootAllowed2 ) ;
-        TN( tListedDomain1 , (strokeS*)mySettings.tDomainRootAllowed1 ) ;
-        grabSettings.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-
-        }
-            etThread.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetAllowedStripe[offn]) ) ;
-        {
-        for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
-
-        }
-            }
-                while( ~hWalk ) ;
-                }
-                    pnnSubnetAllowedStripe[ offo ++ ] = nnSubnet ;
-                    nicNameC& nnSubnet = (nicNameC&)stNnSubnet.downF( tin0P , hWalk ) ;
-                {
-                do
-                handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
-                ZE( countT , offo ) ;
-            {
-            if( pnnSubnetAllowedStripe )
-            etThread.newF( tin0P , LF , pnnSubnetAllowedStripe , cnnSubnetAllowedStripe ) ; ___( pnnSubnetAllowedStripe ) ;
-            cnnSubnetAllowedStripe = stNnSubnet ;
-
-            }
-                etThread.delF( tin0P , pstt1Nn ) ;
-                }
-                    stNnSubnet.sinkF( tin0P , countTC() , nnSubnet , flSTACKsINK_UNIQUE ) ;
-
-                    ;
-                        : nnIPv46( 0x40 )
-                        ? nnIPv46( 0x18 )
-                    nicNameC nnSubnet = nnIPv46.isIPv4F()
-                    nicNameC nnIPv46  = etThread.sockNicNameF( tin0P , psttc1 ) ;
-
-                    etThread.traceF( tin0P , psttc1 ) ;
-                {
-                FORsTRINGSiN1( pstt1Nn )
-
-                grabSettings.ungrabF( tin0P ) ;
-                countT cNn = etThread.strWordsF( tin0P , pstt1Nn , mySettings.tNnTrusted  , sttq , T(" ,") ) ; ___( pstt1Nn ) ;
-                grabSettings.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-                ZE( strokeS* , pstt1Nn ) ;
-            {
-            stackC stNnSubnet( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_nicNameC ) ;
-        {
-        ZE( countT    , cnnSubnetAllowedStripe ) ;
-        ZE( nicNameC* , pnnSubnetAllowedStripe ) ;
-
-        //U:: ALL OF THIS NEEDS TO BE RECALCULATED WHENEVER THE SETTINGS CHANGE
-
-        grabSettings.ungrabF( tin0P ) ;
+        mySettings.grabMe.ungrabF( tin0P ) ;
     {
     else
     }
         etRock.traceF( tin0P , T("a required setting is missing") ) ;           //P:PERSONALITY: THIS VERIFICATION IS ONLY DONE NOW ; IT IS NOT DONE WHEN SETTINGS ARE RELOADED BECAUSE THE FILE TIME HAS CHANGED, SO SETTINGS ERRORS THEN WILL JUST CAUSE ME TO FAIL
-        grabSettings.ungrabF( tin0P ) ;
+        mySettings.grabMe.ungrabF( tin0P ) ;
     {
-    )
-        !mySettings.tDomainRootAllowed8.csF( tin0P )
-        ||
-        !mySettings.tDomainRootAllowed7.csF( tin0P )
-        ||
-        !mySettings.tDomainRootAllowed6.csF( tin0P )
-        ||
-        !mySettings.tDomainRootAllowed5.csF( tin0P )
-        ||
-        !mySettings.tDomainRootAllowed4.csF( tin0P )
-        ||
-        !mySettings.tDomainRootAllowed3.csF( tin0P )
-        ||
-        !mySettings.tDomainRootAllowed2.csF( tin0P )
-        ||
-        !mySettings.tDomainRootAllowed1.csF( tin0P )
-        ||
-        !mySettings.tDomainLeafWebHook1Net.csF( tin0P )
-        ||
-        !mySettings.tDomainLeafWebHooksNet.csF( tin0P )
-        ||
-        !mySettings.tIpWebHook2.csF( tin0P )
-        ||
-        !mySettings.tIpWebHook1.csF( tin0P )
-    (
-    if
-    grabSettings.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    if( !mySettings )
+    mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
     etherC& etRock = etherC::etRockIF( tin0P ) ;
     TN( tDash , "-" ) ;
@@ -386,11 +273,10 @@ DONE( tmWorkF )
     etThread.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady , (countT)&grabSettings ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
 
-    grabC grabSettings(     tin0P , TAG( TAGiDnULL ) , flGRABc_SHARElAYER | flGRABc_NOTjEALOUS ) ;
     signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
-    mySettingsS mySettings( tin0P ) ;
+    mySettingsS mySettings( tin0P , etThread ) ;
 
     _IO_
 {
@@ -520,147 +406,7 @@ DONE( tmFreshSettingsF )
             if( bWoth )
 
             }
-                THREADmODE1rESTORE
-                grabSettingsP.ungrabF( tin0P ) ;
-
-                /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+mySettingsP.tDomainRootAllowed8+T("\"") ) ;
-                /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+mySettingsP.tDomainRootAllowed7+T("\"") ) ;
-                /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+mySettingsP.tDomainRootAllowed6+T("\"") ) ;
-                /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+mySettingsP.tDomainRootAllowed5+T("\"") ) ;
-                /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+mySettingsP.tDomainRootAllowed4+T("\"") ) ;
-                /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+mySettingsP.tDomainRootAllowed3+T("\"") ) ;
-                /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+mySettingsP.tDomainRootAllowed2+T("\"") ) ;
-                /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+mySettingsP.tDomainRootAllowed1+T("\"") ) ;
-
-                /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+mySettingsP.tIpWebHook1+T("\"    \"")+mySettingsP.tIpWebHook2+T("\"    \"")+mySettingsP.tDomainLeafWebHooksNet+T("\"    \"")+mySettingsP.tDomainLeafWebHook1Net ) ;
-
-                etThread.traceF( tin0P , T("[tNnTrusted]:    ")+mySettingsP.tNnTrusted ) ;
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tNnTrusted = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.nn.trusted")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tDomainRootAllowed8 = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.8")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tDomainRootAllowed7 = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.7")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tDomainRootAllowed6 = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.6")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tDomainRootAllowed5 = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.5")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tDomainRootAllowed4 = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.4")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tDomainRootAllowed3 = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.3")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tDomainRootAllowed2 = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.2")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tDomainRootAllowed1 = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.1")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tIpWebHook2 = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh2")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    mySettingsP.tIpWebHook1 = T(psttEat) ;
-                    if( psttEat ) etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh1")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    }
-                        etThread.delF( tin0P , psttNet ) ;
-                        mySettingsP.tDomainLeafWebHook1Net = T(psttNet) ;
-                        etThread.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
-                        strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-                        countT idf = 1 ;
-                        ZE( strokeS* , psttNet ) ;
-
-                        etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                        _IO_
-                    {
-                    if( psttEat )
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.wh1")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-
-                }
-                    etThread.delF( tin0P , psttEat ) ;
-                    }
-                        etThread.delF( tin0P , psttNet ) ;
-                        mySettingsP.tDomainLeafWebHooksNet = T(psttNet) ;
-                        etThread.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
-                        strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-                        countT idf = 1 ;
-                        ZE( strokeS* , psttNet ) ;
-
-                        etThread.strConvertToLowerCaseF( tin0P , psttEat ) ;
-                        _IO_
-                    {
-                    if( psttEat )
-                    ZE( strokeS* , psttEat ) ; etThread.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.webhooks")  ) ; ___( psttEat ) ;
-                    _IO_
-                {
-                grabSettingsP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING   )
-
+                mySettingsP.freshenF( tin0P ) ;
                 timeWrittenLath = timeWritten ;
                 _IO_
             {
@@ -718,48 +464,336 @@ DONE( tmFreshSettingsF )
     {
     TN( tLongPath , "" ) ;
 
-    grabC&       grabSettingsP     =       *(grabC*)pTaskP->c3 ;
     signC&       sgnSettingsReadyP =       *(signC*)pTaskP->c2 ;
     mySettingsS& mySettingsP       = *(mySettingsS*)pTaskP->c1 ;
     _IO_
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmFreshSettingsF )
 
 }
+    THREADmODE1rESTORE
+    grabMe.ungrabF( tin0P ) ;
+
+    }
+        }
+            else                                                                break ;
+            if( etherMe.strCompareF( tin0P , *pptListedDomain[ offt ] , tnu ) ) cListedDomain ++ ;
+        {
+        for( countT offt = 0 ; offt < sizeof pptListedDomain / sizeof pptListedDomain[ 0 ] ; offt ++ )
+        TN( tnu , ".not.used.ideafarm.com" ) ;                                                          //P:PERSONALITY: I IGNORE ALL ELEMENTS NOT BEFORE THE WO'TH ELEMENT THAT CONTAINS THE "NOT USED" VALUE ; THIS IS FOR SPEED
+    {
+
+    }
+        etherMe.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetAllowedStripe[offn]) ) ;
+    {
+    for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
+
+    }
+        }
+            while( ~hWalk ) ;
+            }
+                pnnSubnetAllowedStripe[ offo ++ ] = nnSubnet ;
+                nicNameC& nnSubnet = (nicNameC&)stNnSubnet.downF( tin0P , hWalk ) ;
+            {
+            do
+            handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+            ZE( countT , offo ) ;
+        {
+        if( pnnSubnetAllowedStripe )
+        etherMe.newF( tin0P , LF , pnnSubnetAllowedStripe , cnnSubnetAllowedStripe ) ; ___( pnnSubnetAllowedStripe ) ;
+        cnnSubnetAllowedStripe = stNnSubnet ;
+
+        }
+            etherMe.delF( tin0P , pstt1Nn ) ;
+            }
+                stNnSubnet.sinkF( tin0P , countTC() , nnSubnet , flSTACKsINK_UNIQUE ) ;
+
+                ;
+                    : nnIPv46( 0x40 )
+                    ? nnIPv46( 0x18 )
+                nicNameC nnSubnet = nnIPv46.isIPv4F()
+                nicNameC nnIPv46  = etherMe.sockNicNameF( tin0P , psttc1 ) ;
+
+                etherMe.traceF( tin0P , psttc1 ) ;
+            {
+            FORsTRINGSiN1( pstt1Nn )
+
+            countT cNn = etherMe.strWordsF( tin0P , pstt1Nn , tNnTrusted  , sttq , T(" ,") ) ; ___( pstt1Nn ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            ZE( strokeS* , pstt1Nn ) ;
+        {
+        stackC stNnSubnet( tin0P , etherMe , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_nicNameC ) ;
+    {
+
+    zapF( tin0P ) ;
+
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
+
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
+
+    etherMe.traceF( tin0P , T("[tNnTrusted]:    ")+tNnTrusted ) ;
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tNnTrusted = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.nn.trusted")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed8 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.8")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed7 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.7")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed6 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.6")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed5 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.5")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed4 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.4")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed3 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.3")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed2 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.2")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tDomainRootAllowed1 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.root.allowed.1")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tIpWebHook2 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh2")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tIpWebHook1 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh1")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        }
+            etherMe.delF( tin0P , psttNet ) ;
+            tDomainLeafWebHook1Net = T(psttNet) ;
+            etherMe.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            countT idf = 1 ;
+            ZE( strokeS* , psttNet ) ;
+
+            etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+            _IO_
+        {
+        if( psttEat )
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.wh1")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        }
+            etherMe.delF( tin0P , psttNet ) ;
+            tDomainLeafWebHooksNet = T(psttNet) ;
+            etherMe.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttEat , 0 , 0 ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            countT idf = 1 ;
+            ZE( strokeS* , psttNet ) ;
+
+            etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+            _IO_
+        {
+        if( psttEat )
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.domain.leaf.webhooks")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
+
+    TN( tDash , "-" ) ;
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 {
-tNnTrusted(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" )
-tDomainRootAllowed8(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tDomainRootAllowed7(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tDomainRootAllowed6(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tDomainRootAllowed5(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tDomainRootAllowed4(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tDomainRootAllowed3(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tDomainRootAllowed2(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tDomainRootAllowed1(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tIpWebHook2(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tIpWebHook1(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tDomainLeafWebHook1Net( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-tDomainLeafWebHooksNet( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , "" ) ,
-mySettingsS::mySettingsS( tin0S& tin0P ) :
+voidT mySettingsS::freshenF( tin0S& tin0P )
+
+}
+    cnnSubnetAllowedStripe = 0 ;
+
+    }
+        etherMe.delF( tin0P , pnnSubnetAllowedStripe ) ;
+        }
+            DELzOMBIE( pDoomed ) ;
+            nicNameC* pDoomed = pnnSubnetAllowedStripe + offn ;
+        {
+        for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
+    {
+    if( pnnSubnetAllowedStripe )
+{
+voidT mySettingsS::zapF( tin0S& tin0P )
+
+}
+    return bMissing ;
+
+    ) ;
+        !tDomainRootAllowed8.csF( tin0P )
+        ||
+        !tDomainRootAllowed7.csF( tin0P )
+        ||
+        !tDomainRootAllowed6.csF( tin0P )
+        ||
+        !tDomainRootAllowed5.csF( tin0P )
+        ||
+        !tDomainRootAllowed4.csF( tin0P )
+        ||
+        !tDomainRootAllowed3.csF( tin0P )
+        ||
+        !tDomainRootAllowed2.csF( tin0P )
+        ||
+        !tDomainRootAllowed1.csF( tin0P )
+        ||
+        !tDomainLeafWebHook1Net.csF( tin0P )
+        ||
+        !tDomainLeafWebHooksNet.csF( tin0P )
+        ||
+        !tIpWebHook2.csF( tin0P )
+        ||
+        !tIpWebHook1.csF( tin0P )
+    (
+    boolT bMissing =
+    TINSL
+{
+boolT mySettingsS::operator !( voidT )
+
+
+}
+    pptListedDomain[ 7 ] = &tDomainRootAllowed8 ;
+    pptListedDomain[ 6 ] = &tDomainRootAllowed7 ;
+    pptListedDomain[ 5 ] = &tDomainRootAllowed6 ;
+    pptListedDomain[ 4 ] = &tDomainRootAllowed5 ;
+    pptListedDomain[ 3 ] = &tDomainRootAllowed4 ;
+    pptListedDomain[ 2 ] = &tDomainRootAllowed3 ;
+    pptListedDomain[ 1 ] = &tDomainRootAllowed2 ;
+    pptListedDomain[ 0 ] = &tDomainRootAllowed1 ;
+{
+cListedDomain(          0                                                                  )
+cnnSubnetAllowedStripe( 0                                                                  ) ,
+pnnSubnetAllowedStripe( 0                                                                  ) ,
+tNnTrusted(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed8(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed7(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed6(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed5(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed4(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed3(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed2(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed1(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tIpWebHook2(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tIpWebHook1(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainLeafWebHook1Net( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainLeafWebHooksNet( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+grabMe(                 tin0P , TAG( TAGiDnULL ) , flGRABc_SHARElAYER | flGRABc_NOTjEALOUS ) ,
+etherMe(                etherP                                                             ) ,
+mySettingsS::mySettingsS( tin0S& tin0P , etherC& etherP ) :
+
+}
+    zapF( tin0P ) ;
+    TINSL
+{
+mySettingsS::~mySettingsS( voidT )
 
 ;
 }
-    mySettingsS( tin0S& tin0P ) ;
+    boolT operator !( voidT                         ) ;
+    voidT freshenF(   tin0S& tin0P                  ) ;
+    mySettingsS(      tin0S& tin0P , etherC& etherP ) ;
+    ~mySettingsS(     voidT                         ) ;
 
-    textC tNnTrusted ;
-    textC tDomainRootAllowed8 ;
-    textC tDomainRootAllowed7 ;
-    textC tDomainRootAllowed6 ;
-    textC tDomainRootAllowed5 ;
-    textC tDomainRootAllowed4 ;
-    textC tDomainRootAllowed3 ;
-    textC tDomainRootAllowed2 ;
-    textC tDomainRootAllowed1 ;
-    textC tIpWebHook2 ;
-    textC tIpWebHook1 ;
-    textC tDomainLeafWebHook1Net ;
-    textC tDomainLeafWebHooksNet ;
+    countT    cnnSubnetAllowedStripe ;
+    nicNameC* pnnSubnetAllowedStripe ;
+
+    countT    cListedDomain          ;
+    textC*    pptListedDomain[ 8 ]   ;
+
+    textC     tNnTrusted             ;
+    textC     tIpWebHook2            ;
+    textC     tIpWebHook1            ;
+    textC     tDomainLeafWebHook1Net ;
+    textC     tDomainLeafWebHooksNet ;
+
+    grabC     grabMe                 ;
+
+    public :
+
+    voidT zapF( tin0S& tin0P ) ;
+
+    textC     tDomainRootAllowed8    ;
+    textC     tDomainRootAllowed7    ;
+    textC     tDomainRootAllowed6    ;
+    textC     tDomainRootAllowed5    ;
+    textC     tDomainRootAllowed4    ;
+    textC     tDomainRootAllowed3    ;
+    textC     tDomainRootAllowed2    ;
+    textC     tDomainRootAllowed1    ;
+
+    etherC&   etherMe                ;
+
+    private :
 {
 struct mySettingsS
 
