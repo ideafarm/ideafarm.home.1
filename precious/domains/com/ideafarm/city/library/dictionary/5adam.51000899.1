@@ -732,6 +732,22 @@ TASK( tmFreshSettingsF )
         _IO_
     {
 
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tNetshCommandIpv4 = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.")+tNetshCommandIpv4SettingKey  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
+    }
+        etherMe.delF( tin0P , psttEat ) ;
+        tNetshCommandIpv4SettingKey = T(psttEat) ;
+        if( psttEat ) etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
+        ZE( strokeS* , psttEat ) ; etherMe.querySettingF( tin0P , psttEat , T("!ipdos.dns.wh1.netsh.command.ipv4.settingkey")  ) ; ___( psttEat ) ;
+        _IO_
+    {
+
     grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
     THREADmODE1oN( flTHREADmODE1_ALLOWsTOPwHILEgRABBING )
 
@@ -782,6 +798,10 @@ voidT mySettingsS::zapF( tin0S& tin0P )
         !tIpWebHook2.csF( tin0P )
         ||
         !tIpWebHook1.csF( tin0P )
+        ||
+        !tNetshCommandIpv4.csF( tin0P )
+        ||
+        !tNetshCommandIpv4SettingKey.csF( tin0P )
     (
     boolT bMissing =
     TINSL
@@ -799,24 +819,26 @@ boolT mySettingsS::operator !( voidT )
     pptListedDomain[ 1 ] = &tDomainRootAllowed2 ;
     pptListedDomain[ 0 ] = &tDomainRootAllowed1 ;
 {
-cListedDomain(          0                                                                  )
-cnnSubnetAllowedStripe( 0                                                                  ) ,
-pnnSubnetAllowedStripe( 0                                                                  ) ,
-tNnTrusted(             tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainRootAllowed8(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainRootAllowed7(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainRootAllowed6(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainRootAllowed5(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainRootAllowed4(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainRootAllowed3(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainRootAllowed2(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainRootAllowed1(    tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tIpWebHook2(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tIpWebHook1(            tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainLeafWebHook1Net( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-tDomainLeafWebHooksNet( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
-grabMe(                 tin0P , TAG( TAGiDnULL ) , flGRABc_SHARElAYER | flGRABc_NOTjEALOUS ) ,
-etherMe(                etherP                                                             ) ,
+cListedDomain(               0                                                                  )
+cnnSubnetAllowedStripe(      0                                                                  ) ,
+pnnSubnetAllowedStripe(      0                                                                  ) ,
+tNnTrusted(                  tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed8(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed7(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed6(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed5(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed4(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed3(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed2(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainRootAllowed1(         tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tIpWebHook2(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tIpWebHook1(                 tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainLeafWebHook1Net(      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tDomainLeafWebHooksNet(      tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tNetshCommandIpv4(           tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+tNetshCommandIpv4SettingKey( tin0P , TAG( TAGiDnULL ) , flTEXTc_null , ""                       ) ,
+grabMe(                      tin0P , TAG( TAGiDnULL ) , flGRABc_SHARElAYER | flGRABc_NOTjEALOUS ) ,
+etherMe(                     etherP                                                             ) ,
 mySettingsS::mySettingsS( tin0S& tin0P , etherC& etherP ) :
 
 }
@@ -832,34 +854,38 @@ mySettingsS::~mySettingsS( voidT )
     mySettingsS(      tin0S& tin0P , etherC& etherP ) ;
     ~mySettingsS(     voidT                         ) ;
 
-    countT    cnnSubnetAllowedStripe ;
-    nicNameC* pnnSubnetAllowedStripe ;
+    countT    cnnSubnetAllowedStripe      ;
+    nicNameC* pnnSubnetAllowedStripe      ;
 
-    countT    cListedDomain          ;
-    textC*    pptListedDomain[ 8 ]   ;
+    countT    cListedDomain               ;
+    textC*    pptListedDomain[ 8 ]        ;
 
-    textC     tNnTrusted             ;
-    textC     tIpWebHook2            ;
-    textC     tIpWebHook1            ;
-    textC     tDomainLeafWebHook1Net ;
-    textC     tDomainLeafWebHooksNet ;
+    textC     tNnTrusted                  ;
+    textC     tIpWebHook2                 ;
+    textC     tIpWebHook1                 ;
+    textC     tDomainLeafWebHook1Net      ;
+    textC     tDomainLeafWebHooksNet      ;
 
-    grabC     grabMe                 ;
+    textC     tNetshCommandIpv4           ;
+
+    grabC     grabMe                      ;
 
     public :
 
     voidT zapF( tin0S& tin0P ) ;
 
-    textC     tDomainRootAllowed8    ;
-    textC     tDomainRootAllowed7    ;
-    textC     tDomainRootAllowed6    ;
-    textC     tDomainRootAllowed5    ;
-    textC     tDomainRootAllowed4    ;
-    textC     tDomainRootAllowed3    ;
-    textC     tDomainRootAllowed2    ;
-    textC     tDomainRootAllowed1    ;
+    textC     tDomainRootAllowed8         ;
+    textC     tDomainRootAllowed7         ;
+    textC     tDomainRootAllowed6         ;
+    textC     tDomainRootAllowed5         ;
+    textC     tDomainRootAllowed4         ;
+    textC     tDomainRootAllowed3         ;
+    textC     tDomainRootAllowed2         ;
+    textC     tDomainRootAllowed1         ;
 
-    etherC&   etherMe                ;
+    textC     tNetshCommandIpv4SettingKey ;
+
+    etherC&   etherMe                     ;
 
     private :
 {
