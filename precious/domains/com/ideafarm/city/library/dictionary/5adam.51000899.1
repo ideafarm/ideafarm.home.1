@@ -749,18 +749,9 @@ TASK( tmFreshSettingsF )
     }
         etherMe.delF( tin0P , psttEat ) ;
         }
-            //thirdC::c_systemIF( tin0P , tNetshCommandIpv4 ) ;
-            //etherMe.traceF( tin0P , T("calling [tNetshCommandIpv4]:    ")+tNetshCommandIpv4 ) ;
-            //U:: DON'T EXECUTED THIS ON MY HOST ; EXECUTE IT BY WRITING IT TO A BATCH FILE ON wh1 INTO wh1'S CONTROL FOLDER
+            etherMe.boxPutF( tin0P , T("////wh1/d/ideafarm.home.101/controls/drop.executables/new.ipv4.netsh.from.dns.bat") , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
 
-            etherMe.boxPutF( tin0P , T("////wh1/d/ideafarm.home.101/controls/drop.executables.hide/new.ipv4.netsh.from.dns.bat") , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
-
-            ) ;
-
-                "echo Kilroy was in Gilroy! > \\tmp\\message.from.kilroy.ttt\r\n"
-                "@echo off\r\n"
-
-            TN( tBatFileImage , 
+            TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tNetshCommandIpv4+T("\r\n") ;
 
             tNetshCommandIpv4 = T(psttEat) ;
             etherMe.strConvertToLowerCaseF( tin0P , psttEat ) ;
