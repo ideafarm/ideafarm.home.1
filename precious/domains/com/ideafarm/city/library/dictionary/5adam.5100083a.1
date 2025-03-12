@@ -30,40 +30,40 @@ TASK( tmWorkF )
 DONE( tmLaunchBatExeFilesF )
 }
     }
+        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;    //THIS IS FOR SAFETY TO PREVENT CPU PEGGING AT MY PUSHY DESIRE
+
         }
+            FORsTRINGSiNsPANNEDcOMBINEDtAIL1
             }
-                FORsTRINGSiNsPANNEDcOMBINEDtAIL1
                 }
                     }
-                        }
-                            etThread.diskFileOrDirDeleteF( tin0P , psttm ) ;
-                            CONoUTrAW( "\r\n" ) ;
-                            etThread.osProcessF( tin0P , countTC() , countTC() , countTC() , countTC() , psttm ) ;
-                            CONoUTrAW( "\r\n" ) ;
-                            etThread.traceF( tin0P , T("launching [tLong]:    ")+T(psttm) ) ;
+                        etThread.diskFileOrDirDeleteF( tin0P , psttm ) ;
+                        CONoUTrAW( "\r\n" ) ;
+                        etThread.osProcessF( tin0P , countTC() , countTC() , countTC() , countTC() , psttm ) ;
+                        CONoUTrAW( "\r\n" ) ;
+                        etThread.traceF( tin0P , T("launching [tLong]:    ")+T(psttm) ) ;
 
-                            etThread.diskMapFileNameF( tin0P , psttm , psttc1 ) ; ___( psttm ) ;
-                            ZE( strokeS* , psttm ) ;
-                        {
-                        if( etThread.strIdF( tin0P , T(".bat") , psttc1 ) )
+                        etThread.diskMapFileNameF( tin0P , psttm , psttc1 ) ; ___( psttm ) ;
+                        ZE( strokeS* , psttm ) ;
                     {
-                    if( psttc1[ CSpREFIX - 1 + psttc1->idAdam ].idAdam != '/' )                                 // IF NOT DIRECTORY
+                    if( etThread.strIdF( tin0P , T(".bat") , psttc1 ) )
                 {
-                FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
-                etThread.boxMenuF( tin0P , soul1m , tDrop+T("*") , 0 , TUCK ) ;
-                soulC soul1m( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.launch.bat.and.exe" ) ;
-
-                if( bWoth ) bWoth = 0 ;
-                if( !bWoth ) etThread.traceF( tin0P , T("waited  for a change [tDrop]:    ")+tDrop ) ;
+                if( psttc1[ CSpREFIX - 1 + psttc1->idAdam ].idAdam != '/' )                                 // IF NOT DIRECTORY
             {
-            if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tDrop , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) )
-            if( !bWoth ) etThread.traceF( tin0P , T("waiting for a change [tDrop]:    ")+tDrop ) ;
+            FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
+            etThread.boxMenuF( tin0P , soul1m , tDrop+T("*") , 0 , TUCK ) ;
+            soulC soul1m( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.launch.bat.and.exe" ) ;
+
+            if( bWoth ) bWoth = 0 ;
+            if( !bWoth ) etThread.traceF( tin0P , T("waited  for a change [tDrop]:    ")+tDrop ) ;
         {
-        while( !ether && !POOP )
-        handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
-        boolT bWoth = 1 ;
+        if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tDrop , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) )
+        if( !bWoth ) etThread.traceF( tin0P , T("waiting for a change [tDrop]:    ")+tDrop ) ;
     {
-    IFsCRATCHoK
+    while( !ether && !POOP )
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+    handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
+    boolT bWoth = 1 ;
 
     etThread.diskMakeDirIfNeededF( tin0P , tDrop ) ;
     TN( tDrop , "///ideafarm/controls/drop.executables/" ) ;
