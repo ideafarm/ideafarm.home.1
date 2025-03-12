@@ -255,7 +255,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                                         if( !( -- info.cEmailRelayDrawings ) ) break ;
                                                                         tRelayTo += T(psttzw) ;
                                                                     {
-                                                                    if( psttzw->idAdam && !etThread.strIdF( tin0P , countTC( 1 ) , tBan , psttzw ) && !(countT)ru )
+                                                                    if( psttzw->idAdam && !etThread.strIdF( tin0P , tBan , psttzw ) && !(countT)ru )
                                                                     etThread.strConvertToLowerCaseF( tin0P , psttzw ) ;
                                                                     strokeS*& psttzw = (strokeS*&)(countT&)info.pStkEmailRelay->downF( tin0P , hWalk ) ;
                                                                 {
@@ -267,7 +267,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                             }
                                                                 }
                                                                     etThread.delF( tin0P , psttw ) ;
-                                                                    if( !etThread.strIdF( tin0P , countTC( 1 ) , tBan , psttw ) ) tRelayTo += T(psttw)+T(*info.pStkEmailRelay?"/":"") ;
+                                                                    if( !etThread.strIdF( tin0P , tBan , psttw ) ) tRelayTo += T(psttw)+T(*info.pStkEmailRelay?"/":"") ;
                                                                     etThread.strConvertToLowerCaseF( tin0P , psttw ) ;
                                                                     *info.pStkEmailRelay >> psttw ; ___( psttw ) ;
                                                                     ZE( strokeS* , psttw ) ;
@@ -942,8 +942,8 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                         //                                            {
                                                         //                                            if( idv1 && idv1 + 1 < idv2 )
                                                         //
-                                                        //                                            countT idv2 = etThread.strIdF( tin0P , countTC( 1 ) , tClose , psttc1 ) ;
-                                                        //                                            countT idv1 = etThread.strIdF( tin0P , countTC( 1 ) , tOpen  , psttc1 ) ;
+                                                        //                                            countT idv2 = etThread.strIdF( tin0P , tClose , psttc1 ) ;
+                                                        //                                            countT idv1 = etThread.strIdF( tin0P , tOpen  , psttc1 ) ;
                                                         //                                        {
                                                         //                                        if( idAccClickee )
                                                         //
@@ -963,8 +963,8 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                         //                                    ZE( strokeS* , psttw ) ;
                                                         //                                {
                                                         //                                if( idk1 && idk1 + 1 < idk2 )
-                                                        //                                countT idk2 = etThread.strIdF( tin0P , countTC( 1 ) , tColon   , psttc1 ) ;
-                                                        //                                countT idk1 = etThread.strIdF( tin0P , countTC( 1 ) , tExclaim , psttc1 ) ;
+                                                        //                                countT idk2 = etThread.strIdF( tin0P , tColon   , psttc1 ) ;
+                                                        //                                countT idk1 = etThread.strIdF( tin0P , tExclaim , psttc1 ) ;
                                                         //                            {
                                                         //                        {
                                                         //                        FORsTRINGSiN1( pstt1l )
@@ -1048,9 +1048,9 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                         //                                    etThread.delF( tin0P , psttLowerLathName ) ;
                                                         //                                    etThread.delF( tin0P , psttLowerWothName ) ;
                                                         //
-                                                        //                                    if( tLathNameContainsValue.csF( tin0P ) &&     !etThread.strIdF( tin0P , countTC( 1 ) , tLathNameContainsValue , psttLowerLathName ) ) bContinue = 1 ;
+                                                        //                                    if( tLathNameContainsValue.csF( tin0P ) &&     !etThread.strIdF( tin0P , tLathNameContainsValue , psttLowerLathName ) ) bContinue = 1 ;
                                                         //                                    if( tLathNameExactValue.csF(    tin0P ) && etThread.strCompareF( tin0P , tLathNameExactValue    , psttLowerLathName ) ) bContinue = 1 ;
-                                                        //                                    if( tWothNameContainsValue.csF( tin0P ) &&     !etThread.strIdF( tin0P , countTC( 1 ) , tWothNameContainsValue , psttLowerWothName ) ) bContinue = 1 ;
+                                                        //                                    if( tWothNameContainsValue.csF( tin0P ) &&     !etThread.strIdF( tin0P , tWothNameContainsValue , psttLowerWothName ) ) bContinue = 1 ;
                                                         //                                    if( tWothNameExactValue.csF(    tin0P ) && etThread.strCompareF( tin0P , tWothNameExactValue    , psttLowerWothName ) ) bContinue = 1 ;
                                                         //                                    ZE( boolT , bContinue ) ;
                                                         //
@@ -1139,8 +1139,8 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                         //                                        {
                                                         //                                        if( idv1 && idv1 + 1 < idv2 )
                                                         //
-                                                        //                                        countT idv2 = etThread.strIdF( tin0P , countTC( 1 ) , tClose , psttc1 ) ;
-                                                        //                                        countT idv1 = etThread.strIdF( tin0P , countTC( 1 ) , tOpen  , psttc1 ) ;
+                                                        //                                        countT idv2 = etThread.strIdF( tin0P , tClose , psttc1 ) ;
+                                                        //                                        countT idv1 = etThread.strIdF( tin0P , tOpen  , psttc1 ) ;
                                                         //                                    {
                                                         //                                    if( pto )
                                                         //
@@ -1159,8 +1159,8 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                         //                                    ZE( textC* , pto ) ;
                                                         //                                {
                                                         //                                if( idk1 && idk1 + 1 < idk2 )
-                                                        //                                countT idk2 = etThread.strIdF( tin0P , countTC( 1 ) , tColon   , psttc1 ) ;
-                                                        //                                countT idk1 = etThread.strIdF( tin0P , countTC( 1 ) , tExclaim , psttc1 ) ;
+                                                        //                                countT idk2 = etThread.strIdF( tin0P , tColon   , psttc1 ) ;
+                                                        //                                countT idk1 = etThread.strIdF( tin0P , tExclaim , psttc1 ) ;
                                                         //                            {
                                                         //                        {
                                                         //                        FORsTRINGSiN1( pstt1l )
@@ -1292,8 +1292,8 @@ DONEdRIVENsERVER( tmcSmtpF )
                                                             ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
                                                             bContentIsPlain = 1 ;
                                                             )
-                                                                ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("charset=us-ascii") , psttw )
-                                                                ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("text/plain"      ) , psttw ) &&
+                                                                ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("charset=us-ascii") , psttw )
+                                                                ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("text/plain"      ) , psttw ) &&
                                                             (
                                                             if
     
@@ -1756,7 +1756,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                         //LOGrAW( T("From value in body will not be checked because MAIL FROM command specified \"")+T(psttSource)+T("\"\r\n") ) ;
                                         bCheckFromInBody = 0 ;
                                     {
-                                    if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("@paypal.com") , psttw ) )
+                                    if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("@paypal.com") , psttw ) )
                                     ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw , psttSource ) ; ___( psttw ) ;
                                     ZE( strokeS* , psttw ) ;
                                 {
@@ -1765,13 +1765,13 @@ DONEdRIVENsERVER( tmcSmtpF )
                                 }
                                     if( POOP ) bNoSpammerSink = 1 ;
                                     ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
-                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("chibyusa") , psttw ) ) ; //THERESA
-                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("divachild") , psttw ) ) ; //THERESA
-                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("thetinydot") , psttw ) ) ; //JULIA
-                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("mail@tranxact.com") , psttw ) ) ; //DAVID
-                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("ranchlife@js-net.com") , psttw ) ) ; //STEVE
-                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("dduringer@juno.com") , psttw ) ) ; //DAN
-                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("tduringer@juno.com") , psttw ) ) ; //MOM
+                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("chibyusa") , psttw ) ) ; //THERESA
+                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("divachild") , psttw ) ) ; //THERESA
+                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("thetinydot") , psttw ) ) ; //JULIA
+                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("mail@tranxact.com") , psttw ) ) ; //DAVID
+                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("ranchlife@js-net.com") , psttw ) ) ; //STEVE
+                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("dduringer@juno.com") , psttw ) ) ; //DAN
+                                    //__( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("tduringer@juno.com") , psttw ) ) ; //MOM
                                     ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw , psttSource ) ; ___( psttw ) ;
                                     ZE( strokeS* , psttw ) ;
                                 {
@@ -1792,7 +1792,7 @@ DONEdRIVENsERVER( tmcSmtpF )
                                         TN( tError , "relay: " ) ; tError += T(nicNamePeer) ;
                                         flError |= flERROR_RELAY ;
                                     {
-                                    if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T(":") , psttSource ) )                                                             // REJECT <@WINNIE:FOO@bar.com>
+                                    if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T(":") , psttSource ) )                                                             // REJECT <@WINNIE:FOO@bar.com>
                                 {
                                 if( !POOP )
                             {
@@ -1991,7 +1991,7 @@ voidT logSmtpF( tin0S& tin0P , etherC& etThread , textC& tP , const countT idAcc
             ZE( countT , idl ) ;
             countT idf = tSubjectColon.csF( tin0P ) + 1 ;
         {
-        else if( 1 == etherP.strIdF( tin0P , countTC( 1 ) , tSubjectColon , psttll ) )
+        else if( 1 == etherP.strIdF( tin0P , tSubjectColon , psttll ) )
         }
             etherP.delF( tin0P , psttw ) ;
             etherP.strTrimF( tin0P , psttFromP , psttw , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttFromP ) ;                               // "FOO@bar.com"
@@ -2005,13 +2005,13 @@ voidT logSmtpF( tin0S& tin0P , etherC& etThread , textC& tP , const countT idAcc
                 idOpen ++ ;
             {
             if( idOpen )
-            countT idOpen = etherP.strIdF( tin0P , countTC( 1 ) , T("<") , psttw ) ;
+            countT idOpen = etherP.strIdF( tin0P , T("<") , psttw ) ;
             etherP.strSubstringF( tin0P , psttw , idf , idl , psttc2 ) ; ___( psttw ) ;              // "    joe blow <  FOO@bar.com  >    "
             ZE( strokeS* , psttw ) ;
             ZE( countT , idl ) ;
             countT idf = tFromColon.csF( tin0P ) + 1 ;
         {
-        if( 1 == etherP.strIdF( tin0P , countTC( 1 ) , tFromColon , psttll ) )
+        if( 1 == etherP.strIdF( tin0P , tFromColon , psttll ) )
         etherP.strConvertToLowerCaseF( tin0P , psttll ) ;
         strokeS* psttll = psttOldC( tin0P , etherP , psttc2 ) ; ___( psttll ) ;
     {
@@ -2120,7 +2120,7 @@ voidT parseHeaderF( tin0S& tin0P , etherC& etherP , flagsT& flErrorP , switchSta
     }
         }
             etThread.delF( tin0P , psttEmailPenpalContainsAnd ) ;
-            bOkPenpalContainsAnd = !!((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , psttEmailPenpalContainsAnd , psttSourceP ) ;
+            bOkPenpalContainsAnd = !!((tin1S&)tin0P).pEtScratch->strIdF( tin0P , idf , sttq , psttEmailPenpalContainsAnd , psttSourceP ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
 
@@ -2144,7 +2144,7 @@ voidT parseHeaderF( tin0S& tin0P , etherC& etherP , flagsT& flErrorP , switchSta
                 etThread.delF( tin0P , psttEmailPenpalContainsOr ) ;
                 bOkPenpalContainsOr = 1 ;
             {
-            if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , psttEmailPenpalContainsOr , psttSourceP ) )
+            if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , idf , sttq , psttEmailPenpalContainsOr , psttSourceP ) )
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
 
@@ -2262,7 +2262,7 @@ countT queryIdAccountFromEmailF( tin0S& tin0P , const strokeS* const psttP )
                     }
                         if( !bOkContainsAnd ) break ;
                         etThread.delF( tin0P , psttw ) ;
-                        bOkContainsAnd &= !!etThread.strIdF( tin0P , countTC( 1 ) , psttw , psttToTest ) ;
+                        bOkContainsAnd &= !!etThread.strIdF( tin0P , psttw , psttToTest ) ;
                         etThread.strConvertToLowerCaseF( tin0P , psttw ) ;
                         *info.pStkEmailPenpalContainsAnd >> psttw ; ___( psttw ) ;
                         ZE( strokeS* , psttw ) ;
@@ -2276,7 +2276,7 @@ countT queryIdAccountFromEmailF( tin0S& tin0P , const strokeS* const psttP )
                 }
                     if( bOkContainsOr ) break ;
                     etThread.delF( tin0P , psttw ) ;
-                    bOkContainsOr = !!etThread.strIdF( tin0P , countTC( 1 ) , psttw , psttToTest ) ;
+                    bOkContainsOr = !!etThread.strIdF( tin0P , psttw , psttToTest ) ;
                     etThread.strConvertToLowerCaseF( tin0P , psttw ) ;
                     *info.pStkEmailPenpalContainsOr >> psttw ; ___( psttw ) ;
                     ZE( strokeS* , psttw ) ;

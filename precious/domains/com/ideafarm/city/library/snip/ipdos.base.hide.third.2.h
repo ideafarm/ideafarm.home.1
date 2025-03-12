@@ -33967,7 +33967,7 @@ examples
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34053.etherC.strIdF!||
  countT strIdF( tin0S& tin0P , countT& idFirstP , strokeS& sttQuoteP , stackC& st_psttSmallP , countT& idSlotP , const strokeS* psttBigP , const flagsT flagsP = flSTRiD_null , sCountT idP = 1 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34135.etherC.strIdF!||
- countT strIdF( tin0S& tin0P , countT& idFirstP , const strokeS* const psttSmallP , const strokeS* psttBigP , sCountT idP = 1 ) ;
+ countT strIdF( tin0S& tin0P , count8S* pc8nuP , const strokeS* const psttSmallP , const strokeS* psttBigP , sCountT idP = 1 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34140.etherC.strIdF!||
  countT strIdF( tin0S& tin0P , countT& idFirstP , const countT cSmallP , const countT* pcBigP , const countT ccBigP = 0 , sCountT idP = 1 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3418f.etherC.strIdF!||

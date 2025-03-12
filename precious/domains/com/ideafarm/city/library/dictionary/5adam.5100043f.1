@@ -229,7 +229,7 @@ boolT woRequestF( tin0S& tin0P , etherC& etThread , socketC& sClientP , stackC& 
                 ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttValue ) ;
                 ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttKey ) ;
                 }
-                    bEncodedBodyP = 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tImage , psttValue ) ;
+                    bEncodedBodyP = 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tImage , psttValue ) ;
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idf = 1 ;
                     ((tin1S&)tin0P).zEtScratch->strConvertToLowerCaseF( tin0P , psttValue ) ; ___( psttValue ) ;
@@ -269,7 +269,7 @@ boolT woRequestF( tin0S& tin0P , etherC& etThread , socketC& sClientP , stackC& 
                         idf2 = 1 ;
                     {
                     else
-                    if( 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf2 , sttq2 , tHttpColonSS , psttUrl ) ) { ((tin1S&)tin0P).zEtScratch->strSubstringF( tin0P , psttHostP , idf2 , sttq2 , tSlash , psttUrl ) ; ___( psttHostP ) ; }
+                    if( 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf2 , sttq2 , tHttpColonSS , psttUrl ) ) { ((tin1S&)tin0P).zEtScratch->strSubstringF( tin0P , psttHostP , idf2 , sttq2 , tSlash , psttUrl ) ; ___( psttHostP ) ; }
                     strokeS sttq2( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idf2 = 1 ;
                 {
@@ -284,7 +284,7 @@ boolT woRequestF( tin0S& tin0P , etherC& etThread , socketC& sClientP , stackC& 
                     psttUrl = 0 ;
                     strokeS* psttd = psttUrl ;
                 {
-                if( !((tin1S&)tin0P).zEtScratch->strCompareF( tin0P , psttAction , tConnect ) && ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , tColon , psttUrl ) ) //U: DOES NOT CORRECTLY HANDLE CASE WHERE URL CONTAINS A COLON (E.G. "http://foo.com:123")
+                if( !((tin1S&)tin0P).zEtScratch->strCompareF( tin0P , psttAction , tConnect ) && ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , tColon , psttUrl ) ) //U: DOES NOT CORRECTLY HANDLE CASE WHERE URL CONTAINS A COLON (E.G. "http://foo.com:123")
                 ((tin1S&)tin0P).zEtScratch->strSubstringF( tin0P , psttUrl , idf , sttq , tBlank , psttl , 1 ) ; ___( psttUrl ) ;
 
                 ((tin1S&)tin0P).zEtScratch->strConvertToLowerCaseF( tin0P , psttAction ) ; ___( psttAction ) ;

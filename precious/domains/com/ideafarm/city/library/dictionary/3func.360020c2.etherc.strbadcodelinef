@@ -57,7 +57,7 @@
                 {
                 if( idf2 && idl2 )
                 idl2 = ((tin1S&)tin0P).pEtScratch->strIdF( tin0P     , idf , sttq , S1C(')')   , psttw ) ;
-                idf2 = ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idf , sttq , T("(col ") , psttw ) ;
+                idf2 = ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , T("(col ") , psttw ) ;
                 //sttq = ze ;
                 idf = 1 ;
                 ((tin1S&)tin0P).pEtScratch->strSubstringF( tin0P , psttw , idf , sttq , T("\r\n") , psttErr , 1 ) ; ___( psttw ) ;
@@ -70,8 +70,8 @@
                 idf2 ++ ;
             {
             if( idf2 && idl2 )
-            countT idl2 = ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , S1C(')') , psttErr ) ;
-            countT idf2 = ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , S1C('(') , psttErr ) ;
+            countT idl2 = ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , idf , sttq , S1C(')') , psttErr ) ;
+            countT idf2 = ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , idf , sttq , S1C('(') , psttErr ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
         {

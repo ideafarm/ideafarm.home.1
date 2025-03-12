@@ -270,7 +270,7 @@ boolT walkEmailCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const osTe
 
     }
         etherP.strReplaceF( tin0P , psttP , 0 , T("?=")         , T("") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttP ) ;
-        __( etherP.strIdF( tin0P , countTC( 1 ) , T("=?") , psttP ) ) ; //ENSURE THAT THIS GARBAGE IS REMOVED
+        __( etherP.strIdF( tin0P , T("=?") , psttP ) ) ; //ENSURE THAT THIS GARBAGE IS REMOVED
         etherP.strReplaceF( tin0P , psttP , 0 , T("=?UTF-8?Q?") , T("") , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( psttP ) ;
     {
     if( psttP && psttP->idAdam )
@@ -293,7 +293,7 @@ boolT walkEmailCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const osTe
             if( idf )
 
             etherP.delF( tin0P , psttp ) ;
-            if( psttp && psttp->idAdam && !etherP.strIdF( tin0P , countTC( 1 ) , T("=?UTF-8?B?") , psttp ) ) etherP.strFuseF( tin0P , psttMaybe , psttp ) ; // SUPPRESS MONSTROSITIES LIKE THIS: "=?UTF-8?B?yo7HnXXJuW5xIMm5x53Gg2/JuQ==?= <roger.burney@gmail.com>"
+            if( psttp && psttp->idAdam && !etherP.strIdF( tin0P , T("=?UTF-8?B?") , psttp ) ) etherP.strFuseF( tin0P , psttMaybe , psttp ) ; // SUPPRESS MONSTROSITIES LIKE THIS: "=?UTF-8?B?yo7HnXXJuW5xIMm5x53Gg2/JuQ==?= <roger.burney@gmail.com>"
 
             etherP.strSubstringF( tin0P , psttp , idf , sttq , stt1 , psttP ) ; ___( psttp ) ;
             ZE( strokeS* , psttp ) ;

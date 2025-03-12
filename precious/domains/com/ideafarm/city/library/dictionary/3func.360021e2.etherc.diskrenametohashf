@@ -85,7 +85,7 @@
                                             ZE( strokeS* , psttSingleTime ) ;
                                         {
                                         if( idHit2 )            // I HAVE A SINGLE TIME AFTER HEY                                                  
-                                        idHit2 = strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDot , tShort ) ;
+                                        idHit2 = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDot , tShort ) ;
                                         idf = idfSave ;
                                     {
                                     else
@@ -98,7 +98,7 @@
                                         ZE( strokeS* , psttDoubleTime ) ;
                                     {
                                     if( idHit2 )            // I HAVE A DOUBLE TIME AFTER HEY                                                  
-                                    countT idHit2 = strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDotDateAtTimeDot , tShort ) ;
+                                    countT idHit2 = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tSssDotDateAtTimeDotDateAtTimeDot , tShort ) ;
                                     countT idfSave = -- idf ;                             
                                 {
                                 else                        // I HAVE A DOT HEY DOT
@@ -106,7 +106,7 @@
                                     tTimePair = tDot+tTimeFromPrefix+tDot+tDateAtTimeFromFileMeta+tDot ;
                                 {
                                 if( !idHit )
-                                idHit = strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idf , sttq , tDotHeyDot , tShort ) ;
+                                idHit = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tDotHeyDot , tShort ) ;
 
                                 tSequenceNumber = tSequenceNumberFromPrefix ;
                                 }
@@ -133,7 +133,7 @@
                             {
                             if( !idHit )                    // NOT A VALID PREFIX
 
-                            countT idHit = strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idf , sttq , tPrefix6 , tShort ) ;
+                            countT idHit = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , tPrefix6 , tShort ) ;
 
                             TN( tPrefix6   , "!ideafarm.6." ) ;
                             TN( tDotHeyDot , ".!." ) ;
@@ -146,7 +146,7 @@
 
                         cRenamed ++ ;
                     {
-                    if( 1 != strIdF( tin0P , countTC( 1 ) , tNewPrefix , tShort ) )
+                    if( 1 != strIdF( tin0P , tNewPrefix , tShort ) )
                 {
                 if( tShort.csF( tin0P ) )
 
@@ -198,7 +198,7 @@
             {
             else
             }
-                if( F(flagsP) & flETHERrENAMEtOhASH_RECURSE && !strIdF( tin0P , countTC( 1 ) , tSDS , pInfo->psttIfoName ) && !strIdF( tin0P , countTC( 1 ) , tSDDS , pInfo->psttIfoName ) ) cRenamed += diskRenameToHashF( tin0P , pInfo->psttIfoName , flagsP ) ;
+                if( F(flagsP) & flETHERrENAMEtOhASH_RECURSE && !strIdF( tin0P , tSDS , pInfo->psttIfoName ) && !strIdF( tin0P , tSDDS , pInfo->psttIfoName ) ) cRenamed += diskRenameToHashF( tin0P , pInfo->psttIfoName , flagsP ) ;
             {
             if( pInfo->psttIfoName[ CSpREFIX - 1 + pInfo->psttIfoName->idAdam ].idAdam == '/' )
         {

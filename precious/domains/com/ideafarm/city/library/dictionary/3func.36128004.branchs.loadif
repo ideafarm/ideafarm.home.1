@@ -218,7 +218,7 @@
                                                                  psttTextGot = 0 ;
                                                 strokeS* psttd = psttTextGot ;
                                             {
-                                            if( etherP.strIdF( tin0P , countTC( 1 ) , idf , sttq , sttMark01 , psttTextGot , idl , 1 ) )
+                                            if( etherP.strIdF( tin0P , idf , sttq , sttMark01 , psttTextGot , idl , 1 ) )
                                             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                             ZE( countT , idl ) ;
                                             countT idf = 1 ;
@@ -310,7 +310,7 @@
                                                         idHit ++ ;
                                                     {
                                                     if( idHit )
-                                                    countT idHit = etherP.strIdF( tin0P , countTC( 1 ) , strokeS( '/' ) , psttFolderFile , - 1 ) ;
+                                                    countT idHit = etherP.strIdF( tin0P , strokeS( '/' ) , psttFolderFile , - 1 ) ;
 
                                                     //etherP.traceF( tin0P , T("outer [folderFile]:   \"")+T(psttFolderFile)+T("\"") ) ;
                                                     soulLinkOuter >> psttFolderFile ; ___( psttFolderFile ) ;
@@ -751,7 +751,7 @@
                             csttTrimmedP += pstttBranch->idAdam ;
 
                             }
-                                if( cFoundMark ) idMark = etherP.strIdF( tin0P , countTC( 1 ) , sttMark01 , pstttBranch , 1 ) ;
+                                if( cFoundMark ) idMark = etherP.strIdF( tin0P , sttMark01 , pstttBranch , 1 ) ;
 
                                 if( cFoundLit )     etherP.strReplaceF( tin0P , pstttBranch , 0 , tmff , tBackSlash   , 0 , flSTRrEPLACE_IGNOREqUOTES ) ; ___( pstttBranch ) ; // SHOW ALL LITERAL BACKSLASH
 
@@ -838,7 +838,7 @@
                                 countT idf = 2 ;
                             {
                             if( idColon2 > 2 && idColon2 < pstttBranch->idAdam )                                                                        // IF THIS LOOKS LIKE A LABELED BRANCH
-                            const countT idColon2 = etherP.strIdF( tin0P , countTC( 1 ) , sttColon , pstttBranch , 2 ) ;
+                            const countT idColon2 = etherP.strIdF( tin0P , sttColon , pstttBranch , 2 ) ;
 
                             }
                                 break ;

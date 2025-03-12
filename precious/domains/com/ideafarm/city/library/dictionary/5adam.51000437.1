@@ -1224,7 +1224,7 @@ DEL( pso ) ; //U::
                         ZE( countT   , costi ) ;
                         ZE( osTextT* , posti ) ;
 
-                        if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , tEmailWo , psttc1 ) ) continue ;
+                        if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , tEmailWo , psttc1 ) ) continue ;
                     {
                     FORsTRINGSiN1( pstt1m )
                     TN( tEmailWo , "/" ifcEMAIL_OLDfROM "" ) ;
@@ -2139,7 +2139,7 @@ voidT blabF( tin0S& tin0P , etherC& etThread , strokeS*& psttP , const byteT* co
                         countT idf2 = 2 ;
                     {
                     else
-                    if( 1 != ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , sttDollar , psttw ) ) pcIdNameP[ offi ++ ] = ((tin1S&)tin0P).zEtScratch->strDigitsToSCountF( tin0P , psttw ) ;
+                    if( 1 != ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , sttDollar , psttw ) ) pcIdNameP[ offi ++ ] = ((tin1S&)tin0P).zEtScratch->strDigitsToSCountF( tin0P , psttw ) ;
                 {
                 if( offi < CCiDnAMEmAX - 1 )
                 ((tin1S&)tin0P).zEtScratch->strSubstringF( tin0P , psttw , idf , sttq , sttDot , psttNameTrimmed ) ; ___( psttw ) ;            // "$foo"
@@ -2157,7 +2157,7 @@ voidT blabF( tin0S& tin0P , etherC& etThread , strokeS*& psttP , const byteT* co
             idf = 2 ;
 
             __( psttName->idAdam - 6 - idDot0 ) ;
-            countT idDot0 = ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , countTC( 1 ) , sttq , tDot0 , psttName , 0 , - 1 ) ;
+            countT idDot0 = ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , sttq , tDot0 , psttName , 0 , - 1 ) ;
             TN( tDot0 , ".0.html" ) ; // ".html" WAS ADDED LATE SO THAT Internet Explorer CAN VIEW THE FILES OFFLINE (IT IS TOO STUPID TO PROCESS THE HTTP HEADER LINES)
             idf = 1 ;
         {
@@ -2186,7 +2186,7 @@ voidT blabF( tin0S& tin0P , etherC& etThread , strokeS*& psttP , const byteT* co
         if( idRequestType != ifcIDrEQtYPE_FISH ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
-        __( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , sttSlash , psttName ) - 1 ) ;                                                  // "/1.2.$foo.4.0.html"
+        __( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , sttSlash , psttName ) - 1 ) ;                                                  // "/1.2.$foo.4.0.html"
         __( !psttName->idAdam ) ;
     {
     if( !*((tin1S&)tin0P).zEtScratch && !etThread )
@@ -2283,7 +2283,7 @@ voidT blabF( tin0S& tin0P , etherC& etThread , strokeS*& psttP , const byteT* co
         strokeS* psttw = psttName ;
         //etThread.strokeF( tin0P , T("HTTP1.0KV\r\n"USCORE79 "\r\n")+T(psttName)+T("\r\n" USCORE79 "\r\n") ) ;
     {
-    if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("?") , psttName ) ) // HTTP/1.0 KEYvALUE PAIRS
+    if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("?") , psttName ) ) // HTTP/1.0 KEYvALUE PAIRS
     ZE( strokeS* , psttKV ) ;
     //etText.ifcSayF( tin0P , T("readRequestF/etThread:")+TF1(etThread)+T("/etScratch:")+TF1(etScratch)+T("/4") , flSAY_APPEND | flSAY_LOG ) ;
 
@@ -2311,7 +2311,7 @@ voidT blabF( tin0S& tin0P , etherC& etThread , strokeS*& psttP , const byteT* co
             {
             else if( !((tin1S&)tin0P).zEtScratch->strCompareF( tin0P , tNumSoftKeys , psttKey ) )
             }
-                if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , tClose , psttValue ) ) bMoreP = 0 ;
+                if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , tClose , psttValue ) ) bMoreP = 0 ;
             {
             else if( !((tin1S&)tin0P).zEtScratch->strCompareF( tin0P , tConnection    , psttKey ) )
                  if( !((tin1S&)tin0P).zEtScratch->strCompareF( tin0P , tContentLength , psttKey ) ) costBody = ((tin1S&)tin0P).zEtScratch->strDigitsToSCountF( tin0P , psttValue , 0xa , 1 ) ;
@@ -2353,7 +2353,7 @@ voidT blabF( tin0S& tin0P , etherC& etThread , strokeS*& psttP , const byteT* co
                 else
                 if( !pSessionP ) ; //U::
             {
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tNewBlabRoom , psttName ) )
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tNewBlabRoom , psttName ) )
             }
                 idRequestType = ifcIDrEQtYPE_FILE ;
                 ((tin1S&)tin0P).zEtScratch->strWordF( tin0P , psttFileP , psttName , sttq , S1C('/') , - 1 ) ; ___( psttFileP ) ;
@@ -2362,7 +2362,7 @@ voidT blabF( tin0S& tin0P , etherC& etThread , strokeS*& psttP , const byteT* co
 
                 idRequestType = ifcIDrEQtYPE_BLAB ;
             {
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tFileSlash , psttName ) )
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tFileSlash , psttName ) )
             }
                 if( !bIsLoadedF( tin0P , *(count8S*)cParmP , idRoomBlabP ) ) loadBlabArchiveF( tin0P , etThread , idRoomBlabP , cParmP ) ;
 
@@ -2380,27 +2380,27 @@ voidT blabF( tin0S& tin0P , etherC& etThread , strokeS*& psttP , const byteT* co
 
                 idRequestType = ifcIDrEQtYPE_BLAB ;
             {
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tBlabDot        , psttName ) )
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tLogout         , psttName ) ) idRequestType = ifcIDrEQtYPE_LOGOUT ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tLogin          , psttName ) ) idRequestType = ifcIDrEQtYPE_LOGIN ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tAfterPay       , psttName ) ) idRequestType = ifcIDrEQtYPE_AFTERpAY ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tMe             , psttName ) ) idRequestType = ifcIDrEQtYPE_ME ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tRoster         , psttName ) ) idRequestType = ifcIDrEQtYPE_ROSTER ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tStatistics     , psttName ) ) idRequestType = ifcIDrEQtYPE_STATISTICS ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tBeforeBlabbing , psttName ) ) idRequestType = ifcIDrEQtYPE_BEFOREbLABBING ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tFingerLift     , psttName ) ) idRequestType = ifcIDrEQtYPE_FINGERlIFT ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tSticky         , psttName ) ) idRequestType = ifcIDrEQtYPE_STICKY ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tDisclosure     , psttName ) ) idRequestType = ifcIDrEQtYPE_DISCLOSURE ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tNewEvent       , psttName ) ) idRequestType = ifcIDrEQtYPE_NEWeVENT ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tCalendar       , psttName ) ) idRequestType = ifcIDrEQtYPE_CALENDAR ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tWarnings       , psttName ) ) idRequestType = ifcIDrEQtYPE_WARNINGS ;
-            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , tCopyrights     , psttName ) ) idRequestType = ifcIDrEQtYPE_COPYRIGHTS ;
-                 if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) ,      ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , T("!fire")      , psttName ) ) idRequestType = ifcIDrEQtYPE_OSfIRE ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tBlabDot        , psttName ) )
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tLogout         , psttName ) ) idRequestType = ifcIDrEQtYPE_LOGOUT ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tLogin          , psttName ) ) idRequestType = ifcIDrEQtYPE_LOGIN ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tAfterPay       , psttName ) ) idRequestType = ifcIDrEQtYPE_AFTERpAY ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tMe             , psttName ) ) idRequestType = ifcIDrEQtYPE_ME ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tRoster         , psttName ) ) idRequestType = ifcIDrEQtYPE_ROSTER ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tStatistics     , psttName ) ) idRequestType = ifcIDrEQtYPE_STATISTICS ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tBeforeBlabbing , psttName ) ) idRequestType = ifcIDrEQtYPE_BEFOREbLABBING ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tFingerLift     , psttName ) ) idRequestType = ifcIDrEQtYPE_FINGERlIFT ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tSticky         , psttName ) ) idRequestType = ifcIDrEQtYPE_STICKY ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tDisclosure     , psttName ) ) idRequestType = ifcIDrEQtYPE_DISCLOSURE ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tNewEvent       , psttName ) ) idRequestType = ifcIDrEQtYPE_NEWeVENT ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tCalendar       , psttName ) ) idRequestType = ifcIDrEQtYPE_CALENDAR ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tWarnings       , psttName ) ) idRequestType = ifcIDrEQtYPE_WARNINGS ;
+            else if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) , 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , tCopyrights     , psttName ) ) idRequestType = ifcIDrEQtYPE_COPYRIGHTS ;
+                 if( idf = 1 , sttq = S2(0,sc_IGNOREqUOTES) ,      ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , idf , sttq , T("!fire")      , psttName ) ) idRequestType = ifcIDrEQtYPE_OSfIRE ;
             countT idf = 1 ;
             ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttw ) ;
-            bHttpWoZeP = !((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , tHttp11 , psttw ) ;
+            bHttpWoZeP = !((tin1S&)tin0P).zEtScratch->strIdF( tin0P , tHttp11 , psttw ) ;
             bMoreP = 0 ; //U::TO WORKAROUND SUSPECTED IE BUG SEEN AT BELLEVUE LIBRARY COMPUTERS (STUCK IN readPrivateF WAITING FOR IE TO SEND ANOTHER REQUEST LINE)
-            bMoreP = !!((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , tHttp11 , psttw ) ;
+            bMoreP = !!((tin1S&)tin0P).zEtScratch->strIdF( tin0P , tHttp11 , psttw ) ;
             ((tin1S&)tin0P).zEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
             ((tin1S&)tin0P).zEtScratch->strWordF( tin0P , psttw , psttl , sttq , sttb , 3 ) ; ___( psttw ) ;
             ZE( strokeS* , psttw ) ;
@@ -2972,7 +2972,7 @@ voidT eventS::grabF( tin0S& tin0P )
     ZE( strokeS* , psttw ) ;
     ZE( countT , idl ) ;
     countT idf = 2 ;
-    __( 1 != ether.strIdF( tin0P , countTC( 1 ) , T(".") , psttNote ) ) ;
+    __( 1 != ether.strIdF( tin0P , T(".") , psttNote ) ) ;
 
     soulP >> psttNote ;
     soulP >> psttWest ;

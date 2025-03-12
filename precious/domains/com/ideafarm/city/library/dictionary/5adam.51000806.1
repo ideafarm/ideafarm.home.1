@@ -761,7 +761,7 @@ DONE( tmReportF )
 
                             //etThread.traceF( tin0P , tShort ) ;
                         {
-                        if( !ether && tShort.csF( tin0P ) && !etThread.strIdF( tin0P , countTC( 1 ) , tDotHeyWritingDot , tShort ) )        // IF NOT A DIRECTORY
+                        if( !ether && tShort.csF( tin0P ) && !etThread.strIdF( tin0P , tDotHeyWritingDot , tShort ) )        // IF NOT A DIRECTORY
 
                         }
                             etThread.delF( tin0P , psttShort ) ;
@@ -1354,7 +1354,7 @@ DONE( tmExecutiveHealYearF )
                                     chunkDayIfF( tin0P , etThread , bAbortP , cNewChunksP , cPathsToYear , ppsttPathToYear , tDayPrefix ) ;
                                     etThread.traceF( tin0P , T("calling chunkDayIfF [prefix]:    ")+tDayPrefix ) ;
                                 {
-                                if( tDayPrefix.csF( tin0P ) && !etThread.strIdF( tin0P , countTC( 1 ) , tIgnore , tDayPrefix ) )
+                                if( tDayPrefix.csF( tin0P ) && !etThread.strIdF( tin0P , tIgnore , tDayPrefix ) )
                             {
                             if( etThread.strCompareF( tin0P , tDayPrefix , tDayPrefixNew ) )
 
@@ -1463,7 +1463,7 @@ DONE( tmExecutiveHealYearF )
                                     etThread.traceF( tin0P , T(bIgnore?"ignoring [c4cbUsed,tShort]:    ":"jotting [c4cbUsed,tShort]:    ")+TT(pczCbUsed[0],pczCbUsed[1])+tb4+tShort ) ;
                                     countT* pczCbUsed = (countT*)&c4CbUsed ;
 
-                                    const boolT bIgnore = 1 != etThread.strIdF( tin0P , countTC( 1 ) , T("!ideafarm.") , tShort ) ;        //20250201@1351: ADDED SO IGNORE FILES LIKE Thumbs.db
+                                    const boolT bIgnore = 1 != etThread.strIdF( tin0P , T("!ideafarm.") , tShort ) ;        //20250201@1351: ADDED SO IGNORE FILES LIKE Thumbs.db
                                     TN( tShort , ppsttShort[ offhMin ] ) ;
                                     count04T c4CbUsed = pc4CbUsed[ offhMin ] ;
                                 {
@@ -1515,7 +1515,7 @@ DONE( tmExecutiveHealYearF )
                                                     bRetry = 1 ;
                                                     etThread.delF( tin0P , ppsttShort[ offh ] ) ;
                                                 {
-                                                else if( etThread.strIdF( tin0P , countTC( 1 ) , tShortIgnore , ppsttShort[ offh ] , 1 ) )
+                                                else if( etThread.strIdF( tin0P , tShortIgnore , ppsttShort[ offh ] , 1 ) )
                                             #if defined( NEVERdEFINED )
                                             if( !ppsttShort[ offh ] ) bRetry = 1 ;
 
@@ -1766,7 +1766,7 @@ DONE( tmExecutiveHealYearF )
                             ZE( strokeS* , pstt1w ) ;
                             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                         {
-                        if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , tPathDevices , ppsttPathToYear[ offh ] ) )
+                        if( 1 == etThread.strIdF( tin0P , tPathDevices , ppsttPathToYear[ offh ] ) )
                         TN( tPseudoVolume , "" ) ;
                     {
                     for( countT offh = 0 ; !bAbortP && offh < cPathsToYear ; offh ++ )
@@ -2472,7 +2472,7 @@ voidT chunkDayIfF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , countT& cNew
         }
             if( idHit && idHit == tShortFset.csF( tin0P ) + 1 - tTest.csF( tin0P ) ) bDoIt = 1 ;
 
-            countT idHit = etherP.strIdF( tin0P , countTC( 1 ) , tTest , tShortFset ) ;
+            countT idHit = etherP.strIdF( tin0P , tTest , tShortFset ) ;
             TN( tTest , ".fset.zip" ) ;
 
             //etherP.traceF( tin0P , T("[tArchive,tYear]:    ")+tArchive+T("    ")+tYear ) ;
@@ -3242,7 +3242,7 @@ countT loadArchivePathsF( tin0S& tin0P , etherC& etherP , boolT& bAbortP , switc
                                 {
                                 timeS timeWritten = timeS() ;
                             {
-                            if( !etherP.strIdF( tin0P , countTC( 1 ) , tDotHeyDot , pInfoFile->psttIfoName , 1 ) )      // IF NOT A CONTROL FILE ; (SUCH FILES ARE USED E.G. TO CONTROL REPORTING OF THE ARCHIVE, CAN BE ADDED TO THE ARCHIVE AT ANY TIME, AND ARE UNRELATED TO THE CONTENT OF THE ARCHIVE, SO SHOULD NOT BE ALLOWED TO AFFECT THE TIMESTAMP OF A DAY CHUNK)
+                            if( !etherP.strIdF( tin0P , tDotHeyDot , pInfoFile->psttIfoName , 1 ) )      // IF NOT A CONTROL FILE ; (SUCH FILES ARE USED E.G. TO CONTROL REPORTING OF THE ARCHIVE, CAN BE ADDED TO THE ARCHIVE AT ANY TIME, AND ARE UNRELATED TO THE CONTENT OF THE ARCHIVE, SO SHOULD NOT BE ALLOWED TO AFFECT THE TIMESTAMP OF A DAY CHUNK)
 
                             idAtFile ++ ;
                         {
@@ -5033,9 +5033,9 @@ countT _export subtractHealFileJobF( tin0S& tin0P , countT& pEther , countT& c1P
     {
 
     //)
-    //    && !pP.ether.strIdF( tin0P , countTC( 1 ) , T("!ideafarm.a."       ) , tShortP , 1 )
-    //    && !pP.ether.strIdF( tin0P , countTC( 1 ) , T(".meta.datafiletimes") , tShortP , 1 )
-    //       !pP.ether.strIdF( tin0P , countTC( 1 ) , T(".fset.zip"          ) , tShortP , 1 )
+    //    && !pP.ether.strIdF( tin0P , T("!ideafarm.a."       ) , tShortP , 1 )
+    //    && !pP.ether.strIdF( tin0P , T(".meta.datafiletimes") , tShortP , 1 )
+    //       !pP.ether.strIdF( tin0P , T(".fset.zip"          ) , tShortP , 1 )
     //(
     //if
     /*U::COMMENT OUT IN PRODUCTION:*/

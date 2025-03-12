@@ -9,13 +9,13 @@
 
 }
     ether.delF( tin0P , psttReply ) ;
-    __( ether.strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idf , sttq , T("+OK") , psttReply ) != 1 ) ;
+    __( ether.strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , T("+OK") , psttReply ) != 1 ) ;
     //sttq = ze ;
     idf = 1 ;
     }
         if( !( F(ether.flagsMode) & flTHIRDmODE_IMPOTENCEeXPECTED ) ) ether.traceF( tin0P , T("\xDB 16 \xDB\xDB\xDB\xDB")+T(psttReply)+T("\xDB\xDB\xDB\xDB\r\n") ) ;
     {
-    if( ( idf = 1 /*, sttq = ze*/ , 1 != ether.strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idf , sttq , T("+OK") , psttReply ) ) )
+    if( ( idf = 1 /*, sttq = ze*/ , 1 != ether.strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , T("+OK") , psttReply ) ) )
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     ZE( countT , idf ) ;
     pSControl->readWoLineF( tin0P , psttReply , 0x100 ) ; ___( psttReply ) ;

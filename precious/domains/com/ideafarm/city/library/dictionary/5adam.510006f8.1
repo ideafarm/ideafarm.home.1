@@ -125,7 +125,7 @@ TODO
             }
                 }
                     etherP.delF( tin0P , psttValue ) ;
-                    if( etherP.strIdF( tin0P , countTC( 1 ) , T("quoted-printable") , psttValue ) ) bQuotedPrintable = 1 ;
+                    if( etherP.strIdF( tin0P , T("quoted-printable") , psttValue ) ) bQuotedPrintable = 1 ;
     
                     //etherP.traceF( tin0P , psttValue ) ;
     
@@ -141,12 +141,12 @@ TODO
     
             }
                 if( idKey1Woth == 1 ) bAtWoth = idKey1 = 1 ;
-                countT idKey1Woth = etherP.strIdF( tin0P , countTC( 1 ) , tKey1Woth , psttHeadLower ) ;
+                countT idKey1Woth = etherP.strIdF( tin0P , tKey1Woth , psttHeadLower ) ;
             {
             if( !idKey1 )
             ZE( boolT , bAtWoth ) ;
     
-            countT idKey1 = etherP.strIdF( tin0P , countTC( 1 ) , tKey1 , psttHeadLower ) ;
+            countT idKey1 = etherP.strIdF( tin0P , tKey1 , psttHeadLower ) ;
             TN( tKey1     , "\r\ncontent-transfer-encoding:" ) ;
             TN( tKey1Woth ,     "content-transfer-encoding:" ) ;
         {                                                                                                           // Content-Transfer-Encoding: quoted-printable
@@ -170,21 +170,21 @@ TODO
                             countT idValue2 = idKey2 + tKey2.csF( tin0P ) ; // BEGINNING OF FIELD VALUE WITHIN VALUE
                         {
                         if( idKey2 )
-                        countT idKey2 = etherP.strIdF( tin0P , countTC( 1 ) , tKey2 , psttValue ) ;
+                        countT idKey2 = etherP.strIdF( tin0P , tKey2 , psttValue ) ;
                         TN( tKey2 , "boundary=" ) ;
                     {
-                    if( etherP.strIdF( tin0P , countTC( 1 ) , T("multipart") , psttValue ) )
+                    if( etherP.strIdF( tin0P , T("multipart") , psttValue ) )
     
-                    else if( etherP.strIdF( tin0P , countTC( 1 ) , T("multipart/alternative"   ) , psttValue ) ) { if( offNestP      )              bQuashHeader = 1 ; }
-                    else if( etherP.strIdF( tin0P , countTC( 1 ) , T(" name="                  ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ; // TO QUASH PLAIN TEXT FILE ATTACHMENTS
-                    else if( etherP.strIdF( tin0P , countTC( 1 ) , T("message/"                ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
-                    else if( etherP.strIdF( tin0P , countTC( 1 ) , T("application/"            ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
-                    else if( etherP.strIdF( tin0P , countTC( 1 ) , T("video/"                  ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
-                    else if( etherP.strIdF( tin0P , countTC( 1 ) , T("audio/"                  ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
-                    else if( etherP.strIdF( tin0P , countTC( 1 ) , T("image/"                  ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
-                    else if( etherP.strIdF( tin0P , countTC( 1 ) , T("text/x-"                 ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
-                    else if( etherP.strIdF( tin0P , countTC( 1 ) , T("text/csv"                ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
-                         if( etherP.strIdF( tin0P , countTC( 1 ) , T("text/html"               ) , psttValue ) ) { if( !bAcceptHtmlP ) bQuashBody = bQuashHeader = 1 ; }
+                    else if( etherP.strIdF( tin0P , T("multipart/alternative"   ) , psttValue ) ) { if( offNestP      )              bQuashHeader = 1 ; }
+                    else if( etherP.strIdF( tin0P , T(" name="                  ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ; // TO QUASH PLAIN TEXT FILE ATTACHMENTS
+                    else if( etherP.strIdF( tin0P , T("message/"                ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
+                    else if( etherP.strIdF( tin0P , T("application/"            ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
+                    else if( etherP.strIdF( tin0P , T("video/"                  ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
+                    else if( etherP.strIdF( tin0P , T("audio/"                  ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
+                    else if( etherP.strIdF( tin0P , T("image/"                  ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
+                    else if( etherP.strIdF( tin0P , T("text/x-"                 ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
+                    else if( etherP.strIdF( tin0P , T("text/csv"                ) , psttValue ) )                       bQuashBody = bQuashHeader = 1 ;
+                         if( etherP.strIdF( tin0P , T("text/html"               ) , psttValue ) ) { if( !bAcceptHtmlP ) bQuashBody = bQuashHeader = 1 ; }
     
                     //etherP.traceF( tin0P , psttValue ) ;
     
@@ -200,12 +200,12 @@ TODO
     
             }
                 if( idKey1Woth == 1 ) bAtWoth = idKey1 = 1 ;
-                countT idKey1Woth = etherP.strIdF( tin0P , countTC( 1 ) , tKey1Woth , psttHeadLower ) ;
+                countT idKey1Woth = etherP.strIdF( tin0P , tKey1Woth , psttHeadLower ) ;
             {
             if( !idKey1 )
             ZE( boolT , bAtWoth ) ;
     
-            countT idKey1 = etherP.strIdF( tin0P , countTC( 1 ) , tKey1 , psttHeadLower ) ;
+            countT idKey1 = etherP.strIdF( tin0P , tKey1 , psttHeadLower ) ;
             TN( tKey1     , "\r\ncontent-type:" ) ;
             TN( tKey1Woth ,     "content-type:" ) ;
         {                                                                                                           // Content-Type: multipart/alternative; boundary="===============8360180459455337976=="
@@ -330,14 +330,14 @@ voidT decodeQuotedPrintableF( tin0S& tin0P , etherC& etherP , fileC& foP , osTex
         {
         )
             )
-                1 == etherP.strIdF( tin0P , countTC( 1 ) , tLook8 , psttLower , 1 )
-                1 == etherP.strIdF( tin0P , countTC( 1 ) , tLook7 , psttLower , 1 ) ||
-                1 == etherP.strIdF( tin0P , countTC( 1 ) , tLook6 , psttLower , 1 ) ||
-                1 == etherP.strIdF( tin0P , countTC( 1 ) , tLook5 , psttLower , 1 ) ||
-                1 == etherP.strIdF( tin0P , countTC( 1 ) , tLook4 , psttLower , 1 ) ||
-                1 == etherP.strIdF( tin0P , countTC( 1 ) , tLook3 , psttLower , 1 ) ||
-                1 == etherP.strIdF( tin0P , countTC( 1 ) , tLook2 , psttLower , 1 ) ||
-                1 == etherP.strIdF( tin0P , countTC( 1 ) , tLook1 , psttLower , 1 ) ||
+                1 == etherP.strIdF( tin0P , tLook8 , psttLower , 1 )
+                1 == etherP.strIdF( tin0P , tLook7 , psttLower , 1 ) ||
+                1 == etherP.strIdF( tin0P , tLook6 , psttLower , 1 ) ||
+                1 == etherP.strIdF( tin0P , tLook5 , psttLower , 1 ) ||
+                1 == etherP.strIdF( tin0P , tLook4 , psttLower , 1 ) ||
+                1 == etherP.strIdF( tin0P , tLook3 , psttLower , 1 ) ||
+                1 == etherP.strIdF( tin0P , tLook2 , psttLower , 1 ) ||
+                1 == etherP.strIdF( tin0P , tLook1 , psttLower , 1 ) ||
             (
             &&
             psttLower

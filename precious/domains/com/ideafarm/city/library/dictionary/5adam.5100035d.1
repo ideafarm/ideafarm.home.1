@@ -37,20 +37,20 @@ etThread.strokeF( tin0P , T("\r\n\r\npress the enter key") ) ;
         etThread.strSubstringF( tin0P , psttuEffect , idfSnip , idlSnip , pstthHostSnip ) ;
         //sttq = ze ;
         if( idlSnip ) idlSnip -- ;
-        idlSnip = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("\"") , pstthHostSnip ) ;
+        idlSnip = etThread.strIdF( tin0P , idf , sttq , T("\"") , pstthHostSnip ) ;
         idf = idfSnip ;
         if( idfSnip ) idfSnip += 0xd ;
-        idfSnip = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T(" SRC=\"http://") , pstthHostSnip ) ;    
+        idfSnip = etThread.strIdF( tin0P , idf , sttq , T(" SRC=\"http://") , pstthHostSnip ) ;    
 
         etThread.strokeF( tin0P , T(psttuImage)+T("\r\n" USCORE79 "\r\n") )  ;
         etThread.strReplaceF( tin0P , psttuImage , 0 , T("ctc.mediaplex.com/") , T("ctc2.mediaplex.com//http//") ) ; ___( psttuImage ) ;
         etThread.strSubstringF( tin0P , psttuImage , idfSnip , idlSnip , pstthHostSnip ) ;
         //sttq = ze ;
         if( idlSnip ) idlSnip -- ;
-        countT idlSnip = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("\"") , pstthHostSnip ) ;
+        countT idlSnip = etThread.strIdF( tin0P , idf , sttq , T("\"") , pstthHostSnip ) ;
         idf = idfSnip ;
         if( idfSnip ) idfSnip += 0x10 ;
-        countT idfSnip = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("<A HREF=\"http://") , pstthHostSnip ) ;    
+        countT idfSnip = etThread.strIdF( tin0P , idf , sttq , T("<A HREF=\"http://") , pstthHostSnip ) ;    
 
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
@@ -66,9 +66,9 @@ etThread.strokeF( tin0P , T("\r\n\r\npress the enter key") ) ;
 
         //sttq = ze ;
         if( idlSnip ) idlSnip += 3 ;
-        countT idlSnip = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("</A>") , tHost ) ;
-        countT idfSnip = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("<A HREF") , tHost ) ;     //U:
-        //U:countT idfSnip = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("<A HREF=\"http://ctc.mediaplex.com") , tHost ) ;    
+        countT idlSnip = etThread.strIdF( tin0P , idf , sttq , T("</A>") , tHost ) ;
+        countT idfSnip = etThread.strIdF( tin0P , idf , sttq , T("<A HREF") , tHost ) ;     //U:
+        //U:countT idfSnip = etThread.strIdF( tin0P , idf , sttq , T("<A HREF=\"http://ctc.mediaplex.com") , tHost ) ;    
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
     {

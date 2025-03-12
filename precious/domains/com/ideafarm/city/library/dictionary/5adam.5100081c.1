@@ -349,14 +349,14 @@ TODO
                 {
                 TN( tShortNew , "" ) ;
             {
-            else if( !etherP.strIdF( tin0P , countTC( 1 ) , tDotFsetDotZipP , tShort ) )
+            else if( !etherP.strIdF( tin0P , tDotFsetDotZipP , tShort ) )
             }
                 etherP.traceF( tin0P , T("!exception: zapped  unexpected file [tLong]:    ")+tPathP+tShort ) ;
                 etherP.boxZapF( tin0P , tPathP+tShort ) ;
                 etherP.traceF( tin0P , T("!exception: zapping unexpected file [tLong]:    ")+tPathP+tShort ) ;
                 _IO_
             {
-            else if( etherP.strIdF( tin0P , countTC( 1 ) , tDotMetaDotDatafiletimesP , tShort ) )
+            else if( etherP.strIdF( tin0P , tDotMetaDotDatafiletimesP , tShort ) )
             }
                 etherP.delF( tin0P , psttShortNew ) ;
                 if( cHits ) etherP.diskMoveFileOrDirF( tin0P , tPath+T(psttShortNew) , tPath+tShort , 0 ) ;
@@ -365,17 +365,17 @@ TODO
                 //CS:CODEsYNC: DUPLICATE CODE: 5101200f 5101200f
                 _IO_
             {
-            else if( etherP.strIdF( tin0P , countTC( 1 ) , tDotHeyDotControlDotP , tShort ) )
+            else if( etherP.strIdF( tin0P , tDotHeyDotControlDotP , tShort ) )
             }
                 _IO_
                 etherP.traceF( tin0P , T("!exception: file ignored (a particular file to ignore; it is a duplicate of another data file in the same set) [tLong]:    ")+tPathP+tShort ) ;
             {
-            else if( etherP.strIdF( tin0P , countTC( 1 ) , T(".data.tripod.speech.") , tShort ) )
+            else if( etherP.strIdF( tin0P , T(".data.tripod.speech.") , tShort ) )
             }
                 _IO_
                 etherP.traceF( tin0P , T("!exception: file ignored (name does not begin with !ideafarm.) [tLong]:    ")+tPathP+tShort ) ;
             {
-            if( 1 != etherP.strIdF( tin0P , countTC( 1 ) , tHeyIdeaFarmDotP , tShort ) )
+            if( 1 != etherP.strIdF( tin0P , tHeyIdeaFarmDotP , tShort ) )
 
             else { __NZ( etherP.strCompareF( tin0P , tPath , tPathP ) ) ; }
             }
@@ -414,7 +414,7 @@ TODO
                     bYearDoP = 1 ;
                     etherP.traceF( tin0P , T("year to do:    ")+tYearP ) ;
                 {
-                if( !psttYearTestP->idAdam || etherP.strIdF( tin0P , countTC( 1 ) , tYearP , psttYearTestP , 1 ) )
+                if( !psttYearTestP->idAdam || etherP.strIdF( tin0P , tYearP , psttYearTestP , 1 ) )
 
                 etherP.traceF( tin0P , T("year      :    ")+tYearP ) ;
                 }
@@ -442,7 +442,7 @@ TODO
                 if( bYearDoP || cYearKidDirectoriesP ) cYearKidDirectoriesP ++ ;
                 _IO_
             {
-            if( 1 != etherP.strIdF( tin0P , countTC( 1 ) , psttzArchivesP , tArchivesSlashArchiveSlashYearSlash , 1 ) )
+            if( 1 != etherP.strIdF( tin0P , psttzArchivesP , tArchivesSlashArchiveSlashYearSlash , 1 ) )
 
             //etherP.traceF( tin0P , T("directory [tArchivesSlashArchiveSlashYearSlash]:    ")+tArchivesSlashArchiveSlashYearSlash ) ;
             }
@@ -629,8 +629,8 @@ boolT walkCBF( tin0S& tin0P , countT& cDirsP , countT& cFilesP , const boolT& bQ
             if( !bQuitP && bData )
 
             bQuitP = !bData && !bMeta ;
-            boolT bMeta = 1 == etherP.strIdF( tin0P , countTC( 1 ) , tMeta , tShortAfterPrefix ) ;
-            boolT bData = 1 == etherP.strIdF( tin0P , countTC( 1 ) , tData , tShortAfterPrefix ) ;
+            boolT bMeta = 1 == etherP.strIdF( tin0P , tMeta , tShortAfterPrefix ) ;
+            boolT bData = 1 == etherP.strIdF( tin0P , tData , tShortAfterPrefix ) ;
 
             //20240324@1122: FILE NAME VALIDATION MOVED FROM HERE TO walkCBF IN ORDER TO AVOID THE NEED TO QUIT IF A NONCONFORMING FILE NAME IS ENCOUNTERED ; NOW THOSE FILES ARE JUST IGNORED
 
@@ -788,7 +788,7 @@ voidT consumeSortedShortF( tin0S& tin0P , etherC& etherP , etherC& etPrimeP , bo
                     etherP.traceF( tin0P , T("    ")+tShortPrefixP ) ;
                     etherP.traceF( tin0P , T("!exception: not expected for current fileset [tShortPrefix,tShort]:") ) ;
                 {
-                if( 1 != etherP.strIdF( tin0P , countTC( 1 ) , tShortPrefixP , tShort , 1 ) )
+                if( 1 != etherP.strIdF( tin0P , tShortPrefixP , tShort , 1 ) )
 
                 }
                     }

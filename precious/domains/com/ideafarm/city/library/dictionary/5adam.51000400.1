@@ -93,7 +93,7 @@ etThread.delF( tin0P , psttNickname ) ;
                         if( psttAdams && psttAdams->idAdam ) etThread.strFuseF( tin0P , psttAdams , T(" ")+tIdi ) ;
                     {
                     else
-                    if( etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tIdi , psttAdams ) ) etThread.strokeF( tin0P , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT)+S2(0,scOld_SYSmARK)+T("sub ")+tIdi+T(" (step 4 of 6 skipped)\r\n") ) ;
+                    if( etThread.strIdF( tin0P , idf , sttq , tIdi , psttAdams ) ) etThread.strokeF( tin0P , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT)+S2(0,scOld_SYSmARK)+T("sub ")+tIdi+T(" (step 4 of 6 skipped)\r\n") ) ;
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idf = 1 ;
                     etThread.strokeF( tin0P , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT)+S2(0,scOld_SYSmARK)+T("sub ")+tIdi+T(" (step 3 of 6)\r\n") ) ;
@@ -131,7 +131,7 @@ etThread.delF( tin0P , psttNickname ) ;
                     countT idl = idf + 6 ;
                     if( idf ) idf ++ ;
                     __Z( idf ) ;
-                    countT idf = etThread.strIdF( tin0P , countTC( 1 ) , countTC( 1 ) , sttq , S1C('/') , psttc1 , 0 , - 1 ) ;
+                    countT idf = etThread.strIdF( tin0P , countTC( 1 ) , sttq , S1C('/') , psttc1 , 0 , - 1 ) ;
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 {
                 FORsTRINGSiN1( pstt1m )
@@ -1125,10 +1125,10 @@ DONE( tmReplyCatcherF )
                         ZE( countT , idl ) ;
                     {
                     if( bNew && bNewStep3 )
-                          bDone    |= ( idf = 1 , sttq = strokeS() , !!etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("(aborted)")      , psttLine ) ) ;
-                          bDone     = ( idf = 1 , sttq = strokeS() , !!etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("(done)")         , psttLine ) ) ;
-                    boolT bNewStep3 = ( idf = 1 , sttq = strokeS() , !!etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("(step 3 of 4) ") , psttLine ) ) ;
-                    boolT bNew      = ( idf = 1 , sttq = strokeS() , !!etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("\"new ")         , psttLine ) ) ;
+                          bDone    |= ( idf = 1 , sttq = strokeS() , !!etThread.strIdF( tin0P , idf , sttq , T("(aborted)")      , psttLine ) ) ;
+                          bDone     = ( idf = 1 , sttq = strokeS() , !!etThread.strIdF( tin0P , idf , sttq , T("(done)")         , psttLine ) ) ;
+                    boolT bNewStep3 = ( idf = 1 , sttq = strokeS() , !!etThread.strIdF( tin0P , idf , sttq , T("(step 3 of 4) ") , psttLine ) ) ;
+                    boolT bNew      = ( idf = 1 , sttq = strokeS() , !!etThread.strIdF( tin0P , idf , sttq , T("\"new ")         , psttLine ) ) ;
                     countT idf = 1 ;
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                     etThread.strokeF( tin0P , T("")+S2(saOLD_EDITeRASEbACKtOmARK,scOld_EDIT)+S2(0,scOld_SYSmARK)+T(psttLine)+T("\r\n") ) ;

@@ -45,7 +45,7 @@
                     ?             idHit -  cOk - 1
                 countT cWildEat = idHit >= cOk + 1
 
-                countT idHit = strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idf , sttq , psttc1 , psttP ) ;            
+                countT idHit = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , psttc1 , psttP ) ;            
                 countT idf = cOk + 1 ;
             {
             else
@@ -58,11 +58,11 @@
         if( !cWild )
 
         }
-            while( idfq && strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idfq , sttq , tQuestion , psttc1 ) ) { cArmedQuestion ++ ; cWild ++ ; }
+            while( idfq && strIdF( tin0P , 0 , flSTRmATCH_null , idfq , sttq , tQuestion , psttc1 ) ) { cArmedQuestion ++ ; cWild ++ ; }
             countT idfq = 1 ;
         {
 
-        if( strIdF( tin0P , countTC( 1 ) , tStar , psttc1 ) ) cWild = bArmedStar = 1 ;              // MULTIPLE ASTERISKS ARE REDUNDANT AND ONLY WO WILL BE COUNTED
+        if( strIdF( tin0P , tStar , psttc1 ) ) cWild = bArmedStar = 1 ;              // MULTIPLE ASTERISKS ARE REDUNDANT AND ONLY WO WILL BE COUNTED
         ZE( countT , cWild ) ;                                                      // THIS IS ONLY USED AS A BOOLEAN
 
         //traceF( tin0P , T("like: ")+T(psttc1) ) ;
