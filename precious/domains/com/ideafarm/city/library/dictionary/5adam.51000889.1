@@ -19,9 +19,10 @@ DONE( tmWorkF )
     etherC::loafIF( tin0P ) ;
     etThread.traceF( tin0P , T("ok") ) ;
 
-    while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) ) ;
+    while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&idStomp ) ;
 cDo = 1 ;
     countT cDo = TUCK >> 3 ;
+    ZE( countT , idStomp ) ;
 
     _IO_
 {
@@ -50,7 +51,7 @@ DONE( tmGorillaF )
             idNewSuccess = 0 ;
 
             }
-                if( idNewFail == 4 ) dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse ) ;
+                if( idNewFail == 4 ) dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStompP , idGorilla ) ;
 
                 etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
 
@@ -172,7 +173,7 @@ DONE( tmGorillaF )
     const countT costInvoiceRequired = tInvoice.csF( tin0P ) ;
     TN( tInvoice , "" ) ; tInvoice = TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;   //A:ASSUME: UPDATES TO tInvoice DO NOT CHANGE ITS LENGTH
 
-    dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse ) ;
+    dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStompP , idGorilla ) ;
 
     }
         etThread.delF( tin0P , posti ) ;
@@ -183,13 +184,21 @@ DONE( tmGorillaF )
     {
     TN( tModifiedSettingsSoilFileImageToUse , "" ) ;
 
+    const countT idGorilla = 1 + incv02AM( idGorillaLath ) ;
+    static countT idGorillaLath ;
+
+    countT& idStompP = *(countT*)pTaskP->c1 ;
+
     _IO_
 {
-if( pTaskP )
+if( pTaskP && pTaskP->c1 )
 TASK( tmGorillaF )
 
 }
-    etherP.boxPutF( tin0P , T("///ideafarm/tmp/debug.next.new.settings.from.gorilla.soil") , tP , tP.csF( tin0P ) ) ;
+    etherP.delF( tin0P , psttLong ) ;
+    etherP.traceF( tin0P , T("the image that i will use next time is in [tLong]:    ")+T(psttLong) ) ;
+    etherP.boxPutGenerationF( tin0P , psttLong , T("///ideafarm/tmp/debug.next.new.settings.from.gorilla.soil") , 0 , tP , tP.csF( tin0P ) ) ; ___( psttLong ) ;
+    ZE( strokeS* , psttLong ) ;
 
     }
         }
@@ -207,6 +216,11 @@ TASK( tmGorillaF )
                 strokeS& sttTarget = psttIn[ CSpREFIX - 1 + idTargetBigit ] ;
                 strokeS* psttIn = tP ;
                 countT idTargetBigit = idHit2 + tFind2.csF( tin0P ) ;
+
+                etherP.delF( tin0P , psttKV ) ;
+                etherP.traceF( tin0P , T("i just dropped a settings soil file image that contained [kv]:    ")+T(psttKV) ) ;
+                etherP.strSubstringF( tin0P , psttKV , countTC( idHit1 ) , countTC( idHit3 ) , tP ) ; ___( psttKV ) ;
+                ZE( strokeS* , psttKV ) ;
             {
             if( idHit3 > idHit2 + tFind2.csF( tin0P ) + 1 )
 
@@ -230,10 +244,12 @@ TASK( tmGorillaF )
     //
     // NOW EDIT THE FOLLOWING VALUE IN THE SETTINGS IMAGE TO INCREMENT MODULO 4:
 
-    etherP.boxPutF( tin0P , T("///ideafarm/IdeaFarm (tm)/")+tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/new.settings.from.gorilla.soil") , tP , tP.csF( tin0P ) ) ;
+    etherP.traceF( tin0P , T("i just dropped a settings soil file image [tShort]:    ")+tShort ) ;
+    etherP.boxPutF( tin0P , T("///ideafarm/IdeaFarm (tm)/")+tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/")+tShort , tP , tP.csF( tin0P ) ) ;
+    TN( tShort , "" ) ; tShort = T("new.settings.from.gorilla.")+TfORsTRING(idGorillaP)+T(".")+TfORsTRING(idStompP)+T(".soil") ;
     TN( tUser , thirdC::postUserNameIF() ) ;
 {
-voidT dropAndModifySettingsSoilFileImageF( tin0S& tin0P , etherC& etherP , textC& tP )
+voidT dropAndModifySettingsSoilFileImageF( tin0S& tin0P , etherC& etherP , textC& tP , countT idStompP , countT idGorillaP )
 
 countT idInvoiceLath ;
 
