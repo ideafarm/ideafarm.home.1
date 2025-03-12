@@ -123,7 +123,7 @@ TODO
 
     }
         etThread.strMakeF( tin0P , LF , psttP , T(psttBoxP)+T("\r\n\r\n")+(bFailP?T("**** FAIL ****"):T("**** PASS ****"))+T("\r\n\r\n")+T(psttBody)+T("\r\n") ) ;
-        bFailP = !etThread.strIdF( tin0P , idf , sttq , T("(209.128.90.230)") , psttBody ) ;
+        bFailP = !etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("(209.128.90.230)") , psttBody ) ;
         //sttq = ze ;
         idf = 1 ;
     {
@@ -150,7 +150,7 @@ TODO
 
     if( !etThread ) idf -= 2 ;
     __Z( idAt ) ;
-    countT idAt = etThread.strIdF( tin0P , idf , sttq , T("\n 1") , psttRaw ) ;
+    countT idAt = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("\n 1") , psttRaw ) ;
     countT idf = 1 ;
     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
 

@@ -238,7 +238,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                                 tRawIP = tn ;
                                 etThread.traceF( tin0P , T("unexpected IP format (probably IPv6):    \"")+tRawIP+tdq ) ;       //U:: ADD CODE TO HANDLE IPv6 VALUES
                             {
-                            if( tRawIP.csF( tin0P ) && etThread.strIdF( tin0P , sttColon , tRawIP ) )
+                            if( tRawIP.csF( tin0P ) && etThread.strIdF( tin0P , countTC( 1 ) , sttColon , tRawIP ) )
     
                             //etThread.traceF( tin0P , T("tBrowser      : ")+tBrowser      ) ;
                              //etThread.traceF( tin0P , T("tRawCbRequest : ")+tRawCbRequest ) ;
@@ -390,7 +390,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                     tLogBucket = tLogBucketWindowsServer ;
                     bWindows = 1 ;
                 {
-                if( tShort.csF( tin0P ) == tExampleWindowsServerFileName.csF( tin0P ) && 1 == etThread.strIdF( tin0P , tExampleWindowsServerFileNameProlog , tShort ) )
+                if( tShort.csF( tin0P ) == tExampleWindowsServerFileName.csF( tin0P ) && 1 == etThread.strIdF( tin0P , countTC( 1 ) , tExampleWindowsServerFileNameProlog , tShort ) )
                 TN( tContainer , "" ) ;         // ipdos.home.registry
                 TN( tLogBucket , "" ) ;         // .CDN_ACCESS_LOGS
                 ZE( boolT , bWindows ) ;

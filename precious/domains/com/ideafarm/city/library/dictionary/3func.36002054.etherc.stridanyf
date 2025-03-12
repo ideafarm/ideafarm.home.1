@@ -16,12 +16,12 @@
                     if( !idHit || idFirstP > ccBig ) idFirstP  = 0 ;_WQ
 
                     }
-                        while( idFirstP <= ccBig &&  strIdF( tin0P , psttBigP[ CSpREFIX - 1 + idFirstP ] , psttSmall ) ) idFirstP ++ ;_WQ
+                        while( idFirstP <= ccBig &&  strIdF( tin0P , countTC( 1 ) , psttBigP[ CSpREFIX - 1 + idFirstP ] , psttSmall ) ) idFirstP ++ ;_WQ
                         idFirstP = idHit + 1 ;_WQ
                     {
                     else
                     }
-                        while( idFirstP <= ccBig && !strIdF( tin0P , psttBigP[ CSpREFIX - 1 + idFirstP ] , psttSmall ) ) idFirstP ++ ;_WQ
+                        while( idFirstP <= ccBig && !strIdF( tin0P , countTC( 1 ) , psttBigP[ CSpREFIX - 1 + idFirstP ] , psttSmall ) ) idFirstP ++ ;_WQ
                         idFirstP = idHit + 1 ;_WQ
                     {
                     else if( bNot )
@@ -34,8 +34,8 @@
                         //U:: 20230615@2227: MAKE THIS USE OF bEscaped OPTIONAL TO AVOID BREAKING EXISTING CALLING CODE; THIS WAS ADDED W/O ANALYSIS AND W/O REGRESSION TESTING TO GET strIdMatchingF TO WORK WITH SOIL KT BODY INPUT THAT CONTAINS E.G. "\{"
 
                         ;_WQ
-                            :  strIdF( tin0P , psttBigP[ CSpREFIX - 1 + idHit ] , psttSmall )
-                            ? !strIdF( tin0P , psttBigP[ CSpREFIX - 1 + idHit ] , psttSmall )
+                            :  strIdF( tin0P , countTC( 1 ) , psttBigP[ CSpREFIX - 1 + idHit ] , psttSmall )
+                            ? !strIdF( tin0P , countTC( 1 ) , psttBigP[ CSpREFIX - 1 + idHit ] , psttSmall )
                         boolT bHit = bNot
 
                         if( bUseQuotes ) bInQuote = strIsInQuoteF( tin0P , sttQuoteP , idHit , psttBigP ) ;_WQ

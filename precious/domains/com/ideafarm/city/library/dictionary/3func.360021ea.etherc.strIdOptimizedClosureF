@@ -225,7 +225,7 @@
                             //if( bChatter ) traceF( tin0P , T("after: found in big at [idHit]:    ")+TF2(idHit,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
                         if( idHit )
-                        idHit = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , psttAfter , psttBigP , 0 , 1 ) ;
+                        idHit = strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idf , sttq , psttAfter , psttBigP , 0 , 1 ) ;
                     {
                     do
                     idf = 1 ;
@@ -260,7 +260,7 @@
                             countT idLath = idf ? idf - 1 : psttBigP->idAdam ;
                         {
                         if( idHit )
-                        idHit = strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , psttBefore , psttBigP , 0 , 1 ) ;
+                        idHit = strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idf , sttq , psttBefore , psttBigP , 0 , 1 ) ;
                     {
                     do
                     idf = 1 ;
@@ -347,7 +347,7 @@
                     idHit = 0 ;
                 {
                 if( idHit && idFirstP && F(flagsP) & flSTRiDoPTIMIZEDcLOSURE_NOlEFTOVERS )
-                idHit = strIdF( tin0P , pstMatchP , flagsMatchP , idFirstP , sttQuoteP , psttSmallP , psttBigP , idLastP , idP ) ;
+                idHit = strIdF( tin0P , countTC( 1 ) , pstMatchP , flagsMatchP , idFirstP , sttQuoteP , psttSmallP , psttBigP , idLastP , idP ) ;
                 countT idfSave = idFirstP ;
             {
             if( !idsPatch )
@@ -403,7 +403,7 @@
                     //if( bChatter ) traceF( tin0P , T("a fixed small was not found, inspecting left to right, in big [text,dump]:    \"")+T(psttf)+T("\"    ")+T(psttd) ) ;
                 {
                 if( !idHit )
-                countT idHit = strIdF( tin0P , 0 , flSTRmATCH_null , idfBig , sttq , tWrapped , psttBigP , 0 , 1 ) ;
+                countT idHit = strIdF( tin0P , countTC( 1 ) , 0 , flSTRmATCH_null , idfBig , sttq , tWrapped , psttBigP , 0 , 1 ) ;
 
                 TN( tWrapped , "" ) ; tWrapped = tn+S2(sa_SSSaND,sc_ccSSS)+T(psttf)+S2(sa_SSSaNDeND,sc_ccSSS) ;
                 TN( tn , "" ) ;

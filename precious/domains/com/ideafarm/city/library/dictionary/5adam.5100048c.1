@@ -44,7 +44,7 @@ DONE( tmWorkF )
 
             inspectF( tin0P , etThread , measurements , psttc1 ) ;
 
-            if( etThread.strIdF( tin0P , T(".ico") , psttc1 ) ) continue ;
+            if( etThread.strIdF( tin0P , countTC( 1 ) , T(".ico") , psttc1 ) ) continue ;
             if( ether ) break ;
 
             etThread.traceF( tin0P , T("inspecting [cRemaining]:    ")+TF2(--cToDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -68,9 +68,9 @@ TASK( tmWorkF )
 
     mP.tallies.cExamples ++ ;
     )
-        etThread.strIdF( tin0P , T("\"example.") , psttNet )
+        etThread.strIdF( tin0P , countTC( 1 ) , T("\"example.") , psttNet )
         &&
-        etThread.strIdF( tin0P , T("/dictionary/5adam.") , psttFileNameP )
+        etThread.strIdF( tin0P , countTC( 1 ) , T("/dictionary/5adam.") , psttFileNameP )
     (
     if
 
@@ -84,36 +84,36 @@ TASK( tmWorkF )
     etThread.delF( tin0P , psttShort ) ;
 
     else                                                                    pcTally = &mP.tallies.cMiscUnregognized          ;
-    else if( 1 == etThread.strIdF( tin0P , T("8text."      ) , psttShort ) ) pcTally = &mP.tallies.cMisc                      ;
-    else if( 1 == etThread.strIdF( tin0P , T("7reso."      ) , psttShort ) ) pcTally = &mP.tallies.cResource                  ;
-    else if( 1 == etThread.strIdF( tin0P , T("6arch.5adam.") , psttShort ) ) pcTally = &mP.tallies.cDefAdamArchived           ;
-    else if( 1 == etThread.strIdF( tin0P , T("5adam.51012" ) , psttShort ) ) pcTally = &mP.tallies.cDefAdamScratch            ;
-    else if( 1 == etThread.strIdF( tin0P , T("5adam.51001" ) , psttShort ) ) pcTally = &mP.tallies.cDefAdamStarter            ;
-    else if( 1 == etThread.strIdF( tin0P , T("5adam.51000" ) , psttShort ) ) pcTally = &mP.tallies.cDefAdam                   ;
-    else if( 1 == etThread.strIdF( tin0P , T("4boot."      ) , psttShort ) ) pcTally = &mP.tallies.cDefLoader                 ;
-    else if( 1 == etThread.strIdF( tin0P , T("3func.36"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionMemberInstance ;
-    else if( 1 == etThread.strIdF( tin0P , T("3func.35"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionMemberStatic   ;
-    else if( 1 == etThread.strIdF( tin0P , T("3func.34"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionMemberMacros   ;
-    else if( 1 == etThread.strIdF( tin0P , T("3func.33"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionGlobal2        ;
-    else if( 1 == etThread.strIdF( tin0P , T("3func.32"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionGlobal1        ;
-    else if( 1 == etThread.strIdF( tin0P , T("3func.31"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionAsm            ;
-    else if( 1 == etThread.strIdF( tin0P , T("3func.30"    ) , psttShort ) ) pcTally = &mP.tallies.cPlainCLanguageFunctions   ;
-    else if( 1 == etThread.strIdF( tin0P , T("2glob."      ) , psttShort ) ) pcTally = &mP.tallies.cDefGlobal                 ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.1d"    ) , psttShort ) ) pcTally = &mP.tallies.cDefInlineFunction         ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.1c"    ) , psttShort ) ) pcTally = &mP.tallies.cDefInlineFunctionAsm      ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.1b"    ) , psttShort ) ) pcTally = &mP.tallies.cDefGlobalDeclaration      ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.1a"    ) , psttShort ) ) pcTally = &mP.tallies.cDefIncludeSnippetSpecial  ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.19"    ) , psttShort ) ) pcTally = &mP.tallies.cDefIncludeSnippet         ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.18"    ) , psttShort ) ) pcTally = &mP.tallies.cAsmInclude                ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.17"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionPrototype      ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.16"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionPrototypeAsm   ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.15"    ) , psttShort ) ) pcTally = &mP.tallies.cDefClass                  ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.14"    ) , psttShort ) ) pcTally = &mP.tallies.cDefTypedefFunction        ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.13"    ) , psttShort ) ) pcTally = &mP.tallies.cDefTypedefVariable2       ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.12"    ) , psttShort ) ) pcTally = &mP.tallies.cDefTypedefVariable1       ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.112"   ) , psttShort ) ) pcTally = &mP.tallies.cDefSymbol                 ;
-    else if( 1 == etThread.strIdF( tin0P , T("1snip.111"   ) , psttShort ) ) pcTally = &mP.tallies.cDefSymbolEarly            ;
-         if( 1 == etThread.strIdF( tin0P , T("1snip.0"     ) , psttShort ) ) pcTally = &mP.tallies.cMisc                      ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("8text."      ) , psttShort ) ) pcTally = &mP.tallies.cMisc                      ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("7reso."      ) , psttShort ) ) pcTally = &mP.tallies.cResource                  ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("6arch.5adam.") , psttShort ) ) pcTally = &mP.tallies.cDefAdamArchived           ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("5adam.51012" ) , psttShort ) ) pcTally = &mP.tallies.cDefAdamScratch            ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("5adam.51001" ) , psttShort ) ) pcTally = &mP.tallies.cDefAdamStarter            ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("5adam.51000" ) , psttShort ) ) pcTally = &mP.tallies.cDefAdam                   ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("4boot."      ) , psttShort ) ) pcTally = &mP.tallies.cDefLoader                 ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("3func.36"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionMemberInstance ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("3func.35"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionMemberStatic   ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("3func.34"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionMemberMacros   ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("3func.33"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionGlobal2        ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("3func.32"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionGlobal1        ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("3func.31"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionAsm            ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("3func.30"    ) , psttShort ) ) pcTally = &mP.tallies.cPlainCLanguageFunctions   ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("2glob."      ) , psttShort ) ) pcTally = &mP.tallies.cDefGlobal                 ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.1d"    ) , psttShort ) ) pcTally = &mP.tallies.cDefInlineFunction         ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.1c"    ) , psttShort ) ) pcTally = &mP.tallies.cDefInlineFunctionAsm      ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.1b"    ) , psttShort ) ) pcTally = &mP.tallies.cDefGlobalDeclaration      ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.1a"    ) , psttShort ) ) pcTally = &mP.tallies.cDefIncludeSnippetSpecial  ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.19"    ) , psttShort ) ) pcTally = &mP.tallies.cDefIncludeSnippet         ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.18"    ) , psttShort ) ) pcTally = &mP.tallies.cAsmInclude                ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.17"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionPrototype      ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.16"    ) , psttShort ) ) pcTally = &mP.tallies.cDefFunctionPrototypeAsm   ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.15"    ) , psttShort ) ) pcTally = &mP.tallies.cDefClass                  ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.14"    ) , psttShort ) ) pcTally = &mP.tallies.cDefTypedefFunction        ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.13"    ) , psttShort ) ) pcTally = &mP.tallies.cDefTypedefVariable2       ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.12"    ) , psttShort ) ) pcTally = &mP.tallies.cDefTypedefVariable1       ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.112"   ) , psttShort ) ) pcTally = &mP.tallies.cDefSymbol                 ;
+    else if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.111"   ) , psttShort ) ) pcTally = &mP.tallies.cDefSymbolEarly            ;
+         if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("1snip.0"     ) , psttShort ) ) pcTally = &mP.tallies.cMisc                      ;
 
     ZE( countT* , pcTally )
 

@@ -83,7 +83,7 @@ REST
     napkinC napHomeJot( tin0P , LF , (byteT*)bits , "napHomeJot" , 0 , CBnAPjOT ) ;
     bitsC bits( tin0P , CbITSlIFI , 0 , 1 ) ;
 
-    __( !etThread.strIdF( tin0P , TF1(DDNUMB) , T(poolC::poolOldWorkIF(tin0P).postName) ) ) ;
+    __( !etThread.strIdF( tin0P , countTC( 1 ) , TF1(DDNUMB) , T(poolC::poolOldWorkIF(tin0P).postName) ) ) ;
     __( !( F(poolC::poolOldRootIF(tin0P).flags) & flPOOLoLDc_NOcLIENTrIGHTS ) ) ;
 {
 TODO
@@ -802,8 +802,8 @@ fifoC::fifoC( tin0S& tin0P ) :
             break ;
         
             cellC::classLogF( tin0P , tEntry , 0 , pInfo ) ;
-            cell.bError |= !!ether.strIdF( tin0P , T(" !setEcIfF ") , tEntry ) ;
-            bLogTinEventP = !!ether.strIdF( tin0P , T(" !tin123S ") , tEntry ) ;
+            cell.bError |= !!ether.strIdF( tin0P , countTC( 1 ) , T(" !setEcIfF ") , tEntry ) ;
+            bLogTinEventP = !!ether.strIdF( tin0P , countTC( 1 ) , T(" !tin123S ") , tEntry ) ;
             }
                 ether.delF( tin0P , pstte ) ;
                 tEntry = T(pstte) ;
@@ -1501,7 +1501,7 @@ countT cellC::classQuery_cHandle_F( tin0S& tin0P )
     TN( tPrefix , "" ) ; tPrefix = TT(timeN1,timeN2)+tb+TF1(pInfoP?pInfoP->osPid:0)+tb+TF1(etherC::ifc_idAdamG_IF(tin0P))+tb+T(pTinEventRawP?pTinEventRawP->postThreadName:"")+T(bTerse?": ":"\r\n") ;
     TN( tb , " " ) ;
     strokeS sd('-') ;
-    const boolT bTerse = !ether.strIdF( tin0P , tc , tEntry ) ;
+    const boolT bTerse = !ether.strIdF( tin0P , countTC( 1 ) , tc , tEntry ) ;
     TN( tc , "\r\n" ) ;
     pBatonLog->grabF( tin0P , TAG( TAGiDnULL ) ) ;
             

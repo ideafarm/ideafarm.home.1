@@ -1165,7 +1165,7 @@ TASKdRIVENsERVER( tmcF )
                             countT idf2 = 2 ;
                         {
                         else
-                        if( 1 != ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , sttDollar , psttw ) ) pcIdNameP[ offi ++ ] = ((tin1S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttw ) ;
+                        if( 1 != ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , sttDollar , psttw ) ) pcIdNameP[ offi ++ ] = ((tin1S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttw ) ;
                     {
                     if( offi < CCiDnAMEmAX - 1 )
                     ((tin1S&)tin0P).pEtScratch->strSubstringF( tin0P , psttw , idf , sttq , sttDot , psttNameTrimmed ) ; ___( psttw ) ;            // "$foo"
@@ -1183,7 +1183,7 @@ TASKdRIVENsERVER( tmcF )
                 idf = 2 ;
     
                 __( psttName->idAdam - 1 - idDot0 ) ;
-                countT idDot0 = ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , sttq , tDot0 , psttName , 0 , - 1 ) ;
+                countT idDot0 = ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , countTC( 1 ) , sttq , tDot0 , psttName , 0 , - 1 ) ;
                 TN( tDot0 , ".0" ) ;
                 idf = 1 ;
             {
@@ -1197,7 +1197,7 @@ TASKdRIVENsERVER( tmcF )
             if( idRequestType != ifcIDrEQtYPE_FISH ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
-            __( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , sttSlash , psttName ) - 1 ) ;                                                  // "/1.2.$foo.4.0"
+            __( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , sttSlash , psttName ) - 1 ) ;                                                  // "/1.2.$foo.4.0"
             __( !psttName->idAdam ) ;
         {
         if( !POOP && !etThread )
@@ -1309,7 +1309,7 @@ TASKdRIVENsERVER( tmcF )
             psttName = 0 ;
             strokeS* psttw = psttName ;
         {
-        if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , T("?") , psttName ) ) // HTTP/1.0 KEYvALUE PAIRS
+        if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , T("?") , psttName ) ) // HTTP/1.0 KEYvALUE PAIRS
         ZE( strokeS* , psttKV ) ;
     
         }
@@ -1323,7 +1323,7 @@ TASKdRIVENsERVER( tmcF )
                 ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttValue ) ;
                 ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttKey ) ;
                 }
-                    if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , tClose , psttValue ) ) bMoreP = 0 ;
+                    if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , tClose , psttValue ) ) bMoreP = 0 ;
                 {
                 else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tConnection    , psttKey ) )
                      if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tContentLength , psttKey ) ) costBody = ((tin1S&)tin0P).pEtScratch->strDigitsToSCountF( tin0P , psttValue , 0xa , 1 ) ;
@@ -1337,11 +1337,11 @@ TASKdRIVENsERVER( tmcF )
             {
             else if( psttl && psttl->idAdam ) // HEADER LINE ASSUMED TO BE OF THE FORM, FOR EXAMPLE,  "Content-Length:1234"
             }
-                if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , idf , sttq , T("logout") , psttName ) ) idRequestType = ifcIDrEQtYPE_LOGOUT ;
+                if( ((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , idf , sttq , T("logout") , psttName ) ) idRequestType = ifcIDrEQtYPE_LOGOUT ;
                 countT idf = 1 ;
                 ((tin1S&)tin0P).pEtScratch->delF( tin0P , psttw ) ;
-                bHttpWoZeP = !((tin1S&)tin0P).pEtScratch->strIdF( tin0P , tHttp11 , psttw ) ;
-                bMoreP = !!((tin1S&)tin0P).pEtScratch->strIdF( tin0P , tHttp11 , psttw ) ;
+                bHttpWoZeP = !((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , tHttp11 , psttw ) ;
+                bMoreP = !!((tin1S&)tin0P).pEtScratch->strIdF( tin0P , countTC( 1 ) , tHttp11 , psttw ) ;
                 ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
                 ((tin1S&)tin0P).pEtScratch->strWordF( tin0P , psttw , psttl , sttq , sttb , 3 ) ; ___( psttw ) ;
                 ZE( strokeS* , psttw ) ;

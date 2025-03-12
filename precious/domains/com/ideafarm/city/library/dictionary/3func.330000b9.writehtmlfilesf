@@ -144,7 +144,7 @@
                 //OLD:     ether.delF( tin0P , psttd ) ;
                 //OLD:     ether.strSubstringF( tin0P , psttFinal , idf , idl , psttd ) ; ___( psttFinal ) ;
                 //OLD:     ZE( countT , idl ) ;
-                //OLD:     countT idf = ether.strIdF( tin0P , T("<!--") , psttd ) ;
+                //OLD:     countT idf = ether.strIdF( tin0P , countTC( 1 ) , T("<!--") , psttd ) ;
                 //OLD:     strokeS* psttd = psttFinal ; psttFinal = 0 ;
                 //OLD:     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 //OLD: {
@@ -170,7 +170,7 @@
                         __( idd == 1 ) ;
                     {
                     if( idd )
-                    countT idd = ether.strIdF( tin0P , countTC( 1 ) , sttq , S1C('.') , pHtml->psttName , 0 , - 1 ) ;
+                    countT idd = ether.strIdF( tin0P , countTC( 1 ) , countTC( 1 ) , sttq , S1C('.') , pHtml->psttName , 0 , - 1 ) ;
 
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                 {
@@ -221,7 +221,7 @@
         ZE( countT , idl ) ;
         __( ids == psttLikeP->idAdam ) ;
         __Z( ids ) ;
-        countT ids = ether.strIdF( tin0P , S1C('/') , psttLikeP ) ;
+        countT ids = ether.strIdF( tin0P , countTC( 1 ) , S1C('/') , psttLikeP ) ;
     {
     else
     if( psttLikeLocalP ) { ether.strMakeF( tin0P , LF , psttLikeLocal , psttLikeLocalP ) ; ___( psttLikeLocal ) ; }

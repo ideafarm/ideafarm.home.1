@@ -260,7 +260,7 @@ TASK( tmWorkF )
         {
         if( tLit.csF( tin0P ) < psttFileBodyP->idAdam )
     {
-    if( 1 == etherP.strIdF( tin0P , tLit , psttFileBodyP ) )
+    if( 1 == etherP.strIdF( tin0P , countTC( 1 ) , tLit , psttFileBodyP ) )
     TN( tLit , "!literal:" ) ;
 
     ZE( boolT , bFail ) ;
@@ -380,7 +380,7 @@ boolT getBodySnipFromFileF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , co
         if( tLit.csF( tin0P ) < psttFileBodyP->idAdam )
         //CONoUTrAW( T("sending literal value\r\n") ) ;
     {
-    if( 1 == etherP.strIdF( tin0P , tLit , psttFileBodyP ) )
+    if( 1 == etherP.strIdF( tin0P , countTC( 1 ) , tLit , psttFileBodyP ) )
     TN( tLit , "!literal:" ) ;
 
     //CONoUTrAW( T("processing body file \"")+T(psttFileBodyP)+T("\"\r\n") ) ;
@@ -505,7 +505,7 @@ boolT logBodySnipFromFileF( tin0S& tin0P , etherC& etherP , const strokeS* const
         if( tLit.csF( tin0P ) < psttFileBodyP->idAdam )
         //CONoUTrAW( T("sending literal value\r\n") ) ;
     {
-    if( 1 == etherP.strIdF( tin0P , tLit , psttFileBodyP ) )
+    if( 1 == etherP.strIdF( tin0P , countTC( 1 ) , tLit , psttFileBodyP ) )
     TN( tLit , "!literal:" ) ;
 
     etherP.traceF( tin0P , T("processing body file \"")+T(psttFileBodyP)+T("\"") ) ;

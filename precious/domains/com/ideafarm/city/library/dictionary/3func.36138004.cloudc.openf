@@ -31,8 +31,8 @@
         ZE( strokeS* , psttUrlCloudAgent ) ;
         ZE( strokeS* , psttHost  ) ;
 
-        countT idfShort = ether.strIdF( tin0P , strokeS( '/' ) , tUrl , 3 ) ;
-        countT idfHost  = ether.strIdF( tin0P , strokeS( '/' ) , tUrl , 2 ) ;
+        countT idfShort = ether.strIdF( tin0P , countTC( 1 ) , strokeS( '/' ) , tUrl , 3 ) ;
+        countT idfHost  = ether.strIdF( tin0P , countTC( 1 ) , strokeS( '/' ) , tUrl , 2 ) ;
 
         //ether.traceF( tin0P , T("cloud opened [tUrl]: ")+tUrl ) ;
 
@@ -610,9 +610,9 @@
 
                         }
                             }
-                                bChunked = !!ether.strIdF( tin0P , tChunked , tLine ) ;
+                                bChunked = !!ether.strIdF( tin0P , countTC( 1 ) , tChunked , tLine ) ;
                             {
-                            else if( 1 == ether.strIdF( tin0P , tTransferEncoding , tLine ) )
+                            else if( 1 == ether.strIdF( tin0P , countTC( 1 ) , tTransferEncoding , tLine ) )
                             }
                                 ether.delF( tin0P , psttw ) ;
                                 costBody = ether.strDigitsToSCountF( tin0P , psttw , 0xa , 1 ) ;
@@ -624,7 +624,7 @@
                                 countT idf = tContentLength.csF( tin0P ) + 1 ;
                                 strokeS* psttLine = tLine ;
                             {
-                            if( 1 == ether.strIdF( tin0P , tContentLength , tLine ) )
+                            if( 1 == ether.strIdF( tin0P , countTC( 1 ) , tContentLength , tLine ) )
                             strokeS sttBlank( ' ' ) ;
                         {
                         if( !POOP )
@@ -644,14 +644,14 @@
 
                         }
                             }
-                                __( !ether.strIdF( tin0P , tReplyCode200_OK , tLine ) ) ;
+                                __( !ether.strIdF( tin0P , countTC( 1 ) , tReplyCode200_OK , tLine ) ) ;
 
                                 }
                                     break ;
                                     etherC::etRockIF( tin0P ).traceF( tin0P , T("authorization refused") ) ;
                                 {
                                 if( POOP )
-                                __NZ( 1 == ether.strIdF( tin0P , tReplyCode401_Unauthorized , tLine ) ) ;
+                                __NZ( 1 == ether.strIdF( tin0P , countTC( 1 ) , tReplyCode401_Unauthorized , tLine ) ) ;
                             {
                             if( !POOP )
 

@@ -154,7 +154,7 @@ voidT doWoF( tin0S& tin0P , etherC& etThread , strokeS* psttFileP , const countT
 
             }
                 else                                                                       ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttw2 ) ;
-                if( psttw2 && psttw2->idAdam && ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , sttAt , psttw2 ) ) st_psttTo << psttw2 ;
+                if( psttw2 && psttw2->idAdam && ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , sttAt , psttw2 ) ) st_psttTo << psttw2 ;
                 ((tin1S&)tin0P).zEtScratch->strTrimF( tin0P , psttw2 , 0 , T(TbLACKnEWlINE) , T(" ") ) ; ___( psttw2 ) ;                                  // "abc@foobar.com"
 
                 }
@@ -168,8 +168,8 @@ voidT doWoF( tin0S& tin0P , etherC& etThread , strokeS* psttFileP , const countT
                     countT idf3 = 1 ;
                 {
                 if( idLT && idLT < idGT )
-                countT idGT = ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , sttGT , psttw2 ) ;
-                countT idLT = ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , sttLT , psttw2 ) ;
+                countT idGT = ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , sttGT , psttw2 ) ;
+                countT idLT = ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , sttLT , psttw2 ) ;
                 ((tin1S&)tin0P).zEtScratch->strWordF( tin0P , psttw2 , psttl , sttq , sttColon , 2 ) ; ___( psttw2 ) ;                    // " \"Anthony B. Cullen\" < abc@foobar.com > "
                 ZE( strokeS* , psttw2 ) ;
                 //sttq = ze ;

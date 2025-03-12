@@ -68,7 +68,7 @@
                         //            !ether.strCompareF( tin0P , psttk , T("note"   ) ) ||
                         //        :
                         //        ? TOCK
-                        //const countT csMax = 1 == ether.strIdF( tin0P , T("autoresponse.") , psttk )
+                        //const countT csMax = 1 == ether.strIdF( tin0P , countTC( 1 ) , T("autoresponse.") , psttk )
 
                         }
                             ether.delF( tin0P , psttd ) ;
@@ -209,7 +209,7 @@
                                 }
                                     ether.strMakeF( tin0P , LF , psttNameP , psttUrlNew ) ; ___( psttNameP ) ;
                                 {
-                                if( !ether.strIdF( tin0P , sttQuest , psttUrlNew ) ) // HTTP/1.0 KEYvALUE PAIRS
+                                if( !ether.strIdF( tin0P , countTC( 1 ) , sttQuest , psttUrlNew ) ) // HTTP/1.0 KEYvALUE PAIRS
                                 strokeS sttQuest( '?' ) ;
 
                                 ether.delF( tin0P , psttQueryKVP ) ;
@@ -241,7 +241,7 @@
                         psttNameP = 0 ;
                         strokeS* psttw = psttNameP ;
                     {
-                    else if( ether.strIdF( tin0P , sttQuest , psttNameP ) ) // HTTP/1.0 KEYvALUE PAIRS
+                    else if( ether.strIdF( tin0P , countTC( 1 ) , sttQuest , psttNameP ) ) // HTTP/1.0 KEYvALUE PAIRS
                     }
                         bFailP = 1 ;
                         ether.traceF( tin0P , T("!exception / readRequestF / psttNameP is null or null length") ) ;

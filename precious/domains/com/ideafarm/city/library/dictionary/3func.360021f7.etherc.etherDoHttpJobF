@@ -645,12 +645,12 @@
                                                 TN( tHelp , bIsHelpPage
 
                                                 const boolT bExistHelp  = REPLY.prPostPageHelp && COSTS( REPLY.prPostPageHelp ) ;
-                                                const boolT bIsHelpPage = !!strIdF( tin0P , T("/nobot/help/") , tUrl ) ;
-                                                //const boolT bIsLogoutPage = 1 == strIdF( tin0P , T("/header/action/logout.html") , tUrl ) ;
+                                                const boolT bIsHelpPage = !!strIdF( tin0P , countTC( 1 ) , T("/nobot/help/") , tUrl ) ;
+                                                //const boolT bIsLogoutPage = 1 == strIdF( tin0P , countTC( 1 ) , T("/header/action/logout.html") , tUrl ) ;
 
                                                 ;
                                                     )
-                                                        1 == strIdF( tin0P , T("/?") , tUrl )
+                                                        1 == strIdF( tin0P , countTC( 1 ) , T("/?") , tUrl )
                                                         !strCompareF( tin0P , tSlash , tUrl ) ||
                                                     (
                                                     idPortMe == ifcIDpORT_HTTP                      &&
@@ -1213,12 +1213,12 @@
                             }
                                 delF( tin0P , psttLower ) ;
 
-                                else if( psttLower->idAdam - 4 == strIdF( tin0P , T(".jpeg") , psttLower , - 1 ) ) tContentType = T("image/jpeg") ;
-                                else if( psttLower->idAdam - 3 == strIdF( tin0P , T(".jpg" ) , psttLower , - 1 ) ) tContentType = T("image/jpeg") ;
-                                else if( psttLower->idAdam - 3 == strIdF( tin0P , T(".png" ) , psttLower , - 1 ) ) tContentType = T("image/png" ) ;
-                                else if( psttLower->idAdam - 3 == strIdF( tin0P , T(".mp3" ) , psttLower , - 1 ) ) tContentType = T("audio/mp3" ) ;
-                                else if( psttLower->idAdam - 3 == strIdF( tin0P , T(".mp4" ) , psttLower , - 1 ) ) tContentType = T("video/mp4" ) ;
-                                     if( psttLower->idAdam - 3 == strIdF( tin0P , T(".avi" ) , psttLower , - 1 ) ) tContentType = T("video/avi" ) ;
+                                else if( psttLower->idAdam - 4 == strIdF( tin0P , countTC( 1 ) , T(".jpeg") , psttLower , - 1 ) ) tContentType = T("image/jpeg") ;
+                                else if( psttLower->idAdam - 3 == strIdF( tin0P , countTC( 1 ) , T(".jpg" ) , psttLower , - 1 ) ) tContentType = T("image/jpeg") ;
+                                else if( psttLower->idAdam - 3 == strIdF( tin0P , countTC( 1 ) , T(".png" ) , psttLower , - 1 ) ) tContentType = T("image/png" ) ;
+                                else if( psttLower->idAdam - 3 == strIdF( tin0P , countTC( 1 ) , T(".mp3" ) , psttLower , - 1 ) ) tContentType = T("audio/mp3" ) ;
+                                else if( psttLower->idAdam - 3 == strIdF( tin0P , countTC( 1 ) , T(".mp4" ) , psttLower , - 1 ) ) tContentType = T("video/mp4" ) ;
+                                     if( psttLower->idAdam - 3 == strIdF( tin0P , countTC( 1 ) , T(".avi" ) , psttLower , - 1 ) ) tContentType = T("video/avi" ) ;
 
                                 strConvertToLowerCaseF( tin0P , psttLower , psttName ) ; ___( psttLower ) ;
                                 ZE( strokeS* , psttLower ) ;
@@ -1513,8 +1513,8 @@
                 //CS:CODEsYNC: 360021f7 3600212d
 
                 }
-                    bFileArchive   = 1 == strIdF( tin0P , tPattern          , psttName ) ;
-                    bFileChallenge = 1 == strIdF( tin0P , tPatternChallenge , psttName ) ;
+                    bFileArchive   = 1 == strIdF( tin0P , countTC( 1 ) , tPattern          , psttName ) ;
+                    bFileChallenge = 1 == strIdF( tin0P , countTC( 1 ) , tPatternChallenge , psttName ) ;
 
                     TN( tPatternChallenge , "/.well-known/acme-challenge/" ) ;
                     // "/.well-known/acme-challenge/ZkmjsTYwqPtrWqTRu-3VunoLb_X656Tg8iILtFL8ZWE"

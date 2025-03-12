@@ -178,8 +178,8 @@ TASK( tmWorkerF )
                                 etThread.strSubstringF( tin0P , psttFind , idf , idl , psttc1 , 0 ) ; ___( psttFind ) ;
                                 ZE( strokeS* , psttFind ) ;
 
-                                countT idl = etThread.strIdF( tin0P , T(".") , psttc1 , 8 ) ;
-                                countT idf = etThread.strIdF( tin0P , T(".") , psttc1 , 5 ) ;
+                                countT idl = etThread.strIdF( tin0P , countTC( 1 ) , T(".") , psttc1 , 8 ) ;
+                                countT idf = etThread.strIdF( tin0P , countTC( 1 ) , T(".") , psttc1 , 5 ) ;
 
                                 // !ideafarm.a.2.00000000.00000001.20001231@1617.20170131@0335.9a088138d0158dd07a8035d87a7cbdce.001.fset.zip
                                 //                                |------------------------------------------------------------|
@@ -191,14 +191,14 @@ if( !( cRejectsWas % TUCK ) ) etThread.traceF( tin0P , TF2(cRejectsWas,flFORMAT_
 countT cRejectsWas = incv02AM( cRejects ) ;
                             {
                             else
-                            if( 1 != etThread.strIdF( tin0P , T("!ideafarm.") , psttc1 , 1 ) ) bNope = 1 ;
+                            if( 1 != etThread.strIdF( tin0P , countTC( 1 ) , T("!ideafarm.") , psttc1 , 1 ) ) bNope = 1 ;
                         {
 #endif
 
                         case 9:
                         case 8: { tYear = T(psttc1)                                                                          ; break ; }
-                        case 7: { if( 1 != etThread.strIdF( tin0P , T("wo.ideafarm"              ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
-                        case 5: { if( 1 != etThread.strIdF( tin0P , T("ideafarm.archives.rejects") , psttc1 , 1 ) ) bNope = 1 ; break ; }
+                        case 7: { if( 1 != etThread.strIdF( tin0P , countTC( 1 ) , T("wo.ideafarm"              ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
+                        case 5: { if( 1 != etThread.strIdF( tin0P , countTC( 1 ) , T("ideafarm.archives.rejects") , psttc1 , 1 ) ) bNope = 1 ; break ; }
 
                         // | 9        !ideafarm.a.2.00000000.00000001.20001231@1617.20170131@0335.9a088138d0158dd07a8035d87a7cbdce.001.fset.zip
                         // | 8        2008
@@ -214,9 +214,9 @@ countT cRejectsWas = incv02AM( cRejects ) ;
 #else
                         case 7:
                         case 6: { tYear = T(psttc1)                                                                          ; break ; }
-                        case 5: { if( 1 != etThread.strIdF( tin0P , T("wo.ideafarm"              ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
-                        case 3: { if( 1 != etThread.strIdF( tin0P , T("ideafarm.archives.rejects") , psttc1 , 1 ) ) bNope = 1 ; break ; }
-                        case 2: { if( 1 != etThread.strIdF( tin0P , T("from."                    ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
+                        case 5: { if( 1 != etThread.strIdF( tin0P , countTC( 1 ) , T("wo.ideafarm"              ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
+                        case 3: { if( 1 != etThread.strIdF( tin0P , countTC( 1 ) , T("ideafarm.archives.rejects") , psttc1 , 1 ) ) bNope = 1 ; break ; }
+                        case 2: { if( 1 != etThread.strIdF( tin0P , countTC( 1 ) , T("from."                    ) , psttc1 , 1 ) ) bNope = 1 ; break ; }
 
                         // | 7        !ideafarm.a.2.00000000.00000001.20001231@1617.20170131@0335.9a088138d0158dd07a8035d87a7cbdce.001.fset.zip
                         // | 6        2008

@@ -57,7 +57,7 @@ DONE( tmRefreshYearF )
                     etThread.delF( tin0P , pstt1Lines ) ;
                     }
                         }
-                            bChanged = !etThread.strIdF( tin0P , tRecord , psttc1 ) ;
+                            bChanged = !etThread.strIdF( tin0P , countTC( 1 ) , tRecord , psttc1 ) ;
                             //etThread.traceF( tin0P , T("to new record:                                          ")+tRecord ) ;
                             //etThread.traceF( tin0P , T("comparing lath line of history:    ")+T(psttc1) ) ;
                         {
@@ -170,8 +170,8 @@ DONE( tmRefreshYearF )
                             TN( tFileNameMeta , pInfoInner->psttIfoName ) ;
                         {
                         )
-                            //&& !etThread.strIdF( tin0P , tMetaDigestHistory , pInfoInner->psttIfoName )            THIS LINE IS REDUNDANT IF tMetaDigestHistory CONTAINS tMetaDigest
-                                 !etThread.strIdF( tin0P , tMetaDigest        , pInfoInner->psttIfoName )
+                            //&& !etThread.strIdF( tin0P , countTC( 1 ) , tMetaDigestHistory , pInfoInner->psttIfoName )            THIS LINE IS REDUNDANT IF tMetaDigestHistory CONTAINS tMetaDigest
+                                 !etThread.strIdF( tin0P , countTC( 1 ) , tMetaDigest        , pInfoInner->psttIfoName )
                         (
                         if
                     {

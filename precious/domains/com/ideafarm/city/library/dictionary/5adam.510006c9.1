@@ -29,7 +29,7 @@ etThread.traceF( tin0P , T("ok") ) ;
                     ZE( strokeS* , psttShort ) ;
                 {
                 if( idHit ++ )
-                countT idHit = etThread.strIdF( tin0P , strokeS( '/' ) , pInfo->psttIfoName , - 1 ) ;                
+                countT idHit = etThread.strIdF( tin0P , countTC( 1 ) , strokeS( '/' ) , pInfo->psttIfoName , - 1 ) ;                
             {
             if( ( pInfo->cbUsed || pInfo->cbUsedHigh ) && !pInfo->cbUsedHigh ) // SKIPS LARGE FILES BECAUSE EXCEED LIMIT OF RAX ANYWAY
             if( !( ++ idLook % ( TUCK << 4 ) ) ) etThread.traceF( tin0P , TF2(idLook,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tInspecting+T(pInfo->psttIfoName) ) ;
@@ -159,7 +159,7 @@ countT subtractByteStringsReversedF( tin0S& tin0P , countT& pEther , countT& c1P
             {
             if( !POOP )
 
-            __( !etherP.strIdF( tin0P , T("HTTP/1.1 201 Created") , tHear ) ) ;
+            __( !etherP.strIdF( tin0P , countTC( 1 ) , T("HTTP/1.1 201 Created") , tHear ) ) ;
 
             //etScratch.traceF( tin0P , T(postHear) ) ;
             TN( tHear , postHear ) ;
@@ -247,8 +247,8 @@ countT subtractByteStringsReversedF( tin0S& tin0P , countT& pEther , countT& c1P
                 idfHost ++ ;
             {
             if( idfHost && idfUrlPrefix )
-            countT idfUrlPrefix = etherP.strIdF( tin0P , strokeS( '/' ) , rAuthP.tPublicUrl , 3 ) ;
-            countT idfHost      = etherP.strIdF( tin0P , strokeS( '/' ) , rAuthP.tPublicUrl , 2 ) ;
+            countT idfUrlPrefix = etherP.strIdF( tin0P , countTC( 1 ) , strokeS( '/' ) , rAuthP.tPublicUrl , 3 ) ;
+            countT idfHost      = etherP.strIdF( tin0P , countTC( 1 ) , strokeS( '/' ) , rAuthP.tPublicUrl , 2 ) ;
         {
         ZE( strokeS* , psttUrlPrefix ) ;
     {

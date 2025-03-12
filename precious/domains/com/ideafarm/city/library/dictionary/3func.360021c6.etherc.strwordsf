@@ -74,7 +74,7 @@
                         ZE( strokeS* , pstt1p ) ;
                     {
                     else
-                    if( !strIdF( tin0P , tBreak , psttw3 ) ) { stqLazy << psttw3 ; psttw3 = 0 ; }
+                    if( !strIdF( tin0P , countTC( 1 ) , tBreak , psttw3 ) ) { stqLazy << psttw3 ; psttw3 = 0 ; }
 
                     }
                         bLazyIsDelim = 0 ;
@@ -111,7 +111,7 @@
                     ZE( strokeS* , psttw2 ) ;
                     if( idw > idfSave ) idw -- ;                                                                     // LATH BEFORE DELIMITER OR, IF NONE, BEGINNING OF DELIMITER
                 {
-                if( idfSave <= psttp->idAdam && !strIdF( tin0P , psttp[ CSpREFIX - 1 + idfSave ] , psttDelimiters ) ) // IF CURSOR IS NOT AT A DELIMITER
+                if( idfSave <= psttp->idAdam && !strIdF( tin0P , countTC( 1 ) , psttp[ CSpREFIX - 1 + idfSave ] , psttDelimiters ) ) // IF CURSOR IS NOT AT A DELIMITER
 
                 //if( ((tin1S&)tin0P).pc Utility[ 0 ] ) LOGrAW5( "[idfDelim,idlDelim]: " , idfDelim , " " , idlDelim , "\r\n" ) ;
 
@@ -229,7 +229,7 @@
                     //CONoUTrAW( T("is broken: \"")+T(psttl)+T("\"\r\n") ) ;
                     bBroken = 1 ;
                 {
-                if( !bBroken && ether.strIdF( tin0P , tBreakP , psttl ) )
+                if( !bBroken && ether.strIdF( tin0P , countTC( 1 ) , tBreakP , psttl ) )
                 strokeS*& psttl = *(strokeS**)&stqLazyP[ idLazy ] ;
             {
             for( countT idLazy = cLazy ; idLazy ; idLazy -- )

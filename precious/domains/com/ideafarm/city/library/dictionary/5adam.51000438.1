@@ -157,7 +157,7 @@ DONEdRIVENsERVER( tmcF )
                         countT cCodes = 0x200 ;
                         stackC stCodes( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                     {
-                    else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: 01.1.1\r\n") , psttBody ) )
+                    else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("\r\nItem Number: 01.1.1\r\n") , psttBody ) )
                     }
                         }
                             etThread.boxPutF( tin0P , T("ideafarm.com//smtp/" ifcEMAIL_OLDfROM "/")+T(psttFromIn)+T("//" ifcEMAIL_OLDfROM "") , tNote , tNote.csF( tin0P ) ) ;
@@ -213,7 +213,7 @@ DONEdRIVENsERVER( tmcF )
                         TN( tCode , "" ) ; 
                         TN( tFile , "" ) ;
                     {
-                    else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: e.1.1\r\n") , psttBody ) )
+                    else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("\r\nItem Number: e.1.1\r\n") , psttBody ) )
                     }
                         }
                             etThread.boxPutF( tin0P , tFile , sJournal ) ;
@@ -281,12 +281,12 @@ DONEdRIVENsERVER( tmcF )
                                 sJournal << (countT)2 ; // idType: PURCHASE OF d.1.1
                                 days = 0x80 ;
                             {
-                            else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: d.1.1\r\n") , psttBody ) )
+                            else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("\r\nItem Number: d.1.1\r\n") , psttBody ) )
                             }
                                 sJournal << (countT)1 ; // idType: PURCHASE OF c.1.1
                                 days = 0x40 ;
                             {
-                            if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: c.1.1\r\n") , psttBody ) )
+                            if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("\r\nItem Number: c.1.1\r\n") , psttBody ) )
                             ZE( countT , days ) ;
                         {
                         sJournal << (countT)1 ; //idFormat
@@ -327,21 +327,21 @@ DONEdRIVENsERVER( tmcF )
                             TN( tFile , "///ideafarm/ephemeral/passcode/" ) ;
                         {
                     {
-                    else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: c.1.1\r\n") , psttBody ) || ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: d.1.1\r\n") , psttBody ) )
+                    else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("\r\nItem Number: c.1.1\r\n") , psttBody ) || ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("\r\nItem Number: d.1.1\r\n") , psttBody ) )
                     }
                         ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttnu ) ;
                         ((tin1S&)tin0P).zEtScratch->boxPutUniqueF( tin0P , psttnu , T("///ideafarm/ephemeral/payment/")+T(psttFromIn)+T(".$note.b.1.1") , oston , oston.costF() + 1 ) ;
                         ZE( strokeS* , psttnu ) ;
                         OStEXTV( oston , "b340104 detected an incoming payment notice for b.1.1" )
                     {
-                    else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: b.1.1\r\n") , psttBody ) )
+                    else if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("\r\nItem Number: b.1.1\r\n") , psttBody ) )
                     }
                         ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttnu ) ;
                         ((tin1S&)tin0P).zEtScratch->boxPutUniqueF( tin0P , psttnu , T("///ideafarm/ephemeral/payment/")+T(psttFromIn)+T(".$note.9.1.1") , oston , oston.costF() + 1 ) ;
                         ZE( strokeS* , psttnu ) ;
                         OStEXTV( oston , "b340104 detected an incoming payment notice for 9.1.1" )
                     {
-                    if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("\r\nItem Number: 9.1.1\r\n") , psttBody ) )
+                    if( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("\r\nItem Number: 9.1.1\r\n") , psttBody ) )
 
                     }
                         etThread.delF( tin0P , psttll ) ;
@@ -357,7 +357,7 @@ DONEdRIVENsERVER( tmcF )
                             ZE( countT , idl ) ;
                             countT idf = tBuyerColon.csF( tin0P ) + 1 ;
                         {
-                        else if( 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , tBuyerColon , psttll ) )
+                        else if( 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , tBuyerColon , psttll ) )
                         }
                             }
                                 ((tin1S&)tin0P).zEtScratch->delF( tin0P , pstt1w ) ;
@@ -381,14 +381,14 @@ DONEdRIVENsERVER( tmcF )
                                 psttFromIn = psttw ; psttw = 0 ;
                                 ((tin1S&)tin0P).zEtScratch->strTrimF( tin0P , psttw , 0 , T(TbLACKnEWlINE) ) ; ___( psttw ) ;
                             {
-                            if( !((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("<") , psttw ) )
+                            if( !((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("<") , psttw ) )
 
                             ((tin1S&)tin0P).zEtScratch->strSubstringF( tin0P , psttw , idf , idl , psttc1 ) ; ___( psttw ) ;
                             ZE( strokeS* , psttw ) ;
                             ZE( countT , idl ) ;
                             countT idf = tFromColon.csF( tin0P ) + 1 ;
                         {
-                        if( 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , tFromColon , psttll ) )
+                        if( 1 == ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , tFromColon , psttll ) )
                         etThread.strokeF( tin0P , T("| ")+T(psttll)+T("\r\n") ) ; //U::
                         etThread.strConvertToLowerCaseF( tin0P , psttll ) ;
                         strokeS* psttll = psttOldC( tin0P , etThread , psttc1 ) ; ___( psttll ) ;
@@ -445,11 +445,11 @@ DONEdRIVENsERVER( tmcF )
                 }
                     }
                         etThread.delF( tin0P , psttlLower ) ;
-                        bFromFound = 1 == etThread.strIdF( tin0P , T("from:") , psttlLower ) ;
+                        bFromFound = 1 == etThread.strIdF( tin0P , countTC( 1 ) , T("from:") , psttlLower ) ;
                         etThread.strConvertToLowerCaseF( tin0P , psttlLower , psttl ) ; ___( psttlLower ) ;        // "from: joe foo <jfoo@bar.com>"
                         ZE( strokeS* , psttlLower ) ;
                     {
-                    if( !bFromFound && etThread.strIdF( tin0P , psttFrom , psttl ) )                             // "FROM: Joe Foo <jfoo@bar.com>"
+                    if( !bFromFound && etThread.strIdF( tin0P , countTC( 1 ) , psttFrom , psttl ) )                             // "FROM: Joe Foo <jfoo@bar.com>"
     
                     st_psttBody << psttOldC( tin0P , etThread , T("\r\n") ) ;
                     st_psttBody << psttl ;
@@ -589,13 +589,13 @@ DONEdRIVENsERVER( tmcF )
                 }
                     if( *((tin1S&)tin0P).zEtScratch ) bNoSpammerSink = 1 ;
                     ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttw ) ;
-                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("chibyusa") , psttw ) ) ; //THERESA
-                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("divachild") , psttw ) ) ; //THERESA
-                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("thetinydot") , psttw ) ) ; //JULIA
-                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("mail@tranxact.com") , psttw ) ) ; //DAVID
-                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("ranchlife@js-net.com") , psttw ) ) ; //STEVE
-                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("dduringer@juno.com") , psttw ) ) ; //DAN
-                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , T("tduringer@juno.com") , psttw ) ) ; //MOM
+                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("chibyusa") , psttw ) ) ; //THERESA
+                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("divachild") , psttw ) ) ; //THERESA
+                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("thetinydot") , psttw ) ) ; //JULIA
+                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("mail@tranxact.com") , psttw ) ) ; //DAVID
+                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("ranchlife@js-net.com") , psttw ) ) ; //STEVE
+                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("dduringer@juno.com") , psttw ) ) ; //DAN
+                    //__( ((tin1S&)tin0P).zEtScratch->strIdF( tin0P , countTC( 1 ) , T("tduringer@juno.com") , psttw ) ) ; //MOM
                     ((tin1S&)tin0P).zEtScratch->strConvertToLowerCaseF( tin0P , psttw , psttFrom ) ; ___( psttw ) ;
                     ZE( strokeS* , psttw ) ;
                 {

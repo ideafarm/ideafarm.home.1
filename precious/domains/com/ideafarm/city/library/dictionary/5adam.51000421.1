@@ -87,7 +87,7 @@ DONEdRIVENsERVER( tmcF )
                     st_psttMailRcpt << psttl ;                                                                  psttl = 0 ;
                     pso->writeF( tin0P , "250 ok\r\n" ) ;
                     stPhrases << postOldC( tin0P , etThread , T("\r\nrcpt \"")+T(psttw)+T("\"") ) ;                 etThread.delF( tin0P , psttw ) ;
-        /*sttq = ze ;*/  __( !bFromIfc && !etThread.strIdF( tin0P , idf , sttq , tAtIdeafarmDotCom , psttw ) ) ;
+        /*sttq = ze ;*/  __( !bFromIfc && !etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tAtIdeafarmDotCom , psttw ) ) ;
                     idf = 1 ;
                     etThread.strConvertToLowerCaseF( tin0P , psttw , psttw2 ) ;                  ___( psttw ) ;    etThread.delF( tin0P , psttw2 ) ;
         /*sttq = ze ;*/  etThread.strWordF( tin0P , psttw2 , psttw , sttq , sttColon , 2 ) ;          ___( psttw2 ) ;   etThread.delF( tin0P , psttw ) ;
@@ -114,7 +114,7 @@ DONEdRIVENsERVER( tmcF )
                     st_psttMailRcpt << psttl ;                                                                  psttl = 0 ;
                     pso->writeF( tin0P , "250 ok\r\n" ) ;
                     stPhrases << postOldC( tin0P , etThread , T("from \"")+T(psttw2)+T("\"") ) ;                    etThread.delF( tin0P , psttw2 ) ;
-        /*sttq = ze ;*/  boolT bFromIfc = !!etThread.strIdF( tin0P , idf , sttq , tAtIdeafarmDotCom , psttw2 ) ;
+        /*sttq = ze ;*/  boolT bFromIfc = !!etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tAtIdeafarmDotCom , psttw2 ) ;
                     countT idf = 1 ;
         /*sttq = ze ;*/  etThread.strWordF( tin0P , psttw2 , psttw , sttq , sttColon , 2 ) ;          ___( psttw2 ) ;   etThread.delF( tin0P , psttw ) ;
                     __( etThread.strCompareF( tin0P , psttw3 , tFrom ) ) ;                            etThread.delF( tin0P , psttw3 ) ;

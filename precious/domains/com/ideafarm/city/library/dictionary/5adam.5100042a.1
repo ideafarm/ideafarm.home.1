@@ -285,7 +285,7 @@ boolT woRequestF( tin0S& tin0P , etherC& etThread , socketC& sClientP , stackC& 
                 etThread.delF( tin0P , psttValue ) ;
                 etThread.delF( tin0P , psttKey ) ;
                 }
-                    bEncodedBodyP = 1 == etThread.strIdF( tin0P , idf , sttq , tImage , psttValue ) ;
+                    bEncodedBodyP = 1 == etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tImage , psttValue ) ;
                     strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
                     countT idf = 1 ;
                     etThread.strConvertToLowerCaseF( tin0P , psttValue ) ; ___( psttValue ) ;
@@ -312,7 +312,7 @@ boolT woRequestF( tin0S& tin0P , etherC& etThread , socketC& sClientP , stackC& 
                 }
                     etThread.strSubstringF( tin0P , psttHostP , idf , sttq , tSlash , psttUrl ) ; ___( psttPVersion ) ;
                 {
-                if( 1 == etThread.strIdF( tin0P , idf , sttq , tHttpColonSS , psttUrl ) )
+                if( 1 == etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tHttpColonSS , psttUrl ) )
                 idf = 1 ; /*sttq = ze ;*/
 
                 etThread.delF( tin0P , psttw ) ;

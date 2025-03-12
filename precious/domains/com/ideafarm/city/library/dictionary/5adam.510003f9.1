@@ -163,7 +163,7 @@ TODO
                             ZE( strokeS* , psttn2 ) ;
                         {
                         else
-                        if( 1 != etThread.strIdF( tin0P , sttDollar , psttn ) ) pcName[ off ] = etThread.strDigitsToSCountF( tin0P , psttn ) ;
+                        if( 1 != etThread.strIdF( tin0P , countTC( 1 ) , sttDollar , psttn ) ) pcName[ off ] = etThread.strDigitsToSCountF( tin0P , psttn ) ;
                         etThread.strSubstringLineF( tin0P , psttn , idf , sttq , psttw , 1 , T(".") ) ; ___( psttn ) ;
                         ZE( strokeS* , psttn ) ;
                     {
@@ -601,7 +601,7 @@ voidT testAutoF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
                     }
                         etThread.delF( tin0P , psttwl ) ;
 
-                        bListed = !!etThread.strIdF( tin0P , idfListed , sttqListed , tLink , psttwl ) ;
+                        bListed = !!etThread.strIdF( tin0P , countTC( 1 ) , idfListed , sttqListed , tLink , psttwl ) ;
                         strokeS sttqListed( (countT)0 , sc_IGNOREqUOTES ) ;
                         countT idfListed = 1 ;
 
@@ -648,7 +648,7 @@ voidT testAutoF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
                             idw = idws + tExa.csF( tin0P ) ; // COULD NOT FIND THE "simplest" LINE, SO MAKE simplest LINE
                         {
                         if( !idw )
-                        idw = etThread.strIdF( tin0P , idf , sttq , tSim , pstts ) ;
+                        idw = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tSim , pstts ) ;
                         const countT idws = idf = idw ; // FOUND examples LINE AT idws
                     {
                     else
@@ -665,11 +665,11 @@ voidT testAutoF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
                             etherC::ifcSayIF( T("could not find the expected \"\\r\\n/" "*\\r\\n\" in file \"")+tSubjectFile+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
                         {
                         if( !idw )
-                        idw = etThread.strIdF( tin0P , idf , sttq , T("\r\n/" "*\r\n") , pstts ) ;
+                        idw = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("\r\n/" "*\r\n") , pstts ) ;
                         idf = 1 ; // COULD NOT FIND THE "examples" LINE, SO MAKE examples/simplest LINES
                     {
                     if( !idw )                                
-                    countT idw = etThread.strIdF( tin0P , idf , sttq , tExa , pstts ) ;
+                    countT idw = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tExa , pstts ) ;
                     idf = 1 ;
                     TN( tSim , "\r\n simplest\r\n" ) ;
                     TN( tExa , "\r\nexamples\r\n" ) ;
@@ -700,7 +700,7 @@ voidT testAutoF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
                     ZE( strokeS* , psttw ) ;
                     ZE( countT , idl ) ;
                 {
-                if( psttQuotedPart && 1 == etThread.strIdF( tin0P , idf , sttq , T("example.simplest.") , psttQuotedPart ) && idf )
+                if( psttQuotedPart && 1 == etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("example.simplest.") , psttQuotedPart ) && idf )
                 countT idf = 1 ;
 
                 etThread.strWordF( tin0P , psttQuotedPart , tTitle , sttq , S1C(0x22) , 2 ) ; ___( psttQuotedPart ) ;
@@ -730,7 +730,7 @@ voidT testAutoF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
                     }
                         etThread.delF( tin0P , psttwl ) ;
 
-                        bListed = !!etThread.strIdF( tin0P , idfListed , sttqListed , tLink , psttwl ) ;
+                        bListed = !!etThread.strIdF( tin0P , countTC( 1 ) , idfListed , sttqListed , tLink , psttwl ) ;
                         strokeS sttqListed( (countT)0 , sc_IGNOREqUOTES ) ;
                         countT idfListed = 1 ;
 
@@ -754,12 +754,12 @@ voidT testAutoF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
                         etherC::ifcSayIF( T("could not find the expected \"\\r\\n/" "*\\r\\n\" in file \"")+T(psttc1)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
                     {
                     if( !idw )
-                    idw = etThread.strIdF( tin0P , idf , sttq , T("\r\n/" "*\r\n") , psttv ) ;
+                    idw = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("\r\n/" "*\r\n") , psttv ) ;
                     idf = 1 ;
                 {
                 else
                 if( idw ) bSuppress = 1 ;
-                countT idw = etThread.strIdF( tin0P , idf , sttq , tLink , psttv ) ;
+                countT idw = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tLink , psttv ) ;
                 idf = 1 ;
                 textC tLink = T("\\<A HREF=\\\"http://" WWWiDEAFARMcOM "/5.")+tIdi+T(".1.0\\\"\\>definition\\</A\\>\r\n") ;
                 ZE( countT , idfList ) ;
@@ -808,7 +808,7 @@ voidT testAutoF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
             {
             TN( tIdi , "" ) ;
         {
-        if( bBase || etThread.strIdF( tin0P , idf , sttq , T("\r\n//VISIBLE\r\n") , psttv ) )
+        if( bBase || etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("\r\n//VISIBLE\r\n") , psttv ) )
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = 1 ;
 
@@ -825,7 +825,7 @@ voidT testAutoF( tin0S& tin0P , etherC& etThread , const boolT bTestP )
         //if( cToDo == cToDoSave && !etThread.strCompareF( tin0P , psttc1 , T("///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/5adam.0000104") ) ) continue ;
 
         }
-            bBase = 1 != etThread.strIdF( tin0P , idf , sttq , tDic+T("adam.") , psttc1 ) ;
+            bBase = 1 != etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tDic+T("adam.") , psttc1 ) ;
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
         {
@@ -1004,11 +1004,11 @@ voidT findFunctionCallInstancesF( tin0S& tin0P , etherC& etThread , const boolT 
                 {
                 else
                 if( !idw ) etherC::ifcSayIF( T("could not find the expected \"\\r\\n/" "*\\r\\n\" in file \"")+T(psttc1)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
-                countT idw = etThread.strIdF( tin0P , idf , sttq , T("\r\n/" "*\r\n") , pstti ) ;
+                countT idw = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("\r\n/" "*\r\n") , pstti ) ;
                 //sttq = ze ;
                 idf = 1 ;
             {
-            if( !etThread.strIdF( tin0P , idf , sttq , tIns , pstti ) )
+            if( !etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tIns , pstti ) )
             strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
             TN( tIns , "\r\n\\<A HREF=\\\"http://" WWWiDEAFARMcOM "/6." ) ;
@@ -1025,7 +1025,7 @@ voidT findFunctionCallInstancesF( tin0S& tin0P , etherC& etThread , const boolT 
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
 
-        { countT idf = 1 ; strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ; if( etThread.strIdF( tin0P , idf , sttq , tOperator , psttc1 ) ) continue ; }
+        { countT idf = 1 ; strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ; if( etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tOperator , psttc1 ) ) continue ; }
 
         if( !( cToDo % 0x100 ) ) etherC::ifcSayIF( TF3(--cToDo,0,6) , flSAY_APPEND | flSAY_LOG ) ;
     {
@@ -1048,8 +1048,8 @@ voidT insertInstanceSectionF( tin0S& tin0P , etherC& etThread , const boolT bTes
 
         etherC::ifcSayIF( T("no example simplest exists for: ")+T(psttw) , flSAY_APPEND | flSAY_LOG ) ;
         )
-            ( idf = 1 , !etThread.strIdF( tin0P , idf , sttq , T("example.simplest.")+T(psttw) , psttd ) ) // "example.simplest.func.1234001.fooC.barF"
-            ( idf = 1 , !etThread.strIdF( tin0P , idf , sttq , T("\r\nit is illegal to refer to this symbol in the definition of an adam\r\n") , psttd ) ) &&
+            ( idf = 1 , !etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("example.simplest.")+T(psttw) , psttd ) ) // "example.simplest.func.1234001.fooC.barF"
+            ( idf = 1 , !etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , T("\r\nit is illegal to refer to this symbol in the definition of an adam\r\n") , psttd ) ) &&
         (
         if // FOR SPEED, sttq IS NOT REINITIALIZED FOR THE OO'TH strIdF CALL, SINCE IT SHOULD NOT HAVE CHANGED
 
@@ -1092,8 +1092,8 @@ voidT verifyExampleSimplestExistsF( tin0S& tin0P , etherC& etThread , const bool
         idNextSection = idcr + 2 ;
 
         if(    !idcr || idcr >  psttP->idAdam - 2 || psttP[ CSpREFIX + 1 + idcr ] == S1C(' ') ) idcr = 0 ;
-        while(  idcr && idcr <= psttP->idAdam - 2 && psttP[ CSpREFIX + 1 + idcr ] == S1C(' ') ) idcr = etThread.strIdF( tin0P , idf , sttq , tCr , psttP ) ;
-        countT                                                                                idcr = etThread.strIdF( tin0P , idf , sttq , tCr , psttP ) ;
+        while(  idcr && idcr <= psttP->idAdam - 2 && psttP[ CSpREFIX + 1 + idcr ] == S1C(' ') ) idcr = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tCr , psttP ) ;
+        countT                                                                                idcr = etThread.strIdF( tin0P , countTC( 1 ) , idf , sttq , tCr , psttP ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf = idFirstP ;    
         TN( tCr , "\r\n" ) ;
