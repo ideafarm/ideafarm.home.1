@@ -59,7 +59,7 @@ DONE( tmLaunchBatExeFilesF )
                         etThread.diskMapFileNameF( tin0P , psttm , psttc1 ) ; ___( psttm ) ;
                         ZE( strokeS* , psttm ) ;
                     {
-                    if( etThread.strIdF( tin0P , T(".bat") , psttc1 ) && !etThread.strIdF( tin0P , T(".!writing.") , psttc1 )
+                    if( etThread.strIdF( tin0P , tDotBat , psttc1 ) && !etThread.strIdF( tin0P , tDotHeyWritingDot , psttc1 ) )
                 {
                 if( psttc1[ CSpREFIX - 1 + psttc1->idAdam ].idAdam != '/' )                                 // IF NOT DIRECTORY
             {
@@ -77,6 +77,8 @@ DONE( tmLaunchBatExeFilesF )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
     boolT bWoth = 1 ;
+    TN( tDotHeyWritingDot , ".!writing." ) ;
+    TN( tDotBat , ".bat" ) ;
 
     etThread.diskMakeDirIfNeededF( tin0P , tDrop ) ;
     TN( tDrop , "///ideafarm/controls/drop.executables/" ) ;
