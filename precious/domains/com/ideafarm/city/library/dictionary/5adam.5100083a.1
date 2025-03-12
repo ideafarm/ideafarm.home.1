@@ -38,15 +38,28 @@ DONE( tmLaunchBatExeFilesF )
                 }
                     }
                         etThread.diskFileOrDirDeleteF( tin0P , psttm ) ;
-                        CONoUTrAW( "\r\n" ) ;
-                        etThread.osProcessF( tin0P , countTC() , countTC() , countTC() , countTC() , psttm ) ;
-                        CONoUTrAW( "\r\n" ) ;
-                        etThread.traceF( tin0P , T("launching [tLong]:    ")+T(psttm) ) ;
+
+                        }
+                            }
+                                etThread.traceF( tin0P , T("!exception / could not launch [tLong]:    ")+tLong ) ;
+                                POOPRqUIET
+                            {
+                            if( POOP )
+
+                            CONoUTrAW( "\r\n" ) ;
+                            ((tin1S&)tin0P).pEtScratch->osProcessF( tin0P , countTC() , countTC() , countTC() , countTC() , tLong ) ;
+                            CONoUTrAW( "\r\n" ) ;
+
+                            SCOOPS
+                        {
+                        IFsCRATCHoK
+                        etThread.traceF( tin0P , T("launching [tLong]:    ")+tLong ) ;
+                        TN( tLong , psttm ) ;
 
                         etThread.diskMapFileNameF( tin0P , psttm , psttc1 ) ; ___( psttm ) ;
                         ZE( strokeS* , psttm ) ;
                     {
-                    if( etThread.strIdF( tin0P , T(".bat") , psttc1 ) )
+                    if( etThread.strIdF( tin0P , T(".bat") , psttc1 ) && !etThread.strIdF( tin0P , T(".!writing.") , psttc1 )
                 {
                 if( psttc1[ CSpREFIX - 1 + psttc1->idAdam ].idAdam != '/' )                                 // IF NOT DIRECTORY
             {
