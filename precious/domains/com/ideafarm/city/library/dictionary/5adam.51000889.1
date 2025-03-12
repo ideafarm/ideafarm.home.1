@@ -50,6 +50,11 @@ DONE( tmGorillaF )
             idNewSuccess = 0 ;
 
             }
+                }
+//U::: MODIFY IMAGE AND WRITE IMAGE TO CONTROL FOLDER OF wh1
+                {
+                if( idNewFail == 8 )
+
                 etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
 
                 ) ;
@@ -170,12 +175,34 @@ DONE( tmGorillaF )
     const countT costInvoiceRequired = tInvoice.csF( tin0P ) ;
     TN( tInvoice , "" ) ; tInvoice = TF3(0,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;   //A:ASSUME: UPDATES TO tInvoice DO NOT CHANGE ITS LENGTH
 
-//Sleep( 1000 * 10 ) ;
+    dropAndModifyBatFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse ) ;
+
+    }
+        etThread.delF( tin0P , posti ) ;
+        tModifiedSettingsSoilFileImageToUse = T(posti) ;
+        etThread.boxGetShadowF( tin0P , posti , costi , T("///d/ideafarm.work/txt/soil/settings/production/settings.production.go1.yes.gorilla.yes.administrator.yes.welcomer.yes.dns.soil") ) ; ___( posti ) ;
+        ZE( countT   , costi ) ;
+        ZE( osTextT* , posti ) ;
+    {
+    TN( tModifiedSettingsSoilFileImageToUse , "" ) ;
 
     _IO_
 {
 if( pTaskP )
 TASK( tmGorillaF )
+
+}
+    TN( tFind2 , " \"dns.wh1.netsh.command.ipv4." ) ;
+    TN( tFind1 , "{kv: dns.wh1.netsh.command.ipv4.settingkey" ) ;
+
+    // "{kv: dns.wh1.netsh.command.ipv4.settingkey              "dns.wh1.netsh.command.ipv4.1"                  }"
+    //
+    // NOW EDIT THE FOLLOWING VALUE IN THE SETTINGS IMAGE TO INCREMENT MODULO 4:
+
+    etherP.boxPutF( tin0P , T("///ideafarm/IdeaFarm (tm)/")+tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/new.settings.from.gorilla.soil") , tP , tP.csF( tin0P ) ) ;
+    TN( tUser , thirdC::postUserNameIF() ) ;
+{
+voidT dropAndModifyBatFileImageF( tin0P& tin0P , etherC& etherP , textT& tP )
 
 countT idInvoiceLath ;
 
