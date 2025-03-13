@@ -484,24 +484,32 @@ DONE( tmFreshSettingsF )
                 }
                     }
                         }
-                            etThread.traceF( tin0P , T("!exception / could not get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
+                            continue ;
+                            /**/etThread.traceF( tin0P , T("!exception / could not get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
                             POOPRqUIET
                             countT rc = POOP ;
                         {
                         else
-                        if( !POOP ) ;//etThread.traceF( tin0P , T(" [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
+                        }
+                            break ;
+                            //etThread.traceF( tin0P , T(" [timeWritten]:    ")+TT(timeWritten.time1,timeWritten.time2) ) ;
+                        {
+                        if( !POOP )
 
                         thirdC::getFileTimeIF( tin0P , fir , &timeWritten , 0 , 0 ) ;
                     {
                     else
                     }
-                        etThread.traceF( tin0P , T("!exception / could not open settings file to get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
+                        continue ;
+                        /**/etThread.traceF( tin0P , T("!exception / could not open settings file to get file time [rc,tLong]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tLongFile ) ;
                         POOPRqUIET
                         countT rc = POOP ;
                     {
                     if( POOP )
 
-                    fileC fir( tin0P , (strokeS*)tLongFile , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 0 , 0 ) ;
+                    fileC fir( tin0P , (strokeS*)tLongFile , ifcOPENaCCESS_R , ifcOPENsHARE_WR , flOPENdETAILS_LOCsEQ , ifcOPENhOW_nFeO , flFILEaTTR1_null, flFILEaTTR2_null , flFILEc_null , 1 , 0 ) ;
+
+                    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
 
                     SCOOPS
                     _IO_
@@ -509,6 +517,8 @@ DONE( tmFreshSettingsF )
                 IFsCRATCHoK
                 _IO_
             {
+            while( !ether )
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
             timeS timeWritten ;
             _IO_
         {
@@ -758,7 +768,7 @@ TASK( tmFreshSettingsF )
                     POOPRqUIET
                 {
                 else
-                if( !POOP ) ;//etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+                if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
                 ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
                 SCOOPS
                 _IO_
