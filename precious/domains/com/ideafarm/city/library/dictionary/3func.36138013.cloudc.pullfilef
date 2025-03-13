@@ -39,12 +39,12 @@
                         }
                             }
                                 }
-                                    ether.traceF( tin0P , T("!exception / could not delete 3 [file]:    ")+tFileTmp ) ;
+                                    //ether.traceF( tin0P , T("!exception / could not delete 3 [file]:    ")+tFileTmp ) ;
                                     POOPR
                                 {
                                 if( POOP )
                                 ((tin1S&)tin0P).pEtScratch->diskFileOrDirDeleteF( tin0P , tFileTmp , flFILEoRdIRdELETE_null , 1 ) ;
-                                ether.traceF( tin0P , T("!exception / could not move file [to,from]:    ")+tFile+T("    ")+tFileTmp ) ;
+                                //ether.traceF( tin0P , T("!exception / could not move file [to,from]:    ")+tFile+T("    ")+tFileTmp ) ;
                                 POOPR
                             {
                             if( POOP )
@@ -53,12 +53,12 @@
                         else
                         }
                             }
-                                ether.traceF( tin0P , T("!exception / could not delete 2 [file]:    ")+tFileTmp ) ;
+                                //ether.traceF( tin0P , T("!exception / could not delete 2 [file]:    ")+tFileTmp ) ;
                                 POOPR
                             {
                             if( POOP )
                             ((tin1S&)tin0P).pEtScratch->diskFileOrDirDeleteF( tin0P , tFileTmp , flFILEoRdIRdELETE_null , 1 ) ;
-                            ether.traceF( tin0P , T("!exception / could not delete 1 [file]:    ")+tFile ) ;
+                            //ether.traceF( tin0P , T("!exception / could not delete 1 [file]:    ")+tFile ) ;
                             POOPR
                         {
                         if( POOP )
@@ -249,15 +249,15 @@
                         // SAMPLE REPLY
                     {
                     else
-                    if( POOP ) ether.traceF( tin0P , T("pullFileF / could not write") ) ;
+                    if( POOP ) ;//ether.traceF( tin0P , T("pullFileF / could not write") ) ;
                     ss.writeF( tin0P , (osTextT*)tSay , (countT)tSay.csF( tin0P ) ) ;
                 {
                 else
-                if( POOP ) ether.traceF( tin0P , T("pullFileF / could not connect") ) ;
+                if( POOP ) ;//ether.traceF( tin0P , T("pullFileF / could not connect") ) ;
                 ss.connectF( tin0P , 443 , socketC::nicNameIF( tin0P , ether , tHost ) ) ;
             {
             else
-            if( POOP ) ether.traceF( tin0P , T("pullFileF / could not ct socket") ) ;
+            if( POOP ) ;//ether.traceF( tin0P , T("pullFileF / could not ct socket") ) ;
             socketC ss( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL /*, &idleTimeAllowedRead , &idleTimeAllowedWrite*/ ) ;
             ZE( boolT , bNotFound ) ;
             TN( tFileTmp , "" ) ;

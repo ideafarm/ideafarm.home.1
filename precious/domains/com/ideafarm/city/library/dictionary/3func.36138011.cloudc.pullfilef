@@ -16,7 +16,7 @@
                 etPrime.osSleepF( tin0P , TOCK ) ;
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                ether.traceF( tin0P , T("will retry after napping for a tock") ) ;
+                //ether.traceF( tin0P , T("will retry after napping for a tock") ) ;
 
                 ether.delF( tin0P , pbP ) ;
 
@@ -149,15 +149,15 @@
                         // SAMPLE REPLY
                     {
                     else
-                    if( POOP ) ether.traceF( tin0P , T("pullFileF / could not write") ) ;
+                    if( POOP ) ;//ether.traceF( tin0P , T("pullFileF / could not write") ) ;
                     ss.writeF( tin0P , (osTextT*)tSay , (countT)tSay.csF( tin0P ) ) ;
                 {
                 else
-                if( POOP ) ether.traceF( tin0P , T("pullFileF / could not connect") ) ;
+                if( POOP ) ;//ether.traceF( tin0P , T("pullFileF / could not connect") ) ;
                 ss.connectF( tin0P , 443 , socketC::nicNameIF( tin0P , ether , tHost ) ) ;
             {
             else
-            if( POOP ) ether.traceF( tin0P , T("pullFileF / could not ct socket") ) ;
+            if( POOP ) ;//ether.traceF( tin0P , T("pullFileF / could not ct socket") ) ;
             socketC ss( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
 
             SCOOPS
