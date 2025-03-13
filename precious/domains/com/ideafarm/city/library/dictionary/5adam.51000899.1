@@ -51,8 +51,8 @@ DONE( tmWorkF )
                         ZE( byteT* , pbr ) ;
                         //etRock.traceF( tin0P , T("replying / 2") ) ;
 
-                        else                          /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        if( postError && *postError ) /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
+                        else                          ;//etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        if( postError && *postError ) ;//etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
                         const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
 
                         }
@@ -329,7 +329,7 @@ DONE( tmWorkF )
     {
     else
     }
-        /**/etRock.traceF( tin0P , T("a required setting is missing") ) ;           //P:PERSONALITY: THIS VERIFICATION IS ONLY DONE NOW ; IT IS NOT DONE WHEN SETTINGS ARE RELOADED BECAUSE THE FILE TIME HAS CHANGED, SO SETTINGS ERRORS THEN WILL JUST CAUSE ME TO FAIL
+        /**/etRock.traceF( tin0P , T("!exception / a required setting is missing") ) ;           //P:PERSONALITY: THIS VERIFICATION IS ONLY DONE NOW ; IT IS NOT DONE WHEN SETTINGS ARE RELOADED BECAUSE THE FILE TIME HAS CHANGED, SO SETTINGS ERRORS THEN WILL JUST CAUSE ME TO FAIL
         mySettings.grabMe.ungrabF( tin0P ) ;
     {
     if( !mySettings )

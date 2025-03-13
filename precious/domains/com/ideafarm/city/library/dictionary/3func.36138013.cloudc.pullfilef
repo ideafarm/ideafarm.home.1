@@ -16,18 +16,18 @@
                 }
                     etPrime.osSleepF( tin0P , TOCK ) ;
                     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
-                    etRock.traceF( tin0P , T("will retry after napping for a tock") ) ;
+                    //etRock.traceF( tin0P , T("will retry after napping for a tock") ) ;
                     ether.diskFileOrDirDeleteF( tin0P , tFileTmp ) ;
                 {
                 else
                 }
                     break ;
                     bOk = 1 ;
-                    etRock.traceF( tin0P , T("skipping this file") ) ;
+                    //etRock.traceF( tin0P , T("skipping this file") ) ;
                 {
                 if( bNotFound )
 
-                etRock.traceF( tin0P , T("pullFileF / unknown error") ) ;
+                //etRock.traceF( tin0P , T("pullFileF / unknown error") ) ;
                 POOPRqUIET ;
             {
             else
@@ -92,7 +92,7 @@
                                         //etRock.traceF( tin0P , T("pullFileF / U:: TO FIND A BUG: 20161201@1132: aok read bite [cDo,cbBite,cbGot]: ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbBite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     {
                                     else
-                                    if( POOP ) etRock.traceF( tin0P , T("pullFileF / could not read bite [cDo,cbBite,cbGot]: ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbBite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    if( POOP ) ;//etRock.traceF( tin0P , T("pullFileF / could not read bite [cDo,cbBite,cbGot]: ")+TF2(cDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbBite,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" ")+TF2(cbGot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
                                     __Z( cbGot ) ;
                                     countT cbGot = ss.readF( tin0P , pbBuffer , cbBite ) ;
@@ -135,9 +135,9 @@
                             //LOGrAW( tSay ) ;
                             //LOGrAW( "\r\n---- REQUEST ----------------------------\r\n" ) ;
 
-                            etRock.traceF( tin0P , T("pullFileF / [tSay]: >>>>")+tSay+T("<<<<") ) ;
-                            etRock.traceF( tin0P , T("pullFileF / [offoDebug,responseFragment]: ")+TF2(offoDebug,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" >>>>")+T(postDebug)+T("<<<<") ) ;
-                            etRock.traceF( tin0P , T("pullFileF / error detected while inspecting reply header") ) ;
+                            //etRock.traceF( tin0P , T("pullFileF / [tSay]: >>>>")+tSay+T("<<<<") ) ;
+                            //etRock.traceF( tin0P , T("pullFileF / [offoDebug,responseFragment]: ")+TF2(offoDebug,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" >>>>")+T(postDebug)+T("<<<<") ) ;
+                            //etRock.traceF( tin0P , T("pullFileF / error detected while inspecting reply header") ) ;
                         {
                         if( POOP )
 
@@ -164,11 +164,11 @@
                                             strokeS sttBlank( ' ' ) ;
                                         {
                                         else
-                                        if( POOP ) etRock.traceF( tin0P , T("pullFileF / expected LF byte but received ")+TF2(ostLF,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                        if( POOP ) ;//etRock.traceF( tin0P , T("pullFileF / expected LF byte but received ")+TF2(ostLF,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                         __NZ( ostLF != '\n' ) ;
                                     {
                                     else
-                                    if( POOP ) etRock.traceF( tin0P , T("pullFileF / could not read expected LF byte") ) ;
+                                    if( POOP ) ;//etRock.traceF( tin0P , T("pullFileF / could not read expected LF byte") ) ;
 
                                     __Z( ss.readF( tin0P , &ostLF , 1 ) ) ;
                                     osTextT ostLF ;
@@ -186,7 +186,7 @@
                                         __( !ether.strIdF( tin0P , tReplyCode200_OK , tLine ) ) ;
 
                                         }
-                                            etRock.traceF( tin0P , T("not found in remote: \"")+T(psttShortP)+T("\"") ) ;
+                                            //etRock.traceF( tin0P , T("not found in remote: \"")+T(psttShortP)+T("\"") ) ;
                                             bNotFound = 1 ;
                                         {
                                         if( ether.strIdF( tin0P , tReplyCode404_NotFound , tLine ) )
@@ -194,7 +194,7 @@
                                         }
                                             break ;
                                             tSay = tn ;
-                                            etRock.traceF( tin0P , T("authorization refused") ) ;
+                                            //etRock.traceF( tin0P , T("authorization refused") ) ;
                                         {
                                         if( POOP )
                                         __NZ( 1 == ether.strIdF( tin0P , tReplyCode401_Unauthorized , tLine ) ) ;
@@ -211,7 +211,7 @@
                             {
                             else if( postBuffer[ offb ] == '\r' )         // IF I HAVE A LINE OF HEADER
                             }
-                                etRock.traceF( tin0P , T("pullFileF / could not read a byte of a reply header line [offb,fragment]: ")+TF2(offb,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" >>>>")+T(postBuffer)+T("<<<<") ) ;
+                                //etRock.traceF( tin0P , T("pullFileF / could not read a byte of a reply header line [offb,fragment]: ")+TF2(offb,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" >>>>")+T(postBuffer)+T("<<<<") ) ;
 
                                 postBuffer[ offb ] = 0 ;
                             {
