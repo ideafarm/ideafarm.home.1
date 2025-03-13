@@ -26,8 +26,8 @@
                 //     etPrime.osSleepF( tin0P , TOCK << 4 ) ;
                 //     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 // 
-                //     etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / unexpected reply (other than \"no content\" or \"not found\") ; will retry after napping 01 tock") ) ;
-                //     etherC::etRockIF( tin0P ).traceF( tin0P , tHear ) ;
+                //     //etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / unexpected reply (other than \"no content\" or \"not found\") ; will retry after napping 01 tock") ) ;
+                //     //etherC::etRockIF( tin0P ).traceF( tin0P , tHear ) ;
                 //     POOPR
                 // {
                 // if( POOP )
@@ -35,7 +35,7 @@
                 // 
                 // }
                 //     break ;
-                //     etherC::etRockIF( tin0P ).traceF( tin0P , T("authorization refused") ) ;
+                //     //etherC::etRockIF( tin0P ).traceF( tin0P , T("authorization refused") ) ;
                 //     idImpotence = 1 ;
                 //     POOPR
                 // {
@@ -45,7 +45,7 @@
                 // }
                 //     }
                 //         break ;
-                //         etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / connect , write, or read failed ; not forgiven") ) ;
+                //         //etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / connect , write, or read failed ; not forgiven") ) ;
                 //         idImpotence = 1 ;
                 //     {
                 //     else
@@ -54,7 +54,7 @@
                 //         etPrime.osSleepF( tin0P , TOCK << 4 ) ;
                 //         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                 // 
-                //         etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / connect , write, or read failed ; forgiven ; will retry after napping 01 tock.  (")+TF2(cForgive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" remain)") ) ;
+                //         //etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / connect , write, or read failed ; forgiven ; will retry after napping 01 tock.  (")+TF2(cForgive,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" remain)") ) ;
                 //     {
                 //     if( cForgive -- )
                 // 
@@ -101,7 +101,7 @@
                 //TN( tIn , "" ) ; // WILL CONTAIN A SINGLE, TRIMMED JSON WORD
 
                 break ; // I ASSUME THAT THE DELETION REQUEST WAS SUCCESSFUL ; I DO NOT INSPECT THE REPLY
-                etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFilesF / requested  deletion (i did not inspect the response)") ) ;
+                //etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFilesF / requested  deletion (i did not inspect the response)") ) ;
 
                 LOGrAW( "------------ REPLY BODY END -----------------------------\r\n" ) ;
                 LOGrAW( postHearBody ) ;
@@ -138,7 +138,7 @@
                 {
                 else
                 }
-                    etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFilesF: !bChunked so not logging reply") ) ;
+                    //etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFilesF: !bChunked so not logging reply") ) ;
                 {
                 if( !bChunked )
                 ZE( countT , costHearBody ) ;
@@ -178,7 +178,7 @@
                         else if( costHearHead >= 3 && !thirdC::c_memcmpIF( tin0P , postHearHead + costHearHead - 3 , "\r\n\r\n" , 4 ) )
                         }
                             continue ;
-                            etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / did not receive a fulll reply ; will retry with a new connection.") ) ;
+                            //etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFileF / did not receive a fulll reply ; will retry with a new connection.") ) ;
                             POOPR
                         {
                         if( !costIn )                                                                                                       //20180303@1506: OBSERVED !costIn
@@ -196,7 +196,7 @@
                 ss.writeF( tin0P , (osTextT*)tSay , (countT)tSay.csF( tin0P ) ) ;
                 ss.connectF( tin0P , 443 , socketC::nicNameIF( tin0P , etScratch , tHost ) ) ;
                 socketC ss( tin0P , etScratch , TAG( TAGiDnULL ) , ifcSOCKETtYPE_STREAM , flSOCKETc_CRYPTfOREIGNsSL ) ;
-                etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFilesF / requesting deletion") ) ;
+                //etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFilesF / requesting deletion") ) ;
             {
             while( !etPrime && !POOP )
             //countT cForgive = 0x2 ;
@@ -251,7 +251,7 @@
                 ether.strToUrlF( tin0P , pstte , psttfn ) ; ___( pstte ) ;
                 ZE( strokeS* , pstte ) ;
 
-                etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFilesF / building a request [cFiles,file]:    ")+TF2((countT)sDoomedFileNamesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttfn) ) ;
+                //etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFilesF / building a request [cFiles,file]:    ")+TF2((countT)sDoomedFileNamesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttfn) ) ;
                 sDoomedFileNamesP >> psttfn ; ___( psttfn ) ;
                 ZE( strokeS* , psttfn ) ;
 
@@ -265,7 +265,7 @@
         ZE( countT , costBody ) ;
 
         //EACH LOOP BUILDS AND EMITS WO BULK DELETION REQUEST
-        etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFilesF / building a request [cFiles]: ")+TF2((countT)sDoomedFileNamesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+        //etherC::etRockIF( tin0P ).traceF( tin0P , T("deleteRemoteFilesF / building a request [cFiles]: ")+TF2((countT)sDoomedFileNamesP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
     while( !etPrime && !POOP && sDoomedFileNamesP )
     TN( tSlashContainerSlash , "" ) ; tSlashContainerSlash = T("/")+T(psttCloudContainerP)+T("/") ;

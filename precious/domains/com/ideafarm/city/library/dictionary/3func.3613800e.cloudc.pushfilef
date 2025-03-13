@@ -17,7 +17,7 @@
             break ;
 
             }
-                etherC::etRockIF( tin0P ).traceF( tin0P , T("pushed : ")+T(psttShortP) ) ;
+                //etherC::etRockIF( tin0P ).traceF( tin0P , T("pushed : ")+T(psttShortP) ) ;
             {
             else
             }
@@ -25,8 +25,8 @@
                 etPrime.osSleepF( tin0P , TICK << 0 ) ; // NAP IS LONG TO DEACTIVATE THIS THREAD SO THAT OTHER THREADS HAVE A CHANCE TO COMPLETE ; THIS IS INTENDED TODYNAMICALLY RESPOND TO CHANGING CONNECTIVITY AND SERVER RESPONSIVENESS CONDITIONS
                 sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-                etherC::etRockIF( tin0P ).traceF( tin0P , T("pushFileF / unexpected or unsatisfactory reply (only \"created\" is satisfactory) ; will retry after napping 1 tick") ) ;
-                etherC::etRockIF( tin0P ).traceF( tin0P , tHear ) ;
+                //etherC::etRockIF( tin0P ).traceF( tin0P , T("pushFileF / unexpected or unsatisfactory reply (only \"created\" is satisfactory) ; will retry after napping 1 tick") ) ;
+                //etherC::etRockIF( tin0P ).traceF( tin0P , tHear ) ;
                 POOPR
             {
             if( POOP )
@@ -39,7 +39,7 @@
                 !!etScratch.strIdF( tin0P , tReplyCode201_Created , tHear )
             boolT bOk =
 
-            if( etScratch.strIdF( tin0P , tReplyCode202_Accepted , tHear ) ) etherC::etRockIF( tin0P ).traceF( tin0P , T("\"accepted\" response received, which is not satisfactory so i will retry") ) ;
+            if( etScratch.strIdF( tin0P , tReplyCode202_Accepted , tHear ) ) ;//etherC::etRockIF( tin0P ).traceF( tin0P , T("\"accepted\" response received, which is not satisfactory so i will retry") ) ;
 
             }
                 continue ;
@@ -49,7 +49,7 @@
                 openF( tin0P , idCloud , tBuilding , tUser , tPassword ) ;
                 hCloud.closeIfF() ;
                 bHandle.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                etherC::etRockIF( tin0P ).traceF( tin0P , T("authorization refused ; obtaining new authorization") ) ;
+                //etherC::etRockIF( tin0P ).traceF( tin0P , T("authorization refused ; obtaining new authorization") ) ;
 
                 POOPR
             {
@@ -62,7 +62,7 @@
             }
                 //}
                 //    break ;
-                //    etherC::etRockIF( tin0P ).traceF( tin0P , T("pushFileF / connect , write, or read failed ; not forgiven") ) ;
+                //    //etherC::etRockIF( tin0P ).traceF( tin0P , T("pushFileF / connect , write, or read failed ; not forgiven") ) ;
                 //    bPermanentFailure = 1 ;
                 //{
                 //else
@@ -82,7 +82,7 @@
 
             //}
             //    __1
-            //    etherC::etRockIF( tin0P ).traceF( tin0P , T("simulated connect write or read error") ) ;
+            //    //etherC::etRockIF( tin0P ).traceF( tin0P , T("simulated connect write or read error") ) ;
             //{
             //if( bFuckItUp )
 
@@ -192,7 +192,7 @@
 
     //}
     //    bFuckItUp = 1 ;
-    //    etherC::etRockIF( tin0P ).traceF( tin0P , T("simulating a permanent error for this file because idIn is ")+TF2(idIn,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+    //    //etherC::etRockIF( tin0P ).traceF( tin0P , T("simulating a permanent error for this file because idIn is ")+TF2(idIn,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
     //{
     //if( !( idIn % 0x4 ) )
     //ZE( boolT , bFuckItUp ) ;
