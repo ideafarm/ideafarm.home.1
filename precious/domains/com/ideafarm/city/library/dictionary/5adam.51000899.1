@@ -155,29 +155,31 @@ DONE( tmWorkF )
 
                         ++ idClient ;
 
-                        //etRock.traceF( tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(nnPeer)+(bDivert?tSayDiverting:tSayGranting)+tDomainPeer ) ;
-
-                        }
-                            etThread.delF( tin0P , psttSay ) ;
-                            tTimeOld = T(psttSay) ;
-                            etThread.strFromOldTimeF( tin0P , psttSay , mm , hh , d , m , y , dow , 0 ) ; ___( psttSay ) ;
-                            ZE( strokeS* , psttSay ) ;
-                        {
-                        TN( tTimeOld , "" ) ;
-
-                        etThread.osTimeToOldTimeF( tin0P , ms , ss , mm , hh , d , m , y , dow , timeN1 , timeN2 , flOStIMEtOoLDtIME_null ) ;
-                        ZE(  countT , dow ) ;
-                        ZE( sCountT , y   ) ;
-                        ZE(  countT , m   ) ;
-                        ZE(  countT , d   ) ;
-                        ZE(  countT , hh  ) ;
-                        ZE(  countT , mm  ) ;
-                        ZE(  countT , ss  ) ;
-                        ZE(  countT , ms  ) ;
-
-                        etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
-                        ZE( sCountT , timeN2 ) ;
-                        ZE( countT  , timeN1 ) ;
+                        //}
+                        //    //etRock.traceF( tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(nnPeer)+(bDivert?tSayDiverting:tSayGranting)+tDomainPeer ) ;
+                        //
+                        //    }
+                        //        etThread.delF( tin0P , psttSay ) ;
+                        //        tTimeOld = T(psttSay) ;
+                        //        etThread.strFromOldTimeF( tin0P , psttSay , mm , hh , d , m , y , dow , 0 ) ; ___( psttSay ) ;
+                        //        ZE( strokeS* , psttSay ) ;
+                        //    {
+                        //    TN( tTimeOld , "" ) ;
+                        //
+                        //    etThread.osTimeToOldTimeF( tin0P , ms , ss , mm , hh , d , m , y , dow , timeN1 , timeN2 , flOStIMEtOoLDtIME_null ) ;
+                        //    ZE(  countT , dow ) ;
+                        //    ZE( sCountT , y   ) ;
+                        //    ZE(  countT , m   ) ;
+                        //    ZE(  countT , d   ) ;
+                        //    ZE(  countT , hh  ) ;
+                        //    ZE(  countT , mm  ) ;
+                        //    ZE(  countT , ss  ) ;
+                        //    ZE(  countT , ms  ) ;
+                        //
+                        //    etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
+                        //    ZE( sCountT , timeN2 ) ;
+                        //    ZE( countT  , timeN1 ) ;
+                        //{
 
                         countT idError = ifcIDeRRORdNS_AOK ;
                     {
@@ -257,6 +259,15 @@ DONE( tmWorkF )
 
                 mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
+                }
+                    etThread.traceF( tin0P , T("incoming [idIn,timeE]:    ")+TF2(idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TT(timeE1,timeE2) ) ;
+                    etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeStart1 , timeStart2 ) ;
+                    etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
+                    ZE( sCountT , timeE2 ) ;
+                    ZE( countT  , timeE1 ) ;
+                {
+                if( !( ++ idIn % TUCK ) )
+
                 //etRock.traceF( tin0P , T("waited for a packet [nnPeer,cbq]:    ")+T(nnPeer)+tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 }
                     }
@@ -318,6 +329,10 @@ DONE( tmWorkF )
             stsQueries.purgeF( tin0P ) ;
         {
         while( !POOP && !ether )
+        etThread.osTimeNowF( tin0P , timeStart1 , timeStart2 ) ;
+        ZE( sCountT , timeStart2 ) ;
+        ZE( countT  , timeStart1 ) ;
+        ZE( countT , idIn ) ;
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
         TN( tb4 , "    " ) ;
         stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
