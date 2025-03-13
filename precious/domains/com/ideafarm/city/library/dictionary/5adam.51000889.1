@@ -24,6 +24,9 @@ cDo = 1 ;
     countT cDo = TUCK >> 3 ;
     ZE( countT , idStompLath ) ;
 
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ; // "RUDE" SO THAT I WRITE GORILLA REQUESTS AND RECEIVE RESPONSES WITH CONSISTENT "REAL TIME" SPEED ; THIS CREATES AN ATTACK SURFACE ; CPU SPINNING *MUST* BE PREVENTED (IMPOTENCE CPU SPIN BUGS, DDOS HTTP FLOOD ATTACKS)
+
     _IO_
 {
 if( pTaskP )
@@ -76,8 +79,7 @@ DONE( tmGorillaF )
             idNewSuccess ++ ;
             idNewFail = 0 ;
         {
-        //U::PROD: if( !( cFail || timeE1 > TOCK ) )
-if( !( cFail || timeE1 > ( TOCK * 5 ) ) )
+        if( !( cFail || timeE1 > TOCK ) )
 
 #endif
         /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
