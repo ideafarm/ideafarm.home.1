@@ -106,7 +106,7 @@ DONE( tmGorillaF )
 
         /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
 
-        //etThread.traceF( tin0P , TTF(timeE1,timeE2) ) ;
+        /**/etThread.traceF( tin0P , T("stomp! [idStomp,time]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2) ) ;
         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeN1 , timeN2 ) ;
         etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
         ZE( sCountT , timeE2 ) ;
@@ -185,6 +185,7 @@ DONE( tmGorillaF )
         ZE( osTextT* , posti ) ;
     {
     TN( tModifiedSettingsSoilFileImageToUse , "" ) ;
+    TN( tb4 , "    " ) ;
 
     const countT idGorilla = 1 + incv02AM( idGorillaLath ) ;
     static countT idGorillaLath ;
