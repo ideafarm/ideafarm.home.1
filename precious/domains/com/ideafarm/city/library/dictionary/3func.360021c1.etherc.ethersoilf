@@ -7535,7 +7535,7 @@ byteT pbBuffer[ TUCK ] ;
                         if( stSetP ) tFileNameSet += tComma ;
                                      tFileNameSet += T(psttFileName) ;
 
-                        /**/etherP.traceF( tin0P , T("\r\n      emit [set,name]: ")+T(psttSetP)+T("    \"")+T(psttFileName)+T("\"") ) ;
+                        //etherP.traceF( tin0P , T("\r\n      emit [set,name]: ")+T(psttSetP)+T("    \"")+T(psttFileName)+T("\"") ) ;
         
                         stSetP >> psttFileName ;
                         ZE( strokeS* , psttFileName ) ;
@@ -7918,7 +7918,7 @@ byteT pbBuffer[ TUCK ] ;
         {
         if( psttSetP->idAdam > 0x2f && psttSetP[ CSpREFIX - 1 + 0x2f ] == strokeS( '!' ) ) 
 
-        /**/etherP.traceF( tin0P , T("[psttSetP]: ")+T(psttSetP) ) ; //U:: TO FIND A BUG
+        //etherP.traceF( tin0P , T("[psttSetP]: ")+T(psttSetP) ) ; //U:: TO FIND A BUG
 
         // WHEN MIGRATING THE ARCHIVE TO FORMAT 7, THE SPECIAL (FANCY) FILES WERE RETAINED AND SHOULD BE IN A ZIP FILE IN THE ARCHIVE SOMEWHERE
         // BY FANCY CODE I MEAN THE DAY TITLE FILES AND THE NOTE FILES.  ALL OF THAT FUNCTIONALITY WILL NEED TO BE REIMPLEMENTED
@@ -8243,14 +8243,14 @@ countT csttIndentF( tin0S& tin0P , etherC& etherP , const strokeS* const psttP ,
                         {
                         if( cDo < cMaxSource )                                                      // "{[key]:" WAS VERIFIED AND THERE ARE MORE STROKES TO INSPECT
                         idfElementP = idOpen ;
-                        /**/etherP.traceF( tin0P , T("YES: >>>>")+T(psttFind)+T("<<<<\r\n") ) ; //U:: TO FIND A BUG
+                        //etherP.traceF( tin0P , T("YES: >>>>")+T(psttFind)+T("<<<<\r\n") ) ; //U:: TO FIND A BUG
                     {
                     if( offc == cDo )                                                               // NO MISMATCH WAS FOUND
 
                     }
                         }
                             break ;
-                            /**/etherP.traceF( tin0P , T("NOT: >>>>")+T(psttFind)+T("<<<<\r\n") ) ; //U:: TO FIND A BUG
+                            //etherP.traceF( tin0P , T("NOT: >>>>")+T(psttFind)+T("<<<<\r\n") ) ; //U:: TO FIND A BUG
                         {
                         if( psttP[ CSpREFIX - 1 + idf + offc ].idAdam != psttFind[ CSpREFIX + offc ].idAdam )
                     {
@@ -8272,7 +8272,7 @@ countT csttIndentF( tin0S& tin0P , etherC& etherP , const strokeS* const psttP ,
                 idfElementP = idOpen ;                                                       // PARTIAL ELEMENT (ONLY THE '{')
             {
             if( !idf )
-            /**/etherP.traceF( tin0P , T("[idOpen]: >>>>")+TF2(idOpen,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("<<<<\r\n") ) ; //U:: TO FIND A BUG
+            //etherP.traceF( tin0P , T("[idOpen]: >>>>")+TF2(idOpen,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("<<<<\r\n") ) ; //U:: TO FIND A BUG
         {
         if( idOpen )
 
@@ -8434,7 +8434,7 @@ voidT strFuseErrorFlag_330021c0_F( tin0S& tin0P , etherC& etherP , soulC& soulOu
 
                         }
                             if( etherP.diskFileExistsF( tin0P , tFileHashedName  ) ) { etherP.boxGetShadowF( tin0P , postCurrentName , costCurrentName , tFileHashedName  ) ; ___( postCurrentName ) ; }
-                            /**/etherP.traceF( tin0P , T("!exception: archive error: currentname file not found: ")+tFileCurrentName ) ;
+                            //etherP.traceF( tin0P , T("!exception: archive error: currentname file not found: ")+tFileCurrentName ) ;
                         {
                         else
                         if( etherP.diskFileExistsF( tin0P , tFileCurrentName ) ) { etherP.boxGetShadowF( tin0P , postCurrentName , costCurrentName , tFileCurrentName ) ; ___( postCurrentName ) ; }
@@ -8526,7 +8526,7 @@ voidT strFuseErrorFlag_330021c0_F( tin0S& tin0P , etherC& etherP , soulC& soulOu
         {
         else if( etherP.strIdF( tin0P , 0 , flSTRmATCH_null , idf , sttq , psttPrefixP , tFile ) && idf )
         }
-            /**/etherP.traceF( tin0P , T("!exception: etherSoilWalkCBF / file name is too long: ")+TF2(idIn,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" file \"")+T(postNameP)+T("\"") ) ;
+            //etherP.traceF( tin0P , T("!exception: etherSoilWalkCBF / file name is too long: ")+TF2(idIn,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(" file \"")+T(postNameP)+T("\"") ) ;
             //LOGrAW( "\"\r\n" ) ;
             //LOGrAW( postNameP ) ;
             //LOGrAW( "\"    \"" ) ;
@@ -8605,7 +8605,7 @@ voidT obeyReplacementsF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , switc
         }
             DEL( pInfo ) ;
             }
-                /**/etherP.traceF( tin0P , T("[value,idDeathType]:    ")+TF2(value,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(idDeathType,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
+                //etherP.traceF( tin0P , T("[value,idDeathType]:    ")+TF2(value,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    ")+TF2(idDeathType,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES) ) ;
 
                 //__( idDeathType ) ;
                 //__( value ) ;             // NOT CHECKED, BECAUSE CAN BE CAUSED BY USER ERROR (TARGET ZIP FILE IS CORRUPT)
@@ -8617,7 +8617,7 @@ voidT obeyReplacementsF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , switc
                             etherP.delF( tin0P , posti ) ;
                             }
                                 if( !((thirdC&)etherP).c_strcmpIF( tin0P , posti , tTranscript ) ) bEmit = 0 ;
-                                /**/etherP.traceF( tin0P , T("[posti]: ")+T(posti) ) ;
+                                //etherP.traceF( tin0P , T("[posti]: ")+T(posti) ) ;
                             {
                             if( posti && costi )
                             etherP.boxGetShadowF( tin0P , posti , costi , tPathHover+tFileTranscriptShort ) ; ___( posti ) ;
@@ -8634,21 +8634,21 @@ voidT obeyReplacementsF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , switc
 
                     etherP.delF( tin0P , psttu ) ;
                     TN( tPathHover , "" ) ; tPathHover = T("///ideafarm/ephemeral/tmp/")+T(psttu)+T("/") ;
-                    /**/etherP.traceF( tin0P , psttu ) ;
+                    //etherP.traceF( tin0P , psttu ) ;
                     etherP.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
                     ZE( strokeS* , psttu ) ;
 
                 {
                 ZE( countT , idDeathType ) ;
                 ZE( countT , value ) ;
-                /**/etherP.traceF( tin0P , tArg ) ;
-                /**/etherP.traceF( tin0P , tExeUnzip ) ;
+                //etherP.traceF( tin0P , tArg ) ;
+                //etherP.traceF( tin0P , tExeUnzip ) ;
 
                 TN( tArg , "" ) ; tArg = T(" \"")+T(osfnZipFile)+T("\" ")+tFileTranscriptShort ;
 
                 osFileNameC osfnZipFile( tin0P , etherP , tFileZip ) ;
 
-                /**/etherP.traceF( tin0P , T("day zip: ")+tFileZip ) ;
+                //etherP.traceF( tin0P , T("day zip: ")+tFileZip ) ;
 
                 TN( tFileZip , pInfo->psttIfoName ) ;
             {
@@ -8677,7 +8677,7 @@ voidT obeyReplacementsF( tin0S& tin0P , etherC& etherP , strokeS*& psttP , switc
         etherP.delF( tin0P , posti ) ;
         }
             if( !((thirdC&)etherP).c_strcmpIF( tin0P , posti , tTranscript ) ) bEmit = 0 ;
-            /**/etherP.traceF( tin0P , T("[posti]: ")+T(posti) ) ;
+            //etherP.traceF( tin0P , T("[posti]: ")+T(posti) ) ;
         {
         if( posti && costi )
         etherP.boxGetShadowF( tin0P , posti , costi , tFileTranscript ) ; ___( posti ) ;
@@ -8733,7 +8733,7 @@ voidT emitTranscriptIfChangedF( tin0S& tin0P , etherC& etherP , const strokeS* p
         }
             etherP.diskMoveFileOrDirF(   tin0P , tToLong , pInfo->psttIfoName ) ;
             etherP.diskFileOrDirDeleteF( tin0P , tToLong ) ; //U:: BUG: RACE: DATA LOSS CAN OCCUR HERE IF SOMETHING IS DELETED.  ALT: MOVE IT OUT OF THE WAY RATHER THAN DELETE IT
-            /**/etherP.traceF( tin0P , T("deleting ")+tToLong ) ;
+            //etherP.traceF( tin0P , T("deleting ")+tToLong ) ;
             TN( tToLong , "" ) ; tToLong = tTo+tShort ;
 
             }
