@@ -16,7 +16,7 @@
                 ? flSORTERcrESULT_NOTfULLYsORTED
             flagsResult = cOutOfOrder 
 
-            ether.traceF( tin0P , T("[cOutOfOrder]:    ")+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            //ether.traceF( tin0P , T("[cOutOfOrder]:    ")+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             while( ~hSt && -- cDo ) ;
             }
@@ -59,8 +59,8 @@
                                 countT param = (countT)pc3p ;
 
                                 }
-                                    ether.traceF( tin0P , T("sorterC [cEstimateOut,cOut,perTuck]          :    ")+TF2(cEstimateOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %") ) ;
-                                    ether.traceF( tin0P , T("sorterC [cEstimateIn,cIn,perTuck,cOutOfOrder]:    ")+TF2(cEstimateIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %")+tb4+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    //ether.traceF( tin0P , T("sorterC [cEstimateOut,cOut,perTuck]          :    ")+TF2(cEstimateOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cOut,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %") ) ;
+                                    //ether.traceF( tin0P , T("sorterC [cEstimateIn,cIn,perTuck,cOutOfOrder]:    ")+TF2(cEstimateIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %")+tb4+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                     countT perTuck = ( cOut << 8 ) / cEstimateOut ;
                                 {
                                 if( !( ++ cOut % TUCK ) )
@@ -94,14 +94,14 @@
                 }
                     }
                         __1
-                        ether.traceF( tin0P , T("exception: sinkF failed silently [idJot]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;   //SHOULD BE IMPOSSIBLE
+                        //ether.traceF( tin0P , T("exception: sinkF failed silently [idJot]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;   //SHOULD BE IMPOSSIBLE
                     {
                     if( !bSuppressDuplicates )
                 {
                 else if( !ids )
                 }
                     __1
-                    ether.traceF( tin0P , T("exception: sink failed [idJot]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //ether.traceF( tin0P , T("exception: sink failed [idJot]:    ")+TF2(idJotIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 if( bFailed )
                 //((tin1S&)tin0P).pc Utility[ 0 ] -- ;
@@ -111,7 +111,7 @@
                 ZE( countT , ids ) ;
 
                 }
-                    ether.traceF( tin0P , T("sorterC [cEstimateIn,cIn,perTuck,cOutOfOrder]:    ")+TF2(cEstimateIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %")+tb4+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    //ether.traceF( tin0P , T("sorterC [cEstimateIn,cIn,perTuck,cOutOfOrder]:    ")+TF2(cEstimateIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(perTuck,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" %")+tb4+TF2(cOutOfOrder,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     countT perTuck = ( cIn << 8 ) / cEstimateIn ;
                 {
                 if( !( ++ cIn % TUCK ) )
