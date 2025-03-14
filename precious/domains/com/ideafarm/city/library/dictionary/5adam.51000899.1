@@ -238,11 +238,14 @@ DONE( tmWorkF )
                             mySettings.grabMe.ungrabF( tin0P ) ;
                             }
                                 }
-                                    break ;
-                                    bListedDomain ++ ;
+                                    }
+                                        break ;
+                                        bListedDomain ++ ;
+                                    {
+                                    if( idHit && idHit == 1 + psttPeer->idAdam - mySettings.pptListedDomain[ offt ]->csF( tin0P ) )
+                                    countT idHit  = etThread.strIdF( tin0P , *mySettings.pptListedDomain[ offt ] , psttPeer , 1 ) ;
                                 {
-                                if( idHit && idHit == 1 + psttPeer->idAdam - mySettings.pptListedDomain[ offt ]->csF( tin0P ) )
-                                countT idHit  = etThread.strIdF( tin0P , *mySettings.pptListedDomain[ offt ] , psttPeer , 1 ) ;
+                                if( mySettings.pptListedDomain[ offt ] )                                //U::20250313@2339: WHY IS THIS NEEDED, OTHER THAN FOR GOOD SAFE CODING STYLE? (OBSERVED AN A.V. IN HERE)
                             {
                             for( countT offt = 0 ; offt < mySettings.cListedDomain ; offt ++ )
                             mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
