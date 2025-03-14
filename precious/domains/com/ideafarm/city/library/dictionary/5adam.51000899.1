@@ -35,11 +35,13 @@ DONE( tmWorkF )
                                 if( !POOP ) ;//etRock.traceF( tin0P , T("wrote reply") ) ;
                                 sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
                                 //etRock.traceF( tin0P , T("replying / 1 [cbr]:    ")+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                            {
+                                _IO_
+                           {
                             else
                             }
                                 etRock.traceF( tin0P , T("!exception / could not build reply") ) ;
                                 POOPRqUIET
+                                _IO_
                             {
                             if( POOP )
                             ((tin1S&)tin0P).pEtScratch->dnsReplyF( tin0P , pbr , cbr , pbq , stsReplies , 1 , idError ) ;
@@ -91,6 +93,7 @@ DONE( tmWorkF )
                                                     if( bDivert )
 
                                                     nicNameC nnOut ;
+                                                    _IO_
                                                 {
                                                 case ifcIDtYPEdNSqUERY_A :
                                                 }
@@ -119,6 +122,7 @@ DONE( tmWorkF )
                                                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                                 countT idf = 1 ;
                                                 ZE( strokeS* , psttNet ) ;
+                                                _IO_
                                             {
                                             if( psttw && etThread.strIdF( tin0P , tDash , psttw , 1 ) )
 
@@ -127,12 +131,15 @@ DONE( tmWorkF )
                                             if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
                                             *ps >> psttw ;
                                             ZE( strokeS* , psttw ) ;
+                                            _IO_
                                         {
                                         if( ps )
                                         stsQueries >> ps ;
                                         ZE( soulC* , ps ) ;
+                                        _IO_
                                     {
                                     while( stsQueries )
+                                    _IO_
                                 {
                                 else
                                 }
@@ -151,6 +158,7 @@ DONE( tmWorkF )
 
                             stsRepliesNU.purgeF( tin0P ) ;
                             stsQueries.purgeF( tin0P ) ;
+                            _IO_
                         {
 
                         ++ idClient ;
@@ -182,8 +190,10 @@ DONE( tmWorkF )
                         //{
 
                         countT idError = ifcIDeRRORdNS_AOK ;
+                        _IO_
                     {
                     if( pbq && cbq )
+                    _IO_
                 {
                 //if( etThread.strIdF( tin0P , T(".letsencrypt.org") , tDomainPeer ) )    //TO FIND A BUG (PROD: COMMENT OUT THIS if() CONDITION SO THAT THE BLOCK IS ALWAYS EXECUTED
 
@@ -213,9 +223,11 @@ DONE( tmWorkF )
                                 if( mySettings.pnnSubnetAllowedStripe[ offn ] == nnPeer( 0x18 ) )
                             {
                             if( nnPeer.isIPv4F() )
+                            _IO_
                         {
                         for( countT offn = 0 ; offn < mySettings.cnnSubnetAllowedStripe ; offn ++ )
                         mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                        _IO_
                     {
                     if( !bListedDomain )
                     ZE( boolT , bStripeWebHookNotifier ) ;
@@ -237,6 +249,7 @@ DONE( tmWorkF )
 
                             //etRock.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
                             tDomainPeer = T(psttPeer) ;
+                            _IO_
                         {
                         else
                         if( !psttPeer ) ;//etRock.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
@@ -244,6 +257,7 @@ DONE( tmWorkF )
                         ZE( strokeS* , psttPeer ) ;
                     {
                     ZE( boolT , bListedDomain ) ;
+                    _IO_
                 {
                 TN( tDomainPeer , "" ) ;
                 ZE( boolT , bDivert ) ;
@@ -286,6 +300,7 @@ DONE( tmWorkF )
                 ZE( countT , idp ) ;
                 ZE( countT , cbq ) ;
                 ZE( byteT* , pbq ) ;
+                _IO_
             {
             while( !POOP && !ether )
             TN( tSayGranting  , "    granting information    " ) ;
@@ -327,6 +342,7 @@ DONE( tmWorkF )
 
             stsReplies.purgeF( tin0P ) ;
             stsQueries.purgeF( tin0P ) ;
+            _IO_
         {
         while( !POOP && !ether )
         etThread.osTimeNowF( tin0P , timeStart1 , timeStart2 ) ;
@@ -341,11 +357,13 @@ DONE( tmWorkF )
         ZE( countT , idClient ) ;
 
         mySettings.grabMe.ungrabF( tin0P ) ;
+        _IO_
     {
     else
     }
         /**/etRock.traceF( tin0P , T("!exception / a required setting is missing") ) ;           //P:PERSONALITY: THIS VERIFICATION IS ONLY DONE NOW ; IT IS NOT DONE WHEN SETTINGS ARE RELOADED BECAUSE THE FILE TIME HAS CHANGED, SO SETTINGS ERRORS THEN WILL JUST CAUSE ME TO FAIL
         mySettings.grabMe.ungrabF( tin0P ) ;
+        _IO_
     {
     if( !mySettings )
     mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
@@ -393,6 +411,7 @@ TASK( tmWorkF )
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
 {
 voidT rec_SOA_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const strokeS* const psttNsP , const strokeS* const psttEmailP )
 
@@ -412,6 +431,7 @@ voidT rec_SOA_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsRepl
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
 {
 voidT rec_NS_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const strokeS* const psttDataP )
 
@@ -432,6 +452,7 @@ voidT rec_NS_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReply
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
 {
 voidT rec_MX_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const strokeS* const psttDataP )
 
@@ -453,6 +474,7 @@ voidT rec_MX_F( tin0S& tin0P , stackC& stsRepliesP , const countT idTypeDnsReply
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
 {
 voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
 
@@ -474,6 +496,7 @@ voidT rec_AAAA_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const co
     {
     if( ps )
     soulC* ps = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idTypeDnsReplyP ) ; ___( ps ) ;
+    _IO_
 {
 voidT rec_A_F( tin0S& tin0P , etherC& etherP , stackC& stsRepliesP , const countT idTypeDnsReplyP , const strokeS* const psttP , const nicNameC& nicNameP )
 
@@ -579,6 +602,7 @@ TASK( tmFreshSettingsF )
         {
         for( countT offt = 0 ; offt < sizeof pptListedDomain / sizeof pptListedDomain[ 0 ] ; offt ++ )
         TN( tnu , ".not.used.ideafarm.com" ) ;                                                          //P:PERSONALITY: I IGNORE ALL ELEMENTS NOT BEFORE THE WO'TH ELEMENT THAT CONTAINS THE "NOT USED" VALUE ; THIS IS FOR SPEED
+        _IO_
     {
 
     }
@@ -596,6 +620,7 @@ TASK( tmFreshSettingsF )
             do
             handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
             ZE( countT , offo ) ;
+            _IO_
         {
         if( pnnSubnetAllowedStripe )
         etherMe.newF( tin0P , LF , pnnSubnetAllowedStripe , cnnSubnetAllowedStripe ) ; ___( pnnSubnetAllowedStripe ) ;
@@ -613,14 +638,17 @@ TASK( tmFreshSettingsF )
                 nicNameC nnIPv46  = etherMe.sockNicNameF( tin0P , psttc1 ) ;
 
                 //etherMe.traceF( tin0P , psttc1 ) ;
+                _IO_
             {
             FORsTRINGSiN1( pstt1Nn )
 
             countT cNn = etherMe.strWordsF( tin0P , pstt1Nn , tNnTrusted  , sttq , T(" ,") ) ; ___( pstt1Nn ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             ZE( strokeS* , pstt1Nn ) ;
+            _IO_
         {
         stackC stNnSubnet( tin0P , etherMe , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_nicNameC ) ;
+        _IO_
     {
 
     zapF( tin0P ) ;
@@ -818,6 +846,7 @@ TASK( tmFreshSettingsF )
 
     TN( tDash , "-" ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
+    _IO_
 {
 voidT mySettingsS::freshenF( tin0S& tin0P )
 
@@ -833,6 +862,7 @@ voidT mySettingsS::freshenF( tin0S& tin0P )
         for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
     {
     if( pnnSubnetAllowedStripe )
+    _IO_
 {
 voidT mySettingsS::zapF( tin0S& tin0P )
 
