@@ -19,10 +19,10 @@ DONE( tmWorkF )
 }
     thirdC::osHireThenMonitorIF( tin0P , ifcIDaDAM_2GLASS2 , T("ifcIDaDAM_GLASS1") , T("!ignoreFireByOperator") ) ;
 
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
-    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;
-
     etThread.osThreadF( TaRG2cBsTACK( tmLaunchBatExeFilesF , CBsTACKmIN << 1 ) ) ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ;
 {
 if( pTaskP )
 TASK( tmWorkF )
@@ -82,8 +82,6 @@ DONE( tmLaunchBatExeFilesF )
 
     etThread.diskMakeDirIfNeededF( tin0P , tDrop ) ;
     TN( tDrop , "///ideafarm/controls/drop.executables/" ) ;
-
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 {
 if( pTaskP )
 TASK( tmLaunchBatExeFilesF )                    //P:PERSONALITY: I LAUNCH (AND EAT) BAT AND EXE FILES SO THAT THEY WON'T BE DEBUGGED, SO WILL SURVIVE EVEN IF WO OF THEM CAUSES ME TO DIE
