@@ -978,7 +978,7 @@ TASK( tmWorkF )
 
         //etRockP.traceF( tin0P , T("writeSoulFileF / f") ) ;
 
-etherP.boxPutF( tin0P , T("///d/tmp/goo.ttt") , postPatched , costPatched ) ;
+etherP.boxPutF( tin0P , T("///d/tmp/foo.ttt") , postPatched , costPatched ) ;
 
         }
             etherP.delF( tin0P , psttBefore ) ;
@@ -987,15 +987,16 @@ etherP.boxPutF( tin0P , T("///d/tmp/goo.ttt") , postPatched , costPatched ) ;
                 postPatched = tInputWithNnPeer ;
 
                 etherP.delF( tin0P , psttAfter ) ;
-                if( psttBefore && psttAfter ) tInputWithNnPeer = T(psttBefore)+T("{\r\n  \"ipdos_nnpeer\": \"")+T(nnPeerP)+T("\",")+T(psttAfter) ;
+                if( psttBefore && psttAfter ) tInputWithNnPeer = T(psttBefore)+T("  \"ipdos_nnpeer\": \"")+T(nnPeerP)+T("\",")+T(psttAfter) ;
 
                 etherP.strSubstringF( tin0P , psttAfter , idf , countTC() , tOriginal ) ; ___( psttAfter ) ;
-static                ZE( strokeS* , psttAfter ) ;
+                ZE( strokeS* , psttAfter ) ;
             {
             if( etherP.strSubstringF( tin0P , psttBefore , idf , sttq , T("{") , tOriginal ) ) ; ___( psttBefore ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
-static            countT idf = 1 ;
-static            ZE( strokeS* , psttBefore ) ;
+            countT idf = 1 ;
+            ZE( strokeS* , psttAfter  ) ;
+            ZE( strokeS* , psttBefore ) ;
 
             costP = 0 ;
             postP = 0 ;
@@ -1004,8 +1005,6 @@ static            ZE( strokeS* , psttBefore ) ;
         ZE( countT   , costPatched ) ;
         ZE( osTextT* , postPatched ) ;
         TN( tInputWithNnPeer , "" ) ;
-
-etherP.boxPutF( tin0P , T("///d/tmp/foo.ttt") , postP , costP ) ;
 
         //*********************************************************************************************************************************************************
         //********                                       **********************************************************************************************************
