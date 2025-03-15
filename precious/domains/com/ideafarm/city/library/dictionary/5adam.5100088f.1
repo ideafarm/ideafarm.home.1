@@ -32,7 +32,7 @@ DONE( tmWorkF )
                     //++ s ; ether.osSleepF( tin0P , TICK >> 2 ) ;    // PACE MYSELF SO THAT THE HTTP SERVER PROCESS GETS MORE OF THE CPU (EXPERIMENT TO SEE WHETHER THIS IMPROVES HTTPS RESPONSE TIME)
                     //THIS NAPPING IS DISABLED BECAUSE THE BOTTLENECK IS WITH ME; I CAN ONLY HANDLE ABOUT WO NOTICE PER TOCK, AND AT THAT RATE, IT IS EASY FOR THE HTTPS SERVER TO KEEP UP
 
-                    writeSoulFileF( tin0P , etThread , etRock , (osTextT*)pbi , cbi - 1 , pptFileName ) ;
+                    writeSoulFileF( tin0P , etThread , etRock , (osTextT*)pbi , cbi - 1 , pptFileName , nnPeer ) ;
 
                     //etThread.delF( tin0P , psttnu ) ;
                     //etRock.traceF( tin0P , T("[cDone]:    ")+TF3(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttnu) ) ;
@@ -42,7 +42,7 @@ DONE( tmWorkF )
 
                     ++ cDone ;
                 {
-//                if( F(flagsNoticeLath) & fliWEBhOOKnOTICE_NEW )
+                if( F(flagsNoticeLath) & fliWEBhOOKnOTICE_NEW )
 
                 //*********************************************************************************************************************************************************
                 //********                                     ************************************************************************************************************
@@ -60,6 +60,7 @@ DONE( tmWorkF )
                 {
                 else
                 }
+                    nnPeer          = *(nicNameC*)&pcHeadYes[ 4 ] ;
                     bHead           = 0      ;
                     cbi             = pcHeadYes[ 2 ] ;
 
@@ -100,6 +101,7 @@ DONE( tmWorkF )
                 {
                 else
                 }
+                    nnPeer = *(nicNameC*)&pcHeadYes[ 4 ] ;
                     bHead = 0 ;
                     cbi = pcHeadYes[ 2 ] ;
                     etRock.traceF( tin0P , T("header found!") ) ;
@@ -172,6 +174,7 @@ DONE( tmWorkF )
             const countT idPoop = (const poopC&)bksWebHookNotices ;
         {
         while( !ether )
+        nicNameC nnPeer ;
         ZE( flagsT , flagsNoticeLath ) ;
         ZE( countT , cDone           ) ;
 
@@ -828,7 +831,7 @@ TASK( tmWorkF )
                 else                                                                                                                                                    // ELSE WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
                 }
                     etherP.delF( tin0P , psttnu ) ;
-                    etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubRenewedLive+T("sub.renewed.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // THEN WRITE JSON NOTICE OF SUB RENEWED TO FILE FOR MANUAL PROCESSING
+                    etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubRenewedLive+T("sub.renewed.@1@.json") , postPatched , costPatched ) ; ___( psttnu ) ;                // THEN WRITE JSON NOTICE OF SUB RENEWED TO FILE FOR MANUAL PROCESSING
                     ZE( strokeS* , psttnu ) ;
                     //etRockP.traceF( tin0P , T("writeSoulFileF / sub updated (renewal)") ) ;
                     _IO_
@@ -851,7 +854,7 @@ TASK( tmWorkF )
             else if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeSubUpdated ) )                                                 // ELSE IF NOTICE TYPE IS "SUB UPDATED"
             }
                 etherP.delF( tin0P , psttnu ) ;
-                etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubDeletedLive+T("sub.deleted.@1@.json") , postP , costP ) ; ___( psttnu ) ;                // WRITE JSON NOTICE OF SUB DELETED TO FILE FOR MANUAL PROCESSING
+                etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubDeletedLive+T("sub.deleted.@1@.json") , postPatched , costPatched ) ; ___( psttnu ) ;                // WRITE JSON NOTICE OF SUB DELETED TO FILE FOR MANUAL PROCESSING
                 ZE( strokeS* , psttnu ) ;
                 //etRockP.traceF( tin0P , T("writeSoulFileF / sub deleted") ) ;
                 _IO_
@@ -952,14 +955,14 @@ TASK( tmWorkF )
             }
                 DEL( pSwPathValue ) ;
                 etherP.delF( tin0P , psttnu ) ;
-                etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeParsingFailedP+T("could.not.parse.@1@.json") , postP , costP ) ; ___( psttnu ) ;
+                etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeParsingFailedP+T("could.not.parse.@1@.json") , postPatched , costPatched ) ; ___( psttnu ) ;
                 ZE( strokeS* , psttnu ) ;
 
                 etRockP.traceF( tin0P , T("!exception / could not parse json") ) ;
                 POOPRqUIET
             {
             if( POOP )
-            ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttzPath , (osTextT*)postP , flSTACKc_null ) ;
+            ((tin1S&)tin0P).pEtScratch->strParseJsonF( tin0P , pSwPathValue , psttzPath , (osTextT*)postPatched , flSTACKc_null ) ;
             SCOOPS
             _IO_
         {
@@ -974,6 +977,31 @@ TASK( tmWorkF )
         //*********************************************************************************************************************************************************
 
         //etRockP.traceF( tin0P , T("writeSoulFileF / f") ) ;
+
+        }
+            etherP.delF( tin0P , psttBefore ) ;
+            }
+                costPatched = tInputWithNnPeer.csF( tin0P ) ;
+                postPatched = tInputWithNnPeer ;
+
+                etherP.delF( tin0P , psttAfter ) ;
+                if( psttBefore && psttAfter ) tInputWithNnPeer = T(psttBefore)+T("{\r\n  \"ipdos_nnpeer\": \"")+T(nnPeerP)+T("\",")+T(psttAfter) ;
+
+                etherP.strSubstringF( tin0P , psttAfter , idf , countTC() , tOriginal ) ; ___( psttAfter ) ;
+                ZE( strokeS* , psttAfter ) ;
+            {
+            if( etherP.strSubstringF( tin0P , psttBefore , idf , sttq , T("{") , tOriginal ) ) ; ___( psttBefore ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            countT idf = 1 ;
+            ZE( strokeS* , psttBefore ) ;
+
+            costP = 0 ;
+            postP = 0 ;
+            TN( tOriginal , postP ) ;
+        {
+        ZE( countT   , costPatched ) ;
+        ZE( osTextT* , postPatched ) ;
+        TN( tInputWithNnPeer , "" ) ;
 
         _IO_
     {
@@ -990,7 +1018,7 @@ TASK( tmWorkF )
     textC& tSharedFolderPrefixSandboxP        = *pptFileNameP[ 1 ] ;
     textC& tSharedFolderPrefixPreciousP       = *pptFileNameP[ 0 ] ;
 {
-voidT writeSoulFileF( tin0S& tin0P , etherC& etherP , etherC& etRockP , osTextT* const postP , countT costP , textC** pptFileNameP )
+voidT writeSoulFileF( tin0S& tin0P , etherC& etherP , etherC& etRockP , osTextT* postP , countT costP , textC** pptFileNameP , nicNameC& nnPeerP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_WEBhOOKnOTICEfILER" )/*1*/
 /**/
