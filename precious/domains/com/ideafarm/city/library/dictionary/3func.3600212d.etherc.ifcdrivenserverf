@@ -672,7 +672,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                                 ZE( countT , cAccepted ) ;
                                                 //THREADmODE4oN( flTHREADmODE4_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY )
 
-                                                osThreadF( TaRG2sGNdONE( tmConnectionAcceptorF , sConnectionAcceptorDone ) , (countT)&info1P.bQuit , (countT)&pp ) ;
+                                                osThreadF( TaRG3sGNdONEcBsTACK( tmConnectionAcceptorF , sConnectionAcceptorDone , CBsTACKmIN << 1 ) , (countT)&info1P.bQuit , (countT)&pp ) ;   //20250314@2154: "<< 1" FROM "<< 0" IN RESPONSE TO STACK OVERFLOW
                                                 signC sConnectionAcceptorDone( tin0P , TAG( TAGiDnULL ) ) ;
 
                                                 s_acceptF_parametersS pp( cFifoPushed , pFifo , cFifo , cFifoPulled , psoListen->handleF( tin0P ) ) ;
