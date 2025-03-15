@@ -73,6 +73,7 @@ DONE( tmWorkF )
                                     etThread.delF( tin0P , psttValueMiddleCurrencyConversion ) ;
                                     etThread.delF( tin0P , psttValueMiddleCurrency           ) ;
                                     etThread.delF( tin0P , psttValueLive                     ) ;
+                                    etThread.delF( tin0P , psttValueNnPeer                   ) ;
                                     etThread.delF( tin0P , psttValueIdSubscription           ) ;
                                     etThread.delF( tin0P , psttValueName                     ) ;
                                     etThread.delF( tin0P , psttValueEmail                    ) ;
@@ -1294,22 +1295,18 @@ DONE( tmWorkF )
                                     {
                                     if( flagsFail )
 
-                                    if( age < 13                                                                                                                         ) flagsFail |= flFAIL_UNEXPECTEDaGEtOOyOUNG ;
-                                    if( etThread.strCompareF( tin0P , psttVersion , tCorrectVersion1 ) && etThread.strCompareF( tin0P , psttVersion , tCorrectVersion2 ) ) flagsFail |= flFAIL_UNEXPECTEDvERSION     ;
-                                    if( etThread.strCompareF( tin0P , psttEvent   , tCorrectEvent    )                                                                   ) flagsFail |= flFAIL_UNEXPECTEDeVENT       ;
+                                    if( age < 13                                                       ) flagsFail |= flFAIL_UNEXPECTEDaGEtOOyOUNG ;
+                                    if( etThread.strCompareF( tin0P , psttVersion , tCorrectVersion1 ) ) flagsFail |= flFAIL_UNEXPECTEDvERSION     ;
+                                    if( etThread.strCompareF( tin0P , psttEvent   , tCorrectEvent    ) ) flagsFail |= flFAIL_UNEXPECTEDeVENT       ;
 
                                     const sCountT age = etThread.strDigitsToSCountF( tin0P , psttValueAge , 0xa , 1 ) ;
 
-                                    }
-                                        sIn >> psttValueMiddleAmountDiscount     ; ___( psttValueMiddleAmountDiscount     ) ; etRock.traceF( tin0P , T("[ValueMiddleAmountDiscount     ]:    ")+T(psttValueMiddleAmountDiscount     ) ) ;
-                                        sIn >> psttValueMiddleAmountSubtotal     ; ___( psttValueMiddleAmountSubtotal     ) ; etRock.traceF( tin0P , T("[ValueMiddleAmountSubtotal     ]:    ")+T(psttValueMiddleAmountSubtotal     ) ) ;
-                                        sIn >> psttValueMiddleAmountTotal        ; ___( psttValueMiddleAmountTotal        ) ; etRock.traceF( tin0P , T("[ValueMiddleAmountTotal        ]:    ")+T(psttValueMiddleAmountTotal        ) ) ;
-                                        sIn >> psttValueMiddleCurrencyConversion ; ___( psttValueMiddleCurrencyConversion ) ; etRock.traceF( tin0P , T("[ValueMiddleCurrencyConversion ]:    ")+T(psttValueMiddleCurrencyConversion ) ) ;
-                                        sIn >> psttValueMiddleCurrency           ; ___( psttValueMiddleCurrency           ) ; etRock.traceF( tin0P , T("[ValueMiddleCurrency           ]:    ")+T(psttValueMiddleCurrency           ) ) ;
-                                    {
-                                    if( !etThread.strCompareF( tin0P , psttVersion , tCorrectVersion2 ) )
+                                    sIn >> psttValueMiddleAmountDiscount     ; ___( psttValueMiddleAmountDiscount     ) ; etRock.traceF( tin0P , T("[ValueMiddleAmountDiscount     ]:    ")+T(psttValueMiddleAmountDiscount     ) ) ;
+                                    sIn >> psttValueMiddleAmountSubtotal     ; ___( psttValueMiddleAmountSubtotal     ) ; etRock.traceF( tin0P , T("[ValueMiddleAmountSubtotal     ]:    ")+T(psttValueMiddleAmountSubtotal     ) ) ;
+                                    sIn >> psttValueMiddleAmountTotal        ; ___( psttValueMiddleAmountTotal        ) ; etRock.traceF( tin0P , T("[ValueMiddleAmountTotal        ]:    ")+T(psttValueMiddleAmountTotal        ) ) ;
+                                    sIn >> psttValueMiddleCurrencyConversion ; ___( psttValueMiddleCurrencyConversion ) ; etRock.traceF( tin0P , T("[ValueMiddleCurrencyConversion ]:    ")+T(psttValueMiddleCurrencyConversion ) ) ;
+                                    sIn >> psttValueMiddleCurrency           ; ___( psttValueMiddleCurrency           ) ; etRock.traceF( tin0P , T("[ValueMiddleCurrency           ]:    ")+T(psttValueMiddleCurrency           ) ) ;
 
-                                    TN( tCorrectVersion2 , "2" ) ;
                                     TN( tCorrectVersion1 , "1" ) ;
                                     TN( tCorrectEvent    , "ipdos.subscription.create" ) ;
 
@@ -1318,8 +1315,6 @@ DONE( tmWorkF )
                                     ZE( strokeS* , psttValueMiddleAmountTotal        ) ;
                                     ZE( strokeS* , psttValueMiddleCurrencyConversion ) ;
                                     ZE( strokeS* , psttValueMiddleCurrency           ) ;
-                                    // VERSION 2
-
                                     ZE( strokeS* , psttValueHawker                   ) ; sIn >> psttValueHawker                   ; ___( psttValueHawker                   ) ; etRock.traceF( tin0P , T("[ValueHawker                   ]:    ")+T(psttValueHawker                   ) ) ;
                                     ZE( strokeS* , psttValueAge                      ) ; sIn >> psttValueAge                      ; ___( psttValueAge                      ) ; etRock.traceF( tin0P , T("[ValueAge                      ]:    ")+T(psttValueAge                      ) ) ;
                                     ZE( strokeS* , psttValueName                     ) ; sIn >> psttValueName                     ; ___( psttValueName                     ) ; etRock.traceF( tin0P , T("[ValueName                     ]:    ")+T(psttValueName                     ) ) ;
@@ -1329,6 +1324,7 @@ DONE( tmWorkF )
                                     ZE( strokeS* , psttValueIdSubscription           ) ; sIn >> psttValueIdSubscription           ; ___( psttValueIdSubscription           ) ; etRock.traceF( tin0P , T("[ValueIdSubscription           ]:    ")+T(psttValueIdSubscription           ) ) ;
                                     ZE( strokeS* , psttValueIdProduct                ) ; sIn >> psttValueIdProduct                ; ___( psttValueIdProduct                ) ; etRock.traceF( tin0P , T("[ValueIdProduct                ]:    ")+T(psttValueIdProduct                ) ) ;
                                     ZE( strokeS* , psttValueLive                     ) ; sIn >> psttValueLive                     ; ___( psttValueLive                     ) ; etRock.traceF( tin0P , T("[ValueLive                     ]:    ")+T(psttValueLive                     ) ) ;
+                                    ZE( strokeS* , psttValueNnPeer                   ) ; sIn >> psttValueNnPeer                   ; ___( psttValueNnPeer                   ) ; etRock.traceF( tin0P , T("[ValueNnPeer                   ]:    ")+T(psttValueNnPeer                   ) ) ;
                                     ZE( strokeS* , psttVersion                       ) ; sIn >> psttVersion                       ; ___( psttVersion                       ) ; etRock.traceF( tin0P , T("[Version                       ]:    ")+T(psttVersion                       ) ) ;
                                     ZE( strokeS* , psttEvent                         ) ; sIn >> psttEvent                         ; ___( psttEvent                         ) ; etRock.traceF( tin0P , T("[Event                         ]:    ")+T(psttEvent                         ) ) ;
                                     // VERSION 1

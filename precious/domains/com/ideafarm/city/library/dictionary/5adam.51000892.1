@@ -1718,8 +1718,9 @@ etherC::loafIF( tin0P ) ;
                                         etThread.delF( tin0P , psttUpdatedLatestInvoice    ) ;
                                         etThread.delF( tin0P , psttUpdatedStripeNoticeType ) ;
                                         etThread.delF( tin0P , psttUpdatedLive             ) ;
-                                        etThread.delF( tin0P , psttUpdatedVersion               ) ;
-                                        etThread.delF( tin0P , psttUpdatedEvent                 ) ;
+                                        etThread.delF( tin0P , psttUpdatedNnPeer           ) ;
+                                        etThread.delF( tin0P , psttUpdatedVersion          ) ;
+                                        etThread.delF( tin0P , psttUpdatedEvent            ) ;
 
                                         etThread.delF( tin0P , psttCreatedAmountDiscount   ) ;
                                         etThread.delF( tin0P , psttCreatedIdSubscription   ) ;
@@ -1738,8 +1739,9 @@ etherC::loafIF( tin0P ) ;
                                         etThread.delF( tin0P , psttCreatedLatestInvoice    ) ;
                                         etThread.delF( tin0P , psttCreatedStripeNoticeType ) ;
                                         etThread.delF( tin0P , psttCreatedLive             ) ;
-                                        etThread.delF( tin0P , psttCreatedVersion               ) ;
-                                        etThread.delF( tin0P , psttCreatedEvent                 ) ;
+                                        etThread.delF( tin0P , psttCreatedNnPeer           ) ;
+                                        etThread.delF( tin0P , psttCreatedVersion          ) ;
+                                        etThread.delF( tin0P , psttCreatedEvent            ) ;
 
                                         etThread.delF( tin0P , psttPaidCurrencyConversion ) ;
                                         etThread.delF( tin0P , psttPaidCurrency           ) ;
@@ -1759,8 +1761,9 @@ etherC::loafIF( tin0P ) ;
                                         etThread.delF( tin0P , psttPaidInvoice            ) ;
                                         etThread.delF( tin0P , psttPaidStripeNoticeType   ) ;
                                         etThread.delF( tin0P , psttPaidLive               ) ;
-                                        etThread.delF( tin0P , psttPaidVersion                 ) ;
-                                        etThread.delF( tin0P , psttPaidEvent                   ) ;
+                                        etThread.delF( tin0P , psttPaidNnPeer             ) ;
+                                        etThread.delF( tin0P , psttPaidVersion            ) ;
+                                        etThread.delF( tin0P , psttPaidEvent              ) ;
 
                                         }
                                             etThread.delF( tin0P , psttFile ) ;
@@ -1777,8 +1780,6 @@ etherC::loafIF( tin0P ) ;
                                                 sOut << psttPaidAmountTotal        ;
                                                 sOut << psttPaidCurrencyConversion ;
                                                 sOut << psttPaidCurrency           ;
-                                                // VERSION 2
-
                                                 sOut << psttPaidHawker             ;
                                                 sOut << psttPaidAge                ;
                                                 sOut << psttPaidName               ;
@@ -1788,6 +1789,7 @@ etherC::loafIF( tin0P ) ;
                                                 sOut << psttPaidIdSubscription     ;
                                                 sOut << psttCreatedIdProduct       ;
                                                 sOut << psttCreatedLive            ;
+                                                sOut << psttCreatedNnPeer          ; //20250315@1651: ADDED ; VERSION NOT INCREMENTED BECAUSE THERE ARE NO PRODUCTION DATA
                                                 // VERSION 1
 
                                                 sOut << (strokeS*)tVersion         ;
@@ -1795,7 +1797,7 @@ etherC::loafIF( tin0P ) ;
                                             {
                                             soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 
-                                            TN( tVersion   , "2" ) ;
+                                            TN( tVersion   , "1" ) ;
                                             TN( tEvent , "ipdos.subscription.create" ) ;
                                         {
 
@@ -1816,8 +1818,9 @@ etherC::loafIF( tin0P ) ;
                                         sInUpdated >> psttUpdatedLatestInvoice    ; ___( psttUpdatedLatestInvoice    ) ;
                                         sInUpdated >> psttUpdatedStripeNoticeType ; ___( psttUpdatedStripeNoticeType ) ;
                                         sInUpdated >> psttUpdatedLive             ; ___( psttUpdatedLive             ) ;
-                                        sInUpdated >> psttUpdatedVersion               ; ___( psttUpdatedVersion               ) ;
-                                        sInUpdated >> psttUpdatedEvent                 ; ___( psttUpdatedEvent                 ) ;
+                                        sInCreated >> psttUpdatedNnPeer           ; ___( psttUpdatedNnPeer           ) ;
+                                        sInUpdated >> psttUpdatedVersion          ; ___( psttUpdatedVersion          ) ;
+                                        sInUpdated >> psttUpdatedEvent            ; ___( psttUpdatedEvent            ) ;
 
                                         sInCreated >> psttCreatedAmountDiscount   ; ___( psttCreatedAmountDiscount   ) ;
                                         sInCreated >> psttCreatedIdSubscription   ; ___( psttCreatedIdSubscription   ) ;
@@ -1836,8 +1839,9 @@ etherC::loafIF( tin0P ) ;
                                         sInCreated >> psttCreatedLatestInvoice    ; ___( psttCreatedLatestInvoice    ) ;
                                         sInCreated >> psttCreatedStripeNoticeType ; ___( psttCreatedStripeNoticeType ) ;
                                         sInCreated >> psttCreatedLive             ; ___( psttCreatedLive             ) ;
-                                        sInCreated >> psttCreatedVersion               ; ___( psttCreatedVersion               ) ;
-                                        sInCreated >> psttCreatedEvent                 ; ___( psttCreatedEvent                 ) ;
+                                        sInCreated >> psttCreatedNnPeer           ; ___( psttCreatedNnPeer           ) ;
+                                        sInCreated >> psttCreatedVersion          ; ___( psttCreatedVersion          ) ;
+                                        sInCreated >> psttCreatedEvent            ; ___( psttCreatedEvent            ) ;
 
                                         sInPaid >> psttPaidCurrencyConversion ; ___( psttPaidCurrencyConversion ) ;
                                         sInPaid >> psttPaidCurrency           ; ___( psttPaidCurrency           ) ;
@@ -1857,28 +1861,30 @@ etherC::loafIF( tin0P ) ;
                                         sInPaid >> psttPaidInvoice            ; ___( psttPaidInvoice            ) ;
                                         sInPaid >> psttPaidStripeNoticeType   ; ___( psttPaidStripeNoticeType   ) ;
                                         sInPaid >> psttPaidLive               ; ___( psttPaidLive               ) ;
-                                        sInPaid >> psttPaidVersion                 ; ___( psttPaidVersion                 ) ;
-                                        sInPaid >> psttPaidEvent                   ; ___( psttPaidEvent                   ) ;
+                                        sInPaid >> psttPaidNnPeer             ; ___( psttPaidNnPeer             ) ;
+                                        sInPaid >> psttPaidVersion            ; ___( psttPaidVersion            ) ;
+                                        sInPaid >> psttPaidEvent              ; ___( psttPaidEvent              ) ;
 
-                                        ZE( strokeS* , psttUpdatedAmountDiscount    ) ;
-                                        ZE( strokeS* , psttUpdatedIdSubscription    ) ;
-                                        ZE( strokeS* , psttUpdatedMode              ) ;
-                                        ZE( strokeS* , psttUpdatedName              ) ;
-                                        ZE( strokeS* , psttUpdatedEmail             ) ;
-                                        ZE( strokeS* , psttUpdatedPostalCode        ) ;
-                                        ZE( strokeS* , psttUpdatedCountry           ) ;
-                                        ZE( strokeS* , psttUpdatedHawker            ) ;
-                                        ZE( strokeS* , psttUpdatedAge               ) ;
-                                        ZE( strokeS* , psttUpdatedAmountTotal       ) ;
-                                        ZE( strokeS* , psttUpdatedAmountSubtotal    ) ;
-                                        ZE( strokeS* , psttUpdatedApiVersion        ) ;
-                                        ZE( strokeS* , psttUpdatedIdProduct         ) ;
-                                        ZE( strokeS* , psttUpdatedStatus            ) ;
-                                        ZE( strokeS* , psttUpdatedLatestInvoice     ) ;
-                                        ZE( strokeS* , psttUpdatedStripeNoticeType  ) ;
-                                        ZE( strokeS* , psttUpdatedLive              ) ;
-                                        ZE( strokeS* , psttUpdatedVersion                ) ;
-                                        ZE( strokeS* , psttUpdatedEvent                  ) ;
+                                        ZE( strokeS* , psttUpdatedAmountDiscount   ) ;
+                                        ZE( strokeS* , psttUpdatedIdSubscription   ) ;
+                                        ZE( strokeS* , psttUpdatedMode             ) ;
+                                        ZE( strokeS* , psttUpdatedName             ) ;
+                                        ZE( strokeS* , psttUpdatedEmail            ) ;
+                                        ZE( strokeS* , psttUpdatedPostalCode       ) ;
+                                        ZE( strokeS* , psttUpdatedCountry          ) ;
+                                        ZE( strokeS* , psttUpdatedHawker           ) ;
+                                        ZE( strokeS* , psttUpdatedAge              ) ;
+                                        ZE( strokeS* , psttUpdatedAmountTotal      ) ;
+                                        ZE( strokeS* , psttUpdatedAmountSubtotal   ) ;
+                                        ZE( strokeS* , psttUpdatedApiVersion       ) ;
+                                        ZE( strokeS* , psttUpdatedIdProduct        ) ;
+                                        ZE( strokeS* , psttUpdatedStatus           ) ;
+                                        ZE( strokeS* , psttUpdatedLatestInvoice    ) ;
+                                        ZE( strokeS* , psttUpdatedStripeNoticeType ) ;
+                                        ZE( strokeS* , psttUpdatedLive             ) ;
+                                        ZE( strokeS* , psttUpdatedNnPeer           ) ;
+                                        ZE( strokeS* , psttUpdatedVersion          ) ;
+                                        ZE( strokeS* , psttUpdatedEvent            ) ;
 
                                         ZE( strokeS* , psttCreatedAmountDiscount   ) ;
                                         ZE( strokeS* , psttCreatedIdSubscription   ) ;
@@ -1897,29 +1903,31 @@ etherC::loafIF( tin0P ) ;
                                         ZE( strokeS* , psttCreatedLatestInvoice    ) ;
                                         ZE( strokeS* , psttCreatedStripeNoticeType ) ;
                                         ZE( strokeS* , psttCreatedLive             ) ;
-                                        ZE( strokeS* , psttCreatedVersion               ) ;
-                                        ZE( strokeS* , psttCreatedEvent                 ) ;
+                                        ZE( strokeS* , psttCreatedVersion          ) ;
+                                        ZE( strokeS* , psttCreatedNnPeer           ) ;
+                                        ZE( strokeS* , psttCreatedEvent            ) ;
 
-                                        ZE( strokeS* , psttPaidCurrencyConversion ) ;
-                                        ZE( strokeS* , psttPaidCurrency           ) ;
-                                        ZE( strokeS* , psttPaidAmountDiscount     ) ;
-                                        ZE( strokeS* , psttPaidIdSubscription     ) ;
-                                        ZE( strokeS* , psttPaidMode               ) ;
-                                        ZE( strokeS* , psttPaidName               ) ;
-                                        ZE( strokeS* , psttPaidEmail              ) ;
-                                        ZE( strokeS* , psttPaidPostalCode         ) ;
-                                        ZE( strokeS* , psttPaidCountry            ) ;
-                                        ZE( strokeS* , psttPaidHawker             ) ;
-                                        ZE( strokeS* , psttPaidAge                ) ;
-                                        ZE( strokeS* , psttPaidAmountTotal        ) ;
-                                        ZE( strokeS* , psttPaidAmountSubtotal     ) ;
-                                        ZE( strokeS* , psttPaidApiVersion         ) ;
-                                        ZE( strokeS* , psttPaidIdProduct          ) ;
-                                        ZE( strokeS* , psttPaidInvoice            ) ;
-                                        ZE( strokeS* , psttPaidStripeNoticeType   ) ;
-                                        ZE( strokeS* , psttPaidLive               ) ;
-                                        ZE( strokeS* , psttPaidVersion                 ) ;
-                                        ZE( strokeS* , psttPaidEvent                   ) ;
+                                        ZE( strokeS* , psttPaidCurrencyConversion  ) ;
+                                        ZE( strokeS* , psttPaidCurrency            ) ;
+                                        ZE( strokeS* , psttPaidAmountDiscount      ) ;
+                                        ZE( strokeS* , psttPaidIdSubscription      ) ;
+                                        ZE( strokeS* , psttPaidMode                ) ;
+                                        ZE( strokeS* , psttPaidName                ) ;
+                                        ZE( strokeS* , psttPaidEmail               ) ;
+                                        ZE( strokeS* , psttPaidPostalCode          ) ;
+                                        ZE( strokeS* , psttPaidCountry             ) ;
+                                        ZE( strokeS* , psttPaidHawker              ) ;
+                                        ZE( strokeS* , psttPaidAge                 ) ;
+                                        ZE( strokeS* , psttPaidAmountTotal         ) ;
+                                        ZE( strokeS* , psttPaidAmountSubtotal      ) ;
+                                        ZE( strokeS* , psttPaidApiVersion          ) ;
+                                        ZE( strokeS* , psttPaidIdProduct           ) ;
+                                        ZE( strokeS* , psttPaidInvoice             ) ;
+                                        ZE( strokeS* , psttPaidStripeNoticeType    ) ;
+                                        ZE( strokeS* , psttPaidLive                ) ;
+                                        ZE( strokeS* , psttPaidNnPeer              ) ;
+                                        ZE( strokeS* , psttPaidVersion             ) ;
+                                        ZE( strokeS* , psttPaidEvent               ) ;
 
                                         //etRock.traceF( tin0P , T("doing the deed with ")+tLongInvoiceMine ) ;
                                     {
