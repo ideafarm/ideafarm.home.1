@@ -19,7 +19,7 @@ DONE( tmWorkF )
     etherC::loafIF( tin0P ) ;
     //etThread.traceF( tin0P , T("ok") ) ;
 
-//    while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&idStompLath ) ;
+    while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&idStompLath ) ;
 cDo = 1 ;
     countT cDo = TUCK >> 3 ;
     ZE( countT , idStompLath ) ;
@@ -44,9 +44,11 @@ DONE( tmGorillaF )
 
     }
         //G: ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;       // USED TO STUDY LEAKAGE (EASY LOAD SO CPU USAGE IS INITIALLY LOW ON wh1)
-        //G: ++ s ; ether.osSleepF( tin0P , TOCK << 1 ) ;        // WH SERVER CAN KEEP UP WITH THIS RATE
+        //G: ++ s ; ether.osSleepF( tin0P , TOCK << 1 ) ;       // WH SERVER CAN KEEP UP WITH THIS RATE
+        //G: ++ s ; ether.osSleepF( tin0P , TOCK << 1 ) ;       // FASTER SINCE WEBHOOK CBF NOW DOES NOT WRITE MY BODY TO booksC
 
-        ++ s ; ether.osSleepF( tin0P , TOCK << 1 ) ;        // FASTER SINCE WEBHOOK CBF NOW DOES NOT WRITE MY BODY TO booksC
+        ++ s ; ether.osSleepF( tin0P , TOCK << 0 ) ;            // FASTER SINCE NOW I ONLY MAKE 1 REQUEST
+
         //B: TOO FAST: ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;        // FASTER SINCE WEBHOOK CBF NOW DOES NOT WRITE MY BODY TO booksC
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
@@ -56,8 +58,7 @@ DONE( tmGorillaF )
             }
                 if( idNewFail == 4 ) dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
 
-//U::                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
-//U:: KEEP THIS DISABLED UNTIL AFTER DDOS BUGS ARE ELIMINATED, TO REDUCE EMAIL LOAD AND LIMIT EXHAUSTION
+                etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
 
                 ) ;
                     "\r\n"
