@@ -1973,7 +1973,7 @@ etherC::loafIF( tin0P ) ;
                                             {
                                             IFsCRATCHoK
 
-                                            TN( tLongUpdated , "" ) ; tLongUpdated = tLongInvoiceMine+tShortWantUpdated ;
+                                            TN( tLongUpdated , "" ) ; tLongUpdated = tLongInvoiceMine+tShortWantNewUpdated ;
                                             TN( tLongCreated , "" ) ; tLongCreated = tLongInvoiceMine+tShortWantCreated ;
                                             TN( tLongPaid    , "" ) ; tLongPaid    = tLongInvoiceMine+tShortWantPaid    ;
                                         {
@@ -1995,7 +1995,7 @@ etherC::loafIF( tin0P ) ;
                                 if( bReady )
 
                                 ;
-                                    && etThread.diskFileExistsF( tin0P , tLongInvoice+tShortWantUpdated )
+                                    && etThread.diskFileExistsF( tin0P , tLongInvoice+tShortWantNewUpdated )
                                     && etThread.diskFileExistsF( tin0P , tLongInvoice+tShortWantCreated )
                                        etThread.diskFileExistsF( tin0P , tLongInvoice+tShortWantPaid    )
                                 boolT bReady =
@@ -2077,9 +2077,9 @@ etherC::loafIF( tin0P ) ;
     while( !ether )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    TN( tShortWantUpdated , "sub.updated.soulC"        ) ;
-    TN( tShortWantCreated , "sub.created.soulC"        ) ;
-    TN( tShortWantPaid    , "checkout.completed.soulC" ) ;
+    TN( tShortWantNewUpdated , "sub.new.updated.soulC"    ) ;
+    TN( tShortWantCreated    , "sub.created.soulC"        ) ;
+    TN( tShortWantPaid       , "checkout.completed.soulC" ) ;
 
     patternC patInvoice( tin0P , etThread , tPatternInvoice , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tPatternInvoice , "new.*" ) ;
