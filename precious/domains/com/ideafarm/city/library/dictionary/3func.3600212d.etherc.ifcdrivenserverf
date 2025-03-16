@@ -291,6 +291,9 @@
                                                         etRock.traceF( tin0P , T("ifcDrivenServerF / counting this new session"), flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
                                                         stRecentPeer.sinkF( tin0P , countTC() , nnPeer , flSTACKsINK_UNIQUE ) ;
+
+                                                        if( bExplicitHandshake ) pso->shakeHandsAsServerF( tin0P ) ;
+
                                                         _IO_
                                                     {
                                                     else if( pso )
@@ -753,6 +756,7 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                         {
                                         if( !POOP )
                                         ZE( socketC* , psoListen ) ;
+                                        const boolT bExplicitHandshake = F(info2P.flagsSocket) & flSOCKETc_CRYPTfOREIGNsSLdEFERhANDSHAKE && F(info2P.flagsSocket) & flSOCKETc_CRYPTfOREIGNsSL ;
 
                                         }
                                             strMakeF( tin0P , LF , psttPemPrivateKey   , T("////wh1/c/certbot/live/")+tFullyQualifiedDomain+T("/privkey.pem")   ) ; ___( psttPemPrivateKey   ) ;
