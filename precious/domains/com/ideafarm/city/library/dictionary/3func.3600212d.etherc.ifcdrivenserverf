@@ -573,35 +573,38 @@
                                                         }
                                                             break ;
 
-                                                            etRock.traceF( tin0P , T("ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
-                                                            etRock.traceF( tin0P , T("ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_6 ) ;
-                                                            etRock.traceF( tin0P , T("ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_5 ) ;
-                                                            etRock.traceF( tin0P , T("ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_4 ) ;
-                                                            etRock.traceF( tin0P , T("ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_3 ) ;
-                                                            etRock.traceF( tin0P , T("ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_2 ) ;
+                                                            etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                            etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_6 ) ;
+                                                            etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_5 ) ;
+                                                            etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_4 ) ;
+                                                            etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_3 ) ;
+                                                            etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_2 ) ;
                                                             //CS:CODEsYNC: 360021f7 3600212d
 
-                                                            etRock.traceF( tin0P , T("ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                            etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / listener socket failed to accept a connection [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
                                                             }
                                                                 POOPRqUIET
 
+                                                                etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleted psoListen") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
                                                                 }
                                                                     POOPRqUIET
                                                                     DEL( psoListen ) ;                  // THIS IS THE OFFENDING LINE IN WHICH OpenSSL NEVER RETURNS
                                                                     _IO_
                                                                 {                                       // DONE SEPARATELY SO CALL NEST WILL SHOW WHICH IS HUNG IF HANG IS EVER OBSERVED AGAIN
+                                                                etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleted pso; now deleting psoListen") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
             
                                                                 }
                                                                     POOPRqUIET
                                                                     DEL( pso ) ;                        // THIS IS THE OFFENDING LINE IN WHICH OpenSSL NEVER RETURNS (HAPPENS SOMETIMES BUT NOT ALWAYS HERE)
                                                                     _IO_
                                                                 {                                       // DONE SEPARATELY SO CALL NEST WILL SHOW WHICH IS HUNG IF HANG IS EVER OBSERVED AGAIN
+                                                                etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleting pso") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
 
                                                                 _IO_
                                                             {
 
-                                                            etRock.traceF( tin0P , T("ifcDrivenServerF / accept failed") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+                                                            etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / accept failed") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
                                                             POOPRqUIET
                                                             _IO_
                                                         {
@@ -611,7 +614,7 @@
 
                                                         //CONoUTrAW( "." ) ; //U:: TO FIND A BUG
                                                         osTimeNowF( tin0P , timeAccepted1 , timeAccepted2 ) ;
-                                                        etRock.traceF( tin0P , T("ifcDrivenServerF / called  acceptF [idSubType,cQueued,cQueuedMax]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
+                                                        etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / called  acceptF [idSubType,cQueued,cQueuedMax]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
                                                         }
                                                             etRock.traceF( tin0P , T("ifcDrivenServerF / queue is growing [cQueuedMax]:    ")+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
                                                             cQueuedMax = cFifoPushed-cFifoPulled ;
