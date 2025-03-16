@@ -178,8 +178,9 @@ DONE( tmWorkF )
         ZE( flagsT , flagsNoticeLath ) ;
         ZE( countT , cDone           ) ;
 
-        textC* pptFileName[] = { &tSharedFolderPrefixPrecious , &tSharedFolderPrefixSandbox , &tSharedFolderNoticeParsingFailed , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubNewUpdated , &tSharedFileEventSubOldUpdated , &tb4 , &tSlash } ;
+        textC* pptFileName[] = { &tSharedFolderPrefixPrecious , &tSharedFolderPrefixSandbox , &tSharedFolderNoticeParsingFailed , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubNewUpdated , &tSharedFileEventSubOldUpdated , &tSharedFileEventSubOldDeleted , &tb4 , &tSlash } ;
 
+        TN( tSharedFileEventSubOldDeleted     , "sub.old.deleted"    ".soulC" ) ;
         TN( tSharedFileEventSubOldUpdated     , "sub.old.updated"    ".soulC" ) ;
         TN( tSharedFileEventSubNewUpdated     , "sub.new.updated"    ".soulC" ) ;
         TN( tSharedFileEventCheckoutCompleted , "checkout.completed" ".soulC" ) ;
@@ -1052,9 +1053,192 @@ TASK( tmWorkF )
             {
             else if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeSubUpdated ) )                                                 // ELSE IF NOTICE TYPE IS "SUB UPDATED"
             }
-                etherP.delF( tin0P , psttnu ) ;
-                etherP.boxPutUniqueF( tin0P , psttnu , tSharedFolderNoticeSubDeletedLive+T("sub.deleted.@1@.json") , postPatched , costPatched ) ; ___( psttnu ) ;                // WRITE JSON NOTICE OF SUB DELETED TO FILE FOR MANUAL PROCESSING
-                ZE( strokeS* , psttnu ) ;
+                }
+                    etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
+
+                    //etRockP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
+                    TN( tLong , "" ) ; tLong = tSharedFolderUse+tLiveSlash+T("sub.deleted/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubOldDeletedP ;
+                    textC& tSharedFolderUse = bLive ? tSharedFolderPrefixPreciousP : tSharedFolderPrefixSandboxP ;
+                    TN( tLiveSlash    , bLive ?  "live/" :  "test/" ) ;
+                    boolT bLive = !etherP.strCompareF( tin0P , tValueLive , T("true") ) ;
+
+                    }
+                        sOut << (strokeS*)tValueAmountDiscount   ;
+                        sOut << (strokeS*)tValueIdSubscription   ;
+                        sOut << (strokeS*)tValueMode             ;
+                        sOut << (strokeS*)tValueName             ;
+                        sOut << (strokeS*)tValueEmail            ;
+                        sOut << (strokeS*)tValuePostalCode       ;
+                        sOut << (strokeS*)tValueCountry          ;
+                        sOut << (strokeS*)tValueHawker           ;
+                        sOut << (strokeS*)tValueAge              ;
+                        sOut << (strokeS*)tValueAmountTotal      ;
+                        sOut << (strokeS*)tValueAmountSubtotal   ;
+                        sOut << (strokeS*)tValueApiVersion       ;
+                        sOut << (strokeS*)tValueIdProduct        ;
+                        sOut << (strokeS*)tValueStatus           ;
+                        sOut << (strokeS*)tValueLatestInvoice    ;
+                        sOut << (strokeS*)tValueStripeNoticeType ;
+                        sOut << (strokeS*)tValueLive             ;
+                        sOut << (strokeS*)tValueNnPeer           ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
+                        // VERSION 1
+
+                        sOut << (strokeS*)tVersion               ;
+                        sOut << (strokeS*)tEvent                 ;
+                    {
+                    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+
+                    TN( tVersion   , "1" ) ;
+                    TN( tEvent , "stripe.subscription.old.deleted" ) ;
+                {
+
+                //etRockP.traceF( tin0P , T("writeSoulFileF / 7") ) ;
+
+                }
+                    //etRockP.traceF( tin0P , T("[hashInvoice,modulo]:    ")+TF4(hashInvoice,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+tb4P+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20) ) ;
+
+                    hashInvoice = hashF( tdInvoice , tdInvoice.csF( tin0P ) , 0 ) ;
+
+                    etherP.delF( tin0P , psttdInvoice ) ;
+                    //etRockP.traceF( tin0P , T("[dInvoice]:     ")+tdInvoice ) ;
+                    tdInvoice = T(psttdInvoice) ;
+                    etherP.strDumpIF( tin0P , psttdInvoice , tValueLatestInvoice , tValueLatestInvoice.csF( tin0P ) , flSTRdUMP_5bITS ) ; ___( psttdInvoice ) ;
+                    ZE( strokeS* , psttdInvoice ) ;
+                {
+                ZE( countT    , hashInvoice ) ;
+                TN( tdInvoice , "" ) ;
+
+                //etRockP.traceF( tin0P , T("writeSoulFileF / 8") ) ;
+
+                //etRockP.traceF( tin0P , T("[LatestInvoice]:    ")+tValueLatestInvoice ) ;
+                }
+                    }
+                        }
+                            etherP.delF( tin0P , psttValue ) ;
+                    
+                            }
+                                }
+                                    //etRockP.traceF( tin0P , T("********    ") + *pptPath[ offe ] + T("   :    ") + *pptValue[ offe ] , flTRACE_NOpREFIX | flTRACE_KEEPcRlF , ifcIDtRACEdIVERT_f ) ;
+
+                                    etherP.delF( tin0P , psttt ) ;
+                                    *pptValue[ offe ] = T(psttt) ;
+                                    etherP.strTrimF( tin0P , psttt , psttValue , 0 , 0 , strokeS() ) ; ___( psttt ) ;
+                                    ZE( strokeS* , psttt ) ;
+                                {
+                                if( !etherP.strCompareF( tin0P , psttzPath , *pptPath[ offe ] ) )
+                            {
+                            for( countT offe = 0 ; offe < cKeys ; offe ++ )
+                    
+                            if( cKeys - cValues ) { BLAMMO ; }
+                            countT cValues = sizeof pptValue / sizeof pptValue[ 0 ] ;
+                            countT cKeys  = sizeof pptPath  / sizeof pptPath[  0 ] ;
+                    
+                            //etherP.trace F( tin0P , T("--------------------------        [value]:    ")+T(psttValue) , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_d*/ ) ;
+                            //etherP.trace F( tin0P , T("-------------------------- [path]:            ")+T(psttzPath)       , flTRACE_NOpREFIX | flTRACE_KEEPcRlF /*, ifcIDtRACEdIVERT_d*/ ) ;
+                    
+                            strokeS*& psttValue = *(strokeS**)&(countT&)*pSwPathValue ;
+                            psttzPath = (strokeS*)pSwPathValue->leverF( tin0P , idf ) ;
+                    
+                            _IO_
+                        {
+                        for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
+                        countT cFlavors = pSwPathValue->cFlavorsF( tin0P ) ;
+                    {
+                    if( !POOP )
+                
+                    //etRockP.traceF( tin0P , T("writeSoulFileF / 9") ) ;
+
+                    ;
+                    }
+                        &tPathAmountDiscount   ,
+                        &tPathIdSubscription   ,
+                        &tPathMode             ,
+                        &tPathName             ,
+                        &tPathEmail            ,
+                        &tPathPostalCode       ,
+                        &tPathCountry          ,
+                        &tPathHawker           ,
+                        &tPathAge              ,
+                        &tPathAmountTotal      ,
+                        &tPathAmountSubtotal   ,
+                        &tPathApiVersion       ,
+                        &tPathIdProduct        ,
+                        &tPathStatus           ,
+                        &tPathLatestInvoice    ,
+                        &tPathStripeNoticeType ,
+                        &tPathLive             ,
+                        &tPathNnPeer           ,
+                    {
+                    textC* pptPath[] =
+                    
+                    TN( tPathAmountDiscount   , "\"data\"/\"object\"/\"total_details\"/\"amount_discount\"/"                 ) ;
+                    TN( tPathIdSubscription   , "\"data\"/\"object\"/\"subscription\"/"                                      ) ;
+                    TN( tPathMode             , "\"data\"/\"object\"/\"mode\"/"                                              ) ;
+                    TN( tPathName             , "\"data\"/\"object\"/\"customer_details\"/\"name\"/"                         ) ;
+                    TN( tPathEmail            , "\"data\"/\"object\"/\"customer_details\"/\"email\"/"                        ) ;
+                    TN( tPathPostalCode       , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"postal_code\"/"      ) ;
+                    TN( tPathCountry          , "\"data\"/\"object\"/\"customer_details\"/\"address\"/\"country\"/"          ) ;
+                    TN( tPathHawker           , "\"data\"/\"object\"/\"custom_fields\"/item.00000002/\"text\"/\"value\"/"    ) ;
+                    TN( tPathAge              , "\"data\"/\"object\"/\"custom_fields\"/item.00000001/\"numeric\"/\"value\"/" ) ;
+                    TN( tPathAmountTotal      , "\"data\"/\"object\"/\"amount_total\"/"                                      ) ;
+                    TN( tPathAmountSubtotal   , "\"data\"/\"object\"/\"amount_subtotal\"/"                                   ) ;
+                    TN( tPathApiVersion       , "\"api_version\"/"                                                           ) ;
+                    TN( tPathIdProduct        , "\"data\"/\"object\"/\"plan\"/\"product\"/"                                  ) ;
+                    TN( tPathStatus           , "\"data\"/\"object\"/\"status\"/"                                            ) ;
+                    TN( tPathLatestInvoice    , "\"data\"/\"object\"/\"latest_invoice\"/"                                    ) ;
+                    TN( tPathStripeNoticeType , "\"type\"/"                                                                  ) ;
+                    TN( tPathLive             , "\"livemode\"/"                                                              ) ;
+                    TN( tPathNnPeer           , "\"ipdos_nnpeer\"/"                                                          ) ;
+
+                    // 
+                    // 
+                    // 
+                    // "data" / "object" / "plan" / "product" / : "prod_RJ1XOIUO9htwyX"
+                    // "type" / : "customer.subscription.created"
+                    //
+                    // FOR THE STUDENT REGISTRATION SUBSCRIPTION
+
+                    ;
+                    }
+                        &tValueAmountDiscount   ,
+                        &tValueIdSubscription   ,
+                        &tValueMode             ,
+                        &tValueName             ,
+                        &tValueEmail            ,
+                        &tValuePostalCode       ,
+                        &tValueCountry          ,
+                        &tValueHawker           ,
+                        &tValueAge              ,
+                        &tValueAmountTotal      ,
+                        &tValueAmountSubtotal   ,
+                        &tValueApiVersion       ,
+                        &tValueIdProduct        ,
+                        &tValueStatus           ,
+                        &tValueLatestInvoice    ,
+                        &tValueStripeNoticeType ,
+                        &tValueLive             ,
+                        &tValueNnPeer           ,
+                    {
+                    textC* pptValue[] =
+                {
+                TN( tValueAmountDiscount   , "" ) ;
+                TN( tValueIdSubscription   , "" ) ;
+                TN( tValueMode             , "" ) ;
+                TN( tValueName             , "" ) ;
+                TN( tValueEmail            , "" ) ;
+                TN( tValuePostalCode       , "" ) ;
+                TN( tValueCountry          , "" ) ;
+                TN( tValueHawker           , "" ) ;
+                TN( tValueAge              , "" ) ;
+                TN( tValueAmountTotal      , "" ) ;
+                TN( tValueAmountSubtotal   , "" ) ;
+                TN( tValueApiVersion       , "" ) ;
+                TN( tValueIdProduct        , "" ) ;
+                TN( tValueStatus           , "" ) ;
+                TN( tValueLatestInvoice    , "" ) ;
+                TN( tValueStripeNoticeType , "" ) ;
+                TN( tValueLive             , "" ) ;
+                TN( tValueNnPeer           , "" ) ;
                 //etRockP.traceF( tin0P , T("writeSoulFileF / sub deleted") ) ;
                 _IO_
 
@@ -1208,8 +1392,9 @@ TASK( tmWorkF )
 
     //etRockP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
 
-    textC& tSlashP                            = *pptFileNameP[ 8 ] ;
-    textC& tb4P                               = *pptFileNameP[ 7 ] ;
+    textC& tSlashP                            = *pptFileNameP[ 9 ] ;
+    textC& tb4P                               = *pptFileNameP[ 8 ] ;
+    textC& tSharedFileEventSubOldDeletedP     = *pptFileNameP[ 7 ] ;
     textC& tSharedFileEventSubOldUpdatedP     = *pptFileNameP[ 6 ] ;
     textC& tSharedFileEventSubNewUpdatedP     = *pptFileNameP[ 5 ] ;
     textC& tSharedFileEventCheckoutCompletedP = *pptFileNameP[ 4 ] ;
