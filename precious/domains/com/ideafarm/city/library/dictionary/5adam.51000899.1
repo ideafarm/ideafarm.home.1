@@ -238,14 +238,11 @@ DONE( tmWorkF )
                             mySettings.grabMe.ungrabF( tin0P ) ;
                             }
                                 }
-                                    }
-                                        break ;
-                                        bListedDomain ++ ;
-                                    {
-                                    if( idHit && idHit == 1 + psttPeer->idAdam - mySettings.pptListedDomain[ offt ]->csF( tin0P ) )
-                                    countT idHit  = etThread.strIdF( tin0P , *mySettings.pptListedDomain[ offt ] , psttPeer , 1 ) ;
+                                    break ;
+                                    bListedDomain ++ ;
                                 {
-                                if( mySettings.pptListedDomain[ offt ] )                                //U::20250313@2339: WHY IS THIS NEEDED, OTHER THAN FOR GOOD SAFE CODING STYLE? (OBSERVED AN A.V. IN HERE)
+                                if( idHit && idHit == 1 + psttPeer->idAdam - mySettings.pptListedDomain[ offt ]->csF( tin0P ) )
+                                countT idHit  = etThread.strIdF( tin0P , *mySettings.pptListedDomain[ offt ] , psttPeer , 1 ) ;
                             {
                             for( countT offt = 0 ; offt < mySettings.cListedDomain ; offt ++ )
                             mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
@@ -604,6 +601,7 @@ TASK( tmFreshSettingsF )
             if( etherMe.strCompareF( tin0P , *pptListedDomain[ offt ] , tnu ) ) cListedDomain ++ ;
         {
         for( countT offt = 0 ; offt < sizeof pptListedDomain / sizeof pptListedDomain[ 0 ] ; offt ++ )
+        cListedDomain = 0 ;
         TN( tnu , ".not.used.ideafarm.com" ) ;                                                          //P:PERSONALITY: I IGNORE ALL ELEMENTS NOT BEFORE THE WO'TH ELEMENT THAT CONTAINS THE "NOT USED" VALUE ; THIS IS FOR SPEED
         _IO_
     {
@@ -908,14 +906,14 @@ boolT mySettingsS::operator !( voidT )
 
 
 }
-    pptListedDomain[ 7 ] = &tDomainRootAllowed8 ;
-    pptListedDomain[ 6 ] = &tDomainRootAllowed7 ;
-    pptListedDomain[ 5 ] = &tDomainRootAllowed6 ;
-    pptListedDomain[ 4 ] = &tDomainRootAllowed5 ;
-    pptListedDomain[ 3 ] = &tDomainRootAllowed4 ;
-    pptListedDomain[ 2 ] = &tDomainRootAllowed3 ;
-    pptListedDomain[ 1 ] = &tDomainRootAllowed2 ;
-    pptListedDomain[ 0 ] = &tDomainRootAllowed1 ;
+    *(textC**)&pptListedDomain[ 7 ] = &tDomainRootAllowed8 ;
+    *(textC**)&pptListedDomain[ 6 ] = &tDomainRootAllowed7 ;
+    *(textC**)&pptListedDomain[ 5 ] = &tDomainRootAllowed6 ;
+    *(textC**)&pptListedDomain[ 4 ] = &tDomainRootAllowed5 ;
+    *(textC**)&pptListedDomain[ 3 ] = &tDomainRootAllowed4 ;
+    *(textC**)&pptListedDomain[ 2 ] = &tDomainRootAllowed3 ;
+    *(textC**)&pptListedDomain[ 1 ] = &tDomainRootAllowed2 ;
+    *(textC**)&pptListedDomain[ 0 ] = &tDomainRootAllowed1 ;
 {
 cListedDomain(               0                                                                  )
 cnnSubnetAllowedStripe(      0                                                                  ) ,
@@ -952,38 +950,38 @@ mySettingsS::~mySettingsS( voidT )
     mySettingsS(      tin0S& tin0P , etherC& etherP ) ;
     ~mySettingsS(     voidT                         ) ;
 
-    countT    cnnSubnetAllowedStripe      ;
-    nicNameC* pnnSubnetAllowedStripe      ;
+    countT       cnnSubnetAllowedStripe      ;
+    nicNameC*    pnnSubnetAllowedStripe      ;
 
-    countT    cListedDomain               ;
-    textC*    pptListedDomain[ 8 ]        ;
+    countT       cListedDomain               ;
+    textC* const pptListedDomain[ 8 ]        ;
 
-    textC     tNnTrusted                  ;
-    textC     tIpWebHook2                 ;
-    textC     tIpWebHook1                 ;
-    textC     tDomainLeafWebHook1Net      ;
-    textC     tDomainLeafWebHooksNet      ;
+    textC        tNnTrusted                  ;
+    textC        tIpWebHook2                 ;
+    textC        tIpWebHook1                 ;
+    textC        tDomainLeafWebHook1Net      ;
+    textC        tDomainLeafWebHooksNet      ;
 
-    textC     tNetshCommandIpv4           ;
+    textC        tNetshCommandIpv4           ;
 
-    grabC     grabMe                      ;
+    grabC        grabMe                      ;
 
     public :
 
     voidT zapF( tin0S& tin0P ) ;
 
-    textC     tDomainRootAllowed8         ;
-    textC     tDomainRootAllowed7         ;
-    textC     tDomainRootAllowed6         ;
-    textC     tDomainRootAllowed5         ;
-    textC     tDomainRootAllowed4         ;
-    textC     tDomainRootAllowed3         ;
-    textC     tDomainRootAllowed2         ;
-    textC     tDomainRootAllowed1         ;
+    textC        tDomainRootAllowed8         ;
+    textC        tDomainRootAllowed7         ;
+    textC        tDomainRootAllowed6         ;
+    textC        tDomainRootAllowed5         ;
+    textC        tDomainRootAllowed4         ;
+    textC        tDomainRootAllowed3         ;
+    textC        tDomainRootAllowed2         ;
+    textC        tDomainRootAllowed1         ;
 
-    textC     tNetshCommandIpv4SettingKey ;
+    textC        tNetshCommandIpv4SettingKey ;
 
-    etherC&   etherMe                     ;
+    etherC&      etherMe                     ;
 
     private :
 {
