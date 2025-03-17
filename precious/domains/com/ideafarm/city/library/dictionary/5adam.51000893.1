@@ -1473,15 +1473,9 @@ DONE( tmWorkF )
 
     TN( tSharedFolderPrefix          , "" ) ; tSharedFolderPrefix          = T("////go1/d/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
 
-    //TN( tSharedFolderPrefix          , "" ) ; tSharedFolderPrefix          = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    textC* pptFolderEventsIncoming[] = { &tFolderEventsIncoming , &tFolderEventsIncoming } ;
 
-    textC* pptFolderEventsIncoming[] = { &tFolderEventsIncomingPrecious , &tFolderEventsIncomingSandbox } ;
-
-    TN( tFolderEventsIncomingSandbox  , "////go1/d/ideafarm.shared/sandbox/5100088f/events.incoming/"  ) ;
-    TN( tFolderEventsIncomingPrecious , "////go1/d/ideafarm.shared/precious/5100088f/events.incoming/" ) ;
-
-    //TN( tFolderEventsIncomingSandbox  , "///z/ideafarm.shared/sandbox/5100088f/events.incoming/"  ) ;
-    //TN( tFolderEventsIncomingPrecious , "///z/ideafarm.shared/precious/5100088f/events.incoming/" ) ;
+    TN( tFolderEventsIncoming , "////go1/d/ideafarm.shared/5100088f/events.incoming/" ) ;
 
     patternC patMyEvents( tin0P , etThread , tPatternMyEvents , ifcIDtYPEpATTERN_FOREIGNwILDCARDsTRICT ) ;
     TN( tPatternMyEvents , "" ) ; tPatternMyEvents = T("event.*.")+tLanName+T(".*.soulC") ;
