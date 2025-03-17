@@ -62,7 +62,7 @@ DONE( tmWorkF )
 
                                             }
                                                 etThread.delF( tin0P , psttFile ) ;
-                                                etThread.boxPutUniqueF( tin0P , psttFile , ( bLive ? tFolderEventsIncomingPrecious : tFolderEventsIncomingSandbox ) + T("event.@1@.soulC") , WS( sOut ) ) ;
+                                                etThread.boxPutUniqueF( tin0P , psttFile , ( bLive ? tFolderEventsIncoming : tFolderEventsIncoming ) + T("event.@1@.soulC") , WS( sOut ) ) ;
                                                 ZE( strokeS* , psttFile ) ;
 
                                                 TN( tShortEvent , "" ) ; tShortEvent = T(bLive?"soul.event.live.":"soul.event.test.")+tEvent ;
@@ -302,7 +302,7 @@ DONE( tmWorkF )
 
                                             }
                                                 etThread.delF( tin0P , psttFile ) ;
-                                                etThread.boxPutUniqueF( tin0P , psttFile , ( bLive ? tFolderEventsIncomingPrecious : tFolderEventsIncomingSandbox ) + T("event.@1@.soulC") , WS( sOut ) ) ;
+                                                etThread.boxPutUniqueF( tin0P , psttFile , ( bLive ? tFolderEventsIncoming : tFolderEventsIncoming ) + T("event.@1@.soulC") , WS( sOut ) ) ;
                                                 ZE( strokeS* , psttFile ) ;
 
                                                 TN( tShortEvent , "" ) ; tShortEvent = T(bLive?"soul.event.live.":"soul.event.test.")+tEvent ;
@@ -587,7 +587,7 @@ DONE( tmWorkF )
 
                                             }
                                                 etThread.delF( tin0P , psttFile ) ;
-                                                etThread.boxPutUniqueF( tin0P , psttFile , ( bLive ? tFolderEventsIncomingPrecious : tFolderEventsIncomingSandbox ) + T("event.@1@.soulC") , WS( sOut ) ) ;
+                                                etThread.boxPutUniqueF( tin0P , psttFile , ( bLive ? tFolderEventsIncoming : tFolderEventsIncoming ) + T("event.@1@.soulC") , WS( sOut ) ) ;
                                                 ZE( strokeS* , psttFile ) ;
 
                                                 TN( tShortEvent , "" ) ; tShortEvent = T(bLive?"soul.event.live.":"soul.event.test.")+tEvent ;
@@ -941,19 +941,18 @@ DONE( tmWorkF )
     textC* pptRootIncomingNoticesSubRenewed[] = { &tRootIncomingNoticesTestSubRenewed , &tRootIncomingNoticesLiveSubRenewed } ;
     textC* pptRootIncomingNoticesSubCreated[] = { &tRootIncomingNoticesTestSubCreated , &tRootIncomingNoticesLiveSubCreated } ;
 
-    TN( tRootIncomingNoticesLiveSubDeleted , "" ) ; tRootIncomingNoticesLiveSubDeleted = T("////go1/d/ideafarm.shared/sandbox/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/live/sub.delated/" ) ;
-    TN( tRootIncomingNoticesTestSubDeleted , "" ) ; tRootIncomingNoticesTestSubDeleted = T("////go1/d/ideafarm.shared/sandbox/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/test/sub.deleted/" ) ;
+    TN( tRootIncomingNoticesLiveSubDeleted , "" ) ; tRootIncomingNoticesLiveSubDeleted = T("////go1/d/ideafarm.shared/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/live/sub.delated/" ) ;
+    TN( tRootIncomingNoticesTestSubDeleted , "" ) ; tRootIncomingNoticesTestSubDeleted = T("////go1/d/ideafarm.shared/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/test/sub.deleted/" ) ;
 
-    TN( tRootIncomingNoticesLiveSubRenewed , "" ) ; tRootIncomingNoticesLiveSubRenewed = T("////go1/d/ideafarm.shared/sandbox/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/live/sub.renewed/" ) ;
-    TN( tRootIncomingNoticesTestSubRenewed , "" ) ; tRootIncomingNoticesTestSubRenewed = T("////go1/d/ideafarm.shared/sandbox/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/test/sub.renewed/" ) ;
+    TN( tRootIncomingNoticesLiveSubRenewed , "" ) ; tRootIncomingNoticesLiveSubRenewed = T("////go1/d/ideafarm.shared/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/live/sub.renewed/" ) ;
+    TN( tRootIncomingNoticesTestSubRenewed , "" ) ; tRootIncomingNoticesTestSubRenewed = T("////go1/d/ideafarm.shared/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/test/sub.renewed/" ) ;
 
-    TN( tRootIncomingNoticesLiveSubCreated , "" ) ; tRootIncomingNoticesLiveSubCreated = T("////go1/d/ideafarm.shared/sandbox/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/live/sub.created/" ) ;
-    TN( tRootIncomingNoticesTestSubCreated , "" ) ; tRootIncomingNoticesTestSubCreated = T("////go1/d/ideafarm.shared/sandbox/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/test/sub.created/" ) ;
+    TN( tRootIncomingNoticesLiveSubCreated , "" ) ; tRootIncomingNoticesLiveSubCreated = T("////go1/d/ideafarm.shared/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/live/sub.created/" ) ;
+    TN( tRootIncomingNoticesTestSubCreated , "" ) ; tRootIncomingNoticesTestSubCreated = T("////go1/d/ideafarm.shared/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/test/sub.created/" ) ;
 
     TN( tSlash , "/" ) ;
 
-    TN( tFolderEventsIncomingPrecious , "" ) ; tFolderEventsIncomingPrecious = T("////go1/d/ideafarm.shared/precious/")+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/events.incoming/" ) ;
-    TN( tFolderEventsIncomingSandbox  , "" ) ; tFolderEventsIncomingSandbox  = T("////go1/d/ideafarm.shared/sandbox/" )+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/events.incoming/" ) ;
+    TN( tFolderEventsIncoming , "" ) ; tFolderEventsIncoming = T("////go1/d/ideafarm.shared/")+TfORsTRING(ifcIDaDAM_WEBhOOKnOTICEfILER)+T("/events.incoming/" ) ;
 
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_NORMAL ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_NORMAL ) ;
