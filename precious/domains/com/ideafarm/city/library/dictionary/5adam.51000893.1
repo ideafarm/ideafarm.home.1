@@ -73,8 +73,11 @@ DONE( tmWorkF )
                                     etThread.delF( tin0P , psttValueMiddleCurrencyConversion ) ;
                                     etThread.delF( tin0P , psttValueMiddleCurrency           ) ;
                                     etThread.delF( tin0P , psttValueLive                     ) ;
+                                    etThread.delF( tin0P , psttValueUpdatedLanName           ) ;
                                     etThread.delF( tin0P , psttValueUpdatedNnPeer            ) ;
+                                    etThread.delF( tin0P , psttValueCreatedLanName           ) ;
                                     etThread.delF( tin0P , psttValueCreatedNnPeer            ) ;
+                                    etThread.delF( tin0P , psttValuePaidLanName              ) ;
                                     etThread.delF( tin0P , psttValuePaidNnPeer               ) ;
                                     etThread.delF( tin0P , psttValueIdSubscription           ) ;
                                     etThread.delF( tin0P , psttValueName                     ) ;
@@ -85,9 +88,12 @@ DONE( tmWorkF )
                                     etThread.delF( tin0P , psttValueAge                      ) ;
                                     etThread.delF( tin0P , psttVersion                       ) ;
                                     etThread.delF( tin0P , psttEvent                         ) ;
-                                    etThread.traceF( tin0P , T("[tUpdatedNnPeer]:    ")+T(psttValueUpdatedNnPeer) ) ;
-                                    etThread.traceF( tin0P , T("[tCreatedNnPeer]:    ")+T(psttValueCreatedNnPeer) ) ;
-                                    etThread.traceF( tin0P , T("[tPaidNnPeer]:       ")+T(psttValuePaidNnPeer   ) ) ;
+                                    etThread.traceF( tin0P , T("[tUpdatedLanName]:    ")+T(psttValueUpdatedLanName) ) ;
+                                    etThread.traceF( tin0P , T("[tUpdatedNnPeer]:     ")+T(psttValueUpdatedNnPeer ) ) ;
+                                    etThread.traceF( tin0P , T("[tCreatedLanName]:    ")+T(psttValueCreatedLanName) ) ;
+                                    etThread.traceF( tin0P , T("[tCreatedNnPeer]:     ")+T(psttValueCreatedNnPeer ) ) ;
+                                    etThread.traceF( tin0P , T("[tPaidLanName]:       ")+T(psttValuePaidLanName   ) ) ;
+                                    etThread.traceF( tin0P , T("[tPaidNnPeer]:        ")+T(psttValuePaidNnPeer    ) ) ;
                                     }
                                         }
                                             }
@@ -1320,20 +1326,23 @@ DONE( tmWorkF )
                                     ZE( strokeS* , psttValueMiddleAmountTotal        ) ;
                                     ZE( strokeS* , psttValueMiddleCurrencyConversion ) ;
                                     ZE( strokeS* , psttValueMiddleCurrency           ) ;
-                                    ZE( strokeS* , psttValueHawker                   ) ; sIn >> psttValueHawker                   ; ___( psttValueHawker                   ) ; etRock.traceF( tin0P , T("[ValueHawker                   ]:    ")+T(psttValueHawker                   ) ) ;
-                                    ZE( strokeS* , psttValueAge                      ) ; sIn >> psttValueAge                      ; ___( psttValueAge                      ) ; etRock.traceF( tin0P , T("[ValueAge                      ]:    ")+T(psttValueAge                      ) ) ;
-                                    ZE( strokeS* , psttValueName                     ) ; sIn >> psttValueName                     ; ___( psttValueName                     ) ; etRock.traceF( tin0P , T("[ValueName                     ]:    ")+T(psttValueName                     ) ) ;
-                                    ZE( strokeS* , psttValueEmail                    ) ; sIn >> psttValueEmail                    ; ___( psttValueEmail                    ) ; etRock.traceF( tin0P , T("[ValueEmail                    ]:    ")+T(psttValueEmail                    ) ) ;
-                                    ZE( strokeS* , psttValuePostalCode               ) ; sIn >> psttValuePostalCode               ; ___( psttValuePostalCode               ) ; etRock.traceF( tin0P , T("[ValuePostalCode               ]:    ")+T(psttValuePostalCode               ) ) ;
-                                    ZE( strokeS* , psttValueCountry                  ) ; sIn >> psttValueCountry                  ; ___( psttValueCountry                  ) ; etRock.traceF( tin0P , T("[ValueCountry                  ]:    ")+T(psttValueCountry                  ) ) ;
-                                    ZE( strokeS* , psttValueIdSubscription           ) ; sIn >> psttValueIdSubscription           ; ___( psttValueIdSubscription           ) ; etRock.traceF( tin0P , T("[ValueIdSubscription           ]:    ")+T(psttValueIdSubscription           ) ) ;
-                                    ZE( strokeS* , psttValueIdProduct                ) ; sIn >> psttValueIdProduct                ; ___( psttValueIdProduct                ) ; etRock.traceF( tin0P , T("[ValueIdProduct                ]:    ")+T(psttValueIdProduct                ) ) ;
-                                    ZE( strokeS* , psttValueLive                     ) ; sIn >> psttValueLive                     ; ___( psttValueLive                     ) ; etRock.traceF( tin0P , T("[ValueLive                     ]:    ")+T(psttValueLive                     ) ) ;
-                                    ZE( strokeS* , psttValueUpdatedNnPeer            ) ; sIn >> psttValueUpdatedNnPeer            ; ___( psttValueUpdatedNnPeer            ) ; etRock.traceF( tin0P , T("[ValueUpdatedNnPeer            ]:    ")+T(psttValueUpdatedNnPeer            ) ) ;
-                                    ZE( strokeS* , psttValueCreatedNnPeer            ) ; sIn >> psttValueCreatedNnPeer            ; ___( psttValueCreatedNnPeer            ) ; etRock.traceF( tin0P , T("[ValueCreatedNnPeer            ]:    ")+T(psttValueCreatedNnPeer            ) ) ;
-                                    ZE( strokeS* , psttValuePaidNnPeer               ) ; sIn >> psttValuePaidNnPeer               ; ___( psttValuePaidNnPeer               ) ; etRock.traceF( tin0P , T("[ValuePaidNnPeer               ]:    ")+T(psttValuePaidNnPeer               ) ) ;
-                                    ZE( strokeS* , psttVersion                       ) ; sIn >> psttVersion                       ; ___( psttVersion                       ) ; etRock.traceF( tin0P , T("[Version                       ]:    ")+T(psttVersion                       ) ) ;
-                                    ZE( strokeS* , psttEvent                         ) ; sIn >> psttEvent                         ; ___( psttEvent                         ) ; etRock.traceF( tin0P , T("[Event                         ]:    ")+T(psttEvent                         ) ) ;
+                                    ZE( strokeS* , psttValueHawker                   ) ; sIn >> psttValueHawker         ; ___( psttValueHawker         ) ; etRock.traceF( tin0P , T("[ValueHawker        ]:    ")+T(psttValueHawker                   ) ) ;
+                                    ZE( strokeS* , psttValueAge                      ) ; sIn >> psttValueAge            ; ___( psttValueAge            ) ; etRock.traceF( tin0P , T("[ValueAge           ]:    ")+T(psttValueAge                      ) ) ;
+                                    ZE( strokeS* , psttValueName                     ) ; sIn >> psttValueName           ; ___( psttValueName           ) ; etRock.traceF( tin0P , T("[ValueName          ]:    ")+T(psttValueName                     ) ) ;
+                                    ZE( strokeS* , psttValueEmail                    ) ; sIn >> psttValueEmail          ; ___( psttValueEmail          ) ; etRock.traceF( tin0P , T("[ValueEmail         ]:    ")+T(psttValueEmail                    ) ) ;
+                                    ZE( strokeS* , psttValuePostalCode               ) ; sIn >> psttValuePostalCode     ; ___( psttValuePostalCode     ) ; etRock.traceF( tin0P , T("[ValuePostalCode    ]:    ")+T(psttValuePostalCode               ) ) ;
+                                    ZE( strokeS* , psttValueCountry                  ) ; sIn >> psttValueCountry        ; ___( psttValueCountry        ) ; etRock.traceF( tin0P , T("[ValueCountry       ]:    ")+T(psttValueCountry                  ) ) ;
+                                    ZE( strokeS* , psttValueIdSubscription           ) ; sIn >> psttValueIdSubscription ; ___( psttValueIdSubscription ) ; etRock.traceF( tin0P , T("[ValueIdSubscription]:    ")+T(psttValueIdSubscription           ) ) ;
+                                    ZE( strokeS* , psttValueIdProduct                ) ; sIn >> psttValueIdProduct      ; ___( psttValueIdProduct      ) ; etRock.traceF( tin0P , T("[ValueIdProduct     ]:    ")+T(psttValueIdProduct                ) ) ;
+                                    ZE( strokeS* , psttValueLive                     ) ; sIn >> psttValueLive           ; ___( psttValueLive           ) ; etRock.traceF( tin0P , T("[ValueLive          ]:    ")+T(psttValueLive                     ) ) ;
+                                    ZE( strokeS* , psttValueUpdatedLanName           ) ; sIn >> psttValueUpdatedLanName ; ___( psttValueUpdatedLanName ) ; etRock.traceF( tin0P , T("[ValueUpdatedLanName]:    ")+T(psttValueUpdatedLanName           ) ) ;
+                                    ZE( strokeS* , psttValueUpdatedNnPeer            ) ; sIn >> psttValueUpdatedNnPeer  ; ___( psttValueUpdatedNnPeer  ) ; etRock.traceF( tin0P , T("[ValueUpdatedNnPeer ]:    ")+T(psttValueUpdatedNnPeer            ) ) ;
+                                    ZE( strokeS* , psttValueCreatedLanName           ) ; sIn >> psttValueCreatedLanName ; ___( psttValueCreatedLanName ) ; etRock.traceF( tin0P , T("[ValueCreatedLanName]:    ")+T(psttValueCreatedLanName           ) ) ;
+                                    ZE( strokeS* , psttValueCreatedNnPeer            ) ; sIn >> psttValueCreatedNnPeer  ; ___( psttValueCreatedNnPeer  ) ; etRock.traceF( tin0P , T("[ValueCreatedNnPeer ]:    ")+T(psttValueCreatedNnPeer            ) ) ;
+                                    ZE( strokeS* , psttValuePaidLanName              ) ; sIn >> psttValuePaidLanName    ; ___( psttValuePaidLanName    ) ; etRock.traceF( tin0P , T("[ValuePaidLanName   ]:    ")+T(psttValuePaidLanName              ) ) ;
+                                    ZE( strokeS* , psttValuePaidNnPeer               ) ; sIn >> psttValuePaidNnPeer     ; ___( psttValuePaidNnPeer     ) ; etRock.traceF( tin0P , T("[ValuePaidNnPeer    ]:    ")+T(psttValuePaidNnPeer               ) ) ;
+                                    ZE( strokeS* , psttVersion                       ) ; sIn >> psttVersion             ; ___( psttVersion             ) ; etRock.traceF( tin0P , T("[Version            ]:    ")+T(psttVersion                       ) ) ;
+                                    ZE( strokeS* , psttEvent                         ) ; sIn >> psttEvent               ; ___( psttEvent               ) ; etRock.traceF( tin0P , T("[Event              ]:    ")+T(psttEvent                         ) ) ;
                                     // VERSION 1
 
                                     _IO_

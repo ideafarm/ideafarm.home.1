@@ -289,11 +289,12 @@ TASK( tmWorkF )
                         sOut << (strokeS*)tValueInvoice            ;
                         sOut << (strokeS*)tValueStripeNoticeType   ;
                         sOut << (strokeS*)tValueLive               ;
+                        sOut << (strokeS*)tValueLanName            ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
                         sOut << (strokeS*)tValueNnPeer             ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
                         // VERSION 1
 
-                        sOut << (strokeS*)tVersion                       ;
-                        sOut << (strokeS*)tEvent                         ;
+                        sOut << (strokeS*)tVersion                 ;
+                        sOut << (strokeS*)tEvent                   ;
                     {
                     soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 
@@ -375,6 +376,7 @@ TASK( tmWorkF )
                         &tPathInvoice            ,
                         &tPathStripeNoticeType   ,
                         &tPathLive               ,
+                        &tPathLanName            ,
                         &tPathNnPeer             ,
                     {
                     textC* pptPath[] =
@@ -398,6 +400,7 @@ TASK( tmWorkF )
                     TN( tPathInvoice            , "\"data\"/\"object\"/\"invoice\"/"                                           ) ;
                     TN( tPathStripeNoticeType   , "\"type\"/"                                                                  ) ;
                     TN( tPathLive               , "\"livemode\"/"                                                              ) ;
+                    TN( tPathLanName            , "\"ipdos_lan_name\"/"                                                        ) ;
                     TN( tPathNnPeer             , "\"ipdos_nnpeer\"/"                                                          ) ;
 
                     ;
@@ -484,6 +487,7 @@ TASK( tmWorkF )
                         sOut << (strokeS*)tValueLatestInvoice    ;
                         sOut << (strokeS*)tValueStripeNoticeType ;
                         sOut << (strokeS*)tValueLive             ;
+                        sOut << (strokeS*)tValueLanName          ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
                         sOut << (strokeS*)tValueNnPeer           ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
                         // VERSION 1
 
@@ -569,6 +573,7 @@ TASK( tmWorkF )
                         &tPathLatestInvoice    ,
                         &tPathStripeNoticeType ,
                         &tPathLive             ,
+                        &tPathLanName          ,
                         &tPathNnPeer           ,
                     {
                     textC* pptPath[] =
@@ -586,11 +591,11 @@ TASK( tmWorkF )
                     TN( tPathAmountSubtotal   , "\"data\"/\"object\"/\"amount_subtotal\"/"                                   ) ;
                     TN( tPathApiVersion       , "\"api_version\"/"                                                           ) ;
                     TN( tPathIdProduct        , "\"data\"/\"object\"/\"plan\"/\"product\"/"                                  ) ;
-
                     TN( tPathStatus           , "\"data\"/\"object\"/\"status\"/"                                            ) ;
                     TN( tPathLatestInvoice    , "\"data\"/\"object\"/\"latest_invoice\"/"                                    ) ;
                     TN( tPathStripeNoticeType , "\"type\"/"                                                                  ) ;
                     TN( tPathLive             , "\"livemode\"/"                                                              ) ;
+                    TN( tPathLanName          , "\"ipdos_lan_name\"/"                                                        ) ;
                     TN( tPathNnPeer           , "\"ipdos_nnpeer\"/"                                                          ) ;
 
                     ;
@@ -612,6 +617,7 @@ TASK( tmWorkF )
                         &tValueLatestInvoice    ,
                         &tValueStripeNoticeType ,
                         &tValueLive             ,
+                        &tValueLanName          ,
                         &tValueNnPeer           ,
                     {
                     textC* pptValue[] =
@@ -633,6 +639,7 @@ TASK( tmWorkF )
                 TN( tValueLatestInvoice    , "" ) ;
                 TN( tValueStripeNoticeType , "" ) ;
                 TN( tValueLive             , "" ) ;
+                TN( tValueLanName          , "" ) ;
                 TN( tValueNnPeer           , "" ) ;
                 //etRockP.traceF( tin0P , T("writeSoulFileF / sub created") ) ;
                 _IO_                                                                                                                                                // WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
@@ -675,6 +682,7 @@ TASK( tmWorkF )
                             sOut << (strokeS*)tValueLatestInvoice    ;
                             sOut << (strokeS*)tValueStripeNoticeType ;
                             sOut << (strokeS*)tValueLive             ;
+                            sOut << (strokeS*)tValueLanName          ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
                             sOut << (strokeS*)tValueNnPeer           ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
                             // VERSION 1
 
@@ -762,6 +770,7 @@ TASK( tmWorkF )
                             &tPathLatestInvoice    ,
                             &tPathStripeNoticeType ,
                             &tPathLive             ,
+                            &tPathLanName          ,
                             &tPathNnPeer           ,
                         {
                         textC* pptPath[] =
@@ -783,6 +792,7 @@ TASK( tmWorkF )
                         TN( tPathLatestInvoice    , "\"data\"/\"object\"/\"latest_invoice\"/"                                    ) ;
                         TN( tPathStripeNoticeType , "\"type\"/"                                                                  ) ;
                         TN( tPathLive             , "\"livemode\"/"                                                              ) ;
+                        TN( tPathLanName          , "\"ipdos_lan_name\"/"                                                        ) ;
                         TN( tPathNnPeer           , "\"ipdos_nnpeer\"/"                                                          ) ;
 
                         // 
@@ -812,6 +822,7 @@ TASK( tmWorkF )
                             &tValueLatestInvoice    ,
                             &tValueStripeNoticeType ,
                             &tValueLive             ,
+                            &tValueLanName          ,
                             &tValueNnPeer           ,
                         {
                         textC* pptValue[] =
@@ -833,6 +844,7 @@ TASK( tmWorkF )
                     TN( tValueLatestInvoice    , "" ) ;
                     TN( tValueStripeNoticeType , "" ) ;
                     TN( tValueLive             , "" ) ;
+                    TN( tValueLanName          , "" ) ;
                     TN( tValueNnPeer           , "" ) ;
                     //etRockP.traceF( tin0P , T("writeSoulFileF / sub updated (sub created))") ) ;
                     _IO_
@@ -874,6 +886,7 @@ TASK( tmWorkF )
                             sOut << (strokeS*)tValueLatestInvoice    ;
                             sOut << (strokeS*)tValueStripeNoticeType ;
                             sOut << (strokeS*)tValueLive             ;
+                            sOut << (strokeS*)tValueLanName          ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
                             sOut << (strokeS*)tValueNnPeer           ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
                             // VERSION 1
 
@@ -961,6 +974,7 @@ TASK( tmWorkF )
                             &tPathLatestInvoice    ,
                             &tPathStripeNoticeType ,
                             &tPathLive             ,
+                            &tPathLanName          ,
                             &tPathNnPeer           ,
                         {
                         textC* pptPath[] =
@@ -982,6 +996,7 @@ TASK( tmWorkF )
                         TN( tPathLatestInvoice    , "\"data\"/\"object\"/\"latest_invoice\"/"                                    ) ;
                         TN( tPathStripeNoticeType , "\"type\"/"                                                                  ) ;
                         TN( tPathLive             , "\"livemode\"/"                                                              ) ;
+                        TN( tPathLanName          , "\"ipdos_lan_name\"/"                                                        ) ;
                         TN( tPathNnPeer           , "\"ipdos_nnpeer\"/"                                                          ) ;
 
                         // 
@@ -1011,6 +1026,7 @@ TASK( tmWorkF )
                             &tValueLatestInvoice    ,
                             &tValueStripeNoticeType ,
                             &tValueLive             ,
+                            &tValueLanName          ,
                             &tValueNnPeer           ,
                         {
                         textC* pptValue[] =
@@ -1032,6 +1048,7 @@ TASK( tmWorkF )
                     TN( tValueLatestInvoice    , "" ) ;
                     TN( tValueStripeNoticeType , "" ) ;
                     TN( tValueLive             , "" ) ;
+                    TN( tValueLanName          , "" ) ;
                     TN( tValueNnPeer           , "" ) ;
                     //etRockP.traceF( tin0P , T("writeSoulFileF / sub updated (renewal)") ) ;
                     _IO_
@@ -1080,6 +1097,7 @@ TASK( tmWorkF )
                         sOut << (strokeS*)tValueLatestInvoice    ;
                         sOut << (strokeS*)tValueStripeNoticeType ;
                         sOut << (strokeS*)tValueLive             ;
+                        sOut << (strokeS*)tValueLanName          ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
                         sOut << (strokeS*)tValueNnPeer           ;  //20250315@1634: ADDED ; VERSION NOT INCREMENTED SINCE THERE IS NO PRODUCTION DATA
                         // VERSION 1
 
@@ -1167,6 +1185,7 @@ TASK( tmWorkF )
                         &tPathLatestInvoice    ,
                         &tPathStripeNoticeType ,
                         &tPathLive             ,
+                        &tPathLanName          ,
                         &tPathNnPeer           ,
                     {
                     textC* pptPath[] =
@@ -1188,6 +1207,7 @@ TASK( tmWorkF )
                     TN( tPathLatestInvoice    , "\"data\"/\"object\"/\"latest_invoice\"/"                                    ) ;
                     TN( tPathStripeNoticeType , "\"type\"/"                                                                  ) ;
                     TN( tPathLive             , "\"livemode\"/"                                                              ) ;
+                    TN( tPathLanName          , "\"ipdos_lan_name\"/"                                                        ) ;
                     TN( tPathNnPeer           , "\"ipdos_nnpeer\"/"                                                          ) ;
 
                     // 
@@ -1217,6 +1237,7 @@ TASK( tmWorkF )
                         &tValueLatestInvoice    ,
                         &tValueStripeNoticeType ,
                         &tValueLive             ,
+                        &tValueLanName          ,
                         &tValueNnPeer           ,
                     {
                     textC* pptValue[] =
@@ -1238,6 +1259,7 @@ TASK( tmWorkF )
                 TN( tValueLatestInvoice    , "" ) ;
                 TN( tValueStripeNoticeType , "" ) ;
                 TN( tValueLive             , "" ) ;
+                TN( tValueLanName          , "" ) ;
                 TN( tValueNnPeer           , "" ) ;
                 //etRockP.traceF( tin0P , T("writeSoulFileF / sub deleted") ) ;
                 _IO_
@@ -1368,7 +1390,13 @@ TASK( tmWorkF )
                 postPatched = tInputWithNnPeer ;
 
                 etherP.delF( tin0P , psttAfter ) ;
-                if( psttBefore && psttAfter ) tInputWithNnPeer = T(psttBefore)+T("{\r\n  \"ipdos_nnpeer\": \"")+T(nnPeerP)+T("\",")+T(psttAfter) ;
+                }
+                    etherP.delF( tin0P , psttLanName ) ;
+                    tInputWithNnPeer = T(psttBefore)+T("{\r\n  \"ipdos_nnpeer\": \"")+T(nnPeerP)+T("\",\r\n  \"ipdos_lan_name\": \"")+T(psttLanName)+T("\",")+T(psttAfter) ;
+                    etherP.computerLanNameF( tin0P , psttLanName ) ; ___( psttLanName ) ;
+                    ZE( strokeS* , psttLanName ) ;
+                {
+                if( psttBefore && psttAfter )
 
                 etherP.strSubstringF( tin0P , psttAfter , idf , countTC() , tOriginal ) ; ___( psttAfter ) ;
                 ZE( strokeS* , psttAfter ) ;
