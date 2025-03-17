@@ -90,18 +90,35 @@ DONE( tmWorkF )
                                     etThread.delF( tin0P , psttEvent                         ) ;
 
                                     }
-                                         /*if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueUpdatedLanName ) )*/ etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer: ")+T(psttValueUpdatedNnPeer)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
-                                         /*if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueCreatedLanName ) )*/ etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer: ")+T(psttValueCreatedNnPeer)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
-                                         /*if( etThread.strCompareF( tin0P , tLanNameExpected , psttValuePaidLanName    ) )*/ etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer: ")+T(psttValuePaidNnPeer   )+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+                                         etThread.delF( tin0P , psttPeer3Domain ) ;
+                                         etThread.delF( tin0P , psttPeer2Domain ) ;
+                                         etThread.delF( tin0P , psttPeer1Domain ) ;
+
+                                         /*if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueUpdatedLanName ) )*/ etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer: ")+T(psttValueUpdatedNnPeer)+tb4+T(psttPeer3Domain)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+                                         /*if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueCreatedLanName ) )*/ etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer: ")+T(psttValueCreatedNnPeer)+tb4+T(psttPeer2Domain)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+                                         /*if( etThread.strCompareF( tin0P , tLanNameExpected , psttValuePaidLanName    ) )*/ etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer: ")+T(psttValuePaidNnPeer   )+tb4+T(psttPeer1Domain)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+
+                                         ZE( strokeS* , psttPeer3Domain ) ; etThread.sockPsttHostF( tin0P , psttPeer3Domain , nnPeer3 ) ; ___( psttPeer3Domain ) ;
+                                         ZE( strokeS* , psttPeer2Domain ) ; etThread.sockPsttHostF( tin0P , psttPeer2Domain , nnPeer2 ) ; ___( psttPeer2Domain ) ;
+                                         ZE( strokeS* , psttPeer1Domain ) ; etThread.sockPsttHostF( tin0P , psttPeer1Domain , nnPeer1 ) ; ___( psttPeer1Domain ) ;
+
+                                        nicNameC nnPeer3 = etThread.sockNicNameF( tin0P , tNnPeer3 ) ;
+                                        nicNameC nnPeer2 = etThread.sockNicNameF( tin0P , tNnPeer2 ) ;
+                                        nicNameC nnPeer1 = etThread.sockNicNameF( tin0P , tNnPeer1 ) ;
                                     {
                                     if( bValidEvent )
 
                                     etThread.traceF( tin0P , T("[tUpdatedLanName]:    ")+T(psttValueUpdatedLanName) ) ;
-                                    etThread.traceF( tin0P , T("[tUpdatedNnPeer]:     ")+T(psttValueUpdatedNnPeer ) ) ;
+                                    etThread.traceF( tin0P , T("[tUpdatedNnPeer]:     ")+tNnPeer3                   ) ;
                                     etThread.traceF( tin0P , T("[tCreatedLanName]:    ")+T(psttValueCreatedLanName) ) ;
-                                    etThread.traceF( tin0P , T("[tCreatedNnPeer]:     ")+T(psttValueCreatedNnPeer ) ) ;
+                                    etThread.traceF( tin0P , T("[tCreatedNnPeer]:     ")+tNnPeer2                   ) ;
                                     etThread.traceF( tin0P , T("[tPaidLanName]:       ")+T(psttValuePaidLanName   ) ) ;
-                                    etThread.traceF( tin0P , T("[tPaidNnPeer]:        ")+T(psttValuePaidNnPeer    ) ) ;
+                                    etThread.traceF( tin0P , T("[tPaidNnPeer]:        ")+tNnPeer1                   ) ;
+
+                                    TN( tNnPeer3 , psttValueUpdatedNnPeer ) ;
+                                    TN( tNnPeer2 , psttValueCreatedNnPeer ) ;
+                                    TN( tNnPeer1 , psttValuePaidNnPeer    ) ;
+
                                     }
                                         }
                                             }
