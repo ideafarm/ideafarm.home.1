@@ -88,6 +88,14 @@ DONE( tmWorkF )
                                     etThread.delF( tin0P , psttValueAge                      ) ;
                                     etThread.delF( tin0P , psttVersion                       ) ;
                                     etThread.delF( tin0P , psttEvent                         ) ;
+
+                                    }
+                                         /*if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueUpdatedLanName ) )*/ etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer: ")+T(psttValueUpdatedNnPeer)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+                                         /*if( etThread.strCompareF( tin0P , tLanNameExpected , psttValueCreatedLanName ) )*/ etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer: ")+T(psttValueCreatedNnPeer)+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+                                         /*if( etThread.strCompareF( tin0P , tLanNameExpected , psttValuePaidLanName    ) )*/ etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , T("Subject: Valid Webhook Notice received from untrusted peer: ")+T(psttValuePaidNnPeer   )+T("\r\nPlease add this value to the list of trusted peers.\r\n\r\n") ) ;
+                                    {
+                                    if( bValidEvent )
+
                                     etThread.traceF( tin0P , T("[tUpdatedLanName]:    ")+T(psttValueUpdatedLanName) ) ;
                                     etThread.traceF( tin0P , T("[tUpdatedNnPeer]:     ")+T(psttValueUpdatedNnPeer ) ) ;
                                     etThread.traceF( tin0P , T("[tCreatedLanName]:    ")+T(psttValueCreatedLanName) ) ;
@@ -1266,6 +1274,7 @@ DONE( tmWorkF )
                                                 boolT bFail1 = 1 ;
                                                 boolT bFail0 = 1 ;
                                                 TN( tInvitationsSubmitted , "" ) ;
+                                                bValidEvent = 1 ;                           //I THINK THAT THIS IS A VALID EVENT THAT IS REALLY FROM STRIPE, SO WILL PROCEED TO ISSUE A WELCOME EMAIL WITH CREDENTIALS
                                             {
 //                                            else
 //                                            }
@@ -1305,6 +1314,7 @@ DONE( tmWorkF )
                                         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
                                     {
                                     if( flagsFail )
+                                    ZE( boolT , bValidEvent ) ;
 
                                     if( age < 13                                                       ) flagsFail |= flFAIL_UNEXPECTEDaGEtOOyOUNG ;
                                     if( etThread.strCompareF( tin0P , psttVersion , tCorrectVersion1 ) ) flagsFail |= flFAIL_UNEXPECTEDvERSION     ;
@@ -1433,6 +1443,7 @@ DONE( tmWorkF )
     etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderEventGorilla01  ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tSharedFolderEventRetryLater ) ;
 
+    TN( tLanNameExpected         , "WH1"                           ) ;
     TN( tn                       , ""                              ) ;
     TN( tb4                      , "    "                          ) ;
     TN( tcrlf                    , "\r\n"                          ) ;
