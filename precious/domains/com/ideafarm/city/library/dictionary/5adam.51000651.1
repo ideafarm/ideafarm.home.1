@@ -21,6 +21,8 @@ DONE( tmWorkF )
     }
         }
             }
+                sgnKidHired.giveF( tin0P ) ;
+
                 else            ;//ether.traceF( tin0P , T("sandbox so not hiring SNAPwORDS") ) ;
                 if( !bSandbox ) ether.ifcHireF( tin0P , T("PISS") , ifcIDaDAM_SNAPwORDS , T("!ignoreFireByOperator") , flHIRE_DISPLAYaUTO , nicNameC() ) ; // flHIRE_DISPLAYaUTO CAN BE COMMENTED OUT TO AVOID WDW FOR ROOT CLOUD INSTANCE WHICH IS USUALLY NOT INTERESTING
                 boolT bSandbox = etherC::ifc_idHomeI_IF() & fliIDhOME_HOMELESS ;
@@ -158,7 +160,10 @@ DONE( tmWorkF )
     //if( !etThread.strCompareF( tin0P , tComputerName , T("ifo.master") ) )
     //20230905@1549: COMMENTED THIS OUT BECAUSE IT IS PROBABLY OBSOLETE
 
-    etThread.osThreadF( TaRG2cBsTACK( tmCleanF , CBsTACKmIN << 1 ) , (countT)(strokeS*)t13Bounce , (countT)(strokeS*)t11DropSoil ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmCleanF , CBsTACKmIN << 1 ) , (countT)(strokeS*)t13Bounce , (countT)(strokeS*)t11DropSoil , (countT)&sgnKidHired ) ;
+
+    signC sgnKidHired( tin0P , TAG( TAGiDnULL ) ) ;   //20250316@2029: THIS IS USED TO WORKAROUND THE TRANSIENT ERROR THAT THE BASE O.S. THINKS THAT SOME OR ALL OF MY KID PROCESSES HAVE AN OPEN HANDLE TO THE BACKING OBJECT OF A soulC INSTANCE THAT tmCleanF USES
+
     //etThread.osThreadF( TaRG1( tmPingF ) ) ; //U::COMMENTED OUT BECAUSE SAW A FAILURE IN s_writeF 20121219@2102
 
     //etThread.osThreadF( TaRG1( tmFixArcNamesF ) ) ; // REDUNDANT, JUST IN CASE A FILE WITH A BAD NAME HAS GOTTEN INTO THE ARCHIVE ; U::ADD bQuitP PARAMETER
@@ -874,10 +879,13 @@ DONE( tmCleanF )
     {
     IFsCRATCHoK
 
+    sgnKidHiredP.waitF( tin0P ) ;   //TO WORKAROUND A BASE O.S. ERROR, WAIT HERE UNTIL ifcHireF HAS COMPLETED SO THAT soul1m IS NOT CT'D AND DOES NOT EXIST WHILE MY KID PROCESS IS BEING LAUNCHED
+
     TN( tSlash , "/" ) ;    
     TN( tDrop , psttDropSoilP ) ;
     TN( tBounce  , psttBounceP  ) ;
 
+    signC&               sgnKidHiredP  =  *(signC*)pTaskP->c3 ;
     const strokeS* const psttDropSoilP = (strokeS*)pTaskP->c2 ;
     const strokeS* const psttBounceP   = (strokeS*)pTaskP->c1 ;
 {
