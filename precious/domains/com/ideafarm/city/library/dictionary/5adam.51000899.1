@@ -280,12 +280,13 @@ DONE( tmWorkF )
                     ZE( sCountT , timeE2 ) ;
                     ZE( countT  , timeE1 ) ;
                 {
-                if( !( ++ idIn % TUCK ) )
+                if( !( ++ idIn % ( TUCK >> 4 ) ) )
 
                 //etRock.traceF( tin0P , T("waited for a packet [nnPeer,cbq]:    ")+T(nnPeer)+tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 }
                     }
                         break ;
+                        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
                         etRock.traceF( tin0P , T("!exception / socket read failed") ) ;
                         POOPRqUIET
                     {
@@ -300,6 +301,8 @@ DONE( tmWorkF )
                 ZE( countT , idp ) ;
                 ZE( countT , cbq ) ;
                 ZE( byteT* , pbq ) ;
+
+                etRock.traceF( tin0P , T("inner loop begun") ) ;
                 _IO_
             {
             while( !POOP && !ether )
@@ -342,6 +345,8 @@ DONE( tmWorkF )
 
             stsReplies.purgeF( tin0P ) ;
             stsQueries.purgeF( tin0P ) ;
+
+            etRock.traceF( tin0P , T("outer loop begun") ) ;
             _IO_
         {
         while( !POOP && !ether )
