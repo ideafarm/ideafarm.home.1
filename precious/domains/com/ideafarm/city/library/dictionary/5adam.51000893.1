@@ -835,9 +835,7 @@ DONE( tmWorkF )
 
                                                                         etThread.delF( tin0P , psttu ) ;
 
-                                                                        TN( tLong , "" ) ; tLong = T("////go1/d/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/json/usernames/")+T("json.username.")+T(psttu)+T(".json") ;
-
-                                                                        //TN( tLong , "" ) ; tLong = T("///z/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/json/usernames/")+T("json.username.")+T(psttu)+T(".json") ;
+                                                                        TN( tLong , "" ) ; tLong = T("////go1/d/ideafarm.shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/json/usernames/")+T("json.username.")+T(psttu)+T(".json") ;
 
                                                                         etThread.strUniqueF( tin0P , psttu ) ; ___( psttu ) ;
                                                                         ZE( strokeS* , psttu ) ;
@@ -1249,9 +1247,7 @@ DONE( tmWorkF )
                                                         {
                                                         ZE( countT , idNewUser ) ;
 
-                                                        TN( tName , bLive ? "////go1/d/ideafarm.shared/precious/idNewLiveUserLath" : "////go1/d/ideafarm.shared/precious/idNewTestUserLath" ) ;
-
-                                                        //TN( tName , bLive ? "///z/ideafarm.shared/precious/idNewLiveUserLath" : "///z/ideafarm.shared/precious/idNewTestUserLath" ) ;
+                                                        TN( tName , "" ) ; tName = tSharedFolderWorking+T(bLive?"idNewUserLiveLath":"idNewUserTestLath") ;
 
                                                         const boolT bLive = !etThread.strCompareF( tin0P , psttValueLive , tTrue ) ;
                                                         _IO_
@@ -1467,11 +1463,12 @@ DONE( tmWorkF )
     TN( tcrlf                    , "\r\n"                          ) ;
     TN( tTrue                    , "true"                          ) ;
 
-    TN( tSharedFolderEventDone       , "" ) ; tSharedFolderEventDone       = tSharedFolderPrefix+T("events.4.done/"                     ) ;
-    TN( tSharedFolderEventGorilla01  , "" ) ; tSharedFolderEventGorilla01  = tSharedFolderPrefix+T("events.3.gorilla01/"                ) ;
-    TN( tSharedFolderEventRetryLater , "" ) ; tSharedFolderEventRetryLater = tSharedFolderPrefix+T("events.2.retry.later/"              ) ;
+    TN( tSharedFolderEventDone       , "" ) ; tSharedFolderEventDone       = tSharedFolderFinal+T("events.4.done/"                     ) ;
+    TN( tSharedFolderEventGorilla01  , "" ) ; tSharedFolderEventGorilla01  = tSharedFolderFinal+T("events.3.gorilla01/"                ) ;
+    TN( tSharedFolderEventRetryLater , "" ) ; tSharedFolderEventRetryLater = tSharedFolderFinal+T("events.2.retry.later/"              ) ;
 
-    TN( tSharedFolderPrefix          , "" ) ; tSharedFolderPrefix          = T("////go1/d/ideafarm.shared/precious/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderWorking         , "" ) ; tSharedFolderWorking         = T("////go1/d/ideafarm.shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/") ;
+    TN( tSharedFolderFinal           , "" ) ; tSharedFolderFinal           = T("////go1/d/ideafarm.shared/") ;
 
     textC* pptFolderEventsIncoming[] = { &tFolderEventsIncoming } ;
 
