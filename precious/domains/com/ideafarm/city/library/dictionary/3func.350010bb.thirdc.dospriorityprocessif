@@ -11,11 +11,15 @@
     return idDesireProcess ;
 
     }
-        __( idDesireProcess - processGlobal1I.idDesireProcessSetBySelf && !processGlobal1I.idDesireProcessSetBySelfPending ) ;  //RACE:   A:ASSUME: CALLS TO thirdC::dosPriorityProcessIF( tin0S& tin0P , const countT idP ) ARE RARE AND WIDELY SPACED IN TIME
-        while( processGlobal1I.idDesireProcessSetBySelfPending ) OSsLEEPf( 0 ) ;
+        __Z( cElts - offo ) ;
+
+            if( idDesireProcess == processGlobal1I.pIdDesireProcessSetBySelfLag[ offo ] ) break ;
+        for( offo = 0 ; offo < cElts ; offo ++ )
+        countT cElts =  sizeof processGlobal1I.pIdDesireProcessSetBySelfLag / sizeof processGlobal1I.pIdDesireProcessSetBySelfLag[ 0 ] ;
+        ZE( countT , offo ) ;
     {
     else
-    if( !processGlobal1I.idDesireProcessSetBySelf ) processGlobal1I.idDesireProcessSetBySelf = idDesireProcess ;
+    if( !processGlobal1I.pIdDesireProcessSetBySelfLag[ 0 ] ) processGlobal1I.pIdDesireProcessSetBySelfLag[ 0 ] = idDesireProcess ;
     //ENFORCE PROHIBITION: OPERATOR MUST NOT CHANGE PROCESS PRIORITY OF IPDOS (TM) PROCESSES (IN ORDER TO PREVENT CPU SPINLOCKS)
 
     #endif

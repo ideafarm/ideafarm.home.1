@@ -5556,8 +5556,7 @@ a count8S object contains 8 countT values
     slabS*                          pSlab ;                     // ELSE           USE pSlab->trueRandom
     homeS*                          pHome ;
     countT                          cOsHandles ;
-    countT                          idDesireProcessSetBySelfPending ;
-    countT                          idDesireProcessSetBySelf ;
+    countT                          pIdDesireProcessSetBySelfLag[ 4 ] ;
 
     const countT                    cProcessors    ;    
     const countT                    maskProcessors ;
