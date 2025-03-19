@@ -379,6 +379,10 @@ DONE( tmWorkF )
     etThread.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
 
+    etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWeb ) ;
+
+    nicNameC nnHostWeb = etThread.sockNicNameF( tin0P , T("2001:19f0:0:78b3::") ) ;
+
     etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
 
     signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
@@ -388,6 +392,66 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+DONE( tmUpdateNnHostsF )
+}
+    }
+        ++ s ; ether.osSleepF( tin0P , TOCK ) ;
+
+        }
+            }
+                /**/etRock.traceF( tin0P , T("!exception / could not write batch file [tLong]:    ")+tLong ) ;
+                POOPRqUIET
+            {
+            else
+            if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+            ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
+            SCOOPS
+            _IO_
+        {
+        IFsCRATCHoK
+        TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore2+tNnHostWeb+tAfter+T("\r\n") ;
+        tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
+        etThread.traceF( tin0P , T("after  [nnHostWeb]:    ")+tNnHostWeb ) ;
+        TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebP) ;
+
+        ( *(count04T*)&nnHostWebP ) ++ ;
+
+        }
+            }
+                }
+                    /**/etRock.traceF( tin0P , T("!exception / could not write batch file [tLong]:    ")+tLong ) ;
+                    POOPRqUIET
+                {
+                else
+                if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+                ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
+                SCOOPS
+                _IO_
+            {
+            IFsCRATCHoK
+            TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore1+tNnHostWeb+tAfter+T("\r\n") ;
+            tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
+
+            etThread.traceF( tin0P , T("before [nnHostWeb]:    ")+tNnHostWeb ) ;
+            TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebP) ;
+        {
+        if( idFileOut )
+        TN( tLong , "" ) ; 
+    {
+    while( !ether )
+    ZE( countT , idFileOut ) ;
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    TN( tAfter  , "/64\"" ) ;
+    TN( tBefore2 , "netsh interface ipv6 add    address interface=\"outer\" address=\"" ) ;
+    TN( tBefore1 , "netsh interface ipv6 delete address interface=\"outer\" address=\"" ) ;
+
+    nicNameC& nnHostWebP = *(nicNameC*)pTaskP->c1 ;
+    _IO_
+{
+if( pTaskP && pTaskP->c1 )
+TASK( tmUpdateNnHostsF )
 
 }
     }
