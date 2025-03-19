@@ -39,8 +39,9 @@ DONE( tmLaunchBatExeFilesF )
             }
                 }
                     }
-                        etThread.diskFileOrDirDeleteF( tin0P , psttm ) ;
-
+                        etThread.traceF( tin0P , T("deleted  [tLong]:    ")+tLong ) ;
+                        etThread.diskFileOrDirDeleteF( tin0P , tLong ) ;
+                        etThread.traceF( tin0P , T("deleting [tLong]:    ")+tLong ) ;
                         }
                             }
                                 etThread.traceF( tin0P , T("!exception / could not launch [tLong]:    ")+tLong ) ;
@@ -56,8 +57,8 @@ DONE( tmLaunchBatExeFilesF )
                         {
                         IFsCRATCHoK
                         etThread.traceF( tin0P , T("launching [tLong]:    ")+tLong ) ;
-                        TN( tLong , psttm ) ;
 
+                        TN( tLong , psttm ) ;
                         etThread.diskMapFileNameF( tin0P , psttm , psttc1 ) ; ___( psttm ) ;
                         ZE( strokeS* , psttm ) ;
                     {
