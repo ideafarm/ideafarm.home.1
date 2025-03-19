@@ -12645,7 +12645,7 @@ these values are used in the foreign domain name system
 */
 /*1*//*TELLcOUNTT(cP)*//*1*/
 /**/
-#define TELLcOUNTT(cP) if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) thirdC::c_itoaIF( tin0P , ((tin123S&)tin0P).postTell , sizeof ((tin123S&)tin0P).postTell , cP ) ;
+#define TELLcOUNTT(cP) if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) thirdC::c_itoaForeignLibIF( tin0P , ((tin123S&)tin0P).postTell , sizeof ((tin123S&)tin0P).postTell , cP ) ;
 
 
 //
@@ -39224,7 +39224,7 @@ args
     {                                                                                                   \
         osTextT postDec[ SB * sizeof( countT ) + 1 ] ;                                                  \
         postDec[ 0xa ] = 0 ;                                                                            \
-        thirdC::c_itoaIF( tin0P , postDec , sizeof postDec , (countT)(cP) , 0xa ) ;                     \
+        thirdC::c_itoaForeignLibIF( tin0P , postDec , sizeof postDec , (countT)(cP) , 0xa ) ;                     \
         OStEXTA( postNameP , postDec ) ;                                                                \
     }
 

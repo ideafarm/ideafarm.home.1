@@ -42,28 +42,28 @@ TODO
                 }
                     etThread.fileWriteF( tin0P , hFile , "_9" ) ;
                     etThread.fileWriteF( tin0P , hFile , pbw ) ;
-                    thirdC::c_itoaIF( tin0P , pbw , sizeof pbw , idLine , 0xa ) ;
+                    thirdC::c_itoaForeignLibIF( tin0P , pbw , sizeof pbw , idLine , 0xa ) ;
 
                     etThread.fileWriteF( tin0P , hFile , "  " ) ;
                     etThread.fileWriteF( tin0P , hFile , pbw ) ;
                     PAD0( 7 ) ;
-                    thirdC::c_itoaIF( tin0P , pbw , sizeof pbw , processGlobal8I.source.idFileImmutableF( tin0P , idFile ) ) ;
+                    thirdC::c_itoaForeignLibIF( tin0P , pbw , sizeof pbw , processGlobal8I.source.idFileImmutableF( tin0P , idFile ) ) ;
                 {
 
                 etThread.fileWriteF( tin0P , hFile , "  " ) ;
                 etThread.fileWriteF( tin0P , hFile , pbw ) ;
                 PAD( 8 ) ;
-                thirdC::c_itoaIF( tin0P , pbw , sizeof pbw , cbd ) ;
+                thirdC::c_itoaForeignLibIF( tin0P , pbw , sizeof pbw , cbd ) ;
 
                 etThread.fileWriteF( tin0P , hFile , "  " ) ;
                 etThread.fileWriteF( tin0P , hFile , pbw ) ;
                 PAD( 8 ) ;
-                thirdC::c_itoaIF( tin0P , pbw , sizeof pbw , (countT)pvP ) ;
+                thirdC::c_itoaForeignLibIF( tin0P , pbw , sizeof pbw , (countT)pvP ) ;
 
                 etThread.fileWriteF( tin0P , hFile , "  " ) ;
                 etThread.fileWriteF( tin0P , hFile , pbw ) ;
                 PAD( 8 ) ;
-                thirdC::c_itoaIF( tin0P , pbw , sizeof pbw , idc ) ;
+                thirdC::c_itoaForeignLibIF( tin0P , pbw , sizeof pbw , idc ) ;
 
                 else            etThread.fileWriteF( tin0P , hFile , "\r\n\r\nidc-----  add-----  cbd-----  file---  line\r\n" ) ;
                 if( cDrops ++ ) etThread.fileWriteF( tin0P , hFile , "\r\n" ) ;

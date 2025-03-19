@@ -29804,9 +29804,9 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34091.thirdC.c_itoaIF!||
  static voidT c_itoaIF( osTextT* const postP , count04T valueP , const osTextT ostPadP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011c1.thirdc.c_itoaif!||
- voidT c_itoaF( tin0S& tin0P , osTextT*& postP , sCountT valueP , countT radixP = 0x10 ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.thirdC.c_itoaF!||
- static voidT c_itoaIF( tin0S& tin0P , osTextT* const postP , const countT costP , sCountT valueP , countT radixP = 0x10 ) ;
+ voidT c_itoaForeignLibF( tin0S& tin0P , osTextT*& postP , sCountT valueP , countT radixP = 0x10 ) ;
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.thirdC.c_itoaForeignLibF!||
+ static voidT c_itoaForeignLibIF( tin0S& tin0P , osTextT* const postP , const countT costP , sCountT valueP , countT radixP = 0x10 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3408c.thirdC.c_itoaIF!||
  static voidT c_itoaForeignIF( osTextT* const postP , countT valueP , const osTextT ostPadP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34125.thirdC.c_itoaForeignIF!||
