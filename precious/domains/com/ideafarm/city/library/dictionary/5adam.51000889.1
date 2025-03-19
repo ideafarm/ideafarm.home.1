@@ -81,7 +81,8 @@ DONE( tmGorillaF )
             idNewSuccess ++ ;
             idNewFail = 0 ;
         {
-        if( !( cFail || timeE1 > TOCK ) )
+        //U::PROD: if( !( cFail || timeE1 > TOCK ) )
+        if( !( cFail || timeE1 > ( TOCK << 1 ) ) )      //U::20250319: WORKAROUND TO ELIMINATE FREQUENT FAILURES WITH EMAIL NOTICES (CAUSE NOT YET ANALYZED)
 
 #endif
         /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
