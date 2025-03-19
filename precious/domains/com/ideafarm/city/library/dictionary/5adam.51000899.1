@@ -66,17 +66,18 @@ DONE( tmWorkF )
                                         DEL( ps ) ;
                                         }
                                             }
-                                                //}
-                                                //    break ;
-                                                //
-                                                //    if( ~nnOut ) rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
-                                                //
-                                                //    else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
-                                                //         if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
-                                                //
-                                                //    nicNameC nnOut ;
-                                                //{
-                                                //case ifcIDtYPEdNSqUERY_AAAA :
+                                                }
+                                                    break ;
+                                                
+                                                    if( ~nnOut ) rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                
+                                                           if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tTarget      ) ) nnOut = nnHostWeb  ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                                    //     if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+                                                
+                                                    nicNameC nnOut ;
+                                                {
+                                                case ifcIDtYPEdNSqUERY_AAAA :
                                                 }
                                                     break ;
 
@@ -267,9 +268,10 @@ DONE( tmWorkF )
                 nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
                 nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook1 ) ;
 
-                TN( tb4    , "    " ) ;
-                TN( tWebHook1 , "" ) ; tWebHook1 = mySettings.tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
-                TN( tWebHooks , "" ) ; tWebHooks = mySettings.tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
+                TN( tb4       , "    "                          ) ;
+                TN( tTarget   , "target.ipv6-only.ideafarm.com" ) ;
+                TN( tWebHook1 , ""                              ) ; tWebHook1 = mySettings.tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
+                TN( tWebHooks , ""                              ) ; tWebHooks = mySettings.tDomainLeafWebHooksNet+T(".hidden.ideafarm.com") ;
 
                 mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
