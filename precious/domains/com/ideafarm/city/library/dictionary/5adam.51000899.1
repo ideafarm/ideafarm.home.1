@@ -397,14 +397,8 @@ TASK( tmWorkF )
 
 DONE( tmUpdateNnHostsF )
 }
-
-etherC::loafIF( tin0P ) ;
-
     }
-break ;
-//U:: FOR TESTING, JUST SET IT TO 2001:19f0:0:78b3::1 AND LEAVE IT AT THAT VALUE
-
-        ++ s ; ether.osSleepF( tin0P , TOCK << 4 ) ;
+        ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;
 
         }
             }
@@ -454,7 +448,13 @@ break ;
     TN( tAfter2  , "/64\"" ) ;
     TN( tAfter1  , "\"" ) ;
     TN( tBefore2 , "netsh interface ipv6 add    address interface=\"outer\" address=\"" ) ;
-    TN( tBefore1 , "netsh interface ipv6 delete address interface=\"outer\" address=\"" ) ;
+
+    ) ;
+
+        "netsh interface ipv6 delete address interface=\"outer\" address=\""
+        "netsh interface ipv6 delete address interface=\"outer\" address=\"2001:19f0:0:78b3:5400:5ff:fe58:880b\"\r\n"            //U:: PUT THIS INTO A SETTING
+
+    TN( tBefore1 ,
 
     nicNameC& nnHostWebP = *(nicNameC*)pTaskP->c1 ;
     _IO_
