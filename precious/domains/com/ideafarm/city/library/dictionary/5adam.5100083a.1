@@ -35,6 +35,8 @@ DONE( tmLaunchBatExeFilesF )
         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;    //THIS IS FOR SAFETY TO PREVENT CPU PEGGING AT MY PUSHY DESIRE
 
         }
+            if( bWoth ) bWoth = 0 ;
+
             FORsTRINGSiNsPANNEDcOMBINEDtAIL1
             }
                 }
@@ -56,19 +58,22 @@ DONE( tmLaunchBatExeFilesF )
 
                         }
                             }
-                                etThread.traceF( tin0P , T("!exception / could not launch [tLong]:    ")+tLong ) ;
-                                POOPRqUIET
+                                }
+                                    etThread.traceF( tin0P , T("!exception / could not launch [tLong]:    ")+tLong ) ;
+                                    POOPRqUIET
+                                {
+                                if( POOP )
+
+                                CONoUTrAW( "\r\n" ) ;
+                                ((tin1S&)tin0P).pEtScratch->osProcessF( tin0P , countTC() , countTC() , countTC() , countTC() , tLong ) ;
+                                CONoUTrAW( "\r\n" ) ;
+
+                                SCOOPS
                             {
-                            if( POOP )
-
-                            CONoUTrAW( "\r\n" ) ;
-                            ((tin1S&)tin0P).pEtScratch->osProcessF( tin0P , countTC() , countTC() , countTC() , countTC() , tLong ) ;
-                            CONoUTrAW( "\r\n" ) ;
-
-                            SCOOPS
-                        {
-                        IFsCRATCHoK
-                        etThread.traceF( tin0P , T("launching [tLong]:    ")+tLong ) ;
+                            IFsCRATCHoK
+                            etThread.traceF( tin0P , T("launching [tLong]:    ")+tLong ) ;
+                        {                                                                       //A:ASSUME: FILES ARE STATELESS, IN THAT A FILE CAN BE OMITTED WITHOUT CHANGING THE OUTCOME OF THE PASS
+                        if( !bWoth )                                                            //P:PERSONALITY: I PURGE ALL FILES THAT ARE WAITING FOR ME WHEN I START UP ; I ONLY HIRE FILES THAT ARE NEWLY DROPPED AFTER I START
 
                         TN( tLong , psttm ) ;
                         etThread.diskMapFileNameF( tin0P , psttm , psttc1 ) ; ___( psttm ) ;
@@ -82,7 +87,6 @@ DONE( tmLaunchBatExeFilesF )
             etThread.boxMenuF( tin0P , soul1m , tDrop+T("*") , 0 , TUCK ) ;
             soulC soul1m( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.launch.bat.and.exe" ) ;
 
-            if( bWoth ) bWoth = 0 ;
             if( !bWoth ) etThread.traceF( tin0P , T("waited  for a change [tDrop]:    ")+tDrop ) ;
         {
         if( bWoth || etThread.etherC::diskWaitDirF( tin0P , hWait , ether , tDrop , flWAITdIR_RECURSE | flWAITdIR_FILEnAME | flWAITdIR_DIRnAME ) )
