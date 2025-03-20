@@ -11,6 +11,8 @@ DONE( tmConnectionAcceptorF )
     }
         }
             }
+                ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ; //TO PREVENT CPU SPIN
+
                 etThread.traceF( tin0P , T("!exception / s_acceptF failed [POOP]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 POOPRqUIET
                 countT rc = POOP ;
@@ -24,6 +26,7 @@ DONE( tmConnectionAcceptorF )
         SCOOPS
     {
     IFsCRATCHoK
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
     s_acceptF_parametersS& ppP    = *(s_acceptF_parametersS*)pTaskP->c2 ;
     boolT&                 bQuitP =                 *(boolT*)pTaskP->c1 ;

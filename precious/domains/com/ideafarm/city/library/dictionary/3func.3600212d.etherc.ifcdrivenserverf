@@ -171,7 +171,25 @@
                                                 {
                                                 if( cFifoPushed > cFifoPulled )
 
+                                                etRock.traceF( tin0P , T("ifcDrivenServerF / deleted psoListen") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
+                                                }
+                                                    if( POOP ) POOPRqUIET
+                                                    DEL( psoListen ) ;                  // THIS IS THE OFFENDING LINE IN WHICH OpenSSL NEVER RETURNS
+                                                    SCOOPS
+                                                {
+                                                IFsCRATCHoK
+                                                etRock.traceF( tin0P , T("ifcDrivenServerF / deleting psoListen") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
+
                                                 sConnectionAcceptorDone.waitF( tin0P ) ;
+                                                }
+                                                    if( POOP ) POOPRqUIET
+                                                    hSoc.closeIfF() ;
+                                                    handleC& hSoc = *(handleC*)&psoListen->handleF( tin0P ) ;
+                                                    SCOOPS
+                                                {
+                                                IFsCRATCHoK
+                                                bQuitAccepting = 1 ;
+
                                                 //THREADmODE4rESTORE
                                                 }
                                                     }
@@ -582,14 +600,7 @@
                                                             }
                                                                 POOPRqUIET
 
-                                                                etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleted psoListen") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
-                                                                }
-                                                                    POOPRqUIET
-                                                                    DEL( psoListen ) ;                  // THIS IS THE OFFENDING LINE IN WHICH OpenSSL NEVER RETURNS
-                                                                    _IO_
-                                                                {                                       // DONE SEPARATELY SO CALL NEST WILL SHOW WHICH IS HUNG IF HANG IS EVER OBSERVED AGAIN
-                                                                etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleted pso; now deleting psoListen") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
-            
+                                                                etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / deleted pso") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE ) ;
                                                                 }
                                                                     POOPRqUIET
                                                                     DEL( pso ) ;                        // THIS IS THE OFFENDING LINE IN WHICH OpenSSL NEVER RETURNS (HAPPENS SOMETIMES BUT NOT ALWAYS HERE)
@@ -685,7 +696,8 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                                                 ZE( countT , cAccepted ) ;
                                                 //THREADmODE4oN( flTHREADmODE4_INoUTfRAMEfORCEcOLLECTaPPtELEMETRY )
 
-                                                osThreadF( TaRG3sGNdONEcBsTACK( tmConnectionAcceptorF , sConnectionAcceptorDone , CBsTACKmIN << 1 ) , (countT)&info1P.bQuit , (countT)&pp ) ;   //20250314@2154: "<< 1" FROM "<< 0" IN RESPONSE TO STACK OVERFLOW
+                                                osThreadF( TaRG3sGNdONEcBsTACK( tmConnectionAcceptorF , sConnectionAcceptorDone , CBsTACKmIN << 1 ) , (countT)&bQuitAccepting , (countT)&pp ) ;   //20250314@2154: "<< 1" FROM "<< 0" IN RESPONSE TO STACK OVERFLOW
+                                                ZE( boolT , bQuitAccepting ) ;
                                                 signC sConnectionAcceptorDone( tin0P , TAG( TAGiDnULL ) ) ;
 
                                                 s_acceptF_parametersS pp( cFifoPushed , pFifo , cFifo , cFifoPulled , psoListen->handleF( tin0P ) ) ;
