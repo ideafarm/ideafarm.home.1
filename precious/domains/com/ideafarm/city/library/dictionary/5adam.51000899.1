@@ -71,9 +71,9 @@ DONE( tmWorkF )
                                                 
                                                     if( ~nnOut ) rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
                                                 
-                                                           if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tTarget      ) ) nnOut = nnHostWeb  ;
-                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
-                                                    //     if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1 ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+                                                           if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tTarget      ) ) nnOut = nnHostWebLag0 ;
+                                                    //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1    ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
+                                                    //     if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1    ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
                                                 
                                                     nicNameC nnOut ;
                                                 {
@@ -381,9 +381,14 @@ DONE( tmWorkF )
     etThread.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWeb ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
 
-    nicNameC nnHostWeb = etThread.sockNicNameF( tin0P , T("2001:19f0:0:78b3::") ) ;
+    nicNameC nnHostWebLag3 ;
+    nicNameC nnHostWebLag2 ;
+    nicNameC nnHostWebLag1 ;
+    nicNameC nnHostWebLag0 ;
+
+    nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:78b3::") ) ;
 
     etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
 
@@ -414,10 +419,15 @@ DONE( tmUpdateNnHostsF )
         IFsCRATCHoK
         TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore2+tNnHostWeb+tAfter2+T("\r\n") ;
         tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
-        etThread.traceF( tin0P , T("after  [nnHostWeb]:    ")+tNnHostWeb ) ;
-        TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebP) ;
+        etThread.traceF( tin0P , T("new  [nnHostWebLag0]:    ")+tNnHostWeb ) ;
+        TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag0P) ;
 
-        ( *(count04T*)&nnHostWebP ) ++ ;
+                                                           nnHostWebLag0P = nnHostWebLathP ;
+                                          nnHostWebLag1P = nnHostWebLag0P ;
+                         nnHostWebLag2P = nnHostWebLag1P ;
+        nnHostWebLag3P = nnHostWebLag2P ;
+
+        ( *(count04T*)&nnHostWebLathP ) ++ ;
 
         }
             }
@@ -435,10 +445,10 @@ DONE( tmUpdateNnHostsF )
             TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore1+tNnHostWeb+tAfter1+T("\r\n") ;
             tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
 
-            etThread.traceF( tin0P , T("before [nnHostWeb]:    ")+tNnHostWeb ) ;
-            TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebP) ;
+            etThread.traceF( tin0P , T("doomed [nnHostWebLag3]:    ")+tNnHostWeb ) ;
+            TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag3P) ;
         {
-        if( idFileOut )
+        if( ~nnHostWebLag3P )
         TN( tLong , "" ) ; 
     {
     while( !ether )
@@ -452,14 +462,28 @@ DONE( tmUpdateNnHostsF )
     ) ;
 
         "netsh interface ipv6 delete address interface=\"outer\" address=\""
-        "netsh interface ipv6 delete address interface=\"outer\" address=\"2001:19f0:0:78b3:5400:5ff:fe58:880b\"\r\n"            //U:: PUT THIS INTO A SETTING
+        "netsh interface ipv6 delete address interface=\"outer\" address=\"2001:19f0:0:7077:5400:5ff:fe59:278d\"\r\n"            //U:: PUT THIS INTO A SETTING
 
     TN( tBefore1 ,
 
-    nicNameC& nnHostWebP = *(nicNameC*)pTaskP->c1 ;
+    //
+    // ADD    THE YOUNGEST ADDRESS (LAG 0)
+    // SET    THE YOUNGEST ADDRESS (LAG 0)
+    // SHIFT  THE DATA TO LAG
+    // DELETE THE OLDEST   ADDRESS (LAG 3)
+    //
+    // RECIPE
+
+    nicNameC& nnHostWebLag3P = *(nicNameC*)pTaskP->c5 ;
+    nicNameC& nnHostWebLag2P = *(nicNameC*)pTaskP->c4 ;
+    nicNameC& nnHostWebLag1P = *(nicNameC*)pTaskP->c3 ;
+    nicNameC& nnHostWebLag0P = *(nicNameC*)pTaskP->c2 ;
+
+    nicNameC& nnHostWebLathP = *(nicNameC*)pTaskP->c1 ;     // WILL ALWAYS BE THE SAME AS nnHostWebLag0P ; IS USED TO MAKE THE CODE EASIER TO UNDERSTAND
+
     _IO_
 {
-if( pTaskP && pTaskP->c1 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 )
 TASK( tmUpdateNnHostsF )
 
 }
