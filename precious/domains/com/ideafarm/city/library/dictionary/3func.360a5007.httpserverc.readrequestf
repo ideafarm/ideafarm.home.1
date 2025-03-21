@@ -31,7 +31,7 @@
         if( !psttNameP )
         ether.delF( tin0P , psttAction ) ;
 
-//if( !psttNameP ) ether.strMakeF( tin0P , LF , psttNameP , T("/never.exists") ) ; ___( psttNameP ) ; //U:: DISABLE THIS IN PRODUCTION ; STUDYING WTF win-acme WANTS IN RESPONSE TO ITS NULL REQUEST
+        //if( !psttNameP ) ether.strMakeF( tin0P , LF , psttNameP , T("/never.exists") ) ; ___( psttNameP ) ; //U:: DISABLE THIS IN PRODUCTION ; STUDYING WTF win-acme WANTS IN RESPONSE TO ITS NULL REQUEST
                 
         }
             TESTsCRATCH //U:: TO FIND A BUG
@@ -313,6 +313,8 @@
         }
             //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
             }
+                thirdC::dosSleepWinkIF( tin0P , 0 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
+
                 //}
                 //    break ;
                 //    //ether.traceF( tin0P , T("readRequestF / woth mouthful did not contain a complete request") ) ;
@@ -352,7 +354,7 @@
                         POOPRqUIET
                     {
                     if( POOP )
-                    delta = psoP->readF( tin0P , postc , costRemain , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+                    delta = psoP->readF( tin0P , postc , costRemain , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK , TOCK << 1 ) ;     //20250320@2055: ADDED TIMEOUT ; TIMEOUT IS QUICK TO PREVENT DDOS
                     SCOOPS
                 {
                 IFsCRATCHoK
