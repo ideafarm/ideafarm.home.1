@@ -94,6 +94,8 @@
                 delF( tin0P , psttName    ) ;
                 delF( tin0P , psttQueryKV ) ;
 
+                traceF( tin0P , tSayDone , flTRACE_null , 9 ) ;
+
                 // /*else*/                         traceF( tin0P , T("accumulated time pending [nnPeer,time]:    "        )                   +T(jobP.nnPeer)+tb4+TT(timeTotalPending1,timeTotalPending2)+T(timeTotalPending1>TOCK?"    ********":"") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                 //if( bDeadman1 || bDeadman2 ) traceF( tin0P , T("accumulated time pending [idCycle,nnPeer,time]:    ")+T(psttQueryKV)+tb4+T(jobP.nnPeer)+tb4+TT(timeTotalPending1,timeTotalPending2)+T(timeTotalPending1>TOCK?"    ********":"") , flTRACE_FORCEnOsILENCE , idTraceDivert ) ;
                 osTimeAddF(      tin0P , timeTotalPending1 , timeTotalPending2 , timeElapsed1 , timeElapsed2 ) ;
@@ -1831,6 +1833,7 @@
         //CS:CODEsYNC: 3300005b 3600212d
 
         traceF( tin0P , T("etherDoHttpJobF / ++++") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+        TN( tSayDone , "----" ) ;
 
         }
             TESTsCRATCH //U:: TO FIND A BUG
