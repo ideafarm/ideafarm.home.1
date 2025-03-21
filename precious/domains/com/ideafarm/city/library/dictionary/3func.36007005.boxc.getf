@@ -318,7 +318,7 @@
                     }
                         }
                             ++ s ; ether.osSleepF( tin0P ) ;
-                            //ether.traceF( tin0P , T("boxC::getF / napping for a wink") ) ;
+                            ether.traceF( tin0P , T("boxC::getF / napping for a wink") ) ;
                         {
                         if( bNoQuitEarly || cTries > 1 )
 
@@ -630,7 +630,7 @@
                                         POOPRqUIET
                                     {
                                     if( POOP )
-                                    delta = pSControl->readF( tin0P , postc , costRemain , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK ) ;
+                                    delta = pSControl->readF( tin0P , postc , costRemain , flSOCKETcrEAD_JUSToNEmOUTHFUL | flSOCKETcrEAD_STILLhUNGRYiSoK , TOCK << 3 ) ;        //20250320@2003: ADDED TIMEOUT "TOCK << 3" BECAUSE OTHERWISE MIGHT NEVER RETURN
                                     SCOOPS
                                 {
                                 IFsCRATCHoK
