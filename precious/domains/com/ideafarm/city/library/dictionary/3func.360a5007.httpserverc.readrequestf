@@ -313,7 +313,7 @@
         }
             //CONoUTrAW( "\r\n" USCORE127 "\r\n" ) ;
             }
-                thirdC::dosSleepWinkIF( tin0P , 0 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
+                if( !( ++ idLoop % ( TUCK >> 4 ) ) ) thirdC::dosSleepWinkIF( tin0P , 0 ) ;   //TO PREVENT CPU PEG ; IF PEER DOES NOT SEND A REQUEST, I WILL SPIN IN THIS LOOP UNTIL THE SOCKET READ FAILS (DUE TO TIMEOUT OR PEER CLOSING)
 
                 //}
                 //    break ;
@@ -361,6 +361,7 @@
                 ZE( countT , delta ) ;
             {
             while( !bEnd && costRemain )
+            ZE( countT , idLoop ) ;
             countT cMouthfulsAllowed = 2 ;
             ZE( boolT , bEnd ) ;
             countT   costRemain = costaHeadPlus ;        
