@@ -53,43 +53,42 @@ DONE( tmGorillaF )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
         }
-            idNewSuccess = 0 ;
+            idNewSuccessUse = 0 ;
 
             }
-                if( idNewFail == 4 ) dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
+                if( idNewFailUse == 4 ) dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
 
                 etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
 
                 ) ;
                     "\r\n"
-                    "    [idStomp]:      ")+TF2(idStomp     ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                    "    [idNewSuccess]: ")+TF2(idNewSuccess,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                    "    [idNewFail]:    ")+TF2(idNewFail   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                    "    [timeE1]:       ")+TF2(timeE1      ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
-                    "    [cFail]:        ")+TF2(cFail       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                    "    [idStomp]:         ")+TF2(idStomp        ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                    "    [idNewSuccessUse]: ")+TF2(idNewSuccessUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                    "    [idNewFailUse]:    ")+TF2(idNewFailUse   ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                    "    [timeE1]:          ")+TF2(timeE1         ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
+                    "    [cFailUse]:        ")+TF2(cFailUse       ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("\r\n"
                     "\r\n"
                     "I have detected an exception:\r\n"
                     "\r\n"
-                    "Subject: Notification from GORILLAwEBHOOKS (server exception)\r\n"
+                    "Subject: Notification from GORILLAwEBHOOKS / server exception / ")+tDomainUse+T("\r\n"
 
                 TN( tSay , "" ) ; tSay = T(
             {
-            if( ++ idNewFail <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
+            if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
         {
         else
         }
-            idNewSuccess ++ ;
-            idNewFail = 0 ;
+            idNewSuccessUse ++ ;
+            idNewFailUse = 0 ;
         {
-        //U::PROD: if( !( cFail || timeE1 > TOCK ) )
-        if( !( cFail || timeE1 > ( TOCK << 1 ) ) )      //U::20250319: WORKAROUND TO ELIMINATE FREQUENT FAILURES WITH EMAIL NOTICES (CAUSE NOT YET ANALYZED)
+        if( !( cFailUse || timeE1 > ( TOCK << 0 ) ) )      //U::20250319: WORKAROUND TO ELIMINATE FREQUENT FAILURES WITH EMAIL NOTICES (CAUSE NOT YET ANALYZED)
 
 #endif
         /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
         }
             }
                 //etThread.traceF( tin0P , T("!exception / boxGetShadowF failed") ) ;
-                cFail ++ ;
+                cFailUse ++ ;
                 POOPRqUIET
             {
             if( POOP )
@@ -102,7 +101,7 @@ DONE( tmGorillaF )
         }
             }
                 //etThread.traceF( tin0P , T("!exception / boxGetShadowF failed") ) ;
-                cFail ++ ;
+                cFailUse ++ ;
                 POOPRqUIET
             {
             if( POOP )
@@ -123,7 +122,7 @@ DONE( tmGorillaF )
         }
             }
                 //etThread.traceF( tin0P , T("!exception / boxGetShadowF failed") ) ;
-                cFail ++ ;
+                cFailUse ++ ;
                 POOPRqUIET
             {
             if( POOP )
@@ -131,14 +130,30 @@ DONE( tmGorillaF )
             SCOOPS
         {
         IFsCRATCHoK
-        ZE( countT , cFail ) ;
+
+        ;
+            : idNewFailInner
+            ? idNewFailOuter
+        countT& idNewFailUse = !( idStomp % ( TUCK >> 4 ) )
+
+        ;
+            : idNewSuccessInner
+            ? idNewSuccessOuter
+        countT& idNewSuccessUse = !( idStomp % ( TUCK >> 4 ) )
+
+        ;
+            : cFailInner
+            ? cFailOuter
+        countT& cFailUse = !( idStomp % ( TUCK >> 4 ) )
+        ZE( countT , cFailOuter ) ;
+        ZE( countT , cFailInner ) ;
 
         TN( tUrl , "" ) ; tUrl = tDomainUse+T("//http/from.gorilla.idStomp.")+TfORsTRING(idStomp) ;
 
         ;
             : tDomainInner
             ? tDomainOuter
-        textC& tDomainUse = = !( idStomp % ( TUCK >> 4 ) )
+        textC& tDomainUse = !( idStomp % ( TUCK >> 4 ) )
 
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
@@ -160,8 +175,10 @@ DONE( tmGorillaF )
     while( !ether )
     TN( tDomainOuter , "N8tK7qtKTbLNbq63px-WVmt.hidden.ideafarm.com" ) ;        //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
     TN( tDomainInner , "10.0.1.1" ) ;
-    ZE( countT , idNewFail    ) ;
-    ZE( countT , idNewSuccess ) ;
+    ZE( countT , idNewFailOuter    ) ;
+    ZE( countT , idNewFailInner    ) ;
+    ZE( countT , idNewSuccessOuter ) ;
+    ZE( countT , idNewSuccessInner ) ;
 
     }
         tContentLength3 = T("Content-Length: ")+TF4(costRaw3Part1+costInvoiceRequired+costRaw3Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
