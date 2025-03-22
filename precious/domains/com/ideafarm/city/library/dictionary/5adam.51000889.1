@@ -132,7 +132,13 @@ DONE( tmGorillaF )
         {
         IFsCRATCHoK
         ZE( countT , cFail ) ;
-        TN( tUrl , "" ) ; tUrl = T("10.0.1.1//http/from.gorilla.idStomp.")+TfORsTRING(idStomp) ;
+
+        TN( tUrl , "" ) ; tUrl = tDomainUse+T("//http/from.gorilla.idStomp.")+TfORsTRING(idStomp) ;
+
+        ;
+            : tDomainInner
+            ? tDomainOuter
+        textC& tDomainUse = = !( idStomp % ( TUCK >> 4 ) )
 
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
@@ -152,6 +158,8 @@ DONE( tmGorillaF )
         tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
     {
     while( !ether )
+    TN( tDomainOuter , "N8tK7qtKTbLNbq63px-WVmt.hidden.ideafarm.com" ) ;        //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
+    TN( tDomainInner , "10.0.1.1" ) ;
     ZE( countT , idNewFail    ) ;
     ZE( countT , idNewSuccess ) ;
 
