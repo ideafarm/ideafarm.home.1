@@ -207,27 +207,27 @@
                         OStEXTAK( ostoTimeElapsed , "." ) ;
                         OStEXTCF(  ostoTimeElapsed , timeE2 , '0' ) ;
 
-                        osTimeSubtractF( tin0P , timeE1 , timeE2 , ((tin12S&)tin0P).timeTraceWoth.time1 , ((tin12S&)tin0P).timeTraceWoth.time2 ) ;
-                        sCountT timeE2 = ((tin12S&)tin0P).timeTraceLath.time2 ;
-                        countT  timeE1 = ((tin12S&)tin0P).timeTraceLath.time1 ;
+                        osTimeSubtractF( tin0P , timeE1 , timeE2 , ((tin12S&)tin0P).ptTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
+                        sCountT timeE2 = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ;
+                        countT  timeE1 = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 ;
 
-                        OStEXTCF(  ostoTime , ((tin12S&)tin0P).timeTraceLath.time1 , '0' ) ;
+                        OStEXTCF(  ostoTime , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , '0' ) ;
                         OStEXTAK( ostoTime , "." ) ;
-                        OStEXTCF(  ostoTime , ((tin12S&)tin0P).timeTraceLath.time2 , '0' ) ;
+                        OStEXTCF(  ostoTime , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 , '0' ) ;
 
                         OStEXTCF(  ostoTimeDelta , timeDelta1 , '0' ) ;
                         OStEXTAK( ostoTimeDelta , "." ) ;
                         OStEXTCF(  ostoTimeDelta , timeDelta2 , '0' ) ;
 
-                        ((tin12S&)tin0P).timeTraceLath = now ;
-                        osTimeSubtractF( tin0P , timeDelta1 , timeDelta2 , ((tin12S&)tin0P).timeTraceLath.time1 , ((tin12S&)tin0P).timeTraceLath.time2 ) ;
-                        if( bReset ) ((tin12S&)tin0P).timeTraceWoth = ((tin12S&)tin0P).timeTraceLath = now ;
+                        ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = now ;
+                        osTimeSubtractF( tin0P , timeDelta1 , timeDelta2 , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
+                        if( bReset ) ((tin12S&)tin0P).ptTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ] = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = now ;
                         timeS now( timeDelta1 , timeDelta2 ) ;
                         osTimeNowF( tin0P , timeDelta1 , timeDelta2 ) ;
                         ZE( sCountT , timeDelta2 ) ;
                         ZE( countT  , timeDelta1 ) ;
 
-                        boolT bReset = ( !((tin12S&)tin0P).timeTraceWoth.time2 && !((tin12S&)tin0P).timeTraceWoth.time1 ) || F(flagsP) & flTRACE_RESET ;
+                        boolT bReset = ( !((tin12S&)tin0P).ptTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ].time2 && !((tin12S&)tin0P).ptTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ].time1 ) || F(flagsP) & flTRACE_RESET ;
                     {
                     else
                     }

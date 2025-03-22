@@ -14,10 +14,19 @@
             break ;
             ether.strFromTimeF( tin0P , psttMe , timeD1 , timeD2 ) ; ___( psttMe ) ;
 
-            ((tin12S&)tin0P).timeTraceLath = now ;
-            ether.osTimeSubtractF( tin0P , timeD1 , timeD2 , ((tin12S&)tin0P).timeTraceLath.time1 , ((tin12S&)tin0P).timeTraceLath.time2 ) ;
+            }
+                ((tin12S&)tin0P).ptTraceLath[ offt - ifcIDtRACEdIVERT_min ] = now ;
+                if( !offt ) ether.osTimeSubtractF( tin0P , timeD1 , timeD2 , ((tin12S&)tin0P).ptTraceLath[ offt - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceLath[ offt - ifcIDtRACEdIVERT_min ].time2 ) ;      //20250321@1746: ARBITRARILY (W/O ANALYSIS) SELECTED OFFSET 0 FOR THIS LINE, NOW THAT USE THE NEW ptTraceWoth ptTraceLath ARRAYS RATHER THAN A SINGLE PAIR OF VALUES
+            {
+            for( countT offt = 0 ; offt < sizeof ((tin12S&)tin0P).ptTraceWoth / sizeof ((tin12S&)tin0P).ptTraceWoth[ 0 ] ; offt ++ )                    //A:ASSUME: THE SIZE OF THE OO ARRAYS IS THE SAME
 
-            if( idP == ifcIDtEXTgEN_TIMEnOWdELTArESET ) ((tin12S&)tin0P).timeTraceWoth = ((tin12S&)tin0P).timeTraceLath = now ;
+            }
+                }
+                    ((tin12S&)tin0P).ptTraceWoth[ offt - ifcIDtRACEdIVERT_min ] = ((tin12S&)tin0P).ptTraceLath[ offt - ifcIDtRACEdIVERT_min ] = now ;
+                {
+                for( countT offt = 0 ; offt < sizeof ((tin12S&)tin0P).ptTraceWoth / sizeof ((tin12S&)tin0P).ptTraceWoth[ 0 ] ; offt ++ )                    //A:ASSUME: THE SIZE OF THE OO ARRAYS IS THE SAME
+            {
+            if( idP == ifcIDtEXTgEN_TIMEnOWdELTArESET )
 
             timeS now( timeD1 , timeD2 ) ;
             ether.osTimeNowF( tin0P , timeD1 , timeD2 ) ;

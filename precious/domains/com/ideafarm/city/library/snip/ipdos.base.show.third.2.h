@@ -27769,8 +27769,8 @@ struct bookMarkOldS
     count04T    cCpuCycles2Or5Lath ;
     count04T    cTime2Or5Lath ;
     measure04T  brcm04Raw ;
-    timeS       timeTraceWoth ;
-    timeS       timeTraceLath ;
+    timeS       ptTraceWoth[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    timeS       ptTraceLath[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     count4S     c4Tell ;
     strokeModeS strokeMode ;
 
