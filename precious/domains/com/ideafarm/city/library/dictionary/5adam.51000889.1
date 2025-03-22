@@ -133,17 +133,20 @@ DONE( tmGorillaF )
 
         ;
             : idNewFailInner
-            ? idNewFailOuter
+          //? idNewFailOuter
+            ? idNewFailInner
         countT& idNewFailUse = !( idStomp % ( TUCK >> 4 ) )
 
         ;
             : idNewSuccessInner
-            ? idNewSuccessOuter
+          //? idNewSuccessOuter
+            ? idNewSuccessInner
         countT& idNewSuccessUse = !( idStomp % ( TUCK >> 4 ) )
 
         ;
             : cFailInner
-            ? cFailOuter
+          //? cFailOuter
+            ? cFailInner
         countT& cFailUse = !( idStomp % ( TUCK >> 4 ) )
         ZE( countT , cFailOuter ) ;
         ZE( countT , cFailInner ) ;
@@ -152,7 +155,8 @@ DONE( tmGorillaF )
 
         ;
             : tDomainInner
-            ? tDomainOuter
+          //? tDomainOuter
+            ? tDomainInner
         textC& tDomainUse = !( idStomp % ( TUCK >> 4 ) )
 
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
@@ -173,7 +177,7 @@ DONE( tmGorillaF )
         tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
     {
     while( !ether )
-    TN( tDomainOuter , "N8tK7qtKTbLNbq63px-WVmt.hidden.ideafarm.com" ) ;        //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
+    TN( tDomainOuter , "[...].hidden.ideafarm.com" ) ;        //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
     TN( tDomainInner , "10.0.1.1" ) ;
     ZE( countT , idNewFailOuter    ) ;
     ZE( countT , idNewFailInner    ) ;
