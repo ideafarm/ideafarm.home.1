@@ -76,7 +76,7 @@
         do
         handleC hDown( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
     {
-    if( stSnip )
+    if( !POOP && stSnip )
     ZE( countT , cba ) ; // STEP 3: MAKE THE FINAL IMAGE BY CONCATENATING THE SNIPPETS
 
     //}
@@ -399,16 +399,19 @@
 
     }
         }
-            offo += pc2s->c2 ;
-            stSnip << pc2s ;
-            memCopyF( tin0P      , (byteT*&)pc2s->c1 , pbQueryP , pc2s->c2 ) ;
-            newF(     tin0P , LF , (byteT*&)pc2s->c1            , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
-            pc2s->c2 = pbe - pbQueryP ;
-            pc2s->c1 = 0 ;
+            }
+                offo += pc2s->c2 ;
+                stSnip << pc2s ;
+                memCopyF( tin0P      , (byteT*&)pc2s->c1 , pbQueryP , pc2s->c2 ) ;
+                newF(     tin0P , LF , (byteT*&)pc2s->c1            , pc2s->c2 ) ; ___( (byteT*&)pc2s->c1 ) ;
+                pc2s->c2 = pbe - pbQueryP ;
+                pc2s->c1 = 0 ;
+            {
+            if( pc2s )
+            newF( tin0P , LF , pc2s ) ; ___( pc2s ) ;
+            ZE( count2S* , pc2s ) ;
         {
-        if( pc2s )
-        newF( tin0P , LF , pc2s ) ; ___( pc2s ) ;
-        ZE( count2S* , pc2s ) ;
+        if( !POOP )
 
         }
             }
@@ -420,7 +423,7 @@
                 dnsLabelsF( tin0P , psttl , pbe , (dnsMsgHeaderS*)pbQueryP ) ; ___( psttl ) ;
                 countT offl = pbe - pbQueryP ;
             {
-            while( cq -- )
+            while( !POOP && cq -- )
             header.swabF() ;
             countT cq = header.cQuerys ;
             header.swabF() ;
@@ -440,10 +443,12 @@
     _IO_
 
     }
+        if( POOP ) return ;                 //20250322@1223: ADDED W/O ANALYSIS
         __( bAuthoritativeP > 1 ) ;
         __Z( pbQueryP ) ;
         __( cbP ) ;
         __NZ( pbP ) ;
+        if( POOP ) return ;                 //20250322@1223: ADDED W/O ANALYSIS
     {
     IFbEcAREFUL
     SCOOP

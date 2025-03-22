@@ -9,7 +9,9 @@
 
 }
     pbP = pbiSave ? pbiSave : pbi ;
-    strMakeF( tin0P , LF , psttP , T(ostox) ) ; ___( psttP ) ;
+    if( !POOP ) { strMakeF( tin0P , LF , psttP , T(ostox) ) ; ___( psttP ) ; }
+
+    __Z( cDo ) ;
 
     }
 
@@ -33,12 +35,13 @@
             pbiSave = pbi + 2 ;
         {
         if( ( *pbi & 0xc0 ) == 0xc0 )
-    {
-    for(;;)                                     // ASSUME: *pbc IS INITIALLY NOT 0. CODE STRUCTURE REFLECTS NONCOMPRESSED, NULL TERMINATED FORMAT. COMPRESSION CODE ASSUMED TO ONLY OCCUR AT END (PER RFC SPEC)
+    {                                                   //20250322@1213: "while( -- cDo )" FROM "for(;;)" BECAUSE OBSERVED INFINITE LOOPING WITHIN HERE, PERHAPS DUE TO INTENTIONALLY, MALICIOUSLY MALFORMED REQUEST
+    while( -- cDo )                                     // ASSUME: *pbc IS INITIALLY NOT 0. CODE STRUCTURE REFLECTS NONCOMPRESSED, NULL TERMINATED FORMAT. COMPRESSION CODE ASSUMED TO ONLY OCCUR AT END (PER RFC SPEC)
+    countT cDo = TUCK + 1 ;
     ZE( const byteT* , pbiSave ) ;
     const byteT* pbi = pbP ;
 
-    OStEXT( ostox , 0x100 )
+    OStEXT( ostox , TUCK << 2 )                 //20250322@1213: "TUCK << 2" FROM "TUCK" W/O ANALYSIS
 
     _IO_
 
