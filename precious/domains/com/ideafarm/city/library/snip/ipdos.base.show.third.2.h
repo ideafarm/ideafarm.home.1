@@ -34231,7 +34231,7 @@ examples
  voidT operator =( const countT rcP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34005.etherC.operator_assign!||
 
- voidT traceF( tin0S& tin0P , const strokeS* const psttP = 0 , const flagsT flagsP = flTRACE_null , const countT idDivertP = 0 ) ;
+ voidT traceF( tin0S& tin0P , const strokeS* const psttP = 0 , const flagsT flagsP = flTRACE_null , const countT idDivertP = ifcIDtRACEdIVERT_0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021d0.etherC.traceF!||
  countT snapWordF( tin0S& tin0P , countT*& pcWordP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360021e0.etherc.snapwordf!||

@@ -48430,25 +48430,26 @@ use this rather than _ to avoid the overhead of _
 /*1*//*ifcIDtRACEdIVERT*//*1*/
 
 /*3*/
-#define ifcIDtRACEdIVERT_1              0xdddd0c2a
-#define ifcIDtRACEdIVERT_2              0xdddd0c2b
-#define ifcIDtRACEdIVERT_3              0xdddd0c2c
-#define ifcIDtRACEdIVERT_4              0xdddd0c2d
-#define ifcIDtRACEdIVERT_5              0xdddd0c2e
-#define ifcIDtRACEdIVERT_6              0xdddd0c2f
-#define ifcIDtRACEdIVERT_7              0xdddd0c30
-#define ifcIDtRACEdIVERT_8              0xdddd0c31
-#define ifcIDtRACEdIVERT_9              0xdddd0c32
-#define ifcIDtRACEdIVERT_a              0xdddd0c33
-#define ifcIDtRACEdIVERT_b              0xdddd0c34
-#define ifcIDtRACEdIVERT_c              0xdddd0c35
-#define ifcIDtRACEdIVERT_d              0xdddd0c36
-#define ifcIDtRACEdIVERT_e              0xdddd0c37
-#define ifcIDtRACEdIVERT_f              0xdddd0c38
-#define ifcIDtRACEdIVERT_10             0xdddd0c39
+#define ifcIDtRACEdIVERT_0              0xdddd0c2a
+#define ifcIDtRACEdIVERT_1              0xdddd0c2b
+#define ifcIDtRACEdIVERT_2              0xdddd0c2c
+#define ifcIDtRACEdIVERT_3              0xdddd0c2d
+#define ifcIDtRACEdIVERT_4              0xdddd0c2e
+#define ifcIDtRACEdIVERT_5              0xdddd0c2f
+#define ifcIDtRACEdIVERT_6              0xdddd0c30
+#define ifcIDtRACEdIVERT_7              0xdddd0c31
+#define ifcIDtRACEdIVERT_8              0xdddd0c32
+#define ifcIDtRACEdIVERT_9              0xdddd0c33
+#define ifcIDtRACEdIVERT_a              0xdddd0c34
+#define ifcIDtRACEdIVERT_b              0xdddd0c35
+#define ifcIDtRACEdIVERT_c              0xdddd0c36
+#define ifcIDtRACEdIVERT_d              0xdddd0c37
+#define ifcIDtRACEdIVERT_e              0xdddd0c38
+#define ifcIDtRACEdIVERT_f              0xdddd0c39
+#define ifcIDtRACEdIVERT_10             0xdddd0c3a
 /*3*/
 #define ifcIDtRACEdIVERT_min     0xdddd0c2a
-#define ifcIDtRACEdIVERT_max     0xdddd0c39
+#define ifcIDtRACEdIVERT_max     0xdddd0c3a
 
 
 //
