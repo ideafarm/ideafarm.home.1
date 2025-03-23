@@ -32,17 +32,21 @@ DONE( tmWorkF )
                     //++ s ; ether.osSleepF( tin0P , TICK >> 2 ) ;    // PACE MYSELF SO THAT THE HTTP SERVER PROCESS GETS MORE OF THE CPU (EXPERIMENT TO SEE WHETHER THIS IMPROVES HTTPS RESPONSE TIME)
                     //THIS NAPPING IS DISABLED BECAUSE THE BOTTLENECK IS WITH ME; I CAN ONLY HANDLE ABOUT WO NOTICE PER TOCK, AND AT THAT RATE, IT IS EASY FOR THE HTTPS SERVER TO KEEP UP
 
-                    writeSoulFileF( tin0P , etThread , etRock , (osTextT*)pbi , cbi - 1 , pptFileName , nnPeer ) ;
+                    }
+                        bksWebHookNotices.flushF( tin0P ) ;
+                        pczHeadLath[ 3 ] = fliWEBhOOKnOTICE_null ;
+                    {
+                    if( writeSoulFileF( tin0P , etThread , ether , etRock , (osTextT*)pbi , cbi - 1 , pptFileName , nnPeer ) )
 
-                    etThread.delF( tin0P , psttnu ) ;
-                    etRock.traceF( tin0P , T("[cDone]:    ")+TF3(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttnu) ) ;
-                    etThread.boxPutUniqueF( tin0P , psttnu , tLike , pbi , cbi - 1 ) ; ___( psttnu ) ;
-                    ZE( strokeS* , psttnu ) ;
-//DISABLE IN PRODUCTION
+                    //etThread.delF( tin0P , psttnu ) ;
+                    //etRock.traceF( tin0P , T("[cDone]:    ")+TF3(cDone,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,0xc)+T(psttnu) ) ;
+                    //etThread.boxPutUniqueF( tin0P , psttnu , tLike , pbi , cbi - 1 ) ; ___( psttnu ) ;
+                    //ZE( strokeS* , psttnu ) ;
+                    //DISABLE IN PRODUCTION
 
                     ++ cDone ;
                 {
-                if( F(flagsNoticeLath) & fliWEBhOOKnOTICE_NEW )
+                if( F(pczHeadLath[ 3 ]) & fliWEBhOOKnOTICE_NEW )
 
                 //*********************************************************************************************************************************************************
                 //********                                     ************************************************************************************************************
@@ -61,15 +65,9 @@ DONE( tmWorkF )
                 else
                 }
                     nnPeer          = *(nicNameC*)&pcHeadYes[ 4 ] ;
-                    bHead           = 0      ;
+                    bHead           = 0 ;
                     cbi             = pcHeadYes[ 2 ] ;
-
-                    }
-                        bksWebHookNotices.flushF( tin0P ) ;
-                        pcHeadYes[ 3 ] = fliWEBhOOKnOTICE_null ;                        //U:: PERHAPS EDIT CODE TO NOT DO THIS UNTIL AFTER writeSoulFileF HAS RETURNED ; THIS WILL COMPLICATE THE CODE BUT AVOID THE SCENARIO IN WHICH I DIE BEFORE ACTUALLY WRITING THE soulC FILE
-                    {
-                    if( F(flagsNoticeLath) & fliWEBhOOKnOTICE_NEW )
-                    flagsNoticeLath = pcHeadYes[ 3 ] ;
+                    pczHeadLath     = pcHeadYes ;
                 {
                 if( !flagsFail )
                 pbi = 0 ;
@@ -101,9 +99,10 @@ DONE( tmWorkF )
                 {
                 else
                 }
-                    nnPeer = *(nicNameC*)&pcHeadYes[ 4 ] ;
-                    bHead = 0 ;
-                    cbi = pcHeadYes[ 2 ] ;
+                    nnPeer          = *(nicNameC*)&pcHeadYes[ 4 ] ;
+                    bHead           = 0 ;
+                    cbi             = pcHeadYes[ 2 ] ;
+                    pczHeadLath     = pcHeadYes ;
                     etRock.traceF( tin0P , T("header found!") ) ;
                 {
                 if( !flagsFail )
@@ -175,8 +174,8 @@ DONE( tmWorkF )
         {
         while( !ether )
         nicNameC nnPeer ;
-        ZE( flagsT , flagsNoticeLath ) ;
-        ZE( countT , cDone           ) ;
+        ZE( count02T* , pczHeadLath ) ;
+        ZE( countT    , cDone       ) ;
 
         textC* pptFileName[] = { &tSharedFolder , &tSharedFolderNoticeParsingFailed , &tSharedFileEventSubCreated , &tSharedFileEventCheckoutCompleted , &tSharedFileEventSubNewUpdated , &tSharedFileEventSubOldUpdated , &tSharedFileEventSubOldDeleted , &tb4 , &tSlash } ;
 
@@ -248,6 +247,8 @@ if( pTaskP )
 TASK( tmWorkF )
 
 }
+    return bOk ;
+
     //etRockP.traceF( tin0P , T("writeSoulFileF / ---- ") ) ;
     //etRockP.traceF( tin0P , T("writeSoulFileF / 0") ) ;
 
@@ -256,7 +257,28 @@ TASK( tmWorkF )
         }
             }
                 }
-                    etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
+                    }
+                        ++ s ; etPrimeP.osSleepF( tin0P , TOCK >> 2 ) ;
+
+                        }
+                            }
+                                etRockP.traceF( tin0P , T("!exception / could not write soulC file ; will nap and retry") ) ;
+                                POOPRqUIET
+                            {
+                            else
+                            }
+                                break ;
+                                bOk = 1 ;
+                            {
+                            if( !POOP )
+                            ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , WS( sOut ) , 1 ) ;
+                            SCOOPS
+                            _IO_
+                        {
+                        IFsCRATCHoK
+                    {
+                    while( !etPrimeP )
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
                     //etRockP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     TN( tLong , "" ) ; tLong = tSharedFolderP+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventCheckoutCompletedP ;
@@ -455,7 +477,28 @@ TASK( tmWorkF )
             else if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeCheckoutCompleted ) )                                          // ELSE IF NOTICE TYPE IS "CHECKOUT COMPLETED"
             }
                 }
-                    etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
+                    }
+                        ++ s ; etPrimeP.osSleepF( tin0P , TOCK >> 2 ) ;
+
+                        }
+                            }
+                                etRockP.traceF( tin0P , T("!exception / could not write soulC file ; will nap and retry") ) ;
+                                POOPRqUIET
+                            {
+                            else
+                            }
+                                break ;
+                                bOk = 1 ;
+                            {
+                            if( !POOP )
+                            ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , WS( sOut ) , 1 ) ;
+                            SCOOPS
+                            _IO_
+                        {
+                        IFsCRATCHoK
+                    {
+                    while( !etPrimeP )
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
                     //etRockP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     TN( tLong , "" ) ; tLong = tSharedFolderP+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubCreatedP ;
@@ -649,7 +692,28 @@ TASK( tmWorkF )
             }
                 }
                     }
-                        etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
+                        }
+                            ++ s ; etPrimeP.osSleepF( tin0P , TOCK >> 2 ) ;
+
+                            }
+                                }
+                                    etRockP.traceF( tin0P , T("!exception / could not write soulC file ; will nap and retry") ) ;
+                                    POOPRqUIET
+                                {
+                                else
+                                }
+                                    break ;
+                                    bOk = 1 ;
+                                {
+                                if( !POOP )
+                                ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , WS( sOut ) , 1 ) ;
+                                SCOOPS
+                                _IO_
+                            {
+                            IFsCRATCHoK
+                        {
+                        while( !etPrimeP )
+                        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
                         //etRockP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                         TN( tLong , "" ) ; tLong = tSharedFolderP+tLiveSlash+T("sub.created/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubNewUpdatedP ;
@@ -852,7 +916,28 @@ TASK( tmWorkF )
                 else                                                                                                                                                    // ELSE WRITE soulC FILE CONTAINING SOME NEW SUBSCRIPTION FIELDS
                 }
                     }
-                        etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
+                        }
+                            ++ s ; etPrimeP.osSleepF( tin0P , TOCK >> 2 ) ;
+
+                            }
+                                }
+                                    etRockP.traceF( tin0P , T("!exception / could not write soulC file ; will nap and retry") ) ;
+                                    POOPRqUIET
+                                {
+                                else
+                                }
+                                    break ;
+                                    bOk = 1 ;
+                                {
+                                if( !POOP )
+                                ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , WS( sOut ) , 1 ) ;
+                                SCOOPS
+                                _IO_
+                            {
+                            IFsCRATCHoK
+                        {
+                        while( !etPrimeP )
+                        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
                         //etRockP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                         TN( tLong , "" ) ; tLong = tSharedFolderP+tLiveSlash+T("sub.renewed/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubOldUpdatedP ;
@@ -1062,7 +1147,28 @@ TASK( tmWorkF )
             else if( !etherP.strCompareF( tin0P , tValueStripeNoticeType , tValueStripeNoticeTypeSubUpdated ) )                                                 // ELSE IF NOTICE TYPE IS "SUB UPDATED"
             }
                 }
-                    etherP.boxPutF( tin0P , tLong , WS( sOut ) ) ;
+                    }
+                        ++ s ; etPrimeP.osSleepF( tin0P , TOCK >> 2 ) ;
+
+                        }
+                            }
+                                etRockP.traceF( tin0P , T("!exception / could not write soulC file ; will nap and retry") ) ;
+                                POOPRqUIET
+                            {
+                            else
+                            }
+                                break ;
+                                bOk = 1 ;
+                            {
+                            if( !POOP )
+                            ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , WS( sOut ) , 1 ) ;
+                            SCOOPS
+                            _IO_
+                        {
+                        IFsCRATCHoK
+                    {
+                    while( !etPrimeP )
+                    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
                     //etRockP.traceF( tin0P , T("[tLong]:    ")+tLong , flTRACE_NOpREFIX | flTRACE_KEEPcRlF ) ;
                     TN( tLong , "" ) ; tLong = tSharedFolderP+T("sub.deleted/")+TF4(hashInvoice%0x20,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE,0,0x20)+T("/new.")+tdInvoice+tSlashP+tSharedFileEventSubOldDeletedP ;
@@ -1407,6 +1513,7 @@ TASK( tmWorkF )
         _IO_
     {
     if( postP )
+    ZE( boolT , bOk ) ;
 
     //etRockP.traceF( tin0P , T("writeSoulFileF / ++++ ") ) ;
 
@@ -1420,7 +1527,7 @@ TASK( tmWorkF )
     textC& tSharedFolderNoticeParsingFailedP  = *pptFileNameP[ 1 ] ;
     textC& tSharedFolderP                     = *pptFileNameP[ 0 ] ;
 {
-voidT writeSoulFileF( tin0S& tin0P , etherC& etherP , etherC& etRockP , osTextT* postP , countT costP , textC** pptFileNameP , nicNameC& nnPeerP )
+boolT writeSoulFileF( tin0S& tin0P , etherC& etherP , etherC& etPrimeP , etherC& etRockP , osTextT* postP , countT costP , textC** pptFileNameP , nicNameC& nnPeerP )
 
 /*1*/WAKEhIDE( "ifcIDaDAM_WEBhOOKnOTICEfILER" )/*1*/
 /**/
