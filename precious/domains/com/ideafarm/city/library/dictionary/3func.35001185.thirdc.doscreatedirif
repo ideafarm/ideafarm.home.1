@@ -17,29 +17,34 @@
     #elif defined( __NT__ )
     #ifdef __OS2__
 
-    }
-        }
-            }
-                BLAMMOiD( 0x73737373 ) ;
-                TELL( "this is the call nest that does the bad deed (creating home folder on drive c)" ) ;
-                _IO_
-            {
-            if( postLower == c_strstrIF( postLower , "c:\\ideafarm.home.1" ) )
-            c_strlwrIF( tin0P , postLower ) ;
-            c_strncpyIF( tin0P , postLower , postP , sizeof postLower ) ;
-            osTextT postLower[ TUCK ] ;
-        {
-        else if( idComputer == IDcOMPUTER_IPDOSmASTERcRAFTWORK )                    //A:ASSUME: THE CRAFTWORK COMPUTER USES DRIVE D FOR ALL HOMES
-        if( POOP ) POOPRqUIET
-        countT idComputer = ((tin1S&)tin0P).pEtScratch->diskIdF( tin0P , T("///c") ) ;
-        SCOOPS
-    {
-    IFsCRATCHoK
-    //U::TO FIND A BUG (TO IDENTIFY THE CODE THAT CREATES AN IDEAFARM HOME FOLDER ON DRIVE C WHEN HOMES EXIST ON DRIVE D)
+    //}
+    //    }
+    //        }
+    //            BLAMMOiD( 0x73737373 ) ;
+    //            TELL( "this is the call nest that does the bad deed (creating home folder on drive c)" ) ;
+    //            _IO_
+    //        {
+    //        if( postLower == c_strstrIF( postLower , "c:\\ideafarm.home.1" ) )
+    //        c_strlwrIF( tin0P , postLower ) ;
+    //        c_strncpyIF( tin0P , postLower , postP , sizeof postLower ) ;
+    //        osTextT postLower[ TUCK ] ;
+    //    {
+    //    else if( idComputer == IDcOMPUTER_IPDOSmASTERcRAFTWORK )                    //A:ASSUME: THE CRAFTWORK COMPUTER USES DRIVE D FOR ALL HOMES
+    //    if( POOP ) POOPRqUIET
+    //    countT idComputer = ((tin1S&)tin0P).pEtScratch->diskIdF( tin0P , T("///c") ) ;
+    //    SCOOPS
+    //{
+    //IFsCRATCHoK
+    //
+    // DISCUSSION: USING etScratch WITHIN A thirdC or etherC FUNCTION SHOULD BE AVOIDED, BECAUSE NESTED USAGE OF etScratch IS NOT SUPPORTED, AND SUCH A FUNCTION MIGHT BE CALLED WHEN etScratch IS IMPOTENT, E.G. DURING PROCESSING OF POOPR
+    //
+    // WARNING: THIS CODE BLOCK HAS BEEN OBSERVED TO COMPLAIN (IN SCOOPS) THAT etScratch IS ALREADY IMPOTENT ; THIS IS POSSIBLE BECAUSE I AM CALLED DURING CT OF bookC INSTANCE, WHICH CAN HAPPEN WITHIN etherC::traceF, WHICH IS CALLED BY POOPR (poopC::chatterF), WHICH IS OFTEN CALLED WHEN etScratch IS IMPOTENT
+    //
+    //TO FIND A BUG (TO IDENTIFY THE CODE THAT CREATES AN IDEAFARM HOME FOLDER ON DRIVE C WHEN HOMES EXIST ON DRIVE D)
     //CS:CODEsYNC: 35001185 3600101a
 
- { BLAMMOiD( 0xc0c0c0c0 ) ; } //U:: REMOVE IN PRODUCTION ; TO FIND THE CODE THAT CREATES HOME ON DRIVE C
-if( *postP == 'c' || *postP == 'C' )
+    //{ BLAMMOiD( 0xc0c0c0c0 ) ; } //U:: REMOVE IN PRODUCTION ; TO FIND THE CODE THAT CREATES HOME ON DRIVE C
+    //if( *postP == 'c' || *postP == 'C' )
 
     _IO_
 
