@@ -74,6 +74,9 @@ DONE( tmWorkF )
                                                            if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tTarget      ) ) nnOut = nnHostWebLag0 ;
                                                     //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1    ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
                                                     //     if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1    ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
+
+/**/etRock.traceF( tin0P , T("U:: debug    [tTarget]:    \"")+tTarget+T("\"") ) ;
+/**/etRock.traceF( tin0P , T("U:: debug [tDomainNet]:    \"")+tDomainNet+T("\"") ) ;
                                                 
                                                     nicNameC nnOut ;
                                                 {
