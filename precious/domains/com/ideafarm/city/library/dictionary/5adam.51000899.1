@@ -390,7 +390,9 @@ DONE( tmWorkF )
     nicNameC nnHostWebLag3 ;
     nicNameC nnHostWebLag2 ;
     nicNameC nnHostWebLag1 ;
-    nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0000:7077:5400:05ff:fe59:278d") ) ;        //U:: PUT THIS INTO A SETTING ; THIS IS THE IPv6 ASSIGNED TO web1
+
+//U::PROD: nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0000:7077:5400:05ff:fe59:278d") ) ;        //U:: PUT THIS INTO A SETTING ; THIS IS THE IPv6 ASSIGNED TO web1
+    nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::1") ) ;        //U:: FOR TESTING
 
     nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
 
