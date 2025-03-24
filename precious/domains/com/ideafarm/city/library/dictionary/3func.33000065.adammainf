@@ -563,7 +563,7 @@
                                                 }
                                                     etThread.osThreadF( TaRG1( tmTimeNowF    ) ) ;
                                                     //etThread.traceF( tin0P , T("launching tmTimeNowF") ) ;
-                                                    etThread.osThreadF( TaRG1( tmKillSocketF ) ) ; //A:ASSUME: thirdC::s_setupIF HAS ALREADY BEEN CALLED (LOOK FOR IT VERY EARLY DURING CT OF processGlobal4I)
+                                                    etThread.osThreadF( TaRG2cBsTACK( tmKillSocketF , CBsTACKmIN << 1 ) ) ; //A:ASSUME: thirdC::s_setupIF HAS ALREADY BEEN CALLED (LOOK FOR IT VERY EARLY DURING CT OF processGlobal4I)
                                                     //etThread.traceF( tin0P , T("launching tmKillSocketF") ) ;
                                                 {
                                                 if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) )
