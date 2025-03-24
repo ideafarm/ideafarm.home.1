@@ -381,7 +381,7 @@ DONE( tmWorkF )
     etThread.traceF( tin0P , T("the settings are ready") ) ;
     sgnSettingsReady.waitF( tin0P ) ;
 
-    etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
+//    etThread.osThreadF( TaRG2cBsTACK( tmUpdateNnHostsF , CBsTACKmIN << 1 ) , (countT)&nnHostWebLath , (countT)&nnHostWebLag0 , (countT)&nnHostWebLag1 , (countT)&nnHostWebLag2 , (countT)&nnHostWebLag3 ) ;
 
     nicNameC nnHostWebLag3 ;
     nicNameC nnHostWebLag2 ;
@@ -407,11 +407,11 @@ DONE( tmUpdateNnHostsF )
 
         }
             }
-                /**/etRock.traceF( tin0P , T("!exception / could not write batch file [tLong]:    ")+tLong ) ;
+                etRock.traceF( tin0P , T("!exception / could not write batch file [tLong]:    ")+tLong ) ;
                 POOPRqUIET
             {
             else
-            if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+            if( !POOP ) ;//etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
             ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
             SCOOPS
             _IO_
@@ -419,7 +419,7 @@ DONE( tmUpdateNnHostsF )
         IFsCRATCHoK
         TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore2+tNnHostWeb+tAfter2+T("\r\n") ;
         tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
-        etThread.traceF( tin0P , T("new  [nnHostWebLag0]:    ")+tNnHostWeb ) ;
+        //etThread.traceF( tin0P , T("new  [nnHostWebLag0]:    ")+tNnHostWeb ) ;
         TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag0P) ;
 
                                                            nnHostWebLag0P = nnHostWebLathP ;
@@ -432,11 +432,11 @@ DONE( tmUpdateNnHostsF )
         }
             }
                 }
-                    /**/etRock.traceF( tin0P , T("!exception / could not write batch file [tLong]:    ")+tLong ) ;
+                    etRock.traceF( tin0P , T("!exception / could not write batch file [tLong]:    ")+tLong ) ;
                     POOPRqUIET
                 {
                 else
-                if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+                if( !POOP ) ;//etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
                 ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
                 SCOOPS
                 _IO_
@@ -445,7 +445,7 @@ DONE( tmUpdateNnHostsF )
             TN( tBatFileImage , "" ) ; tBatFileImage = T("@echo off\r\n")+tBefore1+tNnHostWeb+tAfter1+T("\r\n") ;
             tLong = T("////web1/d/ideafarm.home.101/controls/drop.executables/new.ipv6.netsh.from.dns.")+TfORsTRING(++idFileOut)+T(".bat" ) ;
 
-            etThread.traceF( tin0P , T("doomed [nnHostWebLag3]:    ")+tNnHostWeb ) ;
+            //etThread.traceF( tin0P , T("doomed [nnHostWebLag3]:    ")+tNnHostWeb ) ;
             TN( tNnHostWeb , "" ) ; tNnHostWeb = T(nnHostWebLag3P) ;
         {
         if( ~nnHostWebLag3P )
