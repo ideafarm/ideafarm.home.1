@@ -39223,8 +39223,8 @@ args
                                                                                                         \
     {                                                                                                   \
         osTextT postDec[ SB * sizeof( countT ) + 1 ] ;                                                  \
-        postDec[ 0xa ] = 0 ;                                                                            \
-        thirdC::c_itoaForeignLibIF( tin0P , postDec , sizeof postDec , (countT)(cP) , 0xa ) ;                     \
+        thirdC::c_memsetIF( tin0P , postDec , sizeof postDec , 0 ) ;                                    \
+        thirdC::c_itoaForeignLibIF( tin0P , postDec , sizeof postDec , (countT)(cP) , 0xa ) ;           \
         OStEXTA( postNameP , postDec ) ;                                                                \
     }
 
