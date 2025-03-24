@@ -75,8 +75,8 @@ DONE( tmWorkF )
                                                     //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1    ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
                                                     //     if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHooks    ) ) nnOut = nnWebHook1    ;        //WHEN THERE ARE MULTIPLE WH [wh1, wh2, wh3, ...] THEN RETURN ALL VALUES nnWebHook1 nnWebHook2 nnWebHook3 ...
 
-/**/etRock.traceF( tin0P , T("U:: debug    [tTarget]:    \"")+tTarget+T("\"") ) ;
-/**/etRock.traceF( tin0P , T("U:: debug [tDomainNet]:    \"")+tDomainNet+T("\"") ) ;
+                                                    //etRock.traceF( tin0P , T("U:: debug    [tTarget]:    \"")+tTarget+T("\"") ) ;
+                                                    //etRock.traceF( tin0P , T("U:: debug [tDomainNet]:    \"")+tDomainNet+T("\"") ) ;
                                                 
                                                     nicNameC nnOut ;
                                                 {
@@ -390,9 +390,9 @@ DONE( tmWorkF )
     nicNameC nnHostWebLag3 ;
     nicNameC nnHostWebLag2 ;
     nicNameC nnHostWebLag1 ;
-    nicNameC nnHostWebLag0 ;
+    nicNameC nnHostWebLag0 = etThread.sockNicNameF( tin0P , T("2001:19f0:0000:7077:5400:05ff:fe59:278d") ) ;        //U:: PUT THIS INTO A SETTING ; THIS IS THE IPv6 ASSIGNED TO web1
 
-    nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;             //U:: PUT THIS INTO A SETTING
+    nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
 
     etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
 
