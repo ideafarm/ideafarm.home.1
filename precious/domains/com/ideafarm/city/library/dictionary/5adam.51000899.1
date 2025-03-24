@@ -32,9 +32,9 @@ DONE( tmWorkF )
                                     POOPRqUIET
                                 {
                                 else
-                                if( !POOP ) ;//etRock.traceF( tin0P , T("wrote reply") ) ;
+                                if( !POOP ) /*;*/**/etRock.traceF( tin0P , T("wrote reply") ) ;
                                 sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
-                                //etRock.traceF( tin0P , T("replying / 1 [cbr]:    ")+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                /**/etRock.traceF( tin0P , T("replying / 1 [cbr]:    ")+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 _IO_
                             {
                             else
@@ -51,10 +51,10 @@ DONE( tmWorkF )
                         IFsCRATCHoK
                         ZE( countT , cbr ) ;
                         ZE( byteT* , pbr ) ;
-                        //etRock.traceF( tin0P , T("replying / 2") ) ;
+                        /**/etRock.traceF( tin0P , T("replying / 2") ) ;
 
-                        else                          ;//etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        if( postError && *postError ) ;//etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
+                        else                          /*;*/**/etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        if( postError && *postError ) /*;*/**/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
                         const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
 
                         }
@@ -113,7 +113,7 @@ DONE( tmWorkF )
                                             etThread.delF( tin0P , psttw ) ;
                                             TN( tDomainNet , psttw ) ;
                                             }
-                                                //etRock.traceF( tin0P , T("[domainNet,peer]:      \"")+T(psttw)+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                                /**/etRock.traceF( tin0P , T("[domainNet,peer]:      \"")+T(psttw)+T("\"    \"")+tDomainPeer+T("\"") ) ;
 
                                                 etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
                                                 TN( tDomainNet , "" ) ; tDomainNet = T(psttNet)+T(".hidden.ideafarm.com") ;
@@ -127,7 +127,7 @@ DONE( tmWorkF )
                                             {
                                             if( psttw && etThread.strIdF( tin0P , tDash , psttw , 1 ) )
 
-                                            //etRock.traceF( tin0P , T("[domainGross,peer]:    \"")+tDomainGross+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                            /**/etRock.traceF( tin0P , T("[domainGross,peer]:    \"")+tDomainGross+T("\"    \"")+tDomainPeer+T("\"") ) ;
                                             TN( tDomainGross , psttw ) ;
                                             if( psttw ) ((tin1S&)tin0P).pEtScratch->strConvertToLowerCaseF( tin0P , psttw ) ; ___( psttw ) ;
                                             *ps >> psttw ;
@@ -165,7 +165,7 @@ DONE( tmWorkF )
                         ++ idClient ;
 
                         //}
-                        //    //etRock.traceF( tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(nnPeer)+(bDivert?tSayDiverting:tSayGranting)+tDomainPeer ) ;
+                        //    /**/etRock.traceF( tin0P , TT(timeN1,timeN2)+tb4+tTimeOld+tb4+T(nnPeer)+(bDivert?tSayDiverting:tSayGranting)+tDomainPeer ) ;
                         //
                         //    }
                         //        etThread.delF( tin0P , psttSay ) ;
@@ -200,7 +200,7 @@ DONE( tmWorkF )
 
                 }
                     }
-                        //etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
+                        /**/etRock.traceF( tin0P , tSayPrefix+T(nnPeer)+tSayUnknownDomain+tb4+tDomainPeer ) ;
                         bDivert = 1 ;
                     {
                     if( !bStripeWebHookNotifier && !bListedDomain )         //P:PERSONALITY: TRUSTED PEERS ARE DIRECTED TO wh1 ; UNTRUSTED PEERS ARE DIRECTED TO wh2
@@ -248,12 +248,12 @@ DONE( tmWorkF )
                             for( countT offt = 0 ; offt < mySettings.cListedDomain ; offt ++ )
                             mySettings.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
-                            //etRock.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
+                            /**/etRock.traceF( tin0P , T("[tPeer]:    ")+T(psttPeer) ) ;
                             tDomainPeer = T(psttPeer) ;
                             _IO_
                         {
                         else
-                        if( !psttPeer ) ;//etRock.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
+                        if( !psttPeer ) /*;*/**/etRock.traceF( tin0P , T("!exception / reverse DNS lookup failed") ) ;
                         etThread.sockPsttHostF( tin0P , psttPeer , nnPeer ) ; ___( psttPeer ) ;
                         ZE( strokeS* , psttPeer ) ;
                     {
@@ -284,7 +284,7 @@ DONE( tmWorkF )
                 {
                 if( !( ++ idIn % ( TUCK >> 4 ) ) )
 
-                //etRock.traceF( tin0P , T("waited for a packet [nnPeer,cbq]:    ")+T(nnPeer)+tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                /**/etRock.traceF( tin0P , T("waited for a packet [nnPeer,cbq]:    ")+T(nnPeer)+tb4+TF2(cbq,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 }
                     }
                         break ;
@@ -298,7 +298,7 @@ DONE( tmWorkF )
                     _IO_
                 {
                 IFsCRATCHoK
-                //etRock.traceF( tin0P , T("waiting for a packet") ) ;
+                /**/etRock.traceF( tin0P , T("waiting for a packet") ) ;
                 nicNameC nnPeer ;
                 ZE( countT , idp ) ;
                 ZE( countT , cbq ) ;
@@ -411,7 +411,7 @@ DONE( tmUpdateNnHostsF )
                 POOPRqUIET
             {
             else
-            if( !POOP ) ;//etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+            if( !POOP ) /*;*/**/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
             ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
             SCOOPS
             _IO_
@@ -436,7 +436,7 @@ DONE( tmUpdateNnHostsF )
                     POOPRqUIET
                 {
                 else
-                if( !POOP ) ;//etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
+                if( !POOP ) /*;*/**/etRock.traceF( tin0P , T("wrote batch file aok [tLong]:    ")+tLong ) ;
                 ((tin1S&)tin0P).pEtScratch->boxPutF( tin0P , tLong , tBatFileImage , tBatFileImage.csF( tin0P ) ) ;
                 SCOOPS
                 _IO_
@@ -709,7 +709,7 @@ TASK( tmFreshSettingsF )
     {
 
     }
-        //etherMe.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetAllowedStripe[offn]) ) ;
+        /**/etRock.traceF( tin0P , T("allowed (Stripe) [subnet]:    ")+T(pnnSubnetAllowedStripe[offn]) ) ;
     {
     for( countT offn = 0 ; offn < cnnSubnetAllowedStripe ; offn ++ )
 
@@ -740,7 +740,7 @@ TASK( tmFreshSettingsF )
                 nicNameC nnSubnet = nnIPv46.isIPv4F()
                 nicNameC nnIPv46  = etherMe.sockNicNameF( tin0P , psttc1 ) ;
 
-                //etherMe.traceF( tin0P , psttc1 ) ;
+                /**/etRock.traceF( tin0P , psttc1 ) ;
                 _IO_
             {
             FORsTRINGSiN1( pstt1Nn )
@@ -756,18 +756,18 @@ TASK( tmFreshSettingsF )
 
     zapF( tin0P ) ;
 
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
-    //etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed8]:    \"")+tDomainRootAllowed8+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed7]:    \"")+tDomainRootAllowed7+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed6]:    \"")+tDomainRootAllowed6+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed5]:    \"")+tDomainRootAllowed5+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed4]:    \"")+tDomainRootAllowed4+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed3]:    \"")+tDomainRootAllowed3+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed2]:    \"")+tDomainRootAllowed2+T("\"") ) ;
+    /**/etRock.traceF( tin0P , T("settings [tDomainRootAllowed1]:    \"")+tDomainRootAllowed1+T("\"") ) ;
 
-    //etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
+    /**/etRock.traceF( tin0P , T("settings [tIpWebHook1,tIpWebHook2,tDomainLeafWebHooksNet,tDomainLeafWebHook1Net]:    \"")+tIpWebHook1+T("\"    \"")+tIpWebHook2+T("\"    \"")+tDomainLeafWebHooksNet+T("\"    \"")+tDomainLeafWebHook1Net ) ;
 
-    //etherMe.traceF( tin0P , T("[tNnTrusted]:    ")+tNnTrusted ) ;
+    /**/etRock.traceF( tin0P , T("[tNnTrusted]:    ")+tNnTrusted ) ;
     }
         etherMe.delF( tin0P , psttEat ) ;
         tNnTrusted = T(psttEat) ;
