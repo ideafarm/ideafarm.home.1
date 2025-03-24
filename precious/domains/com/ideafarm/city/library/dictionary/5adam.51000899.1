@@ -125,7 +125,7 @@ DONE( tmWorkF )
                                                 ZE( strokeS* , psttNet ) ;
                                                 _IO_
                                             {
-                                            if( psttw && etThread.strIdF( tin0P , tDash , psttw , 1 ) )
+                                            if( psttw && etThread.strIdF( tin0P , tHidden , psttw , 1 ) && etThread.strIdF( tin0P , tDash , psttw , 1 ) )
 
                                             /**/etRock.traceF( tin0P , T("[domainGross,peer]:    \"")+tDomainGross+T("\"    \"")+tDomainPeer+T("\"") ) ;
                                             TN( tDomainGross , psttw ) ;
@@ -357,6 +357,7 @@ DONE( tmWorkF )
         ZE( countT  , timeStart1 ) ;
         ZE( countT , idIn ) ;
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+        TN( tHidden , ".hidden.ideafarm.com" ) ;
         TN( tb4 , "    " ) ;
         stackC stsQueries(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
         stackC stsReplies(   tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_soulC ) ;
@@ -670,7 +671,6 @@ DONE( tmFreshSettingsF )
     timeS timeWrittenLath ;
     handleC hWait( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_FILEwAIT ) ;
     TN( tb4 , "    " ) ;
-    TN( tDash , "-" ) ;
     boolT bWoth = 1 ;
 
     TN( tLongFile , "" ) ; tLongFile = tLongPath + T("kv.settings.ipdos.jotC.data.booksC.1.book.00000001.00000001.bookC") ;
@@ -947,7 +947,7 @@ TASK( tmFreshSettingsF )
     countT idFreshen = 1 + incv02AM( idFreshenLath ) ;
     static countT idFreshenLath ;
 
-    TN( tDash , "-" ) ;
+    TN( tDash   , "-" ) ;
     etherC& etRock = etherC::etRockIF( tin0P ) ;
     _IO_
 {
