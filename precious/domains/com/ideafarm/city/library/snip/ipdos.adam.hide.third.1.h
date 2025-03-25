@@ -1,6 +1,4 @@
 
-#define ifcIDpORT_DNSwEBhOOKsUFFIX                  0x00001bd0
-
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
 // For build environment info, see file "\ideafarm.work\backed.up.never\txt\readme.first.ipdos.build.environment.txt"

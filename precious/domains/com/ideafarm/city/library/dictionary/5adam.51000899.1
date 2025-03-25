@@ -423,6 +423,9 @@ TASK( tmWorkF )
 DONE( tmServeWebHookRandomSuffixF )
 }
     }
+        etThread.boxPutF( tin0P , T("///ideafarm/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/idpListen") , (byteT*)&nu , sizeof nu ) ;
+        ZE( countT , nu ) ;
+
         }
             }
                 etThread.traceF( tin0P , T("!exception / could not destroy sListen") ) ;
@@ -507,16 +510,21 @@ DONE( tmServeWebHookRandomSuffixF )
         if( bFail )
 
         }
+            etThread.boxPutF( tin0P , T("///ideafarm/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/idpListen") , (byteT*)&idpListen , sizeof idpListen ) ;
+
             }
-                bFail = 1 ;
-                etThread.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry") ) ;
-                POOPRqUIET
+                }
+                    bFail = 1 ;
+                    etThread.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry") ) ;
+                    POOPRqUIET
+                {
+                if( POOP )
+                idpListen = sListen.bindF( tin0P , 0 , nnMe ) ;
+                SCOOPS
             {
-            if( POOP )
-            sListen.bindF( tin0P , ifcIDpORT_DNSwEBhOOKsUFFIX , nnMe ) ;
-            SCOOPS
+            IFsCRATCHoK
+            ZE( countT , idpListen ) ;
         {
-        IFsCRATCHoK
 
         }
             continue ;
