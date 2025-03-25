@@ -56,8 +56,14 @@ DONE( tmGorillaF )
             idNewSuccessUse = 0 ;
 
             }
-                if( idNewFailUse == 4 ) dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
+                }
+                    /**/etThread.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
+                    dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
+                    /**/etThread.traceF( tin0P , T("ordering the next ipv4 value for wh1") ) ;
+                {
+                if( idNewFailUse == 4 )
 
+                /**/etThread.traceF( tin0P , T("posted  an email notice") ) ;
                 etThread.boxPutF( tin0P , T("mail.smtp2go.com/dd9/smtp/factories@ideafarm.com/factoryreports@ideafarm.com") , tSay ) ;
 
                 ) ;
@@ -73,9 +79,10 @@ DONE( tmGorillaF )
                     "Subject: Notification from GORILLAwEBHOOKS / server exception / ")+tDomainUse+T("\r\n"
 
                 TN( tSay , "" ) ; tSay = T(
+                /**/etThread.traceF( tin0P , T("posting an email notice") ) ;
             {
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
-            /**/etThread.traceF( tin0P , T("stomp! **** F * A * I * L **** [idStomp,time]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+tUrl ) ;
+            /**/etThread.traceF( tin0P , T("stomp! **** F * A * I * L **** [idStomp,time,idNewFailUse(before),tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF2(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUrl ) ;
         {
         else
         }
@@ -132,34 +139,21 @@ DONE( tmGorillaF )
         {
         IFsCRATCHoK
 
-        ;
-            : idNewFailInner
-            ? idNewFailOuter
-        countT& idNewFailUse = !( idStomp % ( TUCK >> 4 ) )
-
-        ;
-            : idNewSuccessInner
-            ? idNewSuccessOuter
-        countT& idNewSuccessUse = !( idStomp % ( TUCK >> 4 ) )
-
-        ;
-            : cFailInner
-            ? cFailOuter
-        countT& cFailUse = !( idStomp % ( TUCK >> 4 ) )
-        ZE( countT , cFailOuter ) ;
-        ZE( countT , cFailInner ) ;
-
-        TN( tUrl , "" ) ; tUrl = tDomainUse+T("//http/nu") ;        // THE "nu" PORTION IS NOT USED, BECAUSE HTTP HEADER IS NOT PREPENDED
-
-        ;
-            : tDomainInner
-            ? tDomainOuter
-        textC& tDomainUse = !( idStomp % ( TUCK >> 4 ) )
-
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
-        
+
+        TN( tUrl , "" ) ; tUrl = tDomainUse+T("//http/nu") ;        // THE "nu" PORTION IS NOT USED, BECAUSE HTTP HEADER IS NOT PREPENDED
+
+        textC&  tDomainUse      = bOuter ? tDomainOuter      : tDomainInner      ;
+        countT& idNewFailUse    = bOuter ? idNewFailOuter    : idNewFailInner    ;
+        countT& idNewSuccessUse = bOuter ? idNewSuccessOuter : idNewSuccessInner ;
+        countT& cFailUse        = bOuter ? cFailOuter        : cFailInner        ;
+
+        ZE( countT , cFailInner ) ;
+        ZE( countT , cFailOuter ) ;
+
+        const boolT bOuter = !( idStomp % ( TUCK >> 4 ) ) ;
         //etThread.traceF( tin0P , T("stomp! [idStomp]:    ")+TfORsTRING(idStomp) ) ;
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
 
@@ -174,12 +168,12 @@ DONE( tmGorillaF )
         tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
     {
     while( !ether )
-    TN( tDomainOuter , "N8tK7qtKTbLNbq63px-gorilla.hidden.ideafarm.com" ) ;        //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
     TN( tDomainInner , "10.0.1.1" ) ;
-    ZE( countT , idNewFailOuter    ) ;
+    TN( tDomainOuter , "N8tK7qtKTbLNbq63px-gorilla.hidden.ideafarm.com" ) ;        //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
     ZE( countT , idNewFailInner    ) ;
-    ZE( countT , idNewSuccessOuter ) ;
+    ZE( countT , idNewFailOuter    ) ;
     ZE( countT , idNewSuccessInner ) ;
+    ZE( countT , idNewSuccessOuter ) ;
 
     }
         tContentLength3 = T("Content-Length: ")+TF4(costRaw3Part1+costInvoiceRequired+costRaw3Part2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_NObASE,0,0xa)+T("\r\n\r\n") ;
