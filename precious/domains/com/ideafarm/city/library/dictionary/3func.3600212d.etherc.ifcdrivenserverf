@@ -626,14 +626,16 @@
                                                         /*if( !bPeerIsGorilla )*/ etRock.traceF( tin0P , T(nnPeer)+T("    ifcDrivenServerF / called  acceptF [idSubType,cQueued,cQueuedMax]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cFifoPushed-cFifoPulled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(cQueuedMax,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_null , ifcIDtRACEdIVERT_7 ) ;
 
                                                         ) ;
-                                                          //|| nnPeer == nnGorillaOk8
-                                                          //|| nnPeer == nnGorillaOk7
-                                                          //|| nnPeer == nnGorillaOk6
-                                                          //|| nnPeer == nnGorillaOk5
-                                                          //|| nnPeer == nnGorillaOk4
-                                                          //|| nnPeer == nnGorillaOk3
-                                                          //|| nnPeer == nnGorillaOk2
-                                                               nnPeer == nnGorillaOk1
+                                                          //|| nnPeer == nnGorillaInnerOk8
+                                                          //|| nnPeer == nnGorillaInnerOk7
+                                                          //|| nnPeer == nnGorillaInnerOk6
+                                                          //|| nnPeer == nnGorillaInnerOk5
+                                                          //|| nnPeer == nnGorillaInnerOk4
+                                                          //|| nnPeer == nnGorillaInnerOk3
+                                                          //|| nnPeer == nnGorillaInnerOk2
+
+                                                            || nnPeer == nnGorillaOuterOk1
+                                                               nnPeer == nnGorillaInnerOk1
                                                         (
                                                         bPeerIsGorilla =
 
@@ -975,15 +977,17 @@ scDo = 1 ; //U::
 
         TN( tSayStarting , "++++" ) ;
 
-      //nicNameC nnGorillaOk8 = socketC::nicNameIF( tin0P , *this , T("10.0.3.8") ) ;
-      //nicNameC nnGorillaOk7 = socketC::nicNameIF( tin0P , *this , T("10.0.3.7") ) ;
-      //nicNameC nnGorillaOk6 = socketC::nicNameIF( tin0P , *this , T("10.0.3.6") ) ;
-      //nicNameC nnGorillaOk5 = socketC::nicNameIF( tin0P , *this , T("10.0.3.5") ) ;
-      //nicNameC nnGorillaOk4 = socketC::nicNameIF( tin0P , *this , T("10.0.3.4") ) ;
-      //nicNameC nnGorillaOk3 = socketC::nicNameIF( tin0P , *this , T("10.0.3.3") ) ;
-      //nicNameC nnGorillaOk2 = socketC::nicNameIF( tin0P , *this , T("10.0.3.2") ) ;
-        nicNameC nnGorillaOk1 = socketC::nicNameIF( tin0P , *this , T("10.0.3.1") ) ;
-      //nicNameC nnGorillaOk  = socketC::nicNameIF( tin0P , *this , T("50.216.215.70") ) ; ; //LAPTOP-GRAY-1
+      //nicNameC nnGorillaInnerOk8 = socketC::nicNameIF( tin0P , *this , T("10.0.3.8") ) ;
+      //nicNameC nnGorillaInnerOk7 = socketC::nicNameIF( tin0P , *this , T("10.0.3.7") ) ;
+      //nicNameC nnGorillaInnerOk6 = socketC::nicNameIF( tin0P , *this , T("10.0.3.6") ) ;
+      //nicNameC nnGorillaInnerOk5 = socketC::nicNameIF( tin0P , *this , T("10.0.3.5") ) ;
+      //nicNameC nnGorillaInnerOk4 = socketC::nicNameIF( tin0P , *this , T("10.0.3.4") ) ;
+      //nicNameC nnGorillaInnerOk3 = socketC::nicNameIF( tin0P , *this , T("10.0.3.3") ) ;
+      //nicNameC nnGorillaInnerOk2 = socketC::nicNameIF( tin0P , *this , T("10.0.3.2") ) ;
+
+        nicNameC nnGorillaOuterOk1 = socketC::nicNameIF( tin0P , *this , T("45.63.21.222") ) ;      //U:: MOVE THIS TO A SETTING
+        nicNameC nnGorillaInnerOk1 = socketC::nicNameIF( tin0P , *this , T("10.0.3.1") ) ;
+      //nicNameC nnGorillaInnerOk  = socketC::nicNameIF( tin0P , *this , T("50.216.215.70") ) ; ; //LAPTOP-GRAY-1
 
         boolT& bShieldsDown = *(boolT*)((count8S*)info2P.cArgApp)->c5 ;
 
