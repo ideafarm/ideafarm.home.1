@@ -86,18 +86,25 @@ DONE( tmGorillaF )
         {
         else
         }
-            /**/etThread.traceF( tin0P , T("stomp! aok [idStomp,time]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+tUrl ) ;
+            /**/etThread.traceF( tin0P , T("stomp! aok [idStomp,time,bSlowStrict,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+T(bSlowStrict?"    FORGIVEN    ":"    ")+tUrl ) ;
             idNewSuccessUse ++ ;
             idNewFailUse = 0 ;
         {
-        if( !cFailUse && !bSlow )
+        if( !cFailUse && !bSlowLenient )
 
         ;
 
-            : timeE1 > ( TOCK << 0 )                                 //P:PERSONALITY: I AM STRICTER                    FOR INNER
-            ? timeE1 > ( TOCK << 1 ) && idNewFailUse                 //P:PERSONALITY: I IGNORE ISOLATED SLOW INCIDENTS FOR OUTER
+            : timeE1 > ( TOCK << 0 )                                    //P:PERSONALITY: I AM STRICTER                    FOR INNER
+            ? timeE1 > ( TOCK << 1 ) && idNewFailUse                    //P:PERSONALITY: I IGNORE ISOLATED SLOW INCIDENTS FOR OUTER
 
-        const boolT bSlow = bOuter
+        const boolT bSlowLenient = bOuter
+
+        ;
+
+            : timeE1 > ( TOCK << 0 )
+            ? timeE1 > ( TOCK << 0 )
+
+        const boolT bSlowStrict = bOuter
 
 #endif
         /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo3.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
