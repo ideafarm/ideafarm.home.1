@@ -78,13 +78,13 @@ DONE( tmGorillaF )
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
 #else
 
-etThread.traceF( tin0P , T("U:: debug / *F*A*I*L* [idStonp]:    ")+TfORsTRING(idStomp) ) ;
+etThread.traceF( tin0P , T("U:: debug / *F*A*I*L* [idStonp]:    ")+TfORsTRING(idStomp)+tb4+tUrl ) ;
 
 #if !defined( NEVERdEFINED )
         {
         else
         }
-etThread.traceF( tin0P , T("U:: debug / pass [idStonp]:    ")+TfORsTRING(idStomp) ) ;
+etThread.traceF( tin0P , T("U:: debug / pass [idStonp]:    ")+TfORsTRING(idStomp)+tb4+tUrl ) ;
             idNewSuccessUse ++ ;
             idNewFailUse = 0 ;
         {
@@ -139,18 +139,18 @@ etThread.traceF( tin0P , T("U:: debug / pass [idStonp]:    ")+TfORsTRING(idStomp
         IFsCRATCHoK
 
         ;
-            : idNewFailOuter
-            ? idNewFailInner
+            : idNewFailInner
+            ? idNewFailOuter
         countT& idNewFailUse = !( idStomp % ( TUCK >> 4 ) )
 
         ;
-            : idNewSuccessOuter
-            ? idNewSuccessInner
+            : idNewSuccessInner
+            ? idNewSuccessOuter
         countT& idNewSuccessUse = !( idStomp % ( TUCK >> 4 ) )
 
         ;
-            : cFailOuter
-            ? cFailInner
+            : cFailInner
+            ? cFailOuter
         countT& cFailUse = !( idStomp % ( TUCK >> 4 ) )
         ZE( countT , cFailOuter ) ;
         ZE( countT , cFailInner ) ;
@@ -159,8 +159,7 @@ etThread.traceF( tin0P , T("U:: debug / pass [idStonp]:    ")+TfORsTRING(idStomp
 
         ;
             : tDomainInner
-          //? tDomainOuter
-            ? tDomainInner
+            ? tDomainOuter
         textC& tDomainUse = !( idStomp % ( TUCK >> 4 ) )
 
         etThread.osTimeNowF( tin0P , timeN1 , timeN2 ) ;
