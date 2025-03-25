@@ -27,10 +27,109 @@ cDo = 1 ;
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ; // "RUDE" SO THAT I WRITE GORILLA REQUESTS AND RECEIVE RESPONSES WITH CONSISTENT "REAL TIME" SPEED ; THIS CREATES AN ATTACK SURFACE ; CPU SPINNING *MUST* BE PREVENTED (IMPOTENCE CPU SPIN BUGS, DDOS HTTP FLOOD ATTACKS)
 
+    etThread.osThreadF( TaRG2cBsTACK( tmGetWebHookRandomSuffixF , CBsTACKmIN << 0 ) ) ;
+
     _IO_
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+DONE( tmGetWebHookRandomSuffixF )
+}
+    }
+        }
+            }
+                ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
+
+                }
+
+                    }
+                        break ;
+                        etThread.traceF( tin0P , T("could not write to client so closing the connection") ) ;
+                        POOPRqUIET
+                    {
+                    else
+                    }
+                        }
+                            etThread.delF( tin0P , psttSuffix ) ;
+                            etThread.traceF( tin0P , T("[suffix]:    ")+T(psttSuffix) ) ;
+                            sIn >> psttSuffix ;
+                            ZE( strokeS* , psttSuffix ) ;
+                        {
+                        else
+                        if( !sIn.cFieldsF() ) etThread.traceF( tin0P , T("!exception / sIn is empty") ) ;
+                    {
+                    if( !POOP )
+                    sConnect.readF( tin0P , sIn ) ;
+                    SCOOPS
+                {
+                IFsCRATCHoK
+                soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+            {
+            while( !ether )
+
+            }
+                }
+                    break ;
+                    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+                    etThread.traceF( tin0P , T("!exception / could not connect ; will replace sConnect and retry") ) ;
+                    POOPRqUIET
+                {
+                if( POOP )
+                sConnect.connectF( tin0P , ifcIDpORT_DNSwEBhOOKsUFFIX , nnHe ) ;
+                SCOOPS
+            {
+            IFsCRATCHoK
+        {
+        while( !ether )
+
+        }
+            continue ;
+            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+        {
+        if( bFail )
+
+        }
+            }
+                bFail = 1 ;
+                etThread.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry") ) ;
+                POOPRqUIET
+            {
+            if( POOP )                                                          //A:ASSUME: I AM NOT RUNNING ON A HOST THAT IS ALSO RUNNING DNS (JUST USE ANOTHER PORT IF I EVER WANT TO DO THIS)
+            sConnect.bindF( tin0P , ifcIDpORT_DNSwEBhOOKsUFFIX , nnMe ) ;       // ANY idPort CAN BE USED ; I REQUIRE ifcIDpORT_DNSwEBhOOKsUFFIX ONLY TO MAKE MY PACKETS EASIER TO SEE IN WIRESHARK ;
+            SCOOPS
+        {
+        IFsCRATCHoK
+
+        }
+            continue ;
+            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+        {
+        if( bFail )
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+        }
+            }
+                bFail = 1 ;
+                etThread.traceF( tin0P , T("!exception / could not construct sConnect ; will retry") ) ;
+                POOPRqUIET
+            {
+            if( POOP )
+            new( 0 , tin0P , pb_sConnect , sizeof pb_sConnect ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+            SCOOPS
+        {
+        IFsCRATCHoK
+        ZE( boolT , bFail ) ;
+        socketC& sConnect = *(socketC*)pb_sConnect ;
+        byteT pb_sConnect[ sizeof( socketC ) ] ;
+    {
+    while( !ether )
+
+    nicNameC nnHe = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
+    nicNameC nnMe = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
+{
+if( pTaskP )
+TASK( tmGetWebHookRandomSuffixF )
 
 DONE( tmGorillaF )
 }

@@ -409,6 +409,8 @@ DONE( tmWorkF )
 
     nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
 
+    etThread.osThreadF( TaRG2cBsTACK( tmServeWebHookRandomSuffixF , CBsTACKmIN << 0 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
+
     etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
 
     signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
@@ -418,6 +420,121 @@ DONE( tmWorkF )
 {
 if( pTaskP )
 TASK( tmWorkF )
+
+DONE( tmServeWebHookRandomSuffixF )
+}
+    }
+        }
+            DEL( pso ) ;
+            }
+                }
+                    ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
+
+                    }
+
+                        }
+                            break ;
+                            etThread.traceF( tin0P , T("could not write to client so closing the connection") ) ;
+                            POOPRqUIET
+                        {
+                        if( POOP )
+                        pso->writeF( tin0P , WS( sOut ) ) ;
+                        SCOOPS
+                    {
+                    IFsCRATCHoK
+                {
+                while( !ether )
+            {
+            if( pso )
+
+            }
+                }
+                    break ;
+                    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+                    etThread.traceF( tin0P , T("!exception / could not accept a client connection ; will replace sListen and retry") ) ;
+                    POOPRqUIET
+                {
+                if( POOP )
+                sListen.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;
+                SCOOPS
+            {
+            IFsCRATCHoK
+            ZE( countT , idPortPeer ) ;
+            nicNameC nnPeer ;
+            ZE( socketC* , pso ) ;
+        {
+        while( !ether )
+
+        }
+            sOut << (strokeS*)tSuffix ;
+            TN( tSuffix , "gorilla" ) ;
+        {
+        soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+
+        }
+            continue ;
+            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+        {
+        if( bFail )
+
+        }
+            }
+                bFail = 1 ;
+                etThread.traceF( tin0P , T("!exception / could not listen ; will retry") ) ;
+                POOPRqUIET
+            {
+            if( POOP )
+            sListen.listenF( tin0P ) ;
+            SCOOPS
+        {
+        IFsCRATCHoK
+
+        }
+            continue ;
+            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+        {
+        if( bFail )
+
+        }
+            }
+                bFail = 1 ;
+                etThread.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry") ) ;
+                POOPRqUIET
+            {
+            if( POOP )
+            sListen.bindF( tin0P , ifcIDpORT_DNSwEBhOOKsUFFIX , nnMe ) ;
+            SCOOPS
+        {
+        IFsCRATCHoK
+
+        }
+            continue ;
+            ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+        {
+        if( bFail )
+        sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+        }
+            }
+                bFail = 1 ;
+                etThread.traceF( tin0P , T("!exception / could not construct sListen ; will retry") ) ;
+                POOPRqUIET
+            {
+            if( POOP )
+            new( 0 , tin0P , pb_sListen , sizeof pb_sListen ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+            SCOOPS
+        {
+        IFsCRATCHoK
+        ZE( boolT , bFail ) ;
+        socketC& sListen = *(socketC*)pb_sListen ;
+        byteT pb_sListen[ sizeof( socketC ) ] ;
+    {
+    while( !ether )
+
+    nicNameC nnMe = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
+{
+if( pTaskP )
+TASK( tmServeWebHookRandomSuffixF )
 
 DONE( tmUpdateNnHostsF )
 }
