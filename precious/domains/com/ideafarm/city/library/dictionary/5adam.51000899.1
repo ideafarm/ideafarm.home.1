@@ -119,15 +119,24 @@ DONE( tmWorkF )
                                             etThread.delF( tin0P , psttw ) ;
                                             TN( tDomainNet , psttw ) ;
                                             }
-                                                /**/etRock.traceF( tin0P , T("[domainNet,peer]:      \"")+T(psttw)+T("\"    \"")+tDomainPeer+T("\"") ) ;
+                                                etThread.delF( tin0P , psttSuffix ) ;
+
+                                                }
+                                                    bDivert = 0 ;
+                                                {
+                                                if( bDivert && !etThread.strCompareF( tin0P , psttSuffix , T("gorilla") ) )
+
+                                                /**/etRock.traceF( tin0P , T("[domainNet,suffix,peer]:      \"")+T(psttw)+T("\"    \"")+T(psttSuffix)+T("\"    \"")+tDomainPeer+T("\"") ) ;
 
                                                 etThread.strMakeF( tin0P , LF , psttw , tDomainNet ) ; ___( psttw ) ;
                                                 TN( tDomainNet , "" ) ; tDomainNet = T(psttNet)+T(".hidden.ideafarm.com") ;
 
                                                 etThread.delF( tin0P , psttw ) ;
-                                                etThread.strSubstringF( tin0P , psttNet , idf , sttq , tDash , psttw , 0 , 0 ) ;
+                                                if( bDivert ) { etThread.strSubstringF( tin0P , psttSuffix , idf , countTC()    , psttw , 0     ) ; ___( psttSuffix ) ; }
+                                                etThread.strSubstringF( tin0P , psttNet    , idf , sttq , tDash , psttw , 0 , 0 ) ; ___( psttNet    ) ;
                                                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                                 countT idf = 1 ;
+                                                ZE( strokeS* , psttSuffix ) ;
                                                 ZE( strokeS* , psttNet ) ;
                                                 _IO_
                                             {
