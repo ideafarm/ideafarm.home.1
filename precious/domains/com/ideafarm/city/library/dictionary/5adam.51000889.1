@@ -76,15 +76,12 @@ DONE( tmGorillaF )
                 TN( tSay , "" ) ; tSay = T(
             {
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
-#else
-
-etThread.traceF( tin0P , T("U:: debug / *F*A*I*L* [idStonp]:    ")+TfORsTRING(idStomp)+tb4+tUrl ) ;
-
-#if !defined( NEVERdEFINED )
+#if defined( NEVERdEFINED )
+            /**/etThread.traceF( tin0P , T("stomp! *F*A*I*L* [idStomp,time]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+tUrl ) ;
         {
         else
         }
-etThread.traceF( tin0P , T("U:: debug / pass [idStonp]:    ")+TfORsTRING(idStomp)+tb4+tUrl ) ;
+            /**/etThread.traceF( tin0P , T("stomp! aok [idStomp,time]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+tUrl ) ;
             idNewSuccessUse ++ ;
             idNewFailUse = 0 ;
         {
@@ -120,7 +117,6 @@ etThread.traceF( tin0P , T("U:: debug / pass [idStonp]:    ")+TfORsTRING(idStomp
 
         /*if( posti && costi ) etThread.boxPutF( tin0P , T("///d/tmp/foo1.ttt") , posti , costi ) ;*/ etThread.delF( tin0P , posti ) ;
 
-        /**/etThread.traceF( tin0P , T("stomp! [idStomp,time]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2) ) ;
         etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeN1 , timeN2 ) ;
         etThread.osTimeNowF( tin0P , timeE1 , timeE2 ) ;
         ZE( sCountT , timeE2 ) ;
