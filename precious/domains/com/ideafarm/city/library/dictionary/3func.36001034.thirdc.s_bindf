@@ -38,7 +38,7 @@
             }
                 if( bAgain ) { ++ s ; dosSleepIF( tin0P , TUCK * 0x40 ) ; }
 
-                //if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("bindF failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                if( ((tin1S&)tin0P).pEther ) ((tin1S&)tin0P).pEther->traceF( tin0P , T("bindF failed [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 countT rc = ((tin1S&)tin0P).brcRaw ;
                 BOSdOnOTtEST( WHATgbo , WSAGetLastError() )
             {
