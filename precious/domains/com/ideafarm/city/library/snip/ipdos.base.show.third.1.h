@@ -1,5 +1,5 @@
 
-#define ifcIDpORT_DNSwEBhOOKsUFFIX                  0x00008002
+#define ifcIDpORT_DNSwEBhOOKsUFFIX                  0x00001bd0
 
 // IPDOS (tm) <> IdeaFarm (tm) Piggyback Distributed Operating System
 
