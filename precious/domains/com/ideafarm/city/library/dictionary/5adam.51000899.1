@@ -409,9 +409,8 @@ DONE( tmWorkF )
 
     nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
 
-    etThread.osThreadF( TaRG2cBsTACK( tmServeWebHookRandomSuffixF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
-
-    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmServeWebHookRandomSuffixF , CBsTACKmIN << 1 )                                                   ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF            , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
 
     signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
     mySettingsS mySettings( tin0P , etThread ) ;
@@ -424,6 +423,18 @@ TASK( tmWorkF )
 DONE( tmServeWebHookRandomSuffixF )
 }
     }
+        }
+            }
+                etThread.traceF( tin0P , T("!exception / could not destroy sListen") ) ;
+                POOPRqUIET
+            {
+            if( POOP )
+            DEL( psDoomed ) ;
+            socketC* psDoomed = (socketC*)pb_sListen ;
+            SCOOPS
+        {
+        IFsCRATCHoK
+
         }
             DEL( pso ) ;
             }
