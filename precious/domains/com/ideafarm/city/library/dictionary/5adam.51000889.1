@@ -76,10 +76,22 @@ DONE( tmGetWebHookRandomSuffixF )
                     POOPRqUIET
                 {
                 if( POOP )
-                sConnect.connectF( tin0P , ifcIDpORT_DNSwEBhOOKsUFFIX , nnHe ) ;
+                sConnect.connectF( tin0P , idpDnsSuffix , nnHe ) ;
                 SCOOPS
             {
             IFsCRATCHoK
+
+            }
+                if( !idpDnsSuffix ) { ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ; }
+
+                etThread.delF( tin0P , pbi ) ;
+                if( pbi && cbi == sizeof idpDnsSuffix ) idpDnsSuffix = *(countT*)pbi ;
+                etThread.boxGetShadowF( tin0P , pbi , cbi , T("///ideafarm/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/idpListen") ) ; ___( pbi ) ;
+                ZE( countT , cbi ) ;
+                ZE( byteT* , pbi ) ;
+            {
+            while( !ether && !idpDnsSuffix )
+            ZE( countT , idpDnsSuffix ) ;
         {
         while( !ether )
 
@@ -95,8 +107,8 @@ DONE( tmGetWebHookRandomSuffixF )
                 etThread.traceF( tin0P , T("!exception / could not bind to port ifcIDpORT_DNSwEBhOOKsUFFIX ; will retry") ) ;
                 POOPRqUIET
             {
-            if( POOP )                                                          //A:ASSUME: I AM NOT RUNNING ON A HOST THAT IS ALSO RUNNING DNS (JUST USE ANOTHER PORT IF I EVER WANT TO DO THIS)
-            sConnect.bindF( tin0P , ifcIDpORT_DNSwEBhOOKsUFFIX , nnMe ) ;       // ANY idPort CAN BE USED ; I REQUIRE ifcIDpORT_DNSwEBhOOKsUFFIX ONLY TO MAKE MY PACKETS EASIER TO SEE IN WIRESHARK ;
+            if( POOP )
+            sConnect.bindF( tin0P ) ;
             SCOOPS
         {
         IFsCRATCHoK
