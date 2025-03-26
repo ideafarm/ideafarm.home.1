@@ -11,6 +11,8 @@
 
 REST
 
+etherC::loafIF( tin0P ) ;
+
 sgnDone_tmServerF.waitF( tin0P ) ;
 }
     sock.writeF( tin0P , soulOut ) ;
@@ -23,7 +25,7 @@ sgnDone_tmServerF.waitF( tin0P ) ;
 {
 
 sgnReady.waitF( tin0P ) ;
-etThread.osThreadF( tin0P , countTC() , tmServerF , &sgnDone_tmServerF , 0 , 0  , flTHREADlAUNCH_null , 0 , 0 , (countT)&idPort , (countT)&sgnReady ) ;
+etThread.osThreadF( TaRG2sGNdONE( tmServerF , sgnDone_tmServerF ) , (countT)&idPort , (countT)&sgnReady ) ;
 ZE( countT , idPort ) ;
 signC sgnDone_tmServerF(  tin0P , TAG( TAGiDnULL ) ) ;
 signC sgnReady(  tin0P , TAG( TAGiDnULL ) ) ;
@@ -34,7 +36,7 @@ DONE( tmServerF )
 }
     DEL( pso ) ;
     }
-        etThread.strokeF( tin0P , T("value received over secure socket: ")+TF1(value)+T("\r\n") ) ;
+        etThread.traceF( tin0P , T("value received over secure socket: ")+TF1(value) ) ;
         soulIn >> value ;
         ZE( countT , value ) ;
 
@@ -57,6 +59,8 @@ DONE( tmServerF )
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmServerF )
+
+//20250325@2037: BUILDS AND WORKS AOK
 
 /*1*/WAKEhIDE( "example.simplest.func.1070028.socketC.writeF" )/*1*/
 /**/
