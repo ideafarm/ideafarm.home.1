@@ -122,6 +122,10 @@ DONE( tmWorkF )
                                                 etThread.delF( tin0P , psttSuffix ) ;
 
                                                 }
+                                                    grab_tWoTimePassword.ungrabF( tin0P ) ;
+                                                    tGorillaSuffix = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
+                                                    tWoTimePassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x3e) ;
+                                                    grab_tWoTimePassword.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                                                     bDivert = 0 ;
                                                 {
                                                 if( bDivert && !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffix ) )
@@ -283,7 +287,6 @@ DONE( tmWorkF )
                 nicNameC nnWebHook2 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook2 ) ;
                 nicNameC nnWebHook1 = etThread.sockNicNameF( tin0P , mySettings.tIpWebHook1 ) ;
 
-                TN( tGorillaSuffix , "gorilla.hidden.ideafarm.com"   ) ;
                 TN( tb4            , "    "                          ) ;
                 TN( tTarget        , "target.ipv6-only.ideafarm.com" ) ;
                 TN( tWebHook1      , ""                              ) ; tWebHook1 = mySettings.tDomainLeafWebHook1Net+T(".hidden.ideafarm.com") ;
@@ -409,8 +412,17 @@ DONE( tmWorkF )
 
     nicNameC nnHostWebLath = etThread.sockNicNameF( tin0P , T("2001:19f0:0:7077::") ) ;                             //U:: PUT THIS INTO A SETTING ; THIS IS THE BEGINNING VALUE THAT IS INCREMENTED BY tmUpdateNnHostsF TO OBTAIN AN EPHEMERAL (AND EVENTUALLY RANDOM) IPv6 VALUE FOR web1
 
-    etThread.osThreadF( TaRG2cBsTACK( tmServeWebHookRandomSuffixF , CBsTACKmIN << 1 )                                                   ) ;
-    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF            , CBsTACKmIN << 1 ) , (countT)&mySettings , (countT)&sgnSettingsReady ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmDispenseWoTimeWebHookSuffixF , CBsTACKmIN << 1 ) , (countT)&tWoTimePassword , (countT)&grab_tWoTimePassword ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF               , CBsTACKmIN << 1 ) , (countT)&mySettings      , (countT)&sgnSettingsReady     ) ;
+
+    grab_tWoTimePassword.ungrabF( tin0P ) ;
+    TN( tGorillaSuffix              , ""                     ) ; tGorillaSuffix = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
+    TN( tWoTimePassword             , ""                     ) ; tWoTimePassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x3e) ;
+    TN( tDotHiddenDotIdeafarmDotCom , ".hidden.ideafarm.com" ) ;
+    grab_tWoTimePassword.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+    grabC grab_tWoTimePassword( tin0P , TAG( TAGiDnULL ) ) ;
+
+    ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
     signC sgnSettingsReady( tin0P , TAG( TAGiDnULL ) ) ;
     mySettingsS mySettings( tin0P , etThread ) ;
@@ -420,7 +432,7 @@ DONE( tmWorkF )
 if( pTaskP )
 TASK( tmWorkF )
 
-DONE( tmServeWebHookRandomSuffixF )
+DONE( tmDispenseWoTimeWebHookSuffixF )
 }
     }
         etThread.boxPutF( tin0P , T("///ideafarm/shared/")+TfORsTRING(processGlobal1S::_processGlobal1I_IF().idAdamRoot)+T("/idpListen") , (byteT*)&nu , sizeof nu ) ;
@@ -456,6 +468,11 @@ DONE( tmServeWebHookRandomSuffixF )
                         SCOOPS
                     {
                     IFsCRATCHoK
+
+                    grab_tWoTimePasswordP.ungrabF( tin0P ) ;
+                    sOut << (strokeS*)tWoTimePasswordP ;
+                    grab_tWoTimePasswordP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
                 {
                 while( !ether )
             {
@@ -478,12 +495,6 @@ DONE( tmServeWebHookRandomSuffixF )
             ZE( socketC* , pso ) ;
         {
         while( !ether )
-
-        }
-            sOut << (strokeS*)tSuffix ;
-            TN( tSuffix , "gorilla" ) ;
-        {
-        soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
 
         }
             continue ;
@@ -552,9 +563,12 @@ DONE( tmServeWebHookRandomSuffixF )
 
     nicNameC nnHe = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
     nicNameC nnMe = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
+
+    grabC& grab_tWoTimePasswordP = *(grabC*)pTaskP->c2 ;
+    textC& tWoTimePasswordP      = *(textC*)pTaskP->c1 ;
 {
-if( pTaskP )
-TASK( tmServeWebHookRandomSuffixF )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 )
+TASK( tmDispenseWoTimeWebHookSuffixF )
 
 DONE( tmUpdateNnHostsF )
 }
