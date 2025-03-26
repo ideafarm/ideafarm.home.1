@@ -19,7 +19,7 @@ DONE( tmWorkF )
     etherC::loafIF( tin0P ) ;
     //etThread.traceF( tin0P , T("ok") ) ;
 
-    while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&idStompLath ) ;
+    while( cDo -- ) etThread.osThreadF( TaRG2cBsTACK( tmGorillaF , CBsTACKmIN << 1 ) , (countT)&idStompLath , (countT)&tWoTimePassword , (countT)&grab_tWoTimePassword ) ;
 cDo = 1 ;
     countT cDo = TUCK >> 3 ;
     ZE( countT , idStompLath ) ;
@@ -27,7 +27,9 @@ cDo = 1 ;
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ; // "RUDE" SO THAT I WRITE GORILLA REQUESTS AND RECEIVE RESPONSES WITH CONSISTENT "REAL TIME" SPEED ; THIS CREATES AN ATTACK SURFACE ; CPU SPINNING *MUST* BE PREVENTED (IMPOTENCE CPU SPIN BUGS, DDOS HTTP FLOOD ATTACKS)
 
-    etThread.osThreadF( TaRG2cBsTACK( tmGetWebHookRandomSuffixF , CBsTACKmIN << 1 ) ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmGetWebHookRandomSuffixF , CBsTACKmIN << 1 ) , (countT)&tWoTimePassword , (countT)&grab_tWoTimePassword ) ;
+    TN( tWoTimePassword , "" ) ;
+    grabC grab_tWoTimePassword( tin0P , TAG( TAGiDnULL ) ) ;
 
     _IO_
 {
@@ -51,10 +53,13 @@ DONE( tmGetWebHookRandomSuffixF )
                     else
                     }
                         }
-                            etThread.delF( tin0P , psttSuffix ) ;
-                            etThread.traceF( tin0P , T("[suffix]:    ")+T(psttSuffix) ) ;
-                            sIn >> psttSuffix ;
-                            ZE( strokeS* , psttSuffix ) ;
+                            etThread.delF( tin0P , psttw ) ;
+                            grab_tWoTimePasswordP.ungrabF( tin0P ) ;
+                            tWoTimePasswordP = T(psttw) ;
+                            grab_tWoTimePasswordP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                            etThread.traceF( tin0P , T("[woTimePassword]:    ")+T(psttw) ) ;
+                            sIn >> psttw ;
+                            ZE( strokeS* , psttw ) ;
                         {
                         else
                         if( !sIn.cFieldsF() ) etThread.traceF( tin0P , T("!exception / sIn is empty") ) ;
@@ -139,8 +144,11 @@ DONE( tmGetWebHookRandomSuffixF )
 
     nicNameC nnHe = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
     nicNameC nnMe = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
+
+    grabC& grab_tWoTimePasswordP = *(grabC*)pTaskP->c2 ;
+    textC& tWoTimePasswordP      = *(textC*)pTaskP->c1 ;
 {
-if( pTaskP )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmGetWebHookRandomSuffixF )
 
 DONE( tmGorillaF )
@@ -270,10 +278,12 @@ DONE( tmGorillaF )
 
         TN( tUrl , "" ) ; tUrl = tDomainUse+T("//http/nu") ;        // THE "nu" PORTION IS NOT USED, BECAUSE HTTP HEADER IS NOT PREPENDED
 
-        textC&  tDomainUse      = bOuter ? tDomainOuter      : tDomainInner      ;
-        countT& idNewFailUse    = bOuter ? idNewFailOuter    : idNewFailInner    ;
-        countT& idNewSuccessUse = bOuter ? idNewSuccessOuter : idNewSuccessInner ;
-        countT& cFailUse        = bOuter ? cFailOuter        : cFailInner        ;
+        grab_tWoTimePasswordP.ungrabF( tin0P ) ;
+        textC&  tDomainUse      = bOuter ? tDomainOuterBefore+tWoTimePasswordP+tDomainOuterAfter : tDomainInner      ;
+        countT& idNewFailUse    = bOuter ? idNewFailOuter                                        : idNewFailInner    ;
+        countT& idNewSuccessUse = bOuter ? idNewSuccessOuter                                     : idNewSuccessInner ;
+        countT& cFailUse        = bOuter ? cFailOuter                                            : cFailInner        ;
+        grab_tWoTimePasswordP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
@@ -293,8 +303,9 @@ DONE( tmGorillaF )
         tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
     {
     while( !ether )
-    TN( tDomainInner , "10.0.1.1" ) ;
-    TN( tDomainOuter , "N8tK7qtKTbLNbq63px-gorilla.hidden.ideafarm.com" ) ;        //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
+    TN( tDomainInner       , "10.0.1.1" ) ;
+    TN( tDomainOuterAfter  , ".hidden.ideafarm.com" ) ;
+    TN( tDomainOuterBefore , "N8tK7qtKTbLNbq63px-" ) ;         //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
     ZE( countT , idNewFailInner    ) ;
     ZE( countT , idNewFailOuter    ) ;
     ZE( countT , idNewSuccessInner ) ;
@@ -344,7 +355,9 @@ DONE( tmGorillaF )
     const countT idGorilla = 1 + incv02AM( idGorillaLath ) ;
     static countT idGorillaLath ;
 
-    countT& idStompLathP = *(countT*)pTaskP->c1 ;
+    grabC&  grab_tWoTimePasswordP =  *(grabC*)pTaskP->c3 ;
+    textC&  tWoTimePasswordP      =  *(textC*)pTaskP->c2 ;
+    countT& idStompLathP          = *(countT*)pTaskP->c1 ;
 
     _IO_
 {
