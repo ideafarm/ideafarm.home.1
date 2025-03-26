@@ -279,10 +279,14 @@ DONE( tmGorillaF )
         TN( tUrl , "" ) ; tUrl = tDomainUse+T("//http/nu") ;        // THE "nu" PORTION IS NOT USED, BECAUSE HTTP HEADER IS NOT PREPENDED
 
         grab_tWoTimePasswordP.ungrabF( tin0P ) ;
-        textC&  tDomainUse      = bOuter ? tDomainOuterBefore+tWoTimePasswordP+tDomainOuterAfter : tDomainInner      ;
-        countT& idNewFailUse    = bOuter ? idNewFailOuter                                        : idNewFailInner    ;
-        countT& idNewSuccessUse = bOuter ? idNewSuccessOuter                                     : idNewSuccessInner ;
-        countT& cFailUse        = bOuter ? cFailOuter                                            : cFailInner        ;
+        }
+            tDomainUse                     = bOuter ? tDomainOuterBefore+tWoTimePasswordP+tDomainOuterAfter : tDomainInner      ;
+            bOuterLag = bOuter ;
+        {
+        if( bOuterLag != bOuter ) ;
+        countT& idNewFailUse               = bOuter ? idNewFailOuter                                        : idNewFailInner    ;
+        countT& idNewSuccessUse            = bOuter ? idNewSuccessOuter                                     : idNewSuccessInner ;
+        countT& cFailUse                   = bOuter ? cFailOuter                                            : cFailInner        ;
         grab_tWoTimePasswordP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
         ZE( countT , cFailInner ) ;
@@ -303,6 +307,8 @@ DONE( tmGorillaF )
         tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
     {
     while( !ether )
+    boolT bOuterLag = - 1 ; //A:ASSUME: operator ! RETURNS 0 OR 1
+    TN( tDomainUse         , ""         ) ;
     TN( tDomainInner       , "10.0.1.1" ) ;
     TN( tDomainOuterAfter  , ".hidden.ideafarm.com" ) ;
     TN( tDomainOuterBefore , "N8tK7qtKTbLNbq63px-" ) ;         //U:: MOVE THIS HARDCODED VALUE INTO A SETTING
