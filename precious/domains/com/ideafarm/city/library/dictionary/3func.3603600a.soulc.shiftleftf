@@ -25,29 +25,36 @@
                         }
                             aImage.prependF(  tin0P , (byteT*)&idJot , sizeof idJot ) ;
                             countT idJot = pJot->writeF( tin0P , (byteT*)pci , sizeof pci , pbP , cbp , flJOTcwRITE_ELSEfILLtOeND ) ;
+                            _IO_
                         {
                         else
                         }
                             aImage.prependF( tin0P , (byteT*)pci , sizeof pci ) ;
                             aImage.prependF( tin0P , pbP , cbp ) ;
+                            _IO_
                         {
                         if( !pJot )
                     #if defined( __386__ )
+                    _IO_
                 {
                 else
                 }
                     }
                         aImage.prependF(  tin0P , (byteT*)&idJot , sizeof idJot ) ;
                         countT idJot = pJot->writeF( tin0P , (byteT*)pci , sizeof pci , pbP , cbp , flJOTcwRITE_ELSEfILLtOeND ) ;
+                        _IO_
                     {
                     else
                     }
                         aImage.prependF( tin0P , (byteT*)pci , sizeof pci ) ;
                         aImage.prependF( tin0P , pbP , cbp ) ;
+                        _IO_
                     {
                     if( !pJot )
+                    _IO_
                 {
                 if( !( F(flagsItemP) & flSOULiTEM_MADEoFcOUNToBJECTS ) )
+                _IO_
             {
             else
             }
@@ -67,27 +74,33 @@
                         {
                         if( !pJot )
                     #if defined( __386__ )
+                    _IO_
                 {
                 else
                 }
                     }
                         aImage.appendF(  tin0P , (byteT*)&idJot , sizeof idJot ) ;
                         countT idJot = pJot->writeF( tin0P , (byteT*)pci , sizeof pci , pbP , cbp , flJOTcwRITE_ELSEfILLtOeND ) ;
+                        _IO_
                     {
                     else
                     }
                         aImage.appendF( tin0P , pbP , cbp ) ;
                         aImage.appendF( tin0P , (byteT*)pci , sizeof pci ) ;
+                        _IO_
                     {
                     if( !pJot )
+                    _IO_
                 {
                 if( !( F(flagsItemP) & flSOULiTEM_MADEoFcOUNToBJECTS ) )
+                _IO_
             {
             if( !( F(flags) & flSOUL_LIFO ) )
 
             countT cbi   = sizeof pci + cbp ;
             countT pci[] = { 2 * sizeof( countT ) + cbp , idTypeShiftP , flagsItemP | ( cbP ? flSOULiTEM_null : flSOULiTEM_TERMINATEDbYnULL ) } ; //CS:CODEsYNC: 1120051a 3603600a
             countT cbp = cbP ? cbP : thirdC::c_strlenIF( tin0P , pbP ) + 1 ;
+            _IO_
         {
         else
         }
@@ -96,28 +109,34 @@
                 }
                     aImage.prependF(  tin0P , (byteT*)&idJot , sizeof idJot ) ;
                     countT idJot = pJot->writeF( tin0P , (byteT*)pci , cbi , 0 , 0 , flJOTcwRITE_ELSEfILLtOeND ) ;
+                    _IO_
                 {
                 else
                 if( !pJot ) aImage.prependF( tin0P , (byteT*)pci , cbi ) ;
+                _IO_
             {
             else
             }
                 }
                     aImage.appendF(  tin0P , (byteT*)&idJot , sizeof idJot ) ;
                     countT idJot = pJot->writeF( tin0P , (byteT*)pci , cbi , 0 , 0 , flJOTcwRITE_ELSEfILLtOeND ) ;
+                    _IO_
                 {
                 else
                 if( !pJot ) aImage.appendF(  tin0P , (byteT*)pci , cbi ) ;
+                _IO_
             {
             if( !( F(flags) & flSOUL_LIFO ) )
 
             countT cbi   = sizeof pci ;
             countT pci[] = { 2 * sizeof( countT ) , idTypeShiftP , flagsItemP | flSOULiTEM_NULLpTR } ;
+            _IO_
         {
         if( !pbP )
 
         //U:: INACCURATE? LOOKS LIKE countT countT countT
         //DATA FORMAT IS byteT (used for idType), byteT (used for flags), byteT (used for flags2) FOLLOWED BY 0 OR MORE BYTES
+        _IO_
     {
     else
     }
@@ -133,20 +152,25 @@
                     }
                         aImage.prependF(  tin0P , (byteT*)&idJot , sizeof idJot ) ;
                         countT idJot = pJot->writeF( tin0P , pbc , cbo , 0 , 0 , flJOTcwRITE_ELSEfILLtOeND ) ;
+                        _IO_
                     {
                     else
                     if( !pJot ) aImage.prependF( tin0P , pbc , cbo ) ;
+                    _IO_
                 {
                 else
                 }
                     }
                         aImage.appendF(  tin0P , (byteT*)&idJot , sizeof idJot ) ;
                         countT idJot = pJot->writeF( tin0P , pbc , cbo , 0 , 0 , flJOTcwRITE_ELSEfILLtOeND ) ;
+                        _IO_
                     {
                     else
                     if( !pJot ) aImage.appendF(  tin0P , pbc , cbo ) ;
+                    _IO_
                 {
                 if( !( F(flags) & flSOUL_LIFO ) )
+                _IO_
             {
             else if( bWant )
             else if( pbe < pbc + cbo ) bFail = 1 ; //DETECTS BAD cbo WITHOUT WRAPAROUND
@@ -156,6 +180,7 @@
             if( pcExcludeP &&  bHitF(    idi , pcExcludeP ) ) bWant = 0 ;
             if( pcIncludeP && !bHitF( ++ idi , pcIncludeP ) ) bWant = 0 ;
             boolT bWant = 1 ;
+            _IO_
         {
         while( pbc < pbe )
         ZE( countT , idi ) ;
@@ -172,6 +197,7 @@
         {
         if( F(flagsModeP) & flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE )
         ZE( countT , idFormat ) ;
+        _IO_
     {
     )
         F(flagsModeP) & flSOULsHIFTlEFTmODE_UNPACKsOULiMAGEpART
