@@ -238,9 +238,11 @@ DONE( tmGorillaF )
 
                 TN( tSay , "" ) ; tSay = T(
                 /**/etThread.traceF( tin0P , T("posting an email notice") ) ;
+                _IO_
             {
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
             /**/etThread.traceF( tin0P , T("stomp! **** F * A * I * L **** [idStomp,time,idNewFailUse(before),tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF2(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUrl ) ;
+            _IO_
         {
         else
         }
@@ -344,6 +346,7 @@ DONE( tmGorillaF )
 
         if( tInvoice.csF( tin0P ) - costInvoiceRequired ) { BLAMMOiD( 0x12344321 ) ; }
         tInvoice = TF3(1+incv02AM(idInvoiceLath),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FOREIGN|flFORMAT_FILLzE,8) ;
+        _IO_
     {
     while( !ether )
     boolT bOuterLag = - 1 ; //A:ASSUME: operator ! RETURNS 0 OR 1
@@ -359,6 +362,7 @@ DONE( tmGorillaF )
     }
         ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
         etThread.traceF( tin0P , T("!exception / waiting to obtain a wo time password from dns") ) ;
+        _IO_
     {
     while( !ether && !tWoTimePasswordP.csF( tin0P ) )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -375,6 +379,7 @@ DONE( tmGorillaF )
         const countT costRaw2Part1 = sizeof postRaw2Part1 - 1 ;
         const countT costRaw1Part2 = sizeof postRaw1Part2 - 1 ;
         const countT costRaw1Part1 = sizeof postRaw1Part1 - 1 ;
+        _IO_
     {
     TN( tContentLength3 , "" ) ; 
     TN( tContentLength2 , "" ) ; 
@@ -400,6 +405,7 @@ DONE( tmGorillaF )
         etThread.boxGetShadowF( tin0P , posti , costi , T("///d/ideafarm.work/txt/soil/settings/production/settings.production.dns1.no.gorilla.no.administrator.no.welcomer.yes.dns.soil") ) ; ___( posti ) ;
         ZE( countT   , costi ) ;
         ZE( osTextT* , posti ) ;
+        _IO_
     {
     TN( tModifiedSettingsSoilFileImageToUse , "" ) ;
     TN( tb4 , "    " ) ;
@@ -454,6 +460,7 @@ TASK( tmGorillaF )
         countT idHit2 = etherP.strIdF( tin0P , 0 , flSTRmATCH_null , idf2 , sttq , tFind2 , tP , 0 , 1 ) ;
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
         countT idf2 = idHit1 ;
+        _IO_
     {
     if( idHit1 )
     countT idHit1 = etherP.strIdF( tin0P , tFind1 , tP ) ;
@@ -471,6 +478,7 @@ TASK( tmGorillaF )
   //etherP.boxPutF( tin0P , T("///ideafarm/IdeaFarm (tm)/")+tUser+T("/1.1. Drop a Copy of SOIL (tm) Text Files Here/")+tShort , tP , tP.csF( tin0P ) ) ;
     TN( tShort , "" ) ; tShort = T("new.settings.from.gorilla.")+TfORsTRING(idGorillaP)+T(".")+TfORsTRING(idStompP)+T(".soil") ;
     TN( tUser , thirdC::postUserNameIF() ) ;
+    _IO_
 {
 voidT dropAndModifySettingsSoilFileImageF( tin0S& tin0P , etherC& etherP , textC& tP , countT idStompP , countT idGorillaP )
 
