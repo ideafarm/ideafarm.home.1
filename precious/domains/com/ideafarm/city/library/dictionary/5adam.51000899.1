@@ -453,6 +453,7 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
         }
             DEL( pso ) ;
             }
+                break ;
                 }
                     ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
 
@@ -498,6 +499,8 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
 
         }
             continue ;
+            DELzOMBIE( psDoomed ) ;
+            socketC* psDoomed = (socketC*)pb_sListen ;
             ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
         {
         if( bFail )
@@ -516,6 +519,19 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
 
         }
             continue ;
+
+            }
+                }
+                    etThread.traceF( tin0P , T("!exception / could not destroy sListen") ) ;
+                    POOPRqUIET
+                {
+                if( POOP )
+                DEL( psDoomed ) ;
+                socketC* psDoomed = (socketC*)pb_sListen ;
+                SCOOPS
+            {
+            IFsCRATCHoK
+
             ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
         {
         if( bFail )
@@ -539,6 +555,19 @@ DONE( tmDispenseWoTimeWebHookSuffixF )
 
         }
             continue ;
+
+            }
+                }
+                    etThread.traceF( tin0P , T("!exception / could not destroy sListen") ) ;
+                    POOPRqUIET
+                {
+                if( POOP )
+                DEL( psDoomed ) ;
+                socketC* psDoomed = (socketC*)pb_sListen ;
+                SCOOPS
+            {
+            IFsCRATCHoK
+
             ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
         {
         if( bFail )
