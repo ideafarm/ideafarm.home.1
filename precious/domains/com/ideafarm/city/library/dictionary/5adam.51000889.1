@@ -27,7 +27,7 @@ cDo = 1 ;
     etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
     thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ; // "RUDE" SO THAT I WRITE GORILLA REQUESTS AND RECEIVE RESPONSES WITH CONSISTENT "REAL TIME" SPEED ; THIS CREATES AN ATTACK SURFACE ; CPU SPINNING *MUST* BE PREVENTED (IMPOTENCE CPU SPIN BUGS, DDOS HTTP FLOOD ATTACKS)
 
-    etThread.osThreadF( TaRG2cBsTACK( tmGetWebHookRandomSuffixF , CBsTACKmIN << 0 ) ) ;
+    etThread.osThreadF( TaRG2cBsTACK( tmGetWebHookRandomSuffixF , CBsTACKmIN << 1 ) ) ;
 
     _IO_
 {
@@ -45,7 +45,7 @@ DONE( tmGetWebHookRandomSuffixF )
 
                     }
                         break ;
-                        etThread.traceF( tin0P , T("could not write to client so closing the connection") ) ;
+                        etThread.traceF( tin0P , T("could not read from dns1 so closing the connection") ) ;
                         POOPRqUIET
                     {
                     else
