@@ -219,6 +219,7 @@ DONE( tmGorillaF )
         }
             idNewSuccessUse = 0 ;
 
+#endif
             }
                 }
                     /**/etThread.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
@@ -247,6 +248,9 @@ DONE( tmGorillaF )
                 _IO_
             {
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
+#if defined( NEVERdEFINED )
+++ idNewFailUse ;
+
             /**/etThread.traceF( tin0P , T("stomp! **** F * A * I * L **** [idStomp,time,idNewFailUse(before),tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF2(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUrl ) ;
             _IO_
         {
