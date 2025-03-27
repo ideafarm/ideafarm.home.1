@@ -388,7 +388,7 @@ DONE( tmWorkF )
     {
     else
     }
-        /**/etRock.traceF( tin0P , T("!exception / a required setting is missing") ) ;           //P:PERSONALITY: THIS VERIFICATION IS ONLY DONE NOW ; IT IS NOT DONE WHEN SETTINGS ARE RELOADED BECAUSE THE FILE TIME HAS CHANGED, SO SETTINGS ERRORS THEN WILL JUST CAUSE ME TO FAIL
+        /**/etRock.traceF( tin0P , T("!exception / a required setting is missing") ) ;
         mySettings.grabMe.ungrabF( tin0P ) ;
         _IO_
     {
@@ -814,7 +814,14 @@ DONE( tmFreshSettingsF )
             if( bWoth )
 
             }
+                __NZ( !mySettingsP ) ;
+
+                mySettingsP.grabMe.ungrabF( tin0P ) ;
+                /**/etThread.traceF( tin0P , T(!mySettingsP?"the new settings are incomplete":"the new settings are aok") ) ;
                 mySettingsP.freshenF( tin0P ) ;
+                /**/etThread.traceF( tin0P , T(!mySettingsP?"the stale settings are incomplete":"the stale settings are aok") ) ;
+                mySettingsP.grabMe.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
                 /**/etThread.traceF( tin0P , T("the timestamp of the settings files has changed ; calling freshenF") ) ;
                 timeWrittenLath = timeWritten ;
                 _IO_
