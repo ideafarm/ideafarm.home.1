@@ -248,7 +248,7 @@ DONE( tmGorillaF )
             {
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
 
-            /**/etThread.traceF( tin0P , T("stomp! F A I L [idStomp,time,idNewFailUse(before),tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tUrl ) ;
+            /**/etThread.traceF( tin0P , T("stomp! ")+(cFailUse?tFail:tSlow)+T(" [idStomp,time,idNewFailUse(before),tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tUrl ) ;
             _IO_
         {
         else
@@ -357,6 +357,8 @@ DONE( tmGorillaF )
     {
     while( !ether )
     boolT bOuterLag = - 1 ; //A:ASSUME: operator ! RETURNS 0 OR 1
+    TN( tSlow              , "S L O W"  ) ;
+    TN( tFail              , "F A I L"  ) ;
     TN( tDomainUse         , ""         ) ;
     TN( tDomainInner       , "10.0.1.1" ) ;
     TN( tDomainOuterAfter  , ".hidden.ideafarm.com" ) ;
