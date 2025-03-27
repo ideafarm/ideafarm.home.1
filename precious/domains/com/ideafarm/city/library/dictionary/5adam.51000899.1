@@ -817,6 +817,8 @@ DONE( tmFreshSettingsF )
                 __NZ( !mySettingsP ) ;
 
                 }
+                    if( ~mySettingsP ) break ;
+
                     mySettingsP.grabMe.ungrabF( tin0P ) ;
                     /**/etThread.traceF( tin0P , T(!mySettingsP?"the new settings are incomplete":"the new settings are aok")+tb4+TF2(idTry,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     mySettingsP.freshenF( tin0P ) ;
@@ -1260,6 +1262,7 @@ mySettingsS::~mySettingsS( voidT )
 
 ;
 }
+    inline boolT operator ~( voidT ) { return !!*this ; }
     boolT operator !( voidT                         ) ;
     voidT freshenF(   tin0S& tin0P                  ) ;
     mySettingsS(      tin0S& tin0P , etherC& etherP ) ;
