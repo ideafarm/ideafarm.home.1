@@ -248,12 +248,12 @@ DONE( tmGorillaF )
             {
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
 
-            /**/etThread.traceF( tin0P , T("stomp! FAIL [idStomp,time,idNewFailUse(before),tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF2(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUrl ) ;
+            /**/etThread.traceF( tin0P , T("stomp! F A I L [idStomp,time,idNewFailUse(before),tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tUrl ) ;
             _IO_
         {
         else
         }
-            /**/etThread.traceF( tin0P , T("stomp!   aok   [idStomp,time,bSlowStrict         ,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+T(bSlowStrict?"    FORGIVEN    ":"                ")+tUrl ) ;
+            /**/etThread.traceF( tin0P , T("stomp!   aok   [idStomp,time,bSlowStrict         ,tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+T(bSlowStrict?"FORGIVEN":"        "                        )+tb4+tUrl ) ;
             idNewSuccessUse ++ ;
             idNewFailUse = 0 ;
         {
