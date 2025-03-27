@@ -220,6 +220,7 @@ DONE( tmGorillaF )
             idNewSuccessUse = 0 ;
 
             }
+#endif
                 }
                     /**/etThread.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
                     dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
@@ -245,6 +246,7 @@ DONE( tmGorillaF )
                 TN( tSay , "" ) ; tSay = T(
                 /**/etThread.traceF( tin0P , T("posting an email notice") ) ;
                 _IO_
+#if defined( NEVERdEFINED )
             {
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
 
@@ -340,7 +342,8 @@ DONE( tmGorillaF )
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
 
-        const boolT bOuter = !( idStomp % ( TUCK >> 4 ) ) ;
+boolT bOuter = 1 ;
+//        const boolT bOuter = !( idStomp % ( TUCK >> 4 ) ) ;
         //etThread.traceF( tin0P , T("stomp! [idStomp]:    ")+TfORsTRING(idStomp) ) ;
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
 
