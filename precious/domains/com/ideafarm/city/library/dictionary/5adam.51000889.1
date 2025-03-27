@@ -66,11 +66,16 @@ DONE( tmGetWebHookRandomSuffixF )
                     else
                     }
                         }
+                            }
+                                etThread.traceF( tin0P , T("----------------------------------------------------------------------------------------------------------------------------------------[woTimePassword]:    ")+tWoTimePasswordP ) ;
+                                tWoTimePasswordLag = tWoTimePasswordP ;
+                            {
+                            if( etThread.strCompareF( tin0P , tWoTimePasswordLag , tWoTimePasswordP ) )
+
                             etThread.delF( tin0P , psttw ) ;
                             grab_tWoTimePasswordP.ungrabF( tin0P ) ;
                             tWoTimePasswordP = T(psttw) ;
                             grab_tWoTimePasswordP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                            etThread.traceF( tin0P , T("----------------------------------------------------------------------------------------------------------------------------------------[woTimePassword]:    ")+T(psttw) ) ;
                             sIn >> psttw ;
                             ZE( strokeS* , psttw ) ;
                         {
@@ -180,6 +185,7 @@ DONE( tmGetWebHookRandomSuffixF )
         byteT pb_sConnect[ sizeof( socketC ) ] ;
     {
     while( !ether )
+    TN( tWoTimePasswordLag , "" ) ;
 
     nicNameC nnHe = etThread.sockNicNameF( tin0P , T("10.0.2.1") ) ;
     nicNameC nnMe = etThread.sockNicNameF( tin0P , T("10.0.3.1") ) ;
