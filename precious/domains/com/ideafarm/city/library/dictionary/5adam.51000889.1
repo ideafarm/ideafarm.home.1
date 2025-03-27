@@ -219,7 +219,6 @@ DONE( tmGorillaF )
         }
             idNewSuccessUse = 0 ;
 
-#endif
             }
                 }
                     /**/etThread.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
@@ -248,8 +247,6 @@ DONE( tmGorillaF )
                 _IO_
             {
             if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
-#if defined( NEVERdEFINED )
-++ idNewFailUse ;
 
             /**/etThread.traceF( tin0P , T("stomp! **** F * A * I * L **** [idStomp,time,idNewFailUse(before),tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF2(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+tUrl ) ;
             _IO_
@@ -327,7 +324,6 @@ DONE( tmGorillaF )
         ZE( sCountT , timeN2 ) ;
         ZE( countT  , timeN1 ) ;
 
-tUrl = T("64.176.220.89//http/nu") ;
         TN( tUrl , "" ) ; tUrl = tDomainUse+T("//http/nu") ;        // THE "nu" PORTION IS NOT USED, BECAUSE HTTP HEADER IS NOT PREPENDED
 
         grab_tWoTimePasswordP.ungrabF( tin0P ) ;
@@ -344,8 +340,7 @@ tUrl = T("64.176.220.89//http/nu") ;
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
 
-const boolT bOuter = 1 ;
-//        const boolT bOuter = !( idStomp % ( TUCK >> 4 ) ) ;
+        const boolT bOuter = !( idStomp % ( TUCK >> 4 ) ) ;
         //etThread.traceF( tin0P , T("stomp! [idStomp]:    ")+TfORsTRING(idStomp) ) ;
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
 
