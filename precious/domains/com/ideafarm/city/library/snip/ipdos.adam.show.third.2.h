@@ -38,11 +38,11 @@
 /*1*//*ifcIDtYPEeCHOpACKET*//*1*/
 
 /*3*/
-#define ifcIDtYPEeCHOpACKET_ECHO              0xdddd1213
-#define ifcIDtYPEeCHOpACKET_ECHOrEPLY         0xdddd1214
+#define ifcIDtYPEeCHOpACKET_ECHO              0xdddd1214
+#define ifcIDtYPEeCHOpACKET_ECHOrEPLY         0xdddd1215
 /*3*/
-#define ifcIDtYPEeCHOpACKET_min     0xdddd1213
-#define ifcIDtYPEeCHOpACKET_max     0xdddd1214                                                               
+#define ifcIDtYPEeCHOpACKET_min     0xdddd1214
+#define ifcIDtYPEeCHOpACKET_max     0xdddd1215                                                               
 
 
 //
@@ -71,16 +71,16 @@
 //CS:CODEsYNC: 510007e9 112005be
 
 /*3*/
-#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE1          0xdddd1215
-#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE2          0xdddd1216
-#define ifcIDiMPOTENCEmEMcMP_LATHbYTE1          0xdddd1217
-#define ifcIDiMPOTENCEmEMcMP_LATHbYTE2          0xdddd1218
-#define ifcIDiMPOTENCEmEMcMP_COMPARE0           0xdddd1219
-#define ifcIDiMPOTENCEmEMcMP_COMPARE1           0xdddd121a
-#define ifcIDiMPOTENCEmEMcMP_COMPARE2           0xdddd121b
+#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE1          0xdddd1216
+#define ifcIDiMPOTENCEmEMcMP_WOTHbYTE2          0xdddd1217
+#define ifcIDiMPOTENCEmEMcMP_LATHbYTE1          0xdddd1218
+#define ifcIDiMPOTENCEmEMcMP_LATHbYTE2          0xdddd1219
+#define ifcIDiMPOTENCEmEMcMP_COMPARE0           0xdddd121a
+#define ifcIDiMPOTENCEmEMcMP_COMPARE1           0xdddd121b
+#define ifcIDiMPOTENCEmEMcMP_COMPARE2           0xdddd121c
 /*3*/
-#define ifcIDiMPOTENCEmEMcMP_min     0xdddd1215
-#define ifcIDiMPOTENCEmEMcMP_max     0xdddd121b                                                               
+#define ifcIDiMPOTENCEmEMcMP_min     0xdddd1216
+#define ifcIDiMPOTENCEmEMcMP_max     0xdddd121c                                                               
 
 
 //
@@ -467,17 +467,17 @@
 
 
 /*3*/
-#define ifcIDtYPEsTEPrECURSION_PROLOG              0xdddd121c
-#define ifcIDtYPEsTEPrECURSION_CALLpROLOG          0xdddd121d
-#define ifcIDtYPEsTEPrECURSION_CALLpUSH            0xdddd121e
-#define ifcIDtYPEsTEPrECURSION_CALL                0xdddd121f
-#define ifcIDtYPEsTEPrECURSION_CALLpOP             0xdddd1220
-#define ifcIDtYPEsTEPrECURSION_CALLePILOG          0xdddd1221
-#define ifcIDtYPEsTEPrECURSION_EPILOG              0xdddd1222
-#define ifcIDtYPEsTEPrECURSION_DONE                0xdddd1223
+#define ifcIDtYPEsTEPrECURSION_PROLOG              0xdddd121d
+#define ifcIDtYPEsTEPrECURSION_CALLpROLOG          0xdddd121e
+#define ifcIDtYPEsTEPrECURSION_CALLpUSH            0xdddd121f
+#define ifcIDtYPEsTEPrECURSION_CALL                0xdddd1220
+#define ifcIDtYPEsTEPrECURSION_CALLpOP             0xdddd1221
+#define ifcIDtYPEsTEPrECURSION_CALLePILOG          0xdddd1222
+#define ifcIDtYPEsTEPrECURSION_EPILOG              0xdddd1223
+#define ifcIDtYPEsTEPrECURSION_DONE                0xdddd1224
 /*3*/
-#define ifcIDtYPEsTEPrECURSION_min     0xdddd121c
-#define ifcIDtYPEsTEPrECURSION_max     0xdddd1223                                                               
+#define ifcIDtYPEsTEPrECURSION_min     0xdddd121d
+#define ifcIDtYPEsTEPrECURSION_max     0xdddd1224                                                               
 
 
 //
@@ -505,11 +505,11 @@
 
 
 /*3*/
-#define IDeRRORsORTAc_STACKnEWLYeXHAUSTED     0xdddd1224
-#define IDeRRORsORTAc_STACKeXHAUSTED          0xdddd1225
+#define IDeRRORsORTAc_STACKnEWLYeXHAUSTED     0xdddd1225
+#define IDeRRORsORTAc_STACKeXHAUSTED          0xdddd1226
 /*3*/
-#define IDeRRORsORTAc_min     0xdddd1224
-#define IDeRRORsORTAc_max     0xdddd1225                                                               
+#define IDeRRORsORTAc_min     0xdddd1225
+#define IDeRRORsORTAc_max     0xdddd1226                                                               
 
 
 //
@@ -1084,23 +1084,23 @@
 /*1*//*ifcEXITcODE*//*1*/
 
 /*3*/
-#define ifcEXITcODE_THREADaOK                                           0xdddd1226
-#define ifcEXITcODE_THREADiMPOTENT                                      0xdddd1227
-#define ifcEXITcODE_EXITpROCESStOOlOW                                   0xdddd1228
-#define ifcEXITcODE_EXITpROCESSaOK                                      0xdddd1229
-#define ifcEXITcODE_EXITpROCESSiMPOTENT                                 0xdddd122a
-#define ifcEXITcODE_EXITpROCESSsIGNAL                                   0xdddd122b
-#define ifcEXITcODE_EXITpROCESSeXCEPTION                                0xdddd122c
-#define ifcEXITcODE_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP             0xdddd122d
-#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOmE                    0xdddd122e
-#define ifcEXITcODE_EXITpROCESSdTtINSsOMETHINGgRABBED                   0xdddd122f
-#define ifcEXITcODE_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE              0xdddd1230
-#define ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED                         0xdddd1231
-#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOeLDER                 0xdddd1232
-#define ifcEXITcODE_EXITpROCESStOOhIGH                                  0xdddd1233
+#define ifcEXITcODE_THREADaOK                                           0xdddd1227
+#define ifcEXITcODE_THREADiMPOTENT                                      0xdddd1228
+#define ifcEXITcODE_EXITpROCESStOOlOW                                   0xdddd1229
+#define ifcEXITcODE_EXITpROCESSaOK                                      0xdddd122a
+#define ifcEXITcODE_EXITpROCESSiMPOTENT                                 0xdddd122b
+#define ifcEXITcODE_EXITpROCESSsIGNAL                                   0xdddd122c
+#define ifcEXITcODE_EXITpROCESSeXCEPTION                                0xdddd122d
+#define ifcEXITcODE_EXITpROCESSdTtINSkIDSeXISTdURINGclEANUP             0xdddd122e
+#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOmE                    0xdddd122f
+#define ifcEXITcODE_EXITpROCESSdTtINSsOMETHINGgRABBED                   0xdddd1230
+#define ifcEXITcODE_EXITpROCESSdTtINSuNEXPECTEDrECYCLEtYPE              0xdddd1231
+#define ifcEXITcODE_EXITpROCESSdTtINSpOURfAILED                         0xdddd1232
+#define ifcEXITcODE_EXITpROCESSdTtINSnOTpOINTINGtOeLDER                 0xdddd1233
+#define ifcEXITcODE_EXITpROCESStOOhIGH                                  0xdddd1234
 /*3*/
-#define ifcEXITcODE_min     0xdddd1226
-#define ifcEXITcODE_max     0xdddd1233                                                               
+#define ifcEXITcODE_min     0xdddd1227
+#define ifcEXITcODE_max     0xdddd1234                                                               
 
 
 //
@@ -1374,11 +1374,11 @@ all values that can be returned by GetThreadPriority() (Win32)
 /*1*//*ifcIDzIPPER*//*1*/
 
 /*3*/
-#define ifcIDzIPPER_PKZIPC          0xdddd1234
-#define ifcIDzIPPER_INFOZIP         0xdddd1235
+#define ifcIDzIPPER_PKZIPC          0xdddd1235
+#define ifcIDzIPPER_INFOZIP         0xdddd1236
 /*3*/
-#define ifcIDzIPPER_min     0xdddd1234
-#define ifcIDzIPPER_max     0xdddd1235                                                               
+#define ifcIDzIPPER_min     0xdddd1235
+#define ifcIDzIPPER_max     0xdddd1236                                                               
 
 
 //
@@ -2610,12 +2610,12 @@ examples
 /*1*//*ifcIDtYPEtIN*//*1*/
 
 /*3*/
-#define ifcIDtYPEtIN_123        0xdddd1236
-#define ifcIDtYPEtIN_12         0xdddd1237
-#define ifcIDtYPEtIN_1          0xdddd1238
+#define ifcIDtYPEtIN_123        0xdddd1237
+#define ifcIDtYPEtIN_12         0xdddd1238
+#define ifcIDtYPEtIN_1          0xdddd1239
 /*3*/
-#define ifcIDtYPEtIN_min     0xdddd1236
-#define ifcIDtYPEtIN_max     0xdddd1238
+#define ifcIDtYPEtIN_min     0xdddd1237
+#define ifcIDtYPEtIN_max     0xdddd1239
 
 
 //
@@ -4055,16 +4055,16 @@ examples
 /*1*//*ifcIDtYPEaDDRESSuSAGE*//*1*/
 
 /*3*/
-#define ifcIDtYPEaDDRESSuSAGE_CODE        0xdddd1239
-#define ifcIDtYPEaDDRESSuSAGE_DATA        0xdddd123a
-#define ifcIDtYPEaDDRESSuSAGE_STACK       0xdddd123b
-#define ifcIDtYPEaDDRESSuSAGE_PRIVATE     0xdddd123c
-#define ifcIDtYPEaDDRESSuSAGE_SHARED      0xdddd123d
-#define ifcIDtYPEaDDRESSuSAGE_SEX         0xdddd123e
-#define ifcIDtYPEaDDRESSuSAGE_FILE        0xdddd123f
+#define ifcIDtYPEaDDRESSuSAGE_CODE        0xdddd123a
+#define ifcIDtYPEaDDRESSuSAGE_DATA        0xdddd123b
+#define ifcIDtYPEaDDRESSuSAGE_STACK       0xdddd123c
+#define ifcIDtYPEaDDRESSuSAGE_PRIVATE     0xdddd123d
+#define ifcIDtYPEaDDRESSuSAGE_SHARED      0xdddd123e
+#define ifcIDtYPEaDDRESSuSAGE_SEX         0xdddd123f
+#define ifcIDtYPEaDDRESSuSAGE_FILE        0xdddd1240
 /*3*/
-#define ifcIDtYPEaDDRESSuSAGE_min     0xdddd1239
-#define ifcIDtYPEaDDRESSuSAGE_max     0xdddd123f
+#define ifcIDtYPEaDDRESSuSAGE_min     0xdddd123a
+#define ifcIDtYPEaDDRESSuSAGE_max     0xdddd1240
 
 
 //
@@ -4182,12 +4182,12 @@ examples
 /*1*//*ifcIDsWITCHhTTPrEPLY*//*1*/
 
 /*3*/
-#define ifcIDsWITCHhTTPrEPLY_EXACT           0xdddd1240
-#define ifcIDsWITCHhTTPrEPLY_PREFIX          0xdddd1241
-#define ifcIDsWITCHhTTPrEPLY_ANYWHERE        0xdddd1242
+#define ifcIDsWITCHhTTPrEPLY_EXACT           0xdddd1241
+#define ifcIDsWITCHhTTPrEPLY_PREFIX          0xdddd1242
+#define ifcIDsWITCHhTTPrEPLY_ANYWHERE        0xdddd1243
 /*3*/
-#define ifcIDsWITCHhTTPrEPLY_min     0xdddd1240
-#define ifcIDsWITCHhTTPrEPLY_max     0xdddd1242
+#define ifcIDsWITCHhTTPrEPLY_min     0xdddd1241
+#define ifcIDsWITCHhTTPrEPLY_max     0xdddd1243
 
 
 //
@@ -27771,6 +27771,7 @@ struct bookMarkOldS
     measure04T  brcm04Raw ;
     timeS       ptTraceWoth[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     timeS       ptTraceLath[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+
     count4S     c4Tell ;
     strokeModeS strokeMode ;
 
@@ -29807,7 +29808,7 @@ private :
  voidT c_itoaForeignLibF( tin0S& tin0P , osTextT*& postP , sCountT valueP , countT radixP = 0x10 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34006.thirdC.c_itoaForeignLibF!||
  static voidT c_itoaForeignLibIF( tin0S& tin0P , osTextT* const postP , const countT costP , sCountT valueP , countT radixP = 0x10 ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3408c.thirdC.c_itoaIF!||
+ //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3408c.thirdC.c_itoaForeignLibIF!||
  static voidT c_itoaForeignIF( osTextT* const postP , countT valueP , const osTextT ostPadP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34125.thirdC.c_itoaForeignIF!||
  static sCountT c_memcmpIF( tin0S& tin0P , const byteT* const pb1P , const byteT* const pb2P , const countT cbP ) ;

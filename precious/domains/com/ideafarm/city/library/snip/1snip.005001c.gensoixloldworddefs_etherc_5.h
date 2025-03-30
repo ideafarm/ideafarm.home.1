@@ -3213,7 +3213,7 @@ voidT traceF_o4P73_GF( tin0S& tin0P , etherC& etherP , soulC& slP , const stroke
             strokeS* psttNext = *pbFieldNext & flSOULiTEM_NULLpTR ? 0 : (strokeS*)pbFieldNext ;
             if( idTypeNext == ifcIDtYPEsOULiTEM_strokeSptr && psttNext && psttNext->idAdam == 1 && psttNext[ CSpREFIX ] == sttColon )
             {
-                idDivertP = 0 ;
+                idDivertP = ifcIDtRACEdIVERT_0 ;
                 psttNext = 0 ;
                 if( !POOP ) { slP >> psttNext ; ___( psttNext ) ; idArgNext ++ ; }
                 etherP.delF( tin0P , psttNext ) ;

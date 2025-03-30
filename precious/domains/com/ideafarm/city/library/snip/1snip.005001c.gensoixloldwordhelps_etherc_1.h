@@ -10708,7 +10708,7 @@
         "\r\n"
         "Each manifestation of \"traceF_o4@73\" uses the current stack in this way:\r\n"
         "\r\n"
-        "    Pop  3:    countT           idDivertP                       (defaults to 0)\r\n"
+        "    Pop  3:    countT           idDivertP                       (defaults to ifcIDtRACEdIVERT_0)\r\n"
         "    Pop  2:    flagsT           flagsP                          (defaults to flTRACE_null)\r\n"
         "    Pop  1:    strokeS*         psttP                           (defaults to 0)\r\n"
         "\r\n"
