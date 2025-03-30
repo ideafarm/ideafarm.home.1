@@ -359,12 +359,16 @@
 
             if( POOP ) traceF( tin0P , T("dnsReplyF / !exception / step 2 / could not pull all input from soul [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
+            traceF( tin0P , T("dnsReplyF / step 2 /     [time2]:    ")+TF2(time2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> (countT&)time2 ;
             ZE( sCountT , time2 ) ;
+            traceF( tin0P , T("dnsReplyF / step 2 /     [time1]:    ")+TF2(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> time1 ;
             ZE( countT , time1 ) ;
+            traceF( tin0P , T("dnsReplyF / step 2 /     [idClass]:    ")+TF2(idClass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> idClass ;
             ZE( countT , idClass ) ;
+            traceF( tin0P , T("dnsReplyF / step 2 /     [idType]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> idType ;
             ZE( countT , idType ) ; // THE MIDDLE OF THE RR
 
@@ -385,9 +389,11 @@
                 case ifcIDtYPEdNSrEPLY_ANSWER    : { cAnsw ++ ; break ; }
             {
             switch( idTypeAnswer )
+            traceF( tin0P , T("dnsReplyF / step 2 /     [idTypeAnswer]:    ")+TF2(idTypeAnswer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> idTypeAnswer ;
             ZE( countT , idTypeAnswer ) ; // ACCUMULATE COUNTERS FOR LATER INSERTION INTO HEADER
 
+            traceF( tin0P , T("dnsReplyF / step 2 / [soul contents count]:    ")+TF2(soul.cFieldsF(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soulC& soul = *pSoul ;
         {
         if( pSoul )
