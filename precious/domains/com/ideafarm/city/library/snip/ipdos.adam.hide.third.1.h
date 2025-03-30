@@ -31719,7 +31719,8 @@ plateC& fooC::operator +=( plateC& plateP )                                     
  friend class windowOldC ; /*U::WORKAROUND SO THAT wrapRenderF CAN SEE 2 *IfcRenderingHander* MEMBERS.  THESE MEMBERS SHOULD PROBABLY BE MOVED TO thirdC */                                                                                                 \
  friend class paperOldC  ; /*U::WORKAROUND SO THAT wrapRenderF CAN SEE 2 *IfcRenderingHander* MEMBERS.  THESE MEMBERS SHOULD PROBABLY BE MOVED TO thirdC */                                                                                                 \
  friend countT rootExceptionFilterWorker1F( voidT* pvOsInfoP , countT ecP ) ;                                                                                                                                                                               \
- friend boolT thirdC::osExceptionHandlerWorkIF( const countT cArgP ) ;
+ friend boolT thirdC::osExceptionHandlerWorkIF( const countT cArgP ) ;                                                                                                                                                                                      \
+ friend voidT poopC::gruntF( tin0S& tin0P , const countT idLineP , const countT idiFileP , const byteT* const pbBitsP , const countT idSubTypeP , const countT idTypeP ) ;
 
 
 //
