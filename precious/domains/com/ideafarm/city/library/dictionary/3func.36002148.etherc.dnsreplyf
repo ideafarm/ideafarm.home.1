@@ -99,6 +99,8 @@
                         break ;
                         __1
                         __( idType ) ;
+
+                        traceF( tin0P , T("dnsReplyF / !exception / unexpected query [idType]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     default :
                     }
@@ -202,6 +204,7 @@
                     }
                         break ;
                         __1 //U:
+                        traceF( tin0P , T("dnsReplyF / !exception / ifcIDtYPEdNSqUERY_NULL received") ) ;
                     {
                     case ifcIDtYPEdNSqUERY_NULL :
                     }
@@ -339,10 +342,10 @@
                 }
                     p_cbData = &rMiddle.cbData ;
                     rMiddle.swabF() ;
-                    rMiddle.cbData        = 0 ; //WILL BE ACCUMULATED AND THEN SWABBED
-                    rMiddle.secondsToLive = third.secondsFromTimeIF( tin0P , time1 , time2 ) ;
-                    rMiddle.idClass       = (count01T)idClass ;
-                    rMiddle.idType        = (count01T)idType ;
+                    rMiddle.cbData              = 0 ; //WILL BE ACCUMULATED AND THEN SWABBED
+                    rMiddle.secondsToLive       = third.secondsFromTimeIF( tin0P , time1 , time2 ) ;
+                    rMiddle.idClass             = (count01T)idClass ;
+                    rMiddle.idType              = (count01T)idType ;
                     dnsResourceMiddleS& rMiddle = *(dnsResourceMiddleS*)pc2s->c1 ;
                 {
                 if( pc2s->c1 )
@@ -353,6 +356,8 @@
             if( pc2s )
             newF( tin0P , LF , pc2s ) ; ___( pc2s ) ;
             ZE( count01T* , p_cbData ) ;
+
+            if( POOP ) traceF( tin0P , T("dnsReplyF / !exception / step 2 / could not pull all input from soul [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             soul >> (countT&)time2 ;
             ZE( sCountT , time2 ) ;
@@ -372,6 +377,7 @@
                 }
                     __1
                     __( idTypeAnswer ) ;
+                    traceF( tin0P , T("dnsReplyF / !exception / step 2 / unexpected reply type [idTypeAnswer]:    ")+TF2(idTypeAnswer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 default:
                 case ifcIDtYPEdNSrEPLY_NOTE      : { cNote ++ ; break ; }
@@ -411,7 +417,8 @@
             newF( tin0P , LF , pc2s ) ; ___( pc2s ) ;
             ZE( count2S* , pc2s ) ;
         {
-        if( !POOP )
+        else
+        if( POOP ) traceF( tin0P , T("dnsReplyF / !exception / step 1 / could not accumulate label offsets ") ) ;
 
         }
             }
@@ -419,7 +426,7 @@
 
                 delF( tin0P , psttl ) ;
                 swOff = offl ;
-                //ifcSayIF( T("label at offset ")+TF1(offl)+T(": \"")+T(psttl)+T("\"") , flSAY_APPEND | flSAY_LOG ) ;
+                traceF( tin0P , T("label at offset ")+TF1(offl)+T(": \"")+T(psttl)+T("\"") ) ;
                 dnsLabelsF( tin0P , psttl , pbe , (dnsMsgHeaderS*)pbQueryP ) ; ___( psttl ) ;
                 countT offl = pbe - pbQueryP ;
             {
