@@ -246,7 +246,8 @@ DONE( tmGorillaF )
                 /**/etThread.traceF( tin0P , T("posting an email notice") ) ;
                 _IO_
             {
-            if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
+//            if( ++ idNewFailUse <= 8 )                                       // LIMIT EACH FAILURE BURST TO 8 EMAILS
+if( ++ idNewFailUse <= 1 )
 
             /**/etThread.traceF( tin0P , T("stomp! ")+(cFailUse?tFail:tSlow)+T(" [idStomp,time,idNewFailUse(before),tUrl]:    ")+TfORsTRING(idStomp)+tb4+TTF(timeE1,timeE2)+tb4+TF3(idNewFailUse,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED,8)+tb4+tUrl ) ;
             _IO_
@@ -340,7 +341,8 @@ DONE( tmGorillaF )
         ZE( countT , cFailInner ) ;
         ZE( countT , cFailOuter ) ;
 
-        const boolT bOuter = !( idStomp % ( TUCK >> 4 ) ) ;
+boolT bOuter = 1 ;
+//        const boolT bOuter = !( idStomp % ( TUCK >> 4 ) ) ;
         //etThread.traceF( tin0P , T("stomp! [idStomp]:    ")+TfORsTRING(idStomp) ) ;
         countT idStomp = 1 + incv02AM( idStompLathP ) ;
 
