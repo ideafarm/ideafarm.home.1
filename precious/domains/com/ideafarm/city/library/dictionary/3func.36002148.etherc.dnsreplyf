@@ -100,7 +100,7 @@
                         __1
                         __( idType ) ;
 
-                        //traceF( tin0P , T("dnsReplyF / !exception / unexpected query [idType]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        /**/traceF( tin0P , T("dnsReplyF / !exception / unexpected query [idType]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
                     default :
                     }
@@ -204,7 +204,7 @@
                     }
                         break ;
                         __1 //U:
-                        //traceF( tin0P , T("dnsReplyF / !exception / ifcIDtYPEdNSqUERY_NULL received") ) ;
+                        /**/traceF( tin0P , T("dnsReplyF / !exception / ifcIDtYPEdNSqUERY_NULL received") ) ;
                     {
                     case ifcIDtYPEdNSqUERY_NULL :
                     }
@@ -357,24 +357,24 @@
             newF( tin0P , LF , pc2s ) ; ___( pc2s ) ;
             ZE( count01T* , p_cbData ) ;
 
-            if( POOP ) ;//traceF( tin0P , T("dnsReplyF / !exception / step 2 / could not pull all input from soul [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            if( POOP ) /*;*/traceF( tin0P , T("dnsReplyF / !exception / step 2 / could not pull all input from soul [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-            //traceF( tin0P , T("dnsReplyF / step 2 /    0 [POOP,time2]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/traceF( tin0P , T("dnsReplyF / step 2 /    0 [POOP,time2]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> (countT&)time2 ;
             ZE( sCountT , time2 ) ;
-            //traceF( tin0P , T("dnsReplyF / step 2 /    1 [POOP,time1]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/traceF( tin0P , T("dnsReplyF / step 2 /    1 [POOP,time1]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> time1 ;
             ZE( countT , time1 ) ;
-            //traceF( tin0P , T("dnsReplyF / step 2 /    2 [POOP,idClass]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idClass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/traceF( tin0P , T("dnsReplyF / step 2 /    2 [POOP,idClass]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idClass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> idClass ;
             ZE( countT , idClass ) ;
-            //traceF( tin0P , T("dnsReplyF / step 2 /    3 [POOP,idType]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/traceF( tin0P , T("dnsReplyF / step 2 /    3 [POOP,idType]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> idType ;
             ZE( countT , idType ) ; // THE MIDDLE OF THE RR
 
-            //traceF( tin0P , T("dnsReplyF / step 2 /    4 [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/traceF( tin0P , T("dnsReplyF / step 2 /    4 [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             { ZE( count01T , cnu ) ; pushLabelsF( tin0P , *this , stSnip , offo , cnu , soul , swOff , psttl ) ; }
-            //traceF( tin0P , T("dnsReplyF / step 2 /    5 [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/traceF( tin0P , T("dnsReplyF / step 2 /    5 [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             ZE( count2S* , pc2s ) ;
             ZE( strokeS* , psttw1 ) ;
@@ -383,7 +383,7 @@
                 }
                     __1
                     __( idTypeAnswer ) ;
-                    //traceF( tin0P , T("dnsReplyF / !exception / step 2 / unexpected reply type [idTypeAnswer]:    ")+TF2(idTypeAnswer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    /**/traceF( tin0P , T("dnsReplyF / !exception / step 2 / unexpected reply type [idTypeAnswer]:    ")+TF2(idTypeAnswer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 {
                 default:
                 case ifcIDtYPEdNSrEPLY_NOTE      : { cNote ++ ; break ; }
@@ -391,11 +391,11 @@
                 case ifcIDtYPEdNSrEPLY_ANSWER    : { cAnsw ++ ; break ; }
             {
             switch( idTypeAnswer )
-            //traceF( tin0P , T("dnsReplyF / step 2 /    6 [idTypeAnswer]:    ")+TF2(idTypeAnswer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/traceF( tin0P , T("dnsReplyF / step 2 /    6 [idTypeAnswer]:    ")+TF2(idTypeAnswer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> idTypeAnswer ;
             ZE( countT , idTypeAnswer ) ; // ACCUMULATE COUNTERS FOR LATER INSERTION INTO HEADER
 
-            //traceF( tin0P , T("dnsReplyF / step 2 / [soul contents count]:    ")+TF2(soul.cFieldsF(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            /**/traceF( tin0P , T("dnsReplyF / step 2 / [soul contents count]:    ")+TF2(soul.cFieldsF(),flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soulC& soul = *pSoul ;
         {
         if( pSoul )
@@ -427,7 +427,7 @@
             ZE( count2S* , pc2s ) ;
         {
         else
-        if( POOP ) ;//traceF( tin0P , T("dnsReplyF / !exception / step 1 / could not accumulate label offsets ") ) ;
+        if( POOP ) /*;*/traceF( tin0P , T("dnsReplyF / !exception / step 1 / could not accumulate label offsets ") ) ;
 
         }
             }
@@ -435,7 +435,7 @@
 
                 delF( tin0P , psttl ) ;
                 swOff = offl ;
-                //traceF( tin0P , T("label at offset ")+TF1(offl)+T(": \"")+T(psttl)+T("\"") ) ;
+                /**/traceF( tin0P , T("label at offset ")+TF1(offl)+T(": \"")+T(psttl)+T("\"") ) ;
                 dnsLabelsF( tin0P , psttl , pbe , (dnsMsgHeaderS*)pbQueryP ) ; ___( psttl ) ;
                 countT offl = pbe - pbQueryP ;
             {
