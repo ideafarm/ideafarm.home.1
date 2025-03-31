@@ -22,7 +22,7 @@
             pbc += 2 ;
             *(count01T*)pbc = (count01T)( SWABnET2( offBest | 0xc000 ) ) ;
         {
-        if( offBest )
+        if( offBest != - 1 )
         }
             }
                 for( countT ids = 1 ; ids <= psttc1->idAdam ; ids ++ ) *( pbc ++ ) = (byteT)psttc1[ CSpREFIX - 1 + ids ].idAdam ;
@@ -56,7 +56,7 @@
     {
     if( psttBest )
     ZE( strokeS* , pstt1w ) ;
-    countT cba = offBest ? 2 : 1 ; // FOR TERMINATING NULL OR TERMINATING REFERENCE
+    countT cba = offBest != - 1 ? 2 : 1 ; // FOR TERMINATING NULL OR TERMINATING REFERENCE
     traceF( tin0P , T("dnsLabelsF 9 / [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     }
@@ -65,7 +65,7 @@
         if( !psttBest ) psttBest = (strokeS*)psttP ;
         traceF( tin0P , T("dnsLabelsF b / [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     {
-    if( !offBest ) // THERE CANNOT BE A LABEL AT OFFSET 0
+    if( offBest == - 1 )
 
     }
         }
@@ -112,7 +112,7 @@
         strokeS sttq( (countT)0 , sc_IGNOREqUOTES ) ;
     {
     ZE( strokeS* , psttBest ) ;
-    ZE( countT , offBest ) ;
+    countT offBest = - 1 ;
     traceF( tin0P , T("dnsLabelsF e / [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
     _IO_
