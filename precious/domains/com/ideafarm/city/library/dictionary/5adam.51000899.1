@@ -24,39 +24,42 @@ DONE( tmWorkF )
                 etThread.delF( tin0P , pbq ) ;
                 }
                     }
-                        etThread.delF( tin0P , pbr ) ;
                         }
+                            etThread.delF( tin0P , pbr ) ;
                             }
                                 }
-                                    etRock.traceF( tin0P , T("!exception / could not write reply") ) ;
-                                    POOPRqUIET
+                                    }
+                                        etRock.traceF( tin0P , T("!exception / could not write reply") ) ;
+                                        POOPRqUIET
+                                    {
+                                    else
+                                    if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote reply") ) ;
+                                    sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
+                                    /**/etRock.traceF( tin0P , T("replying / 1 [cbr]:    ")+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    _IO_
                                 {
                                 else
-                                if( !POOP ) /*;*/etRock.traceF( tin0P , T("wrote reply") ) ;
-                                sockd.writeF( tin0P , idp , nnPeer , pbr , cbr ) ;
-                                /**/etRock.traceF( tin0P , T("replying / 1 [cbr]:    ")+TF2(cbr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                }
+                                    etRock.traceF( tin0P , T("!exception / could not build reply [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                    POOPRqUIET
+                                    countT rc = POOP ;
+                                    _IO_
+                                {
+                                if( POOP )
+                                ((tin1S&)tin0P).pEtScratch->dnsReplyF( tin0P , pbr , cbr , pbq , stsReplies , 1 , idError ) ;
+                                SCOOPS
                                 _IO_
                             {
-                            else
-                            }
-                                etRock.traceF( tin0P , T("!exception / could not build reply [rc]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                                POOPRqUIET
-                                countT rc = POOP ;
-                                _IO_
-                            {
-                            if( POOP )
-                            ((tin1S&)tin0P).pEtScratch->dnsReplyF( tin0P , pbr , cbr , pbq , stsReplies , 1 , idError ) ;
-                            SCOOPS
-                            _IO_
-                        {
-                        IFsCRATCHoK
-                        ZE( countT , cbr ) ;
-                        ZE( byteT* , pbr ) ;
-                        /**/etRock.traceF( tin0P , T("replying / 2") ) ;
+                            IFsCRATCHoK
+                            ZE( countT , cbr ) ;
+                            ZE( byteT* , pbr ) ;
+                            /**/etRock.traceF( tin0P , T("replying / 2") ) ;
 
-                        else                          /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        if( postError && *postError ) /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
-                        const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
+                            else                          /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+TF2(idError,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                            if( postError && *postError ) /*;*/etRock.traceF( tin0P , T("replying [error]:    ")+T(postError)                                          ) ;
+                            const osTextT* postError = processGlobal4S::_processGlobal4I_IF().mapIdErrorDns( idError ) ;
+                        {
+                        if( !bSilent )
 
                         }
                             }
@@ -70,7 +73,11 @@ DONE( tmWorkF )
                                                 }
                                                     break ;
                                                 
-                                                    if( ~nnOut ) rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                    }
+                                                        rec_AAAA_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                        bSilent = 0 ;
+                                                    {
+                                                    if( ~nnOut )
                                                 
                                                            if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tTarget      ) ) nnOut = nnHostWebLag0 ;
                                                     //else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1    ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
@@ -87,7 +94,11 @@ DONE( tmWorkF )
                                                 }
                                                     break ;
 
-                                                    if( ~nnOut ) rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                    }
+                                                        rec_A_F( tin0P , etThread , stsReplies , ifcIDtYPEdNSrEPLY_ANSWER , tDomainGross , nnOut ) ;
+                                                        bSilent = 0 ;
+                                                    {
+                                                    if( ~nnOut )
 
                                                     }
                                                         else if( !((tin1S&)tin0P).pEtScratch->strCompareF( tin0P , tDomainNet , tWebHook1    ) ) nnOut = nnWebHook1 ;        //THIS IS NEEDED BECAUSE, DURING CERTBOT CERT RENEWAL, CHALLENGES RECEIVED BY wh2 wh3 ... ARE REDIRECTED TO wh1
@@ -288,6 +299,7 @@ DONE( tmWorkF )
                 {
                 TN( tDomainPeer , "" ) ;
                 ZE( boolT , bDivert ) ;
+                boolT bSilent = 1 ;         //PS:PERSONALITY: I DO NOT RESPOND UNLESS I KNOW THE ANSWER TO THE QUERY ; THIS IS INTENDED TO CAUSE THE REQUESTING PEER TO FAILOVER TO MAKE THE REQUEST FROM ITS ALTERNATE DNS SERVER
 
                 mySettings.grabMe.ungrabF( tin0P ) ;
 
