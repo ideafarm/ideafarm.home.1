@@ -123,15 +123,19 @@ DONE( tmWorkF )
                                                 etThread.delF( tin0P , psttSuffix ) ;
 
                                                 }
-                                                    grab_tWoTimePassword.ungrabF( tin0P ) ;
-                                                                        tGorillaSuffix = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
-                                                    tGorillaSuffixLag = tGorillaSuffix ; 
-                                                                         tWoTimePassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
-                                                    tWoTimePasswordLag = tWoTimePassword ;
-                                                    grab_tWoTimePassword.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                                                    bDivert = 0 ;
+                                                    }
+                                                        grab_tWoTimePassword.ungrabF( tin0P ) ;
+                                                                              tGorillaSuffix = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
+                                                        tGorillaSuffixUsed  = tGorillaSuffix ; 
+                                                                              tWoTimePassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
+                                                        tWoTimePasswordUsed = tWoTimePassword ;
+                                                        grab_tWoTimePassword.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                                                        bDivert = 0 ;
+                                                    {
+                                                    else if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffix     ) )
+                                                         if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffixUsed ) ) bDivert = 0 ;
                                                 {
-                                                if( bDivert && ( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffix ) || !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffixLag ) ) )  //PS:PERSONALITY: HONOR THE LAG SUFFIX SO THAT DUPLICATE QUERIES ALL RECEIVE THE SAME wh1 ANSWER
+                                                if( bDivert )                           //PS:PERSONALITY: HONOR THE USED SUFFIX SO THAT DUPLICATE QUERIES ALL RECEIVE THE SAME wh1 ANSWER UNTIL THE CURRENT PASSWORD IS USED
 
                                                 /**/etRock.traceF( tin0P , T("[domainNet,suffix,peer]:      \"")+T(psttw)+T("\"    \"")+T(psttSuffix)+T("\"    \"")+tDomainPeer+T("\"") ) ;
 
@@ -419,8 +423,8 @@ DONE( tmWorkF )
     etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF               , CBsTACKmIN << 1 ) , (countT)&mySettings      , (countT)&sgnSettingsReady     ) ;
 
     grab_tWoTimePassword.ungrabF( tin0P ) ;
-    TN( tGorillaSuffixLag           , ""                 ) ;
-    TN( tWoTimePasswordLag          , ""                 ) ;
+    TN( tGorillaSuffixUsed          , ""                 ) ;
+    TN( tWoTimePasswordUsed         , ""                 ) ;
     TN( tGorillaSuffix              , ""                 ) ; tGorillaSuffix  = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
     TN( tWoTimePassword             , ""                 ) ; tWoTimePassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;  //0x24: [0-9,a-z]
     TN( tDotHiddenDotIdeafarmDotCom , ".hidden.ideafarm.com" ) ;
