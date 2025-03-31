@@ -21,10 +21,10 @@ DONE( tmKillSocketF )
             }
                 }
                     }
-                        etThread.traceF( tin0P , T("tmKillSocketF / killed a socket (timeout)") ) ;
+                        etThread.traceF( tin0P , T("tmKillSocketF / killed  a socket (timeout) [timeLimit]:    ")+TT(pks->timeExpire1,pks->timeExpire2) ) ;
                         hDoomed.closeIfF() ;
                         handleC& hDoomed = *(handleC*)cLever ;
-                        etThread.traceF( tin0P , T("tmKillSocketF / killing a socket (timeout)") ) ;
+                        etThread.traceF( tin0P , T("tmKillSocketF / killing a socket (timeout) [timeLimit]:    ")+TT(pks->timeExpire1,pks->timeExpire2) ) ;
                     {
                     if( te2 < 0 )
                     etThread.osTimeSubtractF( tin0P , te1 , te2 , timeN1 , timeN2 ) ;
