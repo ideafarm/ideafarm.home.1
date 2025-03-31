@@ -359,20 +359,22 @@
 
             if( POOP ) traceF( tin0P , T("dnsReplyF / !exception / step 2 / could not pull all input from soul [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-            traceF( tin0P , T("dnsReplyF / step 2 /     [time2]:    ")+TF2(time2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            traceF( tin0P , T("dnsReplyF / step 2 /     [POOP,time2]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> (countT&)time2 ;
             ZE( sCountT , time2 ) ;
-            traceF( tin0P , T("dnsReplyF / step 2 /     [time1]:    ")+TF2(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            traceF( tin0P , T("dnsReplyF / step 2 /     [POOP,time1]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(time1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> time1 ;
             ZE( countT , time1 ) ;
-            traceF( tin0P , T("dnsReplyF / step 2 /     [idClass]:    ")+TF2(idClass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            traceF( tin0P , T("dnsReplyF / step 2 /     [POOP,idClass]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idClass,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> idClass ;
             ZE( countT , idClass ) ;
-            traceF( tin0P , T("dnsReplyF / step 2 /     [idType]:    ")+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+            traceF( tin0P , T("dnsReplyF / step 2 /     [POOP,idType]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idType,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             soul >> idType ;
             ZE( countT , idType ) ; // THE MIDDLE OF THE RR
 
+            traceF( tin0P , T("dnsReplyF / step 2 /     [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             { ZE( count01T , cnu ) ; pushLabelsF( tin0P , *this , stSnip , offo , cnu , soul , swOff , psttl ) ; }
+            traceF( tin0P , T("dnsReplyF / step 2 /     [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             ZE( count2S* , pc2s ) ;
             ZE( strokeS* , psttw1 ) ;
@@ -401,10 +403,11 @@
         ZE( soulC* , pSoul ) ;
     {
     while( !POOP && stsRepliesP ) // EACH soulC OBJECT DEFINES A SINGLE RR (RESOURCE RECORD)
-    TN( tDot , "." ) ;
-    ZE( countT , cNote ) ;
-    ZE( countT , cAuth ) ;
-    ZE( countT , cAnsw ) ;
+    TN( tb4    , "    " ) ;
+    TN( tDot   , "."    ) ;
+    ZE( countT , cNote  ) ;
+    ZE( countT , cAuth  ) ;
+    ZE( countT , cAnsw  ) ;
     // RATIONALE: (1) NO BENEFIT UNLESS EXCEED DATAGRAM SIZE (2) IFC NAMES WILL BE SHORT, AND REPLIES WILL BE FEW (3) CAN EDIT THIS CODE TO USE COMPRESSION LATER, IF IT IS NEEDED
     // DNS COMPRESSION IS -NOT- USED; EACH NAME IS WRITTEN IN FULL
     // STEP 2: MAKE EACH REMAINING SNIPPET THAT IS TO APPEAR IN THE FINAL IMAGE
