@@ -83,21 +83,26 @@
                     delF( tin0P , pstts ) ;
                     else delF( tin0P , psttn ) ;
                     }
-                        /**/traceF( tin0P , T("dnsLabelsF / set [offBest]:    ")+TF2(offBest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        /**/traceF( tin0P , T("dnsLabelsF / set [offBest,POOP]:    ")+TF2(offBest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         offBest = swOffP ;
                         psttBest = psttn ;
                         delF( tin0P , psttBest ) ;
                     {
                     if( !psttBest || !psttn || psttn->idAdam < psttBest->idAdam )
-                    /**/traceF( tin0P , psttn ? T("bingo: the new portion is: \"")+T(psttn)+T("\"") : T("bingo: an exact repeat (no new prefix)") ) ;
+                    /**/traceF( tin0P , (psttn?T("bingo: the new portion is: \"")+T(psttn)+T("\" [POOP]:    "):T("bingo: an exact repeat (no new prefix) [POOP]:    "))+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     
-                    if( ida + idc >= 3 ) { strSubstringF( tin0P , psttn , countTC( 1 ) , countTC( ida + idc - 3 ) , psttP ) ; ___( psttn ) ; }
+                    }
+                        /**/traceF( tin0P , T("called  strSubstringF [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        strSubstringF( tin0P , psttn , countTC( 1 ) , countTC( ida + idc - 3 ) , psttP ) ; ___( psttn ) ;
+                        /**/traceF( tin0P , T("calling strSubstringF [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    {
+                    if( ida + idc >= 3 )
                     ZE( strokeS* , psttn ) ;
                 {
                 if( ida && ( ( ida == 1 && idc == 1 ) || psttP[ CSpREFIX - 3 + ida + idc ] == S1C('.') ) )
                 countT ida = strIdF( tin0P , pstts , psttP ) ;
     
-                /**/traceF( tin0P , T("looking for \"")+T(pstts)+T("\" in \"")+T(psttP)+T("\"") ) ;
+                /**/traceF( tin0P , T("looking for \"")+T(pstts)+T("\" in \"")+T(psttP)+T("\" [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 strSubstringF( tin0P , pstts , countTC( idc ) , countTC() , psttLeverP ) ; ___( pstts ) ;
                 ZE( strokeS* , pstts ) ;
                 /**/traceF( tin0P , T("dnsLabelsF d / [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
