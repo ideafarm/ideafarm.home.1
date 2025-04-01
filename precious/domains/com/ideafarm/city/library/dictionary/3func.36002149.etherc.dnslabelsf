@@ -72,15 +72,15 @@
             }
                 /**/traceF( tin0P , T("dnsLabelsF c / [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 }
-                    delF( tin0P , pstts ) ;
-                    else         idc += idDot ;
+                    delF( tin0P , psttr ) ;
+                    else         idc += idDot ;                         // SET idc TO POINT TO THE STROKE AFTER "." IN psttLeverP
                     if( !idDot ) idc = 0 ;
-                    countT idDot = strIdF( tin0P , T(".") , pstts ) ;
+                    countT idDot = strIdF( tin0P , T(".") , psttr ) ;
                 {
                 else
                 }
                     break ;
-                    delF( tin0P , pstts ) ;
+                    delF( tin0P , psttr ) ;
                     else delF( tin0P , psttn ) ;
                     }
                         /**/traceF( tin0P , T("dnsLabelsF / set [offBest,POOP]:    ")+TF2(offBest,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -99,15 +99,15 @@
                     if( idHit + idc >= 3 )
                     ZE( strokeS* , psttn ) ;
                 {
-                if( idHit && ( ( idHit == 1 && idc == 1 ) || psttP[ CSpREFIX - 3 + idHit + idc ] == S1C('.') ) )                // FOUND pstts AND IT'S EITHER AT THE BEGINNING OR PRECEDED BY A DOT
-                countT idHit = strIdF( tin0P , pstts , psttP ) ;
+                if( idHit && ( ( idHit == 1 && idc == 1 ) || psttP[ CSpREFIX - 3 + idHit + idc ] == S1C('.') ) )
+                countT idHit = strIdF( tin0P , psttr , psttP ) ;
     
-                /**/traceF( tin0P , T("looking for \"")+T(pstts)+T("\" in \"")+T(psttP)+T("\" [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                strSubstringF( tin0P , pstts , countTC( idc ) , countTC() , psttLeverP ) ; ___( pstts ) ;
-                ZE( strokeS* , pstts ) ;
+                /**/traceF( tin0P , T("looking for \"")+T(psttr)+T("\" in \"")+T(psttP)+T("\" [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                strSubstringF( tin0P , psttr , countTC( idc ) , countTC() , psttLeverP ) ; ___( psttr ) ;
+                ZE( strokeS* , psttr ) ;
                 /**/traceF( tin0P , T("dnsLabelsF d / [idc,POOP]:    ")+TF2(idc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
             {
-            while( idc )
+            while( idc )            // FOR EACH LABEL psttr IN psttLeverP (idc POINTS TO THE STROKE AFTER EACH ".", AND psttr IS SUCCESSIVELY SHORTER DOMAINS, EACH DERIVED FROM THE PRECEDING BY DROPPING THE LEFTMOST LABEL)
             countT idc = 1 ;
             /**/traceF( tin0P , T("looking for portions of \"")+T(psttLeverP)+T("\", registered at ")+TF1(swOffP)+T(", in \"")+T(psttP)+T("\"") ) ;
             psttLeverP = (strokeS*)swOffP.leverF( tin0P , idf ) ;
