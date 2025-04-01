@@ -8,19 +8,24 @@
 
 
 }
-    pbP = pbiSave ? pbiSave : pbi ;
+    pbP = pbiNext ? pbiNext : pbi ;
     if( !POOP ) { strMakeF( tin0P , LF , psttP , T(ostox) ) ; ___( psttP ) ; }
 
     __Z( cDo ) ;
 
     }
+        }
+                  pbiNext = 0 ;
+            pbi = pbiNext ;
+        {
+        if( pbiNext )
 
         }
             }
                 break ;
                 pbi ++ ;
             {
-            else
+            else                                            //NULL INDICATES TERMINATION OF LABELS
             if( *pbi ) { OStEXTAK( ostox , "." ) }
             OStEXTAL( ostox , pbLabel , cbLabel )
 
@@ -28,20 +33,47 @@
             countT         cbLabel = *pbi ; pbi += 1 ;
         {
         else
-        else if( *pbi & 0xc0 ) ;//TELLsYSc1( ifcIDtYPEtELLsYS_ERRORlABELtOOlONG )
         }
-            continue ;
-            pbi = (const byteT*)pHeaderP + ( SWABnET2( *(count01T*)pbi ) & ~0xc000 ) ;
-            pbiSave = pbi + 2 ;
+            break ;
+            __( 0x22222222 ) ;
         {
-        if( ( *pbi & 0xc0 ) == 0xc0 )
-    {                                                   //20250322@1213: "while( -- cDo )" FROM "for(;;)" BECAUSE OBSERVED INFINITE LOOPING WITHIN HERE, PERHAPS DUE TO INTENTIONALLY, MALICIOUSLY MALFORMED REQUEST
-    while( -- cDo )                                     // ASSUME: *pbc IS INITIALLY NOT 0. CODE STRUCTURE REFLECTS NONCOMPRESSED, NULL TERMINATED FORMAT. COMPRESSION CODE ASSUMED TO ONLY OCCUR AT END (PER RFC SPEC)
+        else if( *pbi & 0xc0 )                  // LABEL IS TOO LONG
+        }
+            }
+                continue ;
+                pbi     = pbiAsk  ;
+                pbiNext = pbi + 2 ;
+            {
+            else
+            }
+                break ;
+                __( 0x11111111 ) ;
+            {
+            if( pbiAsk >= (const byteT*)pHeaderP + offCeiling )
+            const byteT* pbiAsk = (const byteT*)pHeaderP + ( SWABnET2( *(count01T*)pbi ) & ~0xc000 ) ;
+            countT offCeiling = sizeof( dnsMsgHeaderS ) + pbi - pbP ;                                               // ONLY ALLOW OFFSETS BELOW CURRENT OFFSET
+        {
+        if( ( *pbi & 0xc0 ) == 0xc0 )           // count01T AT pbi, AFTER MASKING AWAY 0xc000, IS OFFSET TO PRIOR LABEL
+    {                                                                                                                                                                           //20250322@1213: "while( -- cDo )" FROM "for(;;)" BECAUSE OBSERVED INFINITE LOOPING WITHIN HERE, PERHAPS DUE TO INTENTIONALLY, MALICIOUSLY MALFORMED REQUEST
+    while( -- cDo )                                                                                                                                                     // ASSUME: *pbi IS INITIALLY NOT 0. CODE STRUCTURE REFLECTS NONCOMPRESSED, NULL TERMINATED FORMAT. COMPRESSION CODE ASSUMED TO ONLY OCCUR AT END (PER RFC SPEC)
     countT cDo = TUCK + 1 ;
-    ZE( const byteT* , pbiSave ) ;
+    ZE( const byteT* , pbiNext ) ;
     const byteT* pbi = pbP ;
 
     OStEXT( ostox , TUCK << 2 )                 //20250322@1213: "TUCK << 2" FROM "TUCK" W/O ANALYSIS
+
+    //
+    //     QCLASS (2 BYTES)
+    //     QTYPE (2 BYTES)
+    //        LABELvALUE
+    //        LENGTH OF LABELvALUE (1 BYTE)     (VALUE 0 INDICATES TERMINATION)
+    //       LABEL (USUALLY MULTIPLE)
+    //     QNAME
+    //   QUERY (USUALLY 1 BUT CAN BE MULTIPLE)
+    //   HEADER
+    // INPUT FORMAT (RFC 1035)
+
+    // 20250331@2115: EDITED TO HANDLE COMPRESSION CORRECTLY AND TO IMPROVE GLASS FOR INVALID COMPRESSION OFFSET
 
     _IO_
 
