@@ -20,7 +20,7 @@
                     }
                         strPourF( tin0P , *pSoulP , soulPour ) ;
                         strFuseF( tin0P , soulPour , psttw ) ;
-                        soulC soulPour( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
+                        soulC soulPour( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
                     {
                     else
                     if( psttw->idAdam <= CSTTsOULfUSEdEFAULT ) strFuseF( tin0P , *pSoulP , psttw ) ;
@@ -53,7 +53,7 @@
                     }
                         strPourF( tin0P , souli , soulPour ) ;
                         strFuseF( tin0P , soulPour , psttw ) ;
-                        soulC soulPour( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
+                        soulC soulPour( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
                     {
                     else
                     if( psttw->idAdam <= CSTTsOULfUSEdEFAULT ) strFuseF( tin0P , souli , psttw ) ;
@@ -67,7 +67,7 @@
             ZE( countT , idfLath ) ;
             strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
             countT idf = 1 ;
-            soulC souli( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
+            soulC souli( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
 
             strMakeF( tin0P , LF , psttP , 0 , psttOldP->idAdam ) ; ___( psttP ) ;
         {
@@ -87,7 +87,7 @@
 
             if( bDeleteOld ) delF( tin0P , *(strokeS**)&psttOldP ) ;
             strFuseF( tin0P , souli , psttOldP ) ;
-            soulC souli( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
+            soulC souli( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
             countT cExtra = psttOldP[ 2 ].idAdam + csttExtraP ;
             countT cDo = psttOldP->idAdam ;
         {
@@ -109,7 +109,7 @@
 
             if( bDeleteOld ) delF( tin0P , *(strokeS**)&psttOldP ) ;
             strFuseF( tin0P , souli , psttOldP ) ;
-            soulC souli( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
+            soulC souli( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_LIFO ) ;
             countT cExtra = psttOldP[ 2 ].idAdam + csttExtraP ;
             countT cDo = psttOldP->idAdam ;
         {

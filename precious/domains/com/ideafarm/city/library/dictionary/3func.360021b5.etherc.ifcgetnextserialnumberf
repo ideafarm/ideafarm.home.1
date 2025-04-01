@@ -23,7 +23,7 @@
     ZE( countT , finger ) ;
 
     sock.readF( tin0P , sIn ) ;
-    soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sIn( tin0P , *this , TAG( TAGiDnULL ) ) ;
 
     sock.writeF( tin0P , sOut ) ;
 
@@ -31,7 +31,7 @@
     sOut << (countT)ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEcOUNTsTRING ;
     sOut << (countT)1 ;
     sOut << (countT)FINGERnEG_SERIALnUMBERdISPENSERcMD ;
-    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tin0P , *this , TAG( TAGiDnULL ) ) ;
 
     sock.connectF( tin0P , idPortDispenser ) ;
     socketC sock( tin0P , *this , TAG( TAGiDnULL ) ) ;

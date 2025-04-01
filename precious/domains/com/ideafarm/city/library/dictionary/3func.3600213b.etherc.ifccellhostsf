@@ -24,7 +24,7 @@
             if( POOP ) POOPR
 
             sChat2.writeF( tin0P , sOut3 ) ;
-            soulC sOut3( tin0P , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_BYE ) ;
+            soulC sOut3( tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_BYE ) ;
     
             }
                 b_idaLeverP.ungrabF( tin0P ) ;
@@ -72,8 +72,8 @@
     
             sChat2.readF( tin0P , sIn2 ) ;
             sChat2.writeF( tin0P , sOut2 ) ;
-            soulC sOut2( tin0P , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_QUERYaDAMS ) ;
-            soulC sIn2( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sOut2( tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_QUERYaDAMS ) ;
+            soulC sIn2( tin0P , *this , TAG( TAGiDnULL ) ) ;
     
             }
                 }
@@ -141,8 +141,8 @@
     
             sChat2.readF( tin0P , sIn1 ) ;
             sChat2.writeF( tin0P , sOut1 ) ;
-            soulC sOut1( tin0P , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_QUERYnICnAME ) ;
-            soulC sIn1( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sOut1( tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_QUERYnICnAME ) ;
+            soulC sIn1( tin0P , *this , TAG( TAGiDnULL ) ) ;
     
             sChat2.connectF( tin0P , idPort2 , idhIfc ) ;
             socketC sChat2( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
@@ -153,10 +153,10 @@
                 souli >> idReply ;
                 ZE( countT , idReply ) ;
                 sChat.readF( tin0P , souli ) ;
-                soulC souli( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC souli( tin0P , *this , TAG( TAGiDnULL ) ) ;
     
                 sChat.writeF( tin0P , soulo ) ;
-                soulC soulo( tin0P , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_NEWsOCKET ) ;
+                soulC soulo( tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_FIFO , ifcIDcMDsESSION_NEWsOCKET ) ;
     
                 sChat.connectF( tin0P , ifcPORToLD2_CHAT , idhIfc ) ;
                 socketC sChat( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;

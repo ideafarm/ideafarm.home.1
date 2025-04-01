@@ -24329,7 +24329,6 @@ this class was a precursor to the arrayC class
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.ag1_soulC_C : 1snip.150000d3.ag1_soulc_c END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.15*.soulC : 1snip.15000039.soulc BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -24377,25 +24376,23 @@ this class was a precursor to the arrayC class
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34001.soulC.NEWdELcLASStHIRD!||
  ~soulC( voidT ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34002.soulC.dt_soulC!||
- soulC( tin0S& tin0P , soulC& vP , const flagsT flagsP = flSOUL_null , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
+ soulC( tin0S& tin0P , etherC& etherP , soulC& vP , const flagsT flagsP = flSOUL_null , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34029.soulC.soulC!||
- soulC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP = flSOUL_null , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
- //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34003.soulC.soulC!||
  soulC( tin0S& tin0P , etherC& etherP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP = flSOUL_null , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/!||
- soulC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const countT vP , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
+ soulC( tin0S& tin0P , etherC& etherP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const countT vP , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34004.soulC.soulC!||
- soulC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const measureT mP , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
+ soulC( tin0S& tin0P , etherC& etherP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const measureT mP , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34021.soulC.soulC!||
- soulC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const measure04T mP , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
+ soulC( tin0S& tin0P , etherC& etherP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const measure04T mP , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34024.soulC.soulC!||
- soulC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const byteT* const pbP , const flagsT flagsP , const countT cbP = 0 , const flagsT flagsItemP = flSOULiTEM_null , const flagsT flagsModeP = flSOULsHIFTlEFTmODE_null , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ; //U::REORDER THE flagsP PARAM
+ soulC( tin0S& tin0P , etherC& etherP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const byteT* const pbP , const flagsT flagsP , const countT cbP = 0 , const flagsT flagsItemP = flSOULiTEM_null , const flagsT flagsModeP = flSOULsHIFTlEFTmODE_null , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ; //U::REORDER THE flagsP PARAM
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34007.soulC.soulC!||
- soulC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const countT* const pcP , const countT ccP = 0 , const boolT bOrderSignificanceIncreasingP = 0 , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
+ soulC( tin0S& tin0P , etherC& etherP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const countT* const pcP , const countT ccP = 0 , const boolT bOrderSignificanceIncreasingP = 0 , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401b.soulC.soulC!||
- soulC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const strokeS* const psttP , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
+ soulC( tin0S& tin0P , etherC& etherP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , const strokeS* const psttP , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.3401d.soulC.soulC!||
- soulC( tin0S& tin0P , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , soulC& soulP , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
+ soulC( tin0S& tin0P , etherC& etherP , const countT idLineCtP , const countT idiFileCtP , const byteT* const pbBitsCtP , const flagsT flagsP , soulC& soulP , const osTextT* const postNameJotP = 0 , const countT cbJotDataBookP = 0 , const osTextT* const postNameP = 0 ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.34009.soulC.soulC!||
 
  /*soixlOld*/

@@ -10,17 +10,17 @@
 }
     }
         sChat2.writeF( tin0P , soulb ) ;
-        soulC soulb( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
+        soulC soulb( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
 
         __( idReply - ifcIDcMDsESSION_REBOOTrEPLY ) ;
         souli2 >> idReply ;
         ZE( countT , idReply ) ;
 
         sChat2.readF( tin0P , souli2 ) ;
-        soulC souli2( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC souli2( tin0P , *this , TAG( TAGiDnULL ) ) ;
 
         sChat2.writeF( tin0P , soulo2 ) ;
-        soulC soulo2( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REBOOT ) ; //20221122@1931: ADDED ME, USING osFireF AS BASELINE CODE.  SUPPORT FOR A REMOTE SUSPEND CAN BE ADDED IF EVER NEEDED
+        soulC soulo2( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REBOOT ) ; //20221122@1931: ADDED ME, USING osFireF AS BASELINE CODE.  SUPPORT FOR A REMOTE SUSPEND CAN BE ADDED IF EVER NEEDED
 
         sChat2.connectF( tin0P , portChat2 , nicNameP ) ;
         socketC sChat2( tin0P , *this , TAG( TAGiDnULL ) ) ;
@@ -31,13 +31,13 @@
             souli >> idReply ;
             ZE( countT , idReply ) ;
             sChat.readF( tin0P , souli ) ;
-            soulC souli( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC souli( tin0P , *this , TAG( TAGiDnULL ) ) ;
 
             sChat.writeF( tin0P , soulo ) ;
             sChat.connectF( tin0P , ifcPORToLD2_CHAT , nicNameP ) ;
             socketC sChat( tin0P , *this , TAG( TAGiDnULL ) ) ;
 
-            soulC soulo( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKET ) ;
+            soulC soulo( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKET ) ;
         {
         ZE( countT , portChat2 ) ;
     {

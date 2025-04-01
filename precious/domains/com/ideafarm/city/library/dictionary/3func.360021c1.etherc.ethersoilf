@@ -154,7 +154,7 @@
                         {
                         if( pStJournal ) while( *pStJournal )
                         strFuseF( tin0P , soulReport6 , tHead ) ;
-                        soulC soulReport6( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.report6" ) ;
+                        soulC soulReport6( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.report6" ) ;
 
                         countT cJournal = pStJournal ? *pStJournal : 0 ;
                         TN( tSuffix , " }\r\n" ) ;
@@ -203,7 +203,7 @@
                         {
                         if( pStLog ) while( *pStLog )
                         strFuseF( tin0P , soulReport5 , tHead ) ;
-                        soulC soulReport5( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.report5" ) ;
+                        soulC soulReport5( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.report5" ) ;
 
                         countT cLog = pStLog ? *pStLog : 0 ;
                         TN( tSuffix , " }\r\n" ) ;
@@ -292,8 +292,8 @@
                         if( pStDo )
                         strFuseF( tin0P , soulReport4 , tHeadAbridged ) ;
                         strFuseF( tin0P , soulReport3 , tHeadFull ) ;
-                        soulC soulReport4( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.report4" ) ;
-                        soulC soulReport3( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.report3" ) ;
+                        soulC soulReport4( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.report4" ) ;
+                        soulC soulReport3( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.report3" ) ;
 
                         }
                             while( ~hWalk ) ;
@@ -449,7 +449,7 @@
                         ZE( countT  , total   ) ;
                         ZE( countT  , idsLath ) ;
                         strFuseF( tin0P , soulReport2 , tHead ) ;
-                        soulC soulReport2( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.report2" ) ;
+                        soulC soulReport2( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.report2" ) ;
 
                         ) ;
 
@@ -751,7 +751,7 @@
                         ZE( countT  , total1  ) ;
                         ZE( countT  , idsLath ) ;
                         strFuseF( tin0P , soulReport1 , tHead ) ;
-                        soulC soulReport1( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.report1" ) ;
+                        soulC soulReport1( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.report1" ) ;
 
                         }
                             ;
@@ -3911,14 +3911,14 @@
 /*N2D*/                                                 ZE( countT   , idWothLag ) ;
 /*N2D*/                                                 ZE( strokeS* , psttLag ) ;
 /*N2D*/                                             {
-/*N2D*/                                             soulC soulLinesLazy( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO , "soul.lines.lazy" ) ;
+/*N2D*/                                             soulC soulLinesLazy( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_LIFO , "soul.lines.lazy" ) ;
 /*N2D*/                                             //U::20140127@1657: REPLACED WITH soulLinesLazy: staqC stq_psttl( tin0P ) ;
 /*N2D*/                                             ZE( countT , idWothMin ) ;
 /*N2D*/
 /*N2D*/                                             //traceF( tin0P , T("called strWordsF 1") ) ;
 /*N2D*/                                             countT cWords = strWordsF( tin0P , soulLines , soulValue , sttq , tcr , flSTRwORDS_DELIMITERS|flSTRwORDS_SPLITaTmARK|flSTRwORDS_CONSUMEiNPUT ) ;
 /*N2D*/                                             //traceF( tin0P , T("calling strWordsF 1") ) ;
-/*N2D*/                                             soulC soulLines( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.lines" ) ;  // THIS IS LIFO BECAUSE KTR ("KNOWLEDGE TREE REVERSED") INPUT IS IN REVERSE ORDER SO THAT IT FLOWS UPWARD WHEN THE SOIL FILE IS EDITED USING A CONVENTIONAL FOREIGN EDITOR
+/*N2D*/                                             soulC soulLines( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.lines" ) ;  // THIS IS LIFO BECAUSE KTR ("KNOWLEDGE TREE REVERSED") INPUT IS IN REVERSE ORDER SO THAT IT FLOWS UPWARD WHEN THE SOIL FILE IS EDITED USING A CONVENTIONAL FOREIGN EDITOR
 /*N2D*/                                         {
 /*N2D*/                                         else
 /*N2D*/                                         if( !soulValue ) traceF( tin0P , T("!exception: soulValue is empty") ) ;
@@ -4357,7 +4357,7 @@
 /*N1D*/                                                     TN( tDateLath , "" ) ;
 /*N1D*/
 /*N1D*/                                                     soulFileNamesCopy = soulFileNames ;
-/*N1D*/                                                     soulC soulFileNamesCopy( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.file.names.copy" ) ;
+/*N1D*/                                                     soulC soulFileNamesCopy( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.file.names.copy" ) ;
 /*N1D*/
 /*N1D*/                                                     /**********************************************************************************************************/
 /*N1D*/                                                     /*****                                                                                                *****/
@@ -4626,7 +4626,7 @@
 /*N1D*/                                                         {
 /*N1D*/                                                         while( soulIdFragShort ) //U::EMIT [idFrag,boxCloud] PAIRS TO ROOT OF HTML OUTPUT
 /*N1D*/                                                         TN( tCloudDefault , "[error: unknown location in cloud]/" ) ;
-/*N1D*/                                                         soulC soulIdFragCloud( tin0P , TAG( TAGiDnULL ) ) ;
+/*N1D*/                                                         soulC soulIdFragCloud( tin0P , *this , TAG( TAGiDnULL ) ) ;
 /*N1D*/
 /*N1D*/                                                         SCOOPS
 /*N1D*/                                                     {
@@ -4849,11 +4849,11 @@
 /*N1D*/
 /*N1D*/                                                     TN( tSssDim , "" ) ; tSssDim =           // ".12345678x12345678."
 /*N1D*/                                                 {
-/*N1D*/                                                 soulC soulIdFragShort( tin0P , TAG( TAGiDnULL ) ) ;
+/*N1D*/                                                 soulC soulIdFragShort( tin0P , *this , TAG( TAGiDnULL ) ) ;
 /*N1D*/                                                 ZE( strokeS* , psttCurrentNameLag ) ;
 /*N1D*/
 /*N1D*/                                                 strFuseF( tin0P , soulrFileSets , T(postReportProlog) ) ;
-/*N1D*/                                                 soulC        soulrFileSets( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.r.file.sets" ) ;
+/*N1D*/                                                 soulC        soulrFileSets( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.r.file.sets" ) ;
 /*N1D*/                                                 emitSetParmS esp( tin0P , *this , stFileType , bTrace , tArchive ) ;
 /*N1D*/                                                 stackC       stSet( tin0P , third , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE , ifcSTACKtYPE_PTR_strokeS ) ;
 /*N1D*/                                                 TN( tSet , "" ) ;
@@ -4904,7 +4904,7 @@
 /*N1D*/                                         ZE( countT , cDirs ) ;
 /*N1D*/
 /*N1D*/                                         countT pcArg[] = { (countT)this , (countT)&stTimeMinMax , (countT)&soulFileNames , idModeWalk , (countT)(strokeS*)tPrefix , (countT)(strokeS*)tConfidential , (countT)(strokeS*)tPrivate , (countT)(strokeS*)tPhone , (countT)(strokeS*)tVideophone , (countT)(strokeS*)tExtMp3 } ;
-/*N1D*/                                         soulC soulFileNames( tin0P , TAG( TAGiDnULL )             , ( idModeWalk == ifcIDmODEsOILwALK_ZIP || idModeWalk ==  ifcIDmODEsOILwALK_INSPECTfILEnAMES ) ? flSOUL_null                                             : flSOUL_LIFO , "soul.file.names"         ) ;
+/*N1D*/                                         soulC soulFileNames( tin0P , *this , TAG( TAGiDnULL )             , ( idModeWalk == ifcIDmODEsOILwALK_ZIP || idModeWalk ==  ifcIDmODEsOILwALK_INSPECTfILEnAMES ) ? flSOUL_null                                             : flSOUL_LIFO , "soul.file.names"         ) ;
 /*N1D*/
 /*N1D*/                                         TN( tExtMp3       , ".mp3"          ) ;
 /*N1D*/                                         TN( tVideophone   , "!videophone"   ) ;
@@ -5685,9 +5685,9 @@
 /*N1D*/ /*---------------- LOAD BRANCHES ----------------*/         branchS::loadIF( tin0P , *this , etPrimeIF( tin0P ) , jotBranches , csttTrimmed , soulBody , flagsLoad , &soulLinkInner ) ;
 /*N1D*/                                                             _IO_
 /*N1D*/                                                         {
-/*N1D*/                                                         soulC soulLinkInner( tin0P , TAG( TAGiDnULL ) ) ;
+/*N1D*/                                                         soulC soulLinkInner( tin0P , *this , TAG( TAGiDnULL ) ) ;
 /*N1D*/                                                     {
-/*N1D*/                                                     soulC soulLinkOuter( tin0P , TAG( TAGiDnULL ) ) ;
+/*N1D*/                                                     soulC soulLinkOuter( tin0P , *this , TAG( TAGiDnULL ) ) ;
 /*N1D*/
 /*N1D*/                                                     }
 /*N1D*/                                                         strFuseF( tin0P , soulReportLinkage , tHead ) ;
@@ -5708,7 +5708,7 @@
 /*N1D*/                                                         TN( tHead ,
 /*N1D*/                                                         TN( tFileNameSuffix , ".link.pages.soul.blob.not.html" ) ;
 /*N1D*/                                                     {
-/*N1D*/                                                     soulC soulReportLinkage( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.report.linkage" ) ;
+/*N1D*/                                                     soulC soulReportLinkage( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.report.linkage" ) ;
 /*N1D*/                                                 {
 /*N1D*/
 /*N1D*/                                                 }
@@ -5775,10 +5775,10 @@
 /*N1D*/
 /*N1D*/                                                         TN( tHead ,
 /*N1D*/                                                     {
-/*N1D*/                                                     soulC soulReportFragments( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.report.fragments" ) ;
+/*N1D*/                                                     soulC soulReportFragments( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.report.fragments" ) ;
 /*N1D*/
 /*N1D*/                                                     boxGetShadowF( tin0P , sBinary , tFileBinary ) ;
-/*N1D*/                                                     soulC sBinary( tin0P , TAG( TAGiDnULL ) ) ;
+/*N1D*/                                                     soulC sBinary( tin0P , *this , TAG( TAGiDnULL ) ) ;
 /*N1D*/
 /*N1D*/                                                     diskCopyFileF( tin0P , tFileBinary , T("///ideafarm/tmp/link.frag.note.soul.blob.not.html") ) ;
 /*N1D*/                                                     TN( tFileBinary , "" ) ; tFileBinary = tFolderFile+tFileNameSuffix ;
@@ -6149,8 +6149,8 @@
                 flagsT flagsReport  = flETHERsOILrEPORT_null ;
                 flagsT flagsPutFile = flBRANCHspUTfILEf_null ;
                 flagsT flagsLoad    = flBRANCHslOADf_null ;
-                soulC soulBody( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.body" , CBjOTbOOKdEFAULT << 3 ) ; // IF LINT THEN RETAINS WHITE SPACE AND MIGHT HAVE ERROR FLAG MARKS ; IF REPORT THEN OMITS WHITE SPACE OTHER THAN INDENT BLANKS
-                soulC soulValue( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.value" , CBjOTbOOKdEFAULT << 3 ) ; // USED TO ELIMINATE 02 BIT ADDRESS SPACE CAPACITY CONSTRAINT FOR HUGE VALUE STRINGS
+                soulC soulBody( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.body" , CBjOTbOOKdEFAULT << 3 ) ; // IF LINT THEN RETAINS WHITE SPACE AND MIGHT HAVE ERROR FLAG MARKS ; IF REPORT THEN OMITS WHITE SPACE OTHER THAN INDENT BLANKS
+                soulC soulValue( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.value" , CBjOTbOOKdEFAULT << 3 ) ; // USED TO ELIMINATE 02 BIT ADDRESS SPACE CAPACITY CONSTRAINT FOR HUGE VALUE STRINGS
                 stackC stFileType(   tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE  , ifcSTACKtYPE_PTR_strokeS ) ; // FORMAT EXAMPLE: mp3
                 stackC stTimeMinMax( tin0P , *this , TAG( TAGiDnULL ) , flSTACKc_DOnOTsERIALIZE | flSTACKc_XRAY | flSTACKc_BLOB , 2 * sizeof( strokeS* ) ) ; // FORMAT EXAMPLE: 20130711@1401 20130711@1401
                 countT idKtrMode = ifcIDmODEpUTfILE_OTHER ;
@@ -6269,7 +6269,7 @@
             //traceF( tin0P , T("etherSoilF / setting up to handle ")+TF2(cWords,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" words") ) ;
 
             countT cWords = strWordsF( tin0P , soulWords , soulInP , sttq , tMarks , F(flagsP) & flETHERsOILf_CONSUMEiNPUT ? flSTRwORDS_DELIMITERS|flSTRwORDS_SPLITaTmARK|flSTRwORDS_CONSUMEiNPUT : flSTRwORDS_DELIMITERS|flSTRwORDS_SPLITaTmARK ) ;
-            soulC soulWords( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.words" , CBjOTbOOKdEFAULT << 3 ) ;              // 20241020@1700: CBjOTbOOKdEFAULT << 0 OVERFLOWED % 01 PERTUCK WITH web.root.ideafarm.soil THAT IS 44KB BYTES
+            soulC soulWords( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.words" , CBjOTbOOKdEFAULT << 3 ) ;              // 20241020@1700: CBjOTbOOKdEFAULT << 0 OVERFLOWED % 01 PERTUCK WITH web.root.ideafarm.soil THAT IS 44KB BYTES
 
             //traceF( tin0P , T("etherSoilF / loading soulWords") ) ;                                                       //U:: 20241020@1700: SET THE CAPACITY OF MY soulC INSTANCES BY INSPECTING THE SIZE OF THE INPUT FILE
 
@@ -6590,7 +6590,7 @@
             boolT bWantNative = idModeP == ifcIDmODEeTHERsOIL_NATIVEfROMaSCII ;
 
             strFuseF( tin0P , soult1 , soulInP , 0 , S1C( '\\' ) , T("[]") ) ; //U::ADD THIS API TO etherC
-            soulC soult1( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.t1" ) ;
+            soulC soult1( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.t1" ) ;
             //if( bTrace ) trace F( tin0P , T("etherSoilF / setting up 1 / ifcIDmODEeTHERsOIL_NATIVEfROMaSCII / 2") ) ;
 
             TN( tmBar             , "" ) ; tmBar             = T("")+S2(sa_MARKsYSTEMbREAK,sc_MARKsYSTEM) ;         TN( tBar              , "|"   ) ;
@@ -7329,7 +7329,7 @@
     switch( idModeP )
     ZE( boolT  , bRepeat ) ;
     ZE( countT , cFlag1 ) ;
-    soulC soulOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.out" ) ;
+    soulC soulOut( tin0P , *this , TAG( TAGiDnULL ) , flSOUL_null , "soul.out" ) ;
     TN( tb , " " ) ;
     TN( tcr , "\r\n" ) ;
 
