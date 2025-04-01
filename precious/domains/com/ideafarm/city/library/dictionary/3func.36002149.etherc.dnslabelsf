@@ -87,7 +87,7 @@
                         offBest = swOffP ;
                         psttBest = psttn ;
                         delF( tin0P , psttBest ) ;
-                    {
+                    {                                                                   //U::20250331@2332: THIS CODE PREFERS SHORTER DOMAINS TO LONGER DOMAINS ; WHY?
                     if( !psttBest || !psttn || psttn->idAdam < psttBest->idAdam )
                     /**/traceF( tin0P , (psttn?T("bingo: the new portion is: \"")+T(psttn)+T("\" [POOP]:    "):T("bingo: an exact repeat (no new prefix) [POOP]:    "))+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     
@@ -99,8 +99,8 @@
                     if( idHit + idc >= 3 )
                     ZE( strokeS* , psttn ) ;
                 {
-                if( idHit && ( ( idHit == 1 && idc == 1 ) || psttP[ CSpREFIX - 3 + idHit + idc ] == S1C('.') ) )
-                countT idHit = strIdF( tin0P , psttr , psttP ) ;
+                if( idHit && ( ( idHit == 1 && idc == 1 ) || psttP[ CSpREFIX - 3 + idHit + idc ] == S1C('.') ) )    //U::20250331@2332: CONJ: THIS CODE IS INTENDED TO SUCCESSIVELY DROP THE LEFTMOST LABEL IN A QUERY UNTIL A MATCH IS FOUND ; BUT WHY?
+                countT idHit = strIdF( tin0P , psttr , psttP ) ;                                                    //U::20250331@2332: I DON'T UNDERSTAND WHAT THIS CODE DOES ; CONJ: psttP SHOULD BE psttLeverP (idc POINTS INTO psttLeverP, NOT psttP)
     
                 /**/traceF( tin0P , T("looking for \"")+T(psttr)+T("\" in \"")+T(psttP)+T("\" [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 strSubstringF( tin0P , psttr , countTC( idc ) , countTC() , psttLeverP ) ; ___( psttr ) ;

@@ -135,18 +135,40 @@ DONE( tmWorkF )
 
                                                 }
                                                     }
+                                                        etThread.osTimeNowF( tin0P , timeUsed1 , timeUsed2 ) ;
+                                                        timeUsed2 = timeUsed1 = 0 ;
+                                                        cUsed = 1 ;
+
                                                         grab_tWoTimePassword.ungrabF( tin0P ) ;
                                                                               tGorillaSuffix = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
                                                         tGorillaSuffixUsed  = tGorillaSuffix ; 
                                                                               tWoTimePassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
                                                         tWoTimePasswordUsed = tWoTimePassword ;
                                                         grab_tWoTimePassword.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                                                        cUsed = 0 ;
+                                                    {
+                                                    if( bNewPassword )
+
+                                                    }
+                                                        bNewPassword = 1 ;
                                                         bDivert = 0 ;
                                                     {
-                                                    else if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffix     ) )
-                                                         if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffixUsed ) ) bDivert = 0 ;
+                                                    else if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffix ) )
+                                                    }
+                                                        if( ++ cUsed > 0x8 || timeE2 || timeE1 > TOCK ) bNewPassword = 1 ;
+
+                                                        etThread.osTimeSubtractF( tin0P , timeE1 , timeE2 , timeUsed1 , timeUsed2 ) ;
+                                                        etThread.osTimeNowF(      tin0P , timeE1 , timeE2 ) ;
+                                                        ZE( sCountT , timeE2 ) ;
+                                                        ZE( countT  , timeE1 ) ;
+
+                                                        bDivert = 0 ;                                                                       //PS:PERSONALITY: THE DUPLICATE USAGE IS ALWAYS HONORED, BUT THEN WILL BE RETIRED IF USED TOO MANY TIMES OR TOO MUCH TIME HAS ELAPSED SINCE WOTH USE
+                                                    {
+                                                    if( !etThread.strCompareF( tin0P , psttSuffix , tGorillaSuffixUsed ) )
+                                                    ZE( boolT , bNewPassword ) ;
                                                 {
-                                                if( bDivert )                           //PS:PERSONALITY: HONOR THE USED SUFFIX SO THAT DUPLICATE QUERIES ALL RECEIVE THE SAME wh1 ANSWER UNTIL THE CURRENT PASSWORD IS USED
+                                                if( bDivert )                                                                               //PS:PERSONALITY: HONOR THE USED SUFFIX SO THAT DUPLICATE QUERIES ALL RECEIVE THE SAME wh1 ANSWER UNTIL THE CURRENT PASSWORD IS USED
 
                                                 /**/etRock.traceF( tin0P , T("[domainNet,suffix,peer]:      \"")+T(psttw)+T("\"    \"")+T(psttSuffix)+T("\"    \"")+tDomainPeer+T("\"") ) ;
 
@@ -435,6 +457,9 @@ DONE( tmWorkF )
     etThread.osThreadF( TaRG2cBsTACK( tmFreshSettingsF               , CBsTACKmIN << 1 ) , (countT)&mySettings      , (countT)&sgnSettingsReady     ) ;
 
     grab_tWoTimePassword.ungrabF( tin0P ) ;
+    ZE( sCountT , timeUsed2 ) ;
+    ZE( countT  , timeUsed1 ) ;
+    ZE( countT  , cUsed ) ;
     TN( tGorillaSuffixUsed          , ""                 ) ;
     TN( tWoTimePasswordUsed         , ""                 ) ;
     TN( tGorillaSuffix              , ""                 ) ; tGorillaSuffix  = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
