@@ -92,15 +92,15 @@
                     /**/traceF( tin0P , (psttn?T("bingo: the new portion is: \"")+T(psttn)+T("\" [POOP]:    "):T("bingo: an exact repeat (no new prefix) [POOP]:    "))+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     
                     }
-                        /**/traceF( tin0P , T("called  strSubstringF [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
-                        strSubstringF( tin0P , psttn , countTC( 1 ) , countTC( ida + idc - 3 ) , psttP ) ; ___( psttn ) ;
+                        /**/traceF( tin0P , T("called  strSubstringF [POOP,psttn]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    \"")+T(psttn)+T("\"") ) ;
+                        strSubstringF( tin0P , psttn , countTC( 1 ) , countTC( idHit + idc - 3 ) , psttP ) ; ___( psttn ) ;
                         /**/traceF( tin0P , T("calling strSubstringF [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                     {
-                    if( ida + idc >= 3 )
+                    if( idHit + idc >= 3 )
                     ZE( strokeS* , psttn ) ;
                 {
-                if( ida && ( ( ida == 1 && idc == 1 ) || psttP[ CSpREFIX - 3 + ida + idc ] == S1C('.') ) )
-                countT ida = strIdF( tin0P , pstts , psttP ) ;
+                if( idHit && ( ( idHit == 1 && idc == 1 ) || psttP[ CSpREFIX - 3 + idHit + idc ] == S1C('.') ) )                // FOUND pstts AND IT'S EITHER AT THE BEGINNING OR PRECEDED BY A DOT
+                countT idHit = strIdF( tin0P , pstts , psttP ) ;
     
                 /**/traceF( tin0P , T("looking for \"")+T(pstts)+T("\" in \"")+T(psttP)+T("\" [POOP]:    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                 strSubstringF( tin0P , pstts , countTC( idc ) , countTC() , psttLeverP ) ; ___( pstts ) ;
