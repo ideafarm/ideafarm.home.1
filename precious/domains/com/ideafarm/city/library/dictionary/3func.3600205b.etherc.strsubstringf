@@ -21,7 +21,7 @@
         {
         if( !POOP )
 
-        __Z( psttP ) ;    
+        if( !psttP ) { __( 0x88888888 ) ; }
         }
             if( psttP ) { SETpREFIX( psttP , csttCopy , csttExtraP ) ; }
 
@@ -35,15 +35,16 @@
                 psttP[ 0 ].idAdam += csttCopy ;_WQ
             {
             if( !POOP )
-            __( psttP[ 2 ].idAdam < csttCopy ) ;_WQ
+            if( psttP[ 2 ].idAdam < csttCopy ) { __( 0x77777777 ) ; }
         {
         if( psttP )
         countT csttBefore = psttP ? psttP->idAdam : 0 ;_WQ
     
         countT csttCopy = idLastP - idFirstP + 1 ;_WQ
-        __( idFirstP > idLastP ) ;_WQ
-        __( idLastP > csttBig ) ;_WQ
+        if( idFirstP > idLastP ) { __( 0x66666666 ) ; }
+        if( idLastP  > csttBig ) { __( 0x55555555 ) ; }
         if( !idLastP ) idLastP = csttBig ;_WQ
+        _IO_
     {
     else
     if( csttBig < idFirstP ) idFirstP = 0 ;
@@ -53,11 +54,11 @@
 
     }
         if( POOP ) return ;
-        __( psttBigP->idCaste != sc_PREFIXlENGTH ) ;_WQ
+        if( psttBigP->idCaste != sc_PREFIXlENGTH ) { __( 0x44444444 ) ; }
         if( POOP ) return ;
-        __( idLastP && idFirstP > idLastP ) ;_WQ
-        __Z( idFirstP ) ;_WQ
-        __Z( psttBigP ) ;_WQ
+        if( idLastP && idFirstP > idLastP        ) { __( 0x33333333 ) ; }
+        if( !idFirstP                            ) { __( 0x22222222 ) ; }
+        if( !psttBigP                            ) { __( 0x11111111 ) ; }
         if( POOP ) return ;
     {
     IFbEcAREFUL
