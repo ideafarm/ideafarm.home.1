@@ -20,7 +20,7 @@ DONE( tmRelayOldChatRepliesF )
             etThread.traceF( tin0P , T("writing sWrite (sNull or sReply)") ) ;
             TELL( "writing to below the reply soul read from above" )
             soulC& sWrite = soUp.etherF( tin0P ) ? sNull : sReply ;
-            soulC sNull( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sNull( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
             }
                 break ;
@@ -46,7 +46,7 @@ DONE( tmRelayOldChatRepliesF )
             TELL( "handling the soulC read from above" )
             soUp.readF( tin0P , sReply ) ;
             TELL( "reading from above a reply soulC" )
-            soulC sReply( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sReply( tin0P , etThread , TAG( TAGiDnULL ) ) ;
             idTray ++ ;
         {
         while( !POOP && !etThread )

@@ -42464,7 +42464,6 @@ this value controls the size of the pieces of text that are allocated in the poo
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200487.csttsoulfusedefault END
 //SOURCE: \ideafarm.home.1\precious\domains\com\ideafarm\city\library\dictionary\1snip.11*.* : 1snip.11200488.forstringsinspannedhead BEGIN
 
-
 //
 // Copyright (c) 1992-2025 Wo Of Ideafarm.  All rights reserved.  See https://github.com/ideafarm/ideafarm.home.1 for permitted uses.
 //
@@ -42481,13 +42480,13 @@ see FORsTRINGSiN
 #define FORsTRINGSiNsPANNEDhEAD(soulP,idP)                                                                                                                          \
                                                                                                                                                                     \
     {                                                                                                                                                               \
-        ZE( countT , _csttPending ) ;                                                                                                                             \
+        ZE( countT , _csttPending ) ;                                                                                                                               \
         strokeS _psttSingle[ CSpREFIX + 1 ] ;                                                                                                                       \
         SETpREFIX( _psttSingle , 1 , 0 )                                                                                                                            \
-        soulC _soul##idP( tin0P , TAG( TAGiDnULL ) ) ;                                                                                                               \
+        soulC _soul##idP( tin0P , ( soulP ) , TAG( TAGiDnULL ) ) ;                                                                                                  \
         while( soulP )                                                                                                                                              \
         {                                                                                                                                                           \
-            ZE( strokeS* , _psttp ) ;          /*"p":"PIECE" OR "PARTIAL"*/                                                                                       \
+            ZE( strokeS* , _psttp ) ;          /*"p":"PIECE" OR "PARTIAL"*/                                                                                         \
             soulP >> _psttp ; ___( _psttp ) ;                                                                                                                       \
                                                                                                                                                                     \
             if( _psttp ) for( countT offi = 0 ; offi < _psttp->idAdam ; offi ++ )                                                                                   \
@@ -42495,13 +42494,13 @@ see FORsTRINGSiN
                 switch( _psttp[ CSpREFIX + offi ].idCaste )                                                                                                         \
                 {                                                                                                                                                   \
                     case sc_PREFIXlENGTH : { __( _soul##idP ) ; _csttPending = _psttp[ CSpREFIX + offi ].idAdam ; break ; }                                         \
-                    case sc_PREFIXuTILITY : { break ; }                                                                                                              \
+                    case sc_PREFIXuTILITY : { break ; }                                                                                                             \
                     case sc_PREFIXeXTRA  : { break ; }                                                                                                              \
                     default              :                                                                                                                          \
                     {                                                                                                                                               \
                         _psttSingle[ CSpREFIX ] = _psttp[ CSpREFIX + offi ] ;                                                                                       \
                                                                                                                                                                     \
-                        ((tin1S&)tin0P).pEther->strFuseF( tin0P , _soul##idP , _psttSingle ) ;                                                                                  \
+                        ((tin1S&)tin0P).pEther->strFuseF( tin0P , _soul##idP , _psttSingle ) ;                                                                      \
                         if( !( -- _csttPending ) )
 
 

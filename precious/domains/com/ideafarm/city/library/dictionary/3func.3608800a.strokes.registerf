@@ -27,8 +27,8 @@
     
                 sad.cRefStroke ++ ;
                 sadamC& sad = (*pSadams)( tin0P , idAdam , 0 , &psFeat ) ;
-                *psFeat = **ppSoulP ;
-                soulC* psFeat = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psFeat ) ; //U::THIS COPY WILL NOT BE NEEDED WHEN OLD CODE IS GONE
+                *psFeat = **ppSoulP ;                                                                                               //20250402@1044: soulC NOW REQUIRES AN etherC& ARGUMENT ; pEther ADDED W/O ANALYSIS
+                soulC* psFeat = new( 0 , tin0P , LF ) soulC( tin0P , *((tin1S&)tin0P).pEther , TAG( TAGiDnULL ) ) ; ___( psFeat ) ; //U::THIS COPY WILL NOT BE NEEDED WHEN OLD CODE IS GONE
             {
             if( ppSoulP )
 

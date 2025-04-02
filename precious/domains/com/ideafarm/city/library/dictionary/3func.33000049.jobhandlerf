@@ -21,10 +21,10 @@
                                 if( !sUse ) break ;
                                 (*jobHearOrderF)( tin0P , ether , etThread , idAdam , idChatSessionP , sUse , cAppArg , c8arg ) ;
                                 soulC& sUse = POOP ? sNull : sOrder ;
-                                soulC sNull( tin0P , TAG( TAGiDnULL ) ) ;
+                                soulC sNull( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
                                 pso->readF( tin0P , sOrder ) ;
-                                soulC sOrder( tin0P , TAG( TAGiDnULL ) ) ;
+                                soulC sOrder( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                             {
                             while( !POOP && !etThread )
     
@@ -35,7 +35,7 @@
                         if( !POOP )
     
                         sJob >> sOrder ;
-                        soulC sOrder( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC sOrder( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
                         __Z( bAccepted ) ;
                         sJob >> bAccepted ;
@@ -63,7 +63,7 @@
                                 if( !POOP && sOrder ) soUp.writeF( tin0P , sOrder ) ;
     
                                 pso->readF( tin0P , sOrder ) ;
-                                soulC sOrder( tin0P , TAG( TAGiDnULL ) ) ;
+                                soulC sOrder( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                             {
                             while( !POOP && !etThread )
     
@@ -77,7 +77,7 @@
                             socketC soUp( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
     
                             etThread.ifcChatRelayPackageF( tin0P , sRelay , sJob , idAdamHandlingP , TF1(idAdamHandlingP)+T("/ifcChatF/jobHandlerF/acceptor") , 1 , 0 , nicNameHint ) ;
-                            soulC sRelay( tin0P , TAG( TAGiDnULL ) ) ;
+                            soulC sRelay( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                         {
                         if( !POOP )
     
@@ -110,7 +110,7 @@
                 //__( (countT)sJob - 5 ) ;
     
                 pso->readF( tin0P , sJob ) ;
-                soulC sJob( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC sJob( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
                 jobHearOrderFT  jobHearOrderF  =  (jobHearOrderFT)c3p_jobHandler.c3 ;
                 jobFillCourseFT jobFillCourseF = (jobFillCourseFT)c3p_jobHandler.c2 ;

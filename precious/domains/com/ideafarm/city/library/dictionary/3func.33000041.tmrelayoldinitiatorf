@@ -25,7 +25,7 @@ DONE( tmRelayOldInitiatorF )
                 relayOldC::hdrBagIF( tin0P , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_UP|flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTnULL ) ;
             {
             if( psBag )
-            soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
+            soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
 
         { //THIS IS TO STIMULATE THE POP STACKS SO THAT THE POP CLIENTS WILL KEEP THEIR CONNECTIONS CURRENT
         //CONoUTrAW( "tmRelayOldInitiatorF: 1 pop a null bag\r\n" ) ;
@@ -257,7 +257,7 @@ DONE( tmRelayOldInitiatorF )
     stackC stRelayAbsent3( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
     stackC stRelayAbsent2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
     stackC stRelayAbsent1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    soulC soul( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC soul( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
     boolT&    bReadyP           =     *(boolT*)pTaskP->c6 ;
     countT&   cLooksForNewPingP =    *(countT*)pTaskP->c5 ;

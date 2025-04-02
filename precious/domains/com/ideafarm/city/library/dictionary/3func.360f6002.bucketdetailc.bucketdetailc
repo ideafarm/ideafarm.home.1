@@ -57,7 +57,7 @@
         ZE( countT , finger ) ;
                     
         sock.readF( tin0P , sIn ) ;
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                     
         sock.writeF( tin0P , sOut ) ;
 
@@ -73,7 +73,7 @@
         sOut << (countT)ifcIDcMDlISTsERVERmONEYbUCKETS_GETdETAIL ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
                     
         sock.connectF( tin0P , homeS::homeIF().idPortListMoneyBuckets ) ;
         socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
