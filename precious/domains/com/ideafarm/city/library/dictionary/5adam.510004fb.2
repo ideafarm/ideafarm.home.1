@@ -1711,7 +1711,7 @@ DONE( tmReportF )
 
                                 //etRock.traceF( tin0P , T("report pulled [idMemorySpaceP,cFields]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)sRpt,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                 sReports >> sRpt ;
-                                soulC sRpt( tin0P , TAG( TAGiDnULL ) ) ;
+                                soulC sRpt( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                                 _IO_
                             {
                             while( sReports && !bQuitEatingP )
@@ -1787,7 +1787,7 @@ DONE( tmReportF )
                         //etRock.traceF( tin0P , T("report Event  [idMemorySpaceP,cFields]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)sRptEvent ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         //etRock.traceF( tin0P , T("report Title  [idMemorySpaceP,cFields]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2((countT)sRptTitle ,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
-                        soulC sReports(   tin0P , TAG( TAGiDnULL ) , flSOUL_null , ostoFileReports , TICK ) ; //20200920@1726: INCREASED FROM ( TOCK << 4 )
+                        soulC sReports(  tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ostoFileReports , TICK ) ; //20200920@1726: INCREASED FROM ( TOCK << 4 )
                         //etRock.traceF( tin0P , T("7/ ") ) ; //U:: TO FIND A BUG
 
                         OStEXTC(  ostoFileReports  , idMemorySpaceP , 0 ) ;
@@ -2695,23 +2695,23 @@ DONE( tmReportF )
 
                 #endif
 
-                    soulC sRptLog(    tin0P , TAG( TAGiDnULL ) ) ; sRptLog    << (strokeS*)T("\r\nLog\r\n\r\n") ;
-                    soulC sRptEvent(  tin0P , TAG( TAGiDnULL ) ) ; sRptEvent  << (strokeS*)T("\r\nEvent Tally\r\n\r\n") ;
-                    soulC sRptTin(    tin0P , TAG( TAGiDnULL ) ) ; sRptTin    << (strokeS*)T("\r\nThreads\r\n\r\n") ;
-                    soulC sRptSex(    tin0P , TAG( TAGiDnULL ) ) ; sRptSex    << (strokeS*)T("\r\n\r\nSex (Slot Extents) (Heap)\r\n") ;
-                    soulC sRptNapkin( tin0P , TAG( TAGiDnULL ) ) ; sRptNapkin << (strokeS*)T("\r\n\r\nNapkin (Shared Memory)\r\n") ;
-                    soulC sRptAdd(    tin0P , TAG( TAGiDnULL ) ) ; sRptAdd    << (strokeS*)T("\r\nAddress Space Usage\r\n") ;
-                    soulC sRptTitle(  tin0P , TAG( TAGiDnULL ) ) ; sRptTitle  << (strokeS*)( T("Glass: Memory Space ")+TF2(idMemorySpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(bSnapShot?" Snapshot":" Minute")+T(" Overview\r\n")+T(bSnapShot?"Snapshot":"Minute by minute")+T(" overview of the state of this home\r\nMinutes since gen: ")+TF2(idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\nMinute: ")+TF2(idMinute,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n\r\n") ) ;
+                    soulC sRptLog(    tin0P , etThread , TAG( TAGiDnULL ) ) ; sRptLog    << (strokeS*)T("\r\nLog\r\n\r\n") ;
+                    soulC sRptEvent(  tin0P , etThread , TAG( TAGiDnULL ) ) ; sRptEvent  << (strokeS*)T("\r\nEvent Tally\r\n\r\n") ;
+                    soulC sRptTin(    tin0P , etThread , TAG( TAGiDnULL ) ) ; sRptTin    << (strokeS*)T("\r\nThreads\r\n\r\n") ;
+                    soulC sRptSex(    tin0P , etThread , TAG( TAGiDnULL ) ) ; sRptSex    << (strokeS*)T("\r\n\r\nSex (Slot Extents) (Heap)\r\n") ;
+                    soulC sRptNapkin( tin0P , etThread , TAG( TAGiDnULL ) ) ; sRptNapkin << (strokeS*)T("\r\n\r\nNapkin (Shared Memory)\r\n") ;
+                    soulC sRptAdd(    tin0P , etThread , TAG( TAGiDnULL ) ) ; sRptAdd    << (strokeS*)T("\r\nAddress Space Usage\r\n") ;
+                    soulC sRptTitle(  tin0P , etThread , TAG( TAGiDnULL ) ) ; sRptTitle  << (strokeS*)( T("Glass: Memory Space ")+TF2(idMemorySpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(bSnapShot?" Snapshot":" Minute")+T(" Overview\r\n")+T(bSnapShot?"Snapshot":"Minute by minute")+T(" overview of the state of this home\r\nMinutes since gen: ")+TF2(idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\nMinute: ")+TF2(idMinute,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n\r\n") ) ;
 
                 #else
 
-                    soulC sRptLog(    tin0P , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptLog    ) ; sRptLog    << (strokeS*)T("\r\nLog\r\n\r\n") ;
-                    soulC sRptEvent(  tin0P , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptEvent  ) ; sRptEvent  << (strokeS*)T("\r\nEvent Tally\r\n\r\n") ;
-                    soulC sRptTin(    tin0P , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptTin    ) ; sRptTin    << (strokeS*)T("\r\nThreads\r\n\r\n") ;
-                    soulC sRptSex(    tin0P , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptSex    ) ; sRptSex    << (strokeS*)T("\r\n\r\nSex (Slot Extents) (Heap)\r\n") ;
-                    soulC sRptNapkin( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptNapkin ) ; sRptNapkin << (strokeS*)T("\r\n\r\nNapkin (Shared Memory)\r\n") ;
-                    soulC sRptAdd(    tin0P , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptAdd    ) ; sRptAdd    << (strokeS*)T("\r\nAddress Space Usage\r\n") ;
-                    soulC sRptTitle(  tin0P , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptTitle  ) ; sRptTitle  << (strokeS*)( T("Glass: Memory Space ")+TF2(idMemorySpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(bSnapShot?" Snapshot":" Minute")+T(" Overview\r\n")+T(bSnapShot?"Snapshot":"Minute by minute")+T(" overview of the state of this home\r\nMinutes since gen: ")+TF2(idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\nMinute: ")+TF2(idMinute,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n\r\n") ) ;
+                    soulC sRptLog(    tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptLog    ) ; sRptLog    << (strokeS*)T("\r\nLog\r\n\r\n") ;
+                    soulC sRptEvent(  tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptEvent  ) ; sRptEvent  << (strokeS*)T("\r\nEvent Tally\r\n\r\n") ;
+                    soulC sRptTin(    tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptTin    ) ; sRptTin    << (strokeS*)T("\r\nThreads\r\n\r\n") ;
+                    soulC sRptSex(    tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptSex    ) ; sRptSex    << (strokeS*)T("\r\n\r\nSex (Slot Extents) (Heap)\r\n") ;
+                    soulC sRptNapkin( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptNapkin ) ; sRptNapkin << (strokeS*)T("\r\n\r\nNapkin (Shared Memory)\r\n") ;
+                    soulC sRptAdd(    tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptAdd    ) ; sRptAdd    << (strokeS*)T("\r\nAddress Space Usage\r\n") ;
+                    soulC sRptTitle(  tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ostoFileRptTitle  ) ; sRptTitle  << (strokeS*)( T("Glass: Memory Space ")+TF2(idMemorySpaceP,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T(bSnapShot?" Snapshot":" Minute")+T(" Overview\r\n")+T(bSnapShot?"Snapshot":"Minute by minute")+T(" overview of the state of this home\r\nMinutes since gen: ")+TF2(idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\nMinute: ")+TF2(idMinute,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("\r\n\r\n") ) ;
 
                 #if !defined( NEVERdEFINED )
                 // PRODUCTION: USE jotC (TO ACCOMMODATE LARGE REPORTS)
@@ -3157,8 +3157,8 @@ DONE( tmcMonitorServerF )
             psoP->readF( tin0P , sIn ) ;
         {
         while( !POOP && !etThread && !ether && psoP )
-        soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
-        soulC sIn(  tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+        soulC sIn(  tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         psoP->etherF( tin0P , *((tin1S&)tin0P).pEtScratch ) ;
         SCOOPS

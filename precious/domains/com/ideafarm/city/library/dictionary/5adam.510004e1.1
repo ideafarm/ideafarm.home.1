@@ -106,7 +106,7 @@ TODO
     sIn >> cbrP ;
     
     sock.readF( tin0P , sIn ) ;
-    soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
     sock.writeF( tin0P , sOut ) ;
     etherP.strokeF( tin0P , T("requesting \"")+T(psttP)+T("\" offset ")+TF1(offP)+T("\r\n") ) ;
@@ -117,7 +117,7 @@ TODO
     sOut << cbwP ;
     sOut << offP ;
     sOut << psttP ;
-    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 {
 voidT getF( tin0S& tin0P , etherC& etherP , byteT*& pbP , countT& cbP , countT& cbrP , const strokeS* const psttP , nicNameC& nnOnP , const countT offP = 0 , const countT cbwP = - 1 )
 

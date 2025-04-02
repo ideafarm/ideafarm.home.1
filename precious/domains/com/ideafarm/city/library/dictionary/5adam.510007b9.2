@@ -20,7 +20,7 @@ DONE( tmNodeOldChatRepliesF )
             etThread.traceF( tin0P , T("writing sWrite (sNull or sReply)") ) ;
             TELL( "writing to below the reply soul read from above" )
             soulC& sWrite = soUp.etherF( tin0P ) ? sNull : sReply ;
-            soulC sNull( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sNull( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
             }
                 break ;
@@ -46,7 +46,7 @@ DONE( tmNodeOldChatRepliesF )
             TELL( "handling the soulC read from above" )
             soUp.readF( tin0P , sReply ) ;
             TELL( "reading from above a reply soulC" )
-            soulC sReply( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sReply( tin0P , etThread , TAG( TAGiDnULL ) ) ;
             idTray ++ ;
         {
         while( !POOP && !etThread )
@@ -171,7 +171,7 @@ DONE( tmNodePopClientF )
     
                     sBagHello << idWorkP ;
                     nodeOldC::hdrBagIF( tin0P , sBagHello , idptP , idSerialLathHeaderP , flOLDrELAYpOP_null , ifcOLDiDtYPEbAG_CLIENTpOPhELLO ) ;
-                    soulC sBagHello( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC sBagHello( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                     TELL( "writing hello" )
 
                     etThread.traceF( tin0P , tWork+T(": connected aok to correct server ")+tWork+T(" [idptServer port, nn]:    ")+TF2((countT)idptServer,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+T((nicNameC&)idptServer) ) ;
@@ -222,7 +222,7 @@ DONE( tmNodePopClientF )
                         nodeOldC::hdrBagIF( tin0P , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_null , ifcOLDiDtYPEbAG_CLIENTpOPbYE ) ;
                     {
                     if( psBag )
-                    soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
+                    soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
                 {
                 TELL( "writing bye" )
                 //P: CLIENTS THAT ARE NOT QUITTING ARE POLITE WHEN CLOSING CONNECTION
@@ -248,7 +248,7 @@ DONE( tmNodePopClientF )
         portTimeC idptServer ;
         ZE( socketC* , pso ) ;
         boolT bWoth = 1 ;
-        soulC sInOk( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sInOk( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         SCOOPS
     {
@@ -337,7 +337,7 @@ DONE( tmNodeServerCatchBagF )
         ZE( boolT , bPop ) ;
     {
     if( psBag )
-    soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
+    soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
 
     }
         stIdptPopClientP.ungrabF( tin0P ) ;
@@ -440,7 +440,7 @@ DONE( tmNodeServerCatchBagF )
                                         nodeOldC::hdrBagIF( tin0P , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPpONG ) ;
                                     {
                                     if( psBag )
-                                    soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
+                                    soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
                                     //P: SERVER RESPONDS TO PING BY IMPLODE POPPING DOWNWARD A "PONG"
             
                                     }
@@ -452,7 +452,7 @@ DONE( tmNodeServerCatchBagF )
                                             nodeOldC::hdrBagIF( tin0P , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTpOPuNgOSSIP ) ;
                                         {
                                         if( psBag )
-                                        soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
+                                        soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
             
                                         nodeOldC::handleRefreshTimeStampIF( tin0P , idptP ) ;
         
@@ -870,7 +870,7 @@ DONE( tmNodeInitiatorF )
                 nodeOldC::hdrBagIF( tin0P , *psBag , idptP , idSerialLathHeaderP , flOLDrELAYpOP_UP|flOLDrELAYpOP_DOWN , ifcOLDiDtYPEbAG_CLIENTnULL ) ;
             {
             if( psBag )
-            soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
+            soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
 
         { //THIS IS TO STIMULATE THE POP STACKS SO THAT THE POP CLIENTS WILL KEEP THEIR CONNECTIONS CURRENT
         //CONoUTrAW( "tmNodeInitiatorF: 1 pop a null bag\r\n" ) ;
@@ -1102,7 +1102,7 @@ DONE( tmNodeInitiatorF )
     stackC stRelayAbsent3( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
     stackC stRelayAbsent2( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
     stackC stRelayAbsent1( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_BLOB , sizeof( portTimeC ) ) ;
-    soulC soul( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC soul( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
     boolT&    bReadyP           =     *(boolT*)pTaskP->c6 ;
     countT&   cLooksForNewPingP =    *(countT*)pTaskP->c5 ;
@@ -1230,8 +1230,8 @@ DONE( tmNodeTeatServerF )
                                 GRABrELAYlISTS
                             {
                             if( psGift && psWrapo )
-                            soulC* psGift = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psGift ) ;
-                            soulC* psWrapo = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrapo ) ;
+                            soulC* psGift = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psGift ) ;
+                            soulC* psWrapo = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psWrapo ) ;
                         {
                         case ifcOLDiDtYPEwRAP_QUERYrELAYiDpORTtIMEcaLLhOMES :
                         }
@@ -1260,8 +1260,8 @@ DONE( tmNodeTeatServerF )
                                 idptP >> *psGift ;
                             {
                             if( psGift && psWrapo )
-                            soulC* psGift = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psGift ) ;
-                            soulC* psWrapo = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrapo ) ;
+                            soulC* psGift = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psGift ) ;
+                            soulC* psWrapo = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psWrapo ) ;
                         {
                         case ifcOLDiDtYPEwRAP_QUERYrELAYiDpORTtIMEc :
                         }
@@ -1308,8 +1308,8 @@ DONE( tmNodeTeatServerF )
                                 GRABrELAYlISTS
                             {
                             if( psGift && psWrapo )
-                            soulC* psGift = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psGift ) ;
-                            soulC* psWrapo = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrapo ) ;
+                            soulC* psGift = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psGift ) ;
+                            soulC* psWrapo = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psWrapo ) ;
                         {
                         case ifcOLDiDtYPEwRAP_QUERYrELAYrANK :
                         }
@@ -1331,7 +1331,7 @@ DONE( tmNodeTeatServerF )
                                 GRABrELAYlISTS
                             {
                             if( psBag )
-                            soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
+                            soulC* psBag = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psBag ) ;
         
                             if( pczChannel && pczChannel[ 0 ] == ifcOLDiDcHANNEL1_BYfUNCTION && pczChannel[ 1 ] == ifcOLDiDcHANNELfUNCTION_MEDIATORrEGISTRATION ) { static countT idIn ; ((tin1S&)tin0P).pEther->traceF( tin0P , TF2(++idIn,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" tmNodeTeatServerF: ifcOLDiDtYPEwRAP_GIFT (mediator registration channel)") ) ; }
         
@@ -1450,7 +1450,7 @@ DONE( tmNodeTeatServerF )
                 {
             {
             if( psWrap )
-            soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
+            soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
         {
         while( !ether && !bQuitP && !bQuit && !etThread )
         etThread.traceF( tin0P , T("tmNodeTeatServerF: client is ")+TF2(idAdamClient,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
@@ -1468,7 +1468,7 @@ DONE( tmNodeTeatServerF )
                 SCOOPS
             {
             if( psWrap )
-            soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
+            soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
         {
         ZE( countT , idAdamClient ) ;
         ZE( boolT , bQuit ) ;
@@ -1729,7 +1729,7 @@ DONE( tmNodeBlowTeatF )
             ((tin1S&)tin0P).pEther->traceF( tin0P , T("identifying myself as ")+TF2(((tin1S&)tin0P).pag1->idAdam,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T(" to teat") ) ;
         {
         if( psWrap )
-        soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
+        soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
     {
 
     ZE( countT , idWrap ) ;
@@ -1768,7 +1768,7 @@ DONE( tmNodeTickleF )
             socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) /*U::, 0 , flSOCKETc_TOPsECRET*/ ) ;
         {
         while( !ether && bWothP )
-        soulC sInOk( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sInOk( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         SCOOPS
     {
     IFsCRATCHoK

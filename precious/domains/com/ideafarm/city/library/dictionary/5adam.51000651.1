@@ -131,7 +131,7 @@ DONE( tmWorkF )
                     IFsCRATCHoK
                     if( !cFiles ) break ;
                     countT cFiles = etThread.boxMenuF( tin0P , soul1m , t11DropSoil+T("*.soil") , 0 , TUCK ) ; // FOR ALL FILES OR DIRS "*.soil"
-                    soulC soul1m( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.eat.menu" ) ;
+                    soulC soul1m( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.eat.menu" ) ;
 
                     cFail = 0 ;
                     _IO_
@@ -532,7 +532,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                         //etThread.traceF( tin0P , T("writing pseudoduplicate file of input file from soulAsciiOut") ) ;
 
                         etThread.etherSoilF( tin0P , ether , soulAsciiOut , soulNativeLint , ifcIDmODEeTHERsOIL_ASCIIfROMnATIVE , 0 , flETHERsOILf_CONSUMEiNPUT , psttTmpKtCodeSoiiP , postiP , costiP ) ;
-                        soulC soulAsciiOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.out" ) ; //THIS IMAGE SHOULD BE IDENTICAL TO THE LINT IMAGE IF NO MARKS, SO THIS STEP COULD BE ELIMINATED; WE DO IT THIS WAY BECAUSE, OTHER THAN SOME MORE CODE, IT IS COSTLESS AND CONFIDENCE OF CORRECTNESS IS HIGHER (LINT MARKUP CODE IS COMPLEX SO MIGHT CONTAIN BUGS)
+                        soulC soulAsciiOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.out" ) ; //THIS IMAGE SHOULD BE IDENTICAL TO THE LINT IMAGE IF NO MARKS, SO THIS STEP COULD BE ELIMINATED; WE DO IT THIS WAY BECAUSE, OTHER THAN SOME MORE CODE, IT IS COSTLESS AND CONFIDENCE OF CORRECTNESS IS HIGHER (LINT MARKUP CODE IS COMPLEX SO MIGHT CONTAIN BUGS)
                         //etThread.traceF( tin0P , T("loading soulAsciiOut") ) ;
                         _IO_
                     {
@@ -558,7 +558,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                 
                         //etThread.traceF( tin0P , T("loading soulReports / [cFields,tFile]: ")+TF2((countT)soulr,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+T("    \"")+tFile+T("\"") ) ;
                         soulReports >> soulr ;
-                        soulC soulr( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.report" ) ;
+                        soulC soulr( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.report" ) ;
                 
                         etThread.delF( tin0P , psttf ) ;
                         tFile = T(psttf) ;
@@ -580,7 +580,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                     //etThread.traceF( tin0P , T("loading soulReports / calling etherSoilF") ) ;
                     //TO GET REPORTS, COMMENT OUT THE CONSUMEiNPUT FLAG
 
-                    soulC soulReports( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.reports" , CBjOTbOOKwRAPPER( CBjOTbOOKdEFAULT , 1 ) ) ;
+                    soulC soulReports( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.reports" , CBjOTbOOKwRAPPER( CBjOTbOOKdEFAULT , 1 ) ) ;
                     //etThread.traceF( tin0P , T("loading soulReports") ) ;
                     _IO_
                 {
@@ -616,7 +616,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                     //U:: TO FIND A BUG
 
                     etThread.etherSoilF( tin0P , ether , soulAsciiLint , soulNativeLint , ifcIDmODEeTHERsOIL_ASCIIfROMnATIVE , 0 , flETHERsOILf_CONSUMEiNPUT , psttTmpKtCodeSoiiP , postiP , costiP ) ;
-                    soulC soulAsciiLint( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.lint" ) ;
+                    soulC soulAsciiLint( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.lint" ) ;
                     //etThread.traceF( tin0P , T("abort: loading soulAsciiLint") ) ;
                     DEL( ((tin1S&)tin0P).pBarryUtility ) ;
                     _IO_
@@ -650,7 +650,7 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                         //        ZE( strokeS* , psttp ) ;
                         //    {
                         //    while( soulPrepared )
-                        //    soulC soulTmpDebug( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.tmp.debug" ) ;
+                        //    soulC soulTmpDebug( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.tmp.debug" ) ;
                         //{
                         //U::COMMENT OUT IN PRODUCTION
 
@@ -735,17 +735,17 @@ etThread.traceF( tin0P , T("thread exit") ) ;
                             {       
                             if( costiP <= TOCK )
 
-                            soulC soulAsciiIn( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.in" ) ;
+                            soulC soulAsciiIn( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.ascii.in" ) ;
                             //etThread.traceF( tin0P , T("loading soulAsciiIn") ) ;
                             _IO_
                         {
-                        soulC soulPrepared( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.prepared" ) ;
+                        soulC soulPrepared( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.prepared" ) ;
                         _IO_
                     {
-                    soulC soulNativeIn( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.native.in" ) ;
+                    soulC soulNativeIn( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.native.in" ) ;
                     _IO_
                 {
-                soulC soulNativeLint( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.native.lint" ) ;
+                soulC soulNativeLint( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.native.lint" ) ;
                 ZE( boolT , bAbort ) ;
                 _IO_
             {
@@ -806,7 +806,7 @@ DONE( tmPingF )
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     
     sOut << (countT)1 ; //PING
-    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.ping.out" ) ;
+    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.ping.out" ) ;
     
     countT idPortMe = sockPing.bindF( tin0P ) ;
     socketC sockPing( tin0P , etThread , TAG( TAGiDnULL ) , ifcSOCKETtYPE_DATAgRAM , flSOCKETc_CANbROADCASToLDdOnOTuSE ) ;
@@ -861,7 +861,7 @@ DONE( tmCleanF )
                     {
                     FORsTRINGSiNsPANNEDcOMBINEDhEAD1( soul1m )
                     etThread.boxMenuF( tin0P , soul1m , tDrop+T("*") , 0 , TUCK ) ;
-                    soulC soul1m( tin0P , TAG( TAGiDnULL ) , flSOUL_null , "soul.clean.menu" ) ;
+                    soulC soul1m( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , "soul.clean.menu" ) ;
                 {
                 do
                 ZE( countT , cFail ) ;

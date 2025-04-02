@@ -159,14 +159,14 @@ DONE( tm_newsC_sessionF )
                 }
                     break ;
                     pso->writeF( tin0P , sour ) ;
-                    soulC sour( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDcMDnEWS_PINGrEPLY ) ;
+                    soulC sour( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDcMDnEWS_PINGrEPLY ) ;
                     bBye = 1 ;
                 {
                 case ifcIDcMDnEWS_PING :
                 }
                     break ;
                     pso->writeF( tin0P , sour ) ;
-                    soulC sour( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDcMDnEWS_BYErEPLY ) ;
+                    soulC sour( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDcMDnEWS_BYErEPLY ) ;
                     bBye = 1 ;
                 {
                 case ifcIDcMDnEWS_BYE :
@@ -178,7 +178,7 @@ DONE( tm_newsC_sessionF )
         {
         if( !*((tin1S&)tin0P).zEtScratch && !bFired )    
         pso->readF( tin0P , souq ) ;
-        soulC souq( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC souq( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
     while( !etThread && !*((tin1S&)tin0P).zEtScratch && !bBye && !bFired )
     ZE( boolT , bBye ) ;

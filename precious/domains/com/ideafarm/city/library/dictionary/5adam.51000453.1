@@ -168,8 +168,8 @@ voidT lnicC::tockF( tin0S& tin0P )
                                     souShock3 << idNewsMe ;
                                     souShock3 << flNews ;
                                     souShock3 << (countT)ifcIDcMDsESSION_NEWS ;
-                                    soulC souShock4( tin0P , TAG( TAGiDnULL ) ) ;
-                                    soulC souShock3( tin0P , TAG( TAGiDnULL ) ) ;
+                                    soulC souShock4( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+                                    soulC souShock3( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                                     cSawFlash ++ ;
                                 {
                                 if( bGossip )
@@ -212,21 +212,21 @@ voidT lnicC::tockF( tin0S& tin0P )
                     souShock1 << idNewsMe ;
                     souShock1 << flNews ;
                     souShock1 << (countT)ifcIDcMDsESSION_NEWS ;
-                    soulC souShock2( tin0P , TAG( TAGiDnULL ) ) ;
-                    soulC souShock1( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC souShock2( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+                    soulC souShock1( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
                     else if( bGossip ) cGossip -- ;
                     if( bImplode ) cGossip = 0 ;
                     boolT bGossip = !bImplode && !!cGossip && nicNameSingularity != nicNameMe ;
     
                     souDeclare >> souDebugNotes ;
-                    soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC souDebugNotes( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                     souDeclare >> souHandlers ;
-                    soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC souHandlers( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                     souDeclare >> souNewsOrReplies ;
-                    soulC souNewsOrReplies( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC souNewsOrReplies( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                     souDeclare >> nicNameAckTo ;
                     nicNameC nicNameAckTo ;
@@ -260,7 +260,7 @@ voidT lnicC::tockF( tin0S& tin0P )
                                 *psd = souDeclare ;
                             {
                             if( psd )
-                            soulC* psd = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+                            soulC* psd = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                         {
                         if( !swDeclareSent )
                         idNewsAck = souDeclare.cFieldF( tin0P , 2 ) ;
@@ -294,13 +294,13 @@ voidT lnicC::tockF( tin0S& tin0P )
                 souDeclare << (countT)flNEWS_DOnOTaCK ;
                 souDeclare.removeAllF( tin0P ) ;
 
-                soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC souDebugNotes( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                 souHandlers << nicNameMe ;
-                soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC souHandlers( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                 souNews << nicNameDead ;
-                soulC souNews( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSeX_DEL ) ;
+                soulC souNews( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSeX_DEL ) ;
         
                 newsDelF( tin0P , nicNameDead ) ;
 
@@ -459,14 +459,14 @@ voidT lnicC::tockF( tin0S& tin0P )
                     ZE( strokeS* , psttn ) ;
                 {
                 while( swsDebugNotesPending )
-                soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC souDebugNotes( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                 souHandlers << nicNameMe ;
-                soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC souHandlers( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         
                 souReplies << souReply ;
                 souReply << nicNameMe ;
-                soulC souReply( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_TIMEOUT ) ;
+                soulC souReply( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_TIMEOUT ) ;
         
                 }
                     if( psour ) souReplies << *psour ;
@@ -474,7 +474,7 @@ voidT lnicC::tockF( tin0S& tin0P )
                     ZE( soulC* , psour ) ;
                 {
                 while( swsRepliesPending )
-                soulC souReplies( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC souReplies( tin0P , etThread , TAG( TAGiDnULL ) ) ;
             {
             if( idTick - swIdTickPending > 8 )
             nicNameImPending = *(nicNameC*)swsRepliesPending.leverF( tin0P , idf ) ;
@@ -495,16 +495,16 @@ voidT lnicC::tockF( tin0S& tin0P )
         souDeclare << (countT)( flNEWS_IMPLODE | flNEWS_REPLIES ) ;
         souDeclare.removeAllF( tin0P ) ;
 
-        soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC souDebugNotes( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
         souHandlers << nicNameMe ;
-        soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC souHandlers( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
         souReplies << souReply ;
-        soulC souReplies( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC souReplies( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
         souReply << nicNameMe ;
-        soulC souReply( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_FLASH ) ;
+        soulC souReply( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_FLASH ) ;
 
         bIgniter = 1 ;
         ether.strokeF( tin0P , T("ignition ")+TF1(nicNameMe)+T("\r\n") ) ;
@@ -524,13 +524,13 @@ voidT lnicC::tockF( tin0S& tin0P )
         souDeclare << (countT)flNEWS_null ;
         souDeclare.removeAllF( tin0P ) ;
 
-        soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC souDebugNotes( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
         souHandlers << nicNameMe ;
-        soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC souHandlers( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
         souNews << nicNameMe ;
-        soulC souNews( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSeX_FLASH ) ;
+        soulC souNews( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSeX_FLASH ) ;
 
         cSawFlash ++ ;
         bIgniter = 1 ;
@@ -868,7 +868,7 @@ voidT lnicC::armageddonF( tin0S& tin0P , etherC& etThreadP , const strokeS* cons
                         souReplies >> *psour ;
                     {
                     if( psour )
-                    soulC* psour = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC* psour = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 {
                 while( souReplies )
     
@@ -919,7 +919,7 @@ voidT lnicC::armageddonF( tin0S& tin0P , etherC& etThreadP , const strokeS* cons
                     ZE( countT , idType ) ;
 
                     souReplies >> souReply ;
-                    soulC souReply( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC souReply( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 {
                 while( souReplies )
 
@@ -946,15 +946,15 @@ voidT lnicC::armageddonF( tin0S& tin0P , etherC& etThreadP , const strokeS* cons
                 souDeclare.removeAllF( tin0P ) ;
                 
                 souHandlersA << nicNameMe ;
-                soulC souHandlersA( tin0P , TAG( TAGiDnULL ) ) ;
-                soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC souHandlersA( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+                soulC souDebugNotes( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 
                 souReplies << souReply ;
-                soulC souReplies( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC souReplies( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 
                 souReply << idNewsMe ;
                 souReply << nicNameMe ;
-                soulC souReply( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_ACK ) ;
+                soulC souReply( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , (countT)ifcIDnEWSiM_ACK ) ;
             {
             if( !( F(flNews) & flNEWS_DOnOTaCK ) )
 
@@ -975,7 +975,7 @@ voidT lnicC::armageddonF( tin0S& tin0P , etherC& etThreadP , const strokeS* cons
                         souDeclare.removeAllF( tin0P ) ;
     
                         souNews << nicNameData ;
-                        soulC souNews( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idNewsType ) ;
+                        soulC souNews( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , idNewsType ) ;
 
                         __( F(flNews) & flNEWS_IMPLODE ) ; //THERE IS CODE FOR IMPLODING REPLIES BUT NOT NEWS
                     {
@@ -1129,7 +1129,7 @@ voidT lnicC::armageddonF( tin0S& tin0P , etherC& etThreadP , const strokeS* cons
                         switch( idType )
                         souReply >> idType ;
                         ZE( countT , idType ) ;
-                        soulC souReply( tin0P , TAG( TAGiDnULL ) , pbs , flSOUL_null , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                        soulC souReply( tin0P , etThread , TAG( TAGiDnULL ) , pbs , flSOUL_null , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
                         __( idType - ifcIDtYPEsOULiTEM_soulC ) ;
                     {
                     if( pbs )
@@ -1149,14 +1149,14 @@ voidT lnicC::armageddonF( tin0S& tin0P , etherC& etThreadP , const strokeS* cons
         TN( tc , "," ) ;
     
         soulP >> souDebugNotes ;
-        soulC souDebugNotes( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC souDebugNotes( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
         souHandlers << nicNameMe ;
         soulP >> souHandlers ;
-        soulC souHandlers( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC souHandlers( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
         soulP >> souNewsOrReplies ;
-        soulC souNewsOrReplies( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC souNewsOrReplies( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
         soulP >> cGossip ;
         ZE( countT , cGossip ) ;

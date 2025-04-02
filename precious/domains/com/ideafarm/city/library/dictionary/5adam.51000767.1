@@ -364,7 +364,7 @@ DONE( tmcCloakServerF )
                     DEL( psOut ) ;
                     }
                         psoP->writeF( tin0P , *psOut ) ;
-                        psOut = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
+                        psOut = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
                         DEL( psOut ) ;
                         psoP->writeF( tin0P , *psOut ) ;
             
@@ -444,8 +444,8 @@ DONE( tmcCloakServerF )
             
                     psoP->readF( tin0P , sIn ) ;
 
-                    soulC* psOut = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
-                    soulC sIn(  tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC* psOut = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psOut ) ;
+                    soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 {
                 while( !POOP && !etThread && !ether && psoP )
             {
@@ -527,7 +527,7 @@ TASK( tmcCloakServerF )
                 }
                     }
                         }
-                            psOutP = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psOutP ) ;
+                            psOutP = new( 0 , tin0P , LF ) soulC( tin0P , etherP , TAG( TAGiDnULL ) ) ; ___( psOutP ) ;
                             DEL( psOutP ) ;
                             psoP->writeF( tin0P , *psOutP ) ;
                         {

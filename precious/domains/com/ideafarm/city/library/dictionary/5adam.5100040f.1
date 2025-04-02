@@ -163,8 +163,8 @@ DONE( tmTickRegisterIdComputerNicNameF )
         nicNameC nnMe       = etThread.sockNicNameF( tin0P ) ;
         countT   idComputer = etThread.diskIdF( tin0P , tDiskC ) ;
     
-        soulC sOrderPrimary( tin0P , TAG( TAGiDnULL ) ) ;
-        stOrders << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sOrderPrimary( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+        stOrders << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         stackC stOrders(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
         stackC stCourses( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
         TELL("specifying a job") ;
@@ -204,14 +204,14 @@ DONE( tmTickRegisterAdamsF )
             *((tin1S&)tin0P).zEtScratch = 0 ;
     
             sChat2.writeF( tin0P , sOut3 ) ;
-            soulC sOut3( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
+            soulC sOut3( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
             TELL("saying goodbye to www.ideafarm.com") ;
     
             __( idCmd - ifcIDcMDsESSION_REGISTERnICnAMErEPLY ) ;
             sIn2 >> idCmd ;
             idCmd = 0 ;
             sChat2.readF( tin0P , sIn2 ) ;
-            soulC sIn2( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sIn2( tin0P , etThread , TAG( TAGiDnULL ) ) ;
             sChat2.writeF( tin0P , sOut2 ) ;
             TELL("writing my nicName values to www.ideafarm.com") ;
     
@@ -219,7 +219,7 @@ DONE( tmTickRegisterAdamsF )
             sIn1 >> idCmd ;
             ZE( countT , idCmd ) ;
             sChat2.readF( tin0P , sIn1 ) ;
-            soulC sIn1( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sIn1( tin0P , etThread , TAG( TAGiDnULL ) ) ;
             sChat2.writeF( tin0P , sOut1 ) ;
             TELL("writing tblAdam info to www.ideafarm.com") ;
     
@@ -246,7 +246,7 @@ DONE( tmTickRegisterAdamsF )
             ZE( countT   , cNicNameMe ) ;
             ZE( nicNameC* , pNicNameMe ) ;
         {
-        soulC sOut2( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERnICnAME ) ;
+        soulC sOut2( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERnICnAME ) ;
         TELL("copying my nicName values into a soulC") ;
         //etThread.ifcSayF( tin0P , T("registering idAdams/+/")+tIdAdams , flSAY_APPEND | flSAY_LOG ) ;
 
@@ -280,7 +280,7 @@ DONE( tmTickRegisterAdamsF )
             stackC stIdAdam( tin0P , *((tin1S&)tin0P).zEtScratch , TAG( TAGiDnULL ) ) ;
         {
         TN( tIdAdams , "" ) ;
-        soulC sOut1( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERaDAMS ) ;
+        soulC sOut1( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERaDAMS ) ;
         TELL("copying tblAdam info into a soulC") ;
 
 
@@ -334,7 +334,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                 b_pbdVarying.ungrabF( tin0P ) ;
                 }
                     pso->writeF( tin0P , sOut ) ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
                 {
                 else
                 }
@@ -379,7 +379,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                         countT cRows = tblHost.cRowsF( tin0P ) ;
                         tblHost.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                     {
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYnICnAMErEPLY ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYnICnAMErEPLY ) ;
 
                     __( idCmd - ifcIDcMDsESSION_QUERYnICnAME ) ;
                     sIn >> idCmd ;
@@ -400,7 +400,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                 b_pbdVarying.ungrabF( tin0P ) ;
                 }
                     pso->writeF( tin0P , sOut ) ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
                 {
                 else
                 }
@@ -418,7 +418,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                     {
                     for( countT idf = 1 ; idf <= cFlavors ; idf ++ )
                     sOut << cFlavors ;                    
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYaDAMSrEPLY ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYaDAMSrEPLY ) ;
                     countT cFlavors = sws_idAdam.cFlavorsF( tin0P ) ;
                     b_levNicName.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
@@ -441,12 +441,12 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                 b_pbdVarying.ungrabF( tin0P ) ;
                 }
                     pso->writeF( tin0P , sOut ) ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
                 {
                 else
                 }
                     pso->writeF( tin0P , sOut ) ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERaDAMSrEPLY ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERaDAMSrEPLY ) ;
 
                     b_levNicName.ungrabF( tin0P ) ;
                     }
@@ -489,12 +489,12 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                 b_pbdVarying.ungrabF( tin0P ) ;
                 }
                     pso->writeF( tin0P , sOut ) ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
                 {
                 else
                 }
                     pso->writeF( tin0P , sOut ) ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERnICnAMErEPLY ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERnICnAMErEPLY ) ;
 
                     }
                         tblHost.ungrabF( tin0P ) ;
@@ -609,7 +609,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                 //b_pbdVarying.ungrabF( tin0P ) ;
                 //}
                 //    pso->writeF( tin0P , sOut ) ;
-                //    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
+                //    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
                 //{
                 //else
                 }
@@ -637,7 +637,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                                 //etThread.ifcSayF( tin0P , TF3(idClient,flFORMAT_UNSIGNED,9)+tComment+tBar+T(((tin123S&)tin0P).postTell) , flSAY_APPEND | flSAY_LOG ) ; //U::
                                 TELL( "ifcIDcMDsESSION_RELAYcHAT/finished reading an sCmd from down" ) ;
                                 pso->readF( tin0P , sCmd ) ;
-                                soulC sCmd( tin0P , TAG( TAGiDnULL ) ) ;
+                                soulC sCmd( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                                 //etThread.ifcSayF( tin0P , TF3(idClient,flFORMAT_UNSIGNED,9)+tComment+tBar+T(((tin123S&)tin0P).postTell) , flSAY_APPEND | flSAY_LOG ) ; //U::
                                 TELL( "ifcIDcMDsESSION_RELAYcHAT/reading sCmd from down" ) ;
                             {
@@ -741,7 +741,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                             TELL( "ifcIDcMDsESSION_RELAYcHAT/retrieving sPayload from soulC sIn" ) ;
                         {
                         if( bDirect )
-                        soulC sPayload( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC sPayload( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
                         }
                             bDirect =  bLocal || bDirectRequested ;
@@ -917,14 +917,14 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                 b_pbdVarying.ungrabF( tin0P ) ;
                 }
                     pso->writeF( tin0P , sOut ) ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
                 {
                 else
                 }
                     pso->writeF( tin0P , sOut ) ;
 
                     sOut << portChat ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYiDpORTlOCALcHATrEPLY ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_QUERYiDpORTlOCALcHATrEPLY ) ;
 
                     }
                         tblAdam.ungrabF( tin0P ) ;
@@ -965,12 +965,12 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                 b_pbdVarying.ungrabF( tin0P ) ;
                 }
                     pso->writeF( tin0P , sOut ) ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
                 {
                 else
                 }
                     pso->writeF( tin0P , sOut ) ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERiDpORTlOCALcHATrEPLY ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERiDpORTlOCALcHATrEPLY ) ;
 
                     }
                         }
@@ -1036,7 +1036,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
 
                 bReboot = bBye = 1 ;
                 pso->writeF( tin0P , sOut ) ;
-                soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REBOOTrEPLY ) ;
+                soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REBOOTrEPLY ) ;
                 //etThread.ifcSayF( tin0P , TF3(idClient,flFORMAT_UNSIGNED,9)+T(((tin123S&)tin0P).postTell) , flSAY_APPEND | flSAY_LOG ) ; //U::
                 TELL( "ifcIDcMDsESSION_REBOOT/+" ) ;
             {
@@ -1047,7 +1047,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                 TELL( "ifcIDcMDsESSION_PUThIREdELETE/-" ) ;
 
                 pso->writeF( tin0P , sOut ) ;
-                soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_PUThIREdELETErEPLY ) ;
+                soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_PUThIREdELETErEPLY ) ;
 
                 etThread.delF( tin0P , pbFile ) ;
                 etThread.delF( tin0P , psttExe ) ;
@@ -1087,7 +1087,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                 b_pbdVarying.ungrabF( tin0P ) ;
                 }
                     pso->writeF( tin0P , sOut ) ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_ERROR ) ;
                 {
                 else
                 }
@@ -1119,7 +1119,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                         ranUniC ru( TOCK * 8 ) ;
                         boolT bFail = 1 ;
                     {
-                    soulC sDone( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC sDone( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                     stateS& state = *(stateS*)pbdVarying ;
                 {
@@ -1138,7 +1138,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
 
                 etThread.delF( tin0P , pbFile ) ;
                 sOut.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_byteTptr , pbFile , cbFile ) ;
-                soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_GETfYLErEPLY ) ;
+                soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_GETfYLErEPLY ) ;
 
                 etThread.delF( tin0P , pcName ) ;
                 }
@@ -1178,7 +1178,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
 
                 etThread.delF( tin0P , pbFile ) ;
                 sOut.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_byteTptr , pbFile , cbFile ) ;
-                soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_GETfILErEPLY ) ;
+                soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_GETfILErEPLY ) ;
 
                 ((tin1S&)tin0P).zEtScratch->delF( tin0P , psttName ) ;
                 ((tin1S&)tin0P).zEtScratch->boxGetShadowF( tin0P , pbFile , cbFile , psttName ) ; ___( pbFile ) ;
@@ -1205,7 +1205,7 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
                 //etThread.ifcSayF( tin0P , TF3(idClient,flFORMAT_UNSIGNED,9)+T(((tin123S&)tin0P).postTell) , flSAY_APPEND | flSAY_LOG ) ; //U::
                 TELL( "ifcIDcMDsESSION_YOUaREfIRED/-" ) ;
                 pso->writeF( tin0P , sOut ) ;
-                soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_YOUaREfIREDrEPLY ) ;
+                soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_YOUaREfIREDrEPLY ) ;
                 FIREmYSELF ;
                 //etThread.ifcSayF( tin0P , TF3(idClient,flFORMAT_UNSIGNED,9)+T(((tin123S&)tin0P).postTell) , flSAY_APPEND | flSAY_LOG ) ; //U::
                 TELL( "ifcIDcMDsESSION_YOUaREfIRED/+" ) ;
@@ -1227,11 +1227,11 @@ DONEdRIVENsERVERnEWsOCKET( tmcF )
         if( *((tin1S&)tin0P).zEtScratch ) break ;
         TELL( "finished reading soulC sIn" ) ;
         pso->readF( tin0P , sIn ) ;
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         TELL( "reading soulC sIn" ) ;
     {
     while( !ether && !etThread && !*((tin1S&)tin0P).zEtScratch && !bBye )
-    soulC sBye( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
+    soulC sBye( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
     ZE( boolT , bBye ) ;
     ZE( boolT , bReboot ) ;
 

@@ -85,14 +85,14 @@ DONEdRIVENsERVER( tmcF )
                 //U::     ZE( strokeS* , psttu ) ;
                 //U:: 
                 //U::     sAsynchOrder << sOrder ;
-                //U::     soulC sAsynchOrder( tin0P , TAG( TAGiDnULL ) , flSOUL_null , idAdamTo ) ;
+                //U::     soulC sAsynchOrder( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , idAdamTo ) ;
                 //U:: 
                 //U::     etThread.delF( tin0P , psttb ) ;
                 //U::     sOrder << psttb ;
                 //U::     strokeS* psttb = psttOldC( tin0P , etThread , psttBody ) ; ___( psttb ) ;
                 //U::     sOrder << idAdamTo ;
                 //U::     sOrder << psttFrom ;
-                //U::     soulC sOrder( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_MAIL ) ;
+                //U::     soulC sOrder( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_MAIL ) ;
                 //U:: 
                 //U::     etThread.strokeF( tin0P , T("ordering ")+TF1(DDNUMB)+T(" asynch (via 9440104) to do job ")+T("/ifcIDcMDjOBoRDER_MAIL/")+T(psttFrom)+T("/")+TF1(idAdamTo)+T("\r\n") ) ;
                 //U:: 
@@ -139,7 +139,7 @@ DONEdRIVENsERVER( tmcF )
                                     sOut << (countT)0 ; //NEVER EXPIRES
                                     sOut << (strokeS*)T("01.1.1") ;
                                     sOut << (countT)1 ; //idFormat
-                                    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+                                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                                 {
                                 if( !etThread.diskFileExistsF( tin0P , tFile ) )
                                 tFile = T("///ideafarm/ephemeral/prepaycode/") + tCode ;
@@ -195,7 +195,7 @@ DONEdRIVENsERVER( tmcF )
                                 sOut << timeE.time1 ;
                                 sOut << (strokeS*)T("e.1.1") ;
                                 sOut << (countT)1 ; //idFormat
-                                soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+                                soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                                 etThread.osTimeAddF( tin0P , timeE.time1 , timeE.time2 , 0 , 0x40 ) ; //EXPIRES AT THIS TIME
                                 etThread.osTimeNowF( tin0P , timeE.time1 , timeE.time2 ) ;
@@ -290,7 +290,7 @@ DONEdRIVENsERVER( tmcF )
                             ZE( countT , days ) ;
                         {
                         sJournal << (countT)1 ; //idFormat
-                        soulC sJournal( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC sJournal( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                         }
                             ((tin1S&)tin0P).zEtScratch->boxPutF( tin0P , tFile , tp , tp.csF( tin0P ) ) ;
@@ -760,14 +760,14 @@ TASKdRIVENsERVER( tmcF )
             etThread.delF( tin0P , psttFrom ) ;
             }
                 etThread.ifcJobF( tin0P , stCourses , idAdamTo , sOrder , stOrders , TF1(DDNUMB)+T("port.91.smtp/")+tComment ) ;
-                stOrders << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+                stOrders << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 stackC stOrders(  tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
                 stackC stCourses( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
 
                 sOrder << psttBody ;
                 sOrder << idAdamTo ;
                 sOrder << psttFrom ;
-                soulC sOrder( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_MAIL ) ;
+                soulC sOrder( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_MAIL ) ;
 
                 etThread.strokeF( tin0P , tComment ) ;
                 TN( tComment , "" ) ; tComment = T("ordering ")+TF1(idAdamTo)+T(" to do job ")+T("/ifcIDcMDjOBoRDER_MAIL/")+T(psttFrom)+T("/")+TF1(idAdamTo)+T("\r\n") ;

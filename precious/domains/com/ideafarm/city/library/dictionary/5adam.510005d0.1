@@ -136,7 +136,7 @@ DONE( tmcSerialNumberServeF )
 
             sOut << (countT)1 ; //idFormat
             sOut << (countT)FINGERnEG_SERIALnUMBERdISPENSERrEPLY ;
-            soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
             sIn >> idCmd ;
             ZE( countT , idCmd ) ;
@@ -151,7 +151,7 @@ DONE( tmcSerialNumberServeF )
 
             if( POOP ) break ;
             psoP->readF( tin0P , sIn ) ;
-            soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         {
         while( !ether && !POOP )
 
@@ -188,7 +188,7 @@ DONE( tmTestF )
     ZE( countT , finger ) ;
 
     sock.readF( tin0P , sIn ) ;
-    soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
     sock.writeF( tin0P , sOut ) ;
 
@@ -196,7 +196,7 @@ DONE( tmTestF )
     sOut << (countT)ifcIDcMDsERIALnUMBERdISPENSER_DISPENSEnAMEsTROKEsTRING ;
     sOut << (countT)1 ;
     sOut << (countT)FINGERnEG_SERIALnUMBERdISPENSERcMD ;
-    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
     TN( tSerialName , "serial.number.idAccount" ) ;
 

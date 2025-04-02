@@ -17,13 +17,13 @@ slPgm W("myThen") ;
 
 slPgm DEF(slDefElse,"myElse",lex) ;
 slPgm DEF(slDefThen,"myThen",lex) ;
-soulC slPgm( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ;
+soulC slPgm( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ;
 
 slDefElse WR("for you are the source of all things!") O(sayer) ;
-soulC slDefElse( tin0P , TAG( TAGiDnULL ) ) ;
+soulC slDefElse( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 slDefThen  WR("thank you, Jesus!") O(sayer) ;
-soulC slDefThen( tin0P , TAG( TAGiDnULL ) ) ;
+soulC slDefThen( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 ifC myIf ;
 sayerC sayer ;

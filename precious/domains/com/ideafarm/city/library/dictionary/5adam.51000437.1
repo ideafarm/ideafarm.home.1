@@ -99,7 +99,7 @@ TELL( "preparing to accept chat clients" ) ;
         ZE( countT , idType ) ;
         
         ((tin1S&)tin0P).zEtScratch->boxGetShadowF( tin0P , sIn , psttc1 , 1 ) ;
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
     FORsTRINGSiN1( pstt1m )
     strokeS sDot( '.' ) ;
@@ -859,7 +859,7 @@ DEL( pso ) ; //U::
                     sOut << ( pSession ? pSession->psttEmail : (strokeS*)0 ) ; //CODE SYNCH: a340104 a340104
                     sOut << (countT)timeE2 ;
                     sOut << timeE1 ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                     }
                         }
@@ -1178,7 +1178,7 @@ DEL( pso ) ; //U::
                         ZE( countT , idFormat ) ;
 
                         ((tin1S&)tin0P).zEtScratch->boxGetShadowF( tin0P , sJournal , psttc1 ) ;
-                        soulC sJournal( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC sJournal( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                     {
                     FORsTRINGSiN1( pstt1m )
                     TN( tb , " " ) ;
@@ -1625,7 +1625,7 @@ DEL( pso ) ; //U::
                                         sJournal << (countT)1 ; //idFormat
                                         countT days = 0x80 ;
                                     {
-                                    soulC sJournal( tin0P , TAG( TAGiDnULL ) ) ;
+                                    soulC sJournal( tin0P , etThread , TAG( TAGiDnULL ) ) ;
             
                                     }
                                         flagsAlert |= flALERT_PLEASEsEThUMANnAME ;
@@ -1670,7 +1670,7 @@ DEL( pso ) ; //U::
                                 sArc << timeE1 ;
                                 sArc << psttItemNumber ;
                                 sArc << idFormat ;
-                                soulC sArc( tin0P , TAG( TAGiDnULL ) ) ;
+                                soulC sArc( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                                 if( cTimesUseable ) cTimesUseable -- ;
                                 boolT bExhausted = cTimesUseable == 1 ;
@@ -1750,7 +1750,7 @@ DEL( pso ) ; //U::
                         ZE( countT , idFormat ) ;
 
                         etThread.boxGetShadowF( tin0P , sIn , psttc1 ) ;
-                        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                     {
                     FORsTRINGSiN1( pstt1m )
                     flagsAlert |= flALERT_PREPAYCODErEJECTED ; //WILL BE RESET IF ACCEPTED
@@ -2720,7 +2720,7 @@ DONE( tmPayBirdDogsF )
             sJournal << (countT)1 ; // NUMBER OF DAYS PURCHASED
             sJournal << (countT)3 ; //idType
             sJournal << (countT)1 ; //idFormat
-            soulC sJournal( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sJournal( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         {
         if( etThread.diskFileExistsF( tin0P , tFile ) )
         etThread.osTimeNowF( tin0P , timeN.time1 , timeN.time2 ) ;

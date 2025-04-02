@@ -64,7 +64,7 @@
                     }
                         bombF( tin0P , etThread , NODEiNFOaRGS , sCry ) ;
                         hdrF( tin0P , sCry , node , flPOP_BOMB , IDcMD2PE_CRY ) ;
-                        soulC sCry( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC sCry( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                         TELL( "setting up 2.2" )
                     {
 
@@ -92,7 +92,7 @@
                     etherC::ifcSayIF( T("cry!") , flSAY_APPEND | flSAY_LOG ) ;
         
                     DEL( pso ) ;
-                    { soulC sOk( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)IDcMD2PE_SERVERoK ) ; pso->writeF( tin0P , sOk ) ; }
+                    { soulC sOk( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , (countT)IDcMD2PE_SERVERoK ) ; pso->writeF( tin0P , sOk ) ; }
                     bWoth = 0 ;
                 {
                 if( bWoth ) //WOTH CLIENT MUST NOT BE REFUSED
@@ -215,7 +215,7 @@ DONE( tmPingF )
                     bombF( tin0P , etThread , NODEiNFOaRGS , sCry ) ;
                     CONoUTrAW3( "" , idMeP , "| NO BANG CLIENTS!!!!\r\n" ) ;
                     hdrF( tin0P , sCry , nodeP , flPOP_BOMB , IDcMD2PE_CRY ) ;
-                    soulC sCry( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC sCry( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 {
                 if( !cBangClientsP )
                 stNodeOpenP.ungrabF( tin0P ) ;
@@ -232,7 +232,7 @@ DONE( tmPingF )
                 }
                     bombF( tin0P , etThread , NODEiNFOaRGS , sCry , nodeDnsCopy ) ;
                     hdrF( tin0P , sCry , nodeP , flPOP_BOMB , IDcMD2PE_CRY ) ;
-                    soulC sCry( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC sCry( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 {
                 if( nodeDnsCopy && nodeDnsCopy != nodeP )
                 stNodeOpenP.ungrabF( tin0P ) ;
@@ -275,7 +275,7 @@ DONE( tmPingF )
         //        TELL( "grabbing open list" )
         //
         //        hdrF( tin0P , sPing , nodeP , flPOP_DOWN|flPOP_UP , IDcMD2PE_PING ) ;
-        //        soulC sPing( tin0P , TAG( TAGiDnULL ) ) ;
+        //        soulC sPing( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         //        const boolT bDud = stNodeOpenP > 1 && stNodeOpenP( (byteT*)nodeP , subtractNodesF ) != 1 ;
         //        TELL( "preparing to ping" )
         //    {
@@ -403,7 +403,7 @@ DONE( tmPingF )
                     bombF( tin0P , etThread , NODEiNFOaRGS , sCry , nodeSlandered ) ; //TO TEST HIM
                     if( bTalkP ) { CONoUTrAW5( "" , idMeP , "| testing slandered " , *(countT*)&nodeSlandered , "\r\n" ) ; }
                     hdrF( tin0P , sCry , nodeP , flPOP_null , IDcMD2PE_CRY ) ;
-                    soulC sCry( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC sCry( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                     nodeC& nodeSlandered = *(nodeC*)&stTest.downF( tin0P , hDown ) ;
                 {
                 do
@@ -484,11 +484,11 @@ DONE( tmKillF )
         sock.connectF( tin0P , nodeP.idp ) ;
         socketC sock( tin0P , *((tin1S&)tin0P).zEtScratch , TAG( TAGiDnULL ) ) ;
     {
-    if( pStBang4P ) *pStBang4P << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
-    if( pStBang3P ) *pStBang3P << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
-    if( pStBang2P ) *pStBang2P << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
-    if( pStBang1P ) *pStBang1P << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
-    if( pStBang0P ) *pStBang0P << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+    if( pStBang4P ) *pStBang4P << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    if( pStBang3P ) *pStBang3P << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    if( pStBang2P ) *pStBang2P << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    if( pStBang1P ) *pStBang1P << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    if( pStBang0P ) *pStBang0P << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     //U:: USE THE ___ MACRO TO TAG THESE DROPS
     bQuitP = 1 ;
     TELL( "killing" )
@@ -498,7 +498,7 @@ DONE( tmKillF )
             if( *((tin1S&)tin0P).zEtScratch ) *((tin1S&)tin0P).zEtScratch = 0 ;
             writeF( tin0P , *((tin1S&)tin0P).zEtScratch , nodeTo , sGasp ) ;
             hdrF( tin0P , sGasp , nodeP , flPOP_BOMB , IDcMD2PE_GASP ) ;
-            soulC sGasp( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sGasp( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         {
         if( nodeTo )
 
@@ -684,7 +684,7 @@ DONE( tmServerF )
                             bombF( tin0P , etThread , NODEiNFOaRGS , sPing , nodeOrigin , 1 ) ;
                             myListF( tin0P , sPing , stNodeOpenP ) ;
                             hdrF( tin0P , sPing , nodeP , flPOP_null , IDcMD2PE_PING ) ;
-                            soulC sPing( tin0P , TAG( TAGiDnULL ) ) ;
+                            soulC sPing( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                             TELL( "preparing to ping" )
                         {
                         if( *(nodeC*)&stNodeOpenP[ 1 ] == nodeP ) //WELCOME THE NEWCOMER WITH A PING SO THAT IT HAS A FULL LIST
@@ -856,7 +856,7 @@ DONE( tmServerF )
         nodeC nodeNull ;
         _IO_     TELLsYSlIFInAME( "tmServerF1" )
         psoP->readF( tin0P , sIn ) ;
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         TELL( "reading soul" )
     {
     while( !etThread && !ether && !bQuitP && psoP )
@@ -867,7 +867,7 @@ DONE( tmServerF )
     ZE( countT , idPingLath ) ;
     nodeC nodeOriginLathGood ;
     nodeC nodeBangClient ;
-    soulC sOk( tin0P , TAG( TAGiDnULL ) , flSOUL_null , (countT)IDcMD2PE_SERVERoK ) ;
+    soulC sOk( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , (countT)IDcMD2PE_SERVERoK ) ;
 
     psoP->etherF( tin0P , *((tin1S&)tin0P).zEtScratch ) ;
 
@@ -957,7 +957,7 @@ DONE( tmBangClientF )
                 if( !*((tin1S&)tin0P).zEtScratch )
                 TELL( "reading ok-" )
                 VERIFY2( sOk , *pso ) ;
-                soulC sOk( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC sOk( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 TELL( "reading ok+ 3" )
                 pso->writeF( tin0P , sHello ) ;
 
@@ -965,7 +965,7 @@ DONE( tmBangClientF )
                 sHello << bNewbie ;
                 sHello << idWorkP ;
                 hdrF( tin0P , sHello , nodeP , flPOP_null , IDcMD2PE_CLIENTbANGhELLO ) ;
-                soulC sHello( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC sHello( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 TELL( "writing hello" )
             {
             else
@@ -1028,7 +1028,7 @@ DONE( tmBangClientF )
 
     countT& idSerialBye = sBye.cFieldF( tin0P , IDfIELD_IDsERIAL ) ;
     hdrF( tin0P , sBye , nodeP , flPOP_null , IDcMD2PE_CLIENTbANGbYE ) ;
-    soulC sBye( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sBye( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 
     ;
@@ -1125,7 +1125,7 @@ voidT idWorkInvertIF( tin0S& tin0P , countT& idWorkInvert1P , countT& idWorkInve
     
             sFail << *(count4S*)&nodeFailP ;
             hdrF( tin0P , sFail , nodeP , flPOP_BOMB , bConnectP ? IDcMD2PE_NODEfAILEDcONNECT : IDcMD2PE_NODEfAILEDrEAD ) ;
-            soulC sFail( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sFail( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         
             }
                 stNodeOpenP.ungrabF( tin0P ) ;
@@ -1200,7 +1200,7 @@ voidT reportFailF( tin0S& tin0P , etherC& etThread , NODEiNFOpARMS , const boolT
 }
     writeF( tin0P , *((tin1S&)tin0P).zEtScratch , nodeTestP , sCry ) ;
     hdrF( tin0P , sCry , nodeP , flPOP_null , IDcMD2PE_CRY ) ;
-    soulC sCry( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sCry( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     _IO_     TELLsYSlIFInAME( "testF" )
 {
 voidT testF( tin0S& tin0P , nodeC& nodeTestP , nodeC& nodeP )
@@ -1227,7 +1227,7 @@ voidT writeF( tin0S& tin0P , const nodeC& nodeP , soulC& soulP )
                 *pSoul = soulP ;
             {
             if( pSoul )
-            soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
+            soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
         {
         if( pStBang4P )
         
@@ -1242,7 +1242,7 @@ voidT writeF( tin0S& tin0P , const nodeC& nodeP , soulC& soulP )
                 *pSoul = soulP ;
             {
             if( pSoul )
-            soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
+            soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
         {
         if( pStBang3P )
         
@@ -1257,7 +1257,7 @@ voidT writeF( tin0S& tin0P , const nodeC& nodeP , soulC& soulP )
                 *pSoul = soulP ;
             {
             if( pSoul )
-            soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
+            soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
         {
         if( pStBang2P )
     
@@ -1272,7 +1272,7 @@ voidT writeF( tin0S& tin0P , const nodeC& nodeP , soulC& soulP )
                 *pSoul = soulP ;
             {
             if( pSoul )
-            soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
+            soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
         {
         if( pStBang1P )
     {
@@ -1290,7 +1290,7 @@ voidT writeF( tin0S& tin0P , const nodeC& nodeP , soulC& soulP )
                 *pSoul = soulP ;
             {
             if( pSoul )
-            soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
+            soulC* pSoul = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( pSoul ) ;
         {
         if( pStBang0P )
     {
@@ -1529,7 +1529,7 @@ osTextT* ppostWork[] =
     }
         __( !_sOk || _sOk.cFieldF( tin0P , 1 ) != IDcMD2PE_SERVERoK ) ; \
         (sockP).readF( tin0P , _sOk , TOCK * 0x8 ) ;                                             \
-        soulC _sOk( tin0P , TAG( TAGiDnULL ) ) ;                                                 \
+        soulC _sOk( tin0P , etThread , TAG( TAGiDnULL ) ) ;                                                 \
     {                                                                                           \
                                                                                                 \
 #define VERIFY(sockP)                                                                           \

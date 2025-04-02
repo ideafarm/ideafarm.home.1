@@ -71,13 +71,13 @@ DONE( tmOutF )
             sGift << (strokeS*)tMsg ;
             TN( tMsg , "" ) ; tMsg = T("how now brown cow! ")+TF1(++cOut)+T("\r\n") ;
             static countT cOut ;
-            soulC sGift( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sGift( tin0P , etThread , TAG( TAGiDnULL ) ) ;
             flagsT flags = flCIOpUT_null ;
-            soulC sToMediator( tin0P , TAG( TAGiDnULL ) ) ;
-            soulC sTo( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sToMediator( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+            soulC sTo( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         {
         if( psWrap )
-        soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
+        soulC* psWrap = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psWrap ) ;
     {
     while( !bQuitP && !stRelayOutP.third && !etThread )
 
@@ -98,7 +98,7 @@ DONE( tmOutF )
             c8Channel.c4 = 4 ; //MUST BE NONZE; MATCHES CHANNELS THAT HAVE SAME LOW 2 BITS
         {
         if( psEnvelope )
-        soulC* psEnvelope = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psEnvelope ) ;
+        soulC* psEnvelope = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psEnvelope ) ;
     {
     //SET AN EXCLUSION FILTER THAT SELECTS CHANNELS THAT ARE MODULO 4 (4 8 c 01 ...)
 
@@ -119,7 +119,7 @@ DONE( tmOutF )
             c8Channel.c4 = 2 ; //MUST BE NONZE; SPECIFY ANY EVEN VALUE TO GET EVEN CHANNELS; ANY ODD VALUE TO GET ODD CHANNELS
         {
         if( psEnvelope )
-        soulC* psEnvelope = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psEnvelope ) ;
+        soulC* psEnvelope = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psEnvelope ) ;
     {
     //SET A FILTER THAT SELECTS CHANNELS THAT ARE EVEN
 
@@ -139,7 +139,7 @@ DONE( tmOutF )
     //        c8Channel.c4 = idChannel ;
     //    {
     //    if( psEnvelope )
-    //    soulC* psEnvelope = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+    //    soulC* psEnvelope = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     //{
     //for( countT idChannel = 3 ; idChannel <= 4 ; idChannel ++ )
     //SET A FILTER TO REQUEST CHANNELS 3 AND 4

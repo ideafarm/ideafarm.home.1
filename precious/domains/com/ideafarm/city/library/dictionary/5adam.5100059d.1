@@ -574,7 +574,7 @@ REST
             if( POOP )
             ZE( boolT , bFailPermanent ) ;
             ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , sIn , psttc1 ) ;
-            soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
             ZE( flagsT , flagsFail ) ;
             CONoUTrAW( TT(timeN1,timeN2)+T(" | mailing out ")+T(psttc1)+T(": ") ) ;
@@ -983,14 +983,14 @@ boolT writeBodySnipFromFileF( tin0S& tin0P , etherC& etherP , socketC& sockP , c
         ZE( countT , finger ) ;
     
         sock.readF( tin0P , sIn ) ;
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         sock.writeF( tin0P , sOut ) ;
         sOut << cPassAccountSP ;
         sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKeMAILfROMiDaCCOUNT ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tin0P , homeS::homeIF().idPortListServerEmailIdAccount ) ;
         socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;

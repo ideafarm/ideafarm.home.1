@@ -35,14 +35,14 @@ DONE( tmServeF )
     DEL( pso ) ;
     }
         pso->writeF( tin0P , soulOut ) ;
-        soulC soulOut( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC soulOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
         etThread.strokeF( tin0P , T("value received over secure socket: ")+TF1(value)+T("\r\n") ) ;
         soulIn >> value ;
         ZE( countT , value ) ;
     
         pso->readF( tin0P , soulIn ) ;
-        soulC soulIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC soulIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
     if( pso )
     

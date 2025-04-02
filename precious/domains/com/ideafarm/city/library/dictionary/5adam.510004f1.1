@@ -42,9 +42,9 @@ DONE( tmAcceptorF )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
     {
 
-    if( pStBang2 ) *pStBang2 << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
-    if( pStBang1 ) *pStBang1 << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
-    if( pStBang0 ) *pStBang0 << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+    if( pStBang2 ) *pStBang2 << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    if( pStBang1 ) *pStBang1 << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+    if( pStBang0 ) *pStBang0 << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
     }
         else                { DEL( pso ) ; }
@@ -104,7 +104,7 @@ DONE( tmServerF )
                         *psBang = sIn ;
                     {
                     if( psBang )
-                    soulC* psBang = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
+                    soulC* psBang = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
                 {
                 if( pStBang2 )
                 
@@ -114,7 +114,7 @@ DONE( tmServerF )
                         *psBang = sIn ;
                     {
                     if( psBang )
-                    soulC* psBang = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
+                    soulC* psBang = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
                 {
                 if( pStBang1 )
             {
@@ -126,7 +126,7 @@ DONE( tmServerF )
                         *psBang = sIn ;
                     {
                     if( psBang )
-                    soulC* psBang = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
+                    soulC* psBang = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( psBang ) ;
                 {
                 if( pStBang0 )
             {
@@ -161,7 +161,7 @@ DONE( tmServerF )
         {
         if( *((tin1S&)tin0P).zEtScratch )
         pso->readF( tin0P , sIn ) ;
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
     while( !etThread && !ether )
 
@@ -222,7 +222,7 @@ DONE( tmClientF )
     sOut << nnMe ;
     sOut << (countT)1 ; //idFormat
     sOut << (countT)FINGERnEG ;
-    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
     OStEXTV( ostoOut , "This is the day that the Lord has made.  Let us rejoice!\r\n" )
     

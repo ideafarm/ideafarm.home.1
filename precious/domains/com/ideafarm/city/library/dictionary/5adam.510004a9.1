@@ -120,8 +120,8 @@ DONE( tmTimeRemainingF )
 
             *psCourse >> sData ;
             *psCourse >> sCodes ;
-            soulC sData( tin0P , TAG( TAGiDnULL ) ) ;
-            soulC sCodes( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sData( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+            soulC sCodes( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         {
         if( psCourse )
         stCourses >> psCourse ;
@@ -131,7 +131,7 @@ DONE( tmTimeRemainingF )
         else            { CONoUTrAW( "!queryTimeRemaining job aok\r\n" ) ; }    
         if( *((tin1S&)tin0P).zEtScratch ) { CONoUTrAW( "!queryTimeRemaining job FAILED\r\n" ) ; }    
         ((tin1S&)tin0P).zEtScratch->ifcJobF( tin0P , stCourses , 0x4010120 , sOrder , stOrders , T("!queryTimeRemaining") , 1 , nnIfc ) ;
-        stOrders << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+        stOrders << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         stackC stOrders(  tin0P , *((tin1S&)tin0P).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
         stackC stCourses( tin0P , *((tin1S&)tin0P).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
     
@@ -139,7 +139,7 @@ DONE( tmTimeRemainingF )
         sOrder << qq.idComputer ;
         sOrder << (strokeS*)T("!queryTimeRemaining") ;
         sOrder << ifcIDcMDjOBoRDER_NAMED ;
-        soulC sOrder( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sOrder( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
             
     ZE( sCountT , timeR2 ) ;

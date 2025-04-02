@@ -66,8 +66,8 @@ REST
                     souArchive << (countT)1 ; // IDvERSION
                     souArchive << (countT)1 ; // IDtYPE
                 {
-                soulC souDelta( tin0P , TAG( TAGiDnULL ) , flSOUL_null , DDNUMB ) ;
-                soulC souArchive( tin0P , TAG( TAGiDnULL ) , flSOUL_null , DDNUMB ) ;
+                soulC souDelta( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , DDNUMB ) ;
+                soulC souArchive( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , DDNUMB ) ;
 
                 psttEmail = (strokeS*)swsAll.leverF( tin0P , idf ) ;
             {
@@ -100,7 +100,7 @@ REST
                             *psouWo << idAdam ;
                         {
                         if( psouWo )
-                        soulC* psouWo = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC* psouWo = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                         }
                             //etThread.ifcSayF( tin0P , tLog , flSAY_APPEND | flSAY_LOG ) ;
@@ -148,7 +148,7 @@ REST
                         ZE( countT , idAdam ) ;
 
                         souIn.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbs , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
-                        soulC souIn( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC souIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
                         __( cbs - sizeof( countT ) - *(countT*)pbs ) ;
                     {

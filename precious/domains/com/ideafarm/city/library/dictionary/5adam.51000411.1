@@ -1381,7 +1381,7 @@ TELL( "cleaning up" )
 
                     pso->writeF( tin0P , sOut ) ;
                     sOut << ptm2.idResultHire ;
-                    soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_HIRE2rEPLY ) ;
+                    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_HIRE2rEPLY ) ;
                     TELL( "ifcIDcMDsESSION_HIRE2: writing final reply" )
 
                     }
@@ -1432,7 +1432,7 @@ TELL( "cleaning up" )
         if( !*((tin1S&)tin0P).zEtScratch )
         pso->readF( tin0P , sIn ) ;
         TELL( "waiting for peer to write a soulC containing a command" )
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
     while( !ether && !etThread && !*((tin1S&)tin0P).zEtScratch && !bBye )
     ZE( boolT , bBye ) ;
@@ -1460,20 +1460,20 @@ DONE( tmRegisterPortF )
             }
                 TELL( "registering my idPort with the local chat server: closing connection" )
                 sChat2.writeF( tin0P , soulo3 ) ;
-                soulC soulo3( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
+                soulC soulo3( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_BYE ) ;
                 TELL( "registering my idPort with the local chat server: writing bye" )
 
                 __( idReply - ifcIDcMDsESSION_REGISTERiDpORTlOCALcHATsYSTEMrEPLY ) ;
                 souli2 >> idReply ;
                 ZE( countT , idReply ) ;
                 sChat2.readF( tin0P , souli2 ) ;
-                soulC souli2( tin0P , TAG( TAGiDnULL ) ) ;
+                soulC souli2( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 TELL( "registering my idPort with the local chat server: reading registration reply" )
 
                 sChat2.writeF( tin0P , soulo2 ) ;
                 soulo2 << idPort ;
                 soulo2 << (countT)DDNUMB ;
-                soulC soulo2( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERiDpORTlOCALcHATsYSTEM ) ;
+                soulC soulo2( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_REGISTERiDpORTlOCALcHATsYSTEM ) ;
                 TELL( "registering my idPort with the local chat server: writing my idPort to register it" )
 
                 sChat2.connectF( tin0P , portChat2 ) ;
@@ -1486,11 +1486,11 @@ DONE( tmRegisterPortF )
                     souli >> idReply ;
                     ZE( countT , idReply ) ;
                     sChat.readF( tin0P , souli ) ;
-                    soulC souli( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC souli( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                     TELL( "registering my idPort with the local chat server: reading the idPort that i should connect to" )
 
                     sChat.writeF( tin0P , soulo ) ;
-                    soulC soulo( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKET ) ;
+                    soulC soulo( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDsESSION_NEWsOCKET ) ;
                     TELL( "registering my idPort with the local chat server: writing to request a socket" )
 
                     sChat.connectF( tin0P , ifcPORToLD2_CHAT ) ;

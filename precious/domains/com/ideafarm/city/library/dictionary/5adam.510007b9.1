@@ -63,7 +63,7 @@ DONE( tmTestF )
 
     sGift << (strokeS*)tMsg ;
     TN( tMsg , "" ) ; tMsg = T("115 tmTestF bang [nnMe,idHome,idMsg]:    ")+T(nnMe)+T("    ")+TF2(processGlobal2S::_processGlobal2I_IF().idHome,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+tIdMsg ;
-    soulC sGift( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sGift( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
     TN( tIdMsg , "" ) ; tIdMsg = TF2(++idMsg,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ;
 {
@@ -74,8 +74,8 @@ sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 count8S c8c( 1 , 2 , 3 , 4 ) ;
 ZE( boolT , bQuit ) ;
 
-soulC sToMediator( tin0P , TAG( TAGiDnULL ) ) ;
-soulC sTo( tin0P , TAG( TAGiDnULL ) ) ;
+soulC sToMediator( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+soulC sTo( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 nicNameC nnMe = socketC::nicNameIF( tin0P , etThread , 0 ) ;
 

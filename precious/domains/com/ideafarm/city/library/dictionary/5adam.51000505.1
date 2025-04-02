@@ -226,7 +226,7 @@ TASK( tmWorkF )
                             }
                                 if( pSoul ) pSoul->nameF( tin0P , etThread , psttc1 ) ;
                                 if( !pslActive ) pslActive = pSoul ;
-                                if( !pSoul ) { pSoul = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ; ___( pSoul ) ; }
+                                if( !pSoul ) { pSoul = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ; ___( pSoul ) ; }
                                 soulC*& pSoul = *(soulC**)&(countT&)sw_soulC ;
                                 psttl_soulC = psttc1 ;
                                 bNewStack = 0 ;
@@ -236,7 +236,7 @@ TASK( tmWorkF )
                             }
                                 if( pSoul ) pSoul->nameF( tin0P , etThread , psttc1 ) ;
                                 if( !pslActive ) pslActive = pSoul ;
-                                if( !pSoul ) { pSoul = new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ; ___( pSoul ) ; }
+                                if( !pSoul ) { pSoul = new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ; ___( pSoul ) ; }
                                 soulC*& pSoul = *(soulC**)&(countT&)sw_soulC ;
                                 psttl_soulC = psttc1 ;
                                 bNewList = 0 ;
@@ -383,7 +383,7 @@ TASK( tmWorkF )
     ZE( sCountT , scOff ) ; // IF scOff THEN ALL WORDS OTHER THAN .off AND .on ARE IGNORED
     ZE( boolT , bDot ) ;
 
-    switchC sw_soulC( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttl_soulC ) ;
+    switchC sw_soulC( tin0P , etThread , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttl_soulC ) ;
     ZE( strokeS* , psttl_soulC ) ;
     
     switchC sw_var( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , psttl_var ) ;

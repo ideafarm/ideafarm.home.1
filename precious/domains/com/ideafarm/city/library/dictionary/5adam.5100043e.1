@@ -121,7 +121,7 @@ voidT doWoF( tin0S& tin0P , etherC& etThread , strokeS* psttFileP , const countT
     //((tin1S&)tin0P).zEtScratch->ifcSayF( tin0P , TF1(DDNUMB)+T("/hired ")+TF1(ifcIDaDAMoLD_MAILcLERK)+T(" to do a !mailOut job") , flSAY_APPEND | flSAY_LOG ) ;
     ((tin1S&)tin0P).zEtScratch->ifcJobF( tin0P , stCourses , ifcIDaDAMoLD_MAILcLERK , sOrder , stOrders , TF1(DDNUMB)+T("mail.out/!mailOut/")+TF1((countT)st_psttTo) , 1 ) ;
     //((tin1S&)tin0P).zEtScratch->ifcSayF( tin0P , TF1(DDNUMB)+T("/hiring ")+TF1(ifcIDaDAMoLD_MAILcLERK)+T(" to do a !mailOut job") , flSAY_APPEND | flSAY_LOG ) ;
-    stOrders << new( 0 , tin0P , LF ) soulC( tin0P , TAG( TAGiDnULL ) ) ;
+    stOrders << new( 0 , tin0P , LF ) soulC( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     stackC stOrders(  tin0P , *((tin1S&)tin0P).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
     stackC stCourses( tin0P , *((tin1S&)tin0P).zEtScratch , TAG( TAGiDnULL ) , flSTACKc_FIFO | flSTACKc_GIVEsIGNnEWpLATE , ifcSTACKtYPE_PTR_soulC ) ;
 
@@ -139,7 +139,7 @@ voidT doWoF( tin0S& tin0P , etherC& etThread , strokeS* psttFileP , const countT
 
     sOrder << (countT)1 ;
     sOrder << (strokeS*)tJob ;
-    soulC sOrder( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_NAMED ) ;
+    soulC sOrder( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDjOBoRDER_NAMED ) ;
 
     TN( tJob , "!mailOut" ) ;
 

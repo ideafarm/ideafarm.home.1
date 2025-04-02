@@ -104,14 +104,14 @@ ether.loafIF( tin0P ) ;
                     ZE( countT , idReply ) ;
                     
                     sockm.readF( tin0P , sIn2 ) ;
-                    soulC sIn2( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC sIn2( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                     
                     sockm.writeF( tin0P , sOut2 ) ;
                     sOut2 << sizeof( tin123S ) ;
                     sOut2 << ip ;
                     sOut2 << osPid ;
                     sOut2 << (countT)ifcIDcMDgLASS2_IMAGE ;
-                    soulC sOut2( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC sOut2( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 {
                 if( !bIda )
 
@@ -144,11 +144,11 @@ ether.loafIF( tin0P ) ;
     ZE( countT , idReply ) ;
     
     sockm.readF( tin0P , sIn ) ;
-    soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
     sockm.writeF( tin0P , sOut ) ;
     sOut << (countT)ifcIDcMDgLASS2_tin123S ;
-    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
     etThread.strMakeF( tin0P , LF , psttr , T("\fIPDOS (tm) <> IdeaFarm " "(tm) Piggyback Distributed Operating System\r\nPerformance Monitor\r\ncycle: ")+TF2(++idCycle,flFORMAT_UNSIGNED|flFORMAT_NObIGITvALUES)+tcr , TOCK ) ; ___( psttr ) ;
     ZE( strokeS* , psttr ) ;
@@ -184,14 +184,14 @@ TODO
     ZE( countT , idReply ) ;
                                     
     sockP.readF( tin0P , sIn3 ) ;
-    soulC sIn3( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sIn3( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                                     
     sockP.writeF( tin0P , sOut3 ) ;
     sOut3 << sizeof( grabS ) ;
     sOut3 << (countT)pForeignGrabP ;
     sOut3 << osPidP ;
     sOut3 << (countT)ifcIDcMDgLASS2_IMAGE ;
-    soulC sOut3( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sOut3( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 {
 voidT image_grabS_F( tin0S& tin0P , etherC& etherP , byteT*& pbGrabP , socketC& sockP , grabS* pForeignGrabP , countT osPidP )
 

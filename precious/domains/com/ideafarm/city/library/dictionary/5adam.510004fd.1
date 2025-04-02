@@ -118,11 +118,11 @@ if( !ether )
         ZE( countT , idReply ) ;
         
         sock.readF( tin0P , sIn ) ;
-        soulC sIn2( tin0P , TAG( TAGiDnULL ) ) ;
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn2( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         sOut.removeAllF( tin0P ) ;
         sock.writeF( tin0P , sOut ) ;
-        soulC sOut( tin0P , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDgLASS2_POOLoLDnAMES ) ;
+        soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_null , ifcIDcMDgLASS2_POOLoLDnAMES ) ;
         sock.connectF( tin0P , ifcIDpORT_DOOR ) ;
         socketC sock( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {

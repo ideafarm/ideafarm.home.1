@@ -92,7 +92,7 @@ DONE( tmHearNodeAdvertisementF )
 
         etThread.traceF( tin0P , T("called readF [nnHe,idpHe]:    ")+T(nnHe)+T("    ")+TF2(idpHe,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
         socki.readF( tin0P , soulNicNameIn , idpHe , nnHe , 0 , 0 ) ;
-        soulC soulNicNameIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC soulNicNameIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         etThread.traceF( tin0P , T("calling readF") ) ;
         ZE( countT , idpHe ) ;
         nicNameC nnHe ;
@@ -136,7 +136,7 @@ DONE( tmSayNodeAdvertisementF )
         ZE( countT    , cnnMe ) ;
         ZE( nicNameC* , pnnMe ) ;
     {
-    soulC soulNicName( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC soulNicName( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 {
 while( !ether && !POOP )
 

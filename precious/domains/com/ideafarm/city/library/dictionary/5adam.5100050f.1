@@ -32,16 +32,16 @@ DONE( tmWorkF )
                         portTimeC idptRelay ;
     
                         sIn >> sPay ;
-                        soulC sPay( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC sPay( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
                         sIn >> flags ;
                         ZE( flagsT , flags ) ;
     
                         sIn >> sToMediator ;
-                        soulC sToMediator( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC sToMediator( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
                         sIn >> sTo ;
-                        soulC sTo( tin0P , TAG( TAGiDnULL ) ) ;
+                        soulC sTo( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
                         etThread.delF( tin0P , pczChannel ) ;
                         sIn >> pczChannel ;
@@ -67,7 +67,7 @@ DONE( tmWorkF )
                     ZE( strokeS* , psttTradeMark ) ;
             
                     sock.readF( tin0P , sIn ) ;
-                    soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+                    soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
                 {
                 while( !ether && !etThread && !POOP )
     
@@ -120,11 +120,11 @@ DONE( tmPutPayloadsF )
             /* 3 */ sWrap << (countT)1 ; // idVersion
             /* 2 */ sWrap << (countT)ifcIDpROTOCOL_RELAYwRAP ;
             /* 1 */ sWrap << (strokeS*)tTM ;
-            soulC sGift( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sGift( tin0P , etThread , TAG( TAGiDnULL ) ) ;
             flagsT flags = flCIOpUT_null ;
-            soulC sToMediator( tin0P , TAG( TAGiDnULL ) ) ;
-            soulC sTo( tin0P , TAG( TAGiDnULL ) ) ;
-            soulC sWrap( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sToMediator( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+            soulC sTo( tin0P , etThread , TAG( TAGiDnULL ) ) ;
+            soulC sWrap( tin0P , etThread , TAG( TAGiDnULL ) ) ;
         {
         while( !ether && !bQuitP && !etThread )
         count8S c8Channel( 1 , 2 , 3 , 4 ) ;

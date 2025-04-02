@@ -18,7 +18,7 @@ sgnDone_tmServerF.waitF( tin0P ) ;
     sock.writeF( tin0P , soulOut ) ;
     
     soulOut << (countT)0x87654321 ;
-    soulC soulOut( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC soulOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
     sock.connectF( tin0P , idPort ) ;
     socketC sock( tin0P , ether , TAG( TAGiDnULL ) ) ;
@@ -41,7 +41,7 @@ DONE( tmServerF )
         ZE( countT , value ) ;
 
         pso->readF( tin0P , soulIn ) ;
-        soulC soulIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC soulIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     {
     if( pso )
     sock.acceptF( tin0P , pso , idPortPeer , nnPeer , countTC() ) ; ___( pso ) ;

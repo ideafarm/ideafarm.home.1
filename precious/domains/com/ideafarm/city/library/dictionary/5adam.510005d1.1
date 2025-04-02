@@ -71,14 +71,14 @@ DONE( tmLoadHelperF )
         ZE( countT , finger ) ;
     
         sock.readF( tin0P , sIn ) ;
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         sock.writeF( tin0P , sOut ) ;
         sOut << (strokeS*)tEmail ;
         sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tin0P , homeS::homeIF().idPortListServerEmailIdAccount ) ;
         socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
@@ -138,14 +138,14 @@ DONE( tmTestQueryF )
         ZE( countT , finger ) ;
     
         sock.readF( tin0P , sIn ) ;
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         sock.writeF( tin0P , sOut ) ;
         sOut << idAccount ;
         sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKeMAILfROMiDaCCOUNT ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tin0P , homeS::homeIF().idPortListServerEmailIdAccount ) ;
         socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
@@ -174,14 +174,14 @@ DONE( tmTestQueryF )
         ZE( countT , finger ) ;
     
         sock.readF( tin0P , sIn ) ;
-        soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         sock.writeF( tin0P , sOut ) ;
         sOut << (strokeS*)tEmail ;
         sOut << (countT)ifcIDcMDlISTsERVEReMAILiDaCCOUNT_ASKiDaCCOUNTfROMeMAIL ;
         sOut << (countT)1 ;
         sOut << (countT)FINGERnEG_LISTsERVERcMD ;
-        soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+        soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
     
         sock.connectF( tin0P , homeS::homeIF().idPortListServerEmailIdAccount ) ;
         socketC sock( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
@@ -663,7 +663,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tin0S& tin0P , aptC& aptP , listWa
 
             sOut << (countT)1 ; //idFormat
             sOut << (countT)FINGERnEG_LISTsERVERrEPLY ;
-            soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
             sIn >> idCmd ;
             ZE( countT , idCmd ) ;
@@ -677,7 +677,7 @@ sCountT listingInspect_ad5_chatterMaster_CBF( tin0S& tin0P , aptC& aptP , listWa
             ZE( countT , finger ) ;
 
             psoP->readF( tin0P , sIn ) ;
-            soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+            soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
             _IO_
         {
         while( !ether && !POOP )

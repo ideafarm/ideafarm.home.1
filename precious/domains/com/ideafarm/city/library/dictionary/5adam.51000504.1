@@ -18,16 +18,16 @@ bb = 1 ;
 slPgm DEF(slDefDo,"myDo",lex) ;
 slPgm DEF(slDefElse,"myElse",lex) ;
 slPgm DEF(slDefThen,"myThen",lex) ;
-soulC slPgm( tin0P , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ;
+soulC slPgm( tin0P , etThread , TAG( TAGiDnULL ) , flSOUL_LIFO|flSOUL_LIVE ) ;
 
 slDefDo O(bb) WR("myThen") WR("myElse") OR(lex) W("if",lex) ;
-soulC slDefDo( tin0P , TAG( TAGiDnULL ) ) ;
+soulC slDefDo( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 slDefElse WR("for you are the source of all things!") W("POPUP",lex) ;
-soulC slDefElse( tin0P , TAG( TAGiDnULL ) ) ;
+soulC slDefElse( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 slDefThen WR("thank you, Jesus!") W("POPUP",lex) ;
-soulC slDefThen( tin0P , TAG( TAGiDnULL ) ) ;
+soulC slDefThen( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 lexC lex( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 

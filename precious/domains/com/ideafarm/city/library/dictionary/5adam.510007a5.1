@@ -19,7 +19,7 @@ REST
     sOut << (countT)0x33333333 ;
     sOut << (countT)0x22222222 ;
     sOut << (countT)0x11111111 ;
-    soulC sOut( tin0P , TAG( TAGiDnULL ) ) ;
+    soulC sOut( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 {
 
 etThread.osSleepF( tin0P , TOCK ) ;
@@ -41,7 +41,7 @@ while( sIn )
 
 DEL( psoa ) ;
 psoa->readF( tin0P , sIn , 0 , 0 ) ;
-soulC sIn( tin0P , TAG( TAGiDnULL ) ) ;
+soulC sIn( tin0P , etThread , TAG( TAGiDnULL ) ) ;
 
 socks.acceptF( tin0P , psoa , idpPeer , nnPeer , bRefuse ) ;
 ZE( boolT , bRefuse ) ;
