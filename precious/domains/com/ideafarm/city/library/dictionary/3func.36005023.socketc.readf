@@ -28,17 +28,20 @@
                 pEther->delF( tin0P , pbAll ) ;
                 }
                     }
-                        soulP.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbAll , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                        }
+                            soulP.shiftLeftF( tin0P , ifcIDtYPEsOULiTEM_soulC , pbAll , 0 , 0 , flSOULsHIFTlEFTmODE_UNPACKsOULiMAGE ) ;
+                            _IO_
+                        {
+                        if( cbIn2 ) pEther->memCopyF( tin0P , pbAll + 3 * sizeof( countT ) , pbIn2 , cbIn2 ) ;
+                                  ((countT*)pbAll)[ 2 ] = length   ;
+                                  ((countT*)pbAll)[ 1 ] = idFormat ;
+                        putNegAM( ((countT*)pbAll)[ 0 ] , finger ) ;
                         _IO_
                     {
-                    if( cbIn2 ) pEther->memCopyF( tin0P , pbAll + 3 * sizeof( countT ) , pbIn2 , cbIn2 ) ;
-                              ((countT*)pbAll)[ 2 ] = length   ;
-                              ((countT*)pbAll)[ 1 ] = idFormat ;
-                    putNegAM( ((countT*)pbAll)[ 0 ] , finger ) ;
-                    _IO_
+                    if( pbAll )
+                    pEther->newF( tin0P , LF , pbAll , 3 * sizeof( countT ) + length ) ; ___( pbAll ) ;
                 {
-                if( pbAll )
-                pEther->newF( tin0P , LF , pbAll , 3 * sizeof( countT ) + length ) ; ___( pbAll ) ;
+                if( !POOP )
                 ZE( byteT* , pbAll ) ;
     
                 }
@@ -58,7 +61,7 @@
                     ZE( count01T* , pcCode2 ) ;
                     _IO_
                 {
-                if( length )
+                if( !POOP && length )
                 ZE( countT , cbIn2 ) ;
                 ZE( byteT* , pbIn2 ) ;
     
@@ -66,13 +69,18 @@
                     }
                         pEther->delF( tin0P , pbIn1 ) ;
                         }
+                            __( length & BM_HIGH           ) ;      // WEAK TEST TO DETECT GARBAGE (VALID length WILL NEVER HAVE BM_HIGH BIT SET)
+                            __( idFormat - 1               ) ;
+                            __( finger   - FINGERnEG_SOULc ) ;
+
                             length   = ((countT*)pbIn1)[ 2 ] ;
                             idFormat = ((countT*)pbIn1)[ 1 ] ;
                             finger   = getNegAM( ((countT*)pbIn1)[ 0 ] ) ;
                             _IO_
                         {
-                        if( pbIn1 )
+                        if( !POOP )
                         __( cbIn1 - 3 * sizeof( countT ) ) ;
+                        __Z( pbIn1 ) ;
                         dad( tin0P , pbIn1 , cbIn1 , pcCode1 , 3 * sizeof( countT ) ) ; ___( pbIn1 ) ;
                         ZE( countT , cbIn1 ) ;
                         ZE( byteT* , pbIn1 ) ;
