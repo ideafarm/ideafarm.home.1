@@ -32,9 +32,9 @@
                         _IO_
                     {
                     if( cbIn2 ) pEther->memCopyF( tin0P , pbAll + 3 * sizeof( countT ) , pbIn2 , cbIn2 ) ;
-                    ((countT*)pbAll)[ 2 ] = length   ;
-                    ((countT*)pbAll)[ 1 ] = idFormat ;
-                    ((countT*)pbAll)[ 0 ] = finger   ;
+                              ((countT*)pbAll)[ 2 ] = length   ;
+                              ((countT*)pbAll)[ 1 ] = idFormat ;
+                    putNegAM( ((countT*)pbAll)[ 0 ] , finger ) ;
                     _IO_
                 {
                 if( pbAll )
@@ -68,7 +68,7 @@
                         }
                             length   = ((countT*)pbIn1)[ 2 ] ;
                             idFormat = ((countT*)pbIn1)[ 1 ] ;
-                            finger   = ((countT*)pbIn1)[ 0 ] ;
+                            finger   = getNegAM( ((countT*)pbIn1)[ 0 ] ) ;
                             _IO_
                         {
                         if( pbIn1 )
