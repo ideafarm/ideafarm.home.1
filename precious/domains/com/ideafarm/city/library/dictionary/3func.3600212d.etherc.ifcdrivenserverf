@@ -918,6 +918,8 @@ ZE( boolT , bRefuseTooManyOrBlackListed ) ;
                             while( scDo -- )
                             etRock.traceF( tin0P , T("ifcDrivenServerF / launching workers [cWorkers]:    ")+TF2(scDo,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)  , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
 
+scDo = 1 ; //U::TO MAKE THE TRACE BOOKS EASY TO READ DURING TESTING
+
                             if( scDo > 0x10 ) scDo = 0x10 ; //U::20240205@1335: WORKAROUND TO AVOID MEMORY EXHAUSTION WHEN EXIST 02 PROCESSORS ; STUDY WHY "SHOWPONY" IS NEEDED (WHAT DOES IT DO?:); STUDY: USING MINIMAL THREAD STACK HERE SO CAN LAUNCH MORE
                             if( scDo < 0 ) scDo = ( - scDo ) * thirdC::osProcessorsIF( tin0P ) ;
                             sCountT scDo = (sCountT)cWorkersSave ;
