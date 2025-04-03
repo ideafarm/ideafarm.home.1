@@ -10,7 +10,7 @@
 }
     }
         }
-            etRock.traceF( tin0P , T("s_acceptF / closed handle because bRefuseP is set / 2") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+            etRock.traceF( tin0P , T("s_acceptF / closed handle because bRefuseP is set / 2") ) ;
             hClientP.closeIfF() ;
         {
         if( bRefuseP )
@@ -33,14 +33,14 @@
         {
         else
         }
-            etRock.traceF( tin0P , T("s_acceptF / closed handle because bRefuseP is set / 1") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+            etRock.traceF( tin0P , T("s_acceptF / closed handle because bRefuseP is set / 1") ) ;
             hClientP.closeIfF() ;
         {
         if( bRefuseP )
     {
     else
     }
-        etRock.traceF( tin0P , T("s_acceptF / i just became impotent") , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
+        etRock.traceF( tin0P , T("s_acceptF / i just became impotent") ) ;
     {
     if( POOP )
 
@@ -55,20 +55,14 @@
     if( !phContextP ) hClientP.osF( ifcIDtYPEhANDLE_SOCKET , oshSocket ) ;
     //CS:CODEsYNC: PSEUDODUPLICATE 3600103f 360010b1
 
-    //etRock.traceF( tin0P , T("s_acceptF / called  accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-
     INCoShANDLES
-
-    //etRock.traceF( tin0P , T("s_acceptF / calling accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) , flTRACE_HOMEeCHOdEADMAN1 | flTRACE_FORCEnOsILENCE | flTRACE_ECHOoNLY ) ;
-    etherC& etRock = etherC::etRockIF( tin0P ) ;
-
-    //countT idAccept = ((tin1S&)tin0P).glass.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
-    //static countT idAcceptLath ;
 
     }
         if( !POOP ) oshSocket = ((tin1S&)tin0P).brcRaw ;
 
         __( cbInfo - sizeof info ) ;
+
+        etRock.traceF( tin0P , T("s_acceptF / called  accept [idAccept,POOP]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+T("    ")+TF2(POOP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
         //}
         //    LOGrAW5( "" , oshSocket , "    " , ((tin1S&)tin0P).pag1->idAdam , " ++++ accept\r\n" ) ;
@@ -76,6 +70,11 @@
         //{
         BOSpOOP
         BOSS( WHATsia , BOSsOCKETcODE , accept( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , &cbInfo ) )
+
+        etRock.traceF( tin0P , T("s_acceptF / calling accept [idAccept]:    ")+TF2(idAccept,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+        countT idAccept = ((tin1S&)tin0P).glass.idThread << 0x10 | 1 + incv02AM( idAcceptLath ) ;
+        static countT idAcceptLath ;
 
         sCountT cbInfo = sizeof info ;
         c_memsetIF( tin0P , (byteT* const)&info , sizeof info ) ;
@@ -93,6 +92,8 @@
     if( pP )
     ZE( countT        , oshSocket ) ;
     ZE( sockaddr_in6* , pzInfo    ) ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     _IO_
 
