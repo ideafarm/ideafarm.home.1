@@ -40,11 +40,7 @@
             }
                 break ;
                 bFail = 0 ;
-
-                //}
-                //    ((tin1S&)tin0P).pEther->traceF( tin0P , T("s_connectF / connect aok") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
-                //{
-                //if( idPortP == 0x50 )   //U:: TO FIND A BUG
+                etRock.traceF( tin0P , T("s_connectF / connect aok") ) ;
             {
             else
             }
@@ -57,14 +53,11 @@
                     //U:
                 #if defined( __OS2__ )
 
-                //}
-                //    ((tin1S&)tin0P).pEther->traceF( tin0P , T("s_connectF / connect failed") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
-                //{
-                //if( idPortP == 0x50 )   //U:: TO FIND A BUG
+                etRock.traceF( tin0P , T("s_connectF / connect failed") ) ;
             {
             if( ((tin1S&)tin0P).bosFail )
 
-            //etherC::etRockIF( tin0P ).traceF( tin0P , T("s_connect [bFail,bKilled]:    ")+TF3(((tin1S&)tin0P).bosFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)+T("    ")+TF2(pks->bKilled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
+            etRock.traceF( tin0P , T("s_connect [bFail,bKilled]:    ")+TF3(((tin1S&)tin0P).bosFail,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)+T("    ")+TF2(pks->bKilled,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ; //U:: TO FIND A BUG
 
             //}
             //    ((tin1S&)tin0P).brcRaw = _brcRawExp ;
@@ -128,11 +121,7 @@
 
             BOSS( WHATsir , BOSfAIL , connect( handleP.osF( ifcIDtYPEhANDLE_SOCKET ) , (sockaddr*)&info , sizeof info ) )
 
-            //}
-            //    ((tin1S&)tin0P).pEther->traceF( tin0P , T("s_connectF / connecting to port 05") , flTRACE_HOMEeCHO | flTRACE_FORCEnOsILENCE , ifcIDtRACEdIVERT_1 ) ;
-            //{
-            //if( idPortP == 0x50 )   //U:: TO FIND A BUG
-
+            etRock.traceF( tin0P , T("s_connectF / connecting [idPort]:    ")+TF2(idPortP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
             //CONoUTrAW5( "" , ((tin1S&)tin0P).pag1->idAdam , ": connecting to port " , idPortP , "\r\n" ) ;
     
@@ -149,7 +138,15 @@
 
     killSocketS* pks = time1P || time2P ? s_registerTimeoutF( tin0P , handleP , time1P , time2P ) : 0 ;
 
-    //etherC::etRockIF( tin0P ).traceF( tin0P , T("s_connect [sin_addr.s_addr,sin_port]: ")+TF3((countT)info.sin6_addr.s_addr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)+T("    ")+TF2((countT)info.sin6_port,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+    //etRock.traceF( tin0P , /*T("s_connect [sin_addr.s_addr,sin_port]: ")+*/ TF3((countT)info.sin6_addr.s_addr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)    /*+T("    ")+TF2((countT)info.sin6_port,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
+
+    //etRock.traceF( tin0P , /*T("s_connect [sin_addr.s_addr,sin_port]: ")+*/ TF3((countT)info.sin6_addr.s_addr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3)    /*+T("    ")+TF2((countT)info.sin6_port,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)*/ ) ;
+
+    //TN( tFoo , "" ) ; tFoo = TF3((countT)info.sin6_addr.s_addr,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_FILLzE,3) ;
+
+    //countT foo = info.sin6_addr.s_addr ;
+
+    etherC& etRock = etherC::etRockIF( tin0P ) ;
 
     }
         pcTo[ 3 - offi ] = ((tin1S&)tin0P).brcRaw ;
