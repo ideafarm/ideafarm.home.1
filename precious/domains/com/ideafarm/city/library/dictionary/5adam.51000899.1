@@ -142,7 +142,7 @@ DONE( tmWorkF )
                                                         grab_tWoTimePassword.ungrabF( tin0P ) ;
                                                                               tGorillaSuffix = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
                                                         tGorillaSuffixUsed  = tGorillaSuffix ; 
-                                                                              tWoTimePassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
+                                                                              tWoTimePassword = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;
                                                         tWoTimePasswordUsed = tWoTimePassword ;
                                                         grab_tWoTimePassword.grabF( tin0P , TAG( TAGiDnULL ) ) ;
 
@@ -460,13 +460,14 @@ DONE( tmWorkF )
     ZE( sCountT , timeUsed2 ) ;
     ZE( countT  , timeUsed1 ) ;
     ZE( countT  , cUsed ) ;
-    TN( tGorillaSuffixUsed          , ""                 ) ;
-    TN( tWoTimePasswordUsed         , ""                 ) ;
-    TN( tGorillaSuffix              , ""                 ) ; tGorillaSuffix  = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
-    TN( tWoTimePassword             , ""                 ) ; tWoTimePassword = TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;  //0x24: [0-9,a-z]
+    TN( tGorillaSuffixUsed          , ""                     ) ;
+    TN( tWoTimePasswordUsed         , ""                     ) ;
+    TN( tGorillaSuffix              , ""                     ) ; tGorillaSuffix  = tWoTimePassword+tDotHiddenDotIdeafarmDotCom ;
+    TN( tWoTimePassword             , ""                     ) ; tWoTimePassword = tPasswordPrefix+TF4((countT)ruPassword,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED|flFORMAT_NObASE|flFORMAT_FILLzE,0,0x24) ;  //0x24: [0-9,a-z]
+    TN( tPasswordPrefix             , "password"             ) ;            // THIS PREFIX IS FOR CONVENIENCE WHEN SEARCHING TRACE LOGS 
     TN( tDotHiddenDotIdeafarmDotCom , ".hidden.ideafarm.com" ) ;
-    grab_tWoTimePassword.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-    grabC grab_tWoTimePassword( tin0P , TAG( TAGiDnULL ) ) ;
+    grab_tWoTimePassword.grabF( tin0P , TAG( TAGiDnULL )     ) ;
+    grabC grab_tWoTimePassword( tin0P , TAG( TAGiDnULL )     ) ;
 
     ranUniC ruPassword( tin0P , (measure04T)MAXcOUNTT + 1 , processGlobal1S::_processGlobal1I_IF().trueRandom ) ;
 
