@@ -48,6 +48,7 @@ DONE( tmGetWebHookRandomSuffixF )
             DELzOMBIE( psDoomed ) ;
             socketC* psDoomed = (socketC*)pb_sConnect ;
             SCOOPS
+            _IO_
         {
         IFsCRATCHoK
 
@@ -57,37 +58,64 @@ DONE( tmGetWebHookRandomSuffixF )
                 ++ s ; ether.osSleepF( tin0P , TOCK >> 0 ) ;
 
                 }
+                    etThread.traceF( tin0P , T("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------[woTimePassword]:    ")+tWoTimePasswordP ) ;
+                    tWoTimePasswordLag = tWoTimePasswordP ;
+                {
+                if( etThread.strCompareF( tin0P , tWoTimePasswordLag , tWoTimePasswordP ) )
 
+                etThread.delF( tin0P , psttw ) ;
+                grab_tWoTimePasswordP.ungrabF( tin0P ) ;
+                tWoTimePasswordP = T(psttw) ;
+                grab_tWoTimePasswordP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+
+                }
                     }
                         break ;
-                        etThread.traceF( tin0P , T("could not read from dns1 so closing the connection") ) ;
+                        etThread.traceF( tin0P , T("could not pull psttw from sIn") ) ;
                         POOPRqUIET
                     {
-                    else
-                    }
-                        }
-                            }
-                                etThread.traceF( tin0P , T("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------[woTimePassword]:    ")+tWoTimePasswordP ) ;
-                                tWoTimePasswordLag = tWoTimePasswordP ;
-                            {
-                            if( etThread.strCompareF( tin0P , tWoTimePasswordLag , tWoTimePasswordP ) )
-
-                            etThread.delF( tin0P , psttw ) ;
-                            grab_tWoTimePasswordP.ungrabF( tin0P ) ;
-                            tWoTimePasswordP = T(psttw) ;
-                            grab_tWoTimePasswordP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
-                            sIn >> psttw ;
-                            ZE( strokeS* , psttw ) ;
-                        {
-                        else
-                        if( !sIn.cFieldsF() ) etThread.traceF( tin0P , T("!exception / sIn is empty") ) ;
-                    {
-                    if( !POOP )
-                    sConnect.readF( tin0P , sIn ) ;
-                    soulC sIn( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                    if( POOP )
+                    sIn >> psttw ;
                     SCOOPS
+                    _IO_
                 {
                 IFsCRATCHoK
+                ZE( strokeS* , psttw ) ;
+
+                }
+                    break ;
+                    etThread.traceF( tin0P , T("!exception / sIn is empty") ) ;
+                {
+                if( !sIn.cFieldsF() )
+
+                }
+                    }
+                        break ;
+                        etThread.traceF( tin0P , T("could not read into sIn") ) ;
+                        POOPRqUIET
+                    {
+                    if( POOP )
+                    sConnect.readF( tin0P , sIn ) ;
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
+
+                }
+                    }
+                        break ;
+                        etThread.traceF( tin0P , T("could not ct soulC sIn") ) ;
+                        POOPRqUIET
+                    {
+                    if( POOP )
+                    new( 0 , tin0P , pb_sIn , sizeof pb_sIn ) soulC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
+                    SCOOPS
+                    _IO_
+                {
+                IFsCRATCHoK
+                soulC& sIn = *(soulC*)pb_sIn ;
+                byteT pb_sIn[ sizeof( soulC ) ] ;
+                _IO_
             {
             while( !ether )
 
@@ -101,6 +129,7 @@ DONE( tmGetWebHookRandomSuffixF )
                 if( POOP )
                 sConnect.connectF( tin0P , idpDnsSuffix , nnHe ) ;
                 SCOOPS
+                _IO_
             {
             IFsCRATCHoK
 
@@ -112,9 +141,11 @@ DONE( tmGetWebHookRandomSuffixF )
                 etThread.boxGetShadowF( tin0P , pbi , cbi , T("////dns1/d/ideafarm.home.101/ephemeral/shared/")+TfORsTRING(ifcIDaDAM_DNS)+T("/idpListen") ) ; ___( pbi ) ;
                 ZE( countT , cbi ) ;
                 ZE( byteT* , pbi ) ;
+                _IO_
             {
             while( !ether && !idpDnsSuffix )
             ZE( countT , idpDnsSuffix ) ;
+            _IO_
         {
         while( !ether )
 
@@ -130,10 +161,12 @@ DONE( tmGetWebHookRandomSuffixF )
                 DELzOMBIE( psDoomed ) ;
                 socketC* psDoomed = (socketC*)pb_sConnect ;
                 SCOOPS
+                _IO_
             {
             IFsCRATCHoK
 
             ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+            _IO_
         {
         if( bFail )
 
@@ -146,6 +179,7 @@ DONE( tmGetWebHookRandomSuffixF )
             if( POOP )
             sConnect.bindF( tin0P ) ;
             SCOOPS
+            _IO_
         {
         IFsCRATCHoK
 
@@ -161,10 +195,12 @@ DONE( tmGetWebHookRandomSuffixF )
                 DELzOMBIE( psDoomed ) ;
                 socketC* psDoomed = (socketC*)pb_sConnect ;
                 SCOOPS
+                _IO_
             {
             IFsCRATCHoK
 
             ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
+            _IO_
         {
         if( bFail )
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -178,11 +214,13 @@ DONE( tmGetWebHookRandomSuffixF )
             if( POOP )
             new( 0 , tin0P , pb_sConnect , sizeof pb_sConnect ) socketC( tin0P , *((tin1S&)tin0P).pEtScratch , TAG( TAGiDnULL ) ) ;
             SCOOPS
+            _IO_
         {
         IFsCRATCHoK
         ZE( boolT , bFail ) ;
         socketC& sConnect = *(socketC*)pb_sConnect ;
         byteT pb_sConnect[ sizeof( socketC ) ] ;
+        _IO_
     {
     while( !ether )
     TN( tWoTimePasswordLag , "" ) ;
@@ -192,6 +230,8 @@ DONE( tmGetWebHookRandomSuffixF )
 
     grabC& grab_tWoTimePasswordP = *(grabC*)pTaskP->c2 ;
     textC& tWoTimePasswordP      = *(textC*)pTaskP->c1 ;
+
+    _IO_
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmGetWebHookRandomSuffixF )
