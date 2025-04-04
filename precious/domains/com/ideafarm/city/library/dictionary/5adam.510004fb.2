@@ -28,25 +28,25 @@ DONE( tmHireF )
 
                 }
                     }
-                        stOsPidP.ungrabF( tin0P ) ;
+                        stOsPidFromTinP.ungrabF( tin0P ) ;
                         }
-                            stOsPidP.extractF( 0 , tin0P ) ;
+                            stOsPidFromTinP.extractF( 0 , tin0P ) ;
                             etThread.traceF( tin0P , T("deregistering IPDOS (tm) process 3 [osPid]:    ")+TF2((countT)info3.dwProcessId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
                         if( ids )
-                        stOsPidP.sinkF( tin0P , ids , (countT)info3.dwProcessId , flSTACKsINK_QUERY , 0 , 0 ) ;
-                        stOsPidP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                        stOsPidFromTinP.sinkF( tin0P , ids , (countT)info3.dwProcessId , flSTACKsINK_QUERY , 0 , 0 ) ;
+                        stOsPidFromTinP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                         ZE( countT , ids ) ;
                     {
                     }
-                        stOsPidZombieP.ungrabF( tin0P ) ;
+                        stOsPidFromTinZombieP.ungrabF( tin0P ) ;
                         }
-                            stOsPidZombieP.extractF( 0 , tin0P ) ;
+                            stOsPidFromTinZombieP.extractF( 0 , tin0P ) ;
                             etThread.traceF( tin0P , T("deregistering IPDOS (tm) process 2 [osPid]:    ")+TF2((countT)info3.dwProcessId,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                         {
                         if( ids )
-                        stOsPidZombieP.sinkF( tin0P , ids , (countT)info3.dwProcessId , flSTACKsINK_QUERY , 0 , 0 ) ;
-                        stOsPidZombieP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                        stOsPidFromTinZombieP.sinkF( tin0P , ids , (countT)info3.dwProcessId , flSTACKsINK_QUERY , 0 , 0 ) ;
+                        stOsPidFromTinZombieP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                         ZE( countT , ids ) ;
                     {
                 {
@@ -86,9 +86,9 @@ DONE( tmHireF )
                     {
                     )
                         )
-                            stOsPidP( (countT)info3.dwProcessId )
+                            stOsPidFromTinP( (countT)info3.dwProcessId )
                             ||
-                            stOsPidZombieP( (countT)info3.dwProcessId )
+                            stOsPidFromTinZombieP( (countT)info3.dwProcessId )
                         (
                         &&
                         )
@@ -348,9 +348,9 @@ DONE( tmHireF )
 
             //IT IS ILLEGAL TO NOT HIRE AN ADAM
 
-            /*PROD*/ /*if( idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 || idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0sERVER )*/ etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_MEMBRANEgLASS , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+//            /*PROD*/ /*if( idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 || idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0sERVER )*/ etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_MEMBRANEgLASS , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
-            //etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_SCRATCH0f , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_SCRATCH0f , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
             //etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_WEBhOOKnOTICEfILER , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
@@ -498,8 +498,8 @@ DONE( tmHireF )
 
     boolT&   bKidsSuspendedP            =  *(boolT*)pTaskP->ca ;
     boolT    bConsoleP                  =    (boolT)pTaskP->c9 ;
-    stackC&  stOsPidZombieP             = *(stackC*)pTaskP->c8 ;
-    stackC&  stOsPidP                   = *(stackC*)pTaskP->c7 ;
+    stackC&  stOsPidFromTinZombieP             = *(stackC*)pTaskP->c8 ;
+    stackC&  stOsPidFromTinP                   = *(stackC*)pTaskP->c7 ;
     textC&   tEventP                    =  *(textC*)pTaskP->c6 ;
     countT&  osTidEventP                = *(countT*)pTaskP->c5 ;
     countT&  osPidEventP                = *(countT*)pTaskP->c4 ;
@@ -1125,17 +1125,17 @@ TELL( "cleaning up 0" )
                                             {
 
                                             }
-                                                stOsPidP.ungrabF( tin0P ) ;
+                                                stOsPidFromTinP.ungrabF( tin0P ) ;
                                                 }
-                                                    stOsPidP.extractF( 0 , tin0P ) ;
+                                                    stOsPidFromTinP.extractF( 0 , tin0P ) ;
                                                     etThread.traceF( tin0P , T("deregistering IPDOS (tm) process 1 [osPid]:    ")+TF2(told.osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                                 {
                                                 if( ids )
-                                                stOsPidP.sinkF( tin0P , ids , told.osPid , flSTACKsINK_QUERY , 0 , 0 ) ;
-                                                stOsPidP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                                                stOsPidFromTinP.sinkF( tin0P , ids , told.osPid , flSTACKsINK_QUERY , 0 , 0 ) ;
+                                                stOsPidFromTinP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
                                                 ZE( countT , ids ) ;
 
-                                                stOsPidZombieP.sinkF( tin0P , countTC() , told.osPid , flSTACKsINK_null , 0 , 0 ) ;
+                                                stOsPidFromTinZombieP.sinkF( tin0P , countTC() , told.osPid , flSTACKsINK_null , 0 , 0 ) ;
                                             {
                                             if( note.idTinNamed == ifcIDtINnAMED_tin9VeryEarlyLateMainI )
 
@@ -1213,7 +1213,7 @@ TELL( "cleaning up 0" )
                                             {
 
                                             }
-                                                stOsPidP.sinkF( tin0P , countTC() , told.osPid , flSTACKsINK_null , 0 , 0 ) ;
+                                                stOsPidFromTinP.sinkF( tin0P , countTC() , told.osPid , flSTACKsINK_null , 0 , 0 ) ;
                                                 etThread.traceF( tin0P , T("registering IPDOS (tm) process [osPid]:    ")+TF2(told.osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
                                             {
                                             if( note.idTinNamed == ifcIDtINnAMED_tin9VeryEarlyLateMainI )
@@ -1462,7 +1462,7 @@ TELL( "cleaning up 0" )
                     {
                     if( !pbi || cbi != cbiSave )                                         // SHOULD ALWAYS GET THE ENTIRE SHEBANG ; (20241223@1054: cbi TEST MOVED TO HERE FROM THE "else" BLOCK, WHERE IT WAS CODED TO TRIGGER IMPOTENCE)
 
-                    if( stOsPidP > 0x20 || stOsPidZombieP > 0x20 ) etRock.traceF( tin0P , T("resource leak [idMemorySpace,stOsPidP,osOsPidZombieP]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stOsPidP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stOsPidZombieP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                    if( stOsPidFromTinP > 0x20 || stOsPidFromTinZombieP > 0x20 ) etRock.traceF( tin0P , T("resource leak [idMemorySpace,stOsPidFromTinP,osOsPidZombieP]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stOsPidFromTinP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(stOsPidFromTinZombieP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
     
                     //etRock.traceF( tin0P , T("7") ) ;
                     boolT bDelete = bksTelemetrySys.readF( tin0P , pbi , cbi , hRead , flBOOKScrEAD_STILLhUNGRYiSoK ) ;
@@ -1561,7 +1561,8 @@ TELL( "cleaning up 0" )
     TN( tb4 , "    " ) ;
 
     etThread.delF( tin0P , pcArgP ) ;
-    stackC&      stOsPidZombieP             =  *(stackC*)pcArgP[ 0xe ] ;
+    stackC&      stOsPidFromTinZombieP      =  *(stackC*)pcArgP[ 0xf ] ;
+    stackC&      stOsPidFromTinP            =  *(stackC*)pcArgP[ 0xe ] ;
     stackC&      stOsPidP                   =  *(stackC*)pcArgP[ 0xd ] ;
     boolT&       bChatterP                  =   *(boolT*)pcArgP[ 0xc ] ;
     textC&       tEventP                    =   *(textC*)pcArgP[ 0xb ] ;
