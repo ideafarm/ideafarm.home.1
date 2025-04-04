@@ -524,6 +524,106 @@ etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_SCRATCH0f , T("!i
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->cb )
 TASK( tmHireF )
 
+DONE( tmSuspendAllF )
+}
+    bSuspendAllP = 0 ;
+
+    }
+        if( POOP ) POOPRqUIET
+        ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFileSuspendingAll , 1 ) ;
+
+        if( POOP ) POOPRqUIET
+        ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFileSuspendAllOn , 1 ) ;
+        SCOOPS
+    {
+    IFsCRATCHoK
+
+    }
+        ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
+
+        bSuspendingAllLag = bSuspendingAll ;
+        bSuspendAllLag  = bSuspendAllP ;
+
+        }
+            if( bSuspendingAll != bSuspendingAllLag ) etThread.traceF( tin0P , T("unsuspendingAll ; all suspended processes will be  resumed") ) ;
+            }
+                if( POOP ) POOPRqUIET
+                ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFileSuspendingAll , 1 ) ;
+                SCOOPS
+            {
+            IFsCRATCHoK
+            bSuspendingAll = 0 ;
+        {
+        else
+        }
+            if( bSuspendingAll != bSuspendingAllLag ) etThread.traceF( tin0P , T("suspendingAll") ) ;
+            etThread.boxPutF( tin0P , tFileSuspendingAll , tSay , tSay.csF( tin0P ) + 1 ) ;
+            TN( tSay , "IdeaFarm (tm) Glass2 is currently suspendingAll." ) ;
+            bSuspendingAll = 1 ;
+        {
+        if( bSuspendAllP )
+        ZE( boolT , bSuspendingAll ) ;
+
+        }
+            if( bSuspendAllP != bSuspendAllLag ) etThread.traceF( tin0P , T("unsuspendingAll on request") ) ;
+            bSuspendAllP = 0 ;
+        {
+        else
+        }
+            if( bSuspendAllP != bSuspendAllLag ) etThread.traceF( tin0P , T("suspendingAll on request") ) ;
+            bSuspendAllP = 1 ;
+        {
+        if( etThread.diskFileExistsF( tin0P , tFileSuspendAllOn ) )
+    {
+      while(                            bSuspendAllIfP )
+    //while( ( !ether || bSuspendAllP ) && bSuspendAllIfP )
+    ZE( boolT , bSuspendingAllLag ) ;
+    ZE( boolT , bSuspendAllLag ) ;
+
+    }
+        etThread.boxPutF( tin0P , tFileSuspendAllOff , tSay , tSay.csF( tin0P ) + 1 ) ;
+        TN( tSay , "To tell IdeaFarm (tm) Glass2 to suspendAll, move this file from the \"off\" folder to the \"on\" folder.\r\nTo suppress suspendingAll, move this file back to the \"off\" folder.\r\nThe contents of this file have no effect." ) ;
+    {
+    )
+        && !etThread.diskFileExistsF( tin0P , tFileSuspendAllOff )
+           !etThread.diskFileExistsF( tin0P , tFileSuspendAllOn  )
+    (
+    if
+
+    }
+        }
+            if( POOP ) POOPRqUIET
+            ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFileSuspendingAll , 1 ) ;
+
+            if( POOP ) POOPRqUIET
+            ((tin1S&)tin0P).pEtScratch->boxZapF( tin0P , tFileSuspendAllOn , 1 ) ;
+
+            SCOOPS
+        {
+        IFsCRATCHoK
+    {
+    //PERSONALITY: I ALWAYS DELETE THE ON SUSPENDaLL FILE ; TO SUSPEND ALL IPDOS PROCESSES THAT I AM DEBUGGING, THE OPERATOR MUST MOVE THE SUSPENDaLL FILE TO THE "ON" FOLDER EACH TIME I AM HIRED
+
+    etThread.diskMakeDirIfNeededF( tin0P , tFileSuspendAllOn  ) ;
+    etThread.diskMakeDirIfNeededF( tin0P , tFileSuspendAllOff ) ;
+    TN( tFileSuspendingAll    , ""  ) ; tFileSuspendingAll   = tFolderControlsOn+T("/message.suspendingAll.txt") ;
+    TN( tFileSuspendAllOn     , ""  ) ; tFileSuspendAllOn    = tFolderControlsOn+T("/suspendAll.txt") ;
+    TN( tFileSuspendAllOff    , ""  ) ; tFileSuspendAllOff   = tFolderControlsOff+T("/suspendAll.txt") ;
+
+    TN( tFolderControlsOn  , ""  ) ; tFolderControlsOn  = T("///ideafarm/controls/")+tUser+T("/on/") ;
+    TN( tFolderControlsOff , ""  ) ; tFolderControlsOff = T("///ideafarm/controls/")+tUser+T("/off/") ;
+
+    TN( tUser , thirdC::postUserNameIF() ) ;
+    TN( tSlash , "/" ) ;
+
+    sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    boolT&  bSuspendAllP   = *(boolT*)pTaskP->c2 ;
+    boolT&  bSuspendAllIfP = *(boolT*)pTaskP->c1 ;
+{
+if( pTaskP && pTaskP->c1 && pTaskP->c2 )
+TASK( tmSuspendAllF )
+
 DONE( tmChatterF )
 }
     bChatterP = 0 ;
@@ -1526,6 +1626,7 @@ TELL( "cleaning up 0" )
 
         //etRock.traceF( tin0P , T("launching tmReportF [idMemorySpace,cKidThreads]:    ")+TF2(idMemorySpaceP,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(((tin1S&)tin0P).cKidThreads,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
 
+        pcArg[ 0xc ] = (countT)&bSuspendAllP ;
         pcArg[ 0xb ] = (countT)&bChatterP ;
         pcArg[ 0xa ] = (countT)&tEventP ;
         pcArg[ 0x9 ] = (countT)&osTidEventP ;
@@ -1575,9 +1676,10 @@ TELL( "cleaning up 0" )
     TN( tb4 , "    " ) ;
 
     etThread.delF( tin0P , pcArgP ) ;
-    stackC&      stOsPidFromTinZombieP      =  *(stackC*)pcArgP[ 0x0f ] ;
-    stackC&      stOsPidFromTinP            =  *(stackC*)pcArgP[ 0x0e ] ;
-    stackC&      stOsPidP                   =  *(stackC*)pcArgP[ 0x0d ] ;
+    stackC&      stOsPidFromTinZombieP      =  *(stackC*)pcArgP[ 0x10 ] ;
+    stackC&      stOsPidFromTinP            =  *(stackC*)pcArgP[ 0x0f ] ;
+    stackC&      stOsPidP                   =  *(stackC*)pcArgP[ 0x0e ] ;
+    boolT&       bSuspendAllP               =   *(boolT*)pcArgP[ 0x0d ] ;
     boolT&       bChatterP                  =   *(boolT*)pcArgP[ 0x0c ] ;
     textC&       tEventP                    =   *(textC*)pcArgP[ 0x0b ] ;
     countT&      osTidEventP                =  *(countT*)pcArgP[ 0x0a ] ;
@@ -2887,6 +2989,7 @@ DONE( tmReportF )
     //if( idMemorySpaceP == 2 )
 
     etThread.delF( tin0P , pcArgP ) ;
+    boolT&        bSuspendAllP               =        *(boolT*)pcArgP[ 0xc ] ;
     boolT&        bChatterP                  =        *(boolT*)pcArgP[ 0xb ] ;
     textC&        tEventP                    =        *(textC*)pcArgP[ 0xa ] ;
     countT&       osTidEventP                =       *(countT*)pcArgP[ 0x9 ] ;
@@ -3190,6 +3293,7 @@ if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 TELL( "setting up" )
 TASK( tmcMonitorServerF ) //REN tmServerF
 
+//20250404@1440: ADDED bSuspendAllP AND tmSuspendAllF SO CAN SUSPEND ALL IPDOS THREADS FROM ANOTHER HOST ON THE PRIVATE LAN
 //20230315@1040: ADDED bChatterP AND tmChatterF SO CAN ENABLE THE GENERATION OF MINUTE REPORTS BY CREATING A SEMAPPHORE FILE
 //20230306@0731: DISABLED TO REDUCE BATTERY AND SSD USAGE
 //20230306@0731: ENABLED TO GLASS PRODUCTION

@@ -60,12 +60,14 @@ DONE( tmWorkF )
             {
             etThread.traceF( tin0P , T("firing my queue monitor") ) ;
 
-            bChatterIf = 0 ;
+            bSuspendAllIf = 0 ;
+            bChatterIf    = 0 ;
 
             //Sleep( 1000 * 60 * 60 ) ;
             //etThread.traceF( tin0P , T("TO TEST:sleeping forever before firing my queue monitor") ) ;
 
-            WAITuNTILaLMOSTaLONE( 3 )
+            WAITuNTILaLMOSTaLONE( 5 )
+            //20250404@1515: 5 <- 3 (NEEDED DUE TO ADDITION OF tmSuspendAllF)
             //20230905@1448: 3 <- 2 (NEEDED.  PROBABLY DUE TO ADDITION OF tmChatterF)
             //CONoUTrAW( "waiting for all threads other than console and glass2 to go away\r\n" ) ;
             etThread.traceF( tin0P , T("waiting for all threads other than those for the queue monitor for me and below me and console to finish") ) ;
@@ -164,8 +166,6 @@ DONE( tmWorkF )
 
             //U::TO QUIET THE CONSOLE FOR CRAFTWORK: etThread.osThreadF( TaRG1( tmConsoleF ) , (countT)&bQuitConsole , (countT)&cLeverIdMemory , (countT)&swMemorySpace ) ;
               etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 2 ) , (countT)&bKidsSuspended ) ;
-            //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 1 ) , (countT)&bKidsSuspended ) ;
-            //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 0 ) , (countT)&bKidsSuspended ) ;
             ZE( boolT , bKidsSuspended ) ;
             signC sgnDone_tmFireAllF_( tin0P , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC2 ) ;
             //etThread.osThreadF( tin0P , countTC() , tmKillYourselfImmediatelyF ) ;
@@ -177,9 +177,10 @@ DONE( tmWorkF )
                     etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmEatTelemetrySysF , memorySpace.sgnDone_tmEatTelemetrySysF_ , CBsTACKmIN << 3 ) , (countT)pcArg ) ;
 
                     //CS:CODEsYNC: 510004fb.1 510004fb.1
-                    pcArg[ 0x0f ] = (countT)&stOsPidFromTinZombie ;
-                    pcArg[ 0x0e ] = (countT)&stOsPidFromTin ;
-                    pcArg[ 0x0d ] = (countT)&stOsPid ;
+                    pcArg[ 0x10 ] = (countT)&stOsPidFromTinZombie ;
+                    pcArg[ 0x0f ] = (countT)&stOsPidFromTin ;
+                    pcArg[ 0x0e ] = (countT)&stOsPid ;
+                    pcArg[ 0x0d ] = (countT)&bSuspendAll ;
                     pcArg[ 0x0c ] = (countT)&bChatter ;
                     pcArg[ 0x0b ] = (countT)&tEvent ;
                     pcArg[ 0x0a ] = (countT)&osTidEvent ;
@@ -193,7 +194,7 @@ DONE( tmWorkF )
                     pcArg[ 0x02 ] = (countT)&cLeverIdMemory ;
                     pcArg[ 0x01 ] = idMemory ;
                     pcArg[ 0x00 ] = (countT)&memorySpace.bQuitEating ;
-                    etThread.newF( tin0P , LF , pcArg , 0xf ) ; ___( pcArg ) ;   //CS:CODEsYNC: 510004fb.1 510004fb.1
+                    etThread.newF( tin0P , LF , pcArg , 0x10 ) ; ___( pcArg ) ;   //CS:CODEsYNC: 510004fb.1 510004fb.1
                     ZE( countT* , pcArg ) ;
 
                     swMemorySpace.ungrabF( tin0P ) ;
@@ -211,9 +212,9 @@ DONE( tmWorkF )
                 ZE( countT  , timeN1 ) ;
             {
             TN( tEvent , "" ) ;
-            stackC stOsPidFromTinZombie( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
-            stackC stOsPidFromTin(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
-            stackC stOsPid(              tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
+            stackC stOsPidFromTinZombie( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE , ifcSTACKtYPE_countT ) ;  //20250404@1603: flSTACKc_null <- flSTACKc_ALLOWzE W/O ANALSYSIS SINCE WINDOOWS osPid IS APPARENTLY >= 4
+            stackC stOsPidFromTin(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_ALLOWzE , ifcSTACKtYPE_countT ) ;  //20250404@1603: flSTACKc_null <- flSTACKc_ALLOWzE W/O ANALSYSIS SINCE WINDOOWS osPid IS APPARENTLY >= 4
+            stackC stOsPid(              tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null    , ifcSTACKtYPE_countT ) ;
             ZE( countT , osTidEvent ) ;
             ZE( countT , osPidEvent ) ;
             batonC bCompileReport( tin0P , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS ) ;
@@ -225,11 +226,14 @@ DONE( tmWorkF )
             ZE( boolT , bQuitConsole ) ;
             //etThread.traceF( tin0P , T("launching telemetry eater threads") ) ;
 
-              etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 3 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
-            //etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 2 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
-            //etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 1 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
-            ZE( boolT , bChatter ) ;
-            boolT bChatterIf = 1 ;
+              etThread.osThreadF( TaRG2cBsTACK( tmSuspendAllF , CBsTACKmIN << 3 ) , (countT)&bSuspendAllIf , (countT)&bSuspendAll ) ;
+              etThread.osThreadF( TaRG2cBsTACK( tmChatterF    , CBsTACKmIN << 3 ) , (countT)&bChatterIf    , (countT)&bChatter    ) ;
+            //etThread.osThreadF( TaRG2cBsTACK( tmChatterF    , CBsTACKmIN << 2 ) , (countT)&bChatterIf    , (countT)&bChatter    ) ;
+            //etThread.osThreadF( TaRG2cBsTACK( tmChatterF    , CBsTACKmIN << 1 ) , (countT)&bChatterIf    , (countT)&bChatter    ) ;
+            ZE( boolT , bSuspendAll ) ;
+            ZE( boolT , bChatter    ) ;
+            boolT bSuspendAllIf = 1 ;
+            boolT bChatterIf    = 1 ;
             //etThread.traceF( tin0P , T("launching chatter thread") ) ;
         {
         if( !ether )
