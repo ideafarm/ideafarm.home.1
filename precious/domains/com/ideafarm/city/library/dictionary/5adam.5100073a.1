@@ -312,7 +312,7 @@ DONE( tmWorkerF )
                                                     //etThread.traceF( tin0P , T("found   [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
                                                     pidj[ offi ] = ppjhs[ offi ]->idLathReadF() ;
                                                 {
-                                                if( !etThread.strCompareF( tin0P , psttzv , psttHe ) )
+                                                if( psttHe && !etThread.strCompareF( tin0P , psttzv , psttHe ) )
                                                 //etThread.traceF( tin0P , T("comparing [offi,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
                                                 etThread.strDecodeF( tin0P , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
                                                 ZE( strokeS* , psttHe ) ;
@@ -344,7 +344,7 @@ DONE( tmWorkerF )
                                                     //etThread.traceF( tin0P , T("found! [offi,idJot,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(idJot,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
                                                     pidj[ offi ] = idJot ;
                                                 {
-                                                if( !etThread.strCompareF( tin0P , psttzv , psttHe ) )
+                                                if( psttHe && !etThread.strCompareF( tin0P , psttzv , psttHe ) )
                                                 //etThread.traceF( tin0P , T("comparing [offi,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
                                                 etThread.strDecodeF( tin0P , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
                                                 ZE( strokeS* , psttHe ) ;
@@ -445,7 +445,7 @@ DONE( tmWorkerF )
                                                     etThread.delF( tin0P , psttHe ) ;
                                                     pidj[ offi ] = idJot ;
                                                 {
-                                                if( !etThread.strCompareF( tin0P , psttzv , psttHe ) )
+                                                if( psttHe && !etThread.strCompareF( tin0P , psttzv , psttHe ) )
                                                 etThread.strDecodeF( tin0P , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
                                                 ZE( strokeS* , psttHe ) ;
 

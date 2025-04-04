@@ -297,7 +297,7 @@ DONE( tmWorkerF )
                                     //                if( offi == 3 ) etThread.traceF( tin0P , T("found (sequential search)  [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
                                     //                pidj[ offi ] = ppjhs[ offi ]->idLathReadF() ;
                                     //            {
-                                    //            if( !etThread.strCompareF( tin0P , psttzv , psttHe ) )
+                                    //            if( psttHe && !etThread.strCompareF( tin0P , psttzv , psttHe ) )
                                     //            //etThread.traceF( tin0P , T("comparing [offi,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
                                     //            etThread.strDecodeF( tin0P , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
                                     //            ZE( strokeS* , psttHe ) ;
@@ -333,7 +333,7 @@ DONE( tmWorkerF )
                                                             //etThread.traceF( tin0P , T("found (lookup overflow)  [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
                                                             pidj[ offi ] = overflow.pHij[ offs ].idJot ;
                                                         {
-                                                        if( !etThread.strCompareF( tin0P , psttzv , psttHe ) )
+                                                        if( psttHe && !etThread.strCompareF( tin0P , psttzv , psttHe ) )
                                                         //etThread.traceF( tin0P , T("comparing (lookup overflow) [offi,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
                                                         etThread.strDecodeF( tin0P , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
                                                         ZE( strokeS* , psttHe ) ;
@@ -364,7 +364,7 @@ DONE( tmWorkerF )
                                                         //etThread.traceF( tin0P , T("found (lookup hash)  [offi,idJot]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(pidj[offi],flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv) ) ;
                                                         pidj[ offi ] = bucket.pHij[ offs ].idJot ;
                                                     {
-                                                    if( !etThread.strCompareF( tin0P , psttzv , psttHe ) )
+                                                    if( psttHe && !etThread.strCompareF( tin0P , psttzv , psttHe ) )
                                                     //etThread.traceF( tin0P , T("comparing (lookup hash) [offi,psttzv,psttHe]:    ")+TF2(offi,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttzv)+tb4+T(psttHe) ) ;
                                                     etThread.strDecodeF( tin0P , psttHe , pbEncodedHe + sizeof( countT ) ) ; ___( psttHe ) ;
                                                     ZE( strokeS* , psttHe ) ;

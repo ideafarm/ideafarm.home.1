@@ -1223,7 +1223,7 @@
                                     for( countT offe = 0 ; offe < sizeof pP.ppsMacroEscapes / sizeof pP.ppsMacroEscapes[ 0 ] ; offe ++ )
                                     TN( tComma , "," ) ;
                                 {
-                                if( etherP.strIdAnyF( tin0P , 0 , flSTRmATCH_null , idf , sttq , pP.tMacroEscapes , psttvDecoded ) )
+                                if( psttvDecoded && etherP.strIdAnyF( tin0P , 0 , flSTRmATCH_null , idf , sttq , pP.tMacroEscapes , psttvDecoded ) )
                                 strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
                                 countT idf = 1 ;
                                 //etRock.traceF( tin0P , TP("",cNestP)+T("U::/y") ) ; //U::TO FIND A BUG (TRACE SQUEEZE)
@@ -1439,7 +1439,7 @@
                     ++ oBiasDefault ;
                     -- *(countT*)&idLevelMax ;
                 {
-                if( etherP.strIdF( tin0P , pP.sMarkb1 , psttvDecoded , 1 ) )
+                if( psttvDecoded && etherP.strIdF( tin0P , pP.sMarkb1 , psttvDecoded , 1 ) )
 
                 etherP.strDecodeF( tin0P , psttvDecoded , pbzEncoded ) ; ___( psttvDecoded ) ;
                 ZE( strokeS* , psttvDecoded ) ;
