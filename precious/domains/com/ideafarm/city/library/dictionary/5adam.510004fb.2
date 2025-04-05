@@ -548,6 +548,7 @@ DONE( tmSuspendAllF )
     {
     IFsCRATCHoK
 
+    etThread.delF( tin0P , pstt1LanRoster ) ;
     }
         ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
 
@@ -620,11 +621,63 @@ DONE( tmSuspendAllF )
             if( bSuspendAllP != bSuspendAllLag )
             bSuspendAllP = 1 ;
         {
-        if( etThread.diskFileExistsF( tin0P , tFileSuspendAllOn ) )
+        if( bFarCommandToSuspend || etThread.diskFileExistsF( tin0P , tFileSuspendAllOn ) )
+
+        }
+            etThread.delF( tin0P , posti ) ;
+            }
+                }
+                    }
+                        bFarCommandToSuspend = 1 ;
+                        etThread.traceF( tin0P , T("!exception / suspending all of the processes that i am debugging") ) ;
+                    {
+                    if( !etThread.strCompareF( tin0P , tMyLanName , tHisName ) || !etThread.strCompareF( tin0P , tHisName , tHisNameAll ) )
+                    etThread.traceF( tin0P , T("!exception / i see a command to suspend a host [tMyLanName,tHisName]:    ")+tMyLanName+tb4+tHisName ) ;
+
+                    TN( tHisName , posti ) ;
+                {
+                else
+                if( POOP ) POOPRqUIET
+
+                ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tLong ) ; ___( posti ) ;
+
+                SCOOPS
+            {
+            IFsCRATCHoK
+            ZE( countT   , costi ) ;
+            ZE( osTextT* , posti ) ;
+
+            etThread.traceF( tin0P , T("scanning for a file named []:    ")+tLong ) ;
+            TN( tLong , "" ) ; tLong = T("////")+T(psttc1)+tSuspendByHostNameSuffix ;
+        {
+        FORsTRINGSiN1( pstt1LanRoster )
+        ZE( boolT , bFarCommandToSuspend ) ;
     {
     while( !bQuitSuspendingAllP )
+    TN( tHisNameAll , "all" ) ;
     ZE( boolT , bSuspendingAllLag ) ;
     ZE( boolT , bSuspendAllLag ) ;
+
+    }
+        etThread.delF( tin0P , psttn ) ;
+        tMyLanName = T(psttn) ;
+        etThread.computerLanNameF( tin0P , psttn ) ; ___( psttn ) ;
+        ZE( strokeS* , psttn ) ;
+    {
+    TN( tMyLanName , "" ) ;
+
+    }
+        etThread.delF( tin0P , pstts ) ;
+        }
+            etThread.strWordsF( tin0P , pstt1LanRoster , pstts , sttq , T(" ,") ) ; ___( pstt1LanRoster ) ;
+            strokeS sttq( 0 , sc_IGNOREqUOTES ) ;
+            etThread.strConvertToLowerCaseF( tin0P , pstts ) ;
+        {
+        if( pstts )
+        ZE( strokeS* , pstts ) ; etThread.querySettingF( tin0P , pstts , T("!ipdos.glass2.lan.roster")  ) ; ___( pstts ) ;
+        _IO_
+    {
+    ZE( strokeS* , pstt1LanRoster ) ;
 
     }
         etThread.boxPutF( tin0P , tFileSuspendAllOff , tSay , tSay.csF( tin0P ) + 1 ) ;
@@ -652,12 +705,14 @@ DONE( tmSuspendAllF )
 
     etThread.diskMakeDirIfNeededF( tin0P , tFileSuspendAllOn  ) ;
     etThread.diskMakeDirIfNeededF( tin0P , tFileSuspendAllOff ) ;
-    TN( tFileSuspendingAll    , ""  ) ; tFileSuspendingAll   = tFolderControlsOn+T("/message.suspendingAll.txt") ;
-    TN( tFileSuspendAllOn     , ""  ) ; tFileSuspendAllOn    = tFolderControlsOn+T("/suspendAll.txt") ;
-    TN( tFileSuspendAllOff    , ""  ) ; tFileSuspendAllOff   = tFolderControlsOff+T("/suspendAll.txt") ;
+    TN( tFileSuspendingAll       , ""  ) ; tFileSuspendingAll       = tFolderControlsOn+T("/message.suspendingAll.txt") ;
+    TN( tFileSuspendAllOn        , ""  ) ; tFileSuspendAllOn        = tFolderControlsOn+T("/suspendAll.txt") ;
+    TN( tFileSuspendAllOff       , ""  ) ; tFileSuspendAllOff       = tFolderControlsOff+T("/suspendAll.txt") ;
 
-    TN( tFolderControlsOn  , ""  ) ; tFolderControlsOn  = T("///ideafarm/controls/")+tUser+T("/on/") ;
-    TN( tFolderControlsOff , ""  ) ; tFolderControlsOff = T("///ideafarm/controls/")+tUser+T("/off/") ;
+    TN( tSuspendByHostNameSuffix , "/d/ideafarm.home.101/controls/suspendByHostName.txt" ) ;
+
+    TN( tFolderControlsOn        , ""  ) ; tFolderControlsOn        = T("///ideafarm/controls/")+tUser+T("/on/") ;
+    TN( tFolderControlsOff       , ""  ) ; tFolderControlsOff       = T("///ideafarm/controls/")+tUser+T("/off/") ;
 
     TN( tUser , thirdC::postUserNameIF() ) ;
     TN( tSlash , "/" ) ;
@@ -1513,7 +1568,7 @@ TELL( "cleaning up 0" )
                             //CONoUTrAW5( "tmEatTelemetrySysF [idMemorySpace,idHamburger]: " , idMemorySpaceP , " " , idHamburger , "\r\n" ) ;
                             countT idHamburger = incv02AM( cHamburgersP ) ; // OPERATOR ++ CAN BE USED FOR SPEED IF ACCURACY IS NOT NEEDED; AS OF THIS WRITING ACCURACY IS NOT NEEDED
                             TELL( "got a hamburger" )
-                            etRock.traceF( tin0P , T("read returned body") ) ;
+                            //etRock.traceF( tin0P , T("read returned body") ) ;
                         {
                         else
                         }
@@ -1587,14 +1642,14 @@ TELL( "cleaning up 0" )
                                 //  STRUCTURE MEMBERS TO BE VERIFIED
 
                                 etThread.delF( tin0P , psttd ) ;
-                                etThread.traceF( tin0P , T("tmEatTelemetrySysF bad header [bBad1,bBad2,bBad3,bBad4,dump]:    ")+TF2(bBad1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bBad2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bBad3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bBad4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttd) ) ;
+                                etThread.traceF( tin0P , T("bad header [bBad1,bBad2,bBad3,bBad4,dump]:    ")+TF2(bBad1,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bBad2,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bBad3,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(bBad4,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+T(psttd) ) ;
                                 etThread.strDumpIF( tin0P , psttd , (byteT*)&head , sizeof head ) ; ___( psttd ) ;
                                 ZE( strokeS* , psttd ) ;
                             {
                             else
                             }
                                 cbi = head.cbBooked + sizeof( countT ) ;
-                                etThread.traceF( tin0P , T("tmEatTelemetrySysF good header") ) ;
+                                //etThread.traceF( tin0P , T("good header") ) ;
                             {
                             if( !bBad1 && !bBad2 && !bBad3 && !bBad4 )
         
@@ -1608,11 +1663,11 @@ TELL( "cleaning up 0" )
 
                             telemetryBookHeadS& head = *(telemetryBookHeadS*)pbi ;
                             TELL( "parsing head" )
-                            etRock.traceF( tin0P , T("read returned head") ) ;
+                            //etRock.traceF( tin0P , T("read returned head") ) ;
                         {
                         if( bBookHead )
         
-                        etRock.traceF( tin0P , T("tmEatTelemetrySysF: readF returned telemetry") ) ; //U:: TO FIND A BUG
+                        //etRock.traceF( tin0P , T("readF returned telemetry") ) ; //U:: TO FIND A BUG
                         TELL( "readF returned telemetry" )
                     {
                     else
