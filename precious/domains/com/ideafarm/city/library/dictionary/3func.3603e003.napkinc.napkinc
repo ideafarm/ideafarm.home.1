@@ -514,8 +514,12 @@
                             OStEXTAK( ostoSay , "    " ) ;
                             OStEXTC(  ostoSay , cbData , 0 ) ;
                             OStEXTAK( ostoSay , "    " ) ;
+                            OStEXTC(  ostoSay , idiFileGrunt , 0 ) ;
+                            OStEXTAK( ostoSay , "    " ) ;
+                            OStEXTC(  ostoSay , idLineGrunt , 0 ) ;
+                            OStEXTAK( ostoSay , "    " ) ;
                             OStEXTC(  ostoSay , rc , 0 ) ;
-                            OStEXTAK( ostoSay , "napkinC::napkinC / tracing pool tallies and memory grain report then napping for a wink [rc,cbData,idHow,flagsCt,cTries,name]:    " ) ;
+                            OStEXTAK( ostoSay , "napkinC::napkinC / tracing pool tallies and memory grain report then napping for a wink [rc,idLineGrunt,idiFileGrunt,cbData,idHow,flagsCt,cTries,name]:    " ) ;
                             OStEXT(   ostoSay , TUCK << 2 ) ;
 
                             LOGcALLnEST( "!exception: napkinC::napkinC / could not open shared memory" ) ;
@@ -569,7 +573,9 @@
 
                     if( POOP && ~hNapkin ) { BLAMMO ; }
 
-                    const countT rc = POOP ;
+                    const countT idiFileGrunt = POOP.idiFileGruntF() ;
+                    const countT idLineGrunt  = POOP.idLineGruntF() ;
+                    const countT rc           = POOP ;
 
                     thirdC::dosOpenSharedMemIF( tin0P , hNapkin , (flagsT&)flagsSharedMemory , postName , phFileP , cbP ? cbaHeader + cbP : 0 , idHowP , idMemorySpaceP , flagsOpen | flOPENsHAREDmEMORY_DOnOTsERIALIZE ) ;
 
