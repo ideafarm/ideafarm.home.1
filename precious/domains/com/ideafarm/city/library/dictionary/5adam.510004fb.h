@@ -17,6 +17,7 @@ TASKpART0PROTO( tmFireAllF ) ;
 TASKpART0PROTO( tmConsoleF ) ;
 TASKpART0PROTO( tmCloakF ) ;
 TASKpART0PROTO( tmHireF ) ;
+TASKpART0PROTO( tmSuspendAllF ) ;
 TASKpART0PROTO( tmChatterF ) ;
 
 TASKpART0PROTO( tmcMonitorServerF ) ;
