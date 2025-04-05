@@ -343,6 +343,8 @@ DONE( tmHireF )
         DEBUG_EVENT info3 ;
         ZE( countT , rc ) ;
         ZE( boolT , bOk ) ;
+
+        etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
     {
     else
     else if( !cHired   ) { FIREmYSELF ; }
@@ -662,6 +664,8 @@ DONE( tmSuspendAllF )
     TN( tb4    , "    " ) ;
 
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
 
     stackC& stOsPidP            = *(stackC*)pTaskP->c3 ;
     boolT&  bSuspendAllP        =  *(boolT*)pTaskP->c2 ;

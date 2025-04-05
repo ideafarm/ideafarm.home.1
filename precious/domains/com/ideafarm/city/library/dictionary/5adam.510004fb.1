@@ -333,8 +333,8 @@ DONE( tmWorkF )
     TN( tHeyConsole , "!console" ) ;
     ZE( boolT , bConsoleP ) ;
 
-    //etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
-    //thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_LAZIEST ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE    ) ;    // THIS IS SO tmSuspendAllF AND tmHireF WILL ALWAYS BE ABLE TO SUSPEND ALL PROCESSES, EVEN IF ALL CPU RESOURCES ARE PEGGED BY RUDE PROCESSES AND THREADS
 {
 if( pTaskP )
 TASK( tmWorkF )
