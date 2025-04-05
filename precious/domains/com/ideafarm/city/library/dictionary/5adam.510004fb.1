@@ -225,9 +225,11 @@ DONE( tmWorkF )
             ZE( boolT , bQuitConsole ) ;
             //etThread.traceF( tin0P , T("launching telemetry eater threads") ) ;
 
-              etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 3 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
-            //etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 2 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
-            //etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 1 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
+            etThread.osThreadF( TaRG2cBsTACK( tmSuspendAllF , CBsTACKmIN << 3 ) , (countT)&bSuspendAllIf , (countT)&bSuspendAll ) ;
+            ZE( boolT , bSuspendAll ) ;
+            boolT bSuspendAllIf = 1 ;
+
+            etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 3 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
             ZE( boolT , bChatter ) ;
             boolT bChatterIf = 1 ;
             //etThread.traceF( tin0P , T("launching chatter thread") ) ;
