@@ -624,36 +624,40 @@ DONE( tmSuspendAllF )
         if( bFarCommandToSuspend || etThread.diskFileExistsF( tin0P , tFileSuspendAllOn ) )
 
         }
-            etThread.delF( tin0P , posti ) ;
             }
+                etThread.delF( tin0P , posti ) ;
                 }
                     }
-                        bFarCommandToSuspend = 1 ;
-                        etThread.traceF( tin0P , T("!exception / suspending all of the processes that i am debugging") ) ;
+                        }
+                            bFarCommandToSuspend = 1 ;
+                            etThread.traceF( tin0P , T("!exception / suspending all of the processes that i am debugging") ) ;
+                        {
+                        if( !etThread.strCompareF( tin0P , tMyLanName , tHisName ) || !etThread.strCompareF( tin0P , tHisName , tHisNameAll ) )
+                        etThread.traceF( tin0P , T("!exception / i see a command to suspend a host [tMyLanName,tHisName]:    ")+tMyLanName+tb4+tHisName ) ;
+
+                        TN( tHisName , posti ) ;
                     {
-                    if( !etThread.strCompareF( tin0P , tMyLanName , tHisName ) || !etThread.strCompareF( tin0P , tHisName , tHisNameAll ) )
-                    etThread.traceF( tin0P , T("!exception / i see a command to suspend a host [tMyLanName,tHisName]:    ")+tMyLanName+tb4+tHisName ) ;
+                    else
+                    if( POOP ) POOPRqUIET
 
-                    TN( tHisName , posti ) ;
+                    ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tLong , 1 ) ; ___( posti ) ;
+
+                    SCOOPS
                 {
-                else
-                if( POOP ) POOPRqUIET
+                IFsCRATCHoK
+                ZE( countT   , costi ) ;
+                ZE( osTextT* , posti ) ;
 
-                ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tLong , 1 ) ; ___( posti ) ;
-
-                SCOOPS
+                etThread.traceF( tin0P , T("scanning for a file named []:    ")+tLong ) ;
+                TN( tLong , "" ) ; tLong = T("////")+T(psttc1)+tSuspendByHostNameSuffix ;
             {
-            IFsCRATCHoK
-            ZE( countT   , costi ) ;
-            ZE( osTextT* , posti ) ;
-
-            etThread.traceF( tin0P , T("scanning for a file named []:    ")+tLong ) ;
-            TN( tLong , "" ) ; tLong = T("////")+T(psttc1)+tSuspendByHostNameSuffix ;
+            FORsTRINGSiN1( pstt1LanRoster )
         {
-        FORsTRINGSiN1( pstt1LanRoster )
+        if( !( ++ idScan % 0x8 ) )                  // REDUCES NETWORK TRAFFIC AND DISK I/O
         ZE( boolT , bFarCommandToSuspend ) ;
     {
     while( !bQuitSuspendingAllP )
+    ZE( countT , idScan ) ;
     TN( tHisNameAll , "all" ) ;
     ZE( boolT , bSuspendingAllLag ) ;
     ZE( boolT , bSuspendAllLag ) ;
