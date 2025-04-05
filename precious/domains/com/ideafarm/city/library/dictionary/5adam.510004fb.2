@@ -361,9 +361,9 @@ DONE( tmHireF )
 
             //IT IS ILLEGAL TO NOT HIRE AN ADAM
 
-//            /*PROD*/ /*if( idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 || idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0sERVER )*/ etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_MEMBRANEgLASS , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+            /*PROD*/ /*if( idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 || idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0sERVER )*/ etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_MEMBRANEgLASS , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
-etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_SCRATCH0f , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+            //etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_SCRATCH0f , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
             //etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_WEBhOOKnOTICEfILER , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
@@ -570,13 +570,49 @@ DONE( tmSuspendAllF )
         {
         else
         }
-            if( bSuspendAllP != bSuspendAllLag ) etThread.traceF( tin0P , T("suspendingAll on request") ) ;
+            }
+                stOsPidP.ungrabF( tin0P ) ;
+                }
+                    while( ~hWalk ) ;
+                    }
+                        }
+                            }
+                                etThread.traceF( tin0P , T("!exception / i was not able to suspend [rc,osPid]:    ")+TF2(rc,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED)+tb4+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                                POOPRqUIET
+                                countT rc = POOP ;
+                            {
+                            else
+                            if( !POOP ) etThread.traceF( tin0P , T("suspended aok [osPid]:    ")+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+
+                            CloseHandle( osh ) ;
+
+                            BOSpOOP
+                            BOSS( WHATsir , BOSoK , DebugBreakProcess( osh ) )
+
+                            HANDLE osh = OpenProcess( PROCESS_ALL_ACCESS , 0 , osPid ) ;
+
+                            SCOOPS
+                        {
+                        IFsCRATCHoK
+
+                        etThread.traceF( tin0P , T("i would suspend this osPid now [osPid]:    ")+TF2(osPid,flFORMAT_NObIGITvALUES|flFORMAT_UNSIGNED) ) ;
+                        countT osPid = stOsPidP.downF( tin0P , hWalk ) ;
+                    {
+                    do
+                    handleC hWalk( tin0P , TAG( TAGiDnULL ) , ifcIDtYPEhANDLE_STACKwALK ) ;
+                    ZE( countT , offo ) ;
+                    _IO_
+                {
+                if( stOsPidP )
+                stOsPidP.grabF( tin0P , TAG( TAGiDnULL ) ) ;
+                etThread.traceF( tin0P , T("suspendingAll on request") ) ;
+            {
+            if( bSuspendAllP != bSuspendAllLag )
             bSuspendAllP = 1 ;
         {
         if( etThread.diskFileExistsF( tin0P , tFileSuspendAllOn ) )
     {
-      while(                            bSuspendAllIfP )
-    //while( ( !ether || bSuspendAllP ) && bSuspendAllIfP )
+    while( bSuspendAllIfP )
     ZE( boolT , bSuspendingAllLag ) ;
     ZE( boolT , bSuspendAllLag ) ;
 
@@ -615,13 +651,15 @@ DONE( tmSuspendAllF )
 
     TN( tUser , thirdC::postUserNameIF() ) ;
     TN( tSlash , "/" ) ;
+    TN( tb4    , "    " ) ;
 
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    boolT&  bSuspendAllP   = *(boolT*)pTaskP->c2 ;
-    boolT&  bSuspendAllIfP = *(boolT*)pTaskP->c1 ;
+    stackC& stOsPidP       = *(stackC*)pTaskP->c3 ;
+    boolT&  bSuspendAllP   =  *(boolT*)pTaskP->c2 ;
+    boolT&  bSuspendAllIfP =  *(boolT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 TASK( tmSuspendAllF )
 
 DONE( tmChatterF )

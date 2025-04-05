@@ -211,9 +211,6 @@ DONE( tmWorkF )
                 ZE( countT  , timeN1 ) ;
             {
             TN( tEvent , "" ) ;
-            stackC stOsPidFromTinZombie( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
-            stackC stOsPidFromTin(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
-            stackC stOsPid(              tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
             ZE( countT , osTidEvent ) ;
             ZE( countT , osPidEvent ) ;
             batonC bCompileReport( tin0P , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC1 , flBATONc_NOTjEALOUS ) ;
@@ -225,9 +222,13 @@ DONE( tmWorkF )
             ZE( boolT , bQuitConsole ) ;
             //etThread.traceF( tin0P , T("launching telemetry eater threads") ) ;
 
-            etThread.osThreadF( TaRG2cBsTACK( tmSuspendAllF , CBsTACKmIN << 3 ) , (countT)&bSuspendAllIf , (countT)&bSuspendAll ) ;
+            etThread.osThreadF( TaRG2cBsTACK( tmSuspendAllF , CBsTACKmIN << 3 ) , (countT)&bSuspendAllIf , (countT)&bSuspendAll , (countT)&stOsPid ) ;
             ZE( boolT , bSuspendAll ) ;
             boolT bSuspendAllIf = 1 ;
+
+            stackC stOsPidFromTinZombie( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
+            stackC stOsPidFromTin(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
+            stackC stOsPid(              tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
 
             etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 3 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
             ZE( boolT , bChatter ) ;
