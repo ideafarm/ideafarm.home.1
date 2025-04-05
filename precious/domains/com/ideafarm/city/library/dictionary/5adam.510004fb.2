@@ -322,6 +322,13 @@ DONE( tmHireF )
             {
             if( !bOk )
 
+            }
+                ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
+                etThread.traceF( tin0P , T("bSuspendAllP is set, so i am napping rather than processing a debug event") ) ;
+            {
+            while( bSuspendAllP && !ether )                     // IF ether THEN MUST NOT NAP, SO THE PROCESSES CAN END
+            sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
+
             bKidsSuspendedP = 1 ;
             bOk = WaitForDebugEvent( &info3 , INFINITE ) ;
             //etThread.traceF( tin0P , T("calling WaitForDebugEvent") ) ;
@@ -361,9 +368,9 @@ DONE( tmHireF )
 
             //IT IS ILLEGAL TO NOT HIRE AN ADAM
 
-            /*PROD*/ /*if( idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 || idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0sERVER )*/ etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_MEMBRANEgLASS , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+//            /*PROD*/ /*if( idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0 || idMe == IDcOMPUTER_IPDOSmASTERcRAFTWORKoLD0sERVER )*/ etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_MEMBRANEgLASS , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
-            //etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_SCRATCH0f , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
+etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_SCRATCH0f , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
             //etScratch.ifcHireF( tin0P , T("ifcIDaDAM_2GLASS2") , ifcIDaDAM_WEBhOOKnOTICEfILER , T("!ignoreFireByOperator") , flagsUse , 0 , 0 , 1 , nicNameC() ) ;
 
@@ -509,6 +516,7 @@ DONE( tmHireF )
     
     //U::if( !( F(thirdC::third_flagsModeProcess1I_IF()) & flMODEpROCESS1_NOsYSTEMtHREADS ) ) { __( ((tin1S&)tin0P).glass.idThread - ifcIDtHREADlOW_tmHireF ) ; }
 
+    boolT&   bSuspendAllP               =  *(boolT*)pTaskP->cc ;
     boolT&   bKidsSuspendedP            =  *(boolT*)pTaskP->cb ;
     boolT    bConsoleP                  =    (boolT)pTaskP->ca ;
     stackC&  stOsPidFromTinZombieP      = *(stackC*)pTaskP->c9 ;
@@ -521,7 +529,7 @@ DONE( tmHireF )
     flagsT&  fliPendingSnapShotRequestP = *(flagsT*)pTaskP->c2 ;
     countT&  cHamburgersP               = *(countT*)pTaskP->c1 ;
 {
-if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->cb )
+if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 && pTaskP->c4 && pTaskP->c5 && pTaskP->c6 && pTaskP->c7 && pTaskP->c8 && pTaskP->c9 && pTaskP->cb && pTaskP->cc )
 TASK( tmHireF )
 
 DONE( tmSuspendAllF )
@@ -542,7 +550,7 @@ DONE( tmSuspendAllF )
         ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
 
         bSuspendingAllLag = bSuspendingAll ;
-        bSuspendAllLag  = bSuspendAllP ;
+        bSuspendAllLag    = bSuspendAllP   ;
 
         }
             if( bSuspendingAll != bSuspendingAllLag ) etThread.traceF( tin0P , T("unsuspendingAll ; this will resume all processes that i am debugging") ) ;
@@ -612,7 +620,7 @@ DONE( tmSuspendAllF )
         {
         if( etThread.diskFileExistsF( tin0P , tFileSuspendAllOn ) )
     {
-    while( bSuspendAllIfP )
+    while( !bQuitSuspendingAllP )
     ZE( boolT , bSuspendingAllLag ) ;
     ZE( boolT , bSuspendAllLag ) ;
 
@@ -655,9 +663,9 @@ DONE( tmSuspendAllF )
 
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    stackC& stOsPidP       = *(stackC*)pTaskP->c3 ;
-    boolT&  bSuspendAllP   =  *(boolT*)pTaskP->c2 ;
-    boolT&  bSuspendAllIfP =  *(boolT*)pTaskP->c1 ;
+    stackC& stOsPidP            = *(stackC*)pTaskP->c3 ;
+    boolT&  bSuspendAllP        =  *(boolT*)pTaskP->c2 ;
+    boolT&  bQuitSuspendingAllP =  *(boolT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 && pTaskP->c3 )
 TASK( tmSuspendAllF )
@@ -713,8 +721,7 @@ DONE( tmChatterF )
         {
         if( etThread.diskFileExistsF( tin0P , tFileChatterOn ) )
     {
-      while(                            bChatterIfP )
-    //while( ( !ether || bChatterP ) && bChatterIfP )
+    while( !bQuitChatteringP )
     ZE( boolT , bChatteringLag ) ;
     ZE( boolT , bChatterLag ) ;
 
@@ -756,8 +763,8 @@ DONE( tmChatterF )
 
     sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
 
-    boolT&  bChatterP   = *(boolT*)pTaskP->c2 ;
-    boolT&  bChatterIfP = *(boolT*)pTaskP->c1 ;
+    boolT&  bChatterP        = *(boolT*)pTaskP->c2 ;
+    boolT&  bQuitChatteringP = *(boolT*)pTaskP->c1 ;
 {
 if( pTaskP && pTaskP->c1 && pTaskP->c2 )
 TASK( tmChatterF )

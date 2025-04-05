@@ -60,7 +60,7 @@ DONE( tmWorkF )
             {
             etThread.traceF( tin0P , T("firing my queue monitor") ) ;
 
-            bChatterIf = 0 ;
+            bQuitSuspendingAll = bQuitChattering = 1 ;
 
             //Sleep( 1000 * 60 * 60 ) ;
             //etThread.traceF( tin0P , T("TO TEST:sleeping forever before firing my queue monitor") ) ;
@@ -160,12 +160,10 @@ DONE( tmWorkF )
             //grabC grabFoo1( tin0P , TAG( TAGiDnULL ) ) ;
             //etThread.traceF( tin0P , T("launching grabC deadlocker threads") ) ;
 
-            etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 3 ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidFromTin , (countT)&stOsPidFromTinZombie , bConsoleP , (countT)&bKidsSuspended ) ;
+            etThread.osThreadF( TaRG2cBsTACK( tmHireF , CBsTACKmIN << 3 ) , (countT)&cHamburgers , (countT)&fliPendingSnapShotRequest , (countT)postSnapShotRequest , (countT)&osPidEvent , (countT)&osTidEvent , (countT)&tEvent , (countT)&stOsPid , (countT)&stOsPidFromTin , (countT)&stOsPidFromTinZombie , bConsoleP , (countT)&bKidsSuspended , (countT)&bSuspendAll ) ;
 
             //U::TO QUIET THE CONSOLE FOR CRAFTWORK: etThread.osThreadF( TaRG1( tmConsoleF ) , (countT)&bQuitConsole , (countT)&cLeverIdMemory , (countT)&swMemorySpace ) ;
-              etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 2 ) , (countT)&bKidsSuspended ) ;
-            //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 1 ) , (countT)&bKidsSuspended ) ;
-            //etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 0 ) , (countT)&bKidsSuspended ) ;
+            etThread.osThreadF( TaRG3sGNdONEcBsTACK( tmFireAllF , sgnDone_tmFireAllF_ , CBsTACKmIN << 2 ) , (countT)&bKidsSuspended ) ;
             ZE( boolT , bKidsSuspended ) ;
             signC sgnDone_tmFireAllF_( tin0P , TAG( TAGiDnULL ) , 0 , ifcIDgRABlAYER_7BASEmISC2 ) ;
             //etThread.osThreadF( tin0P , countTC() , tmKillYourselfImmediatelyF ) ;
@@ -222,17 +220,17 @@ DONE( tmWorkF )
             ZE( boolT , bQuitConsole ) ;
             //etThread.traceF( tin0P , T("launching telemetry eater threads") ) ;
 
-            etThread.osThreadF( TaRG2cBsTACK( tmSuspendAllF , CBsTACKmIN << 3 ) , (countT)&bSuspendAllIf , (countT)&bSuspendAll , (countT)&stOsPid ) ;
-            ZE( boolT , bSuspendAll ) ;
-            boolT bSuspendAllIf = 1 ;
+            etThread.osThreadF( TaRG2cBsTACK( tmSuspendAllF , CBsTACKmIN << 3 ) , (countT)&bQuitSuspendingAll , (countT)&bSuspendAll , (countT)&stOsPid ) ;
+            ZE( boolT , bSuspendAll        ) ;
+            ZE( boolT , bQuitSuspendingAll ) ;
 
             stackC stOsPidFromTinZombie( tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
             stackC stOsPidFromTin(       tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
             stackC stOsPid(              tin0P , etThread , TAG( TAGiDnULL ) , flSTACKc_null , ifcSTACKtYPE_countT ) ;
 
-            etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 3 ) , (countT)&bChatterIf , (countT)&bChatter ) ;
+            etThread.osThreadF( TaRG2cBsTACK( tmChatterF , CBsTACKmIN << 3 ) , (countT)&bQuitChattering , (countT)&bChatter ) ;
             ZE( boolT , bChatter ) ;
-            boolT bChatterIf = 1 ;
+            ZE( boolT , bQuitChattering ) ;
             //etThread.traceF( tin0P , T("launching chatter thread") ) ;
         {
         if( !ether )
