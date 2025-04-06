@@ -56,6 +56,43 @@
         //if( idP == ifcTHREADpRIORITY_RUSH     ) { BLAMMO ; } //U::
         //if( idP == ifcTHREADpRIORITY_LAZIEST  ) { BLAMMO ; } //U::
 
+        //   | 
+        //   |    31_9                                                                   R-TIMEcRITICAL
+        //   |    30_9
+        //   |    29_9
+        //   |    28_9
+        //   |    27_9
+        //   |    26_9                                                                   R-HIGHEST
+        //   |    25_9                                                                   R-ABOVEnORMAL
+        //   |    24_9                                                                   R-NORMAL
+        //   |    23_9                                                                   R-BELOWnORMAL
+        //   |    22_9                                                                   R-LOWEST
+        //   |    21_9
+        //   |    20_9
+        //   |    19_9
+        //   |    18_9
+        //   |    17_9
+        //   |    16_9                                                                   R-IDLE
+        //   |    15_9   I-TIMEcRITICAL    N-TIMEcRITICAL    H-HIGHEST H-TIMEcRITICAL    
+        //   |    14_9                                       H-ABOVEnORMAL
+        //   |    13_9                                       H-NORMAL
+        //   |    12_9                                       H-BELOWnORMAL
+        //   |    11_9                                       H-LOWEST
+        //   |    10_9                     N-HIGHEST
+        //   |    09_9                     N-ABOVEnORMAL
+        //   |    08_9                     N-NORMAL
+        //   |    07_9                     N-BELOWnORMAL
+        //   |    06_9   I-HIGHEST         N-LOWEST
+        //   |    05_9   I-ABOVEnORMAL
+        //   |    04_9   I-NORMAL
+        //   |    03_9   I-BELOWnORMAL
+        //   |    02_9   I-LOWEST
+        //   |    01_9   I-IDLE            N-IDLE            H-IDLE
+        //   | 
+        //  listing (base priorities)   key:   I=IDLE CLASS    N=NORMAL CLASS    H=HIGH CLASS    R=REAL TIME CLASS
+        //
+        //20250406@1217: THE "BELOW_NORMAL_PRIORITY_CLASS" AND "ABOVE_NORMAL_PRIORITY_CLASS" ARE INTENTIONALLY NOT SUPPORTED BECAUSE THEY DO NOT INCREASE THE RANGE OF BASE PRIORITY LEVELS ACCESSIBLE
+
         //20241220@2038: idP != ifcTHREADpRIORITY_NORMAL WAS DISABLED, MARKED AS "//U::", BUT I CANNOT REMEMBER THE REASON, SO AM FULLY ENABLING THIS FUNCTION
         //20241220@2038: NO CODE IN THE ENTIRE dictionary FOLDER CALLS ME
 
