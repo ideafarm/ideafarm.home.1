@@ -624,6 +624,8 @@ DONE( tmSuspendAllF )
         if( bFarCommandToSuspend || etThread.diskFileExistsF( tin0P , tFileSuspendAllOn ) )
 
         }
+            bFarCommandToSuspendLathUpdate = bFarCommandToSuspend ;
+
             }
                 etThread.delF( tin0P , posti ) ;
                 }
@@ -653,10 +655,12 @@ DONE( tmSuspendAllF )
             {
             FORsTRINGSiN1( pstt1LanRoster )
         {
-        if( !( ++ idScan % 0x8 ) )                  // REDUCES NETWORK TRAFFIC AND DISK I/O
+        else
+        if( ++ idScan % 0x8 ) bFarCommandToSuspend = bFarCommandToSuspendLathUpdate ;                                                         // REDUCES NETWORK TRAFFIC AND DISK I/O
         ZE( boolT , bFarCommandToSuspend ) ;
     {
     while( !bQuitSuspendingAllP )
+    ZE( boolT , bFarCommandToSuspendLathUpdate ) ;
     ZE( countT , idScan ) ;
     TN( tHisNameAll , "all" ) ;
     ZE( boolT , bSuspendingAllLag ) ;
