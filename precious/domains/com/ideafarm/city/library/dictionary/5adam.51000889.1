@@ -24,8 +24,8 @@ cDo = 1 ;
     countT cDo = TUCK >> 3 ;
     ZE( countT , idStompLath ) ;
 
-    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_RUDE ) ;
-    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_RUDE ) ; // "RUDE" SO THAT I WRITE GORILLA REQUESTS AND RECEIVE RESPONSES WITH CONSISTENT "REAL TIME" SPEED ; THIS CREATES AN ATTACK SURFACE ; CPU SPINNING *MUST* BE PREVENTED (IMPOTENCE CPU SPIN BUGS, DDOS HTTP FLOOD ATTACKS)
+    etThread.osThreadSwitchingDesireF( tin0P , ifcTHREADpRIORITY_PUSHY ) ;
+    thirdC::dosPriorityProcessIF(      tin0P , ifcTHREADpRIORITY_PUSHY ) ; // "PUSHY" SO THAT I WRITE GORILLA REQUESTS AND RECEIVE RESPONSES WITH CONSISTENT "NEAR REAL TIME" SPEED ; THIS CREATES AN ATTACK SURFACE ; CPU SPINNING *MUST* BE PREVENTED (IMPOTENCE CPU SPIN BUGS, DDOS HTTP FLOOD ATTACKS); NOT "RUDE" BECAUSE NEVER WANT TO STOP GLASS1 AND GLASS2
 
     etThread.osThreadF( TaRG2cBsTACK( tmGetWebHookRandomSuffixF , CBsTACKmIN << 1 ) , (countT)&tWoTimePassword , (countT)&grab_tWoTimePassword ) ;
     TN( tWoTimePassword , "" ) ;
@@ -71,6 +71,7 @@ DONE( tmGetWebHookRandomSuffixF )
                 }
                     }
                         break ;
+                        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
                         etThread.traceF( tin0P , T("could not pull psttw from sIn") ) ;
                         POOPRqUIET
                     {
@@ -84,6 +85,7 @@ DONE( tmGetWebHookRandomSuffixF )
 
                 }
                     break ;
+                    ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
                     etThread.traceF( tin0P , T("!exception / sIn is empty") ) ;
                 {
                 if( !sIn.cFieldsF() )
@@ -91,6 +93,7 @@ DONE( tmGetWebHookRandomSuffixF )
                 }
                     }
                         break ;
+                        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
                         etThread.traceF( tin0P , T("could not read into sIn") ) ;
                         POOPRqUIET
                     {
@@ -104,6 +107,7 @@ DONE( tmGetWebHookRandomSuffixF )
                 }
                     }
                         break ;
+                        ++ s ; ether.osSleepF( tin0P , TOCK >> 2 ) ;
                         etThread.traceF( tin0P , T("could not ct soulC sIn") ) ;
                         POOPRqUIET
                     {
@@ -247,11 +251,7 @@ DONE( tmGorillaF )
     //ZE( countT  , timeN1 ) ;
 
     }
-        //G: ++ s ; ether.osSleepF( tin0P , TOCK << 2 ) ;       // USED TO STUDY LEAKAGE (EASY LOAD SO CPU USAGE IS INITIALLY LOW ON wh1)
-        //G: ++ s ; ether.osSleepF( tin0P , TOCK << 1 ) ;       // WH SERVER CAN KEEP UP WITH THIS RATE
-        //G: ++ s ; ether.osSleepF( tin0P , TOCK << 1 ) ;       // FASTER SINCE WEBHOOK CBF NOW DOES NOT WRITE MY BODY TO booksC
-
-        ++ s ; ether.osSleepF( tin0P , TOCK << 0 ) ;            // FASTER SINCE NOW I ONLY MAKE 1 REQUEST
+        ++ s ; ether.osSleepF( tin0P , TOCK << 0 ) ;
 
         //B: TOO FAST: ++ s ; ether.osSleepF( tin0P , TOCK >> 1 ) ;        // FASTER SINCE WEBHOOK CBF NOW DOES NOT WRITE MY BODY TO booksC
         sleepC s( tin0P , TAG( TAGiDnULL ) ) ;
@@ -265,6 +265,7 @@ DONE( tmGorillaF )
                     /**/etThread.traceF( tin0P , T("ordered  the next ipv4 value for wh1") ) ;
                     dropAndModifySettingsSoilFileImageF( tin0P , etThread , tModifiedSettingsSoilFileImageToUse , idStomp , idGorilla ) ;
                     /**/etThread.traceF( tin0P , T("ordering the next ipv4 value for wh1") ) ;
+                    _IO_
                 {
                 if( idNewFailUse == 4 )
 
@@ -326,6 +327,7 @@ DONE( tmGorillaF )
                 if( POOP )
                 ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUrl , 1 , 0 , 0 , flOPENdETAILS_null , flBOXcgETf_HTTPdOnOTpREPENDhEADER , tRequestAll3 , tRequestAll3.csF( tin0P ) ) ; ___( posti ) ;
                 SCOOPS
+                _IO_
             {
             IFsCRATCHoK
 
@@ -339,6 +341,7 @@ DONE( tmGorillaF )
                 if( POOP )
                 ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUrl , 1 , 0 , 0 , flOPENdETAILS_null , flBOXcgETf_HTTPdOnOTpREPENDhEADER , tRequestAll2 , tRequestAll2.csF( tin0P ) ) ; ___( posti ) ;
                 SCOOPS
+                _IO_
             {
             IFsCRATCHoK
         #if defined( NEVERdEFINED )
@@ -359,6 +362,7 @@ DONE( tmGorillaF )
             if( POOP )
             ((tin1S&)tin0P).pEtScratch->boxGetShadowF( tin0P , posti , costi , tUrl , 1 , 0 , 0 , flOPENdETAILS_null , flBOXcgETf_HTTPdOnOTpREPENDhEADER , tRequestAll1 , tRequestAll1.csF( tin0P ) ) ; ___( posti ) ;
             SCOOPS
+            _IO_
         {
         IFsCRATCHoK
 
@@ -501,11 +505,13 @@ TASK( tmGorillaF )
                 /**/etherP.traceF( tin0P , T("i just dropped a settings soil file image that contained [kv]:    ")+T(psttKV) ) ;
                 etherP.strSubstringF( tin0P , psttKV , countTC( idHit1 ) , countTC( idHit3 ) , tP ) ; ___( psttKV ) ;
                 ZE( strokeS* , psttKV ) ;
+                _IO_
             {
             if( idHit3 > idHit2 + tFind2.csF( tin0P ) + 1 )
 
             countT idHit3 = etherP.strIdF( tin0P , 0 , flSTRmATCH_null , idf3 , sttq , tFind3 , tP , 0 , 1 ) ;
             countT idf3 = idHit1 ;
+            _IO_
         {
         if( idHit2 > idHit1 + tFind1.csF( tin0P ) )
 
