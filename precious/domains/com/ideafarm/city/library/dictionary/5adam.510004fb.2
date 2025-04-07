@@ -249,7 +249,7 @@ DONE( tmHireF )
                                     case STATUS_UNWIND_CONSOLIDATE           /* 0x80000029L */ : { tEvent += T("STATUS_UNWIND_CONSOLIDATE           ")                                                                                                                                                                                      ; break ; }
                                     case STATUS_LONGJMP                      /* 0x80000026L */ : { tEvent += T("STATUS_LONGJMP                      ")                                                                                                                                                                                      ; break ; }
                                     case EXCEPTION_SINGLE_STEP               /* 0x80000004L */ : { tEvent += T("EXCEPTION_SINGLE_STEP               ")                                                                                                                                                                                      ; break ; }
-                                    case EXCEPTION_BREAKPOINT                /* 0x80000003L */ : { tEvent += T("EXCEPTION_BREAKPOINT                ") ; if( bSlowAllP ) { ++ s ; etThread.osSleepF( tin0P , TOCK >> 3 ) ; etThread.traceF( tin0P , T("bSlowAllP is set, so i am napping for 1/8 tock for each breakpoint exception") ) ; } break ; }
+                                    case EXCEPTION_BREAKPOINT                /* 0x80000003L */ : { tEvent += T("EXCEPTION_BREAKPOINT                ") ; if( bSlowAllP ) { ++ s ; etThread.osSleepF( tin0P , TOCK >> 4 ) ; etThread.traceF( tin0P , T("bSlowAllP is set, so i am napping for 1/01 tock for each breakpoint exception") ) ; } break ; }
                                     case EXCEPTION_DATATYPE_MISALIGNMENT     /* 0x80000002L */ : { tEvent += T("EXCEPTION_DATATYPE_MISALIGNMENT     ")                                                                                                                                                                                      ; break ; }
                                     case EXCEPTION_GUARD_PAGE                /* 0x80000001L */ : { tEvent += T("EXCEPTION_GUARD_PAGE                ")                                                                                                                                                                                      ; break ; }
                                     case DBG_COMMAND_EXCEPTION               /* 0x40010009L */ : { tEvent += T("DBG_COMMAND_EXCEPTION               ")                                                                                                                                                                                      ; break ; }
@@ -728,7 +728,7 @@ DONE( tmTakeBreaksF )
     bQuitTakingBreaksP = 0 ;
 
     }
-        ++ s ; etThread.osSleepF( tin0P , TOCK ) ;
+        ++ s ; etThread.osSleepF( tin0P , TOCK << 2 ) ;
 
         stOsPidP.ungrabF( tin0P ) ;
         }
