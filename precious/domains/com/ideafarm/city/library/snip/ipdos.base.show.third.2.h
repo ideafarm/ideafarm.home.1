@@ -27769,6 +27769,8 @@ struct bookMarkOldS
     measure04T  brcm04Raw ;
     timeS       ptTraceWoth[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
     timeS       ptTraceLath[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    count04T    pCyclesTraceWoth[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
+    count04T    pCyclesTraceLath[ 1 + ifcIDtRACEdIVERT_max - ifcIDtRACEdIVERT_min ] ;
 
     count4S     c4Tell ;
     strokeModeS strokeMode ;
@@ -30698,6 +30700,7 @@ private :
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.350011c9.thirdC.setAddressUsageBitsIF!||
  voidT computerLanNameF( tin0S& tin0P , osTextT*& postP ) ;
  //||!kt|///ideafarm/precious/domains/com/ideafarm/city/library/dictionary/3func.360011ba.thirdc.computerLanNameF!||
+ static count04T cpuCyclesIF( voidT ) ;
 
 /**/
  FRIENDS_thirdC                                                                                                                                                                                                                                      \

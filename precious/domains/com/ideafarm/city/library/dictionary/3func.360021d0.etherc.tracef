@@ -188,36 +188,83 @@
                     OStEXTAK( ostoSay , " | " ) ;
                     while( costPad -- ) { OStEXTAK( ostoSay , " " ) ; }
                     if( tin0P.idTypeTin == ifcIDtYPEtIN_123 ) OStEXTA(  ostoSay , ((tin123S&)tin0P).postThreadName ) ;
-                    OStEXTAK( ostoSay , " % " ) ;
+                    OStEXTAK( ostoSay , " * " ) ;
                     OStEXTC(  ostoSay , ((tin1S&)tin0P).glass.idThread , ' ' ) ;
-                    OStEXTAK( ostoSay , " $ " ) ;
+                    OStEXTAK( ostoSay , " & " ) ;
                     OStEXTC(  ostoSay , ((tin1S&)tin0P).pag1->idCell , ' ' ) ;
-                    OStEXTAK( ostoSay , " # " ) ;
+                    OStEXTAK( ostoSay , " ^ " ) ;
                     OStEXTA(  ostoSay , ostoTimeDelta ) ;
+                    OStEXTAK( ostoSay , " % " ) ;
+                    OStEXTA(  ostoSay , ostoTimeNet ) ;
+                    OStEXTAK( ostoSay , " $ " ) ;
+                    OStEXTA(  ostoSay , ostoTimeNow ) ;
+                    OStEXTAK( ostoSay , " # " ) ;
+                    OStEXTA(  ostoSay , ostoCyclesDelta ) ;
                     OStEXTAK( ostoSay , " @ " ) ;
-                    OStEXTA(  ostoSay , ostoTimeElapsed ) ;
+                    OStEXTA(  ostoSay , ostoCyclesNet ) ;
                     OStEXTAK( ostoSay , " ! " ) ;
-                    OStEXTA(  ostoSay , ostoTime ) ;
+                    OStEXTA(  ostoSay , ostoCyclesNow ) ;
 
                     if( costPad < 0 ) costPad = 0 ;
                     sCountT costPad = tin0P.idTypeTin != ifcIDtYPEtIN_123 ? 0 : ( TUCK >> 3 ) - thirdC::c_strlenIF( ((tin123S&)tin0P).postThreadName ) ;       //20221204@092: DOUBLED FIELD WIDTH TO ( TUCK >> 3 ) TO IMPROVE TRACE READABILITY
 
                     }
-                        OStEXTCF(  ostoTimeElapsed , timeE1 , '0' ) ;
-                        OStEXTAK( ostoTimeElapsed , "." ) ;
-                        OStEXTCF(  ostoTimeElapsed , timeE2 , '0' ) ;
+                        OStEXTCF( ostoCyclesNet   , pcCyclesNet[   0 ] , '0' ) ;
+                        OStEXTCF( ostoCyclesNet   , pcCyclesNet[   1 ] , '0' ) ;
+
+                        OStEXTCF( ostoCyclesNow   , pcCyclesNow[   0 ] , '0' ) ;
+                        OStEXTCF( ostoCyclesNow   , pcCyclesNow[   1 ] , '0' ) ;
+
+                        OStEXTCF( ostoCyclesDelta , pcCyclesDelta[ 0 ] , '0' ) ;
+                        OStEXTCF( ostoCyclesDelta , pcCyclesDelta[ 1 ] , '0' ) ;
+
+                        ((tin12S&)tin0P).pCyclesTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = cyclesNow ;
+
+                        countT* pcCyclesNet    = (countT*)&cyclesNet   ;
+                        countT* pcCyclesDelta  = (countT*)&cyclesDelta ;
+                        countT* pcCyclesLath   = (countT*)&cyclesLath  ;
+                        countT* pcCyclesWoth   = (countT*)&cyclesWoth  ;
+                        countT* pcCyclesNow    = (countT*)&cyclesNow   ;
+
+                        count04T cyclesNet     = cyclesNow - cyclesWoth ;
+                        count04T cyclesDelta   = cyclesNow - cyclesLath ;
+
+                        count04T cyclesLath    = ((tin12S&)tin0P).pCyclesTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] ;
+                        count04T cyclesWoth    = ((tin12S&)tin0P).pCyclesTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ] ;
+
+                        if( bReset ) ((tin12S&)tin0P).pCyclesTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ] = ((tin12S&)tin0P).pCyclesTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = cyclesNow ;
+                        boolT bReset = !((tin12S&)tin0P).pCyclesTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ] || F(flagsP) & flTRACE_RESET ;
+
+                        count04T cyclesNow = thirdC::cpuCyclesIF() ;
+                    {
+                    else
+                    }
+                        OStEXTAK( ostoCyclesNet   , "----------------" ) ;
+                        OStEXTAK( ostoCyclesNow   , "----------------" ) ;
+                        OStEXTAK( ostoCyclesDelta , "----------------" ) ;
+                    {
+                    if( !c_this )
+
+                    OStEXT( ostoCyclesNet   , TUCK >> 3 ) ;
+                    OStEXT( ostoCyclesNow   , TUCK >> 3 ) ;
+                    OStEXT( ostoCyclesDelta , TUCK >> 3 ) ;
+
+                    }
+                        OStEXTCF( ostoTimeNet , timeE1 , '0' ) ;
+                        OStEXTAK( ostoTimeNet , "." ) ;
+                        OStEXTCF( ostoTimeNet , timeE2 , '0' ) ;
 
                         osTimeSubtractF( tin0P , timeE1 , timeE2 , ((tin12S&)tin0P).ptTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceWoth[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
                         sCountT timeE2 = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ;
                         countT  timeE1 = ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 ;
 
-                        OStEXTCF(  ostoTime , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , '0' ) ;
-                        OStEXTAK( ostoTime , "." ) ;
-                        OStEXTCF(  ostoTime , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 , '0' ) ;
+                        OStEXTCF( ostoTimeNow , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , '0' ) ;
+                        OStEXTAK( ostoTimeNow , "." ) ;
+                        OStEXTCF( ostoTimeNow , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 , '0' ) ;
 
-                        OStEXTCF(  ostoTimeDelta , timeDelta1 , '0' ) ;
+                        OStEXTCF( ostoTimeDelta , timeDelta1 , '0' ) ;
                         OStEXTAK( ostoTimeDelta , "." ) ;
-                        OStEXTCF(  ostoTimeDelta , timeDelta2 , '0' ) ;
+                        OStEXTCF( ostoTimeDelta , timeDelta2 , '0' ) ;
 
                         ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ] = now ;
                         osTimeSubtractF( tin0P , timeDelta1 , timeDelta2 , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time1 , ((tin12S&)tin0P).ptTraceLath[ idDivertP - ifcIDtRACEdIVERT_min ].time2 ) ;
@@ -231,15 +278,16 @@
                     {
                     else
                     }
-                        OStEXTAK( ostoTimeElapsed , "--------.--------" ) ;
-                        OStEXTAK( ostoTime        , "--------.--------" ) ;
-                        OStEXTAK( ostoTimeDelta   , "--------.--------" ) ;
+                        OStEXTAK( ostoTimeNet   , "--------.--------" ) ;
+                        OStEXTAK( ostoTimeNow   , "--------.--------" ) ;
+                        OStEXTAK( ostoTimeDelta , "--------.--------" ) ;
                     {
                     if( !c_this )
 
-                    OStEXT( ostoTimeElapsed , TUCK >> 3 ) ;
-                    OStEXT( ostoTime , TUCK >> 3 ) ;
+                    OStEXT( ostoTimeNet   , TUCK >> 3 ) ;
+                    OStEXT( ostoTimeNow   , TUCK >> 3 ) ;
                     OStEXT( ostoTimeDelta , TUCK >> 3 ) ;
+
                     _IO_
                 {
                 if( !( F(flagsP) & flTRACE_NOpREFIX ) )
