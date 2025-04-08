@@ -202,8 +202,10 @@
                     OStEXTA(  ostoSay , ostoCyclesDelta ) ;
                     OStEXTAK( ostoSay , " @ " ) ;
                     OStEXTA(  ostoSay , ostoCyclesNet ) ;
-                    OStEXTAK( ostoSay , " ! " ) ;
-                    OStEXTA(  ostoSay , ostoCyclesNow ) ;
+
+                    //OStEXTAK( ostoSay , " ! " ) ;
+                    //OStEXTA(  ostoSay , ostoCyclesNow ) ;
+                    // THIS IS NOT USEFULL AND IT OCCUPIES VALUABLE REAL ESTATE IN THE LINE ; ostoCyclesNow - ostoCyclesNet IS THE NUMBER OF CYCLES CONSUMED BY THE THREAD AT THE WO'TH CALL TO traceF
 
                     if( costPad < 0 ) costPad = 0 ;
                     sCountT costPad = tin0P.idTypeTin != ifcIDtYPEtIN_123 ? 0 : ( TUCK >> 3 ) - thirdC::c_strlenIF( ((tin123S&)tin0P).postThreadName ) ;       //20221204@092: DOUBLED FIELD WIDTH TO ( TUCK >> 3 ) TO IMPROVE TRACE READABILITY
@@ -213,9 +215,9 @@
                         OStEXTAK( ostoCyclesNet   , "," ) ;
                         OStEXTCF( ostoCyclesNet   , pcCyclesNet[   1 ] , '0' ) ;
 
-                        OStEXTCF( ostoCyclesNow   , pcCyclesNow[   0 ] , '0' ) ;
-                        OStEXTAK( ostoCyclesNow   , "," ) ;
-                        OStEXTCF( ostoCyclesNow   , pcCyclesNow[   1 ] , '0' ) ;
+                        //OStEXTCF( ostoCyclesNow   , pcCyclesNow[   0 ] , '0' ) ;
+                        //OStEXTAK( ostoCyclesNow   , "," ) ;
+                        //OStEXTCF( ostoCyclesNow   , pcCyclesNow[   1 ] , '0' ) ;
 
                         OStEXTCF( ostoCyclesDelta , pcCyclesDelta[ 0 ] , '0' ) ;
                         OStEXTAK( ostoCyclesDelta , "," ) ;
@@ -243,13 +245,13 @@
                     else
                     }
                         OStEXTAK( ostoCyclesNet   , "--------,--------" ) ;
-                        OStEXTAK( ostoCyclesNow   , "--------,--------" ) ;
+                        //OStEXTAK( ostoCyclesNow   , "--------,--------" ) ;
                         OStEXTAK( ostoCyclesDelta , "--------,--------" ) ;
                     {
                     if( !c_this )
 
                     OStEXT( ostoCyclesNet   , TUCK >> 3 ) ;
-                    OStEXT( ostoCyclesNow   , TUCK >> 3 ) ;
+                    //OStEXT( ostoCyclesNow   , TUCK >> 3 ) ;
                     OStEXT( ostoCyclesDelta , TUCK >> 3 ) ;
 
                     }
